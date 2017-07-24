@@ -1,6 +1,12 @@
+
+
 # Introduction
 
+
 Tizen is a standards-based platform that provides Web and native APIs for developing [applications](https://wiki.tizen.org/Applications) for multiple [device](https://wiki.tizen.org/index.php?title=Device&action=edit&redlink=1) categories. Tizen is currently targeted for smartphones and tablet devices, though more device types will be available in the future.
+
+
+The intent of this document is to provide information and instruction to boot Tizen on new hardware and create products based on the Tizen OS. The Tizen porting guide takes you through the porting process by elaborating the Tizen architecture, the necessary tools, and the development environment setup, as well as creating a Tizen Image and demonstrating the modifications needed across various functional areas.
 
 ## Tizen Architecture
 
@@ -12,21 +18,19 @@ You can get detailed information of the Tizen framework layer from Dev Guide[[1\
 
 ## The Core Layer
 
-### Tizen Core Services
-
-#### Application Framework
+### Application Framework
 
 The Application Framework provides application management, including launching other applications using the package name, URI, or MIME type. It also launches predefined services, such as the system dialer application. The Application Framework also notifies applications of common events, such as low memory events, low battery, changes in screen orientation, and push notifications.
 
-#### Base
+### Base
 
 Base contains [GNU](https://wiki.tizen.org/index.php?title=GNU&action=edit&redlink=1)/[Linux](https://wiki.tizen.org/Linux) * base essential system libraries that provide key features, such as database support, internationalization, and XML parsing.
 
-#### Connectivity
+### Connectivity
 
 Connectivity consists of all network and connectivity related functionalities, such as 3G, Wi-Fi, Bluetooth, HTTP, and NFC (Near Field Communication). Data network is based on ConnMan (Connection manager), which provides 3G and Wi-Fi based network connection management.
 
-#### Graphics and UI
+### Graphics and UI
 
 Graphics and UI consist of the system graphic and UI stacks, which includes EFL (Enlightenment Foundation Libraries), window management system (x11 for Tizen 2.x / wayland for Tizen 3.0), input methods, and OpenGL® ES APIs.
 
@@ -34,29 +38,29 @@ EFL, the heart of the graphics component, is a suite of libraries. EFL is used t
 
 WebKit-based graphics is provided as well capable of running within a full browser UI or dedicated Web Runtime (without browser window), all based on Tizen's own HTML5 canvas WebKitEFL implementation. WebGL is supported too and Web-based frameworks for UI such as jQuery Mobile are also offered, what may help with porting existing jQuery code.
 
-#### Location
+### Location
 
 Location provides location based services (LBS), including position information, geocoding, satellite information, and GPS status. It delivers location information from various positioning sources, such as GPS, WPS (Wi-Fi Positioning System), Cell ID, and sensors.
 
-#### Messaging
+### Messaging
 
 Messaging consists of Message and Email. The Message supports SMS, MMS, and cell broadcast messages. Email supports protocols such as SMTP, IMAP, and POP3.
 
-#### Multimedia
+### Multimedia
 
 Multimedia is based on GStreamer. It provides support for media, including video, audio, imaging, and VoIP. It also provides media content management for managing media file metadata information.
 
-#### PIM (Personal Information Management)
+### PIM (Personal Information Management)
 
 PIM enables managing user data on the device, including managing calendar, contacts, tasks, and retrieving data about the device context (such as device position and cable status).
 
-#### Security
+### Security
 
 Security is responsible for security deployment across the system. It consists of the platform security enablers, such as access control, certificate management, and secure application distribution.
 
 For more information, see [Security/Tizen 3.0 security porting guide](https://wiki.tizen.org/wiki/Security/Tizen_3.0_security_porting_guide) and [All 3.X security pages](https://wiki.tizen.org/wiki/Security#All_3.X_security_pages).
 
-#### System
+### System
 
 System consists of service (process), device, and resource management features, including:
 
@@ -66,7 +70,7 @@ System consists of service (process), device, and resource management features, 
 - Resource management, such as CPU quota control and low memory management
 - Service management, such as watchdog management and capability control
 
-#### Telephony
+### Telephony
 
 Telephony consists of cellular functionalities communicating with the modem:
 
@@ -77,7 +81,6 @@ Telephony consists of cellular functionalities communicating with the modem:
 - Provides SMS-related services.
 - Provides SIM card functionalities (SIM phonebook, SIM EF files, SIM Application Toolkit support)
 
-#### Web
+### Web
 
 Web provides a complete implementation of the Tizen Web API optimized for low power devices. It includes WebKit, which is a layout engine designed to allow Web browsers to render Web pages. It also provides Web runtime for Web applications.
-

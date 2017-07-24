@@ -1,52 +1,63 @@
 # Creating Tizen Images with MIC
 
+This topic provides information on how to create a Tizen image.
 
-
-## 1 Introduction
-
-This document provides information about how to create a Tizen image. This document assumes that the instructions in the following documents have been read, well understood, and correctly followed:
+You must read, understand, and correctly follow the instructions in the following documents before creating images:
 
 - [Setting up Development Environment](https://source.tizen.org/documentation/setting-development-environment)
 - [Installing Development Tools](https://source.tizen.org/documentation/installing-development-tools)
-- [Cloning Tizen Source](https://source.tizen.org/documentation/developer-guide/cloning-tizen-source)
-- [Building Packages Locally](https://source.tizen.org/documentation/developer-guide/building-packages-locally)
+- [Cloning Tizen Source Files](https://source.tizen.org/documentation/developer-guide/cloning-tizen-source)
+- [Building Packages Locally with GBS](https://source.tizen.org/documentation/developer-guide/building-packages-locally)
 
-## 2 Preparing the Kickstart File
+## Preparing the Kickstart File
 
-Image creation requires a kickstart file that describes how to create an image. To get the kickstart file ready, perform the following procedure:
+Image creation requires a kickstart file that describes how to create an image. To prepare the kickstart file:
 
-1. Download the original kickstart file by executing one of the following commands, as appropriate:
+1. Download the original kickstart file:
 
-   - armv7l
+   ```
+   $ wget <Snapshot_date_URL>/builddata/images/<Repository>/image-configurations/<kickstart_file>
+   ```
+
+   - For example:
+
+     - Tizen: 4.0: Unified / standard/ `mobile-wayland-armv7l-tm1.ks`
+
+       ```
+       $ wget http://download.tizen.org/releases/daily/tizen/unified/tizen-unified_20170627.1/builddata/images/standard/image-configurations/mobile-wayland-armv7l-tm1.ks
+       ```
+
+     - Tizen: 4.0: Unified / emulator/ `tv-emulator32-wayland.ks`
+
+       ```
+       $ wget http://download.tizen.org/releases/daily/tizen/unified/tizen-unified_20170627.1/builddata/images/emulator/image-configurations/tv-emulator32-wayland.ks
+       ```
+
+     - Tizen: 3.0: Wearable / target-circle/ `wearable-wayland-armv7l-circle.ks`
+
+       ```
+       $ wget http://download.tizen.org/releases/daily/tizen/3.0-wearable/tizen-3.0-wearable_20170627.1/builddata/images/target-circle/image-configurations/wearable-wayland-armv7l-circle.ks
+       ```
+
+2. Modify the original kickstart file to include locally built RPMs into the Tizen image.
+
+   For example: Tizen: 4.0: Unified / standard/ `mobile-wayland-armv7l-tm1.ks`
+
+   - The `repo` section of the original kickstart file:
 
      ```
-     $ wget http://download.tizen.org/snapshots/tizen/mobile/<snapshot_date>/builddata/image-configs/mobile-wayland-armv7l-tm1.ks
+     repo --name=unified-standard --baseurl=http://download.tizen.org/snapshots/tizen/unified/@BUILD_ID@/repos/standard/packages/ --ssl_verify=norepo --name=base_arm --baseurl=http://download.tizen.org/snapshots/tizen/base/latest/repos/arm/packages/ --ssl_verify=no
      ```
 
-Examples of downloading original kickstart file from the release with Snapshot_ID "tizen-3.0" are shown below:
+   - The `repo` section of the modified kickstart file:
 
-```
-# kickstart file for armv7l$ wget http://download.tizen.org/snapshots/tizen/mobile/latest/builddata/images/target-TM1/image-configurations/mobile-wayland-armv7l-tm1.ks 
-```
-
-1. Enable local image creation function by updating the original kickstart file and performing appropriate replacement.
-
-   Take the kickstart file from the release with Snapshot_ID "tizen-3.0" as an example, replace the repo section with one of the following, as appropriate:
-
-   - armv7l
-
-   - ```
-     repo --name=Tizen-main --baseurl=http://download.tizen.org/snapshots/tizen/mobile/latest/repos/target-TM1/packages/ --save --ssl_verify=no --priority=99repo --name=Tizen-base --baseurl=http://download.tizen.org/snapshots/tizen/mobile/latest/repos/target-TM1/packages/ --save --ssl_verify=no --priority=99repo --name=local --baseurl=file:///home/<User>/GBS-ROOT/local/repos/tizen3.0-tm1/armv7l/ --priority=1repo --name=local-toolchain --baseurl=file:///<Tizen_Project>/pre-built/toolchain-arm/ --priority=2
+     ```
+     repo --name=unified-standard --baseurl=http://download.tizen.org/snapshots/tizen/unified/@BUILD_ID@/repos/standard/packages/ --ssl_verify=no --priority=99repo --name=base_arm --baseurl=http://download.tizen.org/snapshots/tizen/base/latest/repos/arm/packages/ --ssl_verify=no --priority=99repo --name=local --baseurl=file:///home/<User>/GBS-ROOT/local/repos/tizen3.0-tm1/armv7l/ --priority=1
      ```
 
-   Then replace "<User>" with the actual value and replace "<Tizen_Project>" with the top directory of Tizen source code in which **repo sync** command is executed, respectively.
+   **Note:**The `baseurl` property of the `local` repo specifies the file path where locally built RPMs are located.Setting the priority of the `local` repository at 1 and the priorities of remote repositories at 99 guarantees that MIC uses the packages that exist in the local repo with a higher priority if packages are available in both remote and local repositories.To add new packages into a Tizen image, add the new packages' names into the `%package` section, and add them into the `local` repo.
 
-**Note:**
-
-- By adding the "local-toolchain" repo, the packages excluded during the building process can be found during the image creation.
-- Specifying the priorities of remote repo and local repo as 99 and 1, respectively, guarantees that MIC will use the packages that exist in the local repo with higher priority when the packages exist in the remote and local repo at the same time.
-
-## 3 Creating a Tizen Image
+## Creating a Tizen Image
 
 To create a Tizen image, execute the following command:
 
@@ -54,18 +65,18 @@ To create a Tizen image, execute the following command:
 $ gbs createimage --ks-file=mobile-wayland-armv7l-tm1.ks
 ```
 
-If the size of the RAM is larger than 4G, use "--tmpfs" option to speed up the image creation:
+If you have more than 4 GB of RAM available, use the `--tmpfs` option to speed up the image creation:
 
 ```
 $ gbs createimage --ks-file=mobile-wayland-armv7l-tm1.ks --tmpfs
 ```
 
-Here's an example of output:
+The following example shows the `gbs createimage` command output:
 
 ```
 ...Info: Running scripts ...kickstart post script startInfo: Checking filesystem /var/tmp/mic/build/imgcreate-Rii2MC/tmp-pVQesQ/platform.imgInfo: Checking filesystem /var/tmp/mic/build/imgcreate-Rii2MC/tmp-pVQesQ/data.imgInfo: Checking filesystem /var/tmp/mic/build/imgcreate-Rii2MC/tmp-pVQesQ/ums.imgInfo: Pack all loop images together to TM1-new-201609030819.tar.gzInfo: The new image can be found here:/home/<User>/tizen/mic-output/TM1-201609030819.tar.gz/home/<User>/tizen/mic-output/TM1-201609030833.packages/home/<User>/tizen/mic-output/TM1-201609030819.xmlInfo: Finished.
 ```
 
-TM1-201609030819.tar.gz is the image file, and TM1-201609030833.packages contains packages info integrated in the image, including package name, version and VCS information. Once the Tizen image is created, the final step is to flash the image to target device for verification. Refer to the [Flash an Image to Device](https://source.tizen.org/documentation/reference/flash-device) for details.
+`TM1-201609030819.tar.gz` is the image file and `TM1-201609030833.packages` contains package info integrated in the image, including package name, version, and VCS information.
 
- 
+Once the Tizen image is created, the final step is to flash the image to a target device for verification. For more information, see [Flash an Image to Device](https://source.tizen.org/documentation/reference/flash-device).
