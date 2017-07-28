@@ -2,10 +2,12 @@
 
 This project is for writing Tizen documents for platform and application developers. The documents will be published to new Tizen portal site.
 
-Contributions to this documents are welcome. Please submit PRs to the staging branch, which is what's published to the staging docs.
+## Branches
+Contributions to this documents are welcome.
+Please submit PRs to the **staging* branch, which is what's published to the staging docs.
 
-The master branch is used for a ready-live.
-The live branch will be used for publising to the Tizen portal site.
+The **master** branch is used for a ready-live.
+The **live** branch will be used for publising to the Tizen portal site.
 
 ## Respository structure
 TOC.md file defines the left-hand navigation panel that appears when you navigate to any page other than the Docs page.
@@ -37,9 +39,9 @@ Please copy & paste a line in TOC.html after exporting TOC.md.
 
 ## Naming
 
-Follow these naming conventions and capitalizations when referring to NuGet and related components.
+Follow these naming conventions and capitalizations when referring to Tizen and related components.
 
-NuGet: refers to the technology.
+Tizen: refers to the technology.
 
 ### Heading capitalizations
 
@@ -57,7 +59,7 @@ Always include a meaningful description of the image in the markdown alt-text be
 
 ### Inline code
 
-Delineate inline code with grave accents (backticks), as in `Tizen pack`. This inline formatting is used for the following:
+Delineate inline code with grave accents (backticks), as in `Tizen package`. This inline formatting is used for the following:
 
 - Code
 - Identifiers
@@ -108,3 +110,5 @@ Markdown can't be used within HTML blocks.
 **Reference**
 
 We referred to https://github.com/NuGet/docs.microsoft.com-nuget.
+
+
