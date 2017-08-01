@@ -1,4 +1,4 @@
-# *Documentation* Setting up Development Environment
+# Setting up Development Environment
 
 This topic provides information on how to set up a development environment, including:
 
@@ -93,7 +93,7 @@ To configure SSH for Gerrit access:
    The following message indicates that SSH connection has been established successfully:
 
    ```
-   **** Welcome to Gerrit Code Review **** 
+   **** Welcome to Gerrit Code Review ****
    ```
 
 ### 3 Configuring Git for Gerrit Access
@@ -437,7 +437,7 @@ Other examples:
   ​
 
   ```
-  [general]profile = profile.3.0-ivi_emulator 
+  [general]profile = profile.3.0-ivi_emulator
   ```
 
 Each `profile` entry in the `.gbs.conf` file specifies multiple `repo` entries, and each `repo` entry specifies a URL where RPM files used in the GBS build are located.
@@ -512,14 +512,14 @@ To allow git access through the proxy:
 
    ```
    #!/bin/bash
-    
+
    PROXY=<Proxy_Address>
    PORT=<Port>
-    
+
    case $1 in
    # list git servers here that you do not want to use
    # the proxy with, separated by a pipe character '|' as below:
-    
+
    review.tizen.org)
    METHOD="-X connect"
    ;;
@@ -530,7 +530,7 @@ To allow git access through the proxy:
    #METHOD="-X 4 -x ${PROXY}:${PORT}"
    ;;
    esac
-    
+
    nc $METHOD $*
    ```
 

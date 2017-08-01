@@ -18,11 +18,11 @@ If you're adding a top-level node to the TOC.md, also make an entry for it in TO
 You can export TOC.md without styple to make TOC.html
 
 ## Contribution workflow
-1. Visit the page to edit on portal.tizen.org/docs, then click the Edit button on the top right. This brings you to the appropriate markdown page in the repo.
+1. Visit the page to edit on portal.tizen.org/docs (TBD), then click the Edit button on the top right. This brings you to the appropriate markdown page in the repo.
 2. Edit the markdown:
     - If you're including images (use PNGs, generally), place them in the media folder that's in the topic's folder. Links are then media/<image_name>.png.
     - Relative links to other pages in this docset should be in the form ../<folder>/<topic-file>.md including the training .md. If you're linking to another topic in the same folder, then ../<folder>/ can be omitted. When using anchors, always remember to include the .md before the #.
-    - When using external links, especially to port.tizen.org/docs(TBD), omit any language tag like "en-us" so that a reader in another language lands on a target page in that same language if it's available.
+    - When using external links, especially to portal.tizen.org/docs (TBD), omit any language tag like "ko" so that a reader in another language lands on a target page in that same language if it's available.
 3. When you're done, enter a commit message below, and click Propose file change.
 4. Send a pull request for your change. We review PRs on a regular basis.'
 5. Thank you!
@@ -84,6 +84,18 @@ The opening ``` should be followed by a language code for proper syntax coloring
 
 The only case when you should use ``` without a language tag is when creating a block of fixed-point text that isn't related to any kind of code. In these cases you can also just indent the code block, which can be preferable because it visually separates the code in an editor.
 
+### Callouts
+
+portal.tizen.org/docs (TBD) uses blockquotes for callouts, that is, lines starting with ">".
+
+Callout sections with ">" only will appear with a solid gray line to the left.
+
+You can also use one of the following callout tags on the first line that will create a shaded callout in the indicated color:
+
+| Tag | Shading color | Topic with examples |
+| --- | --- | --- |
+| `> [!Note]` | Light blue, use for callouts without any special emphasis. | (TBD) |
+
 ### Links
 
 In general, always use the title of the target page as the link text rather than words like "see here" or "this documentation".
@@ -98,7 +110,7 @@ Bare URLs are not automatically converted into links.
 
 If you need to do something that markdown can't handle, use inline HTML. An example is creating a bullet list inside a table.
 
-Use &lt; and &gt; for < and > characters outside a code block or inline code (delimited by backticks `).
+Use `&lt;` and `&gt;` for < and > characters outside a code block or inline code (delimited by backticks `).
 
 Block-level HTML elements have a few restrictions:
 

@@ -2,21 +2,13 @@
 
 # What is Tizen?
 
-## [Tizen](open-source/tizen/tizen.md)
-
-## [Mobile](open-source/tizen/mobile.md)
-
-## [Wearable](open-source/tizen/wearable.md)
-
-## [TV](open-source/tizen/tv.md)
-
-## [IoT (?)](open-source/tizen/iot.md)
-
-
+## [Tizen](tizen/tizen.md)
+## [Mobile](tizen/mobile.md)
+## [Wearable](tizen/wearable.md)
+## [TV](tizen/tv.md)
+## [IoT (?)](tizen/iot.md)
 
 # Open Source Tizen
-
-## About Open Sourece Project (www.tizen.org contents)
 ### [Overview](open-source/about/tizen-open-source-overview.md)
 ### [Terms of Service](open-source/about/terms-of-service.md)
 ### [Brand Guidelines](open-source/about/brand-guidelines.md)
@@ -25,9 +17,7 @@
 
 ## Developing
 ### [Installing Development Tools](open-source/developing/installing.md)
-
 ### [Setting up Development Environment](open-source/developing/setting-up.md)
-
 ### [Cloning Tizen Source Files](open-source/developing/cloning.md)
 ### [Building Packages Locally with GBS](open-source/developing/building.md)
 ### [Building All Packages Locally with GBS](open-source/developing/building-all.md)
@@ -40,7 +30,12 @@
 ### [Overview](open-source/porting/overview.md)
 ### [Kernel](open-source/porting/kernel.md)
 ### [System](open-source/porting/system.md)
-### ...
+### [Graphics and UI](open-source/porting/graphics-and-ui.md)
+### [Multimedia](open-source/porting/multimedia.md)
+### [Connectivity](open-source/porting/connectivity.md)
+### [Location](open-source/porting/location.md)
+### [Telephony](open-source/porting/telephony.md)
+### [Application](open-source/porting/application.md)
 
 ## Tizen RT
 ### [Tizen Overview](open-source/tizen-rt/00-tizen-rt-overview.md)

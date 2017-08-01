@@ -1,7 +1,10 @@
 # Tizen Source Code
 
-------
-(TODO: need to modify this section for Tizen)
+*TODO: need to modify*
+
+About Open Sourece Project (www.tizen.org contents)
+
+
 
 Tizen is an open source software stack created for a wide array of devices with different form factors. The primary purposes of Tizen are to create an open software platform available for carriers, OEMs, and developers to make their innovative ideas a reality and to introduce a successful, real-world product that improves the mobile experience for users.
 
@@ -11,11 +14,9 @@ We also wanted to make sure there was no central point of failure, where one ind
 
 # Governance Philosophy
 
-------
-
 Tizen is open source by nature and the identity featured below has been created to capture the freedom that open source allows. It has been designed to be flexible and allows for certain customization.
 
-Uncontrolled customization can, of course, lead to incompatible implementations. To prevent this, the Tizen Open Source Project also maintains theÂ [Tizen Compatibility Program](http://source.Tizen.com/compatibility/index.html), which spells out what it means to be "Tizen compatible" and what is required of device builders to achieve that status. Anyone can (and will!) use the Tizen source code for any purpose, and we welcome all legitimate uses. However, in order to take part in the shared ecosystem of applications we are building around Tizen, device builders must participate in the Tizen Compatibility Program.
+Uncontrolled customization can, of course, lead to incompatible implementations. To prevent this, the Tizen Open Source Project also maintains the [Tizen Compatibility Program](http://source.Tizen.com/compatibility/index.html), which spells out what it means to be "Tizen compatible" and what is required of device builders to achieve that status. Anyone can (and will!) use the Tizen source code for any purpose, and we welcome all legitimate uses. However, in order to take part in the shared ecosystem of applications we are building around Tizen, device builders must participate in the Tizen Compatibility Program.
 
 
 

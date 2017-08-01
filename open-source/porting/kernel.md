@@ -1,7 +1,8 @@
-# Development Environment Setup
+# Kernel
 
-To set up the Tizen OS development environment and to obtain information regarding development, see [Developing](../developing/01_setting_up.md )
+## Development Environment Setup
 
+To set up the Tizen OS development environment and to obtain information regarding development, see [Developing](../developing/setting-up.md )
 
 
 ## Kernel Build
@@ -24,17 +25,17 @@ To create the image by using MIC, see [MIC Image Creator](https://source.tizen.o
 
 
 
-# Tizen Bootup Overview[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide&action=edit&section=5)]
+# Tizen Bootup Overview
 
 This section provides a brief overview of the typical booting sequence, starting from the boot loader to the kernel and the platform.
 
 [![Boot-1.png](https://wiki.tizen.org/images/thumb/b/b6/Boot-1.png/500px-Boot-1.png)](https://wiki.tizen.org/File:Boot-1.png)
 
-## Kernel Bootup[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide/Tizen_Bootup_Overview&action=edit&section=T-1)]
+## Kernel Bootup
 
 The Tizen bootup process is the same as any other [Linux](https://wiki.tizen.org/Linux) kernel. Just make sure that the correct machine ID and the boot arguments are passed from the boot loader.
 
-## Platform Bootup[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide/Tizen_Bootup_Overview&action=edit&section=T-2)]
+## Platform Bootup
 
 After mounting the initial RAM disk image, `initramfs` hands over the control to `systemd` as system manager daemon in the Tizen platform. From this point, `systemd` is responsible for probing all remaining hardware, mounting all necessary file systems and spawning all configured services. Basically system boot-up process is split up in various discrete steps. To synchronize point during start-up, target units (some file whose name ends in `.target`) are used for grouping units. The boot-up process is highly parallelized in each target so that the order in which specific target units are reached is not deterministic. The `system-plugin-slp` is an OAL plugin for configuration setting such as mount point (`/etc/fstab`).
 
@@ -59,17 +60,17 @@ The following figure shows the overview of normal booting sequence in Tizen plat
 
 - `graphical.target`Special target unit for setting up a graphical environment.Some important daemons (such as access control server and OMA DS agent server) that must have root permission are launched at this point.Tizen platform uses the `systemd` user session for App privilege daemons.Some daemons related with graphic system such as Enlightenment (Windows manager) are launched as App privilege in this phase.Tizen platform has its special target for middleware and mobile service: `tizen-middleware.target` starts the platform service daemons, such as calendar, contacts, email, message, sound, and download provider. `tizen-mobile-session.target` starts some service daemons related with the mobile session.
 
-# BSP Customization[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide&action=edit&section=6)]
+# BSP Customization
 
 This section covers the basic configuration, setup, and build procedure required for building the boot loader and the kernel image for [ARM](https://wiki.tizen.org/ARM).
 
-## Boot Loader Fundamentals[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide/BSP_Customization&action=edit&section=T-1)]
+## Boot Loader Fundamentals
 
 Boot loader is a small piece of software that is required to perform the basic hardware and peripheral initialization and load the kernel and proper device tree binary for the device to RAM. For the Tizen platform, the boot loader comes in 2 parts. The first part is the primary boot loader and the second part is the secondary boot loader. The primary boot loader is the proprietary boot loader. The secondary boot loader is the open source boot loader u-boot, which is customized further for the Tizen platform.
 
 If your platform is already loaded with the compatible boot loader software, you can skip this section and move directly to the kernel section.
 
-## Boot Loader Setup and Build[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide/BSP_Customization&action=edit&section=T-2)]
+## Boot Loader Setup and Build
 
 To build the Tizen TM1 boot loader:
 
@@ -83,7 +84,7 @@ To build the Tizen TM1 boot loader:
 
 Be careful when you modify the boot loader, as there is a risk of breaking the device for good.
 
-## Boot Loader Kernel Parameters[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide/BSP_Customization&action=edit&section=T-3)]
+## Boot Loader Kernel Parameters
 
 The command line parameters can be passed from boot loader to [Linux](https://wiki.tizen.org/Linux) kernel. Here are some example command line parameters:
 
@@ -95,11 +96,11 @@ The command line parameters can be passed from boot loader to [Linux](https://wi
 
 ```
 
-# Kernel Fundamentals[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide&action=edit&section=7)]
+# Kernel Fundamentals
 
 The kernel is the operating system that drives the platform. In this case, the kernel refers to the open source [Linux](https://wiki.tizen.org/Linux) kernel that is customized for the Tizen platform. The following section gives a brief overview about the Tizen kernel setup, configuration, and the build procedure for building a Linux kernel for your Tizen platform. The output of the kernel binary is a uImage that is suitable only for a `u-boot` boot loader. If you have chosen a secure booting configuration in your boot loader, this uImage must be compatible with your boot loader.
 
-## Kernel Configurations[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide/Kernel_Fundamentals&action=edit&section=T-1)]
+## Kernel Configurations
 
 To download the Tizen kernel source package, see [Getting Source Code and Build](https://wiki.tizen.org/Porting_Guide#Getting_Source_Code.26Build). Set up or modify your kernel configuration, use the appropriate `defconfig` file from `arch/arm/configs/` ( [ARM](https://wiki.tizen.org/ARM) CPU ).
 
@@ -116,9 +117,9 @@ If you want to use `initramfs`, you can use these configurations:
 - `CONFIG_INITRAMFS_ROOT_GID`
 - `CONFIG_INITRAMFS_COMPRESSION_NONE/GZIP/BZIP2/LZNA/LZO`
 
-## Tizen File System[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide/Kernel_Fundamentals&action=edit&section=T-2)]
+## Tizen File System
 
-### Virtual Filesystem (VFS )[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide/Kernel_Fundamentals&action=edit&section=T-3)]
+### Virtual Filesystem (VFS )
 
 The virtual file system (VFS) is an abstraction layer on top of a more concrete file system (such as ext2, jfs, and ext4). The VFS provides a switching layer between the SCI (system call interface) and the file systems supported by the kernel, as shown in the following figure.
 
@@ -128,7 +129,7 @@ At the top of the VFS is a common API abstraction of functions, such as open, cl
 
 Below the file system layer is the page cache, which provides a common set of functions to the file system layer (independent of any particular file system). This caching layer optimizes access to the physical devices by keeping data around for a short time (or speculatively read ahead, so that the data is available when needed). Below the page cache are the device drivers, which implement the interface for the particular physical device.
 
-### Tizen Partition Layout[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide/Kernel_Fundamentals&action=edit&section=T-4)]
+### Tizen Partition Layout
 
 The following description is an example of the Tizen partition layout. The product vendor can modify the sequence or partition layout for their devices, as needed.
 
@@ -141,29 +142,29 @@ The `boot` partition is mounted in the `/boot` directory of `rootfs`. Here `s-bo
 3. Third partition is reserved for the future.
 4. The `platform` partition is mounted on the root directory. It contains fundamental frameworks for Tizen and some general utility for Linux. It canbe provided as a `platform.img` file.
 5. The `data` partition is mounted in the `/opt` directory and it includes applications, libraries of applications, and the platform database. It can be provided as a `data.img` file.
-6. The CSC (Customer Software Configuration) partition is mounted in the `/mnt/csc` directory. It can store the customer’s software configuration, such as the default language and time zone.
+6. The CSC (Customer Software Configuration) partition is mounted in the `/mnt/csc` directory. It can store the customerâ€™s software configuration, such as the default language and time zone.
 7. The UMS (USB Mass Storage) partition is mounted in the `/opt/media` directory and it includes default (media) contents. It can be provided as `ums.img`.
 8. Each image file, `platform.img`, `data.img`, and `ums.img` can be zipped for downloading, for example, `<IMAGE_NAME>.tar.gz`.
 
-### File System Hierarchy Standard in Tizen[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide/Kernel_Fundamentals&action=edit&section=T-5)]
+### File System Hierarchy Standard in Tizen
 
 Each partition has the hierarchy illustrated in the following figure.
 
 [![Filesystemhierarchy.png](https://wiki.tizen.org/images/thumb/3/39/Filesystemhierarchy.png/600px-Filesystemhierarchy.png)](https://wiki.tizen.org/File:Filesystemhierarchy.png)
 
-### Supported File Systems in Tizen[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide/Kernel_Fundamentals&action=edit&section=T-6)]
+### Supported File Systems in Tizen
 
 Tizen supports the Extended 4 (ext4) file system. The Tizen kernel has to be compiled to enable support for the other file systems like JFS, XFS, BTRFS, and Reiserfs.
 
-### Default File System in Tizen[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide/Kernel_Fundamentals&action=edit&section=T-7)]
+### Default File System in Tizen
 
 The Extended 4 (ext4) file system is configured as a default file system for Tizen.
 
-### Configuration[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide/Kernel_Fundamentals&action=edit&section=T-8)]
+### Configuration
 
 The ext4 kernel configuration is done like this standard kernel configuration.
 
-### Reference[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide/Kernel_Fundamentals&action=edit&section=T-9)]
+### Reference
 
 These are the configuration options to be enabled in the kernel configuration file.
 
@@ -172,9 +173,7 @@ These are the configuration options to be enabled in the kernel configuration fi
 - `CONFIG_EXT4_USE_FOR_EXT23=y`
 - `CONFIG_EXT4_FS_SECURITY=y`
 
-## MMC/SD/SDIO[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide/Kernel_Fundamentals&action=edit&section=T-10)]
-
-### Description[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide/Kernel_Fundamentals&action=edit&section=T-11)]
+## MMC/SD/SDIO
 
 Tizen supports MultiMediaCard, Secure Digital, and Secure Digital I/O Support. The MMC driver is implemented on top of host controller (such as SDHCI controller driver) and supports MMC, SD, SD High Speed, and SDHC cards.
 
@@ -182,7 +181,7 @@ If MMC is your booting device, read-write APIs, partition management, and flashi
 
 [![Mmc.png](https://wiki.tizen.org/images/thumb/6/6e/Mmc.png/500px-Mmc.png)](https://wiki.tizen.org/File:Mmc.png)
 
-### MSHCI/SDHCI Features Overview[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide/Kernel_Fundamentals&action=edit&section=T-12)]
+### MSHCI/SDHCI Features Overview
 
 The MMC/SD/SDIO driver supports the following features:
 
@@ -198,11 +197,11 @@ MMC subsystem structure is divided into 3 parts:
 - Protocol stack for MMC, SD, SDIO located at `/driver/mmc/core/`
 - Host controller driver located at `/driver/mmc/host/`
 
-### Hotplug MMC Event Handling in Tizen[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide/Kernel_Fundamentals&action=edit&section=T-13)]
+### Hotplug MMC Event Handling in Tizen
 
 Based on the hotplug event handling, the notification is passed to the `deviced` for device status changes. It detects, mounts, and monitors the status of the SD card.
 
-### Reference[[edit](https://wiki.tizen.org/index.php?title=Porting_Guide/Kernel_Fundamentals&action=edit&section=T-14)]
+### Reference
 
 The SDHCI controller is supported in the MMC/SD/SDIO interface. The Mobile Storage Host controller is only supported in the MMC interface.
 

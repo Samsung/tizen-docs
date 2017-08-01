@@ -1,6 +1,6 @@
 
 
-# Introduction
+# Overview
 
 
 Tizen is a standards-based platform that provides Web and native APIs for developing [applications](https://wiki.tizen.org/Applications) for multiple [device](https://wiki.tizen.org/index.php?title=Device&action=edit&redlink=1) categories. Tizen is currently targeted for smartphones and tablet devices, though more device types will be available in the future.
