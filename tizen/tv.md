@@ -1,8 +1,8 @@
 ##### App Development Process
 
-| [Creating](http://www.samsungdforum.com/TizenGuide/?FolderName=tizen1221&FileName=index.html)[Packaging](http://www.samsungdforum.com/TizenGuide/?FolderName=tizen1261&FileName=index.html) | [Coding](http://www.samsungdforum.com/TizenGuide/?FolderName=tizen1721&FileName=index.html)[Certifying](http://www.samsungdforum.com/TizenGuide/?FolderName=tizen3531&FileName=index.html) | [Building](http://www.samsungdforum.com/TizenGuide/?FolderName=tizen4151&FileName=index.html)[Distributing](http://www.samsungdforum.com/Support/Distribution) |
+| [Creating](http://www.samsungdforum.com/TizenGuide/?FolderName=tizen1221&FileName=index.html) | [Coding](http://www.samsungdforum.com/TizenGuide/?FolderName=tizen1721&FileName=index.html)[Certifying](http://www.samsungdforum.com/TizenGuide/?FolderName=tizen3531&FileName=index.html) | [Building](http://www.samsungdforum.com/TizenGuide/?FolderName=tizen4151&FileName=index.html)[Distributing](http://www.samsungdforum.com/Support/Distribution) |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-|                                          |                                          |                                          |
+| [Packaging](http://www.samsungdforum.com/TizenGuide/?FolderName=tizen1261&FileName=index.html) |                                          |                                          |
 
 ------
 
