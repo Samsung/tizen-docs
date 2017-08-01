@@ -1,108 +1,128 @@
-Release Date: 18 Jan, 2017
+# Tizen 4.0 M2
 
-The Tizen 3.0 adopts various new features such as high performance graphics, latest web technology, intensified security, and multi-user supports.
-
-
+Release Date: 31 May, 2017
 
 ## Release Notes
 
-### System (Kernel and System Framework)
+### System (Kernel and System F/W)
 
 **New and Changed Features**
 
-- Systemd/Service initialization time enhancement
-- First service launch time has been improved by optimizing the unit/smack initialization time.Service initialization time has been improved by utilizing tmpfiled.
-- Directory hierarchy enhancement and compatibility support
-- System directory structure has been refined to support read-only directories and multi-user.Hard-coded path in the source code has been removed.Support for a platform default user has been added.Support for 2.4 contents and application directories has been added.
-- Storage API and block module enhancement
-  - USB/SD Card external storage has been enumerated with the libstorage API.Support for multiple partitions and devices has been added.Block dbus connection has been separated to a special-purpose block module.
-- Device HAL upgrade
-  - Common device HAL structure has been added.USB configfs is supported.Default device adaptation layer for a standard kernel interface has been added.
-- Power management enhancement
-  - Dynamic power state transition has been added.Power state actor for supporting several profiles and devices has been added.
-- Debug and fail-safe handling system enhancement
-  - New kmsg and pipe log backend have been added.The kmsg, pipe, android logger backends are supported.Runtime watchdog functionality has been added.Callstack generation based on ptrace is supported optionally to eliminate the double crash issue.
-- Feedback system enhancement
-  - Feedback daemon to support multiple patterns has been added.Various patterns are supported, such as combination of duration and waiting.
-- System information enhancement
-  - GDBM backend to support a light-weight system registry to improve performance has been added.
-- Cynara-based dbus policy support through dbus-daemon
-  - Privilege-based access check has been added.
-- New APIs
-  - IR device APIs have been added.
-  - USB Host APIs have been added.
-  - Battery and charger status APIs have been added.
-  - Detailed build information has been added.
-  - CPU frequency APIs have been added.
-  - Storage change event handler API has been added.
-- Major open source upgrade and changes
-  - Systemd version has been upgraded from v216 to v219.
-  - Pwdutils has been replaced with shadow-utils.
-  - Libfuse version has been upgraded to 2.9.6.
-  - Fsck-msdos and newfs-msdos have been separated from deviced.
-  - The libdbus version has been upgraded to 1.10.6.
-  - In TV, the kdbus version has been upgraded to V4
+- System F/W
+
+  - The PASS (Power Aware Service System) daemon has been added for HW (CPU, GPU, and memory) resource management.
+  - Open source has been upgraded and changed:
+    - Systemd version has been upgraded from 219 to 231.
+    - Libgudev package has been detached from Systemd.
+    - Initrd package has been added.
+    - Libconfig has been upgraded to 1.6.
+    - Libusb has been upgraded to 1.0.21.
+  - The resource management daemon has been changed to make resourced lighter for IoT devices.
+  - New APIs have been added:
+    - Dlog C# internal APIs
+    - Getting physical memory size API
+
+**Fixes**
+
+- System F/W
+
+  - Many Dbus/Kdbus bugs have been fixed.
+  - The systemd-journald log starvation bug has been fixed.
+  - The dlogutil dump mode (nonblack) bug has been fixed.
+
 
 ### System (Base)
 
 **New and Changed Features**
 
-- Base library upgrade
-  - Address sanitizer building is supported.
-  - ICU binary data file has been changed to text data file.
-  - unzip has been patched for CVE-2015-7697.
-  - expat version has been upgraded to 2.2.0.
-    - CVE-2016-4472
-  - iniparser version has been upgraded to 3.2.
+- Base Library
+
+  - Open source libraries have been upgraded:
+
+    - Sqlite (3.14.2)
+    - leveldb (1.20)
+    - libzypp (16.3.1)
+    - libzypp-binding (0.7.3)
+    - zypper (1.13.14)
+    - libsolv (0.6.23)
+    - re2 (20161101)
+    - re2c (0.16)
+    - pbzip2 (1.1.13)
+    - json-glib (1.2.0)
+    - jsoncpp (1.7.7)
+    - icu (57.1)
+
+  - New open source packages have been added:
+
+    - python-mako (1.0.6)
+    - myton-mock (2.0.0)
+    - python-funcsigs (1.0.2)
+    - python-argparse(1.4.0)
+    - python-linecache2 (1.0.0)
+    - python-traceback2 (1.4.0)
+    - python-unittest2 (1.1.0)
+    - python-pbr (2.0.0)
+    - python-six (1.10.0)
+    - python-setuptools (34.3.3)
+    - python-packaging (16.8)
+    - python-MarkupSafe (1.0)
+    - python-pyparsing (2.2.0)
+    - python-appdir (1.4.0)
+
+**Fixes**
+
+- Upstream/file
+
+  - upstream/file rolled back the JPEG data file to support the old JPEG file conversion.
+
+- Upstream/boost
+
+  - The build option has been modified to reduce the build time (approximately from 30 to 10 minutes).
+
+- capi-base-utils
+
+  - i18nutil has been added to generate an i18n report for all locales supported in Tizen.
 
 
-- System-settings API enhancement
-  - Functions for adding or deleting string-list type data for ringtone-list (internal json handling) has been added.
-- i18n (base-utils) API enhancement
-  - Detect host time zone function has been added.
-  - Ucalendar wrapper API has been added.
-  - Utmscale wrapper API has been added.
-  - Ushape wrapper API has been added.
-  - Ubidi wrapper API has been added.
-- Vconf-internal-keys one-branch policy adoption
-  - Type check XML scheme validation for ‘type’ specifier at build-time has been added.
-  - ‘layer’ by automation has been removed.
-- tzdata-update parser plugin has been added.
-  - Support for updating tzdata at runtime by downloadable application has been added.
 
-### Application Framework
+### Application FW
 
 **New and Changed Features**
 
-- Application
-  - New event API to keep last event data has been added.
-  - Support for text input delegation has been added.
-  - Several new operations have been added.
-- Application IPC
-  - Data-control data change notification API has been added.
-  - Support for Data control bulk management has been added.
-- Application package installer
-  - The optional mount installation feature has been added.
-  - Separate permission for users for installing global applications and user-private applications has been added. Only admin users can install global applications.
-  - Support for listening for the disable/enable application event has been added.
-  - New filter property for application information has been added.
-- Application launcher
-  - Application background launch mode has been added.
-  - Support for color-depth for a splash screen has been added.
-- Notification
-  - Support for direct reply has been added.
-  - Support for notification template has been added.
-- Widget
-  - Support for multiple widget feature has been added.
-  - Widget framework has been rewritten to support multiple viewer concept.
+- Application Core/Launcher
 
-As a common feature, multi-user support has been added.
+  - The appcore libraries have been rewritten to support all application models with the same code base.
+  - The appcore simple plugin feature has been added.
+  - The rua API has been improved to support an update change callback.
+
+- Package Manager
+
+  - A new app update flag API has been added.
+  - A new package archive API has been added.
+  - The pkgmgr database-related code has been rewritten to make it more efficient.
+
+- Notification
+
+  - The bigpicture UX feature has been added.
+
+- Widget Framework
+
+  - The screen connector library has been improved to support screen capture and multiple widget viewer in a more structured way.
+  - A new API for getting the widget setup app ID has been added.
+  - A new API for getting the watch setup app ID has been added.
+
+- Application IPC
+
+  - The message port registration event callback feature has been added.
+  - data-control trusted communication has been added.
+
 
 ### Window System
 
 **New and Changed Features**
 
 - Extended Wayland Protocols
+
   - tizen_screen_rotation allows the display server to let a client ignore the output transform.
   - tizen_screenshooter is extended to support the auto rotation for the screen capture.
   - tizen_video_object is extended to control the video object’s visibility in regard to the topmost window.
@@ -113,6 +133,7 @@ As a common feature, multi-user support has been added.
 
 
 - Enlightenment Wayland Display Server
+
   - Mouse in/out event creation and render request on provider demand are supported for a remote surface client.
   - A transition effect according to the launching client window’s type is applied using tizen_launch.
   - A tws_dummy_extension handler for tizen-ws-shell extensibility has been added.
@@ -121,32 +142,53 @@ As a common feature, multi-user support has been added.
   - The debugging tools are extended for:
     - Plane state
     - Pending commit
+
 - wayland-tbm
+
   - Support has been added for checking the hardware compositing state of the client for front buffer rendering.
+
 - libpepper-evdev
+
   - The libpepper-evdev library reads events from input device nodes, such as /dev/input/eventX, and creates pepper input events.
   - The library currently only processes a key event and creates a pepper keyboard event.
+
 - libpepper-keyrouter
+
   - The libpepper-keyrouter library initializes the keyrouter in a pepper server and deals with keyrouter protocol requests from clients.
   - The library gets a key grab request from a client and sends 1 or more grabbed keys to the clients through the wl_keyboard protocol interface.
+
 - Tizen ws Shell
+
   - A new tzsh_quickpanel_extension_get API has been added for extensibility.
+
 - efl-util
+
   - Input generation with a specified device has been added:
+
     - A new efl_util_input_initialize_generator_with_name() API has been added.
     - The existing input generation API provides event generation with a predefined device name, such as "Input Generator".
     - The new API provides input generation with the device name provided from a client.
     - When a specific device name is needed, the new API can be utilized to simulate the device completely.
+
   - Support has been added for auto-rotating the screen capture image:
+
     - efl_util_screenshot_set_auto_rotation()/
       efl_util_screenshot_get_auto_rotation()
+
 - Tizen HAL
+
   - Tizen display HAL
+
     - Support has been added for the layer commit to ensure an output commit per each vblank:
+
       - “TDM_COMMIT_PER_VBLANK” environment
+
     - Support has been added for controlling the client vblank fps in runtime.
+
     - Support has been added for the protocol trace between the TDM server and client.
+
   - Tizen buffer HAL
+
     - Support has been added for the setting/getting function for the DRM file descriptor to share it between TDM and TBM.
     - New error enumeration has been added for the TBM surface queue:
       - TBM_SURFACE_QUEUE_ERROR_ALREADY_EXIST
@@ -154,19 +196,26 @@ As a common feature, multi-user support has been added.
     - Support has been added for the can-dequeue callback to let the user know when a TBM surface queue buffer can be dequeued.
     - Support has been added for buffering the TBM surface queue trace when the state is changed.
     - Support has been added for the capture of the TBM surface to a file.
+
   - Tizen EGL porting layer
+
     - New APIs have been added to wayland-egl to support the prerotation feature:
+
       - wl_egl_window_set_rotation
       - wl_egl_window_get_capabilities
+
     - The behavior associated with the tpl_surface_set_frontbuffer_mode API has been changed to proper front buffer rendering.
 
 **Fixes**
 
 - Tizen HAL
+
   - The TDM vblank wrong behavior has been fixed.
   - The TDM buffer management functionality, which caused screen tearing, has been fixed.
   - The TDM thread deadlock bug has been fixed.
+
 - Enlightenment Wayland Display Server
+
   - The bug about the screen flickering when hardware compositing mode is changed has been fixed.
   - The window rotation abnormal behavior has been fixed.
   - The floating window’s move/resize abnormal behavior has been fixed.
@@ -175,11 +224,13 @@ As a common feature, multi-user support has been added.
   - The synchronization between a server and client in the ‘copy and paste’ feature has been fixed.
   - The move/resize bug in the system cursor image has been fixed.
 
+
 ### Graphics Engine
 
 **New and Changed Features**
 
 - DALi (3D UI Toolkit)
+
   - Actor and Stage
 
     - A top margin size has been added to Stage.
@@ -190,20 +241,30 @@ As a common feature, multi-user support has been added.
     - New Raise and Lower APIs have been added to Actor.
     - A visibility change signal has been added to Actor.
     - Layer::TREE_DEPTH_MULTIPLIER has be deprecated.
+
   - Property
+
     - Chaining support for Property::Array has been added.
     - Properties have been changed to update a value synchronously.
+
   - Image
+
     - Support for the GIF image has been added.
+
   - Window
+
     - Support for focus control has been added.
     - Support for visibility control has been added.
     - Support for the auxiliary hint has been added.
     - Support for the notification level, screen mode, and brightness has been added.
+
   - Key event and input
+
     - Support for the device name and device class of the key event has been added.
     - Various new APIs have been added to IMF Manager.
+
   - Control and Visual
+
     - TextVisual has been added.
     - AnimatedImageVisual has been added.
     - Support for stylable transitions has been added.
@@ -223,9 +284,13 @@ As a common feature, multi-user support has been added.
     - A property to set a pixel size has been added to text controls.
     - A property to enable an ellipsis has been added to TextLabel.
     - Properties to control text auto-scrolling have been added to TextLabel.
+
   - 3D rendering and animation
+
     - Support for the animation of Renderer properties when offstage has been added.
+
   - NUI (C# interface)
+
     - DALi was originally developed in C++, then subsequently developed in parallel in C#. A separate Tizen NUI branch was created from this C# DALi branch.
     - More than 400 easy-to-use C# properties are newly added and bound to DALi native properties.
     - C# events are implemented and bound by the native signal/slot mechanism, which enables event chaining through the “+=” operator.
@@ -249,22 +314,33 @@ As a common feature, multi-user support has been added.
       - TextEditor: Provides a multi-line editable text editor.
       - PushButton: Changes its appearance according to its input events.
       - Window: Is used internally for drawing and managing Layers.
+
 - Evas Render Engine
+
   - Evas GL Render threading
+
     - Evas GL Render threading has been added and is on by default.
+
   - TBM surface ROI mode
+
     - The adjusting ROI mode for the TBM surface has been changed from auto  to users.
+
   - EvasGL
+
     - OpenGL® ES 3.2
+
       - Support for OpenGL® ES 3.2 has been added.
       - OpenGL® ES 3.2 wrapper functions have been added in Evas_GL.h.
       - EVAS_GL_DEBUG for creating debug eglContext has been added to Evas_GL_Context_Version.
+
   - SDL
+
     - Support for the 32-bit depth window has been added.
 
 **Fixes**
 
 - DALi
+
   - The hit test has been fixed to include clipping actors as well as their children.
   - The bug in texture where Upload without parameters was incorrectly using the Texture size rather than the PixelData size has been fixed.
   - The bugs in TextureSet have been fixed.
@@ -273,7 +349,9 @@ As a common feature, multi-user support has been added.
   - The mismatch between the GetTargetSize method and the Size property of Actor has been fixed.
   - The bug that caused a crash when the key is up on a Text control has been fixed.
   - The full progress image is now shown when 100%. The bug has been fixed.
+
 - Evas Render Engine Enhancement
+
   - stride_get has now been implemented for the TBM surface in the Evas GL Engine.
   - The bug of the rotated image in an Evas object image has been fixed.
   - The memory leak in the Evas object image’s rotation function has been fixed.
@@ -285,60 +363,41 @@ As a common feature, multi-user support has been added.
 **Known Issues**
 
 - EvasGL
+
   - When MSAA is used, depth/stencil buffer is not created.
   - In EvasGL 3.2, context with robustness is not supported yet, because no drivers support this feature in Tizen devices. When driver support becomes available, this feature is added in EvasGL.
+
 
 
 ### UI Framework
 
 **New and Changed Features**
 
-- EFL Upgrade (from 1.13 to 1.16)
+- EFL
 
-  - Wayland-backed is enabled.
-  - efl-misc replaces elm-misc.
-  - efl-modules replaces elm-modules.
-  - e17-extra-config-modules is removed.
-  - A new efl-config daemon configures scalable UI setting at boot time.
-  - Notify style name of popup has been changed (popup à popup/default).
-  - The default scroller of popup has been removed. (The application must call the elm_popup_scrollable_set(popup, EINA_TRUE) function.)
-  - Item style of ctxpopup has been changed. (Use the list item rather than box.)
-  - The minimum size of a genlist item is not defined. (If necessary, the application must specify the minimum size of the genlist item by itself.)
-  - In mobile, the default theme is refined.
-  - In mobile, LazEDC and color class have been applied to default theme.
-  - EDC support for SVG files has been added.
-  - EFL vector support GL backend as well as SW backend have been added
+  - UI control and theme has been changed for Tizen 4.0 UX (TV).
+  - Package configuration has been changed:
+    - A big package (ecore) has been divided into several smaller packages (ecore-audio, ecore-avahi, ecore-buffer, ecore-con, ecore-core, ecore-drm, ecore-evas, ecore-fb, ecore-file, ecore-imf, ecore-input, ecore-ipc, ecore-wayland).
+    - The unified devel package is generated regardless of the Tizen profile.
+  - edbus has been changed to support dbus only.
+  - Test application and examples are removed from the binary image.
+  - A source repository path has been changed:
+    - From profile/PROFILE/platform/core/uifw/efl-ext to platform/core/uifw/efl-ext
 
-- In mobile, CBHM (ClipBoard History Manager) has been integrated.
-- In mobile, view manager has been added.
-- Customization APIs have been added.
-- Text Input
-  - Input framework has been changed from X-based to Wayland-based.
-  - In mobile, 3 new input languages have been added (Irish, Uzbek and Hindi).
-    The supported languages are:
-    Azerbaijani, Bulgarian, Catalan, Czech, Danish, Greek, German, English (US), Spanish, Estonian, Basque, Finnish, French, Irish, Galician, Croatian, Hungarian, Armenian, Icelandic, Italian, Japanese, Georgian, Kazakh, Korean, Lithuanian, Latvian, Macedonian, Norwegian, Dutch, Polish, Portuguese, Romanian, Russian, Slovak, Slovenian, Serbian, Swedish, Turkish, Ukrainian, Uzbek, Chinese, Chinese (Hong Kong), Chinese (Taiwan), Hindi, and Albanian
-  - The scim-launcher process has been integrated to scim-helper-launcher process.
-  - In wearable, the input delegator window has been added.
-  - Synchronous get_surrounding_text() API support has been added.
-- Voice Interaction
-  - Speech To Text feature is enabled.
-  - The server based Speech To Text engine is included as a default engine.
-  - Support for a 3rd party Speech To Text / Text To Speech engine has been added..
-  - Support the voice control framework has been added.
-  - The supported languages of the TTS engine have been extended to 28 languages.
-    The supported languages are:
-    English (US), English (UK), English (India), Korean, Spanish, Mexican Spanish, French, German, Italian, Russian, Brazilian Portuguese, Portugal Portuguese, Chinese, Chinese (Hong Kong), Chinese (Taiwan), Japanese, Hindi, Czech, Dutch, Danish, Finnish, Greek, Hungarian, Norwegian, Polish, Slovak, Swedish, and Turkish
+- Voice Control
+
+  - A new automatic voice setting API for 14 widgets has been added to vc-elm (automatic voice-enabled widgets: Button, Check, Ctx-Popup, Entry, Fastscroll, Gengrid, Genlist,  Hoversel, List, Popup, Radio, Slider, Spinner, Toolbar).
+  - The voice browsing feature has been added for Web applications.
 
 **Fixes**
 
-- Many bugs have been resolved.
+- Many bugs have been fixed.
+
+  - An exception handling code has been added.
+  - Memory leaks have been fixed.
+  - Broken link in doc has been fixed.
 
 **Known Issues**
-
-- EFL
-
-  - EFL abort on errors are enabled by default.
-  - Joystick does not work temporarily.
 
 - Accessibility
 
@@ -354,47 +413,65 @@ As a common feature, multi-user support has been added.
 
 - Customization API
 
-  - In wearable, the theme is not ready for customization.
+  - In wearable profile, the theme is not ready for customization.
 
 - Focused UI has not been fully tested.
 
 - UI mirroring has not been fully tested.
 
-- Tizen 3.0 UX has not been fully implemented, especially for visual interactions.
+- Tizen 4.0 UX is not finalized yet (UI control and theme can change later).
 
-### Multimedia Framework
+
+
+### Multimedia FW
 
 **New and Changed Features**
 
 - Recorder
+
   - APIs for getting muxed stream data have been added.
+
 - Media Content
+
   - A new API for getting video rotation information has been added.
   - A new API for getting/setting the bookmark name has been added.
   - APIs for updating file metadata (such as title, album, artist, and genre) have been deprecated.
   - The API for getting the storage name has been deprecated.
   - The cloud-related code has been deprecated.
+
 - Thumbnail Utility
+
   - A new error type has been added.
+
 - Open Source Upgrade
+
   - Tiff version has been upgraded from 4.0.6 to 4.0.7.
+
 - Player
+
   - APIs for progressive download have been deprecated.
   - The display type has been replaced with a new value.
   - New error codes have been added.
+
 - Audio
+
   - The SoundServer WAV handling logic has been improved by replacing the legacy parser and libtremo with libsndfile.
+
 - MediaTool
+
   - A new media format has been added.
   - A new API for setting extra data has been added.
 
 
-### Network and Connectivity
+
+### Network & Connectivity
 
 **New and Changed Features**
 
 - Data Network
+
   - New features and APIs have been added:
+
     - In mobile, wearable, and TV profiles, a new connection API for getting the DHCP server address has been added.
     - In mobile, wearable, and TV profiles, the enum for the pdn type has been deprecated.
     - In mobile, wearable, and TV profiles, connection APIs for adding/removing a routing table have been added.
@@ -416,9 +493,13 @@ As a common feature, multi-user support has been added.
     - In the mobile profile, the default VPN (IPsec) feature support has been added.
     - In mobile and wearable profiles, the wifi-direct tethering feature support has been added.
     - In mobile and wearable profiles, the STC (Smart Traffic Control) feature support has been added.
+
   - Major open source upgrades and changes:
+
     - Curl has been upgraded from 7.40 to 7.53 for stability.
+
 - Telephony
+
   - In mobile, wearable, and TV profiles, the telephony manager plugin has been added.
   - In mobile, wearable, and TV profiles, the feature-based handling support has been added.
   - In mobile, wearable, and TV profiles, SQLite3 insertion operations for the packet service plugin have been improved.
@@ -428,18 +509,29 @@ As a common feature, multi-user support has been added.
   - In mobile and wearable profiles, LTE attach apn logic support has been added.
   - In the wearable profile, the call manager library support has been added.
   - In the wearable profile, the standalone mode telephony framework support has been added.
+
 - Connectivity
+
   - New features and APIs have been added:
+
     -  In mobile and wearable profiles, support for OMAPI 3.2 has been added.
+
   - Major open source upgrade and change has been made.
+
 - Bluetooth
+
   - New features and APIs have been added:
-    -  In mobile, wearable, and TV profiles, IPSP (Internet Protocol Support Profile) APIs have been added.
-    -  In mobile, wearable, and TV profiles, GATT MTU Exchange APIs have been added.
-    -  In mobile, wearable, and TV profiles, LE Scan filtering APIs have been added.
+
+    - In mobile, wearable, and TV profiles, IPSP (Internet Protocol Support Profile) APIs have been added.
+    - In mobile, wearable, and TV profiles, GATT MTU Exchange APIs have been added.
+    - In mobile, wearable, and TV profiles, LE Scan filtering APIs have been added.
+
   - Major open source upgrades and changes:
+
     - Bluez has been upgraded from 5.37 to 5.43.
+
 - IoTCon
+
   - Dependency with system-settings has been removed.
 
 **Fixes**
@@ -451,82 +543,127 @@ As a common feature, multi-user support has been added.
 - Sample code bugs in the IoTCon document have been fixed.
 
 
+
 ### Security
 
 **New and Changed Features**
 
 - Device Encryption / Secure Storage
+
   - Device encryption:
+
     - Internal storage encryption has been added.
     - External storage encryption has been added.
+
   - Secure erase has been added.
+
 - Trusted Execution Environment
+
   - A new C# TEE Client API has been added:
+
     - This API only works on devices supporting TEE.
+
 - App-defined Privilege
+
   - The ways to define and declare an app-defined privilege have been added.
+
 - Privilege List
+
   - In mobile and wearable profiles, the following privilege has been added:
+
     - Native
+
       - zigbee / zigbee.admin
+
   - In mobile and wearable profiles, the following privilege has been removed:
+
     - Web
+
       - nfc.admin
+
   - In mobile, wearable, and TV profiles, the following privileges have been added:
+
     - C#
+
       - tee.client
+
     - Web
+
       - apphistory.read
 
-###  Service Framework
+
+
+### Service Framework
 
 **New and Changed Features**
 
 - Sensor
+
   - Sensor URIs for existing sensors have been defined.
   - A new API for getting sensor handles with their URIs has been added.
   - A new API that allows applications to define their own sensors and publish data through the defined sensors has been added.
+
 - PIMS
+
   - Calendar
+
     - In the TV profile, Calendar Service has been added.
     - New APIs for event aggregation have been added.
+
 - Convergence
+
   - FIDO
+
     - The FIDO Platform ASM module has been added, supporting pluggable FIDO authenticators. Both Bound and Roaming type (Connectivity type: BT) are supported.
     - A FIDO platform authenticator has been added based on auth-fw.
       Note: The authenticator is not FIDO-certified and does not work for commercial FIDO servers.
+
   - Push
+
     - A service app checking routine has been added.
     - Install/uninstall for multiuser has been added.
     - Delivery of push messages when the application is in freeze state has been added.
+
   - Account Manager
+
     - Notification for deletions by package name has been added (in mobile and wearable profiles).
     - An "ADD button" string has been added in My-account setting application (in the wearable profile).
     - An accounts view for showing registered account providers has been added (in the wearable profile).
+
   - Sync Manager
+
     - Application enable/disable has been added (in mobile and wearable profiles).
 
 **Fixes**
 
 - Convergence
+
   - Push
+
     - The bug about push_request_unread_notification has been fixed.
     - The bug causing a crash when there is no record in the reg table has been fixed.
     - Wrong notification posting has been fixed.
     - Lazy mount dependency has been removed.
+
   - Account Manager
+
     - The conf name in the service file for CapabilityBoundingSet has been fixed (in mobile and wearable profiles).
     - The Global DB path for the owner user has been fixed (in mobile and wearable profiles).
     - Timing for drawing the main UI has been fixed (in the wearable profile).
+
   - Sync Manager
+
     - The application control for sync-service has been changed to aul (in mobile and wearable profiles).
     - The runtime profile build dependency has been removed (in mobile and wearable profiles).
+
+
 
 ### Web Framework
 
 **New and Changed Features**
 
 - HTML5/W3C APIs
+
   - Open source chromium M56 version has been applied for Tizen 4.0 web browser and web application runtime engine. Below HTML5/W3C standard feature/APIs have been applied.
   - Shadow DOM v1
     - A method has been added for combining multiple DOM trees into a single hierarchy and determining how these trees interact with each other within a document, thus enabling better composition of the DOM.
@@ -541,12 +678,16 @@ As a common feature, multi-user support has been added.
   - ECMAScript7 Async and Await
     - The language-level model for writing asynchronous code in ECMAScript has been improved.
 
+
+
 ### Tizen.NET
 
 **New and Changed Features**
 
 - Xamarin.Forms
+
   - Xamarin.Forms version 2.3.5 is supported and New .NET APIs have been added:
+
     - Background
     - CalendarView
     - RadioButton
@@ -554,10 +695,15 @@ As a common feature, multi-user support has been added.
     - ContextPopup
     - Dialog
     - GridView
+
 - C# 3D UI Framework
+
   - A new UI framework has been added.
+
 - C# Device API
+
   - New APIs have been added based on Native APIs:
+
     - account-svc
     - bundle
     - capi-appfw-application
@@ -624,18 +770,23 @@ As a common feature, multi-user support has been added.
     - capi-media-radio
     - voice-control
 
+
+
 ### SCM
 
 **New and Changed Features**
 
 - Build Environment
+
   - OS: Opensuse Leap 42.1
   - OBS version: 2.7.3
   - GBS version: 0.24.6
   - MIC version: 0.27.4
   - Tizen Service Repo: [http://download.tizen.org/services/archive/17.06/](http://download.tizen.org/services/archive/17.06/)
   - Tizen Tools Repo: [http://download.tizen.org/tools/archive/17.01.2/](http://download.tizen.org/tools/archive/17.01.2/)
+
 - gcc
+
   - Version has been upgraded from 4.9.2 to 6.2.1 (Linaro '16 Dec version).
   - Language C++11 is fully supported.
   - The C++ runtime library (libstdc++) uses a new ABI by default. A Dual ABI is provided by the library.
@@ -644,12 +795,16 @@ As a common feature, multi-user support has been added.
   - License files have been added to all subcomponents.
   - 64-bit libraries are provided on a 32-bit build environment.
   - The libcc1 build has been enabled.
+
 - glibc
+
   - Version has been upgraded from 2.20 to 2.24 (FSF '16 Aug version).
   - ‘readdir_r’ has been deprecated since 2.24.
   - License files have been added to all subcomponents.
   - 64-bit libraries are provided on a 32-bit build environment.
+
 - Upgraded Toolchain-related Packages
+
   - Binutils: From 2.25 to 2.27 (FSF '16 Aug version)
   - Gmp: From 6.0.0 to 6.1.1
   - Mpc: From 1.0 to 1.0.3
@@ -659,8 +814,13 @@ As a common feature, multi-user support has been added.
 **Fixes**
 
 - gcc
+
   - The [asan/lsan] possible deadlock in dynamic ASan runtime thread initialization has been fixed.
+
 - glibc
+
   - The fts_set redirect bug has been fixed.
+
 - binutils
+
   - A backport fix for PR 17704 from upstream has been implemented.
