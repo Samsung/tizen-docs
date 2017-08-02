@@ -31,7 +31,7 @@ You can export TOC.md without styple to make TOC.html
 Please copy & paste a line in TOC.html after exporting TOC.md.
 
 ```
-<base href="sourece.tizen.org" target="content">
+<base href="docs/" target="content">
 ```
 
 ## Conventions
