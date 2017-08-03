@@ -1,4 +1,4 @@
-# Tizen RT 1.0
+# Tizen RT 1.0 M1
 
 Release Date: 23 Dec, 2016
 
