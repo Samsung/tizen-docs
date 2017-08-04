@@ -132,7 +132,11 @@ You can also use one of the following callout tags on the first line that will c
 - Links to other markdown files on docs.microsoft.com are case-insensitive (unlike links to files in GitHub, which are).
 - If you're linking to another topic in the same folder, then `../<folder>/` can be omitted.
 - When using anchors, always remember to include the `.md` before the `#`.
-- When using external links, especially to docs.microsoft.com or msdn.microsoft.com, omit any language tag like "en-us" so that a reader in another language lands on a target page in that same language if it's available.
+- When using external links, please use () following {:target="_blank"}.
+  - e.g.
+  ```
+  [GBS Usage](https://source.tizen.org/documentation/reference/git-build-system/usage){:target="_blank"}
+  ```
 - Bare URLs are not automatically converted into links.
 
 
@@ -154,10 +158,24 @@ Please copy & paste a line in TOC.html after exporting docs/TOC.md.
 ```
 <base href="docs/" target="content">
 
+```
 
 
 **Reference**
 
 We referred to https://github.com/NuGet/docs.microsoft.com-nuget.
 
+
+
+# TODO
+- Add new topics
+  - [IoT](tizen/iot.md)
+  - Tizen Next (TBD)
+    - [Tizen Platform](tizen/tizen-platform.md)
+    - [Tizen Studio](tizen/tizen-studio.md)
+    - [Visual Studio Tools for Tizen](tizen/vstools.md)
+  - [Licenses](open-source/about/licenses.md)
+
+- Move docs on developer.tizen.org
+   - Application Development (TBD)
 
