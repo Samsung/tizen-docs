@@ -16,6 +16,6 @@ Develop Tizen TV apps quickly using a variety of [applications samples](http://w
 
  Try developing application with advanced features of Samsung Tizen TV. For more information for developing a Tizen TV application, go to [http://www.samsungdforum.com](http://www.samsungdforum.com/)
 
-![img](https://developer.tizen.org/sites/default/files/images/profile_tv_devices.jpg)
+[![img](https://developer.tizen.org/sites/default/files/images/profile_tv_devices.jpg)](./media/profile_tv_devices.jpg)
 
  

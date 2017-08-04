@@ -16,9 +16,9 @@
 
  
 
-### Tizen Wearable Products
+### Tizen Wearable Productsx
 
-![](https://developer.tizen.org/sites/default/files/images/profile_wearable_devices.png)
+[![img](https://developer.tizen.org/sites/default/files/images/profile_wearable_devices.png)](./media/profile_wearable_devices-880x203.png)
 
 
 

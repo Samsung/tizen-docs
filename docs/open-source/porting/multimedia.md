@@ -4,7 +4,7 @@
 
 The Multimedia camcorder framework controls the GStreamer camera plugin to capture camera data from the device. The kernel interfaces to control the camera device can be different for different chipsets, so the camera HAL (Hardware Abstraction Layer) used by camera plugin is provided and it must be implemented specifically for each chipset. Each configuration file contains its own specific hardware dependent information. The Multimedia Camcorder framework reads and parses the information in these configuration files.
 
-[![Tizen3.0 MMFWCamcorder.png](https://wiki.tizen.org/images/thumb/1/1f/Tizen3.0_MMFWCamcorder.png/600px-Tizen3.0_MMFWCamcorder.png)](https://wiki.tizen.org/File:Tizen3.0_MMFWCamcorder.png)
+[![Tizen3.0 MMFWCamcorder.png](https://wiki.tizen.org/images/thumb/1/1f/Tizen3.0_MMFWCamcorder.png/600px-Tizen3.0_MMFWCamcorder.png)](./media/799px-Tizen3.0_MMFWCamcorder.png)
 
 - Camera Source Plugin for GStreamer
 
@@ -217,7 +217,7 @@ The radio interface part of the multimedia framework supports APIs to implement 
 - Seek up and down
 - Get the frequency signal
 
-[![Radio.png](https://wiki.tizen.org/images/thumb/3/31/Radio.png/600px-Radio.png)](https://wiki.tizen.org/File:Radio.png)
+[![Radio.png](https://wiki.tizen.org/images/thumb/3/31/Radio.png/600px-Radio.png)](./media/800px-Radio.png)
 
 The interfaces to control the radio device are different to each other. Therefore, Tizen provides the Radio Hardware Abstraction Layer (HAL) to control various radio devices with a common interface. With the common interface, you can control the radio device on various chipsets used by the `libmm-radio`.
 
@@ -313,7 +313,7 @@ For Radio: /dev/radio0
 
 The following figure illustrates the different audio layers.
 
-[![Audio.png](https://wiki.tizen.org/images/thumb/7/72/Audio.png/600px-Audio.png)](https://wiki.tizen.org/File:Audio.png)
+[![Audio.png](https://wiki.tizen.org/images/thumb/7/72/Audio.png/600px-Audio.png)](./media/797px-Audio.png)
 
 - PulseAudio
   - PulseAudio is a sound server accepting sound input from 1 or more sources and redirecting it to 1 or more sinks. PulseAudio has the following features:
@@ -420,11 +420,11 @@ CONFIG_SND_SOC_MC1N2=y
 
 The multimedia player framework controls the player plugins (demuxer, codecs, and renderer plugins) of the GStreamer to play media content. The kernel interfaces to control codecs can be different for different chipsets, so the corresponding codec plugins must be implemented specifically for each chipset.
 
-[![Player.png](https://wiki.tizen.org/images/thumb/0/0c/Player.png/600px-Player.png)](https://wiki.tizen.org/File:Player.png)
+[![Player.png](https://wiki.tizen.org/images/thumb/0/0c/Player.png/600px-Player.png)](./media/800px-Player.png)
 
 ### Porting OAL Interface
 
-[![Playerplugin.png](https://wiki.tizen.org/images/2/28/Playerplugin.png)](https://wiki.tizen.org/File:Playerplugin.png)
+[![Playerplugin.png](https://wiki.tizen.org/images/2/28/Playerplugin.png)](./media/Playerplugin.png)
 
 There is no specific OAL for the multimedia player framework. As part OAL interface, the player plugins consists of the `gst-omx` codec plugins and video/audio renderer plugins. For details of the `gst-omx` plugin details, see [Porting OAL Interface (Codecs)](https://wiki.tizen.org/Porting_Guide#Porting_OAL_Interface_9). For more information about Avsystem for audio, see [Audio](https://wiki.tizen.org/Porting_Guide/Multimedia#Audio)), and Wayland (UI-framework) for display, see [Video](https://wiki.tizen.org/Porting_Guide/Multimedia#Video).
 
@@ -472,7 +472,7 @@ CONFIG_FIMD_LITE_SUPPORT = y
 
 The following figure illustrates the codecs and their relations. It shows 2 types of codec plugins, the Gstreamer and OpenMAX.
 
-[![Codec.png](https://wiki.tizen.org/images/thumb/9/9e/Codec.png/600px-Codec.png)](https://wiki.tizen.org/File:Codec.png)
+[![Codec.png](https://wiki.tizen.org/images/thumb/9/9e/Codec.png/600px-Codec.png)](./media/800px-Codec.png)
 
 - Gstreamer codec plugin
   - The Gstreamer codec plugin can be linked and used easily to the Gstreamer pipeline, which is used in the multimedia framework.
@@ -488,7 +488,7 @@ The following figure illustrates the codecs and their relations. It shows 2 type
 
 
   - In addition, to link a Gstreamer pipeline, the capability of the codec plugin can be negotiated with the linked element in the pipeline.
-  - To get detailed information, such as the capability of an element, use the `#gst-inspect-1.0 (element name)` command.[![Gst-inspect.png](https://wiki.tizen.org/images/0/07/Gst-inspect.png)](https://wiki.tizen.org/File:Gst-inspect.png)
+  - To get detailed information, such as the capability of an element, use the `#gst-inspect-1.0 (element name)` command.[![Gst-inspect.png](https://wiki.tizen.org/images/0/07/Gst-inspect.png)](./media/Gst-inspect.png)
 
 - OpenMAX component codec plugin
 
@@ -504,7 +504,7 @@ The following figure illustrates the codecs and their relations. It shows 2 type
 
 An industry standard that provides an abstraction layer for computer graphics, video, and sound routines. The interface abstracts the hardware and software architecture in the system. The OpenMAX IL API allows the user to load, control, connect, and unload the individual components. This flexible core architecture allows the Integration Layer to easily implement almost any media use case and mesh with existing graph-based media frameworks. The key focus of the OpenMAX IL API is portability of media components OpenMAX IL interfaces between media framework, such as GStreamer and a set of multimedia components (such as an audio or video codecs). `gst-omx` is a GStreamer plug-in package that allows communication with OpenMAX IL components. The `gst-omx` structuring is classified into different object classes based on the functionality. The following is the object structuring of a video decoder plugin in `gst-omx`.
 
-[![Gst-omx.png](https://wiki.tizen.org/images/f/fc/Gst-omx.png)](https://wiki.tizen.org/File:Gst-omx.png)
+[![Gst-omx.png](https://wiki.tizen.org/images/f/fc/Gst-omx.png)](./media/Gst-omx.png)
 
 The `GstVideoDecoder` base class is for video decoders provide encoded data to derived `GstOMXVideoDec` and each input frame is provided in turn to the subclass's `handle_frame` callback. The `GstVideoDecoder` base class and derived subclass cooperate in the following way:
 
@@ -523,11 +523,11 @@ The `GstVideoDecoder` base class is for video decoders provide encoded data to d
 
 The `gst-omx` plugin refers to a configuration file, such as `gstomx.conf`. This file is included in the `gst-omx` package, and installed in the `/etc/xdg/gstomx.conf` directory on the target device. The `gstomx.conf` file needs to change appropriately, according to vendors which provide OpenMAX component. The following figures lists the values of each item in the lists separated by commas. Each Gstreamer element is separated by a semicolon.
 
-[![Gst-openmax.conf.png](https://wiki.tizen.org/images/4/40/Gst-openmax.conf.png)](https://wiki.tizen.org/File:Gst-openmax.conf.png)
+[![Gst-openmax.conf.png](https://wiki.tizen.org/images/4/40/Gst-openmax.conf.png)](./media/Gst-openmax.conf.png)
 
 The following figure shows an example.
 
-[![Omx mpeg4dec.png](https://wiki.tizen.org/images/0/06/Omx_mpeg4dec.png)](https://wiki.tizen.org/File:Omx_mpeg4dec.png)
+[![Omx mpeg4dec.png](https://wiki.tizen.org/images/0/06/Omx_mpeg4dec.png)](./media/Omx_mpeg4dec.png)
 
 Each value needs to be changed appropriately, according to vendors who provide the OpenMAX component. When you are finished with these settings, the result is a Gstreamer type codec plugin, and you can test the codec the same way.
 
@@ -538,7 +538,7 @@ Each value needs to be changed appropriately, according to vendors who provide t
 - Using the codec plugin in the camcorder
   - Because the camcorder clarified its audio, video, and image encoder in the `/usr/etc/mmfw_camcorder.ini` file (`mmfw-sysconf` package), you need to change this category value to set your own codec name.
 
-[![Videoencoder.png](https://wiki.tizen.org/images/7/7a/Videoencoder.png)](https://wiki.tizen.org/File:Videoencoder.png)
+[![Videoencoder.png](https://wiki.tizen.org/images/7/7a/Videoencoder.png)](./media/Videoencoder.png)
 
 ### References
 

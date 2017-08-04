@@ -4,7 +4,7 @@
 
 Location provides location based services (LBS) including the position information, satellite information and GPS status.
 
-[![Location.png](https://wiki.tizen.org/images/3/30/Location.png)](https://wiki.tizen.org/File:Location.png)
+[![Location.png](https://wiki.tizen.org/images/3/30/Location.png)](./media/Location.png)
 
 You can use the following location features´:
 
@@ -167,7 +167,7 @@ The `check_plugin_module(char* module_name)` function checks the access to avail
 
 The Geofence Manager API provides service related to geofence. A geofence is a virtual perimeter for a real-world geographic area.
 
-[![Geofence.png](https://wiki.tizen.org/images/5/58/Geofence.png)](https://wiki.tizen.org/File:Geofence.png)
+[![Geofence.png](https://wiki.tizen.org/images/5/58/Geofence.png)](./media/524px-Geofence.png)
 
 You can to set a geofence with geopoint, Wi-Fi MAC address, and Bluetooth address. Notifications on events, such as changes in the service status are provided.
 
@@ -186,7 +186,7 @@ Notifications can be received about the following events:
 
 The Location Maps API (Maps API) allows you to create map-aware applications.
 
-[![Mapservice.png](https://wiki.tizen.org/images/3/35/Mapservice.png)](https://wiki.tizen.org/File:Mapservice.png)
+[![Mapservice.png](https://wiki.tizen.org/images/3/35/Mapservice.png)](./media/Mapservice.png)
 
 The Maps API has the following features:
 

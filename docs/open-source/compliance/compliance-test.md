@@ -20,7 +20,7 @@ Web TCT is a set of tools and test suites to test the web requirements defined i
 - Web TCT Shell is a lightweight console tool that runs on the host machine, allowing users to debug single failed test cases or trigger TCT testing with an existing test plan. Web TCT Shell is an optional tool.
 - User guide documents and installation scripts.
 
-![Web TCT Workflow](https://source.tizen.org/sites/default/files/page/webtct_workflow.png)
+[![Web TCT Workflow](https://source.tizen.org/sites/default/files/page/webtct_workflow.png)](./media/webtct_workflow.png)
 
 ### 2.1.2 Using Web TCT
 
@@ -61,7 +61,7 @@ Native TCT is a set of tools and test cases to test Native requirements defined 
 - TCT Package includes Unit Test Case, Integration Test Case, Compatibility Test Case TCT
 - There are separate TBT(Tizen Behavior Test), EFL-UTC application to test the behavior of hardware and software features in interactive mode                   
 
-### ![img](https://source.tizen.org/sites/default/files/images/nativetct_workflow.png)
+### [![img](https://source.tizen.org/sites/default/files/images/nativetct_workflow.png)](./media/nativetct_workflow.png)
 
 ### 2.2.2 Using Native TCT
 

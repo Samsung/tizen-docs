@@ -1,6 +1,6 @@
 # Tizen Mobile
 
-![img](https://developer.tizen.org/sites/default/files/images/mobile1.jpg)
+[![img](https://developer.tizen.org/sites/default/files/images/mobile1.jpg)](./media/mobile1.jpg)
 
 
 
@@ -41,7 +41,7 @@ Following the launch of the Samsung Z1, Samsung expands the Tizen ecosystem with
 
 (Recommended SDK Version -  Samsung Z1: v2.3.1, Samung Z3: v2.4, Samsung Z2: v2.4)
 
-![https://developer.tizen.org/sites/default/files/images/profile_mobile_devices.png](https://developer.tizen.org/sites/default/files/images/profile_mobile_devices.png)
+[![img](https://developer.tizen.org/sites/default/files/images/profile_mobile_devices.png)](./media/profile_mobile_devices.png)
 
 ------
 

@@ -15,7 +15,7 @@ Over 3 million units of Tizen phones were sold in 2015. In addition, Samsung is 
 
 As diverse devices are getting smarter and more connected, there is a strong need for a software platform for integrated services with connected products. Tizen is designed for this and has been advancing to connect everything. To support different types of devices with seamless user experience, Tizen categorizes the features and functions as profiles. There are currently 4 profiles and the amount will grow as more products are included in the ecosystem. In the near future, lots of Internet-connected devices are anticipated to be on the market and IoT (Internet of Things) services will pervade everyone's daily life. Tizen is moving forward to the future of everything connected.
 
-![img](https://developer.tizen.org/sites/default/files/images/about_tizen_1.png)
+[![img](https://developer.tizen.org/sites/default/files/images/about_tizen_1.png)](./media/about_tizen_1.png)
 
 ## Openness, Optimization, and Opportunities
 
@@ -25,24 +25,24 @@ Tizen is built to work on diverse devices and profiles are defined accordingly. 
 
 From Tizen 3.0, all profiles are built on top of a common, shared infrastructure called Tizen Common. Based on the common components, devices and features under new categories or profiles can be easily added up for emerging technologies. Therefore, Tizen is adaptable and customizable for new products. In the foreseeable future, for example, IoT devices and services will be prevalent and Tizen is taking proactive steps toward the opportunities in the new markets.
 
-![img](https://developer.tizen.org/sites/default/files/images/about_tizen_2.png)
+[![img](https://developer.tizen.org/sites/default/files/images/about_tizen_2.png)](./media/about_tizen_2.png)
 
 ## Productivity
 
 To facilitate developing Tizen applications, the [Tizen Studio](https://developer.tizen.org/development/tizen-studio) is provided as an integrated development environment (IDE). It helps developers to develop, build, debug, profile, and emulate Tizen applications. The Tizen Studio is equipped with useful tools for developers, including native UI builder, emulator, and Dynamic Analyzer for profiling. In the integrated environment, developers can experience comfortable and productive development of Tizen native and Web applications.
 
-![img](https://developer.tizen.org/sites/default/files/images/about_tizen_3.png)
+[![img](https://developer.tizen.org/sites/default/files/images/about_tizen_3.png)](./media/about_tizen_3.png)
 
 ## Application Marketplace
 
 As a platform, Tizen provides the foundation for many different applications and services, which lead to rich user experiences and chances of new businesses. For easy access and reliable trade of applications, efficient distribution channels are necessary for both users and developers. The [Tizen Store](http://www.tizenstore.com/) is a marketplace of Tizen applications, where users can find useful applications and developers can distribute their valuable creations. It provides various application categories, such as All Games, Education, Entertainment, Kids, Finance, Lifestyle, and Social networking. Users can download applications of their choice and enrich their experiences with the Tizen devices. Application developers can monetize or share their applications for free in the marketplace.
 
-![img](https://developer.tizen.org/sites/default/files/images/about_tizen_4.png)
+[![img](https://developer.tizen.org/sites/default/files/images/about_tizen_4.png)](./media/about_tizen_4.png)
 
 ## IoT Capability of Tizen 3.0
 
 The most important things that enable Tizen to move to the next level are IoT and convergence capabilities:
 
-- **Device Convergence**: Tizen 3.0 provides a device-to-device convergence framework for easy data sharing and direct remote control between devices. Using this framework, you can handle events or data on the remote device as if they were local. Device Convergence in Tizen opens up a host of capabilities that developers can use to create a new way of experiencing connectivity.![img](https://developer.tizen.org/sites/default/files/images/about_tizen_5.png)
+- **Device Convergence**: Tizen 3.0 provides a device-to-device convergence framework for easy data sharing and direct remote control between devices. Using this framework, you can handle events or data on the remote device as if they were local. Device Convergence in Tizen opens up a host of capabilities that developers can use to create a new way of experiencing connectivity.[![img](https://developer.tizen.org/sites/default/files/images/about_tizen_5.png)](./media/about_tizen_5.png)
 - **IoTivity for Connectivity**: In an IoT world, where everything is connected, it is important that a software platform supports seamless connectivity among all devices. For seamless connectivity, Tizen is closely co-operating with Open Connected Foundation (OCF), which is taking the lead in providing specifications and an open-source solution for IoT connectivity. It is getting great support from companies including Cisco, GE, Mediatek, Intel, and Samsung. OCF’s standard is being implemented as an open source, which is called IoTivity. All the profiles in Tizen 3.0 will include IoTivity by default, which means that all Tizen devices will be IoTivity-ready.
-  ![img](https://developer.tizen.org/sites/default/files/images/about_tizen_6.png)
+  [![img](https://developer.tizen.org/sites/default/files/images/about_tizen_6.png)](./media/about_tizen_6.png)

@@ -37,7 +37,7 @@ Additional profiles are expected in the near future, possibly including:
 - TV: DTV/STB/IPTV systems
 - PC: laptops, convertibles, etc.
 
-![img](https://source.tizen.org/sites/default/files/page/tizen-profiles-small.png)
+[![img](https://source.tizen.org/sites/default/files/page/tizen-profiles-small.png)](./media/tizen-profiles-small.png)
 
 The Tizen Compliance Tests measure conformance to the Profile requirements.
 

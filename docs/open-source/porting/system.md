@@ -35,7 +35,7 @@ Filesystems that Tizen supports Extended 4 (Ext 4) file-system, which is configu
 
 The Tizen directory hierarchy intends to follow the FHS as possible for compatibility as a member of Linux world. However, Tizen uses the `/opt` directory for Tizen specific purposes Tizen recommends that whole RW data places to the `/opt` directory.
 
-[![FSH.png](https://wiki.tizen.org/images/thumb/5/56/FSH.png/300px-FSH.png)](https://wiki.tizen.org/File:FSH.png)
+[![FSH.png](https://wiki.tizen.org/images/thumb/5/56/FSH.png/300px-FSH.png)](./media/467px-FSH.png)
 
 Directory macros are provided for accessing Tizen specific directory by Tizen Platform Configuration Metafile. The following table lists the example macros.
 
@@ -62,7 +62,7 @@ The System framework module abstracts low level system functions and manages the
 
 It is recommended to use Linux Kernel 3.10 or above.
 
-[![SystemFW.png](https://wiki.tizen.org/images/thumb/f/fb/SystemFW.png/600px-SystemFW.png)](https://wiki.tizen.org/File:SystemFW.png)
+[![SystemFW.png](https://wiki.tizen.org/images/thumb/f/fb/SystemFW.png/600px-SystemFW.png)](./media/800px-SystemFW.png)
 
 #### systemd
 
@@ -1058,7 +1058,7 @@ Sensors are classified as hardware and virtual sensors. Tizen supports individua
 
 The sensor framework provides a sensor server for managing sensor HALs and a medium through which the client applications are connected to the sensor handler to exchange data.
 
-[![Sensor Framework Architecture](https://wiki.tizen.org/images/thumb/2/2f/Tizen_3_sensorfw.png/684px-Tizen_3_sensorfw.png)](https://wiki.tizen.org/File:Tizen_3_sensorfw.png)
+[![Sensor Framework Architecture](https://wiki.tizen.org/images/thumb/2/2f/Tizen_3_sensorfw.png/684px-Tizen_3_sensorfw.png)](./media/678px-Tizen_3_sensorfw.png)
 
 The sensor HALs retrieve data from sensor hardware and enable the client applications to use the data form specific requirements.
 
@@ -1083,7 +1083,7 @@ The sensor HAL is implemented as a shared library and the sensor_loader finds ha
 
 #### Sensor
 
-[![Tizen 3 sensor fw hal.png](https://wiki.tizen.org/images/thumb/8/88/Tizen_3_sensor_fw_hal.png/591px-Tizen_3_sensor_fw_hal.png)](https://wiki.tizen.org/File:Tizen_3_sensor_fw_hal.png)
+[![Tizen 3 sensor fw hal.png](https://wiki.tizen.org/images/thumb/8/88/Tizen_3_sensor_fw_hal.png/591px-Tizen_3_sensor_fw_hal.png)](./media/Tizen_3_sensor_fw_hal.png)
 
 - Adding New Hardware Sensors
 
@@ -1789,7 +1789,7 @@ The sensorhub HAL supports multiple sensors logically from 1 physical device fil
 - Providing the sensor HAL interface to manufacturers/vendors through the `sensor_hal.h` and `sensor_hal_types.h` header files.
 - Using just 1 thread for polling sensor events from multiple device files
 
-[![Tizen_3_Sensorhub_Architecture](https://wiki.tizen.org/images/thumb/6/6e/Tizen_3_sensorhub2.png/597px-Tizen_3_sensorhub2.png)](https://wiki.tizen.org/File:Tizen_3_sensorhub2.png)
+[![Tizen_3_Sensorhub_Architecture](https://wiki.tizen.org/images/thumb/6/6e/Tizen_3_sensorhub2.png/597px-Tizen_3_sensorhub2.png)](./media/656px-Tizen_3_sensorhub2.png)
 
 The sensorhub HAL can be developed by using the `sensor_device` interface. An example of sensorhub HAL can be found in the `sensor-hal-tm1/src/sensorhub` git.
 

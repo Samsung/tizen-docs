@@ -10,7 +10,7 @@ Bluetooth Low Energy function was implemented in BlueZ and `bluetooth-frwk`.
 
 The following figure explains the Bluetooth architecture on Tizen.
 
-[![Bluetooth.png](https://wiki.tizen.org/images/thumb/a/a9/Bluetooth.png/600px-Bluetooth.png)](https://wiki.tizen.org/File:Bluetooth.png)
+[![Bluetooth.png](https://wiki.tizen.org/images/thumb/a/a9/Bluetooth.png/600px-Bluetooth.png)](./media/800px-Bluetooth.png)
 
 The Bluetooth framework provides dialogue for the user. It controls the BlueZ, ObexD, and PulseAudio daemons. Bluetooth provides a standard interface between the Bluetooth chip and AP, called the HCI (Host Controller Interface). HCI can be implemented on USB, UART, SDIO, but for the mobile environment, UART is used most. Depending on the chip vendor, HCI Interface Activation can be different. The vendor provides the HCI configuration and the initial scripts. For example, Broadcom and Spreadtrum provide firmware and a loading tool. Tizen supports Bluetooth version 4.2. The supported profiles are GATT, FTP, OPP, MAP, PBAP, A2DP, AVRCP, HSP/HFP, RFCOMM, HID, HDP, and PAN. Bluetooth framework Tizen Bluetooth is based on the open source BlueZ project. BlueZ provides the DBUS API and based on it, Tizen BT framework provides the C Language API. It is recommended to use the Tizen Bluetooth framework.
 
@@ -226,7 +226,7 @@ CONFIG_BT_SCO=y
 
 ## WLAN
 
-This section provides a step-by-step explanation of what's involved in adding a new Wi-Fi driver and making Wi-Fi work. [![Wlan.png](https://wiki.tizen.org/images/thumb/1/16/Wlan.png/800px-Wlan.png)](https://wiki.tizen.org/File:Wlan.png)
+This section provides a step-by-step explanation of what's involved in adding a new Wi-Fi driver and making Wi-Fi work. [![Wlan.png](https://wiki.tizen.org/images/thumb/1/16/Wlan.png/800px-Wlan.png)](./media/785px-Wlan.png)
 
 Feature Overview:
 
@@ -295,7 +295,7 @@ CONFIG_WIRELESS_EXT_SYSFS=y
 
 The NFC application enables the user to read and/or import the content written on an NFC tag, edit the content written on an NFC tag, write and save data in an NFC tag, and load and save the NFC data from or in a file.
 
-[![Nfc.png](https://wiki.tizen.org/images/thumb/4/43/Nfc.png/600px-Nfc.png)](https://wiki.tizen.org/File:Nfc.png)
+[![Nfc.png](https://wiki.tizen.org/images/thumb/4/43/Nfc.png/600px-Nfc.png)](./media/Nfc.png)
 
 The NFC client acts as an interface between the NFC app and the NFC manager, while writing or editing tag information in any physical tag. The NFC manager is the main interface, which actually deals with NFC physical tags, creates a connection with tags, and detects it. It is a daemon process to control the NFC chipset (such as NXP pn544). It provides the read and write service and basic P2P communication service, as well as the basic API for the client application. The NFC stack contains the required plugin, based on the NFC chipset. Currently, the `nfc-plugin-nxp` is used for the NXP chipset. The NFC plugin acts as an interface between the NFC chipset with the NFC framework (`nfc-manager`). It must be implemented according to the interface provided by the `nfc-manager`.
 
@@ -465,11 +465,11 @@ For more information, see [http://nfc-forum.org/](http://nfc-forum.org/).
 - MTP exchanges can only occur between 2 products at a time, and in each communication, 1 product acts as the initiator and the other as the responder.
 - The initiator is the product that initiates actions with the responder by sending operations to the responder.
 
-[![Mtp-initiator.png](https://wiki.tizen.org/images/thumb/2/2f/Mtp-initiator.png/600px-Mtp-initiator.png)](https://wiki.tizen.org/File:Mtp-initiator.png)
+[![Mtp-initiator.png](https://wiki.tizen.org/images/thumb/2/2f/Mtp-initiator.png/600px-Mtp-initiator.png)](./media/800px-Mtp-initiator.png)
 
 - The responder can not initiate any actions, and can only send responses to operations sent by the initiator or send events.
 
-[![Mtp-responder.png](https://wiki.tizen.org/images/thumb/6/6d/Mtp-responder.png/600px-Mtp-responder.png)](https://wiki.tizen.org/File:Mtp-responder.png)
+[![Mtp-responder.png](https://wiki.tizen.org/images/thumb/6/6d/Mtp-responder.png/600px-Mtp-responder.png)](./media/800px-Mtp-responder.png)
 
 - In the Tizen system, the USB host is the initiator, and the USB device is the responder.
 

@@ -27,7 +27,7 @@ This document covers detailed Telephony architecture including the various compo
 
 Tizen Telephony supports the plugin architecture, which provides flexibility to include various types of predefined plugins into the system with little change.
 
-[![Telephony-arch.png](https://wiki.tizen.org/images/thumb/5/5f/Telephony-arch.png/700px-Telephony-arch.png)](https://wiki.tizen.org/File:Telephony-arch.png)
+[![Telephony-arch.png](https://wiki.tizen.org/images/thumb/5/5f/Telephony-arch.png/700px-Telephony-arch.png)](./media/800px-Telephony-arch.png)
 
 The 3 major components of Tizen Telephony are the libraries, plugins, and server.
 
@@ -37,7 +37,7 @@ The 3 major components of Tizen Telephony are the libraries, plugins, and server
 
 The TAPI library (or simply TAPI) is a standardized interface provided to applications to interact with Tizen Telephony. It is provided as a `libtapi` package. The TAPI executes in the application’s context, and it provides sync and async APIs. The following figure shows the `libtapi` internal composition.
 
-[![Libtapi.PNG](https://wiki.tizen.org/images/thumb/5/5c/Libtapi.PNG/500px-Libtapi.PNG)](https://wiki.tizen.org/File:Libtapi.PNG)
+[![Libtapi.PNG](https://wiki.tizen.org/images/thumb/5/5c/Libtapi.PNG/500px-Libtapi.PNG)](./media/Libtapi.PNG)
 
 Applications can interface to Telephony features, such as call, SMS, and network, through the respective module APIs exposed in the `libtapi` library. Telephony also provides an additional library, `capi-telephony` for third party applications.
 
@@ -45,7 +45,7 @@ Applications can interface to Telephony features, such as call, SMS, and network
 
 The Core Telephony library (or `libtcore`) provides an API framework for Tizen Telephony to inter-work. It is provided as `libtcore` package. The following figure shows the internal composition overview of the `libtcore`.
 
-[![Telephony03.png](https://wiki.tizen.org/images/thumb/f/f3/Telephony03.png/500px-Telephony03.png)](https://wiki.tizen.org/File:Telephony03.png)
+[![Telephony03.png](https://wiki.tizen.org/images/thumb/f/f3/Telephony03.png/500px-Telephony03.png)](./media/Telephony03.png)
 
 With `libtcore`, you can:
 
@@ -89,7 +89,7 @@ There are 4 kinds of plugins:
 
 The following figure provides an overview of all the Telephony plugins together.
 
-[![Telephony08.png](https://wiki.tizen.org/images/thumb/1/15/Telephony08.png/500px-Telephony08.png)](https://wiki.tizen.org/File:Telephony08.png)
+[![Telephony08.png](https://wiki.tizen.org/images/thumb/1/15/Telephony08.png/500px-Telephony08.png)](./media/649px-Telephony08.png)
 
 ## Telephony Server
 
@@ -97,7 +97,7 @@ Tizen Telephony runs as a Telephony server daemon called `telephony-daemon`.
 
 The Telephony server executes as a `g-main` loop from the `glib` library.
 
-[![Telephony09.png](https://wiki.tizen.org/images/thumb/7/75/Telephony09.png/800px-Telephony09.png)](https://wiki.tizen.org/File:Telephony09.png)
+[![Telephony09.png](https://wiki.tizen.org/images/thumb/7/75/Telephony09.png/800px-Telephony09.png)](./media/800px-Telephony09.png)
 
 ## Porting OAL Interface
 

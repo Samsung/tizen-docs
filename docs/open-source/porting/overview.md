@@ -12,7 +12,7 @@ The intent of this document is to provide information and instruction to boot Ti
 
 The following figure illustrates the Tizen architecture for smartphone and tablet devices.
 
-![what_is_tizen_architecture.png](https://developer.tizen.org/sites/default/files/images/what_is_tizen_architecture.png)
+[![what_is_tizen_architecture.png](https://developer.tizen.org/sites/default/files/images/what_is_tizen_architecture.png)](./media/what_is_tizen_architecture.png)
 
 You can get detailed information of the Tizen framework layer from Dev Guide[[1\]](https://developer.tizen.org/development/getting-started/overview#type)
 
