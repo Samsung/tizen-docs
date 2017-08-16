@@ -4,37 +4,67 @@ This project is for writing Tizen documents for platform and application develop
 
 ## Branches
 Contributions to this documents are welcome.
-Please submit PRs to the **staging* branch, which is what's published to the staging docs.
-
+Please submit PRs to the **staging** branch, which is used temporarily.
+The **live** branch will be used for publising to the Tizen portal site. If you can see **live** branch, please use **live** branch instead of staging branch.
 The **master** branch is used for a ready-live.
-The **live** branch will be used for publising to the Tizen portal site.
 
 ## Respository structure
-TOC.md file defines the left-hand navigation panel that appears when you navigate to any page other than the Docs page.
-Images are contained within media folders within each subfolder.
 
-
-If you're adding a top-level node to the TOC.md, also make an entry for it in TOC.html.
-You can export TOC.md without styple to make TOC.html
+- All markdown files are in the docs folder and various subfolders.
+- The docs/index.md file defines the landing (hub) page are it appears on portal.tizen.org/docs (TBD).
+- The docs/TOC.md file defines the left-hand navigation panel that appears when you navigate to any page other than the hub page.
+- Images are contained within media folders within each subfolder.
 
 ## Contribution workflow
-1. Visit the page to edit on portal.tizen.org/docs (TBD), then click the Edit button on the top right. This brings you to the appropriate markdown page in the repo.
-2. Edit the markdown:
-    - If you're including images (use PNGs, generally), place them in the media folder that's in the topic's folder. Links are then media/<image_name>.png.
-    - Relative links to other pages in this docset should be in the form ../<folder>/<topic-file>.md including the training .md. If you're linking to another topic in the same folder, then ../<folder>/ can be omitted. When using anchors, always remember to include the .md before the #.
-    - When using external links, especially to portal.tizen.org/docs (TBD), omit any language tag like "ko" so that a reader in another language lands on a target page in that same language if it's available.
-3. When you're done, enter a commit message below, and click Propose file change.
-4. Send a pull request for your change. We review PRs on a regular basis.'
-5. Thank you!
 
-### Tip
-Please copy & paste a line in TOC.html after exporting TOC.md.
+1. Visit the page to edit on [portal.tizen.org/docs](https://portal.tizen.org/docs), then click the **Edit** button on the top right. This brings you to the appropriate markdown page in the repo.
+1. Edit the markdown:
+    1. If you're including images (use PNGs, generally), place them in the media folder that's in the topic's folder. Links are then `media/<image_name>.png`.
+    1. Relative links to other pages in this docset should be in the form `../<folder>/<topic-file>.md` including the training `.md`. If you're linking to another topic in the same folder, then `../<folder>/` can be omitted. When using anchors, always remember to include the `.md` before the `#`.
+1. When you're done, enter a commit message below, and click **Propose file change**.
+1. Send a pull request for your change. We review PRs on a regular basis.'
+1. Thank you!
 
-```
-<base href="docs/" target="content">
-```
+If you're creating a new topic, keep the following in mind as well:
+
+1. Always place the new topic in an appropriate subfolder, and follow the conventions for filenames as you see them used here.
+1. In addition to adding your page, edit docs/TOC.md to add a link to that page.
+1. If you're adding a top-level node to the TOC, also make an entry for it in docs/index.md.
+
+
+### How to PR
+1. Fork form the original repository, http://github.com/Samsung/tizen-docs.
+
+1. Clone the forked repository.
+   ```
+   $ git clone <forked repository URL>
+   ```
+1. Set to synchronize the original repository and the forked repository.
+   ```
+   $ git remote -v
+   $ git remote add upstream http://github.com/Samsung/tizen-docs.git
+   $ git remote -v
+   ```
+1. Create a new branch on the forked repository or the local repository,
+   and switch to the new branch.
+   ```
+   $ git checkout -b <new branch name>
+   ```
+1. Create a local commit.
+   ```
+   $ git status
+   $ git add
+   $ git commit -a
+   ```
+1. Push the branch
+   ```
+   $ git push origin <new branch name>
+   ```
+1. Open a pull requst on http://github.com/Samsung/tizen-docs.git.
+
 
 ## Conventions
+In general, if you don't see something described here, look in editing markdown files for examples.
 
 
 ## Naming
@@ -46,7 +76,6 @@ Tizen: refers to the technology.
 ### Heading capitalizations
 
 All headings need only capitalize the first word and proper names. Refer to most topics for examples.
-
 
 
 ### Screenshots and images
@@ -98,13 +127,18 @@ You can also use one of the following callout tags on the first line that will c
 
 ### Links
 
-In general, always use the title of the target page as the link text rather than words like "see here" or "this documentation".
-Relative links to other pages in this docset should be in the form ../<folder>/<topic-file>.md including the trailing .md.
-Links to other markdown files on portal.tizen.org (TBD) are case-insensitive (unlike links to files in GitHub, which are).
-If you're linking to another topic in the same folder, then ../<folder>/ can be omitted.
-When using anchors, always remember to include the .md before the #.
-When using external links, especially to portal.tizen.org (TBD), omit any language tag like "en-us" so that a reader in another language lands on a target page in that same language if it's available.
-Bare URLs are not automatically converted into links.
+- In general, always use the title of the target page as the link text rather than words like "see here" or "this documentation".
+- Relative links to other pages in this docset should be in the form `../<folder>/<topic-file>.md` including the trailing `.md`.
+- Links to other markdown files on docs.microsoft.com are case-insensitive (unlike links to files in GitHub, which are).
+- If you're linking to another topic in the same folder, then `../<folder>/` can be omitted.
+- When using anchors, always remember to include the `.md` before the `#`.
+- When using external links, please use () following {:target="_blank"}.
+  - e.g.
+  ```
+  [GBS Usage](https://source.tizen.org/documentation/reference/git-build-system/usage){:target="_blank"}
+  ```
+- Bare URLs are not automatically converted into links.
+
 
 ### Inline HTML
 
@@ -114,13 +148,34 @@ Use `&lt;` and `&gt;` for < and > characters outside a code block or inline code
 
 Block-level HTML elements have a few restrictions:
 
-They must be separated from surrounding text by blank lines.
-The begin and end tags of the outermost block element must not be indented.
-Markdown can't be used within HTML blocks.
+* They must be separated from surrounding text by blank lines.
+* The begin and end tags of the outermost block element must not be indented.
+* Markdown can't be used within HTML blocks.
+
+### Tip
+Please copy & paste a line in TOC.html after exporting docs/TOC.md.
+
+```
+<base href="docs/" target="content">
+
+```
 
 
 **Reference**
 
 We referred to https://github.com/NuGet/docs.microsoft.com-nuget.
 
+
+
+# TODO
+- Add new topics
+  - [IoT](tizen/iot.md)
+  - Tizen Next (TBD)
+    - [Tizen Platform](tizen/tizen-platform.md)
+    - [Tizen Studio](tizen/tizen-studio.md)
+    - [Visual Studio Tools for Tizen](tizen/vstools.md)
+  - [Licenses](open-source/about/licenses.md)
+
+- Move docs on developer.tizen.org
+   - Application Development (TBD)
 
