@@ -22,7 +22,7 @@ You must read, understand, and correctly follow the instructions in the followin
 
    If a `<Specific_Project>/.gbs.conf` file exists, the configuration in that file is used when building the project with GBS. If not, the default GBS configuration in `~/.gbs.conf` is used.
 
-   For more information about `.gbs.conf`, see [Configuration File](../reference/gbs.md).
+   For more information about `.gbs.conf`, see [Configuration File](../tools/gbs.md).
 
    For more customization information on remote repositories, see [Setting up Development Environment](https://source.tizen.org/documentation/developer-guide/environment-setup).
 

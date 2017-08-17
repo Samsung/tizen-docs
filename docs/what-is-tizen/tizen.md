@@ -1,4 +1,4 @@
-# Tizen
+# What is Tizen?
 
 Tizen is an open source operating system based on Linux, hosted by the Linux Foundation, and open to all developers.  Tizen has been advancing to connect everything, smart TVs, smart phones, wearable devices, and IoT devices.It  Developers and users of devices powered by Tizen can experience seamless connectivity among all devices.
 
@@ -58,7 +58,7 @@ As a platform, Tizen provides the foundation for many different applications and
 
 ![img](https://developer.tizen.org/sites/default/files/images/about_tizen_4.png)
 
-## Version
+## Versions
 
 - [Tizen 4.0 M1](versions/tizen_4_0.md)
 - [Tizen 3.0](versions/tizen_3_0.md)
