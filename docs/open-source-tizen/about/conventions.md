@@ -1,6 +1,5 @@
 # Typographic Conventions
 
-------
 
 Typographic conventions used in this documentation set are as follows:
 

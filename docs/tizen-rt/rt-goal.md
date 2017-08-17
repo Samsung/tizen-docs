@@ -39,7 +39,7 @@ The user thread is executed in the user unprivileged mode with restricted permis
 
 **Figure: User and kernel separation**
 
-[![img](https://source.tizen.org/sites/default/files/resize/images/kernel_seperation-800x355.png)](https://source.tizen.org/sites/default/files/images/kernel_seperation.png)
+![kernel_seperation.png](media/kernel_seperation.png)
 
 ### 2 Microkernel Architecture
 
@@ -47,7 +47,7 @@ The microkernel aims at minimizing kernel functions by only including scheduling
 
 **Figure: Microkernel architecture**
 
-[![img](https://source.tizen.org/sites/default/files/resize/images/conceptofmicrokernelarchitecture-800x331.png)](https://source.tizen.org/sites/default/files/images/conceptofmicrokernelarchitecture.png)
+![conceptofmicrokernelarchitecture.png](media/conceptofmicrokernelarchitecture.png)
 
 ### 3 Self-healing
 
@@ -63,7 +63,7 @@ The whole procedure is preceded by the microkernel architecture.
 
 **Figure: Self-healing**
 
-[![img](https://source.tizen.org/sites/default/files/resize/images/self-healing-400x461.png)](https://source.tizen.org/sites/default/files/images/self-healing.png)
+![self-healing-400x461.png)](media/self-healing.png)
 
 ## Configurability
 
@@ -73,7 +73,7 @@ The following table illustrates 3 full-featured configuration examples. Typical 
 
 **Table: Example Tizen RT configurations**
 
-[![img](https://source.tizen.org/sites/default/files/resize/images/threerepresentativeconfigurationsoftizenrt-700x435.png)](https://source.tizen.org/sites/default/files/images/threerepresentativeconfigurationsoftizenrt.png)
+![threerepresentativeconfigurationsoftizenrt-700x435.png](media/threerepresentativeconfigurationsoftizenrt.png)
 
 ## Support for Standard IoT Protocols
 

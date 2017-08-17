@@ -6,7 +6,7 @@ The application composes the graphic user interface by creating a window with to
 - [Tizen Display Manager (TDM)](https://wiki.tizen.org/TDM)
 - [TPL-EGL](https://wiki.tizen.org/3.0_Porting_Guide/Graphics_and_UI/OpenGL)
 
-[![Graphics-ui-diagram.png](https://wiki.tizen.org/images/9/9d/Graphics-ui-diagram.png)](https://wiki.tizen.org/File:Graphics-ui-diagram.png)
+![Graphics-ui-diagram.png](media/Graphics-ui-diagram.png)
 
 These modules allow the client and server to render with the GPU, share buffers with other processes, and organize hardware output devices for various chipset devices. They are HAL for graphics and UI. Their backend module needs to be implemented for the new hardware device.
 
@@ -20,7 +20,7 @@ For an application to handle input device's events, the [Input Manager](https://
 
 The TBM has a frontend libary and a backend module. The TBM frontend library is hardware-independent and provides the generic buffer interface for users. On the other hand, the TBM backend module is hardware-dependent and provides the buffer interface depended on the target system. The chipset vendors have to provide their own backend modules in order for the TBM to work well in Tizen platform. This is because the vendors' way to manage the graphic buffers can be different among various chipset devices. TBM already has several backends for reference, such as `libtbm-dumb`, and `libtbm-shm`.
 
-[![Tbm-backend.png](https://wiki.tizen.org/images/thumb/2/22/Tbm-backend.png/642px-Tbm-backend.png)](https://wiki.tizen.org/File:Tbm-backend.png)
+![Tbm-backend.png](media/800px-Tbm-backend.png)
 
 With TBM, the client and server can allocate buffers and share it between them. For example, a client allocates a graphic buffer, draws something on it with GL and sends it to the display server for displaying it on the screen without buffer copying. The TBM backend module is implemented as a shared library and the TBM frontend finds the `libtbm-default.so` file and loads it from the `/usr/lib/bufmgr` directory at runtime.
 
@@ -223,7 +223,7 @@ For more detailed information about the TBM and TBM backend, see [Tizen Buffer M
 Read [Tizen Display Manager (TDM)](https://wiki.tizen.org/TDM) first to get the general information of TDM and TDM backend.
 The display server composites and shows the client's buffers on screen. The display server sometimes needs to convert or scale an image to a different size or format. To make it possible for various chipset devices, the display server needs the display hardware resource information and control them. [Tizen Display Manager (TDM)](https://wiki.tizen.org/TDM) offers these functionalities for the display server with the unified interface for various chipset devices.
 
-[![Tdm-backend.png](https://wiki.tizen.org/images/5/59/Tdm-backend.png)](https://wiki.tizen.org/File:Tdm-backend.png)
+![Tdm-backend.png]](media/Tdm-backend.png)
 
 With TDM, the display server can do the mode setting, the DPMS control and showing a buffer (framebuffer or video buffer) on the screen in the most efficient way. If the hardware supports the m2m converting and capture device, the display server can also convert an image and dump a screen including all hardware overlays with no compositing.
 
@@ -427,7 +427,7 @@ $ tdm-test-server -a -v           (test all layers with vblank events)
 
 Below is the result of `tdm-test-server -a`. The fullscreen buffer is set to the PRIMARY layer. And the small buffer is set to the OVERLAY layer.
 
-[![Tdm-test-server-result.png](https://wiki.tizen.org/images/4/45/Tdm-test-server-result.png)](https://wiki.tizen.org/File:Tdm-test-server-result.png)
+![Tdm-test-server-result.png](media/Tdm-test-server-result.png)
 
 ### How to check TDM log messages
 
@@ -446,7 +446,7 @@ For detailed information about the TDM and TDM backend, see [Tizen Display Manag
 
 The input manager supports for a `libinput` based input device back-end. `libinput` is a common input library for wayland compositor. With `libinput`, the input stack is simpler without the Xorg input drivers. Input is not a HAL component from Tizen 3.0.
 
-[![Tizen 3.0 Input.png](https://wiki.tizen.org/images/1/11/Tizen_3.0_Input.png)](https://wiki.tizen.org/File:Tizen_3.0_Input.png)
+![Tizen 3.0 Input.png](media/Tizen_3.0_Input.png)
 
 ### libinput
 
@@ -483,7 +483,7 @@ Tizen platform requires the OpenGL ES driver for the acceleration of the Wayland
 
 The following figure illustrates the Tizen OpenGL ES and EGL architecture.
 
-[![OPENGLES STACK.png](https://wiki.tizen.org/images/thumb/d/d6/OPENGLES_STACK.png/700px-OPENGLES_STACK.png)](https://wiki.tizen.org/File:OPENGLES_STACK.png)
+![OPENGLES STACK.png](media/800px-OPENGLES_STACK.png)
 
 - CoreGL
 
@@ -510,7 +510,7 @@ The Tizen platform demands that the GPU vendor implements the GL and EGL driver 
 
 TPL-EGL is an abstraction layer for surface and buffer management on Tizen platform. It is used for implementation of the EGL platform functions.
 
-[![Tpl architecture.png](https://wiki.tizen.org/images/thumb/0/0e/Tpl_architecture.png/700px-Tpl_architecture.png)](https://wiki.tizen.org/File:Tpl_architecture.png)
+![Tpl architecture.png](media/800px-Tpl_architecture.png)
 
 The background for the Tizen EGL Porting Layer for EGL is in various window system protocols in Tizen. There was a need for separating common layer and backend.
 
@@ -538,11 +538,11 @@ Encapsulates the native drawable object (`Window, Pixmap, wl_surface`) The surfa
 
 Both TPL-EGL and vendor GLES/EGL driver handles the `tbm_surface` as TPL surface's corresponding buffer. It is represented by the `TBM_Surface` part in the following figure.
 
-[![Relationship TPL EGL Gray.png](https://wiki.tizen.org/images/thumb/e/e6/Relationship_TPL_EGL_Gray.png/700px-Relationship_TPL_EGL_Gray.png)](https://wiki.tizen.org/File:Relationship_TPL_EGL_Gray.png)
+![Relationship TPL EGL Gray.png](media/800px-Relationship_TPL_EGL_Gray.png)
 
 The following figure illustrates the GLES drawing API flow.
 
-[![GLES API FLOW GRAY.png](https://wiki.tizen.org/images/thumb/4/41/GLES_API_FLOW_GRAY.png/800px-GLES_API_FLOW_GRAY.png)](https://wiki.tizen.org/File:GLES_API_FLOW_GRAY.png)
+![GLES API FLOW GRAY.png]](media/800px-GLES_API_FLOW_GRAY.png)
 
 #### TPL-EGL Frontend API
 
@@ -613,7 +613,7 @@ In the GPU vendor driver, the "Draw something" part is what the GPU frame builde
 
 #### TPL-EGL and Wayland Server and Client
 
-[![Libtpl-egl-module diagram.png](https://wiki.tizen.org/images/thumb/c/c2/Libtpl-egl-module_diagram.png/700px-Libtpl-egl-module_diagram.png)](https://wiki.tizen.org/File:Libtpl-egl-module_diagram.png)
+![Libtpl-egl-module diagram.png]](media/800px-Libtpl-egl-module_diagram.png)
 
 Tizen uses the `wl_tbm` protocol instead of `wl_drm`. The `wl_tbm` protocol is born for sharing the buffer(`tbm_surface`) between the `wayland_client` and `wayland_server`. Although the `wayland_tbm_server_init` and `wayland_tbm_client_init` pair is a role for the `eglBindWaylandDisplayWL`, the EGL driver is required to implement the entrypoints for the `eglBindWaylandDisplayWL` and `eglUnbindWaylandDisplayWL` as dummy. For more information, see [https://cgit.freedesktop.org/mesa/mesa/tree/docs/specs/WL_bind_wayland_display.spec](https://cgit.freedesktop.org/mesa/mesa/tree/docs/specs/WL_bind_wayland_display.spec).
 
@@ -621,7 +621,7 @@ Tizen uses the `wl_tbm` protocol instead of `wl_drm`. The `wl_tbm` protocol is b
 
 The following figure shows the buffer flow between wayland server and GLES/EGL Driver. And passed buffer's type is `tbm_surface`.
 
-[![Libtpl-egl buffer flow.png](https://wiki.tizen.org/images/thumb/c/c9/Libtpl-egl_buffer_flow.png/800px-Libtpl-egl_buffer_flow.png)](https://wiki.tizen.org/File:Libtpl-egl_buffer_flow.png)
+![Libtpl-egl buffer flow.png]](media/800px-Libtpl-egl_buffer_flow.png)
 
 ### Project Git Repository
 

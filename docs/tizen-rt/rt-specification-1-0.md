@@ -47,7 +47,7 @@ IP transport (TCP/UDP over Wi-Fi) is currently supported in the Connectivity Abs
 
 **Figure: IoTivity base layer architecture**
 
-[![img](https://source.tizen.org/sites/default/files/resize/images/iotivity_baseline_architecture-700x245.png)](https://source.tizen.org/sites/default/files/images/iotivity_baseline_architecture.png)
+![iotivity_baseline_architecture-700x245.png)](media/iotivity_baseline_architecture.png)
 
 The above figure shows the IoTivity base layer architecture. The architecture can be divided into discovery, messaging, and security modules. The following table describes the IoTivity 1.2 features of Tizen RT.
 

@@ -1,5 +1,6 @@
 # [HOME](index.md)
 
+<!-- Tizen Platform Content -->
 # What is Tizen?
 
 ## [Tizen](what-is-tizen/tizen.md)
@@ -64,16 +65,29 @@
 
 
 # Tizen RT
-## [Tizen RT Overview](tizen-rt/tizen-rt-overview.md)
-
-## [Tizen RT Getting Started](tizen-rt/rt-getting-started.md)
-
-## [Tizen RT APIs](tizen-rt/rt-api.md)
-
-## [Tizen RT 1.0 Specification](tizen-rt/rt-specification-1-0.md)
-
-## [Tizen RT Long-term Goals](tizen-rt/rt-goal.md)
-
+## [Overview](tizen-rt/tizen-rt-overview.md)
+## [Getting Started](tizen-rt/rt-getting-started.md)
+## [API Reference](tizen-rt/rt-api.md)
+## [1.0 Specification](tizen-rt/rt-specification-1-0.md)
+## [Long-term Goals](tizen-rt/rt-goal.md)
 ## Release Notes
 ### [Tizen RT 1.0 M1](tizen-rt/release-notes/tizen-rt-1-0-m1.md)
+<!-- End of Tizen Platform -->
+
+<!-- Tizen .NET Content -->
+<!--
+# Tizen .NET (TBD)
+## Getting Started
+## Guides
+## API Reference
+## VS Tools
+## Samples
+-->
+<!-- End of Tizen .NET -->
+
+<!-- Tizen Native/Web Application Content -->
+<!--
+# Tizen Native/Web Application (TBD)
+-->
+<!-- End of Tizen Native/Web Application -->
 

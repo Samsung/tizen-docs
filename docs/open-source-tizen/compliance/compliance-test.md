@@ -1,16 +1,14 @@
 # Tizen Compliance Tests
 
-## 1 Overview
+Tizen Compliance Tests (TCT) verify conformance to the [Tizen Compliance Specification](compliance-spec.md) (TCS). These tests are intended to be used by Tizen device implementers to enable the Tizen-compliant development environment for Tizen application developers.
 
-Tizen Compliance Tests (TCT) verify conformance to the [Tizen Compliance Specification](https://source.tizen.org/compliance/compliance-specification) (TCS). These tests are intended to be used by Tizen device implementers to enable the Tizen-compliant development environment for Tizen application developers.
-
-## 2 TCT Introduction
+## TCT Introduction
 
 Tizen Compliance Tests consist of Web TCT and Native TCT, which include test suites and tools for testing on the Tizen web stack and the native stack, respectively.
 
-### 2.1 Web TCT
+### Web TCT
 
-### 2.1.1 Bill of Materials
+####  Bill of Materials
 
 Web TCT is a set of tools and test suites to test the web requirements defined in the Tizen Compliance Specification. It includes:
 
@@ -20,16 +18,13 @@ Web TCT is a set of tools and test suites to test the web requirements defined i
 - Web TCT Shell is a lightweight console tool that runs on the host machine, allowing users to debug single failed test cases or trigger TCT testing with an existing test plan. Web TCT Shell is an optional tool.
 - User guide documents and installation scripts.
 
-![Web TCT Workflow](https://source.tizen.org/sites/default/files/page/webtct_workflow.png)
+[![Web TCT Workflow](media/webtct_workflow.png)
 
-### 2.1.2 Using Web TCT
+#### Using Web TCT
 
 Make sure the prerequisites are met before starting:
 
 - Host machine with one of the following Linux distribution versions installed:
-
-  ​
-
   - Ubuntu 12.04 (32-bits)
   - Ubuntu 12.04 (64-bits)
   - Ubuntu 12.10 (32-bits)
@@ -49,9 +44,9 @@ To install and use web TCT, perform the following procedure:
 - Use Web TCT Manager to run all Web TCT tests and show the test results automatically.
 - Use Web TCT Behavior Test tool on a Target device to run manual test cases step-by-step
 
-### 2.2 Native TCT
+### Native TCT
 
-### 2.2.1 Bill of Materials
+### Bill of Materials
 
 Native TCT is a set of tools and test cases to test Native requirements defined in the Tizen Compliance Specification (TCS). It includes:
 
@@ -59,11 +54,11 @@ Native TCT is a set of tools and test cases to test Native requirements defined 
 - Native TCT consists of TCT, TBT(Tizen Behavior Test), EFL-UTC Packages
 - TCT manager is a GUI tool to manage whole tests, from planning to results
 - TCT Package includes Unit Test Case, Integration Test Case, Compatibility Test Case TCT
-- There are separate TBT(Tizen Behavior Test), EFL-UTC application to test the behavior of hardware and software features in interactive mode                   
+- There are separate TBT(Tizen Behavior Test), EFL-UTC application to test the behavior of hardware and software features in interactive mode
 
-### ![img](https://source.tizen.org/sites/default/files/images/nativetct_workflow.png)
+![img](media/nativetct_workflow.png)
 
-### 2.2.2 Using Native TCT
+#### Using Native TCT
 
 Make sure the prerequisites are met before starting:
 
@@ -79,7 +74,7 @@ To install and use Native TCT, perform this procedure:
 - Install Native TBT onto the Target and run manual test cases step-by-step
 - Install Native EFL-UTC onto the Target and run automated test cases.
 
-## 3 TCT Report Submission
+## TCT Report Submission
 
 TCT will generate following test reports:
 
@@ -89,9 +84,9 @@ TCT will generate following test reports:
 - Native TBT Test Report
 - Native EFL Test Report
 
-Follow the [Compliance Program Steps ](https://source.tizen.org/compliance)to submit the test reports above.
+Follow the [Compliance Program Steps ](compliance-program.md)to submit the test reports above.
 
-## 4 TCT Releases
+## TCT Releases
 
 - [http://download.tizen.org/tct/](http://download.tizen.org/tct/)
 

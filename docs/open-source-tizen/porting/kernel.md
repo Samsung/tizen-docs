@@ -29,7 +29,7 @@ To create the image by using MIC, see [MIC Image Creator](https://source.tizen.o
 
 This section provides a brief overview of the typical booting sequence, starting from the boot loader to the kernel and the platform.
 
-[![Boot-1.png](https://wiki.tizen.org/images/thumb/b/b6/Boot-1.png/500px-Boot-1.png)](https://wiki.tizen.org/File:Boot-1.png)
+![Boot-1.png](media/800px-Boot-1.png)
 
 ## Kernel Bootup
 
@@ -41,7 +41,7 @@ After mounting the initial RAM disk image, `initramfs` hands over the control to
 
 The following figure shows the early boot sequence after starting the kernel.
 
-[![Boot-2.png](https://wiki.tizen.org/images/thumb/1/11/Boot-2.png/500px-Boot-2.png)](https://wiki.tizen.org/File:Boot-2.png)
+![Boot-2.png](media/706px-Boot-2.png)
 
 - `sysinit.target`Special target unit for early boot-up scriptsIt has dependencies on necessary services and targets, such as `local-fs.target</code.````At this point, most of file systems like <code>/opt`, `/tmp`, and `/media` are mounted and the `systemd` related daemons, such as `systemd-journald` are launched.
 
@@ -53,7 +53,7 @@ The following figure shows the early boot sequence after starting the kernel.
 
 The following figure shows the overview of normal booting sequence in Tizen platform.
 
-[![Boot-3.png](https://wiki.tizen.org/images/thumb/5/59/Boot-3.png/500px-Boot-3.png)](https://wiki.tizen.org/File:Boot-3.png)
+![Boot-3.png](media/710px-Boot-3.png)
 
 - `multi-user.target`Special target unit for setting up a multi-user system which is non-graphical support.In Tizen platform, this target is used for launching platform infrastructure daemons such as `dbus` (system session), power manager, GPS manager, telephony daemon, WRT (Web Run Time) security daemon, and media server.Some `systemd` related daemons (such as `systemd-logind`) are also started in this phase.
 
@@ -123,7 +123,7 @@ If you want to use `initramfs`, you can use these configurations:
 
 The virtual file system (VFS) is an abstraction layer on top of a more concrete file system (such as ext2, jfs, and ext4). The VFS provides a switching layer between the SCI (system call interface) and the file systems supported by the kernel, as shown in the following figure.
 
-[![Filesystem.png](https://wiki.tizen.org/images/thumb/4/46/Filesystem.png/400px-Filesystem.png)](https://wiki.tizen.org/File:Filesystem.png)
+![Filesystem.png](media/800px-Filesystem.png)
 
 At the top of the VFS is a common API abstraction of functions, such as open, close, read, and write. At the bottom of the VFS are the file system abstractions that define how the upper-layer functions are implemented with respect to specific file system.
 
@@ -133,7 +133,7 @@ Below the file system layer is the page cache, which provides a common set of fu
 
 The following description is an example of the Tizen partition layout. The product vendor can modify the sequence or partition layout for their devices, as needed.
 
-[![Partitionlayout.png](https://wiki.tizen.org/images/thumb/a/a3/Partitionlayout.png/500px-Partitionlayout.png)](https://wiki.tizen.org/File:Partitionlayout.png)
+![Partitionlayout.png]](media/800px-Partitionlayout.png)
 
 The `boot` partition is mounted in the `/boot` directory of `rootfs`. Here `s-boot`, `u-boot`, and the kernel image are saved as a file format, provided as `system.tar`.
 
@@ -150,7 +150,7 @@ The `boot` partition is mounted in the `/boot` directory of `rootfs`. Here `s-bo
 
 Each partition has the hierarchy illustrated in the following figure.
 
-[![Filesystemhierarchy.png](https://wiki.tizen.org/images/thumb/3/39/Filesystemhierarchy.png/600px-Filesystemhierarchy.png)](https://wiki.tizen.org/File:Filesystemhierarchy.png)
+![Filesystemhierarchy.png]](media/800px-Filesystemhierarchy.png)
 
 ### Supported File Systems in Tizen
 
@@ -179,7 +179,7 @@ Tizen supports MultiMediaCard, Secure Digital, and Secure Digital I/O Support. T
 
 If MMC is your booting device, read-write APIs, partition management, and flashing must be provided at the boot loader.
 
-[![Mmc.png](https://wiki.tizen.org/images/thumb/6/6e/Mmc.png/500px-Mmc.png)](https://wiki.tizen.org/File:Mmc.png)
+![Mmc.png](media/800px-Mmc.png)
 
 ### MSHCI/SDHCI Features Overview
 
