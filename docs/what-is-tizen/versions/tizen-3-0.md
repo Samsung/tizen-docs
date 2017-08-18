@@ -2,15 +2,15 @@
 
 In the last 4 years Tizen has expanded its horizon from mobile devices, smart watch, to TV. Tizen currently runs in many commercially available devices. But the true potential of Tizen lies ahead and will be realized with support for the ‘Internet of Things (IoT)’, which connects everything.
 
-![img](https://developer.tizen.org/sites/default/files/images/3.0_introduction_1.png)
+![img](media/3.0_introduction_1.png)
 
 Tizen supports multiple device profiles, each optimized for the device category taking care of diverse requirements for display, connectivity, user-interface, sensors, health, security, memory and performance requirements. All profiles are built on top of a common, shared infrastructure called Tizen Common providing the best optimized components. And even better, new profiles can be created and extended with ease, allowing new class of convergence devices to be added.
 
-![img](https://developer.tizen.org/sites/default/files/images/3.0_introduction_2.png)
+![img](media/3.0_introduction_2.png)
 
-![img](https://developer.tizen.org/sites/default/files/images/3.0_introduction_3.png)
+![img](media/3.0_introduction_3.png)
 
-Tizen 3.0’s New Features for Enhancing Performance
+## Tizen 3.0’s New Features for Enhancing Performance
 
 Now, Tizen 3.0 adopts various new features such as high performance graphics, latest web technology, intensified security, and multi-user supports.
 
@@ -30,7 +30,7 @@ Now, Tizen 3.0 adopts various new features such as high performance graphics, la
 
  
 
-### IoT Capability of Tizen 3.0
+## IoT Capability of Tizen 3.0
 
 The most important one that enables Tizen to move to the next level is IoT and convergence capabilities:
 
@@ -39,4 +39,4 @@ The most important one that enables Tizen to move to the next level is IoT and c
 
  
 
-For detail information, see [Tizen 3.0 public M3 release note](../release-notes/tizen-3.0-m3.md).
+For detail information, see [Tizen 3.0 public M3 release note](../../open-source-tizen/release-notes/tizen-3-0-m3.md).

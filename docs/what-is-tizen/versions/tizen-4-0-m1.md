@@ -1,6 +1,6 @@
 # Tizen 4.0 M1
 
-The [first milestone (M1) of Tizen 4.0 was released](https://www.tizen.org/blogs/journey2w/2017/tizen-4.0-m1-source-code-release) in May 2017, marking a new turning point for the platform, which is currently the most successful Linux-based embedded OS in the world.
+The [first milestone (M1) of Tizen 4.0 was released](../../open-source-tizen/release-notes/tizen-4-0-m1.md) in May 2017, marking a new turning point for the platform, which is currently the most successful Linux-based embedded OS in the world.
 
 
 
@@ -8,13 +8,13 @@ The key changes in Tizen 4.0 are optimizations made on the platform for IoT deve
 
 
 
-![img](media/tizen-4.0-m1.jpg)
+![Tizen 4.0 M1 announcement](media/4.0_m1_announcement.jpg)
 
 
 
 
 
-### **A New Development Experience for a Strengthened Application Ecosystem**
+## **A New Development Experience for a Strengthened Application Ecosystem**
 
 While many existing OS platforms are limiting due to their framework, policies or business models, Tizen 4.0 aims to promote innovation and the expansion of the application ecosystem by giving developers more freedom and flexibility.
 
@@ -24,7 +24,7 @@ Additionally, Tizen Open Source Project worked closely with Microsoft to develop
 
 Since announcing its collaboration with Microsoft on .NET open-source projects last November, Tizen has steadily released preview versions of the Tizen.NET SDK to help developers build more powerful apps and to encourage their participation in the ongoing development of the Tizen application ecosystem.
 
-![img](https://img.global.news.samsung.com/global/wp-content/uploads/2017/06/Tizen-4.0_main-2.jpg)
+![Visual Studio Tools for Tizen > Project Wizard](vstools4tizen_project_wizard.png)
 
 
 
@@ -38,7 +38,7 @@ The platform’s Sensor Framework has also been enhanced so that developers can 
 
 
 
-### **Building an IoT Device Ecosystem**
+## **Building an IoT Device Ecosystem**
 
 To help build the Tizen device ecosystem, Tizen Open Source Project worked closely with partners to improve the configurability, updatability and IoT-readiness of Tizen 4.0.
 
@@ -50,9 +50,9 @@ Furthermore, the build environment of Tizen 4.0 M1 has been unified and the stru
 
 When Tizen 4.0 is completed at the end of 2017, the Platform Development Kit (PDK) will be distributed to assist device makers in creating their own IoT devices, while the Tizen Update Service will help them update their IoT services.
 
-![img](https://img.global.news.samsung.com/global/wp-content/uploads/2017/06/Tizen-4.0_main-4.jpg)
+![Tizen 4.0 Unified Build](media/4.0_unified_build.png)
 
-### **Enhanced Security for the IoT Era**
+## **Enhanced Security for the IoT Era**
 
 As the number of IoT devices continues to grow, and more and more things become connected to the Internet, security is of the utmost importance. To ensure that Tizen 4.0 is secure as possible, Samsung is systematically strengthening the development process of the platform.
 
@@ -61,7 +61,7 @@ For example, the Tizen Open Source Project is using static code analysis tools, 
 Building upon the platform’s first milestone, M1, additional features of Tizen 4.0 will be reinforced and stabilized during the second half of this year. The final version of Tizen 4.0 (M2) will be available later this year.
 
 
-![img](https://img.global.news.samsung.com/global/wp-content/uploads/2017/06/Tizen-4.0_main-6.jpg)
+![Tizen 4.0 M2 release plan](media/4.0_plan.png)
 
 
 
