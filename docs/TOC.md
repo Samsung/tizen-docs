@@ -4,14 +4,16 @@
 # What is Tizen?
 
 ## [Tizen](what-is-tizen/tizen.md)
-### Versions
-#### [TIzen 4.0 M1](what-is-tizen/versions/tizen-4-0-m1.md)
-#### [TIzen 3.0](what-is-tizen/versions/tizen-3-0.md)
 ## [Mobile](what-is-tizen/mobile.md)
-## [Wearable](what-is-tizen/wearable.md)
 ## [TV](what-is-tizen/tv.md)
+## [Wearable](what-is-tizen/wearable.md)
+## Versions
+### [TIzen 4.0 M1](what-is-tizen/versions/tizen-4-0-m1.md)
+### [TIzen 3.0](what-is-tizen/versions/tizen-3-0.md)
+
 
 # Open Source Tizen
+
 ## About Open Source Project
 ### [Overview](open-source-tizen/about/tizen-open-source-overview.md)
 ### [Development Work Flow](open-source-tizen/about/work-flow.md)
@@ -62,7 +64,6 @@
 ### [Tizen Compliance Program](open-source-tizen/compliance/compliance-program.md)
 ### [Compliance Specification](open-source-tizen/compliance/compliance-spec.md)
 ### [Tizen Compliance Test](open-source-tizen/compliance/compliance-test.md)
-
 
 ## Tizen RT
 ### [Overview](open-source-tizen/tizen-rt/tizen-rt-overview.md)

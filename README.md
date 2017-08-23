@@ -3,10 +3,10 @@
 This project is for writing Tizen documents for platform and application developers. The documents will be published to new Tizen portal site.
 
 ## Branches
-Contributions to this documents are welcome.
-Please submit PRs to the **staging** branch, which is used temporarily.
-The **live** branch will be used for publising to the Tizen portal site. If you can see **live** branch, please use **live** branch instead of staging branch.
-The **master** branch is used for a ready-live.
+Contributions to this documents are welcome.  
+Please submit PRs to the **live** branch, which is what's published to the live Tizen Docs site. You can see your changes on https://doc.stage.tizen.org/staging/{PR #}/ before they are published on the live Tizen Docs site.  
+The **master** branch is used for a ready-live. It is used for the same purpose as tizen branch on Tizen public git.   
+The **staging** branch is used for testing.
 
 ## Respository structure
 
@@ -17,7 +17,7 @@ The **master** branch is used for a ready-live.
 
 ## Contribution workflow
 
-1. Visit the page to edit on [portal.tizen.org/docs](https://portal.tizen.org/docs), then click the **Edit** button on the top right. This brings you to the appropriate markdown page in the repo.
+1. Visit the page to edit on [Tizen Docs](https://portal.tizen.org/docs) (TBD), then click the **Edit** button on the top right. This brings you to the appropriate markdown page in the repo.
 1. Edit the markdown:
     1. If you're including images (use PNGs, generally), place them in the media folder that's in the topic's folder. Links are then `media/<image_name>.png`.
     1. Relative links to other pages in this docset should be in the form `../<folder>/<topic-file>.md` including the training `.md`. If you're linking to another topic in the same folder, then `../<folder>/` can be omitted. When using anchors, always remember to include the `.md` before the `#`.
@@ -31,6 +31,8 @@ If you're creating a new topic, keep the following in mind as well:
 1. In addition to adding your page, edit docs/TOC.md to add a link to that page.
 1. If you're adding a top-level node to the TOC, also make an entry for it in docs/index.md.
 
+**Note:**  
+TOC.md has maximum 4th depth. You can use #, ##, ###, and ####. The title with # will be located on GNB(Global Navigation Bar).
 
 ### How to PR
 1. Fork form the original repository, http://github.com/Samsung/tizen-docs.
