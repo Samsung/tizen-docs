@@ -46,7 +46,7 @@
 #### [Overview](open-source-tizen/tools/gbs/overview.md)
 #### [Configuration File](open-source-tizen/tools/gbs/gbs.conf.md)
 #### [Usage](open-source-tizen/tools/gbs/usage.md)
-### [Image Creator(MIC)](open-source-tizen/tools/mic-image-creator)
+### [Image Creator(MIC)](open-source-tizen/tools/mic-image-creator.md)
 
 ## Release Notes
 ### [Tizen 4.0 M1](open-source-tizen/release-notes/tizen-4-0-m1.md)
@@ -64,14 +64,14 @@
 ### [Tizen Compliance Test](open-source-tizen/compliance/compliance-test.md)
 
 
-# Tizen RT
-## [Overview](tizen-rt/tizen-rt-overview.md)
-## [Getting Started](tizen-rt/rt-getting-started.md)
-## [API Reference](tizen-rt/rt-api.md)
-## [1.0 Specification](tizen-rt/rt-specification-1-0.md)
-## [Long-term Goals](tizen-rt/rt-goal.md)
-## Release Notes
-### [Tizen RT 1.0 M1](tizen-rt/release-notes/tizen-rt-1-0-m1.md)
+## Tizen RT
+### [Overview](open-source-tizen/tizen-rt/tizen-rt-overview.md)
+### [Getting Started](open-source-tizen/tizen-rt/rt-getting-started.md)
+### [API Reference](open-source-tizen/tizen-rt/rt-api.md)
+### [1.0 Specification](open-source-tizen/tizen-rt/rt-specification-1-0.md)
+### [Long-term Goals](open-source-tizen/tizen-rt/rt-goal.md)
+### Release Notes
+#### [Tizen RT 1.0 M1](open-source-tizen/tizen-rt/release-notes/tizen-rt-1-0-m1.md)
 <!-- End of Tizen Platform -->
 
 <!-- Tizen .NET Content -->
