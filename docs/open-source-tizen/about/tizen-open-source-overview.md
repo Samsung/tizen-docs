@@ -12,7 +12,6 @@ Mobile operators can work with device partners to customize the operating system
 
 For application developers and ISVs, Tizen offers the power of native application development with the flexibility of unparalleled HTML5 support. Tizen also offers the potential for application developers to extend their reach to new “smart devices” running Tizen, including wearables, consumer electronics (TVs, gaming consoles, DVRs, etc.), cars and appliances.
 
--
 The Tizen project resides within the [Linux Foundation](http://www.linuxfoundation.org/collaborate/labs/tizen) and is governed by a Technical Steering Group. The Technical Steering Group is the primary decision-making body for the open source project, with a focus on platform development and delivery, along with the formation of working groups to support device verticals.
 
 The [Tizen Association](http://www.tizenassociation.org/) has been formed to guide the industry role of Tizen, including gathering of requirements, identification and facilitation of service models, and overall industry marketing and education.

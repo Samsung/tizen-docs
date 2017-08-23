@@ -1,6 +1,6 @@
 # Tizen TV
 
-![img](https://img.global.news.samsung.com/global/wp-content/uploads/2017/05/Smart-TVs-at-TDC2017_main_1.jpg)
+![Smart TV](Smart-TVs-at-TDC2017_main_1.jpg)
 
 
 
@@ -37,8 +37,6 @@ Samsung has completely redesigned it's Smart TV experience. With a new intuitive
 
 The Samsung Smart TV SDK combines the features of a TV with the web based technologies. The SDK provides tools for developing application on Samsung TV for Tizen platform. Create your first application by downloading latest Tizen TV SDK.
 
- For more information for developing a Tizen TV application, go to [http://developer.samsung.com/tv](http://developer.samsung.com/tv).
+For more information for developing a Tizen TV application, go to [http://developer.samsung.com/tv](http://developer.samsung.com/tv).
 
-![img](https://developer.tizen.org/sites/default/files/images/profile_tv_devices.jpg)
-
-
+![TV Devices](media/profile_tv_devices.jpg)

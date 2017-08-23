@@ -15,7 +15,7 @@ You can set up access to [Tizen Gerrit](http://review.tizen.org/gerrit/) through
 2. Configuring Secure Shell (SSH) for Gerrit access
 3. Configuring Git for Gerrit access
 
-### 1 Registering a User Account
+### Registering a User Account
 
 To register a user account to gain access to tizen.org:
 
@@ -31,7 +31,7 @@ To register a user account to gain access to tizen.org:
 
 At this point, the prerequisites for accessing Gerrit are ready. Move on to the next section to enable Gerrit access.
 
-### 2 Configuring SSH for Gerrit Access
+### Configuring SSH for Gerrit Access
 
 To configure SSH for Gerrit access:
 
@@ -96,7 +96,7 @@ To configure SSH for Gerrit access:
    **** Welcome to Gerrit Code Review ****
    ```
 
-### 3 Configuring Git for Gerrit Access
+### Configuring Git for Gerrit Access
 
 Git must know the user's name and email address to determine the author of each commit. If the user name or email address is not set up in a way that git can find it, the user can encounter some odd warnings.
 
