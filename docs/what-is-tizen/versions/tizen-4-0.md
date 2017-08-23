@@ -6,7 +6,7 @@ In the near future, lots of IoT (Internet of Things) services will pervade every
 
 Figure. Evolution of Tizen
 
-In addition the previous achievements, Tizen 4.0 presents more advances in development environment, configuration, and maintenance, 
+In addition to the previous achievements, Tizen 4.0 presents more advances in development environment, configuration, and maintenance, 
 which are invigorating the Tizen ecosystem in every respect.
 
 The key features are as follows:
