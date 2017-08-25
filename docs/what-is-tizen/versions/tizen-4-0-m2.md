@@ -1,5 +1,5 @@
 # Tizen 4.0
-Since the first release in 2012, Tizen has evolved adapting to the market requirements and technical advances. As smart devices are widespread in the market, Tizen is deployed to mobile phones, wearable devices, TVs, and home appliances accordingly.In the near future, lots of IoT (Internet of Things) services will pervade everyone's life. Tizen is moving forward as a convergence platform and Tizen 4.0 is another big step to the world of everything connected.
+Since the first release in 2012, Tizen has evolved adapting to the market requirements and technical advances. As smart devices are widespread in the market, Tizen is deployed to mobile phones, wearable devices, TVs, and home appliances accordingly. In the near future, lots of IoT (Internet of Things) services will pervade everyone's life. Tizen is moving forward as a convergence platform and Tizen 4.0 is another big step to the world of everything connected.
 
 ![img](media/4.0_Tizen_Evolution.png)
 
@@ -13,7 +13,7 @@ The key features are as follows:
 ![img](media/4.0_TizenArch.png)
 Figure. Tizen .NET Architecture
 
-* **Tizen-specific C# API**: In addition to C and Web languages, C# is newly supported as an application language. As C# is one of the mostlyused programming languages, it is expected to boost the application ecosystem with .NET Standard API. Further, Tizen API allows applications to access platform-specific interfaces and functionalities: multimedia, network, system, telephony, etc.
+* **Tizen-specific C# API**: In addition to C and Web languages, C# is newly supported as an application language. As C# is one of the mostlyused programming languages, it is expected to boost the application ecosystem with .NET Standard API. Furthermore, Tizen API allows applications to access platform-specific interfaces and functionalities: multimedia, network, system, telephony, etc.
 
 ![img](media/4.0_Tizen.NET.png)
 
