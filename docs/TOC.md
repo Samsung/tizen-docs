@@ -47,8 +47,13 @@
 ### Git Build System(GBS)
 #### [Overview](open-source-tizen/tools/gbs/overview.md)
 #### [Configuration File](open-source-tizen/tools/gbs/gbs.conf.md)
-#### [Usage](open-source-tizen/tools/gbs/usage.md)
-### [Image Creator(MIC)](open-source-tizen/tools/mic-image-creator.md)
+#### [GBS Usage](open-source-tizen/tools/gbs/gbs-usage.md)
+### [Image Creator(MIC)]
+#### [Overview](open-source-tizen/tools/mic/mic-overview.md)
+#### [MIC Usage](open-source-tizen/tools/mic/mic-usage.md)
+#### [How to Custumize Images](open-source-tizen/tools/mic/mic-customize-image.md)
+#### [FAQs](open-source-tizen/tools/mic/mic-faqs.md)
+#### [Reporting Issues](open-source-tizen/tools/mic/mic-reporting-issues.md)
 
 ## Release Notes
 ### [Tizen 4.0 M1](open-source-tizen/release-notes/tizen-4-0-m1.md)
