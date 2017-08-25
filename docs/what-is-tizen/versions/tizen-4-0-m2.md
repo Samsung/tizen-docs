@@ -21,6 +21,9 @@ Figure. Tizen .NET Architecture
 
 * **Tizen RT and IoT.js**: IoT devices are likely to have limited computing power. Therefore, there is a need for lightweight platforms for low-end devices. Tizen RT is an RTOS-based platform fitting into the typical conditions of IoT devices. For applications on Tizen RT, IoT.js is a good solution for applications. IoT.js is a lightweight JavaScript engine and framework.
 
+![img](media/tizen_rt_introduction-800x350.png)
+![img](media/iot_js_fw_diagram.png)
+
 * **Unified Build System**: With a single package repository by utilizing building blocks, Tizen applications can be generated for all device types, such as Mobile devices, wearable devices, TVs, washer & dryers, refrigerators, IoT devices, etc. Tizen's new approach of configurable platform with building blocks makes it possible to configure and create new platforms easily to cover all device types.
 
 ![img](media/4.0_BuildingBlocks.png)
