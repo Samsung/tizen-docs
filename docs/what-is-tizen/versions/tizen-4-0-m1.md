@@ -24,7 +24,7 @@ Additionally, Tizen Open Source Project worked closely with Microsoft to develop
 
 Since announcing its collaboration with Microsoft on .NET open-source projects last November, Tizen has steadily released preview versions of the Tizen.NET SDK to help developers build more powerful apps and to encourage their participation in the ongoing development of the Tizen application ecosystem.
 
-![Visual Studio Tools for Tizen > Project Wizard](vstools4tizen_project_wizard.png)
+![Visual Studio Tools for Tizen > Project Wizard](media/vstools4tizen_project_wizard.png)
 
 
 
