@@ -1,6 +1,6 @@
-# Git Directory Structure
+# Git Repository Structure
 
-The following is the git directory structure for Tizen 3.0 and higher.
+The following is the git repository structure for Tizen 3.0 and higher.
 
 | 1ST DEPTH | 2ND DEPTH  | 3RD DEPTH | DESCRIPTION                              |
 | --------- | ---------- | --------- | ---------------------------------------- |
@@ -54,5 +54,3 @@ The following is the git directory structure for Tizen 3.0 and higher.
 |           | upstream   |           | Code from upstream open source           |
 
 **Note** Any git repository except above these directories does not belong to Tizen 3.0 and higher.
-
-For more information on Tizen platform development, see [Developing](../developing/developing/installing.md)

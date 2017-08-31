@@ -17,7 +17,7 @@
 ## About Open Source Project
 ### [Overview](open-source-tizen/about/tizen-open-source-overview.md)
 ### [Development Work Flow](open-source-tizen/about/work-flow.md)
-### [Git Directory Structure](open-source-tizen/about/git-directory-structure.md)
+### [Git Repository Structure](open-source-tizen/about/git-repo-structure.md)
 ### [Typographic Conventions](open-source-tizen/about/conventions.md)
 
 ## Developing
@@ -29,8 +29,6 @@
 ### [Contributing Code to Tizen](open-source-tizen/developing/contributing.md)
 ### [Creating Tizen Images with MIC](open-source-tizen/developing/creating.md)
 ### [Flashing an Image to Device](open-source-tizen/developing/flashing.md)
-### [FAQ](open-source-tizen/developing/faq.md)
-
 ## Tizen Porting
 ### [Overview](open-source-tizen/porting/overview.md)
 ### [Kernel](open-source-tizen/porting/kernel.md)
@@ -48,13 +46,14 @@
 #### [Overview](open-source-tizen/tools/gbs/overview.md)
 #### [Configuration File](open-source-tizen/tools/gbs/gbs.conf.md)
 #### [GBS Usage](open-source-tizen/tools/gbs/gbs-usage.md)
-### [Image Creator(MIC)]
+
+#### [FAQ](open-source-tizen/tools/gbs/gbs-faq.md)
+
+### Image Creator(MIC)
 #### [Overview](open-source-tizen/tools/mic/mic-overview.md)
 #### [MIC Usage](open-source-tizen/tools/mic/mic-usage.md)
 #### [How to Custumize Images](open-source-tizen/tools/mic/mic-customize-image.md)
-#### [FAQs](open-source-tizen/tools/mic/mic-faqs.md)
-#### [Reporting Issues](open-source-tizen/tools/mic/mic-reporting-issues.md)
-
+#### [FAQ](open-source-tizen/tools/mic/mic-faq.md)
 ## Release Notes
 ### [Tizen 4.0 M1](open-source-tizen/release-notes/tizen-4-0-m1.md)
 ### [Tizen 3.0 M3](open-source-tizen/release-notes/tizen-3-0-m3.md)
@@ -81,19 +80,15 @@
 <!-- End of Tizen Platform -->
 
 <!-- Tizen .NET Content -->
-<!--
-# Tizen .NET (TBD)
-## Getting Started
-## Guides
-## API Reference
-## VS Tools
-## Samples
--->
+# <!--Tizen .NET (TBD)-->
+## <!--Getting Started-->
+## <!--Guides-->
+## <!--API Reference-->
+## <!--VS Tools-->
+## <!--Samples-->
 <!-- End of Tizen .NET -->
 
 <!-- Tizen Native/Web Application Content -->
-<!--
-# Tizen Native/Web Application (TBD)
--->
+# <!--Tizen Native/Web Application (TBD)-->
 <!-- End of Tizen Native/Web Application -->
 

@@ -8,7 +8,7 @@ The key changes in Tizen 4.0 are optimizations made on the platform for IoT deve
 
 
 
-![Tizen 4.0 M1 announcement](media/4.0_m1_announcement.jpg)
+![Tizen 4.0 M1 announcement](media/4.0_m1_announcement.png)
 
 
 
@@ -61,12 +61,4 @@ For example, the Tizen Open Source Project is using static code analysis tools, 
 Building upon the platform’s first milestone, M1, additional features of Tizen 4.0 will be reinforced and stabilized during the second half of this year. The final version of Tizen 4.0 (M2) will be available later this year.
 
 
-![Tizen 4.0 M2 release plan](media/4.0_plan.png)
-
-
-
-
-See [Release Notes](../../open-source/release-notes/tizen-4-0-m1.md)
-
-
-
+![Tizen 4.0 M2 release plan](media/4.0_release_plan.png)
