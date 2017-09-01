@@ -1,6 +1,6 @@
 # Tizen TV
 
-![Smart TV](Smart-TVs-at-TDC2017_main_1.jpg)
+![Smart TV](media/Smart-TVs-at-TDC2017_main_1.jpg)
 
 
 

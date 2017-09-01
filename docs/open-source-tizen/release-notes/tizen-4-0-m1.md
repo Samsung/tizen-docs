@@ -1,4 +1,4 @@
-# Tizen 4.0 M2
+# Tizen 4.0 M1
 
 Release Date: 31 May, 2017
 
