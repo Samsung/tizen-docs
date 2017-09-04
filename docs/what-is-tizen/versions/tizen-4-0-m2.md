@@ -5,19 +5,17 @@ Since the first release in 2012, Tizen has evolved adapting to the market requir
 
 Figure. Evolution of Tizen
 
-In addition to the previous achievements, Tizen 4.0 presents more advances in development environment, configuration, and maintenance, which are invigorating the Tizen ecosystem in every respect.
+Tizen 4.0 M1 was a significant improvement of development environment: Tizen .NET architecture based on Microsoft's .NET Core and Xamarin.Forms, support of C# application language, and Visual Studio Tools for Tizen. Tizen 4.0 M2 presents more advances in development environment, configuration, and maintenance, which are invigorating the Tizen ecosystem in every respect.
 
 The key features are as follows:
-* **Tizen .NET Architecture**: By embracing Microsoft's .NET Core and Xamarin.Forms, Tizen .NET provides developers with extended environmentfor cross-platform development.
+* **Support of .NET Core 2**: Tizen 4.0 M2 utilizes the benefits of [.NET Core 2](https://github.com/dotnet/core/blob/master/release-notes/2.0/2.0.0.md). With [.NET Standard 2.0](https://docs.microsoft.com/en-us/dotnet/api/?view=netstandard-2.0) complete, the number of APIs is greatly increased. ARM32 Runtime builds for Linux and Windows are available. For information of .NET Core 2 improvements, see [here](https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-net-core-2-0/).
 
 ![img](media/4.0_TizenArch.png)
 Figure. Tizen .NET Architecture
-
-* **Tizen-specific C# API**: In addition to C and Web languages, C# is newly supported as an application language. As C# is one of the mostlyused programming languages, it is expected to boost the application ecosystem with .NET Standard API. Furthermore, Tizen API allows applications to access platform-specific interfaces and functionalities: multimedia, network, system, telephony, etc.
-
+ 
 ![img](media/4.0_Tizen.NET.png)
 
-* **Visual Studio Tools for Tizen**: As an IDE (Integrated Development Environment), Tizen Studio provides useful tools for developing, debugging, and emulating Tizen applications. Now, those tools are integrated with Microsoft's Visual Studio as extensions. Tizen-specific tools, such as Tizen Project Wizard, Emulator Manager, Device Manager, etc., are easily launched through the Visual Studio.
+* **Profiler Visual Studio Tools for Tizen**: As an IDE (Integrated Development Environment), Tizen Studio provides useful tools for developing, debugging, and emulating Tizen applications. Now, those tools are integrated with Microsoft's Visual Studio as extensions. Tizen-specific tools, such as Tizen Project Wizard, Emulator Manager, Device Manager, etc., are easily launched through the Visual Studio.
 
 * **Tizen RT and IoT.js**: IoT devices are likely to have limited computing power. Therefore, there is a need for lightweight platforms for low-end devices. Tizen RT is an RTOS-based platform fitting into the typical conditions of IoT devices. For applications on Tizen RT, IoT.js is a good solution for applications. IoT.js is a lightweight JavaScript engine and framework.
 
