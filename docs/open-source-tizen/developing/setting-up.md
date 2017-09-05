@@ -7,6 +7,8 @@ This topic provides information on how to set up a development environment, incl
 - How to set up the repo tool.
 - How to work through a network proxy.
 
+!!!Note If you encounter problems while obtaining the repo tool, see [Tips and Heads-up](tips.md).
+
 ## Setting Up Gerrit Access
 
 You can set up access to [Tizen Gerrit](http://review.tizen.org/gerrit/) through the following steps:
@@ -37,7 +39,7 @@ To configure SSH for Gerrit access:
 
 1. Generate RSA keys:
 
-   ```
+   ```bash
    $ ssh-keygen [-t rsa] [-C "<Comments>"]
    ```
 
@@ -50,7 +52,9 @@ To configure SSH for Gerrit access:
    Based on the on-screen prompts, specify the file in which to save the key, and the passphrase.
 
    ```
-   Enter file in which to save the key (/home/<User>/.ssh/id_rsa):Enter passphrase (empty for no passphrase):Enter same passphrase again:
+   Enter file in which to save the key (/home/<User>/.ssh/id_rsa):
+   Enter passphrase (empty for no passphrase):
+   Enter same passphrase again:
    ```
 
    If you press ENTER directly for the file, the default value `/home/<User>/.ssh/id_rsa` is used. If you press ENTER directly for the passphrase, no passphrase is used.
@@ -62,16 +66,29 @@ To configure SSH for Gerrit access:
    - Ubuntu, openSUSE, CentOS, or Debian:
 
      ```
-     Host tizen review.tizen.orgHostname review.tizen.orgIdentityFile ~/.ssh/id_rsaUser <Gerrit_Username>Port 29418# Add the line below when using proxy, otherwise, skip it.# ProxyCommand nc -X5 -x <Proxy Address>:<Port> %h %p
+     Host tizen review.tizen.org
+     Hostname review.tizen.org
+     IdentityFile ~/.ssh/id_rsa
+     User <Gerrit_Username>
+     Port 29418
+     # Add the line below when using proxy, otherwise, skip it.
+     # ProxyCommand nc -X5 -x <Proxy Address>:<Port> %h %p
      ```
 
    - Fedora:
 
      ```
-     Host tizen review.tizen.orgHostname review.tizen.orgIdentityFile ~/.ssh/id_rsaUser <Gerrit_Username>Port 29418# Add the line below when using proxy, otherwise, skip it.# ProxyCommand nc --proxy-type socks4 --proxy <Proxy Address>:<Port> %h %p
+     Host tizen review.tizen.org
+     Hostname review.tizen.org
+     IdentityFile ~/.ssh/id_rsaUser <Gerrit_Username>
+     Port 29418
+     # Add the line below when using proxy, otherwise, skip it.
+     # ProxyCommand nc --proxy-type socks4 --proxy <Proxy Address>:<Port> %h %p
      ```
 
-   **Note:**Both "tizen" and "review.tizen.org" are aliases of the hostname. "tizen" is configured for simplicity of commands when initializing git repositories and cloning specific Tizen projects, and "review.tizen.org" is configured to work with the `manifest.xml` and `_remote.xml` files when synchronizing the entire Tizen source.The `~/.ssh/config` file must not be written in by other users. Make sure to remove the write permission by executing `chmod o-w ~/.ssh/config`. For more information on `ssh_config`, see `man ssh_config`.
+   **Note:**  
+     - Both "tizen" and "review.tizen.org" are aliases of the hostname. "tizen" is configured for simplicity of commands when initializing git repositories and cloning specific Tizen projects, and "review.tizen.org" is configured to work with the `manifest.xml` and `_remote.xml` files when synchronizing the entire Tizen source.
+     - The `~/.ssh/config` file must not be written in by other users. Make sure to remove the write permission by executing `chmod o-w ~/.ssh/config`. For more information on `ssh_config`, see `man ssh_config`.
 
 3. Copy the full text in `~/.ssh/id_rsa.pub`, including all of the following:
 
@@ -86,13 +103,13 @@ To configure SSH for Gerrit access:
 
 5. Verify the SSH connection:
 
-   ```
+   ```bash
    $ ssh tizen
    ```
 
    The following message indicates that SSH connection has been established successfully:
 
-   ```
+   ```bash
    **** Welcome to Gerrit Code Review ****
    ```
 
@@ -106,17 +123,17 @@ To configure git for Gerrit access:
 
 1. Set the user name by executing the following command:
 
-   ```
+   ```bash
    $ git config --global user.name <First_Name Last_Name>
    ```
 
 2. Set the email address by executing the following command:
 
-   ```
+   ```bash
    $ git config --global user.email "<E-mail_Address>"
    ```
 
-**Note:** Using the `GIT_AUTHOR_NAME` and `GIT_AUTHOR_EMAIL` environment variables is an alternative solution. These variables override all configuration settings once set.
+`> [!Note]` Using the `GIT_AUTHOR_NAME` and `GIT_AUTHOR_EMAIL` environment variables is an alternative solution. These variables override all configuration settings once set.
 
 ## Setting Up the GBS Configuration
 
@@ -127,8 +144,6 @@ You can set up the GBS configuration through editing the `.gbs.conf` file.
 The default GBS configuration file is located in `~/.gbs.conf`:
 
 ```
-The default GBS configuration file is located in ~/.gbs.conf:
-
 [general]
 profile = profile.unified_standard
 
@@ -366,17 +381,22 @@ url = http://download.tizen.org/releases/daily/tizen/3.0-ivi/latest/repos/arm/de
 The default profile used in GBS is specified in the `[general]` section:
 
 ```
-[general]profile = profile.unified_standard
+[general]
+profile = profile.unified_standard
 ```
 
-**Note:** The default GBS build parameters, based on the above block, are as follows:Tizen version: 4.0Profile: unifiedRepository: standard
+**Note:** The default GBS build parameters, based on the above block, are as follows:  
+- Tizen version: 4.0  
+- Profile: unified  
+- Repository: standard
 
 ### Setting Up a Specific Profile in the .gbs.conf File
 
 To build using a non-default Tizen version, profile, or repository, select one of the profiles specified in the `.gbs.conf` file and set that profile in the `[general]` section, using the following format:
 
 ```
-[general] profile = profile."$Version""$Profile"_"$Repository"
+[general]
+profile = profile."$Version""$Profile"_"$Repository"
 ```
 
 - If the Tizen version is 3.0, `$Version` equals "3.0-".
@@ -385,66 +405,66 @@ To build using a non-default Tizen version, profile, or repository, select one o
 Other examples:
 
 - Tizen 4.0 Unified / emulator repository
-
-  ​
-
   ```
-  [general]profile = profile.unified_emulator
+  [general]
+  profile = profile.unified_emulator
   ```
 
 - Tizen 3.0 Common / arm64-wayland repository
 
-  ​
-
   ```
-  [general]profile = profile.3.0-common_arm64-wayland
+  [general]
+  profile = profile.3.0-common_arm64-wayland
   ```
 
 - Tizen 3.0 Common / emulator32-wayland repository
 
-  ​
-
   ```
-  [general]profile = profile.3.0-common_emulator32-wayland
+  [general]
+  profile = profile.3.0-common_emulator32-wayland
   ```
 
 - Tizen 3.0 Mobile / target-TM1 repository
 
-  ​
-
   ```
-  [general]profile = profile.3.0-mobile_target-TM1
+  [general]
+  profile = profile.3.0-mobile_target-TM1
   ```
 
 - Tizen 3.0 TV / arm-wayland repository
 
-  ​
-
   ```
-  [general]profile = profile.3.0-tv_arm-wayland
+  [general]
+  profile = profile.3.0-tv_arm-wayland
   ```
 
 - Tizen 3.0 Wearable / target-circle repository
 
-  ​
-
   ```
-  [general]profile = profile.3.0-wearable_target-circle
+  [general]
+  profile = profile.3.0-wearable_target-circle
   ```
 
 - Tizen 3.0 IVI / emulator repository
 
-  ​
-
   ```
-  [general]profile = profile.3.0-ivi_emulator
+  [general]
+  profile = profile.3.0-ivi_emulator
   ```
 
 Each `profile` entry in the `.gbs.conf` file specifies multiple `repo` entries, and each `repo` entry specifies a URL where RPM files used in the GBS build are located.
 
-**Note:** The `latest` directory in the remote repository URLs is a symbolic link in the remote server, which is always linked to the latest new directory and can be changed any time, so make sure to use the latest repo with a specific date to guarantee usability. An example is shown below:`url = http://download.tizen.org/releases/daily/tizen/unified/latest/repos/standard/packages/`This URL is symbolically linked to the latest snapshot number in "[http://download.tizen.org/releases/daily/tizen/unified/](http://download.tizen.org/releases/daily/tizen/unified/)". To guarantee usability, use a specific date`url = http://download.tizen.org/releases/daily/tizen/unified/tizen-unified_20170627.1/repos/standard/packages/`
+**Note:** The `latest` directory in the remote repository URLs is a symbolic link in the remote server, which is always linked to the latest new directory and can be changed any time, so make sure to use the latest repo with a specific date to guarantee usability. An example is shown below:
+```
+url = http://download.tizen.org/releases/daily/tizen/unified/latest/repos/standard/packages/
+```
 
-For more information on `.gbs.conf`, see [Configuration File](https://source.tizen.org/documentation/reference/git-build-system/configuration-file).
+This URL is symbolically linked to the latest snapshot number in "[http://download.tizen.org/releases/daily/tizen/unified/](http://download.tizen.org/releases/daily/tizen/unified/)". To guarantee usability, use a specific date
+```
+url = http://download.tizen.org/releases/daily/tizen/unified/tizen-unified_20170627.1/repos/standard/packages/
+```
+
+For more information on `.gbs.conf`, see [Configuration File](../tools/gbs/gbs.conf.md).
 
 ## Setting Up the Repo Tool
 
@@ -454,21 +474,21 @@ To install and set up the repo tool:
 
 1. Create a `~/bin/` subdirectory, include it in `PATH`, and switch to it:
 
-   ```
+   ```bash
    $ mkdir ~/bin/$ PATH=~/bin:$PATH
    ```
 
 2. Download the repo script:
 
-   ```
+   ```bash
    $ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
    ```
 
-   **Note:** If you encounter problems while obtaining the repo tool, see [Tips and Heads-up](https://source.tizen.org/documentation/developer-guide/getting-started-guide/tips-and-heads-up).
+   **Note:** If you encounter problems while obtaining the repo tool, see [Tips and Heads-up](tips.md).
 
 3. Change the attributes of the repo script to make it executable:
 
-   ```
+   ```bash
    $ sudo chmod a+x ~/bin/repo
    ```
 
@@ -483,18 +503,21 @@ You can set up your development environment to work through a network proxy.
 To configure a proxy through the Linux shell prompt:
 
 1. Open the `.bashrc` file and set the `http_proxy`, `ftp_proxy`, `https_proxy`, and `no_proxy` environment variables:
-
    ```
-   export http_proxy=<Proxy_Address>:<Port>export ftp_proxy=$http_proxyexport https_proxy=<Proxy_Address>:<Port>export no_proxy=<Internal_Address>
-   ```
+    export http_proxy=<Proxy_Address>:<Port>
+    export ftp_proxy=$http_proxy
+    export https_proxy=<Proxy_Address>:<Port>
+    export no_proxy=<Internal_Address>
+    ```
 
 2. Open `/etc/sudoers` and preserve the environment variables by adding the following content:
 
-   ```
-   Defaults env_keep="http_proxy ftp_proxy https_proxy no_proxy"
-   ```
+    ```
+    Defaults env_keep="http_proxy ftp_proxy https_proxy no_proxy"
+    ```
 
    **Note:** Replace "=" with "+=" if previous `env_keep` settings already exist in `/etc/sudoers`.
+
 
 ### Configuring Git Access through the Proxy
 
@@ -504,13 +527,13 @@ To allow git access through the proxy:
 
    The following example uses VIM:
 
-   ```
+   ```bash
    $ sudo vim /usr/local/bin/git-proxy
    ```
 
 2. Add the following lines into the file and save it:
 
-   ```
+   ```bash
    #!/bin/bash
 
    PROXY=<Proxy_Address>
@@ -536,7 +559,7 @@ To allow git access through the proxy:
 
 3. Change the attributes of the `git-proxy` script to make it executable:
 
-   ```
+   ```bash
    $ sudo chmod +x /usr/local/bin/git-proxy
    ```
 
@@ -548,6 +571,6 @@ To allow git access through the proxy:
 
 5. Apply the changes:
 
-   ```
+   ```bash
    $ source ~/.bashrc
    ```

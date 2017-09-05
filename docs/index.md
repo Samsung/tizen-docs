@@ -57,5 +57,5 @@ In the first preview of Visual Studio Tools for Tizen, we began to leverage the 
 **See the following links for more information:**
 - Source code (GIT/Gerrit): https://review.tizen.org/gerrit
 - Tizen Build setup (OBS): https://build.tizen.org/
-- Tizen Bug Tracking system (Jira): https://bugs.tizen.org/jira
+- Tizen Bug Tracking system (Jira): https://bugs.tizen.org/
 - Download URL: http://download.tizen.org/

@@ -1,45 +1,31 @@
 # MIC Frequently Asked Questions
 
-**Q**: When creating an image, MIC shows "Error: URLGrabber error: [http://www.example.com/latest/repos/oss/ia32/packages/repodata/repomd.xml](http://www.example.com/latest/repos/oss/ia32/packages/repodata/repomd.xml)" 
-
+**Q**: When creating an image, MIC shows "Error: URLGrabber error: [http://www.example.com/latest/repos/oss/ia32/packages/repodata/repomd.xml](http://www.example.com/latest/repos/oss/ia32/packages/repodata/repomd.xml)"   
 **A**: Perhaps your network has some issues, or your proxy doesn't work. Try another proxy or find out the network issue. 
 
 
-
-**Q**: MIC complains "Error: found 1 resolver problem, abort!" 
-
+**Q**: MIC complains "Error: found 1 resolver problem, abort!"  
 **A**: This is not an issue with MIC, but with the repo you used. Make sure the packages in the repo you used have proper dependencies. Try using the repo under 'release' folder, instead of 'snapshot' folder. 
 
 
-
-**Q**: I used '-A i586' to create an i586 image, but it showed "nothing provided ....". What's wrong with it? 
-
+**Q**: I used '-A i586' to create an i586 image, but it showed "nothing provided ....". What's wrong with it?  
 **A**: Use '-A i686'. i586 is lower than i686, so many packages will be missing from the installation. 
 
 
-
-**Q**: MIC shows in the log: "file /usr/share/whatever conflicts between attempted installs of packageA and packageB" 
-
+**Q**: MIC shows in the log: "file /usr/share/whatever conflicts between attempted installs of packageA and packageB"  
 **A**: There are conflicts between some packages in the repo you used, but this is not an issue with MIC. Make sure you are using a proper repo. Try using the repo under 'release' folder, instead of 'snapshot' folder. 
 
 
-
-**Q**: Error shows: Command 'modprobe' is not available. 
-
+**Q**: Error shows: Command 'modprobe' is not available.  
 **A**: In some distribution, when you use sudo, the PATH variable will be changed and you will lose some important paths. Run 'export PATH=/sbin:$PATH' before running MIC.
 
 
-
-**Q**: MIC lost some packages which are specified in '--includepkgs'/'--excludepkgs'
-
+**Q**: MIC lost some packages which are specified in '--includepkgs'/'--excludepkgs'  
 **A**: Assume you want to include/exclude some packages in one repo, you will use '--includepkgs'/'--excludepkgs' option in the according repo command line, but you should list these packages to %packages section too, otherwise they will not take any effect.
 
 
-
-**Q**: How does mic select packages? And how to set the priority of a repo?
-
+**Q**: How does mic select packages? And how to set the priority of a repo?  
 **A**: In general, mic will select a higher version if two or more available in all repos, if the version is the same, a higher release number is prefferred. But if you assign a priority to one repo, mic will prefer to select packages from the repo with higher priority, even in case a higher version is available in the repo with a lower priority. Actually the default priority for a repo is 99, the range of a repo priority is 1~99, the larger number has the lower priority. An example is given: 'repo --name=base --baseurl=[http://whateverurl](http://whateverurl/) --prioirity=1'.
-
 
 
 ## Known Issues
@@ -64,7 +50,6 @@ MIC cannot support passwords that contain the char "@", but this will be fixed s
  repo --name=Tizen-base --baseurl=https://username:passwd@example.com/arch/packages/ --save  --ssl_verify=no
 ```
 
- 
 
 ## Reporting issues
 
