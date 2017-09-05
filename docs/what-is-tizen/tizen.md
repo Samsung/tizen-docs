@@ -14,7 +14,7 @@ As diverse devices are getting smarter and more connected, there is a strong nee
 
 Tizen is a Linux-based, open-source software platform. Anyone can contribute and freely develop the system software and applications, which is beneficial for both device manufacturers and application developers. Furthermore, by supporting Web applications with open Web technologies, Tizen provides developers with flexibility and extensibility. Based on the open ecosystem, users can expect various experiences from Tizen devices and services. With its openness, Tizen can pursue continuing progress and expanding ecosystem.
 
-Tizen is built to work on diverse devices and profiles are defined accordingly. Currently, 3 profiles are supported: [mobile](what-is-tizen/mobile.md), [wearable](what-is-tizen/wearable.md), and [TV](what-is-tizen/tv). Features of each profile provide product-optimized functionality and performance.
+Tizen is built to work on diverse devices and profiles are defined accordingly. Currently, 3 profiles are supported: [mobile](mobile.md), [wearable](wearable.md), and [TV](tv.md). Features of each profile provide product-optimized functionality and performance.
 
 From Tizen 3.0, all profiles are built on top of a common, shared infrastructure called Tizen Common. Based on the common components, devices and features under new categories or profiles can be easily added up for emerging technologies. Therefore, Tizen is adaptable and customizable for new products. In the foreseeable future, for example, IoT devices and services will be prevalent and Tizen is taking proactive steps toward the opportunities in the new markets.
 
@@ -24,7 +24,7 @@ From Tizen 3.0, all profiles are built on top of a common, shared infrastructure
 
 The most important things that enable Tizen to move to the next level are IoT and convergence capabilities:
 
-- **Device Convergence**: Tizen provides a device-to-device convergence framework for easy data sharing and direct remote control between devices. Using this framework, you can handle events or data on the remote device as if they were local. Device Convergence in Tizen opens up a host of capabilities that developers can use to create a new way of experiencing connectivity.![img](https://developer.tizen.org/sites/default/files/images/about_tizen_5.png)
+- **Device Convergence**: Tizen provides a device-to-device convergence framework for easy data sharing and direct remote control between devices. Using this framework, you can handle events or data on the remote device as if they were local. Device Convergence in Tizen opens up a host of capabilities that developers can use to create a new way of experiencing connectivity.![img](media/about_tizen_5.png)
 - **IoTivity for Connectivity**: In an IoT world, where everything is connected, it is important that a software platform supports seamless connectivity among all devices. For seamless connectivity, Tizen is closely co-operating with Open Connected Foundation (OCF), which is taking the lead in providing specifications and an open-source solution for IoT connectivity. It is getting great support from companies including Cisco, GE, Mediatek, Intel, and Samsung. OCF's standard is being implemented as an open source, which is called IoTivity. All the profiles in Tizen 3.0 includes IoTivity, which means that all Tizen devices is IoTivity-ready.
   ![img](media/about_tizen_6.png)
 

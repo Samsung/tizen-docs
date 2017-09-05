@@ -17,7 +17,7 @@ Instructions are available for the following devices:
 **3. Flash the image.**
 
 Execute lthor in a console on the Linux PC as follows.
-```
+```bash
 $ sudo ./lthor TM1-201609030819.tar.gz
 ```
 

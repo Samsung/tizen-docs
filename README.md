@@ -1,23 +1,23 @@
 # tizen-docs
 
-This project is for writing Tizen documents for platform and application developers. The documents will be published to new Tizen portal site.
+This project is for writing Tizen documents for platform and application developers. The documents will be published to new Tizen Docs site.
 
 ## Branches
 Contributions to this documents are welcome.  
-Please submit PRs to the **live** branch, which is what's published to the live Tizen Docs site. You can see your changes on https://doc.stage.tizen.org/staging/{PR #}/ before they are published on the live Tizen Docs site.  
+Please submit PRs to the **live** branch, which is what's published to the live Tizen Docs site. You can see your changes on https://docs.stage.tizen.org/staging/{PR #}/ before they are published on the live Tizen Docs site.  
 The **master** branch is used for a ready-live. It is used for the same purpose as tizen branch on Tizen public git.   
 The **staging** branch is used for testing.
 
 ## Respository structure
 
 - All markdown files are in the docs folder and various subfolders.
-- The docs/index.md file defines the landing (hub) page are it appears on portal.tizen.org/docs (TBD).
+- The docs/index.md file defines the landing (hub) page are it appears on docs.tizen.org (TBD).
 - The docs/TOC.md file defines the left-hand navigation panel that appears when you navigate to any page other than the hub page.
 - Images are contained within media folders within each subfolder.
 
 ## Contribution workflow
 
-1. Visit the page to edit on [Tizen Docs](https://portal.tizen.org/docs) (TBD), then click the **Edit** button on the top right. This brings you to the appropriate markdown page in the repo.
+1. Visit the page to edit on https://docs.tizen.org (TBD), then click the **Edit** button on the top right. This brings you to the appropriate markdown page in the repo.
 1. Edit the markdown:
     1. If you're including images (use PNGs, generally), place them in the media folder that's in the topic's folder. Links are then `media/<image_name>.png`.
     1. Relative links to other pages in this docset should be in the form `../<folder>/<topic-file>.md` including the training `.md`. If you're linking to another topic in the same folder, then `../<folder>/` can be omitted. When using anchors, always remember to include the `.md` before the `#`.
@@ -109,7 +109,7 @@ Markdown and HTML are ignored within inline code.
 
 ### Code blocks
 
-Code blocks on portal.tizen.org (TBD) are delineated by with three grave accents (backticks), ```, at the beginning and the end. You do not need to indent code blocks unless they are contained within a list.
+Code blocks on docs.tizen.org (TBD) are delineated by with three grave accents (backticks), ```, at the beginning and the end. You do not need to indent code blocks unless they are contained within a list.
 
 The opening ``` should be followed by a language code for proper syntax coloring, such as "xml", "json", "csharp", etc. Use "bash" for command-line examples and "output" for command-line results.
 
@@ -117,7 +117,7 @@ The only case when you should use ``` without a language tag is when creating a 
 
 ### Callouts
 
-portal.tizen.org/docs (TBD) uses blockquotes for callouts, that is, lines starting with ">".
+docs.tizen.org/docs (TBD) uses blockquotes for callouts, that is, lines starting with ">".
 
 Callout sections with ">" only will appear with a solid gray line to the left.
 

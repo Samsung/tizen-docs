@@ -66,7 +66,7 @@
 
 ## Compliance
 ### [Tizen Compliance Program](open-source-tizen/compliance/compliance-program.md)
-### [Compliance Specification](open-source-tizen/compliance/compliance-spec.md)
+### [Compliance Specification](open-source-tizen/compliance/compliance-specification.md)
 ### [Tizen Compliance Test](open-source-tizen/compliance/compliance-test.md)
 
 ## Tizen RT

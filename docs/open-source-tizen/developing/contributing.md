@@ -8,11 +8,11 @@ This topic provides information about how to contribute code to Tizen, including
 - Submitting a package to the build system
 - Reviewing and accepting a package on the build server (for release engineer only)
 
-For more information about the whole work process, see [Tizen Development Working Mechanism](https://source.tizen.org/documentation/developer-guide/getting-started-guide/tizen-development-working-mechanism).
+For more information about the whole work process, see [Tizen Development Working Mechanism](../about/work-flow.md).
 
 ## Source Files Cloning over SSH
 
-To clone source files for a specific project, see [Cloning Tizen Source Files](https://source.tizen.org/documentation/developer-guide/getting-started-guide/cloning-tizen-source).
+To clone source files for a specific project, see [Cloning Tizen Source Files](cloning.md).
 
 ## Patch Submission and Review on Gerrit
 
@@ -25,16 +25,16 @@ To submit a patch to Gerrit:
 1. Switch to the project directory and perform local development.
 
 2. Stage the revised content by executing the following command:
-   ```
+   ```bash
    $ git add <Revised_File>...
    ```
 3. Commit the revised content by executing the following command:
-   ```
+   ```bash
    $ git commit
    ```
 4. Push the patch to Gerrit by executing the following command:
 
-   ```
+   ```bash
    $ git push origin HEAD:refs/for/<remote_branch_name>
    ```
    **Note:** Valid values for <remote_branch_name> are:
@@ -69,7 +69,7 @@ You can submit a single package or a group of packages.
 
 To submit a package to the build system, execute the following command:
 
-```
+```bash
 $ gbs submit [-c <Commit_ID>] -m "<Comments>"
 ```
 
@@ -95,13 +95,13 @@ For example, assume that "ail", a low level library, depends on "aul". "ail" dev
 
 1. Submit one of the packages in the group to create a tag:
 
-   ```
+   ```bash
    $ cd platform/core/appfw/aul-1/$ gbs submit -m "<Comments>"
    ```
 
 2. Obtain the tag name from the output of the above command, and use the same tag as a `--tag` parameter for other packages in the group:
 
-   ```
+   ```bash
    $ cd platform/core/appfw/ail/$ gbs submit --tag <same_tag> -m "<Comments>"
    ```
 

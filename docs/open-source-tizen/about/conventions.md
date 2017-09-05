@@ -23,12 +23,12 @@ Typographic conventions used in this documentation set are as follows:
 
   With backslash:
 
-  ```
+  ```bash
   $ tar –zxvf \repo.tar.gz
   ```
 
   Without backslash:
 
-  ```
+  ```bash
   $ tar –zxvf repo.tar.gz
   ```
