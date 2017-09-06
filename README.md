@@ -3,6 +3,7 @@
 This project is for writing Tizen documents for platform and application developers. The documents will be published to new Tizen Docs site.
 
 ## Branches
+
 Contributions to this documents are welcome.  
 Please submit PRs to the **live** branch, which is what's published to the live Tizen Docs site. You can see your changes on https://docs.stage.tizen.org/staging/{PR #}/ before they are published on the live Tizen Docs site.  
 The **master** branch is used for a ready-live. It is used for the same purpose as tizen branch on Tizen public git.   
