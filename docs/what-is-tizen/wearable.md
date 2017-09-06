@@ -16,8 +16,8 @@ The design aspect of wearables is that it has to be intuitive, augments mobile t
 
 - [Creating Your First Wearable Native Watch Application](https://developer.tizen.org/development/getting-started/native-application/creating-your-first-tizen-wearable-native-watch-application)
 - [Creating Your First Wearable Web Watch Application](https://developer.tizen.org/development/getting-started/web-application/creating-your-first-tizen-wearable-web-watch-application)
-- [Native Application](https://developer.tizen.org/development/sample/native)
-- [Web Application](https://developer.tizen.org/development/sample/native)
+- [Native Application Samples](https://developer.tizen.org/development/sample/native)
+- [Web Application Samples](https://developer.tizen.org/development/sample/web)
 
 ## Design Guidelines for Tizen Wearable
 

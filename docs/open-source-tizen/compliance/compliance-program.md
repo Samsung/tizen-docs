@@ -27,15 +27,15 @@ A Tizen Profile describes the requirements for a category of Tizen devices that 
 
 Each Tizen Profile is based on Tizen Common Libraries, which are the set of libraries common across all Tizen platforms. The set of libraries helps to unify multiple categories of devices by sharing common platform components.
 
-The current available profile is:
+The current available profiles are:
 
 - Mobile: for handsets, tablets, etc.
+- Wearable: for watches, etc.
+- TV: DTV/STB/IPTV systems
 
-Additional profiles are expected in the near future, possibly including:
+Additional profile is expected in the future, possibly including:
 
 - IVI: In-Vehicle Infotainment systems
-- TV: DTV/STB/IPTV systems
-- PC: laptops, convertibles, etc.
 
 ![img](media/tizen-profiles-small.png)
 
@@ -43,8 +43,8 @@ The Tizen Compliance Tests measure conformance to the Profile requirements.
 
 ## Compliance Program Steps
 
-1. A Tizen device implementer gets the [Tizen source code](https://source.tizen.org/) and creates a new Tizen device.
-2. A Tizen device implementer obtains the compliance specification (TCS), compliance tests (TCT), and Tizen branding request form from [source.tizen.org](http://review.tizen.org/git). The Tizen device implementer must run the tests on their new Tizen device prior to submitting a Tizen branding request.
+1. A Tizen device implementer gets the [Tizen source code](https://review.tizen.org/git/) and creates a new Tizen device.
+2. A Tizen device implementer obtains the compliance specification (TCS), compliance tests (TCT), and Tizen branding request form.
 3. Once the new Tizen device passes 100% of the compliance tests, the Tizen device implementer submits the test results with a [Tizen branding request form](media/tizen_branding_request_form_for_tizen_mobile_profile_v1.0_1.pdf) to the Tizen Association.
 4. The Tizen Association reviews, approves, and certifies the device as Tizen compliant. Any technical review required to decide approval or failure will be referred to the Tizen Steering Group by the Tizen Association.
 
@@ -52,14 +52,7 @@ The Tizen Compliance Tests measure conformance to the Profile requirements.
 
 The Tizen Project welcomes feedback and input on Tizen Compliance. If a Tizen device implementer has questions or concerns about the specification or compliance tests they are welcome to discuss these on the [Tizen compliance mailing list](https://lists.tizen.org/listinfo/compliance).
 
-[Compliance Specification](compliance-specification.md)
 
- 
+See [Compliance Specification](compliance-specification.md)
 
-|      |      |
-| ---- | ---- |
-|      |      |
-
-| ATTACHMENT                               | SIZE    |
-| ---------------------------------------- | ------- |
-| ![PDF icon](media/application-pdf.png) [tizen_branding_request_form_for_tizen_mobile_profile_v1.0.pdf](media/tizen_branding_request_form_for_tizen_mobile_profile_v1.0_1.pdf) | 77.9 KB |
+Download ![PDF icon](media/application-pdf.png) [tizen_branding_request_form_for_tizen_mobile_profile_v1.0.pdf](media/tizen_branding_request_form_for_tizen_mobile_profile_v1.0_1.pdf) ( 77.9 KB)

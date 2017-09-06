@@ -4,18 +4,20 @@
 # What is Tizen?
 
 ## [Tizen](what-is-tizen/tizen.md)
-### Versions
-#### [TIzen 4.0 M1](what-is-tizen/versions/tizen-4-0-m1.md)
-#### [TIzen 3.0](what-is-tizen/versions/tizen-3-0.md)
 ## [Mobile](what-is-tizen/mobile.md)
-## [Wearable](what-is-tizen/wearable.md)
 ## [TV](what-is-tizen/tv.md)
+## [Wearable](what-is-tizen/wearable.md)
+## Versions
+### [TIzen 4.0 M1](what-is-tizen/versions/tizen-4-0-m1.md)
+### [TIzen 3.0](what-is-tizen/versions/tizen-3-0.md)
+
 
 # Open Source Tizen
+
 ## About Open Source Project
 ### [Overview](open-source-tizen/about/tizen-open-source-overview.md)
 ### [Development Work Flow](open-source-tizen/about/work-flow.md)
-### [Git Directory Structure](open-source-tizen/about/git-directory-structure.md)
+### [Git Repository Structure](open-source-tizen/about/git-repo-structure.md)
 ### [Typographic Conventions](open-source-tizen/about/conventions.md)
 
 ## Developing
@@ -27,8 +29,6 @@
 ### [Contributing Code to Tizen](open-source-tizen/developing/contributing.md)
 ### [Creating Tizen Images with MIC](open-source-tizen/developing/creating.md)
 ### [Flashing an Image to Device](open-source-tizen/developing/flashing.md)
-### [FAQ](open-source-tizen/developing/faq.md)
-
 ## Tizen Porting
 ### [Overview](open-source-tizen/porting/overview.md)
 ### [Kernel](open-source-tizen/porting/kernel.md)
@@ -45,9 +45,15 @@
 ### Git Build System(GBS)
 #### [Overview](open-source-tizen/tools/gbs/overview.md)
 #### [Configuration File](open-source-tizen/tools/gbs/gbs.conf.md)
-#### [Usage](open-source-tizen/tools/gbs/usage.md)
-### [Image Creator(MIC)](open-source-tizen/tools/mic-image-creator.md)
+#### [GBS Usage](open-source-tizen/tools/gbs/gbs-usage.md)
 
+#### [FAQ](open-source-tizen/tools/gbs/gbs-faq.md)
+
+### Image Creator(MIC)
+#### [Overview](open-source-tizen/tools/mic/mic-overview.md)
+#### [MIC Usage](open-source-tizen/tools/mic/mic-usage.md)
+#### [How to Custumize Images](open-source-tizen/tools/mic/mic-customize-image.md)
+#### [FAQ](open-source-tizen/tools/mic/mic-faq.md)
 ## Release Notes
 ### [Tizen 4.0 M1](open-source-tizen/release-notes/tizen-4-0-m1.md)
 ### [Tizen 3.0 M3](open-source-tizen/release-notes/tizen-3-0-m3.md)
@@ -60,9 +66,8 @@
 
 ## Compliance
 ### [Tizen Compliance Program](open-source-tizen/compliance/compliance-program.md)
-### [Compliance Specification](open-source-tizen/compliance/compliance-spec.md)
+### [Compliance Specification](open-source-tizen/compliance/compliance-specification.md)
 ### [Tizen Compliance Test](open-source-tizen/compliance/compliance-test.md)
-
 
 ## Tizen RT
 ### [Overview](open-source-tizen/tizen-rt/tizen-rt-overview.md)
@@ -75,19 +80,15 @@
 <!-- End of Tizen Platform -->
 
 <!-- Tizen .NET Content -->
-<!--
-# Tizen .NET (TBD)
-## Getting Started
-## Guides
-## API Reference
-## VS Tools
-## Samples
--->
+# <!--Tizen .NET (TBD)-->
+## <!--Getting Started-->
+## <!--Guides-->
+## <!--API Reference-->
+## <!--VS Tools-->
+## <!--Samples-->
 <!-- End of Tizen .NET -->
 
 <!-- Tizen Native/Web Application Content -->
-<!--
-# Tizen Native/Web Application (TBD)
--->
+# <!--Tizen Native/Web Application (TBD)-->
 <!-- End of Tizen Native/Web Application -->
 

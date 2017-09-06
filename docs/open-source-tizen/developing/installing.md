@@ -25,7 +25,7 @@ To install a development tool in Ubuntu or Debian:
 
    VIM is used in the following example:
 
-   ```
+   ```bash
    $ sudo vim /etc/apt/sources.list
    ```
 
@@ -49,25 +49,25 @@ To install a development tool in Ubuntu or Debian:
 
 3. Resynchronize the package index files from the sources specified in the source list:
 
-   ```
+   ```bash
    $ sudo apt-get update
    ```
 
 4. Install a development tool:
 
-   ```
+   ```bash
    $ sudo apt-get install <Package_Name>
    ```
 
    For example, to install GBS and MIC:
 
-   ```
+   ```bash
    $ sudo apt-get install gbs mic
    ```
 
 You can upgrade a development tool using one of following methods, as appropriate:
 
-```
+```bash
 $ sudo apt-get update && sudo apt-get install <Package_Name>$ sudo apt-get update && sudo apt-get upgrade
 ```
 
@@ -79,7 +79,7 @@ To install a development tool in openSUSE:
 
    In openSUSE 13.2, for example:
 
-   ```
+   ```bash
    $ sudo zypper addrepo http://download.tizen.org/tools/latest-release/openSUSE_13.2/ tools
    ```
 
@@ -87,20 +87,22 @@ To install a development tool in openSUSE:
 
 2. Install a development tool:
 
-   ```
+   ```bash
    $ sudo zypper refresh$ sudo zypper install <Package_Name>
    ```
 
    For example, to install GBS and MIC:
 
-   ```
-   $ sudo zypper refresh$ sudo zypper install gbs mic
+   ```bash
+   $ sudo zypper refresh
+   $ sudo zypper install gbs mic
    ```
 
 You can upgrade a development tool with the following commands:
 
-```
-$ sudo zypper refresh$ sudo zypper update <Package_Name>
+```bash
+$ sudo zypper refresh
+$ sudo zypper update <Package_Name>
 ```
 
 ## Installing Development Tools in Fedora or CentOS
@@ -111,24 +113,27 @@ To install a development tool in Fedora or CentOS:
 
    In Fedora 23, for example:
 
-   ```
+   ```bash
    $ sudo wget -O /etc/yum.repos.d/tools.repo http://download.tizen.org/tools/latest-release/Fedora_23/tools.repo
    ```
 
 2. Install a development tool:
 
-   ```
-   $ sudo yum makecache$ sudo yum install <Package_Name>
+   ```bash
+   $ sudo yum makecache
+   $ sudo yum install <Package_Name>
    ```
 
    For example, to install GBS and MIC:
 
-   ```
-   $ sudo yum makecache$ sudo yum install gbs mic
+   ```bash
+   $ sudo yum makecache
+   $ sudo yum install gbs mic
    ```
 
 You can upgrade a development tool with the following commands:
 
-```
-$ sudo yum makecache$ sudo yum update <Package_Name>
+```bash
+$ sudo yum makecache
+$ sudo yum update <Package_Name>
 ```

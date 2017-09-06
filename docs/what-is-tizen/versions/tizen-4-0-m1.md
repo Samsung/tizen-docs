@@ -8,7 +8,7 @@ The key changes in Tizen 4.0 are optimizations made on the platform for IoT deve
 
 
 
-![Tizen 4.0 M1 announcement](media/4.0_m1_announcement.jpg)
+![Tizen 4.0 M1 announcement](media/4.0_m1_announcement.png)
 
 
 
@@ -24,7 +24,7 @@ Additionally, Tizen Open Source Project worked closely with Microsoft to develop
 
 Since announcing its collaboration with Microsoft on .NET open-source projects last November, Tizen has steadily released preview versions of the Tizen.NET SDK to help developers build more powerful apps and to encourage their participation in the ongoing development of the Tizen application ecosystem.
 
-![Visual Studio Tools for Tizen > Project Wizard](vstools4tizen_project_wizard.png)
+![Visual Studio Tools for Tizen > Project Wizard](media/vstools4tizen_project_wizard.png)
 
 
 
@@ -61,12 +61,4 @@ For example, the Tizen Open Source Project is using static code analysis tools, 
 Building upon the platform’s first milestone, M1, additional features of Tizen 4.0 will be reinforced and stabilized during the second half of this year. The final version of Tizen 4.0 (M2) will be available later this year.
 
 
-![Tizen 4.0 M2 release plan](media/4.0_plan.png)
-
-
-
-
-See [Release Notes](../../open-source/release-notes/tizen-4-0-m1.md)
-
-
-
+![Tizen 4.0 M2 release plan](media/4.0_release_plan.png)

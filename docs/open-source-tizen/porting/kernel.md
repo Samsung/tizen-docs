@@ -21,7 +21,7 @@ To build the Tizen kernel for the TM1 board:
 
 ## Image Build
 
-To create the image by using MIC, see [MIC Image Creator](https://source.tizen.org/documentation/reference/mic-image-creator).
+To create the image by using MIC, see [MIC Image Creator](../tools/mic/mic-overview.md).
 
 
 
