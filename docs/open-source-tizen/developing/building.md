@@ -58,7 +58,7 @@ To exclude specific packages when building locally with GBS, you can either list
   exclude_packages=aaa,bbb,ccc,ddd,eee,fff
   ```
 
-### Speeding up a Local Build <a name-"speed"></a>
+### Speeding up a Local Build <a name="speed"></a>
 
 If the size of your RAM and swap file are both larger than 8 gigabytes, create a GBS `BUILD-ROOTS` directory and mount it as a RAM disk to speed up building:
 
