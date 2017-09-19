@@ -71,4 +71,3 @@ Options:
   --lr, --local-repo    local repository path
 ```
 
-**[Next : Developer Guide](https://github.sec.samsung.net/RS-TizenStudio/home/wiki/Developer-Guide)**
