@@ -105,4 +105,3 @@ intall() {
         - Emulator : Emulator
             - (e.g) tv-2.4-samsung-public-Emulator
 
-**[Next: Learn about tool-provided extensions](extension_guide.md)**
