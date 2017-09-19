@@ -78,4 +78,7 @@ $ ts-cli create-image -r /repository/tizen_studio -u http://download.tizen.org/s
 
 
 
-**[Next : Pacakge Installation Guide](package-installation-guide.md)**
+### Step 6 : Installation guide
+
+- Run Package Manager
+- [Configuring the Extension SDK Repository](https://developer.tizen.org/development/tizen-studio/download/configuring-package-manager#extension)
