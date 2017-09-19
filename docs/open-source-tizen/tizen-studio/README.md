@@ -32,7 +32,7 @@ If you found a bug, have any questions or want to contribute.
 We would absolutely love to have people testing Tizen Studio and provide feedback about their experiences using it.
 
 - [Tizen Governance](https://wiki.tizen.org/Tizen_Governance)
-- [Contributing guidelines](docs/contribute.md )
+- [Contributing guidelines](docs/contribute-gerrit.md)
 
 ## Resources
 - [Tizen Studio Download](https://developer.tizen.org/development/tizen-studio/download)
