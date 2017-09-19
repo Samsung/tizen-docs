@@ -4,12 +4,13 @@
 - Prerequisites
     - You must install a Java Development Kit (JDK) 8 or higher to use the Tizen Studio.
     - [System requirements](https://developer.tizen.org/development/tizen-studio/download/installing-tizen-studio/prerequisites#java)
-- [Download]()
+- [Download](https://developer.tizen.org/development/tizen-studio/download)
 
 ## Setting up Local Build Environment
 - To build the tizen project, you need to install the command line tool `TS-CLI`.
+- Only Ubuntu 64 bit is supported.
 - To install `TS-CLI`, you need to install Nodejs.
-- TS-CLI Download : http://10.113.138.168/packages/develop/binary/ts-cli_3.0.17_ubuntu-64.zip <br>
+- TS-CLI Download :  http://download.tizen.org/sdk/tizenstudio/opensrc/ts-cli_3.0.17_ubuntu-64.zip \
     ※ The latest version may be updated
 
 ```java
