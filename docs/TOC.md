@@ -1,12 +1,14 @@
-# [HOME](index.md)
+# [Getting Started](index.md)
 
 <!-- Tizen Platform Content -->
 # What is Tizen?
 
-## [Tizen](what-is-tizen/tizen.md)
-## [Mobile](what-is-tizen/mobile.md)
-## [TV](what-is-tizen/tv.md)
-## [Wearable](what-is-tizen/wearable.md)
+## Tizen
+### [Overview](what-is-tizen/overview/tizen.md)
+## Profiles
+### [Mobile](what-is-tizen/profiles/mobile.md)
+### [TV](what-is-tizen/profiles/tv.md)
+### [Wearable](what-is-tizen/profiles/wearable.md)
 ## Versions
 ### [TIzen 4.0 M1](what-is-tizen/versions/tizen-4-0-m1.md)
 ### [TIzen 3.0](what-is-tizen/versions/tizen-3-0.md)
