@@ -106,9 +106,8 @@ To download the Tizen kernel source package, see [Getting Source Code and Build]
 
 For more detailed information about Tizen kernel configuration and kernel building, see [Kernel Build](https://wiki.tizen.org/Porting_Guide#Kernel_Build).
 
-| Note                                     |
-| ---------------------------------------- |
-| Tizen uses `INOTIFY` instead of `DNOTIFY`. You must disable `DNOTIFY` from your kernel configuration. |
+> **Note**
+> Tizen uses `INOTIFY` instead of `DNOTIFY`. You must disable `DNOTIFY` from your kernel configuration.
 
 If you want to use `initramfs`, you can use these configurations:
 
