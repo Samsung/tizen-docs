@@ -37,9 +37,8 @@ lrwxrwxrwx  1 root root    20 Jul 28  2016 libtbm_sprd.so.0 -> libtbm_sprd.so.0.
 
 The `TBMModuleData` is for the entry point symbol to initialize the TBM backend module. The TBM backend module must have to define the global data symbol with the name of `tbmModuleData`. The TBM frontend loads the `tbmModuleData` global data symbol and calls the `init()` function at the initial time.
 
-| Note                                     |
-| ---------------------------------------- |
-| Do not change the name of the symbol in the TBM backend module. |
+> **Note**
+> Do not change the name of the symbol in the TBM backend module.
 
 ```
 /*
