@@ -1,27 +1,24 @@
 # Getting Started
 
-
-
-## Get Started with Tizen
-
-![Download](media/download_icon_blue.png) [**Download Tizen Source**](open-source-tizen/developing/cloning.md)
+### Get Started with Tizen
+![Download](media/ic_docs_download.png) [**Download Tizen Source**](open-source-tizen/developing/cloning.md)
 - [What is Tizen?](what-is-tizen/tizen.md)
 - [What is Tizen Open Source Project?](open-source-tizen/about/tizen-open-source-overview.md)
 - Developers can register for an account at: [https://www.tizen.org/user/register](https://www.tizen.org/user/register)
 - [More](open-source-tizen/developing/installing.md)
 
-
-<!-- IOT Content (TBD)
-## IOT world on Craftroom
+<!-- IOT Content (TBD) -->
+<!--## IOT world on Craftroom
 - What is Tizen IoT?
 - How to make IoT devices
   Go to craftroom
-  -->
+-->
 
 ## Get Started with Tizen .NET
-![Download](media/download_icon_blue.png) [**Download Visual Studio Tools for Tizen**](https://developer.tizen.org/development/tizen-.net-preview/getting-started)
+![Download](media/ic_docs_download.png) [**Download Visual Studio Tools for Tizen**](https://developer.tizen.org/development/tizen-.net-preview/getting-started)
 - [What is Tizen .NET Application?](https://developer.tizen.org/development/tizen-.net-preview/introduction/overview)
 - [Creating Tizen .NET Applications](https://developer.tizen.org/development/tizen-.net-preview/getting-started/creating-your-first-tizen-.net-application)
+<!--
 - Getting Started with Visual Studio Tools for Tizen  
 Samsung has released a preview of Visual Studio Tools for Tizen, which will enable .NET developers to build apps for Tizen. This video preview shows you how to get started.
 <p style="margin-left:50px;">
@@ -42,16 +39,17 @@ In the first preview of Visual Studio Tools for Tizen, we began to leverage the 
 <a href="https://youtube.com/embed/NdvWwU0gKt8" target="_blnak">
 <img alt="Visual Studio Tools for Tizen: Development and Productivity Improvements" src="https://img.youtube.com/vi/NdvWwU0gKt8/0.jpg" width="254" height="158"></a>
 </p>
+-->
 
 - [More](https://developer.tizen.org/development/tizen-.net-preview/introduction)
 
 
 ## Get Started with Tizen Studio
-![Download](media/download_icon_blue.png) [**Download Tizen Studio**](https://developer.tizen.org/development/tizen-studio/download)
+![Download](media/ic_docs_download.png) [**Download Tizen Studio**](https://developer.tizen.org/development/tizen-studio/download)
 - [What is Tizen Application?](https://developer.tizen.org/development/training/native-application)
 - [Creating Tizen Native Applications](https://developer.tizen.org/development/training/native-application/getting-started)
 - [Creating Tizen Web Applications](https://developer.tizen.org/development/training/web-application/getting-started)
-- [More](https://developer.tizen.org/development/guides)
+- [More](https://developer.tizen.org/development/tizen-studio/)
 
   
 **See the following links for more information:**

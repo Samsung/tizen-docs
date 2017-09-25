@@ -28,6 +28,9 @@
 **A**: In general, mic will select a higher version if two or more available in all repos, if the version is the same, a higher release number is prefferred. But if you assign a priority to one repo, mic will prefer to select packages from the repo with higher priority, even in case a higher version is available in the repo with a lower priority. Actually the default priority for a repo is 99, the range of a repo priority is 1~99, the larger number has the lower priority. An example is given: 'repo --name=base --baseurl=[http://whateverurl](http://whateverurl/) --prioirity=1'.
 
 
+**Q**: When creating an image, MIC shows "Error <creator>: URLGrabber error: http://www.example.com/latest/repos/oss/ia32/packages/repodata/repomd.xml" 
+**A**: Perhaps your network has some issues, or your proxy doesn't work. Try another proxy or find out the network issue. Q: MIC complains "Error <repo>: found 1 resolver problem, abort!" A: This is not an issue with MIC, but with the repo you used. Make sure the packages in the repo you used have proper dependencies. Try using the repo under ‘release’ folder, instead of 'snapshot' folder. Q: I used '-A i586' to create an i586 image, but it showed "nothing provided ....". What's wrong with it? A: Use '-A i686'. i586 is lower than i686, so many packages will be missing from the installation. Q: MIC shows in the log: "file /usr/share/whatever conflicts between attempted installs of packageA and packageB" A: There are conflicts between some packages in the repo you used, but this is not an issue with MIC. Make sure you are using a proper repo. Try using the repo under ‘release’ folder, instead of 'snapshot' folder. Q: Error shows: Command 'modprobe' is not available in Fedora 17. A: In Fedora 17, when you use sudo, the PATH variable will be changed and you will lose some important paths. Run 'export PATH=/sbin:$PATH' before running MIC.
+
 ## Known Issues
 
 ### 'zypp' backend is not supported in Fedora 17
@@ -46,8 +49,8 @@ When creating a btrfs image in OpenSUSE, it hangs, showing image kernel panic. T
 
 MIC cannot support passwords that contain the char "@", but this will be fixed soon. Example:
 
-```
- repo --name=Tizen-base --baseurl=https://username:passwd@example.com/arch/packages/ --save  --ssl_verify=no
+```bash
+repo --name=Tizen-base --baseurl=https://username:passwd@example.com/arch/packages/ --save  --ssl_verify=no
 ```
 
 
@@ -62,15 +65,3 @@ Detailed steps:
 - Click "create issue"
 - Select Projects: "Development Tools"
 - Select Components: "MIC"
-
-### Source Code
-
-The source code is tracked at: [https://github.com/01org/](https://github.com/01org/gbs)mic
-
-### License
-
-```
-Copyright (c) 2012 Intel, Inc.This program is free software; you can redistribute it and/or modify itunder the terms of the GNU General Public License as published by the FreeSoftware Foundation; version 2 of the LicenseThis program is distributed in the hope that it will be useful, butWITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITYor FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public Licensefor more details.You should have received a copy of the GNU General Public License alongwith this program; if not, write to the Free Software Foundation, Inc., 59Temple Place - Suite 330, Boston, MA 02111-1307, USA.
-```
-
- 

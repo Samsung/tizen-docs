@@ -2,7 +2,8 @@
 
 This topic provides information on how to clone Tizen source files, either over SSH or HTTPS .
 
-**Note:** The procedures to clone Tizen source files over SSH and HTTPS are almost identical. The only difference is the URL in the git command. However, you can only contribute code to Tizen using the SSH protocol.
+> **Note:**
+> The procedures to clone Tizen source files over SSH and HTTPS are almost identical. The only difference is the URL in the git command. However, you can only contribute code to Tizen using the SSH protocol.
 
 You must read, understand, and correctly follow the instructions in the following documents before cloning:
 

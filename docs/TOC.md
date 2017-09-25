@@ -1,12 +1,14 @@
-# [HOME](index.md)
+# [Getting Started](index.md)
 
 <!-- Tizen Platform Content -->
 # What is Tizen?
 
-## [Tizen](what-is-tizen/tizen.md)
-## [Mobile](what-is-tizen/mobile.md)
-## [TV](what-is-tizen/tv.md)
-## [Wearable](what-is-tizen/wearable.md)
+## Tizen
+### [Overview](what-is-tizen/overview/tizen.md)
+## Profiles
+### [Mobile](what-is-tizen/profiles/mobile.md)
+### [TV](what-is-tizen/profiles/tv.md)
+### [Wearable](what-is-tizen/profiles/wearable.md)
 ## Versions
 ### [TIzen 4.0 M1](what-is-tizen/versions/tizen-4-0-m1.md)
 ### [TIzen 3.0](what-is-tizen/versions/tizen-3-0.md)
@@ -43,16 +45,18 @@
 ## Tools
 ### [Gerrit Usage](open-source-tizen/tools/gerrit-usage.md)
 ### Git Build System(GBS)
-#### [Overview](open-source-tizen/tools/gbs/overview.md)
+#### [Overview](open-source-tizen/tools/gbs/gbs-overview.md)
 #### [Configuration File](open-source-tizen/tools/gbs/gbs.conf.md)
-#### [GBS Usage](open-source-tizen/tools/gbs/gbs-usage.md)
+#### [GBS Reference](open-source-tizen/tools/gbs/gbs-reference.md)
 
 #### [FAQ](open-source-tizen/tools/gbs/gbs-faq.md)
 
 ### Image Creator(MIC)
 #### [Overview](open-source-tizen/tools/mic/mic-overview.md)
-#### [MIC Usage](open-source-tizen/tools/mic/mic-usage.md)
 #### [How to Custumize Images](open-source-tizen/tools/mic/mic-customize-image.md)
+
+####[MIC Reference](open-source-tizen/tools/mic/mic-reference.md)
+
 #### [FAQ](open-source-tizen/tools/mic/mic-faq.md)
 ## Release Notes
 ### [Tizen 4.0 M1](open-source-tizen/release-notes/tizen-4-0-m1.md)

@@ -2,11 +2,11 @@
 
 GBS's configuration files are all simple INI-style files that record various choices and settings used by many GBS commands. Some settings represent purely personal preferences, others are vital to a build functioning correctly, and still others tweak command behavior a bit.
 
-**Note:** ".conf" is a common extension for an INI file, an informal standard for configuration files. INI files are simple text files with basic structure composed of sections and properties. Like many tools, GBS supports a hierarchy of configuration files, which are shown below in decreasing precedence:
-
-- **$PWD/.gbs.conf:** project-specific configuration settings that affect only the specific project in the specified working directory. These settings have the highest precedence.
-- **/home/<user>/.gbs.conf:** user-specific configuration settings that affect only the specified user.
-- **/etc/gbs.conf:** system-wide configuration settings that affect the entire system. These settings have the lowest precedence.
+> **Note**
+> ".conf" is a common extension for an INI file, an informal standard for configuration files. INI files are simple text files with basic structure composed of sections and properties. Like many tools, GBS supports a hierarchy of configuration files, which are shown below in decreasing precedence:
+> - **$PWD/.gbs.conf:** project-specific configuration settings that affect only the specific project in the specified working directory. These settings have the highest precedence.
+> - **/home/<user>/.gbs.conf:** user-specific configuration settings that affect only the specified user.
+> - **/etc/gbs.conf:** system-wide configuration settings that affect the entire system. These settings have the lowest precedence.
 
 When specifying the configuration file by using -c (--config) option, one of the above files is loaded and applied by GBS. If no configuration file can be found, GBS automatically generates ~/.gbs.conf. Here's an example of specifying one configuration file among a hierarchy of configuration files:
 
@@ -98,7 +98,35 @@ The section names must follow these naming conventions:
 Here's an example of configuration file:
 
 ```
-[general]#Current profile name which should match a profile section nametmpdir = /var/tmpeditor =packaging_branch = masterupstream_branch = upstreamupstream_tag = upstream/${upstreamversion}packaging_dir = packagingprofile = profile.tizenbuildroot = ~/GBS-ROOT/work_dir = . [profile.tizen]obs = obs.tizenrepos = repo.tizen_latest# If no buildroot for profile, the buildroot in general section will be usedbuildroot = ~/GBS-ROOT-profile.tizen/# Specify build conf for a specific profile by using shell-style variable referencesbuildconf = ${work_dir}/tizen-conf/build.conf# Specify a list of packages that don't participate in the building, which# can also be used to break dependency circle.exclude_packages=filesystem,aul,libmm-sound,libtool # Common authentication informationuser = xxxpasswd = xxx [obs.tizen]url = https://api.tizen.orguser = xxxpasswd = xxx# set default base_prj for this obs#base_prj=Tizen:Main# set default target prj for this obs, default is home:<user>:gbs:<base_prj>#target_prj=<specify target project> [repo.tizen_latest]url = http://download.tizen.org/releases/trunk/daily/ivi/latest/#Optional user and password, set if differ from profile's user and password#user =#passwd =
+[general]
+#Current profile name which should match a profile section name
+tmpdir = /var/tmp
+editor =
+packaging_branch = master
+upstream_branch = upstream
+upstream_tag = upstream/${upstreamversion}
+packaging_dir = packaging
+profile = profile.tizen
+buildroot = ~/GBS-ROOT/
+work_dir = .
+ 
+[profile.tizen]
+obs = obs.tizen
+repos = repo.tizen_latest
+# If no buildroot for profile, the buildroot in general section will be used
+buildroot = ~/GBS-ROOT-profile.tizen/
+# Specify build conf for a specific profile by using shell-style variable references
+buildconf = ${work_dir}/tizen-conf/build.conf
+# Specify a list of packages that don't participate in the building, which
+# can also be used to break dependency circle.
+exclude_packages=filesystem,aul,libmm-sound,libtool
+ 
+# Common authentication information
+user = xxx
+passwd = xxx
+ 
+[obs.tizen]
+url = https://api.tizen.org
 ```
 
 ## Configuration Specification
@@ -130,13 +158,20 @@ passwd=<New_Password>
 By adding configuration specifications of multiple profiles aimed at various devices in one configuration file, the GBS behaviors oriented for a variety of devices can be manipulated by using a central configuration file. Here's an example of configuring multiple profiles:
 
 ```
-[general]profile = profile.ivi [profile.mobile]...[profile.ivi]...
+[general]
+profile = profile.ivi
+ 
+[profile.mobile]
+...
+[profile.ivi]
+...
 ```
 
 When specifying the profile section by using -P (--profile) option, the specified profile configurations are applied by GBS. Here are examples of specifying one profile among multiple profiles:
 
 ```
-$ gbs build --profile=profile.mobile -A i586$ gbs remotebuild --profile=mobile
+$ gbs build --profile=profile.mobile -A i586
+$ gbs remotebuild --profile=mobile
 ```
 
 ### Configuring Repository
@@ -150,7 +185,8 @@ This section describes how to configure the repository to adapt the GBS build. T
   - a standard RPM repository that has a repodata/ subdirectory under the /repos/ directory.
   - a Tizen repository that has a builddata/ subdirectory, for example, [http://download.tizen.org/releases/daily/2.0alpha/common/latest/](http://download.tizen.org/releases/daily/2.0alpha/common/latest/)
 
-  **Note:** To guarantee the quality of the GBS build, the release folder must be used, instead the snapshot folder.
+  > **Note** 
+  > To guarantee the quality of the GBS build, the release folder must be used, instead the snapshot folder.
 
 - user
 
@@ -159,7 +195,13 @@ This section describes how to configure the repository to adapt the GBS build. T
 Here's an example of repository configuration specification:
 
 ```
-[repo.tizen_latest]url = http://download.tizen.org/releases/trunk/daily/ivi/latest/user = xxxpasswd = xxx[repo.my_local]#local repo must be an absolute pathurl = <Full_Path_of_Local_Repository>
+[repo.tizen_latest]
+url = http://download.tizen.org/releases/trunk/daily/ivi/latest/
+user = xxx
+passwd = xxx
+[repo.my_local]
+#local repo must be an absolute path
+url = <Full_Path_of_Local_Repository>
 ```
 
 ### Shell-Style Variable References
@@ -169,5 +211,10 @@ Properties defined in [general] section can be directly used in other sections b
 Here's an example:
 
 ```
-[general]tmpdir=/var/tmpwork_dir=~/test[profile.tizen]buildconf=${work_dir}/tizen.confbuildroot=${tmpdir}/profile.tizen/
+[general]
+tmpdir=/var/tmp
+work_dir=~/test
+[profile.tizen]
+buildconf=${work_dir}/tizen.conf
+buildroot=${tmpdir}/profile.tizen/
 ```
