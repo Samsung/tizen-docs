@@ -17,7 +17,7 @@ The Tizen Studio provides the following set of tools to help you run and test yo
 
   The Tizen emulator tool reduces the inconvenience of testing the application on a real device, by providing an environment similar to a real device. With the Emulator Manager, you can create multiple emulator instances, each representing a different environment (device type).
 
-- [Web Unit Testing Tool](web_unit_test_tool_w.md) **(Unit Testing Web Applications)** 
+- [Web Unit Testing Tool](web-unit-test-tool-w.md) **(Unit Testing Web Applications)** 
 
   The unit test tool is used to ensure that the application runs properly as intended in the source code. You can create, edit, and run unit tests, and check and analyze the test results.
 

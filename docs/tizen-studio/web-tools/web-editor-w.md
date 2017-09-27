@@ -18,7 +18,7 @@ There are 2 ways, manual and automatic, to inspect your code:
   1. In the **Project Explorer** view, select a JavaScript file.
   2. Right-click the file and select **Check JavaScript Rules**.
 
-  **Note**	You can check JavaScript immediately, even without saving the file. 
+   **Note**You can check JavaScript immediately, even without saving the file. 
 
   **Figure: Checking JavaScript rules manually**
 
@@ -141,7 +141,7 @@ To test a Web application, or a single Web page as part of a client application,
 
 Not only can you preview the source code you have developed, you can also visually define the type and hierarchy of the selector to help development.
 
-For more information, see [Previewing Pages in a Browser](previewer_w.md).
+For more information, see [Previewing Pages in a Browser](previewer-w.md).
 
 ## Using JavaScript Log Console View<a name="js_log"></a>
 
@@ -167,7 +167,7 @@ Using the console functions provided to JavaScript code, the view shows the log 
 
 When you change the source code in the Tizen Studio, the running application is updated instantly without any reloading process.
 
-For more information, see [Live Editing of HTML, CSS, and JavaScript](live_editing_w.md).
+For more information, see [Live Editing of HTML, CSS, and JavaScript](live-editing-w.md).
 
 ## Code Beautifier and Minifier<a name="code"></a>
 
@@ -175,16 +175,16 @@ The Code Beautifier is a tool that can help you understand code and make it easi
 
 The Code Minifier is a smart compression tool. Minification is the process of compressing code from the original size to the smallest size without affecting its operation.
 
-For more information, see [Cleaning Up Your Code](code_productivity_w.md).
+For more information, see [Cleaning Up Your Code](code-productivity-w.md).
 
 ## Web Unit Testing<a name="test"></a>
 
 If you are implementing a component in your application, you must test it to ensure that it does not behave in an unexpected way.
 
-For more information, see [Web Unit Testing Tool](web_unit_test_tool_w.md).
+For more information, see [Web Unit Testing Tool](web-unit-test-tool-w.md).
 
 ## REST Viewer<a name="rest"></a>
 
 The REST Viewer supports the testing, test case management, and automatic code generation features of the REST API. You can easily develop Web applications using the REST API.
 
-For more information, see [Using the REST Viewer](rest_viewer_w.md).
+For more information, see [Using the REST Viewer](rest-viewer-w.md).

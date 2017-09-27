@@ -3,15 +3,15 @@
 - Tizen Studio 1.0 and Higher
 
 
-The Tizen Web Simulator is a light-weight tool that provides many [settings](web_simulator_w.md#setting) and [features](web_simulator_features_w.md) to develop Web applications. You can use the simulator features to debug your applications.
+The Tizen Web Simulator is a light-weight tool that provides many [settings](web-simulator-w.md#setting) and [features](web-simulator-features-w.md) to develop Web applications. You can use the simulator features to debug your applications.
 
 The Tizen Web Simulator:
 
 - Supports running and debugging modern HTML5 Web applications.
-- Simulates Tizen Web APIs using a JavaScript backend. For more information on the Tizen Web APIs supported by the simulator, see [Tizen API Coverage](web_simulator_w.md#api).
+- Simulates Tizen Web APIs using a JavaScript backend. For more information on the Tizen Web APIs supported by the simulator, see [Tizen API Coverage](web-simulator-w.md#api).
 - Includes configuration panels for sending in events and messages to debug features, such as Geolocation, Accelerometer, and Messaging.
 - Runs on the Google Chrome™ browser.
-- Provides [preferences](web_simulator_w.md#pref) to allow you to customize how it works.
+- Provides [preferences](web-simulator-w.md#pref) to allow you to customize how it works.
 
 The Tizen Web Simulator is based on the [Ripple-UI Framework](https://github.com/blackberry-webworks/Ripple-UI) and is licensed under Apache Software License v.2.0. 
 
@@ -197,7 +197,7 @@ The Tizen APIs have the following known issues on the Web simulator:
 The following W3C/HTML5 specifications are supported:
 
 - Widget:
-  - The `config.xml` of a widget is parsed by the simulator and the information is shown in the [Application Configuration](web_simulator_features_w.md#config) panel.
+  - The `config.xml` of a widget is parsed by the simulator and the information is shown in the [Application Configuration](web-simulator-features-w.md#config) panel.
 - Content (documents, graphics, multimedia):     
   - HTML5 audio 
   - HTML5 video 
