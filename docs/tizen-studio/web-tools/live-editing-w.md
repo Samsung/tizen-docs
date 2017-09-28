@@ -11,7 +11,7 @@ You can monitor how the changes you have made in a file are rendered in the targ
 
 Live editing is a special feature, which applies source changes to the running application immediately without building, packaging, and relaunching the application. All changes made in the HTML, CSS, and JavaScript files are automatically and immediately reflected in the running application.
 
-This feature can be used in the [Previewer](previewer_w.md) view and when running the application in the emulator or the Web simulator.
+This feature can be used in the [Previewer](previewer-w.md) view and when running the application in the emulator or the Web simulator.
 
 ## Configuring Live Editing<a name="prerequisites"></a>
 
@@ -30,4 +30,4 @@ If you are running your application for the first time, you must create a new co
 - Only specific device APIs are supported by the Web simulator.
 - Live editing does not work in certain environments, such as a proxy network.
 
-To define how the live editing works, [set the Tizen Studio Live Editing preferences](IDE_preferences_w.md#live).
+To define how the live editing works, [set the Tizen Studio Live Editing preferences](IDE-preferences-w.md#live).

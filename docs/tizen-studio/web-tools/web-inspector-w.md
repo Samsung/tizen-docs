@@ -7,13 +7,13 @@ You can [debug Web applications](https://developer.tizen.org/development/trainin
 
 The JavaScript Debugger supports the following panels:
 
-- [Elements Panel](web_inspector_w.md#element)
-- [Resources Panel](web_inspector_w.md#resource)
-- [Network Panel](web_inspector_w.md#network)
-- [Sources Panel](web_inspector_w.md#source)
-- [Timeline Panel](web_inspector_w.md#time)
-- [Profiles Panel](web_inspector_w.md#profile_panel)
-- [Console Panel](web_inspector_w.md#console)
+- [Elements Panel](web-inspector-w.md#element)
+- [Resources Panel](web-inspector-w.md#resource)
+- [Network Panel](web-inspector-w.md#network)
+- [Sources Panel](web-inspector-w.md#source)
+- [Timeline Panel](web-inspector-w.md#time)
+- [Profiles Panel](web-inspector-w.md#profile_panel)
+- [Console Panel](web-inspector-w.md#console)
 
 **Figure: JavaScript Debugger panels**
 

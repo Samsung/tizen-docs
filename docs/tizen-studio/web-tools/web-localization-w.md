@@ -82,7 +82,7 @@ When the string localization is complete, the following modifications are made i
 
   ![src element in index.html](./media/web_loc_index_html.png)
 
-**Note**	For more information on using localized string content, see [Localization](org.tizen.guides/html/web/localization/localization_w.md). 
+  **Note**For more information on using localized string content, see [Localization](https://developer.tizen.org/development/guides/web-application/localization). 
 
 ### Using Resources for Localization
 
@@ -104,7 +104,9 @@ To localize the missing resource:
 
 2. In the **Select a file to set** dialog, select a new resource to replace the default resource, and click **OK**. 
 
-   ![Adding a resource](./media/web_loc_select_file_dialog.png)The complex folder structures are created and the names of the resource files are replaced.
+   ![Adding a resource](./media/web_loc_select_file_dialog.png)
+   
+   The complex folder structures are created and the names of the resource files are replaced.
 
 ## Folder-based Localization
 

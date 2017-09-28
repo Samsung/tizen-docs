@@ -64,7 +64,7 @@ To simulate a custom, multi-point route:
 
 The **Application Configuration** panel displays a graphical representation of the `config.xml` file. You can use it to ensure the validity of your application configuration.
 
-For more information on the configuration details, see [W3C/HTML5 Specifications](web_simulator_w.md#spec).
+For more information on the configuration details, see [W3C/HTML5 Specifications](web-simulator-w.md#spec).
 
 **Figure: Application Configuration panel**
 
