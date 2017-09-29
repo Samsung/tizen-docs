@@ -8,7 +8,7 @@ That is, a metapackage is a package that supports grouping and installation of p
 - The `pkginfo.manifest` property distinguishes it from regular packages.
 
 > Meta package dependency - tools
-![Meta package dependency - tools](https://github.sec.samsung.net/RS-TizenStudio/home/blob/master/docs/image/package%20dependencies.png)
+![Meta package dependency - tools](../../media/tizen-studio/package%20dependencies.png)
 
 ## Manage Meta package
 - Meta-sdk-components
@@ -30,7 +30,7 @@ That is, a metapackage is a package that supports grouping and installation of p
 ## Write a mata package
 
 - Write the following additional information for extension meta packages
-- ![](/docs/image/meta-package.png )
+- ![](../../media/tizen-studio/meta-package.png )
 
     - Tizen Studio is based on metapackage, supports extension installation and tool integration.
     - A metapackage is a package that supports grouping and installation of packages.

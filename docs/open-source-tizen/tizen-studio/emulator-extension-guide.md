@@ -47,7 +47,7 @@
         
 ## Emulator Manager Extension
 
-![](/docs/image/em-structure.png)
+![](../../media/tizen-studio/em-structure.png)
 
 - Emulator Manager Component
     - EM-LIB
@@ -77,9 +77,9 @@
 	- Platform-Resource-Selector
 		- Whether to use platform resources
 	- You can specify the extension class in the MANIFEST.MF file of the plugin.
-	![](/docs/image/em-loading-plugin.png)
+	![](../../media/tizen-studio/em-loading-plugin.png)
 	---
-	![](/docs/image/em-loading-plugin-func.png)
+	![](../../media/tizen-studio/em-loading-plugin-func.png)
 	
 - **Specific explanation**
 	- Launch option
@@ -98,9 +98,9 @@
 ### Preferences
 - git projects (default, develop branch)
     - Lib/UI/CLI
-    	- https://github.sec.samsung.net/RS-TizenStudio/emulator-control-panel
+    	- sdk/emulator/emulator-control-panel
     - Devices
-    	- https://github.sec.samsung.net/RS-TizenStudio/emulator-control-panel-devices
+    	- sdk/tools/emulator-control-panel-devices
 
 ### How to build
 1. Copy external binaries
@@ -130,11 +130,6 @@
     - For example, `emulator-control-panel/ECP-LIB`
     	- "ln -s ~/tizen-studio/sdk.info sdk.info" 
 	
-### Example
-- [ECPInfo.java](https://github.sec.samsung.net/RS-TizenStudio/emulator-control-panel/blob/develop/ECP-LIB/src/org/tizen/ecp/ECPInfo.java)
-- [FilePath.java](https://github.sec.samsung.net/RS-TizenStudio/emulator-control-panel/blob/develop/ECP-LIB/src/org/tizen/ecp/utils/FilePath.java)
-- [DeviceManager.java](https://github.sec.samsung.net/RS-TizenStudio/emulator-control-panel/blob/develop/ECP-UI/src/org/tizen/ecp/device/DeviceManager.java)
-
 
 #### Changes
 - (UI) Changing from swt to javafx

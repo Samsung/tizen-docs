@@ -13,7 +13,7 @@
 ## Step 3
 
 #### Configuration
-```text
+```xml
 <!ELEMENT extension (type)>
 
 <!ATTLIST extension
@@ -50,7 +50,7 @@
      
 ```
 
-![](/docs/image/cert-ext.png )
+![](../../media/tizen-studio/cert-ext.png )
 
 ## Step 4
 
@@ -88,4 +88,4 @@ public class TizenCertCreationHandler implements ICertificateCreationHandler {
 }
 ```
 
-![](/docs/image/cert-ext-1.png )
+![](../../media/tizen-studio/cert-ext-1.png )

@@ -3,7 +3,7 @@ Do you need to make sure my development works well?
 
 This page is a guide to local build.
 
-![](/docs/image/build.PNG)
+![](../../media/tizen-studio/build.PNG)
 
 ### Step 1 : Installing the **TS-CLI**
 
@@ -16,7 +16,7 @@ This page is a guide to local build.
 
     ※ *Your machine should be able to access(wget) the input url.*
 
-```java
+```bash
 $ ts-cli pull --rr http://172.21.17.55/packages/tizen_studio --lr /repository/tizen_studio -o ubuntu-64
 
 ## --rr, --remote-repo    remote repository url
@@ -30,7 +30,7 @@ $ ts-cli pull --rr http://172.21.17.55/packages/tizen_studio --lr /repository/ti
 
 Let's build your code.  Go to the directory you developed and build with the `ts-cli build` command.
 
-```java
+```bash
 $ ts-cli build -r /repository/tizen_studio -c -p
 
 ## -r, --repository      repository path. local directory path or http url.
@@ -58,7 +58,7 @@ $ ts-cli push -P <package file path|list> --lr /repository/tizen_studio
 
 If successful, a folder named `snapshots` will be created under the location you specify, and a snapshot will be created under it. <br>
 
-![](/docs/image/snapshot-result.png)
+![](../../media/tizen-studio/snapshot-result.png)
 
 
 ### Step 5 : Creating an Installation Image
@@ -74,7 +74,7 @@ $ ts-cli create-image -r /repository/tizen_studio -u http://download.tizen.org/s
 ## -u, --url             base repository URL
 ## -O, --output          image name
 ```
-![](/docs/image/image-result.png)
+![](../../media/tizen-studio/image-result.png)
 
 
 

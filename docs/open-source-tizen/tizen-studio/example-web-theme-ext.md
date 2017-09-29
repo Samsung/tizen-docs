@@ -75,7 +75,7 @@
   - Preference
     - Once the plug-in is loaded, you can select the theme contributed by the Preference.
     
-    ![](/docs/image/theme-ext.png)
+    ![](../../media/tizen-studio/theme-ext.png)
     
 ## Advanced
 - If you want to apply the theme differently to each OS

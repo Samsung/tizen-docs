@@ -21,7 +21,7 @@
 
 ### Tizen IDE extension point
 
-![](/docs/image/ext-point.png)   
+![](../../media/tizen-studio/ext-point.png)   
     
 Tizen IDE provides the following extension points for IDE functionality:
 ---
@@ -29,7 +29,7 @@ Tizen IDE provides the following extension points for IDE functionality:
     - Web app. Application Provides extension points for launch (Run As) and unittest launch
         - org.tizen.web.zimlaunch.launchStepFactory
             - web application launch step
-             ![](/docs/image/lauch-ext.png)   
+             ![](../../media/tizen-studio/lauch-ext.png)   
         - org.tizen.web.unittest.launchStepFactory
             - web application unit test launch step
      

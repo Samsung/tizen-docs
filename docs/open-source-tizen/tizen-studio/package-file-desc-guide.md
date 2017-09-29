@@ -57,7 +57,7 @@ C-Prerequisites: qemu-user-static [11.04 11.10 12.04 12.10 13.04 13.10]
 #### **build.{os}** file
 The script consists of a shell script, and you need to implement some of the following functions inside.       
 
-```java
+```bash
 
 clean() {
     //code clean 

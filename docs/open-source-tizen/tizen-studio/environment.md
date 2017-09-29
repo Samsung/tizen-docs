@@ -13,7 +13,7 @@
 - TS-CLI Download :  http://download.tizen.org/sdk/tizenstudio/opensrc/ts-cli_3.0.17_ubuntu-64.zip \
     ※ The latest version may be updated
 
-```java
+```bash
 // install Nodejs
 $ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 $ sudo apt-get install -y nodejs
