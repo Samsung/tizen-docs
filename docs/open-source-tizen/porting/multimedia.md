@@ -546,3 +546,398 @@ Each value needs to be changed appropriately, according to vendors who provide t
 - For all GStreamer documentation, see [http://gstreamer.freedesktop.org/documentation/](http://gstreamer.freedesktop.org/documentation/).
 - For developing GStreamer plug-ins, see [http://gstreamer.freedesktop.org/data/doc/gstreamer/head/pwg/html/index.html](http://gstreamer.freedesktop.org/data/doc/gstreamer/head/pwg/html/index.html).
 - For more information about OpenMAX IL components, see [http://www.khronos.org/openmax/il/](http://www.khronos.org/openmax/il/).
+
+
+
+## Videosink
+
+### Description
+Videosink renders video frames buffer from previous gst-element on a local display using the wayland (from tizen3.0). So videosink of TIZEN is waylandsink. It is used with camera or player that require video output. This element can receive a surface id of window from the application through the GstVideoOverlay interface (set_wl_window_wl_surface_id) and will render video frame in this window. If no surface id was provided by the application, the element will create its own internal window and render into it. 
+
+### Video Rendering Process
+The figure below shows the video rendering process in the player. The white box is gstreamer element. GstBuffer is streaming from filesrc to waylandsink past the video codec. The GstBuffer is TBM or SHM.
+
+![video_rendering_process.png](media/video_rendering_process.png)
+
+Waylandsink requests the rendering of the video frame  to window's wl_surface. so Waylandsink need wl_surface of wayland window which is created by Application. Because the Application and Muse are in different process bounds, Application can not pass the wl_surface pointer to Muse. To solve this problem, TIZEN use the surface id, integer value.
+
+Application sends a wl_surface pointer to Window server, Window server returns the grobal surface id to Application and Application passes this value to Waylandsink using GstVideoOverlay interface, set_wl_window_wl_surface_id (TIZEN special). (Step 1, 2, and 3.)
+
+Waylandsink create wl_display to communicate with Window server. Normally Window client use the wl_display created by the App, but TIZEN waylandsink create its own wl_display dut to process bounds issue.(Step 4). Now Waylandsink can receive events from the server and bind to various interfaces using wl_registry.
+
+Waylandsink uses wl_display to create wl_window and a wl_subsurface using the grobal surface id passed through the GstVideoOverlay interface. wl_surface is created by wl_compositor of wl_display.(Step 5).
+
+Application can use the waylandsink property to change video rendering conditions.(Step 6). The rendering conditions is changed via wl_subsurface.
+
+GstBuffer received from Video codec is converted to wl_buffer and then wl_surface of wl_window is requested to render the video frame to the Window Server through attach, damage and commit process.(Step 7 and 8). Window Server render wl_buffer.(Step 9).
+
+Rendering done signal comes to wl_callback of wl_window when Window Server finishes rendering the video frame, and wl_buffer release event comes to wl_buffer_listener's callback function.(Step 10 and 11). Now, Waylandsink can un_ref GstBuffer created by Video Codec and GstBuffer is retreved  to the Video Codec. Sometimes it is necessary to return a GstBuffer while maintaining the video frame rendered in the window(Gapless playback, keep camera preview). In this case, use FlushBuffer. FlushBuffer is a wl_buffer created after copying TBM from GstBuffer coming from Video codec.  Waylandsink return GstBuffer to Video Codec immediately, and rendering FlushBuffer request is made to the Window Server.
+
+For more information on wayland, see the link (<https://wayland.freedesktop.org/>).  For programming the wayland-client, see the link (<https://jan.newmarch.name/Wayland/index.html>).
+
+### Porting OAL Interface
+There is no specific OAL for the videosink.
+
+### Features added to Waylandsink for TIZEN
+
+#### Check the original waylandsink behavior
+Waylandsink's video rendering test can be easily verified by connecting to videotestsrc via gst-launch. If the video test screen does not appear, Window system should be ported first. ([9.2 Display Management](https://wiki.tizen.org/Tizen_3.0_Porting_Guide#Display_Management)).
+
+<pre>
+gst-launch-1.0 videotestsrc ! waylandsink 
+</pre>
+
+![videotest.png](media/videotest.png)
+
+#### Waylandsink Requirement for TIZEN
+Open source waylandsink use wayland-client, but Waylandsink for TIZEN use libtbm, wayland-tbm-client and tizen-extension-client to support MMFW's API requrements and uses window server extended functionality.
+
+The major functions are TBM Video Format, Specific Video Formats, Zero copy, MMVideoBuffer, Tizen Viewport, Flush Buffer, Audio only mode, Handoffs Element signals, preroll-handoff Element signals, Use TBM, Rotate, Flip, Visible, Display Geometry Method and ROI.
+
+##### TBM Video Format
+Original Waylandsink lists various video formats, but Wayland only supports RGB format. To support various video format, waylandsink for TIZEN use TBM Video Format provided by WAYLAND for TIZEN. The video formats supported by Window Server are hardware dependent. The dependency is on the Window Server. When the Gst-pipeline with Waylandsink is created and the caps negotiation begins, the TBM Video Format provided by the Window Server is passed to Waylandsink. Window Server can accommodate the video output format of Video Codec when the negotiation is completed.
+
+To use TBM Video Format, Waylandsink need to bind tizen_policy_interface, tizen_video_interface and register listener and get  the video formats as a  callback.
+
+<pre>
+static void handle_tizen_video_format (void *data, struct tizen_video *tizen_video, uint32_t format)
+{
+  GstWlDisplay *self = data;
+  FUNCTION;
+
+  g_return_if_fail (self != NULL);
+
+  GST_LOG ("format is %d", format);
+  g_array_append_val (self->tbm_formats, format);
+}
+
+static const struct tizen_video_listener tizen_video_listener = {
+  handle_tizen_video_format
+};
+
+static void global_registry_handler(void *data, struct wl_registry *registry, uint32_t id, const char *interface, uint32_t version)
+{
+[...]
+
+  } else if (g_strcmp0 (interface, "tizen_policy") == 0) {
+    self->tizen_policy =  wl_registry_bind (registry, id, &tizen_policy_interface, 1);
+   } else if (g_strcmp0 (interface, "tizen_video") == 0) {
+    self->tizen_video =  wl_registry_bind (registry, id, &tizen_video_interface, version);
+    g_return_if_fail (self->tizen_video != NULL);
+    tizen_video_add_listener (self->tizen_video, &tizen_video_listener, self);
+  }
+[...]
+
+}
+</pre>
+
+##### Specific Video Formats used by Multimedia Framework (SN12, SN21, ST12, SR32, S420) for Zero copy
+In fact, SN12, SN21, ST12, SR32 and S320 are same to NV12, NV21, NV12MT, BGRA and I420. but Multimedia Framework use Specific Video Formates to indicate that formats is using TBM buffer. TIZEN provides a TBM buffer to avoid memory copy when transferring buffer to different processes. Camerasrc or Video Codec write the video data to tbm buffer, saves tbm bo pointer to GstBuffer, and send it to waylandsink. Waylandsink create wl_buffer with tbm_bo and requests rendering to the Window Server. There is no memory copy from Camerasrc or Video Codec to Window Server. We call it Zero Copy.
+
+##### MMVideoBuffer
+Gst Element should use the MMVideoBuffer type when transferring TBM buffer. tbm bo must be stored in bo of MMVideoBufferHandle. and type should be MM_VIDEO_BUFFER_TYPE_TBM_BO. Waylandsink make wl_buffer by using MMVideoBuffer information. If the video frame is not rendered, Waylandsink need to make sure that the information in MMVideoBuffer in GstBuffer received from Camerasrc or Video Codec is correct. 
+<pre>
+typedef struct {
+ MMVideoBufferType type;                                 /**< buffer type   - The field of handle that type indicates should be filled, and other fields of handle are optional. */
+ MMPixelFormatType format;                               /**< buffer type */
+ int plane_num;                                          /**< number of planes */
+ int width[MM_VIDEO_BUFFER_PLANE_MAX];                   /**< width of buffer */
+ int height[MM_VIDEO_BUFFER_PLANE_MAX];                  /**< height of buffer */
+ int stride_width[MM_VIDEO_BUFFER_PLANE_MAX];            /**< stride width of buffer */
+ int stride_height[MM_VIDEO_BUFFER_PLANE_MAX];           /**< stride height of buffer */
+ int size[MM_VIDEO_BUFFER_PLANE_MAX];                    /**< size of planes */
+ void *data[MM_VIDEO_BUFFER_PLANE_MAX];                  /**< data pointer(user address) of planes */
+ int handle_num;                                         /**< number of buffer handle */
+ int handle_size[MM_VIDEO_BUFFER_PLANE_MAX];             /**< size of handles */
+ MMVideoBufferHandle handle;                             /**< handle of buffer */
+ int is_secured;                                         /**< secured buffer flag. ex) TrustZone memory, user can not access it. */
+ int flush_request;                                      /**< flush request flag - If this flag is TRUE, sink element will make copy of last buffer, and it will return all buffers from src element.  Then, src element can restart without changing pipeline state. */
+ MMRectType crop;                                        /**< crop information of buffer */
+} MMVideoBuffer;
+</pre> 
+MMVideoBuffer can contain video data informtion of all cases as below. 
+
+![YUV_block.png](media/YUV_block.png)
+
+
+##### Tizen Viewport
+To change video frame render condition, Open source original Waylandsink use ```wlsurface_set_source()```, ```wl_surface_set_buffer_transform()```, ```wl_subsurface_set_position()```, ```wl_viewport_set_destination()``` and ```wl_surface_set_buffer_transform()```, For more information on wayland API, see the link <https://wayland.freedesktop.org/docs/html/>). Waylandsink need to IPC with ```wl_surface```, ```wl_subsurface``` and ```wl_viewport```.
+
+![wl_surface.png](media/wl_surface.png) ![wayland_protocols.png](media/wayland_protocols.png)
+
+Waylandsink in the Muse Daemon should request rendering conditions on  ```wl_subsurface``` of the window created by Application. Therefore, there are some problem that it is difficult to match the geometry sync of the parent(Window) and wl_subsurface due to the delay caused by the IPC communication between the Window Server and Wayland-client. ```wl_viewport_```, ```wl_set_source_``` are surface-based coordination, it is difficult to calculate the coordinates when the buffer is transformed. so waylandsink for TIZEN use ```tizen_viewport supported``` Wayland Server for TIZEN. To use ```tizen_viewport```, Waylandsink bind ```tizen_policy_interface``` and ```tizen_video_interface```. Now, Waylandsink need to IPC ```tizen_viewport``` only. Waylandsink need to bind  ```tizen_policy_interface```, ```tizen_video_interface```.
+
+![tizen_viewport.png](media/tizen_viewport.png)
+
+  * Example 1
+![tizen_viewport_ex1.png](media/tizen_viewport_ex1.png)
+
+  * Example 2               
+![tizen_viewport_ex2.png](media/tizen_viewport_ex2.png)
+
+  * Example 3
+![tizen_viewport_ex3.png](media/tizen_viewport_ex3.png)
+
+  * Example 4
+![tizen_viewport_ex4.png](media/tizen_viewport_ex4.png)
+
+
+##### Flush Buffer
+Sometimes it is necessary to return GstBuffer while maintaining the video frame rendered in the window. In this case, use FlushBuffer. FlushBuffer is a ```wl_buffer``` created after copying TBM from GstBuffer coming from Video codec or Camerasrc. Waylandsink return GstBuffer to Video Codec or Camerasrc immediately, and rendering FlushBuffer request is made to the Window Server.
+
+**1) Gapless video playback.**
+
+Waylandsink receive ```GST_EVENT_CUSTOM_DOWNSTREAM``` from Player when Player performs gapless video playback. and Player create a FlushBuffer.
+<pre>
+#define GST_APP_EVENT_FLUSH_BUFFER_NAME "application/flush-buffer"
+
+static gboolean gst_wayland_sink_event (GstBaseSink * bsink, GstEvent * event)
+{
+[...]  
+  switch (GST_EVENT_TYPE (event)) {
+  case GST_EVENT_CUSTOM_DOWNSTREAM:
+     s = gst_event_get_structure (event);   
+     if (s == NULL || !gst_structure_has_name (s, GST_APP_EVENT_FLUSH_BUFFER_NAME))
+         break;
+    gst_wayland_sink_render_flush_buffer (bsink);
+[...] 
+}
+</pre>
+**2) keep-camera-preview**
+Camera set this property When Camera need to maintain last video frame. Waylandsink copay last tbm buffer and return last tbm buffr immediately when state change(PAUSED_TO_READY).
+<pre>
+keep-camera-preview : Last tbm buffer is copied and returned to camerasrc immediately when state change(PAUSED_TO_READY)
+                      flags: readable, writable
+                      Boolean. Default: false
+</pre>
+**3) flush_request of MMVideoBuffer**
+Camerasrc and Video Codec can set a flag to request a flushbuffer in the GstBuffer using ```MMVideoBuffer.flush_request = TRUE```. 
+
+##### Audio only mode
+Waylandsink has s disable-overlay property to support Player's audio only mode. If this property is set, video frame is not rendered. Player need to set this property to false and set ```wl_surface_id``` when Player need to show video frame.
+<pre>
+disable-overlay : Stop using overlay by destroying wl_window and wl_display, Use gst_video_overlay_set_wl_window_wl_surface_id before setting FALSE to use overlay
+                              flags: readable, writable
+                              Boolean. Default: false
+</pre>
+<pre>
+gst_wayland_sink_set_property (GObject * object, guint prop_id, const GValue * value, GParamSpec * pspec)
+{
+[...]
+    case PROP_DISABLE_OVERLAY:      
+       sink->disable_overlay = g_value_get_boolean (value);
+       if (sink->window && sink->display) {
+         if (sink->disable_overlay) {   // set TRUE       
+           g_clear_object (&sink->window);
+           g_clear_object (&sink->display);        
+        } else // set FALSE
+          gst_wayland_sink_recover_display_window_info (sink);
+       }       break;
+[...]
+}
+
+static GstFlowReturn gst_wayland_sink_render (GstBaseSink * bsink, GstBuffer * buffer)
+{
+[...]
+  /* check overlay */  
+  if (gst_wayland_sink_is_disabled_overlay (sink)) {    
+    GST_LOG ("set disable_overlay, so skip");    
+    goto done; //skip video rendering
+  }
+[...]
+}
+
+Please refer to mm_player_priv.c
+/* Need to set surface_id to enable overlay. */
+gst_video_overlay_set_wl_window_wl_surface_id( GST_VIDEO_OVERLAY(player->pipeline->videobin[MMPLAYER_V_SINK].gst), *(int*)handle);
+</pre>
+
+##### Handoffs and preroll-handoff Element Signals
+Sometimes Player use fakesink.  Changing the gst-pipeline of Player is a hassles, so Waylandsink provided fakesink functionality. if this property set to TRUE, Waylandsink send hanoff signal to Player.
+<pre>
+static GstFlowReturn gst_wayland_sink_render (GstBaseSink * bsink, GstBuffer * buffer)
+{
+[...]
+  /* fakesink function for media stream callback case */
+  if (sink->signal_handoffs) {    
+    GST_LOG ("g_signal_emit: hand-off ");    
+    g_signal_emit (sink, gst_waylandsink_signals[SIGNAL_HANDOFF], 0, buffer, bsink->sinkpad);
+    goto done;  //skip video rendering
+  }
+[...]
+}
+</pre>
+
+##### Use TBM
+Waylandsink use two types of buffrs. It si shared memory and TBM memory. the default value is TRUE and Waylandsink use TBM memory. Waylandsink for TIZEN use shared memory such as the open source original waylandsink if value is FALSE.
+<pre>
+use-tbm  : Use Tizen Buffer Memory insted of Shared memory, Memory is alloced by TBM insted of SHM when enabled
+           flags: readable, writable
+           Boolean. Default: true
+</pre>
+
+##### Rotate
+Waylandsink can rotate angle of display output. the default value is 0, "DEGREE_0".
+<pre>
+rotate   : Rotate angle of display output                        
+           flags: readable, writable
+           Enum "GstWaylandSinkRotateAngleType" Default: 0, "DEGREE_0"
+                (0): DEGREE_0         - No rotate
+                (1): DEGREE_90        - Rotate 90 degree
+                (2): DEGREE_180       - Rotate 180 degree
+                (3): DEGREE_270       - Rotate 270 degree
+</pre>
+We need to convet the enum values used by Player or Camera to values used by WAYLAND.
+<pre>
+static gint gst_wl_window_find_rotate_transform (guint rotate_angle) {
+  gint transform = WL_OUTPUT_TRANSFORM_NORMAL; 
+    switch (rotate_angle) {    
+      case DEGREE_0:      
+        transform = WL_OUTPUT_TRANSFORM_NORMAL;      
+        break;    
+     case DEGREE_90:
+       transform = WL_OUTPUT_TRANSFORM_90;      
+       break;    
+     case DEGREE_180:      
+       transform = WL_OUTPUT_TRANSFORM_180;      
+       break;    
+     case DEGREE_270:      
+       transform = WL_OUTPUT_TRANSFORM_270;      
+       break;  
+  }  
+  return transform;
+}
+
+transform =  gst_wl_window_find_rotate_transform (window->rotate_angle.value);   
+tizen_viewport_set_transform (window->tizen_area_viewport, transform);
+</pre>
+
+##### Flip
+Waylandsink can flip angle of display output. the default value is 0, "FLIP_NONE".
+<pre>
+ flip  : Flip for display
+         flags: readable, writable
+         Enum "GstWaylandSinkFlipType" Default: 0, "FLIP_NONE" 
+              (0): FLIP_NONE        - Flip NONE 
+              (1): FLIP_HORIZONTAL  - Flip HORIZONTAL 
+              (2): FLIP_VERTICAL    - Flip VERTICAL 
+              (3): FLIP_BOTH        - Flip BOTH
+</pre>
+WAYLAND has not flip. So, waylandsink must implement flip with rotating video_viewport.
+<pre>
+static gint gst_wl_window_find_flip_transform (guint flip)
+{
+  gint transform = WL_OUTPUT_TRANSFORM_NORMAL;
+  FUNCTION;
+
+  GST_DEBUG ("flip (%d)", flip);
+  switch (flip) {
+    case FLIP_NONE:
+      transform = WL_OUTPUT_TRANSFORM_NORMAL;
+      break;
+    case FLIP_HORIZONTAL:
+      transform = WL_OUTPUT_TRANSFORM_FLIPPED;
+      break;
+    case FLIP_VERTICAL:
+      transform = WL_OUTPUT_TRANSFORM_FLIPPED_180;
+      break;
+    case FLIP_BOTH:
+      transform = WL_OUTPUT_TRANSFORM_180;
+      break;
+  }
+  return transform;
+
+}
+
+transform = gst_wl_window_find_flip_transform (window->flip.value);
+tizen_viewport_set_transform (window->tizen_video_viewport, transform);
+</pre>
+
+##### Visible
+Waylandsink can make the video frame visible or invisible on the display. To make the video frame invisible, attach NULL, To make the video fame visible, Waylandsink need to keep last rendered video frame.
+<pre>
+/* invisible */
+static void gst_wayland_sink_stop_video (GstWaylandSink * sink)
+{
+  FUNCTION;
+  g_return_if_fail (sink != NULL);
+  gst_wl_window_render (sink->window, NULL, NULL);
+}
+/*visible*/
+gst_wayland_sink_update_last_buffer_geometry (sink);
+</pre>
+
+##### Display Geometry Method and ROI
+Waylandsink can change the geometry when rendering the video.
+<pre>
+display-geometry-method: Geometrical method for display
+           flags: readable, writable
+           Enum "GstWaylandSinkDisplayGeometryMethodType" Default: 0, "LETTER_BOX"
+                (0): LETTER_BOX       - Letter box
+                (1): ORIGIN_SIZE      - Origin size
+                (2): FULL_SCREEN      - Full-screen
+                (3): CROPPED_FULL_SCREEN - Cropped full-screen
+                (4): ORIGIN_SIZE_OR_LETTER_BOX - Origin size(if screen size is larger than video size(width/height)) or Letter box(if video size(width/height) is larger than screen size)
+                (5): DISP_GEO_METHOD_CUSTOM_ROI - Specially described destination ROI
+</pre>
+These are provided by using tizen_viewport from TIZEN 3.0.
+<pre>
+enum {
+ DISP_GEO_METHOD_LETTER_BOX = 0,
+ DISP_GEO_METHOD_ORIGIN_SIZE,
+ DISP_GEO_METHOD_FULL_SCREEN,
+ DISP_GEO_METHOD_CROPPED_FULL_SCREEN,
+ DISP_GEO_METHOD_ORIGIN_SIZE_OR_LETTER_BOX,
+ DISP_GEO_METHOD_CUSTOM_ROI,
+ DISP_GEO_METHOD_NUM,
+};
+
+if (tizen_disp_mode > -1) {
+  tizen_destination_mode_set (window->tizen_video_dest_mode, tizen_disp_mode); 
+}
+</pre>
+ROI coordinates can be set only when the value of display-geometry-method is set to 5, and ROI coordinates are obtained from ```gst_video_overlay_set_render_rectangle()``` from Player or Camera.
+<pre>
+if (window->disp_geo_method.value == DISP_GEO_METHOD_CUSTOM_ROI) {
+   tizen_viewport_set_destination (window->tizen_video_viewport, window->roi.x, window->roi.y, window->roi.w, window->roi.h);
+}
+</pre>
+
+**1) Letter Box mode**
+
+Letter Box mode fit the video source to Width or Height of Window, align center and keep aspect ratio of original video source.
+
+* Window (width/height) > Video source (width/height)           
+![Letterbox_ex1.png](media/Letterbox_ex1.png)
+              
+* Window (width/height) < Video source (width/height)          
+![Letterbox_ex2.png](media/Letterbox_ex2.png)
+
+**2) Origin Size mode**
+
+Origin size mode set video source size by original video size, align center and keep aspect ratio of original video source.
+
+* Window size > Video source size                    
+![origin_mode_ex1.png](media/origin_mode_ex1.png)
+* Window size < Video source size
+![origin_mode_ex2.png](media/origin_mode_ex2.png)
+
+**3) Cropped Full Screen mode**
+
+Cropped Full Screen mode fit the video source to Width and Height, crop the out of window area, align center, keep aspect ratio of original video source.
+
+* Window (width/height) > Video source (width/height)
+![cropped_full_mode_ex1.png](media/cropped_full_mode_ex1.png)
+
+* Window (width/height) < Video source (width/height)  
+![cropped_full_mode_ex2.png](media/cropped_full_mode_ex2.png)
+
+
+
+**4) ROI mode**
+
+ROI is the user directly sets the location where the video is rendered.
+
+* window size: width(1920), height(1080), ROI size: x(100), y(100), width(800), height(400)
+
+![ROI_ex.png](media/ROI_ex.png)
