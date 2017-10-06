@@ -1,35 +1,35 @@
-# Tips and Heads-up
+# Development Tips
 
-## Regarding SSH Configuration File
+- **SSH configuration file content**
 
-- When working at home, you don't need any proxy, so the SSH configuration files for all Linux distribution versions can be unified as follows:
+  - When working at home, you do not need a proxy, so the SSH configuration file is identical for all Linux distribution versions:
 
-  ```
-  Host tizen review.tizen.org
-  Hostname review.tizen.org
-  IdentityFile ~/.ssh/id_rsa
-  User <Gerrit_Username>
-  Port 29418
-  ```
+    ```
+    Host tizen review.tizen.org
+    Hostname review.tizen.org
+    IdentityFile ~/.ssh/id_rsa
+    User <Gerrit_Username>
+    Port 29418
+    ```
 
-- When working in a corporate environment, for example, inside intel, proxy line is must-have, and you need to make a choice based on your Linux distribution versions.
+  - When working in a corporate environment, a proxy line in the SSH configuration is mandatory, and its format depends on the Linux distribution version you are using.
 
-  For Ubuntu, openSUSE, and CentOS, append "ProxyCommand nc -X5 -x <Proxy Address>:<Port> %h %p", whereas for Fedora, append "ProxyCommand nc --proxy-type socks4 --proxy <Proxy Address>:<Port> %h %p".
+    For Ubuntu, openSUSE, and CentOS, append `ProxyCommand nc -X5 -x <Proxy Address>:<Port> %h %p` to the SSH configuration, whereas for Fedora, append `ProxyCommand nc --proxy-type socks4 --proxy <Proxy Address>:<Port> %h %p` instead.
 
-## Regarding Cloning through SSH/HTTP
+- **Problems when cloning through SSH/HTTP**
 
-- PRC users may find it tricky to "communicate" with google server when downloading the Repo tool, initializing the repo, and synchronizing Tizen source.
+  - If you are located in China, you can experience problems connecting to Google servers when downloading the repo tool, initializing the repository, and synchronizing Tizen source.
 
-  Typical confusion is: No error message is displayed when downloading the Repo tool by using curl, but when proceeding to **repo init**, users may find the "hidden" issue come out of nowhere. In this case, keep in mind that this is an "communication" issue between PRC users and google, just clear your head and try running the commands with tsocks, some examples are shown below:
+    In a typical error situation, no error message is displayed when downloading the repo tool by using curl, but connection problems occur when attempting to run the `repo init` command. In such cases, clear the Git HEAD and try running the repo commands through the `tsocks` proxy:
 
-  ```bash
-  $ tsocks curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-  $ tsocks repo init -u ssh://<Username>@review.tizen.org:29418/scm/manifest -b tizen -m ivi.xml
-  $ tsocks repo init -u https://<Username>:<HTTPS_Password>@review.tizen.org/gerrit/p/scm/manifest -b tizen -m ivi.xml
-  ```
+    ```bash
+    $ tsocks curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+    $ tsocks repo init -u ssh://<Username>@review.tizen.org:29418/scm/manifest -b tizen -m ivi.xml
+    $ tsocks repo init -u https://<Username>:<HTTPS_Password>@review.tizen.org/gerrit/p/scm/manifest -b tizen -m ivi.xml
+    ```
 
-- When initializing and cloning through HTTP, users may be blocked by the "server certificate verification" issue, run the following command and try again:
+  - When initializing and cloning through HTTP, you can be blocked by the "server certificate verification" issue. Run the following command and try again:
 
-  ```bash
-  $ export GIT_SSL_NO_VERIFY=1
-  ```
+    ```bash
+    $ export GIT_SSL_NO_VERIFY=1
+    ```

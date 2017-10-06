@@ -1,51 +1,54 @@
-# Gerrit Usage
+# Gerrit
 
-#### Watch a project
+You can perform various operations in Gerrit:
 
-If you're interested in a package that has an important relation to yours, like a dependency, then you can watch those projects. You can receive a notification when a patchset is uploaded to Gerrit. Adjust the Watched Projects settings to monitor projects.
+- To watch a project
+  
+  If you are interested in a package that has an important relation to yours, like a dependency, you can watch that package project. You receive notifications when a patchset for a watched project is uploaded to Gerrit.
 
-```
-Settings (top right) --> Watched Projects --> input Project Name -> click 'Watch'
-```
+  To adjust the **Watched Projects** settings to monitor new projects, in the Gerrit Web UI, go to **Settings (top right) &gt; Watched Projects**, enter the project name, and click **Watch**.
 
-#### Replace a patch set
+- To replace a patch set
 
-To add a new patch set that replaces an existing patch set with an updated version of the same logical modification, send the new commit to the change's ref number. For example, to add the commit where the SHA-1 starts with c0ffee, as a new patch set for change number 1979, use the push refspec c0ffee:refs/changes/1979:
+  You can add a new patch set that replaces an existing patch set with an updated version of the same logical modification, by sending a new commit to the change's ref number. For example, to add a commit where the SHA-1 starts with "c0ffee", as a new patch set for change number 1979, use the following command:
 
-```
- $ git push ssh://review.tizen.org/<PROJECT_NAME> c0ffee:refs/changes/1979
-```
+  ```bash
+  $ git push ssh://review.tizen.org/<PROJECT_NAME> c0ffee:refs/changes/1979
+  ```
 
-Hint: Sometimes a developer can use "git commit --amend" to update existing local commit, and then push to gerrit using "HEAD:refs/changes/1979", instead of having to use a hash-ID.
+  > **Tip:**  
+  > Sometimes you can use the `git commit --amend` command to update an existing local commit, and then push to Gerrit using `HEAD:refs/changes/1979`, instead of having to use a hash ID.
 
-#### Command line Tools
+- To use command line tools
 
-```
-ssh -p <port> <host> gerrit review [--message <MESSAGE>] [--verified <N>] [--code-review <N>] [--abandon]{COMMIT | CHANGEID,PATCHSET}…
-```
+  You can use various command attributes to manage command line tools:
 
-##### Review a patch set
+  ```bash
+  ssh -p <port> <host> gerrit review [--message <MESSAGE>] [--verified <N>] [--code-review <N>] [--abandon]{COMMIT | CHANGEID,PATCHSET}...
+  ```
 
-You can review patch sets by using the command line, for example, to verify, approve, and submit the patch c0ff33:
+- To review a patch set
 
-```
- $ ssh review.tizen.org gerrit review --verified=+1 --code-review=+2 --submit c0ff33
-```
+  You can review patch sets by using the command line. For example, to verify, approve, and submit the patch "c0ff33":
 
-##### Abandon a patch set
+  ```bash
+  $ ssh review.tizen.org gerrit review --verified=+1 --code-review=+2 --submit c0ff33
+  ```
 
-To drop an uploaded patch, just click the Abandon button at Web UI or use the command example, as shown below: for example:
+- To abandon a patch set
 
-```
- $ ssh review.tizen.org gerrit review --abandon c0ff33
-```
+  You can drop an uploaded patch by clicking **Abandon** in the Gerrit Web UI or using a command:
 
-##### More detailed instructions
+  ```bash
+  $ ssh review.tizen.org gerrit review --abandon c0ff33
+  ```
 
-For detailed instructions, you can get information from the '--help' command:
+- To access more detailed instructions
 
-```
- $ ssh review.tizen.org gerrit --help
-```
+  For detailed instructions, use the `--help` command:
 
-or refer to the [Gerrit Command Line](https://review.tizen.org/gerrit/Documentation/cmd-index.html)
+  ```bash
+  $ ssh review.tizen.org gerrit --help
+  ```
+
+  or see [Gerrit Code Review - Command Line Tools](https://review.tizen.org/gerrit/Documentation/cmd-index.html).
