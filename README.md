@@ -32,8 +32,8 @@ If you're creating a new topic, keep the following in mind as well:
 1. In addition to adding your page, edit docs/TOC.md to add a link to that page.
 1. If you're adding a top-level node to the TOC, also make an entry for it in docs/index.md.
 
-**Note:**  
-TOC.md has maximum 4th depth. You can use #, ##, ###, and ####. The title with # will be located on GNB(Global Navigation Bar).
+> **Note**  
+> TOC.md has maximum 4th depth. You can use #, ##, ###, and ####. The title with # will be located on GNB(Global Navigation Bar).
 
 ### How to PR
 1. Fork form the original repository, http://github.com/Samsung/tizen-docs.
@@ -115,18 +115,6 @@ Code blocks on docs.tizen.org (TBD) are delineated by with three grave accents (
 The opening ``` should be followed by a language code for proper syntax coloring, such as "xml", "json", "csharp", etc. Use "bash" for command-line examples and "output" for command-line results.
 
 The only case when you should use ``` without a language tag is when creating a block of fixed-point text that isn't related to any kind of code. In these cases you can also just indent the code block, which can be preferable because it visually separates the code in an editor.
-
-### Callouts
-
-docs.tizen.org/docs (TBD) uses blockquotes for callouts, that is, lines starting with ">".
-
-Callout sections with ">" only will appear with a solid gray line to the left.
-
-You can also use one of the following callout tags on the first line that will create a shaded callout in the indicated color:
-
-| Tag | Shading color | Topic with examples |
-| --- | --- | --- |
-| `> [!Note]` | Light blue, use for callouts without any special emphasis. | (TBD) |
 
 ### Links
 

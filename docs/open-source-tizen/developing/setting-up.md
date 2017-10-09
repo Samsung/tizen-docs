@@ -7,7 +7,8 @@ This topic provides information on how to set up a development environment, incl
 - How to set up the repo tool.
 - How to work through a network proxy.
 
-!!!Note If you encounter problems while obtaining the repo tool, see [Tips and Heads-up](tips.md).
+> **Note**
+> If you encounter problems while obtaining the repo tool, see [Tips and Heads-up](tips.md).
 
 ## Setting Up Gerrit Access
 
@@ -29,7 +30,8 @@ To register a user account to gain access to tizen.org:
 
 3. Follow the instructions in the verification email to verify the email address, change the password, and gain access to tizen.org.
 
-   **Note:** If an error message is shown when you click the link in the verification email, copy the link to the address bar of the browser directly.
+   > **Note**
+   >  If an error message is shown when you click the link in the verification email, copy the link to the address bar of the browser directly.
 
 At this point, the prerequisites for accessing Gerrit are ready. Move on to the next section to enable Gerrit access.
 
@@ -43,11 +45,12 @@ To configure SSH for Gerrit access:
    $ ssh-keygen [-t rsa] [-C "<Comments>"]
    ```
 
-   **Note:** `[-t rsa]` and `[-C "<Comments>"]` are both optional arguments for the `ssh-keygen` command.
-
-   If invoked without specifying key type, `ssh-keygen` generates an RSA key for use in SSH protocol 2 connections, thus making `[-t rsa]`, which specifies the key type, optional.
-
-   For an RSA key, if invoked without adding any comment, `ssh-keygen` initializes the comment as "<user>@<host>" when the key is generated, thus making `[-C "<Comments>"]` optional. In spite of this, adding this argument is recommended because a rephrased comment can help better identify the keys.
+   > **Note**
+   > `[-t rsa]` and `[-C "<Comments>"]` are both optional arguments for the `ssh-keygen` command.
+   >
+   > If invoked without specifying key type, `ssh-keygen` generates an RSA key for use in SSH protocol 2 connections, thus making `[-t rsa]`, which specifies the key type, optional.
+   >  
+   > For an RSA key, if invoked without adding any comment, `ssh-keygen` initializes the comment as "<user>@<host>" when the key is generated, thus making `[-C "<Comments>"]` optional. In spite of this, adding this argument is recommended because a rephrased comment can help better identify the keys.
 
    Based on the on-screen prompts, specify the file in which to save the key, and the passphrase.
 
@@ -86,9 +89,10 @@ To configure SSH for Gerrit access:
      # ProxyCommand nc --proxy-type socks4 --proxy <Proxy Address>:<Port> %h %p
      ```
 
-   **Note:**  
-     - Both "tizen" and "review.tizen.org" are aliases of the hostname. "tizen" is configured for simplicity of commands when initializing git repositories and cloning specific Tizen projects, and "review.tizen.org" is configured to work with the `manifest.xml` and `_remote.xml` files when synchronizing the entire Tizen source.
-     - The `~/.ssh/config` file must not be written in by other users. Make sure to remove the write permission by executing `chmod o-w ~/.ssh/config`. For more information on `ssh_config`, see `man ssh_config`.
+   > **Note**  
+   > - Both "tizen" and "review.tizen.org" are aliases of the hostname. "tizen" is configured for simplicity of commands when initializing git repositories and cloning specific Tizen projects, and "review.tizen.org" is configured to work with the `manifest.xml` and `_remote.xml` files when synchronizing the entire Tizen source.
+   >
+   > - The `~/.ssh/config` file must not be written in by other users. Make sure to remove the write permission by executing `chmod o-w ~/.ssh/config`. For more information on `ssh_config`, see `man ssh_config`.
 
 3. Copy the full text in `~/.ssh/id_rsa.pub`, including all of the following:
 
@@ -133,7 +137,8 @@ To configure git for Gerrit access:
    $ git config --global user.email "<E-mail_Address>"
    ```
 
-`> [!Note]` Using the `GIT_AUTHOR_NAME` and `GIT_AUTHOR_EMAIL` environment variables is an alternative solution. These variables override all configuration settings once set.
+> **Note**
+> Using the `GIT_AUTHOR_NAME` and `GIT_AUTHOR_EMAIL` environment variables is an alternative solution. These variables override all configuration settings once set.
 
 ## Setting Up the GBS Configuration
 
@@ -376,7 +381,8 @@ url = http://download.tizen.org/releases/daily/tizen/3.0-ivi/latest/repos/arm/pa
 url = http://download.tizen.org/releases/daily/tizen/3.0-ivi/latest/repos/arm/debug/
 ```
 
-**Note**: The file contains the GBS configuration for all profiles and repositories in Tizen version 3.0 and Tizen version 4.0. In the near future in new GBS versions, the above default configuration file (`~/.gbs.conf`) is automatically installed when GBS is installed.
+> **Note**
+> The file contains the GBS configuration for all profiles and repositories in Tizen version 3.0 and Tizen version 4.0. In the near future in new GBS versions, the above default configuration file (`~/.gbs.conf`) is automatically installed when GBS is installed.
 
 The default profile used in GBS is specified in the `[general]` section:
 
@@ -385,10 +391,11 @@ The default profile used in GBS is specified in the `[general]` section:
 profile = profile.unified_standard
 ```
 
-**Note:** The default GBS build parameters, based on the above block, are as follows:  
-- Tizen version: 4.0  
-- Profile: unified  
-- Repository: standard
+> **Note**
+> The default GBS build parameters, based on the above block, are as follows:  
+> - Tizen version: 4.0  
+> - Profile: unified  
+> - Repository: standard
 
 ### Setting Up a Specific Profile in the .gbs.conf File
 
@@ -454,15 +461,16 @@ Other examples:
 
 Each `profile` entry in the `.gbs.conf` file specifies multiple `repo` entries, and each `repo` entry specifies a URL where RPM files used in the GBS build are located.
 
-**Note:** The `latest` directory in the remote repository URLs is a symbolic link in the remote server, which is always linked to the latest new directory and can be changed any time, so make sure to use the latest repo with a specific date to guarantee usability. An example is shown below:
-```
-url = http://download.tizen.org/releases/daily/tizen/unified/latest/repos/standard/packages/
-```
-
-This URL is symbolically linked to the latest snapshot number in "[http://download.tizen.org/releases/daily/tizen/unified/](http://download.tizen.org/releases/daily/tizen/unified/)". To guarantee usability, use a specific date
-```
-url = http://download.tizen.org/releases/daily/tizen/unified/tizen-unified_20170627.1/repos/standard/packages/
-```
+> **Note**
+> The `latest` directory in the remote repository URLs is a symbolic link in the remote server, which is always linked to the latest new directory and can be changed any time, so make sure to use the latest repo with a specific date to guarantee usability. An example is shown below:
+>  
+> url = http://download.tizen.org/releases/daily/tizen/unified/latest/repos/standard/packages/
+> ```
+>  
+> This URL is symbolically linked to the latest snapshot number in "[http://download.tizen.org/releases/daily/tizen/unified/](http://download.tizen.org/releases/daily/tizen/unified/)". To guarantee usability, use a specific date
+>  ```
+> url = http://download.tizen.org/releases/daily/tizen/unified/tizen-unified_20170627.1/repos/standard/packages/
+> ```
 
 For more information on `.gbs.conf`, see [Configuration File](../tools/gbs/gbs.conf.md).
 
@@ -484,7 +492,8 @@ To install and set up the repo tool:
    $ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
    ```
 
-   **Note:** If you encounter problems while obtaining the repo tool, see [Tips and Heads-up](tips.md).
+   > **Note**
+   > If you encounter problems while obtaining the repo tool, see [Tips and Heads-up](tips.md).
 
 3. Change the attributes of the repo script to make it executable:
 
@@ -496,7 +505,8 @@ To install and set up the repo tool:
 
 You can set up your development environment to work through a network proxy.
 
-**Note:** A network proxy is particularly useful if you also track other git repositories for which you do not already have a dedicated `ProxyCommand` in your `~/.ssh/config`, or which use "git://" or "http://".
+> **Note**
+> A network proxy is particularly useful if you also track other git repositories for which you do not already have a dedicated `ProxyCommand` in your `~/.ssh/config`, or which use "git://" or "http://".
 
 ### Configuring a Proxy
 
@@ -516,7 +526,8 @@ To configure a proxy through the Linux shell prompt:
     Defaults env_keep="http_proxy ftp_proxy https_proxy no_proxy"
     ```
 
-   **Note:** Replace "=" with "+=" if previous `env_keep` settings already exist in `/etc/sudoers`.
+   > **Note:**
+   > Replace "=" with "+=" if previous `env_keep` settings already exist in `/etc/sudoers`.
 
 
 ### Configuring Git Access through the Proxy

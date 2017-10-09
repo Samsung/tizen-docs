@@ -37,10 +37,10 @@ To submit a patch to Gerrit:
    ```bash
    $ git push origin HEAD:refs/for/<remote_branch_name>
    ```
-   **Note:** Valid values for <remote_branch_name> are:
-
-   - **tizen**: corresponds to the branch of the latest Tizen version
-   - **tizen_3.0**: corresponds to the Tizen 3.0 branch
+   > **Note**
+   > Valid values for <remote_branch_name> are:
+   > - **tizen**: corresponds to the branch of the latest Tizen version
+   > - **tizen_3.0**: corresponds to the Tizen 3.0 branch
 
 For more information, see [Gerrit Documentation](https://review.tizen.org/gerrit/Documentation/index.html).
 
@@ -53,7 +53,8 @@ The patch is merged or discarded depending on the voting results.The merge is pe
 - The patch has at least one "+2" score and no "-2" score in the Code Review category.
 - The patch has at least one "+1" score and no "-1" score in the Verified category.
 
-**Note:** Voting "+2" requires a proper privilege level.
+> **Note**
+> Voting "+2" requires a proper privilege level.
 
 When a patch meets the above criteria, privileged users can submit to merge the patch to the Git repository.
 
@@ -81,7 +82,8 @@ submit/$Tizen_Version/$(%Y%m%d.%H%M%S)
 
 If the code change has already been merged in Gerrit, a merge request is created and release engineers are notified to review.
 
-**Note:** If the patch has not been merged in Gerrit, the backend services abort the operation and send an email to the patch owner, to notify that the patch needs to be re-submitted after it is merged.
+> **Note**
+> If the patch has not been merged in Gerrit, the backend services abort the operation and send an email to the patch owner, to notify that the patch needs to be re-submitted after it is merged.
 
 #### Submitting a Group of Packages
 

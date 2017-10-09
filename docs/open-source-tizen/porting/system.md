@@ -83,9 +83,8 @@ The core of `systemd` manages all units, such as service, socket, and mount. It 
   - `CONFIG_FREEZER`: Freezes background (and idle) applications
   - `CONFIG_MEMCG_SWAP`, `CONFIG_MEMCG_SWAP_ENABLED`, `CONFIG_ZRAM`, `CONFIG_ZSMALLOC`: Saves memory by compressing
 
-| Note                                     |
-| ---------------------------------------- |
-| For using resourced freezer feature, you need to install the freezer plugin by enabling `CONFIG_FREEZER`. |
+> **Note**
+> For using resourced freezer feature, you need to install the freezer plugin by enabling `CONFIG_FREEZER`.
 
 #### deviced
 
@@ -1156,7 +1155,7 @@ The following table shows the description of the `sensor_device` interface.
 | `bool enable(uint32_t id)`               | Enables the sensor.                      | `true` on success |
 | `bool disable(uint32_t id)`              | Disables the sensor.                     | `true` on success |
 | `int read_fd(uint32_t **ids)`            | Returns the sensor device IDs.The sensor framework calls this function when an event is detected from the `poll-fd` | Size              |
-| `int get_data(uint32_t id, sensor_data_t **data, int *length)` | Updates the `sensor_data_t` object (data) with the details about the sensor, such as accuracy, timestamp, and values.Note that the `sensor_data_t` object has to be created using the `malloc()` function. | 0 on success      |
+| `int get_data(uint32_t id, sensor_data_t **data, int *length)` | Updates the `sensor_data_t` object (data) with the details about the sensor, such as accuracy, timestamp, and values. Note that the `sensor_data_t` object has to be created using the `malloc()` function. | 0 on success      |
 | `bool set_interval(uint32_t id, unsigned long val)` | Sets the interval.                       | `true` on success |
 | `bool set_batch_latency(uint32_t id, unsigned long val)` | Sets the batch latecy.                   | `true` on success |
 | `bool set_attribute_int(uint32_t id, int32_t attribute, int32_t value)` | Sets the `int` value to the attribute.   | `true` on success |

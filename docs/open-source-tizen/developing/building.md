@@ -58,7 +58,7 @@ To exclude specific packages when building locally with GBS, you can either list
   exclude_packages=aaa,bbb,ccc,ddd,eee,fff
   ```
 
-### Speeding up a Local Build <a name-"speed"></a>
+### Speeding up a Local Build <a name="speed"></a>
 
 If the size of your RAM and swap file are both larger than 8 gigabytes, create a GBS `BUILD-ROOTS` directory and mount it as a RAM disk to speed up building:
 
@@ -72,7 +72,6 @@ $ sudo mount -t tmpfs -o size=16G tmpfs ~/GBS-ROOT/local/BUILD-ROOTS
 When the result of the first build is unsatisfactory, perform another build by executing one of the following commands, as appropriate:
 
 - Scenario 1:
-
   - The URL of the remote repo is the same as in the previous build.
   - New packages to be built are dependent on previously built packages.
   - You want previously built packages to participate in the new build.
@@ -82,7 +81,6 @@ When the result of the first build is unsatisfactory, perform another build by e
   ```
 
 - Scenario  2:
-
   - The URL of the remote repo is the same as in the previous build.
   - New packages to be built are dependent on previously built packages.
   - You do not want previously built packages to participate in the new build.
@@ -101,7 +99,6 @@ When the result of the first build is unsatisfactory, perform another build by e
   ```
 
 - Scenario 4:
-
   - The URL of the remote repo is changed.
   - New packages to be built are dependent on previously built packages.
   - You want previously built packages to participate in the new build.
@@ -111,7 +108,6 @@ When the result of the first build is unsatisfactory, perform another build by e
   ```
 
 - Scenario 5:
-
   - The URL of the remote repo is changed.
   - New packages to be built are dependent on previously built packages.
   - You do not want previously built packages to participate in the new build.
