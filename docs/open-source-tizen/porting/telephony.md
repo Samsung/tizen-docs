@@ -3,7 +3,7 @@
 This guide describes the Telephony architecture in detail, including the various telephony components and the workflow in the Telephony framework. It also provides porting guidelines for vendors to facilitate OAL interface development for their hardware.
 
 The Tizen Telephony features include:
-  - Telecommunication functionalities, such as call, SS, SMS, SIM, network, and packet service
+- Telecommunication functionalities, such as call, SS, SMS, SIM, network, and packet service
   - Plug-in architecture
 
 
@@ -26,7 +26,7 @@ Tizen Telephony supports plugin architecture, which provides the flexibility to 
 
 **Figure: Telephony architecture**
 
-![Telephony architecture](media/800px-Telephony-arch.png)
+![Telephony architecture](media/Telephony-arch.png)
 
 The 3 major components of Tizen Telephony are the libraries, plugins, and server.
 
@@ -72,7 +72,7 @@ The following figure provides an overview of the Telephony plugin types.
 
 **Figure: Telephony plugins**
 
-![Telephony plugins](media/649px-Telephony08.png)
+![Telephony plugins](media/Telephony08.png)
 
 ## Telephony Server
 
@@ -82,7 +82,7 @@ The Telephony server executes as a `g-main` loop from the `glib` library.
 
 **Figure: Telephony server**
 
-![Telephony server](media/800px-Telephony09.png)
+![Telephony server](media/Telephony09.png)
 
 ## Porting the OAL Interface
 
@@ -92,13 +92,30 @@ This section provides guidance to OEM vendors to develop various Telephony plugi
 
 ### Plugin Descriptor
 
-Each telephony plugin must provide a descriptor structure, as in the following table.
+Each telephony plugin must provide a descriptor structure, as in the following.
 
-**Table: Descriptor structure**
-
-| Structure                                | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
-| `struct tcore_plugin_define_desc {    gchar *name;    enum tcore_plugin_priority priority;    int version;    gboolean(*load)();    gboolean(*init)(TcorePlugin *);    void (*unload)(TcorePlugin *);};` | Structure referred to by the Telephony server to load, initialize, and unload the plugin. <br>The structure defines:<ol><li>Plugin name</li><li>Initialization priority</li><li>Plugin version</li><li>Plugin 'load' function reference</li><li>Plugin 'init' function reference</li><li>Plugin 'unload' function reference</li></ol> |
+- **Structure**
+  ```c
+  struct tcore_plugin_define_desc {
+    /* Name of the plugin */
+    gchar *name;
+    
+    /* Initializing priority of the plugin */
+    enum tcore_plugin_priority priority;
+    
+    /* Plugin version */
+    int version; 
+    
+    /* Plugin 'load' function reference */
+    gboolean(*load)(); 
+    
+    /* Plugin 'init' function reference */
+    gboolean(*init)(TcorePlugin *);
+    
+    /* Plugin 'unload' function reference */
+    void (*unload)(TcorePlugin *); 
+  };
+  ```
 
 The plugin descriptor structure must be named as `plugin_define_desc`. The server obtains the address of this symbol to give control to the plugin to execute its defined functionality.
 
@@ -110,41 +127,123 @@ OEMs need to specifically implement the modem and modem interface plugins to sup
 
 To provide call services, the functions described in the following table must be implemented.
 
-**Table: Call service functions**
+- **Functions**
+  ```c
+  struct tcore_call_operations {  
+    /* Call 'dial' function reference */
+    TReturn (*dial)(CoreObject *o, UserRequest *ur); 
+    
+    /* Call 'answer' function reference */
+    TReturn (*answer)(CoreObject *o, UserRequest *ur); 
+    
+    /* Call 'end' function reference */
+    TReturn (*end)(CoreObject *o, UserRequest *ur); 
 
-| Structure                                | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
-| `struct tcore_call_operations {    TReturn (*dial)(CoreObject *o, UserRequest *ur);    TReturn (*answer)(CoreObject *o, UserRequest *ur);    TReturn (*end)(CoreObject *o, UserRequest *ur);    TReturn (*hold)(CoreObject *o, UserRequest *ur);    TReturn (*active)(CoreObject *o, UserRequest *ur);    TReturn (*swap)(CoreObject *o, UserRequest *ur);    TReturn (*join)(CoreObject *o, UserRequest *ur);    TReturn (*split)(CoreObject *o, UserRequest *ur);};` | Structure referred to by the Telephony server to provide call services.<br>The structure defines:<ol><li>Call 'dial' function reference</li><li>Call 'answer' function reference</li><li>Call 'end' function reference</li><li>Call 'hold' function reference</li><li>Call 'active' function reference</li><li>Call 'swap' function reference</li><li>Call 'join' function reference</li><li>Call 'split' function reference</li></ol> |
+    /* Call 'hold' function reference */
+    TReturn (*hold)(CoreObject *o, UserRequest *ur); 
+    
+    /* Call 'active' function reference */
+    TReturn (*active)(CoreObject *o, UserRequest *ur); 
+    
+    /* Call 'swap' function reference */
+    TReturn (*swap)(CoreObject *o, UserRequest *ur);
+    
+    /* Call 'join' function reference */
+    TReturn (*join)(CoreObject *o, UserRequest *ur); 
+    
+    /* Call 'split' function reference */
+    TReturn (*split)(CoreObject *o, UserRequest *ur); 
+  };
+  ```
 
 ### SMS Service Operations
 
 To provide SMS services, the functions described in the following table must be implemented.
 
-**Table: SMS service functions**
+**Functions**
 
-| Structure                                | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
-| `struct tcore_sms_operations {    TReturn (*send_umts_msg)(CoreObject *o, UserRequest *ur);    TReturn (*send_cdma_msg)(CoreObject *o, UserRequest *ur);    TReturn (*read_msg)(CoreObject *o, UserRequest *ur);    TReturn (*save_msg)(CoreObject *o, UserRequest *ur);    TReturn (*delete_msg)(CoreObject *o, UserRequest *ur);    TReturn (*get_sca)(CoreObject *o, UserRequest *ur);    TReturn (*set_sca)(CoreObject *o, UserRequest *ur);    TReturn (*get_sms_params)(CoreObject *o, UserRequest *ur);    TReturn (*set_sms_params)(CoreObject *o, UserRequest *ur);};` | Structure referred to by the Telephony server to provide SMS-related services.<br>This structure defines:<ol><li>SMS 'send' function reference</li><li>SMS 'read' function reference</li><li>SMS 'save' function reference</li><li>SMS 'delete' function reference</li><li>SMS 'get sca' function reference</li><li>SMS 'set sca' function reference</li><li>SMS 'get sms params' function reference</li><li>SMS 'set sms params' function reference</li></ol> |
+```c
+struct tcore_sms_operations {
+    /* For UMTS, SMS 'send' function reference */
+    TReturn (*send_umts_msg)(CoreObject *o, UserRequest *ur);
+  
+    /* For CDMA, SMS 'read' function reference */
+    TReturn (*send_cdma_msg)(CoreObject *o, UserRequest *ur);
+  
+    /* SMS 'read' function reference */
+    TReturn (*read_msg)(CoreObject *o, UserRequest *ur); 
+  
+    /* SMS 'save' function reference */
+    TReturn (*save_msg)(CoreObject *o, UserRequest *ur); 
+  
+    /* SMS 'delete' function reference */
+    TReturn (*delete_msg)(CoreObject *o, UserRequest *ur); 
+  
+    /* SMS 'get sca' function reference */
+    TReturn (*get_sca)(CoreObject *o, UserRequest *ur); 
+  
+    /* SMS 'set sca' function reference */
+    TReturn (*set_sca)(CoreObject *o, UserRequest *ur); 
+  
+    /* SMS 'get sms params' function reference */
+    TReturn (*get_sms_params)(CoreObject *o, UserRequest *ur); 
+  
+    /* SMS 'set sms params' function reference */
+    TReturn (*set_sms_params)(CoreObject *o, UserRequest *ur); 
+};
+```
 
 ### Network Service Operations
 
 To provide network services, the functions described in the following table must be implemented.
 
-**Table: Network service functions**
+**Functions**
 
-| Structure                                | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
-| `struct tcore_network_operations {    TReturn (*search)(CoreObject *o, UserRequest *ur);    TReturn (*set_plmn_selection_mode)(CoreObject *o, UserRequest *ur);    TReturn (*get_plmn_selection_mode)(CoreObject *o, UserRequest *ur);    TReturn (*set_service_domain)(CoreObject *o, UserRequest *ur);    TReturn (*get_service_domain)(CoreObject *o, UserRequest *ur);    TReturn (*set_band)(CoreObject *o, UserRequest *ur);    TReturn (*get_band)(CoreObject *o, UserRequest *ur);};` | Structure referred to by the Telephony server to provide network services.<br>This structure defines:<ol><li>Network 'search' function reference</li><li>Network 'set plmn selection mode' function reference</li><li>Network 'get plmn selection mode' function reference</li><li>Network 'set service domain' function reference</li><li>Network 'get service domain' function reference</li><li>Network 'set band' function reference</li><li>Network 'get band' function reference</li></ol> |
+```c
+struct tcore_network_operations {
+    /* Network 'search' function reference */
+    TReturn (*search)(CoreObject *o, UserRequest *ur); 
+  
+    /* Network 'set plmn selection mode' function reference */
+    TReturn (*set_plmn_selection_mode)(CoreObject *o, UserRequest *ur); 
+    
+    /* Network 'get plmn selection mode'' function reference */
+    TReturn (*get_plmn_selection_mode)(CoreObject *o, UserRequest *ur); 
+  
+    /* Network 'set service domain' function reference */
+    TReturn (*set_service_domain)(CoreObject *o, UserRequest *ur); 
+  
+    /* Network 'get service domain' function reference */
+    TReturn (*get_service_domain)(CoreObject *o, UserRequest *ur); 
+  
+    /* Network 'set band' function reference */
+    TReturn (*set_band)(CoreObject *o, UserRequest *ur);
+   
+    /* Network 'get band' function reference */
+    TReturn (*get_band)(CoreObject *o, UserRequest *ur); 
+};
+```
 
 ### HAL Operations
 
 To provide HAL operations, the functions described in the following table must be implemented.
 
-**Table: HAL functions**
+**Functions**
 
-| Structure                                | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
-| `struct tcore_hal_operations {    TReturn (*power)(TcoreHal *hal, gboolean flag);    TReturn (*send)(TcoreHal *hal, unsigned int data_len, void *data);    TReturn (*setup_netif)(CoreObject *co,                           TcoreHalSetupNetifCallback func, void *user_data,                           unsigned int cid, gboolean enable);};` | Structure referred to by Telephony server to provide HAL operations.<br>This structure defines:<ol><li>HAL 'power' function reference</li><li>HAL 'send' function reference</li><li>HAL 'setup network interface' function reference</li></ol> |
+```c
+struct tcore_hal_operations {
+    /* HAL 'power' function reference */
+    TReturn (*power)(TcoreHal *hal, gboolean flag); 
+  
+    /* HAL 'send' function reference */
+    TReturn (*send)(TcoreHal *hal, unsigned int data_len, void *data); 
+  
+    /* Network 'set up network interface' function reference */
+    TReturn (*setup_netif)(CoreObject *co,
+                           TcoreHalSetupNetifCallback func, void *user_data,
+                           unsigned int cid, gboolean enable);
+};
+```
 
 For sample implementations of the modem and modem interface plugins, see [Sample Modem Interface Plugin Implementation](telephony.md#appendix).
 
@@ -384,7 +483,6 @@ EXPORT_API struct tcore_plugin_define_desc plugin_define_desc = {
     .init = on_init,
     .unload = on_unload
 };
-
 ```
 
 ### Sample Modem Plugin Implementation
@@ -480,46 +578,104 @@ struct tcore_plugin_define_desc plugin_define_desc = {
 
 - Initialization sequence
    1. The server loads the modem interface plugin.
-   1. The modem interface plugin registers to the server.
-   1. The server enumerates the modem interface plugin.
-   1. The physical HAL is created.
-   1. The modem interface plugin queries the modem state.
-   1. If the modem is online, the CMUX (internal) channels are established.
-   1. A logical HAL is created for each CMUX channel and assigned to a core object type. These are updated to the mapping table.
-   1. The physical HAL mode is changed to `TRANSPARENT`, which disables the queue.
-   1. The modem interface plugin requests the server to load the modem plugin corresponding to its architecture.
-   1. The server loads the modem plugin.
-   1. The modem plugin initializes the sub-modules and creates the core objects, based on the core object types defined in the mapping table by the modem interface plugin.
-   1. The modem plugin notifies the server of the `PLUGIN_ADDED` event.
-   1. The modem notifies the communicator of the `PLUGIN_ADDED` event.
-   1. The communicator creates interfaces for the sub-modules present, based on the core objects created.
+
+   2. The modem interface plugin registers to the server.
+
+   3. The server enumerates the modem interface plugin.
+
+   4. The physical HAL is created.
+
+   5. The modem interface plugin queries the modem state.
+
+   6. If the modem is online, the CMUX (internal) channels are established.
+
+   7. A logical HAL is created for each CMUX channel and assigned to a core object type. These are updated to the mapping table.
+
+   8. The physical HAL mode is changed to `TRANSPARENT`, which disables the queue.
+
+   9. The modem interface plugin requests the server to load the modem plugin corresponding to its architecture.
+
+   10. The server loads the modem plugin.
+
+   11. The modem plugin initializes the sub-modules and creates the core objects, based on the core object types defined in the mapping table by the modem interface plugin.
+
+   12. The modem plugin notifies the server of the `PLUGIN_ADDED` event.
+
+   13. The modem notifies the communicator of the `PLUGIN_ADDED` event.
+
+   14. The communicator creates interfaces for the sub-modules present, based on the core objects created.
+
+    The following figure shows the telephony loading sequence.
+
+   ![Telephony11.png](media/Telephony11.png)
+
+   ​
+
 - Request processing sequence
    1. The application request is sent to the communicator through TAPI.
-   1. The communicator creates a user request based on the incoming request.
-   1. The user request is dispatched to the communicator.
-   1. The communicator dispatches the user request to the server.
-   1. The server finds the plugin based on the modem name.
-   1. The server extracts the core object type from the plugin's core objects list, based on the request command.
-   1. The server dispatches the user request to the core object.
-   1. The core object dispatches the user request to dispatch a function based on the request command.
-   1. A pending request is formed, added to the queue, and sent to the logical HAL assigned to the core object.
-   1. The logical HAL dispatches the request data to its dedicated CMUX channel.
-   1. CMUX encodes the request data and dispatches it to the physical HAL.
-   1. The physical HAL sends the request data to the modem.
+
+   2. The communicator creates a user request based on the incoming request.
+
+   3. The user request is dispatched to the communicator.
+
+   4. The communicator dispatches the user request to the server.
+
+   5. The server finds the plugin based on the modem name.
+
+   6. The server extracts the core object type from the plugin's core objects list, based on the request command.
+
+   7. The server dispatches the user request to the core object.
+
+   8. The core object dispatches the user request to dispatch a function based on the request command.
+
+   9. A pending request is formed, added to the queue, and sent to the logical HAL assigned to the core object.
+
+   10. The logical HAL dispatches the request data to its dedicated CMUX channel.
+
+   11. CMUX encodes the request data and dispatches it to the physical HAL.
+
+   12. The physical HAL sends the request data to the modem.
+
+    The following figure shows the telephony request processing sequence.
+   ![Telephony11.png](media/Telephony11.png)
+
+
 - Response processing sequence
    1. The modem sends response data to the physical HAL.
-   1. The physical HAL dispatches the response data to CMUX.
-   1. CMUX decodes the received response data and dispatches it to the corresponding logical HAL, based on the CMUX channel.
-   1. The logical HAL dispatches the decoded response data to the corresponding core object.
-   1. The core object processes the received response data and extracts the user request from the pending queue. It sends the response data corresponding to the user request.
-   1. The user request extracts the communicator.
-   1. The received response data is sent to the corresponding communicator.
-   1. The communicator sends the response data to TAPI, which communicates it to the application.
+
+   2. The physical HAL dispatches the response data to CMUX.
+
+   3. CMUX decodes the received response data and dispatches it to the corresponding logical HAL, based on the CMUX channel.
+
+   4. The logical HAL dispatches the decoded response data to the corresponding core object.
+
+   5. The core object processes the received response data and extracts the user request from the pending queue. It sends the response data corresponding to the user request.
+
+   6. The user request extracts the communicator.
+
+   7. The received response data is sent to the corresponding communicator.
+
+   8. The communicator sends the response data to TAPI, which communicates it to the application.
+
+      The following figure shows the telephony response processing sequence.
+
+   ![Telephony12.png](media/Telephony12.png)
+
+
 - Indication processing sequence
    1. The modem sends notification data to the physical HAL.
-   1. The physical HAL dispatches the notification data to CMUX.
-   1. CMUX decodes the received notification data and dispatches it to the corresponding logical HAL, based on the CMUX channel registered for the notification.
-   1. The logical HAL dispatches the decoded notification data to the corresponding core object registered for the notification.
-   1. The core object processes the received notification data and dispatches to the server.
-   1. The server dispatches the notification data to the corresponding communicator.
-   1. The communicator sends the notification data to TAPI, which communicates it to the application.
+
+   2. The physical HAL dispatches the notification data to CMUX.
+
+   3. CMUX decodes the received notification data and dispatches it to the corresponding logical HAL, based on the CMUX channel registered for the notification.
+
+   4. The logical HAL dispatches the decoded notification data to the corresponding core object registered for the notification.
+
+   5. The core object processes the received notification data and dispatches to the server.
+
+   6. The server dispatches the notification data to the corresponding communicator.
+
+   7. The communicator sends the notification data to TAPI, which communicates it to the application.
+
+      The following figure shows the telephony indication processing sequence.
+   ![Telephony13.png](media/Telephony13.png)

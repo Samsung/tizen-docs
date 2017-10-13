@@ -38,71 +38,182 @@ For the camera HAL, the `mm-hal-interface` package provides a header file:
 
 #### Major Camera HAL Functions
 
-The following table lists the functions related to initialization and deinitialization.
+**Initialization and deinitialization functions**
 
-**Table: Initialization and deinitialization functions**
+The following lists the functions related to initialization and deinitialization.
 
-| Prototype                                | Description                          |
-| ---------------------------------------- | ------------------------------------ |
-| `int camera_init(void **camera_handle)`  | Initializes a new camera HAL handle. |
-| `int camera_deinit(void *camera_handle)` | Deinitializes the camera HAL handle. |
+```c
+/*Initializes new camera HAL handle. */
+int camera_init(void **camera_handle);	
 
-The following table lists the functions related to opening and closing the camera device.
+/* Deinitializes the camera HAL handle. */
+int camera_deinit(void *camera_handle);
+```
 
-**Table: Opening and closing functions**
+**Opening and closing functions**
 
-| Prototype                                | Description               |
-| ---------------------------------------- | ------------------------- |
-| `int camera_open_device(void *camera_handle, int device_index)` | Opens the camera device.  |
-| `int camera_close_device(void *camera_handle)` | Closes the camera device. |
+The following lists the functions related to opening and closing the camera device.
 
-The following table lists the functions related to getting device information.
+```c
+/* Opens the camera device. */
+int camera_open_device(void *camera_handle, int device_index);
 
-**Table: Getting device information functions**
+/* Closes the camera device. */
+int camera_close_device(void *camera_handle);
+```
+**Getting device information functions**
 
-| Prototype                                | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
-| `int camera_get_device_list(void *camera_handle, camera_device_list_t *device_list)` | Gets the camera device list.             |
-| `int camera_add_message_callback(void *camera_handle, camera_message_cb callback, void *user_data, uint32_t *cb_id)` | Registers a callback function to be called to send a message by the camera HAL. |
-| `int camera_remove_message_callback(void *camera_handle, uint32_t cb_id)` | Unregisters a callback function.         |
+The following lists the functions related to getting device information.
 
-The following table lists the functions related to preview and capture.
+```c
+/*  Gets the camera device list. */
+int camera_get_device_list(void *camera_handle, camera_device_list_t *device_list);
 
-**Table: Preview and capture functions**
+/* Registers a callback function to be called to send a message by the camera HAL. */
+int camera_add_message_callback(void *camera_handle, camera_message_cb callback, void *user_data, uint32_t *cb_id);
 
-| Prototype                                | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
-| `int camera_set_preview_stream_format(void *camera_handle, camera_format_t *format)` | Sets the format of the preview stream. `typedef struct camera_format {    camera_pixel_format_t stream_format;    camera_resolution_t stream_resolution;    uint32_t stream_fps;    camera_rotation_t stream_rotation;    camera_pixel_format_t capture_format;    camera_resolution_t capture_resolution;    uint32_t capture_quality;} camera_format_t;` |
-| `int camera_get_preview_stream_format(void *camera_handle, camera_format_t *format)` | Gets the format of the preview stream.   |
-| `int camera_start_preview(void *camera_handle, camera_preview_frame_cb callback, void *user_data)` | Starts the display of preview frames on the screen. `typedef int (*camera_preview_frame_cb)(camera_buffer_t *buffer, camera_metadata_t *meta, void *user_data);` |
-| `int camera_stop_preview(void *camera_handle)` | Stops the preview frames.                |
-| `int camera_release_preview_buffer(void *camera_handle, int buffer_index)` | Releases the preview buffer. The preview buffer must be released with this function after using it. |
-| `int camera_start_auto_focus(void *camera_handle)` | Starts the camera auto-focusing operation. |
-| `int camera_stop_auto_focus(void *camera_handle)` | Stops the camera auto-focusing operation. |
-| `int camera_start_capture(void *camera_handle, camera_capture_cb callback, void *user_data)` | Starts capturing still images. `typedef int (*camera_capture_cb)(camera_buffer_t *main, camera_buffer_t *postview, camera_buffer_t *thumbnail, void *user_data);` |
-| `int camera_stop_capture(void *camera_handle)` | Stops capturing still images.            |
+/* Unregisters a callback function. */
+int camera_remove_message_callback(void *camera_handle, uint32_t cb_id);
+```
+**Preview and capture functions**
 
-The following table lists the functions related to video recording.
+The following lists the functions related to preview and capture.
 
-**Table: Video recording functions**
+```c
+typedef struct camera_format {
+    camera_pixel_format_t stream_format;
+    camera_resolution_t stream_resolution;
+    uint32_t stream_fps;
+    camera_rotation_t stream_rotation;
+    camera_pixel_format_t capture_format;
+    camera_resolution_t capture_resolution;
+    uint32_t capture_quality;
+} camera_format_t;
 
-| Prototype                                | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
-| `int camera_set_video_stream_format(void *camera_handle, camera_format_t *format)` | Sets the video stream format for recording. |
-| `int camera_get_video_stream_format(void *camera_handle, camera_format_t *format)` | Gets the video stream format for recording. |
-| `int camera_start_record(void *camera_handle, camera_video_frame_cb callback, void *user_data)` | Starts the video frame for recording. `typedef int (*camera_video_frame_cb)(camera_buffer_t *buffer, camera_metadata_t *meta, void *user_data);` |
-| `int camera_stop_record(void *camera_handle)` | Stops the video frame.                   |
-| `int camera_release_video_buffer(void *camera_handle, int buffer_index)` | Releases the video buffer. The video buffer must be released with this function after using it. |
+/* Sets the format of the preview stream. */
+int camera_set_preview_stream_format(void *camera_handle, camera_format_t *format);
 
-The following table list the functions related to controlling the camera device.
+/* Gets the format of the preview stream.  */
+int camera_get_preview_stream_format(void *camera_handle, camera_format_t *format);
 
-**Table: Camera control functions**
+typedef int (*camera_preview_frame_cb)(camera_buffer_t *buffer, camera_metadata_t *meta, void *user_data);
 
-| Prototype                                | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
-| `int camera_set_command(void *camera_handle, int64_t command, void *value)` | Sets various commands and values to control the camera device. `#define CAMERA_COMMAND_BASE                     ((int64_t)1)#define CAMERA_COMMAND_WHITE_BALANCE            ((int64_t)(CAMERA_COMMAND_BASE << 1))#define CAMERA_COMMAND_ISO                      ((int64_t)(CAMERA_COMMAND_BASE << 2))#define CAMERA_COMMAND_CONTRAST                 ((int64_t)(CAMERA_COMMAND_BASE << 3))#define CAMERA_COMMAND_SATURATION               ((int64_t)(CAMERA_COMMAND_BASE << 4))#define CAMERA_COMMAND_HUE                      ((int64_t)(CAMERA_COMMAND_BASE << 5))#define CAMERA_COMMAND_SHARPNESS                ((int64_t)(CAMERA_COMMAND_BASE << 6))#define CAMERA_COMMAND_EFFECT                   ((int64_t)(CAMERA_COMMAND_BASE << 7))#define CAMERA_COMMAND_SCENE_MODE               ((int64_t)(CAMERA_COMMAND_BASE << 8))#define CAMERA_COMMAND_EXPOSURE_MODE            ((int64_t)(CAMERA_COMMAND_BASE << 9))#define CAMERA_COMMAND_EXPOSURE                 ((int64_t)(CAMERA_COMMAND_BASE << 10))#define CAMERA_COMMAND_ROTATION                 ((int64_t)(CAMERA_COMMAND_BASE << 11))#define CAMERA_COMMAND_FLIP                     ((int64_t)(CAMERA_COMMAND_BASE << 12))#define CAMERA_COMMAND_FOCUS_MODE               ((int64_t)(CAMERA_COMMAND_BASE << 13))#define CAMERA_COMMAND_FOCUS_RANGE              ((int64_t)(CAMERA_COMMAND_BASE << 14))#define CAMERA_COMMAND_SHOT_MODE                ((int64_t)(CAMERA_COMMAND_BASE << 15))#define CAMERA_COMMAND_ANTI_SHAKE               ((int64_t)(CAMERA_COMMAND_BASE << 16))#define CAMERA_COMMAND_FOCUS_AREA               ((int64_t)(CAMERA_COMMAND_BASE << 17))#define CAMERA_COMMAND_DIGITAL_ZOOM             ((int64_t)(CAMERA_COMMAND_BASE << 18))#define CAMERA_COMMAND_OPTICAL_ZOOM             ((int64_t)(CAMERA_COMMAND_BASE << 19))#define CAMERA_COMMAND_RECORDING_HINT           ((int64_t)(CAMERA_COMMAND_BASE << 20))#define CAMERA_COMMAND_WDR                      ((int64_t)(CAMERA_COMMAND_BASE << 21))#define CAMERA_COMMAND_SHUTTER_SPEED            ((int64_t)(CAMERA_COMMAND_BASE << 22))#define CAMERA_COMMAND_FLASH_MODE               ((int64_t)(CAMERA_COMMAND_BASE << 23))#define CAMERA_COMMAND_FACE_DETECTION           ((int64_t)(CAMERA_COMMAND_BASE << 24))` |
-| `int camera_get_command(void *camera_handle, int64_t command, void *value)` | Gets the current value of the command.   |
-| `int camera_set_batch_command(void *camera_handle, camera_batch_command_control_t *batch_command, int64_t *error_command)` | Sets a batch set of commands. `typedef struct camera_batch_command_control {    /* Flag for modified command */    int64_t command_set_flag;    /* Value list */    camera_white_balance_t white_balance;    int iso;    int contrast;    int saturation;    int hue;    int sharpness;    camera_effect_t effect;    camera_scene_mode_t scene_mode;    camera_exposure_mode_t exposure_mode;    int exposure;    camera_rotation_t rotation;    camera_flip_t flip;    camera_focus_mode_t focus_mode;    camera_focus_range_t focus_range;    camera_exposure_mode_t shot_mode;    int anti_shake;    camera_rectangle_t focus_area;    int digital_zoom;    int optical_zoom;    int recording_hint;    int wdr;    camera_flash_mode_t flash_mode;    camera_face_detection_t face_detection;} camera_batch_command_control_t;` |
+/* Starts the display of preview frames on the screen. */
+int camera_start_preview(void *camera_handle, camera_preview_frame_cb callback, void *user_data);
+
+/* Stops the preview frames. */
+int camera_stop_preview(void *camera_handle);
+
+/* Releases the preview buffer. The preview buffer must be released with this function after using it. */
+int camera_release_preview_buffer(void *camera_handle, int buffer_index);
+
+/* Starts the camera auto-focusing operation. */
+int camera_start_auto_focus(void *camera_handle);
+
+/* Stops the camera auto-focusing operation. */
+int camera_stop_auto_focus(void *camera_handle);
+
+typedef int (*camera_capture_cb)(camera_buffer_t *main, camera_buffer_t *postview, camera_buffer_t *thumbnail, void *user_data);
+
+/* Starts capturing still images. */
+int camera_start_capture(void *camera_handle, camera_capture_cb callback, void *user_data);
+
+/* Stops capturing still images. */
+int camera_stop_capture(void *camera_handle);
+```
+
+**Video recording functions**
+
+The following lists the functions related to video recording.
+
+```c
+/* Stops capturing still images.*/
+int camera_set_video_stream_format(void *camera_handle, camera_format_t *format);
+
+/* Gets the video stream format for recording. */
+int camera_get_video_stream_format(void *camera_handle, camera_format_t *format);
+
+typedef int (*camera_video_frame_cb)(camera_buffer_t *buffer, camera_metadata_t *meta, void *user_data);
+
+/* Starts the video frame for recording. */
+int camera_start_record(void *camera_handle, camera_video_frame_cb callback, void *user_data);
+
+/* Stops the video frame. */
+int camera_stop_record(void *camera_handle);
+
+/* The video buffer must be released with this function after using it. Releases the video buffer. */
+int camera_release_video_buffer(void *camera_handle, int buffer_index); 
+```
+**Camera control functions**
+
+The following list the functions related to controlling the camera device.
+
+```c
+#define CAMERA_COMMAND_BASE                     ((int64_t)1)
+#define CAMERA_COMMAND_WHITE_BALANCE            ((int64_t)(CAMERA_COMMAND_BASE << 1))
+#define CAMERA_COMMAND_ISO                      ((int64_t)(CAMERA_COMMAND_BASE << 2))
+#define CAMERA_COMMAND_CONTRAST                 ((int64_t)(CAMERA_COMMAND_BASE << 3))
+#define CAMERA_COMMAND_SATURATION               ((int64_t)(CAMERA_COMMAND_BASE << 4))
+#define CAMERA_COMMAND_HUE                      ((int64_t)(CAMERA_COMMAND_BASE << 5))
+#define CAMERA_COMMAND_SHARPNESS                ((int64_t)(CAMERA_COMMAND_BASE << 6))
+#define CAMERA_COMMAND_EFFECT                   ((int64_t)(CAMERA_COMMAND_BASE << 7))
+#define CAMERA_COMMAND_SCENE_MODE               ((int64_t)(CAMERA_COMMAND_BASE << 8))
+#define CAMERA_COMMAND_EXPOSURE_MODE            ((int64_t)(CAMERA_COMMAND_BASE << 9))
+#define CAMERA_COMMAND_EXPOSURE                 ((int64_t)(CAMERA_COMMAND_BASE << 10))
+#define CAMERA_COMMAND_ROTATION                 ((int64_t)(CAMERA_COMMAND_BASE << 11))
+#define CAMERA_COMMAND_FLIP                     ((int64_t)(CAMERA_COMMAND_BASE << 12))
+#define CAMERA_COMMAND_FOCUS_MODE               ((int64_t)(CAMERA_COMMAND_BASE << 13))
+#define CAMERA_COMMAND_FOCUS_RANGE              ((int64_t)(CAMERA_COMMAND_BASE << 14))
+#define CAMERA_COMMAND_SHOT_MODE                ((int64_t)(CAMERA_COMMAND_BASE << 15))
+#define CAMERA_COMMAND_ANTI_SHAKE               ((int64_t)(CAMERA_COMMAND_BASE << 16))
+#define CAMERA_COMMAND_FOCUS_AREA               ((int64_t)(CAMERA_COMMAND_BASE << 17))
+#define CAMERA_COMMAND_DIGITAL_ZOOM             ((int64_t)(CAMERA_COMMAND_BASE << 18))
+#define CAMERA_COMMAND_OPTICAL_ZOOM             ((int64_t)(CAMERA_COMMAND_BASE << 19))
+#define CAMERA_COMMAND_RECORDING_HINT           ((int64_t)(CAMERA_COMMAND_BASE << 20))
+#define CAMERA_COMMAND_WDR                      ((int64_t)(CAMERA_COMMAND_BASE << 21))
+#define CAMERA_COMMAND_SHUTTER_SPEED            ((int64_t)(CAMERA_COMMAND_BASE << 22))
+#define CAMERA_COMMAND_FLASH_MODE               ((int64_t)(CAMERA_COMMAND_BASE << 23))
+#define CAMERA_COMMAND_FACE_DETECTION           ((int64_t)(CAMERA_COMMAND_BASE << 24))
+
+/* Sets various commands and values to control the camera device. */
+int camera_set_command(void *camera_handle, int64_t command, void *value);
+
+/* Gets the current value of the command. */
+int camera_get_command(void *camera_handle, int64_t command, void *value);
+
+typedef struct camera_batch_command_control {
+    /* Flag for modified command */
+    int64_t command_set_flag;
+
+    /* Value list */
+    camera_white_balance_t white_balance;
+    int iso;
+    int contrast;
+    int saturation;
+    int hue;
+    int sharpness;
+    camera_effect_t effect;
+    camera_scene_mode_t scene_mode;
+    camera_exposure_mode_t exposure_mode;
+    int exposure;
+    camera_rotation_t rotation;
+    camera_flip_t flip;
+    camera_focus_mode_t focus_mode;
+    camera_focus_range_t focus_range;
+    camera_exposure_mode_t shot_mode;
+    int anti_shake;
+    camera_rectangle_t focus_area;
+    int digital_zoom;
+    int optical_zoom;
+    int recording_hint;
+    int wdr;
+    camera_flash_mode_t flash_mode;
+    camera_face_detection_t face_detection;
+} camera_batch_command_control_t;
+
+/* Sets a batch set of commands. */
+int camera_set_batch_command(void *camera_handle, camera_batch_command_control_t *batch_command, int64_t *error_command);
+```
 
 ### Configuration
 
@@ -112,83 +223,83 @@ The following table shows the description of the `mmfw_camcorder.ini` file.
 
 **Table: mmfw_camcorder.ini file**
 
-| Category                                 | Entry                                    | Description                              |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| General                                  |                                          |General setting or information    |
-|| `SyncStateChange`                        | API running type. This value must be 1 (`TRUE`). |
-|| `ModelName`                              | Model name of target                     |
-| Video input||Setting list related to video input |
-|| `UseConfCtrl`                            | Whether to use the configuration file. This value must be 1 (`TRUE`). |
-|| `ConfCtrlFile0` or `1`                   | Name of the setting file to control the camera device |
-|| `VideosrcElement`                        | Source plugin which obtains the camera input buffer from the device |
-|| `UseZeroCopyFormat`                      | Whether to use the zero copy format |
-|| `DeviceCount`                            | Number of camera device              |
-|| `SupportMediaPacketPreviewCb`            | Whether the camera API supports media packet preview callback on the target |
-| Audio input||Setting list related to audio input|
-|| `AudiosrcElement`                        | Audio source plugin which obtains audio for the camcorder or voice recorder |
-|| `AudiomodemsrcElement`                   | Audio source plugin which obtains audio for call recording |
-| Video input||Setting list related to video output |
-|| `DisplayDevice`                          | Supported output device list and the default value |
-|| `Videosink`                              | Supported output surface list and the default value |
-|| `VideosinkElementOverlay`                | Plugin name for the Overlay output surface and the property setting list |
-|| `VideosinkElementEvas`                   | Plugin name for the Evas output surface and the property setting list |
-|| `VideosinkElementGL`                     | Plugin name for the GL output surface and the property setting list |
-|| `VideosinkElementNULL`                   | Plugin name for the `NULL` surface and the property setting list |
-|| Video encoder                            | Video encoder list for video recording |
-|| Audio encoder                            | Audio encoder list for AV recording or voice recording |
-| Capture||Setting list related to image capture |
-||`UseEncodebin`                            | Whether to use the `encodebin` to capture the image. Keep this value as 0 (`FALSE`). |
-|| Record                                   | Setting value list for each recording mode. Keep the values of the example config file. |
-|| Mux                                      | Mux plugin list related with the file container |
+| Category    | Entry                         | Description                              |
+| ----------- | ----------------------------- | ---------------------------------------- |
+| General     |                               | General setting or information           |
+|             | `SyncStateChange`             | API running type. This value must be 1 (`TRUE`). |
+|             | `ModelName`                   | Model name of target                     |
+| Video input |                               | Setting list related to video input      |
+|             | `UseConfCtrl`                 | Whether to use the configuration file. This value must be 1 (`TRUE`). |
+|             | `ConfCtrlFile0` or `1`        | Name of the setting file to control the camera device |
+|             | `VideosrcElement`             | Source plugin which obtains the camera input buffer from the device |
+|             | `UseZeroCopyFormat`           | Whether to use the zero copy format      |
+|             | `DeviceCount`                 | Number of camera device                  |
+|             | `SupportMediaPacketPreviewCb` | Whether the camera API supports media packet preview callback on the target |
+| Audio input |                               | Setting list related to audio input      |
+|             | `AudiosrcElement`             | Audio source plugin which obtains audio for the camcorder or voice recorder |
+|             | `AudiomodemsrcElement`        | Audio source plugin which obtains audio for call recording |
+| Video input |                               | Setting list related to video output     |
+|             | `DisplayDevice`               | Supported output device list and the default value |
+|             | `Videosink`                   | Supported output surface list and the default value |
+|             | `VideosinkElementOverlay`     | Plugin name for the Overlay output surface and the property setting list |
+|             | `VideosinkElementEvas`        | Plugin name for the Evas output surface and the property setting list |
+|             | `VideosinkElementGL`          | Plugin name for the GL output surface and the property setting list |
+|             | `VideosinkElementNULL`        | Plugin name for the `NULL` surface and the property setting list |
+|             | `Video encoder`               | Video encoder list for video recording   |
+|             | `Audio encoder`               | Audio encoder list for AV recording or voice recording |
+| Capture     |                               | Setting list related to image capture    |
+|             | `UseEncodebin`                | Whether to use the `encodebin` to capture the image. Keep this value as 0 (`FALSE`). |
+| Record      |                               | Setting value list for each recording mode. Keep the values of the example config file. |
+| Mux         |                               | Mux plugin list related with the file container |
 
 The following table shows the description of the `mmfw_camcorder_dev_video_pri.ini` file for the primary camera (usually the rear camera) and the `mmfw_camcorder_dev_video_sec.ini` file for the secondary camera (usually the front camera).
 
 **Table: mmfw_camcorder_dev_video_pri.ini**
 
-| Category                           | Entry                                    | Description                              |
-| ---------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| Camera||Information about the camera |
-|| `InputIndex`                       | Camera number to select (primary or secondary) |
-|| `DeviceName`                       | Name of the camera module                |
-|| `PreviewResolution`                | List of all supported preview resolutions the user can set, as well as the default value for this camera device |
-|| `CaptureResolution`                | List of all supported capture resolutions the user can set, as well as the default value for this camera device |
-|| `VideoResolution`                  | List of all supported video resolutions the user can set, as well as the default value for this camera device |
-|| `FPS0 ~ 9`                         | List of all supported FPS (Frame Per Second) settings by preview resolution the user can use, as well as the default value for this camera device|
-|| `PictureFormat`                    | List of all supported preview formats a user can set, as well as the default value for this camera device |
-|| `RecommendDisplayRotation`         | Default display rotation value for displaying camera input |
-|| `RecommendPreviewFormatCapture`    | Recommended preview format for capturing images |
-|| `RecommendPreviewFormatRecord`     | Recommended preview format for recording |
-|| `RecommendPreviewResolution`       | Recommended preview resolution by ratio of preview resolution |
-|| `FacingDirection`                  | Facing direction of camera device   |
-| Strobe                              |                                          | Camera flash settings       |
-|| `StrobeMode`                       | Supported strobe mode and default value. This is converted to a real value and used in the kernel internally. |
-| Effect||Effect settings             |
-|| Brightness                         | Supported range of brightness and default value |
-|| Contrast                           | Supported range of contrast and default value |
-|| Saturation                         | Supported range of saturation and default value |
-|| Sharpness                          | Supported range of sharpness and default value |
-|| Whitebalance                       | Supported white balance list and default value. This is converted to a real value and used in the kernel internally. |
-|| ColorTone                          | Supported color tone list and default value. This is converted to a real value and used in the kernel internally. |
-|| WDR                                | Supported Wide Dynamic Range mode list and default value. This is converted to a real value and used in the kernel internally. |
-| Photograph                          |                        |Camera shooting settings |
-|| `DigitalZoom`                      | Supported range of digital zoom level and default value |
-|| `OpticalZoom`                      | Supported range of optical zoom level and default value | 
-|| `FocusMode`                        | Supported focus mode list and default value. This is converted to a real value and used in the kernel internally. |
-|| `AFType`                           | Supported AUTO focus mode list and default value. This is converted to a real value and used in the kernel internally. |
-|| `AEType`                           | Supported AUTO Exposure mode list and default value. This is converted to a real value and used in the kernel internally. |
-|| `ExposureValue`                    | Supported range of exposure value and default value |                                          |
-|| ISO                                | Supported ISO list and default value. This is converted to a real value and used in the kernel internally. |
-|| `ProgramMode`                      | Supported program mode (scene mode) list and default value. This is converted to a real value and used in the kernel internally. |
-|| `AntiHandshake`                    | Supported anti-hand shake mode list and default value. This is converted to a real value and used in the kernel internally. |
-| Capture||Image capture settings     |
-|| `OutputMode`                       | Supported capture format list and default value |
-|| `JpegQuality`                      | Supported range of JPEG quality and default value |
-|| `MultishotNumber`                  | Supported range of multi shot count and default value |
-|| `SensorEncodedCapture`             | Whether the camera device supports encoded capture format (such as JPEG) |
-|| `SupportHDR`                       | Supported HDR mode list and default value |
-|| `SupportZSL`                       | Whether the camera device supports zero shutter lag capture |
-| Detect||Detect function settings    |
-|| `DetectMode`                       | Supported detect mode list and default value |
+| Category   | Entry                           | Description                              |
+| ---------- | ------------------------------- | ---------------------------------------- |
+| Camera     |                                 | Information about the camera             |
+|            | `InputIndex`                    | Camera number to select (primary or secondary) |
+|            | `DeviceName`                    | Name of the camera module                |
+|            | `PreviewResolution`             | List of all supported preview resolutions the user can set, as well as the default value for this camera device |
+|            | `CaptureResolution`             | List of all supported capture resolutions the user can set, as well as the default value for this camera device |
+|            | `VideoResolution`               | List of all supported video resolutions the user can set, as well as the default value for this camera device |
+|            | `FPS0 ~ 9`                      | List of all supported FPS (Frame Per Second) settings by preview resolution the user can use, as well as the default value for this camera device |
+|            | `PictureFormat`                 | List of all supported preview formats a user can set, as well as the default value for this camera device |
+|            | `RecommendDisplayRotation`      | Default display rotation value for displaying camera input |
+|            | `RecommendPreviewFormatCapture` | Recommended preview format for capturing images |
+|            | `RecommendPreviewFormatRecord`  | Recommended preview format for recording |
+|            | `RecommendPreviewResolution`    | Recommended preview resolution by ratio of preview resolution |
+|            | `FacingDirection`               | Facing direction of camera device        |
+| Strobe     |                                 | Camera flash settings                    |
+|            | `StrobeMode`                    | Supported strobe mode and default value. This is converted to a real value and used in the kernel internally. |
+| Effect     |                                 | Effect settings                          |
+|            | `Brightness`                    | Supported range of brightness and default value |
+|            | `Contrast`                      | Supported range of contrast and default value |
+|            | `Saturation`                    | Supported range of saturation and default value |
+|            | `Sharpness`                     | Supported range of sharpness and default value |
+|            | `Whitebalance`                  | Supported white balance list and default value. This is converted to a real value and used in the kernel internally. |
+|            | `ColorTone`                     | Supported color tone list and default value. This is converted to a real value and used in the kernel internally. |
+|            | `WDR`                           | Supported Wide Dynamic Range mode list and default value. This is converted to a real value and used in the kernel internally. |
+| Photograph |                                 | Camera shooting settings                 |
+|            | `DigitalZoom`                   | Supported range of digital zoom level and default value |
+|            | `OpticalZoom`                   | Supported range of optical zoom level and default value |
+|            | `FocusMode`                     | Supported focus mode list and default value. This is converted to a real value and used in the kernel internally. |
+|            | `AFType`                        | Supported AUTO focus mode list and default value. This is converted to a real value and used in the kernel internally. |
+|            | `AEType`                        | Supported AUTO Exposure mode list and default value. This is converted to a real value and used in the kernel internally. |
+|            | `ExposureValue`                 | Supported range of exposure value and default value |
+|            | `ISO`                           | Supported ISO list and default value. This is converted to a real value and used in the kernel internally. |
+|            | `ProgramMode`                   | Supported program mode (scene mode) list and default value. This is converted to a real value and used in the kernel internally. |
+|            | `AntiHandshake`                 | Supported anti-hand shake mode list and default value. This is converted to a real value and used in the kernel internally. |
+| Capture    |                                 | Image capture settings                   |
+|            | `OutputMode`                    | Supported capture format list and default value |
+|            | `JpegQuality`                   | Supported range of JPEG quality and default value |
+|            | `MultishotNumber`               | Supported range of multi shot count and default value |
+|            | `SensorEncodedCapture`          | Whether the camera device supports encoded capture format (such as JPEG) |
+|            | `SupportHDR`                    | Supported HDR mode list and default value |
+|            | `SupportZSL`                    | Whether the camera device supports zero shutter lag capture |
+| Detect     |                                 | Detect function settings                 |
+|            | `DetectMode`                    | Supported detect mode list and default value |
 
 ### References
 
@@ -211,9 +322,9 @@ The following table shows the description of the `mmfw_camcorder_dev_video_pri.i
   Other CAMIF interfaces: /dev/video(0-3)
   ```
 - GStreamer  
-For more information about GStreamer, see [http://gstreamer.freedesktop.org/documentation/](http://gstreamer.freedesktop.org/documentation/) and [http://gstreamer.freedesktop.org/data/doc/gstreamer/head/pwg/html/index.html](http://gstreamer.freedesktop.org/data/doc/gstreamer/head/pwg/html/index.html).
+  For more information about GStreamer, see [http://gstreamer.freedesktop.org/documentation/](http://gstreamer.freedesktop.org/documentation/) and [http://gstreamer.freedesktop.org/data/doc/gstreamer/head/pwg/html/index.html](http://gstreamer.freedesktop.org/data/doc/gstreamer/head/pwg/html/index.html).
 - V4L2  
-For more information about V4L2, see [http://v4l2spec.bytesex.org/spec-single/v4l2.html](http://v4l2spec.bytesex.org/spec-single/v4l2.html).
+  For more information about V4L2, see [http://v4l2spec.bytesex.org/spec-single/v4l2.html](http://v4l2spec.bytesex.org/spec-single/v4l2.html).
 
 ## Radio<a name="radio"></a>
 
@@ -244,85 +355,104 @@ The OAL interface for FM radio is the [Linux](https://wiki.tizen.org/Linux) kern
 
 #### Major Functions
 
-The following table lists the functions related to initialization and deinitialization.
+**Initialization and deinitialization functions**
+The following lists the functions related to initialization and deinitialization.
 
-**Table: Initialization and deinitialization functions**
+```c
+/* Initializes a new radio HAL handle. */
+radio_error_t radio_init(void **radio_handle);
 
-| Prototype                                | Description                         |
-| ---------------------------------------- | ----------------------------------- |
-| `radio_error_t radio_init(void **radio_handle)` | Initializes a new radio HAL handle.   |
-| `radio_error_t radio_deinit(void *radio_handle)` | Deinitializes the radio HAL handle. |
+/* Deinitializes the radio HAL handle. */
+radio_error_t radio_deinit(void *radio_handle);
+```
 
-The following table lists the functions related to preparing and unpreparing the radio device.
+**Preparing and unpreparing functions**
+The following lists the functions related to preparing and unpreparing the radio device.
 
-**Table: Preparing and unpreparing functions**
+```c
+/* Prepares the radio device.*/
+radio_error_t radio_prepare_device(void *radio_handle);
+  
+/* Unprepares the radio device. */
+radio_error_t radio_unprepare_device(void *radio_handle);
+```
 
-| Prototype                                | Description                 |
-| ---------------------------------------- | --------------------------- |
-| `radio_error_t radio_prepare_device(void *radio_handle)` | Prepares the radio device.   |
-| `radio_error_t radio_unprepare_device(void *radio_handle)` | Unprepares the radio device. |
+**Opening and closing functions**
+The following lists the functions related to opening and closing the radio device.
 
-The following table lists the functions related to opening and closing the radio device.
+```c
+/* Opens the radio device. */
+radio_error_t radio_open_device(void *radio_handle);
 
-**Table: Opening and closing functions**
+/* Closes the radio device. */
+radio_error_t radio_close_device(void *radio_handle);
+```
 
-| Prototype                                | Description              |
-| ---------------------------------------- | ------------------------ |
-| `radio_error_t radio_open_device(void *radio_handle)` | Opens the radio device.  |
-| `radio_error_t radio_close_device(void *radio_handle)` | Closes the radio device. |
+**Starting and stopping functions**
+The following lists the functions related to starting and stopping the radio device.
 
-The following table lists the functions related to starting and stopping the radio device.
+```c
+/* Starts the radio device. */
+radio_error_t radio_start(void *radio_handle);
 
-**Table: Starting and stopping functions**
+/* Stops the radio device. */
+radio_error_t radio_stop(void *radio_handle);
+```
 
-| Prototype                                | Description              |
-| ---------------------------------------- | ------------------------ |
-| `radio_error_t radio_start(void *radio_handle)` | Starts the radio device. |
-| `radio_error_t radio_stop(void *radio_handle)` | Stops the radio device.  |
-
+**Frequency functions**
 The following table lists the functions related to setting and getting the frequency.
 
-**Table: Frequency functions**
+```c
+/* Gets the radio frequency. */
+radio_error_t radio_get_frequency(void *radio_handle, uint32_t *frequency);
 
-| Prototype                                | Description               |
-| ---------------------------------------- | ------------------------- |
-| `radio_error_t radio_get_frequency(void *radio_handle, uint32_t *frequency)` | Gets the radio frequency. |
-| `radio_error_t radio_set_frequency(void *radio_handle, uint32_t frequency)` | Sets the radio frequency. |
+/* Sets the radio frequency. */
+radio_error_t radio_set_frequency(void *radio_handle, uint32_t frequency);
+```
 
-The following table lists the functions related to seeking for channels.
+**Channel seeking functions**
+The following lists the functions related to seeking for channels.
 
-**Table: Channel seeking functions**
+```c
+typedef enum radio_seek_direction_type {
+  RADIO_SEEK_DIRECTION_UP, /* Seek upward */
+  RADIO_SEEK_DIRECTION_DOWN /* Seek downward */
+} radio_seek_direction_type_t;
 
-| Prototype                                | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
-| `radio_error_t radio_seek(void *radio_handle, radio_seek_direction_type_t direction)` | Asynchronously seeks (up or down) the effective frequency of the radio. `typedef enum radio_seek_direction_type    RADIO_SEEK_DIRECTION_UP, /* Seek upward */    RADIO_SEEK_DIRECTION_DOWN /* Seek downward */} radio_seek_direction_type_t;` |
+/* Asynchronously seeks (up or down) the effective frequency of the radio. */
+radio_error_t radio_seek(void *radio_handle, radio_seek_direction_type_t direction);
+```
 
-The following table lists the functions related to muting and unmuting the radio device.
+**Muting functions**
+The following lists the functions related to muting and unmuting the radio device.
+```c
+/* Mutes the radio. */
+radio_error_t radio_mute(void *radio_handle);
 
-**Table: Muting functions**
+/* Unmutes the radio. */
+radio_error_t radio_unmute(void *radio_handle);
+```
 
-| Prototype                                | Description        |
-| ---------------------------------------- | ------------------ |
-| `radio_error_t radio_mute(void *radio_handle)` | Mutes the radio.   |
-| `radio_error_t radio_unmute(void *radio_handle)` | Unmutes the radio. |
 
-The following table lists the functions related to setting and getting the volume.
+**Volume management functions**
+The following lists the functions related to setting and getting the volume.
+```c
+/* Gets the current radio volume. */
+radio_error_t radio_get_volume(void *radio_handle, float *volume);
 
-**Table: Volume management functions**
+/* Sets the current radio volume. */
+radio_error_t radio_set_volume(void *radio_handle, float volume);
 
-| Prototype                                | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
-| `radio_error_t radio_get_volume(void *radio_handle, float *volume)` | Gets the current radio volume.         |
-| `radio_error_t radio_set_volume(void *radio_handle, float volume)` | Sets the current radio volume.         |
-| `radio_error_t radio_set_media_volume(void *radio_handle, uint32_t level)` | Sets the current media volume level (system media volume). |
+/* Sets the current media volume level (system media volume). */
+radio_error_t radio_set_media_volume(void *radio_handle, uint32_t level);
+```
 
-The following table lists the functions related to getting the signal strength.
-
-**Table: Signal strength functions**
-
-| Prototype                                | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
-| `radio_error_t radio_set_media_volume(void *radio_handle, uint32_t level);` | Gets the current signal strength of the radio. |
+**Signal strength functions**
+The following lists the functions related to getting the signal strength.
+```c
+/* Gets the current signal strength of the radio. */
+radio_error_t radio_set_media_volume(void *radio_handle, uint32_t level);
+```
 
 ### References
 
@@ -358,34 +488,77 @@ The following figure illustrates the different audio layers.
 
 ### Porting the OAL Interface
 
-The following table lists the audio HAL functions.
+**Audio HAL functions**
 
-**Table: Audio HAL functions**
+The following lists the audio HAL functions.
 
-| Function                                | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
-| `audio_return_t audio_init(void **audio_handle)` | Initializes the audio HAL handle.        |
-| `audio_return_t audio_deinit(void *audio_handle)` | Deinitializes the audio HAL handle.     |
-| `audio_return_t audio_get_volume_level_max(void *audio_handle, audio_volume_info_t *info, uint32_t *level)` | Gets the maximum volume level supported for a particular volume information. |
-| `audio_return_t audio_get_volume_level(void *audio_handle, audio_volume_info_t *info, uint32_t *level)` | Gets the volume level specified for a particular volume information. |
-| `audio_return_t audio_set_volume_level(void *audio_handle, audio_volume_info_t *info, uint32_t level)` | Sets the volume level specified for a particular volume information. |
-| `audio_return_t audio_get_volume_value(void *audio_handle, audio_volume_info_t *info, uint32_t level, double *value)` | Gets the volume value specified for a particular volume information and level. |
-| `audio_return_t audio_get_volume_mute(void *audio_handle, audio_volume_info_t *info, uint32_t *mute)` | Gets the volume mute specified for a particular volume information. |
-| `audio_return_t audio_set_volume_mute(void *audio_handle, audio_volume_info_t *info, uint32_t mute)` | Sets the volume mute specified for a particular volume information. |
-| `audio_return_t audio_update_route(void *audio_handle, audio_route_info_t *info)` | Updates the audio routing according to audio route information. |
-| `audio_return_t audio_update_route_option(void *audio_handle, audio_route_option_t *option)` | Updates audio routing option according to audio route option. |
-| `audio_return_t audio_notify_stream_connection_changed(void *audio_handle, audio_stream_info_t *info, uint32_t is_connected)` | Notifies when a stream is connected and disconnected. |
-| `audio_return_t audio_pcm_open(void *audio_handle, void **pcm_handle, uint32_t direction, void *sample_spec, uint32_t period_size, uint32_t periods)` | Opens a PCM device.                      |
-| `audio_return_t audio_pcm_start(void *audio_handle, void *pcm_handle)` | Starts a PCM device.                     |
-| `audio_return_t audio_pcm_stop(void *audio_handle, void *pcm_handle)` | Stops a PCM device.                      |
-| `audio_return_t audio_pcm_close(void *audio_handle, void *pcm_handle)` | Closes a PCM device.                     |
-| `audio_return_t audio_pcm_avail(void *audio_handle, void *pcm_handle, uint32_t *avail)` | Gets the available number of frames.         |
-| `audio_return_t audio_pcm_write(void *audio_handle, void *pcm_handle, const void *buffer, uint32_t frames)` | Writes frames to a PCM device.           |
-| `audio_return_t audio_pcm_read(void *audio_handle, void *pcm_handle, void *buffer, uint32_t frames)` | Reads frames from a PCM device.          |
-| `audio_return_t audio_pcm_get_fd(void *audio_handle, void *pcm_handle, int *fd)` | Gets the poll descriptor for a PCM handle.   |
-| `audio_return_t audio_pcm_recover(void *audio_handle, void *pcm_handle, int revents)` | Recovers the PCM state.                  |
-| `audio_return_t audio_pcm_get_params(void *audio_handle, void *pcm_handle, uint32_t direction, void **sample_spec, uint32_t *period_size, uint32_t *periods)` | Gets the parameters of a PCM device.         |
-| `audio_return_t audio_pcm_set_params(void *audio_handle, void *pcm_handle, uint32_t direction, void *sample_spec, uint32_t period_size, uint32_t periods)` | Sets the hardware and software parameters of a PCM device. |
+```c
+/* Initializes the audio HAL handle. */
+audio_return_t audio_init(void **audio_handle); 
+
+/*  Deinitializes the audio HAL handle. */
+audio_return_t audio_deinit(void *audio_handle);
+
+/*  Gets the maximum volume level supported for a particular volume information. */
+audio_return_t audio_get_volume_level_max(void *audio_handle, audio_volume_info_t *info, uint32_t *level);
+
+/* Gets the volume level specified for a particular volume information. */
+audio_return_t audio_get_volume_level(void *audio_handle, audio_volume_info_t *info, uint32_t *level); 
+
+/* Sets the volume level specified for a particular volume information. */
+audio_return_t audio_set_volume_level(void *audio_handle, audio_volume_info_t *info, uint32_t level); 
+
+/* Gets the volume value specified for a particular volume information and level. */
+audio_return_t audio_get_volume_value(void *audio_handle, audio_volume_info_t *info, uint32_t level, double *value); 
+
+/* Gets the volume mute specified for a particular volume information. */
+audio_return_t audio_get_volume_mute(void *audio_handle, audio_volume_info_t *info, uint32_t *mute); 
+
+/* Sets the volume mute specified for a particular volume information. */
+audio_return_t audio_set_volume_mute(void *audio_handle, audio_volume_info_t *info, uint32_t mute); 
+
+/* Updates the audio routing according to audio route information. */
+audio_return_t audio_update_route(void *audio_handle, audio_route_info_t *info); 
+
+/*  Updates audio routing option according to audio route option. */
+audio_return_t audio_update_route_option(void *audio_handle, audio_route_option_t *option); 
+
+/* Notifies when a stream is connected and disconnected. */
+audio_return_t audio_notify_stream_connection_changed(void *audio_handle, audio_stream_info_t *info, uint32_t is_connected); 
+
+/* Opens a PCM device. */
+audio_return_t audio_pcm_open(void *audio_handle, void **pcm_handle, uint32_t direction, void *sample_spec, uint32_t period_size, uint32_t periods); 
+
+/* Starts a PCM device. */
+audio_return_t audio_pcm_start(void *audio_handle, void *pcm_handle);
+
+/* Stops a PCM device. */
+audio_return_t audio_pcm_stop(void *audio_handle, void *pcm_handle);
+
+/*  Closes a PCM device. */
+audio_return_t audio_pcm_close(void *audio_handle, void *pcm_handle);
+
+/*  Gets the available number of frames. */
+audio_return_t audio_pcm_avail(void *audio_handle, void *pcm_handle, uint32_t *avail);
+
+/* Writes frames to a PCM device. */
+audio_return_t audio_pcm_write(void *audio_handle, void *pcm_handle, const void *buffer, uint32_t frames); 
+
+/* Reads frames from a PCM device. */
+audio_return_t audio_pcm_read(void *audio_handle, void *pcm_handle, void *buffer, uint32_t frames); 
+
+/* Gets the poll descriptor for a PCM handle. */
+audio_return_t audio_pcm_get_fd(void *audio_handle, void *pcm_handle, int *fd); 
+
+/* Recovers the PCM state. */
+audio_return_t audio_pcm_recover(void *audio_handle, void *pcm_handle, int revents); 
+
+/* Gets the parameters of a PCM device. */
+audio_return_t audio_pcm_get_params(void *audio_handle, void *pcm_handle, uint32_t direction, void **sample_spec, uint32_t *period_size, uint32_t *periods); 
+
+/* Sets the hardware and software parameters of a PCM device. */
+audio_return_t audio_pcm_set_params(void *audio_handle, void *pcm_handle, uint32_t direction, void *sample_spec, uint32_t period_size, uint32_t periods); 
+```
 
 ### Configuration
 
@@ -393,7 +566,7 @@ To support a variety of devices, PulseAudio and device configuration have to be 
 
 **Table: PulseAudio configuration**
 
-| Configuration           | Description                              |
+| Configuration            | Description                              |
 | ------------------------ | ---------------------------------------- |
 | `/etc/pulse/daemon.conf` | Configuration file for the PulseAudio daemon. In this file, the PulseAudio daemon properties, such as priority, log-level, resampling method, and default sample rate, can be modified. In Tizen, the PulseAudio daemon must be running in system mode, not user mode. |
 | `/etc/pulse/client.conf` | Configuration file for the PulseAudio clients. It is generally not necessary to modify this file. |
@@ -402,21 +575,189 @@ To support a variety of devices, PulseAudio and device configuration have to be 
 
 Stream and device configuration:
 
-  - Stream map: Latency, volume, and streams can be configured in this file.
-  - Device map: Device types and device files can be configured in this file.
+- Stream map: Latency, volume, and streams can be configured in this file.
+- Device map: Device types and device files can be configured in this file.
 
-**Table: Stream and device configuration example**
+**Stream configuration example**
+`/etc/pulse/stream-map.json`
+```json
+  {
+    "latencies":[
+        {
+            "type":"low",
+            "fragsize-ms":25,
+            "minreq-ms":-1,
+            "tlength-ms":100,
+            "prebuf-ms":0,
+            "maxlength":-1,
+        },
+    
+        {
+            "type":"high",
+            "fragsize-ms":75,
+            "minreq-ms":-1,
+            "tlength-ms":400,
+            "prebuf-ms":0,
+            "maxlength":-1,
+        },
+    ],
+    "volumes":[
+        {
+            "type":"media",
+            "is-hal-volume":1,
+        },
+        {
+            "type":"system",
+            "is-hal-volume":0,
+        },
+        {
+            "type":"notification",
+            "is-hal-volume":0,
+        },
+        {
+            "type":"ringtone",
+            "is-hal-volume":0,
+        },
+        {
+            "type":"call",
+            "is-hal-volume":1,
+        },
+    
+    ],
+    "streams":[
+        {
+            "role":"media",
+            "priority":3,
+            "route-type":"auto",
+            "volume-types":{"in":"none","out":"media"},
+            "avail-in-devices":["audio-jack","builtin-mic"],
+            "avail-out-devices":["forwarding","audio-jack","bt","builtin-speaker"],
+            "avail-frameworks":["player","wav-player","tone-player","audio-io","recorder"],
+        },
+        {
+            "role":"system",
+            "priority":2,
+            "route-type":"auto",
+            "volume-types":{"in":"none","out":"system"},
+            "avail-in-devices":["none"],
+            "avail-out-devices":["forwarding","audio-jack","bt","builtin-speaker"],
+            "avail-frameworks":["player","wav-player","tone-player","audio-io"],
+        },
+        {
+            "role":"notification",
+            "priority":4,
+            "route-type":"auto-all",
+            "volume-types":{"in":"none","out":"notification"},
+            "avail-in-devices":["none"],
+            "avail-out-devices":["audio-jack","bt","builtin-speaker"],
+            "avail-frameworks":["player","wav-player","tone-player","audio-io"],
+        },
+        {
+            "role":"ringtone-call",
+            "priority":6,
+            "route-type":"auto-all",
+            "volume-types":{"in":"none","out":"ringtone"},
+            "avail-in-devices":["none"],
+            "avail-out-devices":["audio-jack","bt","builtin-speaker"],
+            "avail-frameworks":["player","wav-player","tone-player","audio-io"],
+        },
+        {
+            "role":"call-voice",
+            "priority":6,
+            "route-type":"manual",
+            "volume-types":{"in":"none","out":"call"},
+            "avail-in-devices":["builtin-mic","audio-jack","bt"],
+            "avail-out-devices":["builtin-receiver","builtin-speaker","audio-jack","bt"],
+            "avail-frameworks":["sound-manager"],
+        },	
+    ]
+}
+```
 
-| Configuration               | Example                                  |
-| ---------------------------- | ---------------------------------------- |
-| `/etc/pulse/stream-map.json` | `{    "latencies":[        {            "type":"low",            "fragsize-ms":25,            "minreq-ms":-1,            "tlength-ms":100,            "prebuf-ms":0,            "maxlength":-1,        },            {            "type":"high",            "fragsize-ms":75,            "minreq-ms":-1,            "tlength-ms":400,            "prebuf-ms":0,            "maxlength":-1,        },    ],    "volumes":[        {            "type":"media",            "is-hal-volume":1,        },        {            "type":"system",            "is-hal-volume":0,        },        {            "type":"notification",            "is-hal-volume":0,        },        {            "type":"ringtone",            "is-hal-volume":0,        },        {            "type":"call",            "is-hal-volume":1,        },        ],    "streams":[        {            "role":"media",            "priority":3,            "route-type":"auto",            "volume-types":{"in":"none","out":"media"},            "avail-in-devices":["audio-jack","builtin-mic"],            "avail-out-devices":["forwarding","audio-jack","bt","builtin-speaker"],            "avail-frameworks":["player","wav-player","tone-player","audio-io","recorder"],        },        {            "role":"system",            "priority":2,            "route-type":"auto",            "volume-types":{"in":"none","out":"system"},            "avail-in-devices":["none"],            "avail-out-devices":["forwarding","audio-jack","bt","builtin-speaker"],            "avail-frameworks":["player","wav-player","tone-player","audio-io"],        },        {            "role":"notification",            "priority":4,            "route-type":"auto-all",            "volume-types":{"in":"none","out":"notification"},            "avail-in-devices":["none"],            "avail-out-devices":["audio-jack","bt","builtin-speaker"],            "avail-frameworks":["player","wav-player","tone-player","audio-io"],        },        {            "role":"ringtone-call",            "priority":6,            "route-type":"auto-all",            "volume-types":{"in":"none","out":"ringtone"},            "avail-in-devices":["none"],            "avail-out-devices":["audio-jack","bt","builtin-speaker"],            "avail-frameworks":["player","wav-player","tone-player","audio-io"],        },        {            "role":"call-voice",            "priority":6,            "route-type":"manual",            "volume-types":{"in":"none","out":"call"},            "avail-in-devices":["builtin-mic","audio-jack","bt"],            "avail-out-devices":["builtin-receiver","builtin-speaker","audio-jack","bt"],            "avail-frameworks":["sound-manager"],        },	    ]}` |
-| `/etc/pulse/device-map.json` | `{    "device-types":[        {            "device-type":"builtin-speaker",            "builtin":true,            "direction":["out"],            "avail-condition":["pulse"],            "playback-devices":{"normal":"alsa:sprdphone,0", "call-voice":"alsa:VIRTUALAUDIOW,0"}        },        {            "device-type":"builtin-mic",            "builtin":true,            "direction":["in"],            "avail-condition":["pulse"],            "capture-devices":{"normal":"alsa:sprdphone,0"}        },        {            "device-type":"audio-jack",            "builtin":false,            "direction":["both","out"],            "avail-condition":["pulse","dbus"],            "playback-devices":{"normal":"alsa:sprdphone,0", "call-voice":"alsa:VIRTUALAUDIOW,0"},            "capture-devices":{"normal":"alsa:sprdphone,0"}        },        {            "device-type":"bt",            "profile":"a2dp",            "builtin":false,            "direction":["out"],            "avail-condition":["pulse"]        },        {            "device-type":"bt",            "profile":"sco",            "builtin":false,            "direction":["both"],            "avail-condition":["pulse","dbus"],            "playback-devices":{"normal":"alsa:sprdphone,0", "call-voice":"alsa:VIRTUALAUDIOW,0"},            "capture-devices":{"normal":"alsa:sprdphone,0"}        },        {            "device-type":"usb-audio",            "builtin":false,            "direction":["both", "in", "out"],            "avail-condition":["pulse"]        }    ],        "device-files":        {            "playback-devices":[                {                    "device-string":"alsa:sprdphone,0",                    "role":                    {                        "normal":"rate=44100",                    }                },                {                    "device-string":"alsa:VIRTUALAUDIOW,0",                    "role":                    {                        "call-voice":"rate=16000 channels=1 tsched=0 alternate_rate=16000",                    }                }            ],            "capture-devices":[            {                "device-string":"alsa:sprdphone,0",                "role":{"normal":"rate=44100"}            }        ]    }}` |
+**Device configuration example**
+`/etc/pulse/device-map.json`
+```json
+  {
+    "device-types":[
+        {
+            "device-type":"builtin-speaker",
+            "builtin":true,
+            "direction":["out"],
+            "avail-condition":["pulse"],
+            "playback-devices":{"normal":"alsa:sprdphone,0", "call-voice":"alsa:VIRTUALAUDIOW,0"}
+        },
+        {
+            "device-type":"builtin-mic",
+            "builtin":true,
+            "direction":["in"],
+            "avail-condition":["pulse"],
+            "capture-devices":{"normal":"alsa:sprdphone,0"}
+        },
+        {
+            "device-type":"audio-jack",
+            "builtin":false,
+            "direction":["both","out"],
+            "avail-condition":["pulse","dbus"],
+            "playback-devices":{"normal":"alsa:sprdphone,0", "call-voice":"alsa:VIRTUALAUDIOW,0"},
+            "capture-devices":{"normal":"alsa:sprdphone,0"}
+        },
+        {
+            "device-type":"bt",
+            "profile":"a2dp",
+            "builtin":false,
+            "direction":["out"],
+            "avail-condition":["pulse"]
+        },
+        {
+            "device-type":"bt",
+            "profile":"sco",
+            "builtin":false,
+            "direction":["both"],
+            "avail-condition":["pulse","dbus"],
+            "playback-devices":{"normal":"alsa:sprdphone,0", "call-voice":"alsa:VIRTUALAUDIOW,0"},
+            "capture-devices":{"normal":"alsa:sprdphone,0"}
+        },
+        {
+            "device-type":"usb-audio",
+            "builtin":false,
+            "direction":["both", "in", "out"],
+            "avail-condition":["pulse"]
+        }
+    
+    ],
+        "device-files":
+        {
+            "playback-devices":[
+                {
+                    "device-string":"alsa:sprdphone,0",
+                    "role":
+                    {
+                        "normal":"rate=44100",
+                    }
+                },
+                {
+                    "device-string":"alsa:VIRTUALAUDIOW,0",
+                    "role":
+                    {
+                        "call-voice":"rate=16000 channels=1 tsched=0 alternate_rate=16000",
+                    }
+                }
+            ],
+            "capture-devices":[
+            {
+                "device-string":"alsa:sprdphone,0",
+                "role":{"normal":"rate=44100"}
+            }
+        ]
+    }
+}
+```
 
 ### References
 
 - Driver configuration for the Samsung chipset  
-The following list is an example of the kernel `.config` values to be set for audio when using the Samsung chipset.
-  ```
+  The following list is an example of the kernel `.config` values to be set for audio when using the Samsung chipset.
+```
   CONFIG_SOUND=y
   CONFIG_SND=y
   CONFIG_SND_TIMER=y
@@ -428,7 +769,7 @@ The following list is an example of the kernel `.config` values to be set for au
   CONFIG_SND_SOC_SLP_TRATS_MC1N2 = y
   CONFIG_SND_SOC_I2C_AND_SPI = y
   CONFIG_SND_SOC_MC1N2=y
-  ```
+```
 - PulseAudio  
   Version: 5.0  
   Website: [http://www.freedesktop.org/wiki/Software/PulseAudio](http://www.freedesktop.org/wiki/Software/PulseAudio)
@@ -469,7 +810,7 @@ There is no specific OAL for the multimedia player framework. The OAL interface 
 ### References
 
 - Display driver configuration for the Samsung chipset  
-The following list is an example of the kernel `.config` values to be set for display in the Samsung chipset.
+  The following list is an example of the kernel `.config` values to be set for display in the Samsung chipset.
   ```
   CONFIG_DRM = y
   CONFIG_FB = y
@@ -519,10 +860,10 @@ The `GstVideoDecoder` base class for video decoders provides encoded data to der
 1. Configuration
    - `GstVideoDecoder` calls the `start()` function when the decoder element is activated.
    - `GstVideoDecoder` calls the `set_format()` function to inform the subclass of caps describing the input video data.
-1. Data processing
+2. Data processing
    - Each input frame is provided in turn to the subclass's `handle_frames()` function.
    - The subclass calls the `gst_video_decoder_finish_frame()` or `gst_video_decoder_drop_frame()` function.
-1. Shutdown phase
+3. Shutdown phase
    - The `GstVideoDecoer` class calls the `stop()` function.
 
 ### Configuration
@@ -540,19 +881,19 @@ The `gst-omx` plugin uses a configuration file, such as `gstomx.conf`. This file
 Each value needs to be changed according to the OpenMAX component vendor. When you are finished with these settings, the result is a Gstreamer type codec plugin, and you can test the codec the same way.
 
 - Using the codec plugin in the player  
-Because the player uses auto plugging, it does not need an additional setting.
+  Because the player uses auto plugging, it does not need an additional setting.
   - If the decoder plugin has an acceptable capability, this plugin can be linked with a player pipeline in order of rank.
   - If the codec name is included in the excluded keyword in the `/usr/etc/mmfw_player.ini` file (`mmfw-sysconf` package), it is excluded in the player pipeline.
 - Using the codec plugin in the camcorder  
-Because the camcorder clarified its audio, video, and image encoder in the `/usr/etc/mmfw_camcorder.ini` file (`mmfw-sysconf` package), you need to change this category value to set your own codec name.
+  Because the camcorder clarified its audio, video, and image encoder in the `/usr/etc/mmfw_camcorder.ini` file (`mmfw-sysconf` package), you need to change this category value to set your own codec name.
 
   ![Video encoder configuration](media/Videoencoder.png)
 
 ### References
 
 - `gst-omx` version: 1.2  
-[http://gstreamer.freedesktop.org/src/gst-omx/](http://gstreamer.freedesktop.org/src/gst-omx/)  
-[http://www.freedesktop.org/wiki/GstOpenMAX](http://www.freedesktop.org/wiki/GstOpenMAX)
+  [http://gstreamer.freedesktop.org/src/gst-omx/](http://gstreamer.freedesktop.org/src/gst-omx/)  
+  [http://www.freedesktop.org/wiki/GstOpenMAX](http://www.freedesktop.org/wiki/GstOpenMAX)
 - For all GStreamer documentation, see [http://gstreamer.freedesktop.org/documentation/](http://gstreamer.freedesktop.org/documentation/).
 - For developing GStreamer plug-ins, see [http://gstreamer.freedesktop.org/data/doc/gstreamer/head/pwg/html/index.html](http://gstreamer.freedesktop.org/data/doc/gstreamer/head/pwg/html/index.html).
 - For more information about OpenMAX IL components, see [http://www.khronos.org/openmax/il/](http://www.khronos.org/openmax/il/).
@@ -609,7 +950,7 @@ Original Waylandsink lists various video formats, but Wayland only supports RGB 
 
 To use TBM Video Format, Waylandsink need to bind tizen_policy_interface, tizen_video_interface and register listener and get  the video formats as a  callback.
 
-<pre>
+```c
 static void handle_tizen_video_format (void *data, struct tizen_video *tizen_video, uint32_t format)
 {
   GstWlDisplay *self = data;
@@ -637,34 +978,36 @@ static void global_registry_handler(void *data, struct wl_registry *registry, ui
     tizen_video_add_listener (self->tizen_video, &tizen_video_listener, self);
   }
 [...]
-
 }
-</pre>
+```
 
 ##### Specific Video Formats used by Multimedia Framework (SN12, SN21, ST12, SR32, S420) for Zero copy
 In fact, SN12, SN21, ST12, SR32 and S320 are same to NV12, NV21, NV12MT, BGRA and I420. but Multimedia Framework use Specific Video Formates to indicate that formats is using TBM buffer. TIZEN provides a TBM buffer to avoid memory copy when transferring buffer to different processes. Camerasrc or Video Codec write the video data to tbm buffer, saves tbm bo pointer to GstBuffer, and send it to waylandsink. Waylandsink create wl_buffer with tbm_bo and requests rendering to the Window Server. There is no memory copy from Camerasrc or Video Codec to Window Server. We call it Zero Copy.
 
 ##### MMVideoBuffer
 Gst Element should use the MMVideoBuffer type when transferring TBM buffer. tbm bo must be stored in bo of MMVideoBufferHandle. and type should be MM_VIDEO_BUFFER_TYPE_TBM_BO. Waylandsink make wl_buffer by using MMVideoBuffer information. If the video frame is not rendered, Waylandsink need to make sure that the information in MMVideoBuffer in GstBuffer received from Camerasrc or Video Codec is correct. 
-<pre>
+
+```c
 typedef struct {
- MMVideoBufferType type;                                 /**< buffer type   - The field of handle that type indicates should be filled, and other fields of handle are optional. */
- MMPixelFormatType format;                               /**< buffer type */
- int plane_num;                                          /**< number of planes */
- int width[MM_VIDEO_BUFFER_PLANE_MAX];                   /**< width of buffer */
- int height[MM_VIDEO_BUFFER_PLANE_MAX];                  /**< height of buffer */
- int stride_width[MM_VIDEO_BUFFER_PLANE_MAX];            /**< stride width of buffer */
- int stride_height[MM_VIDEO_BUFFER_PLANE_MAX];           /**< stride height of buffer */
- int size[MM_VIDEO_BUFFER_PLANE_MAX];                    /**< size of planes */
- void *data[MM_VIDEO_BUFFER_PLANE_MAX];                  /**< data pointer(user address) of planes */
- int handle_num;                                         /**< number of buffer handle */
- int handle_size[MM_VIDEO_BUFFER_PLANE_MAX];             /**< size of handles */
- MMVideoBufferHandle handle;                             /**< handle of buffer */
- int is_secured;                                         /**< secured buffer flag. ex) TrustZone memory, user can not access it. */
- int flush_request;                                      /**< flush request flag - If this flag is TRUE, sink element will make copy of last buffer, and it will return all buffers from src element.  Then, src element can restart without changing pipeline state. */
- MMRectType crop;                                        /**< crop information of buffer */
+   MMVideoBufferType type;                                 /**< buffer type   - The field of handle that type indicates should be filled, and other fields of handle are optional. */
+   MMPixelFormatType format;                               /**< buffer type */
+   int plane_num;                                          /**< number of planes */
+   int width[MM_VIDEO_BUFFER_PLANE_MAX];                   /**< width of buffer */
+   int height[MM_VIDEO_BUFFER_PLANE_MAX];                  /**< height of buffer */
+   int stride_width[MM_VIDEO_BUFFER_PLANE_MAX];            /**< stride width of buffer */
+   int stride_height[MM_VIDEO_BUFFER_PLANE_MAX];           /**< stride height of buffer */
+   int size[MM_VIDEO_BUFFER_PLANE_MAX];                    /**< size of planes */
+   void *data[MM_VIDEO_BUFFER_PLANE_MAX];                  /**< data pointer(user address) of planes */
+   int handle_num;                                         /**< number of buffer handle */
+   int handle_size[MM_VIDEO_BUFFER_PLANE_MAX];             /**< size of handles */
+   MMVideoBufferHandle handle;                             /**< handle of buffer */
+   int is_secured;                                         /**< secured buffer flag. ex) TrustZone memory, user can not access it. */
+   int flush_request;                                      /**< flush request flag - If this flag is TRUE, sink element will make copy of last buffer, and it will return all buffers from src element.  Then, src element can restart without changing pipeline state. */
+   MMRectType crop;                                        /**< crop information of buffer */
 } MMVideoBuffer;
-</pre> 
+```
+
+
 MMVideoBuffer can contain video data informtion of all cases as below. 
 
 ![YUV_block.png](media/YUV_block.png)
@@ -679,17 +1022,17 @@ Waylandsink in the Muse Daemon should request rendering conditions on  ```wl_sub
 
 ![tizen_viewport.png](media/tizen_viewport.png)
 
-  * Example 1
-![tizen_viewport_ex1.png](media/tizen_viewport_ex1.png)
+* Example 1
+  ![tizen_viewport_ex1.png](media/tizen_viewport_ex1.png)
 
   * Example 2               
-![tizen_viewport_ex2.png](media/tizen_viewport_ex2.png)
+    ![tizen_viewport_ex2.png](media/tizen_viewport_ex2.png)
 
   * Example 3
-![tizen_viewport_ex3.png](media/tizen_viewport_ex3.png)
+    ![tizen_viewport_ex3.png](media/tizen_viewport_ex3.png)
 
   * Example 4
-![tizen_viewport_ex4.png](media/tizen_viewport_ex4.png)
+    ![tizen_viewport_ex4.png](media/tizen_viewport_ex4.png)
 
 
 ##### Flush Buffer
@@ -698,7 +1041,7 @@ Sometimes it is necessary to return GstBuffer while maintaining the video frame 
 **1) Gapless video playback.**
 
 Waylandsink receive ```GST_EVENT_CUSTOM_DOWNSTREAM``` from Player when Player performs gapless video playback. and Player create a FlushBuffer.
-<pre>
+```c
 #define GST_APP_EVENT_FLUSH_BUFFER_NAME "application/flush-buffer"
 
 static gboolean gst_wayland_sink_event (GstBaseSink * bsink, GstEvent * event)
@@ -712,25 +1055,26 @@ static gboolean gst_wayland_sink_event (GstBaseSink * bsink, GstEvent * event)
     gst_wayland_sink_render_flush_buffer (bsink);
 [...] 
 }
-</pre>
+```
 **2) keep-camera-preview**
 Camera set this property When Camera need to maintain last video frame. Waylandsink copay last tbm buffer and return last tbm buffr immediately when state change(PAUSED_TO_READY).
-<pre>
+```
 keep-camera-preview : Last tbm buffer is copied and returned to camerasrc immediately when state change(PAUSED_TO_READY)
                       flags: readable, writable
                       Boolean. Default: false
-</pre>
+```
 **3) flush_request of MMVideoBuffer**
-Camerasrc and Video Codec can set a flag to request a flushbuffer in the GstBuffer using ```MMVideoBuffer.flush_request = TRUE```. 
+Camerasrc and Video Codec can set a flag to request a flushbuffer in the GstBuffer using `MMVideoBuffer.flush_request = TRUE`. 
 
 ##### Audio only mode
 Waylandsink has s disable-overlay property to support Player's audio only mode. If this property is set, video frame is not rendered. Player need to set this property to false and set ```wl_surface_id``` when Player need to show video frame.
-<pre>
+```
 disable-overlay : Stop using overlay by destroying wl_window and wl_display, Use gst_video_overlay_set_wl_window_wl_surface_id before setting FALSE to use overlay
                               flags: readable, writable
                               Boolean. Default: false
-</pre>
-<pre>
+```
+
+```c
 gst_wayland_sink_set_property (GObject * object, guint prop_id, const GValue * value, GParamSpec * pspec)
 {
 [...]
@@ -760,11 +1104,11 @@ static GstFlowReturn gst_wayland_sink_render (GstBaseSink * bsink, GstBuffer * b
 Please refer to mm_player_priv.c
 /* Need to set surface_id to enable overlay. */
 gst_video_overlay_set_wl_window_wl_surface_id( GST_VIDEO_OVERLAY(player->pipeline->videobin[MMPLAYER_V_SINK].gst), *(int*)handle);
-</pre>
+```
 
 ##### Handoffs and preroll-handoff Element Signals
 Sometimes Player use fakesink.  Changing the gst-pipeline of Player is a hassles, so Waylandsink provided fakesink functionality. if this property set to TRUE, Waylandsink send hanoff signal to Player.
-<pre>
+```c
 static GstFlowReturn gst_wayland_sink_render (GstBaseSink * bsink, GstBuffer * buffer)
 {
 [...]
@@ -776,19 +1120,19 @@ static GstFlowReturn gst_wayland_sink_render (GstBaseSink * bsink, GstBuffer * b
   }
 [...]
 }
-</pre>
+```
 
 ##### Use TBM
 Waylandsink use two types of buffrs. It si shared memory and TBM memory. the default value is TRUE and Waylandsink use TBM memory. Waylandsink for TIZEN use shared memory such as the open source original waylandsink if value is FALSE.
-<pre>
+```
 use-tbm  : Use Tizen Buffer Memory insted of Shared memory, Memory is alloced by TBM insted of SHM when enabled
            flags: readable, writable
            Boolean. Default: true
-</pre>
+```
 
 ##### Rotate
 Waylandsink can rotate angle of display output. the default value is 0, "DEGREE_0".
-<pre>
+```
 rotate   : Rotate angle of display output                        
            flags: readable, writable
            Enum "GstWaylandSinkRotateAngleType" Default: 0, "DEGREE_0"
@@ -796,9 +1140,9 @@ rotate   : Rotate angle of display output
                 (1): DEGREE_90        - Rotate 90 degree
                 (2): DEGREE_180       - Rotate 180 degree
                 (3): DEGREE_270       - Rotate 270 degree
-</pre>
+```
 We need to convet the enum values used by Player or Camera to values used by WAYLAND.
-<pre>
+```c
 static gint gst_wl_window_find_rotate_transform (guint rotate_angle) {
   gint transform = WL_OUTPUT_TRANSFORM_NORMAL; 
     switch (rotate_angle) {    
@@ -820,11 +1164,11 @@ static gint gst_wl_window_find_rotate_transform (guint rotate_angle) {
 
 transform =  gst_wl_window_find_rotate_transform (window->rotate_angle.value);   
 tizen_viewport_set_transform (window->tizen_area_viewport, transform);
-</pre>
+```
 
 ##### Flip
 Waylandsink can flip angle of display output. the default value is 0, "FLIP_NONE".
-<pre>
+```
  flip  : Flip for display
          flags: readable, writable
          Enum "GstWaylandSinkFlipType" Default: 0, "FLIP_NONE" 
@@ -832,9 +1176,9 @@ Waylandsink can flip angle of display output. the default value is 0, "FLIP_NONE
               (1): FLIP_HORIZONTAL  - Flip HORIZONTAL 
               (2): FLIP_VERTICAL    - Flip VERTICAL 
               (3): FLIP_BOTH        - Flip BOTH
-</pre>
+```
 WAYLAND has not flip. So, waylandsink must implement flip with rotating video_viewport.
-<pre>
+```c
 static gint gst_wl_window_find_flip_transform (guint flip)
 {
   gint transform = WL_OUTPUT_TRANSFORM_NORMAL;
@@ -861,11 +1205,11 @@ static gint gst_wl_window_find_flip_transform (guint flip)
 
 transform = gst_wl_window_find_flip_transform (window->flip.value);
 tizen_viewport_set_transform (window->tizen_video_viewport, transform);
-</pre>
+```
 
 ##### Visible
 Waylandsink can make the video frame visible or invisible on the display. To make the video frame invisible, attach NULL, To make the video fame visible, Waylandsink need to keep last rendered video frame.
-<pre>
+```c
 /* invisible */
 static void gst_wayland_sink_stop_video (GstWaylandSink * sink)
 {
@@ -875,11 +1219,11 @@ static void gst_wayland_sink_stop_video (GstWaylandSink * sink)
 }
 /*visible*/
 gst_wayland_sink_update_last_buffer_geometry (sink);
-</pre>
+```
 
 ##### Display Geometry Method and ROI
 Waylandsink can change the geometry when rendering the video.
-<pre>
+```
 display-geometry-method: Geometrical method for display
            flags: readable, writable
            Enum "GstWaylandSinkDisplayGeometryMethodType" Default: 0, "LETTER_BOX"
@@ -889,9 +1233,9 @@ display-geometry-method: Geometrical method for display
                 (3): CROPPED_FULL_SCREEN - Cropped full-screen
                 (4): ORIGIN_SIZE_OR_LETTER_BOX - Origin size(if screen size is larger than video size(width/height)) or Letter box(if video size(width/height) is larger than screen size)
                 (5): DISP_GEO_METHOD_CUSTOM_ROI - Specially described destination ROI
-</pre>
+```
 These are provided by using tizen_viewport from TIZEN 3.0.
-<pre>
+```c
 enum {
  DISP_GEO_METHOD_LETTER_BOX = 0,
  DISP_GEO_METHOD_ORIGIN_SIZE,
@@ -905,42 +1249,42 @@ enum {
 if (tizen_disp_mode > -1) {
   tizen_destination_mode_set (window->tizen_video_dest_mode, tizen_disp_mode); 
 }
-</pre>
-ROI coordinates can be set only when the value of display-geometry-method is set to 5, and ROI coordinates are obtained from ```gst_video_overlay_set_render_rectangle()``` from Player or Camera.
-<pre>
+```
+ROI coordinates can be set only when the value of display-geometry-method is set to 5, and ROI coordinates are obtained from `gst_video_overlay_set_render_rectangle()` from Player or Camera.
+```c
 if (window->disp_geo_method.value == DISP_GEO_METHOD_CUSTOM_ROI) {
    tizen_viewport_set_destination (window->tizen_video_viewport, window->roi.x, window->roi.y, window->roi.w, window->roi.h);
 }
-</pre>
+```
 
 **1) Letter Box mode**
 
 Letter Box mode fit the video source to Width or Height of Window, align center and keep aspect ratio of original video source.
 
 * Window (width/height) > Video source (width/height)           
-![Letterbox_ex1.png](media/Letterbox_ex1.png)
-              
+  ![Letterbox_ex1.png](media/Letterbox_ex1.png)
+
 * Window (width/height) < Video source (width/height)          
-![Letterbox_ex2.png](media/Letterbox_ex2.png)
+  ![Letterbox_ex2.png](media/Letterbox_ex2.png)
 
 **2) Origin Size mode**
 
 Origin size mode set video source size by original video size, align center and keep aspect ratio of original video source.
 
 * Window size > Video source size                    
-![origin_mode_ex1.png](media/origin_mode_ex1.png)
+  ![origin_mode_ex1.png](media/origin_mode_ex1.png)
 * Window size < Video source size
-![origin_mode_ex2.png](media/origin_mode_ex2.png)
+  ![origin_mode_ex2.png](media/origin_mode_ex2.png)
 
 **3) Cropped Full Screen mode**
 
 Cropped Full Screen mode fit the video source to Width and Height, crop the out of window area, align center, keep aspect ratio of original video source.
 
 * Window (width/height) > Video source (width/height)
-![cropped_full_mode_ex1.png](media/cropped_full_mode_ex1.png)
+  ![cropped_full_mode_ex1.png](media/cropped_full_mode_ex1.png)
 
 * Window (width/height) < Video source (width/height)  
-![cropped_full_mode_ex2.png](media/cropped_full_mode_ex2.png)
+  ![cropped_full_mode_ex2.png](media/cropped_full_mode_ex2.png)
 
 
 
