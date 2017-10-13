@@ -1,12 +1,18 @@
 # gbs pull
 
-The pull command makes it more convenient for a developer to update from a remote git repository being maintained with gbs. The benefit of using gbs pull is that it automatically updates all relevant branches, the upstream and pristine-tar branches in the case of non-native packages. The pull subcommand will update all local branch HEADs that can be fast-forwarded. It will print a warning for branches that could not be fast-forwarded. See the --force option below to override this. It is recommended to always do your local development on feature/development branches, and keep the master/upstream branches untouched and always in sync with the remote by using the gbs pull command. For instructions on using the pull subcommand, type:
+Use the `gbs pull` subcommand to update from a remote Git repository being maintained with GBS. Always do your local development on the feature and development branches, and keep the master and upstream branches untouched and always in sync with the remote by using this command.
+
+The benefit of using the `gbs pull` subcommand is that it automatically updates all relevant branches, including the upstream and pristine-tar branches in the case of non-native packages.
+
+The command updates all local branch HEADs that can be fast-forwarded. It prints a warning for branches that cannot be fast-forwarded. To override the warning, use the `--force` option described below.
+
+For command usage details, enter:
 
 ```bash
 $ gbs pull --help
 ```
 
-Example: update a tizen package repo using gbs pull
+Example of updating a Tizen package repository:
 
 ```bash
 $ gbs pull
@@ -18,9 +24,15 @@ Fast-forward
 info: finished
 ```
 
-### Special options
+## Special Options
 
-The --all option can be used to update all remote branches. Using this will update all remote-tracking branches that have identical name in the remote repository. Using the --depth one can deepen shallow clones, that is, fetch deeper history from the remote. With the --force option the developer can force update the local branch HEADs to match the remote repo. **WARNING**: Use the --force option with care. It will discard all local changes to the updated branches! This effectively does a git reset --hard for the local branches. Example:
+You can use some special options with the `gbs pull` subcommand:
+
+- `--all` updates all remote branches. It updates all remote-tracking branches that have an identical name in the remote repository.
+- `--depth` deepens shallow clones, that is, fetches deeper history from the remote.
+- `--force` forces the local branch HEADs to update to match the remote repository.
+  > **WARNING**:  
+  > Use the `--force` option with care. It discards all local changes to the updated branches. This effectively performs a `git reset --hard` for the local branches.
 
 ```bash
 $ gbs pull --all
@@ -42,4 +54,4 @@ info: Branch 'master' is already up to date.
 info: finished
 ```
 
- 
+

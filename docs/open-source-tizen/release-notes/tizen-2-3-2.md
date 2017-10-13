@@ -1,28 +1,26 @@
-
-
 # Tizen 2.3.2 for Wearable Release Notes
 
 ## Tizen 2.3.2 Patch
 
-Release Date: Dec. 23, 2016
+Release Date: Dec 23, 2016
 
-##### The OPR (on pixel rate)  check function is included in the 2.3.2 wearable profile. You can check the OPR of your watch in advance through this function.
+The OPR (on pixel rate) check function is included in the 2.3.2 wearable profile. You can check the OPR of your watch in advance through this function.
 
-##### openssl upgrade
+#### openssl Upgrade
 
-- openssl was upgraded to 1.0.1u.
-- The following risky SSLv2-related APIs were removed:
-  SSLv2_method, SSLv2_client_method, SSLv2_server_method
+- openssl has been upgraded to 1.0.1u.
+- The following risky SSLv2-related APIs have been removed:
+  `SSLv2_method()`, `SSLv2_client_method()`, `SSLv2_server_method()`
 
 ## Tizen 2.3.2
 
-Release Date: Sep.1, 2016
+Release Date: Sep 1, 2016
 
 ### Wearable Web Widget Engine
 
-##### New and Changed Features
+#### New and Changed Features
 
-- Rendering Engine
+- Rendering engine
   - HTML elements and global attributes
     - 13 HTML elements (including the DOCTYPE declaration) and 4 global attributes have been added. In addition, the Widget engine supports only HTML5 documents.
   - CSS properties
@@ -34,7 +32,7 @@ Release Date: Sep.1, 2016
   - W3C test suites
     - W3C Web platform test suites have been added.
     - DOM conformance test suites have been added.
-    - Vendor test suites have been added, including test suits of major browsers, such as Chrome, Safari, and Firefox.
+    - Vendor test suites have been added, including test suites for major browsers, such as Google Chrome, Safari, and Firefox.
   - Javascript API
     - `console.log()` method has been added for debugging a Web widget.
 
@@ -52,7 +50,7 @@ Release Date: Sep.1, 2016
     - Human activity monitor:
       - Supports activity recognition.
       - Adds an interval for the power consumption issue.
-      - Adds an UNKNOWN type in the Pedometer step status.
+      - Adds an `UNKNOWN` type in the Pedometer step status.
       - Adds the Human Activity Recorder.
     - Sensor:
       - Adds sensor hardware information.
@@ -60,10 +58,10 @@ Release Date: Sep.1, 2016
       - Supports the gravity, gyroscope, and gyroscope rotation vector sensor types.
       - Adds an interval for the power consumption issue.
     - Screen:
-      - Adds new screen feature keys `http://tizen.org/feature/screen.always_on.low_bit_color` and `http://tizen.org/feature/screen.always_on.high_color` which can distinguish that always on display (AOD) is whether high bit color or low bit color. These feature keys can be read by using system info API whether the device supports high bit color or low bit color.
+      - Adds new screen feature keys `http://tizen.org/feature/screen.always_on.low_bit_color` and `http://tizen.org/feature/screen.always_on.high_color` which can distinguish whether an always on display (AOD) is high-bit color or low-bit color. These feature keys can be read using the System Info API to determine whether the device supports high-bit color or low-bit color.
 - W3C
   - Support has been added for WebSpeech recognition:
-    - Non-supported attributes:
+    - Unsupported attributes:
       - `SpeechRecognition.serviceURL`
       - `SpeechRecognitionEvent.interpretation`
 - Web UI Framework (TAU)
@@ -71,7 +69,7 @@ Release Date: Sep.1, 2016
     - Changed component styles:
       - Popup, Button, Checkbox, Radio, Toggle, Selector, and Page Indicator
       - Multi text list sample, thumbnail list sample
-      - List animation enabled in all samples (circle-helper.js)
+      - List animation enabled in all samples (`circle-helper.js`)
 
 ## Service Framework
 
@@ -94,11 +92,11 @@ Release Date: Sep.1, 2016
 
 ##### New and Changed Features
 
-- Elementary Widget
+- Elementary widget
   - Tizen 2.3.2 UX has been implemented.
-- Text Input
+- Text input
   - Input Delegator based on the application control has been added.
-- Voice Interaction
+- Voice interaction
   - Speech-to-text engine has been added by default.
 
 ## System / Base
@@ -108,5 +106,5 @@ Release Date: Sep.1, 2016
 - Base-utils (i18n)
   - MeasureUnit APIs have been added.
   - AlphabeticIndex APIs have been added.
-- ICU Upgrade
+- ICU upgrade
   - Version has been upgraded from 51.1 to 57.1.

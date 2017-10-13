@@ -1,12 +1,14 @@
 # gbs changelog
 
-Subcommand changelog is used to generate changelog file in ./packaging dir. It is mostly used for creating a changelog before submitting code. You can get the usage of subcommand changelog by using '$ gbs changelog --help'
+Use the `changelog` subcommand to generate a change log file in the `./packaging` directory.
+
+The command is mostly used for creating a change log before submitting code. For command usage details, enter:
 
 ```bash
 $ gbs changelog --help
 ```
 
-Examples:
+Change log examples:
 
 ```bash
 test@test-desktop:~/acpid$ gbs ch --since=bed424ad5ddf74f907de0c19043e486f36e594b9
@@ -16,5 +18,3 @@ test@test-desktop:~/acpid$ head packaging/acpid.changes
 - cleanup specfile for packaging
 * Wed May 30 2012 - xxxx <xxxx@example.com> - 2.0.10
 ```
-
- 

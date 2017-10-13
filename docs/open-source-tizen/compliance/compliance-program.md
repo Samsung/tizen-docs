@@ -1,58 +1,57 @@
 # Tizen Compliance Program
 
-## Why Compliance?
+The Tizen Compliance Program consists of the following parts:
 
-The Tizen Compliance Program ensures devices and applications work correctly together, by setting out requirements for common behavior and providing a validation mechanism to show that the requirements are followed. The Tizen Compliance Program is valuable to the following audiences:
+- [Tizen Compliance Specification (TCS)](compliance-specification.md)  
+A definitive set of requirements for Tizen compliant devices.
+- [Tizen Compliance Tests (TCT)](compliance-test.md)  
+A suite of tests that verify each of the requirements in the TCS.
+- Tizen Compliance certification  
+A formal review and acceptance of a device that has passed all of the tests and is fully Tizen compliant.
 
-- **Application developers:** know how to create compatible applications that work across multiple devices, and how Tizen devices will behave.
-- **Tizen device implementers:** know how to implement a Tizen compliant device by satisfying software and hardware requirements.
-- **Carriers:** know how to customize and enhance a device, while remaining within compliance guidelines.
-- **End users:** know that applications will work on their device and are assured of a consistent user experience among compliant devices and applications.
+The Tizen Compliance Program ensures that devices and applications work correctly together, by setting out requirements for common behavior and providing a validation mechanism to show that the requirements are followed. The Tizen Compliance Program is valuable to the following audiences:
 
-To become Tizen compliant, a device must obtain Tizen Compliance certification.
+- **Application developers:** Know how to create compatible applications that work across multiple devices, and how Tizen devices behave.
+- **Tizen device implementers:** Know how to implement a Tizen-compliant device by satisfying software and hardware requirements.
+- **Carriers:** Know how to customize and enhance a device, while remaining within compliance guidelines.
+- **End users:** Know that applications work on their device and are assured of a consistent user experience among compliant devices and applications.
 
-## Overview
-
-The Tizen Compliance Program consists of the following:
-
-- [**Tizen Compliance Specification (TCS)**](compliance-specification.md). The document containing the definitive set of requirements for Tizen compliant devices.
-- **Tizen Compliance Tests (TCT).  **The suite of tests that verify each of the requirements in the TCS.
-- **Tizen Compliance certification. **The formal review and acceptance of a device that has passed all of the tests and is fully Tizen compliant.
+To become Tizen compliant, a device must obtain the Tizen Compliance certification.
 
 ## Tizen Compliance Model
 
-To be called Tizen compliant, a Tizen device implementer must obtain Tizen Compliance certification for the device for at least one Tizen Profile. This involves satisfying the requirements of the Tizen Compliance Specification, passing all of the Tizen Compliance Tests, then applying to the Tizen Association for certification.
+To be called Tizen compliant, a Tizen device implementer must obtain the Tizen Compliance certification for the device for at least 1 Tizen profile. This involves satisfying the requirements of the Tizen Compliance Specification, passing all of the Tizen Compliance Tests, then applying to the Tizen Association for certification.
 
-A Tizen Profile describes the requirements for a category of Tizen devices that have a common application execution environment. Applications are created for a specific target profile and can run on devices compliant to that profile.
+A Tizen profile describes the requirements for a category of Tizen devices that have a common application execution environment. Applications are created for a specific target profile and can run on devices compliant with that profile.
 
-Each Tizen Profile is based on Tizen Common Libraries, which are the set of libraries common across all Tizen platforms. The set of libraries helps to unify multiple categories of devices by sharing common platform components.
+Each Tizen profile is based on the Tizen Common libraries, which are a set of libraries common across all Tizen platforms. The set of libraries helps to unify multiple device categories by sharing common platform components.
 
-The current available profiles are:
+The currently-available profiles are:
 
-- Mobile: for handsets, tablets, etc.
-- Wearable: for watches, etc.
-- TV: DTV/STB/IPTV systems
+- Mobile: for handsets and tablets
+- Wearable: for watches
+- TV: for DTV/STB/IPTV systems
 
-Additional profile is expected in the future, possibly including:
+Additional profiles are expected in the future, potentially including:
 
-- IVI: In-Vehicle Infotainment systems
+- IVI: for In-Vehicle Infotainment systems
 
-![img](media/tizen-profiles-small.png)
 
-The Tizen Compliance Tests measure conformance to the Profile requirements.
+**Figure: Tizen profiles**
 
-## Compliance Program Steps
+![Tizen profiles](media/tizen-profiles-small.png)
+
+The Tizen Compliance Tests measure conformance to the requirements of a given Tizen profile.
+
+## Compliance Certification Steps
+
+To get a Tizen device certified:
 
 1. A Tizen device implementer gets the [Tizen source code](https://review.tizen.org/git/) and creates a new Tizen device.
-2. A Tizen device implementer obtains the compliance specification (TCS), compliance tests (TCT), and Tizen branding request form.
-3. Once the new Tizen device passes 100% of the compliance tests, the Tizen device implementer submits the test results with a [Tizen branding request form](media/tizen_branding_request_form_for_tizen_mobile_profile_v1.0_1.pdf) to the Tizen Association.
-4. The Tizen Association reviews, approves, and certifies the device as Tizen compliant. Any technical review required to decide approval or failure will be referred to the Tizen Steering Group by the Tizen Association.
+2. A Tizen device implementer obtains the compliance specification (TCS), compliance tests (TCT), and [Tizen branding request form](media/tizen_branding_request_form_for_tizen_mobile_profile_v1.0_1.pdf) ![PDF icon](media/application-pdf.png).
+3. Once the new Tizen device passes 100% of the compliance tests, the Tizen device implementer submits the test results with a Tizen branding request form to the Tizen Association.
+4. The Tizen Association reviews, approves, and certifies the device as Tizen compliant. Any technical review required to decide approval or failure is referred to the Tizen Steering Group by the Tizen Association.
 
 ## Feedback
 
-The Tizen Project welcomes feedback and input on Tizen Compliance. If a Tizen device implementer has questions or concerns about the specification or compliance tests they are welcome to discuss these on the [Tizen compliance mailing list](https://lists.tizen.org/listinfo/compliance).
-
-
-See [Compliance Specification](compliance-specification.md)
-
-Download ![PDF icon](media/application-pdf.png) [tizen_branding_request_form_for_tizen_mobile_profile_v1.0.pdf](media/tizen_branding_request_form_for_tizen_mobile_profile_v1.0_1.pdf) ( 77.9 KB)
+The Tizen Project welcomes feedback and input on Tizen Compliance. If a Tizen device implementer has questions or concerns about the specification or compliance tests, they are welcome to discuss these on the [Tizen compliance mailing list](https://lists.tizen.org/listinfo/compliance).

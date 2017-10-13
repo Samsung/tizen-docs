@@ -1,56 +1,42 @@
 # Location
 
-## Location Framework
+The Location framework provides location-based services (LBS), including the position information, satellite information and GPS status.
 
-Location provides location based services (LBS) including the position information, satellite information and GPS status.
+You can use the following location features:
 
-![Location.png](media/Location.png)
-
-You can use the following location features´:
-
-- GPS (Global positioning system)
-- Getting the current position, last known position, accuracy, distance and velocity
-- Getting the satellite information of GPS and GLONASS
+- Getting the current position, last known position, accuracy, distance, and velocity of the device
+- Getting satellite information from GPS and GLONASS
 - Notifying a user when they enter or exit a predefined set of boundaries, known as geofence, like school attendance zones or neighborhood boundaries
 
+**Figure: Tizen location architecture**
+
+![Tizen location architecture](media/Location.png)
+
+The main location service components are:
 
 - Location framework
-
-
-- location-manager
-
-
-
-
-- Location Library
-  - Contains the location providers that can be used by the location-manager to get the services.
-  - GPS
-    - GPS provides position information, velocity and satellite information. It is used to get the current position of a device.
-- dbus
-  - This is the IPC used to communicate between location module and the Location daemon.
-- lbs-server
-  - lbs-server provides position, velocity, NMEA, and satellite information by communicating with a GPS chip.
-  - lbs-server has the following functionalities:
-    - Initializes and deinitializes the GPS, opens and closes GPS applications.
-    - Provides the position result for location library.
-    - Location session management-determination for session termination based on session status.
-    - Serial interface with the GPS receiver
-    - Enables the GPS chipset to support standalone GPS positioning methods.
-    - Supports the standalone operation mode.
+- Location manager
+- Location library, which contains the location providers that can be used by the location manager to get services
+- GPS (global positioning system), which provides position information, velocity, and satellite information. It is used to get the current position of a device.
+- dbus, which is the IPC used to communicate between the location module and the Location daemon.
+- lbs-server, which provides position, velocity, NMEA, and satellite information by communicating with a GPS chip. It has the following functionalities:
+  - Initializes and deinitializes the GPS, opens and closes GPS applications.
+  - Provides the position result for the location library.
+  - Manages location sessions; determines session termination based on session status.
+  - Provides a serial interface with the GPS receiver.
+  - Enables the GPS chipset to support standalone GPS positioning methods.
+  - Supports the standalone operation mode.
 
 
 
-### Porting OAL Interface
+### Porting the OAL Interface
 
-The GPS plugin is implemented based on the Tizen `lbs-server` for vendor specific GPS devices.
+The GPS plugin is implemented for vendor-specific GPS devices based on the Tizen lbs-server. The GPS plugin is implemented as a shared library and the lbs-server loads a specific GPS plugin at runtime. A GPS plugin must be written with predefined interfaces.
 
-The GPS plugin is implemented as a shared library and the `lbs-server` loads a specific GPS plugin at runtime. A GPS plugin must be written with predefined interfaces.
-
-The `lbs-server-plugin-dev` source package is installed on OBS by adding the following command in the package spec file.
+The `lbs-server-plugin-dev` source package is installed on OBS by adding the following command in the package spec file:
 
 ```
 BuildRequires: pkgconfig(lbs-server-plugin)
-
 ```
 
 The `lbs-server-plugin-dev` package source files can be found in the following directories:
@@ -58,12 +44,11 @@ The `lbs-server-plugin-dev` package source files can be found in the following d
 ```
 /usr/include/lbs-server-plugin/*.h
 /usr/lib/pkgconfig/lbs-server-plugin.pc
-
 ```
 
-The `gps_plugin_intf.h` header file includes the API interfaces for the communication between the `lbs-server` and its GPS plugin.
+The `gps_plugin_intf.h` header file includes the API interfaces for the communication between the lbs-server and its GPS plugin.
 
-```
+```c
 typedef struct {
     /* Initialize the plugin module and register callback function for event delivery */
     int (*init) (gps_event_cb gps_event_cb, void *user_data);
@@ -72,31 +57,27 @@ typedef struct {
     /* Request specific action to plugin module */
     int (*request) (gps_action_t gps_action, void *gps_action_data, gps_failure_reason_t *reason_code);
 } gps_plugin_interface;
-
 ```
 
-```
+```c
 const gps_plugin_interface *get_gps_plugin_interface();
-
 ```
 
-The `get_gps_plugin_interface()` function must be exported in the GPS plugin. It gives the `gps_plugin_interface` structure to the `lbs-server`, and the `lbs-server` communicates by these interfaces. When the `lbs-server` is started, the GPS plugin is loaded and the `init()` function is called. At this moment, a GPS device must be initialized.
+The `get_gps_plugin_interface()` function must be exported in the GPS plugin. It gives the `gps_plugin_interface` structure to the lbs-server, and the lbs-server communicates through these interfaces. When the lbs-server is started, the GPS plugin is loaded and the `init()` function is called. At this moment, a GPS device must be initialized.
 
-```
+```c
 int (*init) (gps_event_cb gps_event_cb, void *user_data);
-
 ```
 
-When `init()` function is called, the `gps_event_cb` is set. GPS events and data from a GPS device is delivered by the `gps_event_cb` registered call back function.
+When the `init()` function is called, the `gps_event_cb` callback is set. GPS events and data from a GPS device are delivered through the callback.
 
-```
+```c
 typedef int (*gps_event_cb) (gps_event_info_t *gps_event_info, void *user_data);
-
 ```
 
-The following example describes the GPS events.
+The following example describes the GPS events:
 
-```
+```c
 typedef enum {
     GPS_EVENT_START_SESSION = 0x0000, /* The session is started */
     GPS_EVENT_STOP_SESSION, /* The session is stopped */
@@ -114,19 +95,17 @@ typedef enum {
     GPS_EVENT_FACTORY_TEST = 0x0500,/* Factory test is done */
     GPS_EVENT_ERR_CAUSE = 0xFFFF /* Some error is occurred */
 } gps_event_id_t;
-
 ```
 
-The GPS events contains specific GPS event data which is part of `gps_event_data_t` is delivered, see the `gps_plugin_intf.h`. When the `lbs-server` want to make a request to GPS device, the `request()` function is called.
+The GPS events contain specific GPS event data which is part of the delivered `gps_event_data_t` (see the `gps_plugin_intf.h` file). When the lbs-server wants to make a request to a GPS device, the `request()` function is called:
 
-```
+```c
 int (*request) (gps_action_t gps_action, void *gps_action_data, gps_failure_reason_t *reason_code);
-
 ```
 
 Each request is classified by `gps_action_t`.
 
-```
+```c
 typedef enum {
     GPS_ACTION_SEND_PARAMS = 0x00,
     GPS_ACTION_START_SESSION,
@@ -139,54 +118,55 @@ typedef enum {
     GPS_ACTION_REQUEST_SUPL_NI,
     GPS_ACTION_DELETE_GPS_DATA,
 } gps_action_t;
-
 ```
 
-With the standalone GPS (unassisted GPS), the `GPS_ACTION_START_SESSION` and `GPS_ACTION_STOP_SESSION` are mandatory actions. If the `GPS_ACTION_START_SESSION` is delivered, the GPS plugin starts the acquisition of satellites and reports the `GPS_EVENT_START_SESSION` event to the `lbs-server` by the `gps_event_cb` callback function. Once the acquisition is completed and position is fixed, its position should be delivered by the `gps_event_cb` with the `GPS_EVENT_REPORT_POSITION` event ID and the position data.
+With the standalone GPS (unassisted GPS), the `GPS_ACTION_START_SESSION` and `GPS_ACTION_STOP_SESSION` are mandatory actions. If the `GPS_ACTION_START_SESSION` is delivered, the GPS plugin starts the acquisition of satellites and reports the `GPS_EVENT_START_SESSION` event to the lbs-server through the `gps_event_cb` callback. Once the acquisition is completed and position is fixed, the position must be delivered by the `gps_event_cb` callback with the `GPS_EVENT_REPORT_POSITION` event ID and the position data.
 
-To shut down the `lbs-server`, deinitialize the GPS device with the `deinit()` function.
+To shut down the lbs-server, deinitialize the GPS device with the `deinit()` function:
 
-```
+```c
 int (*deinit) (gps_failure_reason_t *reason_code);
-
 ```
 
-- Addign a new GPS plugin
+### Adding a new GPS plugin
 
+The `check_plugin_module(char* module_name)` function checks the access to the available plugin in the `/sys/devices/platform` directory and the `load_plugin_module` loads the plugin during the boot up time.
 
+Add the necessary path definitions:
 
-```
+```c
 #define PLATFORM_PATH "/sys/devices/platform"
 #define PLUGIN_PATH PLATFORM_PATH"/xxxxx_gps"
-
 ```
-
-The `check_plugin_module(char* module_name)` function checks the access to available plugin in the `/sys/devices/platform` directory and the `load_plugin_module` loads the plugin during the boot up time.
 
 ## Geofence
 
-The Geofence Manager API provides service related to geofence. A geofence is a virtual perimeter for a real-world geographic area.
+The Geofence Manager API provides a service related to geofence. A geofence is a virtual perimeter for a real-world geographic area.
 
-![Geofence.png](media/524px-Geofence.png)
+**Figure: Tizen geofence architecture**
 
-You can to set a geofence with geopoint, Wi-Fi MAC address, and Bluetooth address. Notifications on events, such as changes in the service status are provided.
+![Tizen geofence architecture](media/524px-Geofence.png)
+
+You can set a geofence based on a geopoint, a Wi-Fi MAC address, or a Bluetooth address. Notifications are provided for events, such as changes in the service status.
 
 There are 2 kinds of places and fences:
 
 - Public places and fences that are created by the MyPlace application can be used by all applications.
-- Private places and fences that are created by a specified application can only be used by the same application.
+- Private places and fences that are created by a specific application can only be used by that same application.
 
 Notifications can be received about the following events:
 
-- Zone in when a device enters a specific area
-- Zone out when a device exits a specific area
+- Zone in event when a device enters a specific area
+- Zone out event when a device exits a specific area
 - Results and errors for each event requested by the geofence module
 
 ## Map Service
 
 The Location Maps API (Maps API) allows you to create map-aware applications.
 
-![Mapservice.png](media/Mapservice.png)
+**Figure: Tizen Maps API**
+
+![Tizen Maps API](media/Mapservice.png)
 
 The Maps API has the following features:
 
@@ -195,29 +175,29 @@ The Maps API has the following features:
 - Routes (search directions)
 - Map Widget (rendering map images)
 
-The Maps API allows you to choose a map service provider to be included in the plugins.
+The Maps API allows you to select a map service provider to be included in the plugins.
 
-### Porting OAL Interface
+### Porting the OAL Interface
 
-The Maps plugin is implemented as a shared library and the Maps framework loads a specific Maps plugin at runtime. A Maps plugin must be written with predefined interfaces. The `capi-maps-service-plugin-devel` source package is installed on OBS by adding the following command in the package specification file:
+The Maps plugin is implemented as a shared library and the Maps framework loads a specific Maps plugin at runtime. A Maps plugin must be written with predefined interfaces.
+
+The `capi-maps-service-plugin-devel` source package is installed on OBS by adding the following command in the package specification file:
 
 ```
 BuildRequires: pkgconfig(capi-maps-service-plugin-devel)
-
 ```
 
 The `capi-maps-service-plugin-devel` package source files can be found in the following directories:
 
-```
+```bash
 /usr/include/maps/maps_plugin*.h
 /usr/include/maps/maps_*_plugin.h
 /usr/include/maps/maps_extra_types.h
-
 ```
 
 The `module.h` header file includes the API interfaces for the communication between the Maps and its plugin.
 
-```
+```c
 typedef struct _interface_s {
     /* Plugin dedicated functions */
     maps_plugin_init_f maps_plugin_init;
@@ -269,15 +249,14 @@ typedef struct _interface_s {
     maps_plugin_get_center_f maps_plugin_get_center;
     maps_plugin_capture_snapshot_f maps_plugin_capture_snapshot;
 } interface_s;
-
 ```
 
-These functions must be implemented and exported in the Maps plugin. To create a Maps handle classified by provider name string, the `maps_plugin_get_info()` function must provide the name. The name is recommended to be capitalized.
+These functions must be implemented and exported in the Maps plugin. To create a Maps handle classified by a provider name string, the `maps_plugin_get_info()` function must provide the name. The name is recommended to be capitalized.
 
 The Maps plugins are located in the `/usr/lib/maps/plugins` directory.
 
-#### HERE Maps plugi
+#### HERE Maps Plugin
 
-For now, the HERE Maps plugin is embedded on the platform basically, and the provider name is 'HERE'. To use this plugin, you must get the credential keys in the HERE developers site, "[https://developer.here.com](https://developer.here.com/)". You may need to pay a fee according to the threshold.
+For now, the HERE Maps plugin is embedded in the platform, with the provider name "HERE". To use this plugin, you must get the credential keys in the [HERE developers site](https://developer.here.com/)". You may need to pay a fee depending on the expected map service usage.
 
-For user consent demanded by HERE, the user consent application included in the HERE Maps plugin is launched at first time of use if not agreed before.
+To get the user consent required by HERE, a user consent application included in the HERE Maps plugin is launched the first time the user attempts to access the map services, if consent has not been given before that time.

@@ -1,14 +1,16 @@
 # gbs export
 
-Use 'gbs export' to export git tree to tarball and spec file. You can see how to use the export subcommand by using this command:
+Use the `gbs export` subcommand to export a Git tree to a tarball and spec file.
+
+For command usage details, enter:
 
 ```bash
 $ gbs export --help
 ```
 
-Examples:
+Examples of command usage:
 
-- export source code to default packaging directory
+- Export source code to a default packaging directory:
 
   ```bash
   $ gbs export
@@ -27,34 +29,33 @@ Examples:
   > %patch0 -p1
   ```
 
-  From the log we can see patches has been generated, and tarball is created from pristine-tar branch. --no-patch-exportoption can be used to disable this feature, and tarball will be generated from current branch directly.
+  From the log, you can see that a patch has been generated, and a tarball is created from the pristine-tar branch. The `--no-patch-export` option can be used to disable this feature and generate a tarball from the current branch directly.
 
-- Use -o option to generate packaging files to specified path
+- Use the `-o` option to generate packaging files to a specified path:
 
   ```bash
   $ gbs export -o ~/
   ```
 
-- Using --source-rpm option to generate source RPM package:
+- Use the `--source-rpm` option to generate a source RPM package:
 
   ```bash
   $ gbs export -o ~/ --source-rpm
   ```
 
-- Using --spec option, if there are multiple spec files
+- Use the `--spec` option, if there are multiple spec files:
 
   ```bash
   $ gbs export --spec=dlog.spec
   ```
 
-  --spec only accept file name should not contains any path info. gbs will prefix packaging dir automatically.
+  The `--spec` option only accepts a file name and must not contain any path info. GBS prefixes the packaging directory automatically.
 
-- Use --fallback-to-native option to force gbs-export to perform packaging for non-native packages in native packaging mode, that is, ignore upstream branch and create tarball from HEAD (by default) or specified commit without generating any patch. Adding --fallback-to-native option when issuing gbs export is equvalent to adding "fallback_to_native = true" into [general] section in GBS configuration file.
+- Use the `--fallback-to-native` option to force the export process to perform packaging for non-native packages in the native packaging mode, ignoring the upstream branch and creating a tarball from HEAD (by default) or specified commit without generating any patch. Adding the `--fallback-to-native` option when issuing the `gbs export` command is equivalent to adding the `fallback_to_native = true` property to the `[general]` section of the GBS configuration file.
 
-  > **Note**
-  > This option serves as a work-around solution for solving export failures of some non-native packages caused by a tricky engineering problem. For Tizen native packages, gbs-export always performs packaging in native packaging mode.
+  > **Note**  
+  > This option serves as a work-around solution for solving export failures of some non-native packages caused by a tricky engineering problem. For Tizen native packages, the `gbs export` command always performs packaging in the native packaging mode.
 
   ```bash
   $ gbs export --fallback-to-native
-  ​```bash
   ```
