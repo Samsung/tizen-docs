@@ -1,19 +1,18 @@
-# Cloning Tizen Sources Files
+# Cloning Tizen Source Files
 
-This topic provides information on how to clone Tizen source files, either over SSH or HTTPS .
+You can clone Tizen source files over SSH or HTTPS.
 
-**Note:** The procedures to clone Tizen source files over SSH and HTTPS are almost identical. The only difference is the URL in the git command. However, you can only contribute code to Tizen using the SSH protocol.
+> **Note**  
+> The procedures to clone Tizen source files over SSH and HTTPS are almost identical., the only difference being the URL in the Git command. However, you can only contribute code to Tizen using the SSH protocol.
 
-You must read, understand, and correctly follow the instructions in the following documents before cloning:
+Before cloning source files, study the following instructions:
 
-- [Setting up Development Environment](setting-up.md)
+- [Setting up the Development Environment](setting-up.md)
 - [Installing Development Tools](installing.md)
 
 ## Cloning over SSH
 
 You can clone source files over SSH, either for a specific project or for all Tizen projects.
-
-### Cloning a Specific Project over SSH
 
 To clone a specific project over SSH:
 
@@ -35,15 +34,11 @@ To clone a specific project over SSH:
    $ git clone ssh://<Username>@review.tizen.org:29418/platform/core/account/account-common
    ```
 
-### Cloning All Tizen Projects over SSH
-
 To clone all Tizen projects over SSH, see [Cloning All Projects over SSH](building-all.md#over-ssh)
 
 ## Cloning over HTTPS
 
 You can clone source files over HTTPS, either for a specific project or for all Tizen projects.
-
-### Cloning a Specific Project over HTTPS
 
 To clone a specific project over HTTPS:
 
@@ -58,7 +53,5 @@ To clone a specific project over HTTPS:
    ```bash
    $ git clone https://git.tizen.org/cgit/platform/core/multimedia/avsystem
    ```
-
-### Cloning All Tizen Projects over HTTPS
 
 To clone all Tizen projects over HTTPS, see [Cloning All Projects over HTTPS](building-all.md#over-https).

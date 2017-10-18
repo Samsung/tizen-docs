@@ -1,12 +1,14 @@
 # Application
 
-Tizen supports both core and reference applications. The core applications are developed with platform internal interfaces, such as Enlightenment Foundation Libraries EFL and other 3rd party libraries. The reference applications are developed with Tizen native APIs.
+Tizen supports both core and reference applications. Core applications are developed with platform internal interfaces, such as the Enlightenment Foundation Libraries (EFL) and other third party libraries. Reference applications are developed with Tizen native APIs.
 
-The following table shows whether the core and reference versions of the preloaded sample applications are supported by default on the Emulator and target device.
+The following table shows whether the core and reference versions of the preloaded sample applications are supported by default on the emulator and target device.
 
-| Application name | Emulator              | Target           |                       |      |
+**Table: Sample application support**
+
+| Application name | Emulator              |                  | Target                |      |
 | ---------------- | --------------------- | ---------------- | --------------------- | ---- |
-| Core application | Reference application | Core application | Reference application |      |
+|                  | **Core application**  | **Reference application** | **Core application** | **Reference application**|
 | Calculator       | No                    | Yes              | Yes                   | No   |
 | Calendar         | No                    | Yes              | Yes                   | No   |
 | CalendarService  | No                    | Yes              | Yes                   | No   |
@@ -30,6 +32,8 @@ The following table shows whether the core and reference versions of the preload
 ## Configuration
 
 You can switch a preloaded sample application between core and reference applications using the [MIC image creator](../tools/mic/mic-overview.md). To switch the application, remove the preloaded application package and add the new package image with the correct name. The following table shows the core and reference application image names of the preloaded sample applications.
+
+**Table: Sample application image names**
 
 | Application name | Core application            | Reference application  |
 | ---------------- | --------------------------- | ---------------------- |
