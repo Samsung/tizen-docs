@@ -1,60 +1,53 @@
 # Contributing to Tizen Studio
-Tizen Studio is an open-source project. 
-We'd love for you to contribute to our source code and to make Tizen Studio even better than it is today! 
 
-## Download and Review Tizen code.
+The Tizen Studio is an open-source project. You can contribute to the source code and help improve the Tizen Studio.
 
-- [Source Code](https://review.tizen.org/git/)
-- [Code Review](https://review.tizen.org/gerrit)
+You can access the Tizen source code and code review at the following sites:
 
-## **Code Contributions:**
-This section will guide you through the contribution process.
+- [Source code repository](https://review.tizen.org/git/)
+- [Gerrit Code Review](https://review.tizen.org/gerrit)
 
-### Step 1 : Code Clone
-```
-git clone ssh://<ID>@review.tizen.org:29418/<git project path>
-```
+To contribute code to the Tizen Studio:
 
-### Step 2 : Branch
-Make your changes in a new git branch:
+1. Clone the [source code repository](https://review.tizen.org/git/):  
+    ```sh
+    git clone ssh://<ID>@review.tizen.org:29418/<git project path>
+    ```
 
-```
-git checkout opensrc 
-```
-### Step 3 : Develop
+2. Create a Git branch for your changes:  
+    ```sh
+    git checkout opensrc
+    ```
 
-- If you want to develop Tizen Studio Extension, please refer to the guide document.
-    - [Package File Description Guide](package-file-desc-guide.md)
-    - [Web/Navie IDE Extension Development Guide](web-extension-guide.md)
+3. Develop your contribution.  
+  For more information on how to develop and package Tizen Studio extensions, see the following guides:
+    - [Web/Native IDE Extension Development Guide](web-extension-guide.md)
     - [Emulator Extension Development Guide](emulator-extension-guide.md)
-    - [Meta Package Description Guide](meta-package.md)
+    - [Package File Description Guide](package-file-desc-guide.md)
+    - [Metapackage File Description Guide](meta-package.md)
 
-### Step 4 : Test / Build
+4. Build and test your contribution.  
+    Create a patch with your code, including appropriate test cases, which are mandatory if you add functionality or fix a bug.  
+    For more information on building the code locally for testing, see the [Local Build Guide](local-build.md).
 
-Create your patch, including appropriate test cases.<br>
-If you are adding functionality or fixing a bug, please add a test!<br>
-Build your changes locally to ensure all the tests pass: 
-- [Local Build Guilde](local-build.md)
+5. Commit and push your changes:
+    ```sh
+    git add <file name>
+    git commit -m <update massage>
+    git log // To successfully push your code, you must include 'change-id' and 'Signed-off-by' lines.
+    git push origin <branch name>
+    ```
 
+    The change is listed in [Gerrit Code Review](https://review.tizen.org/gerrit).
 
-### Step 5 : Commit & Push
-```
-git add <file name>
-git commit -m <update massage>
-git log // If 'change-id' and 'Signed-off-by' does not exist, it will not be pushed.
-git push origin <branch name>
-```
+6. Request a code review.  
+    In Gerrit, open your change line and add the extension maintainer as a reviewer.
 
-
-## Step 6: Request a code review
-1. In the downloaded source code, there is the `package` directory, `pkginfo.manifest` file.
-2. Check the `Maintainer` in the `pkginfo.manifest` file.
-![](../../media/tizen-studio/code_review.png)
-3. After uploading your code to gerrit, be sure to register the maintainer as a reviewer.
-
-## Code merge criteria
-- At least **2 reviewers** should review.
-- The code review score must be at least **2 points**.
-- If you pass the code merge criteria, the maintainer merge.
-
-![](../../media/tizen-studio/review-result.png)
+    To identify the maintainer, in the extension source code `package` directory, open the `pkginfo.manifest` file.  
+    ![Maintainer identification](media/code-review.png)
+    
+    Your code can be merged by the maintainer when it meets the following criteria:
+    - It has been reviewed by 2 reviewers.
+    - The **Code-Review** score is 2 points or more.
+    
+    ![Code review](media/review-result.png)

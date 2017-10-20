@@ -1,84 +1,76 @@
 # Local Build Guide
-Do you need to make sure my development works well? 
 
-This page is a guide to local build.
+To build the code locally for testing:
 
-![](../../media/tizen-studio/build.PNG)
+**Figure: Local build workflow**
 
-### Step 1 : Installing the **TS-CLI**
+![Local build workflow](media/build.png)
 
-[Once you have set up your environment](environment.md), just Step 2.
+1. Install TS-CLI.  
+   For more information on installing TS-CLI and setting up a development environment, see [Build Environment](environment.md).
 
-### Step 2 : Pull packages
+2. Create a local repository and pull packages into it:
 
-1. You need to create a local repository (file system). You can use local storage to upload and deploy packages.
-2. Import packages from the remote storage server to the local repository.
+   1. Create a local repository (file system). You can use local storage to upload and deploy packages.
+   2. Import packages from the remote storage server to the local repository.
 
-    ※ *Your machine should be able to access(wget) the input url.*
+      > **Note**
+      >
+      > Your computer must be able to access the input URL (with `wget`).
 
-```bash
-$ ts-cli pull --rr http://172.21.17.55/packages/tizen_studio --lr /repository/tizen_studio -o ubuntu-64
+      ```bash
+      $ ts-cli pull --rr http://172.21.17.55/packages/tizen_studio --lr /repository/tizen_studio -o ubuntu-64
 
-## --rr, --remote-repo    remote repository url
-## --lr, --local-repo     loca repository path
-## -o, --os              os name
-## -b, --base-snapshot   base snapshot name for package pull
+      ## --rr, --remote-repo    remote repository url
+      ## --lr, --local-repo     local repository path
+      ## -o, --os               os name
+      ## -b, --base-snapshot    base snapshot name for package pull
+      ```
 
-```
+3. Build the code with the `ts-cli build` command:
 
-### Step 3 : Build 
+   ```bash
+   $ ts-cli build -r /repository/tizen_studio -c -p
 
-Let's build your code.  Go to the directory you developed and build with the `ts-cli build` command.
+   ## -r, --repository      repository path. local directory path or http url.
+       ex) ./repository/develop | http://download.tizen.org/sdk/tizenstudio/official
+   ## -s, --source          source path           [default: "./"]
+   ## -c, --clean           clean build
+   ## -p, --push-package    push the package(s) to local repository
+   ## -f, --force           skip version comparison and push or pull packages by force.
+                            new packages will overwrite existing ones
+   ```
 
-```bash
-$ ts-cli build -r /repository/tizen_studio -c -p
+4. Create a snapshot with the `ts-cli push` command:
 
-## -r, --repository      repository path. local directory path or http url.
-    ex) ./repository/develop | http://download.tizen.org/sdk/tizenstudio/official
-## -s, --source          source path           [default: "./"]
-## -c, --clean           clean build
-## -p, --push-package    push the package(s) to local repository
-## -f, --force           skip version comparison and push or pull packages by force. 
-                         new packages will overwrite existing ones
-```
+   ```bash
+   $ ts-cli push -P <package file path|list> --lr /repository/tizen_studio
 
-### Step 4 : Push
+   ## -P, --package         single package file path or package files with separator comma.
+                            ex) -P test1.zip | -P test1.zip,test2.zip
+   ## --lr, --local-repo    local repository path
+   ## -f, --force           skip version comparison and push or pull packages by force.
+                            new packages will overwrite existing ones.
+   ```
 
-To create a snapshot, use the command `ts-cli push`
+   A `snapshots` folder is created in the specified location and a snapshot is created under it.
 
-```java
-$ ts-cli push -P <package file path|list> --lr /repository/tizen_studio
-
-## -P, --package         single package file path or package files with seperator comma. 
-                          ex) -P test1.zip | -P test1.zip,test2.zip
-## --lr, --local-repo     loca repository path
-## -f, --force           skip version comparison and push or pull packages by force. 
-                          new packages will overwrite existing ones.
-```
-
-If successful, a folder named `snapshots` will be created under the location you specify, and a snapshot will be created under it. <br>
-
-![](../../media/tizen-studio/snapshot-result.png)
+   ![Snapshot creation results](media/snapshot-result.png)
 
 
-### Step 5 : Creating an Installation Image
+5. Create an installation image.  
+   Currently, installation is only supported through the Package Manager. Therefore, to install the package, you must create an image.
 
-Currently, Installation is only supported through the package manager.<br>
-So, you must create an image to install the package.
+   ```bash
+   $ ts-cli create-image -r /repository/tizen_studio -u http://download.tizen.org/sdk/tizenstudio/official -O MyImage
 
-```java
+   ## -r, --repository      local repository path in filesystem
+   ## -u, --url             base repository URL
+   ## -O, --output          image name
+   ```
 
-$ ts-cli create-image -r /repository/tizen_studio -u http://download.tizen.org/sdk/tizenstudio/official -O MyImage
-
-## -r, --repository      local repository path in filesystem
-## -u, --url             base repository URL
-## -O, --output          image name
-```
-![](../../media/tizen-studio/image-result.png)
+   ![Image creation results](media/image-result.png)
 
 
-
-### Step 6 : Installation guide
-
-- Run Package Manager
-- [Configuring the Extension SDK Repository](https://developer.tizen.org/development/tizen-studio/download/configuring-package-manager#extension)
+6. Install the package with the Package Manager.  
+   For more information on the Package Manager, see [Configuring the Extension SDK Repository](https://developer.tizen.org/development/tizen-studio/download/configuring-package-manager#extension).
