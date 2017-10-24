@@ -58,6 +58,19 @@
 ####[MIC Reference](open-source-tizen/tools/mic/mic-reference.md)
 
 #### [FAQ](open-source-tizen/tools/mic/mic-faq.md)
+
+## Tizen Studio
+### [Overview](open-source-tizen/tizen-studio/README.md)
+### [Contributing to Tizen Studio](open-source-tizen/tizen-studio/contribute-gerrit.md)
+### Developing Extensions
+#### [IDE Extension Development](open-source-tizen/tizen-studio/web-extension-guide.md)
+#### [Emulator Extension Development](open-source-tizen/tizen-studio/emulator-extension-guide.md)
+#### [Package File Description](open-source-tizen/tizen-studio/package-file-desc-guide.md)
+#### [Metapackage File Description](open-source-tizen/tizen-studio/meta-package.md)
+### Building Tizen Studio Code
+#### [Build Environment](open-source-tizen/tizen-studio/environment.md)
+#### [Local Build Guide](open-source-tizen/tizen-studio/local-build.md)
+
 ## Release Notes
 ### [Tizen 4.0 M1](open-source-tizen/release-notes/tizen-4-0-m1.md)
 ### [Tizen 3.0 M3](open-source-tizen/release-notes/tizen-3-0-m3.md)
