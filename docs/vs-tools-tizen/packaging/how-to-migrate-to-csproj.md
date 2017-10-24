@@ -1,89 +1,91 @@
-## Migration from a project from Preview version ##
+# Migration from a Preview Version Project
 
-### 1. Create new project in latest VS Tools ###
-   * New Project → Tizen → Xamarin Forms, NUI or ElmSharp
+To migrate your project:
 
-### 2. Delete ```*.cs``` files which were created automatically
-
-### 3. Copy all ```.cs``` files and ```tizen-manifest.file``` from old project to new project
-
-### 4. Change file extension in Exec field of ```tizen-manifest.file```
-
-### 5. Define whether you will make Tizen package or not
-   * Make Tizen package (Default) : Define ```<TizenCreateTpkOnBuild>true</TizenCreateTpkOnBuild>``` in ```.csproj```
-   * NOT need Tizen package : Define ```<TizenCreateTpkOnBuild>false</TizenCreateTpkOnBuild>``` in ```.csproj```
-
-### 6. Define Nuget libraries
-   * Go to ```Manage Nuget Package``` (Project → Press right mouse button → Manage Nuget Package)
-   * Include all Nuget libraries all dependencies defined in ```project.json``` of old project
-
-### 7. Define Project Reference
-   * Go to ```Project → Dependencies → Add reference```
-   * Include all reference projects defined with ```<ProjectReference>``` in ```.csproj```
-
----
-
-### Mapping Table between ```project.json``` and ```.csproj``` ###
-* See [A mapping between project.json and csproj properties of Tizen.NET projects](https://github.com/dotnet/docs/blob/master/docs/core/tools/project-json-to-csproj.md) for a comparison of project.json and csproj formats.
+1. Create a new project in the latest Visual Studio Tools.  
+   Select **New Project &gt; Tizen &gt; Xamarin Forms**, **NUI** or **ElmSharp**.
+2. Delete all automatically created `.cs` files.
+3. Copy all `.cs` files and the `tizen-manifest.xml` file from the old project into the new project.
+4. Change the file extension in the Exec field of the `tizen-manifest.xml` file.
+5. Determine whether you intend to make Tizen packages:
+   - To create Tizen packages, define `<TizenCreateTpkOnBuild>true</TizenCreateTpkOnBuild>` in the `.csproj` file. This is the default value.
+   - If you do not intent to make Tizen packages, define `<TizenCreateTpkOnBuild>false</TizenCreateTpkOnBuild>` in the `.csproj` file.
+6. Define Nuget libraries:
+   1. Go to `Manage Nuget Package` by right-clicking the project and selecting **Manage Nuget Package**.
+   2. Include all the Nuget libraries for the dependencies defined in the `project.json` file of the old project.
+7. Define project references:
+   1. Go to **Project &gt; Dependencies &gt; Add reference**
+   2. Include all reference projects defined with `<ProjectReference>` in the `.csproj` file.
 
 
-### Tips ###
-* Remove ``` <Compile>,<EmbeddedResource>,<None> ```tag : In CPS, Visual Studio can check source code if the source codes are included in solution.
-   * [Microsoft Reference Site](https://docs.microsoft.com/en-us/dotnet/core/tools/csproj#default-compilation-includes-in-net-core-projects)
-* Remove *.project.json : CPS cannot use .project.json any more.
-* Remove AssemblyInfo.cs : It will be generate automatically 
-* Don't use hint path for dll reference : Should use project reference. If the solution use hint path, dotnet CLI cannot detect it.
+## Mapping Between `project.json` and `.csproj`
+
+For a comparison of `project.json` and `csproj` formats, see [A mapping between project.json and csproj properties](https://github.com/dotnet/docs/blob/master/docs/core/tools/project-json-to-csproj.md).
+
+
+## Tips
+
+The following tips help you to optimize the migration:
+
+- Remove the ` <Compile>,<EmbeddedResource>,<None>` tag.  
+  In CPS, Visual Studio can check source code if the source code is included in a solution. For more information, see [Microsoft Reference Site](https://docs.microsoft.com/en-us/dotnet/core/tools/csproj#default-compilation-includes-in-net-core-projects).
+- Remove `*.project.json`.  
+  CPS no longer uses the `.project.json` file.
+- Remove `AssemblyInfo.cs`.  
+  This file is now generated automatically.
+- Do not use a hint path for dll reference.  
+  Use a project reference instead of a hint path. If the solution uses a hint path, the .NET CLI cannot detect it.
     ```xml
-        <Reference Include="ResourceBaseComponent, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-          <SpecificVersion>False</SpecificVersion>
-          <HintPath>..\Resources\ResourceBaseComponent\bin\Debug\ResourceBaseComponent.dll</HintPath>
-        </Reference>
+    <Reference Include="ResourceBaseComponent, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+       <SpecificVersion>False</SpecificVersion>
+       <HintPath>..\Resources\ResourceBaseComponent\bin\Debug\ResourceBaseComponent.dll</HintPath>
+    </Reference>
     ```
-    It is recommended that you change to the Project reference type as shown below.
+    It is recommended that you change to the Project reference type:
 
     ```xml
-        <ProjectReference Include="..\Resources\ResourceBaseComponent\ResourceBaseComponent.csproj" />
+    <ProjectReference Include="..\Resources\ResourceBaseComponent\ResourceBaseComponent.csproj" />
     ```
-* The final output after the project change is a dll file, and the dll files are packaged in tpk. Therefore, it is necessary to change the Exec from the manifest file to xxxx.exe -> xxxx.dll.
-* Enable generating TPK on Build
-    * Set the TizenCreateTpkOnBuild value to `true` for tpk creation in Build Project. `False` if you do not want to
-    * tizen-manifest.xml file should be exist on project root.
-    ```xml
-      <PropertyGroup>
-        <TizenCreateTpkOnBuild>true</TizenCreateTpkOnBuild>
-      </PropertyGroup>
-    ```
-    
-* Signing TPK
-    * [How to Create tpk](how-to-create-tpk.md)
-    * Set certificates information into the build property allows tpk signing.
-    * By default, when VisualStudoToolsForTizen.vsix is ​​installed, default certificate information is automatically applied. Here's how to add it separately:
-
-    ```
-    dotnet build /p:"AuthorPath=abc.p12;AuthorPass=test" /p:"DistributorPath=def.p12;DistributorPass=hello"
-    ```
-    or
+- The final output after the project change is a `.dll` file, and the `.dll` files are packaged in TPK. Therefore, it is necessary to change the Exec field in the manifest file from `xxxx.exe` to `xxxx.dll`.
+- Enable generating TPK on build.  
+  Set the `TizenCreateTpkOnBuild` value to `true` to enable TPK creation on project build, or to `false` to disable it.
+  
+  The `tizen-manifest.xml` file must be exist in the project root folder.
     ```xml
     <PropertyGroup>
-     <TizenCreateTpkOnBuild>true</TizenCreateTpkOnBuild>
-     <AuthorPath>author_test.p12</AuthorPath>
-     <AuthorPass>author_test</AuthorPass>
-     <DistributorPath>tizen-distributor-signer.p12</DistributorPath>
-     <DistributorPass>tizenpkcs12passfordsigner</DistributorPass>
+       <TizenCreateTpkOnBuild>true</TizenCreateTpkOnBuild>
     </PropertyGroup>
     ```
+ - Signing TPK packages:
+    * For more information on creating TPK packages, see [Creating a TPK Package](how-to-create-tpk.md).
+    * Set certificate information in the build property to allow TPK signing.
+    * By default, when `VisualStudoToolsForTizen.vsix` is installed, default certificate information is automatically applied. To add it separately:
 
-* Customize TPK (Exclude dll)
-    * It is possible to exclude the files included in tpk and to change the location of the dll file directory.
-    * [How to customize tpk](how-to-customize-tpk.md)
-    * If you don't want to add the referenced package in tpk, you can use ```<PrivateAssets="All">```
+      ```bash
+      dotnet build /p:"AuthorPath=abc.p12;AuthorPass=test" /p:"DistributorPath=def.p12;DistributorPass=hello"
+      ```
+      or
+      ```xml
+      <PropertyGroup>
+         <TizenCreateTpkOnBuild>true</TizenCreateTpkOnBuild>
+         <AuthorPath>author_test.p12</AuthorPath>
+         <AuthorPass>author_test</AuthorPass>
+         <DistributorPath>tizen-distributor-signer.p12</DistributorPath>
+         <DistributorPass>tizenpkcs12passfordsigner</DistributorPass>
+      </PropertyGroup>
+      ```
 
-* Portable Project Debugging
-    * If you cannot hit a breakpoint in Portable project, check the debug type in ```.csproj```
-    ```
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    ...
-    <DebugType>portable</DebugType>
-    ...
-    </PropertyGroup>
-    ```
+- Customize TPK (exclude the `.dll` file):
+  - It is possible to exclude the files included in a TPK file and to change the location of the `.dll` file directory.
+  - For more information on customizing TPK contents, see [Customizing TPK Packages](how-to-customize-tpk.md).
+  - If you do not want to add the referenced package in a TPK file, use `<PrivateAssets="All">`.
+
+- Portable project debugging:  
+  If you cannot hit a breakpoint in a portable project, check the debug type in the `.csproj` file.
+  ```
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+     ...
+     <DebugType>portable</DebugType>
+     ...
+  </PropertyGroup>
+  ```

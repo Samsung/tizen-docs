@@ -1,23 +1,27 @@
-## Manifest Editor ##
+# Manifest Editor #
 
-A Tizen .Net application project consists of exactly 1 manifest file, called tizen-manifest.xml, which is used to describe the application information. The manifest file is composed of XML elements, which include the root <manifest> element and its child elements representing application information, such as <version>, and <privileges>. The child elements are organized into a specific hierarchy. The elements can have attributes associated with them, providing more information about the element.
+A Tizen .NET application project contains a manifest file, called `tizen-manifest.xml`, which is used to describe the application information.  The manifest file is composed of XML elements, which include the root `<manifest>` element and its child elements representing application information, such as `<version>` and `<privileges>`. The child elements are organized into a specific hierarchy. The elements can have attributes associated with them, providing more information about the element.
 
-### Editing the Manifest File ###
+There are 2 different ways to edit the `tizen-manifest.xml` file:
 
-There are 2 different ways to edit the ```tizen-manifest.xml``` file:
+- Use the manifest editor to modify the manifest in a form editor:
 
-* Use the text editor to modify the XML structure directly:
-![Text Editor](../image/manifest_text_editor.png)
+  Double-click the `tizen-manifest.xml` file in the **Solution Explorer** view.
 
-   1. Right-click the ```tizen-manifest.xml``` file in the Solution Explorer.
-   2. Select ```Open with > XML (Text) Editor```.
+  **Figure: Manifest editor**
+  
+  ![Manifest editor](media/manifest-overview.png)
 
-* Use the manifest editor to modify the manifest in a form editor:
+- Use the text editor to modify the XML structure directly:
 
-Double-click the ```tizen-manifest.xml``` file in the Solution Explorer.
-![Manifest Editor](../image/manifest_overview.png)
+  1. Right-click the `tizen-manifest.xml` file in the **Solution Explorer** view.
+  2. Select **Open with &gt; XML (Text) Editor**.
 
-```
-Note
-The tizen-manifest.xml file must conform to both the standard XML file format and the Tizen .Net application specification requirements. Editing the manifest file XML structure with the text editor is intended for advanced users only. If the file does not conform to the standard and requirements, errors can occur during installation.
-```
+  **Figure: Text editor**
+
+  ![Text editor](media/manifest-text-editor.png)
+
+> **Note**
+>
+> The `tizen-manifest.xml` file must conform to both the standard XML file format and the Tizen .NET application specification requirements. Editing the manifest file XML structure with the text editor is intended for advanced users only. If the file does not conform to the standard and the requirements, errors can occur during installation.
+

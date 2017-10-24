@@ -1,67 +1,69 @@
-﻿## How to use Samsung Certificates and deploy it in devices ##
+﻿# Samsung Certificates
+Before installing your application on a device, it must be signed with a certificate profile. The signature verifies the source of the application and makes sure it has not been tampered with since its publication.
 
-### Install Samsung Certificate Extension ##
+## Installing the Samsung Certificate Extension
 
-1. Execute ```Tizen Package Manager``` in Tools menu
+To install the Samsung Certificate Extension:
 
-![Tools menu](../image/SamsungExt_packagemgr.png)
+1. In the Visual Studio menu, select **Tools &gt; Tizen &gt; Tizen Package Manager**.  
+2. Configure the repository server (during development stage only):
+    1. In the **Package Manager** window, open the **Configuration** window by clicking the gear icon.  
+    ![Tools menu](media/samsungext-packagemgr-run.png)
+    1. In the **Configuration** window, scroll down to the **Extension SDK** panel, or click **Extension SDK** to unfold it.  
+    ![Package Manager](media/samsungext-packagemgr-conf.png)
+    1. To open the **Add Repository** dialog box, click **+** above the repository information table.
+    1. Enter a name for the repository, and in the **Repository** field, enter the following address: 
+        > `http://10.113.138.168/packages/sec_cert_extension`
+    1. Click **OK**.  
+    The repository information is added to the table in the **Configuration** window.  
+        ![New repository added](media/samsungext-packagemgr-setrepo.png)
+    1. Click **OK** to confirm.
+3. Install the extension:  
+   In the **Package Manager**, select the **Extension SDK** tab and click **install** next to **Samsung Certificate Extension**.  
+   ![Install the extension](media/samsungext-install.png)
 
-2. Run ```Tizen Package Manager``` and move ```Configuration``` menu
+## Creating Samsung Certificate Profiles
 
-![Tools menu](../image/SamsungExt_packagemgrRun.png)
+To create a Samsung Certificate profile:
 
-![Package Manager](../image/SamsungExt_packagemgrConf.png)]
+1. In the Visual Studio menu, select **Tools &gt; Tizen &gt; Tizen Certificate Manager**.  
 
-* (Only under Develop stage) Set the repository server for Samsung Cerificate Extension
-   * Extension SDK > '+' > Add ```http://10.113.138.168/packages/sec_cert_extension```
+2. Click **+** to create a new certificate profile.  
+   ![Certificate Manager](media/certificatemgr-step1.png)
 
-![Set Repository](../image/SamsungExt_packagemgrSetrepo.png)
+3. Click **Samsung**.  
+    ![Create Samsung Certificate](media/samsungext-newprofile.png)
 
-3. Install Samsung Certificate Manager
+4. Enter the required information to create the certificate profile.  The process is similar to [creating a Tizen certificate profile](certificate-manager.md#creating-a-certificate-profile).  
+    You must sign in with your Samsung Developer account, and enter the device ID (DUID) for each of your target devices.
 
-![Install Extension](../image/SamsungExt_install.png)
+## Selecting the Certificate Profile
 
----
+To select the certificates used to package your application (to set the certificate active):
 
-### Make Samsung Certificate ###
 
-1. Execute ```Tizen Certificate Manager```
+1. In the Visual Studio menu, go to **Tools &gt; Options &gt; Tizen &gt; Certification**.
+2. Check the **Sign the .TPK file using the following option.** checkbox, and select **Use profile of Tizen Certificate Manager** from the drop-down list.
+3. Make sure that your Samsung certificate profile is selected in the **Profile** drop-down list.  
+![Certificate selection](media/samsungext-option.png)
+4. Click **OK**.
 
-2. Click the plus icon ('+') to create a new profile
 
-![Certificate Manager](../image/CertificateMgr_step1.png)
+## Allowing Application Installation
+When using a version 1.0 distributor certificate, before you can test your application on an emulator or target device, you must push the `device_profiler.xml` file to it.
 
-3. Select Samsung certificate
+> **Note**
+>
+> Make sure that the DUID for your target device was entered during the [certificate creation process](#creating-samsung-certificate-profiles).
 
-![Select Samsung Certificate](../image/SamsungExt_newProfile.png)
+To allow applications to be installed on a target device:
+1. In the Visual Studio menu, select **Tools &gt; Tizen &gt; Tizen Device Manager**.
+2. Launch the emulator or connect the target device to your computer.  
+![Device Manager](media/samsungext-devicemgr.png)
 
-4. Refer [Certificate Manager](certificate-manager.md) from next step
-   * Except for loging to Samsung account and adding DUIDs, almost is same between Samsung and Tizen
 
----
-
-### Activate Samsung Certificate in option ###
-
-1. Go to option menu (Tools > Options > Tizen > Certification)
-
-![Option menu](../image/SamsungExt_option.png)
-
----
-
-### Push ```device_profiler.xml``` (in case of using 1.0 distribute certificate)
-
-1. Execute ```Tizen Device Manager``` and Connect device or emulator
-
-![Device Manager](../image/SamsungExt_deviceMgr.png)
-
-2. Click ```Permit to install applications``` in folder hierarchy window
-
-![Permit to Install](../image/SamsungExt_permitToInstall.png)
-
-3. Check the success message
-
-![Success Message](../image/SamsungExt_success.png)
-
-* If Device Manager shows below message, check that DUIDs which you added is compatible with connected devices
-
-![Faile Message](../image/SamsungExt_failDUID.png)
+3. Select the emulator or device from the list.
+4. Right-click the **File Explorer** view, and select **Permit to install applications**.  
+![Permit installing applications](media/samsungext-permittoinstall.png)  
+    The `device_profiler.xml` file is pushed to the device.  
+    ![Success message](media/samsungext-success.png)

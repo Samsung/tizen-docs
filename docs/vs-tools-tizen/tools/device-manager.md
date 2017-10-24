@@ -1,65 +1,57 @@
-## Device Manager ##
+# Device Manager
 
-Tizen Device Manager is a standalone tool that provides informations of connected Tizen device or emulators for application debugging.
+Tizen Device Manager is a standalone tool that provides information about connected Tizen devices or emulators for application debugging purposes.
 
-With this tool, you can manage the connected devices or emulators and you can also push or pull files from host PC to devices. Plus, the log viewer in device manager can help you to check logs from connected devices too.
+With this tool, you can manage the connected devices or emulators and push or pull files from the host computer to devices. In addition, the Device Manager **Log View** allows you to check logs from connected devices.
 
-The features provided are as follows.
 
-* Connection Explore View
-* Log View
+## Launching the Device Manager
 
----
+You can launch the Tizen Device Manager in 2 ways:
 
-### Launching Tizen Device Manager ###
+- In the Visual Studio menu, select **Tools &gt; Tizen &gt; Tizen Device Manager**.
 
-You can launch the Tizen Device Manager with below action
+  ![Menu for Device Manager](media/dm-menu.png)
 
-* From Visual Studio tools for Tizen, select Tools > Tizen > Tizen Device Manager.
+- In the Windows Explorer, select the Device Manager executable in `%tizen_baseline_root%/tools/device-manager/bin`.
 
-![Menu for Device Manager](../image/dm_menu.png)
+  ![Explorer for Device Manager](media/dm-explorer.png)
 
-* From File Explorer, select ```%tizen_baseline_root%/tools/device-manager/bin```.
+Both methods open the Device Manager main screen, where you can see the **Connection Explorer** view at the top and the **Log View** at the bottom.
 
-![Explorer for Device Manager](../image/dm_explorer.png)
+**Figure: Device Manager**
 
-If you can select this tool with above, Tizen Device Manager will be shown.
+![Device Manager](media/dm-first-screen.png)
 
-![Device Manager](../image/dm_first_screen.png)
 
----
+## Connection Explorer View
 
-### Connection Explore View ###
+The **Connection Explorer** view shows the devices and emulators connected to the system. A list of connected devices is available after connecting a device or launching a Tizen emulator with a tree view.
 
-The connection explorer view shows the devices or emulators connected to the system.
+The **Connection Explorer** view provides the following actions for the connected devices:
 
-A list of connected devices is available after connecting a device or launching a Tizen emulator with a tree view.
+- Show a list of connected devices and connects devices for running and debugging the application.
+- Provide file operations (such as push and pull) on connected devices.
+- Send or receive files between the **Solution Explorer** and **Connection Explorer** views by dragging and dropping.
+  - The view shows the folder and file list of the connected device.
+  - The view shows information of the file (date/size).
+  - You can create, delete, and rename files.
+  - You can upload and download files.
+- Explore the file system on the connected devices.
+- Launch the Emulator Manager to handle multiple emulator instances.
 
-The connection explorer view provides the following actions for the connected devices:
+**Figure: Connection Explorer view**
 
-* Show a list of connected devices and connects devices for running and debugging the application.
-* Provide file operations on connected devices like as push or pull.
-* Send or receive files between the Project Explorer and Connection Explorer views by dragging and dropping.
-    * Showing folder/file list of connected device
-    * Information of file (date/size)
-    * Create / Delete / Rename
-    * Upload / Download
-* Explore the file system on the connected devices.
-* Launch the Emulator Manager to handle the multiple instances of the emulator.
+![Connection Explorer view](media/dm-connection-explorer-view.png)
 
-![Device Manager Connected](../image/dm_connection_explorer_view.png)
 
----
+## Log View
 
-### Log View ###
+The **Log View** helps you debug your application by capturing all the events logged by the platform and your application. The **Log View** shows the logs through the Tizen logging system.
 
-The Log view helps you debug your application by capturing all the events logged by the platform and your application.
+To create log messages, reference the Tizen library in your project and call the methods of the [Tizen.Log](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Log.html) class:
 
-The Log view shows the logs through the Tizen.Library.
-
-You can create a log message as below. Tizen.Library is referenced in your project. So, you can call Log function.
-
-```
+```csharp
 using System;
 using Tizen;
 
@@ -89,69 +81,55 @@ namespace CrossTemplate1.Tizen.Mobile
 }
 ```
 
----
+The **Log View** displays a log table consisting of the following fields:
 
-### Adding and Removing the Log Tab ###
+- **Time**: log time
+- **Level**: priority level that indicates the urgency of the log message
+- **Pid**: process ID
+- **Tid**: thread ID
+- **Tag**: identification of the log message source
+- **Message**: log message
 
-Adding a log tab:
+### Adding and Removing Log Tabs
 
-1. Click the Add LogTab icon.
-2. Type the tab name in the Name field and select a device in the Device list.
-3. Click ```OK```.
+To add a log tab:
 
-![](../image/dm_log_add_tab.png)
+1. Click the **Add LogTab** icon.
+2. Type the tab name in the **Tab Name** field, select a device in the **Device** list, and click **OK**.
 
-![](../image/dm_log_added_tab.png)
+   ![Add Log Tab](media/dm-log-add-tab.png)
 
-Removing a log tab:
+**Figure: Added log tab**
 
-* Click the log tab which you want to remove.
-* Click the Remove LogTab button.
+![Added log tab](media/dm-log-added-tab.png)
 
----
+To remove a log tab:
 
-### Understanding and Filtering Logs ###
+1. Click the log tab to be removed.
+2. Click the **Remove LogTab** icon.
 
-The log table consists of the following fields:
 
-* Time: log time
-
-* Level: priority level indicates the urgency of the log message
-
-* Pid: process ID
-
-* Tid: thread ID
-
-* Tag: identification of the log message source
-
-* Message: log message
+### Understanding and Filtering Logs
 
 In the log table, you have the following options and functions:
 
-* Log level filtering option
+- Log level filtering option  
+  In the **Log View**, you can filter the log messages. Click the arrow in the **Level** field, select the messages types you want to see, and click **OK**.
 
-    * In the Log view, you can filter the log messages using the V (verbose), D (debug), I (info), W (warning), E (error), and F (fatal) menu to show specific log messages suitable to the selected type.
+  ![Log level filter](media/dm-log-level-filter.png)
 
-    ![Log Level Filter](../image/dm_log_level_filter.png)
+- Keyword filtering option  
+  You can filter the log messages by clicking the arrow in the **Pid** and **Tag** fields, selecting the wanted values, and clicking **OK**. To filter based on the **Message** field content, enter keywords at the search box at the top of the **Log View**. The keywords must be separated by a space and a comma.
 
-* Keyword filtering option
-    * You can filter the log messages by selecting one of the PID, Tag, and Message options, or entering keywords at the search box which is in the bottom of the log view. The keywords must be separated by a space and a comma.
+  ![Keyword filter](media/dm-log-filter-option.png)
 
-    ![Log Level Filter](../image/dm_log_filter_option.png)
+- Scroll lock  
+  The log table shows the latest logs by default. While the application is running, the log table scrolls as new logs are added to the table. To stop the table from scrolling while you are checking a specific log, click the **Scroll Lock** button (![Scroll Lock](media/dm-scroll-lock.png)).
 
-* Scroll lock
-    * The log table shows the latest logs by default. This can make you uncomfortable when checking the specified log. Enable scroll lock when checking a specified log.
+- Clearing the table  
+  You can remove all log messages from the log tab by clicking the **Clear the Log** button (![Clear Log](media/dm-clear-log.png)).
 
-    ![Scroll Lock](../image/dm_scroll_lock.png)
- 
-* Clearing the table
-    * You can remove all log messages from the log tab by clicking the clear the log icon.
+- Exporting logs to a file  
+  You can export the current log messages in the log tab and save them as a log file by clicking the **Export the Log** button (![Export file](media/dm-export.png)).
 
-    ![Clear Log](../image/dm_clear_log.png)
-
-* Exporting logs to a file
-    * You can export the current log messages in the log tab and save them as a log file by clicking the export the log icon.
-
-    ![Export file](../image/dm_export.png)
- 
 
