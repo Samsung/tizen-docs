@@ -1,25 +1,23 @@
 # Command Line Interface
-The .NET CLI (Command Line Interface) Ext provides functionalities for developing Tizen .NET applications without the IDE.
+The .NET CLI (Command Line Interface) provides functionalities for developing Tizen .NET applications without the IDE.
 It includes the entire development process from creating the project to running the application. The CLI tool is located in the `$<TIZEN_BASELINE_SDK>/tools/ide/bin/` directory.
 
 > **Note**
 >
-> The .NET CLI Ext does not support restoring and building Xamarin.Forms projects, as the .NET Core CLI 2.0.0 does not fully support Xamarin.Forms.
+> The .NET CLI does not support restoring and building Xamarin.Forms projects, as the .NET Core CLI 2.0.0 does not fully support Xamarin.Forms.
 
 ## Prerequisites
 
-The following tools must be installed to use the .NET CLI Ext:
+The following tools must be installed to use the .NET CLI:
 
-- Tizen Baseline SDK (including Tizen C# CLI)
+- Tizen Baseline SDK
 - .NET Core CLI tools 2.0.0
 
 ## Setting Configuration Options
-The `cli-config` command displays, sets, replaces, and removes .NET CLI Ext configuration options.
+The `cli-config` command displays, sets, replaces, and removes .NET CLI configuration options.
 
-The .NET CLI Ext configuration keys are:
+The .NET CLI configuration keys are:
 
-- `default.build.architecture=<x86|arm>`: Sets the default executable architecture type.
-- `default.build.compiler=<llvm|gcc>`: Sets the default compiler.
 - `default.build.configuration=<Debug|Release>`: Sets the default build configuration.
 - `default.csharp.buildtool.path=<path/to/msbuild>`: Sets the C# build tool path. The default is `C:/Program Files (x86)/MSBuild/15.0/Bin/MSBuild.exe`.
 - `default.csharp.toolchain=<dotnet-cli|msbuild>`: Sets the C# build tool. The default is `dotnet-cli` for Windows&reg; and Ubuntu, and `msbuild` is only supported on Windows&reg;.
@@ -37,23 +35,21 @@ dotnet tizen cli-config [arguments] [options]
 
 | Argument | Description |
 | ------ | ------ |
-| `<KEY>=<VALUE>` | Sets a value for the .NET CLI Ext configuration key. |
+| `<KEY>=<VALUE>` | Sets a value for the .NET CLI configuration key. |
 
 **Options:**
 
 | Option | Description |
 | ------ | ------ |
 | `-g`, `--global` | Specifies whether the operation must be done for a global scope (for all installed SDKs or for the current Tizen Baseline SDK only). |
-| `-l`, `--list` | Displays the list of all .NET CLI Ext configuration keys and values. |
-| `-d`, `--delete <KEY>` | Removes the .NET CLI Ext configuration key and value. |
+| `-l`, `--list` | Displays the list of all .NET CLI configuration keys and values. |
+| `-d`, `--delete <KEY>` | Removes the .NET CLI configuration key and value. |
 
 **Examples:**
 - Display a list of all configurations for which values are set:
   - Windows&reg;, Ubuntu, and macOS:
     ```sh
     > dotnet tizen cli-config -l
-    default.build.architecture=x86
-    default.build.compiler=llvm
     default.build.configuration=Debug
     default.csharp.buildtool.path=C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe
     default.csharp.toolchain=dotnet-cli
@@ -73,7 +69,7 @@ dotnet tizen cli-config [arguments] [options]
 
 
 ## Creating a Tizen .NET Project
-The `new` command creates a Tizen .NET project from a template. If a template is not specified, the command displays project templates, with a usage message.
+The `new` command creates a Tizen .NET project from a template. If a template is not specified, the command displays project templates and a usage message.
 
 **Syntax:**
 ```
@@ -90,8 +86,8 @@ dotnet tizen new [arguments] [options]
 
 | Option | Description |
 | ------ | ------ |
-| `-n`,  `--name <PROJECT_NAME>` | Specifies the project name. If no name is specified, the name of the current directory is used. |
-| `-o`, `--output <OUTPUT_DIR>` | Specifies the output path for the output being created.  |
+| `-n`,  `--name <PROJECT_NAME>` | Specifies the project name. If no name is specified, the template name is used. |
+| `-o`, `--output <OUTPUT_DIR>` | Specifies the output directory path for the output being created. If no output directory is specified, the current directory is used. |
 | `-all`, `--show-all` | Shows all templates. |
 
 **Examples:**
@@ -108,8 +104,8 @@ dotnet tizen new [arguments] [options]
 
     Options:
       -h, --help                 Show help information.
-      -n, --name <PROJECT_NAME>  Project name. If no name is specified, the name of the current directory is used.
-      -o, --output <OUTPUT_DIR>  The output directory path for the output being created.
+      -n, --name <PROJECT_NAME>  The project name. If no name is specified, the template name is used for the project name.
+      -o, --output <OUTPUT_DIR>  The output directory path for the output being created. If no output directory is specified, the current directory is used as the root directory.
       -all, --show-all           Show all templates.
 
     Examples:
@@ -172,7 +168,7 @@ dotnet tizen build [arguments] [options]
 
 | Argument | Description |
 | ------ | ------ |
-| `<PROJECT>` | Specifies the MSBuild project file (`.csproj`) to build. If a project file is not specified, .NET Core CLI (MSBuild) searches the current working directory for a file that has a file extension that ends in `proj` and uses that file. |
+| `<PROJECT>` | Specifies the MSBuild project file (`.csproj`) to build. If a project file is not specified, .NET Core CLI (MSBuild) searches the current working directory for a file that has a file extension that ends in `csproj` and uses that file. |
 
 **Options:**
 
@@ -207,7 +203,7 @@ dotnet tizen clean [arguments]
 
 | Argument | Description |
 | ------ | ------ |
-| `<PROJECT_DIR>` | Specifies the project directory. Defaults to the current directory if nothing is specified. |
+| `<PROJECT_DIR>` | Specifies the project directory. Defaults to the current directory if no directory is specified. |
 
 **Examples:**
 - Clean the Tizen .NET project:
@@ -451,10 +447,10 @@ dotnet tizen run [options]
 |`-s`, `--serial <TARGET_SERIAL>` | Specifies the serial to run the package on. |
 
 **Examples:**
-- Run the Tizen .NET application with the package ID `org.tizen.example.blank` on `emulator-26101`:
+- Run the Tizen .NET application with the package ID `blank` on `emulator-26101`:
   - Windows&reg;, Ubuntu, and macOS:
     ```sh
-    > dotnet tizen run -p org.tizen.example.blank -s emulator-26101
+    > dotnet tizen run -p blank -s emulator-26101
     ```
 
 ## Uninstalling an Application from a Target
@@ -473,14 +469,14 @@ dotnet tizen uninstall [options]
 | `-s`, `--serial <TARGET_SERIAL>` | Specifies the serial to uninstall the package from. |
 
 **Examples:**
-- Uninstall the Tizen .NET application with the package ID `org.tizen.example.blank` from `emulator-26101`:
+- Uninstall the Tizen .NET application with the package ID `blank` from `emulator-26101`:
   - Windows&reg;, Ubuntu, and macOS:
     ```sh
-    > dotnet tizen uninstall -p org.tizen.example.blank -s emulator-26101
+    > dotnet tizen uninstall -p blank -s emulator-26101
     ```
 
-## Displaying the .NET CLI Ext Version
-The `--version` option displays the .NET CLI Ext version number.
+## Displaying the .NET CLI Version
+The `--version` option displays the .NET CLI version number.
 
 **Syntax:**
 ```
@@ -488,7 +484,7 @@ dotnet tizen [-v|--version]
 ```
 
 **Examples:**
-- Display the .NET CLI Ext version number:
+- Display the .NET CLI version number:
   - Windows&reg;, Ubuntu, and macOS:
     ```sh
     > dotnet tizen --version
