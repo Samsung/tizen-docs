@@ -9,7 +9,7 @@ To migrate your project:
 4. Change the file extension in the Exec field of the `tizen-manifest.xml` file.
 5. Determine whether you intend to make Tizen packages:
    - To create Tizen packages, define `<TizenCreateTpkOnBuild>true</TizenCreateTpkOnBuild>` in the `.csproj` file. This is the default value.
-   - If you do not intent to make Tizen packages, define `<TizenCreateTpkOnBuild>false</TizenCreateTpkOnBuild>` in the `.csproj` file.
+   - If you do not intend to make Tizen packages, define `<TizenCreateTpkOnBuild>false</TizenCreateTpkOnBuild>` in the `.csproj` file.
 6. Define Nuget libraries:
    1. Go to `Manage Nuget Package` by right-clicking the project and selecting **Manage Nuget Package**.
    2. Include all the Nuget libraries for the dependencies defined in the `project.json` file of the old project.
