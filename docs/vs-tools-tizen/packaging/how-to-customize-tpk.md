@@ -2,10 +2,6 @@
 
 You can customize TPK packages in various ways.
 
-For more information, see:
-- [Packaging tpk with Tizen.NET.Sdk](https://github.sec.samsung.net/dotnet/build-task-tizen/blob/master/doc/tizen.net.sdk-packaging-tpk.md)
-- [Tizen.NET.Sdk Reference](https://github.sec.samsung.net/dotnet/build-task-tizen/blob/master/doc/tizen.net.sdk-reference.md)
-
 ## Prerequisites
 
 For information on how to create a TPK package, see [Creating a TPK Package](how-to-create-tpk.md).
