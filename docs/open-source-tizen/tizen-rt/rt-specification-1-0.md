@@ -1,15 +1,6 @@
 # Tizen RT 1.0 Specification
 
-This specification describes the following features:
-
-- [IoT Data Management](rt-specification-1-0.md#data)
-- [Device Management](rt-specification-1-0.md#device)
-- [IP Network](rt-specification-1-0.md#ip)
-- [IoTivity](rt-specification-1-0.md#iot)
-- [IoTBus Framework](rt-specification-1-0.md#iotbus)
-- [Device Management Framework](rt-specification-1-0.md#device_framework)
-
-## IoT Data Management<a name="data"></a>
+## IoT Data Management
 Tizen RT manages data in the following ways:
 - File system support  
 Tizen RT supports not only the SmartFS lightweight file system, but also a virtual file system (VFS). The VFS can provide a common interface set in the form of the POSIX API. Standard libc APIs are already supported. In addition, some advanced features are also included:
@@ -21,7 +12,7 @@ AraStorage, a lightweight database, can manipulate collected sensor data with SQ
     - b+ tree-based indexing algorithm
     - Cursor structure to improve usability for the application layer
 
-## Device Management<a name="device"></a>
+## Device Management
 
 Tizen RT incorporates the OMA-based Lightweight M2M (LWM2M) protocol for device management. LWM2M is an application layer communication protocol between an LWM2M server and an LWM2M client that typically resides on a resource-constrained device. The LWM2M protocol can be briefly described in the context of its interface and stack design:
 
@@ -35,13 +26,13 @@ Tizen RT incorporates the OMA-based Lightweight M2M (LWM2M) protocol for device 
   - DTLS security: While LWM2M optionally functions in a 'NoSec' (no security) mode, it also allows the use of DTLS (Datagram Transport Layer Security) to ensure authentication, data confidentiality, and integrity between an LWM2M client and an LWM2M server or bootstrap server. The LWM2M client has the option of bootstrapping with a pre-shared secret, or with public certificates (either raw public keys or X.509v3). In all cases, the LWM2M client must possess a unique key for securing communication with the LWM2M bootstrap server and the LWM2M server. These features are planned to be supported on Tizen RT.
   - UDP: LWM2M allows the use of both UDP and SMS protocols for communication between a client and server. The lightweight M2M component in Tizen RT uses UDP binding over port 5683. Reliability over UDP is achieved using the CoAP retransmission mechanism.
 
-## IP Network<a name="ip"></a>
+## IP Network
 
 For the TCP, UDP, and IPv4 protocols, LWIP is already ported on Tizen RT and successfully verified. As for IPv6, the uIP-based stack is already implemented and was granted the "[IPv6 Ready Logo](https://www.ipv6ready.org/db/index.php/public/logo/02-C-001400/)" by the IPv6 Forum. To increase maintainability, a common base for the network stack is needed. Both IPv4 and IPv6 based on the common project (such as LWIP or uIP) are to be released.
 
 Transition between IPv4 and IPv6 is also required. Suppose that sensor devices are equipped with only IPv6 over IEEE 802.15.4 or IPSP/BLE. These devices need to connect to the Internet directly or through hubs or other IoT devices. Tizen RT is preparing to fit into these relaying IoT devices by implementing transition functions between IPv4 and IPv6.
 
-## IoTivity<a name="iot"></a>
+## IoTivity
 
 Tizen RT 1.0 currently supports IoTivity 1.1.0. The next release updates IoTivity support to version 1.2.
 
@@ -55,7 +46,7 @@ The following figure shows the IoTivity base layer architecture. The architectur
 
 **Figure: IoTivity base layer architecture**
 
-![IoTivity base layer architecture)](media/iotivity_baseline_architecture.png)
+![IoTivity base layer architecture)](media/iotivity-baseline-architecture.png)
 
 The following table describes the IoTivity 1.2 features in Tizen RT.
 
@@ -93,7 +84,7 @@ Tizen RT supports:
 - Message-oriented communication interface for the cloud. This interface can be used for a publish/subscribe-based information exchange. A resource model for a CoAP-based message broker is to be provided.
 
 
-## IoTBus Framework<a name="iotbus"></a>
+## IoTBus Framework
 
 The IoTBus Framework supports system I/O APIs, including the following 5 API categories:
 
@@ -108,7 +99,7 @@ Provides functions to get and set duty cycles and periods of PWM devices. These 
 - UART (Universal Asynchronous Receiver/Transmitter)  
 Provides functions to read and write for asynchronous serial communication. These APIs are usually used in conjunction with communication standards, such as RS-232, RS-422, and RS-485.
 
-## Device Management Framework<a name="device_framework"></a>
+## Device Management Framework
 
 The following features are to be made available under the Device Management Framework:
 

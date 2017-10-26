@@ -4,7 +4,7 @@ This guide describes the Telephony architecture in detail, including the various
 
 The Tizen Telephony features include:
 - Telecommunication functionalities, such as call, SS, SMS, SIM, network, and packet service
-  - Plug-in architecture
+- Plug-in architecture
 
 
 To understand the telephony implementation, you must be familiar with the following definitions:
@@ -26,7 +26,7 @@ Tizen Telephony supports plugin architecture, which provides the flexibility to 
 
 **Figure: Telephony architecture**
 
-![Telephony architecture](media/Telephony-arch.png)
+![Telephony architecture](media/telephony-arch.png)
 
 The 3 major components of Tizen Telephony are the libraries, plugins, and server.
 
@@ -40,7 +40,7 @@ There are 2 main telephony libraries:
 
   **Figure: libtapi components**
 
-  ![libtapi components](media/Libtapi.PNG)
+  ![libtapi components](media/libtapi.png)
 
   Applications can interface to telephony features, such as call, SMS, and network, through the respective module APIs exposed in the `libtapi` library. Telephony also provides an additional library, `capi-telephony`, for third-party applications.
 
@@ -50,7 +50,7 @@ There are 2 main telephony libraries:
 
   **Figure: libtcore components**
 
-  ![libtcore components](media/Telephony03.png)
+  ![libtcore components](media/telephony03.png)
 
   With `libtcore`, you can:
 
@@ -72,7 +72,7 @@ The following figure provides an overview of the Telephony plugin types.
 
 **Figure: Telephony plugins**
 
-![Telephony plugins](media/Telephony08.png)
+![Telephony plugins](media/telephony08.png)
 
 ## Telephony Server
 
@@ -82,7 +82,7 @@ The Telephony server executes as a `g-main` loop from the `glib` library.
 
 **Figure: Telephony server**
 
-![Telephony server](media/Telephony09.png)
+![Telephony server](media/telephony09.png)
 
 ## Porting the OAL Interface
 
@@ -92,30 +92,29 @@ This section provides guidance to OEM vendors to develop various Telephony plugi
 
 ### Plugin Descriptor
 
-Each telephony plugin must provide a descriptor structure, as in the following.
+Each telephony plugin must provide a descriptor structure:
 
-- **Structure**
-  ```c
-  struct tcore_plugin_define_desc {
+```c
+struct tcore_plugin_define_desc {
     /* Name of the plugin */
     gchar *name;
-    
+
     /* Initializing priority of the plugin */
     enum tcore_plugin_priority priority;
-    
+
     /* Plugin version */
     int version; 
-    
+
     /* Plugin 'load' function reference */
     gboolean(*load)(); 
-    
+
     /* Plugin 'init' function reference */
     gboolean(*init)(TcorePlugin *);
-    
+
     /* Plugin 'unload' function reference */
     void (*unload)(TcorePlugin *); 
-  };
-  ```
+};
+```
 
 The plugin descriptor structure must be named as `plugin_define_desc`. The server obtains the address of this symbol to give control to the plugin to execute its defined functionality.
 
@@ -125,11 +124,10 @@ OEMs need to specifically implement the modem and modem interface plugins to sup
 
 ### Call Service Operations
 
-To provide call services, the functions described in the following table must be implemented.
+To provide call services, the following functions must be implemented:
 
-- **Functions**
-  ```c
-  struct tcore_call_operations {  
+```c
+struct tcore_call_operations {  
     /* Call 'dial' function reference */
     TReturn (*dial)(CoreObject *o, UserRequest *ur); 
     
@@ -153,14 +151,12 @@ To provide call services, the functions described in the following table must be
     
     /* Call 'split' function reference */
     TReturn (*split)(CoreObject *o, UserRequest *ur); 
-  };
-  ```
+};
+```
 
 ### SMS Service Operations
 
-To provide SMS services, the functions described in the following table must be implemented.
-
-**Functions**
+To provide SMS services, the following functions must be implemented:
 
 ```c
 struct tcore_sms_operations {
@@ -195,9 +191,7 @@ struct tcore_sms_operations {
 
 ### Network Service Operations
 
-To provide network services, the functions described in the following table must be implemented.
-
-**Functions**
+To provide network services, the following functions must be implemented:
 
 ```c
 struct tcore_network_operations {
@@ -226,9 +220,7 @@ struct tcore_network_operations {
 
 ### HAL Operations
 
-To provide HAL operations, the functions described in the following table must be implemented.
-
-**Functions**
+To provide HAL operations, the following functions must be implemented:
 
 ```c
 struct tcore_hal_operations {
@@ -245,7 +237,7 @@ struct tcore_hal_operations {
 };
 ```
 
-For sample implementations of the modem and modem interface plugins, see [Sample Modem Interface Plugin Implementation](telephony.md#appendix).
+For sample implementations of the modem and modem interface plugins, see [Sample Modem Interface Plugin Implementation](#sample-modem-interface-plugin-implementation).
 
 ## Configuration
 
@@ -259,36 +251,22 @@ Telephony plugins must be installed in the following folders:
 Tizen source site: [http://review.tizen.org/git/](http://review.tizen.org/git/)
 
 Telephony packages:
-- Telephony daemon  
-  `platform/core/telephony/telephony-daemon.git`
-- Telephony core library  
-  `platform/core/telephony/libtcore.git`
-- TAPI  
-  `platform/core/telephony/libtapi.git`
+- Telephony daemon
+- Telephony core library
+- TAPI
 - Telephony API for a third party application
-  `platform/core/api/telephony.git`
-- Communicator (DBUS_TAPI)  
-  `platform/core/telephony/tel-plugin-dbus_tapi.git`
-- Free style plugin (indicator)  
-  `platform/core/telephony/tel-plugin-indicator.git`
-- Free style plugin (packetservice)  
-  `platform/core/telephony/tel-plugin-packetservice.git`
-- Free style plugin (nitz)  
-  `platform/core/telephony/tel-plugin-nitz.git`
-- Free style plugin (Database)  
-  `platform/core/telephony/tel-plugin-vconf.git`
-- Free style plugin (VCONF)  
-  `platform/core/telephony/tel-plugin-database.git`
-- Modem plugin (device)  
-  `platform/core/telephony/tel-plugin-imc.git`
-- Modem interface plugin (device)  
-  `platform/core/telephony/tel-plugin-imcmodem.git`
-- Modem plugin (emulator)  
-  `platform/core/telephony/tel-plugin-atmodem.git`
-- Modem interface plugin (emulator)  
-  `platform/core/telephony/tel-plugin-vmodem.git`
+- Communicator (DBUS_TAPI)
+- Free style plugin (indicator)
+- Free style plugin (packetservice)
+- Free style plugin (nitz)
+- Free style plugin (Database)
+- Free style plugin (VCONF)
+- Modem plugin (device)
+- Modem interface plugin (device)
+- Modem plugin (emulator)
+- Modem interface plugin (emulator)
 
-## Sample Modem Interface Plugin Implementation<a name="appendix"></a>
+## Sample Modem Interface Plugin Implementation
 
 ```c
 /* HAL Operations */
@@ -605,11 +583,11 @@ struct tcore_plugin_define_desc plugin_define_desc = {
 
    14. The communicator creates interfaces for the sub-modules present, based on the core objects created.
 
-    The following figure shows the telephony loading sequence.
+   **Figure: Initialization sequence**
 
-   ![Telephony11.png](media/Telephony11.png)
+   ![Telephony11.png](media/telephony11.png)
 
-   ​
+
 
 - Request processing sequence
    1. The application request is sent to the communicator through TAPI.
@@ -636,8 +614,9 @@ struct tcore_plugin_define_desc plugin_define_desc = {
 
    12. The physical HAL sends the request data to the modem.
 
-    The following figure shows the telephony request processing sequence.
-   ![Telephony11.png](media/Telephony11.png)
+   **Figure: Request processing sequence**
+
+   ![Request processing sequence](media/telephony11.png)
 
 
 - Response processing sequence
@@ -657,9 +636,9 @@ struct tcore_plugin_define_desc plugin_define_desc = {
 
    8. The communicator sends the response data to TAPI, which communicates it to the application.
 
-      The following figure shows the telephony response processing sequence.
+   **Figure: Response processing sequence**
 
-   ![Telephony12.png](media/Telephony12.png)
+   ![Response processing sequence](media/telephony12.png)
 
 
 - Indication processing sequence
@@ -677,5 +656,6 @@ struct tcore_plugin_define_desc plugin_define_desc = {
 
    7. The communicator sends the notification data to TAPI, which communicates it to the application.
 
-      The following figure shows the telephony indication processing sequence.
-   ![Telephony13.png](media/Telephony13.png)
+   **Figure: Indication processing sequence**
+
+   ![Telephony13.png](media/telephony13.png)

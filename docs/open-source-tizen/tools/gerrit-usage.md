@@ -16,7 +16,8 @@ You can perform various operations in Gerrit:
   $ git push ssh://review.tizen.org/<PROJECT_NAME> c0ffee:refs/changes/1979
   ```
 
-  > **Tip:**  
+  > **Tip:**
+  >
   > Sometimes you can use the `git commit --amend` command to update an existing local commit, and then push to Gerrit using `HEAD:refs/changes/1979`, instead of having to use a hash ID.
 
 - To use command line tools

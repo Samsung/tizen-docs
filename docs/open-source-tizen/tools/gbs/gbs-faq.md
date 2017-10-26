@@ -1,15 +1,6 @@
-# FAQ
+# GBS Frequently Asked Questions
 
-The following sections cover issues related to:
-
-- [Installation](gbs-faq.md#install)
-- [Build](gbs-faq.md#build)
-- [Remote Build](gbs-faq.md#remote)
-- [Proxy](gbs-faq.md#proxy)
-- [chroot](gbs-faq.md#chroot)
-- [Miscellaneous issues](gbs-faq.md#other)
-
-## GBS Installation Issues<a name="install"></a>
+## GBS Installation Issues
 
 **Q**: I cannot get zypper to refresh from [http://download.tizen.org/tools/latest-release/openSUSE_13.2/](http://download.tizen.org/tools/latest-release/openSUSE_13.2/), but I am not getting a repository error. What is wrong?  
 **A**: This can be caused by proxy settings. Double-check the proxy settings and add the `-E` option when running the `sudo zypper refresh` command. If that solves the problem, preserve the environment variables by modifying `/etc/sudoers`. For more information, see [Setting up Development Environment](../../developing/setting-up.md).
@@ -29,7 +20,7 @@ $ zypper install gbs
 **A**: GBS is open source software. For more information, see [Installing Development Tools](../../developing/installing.md).
 
 
-## GBS Build Issues<a name="build"></a>
+## GBS Build Issues
 
 **Q**: How can I make my local repository have a higher priority than the remote repository?  
 **A**: The priority depends on the order of repositories; the first repository has the highest priority. In v0.10 and higher, GBS automatically puts local repositories before remote repositories.
@@ -77,13 +68,13 @@ $ apt-get update
 $ apt-get install qemu-arm-static
 ```
 
-## GBS Remote Build Issues<a name="remote"></a>
+## GBS Remote Build Issues
 
 **Q**: Why cannot I access the remote build server (OBS) during a remote build?  
 **A**: The access requires that you have a username and password and that you set them correctly in the configuration file. Also, make sure the build server API and proxy settings are correct for your environment.
 
 
-### Proxy Issues<a name="proxy"></a>
+### Proxy Issues
 
 **Q**: The `export no_proxy="localhost; 127.0.0.1; .company.com` command does not work on Ubuntu. Why?  
 **A**: Set `no_proxy` as `.company.com` directly, and try again.
@@ -95,7 +86,7 @@ $ apt-get install qemu-arm-static
 **A**: This is caused by the proxy server setting. The proxy you specified cannot forward SSL correctly. Try using another proxy.
 
 
-## GBS chroot Issues<a name="chroot"></a>
+## GBS chroot Issues
 
 **Q**: The `gbs chroot -r <build_root>` command reports an error: "su: user root does not exist". What is wrong?  
 **A**: This is caused by missing a login package while creating a build root. You can fix by updating `/etc/passwd` and `/etc/group` to add a root user:
@@ -104,7 +95,7 @@ $ apt-get install qemu-arm-static
 $ echo "root:x:0:0:root:/root:/bin/bash" >>path/to/buildroot/etc/passwd$ echo "root:x:0:" >>path/to/buildroot/etc/group
 ```
 
-## Miscellaneous Issues<a name="other"></a>
+## Miscellaneous Issues
 
 **Q**: Fedora GBS shows an error: "&lt;user&gt; is not in the sudoers file. This incident will be reported". What is wrong?  
 **A**: Update `/etc/sudoers` to give &lt;user&gt; sudo permission.

@@ -8,7 +8,7 @@ For command usage details, enter:
 $ gbs submit --help
 ```
 
-Examples of command usage:
+Examples:
 
 - Create a tag on a current working branch and submit it directly:
 
@@ -30,7 +30,8 @@ Examples of command usage:
   $ gbs submit --target=trunk -m 'release for 0.2.1'
   ```
 
-  >  **Note**  
+  >  **Note**
+  >
   >  The `--target` options allows you to specify the target version. By default, the version is `trunk`. The valid value of `--target` must be matched with the remote branch name. The backend service uses this branch information to create the SR and submit it to the correct OBS project.
 
 - Use the `-r` option to specify the remote Gerrit server to submit. By default, the server is `origin`.

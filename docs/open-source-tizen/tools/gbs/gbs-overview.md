@@ -8,4 +8,4 @@ Afterwards, become familiar with GBS by reading the following instructions:
 
 - [GBS Configuration](gbs.conf.md) describes how to modify the GBS configuration.
 - [GBS Reference](gbs-reference.md) describes, in more detail, how to use GBS.
-- [FAQ](gbs-faq.md) describes frequently asked questions.
+- [GBS Frequently Asked Questions](gbs-faq.md) describes frequently asked questions.

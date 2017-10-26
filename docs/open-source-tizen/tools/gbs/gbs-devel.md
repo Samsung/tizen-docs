@@ -55,17 +55,25 @@ $ gbs submit
 
 ## Action Commands
 
-The following example shows the syntax of the different actions commands:
+Synopsis:
 
 ```bash
-gbs devel start [OPTION]
-gbs devel export [OPTION]
-gbs devel switch [OPTION]
-gbs devel drop [OPTION]
-gbs devel convert [OPTION]
+gbs devel [-h] [--packaging-dir PACKAGING_DIR] [--spec SPEC]
+               [--upstream-tag UPSTREAM_TAG] [--retain-history]
+               [gitdir] <Second_Level_Subcommand>
 ```
 
-The `OPTION` can be an optional `--retain-history` parameter, which preserves the history of the local changes. In the convert action, for each commit in the old (joint-packaging) branch, this option creates a corresponding commit in the new orphan packaging branch.
+The following example shows the second level subcommands for different actions:
+
+```bash
+gbs devel start
+gbs devel export
+gbs devel switch
+gbs devel drop
+gbs devel convert
+```
+
+The optional `--retain-history` parameter preserves the history of the local changes. In the convert action, for each commit in the old (joint-packaging) branch, this option creates a corresponding commit in the new orphan packaging branch.
 
 To use each action:
 
@@ -99,7 +107,8 @@ To use each action:
   upstream
   ```
 
-  > **Note**  
+  > **Note**
+  >
   > Each upstream version must have a dedicated development branch. In the above example, "development/tizen/1.0" corresponds to the upstream version 1.0.
 
 
@@ -110,7 +119,8 @@ To use each action:
   - Generating patches (one-per-commit) from the development branch.
   - Updating the spec file accordingly.
 
-  > **Note**  
+  > **Note**
+  >
   > This command does not automatically commit the changes. The package maintainers must verify the changes and commit them manually.
 
   ```bash

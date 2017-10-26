@@ -8,7 +8,7 @@ Tizen RT provides an application framework based on JavaScript. JavaScript is st
 
 **Figure: IoT JavaScript framework**
 
-![IoT JavaScript framework](media/iot_js_fw_diagram.png)
+![IoT JavaScript framework](media/iot-js-fw-diagram.png)
 
 **Table: IoT.js features**
 
@@ -41,7 +41,7 @@ User/kernel space separation has already been achieved. The entire memory map is
 
 **Figure: User and kernel separation**
 
-![User and kernel separation](media/kernel_seperation.png)
+![User and kernel separation](media/kernel-seperation.png)
 
 The user thread is executed in the unprivileged mode with restricted permissions. When multiple threads are running, the scheduler preempts the currently-running task and brings the new ready-to-run thread for execution. The stack/data region of thread A is protected from being written by thread B even after thread A is preempted by thread B. This per-thread protection can be realized by the MPU which stores and restores the MPU context of every thread at every context switch.
 

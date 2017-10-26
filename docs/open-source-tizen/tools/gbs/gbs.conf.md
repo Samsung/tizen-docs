@@ -2,7 +2,8 @@
 
 The GBS configuration files are all simple INI-style files that record various choices and settings used by many GBS commands. Some settings represent purely personal preferences, while others are vital to a correctly-functioning build, and still others simply tweak command behavior a little.
 
-> **Note**  
+> **Note**
+>
 > `.conf` is a common extension for an INI file, an informal standard for configuration files. INI files are simple text files with a basic structure composed of sections and properties. Like many tools, GBS supports a hierarchy of configuration files, which are shown below in decreasing precedence:
 > - `$PWD/.gbs.conf`: project-specific configuration settings that affect only the specific project in the specified working directory. These settings have the highest precedence.
 > - `/home/<user>/.gbs.conf`: user-specific configuration settings that affect only the specified user.
@@ -25,7 +26,7 @@ The basic structure of a configuration file is composed of properties and sectio
 - Properties  
 The basic element contained in a configuration file is a property. Every property has a name and a value, delimited by an equal sign (=). The name appears to the left of the equal sign.
 - Sections  
-Properties can be grouped into various sections, named according to the [naming conventions](gbs.conf.md#naming). The section name appears on a line by itself in square brackets ([ ]). All the properties after the section declaration are associated with that section. No explicit "end of section" delimiter is needed. Sections end at the next section declaration or the end of the file. Possible sections include:
+Properties can be grouped into various sections, named according to the [naming conventions](#naming-conventions). The section name appears on a line by itself in square brackets ([ ]). All the properties after the section declaration are associated with that section. No explicit "end of section" delimiter is needed. Sections end at the next section declaration or the end of the file. Possible sections include:
   - **General section**  
 The default profile is defined in the general section and affect GBS behavior on a general basis. That is, upon the modification of the general section, all GBS behaviors are changed accordingly.
 
@@ -42,7 +43,7 @@ The default profile is defined in the general section and affect GBS behavior on
   - **Profile section**  
 Set common authentication information on the profile level, instead of repeating identical configurations in various sections. These settings can be automatically passed to OBS and repository sections.
 
-    Add authentication information to a specific repository or OBS section only when it is unique to the corresponding OBS or repository. In addition, multiple profile sections can exist in 1 configuration file, enabling the manipulation of GBS behaviors aimed at different devices (for example, mobile phone and IVI) in a central configuration file. For more information, see [Configuring Multiple Profiles](gbs.conf.md#profiles).
+    Add authentication information to a specific repository or OBS section only when it is unique to the corresponding OBS or repository. In addition, multiple profile sections can exist in 1 configuration file, enabling the manipulation of GBS behaviors aimed at different devices (for example, mobile phone and IVI) in a central configuration file. For more information, see [Configuring Multiple Profiles](#configuring-multiple-profiles).
 
     The supported properties include:
     - `user`
@@ -58,7 +59,7 @@ The OBS section specifies the configurations of the remote build server for a re
   - **Repository section**  
 As with the profile section, multiple repository sections can exist in 1 configuration file, allowing various repositories to be manipulated in "batch". The supported properties include `url`, `user`, and `password`. The `user` and `password` properties can be omitted if the corresponding repository does not need authentication information.
 
-### Naming Conventions<a name="naming"></a>
+### Naming Conventions
 
 The section names must follow these naming conventions:
 
@@ -125,7 +126,7 @@ To reset the password, delete the `passwdx` line above and add a new assignment 
 passwd=<New_Password>
 ```
 
-### Configuring Multiple Profiles<a name="profiles"></a>
+### Configuring Multiple Profiles
 
 By adding configuration specifications of multiple profiles aimed at various devices in 1 configuration file, the GBS behavior oriented for a variety of devices can be manipulated by using a central configuration file.
 
@@ -159,7 +160,8 @@ You can configure a repository to adapt the GBS build. The repository configurat
   - Standard RPM repository that has a `repodata/` subdirectory under the `/repos/` directory.
   - Tizen repository that has a `builddata/` subdirectory, for example, [http://download.tizen.org/releases/daily/2.0alpha/common/latest/](http://download.tizen.org/releases/daily/2.0alpha/common/latest/).
 
-  > **Note**  
+  > **Note**
+  >
   > To guarantee the quality of the GBS build, the `release` folder must be used instead the `snapshot` folder.
 
 - `user`

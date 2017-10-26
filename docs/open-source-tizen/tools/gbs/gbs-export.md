@@ -8,7 +8,7 @@ For command usage details, enter:
 $ gbs export --help
 ```
 
-Examples of command usage:
+Examples:
 
 - Export source code to a default packaging directory:
 
@@ -53,7 +53,8 @@ Examples of command usage:
 
 - Use the `--fallback-to-native` option to force the export process to perform packaging for non-native packages in the native packaging mode, ignoring the upstream branch and creating a tarball from HEAD (by default) or specified commit without generating any patch. Adding the `--fallback-to-native` option when issuing the `gbs export` command is equivalent to adding the `fallback_to_native = true` property to the `[general]` section of the GBS configuration file.
 
-  > **Note**  
+  > **Note**
+  >
   > This option serves as a work-around solution for solving export failures of some non-native packages caused by a tricky engineering problem. For Tizen native packages, the `gbs export` command always performs packaging in the native packaging mode.
 
   ```bash

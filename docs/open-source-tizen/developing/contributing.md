@@ -1,20 +1,14 @@
 # Contributing Code to Tizen
 
-To contribute code to Tizen, you must know how to handle the following tasks:
-
-- [Cloning source files over SSH](contributing.md#clone)
-- [Submitting a patch to Gerrit](contributing.md#submit)
-- [Reviewing a patch on Gerrit](contributing.md#review)
-- [Submitting a package to the build system](contributing.md#submit_build)
-- [Reviewing and accepting a package on the build server](contributing.md#accept) (for release engineers only)
+This topic describes how you can contribute code to Tizen.
 
 For more information about the whole work process, see [Tizen Development Workflow](../about/work-flow.md).
 
-## Cloning Source Files over SSH<a name="clone"></a>
+## Cloning Source Files over SSH
 
 To clone source files for a specific project, see [Cloning Tizen Source Files](cloning.md).
 
-## Submitting a Patch to Gerrit<a name="submit"></a>
+## Submitting a Patch to Gerrit
 
 You can perform patch submission and review on Gerrit.
 
@@ -35,14 +29,15 @@ To submit a patch to Gerrit:
    ```bash
    $ git push origin HEAD:refs/for/<remote_branch_name>
    ```
-   > **Note**  
+   > **Note**
+   >
    > Valid values for `<remote_branch_name>` are:
    > - `tizen`: corresponds to the branch of the latest Tizen version
    > - `tizen_3.0`: corresponds to the Tizen 3.0 branch
 
 For more information, see [Gerrit Documentation](https://review.tizen.org/gerrit/Documentation/index.html).
 
-## Reviewing a Patch on Gerrit<a name="review"></a>
+## Reviewing a Patch on Gerrit
 
 To review a patch in the Gerrit Web UI, publish the comments and vote for the patch.
 
@@ -51,12 +46,13 @@ The patch is merged or discarded depending on the voting results.The merge is pe
 - The patch has at least one "+2" score and no "-2" score in the Code Review category.
 - The patch has at least one "+1" score and no "-1" score in the Verified category.
 
-> **Note**  
+> **Note**
+>
 > Voting "+2" requires a proper privilege level.
 
 When a patch meets the above criteria, privileged users can submit to merge the patch to the Git repository.
 
-## Submitting Packages to the Build System<a name="submit_build"></a>
+## Submitting Packages to the Build System
 
 You can submit a single package or a group of packages.
 
@@ -76,7 +72,8 @@ submit/$Tizen_Version/$(%Y%m%d.%H%M%S)
 
 If the code change has already been merged in Gerrit, a merge request is created and release engineers are notified to review.
 
-> **Note**  
+> **Note**
+>
 > If the patch has not been merged in Gerrit, the backend services abort the operation and send an email to the patch owner, to notify that the patch needs to be re-submitted after it is merged.
 
 ### Submitting a Group of Packages
@@ -111,7 +108,7 @@ submit/$Tizen_Version/$(%Y%m%d.%H%M%S).N (N is a number you can choose freely)
 
 Tizen backend services take care of all submissions with the same tag, and build them together.
 
-## Reviewing a Package on the Build Server<a name="accept"></a>
+## Reviewing a Package on the Build Server
 
 If you are a release engineer, you can review and accept changes on the build system side.
 

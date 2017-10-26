@@ -55,5 +55,6 @@ The following table describes the Git repository structure for Tizen 3.0 and hig
 | Product   |            |           | Product-specific                         |
 |           | upstream   |           | Code from upstream open source           |
 
-> **Note**  
+> **Note**
+>
 > If the Git repository is not listed above, it does not belong to Tizen 3.0 and higher.

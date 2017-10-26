@@ -10,7 +10,7 @@ You can use the following location features:
 
 **Figure: Tizen location architecture**
 
-![Tizen location architecture](media/Location.png)
+![Tizen location architecture](media/location.png)
 
 The main location service components are:
 
@@ -145,7 +145,7 @@ The Geofence Manager API provides a service related to geofence. A geofence is a
 
 **Figure: Tizen geofence architecture**
 
-![Tizen geofence architecture](media/524px-Geofence.png)
+![Tizen geofence architecture](media/524px-geofence.png)
 
 You can set a geofence based on a geopoint, a Wi-Fi MAC address, or a Bluetooth address. Notifications are provided for events, such as changes in the service status.
 
@@ -166,7 +166,7 @@ The Location Maps API (Maps API) allows you to create map-aware applications.
 
 **Figure: Tizen Maps API**
 
-![Tizen Maps API](media/Mapservice.png)
+![Tizen Maps API](media/mapservice.png)
 
 The Maps API has the following features:
 
@@ -189,7 +189,7 @@ BuildRequires: pkgconfig(capi-maps-service-plugin-devel)
 
 The `capi-maps-service-plugin-devel` package source files can be found in the following directories:
 
-```bash
+```
 /usr/include/maps/maps_plugin*.h
 /usr/include/maps/maps_*_plugin.h
 /usr/include/maps/maps_extra_types.h
@@ -257,6 +257,6 @@ The Maps plugins are located in the `/usr/lib/maps/plugins` directory.
 
 #### HERE Maps Plugin
 
-For now, the HERE Maps plugin is embedded in the platform, with the provider name "HERE". To use this plugin, you must get the credential keys in the [HERE developers site](https://developer.here.com/)". You may need to pay a fee depending on the expected map service usage.
+For now, the HERE Maps plugin is embedded in the platform, with the provider name "HERE". To use this plugin, you must get the credential keys from the [HERE developers site](https://developer.here.com/). You may need to pay a fee depending on the expected map service usage.
 
 To get the user consent required by HERE, a user consent application included in the HERE Maps plugin is launched the first time the user attempts to access the map services, if consent has not been given before that time.
