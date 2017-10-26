@@ -94,7 +94,7 @@ The **Log View** displays a log table consisting of the following fields:
 
 To add a log tab:
 
-1. Click the **Add LogTab** icon.
+1. Add a new tab by clicking **+** next to the existing tabs.
 2. Type the tab name in the **Tab Name** field, select a device in the **Device** list, and click **OK**.
 
    ![Add Log Tab](media/dm-log-add-tab.png)
@@ -106,7 +106,7 @@ To add a log tab:
 To remove a log tab:
 
 1. Click the log tab to be removed.
-2. Click the **Remove LogTab** icon.
+2. Click **X** next to the tab name.
 
 
 ### Understanding and Filtering Logs
@@ -119,7 +119,7 @@ In the log table, you have the following options and functions:
   ![Log level filter](media/dm-log-level-filter.png)
 
 - Keyword filtering option  
-  You can filter the log messages by clicking the arrow in the **Pid** and **Tag** fields, selecting the wanted values, and clicking **OK**. To filter based on the **Message** field content, enter keywords at the search box at the top of the **Log View**. The keywords must be separated by a space and a comma.
+  You can filter the log messages by clicking the arrow in the **Pid** and **Tag** fields, selecting the wanted values, and clicking **OK**. To filter based on the **Message** field content, enter keywords at the search box at the top of the **Log View**. The keywords must be separated by a space or a comma.
 
   ![Keyword filter](media/dm-log-filter-option.png)
 

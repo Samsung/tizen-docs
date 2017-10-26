@@ -8,7 +8,7 @@ Make sure the following prerequisites are fulfilled before building a project:
 
 1. Install the needed software based on whether you want to use Visual Studio or .NET CLI:
 
-   - [Install Visual Studio Tools for Tizen](../how-to-install.md) (cps version).
+   - [Install Visual Studio Tools for Tizen](../how-to-install.md).
    - [Install .NET Core version 2.0 or higher](https://www.microsoft.com/net/core).
 
 2. Add a new feed to `Nuget.config` (using the https://tizen.myget.org/F/dotnet/api/v3/index.json develop channel) to restore the Tizen.NET.Sdk development version:

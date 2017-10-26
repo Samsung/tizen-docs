@@ -59,7 +59,7 @@ To record a profiling session:
     ![Profiling progress](media/profiler-progress.png)
 
 4. To pause and resume profiling, in the **Profiling Progress** panel, click **Pause** and **Resume**.  
-    For the time interval when profiling is paused, the profiling chart shows a light-blue background.  
+    The chart in the **Profiling Progress** panel uses a light-blue background to distinguish the time period when profiling is paused.  
 
 5. To stop profiling, click **Stop**.  
 The application is terminated and the profiling data is retrieved from the emulator.
