@@ -1,21 +1,14 @@
 # Multimedia
 
-You can implement the following multimedia features:
+You can implement various multimedia features, such as camera, audio, and video.
 
-- [Camera](multimedia.md#camera)
-- [Radio](multimedia.md#radio)
-- [Audio](multimedia.md#audio)
-- [Player](multimedia.md#player)
-- [Codec](multimedia.md#codec)
-- [Videosink](multimedia.md#video)
-
-## Camera<a name="camera"></a>
+## Camera
 
 The Multimedia camcorder framework controls the GStreamer camera plugin to capture camera data from the device. The kernel interfaces to control the camera device can be different for different chipsets, so the camera HAL (Hardware Abstraction Layer) used by the camera plugin is provided and it must be implemented specifically for each chipset. Each configuration file contains its own specific hardware-dependent information. The Multimedia camcorder framework reads and parses the information in these configuration files.
 
 **Figure: Multimedia camcorder framework**
 
-![Multimedia camcorder framework](media/799px-Tizen3.0_MMFWCamcorder.png)
+![Multimedia camcorder framework](media/799px-tizen3.0-mmfwcamcorder.png)
 
 - Camera source plugin for GStreamer  
   Gets the camera data (preview or captured image) and sets various camera commands through camera HAL interface
@@ -38,182 +31,170 @@ For the camera HAL, the `mm-hal-interface` package provides a header file:
 
 #### Major Camera HAL Functions
 
-**Initialization and deinitialization functions**
+The following list defines the major functions for the camera HAL interface:
 
-The following lists the functions related to initialization and deinitialization.
+- Functions for initialization and deinitialization:
 
-```c
-/*Initializes new camera HAL handle. */
-int camera_init(void **camera_handle);	
+  ```c
+  /*Initializes new camera HAL handle */
+  int camera_init(void **camera_handle);	
 
-/* Deinitializes the camera HAL handle. */
-int camera_deinit(void *camera_handle);
-```
+  /* Deinitializes the camera HAL handle */
+  int camera_deinit(void *camera_handle);
+  ```
+- Functions for opening and closing the camera device:
 
-**Opening and closing functions**
+  ```c
+  /* Opens the camera device */
+  int camera_open_device(void *camera_handle, int device_index);
 
-The following lists the functions related to opening and closing the camera device.
+  /* Closes the camera device */
+  int camera_close_device(void *camera_handle);
+  ```
+- Functions for getting device information:
 
-```c
-/* Opens the camera device. */
-int camera_open_device(void *camera_handle, int device_index);
+  ```c
+  /* Gets the camera device list */
+  int camera_get_device_list(void *camera_handle, camera_device_list_t *device_list);
 
-/* Closes the camera device. */
-int camera_close_device(void *camera_handle);
-```
-**Getting device information functions**
+  /* Registers a callback function to be called to send a message by the camera HAL */
+  int camera_add_message_callback(void *camera_handle, camera_message_cb callback, void *user_data, uint32_t *cb_id);
 
-The following lists the functions related to getting device information.
+  /* Unregisters a callback function */
+  int camera_remove_message_callback(void *camera_handle, uint32_t cb_id);
+  ```
+- Functions for preview and capture:
 
-```c
-/*  Gets the camera device list. */
-int camera_get_device_list(void *camera_handle, camera_device_list_t *device_list);
+  ```c
+  typedef struct camera_format {
+      camera_pixel_format_t stream_format;
+      camera_resolution_t stream_resolution;
+      uint32_t stream_fps;
+      camera_rotation_t stream_rotation;
+      camera_pixel_format_t capture_format;
+      camera_resolution_t capture_resolution;
+      uint32_t capture_quality;
+  } camera_format_t;
 
-/* Registers a callback function to be called to send a message by the camera HAL. */
-int camera_add_message_callback(void *camera_handle, camera_message_cb callback, void *user_data, uint32_t *cb_id);
+  /* Sets the format of the preview stream */
+  int camera_set_preview_stream_format(void *camera_handle, camera_format_t *format);
 
-/* Unregisters a callback function. */
-int camera_remove_message_callback(void *camera_handle, uint32_t cb_id);
-```
-**Preview and capture functions**
+  /* Gets the format of the preview stream  */
+  int camera_get_preview_stream_format(void *camera_handle, camera_format_t *format);
 
-The following lists the functions related to preview and capture.
+  typedef int (*camera_preview_frame_cb)(camera_buffer_t *buffer, camera_metadata_t *meta, void *user_data);
 
-```c
-typedef struct camera_format {
-    camera_pixel_format_t stream_format;
-    camera_resolution_t stream_resolution;
-    uint32_t stream_fps;
-    camera_rotation_t stream_rotation;
-    camera_pixel_format_t capture_format;
-    camera_resolution_t capture_resolution;
-    uint32_t capture_quality;
-} camera_format_t;
+  /* Starts the display of preview frames on the scree. */
+  int camera_start_preview(void *camera_handle, camera_preview_frame_cb callback, void *user_data);
 
-/* Sets the format of the preview stream. */
-int camera_set_preview_stream_format(void *camera_handle, camera_format_t *format);
+  /* Stops the preview frames */
+  int camera_stop_preview(void *camera_handle);
 
-/* Gets the format of the preview stream.  */
-int camera_get_preview_stream_format(void *camera_handle, camera_format_t *format);
+  /* Releases the preview buffer; the preview buffer must be released with this function after using it */
+  int camera_release_preview_buffer(void *camera_handle, int buffer_index);
 
-typedef int (*camera_preview_frame_cb)(camera_buffer_t *buffer, camera_metadata_t *meta, void *user_data);
+  /* Starts the camera auto-focusing operation */
+  int camera_start_auto_focus(void *camera_handle);
 
-/* Starts the display of preview frames on the screen. */
-int camera_start_preview(void *camera_handle, camera_preview_frame_cb callback, void *user_data);
+  /* Stops the camera auto-focusing operation */
+  int camera_stop_auto_focus(void *camera_handle);
 
-/* Stops the preview frames. */
-int camera_stop_preview(void *camera_handle);
+  typedef int (*camera_capture_cb)(camera_buffer_t *main, camera_buffer_t *postview, camera_buffer_t *thumbnail, void *user_data);
 
-/* Releases the preview buffer. The preview buffer must be released with this function after using it. */
-int camera_release_preview_buffer(void *camera_handle, int buffer_index);
+  /* Starts capturing still images */
+  int camera_start_capture(void *camera_handle, camera_capture_cb callback, void *user_data);
 
-/* Starts the camera auto-focusing operation. */
-int camera_start_auto_focus(void *camera_handle);
+  /* Stops capturing still images */
+  int camera_stop_capture(void *camera_handle);
+  ```
+- Functions for video recording:
 
-/* Stops the camera auto-focusing operation. */
-int camera_stop_auto_focus(void *camera_handle);
+  ```c
+  /* Stops capturing still images */
+  int camera_set_video_stream_format(void *camera_handle, camera_format_t *format);
 
-typedef int (*camera_capture_cb)(camera_buffer_t *main, camera_buffer_t *postview, camera_buffer_t *thumbnail, void *user_data);
+  /* Gets the video stream format for recording */
+  int camera_get_video_stream_format(void *camera_handle, camera_format_t *format);
 
-/* Starts capturing still images. */
-int camera_start_capture(void *camera_handle, camera_capture_cb callback, void *user_data);
+  typedef int (*camera_video_frame_cb)(camera_buffer_t *buffer, camera_metadata_t *meta, void *user_data);
 
-/* Stops capturing still images. */
-int camera_stop_capture(void *camera_handle);
-```
+  /* Starts the video frame for recording */
+  int camera_start_record(void *camera_handle, camera_video_frame_cb callback, void *user_data);
 
-**Video recording functions**
+  /* Stops the video frame */
+  int camera_stop_record(void *camera_handle);
 
-The following lists the functions related to video recording.
+  /* Video buffer must be released with this function after using it */
+  int camera_release_video_buffer(void *camera_handle, int buffer_index); 
+  ```
+- Functions for controlling the camera device:
 
-```c
-/* Stops capturing still images.*/
-int camera_set_video_stream_format(void *camera_handle, camera_format_t *format);
+  ```c
+  #define CAMERA_COMMAND_BASE                     ((int64_t)1)
+  #define CAMERA_COMMAND_WHITE_BALANCE            ((int64_t)(CAMERA_COMMAND_BASE << 1))
+  #define CAMERA_COMMAND_ISO                      ((int64_t)(CAMERA_COMMAND_BASE << 2))
+  #define CAMERA_COMMAND_CONTRAST                 ((int64_t)(CAMERA_COMMAND_BASE << 3))
+  #define CAMERA_COMMAND_SATURATION               ((int64_t)(CAMERA_COMMAND_BASE << 4))
+  #define CAMERA_COMMAND_HUE                      ((int64_t)(CAMERA_COMMAND_BASE << 5))
+  #define CAMERA_COMMAND_SHARPNESS                ((int64_t)(CAMERA_COMMAND_BASE << 6))
+  #define CAMERA_COMMAND_EFFECT                   ((int64_t)(CAMERA_COMMAND_BASE << 7))
+  #define CAMERA_COMMAND_SCENE_MODE               ((int64_t)(CAMERA_COMMAND_BASE << 8))
+  #define CAMERA_COMMAND_EXPOSURE_MODE            ((int64_t)(CAMERA_COMMAND_BASE << 9))
+  #define CAMERA_COMMAND_EXPOSURE                 ((int64_t)(CAMERA_COMMAND_BASE << 10))
+  #define CAMERA_COMMAND_ROTATION                 ((int64_t)(CAMERA_COMMAND_BASE << 11))
+  #define CAMERA_COMMAND_FLIP                     ((int64_t)(CAMERA_COMMAND_BASE << 12))
+  #define CAMERA_COMMAND_FOCUS_MODE               ((int64_t)(CAMERA_COMMAND_BASE << 13))
+  #define CAMERA_COMMAND_FOCUS_RANGE              ((int64_t)(CAMERA_COMMAND_BASE << 14))
+  #define CAMERA_COMMAND_SHOT_MODE                ((int64_t)(CAMERA_COMMAND_BASE << 15))
+  #define CAMERA_COMMAND_ANTI_SHAKE               ((int64_t)(CAMERA_COMMAND_BASE << 16))
+  #define CAMERA_COMMAND_FOCUS_AREA               ((int64_t)(CAMERA_COMMAND_BASE << 17))
+  #define CAMERA_COMMAND_DIGITAL_ZOOM             ((int64_t)(CAMERA_COMMAND_BASE << 18))
+  #define CAMERA_COMMAND_OPTICAL_ZOOM             ((int64_t)(CAMERA_COMMAND_BASE << 19))
+  #define CAMERA_COMMAND_RECORDING_HINT           ((int64_t)(CAMERA_COMMAND_BASE << 20))
+  #define CAMERA_COMMAND_WDR                      ((int64_t)(CAMERA_COMMAND_BASE << 21))
+  #define CAMERA_COMMAND_SHUTTER_SPEED            ((int64_t)(CAMERA_COMMAND_BASE << 22))
+  #define CAMERA_COMMAND_FLASH_MODE               ((int64_t)(CAMERA_COMMAND_BASE << 23))
+  #define CAMERA_COMMAND_FACE_DETECTION           ((int64_t)(CAMERA_COMMAND_BASE << 24))
 
-/* Gets the video stream format for recording. */
-int camera_get_video_stream_format(void *camera_handle, camera_format_t *format);
+  /* Sets various commands and values to control the camera device */
+  int camera_set_command(void *camera_handle, int64_t command, void *value);
 
-typedef int (*camera_video_frame_cb)(camera_buffer_t *buffer, camera_metadata_t *meta, void *user_data);
+  /* Gets the current value of the command */
+  int camera_get_command(void *camera_handle, int64_t command, void *value);
 
-/* Starts the video frame for recording. */
-int camera_start_record(void *camera_handle, camera_video_frame_cb callback, void *user_data);
+  typedef struct camera_batch_command_control {
+      /* Flag for modified command */
+      int64_t command_set_flag;
 
-/* Stops the video frame. */
-int camera_stop_record(void *camera_handle);
+      /* Value list */
+      camera_white_balance_t white_balance;
+      int iso;
+      int contrast;
+      int saturation;
+      int hue;
+      int sharpness;
+      camera_effect_t effect;
+      camera_scene_mode_t scene_mode;
+      camera_exposure_mode_t exposure_mode;
+      int exposure;
+      camera_rotation_t rotation;
+      camera_flip_t flip;
+      camera_focus_mode_t focus_mode;
+      camera_focus_range_t focus_range;
+      camera_exposure_mode_t shot_mode;
+      int anti_shake;
+      camera_rectangle_t focus_area;
+      int digital_zoom;
+      int optical_zoom;
+      int recording_hint;
+      int wdr;
+      camera_flash_mode_t flash_mode;
+      camera_face_detection_t face_detection;
+  } camera_batch_command_control_t;
 
-/* The video buffer must be released with this function after using it. Releases the video buffer. */
-int camera_release_video_buffer(void *camera_handle, int buffer_index); 
-```
-**Camera control functions**
-
-The following list the functions related to controlling the camera device.
-
-```c
-#define CAMERA_COMMAND_BASE                     ((int64_t)1)
-#define CAMERA_COMMAND_WHITE_BALANCE            ((int64_t)(CAMERA_COMMAND_BASE << 1))
-#define CAMERA_COMMAND_ISO                      ((int64_t)(CAMERA_COMMAND_BASE << 2))
-#define CAMERA_COMMAND_CONTRAST                 ((int64_t)(CAMERA_COMMAND_BASE << 3))
-#define CAMERA_COMMAND_SATURATION               ((int64_t)(CAMERA_COMMAND_BASE << 4))
-#define CAMERA_COMMAND_HUE                      ((int64_t)(CAMERA_COMMAND_BASE << 5))
-#define CAMERA_COMMAND_SHARPNESS                ((int64_t)(CAMERA_COMMAND_BASE << 6))
-#define CAMERA_COMMAND_EFFECT                   ((int64_t)(CAMERA_COMMAND_BASE << 7))
-#define CAMERA_COMMAND_SCENE_MODE               ((int64_t)(CAMERA_COMMAND_BASE << 8))
-#define CAMERA_COMMAND_EXPOSURE_MODE            ((int64_t)(CAMERA_COMMAND_BASE << 9))
-#define CAMERA_COMMAND_EXPOSURE                 ((int64_t)(CAMERA_COMMAND_BASE << 10))
-#define CAMERA_COMMAND_ROTATION                 ((int64_t)(CAMERA_COMMAND_BASE << 11))
-#define CAMERA_COMMAND_FLIP                     ((int64_t)(CAMERA_COMMAND_BASE << 12))
-#define CAMERA_COMMAND_FOCUS_MODE               ((int64_t)(CAMERA_COMMAND_BASE << 13))
-#define CAMERA_COMMAND_FOCUS_RANGE              ((int64_t)(CAMERA_COMMAND_BASE << 14))
-#define CAMERA_COMMAND_SHOT_MODE                ((int64_t)(CAMERA_COMMAND_BASE << 15))
-#define CAMERA_COMMAND_ANTI_SHAKE               ((int64_t)(CAMERA_COMMAND_BASE << 16))
-#define CAMERA_COMMAND_FOCUS_AREA               ((int64_t)(CAMERA_COMMAND_BASE << 17))
-#define CAMERA_COMMAND_DIGITAL_ZOOM             ((int64_t)(CAMERA_COMMAND_BASE << 18))
-#define CAMERA_COMMAND_OPTICAL_ZOOM             ((int64_t)(CAMERA_COMMAND_BASE << 19))
-#define CAMERA_COMMAND_RECORDING_HINT           ((int64_t)(CAMERA_COMMAND_BASE << 20))
-#define CAMERA_COMMAND_WDR                      ((int64_t)(CAMERA_COMMAND_BASE << 21))
-#define CAMERA_COMMAND_SHUTTER_SPEED            ((int64_t)(CAMERA_COMMAND_BASE << 22))
-#define CAMERA_COMMAND_FLASH_MODE               ((int64_t)(CAMERA_COMMAND_BASE << 23))
-#define CAMERA_COMMAND_FACE_DETECTION           ((int64_t)(CAMERA_COMMAND_BASE << 24))
-
-/* Sets various commands and values to control the camera device. */
-int camera_set_command(void *camera_handle, int64_t command, void *value);
-
-/* Gets the current value of the command. */
-int camera_get_command(void *camera_handle, int64_t command, void *value);
-
-typedef struct camera_batch_command_control {
-    /* Flag for modified command */
-    int64_t command_set_flag;
-
-    /* Value list */
-    camera_white_balance_t white_balance;
-    int iso;
-    int contrast;
-    int saturation;
-    int hue;
-    int sharpness;
-    camera_effect_t effect;
-    camera_scene_mode_t scene_mode;
-    camera_exposure_mode_t exposure_mode;
-    int exposure;
-    camera_rotation_t rotation;
-    camera_flip_t flip;
-    camera_focus_mode_t focus_mode;
-    camera_focus_range_t focus_range;
-    camera_exposure_mode_t shot_mode;
-    int anti_shake;
-    camera_rectangle_t focus_area;
-    int digital_zoom;
-    int optical_zoom;
-    int recording_hint;
-    int wdr;
-    camera_flash_mode_t flash_mode;
-    camera_face_detection_t face_detection;
-} camera_batch_command_control_t;
-
-/* Sets a batch set of commands. */
-int camera_set_batch_command(void *camera_handle, camera_batch_command_control_t *batch_command, int64_t *error_command);
-```
+  /* Sets a batch set of commands */
+  int camera_set_batch_command(void *camera_handle, camera_batch_command_control_t *batch_command, int64_t *error_command);
+  ```
 
 ### Configuration
 
@@ -285,7 +266,7 @@ The following table shows the description of the `mmfw_camcorder_dev_video_pri.i
 |            | `DigitalZoom`                   | Supported range of digital zoom level and default value |
 |            | `OpticalZoom`                   | Supported range of optical zoom level and default value |
 |            | `FocusMode`                     | Supported focus mode list and default value. This is converted to a real value and used in the kernel internally. |
-|            | `AFType`                        | Supported AUTO focus mode list and default value. This is converted to a real value and used in the kernel internally. |
+|            | `AFType`                        | Supported AUTO Focus mode list and default value. This is converted to a real value and used in the kernel internally. |
 |            | `AEType`                        | Supported AUTO Exposure mode list and default value. This is converted to a real value and used in the kernel internally. |
 |            | `ExposureValue`                 | Supported range of exposure value and default value |
 |            | `ISO`                           | Supported ISO list and default value. This is converted to a real value and used in the kernel internally. |
@@ -326,7 +307,7 @@ The following table shows the description of the `mmfw_camcorder_dev_video_pri.i
 - V4L2  
   For more information about V4L2, see [http://v4l2spec.bytesex.org/spec-single/v4l2.html](http://v4l2spec.bytesex.org/spec-single/v4l2.html).
 
-## Radio<a name="radio"></a>
+## Radio
 
 The radio interface part of the multimedia framework supports APIs to implement the following FM radio features:
 
@@ -338,7 +319,7 @@ The radio interface part of the multimedia framework supports APIs to implement 
 
 **Figure: Multimedia radio framework**
 
-![Multimedia radio framework](media/800px-Radio.png)
+![Multimedia radio framework](media/800px-radio.png)
 
 Because the interfaces for controlling the radio device differ, Tizen provides the Radio Hardware Abstraction Layer (HAL) to control various radio devices with a common interface. With the common interface, you can control the radio device on various chipsets used by the `libmm-radio`.
 
@@ -353,106 +334,102 @@ The `mm-hal-interface` package provides the radio HAL header file:
 
 The OAL interface for FM radio is the [Linux](https://wiki.tizen.org/Linux) kernel V4L2 interface. The radio module directly uses the V4L2 `ioctls` to perform various radio hardware configurations.
 
-#### Major Functions
+#### Major Radio HAL Functions
 
-**Initialization and deinitialization functions**
-The following lists the functions related to initialization and deinitialization.
+The following list defines the major functions for the radio HAL interface:
 
-```c
-/* Initializes a new radio HAL handle. */
-radio_error_t radio_init(void **radio_handle);
+- Functions for initialization and deinitialization:
 
-/* Deinitializes the radio HAL handle. */
-radio_error_t radio_deinit(void *radio_handle);
-```
+  ```c
+  /* Initializes a new radio HAL handle */
+  radio_error_t radio_init(void **radio_handle);
 
-**Preparing and unpreparing functions**
-The following lists the functions related to preparing and unpreparing the radio device.
+  /* Deinitializes the radio HAL handle */
+  radio_error_t radio_deinit(void *radio_handle);
+  ```
 
-```c
-/* Prepares the radio device.*/
-radio_error_t radio_prepare_device(void *radio_handle);
+- Functions for preparing and unpreparing the radio device:
+
+  ```c
+  /* Prepares the radio device */
+  radio_error_t radio_prepare_device(void *radio_handle);
   
-/* Unprepares the radio device. */
-radio_error_t radio_unprepare_device(void *radio_handle);
-```
+  /* Unprepares the radio device */
+  radio_error_t radio_unprepare_device(void *radio_handle);
+  ```
 
-**Opening and closing functions**
-The following lists the functions related to opening and closing the radio device.
+- Functions for opening and closing the radio device:
 
-```c
-/* Opens the radio device. */
-radio_error_t radio_open_device(void *radio_handle);
+  ```c
+  /* Opens the radio device */
+  radio_error_t radio_open_device(void *radio_handle);
 
-/* Closes the radio device. */
-radio_error_t radio_close_device(void *radio_handle);
-```
+  /* Closes the radio device */
+  radio_error_t radio_close_device(void *radio_handle);
+  ```
 
-**Starting and stopping functions**
-The following lists the functions related to starting and stopping the radio device.
+- Functions for starting and stopping the radio device:
 
-```c
-/* Starts the radio device. */
-radio_error_t radio_start(void *radio_handle);
+  ```c
+  /* Starts the radio device */
+  radio_error_t radio_start(void *radio_handle);
 
-/* Stops the radio device. */
-radio_error_t radio_stop(void *radio_handle);
-```
+  /* Stops the radio device */
+  radio_error_t radio_stop(void *radio_handle);
+  ```
 
-**Frequency functions**
-The following table lists the functions related to setting and getting the frequency.
+- Functions for setting and getting the frequency:
 
-```c
-/* Gets the radio frequency. */
-radio_error_t radio_get_frequency(void *radio_handle, uint32_t *frequency);
+  ```c
+  /* Gets the radio frequency */
+  radio_error_t radio_get_frequency(void *radio_handle, uint32_t *frequency);
 
-/* Sets the radio frequency. */
-radio_error_t radio_set_frequency(void *radio_handle, uint32_t frequency);
-```
+  /* Sets the radio frequency */
+  radio_error_t radio_set_frequency(void *radio_handle, uint32_t frequency);
+  ```
 
-**Channel seeking functions**
-The following lists the functions related to seeking for channels.
+- Functions for seeking channels:
 
-```c
-typedef enum radio_seek_direction_type {
-  RADIO_SEEK_DIRECTION_UP, /* Seek upward */
-  RADIO_SEEK_DIRECTION_DOWN /* Seek downward */
-} radio_seek_direction_type_t;
+  ```c
+  typedef enum radio_seek_direction_type {
+      RADIO_SEEK_DIRECTION_UP, /* Seek upward */
+      RADIO_SEEK_DIRECTION_DOWN /* Seek downward */
+  } radio_seek_direction_type_t;
 
-/* Asynchronously seeks (up or down) the effective frequency of the radio. */
-radio_error_t radio_seek(void *radio_handle, radio_seek_direction_type_t direction);
-```
+  /* Asynchronously seeks (up or down) the effective frequency of the radio */
+  radio_error_t radio_seek(void *radio_handle, radio_seek_direction_type_t direction);
+  ```
 
-**Muting functions**
-The following lists the functions related to muting and unmuting the radio device.
-```c
-/* Mutes the radio. */
-radio_error_t radio_mute(void *radio_handle);
+- Functions for  muting and unmuting the radio device:
 
-/* Unmutes the radio. */
-radio_error_t radio_unmute(void *radio_handle);
-```
+  ```c
+  /* Mutes the radio */
+  radio_error_t radio_mute(void *radio_handle);
+
+  /* Unmutes the radio */
+  radio_error_t radio_unmute(void *radio_handle);
+  ```
 
 
-**Volume management functions**
-The following lists the functions related to setting and getting the volume.
-```c
-/* Gets the current radio volume. */
-radio_error_t radio_get_volume(void *radio_handle, float *volume);
+- Functions for setting and getting the volume:
 
-/* Sets the current radio volume. */
-radio_error_t radio_set_volume(void *radio_handle, float volume);
+  ```c
+  /* Gets the current radio volume */
+  radio_error_t radio_get_volume(void *radio_handle, float *volume);
 
-/* Sets the current media volume level (system media volume). */
-radio_error_t radio_set_media_volume(void *radio_handle, uint32_t level);
-```
+  /* Sets the current radio volume */
+  radio_error_t radio_set_volume(void *radio_handle, float volume);
 
-**Signal strength functions**
-The following lists the functions related to getting the signal strength.
-```c
-/* Gets the current signal strength of the radio. */
-radio_error_t radio_set_media_volume(void *radio_handle, uint32_t level);
-```
+  /* Sets the current media volume level (system media volume) */
+  radio_error_t radio_set_media_volume(void *radio_handle, uint32_t level);
+  ```
+
+- Functions for getting the signal strength:
+
+  ```c
+  /* Gets the current signal strength of the radio */
+  radio_error_t radio_set_media_volume(void *radio_handle, uint32_t level);
+  ```
 
 ### References
 
@@ -462,13 +439,13 @@ radio_error_t radio_set_media_volume(void *radio_handle, uint32_t level);
   For Radio: /dev/radio0
   ```
 
-## Audio<a name="audio"></a>
+## Audio
 
 The following figure illustrates the different audio layers.
 
 **Figure: Audio layers**
 
-![Audio layers](./media/797px-Audio.png)
+![Audio layers](./media/797px-audio.png)
 
 - PulseAudio
   - PulseAudio is a sound server accepting sound input from 1 or more sources and redirecting it to 1 or more sinks. It has the following features:
@@ -488,75 +465,73 @@ The following figure illustrates the different audio layers.
 
 ### Porting the OAL Interface
 
-**Audio HAL functions**
-
-The following lists the audio HAL functions.
+The following example defines the major functions for the audio HAL interface:
 
 ```c
-/* Initializes the audio HAL handle. */
+/* Initializes the audio HAL handle */
 audio_return_t audio_init(void **audio_handle); 
 
-/*  Deinitializes the audio HAL handle. */
+/* Deinitializes the audio HAL handle */
 audio_return_t audio_deinit(void *audio_handle);
 
-/*  Gets the maximum volume level supported for a particular volume information. */
+/* Gets the maximum volume level supported for a particular volume information */
 audio_return_t audio_get_volume_level_max(void *audio_handle, audio_volume_info_t *info, uint32_t *level);
 
-/* Gets the volume level specified for a particular volume information. */
+/* Gets the volume level specified for a particular volume information */
 audio_return_t audio_get_volume_level(void *audio_handle, audio_volume_info_t *info, uint32_t *level); 
 
-/* Sets the volume level specified for a particular volume information. */
+/* Sets the volume level specified for a particular volume information */
 audio_return_t audio_set_volume_level(void *audio_handle, audio_volume_info_t *info, uint32_t level); 
 
-/* Gets the volume value specified for a particular volume information and level. */
+/* Gets the volume value specified for a particular volume information and level */
 audio_return_t audio_get_volume_value(void *audio_handle, audio_volume_info_t *info, uint32_t level, double *value); 
 
-/* Gets the volume mute specified for a particular volume information. */
+/* Gets the volume mute specified for a particular volume information */
 audio_return_t audio_get_volume_mute(void *audio_handle, audio_volume_info_t *info, uint32_t *mute); 
 
-/* Sets the volume mute specified for a particular volume information. */
+/* Sets the volume mute specified for a particular volume information */
 audio_return_t audio_set_volume_mute(void *audio_handle, audio_volume_info_t *info, uint32_t mute); 
 
-/* Updates the audio routing according to audio route information. */
+/* Updates the audio routing according to audio route information */
 audio_return_t audio_update_route(void *audio_handle, audio_route_info_t *info); 
 
-/*  Updates audio routing option according to audio route option. */
+/* Updates audio routing option according to audio route option */
 audio_return_t audio_update_route_option(void *audio_handle, audio_route_option_t *option); 
 
-/* Notifies when a stream is connected and disconnected. */
+/* Notifies when a stream is connected and disconnected */
 audio_return_t audio_notify_stream_connection_changed(void *audio_handle, audio_stream_info_t *info, uint32_t is_connected); 
 
-/* Opens a PCM device. */
+/* Opens a PCM device */
 audio_return_t audio_pcm_open(void *audio_handle, void **pcm_handle, uint32_t direction, void *sample_spec, uint32_t period_size, uint32_t periods); 
 
-/* Starts a PCM device. */
+/* Starts a PCM device */
 audio_return_t audio_pcm_start(void *audio_handle, void *pcm_handle);
 
-/* Stops a PCM device. */
+/* Stops a PCM device */
 audio_return_t audio_pcm_stop(void *audio_handle, void *pcm_handle);
 
-/*  Closes a PCM device. */
+/* Closes a PCM device */
 audio_return_t audio_pcm_close(void *audio_handle, void *pcm_handle);
 
-/*  Gets the available number of frames. */
+/* Gets the available number of frames */
 audio_return_t audio_pcm_avail(void *audio_handle, void *pcm_handle, uint32_t *avail);
 
-/* Writes frames to a PCM device. */
+/* Writes frames to a PCM device */
 audio_return_t audio_pcm_write(void *audio_handle, void *pcm_handle, const void *buffer, uint32_t frames); 
 
-/* Reads frames from a PCM device. */
+/* Reads frames from a PCM device */
 audio_return_t audio_pcm_read(void *audio_handle, void *pcm_handle, void *buffer, uint32_t frames); 
 
-/* Gets the poll descriptor for a PCM handle. */
+/* Gets the poll descriptor for a PCM handle */
 audio_return_t audio_pcm_get_fd(void *audio_handle, void *pcm_handle, int *fd); 
 
-/* Recovers the PCM state. */
+/* Recovers the PCM state */
 audio_return_t audio_pcm_recover(void *audio_handle, void *pcm_handle, int revents); 
 
-/* Gets the parameters of a PCM device. */
+/* Gets the parameters of a PCM device */
 audio_return_t audio_pcm_get_params(void *audio_handle, void *pcm_handle, uint32_t direction, void **sample_spec, uint32_t *period_size, uint32_t *periods); 
 
-/* Sets the hardware and software parameters of a PCM device. */
+/* Sets the hardware and software parameters of a PCM device */
 audio_return_t audio_pcm_set_params(void *audio_handle, void *pcm_handle, uint32_t direction, void *sample_spec, uint32_t period_size, uint32_t periods); 
 ```
 
@@ -575,189 +550,182 @@ To support a variety of devices, PulseAudio and device configuration have to be 
 
 Stream and device configuration:
 
-- Stream map: Latency, volume, and streams can be configured in this file.
-- Device map: Device types and device files can be configured in this file.
+- Stream map: Latency, volume, and streams can be configured in the `/etc/pulse/stream-map.json` file:
 
-**Stream configuration example**
-`/etc/pulse/stream-map.json`
-```json
+  ```json
   {
-    "latencies":[
-        {
-            "type":"low",
-            "fragsize-ms":25,
-            "minreq-ms":-1,
-            "tlength-ms":100,
-            "prebuf-ms":0,
-            "maxlength":-1,
-        },
-    
-        {
-            "type":"high",
-            "fragsize-ms":75,
-            "minreq-ms":-1,
-            "tlength-ms":400,
-            "prebuf-ms":0,
-            "maxlength":-1,
-        },
-    ],
-    "volumes":[
-        {
-            "type":"media",
-            "is-hal-volume":1,
-        },
-        {
-            "type":"system",
-            "is-hal-volume":0,
-        },
-        {
-            "type":"notification",
-            "is-hal-volume":0,
-        },
-        {
-            "type":"ringtone",
-            "is-hal-volume":0,
-        },
-        {
-            "type":"call",
-            "is-hal-volume":1,
-        },
-    
-    ],
-    "streams":[
-        {
-            "role":"media",
-            "priority":3,
-            "route-type":"auto",
-            "volume-types":{"in":"none","out":"media"},
-            "avail-in-devices":["audio-jack","builtin-mic"],
-            "avail-out-devices":["forwarding","audio-jack","bt","builtin-speaker"],
-            "avail-frameworks":["player","wav-player","tone-player","audio-io","recorder"],
-        },
-        {
-            "role":"system",
-            "priority":2,
-            "route-type":"auto",
-            "volume-types":{"in":"none","out":"system"},
-            "avail-in-devices":["none"],
-            "avail-out-devices":["forwarding","audio-jack","bt","builtin-speaker"],
-            "avail-frameworks":["player","wav-player","tone-player","audio-io"],
-        },
-        {
-            "role":"notification",
-            "priority":4,
-            "route-type":"auto-all",
-            "volume-types":{"in":"none","out":"notification"},
-            "avail-in-devices":["none"],
-            "avail-out-devices":["audio-jack","bt","builtin-speaker"],
-            "avail-frameworks":["player","wav-player","tone-player","audio-io"],
-        },
-        {
-            "role":"ringtone-call",
-            "priority":6,
-            "route-type":"auto-all",
-            "volume-types":{"in":"none","out":"ringtone"},
-            "avail-in-devices":["none"],
-            "avail-out-devices":["audio-jack","bt","builtin-speaker"],
-            "avail-frameworks":["player","wav-player","tone-player","audio-io"],
-        },
-        {
-            "role":"call-voice",
-            "priority":6,
-            "route-type":"manual",
-            "volume-types":{"in":"none","out":"call"},
-            "avail-in-devices":["builtin-mic","audio-jack","bt"],
-            "avail-out-devices":["builtin-receiver","builtin-speaker","audio-jack","bt"],
-            "avail-frameworks":["sound-manager"],
-        },	
-    ]
-}
-```
+      "latencies":[
+          {
+              "type":"low",
+              "fragsize-ms":25,
+              "minreq-ms":-1,
+              "tlength-ms":100,
+              "prebuf-ms":0,
+              "maxlength":-1,
+          },   
+          {
+              "type":"high",
+              "fragsize-ms":75,
+              "minreq-ms":-1,
+              "tlength-ms":400,
+              "prebuf-ms":0,
+              "maxlength":-1,
+          },
+      ],
+      "volumes":[
+          {
+              "type":"media",
+              "is-hal-volume":1,
+          },
+          {
+              "type":"system",
+              "is-hal-volume":0,
+          },
+          {
+              "type":"notification",
+              "is-hal-volume":0,
+          },
+          {
+              "type":"ringtone",
+              "is-hal-volume":0,
+          },
+          {
+              "type":"call",
+              "is-hal-volume":1,
+          },   
+      ],
+      "streams":[
+          {
+              "role":"media",
+              "priority":3,
+              "route-type":"auto",
+              "volume-types":{"in":"none","out":"media"},
+              "avail-in-devices":["audio-jack","builtin-mic"],
+              "avail-out-devices":["forwarding","audio-jack","bt","builtin-speaker"],
+              "avail-frameworks":["player","wav-player","tone-player","audio-io","recorder"],
+          },
+          {
+              "role":"system",
+              "priority":2,
+              "route-type":"auto",
+              "volume-types":{"in":"none","out":"system"},
+              "avail-in-devices":["none"],
+              "avail-out-devices":["forwarding","audio-jack","bt","builtin-speaker"],
+              "avail-frameworks":["player","wav-player","tone-player","audio-io"],
+          },
+          {
+              "role":"notification",
+              "priority":4,
+              "route-type":"auto-all",
+              "volume-types":{"in":"none","out":"notification"},
+             "avail-in-devices":["none"],
+              "avail-out-devices":["audio-jack","bt","builtin-speaker"],
+              "avail-frameworks":["player","wav-player","tone-player","audio-io"],
+          },
+          {
+              "role":"ringtone-call",
+              "priority":6,
+              "route-type":"auto-all",
+              "volume-types":{"in":"none","out":"ringtone"},
+              "avail-in-devices":["none"],
+              "avail-out-devices":["audio-jack","bt","builtin-speaker"],
+              "avail-frameworks":["player","wav-player","tone-player","audio-io"],
+          },
+          {
+              "role":"call-voice",
+              "priority":6,
+              "route-type":"manual",
+              "volume-types":{"in":"none","out":"call"},
+              "avail-in-devices":["builtin-mic","audio-jack","bt"],
+              "avail-out-devices":["builtin-receiver","builtin-speaker","audio-jack","bt"],
+              "avail-frameworks":["sound-manager"],
+          },	
+      ]
+  }
+  ```
+- Device map: Device types and device files can be configured in the `/etc/pulse/device-map.json` file:
 
-**Device configuration example**
-`/etc/pulse/device-map.json`
-```json
+  ```json
   {
-    "device-types":[
-        {
-            "device-type":"builtin-speaker",
-            "builtin":true,
-            "direction":["out"],
-            "avail-condition":["pulse"],
-            "playback-devices":{"normal":"alsa:sprdphone,0", "call-voice":"alsa:VIRTUALAUDIOW,0"}
-        },
-        {
-            "device-type":"builtin-mic",
-            "builtin":true,
-            "direction":["in"],
-            "avail-condition":["pulse"],
-            "capture-devices":{"normal":"alsa:sprdphone,0"}
-        },
-        {
-            "device-type":"audio-jack",
-            "builtin":false,
-            "direction":["both","out"],
-            "avail-condition":["pulse","dbus"],
-            "playback-devices":{"normal":"alsa:sprdphone,0", "call-voice":"alsa:VIRTUALAUDIOW,0"},
-            "capture-devices":{"normal":"alsa:sprdphone,0"}
-        },
-        {
-            "device-type":"bt",
-            "profile":"a2dp",
-            "builtin":false,
-            "direction":["out"],
-            "avail-condition":["pulse"]
-        },
-        {
-            "device-type":"bt",
-            "profile":"sco",
-            "builtin":false,
-            "direction":["both"],
-            "avail-condition":["pulse","dbus"],
-            "playback-devices":{"normal":"alsa:sprdphone,0", "call-voice":"alsa:VIRTUALAUDIOW,0"},
-            "capture-devices":{"normal":"alsa:sprdphone,0"}
-        },
-        {
-            "device-type":"usb-audio",
-            "builtin":false,
-            "direction":["both", "in", "out"],
-            "avail-condition":["pulse"]
-        }
-    
-    ],
-        "device-files":
-        {
-            "playback-devices":[
-                {
-                    "device-string":"alsa:sprdphone,0",
-                    "role":
-                    {
-                        "normal":"rate=44100",
-                    }
-                },
-                {
-                    "device-string":"alsa:VIRTUALAUDIOW,0",
-                    "role":
-                    {
-                        "call-voice":"rate=16000 channels=1 tsched=0 alternate_rate=16000",
-                    }
-                }
-            ],
-            "capture-devices":[
-            {
-                "device-string":"alsa:sprdphone,0",
-                "role":{"normal":"rate=44100"}
-            }
-        ]
-    }
-}
-```
+      "device-types":[
+          {
+              "device-type":"builtin-speaker",
+              "builtin":true,
+              "direction":["out"],
+              "avail-condition":["pulse"],
+              "playback-devices":{"normal":"alsa:sprdphone,0", "call-voice":"alsa:VIRTUALAUDIOW,0"}
+          },
+          {
+              "device-type":"builtin-mic",
+              "builtin":true,
+              "direction":["in"],
+              "avail-condition":["pulse"],
+              "capture-devices":{"normal":"alsa:sprdphone,0"}
+          },
+          {
+              "device-type":"audio-jack",
+              "builtin":false,
+              "direction":["both","out"],
+              "avail-condition":["pulse","dbus"],
+              "playback-devices":{"normal":"alsa:sprdphone,0", "call-voice":"alsa:VIRTUALAUDIOW,0"},
+              "capture-devices":{"normal":"alsa:sprdphone,0"}
+          },
+          {
+              "device-type":"bt",
+              "profile":"a2dp",
+              "builtin":false,
+              "direction":["out"],
+              "avail-condition":["pulse"]
+          },
+          {
+              "device-type":"bt",
+              "profile":"sco",
+              "builtin":false,
+              "direction":["both"],
+              "avail-condition":["pulse","dbus"],
+              "playback-devices":{"normal":"alsa:sprdphone,0", "call-voice":"alsa:VIRTUALAUDIOW,0"},
+              "capture-devices":{"normal":"alsa:sprdphone,0"}
+          },
+          {
+              "device-type":"usb-audio",
+              "builtin":false,
+              "direction":["both", "in", "out"],
+              "avail-condition":["pulse"]
+          }  
+      ],
+      "device-files":
+      {
+          "playback-devices":[
+              {
+                  "device-string":"alsa:sprdphone,0",
+                  "role":
+                  {
+                      "normal":"rate=44100",
+                  }
+              },
+              {
+                  "device-string":"alsa:VIRTUALAUDIOW,0",
+                  "role":
+                  {
+                      "call-voice":"rate=16000 channels=1 tsched=0 alternate_rate=16000",
+                  }
+              }
+          ],
+          "capture-devices":[
+              {
+                  "device-string":"alsa:sprdphone,0",
+                  "role":{"normal":"rate=44100"}
+              }
+          ]
+      }
+  }
+  ```
 
 ### References
 
 - Driver configuration for the Samsung chipset  
   The following list is an example of the kernel `.config` values to be set for audio when using the Samsung chipset.
-```
+  ```
   CONFIG_SOUND=y
   CONFIG_SND=y
   CONFIG_SND_TIMER=y
@@ -769,28 +737,28 @@ Stream and device configuration:
   CONFIG_SND_SOC_SLP_TRATS_MC1N2 = y
   CONFIG_SND_SOC_I2C_AND_SPI = y
   CONFIG_SND_SOC_MC1N2=y
-```
+  ```
 - PulseAudio  
   Version: 5.0  
   Website: [http://www.freedesktop.org/wiki/Software/PulseAudio](http://www.freedesktop.org/wiki/Software/PulseAudio)
 - ALSA  
   Website: [http://www.alsa-project.org](http://www.alsa-project.org/)
 
-## Player<a name="player"></a>
+## Player
 
 The multimedia player framework controls the player plugins (demuxer, codecs, and renderer plugins) of the GStreamer to play media content. The kernel interfaces to control codecs can be different for different chipsets, so the corresponding codec plugins must be implemented specifically for each chipset.
 
 **Figure: Multimedia player framework**
 
-![Multimedia player framework](media/800px-Player.png)
+![Multimedia player framework](media/800px-player.png)
 
 ### Porting the OAL Interface
 
-There is no specific OAL for the multimedia player framework. The OAL interface for the player plugins consists of the `gst-omx` codec plugins and video/audio renderer plugins. For more information on the `gst-omx` plugin, see [Codec > Porting OAL Interface](#codec_interface). For more information about Avsystem for audio, see [Audio](#audio). For more information on Wayland (UI-framework) for display, see [Video](#video).
+There is no specific OAL for the multimedia player framework. The OAL interface for the player plugins consists of the `gst-omx` codec plugins and video/audio renderer plugins. For more information on the `gst-omx` plugin, see [Codec > Porting OAL Interface](#porting-the-oal-interface). For more information about Avsystem for audio, see [Audio](#audio). For more information on Wayland (UI-framework) for display, see [Video](#videosink).
 
 **Figure: Player plugins**
 
-![Player plugins](media/Playerplugin.png)
+![Player plugins](media/playerplugin.png)
 
 
 ### Configuration
@@ -828,32 +796,32 @@ There is no specific OAL for the multimedia player framework. The OAL interface 
   - For developing GStreamer plugins, see [http://gstreamer.freedesktop.org/data/doc/gstreamer/head/pwg/html/index.html](http://gstreamer.freedesktop.org/data/doc/gstreamer/head/pwg/html/index.html).
   - For more information about OpenMAX IL components, see [http://www.khronos.org/openmax/il/](http://www.khronos.org/openmax/il/).
 
-## Codec<a name="codec"></a>
+## Codec
 
 The following figure illustrates the codecs and their relations. It shows 2 types of codec plugins, the Gstreamer and OpenMAX.
 
 **Figure: Multimedia codecs**
 
-![Multimedia codecs](media/800px-Codec.png)
+![Multimedia codecs](media/800px-codec.png)
 
 - Gstreamer codec plugin
   - The Gstreamer codec plugin can be linked to and easily used in the Gstreamer pipeline, which is used in the multimedia framework.
   - In addition, to link a Gstreamer pipeline, the capability of the codec plugin can be negotiated with the linked element in the pipeline.
   - To get detailed information, such as the capability of an element, use the `#gst-inspect-1.0 (element name)` command.  
-    ![Gst-inspect command](media/Gst-inspect.png)
+    ![Gst-inspect command](media/gst-inspect.png)
 - OpenMAX codec plugin
   - Some of the codec vendors provide OpenMAX IL components and not Gstreamer plugins. Tizen provides the `gst-omx` plugins to use the OpenMAX IL components. The Gstreamer pipeline used in the multimedia framework can control and transfer data to OpenMAX IL component using the `gst-omx` plugin.
   - To use the OpenMAX component in Gstreamer, the `gst-omx` (open source) package is provided. By using this package, Gstreamer can recognize and use an OpenMAX component as a Gstreamer element. `gst-omx` is a Gstreamer plugin that allows communication with OpenMAX IL components. The usage of the `gst-omx` plugin is the same as other Gstreamer plugins.
   - For more detailed information about this plugin, see [http://www.freedesktop.org/wiki/GstOpenMAX](http://www.freedesktop.org/wiki/GstOpenMAX). For more information about OpenMAX IL, see [http://www.khronos.org/openmax/](http://www.khronos.org/openmax/).
   - The `gst-omx` plugin refers to a `gstomx.conf` configuration file. This file is included in the `gst-omx` package, and installed to the `/etc/xdg/gst-omx.conf` directory in the target device.
 
-### Porting the OAL Interface <a name="codec_interface"></a>
+### Porting the OAL Interface
 
 The OpenMAX plugin is an industry standard that provides an abstraction layer for computer graphics, video, and sound routines. The interface abstracts the hardware and software architecture in the system. The OpenMAX IL API allows the user to load, control, connect, and unload the individual components. This flexible core architecture allows the Integration Layer to easily implement almost any media use case and mesh with existing graph-based media frameworks. The key focus of the OpenMAX IL API is portability of media components. OpenMAX IL interfaces between the media framework, such as GStreamer, and a set of multimedia components (such as an audio or video codecs). `gst-omx` is a GStreamer plug-in package that allows communication with OpenMAX IL components. The `gst-omx` structuring is classified into different object classes based on the functionality. The following figure shows the object structuring of a video decoder plugin in `gst-omx`.
 
 **Figure: gst-omx structuring**
 
-![gst-omx structuring](media/Gst-omx.png)
+![gst-omx structuring](media/gst-omx.png)
 
 The `GstVideoDecoder` base class for video decoders provides encoded data to derived `GstOMXVideoDec`. Each input frame is provided in turn to the subclass's `handle_frame` callback. The `GstVideoDecoder` base class and derived subclass cooperate in the following manner:
 
@@ -864,7 +832,7 @@ The `GstVideoDecoder` base class for video decoders provides encoded data to der
    - Each input frame is provided in turn to the subclass's `handle_frames()` function.
    - The subclass calls the `gst_video_decoder_finish_frame()` or `gst_video_decoder_drop_frame()` function.
 3. Shutdown phase
-   - The `GstVideoDecoer` class calls the `stop()` function.
+   - The `GstVideoDecoder` class calls the `stop()` function.
 
 ### Configuration
 
@@ -872,11 +840,11 @@ The `gst-omx` plugin uses a configuration file, such as `gstomx.conf`. This file
 
 **Figure: gstomx.conf elements**
 
-![gstomx.conf elements](./media/Gst-openmax.conf.png)
+![gstomx.conf elements](./media/gst-openmax.conf.png)
 
 **Figure: gstomx.conf example**
 
-![gstomx.conf example](media/Omx_mpeg4dec.png)
+![gstomx.conf example](media/omx-mpeg4dec.png)
 
 Each value needs to be changed according to the OpenMAX component vendor. When you are finished with these settings, the result is a Gstreamer type codec plugin, and you can test the codec the same way.
 
@@ -887,7 +855,7 @@ Each value needs to be changed according to the OpenMAX component vendor. When y
 - Using the codec plugin in the camcorder  
   Because the camcorder clarified its audio, video, and image encoder in the `/usr/etc/mmfw_camcorder.ini` file (`mmfw-sysconf` package), you need to change this category value to set your own codec name.
 
-  ![Video encoder configuration](media/Videoencoder.png)
+  ![Video encoder configuration](media/videoencoder.png)
 
 ### References
 
@@ -900,174 +868,176 @@ Each value needs to be changed according to the OpenMAX component vendor. When y
 
 
 
-## Videosink <a name="video"></a>
+## Videosink
 
-### Description
-Videosink renders video frames buffer from previous gst-element on a local display using the wayland (from tizen3.0). So videosink of TIZEN is waylandsink. It is used with camera or player that require video output. This element can receive a surface id of window from the application through the GstVideoOverlay interface (set_wl_window_wl_surface_id) and will render video frame in this window. If no surface id was provided by the application, the element will create its own internal window and render into it. 
+The videosink renders a video frame buffer from a previous gst element on a local display using Waylandsink (since Tizen 3.0). It is used with a camera or player that requires video output. This element can receive a surface ID of a window from the application through the `GstVideoOverlay` interface (`set_wl_window_wl_surface_id()`) and renders the video frame in this window. If no surface ID was provided by the application, the element creates its own internal window and renders into it.
 
-### Video Rendering Process
-The figure below shows the video rendering process in the player. The white box is gstreamer element. GstBuffer is streaming from filesrc to waylandsink past the video codec. The GstBuffer is TBM or SHM.
+The following figure shows the video rendering process in the player. The white box is the gstreamer element. GstBuffer is streaming from filesrc to Waylandsink past the video codec. The GstBuffer is TBM or SHM.
 
-![video_rendering_process.png](media/video_rendering_process.png)
+**Figure: Video rendering process**
 
-Waylandsink requests the rendering of the video frame  to window's wl_surface. so Waylandsink need wl_surface of wayland window which is created by Application. Because the Application and Muse are in different process bounds, Application can not pass the wl_surface pointer to Muse. To solve this problem, TIZEN use the surface id, integer value.
+![Video rendering process](media/video-rendering-process.png)
 
-Application sends a wl_surface pointer to Window server, Window server returns the grobal surface id to Application and Application passes this value to Waylandsink using GstVideoOverlay interface, set_wl_window_wl_surface_id (TIZEN special). (Step 1, 2, and 3.)
+1. Waylandsink requests the rendering of the video frame to the `wl_surface` of a window, so Waylandsink needs the `wl_surface` of a Wayland window created by the application. Because the application and Muse are in different process bounds, the application cannot pass the `wl_surface` pointer to Muse. To solve this problem, Tizen uses the surface ID value.
+1. The application sends a `wl_surface` pointer to the Window Server, which returns the global surface ID to the application, which in turn passes this value to Waylandsink using the `GstVideoOverlay` interface, `set_wl_window_wl_surface_id()` (Tizen-specific). **Steps 1, 2, and 3 in the figure.**
+1. Waylandsink creates `wl_display` to communicate with the Window Server. Normally a Window client uses the `wl_display` created by the application, but the Tizen Waylandsink creates its own `wl_display` due to process bounds issues. **Step 4.** Now Waylandsink can receive events from the server and bind to various interfaces using `wl_registry`.
+1. Waylandsink uses `wl_display` to create `wl_window` and a `wl_subsurface` using the global surface ID passed through the `GstVideoOverlay` interface. `wl_surface` is created by the `wl_compositor` of `wl_display`. **Step 5.**
+1. The application can use the Waylandsink properties to change video rendering conditions through `wl_subsurface`. **Step 6.**
+1. The `GstBuffer` received from the video codec is converted into a `wl_buffer`, then the `wl_surface` of `wl_window` is requested to render the video frame to the Window Server through the attach, damage, and commit process. **Steps 7 and 8.** The Window Server renders the `wl_buffer`. **Step 9.**
+1. When the Window Server finishes rendering the video frame, the rendering complete signal is sent to the `wl_callback` of `wl_window`, and the `wl_buffer` release event is sent to the `wl_buffer_listener` callback function. **Steps 10 and 11.** Now, Waylandsink can unreference the `GstBuffer` created by the video codec and return the `GstBuffer` to the video codec. Sometimes, it is necessary to return a `GstBuffer` while maintaining the rendered video frame in the window (for gapless playback, or keeping a camera preview). In this case, use `FlushBuffer`, which is a `wl_buffer` created after copying TBM from `GstBuffer` coming from the video codec. Waylandsink returns the `GstBuffer` to the video codec immediately, and a request to render the `FlushBuffer` is made to the Window Server.
 
-Waylandsink create wl_display to communicate with Window server. Normally Window client use the wl_display created by the App, but TIZEN waylandsink create its own wl_display dut to process bounds issue.(Step 4). Now Waylandsink can receive events from the server and bind to various interfaces using wl_registry.
+For more information on Wayland, see [https://wayland.freedesktop.org/](https://wayland.freedesktop.org/).  For more information on programming the Wayland client, see [Programming Wayland Clients](https://jan.newmarch.name/Wayland/index.html).
 
-Waylandsink uses wl_display to create wl_window and a wl_subsurface using the grobal surface id passed through the GstVideoOverlay interface. wl_surface is created by wl_compositor of wl_display.(Step 5).
-
-Application can use the waylandsink property to change video rendering conditions.(Step 6). The rendering conditions is changed via wl_subsurface.
-
-GstBuffer received from Video codec is converted to wl_buffer and then wl_surface of wl_window is requested to render the video frame to the Window Server through attach, damage and commit process.(Step 7 and 8). Window Server render wl_buffer.(Step 9).
-
-Rendering done signal comes to wl_callback of wl_window when Window Server finishes rendering the video frame, and wl_buffer release event comes to wl_buffer_listener's callback function.(Step 10 and 11). Now, Waylandsink can un_ref GstBuffer created by Video Codec and GstBuffer is retreved  to the Video Codec. Sometimes it is necessary to return a GstBuffer while maintaining the video frame rendered in the window(Gapless playback, keep camera preview). In this case, use FlushBuffer. FlushBuffer is a wl_buffer created after copying TBM from GstBuffer coming from Video codec.  Waylandsink return GstBuffer to Video Codec immediately, and rendering FlushBuffer request is made to the Window Server.
-
-For more information on wayland, see the link (<https://wayland.freedesktop.org/>).  For programming the wayland-client, see the link (<https://jan.newmarch.name/Wayland/index.html>).
-
-### Porting OAL Interface
+### Porting the OAL Interface
 There is no specific OAL for the videosink.
 
-### Features added to Waylandsink for TIZEN
+### Tizen-specific Features Added to Waylandsink
 
-#### Check the original waylandsink behavior
-Waylandsink's video rendering test can be easily verified by connecting to videotestsrc via gst-launch. If the video test screen does not appear, Window system should be ported first. ([9.2 Display Management](https://wiki.tizen.org/Tizen_3.0_Porting_Guide#Display_Management)).
+You can check the original waylandsink behavior easily with Waylandsink's video rendering test. Simply connect to videotestsrc through gst-launch. If the video test screen does not appear, the Window system [must be ported first](graphics-and-ui.md#display-management).
 
-<pre>
-gst-launch-1.0 videotestsrc ! waylandsink 
-</pre>
+```
+gst-launch-1.0 videotestsrc ! waylandsink
+```
+**Figure: Video test screen**
 
-![videotest.png](media/videotest.png)
+![Video test screen](media/videotest.png)
 
-#### Waylandsink Requirement for TIZEN
-Open source waylandsink use wayland-client, but Waylandsink for TIZEN use libtbm, wayland-tbm-client and tizen-extension-client to support MMFW's API requrements and uses window server extended functionality.
+#### Waylandsink Requirements for Tizen
 
-The major functions are TBM Video Format, Specific Video Formats, Zero copy, MMVideoBuffer, Tizen Viewport, Flush Buffer, Audio only mode, Handoffs Element signals, preroll-handoff Element signals, Use TBM, Rotate, Flip, Visible, Display Geometry Method and ROI.
+Open source Waylandsink uses `wayland-client`, but Waylandsink for Tizen uses `libtbm`, `wayland-tbm-client`, and `tizen-extension-client` to support MMFW's API requirements and uses Window Server extended functionality.
 
-##### TBM Video Format
-Original Waylandsink lists various video formats, but Wayland only supports RGB format. To support various video format, waylandsink for TIZEN use TBM Video Format provided by WAYLAND for TIZEN. The video formats supported by Window Server are hardware dependent. The dependency is on the Window Server. When the Gst-pipeline with Waylandsink is created and the caps negotiation begins, the TBM Video Format provided by the Window Server is passed to Waylandsink. Window Server can accommodate the video output format of Video Codec when the negotiation is completed.
+The major functions are TBM Video Format, Specific Video Formats, Zero copy, MMVideoBuffer, Tizen Viewport, Flush Buffer, Audio only mode, Handoffs Element signals, preroll-handoff Element signals, Use TBM, Rotate, Flip, Visible, Display Geometry Method, and ROI.
 
-To use TBM Video Format, Waylandsink need to bind tizen_policy_interface, tizen_video_interface and register listener and get  the video formats as a  callback.
+**TBM Video Format**
+
+Original Waylandsink lists various video formats, but Wayland only supports the RGB format. To support various video formats, Waylandsink for Tizen uses the TBM Video Format provided by Wayland for Tizen. The video formats supported by the Window Server are hardware-dependent. The dependency is on the Window Server. When the Gst-pipeline with Waylandsink is created and the caps negotiation begins, the TBM video format provided by the Window Server is passed to Waylandsink. The Window Server can accommodate the video output format of the video codec when the negotiation is completed.
+
+To use the TBM Video Format, Waylandsink needs to bind `tizen_policy_interface`, `tizen_video_interface`, and `register listener` and get the video formats as a callback.
 
 ```c
-static void handle_tizen_video_format (void *data, struct tizen_video *tizen_video, uint32_t format)
-{
-  GstWlDisplay *self = data;
-  FUNCTION;
+static void handle_tizen_video_format(void *data, struct tizen_video *tizen_video, uint32_t format) {
+    GstWlDisplay *self = data;
+    FUNCTION;
 
-  g_return_if_fail (self != NULL);
+    g_return_if_fail(self != NULL);
 
-  GST_LOG ("format is %d", format);
-  g_array_append_val (self->tbm_formats, format);
+    GST_LOG("format is %d", format);
+    g_array_append_val(self->tbm_formats, format);
 }
 
 static const struct tizen_video_listener tizen_video_listener = {
-  handle_tizen_video_format
+    handle_tizen_video_format
 };
 
-static void global_registry_handler(void *data, struct wl_registry *registry, uint32_t id, const char *interface, uint32_t version)
-{
-[...]
-
-  } else if (g_strcmp0 (interface, "tizen_policy") == 0) {
-    self->tizen_policy =  wl_registry_bind (registry, id, &tizen_policy_interface, 1);
-   } else if (g_strcmp0 (interface, "tizen_video") == 0) {
-    self->tizen_video =  wl_registry_bind (registry, id, &tizen_video_interface, version);
-    g_return_if_fail (self->tizen_video != NULL);
-    tizen_video_add_listener (self->tizen_video, &tizen_video_listener, self);
-  }
-[...]
+static void global_registry_handler(void *data, struct wl_registry *registry, uint32_t id, const char *interface, uint32_t version) {
+    [...]
+    } else if (g_strcmp0(interface, "tizen_policy") == 0) {
+        self->tizen_policy = wl_registry_bind(registry, id, &tizen_policy_interface, 1);
+    } else if (g_strcmp0(interface, "tizen_video") == 0) {
+        self->tizen_video = wl_registry_bind(registry, id, &tizen_video_interface, version);
+        g_return_if_fail(self->tizen_video != NULL);
+        tizen_video_add_listener(self->tizen_video, &tizen_video_listener, self);
+    }
+    [...]
 }
 ```
 
-##### Specific Video Formats used by Multimedia Framework (SN12, SN21, ST12, SR32, S420) for Zero copy
-In fact, SN12, SN21, ST12, SR32 and S320 are same to NV12, NV21, NV12MT, BGRA and I420. but Multimedia Framework use Specific Video Formates to indicate that formats is using TBM buffer. TIZEN provides a TBM buffer to avoid memory copy when transferring buffer to different processes. Camerasrc or Video Codec write the video data to tbm buffer, saves tbm bo pointer to GstBuffer, and send it to waylandsink. Waylandsink create wl_buffer with tbm_bo and requests rendering to the Window Server. There is no memory copy from Camerasrc or Video Codec to Window Server. We call it Zero Copy.
+**Specific Video Formats (SN12, SN21, ST12, SR32, S420) for Zero copy**
 
-##### MMVideoBuffer
-Gst Element should use the MMVideoBuffer type when transferring TBM buffer. tbm bo must be stored in bo of MMVideoBufferHandle. and type should be MM_VIDEO_BUFFER_TYPE_TBM_BO. Waylandsink make wl_buffer by using MMVideoBuffer information. If the video frame is not rendered, Waylandsink need to make sure that the information in MMVideoBuffer in GstBuffer received from Camerasrc or Video Codec is correct. 
+The SN12, SN21, ST12, SR32, and S320 formats are identical to NV12, NV21, NV12MT, BGRA, and I420, but the Multimedia framework uses these specific video formats to indicate that the formats are using a TBM buffer. Tizen provides a TBM buffer to avoid memory copying when transferring the buffer to different processes. `Camerasrc` or the video codec writes the video data to the TBM buffer, saves it to a pointer to `GstBuffer`, and sends it to Waylandsink. Waylandsink creates a `wl_buffer` with `tbm_bo` and requests rendering from the Window Server. There is no memory copy from `Camerasrc` or the video codec to the Window Server. This process is called Zero Copy.
+
+**MMVideoBuffer**
+
+The Gst Element must use the MMVideoBuffer type when transferring TBM buffer. tbm bo must be stored in bo of MMVideoBufferHandle, and the type must be MM_VIDEO_BUFFER_TYPE_TBM_BO. Waylandsink makes wl_buffer by using the MMVideoBuffer information. If the video frame is not rendered, Waylandsink must make sure that the information in MMVideoBuffer in GstBuffer received from Camerasrc or Video Codec is correct.
 
 ```c
 typedef struct {
-   MMVideoBufferType type;                                 /**< buffer type   - The field of handle that type indicates should be filled, and other fields of handle are optional. */
-   MMPixelFormatType format;                               /**< buffer type */
-   int plane_num;                                          /**< number of planes */
-   int width[MM_VIDEO_BUFFER_PLANE_MAX];                   /**< width of buffer */
-   int height[MM_VIDEO_BUFFER_PLANE_MAX];                  /**< height of buffer */
-   int stride_width[MM_VIDEO_BUFFER_PLANE_MAX];            /**< stride width of buffer */
-   int stride_height[MM_VIDEO_BUFFER_PLANE_MAX];           /**< stride height of buffer */
-   int size[MM_VIDEO_BUFFER_PLANE_MAX];                    /**< size of planes */
-   void *data[MM_VIDEO_BUFFER_PLANE_MAX];                  /**< data pointer(user address) of planes */
-   int handle_num;                                         /**< number of buffer handle */
-   int handle_size[MM_VIDEO_BUFFER_PLANE_MAX];             /**< size of handles */
-   MMVideoBufferHandle handle;                             /**< handle of buffer */
-   int is_secured;                                         /**< secured buffer flag. ex) TrustZone memory, user can not access it. */
-   int flush_request;                                      /**< flush request flag - If this flag is TRUE, sink element will make copy of last buffer, and it will return all buffers from src element.  Then, src element can restart without changing pipeline state. */
-   MMRectType crop;                                        /**< crop information of buffer */
+    MMVideoBufferType type; /* Buffer type - the handle field that type indicates must be filled, and other handle fields are optional */
+    MMPixelFormatType format; /* Buffer type */
+    int plane_num; /* Number of planes */
+    int width[MM_VIDEO_BUFFER_PLANE_MAX] /* Width of buffer */
+    int height[MM_VIDEO_BUFFER_PLANE_MAX]; /* Height of buffer */
+    int stride_width[MM_VIDEO_BUFFER_PLANE_MAX]; /* Stride width of buffer */
+    int stride_height[MM_VIDEO_BUFFER_PLANE_MAX]; /* Stride height of buffer */
+    int size[MM_VIDEO_BUFFER_PLANE_MAX]; /* Size of planes */
+    void *data[MM_VIDEO_BUFFER_PLANE_MAX]; /* Data pointer(user address) of planes */
+    int handle_num; /* Number of buffer handle */
+    int handle_size[MM_VIDEO_BUFFER_PLANE_MAX]; /* Size of handles */
+    MMVideoBufferHandle handle; /* Handle of buffer */
+    int is_secured; /* Secured buffer flag, such as TrustZone memory; user cannot access it */
+    int flush_request; /* Flush request flag - if this flag is TRUE, sink element makes copy of last buffer, and it returns all buffers from src element. Then, src element can restart without changing pipeline state */
+    MMRectType crop; /* Crop information of buffer */
 } MMVideoBuffer;
 ```
+MMVideoBuffer can contain video data information of all cases, as shown in the following figure.
 
+**Figure: MMVideoBuffer content**
 
-MMVideoBuffer can contain video data informtion of all cases as below. 
-
-![YUV_block.png](media/YUV_block.png)
+![MMVideoBuffer content](media/yuv-block.png)
 
 
 ##### Tizen Viewport
-To change video frame render condition, Open source original Waylandsink use ```wlsurface_set_source()```, ```wl_surface_set_buffer_transform()```, ```wl_subsurface_set_position()```, ```wl_viewport_set_destination()``` and ```wl_surface_set_buffer_transform()```, For more information on wayland API, see the link <https://wayland.freedesktop.org/docs/html/>). Waylandsink need to IPC with ```wl_surface```, ```wl_subsurface``` and ```wl_viewport```.
 
-![wl_surface.png](media/wl_surface.png) ![wayland_protocols.png](media/wayland_protocols.png)
+To change the video frame render condition, the original open-source Waylandsink uses `wlsurface_set_source()`, `wl_surface_set_buffer_transform()`, `wl_subsurface_set_position()`, `wl_viewport_set_destination()`, and `wl_surface_set_buffer_transform()` functions. For more information on the Wayland API, see [https://wayland.freedesktop.org/docs/html/](https://wayland.freedesktop.org/docs/html/). Waylandsink needs to IPC with `wl_surface`, `wl_subsurface`, and `wl_viewport`.
 
-Waylandsink in the Muse Daemon should request rendering conditions on  ```wl_subsurface``` of the window created by Application. Therefore, there are some problem that it is difficult to match the geometry sync of the parent(Window) and wl_subsurface due to the delay caused by the IPC communication between the Window Server and Wayland-client. ```wl_viewport_```, ```wl_set_source_``` are surface-based coordination, it is difficult to calculate the coordinates when the buffer is transformed. so waylandsink for TIZEN use ```tizen_viewport supported``` Wayland Server for TIZEN. To use ```tizen_viewport```, Waylandsink bind ```tizen_policy_interface``` and ```tizen_video_interface```. Now, Waylandsink need to IPC ```tizen_viewport``` only. Waylandsink need to bind  ```tizen_policy_interface```, ```tizen_video_interface```.
+**Figure: Changing video frame render conditions**
 
-![tizen_viewport.png](media/tizen_viewport.png)
+![Changing video frame render conditions](media/wl-surface.png)
 
-* Example 1
-  ![tizen_viewport_ex1.png](media/tizen_viewport_ex1.png)
+**Figure: Wayland protocols**
 
-  * Example 2               
-    ![tizen_viewport_ex2.png](media/tizen_viewport_ex2.png)
+![Wayland protocols](media/wayland-protocols.png)
 
-  * Example 3
-    ![tizen_viewport_ex3.png](media/tizen_viewport_ex3.png)
+Waylandsink in the Muse Daemon requests rendering conditions on the `wl_subsurface` of the window created by the application. Therefore, it is difficult to match the geometry sync of the parent (Window) and `wl_subsurface`, due to the delay caused by the IPC communication between the Window Server and Wayland client. Since `wl_viewport_` and `wl_set_source_` are surface-based coordination, it is difficult to calculate the coordinates when the buffer is transformed. So Waylandsink for Tizen uses `tizen_viewport supported` Wayland Server for Tizen. To use `tizen_viewport`, Waylandsink binds `tizen_policy_interface` and `tizen_video_interface`. Now, Waylandsink only needs to IPC `tizen_viewport`.
 
-  * Example 4
-    ![tizen_viewport_ex4.png](media/tizen_viewport_ex4.png)
+**Figure: Tizen viewport**
+
+![Tizen viewport](media/tizen-viewport.png)
+
+- Example 1:  
+  ![Viewport example 1](media/tizen-viewport-ex1.png)
+- Example 2:  
+  ![Viewport example 2](media/tizen-viewport-ex2.png)
+- Example 3:  
+  ![Viewport example 3](media/tizen-viewport-ex3.png)
+- Example 4:  
+  ![Viewport example 4](media/tizen-viewport-ex4.png)
 
 
-##### Flush Buffer
-Sometimes it is necessary to return GstBuffer while maintaining the video frame rendered in the window. In this case, use FlushBuffer. FlushBuffer is a ```wl_buffer``` created after copying TBM from GstBuffer coming from Video codec or Camerasrc. Waylandsink return GstBuffer to Video Codec or Camerasrc immediately, and rendering FlushBuffer request is made to the Window Server.
+**Flush buffer**
 
-**1) Gapless video playback.**
+Sometimes, it is necessary to return `GstBuffer` while maintaining the video frame rendered in the window. In this case, use `FlushBuffer`, which is a `wl_buffer` created after copying TBM from `GstBuffer` coming from the video codec or `Camerasrc`. Waylandsink returns the `GstBuffer` to the video codec or `Camerasrc` immediately, and a request to render the `FlushBuffer` is made to the Window Server.
 
-Waylandsink receive ```GST_EVENT_CUSTOM_DOWNSTREAM``` from Player when Player performs gapless video playback. and Player create a FlushBuffer.
-```c
-#define GST_APP_EVENT_FLUSH_BUFFER_NAME "application/flush-buffer"
+1. Gapless video playback  
+   Waylandsink receives the `GST_EVENT_CUSTOM_DOWNSTREAM` event from the player when it performs gapless video playback. The player creates a `FlushBuffer`.
+   ```c
+   #define GST_APP_EVENT_FLUSH_BUFFER_NAME "application/flush-buffer"
 
-static gboolean gst_wayland_sink_event (GstBaseSink * bsink, GstEvent * event)
-{
-[...]  
-  switch (GST_EVENT_TYPE (event)) {
-  case GST_EVENT_CUSTOM_DOWNSTREAM:
-     s = gst_event_get_structure (event);   
-     if (s == NULL || !gst_structure_has_name (s, GST_APP_EVENT_FLUSH_BUFFER_NAME))
-         break;
-    gst_wayland_sink_render_flush_buffer (bsink);
-[...] 
-}
-```
-**2) keep-camera-preview**
-Camera set this property When Camera need to maintain last video frame. Waylandsink copay last tbm buffer and return last tbm buffr immediately when state change(PAUSED_TO_READY).
-```
-keep-camera-preview : Last tbm buffer is copied and returned to camerasrc immediately when state change(PAUSED_TO_READY)
-                      flags: readable, writable
-                      Boolean. Default: false
-```
-**3) flush_request of MMVideoBuffer**
-Camerasrc and Video Codec can set a flag to request a flushbuffer in the GstBuffer using `MMVideoBuffer.flush_request = TRUE`. 
+   static gboolean gst_wayland_sink_event(GstBaseSink * bsink, GstEvent * event) {
+       [...]  
+       switch (GST_EVENT_TYPE(event)) {
+       case GST_EVENT_CUSTOM_DOWNSTREAM:
+           s = gst_event_get_structure(event);
+           if (s == NULL || !gst_structure_has_name(s, GST_APP_EVENT_FLUSH_BUFFER_NAME))
+               break;
+           gst_wayland_sink_render_flush_buffer(bsink);
+       [...]
+   }
+   ```
+1. `keep-camera-preview`  
+   The camera sets this property when it needs to maintain the last video frame. Waylandsink copies the last TBM buffer and returns it immediately when the state changes (PAUSED_TO_READY).
+   ```
+   keep-camera-preview : Last tbm buffer is copied and returned to camerasrc immediately when state change(PAUSED_TO_READY)
+                         flags: readable, writable
+                         Boolean. Default: false
+   ```
+1. `flush_request` of MMVideoBuffer  
+   `Camerasrc` and the video codec can set a flag to request a flushbuffer in the `GstBuffer` using `MMVideoBuffer.flush_request = TRUE`.
 
-##### Audio only mode
-Waylandsink has s disable-overlay property to support Player's audio only mode. If this property is set, video frame is not rendered. Player need to set this property to false and set ```wl_surface_id``` when Player need to show video frame.
+**Audio only mode**
+
+Waylandsink has a `disable-overlay` property to support the player's audio-only mode. If this property is set, the video frame is not rendered. When the player needs to show a video frame, it needs to set this property to `false` and set `wl_surface_id`.
+
 ```
 disable-overlay : Stop using overlay by destroying wl_window and wl_display, Use gst_video_overlay_set_wl_window_wl_surface_id before setting FALSE to use overlay
                               flags: readable, writable
@@ -1075,65 +1045,67 @@ disable-overlay : Stop using overlay by destroying wl_window and wl_display, Use
 ```
 
 ```c
-gst_wayland_sink_set_property (GObject * object, guint prop_id, const GValue * value, GParamSpec * pspec)
-{
-[...]
-    case PROP_DISABLE_OVERLAY:      
-       sink->disable_overlay = g_value_get_boolean (value);
+gst_wayland_sink_set_property(GObject * object, guint prop_id, const GValue * value, GParamSpec * pspec) {
+    [...]
+    case PROP_DISABLE_OVERLAY:
+       sink->disable_overlay = g_value_get_boolean(value);
        if (sink->window && sink->display) {
-         if (sink->disable_overlay) {   // set TRUE       
-           g_clear_object (&sink->window);
-           g_clear_object (&sink->display);        
-        } else // set FALSE
-          gst_wayland_sink_recover_display_window_info (sink);
-       }       break;
-[...]
+         if (sink->disable_overlay) {   /* set TRUE */
+           g_clear_object(&sink->window);
+           g_clear_object(&sink->display);
+        } else /* set FALSE */
+          gst_wayland_sink_recover_display_window_info(sink);
+       }
+       break;
+    [...]
 }
 
-static GstFlowReturn gst_wayland_sink_render (GstBaseSink * bsink, GstBuffer * buffer)
-{
-[...]
-  /* check overlay */  
-  if (gst_wayland_sink_is_disabled_overlay (sink)) {    
-    GST_LOG ("set disable_overlay, so skip");    
-    goto done; //skip video rendering
-  }
-[...]
+static GstFlowReturn gst_wayland_sink_render(GstBaseSink * bsink, GstBuffer * buffer) {
+    [...]
+    /* check overlay */
+    if (gst_wayland_sink_is_disabled_overlay(sink)) {
+        GST_LOG("set disable_overlay, so skip");
+        goto done; //skip video rendering
+    }
+    [...]
 }
 
-Please refer to mm_player_priv.c
-/* Need to set surface_id to enable overlay. */
-gst_video_overlay_set_wl_window_wl_surface_id( GST_VIDEO_OVERLAY(player->pipeline->videobin[MMPLAYER_V_SINK].gst), *(int*)handle);
+Refer to mm_player_priv.c
+/* Need to set surface_id to enable overlay */
+gst_video_overlay_set_wl_window_wl_surface_id(GST_VIDEO_OVERLAY(player->pipeline->videobin[MMPLAYER_V_SINK].gst), *(int*)handle);
 ```
 
-##### Handoffs and preroll-handoff Element Signals
-Sometimes Player use fakesink.  Changing the gst-pipeline of Player is a hassles, so Waylandsink provided fakesink functionality. if this property set to TRUE, Waylandsink send hanoff signal to Player.
+**Handoffs and preroll-handoff element signals**
+
+Changing the gst-pipeline of the player is labor-intensive, so Waylandsink provides a fakesink functionality. If this property is set to `true`, Waylandsink sends a handoff signal to the player.
+
 ```c
-static GstFlowReturn gst_wayland_sink_render (GstBaseSink * bsink, GstBuffer * buffer)
-{
-[...]
-  /* fakesink function for media stream callback case */
-  if (sink->signal_handoffs) {    
-    GST_LOG ("g_signal_emit: hand-off ");    
-    g_signal_emit (sink, gst_waylandsink_signals[SIGNAL_HANDOFF], 0, buffer, bsink->sinkpad);
-    goto done;  //skip video rendering
-  }
-[...]
+static GstFlowReturn gst_wayland_sink_render(GstBaseSink * bsink, GstBuffer * buffer) {
+    [...]
+    /* fakesink function for media stream callback case */
+    if (sink->signal_handoffs) {
+        GST_LOG("g_signal_emit: hand-off ");
+        g_signal_emit(sink, gst_waylandsink_signals[SIGNAL_HANDOFF], 0, buffer, bsink->sinkpad);
+        goto done;  /* Skip video rendering */
+    }
+    [...]
 }
 ```
 
-##### Use TBM
-Waylandsink use two types of buffrs. It si shared memory and TBM memory. the default value is TRUE and Waylandsink use TBM memory. Waylandsink for TIZEN use shared memory such as the open source original waylandsink if value is FALSE.
+**Use TBM**
+
+Waylandsink use 2 types of buffers, shared memory and TBM memory. The default value of the `use-tbm` property is `true` and Waylandsink uses TBM memory. If the value is `false`, Waylandsink for Tizen uses shared memory just like the original open-source Waylandsink.
 ```
-use-tbm  : Use Tizen Buffer Memory insted of Shared memory, Memory is alloced by TBM insted of SHM when enabled
+use-tbm  : Use Tizen Buffer Memory instead of Shared memory, Memory is allocated by TBM instead of SHM when enabled
            flags: readable, writable
            Boolean. Default: true
 ```
 
-##### Rotate
-Waylandsink can rotate angle of display output. the default value is 0, "DEGREE_0".
+**Rotate**
+
+Waylandsink can rotate the angle of display output. The default value of the `rotate` property is 0, "DEGREE_0".
 ```
-rotate   : Rotate angle of display output                        
+rotate   : Rotate angle of display output
            flags: readable, writable
            Enum "GstWaylandSinkRotateAngleType" Default: 0, "DEGREE_0"
                 (0): DEGREE_0         - No rotate
@@ -1141,88 +1113,94 @@ rotate   : Rotate angle of display output
                 (2): DEGREE_180       - Rotate 180 degree
                 (3): DEGREE_270       - Rotate 270 degree
 ```
-We need to convet the enum values used by Player or Camera to values used by WAYLAND.
+
+The enumeration values used by the player or camera need to be converted to values used by Wayland.
 ```c
-static gint gst_wl_window_find_rotate_transform (guint rotate_angle) {
-  gint transform = WL_OUTPUT_TRANSFORM_NORMAL; 
-    switch (rotate_angle) {    
-      case DEGREE_0:      
-        transform = WL_OUTPUT_TRANSFORM_NORMAL;      
-        break;    
-     case DEGREE_90:
-       transform = WL_OUTPUT_TRANSFORM_90;      
-       break;    
-     case DEGREE_180:      
-       transform = WL_OUTPUT_TRANSFORM_180;      
-       break;    
-     case DEGREE_270:      
-       transform = WL_OUTPUT_TRANSFORM_270;      
-       break;  
-  }  
-  return transform;
+static gint gst_wl_window_find_rotate_transform(guint rotate_angle) {
+    gint transform = WL_OUTPUT_TRANSFORM_NORMAL;
+    switch (rotate_angle) {
+    case DEGREE_0:
+         transform = WL_OUTPUT_TRANSFORM_NORMAL;
+         break;
+    case DEGREE_90:
+        transform = WL_OUTPUT_TRANSFORM_90;
+        break;
+    case DEGREE_180:
+        transform = WL_OUTPUT_TRANSFORM_180;
+        break;
+    case DEGREE_270:
+        transform = WL_OUTPUT_TRANSFORM_270;
+        break;  
+    }
+
+    return transform;
 }
 
-transform =  gst_wl_window_find_rotate_transform (window->rotate_angle.value);   
-tizen_viewport_set_transform (window->tizen_area_viewport, transform);
+transform =  gst_wl_window_find_rotate_transform(window->rotate_angle.value);
+tizen_viewport_set_transform(window->tizen_area_viewport, transform);
 ```
 
-##### Flip
-Waylandsink can flip angle of display output. the default value is 0, "FLIP_NONE".
+**Flip**
+
+Waylandsink can flip the angle of the display output. The default value of the `flip` property is 0, "FLIP_NONE".
 ```
  flip  : Flip for display
          flags: readable, writable
-         Enum "GstWaylandSinkFlipType" Default: 0, "FLIP_NONE" 
-              (0): FLIP_NONE        - Flip NONE 
-              (1): FLIP_HORIZONTAL  - Flip HORIZONTAL 
-              (2): FLIP_VERTICAL    - Flip VERTICAL 
+         Enum "GstWaylandSinkFlipType" Default: 0, "FLIP_NONE"
+              (0): FLIP_NONE        - Flip NONE
+              (1): FLIP_HORIZONTAL  - Flip HORIZONTAL
+              (2): FLIP_VERTICAL    - Flip VERTICAL
               (3): FLIP_BOTH        - Flip BOTH
 ```
-WAYLAND has not flip. So, waylandsink must implement flip with rotating video_viewport.
+
+Wayland has no flip function, so Waylandsink must implement flipping by rotating the video viewport:
 ```c
-static gint gst_wl_window_find_flip_transform (guint flip)
-{
-  gint transform = WL_OUTPUT_TRANSFORM_NORMAL;
-  FUNCTION;
+static gint gst_wl_window_find_flip_transform(guint flip) {
+    gint transform = WL_OUTPUT_TRANSFORM_NORMAL;
+    FUNCTION;
 
-  GST_DEBUG ("flip (%d)", flip);
-  switch (flip) {
+    GST_DEBUG("flip (%d)", flip);
+    switch (flip) {
     case FLIP_NONE:
-      transform = WL_OUTPUT_TRANSFORM_NORMAL;
-      break;
+        transform = WL_OUTPUT_TRANSFORM_NORMAL;
+        break;
     case FLIP_HORIZONTAL:
-      transform = WL_OUTPUT_TRANSFORM_FLIPPED;
-      break;
+        transform = WL_OUTPUT_TRANSFORM_FLIPPED;
+        break;
     case FLIP_VERTICAL:
-      transform = WL_OUTPUT_TRANSFORM_FLIPPED_180;
-      break;
+        transform = WL_OUTPUT_TRANSFORM_FLIPPED_180;
+        break;
     case FLIP_BOTH:
-      transform = WL_OUTPUT_TRANSFORM_180;
-      break;
-  }
-  return transform;
+        transform = WL_OUTPUT_TRANSFORM_180;
+        break;
+    }
 
+    return transform;
 }
 
-transform = gst_wl_window_find_flip_transform (window->flip.value);
-tizen_viewport_set_transform (window->tizen_video_viewport, transform);
+transform = gst_wl_window_find_flip_transform(window->flip.value);
+tizen_viewport_set_transform(window->tizen_video_viewport, transform);
 ```
 
-##### Visible
-Waylandsink can make the video frame visible or invisible on the display. To make the video frame invisible, attach NULL, To make the video fame visible, Waylandsink need to keep last rendered video frame.
+**Visible**
+
+Waylandsink can make the video frame visible or invisible on the display. To make the video frame invisible, attach `NULL`. To make the video fame visible, Waylandsink needs to keep the last rendered video frame.
+
 ```c
 /* invisible */
-static void gst_wayland_sink_stop_video (GstWaylandSink * sink)
-{
-  FUNCTION;
-  g_return_if_fail (sink != NULL);
-  gst_wl_window_render (sink->window, NULL, NULL);
+static void gst_wayland_sink_stop_video(GstWaylandSink * sink) {
+    FUNCTION;
+    g_return_if_fail(sink != NULL);
+    gst_wl_window_render(sink->window, NULL, NULL);
 }
-/*visible*/
-gst_wayland_sink_update_last_buffer_geometry (sink);
+/* visible */
+gst_wayland_sink_update_last_buffer_geometry(sink);
 ```
 
-##### Display Geometry Method and ROI
-Waylandsink can change the geometry when rendering the video.
+**Display geometry method and ROI**
+
+When rendering video, Waylandsink can change the geometry.
+
 ```
 display-geometry-method: Geometrical method for display
            flags: readable, writable
@@ -1234,64 +1212,60 @@ display-geometry-method: Geometrical method for display
                 (4): ORIGIN_SIZE_OR_LETTER_BOX - Origin size(if screen size is larger than video size(width/height)) or Letter box(if video size(width/height) is larger than screen size)
                 (5): DISP_GEO_METHOD_CUSTOM_ROI - Specially described destination ROI
 ```
-These are provided by using tizen_viewport from TIZEN 3.0.
+These are provided by using `tizen_viewport` since Tizen 3.0.
+
 ```c
 enum {
- DISP_GEO_METHOD_LETTER_BOX = 0,
- DISP_GEO_METHOD_ORIGIN_SIZE,
- DISP_GEO_METHOD_FULL_SCREEN,
- DISP_GEO_METHOD_CROPPED_FULL_SCREEN,
- DISP_GEO_METHOD_ORIGIN_SIZE_OR_LETTER_BOX,
- DISP_GEO_METHOD_CUSTOM_ROI,
- DISP_GEO_METHOD_NUM,
+    DISP_GEO_METHOD_LETTER_BOX = 0,
+    DISP_GEO_METHOD_ORIGIN_SIZE,
+    DISP_GEO_METHOD_FULL_SCREEN,
+    DISP_GEO_METHOD_CROPPED_FULL_SCREEN,
+    DISP_GEO_METHOD_ORIGIN_SIZE_OR_LETTER_BOX,
+    DISP_GEO_METHOD_CUSTOM_ROI,
+    DISP_GEO_METHOD_NUM,
 };
 
 if (tizen_disp_mode > -1) {
-  tizen_destination_mode_set (window->tizen_video_dest_mode, tizen_disp_mode); 
+    tizen_destination_mode_set(window->tizen_video_dest_mode, tizen_disp_mode);
 }
 ```
-ROI coordinates can be set only when the value of display-geometry-method is set to 5, and ROI coordinates are obtained from `gst_video_overlay_set_render_rectangle()` from Player or Camera.
+
+ROI coordinates can be set only when the value of `display-geometry-method` is set to 5, and ROI coordinates are obtained from `gst_video_overlay_set_render_rectangle()` from the player or camera.
 ```c
 if (window->disp_geo_method.value == DISP_GEO_METHOD_CUSTOM_ROI) {
-   tizen_viewport_set_destination (window->tizen_video_viewport, window->roi.x, window->roi.y, window->roi.w, window->roi.h);
+    tizen_viewport_set_destination(window->tizen_video_viewport, window->roi.x, window->roi.y, window->roi.w, window->roi.h);
 }
 ```
 
-**1) Letter Box mode**
+The following examples describe the various available modes:
 
-Letter Box mode fit the video source to Width or Height of Window, align center and keep aspect ratio of original video source.
+- Letterbox mode  
+Fit the video source to the width or height of the window, aligned to the center and keeping the aspect ratio of the original video source.
+  - Window (width/height) > Video source (width/height)  
 
-* Window (width/height) > Video source (width/height)           
-  ![Letterbox_ex1.png](media/Letterbox_ex1.png)
+    ![Letterbox example 1](media/letterbox-ex1.png)
 
-* Window (width/height) < Video source (width/height)          
-  ![Letterbox_ex2.png](media/Letterbox_ex2.png)
+  - Window (width/height) < Video source (width/height)  
 
-**2) Origin Size mode**
+    ![Letterbox example 2](media/letterbox-ex2.png)
+- Original size mode  
+Set the video source size the same as the original video size, aligned to the center and keeping the aspect ratio of the original video source.
+  - Window size > Video source size
 
-Origin size mode set video source size by original video size, align center and keep aspect ratio of original video source.
+    ![Original size mode example 1](media/origin-mode-ex1.png)  
+  - Window size < Video source size
 
-* Window size > Video source size                    
-  ![origin_mode_ex1.png](media/origin_mode_ex1.png)
-* Window size < Video source size
-  ![origin_mode_ex2.png](media/origin_mode_ex2.png)
+    ![Original size mode example 2](media/origin-mode-ex2.png)
+- Cropped full screen mode  
+Fit the video source to the width and height, cropping out the area outside the window, aligned to the center and keeping the aspect ratio of the original video source.
+  - Window (width/height) > Video source (width/height)
 
-**3) Cropped Full Screen mode**
+    ![Cropped full screen mode example 1](media/cropped-full-mode-ex1.png)
+  - Window (width/height) < Video source (width/height)  
 
-Cropped Full Screen mode fit the video source to Width and Height, crop the out of window area, align center, keep aspect ratio of original video source.
+    ![Cropped full screen mode example 2](media/cropped-full-mode-ex2.png)
+- ROI mode  
+The user sets the location and size of where the video is rendered.
+  - Window size: width(1920), height(1080), ROI size: x(100), y(100), width(800), height(400)
 
-* Window (width/height) > Video source (width/height)
-  ![cropped_full_mode_ex1.png](media/cropped_full_mode_ex1.png)
-
-* Window (width/height) < Video source (width/height)  
-  ![cropped_full_mode_ex2.png](media/cropped_full_mode_ex2.png)
-
-
-
-**4) ROI mode**
-
-ROI is the user directly sets the location where the video is rendered.
-
-* window size: width(1920), height(1080), ROI size: x(100), y(100), width(800), height(400)
-
-![ROI_ex.png](media/ROI_ex.png)
+    ![ROI mode example](media/roi-ex.png)

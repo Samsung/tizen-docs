@@ -52,7 +52,7 @@ This section provides a brief overview of the typical booting sequence, starting
 
 **Figure: Tizen bootup sequence**
 
-![Tizen bootup sequence](media/800px-Boot-1.png)
+![Tizen bootup sequence](media/800px-boot-1.png)
 
 The Tizen bootup process is the same as any other [Linux](https://wiki.tizen.org/Linux) kernel. Make sure that the correct machine ID and the boot arguments are passed from the boot loader.
 
@@ -62,7 +62,7 @@ The following figure shows the early boot sequence after starting the kernel.
 
 **Figure: Early boot sequence**
 
-![Early boot sequence](media/706px-Boot-2.png)
+![Early boot sequence](media/706px-boot-2.png)
 
 - `sysinit.target`  
   Special target unit for early boot-up scripts. It has dependencies on necessary services and targets, such as `local-fs.target`. At this point, most of the file systems, such as `/opt`, `/tmp`, and `/media`, are mounted and the `systemd`-related daemons, such as `systemd-journald`, are launched.
@@ -75,12 +75,12 @@ The following figure shows the overview of normal booting sequence in Tizen plat
 
 **Figure: Tizen platform boot sequence**
 
-![Tizen platform boot sequence](media/710px-Boot-3.png)
+![Tizen platform boot sequence](media/710px-boot-3.png)
 
 - `multi-user.target`  
   Special target unit for setting up a multi-user system with non-graphical support. On the Tizen platform, this target is used for launching platform infrastructure daemons, such as `dbus` (system session), power manager, GPS manager, telephony daemon, WRT (Web Run Time) security daemon, and the media server. Some `systemd`-related daemons (such as `systemd-logind`) are also started in this phase.
 - `graphical.target`  
-  Special target unit for setting up a graphical environment. Some important daemons (such as the access control and OMA DS agent servers) that must have root permission are launched at this point. The Tizen platform uses the `systemd` user session for App privilege daemons. Some daemons related to the graphics system, such as Enlightenment (Windows manager), are launched with the App privilege in this phase. The Tizen platform has its special target for middleware and mobile service: `tizen-middleware.target` starts the platform service daemons, such as calendar, contacts, email, message, sound, and download provider. `tizen-mobile-session.target` starts some service daemons related with the mobile session.
+  Special target unit for setting up a graphical environment. Some important daemons (such as the access control and OMA DS agent servers) that must have root permission are launched at this point. The Tizen platform uses the `systemd` user session for App privilege daemons. Some daemons related to the graphics system, such as Enlightenment (window manager), are launched with the App privilege in this phase. The Tizen platform has its special target for middleware and mobile service: `tizen-middleware.target` starts the platform service daemons, such as calendar, contacts, email, message, sound, and download provider. `tizen-mobile-session.target` starts some service daemons related with the mobile session.
 
 ## BSP Customization
 
@@ -116,7 +116,8 @@ To build the Tizen TM1 boot loader:
    ```bash
    $ tar cvf bootloader.tar u-boot-mmc.bin`
    ```
->**Note**  
+>**Note**
+>
 >Be careful when modifying the boot loader: incorrect configuration can damage the device permanently.
 
 #### Boot Loader Kernel Parameters
@@ -139,7 +140,8 @@ To download the Tizen kernel source package, see [Getting Source Code and Build]
 
 For more information on the Tizen kernel configuration and kernel building, see [Kernel Build](https://wiki.tizen.org/Porting_Guide#Kernel_Build).
 
-> **Note**  
+> **Note**
+>
 > Tizen uses `INOTIFY` instead of `DNOTIFY`. You must disable `DNOTIFY` from your kernel configuration.
 
 If you want to use `initramfs`, you can use these configurations:
@@ -157,19 +159,19 @@ The virtual file system (VFS) is an abstraction layer on top of a physical file 
 
 **Figure: Tizen file system**
 
-![Tizen file system](media/800px-Filesystem.png)
+![Tizen file system](media/800px-filesystem.png)
 
 At the top of the VFS is a common API abstraction of functions, such as open, close, read, and write. At the bottom of the VFS are the file system abstractions that define how the upper-layer functions are implemented with respect to a specific file system.
 
 Below the file system layer is the page cache, which provides a common set of functions to the file system layer (independent of any particular file system). This caching layer optimizes access to the physical devices by keeping data around for a short time (or speculatively reading ahead, so that the data is available when needed). Below the page cache are the device drivers, which implement the interface for the particular physical device.
 
-#### Tizen Partition Layout<a name="Tizen_Partition_Layout"></a>
+#### Tizen Partition Layout
 
 The following description is an example of the Tizen partition layout. The product vendor can modify the sequence or partition layout for their devices, as needed.
 
 **Figure: Tizen partition layout**
 
-![Tizen partition layout](media/800px-Partitionlayout.png)
+![Tizen partition layout](media/800px-partitionlayout.png)
 
 The `boot` partition is mounted in the `/boot` directory of `rootfs`. Here `s-boot`, `u-boot`, and the kernel image are saved as a file format, provided as `system.tar`.
 
@@ -187,7 +189,7 @@ Each partition has the hierarchy illustrated in the following figure.
 
 **Figure: Tizen file system hierarchy**
 
-![Tizen file system hierarchy](media/800px-Filesystemhierarchy.png)
+![Tizen file system hierarchy](media/800px-filesystemhierarchy.png)
 
 #### Supported File Systems
 
@@ -212,7 +214,7 @@ If MMC is your booting device, read-write APIs, partition management, and flashi
 
 **Figure: Tizen MMC architecture**
 
-![Tizen MMC architecture](media/800px-Mmc.png)
+![Tizen MMC architecture](media/800px-mmc.png)
 
 The MMC/SD/SDIO driver supports the following features:
 
@@ -243,4 +245,4 @@ The SDHCI controller is supported in the MMC/SD/SDIO interface. The Mobile Stora
   `CONFIG_MMC_SDHCI_S3C` (for Samsung SoC)  
   `sys interface: /dev/mmcblk1pX`
 
-The `X` denotes the MMC partition number. Details of the partition mount point for Tizen are covered under [Tizen Partition Layout](kernel.md#Tizen_Partition_Layout).
+The `X` denotes the MMC partition number. Details of the partition mount point for Tizen are covered under [Tizen Partition Layout](#tizen-partition-layout).

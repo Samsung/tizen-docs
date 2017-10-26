@@ -1,14 +1,8 @@
 # System
 
-This guide covers the following issues:
+You can implement various features relatesd to the System framework and the file system.
 
-- [Partition and File System](system.md#partition)
-- [System Framework](system.md#frame)
-- [System Framework](system.md#frame)
-- [System Framework](system.md#frame)
-- [System Framework](system.md#frame)
-
-## Partition and File System<a name="partition"></a>
+## Partition and File System
 
 The following description is an example of the Tizen partition layout. Product vendors can modify the sequence or partition layout for their devices, as needed.
 
@@ -44,7 +38,7 @@ The Tizen directory hierarchy intends to follow the File System Hierarchy Standa
 
 **Figure: File system hierarchy**
 
-![File system hierarchy](media/467px-FSH.png)
+![File system hierarchy](media/467px-fsh.png)
 
 Directory macros for accessing the Tizen-specific directories are provided in the Tizen platform configuration metafile. The following table lists some example macros.
 
@@ -55,7 +49,7 @@ Directory macros for accessing the Tizen-specific directories are provided in th
 | `TZ_SYS_SHARE`   | `/opt/share` |
 | `TZ_SYS_VAR`     | `/opt/var`   |
 
-## System Framework<a name="frame"></a>
+## System Framework
 
 The System framework module abstracts low-level system functions and manages the Tizen system:
 
@@ -70,14 +64,14 @@ The System framework module abstracts low-level system functions and manages the
 - dlog requirements  
 Select a backend for the target environment and enable the appropriate kernel feature:
     - Additional KMSG patch for multiple Kmsg backend
-    - Android logger driver for Android log backend
+    - Android&trade; logger driver for Android log backend
     - Userspace logger daemon
 
 Using the Linux kernel 3.10 or above is recommended.
 
 **Figure: System framework**
 
-![System framework](media/800px-SystemFW.png)
+![System framework](media/800px-systemfw.png)
 
 ### systemd
 
@@ -99,7 +93,8 @@ To use most of the `resourced` functionalities, you must enable the following `c
   - `CONFIG_FREEZER`: Freezes background (and idle) applications
   - `CONFIG_MEMCG_SWAP`, `CONFIG_MEMCG_SWAP_ENABLED`, `CONFIG_ZRAM`, `CONFIG_ZSMALLOC`: Saves memory through compression
 
-> **Note**  
+> **Note**
+>
 > To use the `resourced` freezer feature, you must install the freezer plugin by enabling `CONFIG_FREEZER`.
 
 ### deviced
@@ -1032,7 +1027,7 @@ The sensor framework provides a sensor server for managing sensor HALs and a med
 
 **Figure: Sensor framework architecture**
 
-![Sensor framework architecture](media/678px-Tizen_3_sensorfw.png)
+![Sensor framework architecture](media/678px-tizen-3-sensorfw.png)
 
 The sensor HALs retrieve data from sensor hardware and enable client applications to use the data for specific requirements.
 
@@ -1057,7 +1052,7 @@ The Tizen HAL sensor types are also defined in the `sensor_hal_types.h` header f
 
 **Figure: Sensor HAL**
 
-![Sensor HAL](media/Tizen_3_sensor_fw_hal.png)
+![Sensor HAL](media/tizen-3-sensor-fw-hal.png)
 
 The following code snippet shows the interface of the sensor HAL in the `sensor_hal.h` header file:
 
@@ -1284,7 +1279,7 @@ enum sensor_activity {
 
 The following code snippet shows an example of the `sensor_device` implementation for the accelerometer (`sensor-hal-tm1/src/`):
 
-```c++
+```cpp
 /* In create.cpp */
 #include <sensor/sensor_hal.h>
 #include <sensor_log.h>
@@ -1376,7 +1371,7 @@ private:
 #endif /* _ACCEL_DEVICE_H_ */
 ```
 
-```c++
+```cpp
 /* In accel_device.cpp */
 #include <fcntl.h>
 #include <unistd.h>
@@ -1734,7 +1729,7 @@ The sensor HAL interface is provided to manufacturers and vendors through the `s
 
 **Figure: Sensorhub HAL**
 
-![Sensorhub HAL](media/656px-Tizen_3_sensorhub2.png)
+![Sensorhub HAL](media/656px-tizen-3-sensorhub2.png)
 
 The sensorhub HAL can be developed by using the `sensor_device` interface. An example of a sensorhub HAL can be found in the `sensor-hal-tm1/src/sensorhub` Git.
 

@@ -8,13 +8,13 @@ The Tizen 3.0 first milestone release for TV and mobile profiles provides the Ti
 
 ## Release Details
 
-- Source code and packages list
+- Getting source code and packages list
   - All Tizen source code is maintained in the Git repository at [tizen.org](https://review.tizen.org/git/).
   - You can access the [TV package list](http://download.tizen.org/releases/milestone/tizen/tv-3.0.m1/tizen-tv_20150914.3/images/arm-wayland/tv-wayland-armv7l-odroidu3/tizen-tv_20150914.3_tv-wayland-armv7l-odroidu3.packages) and the [mobile package list](http://download.tizen.org/releases/milestone/tizen/mobile-3.0.m1/tizen-mobile_20150914.3/images/arm64-wayland/mobile-wayland-arm64-n4/tizen-mobile_20150914.3_mobile-wayland-arm64-n4.packages) for the latest snapshots.
-- Binaries and images
+- Getting binaries and images
   - TV binary: [platform](http://download.tizen.org/releases/milestone/tizen/tv-3.0.m1/tizen-tv_20150914.3/images/arm-wayland/tv-wayland-armv7l-odroidu3/tizen-tv_20150914.3_tv-wayland-armv7l-odroidu3.tar.gz) and [bootloader/kernel](http://download.tizen.org/releases/milestone/tizen/tv-3.0.m1/tizen-tv_20150914.3/images/arm-wayland/tv-boot-armv7l-odroidxu3/tizen-tv_20150914.3_tv-boot-armv7l-odroidxu3.tar.gz)
   - Mobile binary: platform ([32-bit](http://download.tizen.org/releases/milestone/tizen/mobile-3.0.m1/tizen-mobile_20150914.3/images/arm-wayland/mobile-wayland-armv7l-n4/tizen-mobile_20150914.3_mobile-wayland-armv7l-n4.tar.gz)/[64-bit](http://download.tizen.org/releases/milestone/tizen/mobile-3.0.m1/tizen-mobile_20150914.3/images/arm64-wayland/mobile-wayland-arm64-n4/tizen-mobile_20150914.3_mobile-wayland-arm64-n4.tar.gz))
-- Device flashing instructions
+- How to flash to a device
   - XU3 (TV profile): [https://wiki.tizen.org/wiki/Quick_guide_for_odroidxu3](https://wiki.tizen.org/wiki/Quick_guide_for_odroidxu3)
   - XU4 (TV profile): [https://wiki.tizen.org/wiki/Quick_guide_for_odroidxu4](https://wiki.tizen.org/wiki/Quick_guide_for_odroidxu4)
   - Mobile profile: A reference device for the mobile profile is not currently available.

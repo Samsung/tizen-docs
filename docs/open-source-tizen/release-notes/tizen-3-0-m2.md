@@ -29,14 +29,14 @@ Tizen 3.0 adopts various new features, such as high-performance graphics, the la
   - Power state actor for supporting several profiles and devices has been added.
 - Debug and fail-safe handling system enhancement
   - New kmsg and pipe log backend have been added.
-  - The kmsg, pipe, and android logger backends are supported.
+  - The kmsg, pipe, and Android&trade; logger backends are supported.
   - Runtime watchdog functionality has been added.
   - Callstack generation based on ptrace is supported as an option to eliminate the double crash issue.
 - Feedback system enhancement
   - Feedback daemon to support multiple patterns has been added.
   - Various patterns are supported, such as a combination of duration and waiting.
 - System information enhancement
-  - GDBM backend to support a light-weight system registry has been added to improve performance.
+  - GDBM backend to support a light-weight system registry to improve performance has been added.
 - Cynara-based dbus policy support through dbus-daemon
   - Privilege-based access check has been added.
 - New APIs
@@ -146,7 +146,7 @@ As a common feature, multi-user support has been added.
   - To reduce memcpy time, openmp is used for copying framebuffer contents while changing the compositing mode.
   - Support for a hardware cursor has been added. It enables the display server to improve rendering performance when moving the mouse pointer, if the target supports a hardware cursor.
   - Support for setting a quickpanel handler has been added, allowing the external Enlightenment module to change the behavior of the quickpanel according to the UX.
-  - Wayland debugging information can be acquired with debugging tools. The following information can be retrieved:
+  - Wayland debugging information can be acquired with debugging tools. The following information is included:
     - Window geometries
     - Window stacks
     - Resource allocation status
@@ -212,13 +212,13 @@ As a common feature, multi-user support has been added.
     - Backend interface has been changed.
   - Tizen EGL porting layer
     - TPL-EGL 1.0 support has been added.
-    - TPL (Tizen Porting Layer) is an abstraction layer for surface and buffer management on the Tizen platform, aimed to implement the EGL porting layer of the OpenGL&reg; ES driver over various display protocols.
+    - TPL (Tizen Porting Layer) is an abstraction layer for surface and buffer management on the Tizen platform, aimed to implement the EGL&trade; porting layer of the OpenGL&reg; ES driver over various display protocols.
     - Supported EGL&trade; backends:
         - Wayland, gbm, tbm
     - Buffer management and Wayland protocol of Vulkan WSI Tizen are supported.
     - Emulator GL Driver (emulator-yagl) supports the libtpl-egl backend.
 - Vulkan WSI Tizen
-  - The Vulkan WSI (Window System Integration) Layer for Tizen wraps vendor Vulkan ICDs and provides the WSI (Window-System Interface) for Tizen.
+  - The Vulkan WSI (Window System Integration) Layer for Tizen wraps vendor Vulkan&reg; ICDs and provides the WSI (Window-System Interface) for Tizen.
   - The VK_KHR_wayland_surface is supported.
 - CoreGL
   - CoreGL is an OpenGL&reg; ES injection layer.
@@ -270,8 +270,8 @@ As a common feature, multi-user support has been added.
   - Additional features
     - Support for SDL timer with vblank has been added.
     - Support for rotation has been added.
-  - Vulkan
-    - Support for using Vulkan directly (without wrapper) has been added.
+  - Vulkan&reg;
+    - Support for using Vulkan&reg; directly (without wrapper) has been added.
     - Support for using WSI wrapper functions to avoid window system dependency has been added.
     - Support for avoid window system dependency in SDL has been added.
 - Evas render engine enhancement

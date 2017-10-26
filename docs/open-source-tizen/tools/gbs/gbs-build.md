@@ -50,7 +50,8 @@ Local repos in the GBS build root (`~/GBS-ROOT` by default) affect build results
 - If the `TIZEN_BUILD_ROOT` environment variable exists, `${TIZEN_BUILD_ROOT}` is used as the output top directory.
 - If the `-B` option is specified, the specified directory is used, even if `${TIZEN_BUILD_ROOT}` exists.
 
-> **Note**  
+> **Note**
+>
 > All RPM packages under the output repository (by default, `~/GBS-ROOT/local/repos/<VERSION>/`) are used when building packages. Since all the packages under the output repository are applied to the build environment, avoid unexpected results by making sure that the output repository is clean.
 
 The following example shows the structure of the GBS build root directory in the workflow output:
@@ -77,7 +78,7 @@ gbs output top dir
 `-- meta # meta data used by gbs
 ```
 
-## Command Usage Examples
+## Examples
 
 To perform a basic build:
 
@@ -87,7 +88,8 @@ To perform a basic build:
   ```
 
 - Build a package for different architectures:
-   > **Note**  
+   > **Note**
+   >
    > Supported architectures include x86_64, i586, armv6l, armv7hl, armv7l, aarch64, mips, and mipsel.
 
   ```bash
@@ -190,7 +192,8 @@ The incremental mode is designed for development and verification of single pack
 
 The incremental mode sets up the build environment in multiple steps, finishing by mounting the local Git tree of a package in the chroot build environment.
 
-> **Note**  
+> **Note**
+>
 > Because GBS mounts your Git tree to the build root, be very careful when you remove your build root. You need to make sure you have already unmounted the source tree manually before you remove it.
 
 The incremental mode has the following benefits:
@@ -351,9 +354,9 @@ The `gbs build` command offers some useful options:
   The `--extra-packs=<packages separated by commas>` option can be used to install extra packages:
 
   ```bash
-  $ gbs build -A i586 --binary-list=<pkg1>,<pkg2> --deps
-  $ gbs build -A i586 --binary-list=<pkg1>,<pkg2> --rdeps
-  $ gbs build -A i586 --binary-list=<pkg1>,<pkg2> --deps --rdeps
+  $ gbs build -A i586 --extra-packs=<pkg1>,<pkg2> --deps
+  $ gbs build -A i586 --extra-packs=<pkg1>,<pkg2> --rdeps
+  $ gbs build -A i586 --extra-packs=<pkg1>,<pkg2> --deps --rdeps
   ```
 
 - Keep all packages in the build root
@@ -384,7 +387,8 @@ The `gbs build` command offers some useful options:
 
 Use the `--fallback-to-native` option to force GBS to perform packaging for non-native packages in the native packaging mode in the packaging phase of the building process, that is, ignore the upstream branch and create a tarball from HEAD (by default) or specified commit without generating any patch. Adding the `--fallback-to-native` option when issuing the `gbs build` or `gbs export` command is equivalent to adding the `fallback_to_native = true` property into the `[general]` section of the GBS configuration file.
 
-> **Note**  
+> **Note**
+>
 > This option serves as a work-around solution for solving export failures of some non-native packages caused by a tricky engineering problem. For Tizen native packages, GBS always performs packaging in the native packaging mode.
 
 ```bash

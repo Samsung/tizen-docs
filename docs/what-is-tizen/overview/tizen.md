@@ -38,7 +38,7 @@ The most important strengths that enable Tizen to move to the next level are IoT
   **Figure: Device Convergence**
   
   ![Device Convergence](media/about_tizen_5.png)
-- **IoTivity for Connectivity**: In an IoT world, where everything is connected, it is important that a software platform supports seamless connectivity among all devices. For seamless connectivity, Tizen is closely co-operating with Open Connected Foundation (OCF), which is taking the lead in providing specifications and an open-source solution for IoT connectivity. OCF is getting great support from companies including Cisco, GE, Mediatek, Intel, and Samsung. OCF's standard is being implemented as open source and called IoTivity. All profiles in Tizen 3.0 include IoTivity, which means that all Tizen devices are IoTivity-ready.
+- **IoTivity for Connectivity**: In an IoT world, where everything is connected, it is important that a software platform supports seamless connectivity among all devices. For seamless connectivity, Tizen is closely co-operating with Open Connected Foundation (OCF), which is taking the lead in providing specifications and an open-source solution for IoT connectivity. OCF is getting great support from companies including Cisco, GE, Mediatek, Intel&reg;, and Samsung. OCF's standard is being implemented as open source and called IoTivity. All profiles in Tizen 3.0 include IoTivity, which means that all Tizen devices are IoTivity-ready.
 
 
   **Figure: IoTivity for Connectivity**

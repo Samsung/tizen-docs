@@ -17,7 +17,7 @@ Web TCT is a set of tools and test suites to test the Web requirements defined i
 
 **Figure: Web TCT workflow**
 
-![Web TCT workflow](media/webtct_workflow.png)
+![Web TCT workflow](media/webtct-workflow.png)
 
 ### Using Web TCT
 
@@ -52,7 +52,7 @@ Native TCT is a set of tools and test cases to test native requirements defined 
 
 **Figure: Native TCT workflow**
 
-![Native TCT workflow](media/nativetct_workflow.png)
+![Native TCT workflow](media/nativetct-workflow.png)
 
 ### Using Native TCT
 

@@ -274,7 +274,7 @@ Release Date: May 31, 2017
   - The memory leak in the Evas object image's rotation function has been fixed.
   - The partial rendering buf in the TBM backend has been fixed.
   - The bug that caused smooth rendering in `GL_TEXTURE_EXTERNAL_OES` to not work has been fixed.
-  - The missed macro in GLES 3.1 has been fixed.
+  - The missed macro in OpenGL&reg; ES 3.1 has been fixed.
   - The memory leak of various data (internal data, FD, Wayland buffer) in Ecore Evas extern has been fixed.
 
 **Known Issues**
@@ -433,7 +433,7 @@ Release Date: May 31, 2017
 - Privilege List
   - In mobile and wearable profiles, the following privilege has been added:
     - Native
-      - `zigbe`e / `zigbee.admin`
+      - `zigbee` / `zigbee.admin`
   - In mobile and wearable profiles, the following privilege has been removed:
     - Web
       - `nfc.admin`
@@ -461,8 +461,9 @@ Release Date: May 31, 2017
   - FIDO
     - The FIDO Platform ASM module has been added, supporting pluggable FIDO authenticators. Both Bound and Roaming type (Connectivity type: BT) are supported.
     - A FIDO platform authenticator has been added based on auth-fw.
-      > **Note**  
-	  > The authenticator is not FIDO-certified and does not work for commercial FIDO servers.
+      > **Note**
+      >
+      > The authenticator is not FIDO-certified and does not work for commercial FIDO servers.
   - Push
     - A service app checking routine has been added.
     - Install/uninstall for multiuser has been added.
@@ -502,7 +503,7 @@ Open source chromium M56 version has been applied for the Tizen 4.0 Web browser 
     - A method has been added for combining multiple DOM trees into a single hierarchy and determining how these trees interact with each other within a document, thus enabling better composition of the DOM.
   - Pointer Events
     - A unified pointer input API has been added, subsuming MouseEvent and TouchEvents.
-  - WebGL 2
+  - WebGL&trade; 2
     - OpenGL&reg; ES 3.0-level rendering capabilities are provided through the &lt;canvas&gt; element.
   - Credential Management API
     - A programmatic interface is provided for the browser credential manager.

@@ -22,5 +22,6 @@ To flash the Tizen image to the TM1 reference device:
 
 1. Wait until files are downloaded on to the device. The device is automatically rebooted after a successful download.
 
-> **Note**  
+> **Note**
+>
 > Tizen images of version 2.4 and higher do not contain the TM1-hardware-dependent binaries by default. To make TM1 function correctly, you must install the additional binaries manually. For more information, see [Tizen Device Firmware](http://developer.samsung.com/tizendevice/firmware).
