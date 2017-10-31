@@ -44,7 +44,6 @@ To contribute code to the Tizen Studio:
     In Gerrit, open your change line and add the extension maintainer as a reviewer.
 
     To identify the maintainer, in the extension source code `package` directory, open the `pkginfo.manifest` file.  
-    ![Maintainer identification](media/code-review.png)
     
     Your code can be merged by the maintainer when it meets the following criteria:
     - It has been reviewed by 2 reviewers.
