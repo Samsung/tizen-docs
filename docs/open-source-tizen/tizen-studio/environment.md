@@ -1,33 +1,40 @@
-## Environment
+# Build Environment
 
-## Setting up Tizen Studio Installation Environment
-- Prerequisites
-    - You must install a Java Development Kit (JDK) 8 or higher to use the Tizen Studio.
-    - [System requirements](https://developer.tizen.org/development/tizen-studio/download/installing-tizen-studio/prerequisites#java)
-- [Download](https://developer.tizen.org/development/tizen-studio/download)
+To build and test Tizen Studio, you must install both the Tizen Studio and TS-CLI.
 
-## Setting up Local Build Environment
-- To build the tizen project, you need to install the command line tool `TS-CLI`.
-- Only Ubuntu 64 bit is supported.
-- To install `TS-CLI`, you need to install Nodejs.
-- TS-CLI Download :  http://download.tizen.org/sdk/tizenstudio/opensrc/ts-cli_3.0.17_ubuntu-64.zip \
-    ※ The latest version may be updated
+## Installing the Tizen Studio
+To install the Tizen Studio:
+1. Make sure your computer fulfills the [system requirements](https://developer.tizen.org/development/tizen-studio/download/installing-tizen-studio/prerequisites).
+2. [Download](https://developer.tizen.org/development/tizen-studio/download) and install the Tizen Studio.
 
-```bash
-// install Nodejs
-$ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-$ sudo apt-get install -y nodejs
+## Setting up the Local Build Environment
 
-// install TS-CLI
-$ unzip ts-cli_3.0.17_ubuntu-64.zip
-$ mv ./data/dibs ${TS_CLI_PATH}
+To build Tizen Studio locally, use the TS-CLI tool. TS-CLI is only supported on 64-bit Ubuntu.
 
-//install NPM
-$ cd ${TS_CLI_PATH}
-$ npm install
+To install TS-CLI:
+1. Install Node.js:
+    ```bash
+    $ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+    $ sudo apt-get install -y nodejs
+    ```
+
+2. Download TS-CLI from [http://download.tizen.org/sdk/tizenstudio/opensrc/ts-cli_3.0.17_ubuntu-64.zip](http://download.tizen.org/sdk/tizenstudio/opensrc/ts-cli_3.0.17_ubuntu-64.zip).
+    > **Note**
+    >
+    > A newer version can be available.
+    
+3. Unzip and install TS-CLI:
+    ```bash
+    // install TS-CLI
+    $ unzip ts-cli_3.0.17_ubuntu-64.zip
+    $ mv ./data/dibs ${TS_CLI_PATH}
+
+    //install NPM
+    $ cd ${TS_CLI_PATH}
+    $ npm install
+    ```
+## TS-CLI Manual
 ```
-- TS-CLI manual
-```text
 This tool is command line interface for Tizen Studio develop
 Usage: /usr/local/bin/node ./plugins/org.tizen.cli-tools/ts-cli.js <SUBCOMMAND> [OPTS]
 Subcommands:
@@ -41,7 +48,7 @@ Subcommands:
 Subcommand usage:
   build               ts-cli build --repository <repository path> [--source <source path>] [--clean] [--push-package [--force]]
   full-build          ts-cli full-build --repository <repository path> [--source <source path>] [--clean] [--force] [--exclude <exclude path list>]
-  create-instller     ts-cli create-installer --repository <repository path> --meta <meta package list> [--url <base repository URL>]
+  create-installer    ts-cli create-installer --repository <repository path> --meta <meta package list> [--url <base repository URL>]
                              [--exclude-meta <meta package list>] [--title <Installer title>] [--output <installer name>]
   create-image        ts-cli create-image --repository <repository path> [--url <base repository URL>]
                              [--exclude-meta <meta package list>] [--skip-integrity] [--output <image name>]
@@ -53,13 +60,13 @@ Options:
   -h, --help            display help
   -c, --clean           clean build
   -p, --push-package    push the package(s) to local repository
-  -P, --package         single package file path or package files with seperator comma. ex) -P test1.zip | -P test1.zip,test2.zip
+  -P, --package         single package file path or package files with separator comma. ex) -P test1.zip | -P test1.zip,test2.zip
   -f, --force           skip version comparison and push or pull packages by force. new packages will overwrite existing ones.
-  -o, --os              os name ex) all | ubunut-32 | ubuntu-64 | windows-32 | windows-64 | macos-64
-  -r, --repository      repository path. local directory path or http url. 
+  -o, --os              os name ex) all | ubuntu-32 | ubuntu-64 | windows-32 | windows-64 | macos-64
+  -r, --repository      repository path. local directory path or http url.
                         ex) ./repository/develop | http://download.tizen.org/sdk/tizenstudio/official
   -u, --url             url
-  -s, --source          source path                                                                                                                       [default: "/home/jonghwan/mywork/dibs"]
+  -s, --source          source path
   -x, --exclude         exclude path list
   -X, --exclude-meta    exclude meta list
   -M, --meta            meta list
