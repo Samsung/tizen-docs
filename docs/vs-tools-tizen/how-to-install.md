@@ -2,7 +2,7 @@
 
 You need the following components on top of Visual Studio to make Visual Studio Tools for Tizen work:
 
-- VSIX: Visual Studio extension for Tizen packaging
+- VSIX : Visual Studio extension for Tizen packaging
 - Tizen Baseline SDK  
 The SDK is shared with the Tizen Studio, and it supports tools (such as Certificate Manager, Device Manager, Emulator, SDB, and on-demand rpm) for developing Tizen .NET applications.
 
@@ -40,38 +40,67 @@ Tizen emulator for Visual Studio has the same requirements as the emulator in th
 
 ## Visual Studio Tools for Tizen Installation
 
-To install Visual Studio Tools for Tizen, set up the baseline SDK.
+ ### Extensions Installation
+  Visual Studio Tools for Tizen extension is registerd in Visual Studio Markekplatce. So, You can install extensions from the Visual Studio Marketplace in Visual Studio IDE.  
 
-To use the Tizen SDK tools, you must install the baseline SDK. If the Tizen Studio is already installed in your computer, you can just set the tool path to the existing SDK instead of reinstalling it.
+  1. Click the "Extensions and Updates..." item in Tools menu of Visual Studio IDE.  
+  2. Search the "Tizen" in Visual Studio Marketplace.![Marketplace](media/howtoinstall-extensionwindows.png)
+  3. Click the "Download" button, and close Visual Studio IDE, then will starting install.
 
-- For use with Visual Studio, your Tizen Studio must be installed from the `tizen_studio` or `tizen_studio_2.0` distributions.
+  Alternatively, If you want to download and install the VSIX file, then you can donwload in [Visual Studio Marketplate website](https://marketplatce.visualstudio.com/items?itemName-vs-publisher-1484655.VisualStudioToolsforTizen).  
 
-  You can check the installed package repository and distribution in **Package Manager &gt; Configuration**.
+ ### Set up the Tizen Baseline SDK.
+  After extensions install, you want to use the Tizen SDK tools, you must set up the Tizen baselind SDK. But, If the Tizen Studio is already installed in your computer, you can just [set the tool path](how-to-install.md#set-up-the-tizen-baseline-sdk-path).
 
-  ![Package Manager](media/howtoinstall-packagemgrconf.png)
+  #### Tizen baseline SDK install  
+   Immediately after installing the extension package, you need to install the "Tizen Baseline SDK". If you have already installed it, skit this step.
 
-- If the Tizen Studio is already installed:
-  1. Launch a Tizen tool that is not yet installed (such as Emulator Manager or Package Manager). In the window that pops up, select **Use installed Tizen SDK**.
+   1. Click the "Tizen Package Manager" item in Tools > Tizen menu of Visual Studio IDE.  
+   2. Click the "Install new Tizen SDK" button.  
+   ![InstallWizard1.png](/media/howtoinstall-installwizard1.png)
+   3. Read license document and click the "I Agree" button.  
+   ![InstallWizard2.png](/media/howtoinstall-installwizard2.png)
+   4. Enter the root directory path where you want to install and click the "Next" button.  
+   ![InstallWizard3.png](/media/howtoinstall-installwizard3.png)
+   5. The Installer will automatically download and install the required packages.  
+   ![InstallWizard4.png](/media/howtoinstall-installwizard4.png)
+   ![InstallWizard5.png](/media/howtoinstall-installwizard5.png)
+   ![InstallWizard6.png](/media/howtoinstall-installwizard6.png)
 
-	 ![Baseline SDK Install](media/howtoinstall-baselineinstall5.png)
-  2. Enter the root directory of your existing Tizen Studio installation.
 
-	 ![Baseline SDK Install](media/howtoinstall-baselineinstall6.png)
-  3. If the installer gives a warning about your Tizen Studio version being too low, update the Tizen Studio by using the Package Manager after setting the tool path.
+  #### Set up the Tizen Baseline SDK path  
+   If the Tizen Studio or Tizen Baseline SDK is already installed in your computer, you not need to install. Instead, you need to set up a root directory that is already installed. If you have installed the Tizen Baseline SDK through [the above process](how-to-install.md#tizen-beseline-sdk-install), skit this step.  
 
-- If Tizen Studio is not installed:
-  1. Launch a Tizen tool that is not yet installed (such as Emulator Manager or Package Manager). In the window that pops up, select **Install new Tizen SDK**.
+   1. Click the "Tizen Package Manager" item in Tools > Tizen menu of Visual Studio IDE.
+   2. Click the "Use installed Tizen SDK" button.  
+   ![Baseline SDK Install](media/howtoinstall-baselineinstall5.png)
+   3. Enter the root directory of your existing Tizen Studio installation.  
+   ![Baseline SDK Install](media/howtoinstall-baselineinstall6.png)
+     
+   **`If the installer gives a warning about your Tizen Studio version being too low, update the Tizen Studio by using the Package Manager after setting the tool path.`**
 
-	 ![Baseline SDK Install](media/howtoinstall-baselineinstall1.png)
-  2. Follow the instructions given by the Install Wizard (Review the EULA and set the installation path).
-  3. In the last step of the Install Wizard, click **Install**.
+   Alternatively, you can set up each tool path directly.
+   1. Click the "Options" item in Tools menu of Visual Studio IDE.
+   2. Click the "Tools" item in the Tizen's sub-list on the left.
+   3. Enter a root directory that is already installed in the "Tool Path".
+   4. Then, the paths for other tools are automatically set up.  
+   ![Check the SDK tool path](media/howtoinstall-checktoolpath.png)
 
-	 The installer is downloaded and the baseline SDK is installed automatically.
+ ### Install Emulator Image
+  If you have not real device, you can run the app through the Tizen emulator. To use emulator, download the Tizem emulator image. There are two ways to use the "Tizen Package Manager" or the "Tizen Emulator Manager"  
+  **`Tizen Emulator Manager will activates the installation support windows only when no emulator image is installed on your computer.`**
+  
 
-	 ![Baseline SDK Install](media/howtoinstall-baselineinstall2.png)
-  4. You can install additional packages (such as the TV Emulator image and SDK tools) through the Package Manager.
+  **Using Tizen Package Manager**
+   1. Click the "Tizen Package Manager" item in Tools > Tizen menu of Visual Studio IDE.
+   2. Select the profile & version you want to install from the list and click the "Install" button.  
+   ![Package Manager](media/howtoinstall-packagemanager.png)
 
-	 ![Baseline SDK Install](media/howtoinstall-baselineinstall4.png)
+   **Using Tizen Emulator Manager**
+   1. Click the "Tizen Emulator Manager" item in Tools > Tizen menu of Visual Studio IDE.
+   2. Select the profile & version you want to install from the list and click the "OK" button.  
+   ![Emulator Manager](media/howtoinstall-emulatormanager.png)
+
 
 
 ## Troubleshooting
