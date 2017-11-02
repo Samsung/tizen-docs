@@ -1,278 +1,248 @@
-# Tizen .NET Command Line Tools
-The Command Line Tools provides the functionalities for developing Tizen .NET applications without the IDE.
-It includes the entire development process from creating the project to running the application.
+# Command Line Interface
+The .NET CLI (Command Line Interface) provides functionalities for developing Tizen .NET applications without the IDE.
+It includes the entire development process from creating the project to running the application. The CLI tool is located in the `$<TIZEN_BASELINE_SDK>/tools/ide/bin/` directory.
 
-##### Prerequisite
-- Tizen Baseline SDK (including Tizen C# CLI)
-- Dotnet CLI (core) 2.0.0
+> **Note**
+>
+> The .NET CLI does not support restoring and building Xamarin.Forms projects, as the .NET Core CLI 2.0.0 does not fully support Xamarin.Forms.
 
-## Creating a Tizen .NET Project
-The command creates a Tizen .NET project from a template.
+## Prerequisites
 
-__Syntax:__
+The following tools must be installed to use the .NET CLI:
+
+- Tizen Baseline SDK
+- .NET Core CLI tools 2.0.0
+
+## Setting Configuration Options
+The `cli-config` command displays, sets, replaces, and removes .NET CLI configuration options.
+
+The .NET CLI configuration keys are:
+
+- `default.build.configuration=<Debug|Release>`: Sets the default build configuration.
+- `default.csharp.buildtool.path=<path/to/msbuild>`: Sets the C# build tool path. The default is `C:/Program Files (x86)/MSBuild/15.0/Bin/MSBuild.exe`.
+- `default.csharp.toolchain=<dotnet-cli|msbuild>`: Sets the C# build tool. The default is `dotnet-cli` for Windows&reg; and Ubuntu, and `msbuild` is only supported on Windows&reg;.
+- `default.dotnet.tool.path=<path/to/dotnet>`: Sets the `dotnet` CLI tool path. The default is `C:/Program Files/dotnet/dotnet.exe` for Windows&reg;, and `/usr/bin/dotnet` for Ubuntu.
+- `default.profiles.path=<PROFILE_PATH>`: Sets the directory path where the `profiles.xml` file is located.
+- `default.sdb.timeout=<TIMEOUT_VALUE>`: Sets the default connection timeout value. The default is 60000 milliseconds.
+
+
+**Syntax:**
 ```
-dotnet tizen create [arguments] [options]
-```  
+dotnet tizen cli-config [arguments] [options]
+```
 
-__Arguments:__
+**Arguments:**
 
 | Argument | Description |
 | ------ | ------ |
-| <TEMPLATE_NAME> | The template name. 
+| `<KEY>=<VALUE>` | Sets a value for the .NET CLI configuration key. |
 
-__Options:__
+**Options:**
 
 | Option | Description |
 | ------ | ------ |
-| -n,  --name <PROJECT_NAME> | The project name. |
-| -o, --output <OUTPUT_DIR> | The output directory path for the output being created. If no name is specified, the name of the current directory is used. |
-| -all, --show-all | Show all templates. |
+| `-g`, `--global` | Specifies whether the operation must be done for a global scope (for all installed SDKs or for the current Tizen Baseline SDK only). |
+| `-l`, `--list` | Displays the list of all .NET CLI configuration keys and values. |
+| `-d`, `--delete <KEY>` | Removes the .NET CLI configuration key and value. |
 
-__Examples:__
-- Create the Tizen .NET project based on the blank template.
-  - Windows®:
+**Examples:**
+- Display a list of all configurations for which values are set:
+  - Windows&reg;, Ubuntu, and macOS:
+    ```sh
+    > dotnet tizen cli-config -l
+    default.build.configuration=Debug
+    default.csharp.buildtool.path=C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe
+    default.csharp.toolchain=dotnet-cli
+    default.dotnet.tool.path=/usr/bin/dotnet
+    default.profiles.path=/home/tizen-developer/tizen-studio-data/profile/profiles.xml
+    default.sdb.timeout=60000
+    ```
+- Set a `profiles.xml` path globally:
+  - Windows&reg;:
+    ```sh
+    > dotnet tizen cli-config -g "default.profiles.path=C:\workspace\.metadata\.plugins\org.tizen.common.sign\profiles.xml"
+    ```
+  - Ubuntu and macOS:
+    ```sh
+    $ dotnet tizen cli-config -g default.profiles.path=~/workspace/.metadata/.plugins/org.tizen.common.sign/profiles.xml
+    ```
+
+
+## Creating a Tizen .NET Project
+The `new` command creates a Tizen .NET project from a template. If a template is not specified, the command displays project templates and a usage message.
+
+**Syntax:**
+```
+dotnet tizen new [arguments] [options]
+```  
+
+**Arguments:**
+
+| Argument | Description |
+| ------ | ------ |
+| `<TEMPLATE_NAME>` | Specifies the template name. 
+
+**Options:**
+
+| Option | Description |
+| ------ | ------ |
+| `-n`,  `--name <PROJECT_NAME>` | Specifies the project name. If no name is specified, the template name is used. |
+| `-o`, `--output <OUTPUT_DIR>` | Specifies the output directory path for the output being created. If no output directory is specified, the current directory is used. |
+| `-all`, `--show-all` | Shows all templates. |
+
+**Examples:**
+- Display Tizen .NET templates:
+  - Windows&reg;, Ubuntu, and macOS:
+    ```sh
+    > dotnet tizen new
+    Initialize Tizen .NET projects.
+
+    Usage: dotnet tizen new [arguments] [options]
+
+    Arguments:
+      <TEMPLATE_NAME>  Template name.
+
+    Options:
+      -h, --help                 Show help information.
+      -n, --name <PROJECT_NAME>  The project name. If no name is specified, the template name is used for the project name.
+      -o, --output <OUTPUT_DIR>  The output directory path for the output being created. If no output directory is specified, the current directory is used as the root directory.
+      -all, --show-all           Show all templates.
+
+    Examples:
+        dotnet tizen new Tizen.Template.BlankAppCorporate
+
+    [TEMPLATE]
+    Tizen.NET.Template.ElmSharp
+    Tizen.NET.Template.NSClassLib
+    Tizen.NUI.Template.Single
+    ```
+- Create a Tizen .NET project with a specific template:
+  - Windows&reg;:
     ```sh
     > dotnet tizen new Tizen.Template.BlankAppCorporate -n blank -o C:\workspace
     > cd C:\workspace\blank
     ```
 
 ## Restoring the Project
-The command restores the dependencies and tools of a Tizen .NET project.
-All Options below are based on dotnet CLI 2.0.0.
-Refer to [dotnet restore reference](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-restore?tabs=netcore2x) for more details.
+The `restore` command restores the dependencies and tools of a Tizen .NET project.
 
-__Syntax:__
+The following options are based on .NET Core CLI tools 2.0.0.  For more information, see [dotnet restore command](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-restore?tabs=netcore2x).
+
+**Syntax:**
 ```
 dotnet tizen restore [options]
 ```
-__Options:__
+**Options:**
 
 | Option | Description |
 | ------ | ------ |
-| -s, --source <SOURCE> | Specifies a NuGet package source to use during the restore operation. This overrides all of the sources specified in the NuGet.config file(s). Multiple sources can be provided by specifying this option multiple times. |
-| -r, --runtime <RUNTIME_IDENTIFIER> | Specifies a runtime for the package restore. This is used to restore packages for runtimes not explicitly listed in the <RuntimeIdentifiers> tag in the .csproj file. For a list of Runtime Identifiers (RIDs), see the RID catalog. Provide multiple RIDs by specifying this option multiple times. |
-| --packages <PACKAGES_DIRECTORY> | Specifies the directory for restored packages. |
-| --disable-parallel | Disables restoring multiple projects in parallel. |
-| --configfile <FILE> | The NuGet configuration file (NuGet.config) to use for the restore operation. |
-| --no-cache | Specifies to not cache packages and HTTP requests. |
-| --ignore-failed-sources |	Only warn about failed sources if there are packages meeting the version requirement. |
-| --no-dependencies	|When restoring a project with project-to-project (P2P) references, restores the root project and not the references. |
-| -f, --force | Forces all dependencies to be resolved even if the last restore was successful. This is equivalent to deleting the project.assets.json file. |
-| -v, --verbosity | Sets the verbosity level of the command. Allowed values are q[uiet], m[inimal], n[ormal], d[etailed], and diag[nostic]. |
+| `-s`, `--source <SOURCE>` | Specifies a NuGet package source to use during the restore operation. This overrides all of the sources specified in the `NuGet.config` files. Multiple sources can be provided by specifying this option multiple times. |
+| `-r`, `--runtime <RUNTIME_IDENTIFIER>` | Specifies a runtime for package restoration. This is used to restore packages for runtimes not explicitly listed in the `<RuntimeIdentifiers>` tag in the `.csproj` file. For a list of Runtime Identifiers (RIDs), see the [RID catalog](https://docs.microsoft.com/en-us/dotnet/core/rid-catalog). Provide multiple RIDs by specifying this option multiple times. |
+| `--packages <PACKAGES_DIRECTORY>` | Specifies the directory for restored packages. |
+| `--disable-parallel` | Disables restoring multiple projects in parallel. |
+| `--configfile <FILE>` | Specifies the NuGet configuration file (`NuGet.config`) to use for the restore operation. |
+| `--no-cache` | Does not cache packages and HTTP requests. |
+| `--ignore-failed-sources` | Only warns about failed sources if there are packages meeting the version requirement. |
+| `--no-dependencies` |When restoring a project with project-to-project (P2P) references, restores the root project and not the references. |
+| `-f`, `--force` | Forces all dependencies to be resolved even if the last restore was successful. This is equivalent to deleting the `project.assets.json` file. |
+| `-v`, `--verbosity` | Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`. |
 
-__Examples:__
-- Restore the Tizen .NET project
-  - Windows®, Ubuntu, and Mac OS® X:
+**Examples:**
+- Restore the Tizen .NET project:
+  - Windows&reg;, Ubuntu, and macOS:
     ```sh
     > dotnet tizen restore
     ```
 
 ## Building the Project
-The command builds the Tizen .NET project and its dependencies into a set of binaries.
-All options and arguments below are based on dotnet CLI 2.0.0.
-Refer to [dotnet build reference](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build?tabs=netcore2x) for more details.
+The `build` command builds a Tizen .NET project and its dependencies into a set of binaries.
 
-__Syntax:__
+The following arguments and options are based on .NET Core CLI tools 2.0.0.  For more information, see [dotnet build command](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build?tabs=netcore2x).
+
+**Syntax:**
 ```
-dotnet tizen build [argument] [options]
+dotnet tizen build [arguments] [options]
 ```
 
-__Arguments:__
+**Arguments:**
 
 | Argument | Description |
 | ------ | ------ |
-| \<PROJECT>	| The MSBuild project file to build. If a project file is not specified, MSBuild searches the current working directory for a file that has a file extension that ends in `proj` and uses that file. |
+| `<PROJECT>` | Specifies the MSBuild project file (`.csproj`) to build. If a project file is not specified, .NET Core CLI (MSBuild) searches the current working directory for a file that has a file extension that ends in `csproj` and uses that file. |
 
-__Options:__
+**Options:**
 
 | Option | Description |
 | ------ | ------ |
-| -o, --output <OUTPUT_DIR> | Directory in which to place the built binaries. You also need to define --framework when you specify this option. |
-| -f, --framework <FRAMEWORK> |	Compiles for a specific framework. The framework must be defined in the project file. |
-| -r, --runtime <RUNTIME_IDENTIFIER> | Specifies the target runtime. For a list of Runtime Identifiers (RIDs), see the RID catalog. |
-| -c, --configuration <CONFIGURATION> |	Defines the build configuration. The default value is Debug.|
-| --version-suffix <VERSION_SUFFIX> | Defines the version suffix for an asterisk (*) in the version field of the project file. The format follows NuGet's version guidelines. |
-| --no-incremental | Marks the build as unsafe for incremental build. This turns off incremental compilation and forces a clean rebuild of the project's dependency graph. |
-| --no-dependencies | Ignores project-to-project (P2P) references and only builds the root project specified to build. |
-| --no-restore | Doesn't perform an implicit restore during build. |
-| -f, --force | Forces all dependencies to be resolved even if the last restore was successful. This is equivalent to deleting the project.assets.json file. |
-| -v, --verbosity | Sets the verbosity level of the command. Allowed values are q[uiet], m[inimal], n[ormal], d[etailed], and diag[nostic]. |
+| `-o`, `--output <OUTPUT_DIR>` | Specifies the directory in which to place the built binaries. You also need to define `--framework` when you specify this option. |
+| `-f`, `--framework <FRAMEWORK>` | Compiles for a specific framework. The framework must be defined in the project file. |
+| `-r`, `--runtime <RUNTIME_IDENTIFIER>` | Specifies the target runtime. For a list of Runtime Identifiers (RIDs), see the [RID catalog](https://docs.microsoft.com/en-us/dotnet/core/rid-catalog). Provide multiple RIDs by specifying this option multiple times. |
+| `-c`, `--configuration <CONFIGURATION>` | Defines the build configuration. The default value is `Debug`.|
+| `--version-suffix <VERSION_SUFFIX>` | Defines the version suffix for an asterisk (`*`) in the version field of the project file. The format follows NuGet's version guidelines. |
+| `--no-incremental` | Marks the build as unsafe for incremental build. This turns off incremental compilation and forces a clean rebuild of the project's dependency graph. |
+| `--no-dependencies` | Ignores project-to-project (P2P) references and only builds the root project specified to build. |
+| `--no-restore` | Does not perform an implicit restore during build. |
+| `-f`, `--force` | Forces all dependencies to be resolved even if the last restore was successful. This is equivalent to deleting the `project.assets.json` file. |
+| `-v`, `--verbosity` | Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`. |
 
-__Examples:__
-- Build the Tizen .NET project
-  - Windows®, Ubuntu, and Mac OS® X:
+**Examples:**
+- Build the Tizen .NET project:
+  - Windows&reg;, Ubuntu, and macOS:
     ```sh
     > dotnet tizen build
     ```
 
-## Installing the Application on a Target
-The command installs the Tizen .NET application on a target.
-
-__Syntax:__
-```
-dotnet tizen install [arguments] [options]
-```
-__Arguments:__
-
-| Argument | Description |
-| ------ | ------ |
-| <PACKAGE_FILE> | The path of the package file. (Required) |
-
-__Options:__
-
-| Option | Description |
-| ------ | ------ |
-| -t, --target <TARGET_NAME> | The target name to install the package. |
-| -s, --serial <TARGET_SERIAL> | The serial to install the package. |
-
-__Examples:__
-- Install the Tizen .NET application, whose package name is blank-1.0.0.tpk, on the emulator-26101.
-  - Windows®:
-    ```sh
-    > dotnet tizen install C:\workspace\blank\bin\Debug\netcoreapp1.0\blank-1.0.0.tpk -s emulator-26101
-    ```
-  - Ubuntu and Mac OS® X:
-    ```sh
-    $ dotnet tizen install ~/workspace/blank/bin/Debug/netcoreapp1.0/blank-1.0.0.tpk -s emulator-26101
-    ```
-
-## Running the Application on a Target
-The command runs the Tizen application on a target.
-
-__Syntax:__
-```
-dotnet tizen run [options]
-```
-
-__Options:__
-
-| Option | Description |
-| ------ | ------ |
-|-p, --pkgid <PACKAGE_ID> | The Tizen package ID installed on the target. (Required) |
-|-t, --target <TARGET_NAME> | The target name to run the package. |
-|-s, --serial <TARGET_SERIAL> | The serial to run the package. |
-
-__Examples:__
-- Run the basic application, whose package ID is org.tizen.example.blank, on the emulator-26101.
-  - Windows®, Ubuntu, and Mac OS® X:
-    ```sh
-    > dotnet tizen run -p org.tizen.example.blank -s emulator-26101
-    ```
-
-## Uninstalling the Application on a Target
-The command uninstalls the Tizen application on a target.
-
-__Syntax:__
-```
-dotnet tizen uninstall [options]
-```
-__Options:__
-
-| Option | Description |
-| ------ | ------ |
-| -p, --pkgid <PACKAGE_ID> |	The Tizen package ID installed on the target. (Required) |
-| -t, --target <TARGET_NAME> |	The target name to uninstall the package. |
-| -s, --serial <TARGET_SERIAL> |	The serial to uninstall the package. |
-
-__Examples:__
-- Uninstall the basic application, whose package ID is org.tizen.basic, from the emulator-26101.
-  - Windows®, Ubuntu, and Mac OS® X:
-    ```sh
-    > dotnet tizen uninstall -p org.tizen.example.blank -s emulator-26101
-    ```
-
 ## Cleaning the Project
-The command cleans the Tizen project. If you clean the project, all build output directories under the project root path are removed.
+The `clean` command cleans the Tizen .NET project. If you clean the project, all build output directories under the project root path are removed.
 
-__Syntax:__
+**Syntax:**
 ```
 dotnet tizen clean [arguments]
 ```
-__Arguments:__
+**Arguments:**
 
 | Argument | Description |
 | ------ | ------ |
-| <PROJECT_DIR> | The project directory. Defaults to current directory if nothing is specified. |
+| `<PROJECT_DIR>` | Specifies the project directory. Defaults to the current directory if no directory is specified. |
 
-__Examples:__
-- Clean the project.
-  - Windows®:
+**Examples:**
+- Clean the Tizen .NET project:
+  - Windows&reg;:
     ```sh
     > dotnet tizen clean C:\workspace\blank
     ```
-  - Ubuntu and Mac OS® X:
+  - Ubuntu and macOS:
     ```sh
     $ dotnet tizen clean ~/workspace/blank
     ```
 
-## Setting Configuration Options
-The command displays, sets, replaces, and removes CLI configuration options. The CLI configuration keys are:
-- default.sdb.timeout=<TIMEOUT_VALUE>: Sets the default connection timeout value. The default is 60000 milliseconds.
-- default.profiles.path=<PROFILE_PATH>: Sets the the directory path where the profiles.xml file is located.
-
-__Syntax:__
-```
-dotnet tizen cli-config [arguments] [options]
-```
-
-__Arguments:__
-
-| Argument | Description |
-| ------ | ------ |
-| \<KEY>=\<VALUE> | Sets a value for the CLI configuration key. |
-
-__Options:__
-
-| Option | Description |
-| ------ | ------ |
-| -l, --list | Displays the list of all CLI configuration keys and values. |
-| -d, --delete \<KEY> | Removes the CLI configuration key and value. |
-| -g, --global | Specifies whether the operation must be done for a global scope (for all installed SDKs or for the current Tizen Baseline SDK only). |
-
-__Examples:__
-- Display a list of all configurations for which values are set.
-  - Windows®, Ubuntu, and Mac OS® X:
-    ```sh
-    > dotnet tizen cli-config -l
-    default.sdb.timeout=60000 
-    ```
-- Set a profiles.xml path globally.
-  - Windows®:
-    ```sh
-    > dotnet tizen cli-config –g "default.profiles.path=C:\workspace\.metadata\.plugins\org.tizen.common.sign\profiles.xml"
-    ```
-    Ubuntu and Mac OS® X:
-    ```sh
-    $ dotnet tizen cli-config –g default.profiles.path=~/workspace/.metadata/.plugins/org.tizen.common.sign/profiles.xml
-    ```
-
 ## Issuing a Tizen Certificate
-The command generates a Tizen certificate for your application. If you want to upload your application to the Tizen store or install the application to a Tizen device, you must generate a Tizen certificate.
+The `certificate` command generates a Tizen certificate for your application. If you want to upload your application to the Tizen Store or install the application on a Tizen device, you must generate a Tizen certificate.
 
-__Syntax:__
+**Syntax:**
 ```
 dotnet tizen certificate [options]
 ```
 
-__Options:__
+**Options:**
 
 | Option | Description |
 | ------ | ------ |
-| -a, --alias <ALIAS_NAME> | The alias name of the certificate. (Required) |
-| -pw, --password <PASSWORD> | The password of the certificate. (Required) |
-| -n, --name <USER_NAME> | The user name. |
-| -c, --country <COUNTRY_CODE> | The user's country code, which consists of 2 letters. |
-| -s, --state <STATE> | The user's state. |
-| -ct, --city <CITY> | The user's city. |
-| -og, --organization <ORGANIZATION> | The user organization. |
-| -u, --unit <UNIT> | The user's organization unit. |
-| -e, --email <EMAIL> |	The user email. |
-| -fn, --filename <CERT_FILE_NAME> | The file name without a file extension. A certificate file is created with the file name. If you skip this option, the default file name, author, is used on creating the certificate file. |
-| -o, --output <CERT_OUTPUT_DIR> | The output directory path to create the certificate. If you skip this option, the default output directory path, <TIZEN_BASELINE_SDK_DATA>/keystore/author/, is used on saving the certificate file. |
+| `-a`, `--alias <ALIAS_NAME>` | Specifies the certificate alias name. (Required) |
+| `-pw`, `--password <PASSWORD>` | Specifies the certificate password. (Required) |
+| `-n`, `--name <USER_NAME>` | Specifies the user name. |
+| `-c`, `--country <COUNTRY_CODE>` | Specifies the user's 2-letter country code. |
+| `-s`, `--state <STATE>` | Specifies the user's state. |
+| `-ct`, `--city <CITY>` | Specifies the user's city. |
+| `-og`, `--organization <ORGANIZATION>` | Specifies the user's organization. |
+| `-u`, `--unit <UNIT>` | Specifies the user's organization unit. |
+| `-e`, `--email <EMAIL>` | Specifies the user's email. |
+| `-fn`, `--filename <FILE_NAME>` | Specifies the certificate file name, without file extension. If you omit this option, the default file name, `author`, is used. |
+| `-o`, `--output <CERT_OUTPUT_DIR>` | Specifies the output directory path for the created certificate. If you omit this option, the certificate file is saved in the default output directory path, `<TIZEN_BASELINE_SDK_DATA>/keystore/author/`.|
 
-__Examples:__
-- Generate a certificate.
-  - Windows®:
+**Examples:**
+- Generate a certificate:
+  - Windows&reg;:
     ```sh
     > dotnet tizen certificate -a MyTizen -pw 1234 -n "Gildong Hong" -c KR -s Seoul -ct Gangnamgu -og Tizen -u Development -e gildonghong@example.org -fn mycert
     Generating a certificate with
@@ -289,7 +259,7 @@ __Examples:__
       E-mail = gildonghong@example.org
     'mycert' has been generated in 'C:\tizen-studio-data\keystore\author'.
     ```
-  - Ubuntu and Mac OS® X:
+  - Ubuntu and macOS:
     ```sh
     $ dotnet tizen certificate -a MyTizen -pw 1234 -n "Gildong Hong" -c KR -s Seoul -ct Gangnamgu -og Tizen -u Development -e gildonghong@example.org -fn mycert
     Generating a certificate with
@@ -307,37 +277,41 @@ __Examples:__
     'mycert' has been generated in '~/tizen-studio-data/keystore/author'.
     ```
 
-## Managing a Security Profile
-The command manages the security profiles, which are a set of signing certificates for a Tizen application.
-The command consists of three sub-commands. __add__ command adds the specified security profile, which can contain several certificates. __list__ command displays security profiles. If you specify the name of the security profile, the detailed information of the specified security profile is displayed. __remove__ command removes the specified security profile.
+## Managing Security Profiles
+The `security-profiles` command manages the security profiles, which are sets of signing certificates for Tizen applications.
+The command consists of 3 sub-commands:
 
-__Syntax:__
+- The `add` command adds the specified security profile, which can contain several certificates.
+- The `list` command displays the security profiles. If you specify the name of the security profile, details about the specified profile are displayed.
+- The `remove` command removes the specified security profile.
+
+**Syntax:**
 ```
 dotnet tizen security-profiles <sub-command> [options]
 ```
-__Sub-commands and options:__
+**Sub-commands and options:**
 
 | Sub-command | Option | Description |
 | ------ | ------ | ------ |
-add [options] |-n, --name <PROFILE_NAME> | The name of the security profile to add. (Required) |
-|| -a, --author <AUTHOR_PATH> | The directory path where the author certificate file is located. The format of the certificate is PKCS#12, and the file extension is .p12. (Required) |
-|| -pw, --password <AUTHOR_PASSWORD> | The password used to access the author certificate. (Required) |
-|| -c, --ca <AUTHOR_CA_PAH> | The directory path where the author CA certificate file is located. The file extension of the CA certificate is .cer. |
-|| -r, --rootca <AUTHOR_ROOT_CA_PATH> | The directory path where the author root CA certificate file is located. The file extension of the root CA certificate is .cer. |
-|| -d, --dist <DIST_PATH> | The directory path where the distributor certificate file is located. If you skip this option, the default distributor certificate file embedded in the Tizen baseline SDK is used. |
-|| -dp, --dist-password <DIST_PASSWORD> | The password of the distributor certificate. |
-|| -dc, --dist-ca <DIST_CA_PATH> | The directory path where the distributor CA certificate file is located. |
-|| -dr, --dist-rootca <DIST_ROOT_CA_PATH> | The directory path where the distributor root CA certificate file is located.
-|| --force|	If there is no Profile XML, then generates a file. |
-|| -p, --path <PROFILE_PATH> | The directory path where the profiles.xml file is located. If you skip this option, the value of the default.profiles.path key in the CLI configuration is used to find the profiles.xml file, which consists of new security profiles that are generated in the <TIZEN_BASELINE_SDK_DATA>/keystore/ directory. The directory path is added to the CLI configuration. |
-| list [options] | -n, --name <PROFILE_NAME> | The name of the security profile to list. If you skip this option, a set of the security profile names in the profiles.xml file is displayed. |
-|| -p, --path <PROFILE_PATH> | The directory path where the profiles.xml file is located. If you skip this option, the value of the default.profiles.path key in the CLI configuration is used to find the profiles.xml file, which consists of new security profiles that are generated in the <TIZEN_BASELINE_SDK_DATA>/keystore/ directory. The directory path is added to the CLI configuration. |
-| remove [options] | -n, --name <PROFILE_NAME> | The name of the security profile to remove. (Required) |
-|| -p, --path <PROFILE_PATH> | The directory path where the profiles.xml file is located. If you skip this option, the value of the default.profiles.path key in the CLI configuration is used to find the profiles.xml file, which consists of new security profiles that are generated in the <TIZEN_BASELINE_SDK_DATA>/keystore/ directory. The directory path is added to the CLI configuration. |
+| `add [options]` |`-n`, `--name <PROFILE_NAME>` | Specifies the name of the security profile to add. (Required) |
+|| `-a`, `--author <AUTHOR_PATH>` | Specifies the directory path where the author certificate file is located. The format of the certificate is PKCS#12, and the file extension is `.p12`. (Required) |
+|| `-pw`, `--password <AUTHOR_PASSWORD>` | Specifies the password used to access the author certificate. (Required) |
+|| `-c`, `--ca <AUTHOR_CA_PATH>` | Specifies the directory path where the author CA certificate file is located. The file extension of the CA certificate is `.cer`. |
+|| `-r`, `--rootca <AUTHOR_ROOT_CA_PATH>` | Specifies the directory path where the author root CA certificate file is located. The file extension of the root CA certificate is `.cer`. |
+|| `-d`, `--dist <DIST_PATH>` | Specifies the directory path where the distributor certificate file is located. If you omit this option, the default distributor certificate file embedded in the Tizen Baseline SDK is used. |
+|| `-dp`, `--dist-password <DIST_PASSWORD>` | Specifies the distributor certificate password. |
+|| `-dc`, `--dist-ca <DIST_CA_PATH>` | Specifies the directory path where the distributor CA certificate file is located. |
+|| `-dr`, `--dist-rootca <DIST_ROOT_CA_PATH>` | Specifies the directory path where the distributor root CA certificate file is located.
+|| `--force`| If there is no `profiles.xml` file, generates the file. |
+|| `-p`, `--path <PROFILE_PATH>` | Specifies the directory path where the `profiles.xml` file is located. If you omit this option, the value of the `default.profiles.path` key in the CLI configuration is used to find the `profiles.xml` file, which consists of new security profiles that are generated in the `<TIZEN_BASELINE_SDK_DATA>/keystore/` directory. The directory path is added to the CLI configuration. |
+| `list [options]` | `-n, --name <PROFILE_NAME>` | Specifies the name of the security profile to list. If you omit this option, a list of the security profile names in the `profiles.xml` file is displayed. |
+|| `-p`, `--path <PROFILE_PATH>` | Specifies the directory path where the `profiles.xml` file is located. If you omit this option, the value of the `default.profiles.path` key in the CLI configuration is used to find the `profiles.xml` file, which consists of new security profiles that are generated in the `<TIZEN_BASELINE_SDK_DATA>/keystore/` directory. The directory path is added to the CLI configuration. |
+| `remove [options]` | `-n`, `--name <PROFILE_NAME>` | Specifies the name of the security profile to remove. (Required) |
+|| `-p`, `--path <PROFILE_PATH>` | Specifies the directory path where the `profiles.xml` file is located. If you omit this option, the value of the `default.profiles.path` key in the CLI configuration is used to find the `profiles.xml` file, which consists of new security profiles that are generated in the `<TIZEN_BASELINE_SDK_DATA>/keystore/` directory. The directory path is added to the CLI configuration. |
 
-__Examples:__
-- Add a new security profile.
-  - Windows®:
+**Examples:**
+- Add a security profile:
+  - Windows&reg;:
     ```sh
     > dotnet tizen security-profiles add -n MyProfile -a C:\tizen-studio-data\keystore\author\mycert.p12 -pw 1234
     No exist the default path of security profiles.
@@ -350,7 +324,7 @@ __Examples:__
     Wrote to 'C:\tizen-studio-data\ide\keystore\profiles.xml'.
     Succeed to add 'MyProfile' profile.
     If want to sign by this, add the file of security profiles in CLI configuration like 'tizen cli-config "default.profiles.path=C:\tizen-studio-data\ide\keystore\profiles.xml"'.
-    Ubuntu and Mac OS® X:
+    Ubuntu and macOS:
     $ dotnet tizen security-profiles add -n MyProfile -a ~/tizen-studio-data/keystore/author/mycert.p12 -pw 1234
     No exist the default path of security profiles.
     author path: ~/tizen-studio-data/keystore/author/mycert.p12
@@ -363,8 +337,8 @@ __Examples:__
     Succeed to add 'MyProfile' profile.
     If want to sign by this, add the file of security profiles in CLI configuration like 'tizen cli-config "default.profiles.path=~/tizen-studio-data/ide/keystore/profiles.xml"'.
     ```
-- Display the security profile list.
-  - Windows®:
+- Display the security profile list:
+  - Windows&reg;:
     ```sh
     > dotnet tizen security-profiles list
     Loaded in 'C:\tizen-studio-data\ide\keystore\profiles.xml'.
@@ -373,7 +347,7 @@ __Examples:__
     ========================================
     MyProfile
     ```
-  - Ubuntu and Mac OS® X:
+  - Ubuntu and macOS:
     ```sh
     $ dotnet tizen security-profiles list
     Loaded in '~/tizen-studio-data/ide/keystore/profiles.xml'.
@@ -382,8 +356,8 @@ __Examples:__
     ========================================
     MyProfile
     ```
-- Display the detailed information of a security profile.
-  - Windows®:
+- Display the details for a security profile:
+  - Windows&reg;:
     ```sh
     > dotnet tizen security-profiles list -n MyProfile
     Loaded in 'C:\tizen-studio-data\ide\keystore\profiles.xml'.
@@ -396,7 +370,7 @@ __Examples:__
     distributor1 password: *************************
     distributor1 CA path: C:\tizen-studio\tools\certificate-generator\certificates\distributor\tizen-distributor-ca.cer
     ```
-  - Ubuntu and Mac OS® X:
+  - Ubuntu and macOS:
     ```sh
     $ dotnet tizen security-profiles list -n MyProfile
     Loaded in '~/tizen-studio-data/ide/keystore/profiles.xml'.
@@ -409,15 +383,15 @@ __Examples:__
     distributor1 password: *************************
     distributor1 CA path: ~/tizen-studio/tools/certificate-generator/certificates/distributor/tizen-distributor-ca.cer
     ```
-- Remove the security profile.
-  - Windows®:
+- Remove the security profile:
+  - Windows&reg;:
     ```sh
     > dotnet tizen security-profiles remove -n MyProfile
     Loaded in 'C:\tizen-studio-data\ide\keystore\profiles.xml'.
     Wrote to 'C:\tizen-studio-data\ide\keystore\profiles.xml'.
     Succeed to remove 'MyProfile' profile
     ```
-  - Ubuntu and Mac OS® X:
+  - Ubuntu and macOS:
     ```sh
     $ dotnet tizen security-profiles remove -n MyProfile
     Loaded in '~/tizen-studio-data/ide/keystore/profiles.xml'.
@@ -425,17 +399,93 @@ __Examples:__
     Succeed to remove 'MyProfile' profile
     ```
 
-## Displaying the CLI Version
-The option displays the CLI version number.
+## Installing the Application on a Target
+The `install` command installs the Tizen .NET application on a target.
 
-__Syntax:__
+**Syntax:**
+```
+dotnet tizen install [arguments] [options]
+```
+**Arguments:**
+
+| Argument | Description |
+| ------ | ------ |
+| `<PACKAGE_FILE>` | Specifies the path of the package file. (Required) |
+
+**Options:**
+
+| Option | Description |
+| ------ | ------ |
+| `-t`, `--target <TARGET_NAME>` | Specifies the target to install the package onto. |
+| `-s`, `--serial <TARGET_SERIAL>` | Specifies the serial to install the package onto. |
+
+**Examples:**
+- Install the Tizen .NET application with the package name `blank-1.0.0.tpk` on `emulator-26101`:
+  - Windows&reg;:
+    ```sh
+    > dotnet tizen install C:\workspace\blank\bin\Debug\netcoreapp1.0\blank-1.0.0.tpk -s emulator-26101
+    ```
+  - Ubuntu and macOS:
+    ```sh
+    $ dotnet tizen install ~/workspace/blank/bin/Debug/netcoreapp1.0/blank-1.0.0.tpk -s emulator-26101
+    ```
+
+## Running the Application on a Target
+The `run` command runs the Tizen application on a target.
+
+**Syntax:**
+```
+dotnet tizen run [options]
+```
+
+**Options:**
+
+| Option | Description |
+| ------ | ------ |
+|`-p`, `--pkgid <PACKAGE_ID>` | Specifies the Tizen package ID installed on the target. (Required) |
+|`-t`, `--target <TARGET_NAME>` | Specifies the target to run the package on. |
+|`-s`, `--serial <TARGET_SERIAL>` | Specifies the serial to run the package on. |
+
+**Examples:**
+- Run the Tizen .NET application with the package ID `blank` on `emulator-26101`:
+  - Windows&reg;, Ubuntu, and macOS:
+    ```sh
+    > dotnet tizen run -p blank -s emulator-26101
+    ```
+
+## Uninstalling an Application from a Target
+The `uninstall` command uninstalls a Tizen application from a target.
+
+**Syntax:**
+```
+dotnet tizen uninstall [options]
+```
+**Options:**
+
+| Option | Description |
+| ------ | ------ |
+| `-p`, `--pkgid <PACKAGE_ID>` | Specifies the Tizen package ID to be uninstalled from the target. (Required) |
+| `-t`, `--target <TARGET_NAME>` | Specifies the target to uninstall the package from. |
+| `-s`, `--serial <TARGET_SERIAL>` | Specifies the serial to uninstall the package from. |
+
+**Examples:**
+- Uninstall the Tizen .NET application with the package ID `blank` from `emulator-26101`:
+  - Windows&reg;, Ubuntu, and macOS:
+    ```sh
+    > dotnet tizen uninstall -p blank -s emulator-26101
+    ```
+
+## Displaying the .NET CLI Version
+The `--version` option displays the .NET CLI version number.
+
+**Syntax:**
 ```
 dotnet tizen [-v|--version]
 ```
 
-__Examples:__
-- Display the CLI version number.
-  - Windows®, Ubuntu, and Mac OS® X:
+**Examples:**
+- Display the .NET CLI version number:
+  - Windows&reg;, Ubuntu, and macOS:
     ```sh
     > dotnet tizen --version
     Tizen .NET Command Line Tools

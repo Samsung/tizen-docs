@@ -1,78 +1,94 @@
-﻿## Certificate Manager ##
+﻿# Certificate Manager
 
-Before installing your applications on a device or submitting it to the Tizen Store, it must be signed with a certificate profile. The certificate ensures the source of the application and makes sure it has not been tampered with since its publication. A certificate profile consists of author and distributor certificates. They can be made in Certificate Manager and they can be managed in Tools > Options > Tizen > Certification. The certificates can be created, edited, removed, and set as active in the Certificate Manager. The active certificates are used when packaging your application.
+Before installing your application on a device or submitting it to the Tizen Store, it must be signed with a certificate profile. The signature verifies the source of the application and makes sure it has not been tampered with since its publication. A certificate profile is a combination of the certificates used for signing.
 
-In Visual Studio Tools for Tizen, the certification can be defined in the following ways:
+You can use the Certificate Manager to create, edit, and remove certificates, and set them as active. The active certificates are used when packaging your application.
 
-### Using the default certificate ###
-   * If you do not need to upload your application to the Tizen Store, you can use a default certificate and deploy your application in the Tizen Emulator. For using this option, set the certification as illustrated in the following figure.
+## Selecting the Certificate Profile
 
-   ![Using the default certificate](../image/CertificateMgr_defaultcert.png)
+To select the certificates used to package your application:
 
-### Using an existing certificate profile ###
-   * If you have used Tizen Studio and have already generated a certificate profile using the Tizen Certificate Manager, it can be imported in Tools > Options > Tizen > Certification. If you create a Certificate Profile using the ```Tizen Certificate Manager```, it is set as default automatically.
+1. In the Visual Studio menu, go to **Tools &gt; Options &gt; Tizen &gt; Certification**.
+2. Define the certificates in one of the following ways:
 
-   ![Using an existing certificate profile](../image/CertificateMgr_certificateprofile.png)
+   - **Using the default certificate**  
+     If you do not need to upload your application to the Tizen Store, you can use a default certificate and deploy your application in the Tizen Emulator for testing purposes.  
+	 To use the default certificates, uncheck the **Sign the .TPK file using the following option.** checkbox.
 
-### Using your own certificate ###
-   * If you already have author and distributor certificates, you can import them in Menu > Tools > Options > Tizen > Certification.
+     ![Using the default certificate](media/certificatemgr-defaultcert.png)
 
-   ![Using your own certificate](../image/CertificateMgr_directcert.png)
+   - **Using an existing certificate profile**  
+     If you have used the Tizen Studio before and have already generated a certificate profile using the Tizen Certificate Manager, you can import the profile by selecting **Use profile of Tizen Certificate Manager** from the drop-down list.  
+     If you want to create a new certificate profile with the Certificate Manager, see [Creating a Certificate Profile](#creating-a-certificate-profile). The new profile is then set as default automatically.
 
-## Certificate Profile and Certificates ##
-The certificate profile consists of an author certificate and 1 or 2 distributor certificates. To distribute your application, you must create a certificate profile and sign the application with it:
+     ![Using an existing certificate profile](media/certificatemgr-certificateprofile.png)
 
-   * An author certificate includes information about the author of the application. It is used to create an author signature, which ensures the integrity of the application from the author since the publication of the application.
-   * A distributor certificate includes information about the distributor of the application, such as a store. It is used to create a distributor signature, which ensures the integrity of the application from the distributor since the distribution of the application.
+   - **Using your own certificate**  
+     If you already have author and distributor certificates from another application store, you can import them by selecting **Direct registration** from the drop-down list and entering the required information.
 
-### Creating the Certificate Profile ###
 
-You can create a new certificate profile with the Certificate Manager. To run the Certificate Manager, in the Visual Studio menu, select Tools > Tizen > Tizen Certificate Manager.
 
-![Run Certicate Manager](../image/CertificateMgr_menu.png)
+     ![Using your own certificate](media/certificatemgr-directcert.png)
+3. Click **OK**.
 
-In the Certificate Manager, click the plus icon (Plus icon) to create a new profile.
+## Creating a Certificate Profile
 
-![Generate Certificate Stpe #1](../image/CertificateMgr_step1.png)
+A certificate profile consists of an author certificate and 1 or 2 distributor certificates:
 
-You can create a new certificate profile with the creation wizard.
+- An author certificate includes information about the author of the application. It is used to create an author signature, which ensures the integrity of the application from the author since the publication of the application.
+- A distributor certificate includes information about the distributor of the application, such as a store. It is used to create a distributor signature, which ensures the integrity of the application from the distributor since the distribution of the application.
 
-![Generate Certificate Stpe #2](../image/CertificateMgr_step2.png)
 
-### Adding the Author and Distributor Certificates ###
+To distribute your application, you must create a certificate profile and sign the application with it. You can create a new certificate profile with the Certificate Manager:
 
-To add author and distributor certificates:
+1. In the Visual Studio menu, select **Tools &gt; Tizen &gt; Tizen Certificate Manager**.
 
-1. Create a new author certificate or use a previously created author certificate.
+2. In the Certificate Manager, click **+** to create a new profile.
 
-![Generate Certificate Stpe #3](../image/CertificateMgr_step3.png)
+   ![Generating a certificate profile](media/certificatemgr-step1.png)
 
-2. Fill in the required information.
+3. Enter a name for the profile and click **Next**.
 
-![Generate Certificate Stpe #4](../image/CertificateMgr_step4.png)
+   ![Certificate creation wizard](media/certificatemgr-step2.png)
 
-3. You can use the default Tizen distributor certificate or another distributor certificate if you have one. In general, the default Tizen distributor certificate is used and you do not need to modify distributor certificates. You can also select the privilege level of the distributor certificate (in native and Web applications)).
+4. Add the author and distributor certificates:
 
-![Generate Certificate Stpe #5](../image/CertificateMgr_step5.png)
+   1. Select whether to create a new author certificate or use a previously created author certificate, and click **Next**.
 
-### Managing the Certificate Profile ###
+      ![Creating the author certificate](media/certificatemgr-step3.png)
 
-You can also view, edit, and remove the certificate profiles you have created.
+      Define the existing author certificate or enter the required information for a new certificate, and click **Next**.
 
-![Generate Certificate Stpe #6](../image/CertificateMgr_step6.png)
+      ![Entering the author certificate information](media/certificatemgr-step4.png)
+
+   2. You can use the default Tizen distributor certificate or another distributor certificate if you have one. In general, the default Tizen distributor certificate is used and you do not need to modify distributor certificates. You can also select the privilege level of the distributor certificate (for native and Web applications)).
+
+      ![Creating the distributor certificate](media/certificatemgr-step5.png)
+	  
+5. Click **Finish**.
+
+## Managing Certificate Profiles
+
+You can view, edit, and remove the certificate profiles you have created in the Certificate Manager.
+
+**Figure: Managing certificate profiles**
+
+![Managing certificate profiles](media/certificatemgr-step6.png)
 
 To manage a certificate profile:
 
-* Click the info icon (![Info](../image/CertificateMgr_infoicon.png)) to see detailed information of the certificate.
+- To see the details of an individual certificate within the selected certificate profile, click the info button (![Info icon](media/certificatemgr-infoicon.png)).
 
-![Generate Certificate Stpe #7](../image/CertificateMgr_step7.png)
+  ![Certificate information](media/certificatemgr-step7.png)
 
-* Click the pencil icon (![Pencil](../image/CertificateMgr_infopencil.png)) to change the author or distributor certificate of the selected certificate profile.
+- To change the author or distributor certificate of the selected certificate profile, click the pencil button (![Pencil icon](media/certificatemgr-infopencil.png)).
 
-![Generate Certificate Stpe #8](../image/CertificateMgr_step8.png)
+  ![Change certificate](media/certificatemgr-step8.png)
 
-* Click the trash icon (![Trash](../image/CertificateMgr_infotrash.png)) to remove the selected certificate profile.
+- To remove the selected certificate profile, click the trash button (![Trash icon](media/certificatemgr-infotrash.png)).
 
-![Generate Certificate Stpe #9](../image/CertificateMgr_step9.png)
+- To set the selected certificate profile as active, click the check button (![Check icon](media/certificatemgr-infocheck.png)).
 
-* The active profile is used when you package your application. Click the check icon to set the selected certificate profile as active. The active profile is also set in Tools > Options > Tizen > Certification automatically.
+  The active profile is used when you package your application. The active profile is also automatically set in **Tools &gt; Options &gt; Tizen &gt; Certification**.
+
+  ![Remove certificate](media/certificatemgr-step9.png)

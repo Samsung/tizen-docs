@@ -1,72 +1,104 @@
-# How to create TPK package
+# Creating a TPK Package
+
+You can create a TPK package by building a Tizen project with Visual Studio or .NET CLI (Command Line Interface).
 
 ## Prerequisites
 
-Add feed to Nuget.config (https://tizen.myget.org/F/dotnet/api/v3/index.json) (develop channel) to restore Tizen.NET.Sdk develop version.
+Make sure the following prerequisites are fulfilled before building a project:
 
-1. Visual Studio 2017
+1. Install the needed software based on whether you want to use Visual Studio or .NET CLI:
 
-![Nuget Tizen.Net.Sdk](../image/nuget-tizen.net.sdk.png)
+   - [Install Visual Studio Tools for Tizen](../how-to-install.md).
+   - [Install .NET Core version 2.0 or higher](https://www.microsoft.com/net/core).
 
-2. .NET CLI
+2. Add a new feed to `Nuget.config` (using the https://tizen.myget.org/F/dotnet/api/v3/index.json develop channel) to restore the Tizen.NET.Sdk development version:
 
+   - In Visual Studio 2017, to add the package source, go to **Tools &gt; Options &gt; NuGet Package Manager &gt; Package Sources**:  
+     ![Adding a new Nuget feed](media/howtobuild-addnugetfeed.png)
+
+     ![Nuget Tizen.Net.Sdk](media/nuget-tizennetsdk.png)
+
+	 
+   - In .NET CLI:
+
+     Add the `<PackageReference>` element and include `Tizen.NET.Sdk` in your Tizen project file using one of the following:
+	 - On the command line:
+       ```bash
+       dotnet add package Tizen.NET.Sdk --version 0.9.18-pre1 --source https://tizen.myget.org/F/dotnet/api/v3/index.json
+       ```
+	 - In the `.csproj` file:
+       ```xml
+       <ItemGroup>
+         <PackageReference Include="Tizen.NET.Sdk" Version="0.9.18-pre1" />
+       </ItemGroup>
+       ```
+     For more information on `NuGet.config` file locations, see [Config file locations and uses](https://docs.microsoft.com/en-us/nuget/consume-packages/configuring-nuget-behavior#config-file-locations-and-uses).	 
+     ```xml
+     <configuration>
+        <packageSources>
+           <add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3" />
+           <add key="TizenMyGET" value="https://tizen.myget.org/F/dotnet/api/v3/index.json" />
+        </packageSources>
+     </configuration>
+     ```
+
+
+## Creating a TPK Package with Visual Studio
+
+You can build TPK packages using the Tizen.NET.Sdk package in Visual Studio 2017. Tizen.NET.Sdk provides a TPK packaging and signing feature. If a Tizen .NET Core project refers to the Tizen.NET.Sdk package, a TPK file is created.
+
+To create a TPK package:
+
+1. Create a new Tizen .NET project:
+
+   ![Create a new project](media/howtobuild-newproject.png)
+
+2. Check that a Nuget dependency to the `Tizen.NET.Sdk` package exists:
+
+   ![Check the package reference](media/howtobuild-reftizennetsdk.png)
+
+3. Build the project (with default certificates).
+   
+   Right-click the solution and select **Build Solution** (or press **Ctrl + Shift + B**).
+
+   ![Build a project](media/howtobuild-buildproject.png)
+
+   The build process output:
+     ```
+     1>------ Build started: Project: CrossTemplate1, Configuration: Debug Any CPU ------
+     1>CrossTemplate1 -> C:\Users\samsung\Documents\Visual Studio 2017\Projects\CrossTemplate1\CrossTemplate1\CrossTemplate1\bin\Debug\netstandard2.0\CrossTemplate1.dll
+     2>------ Build started: Project: CrossTemplate1.Tizen.TV, Configuration: Debug Any CPU ------
+     3>------ Build started: Project: CrossTemplate1.Tizen.Mobile, Configuration: Debug Any CPU ------
+     2>CrossTemplate1.Tizen.TV -> C:\Users\samsung\Documents\Visual Studio 2017\Projects\CrossTemplate1\CrossTemplate1\CrossTemplate1.Tizen.TV\bin\Debug\netcoreapp2.0\CrossTemplate1.Tizen.TV.dll
+     2>CrossTemplate1.Tizen.TV -> C:\Users\samsung\Documents\Visual Studio 2017\Projects\CrossTemplate1\CrossTemplate1\CrossTemplate1.Tizen.TV\bin\Debug\netcoreapp2.0\org.tizen.example.CrossTemplate1.Tizen.TV-1.0.0.tpk
+     3>CrossTemplate1.Tizen.Mobile -> C:\Users\samsung\Documents\Visual Studio 2017\Projects\CrossTemplate1\CrossTemplate1\CrossTemplate1.Tizen.Mobile\bin\Debug\netcoreapp2.0\CrossTemplate1.Tizen.Mobile.dll
+     3>CrossTemplate1.Tizen.Mobile -> C:\Users\samsung\Documents\Visual Studio 2017\Projects\CrossTemplate1\CrossTemplate1\CrossTemplate1.Tizen.Mobile\bin\Debug\netcoreapp2.0\org.tizen.example.CrossTemplate1.Tizen.Mobile-1.0.0.tpk
+     ========== Build: 3 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+     ```
+
+4. Check the project output directory:
+   
+    - The TPK file is created in the output directory.
+	
+      ![Project output directory content](media/howtobuild-outputdir.png)
+    
+    - The files that make up the TPK package can be found in the` tpkroot` directory.
+	
+      ![Project tpkroot directory content](media/howtobuild-tpkroot.png)
+
+
+## Creating a TPK Package with .NET CLI
+
+You can build TPK packages using the Tizen.NET.Sdk package in .NET CLI. Tizen.NET.Sdk provides a TPK packaging and signing feature. If a Tizen .NET Core project refers to the Tizen.NET.Sdk package, a TPK file is created.
+
+To create a TPK package:
+
+1. Create a new project:  
+    ```bash
+    $ dotnet new console -n testconsole
     ```
-      dotnet add package Tizen.NET.Sdk --version 0.9.18-pre1 --source https://tizen.myget.org/F/dotnet/api/v3/index.json
-    ```
 
-3. .CSPROJ
-    ```xml
-    <ItemGroup>
-      <PackageReference Include="Tizen.NET.Sdk" Version="0.9.18-pre1" />
-    </ItemGroup>
-    ```
-
-
-## How to build tizen project
-
-### Visual Studio 2017
-1. Install Visual Studio Tools for Tizen (cps version)
-
-2. Create Template of Tizen.NET category
-
-![C P S New Project](../image/CPS_new_project.png)
-
-3. Check Package Reference Tizen.NET.Sdk
-
-![Nuget Ref Tizen.Net.Sdk](../image/nuget-ref-tizen.net.sdk.png)
-
-4. Build Project (with Default Certificates)
-    ```
-    1>------ Build started: Project: NUITemplate11, Configuration: Debug Any CPU ------
-    1>NUITemplate11 -> c:\users\samsung\Source\Repos\NUITemplate11\NUITemplate11\bin\Debug\netcoreapp2.0\NUITemplate11.dll
-    1>NUITemplate11 -> c:\users\samsung\Source\Repos\NUITemplate11\NUITemplate11\bin\Debug\netcoreapp2.0\org.tizen.example.NUITemplate11-1.0.0.tpk
-    ========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
-    ```
-
-5. Output Directory
-
-![C P S Build Outputdir](../image/CPS_build_outputdir.png)
-
-
-### dotnet CLI
-1. Install dotnet cli 2.0 (https://www.microsoft.com/net/core/)
-2. Create console Project 
-    ```
-    $dotnet new console -n testconsole
-    ```
-3. Add the `<PackageReference>` element and include `Tizen.NET.Sdk` at your tizen project file.
-    ```xml
-    <ItemGroup>
-      <PackageReference Include="Tizen.NET.Sdk" Version="0.9.18-pre1" />
-    </ItemGroup>
-    ```
-    or
-
-    ```
-    $dotnet add package Tizen.NET.Sdk --version 0.9.18-pre1 --source https://tizen.myget.org/F/dotnet/api/v3/index.json
-    ```
-
-4. Create the `tizen-manifest.xml` file at project root directory
+2. Create a `tizen-manifest.xml` file in the project root directory:
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
     <manifest xmlns="http://tizen.org/ns/packages" api-version="4" package="org.tizen.example.testconsole" version="1.0.0">
@@ -84,36 +116,66 @@ Add feed to Nuget.config (https://tizen.myget.org/F/dotnet/api/v3/index.json) (d
     </manifest>
     ```
 
-5. Build Project (with Default Certificates)
+3. Build the project:
+   - With default certificates:
 
-    ```
-    $ dotnet build
-    Microsoft (R) Build Engine version 15.3.409.57025 for .NET Core
-    Copyright (C) Microsoft Corporation. All rights reserved.
+     ```
+     $ dotnet build
+     Microsoft (R) Build Engine version 15.3.409.57025 for .NET Core
+     Copyright (C) Microsoft Corporation. All rights reserved.
 
-      testconsole -> /home/tizensdk/develop/Seminar/testconsole/bin/Debug/netcoreapp2.0/testconsole.dll
-      testconsole -> /home/tizensdk/develop/Seminar/testconsole/bin/Debug/netcoreapp2.0/org.tizen.example.testconsole-1.0.0.tpk
+       testconsole -> /home/tizensdk/develop/Seminar/testconsole/bin/Debug/netcoreapp2.0/testconsole.dll
+       testconsole -> /home/tizensdk/develop/Seminar/testconsole/bin/Debug/netcoreapp2.0/org.tizen.example.testconsole-1.0.0.tpk
 
-    Build succeeded.
-        0 Warning(s)
-        0 Error(s)
+     Build succeeded.
+         0 Warning(s)
+         0 Error(s)
 
-    Time Elapsed 00:00:02.16
+     Time Elapsed 00:00:02.16
+     ```
+     The output directory looks like this:
 
-    ```
-6. Build Project (with User Certificate Property)
-    ```
-    $ dotnet clean
+      ```
+      $ tree ./bin
 
-    $ dotnet build /p:"AuthorPath=abc.p12;AuthorPass=test" /p:"DistributorPath=def.p12;DistributorPass=hello"
-    ```
-> INFO : you can also set certificate information .csproj file
->```xml
-><PropertyGroup>
->  <AuthorPath>author_test.p12</AuthorPath>
->  <AuthorPass>author_test</AuthorPass>
->  <DistributorPath>tizen-distributor-signer.p12</DistributorPath>
->  <DistributorPass>tizenpkcs12passfordsigner</DistributorPass>
-></PropertyGroup>
->```
+      bin
+      |-- Debug
+
+          |-- netcoreapp2.0
+              |-- org.tizen.example.testconsole-1.0.0.tpk
+              |-- testconsole.deps.json
+              |-- testconsole.dll
+              |-- testconsole.pdb
+              |-- testconsole.runtimeconfig.dev.json
+              |-- testconsole.runtimeconfig.json
+              |-- tpkroot
+                  |-- author-signature.xml
+                  |-- bin
+                  |   |-- testconsole.dll
+                  |   |-- testconsole.pdb
+                  |-- lib
+                  |-- res
+                  |-- shared
+                  |   |-- res
+                  |-- signature1.xml
+                  |-- tizen-manifest.xml
+      ```
+   - With custom certificates:
+     ```bash
+     $ dotnet clean
+
+     $ dotnet build /p:"AuthorPath=abc.p12;AuthorPass=test" /p:"DistributorPath=def.p12;DistributorPass=hello"
+     ```
+
+     > **Note**
+     >
+     > You can also set certificate information in the `.csproj` file:
+     > ```xml
+     > <PropertyGroup>
+     >    <AuthorPath>author_test.p12</AuthorPath>
+     >    <AuthorPass>author_test</AuthorPass>
+     >    <DistributorPath>tizen-distributor-signer.p12</DistributorPath>
+     >    <DistributorPass>tizenpkcs12passfordsigner</DistributorPass>
+     > </PropertyGroup>
+     > ```
 

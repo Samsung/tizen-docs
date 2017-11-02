@@ -1,137 +1,154 @@
-﻿# Get Started with Performance Profiling (Preview)
-### Step 1. Configuring and Running Profiling
-   * In the menu, choose Tools > Tizen > Profiler > Run profiler
+﻿# Profiler
 
-     ![Run Profiler](../image/run_profiler.png)
+The profiler allows you to analyze the performance of your application. You can record, manage, and view profiling sessions.
 
-   * In the opened panel, specify profiling options
-   
-     ![Run Profiler Setting](../image/run_profiler_setting.png)
+## Recording Profiling Sessions
 
-      1) path to application will be set up automatically in accordance with the opened Solution
-      2) Profiling preset – Predefined sets of options for different profiling aspects (less options included - less overhead and less data collected and processed):
-         1) CPU sampling – Trace CPU and Source Lines, ignore Memory
-         2) Memory Allocation - Trace Memory Allocation and Source Lines, ignore CPU
-         3) Complex Profiling – Trace all available information: CPU, Source Lines, Memory Allocation
-      3) Sampling Options; 
-         1) Sampling interval – sampling time interval in ms (default - 10)
-         2) High granularity – high-granularity sampling (this option allows for better precision and sample regularity, however, low granularity – is preferred for better efficiency)
-      4) Trace Options;
-         1) Trace execution – trace CPU utilization
-         2) Trace Memory – trace Memory allocation per method
-         3) Trace source lines – turns line source mapping on
-         4) Stack Track – this option enables hybrid trace method which register stack changes while memory allocations
-      5) CPU Tracing Options;
-         1) Enable CPU – turns on/off tracing CPU utilization
-         2) Trace Process – turns on/off CPU utilization for the whole application
-         3) Trace Threads - turns on/off CPU utilization for each thread
-         4) Trace Interval – sampling interval (ms) 
-      6) Misc Options
-         1) Delayed start – delays application start in seconds.
+To record a profiling session:
+1. In the Visual Studio menu, select **Tools &gt; Tizen &gt; Profiler &gt; Run Profiler**.  
+  The profiler configuration dialog opens.
 
-   * Press “Ok’ button. “Output” Window will display logs from a process of installation an application to emulator, and running the application with profiling
-    
-     ![Profiler Output Window](../image/profiler_output_window.png)
+2. Define the profiling options.  
+    ![Profiler configuration](media/profiler-config.png)
+    - **Path to application** is automatically filled with the information for the current solution.
+    - **Profiling Preset**  
+    You can select from the following predefined profiling configurations:
+      - **CPU Sampling**  
+        Trace CPU and source lines, but not memory allocation.
+      - **Memory Allocation**  
+        Trace memory allocation and source lines, but not CPU.
+      - **Complex Profiling**  
+        Trace CPU, source lines, and memory allocation.
+    - **Sampling Options**  
+    You can set the following sampling options:
+      - **Sampling Interval**  
+        You can set the sampling time interval, in milliseconds. The default is 10 ms.
+      - **High Granularity**  
+        You can switch on high-granularity sampling. It enables better precision and sample regularity, at the cost of efficiency.
+    - **Trace Options**  
+    You can set the following trace options:
+      - **Trace Execution**  
+        You can trace CPU utilization.
+      - **Trace Memory**  
+        You can trace memory allocation for methods.
+      - **Trace Source Lines**  
+        You can switch on line source mapping.
+      - **Stack Track**  
+        You can enable a hybrid trace, which registers stack changes on memory allocation.
+    - **CPU Tracing Options**  
+    You can set the following CPU tracing options:
+      - **Enable CPU Tracing**  
+        You can switch on the CPU tracing features.
+      - **Trace Process**  
+        You can trace the application's CPU utilization.
+      - **Trace Threads**  
+        You can trace each processing thread's CPU utilization.
+      - **Trace Interval (ms)**  
+        You can set the sampling time interval, in milliseconds.
+    - **Misc Options**  
+    You can set the following additional option:
+      - **Delayed start**  
+        You can delay the application startup.
 
-   * In case of errors – the Output Window will display them
-   * In success – the application should start in Emulator
-   
-     ![Launch Application](../image/launch_application.png)
+3. To start the profiling session, click **OK**.  
+    The application is installed and launches on the emulator.  
+    The **Output** panel displays the installation log, including any errors.  
+    ![Output panel](media/profiler-output-window.png)
 
-   * “Profiling Progress” Window will be displaying live an information with CPU and Memory utilization
+    The **Profiling Progress** panel shows live CPU and memory usage information.  
+    ![Profiling progress](media/profiler-progress.png)
 
-     ![Profiling Progress](../image/profiling_progress.png)
+4. To pause and resume profiling, in the **Profiling Progress** panel, click **Pause** and **Resume**.  
+    The chart in the **Profiling Progress** panel uses a light-blue background to distinguish the time period when profiling is paused.  
 
-   * To pause profiler, press “Pause” button. A time interval when profiling information is not collected is highlighted with light blue color.
-   
-     ![Execute Pause](../image/execute_pause.png)
+5. To stop profiling, click **Stop**.  
+The application is terminated and the profiling data is retrieved from the emulator.
 
-   * To continue collection of data press “Resume” button
-   
-     ![Execute Resume](../image/execute_resume.png)
+   ![Stop profiling](media/profiler-execute-stop.png)
 
-   * To stop profiling, press “Stop” button. “Output” Window will be displaying logs with stopping the application and getting profiling data from Emulator
-   
-     ![Execute Stop](../image/execute_stop.png)
+## Managing Profiling Sessions
 
-   * All errors will be displayed there
+To manage the recorded profiling sessions:
+1. In the Visual Studio menu, select **Tools &gt; Tizen &gt; Profiler &gt; Session Explorer**.  
 
-### Step 2. Opening a ssession
-   * Open “Session Explorer” Window - Tools > Tizen > Profiler > Session Explorer
-   
-     ![Open Session](../image/open_session.png)
+   The **Session Explorer** panel opens. It lists the profiling sessions collected from the current solution.  
+   ![Session Explorer](media/profiler-session-explorer.png)  
 
-   * This Window displays a list of profiling sessions collected in the opened Solution. If there is not an opened Solution, this Window will be empty. The list contains:
-      1) date and time of session’s creation
-      2) profiling Preset used to create session
-      3) name of a project
-      4) (optional) user defined Session Annotation. This annotation is useful to distinguish between several sessions collected on the same date and with the same preset
-      
-      ![Session Explorer](../image/session_explorer.png)
 
-   * To delete a session or to change its annotation press Right Mouse Button
-   
-     ![Mouse Right](../image/mouse_right.png)
+2. You can add a user-defined annotation to a session to, for example, identify what was tested during that session.  
+   To add an annotation:
+   1. In the **Session Explorer**, right-click the session and select **Edit Annotation**.  
+      ![Edit annotation](media/profiler-session-explorer-context-menu.png)
+   2. Enter the annotation text, and click **Ok**.  
+      ![Edit annotation text](media/profiler-edit-annotation.png)
 
-      1) Press “Edit Annotation” to edit session’s annotation (empty by default)
-      
-        ![Edit Annotation](../image/edit_annotation.png)
+3. To view the session properties, click the session in the **Session Explorer**.  
+   The **Properties** panel (below the **Session Explorer** panel by default) displays additional information about the session, such as the profiling options used for the session.  
+   ![Session properties](media/profiler-session-properties.png)
 
-      2) Press “Delete” to delete the session
+4. To delete a session, in the **Session Explorer**, right-click the session and select **Delete**.
 
-   * Additional session’s information is displayed in “Properties” Window (usually places below “Session Explorer’ Window). This windows displays values of parameters that has been used to configure the profiler for this session.
-    
-     ![Session Properties](../image/session_properties.png)
+## Viewing Profiling Sessions
 
-   * Mouse Double Click on the session name in “the Session Explorer” to open the session for analysis
-   
-     ![Session Analysis](../image/session_analysis.png)
+To view a profiling session, in the **Session Explorer**, double-click on the session you want to view.  
+A session view opens, consisting of 3 panels:
 
-### Step 3. Analyzing profiling data 
-   * When a session is opened, three panels are visible:
-      1) Filters Panel in the left panel
-      2) Timeline Charts Panel in the center panel
-      3) Info Panel in the right panel
-      
-         ![Session Panel](../image/session_panel.png)
+- Filters panel on the left
+- Timeline panel in the center
+- Methods panel on the right
+  
+**Figure: Session view**  
 
-   * Filters Panel allows to filter profiling data by:
-      1) Time, Allocated Memory, Samples. Based on the selected filter, corresponding information is displayed in the right panel – Info Panel (will be described in details below).
-       
-         ![Filter Panel](../image/filter_panel.png)
+![Session view](media/profiler-session-analysis.png)
 
-      2) “Thread Timeline” options Garbage Collection (GC), Just In Time Compilation (JIT) and CPU Utilization one can change the view in the center panel “Timeline Charts Panel” (will be described in details below).
+### Filters Panel
 
-   * Timeline Charts Panel displays 
-      1) CPU utilization of the application in the top part of the panel
-      ![Cpu Utilization](../image/cpu_utilization.png)
+You can filter the profiling data by selecting from the following options:
+  - **Call Tree and Methods** filters define which information is displayed in the methods panel:  
+    - **Time** shows how much time each method has occupied.
+    - **Allocated Memory** shows how much memory was allocated for each method.
+    - **Samples** shows the number of samples for each method.
+  - **Thread Timeline** filters define which information is displayed in the timeline panel.  
+  You can display **GC** (garbage collection), **JIT** (just-in-time compilation), or **Cpu Utilization**.
 
-      2) GC, JIT or CPU Utilization for separate threads in the bottom part of the panel
-      ![Gc Cpu Utilization](../image/gc_cpu_utilization.png)
+### Timeline Panel
 
-   * To filter collected data by time, press Mouse Left Button on the upper chart and select interval. Selected interval will be highlighted in grey. Data in the right panel will be changed according to the selection.
-    
-      ![Select Interval](../image/select_interval.png)
+The timeline panel consists of 2 parts:
+- The upper part of the panel shows the overall CPU utilization chart.
 
-   * To clear the selected interval, click any place in the chart. Data in the right panel will be reset as well.
-   * Methods Panel consists 3 tabs: Call Tree, Hot Path, Hot Lines
-      1) Call Tree Tab displays Top Methods & Call Tree on the selected time interval for the selected thread
-       
-         ![Call Tree Tab](../image/call_tree_tab.png)
+  ![CPU utilization](media/profiler-cpu-utilization.png)
 
-      2) Hot Path Tab displays Hot Path on the selected time interval for the selected thread
-      
-         ![Hotpath Tab](../image/hotpath_tab.png)
+- The lower part of the panel shows GC, JIT or CPU utilization charts for each thread, depending on the selected filter.
 
-         1) In the collapsed state, the Hot Path Item displays the hottest method. When expanding – the whole path from this method will the root calling method is displayed.
+  ![GC CPU utilization](media/profiler-gc-cpu-utilization.png)
 
-      3) Hot Lines Tab displays Top Source Lines on the selected time interval for the selected thread (source lines numbers are displayed in brackets […])
-       
-         ![Hotline Tab](../image/hotline_tab.png)
-         
-   * Depending on the profiling mode chosen at the left, different data is displayed. Table 1 shows different types of data displayed in the right panel. Filtered by Time – shows how much time every method has occupied (highlighted in red). Filtered by Allocated memory – shows an amount of memory allocations per method (in Kb or Mb). Filtered by Samples – shows amount of samples per method.
-    
-     ![Profiling Categories](../image/profiling_categories.png)
-   * Double click on the selected line in Hot Lines Tab opens a source file where hot lines are highlighted with intensity that corresponds to the “hottest” level of this line
-    
-     ![Jump To Line](../image/jump_to_line.png)     
+You can select a specific time interval on the timeline, to view the detailed method data for it.  
+To select a time interval:
+  1. Highlight the interval you want to view in the upper part of the timeline panel.  
+  ![Select interval](media/profiler-select-interval.png)  
+  The methods panel shows data for the selected interval.
+  2. To clear the selected interval, click anywhere in the timeline chart.
+
+### Methods Panel
+
+The criteria for the data shown in the methods panel depends on the selected filter. The following figure shows examples of the data displayed in the methods panel.  
+
+**Figure: Method filters**  
+
+![Method filters](media/profiler-categories.png)
+
+The methods panel consists of 3 tabs:
+
+  - The **Call Tree** tab displays the **Top Methods** and **Call Tree** for the selected thread and time interval.  
+  ![Call Tree tab](media/profiler-call-tree-tab.png)
+
+  - The **Hot Path** tab displays the hottest paths for the selected thread and time interval.  
+  ![Hotpath tab](media/profiler-hotpath-tab.png)  
+  The list displays the hottest methods. To view the call path from the method to its root, expand the list item.
+
+  - The **Hot Lines** tab displays the top source lines for the selected thread and time interval.  The source line numbers are shown in brackets (**[ ]**).  
+  ![Hot Lines tab](media/profiler-hotline-tab.png)
+  
+    To show a "hot line" entry in its source code context, double-click the method in the **Hot Lines** tab. The code line is highlighted with a color intensity corresponding to its hotness.  
+    **Figure: "Hot line" in context**  
+    !["Hot line" in context](media/profiler-jump-to-line.png)

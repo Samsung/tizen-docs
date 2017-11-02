@@ -1,57 +1,38 @@
-## Creating Your First Tizen .NET Application ##
+# Creating Your First Tizen .NET Application
 
-The Tizen .NET framework allows you to efficiently and easily create beautiful applications for Tizen. A great way to experience this yourself is to follow the steps to your first Tizen .NET application. If you have to set up your development environment, please go to set up the development environment.
+The Tizen .NET framework allows you to easily and efficiently create applications for Tizen. With the following instructions, you can create a basic .NET application, which displays some text on the screen with no user interaction.
 
-To get started,
+Before you get started with developing Tizen applications, set up the [development environment](how-to-install.md).
 
-* Creating a new project
-* Building and running your application
+## Creating a Project
 
-After completing the above steps, you will have created your first application, and you can move on to Enhancing your application.
+The following example shows how to create a basic Tizen .NET application project in Visual Studio. An application project contains all the files that make up an application.
 
-### Creating a Project ###
-
-To build a Tizen .NET application, you must follow these general steps:
-
-1. Create a project.
-2. Design the user interface for the application.
-3. Write code to implement the logic of the application.
-4. Build and deploy the application.
-
-You can perform all of these steps in the IDE. The Tizen .NET works in Microsoft's Visual Studio 2017. After making sure the development environment is properly set up, you can create a new Tizen .NET project:
-
+To create a new Tizen .NET project:
 1. Launch Visual Studio 2017.
-2. To create a new project, select ```File > New > Project```.
+2. In the Visual Studio menu, select **File &gt; New &gt; Project**.  
+![Open the New Project dialog](media/cs-first01.png)  
+  The New Project dialog opens.
 
-![cs 1st step](image/cs_first01.png)
+3. Select **Templates &gt; Visual C# &gt; Tizen &gt; Cross-Platform**, and select the **Blank App (Xamarin.Forms)** template.  
+  Define the project properties and click **OK**. You can enter the name, location, and solution name.  
+  ![Select a template](media/cs-first02-1.png)  
+  The Tizen Project Wizard opens.
+4.  Define the profiles to add to your solution, and click **OK**.  
+  ![Package profiles](media/cs-first02-2.png)  
+  If you select the **Common** profile, you cannot select **Mobile** or **TV**.
 
-3. In the New Project window, select Tizen in the Templates tree on the left, and select ```Blank App (Xamarin.Forms)```. Visual Studio defines a name, location and solution name for you, but you can modify the values: at least set the name to something meaningful.
+A solution with 2 or 3 projects is created and shown in the **Solution Explorer** view:
 
-![cs 2nd step 1](image/cs_first02_1.png)
+- The **&lt;projectname&gt;** project contains the Xamarin.Forms code shared across platforms.
+- If you select the common profile in the Tizen Project Wizard, a common project titled **&lt;projectname&gt;.Tizen** is added. It contains code to instantiate your common application within the Tizen framework.
+- If you select the mobile profile in the Tizen Project Wizard, a mobile project titled **&lt;projectname&gt;.Tizen.Mobile** is added. It contains code to instantiate your mobile application within the Tizen framework.
+- If you select the TV profile in the Tizen Project Wizard, a TV project titled **&lt;projectname&gt;.Tizen.TV** is added. It contains code to instantiate your TV application within the Tizen framework.  
 
-Once you are happy with the name and location, click ```OK```.
+**Figure: Project with mobile and TV profiles**
 
-![cs 2nd step 2](image/cs_first02_2.png)
+![Project with mobile and TV profiles](media/cs-first-creating-solution-explorer.png)
 
-Tizen Project Wizard window is shown as next step. You can define the package name and define which profiles are added in your solution. Click OK.  If you select Common profile, Mobile and TV profile cannot be selected.
+If you are already familiar with Xamarin.Forms, this project has the same structure as a Xamarin.Forms portable application. The **&lt;projectname&gt;** project is the portable class library and the others are the platform-specific projects; however, in Tizen .NET, only the Tizen platform-specific project is generated.
 
-A solution with 2 or 3 projects is created:
-
-* One project is named <projectname> and contains the Xamarin.Forms code, which can be shared across platforms.
-
-* If you selected the common profile in the Tizen Project Wizard, a common project is added with <projectname>.Tizen suffix and contains the code to instantiate your common application within the Tizen framework.
-
-* If you selected the mobile profile in the Tizen Project Wizard, a mobile project is added with <projectname>.TizenMobile suffix and contains the code to instantiate your mobile application within the Tizen framework.
-
-*If you selected the TV profile in the Tizen Project Wizard, a TV project is added with <projectname>.TizenTV suffix and contains the code to instantiate your TV application within the Tizen framework.
-
-If you are already familiar with Xamarin.Forms, this project has almost the same structure as a Xamarin.Forms portable application, with the "Portable" project being the portable class library and the others being the platform-specific projects; however, for the Tizen .NET, only the Tizen platform-specific project is generated.
-
-![](image/cs_first_creating_solution_explorer.png)
-
-The ```.cs``` file in <projectname> project already contains simple Xamarin.Forms code, which makes a basic UI. Therefore, you can now build and run your application.
-
-When you are done running your first application, you can enhance it further by reading a brief overview of what the code generated by the template is doing, and learning about a few more concepts to add to your application appeal.
-
----
-
+The `.cs` file in the portable project contains simple Xamarin.Forms code that makes a basic UI.

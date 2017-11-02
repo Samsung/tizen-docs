@@ -1,43 +1,52 @@
 ﻿# Project Wizard
 
-The Project Wizard of Visual Studio Tools for Tizen is a tool that is used to create a Tizen .Net application project.
+The Project Wizard in Visual Studio Tools for Tizen is used to create a Tizen .NET application project.
 
-The Visual Studio Tools for Tizen provides 4 project templates. When you create a new project, you can select a specific template, which the Project Wizard uses to automatically create basic functionalities for the application. The default project files and folders are also created.
+In the Project Wizard, you can select templates and a profile to create the project. In addition, you can set basic project properties, such as the project name, package name, and location.
 
-In the Project Wizard, you can select a templates and profile to create the project. In addition, you can set basic project properties, such as the project name, package name and location.
+The Project Wizard provides 3 project templates with which you can start a native application project:
 
-To open the Project Wizard, select File > New > Project > Templates > Visual C# > Tizen.
+- **Blank App (Xamarin.Forms)**  
+Use this template for creating a Tizen Xamarin application (Common, Mobile, and TV). You can also use this template for a cross-platform projects to add a Tizen project into a Xamarin.Forms solution.
 
-## Templates ##
+  **Figure: Project Wizard for a cross-platform project**
 
-You can select a template for your project. The Project Wizard creates the project based on the selected template.
+  ![Project Wizard for a cross-platform project](media/projectwizard-crossnew.png)
 
-Visual Studio Tools for Tizen provides 3 templates with a basic structure where you can start the native application project:
+- **Blank App (ElmSharp-Beta)**  
+Use this template for creating a Tizen application using ElmSharp APIs.
+- **Blank App (Tizen.NUI)**  
+Use this template for creating a Tizen application using Tizen NUI APIs.
 
-![Project Wizard for Cross-Platform](../image/ProjectWizard_CrossNew.png)
+  **Figure: Project Wizard for a native project**
 
-#### Blank App (Xamarin.Forms) ####
-  * Use this template for creating a Tizen Xamarin Application (Common, Mobile and TV)
-  * Also use this template in case of adding Tizen Project to Xamarin Forms solution.
+  ![Project Wizard for a native project](media/projectwizard-nativenew.png)
 
-![Project Wizard for Cross-Platform](../image/ProjectWizard_NativeNew.png)
+- **Class Library (.NET Standard)**  
+Use this template for creating .NET Standard class library.
 
-#### Blank App (ElmSharp-Beta) ####
-  * Use this for creating a Tizen Application using ElmSharp APIs.
-  
-#### Blank App (Tizen.NUI) ####
-  * Use this for creating a Tizen Application using Tizen NUI APIs.
+When you create a new project with a specific template, the Project Wizard automatically creates basic functionalities for the application based on the template. The default project files and folders are also created.
 
-After selecting a template and setting the location in your local repository, Click OK.
+To create a Tizen .NET application project:
 
-## Profile ##
+1. To open the Project Wizard:
 
-In case of Blank App (Xamarin.Forms), the Tizen Project Wizard is shown for setting the project name and selecting the profile that you want to add in your solution.
+   1. In the Visual Studio menu, go to **File &gt; New &gt; Project &gt; Templates &gt; Visual C# &gt; Tizen**.
 
-![Select Profile](../image/ProjectWizard_Profile.png)
+   2. Select a template for your project.
 
-To move to the next step, select the profile, and click OK.
+      The Project Wizard creates the project based on the selected template.
 
-The solution shown in the following figure contains both profiles (Mobile and TV).
+   3. Set the basic project properties, such as the project name and its location in your local repository, and click **OK**.
 
-![Solution Explorer](../image/ProjectWizard_Solution.png)
+2. If you selected the **Blank App (Xamarin.Forms)** template, the Tizen Project Wizard dialog opens.
+
+   Define the package name, select the profiles that you want to add to your solution, and click **OK**.
+
+   ![Select profiles](media/projectwizard-profile.png)
+
+The following figure shows a new .NET application project solution that contains both mobile and TV profiles.
+
+**Figure: Solution with mobile and TV profiles**
+
+![Solution with mobile and TV profiles](media/projectwizard-solution.png)
