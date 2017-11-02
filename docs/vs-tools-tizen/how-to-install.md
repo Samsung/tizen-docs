@@ -47,7 +47,7 @@ Tizen emulator for Visual Studio has the same requirements as the emulator in th
   2. Search the "Tizen" in Visual Studio Marketplace.![Marketplace](media/howtoinstall-extensionwindows.png)
   3. Click the "Download" button, and close Visual Studio IDE, then will starting install.
 
-  Alternatively, If you want to download and install the VSIX file, then you can donwload in [Visual Studio Marketplate website](https://marketplatce.visualstudio.com/items?itemName-vs-publisher-1484655.VisualStudioToolsforTizen).  
+  Alternatively, If you want to download and install the VSIX file, then you can donwload in [Visual Studio Marketplate website](https://marketplace.visualstudio.com/items?itemName=vs-publisher-1484655.VisualStudioToolsforTizen).
 
  ### Set up the Tizen Baseline SDK.
   After extensions install, you want to use the Tizen SDK tools, you must set up the Tizen baselind SDK. But, If the Tizen Studio is already installed in your computer, you can just [set the tool path](how-to-install.md#set-up-the-tizen-baseline-sdk-path).
@@ -57,19 +57,19 @@ Tizen emulator for Visual Studio has the same requirements as the emulator in th
 
    1. Click the "Tizen Package Manager" item in Tools > Tizen menu of Visual Studio IDE.  
    2. Click the "Install new Tizen SDK" button.  
-   ![InstallWizard1.png](/media/howtoinstall-installwizard1.png)
+   ![InstallWizard1.png](media/howtoinstall-installwizard1.png)
    3. Read license document and click the "I Agree" button.  
-   ![InstallWizard2.png](/media/howtoinstall-installwizard2.png)
+   ![InstallWizard2.png](media/howtoinstall-installwizard2.png)
    4. Enter the root directory path where you want to install and click the "Next" button.  
-   ![InstallWizard3.png](/media/howtoinstall-installwizard3.png)
+   ![InstallWizard3.png](media/howtoinstall-installwizard3.png)
    5. The Installer will automatically download and install the required packages.  
-   ![InstallWizard4.png](/media/howtoinstall-installwizard4.png)
-   ![InstallWizard5.png](/media/howtoinstall-installwizard5.png)
-   ![InstallWizard6.png](/media/howtoinstall-installwizard6.png)
+   ![InstallWizard4.png](media/howtoinstall-installwizard4.png)
+   ![InstallWizard5.png](media/howtoinstall-installwizard5.png)
+   ![InstallWizard6.png](media/howtoinstall-installwizard6.png)
 
 
   #### Set up the Tizen Baseline SDK path  
-   If the Tizen Studio or Tizen Baseline SDK is already installed in your computer, you not need to install. Instead, you need to set up a root directory that is already installed. If you have installed the Tizen Baseline SDK through [the above process](how-to-install.md#tizen-beseline-sdk-install), skit this step.  
+   If the Tizen Studio or Tizen Baseline SDK is already installed in your computer, you not need to install. Instead, you need to set up a root directory that is already installed. If you have installed the Tizen Baseline SDK through [the above process](how-to-install.md#set-up-the-tizen-baseline-sdk), skit this step.
 
    1. Click the "Tizen Package Manager" item in Tools > Tizen menu of Visual Studio IDE.
    2. Click the "Use installed Tizen SDK" button.  
