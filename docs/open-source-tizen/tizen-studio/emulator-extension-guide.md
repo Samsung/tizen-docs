@@ -128,11 +128,3 @@ To execute the extension in Eclipse:
     - For example: `emulator-control-panel/ECP-LIB`
       - `ln -s ~/tizen-studio/sdk.info sdk.info`
 
-### Changes
-
-- Use JavaFX to implement UI features. SWT is not compatible with the existing code (including XML).
-- Rename the plugin `ecp-plugin.xml` file to `ecp-plugin-<profile>-<version>.xml`.
-- Change the package structure:
-    - Separate the code to the `emulator-control-panel` and `emulator-control-panel-devices` Git repositories.
-    - Change the executable file under platforms to tools.
-- Change the ecp-plugin-<profile>-<version>.xml XML form to construct card and popup based UI and CLI.
