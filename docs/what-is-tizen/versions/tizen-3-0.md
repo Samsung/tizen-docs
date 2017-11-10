@@ -18,8 +18,8 @@ Tizen supports multiple device profiles, each optimized for a specific device ca
 
 Tizen 3.0 adopts various new features, such as high-performance graphics, latest Web technology, intensified security, and multi-user support:
 
-- **Vulkan - new generation graphics API**  
-Vulkan, the new Khronos graphics API, provides 1 unified API framework for desktop, mobile, console, and embedded - unlike its predecessor OpenGL, which had different versions for embedded and desktop (OpenGL ES and OpenGL). Vulkan minimizes driver overhead and provides an architecture that enables you to take advantage of multi-core CPUs. Vulkan also enables reduced load on CPUs through the use of batching, leaving the CPU free to do additional computation or rendering.
+- **Vulkan&reg; - new generation graphics API**  
+Vulkan&reg;, the new Khronos graphics API, provides 1 unified API framework for desktop, mobile, console, and embedded - unlike its predecessor OpenGL&reg;, which had different versions for embedded and desktop (OpenGL&reg; ES and OpenGL&reg;). Vulkan&reg; minimizes driver overhead and provides an architecture that enables you to take advantage of multi-core CPUs. Vulkan&reg; also enables reduced load on CPUs through the use of batching, leaving the CPU free to do additional computation or rendering.
 - **Wayland - lighter and better display server**  
 To improve Tizen performance, a better and lighter display server, Wayland, has replaced the old X Windowing system. Compared to X, Wayland's simplified architecture brings better performance, memory usage, and scalability. It is an optimal solution for IoT devices with a small display.
 - **UHD support, optimized native graphics**  
@@ -32,7 +32,7 @@ Tizen now supports Crosswalk, an open source based Web runtime built with the la
 - **Latest Linux LTS (Long Term Support) kernel**  
 LTS ensures stability and performance, and enables Tizen to use the latest kernel features. In addition, it makes Tizen more secure and up to date with latest kernel features.
 - **64-bit support**  
-In order to extend the Tizen HW ecosystem to cover powerful CPU cores, Tizen 3.0 supports 64-bit CPUs, including both Intel and ARM architectures. Utilizing high performance with more address space available in the 64-bit CPUs, Tizen 3.0 helps you when developing high performance applications, such as video editing and games.
+In order to extend the Tizen HW ecosystem to cover powerful CPU cores, Tizen 3.0 supports 64-bit CPUs, including both Intel&reg; and ARM architectures. Utilizing high performance with more address space available in the 64-bit CPUs, Tizen 3.0 helps you when developing high performance applications, such as video editing and games.
 - **Multi-user support**  
 Many devices, such as Smart TVs, tablets, and cars, are shared by all family members, while everyone wants to keep the device personalized to their own preferences and needs. To accommodate such needs, Tizen 3.0 supports multiple users through logins and multiple sessions. Using Tizen 3.0, each device user can control their own services, private content, and favorite settings independently from other users.
 - **Simple and flexible security**  
@@ -40,7 +40,7 @@ Security has been one of Tizen's major strengths. Strong security, however, has 
 
   By grouping the similarly privileged system resources, policy management complexity at the kernel level is greatly reduced. For user space access control, a policy checker called Cynara checks that the application has the required privilege to use a privileged API. This approach implements a flexible, fast, and safe policy-checking service for granting applications any necessary access to system resources, while it allows access control on the API-level granularity.
 
-  Tizen 3.0 also introduces a new anti-virus framework and privacy guard. The privacy guard reports statistics on how applications are using each resource, such as GPS and connectivity, and the user can control the configuration of the same.
+  Tizen 3.0 also introduces a new anti-virus framework and privacy guard. The privacy guard reports statistics on how applications are using each resource, such as sensors, GPS, and Bluetooth, and the user can control their privacy configuration in the Settings application.
 - **User interface**  
 Tizen 3.0 introduces a host of changes to the User Interface module. Tizen 3.0 has enhanced voice framework support, which includes speech-to-text support for around 11 languages and text-to-speech support for around 28 languages. Tizen 3.0 also supports voice control through S-Voice.
 - **Multimedia**  
@@ -54,7 +54,7 @@ The most important features that enable Tizen to move to the next level are IoT 
 - **Device Convergence**  
 With the increase of devices being connected together, users are expecting more synergy among those devices. Tizen 3.0 provides a device-to-device convergence framework for easy data sharing and remote application control directly between devices. Using this framework, you can handle events or data on a remote device as if they were local. For example, imagine setting up your morning alarm and that event being shared by all your devices so that in addition to your phone sounding the alarm, your microwave oven starts cooking and the TV automatically displays the news brief. Imagine also that, without any effort, the contact list on the phone is shared and synchronized among your devices. Device Convergence in Tizen opens up a host of capabilities that you can use to create a path-breaking user experience.
 - **IoTivity for Connectivity**  
-In an IoT world where everything is connected, it is important that a software platform supports seamless connectivity among all devices. For seamless connectivity, Tizen is closely cooperating with Open Connected Foundation (OCF), which is defining a global standard for IoT connectivity. OCF is getting great support from companies including Cisco, GE, Mediatek, Intel and Samsung. OCF's standard is being implemented as open source and called IoTivity. Its first version is ready to be released, and all profiles in Tizen 3.0 include Iotivity by default. It means that all Tizen devices are Iotivity-ready.
+In an IoT world where everything is connected, it is important that a software platform supports seamless connectivity among all devices. For seamless connectivity, Tizen is closely cooperating with Open Connected Foundation (OCF), which is defining a global standard for IoT connectivity. OCF is getting great support from companies including Cisco, GE, Mediatek, Intel&reg; and Samsung. OCF's standard is being implemented as open source and called IoTivity. Its first version is ready to be released, and all profiles in Tizen 3.0 include Iotivity by default. It means that all Tizen devices are Iotivity-ready.
 
 
 For more information, see [Tizen 3.0 public M3 release note](../../open-source-tizen/release-notes/tizen-3-0-m3.md).

@@ -24,8 +24,6 @@ Since announcing its collaboration with Microsoft on .NET open-source projects i
 
 Tizen .NET currently supports Microsoft's .NET Standard 2.0, and provides a stable Tizen C# development environment with the release of the Visual Studio Tools for Tizen v1.0 this fall.
 
-The preview versions of Tizen.NET have garnered the attention of developers across the world, including those who attended the Microsoft Build 2017 held in Seattle, Microsoft Build Tour in Seoul, and Tizen App Development Seminar at Konkuk University in South Korea earlier this month.
-
 Tizen 4.0 Voice Touch APIs provide you an opportunity to implement voice-controlled application behaviors and Web operations. This means that when using Tizen-based devices, the user can navigate between Web pages or control music playback with voice commands.
 
 The platform's Sensor framework has also been enhanced so that your application can easily define and utilize any physical sensor, such as intrusion detection or air pollution measurement. You only need to install the application and device driver without having to upgrade firmware.

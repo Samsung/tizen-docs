@@ -8,13 +8,13 @@ The application composes the graphic user interface by creating a window with a 
 
 **Figure: Graphics UI diagram**
 
-![Graphics UI diagram](media/Graphics-ui-diagram.png)
+![Graphics UI diagram](media/graphics-ui-diagram.png)
 
 The modules are hardware abstraction layers for graphics and UI. They allow the client and server to render with the GPU, share buffers with other processes, and organize hardware output devices for various chipsets. Their backend module needs to be implemented for the new hardware device.
 
 - TBM provides an abstraction interface for the Tizen graphic buffer manager.
 - TDM provides an abstraction interface for a display server, such as X or Wayland, to allow direct access to graphics hardware in a safe and efficient manner as a display HAL.
-- TPL-EGL is an abstraction layer for surface and buffer management on the Tizen platform aimed to implement the EGL porting layer of the OpenGL ES driver over various display protocols.
+- TPL-EGL is an abstraction layer for surface and buffer management on the Tizen platform aimed to implement the EGL&trade; porting layer of the OpenGL&reg; ES driver over various display protocols.
 
 For an application to handle input device events, the [Input Manager](https://wiki.tizen.org/3.0_Porting_Guide/Graphics_and_UI/Input) is provided, and is mainly comprised of `libinput` and a thin wrapper around it. It handles input events in Wayland compositors and communicates with Wayland clients.
 
@@ -24,7 +24,7 @@ TBM has a frontend library and a backend module. The TBM frontend library is har
 
 **Figure: TBM backend**
 
-![TBM backend](media/800px-Tbm-backend.png)
+![TBM backend](media/800px-tbm-backend.png)
 
 With TBM, the client and server can allocate buffers and share buffers between them. For example, a client allocates a graphic buffer, draws something on it with GL and sends it to the display server for displaying it on the screen without buffer copying. The TBM backend module is implemented as a shared library and the TBM frontend finds the `libtbm-default.so` file and loads it from the `/usr/lib/bufmgr` directory at runtime.
 
@@ -40,10 +40,11 @@ lrwxrwxrwx  1 root root    20 Jul 28  2016 libtbm_sprd.so.0 -> libtbm_sprd.so.0.
 
 The `TBMModuleData` is for the entry point symbol to initialize the TBM backend module. The TBM backend module must define the global data symbol with the name of `tbmModuleData`. The TBM frontend loads the `tbmModuleData` global data symbol and calls the `init()` function at the initial time.
 
-> **Note**  
+> **Note**
+>
 > Do not change the name of the symbol in the TBM backend module.
 
-```c++
+```cpp
 /*
    @brief tbm module data
    Data type for the entry point of the backend module
@@ -58,13 +59,13 @@ typedef int (*ModuleInitProc) (tbm_bufmgr, int);
 
 The TBM backend module initialization consists of allocating the `tbm_bufmgr_backend` instance (`tbm_backend_alloc`), entering the necessary information, and the initialization itself (`tbm_backend_init`).
 
-```c++
+```cpp
 tbm_bufmgr_backend tbm_backend_alloc(void);
 void tbm_backend_free(tbm_bufmgr_backend backend);
 int tbm_backend_init(tbm_bufmgr bufmgr, tbm_bufmgr_backend backend);
 ```
 
-```c++
+```cpp
 MODULEINITPPROTO (init_tbm_bufmgr_priv);
 
 static TBMModuleVersionInfo DumbVersRec = {
@@ -233,13 +234,13 @@ The following table lists the TBM backends.
 
 For more information about TBM and the TBM backend, see [Tizen Buffer Manager (TBM)](https://wiki.tizen.org/TBM).
 
-## Display Management<a name="display"></a>
+## Display Management
 
 The display server composites and shows the client's buffers on screen. The display server sometimes needs to convert or scale an image to a different size or format. To make it possible for various chipset devices, the display server needs the display hardware resource information and control over the resources. Tizen Display Manager (TDM) offers these functionalities for the display server with the unified interface for various chipset devices.
 
 **Figure: TDM backend**
 
-![TDM backend](media/Tdm-backend.png)
+![TDM backend](media/tdm-backend.png)
 
 With TDM, the display server can perform mode setting, DPMS control, and showing a buffer (framebuffer or video buffer) on the screen in the most efficient way. If the hardware supports the m2m converting and capture device, the display server can also convert an image and dump a screen including all hardware overlays with no compositing.
 
@@ -266,7 +267,7 @@ typedef struct _tdm_backend_module {
 } tdm_backend_module;
 ```
 
-```c++
+```cpp
 #include <tdm_backend.h>
 
 static tdm_drm_data *drm_data;
@@ -450,7 +451,7 @@ The following image shows the result of a test performed using the `tdm-test-ser
 
 **Figure: Tdm-test-server results**
 
-![Tdm-test-server results](media/Tdm-test-server-result.png)
+![Tdm-test-server results](media/tdm-test-server-result.png)
 
 ### Checking TDM Log Messages
 
@@ -470,7 +471,7 @@ The input manager supports a `libinput`-based input device backend. `libinput` i
 
 **Figure: Tizen 3.0 input management**
 
-![Tizen 3.0 input management](media/Tizen_3.0_Input.png)
+![Tizen 3.0 input management](media/tizen-3.0-input.png)
 
 ### libinput
 
@@ -497,47 +498,47 @@ The `mtdev` standalone library transforms all variants of kernel MT events to th
 
 `libinput: platform/upstream/libinput`
 
-## OpenGL
+## OpenGL&reg;
 
-This section describes the essential elements of the Tizen platform-level graphics architecture related to OpenGL ES and EGL, and how it is used by the application framework and the display server. The focus is on how graphical data buffers move through the system.
+This section describes the essential elements of the Tizen platform-level graphics architecture related to OpenGL&reg; ES and EGL&trade;, and how it is used by the application framework and the display server. The focus is on how graphical data buffers move through the system.
 
-The Tizen platform requires the OpenGL ES driver for the acceleration of the Wayland display server and the `wayland-egl` client. This platform demands an OpenGL ES and EGL driver which is implemented by the Tizen EGL Porting Layer.
+The Tizen platform requires the OpenGL&reg; ES driver for the acceleration of the Wayland display server and the `wayland-egl` client. This platform demands an OpenGL&reg; ES and EGL&trade; driver which is implemented by the Tizen EGL Porting Layer.
 
-### Tizen OpenGL ES and EGL Architecture
+### Tizen OpenGL&reg; ES and EGL&trade; Architecture
 
-The following figure illustrates the Tizen OpenGL ES and EGL architecture.
+The following figure illustrates the Tizen OpenGL&reg; ES and EGL&trade; architecture.
 
-**Figure: Tizen OpenGL ES architecture**
+**Figure: Tizen OpenGL&reg; ES architecture**
 
-![Tizen OpenGL ES architecture](media/800px-OPENGLES_STACK.png)
+![Tizen OpenGL ES architecture](media/800px-opengles-stack.png)
 
 - CoreGL  
-  An injection layer of OpenGL ES that provides the following capabilities:
+  An injection layer of OpenGL&reg; ES that provides the following capabilities:
   - Support for driver-independent optimization (FastPath)
-  - EGL/OpenGL ES debugging
+  - EGL&trade;/OpenGL&reg; ES debugging
   - Performance logging
   - Supported versions
-    - EGL 1.4
-    - OpenGL ES 1.1, 2.0, 3.0, 3.1
+    - EGL&trade; 1.4
+    - OpenGL&reg; ES 1.1, 2.0, 3.0, 3.1
 
-  CoreGL loads the manufacturer's OpenGL ES driver from the `/usr/lib/driver` directory. CoreGL provides the `libEGL.so`, `libGLESv1_CM.so`, and `libGLESvs.so` driver files in the `/usr/lib` directory.
-- GPU vendor GL/EGL driver  
-  The Tizen platform demands that the GPU vendor implements the GL and EGL driver using `libtpl-egl`. The GPU vendor GL/EGL driver (`libEGL.so`, `libGLESv1_CM.so`, `libGLESv2.so`) must be installed in the `/usr/lib/driver` path.
+  CoreGL loads the manufacturer's OpenGL&reg; ES driver from the `/usr/lib/driver` directory. CoreGL provides the `libEGL.so`, `libGLESv1_CM.so`, and `libGLESvs.so` driver files in the `/usr/lib` directory.
+- GPU vendor GL/EGL&trade; driver  
+  The Tizen platform demands that the GPU vendor implements the GL and EGL&trade; driver using `libtpl-egl`. The GPU vendor GL/EGL&trade; driver (`libEGL.so`, `libGLESv1_CM.so`, `libGLESv2.so`) must be installed in the `/usr/lib/driver` path.
 
 
-### Tizen Porting Layer (TPL) for EGL
+### Tizen Porting Layer (TPL) for EGL&trade;
 
-TPL-EGL is an abstraction layer for surface and buffer management on the Tizen platform. It is used for implementation of the EGL platform functions.
+TPL-EGL is an abstraction layer for surface and buffer management on the Tizen platform. It is used for implementation of the EGL&trade; platform functions.
 
 **Figure: TPL architecture**
 
-![TPL architecture](media/800px-Tpl_architecture.png)
+![TPL architecture](media/800px-tpl-architecture.png)
 
-The background for the Tizen EGL Porting Layer for EGL is in various window system protocols in Tizen. There was a need for separating common layer and backend.
+The background for the Tizen EGL Porting Layer for EGL&trade; is in various window system protocols in Tizen. There was a need for separating common layer and backend.
 
-Tizen uses the Tizen Porting Layer for EGL, as the TPL-EGL API prevents burdens of the EGL porting on various window system protocols. The GPU GL Driver's Window System Porting Layer can be implemented by TPL-EGL APIs which are the corresponding window system APIs. The TBM, Wayland, and GBM backends are supported.
+Tizen uses the Tizen Porting Layer for EGL&trade;, as the TPL-EGL API prevents burdens of the EGL&trade; porting on various window system protocols. The GPU GL Driver's Window System Porting Layer can be implemented by TPL-EGL APIs which are the corresponding window system APIs. The TBM, Wayland, and GBM backends are supported.
 
-### Tizen Porting Layer for the EGL Object Model
+### Tizen Porting Layer for the EGL&trade; Object Model
 
 TPL-EGL provides interfaces based on an object-driven model. Every TPL-EGL object can be represented as a generic `tpl_object_t`, which is reference-counted and provides common functions. Currently, display and surface types of TPL-EGL objects are provided. A display, like a normal display, represents a display system which is usually used for connecting to the server. A surface corresponds to a native surface, such as `wl_surface`. Surfaces can be configured to use N-buffers, but are usually double-buffered or triple-buffered. A buffer is what you render on, usually a set of pixels or a block of memory. For these 2 objects, the Wayland, GBM, TBM backend are defined, and they correspond to their own window systems. This means that you do not need to care about the window systems.
 
@@ -550,19 +551,19 @@ The TPL-EGL has the following core objects:
 - TPL-EGL Surface  
   Encapsulates the native drawable object (`Window`, `Pixmap`, `wl_surface`). The surface corresponds to a native surface, such as `tbm_surface_queue` or `wl_surface`. A surface can be configured to use N-buffers, but they are usually double-buffered or triple-buffered.
 
-#### TPL-EGL Objects and Corresponding EGL Objects
+#### TPL-EGL Objects and Corresponding EGL&trade; Objects
 
-Both TPL-EGL and vendor GLES/EGL driver handles a `tbm_surface` as the corresponding TPL surface buffer. It is represented by the `TBM_Surface` part in the following figure.
+Both TPL-EGL and vendor OpenGL&reg; ES/EGL&trade; driver handles a `tbm_surface` as the corresponding TPL surface buffer. It is represented by the `TBM_Surface` part in the following figure.
 
 **Figure: TPL-EGL architecture**
 
-![TPL-EGL architecture](media/800px-Relationship_TPL_EGL_Gray.png)
+![TPL-EGL architecture](media/800px-relationship-tpl-egl-gray.png)
 
-The following figure illustrates the GLES drawing API flow.
+The following figure illustrates the OpenGL&reg; ES drawing API flow.
 
-**Figure: GLES drawing API flow**
+**Figure: OpenGL&reg; ES drawing API flow**
 
-![GLES drawing API flow](media/800px-GLES_API_FLOW_GRAY.png)
+![GLES drawing API flow](media/800px-gles-api-flow-gray.png)
 
 #### TPL-EGL Frontend API
 
@@ -631,19 +632,19 @@ In the GPU vendor driver, the GPU frame builder handles the drawing. TPL-EGL exp
 
 #### TPL-EGL and Wayland Server and Client
 
-Tizen uses the `wl_tbm` protocol instead of `wl_drm`. The `wl_tbm` protocol is designed for sharing the buffer (`tbm_surface`) between the `wayland_client` and `wayland_server`. Although the `wayland_tbm_server_init` and `wayland_tbm_client_init` pair is a role for the `eglBindWaylandDisplayWL`, the EGL driver is required to implement the entry points for the `eglBindWaylandDisplayWL` and `eglUnbindWaylandDisplayWL` as dummy. For more information, see [https://cgit.freedesktop.org/mesa/mesa/tree/docs/specs/WL_bind_wayland_display.spec](https://cgit.freedesktop.org/mesa/mesa/tree/docs/specs/WL_bind_wayland_display.spec).
+Tizen uses the `wl_tbm` protocol instead of `wl_drm`. The `wl_tbm` protocol is designed for sharing the buffer (`tbm_surface`) between the `wayland_client` and `wayland_server`. Although the `wayland_tbm_server_init` and `wayland_tbm_client_init` pair is a role for the `eglBindWaylandDisplayWL`, the EGL&trade; driver is required to implement the entry points for the `eglBindWaylandDisplayWL` and `eglUnbindWaylandDisplayWL` as dummy. For more information, see [https://cgit.freedesktop.org/mesa/mesa/tree/docs/specs/WL_bind_wayland_display.spec](https://cgit.freedesktop.org/mesa/mesa/tree/docs/specs/WL_bind_wayland_display.spec).
 
 **Figure: TPL-EGL and Wayland**
 
-![TPL-EGL and Wayland](media/800px-Libtpl-egl-module_diagram.png)
+![TPL-EGL and Wayland](media/800px-libtpl-egl-module-diagram.png)
 
-#### Buffer Flow Between the Wayland Server and GLES/EGL Driver
+#### Buffer Flow Between the Wayland Server and OpenGL&reg; ES/EGL&trade; Driver
 
-The following figure shows the buffer flow between the Wayland server and the GLES/EGL driver. The passed buffer is of the `tbm_surface` type.
+The following figure shows the buffer flow between the Wayland server and the OpenGL&reg; ES/EGL&trade; driver. The passed buffer is of the `tbm_surface` type.
 
-**Figure: Buffer flow between Wayland server and GLES/EGL driver**
+**Figure: Buffer flow between Wayland server and OpenGL&reg; ES/EGL&trade; driver**
 
-![Buffer flow between Wayland server and GLES/EGL driver](media/800px-Libtpl-egl_buffer_flow.png)
+![Buffer flow between Wayland server and OpenGL ES/EGL driver](media/800px-libtpl-egl-buffer-flow.png)
 
 ### Project Git Repository
 
@@ -653,22 +654,22 @@ The following table lists the available project Git repositories.
 
 | Project         | Repository                               | Description                              |
 | --------------- | ---------------------------------------- | ---------------------------------------- |
-| `libtpl-egl`    | `platform/core/uifw/libtpl-egl`          | Tizen Porting Layer for EGL              |
+| `libtpl-egl`    | `platform/core/uifw/libtpl-egl`          | Tizen Porting Layer for EGL&trade;       |
 | `libtbm`        | `platform/core/uifw/libtbm`              | Library for the Tizen Buffer Manager |
-| `coregl`        | `platform/core/uifw/coregl`              | Injection layer of OpenGL ES / EGL    |
+| `coregl`        | `platform/core/uifw/coregl`              | Injection layer of OpenGL&reg; ES / EGL&trade;    |
 | `wayland-tbm`   | `platform/core/uifw/wayland-tbm`         | Protocol for graphics memory management for Tizen |
-| `emulator-yagl` | `platform/adaptation/emulator/emulator-yagl` | OpenGL ES / EGL driver for the emulator  |
+| `emulator-yagl` | `platform/adaptation/emulator/emulator-yagl` | OpenGL&reg; ES / EGL&trade; driver for the emulator  |
 | `tpl-novice`    | `platform/core/uifw/ws-testcase`         | Novice test framework for TPL            |
 
 ### libtpl-egl Reference Driver
 
-The Emulator YAGL (OpenGLES / EGL driver for the emulator) is implemented by `libtpl-egl`.
+The Emulator YAGL (OpenGL&reg; ES / EGL&trade; driver for the emulator) is implemented by `libtpl-egl`.
 
 The following commit explains how to port the driver with `libtpl-egl` from the traditional drm-based driver:
 
 - Porting YAGL to the Tizen platform [https://review.tizen.org/gerrit/#/c/67921/](https://review.tizen.org/gerrit/#/c/67921/)
 
-### Testing and Verifying the OpenGL ES Driver
+### Testing and Verifying the OpenGL&reg; ES Driver
 
-The Khronos OpenGL ES CTS supports `wayland-egl`. `libtpl-egl` has a test case for the `libtpl-egl`. The `ws-testcase`'s `tpl-novice` has sample code for the `libtpl-egl`.
+The Khronos OpenGL&reg; ES CTS supports `wayland-egl`. `libtpl-egl` has a test case for the `libtpl-egl`. The `ws-testcase`'s `tpl-novice` has sample code for the `libtpl-egl`.
 

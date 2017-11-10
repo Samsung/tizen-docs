@@ -12,17 +12,19 @@ For command usage details, enter:
 $ gbs pull --help
 ```
 
-Example of updating a Tizen package repository:
+Examples:
 
-```bash
-$ gbs pull
-info: updating from remote
-.....
-info: Updating 'master'
-Updating 30e59a6..7ae7fc7
-Fast-forward
-info: finished
-```
+- Update a Tizen package repository:
+
+  ```bash
+  $ gbs pull
+  info: updating from remote
+  .....
+  info: Updating 'master'
+  Updating 30e59a6..7ae7fc7
+  Fast-forward
+  info: finished
+  ```
 
 ## Special Options
 
@@ -31,7 +33,8 @@ You can use some special options with the `gbs pull` subcommand:
 - `--all` updates all remote branches. It updates all remote-tracking branches that have an identical name in the remote repository.
 - `--depth` deepens shallow clones, that is, fetches deeper history from the remote.
 - `--force` forces the local branch HEADs to update to match the remote repository.
-  > **WARNING**:  
+  > **WARNING**:
+  >
   > Use the `--force` option with care. It discards all local changes to the updated branches. This effectively performs a `git reset --hard` for the local branches.
 
 ```bash

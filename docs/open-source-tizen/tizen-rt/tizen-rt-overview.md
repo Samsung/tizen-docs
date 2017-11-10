@@ -13,7 +13,7 @@ Tizen RT consists of a lightweight RTOS (TinyAra), IoT protocols (such as IoTivi
 
 **Figure: Tizen RT content**
 
-![Tizen RT content](media/tizen_rt_introduction.png)
+![Tizen RT content](media/tizen-rt-introduction.png)
 
 The TinyAra project was started in 2015 based on NuttX, a real-time operating system (RTOS) with an emphasis on standards compliance and a small footprint. While maintaining the kernel architecture, TinyAra has grown by building up the IPv4/IPv6 network stack, file system, a lightweight database (AraStorage), device monitor, and IoT protocols, such as IoTivity (OCF) and LWM2M. The integration of AraStorage and IoTivity allows TinyAra to collect, store, and deliver IoT sensor data easily. The combination of the device monitor, which observes the status of connectivity, power, and errors, and the lightweight M2M promotes TinyAra as a large-scale device management solution. TinyAra evolved into Tizen RT in 2016 by stacking multiple frameworks required for IoT scenarios. In 2017, Tizen RT adopts JerryScript and IoT.js, for a lightweight JavaScript environment.
 
@@ -21,4 +21,4 @@ The following figure illustrates Tizen RT development over 2016 and 2017. Tizen 
 
 **Figure: Tizen RT development**
 
-![Tizen RT development](media/tizen_rt_architecture.png)
+![Tizen RT development](media/tizen-rt-architecture.png)

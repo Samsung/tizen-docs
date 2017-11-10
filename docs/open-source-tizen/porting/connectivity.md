@@ -1,13 +1,8 @@
 # Connectivity
 
-You can implement various connectivity features:
+You can implement various connectivity features, such as Bluetooth, WLAN, and NFC.
 
-- [Bluetooth](connectivity.md#bluetooth)
-- [WLAN](connectivity.md#wlan)
-- [NFC](connectivity.md#nfc)
-- [MTP](connectivity.md#mtp)
-
-## Bluetooth<a name="bluetooth"></a>
+## Bluetooth
 
 Bluetooth is a short range communication protocol used to communicate between 2 devices. Tizen uses open source Bluetooth components, such as BlueZ and ObexD. Bluez and ObexD run as a daemon and an interface library, Bluetooth Framework, is used for applications to access them over the D-Bus interface.
 
@@ -15,7 +10,7 @@ This section explains the Bluetooth architecture on the Tizen platform and how T
 
 **Figure: Tizen Bluetooth architecture**
 
-![Tizen Bluetooth architecture](media/800px-Bluetooth.png)
+![Tizen Bluetooth architecture](media/800px-bluetooth.png)
 
 The Bluetooth framework provides a dialogue for the user to control the BlueZ, ObexD, and PulseAudio daemons. Bluetooth provides a standard interface between the Bluetooth chip and AP, called the HCI (Host Controller Interface). HCI can be implemented on USB, UART, and SDIO, but for the mobile environment, UART is the most common. HCI activation can differ depending on the chip vendor. The vendor provides the HCI configuration and the initial scripts. For example, Broadcom and Spreadtrum provide firmware and a loading tool. Tizen supports Bluetooth version 4.2, and the GATT, FTP, OPP, MAP, PBAP, A2DP, AVRCP, HSP/HFP, RFCOMM, HID, HDP, and PAN profiles. Bluetooth Low Energy functions have been implemented in BlueZ and `bluetooth-frwk`.
 
@@ -103,7 +98,7 @@ There are a few configuration changes that need to be made to enable the specifi
   - `hciattach`  
     The `bluez/tools/hciattach.c` file is patched to enable the `hciattach` tool specific to the sc2331 chipset. This service attaches the BT UART HCI interface to the Bluetooth stack at a baud rate of 3000000. It is also responsible for loading the Bluetooth firmware on sc2331.
   - Register the Bluetooth device:  
-    The `cp2-download` tool is provided for downloading the Spreadtrum firmware. This tool also downloads the Wi-Fi firmware at booting time.
+    The `cp2-download` tool is provided for downloading the Spreadtrum firmware. This tool also downloads the Wi-Fi firmware at boot time.
   - Install the following files in the target's `/usr/lib/firmware` directory:
     ```
     sc2331_fdl.bin
@@ -169,13 +164,13 @@ The reference kernel configuration for Bluetooth:
   ```
 
 
-## WLAN<a name="wlan"></a>
+## WLAN
 
 This section provides a step-by-step explanation of what is involved in adding a new Wi-Fi driver and making Wi-Fi work.
 
 **Figure: Tizen Wi-FI architecture**
 
-![Tizen Wi-FI architecture](media/785px-Wlan.png)
+![Tizen Wi-FI architecture](media/785px-wlan.png)
 
 Feature overview:
 
@@ -197,7 +192,7 @@ The WLAN driver plugin is specific to a Wi-Fi chipset. This includes firmware an
 
 The WLAN driver plugin contains the `wlan.sh` file (located in `/usr/bin/wlan.sh`), which is used to load or unload the Wi-Fi driver firmware.
 
-When the `wifi_activate()` function is called, the load driver request is sent to the NET-CONFIG daemon. The NET-CONFIG daemon loads the Wi-Fi driver using the `wlan.sh` script file. Similarly, the `wifi_deactivate()` function requests unloading of the Wi-Fi driver. In case of Wi-Fi Direct, the `wifi_direct_activate()` and `wifi_direct_deactivate()` functions make the Wi-Fi Direct manager load or unload the Wi-Fi driver using the `wlan.sh` script.
+When the `wifi_activate()` function is called, the load driver request is sent to the NET-CONFIG daemon. The NET-CONFIG daemon loads the Wi-Fi driver using the `wlan.sh` script file. Similarly, the `wifi_deactivate()` function requests unloading of the Wi-Fi driver. In case of Wi-Fi Direct&reg;, the `wifi_direct_activate()` and `wifi_direct_deactivate()` functions make the Wi-Fi Direct manager load or unload the Wi-Fi driver using the `wlan.sh` script.
 
 Using the `/usr/bin/wlan.sh` script:
 
@@ -232,7 +227,7 @@ All other Wi-Fi related functionality is handled by the ConnMan daemon.
   CONFIG_WIRELESS_EXT_SYSFS=y
   ```
 
-## NFC<a name="nfc"></a>
+## NFC
 
 The NFC application enables the user to:
 - Read and import the content written on an NFC tag.
@@ -409,7 +404,7 @@ API references are available in the [Tizen 3.0 Porting Guide appendix](https://w
 
 For more information, see [http://nfc-forum.org/](http://nfc-forum.org/).
 
-## MTP<a name="mtp"></a>
+## MTP
 The Media Transfer Protocol (MTP) is used for exchanging media files between 2 devices:
 
 - MTP exchanges can only occur between 2 devices at a time.
@@ -418,12 +413,12 @@ The Media Transfer Protocol (MTP) is used for exchanging media files between 2 d
 
   **Figure: MTP Initiator**
 
-  ![MTP Initiator](media/800px-Mtp-initiator.png)
+  ![MTP Initiator](media/800px-mtp-initiator.png)
 - The responder cannot initiate any actions, and can only send responses to operations sent by the initiator or send events.
 
   **Figure: MTP Responder**
 
-  ![MTP Responder](media/800px-Mtp-responder.png)
+  ![MTP Responder](media/800px-mtp-responder.png)
 - In the Tizen system, the USB host is the initiator, and the USB device is the responder.
 
 ### Porting the OAL Interface

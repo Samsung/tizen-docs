@@ -25,7 +25,8 @@ A given project in the Git repository has 2 possible branches: a master branch a
 
   In other words, the master branch hosts each project's full source tree (for example, in C/C++, `.h`, and `makefile` files), including the upstream source and any Tizen local changes. Though the master branch can be renamed or even deleted, it is best practice to regard it as mandatory and leave as is.
 
-  > **Note**  
+  > **Note**
+  >
   > You are responsible for maintaining the packaging change log within the `/packaging` folder of each Git tree.
 
 - **Upstream branch**
@@ -37,7 +38,8 @@ A given project in the Git repository has 2 possible branches: a master branch a
   - The project only contains native code from Tizen and has no upstream project to base on.
   - The project does not need to track the latest update of the upstream project.
 
-> **Note**  
+> **Note**
+>
 > The master branch is mandatory, whereas the upstream branch is optional.
 
 ## Roles and Responsibilities
@@ -89,7 +91,8 @@ The package development workflow is described in the following procedure and sho
    - Manual testing: Testers verify the patches manually and then publish comments on Gerrit.
 1. Maintainers approve the patches ("Code-Review +2") after they pass verifications ("Verified +1") and then merge code changes to the Gerrit repository.
 1. Maintainers and developers submit packages to OBS by using the `gbs submit` command.
-   > **Note**  
+   > **Note**
+   >
    > It is best practice to always have a maintainer role for every Tizen project, and maintainers must submit packages to OBS as soon as all merged packages are ready for submission, in order to prevent possible omissions.
 1. Tizen backend service activates pre-release and normal release processes at the same time. During the pre-release process, Tizen images that incorporate specific packages are created and submitted to release engineers for review.
 1. Release engineers accept or reject submissions based on the quality of the packages. For accepted submissions, the corresponding source code is merged into the OBS repository. Meanwhile, the normal release process takes over and publishes repositories together with Tizen images.

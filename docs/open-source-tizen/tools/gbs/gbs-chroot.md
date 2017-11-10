@@ -8,10 +8,11 @@ For command usage details, enter:
 $ gbs chroot --help
 ```
 
-> **Note**  
+> **Note**
+>
 >  The default location of the build root is located in `~/GBS-ROOT/local/scratch.{arch}.*`. The location is different if the `-B` option is specified while running the GBS build.
 
-Examples of command usage:
+Examples:
 
 - Create a build root with extra packages added to the build root:
 
@@ -59,7 +60,8 @@ Examples of command usage:
   # zypper ar https://user:passwd@tizen.org/releases/daily/<release_id>/repos/main/ia32/packages/?ssl_verify=no tizen-main
   ```
 
-> **Note**  
+> **Note**
+>
 > - To use the `gbs chroot` command as "root", specify the `-r` option. Then zypper can be used to install and remove packages.
 > - To install packages in the build root environment, specify the `-n` option:
 >   ```bash

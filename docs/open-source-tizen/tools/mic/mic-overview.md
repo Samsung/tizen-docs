@@ -18,8 +18,8 @@ Afterwards, become familiar with MIC by reading the following instructions:
 
 - [Customizing Images](mic-customize-image.md) describes how to modify the kickstart file to customize an image.
 - [MIC Reference](mic-reference.md) describes, in more detail, how to use MIC.
-- [FAQ](mic-faq.md) describes frequently asked questions and known issues.
-- [Reporting MIC Issues](mic-faq.md#report) describes how to report bugs and feature requests.
+- [MIC Frequently Asked Questions](mic-faq.md) describes frequently asked questions and known issues.
+- [Reporting MIC Issues](mic-faq.md#reporting-mic-issues) describes how to report bugs and feature requests.
 
 ## Source Code
 

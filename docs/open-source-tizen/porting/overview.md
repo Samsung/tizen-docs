@@ -12,7 +12,7 @@ The following figure illustrates the Tizen architecture for smart phone and tabl
 
 **Figure: Tizen architecture**
 
-![Tizen architecture](media/what_is_tizen_architecture.png)
+![Tizen architecture](media/what-is-tizen-architecture.png)
 
 For more information on the Tizen framework layer, see the [Tizen Application Types](https://developer.tizen.org/development/getting-started/overview#type).
 
@@ -27,11 +27,11 @@ Base contains GNU/[Linux](https://wiki.tizen.org/Linux)-based essential system l
 - **Connectivity**  
 Connectivity consists of all network and connectivity related functionalities, such as 3G, Wi-Fi, Bluetooth, HTTP, and NFC (Near Field Communication). Data network is based on ConnMan (Connection manager), which provides 3G and Wi-Fi based network connection management.
 - **Graphics and UI**  
-Graphics and UI consist of the system graphic and UI stacks, which include EFL (Enlightenment Foundation Libraries), window management system (x11 for Tizen 2.x / Wayland for Tizen 3.0), input methods, and OpenGL® ES APIs.
+Graphics and UI consist of the system graphic and UI stacks, which include EFL (Enlightenment Foundation Libraries), window management system (x11 for Tizen 2.x / Wayland for Tizen 3.0), input methods, and OpenGL&reg; ES APIs.
 
   EFL, the heart of the graphics component, is a suite of libraries. EFL is used to create rich graphics with ease, for all UI resolutions. The libraries build UIs in layers, allowing for 3D transformations and more. EFL includes the Evas canvas API library and the elementary widget library.
 
-  WebKit-based graphics are provided as well, capable of running within a full browser UI or a dedicated Web runtime environment (without a browser window), all based on Tizen's own HTML5 canvas WebKitEFL implementation. Additionally, WebGL is supported and Web-based frameworks for UI, such as jQuery Mobile, are also offered, which help with porting existing jQuery code.
+  WebKit-based graphics are provided as well, capable of running within a full browser UI or a dedicated Web runtime environment (without a browser window), all based on Tizen's own HTML5 canvas WebKitEFL implementation. Additionally, WebGL&trade; is supported and Web-based frameworks for UI, such as jQuery Mobile, are also offered, which help with porting existing jQuery code.
 - **Location**  
 Location provides location-based services (LBS), including position information, geocoding, satellite information, and GPS status. It delivers location information from various positioning sources, such as GPS, WPS (Wi-Fi Positioning System), Cell ID, and sensors.
 - **Messaging**  

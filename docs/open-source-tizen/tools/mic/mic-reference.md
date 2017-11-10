@@ -1,14 +1,6 @@
 # MIC Reference
 
-MIC offers 3 major functions:
-
-- [Creating an image with a different format](mic-reference.md#create)
-- [Converting an image to another format](mic-reference.md#convert)
-- [Chrooting into an image](mic-reference.md#chroot)
-
-You can also [set a proxy](mic-reference.md#proxy) and [access help](mic-reference.md#help).
-
-The following image formats are supported:
+MIC supports the following image formats:
 
 - Loop
   - Each loop corresponds to 1 partition.
@@ -26,7 +18,7 @@ The following image formats are supported:
   - "fs" means file-system.
   - MIC can install all the Tizen files to a specified directory, which can be used directly as a chroot environment.
 
-## Creating an Image<a name="create"></a>
+## Creating an Image
 
 To create a basic image, use the following command syntax:
 
@@ -54,7 +46,7 @@ In the command:
 
 - `OPTION` can be used to specify various details:
 
-  ```output
+  ```
   -h, --help          Show this help message and exit
   --logfile=LOGFILE   Path of logfile
   -c CONFIG, --config=CONFIG
@@ -183,7 +175,7 @@ To use a specific archive format:
 $ sudo mic create loop test.ks --pack-to=@NAME@.tar.gz
 ```
 
-## Chrooting Inside an Image<a name="chroot"></a>
+## Chrooting Inside an Image
 
 The MIC `chroot` command is a great enhancement over the basic `chroot` command in the Linux system.
 
@@ -196,7 +188,7 @@ $ mic chroot(ch) [OPTION] <imgfile>
 In the command:
 
 - `OPTION` can be used to specify various details:
-  ```output
+  ```
   -h, --help          Show this help message and exit
   -s SAVETO, --saveto=SAVETO
                       Save the unpacked image to a specified dir
@@ -211,7 +203,7 @@ $ mic ch tizen.iso
 $ mic ch -s tizenfs tizen.usbimg
 ```
 
-## Converting an Image<a name="convert"></a>
+## Converting an Image
 
 To convert an image to another format, use the following command syntax:
 
@@ -237,7 +229,7 @@ $ mic cv tizen.usbimg livecd
 $ mic cv --shell tizen.iso liveusb
 ```
 
-## Setting a Proxy<a name="proxy"></a>
+## Setting a Proxy
 
 You can set a proxy in various ways:
 
@@ -260,7 +252,8 @@ You can set a proxy in various ways:
   Defaults        env_keep += "http_proxy https_proxy ftp_proxy no_proxy"
   ```
 
-  > **Note**  
+  > **Note**
+  >
   > Use `visudo` to modify `/etc/sudoers`.
 
   If you do not want to change your `/etc/sudoers`, you can set the proxy in the `mic.conf` file, as described below.
@@ -288,7 +281,7 @@ You can set a proxy in various ways:
   $ repo --name=oss --baseurl=http://www.example.com/repos/oss/packages/ --proxy=http://host:port
   ```
 
-## Getting Help<a name="help"></a>
+## Getting Help
 
 To get help:
 

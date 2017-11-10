@@ -32,7 +32,7 @@ Release Date: Sep 1, 2016
   - W3C test suites
     - W3C Web platform test suites have been added.
     - DOM conformance test suites have been added.
-    - Vendor test suites have been added, including test suites for major browsers, such as Google Chrome, Safari, and Firefox.
+    - Vendor test suites have been added, including test suites for major browsers, such as Google Chrome&trade;, Safari, and Firefox.
   - Javascript API
     - `console.log()` method has been added for debugging a Web widget.
 

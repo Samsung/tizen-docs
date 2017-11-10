@@ -58,7 +58,8 @@ Image creation requires a kickstart file that describes how to create an image. 
      repo --name=local --baseurl=file:///home/<User>/GBS-ROOT/local/repos/tizen3.0-tm1/armv7l/ --priority=1
      ```
 
-   > **Note**  
+   > **Note**
+   >
    > - The `baseurl` property of the `local` repo specifies the file path where locally built RPMs are located.
    > - Setting the priority of the `local` repository at 1 and the priorities of remote repositories at 99 guarantees that MIC uses the packages that exist in the local repository with a higher priority, when packages are available in both remote and local repositories.
    > - To add new packages into a Tizen image, add the new packages' names into the `%package` section, and add them into the `local` repository.
@@ -79,7 +80,7 @@ $ gbs createimage --ks-file=mobile-wayland-armv7l-tm1.ks --tmpfs
 
 The following example shows the `gbs createimage` command output:
 
-```output
+```
 ...
 Info: Running scripts ...
 kickstart post script start

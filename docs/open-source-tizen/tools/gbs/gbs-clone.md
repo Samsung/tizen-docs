@@ -7,7 +7,7 @@ Use the `gbs clone` subcommand to clone a Git repository into a new directory. U
 - Create a shallow clone with a specific depth.
 - Customize the directory of the local repository.
 
-The following command syntax is used:
+Synopsis:
 
 ```bash
 gbs clone [-h] [--upstream-branch <Upstream_Branch>]
@@ -64,7 +64,7 @@ gbs clone [-h] [--upstream-branch <Upstream_Branch>]
                     the repository.
   ```
 
-Examples of command usage:
+Examples:
 
 - Clone a Tizen package:
 

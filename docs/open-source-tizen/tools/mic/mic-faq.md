@@ -1,4 +1,4 @@
-# FAQ
+# MIC Frequently Asked Questions
 
 **Q**: When creating an image, MIC shows "Error &lt;creator&gt;: URLGrabber error: http://www.example.com/latest/repos/oss/ia32/packages/repodata/repomd.xml". What does it mean?  
 **A**: Your network can have some issues, or your proxy does not work. Try another proxy and check the network status.
@@ -53,7 +53,7 @@ MIC cannot support passwords that contain the "@" character. This issue is to be
   ```
 
 
-## Reporting MIC Issues<a name="report"></a>
+## Reporting MIC Issues
 
 Report bugs or make feature requests at [JIRA](https://bugs.tizen.org/):
 
