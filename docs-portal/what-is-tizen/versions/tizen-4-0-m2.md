@@ -23,15 +23,15 @@ The key features are as follows:
 
 * **Profiler**: Visual Studio Tools for Tizen is a set of useful tools for Tizen application development. In Tizen 4.0 M2, Profiler is added to help developers with easy debugging and advanced profiling.
 
-![img](media/profiler_screenshot.png)
+![Profiler](media/vstools_profiler.png)
 
 * **Wearable emulator (beta version)**: It is convenient to run and check applications on emulators without connecting real target devices. In this version, emulating wearable devices is newly supported. Deployment of wearables is still at an early stage and the wearable emulator is expected to boost the application ecosystem.
 
-![img](media/wearableEmulator_screenshot.png)
+![Wearable Emulator](media/wearable_emul.png)
 
 * **Tizen IoT preview 1**: Tizen 4.0 M2 introduces Tizen IoT, a lightweight embedded Tizen OS for IoT devices. Tizen IoT can be configured for either "Tizen IoT Core (headless mode)" or "Tizen Common (headed mode)." Accordingly, Tizen Studio is configurable for both modes. For now, Tizen IoT supports two hardware platforms: Artick 530 and Raspberry Pi 3. For more information of Tizen IoT preview 1, see [here]().
 
-![img](media/tizenIoT_screenshot.png)
+![img](media/tizen_iot_preview.png)
 
 
 For more details, see [Tizen 4.0 M2 release note]().
