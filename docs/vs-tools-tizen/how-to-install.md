@@ -13,6 +13,7 @@ To work with Visual Studio Tools for Tizen, your computer must have:
 - At least 1.5 GB of available disk space
 - Visual Studio 2017  
 Visual Studio Tools for Tizen works with all Visual Studio variations, including Community. Installing or re-installing Visual Studio with .NET desktop development and .NET Core cross-platform development toolsets is recommended.
+![prerequisite-vs.png](media/prerequisite-vs.png)
 - Java Development Kit (JDK) 8  
 JDK 8 is needed to use the Tizen Baseline SDK. OpenJDK is not supported.
 
@@ -27,13 +28,13 @@ Tizen emulator for Visual Studio has the same requirements as the emulator in th
 
    1. In the Start menu, select **Programs and Features**.
 
-      ![Programs and Features](media/cs-prerequisite01-250x401.png)
+      ![Programs and Features](media/cs_prerequisite01-250x401.png)
 
    2. Select **Turn Windows features on or off**.
 
    3. Disable **Hyper-V** and click **OK**.
 
-      ![Disable Hyper-V](media/cs-prerequisite-disable-hiperv.png)
+      ![Disable Hyper-V](media/cs_prerequisite-disable-hiperv.png)
 
    4. Reboot the computer.
 
@@ -118,6 +119,6 @@ If you encounter problems with the installation:
     ![Check the SDK tool path](media/howtoinstall-checktoolpath.png)
 
 - To check whether Tizen Project properties have been copied correctly:
-  - Make sure that the `Tizen.NET.ProjectType.props` and `Tizen.NET.ProjectType.targets` files are located in the `C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\Tizen\VisualStudio` folder.
+  - Make sure that the `Tizen.NET.ProjectType.props` and `Tizen.NET.ProjectType.targets` files are located under the MSBuild location. For example `C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\Tizen\VisualStudio` folder.
 
      ![Project Property](media/cps-project-property.png)
