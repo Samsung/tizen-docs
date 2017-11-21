@@ -60,8 +60,7 @@ You can manage common files and ZIP archive files, and define filters and sortin
 You can use existing configured on-line accounts and providers, and create new accounts of known types.
 </td>
 <td>
-- Guides:
-[Personal Data](../../../guides/web/personal/personal-cover-w.md)<br>
+- Guides:[Personal Data](../../../guides/web/personal/personal-cover-w.md)<br>
 
 - API Reference: [Account](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Account)   
 </td>
