@@ -90,14 +90,12 @@ device supports the high color mode, use the following code:
 var isHighColorMode = tizen.systeminfo.getCapability('http://tizen.org/feature/screen.always_on.high_color');
 ```
 
-<div class="note">
 
-**Note** <br>
-To use the ambient mode, the user must enable it in the device
-settings. In addition, on the Gear S2 device, the ambient mode activates
-only when you are wearing the watch on the wrist.
 
-</div>
+> **Note** <br>
+> To use the ambient mode, the user must enable it in the    device settings. In addition, on the Gear S2 device, the ambient mode activates only when you are wearing the watch on the wrist.
+
+
 
 The following table describes the ambient mode events.
 

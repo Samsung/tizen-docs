@@ -83,9 +83,10 @@ executed:
     -   Coffeescript
     -   Less
 
-<div class="note">
 
-**Note** About the output files:
+
+> **Note** <br>
+> About the output files:
 -   Compiled coffeescript output file name is `<file name>.js`. This
     file is used when the project is packed to the WGT package file, but
     the script tag's reference path must be changed manually.
@@ -93,7 +94,7 @@ executed:
     used when the project is packed to the WGT package file, but the
     script tag's reference path must be changed manually.
 
-</div>
+
 
 If the project has errors, they are shown in the **Problems** and
 **Project Explorer** views after the build.
@@ -117,15 +118,16 @@ You can build a Web application automatically or manually:
     the manual build, ensure that the **Project &gt; Build
     Automatically** option is not selected.
 
-<div class="note">
 
-**Note** In the manual build mode:
+
+> **Note** <br>
+> In the manual build mode:
 -   Ensure that you have the latest build output before you run or debug
     a project.
 -   To remove a project build output, select `Project > Clean` in the
     Tizen Studio menu.
 
-</div>
+
 
 To customize the application, set the build properties:
 
@@ -285,13 +287,14 @@ To create and run a hybrid application:
     [Building the
     Application](../../native/process/app-dev-process-n.md#build).
 
-<div class="note">
 
-**Note** Tizen has limited a multi-project application combination
+
+> **Note** <br>
+> Tizen has limited a multi-project application combination
 policy for device usability. If you do not follow the policy, the
 submission of your application to the Tizen Store can be rejected.
 
-</div>
+
 
 The following table shows the possible combinations for a hybrid
 multi-project. **M** means that multiple applications can be packaged as

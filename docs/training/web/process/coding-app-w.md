@@ -61,12 +61,10 @@ illustrate the adding of a CSS file):
         import location.
     3.  Click **Finish**.
 
-<div class="note">
 
-**Note**<br>
-You can also drag and drop external source files or libraries.
+
+> **Note**<br>
+> You can also drag and drop external source files or libraries.
 If you drop a file to the **Project Explorer** view, the **File
 Operation** dialog appears, and allows you to either copy the file or
 create a link to it.
-
-</div>

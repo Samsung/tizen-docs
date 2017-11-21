@@ -45,13 +45,13 @@ To run the application on the emulator, do one of the following:
 
 To stop the emulator, right-click the emulator and click **Close**.
 
-<div class="note">
 
-**Note**<br>
-Running an emulator instance requires a minimum free disk space
+
+> **Note**<br>
+> Running an emulator instance requires a minimum free disk space
 of 20 MB. The emulator image can occupy up to 10 GB of disk space.
 
-</div>
+
 
 Running Web Applications on a Target Device <a name="target"></a>
 -------------------------------------------
@@ -109,15 +109,16 @@ You can run Tizen Web applications on the [Web
 Simulator](../../../tizen-studio/web-tools/web-simulator-w.md)
 using the **Project Explorer** view or the Tizen Studio menu.
 
-<div class="note">
 
-**Note** The Tizen Web Simulator runs only on the Google Chrome™
+
+> **Note** <br>
+> The Tizen Web Simulator runs only on the Google Chrome™
 browser. To use the Web Simulator, download and install the [Google
 Chrome™](http://www.google.com/chrome/) browser. You can manually
 specify the installation location of the browser in the [simulator
 preferences](../../../tizen-studio/web-tools/web-simulator-w.md#pref).
 
-</div>
+
 
 If you are running your Web application on the Web Simulator for the
 first time, create a running configuration by selecting **Run &gt; Run
@@ -303,12 +304,10 @@ The RDS option is enabled as default. To disable it, in the Tizen
 Studio, go to **Window &gt; Preferences &gt; Tizen Studio &gt; Rapid
 Development Support**.
 
-<div class="note">
 
-**Note** <br>
-RDS is not supported in multi-app projects.
+
+> **Note** <br>
+> RDS is not supported in multi-app projects.
 If you want to remove an application from your device, you must manually
 delete the installed application as the launch process does not have an
 uninstall process.
-
-</div>

@@ -68,9 +68,10 @@ The following example shows you how to create and configure a basic
 wearable Web widget application project in the Tizen Studio. An
 application project contains all the files that make up an application.
 
-<div class="note">
 
-**Note** For user convenience, standalone widget application packages
+
+> **Note** <br>
+> For user convenience, standalone widget application packages
 are not allowed in the Tizen market place.
 Use a standalone widget application for testing purposes. If you want to
 publish the application in the Tizen market place, combine it with at
@@ -78,7 +79,7 @@ least 1 UI application in the same package. For more information, see
 [Developing Multiple Projects as a Combined
 Package](../process/app-dev-process-w.md#multi).
 
-</div>
+
 
 The following figure illustrates the application to be created. The
 application screen displays the **Hello, Web Widget!** text and no user
@@ -171,14 +172,15 @@ most important files and folders include:
 ![Application in the Project
 Explorer](./media/basic-app-project-explorer-ww-widget.png)
 
-<div class="note">
 
-**Note** You can [validate your widget](#validate) and [view and modify
+
+> **Note** <br>
+> You can [validate your widget](#validate) and [view and modify
 the application configuration](#configuration) in the Web application
 configuration editor. In this example, no configuration changes are
 required.
 
-</div>
+
 
 Your application project is now ready for further actions. Next, build
 the application.
@@ -254,7 +256,7 @@ To view and modify the application configuration:
 
         <div class="note">
 
-        **Note** The `config.xml` file must conform to both the XML file
+        **Note** <br>The `config.xml` file must conform to both the XML file
         format and the W3C specification requirements. Editing the file
         in the **Source** tab is intended for advanced users only.
 
@@ -328,13 +330,14 @@ You can run the Web widget application on the
 [emulator](../process/run-debug-app-w.md#emulator) or a [real target
 device](../process/run-debug-app-w.md#target).
 
-<div class="note">
 
-**Note** Since the Web Simulator does not support a circular UI, this
+
+> **Note** <br>
+> Since the Web Simulator does not support a circular UI, this
 topic does not cover the instructions for running the application on the
 Web Simulator.
 
-</div>
+
 
 ### Running on the Emulator <a name="emulator"></a>
 
@@ -387,34 +390,36 @@ To run the application on the emulator:
 
       ![Application running in the        emulator](./media/emulator-running-ww-widget.png)
 
-      <div class="note">
 
-        **Note** If the emulator display has switched off, you cannot
+
+  >    **Note** <br>
+  > If the emulator display has switched off, you cannot
         see the application launch. To switch the display on, click the
         **Power** key (in the right bottom corner of the emulator).
 
-        </div>
 
-      The above screen is shown through the Viewer, to allow you to
+
+
+  The above screen is shown through the Viewer, to allow you to
       develop a lone widget application for testing purposes.
 
-      To see the widget running on the home screen, add the widget
+To see the widget running on the home screen, add the widget
       there:
 
-      a.  Press the **Back** key (in the top right corner of the        emulator device) to return to the home screen (showing a          watch face).
+  a.  Press the **Back** key (in the top right corner of the        emulator device) to return to the home screen (showing a          watch face).
 
-      b.  Swipe the home screen to the right and select **+**.
+  b.  Swipe the home screen to the right and select **+**.
 
-      c.  Scroll down until you see your widget application, and          select it.
+  c.  Scroll down until you see your widget application, and          select it.
 
-      ![Adding to home        screen](./media/widget-run-add-home-wn.png)
+  ![Adding to home        screen](./media/widget-run-add-home-wn.png)
 
-      You can see the added widget on the home screen. To access the
+  You can see the added widget on the home screen. To access the
       widget from the home screen, swipe right.
 
-      ![Home screen widget](./media/widget-run-home-wn.png)
+  ![Home screen widget](./media/widget-run-home-wn.png)
 
-      While the application is running, the **Log** view in the Tizen        Studio shows the log, debug, and exception messages from the        methods defined in the log macros. To see the view, in the Tizen        Studio menu, go to **Window &gt; Show View &gt; Log**.
+  While the application is running, the **Log** view in the Tizen        Studio shows the log, debug, and exception messages from the        methods defined in the log macros. To see the view, in the Tizen        Studio menu, go to **Window &gt; Show View &gt; Log**.
 
 For more information on using the emulator features, see [Using Emulator
 Control Keys, Menu, and
@@ -503,22 +508,23 @@ To run the application on a target device:
       Like with the [emulator](#viewer), you must add the widget to
       the home screen before you can see it.
 
-    <div class="note">
 
-    **Note** The application is launched using the default debug
+
+  >  **Note** <br>
+  > The application is launched using the default debug
     run configuration. To create and use another configuration:
-    1.  In the `Project Explorer` view, right-click the project and
+  1.  In the `Project Explorer` view, right-click the project and
         select `Run As > Run Configurations`.
-    2.  In the `Run Configurations` window, click the
+  2.  In the `Run Configurations` window, click the
         `New Launch Configuration` icon (![New Launch Configuration
         icon](./media/run-new-config-wn.png)), define the
         configuration details, and launch the application by clicking
         `Run`.
 
-        ![Run Configurations
+  >    ![Run Configurations
         window](./media/run-configurations-w-widget.png)
 
-    </div>
+
 
 Building a Simple UI <a name="ui"></a>
 --------------------
@@ -577,7 +583,7 @@ To initialize the widget application:
     a.  Create a Web UI application and the widget application.
 
     b.  In the **Project Explorer** view, right-click the Web        application, and select **Properties &gt; Tizen Studio &gt;        Package &gt; Multi**, and select the widget to be included in        the package.
-    
+
     c.  Click **OK**.
 
     In the following figure, the **Widget** widget application is

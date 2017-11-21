@@ -70,14 +70,15 @@ You can manage Web applications by:
         or Platform level API privileges are declared in the
         configuration file.
 
-    <div class="note">
 
-    **Note** <BR> A Web application can be installed from the Tizen Store or
+
+  > **Note** <BR>
+  > A Web application can be installed from the Tizen Store or
     side-loaded (for example, through a browser or Bluetooth). The
     `<feature>` element is ignored in the Tizen Web application
     installation process.
 
-    </div>
+
 
 -   Updating Web applications
 
@@ -150,13 +151,13 @@ navigation.
 Tizen Web APIs can be accessed in the top-level browsing context, such
 as main document window, and nested browsing contexts, such as iframes.
 
-<div class="note">
 
-**Note** <br>
-Tizen Device API can only be used with a locally packaged page.
+
+> **Note** <br>
+> Tizen Device API can only be used with a locally packaged page.
 Tizen Device APIs are not available in cross-origin pages.
 
-</div>
+
 
 To access the host page of your Web application, add the domain for
 access in the `config.xml` file. For more information, see [Content
@@ -397,19 +398,16 @@ mode**. In this mode, the Web application network and content security
 is enforced by the legacy `<access>` tag according to [Widget Access
 Request Policy](http://www.w3.org/TR/2012/REC-widgets-access-20120207/).
 
-<div class="note">
 
-**Note** <br>
-The default CSP enforcement is subject to change in the future.
+> **Note** <br>
+> The default CSP enforcement is subject to change in the future.
 
-</div>
 
-<div class="note">
 
-**Note** <br>
-If a Web application declares the `<tizen:allow-navigation>`
+
+
+> **Note** <br>
+> If a Web application declares the `<tizen:allow-navigation>`
 element in its configuration document, the main resource navigation
 (through the `window.open()` method or a hyperlink) to an external URL
 is allowed or restricted accordingly.
-
-</div>

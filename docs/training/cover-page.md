@@ -182,17 +182,16 @@ application profiles.
   Wearable Web              |![Wearable Web](./media/wearable-s-w.png) or ![Optional wearable Web](./media/wearable-s-w-optional.png)
   TV Web                    |![TV Web](./media/tv-s-w.png) or ![Optional TV Web](./media/tv-s-w-optional.png)
 
-<div class="note">
 
-**Note** In Tizen native APIs and Web Device APIs, there are 2 types of
-APIs: mandatory and optional. The fully gray profile icon (as shown in
-the table above) refers to an optional API.
+
+> **Note** <br>
+> In Tizen native APIs and Web Device APIs, there are 2 types of
+APIs: mandatory and optional. The fully gray profile icon (as shown in the table above) refers to an optional API.
 The mandatory APIs are always available on all Tizen devices. The
 optional APIs provide functionality that depends on the available device
 hardware or software capabilities, and they may not be available on all
 Tizen devices.
 
-</div>
 
 To become familiar with some terms that you encounter throughout this
 site, see

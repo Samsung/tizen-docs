@@ -37,10 +37,9 @@ Tizen system checks whether the privilege is **allowed** for the
 application. For the application to use the API, the privilege must be
 declared in the `config.xml` file and the user must have switched it on.
 
-<div class="note">
 
-**Note** <br>
-In applications with the platform version 3.0 or higher, if you
+> **Note** <br>
+> In applications with the platform version 3.0 or higher, if you
 use privacy-related privileged APIs, make sure that the user has
 switched the privilege on before making the function call. Otherwise,
 the application does not work as expected.
@@ -53,7 +52,7 @@ and
 [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/ppm.html)
 applications).
 
-</div>
+
 
 The Tizen Studio also provides privilege checker tools to check whether
 the Tizen application source code contains any privilege violations. For

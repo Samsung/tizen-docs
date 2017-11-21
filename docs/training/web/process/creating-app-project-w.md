@@ -28,39 +28,43 @@ To create a Web application project:
     b.  Select the profile (**Mobile**, **Wearable**, or **TV**) and
       version from a drop-down list and click **Next**.
 
-      <div class="note">
 
-        **Note** If you cannot see the TV profile option, open the
+
+  >  **Note** <br>
+  > If you cannot see the TV profile option, open the
         Package Manager and make sure that you have installed the TV
         extension packages in the **Extension SDK** tab.
 
-        </div>
 
-      ![Selecting the profile and        version](./media/create-project-wizard-version-wearable.png)
 
-    c.  Select the **Web Application** application type and click        **Next**.
+  ![Selecting the profile and        version](./media/create-project-wizard-version-wearable.png)
 
-      ![Selecting the application        type](./media/create-project-wizard-app-web-wearable.png)
 
-    d.  Select the template you want to use and click **Next**.
 
-      ![Selecting the        template](./media/create-project-wizard-template-ww.png)
+  c.  Select the **Web Application** application type and click        **Next**.
 
-    e.  Define the project properties and click **Finish**.
+  ![Selecting the application        type](./media/create-project-wizard-app-web-wearable.png)
 
-      You can fill the project name. You can also select the location
+  d.  Select the template you want to use and click **Next**.
+
+  ![Selecting the        template](./media/create-project-wizard-template-ww.png)
+
+  e.  Define the project properties and click **Finish**.
+
+  You can fill the project name. You can also select the location
       and working sets by clicking **More properties**.
 
-      <div class="note">
 
-        **Note** The Tizen API names cannot be used as project names.
+
+  >  **Note** <br>
+  > The Tizen API names cannot be used as project names.
         The project name must be more than 2 characters and is
         restricted to the following regular
         expression: \[a-zA-Z\]\[a-zA-Z0-9-\]{2,49}.
 
-        </div>
 
-      ![Defining        properties](./media/create-project-wizard-properties-ww.png)
+
+  ![Defining        properties](./media/create-project-wizard-properties-ww.png)
 
       The Project Wizard sets up the project, creates the application
       files using the default content from the template, and closes.

@@ -12,14 +12,15 @@ the necessary properties for your application project:
     setting or changing a property, click **OK**.
 -   To define the [Web application configuration](#set_widget), edit the
     `config.xml` file.
-    <div class="note">
 
-    **Note** Only modify the Web application configuration by using the
+
+  > **Note** <br>
+  > Only modify the Web application configuration by using the
     configuration editor in the Tizen Studio. If you create or edit the
     `config.xml` file using any other text editor, your application may
     not work as expected.
 
-    </div>
+
 
 After you have finished setting the project properties, you are ready to
 [design the UI](app-dev-process-w.md#design).
@@ -515,11 +516,10 @@ document](../../../tizen-studio/web-tools/config-editor-w.md)
 and also see how changes made on the other tabs are reflected in the raw
 XML source content.
 
-<div class="note">
 
-**Note** The `config.xml` must conform not only to the XML file format
+
+> **Note** <br>
+> The `config.xml` must conform not only to the XML file format
 but also to the W3C specification requirements. If you edit application
 information manually in the `config.xml` file source code, you can
 introduce errors preventing the application from running normally.
-
-</div>
