@@ -1,14 +1,5 @@
 
 
-Content
-
--   [Signature Type](#type)
--   [Certificate and API Privileges](#sec_priv)
--   [Signing Flow and Getting Certificates](#flow)
--   [Signature Specification](#specification)
-
-
-
 Application Signing and Certificates
 ====================================
 
@@ -84,11 +75,33 @@ signing key) privilege level and the API privilege level.
 
 **Table: API levels allowed in specific certificate privilege levels**
 
-  Certificate privilege level   Public level API   Partner level API   Platform level API
-  ----------------------------- ------------------ ------------------- --------------------
-  Public level                  Allowed            Not allowed         Not allowed
-  Partner level                 Allowed            Allowed             Not allowed
-  Platform level                Allowed            Allowed             Allowed
+<table>
+<tr>
+<th>Certificate privilege level</th>
+<th>Public level API</th>
+<th>Partner level API</th>
+<th>Platform level API</th>
+</tr>
+<tr>
+<td>Public level</td>
+<td>Allowed</td>
+<td>Not allowed</td>
+<td>Not allowed</td>
+</tr>
+<tr>
+<td>Partner level</td>
+<td>Allowed</td>
+<td>Allowed</td>
+<td>Not allowed</td>
+</tr>
+<tr>
+<td>Platform level</td>
+<td>Allowed</td>
+<td>Allowed</td>
+<td>Allowed</td>
+</tr>
+</table>
+
 
 Signing Flow and Getting Certificates <a name="flow"></a>
 -------------------------------------
@@ -138,6 +151,3 @@ The following figure shows the signature file structure.
 **Figure: Signature file structure**
 
 ![Signature file structure](./media/signature-structure.png)
-
-
-

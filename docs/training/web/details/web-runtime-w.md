@@ -1,12 +1,5 @@
 
 
-Content
-
--   [Managing Web Applications](#manage)
--   [Web Runtime API Support](#runtime)
--   [Web Application Security and Privacy](#security)
-
-
 
 Web Runtime
 ===========
@@ -79,7 +72,7 @@ You can manage Web applications by:
 
     <div class="note">
 
-    **Note** A Web application can be installed from the Tizen Store or
+    **Note** <BR> A Web application can be installed from the Tizen Store or
     side-loaded (for example, through a browser or Bluetooth). The
     `<feature>` element is ignored in the Tizen Web application
     installation process.
@@ -159,7 +152,8 @@ as main document window, and nested browsing contexts, such as iframes.
 
 <div class="note">
 
-**Note** Tizen Device API can only be used with a locally packaged page.
+**Note** <br>
+Tizen Device API can only be used with a locally packaged page.
 Tizen Device APIs are not available in cross-origin pages.
 
 </div>
@@ -238,63 +232,62 @@ privilege level behavior mapping.
 
 **Table: HTML5 API privileges and behavior**
 
-+--------------------------+--------------------------+--------------------------+
-| API                      | Privilege                | Privilege behavior       |
-+==========================+==========================+==========================+
-| Geolocation (in **mobile | `http://tizen.org/privil | **Local domain**: Grant  |
-| and wearable             | ege/location`            | permission if defined,   |
-| applications only**)     |                          | otherwise block          |
-|                          |                          | execution.               |
-|                          |                          | **Remote domain**: Popup |
-|                          |                          | user prompt if defined,  |
-|                          |                          | otherwise block          |
-|                          |                          | execution.               |
-+--------------------------+--------------------------+--------------------------+
-| Getusermedia (in         | `http://tizen.org/privil | **Local domain**: Grant  |
-| **mobile and wearable    | ege/mediacapture`        | permission if defined,   |
-| applications only**)     |                          | otherwise block          |
-|                          |                          | execution.               |
-|                          |                          | **Remote domain**: Popup |
-|                          |                          | user prompt if defined,  |
-|                          |                          | otherwise block          |
-|                          |                          | execution.               |
-+--------------------------+--------------------------+--------------------------+
-| Web Notifications (in    | `http://tizen.org/privil | **Local domain**: Grant  |
-| **mobile applications    | ege/notification`        | permission if defined,   |
-| only**)                  |                          | otherwise popup user     |
-|                          |                          | prompt.                  |
-|                          |                          | **Remote domain**: Popup |
-|                          |                          | user prompt.             |
-+--------------------------+--------------------------+--------------------------+
-| Storage (in **mobile and | `http://tizen.org/privil | **Local domain**: Grant  |
-| wearable applications    | ege/unlimitedstorage`    | permission if defined,   |
-| only**)                  |                          | otherwise popup user     |
-| (IndexedDB, FileSystem   |                          | prompt.                  |
-| capacity, quota          |                          | **Remote domain**: Popup |
-| exceeding WebDatabase)   |                          | user prompt.             |
-+--------------------------+--------------------------+--------------------------+
-| FullScreen (in **mobile  | `http://tizen.org/privil | If defined, launch in    |
-| applications only**)     | ege/fullscreen`          | fullscreen mode. If not  |
-|                          |                          | defined, launch          |
-|                          |                          | fullscreen mode          |
-|                          |                          | according to user input  |
-|                          |                          | (which depends on the    |
-|                          |                          | content).                |
-+--------------------------+--------------------------+--------------------------+
-| Audio Recording (in      | `http://tizen.org/privil | **Local domain**: Grant  |
-| **wearable applications  | ege/audiorecorder`       | permission if defined,   |
-| only**)                  |                          | otherwise block          |
-|                          |                          | execution.               |
-|                          |                          | **Remote domain**: Block |
-|                          |                          | execution.               |
-+--------------------------+--------------------------+--------------------------+
-| Video Recording (in      | `http://tizen.org/privil | **Local domain**: Grant  |
-| **wearable applications  | ege/camera`              | permission if defined,   |
-| only**)                  |                          | otherwise block          |
-|                          |                          | execution.               |
-|                          |                          | **Remote domain**: Block |
-|                          |                          | execution.               |
-+--------------------------+--------------------------+--------------------------+
+<table>
+<tr>
+<th>API</th>
+<th>Privilege</th>
+<th>Privilege behavior</th>
+</tr>
+<tr>
+<td>Geolocation (in **mobile and wearable applications only**)</td>
+<td>`http://tizen.org/privilege/location`</td>
+<td>**Local domain**: Grant permission if defined, otherwise block execution.<br>
+**Remote domain**: Popup user prompt if defined, otherwise block execution.
+</td>
+</tr>
+<tr>
+<td>Getusermedia (in **mobile and wearable applications only**)</td>
+<td>`http://tizen.org/privilege/mediacapture`</td>
+<td>**Local domain**: Grant permission if defined, otherwise block execution.<br>
+**Remote domain**: Popup user prompt if defined, otherwise block execution.
+</td>
+</tr>
+<tr>
+<td>Web Notifications (in **mobile applications only**)</td>
+<td>`http://tizen.org/privilege/notification`</td>
+<td>**Local domain**: Grant permission if defined, otherwise popup user prompt.<br>
+**Remote domain**: Popup user prompt.
+</td>
+</tr>
+<tr>
+<td>Storage (in **mobile and wearable applications only**)<br>
+(IndexedDB, FileSystem capacity, quota exceeding WebDatabase)
+</td>
+<td>`http://tizen.org/privilege/unlimitedstorage`</td>
+<td>**Local domain**: Grant permission if defined, otherwise popup user prompt.<br>
+**Remote domain**: Popup user prompt.
+</td>
+</tr>
+<tr>
+<td>FullScreen (in **mobile applications only**)</td>
+<td>`http://tizen.org/privilege/fullscreen`</td>
+<td>If defined, launch in fullscreen mode. If not defined, launch fullscreen mode according to user input (which depends on the content).</td>
+</tr>
+<tr>
+<td>Audio Recording (in **wearable applications only**)</td>
+<td>`http://tizen.org/privilege/audiorecorder`</td>
+<td>**Local domain**: Grant permission if defined, otherwise block execution.<br>
+**Remote domain**: Block execution.
+</td>
+</tr>
+<tr>
+<td>Video Recording (in **wearable applications only**)</td>
+<td>`http://tizen.org/privilege/camera`</td>
+<td>**Local domain**: Grant permission if defined, otherwise block execution.<br>
+**Remote domain**: Block execution.
+</td>
+</tr>
+</table>
 
 ### Tizen Device API Security Policy <a name="device"></a>
 
@@ -312,44 +305,52 @@ privilege level behavior mapping:
 **Table: Distributor signature type to API privilege level behavior
 mapping**
 
-API privilege level
-Distributor signature type (`signature1.xml`)
-Untrusted
-Platform
-Partner
-Public
-Platform
-Allowed
-Security error for runtime use (direct API call without `config.xml`
-declaration)
+<table>
+<tr>
+<th rowspan="2">API privilege level</th>
+<th colspan="3">Distributor signature type (`signature1.xml`)</th>
+<th rowspan="2">Untrusted</th>
+</tr>
+<tr>
+<th>Platform</th>
+<th>Partner</th>
+<th>Public</th>
+</tr>
+<tr>
+<th>Platform</th>
+<td>Allowed</td>
+<td>Security error for runtime use (direct API call without `config.xml` declaration)<br>
 Installation fail for `config.xml` use
+</td>
+<td>Security error for runtime use (direct API call without `config.xml` declaration)<br>
+Installation fail for `config.xml` use
+</td>
+<td>Security error for runtime use (direct API call without `config.xml` declaration)<br>
+Installation fail for `config.xml` use
+</td>
+</tr>
+<tr>
+<th>Partner</th>
+<td>Allowed</td>
+<td>Allowed</td>
+<td>Security error for runtime use (direct API call without `config.xml` declaration)<br>
+Installation fail for `config.xml` use
+</td>
+<td>Security error for runtime use (direct API call without `config.xml` declaration)<br>
+Installation fail for `config.xml` use
+</td>
+</tr>
+<tr>
+<th>Public</th>
+<td>Allowed</td>
+<td>Allowed</td>
+<td>Allowed</td>
+<td>Security error for runtime use (direct API call without `config.xml` declaration)<br>
+Installation fail for `config.xml` use
+</td>
+</tr>
+</table>
 
-Security error for runtime use (direct API call without `config.xml`
-declaration)
-Installation fail for `config.xml` use
-
-Security error for runtime use (direct API call without `config.xml`
-declaration)
-Installation fail for `config.xml` use
-
-Partner
-Allowed
-Allowed
-Security error for runtime use (direct API call without `config.xml`
-declaration)
-Installation fail for `config.xml` use
-
-Security error for runtime use (direct API call without `config.xml`
-declaration)
-Installation fail for `config.xml` use
-
-Public
-Allowed
-Allowed
-Allowed
-Security error for runtime use (direct API call without `config.xml`
-declaration)
-Installation fail for `config.xml` use
 
 ### Content Security Policy <a name="content_sec"></a>
 
@@ -398,16 +399,17 @@ Request Policy](http://www.w3.org/TR/2012/REC-widgets-access-20120207/).
 
 <div class="note">
 
-**Note** The default CSP enforcement is subject to change in the future.
+**Note** <br>
+The default CSP enforcement is subject to change in the future.
 
 </div>
 
 <div class="note">
 
-**Note** If a Web application declares the `<tizen:allow-navigation>`
+**Note** <br>
+If a Web application declares the `<tizen:allow-navigation>`
 element in its configuration document, the main resource navigation
 (through the `window.open()` method or a hyperlink) to an external URL
 is allowed or restricted accordingly.
 
 </div>
-

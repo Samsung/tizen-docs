@@ -1,13 +1,6 @@
 
-Content
 
--   [Tizen Application Types](#type)
--   [Tizen Profiles](#profiles)
--   [Tizen Documentation](#doc)
-
-
-Tizen\
-Training <a name="tizen-training"></a>
+Overview <a name="tizen-training"></a>
 ========
 
 **Welcome to Tizen!**
@@ -133,7 +126,7 @@ Tizen Documentation <a name="doc"></a>
 To make the most of your Tizen applications, get familiar with the Tizen
 documentation:
 
--   Training
+-   [Training](./cover-page.md)
 
     The training section provides overall information you need to become
     familiar with Tizen programming and the Tizen application model. Its
@@ -179,15 +172,15 @@ application profiles.
 
 **Table: Tizen profiles**
 
-  Profile                   Icon
-  ------------------------- --------------------------------------------------------------------------------------------------------------
-  Mobile native and Web     ![Mobile](./media/mobile-s-wn.png)
-  Wearable native and Web   ![Wearable](./media/wearable-s-wn.png)
-  Mobile native             ![Mobile Native](./media/mobile-s-n.png) or ![Optional mobile native](./media/mobile-s-n-optional.png)
-  Wearable native           ![Wearable Native](./media/wearable-s-n.png) or ![Optional wearable native](./media/wearable-s-n-optional.png)
-  Mobile Web                ![Mobile Web](./media/mobile_s_w.png) or ![Optional mobile Web](./media/mobile_s_w_optional.png)
-  Wearable Web              ![Wearable Web](./media/wearable_s_w.png) or ![Optional wearable Web](./media/wearable_s_w_optional.png)
-  TV Web                    ![TV Web](./media/tv_s_w.png) or ![Optional TV Web](./media/tv_s_w_optional.png)
+  Profile                   |Icon          
+  --------------------------|-------------------------------------------
+  Mobile native and Web     |![Mobile](./media/mobile-s-wn.png)
+  Wearable native and Web   |![Wearable](./media/wearable-s-wn.png)
+  Mobile native             |![Mobile Native](./media/mobile-s-n.png) or ![Optional mobile native](./media/mobile-s-n-optional.png)
+  Wearable native           |![Wearable Native](./media/wearable-s-n.png) or ![Optional wearable native](./media/wearable-s-n-optional.png)
+  Mobile Web                |![Mobile Web](./media/mobile-s-w.png) or ![Optional mobile Web](./media/mobile-s-w-optional.png)
+  Wearable Web              |![Wearable Web](./media/wearable-s-w.png) or ![Optional wearable Web](./media/wearable-s-w-optional.png)
+  TV Web                    |![TV Web](./media/tv-s-w.png) or ![Optional TV Web](./media/tv-s-w-optional.png)
 
 <div class="note">
 
@@ -206,5 +199,3 @@ site, see
 [Glossary](https://developer.tizen.org/development/getting-started/glossary).
 To see the trademark notice list, see
 [Trademarks](https://developer.tizen.org/development/training/trademarks).
-
-

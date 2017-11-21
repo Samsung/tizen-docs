@@ -1,12 +1,5 @@
 
 
-Content
-
--   [Rotary Events](#rotary)
--   [Ambient Events](#ambient)
-
-
-
 Event Handling
 ==============
 
@@ -36,17 +29,21 @@ the application. The following table describes the rotary events.
 
 **Table: Rotary events**
 
-+--------------------------+--------------------------+--------------------------+
-| Type                     | Description              | Attribute                |
-+==========================+==========================+==========================+
-| rotarydetent             | Event is triggered when  | `detail.direction`: the  |
-|                          | a device detects the     | rotation direction.      |
-|                          | detent point.            | The available values are |
-|                          |                          | `CW` for clockwise and   |
-|                          |                          | `CCW` for                |
-|                          |                          | counter-clockwise        |
-|                          |                          | rotation.                |
-+--------------------------+--------------------------+--------------------------+
+<table>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Attribute</th>
+</tr>
+<tr>
+<td>rotarydetent</td>
+<td>Event is triggered when a device detects the detent point.</td>
+<td>`detail.direction`: the rotation direction.<br>
+The available values are `CW` for clockwise and `CCW` for counter-clockwise rotation.
+</td>
+</tr>
+
+</table>
 
 To bind an event callback on rotary events, use the following code:
 
@@ -95,7 +92,8 @@ var isHighColorMode = tizen.systeminfo.getCapability('http://tizen.org/feature/s
 
 <div class="note">
 
-**Note** To use the ambient mode, the user must enable it in the device
+**Note** <br>
+To use the ambient mode, the user must enable it in the device
 settings. In addition, on the Gear S2 device, the ambient mode activates
 only when you are wearing the watch on the wrist.
 
@@ -105,33 +103,28 @@ The following table describes the ambient mode events.
 
 **Table: Ambient events**
 
-+--------------------------+--------------------------+--------------------------+
-| Type                     | Description              | Attribute                |
-+==========================+==========================+==========================+
-| ambientmodechanged       | Event is triggered when  | `detail.ambientMode`:    |
-|                          | a device enables or      | the status of the mode.  |
-|                          | disables the ambient     | The available values are |
-|                          | mode.                    | `true` when the ambient  |
-|                          |                          | mode is enabled and      |
-|                          |                          | `false` when the ambient |
-|                          |                          | mode is disabled.        |
-+--------------------------+--------------------------+--------------------------+
-| timetick                 | Event is triggered once  | -                        |
-|                          | a minute while the       |                          |
-|                          | device is in the ambient |                          |
-|                          | mode to notify the       |                          |
-|                          | application that it can  |                          |
-|                          | update its UI.           |                          |
-|                          | <div class="note">       |                          |
-|                          |                          |                          |
-|                          | **Note** The             |                          |
-|                          | `http://tizen.org/privil |                          |
-|                          | ege/alarm`               |                          |
-|                          | privilege must be set to |                          |
-|                          | get timetick events.     |                          |
-|                          |                          |                          |
-|                          | </div>                   |                          |
-+--------------------------+--------------------------+--------------------------+
+<table>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Attribute</th>
+</tr>
+<tr>
+<td>ambientmodechanged</td>
+<td>Event is triggered when a device enables or disables the ambient mode.</td>
+<td>`detail.ambientMode`: the status of the mode.<br>
+The available values are `true` when the ambient mode is enabled and `false` when the ambient mode is disabled.
+</td>
+</tr>
+<tr>
+<td>timetick</td>
+<td>Event is triggered once a minute while the device is in the ambient mode to notify the application that it can update its UI.<br>
+<div class="note">**Note** <br>
+The `http://tizen.org/privilege/alarm` privilege must be set to get timetick events.</div>
+</td>
+<td>-</td>
+</tr>
+</table>
 
 To bind an event callback on ambient events, use the following code:
 
@@ -149,4 +142,3 @@ document.addEventListener('timetick', function(ev) {
     /* Update the UI */
 });
 ```
-

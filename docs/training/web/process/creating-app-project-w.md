@@ -23,13 +23,12 @@ To create a Web application project:
 
     a.  Select the **Template** project type and click **Next**.
 
-        ![Selecting the project
-        type](./media/create-project-wizard-type.png)
+      ![Selecting the project        type](./media/create-project-wizard-type.png)
 
     b.  Select the profile (**Mobile**, **Wearable**, or **TV**) and
-        version from a drop-down list and click **Next**.
+      version from a drop-down list and click **Next**.
 
-        <div class="note">
+      <div class="note">
 
         **Note** If you cannot see the TV profile option, open the
         Package Manager and make sure that you have installed the TV
@@ -37,26 +36,22 @@ To create a Web application project:
 
         </div>
 
-        ![Selecting the profile and
-        version](./media/create-project-wizard-version-wearable.png)
+      ![Selecting the profile and        version](./media/create-project-wizard-version-wearable.png)
 
-    c.  Select the **Web Application** application type and click
-        **Next**.
+    c.  Select the **Web Application** application type and click        **Next**.
 
-        ![Selecting the application
-        type](./media/create-project-wizard-app-web-wearable.png)
+      ![Selecting the application        type](./media/create-project-wizard-app-web-wearable.png)
 
     d.  Select the template you want to use and click **Next**.
 
-        ![Selecting the
-        template](./media/create-project-wizard-template-ww.png)
+      ![Selecting the        template](./media/create-project-wizard-template-ww.png)
 
     e.  Define the project properties and click **Finish**.
 
-        You can fill the project name. You can also select the location
-        and working sets by clicking **More properties**.
+      You can fill the project name. You can also select the location
+      and working sets by clicking **More properties**.
 
-        <div class="note">
+      <div class="note">
 
         **Note** The Tizen API names cannot be used as project names.
         The project name must be more than 2 characters and is
@@ -65,14 +60,13 @@ To create a Web application project:
 
         </div>
 
-        ![Defining
-        properties](./media/create-project-wizard-properties-ww.png)
+      ![Defining        properties](./media/create-project-wizard-properties-ww.png)
 
-        The Project Wizard sets up the project, creates the application
-        files using the default content from the template, and closes.
-        For more information on the Project Wizard and the available
-        templates, see [Creating Tizen Projects with Tizen Project
-        Wizard](../../../tizen-studio/web-tools/project-wizard-w.md).
+      The Project Wizard sets up the project, creates the application
+      files using the default content from the template, and closes.
+      For more information on the Project Wizard and the available
+      templates, see [Creating Tizen Projects with Tizen Project
+      Wizard](../../../tizen-studio/web-tools/project-wizard-w.md).
 
 The new application project is shown in the **Project Explorer** view of
 the Tizen Studio, with default content in the `config.xml` file as well
@@ -93,4 +87,3 @@ into the Tizen Studio:
 4.  Click **Finish**.
 
 The project appears in the **Project Explorer** view.
-

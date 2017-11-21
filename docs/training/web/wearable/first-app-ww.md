@@ -1,11 +1,4 @@
 
-Content
-
--   [Creating a Project](#create)
--   [Building Your Application](#build)
--   [Running Your Application](#run)
--   [Building a Simple UI](#ui)
-
 
 Creating Your First Tizen Wearable Web Application
 ==================================================
@@ -59,7 +52,7 @@ Studio](../../../tizen-studio/web-tools/cover-web-w.md) to
 ease the tasks of creating functionality and designing the application
 UI.
 
-Creating a Project {#create}
+Creating a Project <a name="create"></a>
 ------------------
 
 The following example shows you how to create and configure a basic
@@ -111,43 +104,29 @@ To create the application project:
 
     a.  Select the **Template** project type and click **Next**.
 
-        ![Selecting the project
-        type](./media/create-project-wizard-type.png)
+      ![Selecting the project        type](./media/create-project-wizard-type.png)
 
-    b.  Select the profile (**Wearable**) and version from a drop-down
-        list and click **Next**.
+    b.  Select the profile (**Wearable**) and version from a drop-down        list and click **Next**.
 
-        The version depends on the platform version you have installed
-        and with which you are developing the application.
+      The version depends on the platform version you have installed        and with which you are developing the application.
 
-        ![Selecting the profile and
-        version](./media/create-project-wizard-version-wearable.png)
+      ![Selecting the profile and        version](./media/create-project-wizard-version-wearable.png)
 
-    c.  Select the **Web Application** application type and click
-        **Next**.
+    c.  Select the **Web Application** application type and click        **Next**.
 
-        ![Selecting the application
-        type](./media/create-project-wizard-app-web-wearable.png)
+      ![Selecting the application        type](./media/create-project-wizard-app-web-wearable.png)
 
     d.  Select the **Basic UI** template and click **Next**.
 
-        ![Selecting the
-        template](./media/create-project-wizard-template-ww.png)
+      ![Selecting the        template](./media/create-project-wizard-template-ww.png)
 
     e.  Define the project properties and click **Finish**.
 
-        You can fill the project name (3-50 characters) and the unique
-        package ID. You can also select the location and working sets by
-        clicking **More properties**.
+      You can fill the project name (3-50 characters) and the unique        package ID. You can also select the location and working sets by        clicking **More properties**.
 
-        ![Defining
-        properties](./media/create-project-wizard-properties-ww.png)
+      ![Defining        properties](./media/create-project-wizard-properties-ww.png)
 
-        The Project Wizard sets up the project, creates the application
-        files using the default content from the template, and closes.
-        For more information on the Project Wizard and the available
-        templates, see [Creating Tizen Projects with Tizen Project
-        Wizard](../../../tizen-studio/web-tools/project-wizard-w.md).
+      The Project Wizard sets up the project, creates the application        files using the default content from the template, and closes.        For more information on the Project Wizard and the available        templates, see [Creating Tizen Projects with Tizen Project        Wizard](../../../tizen-studio/web-tools/project-wizard-w.md).
 
 You can see the created project in the **Project Explorer** view. The
 most important files and folders include:
@@ -169,8 +148,7 @@ most important files and folders include:
 
 **Figure: Application in the Project Explorer**
 
-![Application in the Project
-Explorer](./medai/basic-app-project-explorer-ww.png)
+![Application in the Project Explorer](./media/basic-app-project-explorer-ww.png)
 
 <div class="note">
 
@@ -237,7 +215,7 @@ For more information on configuring the application, see [Setting the
 Web Application
 Configuration](../process/setting-properties-w.md#set_widget).
 
-Building Your Application {#build}
+Building Your Application <a namce="build"></a>
 -------------------------
 
 After you have created the application project, you can implement the
@@ -291,7 +269,7 @@ You can build the application in the following ways:
 
 After you have built the application, run it.
 
-Running Your Application {#run}
+Running Your Application <a name="run"></a>
 ------------------------
 
 You can run the Web application on the
@@ -300,38 +278,34 @@ device](../process/run-debug-app-w.md#target).
 
 <div class="note">
 
-**Note** Since the Web Simulator does not support a circular UI, this
+**Note**
+Since the Web Simulator does not support a circular UI, this
 topic does not cover the instructions for running the application on the
 Web Simulator.
 
 </div>
 
-### Running on the Emulator {#emulator}
+### Running on the Emulator <a name="emulator"></a>
 
 To run the application on the emulator:
 
 1.  Launch an emulator instance in the [Emulator
     Manager](../../../tizen-studio/common-tools/emulator-manager.md):
-    a.  In the Tizen Studio menu, select **Tools &gt; Emulator
-        Manager**.
+    a.  In the Tizen Studio menu, select **Tools &gt; Emulator        Manager**.
 
-        ![Emulator Manager](./media/emulator-icon.png)
+      ![Emulator Manager](./media/emulator-icon.png)
 
-    b.  In the Emulator Manager, select a wearable emulator from the
-        list and click **Launch**.
+    b.  In the Emulator Manager, select a wearable emulator from the        list and click **Launch**.
 
-        If no applicable emulator instance exists, [create a new
-        one](../../../tizen-studio/common-tools/emulator-manager.md#create).
+      If no applicable emulator instance exists, [create a new
+      one](../../../tizen-studio/common-tools/emulator-manager.md#create).
 
-        ![Launching the
-        emulator](./media/emulator-instance-launch-wearable.png)
+      ![Launching the
+      emulator](./media/emulator-instance-launch-wearable.png)
 
-        The emulator is launched in its own window. You can also see the
-        new emulator instance in the **Device Manager**. To view the
-        emulator folder structure, click the arrow next to the
-        emulator instance.
+      The emulator is launched in its own window. You can also see the        new emulator instance in the **Device Manager**. To view the        emulator folder structure, click the arrow next to the        emulator instance.
 
-        ![Emulator](./media/emulator-window-wearable.png)
+      ![Emulator](./media/emulator-window-wearable.png)
 
 2.  Generate a security profile.
 
@@ -341,43 +315,37 @@ To run the application on the emulator:
     in the Tizen Studio.
 
 3.  Run the application:
-    a.  In the **Project Explorer** view, right-click the project and
-        select **Run As &gt; Tizen Web Application**.
+    a.  In the **Project Explorer** view, right-click the project and        select **Run As &gt; Tizen Web Application**.
 
-        ![Running the application](./media/app-run-ww.png)
+      ![Running the application](./media/app-run-ww.png)
 
-        Alternatively, you can also select the project in the **Project
-        Explorer** view and do one of the following:
+      Alternatively, you can also select the project in the **Project        Explorer** view and do one of the following:
 
-        -   Press the **Ctrl+F11** key.
-        -   Click the run icon in the toolbar.
+      -   Press the **Ctrl+F11** key.
+      -   Click the run icon in the toolbar.
 
-        If you have created multiple emulator instances, select the
-        instance you want from the combo box in the toolbar before
-        selecting to run the application. If you select an offline
-        emulator, it is automatically launched when you select to run
-        the application.
+      If you have created multiple emulator instances, select the
+      instance you want from the combo box in the toolbar before
+      selecting to run the application. If you select an offline
+      emulator, it is automatically launched when you select to run
+      the application.
 
-        ![Selecting the emulator to
+      ![Selecting the emulator to
         use](./media/app-run-multiple-emulators.png)
 
     b.  Confirm that the application launches on the emulator.
 
-        ![Application running in the
-        emulator](./media/emulator-running-ww.png)
+      ![Application running in the
+      emulator](./media/emulator-running-ww.png)
 
-        <div class="note">
+      <div class="note">
 
-        **Note** If the emulator display has switched off, you cannot
-        see the application launch. To switch the display on, click the
-        **Power** key (in the right bottom corner of the emulator).
+      **Note** If the emulator display has switched off, you cannot
+      see the application launch. To switch the display on, click the        **Power** key (in the right bottom corner of the emulator).
 
-        </div>
+      </div>
 
-        While the application is running, the **Log** view in the Tizen
-        Studio shows the log, debug, and exception messages from the
-        methods defined in the log macros. To see the view, in the Tizen
-        Studio menu, go to **Window &gt; Show View &gt; Log**.
+      While the application is running, the **Log** view in the Tizen        Studio shows the log, debug, and exception messages from the        methods defined in the log macros. To see the view, in the Tizen        Studio menu, go to **Window &gt; Show View &gt; Log**.
 
 For more information on using the emulator features, see [Using Emulator
 Control Keys, Menu, and
@@ -385,20 +353,20 @@ Panel](../../../tizen-studio/common-tools/emulator-control-panel.md)
 and [Using Extended Emulator
 Features](../../../tizen-studio/common-tools/emulator-features.md).
 
-### Running on a Target Device {#target}
+### Running on a Target Device <a name="target"></a>
 
 To run the application on a target device:
 
 1.  Connect the wearable target device to your computer:
     a.  Define settings on the device:
-        -   Go to **Settings &gt; Connections**, and switch
+      -   Go to **Settings &gt; Connections**, and switch
             on Bluetooth.
 
             ![Switch on Bluetooth](./media/emulator-target-bt.png)
 
             ![Switch on Bluetooth](./media/emulator-target-bt2.png)
 
-        -   Go to **Settings &gt; Connections**, and switch on Wi-Fi.
+      -   Go to **Settings &gt; Connections**, and switch on Wi-Fi.
 
             The device and the computer must be connected to the same
             Wi-Fi network.
@@ -407,50 +375,40 @@ To run the application on a target device:
 
             ![Switch on Wi-Fi](./media/emulator-target-wifi.png)
 
-        -   Go to **Settings &gt; Gear info**, and switch on the
+      -   Go to **Settings &gt; Gear info**, and switch on the
             debugging mode.
 
             ![Switch on
             debugging](./media/emulator-target-debug.png)
 
-    b.  <div id="remote_device">
+    b.  Use the Remote Device Manager to connect the wearable device:
 
-        </div>
+       a.  In the **Device Manager**, click the **Remote Device
+      Manager** button.
 
-        Use the Remote Device Manager to connect the wearable device:
-        a.  In the **Device Manager**, click the **Remote Device
-            Manager** button.
+    ![Launch the Remote Device            Manager](./media/remote-conn-mgr-ww.png)
 
-            ![Launch the Remote Device
-            Manager](./media/remote-conn-mgr-ww.png)
+      b.  In the **Remote Device Manager** window, click **+**.
 
-        b.  In the **Remote Device Manager** window, click **+**.
+      ![Add new device](./media/remote-conn-new-ww.png)
 
-            ![Add new device](./media/remote-conn-new-ww.png)
+      c.  In the **Add Device** window, enter the device and network            details (use the IP address you noted before), and click            **Add**.
 
-        c.  In the **Add Device** window, enter the device and network
-            details (use the IP address you noted before), and click
-            **Add**.
+      ![Define device            details](./media/remote-conn-add-ww.png)
 
-            ![Define device
-            details](./media/remote-conn-add-ww.png)
+      d.  In the **Remote Device Manager** window, switch the new
+    device on by clicking the switch under **Connect**.
 
-        d.  In the **Remote Device Manager** window, switch the new
-            device on by clicking the switch under **Connect**.
+      ![Connect the device](./media/remote-connect-ww.png)
 
-            ![Connect the device](./media/remote-connect-ww.png)
+    c.  The device asks for user confirmation. To allow Gear to read log        data, copy files to and from your computer, and install the        application manually, click the accept mark.
 
-    c.  The device asks for user confirmation. To allow Gear to read log
-        data, copy files to and from your computer, and install the
-        application manually, click the accept mark.
+      ![Allow Gear to access
+      data](./media/remote-allow-gear-ww.png)
 
-        ![Allow Gear to access
-        data](./media/remote-allow-gear-ww.png)
+    d.  In the **Device Manager**, confirm that the device is connected        (shown in the device list).
 
-    d.  In the **Device Manager**, confirm that the device is connected
-        (shown in the device list).
-
-        ![Device is connected](./media/remote-connected-ww.png)
+      ![Device is connected](./media/remote-connected-ww.png)
 
 2.  Generate an author certificate.
 
@@ -460,25 +418,24 @@ To run the application on a target device:
     in the Tizen Studio.
 
 3.  Run the application:
+
     a.  In the **Device Manager**, select the device.
-    b.  In **Project Explorer** view, right-click the project and select
-        **Run As &gt; Tizen Web Application**.
 
-        ![Running the application on a target
-        device](./media/app-run-ww.png)
+    b.  In **Project Explorer** view, right-click the project and select        **Run As &gt; Tizen Web Application**.
 
-        Alternatively, you can also select the project in the **Project
-        Explorer** view and do one of the following:
+      ![Running the application on a target
+      device](./media/app-run-ww.png)
 
-        -   Press the **Ctrl+F11** key.
-        -   Click the run icon in the toolbar.
+      Alternatively, you can also select the project in the **Project        Explorer** view and do one of the following:
 
-        If you have both a connected device and existing emulator
-        instances, select the device from the combo box in the toolbar
-        before selecting to run the application.
+      -   Press the **Ctrl+F11** key.
+      -   Click the run icon in the toolbar.
 
-        ![Selecting the device to
-        use](./media/app-run-multiple-emulators.png)
+      If you have both a connected device and existing emulator
+      instances, select the device from the combo box in the toolbar        before selecting to run the application.
+
+      ![Selecting the device to
+      use](./media/app-run-multiple-emulators.png)
 
     c.  Confirm that the application launches on the target device.
 
@@ -499,7 +456,7 @@ To run the application on a target device:
 
     </div>
 
-Building a Simple UI {#ui}
+Building a Simple UI <a name="ui"></a>
 --------------------
 
 Tizen Web UI supports various aspects of creating a visual outlook for
@@ -732,22 +689,20 @@ To create a Web application and design its UI with TAU:
     To create a project with a TAU template:
 
     a.  Go to **File &gt; New &gt; Tizen Project**.
-    b.  Select **Template &gt; Wearable v2.3.2 &gt; Web Application &gt;
-        TAU Basic**.
+    b.  Select **Template &gt; Wearable v2.3.2 &gt; Web Application &gt;        TAU Basic**.
 
-        ![Creating a new
-        project](./media/simple-ui-tau-create-ww.png)
+      ![Creating a new
+      project](./media/simple-ui-tau-create-ww.png)
 
     c.  Change the project name and properties and click **Finish**.
 
-        ![Changing
-        properties](./media/simple-ui-tau-properties-ww.png)
+      ![Changing      properties](./media/simple-ui-tau-properties-ww.png)
 
     d.  In the **Project Explorer** view, view the project.
 
-        The TAU library is located in the `lib` folder.
+      The TAU library is located in the `lib` folder.
 
-        ![TAU library directory](./media/simple-ui-tau-dir-ww.png)
+      ![TAU library directory](./media/simple-ui-tau-dir-ww.png)
 
     You can import TAU with HTML. For better performance, all CSS files
     must be included in the header and all script elements must be put
@@ -830,10 +785,10 @@ To create a Web application and design its UI with TAU:
 
     a.  The body element of the HTML file contains 1 or more pages.
 
-        To create a page in the `<body>` element, use the `ui-page`
-        class with the `<div>` element:
+      To create a page in the `<body>` element, use the `ui-page`
+      class with the `<div>` element:
 
-        ``` {.prettyprint}
+      ``` {.prettyprint}
         <body>
            <div class="ui-page" id="main">
            </div>
@@ -842,10 +797,9 @@ To create a Web application and design its UI with TAU:
         </body>
         ```
 
-    b.  To layout the page, add a content area with the `ui-content`
-        class and a header with the `ui-header` class:
+    b.  To layout the page, add a content area with the `ui-content`        class and a header with the `ui-header` class:
 
-        ``` {.prettyprint}
+      ``` {.prettyprint}
         <div class="ui-page" id="main">
            <header class="ui-header">
               <h2 class="ui-title">Hello World</h2>
@@ -856,15 +810,14 @@ To create a Web application and design its UI with TAU:
         </div>
         ```
 
-        The following figure shows the screen that you can see if you
-        run this code with the emulator.
+      The following figure shows the screen that you can see if you
+      run this code with the emulator.
 
-        ![Hello TAU](./media/simple-ui-hello-tau-ww.png)
+      ![Hello TAU](./media/simple-ui-hello-tau-ww.png)
 
-    c.  You can add your own style in the content and footer area with a
-        defined `id` attribute:
+    c.  You can add your own style in the content and footer area with a        defined `id` attribute:
 
-        ``` {.prettyprint}
+      ``` {.prettyprint}
         <div class="ui-page" id="main">
            <header class="ui-header">
               <h2 class="ui-title">Hello World</h2>
@@ -875,18 +828,18 @@ To create a Web application and design its UI with TAU:
         </div>
         ```
 
-        In the `style.css` file, add a CSS style for the new `id`
-        attribute:
+      In the `style.css` file, add a CSS style for the new `id`
+      attribute:
 
-        ``` {.prettyprint}
+      ``` {.prettyprint}
         #contentArea {
            color: #8be3d1;
         }
         ```
 
-        With your new style, the screen looks like this.
+      With your new style, the screen looks like this.
 
-        ![Hello TAU](./media/simple-ui-tau-css-ww.png)
+      ![Hello TAU](./media/simple-ui-tau-css-ww.png)
 
     The page looks better, but not great yet. You can create your
     application UI with basic TAU UI components in the following steps.
@@ -959,10 +912,10 @@ To create a Web application and design its UI with TAU:
 5.  Create another page.
 
     a.  In the Tizen Studio, you can create a new HTML file and
-        rename it. Create a `second.html` file with the following
-        content:
+      rename it. Create a `second.html` file with the following
+      content:
 
-        ``` {.prettyprint}
+      ``` {.prettyprint}
         <!DOCTYPE html>
         <html>
            <head>
@@ -986,13 +939,13 @@ To create a Web application and design its UI with TAU:
         ```
 
     b.  Decorate the page in the same way as `index.html`.
-    c.  Create navigation between the `index.html` and
-        `second.html` pages.
 
-        Go back to the `index.html` file and add a file path in the
-        listview `<li><a href>` element:
+    c.  Create navigation between the `index.html` and        `second.html` pages.
 
-        ``` {.prettyprint}
+      Go back to the `index.html` file and add a file path in the
+      listview `<li><a href>` element:
+
+      ``` {.prettyprint}
         <ul class="ui-listview">
            <li><a href="second.html">Go to Second Page</a></li>
            <li><a href="#">List Item2</a></li>
@@ -1002,10 +955,9 @@ To create a Web application and design its UI with TAU:
         </ul>
         ```
 
-    d.  Run the code, and see how you can move from the `index.html`
-        page to the `second.html` page.
+    d.  Run the code, and see how you can move from the `index.html`        page to the `second.html` page.
 
-        ![Move to second page](./media/simple-ui-tau-move-ww.png)
+      ![Move to second page](./media/simple-ui-tau-move-ww.png)
 
     Now, you can navigate from the first to the second page. In the next
     steps, you learn how to go back to the first page and exit the
@@ -1020,7 +972,7 @@ To create a Web application and design its UI with TAU:
 
     a.  Add a new JavaScript file to the `index.html` file:
 
-        ``` {.prettyprint}
+      ``` {.prettyprint}
         <body>
            <div class="ui-page" id="main">
               <header class="ui-header">
@@ -1042,13 +994,11 @@ To create a Web application and design its UI with TAU:
         </body>
         ```
 
-    b.  In the new file (`app.js`), all kinds of logic can be added to
-        the application. In this case, add several lines for
-        handling navigation.
+    b.  In the new file (`app.js`), all kinds of logic can be added to        the application. In this case, add several lines for        handling navigation.
 
-        Overwrite the `app.js` file content with the following code:
+      Overwrite the `app.js` file content with the following code:
 
-        ``` {.prettyprint}
+      ``` {.prettyprint}
         (function() {
             window.addEventListener('tizenhwkey', function(ev) {
                 if (ev.keyName === 'back') {
@@ -1102,4 +1052,3 @@ To create a Web application and design its UI with TAU:
     UI](../../../guides/web/ui/tau/tau-w.md) and [TAU
     API
     Reference](../../../../org.tizen.web.apireference/html/ui_fw_api/ui_fw_api_cover.htm).
-

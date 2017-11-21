@@ -1,18 +1,4 @@
 
-Content
-
--   [Planning and Designing](#plan)
--   [Creating the Project](#create)
--   [Setting Properties](#set)
--   [Designing the UI](#design)
--   [Coding](#code)
--   [Building](#build)
--   [Running and Debugging](#run)
--   [Packaging](#package)
--   [Developing Multi-projects](#multi)
--   [Certifying and Publishing](#cert)
--   [Upgrading](#upgrade)
-
 
 
 Web Application Development Process
@@ -25,7 +11,7 @@ end-of-life application retirement.
 **Figure: Web application development process**
 
 ![Web application development
-process](./media/app-dev-process-mw.png){width="450"}
+process](./media/app-dev-process-mw.png)
 
 Planning and Designing the Application<a name="plan"></a>
 --------------------------------------
@@ -312,23 +298,32 @@ multi-project. **M** means that multiple applications can be packaged as
 sub applications.
 
 **Table: Combinations**
+<table>
+<tr>
+ <th rowspan="2">Main project</th> <th colspan="4">Sub project</th>
+</tr>
+<tr>
+   <th>UI</th>
+   <th>SERVICE</th>
+   <th>WATCH</th>
+   <th>WIDGET</th>
+</tr>
+<tr>
+  <td> WEB UI</td>
+  <td> No </td>
+  <td> M </td>
+  <td> No </td>
+  <td> M </td>
+</tr>
+<tr>
+  <td> WEB SERVICE</td>
+  <td> No </td>
+  <td> No </td>
+  <td> No </td>
+  <td> No </td>
+</tr>
+</table>
 
-Main project
-Sub project
-UI
-SERVICE
-WATCH
-WIDGET
-WEB UI
-No
-M
-No
-M
-WEB SERVICE
-No
-No
-No
-No
 With a hybrid application package, you can register the included
 applications in the Tizen Store and install, upgrade, and uninstall them
 using the single hybrid package. When a hybrid application package is

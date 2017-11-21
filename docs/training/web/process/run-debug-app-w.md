@@ -1,15 +1,5 @@
 
 
-Content
-
--   [Running Web Applications on the Emulator](#emulator)
--   [Running Web Applications on a Target Device](#target)
--   [Running Mobile Web Applications on the Simulator](#simulator)
--   [Debugging Web Applications](#debug)
--   [Rapid Development Support](#rds)
-
-
-
 Running and Debugging Applications
 ==================================
 
@@ -31,7 +21,7 @@ To launch the emulator, do one of the following:
 -   Use the [Emulator
     Manager](../../../tizen-studio/common-tools/emulator-manager.md):
     1.  Start the Emulator Manager using the Desktop (in Ubuntu) or
-        Start menu (in WindowsA¢ç), or using the command line.
+        Start menu (in WindowsÂ®), or using the command line.
     2.  In the **Emulator Manager** window, select the emulator instance
         from the list.
 
@@ -57,7 +47,8 @@ To stop the emulator, right-click the emulator and click **Close**.
 
 <div class="note">
 
-**Note** Running an emulator instance requires a minimum free disk space
+**Note**<br>
+Running an emulator instance requires a minimum free disk space
 of 20 MB. The emulator image can occupy up to 10 GB of disk space.
 
 </div>
@@ -120,9 +111,9 @@ using the **Project Explorer** view or the Tizen Studio menu.
 
 <div class="note">
 
-**Note** The Tizen Web Simulator runs only on the Google Chromea?¡Ë
+**Note** The Tizen Web Simulator runs only on the Google Chromeâ„¢
 browser. To use the Web Simulator, download and install the [Google
-Chromea?¡Ë](http://www.google.com/chrome/) browser. You can manually
+Chromeâ„¢](http://www.google.com/chrome/) browser. You can manually
 specify the installation location of the browser in the [simulator
 preferences](../../../tizen-studio/web-tools/web-simulator-w.md#pref).
 
@@ -147,7 +138,7 @@ specified in the **Content** field of the `config.xml` file. The mostly
 commonly specified file is `index.html`.
 
 The simulator renders your application on the browser using the
-[WebKit](http://www.webkit.org/) engine. All the Google Chromea?¡Ë browser
+[WebKit](http://www.webkit.org/) engine. All the Google Chromeâ„¢ browser
 development features are available (by pressing the **F12** keyboard
 key) in the simulator, as is the [Web
 Inspector](../../../tizen-studio/web-tools/web-inspector-w.md)
@@ -204,7 +195,7 @@ To debug your application on the target device:
         Web Application**.
     -   On the Tizen Studio toolbar, click **Debug**.
 
-    The Web Inspector tool is displayed in a new Google Chromea?¡Ë
+    The Web Inspector tool is displayed in a new Google Chromeâ„¢
     browser window. You can perform the following debugging tasks using
     the Web Inspector:
 
@@ -215,11 +206,12 @@ To debug your application on the target device:
 
     <div class="note">
 
-    **Note** The Web Inspector always opens in a new window. Life-cycle
+    **Note** <br>
+    The Web Inspector always opens in a new window. Life-cycle
     synchronization between the application to be debugged and the Web
     Inspector browser is not supported.
-    Installing the Google Chromea?¡Ë browser on the device is mandatory for
-    the Web Inspector to work. When the Google Chromea?¡Ë browser is
+    Installing the Google Chromeâ„¢ browser on the device is mandatory for
+    the Web Inspector to work. When the Google Chromeâ„¢ browser is
     installed on the device, the Tizen Studio automatically detects it.
     To select the browser path, go to
     `Window > Preferences > Tizen Studio > Web > Chrome`.
@@ -241,29 +233,34 @@ To debug your application on the target device:
 
     **Table: Control buttons for debugging between break points**
 
-    +--------------------------------------+--------------------------------------+
-    | Button                               | Description                          |
-    +======================================+======================================+
-    | ![Resume](./media/resume.png)        | Resumes the current execution.       |
-    +--------------------------------------+--------------------------------------+
-    | ![Step                               | Steps over the                       |
-    | over](./media/stepover.png)          | highlighted statement.               |
-    |                                      | Executes the current line, and if    |
-    |                                      | the line contains a method, executes |
-    |                                      | the method without entering it.      |
-    +--------------------------------------+--------------------------------------+
-    | ![Step in](./media/stepin.png)       | Steps into the                       |
-    |                                      | highlighted statement.               |
-    |                                      | Executes the current line, and if    |
-    |                                      | the line contains a method, steps    |
-    |                                      | into the method.                     |
-    +--------------------------------------+--------------------------------------+
-    | ![Step                               | Steps out of the current method.     |
-    | out](./media/stepout.png)            |                                      |
-    +--------------------------------------+--------------------------------------+
-    | ![Deactivate all break               | Deactivates all break points.        |
-    | points](./media/deactivate.png)      |                                      |
-    +--------------------------------------+--------------------------------------+
+<table>
+<tr>
+  <th>Button</th>
+  <th>Description</th>
+</tr>
+<tr>
+  <td>  ![Resume](./media/resume.png)  </td>
+  <td> Resumes the current execution. </td>
+</tr>
+<tr>
+  <td>  ![Step over](./media/stepover.png) </td>
+  <td> Steps over the highlighted statement.<br>
+  Executes the current line, and if the line contains a method, executes the method without entering it.</td>
+</tr>
+<tr>
+  <td> ![Step in](./media/stepin.png)   </td>
+  <td> Steps into the highlighted statement.<br>
+  Executes the current line, and if the line contains a method, steps   into the method.         </td>
+</tr>
+<tr>
+  <td> ![Step out](./media/stepout.png)   </td>
+  <td> Steps out of the current method.</td>
+</tr>
+<tr>
+  <td>   ![Deactivate all break  points](./media/deactivate.png)    </td>
+  <td> Deactivates all break points. </td>
+</tr>
+</table>
 
 If the Web application successfully launches on the target device, the
 [JavaScript Log Console
@@ -308,10 +305,10 @@ Development Support**.
 
 <div class="note">
 
-**Note** RDS is not supported in multi-app projects.
+**Note** <br>
+RDS is not supported in multi-app projects.
 If you want to remove an application from your device, you must manually
 delete the installed application as the launch process does not have an
 uninstall process.
 
 </div>
-

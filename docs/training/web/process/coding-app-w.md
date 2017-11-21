@@ -1,11 +1,5 @@
 
 
-Content
-
--   [Using Hover Help](#hover)
--   [Adding External Source Code or Library](#add)
-
-
 Coding Applications
 ===================
 
@@ -69,11 +63,10 @@ illustrate the adding of a CSS file):
 
 <div class="note">
 
-**Note** You can also drag and drop external source files or libraries.
+**Note**<br>
+You can also drag and drop external source files or libraries.
 If you drop a file to the **Project Explorer** view, the **File
 Operation** dialog appears, and allows you to either copy the file or
 create a link to it.
 
 </div>
-
-
