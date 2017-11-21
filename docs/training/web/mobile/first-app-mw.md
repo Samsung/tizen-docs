@@ -335,7 +335,7 @@ To run the application on the emulator:
 
 
   >    **Note** <br>
-    > If the emulator display has switched off, you cannot
+  > If the emulator display has switched off, you cannot
         see the application launch. To see the application on the
         emulator screen:
         a.  To switch the display on, in the key window next to the
@@ -408,9 +408,9 @@ To run the application on a target device:
 >    **Note** <br>
 > The application is launched using the default debug
     run configuration. To create and use another configuration:
-  1.  In the `Project Explorer` view, right-click the project and
+>  1.  In the `Project Explorer` view, right-click the project and
         select `Run As > Run Configurations`.
-  2.  In the `Run Configurations` window, click the
+>  2.  In the `Run Configurations` window, click the
         `New Launch Configuration` icon (![New Launch Configuration
         icon](./media/run-new-config-wn.png)), define the
         configuration details, and launch the application by clicking

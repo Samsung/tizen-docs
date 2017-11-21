@@ -462,19 +462,19 @@ To run the application on a target device:
         ./sdb connect <IP address of Gear S2>
         ```
 
-      Use the IP address you noted before.
+  Use the IP address you noted before.
 
-      Instead of the terminal, you can also use the [Remote Device
-      Manager](../wearable/first-app-ww.md#remote_device) for
-      the connection.
+  Instead of the terminal, you can also use the [Remote Device
+  Manager](../wearable/first-app-ww.md#remote_device) for
+  the connection.
 
     c.  In the first attempt, the connection fails and the device asks        for user confirmation. To allow Gear to read log data, copy        files to and from your computer, and install the application        manually, click the accept mark.
 
-      ![Allow Gear to access        data](./media/remote-allow-gear-ww.png)
+    ![Allow Gear to access        data](./media/remote-allow-gear-ww.png)
 
     d.  In the **Device Manager**, confirm that the device is connected        (shown in the device list).
 
-      ![Device is connected](./media/remote-connected-ww.png)
+    ![Device is connected](./media/remote-connected-ww.png)
 
 2.  Generate an author certificate.
 
@@ -513,15 +513,15 @@ To run the application on a target device:
   >  **Note** <br>
   > The application is launched using the default debug
     run configuration. To create and use another configuration:
-  1.  In the `Project Explorer` view, right-click the project and
+  > 1.  In the `Project Explorer` view, right-click the project and
         select `Run As > Run Configurations`.
-  2.  In the `Run Configurations` window, click the
+  > 2.  In the `Run Configurations` window, click the
         `New Launch Configuration` icon (![New Launch Configuration
         icon](./media/run-new-config-wn.png)), define the
         configuration details, and launch the application by clicking
         `Run`.
 
-  >    ![Run Configurations
+  >   ![Run Configurations
         window](./media/run-configurations-w-widget.png)
 
 

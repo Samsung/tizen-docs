@@ -151,13 +151,14 @@ most important files and folders include:
 ![Application in the Project
 Explorer](./media/basic-app-project-explorer-ww-watch.png)
 
-<div class="note">
 
-**Note** You can [view and modify the application
+
+> **Note** <br>
+> You can [view and modify the application
 configuration](#configuration) in the Web application configuration
 editor. In this example, no configuration changes are required.
 
-</div>
+
 
 Your application project is now ready for further actions. Next, build
 the application.
@@ -278,13 +279,14 @@ You can run the Web watch application on the
 [emulator](../process/run-debug-app-w.md#emulator) or a [real target
 device](../process/run-debug-app-w.md#target).
 
-<div class="note">
 
-**Note** Since the Web Simulator does not support a circular UI, this
+
+> **Note** <br>
+> Since the Web Simulator does not support a circular UI, this
 topic does not cover the instructions for running the application on the
 Web Simulator.
 
-</div>
+
 
 ### Running on the Emulator <a name="emulator"></a>
 
@@ -325,22 +327,22 @@ To run the application on the emulator:
       -   Press the **Ctrl+F11** key.
       -   Click the run icon in the toolbar.
 
-        If you have created multiple emulator instances, select the
-        instance you want from the combo box in the toolbar before
-        selecting to run the application. If you select an offline
-        emulator, it is automatically launched when you select to run
-        the application.
+    If you have created multiple emulator instances, select the
+    instance you want from the combo box in the toolbar before
+    selecting to run the application. If you select an offline
+    emulator, it is automatically launched when you select to run
+    the application.
 
-        ![Selecting the emulator to
-        use](./media/app-run-multiple-emulators.png)
+    ![Selecting the emulator to
+    use](./media/app-run-multiple-emulators.png)
 
-        In the **Console** view, you can see that the application is
-        successfully installed. However, it does not run on the emulator
-        screen until you change the watch face in the emulator
-        **Settings** menu.
+    In the **Console** view, you can see that the application is
+    successfully installed. However, it does not run on the emulator
+    screen until you change the watch face in the emulator
+    **Settings** menu.
 
-        ![Successful
-        installation](./media/watch-run-install-watch-ww.png)
+    ![Successful
+    installation](./media/watch-run-install-watch-ww.png)
 
     b.         Change the watch face.
 
@@ -411,19 +413,19 @@ To run the application on a target device:
         ./sdb connect <IP address of Gear S2>
         ```
 
-      Use the IP address you noted before.
+    Use the IP address you noted before.
 
-      Instead of the terminal, you can also use the [Remote Device
-      Manager](../wearable/first-app-ww.md#remote_device) for
-      the connection.
+    Instead of the terminal, you can also use the [Remote Device
+    Manager](../wearable/first-app-ww.md#remote_device) for
+    the connection.
 
     c.  In the first attempt, the connection fails and the device asks        for user confirmation. To allow Gear to read log data, copy        files to and from your computer, and install the application        manually, click the accept mark.
 
-      ![Allow Gear to access        data](./media/remote-allow-gear-ww.png)
+    ![Allow Gear to access        data](./media/remote-allow-gear-ww.png)
 
     d.  In the **Device Manager**, confirm that the device is connected        (shown in the device list).
 
-      ![Device is connected](./media/remote-connected-ww.png)
+    ![Device is connected](./media/remote-connected-ww.png)
 
 2.  Generate an author certificate.
 
@@ -455,22 +457,23 @@ To run the application on a target device:
 
       Like with the [emulator](#watchface), you must change the watch        face in the device settings before you can see the watch        application UI on the device.
 
-    <div class="note">
 
-    **Note** The application is launched using the default debug
+
+>    **Note** <br>
+> The application is launched using the default debug
     run configuration. To create and use another configuration:
-    1.  In the `Project Explorer` view, right-click the project and
+>    1.  In the `Project Explorer` view, right-click the project and
         select `Run As > Run Configurations`.
-    2.  In the `Run Configurations` window, click the
+>    2.  In the `Run Configurations` window, click the
         `New Launch Configuration` icon (![New Launch Configuration
         icon](./media/run-new-config-wn.png)), define the
         configuration details, and launch the application by clicking
         `Run`.
 
-        ![Run Configurations
+>       ![Run Configurations
         window](./media/run-configurations-ww-watch.png)
 
-    </div>
+
 
 Building a Simple UI <a name="ui"></a>
 --------------------
@@ -579,7 +582,7 @@ To draw the watch UI:
     the main screen that displays the clock on a
     [canvas](http://www.w3.org/TR/2012/CR-html5-20121217/embedded-content-0.html#the-canvas-element) element.
 
-    ``` {.prettyprint .lang-html}
+    ```
     <head>
        <meta charset="utf-8"/>
        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
@@ -598,9 +601,9 @@ To draw the watch UI:
 2.  To draw the watch face on the canvas, use the `main.js` file:
 
     a.  Create the clock in the middle of the canvas, and define the
-        watch face style:
+      watch face style:
 
-        ``` {.prettyprint}
+      ``` {.prettyprint}
         function renderDots() {
             'use strict';
 
@@ -616,9 +619,9 @@ To draw the watch UI:
         ```
 
     b.  Create 4 dots on the sides of the watch face and use the
-        `fill()` method to style the dots:
+      `fill()` method to style the dots:
 
-        ``` {.prettyprint}
+      ``` {.prettyprint}
             for (i = 1; i <= 4; i++) {
                 angle = (i - 3) * (Math.PI * 2) / 4;
                 dx = clockRadius * 0.9 * Math.cos(angle);
@@ -632,7 +635,7 @@ To draw the watch UI:
 
     c.  Create the center point:
 
-        ``` {.prettyprint}
+      ``` {.prettyprint}
             ctx.beginPath();
 
             ctx.fillStyle = '#ff9000';
@@ -653,14 +656,10 @@ To draw the watch UI:
 
     a.  The needles can be created using the `renderNeedle()` method.
 
-        To create the needle as a triangle or a polygon, assign the
-        coordinate of the beginning point with the `moveTo()` method. To
-        assign the rest of the points of the triangle or polygon, use
-        the `lineTo()` method, which defines the position of the next
-        connecting vertex. You can also adjust the size of each clock
-        needle with the `lineTo()` method.
+      To create the needle as a triangle or a polygon, assign the
+      coordinate of the beginning point with the `moveTo()` method. To        assign the rest of the points of the triangle or polygon, use        the `lineTo()` method, which defines the position of the next        connecting vertex. You can also adjust the size of each clock        needle with the `lineTo()` method.
 
-        ``` {.prettyprint}
+      ``` {.prettyprint}
         function renderNeedle(angle, radius) {
             'use strict';
             ctx.save();
@@ -679,7 +678,7 @@ To draw the watch UI:
 
     b.  Create the hour needle using the `renderHourNeedle()` method:
 
-        ``` {.prettyprint}
+      ``` {.prettyprint}
         function renderHourNeedle(hour) {
             'use strict';
 
@@ -782,9 +781,10 @@ ambient mode UI, set the `ambient_support` attribute to `disable` in the
 `config.xml` watch application configuration file to allow the platform
 to show a default ambient mode UI.
 
-<div class="note">
 
-**Note** To use the ambient mode, the user must enable it in the device
+
+> **Note** <br>
+> To use the ambient mode, the user must enable it in the device
 settings. In addition, on the Gear S2 device, the ambient mode activates
 only when you are wearing the watch on the wrist.
 Since Tizen 2.3.2, some devices introduce a high color mode for the
@@ -792,14 +792,16 @@ ambient mode. In the high color mode, you can use more colors (usually,
 24-bit color) for drawing the ambient mode UI. To check whether the
 device supports the high color mode, use the following code:
 
-``` {.prettyprint}
-bool support;
-int ret;
 
-ret = system_info_get_platform_bool('http://tizen.org/feature/screen.always_on.high_color', &support);
-```
+>  ``` <br>
+> bool support;
+> int ret;
 
-</div>
+> ret =  
+>system_info_get_platform_bool('http://tizen.org/feature/screen.always_on.high_color', &support);
+> ```
+
+
 
 To use the ambient mode:
 

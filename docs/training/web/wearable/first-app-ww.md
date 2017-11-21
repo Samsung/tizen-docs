@@ -150,13 +150,14 @@ most important files and folders include:
 
 ![Application in the Project Explorer](./media/basic-app-project-explorer-ww.png)
 
-<div class="note">
 
-**Note** You can [view and modify the application
+
+> **Note** <br>
+> You can [view and modify the application
 configuration](#configuration) in the Web application configuration
 editor. In this example, no configuration changes are required.
 
-</div>
+
 
 Your application project is now ready for further actions. Next, build
 the application.
@@ -202,7 +203,8 @@ To view and modify the application configuration:
 
         <div class="note">
 
-        **Note** The `config.xml` file must conform to both the XML file
+        **Note** <br>
+        The `config.xml` file must conform to both the XML file
         format and the W3C specification requirements. Editing the file
         in the **Source** tab is intended for advanced users only.
 
@@ -276,14 +278,14 @@ You can run the Web application on the
 [emulator](../process/run-debug-app-w.md#emulator) or a [real target
 device](../process/run-debug-app-w.md#target).
 
-<div class="note">
 
-**Note**
-Since the Web Simulator does not support a circular UI, this
+
+> **Note** <br>
+> Since the Web Simulator does not support a circular UI, this
 topic does not cover the instructions for running the application on the
 Web Simulator.
 
-</div>
+
 
 ### Running on the Emulator <a name="emulator"></a>
 
@@ -338,14 +340,15 @@ To run the application on the emulator:
       ![Application running in the
       emulator](./media/emulator-running-ww.png)
 
-      <div class="note">
 
-      **Note** If the emulator display has switched off, you cannot
+
+  >  **Note** <br>
+  > If the emulator display has switched off, you cannot
       see the application launch. To switch the display on, click the        **Power** key (in the right bottom corner of the emulator).
 
-      </div>
 
-      While the application is running, the **Log** view in the Tizen        Studio shows the log, debug, and exception messages from the        methods defined in the log macros. To see the view, in the Tizen        Studio menu, go to **Window &gt; Show View &gt; Log**.
+
+  While the application is running, the **Log** view in the Tizen        Studio shows the log, debug, and exception messages from the        methods defined in the log macros. To see the view, in the Tizen        Studio menu, go to **Window &gt; Show View &gt; Log**.
 
 For more information on using the emulator features, see [Using Emulator
 Control Keys, Menu, and
@@ -439,22 +442,23 @@ To run the application on a target device:
 
     c.  Confirm that the application launches on the target device.
 
-    <div class="note">
 
-    **Note** The application is launched using the default debug
+
+>    **Note** <br>
+> The application is launched using the default debug
     run configuration. To create and use another configuration:
-    1.  In the `Project Explorer` view, right-click the project and
+>    1.  In the `Project Explorer` view, right-click the project and
         select `Run As > Run Configurations`.
-    2.  In the `Run Configurations` window, click the
+>    2.  In the `Run Configurations` window, click the
         `New Launch Configuration` icon (![New Launch Configuration
         icon](./media/run-new-config-wn.png)), define the
         configuration details, and launch the application by clicking
         `Run`.
 
-        ![Run Configurations
+>       ![Run Configurations
         window](./media/run-configurations-w.png)
 
-    </div>
+
 
 Building a Simple UI <a name="ui"></a>
 --------------------
