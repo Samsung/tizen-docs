@@ -61,7 +61,7 @@ You can use existing configured on-line accounts and providers, and create new a
 </td>
 <td>
 - Guides:
-[Personal Data](../../../guides/web/personal/personal-cover-w.md)   <br>
+[Personal Data](../../../guides/web/personal/personal-cover-w.md)<br>
 
 - API Reference: [Account](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Account)   
 </td>
