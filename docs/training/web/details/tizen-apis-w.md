@@ -133,7 +133,7 @@ You can transfer data over a Bluetooth connection, share contacts, photos, and v
 </td>
 <td>
 
-- Guides: [Connectivity Wireless](../../../guides/web/connectivity/connectivity-cover-w.md) <br>
+- Guides: [Connectivity and Wireless](../../../guides/web/connectivity/connectivity-cover-w.md) <br>
 
 - API Reference:   [Network](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Network)        
 </td>
@@ -171,10 +171,8 @@ You can access the state of the device power resource, device system information
 <td>
 
 - Guides:<br>
-[Device Settings and Systems](../../../guides/web/device/device-cover-w.md)   <br>         
-
-[Meda and  Camera](../../../guides/web/media/media-cover-w.md)    <br>
-
+[Device Settings and Systems](../../../guides/web/device/device-cover-w.md) <br>         
+[Meda and  Camera](../../../guides/web/media/media-cover-w.md) <br>
 [Sensors](../../../guides/web/sensors/sensors-cover-w.md)<br>
 
 
@@ -268,11 +266,9 @@ You can schedule an application to be run at a specific time, retrieve informati
 <td>
 
 - Guides:<br>
-[Alarms](../../../guides/web/alarm/alarms-w.md)      |
-
-[Application   Management](../../../guides/web/app-management/app-management-cover-w.md)     
-
-[Notifications](../../../guides/web/notification/notification-w.md)  
+[Alarms](../../../guides/web/alarm/alarms-w.md) <br>
+[Application   Management](../../../guides/web/app-management/app-management-cover-w.md)     <br>
+[Notifications](../../../guides/web/notification/notification-w.md)<br>  
 [Text Input](../../../guides/web/text_input/text-input-cover-w.md)           
 - API Reference:   [Application Framework](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Application)        
 </td>
@@ -355,10 +351,8 @@ You can access the state of the device power resource, device system information
 <td>
 
 - Guides:<br>
-[Device Settings and Systems](../../../guides/web/device/device-cover-w.md)            
-
-[Media and Camera](../../../guides/web/media/media-cover-w.md)  
-
+[Device Settings and Systems](../../../guides/web/device/device-cover-w.md) <br>
+[Media and Camera](../../../guides/web/media/media-cover-w.md)<br>  
 [Sensors](../../../guides/web/sensors/sensors-cover-w.md)        
 
 - API Reference:   [System](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#System)      
@@ -425,9 +419,8 @@ You can manage common files and ZIP archive files, and define filters and sortin
 <td>
 
 - Guides:<br>
-[Data Storage and  Management](../../../guides/web/data/data-cover-w.md)
-
-[Error  Handling](../../../guides/web/error/error-w.md)
+[Data Storage and  Management](../../../guides/web/data/data-cover-w.md)<br>
+[Error Handling](../../../guides/web/error/error-w.md)
 
 - API Reference:    [Base](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Tizen)                        
 </td>
@@ -440,8 +433,7 @@ You can schedule an application to be run at a specific time, retrieve informati
 <td>
 
 - Guides:<br>
-[Alarms](../../../guides/web/alarm/alarms-w.md)  
-
+[Alarms](../../../guides/web/alarm/alarms-w.md) <br>
 [Application Management](../../../guides/web/app-management/app-management-cover-w.md)   
 
 - API Reference:   [Application Framework](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Application)    
@@ -455,10 +447,8 @@ You can search and manage multimedia content locally, manipulate EXIF data in JP
 <td>
 
 - Guides:<br>
-[Connectivity and Wireless](../../../guides/web/connectivity/connectivity-cover-w.md)
-
-[Data Storage and Management](../../../guides/web/data/data-cover-w.md)
-
+[Connectivity and Wireless](../../../guides/web/connectivity/connectivity-cover-w.md)<br>
+[Data Storage and Management](../../../guides/web/data/data-cover-w.md)<br>
 [Media and Camera](../../../guides/web/media/media-cover-w.md)  
 
 - API Reference:    [Content](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Contents)       
@@ -694,7 +684,7 @@ wearable applications**
 
 - Guides: [User  Interface](../../../guides/web/w3c/ui/ui-guide-w.md)
 
-- API Reference:[DOM,   Forms and    Styles](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#dom)
+- API Reference: [DOM,   Forms and    Styles](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#dom)
 </td>
 </tr>
 <tr>
