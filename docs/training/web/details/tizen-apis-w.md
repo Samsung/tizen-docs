@@ -45,12 +45,11 @@ Reference](../../../../org.tizen.web.apireference/html/device_api/mobile/index.h
 You can manage common files and ZIP archive files, and define filters and sorting modes for queries. You can also use generic success and error event handlers, in addition to a generic error interface and a simple coordinate interface for defining location information.
 </td>
 <td>
-- Guides:<br>
+   - Guides: <br>
 [Data Storage and Management](../../../guides/web/data/data-cover-w.md) <br>
-[Error  Handling](../../../guides/web/error/error-w.md)
+[Error  Handling](../../../guides/web/error/error-w.md)<br>
 
-<br>
-- API Reference:
+   - API Reference:
 [Base](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Base)      
 </td>
 </tr>
@@ -75,7 +74,8 @@ You can schedule an application to be run at a specific time, retrieve informati
 - Guides:
 [Alarms](../../../guides/web/alarm/alarms-w.md)  <br>
 [Application Management](../../../guides/web/app-management/app-management-cover-w.md)  <br>
-[Notifications](../../../guides/web/notification/notification-w.md)[Text Input](../../../guides/web/text-input/text-input-cover-w.md)                    
+[Notifications](../../../guides/web/notification/notification-w.md)<br>
+[Text Input](../../../guides/web/text-input/text-input-cover-w.md)   <br>                 
 
 - API Reference:  [Application Framework](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Application)   
 
@@ -88,7 +88,8 @@ You can search and manage multimedia content locally, download files from the In
 </td>
 <td>
 - Guides:
-[Connectivity and Wireless](../../../guides/web/connectivity/connectivity-cover-w.md)[Data Storage and    Management](../../../guides/web/data/data-cover-w.md)                            
+[Connectivity and Wireless](../../../guides/web/connectivity/connectivity-cover-w.md)<br>
+[Data Storage and    Management](../../../guides/web/data/data-cover-w.md)              <br>              
 
 - API Reference:  [Content](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Contents)       
 
@@ -100,7 +101,7 @@ You can search and manage multimedia content locally, download files from the In
 You can send and receive messages, and receive push notifications from a push server.
 </td>
 <td>
-- Guides:  [Messaging](../../../guides/web/messaging/messaging-cover-w.md)      
+- Guides:  [Messaging](../../../guides/web/messaging/messaging-cover-w.md) <br>     
 
 - API Reference:   [Messaging](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Messaging)       
 
@@ -114,6 +115,7 @@ You can change and monitor playback volume level, and listen to the FM radio.
 <td>
 - Guides: [Media and   Camera](../../../guides/web/media/media-cover-w.md)
 <br>
+
 - API Reference:  [Multimedia](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Multimedia)      
 </td>
 </tr>
@@ -123,7 +125,7 @@ You can change and monitor playback volume level, and listen to the FM radio.
 You can transfer data over a Bluetooth connection, share contacts, photos, and videos using NFC, and access secure elements, such as SIM card and secure SD card, in a device.
 </td>
 <td>
-- Guides: [Connectivity Wireless](../../../guides/web/connectivity/connectivity-cover-w.md)     
+- Guides: [Connectivity Wireless](../../../guides/web/connectivity/connectivity-cover-w.md) <br>
 
 - API Reference:   [Network](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Network)        
 </td>
@@ -134,7 +136,8 @@ You can transfer data over a Bluetooth connection, share contacts, photos, and v
 You can use security functionalities, such as storing and recalling private data.
 </td>
 <td>
-- Guides:   [Security](../../../guides/web/security/security-cover-w.md)        
+- Guides:   [Security](../../../guides/web/security/security-cover-w.md)        <br>
+
 - API Reference:   [Security](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Security)   
 </td>
 </tr>
@@ -144,7 +147,9 @@ You can use security functionalities, such as storing and recalling private data
 You can manage the Tizen Web browser bookmark list, calendar events and tasks, call history, and address books and contacts on a device, and you can synchronize device data, such as contacts and calendar events, with the OMA DS server.
 </td>
 <td>
-- Guides: [Personal Data](../../../guides/web/personal/personal-cover-w.md)             
+- Guides: [Personal Data](../../../guides/web/personal/personal-cover-w.md)     <br>
+
+
 - API Reference:  [Social](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Social)         
 </td>
 </tr>
@@ -155,11 +160,11 @@ You can access the state of the device power resource, device system information
 </td>
 <td>
 - Guides:<br>
-[Device Settings and Systems](../../../guides/web/device/device-cover-w.md)            
+[Device Settings and Systems](../../../guides/web/device/device-cover-w.md)   <br>         
 
-[Media and  Camera](../../../guides/web/media/media-cover-w.md)    
+[Meda and  Camera](../../../guides/web/media/media-cover-w.md)    <br>
 
-[Sensors](../../../guides/web/sensors/sensors-cover-w.md)         
+[Sensors](../../../guides/web/sensors/sensors-cover-w.md)<br>
 
 
 - API Reference:    [System](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#System)    
@@ -171,7 +176,7 @@ You can access the state of the device power resource, device system information
 You can allow the user to control the Web application through their voice.
 </td>
 <td>
-- Guides: [Text Input and Voice](../../../guides/web/text-input/text-input-cover-w.md)
+- Guides: [Text Input and Voice](../../../guides/web/text-input/text-input-cover-w.md)<br>
 
 - API Reference: [UIX](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#UIX)  
 </td>
@@ -182,7 +187,7 @@ You can allow the user to control the Web application through their voice.
 You can manage the device filesystem, individual files, and various events, access device and network information and the device accelerometer, create dialog boxes and system log entries, and play audio files.
 </td>
 <td>
-- Guides:    [Cordova](../../../guides/web/cordova/cordova-cover-w.md)         
+- Guides:    [Cordova](../../../guides/web/cordova/cordova-cover-w.md) <br>        
 
 - API Reference:    [Cordova](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Cordova)                  
 </td>
@@ -193,7 +198,7 @@ You can manage the device filesystem, individual files, and various events, acce
 You can create and manage various kinds of UI components.
 </td>
 <td>
-- Guides: [Tizen Advanced  UI](../../../guides/web/ui/tau/tau-w.md)    
+- Guides: [Tizen Advanced  UI](../../../guides/web/ui/tau/tau-w.md)    <br>
 
 - API Reference: [Advanced  UI   Framework](../../../../org.tizen.web.apireference/html/ui_fw_api/ui_fw_api_cover.htm)                     
 </td>

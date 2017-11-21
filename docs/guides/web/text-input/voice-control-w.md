@@ -65,7 +65,9 @@ To use the voice control:
       }
       ```
 
-   	**Note**<br>
+
+
+**Note** <br>
      Do not call the `release()` function in a listener.
 
 
@@ -76,7 +78,7 @@ To set and unset listeners to get notifications about recognition results and la
 
 
 
-
+```
       /* Listener */
      var languageChangeListenerCallback = function(previous, current)
      {
@@ -98,16 +100,17 @@ To set and unset listeners to get notifications about recognition results and la
 
          client.removeLanguageChangeListener(id);
      }
+```
 
 
 
 
 
+* Add the recognition result listener to be invoked when a voice command is recognized.
 
-* Add the recognition result listener to be invoked when a voice command is recognized.<br>
 
-     <div class="note">**Note** <br>
-      If the recognition result produces a reject event, the voice control service has rejected the recognized command. Make sure that the command does not conflict with other commands and there are no duplicated commands.</div>
+ **Note** <br>
+    If the recognition result produces a reject event, the voice control service has rejected the recognized command. Make sure that the command does not conflict with other commands and there are no duplicated commands.
 
 To get the command, check the `list` parameter in the recognition result listener. The parameter is an array of recognized `VoiceControlCommand` instances. The `result` parameter contains the recognized text.<br>
 
