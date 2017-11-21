@@ -45,7 +45,9 @@ Reference](../../../../org.tizen.web.apireference/html/device_api/mobile/index.h
 You can manage common files and ZIP archive files, and define filters and sorting modes for queries. You can also use generic success and error event handlers, in addition to a generic error interface and a simple coordinate interface for defining location information.
 </td>
 <td>
-   - Guides: <br>
+
+- Guides: <br>
+
 [Data Storage and Management](../../../guides/web/data/data-cover-w.md) <br>
 [Error  Handling](../../../guides/web/error/error-w.md)<br>
 
