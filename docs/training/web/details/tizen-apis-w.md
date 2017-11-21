@@ -50,7 +50,7 @@ You can manage common files and ZIP archive files, and define filters and sortin
 [Data Storage and Management](../../../guides/web/data/data-cover-w.md) <br>
 [Error  Handling](../../../guides/web/error/error-w.md)<br>
 
-   - API Reference:
+- API Reference:
 [Base](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Base)      
 </td>
 </tr>
@@ -61,7 +61,7 @@ You can use existing configured on-line accounts and providers, and create new a
 </td>
 <td>
 - Guides:
-[Personal Data](../../../guides/web/personal/personal-cover-w.md)                    <br>
+[Personal Data](../../../guides/web/personal/personal-cover-w.md)   <br>
 
 - API Reference: [Account](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Account)   
 </td>
