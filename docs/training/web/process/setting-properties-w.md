@@ -213,16 +213,26 @@ The following table lists the policy properties you can edit in the
   Used to define an additional content security policy for a packaged or  hosted application. The policy    string is defined according to   [Content Security Policy Level    2](http://www.w3.org/TR/2015/CR-CSP2-20150721/)                  (in mobile applications) and    [Content Security Policy              1.0](http://www.w3.org/TR/2012/CR-CSP-20121115/)                        (in wearable applications).</td>
 </tr>
 <tr>
-  <td> **content-security-policy-report-only** </td>
-  <td> Used to define an additional content security policy for a packaged or  hosted application (for monitoring   purposes only).</td>
+  <td>
+
+  **content-security-policy-report-only** </td>
+  <td>
+
+  Used to define an additional content security policy for a packaged or  hosted application (for monitoring   purposes only).</td>
 </tr>
 <tr>
-  <td> **allow-navigation** </td>
+  <td>
+
+  **allow-navigation** </td>
   <td> Used to define a list of URL domains allowed for the Web application. <br> This attribute is optional. </td>
 </tr>
 <tr>
-  <td> **Access** </td>
-  <td> Used to define network resource permissions.<br>
+  <td>
+
+  **Access** </td>
+  <td>
+
+  Used to define network resource permissions.<br>
   To request network resource permissions, click **+** and enter    the resource URLs in the **Network   URL** column. You can allow the Web  application to access the URL        sub-domains by setting the **Allow   subdomain** column value as      **true**.                     </td>
 </tr>
 </table>
@@ -321,75 +331,123 @@ can edit.
   <th> Description </th>
 </tr>
 <tr>
-  <td rowspan="4"> **Application** </td>
-  <td> **ID** </td>
+  <td rowspan="4">
+
+  **Application** </td>
+  <td>
+
+  **ID** </td>
   <td> Tizen application ID, which is randomly created from the Tizen package  ID and project name.<br>
   This attribute is mandatory. </td>
 </tr>
 <tr>
-  <td> **Required Version** </td>
+  <td>
+
+  **Required Version** </td>
   <td> Indicates the minimum API version that the Web application supports.<br>  This attribute is mandatory and must be a float value, such as 1.0 or  2.0. </td>
 </tr>
 <tr>
-  <td> **Launch Mode** </td>
-  <td> Indicates whether the application is launched as a main (single) or sub  application, or whether a caller application defines the launch mode  when the application is launched by an application control request.<br>
+  <td>
+
+  **Launch Mode** </td>
+  <td>
+
+  Indicates whether the application is launched as a main (single) or sub  application, or whether a caller application defines the launch mode  when the application is launched by an application control request.<br>
   This attribute is optional. The default value is **single**.</td>
 </tr>
 <tr>
-  <td> **Ambient Support** </td>
-  <td> Indicates whether the Web application supports the ambient mode.<br>
+  <td>
+
+  **Ambient Support** </td>
+  <td>
+
+  Indicates whether the Web application supports the ambient mode.<br>
   This attribute is optional and used **in wearable applications only**.  The default value is **disable**.</td>
 </tr>
 
 <tr>
-  <td> **Content** </td>
-  <td> **Src** </td>
+  <td>
+
+  **Content** </td>
+  <td>
+
+  **Src** </td>
   <td> In Widget Packaging and XML Configuration, the Web application start  page is a document within the Web application package. The Tizen WRT  allows the start page to be hosted on an external server. <br>
   If the start page is on an external server, this attribute points to it.
  </td>
 </tr>
 
 <tr>
-  <td rowspan="6"> **Setting** </td>
-  <td> **Screen Orientation** </td>
-  <td> Sets the application screen orientation to landscape or portrait mode,  or auto-rotation.<br>
+  <td rowspan="6">
+
+  **Setting** </td>
+  <td>
+
+  **Screen Orientation** </td>
+  <td>
+
+  Sets the application screen orientation to landscape or portrait mode,  or auto-rotation.<br>
   This attribute is optional. The default value is **portrait**.
  </td>
 </tr>
 <tr>
-  <td> **Context Menu** </td>
-  <td> Sets the Web application support for context menus.<br>
+  <td>
+
+  **Context Menu** </td>
+  <td>
+
+  Sets the Web application support for context menus.<br>
   This attribute is optional. The default value is **enable**.
  </td>
 </tr>
 <tr>
-  <td> **Background Support** </td>
-  <td> Defines whether the execution of the Web application continues when the  application is sent to the background.<br>
+  <td>
+
+  **Background Support** </td>
+  <td>
+
+  Defines whether the execution of the Web application continues when the  application is sent to the background.<br>
   This attribute is optional. The default value is **disable**.
  </td>
 </tr>
 <tr>
-  <td> **Encryption**</td>
-  <td> Sets the encryption of application resources (JS, CSS, and HTML files).<br>
+  <td>
+
+  **Encryption**</td>
+  <td>
+
+  Sets the encryption of application resources (JS, CSS, and HTML files).<br>
   This attribute is optional. The default mode is **disable**.
  </td>
 </tr>
 <tr>
-  <td> **Install Location**</td>
-  <td> Sets the installation location, for example, the SD card.<br>
+  <td>
+
+  **Install Location**</td>
+  <td>
+
+  Sets the installation location, for example, the SD card.<br>
   This attribute is optional. The default mode is **auto**.
  </td>
 </tr>
 <tr>
-  <td> **HW Key Event**</td>
-  <td> Sets the support for the hardware key.<br>
+  <td>
+
+  **HW Key Event**</td>
+  <td>
+
+  Sets the support for the hardware key.<br>
   This attribute is optional. The default mode is **enable**.
  </td>
 </tr>
 
 <tr>
-  <td colspan="2">**Application Control**</td>
-  <td> Describes the [application control
+  <td colspan="2">
+
+  **Application Control**</td>
+  <td>
+
+  Describes the [application control
   functionalities](../../../guides/web/app-management/app-controls-w.md)  provided by the application. To define an application control used to  access the functionality of your application, click **+** in the  **Application Control** panel and define the details.
   The **operation**, **uri**, and **mime** fields describe the
   functionalities that other applications can request and the **src**
@@ -406,43 +464,64 @@ can edit.
  </td>
 </tr>
 <tr>
-  <td rowspan="6"> **Account** </td>
+  <td rowspan="6">
+
+  **Account** </td>
   <td> - </td>
-  <td> To register an account provider, click **+** in the **Account** section
+  <td>
+
+  To register an account provider, click **+** in the **Account** section
   and define the account provider information.
  </td>
 </tr>
 <tr>
-  <td> **Display name** </td>
-  <td> Used to define the localized display name of the account provider.<br>
+  <td>
+
+  **Display name** </td>
+  <td>
+
+  Used to define the localized display name of the account provider.<br>
   To add a localized name, click **Add** in the **Display name** panel,  select the language, define the display name for that language, and  click **OK**. <br>  
   This attribute is mandatory.
  </td>
 </tr>
 <tr>
-  <td> **Multiple account**</td>
+  <td>
+
+  **Multiple account**</td>
   <td> Indicates whether multiple accounts are supported.<br>
   This attribute is mandatory.
  </td>
 </tr>
 <tr>
-  <td> **Icon**</td>
-  <td> Used to define the path of the icon representing the account provider.
+  <td>
+
+  **Icon**</td>
+  <td>
+
+  Used to define the path of the icon representing the account provider.
   The icon image is used by account settings and must be placed in a
   shared directory. The size is 72 x 72.<br>
   This attribute is mandatory and used **in mobile applications only**.
  </td>
 </tr>
 <tr>
-  <td> **Small icon**</td>
-  <td> Used to define the path of the small icon representing the account
+  <td>
+
+  **Small icon**</td>
+  <td>
+
+  Used to define the path of the small icon representing the account
   provider. The icon image is used by account settings and must be placed
   in a shared directory. The size is 45 x 45.<br>
   This attribute is mandatory and used **in mobile applications only**.
  </td>
 </tr><tr>
-  <td> **Capabilities** </td>
   <td>
+
+  **Capabilities** </td>
+  <td>
+
   The capabilities of the account provider defined in the IRI format:<br>
   `http://<vendor information>/accounts/capability/<name>`
 <br>
@@ -463,14 +542,22 @@ can edit.
  </td>
 </tr>
 <tr>
-  <td colspan="2">**Background Category**</td>
-  <td> Defines the background category type (since Tizen 2.4).<br>
+  <td colspan="2">
+
+  **Background Category**</td>
+  <td>
+
+  Defines the background category type (since Tizen 2.4).<br>
   To add background category types to allow running in the background,  click **+** in the **Background Category** section, select the category  type, and click **OK**.
   </td>
 </tr>
 <tr>
-  <td colspan="2">**Meta Data**</td>
-  <td> Defines key-value pairs that can be accessed (read-only) through the
+  <td colspan="2">
+
+  **Meta Data**</td>
+  <td>
+
+  Defines key-value pairs that can be accessed (read-only) through the
   Application API (in
   [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html)
   and
@@ -487,23 +574,35 @@ can edit.
   </td>
 </tr>
 <tr>
-  <td colspan="2">**Category**</td>
-  <td> Defines the categories to which a service application belongs.
+  <td colspan="2">
+
+  **Category**</td>
+  <td>
+
+  Defines the categories to which a service application belongs.
   To add a category, click **+** in the **Category** section, select the
   category, and click **OK**. This attribute is optional and used **in  wearable applications only**.
   </td>
 </tr>
 <tr>
-  <td colspan="2">**Service**</td>
-  <td> Defines service application-specific settings.
+  <td colspan="2">
+
+  **Service**</td>
+  <td>
+
+  Defines service application-specific settings.
   To define the setting values, click **+** in the **Service** section,
   and define the values. For more information on the values, see [Tizen
   Service](../../../tizen-studio/web-tools/config-editor-w.md#ww_service).
   </td>
 </tr>
 <tr>
-  <td colspan="2">**Web Widget**</td>
-  <td> Defines widget application-specific settings.
+  <td colspan="2">
+
+  **Web Widget**</td>
+  <td>
+
+  Defines widget application-specific settings.
   To edit the setting values, select the row in the **Web Widget** section
   table, click the **Edit** icon (shaped like a pen), and define the
   values. For more information on the values, see [Tizen Web
