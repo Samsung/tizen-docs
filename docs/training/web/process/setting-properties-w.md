@@ -205,8 +205,12 @@ The following table lists the policy properties you can edit in the
   <th> Description </th>
 </tr>
 <tr>
-  <td> **content-security-policy** </td>
-  <td> Used to define an additional content security policy for a packaged or  hosted application. The policy    string is defined according to   [Content Security Policy Level    2](http://www.w3.org/TR/2015/CR-CSP2-20150721/)                  (in mobile applications) and    [Content Security Policy              1.0](http://www.w3.org/TR/2012/CR-CSP-20121115/)                        (in wearable applications).</td>
+  <td>
+
+  **content-security-policy** </td>
+  <td>
+
+  Used to define an additional content security policy for a packaged or  hosted application. The policy    string is defined according to   [Content Security Policy Level    2](http://www.w3.org/TR/2015/CR-CSP2-20150721/)                  (in mobile applications) and    [Content Security Policy              1.0](http://www.w3.org/TR/2012/CR-CSP-20121115/)                        (in wearable applications).</td>
 </tr>
 <tr>
   <td> **content-security-policy-report-only** </td>
