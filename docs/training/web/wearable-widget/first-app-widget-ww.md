@@ -465,11 +465,11 @@ To run the application on a target device:
         ./sdb connect <IP address of Gear S2>
       ```
 
-  Use the IP address you noted before.
+     Use the IP address you noted before.
 
-  Instead of the terminal, you can also use the [Remote Device
-  Manager](../wearable/first-app-ww.md#remote_device) for
-  the connection.
+     Instead of the terminal, you can also use the [Remote Device
+     Manager](../wearable/first-app-ww.md#remote_device) for
+     the connection.
 
     c.  In the first attempt, the connection fails and the device asks        for user confirmation. To allow Gear to read log data, copy        files to and from your computer, and install the application        manually, click the accept mark.
 
@@ -503,8 +503,7 @@ To run the application on a target device:
       instances, select the device from the combo box in the toolbar
       before selecting to run the application.
 
-        ![Selecting the device to
-        use](./media/app-run-multiple-emulators.png)
+      ![Selecting the device to        use](./media/app-run-multiple-emulators.png)
 
     c.  Confirm that the application launches on the target device.
 
