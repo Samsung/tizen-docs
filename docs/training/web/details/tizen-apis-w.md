@@ -175,7 +175,6 @@ You can access the state of the device power resource, device system information
 [Meda and  Camera](../../../guides/web/media/media-cover-w.md) <br>
 [Sensors](../../../guides/web/sensors/sensors-cover-w.md)<br>
 
-
 - API Reference:    [System](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#System)    
 </td>
 </tr>
@@ -269,7 +268,8 @@ You can schedule an application to be run at a specific time, retrieve informati
 [Alarms](../../../guides/web/alarm/alarms-w.md) <br>
 [Application   Management](../../../guides/web/app-management/app-management-cover-w.md)     <br>
 [Notifications](../../../guides/web/notification/notification-w.md)<br>  
-[Text Input](../../../guides/web/text_input/text-input-cover-w.md)           
+[Text Input](../../../guides/web/text_input/text-input-cover-w.md)    
+
 - API Reference:   [Application Framework](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Application)        
 </td>
 </tr>
@@ -353,7 +353,7 @@ You can access the state of the device power resource, device system information
 - Guides:<br>
 [Device Settings and Systems](../../../guides/web/device/device-cover-w.md) <br>
 [Media and Camera](../../../guides/web/media/media-cover-w.md)<br>  
-[Sensors](../../../guides/web/sensors/sensors-cover-w.md)        
+[Sensors](../../../guides/web/sensors/sensors-cover-w.md)<br>        
 
 - API Reference:   [System](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#System)      
 </td>
@@ -496,7 +496,8 @@ You can access the device system information and use locale-specific calendar fe
 </td>
 <td>
 
-- Guides: [Device Settings  and   Systems](../../../guides/web/device/device-cover-w.md)               
+- Guides: [Device Settings  and   Systems](../../../guides/web/device/device-cover-w.md)     
+
 - API Reference:  [System](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#System)      
 </td>
 </tr>
