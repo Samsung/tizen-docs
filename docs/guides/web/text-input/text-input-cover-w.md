@@ -1,9 +1,10 @@
-# Text Input
+# Text Input and Voice
 
 ## Dependencies
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 4.0 and Higher for TV
 
 The text input features introduce how you can provide customized keyboards, and define keyboard commands to trigger specific actions.
 
@@ -16,3 +17,7 @@ You can use the following text input features in your Web applications:
 - [Input Device](./text-input/input_device-w.md) **in mobile and wearable applications only**
 
   You can manage input keys in the application. You can retrieve information about the available keys, and add custom actions to be performed when specific input keys are pressed.
+
+- [Voice Control](./voice-control-w.md)
+
+  You can register general voice commands and enable the user to control the Web application with their voice.
