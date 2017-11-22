@@ -389,20 +389,20 @@ To run the application on a target device:
        *  In the **Device Manager**, click the **Remote Device
       Manager** button.
 
-     ![Launch the Remote Device            Manager](./media/remote-conn-mgr-ww.png)
+        ![Launch the Remote Device            Manager](./media/remote-conn-mgr-ww.png)
 
        *  In the **Remote Device Manager** window, click **+**.
 
-      ![Add new device](./media/remote-conn-new-ww.png)
+        ![Add new device](./media/remote-conn-new-ww.png)
 
        *  In the **Add Device** window, enter the device and network            details (use the IP address you noted before), and click            **Add**.
 
-      ![Define device            details](./media/remote-conn-add-ww.png)
+        ![Define device            details](./media/remote-conn-add-ww.png)
 
        *  In the **Remote Device Manager** window, switch the new
     device on by clicking the switch under **Connect**.
 
-      ![Connect the device](./media/remote-connect-ww.png)
+        ![Connect the device](./media/remote-connect-ww.png)
 
     c.  The device asks for user confirmation. To allow Gear to read log        data, copy files to and from your computer, and install the        application manually, click the accept mark.
 
@@ -455,7 +455,7 @@ To run the application on a target device:
         configuration details, and launch the application by clicking
         `Run`.
 >
->     ![Run Configurations        window](./media/run-configurations-w.png)
+>   ![Run Configurations window](./media/run-configurations-w.png)
 
 
 
@@ -1030,7 +1030,7 @@ To create a Web application and design its UI with TAU:
     page navigation and application exit. This code is included in the
     **TAU Basic** project template `main.js` file by default.
 
-    ``` 
+    ```
     (function() {
         window.addEventListener('tizenhwkey', function(ev) {
             if (ev.keyName === 'back') {
