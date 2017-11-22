@@ -115,7 +115,7 @@ To set and unset listeners to get notifications about recognition results and la
 
    To get the command, check the `list` parameter in the recognition result listener. The parameter is an array of recognized `VoiceControlCommand` instances. The `result` parameter contains the recognized text.<br>
 
-
+```
      /* Listener */
      var resultListenerCallback = function(event, list, result)
      {
@@ -137,7 +137,7 @@ To set and unset listeners to get notifications about recognition results and la
 
          client.removeResultListener(id);
      }
-
+```
 
 
 ## Retrieving the Current Language<a name="info"></a>
