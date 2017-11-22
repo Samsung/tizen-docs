@@ -95,42 +95,52 @@ A Web application package must conform to the following conventions:
 <tr>
   <td>
 
-  `config.xml` </td>
+  `config.xml`
+
+  </td>
   <td> File </td>
   <td> Application configuration document </td>
 </tr>
 <tr>
   <td>       
 
-  `icon.gif`   </td>
+  `icon.gif`   
+
+  </td>
   <td> File  </td>
   <td> Application default icon </td>
 </tr>
 <tr>
   <td>  
 
-    `icon.ico`   </td>
+  `icon.ico`   
+
+    </td>
   <td> File  </td>
   <td> Application default icon </td>
 </tr>
 <tr>
   <td>     
 
-     `icon.jpg`    </td>
+   `icon.jpg`    
+
+     </td>
   <td> File  </td>
   <td> Application default icon </td>
 </tr>
 <tr>
   <td>        
 
-   `icon.png`     </td>
+   `icon.png`    
+
+    </td>
   <td> File  </td>
   <td> Application default icon </td>
 </tr>
 <tr>
   <td>      
 
-     `icon.svg`     </td>
+   `icon.svg`     </td>
   <td> File  </td>
   <td> Application default icon </td>
 </tr>
@@ -151,7 +161,7 @@ A Web application package must conform to the following conventions:
 <tr>
   <td>      
 
-      `index.svg`      </td>
+    `index.svg`      </td>
   <td> File  </td>
   <td>  Application default start file </td>
 </tr>
@@ -275,21 +285,21 @@ A hybrid application package must conform to the following conventions:
 <tr>
   <td>  
 
-    `res`</td>
+  `res`</td>
   <td> Folder </td>
   <td> Native application resources or Web application content</td>
 </tr>
 <tr>
   <td>  
 
-    `res/wgt`</td>
+  `res/wgt`</td>
   <td>Folder</td>
   <td> Web application project root</td>
 </tr>
 <tr>
   <td>   
 
-   `res/wgt/index.html`</td>
+  `res/wgt/index.html`</td>
   <td> File </td>
   <td>  Default HTML file for the Web application</td>
 </tr>
