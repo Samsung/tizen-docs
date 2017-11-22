@@ -1,52 +1,56 @@
-# System recovery
+# System Recovery
 
-Each Tizen 4.0 comes with three different root filesystems, each for
-different purpose.
+Tizen 4.0 comes with 3 different root filesystems, each designed for a different purpose.
+
+**Table: Root filesystems**
 
 | Label | Purpose |
 | ----- | ------- |
-| `rootfs` | The main root filesystem |
+| `rootfs` | Main root filesystem |
 | `ramdisk` | Regular boot ramdisk |
 | `ramdisk-recovery` | System recovery ramdisk |
 
-This section describes operation and how to customize the system
+This topic describes operation and customization options of the system
 recovery ramdisk.
 
-The boot process starts with a bootloader (u-boot or s-boot) loading
-appropriate kernel and ramdisk images dedicated for the system
-recovery process (methods of control of bootleaders are beyond the
-scope of this document). With both images loaded into RAM the kernel
-initialisation begins. When the initialisation is over, kernel passes
-control to the init process i.e. `/sbin/init` (a.k.a. PID#1).
+The following steps describe the boot process:
 
-In case of recovery ramdisk this is a symlink to
-`/usr/libexec/initrd-recovery/init` which is a shell script, that comes
-from the `initrd-recovery` package. The script mounts several kernel
-filesystems and the inform partition (if it exists) and parses the
-kernel command line options (`/proc/cmdline`) to find `bootmode`
-parameter. If the parameter is present, one of `/sbin/*-init` scripts is
-started. With the boot mode set to recovery,
+1. The boot process starts with a bootloader (u-boot or s-boot) loading
+appropriate kernel and ramdisk images dedicated for the system
+recovery process (methods of bootleader control are beyond the
+scope of this document). With both images loaded into RAM, the kernel
+initialization begins. When the initialization is complete, the kernel passes
+control to the init process, such as `/sbin/init` (PID#1).
+
+2. In the case of the recovery ramdisk, the init process is accessed through a symlink to
+`/usr/libexec/initrd-recovery/init` (a shell script that comes
+from the `initrd-recovery` package). The script mounts several kernel
+filesystems and the inform partition (if it exists), and parses the
+kernel command line options (`/proc/cmdline`) to find the `bootmode`
+parameter. If the parameter is present, one of the `/sbin/*-init` scripts is
+started. If the boot mode is set to `recovery`,
 `/usr/libexec/system-recovery/recovery-init` is started.
 
-The `recovery-init` script mounts the real root file-system under
-the `/system` directory and other file-systems below it (e.g. `/opt`,
-`/opt/usr`), starts a shell on the serial console and launches the
-`system-recovery` programme.
+3. The `recovery-init` script mounts the real root filesystem under
+the `/system` directory, and other filesystems (such as `/opt` and
+`/opt/usr`) below the `/system` directory. The script starts a shell on the serial console and launches the
+`system-recovery` program.
 
-The `system-recovery` programme can work as either an interactive GUI or
-a non-interactive dispatcher, that executes one (non-interactive) or
-more (interactive) actions. The actions are configured in
-`/usr/share/system-recovery/system-recovery.cfg`.
+4. The `system-recovery` program can work as either an interactive GUI or
+a non-interactive dispatcher, executing 1 (non-interactive) or
+more (interactive) actions. The actions are configured in the
+`/usr/share/system-recovery/system-recovery.cfg` file.
 
-## Configuration file
+## Configuration File
 
-The configuration file allows to customise two aspects of
-system-recovery operation: GUI and actions. Let's take a closer look
-at the latter. The file is parsed using `libconfig`. Please refer to
-libconfig documentation for detailed [description of the
-grammar](http://hyperrealm.com/libconfig/libconfig_manual.html#Configuration-File-Grammar).
+The configuration file allows you to customize 2 aspects of
+the system-recovery operation: GUI and actions. The following sections take a closer look
+at the actions.
 
-### `action_handlers`
+The configuration file is parsed using `libconfig`. For a detailed description of the
+grammar, see the [libconfig documentation](http://hyperrealm.com/libconfig/libconfig_manual.html#Configuration-File-Grammar).
+
+### action_handlers
 
 `action_handlers` is a dictionary, in which shell commands (action
 handlers) are assigned names (actions). The names are used later in
@@ -61,24 +65,24 @@ action_handlers = {
 }
 ```
 
-Actions (names) are refered further in the `menus` dictionary. The
-`menus` dictionary comprises all pages of the menu system presented by
-`system-recovery`. The `main` entry is the one the programme displays
-at startup. The rest should be linked in tree-like structure.
+### menus
 
-### `menus`
+Actions (names) are used in the `menus` dictionary, which
+comprises all pages of the menu system presented by
+`system-recovery`. The `main` entry is the one the program displays
+at startup. The rest must be linked in a tree-like structure.
 
-Each menu entry comprises the following fields
+Each menu entry consists of the following fields:
 
-* pos_x, pox_y - position on a screen,
-* style - reference to menu_styles dictionary,
-* actions - and array of actions available in this menu,
-* item_default - action to highlight when opening the menu.
+- `pos_x` and `pox_y`: Position on a screen
+- `style`: Reference to the `menu_styles` dictionary
+- `actions`: Array of actions available in this menu
+- `item_default`: Action to highlight when opening the menu
 
-An action may be handled in one of two ways: run an action handler or
-switch to another screen. There is a reserved screen name BACK, that
-means switching to the previous screen (see screen_back in the screens
-dictionary).
+An action can be handled in 2 ways: you can run an action handler or
+switch to another screen. There is a reserved screen name **BACK**, which
+means switching to the previous screen (for more information, see `screen_back` in the [screens
+dictionary](#screens)).
 
 ```
 menus = {
@@ -143,44 +147,44 @@ menus = {
 };
 ```
 
-NOTE: The system-recovery.cfg.m4.in source file provides
-confirm_action m4 macro to define *Yes/No* style actions array. *Yes*
-executes an action, *No* switches to a previous screen. Use this macro
-when adding an action to the config file in the repository.
+> **Note**
+>
+> The `system-recovery.cfg.m4.in` source file provides the `confirm_action` m4 macro to define a **Yes/No** style action array:
+> - **Yes** executes an action.
+> - **No** switches to a previous screen.
+>
+> Use this macro when adding an action to the config file in the repository.
+>
+> For example:
+> ```
+> actions = confirm_action('safeboot', 1);
+> ```
+> Expands to:
+> ```
+> actions = ({
+>     label = "Yes";
+>     action_handler = "safeboot";
+>     exit_after_action = 1;
+> },{
+>     label = "No";
+>     screen_switch_to = "BACK";
+> });
+> ```
+>
+> The first argument of the macro is an action, and the second is the value to assign to the `exit_after_action` element.
 
-For example
-```
-actions = confirm_action(`safeboot', 1);
-```
-expands to
+### screens
 
-```
-actions = ({
-    label = "Yes";
-    action_handler = "safeboot";
-    exit_after_action = 1;
-},{
-    label = "No";
-    screen_switch_to = "BACK";
-});
-```
-
-The first argument of the macro is an action, the second is the value
-to assign to the `exit_after_action` element.
-
-### `screens`
-
-As mentioned above, each action can either execute an action handler
-(a shell command) or switch to a screen. Screens are configured in
-their dictionary as follows.
+Each action can either execute an action handler (a shell command) or switch to a screen. The screens are configured in
+their dictionary as follows:
 
 ```
 screens = {
     main = {
         style = "common";
         menu = "main";
+        description = "main";
         rulers = "main";
-	description = "main";
         images = ("background_default", "menu_title");
         screen_back = "CURRENT";
     };
@@ -188,7 +192,7 @@ screens = {
         style = "common";
         menu = "reboot";
         description = "reboot"
-        rulers = "confirm" ;
+        rulers = "confirm";
         images = ("background_default", "menu_title");
         screen_back = "main";
     };
@@ -220,31 +224,29 @@ screens = {
 };
 ```
 
-There are two groups of parameters in the entries above. The first
-group is reposponsible for the look of a screen. These won't be
-described further in this document.
+The above entries contain 2 parameter groups:
 
-* style - element of screen_styles dictionary
-* rulers - element of rulers dictionary
-* images - list of elements of images dictionary
-* animations - element of animations dictionary
+- The first group is responsible for the look of a screen:
+  - `style`: Element of the `screen_styles` dictionary
+  - `rulers`: Element of the `rulers` dictionary
+  - `images`: List of elements of the `images` dictionary
+  - `animations`: Element of the `animations` dictionary
 
-The other group comprises parameters that describe logic.
-
-* menu - a menu that display, an element of menus dictionary,
-* description - a description text and a screen title that to display,
-  an element of description dictionary,
-* screen_back - the screen to switch to when swiching to screen BACK,
-* allow_force_reboot - reboot after executing an action.
+  These parameters are not described in detail in this document.
+- The second group comprises parameters that describe logic:
+  - `menu`: Menu to display (an element of the `menus` dictionary)
+  - `description`: Description text and screen title to display (an element of the `descriptions` dictionary)
+  - `screen_back`: Screen to switch to when switching **BACK**
+  - `allow_force_reboot`: Reboot after executing an action
 
 
-### `descriptions`
+### descriptions
 
 The elements of the `descriptions` dictionary hold screen titles and
-brief descriptions for screen entries (see above).
+brief descriptions for screen entries:
 
-* title - short (on line) title displayed at the top of a screen,
-* description - brief explanation of actions available on the screen.
+- `title`: Short (one line) title displayed at the top of a screen
+- `description`: Brief explanation of actions available on the screen
 
 ```
 descriptions = {
@@ -301,141 +303,127 @@ descriptions = {
 };
 ```
 
-## Non-GUI operation
+## Non-interactive Operation
 
-If system-recovery is compiled without GUI support only two parameters
-in the configuration file that control how the programme behaves:
+If the `system-recovery` program is compiled without GUI support, only 2 parameters
+in the configuration file control how the program behaves:
 
-* action_handlers - list of shell commands,
-* headless_action - the action to execute by default.
+- `action_handlers`: List of shell commands
+- `headless_action`: Action to execute by default
 
-Before system-recovery reads the `headless_action` parameter it looks
-for the action to execute in in two other places:
+Before `system-recovery` reads the `headless_action` parameter, it looks
+for the action to execute in 2 other places:
 
-* tizen.recovery kernel command line option (e.g. tizen.recovery=factory-reset),
-* /opt/.recovery.action.
+- `tizen.recovery` kernel command line option (such as `tizen.recovery=factory-reset`)
+- `/opt/.recovery.action`
 
 
 ```
 headless_action = "factory-reset";
 ```
 
-## Adding new action
+## Adding New Actions
 
-To add a new action you need to define the action handler in the
-`action_handlers` dictionary.
+To add a new action:
 
-```
-action_handlers = {
-    factory-reset-minimal = "/usr/bin/factory-reset-minimal.sh"
-    // [...]
-};
-```
+1. Define an action handler in the `action_handlers` dictionary:
+   ```
+   action_handlers = {
+       factory-reset-minimal = "/usr/bin/factory-reset-minimal.sh"
+   };
+   ```
+2. Take the `factory` entry from the `menus` dictionary and adapt it:
+   ```
+   menus = {
+       factory-minimal = {
+           pos_x = 0;
+           pos_y = 480;
+           style = "common";
+           item_default = 1;
+           actions = ({
+               label = "Yes";
+               screen_switch_to = "factory-run-minimal";
+               action_handler = "factory-reset-minimal";
+               exit_after_action = 1;
+           },{
+               label = "No";
+               screen_switch_to = "BACK";
+           });
+       };
+   };
+   ```
+3. Add 2 new entries in the `screens` dictionary:
+   ```
+   screens = {
+       factory-minimal = {
+           style = "common";
+           menu = "factory-minimal";
+           description = "factory-minimal";
+           rulers = "confirm";
+           images = ("background_default", "menu_title");
+           screen_back = "main";
+       };
+       factory-run-minimal = {
+           style = "common";
+           description = "factory-run-minimal";
+           rulers = "confirm";
+           images = ("background_default", "menu_title");
+           animations = ("working");
+           screen_back = "main";
+           allow_force_reboot = 1;
+       };
+   };
+   ```
+4. Add 2 new entries in the `descriptions` dictionary:
+   ```
+   descriptions = {
+       factory-minimal = {
+           pos_x = 15;
+           pos_y = 100;
+           title = "Factory reset (except SD-card)";
+           text = "This will erase SOME data from your\n"
+               "phone's internal storage, including\n"
+               "settings of downloaded and preloaded\n"
+               "applications and system configuration.\n"
+               "Continue?";
+           style = "common";
+       };
+       factory-run-minimal = {
+           pos_x = 15;
+           pos_y = 100;
+           style = "common";
+           title = "Restoring SOME settings to factory default.";
+           text = "Please wait. Do not turn off.\n"
+               "(Hold power button for 3 seconds\n"
+               "to reboot the device. Not recommended.)";
+       };
+   };
+   ```
+5. Add an action to the `main` menu that switches to the `factory-minimal` screen:
+   ```
+   main = {
+       pos_x = 0;
+       pos_y = 100;
+       style = "common";
+       actions = ({
+           label = "Reboot system now";
+           screen_switch_to = "reboot";
+       },{
+           label = "Safe mode";
+           screen_switch_to = "safe";
+       },{
+           label = "Phone reinitialisation";
+           screen_switch_to = "factory";
+       },{
+           label = "Minimal phone reinitialisation";
+           screen_switch_to = "factory-minimal";
+       });
+   };
+   ```
 
-Then take the `factory` entry from the `menus` dictionary and adapt it.
+## Look-and-feel Options
 
-```
-menus = {
-    factory-minimal = {
-        pos_x = 0;
-        pos_y = 480;
-        style = "common";
-        item_default = 1;
-        actions = ({
-            label = "Yes";
-            screen_switch_to = "factory-run-minimal";
-            action_handler = "factory-reset-minimal";
-            exit_after_action = 1;
-        },{
-            label = "No";
-            screen_switch_to = "BACK";
-        });
-    };
-    // [...]
-};
-```
-
-Add two new entries in the `screens` dictionary.
-
-```
-screens = {
-    factory-minimal = {
-        style = "common";
-        menu = "factory-minimal";
-        description = "factory-minimal";
-        rulers = "confirm";
-        images = ("background_default", "menu_title");
-        screen_back = "main";
-    };
-    factory-run-minimal = {
-        style = "common";
-        description = "factory-run-minimal";
-        rulers = "confirm";
-        images = ("background_default", "menu_title");
-        animations = ("working");
-        screen_back = "main";
-        allow_force_reboot = 1;
-    };
-    // [...]
-};
-```
-
-and in the `descriptions` dictionary.
-
-```
-descriptions = {
-	factory-minimal = {
-		pos_x = 15;
-		pos_y = 100;
-		title = "Factory reset (except SD-card)";
-		text = "This will erase SOME data from your\n"
-			"phone's internal storage, including\n"
-			"settings of downloaded and preloaded\n"
-			"applications and system configuration.\n"
-			"Continue?";
-		style = "common";
-	};
-	factory-run-minimal = {
-		pos_x = 15;
-		pos_y = 100;
-		style = "common";
-		title = "Restoring SOME settings to factory default.";
-		text = "Please wait. Do not turn off.\n"
-			"(Hold power button for 3 seconds\n"
-			"to reboot the device. Not recommended.)";
-	};
-	// [...]
-};
-```
-
-Finally add an action to the `main` menu, that switches to the
-`factory-minimal` screen.
-
-```
-main = {
-    pos_x = 0;
-    pos_y = 100;
-    style = "common";
-    actions = ({
-        label = "Reboot system now";
-        screen_switch_to = "reboot";
-    },{
-        label = "Safe mode";
-        screen_switch_to = "safe";
-    },{
-        label = "Phone reinitialisation";
-        screen_switch_to = "factory";
-    },{
-        label = "Minimal phone reinitialisation";
-        screen_switch_to = "factory-minimal";
-    });
-};
-```
-
-## Look-and-feel related options.
-
-Below you can find the rest of the configuration file that is controls
-the look-and-feel of the system recovery menus.
+The following example shows the remaining parts of the configuration file, containing options that control the look-and-feel of the system recovery menus:
 
 ```
 colors = {
@@ -447,7 +435,7 @@ colors = {
 
 ruler_styles = {
     common = {
-    c_ruler = "ruler";
+        c_ruler = "ruler";
     };
 };
 
@@ -465,14 +453,14 @@ menu_styles = {
 
 screen_styles = {
     common = {
-    c_background = "background";
+        c_background = "background";
     };
 };
 
 description_styles = {
     common = {
-    c_title = "title";
-    c_text = "white";
+        c_title = "title";
+        c_text = "white";
     };
 };
 
