@@ -87,12 +87,8 @@ executed:
 
 > **Note** <br>
 > About the output files:
--   Compiled coffeescript output file name is `<file name>.js`. This
-    file is used when the project is packed to the WGT package file, but
-    the script tag's reference path must be changed manually.
--   Compiled less output file name is `<file name>.css`. This file is
-    used when the project is packed to the WGT package file, but the
-    script tag's reference path must be changed manually.
+>-   Compiled coffeescript output file name is `<file name>.js`. This file is used when the project is packed to the WGT package file, but the script tag's reference path must be changed manually.
+>-   Compiled less output file name is `<file name>.css`. This file is   used when the project is packed to the WGT package file, but the script tag's reference path must be changed manually.
 
 
 
@@ -122,10 +118,8 @@ You can build a Web application automatically or manually:
 
 > **Note** <br>
 > In the manual build mode:
--   Ensure that you have the latest build output before you run or debug
-    a project.
--   To remove a project build output, select `Project > Clean` in the
-    Tizen Studio menu.
+>-   Ensure that you have the latest build output before you run or debug    a project.
+>-   To remove a project build output, select `Project > Clean` in the    Tizen Studio menu.
 
 
 
