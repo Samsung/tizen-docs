@@ -345,6 +345,7 @@ To run the application on the emulator:
 
 1.  Launch an emulator instance in the [Emulator
     Manager](../../../tizen-studio/common-tools/emulator-manager.md):
+
     a.  In the Tizen Studio menu, select **Tools &gt; Emulator        Manager**.
 
       ![Emulator Manager](./media/emulator-icon.png)
@@ -369,6 +370,7 @@ To run the application on the emulator:
     in the Tizen Studio.
 
 3.  Run the application:
+
     a.  In the **Project Explorer** view, right-click the project and        select **Run As &gt; Tizen Web Application**.
 
       ![Running the application](./media/app-run-ww-widget.png)
@@ -406,11 +408,11 @@ To run the application on the emulator:
 To see the widget running on the home screen, add the widget
       there:
 
-  a.  Press the **Back** key (in the top right corner of the        emulator device) to return to the home screen (showing a          watch face).
+  *  Press the **Back** key (in the top right corner of the        emulator device) to return to the home screen (showing a          watch face).
 
-  b.  Swipe the home screen to the right and select **+**.
+  *  Swipe the home screen to the right and select **+**.
 
-  c.  Scroll down until you see your widget application, and          select it.
+  *  Scroll down until you see your widget application, and          select it.
 
   ![Adding to home        screen](./media/widget-run-add-home-wn.png)
 
@@ -432,6 +434,7 @@ Features](../../../tizen-studio/common-tools/emulator-features.md).
 To run the application on a target device:
 
 1.  Connect the wearable target device to your computer:
+
     a.  Define settings on the device:
       -   Go to **Settings &gt; Connections**, and switch
             on Bluetooth.
@@ -460,7 +463,7 @@ To run the application on a target device:
       ``` {.prettyprint}
         cd tizen-sdk/tools
         ./sdb connect <IP address of Gear S2>
-        ```
+      ```
 
   Use the IP address you noted before.
 
@@ -470,11 +473,11 @@ To run the application on a target device:
 
     c.  In the first attempt, the connection fails and the device asks        for user confirmation. To allow Gear to read log data, copy        files to and from your computer, and install the application        manually, click the accept mark.
 
-    ![Allow Gear to access        data](./media/remote-allow-gear-ww.png)
+     ![Allow Gear to access        data](./media/remote-allow-gear-ww.png)
 
     d.  In the **Device Manager**, confirm that the device is connected        (shown in the device list).
 
-    ![Device is connected](./media/remote-connected-ww.png)
+     ![Device is connected](./media/remote-connected-ww.png)
 
 2.  Generate an author certificate.
 
@@ -520,9 +523,8 @@ To run the application on a target device:
         icon](./media/run-new-config-wn.png)), define the
         configuration details, and launch the application by clicking
         `Run`.
-
-  >   ![Run Configurations
-        window](./media/run-configurations-w-widget.png)
+  >
+  > ![Run Configurations        window](./media/run-configurations-w-widget.png)
 
 
 
