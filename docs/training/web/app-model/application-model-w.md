@@ -93,62 +93,86 @@ A Web application package must conform to the following conventions:
   <th> Description </th>
 </tr>
 <tr>
-  <td> `config.xml` </td>
+  <td>
+
+  `config.xml` </td>
   <td> File </td>
   <td> Application configuration document </td>
 </tr>
 <tr>
-  <td>       `icon.gif`   </td>
+  <td>       
+
+  `icon.gif`   </td>
   <td> File  </td>
   <td> Application default icon </td>
 </tr>
 <tr>
-  <td>    `icon.ico`   </td>
+  <td>  
+
+    `icon.ico`   </td>
   <td> File  </td>
   <td> Application default icon </td>
 </tr>
 <tr>
-  <td>        `icon.jpg`    </td>
+  <td>     
+
+     `icon.jpg`    </td>
   <td> File  </td>
   <td> Application default icon </td>
 </tr>
 <tr>
-  <td>         `icon.png`     </td>
+  <td>        
+
+   `icon.png`     </td>
   <td> File  </td>
   <td> Application default icon </td>
 </tr>
 <tr>
-  <td>         `icon.svg`     </td>
+  <td>      
+
+     `icon.svg`     </td>
   <td> File  </td>
   <td> Application default icon </td>
 </tr>
 <tr>
-  <td>        `index.html`    </td>
+  <td>      
+
+    `index.html`    </td>
   <td> File  </td>
   <td>  Application default start file </td>
 </tr>
 <tr>
-  <td>     `index.htm`     </td>
+  <td>    
+
+   `index.htm`     </td>
   <td> File  </td>
   <td>  Application default start file </td>
 </tr>
 <tr>
-  <td>          `index.svg`      </td>
+  <td>      
+
+      `index.svg`      </td>
   <td> File  </td>
   <td>  Application default start file </td>
 </tr>
 <tr>
-  <td>             `index.xhtml`      </td>
+  <td>           
+
+    `index.xhtml`      </td>
   <td> File  </td>
   <td>  Application default start file </td>
 </tr>
 <tr>
-  <td>       `index.xht`     </td>
+  <td>      
+
+   `index.xht`     </td>
   <td> File  </td>
   <td>  Application default start file </td>
 </tr>
 <tr>
-  <td>        `locales`    </td>
+  <td>      
+
+    `locales`    </td>
   <td>  Folder   </td>
   <td>  Container for localized content </td>
 </tr>
@@ -176,14 +200,22 @@ A Web application package must conform to the following conventions:
   <th> Core XML file </th>
 </tr>
 <tr>
-  <td>`App`</td>
-  <td> `home/owner/apps_rw/<Package ID>` <br>
+  <td>
+
+  `App`</td>
+  <td>
+
+  `home/owner/apps_rw/<Package ID>` <br>
   (For example: <br>
     `home/owner/apps_rw/qik37po9ck`) </td>
-  <td> `<Package ID>.<Name>` <br>
+  <td>
+
+  `<Package ID>.<Name>` <br>
   (For example: <br>
     `qik37po9ck.Sample`) </td>
-  <td> `opt/share/packages/<Package ID>.xml` <br>
+  <td>
+
+  `opt/share/packages/<Package ID>.xml` <br>
   (For example: <br>
     `opt/share/packages/qik37po9ck.xml`)
   </td>
@@ -213,47 +245,65 @@ A hybrid application package must conform to the following conventions:
   <th>Description</th>
 </tr>
 <tr>
-  <td>`bin`</td>
+  <td>
+
+  `bin`</td>
   <td>Folder</td>
   <td>Native application executable binary</td>
 </tr>
 <tr>
-  <td>`data`</td>
+  <td>
+
+  `data`</td>
   <td>Folder</td>
   <td>Web or native application private data</td>
 </tr>
 <tr>
-  <td>`info`</td>
+  <td>
+
+  `info`</td>
   <td>Folder</td>
   <td>Native application metadata</td>
 </tr>
 <tr>
-  <td>`lib`</td>
+  <td>
+
+  `lib`</td>
   <td>Folder</td>
   <td>Native application libraries</td>
 </tr>
 <tr>
-  <td>    `res`</td>
+  <td>  
+
+    `res`</td>
   <td> Folder </td>
   <td> Native application resources or Web application content</td>
 </tr>
 <tr>
-  <td>    `res/wgt`</td>
+  <td>  
+
+    `res/wgt`</td>
   <td>Folder</td>
   <td> Web application project root</td>
 </tr>
 <tr>
-  <td>    `res/wgt/index.html`</td>
+  <td>   
+
+   `res/wgt/index.html`</td>
   <td> File </td>
   <td>  Default HTML file for the Web application</td>
 </tr>
 <tr>
-  <td>    `setting`   </td>
+  <td>   
+
+   `setting`   </td>
   <td>     Folder </td>
   <td>  Native application setting</td>
 </tr>
 <tr>
-  <td>    `shared`  </td>
+  <td>   
+
+   `shared`  </td>
   <td>   Folder  </td>
   <td> Native application shared resources</td>
 </tr>
@@ -282,31 +332,55 @@ A hybrid application package must conform to the following conventions:
   <th> Core XML file     </th>
 </tr>
 <tr>
-  <td> `App1`<br>(Web) </td>
-  <td> `home/owner/apps_rw/<Package ID>` <br>
+  <td>
+
+  `App1`<br>(Web) </td>
+  <td>
+
+  `home/owner/apps_rw/<Package ID>` <br>
   (For example:  <br>
     `home/owner/apps_rw/qik37po9ck`)   </td>
-  <td>`<Package ID>.<Name>`     <br>
+  <td>
+
+  `<Package ID>.<Name>`     <br>
    (For example:  <br>
      `qik37po9ck.Sample`)    </td>
-  <td>`opt/share/packages/<Package ID>.xml`        <br>
+  <td>
+
+  `opt/share/packages/<Package ID>.xml`        <br>
   (For example: <br>
     `opt/share/packages/qik37po9ck.xml`)  </td>
 </tr>
 <tr>
-  <td> `App2` <br> (Native)  </td>
-  <td>  Same as for `App1`</td>
-  <td> `<Package ID>.<ExecutableName1>`<br>
+  <td>
+
+  `App2` <br> (Native)  </td>
+  <td>
+
+   Same as for `App1`</td>
+  <td>
+
+   `<Package ID>.<ExecutableName1>`<br>
    (For example:<br>
      `qik37po9ck.Service`)  </td>
-  <td> Same as for `App1`</td>
+  <td>
+
+   Same as for `App1`</td>
 </tr>
 <tr>
-  <td> `App3` <br> (Native)   </td>
-  <td> Same as for `App1` </td>
-  <td> `<Package ID>.<ExecutableName2>` <br>
+  <td>
+
+  `App3` <br> (Native)   </td>
+  <td>
+
+  Same as for `App1` </td>
+  <td>
+
+  `<Package ID>.<ExecutableName2>` <br>
   (For example: <br>
      `qik37po9ck.Downloader`)     </td>
-  <td> Same as for `App1`</td>
+  <td>
+
+  Same as for `App1`</td>
 </tr>
 </table>
