@@ -618,8 +618,7 @@ The application can access the Internet using the [WebSocket](https://developer.
 
 The application can manipulate streams from cameras and microphones using the [getUserMedia](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#getusermedia) API.<br>
 **Privilege behavior:**<br>
-- In the local domain, if this privilege is defined, permission is granted. Otherwise, execution is blocked.
-<br>
+- In the local domain, if this privilege is defined, permission is granted. Otherwise, execution is blocked.<br>
 - In the remote domain, if this privilege is defined, pop-up user prompt is used. Otherwise, execution is blocked.
 </td>
 </tr>
