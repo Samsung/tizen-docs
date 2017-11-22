@@ -366,7 +366,7 @@ To run the application on the emulator:
 
       *  Swipe right and select your watch application.
 
-      The **Clock changed** message is displayed.
+         The **Clock changed** message is displayed.
 
       *  Press the **Back** key (in the top right corner of the   emulator device) multiple times, until the home screen with            your new watch face is shown.
 
@@ -474,7 +474,7 @@ To run the application on a target device:
         configuration details, and launch the application by clicking
         `Run`.
 >
->     ![Run Configurations        window](./media/run-configurations-ww-watch.png)
+>  ![Run Configurations window](./media/run-configurations-ww-watch.png)
 
 
 
@@ -697,7 +697,7 @@ To draw the watch UI:
     c.  Create the minute needle using the `renderMinuteNeedle()`
         method:
 
-        ``` {.prettyprint}
+      ``` {.prettyprint}
         function renderMinuteNeedle(minute) {
             'use strict';
 
@@ -708,7 +708,7 @@ To draw the watch UI:
             radius = clockRadius * 0.75;
             renderNeedle(angle, radius);
         }
-        ```
+      ```
 
 4.  Indicate the current time in the `main.js` file:
     1.  Determine the current time using the `new Date()` method.
@@ -794,8 +794,8 @@ Since Tizen 2.3.2, some devices introduce a high color mode for the
 ambient mode. In the high color mode, you can use more colors (usually,
 24-bit color) for drawing the ambient mode UI. To check whether the
 device supports the high color mode, use the following code:
-
-
+>
+>
 >  ``` <br>
 > bool support;
 > int ret;
