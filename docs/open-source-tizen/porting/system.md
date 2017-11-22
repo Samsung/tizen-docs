@@ -1,45 +1,49 @@
 # System
 
-## Partition and Filesystem
+You can implement various features relatesd to the System framework and the file system.
 
-### Tizen Partition Layout
+## Partition and File System
 
-The following description is an example of the Tizen partition layout. The product vendor can modify the sequence or partition layout for their devices as needed.
+The following description is an example of the Tizen partition layout. Product vendors can modify the sequence or partition layout for their devices, as needed.
 
-1. The `boot` partition includes the kernel image, boot-loader image, and modem image. Additionally, it can contain device driver modules.
-2. The `rootfs` partition is mounted on the root directory. It contains fundamental frameworks for Tizen and some general utilities for Linux.
-3. The `system-data` partition is mounted on the `/opt` directory and it includes the platform database and platform configurations.
-4. The `user` partition can be mounted on the `/opt/usr` directory separately. The partition includes applications and data installed by user.
-5. External storage are mounted on `/opt/media`.
-6. The image files (`rootfs.img`, `system-data.img`, and `user.img`) can be zipped for downloading, such as `<IMAGE_NAME>.tar.gz`.
+1. The `boot` partition includes the kernel image, boot-loader image, and modem image. It can also contain device driver modules.
+1. The `rootfs` partition is mounted on the root directory. It contains the fundamental frameworks for Tizen and some general utilities for Linux.
+1. The `system-data` partition is mounted on the `/opt` directory. It contains the platform database and platform configurations.
+1. The `user` partition can be mounted on the `/opt/usr` directory separately. It contains user-installed applications.
+1. External storages are mounted on `/opt/media`.
+1. The partition image files (`rootfs.img`, `system-data.img`, and `user.img`) can be zipped for downloading, such as `<IMAGE_NAME>.tar.gz`.
 
-According to the partition layout, the `/etc/fstab` directory must be modified or the `systemd` mount units must be added properly. For the purpose, the `fstab` file or specific system mount unit files for the device must be added in the `system-plugin` git. The following example shows the `fstab` file.
+The `/etc/fstab` directory must be modified or the `systemd` mount units must be added based on the partition layout. Consequently, the `fstab` file or system mount unit files for specific devices must be added to the `system-plugin` Git repository. The following example shows an `fstab` file:
 
 ```
 /dev/root         /               ext4    defaults,noatime 0      1
 LABEL=system-data /opt            ext4    defaults,noatime 0      2
 LABEL=user        /opt/usr        ext4    defaults,noatime 0      3
-
 ```
 
-### Supported Filesystems in Tizen
+### Supported File Systems
 
-Filesystems that Tizen supports Extended 4 (Ext 4) file-system, which is configured as the default file-system. The Tizen kernel has to be compiled to enable support for the other file systems like JFS, XFS, BTRFS, and Reiserfs. The following configuration option must be enabled in the kernel configuration file. 
+Tizen supports the Extended 4 (Ext 4) file system as the default file system.
+
+To enable support for other file systems, such as JFS, XFS, BTRFS, and Reiserfs, the Tizen kernel must be modified and compiled. The following configuration options must be enabled in the kernel configuration file:
 
 - `CONFIG_EXT4_FS=y`
 - `CONFIG_EXT4_FS_XATTR=y`
 - `CONFIG_EXT4_USE_FOR_EXT23=y`
 - `CONFIG_EXT4_FS_SECURITY=y`
 
-### File-system Hierarchy Standard in Tizen
+### File System Hierarchy
 
-The Tizen directory hierarchy intends to follow the FHS as possible for compatibility as a member of Linux world. However, Tizen uses the `/opt` directory for Tizen specific purposes Tizen recommends that whole RW data places to the `/opt` directory.
+The Tizen directory hierarchy intends to follow the File System Hierarchy Standard (FHS) as much as possible, for compatibility with the Linux world. However, Tizen uses the `/opt` directory for Tizen-specific purposes: place all RW data in the `/opt` directory.
 
-![FSH.png](media/467px-FSH.png)
+**Figure: File system hierarchy**
 
-Directory macros are provided for accessing Tizen specific directory by Tizen Platform Configuration Metafile. The following table lists the example macros.
+![File system hierarchy](media/467px-fsh.png)
 
-| Directory macros | Real path    |
+Directory macros for accessing the Tizen-specific directories are provided in the Tizen platform configuration metafile. The following table lists some example macros.
+
+**Table: Example directory macros**
+| Directory macro | Real path    |
 | ---------------- | ------------ |
 | `TZ_SYS_DATA`    | `/opt/data`  |
 | `TZ_SYS_SHARE`   | `/opt/share` |
@@ -47,113 +51,106 @@ Directory macros are provided for accessing Tizen specific directory by Tizen Pl
 
 ## System Framework
 
-The System framework module abstracts low level system functions and manages the Tizen system.
+The System framework module abstracts low-level system functions and manages the Tizen system:
 
-- `systemd` requirements for system and service managementLinux Kernel >= 3.4 , Linux Kernel >= 3.8 for Smack support`CONFIG_CGROUPS`, `CONFIG_TIMERFD`, `CONFIG_SIGNALFD`, `CONFIG_EPOLL`, ...
-- Basic resource requirements (such as cpu, memory) usage management
+- `systemd` requirements for system and service management
+    - Linux Kernel >= 3.4 , Linux Kernel >= 3.8 for Smack support
+    - `CONFIG_CGROUPS`, `CONFIG_TIMERFD`, `CONFIG_SIGNALFD`, `CONFIG_EPOLL`, ...
+- Basic resource requirements (such as CPU, memory) usage management
   - Linux Kernel >= 3.10 for `VMPRESSURE`, Linux Kernel >= 3.8 for `MEMCG SWAP`
   - `CONFIG_CGROUPS`, `CONFIG_CGROUP_SCHED`, `CONFIG_MEMCG`, `CONFIG_MEMCG_SWAP`, ...
-- `deviced` requirements for device and power managementDevice HAL layer porting
-- dlog requirements
-  - Selecting a proper backend for target environment and enable appropriate kernel feature
-    1. Additional KMSG Patch for Multiple Kmsg Backend
-    2. Android Logger Driver for Android Log Backend
-    3. User Space Logger Dameon
+- `deviced` requirements for device and power management
+    - Device HAL layer porting
+- dlog requirements  
+Select a backend for the target environment and enable the appropriate kernel feature:
+    - Additional KMSG patch for multiple Kmsg backend
+    - Android&trade; logger driver for Android log backend
+    - Userspace logger daemon
 
-It is recommended to use Linux Kernel 3.10 or above.
+Using the Linux kernel 3.10 or above is recommended.
 
-![SystemFW.png](media/800px-SystemFW.png)
+**Figure: System framework**
 
-#### systemd
+![System framework](media/800px-systemfw.png)
 
-[systemd](https://wiki.tizen.org/index.php?title=Systemd&action=edit&redlink=1) (ver.219), is system and service manager for Tizen system. Basically, `systemd` provides a lot of functionality such as parallesized service execution, socket and D-Bus activation for starting services and daemon, on-demand starting of deamons, managing the service processes as a group using Linux cgroup, supporting automount points, snapshotting and restoring of services.
+### systemd
 
-The core of `systemd` manages all units, such as service, socket, and mount. It stores all log data. When developers add a new service daemon, they need to provide proper system units and unit dependency.
+`systemd` (ver.219) is a system and service manager for the Tizen system. It provides functionalities, such as parallelized service execution, socket and dbus activation for starting services and daemons, on-demand daemon start-up, service process management using Linux `cgroup`, automount point support, and service snapshot and restore.
 
-`systemd` requires to enable the `cgroup` and `autofs` options in the [Linux](https://wiki.tizen.org/Linux) Kernel configuration. It also depends on dbus and some libraries.
+The `systemd` core manages all units, such as service, socket, and mount. It stores all log data. When you add a new service daemon, you need to provide the proper system units and unit dependencies.
 
-#### resourced
+To use `systemd`, you must enable the `cgroup` and `autofs` options in the [Linux](https://wiki.tizen.org/Linux) kernel configuration. It also depends on dbus and some libraries.
 
-`resourced` is a daemon managing system resources such as memory and cpu.
+### resourced
 
-- To use most of the resourced functionality, you have to enable kernel feature about cgroup
+`resourced` is a daemon that manages system resources, such as memory and CPU.
+
+To use most of the `resourced` functionalities, you must enable the following `cgroup` kernel features:
+
   - `CONFIG_CGROUPS`: Base feature
   - `CONFIG_CGROUP_SCHED`: Controls the CPU share of applications
-  - `CONFIG_MEMCG`: Selects the victim in the low memory situation
+  - `CONFIG_MEMCG`: Selects the victim in low-memory situations
   - `CONFIG_FREEZER`: Freezes background (and idle) applications
-  - `CONFIG_MEMCG_SWAP`, `CONFIG_MEMCG_SWAP_ENABLED`, `CONFIG_ZRAM`, `CONFIG_ZSMALLOC`: Saves memory by compressing
+  - `CONFIG_MEMCG_SWAP`, `CONFIG_MEMCG_SWAP_ENABLED`, `CONFIG_ZRAM`, `CONFIG_ZSMALLOC`: Saves memory through compression
 
 > **Note**
-> For using resourced freezer feature, you need to install the freezer plugin by enabling `CONFIG_FREEZER`.
+>
+> To use the `resourced` freezer feature, you must install the freezer plugin by enabling `CONFIG_FREEZER`.
 
-#### deviced
+### deviced
 
-The `deviced` is a daemon which handles the device events, such as the battery level and plug and play device status and provides the interfaces to manage devices such as power, display, and external storages. Each functionality may require HAL layer if your BSP does not provide the Linux kernel standard interface.
+`deviced` is a daemon that handles device events, such as the battery level and plug-and-play device status, and provides interfaces to manage devices, such as power, display, and external storages. If your BSP does not provide the Linux kernel-standard interface, these functionalities can require a HAL layer:
 
 - Managing the LCD backlight state (on/off/dim)
-- Managing the CPU sleep state and handling the requests lock CPU not to sleep
-- Monitoring the external devices, such as USB cable, earjack, and charger
+- Managing the CPU sleep state and handling requests to lock the CPU from sleeping
+- Monitoring external devices, such as USB cable, earjack, and charger
 - Monitoring the battery level
-- Managing the external storages, such as SD card and USB storages
-- Playing and handling the vibrator
-- Setting USB configurations to connect to the host PC
+- Managing external storages, such as SD card and USB storages
+- Controlling the vibrator
+- Setting the USB configuration for connecting to a host computer
 - Powering off the LED, IR, and other features
 - Using the device HAL to handle devices and get events
 
-#### dlog
+### dlog
 
-Tizen provides 3 backends for logging system:
+Tizen provides 3 logging system backends:
 
-- Multiple `kmsg` backend
+- Multiple `kmsg` backend  
+  Requires a kernel patch. For more information, see https://lwn.net/Articles/677047/.
+- Android-logger backend  
+  Utilizes the Android logger driver.
+- User logger backend  
+  No requirement (you do not have to enable anything from dlog)
 
-
-
-
-- Android-logger backend
-
-
-
-
-- User logger backend
-
-
-
-### Porting Smart Development Bridge (SDB)
+### Porting the Smart Development Bridge (SDB)
 
 SDB is a device management tool used for remote shell command, file transfer, controlling device log out, and USB debugging.
 
-- Kernel driver is necessary to use sdb. The following are examples of the kernel drivers:
+- To use SDB, you must install a kernel driver.  
+    For example:  
+    - [Gadget Driver for SLP based on Android](https://review.tizen.org/git/?p=profile/mobile/platform/kernel/linux-3.10-sc7730.git;a=blob;f=drivers/usb/gadget/slp.c;h=c0d935f5362cc5ae03807d3533fe84df88e8c354;hb=refs/heads/accepted/tizen_mobile)
+    - [Gadget Driver for Samsung SDB (based on Android ADB)](https://review.tizen.org/git/?p=profile/mobile/platform/kernel/linux-3.10-sc7730.git;a=blob;f=drivers/usb/gadget/f_sdb.c;h=7f334ba01139d6bcbe7668bd84582e078d563638;hb=refs/heads/accepted/tizen_mobile)
+- To recognize the target as a Tizen device, the SDB interface on the target device must have the following information in the USB interface descriptor:
+    ```
+    Class: 0xff
+    SubClass: 0x20
+    Protocol: 0x02
+    ```
+- When using multi-configuration, SDB must be located in the first configuration on the target multi-configuration system. The SDB client of the host PC (Linux PC) selects the first configuration.
+- To recognize the USB cable connection, you must port the External Connector Class (`extcon`) to the kernel. If `extcon` cannot be ported, you can enable SDB using the following shell command:
+    ```bash
+    /usr/bin/direct_set_debug.sh --sdb-set
+    ```
 
+### Porting the Device HAL Interface
 
-
-
-- The USB interface descriptor of SDB interface on the target device must have the following information to recognize the target as a kind of Tizen device.
-
-```
-Class: 0xff
-SubClass: 0x20
-Protocol: 0x02
-
-```
-
-- If multi-configuration is used, the SDB client of the host PC (Linux PC) selects the first configuration. SDB must be located on the first configuration on the target with multi-configuration system.
-
-
-- External Connector Class (`extcon`) needs to be ported to the kernel to recognize the USB cable connection. If `extcon` cannot be ported, the following shell command can be used to enable SDB.
-
-```
-/usr/bin/direct_set_debug.sh --sdb-set
-```
-
-### Porting Device HAL Interface
-
-The device HAL is applied for the hardware independent platform. The device HAL consists of libraries corresponding to hardware, such as display, external connector, battery, LED, and IR. The HAL is used by `deviced` to control hardware and manages the events of device state changes. `deviced` (device daemon) opens the implemented libraries and uses the APIs to control the devices.
+The device HAL is applied for the hardware-independent platform. The device HAL consists of libraries corresponding to hardware, such as display, external connector, battery, LED, and IR. The HAL is used by `deviced` (device daemon) to control hardware, and manages the events of device state changes. `deviced` opens the implemented libraries and uses the APIs to control the devices.
 
 OEM developers must implement the API defined in the header files of the `libdevice-node` package and compile their libraries (`.so` file) for their devices.
 
-The following code snippet shows the device HAL structure.
+The following code snippet shows the device HAL structure:
 
-```
+```c
 #define MAKE_TAG_CONSTANT(A,B,C,D) (((A) << 24) | ((B) << 16) | ((C) << 8) | (D))
 #define HARDWARE_INFO_TAG MAKE_TAG_CONSTANT('T','H','I','T')
 
@@ -185,16 +182,15 @@ struct hw_common {
     /* Indicate to this device information structure */
     struct hw_info *info;
 };
-
 ```
 
 #### Battery HAL
 
-The battery HAL provides functions to get the battery status. The HAL interface is defined in the `hw/battery.h` header file of the `libdevice-node` library, and the `pkg-config` `device-node` must be used to use the HAL interface.
+The battery HAL provides functions for getting the battery status. The HAL interface is defined in the `hw/battery.h` header file of the `libdevice-node` library, and the `pkg-config` `device-node` must be used to use the HAL interface.
 
-The following code snippet shows the battery HAL interface.
+The following code snippet shows the battery HAL interface:
 
-```
+```c
 /*
    Device ID
 */
@@ -219,7 +215,7 @@ struct battery_info {
     int present; /* 0 or 1 */
     int capacity; /* 0 ~ 100 */
     int current_now; /* Current (uA). Positive value if power source is connected, negative value if power source is not connected */
-    int current_average; /* Average curretn (uA). Positive value if power source is connected, negative value if power source is not connected */
+    int current_average; /* Average current (uA). Positive value if power source is connected, negative value if power source is not connected */
 };
 
 typedef void (*BatteryUpdated)(struct battery_info *info, void *data);
@@ -234,25 +230,25 @@ struct battery_device {
     /* Get current states */
     int (*get_current_state)(BatteryUpdated updated_cb, void *data);
 };
-
 ```
 
 The following table lists the battery HAL functions.
 
-| Function prototype                       | Description                              |           |
-| ---------------------------------------- | ---------------------------------------- | --------- |
-| `int (*register_changed_event)(BatteryUpdated updated_cb, void *data);` | The function adds callback function which is called when battery status is changed. | Mandatory |
-| `void (*unregister_changed_event)(BatteryUpdated updated_cb);` | The function removes the callback function added for the battery status event. | Mandatory |
-| `int (*get_current_state)(BatteryUpdated updated_cb, void *data);` | The function calls the function provided as the first parameter. The battery information is delivered to the function parameter. | Mandatory |
+**Table: Battery HAL functions**
 
-The following code snippet shows an example of the battery HAL.
+| Function prototype                       | Description                              | Mandatory |
+| ---------------------------------------- | ---------------------------------------- | ------------ |
+| `int (*register_changed_event)(BatteryUpdated updated_cb, void *data);` | Adds a callback function which is called when battery status changes. | Yes |
+| `void (*unregister_changed_event)(BatteryUpdated updated_cb);` | Removes the callback function added for the battery status event. | Yes |
+| `int (*get_current_state)(BatteryUpdated updated_cb, void *data);` | Calls the function specified in the first parameter. The battery information is delivered to the function parameter. | Yes |
 
-```
+The following code snippet shows an example of the battery HAL:
+
+```c
 #define BATTERY_ROOT_PATH "/sys/class/power_supply"
 
 static int
-get_power_source(char **src)
-{
+get_power_source(char **src) {
     int ret, val;
     ret = sys_get_int(BATTERY_ROOT_PATH"/"POWER_SOURCE_AC"/online", &val);
     if (ret >= 0 && val > 0) {
@@ -281,8 +277,7 @@ get_power_source(char **src)
 }
 
 static int
-battery_get_current_state(BatteryUpdated updated_cb, void *data)
-{
+battery_get_current_state(BatteryUpdated updated_cb, void *data) {
     int fd;
     struct battery_info info;
     char status[32];
@@ -316,8 +311,7 @@ battery_get_current_state(BatteryUpdated updated_cb, void *data)
 }
 
 static int
-battery_open(struct hw_info *info, const char *id, struct hw_common **common)
-{
+battery_open(struct hw_info *info, const char *id, struct hw_common **common) {
     struct battery_device *battery_dev;
     battery_dev = calloc(1, sizeof(struct battery_device));
 
@@ -332,8 +326,7 @@ battery_open(struct hw_info *info, const char *id, struct hw_common **common)
 }
 
 static int
-battery_close(struct hw_common *common)
-{
+battery_close(struct hw_common *common) {
     free(common);
 
     return 0;
@@ -348,16 +341,15 @@ HARDWARE_MODULE_STRUCTURE = {
     .open = battery_open,
     .close = battery_close,
 };
-
 ```
 
 #### Display HAL
 
-The display HAL provides functions to control the display brightness. The HAL interface is defined in the `hw/display.h` header file of the `libdevice-node` library, and the `pkg-config` `device-node` must be used to use the HAL interface.
+The display HAL provides functions for controlling the display brightness. The HAL interface is defined in the `hw/display.h` header file of the `libdevice-node` library, and the `pkg-config` `device-node` must be used to use the HAL interface.
 
-The following code snippet shows the display HAL interface.
+The following code snippet shows the display HAL interface:
 
-```
+```c
 /*
    Device ID
 */
@@ -376,27 +368,27 @@ struct display_device {
     int (*get_brightness)(int *brightness);
     int (*set_brightness)(int brightness);
 };
-
 ```
 
 The following table lists the display HAL functions.
 
-| Function prototype                       | Description                              |           |
+**Table: Display HAL functions**
+
+| Function prototype                       | Description                              | Mandatory |
 | ---------------------------------------- | ---------------------------------------- | --------- |
-| `int (*get_max_brightness)(int *brightness)` | The function returns the maximum brightness value the display driver supports. | Mandatory |
-| `int (*get_brightness)(int *brightness)` | The function returns the current brightness value. | Mandatory |
-| `int (*set_brightness)(int brightness)`  | The function sets the brightness value.  | Mandatory |
+| `int (*get_max_brightness)(int *brightness)` | Returns the maximum brightness value the display driver supports. | Yes |
+| `int (*get_brightness)(int *brightness)` | Returns the current brightness value. | Yes |
+| `int (*set_brightness)(int brightness)`  | Sets the brightness value.  | Yes |
 
-The following code snippet shows an example of the display HAL.
+The following code snippet shows an example of the display HAL:
 
-```
+```c
 #ifndef BACKLIGHT_PATH
 #define BACKLIGHT_PATH "/sys/class/backlight/panel"
 #endif
 
 static int
-display_get_max_brightness(int *val)
-{
+display_get_max_brightness(int *val) {
     static int max = -1;
     char buf[BUF_MAX];
     int fd;
@@ -412,8 +404,7 @@ display_get_max_brightness(int *val)
 }
 
 static int
-display_get_brightness(int *brightness)
-{
+display_get_brightness(int *brightness) {
     int fd;
     char buf[BUF_MAX];
     fd = open(BACKLIGHT_PATH"/brightness", O_RDONLY);
@@ -425,8 +416,7 @@ display_get_brightness(int *brightness)
 }
 
 static int
-display_set_brightness(int brightness)
-{
+display_set_brightness(int brightness) {
     int max;
     char buf[BUF_MAX];
     display_get_max_brightness(&max);
@@ -442,8 +432,7 @@ display_set_brightness(int brightness)
 
 static int
 display_open(struct hw_info *info,
-        const char *id, struct hw_common **common)
-{
+        const char *id, struct hw_common **common) {
     struct display_device *display_dev;
 
     if (!info || !common)
@@ -464,8 +453,7 @@ display_open(struct hw_info *info,
 }
 
 static int
-display_close(struct hw_common *common)
-{
+display_close(struct hw_common *common) {
     if (!common)
         return -EINVAL;
 
@@ -483,16 +471,15 @@ HARDWARE_MODULE_STRUCTURE = {
     .open = display_open,
     .close = display_close,
 };
-
 ```
 
 #### External Connector HAL
 
-The external connector HAL provides functions to get the external connector device status. The HAL interface is defined in the `hw/external_connection.h` header file of the `libdevice-node` library, and the `pkg-config` `device-node` needs to be used to use the HAL interface.
+The external connector HAL provides functions for getting the external connector device status. The HAL interface is defined in the `hw/external_connection.h` header file of the `libdevice-node` library, and the `pkg-config` `device-node` needs to be used to use the HAL interface.
 
-The following code snippet shows the interface of the external connector HAL.
+The following code snippet shows the interface of the external connector HAL:
 
-```
+```c
 /*
    Device ID
 */
@@ -529,20 +516,21 @@ struct external_connection_device {
     /* Get current states */
     int (*get_current_state)(ConnectionUpdated updated_cb, void *data);
 };
-
 ```
 
 The following table lists the external connector HAL functions.
 
-| Function prototype                       | Description                              |           |
+**Table: External connector HAL functions**
+
+| Function prototype                       | Description                              | Mandatory |
 | ---------------------------------------- | ---------------------------------------- | --------- |
-| `int (*register_changed_event)(ConnectionUpdated updated_cb, void *data);` | The function adds callback function which is called when the external connector status is changed. | Mandatory |
-| `void (*unregister_changed_event)(ConnectionUpdated updated_cb);` | The function removes the callback function added for the external connector status event. | Mandatory |
-| `int (*get_current_state)(ConnectionUpdated updated_cb, void *data);` | The function calls the function provided as the first parameter. The external connector information is delivered to the function parameter. | Mandatory |
+| `int (*register_changed_event)(ConnectionUpdated updated_cb, void *data);` | Adds a callback function which is called when the external connector status changes. | Yes |
+| `void (*unregister_changed_event)(ConnectionUpdated updated_cb);` | Removes the callback function added for the external connector status event. | Yes |
+| `int (*get_current_state)(ConnectionUpdated updated_cb, void *data);` | Calls the function specified in the first parameter. The external connector information is delivered to the function parameter. | Yes |
 
-The following code snippet shows an example of the external connector HAL.
+The following code snippet shows an example of the external connector HAL:
 
-```
+```c
 #define SWITCH_ROOT_PATH "/sys/devices/virtual/switch"
 
 static struct switch_device {
@@ -556,8 +544,7 @@ static struct switch_device {
 };
 
 static int
-read_switch_state(char *path)
-{
+read_switch_state(char *path) {
     char node[128], val[8];
     FILE *fp;
 
@@ -570,13 +557,12 @@ read_switch_state(char *path)
 }
 
 static int
-external_connection_get_current_state(ConnectionUpdated updated_cb, void *data)
-{
+external_connection_get_current_state(ConnectionUpdated updated_cb, void *data) {
     int ret, i;
     struct connection_info info;
     char buf[8];
 
-    for (i = 0 ; i < ARRAY_SIZE(switch_devices) ; i++) {
+    for (i = 0; i < ARRAY_SIZE(switch_devices); i++) {
         ret = read_switch_state(switch_devices[i].name);
         info.name = switch_devices[i].type;
         snprintf(buf, sizeof(buf), "%d", ret);
@@ -588,8 +574,7 @@ external_connection_get_current_state(ConnectionUpdated updated_cb, void *data)
 }
 
 static int
-read_switch_state(char *path)
-{
+read_switch_state(char *path) {
     char node[128], val[8];
     FILE *fp;
 
@@ -602,8 +587,7 @@ read_switch_state(char *path)
 }
 
 static int
-external_connection_close(struct hw_common *common)
-{
+external_connection_close(struct hw_common *common) {
     free(common);
 
     return 0;
@@ -618,16 +602,15 @@ HARDWARE_MODULE_STRUCTURE = {
     .open = external_connection_open,
     .close = external_connection_close,
 };
-
 ```
 
 #### LED HAL
 
-The LED HAL provides functions to control LED lights. The HAL interface is defined in the `hw/led.h` header file of the `libdevice-node` library, and the `pkg-config` `device-node` must be used to use the HAL interface.
+The LED HAL provides functions for controlling LEDs. The HAL interface is defined in the `hw/led.h` header file of the `libdevice-node` library, and the `pkg-config` `device-node` must be used to use the HAL interface.
 
-The following example shows the interface of the LED HAL.
+The following code snippet shows the interface of the LED HAL:
 
-```
+```c
 /*
    Device ID
 */
@@ -672,25 +655,25 @@ struct led_device {
 
     int (*set_state)(struct led_state *state);
 };
-
 ```
 
 The following table lists the LED HAL functions.
 
-| Function prototype                       | Description                              |           |
-| ---------------------------------------- | ---------------------------------------- | --------- |
-| `int (*set_state)(struct led_state *state);` | The function sets LED play style and plays LED lights. | Mandatory |
+**Table: LED HAL functions**
 
-The following code snippet shows an example of the LED HAL.
+| Function prototype                       | Description                              | Mandatory |
+| ---------------------------------------- | ---------------------------------------- | ----------- |
+| `int (*set_state)(struct led_state *state);` | Sets the LED play style and plays LED lights. | Yes |
 
-```
+The following code snippet shows an example of the LED HAL:
+
+```c
 #ifndef CAMERA_BACK_PATH
 #define CAMERA_BACK_PATH "/sys/class/leds/torch-sec1"
 #endif
 
 static int
-camera_back_set_state(struct led_state *state)
-{
+camera_back_set_state(struct led_state *state) {
     static int max = -1;
     int brt;
     char buf[BUF_MAX];
@@ -736,13 +719,12 @@ struct led_device_list {
 };
 
 static int
-led_open(struct hw_info *info, const char *id, struct hw_common **common)
-{
+led_open(struct hw_info *info, const char *id, struct hw_common **common) {
     int i, list_len, id_len;
 
     list_len = ARRAY_SIZE(led_list);
     id_len = strlen(id) + 1;
-    for (i = 0 ; i < list_len ; i++) {
+    for (i = 0; i < list_len; i++) {
         if (strncmp(id, led_list[i].id, id_len))
             continue;
         if (!led_list[i].operations)
@@ -767,8 +749,7 @@ out:
 }
 
 static int
-led_close(struct hw_common *common)
-{
+led_close(struct hw_common *common) {
     free(common);
 
     return 0;
@@ -783,16 +764,15 @@ HARDWARE_MODULE_STRUCTURE = {
     .open = led_open,
     .close = led_close,
 };
-
 ```
 
 #### IR HAL
 
-The IR HAL provides functions to control IR transmission. The HAL interface is defined in the `hw/ir.h` header file of the `libdevice-node` library, and the `pkg-config` `device-node` must be used to use the HAL interface.
+The IR HAL provides functions for controlling IR transmission. The HAL interface is defined in the `hw/ir.h` header file of the `libdevice-node` library, and the `pkg-config` `device-node` must be used to use the HAL interface.
 
-The following example shows the interface of the IR HAL.
+The following code snippet shows the interface of the IR HAL:
 
-```
+```c
 /*
    Device ID
 */
@@ -810,32 +790,31 @@ struct ir_device {
     int (*is_available)(bool *available);
     int (*transmit)(int *frequency_pattern, int size);
 };
-
 ```
 
 The following table lists the IR HAL functions.
 
-| Function prototype                       | Description                              |           |
+**Table: IR HAL functions**
+
+| Function prototype                       | Description                              | Mandatory |
 | ---------------------------------------- | ---------------------------------------- | --------- |
-| `int (*is_available)(bool *available);`  | The function returns whether the target device supports IR transmission. | Mandatory |
-| `int (*transmit)(int *frequency_pattern, int size);` | The function transmits IR with frequency pattern and its size. | Mandatory |
+| `int (*is_available)(bool *available);`  | Returns whether the target device supports IR transmission. | Yes |
+| `int (*transmit)(int *frequency_pattern, int size);` | Transmits IR with frequency pattern and its size. | Yes |
 
-The following code snippet shows an example of the IR HAL.
+The following code snippet shows an example of the IR HAL:
 
-```
+```c
 #define IRLED_CONTROL_PATH "/sys/class/ir/ir_send"
 
 static int
-ir_is_available(bool *available)
-{
+ir_is_available(bool *available) {
     *available = true;
 
     return 0;
 }
 
 static int
-ir_transmit(int *frequency_pattern, int size)
-{
+ir_transmit(int *frequency_pattern, int size) {
     int i, ret;
 
     for (i = 0; i < size; i++) {
@@ -849,8 +828,7 @@ ir_transmit(int *frequency_pattern, int size)
 }
 
 static int
-ir_open(struct hw_info *info, const char *id, struct hw_common **common)
-{
+ir_open(struct hw_info *info, const char *id, struct hw_common **common) {
     struct ir_device *ir_dev;
 
     ir_dev = calloc(1, sizeof(struct ir_device));
@@ -865,8 +843,7 @@ ir_open(struct hw_info *info, const char *id, struct hw_common **common)
 }
 
 static int
-ir_close(struct hw_common *common)
-{
+ir_close(struct hw_common *common) {
     free(common);
 
     return 0;
@@ -881,16 +858,15 @@ HARDWARE_MODULE_STRUCTURE = {
     .open = ir_open,
     .close = ir_close,
 };
-
 ```
 
 #### Touchscreen HAL
 
-The touchscreen HAL provides functions to on/off touchscreen. The HAL interface is defined in the `hw/touchscreenf.h` header file of the `libdevice-node` library, and the `pkg-config` `device-node` must be used to use the HAL interface.
+The touchscreen HAL provides functions for switching the touchscreen on and off. The HAL interface is defined in the `hw/touchscreenf.h` header file of the `libdevice-node` library, and the `pkg-config` `device-node` must be used to use the HAL interface.
 
-The following example shows the interface of the touchscreen HAL.
+The following code snippet shows the interface of the touchscreen HAL:
 
-```
+```c
 /*
    Device ID
 */
@@ -913,26 +889,26 @@ struct touchscreen_device {
     int (*get_state)(enum touchscreen_state *state);
     int (*set_state)(enum touchscreen_state state);
 };
-
 ```
 
 The following table lists the touchscreen HAL functions.
 
-| Function prototype                       | Description                              |           |
+**Table: Touchscreen HAL functions**
+
+| Function prototype                       | Description                              | Mandatory |
 | ---------------------------------------- | ---------------------------------------- | --------- |
-| `int (*get_state)(enum touchscreen_state *state);` | The function returns whether the touchscreen is enabled. | Mandatory |
-| `int (*set_state)(enum touchscreen_state state);` | The function enables and disables the touchscreen. | Mandatory |
+| `int (*get_state)(enum touchscreen_state *state);` | Returns whether the touchscreen is enabled. | Yes |
+| `int (*set_state)(enum touchscreen_state state);` | Enables and disables the touchscreen. | Yes |
 
-The following code snippet shows an example of the touchscreen HAL.
+The following code snippet shows an example of the touchscreen HAL:
 
-```
+```c
 #define TURNON_TOUCHSCREEN 1
 #define TURNOFF_TOUCHSCREEN 0
 #define TOUCHSCREEN_PATH "/sys/class/input/touchscreen/enable"
 
 static int
-touchscreen_get_state(enum touchscreen_state *state)
-{
+touchscreen_get_state(enum touchscreen_state *state) {
     int val;
     int fd;
     char buf[BUF_MAX];
@@ -957,8 +933,7 @@ touchscreen_get_state(enum touchscreen_state *state)
 }
 
 static int
-touchscreen_set_state(enum touchscreen_state state)
-{
+touchscreen_set_state(enum touchscreen_state state) {
     int val;
     char buf[BUF_MAX];
 
@@ -982,8 +957,7 @@ touchscreen_set_state(enum touchscreen_state state)
 }
 
 static int
-touchscreen_open(struct hw_info *info, const char *id, struct hw_common **common)
-{
+touchscreen_open(struct hw_info *info, const char *id, struct hw_common **common) {
     struct touchscreen_device *touchscreen_dev;
 
     touchscreen_dev = calloc(1, sizeof(struct touchscreen_device));
@@ -998,8 +972,7 @@ touchscreen_open(struct hw_info *info, const char *id, struct hw_common **common
 }
 
 static int
-touchscreen_close(struct hw_common *common)
-{
+touchscreen_close(struct hw_common *common) {
     free(common);
 
     return 0;
@@ -1014,16 +987,13 @@ HARDWARE_MODULE_STRUCTURE = {
     .open = touchscreen_open,
     .close = touchscreen_close,
 };
-
 ```
 
 ## Sensor Framework
 
-Sensor devices are used widely in mobile devices to enhance user experience. Most modern mobile OSs have a framework which manages hardware and virtual sensors on the platform and provides convenient API to the application.
+Sensor devices are used widely in mobile devices to enhance the user experience. Most modern mobile operating systems have a framework which manages hardware and virtual sensors on the platform and provides convenient APIs to the application.
 
-#### Types of Sensors
-
-Sensors are classified as hardware and virtual sensors. Tizen supports individual HAL for the following sensors:
+Sensors can be classified into hardware and virtual sensors. Tizen supports individual HALs for the following sensors:
 
 - Hardware sensors
   - Accelerometer
@@ -1053,46 +1023,40 @@ Sensors are classified as hardware and virtual sensors. Tizen supports individua
   - Gyroscope rotation vector sensor
   - Geomagnetic rotation vector sensor
 
-#### Architectural Overview
+The sensor framework provides a sensor server for managing sensor HALs and a medium through which client applications are connected to the sensor handler to exchange data.
 
-The sensor framework provides a sensor server for managing sensor HALs and a medium through which the client applications are connected to the sensor handler to exchange data.
+**Figure: Sensor framework architecture**
 
-![Sensor Framework Architecture](media/678px-Tizen_3_sensorfw.png)
+![Sensor framework architecture](media/678px-tizen-3-sensorfw.png)
 
-The sensor HALs retrieve data from sensor hardware and enable the client applications to use the data form specific requirements.
+The sensor HALs retrieve data from sensor hardware and enable client applications to use the data for specific requirements.
 
-#### Components of the Sensor Framework
+The Sensor framework consists of the following components:
 
-- Sensor Client Library
+- Sensor client library  
+Any application that wants to access the sensor server and communicate with it must use the sensor API library. Using the Sensor API, the application can control sensors and receive sensor events from the sensor server. By using the sensor API, any application or middleware framework can have the sensor client library executing within its own process context.
+- Sensor server  
+The sensor server is a daemon which communicates uniquely to multiple sensors (through drivers) in the system and dispatches sensor data or events back to the application. The sensor server is responsible for initializing the sensors during boot, driver configuration, sensor data fetching and delivery, and managing all sensors and clients on the platform.
+- Sensor HAL (Hardware Abstraction Layer)  
+The sensor HAL, which is interfaced to the sensor server, is responsible for interacting with the sensor drivers. The HAL processes data from the sensor drivers and communicates it to the server. Hardware sensors must support the HAL. The sensor HAL is implemented as a shared library. The `sensor_loader` finds the `hal.so` library in the `/usr/lib/sensor/` directory, and loads it at boot time.
 
-Any application that wants to access the sensor server and communicate with it must use the sensor API library. Using the Sensor API, the application can control sensors and receive sensor events from the sensor server.
-As shown in the above diagram, any application or middleware framework, by using the sensor API, can have the sensor client library executing within its own process context.
+### Porting the HAL Interface
 
-- Sensor Server
-
-The sensor server is a daemon which communicates uniquely to multiple sensors (through drivers) in the system and dispatches sensor data or events back to the application.
-The sensor server takes care of initializing the sensors during boot, driver configuration, sensor data fetching and delivery, and managing all sensors and client on the platform.
-
-- Sensor HAL (Hardware Abstraction Layer)
-
-The sensor HAL, which is interfaced to the sensor server, takes care of interacting with the sensor drivers. HAL processes the data from the sensor drivers and communicates it to the server. Hardware sensors have to support HAL.
-The sensor HAL is implemented as a shared library and the sensor_loader finds hal so library and loads it from the `/usr/lib/sensor/` directory at booting time.
-
-### Porting HAL Interface
+You can port individual sensors or a sensorhub.
 
 #### Sensor
 
-![Tizen 3 sensor fw hal.png](media/Tizen_3_sensor_fw_hal.png)
-
-- Adding New Hardware Sensors
-
-For porting new hardware sensors, the HAL library inherited `sensor_device` interface has to be implemented. You can find the HAL header files in `git:sensord/src/hal`.
+To port new hardware sensors, the HAL library-inherited `sensor_device` interface must be implemented. The HAL header files can be found at `git:sensord/src/hal`.
 
 The Tizen HAL sensor types are also defined in the `sensor_hal_types.h` header file under the names `SENSOR_DEVICE_...`.
 
-The following code snippet shows the interface of the sensor HAL in the `sensor_hal.h` header file.
+**Figure: Sensor HAL**
 
-```
+![Sensor HAL](media/tizen-3-sensor-fw-hal.png)
+
+The following code snippet shows the interface of the sensor HAL in the `sensor_hal.h` header file:
+
+```c
 /*
    Create devices
 */
@@ -1107,8 +1071,7 @@ class sensor_device {
 public:
     virtual ~sensor_device() {}
 
-    uint32_t get_hal_version(void)
-    {
+    uint32_t get_hal_version(void) {
         return SENSOR_HAL_VERSION(1, 0);
     }
 
@@ -1121,51 +1084,47 @@ public:
     virtual int read_fd(uint32_t **ids) = 0;
     virtual int get_data(uint32_t id, sensor_data_t **data, int *length) = 0;
 
-    virtual bool set_interval(uint32_t id, unsigned long val)
-    {
+    virtual bool set_interval(uint32_t id, unsigned long val) {
         return true;
     }
-    virtual bool set_batch_latency(uint32_t id, unsigned long val)
-    {
+    virtual bool set_batch_latency(uint32_t id, unsigned long val) {
         return true;
     }
-    virtual bool set_attribute_int(uint32_t id, int32_t attribute, int32_t value)
-    {
+    virtual bool set_attribute_int(uint32_t id, int32_t attribute, int32_t value) {
         return true;
     }
-    virtual bool set_attribute_str(uint32_t id, int32_t attribute, char *value, int value_len)
-    {
+    virtual bool set_attribute_str(uint32_t id, int32_t attribute, char *value, int value_len) {
         return true;
     }
-    virtual bool flush(uint32_t id)
-    {
+    virtual bool flush(uint32_t id) {
         return true;
     }
 };
-
 ```
 
-The following table shows the description of the `sensor_device` interface.
+The following table describes the functions of the `sensor_device` interface.
+
+**Table: sensor_device interface functions**
 
 | Prototype                                | Description                              | Return value      |
 | ---------------------------------------- | ---------------------------------------- | ----------------- |
 | `uint32_t get_hal_version(void)`         | Returns the HAL version.                 | Version           |
 | `int get_poll_fd(void)`                  | Returns the file description to poll events. | `fd`              |
-| `int get_sensors(const sensor_info_t **sensors)` | Returns the list of supported sensors.See the `sensor_info_t` in the `sensor_hal_types.h` header file. | Size              |
+| `int get_sensors(const sensor_info_t **sensors)` | Returns the list of supported sensors. See the `sensor_info_t` in the `sensor_hal_types.h` header file. | Size              |
 | `bool enable(uint32_t id)`               | Enables the sensor.                      | `true` on success |
 | `bool disable(uint32_t id)`              | Disables the sensor.                     | `true` on success |
-| `int read_fd(uint32_t **ids)`            | Returns the sensor device IDs.The sensor framework calls this function when an event is detected from the `poll-fd` | Size              |
-| `int get_data(uint32_t id, sensor_data_t **data, int *length)` | Updates the `sensor_data_t` object (data) with the details about the sensor, such as accuracy, timestamp, and values. Note that the `sensor_data_t` object has to be created using the `malloc()` function. | 0 on success      |
+| `int read_fd(uint32_t **ids)`            | Returns the sensor device IDs. The sensor framework calls this function when an event is detected from the `poll-fd`. | Size              |
+| `int get_data(uint32_t id, sensor_data_t **data, int *length)` | Updates the `sensor_data_t` object (data) with details about the sensor, such as accuracy, timestamp, and values. Note that the `sensor_data_t` object must be created using the `malloc()` function. | 0 on success      |
 | `bool set_interval(uint32_t id, unsigned long val)` | Sets the interval.                       | `true` on success |
-| `bool set_batch_latency(uint32_t id, unsigned long val)` | Sets the batch latecy.                   | `true` on success |
+| `bool set_batch_latency(uint32_t id, unsigned long val)` | Sets the batch latency.                   | `true` on success |
 | `bool set_attribute_int(uint32_t id, int32_t attribute, int32_t value)` | Sets the `int` value to the attribute.   | `true` on success |
-| `bool set_attribute_str(uint32_t id, int32_t attribute, char *value, int value_len)` | Sets the string value to attribute.      | `true` on success |
+| `bool set_attribute_str(uint32_t id, int32_t attribute, char *value, int value_len)` | Sets the `string` value to the attribute.      | `true` on success |
 | `bool flush(uint32_t id)`                | Flushes the sensor events.               | `true` on success |
-| `int (create_t *)(sensor_device_t **devices)` | Returns the list of `sensor_device`.You must implement this interface for creating the sensor module in `sensord`. | Size              |
+| `int (create_t *)(sensor_device_t **devices)` | Returns the `sensor_device` list. To create the sensor module in `sensord`, you must implement this interface. | Size              |
 
-The following code snippet shows the interface of the sensor HAL types in the `sensor_hal_type.h` header file.
+The following code snippet shows the interface of the sensor HAL types in the `sensor_hal_type.h` header file:
 
-```
+```c
 /*
    Sensor Types
    These types are used to control the sensors
@@ -1176,7 +1135,7 @@ The following code snippet shows the interface of the sensor HAL types in the `s
      orientation values  : degrees
      gyroscope values    : degree/s
      temperature values  : degrees centigrade
-     proximity valeus    : distance
+     proximity values    : distance
      light values        : lux
      pressure values     : hectopascal (hPa)
      humidity            : relative humidity (%)
@@ -1232,15 +1191,14 @@ typedef enum {
     SENSOR_DEVICE_ACTIVITY_TRACKER = 0x1A00,
     SENSOR_DEVICE_ACTIVITY_LEVEL_MONITOR,
 } sensor_device_type;
-
 ```
 
-The following code snippet shows the interface of the sensor HAL infomation in the `sensor_hal_type.h` header file.
+The following code snippet shows the interface of the sensor HAL information in the `sensor_hal_type.h` header file:
 
-```
+```c
 /*
    A platform sensor handler is generated based on this handle
-   This ID can be assigned from HAL developer, so it has to be unique in 1 sensor_device.
+   This ID can be assigned by HAL developer, so it must be unique in 1 sensor_device.
 */
 typedef struct sensor_info_t {
     uint32_t
@@ -1317,12 +1275,11 @@ enum sensor_activity {
     SENSOR_ACTIVITY_IN_VEHICLE = 16,
     SENSOR_ACTIVITY_ON_BICYCLE = 32,
 };
-
 ```
 
-The following code snippet shows an example of the `sensor_device` implementation for the accelerometer (`sensor-hal-tm1/src/`).
+The following code snippet shows an example of the `sensor_device` implementation for the accelerometer (`sensor-hal-tm1/src/`):
 
-```
+```cpp
 /* In create.cpp */
 #include <sensor/sensor_hal.h>
 #include <sensor_log.h>
@@ -1334,8 +1291,7 @@ static std::vector<sensor_device_t> devs;
 
 template<typename _sensor>
 void
-create_sensor(const char *name)
-{
+create_sensor(const char *name) {
     sensor_device *instance = NULL;
     try {
         instance = new _sensor;
@@ -1352,8 +1308,7 @@ create_sensor(const char *name)
     devs.push_back(instance);
 }
 
-extern "C" int create(sensor_device_t **devices)
-{
+extern "C" int create(sensor_device_t **devices) {
 #ifdef ENABLE_ACCEL
     create_sensor<accel_device>("Accelerometer");
 #endif
@@ -1362,10 +1317,9 @@ extern "C" int create(sensor_device_t **devices)
 
     return devs.size();
 }
-
 ```
 
-```
+```c
 /* In accel_device.h */
 #ifndef _ACCEL_DEVICE_H_
 #define _ACCEL_DEVICE_H_
@@ -1415,10 +1369,9 @@ private:
     void raw_to_base(sensor_data_t *data);
 };
 #endif /* _ACCEL_DEVICE_H_ */
-
 ```
 
-```
+```cpp
 /* In accel_device.cpp */
 #include <fcntl.h>
 #include <unistd.h>
@@ -1478,8 +1431,7 @@ accel_device::accel_device()
 , m_z(-1)
 , m_polling_interval(1000)
 , m_fired_time(0)
-, m_sensorhub_controlled(false)
-{
+, m_sensorhub_controlled(false) {
     const std::string sensorhub_interval_node_name = ACCEL_SENSORHUB_POLL_NODE_NAME;
 
     node_info_query query;
@@ -1532,8 +1484,7 @@ accel_device::accel_device()
     _I("accel_device is created!");
 }
 
-accel_device::~accel_device()
-{
+accel_device::~accel_device() {
     close(m_node_handle);
     m_node_handle = -1;
 
@@ -1541,22 +1492,19 @@ accel_device::~accel_device()
 }
 
 int
-accel_device::get_poll_fd(void)
-{
+accel_device::get_poll_fd(void) {
     return m_node_handle;
 }
 
 int
-accel_device::get_sensors(const sensor_info_t **sensors)
-{
+accel_device::get_sensors(const sensor_info_t **sensors) {
     *sensors = &sensor_info;
 
     return 1;
 }
 
 bool
-accel_device::enable(uint32_t id)
-{
+accel_device::enable(uint32_t id) {
     util::set_enable_node(m_enable_node, m_sensorhub_controlled, true, SENSORHUB_ACCELEROMETER_ENABLE_BIT);
     set_interval(id, m_polling_interval);
 
@@ -1567,8 +1515,7 @@ accel_device::enable(uint32_t id)
 }
 
 bool
-accel_device::disable(uint32_t id)
-{
+accel_device::disable(uint32_t id) {
     util::set_enable_node(m_enable_node, m_sensorhub_controlled, false, SENSORHUB_ACCELEROMETER_ENABLE_BIT);
 
     _I("Disable accelerometer sensor");
@@ -1577,8 +1524,7 @@ accel_device::disable(uint32_t id)
 }
 
 bool
-accel_device::set_interval(uint32_t id, unsigned long val)
-{
+accel_device::set_interval(uint32_t id, unsigned long val) {
     unsigned long long polling_interval_ns;
 
     polling_interval_ns = ((unsigned long long)(val) * 1000llu * 1000llu);
@@ -1596,8 +1542,7 @@ accel_device::set_interval(uint32_t id, unsigned long val)
 }
 
 bool
-accel_device::update_value_input_event(void)
-{
+accel_device::update_value_input_event(void) {
     int accel_raw[3] = {0,};
     bool x,y,z;
     int read_input_cnt = 0;
@@ -1671,8 +1616,7 @@ accel_device::update_value_input_event(void)
 }
 
 bool
-accel_device::update_value_iio(void)
-{
+accel_device::update_value_iio(void) {
     struct {
         int16_t x;
         int16_t y;
@@ -1729,8 +1673,7 @@ accel_device::update_value_iio(void)
 }
 
 int
-accel_device::read_fd(uint32_t **ids)
-{
+accel_device::read_fd(uint32_t **ids) {
     if (!update_value()) {
         _D("Failed to update value");
 
@@ -1746,12 +1689,11 @@ accel_device::read_fd(uint32_t **ids)
 }
 
 int
-accel_device::get_data(uint32_t id, sensor_data_t **data, int *length)
-{
+accel_device::get_data(uint32_t id, sensor_data_t **data, int *length) {
     sensor_data_t *sensor_data;
 
     /* [Important] In HAL, you MUST allocate memory for data.
-     * HAL doesn't need to care of releasing this memory because this memory must be released after sending this data to clients.
+     * HAL does not need to release this memory because it must be released only after sending this data to clients.
     */
     sensor_data = (sensor_data_t *)malloc(sizeof(sensor_data_t));
     retvm_if(!sensor_data, -ENOMEM, "Memory allocation failed");
@@ -1772,29 +1714,28 @@ accel_device::get_data(uint32_t id, sensor_data_t **data, int *length)
 }
 
 void
-accel_device::raw_to_base(sensor_data_t *data)
-{
+accel_device::raw_to_base(sensor_data_t *data) {
     data->values[0] = RAW_DATA_TO_METRE_PER_SECOND_SQUARED_UNIT(data->values[0] * RAW_DATA_UNIT);
     data->values[1] = RAW_DATA_TO_METRE_PER_SECOND_SQUARED_UNIT(data->values[1] * RAW_DATA_UNIT);
     data->values[2] = RAW_DATA_TO_METRE_PER_SECOND_SQUARED_UNIT(data->values[2] * RAW_DATA_UNIT);
 }
-
 ```
 
 #### Sensorhub
 
-The sensorhub HAL supports multiple sensors logically from 1 physical device file. In case many sensors are simultaneously supported by the single device file, the sensorhub HAL can be comprised so that it can operate each sensor as a logically separate device.
+The sensorhub HAL supports multiple sensors logically from 1 physical device file. If many sensors are supported by a single device file, the sensorhub HAL can be configured so that it can operate each sensor as a logically-separate device.
 
-- Providing the sensor HAL interface to manufacturers/vendors through the `sensor_hal.h` and `sensor_hal_types.h` header files.
-- Using just 1 thread for polling sensor events from multiple device files
+The sensor HAL interface is provided to manufacturers and vendors through the `sensor_hal.h` and `sensor_hal_types.h` header files. It uses just 1 thread for polling sensor events from multiple device files.
 
-![Tizen_3_Sensorhub_Architecture](media/656px-Tizen_3_sensorhub2.png)
+**Figure: Sensorhub HAL**
 
-The sensorhub HAL can be developed by using the `sensor_device` interface. An example of sensorhub HAL can be found in the `sensor-hal-tm1/src/sensorhub` git.
+![Sensorhub HAL](media/656px-tizen-3-sensorhub2.png)
 
-IDs can be assigned by the vendor or manufacturer for the sensorhub sensors by using the following `sensor_info_t` interface.
+The sensorhub HAL can be developed by using the `sensor_device` interface. An example of a sensorhub HAL can be found in the `sensor-hal-tm1/src/sensorhub` Git.
 
-```
+IDs can be assigned by the vendor or manufacturer for the sensorhub sensors by using the following `sensor_info_t` interface:
+
+```c
 typedef struct sensor_info_t {
     uint32_t id;
     const char *name;
@@ -1809,12 +1750,11 @@ typedef struct sensor_info_t {
     int max_batch_count;
     bool wakeup_supported;
 } sensor_info_t;
-
 ```
 
-The following code snippet shows an example of the sensorhub HAL implementation.
+The following code snippet shows an example of a sensorhub HAL implementation:
 
-```
+```c
 #include <algorithm>
 #include <sensor_log.h>
 
@@ -1823,8 +1763,7 @@ The following code snippet shows an example of the sensorhub HAL implementation.
 #include "sensorhub_manager.h"
 #include "system_state.h"
 
-sensorhub_device::sensorhub_device()
-{
+sensorhub_device::sensorhub_device() {
     controller = &sensorhub_controller::get_instance();
     if (!controller) {
         ERR("Failed to allocated memory");
@@ -1842,20 +1781,17 @@ sensorhub_device::sensorhub_device()
     INFO("sensorhub_device is created!");
 }
 
-sensorhub_device::~sensorhub_device()
-{
+sensorhub_device::~sensorhub_device() {
     INFO("sensorhub_device is destroyed!");
 }
 
 int
-sensorhub_device::get_poll_fd(void)
-{
+sensorhub_device::get_poll_fd(void) {
     return controller->get_poll_fd();
 }
 
 int
-sensorhub_device::get_sensors(const sensor_info_t **sensors)
-{
+sensorhub_device::get_sensors(const sensor_info_t **sensors) {
     int size;
     size = manager->get_sensors(sensors);
 
@@ -1863,8 +1799,7 @@ sensorhub_device::get_sensors(const sensor_info_t **sensors)
 }
 
 bool
-sensorhub_device::enable(uint32_t id)
-{
+sensorhub_device::enable(uint32_t id) {
     system_state_handler::get_instance().initialize();
 
     controller->enable();
@@ -1880,8 +1815,7 @@ sensorhub_device::enable(uint32_t id)
 }
 
 bool
-sensorhub_device::disable(uint32_t id)
-{
+sensorhub_device::disable(uint32_t id) {
     system_state_handler::get_instance().finalize();
 
     controller->disable();
@@ -1897,8 +1831,7 @@ sensorhub_device::disable(uint32_t id)
 }
 
 bool
-sensorhub_device::set_interval(uint32_t id, unsigned long val)
-{
+sensorhub_device::set_interval(uint32_t id, unsigned long val) {
     sensorhub_sensor *sensor = manager->get_sensor(id);
 
     if (!sensor) {
@@ -1911,8 +1844,7 @@ sensorhub_device::set_interval(uint32_t id, unsigned long val)
 }
 
 bool
-sensorhub_device::set_batch_latency(uint32_t id, unsigned long val)
-{
+sensorhub_device::set_batch_latency(uint32_t id, unsigned long val) {
     sensorhub_sensor *sensor = manager->get_sensor(id);
 
     if (!sensor) {
@@ -1925,8 +1857,7 @@ sensorhub_device::set_batch_latency(uint32_t id, unsigned long val)
 }
 
 bool
-sensorhub_device::set_attribute_int(uint32_t id, int32_t attribute, int32_t value)
-{
+sensorhub_device::set_attribute_int(uint32_t id, int32_t attribute, int32_t value) {
     int ret;
 
     sensorhub_sensor *sensor = manager->get_sensor(id);
@@ -1955,8 +1886,7 @@ sensorhub_device::set_attribute_int(uint32_t id, int32_t attribute, int32_t valu
 }
 
 bool
-sensorhub_device::set_attribute_str(uint32_t id, int32_t attribute, char *value, int value_len)
-{
+sensorhub_device::set_attribute_str(uint32_t id, int32_t attribute, char *value, int value_len) {
     int ret;
 
     sensorhub_sensor *sensor = manager->get_sensor(id);
@@ -1985,8 +1915,7 @@ sensorhub_device::set_attribute_str(uint32_t id, int32_t attribute, char *value,
 }
 
 int
-sensorhub_device::read_fd(uint32_t **ids)
-{
+sensorhub_device::read_fd(uint32_t **ids) {
     sensorhub_data_t data;
 
     /* Step 1 */
@@ -2024,8 +1953,7 @@ sensorhub_device::read_fd(uint32_t **ids)
 }
 
 int
-sensorhub_device::get_data(uint32_t id, sensor_data_t **data, int *length)
-{
+sensorhub_device::get_data(uint32_t id, sensor_data_t **data, int *length) {
     int remains = 1;
 
     sensorhub_sensor *sensor = manager->get_sensor(id);
@@ -2041,20 +1969,17 @@ sensorhub_device::get_data(uint32_t id, sensor_data_t **data, int *length)
 }
 
 bool
-sensorhub_device::flush(uint32_t id)
-{
+sensorhub_device::flush(uint32_t id) {
     return false;
 }
 
 int
-sensorhub_device::parse(const char *hub_data, int data_len)
-{
+sensorhub_device::parse(const char *hub_data, int data_len) {
     return parse_data(hub_data, data_len);
 }
 
 int
-sensorhub_device::parse_data(const char *hub_data, int data_len)
-{
+sensorhub_device::parse_data(const char *hub_data, int data_len) {
     const char *cursor = hub_data;
     int32_t libtype = 0;
 
@@ -2071,14 +1996,12 @@ sensorhub_device::parse_data(const char *hub_data, int data_len)
 }
 
 int
-sensorhub_device::parse_debug(const char *hub_data, int data_len)
-{
+sensorhub_device::parse_debug(const char *hub_data, int data_len) {
     return 0;
 }
-
 ```
 
-```
+```c
 #include <unistd.h>
 #include <string.h>
 #include <fcntl.h>
@@ -2095,32 +2018,25 @@ sensorhub_device::parse_debug(const char *hub_data, int data_len)
 sensorhub_controller::sensorhub_controller()
 : m_enabled(false)
 , m_poll_node(-1)
-, m_data_node(-1)
-{
-}
+, m_data_node(-1) {}
 
-sensorhub_controller::~sensorhub_controller()
-{
-}
+sensorhub_controller::~sensorhub_controller() {}
 
-sensorhub_controller& sensorhub_controller::get_instance(void)
-{
+sensorhub_controller& sensorhub_controller::get_instance(void) {
     static sensorhub_controller instance;
 
     return instance;
 }
 
 int
-sensorhub_controller::get_poll_fd(void)
-{
+sensorhub_controller::get_poll_fd(void) {
     /* Returns the sensorhub fd */
 
     return -1;
 }
 
 bool
-sensorhub_controller::enable(void)
-{
+sensorhub_controller::enable(void) {
     m_enabled = true;
     INFO("Enable Sensorhub");
 
@@ -2128,8 +2044,7 @@ sensorhub_controller::enable(void)
 }
 
 bool
-sensorhub_controller::disable(void)
-{
+sensorhub_controller::disable(void) {
     m_enabled = false;
     INFO("Disable Sensorhub");
 
@@ -2137,88 +2052,88 @@ sensorhub_controller::disable(void)
 }
 
 int
-sensorhub_controller::open_input_node(const char* input_node)
-{
+sensorhub_controller::open_input_node(const char* input_node) {
     /* Implements the specific sensorhub logic */
 
     return -1;
 }
 
 bool
-sensorhub_controller::read_fd(sensorhub_data_t &data)
-{
+sensorhub_controller::read_fd(sensorhub_data_t &data) {
     /* Implements the specific sensorhub logic */
 
     return false;
 }
 
 int
-sensorhub_controller::read_sensorhub_data(void)
-{
+sensorhub_controller::read_sensorhub_data(void) {
     /* Implements the specific sensorhub logic */
 
     return -1;
 }
 
 int
-sensorhub_controller::read_large_sensorhub_data(void)
-{
+sensorhub_controller::read_large_sensorhub_data(void) {
     /* Implements the specific sensorhub logic */
 
     return -1;
 }
 
 int
-sensorhub_controller::send_sensorhub_data(const char *data, int data_len)
-{
+sensorhub_controller::send_sensorhub_data(const char *data, int data_len) {
     /* Implements the specific sensorhub logic */
 
     return -1;
 }
 
 int
-sensorhub_controller::print_sensorhub_data(const char* name, const char *data, int length)
-{
+sensorhub_controller::print_sensorhub_data(const char* name, const char *data, int length) {
     /* Implements the specific sensorhub logic */
 
     return 0;
 }
-
 ```
 
 ### References
 
-The reference kernel configuration for sensors varies with different vendor types.
-However, there is a standard kernel subsystem for sensors, that is IIO(The Industrial I/O subsystem) subsystem. IIO is intended to provide support for devices that in some sense are analog to digital or digital to analog.
+The reference kernel configuration for sensors varies depending on vendor types. However, there is a standard kernel subsystem for sensors: the Industrial I/O (IIO) subsystem. IIO is intended to provide support for devices that are, in some sense, analog to digital or digital to analog.
 For more information, see [https://wiki.analog.com/software/linux/docs/iio/iio](https://wiki.analog.com/software/linux/docs/iio/iio).
 
-Examples)
+The following table lists some example kernel configurations.
 
-| Sensor components  | Kernel configuration    | Device nodes                             |
+**Table: Example kernel configurations**
+
+| Sensor component   | Kernel configuration    | Device nodes                             |
 | ------------------ | ----------------------- | ---------------------------------------- |
-| Accelerometer      | `CONFIG_INPUT_KR3DH`    | `/dev/input/event0/``/dev/input/event1/``/dev/input/event2/``/dev/input/event3/``/dev/input/event4/``/dev/input/event5/` |
+| Accelerometer      | `CONFIG_INPUT_KR3DH`    | `/dev/input/event0/`, `/dev/input/event1/`, `/dev/input/event2/`, `/dev/input/event3/`, `/dev/input/event4/`, `/dev/input/event5/` |
 | Proximity          | `CONFIG_INPUT_GP2A`     |                                          |
 | Light sensor       | `CONFIG_INPUT_GP2A`     |                                          |
 | Electronic compass | `CONFIG_SENSORS_AK8975` |                                          |
 
-### Project Git Repository
+### Project Git Repositories
+
+The following table lists the available project Git repositories.
+
+**Table: Git repositories**
 
 | Project               | Repository                               | Description                              |
 | --------------------- | ---------------------------------------- | ---------------------------------------- |
 | `capi-system-sensor`  | `platform/core/api/sensor`               | Tizen sensor C-API                       |
-| `sensord`             | `platform/core/system/sensord`           | The sensor daemon and libraries for managing sensors and clients |
-| `sensor-hal-tm1`      | `platform/adaptation/tm1/sensor-hal-tm1` | Sensor HAL for TM1 device                |
-| `sensor-hal-tm2`      | `platform/adaptation/tm2/sensor-hal-tm2` | Sensor HAL for TM2 device                |
-| `sensor-hal-tw1`      | `platform/adaptation/tw1/sensor-hal-tw1` | Sensor HAL for TW1 device                |
-| `sensor-hal-emulator` | `platform/adaptation/emulator/sensor-hal-emulator` | Sensor HAL for emulator                  |
+| `sensord`             | `platform/core/system/sensord`           | Sensor daemon and libraries for managing sensors and clients |
+| `sensor-hal-tm1`      | `platform/adaptation/tm1/sensor-hal-tm1` | Sensor HAL for the TM1 device                |
+| `sensor-hal-tm2`      | `platform/adaptation/tm2/sensor-hal-tm2` | Sensor HAL for the TM2 device                |
+| `sensor-hal-tw1`      | `platform/adaptation/tw1/sensor-hal-tw1` | Sensor HAL for the TW1 device                |
+| `sensor-hal-emulator` | `platform/adaptation/emulator/sensor-hal-emulator` | Sensor HAL for the emulator                  |
 
-### Test and Verify Sensors
+### Testing and Verifying Sensors
 
-`sensor-test package`, which is in sensord git, provides a command line tool for testing sensors, that is `sensorctl`. after installing sensor-test package, you can test sensors by using following commands
+The `sensor-test package`, in the `sensord` Git repository, provides `sensorctl`, a command-line tool for testing sensors. After installing `sensor-test package`, you can test sensors using the following commands:
 
-- $ sensorctl test accelerometer
-- $ sensorctl test gyroscope
-- $ sensorctl test accelerometer 100 /* enable accelerometer with interval 100 ms */
-- $ sensorctl test accelerometer 100 1000 /* enable accelerometer with interval 100 ms and 1s batch latency */
-- $ sensorctl test accelerometer 100 1000 0 /* enable accelerometer with interval 100 ms, 1s batch latency and always on option */
-- $ sensorctl info accelerometer /* retrieve accelerometer sensor information */
+```bash
+$ sensorctl test accelerometer
+$ sensorctl test gyroscope
+$ sensorctl test accelerometer 100 /* enable accelerometer with interval 100 ms */
+$ sensorctl test accelerometer 100 1000 /* enable accelerometer with interval 100 ms and 1s batch latency */
+$ sensorctl test accelerometer 100 1000 0 /* enable accelerometer with interval 100 ms, 1s batch latency and always on option */
+$ sensorctl info accelerometer /* retrieve accelerometer sensor information */
+```

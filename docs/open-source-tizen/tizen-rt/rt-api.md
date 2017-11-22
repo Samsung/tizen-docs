@@ -1,7 +1,9 @@
-# Tizen RT APIs
+# Tizen RT API
 
-Tizen RT APIs consist of two components:
+The Tizen RT API consists of 2 components:
 
-- [Public API](https://source.tizen.org/documentation/tizen-rt/public-api/)The API provides descriptions for all Public APIs such as Database(AraStorage), System I/O(IOTBUS), Device Management APIs.
-- [Libs and Environment](https://source.tizen.org/documentation/tizen-rt/libs-and-env/)The API provides descriptions for all Libs and Environment APIs such as Kernel, File System, and Network APIs.
+- [Public API](https://source.tizen.org/documentation/tizen-rt/public-api/)  
+This API provides descriptions for all Public APIs, such as the Database (AraStorage), System I/O (IOTBUS), and Device Management APIs.
+- [Libs&Environment](https://source.tizen.org/documentation/tizen-rt/libs-and-env/)  
+This API provides descriptions for all Libs and Environment APIs, such as the Kernel, File System, and Network APIs.
 

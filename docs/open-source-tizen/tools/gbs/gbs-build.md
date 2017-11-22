@@ -1,35 +1,31 @@
 # gbs build
 
-By using 'gbs build', the developer can build the source code and generate rpm packages locally. For instructions on using the build subcommand, use this command: gbs build --help
+Use the `gbs build` subcommand to build the source code and generate RPM packages locally.
+
+For command usage details, enter:
 
 ```bash
-$ gbs build -h
+$ gbs build -help
 ```
 
-### gbs build workflow
+## Command Workflow
 
-#### Input of gbs build
+The `gbs build` command requires the following input:
 
-Below is the input for gbs build:
+- Git projects that contain RPM packaging files
+- Binary RPM repositories (remote or local)  
+The binary RPM repositories contain all the binary RPM packages used to create the chroot environment and build packages, which can be remote, like tizen release or snapshot repositories, or local. The local repository supports 2 types:
 
-- git project(s) which contains rpm packaging files
-- binary rpm repositories (remote or local)
-- project build configurations (macros, flags, etc)
+  - Standard repository with existing repodata
+  - Normal directory containing RPM packages. GBS finds all RPM packages within the directory.
 
-The binary rpm repositories contain all the binary rpm packages which are used to create the chroot environment and build packages, which can be remote, like tizen release or snapshot repositories, or local repository. Local repository supports two types:
+  To configure a repository, see [GBS Configuration](gbs.conf.md).
+- Project build configurations (such as macros and flags)
 
-- A standard repository with repodata exists
-- A normal directory contains RPM packages. GBS will find all RPM packages under this directory.
 
-Please refer to [Configuration File](https://source.tizen.org/documentation/reference/git-build-system/configuration-file) part to configure a repository.
+The following figure shows the basic GBS build workflow. The figure illustrates that input and output are both repositories, and the output repository is located at `~/GBS-ROOT/locals/repos/` by default. You can change the repository path by using the `--buildroot` option.
 
-#### Build workflow
-
-The input and output of gbs build are all repositories.
-
-**Note**: All the rpm packages under the output repository (by default, ~/GBS-ROOT/local/repos/<VERSION>/) will be used when building packages. That is, all the packages under the output repository will be applied to the build environment, so make sure the output repository is clean if you don't want this behavior.
-
-Here's the basic gbs build workflow
+**Figure: GBS build workflow**
 
 ```
  ____________________
@@ -48,17 +44,17 @@ Here's the basic gbs build workflow
 |____________________|           |________________________|
 ```
 
-From the above diagram, we can see the input and input are all repositories and the output repository located at '~/GBS-ROOT/locals/repos/' by default. You can change the repo path by using '--buildroot' to specify a different build root.
+Local repos in the GBS build root (`~/GBS-ROOT` by default) affect build results, so make sure that repositories do not contain old or unnecessary RPM packages. While running the `gbs build` command, you can specify the `--clean-repos` option to clean up local GBS-created repositories before building. To avoid problems, also set a different GBS build root directory for each profile. The GBS build directory can be defined in many ways:
 
-Local repos in gbs build root ('~/GBS-ROOT' by default) will affect build results, so you must make sure that repos don't contains old or unnecessary RPM packages. While running gbs build, you can specify '--clean-repos' to clean up local repos, which gbs created, before building. We recommend that gbs users set different gbs build root directories for different profiles. There are several ways:
+- By default, the GBS build puts all output files under `~/GBS-ROOT/`.
+- If the `TIZEN_BUILD_ROOT` environment variable exists, `${TIZEN_BUILD_ROOT}` is used as the output top directory.
+- If the `-B` option is specified, the specified directory is used, even if `${TIZEN_BUILD_ROOT}` exists.
 
-- By default, the GBS build will put all output files under ~/GBS-ROOT/.
-- If the environment variable TIZEN_BUILD_ROOT exists, ${TIZEN_BUILD_ROOT} will be used as output top dir
-- If -B option is specified, then the specified directory is used, even if ${TIZEN_BUILD_ROOT} exists
+> **Note**
+>
+> All RPM packages under the output repository (by default, `~/GBS-ROOT/local/repos/<VERSION>/`) are used when building packages. Since all the packages under the output repository are applied to the build environment, avoid unexpected results by making sure that the output repository is clean.
 
-#### Output of gbs build
-
-Structure of a GBS build root directory
+The following example shows the structure of the GBS build root directory in the workflow output:
 
 ```bash
 gbs output top dir
@@ -82,68 +78,75 @@ gbs output top dir
 `-- meta # meta data used by gbs
 ```
 
-### GBS Build Examples (Basic Usage)
+## Examples
 
-1. Build a single package.
+To perform a basic build:
+
+- Build a single package:
   ```bash
   $ cd package1$ gbs build -A i586
   ```
 
-2. Build a package for different architectures.
+- Build a package for different architectures:
    > **Note**
-   > Supported architectures include: x86_64, i586, armv6l, armv7hl, armv7l, aarch64, mips, mipsel.
+   >
+   > Supported architectures include x86_64, i586, armv6l, armv7hl, armv7l, aarch64, mips, and mipsel.
 
   ```bash
-  $ gbs build -A armv7l #build package for armv7l$ gbs build -A i586 #build package for i586
+  $ gbs build -A armv7l #build package for armv7l
+  $ gbs build -A i586 #build package for i586
   ```
 
-3. Make a clean build by deleting the old build root. This option must be specified if the repo has been changed, for example, changed to another release.
+- Make a clean build by deleting the old build root.  
+The `--clean` option must be specified if the repository has been changed, for example, to another release.
 
   ```bash
   $ gbs build -A armv7l --clean
   ```
 
-4. Build the package with a specific commit.
+- Build the package with a specific commit:
   ```bash
   $ gbs build -A armv7l --commit=<COMMIT_ID>
   ```
 
-5. Use --overwrite to trigger a rebuild.
-  If you have already built before, and want to rebuild, --overwrite should be specified, or the packages will be skipped.
+- Use the `--overwrite` option to trigger a rebuild.  
+If you have already built before, and want to rebuild, specify the `--overwrite` option or the packages are skipped.
   ```bash
   $ gbs build -A i586 --overwrite
   ```
 
-  If you change the commit or specify --include-all option, it will always rebuild, so --overwrite is not needed.
+  If you change the commit or specify the `--include-all` option, it always rebuilds. In these cases, the `--overwrite` option is not needed.
 
-6. Output the debug info.
+- Output the debug info:
   ```bash
   $ gbs build -A i586 --debug
   ```
 
-7. Build against a local repository. You can config the local repo at .gbs.conf file or through the command line.
+- Build against a local repository.  
+You can configure the local repo in the `.gbs.conf` file or through the command line.
   ```bash
   $ gbs build -R /path/to/repo/dir/ -A i586
   ```
 
-8. Use --noinit to build package in offline mode --noinit option can only be used if build root is ready. With --noinitoption, gbs will not connect the remote repo, and skip parsing & checking repo and initialize build environment. rpmbuildwill be used to build the package directly. Here's an example:
+- Use the `--noinit` option to build a package in offline mode.  
+This option can only be used if the build root is ready. When it is used, GBS does not connect the remote repository, and skips parsing and checking the repository and initializing the build environment. The package is built directly.
 
   ```bash
   $ gbs build -A i586 # build first and create build environment
   $ gbs build -A i586 --noinit # use --noinit to start building directly
   ```
 
-9. Build with all uncommitted changes using --include-all.
-  For example, the git tree contains one modified file and two extra files:
+- Build with all uncommitted changes using the `--include-all` option.  
+  In the following examples, the Git tree contains 1 modified file and 2 extra files:
   ```bash
   $ git status -s
   M ail.pc.in
   ?? base.repo
   ?? main.repo
   ```
-  - Build without the --include-all option
+  - Build without the `--include-all` option
 
-    Builds committed files only. All the modified files, which are not committed nor added, will NOT be built:
+    Only committed files are built. None of the modified files, which are neither committed nor added, are built:
 
     ```bash
     $ gbs build -A i586
@@ -156,7 +159,9 @@ gbs output top dir
     info: Done
     ```
 
-  - Build with the --include-all option builds all the files:
+  - Build with the `--include-all` option
+
+    All the files are built:
     ```bash
     $ gbs build -A i586
     warning: the following untracked files would NOT be included: base.repo main.repo
@@ -167,7 +172,9 @@ gbs output top dir
     /home/test/GBS-ROOT/local/scratch.i586.0/home/abuild/rpmbuild/RPMS/
     info: Done
     ```
-  - Use .gitignore to ignore specific files, when using the --include-all option. If you want to ignore some files types, you can update your .gitignore. For example:
+  - Use `.gitignore` to ignore specific files when using the `--include-all` option.
+
+    If you want to ignore some file types, update your `.gitignore`:
 
     ```bash
     $ cat .gitignore
@@ -177,42 +184,49 @@ gbs output top dir
     *.patch*
     ```
 
-### Incremental build
+## Incremental Build
 
-#### Incremental Concept
+Starting from GBS 0.10, the `gbs build` subcommand supports the `--incremental` option, which allows you to build incrementally.
 
-Starting from gbs 0.10, the gbs build subcommand supports building incrementally, which can be enabled by specifying the '--incremental' option.
+The incremental mode is designed for development and verification of single packages. It is not intended to replace the standard mode. Only 1 package can be built at a time using the incremental mode.
 
-This mode is designed for development and verification of single packages. It is not intended to replace the standard mode. Only one package can be built at a time using this mode.
+The incremental mode sets up the build environment in multiple steps, finishing by mounting the local Git tree of a package in the chroot build environment.
 
-This mode will set up the build environment in multiple steps, finishing by mounting the local Git tree of a package in the chroot build environment.
+> **Note**
+>
+> Because GBS mounts your Git tree to the build root, be very careful when you remove your build root. You need to make sure you have already unmounted the source tree manually before you remove it.
 
-**Note**: Because gbs will mount your git tree to the build root, be very careful when you remove your build root. You need to make sure you've already umounted the source tree manually before you remove it.
+The incremental mode has the following benefits:
 
-This has the following benefits:
+- The build environment uses the latest source code and changes to source do not trigger a new build environment (in the chroot).
+- The Git source tree becomes the source of the builds. Any change made in the Git repository followed by invocation of the build script builds the changed sources.
+- If the build fails for some reason, the build script continues from the spot where it has failed, once the code has been changed to fix the problem causing the failure.
 
-1. The build environment uses the latest source code and changes to source do not trigger a new build environment (in the chroot).
-2. The Git source tree becomes the source of the builds. Any change made in the Git repository followed by invocation of the build script will build the changed sources
-3. If the build fails for some reason, the build script will continue from the spot where it has failed, once the code has been changed to fix the problem causing the failure.
+Incremental building is, in many ways, similar to traditional code development, where changes are made to sources, followed by running make to test and compile the changes. However, it enables development using the build environment of the target, instead of the host OS.
 
-This mode is, in many ways, similar to traditional code development, where changes are made to sources, followed by running make to test and compile the changes. However, it enables development using the build environment of the target, instead of the host OS.
+The incremental mode has some limitations, mostly related to packaging and how the sources are maintained. Among others, it depends on how the RPM spec file is composed:
 
-This method has some limitations, mostly related to packaging and how the sources are maintained. Among others, it depends on how the RPM spec file is composed:
+- The incremental mode does not support patches in the spec file. All source has to be maintained as part of the Git tree.
 
-1. It does not support patches in the spec file. All source has to be maintained as part of the Git tree
+- The incremental mode requires a clean packaging workflow. Exotic workflows in the spec files do not always work well, because the incremental mode expects the following model:
 
-2. It requires a clean packaging workflow. Exotic workflows in the spec files might not work well, because this mode expects the following model:
+  1. Code preparation (%prep)
+  2. Code building (%build)
+  3. Code installation (%install)
 
-   1. Code preparation (%prep)
-   2. Code building (%build)
-   3. Code installation (%install)
+- The %prep section can only contain the %setup macro to unpack the tarball, and must not contain other source code-related operations, such as unpacking another source or applying patches.
+  
+- Because the %build section is run every time, if the %build script has configuration scripts (auto-tools), binaries can be regenerated, causing a complete build every time. To avoid this, use the following macros, which can be overridden using the `--no-configure` option:
 
-3. Because we run the %build section every time, if the %build script has configuration scripts (auto-tools), binaries might be regenerated, causing a complete build every time. To avoid this, you are encouraged to use the following macros, which can be overridden using the --no-configure option:
-   %configure: runs the configure script with pre-defined paths and options.%reconfigure: regenerates the scripts and runs %configure%autogen: runs the autogen script
+    - %configure: runs the configure script with pre-defined paths and options.
+	- %reconfigure: regenerates the scripts and runs %configure.
+	- %autogen: runs the autogen script.
 
-#### Example
+- You can build only a single package. You cannot build multiple packages in parallel.
 
-In this example, we use dlog source code. First, we need to build with --incremental, then just modify one source file, and trigger the incremental build again. We will see that only modified source code has been compiled during the incremental build.
+- The tarball's name in the spec file must be `%{name}-%{version}.{tar.gz|tar.bz2|zip|...}`. Otherwise, GBS cannot mount the source code to build the root correctly.
+
+The following example uses the dlog source code. First, it builds with the `--incremental` option, then modifies 1 source file and triggers the incremental build again. You can see that only modified source code gets compiled during the incremental build.
 
 ```bash
 $ cd dlog
@@ -264,29 +278,21 @@ info: Local repo can be found here:
 info: Done
 ```
 
-From the buildlog, we can see that only log.c has been re-compiled. That's the incremental build behavior.
+From the build log, you can see that only `log.c` has been re-compiled. That is the point of the incremental build behavior.
 
---noinit option can be used together with --incremental to make a build more quickly, like:
+The `--noinit` option can be used together with `--incremental` to make a build more quickly:
 
 ```bash
 $ gbs build --incremental --noinit
 ```
 
-#### Limitations of Incremental Build
+## Multiple Package Build (Dependency Build)
 
-Incremental build doesn't support all packages. Here are some limitations:
+Multiple package build has been supported since GBS 0.10. If packages have dependencies on each other, GBS builds them in the correct order calculated by the dependency relationships. Previously built RPMs are used to build the packages that depend on them. This process is called a dependency build.
 
-- Incremental build currently supports building only a single package. It doesn't support building multiple packages in parallel
-- The tarball's name in the spec file should be %{name}-%{version}.{tar.gz|tar.bz2|zip|...}, otherwise GBS can't mount source code to build the root correctly
-- %prep section should only contains %setup macro to unpack tarball, and should not contains other source code related operations, such as unpack another source, apply patches, etc.
+To perform a multiple package build:
 
-### Multiple packages build (dependency build)
-
-Multiple package build has been supported since gbs 0.10. If packages have dependencies on each other, gbs will build packages in the correct order calculated by dependency relationship. Previously built out RPMs will be used to build the following packages that depend on them, which is the dependency build.
-
-**Examples**:
-
-1. Build all packages under a specified package directory
+- Build all packages under a specific package directory:
 
   ```bash
   $ mkdir tizen-packages
@@ -294,39 +300,44 @@ Multiple package build has been supported since gbs 0.10. If packages have depen
   $ gbs build -A i586 tizen-packages # build all packages under tizen-packages
   ```
 
-2. Build multiple packages in parallel with --threads
+- Build multiple packages in parallel with the `--threads` option:
 
   ```bash
   # current directory have multiple packages, --threads can be used to set the max build worker at the same time
   $ gbs build -A armv7l --threads=4
   ```
 
-3. Select a group of packages to be built
+- Select a group of packages to be built:
 
-  The --binary-from-file option specifies a text file that contains a name list of RPM packages to be built. The format in the text file is one package per line.
+  - The `--binary-from-file` option specifies a text file that contains a name list of RPM packages to be built. The format in the text file is 1 package per line.
+  - The `--binary-list` option specifies a list in which the package names are separated by commas.
 
-  The --binary-list option specifies a list in which the package names are separated by comma.
-
-  When the number of packages is small, thus the packages can be clearly presented in command line, it is recommended to use the --binary-list option for simplicity.
+  When the number of packages is small and the packages can be clearly listed in the command line, use the `--binary-list` option for simplicity.
 
   ```bash
   $ gbs build -A i586 --binary-from-file=/path/to/packages.list
   $ gbs build -A i586 --binary-list=<pkg1>,<pkg2>
   ```
 
-4. Exclude certain packages.
+- Exclude certain packages:
 
-  The --exclude option specifies a list in which the names of packages to be ignored are separated by comma. The --exclude-from-file option specifies a text file that contains a name list of packages to be ignored.
+  - The `--exclude` option specifies a list in which the names of packages to be ignored are separated by commas.
+  - The `--exclude-from-file` option specifies a text file that contains a name list of packages to be ignored.
 
   ```bash
-  $ gbs build -A i586 tizen-packages --exclude=<pkg1>$ gbs build -A i586 tizen-packages --exclude=<pkg1>,<pkg2>$ gbs build -A i586 tizen-packages --exclude-from-file=/path/to/packages.list
+  $ gbs build -A i586 tizen-packages --exclude=<pkg1>
+  $ gbs build -A i586 tizen-packages --exclude=<pkg1>,<pkg2>
+  $ gbs build -A i586 tizen-packages --exclude-from-file=/path/to/packages.list
   ```
 
-5. Build packages based on dependencies. The --deps option enables GBS to build specific packages, together with all the related packages on which they depend.The --rdep option enables GBS to build specific packages, together with all the related packages that depend on them.
+- Build packages based on dependencies:
 
-  The specific packages can be included by the --binary-from-file option or the --binary-list option, and be excluded by the --exclude option or the --exclude-from-file option.
+  - The `--deps` option enables GBS to build specific packages, together with all related packages on which they depend.
+  - The `--rdep` option enables GBS to build specific packages, together with all related packages that depend on them.
 
-  These two options are compatible. When added at the same time, besides the specific packages, GBS will build not only the related packages on which they depend, but also all the related packages that depend on them.
+  The specific packages can be included by the `--binary-from-file` or `--binary-list` option, and excluded by the `--exclude` or `--exclude-from-file` option.
+
+  The `--deps` and `--rdep` options are compatible. When added at the same time, besides the specific packages, GBS builds not only the related packages on which they depend, but also all the related packages that depend on them.
 
   ```bash
   $ gbs build -A i586 --binary-list=<pkg1>,<pkg2> --deps
@@ -334,90 +345,89 @@ Multiple package build has been supported since gbs 0.10. If packages have depen
   $ gbs build -A i586 --binary-list=<pkg1>,<pkg2> --deps --rdeps
   ```
 
-### Other useful options
+## Useful Building Options
 
-#### Install extra packages to build root
+The `gbs build` command offers some useful options:
 
---extra-packs=<pkgs list sep by comma> can be used to install extra packages:
+- Install extra packages to build a root
 
-```bash
-$ gbs build -A i586 --binary-list=<pkg1>,<pkg2> --deps
-$ gbs build -A i586 --binary-list=<pkg1>,<pkg2> --rdeps
-$ gbs build -A i586 --binary-list=<pkg1>,<pkg2> --deps --rdeps
-```
+  The `--extra-packs=<packages separated by commas>` option can be used to install extra packages:
 
-#### Keep all packages in build root
+  ```bash
+  $ gbs build -A i586 --extra-packs=<pkg1>,<pkg2> --deps
+  $ gbs build -A i586 --extra-packs=<pkg1>,<pkg2> --rdeps
+  $ gbs build -A i586 --extra-packs=<pkg1>,<pkg2> --deps --rdeps
+  ```
 
-Generally, gbs build will remove unnecessary packages in build root. While transferring to build another package, you can use --keep-packs to keep all unnecessary packages, and just install missing build required packages. This option can be used to speed up build multiple packages.
+- Keep all packages in the build root
 
-```bash
-$ gbs build --keep-packs
-```
+  Generally, the GBS build removes unnecessary packages in the build root. While transferring to build another package, you can use the `--keep-packs` option to keep all unnecessary packages, and just install missing required build packages. This option can be used to speed up building multiple packages.
 
---keep-packs can be used to create one build root for building multiple packages. Once the build root is ready, you can use --noinit to build these packages quickly.
+  ```bash
+  $ gbs build --keep-packs
+  ```
 
-```bash
-$ gbs build pkg1/ --keep-packs -A i586
-$ gbs build pkg2/ --keep-packs -A i586
-$ gbs build pkg3/ --keep-packs -A i586
-```
+  The `--keep-packs` option can be used to create 1 build root for building multiple packages. Once the build root is ready, you can use the `--noinit` option to build these packages quickly.
 
-Now, the build root (~/GBS-ROOT/local/scratch.i586.0) is ready for building pkg1, pkg2, and pkg3. You can use --noinit to build them offline, and don't need waste time to check repo updates and build root.
+  ```bash
+  $ gbs build pkg1/ --keep-packs -A i586
+  $ gbs build pkg2/ --keep-packs -A i586
+  $ gbs build pkg3/ --keep-packs -A i586
+  ```
 
-```bash
-$ gbs build pkg1 --noinit
-$ gbs build pkg2 --noinit
-$ gbs build pkg3 --noinit
-```
+  Now, the build root (`~/GBS-ROOT/local/scratch.i586.0`) is ready for building `pkg1`, `pkg2`, and `pkg3`. You can use the `--noinit` option to build them offline, and need waste no time to check for repository updates and build root.
 
-### Force GBS to work in native mode
+  ```bash
+  $ gbs build pkg1 --noinit
+  $ gbs build pkg2 --noinit
+  $ gbs build pkg3 --noinit
+  ```
 
-Use --fallback-to-native option to force GBS to perform packaging for non-native packages in native packaging mode in the packaging phase of the building process, that is, ignore upstream branch and create tarball from HEAD (by default) or specified commit without generating any patch. Adding --fallback-to-native option when issuing gbs build or gbs exportis equvalent to adding "fallback_to_native = true" into [general] section in GBS configuration file.
+### Forcing GBS to Work in the Native Mode
 
-> **Note:**
-> This option serves as a work-around solution for solving export failures of some non-native packages caused by a tricky engineering problem. For Tizen native packages, GBS always performs packaging in native packaging mode.
+Use the `--fallback-to-native` option to force GBS to perform packaging for non-native packages in the native packaging mode in the packaging phase of the building process, that is, ignore the upstream branch and create a tarball from HEAD (by default) or specified commit without generating any patch. Adding the `--fallback-to-native` option when issuing the `gbs build` or `gbs export` command is equivalent to adding the `fallback_to_native = true` property into the `[general]` section of the GBS configuration file.
 
-An example is shown below:
+> **Note**
+>
+> This option serves as a work-around solution for solving export failures of some non-native packages caused by a tricky engineering problem. For Tizen native packages, GBS always performs packaging in the native packaging mode.
 
 ```bash
 $ gbs build -A i586 --fallback-to-native
 ```
 
-#### Skip the building of src.rpm file
+### Skipping the Building of the src.rpm File
 
-Normally, two types of package files are created during the package building process:
+Normally, 2 types of package files are created during the package building process:
 
-- The binary, or executable, package file
-- The source package file
+- Binary, or executable, package file
+- Source package file
 
-The source package file, that is, src.rpm file, contains everything needed to recreate a specific version of a package, therefore, src.rpm file is a great way to distribute source code, but is optional when developing source code, especially when the source git tree is huge.
+The source package file (`src.rpm`) contains everything needed to recreate a specific version of a package. This makes the `src.rpm` file a great way to distribute source code. However, it is optional when developing source code, especially when the source Git tree is huge.
 
-Adding --skip-srcrpm option will enable GBS to skip the building of src.rpm file, thus speeding up the building process of huge source git trees during development phase. An example is shown below:
+Adding the `--skip-srcrpm` option enables GBS to skip the building of the `src.rpm` file, speeding up the building process of huge source Git trees during development:
 
 ```bash
 $ cd <Path_to_crosswalk>
 $ gbs build -A i586 --skip-srcrpm
 ```
 
-#### Use distributed compiler networks
+### Using Distributed Compiler Networks
 
-Though GBS has already provided --threads option to speed up the build process by activating multiple build workers, yet for huge git tree like crosswalk, the efficiency of just using multiple build workers in one local machine is far from satisfactory. That's where --icecream option comes in.
+Though GBS provides the `--threads` option to speed up the build process by activating multiple build workers, the efficiency of just using multiple build workers in 1 local machine is far from satisfactory, especially for a huge Git tree, such as crosswalk.
 
---icecream option activates distributed compiler networks, that is, GBS will use build workers on both local machine and distributed networks, thus further speeding up the build process.
-
-An example is shown below:
+To improve the build process efficiency further, use the `--icecream` option, which activates distributed compiler networks. The option makes GBS use build workers on both the local machine and distributed networks.
 
 ```bash
 $ gbs build -A i586 --icecream=10
 ```
 
-### Fetch the project build conf and customize build root (for Advanced Users)
+## Fetching the Project Build Conf and Customizing the Build Root (for Advanced Users)
 
-Project build conf describes the project build configurations for the project, including pre-defined macros/packages/flags in the build environment. In Tizen releases, the build conf is released together with the released repo. You can find an example at: [http://download.tizen.org/releases/daily/trunk/ivi/latest/builddata/xxx-build.conf](http://download.tizen.org/releases/daily/trunk/ivi/latest/builddata/xxx-build.conf)
+The project build conf describes the build configurations for the project, including all macros, packages, and flags predefined in the build environment. In Tizen releases, the build conf is released together with the released repository. For an example, see [http://download.tizen.org/releases/daily/trunk/ivi/latest/builddata/xxx-build.conf](http://download.tizen.org/releases/daily/trunk/ivi/latest/builddata/xxx-build.conf).
 
-- gbs build will fetch the build conf automatically
+- Fetch the build conf automatically with the `gbs build` command
 
-  Starting from gbs 0.7.1, by default, gbs will fetch the build conf from a remote repo, if you specify the remote Tizen repo, and then store it in your temp environment. Here's the build log:
+  Starting from GBS 0.7.1, by default, GBS fetches the build conf from a remote repository (if you specify the remote Tizen repository) and stores it in your temporary environment:
 
   ```bash
   $ gbs build -A i586
@@ -428,13 +438,13 @@ Project build conf describes the project build configurations for the project, i
   [sudo] password for <user>:
   ```
 
-- build the package using your own project build conf, using the -D option
+- Build the package using your own project build conf, by using the `-D` option
 
-  You can save it and modify it, and then use it for your purposes:
+  You can save and modify the build conf, and use it for your own purposes:
 
   ```bash
   $ cp /var/tmp/<user>-gbs/tizen2.0.conf ~/tizen2.0.conf
   $ gbs build -A i586 -D ~/tizen2.0.conf
   ```
 
-  If you need to customize the build config, refer to: [http://en.opensuse.org/openSUSE:Build_Service_prjconf](http://en.opensuse.org/openSUSE:Build_Service_prjconf)
+To customize the build config, see [http://en.opensuse.org/openSUSE:Build_Service_prjconf](http://en.opensuse.org/openSUSE:Build_Service_prjconf).

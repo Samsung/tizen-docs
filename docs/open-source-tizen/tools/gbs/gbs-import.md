@@ -1,60 +1,77 @@
 # gbs import
 
-The subcommand will help to import source code or existing source rpm packages into the git repository. Most of the time, it is used for initializing a git repository or for upgrading packages. It supports these formats: source rpm, specfile, and tarball. For instructions on using the import subcommand, use this command: gbs import --help
+Use the `gbs import` subcommand to import source code or existing source RPM packages into the Git repository. Most of the time, this command is used for initializing a Git repository or for upgrading packages.
+
+The import supports the following formats: source rpm, specfile, and tarball.
+
+For command usage details, enter:
 
 ```bash
 $ gbs import --help
 ```
 
-### Importing source packages
+The `gbs import` subcommand supports some common options:
 
-#### Import from a source rpm
+- `--upstream-branch` defines the upstream branch name. If you use it, also define the name in the package-specific `.gbs.conf` file (in all relevant branches), so that the remote repository and all other users get the correct setting, too.
+- `--no-pristine-tar` disables the use of the pristine-tar tool. It means that GBS does not import the upstream source tarball to the pristine-tar branch.
+- `--filter` allows you to filter out files from the upstream source archive. For example, you can filter out the `.git` directory from the upstream tarball (with `--filter=.git`). This option can be given multiple times.
 
-```bash
-$ gbs import sed-4.1.5-1/sed-4.1.5-1.src.rpm
-info: No git repository found, creating one.
-Initialized empty Git repository in /home/test/sed/.git/
-info: Tag upstream/4.1.5 not found, importing Upstream upstream sources
-info: Will create missing branch 'upstream'
-pristine-tar: committed sed-4.1.5.tar.gz.delta to branch pristine-tar
-info: Importing packaging files
-info: Will create missing branch 'master'
-info: Version '4.1.5-1' imported under 'sed'
-info: done.
-$ git tag
-upstream/4.1.5
-vendor/4.1.5-1
-$ cd sed && git branch
-* master
-  pristine-tar
-  upstream
-```
+## Importing Source Packages
 
-#### Import from spec file
+You can import from:
 
-```bash
-$ gbs import sed-4.1.5-1/sed.spec
-info: No git repository found, creating one.
-Initialized empty Git repository in /home/test/sed/.git/
-info: Tag upstream/4.1.5 not found, importing Upstream upstream sources
-info: Will create missing branch 'upstream'
-pristine-tar: committed sed-4.1.5.tar.gz.delta to branch pristine-tar
-info: Importing packaging files
-info: Will create missing branch 'master'
-info: Version '4.1.5-1' imported under 'sed'
-info: done.
-$ cd sed && git branch
-* master
-  pristine-tar
-  upstream
-$ git tag
-upstream/4.1.5
-vendor/4.1.5-1
-```
+- Source rpm:
 
-#### Special options for importing source packages
+  ```bash
+  $ gbs import sed-4.1.5-1/sed-4.1.5-1.src.rpm
+  info: No git repository found, creating one.
+  Initialized empty Git repository in /home/test/sed/.git/
+  info: Tag upstream/4.1.5 not found, importing Upstream upstream sources
+  info: Will create missing branch 'upstream'
+  pristine-tar: committed sed-4.1.5.tar.gz.delta to branch pristine-tar
+  info: Importing packaging files
+  info: Will create missing branch 'master'
+  info: Version '4.1.5-1' imported under 'sed'
+  info: done.
+  $ git tag
+  upstream/4.1.5
+  vendor/4.1.5-1
+  $ cd sed && git branch
+  * master
+    pristine-tar
+    upstream
+  ```
 
-If the source package contains patches, gbs will try to apply patches on top of master branch:
+- Spec file:
+
+  ```bash
+  $ gbs import sed-4.1.5-1/sed.spec
+  info: No git repository found, creating one.
+  Initialized empty Git repository in /home/test/sed/.git/
+  info: Tag upstream/4.1.5 not found, importing Upstream upstream sources
+  info: Will create missing branch 'upstream'
+  pristine-tar: committed sed-4.1.5.tar.gz.delta to branch pristine-tar
+  info: Importing packaging files
+  info: Will create missing branch 'master'
+  info: Version '4.1.5-1' imported under 'sed'
+  info: done.
+  $ cd sed && git branch
+  * master
+    pristine-tar
+    upstream
+  $ git tag
+  upstream/4.1.5
+  vendor/4.1.5-1
+  ```
+
+The source package import supports some special options:
+
+- `--no-patch-import` disables the automatic patch import, so that GBS does not try to apply patches on top of the master branch. Apply patches manually or mark them as manually maintained (see [Manually Maintained Patches](../../porting/maintenance-models.md#manually-maintained-patches)).
+- `--native` specifies the package as a native package, with no separate upstream. No upstream Git branch is created and it is assumed that all content, including packaging files, are found in the source tarball inside the source package.
+- `--allow-same-version` re-imports an already imported version of the package. It does not re-import the upstream sources, but only re-imports the packaging files to the master branch.
+- `--packaging-dir` defines the directory for packaging files (default is `packaging/`). This can be needed if the upstream sources already have a directory named `packaging`. If you use this option, also define this setting in the package-specific `.gbs.conf` file (in all relevant branches) so that the remote repository and all other users get the correct setting, too.
+
+If the source package contains patches, GBS tries to apply patches on top of the master branch:
 
 ```bash
 Source0:    ftp://ftp.gnu.org/pub/gnu/sed/sed-%{version}.tar.gz
@@ -88,11 +105,9 @@ Source1001: packaging/sed.manifest
 ...
 ```
 
-The --no-patch-import option disabled automatic patch import, i.e. gbs does not try to apply patches on top of the master branch. You should apply patches manually or mark them as manually maintained (see [manually maintained patches](https://source.tizen.org/documentation/reference/git-build-system/upstream-tarball-and-patch-generation-support)) With --native command line option you can specify the package as a native package, with no separate upstream. No upstream git branch is created and it is assumed that all content, including packaging files are found in the source tarball inside the source package. Using the --allow-same-version option you can re-import an already imported version of the package. This will not re-import the upstream sources, it'll only re-import the packaging files to the master branch. You can use the --packaging-dir option to define the directory for packaging files, i.e. some other than the default 'packaging/'. This may be needed e.g. if the upstream source sources already have a directory named 'packaging'. If you use this option you sould also define this setting in the package-specific .gbs.conf file (in all relevant branches) so that the remote repository and all other users get the correct setting, too.
+## Importing Upstream Sources
 
-### Importing upstream sources
-
-Import tar ball can be used to upgrade a package. gbs import can only work if upstream branch exists. Once gbs importsucceeded, new tar ball will be unpacked and import to upstream branch. If pristine-tar branch exists, tar ball is also be imported to pristine-tar branch.
+An import tar ball can be used to upgrade a package. GBS import only works if the upstream branch exists. Once the import succeeds, the new tar ball is unpacked and imported to the upstream branch. If a pristine-tar branch exists, the tar ball is also imported to that branch.
 
 ```bash
 $ gbs import ../sed-4.2.0-1/sed-4.2.0.tar.gz
@@ -119,30 +134,25 @@ $ git checkout pristine-tar && git log --oneline
  71ee336 pristine-tar data for sed-4.1.5.tar.gz
 ```
 
-#### Special options for importing upstream sources
+The upstream source import supports some special options:
 
-If you want to merge imported upstream branch to master automatically, --merge can be used:
+- `--upstream-vcs-tag` is used in case you track an upstream Git directly, but still want to import the official release tarballs. Using this option, you get the complete Git history of the upstream Git into your upstream branch. The difference between the real upstream Git tag and the release tarball (added autotools macros) is shown as 1 commit on top of the real upstream Git tag.
+- `--merge` allows you to merge the imported upstream branch to the master automatically:
 
-```bash
-$ gbs import --merge ../sed-4.2.0-1/sed-4.2.0.tar.gz
-What is the upstream version? [4.2.0]
-info: Importing '/home/test/sed-4.2.0-1/sed-4.2.0.tar.gz' to branch 'upstream'...
-info: Source package is sed
-info: Upstream version is 4.2.0
-pristine-tar: committed sed-4.2.0.tar.gz.delta to branch pristine-tar
-info: Merging to 'master'
-Merge made by recursive.
-info: Successfully imported version 4.2.0 of /home/test/sed-4.2.0-1/sed-4.2.0.tar.gz
-info: done.
-$ git log --oneline
- cc58b4c Merge commit 'upstream/4.2.0'
- 1f157c3 Imported Upstream version 4.2.0
- 482ef23 Imported vendor release 4.1.5-1
- fc76416 Imported Upstream version 4.1.5
-```
-
-You can use the --upstream-vcs-tag option in case you track upstream git directly, but still want to import the official release tarballs. Using this option, you get the complete git history of the upstream git in to your upstream branch. And, the diff between the real upstream git tag and the release tarball (e.g. added autotools macros) is shown as one commit on top of the real upstream git tag.
-
-### Common options for importing source packages and upstream sources
-
-This section describes the advanced command line options that are applicable for importing both source packages and upstream source archives. The --upstream-branch option may be used to define the upstream branch name. If you do this, you sould also define that in the package-specific .gbs.conf file (in all relevant branches), similarly to the '--packaging-dir' option. The --no-pristine-tar option disables the use of the pristine-tar tool. That is, gbs will not import the upstream source tarball to pristine-tar branch. With the --filter option one can filter out files from the upstream source archive. For example, you may need to filter out the .git directory from the upstream tarball (with --filter=.git). This option can be given multiple times.
+  ```bash
+  $ gbs import --merge ../sed-4.2.0-1/sed-4.2.0.tar.gz
+  What is the upstream version? [4.2.0]
+  info: Importing '/home/test/sed-4.2.0-1/sed-4.2.0.tar.gz' to branch 'upstream'...
+  info: Source package is sed
+  info: Upstream version is 4.2.0
+  pristine-tar: committed sed-4.2.0.tar.gz.delta to branch pristine-tar
+  info: Merging to 'master'
+  Merge made by recursive.
+  info: Successfully imported version 4.2.0 of /home/test/sed-4.2.0-1/sed-4.2.0.tar.gz
+  info: done.
+  $ git log --oneline
+   cc58b4c Merge commit 'upstream/4.2.0'
+   1f157c3 Imported Upstream version 4.2.0
+   482ef23 Imported vendor release 4.1.5-1
+   fc76416 Imported Upstream version 4.1.5
+  ```

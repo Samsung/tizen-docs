@@ -1,78 +1,73 @@
 # Building Packages Locally with GBS
 
-This topic provides information about how to perform local builds using the Git Build System (GBS).
+You can perform local builds using the Git Build System (GBS).
 
-You must read, understand, and correctly follow the instructions in the following documents before performing local builds:
+Before performing local builds, study the following instructions:
 
-- [Setting up Development Environment](setting-up.md)
+- [Setting up the Development Environment](setting-up.md)
 - [Installing Development Tools](installing.md)
 - [Cloning Tizen Source Files](cloning.md)
 
-## Building a Package for a Specific Project
+To build a package for a specific project:
 
 1. To clone the source of a specific project, follow the instructions in [Cloning Tizen Source Files](cloning.md).
-
-2. Switch to the directory that contains the project:
+1. Switch to the directory that contains the project:
 
    ```bash
    $ cd <Specific_Project>
    ```
+1. Create a  `<Specific_Project>/.gbs.conf` GBS configuration file (optional).
 
-3. Create a  `<Specific_Project>/.gbs.conf` GBS configuration file (optional).
+   If a `<Specific_Project>/.gbs.conf` file exists, the configuration in that file is used when building the project with GBS. If not, the default GBS configuration in the `~/.gbs.conf` file is used.
 
-   If a `<Specific_Project>/.gbs.conf` file exists, the configuration in that file is used when building the project with GBS. If not, the default GBS configuration in `~/.gbs.conf` is used.
+   For more information about the `.gbs.conf` file and the customization of remote repositories, see [GBS Configuration](../tools/gbs/gbs.conf.md) and [Setting up the Development Environment](setting-up.md), respectively.
 
-   For more information about `.gbs.conf`, see [Configuration File](../tools/gbs/gbs.conf.md).
-
-   For more customization information on remote repositories, see [Setting up Development Environment](setting-up.md).
-
-4. Build a package for the project:
+1. Build a package for the project:
 
    ```bash
    $ gbs build <gbs build option>
    ```
-
-5. Take followup actions, if necessary. For more information, see [Performing Another Build](#id4).
+1. Take follow-up actions, if necessary. For more information, see [Performing Another Build](#performing-another-build).
 
 ## Build Tips
 
 The build tips for local builds include:
 
-- How to exclude specific packages.
-- How to speed up a local build.
-- How to perform another build.
+- How to [exclude specific packages](#excluding-specific-packages).
+- How to [speed up a local build](#speeding-up-a-local-build).
+- How to [perform another build](#perform-another-build).
 
-### Excluding Specific Packages <a name="id3"></a>
+### Excluding Specific Packages
 
-To exclude specific packages when building locally with GBS, you can either list them in the gbs build argument, which is `--exclude` , or list them in the `.gbs.conf` file. For example:
+To exclude specific packages when building locally with GBS, you can either list them in the `--exclude` argument of the `gbs build` command, or list them in the `.gbs.conf` file:
 
-- To exclude packages when running `gbs build`, use the `--exclude` build argument:
+- To exclude packages when running the `gbs build` command, use the `--exclude` build argument:
   ```bash
   $ exclude_pkgs="aaa bbb ccc ddd"
   $ gbs build -A armv7l --exclude=${exclude_pkgs},eee,fff
   ```
-- To specify a list of excluded packages in `.gbs.conf`, use the `excluded_packages` parameter inside a profile block:
+- To specify a list of excluded packages in the `.gbs.conf` file, use the `excluded_packages` parameter inside a profile block:
   ```
   [profile.unified_standard]
   repos = repo.base_arm,repo.base_arm_debug,repo.base_arm64,repo.base_arm64_debug,repo.base_ia32,repo.base_ia32_debug,repo.base_x86_64,repo.base_x86_64_debug,repo.unified_standard,repo.unified_standard_debug
   exclude_packages=aaa,bbb,ccc,ddd,eee,fff
   ```
 
-### Speeding up a Local Build <a name="speed"></a>
+### Speeding up a Local Build
 
-If the size of your RAM and swap file are both larger than 8 gigabytes, create a GBS `BUILD-ROOTS` directory and mount it as a RAM disk to speed up building:
+If the size of your RAM and swap file are both larger than 8 GB, you can speed up building by creating a GBS `BUILD-ROOTS` directory and mounting it as a RAM disk:
 
 ```bash
 $ mkdir -p ~/GBS-ROOT/local/BUILD-ROOTS
 $ sudo mount -t tmpfs -o size=16G tmpfs ~/GBS-ROOT/local/BUILD-ROOTS
 ```
 
-### Performing Another Build <a name="id4"></a>
+### Performing Another Build
 
-When the result of the first build is unsatisfactory, perform another build by executing one of the following commands, as appropriate:
+When the result of the first build is unsatisfactory, perform another build by executing 1 of the following commands, as appropriate:
 
 - Scenario 1:
-  - The URL of the remote repo is the same as in the previous build.
+  - The URL of the remote repository is the same as in the previous build.
   - New packages to be built are dependent on previously built packages.
   - You want previously built packages to participate in the new build.
 
@@ -81,7 +76,7 @@ When the result of the first build is unsatisfactory, perform another build by e
   ```
 
 - Scenario  2:
-  - The URL of the remote repo is the same as in the previous build.
+  - The URL of the remote repository is the same as in the previous build.
   - New packages to be built are dependent on previously built packages.
   - You do not want previously built packages to participate in the new build.
 
@@ -91,7 +86,7 @@ When the result of the first build is unsatisfactory, perform another build by e
 
 - Scenario 3:
 
-  - The URL of the remote repo is changed.
+  - The URL of the remote repository has changed.
   - New packages to be built are not dependent on previously built packages.
 
   ```bash
@@ -99,7 +94,7 @@ When the result of the first build is unsatisfactory, perform another build by e
   ```
 
 - Scenario 4:
-  - The URL of the remote repo is changed.
+  - The URL of the remote repository has changed.
   - New packages to be built are dependent on previously built packages.
   - You want previously built packages to participate in the new build.
 
@@ -108,7 +103,7 @@ When the result of the first build is unsatisfactory, perform another build by e
   ```
 
 - Scenario 5:
-  - The URL of the remote repo is changed.
+  - The URL of the remote repository has changed.
   - New packages to be built are dependent on previously built packages.
   - You do not want previously built packages to participate in the new build.
 
@@ -118,19 +113,19 @@ When the result of the first build is unsatisfactory, perform another build by e
 
 The building directory during runtime is `~/GBS-ROOT/local/BUILD-ROOTS/scratch.<Arch>.<Number_of_Threads>`, into which the following input related to the current build is loaded to construct an independent building environment:
 
-- Source code in `<Spcific_Project>`
+- Source code in `<Specific_Project>`
 - Local RPM packages in `~/GBS-ROOT/local/repos/<Release_ID>/<Arch>`
-- Remote RPM packages in repo url inside GBS configuration file. For example:  `http://download.tizen.org/releases/daily/tizen/<Tizen_Profile>/<Release_ID>/repos/<Repository>/packages/`
+- Remote RPM packages in a repository URL inside the GBS configuration file. For example: `http://download.tizen.org/releases/daily/tizen/<Tizen_Profile>/<Release_ID>/repos/<Repository>/packages/`
 
-After a successful build, GBS moves the build results including generated RPM packages, SRPM packages and build logs into the output directory, `~/GBS-ROOT/local/repos/<Release_ID>/<Arch>`. The output directory content automatically participates in a new build, if any, and can have a potential impact on the new build, depending on the dependency between the existing packages already built and new packages to be built. For example:
+After a successful build, GBS moves the build result, including generated RPM packages, SRPM packages, and build logs, into the output directory, `~/GBS-ROOT/local/repos/<Release_ID>/<Arch>`. The output directory content automatically participates in a new build, if any, and can have a potential impact on the new build, depending on the dependency between the existing packages already built and new packages to be built. For example:
 
-- Suppose package B has a dependency on package A, which means in package B building, A-1.rpm in remote repo will be used.
+- Suppose package B has a dependency on package A, which means in package B building, `A-1.rpm` in the remote repository is used.
 - Build package A first.
-- A-2.rpm is generated under ~/GBS-ROOT/
+- `A-2.rpm` is generated under `~/GBS-ROOT/`.
 - Build package B.
-- A-2.rpm under ~/GBS-ROOT/ will be used in package B building,  instead of A-1.rpm in remote repo.
+- `A-2.rpm` under `~/GBS-ROOT/` is used in package B building, instead of `A-1.rpm` in the remote repository.
 
-Based on the above working mechanism of the GBS build, the following rules must be followed for the `gbs build`command to guarantee the quality of new build:
+Based on the above working mechanism of the GBS build, the following rules must be followed for the `gbs build`command to guarantee the quality of the new build:
 
-- Add the `--clean` parameter, if the URL of the remote repo is changed. If this parameter is given, current  `~/GBS-ROOT/local/BUILD-ROOTS/scratch.<Arch>.<Number_of_Threads>` will be cleaned up, so previously constructed GBS build environment will be removed.
-- Add the `--clean-repos` parameter, if new packages to be built are dependent on the previously built packages that you do not want to involve in the new build. If this parameter is given,  current `~/GBS-ROOT/local/repos/<Release_ID>/<Arch>` will be cleaned up, so previously built packages will be removed.
+- If the URL of the remote repository has changed, add the `--clean` parameter. If this parameter is given, the current `~/GBS-ROOT/local/BUILD-ROOTS/scratch.<Arch>.<Number_of_Threads>` directory is cleaned up, to remove previously constructed GBS build environment.
+- If new packages to be built are dependent on the previously built packages that you do not want to involve in the new build, add the `--clean-repos` parameter. If this parameter is given, the current `~/GBS-ROOT/local/repos/<Release_ID>/<Arch>` directory is cleaned up, to remove previously built packages.

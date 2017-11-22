@@ -2,9 +2,9 @@
 
 This topic provides information on how to create a Tizen image.
 
-You must read, understand, and correctly follow the instructions in the following documents before creating images:
+Before creating an image, study the following instructions:
 
-- [Setting up Development Environment](setting-up.md)
+- [Setting up the Development Environment](setting-up.md)
 - [Installing Development Tools](installing.md)
 - [Cloning Tizen Source Files](cloning.md)
 - [Building Packages Locally with GBS](building.md)
@@ -21,19 +21,19 @@ Image creation requires a kickstart file that describes how to create an image. 
 
    - For example:
 
-     - Tizen: 4.0: Unified / standard/ `mobile-wayland-armv7l-tm1.ks`
+     - Tizen: 4.0: Unified / standard / `mobile-wayland-armv7l-tm1.ks`
 
        ```bash
        $ wget http://download.tizen.org/releases/daily/tizen/unified/tizen-unified_20170627.1/builddata/images/standard/image-configurations/mobile-wayland-armv7l-tm1.ks
        ```
 
-     - Tizen: 4.0: Unified / emulator/ `tv-emulator32-wayland.ks`
+     - Tizen: 4.0: Unified / emulator / `tv-emulator32-wayland.ks`
 
        ```bash
        $ wget http://download.tizen.org/releases/daily/tizen/unified/tizen-unified_20170627.1/builddata/images/emulator/image-configurations/tv-emulator32-wayland.ks
        ```
 
-     - Tizen: 3.0: Wearable / target-circle/ `wearable-wayland-armv7l-circle.ks`
+     - Tizen: 3.0: Wearable / target-circle / `wearable-wayland-armv7l-circle.ks`
 
        ```bash
        $ wget http://download.tizen.org/releases/daily/tizen/3.0-wearable/tizen-3.0-wearable_20170627.1/builddata/images/target-circle/image-configurations/wearable-wayland-armv7l-circle.ks
@@ -41,7 +41,7 @@ Image creation requires a kickstart file that describes how to create an image. 
 
 2. Modify the original kickstart file to include locally built RPMs into the Tizen image.
 
-   For example: Tizen: 4.0: Unified / standard/ `mobile-wayland-armv7l-tm1.ks`
+   For example: Tizen: 4.0: Unified / standard / `mobile-wayland-armv7l-tm1.ks`
 
    - The `repo` section of the original kickstart file:
 
@@ -58,14 +58,15 @@ Image creation requires a kickstart file that describes how to create an image. 
      repo --name=local --baseurl=file:///home/<User>/GBS-ROOT/local/repos/tizen3.0-tm1/armv7l/ --priority=1
      ```
 
-   > **Note** 
+   > **Note**
+   >
    > - The `baseurl` property of the `local` repo specifies the file path where locally built RPMs are located.
-   > - Setting the priority of the `local` repository at 1 and the priorities of remote repositories at 99 guarantees that MIC uses the packages that exist in the local repo with a higher priority if packages are available in both remote and local repositories.
-   > - To add new packages into a Tizen image, add the new packages' names into the `%package` section, and add them into the `local` repo.
+   > - Setting the priority of the `local` repository at 1 and the priorities of remote repositories at 99 guarantees that MIC uses the packages that exist in the local repository with a higher priority, when packages are available in both remote and local repositories.
+   > - To add new packages into a Tizen image, add the new packages' names into the `%package` section, and add them into the `local` repository.
 
 ## Creating a Tizen Image
 
-To create a Tizen image, execute the following command:
+To create a Tizen image:
 
 ```bash
 $ gbs createimage --ks-file=mobile-wayland-armv7l-tm1.ks
@@ -96,4 +97,4 @@ Info: Finished.
 
 `TM1-201609030819.tar.gz` is the image file and `TM1-201609030833.packages` contains package info integrated in the image, including package name, version, and VCS information.
 
-Once the Tizen image is created, the final step is to flash the image to a target device for verification. For more information, see [Flash an Image to Device](flashing.md).
+Once the Tizen image is created, the final step is to flash the image to a target device for verification. For more information, see [Flashing an Image to Device](flashing.md).
