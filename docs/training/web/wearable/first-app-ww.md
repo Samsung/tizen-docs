@@ -361,6 +361,7 @@ Features](../../../tizen-studio/common-tools/emulator-features.md).
 To run the application on a target device:
 
 1.  Connect the wearable target device to your computer:
+
     a.  Define settings on the device:
       -   Go to **Settings &gt; Connections**, and switch
             on Bluetooth.
@@ -389,20 +390,20 @@ To run the application on a target device:
        *  In the **Device Manager**, click the **Remote Device
       Manager** button.
 
-        ![Launch the Remote Device            Manager](./media/remote-conn-mgr-ww.png)
+      ![Launch the Remote Device            Manager](./media/remote-conn-mgr-ww.png)
 
        *  In the **Remote Device Manager** window, click **+**.
 
-        ![Add new device](./media/remote-conn-new-ww.png)
+      ![Add new device](./media/remote-conn-new-ww.png)
 
        *  In the **Add Device** window, enter the device and network            details (use the IP address you noted before), and click            **Add**.
 
-        ![Define device            details](./media/remote-conn-add-ww.png)
+      ![Define device            details](./media/remote-conn-add-ww.png)
 
        *  In the **Remote Device Manager** window, switch the new
     device on by clicking the switch under **Connect**.
 
-        ![Connect the device](./media/remote-connect-ww.png)
+      ![Connect the device](./media/remote-connect-ww.png)
 
     c.  The device asks for user confirmation. To allow Gear to read log        data, copy files to and from your computer, and install the        application manually, click the accept mark.
 
