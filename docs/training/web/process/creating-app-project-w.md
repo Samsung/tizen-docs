@@ -30,6 +30,7 @@ To create a Web application project:
 
 
 
+
    >  **Note** <br>
    > If you cannot see the TV profile option, open the
         Package Manager and make sure that you have installed the TV
@@ -49,6 +50,7 @@ To create a Web application project:
 
   ![Selecting the        template](./media/create-project-wizard-template-ww.png)
 
+
   e.  Define the project properties and click **Finish**.<br>
       You can fill the project name. You can also select the location
       and working sets by clicking **More properties**.
@@ -64,6 +66,7 @@ To create a Web application project:
 
 
   ![Defining        properties](./media/create-project-wizard-properties-ww.png)
+
 
   The Project Wizard sets up the project, creates the application      files using the default content from the template, and closes.      For more information on the Project Wizard and the available      templates, see [Creating Tizen Projects with Tizen Project      Wizard](../../../tizen-studio/web-tools/project-wizard-w.md).
 

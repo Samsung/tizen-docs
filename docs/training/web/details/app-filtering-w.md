@@ -88,6 +88,7 @@ The following tables list the available screen size features.
 <th>Since</th>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/screen.size.normal`</td>
@@ -100,6 +101,7 @@ If no screen size key is declared, it is assumed that the application supports o
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/screen.size.normal.240.400`</td>
@@ -112,6 +114,7 @@ If no screen size key is declared, it is assumed that the application supports o
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/screen.size.normal.320.320`</td>
@@ -124,6 +127,7 @@ If no screen size key is declared, it is assumed that the application supports o
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/screen.size.normal.320.480`</td>
@@ -136,6 +140,7 @@ If no screen size key is declared, it is assumed that the application supports o
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/screen.size.normal.360.360`</td>
@@ -148,6 +153,7 @@ If no screen size key is declared, it is assumed that the application supports o
 <td>2.3.2</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/screen.size.normal.360.480`</td>
@@ -160,6 +166,7 @@ If no screen size key is declared, it is assumed that the application supports o
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/screen.size.normal.480.800`</td>
@@ -172,6 +179,7 @@ If no screen size key is declared, it is assumed that the application supports o
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/screen.size.normal.540.960`</td>
@@ -184,6 +192,7 @@ If no screen size key is declared, it is assumed that the application supports o
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/screen.size.normal.600.1024`</td>
@@ -196,6 +205,7 @@ If no screen size key is declared, it is assumed that the application supports o
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/screen.size.normal.720.1280`</td>
@@ -208,6 +218,7 @@ If no screen size key is declared, it is assumed that the application supports o
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/screen.size.normal.1080.1920`</td>
@@ -220,6 +231,7 @@ If no screen size key is declared, it is assumed that the application supports o
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/screen.size.all`</td>
@@ -242,6 +254,7 @@ If no screen size key is declared, it is assumed that the application supports o
 <th>Since</th>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/screen.size.normal`</td>
@@ -254,6 +267,7 @@ If no screen size key is declared, it is assumed that the application supports o
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/screen.size.normal.320.320`</td>
@@ -266,6 +280,7 @@ If no screen size key is declared, it is assumed that the application supports o
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/screen.size.normal.360.360`</td>
@@ -278,6 +293,7 @@ If no screen size key is declared, it is assumed that the application supports o
 <td>2.3.2</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/screen.size.normal.360.480`</td>
@@ -290,6 +306,7 @@ If no screen size key is declared, it is assumed that the application supports o
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/screen.size.all`</td>
@@ -362,6 +379,7 @@ application package.
 <th>Since</th>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/account`</td>
@@ -369,6 +387,7 @@ application package.
 <td>4.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/app_history`</td>
@@ -376,6 +395,7 @@ application package.
 <td>4.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/badge`</td>
@@ -383,6 +403,7 @@ application package.
 <td>4.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/battery`</td>
@@ -390,6 +411,7 @@ application package.
 <td>2.3*</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/calendar`</td>
@@ -397,6 +419,7 @@ application package.
 <td>4.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/contact`</td>
@@ -404,6 +427,7 @@ application package.
 <td>4.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/database.encryption`</td>
@@ -411,6 +435,7 @@ application package.
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/datasync`</td>
@@ -418,6 +443,7 @@ application package.
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/fmradio`</td>
@@ -425,6 +451,7 @@ application package.
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/humanactivitymonitor`</td>
@@ -432,6 +459,7 @@ application package.
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/iot.ocf`</td>
@@ -439,6 +467,7 @@ application package.
 <td>3.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/led`</td>
@@ -446,6 +475,7 @@ application package.
 <td>2.4</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/location.batch`</td>
@@ -462,6 +492,7 @@ Specify this key, if the application requires the location tracking with a posit
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.bluetooth.audio.media`</td>
@@ -469,6 +500,7 @@ Specify this key, if the application requires the location tracking with a posit
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.bluetooth.health`</td>
@@ -476,6 +508,7 @@ Specify this key, if the application requires the location tracking with a posit
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.bluetooth.le`</td>
@@ -483,6 +516,7 @@ Specify this key, if the application requires the location tracking with a posit
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.net_proxy`</td>
@@ -498,6 +532,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.nfc.card_emulation`</td>
@@ -505,6 +540,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.nfc.card_emulation.hce`</td>
@@ -512,6 +548,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>2.3.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.nfc.p2p`</td>
@@ -519,6 +556,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>2.3.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.nfc.tag`</td>
@@ -526,6 +564,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>2.3.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.push`</td>
@@ -533,6 +572,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.secure_element`</td>
@@ -540,6 +580,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.telephony`</td>
@@ -547,6 +588,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.telephony.mms`</td>
@@ -554,6 +596,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.telephony.sms`</td>
@@ -561,6 +604,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>2.4</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.wifi`</td>
@@ -568,6 +612,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/security.tee`</td>
@@ -575,6 +620,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>4.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.accelerometer`</td>
@@ -582,6 +628,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>4.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.barometer`</td>
@@ -589,6 +636,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.gravity`</td>
@@ -596,6 +644,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>3.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.gyroscope`</td>
@@ -603,6 +652,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>3.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.gyroscope_rotation_vector`</td>
@@ -610,6 +660,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>3.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.gyroscope.uncalibrated`</td>
@@ -617,6 +668,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>4.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.heart_rate_monitor`</td>
@@ -624,6 +676,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.heart_rate_monitor.led_green`</td>
@@ -631,6 +684,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>2.3.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.heart_rate_monitor.led_ir`</td>
@@ -638,6 +692,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>2.3.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.heart_rate_monitor.led_red`</td>
@@ -645,6 +700,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>2.3.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.linear_acceleration`</td>
@@ -652,6 +708,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>3.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.magnetometer`</td>
@@ -659,6 +716,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.magnetometer.uncalibrated`</td>
@@ -666,6 +724,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>3.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.pedometer`</td>
@@ -673,6 +732,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.photometer`</td>
@@ -680,6 +740,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.proximity`</td>
@@ -687,6 +748,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.significant_motion`</td>
@@ -694,6 +756,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>4.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.sleep_monitor`</td>
@@ -701,6 +764,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>3.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.ultraviolet`</td>
@@ -708,6 +772,7 @@ Specify this key, if the application requires the net-proxy feature for the Inte
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.wrist_up`</td>
@@ -730,6 +795,7 @@ Tizen 4.0.
 <th>Since</th>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/camera`</td>
@@ -755,6 +821,7 @@ Specify this key, if the application requires the Global Positioning System (GPS
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.accelerometer`</td>
@@ -771,6 +838,7 @@ Specify this key, if the application requires an acceleration sensor for using t
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.magnetometer`</td>
@@ -799,6 +867,7 @@ Specify this key, if the application requires the speech synthesis (text-to-spee
 <th>Since</th>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/shell.appwidget`</td>
@@ -817,6 +886,7 @@ Specify this key, if the application requires the speech synthesis (text-to-spee
 <th>Since</th>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/account`</td>
@@ -824,6 +894,7 @@ Specify this key, if the application requires the speech synthesis (text-to-spee
 <td>4.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/app_history`</td>
@@ -831,6 +902,7 @@ Specify this key, if the application requires the speech synthesis (text-to-spee
 <td>4.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/badge`</td>
@@ -838,6 +910,7 @@ Specify this key, if the application requires the speech synthesis (text-to-spee
 <td>4.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/battery`</td>
@@ -845,6 +918,7 @@ Specify this key, if the application requires the speech synthesis (text-to-spee
 <td>2.3*</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/calendar`</td>
@@ -852,6 +926,7 @@ Specify this key, if the application requires the speech synthesis (text-to-spee
 <td>4.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/contact`</td>
@@ -859,6 +934,7 @@ Specify this key, if the application requires the speech synthesis (text-to-spee
 <td>4.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/database.encryption`</td>
@@ -866,6 +942,7 @@ Specify this key, if the application requires the speech synthesis (text-to-spee
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/download`</td>
@@ -894,6 +971,7 @@ If the key is declared in the `config.xml` file, the application can be installe
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/iot.ocf`</td>
@@ -901,6 +979,7 @@ If the key is declared in the `config.xml` file, the application can be installe
 <td>3.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/led`</td>
@@ -908,6 +987,7 @@ If the key is declared in the `config.xml` file, the application can be installe
 <td>2.4</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/location.batch`</td>
@@ -915,6 +995,7 @@ If the key is declared in the `config.xml` file, the application can be installe
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.bluetooth`</td>
@@ -922,6 +1003,7 @@ If the key is declared in the `config.xml` file, the application can be installe
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.bluetooth.audio.media`</td>
@@ -938,6 +1020,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.bluetooth.le`</td>
@@ -945,6 +1028,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.net_proxy`</td>
@@ -952,6 +1036,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>3.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.nfc`</td>
@@ -959,6 +1044,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.nfc.card_emulation`</td>
@@ -966,6 +1052,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.nfc.card_emulation.hce`</td>
@@ -973,6 +1060,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.3.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.nfc.p2p`</td>
@@ -980,6 +1068,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.3.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.nfc.tag`</td>
@@ -987,6 +1076,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.3.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.push`</td>
@@ -994,6 +1084,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.secure_element`</td>
@@ -1001,6 +1092,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.telephony`</td>
@@ -1008,6 +1100,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.telephony.sms`</td>
@@ -1015,6 +1108,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.4</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.wifi`</td>
@@ -1022,6 +1116,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/security.tee`</td>
@@ -1029,6 +1124,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>4.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.accelerometer`</td>
@@ -1036,6 +1132,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>4.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.barometer`</td>
@@ -1043,6 +1140,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.gravity`</td>
@@ -1050,6 +1148,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.3.2</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.gyroscope`</td>
@@ -1057,6 +1156,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.3.2</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.gyroscope_rotation_vector`</td>
@@ -1064,6 +1164,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.3.2</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.gyroscope.uncalibrated`</td>
@@ -1071,6 +1172,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>4.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.heart_rate_monitor`</td>
@@ -1078,6 +1180,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.heart_rate_monitor.led_green`</td>
@@ -1085,6 +1188,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.3.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.heart_rate_monitor.led_ir`</td>
@@ -1092,6 +1196,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.3.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.heart_rate_monitor.led_red`</td>
@@ -1099,6 +1204,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.3.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.linear_acceleration`</td>
@@ -1106,6 +1212,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>3.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.magnetometer`</td>
@@ -1113,6 +1220,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.magnetometer.uncalibrated`</td>
@@ -1120,6 +1228,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>4.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.pedometer`</td>
@@ -1127,6 +1236,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.photometer`</td>
@@ -1134,6 +1244,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.proximity`</td>
@@ -1141,6 +1252,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.sleep_monitor`</td>
@@ -1148,6 +1260,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>3.0</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.ultraviolet`</td>
@@ -1155,6 +1268,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.wrist_up`</td>
@@ -1162,6 +1276,7 @@ Specify this key, if the application requires the Bluetooth Advanced Audio featu
 <td>2.3</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/watch_app`</td>
@@ -1183,6 +1298,7 @@ Tizen 4.0.
 <th>Since</th>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/camera`</td>
@@ -1199,6 +1315,7 @@ Specify this key, if the application requires any kind of a camera for using the
 <td>2.3.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/location.gps`</td>
@@ -1215,6 +1332,7 @@ Specify this key, if the application requires the Global Positioning System (GPS
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/network.internet`</td>
@@ -1231,6 +1349,7 @@ Specify this key, if the application requires Internet access for using the [Web
 <td>2.3.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/screen.shape.rectangle`</td>
@@ -1238,6 +1357,7 @@ Specify this key, if the application requires Internet access for using the [Web
 <td>2.3.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/sensor.accelerometer`</td>
@@ -1254,6 +1374,7 @@ Specify this key, if the application requires an acceleration sensor for using t
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/speech.synthesis`</td>
@@ -1273,6 +1394,7 @@ Specify this key, if the application requires the speech synthesis (text-to-spee
 <th>Since</th>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/media.audio_recording`</td>
@@ -1311,6 +1433,7 @@ Specify this key, if the application requires the video recording functionality 
 <th>Since</th>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/shell.appwidget`</td>
@@ -1318,6 +1441,7 @@ Specify this key, if the application requires the video recording functionality 
 <td>2.2.1</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/web.service`</td>
@@ -1336,6 +1460,7 @@ Specify this key, if the application requires the video recording functionality 
 <th>Since</th>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/feature/tv.audio`</td>
@@ -1418,6 +1543,7 @@ attributes.
 </tr>
 <tr>
 <td>Mobile</td>
+
 <td>
 
 `mobile`</td>

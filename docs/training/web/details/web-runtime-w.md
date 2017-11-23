@@ -240,6 +240,7 @@ privilege level behavior mapping.
 <th>Privilege behavior</th>
 </tr>
 <tr>
+
 <td>
 
 Geolocation (in **mobile and wearable applications only**)</td>
@@ -253,6 +254,7 @@ Geolocation (in **mobile and wearable applications only**)</td>
 </td>
 </tr>
 <tr>
+
 <td>
 
 Getusermedia (in **mobile and wearable applications only**)</td>
@@ -266,6 +268,7 @@ Getusermedia (in **mobile and wearable applications only**)</td>
 </td>
 </tr>
 <tr>
+
 <td>
 
 Web Notifications (in **mobile applications only**)</td>
@@ -279,6 +282,7 @@ Web Notifications (in **mobile applications only**)</td>
 </td>
 </tr>
 <tr>
+
 <td>
 
 Storage (in **mobile and wearable applications only**)<br>
@@ -294,6 +298,7 @@ Storage (in **mobile and wearable applications only**)<br>
 </td>
 </tr>
 <tr>
+
 <td>
 
 FullScreen (in **mobile applications only**)</td>
@@ -316,6 +321,7 @@ Audio Recording (in **wearable applications only**)</td>
 </td>
 </tr>
 <tr>
+
 <td>
 
 Video Recording (in **wearable applications only**)</td>
@@ -349,6 +355,7 @@ mapping**
 <table>
 <tr>
 <th rowspan="2">API privilege level</th>
+
 <th colspan="3">
 
 Distributor signature type (`signature1.xml`)</th>
@@ -362,6 +369,7 @@ Distributor signature type (`signature1.xml`)</th>
 <tr>
 <th>Platform</th>
 <td>Allowed</td>
+
 <td>
 
 Security error for runtime use (direct API call without `config.xml` declaration)<br>
@@ -382,6 +390,7 @@ Installation fail for `config.xml` use
 <th>Partner</th>
 <td>Allowed</td>
 <td>Allowed</td>
+
 <td>
 
 Security error for runtime use (direct API call without `config.xml` declaration)<br>
@@ -398,6 +407,7 @@ Installation fail for `config.xml` use
 <td>Allowed</td>
 <td>Allowed</td>
 <td>Allowed</td>
+
 <td>
 
 Security error for runtime use (direct API call without `config.xml` declaration)<br>

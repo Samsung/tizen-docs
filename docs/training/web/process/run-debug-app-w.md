@@ -207,6 +207,7 @@ To debug your application on the target device:
 
 
 
+
    > **Note** <br>
    >  The Web Inspector always opens in a new window. Life-cycle
     synchronization between the application to be debugged and the Web    Inspector browser is not supported.    
@@ -236,6 +237,7 @@ To debug your application on the target device:
   <th>Description</th>
 </tr>
 <tr>
+
   <td>
 
    ![Resume](./media/resume.png)  </td>
@@ -249,6 +251,7 @@ To debug your application on the target device:
   Executes the current line, and if the line contains a method, executes the method without entering it.</td>
 </tr>
 <tr>
+
   <td>
 
   ![Step in](./media/stepin.png)   </td>
@@ -256,6 +259,7 @@ To debug your application on the target device:
   Executes the current line, and if the line contains a method, steps   into the method.         </td>
 </tr>
 <tr>
+
   <td>
 
   ![Step out](./media/stepout.png)   </td>

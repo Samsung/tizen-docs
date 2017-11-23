@@ -78,6 +78,7 @@ when using security-sensitive API modules in mobile Web applications.
 <th>Description</th>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/account.read`</td>
@@ -87,6 +88,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can read accounts.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/account.write`</td>
@@ -96,6 +98,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can create, edit, and delete accounts.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/alarm`</td>
@@ -105,6 +108,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can manage alarms by retrieving saved alarms and waking the device up at scheduled times.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/apphistory.read`</td>
@@ -114,6 +118,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can read the statistics of application usage, such as which applications have been used frequently or recently.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/application.info`</td>
@@ -123,6 +128,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can retrieve information related to other applications.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/application.launch`</td>
@@ -132,6 +138,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can open other applications using the application ID or application control.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/appmanager.certificate`</td>
@@ -141,6 +148,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can retrieve specified application certificates.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/appmanager.kill`</td>
@@ -150,6 +158,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can close other applications.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/appmanager.launch`</td>
@@ -159,6 +168,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can open other applications.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/bluetooth`</td>
@@ -168,6 +178,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can perform unrestricted actions using Bluetooth, such as scanning for and connecting to other devices.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/bluetoothmanager`</td>
@@ -177,6 +188,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can change Bluetooth system settings related to privacy and security, such as the visibility mode.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/bookmark.read`</td>
@@ -186,6 +198,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can read bookmarks.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/bookmark.write`</td>
@@ -195,6 +208,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can create, edit, and delete bookmarks.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/calendar.read`</td>
@@ -204,6 +218,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can read events and tasks.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/calendar.write`</td>
@@ -213,6 +228,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can create, update, and delete events and tasks.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/call`</td>
@@ -222,6 +238,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can make phone calls to numbers when they are tapped without further confirmation. This can result in additional charges depending on the user's payment plan.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/callhistory.read`</td>
@@ -231,6 +248,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can read call log items.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/callhistory.write`</td>
@@ -240,6 +258,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can create, update, and delete call log items.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/contact.read`</td>
@@ -249,6 +268,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can read the user profile, contacts, and contact history. Contact history can include social network activity.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/contact.write`</td>
@@ -258,6 +278,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can create, update, and delete the user profile, contacts, and any contact history that is related to this application. Contact history can include social network activity.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/content.read`</td>
@@ -267,6 +288,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can read media content information.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/content.write`</td>
@@ -276,6 +298,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can create, update, and delete media content information.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/datacontrol.consumer`</td>
@@ -285,6 +308,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can read data exported by data control providers.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/datasharing`</td>
@@ -294,6 +318,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can share data with other applications.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/datasync`</td>
@@ -303,6 +328,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can synchronize device data, such as contacts and calendar events, using the OMA DS 1.2 protocol.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/download`</td>
@@ -312,6 +338,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can manage HTTP downloads.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/filesystem.read`</td>
@@ -321,6 +348,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can read file systems.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/filesystem.write`</td>
@@ -330,6 +358,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can write to file systems.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/healthinfo`</td>
@@ -339,6 +368,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can read the user's health information gathered by device sensors, such as pedometer or heart rate monitor.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/ime`</td>
@@ -348,6 +378,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can provide users with a way to enter characters and symbols into an associated text field.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/led`</td>
@@ -357,6 +388,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can switch LEDs on or off, such as the LED on the front of the device and the camera flash.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/location`</td>
@@ -366,6 +398,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can read the user's location information.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/mediacontroller.client`</td>
@@ -375,6 +408,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can receive information about currently playing media from applications that are allowed to send it, and can control those applications remotely.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/mediacontroller.server`</td>
@@ -384,6 +418,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can send information about currently playing media to applications that are allowed to receive it, and can be controlled remotely by those applications.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/messaging.read`</td>
@@ -393,6 +428,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can retrieve messages from message boxes or receive messages.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/messaging.write`</td>
@@ -402,6 +438,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can write, send, sync, and remove text messages, multimedia messages, and emails.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/networkbearerselection`</td>
@@ -411,6 +448,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can request and release a specific network connection.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/nfc.admin`</td>
@@ -420,6 +458,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can change NFC settings, such as switching NFC on or off.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/nfc.cardemulation`</td>
@@ -429,6 +468,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can access smart card details, such as credit card details, and allow users to make payments through NFC.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/nfc.common`</td>
@@ -438,6 +478,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can use common NFC features.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/nfc.p2p`</td>
@@ -447,6 +488,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can push NFC messages to other devices.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/nfc.tag`</td>
@@ -456,6 +498,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can read and write NFC tag information.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/notification`</td>
@@ -465,6 +508,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can show and hide its own notifications and badges.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/package.info`</td>
@@ -474,6 +518,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can retrieve information about installed packages.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/packagemanager.install`</td>
@@ -483,6 +528,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can install or uninstall application packages.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/power`</td>
@@ -492,6 +538,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can control power-related settings, such as dimming the screen.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/push`</td>
@@ -501,6 +548,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can receive notifications from the Internet.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/recorder`</td>
@@ -510,6 +558,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can record video and audio.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/secureelement`</td>
@@ -519,6 +568,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can access secure smart card chips, such as UICC/SIM, embedded secure elements, and secure SD cards.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/setting`</td>
@@ -528,6 +578,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can change and read user settings.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/system`</td>
@@ -537,6 +588,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can read system information.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/tee.client`</td>
@@ -546,6 +598,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can communicate with a Trusted Application.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/telephony`</td>
@@ -555,6 +608,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can retrieve telephony information, such as the network and SIM card used, the IMEI, and the status of calls.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/volume.set`</td>
@@ -564,6 +618,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can adjust the volume for different features, such as notification alerts, ringtones, and media.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/websetting`</td>
@@ -573,6 +628,7 @@ when using security-sensitive API modules in mobile Web applications.
 <td>The application can change its Web application settings, including deleting cookies. <strong>Deprecated since 2.4.</strong></td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/widget.viewer`</td>
@@ -597,6 +653,7 @@ when using security-sensitive API modules in mobile Web applications.
 <th>Description</th>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/internet`</td>
@@ -623,6 +680,7 @@ The application can manipulate streams from cameras and microphones using the [g
 </td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/unlimitedstorage`</td>
@@ -639,6 +697,7 @@ The application can use the storage with unlimited size with the [File API: Dire
 </td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/notification`</td>
@@ -655,6 +714,7 @@ The application can display simple notifications using the [Web Notifications](h
 </td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/location`</td>
@@ -682,6 +742,7 @@ The application can access geographic locations using the [Geolocation](https://
 <th>Description</th>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/fullscreen`</td>
@@ -714,6 +775,7 @@ when using security-sensitive API modules in wearable Web applications.
 <th>Description</th>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/account.read`</td>
@@ -723,6 +785,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can read accounts.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/account.write`</td>
@@ -732,6 +795,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can create, edit, and delete accounts.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/alarm`</td>
@@ -741,6 +805,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can set alarms and wake up the device at scheduled times.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/apphistory.read`</td>
@@ -750,6 +815,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can read the statistics of application usage, such as which applications have been used frequently or recently.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/application.info`</td>
@@ -759,6 +825,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can retrieve information related to other applications.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/application.launch`</td>
@@ -768,6 +835,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can open other applications using the application ID or application control.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/appmanager.certificate`</td>
@@ -777,6 +845,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can retrieve specified application certificates.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/appmanager.kill`</td>
@@ -786,6 +855,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can close other applications.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/appmanager.launch`</td>
@@ -795,6 +865,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can open other applications.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/bluetooth`</td>
@@ -804,6 +875,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can perform unrestricted actions using Bluetooth, such as scanning for and connecting to other devices.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/bluetoothmanager`</td>
@@ -813,6 +885,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can change Bluetooth system settings related to privacy and security, such as the visibility mode.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/calendar.read`</td>
@@ -822,6 +895,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can read events and tasks.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/calendar.write`</td>
@@ -831,6 +905,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can create, update, and delete events and tasks.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/call`</td>
@@ -840,6 +915,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can make phone calls to numbers when they are tapped without further confirmation.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/contact.read`</td>
@@ -849,6 +925,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can read your profile, contacts, and contact history. Contact history can include social network activity.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/contact.write`</td>
@@ -858,6 +935,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can create, update, and delete your profile, contacts, and any contact history that is related to this application. Contact history can include social network activity.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/content.read`</td>
@@ -867,6 +945,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can read media content information.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/content.write`</td>
@@ -876,6 +955,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can create, update, and delete media content information.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/datacontrol.consumer`</td>
@@ -885,6 +965,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can read data exported by data control providers.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/datasharing`</td>
@@ -894,6 +975,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can share data with other applications.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/download`</td>
@@ -903,6 +985,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can manage HTTP downloads.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/filesystem.read`</td>
@@ -912,6 +995,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can read file systems.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/filesystem.write`</td>
@@ -921,6 +1005,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can write to file systems.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/healthinfo`</td>
@@ -930,6 +1015,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can read the user's health information gathered by device sensors, such as pedometer or heart rate monitor.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/ime`</td>
@@ -939,6 +1025,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can provide users with a way to enter characters and symbols into an associated text field.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/led`</td>
@@ -948,6 +1035,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can switch LEDs on or off, such as the LED on the front of the device and the camera flash.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/location`</td>
@@ -957,6 +1045,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can read the user's location information.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/mediacontroller.client`</td>
@@ -966,6 +1055,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can receive information about currently playing media from applications that are allowed to send it, and can control those applications remotely.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/mediacontroller.server`</td>
@@ -975,6 +1065,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can send information about currently playing media to applications that are allowed to receive it, and can be controlled remotely by those applications.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/nfc.admin`</td>
@@ -984,6 +1075,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can change NFC settings, such as switching NFC on or off.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/nfc.cardemulation`</td>
@@ -993,6 +1085,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can access smart card details, such as credit card details, and allow users to make payments through NFC.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/nfc.common`</td>
@@ -1002,6 +1095,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can use common NFC features.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/nfc.p2p`</td>
@@ -1011,6 +1105,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can push NFC messages to other devices.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/nfc.tag`</td>
@@ -1020,6 +1115,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can read and write NFC tag information.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/notification`</td>
@@ -1029,6 +1125,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can show and hide its own notifications and badges.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/package.info`</td>
@@ -1038,6 +1135,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can retrieve information about installed packages.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/packagemanager.install`</td>
@@ -1047,6 +1145,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can install or uninstall application packages.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/power`</td>
@@ -1056,6 +1155,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can control power-related settings, such as dimming the screen.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/push`</td>
@@ -1065,6 +1165,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can receive notifications from the Internet.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/recorder`</td>
@@ -1074,6 +1175,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can record video and audio.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/secureelement`</td>
@@ -1083,6 +1185,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can access secure smart card chips, such as UICC/SIM, embedded secure elements, and secure SD cards.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/setting`</td>
@@ -1092,6 +1195,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can change and read user settings.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/system`</td>
@@ -1101,6 +1205,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can read system information.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/tee.client`</td>
@@ -1110,6 +1215,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can communicate with a Trusted Application.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/telephony`</td>
@@ -1119,6 +1225,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can retrieve telephony information, such as the network and SIM card used, the IMEI, and the status of calls.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/volume.set`</td>
@@ -1128,6 +1235,7 @@ when using security-sensitive API modules in wearable Web applications.
 <td>The application can adjust the volume for different features, such as notification alerts, ringtones, and media.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/widget.viewer`</td>
@@ -1151,6 +1259,7 @@ when using security-sensitive API modules in wearable Web applications.
 <th>Description</th>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/internet`</td>
@@ -1179,6 +1288,7 @@ The application can manipulate streams from cameras and microphones using the [g
 </td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/unlimitedstorage`</td>
@@ -1195,6 +1305,7 @@ The application can use the storage with unlimited size with the [Indexed Databa
 </td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/location`</td>
@@ -1223,6 +1334,7 @@ The application can access geographic locations using the [Geolocation](https://
 <th>Description</th>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/camera`</td>
@@ -1239,6 +1351,7 @@ The application can capture video and image on a target device using the [Camera
 </td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/audiorecorder`</td>
@@ -1272,6 +1385,7 @@ when using security-sensitive API modules in TV Web applications.
 <th>Description</th>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/alarm`</td>
@@ -1280,6 +1394,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can retrieve saved alarms and wake up the device at scheduled times.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/apphistory.read`</td>
@@ -1288,6 +1403,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can read the statistics of application usage, such as which applications have been used frequently or recently.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/application.info`</td>
@@ -1296,6 +1412,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can retrieve information related to other applications.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/application.launch`</td>
@@ -1304,6 +1421,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can open other applications using the application ID or application control.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/appmanager.certificate`</td>
@@ -1312,6 +1430,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can retrieve specified application certificates.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/appmanager.kill`</td>
@@ -1320,6 +1439,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can close other applications.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/appmanager.launch`</td>
@@ -1328,6 +1448,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can open other applications.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/content.read`</td>
@@ -1336,6 +1457,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can read media content information.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/content.write`</td>
@@ -1344,6 +1466,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can change media information. This information can be used by other applications.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/datacontrol.consumer`</td>
@@ -1352,6 +1475,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can read data exported by data control providers.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/datasharing`</td>
@@ -1360,6 +1484,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can share data with other applications.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/download`</td>
@@ -1368,6 +1493,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can manage HTTP downloads. This can result in additional charges depending on the user's payment plan.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/filesystem.read`</td>
@@ -1376,6 +1502,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can read file systems.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/filesystem.write`</td>
@@ -1384,6 +1511,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can write to file systems.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/fullscreen`</td>
@@ -1392,6 +1520,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can use the full screen view.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/internet`</td>
@@ -1400,6 +1529,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can access the Internet. This may result in additional charges depending on your payment plan.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/led`</td>
@@ -1408,6 +1538,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can switch LEDs on or off, such as the LED on the front of the device and the camera flash.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/mediacapture`</td>
@@ -1416,6 +1547,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can capture video and audio data.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/package.info`</td>
@@ -1424,6 +1556,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can retrieve information about installed packages.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/packagemanager.install`</td>
@@ -1432,6 +1565,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can install or uninstall application packages.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/push`</td>
@@ -1440,6 +1574,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can receive notifications from the Internet. This can result in additional charges depending on the user's payment plan.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/recorder`</td>
@@ -1448,6 +1583,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can record video and audio.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/system`</td>
@@ -1456,6 +1592,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can read system information.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/tee.client`</td>
@@ -1464,6 +1601,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can communicate with a Trusted Application.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/telephony`</td>
@@ -1472,6 +1610,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can retrieve telephony information, such as the network and SIM card used, the IMEI, and the status of calls.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/tv.audio`</td>
@@ -1480,6 +1619,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can change the volume, enable and disable the silent mode, detect volume changes, and play beeps.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/tv.channel`</td>
@@ -1488,6 +1628,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can change the TV channel, read information about TV channels and programs, and receive notifications when the TV channel has been changed.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/tv.display`</td>
@@ -1496,6 +1637,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can check whether a device supports 3D and read information about the 3D mode.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/tv.inputdevice`</td>
@@ -1504,6 +1646,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can capture the key events of an input device, such as TV remote control, and release key grabbing.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/tv.window`</td>
@@ -1512,6 +1655,7 @@ when using security-sensitive API modules in TV Web applications.
 <td>The application can embed the display of a video source, specify the size, and show or hide the embedded display.</td>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/volume.set`</td>
@@ -1532,6 +1676,7 @@ when using security-sensitive API modules in TV Web applications.
 <th>Description</th>
 </tr>
 <tr>
+
 <td>
 
 `http://tizen.org/privilege/unlimitedstorage`</td>

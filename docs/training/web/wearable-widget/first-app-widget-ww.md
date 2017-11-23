@@ -346,6 +346,7 @@ To run the application on the emulator:
 1.  Launch an emulator instance in the [Emulator
     Manager](../../../tizen-studio/common-tools/emulator-manager.md):
 
+
     a.  In the Tizen Studio menu, select **Tools &gt; Emulator        Manager**.
 
       ![Emulator Manager](./media/emulator-icon.png)
@@ -370,6 +371,7 @@ To run the application on the emulator:
     in the Tizen Studio.
 
 3.  Run the application:
+
 
     a.  In the **Project Explorer** view, right-click the project and        select **Run As &gt; Tizen Web Application**.
 
@@ -408,6 +410,7 @@ To run the application on the emulator:
 To see the widget running on the home screen, add the widget
       there:
 
+
   *  Press the **Back** key (in the top right corner of the        emulator device) to return to the home screen (showing a          watch face).
 
   *  Swipe the home screen to the right and select **+**.
@@ -434,6 +437,7 @@ Features](../../../tizen-studio/common-tools/emulator-features.md).
 To run the application on a target device:
 
 1.  Connect the wearable target device to your computer:
+
 
     a.  Define settings on the device:
       -   Go to **Settings &gt; Connections**, and switch
@@ -463,6 +467,7 @@ To run the application on a target device:
       ``` {.prettyprint}
         cd tizen-sdk/tools
         ./sdb connect <IP address of Gear S2>
+
       ```
 
      Use the IP address you noted before.
@@ -503,6 +508,7 @@ To run the application on a target device:
       instances, select the device from the combo box in the toolbar
       before selecting to run the application.
 
+
       ![Selecting the device to        use](./media/app-run-multiple-emulators.png)
 
     c.  Confirm that the application launches on the target device.
@@ -522,6 +528,7 @@ To run the application on a target device:
         icon](./media/run-new-config-wn.png)), define the
         configuration details, and launch the application by clicking
         `Run`.
+
   >
   > ![Run Configurations        window](./media/run-configurations-w-widget.png)
 
