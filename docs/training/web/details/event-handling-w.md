@@ -38,7 +38,9 @@ the application. The following table describes the rotary events.
 <tr>
 <td>rotarydetent</td>
 <td>Event is triggered when a device detects the detent point.</td>
-<td>`detail.direction`: the rotation direction.<br>
+<td>
+
+`detail.direction`: the rotation direction.<br>
 The available values are `CW` for clockwise and `CCW` for counter-clockwise rotation.
 </td>
 </tr>
@@ -110,15 +112,21 @@ The following table describes the ambient mode events.
 <tr>
 <td>ambientmodechanged</td>
 <td>Event is triggered when a device enables or disables the ambient mode.</td>
-<td>`detail.ambientMode`: the status of the mode.<br>
+<td>
+
+`detail.ambientMode`: the status of the mode.<br>
 The available values are `true` when the ambient mode is enabled and `false` when the ambient mode is disabled.
 </td>
 </tr>
 <tr>
 <td>timetick</td>
-<td>Event is triggered once a minute while the device is in the ambient mode to notify the application that it can update its UI.<br>
-<div class="note">**Note** <br>
-The `http://tizen.org/privilege/alarm` privilege must be set to get timetick events.</div>
+<td>
+
+Event is triggered once a minute while the device is in the ambient mode to notify the application that it can update its UI.<br>
+
+  > **Note** <br>
+  > The `http://tizen.org/privilege/alarm` privilege must be set to get timetick events.
+
 </td>
 <td>-</td>
 </tr>
