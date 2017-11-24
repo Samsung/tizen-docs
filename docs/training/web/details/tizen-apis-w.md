@@ -268,6 +268,7 @@ You can schedule an application to be run at a specific time, retrieve informati
 [Alarms](../../../guides/web/alarm/alarms-w.md) <br>
 [Application   Management](../../../guides/web/app-management/app-management-cover-w.md)     <br>
 [Notifications](../../../guides/web/notification/notification-w.md)<br>  
+
 [Text Input](../../../guides/web/text_input/text-input-cover-w.md)    
 
 - API Reference:   [Application Framework](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Application)        
@@ -353,6 +354,7 @@ You can access the state of the device power resource, device system information
 - Guides:<br>
 [Device Settings and Systems](../../../guides/web/device/device-cover-w.md) <br>
 [Media and Camera](../../../guides/web/media/media-cover-w.md)<br>  
+
 [Sensors](../../../guides/web/sensors/sensors-cover-w.md)<br>        
 
 - API Reference:   [System](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#System)      
@@ -495,6 +497,7 @@ You can use security functionalities, such as storing and recalling private data
 You can access the device system information and use locale-specific calendar features by retrieving date and time information. You can also set Web view properties, such as setting Web view user agents and deleting Web view cookies.
 </td>
 <td>
+
 
 - Guides: [Device Settings  and   Systems](../../../guides/web/device/device-cover-w.md)     
 

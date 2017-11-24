@@ -205,6 +205,7 @@ The following table lists the policy properties you can edit in the
   <th> Description </th>
 </tr>
 <tr>
+
   <td>
 
   **content-security-policy** </td>
@@ -331,6 +332,7 @@ can edit.
   <th> Description </th>
 </tr>
 <tr>
+
   <td rowspan="4">
 
   **Application** </td>
@@ -341,6 +343,7 @@ can edit.
   This attribute is mandatory. </td>
 </tr>
 <tr>
+
   <td>
 
   **Required Version** </td>
@@ -366,6 +369,7 @@ can edit.
 </tr>
 
 <tr>
+
   <td>
 
   **Content** </td>
@@ -378,6 +382,7 @@ can edit.
 </tr>
 
 <tr>
+
   <td rowspan="6">
 
   **Setting** </td>
@@ -391,6 +396,7 @@ can edit.
  </td>
 </tr>
 <tr>
+
   <td>
 
   **Context Menu** </td>
@@ -401,6 +407,7 @@ can edit.
  </td>
 </tr>
 <tr>
+
   <td>
 
   **Background Support** </td>
@@ -411,6 +418,7 @@ can edit.
  </td>
 </tr>
 <tr>
+
   <td>
 
   **Encryption**</td>
@@ -421,6 +429,7 @@ can edit.
  </td>
 </tr>
 <tr>
+
   <td>
 
   **Install Location**</td>
@@ -431,6 +440,7 @@ can edit.
  </td>
 </tr>
 <tr>
+
   <td>
 
   **HW Key Event**</td>
@@ -442,6 +452,7 @@ can edit.
 </tr>
 
 <tr>
+
   <td colspan="2">
 
   **Application Control**</td>
@@ -464,6 +475,7 @@ can edit.
  </td>
 </tr>
 <tr>
+
   <td rowspan="6">
 
   **Account** </td>
@@ -475,6 +487,7 @@ can edit.
  </td>
 </tr>
 <tr>
+
   <td>
 
   **Display name** </td>
@@ -486,6 +499,7 @@ can edit.
  </td>
 </tr>
 <tr>
+
   <td>
 
   **Multiple account**</td>
@@ -494,6 +508,7 @@ can edit.
  </td>
 </tr>
 <tr>
+
   <td>
 
   **Icon**</td>
@@ -506,6 +521,7 @@ can edit.
  </td>
 </tr>
 <tr>
+
   <td>
 
   **Small icon**</td>
@@ -517,6 +533,7 @@ can edit.
   This attribute is mandatory and used **in mobile applications only**.
  </td>
 </tr><tr>
+
   <td>
 
   **Capabilities** </td>
@@ -542,6 +559,7 @@ can edit.
  </td>
 </tr>
 <tr>
+
   <td colspan="2">
 
   **Background Category**</td>
@@ -552,6 +570,7 @@ can edit.
   </td>
 </tr>
 <tr>
+
   <td colspan="2">
 
   **Meta Data**</td>
@@ -574,6 +593,7 @@ can edit.
   </td>
 </tr>
 <tr>
+
   <td colspan="2">
 
   **Category**</td>
@@ -585,6 +605,7 @@ can edit.
   </td>
 </tr>
 <tr>
+
   <td colspan="2">
 
   **Service**</td>
@@ -597,6 +618,7 @@ can edit.
   </td>
 </tr>
 <tr>
+
   <td colspan="2">
 
   **Web Widget**</td>

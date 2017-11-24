@@ -62,6 +62,7 @@ adopted in Tizen:
     <th>API functionality</th>
     <td>Available</td>
     <td>Available</td>
+
     <td>
 
     **Not available**</td>
@@ -70,6 +71,7 @@ adopted in Tizen:
     <th>API symbol</th>
     <td>Available</td>
     <td>Available</td>
+
     <td>
 
     **Not available**</td>
@@ -83,6 +85,7 @@ adopted in Tizen:
     </th>
     <td>Available</td>
     <td>Available</td>
+
     <td>
 
     **Not available**</td>
@@ -91,6 +94,7 @@ adopted in Tizen:
     <th>TCT</th>
     <td>Available</td>
     <td>Available</td>
+
     <td>
 
     **Not available**</td>

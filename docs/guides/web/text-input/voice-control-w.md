@@ -23,6 +23,7 @@ The main features of the Voice Control API include:
 
 To use the voice control:
 
+
 1. Set up the voice control and [register listeners](#callback).
 
    The initialization allows the voice control to distinguish your application from any other applications also using voice control. The registered listeners allow you to receive notifications about changes in the language, recognition result, and about any errors.
@@ -64,6 +65,7 @@ To use the voice control:
           clietn.release();
       }
       ```
+
 
 
 
@@ -110,6 +112,7 @@ To set and unset listeners to get notifications about recognition results and la
 * Add the recognition result listener to be invoked when a voice command is recognized.
 
 
+
    > **Note** <br>
    >   If the recognition result produces a reject event, the voice control service has rejected the recognized command. Make sure that the command does not conflict with other commands and there are no duplicated commands.
 
@@ -137,6 +140,7 @@ To set and unset listeners to get notifications about recognition results and la
 
          client.removeResultListener(id);
      }
+
 ```
 
 

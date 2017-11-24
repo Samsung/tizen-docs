@@ -295,6 +295,7 @@ To run the application on the emulator:
 1.  Launch an emulator instance in the [Emulator
     Manager](../../../tizen-studio/common-tools/emulator-manager.md):
 
+
     a.  In the Tizen Studio menu, select **Tools &gt; Emulator        Manager**.
 
       ![Emulator Manager](./media/emulator-icon.png)
@@ -319,6 +320,7 @@ To run the application on the emulator:
     in the Tizen Studio.
 
 3.  Run the application:
+
 
     a.  In the **Project Explorer** view, right-click the project and        select **Run As &gt; Tizen Web Application**.
 
@@ -356,6 +358,7 @@ To run the application on the emulator:
 
       ![Changing the watch face](./media/watch-run-change-wn.png)
 
+
       *  If the emulator display has been switched off, activate it
       by pressing the **Power** key (in the bottom right corner of           the emulator).
 
@@ -386,6 +389,7 @@ To run the application on a target device:
 
 1.  Connect the wearable target device to your computer:
 
+
     a.  Define settings on the device:
 
       -   Go to **Settings &gt; Connections**, and switch
@@ -415,6 +419,7 @@ To run the application on a target device:
       ``` {.prettyprint}
         cd tizen-sdk/tools
         ./sdb connect <IP address of Gear S2>
+
       ```
 
     Use the IP address you noted before.
@@ -473,6 +478,7 @@ To run the application on a target device:
         icon](./media/run-new-config-wn.png)), define the
         configuration details, and launch the application by clicking
         `Run`.
+
 >
 >  ![Run Configurations window](./media/run-configurations-ww-watch.png)
 
@@ -619,6 +625,7 @@ To draw the watch UI:
             ctx.translate(canvas.width / 2, canvas.height / 2);
             ctx.beginPath();
             ctx.fillStyle = '#999999';
+
       ```
 
     b.  Create 4 dots on the sides of the watch face and use the
@@ -634,6 +641,7 @@ To draw the watch UI:
                 ctx.fill();
             }
             ctx.closePath();
+
       ```
 
     c.  Create the center point:
@@ -650,6 +658,7 @@ To draw the watch UI:
             ctx.stroke();
             ctx.closePath();
         }
+
       ```
 
 3.  To display the actual time on the watch face, create the clock
@@ -677,6 +686,7 @@ To draw the watch UI:
             ctx.closePath();
             ctx.restore();
         }
+
       ```
 
     b.  Create the hour needle using the `renderHourNeedle()` method:
@@ -692,10 +702,12 @@ To draw the watch UI:
             radius = clockRadius * 0.55;
             renderNeedle(angle, radius);
         }
+
       ```
 
     c.  Create the minute needle using the `renderMinuteNeedle()`
         method:
+
 
       ``` {.prettyprint}
         function renderMinuteNeedle(minute) {
@@ -708,6 +720,7 @@ To draw the watch UI:
             radius = clockRadius * 0.75;
             renderNeedle(angle, radius);
         }
+
       ```
 
 4.  Indicate the current time in the `main.js` file:
@@ -794,6 +807,7 @@ Since Tizen 2.3.2, some devices introduce a high color mode for the
 ambient mode. In the high color mode, you can use more colors (usually,
 24-bit color) for drawing the ambient mode UI. To check whether the
 device supports the high color mode, use the following code:
+
 >
 >
 >  ``` <br>

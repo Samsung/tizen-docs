@@ -325,6 +325,7 @@ To run the application on the emulator:
       emulator, it is automatically launched when you select to run
       the application.
 
+
     ![Selecting the emulator to      use](./media/app-run-multiple-emulators.png)
 
     b.  Confirm that the application launches on the emulator.
@@ -397,6 +398,7 @@ To run the application on a target device:
       If you have both a connected device and existing emulator
       instances, select the device from the combo box in the toolbar        before selecting to run the application.
 
+
     ![Selecting the device to        use](./media/app-run-multiple-emulators.png)
 
     c.  Confirm that the application launches on the target device.
@@ -413,6 +415,7 @@ To run the application on a target device:
         icon](./media/run-new-config-wn.png)), define the
         configuration details, and launch the application by clicking
         `Run`.
+
 >
 >   ![Run Configurations
         window](./media/run-configurations-w.png)
@@ -720,6 +723,7 @@ To create a Web application and design its UI with TAU:
 
     b.  To create a page in the `<body>` element, use the `ui-page`
       class with the `<div>` element:
+
     ```
         <body>
            <div class="ui-page" id="main">
@@ -727,6 +731,7 @@ To create a Web application and design its UI with TAU:
            <!--Script import-->
            <script> ... </script>
         </body>
+
     ```
 
 
@@ -746,6 +751,7 @@ To create a Web application and design its UI with TAU:
               </div>
            </div>
         </body>
+
       ```
 
       The following figure shows the screen that you can see if you
@@ -754,6 +760,7 @@ To create a Web application and design its UI with TAU:
       ![Hello TAU](./media/simple-ui-hello-tau-mw.png)
 
     d.  You can add your own style in the content and footer area with a        defined `id` attribute:
+
 
       ```
         <body>
@@ -770,6 +777,7 @@ To create a Web application and design its UI with TAU:
               </div>
            </div>
         </body>
+
       ```
 
 
@@ -783,6 +791,7 @@ To create a Web application and design its UI with TAU:
         #footerArea {
            background-color: blue;
         }
+
       ```
 
       With your new styles, the screen looks like this.
@@ -895,6 +904,7 @@ To create a Web application and design its UI with TAU:
       rename it. Create a `second.html` file with the following
       content:
 
+
       ```
         <!DOCTYPE html>
         <html>
@@ -913,10 +923,12 @@ To create a Web application and design its UI with TAU:
               <script type="text/javascript" src="lib/tau/mobile/js/tau.js" data-build-remove="false"></script>
            </body>
         </html>
+
       ```
 
     b.  Decorate the page in the same way as `index.html`. In the
       `style.css` file, add the following CSS style:
+
 
       ```
         #secondPage {
@@ -929,6 +941,7 @@ To create a Web application and design its UI with TAU:
       Go back to the `index.html` file and add a file path in the
       listview `<li><a href>` element:
 
+
       ```
         <ul class="ui-listview">
            <li class="ui-li-anchor"><a href="second.html">Go to Second Page</a></li>
@@ -936,6 +949,7 @@ To create a Web application and design its UI with TAU:
            <li class="ui-li-anchor"><a href="#">Anchor List 3</a></li>
            <li class="ui-li-anchor"><a href="#">Anchor List 4</a></li>
         </ul>
+
       ```
 
     d.  Run the code, and see how you can move from the `index.html`        page to the `second.html` page.
@@ -957,6 +971,7 @@ To create a Web application and design its UI with TAU:
 
     a.  In the `index.html` file, add the        `<script src="app.js"></script>` line before closing the        `</body>` element:
 
+
       ```
         <body>
            <div class="ui-page" id="main">
@@ -973,6 +988,7 @@ To create a Web application and design its UI with TAU:
            <script type="text/javascript" src="lib/tau/mobile/js/tau.js"></script>
            <script src="app.js"></script>
         </body>
+
       ```
 
     b.  In the **Project Explorer** view, right-click the project and        select **New &gt; JavaScript Source File**.
@@ -984,6 +1000,7 @@ To create a Web application and design its UI with TAU:
 
     d.  In the `app.js` file, all kinds of logic can be added to
       the application. In this case, add several lines for handling        navigation:
+
 
       ```
         (function() {
@@ -998,6 +1015,7 @@ To create a Web application and design its UI with TAU:
                 }
             });
         }());
+
       ```
 
 8.  Exit the application.
@@ -1013,6 +1031,7 @@ To create a Web application and design its UI with TAU:
     The following example shows how to handle the back key input with
     page navigation and application exit. This code is included in the
     **TAU Basic** project template `main.js` file by default.
+
 
     ```
     (function() {

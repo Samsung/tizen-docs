@@ -93,20 +93,21 @@ A Web application package must conform to the following conventions:
   <th> Description </th>
 </tr>
 <tr>
-  <td>
+<td>
 
   `config.xml`  </td>
   <td> File </td>
   <td> Application configuration document </td>
 </tr>
 <tr>
-  <td>       
+<td>       
 
   `icon.gif`     </td>
   <td> File  </td>
   <td> Application default icon </td>
 </tr>
 <tr>
+
   <td>  
 
   `icon.ico`    </td>
@@ -114,6 +115,7 @@ A Web application package must conform to the following conventions:
   <td> Application default icon </td>
 </tr>
 <tr>
+
   <td>     
 
   `icon.jpg`     </td>
@@ -121,6 +123,7 @@ A Web application package must conform to the following conventions:
   <td> Application default icon </td>
 </tr>
 <tr>
+
   <td>        
 
   `icon.png`     </td>
@@ -128,6 +131,7 @@ A Web application package must conform to the following conventions:
   <td> Application default icon </td>
 </tr>
 <tr>
+
   <td>      
 
   `icon.svg`   </td>
@@ -135,6 +139,7 @@ A Web application package must conform to the following conventions:
   <td> Application default icon </td>
 </tr>
 <tr>
+
   <td>      
 
   `index.html`   </td>
@@ -142,6 +147,7 @@ A Web application package must conform to the following conventions:
   <td>  Application default start file </td>
 </tr>
 <tr>
+
   <td>    
 
   `index.htm`    </td>
@@ -149,6 +155,7 @@ A Web application package must conform to the following conventions:
   <td>  Application default start file </td>
 </tr>
 <tr>
+
   <td>      
 
   `index.svg`   </td>
@@ -156,6 +163,7 @@ A Web application package must conform to the following conventions:
   <td>  Application default start file </td>
 </tr>
 <tr>
+
   <td>           
 
   `index.xhtml`    </td>
@@ -163,6 +171,7 @@ A Web application package must conform to the following conventions:
   <td>  Application default start file </td>
 </tr>
 <tr>
+
   <td>      
 
    `index.xht`     </td>
@@ -170,6 +179,7 @@ A Web application package must conform to the following conventions:
   <td>  Application default start file </td>
 </tr>
 <tr>
+
   <td>      
 
   `locales`  </td>
@@ -200,6 +210,7 @@ A Web application package must conform to the following conventions:
   <th> Core XML file </th>
 </tr>
 <tr>
+
   <td>
 
   `App`</td>
@@ -245,6 +256,7 @@ A hybrid application package must conform to the following conventions:
   <th>Description</th>
 </tr>
 <tr>
+
   <td>
 
   `bin`</td>
@@ -252,6 +264,7 @@ A hybrid application package must conform to the following conventions:
   <td>Native application executable binary</td>
 </tr>
 <tr>
+
   <td>
 
   `data`</td>
@@ -259,6 +272,7 @@ A hybrid application package must conform to the following conventions:
   <td>Web or native application private data</td>
 </tr>
 <tr>
+
   <td>
 
   `info`</td>
@@ -266,6 +280,7 @@ A hybrid application package must conform to the following conventions:
   <td>Native application metadata</td>
 </tr>
 <tr>
+
   <td>
 
   `lib`</td>
@@ -273,6 +288,7 @@ A hybrid application package must conform to the following conventions:
   <td>Native application libraries</td>
 </tr>
 <tr>
+
   <td>  
 
   `res`</td>
@@ -280,6 +296,7 @@ A hybrid application package must conform to the following conventions:
   <td> Native application resources or Web application content</td>
 </tr>
 <tr>
+
   <td>  
 
   `res/wgt`</td>
@@ -287,6 +304,7 @@ A hybrid application package must conform to the following conventions:
   <td> Web application project root</td>
 </tr>
 <tr>
+
   <td>   
 
   `res/wgt/index.html`</td>
@@ -294,6 +312,7 @@ A hybrid application package must conform to the following conventions:
   <td>  Default HTML file for the Web application</td>
 </tr>
 <tr>
+
   <td>   
 
    `setting`   </td>
@@ -301,6 +320,7 @@ A hybrid application package must conform to the following conventions:
   <td>  Native application setting</td>
 </tr>
 <tr>
+
   <td>   
 
    `shared`  </td>
@@ -332,6 +352,7 @@ A hybrid application package must conform to the following conventions:
   <th> Core XML file     </th>
 </tr>
 <tr>
+
   <td>
 
   `App1`<br>(Web) </td>
@@ -352,6 +373,7 @@ A hybrid application package must conform to the following conventions:
     `opt/share/packages/qik37po9ck.xml`)  </td>
 </tr>
 <tr>
+
   <td>
 
   `App2` <br> (Native)  </td>

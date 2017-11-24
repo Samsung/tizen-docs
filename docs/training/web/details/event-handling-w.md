@@ -38,6 +38,7 @@ the application. The following table describes the rotary events.
 <tr>
 <td>rotarydetent</td>
 <td>Event is triggered when a device detects the detent point.</td>
+
 <td>
 
 `detail.direction`: the rotation direction.<br>
@@ -112,6 +113,7 @@ The following table describes the ambient mode events.
 <tr>
 <td>ambientmodechanged</td>
 <td>Event is triggered when a device enables or disables the ambient mode.</td>
+
 <td>
 
 `detail.ambientMode`: the status of the mode.<br>
@@ -120,6 +122,7 @@ The available values are `true` when the ambient mode is enabled and `false` whe
 </tr>
 <tr>
 <td>timetick</td>
+
 <td>
 
 Event is triggered once a minute while the device is in the ambient mode to notify the application that it can update its UI.<br>
