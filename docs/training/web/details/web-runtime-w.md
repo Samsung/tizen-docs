@@ -240,51 +240,97 @@ privilege level behavior mapping.
 <th>Privilege behavior</th>
 </tr>
 <tr>
-<td>Geolocation (in **mobile and wearable applications only**)</td>
-<td>`http://tizen.org/privilege/location`</td>
-<td>**Local domain**: Grant permission if defined, otherwise block execution.<br>
+
+<td>
+
+Geolocation (in **mobile and wearable applications only**)</td>
+<td>
+
+`http://tizen.org/privilege/location`</td>
+<td>
+
+**Local domain**: Grant permission if defined, otherwise block execution.<br>
 **Remote domain**: Popup user prompt if defined, otherwise block execution.
 </td>
 </tr>
 <tr>
-<td>Getusermedia (in **mobile and wearable applications only**)</td>
-<td>`http://tizen.org/privilege/mediacapture`</td>
-<td>**Local domain**: Grant permission if defined, otherwise block execution.<br>
+
+<td>
+
+Getusermedia (in **mobile and wearable applications only**)</td>
+<td>
+
+`http://tizen.org/privilege/mediacapture`</td>
+<td>
+
+**Local domain**: Grant permission if defined, otherwise block execution.<br>
 **Remote domain**: Popup user prompt if defined, otherwise block execution.
 </td>
 </tr>
 <tr>
-<td>Web Notifications (in **mobile applications only**)</td>
-<td>`http://tizen.org/privilege/notification`</td>
-<td>**Local domain**: Grant permission if defined, otherwise popup user prompt.<br>
+
+<td>
+
+Web Notifications (in **mobile applications only**)</td>
+<td>
+
+`http://tizen.org/privilege/notification`</td>
+<td>
+
+**Local domain**: Grant permission if defined, otherwise popup user prompt.<br>
 **Remote domain**: Popup user prompt.
 </td>
 </tr>
 <tr>
-<td>Storage (in **mobile and wearable applications only**)<br>
+
+<td>
+
+Storage (in **mobile and wearable applications only**)<br>
 (IndexedDB, FileSystem capacity, quota exceeding WebDatabase)
 </td>
-<td>`http://tizen.org/privilege/unlimitedstorage`</td>
-<td>**Local domain**: Grant permission if defined, otherwise popup user prompt.<br>
+<td>
+
+`http://tizen.org/privilege/unlimitedstorage`</td>
+<td>
+
+**Local domain**: Grant permission if defined, otherwise popup user prompt.<br>
 **Remote domain**: Popup user prompt.
 </td>
 </tr>
 <tr>
-<td>FullScreen (in **mobile applications only**)</td>
-<td>`http://tizen.org/privilege/fullscreen`</td>
+
+<td>
+
+FullScreen (in **mobile applications only**)</td>
+<td>
+
+`http://tizen.org/privilege/fullscreen`</td>
 <td>If defined, launch in fullscreen mode. If not defined, launch fullscreen mode according to user input (which depends on the content).</td>
 </tr>
 <tr>
-<td>Audio Recording (in **wearable applications only**)</td>
-<td>`http://tizen.org/privilege/audiorecorder`</td>
-<td>**Local domain**: Grant permission if defined, otherwise block execution.<br>
+<td>
+
+Audio Recording (in **wearable applications only**)</td>
+<td>
+
+`http://tizen.org/privilege/audiorecorder`</td>
+<td>
+
+**Local domain**: Grant permission if defined, otherwise block execution.<br>
 **Remote domain**: Block execution.
 </td>
 </tr>
 <tr>
-<td>Video Recording (in **wearable applications only**)</td>
-<td>`http://tizen.org/privilege/camera`</td>
-<td>**Local domain**: Grant permission if defined, otherwise block execution.<br>
+
+<td>
+
+Video Recording (in **wearable applications only**)</td>
+<td>
+
+`http://tizen.org/privilege/camera`</td>
+<td>
+
+**Local domain**: Grant permission if defined, otherwise block execution.<br>
 **Remote domain**: Block execution.
 </td>
 </tr>
@@ -309,7 +355,10 @@ mapping**
 <table>
 <tr>
 <th rowspan="2">API privilege level</th>
-<th colspan="3">Distributor signature type (`signature1.xml`)</th>
+
+<th colspan="3">
+
+Distributor signature type (`signature1.xml`)</th>
 <th rowspan="2">Untrusted</th>
 </tr>
 <tr>
@@ -320,13 +369,20 @@ mapping**
 <tr>
 <th>Platform</th>
 <td>Allowed</td>
-<td>Security error for runtime use (direct API call without `config.xml` declaration)<br>
+
+<td>
+
+Security error for runtime use (direct API call without `config.xml` declaration)<br>
 Installation fail for `config.xml` use
 </td>
-<td>Security error for runtime use (direct API call without `config.xml` declaration)<br>
+<td>
+
+Security error for runtime use (direct API call without `config.xml` declaration)<br>
 Installation fail for `config.xml` use
 </td>
-<td>Security error for runtime use (direct API call without `config.xml` declaration)<br>
+<td>
+
+Security error for runtime use (direct API call without `config.xml` declaration)<br>
 Installation fail for `config.xml` use
 </td>
 </tr>
@@ -334,10 +390,15 @@ Installation fail for `config.xml` use
 <th>Partner</th>
 <td>Allowed</td>
 <td>Allowed</td>
-<td>Security error for runtime use (direct API call without `config.xml` declaration)<br>
+
+<td>
+
+Security error for runtime use (direct API call without `config.xml` declaration)<br>
 Installation fail for `config.xml` use
 </td>
-<td>Security error for runtime use (direct API call without `config.xml` declaration)<br>
+<td>
+
+Security error for runtime use (direct API call without `config.xml` declaration)<br>
 Installation fail for `config.xml` use
 </td>
 </tr>
@@ -346,7 +407,10 @@ Installation fail for `config.xml` use
 <td>Allowed</td>
 <td>Allowed</td>
 <td>Allowed</td>
-<td>Security error for runtime use (direct API call without `config.xml` declaration)<br>
+
+<td>
+
+Security error for runtime use (direct API call without `config.xml` declaration)<br>
 Installation fail for `config.xml` use
 </td>
 </tr>

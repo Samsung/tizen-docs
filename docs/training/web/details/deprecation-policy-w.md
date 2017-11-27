@@ -62,28 +62,42 @@ adopted in Tizen:
     <th>API functionality</th>
     <td>Available</td>
     <td>Available</td>
-    <td>**Not available**</td>
+
+    <td>
+
+    **Not available**</td>
     </tr>
     <tr>
     <th>API symbol</th>
     <td>Available</td>
     <td>Available</td>
-    <td>**Not available**</td>
+
+    <td>
+
+    **Not available**</td>
     </tr>
     <tr>
-    <th>API Reference<br>
+    <th>
+
+    API Reference<br>
     **API Guides**<br>
     **Samples**
     </th>
     <td>Available</td>
     <td>Available</td>
-    <td>**Not available**</td>
+
+    <td>
+
+    **Not available**</td>
     </tr>
     <tr>
     <th>TCT</th>
     <td>Available</td>
     <td>Available</td>
-    <td>**Not available**</td>
+
+    <td>
+
+    **Not available**</td>
     </tr>
     </table>
 

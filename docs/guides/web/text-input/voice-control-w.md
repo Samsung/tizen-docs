@@ -23,9 +23,10 @@ The main features of the Voice Control API include:
 
 To use the voice control:
 
-1. Set up the voice control and [register callbacks](#callback).
 
-  The initialization allows the voice control to distinguish your application from any other applications also using voice control. The registered listeners allow you to receive notifications about changes in the language, recognition result, and about any errors.
+1. Set up the voice control and [register listeners](#callback).
+
+   The initialization allows the voice control to distinguish your application from any other applications also using voice control. The registered listeners allow you to receive notifications about changes in the language, recognition result, and about any errors.
 
 2. Set commands.
 
@@ -67,12 +68,14 @@ To use the voice control:
 
 
 
-**Note** <br>
-     Do not call the `release()` function in a listener.
+
+  > **Note** <br>
+  >    Do not call the `release()` function in a listener.
 
 
 ## Managing Listeners <a name="callback"></a>
-To set and unset listeners to get notifications about recognition results and language changes:<br>
+To set and unset listeners to get notifications about recognition results and language changes:
+
 
 * Add the current language change listener to be invoked when the system or application language changes:
 
@@ -109,12 +112,13 @@ To set and unset listeners to get notifications about recognition results and la
 * Add the recognition result listener to be invoked when a voice command is recognized.
 
 
- **Note** <br>
-    If the recognition result produces a reject event, the voice control service has rejected the recognized command. Make sure that the command does not conflict with other commands and there are no duplicated commands.
 
-To get the command, check the `list` parameter in the recognition result listener. The parameter is an array of recognized `VoiceControlCommand` instances. The `result` parameter contains the recognized text.<br>
+   > **Note** <br>
+   >   If the recognition result produces a reject event, the voice control service has rejected the recognized command. Make sure that the command does not conflict with other commands and there are no duplicated commands.
 
+   To get the command, check the `list` parameter in the recognition result listener. The parameter is an array of recognized `VoiceControlCommand` instances. The `result` parameter contains the recognized text.<br>
 
+```
      /* Listener */
      var resultListenerCallback = function(event, list, result)
      {
@@ -137,6 +141,7 @@ To get the command, check the `list` parameter in the recognition result listene
          client.removeResultListener(id);
      }
 
+```
 
 
 ## Retrieving the Current Language<a name="info"></a>

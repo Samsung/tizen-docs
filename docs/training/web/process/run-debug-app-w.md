@@ -205,19 +205,16 @@ To debug your application on the target device:
     -   Inspect resources
     -   Debug JavaScript code
 
-    <div class="note">
 
-    **Note** <br>
-    The Web Inspector always opens in a new window. Life-cycle
-    synchronization between the application to be debugged and the Web
-    Inspector browser is not supported.
-    Installing the Google Chrome™ browser on the device is mandatory for
-    the Web Inspector to work. When the Google Chrome™ browser is
-    installed on the device, the Tizen Studio automatically detects it.
-    To select the browser path, go to
+
+
+   > **Note** <br>
+   >  The Web Inspector always opens in a new window. Life-cycle
+    synchronization between the application to be debugged and the Web    Inspector browser is not supported.    
+   >  Installing the Google Chrome™ browser on the device is mandatory for    the Web Inspector to work. When the Google Chrome™ browser is    installed on the device, the Tizen Studio automatically detects it.    To select the browser path, go to
     `Window > Preferences > Tizen Studio > Web > Chrome`.
 
-    </div>
+
 
 6.  To debug the JavaScript code, click **Sources** in the Web
     Inspector menu.
@@ -240,25 +237,38 @@ To debug your application on the target device:
   <th>Description</th>
 </tr>
 <tr>
-  <td>  ![Resume](./media/resume.png)  </td>
+
+  <td>
+
+   ![Resume](./media/resume.png)  </td>
   <td> Resumes the current execution. </td>
 </tr>
 <tr>
-  <td>  ![Step over](./media/stepover.png) </td>
+  <td>
+
+   ![Step over](./media/stepover.png) </td>
   <td> Steps over the highlighted statement.<br>
   Executes the current line, and if the line contains a method, executes the method without entering it.</td>
 </tr>
 <tr>
-  <td> ![Step in](./media/stepin.png)   </td>
+
+  <td>
+
+  ![Step in](./media/stepin.png)   </td>
   <td> Steps into the highlighted statement.<br>
   Executes the current line, and if the line contains a method, steps   into the method.         </td>
 </tr>
 <tr>
-  <td> ![Step out](./media/stepout.png)   </td>
+
+  <td>
+
+  ![Step out](./media/stepout.png)   </td>
   <td> Steps out of the current method.</td>
 </tr>
 <tr>
-  <td>   ![Deactivate all break  points](./media/deactivate.png)    </td>
+  <td>  
+
+   ![Deactivate all break  points](./media/deactivate.png)    </td>
   <td> Deactivates all break points. </td>
 </tr>
 </table>

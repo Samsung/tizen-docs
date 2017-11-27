@@ -361,6 +361,8 @@ Features](../../../tizen-studio/common-tools/emulator-features.md).
 To run the application on a target device:
 
 1.  Connect the wearable target device to your computer:
+
+
     a.  Define settings on the device:
       -   Go to **Settings &gt; Connections**, and switch
             on Bluetooth.
@@ -386,20 +388,21 @@ To run the application on a target device:
 
     b.  Use the Remote Device Manager to connect the wearable device:
 
-       a.  In the **Device Manager**, click the **Remote Device
+
+       *  In the **Device Manager**, click the **Remote Device
       Manager** button.
 
-    ![Launch the Remote Device            Manager](./media/remote-conn-mgr-ww.png)
+      ![Launch the Remote Device            Manager](./media/remote-conn-mgr-ww.png)
 
-      b.  In the **Remote Device Manager** window, click **+**.
+       *  In the **Remote Device Manager** window, click **+**.
 
       ![Add new device](./media/remote-conn-new-ww.png)
 
-      c.  In the **Add Device** window, enter the device and network            details (use the IP address you noted before), and click            **Add**.
+       *  In the **Add Device** window, enter the device and network            details (use the IP address you noted before), and click            **Add**.
 
       ![Define device            details](./media/remote-conn-add-ww.png)
 
-      d.  In the **Remote Device Manager** window, switch the new
+       *  In the **Remote Device Manager** window, switch the new
     device on by clicking the switch under **Connect**.
 
       ![Connect the device](./media/remote-connect-ww.png)
@@ -455,8 +458,8 @@ To run the application on a target device:
         configuration details, and launch the application by clicking
         `Run`.
 
->       ![Run Configurations
-        window](./media/run-configurations-w.png)
+>
+>   ![Run Configurations window](./media/run-configurations-w.png)
 
 
 
@@ -792,18 +795,20 @@ To create a Web application and design its UI with TAU:
       To create a page in the `<body>` element, use the `ui-page`
       class with the `<div>` element:
 
-      ``` {.prettyprint}
+
+      ```
         <body>
            <div class="ui-page" id="main">
            </div>
            <!--Script import-->
            <script> ... </script>
         </body>
-        ```
+
+      ```
 
     b.  To layout the page, add a content area with the `ui-content`        class and a header with the `ui-header` class:
 
-      ``` {.prettyprint}
+      ```
         <div class="ui-page" id="main">
            <header class="ui-header">
               <h2 class="ui-title">Hello World</h2>
@@ -812,7 +817,8 @@ To create a Web application and design its UI with TAU:
               <p>This is content area</p>
            </div>
         </div>
-        ```
+
+      ```
 
       The following figure shows the screen that you can see if you
       run this code with the emulator.
@@ -821,7 +827,8 @@ To create a Web application and design its UI with TAU:
 
     c.  You can add your own style in the content and footer area with a        defined `id` attribute:
 
-      ``` {.prettyprint}
+
+      ```
         <div class="ui-page" id="main">
            <header class="ui-header">
               <h2 class="ui-title">Hello World</h2>
@@ -830,16 +837,18 @@ To create a Web application and design its UI with TAU:
               <p>This is content area</p>
            </div>
         </div>
-        ```
+
+      ```
 
       In the `style.css` file, add a CSS style for the new `id`
       attribute:
 
-      ``` {.prettyprint}
+
+      ```
         #contentArea {
            color: #8be3d1;
         }
-        ```
+      ```
 
       With your new style, the screen looks like this.
 
@@ -919,7 +928,8 @@ To create a Web application and design its UI with TAU:
       rename it. Create a `second.html` file with the following
       content:
 
-      ``` {.prettyprint}
+
+      ```
         <!DOCTYPE html>
         <html>
            <head>
@@ -940,7 +950,8 @@ To create a Web application and design its UI with TAU:
               <script type="text/javascript" src="lib/tau/wearable/js/tau.min.js"></script>
            </body>
         </html>
-        ```
+
+      ```
 
     b.  Decorate the page in the same way as `index.html`.
 
@@ -949,7 +960,8 @@ To create a Web application and design its UI with TAU:
       Go back to the `index.html` file and add a file path in the
       listview `<li><a href>` element:
 
-      ``` {.prettyprint}
+
+      ```
         <ul class="ui-listview">
            <li><a href="second.html">Go to Second Page</a></li>
            <li><a href="#">List Item2</a></li>
@@ -957,7 +969,8 @@ To create a Web application and design its UI with TAU:
            <li><a href="#">List Item4</a></li>
            <li><a href="#">List Item5</a></li>
         </ul>
-        ```
+
+      ```
 
     d.  Run the code, and see how you can move from the `index.html`        page to the `second.html` page.
 
@@ -976,7 +989,8 @@ To create a Web application and design its UI with TAU:
 
     a.  Add a new JavaScript file to the `index.html` file:
 
-      ``` {.prettyprint}
+
+      ```
         <body>
            <div class="ui-page" id="main">
               <header class="ui-header">
@@ -996,13 +1010,15 @@ To create a Web application and design its UI with TAU:
            <script type="text/javascript" src="js/circle-helper.js"></script>
            <script src="app.js"></script>
         </body>
-        ```
+
+      ```
 
     b.  In the new file (`app.js`), all kinds of logic can be added to        the application. In this case, add several lines for        handling navigation.
 
       Overwrite the `app.js` file content with the following code:
 
-      ``` {.prettyprint}
+
+      ```
         (function() {
             window.addEventListener('tizenhwkey', function(ev) {
                 if (ev.keyName === 'back') {
@@ -1015,7 +1031,8 @@ To create a Web application and design its UI with TAU:
                 }
             });
         }());
-        ```
+
+      ```
 
 7.  Exit the application.
 
@@ -1031,7 +1048,8 @@ To create a Web application and design its UI with TAU:
     page navigation and application exit. This code is included in the
     **TAU Basic** project template `main.js` file by default.
 
-    ``` {.prettyprint}
+
+    ```
     (function() {
         window.addEventListener('tizenhwkey', function(ev) {
             if (ev.keyName === 'back') {
