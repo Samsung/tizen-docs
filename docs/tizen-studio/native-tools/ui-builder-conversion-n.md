@@ -21,14 +21,14 @@ If you convert your project to a UI Builder project, you can use the visual edit
 
 Even a beginner can develop a UI Builder project easily:
 
-- With the **Design** tab:You can create and place UI components by dragging and dropping them from the **Palette** to the design area.You can lay out the UI components by, for example, moving and sizing.You can preview the application screen in real time without running the emulator.
-- With the **Source** tab:You can author a view (screen) using only the name and attributes of the UI component, without knowing the Elementary API.You can use the auto-completion function for XML grammar in the XML editor.
+- With the **Design** editor:You can create and place UI components by dragging and dropping them from the **Palette** to the design area.You can lay out the UI components by, for example, moving and sizing.You can preview the application screen in real time without running the emulator.
+- With the **Source** editor:You can author a view (screen) using only the name and attributes of the UI component, without knowing the Elementary API.You can use the auto-completion function for XML grammar in the XML editor.
 
 ### Rapid Response to Requirements
 
 You can handle development requirements quickly:
 
-- With the **Storyboard** tab:You do not need to handle the flow of views through Elementary API code editing.You can see the flow and connection status of each screen at a glance, and add connections between views with a single click (**Ctrl + Mouse drag**).
+- With the **Storyboard** :You do not need to handle the flow of views through Elementary API code editing. You can see the flow and connection status of each screen at a glance, and add connections between views with a single click (**Shift + Mouse drag**).
 - With the **Outline** view:You can see the entire UI component hierarchy of the application at a glance.You can configure an appropriate view by selecting from among an empty view, various view templates, and a popup style view.
 
 ### Application Optimization and Maintenance
@@ -66,10 +66,10 @@ To display visually-edited views (created in the UI Builder) and code-based user
 
 | Name       | Type                                     | Description                              |
 | ---------- | ---------------------------------------- | ---------------------------------------- |
-| window     | Elementary window (in [mobile](../../../org.tizen.native.mobile.apireference/group__Win.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Win.html) applications) | Forms the first window of the application. |
-| bg         | Background (in [mobile](../../../org.tizen.native.mobile.apireference/group__Bg.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Bg.html) applications) | Sets a background for a window or any container object. |
-| conformant | Conformant (in [mobile](../../../org.tizen.native.mobile.apireference/group__Conformant.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Conformant.html) applications) | Provides space for indicators, virtual keypads, and softkey windows. |
-| naviframe  | Naviframe (in [mobile](../../../org.tizen.native.mobile.apireference/group__Naviframe.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Naviframe.html) applications) | Manages UI Builder views.                |
+| window     | Elementary window (in [mobile](../../../org.tizen.native.mobile.apireference/group__Elm__Win.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Elm__Win.html) applications) | Forms the first window of the application. |
+| bg         | Background (in [mobile](../../../org.tizen.native.mobile.apireference/group__Elm__Bg.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Elm__Bg.html) applications) | Sets a background for a window or any container object. |
+| conformant | Conformant (in [mobile](../../../org.tizen.native.mobile.apireference/group__Elm__Conformant.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Elm__Conformant.html) applications) | Provides space for indicators, virtual keypads, and softkey windows. |
+| naviframe  | Naviframe (in [mobile](../../../org.tizen.native.mobile.apireference/group__Elm__Naviframe.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Elm__Naviframe.html) applications) | Manages UI Builder views.                |
 
 ## Converting to a UI Builder Project
 
@@ -109,7 +109,7 @@ To convert the project:
    4. Click **Start-up**:An arrow appears at the end of the selected user view name. If the start-up view already exists in the **Outline** view, it is replaced by the selected user view.If you want to cancel the selection, click **Start-up** again. The start-up view is changed to the previously selected user view.
    5. Click **Finish**.
 
-The converted project (**SettingsUIwithUIB**) appears in the **Project Explorer** view, the perspective is changed to **UI Builder**, and the **Design** tab of the **Layout Editor** view is opened. You can now develop the project using the UI Builder features.
+The converted project (**SettingsUIwithUIB**) appears in the **Project Explorer** view, the perspective is changed to **UI Builder**, and the **Design** editor is opened. You can now develop the project using the UI Builder features.
 
 **Figure: Structure of a converted project**
 
@@ -147,9 +147,8 @@ To edit view2:
 
 ### Defining Transitions Between Views
 
-By using the **Storyboard** tab, you can easily switch between the views. To define transitions between views:
-
-1. In the **Layout Editor** view, select the **Storyboard** tab.
+1. By using the **Storyboard**, you can easily switch between the views. To define transitions between views:
+   1.  In the **Layout Editor** view, select the **Storyboard**.
 2. Click the button in view1, hold down the **Ctrl** key and drag and drop the mouse cursor over view2.
 
 **Figure: Connecting views**

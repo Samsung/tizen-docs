@@ -13,8 +13,12 @@ The Tizen Studio provides the following set of tools to help you create and mana
 
    The **Project Explorer** view shows a hierarchical view of all project resources in the workspace. It allows you to manage Tizen projects, change the project resources, and build, export, and convert projects.
 
-- [Certificate Registration](https://developer.tizen.org/development/tizen-studio/web-tools/managing-projects/certificate-registration) **(Working with the Certificate Profile)**         
+- [Certificate Registration](../common_tools/certificate_registration.md) **(Working with the Certificate Profile)**         
 
    The Certificate Manager tool is used to create a certificate profile and register author and distributor certificates. Before installing your application on a device or submitting it to the Tizen Store, you must sign it with a certificate profile while packaging your application
+
+- [Device Manager](../common_tools/device_manager.md) **(Monitoring Devices with the Device Manager)**
+
+   The Device Manager tool is used to connect and manage devices on which you want to run your application. It also allows you to access the internal file systems and logs in the connected devices.
 
 

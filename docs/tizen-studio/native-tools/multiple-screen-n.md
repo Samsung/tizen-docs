@@ -78,15 +78,15 @@ The following table shows the components for multiple screens.
 
 **Table: Components for multiple screens**
 
-| Category                           | Component                                | Description                              |
-| ---------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| Tizen Studio                       | Resource Manager                         | Provides the features to add, delete, or change the resources for the screen configuration and supports drag and drop for placing the UI layout.Paths of alternative resources used for multiple screens are written in the `res.xml` file, which is referenced at runtime. |
-| | PO file editor                     | Supports string editing. You can add a localized string in the editor. |                                          
-| | Multiple UI layout                 | Supports the device-specific UI layout.  |                                          
-| Tizen platform                     | Application module                       | Manages the application life-cycle. Using a callback function, it notifies you about application state change events. When the screen orientation or locale changes, this event must be sent to the module which handles multiple screens. For more information, see the [Applications](../../../org.tizen.guides/html/native/app_management/applications_n.htm) guide. |
-| | Resource Management module         | Displays the appropriate resource file on the screen by using a resource key.                                           |
-| | Internationalization module (i18n) | Provides the localized string at runtime. |                                          
-| | EFL library                        | Is a graphics engine responsible for the UI representation in the UI component that makes up the application screen. This supports the [automatic scaling](../../../org.tizen.guides/html/native/ui/efl/multiple_screens_n.htm) function to express the natural screen without distortion on a variety of devices.                                           |
+| Category       | Component                          | Description                              |
+| -------------- | ---------------------------------- | ---------------------------------------- |
+| Tizen Studio   | Resource Manager                   | Provides the features to add, delete, or change the resources for the screen configuration and supports drag and drop for placing the UI layout.Paths of alternative resources used for multiple screens are written in the `res.xml` file, which is referenced at runtime. |
+|                | PO file editor                     | Supports string editing. You can add a localized string in the editor. |
+|                | Multiple UI layout                 | Supports the device-specific UI layout.  |
+| Tizen platform | Application module                 | Manages the application life-cycle. Using a callback function, it notifies you about application state change events. When the screen orientation or locale changes, this event must be sent to the module which handles multiple screens. For more information, see the [Applications](../../../org.tizen.guides/html/native/app_management/applications_n.htm) guide. |
+|                | Resource Management module         | Displays the appropriate resource file on the screen by using a resource key. |
+|                | Internationalization module (i18n) | Provides the localized string at runtime. |
+|                | EFL library                        | Is a graphics engine responsible for the UI representation in the UI component that makes up the application screen. This supports the [automatic scaling](../../../org.tizen.guides/html/native/ui/efl/multiple_screens_n.htm) function to express the natural screen without distortion on a variety of devices. |
 
 ## Designing Applications with Multiple Screens
 
@@ -118,7 +118,7 @@ To localize a string:
 
 2. Add a Background UI component by dragging and dropping a background from the **Palette** to the grid.
 
-3. Add a Button UI component by dragging and dropping a button from the **Palette** to the grid.
+3. Add 2 Button UI components by dragging and dropping a button from the **Palette** to the grid.
 
 4. Input a string key.
 
@@ -131,7 +131,7 @@ To localize a string:
 **Note**
 **Variation property of the UI component**
 UI component properties are classified based on the screen configuration type into basic and variable properties. The variable properties consist of the following:
-   - Visibility: Whether the UI component is shown (`true`) or hidden (`false`).
+- Visibility: Whether the UI component is shown (`true`) or hidden (`false`).
    - Packing: Position and size of the UI component attached to the parent container. The packing information has different meanings in different kinds of UI containers. For more information, see [Meta Schema in layout.xml](component_attributes_n.htm) (Grid section).
 
 ### Alternative Resources

@@ -41,6 +41,12 @@ To install the Tizen Studio:
 
    Through the Tizen Studio Package Manager, you can both install and update additional tools. For more information on the Package Manager, see [Updating Tizen Studio](../download/updating-sdk.md).
 
+   ​
+
+   **Note** If you install the Tizen Studio in a directory that requires administrator privileges for access, such as `C:\Program Files`, administrator privileges are required to run the Tizen SDK tools.
+
+   ​
+
 ## Using the CLI Installer
 
 The CLI (command line interface) provides functional tools for running the CLI installer without the GUI environment.
@@ -56,18 +62,18 @@ To install the Tizen Studio using the CLI installer:
    ```
    web-cli_Tizen_Studio_<version> [options] [<directory path>]
    ```
-   
+
    **Table: Install options**
-   |Option | Description|
-   |-------|------------|
-   |`--show-license`|Displays the Tizen Studio software license agreement.<br/>You must use this option alone. Do not use with other options.|
-   |`--accept-license`|Accepts the license terms.|
-   |`--no-java-check`|Skips the Java version check.|
+   | Option             | Description                              |
+   | ------------------ | ---------------------------------------- |
+   | `--show-license`   | Displays the Tizen Studio software license agreement.<br/>You must use this option alone. Do not use with other options. |
+   | `--accept-license` | Accepts the license terms.               |
+   | `--no-java-check`  | Skips the Java version check.            |
 
    **Table: Install command parameters**
-   |Parameter|Description|
-   |---------|-----------|
-   |`directory path`|Specifies the installation directory path.</br/>If you do not enter the path, the Tizen Studio is installed in the default directory (`/home/{user}/tizen-studio`).|
+   | Parameter        | Description                              |
+   | ---------------- | ---------------------------------------- |
+   | `directory path` | Specifies the installation directory path.</br/>If you do not enter the path, the Tizen Studio is installed in the default directory (`/home/{user}/tizen-studio`). |
 
 3. If you agree to the software license and the license terms, enter **Y(yes)** for the conditions.
 

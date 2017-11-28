@@ -126,6 +126,8 @@ For more information on the relationship between the elements, see the [element 
 
   Package of the application (available value: `"org.tizen.<applicationName>"`)
 
+   You can use the a\~z, A\~Z, 0\~9, ".", "-", and "\_" characters, and the value must be shorter than 50 characters.
+
 - `type`
 
   Package type of the application (available value: `"tpk"`)
@@ -681,8 +683,8 @@ For more information on the relationship between the elements, see the [element 
 
 **Expected children:**
 
-| Child element    | Occurrences          |
-| ---------------- | -------------------- |
+| Child element             | Occurrences          |
+| ------------------------- | -------------------- |
 | [`privilege`](#privilege) | 1 or more (optional) |
 
 **For example:**
