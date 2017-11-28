@@ -6,7 +6,7 @@
 
 Before you can debug your application, you must install the required software:
 
-1. Install the cross platform gdb with the following command:
+1. Install the cross-platform gdb with the following command:
 
    `sudo apt-get install gdb-arm-none-eabi`
 
@@ -22,13 +22,13 @@ To debug the application:
 
    ![Setting break points](./media/rt_debug_breaks.png)
 
-2. Select the project in the **Project Explorer** view.
+2. In the **Project Explorer** view, select the project.
 
 3. To debug the project, use one of the following:
 
    - In the Tizen Studio for RT menu, select **Run > Debug As > Run to TizenRT Debugger**.
    - In the Tizen Studio for RT toolbar, click the **Debug** icon (![Debug icon](./media/rt_icon_debug.png)) drop-down list, and select **Debug As > Run to TizenRT Debugger**.
-   - Right-click in the **Project Explorer** view, and select **Debug As > Run to TizenRT Debugger**.
+   - Right-click the project in the **Project Explorer** view, and select **Debug As &gt; Run to TizenRT Debugger**.
 
    ![Debugging the project](./media/rt_debug.png)
 
@@ -50,4 +50,12 @@ To debug the application:
 
    ![Debug toolbar](./media/rt_debug_toolbar.png)
 
-**Note**OpenOCD (or other remote debuggers) can only create as many debugger instances as there are connected devices. So if you connect only 1 device, you cannot create 2 debugger instances.When working with only 1 debugger instance, you must stop the previously running debugging operation to start a new debugging operation.If you run more than 1 debugger at the same time, you get an error.**Figure: Error when trying to run multiple debuggers**![Error when trying to run multiple debuggers](./media/rt_multiple_debugger_error.png)
+> **Note**<br>
+>OpenOCD (or other remote debuggers) can only create as many debugger instances as there are connected devices. So if you connect only 1 device, you cannot create 2 debugger instances.
+>
+>When working with only 1 debugger instance, you must stop the previously running debugging operation to start a new debugging operation.
+>
+>If you run more than 1 debugger at the same time, you get an error.
+>
+>**Figure: Error when trying to run multiple debuggers**
+> ![Error when trying to run multiple debuggers](./media/rt_multiple_debugger_error.png)
