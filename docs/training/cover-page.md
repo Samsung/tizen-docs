@@ -1,7 +1,5 @@
-
-
-Overview <a name="tizen-training"></a>
-========
+<a id="tizen-training"></a>
+# Training 
 
 **Welcome to Tizen!**
 
@@ -29,8 +27,9 @@ To get started with the development of your own Tizen applications:
     and learn about the main features available for implementing your
     dream application.
 
-Tizen Application Types <a name="type"></a>
------------------------
+
+<a id="type"></a>
+## Tizen Application Types
 
 The Tizen platform supports 3 primary application types:
 
@@ -84,7 +83,7 @@ the 3 application types.
 
 **Figure: Tizen architecture**
 
-![Tizen architecture](./media/what-is-tizen-architecture.png)
+![Tizen architecture](media/what_is_tizen_architecture.png)
 
 The Tizen platform also allows you to develop a hybrid application
 package where native and Web applications are packaged together to make
@@ -92,9 +91,7 @@ more powerful applications. The Tizen platform ensures that all Tizen
 applications have consistent look and feel, regardless of whether you
 use the native or Web framework to create them.
 
-Tizen Profiles <a name="profiles"></a>
---------------
-
+Tizen Profiles <a id="profiles"></a>
 Tizen is built to work on a wide variety of platforms with a focus on
 embedded devices. In order to accommodate the various types of devices,
 a set of profiles has been defined to make it easier to develop
@@ -110,23 +107,24 @@ type only.
 
 **Figure: Applications using the mobile profile**
 
-![Applications using the mobile profile](./media/profile-mobile.png)
+![Applications using the mobile profile](media/profile_mobile.png)
 
 **Figure: Applications using the wearable profile**
 
-![Applications using the wearable profile](./media/profile-wearable.png)
+![Applications using the wearable profile](media/profile_wearable.png)
 
 **Figure: Applications using the TV profile**
 
-![Applications using the TV profile](./media/profile-tv.png)
+![Applications using the TV profile](media/profile_tv.png)
 
-Tizen Documentation <a name="doc"></a>
--------------------
+
+## Tizen Documentation <a id="doc"></a>
 
 To make the most of your Tizen applications, get familiar with the Tizen
 documentation:
 
 -   [Training](./cover-page.md)
+
 
     The training section provides overall information you need to become
     familiar with Tizen programming and the Tizen application model. Its
@@ -142,8 +140,7 @@ documentation:
     detailed code examples to help you write the required code
     in practice.
 
--   [API
-    References](../../org.tizen.web.apireference/html/cover_page.htm)
+-   [API References](../../org.tizen.web.apireference/html/cover_page.htm)
 
     The Tizen API References provide descriptions of all the Tizen API
     domains, subdomains, classes, interfaces, functions, and methods.
@@ -172,29 +169,21 @@ application profiles.
 
 **Table: Tizen profiles**
 
-  Profile                   |Icon          
-  --------------------------|-------------------------------------------
-  Mobile native and Web     |![Mobile](./media/mobile-s-wn.png)
-  Wearable native and Web   |![Wearable](./media/wearable-s-wn.png)
-  Mobile native             |![Mobile Native](./media/mobile-s-n.png) or ![Optional mobile native](./media/mobile-s-n-optional.png)
-  Wearable native           |![Wearable Native](./media/wearable-s-n.png) or ![Optional wearable native](./media/wearable-s-n-optional.png)
-  Mobile Web                |![Mobile Web](./media/mobile-s-w.png) or ![Optional mobile Web](./media/mobile-s-w-optional.png)
-  Wearable Web              |![Wearable Web](./media/wearable-s-w.png) or ![Optional wearable Web](./media/wearable-s-w-optional.png)
-  TV Web                    |![TV Web](./media/tv-s-w.png) or ![Optional TV Web](./media/tv-s-w-optional.png)
+| Profile                 | Icon                                     |
+| ----------------------- | ---------------------------------------- |
+| Mobile native and Web   | ![Mobile](media/mobile_s_wn.png)        |
+| Wearable native and Web | ![Wearable](media/wearable_s_wn.png)    |
+| Mobile native           | ![Mobile Native](media/mobile_s_n.png) or ![Optional mobile native](media/mobile_s_n_optional.png) |
+| Wearable native         | ![Wearable Native](media/wearable_s_n.png) or ![Optional wearable native](media/wearable_s_n_optional.png) |
+| Mobile Web              | ![Mobile Web](media/mobile_s_w.png) or ![Optional mobile Web](media/mobile_s_w_optional.png) |
+| Wearable Web            | ![Wearable Web](media/wearable_s_w.png) or ![Optional wearable Web](media/wearable_s_w_optional.png) |
+| TV Web                  | ![TV Web](media/tv_s_w.png) or ![Optional TV Web](media/tv_s_w_optional.png) |
 
+**Note**  
+> In Tizen native APIs and Web Device APIs, there are 2 types of APIs: mandatory and optional. The fully gray profile icon (as shown in the table above) refers to an optional API.
 
+The mandatory APIs are always available on all Tizen devices. The optional APIs provide functionality that depends on the available device
+hardware or software capabilities, and they may not be available on all Tizen devices.
 
-> **Note** <br>
-> In Tizen native APIs and Web Device APIs, there are 2 types of
-APIs: mandatory and optional. The fully gray profile icon (as shown in the table above) refers to an optional API.
-The mandatory APIs are always available on all Tizen devices. The
-optional APIs provide functionality that depends on the available device
-hardware or software capabilities, and they may not be available on all
-Tizen devices.
-
-
-To become familiar with some terms that you encounter throughout this
-site, see
-[Glossary](https://developer.tizen.org/development/getting-started/glossary).
-To see the trademark notice list, see
-[Trademarks](https://developer.tizen.org/development/training/trademarks).
+To become familiar with some terms that you encounter throughout this site, see [Glossary](https://developer.tizen.org/development/getting-started/glossary).
+To see the trademark notice list, see [Trademarks](https://developer.tizen.org/development/training/trademarks).
