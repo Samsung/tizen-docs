@@ -1,8 +1,13 @@
 # Developing Tizen Platform with the Tizen Studio
 
+## Dependencies
+- Tizen Studio 1.0.1 and Higher
+- Ubuntu Only
+
 The Tizen Studio provides a platform development environment that helps you develop preloaded platform applications, platform libraries, and device drivers in Ubuntu.
 
-**Note**Platform development is supported in Ubuntu 14.04 and higher (32- or 64-bit) only.
+> **Note**<br>
+> Platform development is supported in Ubuntu 14.04 and higher (32- or 64-bit) only.
 
 By using the Tizen Studio for Ubuntu, you can, for example:
 
@@ -76,7 +81,7 @@ To set the GBS options:
 
 To run the platform project:
 
-1. Connect a device to your computer and select the device in the **Connection Explorer** view.
+1. Connect a device to your computer and select the device in the **Device Manager**.
 2. In the **Project Explorer** view, right-click the project and select **Run As > Tizen Platform Project**.
 3. Choose the install command, such as **RPM** or **pkgcmd**.
 4. In the **Launch Configuration** dialog, click **Next**.
@@ -90,7 +95,7 @@ The Platform IDE provides 3 different solutions to debug a platform project: bas
 
 To debug the project:
 
-1. Connect a device to your computer and select the device in the **Connection Explorer** view.
+1. Connect a device to your computer and select the device in the **Device Manager**.
 2. Select a project to debug in the **Project Explorer** view.
 3. Set breakpoints in the source code.
 4. In the **Project Explorer** view, right-click the project and select **Debug As > Tizen Platform Project**.
@@ -102,7 +107,7 @@ To debug the project:
 
 To attach a debug process to the project:
 
-1. Connect a device to your computer and select the device in the **Connection Explorer** view.
+1. Connect a device to your computer and select the device in the **Device Manager**.
 2. Select a project to debug in the **Project Explorer** view.
 3. Set breakpoints in the source code.
 4. In the **Project Explorer** view, right-click the project and select **Debug As > Tizen Platform Project - Attach**.
@@ -113,10 +118,19 @@ To attach a debug process to the project:
 To debug a coredump archive:
 
 1. Connect a device to your computer.
-2. In the **Connection Explorer** view, select the device for which a coredump archive to debug exists (for example, `/opt/usr/share/crash/`).
+2. In the **Device Manager**, select the device for which a coredump archive to debug exists (for example, `/opt/usr/share/crash/`).
 3. In the **Project Explorer** view, right-click the project and select **Debug As > Tizen Platform Project – Coredump**.
-4. In the **Launch Configuration** dialog, select a core dumped file (`*.coredump`) and CS file (`*.cs`) by clicking **Remote Browse** or **Local Browse**.![Selecting files](./media/platform_codedump_files.png)If the coredump information is displayed, click **Next**, select a rootstrap, and click **Next** again. (It takes about 1~5 minutes when installing the required libraries.)![Selecting rootstrap](./media/platform_rootstrap.png)
+4. In the **Launch Configuration** dialog, select a core dumped file (`*.coredump`) and CS file (`*.cs`) by clicking **Remote Browse** or **Local Browse**.
+ ![Selecting files](./media/platform_codedump_files.png)
+
+ If the coredump information is displayed, click **Next**, select a rootstrap, and click **Next** again. (It takes about 1~5 minutes when installing the required libraries.)
+ ![Selecting rootstrap](./media/platform_rootstrap.png)
+
 5. Manage the packages:
-   1. Check whether the packages are installed successfully.
-   2. If there is package problem, click **Package Manager** and install packages.![Checking packages](./media/platform_packages.png)
-   3. Click **Finish**, if it is enabled.
+
+  a. Check whether the packages are installed successfully.
+
+  b. If there is package problem, click **Package Manager** and install packages.
+   ![Checking packages](./media/platform_packages.png)
+
+  c. Click **Finish**, if it is enabled.

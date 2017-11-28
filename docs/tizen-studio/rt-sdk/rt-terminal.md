@@ -4,7 +4,8 @@
 
 If you have flashed the project successfully, you can communicate with the board using the **Terminal** view.
 
-**Note**The board must be continuously connected to your computer.
+> **Note**<br>
+>The board must be continuously connected to your computer.
 
 The **Terminal** view provides various functions:
 
@@ -20,8 +21,12 @@ The **Terminal** view provides various functions:
 
 To open a terminal:
 
-1. Click the **Open a Terminal** toolbar button.![Opening a terminal](./media/rt_terminal_open.png)
-2. In the Terminal Dialog, set the information to connect the board, and click **OK**.![Connection information](./media/rt_terminal_connection.png)
+1. Click the **Open a Terminal** toolbar button.
+
+ ![Opening a terminal](./media/rt_terminal_open.png)
+2. In the Terminal Dialog, set the information to connect the board, and click **OK**.
+
+ ![Connection information](./media/rt_terminal_connection.png)
 
 You can see the opened terminal with a serial connection in the **Terminal** view.
 

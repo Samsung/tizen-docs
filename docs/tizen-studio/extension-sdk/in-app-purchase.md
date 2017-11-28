@@ -48,7 +48,7 @@ The following table lists the terminology used in the context of IAP.
 
 Applying IAP to your application is easy. The process contains the following steps:
 
-1. Register your items to the Tizen Store Seller Office ([http://seller.tizenstore.com](http://seller.tizenstore.com/)).
+1. Register your items to the [Tizen Store Seller Office](http://seller.tizenstore.com/).
 2. Program your application to work with IAP.
 3. Test and upload your application.
 
@@ -189,10 +189,14 @@ IAP uses AppControl interface to handle purchases. You need to add the `http://t
 
 The IAP Service instance allows you to get a list of items available for purchase and to get a list of already purchased item. It also allows you to get a list of countries available for testing in developer mode.
 
-- **Application ID**This application control can be accessed using an aliased application ID of the `org.tizen.inapppurchase.iapservice` application ID.
-- **Operation ID**This application supports the `http://tizen.org/appcontrol/operation/iapv2/get_item_list` and `http://tizen.org/appcontrol/operation/iapv2/get_purchased_item_list` operations. It also supports the `http://tizen.org/appcontrol/operation/iapv2/get_country_list` operation.
-- **Get item list operation**This operation returns a list of items available for purchase.
-- **Input data**The following table shows the key-value pairs required in the input extra data for the `http://tizen.org/appcontrol/operation/iapv2/get_item_list` operation.
+- **Application ID**
+  This application control can be accessed using an aliased application ID of the `org.tizen.inapppurchase.iapservice` application ID.
+- **Operation ID**
+  This application supports the `http://tizen.org/appcontrol/operation/iapv2/get_item_list` and `http://tizen.org/appcontrol/operation/iapv2/get_purchased_item_list` operations. It also supports the `http://tizen.org/appcontrol/operation/iapv2/get_country_list` operation.
+- **Get item list operation**
+  This operation returns a list of items available for purchase.
+- **Input data**
+  The following table shows the key-value pairs required in the input extra data for the `http://tizen.org/appcontrol/operation/iapv2/get_item_list` operation.
 
  **Table: Input data for getting a list of items**
 
@@ -205,10 +209,10 @@ The IAP Service instance allows you to get a list of items available for purchas
   | `_itemGroupId`   | Group ID                  | Group ID, such as 100000001455.A group ID is associated with a specific collection of items in Tizen Store Seller Office. You need to register your group ID in Tizen Store Seller Office first.This information is mandatory. |
   | `_languageCd`    | Language code             | Language code, such as `eng` or `rus`.The language code conforms to ISO 639-2, which uses 3-character codes.The language code is associated with the display language of the item details in Tizen Store Seller Office.The output parameters (`itemName, itemDescription, reserved1, reserved2`) are changed according to the language code.This information is optional. |
   | `_itemTypeCd`    | 00, 01, 02, or 10         | Item type code:00: Non-consumable01: Consumable10: AllThis information is optional. |
-  | `_mcc`           | Mobile country code (MCC) | Mobile country code, such as 250.MMCs can only be used in developer mode. You can retrieve a list of available MCCs using the get country list operation.This information is optional.This parameter has been deprecated. |
-  | `_mnc`           | Mobile network code (MNC) | Mobile network code, such as 01.MNCs can only be used in developer mode.This information is optional.This parameter has been deprecated. |
-  
- 
+  | `_mcc` (deprecated)          | Mobile country code (MCC) | Mobile country code, such as 250.MMCs can only be used in developer mode. You can retrieve a list of available MCCs using the get country list operation.This information is optional.This parameter has been deprecated. |
+  | `_mnc` (deprecated)          | Mobile network code (MNC) | Mobile network code, such as 01.MNCs can only be used in developer mode.This information is optional.This parameter has been deprecated. |
+
+
 - **Example code for get item list**
 ```
 app_control_h app_control;
@@ -224,7 +228,7 @@ if (rt == APP_CONTROL_ERROR_NONE) {
       app_control_add_extra_data(app_control, "_itemGroupId", "100000000012");    
       app_control_add_extra_data(app_control, "_languageCd", "ENG");    
       app_control_add_extra_data(app_control, "_itemTypeCd", "00");    
-   
+
       rt = app_control_send_launch_request(app_control, get_item_list_cb, NULL);
 }
 if (app_control != NULL)    app_control_destroy(app_control);
@@ -298,11 +302,11 @@ get_item_list_cb(app_control_h request, app_control_h reply,
        char* rt_itemSubsBillDurationCd = NULL;    
        char* rt_subscriptionDurationMultiplier = NULL;    
        char* rt_timeStamp = NULL;    
-       
+
        if (result == APP_CONTROL_RESULT_SUCCEEDED) {        
             rt = app_control_get_extra_data(reply, "_method", &rt_method);        
             rt = app_control_get_extra_data(reply, "_result", &rt_result);        
-            
+
             /* Success */        
             if (!strcmp("0", rt_result)) {            
                  rt = app_control_get_extra_data(reply, "_resultDescription",                                  
@@ -312,55 +316,55 @@ get_item_list_cb(app_control_h request, app_control_h reply,
                  rt = app_control_get_extra_data(reply, "_endNumber", &rt_endNumber);            
                  rt = app_control_get_extra_data(reply, "_totalCount", &rt_totalCount);            
                  rt = app_control_get_extra_data(reply, "_itemTotalCount",                                                                                          &rt_itemTotalCount);            
-                 
+
                  int start = atoi(rt_startNumber);            
                  int end = atoi(rt_endNumber);            
-                 
+
                  char keyId[100] = {0,};            
                  for (; start <= end; start++) {                
                       snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemId");                
                       rt = app_control_get_extra_data(reply, key_id, &rt_itemId);                
-                      
+
                       snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemGroupId);");                
                       rt = app_control_get_extra_data(reply, key_id, &rt_itemGroupId);                
                       snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemName");                
-                      
+
                       rt = app_control_get_extra_data(reply, keyId, &rt_itemName);                
                       snprintf(key_id, sizeof(keyId), "%d%s", start, "_currencyUnit");                
-                      
+
                       rt = app_control_get_extra_data(reply, keyId, &rt_currencyUnit);                
                       snprintf(key_id, sizeof(keyId), "%d%s", start, "_unitPrecedes");                
-                      
+
                       rt = app_control_get_extra_data(reply, keyId, &rt_unitPrecedes);                
                       snprintf(key_id, sizeof(keyId), "%d%s", start, "_hasPenny");                
-                      
+
                       rt = app_control_get_extra_data(reply, keyId, &rt_hasPenny);                
                       snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemPrice");                
-                      
+
                       rt = app_control_get_extra_data(reply, keyId, &rt_itemPrice);                
                       snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemDownloadUrl");                
-                      
+
                       rt = app_control_get_extra_data(reply, keyId, &rt_itemDownloadUrl);                
                       snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemImageUrl");                
-                      
+
                       rt = app_control_get_extra_data(reply, keyId, &rt_itemImageUrl);                
                       snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemDescription");                
-                      
+
                       rt = app_control_get_extra_data(reply, keyId, &rt_itemDescription);                
                       snprintf(key_id, sizeof(keyId), "%d%s", start, "_reserved1");                
-                      
+
                       rt = app_control_get_extra_data(reply, keyId, &rt_reserved1);                
                       snprintf(key_id, sizeof(keyId), "%d%s", start, "_reserved2");                
-                      
+
                       rt = app_control_get_extra_data(reply, keyId, &rt_reserved2);                
                       snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemTypeCd");                
-                      
+
                       rt = app_control_get_extra_data(reply, keyId, &rt_itemTypeCd);                
                       snprintf(key_id, sizeof(keyId), "%d%s", start,"_itemSubsBillDurationCd");                
-                      
+
                       rt = app_control_get_extra_data(reply, keyId, &rt_itemSubsBillDurationCd);                
                       snprintf(key_id, sizeof(keyId), "%d%s", start,"_subscriptionDurationMultiplier");                
-                      
+
                       rt = app_control_get_extra_data(reply, keyId, &rt_subscriptionDurationMultiplier);                                 snprintf(key_id, sizeof(keyId), "%d%s", start, "_timeStamp");                
                       rt = app_control_get_extra_data(reply, keyId, &rt_timeStamp);            
                  }        
@@ -409,7 +413,7 @@ if (app_control != NULL)
      app_control_destroy(app_control);
 ```
 
-- **Output Data** 
+- **Output Data**
 The results of the operation are returned in the app control callback.The following table shows the output data for the `http://tizen.org/appcontrol/operation/iapv2/get_purchased_item_list` operation.
  **Table: Output data for getting a list of purchased items**
  | Key                  | Value                                    | Description                              |
@@ -446,8 +450,8 @@ The results of the operation are returned in the app control callback.The follow
 | `PREFIX_itemSubsBillDurationCd`         | 00, 01, 02, or 03                        | Item subs bill duration code:<br/> - 00: Year<br/> - 01: Month<br/> - 02: Week<br/> - 03: DayThe `_itemTypeCd` value is 02.<br/> If the product type is subscription, the available 4 units for the validity period of the product are YEAR, MONTH, WEEK, and DAY. The units must be typed in capitals. |
 | `PREFIX_subscriptionDurationMultiplier` | Subscription duration multiplier         | If the `_itemTypeCd` is subscription (02), this is the item duration. Combined with `PREFIX_itemSubsBillDurationCd`, it means 1 month. |
 | `PREFIX_timeStamp`                      | Time stamp                               | Based on GMT +0, server time.<br/> (yyyyMMddHHmmss) |
- 
- 
+
+
 - **Example code for retrieving a list of purchased items**
  ```
  void
@@ -477,14 +481,14 @@ The results of the operation are returned in the app control callback.The follow
       char* rt_paymentId = NULL;    
       char* rt_purchaseDate = NULL;  
       char* rt_itemTypeCd = NULL;   
-      char* rt_itemSubsBillDurationCd = NULL; 
+      char* rt_itemSubsBillDurationCd = NULL;
       char* rt_subscriptionDurationMultiplier = NULL;  
       char* rt_timeStamp = NULL;    
-      
+
       if (result == APP_CONTROL_RESULT_SUCCEEDED) {        
            rt = app_control_get_extra_data(reply, "_method", &rt_method);        
            rt = app_control_get_extra_data(reply, "_result", &rt_result);       
-           
+
            /* Success */        
            if (!strcmp("0", rt_result)) {            
                 rt = app_control_get_extra_data(reply, "_resultDescription",                                                                                       &rt_resultDescription);            
@@ -493,65 +497,65 @@ The results of the operation are returned in the app control callback.The follow
                 rt = app_control_get_extra_data(reply, "_endNumber", &rt_endNumber);           
                 rt = app_control_get_extra_data(reply, "_totalCount", &rt_totalCount);            
                 rt = app_control_get_extra_data(reply, "_itemTotalCount",                                                                                         &rt_itemTotalCount);           
-                
+
                 int start = atoi(rt_startNumber);           
                 int end = atoi(rt_endNumber);           
-                
+
                 char keyId[100] = {0,};            
                 for (; start <= end; start++) {                
                      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemId");              
                      rt = app_control_get_extra_data(reply, key_id, &rt_itemId);      
-                     
+
                      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemGroupId);");                
                      rt = app_control_get_extra_data(reply, key_id, &rt_itemGroupId);                
-                     
+
                      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemName");              
                      rt = app_control_get_extra_data(reply, keyId, &rt_itemName);               
-                     
+
                      snprintf(key_id, sizeof(keyId), "%d%s", start, "_currencyUnit");             
                      rt = app_control_get_extra_data(reply, keyId, &rt_currencyUnit);                
-                     
+
                      snprintf(key_id, sizeof(keyId), "%d%s", start, "_unitPrecedes");         
                      rt = app_control_get_extra_data(reply, keyId, &rt_unitPrecedes);                
-                     
+
                      snprintf(key_id, sizeof(keyId), "%d%s", start, "_hasPenny");          
                      rt = app_control_get_extra_data(reply, keyId, &rt_hasPenny);              
-                     
+
                      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemPrice");          
                      rt = app_control_get_extra_data(reply, keyId, &rt_itemPrice);         
-                     
+
                      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemDownloadUrl");    
                      rt = app_control_get_extra_data(reply, keyId, &rt_itemDownloadUrl);                
-                     
+
                      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemImageUrl");           
                      rt = app_control_get_extra_data(reply, keyId, &rt_itemImageUrl);                
-                     
+
                      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemDescription");    
                      rt = app_control_get_extra_data(reply, keyId, &rt_itemDescription);                
-                     
+
                      snprintf(key_id, sizeof(keyId), "%d%s", start, "_reserved1");           
                      rt = app_control_get_extra_data(reply, keyId, &rt_reserved1);             
-                     
+
                      snprintf(key_id, sizeof(keyId), "%d%s", start, "_reserved2");             
                      rt = app_control_get_extra_data(reply, keyId, &rt_reserved2);            
-                     
+
                      snprintf(key_id, sizeof(keyId), "%d%s", start, "_paymentId");            
                      rt = app_control_get_extra_data(reply, keyId, &rt_paymentId);             
-                     
+
                      snprintf(key_id, sizeof(keyId), "%d%s", start, "_purchaseDate");            
                      rt = app_control_get_extra_data(reply, keyId, &rt_purchaseDate);                
-                     
+
                      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemTypeCd");          
                      rt = app_control_get_extra_data(reply, keyId, &rt_itemTypeCd);                
-                     
+
                      snprintf(key_id, sizeof(keyId), "%d%s", start,                                            
                               "_itemSubsBillDurationCd");               
                      rt = app_control_get_extra_data(reply, keyId, &rt_itemSubsBillDurationCd);        
-                     
+
                      snprintf(key_id, sizeof(keyId), "%d%s", start,                               
                               "_subscriptionDurationMultiplier");               
                      rt = app_control_get_extra_data(reply, keyId,                                                                                                      &rt_subscriptionDurationMultiplier);               
-                     
+
                      snprintf(key_id, sizeof(keyId), "%d%s", start, "_timeStamp");               
                      rt = app_control_get_extra_data(reply, keyId, &rt_timeStamp);           
                 }        
@@ -578,11 +582,11 @@ if (rt == APP_CONTROL_ERROR_NONE) {
      app_control_set_app_id(app_control, " org.tizen.inapppurchase.iapservice");    
      app_control_set_operation(app_control,                              
                               "http://tizen.org/appcontrol/operation/iapv2/get_country_list");    
-     app_control_add_extra_data(app_control, "_mode", "0"); 
+     app_control_add_extra_data(app_control, "_mode", "0");
      app_control_add_extra_data(app_control, "_transactionId", "123");   
      rt = app_control_send_launch_request(app_control, get_country_list_cb, NULL);
 }
-if (app_control != NULL) 
+if (app_control != NULL)
      app_control_destroy(app_control);
 ```
 
@@ -607,15 +611,15 @@ The results of the operation are returned in the app control callback.The follow
 | -------------------- | ------------------------- | ---------------------------------------- |
 | `PREFIX_countryName` | Country name              | Name of a country.                       |
 | `PREFIX_mcc`         | MCC (mobile country code) | MCC (mobile country code) as a string value. |
- 
- 
+
+
 - **Example code for retrieving a list of get country list**
  ```
  void
  get_country_list_cb(app_control_h request, app_control_h reply,                   
                      app_control_result_e result, void *user_data)
  {    
-      char* rt_method = NULL; 
+      char* rt_method = NULL;
       char* rt_result = NULL;    
       char* rt_resultDescription = NULL;   
       char* rt_transactionId = NULL;  
@@ -623,11 +627,11 @@ The results of the operation are returned in the app control callback.The follow
       char* rt_endNumber = NULL;   
       char* rt_totalCount = NULL;  
       char* rt_countryName = NULL;  
-      char* rt_mcc = NULL; 
+      char* rt_mcc = NULL;
       if (result == APP_CONTROL_RESULT_SUCCEEDED) {     
            rt = app_control_get_extra_data(reply, "_method", &rt_method);     
            rt = app_control_get_extra_data(reply, "_result", &rt_result);    
-           
+
            /* Success */       
            if (!strcmp("0", rt_result)) {          
                 rt = app_control_get_extra_data(reply, "_resultDescription",                                                                                       &rt_resultDescription);    
@@ -704,11 +708,11 @@ This operation launches the purchase application and allows purchasing of In-App
       app_control_add_extra_data(app_control, "_itemName", "Item 1"); /* Optional */   
       rt = app_control_send_launch_request(app_control, get_purchase_cb, NULL);
  }
-  
+
  if (app_control != NULL)    
       app_control_destroy(app_control);
  ```
- 
+
 - **Output Data**
 The results of the operation are returned in the app control callback.This data can be used to verify the payment with Tizen Store IAP Server.The following table shows the output data for the `http://tizen.org/appcontrol/operation/iapv2/purchase` operation during process of purchase.
 
@@ -741,7 +745,7 @@ The results of the operation are returned in the app control callback.This data 
   | `_ticketParam5`      | Ticket parameter 5                       | This parameter is used with the server URL.                                         |
   | `_purchaseDate`      | Date of purchase                         | Date of purchase                         |
   | `_timeStamp`         | Time stamp                               | Based on GMT +0, server time.<br/> (yyyyMMddHHmmss) |
-  
+
 - **Example code for Purchase result**
  ```
  void
@@ -749,7 +753,7 @@ The results of the operation are returned in the app control callback.This data 
                  app_control_result_e result, void *user_data)
  {    
       char* rt_method = NULL;    
-      char* rt_result = NULL; 
+      char* rt_result = NULL;
       char* rt_resultDescription = NULL;  
       char* rt_transactionId = NULL;  
       char* rt_itemId = NULL;   
@@ -770,18 +774,18 @@ The results of the operation are returned in the app control callback.This data 
       char* rt_ticketParam1 = NULL;   
       char* rt_ticketParam2 = NULL;  
       char* rt_ticketParam3 = NULL;   
-      char* rt_ticketParam4 = NULL; 
+      char* rt_ticketParam4 = NULL;
       char* rt_ticketParam5 = NULL;   
       char* rt_purchaseDate = NULL;  
       char* rt_itemTypeCd = NULL;   
       char* rt_itemSubsBillDurationCd = NULL;  
       char* rt_subscriptionDurationMultiplier = NULL;    
       char* rt_timeStamp = NULL;   
-      
+
       if (result == APP_CONTROL_RESULT_SUCCEEDED) {        
            rt = app_control_get_extra_data(reply, "_method", &rt_method);     
            rt = app_control_get_extra_data(reply, "_result", &rt_result);       
-           
+
            /* Success */      
            if (!strcmp("0", rt_result)) {           
                 rt = app_control_get_extra_data(reply, "_resultDescription", &rt_resultDescription);  
@@ -808,17 +812,17 @@ The results of the operation are returned in the app control callback.This data 
                 rt = app_control_get_extra_data(reply, "_purchaseDate", &rt_purchaseDate);   
                 rt = app_control_get_extra_data(reply, "_itemTypeCd", &rt_itemTypeCd);      
                 rt = app_control_get_extra_data(reply, "_itemSubsBillDurationCd", &rt_itemSubsBillDurationCd);
-                rt = app_control_get_extra_data(reply, "_subscriptionDurationMultiplier", 
+                rt = app_control_get_extra_data(reply, "_subscriptionDurationMultiplier",
                                                 &rt_subscriptionDurationMultiplier);         
                 rt = app_control_get_extra_data(reply, "_timeStamp", &rt_timeStamp);        
            }    
       }
  }
  ```
- 
+
 - **Result code values**
  The following table lists the possible values of the `_result` key for the `org.tizen.inapppurchase.iapclient` application ID.
- 
+
  **Table: Result code values**
  | Value | String Representation                 | Description                              |
 | ----- | ------------------------------------- | ---------------------------------------- |
