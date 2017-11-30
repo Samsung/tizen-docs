@@ -8,19 +8,7 @@ There are 2 types of progress indicator:
 -   Indefinite progress indicator informs the user that a task is ongoing without specifying the progress rate.
 
 
-<video controls="controls">
-  <source type="video/mp4" src="tizen_4.0components_vi_2.3.1.1.progress_indicator.mp4"></source>
+![Progress indicator](media/tizen_4.0components_vi_2.3.1.1.progress_indicator.mp4)
 
-  <p>Your browser does not support the video element.</p>
-</video>
-
-
-<video controls="controls">
-  <source type="video/mp4" src="tizen_4.0components_vi_2.3.1.2.uncertain_progress_indicator.mp4"></source>
-
-  <p>Your browser does not support the video element.</p>
-</video>
-
-
-
+![Uncertain progress indicator](media/tizen_4.0components_vi_2.3.1.2.uncertain_progress_indicator.mp4)  
 *Progress indicators*
