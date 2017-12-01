@@ -118,7 +118,8 @@ An event handler is part of the application logic. It is called by the Tizen fra
 
 You can add event handlers for UI component events in the **Properties** view. To [add view transition events between views](storyboard_n.htm), use the **Storyboard** in the **Layout Editor** view.
 
-**Note** Since Tizen Studio 2.0, the top **Storyboard** tab has been removed and the storyboard feature has been included in the layout editor. The storyboard feature in the **Layout Editor** view gives you a natural understanding of the overall flow of views when you create a screen, and you can write application prototyping for planning and designing your application.
+> **Note**  
+> Since Tizen Studio 2.0, the top **Storyboard** tab has been removed and the storyboard feature has been included in the layout editor. The storyboard feature in the **Layout Editor** view gives you a natural understanding of the overall flow of views when you create a screen, and you can write application prototyping for planning and designing your application.
 
 
 

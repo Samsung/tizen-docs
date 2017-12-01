@@ -41,7 +41,8 @@ To install Intel® HAXM:
 
    The installer also functions as a configuration tool for Intel® HAXM. To change the memory settings later, run the installer again.
 
-   **Note**If you change the Intel® HAXM memory settings for the emulator, you must restart the Intel® HAXM and the emulator. Emulators currently running continue to use the previous memory setting.
+   > **Note**  
+   > If you change the Intel® HAXM memory settings for the emulator, you must restart the Intel® HAXM and the emulator. Emulators currently running continue to use the previous memory setting.
 
 4. Confirm your Intel® HAXM memory allocation settings and click **Install**.![Confirm installation](./media/hardware_instal.png)
 

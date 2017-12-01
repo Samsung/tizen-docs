@@ -4,8 +4,8 @@ Tizen Studio 1.3 Release Notes
 -   Release Date: Sep 11, 2017
 
 
-IDE and Tools
--------------
+## IDE and Tools
+
 
 ### New Features
 

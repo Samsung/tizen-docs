@@ -27,7 +27,8 @@ There are 2 different ways to edit the `tizen-manifest.xml` file:
 
   ![Text Editor](./media/manifest_text.png)
 
-**Note**The `tizen-manifest.xml` file must conform to both the standard XML file format and the Tizen native application specification requirements. Editing the manifest file XML structure with the text editor is intended for advanced users only. If the file does not conform to the standard and the requirements, errors can occur during installation.
+> **Note**  
+> The `tizen-manifest.xml` file must conform to both the standard XML file format and the Tizen native application specification requirements. Editing the manifest file XML structure with the text editor is intended for advanced users only. If the file does not conform to the standard and the requirements, errors can occur during installation.
 
 ## Manifest Element Hierarchy
 
@@ -120,7 +121,8 @@ For more information on the relationship between the elements, see the [element 
 
   Installation location for the application (available value: `"auto"`)
 
-  **Note**This attribute is read-only. Do not attempt to modify it.
+  > **Note**  
+  > This attribute is read-only. Do not attempt to modify it.
 
 - `package`
 
@@ -132,7 +134,8 @@ For more information on the relationship between the elements, see the [element 
 
   Package type of the application (available value: `"tpk"`)
 
-  **Note**This attribute is read-only. Do not attempt to modify it.
+  > **Note**  
+  > This attribute is read-only. Do not attempt to modify it.
 
 - `version`
 
@@ -254,10 +257,14 @@ For more information on the relationship between the elements, see the [element 
 - `exec`Application executable file path (string)
 - `hw-acceleration`Indicates the application hardware acceleration status (available values: not defined (depends on the system setting), `on` (use hardware acceleration), `off` (do not use hardware acceleration))By default, this value is not defined.
 - `launch_mode`Application launch mode (available values: `single` (launched as a main application), `group` (launched as a sub application), `caller` (caller application [defines the launch mode](../../../org.tizen.guides/html/native/app_management/app_controls_n.htm#mode) with the `app_control_set_launch_mode()` function))By default, this value is set to `single`.
-- `multiple`Indicates whether the application can be launched as a multiple (available values: `true`, `false`)**Note**This attribute is read-only. Do not attempt to modify it.
+- `multiple`Indicates whether the application can be launched as a multiple (available values: `true`, `false`)
+  > **Note**  
+  > This attribute is read-only. Do not attempt to modify it.
 - `nodisplay`Indicates whether the application is shown in the app tray (available values: `true`, `false`)
 - `taskmanage`Indicates whether the application is shown in the task manager (available values: `true`, `false`)
-- `type`Tizen application type (available values: `capp`, `c++app`, `webapp`)**Note**This attribute is read-only. Do not attempt to modify it.
+- `type`Tizen application type (available values: `capp`, `c++app`, `webapp`)
+  > **Note**  
+  > This attribute is read-only. Do not attempt to modify it.
 
 **For example:**
 
@@ -305,10 +312,14 @@ For more information on the relationship between the elements, see the [element 
 - `appid`Application unique ID (string)This can be used for launching or terminating the application explicitly.
 - `auto-restart`Indicates whether the application is relaunched automatically if it is terminated abnormally (available values: `true`, `false`)If the value is not defined, `false` is used.**Note**This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.
 - `exec`Application executable file path (string)
-- `multiple`Indicates whether the application can be launched as a multiple (available values: `true`, `false`)**Note**This attribute is read-only. Do not attempt to modify it.
+- `multiple`Indicates whether the application can be launched as a multiple (available values: `true`, `false`)
+  > **Note**  
+  > This attribute is read-only. Do not attempt to modify it.
 - `on-boot`Indicates whether the application is launched automatically on device boot or application installation (available values: `true`, `false`)If the value is not defined, `false` is used.**Note**This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.
 - `taskmanage`Indicates whether the application is shown in the task manager (available values: `true`, `false`)
-- `type`Tizen application type (available values: `capp`, `c++app`, `webapp`)**Note**This attribute is read-only. Do not attempt to modify it.
+- `type`Tizen application type (available values: `capp`, `c++app`, `webapp`)
+  > **Note**  
+  > This attribute is read-only. Do not attempt to modify it.
 
 **For example:**
 

@@ -8,7 +8,8 @@ Tizen native applications can run on different types of devices, such as wearabl
 
 When you take advantage of the above features, remember that you must always polish your work to create an optimal application for each device. The Tizen Studio provides a tool (**Resource Manager** view) for developing applications for multiple device types and resolutions.
 
-**Note**The Resource Manager is supported in the 2.4 platform only. If you cannot access the **Resource Manager** view, check the `version` and `api-version` attributes in the `<manifest>` element of the application manifest file.
+> **Note**  
+> The Resource Manager is supported in the 2.4 platform only. If you cannot access the **Resource Manager** view, check the `version` and `api-version` attributes in the `<manifest>` element of the application manifest file.
 
 ## Resource Directory Hierarchy
 
@@ -20,7 +21,8 @@ The `res/contents` directory contains predefined directories for specific altern
 
 ![Resource directory hierarchy](./media/resource_manager_directory_hierarchy.png)
 
-**Note**Always include the default resources in the root directory (not in a subdirectory of the `contents` directory) to ensure that your application has no dependencies on a specific device configuration.
+> **Note**  
+> Always include the default resources in the root directory (not in a subdirectory of the `contents` directory) to ensure that your application has no dependencies on a specific device configuration.
 
 A specific subdirectory is named with a **configuration-qualifier**. The configuration-qualifier is an indicator that represents each device configuration, and more content can be appended to it with a dash (-). The following table shows the 2 configuration-qualifier types currently supported by the Tizen Studio.
 
@@ -62,8 +64,8 @@ In the **Resource Manager** view, you can:
 - Copy resources to an alternative directory by dragging and dropping in the view area. You can also remove resources.
 - Generate code snippets by dragging and dropping in the source editor area.
 
-**Note**
-If the **Resource Manager** view is not visible, open it by selecting **Window > Show View > Other > Tizen > Resource Manager** from the Tizen Studio menu.
+> **Note**  
+> If the **Resource Manager** view is not visible, open it by selecting **Window > Show View > Other > Tizen > Resource Manager** from the Tizen Studio menu.
 
 To place resource files (`rsc1.edc` file and the images referenced by it) for en_US and en_US-LDPI configurations:
 
@@ -77,8 +79,8 @@ To place resource files (`rsc1.edc` file and the images referenced by it) for en
 
 ![img](./media/resource_manager_edge_res_folder.png)
 
-**Note**
-All images used by the EDC file must be placed in the `edje_res` folder created by the Tizen Studio. The `edje_res` folder is excluded from the `.tpk` package file.
+> **Note**  
+> All images used by the EDC file must be placed in the `edje_res` folder created by the Tizen Studio. The `edje_res` folder is excluded from the `.tpk` package file.
 
 ### Managing Resources
 

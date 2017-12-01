@@ -11,16 +11,16 @@ Tizen runs on a variety of mobile, wearable, and TV devices that offer different
 - Auto-setting UI resources based on the screen size
 - Internationalization (i18n)
 
-**Note**
-**Screen density**
-Screen density is usually referred to as DPI (dots per inch), which means the number of individual dots that can be placed in a line within the span of 1 inch (2.54 cm).
-
-**Resource**
-Resources are, for example, images, strings, application binary, and references of external places (such as files and networks). They are used only on runtime in Tizen.When you support multiple screens, you must use the resources with the application binary:File types – images, EDJ, text, video, and audioStrings for localization
-
-**Internationalization and localization**
-Tizen provides localized resources to make your application usable for different countries. The Tizen Studio supports the **Resource Manager**
-view and string localization (with the PO file editor). By using the Resource Manager, you can make an application that contains a variety of languages.
+> **Note**  
+> **Screen density**
+> Screen density is usually referred to as DPI (dots per inch), which means the number of individual dots that can be placed in a line within the span of 1 inch (2.54 cm).
+>
+> **Resource**
+> Resources are, for example, images, strings, application binary, and references of external places (such as files and networks). They are used only on runtime in Tizen.When you support multiple screens, you must use the resources with the application binary:File types – images, EDJ, text, video, and audioStrings for localization
+> 
+> **Internationalization and localization**
+> Tizen provides localized resources to make your application usable for different countries. The Tizen Studio supports the **Resource Manager**
+> view and string localization (with the PO file editor). By using the Resource Manager, you can make an application that contains a variety of languages.
 
 ## Configuring Multiple Screens
 
@@ -67,12 +67,12 @@ Many devices need different screens for portrait and landscape orientations. In 
 
 The screen configuration consists of resources and UI layouts. The resources consist of the screen density and locale, while the UI layout consists of the screen resolution and screen orientation.
 
-**Note**
-**Screen resolution**
-The total number of physical pixels on a screen.
-
-**Screen orientation**
-The way in which a rectangular screen is oriented for normal viewing:Landscape: the width of the display area is greater than the height.Portrait: the height of the display area is greater than the width.
+> **Note**  
+> **Screen resolution**
+> The total number of physical pixels on a screen.
+>
+> **Screen orientation**
+> The way in which a rectangular screen is oriented for normal viewing:Landscape: the width of the display area is greater than the height.Portrait: the height of the display area is greater than the width.
 
 The following table shows the components for multiple screens.
 
@@ -128,11 +128,11 @@ To localize a string:
 
    If you change a locale on the toolbar, the view shows a preview of the localized string.
 
-**Note**
-**Variation property of the UI component**
-UI component properties are classified based on the screen configuration type into basic and variable properties. The variable properties consist of the following:
-- Visibility: Whether the UI component is shown (`true`) or hidden (`false`).
-   - Packing: Position and size of the UI component attached to the parent container. The packing information has different meanings in different kinds of UI containers. For more information, see [Meta Schema in layout.xml](component_attributes_n.htm) (Grid section).
+> **Note**  
+> **Variation property of the UI component**
+> UI component properties are classified based on the screen configuration type into basic and variable properties. The variable properties consist of the following:
+> - Visibility: Whether the UI component is shown (`true`) or hidden (`false`).
+> - Packing: Position and size of the UI component attached to the parent container. The packing information has different meanings in different kinds of UI containers. For more information, see [Meta Schema in layout.xml](component_attributes_n.htm) (Grid section).
 
 ### Alternative Resources
 
@@ -149,8 +149,8 @@ To use alternative resources, you must follow the naming configuration rules.
 
 For example, the resource naming for the English locale and medium density is defined as `en_US-MDPI`.
 
-**Note**
-If there is no alternative resource corresponding to a specific locale, the default resource is displayed on the screen.If there is no default resource, a blank is displayed on the screen. To avoid blanks, set a default resource.
+> **Note**  
+> If there is no alternative resource corresponding to a specific locale, the default resource is displayed on the screen.If there is no default resource, a blank is displayed on the screen. To avoid blanks, set a default resource.
 
 By using the **Resource Manager** view, you can set specific resources for the locale and screen density:
 

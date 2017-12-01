@@ -5,7 +5,8 @@
 
 In the Tizen Studio, you can perform all the development activities from the application project creation to testing and packaging.
 
-**Note**	This section covers the tool details supported in mobile and wearable Web application development. Although most of the features are also supported in TV Web application development, no TV-specific details are included within the topics in this section. For more information on TV application development tools, see the [Samsung Developers Smart TV site](http://developer.samsung.com/tv/develop). 
+> **Note**	 
+> This section covers the tool details supported in mobile and wearable Web application development. Although most of the features are also supported in TV Web application development, no TV-specific details are included within the topics in this section. For more information on TV application development tools, see the [Samsung Developers Smart TV site](http://developer.samsung.com/tv/develop). 
 
 The Tizen Studio provides various tools to help you with the different Web application development process phases:
 

@@ -1,5 +1,5 @@
 # Performing Memory Analysis
-# Dependencies
+## Dependencies
 
 - Tizen Studio 1.0 and Higher
 
@@ -25,21 +25,21 @@ The tab consists of the following views:
 The memory chart consists of various child charts:
 
 - **System Memory** chart
-You can check the memory size of the system and process.
-**Figure: System Memory chart**![System Memory chart](./media/da_memory_system.png)
+  You can check the memory size of the system and process.
+  **Figure: System Memory chart**![System Memory chart](./media/da_memory_system.png)
 - **Process Memory** chart
-You can check the memory size of the process:
+  You can check the memory size of the process:
   - **VSS**: Virtual Set Size
   - **RSS**: Resident Set Size
   - **PSS**: Proportional Set Size
-**Figure: Process Memory chart**![Process Memory chart](./media/da_memory_process.png)
+    **Figure: Process Memory chart**![Process Memory chart](./media/da_memory_process.png)
 - **Heap Allocation** chart
-You can check the allocated heap memory size of the process. It is calculated by "total allocation – total free":
+  You can check the allocated heap memory size of the process. It is calculated by "total allocation – total free":
   - **Total**: Allocated heap memory size of the process
   - **Main Executable**: Allocated heap memory size of the main executable
-**Figure: Heap Allocation chart**![Heap Allocation chart](./media/da_memory_heap.png)
-When you select one of the heap allocation charts or its children, the corresponding **Statistics** table entry is also selected. This can be helpful if you need more detailed information on some process or library.
-**Figure: Cross-focusing from Heap Allocation charts to the Statistics table**![Cross-focusing from Heap Allocation charts to the Statistics table](./media/da_memory_heap_statistics.png)
+    **Figure: Heap Allocation chart**![Heap Allocation chart](./media/da_memory_heap.png)
+    When you select one of the heap allocation charts or its children, the corresponding **Statistics** table entry is also selected. This can be helpful if you need more detailed information on some process or library.
+    **Figure: Cross-focusing from Heap Allocation charts to the Statistics table**![Cross-focusing from Heap Allocation charts to the Statistics table](./media/da_memory_heap_statistics.png)
 
 ## Details
 
@@ -166,13 +166,13 @@ You can find where memory leaks occurred in the application by enabling the **Le
 
 ![Leak Sanitizer enabled in the Preferences dialog](./media/da_memory_leaks_preference.png)
 
-**Note**
-Pay attention to the known limitations of the Leak Sanitizer in the Dynamic Analyzer:
-- Leak Sanitizer can be enabled for Tizen 3.0 devices only.
-- Leak Sanitizer cannot be enabled together with the Thread Analysis feature.
-- Only allocations that occur in a profiled application are checked for leaks.
-- False negative results can be produced on a 32-bit platform (ARM, x86), particularly in applications which use large memory allocations.
-- False positive results can be produced if an application uses the Thread Local Storage (TLS) memory.
+> **Note**  
+> Pay attention to the known limitations of the Leak Sanitizer in the Dynamic Analyzer:
+> - Leak Sanitizer can be enabled for Tizen 3.0 devices only.
+> - Leak Sanitizer cannot be enabled together with the Thread Analysis feature.
+> - Only allocations that occur in a profiled application are checked for leaks.
+> - False negative results can be produced on a 32-bit platform (ARM, x86), particularly in applications which use large memory allocations.
+> - False positive results can be produced if an application uses the Thread Local Storage (TLS) memory.
 
 The **Leaks** table has the same columns as the [**Persistent Allocations** table](#allocation).
 

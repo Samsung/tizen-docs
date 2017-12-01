@@ -15,7 +15,8 @@ The Tizen Web Simulator:
 
 The Tizen Web Simulator is based on the [Ripple-UI Framework](https://github.com/blackberry-webworks/Ripple-UI) and is licensed under Apache Software License v.2.0. 
 
-**Note**	The Web Simulator does not support a wearable circular UI. 
+> **Note**  
+> The Web Simulator does not support a wearable circular UI. 
 
 **Figure: Tizen Web Simulator**
 
@@ -81,7 +82,8 @@ You can modify the following configuration settings in the Web Simulator configu
 
   Set the device API and device resolution to simulate the device resolution of the target device on the **DEVICE** tab.
 
-  **Note**	To provide similar UI rendering on the emulator and the target device, set the emulator resolution to **tizen WVGA (480x800)** or **tizen HD (720x1280)**, as the viewport property of these resolutions is configured to be the same as the target device's. 
+  > **Note**  
+  > To provide similar UI rendering on the emulator and the target device, set the emulator resolution to **tizen WVGA (480x800)** or **tizen HD (720x1280)**, as the viewport property of these resolutions is configured to be the same as the target device's. 
 
 - System settings 
 
@@ -131,7 +133,8 @@ To add more start-up parameters, enter them in this field.
 
 Enter the full directory path for the simulator to store user preferences and Web application data.
 
-**Note**	Linux users must manually define this parameter instead of using the default value, since the total length of the directory path in Linux is very limited for this parameter. Using the default value can prevent you from launching more than 1 application concurrently. There is no such restriction in the Windows® version. 
+> **Note**  
+> Linux users must manually define this parameter instead of using the default value, since the total length of the directory path in Linux is very limited for this parameter. Using the default value can prevent you from launching more than 1 application concurrently. There is no such restriction in the Windows® version. 
 
 ### Simulator Settings<a name="simulator"></a>
 

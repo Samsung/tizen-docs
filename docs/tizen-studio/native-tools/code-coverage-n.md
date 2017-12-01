@@ -9,7 +9,8 @@ The Code Coverage tool is based on the llvm-cov tool. With it, you can detect pa
 
 ## Using Code Coverage
 
-**Note**Before you run the Code Coverage:Make sure that you have an emulator or a connected target device running.If you want to try out the tool and do not have an applicable project to test, create a test project with the Project Wizard using a template or sample. For more information on creating a project, see [Creating Your First Tizen Mobile Native Application](../../../org.tizen.training/html/native/mobile/first_app_mn.htm).
+> **Note**  
+> Before you run the Code Coverage:Make sure that you have an emulator or a connected target device running.If you want to try out the tool and do not have an applicable project to test, create a test project with the Project Wizard using a template or sample. For more information on creating a project, see [Creating Your First Tizen Mobile Native Application](../../../org.tizen.training/html/native/mobile/first_app_mn.htm).
 
 To use the Code Coverage tool:
 

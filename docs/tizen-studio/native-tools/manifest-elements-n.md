@@ -80,7 +80,8 @@ This element represents the MIME type of the application control.
 
 This element represents the category of an application that runs in the background.
 
-**Note**The `<background-category>` element is not supported for API versions lower than 2.4. An application with a `<background-category>` element can fail to be installed on devices with a Tizen version lower than 2.4. In this case, the element can be replaced with `<metadata key="http://tizen.org/metadata/background-category/<value>"/>`.
+> **Note**  
+> The `<background-category>` element is not supported for API versions lower than 2.4. An application with a `<background-category>` element can fail to be installed on devices with a Tizen version lower than 2.4. In this case, the element can be replaced with `<metadata key="http://tizen.org/metadata/background-category/<value>"/>`.
 
 For more information on the relationship between the elements, see the [element hierarchy](manifest-text-editor-n.md#hierarchy).
 

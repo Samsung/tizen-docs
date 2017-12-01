@@ -1,3 +1,4 @@
+
 Monitoring Devices with the Device Manager
 ==========================================
 
@@ -11,11 +12,11 @@ The Device Manager provides a graphical user interface that is more convenient t
 
 To use the Device Manager with a specific device, you must connect the device over SDB (Smart Development Bridge). Physical devices can be connected with a USB cable, and emulators can be connected through the Emulator Manager. When the device is connected over SDB, it is automatically displayed in the Device Manager and its directory structure and logs are shown in the **File Explorer** and **Log** views, respectively.
 
-**Note** If you do not have the Device Manager installed, open the [Package Manager](../download/updating_sdk.htm), go to the **Main SDK** tab, and locate the **Device Manager** under **Tizen SDK Tools > Baseline SDK**. To install the tool, click **Install**.
+> **Note**  
+> If you do not have the Device Manager installed, open the [Package Manager](../download/updating_sdk.htm), go to the **Main SDK** tab, and locate the **Device Manager** under **Tizen SDK Tools > Baseline SDK**. To install the tool, click **Install**.
 
 
-Accessing Device Manager {#access}
-------------------------
+## <a name="access"></a> Accessing Device Manager 
 
 -   There are 2 different ways to access the Device Manager:
 
@@ -40,8 +41,7 @@ Accessing Device Manager {#access}
 ![Device Manager main screen](./media/device_manager_blank_screen.png)
 
 
-Connecting Devices {#connecting}
-------------------
+## <a name="connecting"></a>Connecting Devices 
 
 The Device Manager shows both local devices connected to the system and any configured remote devices:
 
@@ -75,8 +75,8 @@ Connecting a device to a computer depends on the device type:
         When the connection is established, the remote device appears in the Device Manager.
 
 
-Installing Applications {#installing}
------------------------
+
+## <a name="installing"></a>Installing Applications 
 
 You can install a Tizen application to a connected device with the TPK or WGT file:
 
@@ -90,8 +90,7 @@ You can install a Tizen application to a connected device with the TPK or WGT fi
 ![Context menu for connected devices](./media/device_manager_connected_devices_context_menu.png)
 
 
-Permitting Devices to Install Applications {#permitting}
-------------------------------------------
+## <a name="permitting"></a>Permitting Devices to Install Applications 
 
 If your device has a distributor certificate that contains a DUID starting with 1.0\#, you must give the device permission to install applications.
 
@@ -111,8 +110,7 @@ To permit a device to install applications:
 A distributor certificate containing only \#2.0 devices does not have the `device-profile.xml` file, and consequently does not require this process to push the file to the device.
 
 
-Managing Device Files {#file_explorer}
----------------------
+## <a name="file_explorer"></a>Managing Device Files 
 
 You can browse the internal file structure of a connected device in the **File Explorer** view. Depending on your permissions, you can create and delete files on the device, and pull and push files between the device and your computer.
 
@@ -126,15 +124,12 @@ You can perform a variety of actions through the **File Explorer** view:
 -   To push a file from the computer to the device, right-click the directory where you want to push the file and select **Push the file**. In the popup, select the file to push and click **OK**.
 -   To pull a file from the device to the computer, right-click the file you want to pull and select **Pull the file**. In the popup, select the destination directory on the computer and click **OK**.
 
-<div class="note">
 
-**Note** To create or remove a file, the folder must have `Write` permission set for the `Other` user.
-
-</div>
+> **Note**  
+> To create or remove a file, the folder must have `Write` permission set for the `Other` user.
 
 
-Viewing Device Logs {#log_view}
--------------------
+## <a name="log_view"></a>Viewing Device Logs 
 
 When a device is connected to the Device Manager, a device log tab is automatically created in the **Log** view. The default tab name is the device ID, but it can be modified. You can create additional tabs for a device, and you can set different filters for each tab. Tabs for disconnected devices are shown as inactive, and are reactivated when the device is reconnected.
 
@@ -166,7 +161,8 @@ You can perform a variety of actions in the **Log** view:
 
     ​
 
-    **Note** Any filters created for a log tab are deleted when the tab is removed.
+    > **Note**  
+	> Any filters created for a log tab are deleted when the tab is removed.
 
     ​
 
@@ -190,8 +186,8 @@ You can perform a variety of actions in the **Log** view:
     *Note** If you have filters applied to a log tab, only messages that match those filters are exported. If you want to export the complete log, remove all filters before exporting.
 
 
-Configuring Device Manager {#settings}
---------------------------
+
+## <a name="settings"></a>Configuring Device Manager 
 
 You can access the Device Manager Configuration window by clicking the **Settings** icon.
 
@@ -211,7 +207,8 @@ You can set the following settings for the Device Manager:
 
     ​
 
-    **Note** Only values between 30 000 and 600 000 (milliseconds) are allowed.
+    > **Note**  
+    > Only values between 30 000 and 600 000 (milliseconds) are allowed.
 
     ​
 
@@ -219,5 +216,6 @@ You can set the following settings for the Device Manager:
 
     This is the maximum amount of log entries to store in the log table. To set the buffer size, select the **Log** tab, change the value, and click **OK**.
 
-    **Note** Only values between 5 000 and 100 000 (lines) are allowed.
+    > **Note**  
+    > Only values between 5 000 and 100 000 (lines) are allowed.
 

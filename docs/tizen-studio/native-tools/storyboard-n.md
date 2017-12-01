@@ -57,8 +57,7 @@ The **Layout** editor offers 3 ways to add a new view:
 If you select a title bar area containing the view name and drag the view to a new location, you can see that direct manipulation changes the view position on the canvas in real time. In addition, you can use the real-time Pan and Scan function by dragging the empty space of the **Design** editor by holding down with the mouse wheel button.
 
 
-Using Auto Layout {#auto_layout}
------------------
+<a name="auto_layout"></a> ## Using Auto Layout
 
 If it is difficult to understand the flow between multiple views, use the **Storyboard**'s **Auto Layout** function. It relocates your views to an easily-readable position.
 

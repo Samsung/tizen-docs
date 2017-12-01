@@ -1,5 +1,5 @@
 # Managing Emulator Instances
-# Dependencies
+## Dependencies
 
 - Tizen Studio 1.0 and Higher
 
@@ -47,7 +47,9 @@ To create a new emulator instance:
 1. In the Emulator Manager, click **Create**.
 2. Select the platform (system image), and click **Next**.
 3. Select the template (device definition), and click **Next**.
-4. Modify the properties as needed, and click **Finish**.The emulator instance appears in the Emulator Manager.To view the emulator instance details, right-click the instance and select **Detail**.**Note**To run the application faster, switch on CPU VT and GPU. If CPU VT is disabled, check [Increasing the Application Execution Speed](emulator.md#speed) for more information. If GPU is disabled, [install the latest vendor-provided graphic driver](../download/prerequisites.md#emulator).
+4. Modify the properties as needed, and click **Finish**.The emulator instance appears in the Emulator Manager.To view the emulator instance details, right-click the instance and select **Detail**.
+  > **Note**  
+  > To run the application faster, switch on CPU VT and GPU. If CPU VT is disabled, check [Increasing the Application Execution Speed](emulator.md#speed) for more information. If GPU is disabled, [install the latest vendor-provided graphic driver](../download/prerequisites.md#emulator).
 
 ### Creating Platforms
 

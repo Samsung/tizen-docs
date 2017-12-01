@@ -43,7 +43,8 @@ To install the Tizen Studio:
 
    ​
 
-   **Note** If you install the Tizen Studio in a directory that requires administrator privileges for access, such as `C:\Program Files`, administrator privileges are required to run the Tizen SDK tools.
+   > **Note**  
+   > If you install the Tizen Studio in a directory that requires administrator privileges for access, such as `C:\Program Files`, administrator privileges are required to run the Tizen SDK tools.
 
    ​
 
@@ -81,8 +82,8 @@ To install the Tizen Studio using the CLI installer:
 
    The CLI installer begins to install the Web App Development platform and tools on your computer.
 
-**Note**
-If you want to develop a native application on the CLI, you must install the Native App Development platform and tools using the CLI Package Manager.
+> **Note**  
+> If you want to develop a native application on the CLI, you must install the Native App Development platform and tools using the CLI Package Manager.
 
 ## Installing Additional Packages with CLI
 

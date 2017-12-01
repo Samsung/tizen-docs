@@ -8,8 +8,8 @@ Tizen works in many environments with different countries, regions, languages, a
 
 This topic helps you localize text strings. Text string localization is the process of translating the strings used by your application into different languages.
 
-**Note**
-Internationalization is the process of making your application able to adapt to different languages, regions, and cultures.Localization is the process of translating your application into multiple languages.
+> **Note**  
+> Internationalization is the process of making your application able to adapt to different languages, regions, and cultures.Localization is the process of translating your application into multiple languages.
 
 The PO file editor is a visual editor for [.po files](https://www.gnu.org/software/gettext/). It allows you to easily add, edit, and remove supported languages and strings. You can also check all strings of a supported language at a glance.
 
@@ -58,5 +58,5 @@ To manage strings:
 
   Right-click the row to be removed, and click **Remove**.
 
-**Note**
-The `.po` file name usually has the form `<ll>_<CC>.po`, where `<ll>` stands for an [ISO 639](https://www.gnu.org/software/gettext/manual/html_node/Usual-Language-Codes.html) 2-letter language code, and `<CC>` stands for an [ISO 3166](https://www.gnu.org/software/gettext/manual/html_node/Country-Codes.html) 2-letter country code. For example, for German in Germany, the file name is `de_DE.po`.
+> **Note**  
+> The `.po` file name usually has the form `<ll>_<CC>.po`, where `<ll>` stands for an [ISO 639](https://www.gnu.org/software/gettext/manual/html_node/Usual-Language-Codes.html) 2-letter language code, and `<CC>` stands for an [ISO 3166](https://www.gnu.org/software/gettext/manual/html_node/Country-Codes.html) 2-letter country code. For example, for German in Germany, the file name is `de_DE.po`.

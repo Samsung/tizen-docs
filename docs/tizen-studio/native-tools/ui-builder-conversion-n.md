@@ -6,7 +6,8 @@
 
 You can create UI applications based on pure EFL code. However, when expanding the UI view of the application or developing an optimized application for a new device, code maintenance and development productivity can slow down. For efficiency, consider converting your application to a UI Builder application. The Tizen native UI Builder supports UI layouts and visual editing methods for creating new UI screens for various devices.
 
-**Note**You cannot convert EFL widget applications or DALi UI applications to UI Builder projects. Only EFL basic UI and watch application projects can be converted (based on the `tizen-manifest.xml` file).
+> **Note**  
+> You cannot convert EFL widget applications or DALi UI applications to UI Builder projects. Only EFL basic UI and watch application projects can be converted (based on the `tizen-manifest.xml` file).
 
 ## Conversion Advantages
 
@@ -90,14 +91,18 @@ To convert the project:
 
 1. Open the **Convert to UI Builder Project** wizard.Right-click the **SettingsUI** project in the **Project Explorer** view, and select **Convert to UI Builder Project**.![Convert the sample project](./media/uib_convert_conversion.png)
 
-2. Confirm the conversion by clicking **Next**.![Confirm the conversion](./media/uib_convert_confirm.png)**Note**When a wearable project is converted, the shape type selection appears after the opening step. The UI Builder provides different shape designs according to the shape type. Select the appropriate one for the converted project.![Select the shape type](./media/uib_convert_shape.png)
+2. Confirm the conversion by clicking **Next**.![Confirm the conversion](./media/uib_convert_confirm.png)
+  > **Note**  
+  > When a wearable project is converted, the shape type selection appears after the opening step. The UI Builder provides different shape designs according to the shape type. Select the appropriate one for the converted project.![Select the shape type](./media/uib_convert_shape.png)
 
 3. Select the application entry point:
 
    ![Select the entry point](./media/uib_convert_entry.png)
 
    1. Click **Browse**.
-   2. Select the `settingsui.c` file (path: `SettingsUI/src`) and click **Next**.**Note**The `settingsui.c` file has a `main()` function corresponding to the application entry point. If you select the wrong file, a warning message appears and the **Next** button is disabled.
+   2. Select the `settingsui.c` file (path: `SettingsUI/src`) and click **Next**.
+     > **Note**  
+	 > The `settingsui.c` file has a `main()` function corresponding to the application entry point. If you select the wrong file, a warning message appears and the **Next** button is disabled.
 
 4. Add a user view:
 
@@ -115,7 +120,8 @@ The converted project (**SettingsUIwithUIB**) appears in the **Project Explorer*
 
 ![Structure of a converted project](./media/uib_convert_structure.png)
 
-**Note**The converted project follows specific naming conventions:A suffix ("withUIB") is added at the end of the original project name.If the same name with the same suffix already exists on the workspace, an empty serial number is appended to the end of the filename.
+> **Note**  
+> The converted project follows specific naming conventions:A suffix ("withUIB") is added at the end of the original project name.If the same name with the same suffix already exists on the workspace, an empty serial number is appended to the end of the filename.
 
 ## Using UI Builder Features
 
