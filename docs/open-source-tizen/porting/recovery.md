@@ -17,12 +17,12 @@ The following steps describe the boot process:
 
 1. The boot process starts with a bootloader (u-boot or s-boot) loading
 appropriate kernel and ramdisk images dedicated for the system
-recovery process (methods of bootleader control are beyond the
+recovery process (methods for controlling bootloader actions are beyond the
 scope of this document). With both images loaded into RAM, the kernel
 initialization begins. When the initialization is complete, the kernel passes
 control to the init process, such as `/sbin/init` (PID#1).
 
-2. In the case of the recovery ramdisk, the init process is accessed through a symlink to
+2. In the case of the recovery ramdisk, `/sbin/init` is a symlink to
 `/usr/libexec/initrd-recovery/init` (a shell script that comes
 from the `initrd-recovery` package). The script mounts several kernel
 filesystems and the inform partition (if it exists), and parses the
@@ -79,8 +79,8 @@ Each menu entry consists of the following fields:
 - `actions`: Array of actions available in this menu
 - `item_default`: Action to highlight when opening the menu
 
-An action can be handled in 2 ways: you can run an action handler or
-switch to another screen. There is a reserved screen name **BACK**, which
+The `system-recovery` program can handle an action in 2 ways: it can run an action handler
+or switch to another screen. There is a reserved screen name **BACK**, which
 means switching to the previous screen (for more information, see `screen_back` in the [screens
 dictionary](#screens)).
 
