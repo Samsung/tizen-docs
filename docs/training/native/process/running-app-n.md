@@ -1,6 +1,6 @@
 # Running Applications
 
-You can run Tizen native applications on the [emulator](../../../../org.tizen.studio/html/common_tools/emulator.htm) using the **Project Explorer** view or the Tizen Studio menu.
+You can run Tizen native applications on the [emulator](../../../tizen-studio/common-tools/emulator.md) using the **Project Explorer** view or the Tizen Studio menu.
 
 To run your application on the emulator:
 
@@ -50,6 +50,5 @@ To launch the application in RDS mode:
 
 The RDS option is enabled as default. To disable it, in the Tizen Studio, go to **Window > Preferences > Tizen Studio > Rapid Development Support**.
 
-**Note**
-
-Currently, this option is not supported in multi-app projects.
+> **Note**  
+> Currently, this option is not supported in multi-app projects.

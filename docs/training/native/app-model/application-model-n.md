@@ -1,6 +1,6 @@
 
-Tizen Native Application Model
-==============================
+## Tizen Native Application Model
+
 
 The Tizen native application model handles application life-cycle and
 system events. Tizen native application life-cycle is handled by the
@@ -40,9 +40,8 @@ reduce resource usage when they detect that their display window is
 covered by another application window. State change events make the
 detection possible.
 
-
-Native Application Life-cycle <a id="life"></a>
------------------------------
+<a name="life"></a>
+## Native Application Life-cycle
 
 A Tizen native application can be in one of several different states.
 Typically, the application is launched by the user from the Launcher, or
@@ -72,7 +71,7 @@ running of the background applications, except for some exceptional
 applications (such as Media and Download) that necessarily work in the
 background. In this case, the application can [designate their
 background category as an allowed
-category](../../../../org.tizen.guides/html/native/app_management/efl_ui_app_n.htm#allow_bg)
+category](../../../guides/native/app-management/efl-ui-app-n.md#allow_bg)
 to avoid going into the suspended state.
 
 When your application becomes visible again, the `app_resume_cb()`
@@ -111,11 +110,11 @@ run without a designated background category.
 Application state changes are managed by the underlying framework. For
 more information on application state transitions, see [Application
 States and
-Transitions](../../../../org.tizen.guides/html/native/app_management/efl_ui_app_n.htm#state_trans).
+Transitions](../../../guides/native/app-management/efl-ui-app-n.md#state_trans).
 
+<a name="start"></a>
+## Starting the Tizen Native Application
 
-Starting the Tizen Native Application <a id="start"></a>
--------------------------------------
 
 An application can be launched by the user from the Launcher or by
 another application. Either way, the Application Framework starts the
@@ -123,11 +122,11 @@ application by creating a new process and calling the application entry
 point. Like in a conventional Linux application, the application main
 function is the entry point. For more information on launching native
 applications, see [Application
-Controls](../../../../org.tizen.guides/html/native/app_management/app_controls_n.htm).
+Controls](../../../guides/native/app-management/app-controls-n.md).
 
+<a name="packageID"></a>
+## Package ID and Application ID
 
-Package ID and Application ID <a id="packageID"></a>
------------------------------
 
 When developing a Tizen application, you must define a package and
 application ID:
@@ -168,9 +167,9 @@ The following figure shows how to use the package and application ID.
 
 ![Package ID and application ID](./media/package_id.png)
 
+<a name="appdirectory"></a>
+## Application Directory Policy
 
-Application Directory Policy <a id="appdirectory"></a>
-----------------------------
 
 The following list shows the directory hierarchy:
 
@@ -207,14 +206,14 @@ The following table shows the details of files and directories.
 
 | Name                   | File or directory | Owner:Group | Permission | Smack label             |
 | ---------------------- | ----------------- | ----------- | ---------- | ----------------------- |
-| `bin`                  | Directory         | root:root   | rwxr-xr-x  | {PackageId}1            |
+| `bin`                  | Directory         | root:root   | rwxr-xr-x  | {PackageId}^1^            |
 | `data`                 | Directory         | app:app     | rwxr-xr-x  | {PackageId}             |
 | `lib`                  | Directory         | root:root   | rwxr-xr-x  | {PackageId}             |
 | `res`                  | Directory         | root:root   | rwxr-xr-x  | {PackageId}             |
 | `shared`               | Directory         | root:root   | rwxr-xr-x  | -                       |
-| `shared/data`          | Directory         | app:app     | rwxr-xr-x  | {Random}2, transmute    |
+| `shared/data`          | Directory         | app:app     | rwxr-xr-x  | {Random}^2^, transmute    |
 | `shared/res`           | Directory         | root:root   | rwxr-xr-x  | -                       |
-| `shared/trusted`       | Directory         | app:app     | rwxr-xr-x  | {Cert Hash}3, transmute |
+| `shared/trusted`       | Directory         | app:app     | rwxr-xr-x  | {Cert Hash}^3^, transmute |
 | `author-signature.xml` | File              | root:root   | rwxr-xr-x  | {PackageId}             |
 | `signature1.xml`       | File              | root:root   | rwxr-xr-x  | {PackageId}             |
 | `signature2.xml`       | File              | root:root   | rwxr-xr-x  | {PackageId}             |
@@ -230,13 +229,13 @@ smack module.
 Base64Encode (SHA1 author certificate in `author-signature.xml`) and
 {Cert Hash} replaces "/" with "\#" in \[Raw Hash\].
 
+<a name="appmanifest"></a>
+## Application Manifest
 
-Application Manifest <a id="appmanifest"></a>
---------------------
 
 The following example shows the beginning of the Tizen manifest schema:
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://tizen.org/ns/packages" xmlns:packages="http://tizen.org/ns/packages">
    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
@@ -251,16 +250,16 @@ The following example shows the syntax of the manifest reference. The
 `<manifest>` element serves as a container for the other configuration
 elements.
 
-```
+```xml
 <manifest xmlns=http://tizen.org/ns/packages
           package="org.tizen.application"
           version="1.0.0"
           api-version="2.3">
 ```
 
+<a name="signature"></a>
+## Signature
 
-Signature <a id="signature"></a>
----------
 
 A Tizen package is digitally signed by an author and 1 or more
 distributors to produce a signature file that cryptographically covers
@@ -287,9 +286,8 @@ The following image describes the relationship between the signatures.
 
 ![Signature](./media/signature.png)
 
-
-Installer and SMACK <a id="installer"></a>
--------------------
+<a name="installer"></a>
+## Installer and SMACK
 
 The following figure describes how the application installer works.
 
@@ -304,9 +302,9 @@ An application can only access the resources that are allowed by the
 privileges. The privileges are used in the Tizen Store to show the
 permissions and receive user consent.
 
+<a name="commands"></a>
+## Package Commands
 
-Package Commands <a id="commands"></a>
-----------------
 
 You can use shell commands to install, uninstall, update, and launch
 applications.
