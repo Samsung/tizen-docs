@@ -8,29 +8,40 @@ A widget application is one of the Tizen application types. It can be shown by s
 
 **Figure: Widget application on a wearable device**
 
-![Widget application on a wearable device](./media/widget_app_wearable.png)
+![Widget application on a wearable device](media/widget_app_wearable.png)
 
 Study the following instructions to help familiarize yourself with the Tizen [native application development process](../process/app-dev-process-n.md) as well as using the Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable native widget application, which displays some text on the screen with no user interaction:
 
-1. Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../../org.tizen.studio/html/download/download.htm).For more information on the installation process, see the [installation guide](../../../../org.tizen.studio/html/download/installing_sdk.htm).
-2. [Create a wearable native widget project](#create) using the Tizen Studio.This step shows how you can use a predesigned project template that creates all the basic files and folders required for your project.
-3. [Build the application](#build).After you have implemented code for the features you want, this step shows how you can build the application to validate and compile the code.
-4. [Run the application](#run).This step shows how you can run the application on the emulator or a real target device.
-5. [Build a UI](#ui).This step shows how you can make small alterations to the application UI to improve the usability of your application.
+1. Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/download/download.md).  
+For more information on the installation process, see the [installation guide](../../../tizen-studio/download/installing-sdk.md).
 
-When you are developing a more complex application, you can take advantage of the [native tools included in the Tizen Studio](../../../../org.tizen.studio/html/native_tools/cover_native_n.htm) to ease the tasks of creating functionality and designing the application UI.
+2. [Create a wearable native widget project](#create) using the Tizen Studio.  
+This step shows how you can use a predesigned project template that creates all the basic files and folders required for your project.
+
+3. [Build the application](#build).  
+After you have implemented code for the features you want, this step shows how you can build the application to validate and compile the code.
+
+4. [Run the application](#run).  
+This step shows how you can run the application on the emulator or a real target device.
+
+5. [Build a UI](#ui).  
+This step shows how you can make small alterations to the application UI to improve the usability of your application.
+
+When you are developing a more complex application, you can take advantage of the [native tools included in the Tizen Studio](../../../tizen-studio/native-tools/cover-native-n.md) to ease the tasks of creating functionality and designing the application UI.
 
 ## Creating a Project
 
 The following example shows you how to create and configure a basic wearable native widget application project in the Tizen Studio. An application project contains all the files that make up an application.
 
-**Note**For user convenience, standalone widget application packages are not allowed in the Tizen market place.Use a standalone widget application for testing purposes. If you want to publish the application in the Tizen market place, combine it with at least 1 UI application in the same package. For more information, see [Developing Multiple Projects as a Combined Package](../process/app-dev-process-n.md#develop).
+> **Note**  
+> For user convenience, standalone widget application packages are not allowed in the Tizen market place.Use a standalone widget application for testing purposes.   
+> If you want to publish the application in the Tizen market place, combine it with at least 1 UI application in the same package. For more information, see [Developing Multiple Projects as a Combined Package](../process/app-dev-process-n.md#develop).
 
 The following figure illustrates the application to be created. The application screen displays the **Hello widget** text and no user interaction is provided.
 
 **Figure: Wearable native Widget application**
 
-![Wearable native Widget application](./media/basic_app_running_wn_widget.png)
+![Wearable native Widget application](media/basic_app_running_wn_widget.png)
 
 To create the application project:
 
@@ -38,13 +49,13 @@ To create the application project:
 
 2. Make sure the **Native** perspective is selected in the top right corner of the Tizen Studio window.
 
-   ![Checking the perspective](./media/change_perspective_n.png)
+   ![Checking the perspective](media/change_perspective_n.png)
 
    If not, select it. If the perspective is not visible, in the Tizen Studio menu, select **Window > Perspective > Open Perspective > Other > Native**, and click **OK**.
 
 3. In the Tizen Studio menu, select **File > New > Tizen Project**.
 
-   ![Creating a new Tizen Native project](./media/create_project_1_n.png)
+   ![Creating a new Tizen Native project](media/create_project_1_n.png)
 
    The Project Wizard opens.
 
@@ -52,31 +63,31 @@ To create the application project:
 
    The Project Wizard is used to create the basic application skeleton with the required folder structure and mandatory files. You can easily create different applications by selecting an applicable template or sample for the Project Wizard to use.
 
-   1. Select the **Template** project type and click **Next**.
+   a. Select the **Template** project type and click **Next**.
 
-      ![Selecting the project type](./media/create_project_wizard_type.png)
+      ![Selecting the project type](media/create_project_wizard_type.png)
 
-   2. Select the profile (**Wearable**) and version from a drop-down list and click **Next**.
+   b. Select the profile (**Wearable**) and version from a drop-down list and click **Next**.
 
-      The version depends on the platform version you have installed and with which you are developing the application.
+    The version depends on the platform version you have installed and with which you are developing the application.
 
-      ![Selecting the profile and version](./media/create_project_wizard_version_wearable.png)
+   ![Selecting the profile and version](/media/create_project_wizard_version_wearable.png)
 
-   3. Select the **Native Application** application type and click **Next**.
+   c. Select the **Native Application** application type and click **Next**.
 
-      ![Selecting the application type](./media/create_project_wizard_app_wearable.png)
+      ![Selecting the application type](media/create_project_wizard_app_wearable.png)
 
-   4. Select the **Widget** template and click **Next**.
+   d. Select the **Widget** template and click **Next**.
 
-      ![Selecting the template](./media/create_project_wizard_template_wn_widget.png)
+      ![Selecting the template](media/create_project_wizard_template_wn_widget.png)
 
-   5. Define the project properties and click **Finish**.
+   e. Define the project properties and click **Finish**.
 
       You can fill the project name (3-50 characters) and the unique package ID. You can also select the location and working sets by clicking **More properties**.
 
-      ![Defining properties](./media/create_project_wizard_properties_wn_widget.png)
+      ![Defining properties](media/create_project_wizard_properties_wn_widget.png)
 
-      The Project Wizard sets up the project, creates the application files using the default content from the template, and closes. For more information on the Project Wizard and the available templates, see [Creating Tizen Projects with Tizen Project Wizard](../../../../org.tizen.studio/html/native_tools/project_wizard_n.htm).
+    f. The Project Wizard sets up the project, creates the application files using the default content from the template, and closes. For more information on the Project Wizard and the available templates, see [Creating Tizen Projects with Tizen Project Wizard](../../../tizen-studio/native-tools/project-wizard-n.md).
 
 You can see the created project in the **Project Explorer** view. The most important files and folders include:
 
@@ -89,9 +100,10 @@ You can see the created project in the **Project Explorer** view. The most impor
 
 **Figure: Application in the Project Explorer**
 
-![Application in the Project Explorer](./media/basic_app_project_explorer_wn_widget.png)
+![Application in the Project Explorer](media/basic_app_project_explorer_wn_widget.png)
 
-**Note**You can [view and modify the application configuration](#configuration) in the manifest editor. In this example, no configuration changes are required.
+> **Note**  
+> You can [view and modify the application configuration](#configuration) in the manifest editor. In this example, no configuration changes are required.
 
 Your application project is now ready for further actions. Next, build the application.
 
@@ -103,7 +115,7 @@ To view and modify the application configuration:
 
 2. In the manifest editor, view and modify the configuration details using the various tabs:
 
-   ![Configuring the application](./media/basic_app_config_wn_widget.png)
+   ![Configuring the application](media/basic_app_config_wn_widget.png)
 
    - **Overview**: Define general information, such as the package, label, and icon of the application.
 
@@ -117,7 +129,8 @@ To view and modify the application configuration:
 
    - **Source**: View and edit the source code of the `tizen-manifest.xml` file. Changes made and saved on the other tabs are reflected in the source code and vice versa.
 
-     **Note**The `tizen-manifest.xml` file must conform to both the XML file format and the Tizen native application specification requirements. Editing the file in the **Source** tab is intended for advanced users only.
+     > **Note**  
+     > The `tizen-manifest.xml` file must conform to both the XML file format and the Tizen native application specification requirements. Editing the file in the **Source** tab is intended for advanced users only.
 
 3. To save any changes, in the Tizen Studio menu, select **File > Save All**.
 
@@ -138,7 +151,9 @@ You can build the application in the following ways:
   To use the automatic build:
 
   1. Select the project in the **Project Explorer** view.
-  2. In the Tizen Studio menu, select **Project > Build Automatically**.![Using the automatic build](./media/build_automatic_wn_widget.png)A check mark appears next to the menu option.
+  2. In the Tizen Studio menu, select **Project > Build Automatically**.![Using the automatic build](media/build_automatic_wn_widget.png)
+
+   A check mark appears next to the menu option.
 
   You can toggle the automatic build on and off by reselecting **Project > Build Automatically**.
 
@@ -150,7 +165,7 @@ You can build the application in the following ways:
 
   **Figure: Manually building the application**
 
-  ![Manually building the application](./media/build_manual_wn_widget.png)
+  ![Manually building the application](media/build_manual_wn_widget.png)
 
   Alternatively, you can also select the project in the **Project Explorer** view and do one of the following:
 
@@ -169,7 +184,15 @@ You can run the application on the emulator or a real target device.
 
 To run the application on the emulator:
 
-1. Launch an emulator instance in the [Emulator Manager](../../../../org.tizen.studio/html/common_tools/emulator_manager.htm):In the Tizen Studio menu, select **Tools > Emulator Manager**.![Emulator Manager](./media/emulator_icon.png)In the Emulator Manager, select a wearable emulator from the list and click **Launch**.If no applicable emulator instance exists, [create a new one](../../../../org.tizen.studio/html/common_tools/emulator_manager.htm#create).![Launching the emulator](./media/emulator_instance_launch_wearable.png)The emulator is launched in its own window. You can also see the new emulator instance in the **Device Manager**. To view the emulator folder structure, click the arrow next to the emulator instance.![Emulator](./media/emulator_window_wearable.png)
+1. Launch an emulator instance in the [Emulator Manager](../../../tizen-studio/common-tools/emulator-manager.md):  
+ a. In the Tizen Studio menu, select **Tools > Emulator Manager**.  
+ ![Emulator Manager](media/emulator_icon.png)
+
+ b. In the Emulator Manager, select a wearable emulator from the list and click **Launch**.  
+ If no applicable emulator instance exists, [create a new one](../../../tizen-studio/common-tools/emulator-manager.md#create).
+ ![Launching the emulator](media/emulator_instance_launch_wearable.png)
+
+ The emulator is launched in its own window. You can also see the new emulator instance in the **Device Manager**. To view the emulator folder structure, click the arrow next to the emulator instance.![Emulator](media/emulator_window_wearable.png)
 
 2. Generate a security profile.
 
@@ -177,31 +200,40 @@ To run the application on the emulator:
 
 3. Run the application:
 
-   1. In the **Project Explorer** view, right-click the project and select **Run As > Tizen Native Application**.![Running the application](./media/app_run_wn_widget.png)Alternatively, you can also select the project in the **Project Explorer** view and do one of the following:Press the **Ctrl+F11** key.Click the run icon in the toolbar.If you have created multiple emulator instances, select the instance you want from the combo box in the toolbar before selecting to run the application. If you select an offline emulator, it is automatically launched when you select to run the application.![Selecting the emulator to use](./media/app_run_multiple_emulators.png)
+   a. In the **Project Explorer** view, right-click the project and select **Run As > Tizen Native Application**.  
+   ![Running the application](media/app_run_wn_widget.png)
 
-   2. Confirm that the application launches on the emulator.
+   Alternatively, you can also select the project in the **Project Explorer** view and do one of the following:  
+   - Press the **Ctrl+F11** key.
+   - Click the run icon in the toolbar.
+
+   If you have created multiple emulator instances, select the instance you want from the combo box in the toolbar before selecting to run the application. If you select an offline emulator, it is automatically launched when you select to run the application.
+   ![Selecting the emulator to use](media/app_run_multiple_emulators.png)
+
+   b. Confirm that the application launches on the emulator.
 
       ![Application running in the emulator](./media/emulator_running_wn_widget.png)
 
-      **Note**If the emulator display has switched off, you cannot see the application launch. To switch the display on, click the **Power** key (in the right bottom corner of the emulator).
+    >  **Note**  
+    > If the emulator display has switched off, you cannot see the application launch. To switch the display on, click the **Power** key (in the right bottom corner of the emulator).
 
       The above screen is shown through the Viewer, to allow you to develop a lone widget application for testing purposes.
 
       To see the widget running on the home screen, add the widget there:
 
-      1. Press the **Back** key (in the top right corner of the emulator device) to return to the home screen (showing a watch face).
-      2. Swipe the home screen to the right and select **+**.
-      3. Scroll down until you see your widget application, and select it.
+      (1) Press the **Back** key (in the top right corner of the emulator device) to return to the home screen (showing a watch face).  
+      (2) Swipe the home screen to the right and select **+**.  
+      (3) Scroll down until you see your widget application, and select it.
 
-      ![Adding to home screen](./media/widget_run_add_home_wn.png)
+      ![Adding to home screen](media/widget_run_add_home_wn.png)
 
       You can see the added widget on the home screen. To access the widget from the home screen, swipe right.
 
-      ![Home screen widget](./media/widget_run_home_wn.png)
+      ![Home screen widget](media/widget_run_home_wn.png)
 
       While the application is running, the **Log** view in the Tizen Studio shows the log, debug, and exception messages from the methods defined in the log macros. To see the view, in the Tizen Studio menu, go to **Window > Show View > Log**.
 
-For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../../org.tizen.studio/html/common_tools/emulator_control_panel.htm) and [Using Extended Emulator Features](../../../../org.tizen.studio/html/common_tools/emulator_features.htm).
+For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
 
 ### Running on a Target Device
 
@@ -209,15 +241,18 @@ To run the application on a target device:
 
 1. Connect the wearable target device to your computer:
 
-   1. Define settings in the device:
+   a. Define settings in the device:
 
-      - Go to **Settings > Connections**, and switch on Bluetooth.![Switch on Bluetooth](./media/emulator_target_bt.png)![Switch on Bluetooth](./media/emulator_target_bt2.png)
-      - Go to **Settings > Connections**, and switch on Wi-Fi.The device and the computer must be connected to the same Wi-Fi network.Note the IP address the device is using.![Switch on Wi-Fi](./media/emulator_target_wifi.png)
+      - Go to **Settings > Connections**, and switch on Bluetooth.  
+      ![Switch on Bluetooth](media/emulator_target_bt.png) ![Switch on Bluetooth](media/emulator_target_bt2.png)  
+
+      - Go to **Settings > Connections**, and switch on Wi-Fi.The device and the computer must be connected to the same Wi-Fi network.Note the IP address the device is using.![Switch on Wi-Fi](./media/emulator_target_wifi.png)  
+
       - Go to **Settings > Gear info**, and switch on the debugging mode.![Switch on debugging](./media/emulator_target_debug.png)
 
-   2. In the terminal, enter the following commands:
+   b. In the terminal, enter the following commands:
 
-      ```
+      ```bash
       cd tizen-sdk/tools
       ./sdb connect <IP address of Gear S2>
       ```
@@ -226,11 +261,11 @@ To run the application on a target device:
 
       Instead of the terminal, you can also use the [Remote Device Manager](../wearable/first-app-wn.md#remote_device) for the connection.
 
-   3. In the first attempt, the connection fails and the device asks for user confirmation. To allow Gear to read log data, copy files to and from your computer, and install the application manually, click the accept mark.
+   c. In the first attempt, the connection fails and the device asks for user confirmation. To allow Gear to read log data, copy files to and from your computer, and install the application manually, click the accept mark.
 
-      ![Allow Gear to access data](./media/remote_allow_gear_ww.png)
+      ![Allow Gear to access data](media/remote_allow_gear_ww.png)
 
-   4. In the **Device Manager**, confirm that the device is connected (shown in the device list).![Device is connected](./media/remote_connected_ww.png)
+   d. In the **Device Manager**, confirm that the device is connected (shown in the device list).![Device is connected](media/remote_connected_ww.png)
 
 2. Generate an author certificate.
 
@@ -238,15 +273,28 @@ To run the application on a target device:
 
 3. Run the application:
 
-   1. In the **Device Manager** view, select the device.
+   a. In the **Device Manager** view, select the device.
 
-   2. In **Project Explorer** view, right-click the project and select **Run As > Tizen Native Application**.![Run the application on a target device](./media/app_run_wn_widget.png)Alternatively, you can also select the project in the **Project Explorer** view and do one of the following:Press the **Ctrl+F11** key.Click the run icon in the toolbar.If you have both a connected device and existing emulator instances, select the device from the combo box in the toolbar before selecting to run the application.![Selecting the device to use](./media/app_run_multiple_emulators.png)
+   b. In **Project Explorer** view, right-click the project and select **Run As > Tizen Native Application**.  
+   ![Run the application on a target device](media/app_run_wn_widget.png)
 
-   3. Confirm that the application launches on the target device.
+   Alternatively, you can also select the project in the **Project Explorer** view and do one of the following:  
+   - Press the **Ctrl+F11** key.
+   - Click the run icon in the toolbar.
+
+   If you have both a connected device and existing emulator instances, select the device from the combo box in the toolbar before selecting to run the application.
+   ![Selecting the device to use](media/app_run_multiple_emulators.png)
+
+   c. Confirm that the application launches on the target device.
 
       Like with the [emulator](#viewer), you must add the widget to the home screen before you can see it.
 
-   **Note**The application is launched using the default debug run configuration. To create and use another configuration:In the `Project Explorer` view, right-click the project and select `Run As > Run Configurations`.In the `Run Configurations` window, click the `New Launch Configuration` icon (![New Launch Configuration icon](./media/run_new_config_wn.png)), define the configuration details, and launch the application by clicking `Run`.![Run Configurations window](./media/run_configurations_wn_widget.png)
+   > **Note**  
+   > The application is launched using the default debug run configuration. To create and use another configuration:  
+   > 1. In the `Project Explorer` view, right-click the project and select `Run As > Run Configurations`.  
+   > 2. In the `Run Configurations` window, click the `New Launch Configuration` icon (![New Launch Configuration icon](./media/run_new_config_wn.png)), define the configuration details, and launch the application by clicking `Run`.
+   >
+   > ![Run Configurations window](media/run_configurations_wn_widget.png)
 
 ## Building a Simple UI
 
@@ -260,13 +308,13 @@ To initialize the widget application:
 
 1. To use the functions and data types of the [Widget Application](../../../../org.tizen.native.wearable.apireference/group__CAPI__WIDGET__APP__MODULE.html) API, include the `<widget_app.h>` header file in your application:
 
-   ```
+   ```c++
    #include <widget_app.h>
    ```
 
    All header files that you need are already included in the `MyWidget.h` file, which is generated by the Tizen Studio when the template project is created.
 
-2. Edit the widget application settings in the [manifest](../../../../org.tizen.studio/html/native_tools/manifest_text_editor_n.htm#widget_app) file.
+2. Edit the widget application settings in the [manifest](../../../tizen-studio/native-tools/manifest-text-editor-n.md#widget_app) file.
 
 ### Creating the Widget Application {#create_widget name="create_widget"}
 
@@ -280,7 +328,7 @@ To create the widget application:
     `widget_app_terminate()` for [termination](#term)), and call the
     `widget_app_main()` function to start the application event loop:
 
-    ```
+    ```c++
     int
     main(int argc, char *argv[])
     {
@@ -304,7 +352,7 @@ To create the widget application:
     widget instances. This function is called before the main event
     loop starts.
 
-    ```
+    ```c++
     static widget_class_h
     widget_app_create(void *user_data)
     {
@@ -319,7 +367,7 @@ To create the widget application:
     a widget instance class and return a handle for it, so that the
     handle can be used for making widget instances.
 
-    ```
+    ```c++
         return widget_app_class_create(ops, user_data);
     }
     ```
@@ -327,7 +375,7 @@ To create the widget application:
 4. When you no longer need the widget application, release the
     resources and terminate the application:
 
-    ```
+    ```c++
     static void
     widget_app_terminate(void *user_data)
     {
@@ -335,7 +383,8 @@ To create the widget application:
     }
     ```
 
-### Managing Widget Instance Life-cycle Callbacks {#callback name="callback"}
+<a name="callback"></a>
+### Managing Widget Instance Life-cycle Callbacks
 
 The widget application provides a life-cycle and methods for making and
 managing a widget class. The application has one process, whose
@@ -357,11 +406,11 @@ To manage the widget instance life-cycle:
     -   This callback is triggered when the widget instance is created.
 
         Initialize resources for the widget instance and [draw the
-        UI](../../../../org.tizen.guides/html/native/app_management/widget_app_n.htm#get_window).
+        UI](../../../guides/native/app-management/widget-app-n.md#get_window).
         If the bundle content is not `NULL`, restore the
         previous status.
 
-        ```
+        ```c++
         static int
         widget_instance_create(widget_context_h context, bundle *content,
                                int w, int h, void *user_data)
@@ -387,7 +436,7 @@ To manage the widget instance life-cycle:
         [WIDGET\_APP\_DESTROY\_TYPE\_PERMANENT](../../../../org.tizen.native.wearable.apireference/group__CAPI__WIDGET__APP__MODULE.html#ga50c912e59019e4e719851bae110baa02),
         store the current status with the incoming bundle.
 
-        ```
+        ```c++
         static int
         widget_instance_destroy(widget_context_h context, widget_app_destroy_type_e reason,
                                 bundle *content, void *user_data)
@@ -405,7 +454,7 @@ To manage the widget instance life-cycle:
         becomes invisible. The framework can destroy a paused
         widget instance.
 
-        ```
+        ```c++
         static int
         widget_instance_pause(widget_context_h context, void *user_data)
         {
@@ -418,7 +467,7 @@ To manage the widget instance life-cycle:
         Take the necessary actions since the widget instance
         becomes visible.
 
-        ```
+        ```c++
         static int
         widget_instance_resume(widget_context_h context, void *user_data)
         {
@@ -433,7 +482,7 @@ To manage the widget instance life-cycle:
         parameter is `true`, the widget can be updated even in the
         pause state.
 
-        ```
+        ```c++
         static int
         widget_instance_update(widget_context_h context, bundle *content, int force, void *user_data)
         {
@@ -444,7 +493,7 @@ To manage the widget instance life-cycle:
 2. Register the callbacks in the `widget_instance_lifecycle_callback_s`
     structure during the widget application initialization:
 
-    ```
+    ```c++
     static widget_class_h
     widget_app_create(void *user_data)
     {
@@ -460,14 +509,15 @@ To manage the widget instance life-cycle:
     }
     ```
 
-### Drawing the Widget UI {#ui_draw name="ui_draw"}
+<a name="ui_draw"></a>
+### Drawing the Widget UI
 
 To draw the widget UI, you must get a window object with the
 `widget_app_get_elm_win()` function of the [Widget
 Application](../../../../org.tizen.native.wearable.apireference/group__CAPI__WIDGET__APP__MODULE.html)
 API and create the UI on the home screen:
 
-```
+```c++
 #include <widget_app_efl.h>
 
 struct widget_instance_data {
@@ -520,7 +570,8 @@ widget_instance_create(widget_context_h context, bundle *content,
 }
 ```
 
-### Managing Private Data for the Widget Instance {#data name="data"}
+<a name="data"></a>
+### Managing Private Data for the Widget Instance
 
 Widget instances can have private data. The data usually includes view
 objects to make a screen for each widget instance. The framework
@@ -534,7 +585,7 @@ following example shows how to make private data and use it:
     Application](../../../../org.tizen.native.wearable.apireference/group__CAPI__WIDGET__APP__MODULE.html)
     API:
 
-    ```
+    ```c++
     struct widget_instance_data {
         Evas_Object *win;
         Evas_Object *conform;
@@ -565,7 +616,7 @@ following example shows how to make private data and use it:
     not included in the default application template in the Tizen
     Studio, but you can add it to test the data handling feature.
 
-    ```
+    ```c++
     static int
     widget_instance_update(widget_context_h context, bundle *content,
                            int force, void *user_data)
@@ -582,7 +633,7 @@ following example shows how to make private data and use it:
 - Make sure that all the resources that you allocate are freed in the
     callback function for the widget instance destructor:
 
-    ```
+    ```c++
     static int
     widget_instance_destroy(widget_context_h context,
                             widget_app_destroy_type_e reason, bundle *content, void *user_data)

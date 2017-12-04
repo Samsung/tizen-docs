@@ -1,5 +1,4 @@
-Getting Started with Native Applications
-========================================
+# Getting Started with Native Applications
 
 When creating your first Tizen native application, you can select from
 the following options, which all use the C language:
