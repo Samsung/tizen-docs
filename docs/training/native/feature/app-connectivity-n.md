@@ -1,5 +1,4 @@
-Creating Applications with Connectivity and Network
-===================================================
+# Creating Applications with Connectivity and Network
 
 If you want to create applications that offer connectivity and network
 features to the user, Tizen provides various options for you.
@@ -43,5 +42,3 @@ following features:
         group to communicate with them.
     -   Tizen also supports TDLS, which operates in the background of a
         Wi-Fi network to optimize performance.
-
-

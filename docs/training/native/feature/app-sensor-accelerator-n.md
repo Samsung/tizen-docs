@@ -1,14 +1,12 @@
 
-Accelerator Sensor Usage
-========================
+# Accelerator Sensor Usage
 
 The accelerator sensor can measure acceleration in the directions of the
 X, Y, and Z axes. Before attempting to measure the acceleration values,
 you need to know whether the device supports the accelerator sensor.
 
 
-Determining Whether the Sensor Is Supported <a id="support"></a>
--------------------------------------------
+## Determining Whether the Sensor Is Supported
 
 To determine whether the accelerator sensor is supported on the device:
 
@@ -30,7 +28,7 @@ To determine whether the accelerator sensor is supported on the device:
         and the maximum value of acceleration. As a result, a variable
         is defined for each of these values.
 
-    ```
+    ```c++
     #include "sensoraccelerator.h"
     #include <sensor.h>
 
@@ -58,7 +56,7 @@ To determine whether the accelerator sensor is supported on the device:
     - The `my_box_pack()` function adds a UI component to a
         box container.
 
-    ```
+    ```c++
     static void
     show_is_supported(appdata_s *ad)
     {
@@ -93,7 +91,7 @@ To determine whether the accelerator sensor is supported on the device:
     support, you must modify the source code at the bottom of the
     `create_base_gui()` function as follows:
 
-    ```
+    ```c++
     /* Conformant */
     /*
        Create and initialize elm_conformant
@@ -146,9 +144,7 @@ To determine whether the accelerator sensor is supported on the device:
     supported](./media/sensor_accelerator_supported.png)
 
 
-
-Requesting Sensor Events <a id="event"></a>
-------------------------
+## Requesting Sensor Events
 
 To implement a feature that requests the corresponding event as you
 shake the device, and displays the acceleration value on the screen:
@@ -161,7 +157,7 @@ shake the device, and displays the acceleration value on the screen:
     -   The `sensor_info` is a global variable of the
         `sensorinfo_s` structure.
 
-    ```
+    ```c++
     struct appdata {
         Evas_Object *win;
         Evas_Object *conform;
@@ -207,7 +203,7 @@ shake the device, and displays the acceleration value on the screen:
             callback function name, and user data.
         -   The `sensor_listener_start()` function starts the listener.
 
-    ```
+    ```c++
     static void
     _new_sensor_value(sensor_h sensor, sensor_event_s *sensor_data, void *user_data)
     {
@@ -236,7 +232,7 @@ shake the device, and displays the acceleration value on the screen:
     starts running, invoke the above `start_accelerator_sensor()`
     function at the end of the `create_base_gui()` function:
 
-    ```
+    ```c++
     /* Show the window after the base GUI is set up */
     evas_object_show(ad->win);
 
@@ -250,24 +246,18 @@ shake the device, and displays the acceleration value on the screen:
     To test on the emulator, use the [control
     panel](../../../../org.tizen.studio/html/common_tools/emulator_control_panel.htm):
 
-    1.  Right-click the emulator and select **Control Panel**.
+    a.  Right-click the emulator and select **Control Panel**.
 
-        ![Emulator Control
-        Panel](./media/sensor_accelerator_emulator.png)
+      ![Emulator Control        Panel](./media/sensor_accelerator_emulator.png)
 
-    2. Click **Next** in the lower-right corner until you see the
-        **3-Axis** box.
-    3. Click the box and select the **Acceleration** tab.
-    4. Drag the 3 sliders one at a time. If the X, Y, and Z values
-        change on the application screen, it means you have correctly
-        received the acceleration data in your application.
+    b. Click **Next** in the lower-right corner until you see the        **3-Axis** box.  
+    c. Click the box and select the **Acceleration** tab.  
+    d. Drag the 3 sliders one at a time. If the X, Y, and Z values        change on the application screen, it means you have correctly        received the acceleration data in your application.
 
-        ![3-Axis Sensors](./media/sensor_accelerator_axis.png)
+      ![3-Axis Sensors](./media/sensor_accelerator_axis.png)
 
 
-
-Requesting the Maximum Acceleration Value <a id="maxvalue"></a>
------------------------------------------
+## Requesting the Maximum Acceleration Value
 
 If you try to test the maximum acceleration value with your smartphone,
 the characters are hardly visible when you are shaking the device. When
@@ -281,7 +271,7 @@ To access the maximum acceleration value:
     `sensoraccelerator.c` source file and reset it to 0. This variable
     saves the maximum acceleration value.
 
-    ```
+    ```c++
     struct _sensor_info {
         sensor_h sensor;
         sensor_listener_h sensor_listener;
@@ -298,7 +288,7 @@ To access the maximum acceleration value:
 
     When clicked, the button resets the maximum value to 0.
 
-    ```
+    ```c++
     /* Second label (for the current acceleration value) */
     ad->label1 = elm_label_add(ad->conform);
     elm_object_text_set(ad->label1, "Value -");
@@ -328,7 +318,7 @@ To access the maximum acceleration value:
         maximum value saved in the global variable to 0 when you click
         the button.
 
-    ```
+    ```c++
     static float
     get_absolute_max(float value1, float value2)
     {
@@ -376,5 +366,3 @@ To access the maximum acceleration value:
 
     ![Emulator Control
     Panel](./media/sensor_accelerator_max_value.png)
-
-

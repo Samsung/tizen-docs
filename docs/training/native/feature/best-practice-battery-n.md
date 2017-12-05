@@ -1,6 +1,5 @@
 
-Best Practices for Location
-===========================
+# Best Practices for Location
 
 If you want to create applications that offer reduced battery drain
 features to the user, Tizen provides various options for you.
@@ -28,9 +27,8 @@ the following features:
         battery is low.
 
 
-
-Managing Life-cycles <a id="app_battery_lifecycle"></a>
---------------------
+<a name="app_battery_lifecycle"></a>
+## Managing Life-cycles
 
 Using the location received from GPS is potentially one of your
 application's most significant causes of battery drain. To minimize the
@@ -39,7 +37,7 @@ critical that you understand the life-cycles of your application and
 location service, and synchronize the states between the 2 processes:
 location server and location application.
 
-### Application Life-cycle <a id="app_lifecycle"></a>
+### Application Life-cycle
 
 The Tizen native application can be in one of several different states.
 Typically, the application is launched by the user from the Launcher, or
@@ -76,9 +74,9 @@ The application states are described in the following table.
 Application state changes are managed by the underlying framework. For
 more information on application state transitions, see [Application
 States and
-Transitions](../../../../org.tizen.guides/html/native/app_management/efl_ui_app_n.htm#state_trans).
+Transitions](../../../guides/native/app-management/efl-ui-app-n.md#state_trans).
 
-### Location Service Life-cycle <a id="loc_lifecycle"></a>
+### Location Service Life-cycle
 
 The location service is composed of a location daemon, known as the
 location server, that provides geographical location information
@@ -132,7 +130,7 @@ location when it goes underground, where there are no Wi-Fi access
 points or mobile network cell tower information available. In this
 situation, the location state changes to unavailable.
 
-### Life-cycle Synchronization <a id="synch"></a>
+### Life-cycle Synchronization
 
 One good approach to optimizing power consumption is to synchronize the
 life-cycles of the application and the location service. When the
@@ -154,9 +152,8 @@ application and location service.
 | `PAUSED`          | Stopped        | Location service has been stopped.    |
 | `TERMINATED`      | Terminated     | Location handle has been destroyed.   |
 
-
-Optimizing Power Consumption <a id="app_battery_power"></a>
-----------------------------
+<a name="app_battery_power"></a>
+## Optimizing Power Consumption
 
 To reduce power consumption, you must select the optimal location method
 for the location service to determine the device location. You must also
@@ -170,7 +167,7 @@ the device. In those situations, it is better to stop the location
 service to save battery life. Otherwise, the life time of the device is
 dramatically reduced by consuming power in the hybrid or GPS mode.
 
-### Selecting the Location Method <a id="select"></a>
+### Selecting the Location Method
 
 The power consumption and location accuracy vary depending on the
 location source. It is important for you to select the location method,
@@ -210,7 +207,7 @@ advantages and disadvantages:
     consumption is higher, but still recommended to achieve the
     best accuracy.
 
-### Synchronizing Life-cycles <a id="synchronize"></a>
+### Synchronizing Life-cycles
 
 When using location services with your application, you can reduce power
 consumption by synchronizing the life-cycle of the location service to
@@ -218,7 +215,7 @@ that of the application. Basically, create or destroy the location
 service at the same time as the application, and stop or restart the
 location service when the application is paused or resumed.
 
-#### Required Privileges <a id="privileges"></a>
+#### Required Privileges
 
 To use the location service, the application must declare the required
 privileges in the `tizen-manifest.xml` file. For more information on the
@@ -228,7 +225,7 @@ Privileges](../details/sec-privileges-n.md).
 For this example, the application manifest must include the following
 privileges:
 
-```
+```xml
 <privileges>
    <privilege>http://tizen.org/privilege/location</privilege>
    <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
@@ -237,12 +234,12 @@ privileges:
 </privileges>
 ```
 
-#### Creating and Destroying the Location Service <a id="create"></a>
+#### Creating and Destroying the Location Service
 
 Create the location service after creating the application. When the
 application is terminated, destroy the location service.
 
-```
+```c++
 #include <locations.h>
 #include <tizen.h>
 #include <locations.h>
@@ -403,13 +400,13 @@ main(int argc, char *argv[])
 }
 ```
 
-#### Starting and Stopping the Location Service <a id="start"></a>
+#### Starting and Stopping the Location Service
 
 If you want to continuously track the location, stop the location
 service when the application is paused and restart it when the
 application is resumed.
 
-```
+```c++
 /* Start the location service */
 static void
 start_location_service(void *data)
@@ -473,13 +470,13 @@ app_resume(void *data)
 }
 ```
 
-### Handling the Location Unavailable State <a id="handle"></a>
+### Handling the Location Unavailable State
 
 You can save power by stopping the location service while the service is
 not available. You can do this by using a timeout, an alarm, or the low
 battery callback.
 
-#### Using a Timeout <a id="timeout"></a>
+#### Using a Timeout
 
 If you create a service application, you can stop the location service
 with an alarm and then restart the service after a specific time
@@ -490,7 +487,7 @@ position is fixed after some seconds or minutes.
 The following example demonstrates how you can stop the location service
 using the timer with the `ecore_timer_add()` function:
 
-```
+```c++
 #include <tizen.h>
 #include <service_app.h>
 #include "service.h" /* Auto-generated header file by the Tizen Studio */
@@ -639,7 +636,7 @@ main(int argc, char* argv[])
 }
 ```
 
-#### Using an Alarm <a id="alarm"></a>
+#### Using an Alarm
 
 Tizen provides the Alarm API to trigger events whenever you want to. You
 can increase the life time of the device by stopping the location
@@ -648,17 +645,15 @@ information, or when the device cannot fix the current location for a
 long time because its location only has weak GPS satellite, Wi-Fi, and
 mobile network signals.
 
-<div class="note">
-
-**Note** The application control is supported in UI applications only,
+> **Note**  
+> The application control is supported in UI applications only,
 so the following example cannot be reused in service applications.
 
-</div>
 
 The following example demonstrates how you can stop the location service
 using an alarm:
 
-```
+```c++
 #include <tizen.h>
 #include <service_app.h>
 #include "service.h" /* Auto-generated header file by the Tizen Studio */
@@ -828,7 +823,7 @@ main(int argc, char *argv[])
 }
 ```
 
-#### Using the Low Battery Callback <a id="callback"></a>
+#### Using the Low Battery Callback
 
 If you stop the location service when the device battery level becomes
 low, you can increase the life time of the device. You can stop the
@@ -838,7 +833,7 @@ best method for handling the location service in service applications.
 The following example demonstrates how you can stop the location service
 when the device battery is low:
 
-```
+```c++
 /* Callback invoked by low battery event */
 static void
 service_app_low_battery(app_event_info_h event_info, void *user_data)
@@ -870,5 +865,3 @@ main(int argc, char* argv[])
     return service_app_main(argc, argv, &event_callback, &ad);
 }
 ```
-
-

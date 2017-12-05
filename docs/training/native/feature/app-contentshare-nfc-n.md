@@ -1,6 +1,5 @@
 
-Sharing through NFC
-===================
+# Sharing through NFC
 
 The basic tasks involved in sharing content through Near Field
 Communication (NFC) are to ensure that the device supports NFC,
@@ -9,8 +8,7 @@ P2P connection. The following sections provide you with the fundamental
 building blocks for sharing data with other devices.
 
 
-Initializing NFC <a id="initialize"></a>
-----------------
+## Initializing NFC
 
 NFC is an international standard (ISO/IEC 18092) that specifies an
 interface and a protocol for simple wireless interconnection of closely
@@ -25,7 +23,7 @@ To initialize NFC:
     applications), include the `<nfc.h>` header file in your
     application:
 
-    ```
+    ```c++
     #include <nfc.h>
     ```
 
@@ -35,7 +33,7 @@ To initialize NFC:
     `nfc_manager_is_supported()` function. It takes no parameters and
     returns `true` if NFC is supported on the device.
 
-    ```
+    ```c++
     void
     Network_NFC_startup(void)
     {
@@ -52,7 +50,7 @@ To initialize NFC:
 4. Call the `nfc_manager_initialize()` function to start the
     initialization:
 
-    ```
+    ```c++
     int error_code = NFC_ERROR_NONE;
 
     error_code = nfc_manager_initialize();
@@ -69,9 +67,7 @@ To initialize NFC:
     `timeout_func` is called after 1 second.
 
 
-
-Sending and Receiving Messages through NFC P2P <a id="message"></a>
-----------------------------------------------
+## Sending and Receiving Messages through NFC P2P
 
 The NFC Data Exchange Format (NDEF) is a packet message format used in
 the reader/writer and peer-to-peer (P2P) modes. In the following
@@ -80,12 +76,12 @@ example, the NDEF message contains a business card of the device owner
 
 To exchange a simple NDEF message through NFC P2P connection:
 
-1.  Prepare the NDEF message:
-    1.  To create an NDEF message consisting of text records, use the
+1.  Prepare the NDEF message:  
+    a.  To create an NDEF message consisting of text records, use the
         `nfc_ndef_record_create_text()` function. The following example
         creates 3 records for a name, phone number, and email address:
 
-        ```
+        ```c++
         nfc_ndef_record_h ndef_name_record = NULL;
         nfc_ndef_record_h ndef_phone_record = NULL;
         nfc_ndef_record_h ndef_email_record = NULL;
@@ -99,9 +95,9 @@ To exchange a simple NDEF message through NFC P2P connection:
         nfc_ndef_record_create_text(&ndef_email_record, email, "en-US", NFC_ENCODE_UTF_8);
         ```
 
-    2. Create an NDEF message and append the records to the message:
+    b. Create an NDEF message and append the records to the message:
 
-        ```
+        ```c++
         nfc_ndef_message_h ndef_message = NULL;
         nfc_ndef_message_create(&ndef_message);
 
@@ -122,7 +118,7 @@ To exchange a simple NDEF message through NFC P2P connection:
         the registration code in the callback called after the P2P
         device is discovered.
 
-    ```
+    ```c++
     nfc_manager_set_p2p_target_discovered_cb(on_target_discovered, NULL);
 
     nfc_p2p_set_data_received_cb(target, on_p2p_data_received, NULL);
@@ -135,7 +131,7 @@ To exchange a simple NDEF message through NFC P2P connection:
         to it. You can use the `nfc_p2p_send()` function, if you do not
         want to check permissions.
 
-        ```
+        ```c++
         nfc_p2p_send(target, ndef_message, NULL, NULL);
         ```
 
@@ -151,7 +147,7 @@ To exchange a simple NDEF message through NFC P2P connection:
         obtained record. When the record is obtained, get the stored
         text using the `nfc_ndef_record_get_text()` function.
 
-        ```
+        ```c++
         nfc_ndef_record_h ndef_record;
 
         char *name = NULL;
@@ -166,5 +162,3 @@ To exchange a simple NDEF message through NFC P2P connection:
         nfc_ndef_message_get_record(message, 2, &ndef_record);
         nfc_ndef_record_get_text(ndef_record, &email);
         ```
-
-

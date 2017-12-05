@@ -1,6 +1,5 @@
 
-Network Usage
-=============
+# Network Usage
 
 The following sections describe how to create applications that have
 cost-efficient control over their usage of network resources. If your
@@ -13,9 +12,8 @@ are much less likely to disable your application's access to background
 data when they approach their limits, because they can instead precisely
 control how much data your application uses.
 
-
-Required Privileges and Features <a id="privilege"></a>
---------------------------------
+<a name="privilege"></a>
+## Required Privileges and Features
 
 Applications that access network information and statistics must declare
 the required privileges in the `tizen-manifest.xml` file. For more
@@ -25,7 +23,7 @@ Privileges](../details/sec-privileges-n.md).
 To perform the network operations, the application manifest must include
 the following privileges:
 
-```
+```xml
 <privileges>
    <privilege>http://tizen.org/privilege/network.get</privilege>
 </privileges>
@@ -43,9 +41,9 @@ To perform the network operations, the device must support the following
     -   `http://tizen.org/feature/network.telephony`
 
 
+<a name="type"></a>
+## Monitoring Connection Type Changes
 
-Monitoring Connection Type Changes <a id="type"></a>
-----------------------------------
 
 When the network connection is changed, the application must receive a
 notification. For instance, if the Wi-FI network is changed to a visited
@@ -72,7 +70,7 @@ The Connection API supports the following network types:
 The following example demonstrates how to monitor network connection
 changes:
 
-```
+```c++
 #include <net_connection.h>
 
 static void
@@ -102,9 +100,9 @@ get_network_connection()
 }
 ```
 
+<a name="mobile_change"></a>
+## Monitoring Mobile (Cellular) Network Service Changes
 
-Monitoring Mobile (Cellular) Network Service Changes <a id="mobile_change"></a>
-----------------------------------------------------
 
 Sometimes, the application must check the state of the mobile network
 service to make the user experience better by protecting against running
@@ -164,7 +162,7 @@ enumeration that has the mobile network service state.
 The following example demonstrates how to get the mobile network service
 state:
 
-```
+```c++
 /* Convert network telephony_network_service_state_e to string */
 char*
 _telephony_network_state_to_string(telephony_network_service_state_e network_state)
@@ -278,7 +276,7 @@ change notifications for a network asynchronously.
 The following example demonstrates how to register a notification for
 the mobile network state change:
 
-```
+```c++
 /* Convert network telephony_network_service_state_e to string */
 char*
 _telephony_network_state_to_string(telephony_network_service_state_e network_state)
@@ -329,9 +327,8 @@ app_terminate(void *data)
 }
 ```
 
-
-Getting Connection Information <a id="info"></a>
-------------------------------
+<a name="info"></a>
+## Getting Connection Information
 
 The connection state can be changed depending on various mobile
 environments, such as the settings of the mobile phone or the signal
@@ -359,7 +356,7 @@ The network connection can be in one of the following states:
 
 The following example demonstrates how to get the mobile network state:
 
-```
+```c++
 connection_cellular_state_e cellular_state;
 connection_get_cellular_state(connection, &cellular_state);
 switch (cellular_state) {
@@ -400,7 +397,7 @@ The Wi-Fi connection can be in one of the following states:
 
 The following example demonstrates how to get the Wi-Fi network state:
 
-```
+```c++
 connection_wifi_state_e wifi_state;
 connection_get_wifi_state(connection, &wifi_state);
 switch (wifi_state) {
@@ -419,9 +416,8 @@ default:
 }
 ```
 
-
-Collecting Connection Statistics <a id="statistics"></a>
---------------------------------
+<a name="statistics"></a>
+## Collecting Connection Statistics
 
 The Connection Statistics API (in
 [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html)
@@ -454,7 +450,7 @@ and which statistics are gathered:
 The following example demonstrates how to get received data and sent
 data for mobile connections:
 
-```
+```c++
 long long total_received_size;
 
 /* Gets statistics of total received data through the mobile network connection */
@@ -469,5 +465,3 @@ error_code = connection_get_statistics(connection, CONNECTION_TYPE_CELLULAR,
                                        CONNECTION_STATISTICS_TYPE_TOTAL_SENT_DATA,
                                        &total_sent_size);
 ```
-
-

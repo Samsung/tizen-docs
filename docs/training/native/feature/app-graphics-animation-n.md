@@ -1,5 +1,4 @@
-Animations
-==========
+# Animations
 
 You can change an object on the screen at certain intervals using an
 animation. To create an animation, you must first determine the duration
@@ -61,7 +60,7 @@ To implement animations in an application:
 
     The label is not used in this example, so annotate it.
 
-    ```
+    ```c++
     /*
        Conformant
        Create and initialize elm_conformant
@@ -166,7 +165,7 @@ To implement animations in an application:
     application starts, and the `ecore_animator_thaw()` function
     restarts the animation.
 
-    ```
+    ```c++
     static Eina_Bool
     _advance_frame(void *data, double pos)
     {
@@ -241,5 +240,3 @@ To implement animations in an application:
         left for 20 seconds.
 
         ![Create the project](./media/graphics_animation.png)
-
-

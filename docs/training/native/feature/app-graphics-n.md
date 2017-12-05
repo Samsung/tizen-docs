@@ -1,5 +1,4 @@
-Creating Applications with Graphics and Animation
-=================================================
+# Creating Applications with Graphics and Animation
 
 If you want to create applications that offer graphics features to the
 user, Tizen provides various options for you.
@@ -23,5 +22,3 @@ features:
         change their position, size, and color.
     -   You can manage the animations to make them start at specific
         moments and run for a predefined duration.
-
-

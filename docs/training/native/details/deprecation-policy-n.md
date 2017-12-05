@@ -1,6 +1,6 @@
 
-API Versioning and Deprecation Policy of the Tizen Platform
-===========================================================
+# API Versioning and Deprecation Policy of the Tizen Platform
+
 
 As much as the Tizen team wants to have a completely stable API, the
 evolution of both hardware technology and software capabilities is
@@ -16,18 +16,17 @@ If the application needs a specific API version, you can indicate it in
 the packaging information for Web, native, and hybrid application
 packages.
 
+<a name="versioning"></a>
+## API Versioning
 
-API Versioning <a id="versioning"></a>
---------------
 
 The version format used to identify the APIs of the Tizen platform is
 **X.Y.Z** (Major.Minor.Micro). All changes, including any kind of
 version update, maintain the application binary interface (ABI)
 compatibility excepting only critical security reasons.
 
-
-Deprecation Policy and Schedule <a id="policy"></a>
--------------------------------
+<a name="policy"></a>
+## Deprecation Policy and Schedule
 
 API deprecation is used to inform you that some APIs are no longer
 recommended for use in your applications. The Tizen team is trying to
@@ -43,14 +42,14 @@ adopted in Tizen:
 - The functionality of the deprecated API is available for 2 releases,
     as indicated in the following table.
 
-    **able: Deprecation schedule**
+    **Table: Deprecation schedule**
 
-    |                                        | V1 (Tizen 2.4/2.3.1/2.3.2)**Deprecation notice** | V2 (Tizen 3.0)Deprecated since V1 | V3 (Tizen 3.x)Deprecated since V1 |
+|      | **V1 (Tizen 2.4/2.3.1/2.3.2)<br>Deprecation notice** | **V2 (Tizen 3.0)<br>Deprecated since V1** | **V3 (Tizen 3.x)<br>Deprecated since V1** |
     | -------------------------------------- | ---------------------------------------- | --------------------------------- | --------------------------------- |
-    | API functionality                      | Available                                | Available                         | **Not available**                 |
-    | API symbol                             | Available                                | Available                         | **Not available**                 |
-    | API Reference<br>API Guides<br>Samples | Available                                | Available                         | **Not available**                 |
-    | TCT                                    | Available                                | Available                         | **Not available**                 |
+    | **API functionality**  | Available | Available  | **Not available**     |
+    | **API symbol** | Available   |Available                        | **Not available**   |
+    | **API Reference<br>API Guides<br>Samples** |Available  |Available      | **Not available**       |
+    | **TCT**  | Available   | Available    | **Not available**  |
 
 - Deprecated APIs are removed after 2 version releases (including the
     notice version).
@@ -66,9 +65,9 @@ adopted in Tizen:
     deprecation policy.
 
 
+<a name="identify"></a>
+## Identifying a Deprecated API
 
-Identifying a Deprecated API <a id="identify"></a>
-----------------------------
 
 The Tizen Studio continues to provide deprecation warnings. From the API
 reference, you can find a highlighted tag starting with **Deprecated**.
@@ -145,11 +144,9 @@ You can also see the API deprecation warning in log messages:
     ```
 
 
+<a name="compatibility"></a>
+## API Backward Compatibility
 
-API Backward Compatibility <a id="compatibility"></a>
---------------------------
 
 With the best efforts, the Tizen platform tries to provide a backward
-compatibility of public APIs documented in the API reference. Therefore,
-you must use the listed APIs in the API reference to make the
-applications compatible.
+compatibility of public APIs documented in the API reference. Therefore, you must use the listed APIs in the API reference to make the applications compatible.
