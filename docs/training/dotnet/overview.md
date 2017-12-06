@@ -1,6 +1,5 @@
 
-Introduction to Tizen .NET Application
-======================================
+# Introduction to Tizen .NET Application
 
 Tizen .NET is an exciting new way to develop applications for the Tizen
 operating system, running on 50 million Samsung devices, including TVs,
@@ -12,12 +11,10 @@ C\# programming language and the Common Language Infrastructure
 standards, and benefit from a managed runtime for faster application
 development and code execution that is efficient and secure.
 
-To start developing Tizen applications using .NET, familiarize yourself
-with:
+To start developing Tizen applications using .NET, see [Creating Your First Tizen .NET Application with Visual Studio](first-app.md).
 
-
-Managed Runtime Advantages <a id="runtime"></a>
---------------------------
+<a id="runtime"></a>
+## Managed Runtime Advantages
 
 A managed runtime offers the following advantages to your application
 development:
@@ -55,10 +52,8 @@ development:
     portions of their logic applied to other systems supported by the
     .NET Core and Xamarin.Forms portions of the runtime.
 
-
-
-Tizen .NET Features and Components <a id="features"></a>
-----------------------------------
+<a id="features"></a>
+## Tizen .NET Features and Components
 
 Tizen .NET enables you to build .NET applications with Xamarin.Forms and
 the Tizen .NET framework. Xamarin.Forms allows you to easily create a
@@ -97,7 +92,9 @@ Tizen .NET consists of the following main components:
     -   The dotnet application host, which is used to launch .NET
         Core applications. It selects and hosts the runtime, provides an
         assembly loading policy, and launches the application. The
-        application host is also used to launch SDK tools similarly.
+        application host is also used to launch SDK tools similarly.  
+
+
 - **Xamarin.Forms as a UI framework**
 
     Xamarin.Forms is a cross-platform UI toolkit that allows you to
@@ -147,10 +144,8 @@ Tizen .NET consists of the following main components:
     -   **Tizen.Tracer** provides methods to write trace messages to the
         system trace buffer.
 
-
-
-Tizen .NET Release Summary <a id="release"></a>
---------------------------
+<a id="release"></a>
+## Tizen .NET Release Summary
 
 The following table describes the latest changes, additions, and fixes
 for Tizen .NET.
@@ -164,5 +159,3 @@ for Tizen .NET.
 
 [Learn more
 &gt;](https://developer.tizen.org/development/visual-studio-tools-tizen/tools)
-
-
