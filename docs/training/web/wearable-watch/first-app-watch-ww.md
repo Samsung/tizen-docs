@@ -1,7 +1,5 @@
 
-
-Creating Your First Tizen Wearable Web Watch Application
-========================================================
+# Creating Your First Tizen Wearable Web Watch Application
 
 **Welcome to Tizen wearable Web watch application development!**
 
@@ -54,8 +52,8 @@ Studio](../../../tizen-studio/web-tools/cover-web-w.md) to
 ease the tasks of creating functionality and designing the application
 UI.
 
-Creating a Project <a name="create"></a>
-------------------
+<a name="create"></a>
+## Creating a Project
 
 The following example shows you how to create and configure a basic
 wearable Web watch application project in the Tizen Studio. An
@@ -68,7 +66,7 @@ which continues to be refreshed every second while the application runs.
 **Figure: Wearable Web Watch application**
 
 ![Wearable Web Watch
-application](./media/basic-app-running-ww-watch.png)
+application](./media/basic_app_running_ww_watch.png)
 
 To create the application project:
 
@@ -77,7 +75,7 @@ To create the application project:
 2.  Make sure the **Web** perspective is selected in the top right
     corner of the Tizen Studio window.
 
-    ![Checking the perspective](./media/change-perspective-w.png)
+    ![Checking the perspective](./media/change_perspective_w.png)
 
     If not, select it. If the perspective is not visible, in the Tizen
     Studio menu, select **Window &gt; Perspective &gt; Open
@@ -87,7 +85,7 @@ To create the application project:
     Project**.
 
     ![Creating a new Tizen Web
-    project](./media/create-project-1-w.png)
+    project](./media/create_project_1_w.png)
 
     The Project Wizard opens.
 
@@ -101,7 +99,7 @@ To create the application project:
     a.  Select the **Sample** project type and click **Next**.
 
       ![Selecting the project
-      type](./media/create-project-wizard-type-sample.png)
+      type](./media/create_project_wizard_type_sample.png)
 
     b.  Select the profile (**Wearable**) and version from a drop-down        list and click **Next**.
 
@@ -109,22 +107,22 @@ To create the application project:
       and with which you are developing the application.
 
       ![Selecting the profile and
-      version](./media/create-project-wizard-version-wearable.png)
+      version](./media/create_project_wizard_version_wearable.png)
 
     c.  Select the **Web Application** application type and click        **Next**.
 
-      ![Selecting the application        type](./media/create-project-wizard-app-web-wearable.png)
+      ![Selecting the application        type](./media/create_project_wizard_app_web_wearable.png)
 
     d.  Select the **Watch &gt; Basic Watch** sample and click **Next**.
 
-      ![Selecting the        sample](./media/create-project-wizard-sample.png)
+      ![Selecting the        sample](./media/create_project_wizard_sample.png)
 
     e.  Define the project properties and click **Finish**.
 
       You can fill the project name (3-50 characters) and the unique
       package ID. You can also select the location and working sets by        clicking **More properties**.
 
-      ![Defining        properties](./media/create-project-wizard-properties-ww-watch.png)
+      ![Defining        properties](./media/create_project_wizard_properties_ww_watch.png)
 
       The Project Wizard sets up the project, creates the application        files using the default content from the template, and closes.        For more information on the Project Wizard and the available        templates, see [Creating Tizen Projects with Tizen Project        Wizard](../../../tizen-studio/web-tools/project-wizard-w.md).
 
@@ -149,21 +147,20 @@ most important files and folders include:
 **Figure: Application in the Project Explorer**
 
 ![Application in the Project
-Explorer](./media/basic-app-project-explorer-ww-watch.png)
+Explorer](./media/basic_app_project_explorer_ww_watch.png)
 
 
-
-> **Note** <br>
+> **Note**  
 > You can [view and modify the application
 configuration](#configuration) in the Web application configuration
 editor. In this example, no configuration changes are required.
 
 
-
 Your application project is now ready for further actions. Next, build
 the application.
 
-### Managing the Application Configuration <a name="configuration"></a>
+<a name="configuration"></a>
+### Managing the Application Configuration
 
 To view and modify the application configuration:
 
@@ -175,7 +172,7 @@ To view and modify the application configuration:
     details using the various tabs:
 
     ![Configuring the
-    application](./media/basic-app-config-ww-watch.png)
+    application](./media/basic_app_config_ww_watch.png)
 
     -   **Overview**: Define general information, such as the name and
         icon of the application.
@@ -203,23 +200,18 @@ To view and modify the application configuration:
         `config.xml` file. Changes made and saved on the other tabs are
         reflected in the source code and vice versa.
 
-        <div class="note">
+        > **Note**  
+        > The `config.xml` file must conform to both the XML file
+        format and the W3C specification requirements. Editing the file   in the **Source** tab is intended for advanced users only.
 
-        **Note** The `config.xml` file must conform to both the XML file
-        format and the W3C specification requirements. Editing the file
-        in the **Source** tab is intended for advanced users only.
-
-        </div>
-
-3.  To save any changes, in the Tizen Studio menu, select **File &gt;
-    Save All**.
+3.  To save any changes, in the Tizen Studio menu, select **File &gt;    Save All**.
 
 For more information on configuring the application, see [Setting the
 Web Application
 Configuration](../process/setting-properties-w.md#set_widget).
 
-Building Your Application <a name="build"></a>
--------------------------
+<a name="build"></a>
+## Building Your Application
 
 After you have created the application project, you can implement the
 required features. In this example, only the default features from the
@@ -244,7 +236,7 @@ You can build the application in the following ways:
         Automatically**.
 
         ![Using the automatic
-        build](./media/build-automatic-ww-watch.png)
+        build](./media/build_automatic_ww_watch.png)
 
         A check mark appears next to the menu option.
 
@@ -262,7 +254,7 @@ You can build the application in the following ways:
     **Figure: Manually building the application**
 
     ![Manually building the
-    application](./media/build-manual-watch-ww.png)
+    application](./media/build_manual_watch_ww.png)
 
     Alternatively, you can also select the project in the **Project
     Explorer** view and do one of the following:
@@ -272,45 +264,39 @@ You can build the application in the following ways:
 
 After you have built the application, run it.
 
-Running Your Application <a name="run"></a>
-------------------------
+<a name="run"></a>
+## Running Your Application
 
 You can run the Web watch application on the
 [emulator](../process/run-debug-app-w.md#emulator) or a [real target
 device](../process/run-debug-app-w.md#target).
 
-
-
-> **Note** <br>
+> **Note**  
 > Since the Web Simulator does not support a circular UI, this
-topic does not cover the instructions for running the application on the
-Web Simulator.
+topic does not cover the instructions for running the application on the Web Simulator.
 
-
-
-### Running on the Emulator <a name="emulator"></a>
+<a name="emulator"></a>
+### Running on the Emulator
 
 To run the application on the emulator:
 
 1.  Launch an emulator instance in the [Emulator
     Manager](../../../tizen-studio/common-tools/emulator-manager.md):
 
-
     a.  In the Tizen Studio menu, select **Tools &gt; Emulator        Manager**.
 
-      ![Emulator Manager](./media/emulator-icon.png)
+      ![Emulator Manager](./media/emulator_icon.png)
 
-    b.  In the Emulator Manager, select a wearable emulator from the
-      list and click **Launch**.
+    b.  In the Emulator Manager, select a wearable emulator from the      list and click **Launch**.
 
       If no applicable emulator instance exists, [create a new
       one](../../../tizen-studio/common-tools/emulator-manager.md#create).
 
-      ![Launching the        emulator](./media/emulator-instance-launch-wearable.png)
+      ![Launching the        emulator](./media/emulator_instance_launch_wearable.png)
 
       The emulator is launched in its own window. You can also see the        new emulator instance in the **Device Manager**. To view the        emulator folder structure, click the arrow next to the        emulator instance.
 
-      ![Emulator](./media/emulator-window-wearable.png)
+      ![Emulator](./media/emulator_window_wearable.png)
 
 2.  Generate a security profile.
 
@@ -321,10 +307,9 @@ To run the application on the emulator:
 
 3.  Run the application:
 
-
     a.  In the **Project Explorer** view, right-click the project and        select **Run As &gt; Tizen Web Application**.
 
-      ![Running the application](./media/app-run-ww-watch.png)
+      ![Running the application](./media/app_run_ww_watch.png)
 
       Alternatively, you can also select the project in the **Project        Explorer** view and do one of the following:
 
@@ -338,7 +323,7 @@ To run the application on the emulator:
     the application.
 
     ![Selecting the emulator to
-    use](./media/app-run-multiple-emulators.png)
+    use](./media/app_run_multiple_emulators.png)
 
     In the **Console** view, you can see that the application is
     successfully installed. However, it does not run on the emulator
@@ -346,7 +331,7 @@ To run the application on the emulator:
     **Settings** menu.
 
     ![Successful
-    installation](./media/watch-run-install-watch-ww.png)
+    installation](./media/watch_run_install_watch_ww.png)
 
     b.         Change the watch face.
 
@@ -356,8 +341,7 @@ To run the application on the emulator:
 
       To change the watch face and make the watch application visible:
 
-      ![Changing the watch face](./media/watch-run-change-wn.png)
-
+      ![Changing the watch face](./media/watch_run_change_wn.png)
 
       *  If the emulator display has been switched off, activate it
       by pressing the **Power** key (in the bottom right corner of           the emulator).
@@ -373,7 +357,7 @@ To run the application on the emulator:
 
       *  Press the **Back** key (in the top right corner of the   emulator device) multiple times, until the home screen with            your new watch face is shown.
 
-      ![Application running in the            emulator](./media/emulator-running-watch-ww.png)
+      ![Application running in the            emulator](./media/emulator_running_watch_ww.png)
 
        While the application is running, the **Log** view in the Tizen        Studio shows the log, debug, and exception messages from the        methods defined in the log macros. To see the view, in the Tizen        Studio menu, go to **Window &gt; Show View &gt; Log**.
 
@@ -383,21 +367,21 @@ Panel](../../../tizen-studio/common-tools/emulator-control-panel.md)
 and [Using Extended Emulator
 Features](../../../tizen-studio/common-tools/emulator-features.md).
 
-### Running on a Target Device <a name="target"></a>
+<a name="target"></a>
+### Running on a Target Device
 
 To run the application on a target device:
 
 1.  Connect the wearable target device to your computer:
-
 
     a.  Define settings on the device:
 
       -   Go to **Settings &gt; Connections**, and switch
             on Bluetooth.
 
-            ![Switch on Bluetooth](./media/emulator-target-bt.png)
+            ![Switch on Bluetooth](./media/emulator_target_bt.png)
 
-            ![Switch on Bluetooth](./media/emulator-target-bt2.png)
+            ![Switch on Bluetooth](./media/emulator_target_bt2.png)
 
       -   Go to **Settings &gt; Connections**, and switch on Wi-Fi.
 
@@ -406,17 +390,17 @@ To run the application on a target device:
 
             Note the IP address the device is using.
 
-            ![Switch on Wi-Fi](./media/emulator-target-wifi.png)
+            ![Switch on Wi-Fi](./media/emulator_target_wifi.png)
 
       -   Go to **Settings &gt; Gear info**, and switch on the
             debugging mode.
 
             ![Switch on
-            debugging](./media/emulator-target-debug.png)
+            debugging](./media/emulator_target_debug.png)
 
     b.  In the terminal, enter the following commands:
 
-      ``` {.prettyprint}
+      ```bash
         cd tizen-sdk/tools
         ./sdb connect <IP address of Gear S2>
 
@@ -430,11 +414,11 @@ To run the application on a target device:
 
     c.  In the first attempt, the connection fails and the device asks        for user confirmation. To allow Gear to read log data, copy        files to and from your computer, and install the application        manually, click the accept mark.
 
-    ![Allow Gear to access        data](./media/remote-allow-gear-ww.png)
+    ![Allow Gear to access        data](./media/remote_allow_gear_ww.png)
 
     d.  In the **Device Manager**, confirm that the device is connected        (shown in the device list).
 
-    ![Device is connected](./media/remote-connected-ww.png)
+    ![Device is connected](./media/remote_connected_ww.png)
 
 2.  Generate an author certificate.
 
@@ -449,7 +433,7 @@ To run the application on a target device:
 
     b.  In **Project Explorer** view, right-click the project and select        **Run As &gt; Tizen Web Application**.
 
-      ![Running the application](./media/app-run-ww-watch.png)
+      ![Running the application](./media/app_run_ww_watch.png)
 
       Alternatively, you can also select the project in the **Project        Explorer** view and do one of the following:
 
@@ -460,32 +444,27 @@ To run the application on a target device:
       instances, select the device from the combo box in the toolbar
       before selecting to run the application.
 
-      ![Selecting the device to        use](./media/app-run-multiple-emulators.png)
+      ![Selecting the device to        use](./media/app_run_multiple_emulators.png)
 
     c.  Confirm that the application launches on the target device.
 
       Like with the [emulator](#watchface), you must change the watch        face in the device settings before you can see the watch        application UI on the device.
 
 
-
->    **Note** <br>
+>  **Note**  
 > The application is launched using the default debug
-    run configuration. To create and use another configuration:
->    1.  In the `Project Explorer` view, right-click the project and
-        select `Run As > Run Configurations`.
->    2.  In the `Run Configurations` window, click the
+    run configuration. To create and use another configuration:  
+    >   1.  In the `Project Explorer` view, right-click the project and        select `Run As > Run Configurations`.
+    >   2.  In the `Run Configurations` window, click the
         `New Launch Configuration` icon (![New Launch Configuration
-        icon](./media/run-new-config-wn.png)), define the
-        configuration details, and launch the application by clicking
-        `Run`.
-
->
->  ![Run Configurations window](./media/run-configurations-ww-watch.png)
+        icon](./media/run_new_config_wn.png)), define the
+        configuration details, and launch the application by clicking        `Run`.
+      >
+>  ![Run Configurations window](./media/run_configurations_ww_watch.png)
 
 
-
-Building a Simple UI <a name="ui"></a>
---------------------
+<a name="ui"></a>
+## Building a Simple UI
 
 The following example is based on a template project for a wearable
 watch application, which was introduced in [Creating a
@@ -495,7 +474,8 @@ The template project makes it easy to create your watch application.
 Without modification, you can build and run the project. However, it is
 important to understand the following template code to customize it.
 
-### Initializing the Watch Application <a name="init"></a>
+<a name="init"></a>
+### Initializing the Watch Application
 
 To initialize the watch application:
 
@@ -511,9 +491,8 @@ To initialize the watch application:
 
     -   To enable a custom UI for the [ambient
         mode](../details/event_handling_w.htm#ambient), the
-        `ambient_support` attribute must be set to `enable`.
-
-    ``` {.prettyprint}
+        `ambient_support` attribute must be set to `enable`.  
+        ```xml
     <widget xmlns:tizen="http://tizen.org/ns/widgets" xmlns="http://www.w3.org/ns/widgets"
             id="http://yourdomain/BasicWatch" version="1.0.0" viewmodes="maximized">
        <tizen:application id="rko5hPHRgI.BasicWatch" package="rko5hPHRgI" required_version="2.3.1"
@@ -531,9 +510,8 @@ To initialize the watch application:
     `main.js` file.
 
     Modify the `window.requestAnimationFrame()` method to make the
-    application compatible with the main browsers:
-
-    ``` {.prettyprint}
+    application compatible with the main browsers:  
+    ```javascript
     window.requestAnimationFrame = window.requestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
         window.mozRequestAnimationFrame ||
@@ -545,9 +523,8 @@ To initialize the watch application:
         };
     ```
 
-3.  Initialize the canvas context and define the canvas area:
-
-    ``` {.prettyprint}
+3.  Initialize the canvas context and define the canvas area:  
+    ```javascript
     window.onload = function onLoad() {
         'use strict';
 
@@ -559,9 +536,8 @@ To initialize the watch application:
         canvas.height = canvas.width;
     ```
 
-4.  Define an event listener to detect back key events and time tick:
-
-    ``` {.prettyprint}
+4.  Define an event listener to detect back key events and time tick:  
+    ```javascript
         /* Add eventListener for tizenhwkey */
         window.addEventListener('tizenhwkey', function(e) {
             if (e.keyName === 'back') {
@@ -581,7 +557,8 @@ To initialize the watch application:
     };
     ```
 
-### Drawing the Watch UI <a name="draw"></a>
+<a name="draw"></a>
+### Drawing the Watch UI
 
 To draw the watch UI:
 
@@ -589,9 +566,8 @@ To draw the watch UI:
 
     By default, the BasicWatch sample application layout contains only
     the main screen that displays the clock on a
-    [canvas](http://www.w3.org/TR/2012/CR-html5-20121217/embedded-content-0.html#the-canvas-element) element.
-
-    ```
+    [canvas](http://www.w3.org/TR/2012/CR-html5-20121217/embedded-content-0.html#the-canvas-element) element.  
+    ```xml
     <head>
        <meta charset="utf-8"/>
        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
@@ -609,10 +585,8 @@ To draw the watch UI:
 
 2.  To draw the watch face on the canvas, use the `main.js` file:
 
-    a.  Create the clock in the middle of the canvas, and define the
-      watch face style:
-
-      ``` {.prettyprint}
+    a.  Create the clock in the middle of the canvas, and define the      watch face style:  
+    ```javascript
         function renderDots() {
             'use strict';
 
@@ -629,9 +603,8 @@ To draw the watch UI:
       ```
 
     b.  Create 4 dots on the sides of the watch face and use the
-      `fill()` method to style the dots:
-
-      ``` {.prettyprint}
+      `fill()` method to style the dots:  
+      ```javascript
             for (i = 1; i <= 4; i++) {
                 angle = (i - 3) * (Math.PI * 2) / 4;
                 dx = clockRadius * 0.9 * Math.cos(angle);
@@ -644,9 +617,8 @@ To draw the watch UI:
 
       ```
 
-    c.  Create the center point:
-
-      ``` {.prettyprint}
+    c.  Create the center point:  
+      ```javascript
             ctx.beginPath();
 
             ctx.fillStyle = '#ff9000';
@@ -669,9 +641,8 @@ To draw the watch UI:
     a.  The needles can be created using the `renderNeedle()` method.
 
       To create the needle as a triangle or a polygon, assign the
-      coordinate of the beginning point with the `moveTo()` method. To        assign the rest of the points of the triangle or polygon, use        the `lineTo()` method, which defines the position of the next        connecting vertex. You can also adjust the size of each clock        needle with the `lineTo()` method.
-
-      ``` {.prettyprint}
+      coordinate of the beginning point with the `moveTo()` method. To        assign the rest of the points of the triangle or polygon, use        the `lineTo()` method, which defines the position of the next        connecting vertex. You can also adjust the size of each clock        needle with the `lineTo()` method.  
+      ```javascript
         function renderNeedle(angle, radius) {
             'use strict';
             ctx.save();
@@ -689,9 +660,8 @@ To draw the watch UI:
 
       ```
 
-    b.  Create the hour needle using the `renderHourNeedle()` method:
-
-      ``` {.prettyprint}
+    b.  Create the hour needle using the `renderHourNeedle()` method:  
+    ```javascript
         function renderHourNeedle(hour) {
             'use strict';
 
@@ -705,11 +675,8 @@ To draw the watch UI:
 
       ```
 
-    c.  Create the minute needle using the `renderMinuteNeedle()`
-        method:
-
-
-      ``` {.prettyprint}
+    c.  Create the minute needle using the `renderMinuteNeedle()`     method:  
+      ```javascript
         function renderMinuteNeedle(minute) {
             'use strict';
 
@@ -723,13 +690,12 @@ To draw the watch UI:
 
       ```
 
-4.  Indicate the current time in the `main.js` file:
-    1.  Determine the current time using the `new Date()` method.
+4.  Indicate the current time in the `main.js` file:  
+    a.  Determine the current time using the `new Date()` method.
 
-        To point the needles accurately, define variables for the
-        current hour and minute.
-
-        ``` {.prettyprint}
+      To point the needles accurately, define variables for the
+      current hour and minute.  
+      ```javascript
         function getDate() {
             'use strict';
 
@@ -760,16 +726,13 @@ To draw the watch UI:
                 nextMove = 1000 - date.getMilliseconds();
         ```
 
-    2.  Every time a new time is indicated, erase the previous time (the
-        previously positioned needles) using the `clearRect()` method:
-
-        ``` {.prettyprint}
+    b.  Every time a new time is indicated, erase the previous time (the      previously positioned needles) using the `clearRect()` method:  
+    ```javascript
             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         ```
 
-    3.  Point the clock needles to display the current time:
-
-        ``` {.prettyprint}
+    c.  Point the clock needles to display the current time:  
+    ```javascript
             renderDots();
             renderHourNeedle(hour);
             renderMinuteNeedle(minute);
@@ -781,7 +744,8 @@ To draw the watch UI:
         }
         ```
 
-### Using the Ambient Mode <a name="ambient"></a>
+<a name="ambient"></a>
+### Using the Ambient Mode
 
 On a low-powered wearable device, an ambient mode is available. In this
 mode, the watch application shows a limited UI and receives only the
@@ -798,19 +762,12 @@ ambient mode UI, set the `ambient_support` attribute to `disable` in the
 to show a default ambient mode UI.
 
 
-
-> **Note** <br>
+> **Note**  
 > To use the ambient mode, the user must enable it in the device
-settings. In addition, on the Gear S2 device, the ambient mode activates
-only when you are wearing the watch on the wrist.
+settings. In addition, on the Gear S2 device, the ambient mode activates only when you are wearing the watch on the wrist.
 Since Tizen 2.3.2, some devices introduce a high color mode for the
-ambient mode. In the high color mode, you can use more colors (usually,
-24-bit color) for drawing the ambient mode UI. To check whether the
-device supports the high color mode, use the following code:
-
->
->
->  ``` <br>
+ambient mode. In the high color mode, you can use more colors (usually, 24-bit color) for drawing the ambient mode UI. To check whether the device supports the high color mode, use the following code:  
+> ```c++
 > bool support;
 > int ret;
 >
@@ -819,12 +776,10 @@ device supports the high color mode, use the following code:
 > ```
 
 
-
 To use the ambient mode:
 
-1.  Define an event listener for the ambient mode:
-
-    ``` {.prettyprint}
+1.  Define an event listener for the ambient mode:  
+  ```c++
     /* Add eventListener for ambientmodechanged */
     window.addEventListener('ambientmodechanged', function(e) {
         console.log('ambientmodechanged: ' + e.detail.ambientMode);
@@ -844,9 +799,8 @@ To use the ambient mode:
     window.requestAnimationFrame(watch);
     ```
 
-2.  Create the ambient mode dots:
-
-    ``` {.prettyprint}
+2.  Create the ambient mode dots:  
+  ```c++
     function renderAmbientDots() {
         'use strict';
 
@@ -867,9 +821,8 @@ To use the ambient mode:
     }
     ```
 
-3.  Indicate time in the ambient mode:
-
-    ``` {.prettyprint}
+3.  Indicate time in the ambient mode:  
+  ```c++
     function ambientWatch() {
         'use strict';
         /* Get the current time */

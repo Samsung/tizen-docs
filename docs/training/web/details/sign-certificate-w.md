@@ -1,7 +1,5 @@
 
-
-Application Signing and Certificates
-====================================
+# Application Signing and Certificates
 
 Application signing is the process of digitally signing executables,
 scripts, and content of an application to confirm the application author
@@ -27,8 +25,8 @@ Through application signing, Tizen achieves the following goals:
     distributor, such as an application store, can restrict the API set
     used by the application by signing a key with a proper privilege.
 
-Signature Type <a name="type"></a>
---------------
+<a name="type"></a>
+## Signature Type
 
 All Tizen applications must have at least 2 signatures:
 
@@ -50,10 +48,10 @@ All Tizen applications must have at least 2 signatures:
 
 **Figure: Signature type**
 
-![Signature type](./media/signature-type.png)
+![Signature type](./media/signature_type.png)
 
-Certificate and API Privileges <a name="sec_priv"></a>
-------------------------------
+<a name="sec_priv"></a>
+## Certificate and API Privileges
 
 Tizen API privileges represent the ability to use a certain set of
 sensitive APIs and secure system resources. The privileges are
@@ -75,36 +73,14 @@ signing key) privilege level and the API privilege level.
 
 **Table: API levels allowed in specific certificate privilege levels**
 
-<table>
-<tr>
-<th>Certificate privilege level</th>
-<th>Public level API</th>
-<th>Partner level API</th>
-<th>Platform level API</th>
-</tr>
-<tr>
-<td>Public level</td>
-<td>Allowed</td>
-<td>Not allowed</td>
-<td>Not allowed</td>
-</tr>
-<tr>
-<td>Partner level</td>
-<td>Allowed</td>
-<td>Allowed</td>
-<td>Not allowed</td>
-</tr>
-<tr>
-<td>Platform level</td>
-<td>Allowed</td>
-<td>Allowed</td>
-<td>Allowed</td>
-</tr>
-</table>
+| Certificate privilege level | Public level API | Partner level API | Platform level API |
+| ---  | --- | --- | --- |
+| Public level | Allowed | Not allowed | Not allowed |
+| Partner level | Allowed | Allowed | Not allowed |
+| Platform level | Allowed | Allowed | Allowed |
 
-
-Signing Flow and Getting Certificates <a name="flow"></a>
--------------------------------------
+<a name="flow"></a>
+## Signing Flow and Getting Certificates
 
 You can sign your application with your own author signing key and a
 testing distributor signing key in the Tizen Studio. With those, you can
@@ -123,7 +99,7 @@ The following figure illustrates the signature and certificate flow.
 
 **Figure: Signature flow**
 
-![Signature flow](./media/signature-flow.png)
+![Signature flow](./media/signature_flow.png)
 
 The testing distributor certificate and its signing key with the public
 level are preloaded in the Tizen Studio. The author certificate and its
@@ -139,8 +115,8 @@ distributor certificate from the device vendor. For more information,
 see [Issuing a Tizen Certificate and Running Applications in Commercial
 Devices](https://developer.tizen.org/community/tip-tech/issuing-tizen-certificate-certificate-extension-ver-1.2).
 
-Signature Specification <a name="specification"></a>
------------------------
+<a name="specification"></a>
+## Signature Specification
 
 The application signing scheme of Tizen follows the specification of the
 [XML Digital Signatures for Widgets specified by
@@ -150,4 +126,4 @@ The following figure shows the signature file structure.
 
 **Figure: Signature file structure**
 
-![Signature file structure](./media/signature-structure.png)
+![Signature file structure](./media/signature_structure.png)

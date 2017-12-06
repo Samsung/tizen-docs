@@ -1,7 +1,5 @@
 
-
-Running and Debugging Applications
-==================================
+# Running and Debugging Applications
 
 You can run your application on the [emulator](#emulator) or the [target
 device](#target). You can also run mobile applications on the
@@ -9,8 +7,8 @@ device](#target). You can also run mobile applications on the
 feature to speed up the development tasks. If your application does not
 run without problems, you can [debug](#debug) it.
 
-Running Web Applications on the Emulator <a name="emulator"></a>
-----------------------------------------
+<a name="emulator"></a>
+## Running Web Applications on the Emulator
 
 You can debug Tizen Web applications on the
 [emulator](../../../tizen-studio/common-tools/emulator.md)
@@ -45,16 +43,12 @@ To run the application on the emulator, do one of the following:
 
 To stop the emulator, right-click the emulator and click **Close**.
 
-
-
-> **Note**<br>
+> **Note**  
 > Running an emulator instance requires a minimum free disk space
 of 20 MB. The emulator image can occupy up to 10 GB of disk space.
 
-
-
-Running Web Applications on a Target Device <a name="target"></a>
--------------------------------------------
+<a name="target"></a>
+## Running Web Applications on a Target Device
 
 You can run Tizen Web applications on a target device using the
 **Project Explorer** view or the Tizen Studio menu.
@@ -64,8 +58,7 @@ To run your application on the target device:
 1.  Connect the target device to your computer.
 2.  Open the **Run Configurations** window by doing one of the
     following:
-    -   In the **Project Explorer** view, right-click the project and
-        select **Run As &gt; Run Configurations**.
+    -   In the **Project Explorer** view, right-click the project and        select **Run As &gt; Run Configurations**.
     -   In the Tizen Studio menu, go to **Run &gt; Run Configurations**.
 
 3.  In the **Run Configurations** window, click **New Launch
@@ -75,8 +68,7 @@ To run your application on the target device:
     since the last time the application was run, [Rapid Development
     Support (RDS)](#rds) is used to skip the package upload and make
     running the application faster. RDS is enabled as default. To
-    disable it, go to **Window &gt; Preferences &gt; Tizen Studio &gt;
-    Rapid Development Support**.
+    disable it, go to **Window &gt; Preferences &gt; Tizen Studio &gt;    Rapid Development Support**.
 
 4.  Set the timeout using the **Timeout value** slider.
 
@@ -102,23 +94,19 @@ View](../../../tizen-studio/web-tools/web-editor-w.md#js_log)
 is automatically launched in the Tizen Studio. The JavaScript Log
 Console view displays Web application JavaScript logs.
 
-Running Mobile Web Applications on the Simulator <a name="simulator"></a>
-------------------------------------------------
+<a name="simulator"></a>
+## Running Mobile Web Applications on the Simulator
 
 You can run Tizen Web applications on the [Web
 Simulator](../../../tizen-studio/web-tools/web-simulator-w.md)
 using the **Project Explorer** view or the Tizen Studio menu.
 
-
-
-> **Note** <br>
+> **Note**  
 > The Tizen Web Simulator runs only on the Google Chrome™
 browser. To use the Web Simulator, download and install the [Google
 Chrome™](http://www.google.com/chrome/) browser. You can manually
 specify the installation location of the browser in the [simulator
 preferences](../../../tizen-studio/web-tools/web-simulator-w.md#pref).
-
-
 
 If you are running your Web application on the Web Simulator for the
 first time, create a running configuration by selecting **Run &gt; Run
@@ -148,8 +136,8 @@ setting the device screen size and orientation, and by sending events
 and messages, such as geolocation data and sensor input events, to your
 application for debugging it.
 
-Debugging Web Applications <a name="debug"></a>
---------------------------
+ <a name="debug"></a>
+## Debugging Web Applications
 
 Debugging a Web application enables you to understand its flow of
 control. You can debug a Web application by running it on the target
@@ -158,8 +146,7 @@ the [Web
 Inspector](../../../tizen-studio/web-tools/web-inspector-w.md)
 tool.
 
-To debug your application on the target device:
-
+To debug your application on the target device:  
 1.  Connect the target device to your computer.
 2.  Open the **Debug Configurations** window by doing one of the
     following:
@@ -205,16 +192,12 @@ To debug your application on the target device:
     -   Inspect resources
     -   Debug JavaScript code
 
-
-
-
-   > **Note** <br>
+   > **Note**  
    >  The Web Inspector always opens in a new window. Life-cycle
     synchronization between the application to be debugged and the Web    Inspector browser is not supported.    
+   >
    >  Installing the Google Chrome™ browser on the device is mandatory for    the Web Inspector to work. When the Google Chrome™ browser is    installed on the device, the Tizen Studio automatically detects it.    To select the browser path, go to
     `Window > Preferences > Tizen Studio > Web > Chrome`.
-
-
 
 6.  To debug the JavaScript code, click **Sources** in the Web
     Inspector menu.
@@ -231,47 +214,14 @@ To debug your application on the target device:
 
     **Table: Control buttons for debugging between break points**
 
-<table>
-<tr>
-  <th>Button</th>
-  <th>Description</th>
-</tr>
-<tr>
 
-  <td>
-
-   ![Resume](./media/resume.png)  </td>
-  <td> Resumes the current execution. </td>
-</tr>
-<tr>
-  <td>
-
-   ![Step over](./media/stepover.png) </td>
-  <td> Steps over the highlighted statement.<br>
-  Executes the current line, and if the line contains a method, executes the method without entering it.</td>
-</tr>
-<tr>
-
-  <td>
-
-  ![Step in](./media/stepin.png)   </td>
-  <td> Steps into the highlighted statement.<br>
-  Executes the current line, and if the line contains a method, steps   into the method.         </td>
-</tr>
-<tr>
-
-  <td>
-
-  ![Step out](./media/stepout.png)   </td>
-  <td> Steps out of the current method.</td>
-</tr>
-<tr>
-  <td>  
-
-   ![Deactivate all break  points](./media/deactivate.png)    </td>
-  <td> Deactivates all break points. </td>
-</tr>
-</table>
+ | Button | Description |
+ | ------ | ---------- |
+ | ![Resume](./media/resume.png)  | Resumes the current execution.|
+ | ![Step over](./media/stepover.png) | Steps over the highlighted statement.<br> Executes the current line, and if the line contains a method, executes the method without entering it.|
+ | ![Step in](./media/stepin.png)  | Steps into the highlighted statement.<br>  Executes the current line, and if the line contains a method, steps   into the method. |
+ | ![Step out](./media/stepout.png)  | Steps out of the current method.|
+ |  ![Deactivate all break  points](./media/deactivate.png)    |  Deactivates all break points. |
 
 If the Web application successfully launches on the target device, the
 [JavaScript Log Console
@@ -279,8 +229,8 @@ View](../../../tizen-studio/web-tools/web-editor-w.md#js_log)
 is automatically launched in the Tizen Studio. The JavaScript Log
 Console view displays Web application JavaScript logs.
 
-Rapid Development Support <a name="rds"></a>
--------------------------
+<a name="rds"></a>
+## Rapid Development Support
 
 Rapid Development Support (RDS) lets you develop a Tizen application
 rapidly by saving deployment time.
@@ -295,15 +245,13 @@ changed files are reinstalled and executed.
 If an error occurs during execution, the application is launched in the
 normal mode instead.
 
-To launch the application in normal mode:
-
+To launch the application in normal mode:  
 1.  Package the application.
 2.  Transfer the packaged file to the target.
 3.  Install the packaged file in the target. If the application is
     already installed, uninstall it before the installation.
 
-To launch the application in RDS mode:
-
+To launch the application in RDS mode:  
 1.  Search for the changed files (modified, added, and deleted) and
     transfer them to the target as a background process.
 2.  Reinstall the changed files.
@@ -314,10 +262,7 @@ The RDS option is enabled as default. To disable it, in the Tizen
 Studio, go to **Window &gt; Preferences &gt; Tizen Studio &gt; Rapid
 Development Support**.
 
-
-
-> **Note** <br>
+> **Note**  
 > RDS is not supported in multi-app projects.
-If you want to remove an application from your device, you must manually
-delete the installed application as the launch process does not have an
-uninstall process.
+>
+> If you want to remove an application from your device, you must manually delete the installed application as the launch process does not have an uninstall process.

@@ -1,6 +1,5 @@
 
-Introduction to Web Applications
-================================
+# Introduction to Web Applications
 
 The introduction to Web applications documentation provides overall
 information you need to become familiar with Web-specific Tizen
