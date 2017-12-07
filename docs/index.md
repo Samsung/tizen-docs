@@ -1,11 +1,11 @@
 # Getting Started
 
 ### Get Started with Tizen
-![Download](media/ic_docs_download.png) [**Download Tizen Source**](open-source-tizen/developing/cloning.md)
+![Download](media/ic_docs_download.png) [**Download Tizen Source**](open-source-project/developing/cloning.md)
 - [What is Tizen?](what-is-tizen/tizen.md)
-- [What is Tizen Open Source Project?](open-source-tizen/about/tizen-open-source-overview.md)
+- [What is Tizen Open Source Project?](open-source-project/about/tizen-open-source-overview.md)
 - Developers can register for an account at: [https://www.tizen.org/user/register](https://www.tizen.org/user/register)
-- [More](open-source-tizen/developing/installing.md)
+- [More](open-source-project/developing/installing.md)
 
 <!-- IOT Content (TBD) -->
 <!--## IOT world on Craftroom
@@ -41,7 +41,7 @@ In the first preview of Visual Studio Tools for Tizen, we began to leverage the 
 </p>
 -->
 
-- [More](https://developer.tizen.org/development/tizen-.net-preview/introduction)
+- [More](https://developer.tizen.org/development/visual-studio-tools-tizen/)
 
 
 ## Get Started with Tizen Studio
