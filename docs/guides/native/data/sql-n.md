@@ -19,8 +19,8 @@ The main features of the Sqlite API include:
 
 This guide only covers the basics of encryption and database usage. For more information, see the [OpenSSL](http://www.openssl.org) and [SQLite](http://www.sqlite.org) Web pages.
 
-**Note**
-While operating with real data, make sure that you fulfill all security requirements. This guide demonstrates how to use the library APIs on Tizen, but does not show how to perform fully secure encryption.
+> **Note**  
+> While operating with real data, make sure that you fulfill all security requirements. This guide demonstrates how to use the library APIs on Tizen, but does not show how to perform fully secure encryption.
 
 To prepare the database:
 

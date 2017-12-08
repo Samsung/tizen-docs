@@ -4,7 +4,8 @@
 
 - Tizen 2.3.1 and Higher for Wearable
 
-The check UI component accepts user input by the method of toggling. It is similar to the [radio](component-radio-wn.md) component, except that it does not work as a group. For more information, see the [Check](../../../../../org.tizen.native.wearable.apireference/group__Check.html) API.
+The check UI component accepts user input by the method of toggling. It is similar to the [radio](component-radio-wn.md) component, except that it does not work as a group. For more information, see the [Check](../../../../../org.tizen.native.wearable.apireference/group__Elm__Check.html) API.
+
 
 This feature is supported in wearable applications only.
 
@@ -113,10 +114,8 @@ You can register callback functions connected to the following signals for a che
 | --------- | ---------------------------------- | ------------ |
 | `changed` | The check component value changes. | `NULL`       |
 
-**Note**
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

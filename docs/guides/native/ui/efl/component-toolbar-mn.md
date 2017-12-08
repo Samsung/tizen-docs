@@ -1,6 +1,6 @@
 # Toolbar
 
-The toolbar UI component has a scrollable list of items which can be selected. Only one item can be selected at a time. For more information, see the [Toolbar](../../../../../org.tizen.native.mobile.apireference/group__Toolbar.html) API.
+The toolbar UI component has a scrollable list of items which can be selected. Only one item can be selected at a time. For more information, see the [Toolbar](../../../../../org.tizen.native.mobile.apireference/group__Elm__Toolbar.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -216,10 +216,8 @@ You can register callback functions connected to the following signals for a too
 | `scroll,drag,start` | The user starts dragging the toolbar.    | `NULL`             |
 | `scroll,drag,stop`  | The user stops dragging the toolbar.     | `NULL`             |
 
-**Note**
+> **Note**
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

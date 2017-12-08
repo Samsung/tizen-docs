@@ -123,7 +123,7 @@ func(void)
 
 You can get runtime information on running applications.
 
-For example, to get the memory usage information for each application:
+To get information on, for example, the memory usage for each application:
 
 ```
 void
@@ -137,34 +137,34 @@ print_memory_usage(void)
     unsigned int usage;
 
     ret = runtime_info_get_all_apps_memory_usage(&mem_usage_handle);
-    if (ret != RUNTIME_INFO_ERROR_NONE) {
+    if (ret != RUNTIME_INFO_ERROR_NONE) 
         /* Error handling */
-    }
+    
 
     ret = runtime_info_app_usage_get_count(mem_usage_handle, &count);
-    if (ret != RUNTIME_INFO_ERROR_NONE) {
+    if (ret != RUNTIME_INFO_ERROR_NONE) 
         /* Error handling */
-    }
+    
 
     for (i = 0; i < count; i++) {
         ret = runtime_info_app_usage_get_appid(mem_usage_handle, i, &appid);
-        if (ret != RUNTIME_INFO_ERROR_NONE) {
+        if (ret != RUNTIME_INFO_ERROR_NONE) 
             /* Error handling */
-        }
+        
 
         ret = runtime_info_app_usage_get_usage(mem_usage_handle, i, &usage);
-        if (ret != RUNTIME_INFO_ERROR_NONE) {
+        if (ret != RUNTIME_INFO_ERROR_NONE) 
             /* Error handling */
-        }
+        
 
         dlog_print(DLOG_INFO, LOG_TAG, "appid = %s, usage = %u KB\n", appid, usage);
         free(appid);
     }
 
     ret = runtime_info_app_usage_destroy(mem_usage_handle);
-    if (ret != RUNTIME_INFO_ERROR_NONE) {
+    if (ret != RUNTIME_INFO_ERROR_NONE) 
         /* Error handling */
-    }
+   
 }
 ```
 

@@ -27,8 +27,8 @@ Cairo is a part of the Tizen Graphics layer. As shown in the following figure, t
 
 The Cairo GL backend allows hardware-accelerated rendering by targeting the OpenGL® ES API. The goal of the Cairo GL backend is to achieve better performance with equal functionality to the Cairo Image backend, whenever possible.
 
-**Note**
-Since Tizen only exposes EvasGL binding in place of EGL™, Cairo EvasGL APIs have been newly added and specified. To use the Cairo GL backend in Tizen, an application must include in its source code the `cairo-evas-gl.h` header file instead of `cairo-gl.h`.
+> **Note**  
+> Since Tizen only exposes EvasGL binding in place of EGL™, Cairo EvasGL APIs have been newly added and specified. To use the Cairo GL backend in Tizen, an application must include in its source code the `cairo-evas-gl.h` header file instead of `cairo-gl.h`.
 
 ## Prerequisites
 
@@ -112,8 +112,8 @@ To create the image surface:
     evas_object_image_data_update_add(img, 0, 0, WIDTH, HEIGHT);
     ```
 
-**Note**
-Take care when using the `evas_object_image_data_set()` function. You must match the `evas_object_image_data_get()` and `evas_object_image_data_set()` functions as a pair. Since the `evas_object_image_data_get()` function keeps a rendering sink, the rendered result with Cairo can be reflected outside the Evas area, if the functions are not matched.
+> **Note**  
+> Take care when using the `evas_object_image_data_set()` function. You must match the `evas_object_image_data_get()` and `evas_object_image_data_set()` functions as a pair. Since the `evas_object_image_data_get()` function keeps a rendering sink, the rendered result with Cairo can be reflected outside the Evas area, if the functions are not matched.
 
 ### Creating a Cairo GL Surface in the Evas GL Backend
 

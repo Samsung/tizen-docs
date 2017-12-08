@@ -100,8 +100,8 @@ To enable your application to use the push functionality:
    #include <push-service.h>
    ```
 
-**Note**
-Since Tizen 3.0, the push service supports launching an application in the background. Remember that you can deliver application data to your application without an unwanted UI launch.
+> **Note**  
+> Since Tizen 3.0, the push service supports launching an application in the background. Remember that you can deliver application data to your application without an unwanted UI launch.
 
 ## Connecting to the Push Service
 
@@ -402,8 +402,8 @@ _on_state_registered(void *user_data)
 
    This function is non-blocking. If it returns `PUSH_SERVICE_ERROR_NONE`, the request is successfully received by the push service. The result of this request is returned in the `_dereg_result_cb()` callback function.
 
-   **Note**
-   The `push_service_deregister()` function is not used if the application is intended to receive push notifications continuously while it is installed on the device. When the application is uninstalled, the push service detects the event and deregisters the application automatically.On the other hand, if the application wants to receive push notifications only when a user logs in, the `push_service_deregister()` function must be called whenever the user logs out.
+   > **Note**  
+   > The `push_service_deregister()` function is not used if the application is intended to receive push notifications continuously while it is installed on the device. When the application is uninstalled, the push service detects the event and deregisters the application automatically.On the other hand, if the application wants to receive push notifications only when a user logs in, the `push_service_deregister()` function must be called whenever the user logs out.
 
 ## Managing Security
 

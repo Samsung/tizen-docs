@@ -5,7 +5,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
 
-Tizen enables you to control the audio latency mode of the W3C player.
+You can control the audio latency mode of the W3C player.
 
 This feature is supported in mobile and wearable applications only.
 

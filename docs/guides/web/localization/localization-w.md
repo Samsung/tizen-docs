@@ -13,7 +13,7 @@ To localize a Tizen Web application:
 
 1. Create a directory for each locale.
 
-   Create a directory for each locale that has localized content under the `locales` directory in package root. The locale names are defined in the W3C IANA [language subtag registry](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry).
+   Create a directory for each locale that has localized content under the `locales` directory in package root. The locale names are defined in the [W3C IANA Language Subtag Registry](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry).
 
    The Web Runtime loads the proper resource for the current locale according to the W3C widget using the following mark-up:
 
@@ -49,7 +49,8 @@ To localize a Tizen Web application:
    log('hello=' + LANG_JSON_DATA['hello']);
    ```
 
-   ​	**Note**	When the Web Runtime fails to find a file in a local folder, it searches for the file according to the procedure in the [W3C specification](https://www.w3.org/TR/widgets/#folder-based-localization-0).If the Web Runtime still fails to find a file in a local folder, it retrieves the folders that match the parent subtag, and prioritizes the files in the subfolders over the files in the local folders closer to the root of the widget package. If after all this, the Web Runtime still cannot find the file, an unexpected problem can occur.To avoid problems, leave a default file in the root folder.
+> **Note**
+> When the Web Runtime fails to find a file in a local folder, it searches for the file according to the procedure in the [W3C specification](https://www.w3.org/TR/widgets/#folder-based-localization-0).If the Web Runtime still fails to find a file in a local folder, it retrieves the folders that match the parent subtag, and prioritizes the files in the subfolders over the files in the local folders closer to the root of the widget package. If after all this, the Web Runtime still cannot find the file, an unexpected problem can occur.To avoid problems, leave a default file in the root folder.
 
    The following table lists the acceptable locale folder names.
 
@@ -66,7 +67,7 @@ To localize a Tizen Web application:
    | Bengali                         | `bn-in`     |
    | Bulgarian                       | `bg-bg`     |
    | Catalan                         | `ca-es`     |
-   | Chinese Simplified (中文 简体)      | `zh-cn`     |
+   | Chinese Simplified (China)      | `zh-cn`     |
    | Chinese Traditional (Hong Kong) | `zh-hk`     |
    | Chinese Traditional (Taiwan)    | `zh-tw`     |
    | Croatian                        | `hr-hr`     |
@@ -131,7 +132,7 @@ To localize a Tizen Web application:
    | Slovakian                       | `sk-sk`     |
    | Slovenian                       | `sl-si`     |
    | Spanish (Spain)                 | `es-es`     |
-   | Spanish (Latin)                 | `es-us`     |
+   | Spanish (Latin America)         | `es-us`     |
    | Swedish                         | `sv-se`     |
    | Tamil                           | `ta-in`     |
    | Telugu                          | `te-in`     |

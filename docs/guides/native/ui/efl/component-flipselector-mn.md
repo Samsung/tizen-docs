@@ -4,7 +4,7 @@
 
 - Tizen 2.4 and Higher for Mobile
 
-The flipselector UI component has a set of text items and a selector that flips up or down to change the text on it. For more information, see the [Flipselector](../../../../../org.tizen.native.mobile.apireference/group__Flipselector.html) API.
+The flipselector UI component has a set of text items and a selector that flips up or down to change the text on it. For more information, see the [Flipselector](../../../../../org.tizen.native.mobile.apireference/group__Elm__Flipselector.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -145,10 +145,8 @@ You can register callback functions connected to the following signals for a fli
 | `overflowed`  | The flipselector's current selection changes from the first item to the last one. | `NULL`       |
 | `underflowed` | The flipselector's current selection changes from the last item to the first one. | `NULL`       |
 
-**Note**
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

@@ -160,11 +160,9 @@ The following table lists the available component styles.
 | `elm/index/base/vertical/default`     | ![elm/index/base/vertical/default](./media/index_default.png) | This style has a one-finger-wide area on the right side of the index component's container. Generally, this style is used together with lists, generic lists, or generic grids. |
 | `elm/index/base/vertical/pagecontrol` | ![elm/index/base/vertical/pagecontrol](./media/index_pagecontrol.png) | This style has a one-finger-high area on the bottom side of the index component container. Generally, this style is used together with a layout, and images which are located in a scrollable object. |
 
-**Note**
-
-Set the index orientation with the `elm_index_horizontal_set()` function.
-
-`elm_index_horizontal_set(index, EINA_TRUE);`
+> **Note**
+> Set the index orientation with the `elm_index_horizontal_set()` function.
+> `elm_index_horizontal_set(index, EINA_TRUE);`
 
 For the `default` style, both orientations are supported, but for the `pagecontrol` style, only horizontal mode is available.
 
@@ -182,10 +180,8 @@ You can register callback functions connected to the following signals for an in
 | `level,up`      | The user moves a finger from the first level to the second level. | `NULL`                           |
 | `level,down`    | The user moves a finger from the second level to the first level. | `NULL`                           |
 
-**Note**
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

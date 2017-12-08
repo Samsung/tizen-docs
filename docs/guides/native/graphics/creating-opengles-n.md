@@ -32,7 +32,7 @@ The following example shows the steps to create an OpenGL® ES application. From
    - `ELM_GLVIEW_STENCIL`: Enable the stencil buffer for rendering.
    - `ELM_GLVIEW_MULTISAMPLE_LOW`: Use MSAA with a minimum number of samples.
 
-   For more information, see the `Elm_GLView_Mode` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__GLView.html#ga4d0a2281e13c66d7274987ef24e7abe7) and [wearable](../../../../org.tizen.native.wearable.apireference/group__GLView.html#ga4d0a2281e13c66d7274987ef24e7abe7) applications).
+   For more information, see the `Elm_GLView_Mode` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__Elm__GLView.html#ga4d0a2281e13c66d7274987ef24e7abe7) and [wearable](../../../../org.tizen.native.wearable.apireference/group__Elm__GLView.html#ga4d0a2281e13c66d7274987ef24e7abe7) applications).
 
    In the following example, the alpha channel and depth buffer are enabled.
 
@@ -165,5 +165,5 @@ The following example shows the steps to create an OpenGL® ES application. From
       }
       ```
 
-**Note**
-If the OpenGL® ES functions are called outside the 4 GLView callback functions, you must call the `evas_gl_make_current()` function before the OpenGL® ES function is called. However, this results in a performance degradation due to context switching, and only works if the direct rendering mode is not used.If Direct Rendering is enabled, all OpenGL® ES functions must be called from the 4 GLView callback functions only. All other operations can break the rendering order and cause unexpected rendering.
+> **Note**  
+> If the OpenGL® ES functions are called outside the 4 GLView callback functions, you must call the `evas_gl_make_current()` function before the OpenGL® ES function is called. However, this results in a performance degradation due to context switching, and only works if the direct rendering mode is not used.If Direct Rendering is enabled, all OpenGL® ES functions must be called from the 4 GLView callback functions only. All other operations can break the rendering order and cause unexpected rendering.

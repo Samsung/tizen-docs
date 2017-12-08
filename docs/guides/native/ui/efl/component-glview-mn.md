@@ -8,7 +8,7 @@ This feature is supported in mobile applications only.
 
 The GLView component renders OpenGL® in an Elementary object, which hides Evas GL complexity.
 
-For more information, see the [OpenGL® ES](../../graphics/opengl-n.md) guide and the [GLView](../../../../../org.tizen.native.mobile.apireference/group__GLView.html) API.
+For more information, see the [OpenGL® ES](../../graphics/opengl-n.md) guide and the [GLView](../../../../../org.tizen.native.mobile.apireference/group__Elm__GLView.html) API.
 
 **Figure: GLView component**
 
@@ -96,9 +96,8 @@ You can register callback functions connected to the following signals for a glv
 | `focused`   | The GLView component is focused. | `Elm_Focus_Info` object |
 | `unfocused` | The GLView object is unfocused.  | `NULL`                  |
 
-**Note**
-
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 The following example shows how to define and register a callback for the `focused` signal:
 
@@ -116,6 +115,5 @@ focused_cb(void *data, Evas_Object *obj, void  *event_info)
 }
 ```
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

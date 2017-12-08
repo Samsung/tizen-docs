@@ -10,7 +10,7 @@ The segmentcontrol component consists of several segment items. A segment item i
 
 The segmentcontrol component inherits from the layout component, which means that layout functions can be used on the segmentcontrol component.
 
-For more information, see the [SegmentControl](../../../../../org.tizen.native.mobile.apireference/group__SegmentControl.html) API.
+For more information, see the [SegmentControl](../../../../../org.tizen.native.mobile.apireference/group__Elm__SegmentControl.html) API.
 
 **Figure: Segmentcontrol component (with text on left and with icons on right)**
 
@@ -94,9 +94,8 @@ To manage segmentcontrol items:
 
 To receive notifications about the segmentcontrol events, listen for the `changed` signal, which is called when the user clicks on a segment item that was not previously selected.
 
-**Note**
-
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 The `event_info` callback parameter is the segment item pointer.
 
@@ -118,6 +117,5 @@ changed_cb(void *data, Evas_Object *obj, void *event_info)
 }
 ```
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

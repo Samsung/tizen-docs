@@ -34,7 +34,10 @@ group {
 
 - `inherit_only [1 or 0]`Flags the group as being used only for inheriting, which inhibits the `edje_cc` tool from resolving programs and parts that do not exist in this group, but are located in the group which is inheriting this group.
 
-- `inherit [parent group name]`Sets the parent group name for inheritance. The `inherit` property is used to inherit any predefined group and change some properties which belong to a `part`, `description`, `items`, or `program`. The child group has the same properties as its parent group. If you specify the type again in an inherited part, it causes an error.	**Note**	When inheriting any parts, descriptions without state names are not allowed.
+- `inherit [parent group name]`Sets the parent group name for inheritance. The `inherit` property is used to inherit any predefined group and change some properties which belong to a `part`, `description`, `items`, or `program`. The child group has the same properties as its parent group. If you specify the type again in an inherited part, it causes an error.	
+
+> **Note**	
+> When inheriting any parts, descriptions without state names are not allowed.
 
 - `script_recursion [1/0]`Determines whether to error on unsafe calls when recursively running Embryo programs. For example, running an Embryo script which calls EDC that has a `script{}` block is unsafe, and the outer-most (first) Embryo stack is corrupted. It is strongly unadvisable to use this flag.
 
@@ -100,7 +103,9 @@ group {
   }
   ```
 
-  The `data` block is used to pass arbitrary parameters from the theme to the application. Unlike the `images` and `fonts` blocks, additional `data` blocks can only be included inside the `group` block.`items: "key" "value";`Sets a new parameter, the value is the string specified next to it.`file: "key" "file";`Sets a new parameter, the value is the content of the specified file formatted as a single string of text. This property only works with plain text files.	**Note**	For genlist item styles, keys must be texts and icons, respectively for text parts and swallow parts; values must the names of the parts, separated with spaces.
+  The `data` block is used to pass arbitrary parameters from the theme to the application. Unlike the `images` and `fonts` blocks, additional `data` blocks can only be included inside the `group` block.`items: "key" "value";`Sets a new parameter, the value is the string specified next to it.`file: "key" "file";`Sets a new parameter, the value is the content of the specified file formatted as a single string of text. This property only works with plain text files.	
+  > **Note**	
+  > For genlist item styles, keys must be texts and icons, respectively for text parts and swallow parts; values must the names of the parts, separated with spaces.
 
 - `group.programs` block
 
@@ -114,4 +119,5 @@ group {
 
   The `programs` group contains 1 or more [program](./learn-edc-program-n.md) blocks. Each program contains code related to the interaction and animation of the visual elements.
 
-​	**Note**	Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**	
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

@@ -22,7 +22,7 @@ The main components of the flexible box layout include:
 
 ## Using the Flex Container
 
-To enhance the user experience of your application, you must learn how to assign size and alignment to the flex container:
+To assign size and alignment to a flex container:
 
 1. Assign the area (flex container) where the flexible box layout is applied by using the `display: flex` property:
 
@@ -68,7 +68,8 @@ To enhance the user experience of your application, you must learn how to assign
 
      - `space-around`: Creates equal gaps between all items.
 
-       ​	**Note**	This property is similar to `text-align`, but the alignment direction and the starting point are based on the `flex-direction` and `flex-wrap` properties.   
+			> **Note**	
+			> This property is similar to `text-align`, but the alignment direction and the starting point are based on the `flex-direction` and `flex-wrap` properties.   
 
    - `align-content` property sets the handling of gaps between the flex items on the cross axis. It has the same values as the `justify-content` property, and 1 additional value:
 
@@ -86,7 +87,8 @@ To enhance the user experience of your application, you must learn how to assign
 
      - `stretch`: Extends the height of the flex items and aligns them without gaps.
 
-       ​	**Note**	If the `flex-wrap` property is set to `wrap-reverse`, the start and end points of the alignment are reversed.
+			> **Note**	
+			> If the `flex-wrap` property is set to `wrap-reverse`, the start and end points of the alignment are reversed.
 
 The following figure shows examples of flex containers and how their flex items have been aligned.
 
@@ -106,7 +108,7 @@ For the complete source code related to this use case, see the following files:
 
 ## Using the Flex Items
 
-To enhance the user experience of your application, you must learn how to assign size and alignment to the flex items:
+To assign size and alignment to the flex items in a flex container:
 
 1. Assign the area (flex container) where the flexible box layout is applied, and define the flex items for it:
 
@@ -126,7 +128,8 @@ To enhance the user experience of your application, you must learn how to assign
 
    - `align-self` property is similar as the [align-items](./w3c/ui/flexible-w.md#usecont) property of the flex container.
 
-     ​	**Note**	If both the `align-self` and `align-items` properties are used simultaneously, the `align-items` property is ignored.
+			> **Note**	
+			> If both the `align-self` and `align-items` properties are used simultaneously, the `align-items` property is ignored.
 
    - `flex` property is a shorthand expression defining the flex item size handling:
 
@@ -149,7 +152,7 @@ For the complete source code related to this use case, see the following files:
 
 ## Creating a Flexible Layout with CSS3
 
-To enhance the user experience of your application, you must learn how to create flexible box layout:
+To create a flexible box layout with CSS3:
 
 1. Define the HTML content for the flexible layout. In this example, create 2 articles areas, 1 for a text list and 1 for an icon list:
 

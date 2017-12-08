@@ -4,7 +4,7 @@
 
 - Tizen 2.4 and Higher for Mobile
 
-The calendar UI component displays month views. For more information, see the [Calendar](../../../../../org.tizen.native.mobile.apireference/group__Calendar.html) API.
+The calendar UI component displays month views. For more information, see the [Calendar](../../../../../org.tizen.native.mobile.apireference/group__Elm__Calendar.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -90,10 +90,8 @@ You can register callback functions connected to the following signals for a cal
 | --------- | ----------------------------- | ------------ |
 | `changed` | The selected date is changed. | `NULL`       |
 
-**Note**
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

@@ -69,9 +69,8 @@ To set the value details of the circle object:
 
 - Set the value:
 
-  **Note**
-
-  The value cannot be lower than the minimum value or higher than the maximum value.
+  > **Note**
+  > The value cannot be lower than the minimum value or higher than the maximum value.
 
   - To set the value of the circle object, use the `eext_circle_object_value_set()` function.
 

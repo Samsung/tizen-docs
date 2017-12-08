@@ -44,8 +44,8 @@ You can launch an application with an application control using 2 different laun
   - If the underlying application launcher framework finds an application matched with the given application ID in the installed application list, it launches the application in a new process. If the matched application is not found, the framework returns the `APP_CONTROL_ERROR_APP_NOT_FOUND` result. Additional information (such as operation, URI, or MIME type) is not used to select an application for an explicit launch.
   - If the operation setting in the `app_control` handle is set to `APP_CONTROL_OPERATION_DEFAULT`, the application ID must be set. Otherwise the `APP_CONTROL_ERROR_INVALID_PARAMETER` result is returned.
 
-  **Note**
-  Be careful when using the explicit launch, because if the target application does not exist on the device, you need to handle the `APP_CONTROL_ERROR_APP_NOT_FOUND` error. If you want to launch any application that supports a certain operation, use the implicit launch.
+  > **Note**  
+  > Be careful when using the explicit launch, because if the target application does not exist on the device, you need to handle the `APP_CONTROL_ERROR_APP_NOT_FOUND` error. If you want to launch any application that supports a certain operation, use the implicit launch.
 
 - Implicit launch
 
@@ -55,8 +55,8 @@ You can launch an application with an application control using 2 different laun
   2. The application launcher framework iterates the application controls of all applications on the device to [find the applications that match](#resolution) the given conditions.
   3. If only one application is matched for the given conditions, that application is launched. If multiple matching applications are found, the application selector is shown and the user can select the proper application.
 
-**Note**
-Since Tizen 2.4, application controls used to launch service applications outside the current package are not supported. Because of this, the service application is only allowed to be launched explicitly by the application in the same package. All service applications are excluded from matches of implicit launch requests.
+	> **Note**  
+	> Since Tizen 2.4, application controls used to launch service applications outside the current package are not supported. Because of this, the service application is only allowed to be launched explicitly by the application in the same package. All service applications are excluded from matches of implicit launch requests.
 
 ## Launch Requests
 
@@ -64,7 +64,8 @@ To launch an application with the application control, you must create a launch 
 
 - Operation: Action to be performed by the launched application.
 
-  **Note**The operation name format is `http://tizen.org/appcontrol/operation/<verb>`. You can also use the related macro name, `APP_CONTROL_OPERATION_<VERB>`.The macro name can only be used in the `.c` files, not in the [application manifest file for the application control export](#export_appcontrol).
+  > **Note**  
+  > The operation name format is `http://tizen.org/appcontrol/operation/<verb>`. You can also use the related macro name, `APP_CONTROL_OPERATION_<VERB>`.The macro name can only be used in the `.c` files, not in the [application manifest file for the application control export](#export_appcontrol).
 
   The operation is mandatory information for sending the launch request.
 
@@ -162,8 +163,8 @@ The launch request conditions are matched to the available filters using the fol
 
    An exception is applied to the URIs with a "file" scheme for the value. If the launch request URI contains an existing file path and no MIME types are supplied, the filters that have the MIME type of the given file path are also added to the results.
 
-   **Note**
-   A filter (application) that expects to match with any form of URI and any type of MIME must use `'*'` and `*/*` in their application control information in the `tizen-manifest.xml` file, instead of leaving the value to `NULL`. Otherwise, the application is discarded by the platform when the application control is resolved.
+   > **Note**  
+   > A filter (application) that expects to match with any form of URI and any type of MIME must use `'*'` and `*/*` in their application control information in the `tizen-manifest.xml` file, instead of leaving the value to `NULL`. Otherwise, the application is discarded by the platform when the application control is resolved.
 
 3. Unlike the operation, the URI and MIME types support wildcards on the filters. Detailed conditions for matches are:
 
@@ -432,11 +433,13 @@ You can allow other applications to launch your application and use your applica
 </app-control>
 ```
 
-**Note**In the application manifest file, the valid operation name format is `http://tizen.org/appcontrol/operation/<verb>`. You cannot use the related macro name, `APP_CONTROL_OPERATION_<VERB>`.
+	> **Note**  
+	> In the application manifest file, the valid operation name format is `http://tizen.org/appcontrol/operation/<verb>`. You cannot use the related macro name, `APP_CONTROL_OPERATION_<VERB>`.
 
 The operation, URI, and MIME type information is used when [resolving the application control](#resolution). The operation information is mandatory, while the URI or MIME type information is optional. Any application requesting a launch of your application must either specify your application ID (for an explicit launch) or have the same operation value and applicable URI and MIME type information (for an implicit launch).
 
-**Note**The URI or MIME type can contain wildcards, such as '*', to match against given conditions in the app control:In the MIME type, you can use 2 types of wildcards: `image/*` and `*/*`.In the URI, a more complex pattern of wildcards with similar semantics as the standard `glob()` function is available: '*' matches an arbitrary, possibly empty, string, and '?' matches an arbitrary character. Unlike in the `glob()` function, the '/' character can be matched by the wildcards. There are no [...] character ranges, and the wildcards '*' and '?' cannot be escaped to include them literally in a pattern.
+> **Note**  
+> The URI or MIME type can contain wildcards, such as '*', to match against given conditions in the app control:In the MIME type, you can use 2 types of wildcards: `image/*` and `*/*`.In the URI, a more complex pattern of wildcards with similar semantics as the standard `glob()` function is available: '*' matches an arbitrary, possibly empty, string, and '?' matches an arbitrary character. Unlike in the `glob()` function, the '/' character can be matched by the wildcards. There are no [...] character ranges, and the wildcards '*' and '?' cannot be escaped to include them literally in a pattern.
 
 You can specify the application control information for your application in the [application project settings](../../../../org.tizen.training/html/native/process/setting_properties_n.htm#manifest) in the Tizen Studio.
 
@@ -527,7 +530,8 @@ To run a specific application control with some preconfigured parameters:
        dlog_print(DLOG_ERROR, LOG_TAG, "app_control_send_launch_request() failed. err = %d", ret);
    ```
 
-   **Note**Since Tizen 2.4, service applications are only allowed to be launched explicitly and the caller must be an application in the same package. Otherwise, the `app_control` instance returns an error.
+   > **Note**  
+   > Since Tizen 2.4, service applications are only allowed to be launched explicitly and the caller must be an application in the same package. Otherwise, the `app_control` instance returns an error.
 
 5. In the launched application, read the extra data set to the `app_control` instance using the `app_control_foreach_extra_data()` function. The same function can be used in the original application to read the reply message, when the `app_control_h` instance is returned by the `app_control` reply.
 

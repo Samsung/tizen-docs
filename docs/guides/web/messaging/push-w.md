@@ -5,7 +5,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
 
-Tizen enables you to receive notifications from a push server. The push service is a client daemon that maintains a permanent connection between the device and the push server. Push enables you to push events from an application server to your application on a Tizen device. Connection with the push service is used to deliver push notifications to the application, and process the registration and deregistration requests.
+You can receive notifications from a push server. The push service is a client daemon that maintains a permanent connection between the device and the push server. Push enables you to push events from an application server to your application on a Tizen device. Connection with the push service is used to deliver push notifications to the application, and process the registration and deregistration requests.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -35,7 +35,8 @@ The main features of the Push API include:
 
   The push service implements the RESTful open API for sending a push message. For more information on sending push notifications, see [Push Server](../../../../org.tizen.guides_HTM/html/native/messaging/push_server_n.htm).
 
-​	**Note**	Remember about security issues when sending notifications with sensitive information. For a list of strongly recommended rules, see [Managing Security](../../../../org.tizen.guides_HTM/html/native/messaging/push_n.htm#security).
+	> **Note**
+	> Remember about security issues when sending notifications with sensitive information. For a list of strongly recommended rules, see [Managing Security](../../../../org.tizen.guides_HTM/html/native/messaging/push_n.htm#security).
 
 ## Architecture
 

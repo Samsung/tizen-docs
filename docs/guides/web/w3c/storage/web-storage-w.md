@@ -28,7 +28,8 @@ Saving, reading, and deleting data in a local Web storage is a useful data manag
    </script>
    ```
 
-   ​	**Note**	If the size of the data exceeds 5 MB, an error occurs.
+> **Note**
+> If the size of the data exceeds 5 MB, an error occurs.
 
 2. To get the saved data, use the `getItem()` method with the data key:
 
@@ -58,7 +59,8 @@ Saving, reading, and deleting data in a local Web storage is a useful data manag
      </script>
      ```
 
-     ​	**Note**	The `clear()` method deletes all data within the same domain.
+		> **Note**
+		> The `clear()` method deletes all data within the same domain.
 
 ### Source Code
 

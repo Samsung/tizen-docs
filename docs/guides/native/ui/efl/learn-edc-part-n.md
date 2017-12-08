@@ -322,13 +322,15 @@ part {
 
   Copies all properties except part name from the referenced part into the current part. All existing properties, except part name, are overwritten.	
 
-  **Note**	When inheriting any parts, descriptions without state names are not allowed.
+  > **Note**	
+  > When inheriting any parts, descriptions without state names are not allowed.
 
 - `program_remove [program name] (program name) (program name) ...`
 
   Removes the listed programs from an inherited group. Removing non-existing programs is not allowed.
 
-  ​	**Note**	This breaks program sequences if a program in the middle of the sequence is removed.
+	> **Note**	
+	> This breaks program sequences if a program in the middle of the sequence is removed.
 
 - `part_remove [part name] (part name) (part name) ...`
 
@@ -573,7 +575,8 @@ part {
 
         Sets the minimum size hints for this object. 
 
-        ​	**Note**	The minimum size hint must be -1 to get the expand behavior.
+				> **Note**	
+				> The minimum size hint must be -1 to get the expand behavior.
 
       - `spread [width] [height]`
 
@@ -708,7 +711,8 @@ part {
 
   - `color [red] [green] [blue] [alpha]`Sets the main color to the specified values (between 0 and 255).
 
-    ​	**Note**	The textblock part is not affected by the color description. Set the color in the text style.
+		> **Note**	
+		> The textblock part is not affected by the color description. Set the color in the text style.
 
   - `color2 [red] [green] [blue] [alpha]`Sets the text shadow color to the specified values (0 to 255).
 
@@ -1012,4 +1016,5 @@ part {
 
       Sets the signal and source which triggers the transition to this state. The source parameter is optional, and it is filled with the current group's default value if it is not provided.
 
-​	**Note**	Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+ 	> **Note**
+ 	> Except as noted, this Content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

@@ -8,7 +8,7 @@
 
 The key manager allows you to [control data access](./security/secure-key-w.md#access) by securely storing in a central secure repository keys, certificates, and sensitive data related to users and their password-protected applications. Additionally, the key manager provides secure cryptographic operations for non-exportable keys without revealing the key values to clients. The central secure repository is protected by a password.
 
-The Key Manager API is mandatory for both Tizen mobile and wearable profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The Key Manager API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The main features of the Key Manager API include:
 
@@ -62,9 +62,9 @@ To save data in a repository:
    tizen.keymanager.saveData(data_name, raw_data, null, onSave);
    ```
 
-2. To set a permission for an application to remove the data, use the `setPermission()` method in the data saving callback.
+2. To grant an application permission to remove the data, use the `setPermission()` method in the data saving callback.
 
-   In this example, the permission is granted for an application with the 9PdoiICQ4c ID:
+    In this example, permission is granted for an application with the 9PdoiICQ4c ID:
 
    ```
    function onPermissionSet() {

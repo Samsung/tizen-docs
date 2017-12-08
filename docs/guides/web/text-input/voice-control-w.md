@@ -72,8 +72,8 @@ To use the voice control:
   > **Note** <br>
   >    Do not call the `release()` function in a listener.
 
-
-## Managing Listeners <a name="callback"></a>
+<a name="callback"></a>
+## Managing Listeners 
 To set and unset listeners to get notifications about recognition results and language changes:
 
 
@@ -143,8 +143,8 @@ To set and unset listeners to get notifications about recognition results and la
 
 ```
 
-
-## Retrieving the Current Language<a name="info"></a>
+<a name="info"></a>
+## Retrieving the Current Language
 
 To get the current language, use the `getCurrentLanguage()` function. The voice control recognition works for the current (default) language. To be notified of language changes, use the language change listener.<br>
 
@@ -163,8 +163,8 @@ To get the current language, use the `getCurrentLanguage()` function. The voice 
 
 
 
-
-## Managing Commands<a name="commands"></a>
+<a name="commands"></a>
+## Managing Commands
 
 <p>To create a command list and commands:</p>
 <ol>

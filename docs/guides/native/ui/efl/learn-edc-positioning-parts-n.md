@@ -53,7 +53,8 @@ To set the size and relative position of a part in the EDC file:
   }
   ```
 
-  ​	**Note**	The `align` property defines how the parts align themselves in the main window if their size is smaller than the main window. If nothing is specified, the parts are aligned in the center of the window.
+> **Note**
+> The `align` property defines how the parts align themselves in the main window if their size is smaller than the main window. If nothing is specified, the parts are aligned in the center of the window.
 
 ## Adding an Offset to Relative Positioning
 
@@ -113,4 +114,5 @@ To refer to the previous pixel (the bottom-right pixel of the blue rectangle), s
 
 Since `-1 -1` is the most common offset wanted for the `rel2` block, it is set as the default value.
 
-​	**Note**	Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

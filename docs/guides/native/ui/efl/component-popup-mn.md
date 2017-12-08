@@ -4,7 +4,7 @@
 
 - Tizen 2.4 and Higher for Mobile
 
-The popup UI component is a small window for notifying the user or requesting user input. For more information, see the [Popup](../../../../../org.tizen.native.mobile.apireference/group__Popup.html) API.
+The popup UI component is a small window for notifying the user or requesting user input. For more information, see the [Popup](../../../../../org.tizen.native.mobile.apireference/group__Elm__Popup.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -167,10 +167,8 @@ You can register callback functions connected to the following signals for a pop
 | `block,clicked` | The user clicks on the blocked event area. The blocked event area is the translucent region around the visible popup region. | `NULL`       |
 | `dismissed`     | The popup is dismissed with a hide effect. | `NULL`       |
 
-**Note**
-
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+  
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

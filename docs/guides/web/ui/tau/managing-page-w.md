@@ -11,7 +11,7 @@ This feature is supported in mobile and wearable applications only.
 
 ## Page Structure
 
-The page consist of:
+A page consists of:
 
 - Header area
 
@@ -105,7 +105,7 @@ To create a page:
 
    The popup works because TAU opens (makes visible) the page whose `id` attribute corresponds to the `#hashtag` page. This is basic page routing; for more information, see [Page Routing](./ui/tau/managing-page-w.md#pageRouting).
 
-## Creating Multiple Pages in One HTML Code
+## Creating Multiple Pages in One HTML File
 
 You can implement a template containing multiple `page` containers in the application's `index.html` file.
 
@@ -155,7 +155,7 @@ To manage page routing:
   </div>
   ```
 
-  With multiple pages in one HTML code, you can use only the ID of the page in the `href` attribute:
+  With multiple pages in one HTML file, you can use only the ID of the page in the `href` attribute:
 
   ```
   <div class="ui-page ui-page-active" id="first">

@@ -9,9 +9,8 @@ DALi informs you with a callback when the user touches the screen and when the t
 
 The `Dali::TouchData` class replaces the old deprecated `Dali::TouchEvent` struct. It contains functions for retrieving the information that the `Dali::TouchEvent` struct provided, but also adds the radius, touch pressure, and angle information.
 
-​        **Note**
-
-Do not use the `Dali::TouchData` class in a container.	 As the `Dali::TouchData` class is a handle to an internal object, it must not be copied (or used in a container) as all that happens is that the handle is copied to the same object, and the internal object can change unexpectedly. If the data must be stored in the application, save only the required data (retrieved using the class functions).    
+​        > **Note**  
+        > Do not use the `Dali::TouchData` class in a container.	 As the `Dali::TouchData` class is a handle to an internal object, it must not be copied (or used in a container) as all that happens is that the handle is copied to the same object, and the internal object can change unexpectedly. If the data must be stored in the application, save only the required data (retrieved using the class functions).    
 
 The first point that the user touches is the primary point and the one that is used for hit-testing. Hit-testing is the process of determining whether a user-controlled cursor (such as a mouse cursor or touch-point) intersects a given graphical object drawn on the screen. There are many different algorithms that can be used for hit-testing, with different performance or accuracy outcomes. For more information on DALi hit-testing, see the Detailed Description for the `Dali::Actor` class (in [mobile](http://org.tizen.native.mobile.apireference/classDali_1_1Actor.html#details) and [wearable](http://org.tizen.native.wearable.apireference/classDali_1_1Actor.html#details) applications).
 

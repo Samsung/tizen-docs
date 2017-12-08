@@ -19,7 +19,8 @@ You can use media queries in 3 ways:
   @media only screen and (max-width: 480px) {styles}
   ```
 
-  ​	**Note**	This approach is popular since it can reduce style overlapping; however, if all the styles are applied to 1 CSS, the maintenance work efficiency decreases.
+	> **Note**	
+	> This approach is popular since it can reduce style overlapping; however, if all the styles are applied to 1 CSS, the maintenance work efficiency decreases.
 
 - In an `@import` rule in CSSYou can import from CSS a file that matches the condition:`@import url(example.css) not screen and (min-width: 480px)`
 
@@ -31,7 +32,8 @@ You can use media queries in 3 ways:
   <link rel="stylesheet" media="all and (max-width: 480px)" href="example.css">
   ```
 
-  ​	**Note**	The disadvantage of this approach is that every time the condition is expanded, the HTML file must be edited. However, since this approach only imports the CSS files that match the condition, the file transmission amount can be reduced.
+	> **Note**	
+	> The disadvantage of this approach is that every time the condition is expanded, the HTML file must be edited. However, since this approach only imports the CSS files that match the condition, the file transmission amount can be reduced.
 
 For more information on the CSS priorities when different media queries are used, see [Media Query Priorities](./w3c/ui/media-query-w.md#priorities).
 
@@ -87,7 +89,8 @@ You can define the following conditions for the media queries:
   }
   ```
 
-  ​	**Note**	The device aspect ratio is a reliable way to distinguish the portrait and landscape modes of a smart phone. However, because the aspect ratio of all the devices has to be specified, a precise rule is hard to define. (Currently wildly used screen ratios are 15:9, 16:10, 16:9, 3:2, and 4:3, but devices with other screen ratios may be added in the future.)
+	> **Note**	
+	> The device aspect ratio is a reliable way to distinguish the portrait and landscape modes of a smart phone. However, because the aspect ratio of all the devices has to be specified, a precise rule is hard to define. (Currently wildly used screen ratios are 15:9, 16:10, 16:9, 3:2, and 4:3, but devices with other screen ratios may be added in the future.)
 
 ## Media Query Priorities
 
@@ -171,7 +174,7 @@ The CSS is applied based on the viewport:
 
 ## Creating a Liquid Layout
 
-To enhance the user experience of your application, you must learn to define media queries to determine the styles to be used in the Web document. This example creates a simple Web document with a liquid layout that organically changes according to the device resolution to show the optimized layout on both portrait and landscape modes.
+You can use media queries to determine the styles to be used in a Web document. The following example creates a simple Web document with a liquid layout that organically changes according to the device resolution to show an optimized layout on both portrait and landscape modes:
 
 1. Define a page with title and content elements:
 

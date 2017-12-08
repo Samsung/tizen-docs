@@ -51,8 +51,8 @@ The main features of the Camera API include:
 
   Since devices can have multiple camera sensors with different capabilities, create a `Camera` with a proper `camera_device_e` value, determining which camera sensor is used. Usually the primary sensor is located on the back side and the secondary sensor on the front side of the device. Once the camera sensor is selected, the selected sensor starts working.
 
-  **Note**
-  Simultaneous use of multiple camera sensors is not allowed.The target device often supports more functionalities than the emulator.The behavior of the shutter sound can vary depending on the legislation of each country.
+  > **Note**  
+  > Simultaneous use of multiple camera sensors is not allowed.The target device often supports more functionalities than the emulator.The behavior of the shutter sound can vary depending on the legislation of each country.
 
 - Releasing resources
 
@@ -137,8 +137,8 @@ To configure the camera:
 
 2. Set the display for showing preview images by using the `camera_set_display()` function with 1 of the camera display types (`CAMERA_DISPLAY_TYPE_EVAS` or `CAMERA_DISPLAY_TYPE_OVERLAY`). These values are defined in the `camera_display_type_e`enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__CAMERA__MODULE.html#ga3ddd0982778fdfacd3694d643d1610ac) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__CAMERA__MODULE.html#ga3ddd0982778fdfacd3694d643d1610ac) applications).
 
-   **Note**
-   Depending on the device, the application must set the display preferences using the `elm_config_accel_preference_set()` function.
+   > **Note**  
+   > Depending on the device, the application must set the display preferences using the `elm_config_accel_preference_set()` function.
 
    The following example code sets the display according to the `display_type` parameter, whose type is `camera_display_type_e`. The `create_base_gui()` function must be called before previewing and thus the camera state must be `CAMERA_STATE_CREATED`.
 
@@ -416,8 +416,8 @@ To customize the display settings:
 
   The system applies display flip after display rotation, so you must always calculate the correct display flip value after determining the display rotation.
 
-**Note**
-For an overlay surface, when the device orientation changes, the displayed camera preview does not rotate automatically. If you want to rotate the display according to the device orientation, use the `camera_set_display_rotation()` function within the `app_device_orientation_cb()` callback used by the application.For an Evas surface, the Evas object for the camera display is rotated by the window manager used by the application, not by the `camera_set_display_rotation()` function.
+	> **Note**  
+	> For an overlay surface, when the device orientation changes, the displayed camera preview does not rotate automatically. If you want to rotate the display according to the device orientation, use the `camera_set_display_rotation()` function within the `app_device_orientation_cb()` callback used by the application.For an Evas surface, the Evas object for the camera display is rotated by the window manager used by the application, not by the `camera_set_display_rotation()` function.
 
 ## Taking a Photo
 

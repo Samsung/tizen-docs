@@ -176,7 +176,7 @@ To get the interface parameters after successfully initializing the VPN service:
 
 To set the interface parameters:
 
-- Set the MTU configuration for the tunnel interface using the `vpnsvc_set_mtu()` function, then update the value using the `vpnsvc_update_settings()` function:
+- Set the MTU configuration for the tunnel interface using the `vpnsvc_set_mtu()` function, and update the value using the `vpnsvc_update_settings()` function:
 
     ```
     int ret;

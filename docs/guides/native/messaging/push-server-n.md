@@ -101,8 +101,8 @@ To send push notifications:
 
    Since Tizen 3.0, the `BACKGROUNDLAUNCH` option is supported. When you send a notification to the device with the `BACKGROUNDLAUNCH` action value, the push service launches the application in the background (if it is not already running), and delivers the appData field to the application. The user cannot see that a notification is received, but they find out when they use the application the next time.
 
-   **Note**
-   For the `BACKGROUNDLAUNCH` notification, the `app_create()` and `app_control()` life-cycle callbacks are called, but the `app_resume()` callback is not called. However, the next time the user runs the application, the `app_resume()` callback is invoked normally. For more information on the life-cycle, see the [Applications](../../../../org.tizen.guides/html/native/app_management/applications_n.htm) guide.
+   > **Note**  
+   > For the `BACKGROUNDLAUNCH` notification, the `app_create()` and `app_control()` life-cycle callbacks are called, but the `app_resume()` callback is not called. However, the next time the user runs the application, the `app_resume()` callback is invoked normally. For more information on the life-cycle, see the [Applications](../../../../org.tizen.guides/html/native/app_management/applications_n.htm) guide.
 
 4. Use the Rest APIs for sending push notifications.
 
@@ -217,8 +217,8 @@ To send push notifications:
          }
          ```
 
-         **Note**
-         In the above example, the 3008 error code means that the `regID` does not exist in the push server. It happens when your application of that particular `regID` was uninstalled or disabled by the user, and consequently the `regID` must be removed from your application server. When the application is reinstalled or enabled, it must repeat the [registration process](push-n.md#registration) and send a new `regID` to your application server.
+         > **Note**  
+         > In the above example, the 3008 error code means that the `regID` does not exist in the push server. It happens when your application of that particular `regID` was uninstalled or disabled by the user, and consequently the `regID` must be removed from your application server. When the application is reinstalled or enabled, it must repeat the [registration process](push-n.md#registration) and send a new `regID` to your application server.
 
    - Multiple request
 

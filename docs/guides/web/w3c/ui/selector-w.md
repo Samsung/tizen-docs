@@ -25,7 +25,7 @@ You can also [create an accordion menu](./w3c/ui/selector-w.md#create).
 
 ## Selecting a Single Node
 
-To enhance the user experience of your application, you must learn to use selectors to handle page elements, and to select a single node:
+To use selectors for handling page elements and selecting a single node:
 
 1. To select the first matching element found in the child nodes, use the `querySelector()` method with CSS selectors. You get the same result as when using the `getElementById()`, `getElementsByTagName()`, and `getElementsByClassName()` methods.
 
@@ -71,7 +71,7 @@ For the complete source code related to this use case, see the following file:
 
 ## Selecting Multiple Nodes
 
-To enhance the user experience of your application, you must learn to use selectors to handle page elements, and to select multiple nodes in a node list:
+To use selectors for handling page elements and selecting multiple nodes in a node list:
 
 1. Select an element in the node list using the `querySelector()` method:
 
@@ -79,7 +79,7 @@ To enhance the user experience of your application, you must learn to use select
    var obj = document.querySelector('table:nth-child(2)');
    ```
 
-   The `querySelector()` method returns the first matching element node within the subtrees of the context node. If no matching element is found, the method returns `null`. The query above selects the second `<table>` element in the document as a single element.
+   The `querySelectorAll()` method returns an array containing all matching element nodes within the subtrees of the context node, in the document order, and saves the elements in a node list. If there are no matching nodes, the method returns an empty array. The query above selects the `<th>` elements in the table head and the `<td>` elements in the table body.
 
 2. Select multiple elements in the node list using the `querySelectorAll()` method, and define a variable to represent the length of the `targetObj` node list:
 
@@ -112,9 +112,9 @@ For the complete source code related to this use case, see the following file:
 
 ## Creating an Accordion Menu
 
-To enhance the user experience of your application, you must learn to retrieve element nodes from the DOM tree to create a simple accordion menu.
+You can retrieve element nodes from the DOM tree and create a simple accordion menu.
 
-The accordion menu is created using the CSS3 Basic User Interface Module Level 3 API (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#basicui) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#basicui) applications). When a title is touched, the relevant content is shown, and other content is hidden.
+The accordion menu is created using the CSS3 Basic User Interface Module Level 3 API (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#basicui), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#basicui), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#basicui) applications). When a title is touched, the relevant content is shown, and other content is hidden.
 
 1. Create the HTML layout:
 

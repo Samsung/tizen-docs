@@ -5,7 +5,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
 
-In HTML5, an indexed database is a local storage used to store and manipulate data in a client. You can implement effective searches using an index as a simple storage structure in key-value format.
+In HTML5, an indexed database is a local storage used to store and manipulate key-value format data in a client. You can implement effective searches using an index, which is a specialized persistent key-value storage containing entries from the database based on specific property values.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -27,7 +27,8 @@ The main features of the Indexed Database API include:
 
   The stored data creates a key, assigned to a `keypath`, which in turn creates a value as a JSON object.
 
-  ​	**Note**	Tizen supports the `READ_ONLY`, `READ_WRITE`, and `VERSION_CHANGE` transactions (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#transaction) and [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#transaction) applications) with the `unsigned short` type.
+> **Note**
+> Tizen supports the `READ_ONLY`, `READ_WRITE`, and `VERSION_CHANGE` transactions (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#transaction) and [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#transaction) applications) with the `unsigned short` type.
 
 - Creating an index
 
@@ -55,7 +56,8 @@ Creating and deleting a database is a useful data management skill:
 
    Check whether an indexed database is supported in the `window` object. If the database is generated properly, the `onsuccess` event handler is called. 
 
-   ​	**Note**	The name of the database can be any string type, including an empty string. To change the version of the database, use the `VERSION_CHANGE` transaction.
+> **Note**
+> The name of the database can be any string type, including an empty string. To change the version of the database, use the `VERSION_CHANGE` transaction.
 
 2. Delete the generated database using the `window.webkitIndexedDB.deleteDatabase()` method:
 

@@ -5,7 +5,7 @@
 - Tizen 3.0 and Higher for Mobile
 - Tizen 3.0 and Higher for Wearable
 
-Tizen enables you to handle feedback patterns (media or vibration) that can be played as a reaction to specified actions.
+You can handle feedback patterns (media or vibration) that can be played as a reaction to specified actions.
 
 This feature is supported in mobile and wearable applications only.
 

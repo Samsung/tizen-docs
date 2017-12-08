@@ -2,7 +2,7 @@
 
 You can perform operations on files and directories stored in the device filesystem.
 
-The File API is mandatory for both Tizen mobile and wearable profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The File API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The main features of the File API include:
 
@@ -276,7 +276,8 @@ To move, copy, and delete entries, or access entry metadata, parent information,
   });
   ```
 
-  **Note**	You cannot delete a non-empty directory or the filesystem root directory.
+> **Note**
+> You cannot delete a non-empty directory or the filesystem root directory.
 
   The following output is shown in the system log:
 

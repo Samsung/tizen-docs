@@ -51,12 +51,12 @@ The following SDL features are currently supported in Tizen:
 
 For the list of features not currently supported in Tizen, see the SDL API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__OPENSRC__SDL__FRAMEWORK.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__OPENSRC__SDL__FRAMEWORK.html) applications). In Tizen, SDL supports the Vulkan and OpenGL® ES graphics libraries only; the `SDL_render` library is not supported.
 
-**Note**
-The following SDL header files related to the `SDL_render` library are not included in the Tizen native API:
- - `SDL_render.h`
- - `SDL_pixels.h`
- - `SDL_rect.h`
- - `SDL_surface.h`
+> **Note**  
+> The following SDL header files related to the `SDL_render` library are not included in the Tizen native API:
+>  - `SDL_render.h`
+>  - `SDL_pixels.h`
+>  - `SDL_rect.h`
+>  - `SDL_surface.h`
 
 ## Vulkan® vs. OpenGL®
 
@@ -191,7 +191,7 @@ To handle general SDL events:
 
 To handle SDL events specifically added to the Tizen application framework:
 
-- `SDL_APP_CONTROL`This event is invoked when the application is launched with some parameters.The application framework calls the application's control callback just after the application enters the main loop. This callback is passed to the `app_control` instance containing the reason why the application was launched. For example, the application can be launched to open a file to handle the request that has been sent by another application. In any case, the application is responsible for checking the `app_control` content and responding appropriately. The `app_control` content can be empty, if the application is launched from the launcher.In SDL, `SDL_APP_CONTROL` has been defined as a new `SDL_Event` event type for the application control. After the application enters the main loop, SDL sends the `SDL_APP_CONTROL` event to the application. This means that the application can confirm the `SDL_Event` in the event loop. The event is defined as an `SDL_UserEvent`, which is in the `user` member of the `SDL_Event` union.The `user` structure contains `data1` (`app_control`) and `data2` (`user_data`).In Tizen, you must include the `<app.h>` header file to use the application control. For more information, see the [Application Controls](../app-management/app-controls-n.md) guide.
+- `SDL_APP_CONTROL`This event is invoked when the device is launched with some parameters.The application framework calls the application's control callback just after the application enters the main loop. This callback is passed to the `app_control` instance containing the reason why the application was launched. For example, the application can be launched to open a file to handle the request that has been sent by another application. In any case, the application is responsible for checking the `app_control` content and responding appropriately. The `app_control` content can be empty, if the application is launched from the launcher.In SDL, `SDL_APP_CONTROL` has been defined as a new `SDL_Event` event type for the application control. After the application enters the main loop, SDL sends the `SDL_APP_CONTROL` event to the application. This means that the application can confirm the `SDL_Event` in the event loop. The event is defined as an `SDL_UserEvent`, which is in the `user` member of the `SDL_Event` union.The `user` structure contains `data1` (`app_control`) and `data2` (`user_data`).In Tizen, you must include the `<app.h>` header file to use the application control. For more information, see the [Application Controls](../app-management/app-controls-n.md) guide.
 
     ```
     #include <app.h>

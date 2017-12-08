@@ -8,7 +8,7 @@ This feature is supported in mobile applications only.
 
 The image component can load and display an image from a disk file or a memory region.
 
-For more information, see the [Image](../../../../../org.tizen.native.mobile.apireference/group__Image.html) API.
+For more information, see the [Image](../../../../../org.tizen.native.mobile.apireference/group__Elm__Image.html) API.
 
 **Figure: Image component**
 
@@ -106,9 +106,8 @@ You can register callback functions connected to the following signals for an im
 | `drop`    | An image-type object is dropped onto the object in question. | The path to the image file |
 | `clicked` | The image is clicked.                    | `NULL`                     |
 
-**Note**
-
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 The following example shows how to define and register a callback for the `clicked` signal:
 
@@ -124,6 +123,5 @@ clicked_cb(void *data, Evas_Object *obj, void *event_info)
 }
 ```
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

@@ -111,4 +111,5 @@ edje_cc -sd ../edje/sounds -fd ../edje/fonts -id ../edje/images ../res/edje/hell
 
 You need to connect the `.edj` file to the C code. It can be achieved by using a layout, one of containers. If you use the basic Tizen EFL project template, it reduces the time to worry about the connecting process. For more information on using the basic Tizen project template, see [Creating Your First Tizen Mobile Native Application](http://org.tizen.training/html/native/mobile/first_app_mn.htm) or [Creating Your First Tizen Wearable Native Application](http://org.tizen.training/html/native/wearable/first_app_wn.htm). If you want to know the way to use and connect a layout in detail, see [Layout](./container-layout-n.md).
 
-​	**Note**	Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**	
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

@@ -6,7 +6,8 @@ This feature is supported in mobile and wearable applications only.
 
 TAU is the standard Web UI library for Tizen platform, originated from the Tizen Web UI Framework Library (standard library for Tizen 2.2.1), which was mainly an extension to jQuery Mobile. The key features of the Web UI Framework Library were coding simplification and application creation speed.  The purpose of TAU is to be the "framework advanced to the next level".
 
-​	**Note**	Tizen Advanced UI Framework is **optional**, but recommended for making Web applications for Tizen.
+> **Note**
+> Tizen Advanced UI Framework is **optional**, but recommended for making Web applications for Tizen.
 
 With TAU, you can take advantage of the following benefits in your code:
 
@@ -20,7 +21,8 @@ With TAU, you can take advantage of the following benefits in your code:
 - TAU is optimized for wearable, mobile, and TV devices.
 - TAU supports various profiles (mobile, wearable, and TV).
 
-​	**Note**	TAU (Tizen Advanced UI) is the new name of the `tizen-web-ui-fw`. In all documents and source code, TAU is used instead of `tizen-web-ui-fw`.Since 2.3, `tizen-web-ui-fw` has been deprecated (including `tizen-web-ui-fw.js`, `tizen-web-ui-fw-libs.js`, and `tizen-web-ui-fw.css`). Since 2.4, `tizen-web-ui-fw` is fully deleted and not supported anymore.
+> **Note**
+> TAU (Tizen Advanced UI) is the new name of the `tizen-web-ui-fw`. In all documents and source code, TAU is used instead of `tizen-web-ui-fw`.Since 2.3, `tizen-web-ui-fw` has been deprecated (including `tizen-web-ui-fw.js`, `tizen-web-ui-fw-libs.js`, and `tizen-web-ui-fw.css`). Since 2.4, `tizen-web-ui-fw` is fully deleted and not supported anymore.
 
 To learn to use the TAU features in your application UI, see the following topics:
 

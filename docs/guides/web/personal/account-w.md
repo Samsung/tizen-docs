@@ -136,7 +136,8 @@ To create accounts, you must learn how to get access to account providers:
 
 Creating, adding, updating, and deleting accounts is a basic account management skill:
 
-​	**Note**	To perform these operations, your application must be the account provider.
+> **Note**
+> To perform these operations, your application must be the account provider.
 
 1. To create an account, first get an account provider. If your application is an account provider application (meaning that it contains the `<tizen:account>` element, in [mobile](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#mw_account) and [wearable](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#ww_account) applications, in its `config.xml` file), use the `getProvider()` method:
 

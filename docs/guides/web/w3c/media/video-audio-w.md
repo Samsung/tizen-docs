@@ -68,9 +68,11 @@ To provide users with HTML5 audio and video features, you must learn to create a
 
    ![Video player before playback](./media/video_audio1.png) ![Video player during playback](./media/video_audio2.png)
 
-   ​**Note**	The `preload` attribute is set to `auto` by default, meaning that the media metadata is automatically loaded. If you do not want to load the metadata, set the attribute value as `metadata` or `none`.
+> ​**Note**	
+> The `preload` attribute is set to `auto` by default, meaning that the media metadata is automatically loaded. If you do not want to load the metadata, set the attribute value as `metadata` or `none`.
 
-   ​**Note**	Carefully consider before using the `autoplay` feature (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-media-autoplay) and [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#attr-media-autoplay) applications), which plays content automatically in the mobile environment without user interaction. The user can face unintended Internet packet fees or interfering factors, such as playback being stopped unintentionally.
+> ​**Note**	
+> Carefully consider before using the `autoplay` feature (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-media-autoplay) and [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#attr-media-autoplay) applications), which plays content automatically in the mobile environment without user interaction. The user can face unintended Internet packet fees or interfering factors, such as playback being stopped unintentionally.
 
 ### Source Code
 
@@ -153,7 +155,8 @@ For the complete source code related to this use case, see the following files:
 
 To provide users with HTML5 audio and video features, you must learn to retrieve the total duration and playing time of a media file:
 
-​	**Note**	The media file metadata can only be retrieved, if it is loaded in the application. The `preload` attribute is must be set to `auto`, or the `autoplay` attribute be set as `true`.
+> **Note**
+> The media file metadata can only be retrieved, if it is loaded in the application. The `preload` attribute is must be set to `auto`, or the `autoplay` attribute be set as `true`.
 
 1. Create the `video` element and the elements to display the total duration and playing time of the file:
 
@@ -360,7 +363,8 @@ For the complete source code related to this use case, see the following files:
 
 To provide users with HTML5 audio and video features, you must learn to resize the video screen:
 
-​	**Note**	If the screen size is reduced, the basic `play` control can be wrongly positioned. Therefore, do not use the `controls` attribute when providing the resizing custom control.
+> **Note**
+> If the screen size is reduced, the basic `play` control can be wrongly positioned. Therefore, do not use the `controls` attribute when providing the resizing custom control.
 
 1. Create the `video` element and buttons used to control the screen size:
 
@@ -512,7 +516,7 @@ For the complete source code related to this use case, see the following files:
 
 ## Supported Codecs
 
-The following table lists the codecs supported in Tizen.
+The following tables list the codecs supported in Tizen.
 
 **Table: Supported codecs**
 

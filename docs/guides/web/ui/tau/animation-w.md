@@ -145,7 +145,7 @@ t('#blueBox').tween({left: 200, top: [100, 300]}, 1000);
 
 ### Chaining
 
-The animation is inserted to the animation queue automatically before playing. At first, this feature does not seem important for making an animation, but if this method is supported, the LOC (Line Of Code) is decreased significantly.
+The animation is inserted to the animation queue automatically before playing. At first, this feature does not seem important for making an animation, but if the animation is implemented in this way, the LOC (lines of code) can be decreased significantly.
 
 ```
 <div id="blueBox" style="background-color: 'blue'; position:absolute; width:100px; height:100px;"></div>
@@ -166,11 +166,14 @@ The chaining feature makes an intuitive sequence group animation.
 
 ### Predefined Effects
 
+To make an effect, you can combine many single animations, or use a predefined effect.
 The following predefined effects are available:
 
 `bounce`, `flash`, `pulse`, `rubberBand`, `shake`, `swing`, `tada`, `wobble`, `jello`, `bounceIn`, `bounceInDown`, `bounceInLeft`, `bounceInRight`, `bounceInUp`, `bounceOut`, `bounceOutDown`, `bounceOutLeft`, `bounceOutRight`, `bounceOutUp`, `fadeIn`, `fadeInDown`, `fadeInLeft`, `fadeInRight`, `fadeInUp`,`fadeOut`, `fadeOutDown`, `fadeOutLeft`, `fadeOutRight`, `fadeOutUp`, `flip`, `flipInX`, `flipInY`, `flipOutX`, `flipOutY`,`lightSpeedIn`, `lightSpeedOut`, `rotateIn`, `rotateInDownLeft`, `rotateInDownRight`, `rotateInUpLeft`, `rotateInUpRight`,`rotateOut`, `rotateOutDownLeft`, `rotateOutDownRight`, `rotateOutUpLeft`, `rotateOutUpRight`, `slideInUp`, `slideInDown`, `slideInLeft`, `slideInRight`,`slideOutUp`, `slideOutDown`, `slideOutLeft`, `slideOutRight`, `zoomIn`, `zoomInDown`, `zoomInLeft`, `zoomInRight`, `zoomInUp`, `zoomOut`, `zoomOutDown`, `zoomOutLeft`, `zoomOutRight`, `zoomOutUp`, `hinge`, `rollIn`, `rollOut`
 
-To make an identical effect, you can make many single animations. The following example shows the `shake` effect:
+The following example shows how you can make a shake effect:
+
+-   Using multiple animations:
 
 ```
 <div id="blueBox" style="background-color: 'blue'; position:absolute; width:100px; height:100px;"></div>
@@ -190,7 +193,7 @@ t('#blueBox').tween({translateX: -10}, 100);
 t('#blueBox').tween({translateX: 0}, 100);
 ```
 
-Or instead, you can use a predefined animation:
+-   Using the predefined `shake` effect:
 
 ```
 <div id="blueBox" style="background-color: 'blue'; position:absolute; width:100px; height:100px;"></div>
@@ -203,7 +206,7 @@ t('#blueBox').tween('shake', 1000);
 
 ### Group
 
-Sometimes, you need to animate all objects with the same animation. To make an animation group for this purpose, the `target()` method is provided. If all classes of DOM are `box`, you can create a box group. Like a CSS selector, '.' means a class selector and '#' means an ID selector. Also, a pure HTML element can be a parameter of the `target()` method.
+Sometimes, you need to animate all objects with the same animation. To make an animation group for this purpose, the `target()` method is provided. If all classes of DOM are `box`, you can create a box group. Like in CSS selectors, '.' is a class selector and '\#' is an ID selector. Also, a pure HTML element can be a parameter of the `target()` method.
 
 ```
 <div class="box"></div>
@@ -254,4 +257,4 @@ t('#blueBox').tween({translateY: [0, 150], rotateZ: [0, 180]}, {
 });
 ```
 
-In the above animation, the box is translated by Y axis from 0 to 150 and rotated from 0 to 180. Before translating and rotating, the `start` text is inserted into the box. After translating and rotating, the box's background color is changed to navy.
+In the above animation, the box is translated along the Y axis from 0 to 150 and rotated from 0 to 180. Before translating and rotating, the `start` text is inserted into the box. After translating and rotating, the box's background color is changed to navy.

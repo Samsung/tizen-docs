@@ -79,7 +79,8 @@ The commands used for installing and using Grunt work in the same manner, withou
 
 After running the Grunt plug-in, the following comparison result is shown through the inspector in the Google Chrome™ browser. The expected results vary depending on the application, but since the improvement effects are certain, it is recommended to use Grunt.
 
-​	**Note**	For the sake of comparing improvement, in the following examples, 2 Web applications have been arbitrarily chosen and named App#1 and App#2.
+> **Note**
+> For the sake of comparing improvement, in the following examples, 2 Web applications have been arbitrarily chosen and named App#1 and App#2.
 
 **Table: Result for App #01**
 

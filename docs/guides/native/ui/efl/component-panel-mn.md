@@ -115,10 +115,8 @@ You can register callback functions connected to the following signals for a pan
 | -------- | ---------------------------- | ----------------------- |
 | `scroll` | The panel is being scrolled. | `Elm_Panel_Scroll_Info` |
 
-**Note**
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

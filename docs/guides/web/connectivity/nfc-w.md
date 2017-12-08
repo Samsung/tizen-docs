@@ -46,7 +46,8 @@ NFC provides the following advantages over short-range communication technologie
 
 An **NFC tag** is a chip which can securely store personal information, such as debit card numbers or contact details. The methods of the `NFCTag` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NFCTag) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NFCTag) applications) are used to access an NFC tag for reading or writing information. NFC tag types are identified using the `type` attribute of the `NFCTagType` type definition (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NFCTagType) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NFCTagType) applications).
 
-​	**Note**	Tizen provides the following NFC tag types: `GENERIC_TARGET`, `ISO14443_A`, `ISO14443_4A`, `ISO14443_3A`, `MIFARE_MINI`, `MIFARE_1K`, `MIFARE_4K`, `MIFARE_ULTRA`, `MIFARE_DESFIRE`, `ISO14443_B`, `ISO14443_4B`, `ISO14443_BPRIME`, `FELICA`, `JEWEL`, `ISO15693`, and `UNKNOWN_TARGET`.
+> **Note**
+> Tizen supports the following NFC tag types: `GENERIC_TARGET`, `ISO14443_A`, `ISO14443_4A`, `ISO14443_3A`, `MIFARE_MINI`, `MIFARE_1K`, `MIFARE_4K`, `MIFARE_ULTRA`, `MIFARE_DESFIRE`, `ISO14443_B`, `ISO14443_4B`, `ISO14443_BPRIME`, `FELICA`, `JEWEL`, `ISO15693`, and `UNKNOWN_TARGET`.
 
 The NFC forum defines the NFC data exchange format (NDEF) for encapsulating the data exchanged between 2 NFC-enabled devices or an NFC-enabled device and an NFC tag. An **NDEF message** can store data in various formats, such as text, Multipurpose Internet Mail Extension (MIME) type object, or ultra-short RagTime Document (RTD). The NFC tags use NDEF for exchanging messages. Tizen provides the `NDEFMessage` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NDEFMessage) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NDEFMessage) applications) to define an NDEF message.
 
@@ -92,16 +93,16 @@ To use the Application (in [mobile](../../../../org.tizen.web.apireference/html/
 
 To use NFC, retrieve the default NFC adapter using the `getDefaultAdapter()` method of the `NFCAdapter` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NFCAdapter) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NFCAdapter) applications).
 
-​	**Note**	The NFC API does not provide methods to directly enable or disable the NFC adapter of the device. When NFC is required, you must request the built-in Settings application to let the user enable or disable the NFC.
+> **Note**
+> The NFC API does not provide methods to directly enable or disable the NFC adapter of the device. When NFC is required, you must request the built-in Settings application to let the user enable or disable NFC.
 
 To enable or disable the NFC service:
 
 1. To get the default NFC adapter, use the `getDefaultAdapter()` method and prepare an `ApplicationControl` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationControl) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationControl) applications) to request the NFC switching operation:
 
    ```
-   var nfcSwitchAppControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/setting/nfc', null, null, null,
-                                                          [new tizen.ApplicationControlData('type', 'nfc')]);
-   var adapter = tizen.nfc.getDefaultAdapter();
+    var nfcSwitchAppControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/setting/nfc');
+    var adapter = tizen.nfc.getDefaultAdapter();
    ```
 
 2. Define the event listener for the `launchAppControl()` method:
@@ -124,7 +125,7 @@ To enable or disable the NFC service:
            if (adapter.powered) {
                console.log('NFC is successfully turned on.');
            }
-       }
+       },
        /*
           onfailure is called when the launched application
           reports failure of the requested operation
@@ -165,7 +166,7 @@ To detect NFC tags and peer devices:
        /* When an NFC tag is detected */
        onattach: function(nfcTag) {
            console.log('NFC Tag detected. Its type is: ' + nfcTag.type);
-       }
+       },
 
        /* When an NFC tag becomes unavailable */
        ondetach: function() {
@@ -250,7 +251,8 @@ To exchange NDEF messages:
    Peer.sendNDEF(newMessage);
    ```
 
-​	**Note**	If an application is in the background and uses the `sendNDEF()` method, an error callback is launched. This method can only be used on the foreground.
+	> **Note**
+	> If an application is in the background and uses the `sendNDEF()` method, an error callback is launched. This method can only be used on the foreground.
 
 ## Exchanging NDEF Data with Tags
 
@@ -289,7 +291,8 @@ To exchange NDEF data with tags:
 
    You can use the `transceive()` method to transfer raw data as a byte array to an NFC tag without knowing the underlying details of the tag.
 
-​	**Note**	If an application is in the background and uses the `writeNDEF()` or `transceive()` method, an error callback is launched. These methods can only be used on the foreground.
+	> **Note**
+	> If an application is in the background and uses the `writeNDEF()` or `transceive()` method, an error callback is launched. These methods can only be used on the foreground.
 
 ## Using NFC Card Emulation
 
@@ -333,7 +336,7 @@ To enable or disable the NFC card emulation and detect secure element transactio
    ```
    function onDetected(appletId, data) {
        console.log('NFC secure element transaction detected. Application: ' + appletId + '. Protocol data: ' + data);
-   });
+   };
    transListenerId = adapter.addTransactionEventListener('UICC', onDetected);
    ```
 
@@ -435,7 +438,7 @@ To detect NFC HCE events and manage AID (Application ID):
            console.log('HCE deactivated');
        } else if (event_data.eventType == 'APDU_RECEIVED') {
            console.log('APDU received');
-           var apdu_response = [0x00,0xA4,0x04,0x00,0x04,0x11,0x12, 0x13, 0x14];
+           var apdu_response = [0x00, 0xA4, 0x04, 0x00, 0x04, 0x11, 0x12, 0x13, 0x14];
            adapter.sendHostAPDUResponse(apdu_response, successCB, errorCB);
        }
    });
@@ -446,7 +449,7 @@ To detect NFC HCE events and manage AID (Application ID):
    ```
    try {
        var aid = 'ABC0012345';
-       adapter.registerAID('HCE', aid, 'PAYMENT')
+       adapter.registerAID('HCE', aid, 'PAYMENT');
    } catch (err) {
        console.log(err.name + ':' + err.message);
    }

@@ -5,7 +5,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
 
-The TAU Globalize utility supports internationalization and localization. It wraps the [Globalize](https://github.com/jquery/globalize) functionality for easy access from Tizen Web applications, and it is extended to support the right-to-left (RTL) languages.
+The TAU Globalize utility supports internationalization and localization. It wraps the [Globalize](https://github.com/jquery/globalize) functionality for easy access from Tizen Web applications, and it is extended to support right-to-left (RTL) languages.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -175,7 +175,7 @@ The following code snippets show how to use the TAU Globalize utility methods:
 
   This method supports custom locale data.                            
 
-  1. Create a directory for each locale that has localized content under the locales directory in the project root. The locale names are defined in the [W3C IANA language subtag registry](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry).
+  1. Create a directory for each locale that has localized content under the locales directory in the project root. The locale names are defined in the [W3C IANA Language Subtag Registry](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry).
 
      ```
      index.html

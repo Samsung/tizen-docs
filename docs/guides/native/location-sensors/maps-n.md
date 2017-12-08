@@ -40,8 +40,8 @@ The following map providers are supported:
 - [HERE Maps](https://developer.here.com) based on the [HERE REST API](https://developer.here.com/rest-apis).To use the HERE Maps, you need to [get credentials](here-credentials-n.md).
 - [Mapzen Maps](https://mapzen.com) based on Mapzen services.To use the Mapzen Maps, you need to [get the Mapzen API keys](mapzen-credentials-n.md).
 
-**Note**
-To use the map service, you must get an access key to the map provider from the provider developer site. The service must be used according to the provider's Term of Use.
+> **Note**  
+> To use the map service, you must get an access key to the map provider from the provider developer site. The service must be used according to the provider's Term of Use.
 
 ## Geocodes
 
@@ -69,8 +69,8 @@ The following place search request types are provided:
 
 After performing the [place service request](#use_search_place), you receive the place search response. You can [parse the place search response](#place) to use its details. The response contains structured place information consisting of, for example, a place ID, name and URL, address, geographical location and distance from the center of the search area, place category, rating, review, and image.
 
-**Note**
-Depending on the map provider, some types of place information can be unavailable.
+> **Note**  
+> Depending on the map provider, some types of place information can be unavailable.
 
 ## Route Search
 
@@ -81,8 +81,8 @@ The following route search request types are provided:
 
 After performing the [route service request](#use_search_route), you receive the route search response. You can [parse the route calculation response](#route) to use its details. The response contains structured route information consisting of, for example, a route ID, geographical coordinates of the start and destination points, route bounding box, transportation mode, and total distance and duration.
 
-**Note**
-Depending on the map provider, the route can be presented as a list of geographical points or segments. The segment list can also be presented as a list of geographical points or maneuvers.
+> **Note**  
+> Depending on the map provider, the route can be presented as a list of geographical points or segments. The segment list can also be presented as a list of geographical points or maneuvers.
 
 ## Map Service Responses
 
@@ -623,8 +623,8 @@ Similarly, you can get other address features using the following functions:
 
 The result of the [place search request](#search_place) (`maps_service_search_place()`, `maps_service_search_place_by_area()`, or `maps_service_search_place_by_address()`) is retrieved from the map service using multiple iterations of the `maps_service_search_place_cb()` callback. The result is an instance of place data.
 
-**Note**
-Different map providers are capable of providing different sets of place data features. Some map providers can extend the place data features with extra properties that are not specified in the Maps Service API. Such properties are organized as a key-value storage where the keys are the names of the properties.If your map provider does not support a specific feature, the get function for the feature returns an error. To prevent problems, you can [check which data features are available](#start) in your map provider using the `maps_service_provider_is_data_supported()` function.
+> **Note**  
+> Different map providers are capable of providing different sets of place data features. Some map providers can extend the place data features with extra properties that are not specified in the Maps Service API. Such properties are organized as a key-value storage where the keys are the names of the properties.If your map provider does not support a specific feature, the get function for the feature returns an error. To prevent problems, you can [check which data features are available](#start) in your map provider using the `maps_service_provider_is_data_supported()` function.
 
 To parse place data:
 
@@ -748,8 +748,8 @@ To parse place data:
 
 The result of the [route calculation request](#search_route) (`maps_service_search_route()` or `maps_service_search_route_waypoints()`) is retrieved from the map service using multiple iterations of the `maps_service_search_route_cb()` callback. The result is an instance of route data.
 
-**Note**
-Different map providers are capable of providing different sets of route data features. Some map providers can extend the route data features with extra properties that are not specified in the Maps Service API. Such properties are organized as a key-value storage where the keys are the names of the properties.If your map provider does not support a specific feature, the get function for the feature returns an error. To prevent problems, you can [check which data features are available](#start) in your map provider using the `maps_service_provider_is_data_supported()` function.
+> **Note**  
+> Different map providers are capable of providing different sets of route data features. Some map providers can extend the route data features with extra properties that are not specified in the Maps Service API. Such properties are organized as a key-value storage where the keys are the names of the properties.If your map provider does not support a specific feature, the get function for the feature returns an error. To prevent problems, you can [check which data features are available](#start) in your map provider using the `maps_service_provider_is_data_supported()` function.
 
 To parse route data:
 
@@ -1083,8 +1083,8 @@ To use the map view:
 
 You can create polyline, polygon, and marker objects for the map view.
 
-**Note**
-Before you use the View Object API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MAPS__VIEW__OBJECT__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MAPS__VIEW__OBJECT__MODULE.html) applications), create a map view object instance.
+> **Note**  
+> Before you use the View Object API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MAPS__VIEW__OBJECT__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MAPS__VIEW__OBJECT__MODULE.html) applications), create a map view object instance.
 
 To create a map view object:
 

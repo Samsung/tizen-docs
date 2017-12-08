@@ -55,8 +55,8 @@ To render a cube using OpenGL® ES in an SDL application:
 
    After SDL is initialized successfully, create the `SDL_Window` instance using the `SDL_CreateWindow()` function. The parameters define the title of the window, the X and Y position coordinates, width, height, and a set of `SDL_WindowFlags` combined using the "|" pipe operation.
 
-   **Note**
-   To use the OpenGL® ES context, use the `SDL_WINDOW_OPENGL` flag when you create a window. Do not use both `SDL_WINDOW_VULKAN` and `SDL_WINDOW_OPENGL` simultaneously.
+   > **Note** 
+   > To use the OpenGL® ES context, use the `SDL_WINDOW_OPENGL` flag when you create a window. Do not use both `SDL_WINDOW_VULKAN` and `SDL_WINDOW_OPENGL` simultaneously.
 
    The `SDL_main()` function is mandatory for the Tizen framework to initialize the SDL application. You must use the `SDL_main()` function instead of the usual `main()` function in your SDL application.
 

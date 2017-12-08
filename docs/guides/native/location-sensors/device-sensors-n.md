@@ -30,21 +30,33 @@ The main features of the Sensor API include:
 
   A device can have various physical and virtual sensors. The following table lists the sensors supported by Tizen.
 
-  **Note**
-  Not all devices support all sensors, so each sensor is not necessarily available on all devices. You can [check whether a sensor is supported](#sensorlistener). For more information, see [System Information](../device/system-n.md).
+  > **Note**  
+  > Not all devices support all sensors, so each sensor is not necessarily available on all devices. You can [check whether a sensor is supported](#sensorlistener). For more information, see [System Information](../device/system-n.md).
 
-  **Table: Supported sensor types**
 
-  | Supported sensor types                   |                                          |                                          |
-  | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-  | [Accelerometer](#accelerometer)          | [Heart Rate Monitor Sensor](#hrm)        | [Proximity Sensor](#proximity)           |
-  | [Geomagnetic Rotation Vector Sensor](#mag_rotation) | [Humidity Sensor](#humidity)             | [Rotation Vector Sensor](#rotation)      |
-  | [Gravity Sensor](#gravity)               | [Light Sensor](#light)                   | [Sleep Monitor](#sleep_monitor)          |
-  | [Gyroscope](#gyro)                       | [Linear Acceleration Sensor](#lin_accelerometer) | [Temperature Sensor](#temperature)       |
-  | [Gyroscope Rotation Vector Sensor](#gyro_rotation) | [Magnetic Sensor](#magnetic)             | [Ultraviolet Sensor](#ultraviolet)       |
-  | [Heart Rate Monitor LED Green Sensor](#hrm_green) | [Orientation Sensor](#orientation)       | [Uncalibrated Gyroscope](#uncal_gyro)    |
-  | [Heart Rate Monitor LED IR Sensor](#hrm_ir) | [Pedometer](#pedometer)                  | [Uncalibrated Magnetic Sensor](#uncal_magnetic) |
-  | [Heart Rate Monitor LED Red Sensor](#hrm_red) | [Pressure Sensor](#pressure)             |                                          |
+
+**Table: Supported sensor types**
+
+| Supported sensor types                   |                                          |                                          |
+| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+| [Accelerometer](#accelerometer)          | [Heart Rate Monitor Sensor](#hrm)        | [Proximity Sensor](#proximity)           |
+| [Geomagnetic Rotation Vector Sensor](#mag_rotation) | [Humidity Sensor](#humidity)             | [Rotation Vector Sensor](#rotation)      |
+| [Gravity Sensor](#gravity)               | [Light Sensor](#light)                   | [Significant Motion Sensor](#significant_motion) |
+| [Gyroscope](#gyro)                       | [Linear Acceleration Sensor](#lin_accelerometer) | [Sleep Monitor](#sleep_monitor)          |
+| [Gyroscope Rotation Vector Sensor](#gyro_rotation) | [Magnetic Sensor](#magnetic)             | [Temperature Sensor](#temperature)       |
+| [Heart Rate Monitor LED Green Sensor](#hrm_green) | [Orientation Sensor](#orientation)       | [Ultraviolet Sensor](#ultraviolet)       |
+| [Heart Rate Monitor LED IR Sensor](#hrm_ir) | [Pedometer](#pedometer)                  | [Uncalibrated Gyroscope](#uncal_gyro)    |
+| [Heart Rate Monitor LED Red Sensor](#hrm_red) | [Pressure Sensor](#pressure)             | [Uncalibrated Magnetic Sensor](#uncal_magnetic) |
+
+-   Sensor URI
+
+    A sensor URI is in the form `http://<vendor>/sensor/<category>/<sensor-type>/<sensor-name>`. The `/<sensor-name>` element of the URI can be omitted.
+
+    -   For platform-defined sensors, the vendor must be `tizen.org`.
+    - The category can be either `general` or `healthinfo`. The `healthinfo` category means that an application must have the `http://tizen.org/privilege/healthinfo` privilege to get the corresponding sensor handle.
+    - If the `/<sensor-name>` element is omitted, the URI denotes any sensors of the given type, and therefore can correspond to more than 1 sensor. Otherwise, each URI refers to a specific sensor in the device.
+
+        For example, the `http://tizen.org/sensor/general/light` URI denotes all the light sensors in the device, whereas `http://tizen.org/sensor/general/light/front` only refers to the light sensor named `front`.
 
 ## Prerequisites
 
@@ -304,10 +316,10 @@ The following table lists the measurement data that the geomagnetic rotation vec
 
 **Table: Measurement data detected by the geomagnetic rotation vector sensor**
 
-| Measurement  | Type                     | Range                         | Unit         |
-| ------------ | ------------------------ | ----------------------------- | ------------ |
-| Timestamp    | `unsigned long long`     | -                             | Microseconds |
-| Accuracy     | `sensor_data_accuracy_e` | -                             | int          |
+| Measurement  | Type                     | Range                              | Unit         |
+| ------------ | ------------------------ | ---------------------------------- | ------------ |
+| Timestamp    | `unsigned long long`     | -                                  | Microseconds |
+| Accuracy     | `sensor_data_accuracy_e` | -                                  | int          |
 | values[0]: X | `float`                  | Min. value = -1<br> Max. value = 1 | -            |
 | values[1]: Y | `float`                  | Min. value = -1<br> Max. value = 1 | -            |
 | values[2]: Z | `float`                  | Min. value = -1<br> Max. value = 1 | -            |
@@ -327,9 +339,9 @@ The following table lists the measurement data that the gravity sensor provides.
 
 **Table: Measurement data detected by the gravity sensor**
 
-| Measurement  | Type                 | Range                             | Unit         |
-| ------------ | -------------------- | --------------------------------- | ------------ |
-| Timestamp    | `unsigned long long` | -                                 | Microseconds |
+| Measurement  | Type                 | Range                                  | Unit         |
+| ------------ | -------------------- | -------------------------------------- | ------------ |
+| Timestamp    | `unsigned long long` | -                                      | Microseconds |
 | values[0]: X | `float`              | Min. value = -9.8<br> Max. value = 9.8 | m/s2         |
 | values[1]: Y | `float`              | Min. value = -9.8<br> Max. value = 9.8 | m/s2         |
 | values[2]: Z | `float`              | Min. value = -9.8<br> Max. value = 9.8 | m/s2         |
@@ -346,9 +358,9 @@ The following table lists the measurement data that the gyroscope provides.
 
 **Table: Measurement data detected by the gyroscope**
 
-| Measurement  | Type                 | Range                                 | Unit            |
-| ------------ | -------------------- | ------------------------------------- | --------------- |
-| Timestamp    | `unsigned long long` | -                                     | Microseconds    |
+| Measurement  | Type                 | Range                                    | Unit            |
+| ------------ | -------------------- | ---------------------------------------- | --------------- |
+| Timestamp    | `unsigned long long` | -                                        | Microseconds    |
 | values[0]: X | `float`              | Min. value = -573.0<br> Max. value = 573.0 | Degrees/s (°/s) |
 | values[1]: Y | `float`              | Min. value = -573.0<br> Max. value = 573.0 | Degrees/s (°/s) |
 | values[2]: Z | `float`              | Min. value = -573.0<br> Max. value = 573.0 | Degrees/s (°/s) |
@@ -361,10 +373,10 @@ The following table lists the measurement data that the gyroscope rotation vecto
 
 **Table: Measurement data detected by the gyroscope rotation vector sensor**
 
-| Measurement  | Type                     | Range                         | Unit         |
-| ------------ | ------------------------ | ----------------------------- | ------------ |
-| Timestamp    | `unsigned long long`     | -                             | Microseconds |
-| Accuracy     | `sensor_data_accuracy_e` | -                             | int          |
+| Measurement  | Type                     | Range                              | Unit         |
+| ------------ | ------------------------ | ---------------------------------- | ------------ |
+| Timestamp    | `unsigned long long`     | -                                  | Microseconds |
+| Accuracy     | `sensor_data_accuracy_e` | -                                  | int          |
 | values[0]: X | `float`                  | Min. value = -1<br> Max. value = 1 | -            |
 | values[1]: Y | `float`                  | Min. value = -1<br> Max. value = 1 | -            |
 | values[2]: Z | `float`                  | Min. value = -1<br> Max. value = 1 | -            |
@@ -378,9 +390,9 @@ The following table lists the measurement data that the HRM LED green sensor pro
 
 **Table: Measurement data detected by the HRM LED green sensor**
 
-| Measurement                      | Type                 | Range                              | Unit         |
-| -------------------------------- | -------------------- | ---------------------------------- | ------------ |
-| Timestamp                        | `unsigned long long` | -                                  | Microseconds |
+| Measurement                      | Type                 | Range                                   | Unit         |
+| -------------------------------- | -------------------- | --------------------------------------- | ------------ |
+| Timestamp                        | `unsigned long long` | -                                       | Microseconds |
 | values[0]: HRM green light value | `int`                | Min. value = 0<br> Max. value = 1081216 | -            |
 
 ## Heart Rate Monitor LED IR Sensor
@@ -391,9 +403,9 @@ The following table lists the measurement data that the HRM LED IR sensor provid
 
 **Table: Measurement data detected by the HRM LED IR sensor**
 
-| Measurement                   | Type                 | Range                              | Unit         |
-| ----------------------------- | -------------------- | ---------------------------------- | ------------ |
-| Timestamp                     | `unsigned long long` | -                                  | Microseconds |
+| Measurement                   | Type                 | Range                                   | Unit         |
+| ----------------------------- | -------------------- | --------------------------------------- | ------------ |
+| Timestamp                     | `unsigned long long` | -                                       | Microseconds |
 | values[0]: HRM IR light value | `int`                | Min. value = 0<br> Max. value = 1081216 | -            |
 
 ## Heart Rate Monitor LED Red Sensor
@@ -404,9 +416,9 @@ The following table lists the measurement data that the HRM LED red sensor provi
 
 **Table: Measurement data detected by the HRM LED red sensor**
 
-| Measurement                    | Type                 | Range                              | Unit         |
-| ------------------------------ | -------------------- | ---------------------------------- | ------------ |
-| Timestamp                      | `unsigned long long` | -                                  | Microseconds |
+| Measurement                    | Type                 | Range                                   | Unit         |
+| ------------------------------ | -------------------- | --------------------------------------- | ------------ |
+| Timestamp                      | `unsigned long long` | -                                       | Microseconds |
 | values[0]: HRM red light value | `int`                | Min. value = 0<br> Max. value = 1081216 | -            |
 
 ## Heart Rate Monitor Sensor
@@ -417,9 +429,9 @@ The following table lists the measurement data that the HRM sensor provides.
 
 **Table: Measurement data detected by the HRM sensor**
 
-| Measurement                 | Type                 | Range                          | Unit         |
-| --------------------------- | -------------------- | ------------------------------ | ------------ |
-| Timestamp                   | `unsigned long long` | -                              | Microseconds |
+| Measurement                 | Type                 | Range                               | Unit         |
+| --------------------------- | -------------------- | ----------------------------------- | ------------ |
+| Timestamp                   | `unsigned long long` | -                                   | Microseconds |
 | values[0]: Beats per minute | `int`                | Min. value = 0<br> Max. value = 240 | -            |
 
 ## Humidity Sensor
@@ -445,9 +457,9 @@ The following table lists the measurement data that the light sensor provides.
 
 **Table: Measurement data detected by the light sensor**
 
-| Measurement      | Type                 | Range                            | Unit         |
-| ---------------- | -------------------- | -------------------------------- | ------------ |
-| Timestamp        | `unsigned long long` | -                                | Microseconds |
+| Measurement      | Type                 | Range                                 | Unit         |
+| ---------------- | -------------------- | ------------------------------------- | ------------ |
+| Timestamp        | `unsigned long long` | -                                     | Microseconds |
 | values[0]: Level | `float`              | Min. value = 0<br> Max. value = 45875 | Lux          |
 
 ## Linear Acceleration Sensor
@@ -466,9 +478,9 @@ The following table lists the measurement data that the linear acceleration sens
 
 **Table: Measurement data detected by the linear acceleration sensor**
 
-| Measurement  | Type                 | Range                               | Unit         |
-| ------------ | -------------------- | ----------------------------------- | ------------ |
-| Timestamp    | `unsigned long long` | -                                   | Microseconds |
+| Measurement  | Type                 | Range                                    | Unit         |
+| ------------ | -------------------- | ---------------------------------------- | ------------ |
+| Timestamp    | `unsigned long long` | -                                        | Microseconds |
 | values[0]: X | `float`              | Min. value = -19.6<br> Max. value = 19.6 | m/s2         |
 | values[1]: Y | `float`              | Min. value = -19.6<br> Max. value = 19.6 | m/s2         |
 | values[2]: Z | `float`              | Min. value = -19.6<br> Max. value = 19.6 | m/s2         |
@@ -512,9 +524,9 @@ The following table lists the measurement data that the orientation sensor provi
 
 **Table: Measurement data detected by the orientation sensor**
 
-| Measurement        | Type                 | Range                             | Unit         |
-| ------------------ | -------------------- | --------------------------------- | ------------ |
-| Timestamp          | `unsigned long long` | -                                 | Microseconds |
+| Measurement        | Type                 | Range                                  | Unit         |
+| ------------------ | -------------------- | -------------------------------------- | ------------ |
+| Timestamp          | `unsigned long long` | -                                      | Microseconds |
 | values[0]: Azimuth | `float`              | Min. value = 0<br> Max. value = 360    | Degrees (°)  |
 | values[1]: Pitch   | `float`              | Min. value = -180<br> Max. value = 180 | Degrees (°)  |
 | values[2]: Roll    | `float`              | Min. value = -90<br> Max. value = 90   | Degrees (°)  |
@@ -537,17 +549,17 @@ The following table lists the measurement data that the pedometer provides.
 
 **Table: Measurement data detected by the pedometer**
 
-| Measurement                        | Range                          | Unit         |
-| ---------------------------------- | ------------------------------ | ------------ |
-| Timestamp                          | -                              | Microseconds |
+| Measurement                        | Range                               | Unit         |
+| ---------------------------------- | ----------------------------------- | ------------ |
+| Timestamp                          | -                                   | Microseconds |
 | values[0]: number of steps         | Min. value = 0<br> Max. value = 224 | Steps        |
 | values[1]: number of walking steps | Min. value = 0<br> Max. value = 224 | Steps        |
 | values[2]: number of running steps | Min. value = 0<br> Max. value = 224 | Steps        |
-| values[3]: moving distance         | Min. value = 0                 | Meters       |
-| values[4]: calories burned         | Min. value = 0                 | kcal         |
-| values[5]: last speed              | Min. value = 0                 | km/h         |
-| values[6]: last stepping frequency | Min. value = 0                 | Steps/second |
-| values[7]: last pedestrian state   | -                              | -            |
+| values[3]: moving distance         | Min. value = 0                      | Meters       |
+| values[4]: calories burned         | Min. value = 0                      | kcal         |
+| values[5]: last speed              | Min. value = 0                      | km/h         |
+| values[6]: last stepping frequency | Min. value = 0                      | Steps/second |
+| values[7]: last pedestrian state   | -                                   | -            |
 
 The pedestrian state is `SENSOR_PEDOMETER_STATE_UNKNOWN`, `SENSOR_PEDOMETER_STATE_STOP`, `SENSOR_PEDOMETER_STATE_WALK`, or `SENSOR_PEDOMETER_STATE_RUN`.
 
@@ -559,9 +571,9 @@ The following table lists the measurement data that the pressure sensor provides
 
 **Table: Measurement data detected by the pressure sensor**
 
-| Measurement         | Type                 | Range                             | Unit               |
-| ------------------- | -------------------- | --------------------------------- | ------------------ |
-| Timestamp           | `unsigned long long` | -                                 | Microseconds       |
+| Measurement         | Type                 | Range                                  | Unit               |
+| ------------------- | -------------------- | -------------------------------------- | ------------------ |
+| Timestamp           | `unsigned long long` | -                                      | Microseconds       |
 | values[0]: pressure | `float`              | Min. value = 260<br> Max. value = 1260 | hPa (hectopascals) |
 
 ## Proximity Sensor
@@ -587,14 +599,27 @@ The following table lists the measurement data that the rotation vector sensor p
 
 **Table: Measurement data detected by the rotation vector**
 
-| Measurement  | Type                     | Range                         | Unit         |
-| ------------ | ------------------------ | ----------------------------- | ------------ |
-| Timestamp    | `unsigned long long`     | -                             | Microseconds |
-| Accuracy     | `sensor_data_accuracy_e` | -                             | int          |
+| Measurement  | Type                     | Range                              | Unit         |
+| ------------ | ------------------------ | ---------------------------------- | ------------ |
+| Timestamp    | `unsigned long long`     | -                                  | Microseconds |
+| Accuracy     | `sensor_data_accuracy_e` | -                                  | int          |
 | values[0]: X | `float`                  | Min. value = -1<br> Max. value = 1 | -            |
 | values[1]: Y | `float`                  | Min. value = -1<br> Max. value = 1 | -            |
 | values[2]: Z | `float`                  | Min. value = -1<br> Max. value = 1 | -            |
 | values[3]: W | `float`                  | Min. value = -1<br> Max. value = 1 | -            |
+
+## Significant Motion Sensor
+
+The significant motion sensor detects when there is significant movement causing changes in the user location, for example, when the user is walking, biking, or in a moving vehicle.
+
+The following table lists the measurement data that the significant motion sensor provides.
+
+**Table: Measurement data detected by the significant motion sensor**
+
+| Measurement                            | Type                 | Range | Unit         |
+| -------------------------------------- | -------------------- | ----- | ------------ |
+| Timestamp                              | `unsigned long long` | -     | Microseconds |
+| values[0]: significant motion detected | `float`              | -     | -            |
 
 ## Sleep Monitor
 
@@ -634,9 +659,9 @@ The following table lists the measurement data that the ultraviolet sensor provi
 
 **Table: Measurement data detected by the ultraviolet sensor**
 
-| Measurement         | Type                 | Range                         | Unit         |
-| ------------------- | -------------------- | ----------------------------- | ------------ |
-| Timestamp           | `unsigned long long` | -                             | Microseconds |
+| Measurement         | Type                 | Range                              | Unit         |
+| ------------------- | -------------------- | ---------------------------------- | ------------ |
+| Timestamp           | `unsigned long long` | -                                  | Microseconds |
 | values[0]: UV index | `float`              | Min. value = 0<br> Max. value = 15 | UV index     |
 
 ## Uncalibrated Gyroscope
@@ -647,9 +672,9 @@ The following table lists the measurement data that the uncalibrated gyroscope p
 
 **Table: Measurement data detected by the uncalibrated gyroscope**
 
-| Measurement                        | Type                 | Range                                 | Unit            |
-| ---------------------------------- | -------------------- | ------------------------------------- | --------------- |
-| Timestamp                          | `unsigned long long` | -                                     | Microseconds    |
+| Measurement                        | Type                 | Range                                    | Unit            |
+| ---------------------------------- | -------------------- | ---------------------------------------- | --------------- |
+| Timestamp                          | `unsigned long long` | -                                        | Microseconds    |
 | values[0]: X                       | `float`              | Min. value = -573.0<br> Max. value = 573.0 | Degrees/s (°/s) |
 | values[1]: Y                       | `float`              | Min. value = -573.0<br> Max. value = 573.0 | Degrees/s (°/s) |
 | values[2]: Z                       | `float`              | Min. value = -573.0<br> Max. value = 573.0 | Degrees/s (°/s) |

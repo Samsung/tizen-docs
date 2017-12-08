@@ -6,9 +6,9 @@
 - Tizen 2.3.1 and Higher for Wearable
 - Tizen 3.0 and Higher for TV
 
-Tizen enables you to access and modify EXIF information in a JPEG file (with the common `.jpg` extension).
+You can access and modify EXIF information in a JPEG file (with the common `.jpg` extension).
 
-The Exif API is mandatory for both Tizen mobile and wearable profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The Exif API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The main features of the Exif API include:
 
@@ -32,7 +32,7 @@ The main features of the Exif API include:
 
 Learning how to retrieve EXIF data from JPEG files is a useful content management skill:
 
-1. To retrieve the EXIF data from specific file, you need the URI of an image file in an absolute URI format (for example `file:///opt/usr/media/Images/tizen.jpg`). The `tizen.filesystem.resolve()` and `toURI()` methods can be used to convert a virtual path to a URI.
+1. To retrieve the EXIF data from an image file, you need the absolute URI of the file (for example `file:///opt/usr/media/Images/tizen.jpg`). The `tizen.filesystem.resolve()` and `toURI()` methods can be used to convert a virtual path to a URI.
 
    ```
    var fileURI = '';
@@ -64,8 +64,8 @@ Learning how to retrieve EXIF data from JPEG files is a useful content managemen
 
    With a valid `exifInfo` object, you can access various `ExifInformation` attributes (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/exif.html#ExifInformation), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/exif.html#ExifInformation), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/exif.html#ExifInformation) applications), such as width, height, orientation, and flash.
 
-3. To retrieve an EXIF thumbnail of the image:
-
+3. To retrieve the EXIF thumbnail from the image:
+    
    1. Resolve the input JPEG file:
 
       ```

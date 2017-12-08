@@ -19,7 +19,8 @@ The main features of the getUserMedia API include:
 
   You can [capture media content](./w3c/media/getusermedia-w.md#capture) and transform it to various formats.
 
-​	**Note**	Tizen supports a WebKit-based `GetUserMedia()` method, so always add the `webkit` prefix to the method name.
+> **Note**
+> Tizen supports a WebKit-based `GetUserMedia()` method, so always add the `webkit` prefix to the method name.
 
 ## Accessing a Video Stream
 

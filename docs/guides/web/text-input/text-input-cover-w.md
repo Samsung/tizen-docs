@@ -6,9 +6,9 @@
 - Tizen 2.3.1 and Higher for Wearable
 - Tizen 4.0 and Higher for TV
 
-The text input features introduce how you can provide customized keyboards, and define keyboard commands to trigger specific actions.
+The text input and voice features introduce how you can provide customized keyboards and voice commands. You can also define keyboard commands to trigger specific actions and voice commands to allow the user to control the Web application with their voice.
 
-You can use the following text input features in your Web applications:
+You can use the following text input and voice features in your Web applications:
 
 - [IME Application](./text-input/input-method-w.md) **in wearable applications only**
 

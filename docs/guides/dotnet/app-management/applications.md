@@ -1,6 +1,4 @@
-Applications
-============
-
+# Applications
 ## Dependencies
 
 - Tizen 4.0 and Higher
@@ -14,9 +12,8 @@ to reduce usage when it finds out that it has its display window covered
 over by another application window. State change events are delivered to
 make it possible to detect these situations.
 
-
-Tizen .NET Application Models {#app_models}
------------------------------
+<a name="app_models"></a>
+## Tizen .NET Application Models
 
 Tizen provides various application models to allow you to create
 applications targeted for specific tasks:
@@ -61,9 +58,8 @@ applications targeted for specific tasks:
         widget can have various features to increase the usability of
         your application.
 
-
-Tizen .NET Application Life-Cycle {#life-cycle}
----------------------------------
+<a name="life-cycle"></a>
+## Tizen .NET Application Life-Cycle
 
 The Tizen .NET application model handles application life-cycle and
 system events. Tizen .NET application life-cycle is handled by the
@@ -76,9 +72,8 @@ life-cycle, which is handled by the application package manager. Each
 application in the package follows its own application life-cycle. Each
 application in an application package can be identified by its own ID.
 
-
-Tizen .NET Application State Change Methods {#state_change}
--------------------------------------------
+<a name="state_change"></a>
+## Tizen .NET Application State Change Methods
 
 A Tizen .NET application can be in one of several different states.
 Typically, the application is launched by the user from the Launcher, or

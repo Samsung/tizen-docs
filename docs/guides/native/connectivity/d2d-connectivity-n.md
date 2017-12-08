@@ -7,8 +7,8 @@ As the number of Tizen devices is increasing, platform features that allow conne
 
 The D2D connectivity framework allows applications and devices in the network to discover, connect, and communicate to each other through convergence services. The app communication service opens logical channels for exchanging messages across devices, while the remote app control service starts and controls an application on a remote device.
 
-**Note**
-The D2D connectivity framework supports only Wi-Fi networks. More connectivity types, such as Bluetooth, Bluetooth Low Energy, and Wi-Fi Direct™, are going to be added in future versions.Only 2 services, app communication and remote app control, are currently supported. More services are going to be introduced in the future versions of Tizen. All convergence services are predefined in the platform, which means that you cannot add new ones on your own.
+> **Note**  
+> The D2D connectivity framework supports only Wi-Fi networks. More connectivity types, such as Bluetooth, Bluetooth Low Energy, and Wi-Fi Direct™, are going to be added in future versions.Only 2 services, app communication and remote app control, are currently supported. More services are going to be introduced in the future versions of Tizen. All convergence services are predefined in the platform, which means that you cannot add new ones on your own.
 
 The main features of the Convergence API include:
 
@@ -42,7 +42,8 @@ The following figure illustrates the architecture.
 
 ![App communication service](./media/d2d_app_communication.png)
 
-**Note**Currently, the remote server can only be implemented on a TV device based on Tizen 3.0, which means that you can remotely launch applications on TV devices only. You can develop a mobile or wearable client for the app communication service, if a server exists.
+> **Note**  
+> Currently, the remote server can only be implemented on a TV device based on Tizen 3.0, which means that you can remotely launch applications on TV devices only. You can develop a mobile or wearable client for the app communication service, if a server exists.
 
 A typical app communication service work flow starts with the discovery step, in which the mobile or wearable device discovers the service provided by the TV. When the service is found, the mobile or wearable device launches an application in the TV remotely and communicates with it. The app-to-app communication is bidirectional, so both local and remote applications usually play the roles of sender and listener.
 
@@ -151,8 +152,8 @@ To discover devices:
 
      Each service has either the `CONV_SERVICE_APP_TO_APP_COMMUNICATION` or `CONV_SERVICE_REMOTE_APP_CONTROL` type and auxiliary data. The service type constants are defined in the `conv_service_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__D2D__CONVERGENCE__MANAGER__SERVICE__MODULE.html#gaea7544e24c248a658abc06d7015719a6) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__D2D__CONVERGENCE__MANAGER__SERVICE__MODULE.html#gaea7544e24c248a658abc06d7015719a6)applications).
 
-   **Note**
-   The device ID and device type are defined in the platform, and cannot be changed.The `jservice` data is used by the framework internally for the connection and execution of the service. You as a developer do not need to know these details.
+   > **Note**  
+   > The device ID and device type are defined in the platform, and cannot be changed.The `jservice` data is used by the framework internally for the connection and execution of the service. You as a developer do not need to know these details.
 
 2. Start the discovery by calling the `conv_discovery_start()` function. The discovered device handles are retrieved in the `conv_discovery_cb()` callback.In the following example, the `conv_discovery_start()` function runs a 30 seconds long discovery procedure. Each time a nearby device is discovered, the framework invokes the `discovery_cb()` callback with the device handle and the `CONV_DISCOVERY_RESULT_SUCCESS` result code. At the end of discovery procedure, the callback is invoked with the `CONV_DISCOVERY_RESULT_FINISHED` result code and an empty device handle.The result codes are defined in the `conv_discovery_result_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__D2D__CONVERGENCE__MANAGER__FRAMEWORK.html#gaac8da8a6d95bf9c77039c4d9360b31e3) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__D2D__CONVERGENCE__MANAGER__FRAMEWORK.html#gaac8da8a6d95bf9c77039c4d9360b31e3) applications).The device ID, name, and type can be read from the device handle by passing the `CONV_DEVICE_ID`, `CONV_DEVICE_NAME`, and `CONV_DEVICE_TYPE` keys to the `conv_device_get_property_string()` function. To use the discovered device handle outside the callback, it must be cloned with the `conv_device_clone()` function.
     ```
@@ -247,8 +248,8 @@ if (state == CONV_SERVICE_CONNECTION_STATE_NOT_CONNECTED)
 
 You can check the connection state with the `conv_service_get_connection()` function, which returns one of values defined in the `conv_service_connection_state_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__D2D__CONVERGENCE__MANAGER__SERVICE__MODULE.html#ga5da79e1a7ca434991e5ff6d28c0b0e13) and [wearable](../../../../org.tizen.native.mobile.apireference/group__CAPI__D2D__CONVERGENCE__MANAGER__SERVICE__MODULE.html#ga5da79e1a7ca434991e5ff6d28c0b0e13) applications). If the service is not connected yet, the connection state is `CONV_SERVICE_CONNECTION_STATE_NOT_CONNECTED` and the service must be connected using the `conv_service_connect()` function.
 
-**Note**
-Repeated attempts to connect to an already connected service result in the invalid state error. Attempts to start, publish, read, or stop a disconnected service also result in the invalid state error.
+> **Note**  
+> Repeated attempts to connect to an already connected service result in the invalid state error. Attempts to start, publish, read, or stop a disconnected service also result in the invalid state error.
 
 Technically, in case of the Wi-Fi network, when the framework runs the discovery procedure, all devices are already connected to the Access Point (AP), which means that the `conv_service_get_connection_state()` function always returns the `Connected` state and the `conv_service_connect()` function can be omitted. It is especially applied for the Tizen 3.0 convergence framework, which supports only Wi-Fi networks. In future versions with support for Bluetooth, Bluetooth Low Energy, or Wi-Fi Direct™, the connection procedure is mandatory. For the sake of future extensibility and compatibility, use the `conv_service_connect()` function even in Tizen 3.0.
 
@@ -257,8 +258,8 @@ Technically, in case of the Wi-Fi network, when the framework runs the discovery
 To initialize the app communication service:
 
 1. Register the listener callback with the `conv_service_set_listener_cb()` function. This function must be called only once, regardless of the number of used service channels. In the runtime, all payloads from all channels are delivered there.
-**Note**
-The listener callback must be registered before the service starts, because the `conv_service_start()` function result can only be received in the listener callback.
+> **Note**  
+> The listener callback must be registered before the service starts, because the `conv_service_start()` function result can only be received in the listener callback.
   - In the callback, the first parameter is the service handle, and it corresponds to the service, used in the `conv_set_listener_cb()` callback. The second parameter is the channel handle that indicates the particular channel through which the payload is delivered. The third parameter is the error parameter that indicates if the request is processed successfully on the remote device.The main role of the listener callback is to parse the payload:
     ```
     /* Client side callback */
@@ -499,8 +500,8 @@ To start the remote app control service, publish a message, and stop the service
 
 To send payloads, you can use various functions: use the `conv_service_start()` function to start a service, the `conv_service_read()` function to read information from the remote device, the `conv_service publish()` function to send data or messages, and the `conv_service_stop()` function to stop the service. The app communication service recognizes several predefined payload fields, including the `result_type`, which are used to specify the payload type or the quick response of some functions. The service implicitly adds these fields to the payload.
 
-**Note**
-The `conv_service_read()` function is not used in the remote app control service.
+> **Note**  
+> The `conv_service_read()` function is not used in the remote app control service.
 
 When the `conv_service_start()`, `conv_service_publish()`, or `conv_service_stop()` function is called, a quick notice for success or failure with a specific `result_type` and extra information returns back to the function caller. For example, in case of the `conv_service_read()` function, the response includes the `result_type` of `onRead` and a list of connected clients. For the general payload sent from the other device with the `conv_service_publish()` and received in the client device listener, the `result_type` is `onMessage` and the message or data is stored in the payload argument. The detailed information for the predefined fields and payload formats is summarized in the following tables.
 

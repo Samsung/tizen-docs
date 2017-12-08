@@ -301,8 +301,8 @@ Getting SIM information involves:
 - [Receiving change notifications for the SIM card state](#sim_noti)
 - [Getting SIM card details](#sim_info)
 
-**Note**
-Before retrieving information from the SIM card, you must retrieve the state of the SIM card. You can get SIM-related information only if the SIM state is `TELEPHONY_SIM_STATE_AVAILABLE`.
+> **Note**  
+> Before retrieving information from the SIM card, you must retrieve the state of the SIM card. You can get SIM-related information only if the SIM state is `TELEPHONY_SIM_STATE_AVAILABLE`.
 
 ### Getting the SIM Card State
 
@@ -384,8 +384,8 @@ Getting network information involves:
 - [Receiving change notifications for the network service state](#network_noti)
 - [Getting network details](#network_info)
 
-**Note**
-Before retrieving information about the current cellular network and telephony service, you must retrieve the network service state. You can get network-related information only if the network state is `TELEPHONY_NETWORK_SERVICE_STATE_IN_SERVICE`.
+> **Note**  
+> Before retrieving information about the current cellular network and telephony service, you must retrieve the network service state. You can get network-related information only if the network state is `TELEPHONY_NETWORK_SERVICE_STATE_IN_SERVICE`.
 
 ### Getting the Network Service State
 

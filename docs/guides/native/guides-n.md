@@ -5,8 +5,8 @@
 
 Tizen native guides introduce various features for native applications. The features are supported in the native API, and you can use them in creating Tizen applications.
 
-**Note**
-If you have an application based on Tizen 2.3, use the [Migration Guide](migration-guide-n.md) to make it conform to Tizen 2.4 Application Framework APIs.
+> **Note**  
+> If you have an application based on Tizen 2.3, use the [Migration Guide](migration-guide-n.md) to make it conform to Tizen 2.4 Application Framework APIs.
 
 Select the feature you are interested in and see what Tizen offers for your application:
 

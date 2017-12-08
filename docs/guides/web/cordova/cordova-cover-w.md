@@ -8,7 +8,7 @@
 
 The Cordova features include common functionalities useful in creating Tizen Web applications.
 
-The main Cordova features are:
+You can use the following Cordova features in your Web applications:
 
 - [Common Cordova](./cordova/core-w.md)	You can handle common Cordova functionalities, such as interfaces for success and error handlers.
 - [Console Logging](./cordova/console-w.md)	You can write log information to the system console for debugging purposes, including timing operations and object dump.

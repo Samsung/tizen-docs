@@ -37,9 +37,8 @@ If the second parameter is `EINA_TRUE`, the rotary selector can receive rotary e
 
 ## Adding Rotary Selector Items
 
-**Note**
-
-A maximum of 11 items can be displayed on one page of the rotary selector. Any excess items are arranged on the next page.
+> **Note**  
+> A maximum of 11 items can be displayed on one page of the rotary selector. Any excess items are arranged on the next page.
 
 To add an item:
 
@@ -138,9 +137,8 @@ To receive notifications about the rotary selector events, listen for the follow
 - `item,selected`: The item is selected.
 - `item,clicked`: The item is clicked.
 
-**Note**
-
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 In both these signals, the `event_info` callback parameter is `NULL`.
 

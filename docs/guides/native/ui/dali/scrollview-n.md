@@ -89,6 +89,5 @@ The `ScrollView` behavior depends on a combination of the ruler, ruler domain, a
 | Enabled  | Enabled  | No wrap | Movement limited to domain minimum and maximum |
 | Enabled  | Enabled  | Wrap    | Movement limited to domain minimum and maximum |
 
-**Note**
-
-Actors within a `ScrollView` are controlled by constraints. If you apply constraints to these actors externally, undefined behavior can occur. Since applying additional constraints can conflict with the `ScrollView` constraints, place the actors within container actors. The container actors are affected by the constraints.
+> **Note**  
+> Actors within a `ScrollView` are controlled by constraints. If you apply constraints to these actors externally, undefined behavior can occur. Since applying additional constraints can conflict with the `ScrollView` constraints, place the actors within container actors. The container actors are affected by the constraints.

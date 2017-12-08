@@ -30,8 +30,8 @@ The following figure illustrates the general recorder state changes.
 
 ![Recorder states](./media/using_recorder_states.png)
 
-**Note**
-While running applications on the emulator, audio-video synchronization errors can occur due to the computer performance.
+> **Note**  
+> While running applications on the emulator, audio-video synchronization errors can occur due to the computer performance.
 
 ## Prerequisites
 
@@ -106,8 +106,8 @@ To initialize the audio recorder for use:
 
      The possible audio codec values are defined in the `recorder_audio_codec_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html#ga431bd585d929f13a71ecefd58ed17d46) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html#ga431bd585d929f13a71ecefd58ed17d46) applications).
 
-     **Note**
-     In the emulator, set the sample rate to 44100 and use a stereo channel with the AAC codec, and set the sample rate below 8000 and use a mono channel with the AMR codec.
+     > **Note**  
+     > In the emulator, set the sample rate to 44100 and use a stereo channel with the AAC codec, and set the sample rate below 8000 and use a mono channel with the AMR codec.
 
    - Based on the audio codec, set the correct file format using the `recorder_set_file_format()` function. For example, if you set the codec to AAC, set the file format to 3GP.
 

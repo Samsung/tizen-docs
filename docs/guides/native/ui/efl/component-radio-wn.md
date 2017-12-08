@@ -4,7 +4,7 @@
 
 - Tizen 2.3.1 and Higher for Wearable
 
-The radio UI component displays 1 or more options and allows users to select 1 of them. For more information, see the [Radio](../../../../../org.tizen.native.wearable.apireference/group__Radio.html) API.
+The radio UI component displays 1 or more options and allows users to select 1 of them. For more information, see the [Radio](../../../../../org.tizen.native.wearable.apireference/group__Elm__Radio.html) API.
 
 This feature is supported in wearable applications only.
 
@@ -124,10 +124,8 @@ You can register callback functions connected to the following signals for a rad
 | --------- | ----------------------------- | ------------ |
 | `changed` | The radio button is selected. | `NULL`       |
 
-**Note**
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

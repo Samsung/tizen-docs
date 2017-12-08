@@ -5,7 +5,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
 
-Tizen enables you to access secure elements in a device. You can access various secure elements, such as UICC and SIM cards, embedded secure elements, and secure SD cards.
+You can access secure elements in a device. You can access various secure elements, such as UICC and SIM cards, embedded secure elements, and secure SD cards.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -74,7 +74,7 @@ To use secure elements in your application, you must learn to retrieve them and 
       var seListener = tizen.seService.registerSEListener(setSEChange);
       ```
 
-3. To stop listening to the reader changes, use the `unregisterSEListener()` method:
+3. To stop listening for the reader changes, use the `unregisterSEListener()` method:
 
    ```
    tizen.seService.unregisterSEListener(seListener);

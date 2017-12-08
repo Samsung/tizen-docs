@@ -92,8 +92,8 @@ To manage the record using the handle, you can use the URI, views, or basic type
   - `_calendar_instance_utime` + `_calendar_book` = `_calendar_instance_utime_calendar_book`
   - `_calendar_event` + `_calendar_book` + `_calendar_attendee` = `_calendar_event_calendar_book_attendee`
 
-  **Note**
-  The `_calendar_instance_utime` and `_calendar_instance_localtime` views are not available as editable views, but can be used in combination with other views in read-only views.
+  > **Note**  
+  > The `_calendar_instance_utime` and `_calendar_instance_localtime` views are not available as editable views, but can be used in combination with other views in read-only views.
 
   The record types that have `*_id` as their property hold identifiers of other records. For example, the attendee and alarm views hold the ID of their corresponding events or todos in the `event_id` or `todo_id` property (as children of the corresponding event or todo records).
 
@@ -586,8 +586,8 @@ To create a new event:
        dlog_print(DLOG_ERROR, LOG_TAG, "calendar_record_create failed: %x\n", error_code);
    ```
 
-   **Note**
-   Records created with the `calendar_record_create()` function are memory objects, with `calendar_record_h` type variables as their handles. If you changes these objects, the changes are not reflected in the calendar database until you explicitly insert or update the objects to the database using the `calendar_db_insert_record()` or `calendar_db_update_record()` function.
+   > **Note**  
+   > Records created with the `calendar_record_create()` function are memory objects, with `calendar_record_h` type variables as their handles. If you changes these objects, the changes are not reflected in the calendar database until you explicitly insert or update the objects to the database using the `calendar_db_insert_record()` or `calendar_db_update_record()` function.
 
 2. Set the event properties:
 
@@ -717,8 +717,8 @@ To create a new event:
 
      The `calendar_alarm_time_unit_type_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SOCIAL__CALENDAR__SVC__RECORD__MODULE.html#ga631b1b606158479e3a14a921b006b4fe) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SOCIAL__CALENDAR__SVC__RECORD__MODULE.html#ga631b1b606158479e3a14a921b006b4fe) applications) defines the available alarm tick units.
 
-     **Note**
-     If you use `CALENDAR_ALARM_TIME_UNIT_SPECIFIC` as a tick unit, specify the alarm time in Unix time.
+     > **Note**  
+     > If you use `CALENDAR_ALARM_TIME_UNIT_SPECIFIC` as a tick unit, specify the alarm time in Unix time.
 
    - Add an attendee.
 
@@ -901,8 +901,8 @@ To retrieve multiple events:
 
       Move forward and backward within the event list using the `calendar_list_next()` and `calendar_list_prev()` functions, and retrieve the current event using the `calendar_list_get_current_record_p()` function.
 
-      **Note**
-      Some functions have the `_p` postfix. The postfix means that the returned value must not be freed by the application, as it is a pointer to the data in an existing record.
+      > **Note**  
+      > Some functions have the `_p` postfix. The postfix means that the returned value must not be freed by the application, as it is a pointer to the data in an existing record.
 
       The following example iterates through the list and retrieves the summary of each event:
 
@@ -1243,7 +1243,8 @@ To create a new todo:
        dlog_print(DLOG_ERROR, LOG_TAG, "calendar_record_create failed: %x\n", error_code);
    ```
 
-   **Note**Records created with the `calendar_record_create()` function are memory objects, with `calendar_record_h` type variables as their handles. If you changes these objects, the changes are not reflected in the calendar database until you explicitly insert or update the objects to the database using the `calendar_db_insert_record()` or `calendar_db_update_record()` function.
+   > **Note**  
+   > Records created with the `calendar_record_create()` function are memory objects, with `calendar_record_h` type variables as their handles. If you changes these objects, the changes are not reflected in the calendar database until you explicitly insert or update the objects to the database using the `calendar_db_insert_record()` or `calendar_db_update_record()` function.
 
 2. Set the todo properties:
 
@@ -1437,7 +1438,8 @@ To retrieve multiple todos:
 
       Move forward and backward within the todo list using the `calendar_list_next()` and `calendar_list_prev()` functions, and retrieve the current todo using the `calendar_list_get_current_record_p()` function.
 
-      **Note**Some functions have the `_p` postfix. The postfix means that the returned value must not be freed by the application, as it is a pointer to the data in an existing record.
+      > **Note**  
+	  > Some functions have the `_p` postfix. The postfix means that the returned value must not be freed by the application, as it is a pointer to the data in an existing record.
 
       The following example iterates through the list and retrieves the summary of each todo:
 

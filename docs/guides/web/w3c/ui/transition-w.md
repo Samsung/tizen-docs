@@ -62,7 +62,8 @@ The following code snippet demonstrates how to use transition properties. For a 
 </body>
 ```
 
-​	**Note**	The `hover` pseudo class in Tizen maintains a `mouseover` state when an element is tapped, and becomes a `mouseout` state when another element is tapped.
+> **Note**
+> The `hover` pseudo class in Tizen maintains a `mouseover` state when an element is tapped, and becomes a `mouseout` state when another element is tapped.
 
 The `transition` property allows you to define all the transition properties in a shorthand mode in the order of `transition-property` | `transition-duration` | `transition-timing-function` | `transition-delay`. If you omit a property value, a default value is used instead.
 
@@ -74,11 +75,11 @@ The `transition` property allows you to define all the transition properties in 
 </style>
 ```
 
-The `transition` property connects movement more naturally than the more generally used the pseudo classes, such as `:hover` or `:active`. The smooth effect can be achieved more conveniently and easily with the `transition` property than with JavaScript or Flash, and the `transition` property also supports the browser side to provide excellent performance.
+The `transition` property connects movement more naturally than the more generally used pseudo classes, such as `:hover` or `:active`. The smooth effect can be achieved more conveniently and easily with the `transition` property than with JavaScript or Flash, and the `transition` property also supports the browser side to provide excellent performance.
 
 ## Modifying Element Properties
 
-To enhance the user experience of your application, you must learn to use transitions to change element property values naturally. This example uses a partial section of the `http://tizen.org` Web site, where the current "UPCOMING EVENTS" area only has the `text-decoration: underline` property in a `mouseover` state (the text gets underlined when the mouse hovers over it). To improve the effects, the example adds various `transitions` properties in this area.
+You can use transitions to change element property values naturally. The following example uses a partial section of the `http://tizen.org` Web site, where the current "UPCOMING EVENTS" area only has the `text-decoration: underline` property in a `mouseover` state (the text gets underlined when the mouse hovers over it). To improve the effects, the example adds various `transitions` properties in this area.
 
 **Figure: Tizen site section to be transitioned**
 
@@ -190,7 +191,7 @@ In hardware acceleration, GPU is used to perform a function faster than is possi
 
 To improve the rendering performance, separate moving elements to independent layers as much as possible. You can use CSS transition with the `-webkit-transition` CSS attribute, or 3D transform with the `-webkit-transform` attribute. For the best performance, set the `-webkit-transform` attribute to the 3D type.
 
-In all the following examples, a blue box moves from top left to bottom right for a second.
+In the following examples, a blue box moves from the top left diagonally downward for 1 second.
 
 **Figure: Blue box**
 
@@ -198,7 +199,7 @@ In all the following examples, a blue box moves from top left to bottom right fo
 
 - Use CPU painting: 
 
-  JavaScript performs CPU painting for a moving element for each frame at 16 ms interval using the `setTimeout()` method over the changing top-left coordinate. This approach does not use hardware acceleration, but only running on the CPU.
+  JavaScript performs CPU painting for a moving element for each frame at 16 ms interval using the `setTimeout()` method over the changing top-left coordinate. This approach does not use hardware acceleration, only the CPU.
 
   1. Construct the blue box and set its position on the screen:
 

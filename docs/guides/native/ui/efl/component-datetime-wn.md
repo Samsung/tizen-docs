@@ -8,7 +8,7 @@ This feature is supported in wearable applications only.
 
 The datetime component displays date and time values.
 
-For more information, see the [Datetime](../../../../../org.tizen.native.wearable.apireference/group__Datetime.html) API.
+For more information, see the [Datetime](../../../../../org.tizen.native.wearable.apireference/group__Elm__Datetime.html) API.
 
 **Figure: Datetime component**
 
@@ -49,7 +49,7 @@ elm_object_style_set(datetime, "timepicker_layout");
 elm_datetime_format_set(datetime, "%d/%b/%Y%I:%M");
 ```
 
-For a complete list of available specifiers, see the [Datetime](../../../../../org.tizen.native.wearable.apireference/group__Datetime.html) API.
+For a complete list of available specifiers, see the [Datetime](../../../../../org.tizen.native.wearable.apireference/group__Elm__Datetime.html) API.
 
 ## Using the Datetime Callbacks
 
@@ -58,11 +58,9 @@ To receive notifications about the datetime events, listen for the following sig
 - `changed`: The datetime field values are changed.
 - `language,changed`: The system locale changes.
 
-**Note**
-
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-
-In both these signals, the `event_info` callback parameter is `NULL`.
+> **Note**
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> In both these signals, the `event_info` callback parameter is `NULL`.
 
 To register and define a callback for the `changed` signal:
 
@@ -80,6 +78,5 @@ changed_cb(void *data, Evas_Object *obj, void *event_info)
 }
 ```
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
