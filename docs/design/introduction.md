@@ -3,7 +3,6 @@
 The guidelines we provide will show you how to design useful and aesthetically pleasing Tizen apps that users will enjoy.
 
 Let’s begin by sharing our vision for Tizen app design and the visual language we use. These concepts will help you provide users with an enjoyable Tizen experience.
-
  
 
 ##### Visions

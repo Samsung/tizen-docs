@@ -6,7 +6,7 @@ Tizen provides various color palettes to help you select colors to indicate diff
 
 This section provides information about the new default theme color since the Tizen SDK 2.4 and explains the system colors (functional colors) used to indicate different functions.
 
-![The new Tizen themes use gradients as the background.](./media/2.4_a-200x198.png)<br>
+![The new Tizen themes use gradients as the background.](./media/2.4_a-200x198.png)  
 The new Tizen themes use gradients as the background.
 
 
@@ -31,7 +31,6 @@ If you choose to design your own theme gradient, be careful about the gradient d
 
 
 
- 
 
 ## Default System Colors
 
@@ -84,10 +83,9 @@ Text with vivid colors, such as yellow, blue, and green may cause confusion. The
 
 
 
-![\#](media/2.4.2_c-360x445.png) Do
+![Do](media/2.4.2_c-360x445.png) Do
 
-
-[![\#](media/2.4.2_d-360x445.png)Don't
+![Don't](media/2.4.2_d-360x445.png) Don't
  
 
 Color Structure

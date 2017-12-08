@@ -1,4 +1,5 @@
-﻿# Typography
+
+# Typography
 
 <a name="breeze-sans"></a>
 ## Breeze Sans
@@ -12,9 +13,8 @@ Breeze Sans typeface comes in light, medium, regular, and condensed variants, an
 
 
 
-![Breeze Sans](media/16.png)![Breeze Sans](media/16-2-15.png)  
+![Breeze Sans](media/16.png) ![Breeze Sans](media/16-2-15.png)  
 *Breeze Sans*
-
 
 
  
@@ -32,11 +32,10 @@ These are the guidelines for choosing and applying the typefaces when you design
 
 Use light text on dark backgrounds and dark text on light backgrounds. If you choose a light color for the background, use bold and strong colored text in the foreground. Do not adjust the text opacity. It will decrease the contrast between the background and the text. On the other hand, use a dark background for light-colored text. Always test the background and text colors to make sure the combination results in good contrast before making a final decision.
 
-Refer to [Colors](../../introduction/styles/colors.md) for detailed information about background and text colors.
+Refer to [Colors](colors.md) for detailed information about background and text colors.
 
 
-
-![Combination of text and background colors for high contrast](media/2.1_set_alarm.png)![Combination of text and background colors for high contrast](media/1.1_findmydevice.png)  
+![Combination of text and background colors for high contrast](media/2.1_set_alarm.png) ![Combination of text and background colors for high contrast](media/1.1_findmydevice.png)  
 *Combination of text and background colors for high contrast*
 
 
@@ -47,7 +46,7 @@ Refer to [Colors](../../introduction/styles/colors.md) for detailed information 
 Use text colors that stand out for important actions, and apply them consistently throughout the entire system. This will help users intuitively understand what the colors stand for.
 
 
-![Blue action text on Wearable circular type](media/7.5_popup_bottom_button_2_.png)![Blue action text on Wearable circular type](media/blueactiontext.png)  
+![Blue action text on Wearable circular type](media/7.5_popup_bottom_button_2_.png) ![Blue action text on Wearable circular type](media/blueactiontext.png)  
 *Blue action text on Wearable circular type*
 
 
@@ -62,14 +61,9 @@ For example, use bold type for the title and regular type for the body text. Thi
 
 
 
-![\#](media/2.3.2_c.png)<br>
-*Do*
+![Do](media/2.3.2_c.png) *Do*
 
-
-
-
-![\#](media/2.3.2_d.png)<br>
-*Don't*
+![Don't](media/2.3.2_d.png) *Don't*
 
 
  
@@ -80,7 +74,7 @@ Do not juxtapose text with varying sizes. Create a font size chart and refer to 
 
 
 
-![Recommended font sizes for the mobile and wearable app designs](media/core_size_mobile-10.png)![Recommended font sizes for the mobile and wearable app designs](media/core_size_wearable-13.png)  
+![Recommended font sizes for the mobile and wearable app designs](media/core_size_mobile-10.png) ![Recommended font sizes for the mobile and wearable app designs](media/core_size_wearable-13.png)  
 *Recommended font sizes for the mobile app designs*
 
 

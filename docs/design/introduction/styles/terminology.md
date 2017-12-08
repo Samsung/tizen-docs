@@ -1,11 +1,12 @@
-﻿# Terminology
+
+# Terminology
 
 The key Tizen principles of Openness, Flow, Curiosity, and Focus provide the foundation for modeling a well-balanced UI communication strategy for the broad Tizen audience that includes both entry-level and more technically experienced users.
 
 To demonstrate the friendliness and informal air of communication associated with open OS communities, use the work paradigm, [A](#a_) [P](#p_)ositive [F](#f_)[O](#o_)[C](#c_)[U](#u_)[S](#s_), to support the clear and concise communication that Tizen aims to embrace.
 
  
-
+<a name="a_"></a>
 ## Active vs. Passive Voice
 
 Use the active voice to make your messaging more direct and easier to understand. To determine the voice within a sentence, ask yourself a few simple questions about the implied subject in relation to the action, as shown in the following example:
@@ -16,18 +17,15 @@ Example : Incoming calls, alarms, or media can be muted by placing your hand on 
 Q. What is the grammatical subject?  
 A. Incoming calls.
 
-Q. What is the action in this sentence? 
+Q. What is the action in this sentence?
 A. Muting the calls.
 
-Q. Does the subject (the calls) do the muting? 
+Q. Does the subject (the calls) do the muting?
 A. No, placing your hand on the screen mutes the calls. As the original subject doesn’t take any direct action, the sentence is passive and must be changed to active voice.
 
 
-**CHANGE :** Incoming calls, alarms, or media can be muted by placing your hand on the  
-screen while the screen is on. (passive voice)  
-**TO :** Place your hand over the screen to mute or pause media. (active voice)
-
-
+> **CHANGE :** Incoming calls, alarms, or media can be muted by placing your hand on the  screen while the screen is on. (passive voice)  
+> **TO :** Place your hand over the screen to mute or pause media. (active voice)
 
  
 
@@ -38,7 +36,7 @@ Be wary of any voice shift in your sentencing.
  
 
  
-
+<a name="p_"></a>
 ## Positive Language
 
 Think positively, emphasise user control, and don’t blame the user. Develop language that enhances the user’s interaction with the product, and avoid words that might have any negative connotation.
@@ -46,16 +44,12 @@ Think positively, emphasise user control, and don’t blame the user. Develop la
 Conversely, it is not always easy to remain positive. Indeed, trying to put a positive spin on a recurring error message can become a cause of irritation and annoyance for the end user. In these instances, simply leave out unnecessary details and simply describe the recovery action – using a neutral language without blaming the user.
 
  
-
-
-**CHANGE :** Call not sent. %s is not an emergency number!  
-**TO :** Emergency calls only
+> **CHANGE :** Call not sent. %s is not an emergency number!  
+> **TO :** Emergency calls only
 
 
  
-
- 
-
+<a name="f_"></a>
 ## Friendly and Informal Tone
 
 Establish and nurture a rapport between the device and user by developing an informal and personal tone within your writing. Avoid slang and dialect, and selectively use contractions (don’t, can’t, etc.) to enhance flow and cadence within your communication.
@@ -65,15 +59,12 @@ Aim to create a natural, relaxed, and personal dialog with the user. Without imp
 Without fawning unnecessary attention, find a polite balance in your communications with restricted use of the words: please, sorry and thank you. The general rule of practice should be to use “please” only if its omission would make the text sound rude, impolite, or overly demanding.
 
 
-**CHANGE :** Downloading content. Wait….  
-**TO :** Downloading content. Please wait…
-
+> **CHANGE :** Downloading content. Wait….  
+> **TO :** Downloading content. Please wait…
 
 
  
-
- 
-
+<a name="o_"></a>
 ## Open, Organized, and Outlined
 
 
@@ -82,9 +73,8 @@ True open source demands open information. Make information more accessible with
 Plan what needs to be communicated in a properly drafted outline. Closely examine what the user needs to know and make sure that you understand the purpose of each UI dialog. Using a structural and task-orientated approach, organize and shape information in a logical order to support the necessary user choices within the UI flow.
 
  
-
  
-
+<a name="c_"></a>
 ## Consistent, Concise, and Contextual
 
 Deliver, clearly and concisely, only the information that the user needs to know. By eliminating any notable redundancy or duplication during your mandatory text review, create task-orientated user strings that are concise and to the point. Be particularly sure to maintain firm grammatical consistency between items of the same menu depth.
@@ -97,25 +87,26 @@ Also, consider the contextual nature of information within the UI flow to determ
 
  
 
+> **FULL :** A subscription may be required to allow your mobile device to use this feature. This may result in additional charges.  
+> **REDUCED :** Subscription may be required. Extra charges may apply.
 
-**FULL :** A subscription may be required to allow your mobile device to use this feature. This may result in additional charges.<br>
-**REDUCED :** Subscription may be required. Extra charges may apply.
 
-
- 
 
 Use full grammar in all UI strings that are unhindered by space constraints, like descriptive body text.
 
- 
 
  
-
+<a name="u_"></a>
 ## Usable and Understandable
 
 Make your text strings as understandable as possible by using both the correct point of view and verb tense in your messaging:
 
 -   First person. Avoid using the first person pronouns I, we, me, us, mine and our.
 -   Second person. “You” encourages use of the active voice and enhances the personal and informal tone synonymous with the Tizen brand. This point of view is also appropriate for instructions and procedural descriptions. Writing in the imperative form implies “you” without having to state it specifically.
+
+ > **CHANGE :** It’s then possible for us to change our parameters in the settings menu. (First person)    
+ > **TO :** Change your parameters in the settings menu. (Second person imperative)
+
 -   Third person. As a general rule, avoid using gender-specific pronouns in the third person, like he/she, him/her in favor of neuter pronouns like it (singular), they, them, their (plural).
 
  
@@ -129,20 +120,17 @@ Avoid some of the common grammatical pitfalls that might otherwise confuse user:
 -   Third person. As a general rule, avoid using gender-specific pronouns in the third person, like he/she, him/her in favor of neuter pronouns like it (singular), they, them, their (plural).
 
  
+> **CHANGE :** The memory is full, delete some messages.  
+> **TO :** The memory is full. Delete some messages.  
 
 
-**CHANGE :** The memory is full, delete some messages.<br>
-**TO :** The memory is full. Delete some messages.
-
-
-
-**CHANGE :** The memory is full, delete some messages.<br>
-**TO :** The memory is full, and some messages must now be deleted.
+> **CHANGE :** The memory is full, delete some messages.  
+> **TO :** The memory is full, and some messages must now be deleted.
 
  
 
  
-
+<a name="s_"></a>
 ## Simple
 
 Keep it simple. Remembering that the majority of product users are non-native English speakers, avoid using unfamiliar or overly complex words, and try to follow some of the more basic rules of Simple English :
