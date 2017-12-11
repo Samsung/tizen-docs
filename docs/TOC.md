@@ -26,6 +26,7 @@
 ### [Overview](open-source-tizen/porting/overview.md)
 ### [Kernel](open-source-tizen/porting/kernel.md)
 ### [System](open-source-tizen/porting/system.md)
+### [Recovery](open-source-tizen/porting/recovery.md)
 ### [Graphics and UI](open-source-tizen/porting/graphics-and-ui.md)
 ### [Multimedia](open-source-tizen/porting/multimedia.md)
 ### [Connectivity](open-source-tizen/porting/connectivity.md)
