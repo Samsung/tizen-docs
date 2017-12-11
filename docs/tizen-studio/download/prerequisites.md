@@ -13,18 +13,18 @@ The following table lists the supported operating systems and hardware requireme
 
 **Table: OS and system requirements**
 
-|  |            | Microsoft Windows®          | macOS                      | Ubuntu                                         |
-| ------------ | --------------------------- | -------------------------- | ---------------------------------- | ----------- |
-| OS           | Version                     | 10/8/7                     | 10.11 (El Capitan)10.10 (Yosemite) | 16.04/14.04 |
-| |Bit          | 64 bit / 32 bit             | 64 bit only                | 64 bit / 32 bit                                |
-| HW           | CPU                         | Dual Core, 2 GHz or faster |   Dual Core, 2 GHz or faster                                  |  Dual Core, 2 GHz or faster            |
-|  | Architecture | x64 (64 bit) / x86 (32 bit) | x64 only                   | x64 / x86                                       |
-|  | Memory       | 3 GB or more                | 3 GB or more                           |3 GB or more                                                 |
-|  | Disk space   | 6 GB or more                | 6 GB or more                            |6 GB or more                                     |             |
+|      |              | Microsoft Windows®          | macOS                              | Ubuntu                     |
+| ---- | ------------ | --------------------------- | ---------------------------------- | -------------------------- |
+| OS   | Version      | 10/8/7                      | 10.11 (El Capitan)10.10 (Yosemite) | 16.04/14.04                |
+|      | Bit          | 64 bit / 32 bit             | 64 bit only                        | 64 bit / 32 bit            |
+| HW   | CPU          | Dual Core, 2 GHz or faster  | Dual Core, 2 GHz or faster         | Dual Core, 2 GHz or faster |
+|      | Architecture | x64 (64 bit) / x86 (32 bit) | x64 only                           | x64 / x86                  |
+|      | Memory       | 3 GB or more                | 3 GB or more                       | 3 GB or more               |
+|      | Disk space   | 6 GB or more                | 6 GB or more                       | 6 GB or more               |
 
 ## Java Development Kit (JDK) Requirements
 
-You must install a Java Development Kit (JDK) 8 or higher to use the Tizen Studio. Do not install OpenJDK.
+You must install Java Development Kit (JDK) 8 to use the Tizen Studio. Do not install OpenJDK.
 
 Follow these instructions to install the appropriate JDK version for your system:
 
@@ -40,7 +40,7 @@ Follow these instructions to install the appropriate JDK version for your system
 
 - Ubuntu
 
-  Go to the [Ubuntu Web site](https://help.ubuntu.com/community/Java#Oracle_Java_8) for detailed instructions for installing the Oracle® JDK version 8 or higher.
+  Go to the [Ubuntu Web site](https://help.ubuntu.com/community/Java#Oracle_Java_8) for detailed instructions for installing the Oracle® JDK version 8.
 
 ## Emulator Requirements
 
@@ -48,15 +48,15 @@ The following table lists the CPU, screen resolution, graphic card, driver, and 
 
 **Table: Emulator requirements**
 
-| Component                                | Microsoft Windows®                       | macOS                                    | Ubuntu |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ------ |
-| CPU                                       <td colspan=3> Recommended: Support for Intel VTx (Virtualization Technology)                                                   |
-| Screen resolution                         <td colspan=3>  Recommended: 1280 x 1024                                                                 |
-| Graphic card                             <td colspan=3>  Recommended: The following requirements have passed tests with the emulator.<br/><br/> **Supported graphic cards**<br/> - NVIDIA: NVIDIA® GeForce® 8300 GS, GeForce® 8500 GT, GeForce® GT 220, GeForce® GT 430, GeForce® GT 530, GeForce® GT 330M, GeForce® GTX 550Ti, NVIDIA® Quadro® NVS 290<br/> - ATI: RADEON HD 4850, RADEON HD 5450<br/> - Intel: HD Graphics 2000, HD Graphics 2500, HD Graphics 4000<br/><br/>  **Note**<br/>If the host machine is using the NVIDIA® Optimus® technology, the emulator works with the on-board graphics card. To prevent this, either disable the Optimus® technology, or set the emulator to run with the external NVIDIA graphics card.Integrated graphic cards inside Intel's Q33/Q35/Q43/Q45 motherboards are not supported.First generation Intel HD Graphics is not supported.                                                 |
-| Driver                                 <td colspan=3>  You must upgrade to the latest vendor-provided version of the graphic card driver for OpenGL® ES acceleration.                                                   |
-| |Check and install the necessary drivers in the **Control Panel > System and Security > Windows Update**. | -                                        | For more information on driver upgrades, see the [Ubuntu Web site](https://help.ubuntu.com/community/BinaryDriverHowto/). Check and install the necessary drivers in the **System Settings > Software & Updates > Additional Drivers**.In 16.04 and 14.04, the Intel driver version must be 8.0.1 or higher.         |
-| Webcam                                  <td colspan=3> To use the emulator with your computer's webcam, the webcam must support the USB Video Class (UVC) driver. The following image format requirements apply to each OS:                                                   |
-| | YUYV or MJPEG                            | RGB24 or YUY2                            | UYYY, YYU420, YUY420, or YUYY                    |
+| Component                                | Microsoft Windows®                       | macOS         | Ubuntu                                   |
+| ---------------------------------------- | ---------------------------------------- | ------------- | ---------------------------------------- |
+| CPU                                       <td colspan=3> Recommended: Support for Intel VTx (Virtualization Technology) |                                          |               |                                          |
+| Screen resolution                         <td colspan=3>  Recommended: 1280 x 1024 |                                          |               |                                          |
+| Graphic card                             <td colspan=3>  Recommended: The following requirements have passed tests with the emulator.<br/><br/> **Supported graphic cards**<br/> - NVIDIA: NVIDIA® GeForce® 8300 GS, GeForce® 8500 GT, GeForce® GT 220, GeForce® GT 430, GeForce® GT 530, GeForce® GT 330M, GeForce® GTX 550Ti, NVIDIA® Quadro® NVS 290<br/> - ATI: RADEON HD 4850, RADEON HD 5450<br/> - Intel: HD Graphics 2000, HD Graphics 2500, HD Graphics 4000<br/><br/>  > **Note**<br/>  > If the host machine is using the NVIDIA® Optimus® technology, the emulator works with the on-board graphics card. To prevent this, either disable the Optimus® technology, or set the emulator to run with the external NVIDIA graphics card.Integrated graphic cards inside Intel's Q33/Q35/Q43/Q45 motherboards are not supported.First generation Intel HD Graphics is not supported. |                                          |               |                                          |
+| Driver                                 <td colspan=3>  You must upgrade to the latest vendor-provided version of the graphic card driver for OpenGL® ES acceleration. |                                          |               |                                          |
+|                                          | Check and install the necessary drivers in the **Control Panel > System and Security > Windows Update**. | -             | For more information on driver upgrades, see the [Ubuntu Web site](https://help.ubuntu.com/community/BinaryDriverHowto/). Check and install the necessary drivers in the **System Settings > Software & Updates > Additional Drivers**.In 16.04 and 14.04, the Intel driver version must be 8.0.1 or higher. |
+| Webcam                                  <td colspan=3> To use the emulator with your computer's webcam, the webcam must support the USB Video Class (UVC) driver. The following image format requirements apply to each OS: |                                          |               |                                          |
+|                                          | YUYV or MJPEG                            | RGB24 or YUY2 | UYYY, YYU420, YUY420, or YUYY            |
 
 ## Google Chrome™ Browser Requirements
 
@@ -72,13 +72,13 @@ The following table lists the additional requirements to be met before developin
 
 | Component                                | Requirement                              |
 | ---------------------------------------- | ---------------------------------------- |
-| Python for using the T-trace (Tizen profiling tool used to optimize the application performance) | To use the T-trace in Windows® 8/7, you must install a Python 2.7.X version:<br/> 1. On the [Python Web site](https://www.python.org/downloads/), download the appropriate Python version for your hardware and Windows® version.<br/> 2. Run the downloaded installer file and follow the displayed instructions.<br/><br/>**Note**<br/>To use Python conveniently at the command prompt, set the `%PATH%` environment variable in **My Computer > Properties > Advanced > Environment Variables**. |
+| Python for using the T-trace (Tizen profiling tool used to optimize the application performance) | To use the T-trace in Windows® 8/7, you must install a Python 2.7.X version:<br/> 1. On the [Python Web site](https://www.python.org/downloads/), download the appropriate Python version for your hardware and Windows® version.<br/> 2. Run the downloaded installer file and follow the displayed instructions.<br/><br/>> **Note**<br/>  > To use Python conveniently at the command prompt, set the `%PATH%` environment variable in **My Computer > Properties > Advanced > Environment Variables**. |
 
 **Table: Additional macOS requirements**
 
 | Component                                | Requirement                              |
 | ---------------------------------------- | ---------------------------------------- |
-| Prerequisite packages (`msgfmt`) for build PO files | At the terminal prompt, enter the following commands:<br/>``` $ brew install gettext ```<br/> ```$ brew link gettext –force ```<br/> ``` $ which msgfmt ```<br/> ``` /usr/local/bin/msgfmt ```<br/><br/>**Note**<br/>To install Homebrew, see the [Brew Web site](http://brew.sh/). |
+| Prerequisite packages (`msgfmt`) for build PO files | At the terminal prompt, enter the following commands:<br/>``` $ brew install gettext ```<br/> ```$ brew link gettext –force ```<br/> ``` $ which msgfmt ```<br/> ``` /usr/local/bin/msgfmt ```<br/><br/>> **Note**<br/>  > To install Homebrew, see the [Brew Web site](http://brew.sh/). |
 
 **Table: Additional Ubuntu requirements**
 

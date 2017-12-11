@@ -62,7 +62,7 @@ On both tabs:
 
 The Specfile Editor Plug-in for the Eclipse provides useful features to help you manage `.spec` files. The plug-in allows you to leverage several Eclipse GUI features in editing the `.spec` files, including an outline view in the editor, auto-completion, highlighting, file hyperlinks, and folding.
 
-> **Note**<br>
+> **Note**  
 > The Tizen platform IDE does not support features relevant to **rpmlint** and **createrepo**.
 
 To set the Specfile Editor configuration, go to **Window > Preferences > Others > Specfile Editor** in the IDE toolbar. For more information, see **Help Contents > Specfile Editor User Guide > Configuring Specfile Editor Settings**.
@@ -87,7 +87,7 @@ The Tizen Platform IDE provides the API assist and API hover features to make wr
 
 The PO file editor is used to edit `.po` files to generate compiled gettext `.mo` files, which are used by Tizen platform applications to localize the user interface.
 
-> **Note**<br>
+> **Note**  
 >There is no specific wizard to create the `.po` files. To create a `.po` file, go to **New > Other > General > File** and save the file with the `.po` extension.
 
 **Figure: PO file editor**

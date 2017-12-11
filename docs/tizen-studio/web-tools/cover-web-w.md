@@ -5,13 +5,14 @@
 
 In the Tizen Studio, you can perform all the development activities from the application project creation to testing and packaging.
 
-**Note**	This section covers the tool details supported in mobile and wearable Web application development. Although most of the features are also supported in TV Web application development, no TV-specific details are included within the topics in this section. For more information on TV application development tools, see the [Samsung Developers Smart TV site](http://developer.samsung.com/tv/develop). 
+> **Note**	 
+> This section covers the tool details supported in mobile and wearable Web application development. Although most of the features are also supported in TV Web application development, no TV-specific details are included within the topics in this section. For more information on TV application development tools, see the [Samsung Developers Smart TV site](http://developer.samsung.com/tv/develop). 
 
 The Tizen Studio provides various tools to help you with the different Web application development process phases:
 
 - [Managing Projects](cover-project-mgmt-w.md)	 
 
-  You can create new application projects with the Project Wizard, and manage the existing applications in the **Project Explorer** view in the Tizen Studio. You can also register certificates for your applications to allow them to be published in the application stores.
+  You can create new application projects with the Project Wizard, and manage the existing applications in the **Project Explorer** view in the Tizen Studio. You can also manage connected devices, and register certificates for your applications to allow them to be published in the application stores.
 
 - [Writing and Editing Code](cover-code-w.md) 
 
@@ -27,7 +28,7 @@ The Tizen Studio provides various tools to help you with the different Web appli
 
 - [Running and Testing Your Application](cover-run-test-w.md) 
 
-  You can run and test your application using the Tizen emulator. In addition, you can use the **Connection Explorer** view to manage connections to the emulator and various other target devices. The Smart Development Bridge (SDB) tool allows you to communicate with a connected target device, and the unit test tool allows you to create test projects to verify the reliability of your code.
+  You can run and test your application using the Tizen emulator. In addition, the Smart Development Bridge (SDB) tool allows you to communicate with a connected target device, and the unit test tool allows you to create test projects to verify the reliability of your code.
 
 - [Using the Web Simulator](web-simulator-w.md) 
 

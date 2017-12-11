@@ -18,7 +18,8 @@ There are 2 ways, manual and automatic, to inspect your code:
   1. In the **Project Explorer** view, select a JavaScript file.
   2. Right-click the file and select **Check JavaScript Rules**.
 
-   **Note**You can check JavaScript immediately, even without saving the file. 
+   > **Note**  
+   > You can check JavaScript immediately, even without saving the file. 
 
   **Figure: Checking JavaScript rules manually**
 

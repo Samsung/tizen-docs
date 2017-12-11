@@ -24,7 +24,8 @@ To enable live editing in the Tizen Studio:
 
 If you are running your application for the first time, you must create a new configuration first.
 
-**Note**	The live editing feature has the following limitations:     
+> **Note**  
+> The live editing feature has the following limitations:     
 
 - The Tizen Device API does not work on the emulator.
 - Only specific device APIs are supported by the Web simulator.

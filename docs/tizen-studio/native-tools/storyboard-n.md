@@ -4,7 +4,7 @@
 - Tizen Studio 1.0 and Higher
 
 
-The Tizen Storyboard is an additional tab in the UI Builder WYSIWYG editor. It provides an interactive view to help in the design of the page transitions.
+The Tizen Storyboard is a feature included in the UI Builder Layout editor. It provides an interactive view to help in the design of the page transitions.
 
 The Storyboard provides a bird's eye picture of all the views present in the application, along with a flowchart of event-based transitions between views. You can visualize page transition in the native application, and form a better understanding of the application functionality. You can also use the Storyboard as a control panel to manage the application views.
 
@@ -12,7 +12,7 @@ The Storyboard consists of a collection of the application views, inter-connecte
 
 The Storyboard is available for applications created with a UI Builder template.
 
-## Creating a Storyboard Application
+## Creating a UI Builder Application
 
 To use the Storyboard, you must create a Tizen native project using a UI Builder template:
 
@@ -30,25 +30,44 @@ To use the Storyboard, you must create a Tizen native project using a UI Builder
 
 ## Adding Views
 
-When you select the **Storyboard** tab in the WYSIWYG editor, the Storyboard graphical viewer opens. If the **UI Builder - Navigation View** application template is used, the viewer contains 3 default views with some default connections between them. Otherwise, the viewer contains a single view.
+When you select the **Design** editor in the top toolbar area of the **Layout** editor, the opening graphical viewer provides the **Storyboard** feature. If the **UI Builder - Navigation View** application template is used, the viewer contains 3 default views with some default connections between them. Otherwise, the viewer contains a single view.
 
-**Figure: Views shown in the Storyboard tab**
+**Figure: Views shown in the Design editor**
 
 ![Views shown in the Storyboard tab](./media/storyboard_all_views.png)
 
-To add a new view, right-click the editor, select **Add View**, and select the view type you want. Alternatively, you can add a new view in the **Navigation** view and drag and drop the view from the **Navigation** view to the **Storyboard** tab.
+The **Layout** editor offers 3 ways to add a new view:
+
+-   Right-click the editor, select **Add View**, and select the applicable view.
 
 **Figure: Adding a new view**
 
 ![Adding a new view](./media/storyboard_new_view.png)
 
-You can move the views in the viewer by selecting the black label containing the view name and dragging the view to a new position.
+-   In the **Outline** view, click the **Empty View** icon in the toolbar (marked by a red circle in the following figure), or right-click the **Outline** view area and select **Add View** and the applicable view.
+
+    ![Empty view](./media/storyboard_new_view_outline.png)
+
+- Drag and drop a view from the **Palette** to the canvas.
+
+    The **Ctxpopup** view and **Popup** view are available in mobile applications only.
+
+    ![Empty view](./media/ui_builder_view_drag_and_drop.png)
+
+If you select a title bar area containing the view name and drag the view to a new location, you can see that direct manipulation changes the view position on the canvas in real time. In addition, you can use the real-time Pan and Scan function by dragging the empty space of the **Design** editor by holding down with the mouse wheel button.
+
+
+<a name="auto_layout"></a> ## Using Auto Layout
+
+If it is difficult to understand the flow between multiple views, use the **Storyboard**'s **Auto Layout** function. It relocates your views to an easily-readable position.
+
+![Auto Layout](./media/storyboard_autolayout.png)
 
 ## Creating Connections
 
 To create a connection between 2 views:
 
-1. Press the **Ctrl** key and click the UI component from which the page transition is to happen.
+1. Press the **Shift** key and click the UI component from which the page transition is to happen.
 
 2. Drag the component to the page where the transition is supposed to lead.
 
@@ -64,20 +83,13 @@ To create a connection between 2 views:
 
    ![Connection](./media/storyboard_conn_connection.png)
 
-4. To edit the event code, right-click the connection, and select **Go to Source Code**.To delete the connection, select **Delete Connection**.![Edit or delete the connection](./media/storyboard_conn_edit.png)
+4. To edit the event code, click the connection, and select the event function in the **Properties** view.
 
-5. In the source code, 2 functions are generated:
-
-   - `view1_button1_onclicked()` is called before the transition is performed to the target view.
-   - `view1_button1_onclicked_post()` is called after the transition has been performed.
-
-   Write whatever operation you want to perform during the pre and post transition.
-
-   ![Source code](./media/storyboard_conn_code.png)
+   To delete the connection, right-click the connection and select **Delete**.![Edit or delete the connection](./media/storyboard_conn_edit.png)
 
 ## Changing Component and Connection Properties
 
-When you select a component or connection in the Storyboard, the editable properties related to it are displayed in the **Properties** view. You can view the transition properties and change the connection target view and title.
+When you select a component or connection in the **Design** editor, the editable properties related to it are displayed in the **Properties** view. You can view the transition properties and change the connection target view.
 
 **Figure: Component properties**
 
@@ -87,14 +99,14 @@ When you select a component or connection in the Storyboard, the editable proper
 
 ![Connection properties](./media/storyboard_conn_properties.png)
 
-## Maximizing and Minimizing Views
+## Maximizing and Normalizing Views
 
-You can maximize and minimize a set of views in the **Storyboard** tab by toggling the icon in the upper-right corner of the respective views.
+You can maximize and normalize a view by double-clicking the title bar area. Maximizing zooms the view to the height of the design area and moves the view position to center. Normalizing returns the view zoom state and position back.
 
-Use this feature to reduce the clutter of multiple views present in the application without compromising on losing the overall sight of the application project.
+Use this feature to reduce the clutter of multiple views present in the application without compromising or losing sight of the overall application project.
 
-The startup view can be identified by an arrow symbol in the upper-left corner of the view.
+The startup view can be identified by a **house** symbol in the title bar of the view.
 
-**Figure: Maximizing and minimizing views**
+**Figure: Maximizing and normalizing views**
 
 ![Maximizing and minimizing views](./media/storyboard_max_min.png)

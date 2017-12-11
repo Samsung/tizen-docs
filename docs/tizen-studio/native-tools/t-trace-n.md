@@ -36,7 +36,8 @@ The following figure illustrates the T-trace dialog elements.
 
 When you run the T-trace, the tracing process gathers traces during a specified time period. After tracing is finished, the T-trace processes the traces and creates a trace report in HTML format.
 
-**Note**To operate the T-trace, you must first install Python (2.7.x) and the Google Chrome™ browser on your computer.
+> **Note**  
+> To operate the T-trace, you must first install Python (2.7.x) and the Google Chrome™ browser on your computer.
 
 You can run the T-trace in the Tizen Studio or from the command line:
 

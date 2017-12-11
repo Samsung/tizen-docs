@@ -1,36 +1,34 @@
-
-Getting Started
-================
+# Getting Started
 
 ## Dependencies
 
--   Ubuntu Only
+- Ubuntu Only
 
 The Tizen Studio for RT allows you to easily develop and test your RT application:
 
-1.  [Install the Tizen Studio for RT](rt-install.htm) on your computer.
-2.  [Manage the project](rt-create-project.htm), including creating a new Tizen Studio for RT project, creating application resources, and building the project.
-3.  [Flash the project](rt-flash.htm) on the board.
-4.  [Use the serial terminal](rt-terminal.htm) to communicate with the board.
-5.  [Debug the project](rt-debug.htm) to avoid runtime problems.
+1. [Install the Tizen Studio for RT](rt-install.md) on your computer.
+2. [Manage the project](rt-create-project.md), including creating a new Tizen Studio for RT project, creating application resources, and building the project.
+3. [Flash the project](rt-flash.md) on the board.
+4. [Use the serial terminal](rt-terminal.md) to communicate with the board.
+5. [Debug the project](rt-debug.md) to avoid runtime problems.
 
-Prerequisites
--------------
+
+## Prerequisites
 
 Check the following prerequisites before installing the Tizen Studio for RT:
 
--   Java Development Kit (JDK) requirements
+- Java Development Kit (JDK) requirements
 
-    You must install a JDK 8 to use the Tizen Studio. Do not install OpenJDK.
+  You must install a JDK 8 to use the Tizen Studio. Do not install OpenJDK.
 
-    To install the appropriate JDK version for your Ubuntu system, go to the Ubuntu Web site and follow the detailed instructions for installing the OracleA® JDK version 8.
+  To install the appropriate JDK version for your Ubuntu system, go to the Ubuntu Web site and follow the detailed instructions for installing the OracleA® JDK version 8.
 
 
--   Operating system and hardware requirements
+- Operating system and hardware requirements
 
-    The following table lists the supported operating systems and hardware requirements for the Tizen Studio for RT.
+  The following table lists the supported operating systems and hardware requirements for the Tizen Studio for RT.
 
-    **Table: Operating system and hardware requirements**
+  **Table: Operating system and hardware requirements**
 
  <table>
  <tr>
@@ -62,15 +60,15 @@ Check the following prerequisites before installing the Tizen Studio for RT:
 </table>
  
 
--   RT platform requirements
+- RT platform requirements
 
-    For the additional requirements and guides related to building and flashing an RT application, see:
+  For the additional requirements and guides related to building and flashing an RT application, see:
 
-    -   [Tizen RT Github](https://github.com/Samsung/TizenRT)
-    -   [Supported boards](https://github.com/Samsung/TizenRT#supported-board--emulator)
+  - [Tizen RT Github](https://github.com/Samsung/TizenRT)
+  - [Supported boards](https://github.com/Samsung/TizenRT#supported-board--emulator)
 
--   Package requirements for developing applications in Ubuntu
+- Package requirements for developing applications in Ubuntu
 
-    You must install the webkitgtk package. At the terminal prompt, enter the following command:
+  You must install the webkitgtk package. At the terminal prompt, enter the following command:
 
-    `$ sudo apt-get install libwebkitgtk-1.0-0`
+  `$ sudo apt-get install libwebkitgtk-1.0-0`

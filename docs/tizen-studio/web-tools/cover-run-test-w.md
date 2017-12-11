@@ -5,10 +5,6 @@
 
 The Tizen Studio provides the following set of tools to help you run and test your Web application projects:
 
-- [Connection Explorer View](https://developer.tizen.org/development/tizen-studio/web-tools/running-and-testing-your-app/connection-explorer-view) **(Managing and Connecting Devices for Testing)**		 
-
-   The **Connection Explorer** view shows the devices connected to the system, and allows you to manage multiple emulator instances. You can explore the file systems of the connected devices and perform file operations.
-
 - [SDB](https://developer.tizen.org/development/tizen-studio/web-tools/running-and-testing-your-app/sdb) **(Connecting Devices over Smart Development Bridge)** 
 
    The SDB tool uses a command line to communicate with an emulator instance or a connected target device. You can send commands to a specific device to advance application development, such as file transfer, remote shell command, port forwarding for a debugger, viewing, filtering, and controlling target log output.

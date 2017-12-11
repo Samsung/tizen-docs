@@ -8,4 +8,4 @@ The Tizen Studio for RT is an IDE that provides a lightweight RTOS (real-time op
 To develop your applications, use the set of tools provided by the Tizen Studio for RT:
 
 -   [Getting Started](rt-getting-started-cover.md)
--   [SmartThings™ Extension](rt-stthings-extensions-cover.md)
+-   [SmartThings&trade; Extension](rt-stthings-extensions-cover.md)

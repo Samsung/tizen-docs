@@ -47,7 +47,8 @@ To use the REST Viewer, you need a WADL document. If a WADL document is provided
 
 With the REST Viewer, you can make new WADL components, and import and export WADL files. You can handle a selected WADL component only if you open a dialog to modify it. You cannot modify the selected component's parent or child components at the same time.
 
-**Note**	Some attributes are required to make a structure for the tree viewer even if they are optional in the WADL schema. 
+> **Note**  
+> Some attributes are required to make a structure for the tree viewer even if they are optional in the WADL schema. 
 
 To manage the WADL components, in the **REST Viewer** view toolbar, click the following icons:
 

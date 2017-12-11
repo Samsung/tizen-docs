@@ -8,7 +8,8 @@ Databinding helps you to manage application-specific data sources and models alo
 
 In the **Data Binding** view, you can, for example, add data sources, create data models from those sources, and bind data elements to UI components in the **Design** tab. The view displays all the data sources that you have added to your application. Along with the data sources, you can also see the "data element – UI component" bindings that you have created.
 
-**Note**Databinding is supported for 2.4 and higher mobile applications, and 3.0 and higher wearable applications.When creating the application, you must use the [Project Wizard](project-wizard-n.md) and select a native UI Builder template (any template with the "UI Builder" prefix).
+> **Note**  
+> Databinding is supported for 2.4 and higher mobile applications, and 3.0 and higher wearable applications.When creating the application, you must use the [Project Wizard](project-wizard-n.md) and select a native UI Builder template (any template with the "UI Builder" prefix).
 
 The **Data Binding** view opens by default when you switch to the **UI Builder** perspective. The UI Builder templates in the Project Wizard do not have any data sources by default.
 
