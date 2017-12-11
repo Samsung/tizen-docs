@@ -1,4 +1,4 @@
-﻿# Screen Layout
+# Screen Layout
 
 Each view in a Tizen app contains one or more primary goals. Select screen layouts that can be easily implemented to achieve the desired goals. To provide as much flexibility as possible in the design, each view used for Tizen apps comes with only three fixed layout elements–a header, content area, and footer.
 
@@ -8,7 +8,7 @@ You can also design your own layout if you design an app to serve specific needs
 
 
 
-![A full view layout dedicated for a camera app](media/4.6_.png)<br>
+![A full view layout dedicated for a camera app](media/4.6_.png)  
 *A full view layout dedicated for a camera app*
 
 
@@ -30,9 +30,6 @@ The header is the top portion of a view. The following lists the role of a heade
 ![Header](media/4.6.1_a.png)  
 *Header*
 
-
-
- 
 
 
 ![Header with buttons](media/4.6.1_b_.png)  
@@ -66,8 +63,6 @@ The following lists the guidelines for designing the content in a view:
 The footer contains user interfaces for extended user actions. On this part of the screen, you can place app-specific user interfaces in the form of [Bottom Buttons](../ui-components/user-input-components.md#bottom_) or [Floating Action Buttons](../ui-components/assist-views.md#floating_). Use the footer interfaces to present only the essential user actions in your apps.
 
 In the following example, the Scan button is provided in the footer to provide essential functionality for the Wi-Fi feature.
-
- 
 
 
 

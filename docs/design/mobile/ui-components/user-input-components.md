@@ -24,7 +24,7 @@ The following button types are available:
 -   Box button
 -   Bottom button
 
-To learn how to implement a button, see [Button](https://developer.tizen.org/development/guides/native-application/user-interface/efl/ui-components/mobile-ui-components/button).
+To learn how to implement a button, see [Button](../../../guides/native/ui/efl/component-button-mn.md).
 
  
 
@@ -73,7 +73,7 @@ The following checkbox component types are available:
 
 Use simple and flat pictographic icons when you design checkbox components. Tizen assigns system colors for checkbox and radio buttons. For other icons, colors may be selected according to the significance of the icons.
 
-To learn how to implement a checkbox, see [Check](https://developer.tizen.org/development/guides/native-application/user-interface/efl/ui-components/mobile-ui-components/check).
+To learn how to implement a checkbox, see [Check](../../../guides/native/ui/efl/component-check-mn.md).
 
  
 
@@ -119,7 +119,7 @@ In the Toggle and Checkbox Icon Pack, you can find the action icon examples crea
 
 A radio button is used to allow the user to select an item from a list of multiple choices.
 
-To learn how to implement a radio button, see [Radio](https://developer.tizen.org/development/guides/native-application/user-interface/efl/ui-components/mobile-ui-components/radio).
+To learn how to implement a radio button, see [Radio](../../../guides/native/ui/efl/component-radio-mn.md).
 
 
 
@@ -150,7 +150,7 @@ The following text input component types are available:
 
 The text enveloper provides an extended functionality to text input. It recognizes the delimiters between text input and binds the entries, such as email addresses or keywords, in meaningful or functional chunks, so that the user can individually control or modify them. The enter key input ( ↵ ), comma ( , ), and semi colon ( ; ) are generally used for text delimiters, but you can define your own delimiters to suit the type and purpose of your app.
 
-To learn how to implement a text input component, see [Entry](https://developer.tizen.org/development/guides/native-application/user-interface/efl/ui-components/mobile-ui-components/entry).
+To learn how to implement a text input component, see [Entry](../../../guides/native/ui/efl/component-entry-mn.md).
 
 
 
@@ -167,7 +167,7 @@ Text input and text enveloper
 
 A dropdown menu allows the user to select an item from a list of multiple choices. A list of items is displayed when the user taps the dropdown menu.
 
-To learn how to implement a dropdown menu, see [Hoversel](https://developer.tizen.org/development/guides/native-application/user-interface/efl/ui-components/mobile-ui-components/hoversel).
+To learn how to implement a dropdown menu, see [Hoversel](../../../guides/native/ui/efl/component-hoversel-mn.md).
 
 
 
@@ -184,7 +184,7 @@ Dropdown menu
 
 A slider is used to adjust a value within a certain range. You can include a description or an icon that explains the slider’s value range. The user can tap or drag the slider bar to increase or decrease the value. You can also provide numbers on the slider to indicate the value.
 
-To learn how to implement a slider, see [Slider](https://developer.tizen.org/development/guides/native-application/user-interface/efl/ui-components/mobile-ui-components/slider).
+To learn how to implement a slider, see [Slider](../../../guides/native/ui/efl/component-slider-mn.md).
 
 
 
@@ -213,7 +213,7 @@ The following picker types are available:
 
 A number picker allows the user to select a specific number.
 
-To learn how to implement a number picker, see [Spinner](https://developer.tizen.org/development/guides/native-application/user-interface/efl/ui-components/mobile-ui-components/spinner) and [Flipselector](https://developer.tizen.org/development/guides/native-application/user-interface/efl/ui-components/mobile-ui-components/flipselector).
+To learn how to implement a number picker, see [Spinner](../../../guides/native/ui/efl/component-spinner-mn.md) and [Flipselector](../../../guides/native/ui/efl/component-flipselector-mn.md).
 
 
 
@@ -231,7 +231,7 @@ A date and time picker allows the user to set the date and time for different us
 -   Time picker
 -   Date picker
 
-To learn how to implement date and time pickers, see [Datetime](https://developer.tizen.org/development/guides/native-application/user-interface/efl/ui-components/mobile-ui-components/datetime).
+To learn how to implement date and time pickers, see [Datetime](../../../guides/native/ui/efl/component-datetime-mn.md).
 
  
 
@@ -250,7 +250,7 @@ Date pickers
 
 A color picker allows the user to select a color from a set of colors.
 
-To learn how to implement a color picker, see [Colorselector](https://developer.tizen.org/development/guides/native-application/user-interface/efl/ui-components/mobile-ui-components/colorselector).
+To learn how to implement a color picker, see [Colorselector](../../../guides/native/ui/efl/component-colorselector-mn.md).
 
 
 

@@ -15,7 +15,7 @@ Assist views are used to provide the user with additional information to complem
 
 Pop-ups are temporarily displayed on the screen to provide information or to ask for user confirmation. Pop-ups allow the user to take instant action for events.
 
-To learn how to implement a pop-up, see [Popup](https://developer.tizen.org/development/guides/native-application/user-interface/efl/ui-components/mobile-ui-components/popup).
+To learn how to implement a pop-up, see [Popup](../../../guides/native/ui/efl/component-popup-mn.md).
 
 
 ![Pop-up](media/5.4_a-259x460.png)  
@@ -32,7 +32,7 @@ Pop-up
 
 Toast pop-ups are used to deliver simple notifications.
 
-To learn how to implement a toast pop-up, see [Popup](https://developer.tizen.org/development/guides/native-application/user-interface/efl/ui-components/mobile-ui-components/popup).
+To learn how to implement a toast pop-up, see [Popup](../../../guides/native/ui/efl/component-popup-mn.md).
 
 
 
@@ -51,7 +51,7 @@ Toast pop-ups
 
 Context pop-ups are used to provide options for the currently selected objects.
 
-To learn how to implement a context pop-up, see [Ctxpopup](https://developer.tizen.org/development/guides/native-application/user-interface/efl/ui-components/mobile-ui-components/ctxpopup).
+To learn how to implement a context pop-up, see [Ctxpopup](../../../guides/native/ui/efl/component-ctxpopup-mn.md).
 
 
 
@@ -69,7 +69,7 @@ Context pop-up
 
 The 'More' menu is used to provide users with access to actions not available on the main screen.
 
-To learn how to implement a 'More' menu, see [Ctxpopup](https://developer.tizen.org/development/guides/native-application/user-interface/efl/ui-components/mobile-ui-components/ctxpopup).
+To learn how to implement a 'More' menu, see [Ctxpopup](../../../guides/native/ui/efl/component-ctxpopup-mn.md).
 
 
 

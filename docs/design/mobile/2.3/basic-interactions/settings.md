@@ -20,7 +20,7 @@ Keep the following guidelines in mind when designing user-definable settings:
 -   If none of the other guidelines apply, you can simply create the preferences and manage them in the General settings.
 
 > **NOTE**  
->If you do not organize the preferences by purpose, the user sometimes wants to include all functions in the General settings and not arrange them by user convenience.
+> If you do not organize the preferences by purpose, the user sometimes wants to include all functions in the General settings and not arrange them by user convenience.
 
 Design the preferences as shown in the following figure. Classify your application settings by function and group them with different names.
 

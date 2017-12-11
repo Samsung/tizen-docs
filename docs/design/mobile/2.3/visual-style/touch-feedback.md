@@ -2,7 +2,7 @@
 
 You must give users feedback when they touch specific elements (especially buttons) on the screen. This supports communication between a user and the application.
 
-To promote better touch interaction with visual cues, Tizen 2.3 offers several color changes and effects. The [buttons](../design-library/button.html) have separate states (normal, press, and dim) for each button type, such as list buttons.
+To promote better touch interaction with visual cues, Tizen 2.3 offers several color changes and effects. The [buttons](../design-library/button.md) have separate states (normal, press, and dim) for each button type, such as list buttons.
 
  
 

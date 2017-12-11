@@ -15,7 +15,7 @@ Presentation views are used to display the main content of an app in different f
 
 The list view is used to display multiple items on one screen. It is the most basic view. You can include various UI elements, such as text, icons, images, or buttons, as list items.
 
-To learn how to implement a list view, see [Genlist](https://developer.tizen.org/development/guides/native-application/user-interface/efl/ui-components/mobile-ui-components/genlist).
+To learn how to implement a list view, see [Genlist](../../../guides/native/ui/efl/component-genlist-mn.md).
 
  
 
@@ -29,7 +29,7 @@ List view
 ## Grid View
 The grid view is used to display multiple images.
 
-To learn how to implement a grid view, see [Gengrid](https://developer.tizen.org/development/guides/native-application/user-interface/efl/ui-components/mobile-ui-components/gengrid).
+To learn how to implement a grid view, see [Gengrid](../../../guides/native/ui/efl/component-gengrid-mn.md).
 
  
 
@@ -46,7 +46,7 @@ The group index is used to present sorted and grouped items.
 
 When creating a group index, you can use various sorting and grouping criteria, such as alphabetical order, categories, time, or date.
 
-To learn how to implement a groud index, see [Genlist](https://developer.tizen.org/development/guides/native-application/user-interface/efl/ui-components/mobile-ui-components/genlist).
+To learn how to implement a groud index, see [Genlist](../../../guides/native/ui/efl/component-genlist-mn.md).
 
  
 
@@ -66,7 +66,7 @@ There are 2 different types of progress components available:
 -   Progress indicator
 -   Activity indicator
 
-To learn how to implement progress components, see [Progressbar](https://developer.tizen.org/development/guides/native-application/user-interface/efl/ui-components/mobile-ui-components/progressbar).
+To learn how to implement progress components, see [Progressbar](../../../guides/native/ui/efl/component-progressbar-mn.md).
 
  
 

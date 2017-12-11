@@ -50,7 +50,7 @@ A variety of different information and controls can be placed in the content are
 
 The **More** menu contains functions related to the application. Because of the small screen and simplicity, most functions of applications should be placed in the **More** menu.
 
-For an in-depth description of all Tizen screen elements you can use in your application, see [Design Library](../../design-library.md).
+For an in-depth description of all Tizen screen elements you can use in your application, see [Design Library](./design-library.md).
 
 
 <a name="core"></a>
@@ -61,7 +61,7 @@ For an in-depth description of all Tizen screen elements you can use in your app
 
 Besides the header and content areas of the application screen, the Lock screen, Home screen, Indicator, and Notification panel are significant components of the Tizen user interface (UI).
 
-For more information about additional UI components, see [Basic Interactions](../../basic-interactions.md).
+For more information about additional UI components, see [Basic Interactions](./basic-interactions.md).
 
  
 
@@ -136,7 +136,7 @@ In mobile applications, the most important navigation elements are the header an
 
 The header contains a title that describes the content of the screen. It also includes tabs that support navigation within the application.
 
-The **Back** key is located at the front of the device for overall navigation. For more information, see [Navigation](../../basic-interactions/navigation.md).
+The **Back** key is located at the front of the device for overall navigation. For more information, see [Navigation](./basic-interactions/navigation.md).
 
 
 
@@ -145,7 +145,7 @@ The **Back** key is located at the front of the device for overall navigation. F
 
 
 
-The Tizen platform supports changes to the device orientation from [portrait to landscape view mode](../../basic-interactions/view-modes.md). The user can set the screen orientation manually, or select it to be changed automatically. In either case, ensure you optimize your application UI so that the application displays correctly in both portrait and landscape modes.
+The Tizen platform supports changes to the device orientation from [portrait to landscape view mode](./basic-interactions/view-modes.md). The user can set the screen orientation manually, or select it to be changed automatically. In either case, ensure you optimize your application UI so that the application displays correctly in both portrait and landscape modes.
 
 
 <a name="touch"></a>
@@ -158,7 +158,7 @@ The Tizen platform supports a wide variety of gestures that let users directly m
 
 For example, the user can tap the screen to select an element, swipe it to scroll the content on the screen, or drag and drop an element to move it.
 
-However, make sure you align the gestures in your application with those of the Tizen platform. This gives users a consistent interaction, even if they have multiple applications open at once. Also make sure you provide appropriate [touch feedback](../../visual-style/touch-feedback.md) for any gesture interactions.
+However, make sure you align the gestures in your application with those of the Tizen platform. This gives users a consistent interaction, even if they have multiple applications open at once. Also make sure you provide appropriate [touch feedback](./visual-style/touch-feedback.md) for any gesture interactions.
 
 The following table lists the Tizen gestures you can use to offer intuitive touch interaction to users.
 

@@ -49,6 +49,7 @@ In the Detail view, show essential information on the first screen and enable sc
 
 
 ![](media/designprinciples_01.mp4)
+
 ## Focused
 
 In your application design, make sure that the major functions are easily available for the users.
@@ -63,6 +64,7 @@ Display the most used functions on the first screen. Use the **Menu** key to hou
 
 **Video: Functions located behind the Menu key (click to play)**  
 ![](media/designprinciples_02.mp4)
+
 ------------------------------------------------------------------------------
 
 ### Only Display Essential Information as Default
@@ -71,6 +73,7 @@ Differentiate between the essential information that is always displayed and add
 
 **Video: Hiding the name field (click to play)**  
 ![](media/designprinciples_03.mp4)
+
 ------------------------------------------------------------------------------
 ### Minimize User Effort
 
@@ -78,6 +81,7 @@ By promoting user access to the major functions in your application, you minimiz
 
 **VIdeo: Moving the focus to the input area (click to play)**  
 ![](media/designprinciples_04.mp4)
+
 ------------------------------------------------------------------------------
 ### Make It Clear What Can Be Done
 
@@ -106,6 +110,7 @@ By taking the behavioral patterns of each user into account, your application ca
 Make sure you support customization that not only improves your application appearance but also enhances its usability. By providing accessibility functions, such as font sizes and a screen reader, you can help differently abled users navigate Tizen applications more conveniently.
 
 ------------------------------------------------------------------------------
+
 ### Make Recommendations
 
 Based on the usage of your application, you can understand and recommend content the user wants. For example, by providing recommendations, Favorites, or History, you can help users perform tasks more conveniently and efficiently.

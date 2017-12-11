@@ -1,4 +1,4 @@
-﻿# App Structure
+# App Structure
 
 
 The Tizen platform provides you with a wide range of UI components to help you design your apps. You can select and use the UI components depending on the purpose and main features of your app.
@@ -69,7 +69,7 @@ For example, you can provide a 'Create' floating action button for a calendar ap
 
 
 
-![The main action is provided as a floating action button on the main view page.](media/4.1.1_b.png)![The main action is provided as a floating action button on the main view page.](media/4.1.1_c.png)  
+![The main action is provided as a floating action button on the main view page.](media/4.1.1_b.png) ![The main action is provided as a floating action button on the main view page.](media/4.1.1_c.png)  
 *The main action is provided as a floating action button on the main view page.*
 
 
@@ -88,7 +88,7 @@ In the detail view, display content elements, such as images or text, so that us
 
 
 
-![Displaying content in the detail view](media/4.1.2_a.png)![Displaying content in the detail view](media/4.1.2_b.png)  
+![Displaying content in the detail view](media/4.1.2_a.png) ![Displaying content in the detail view](media/4.1.2_b.png)  
 *Displaying content in the detail view*
 
  
@@ -99,7 +99,7 @@ A detail view generally includes various actions that users can run on the page.
 
 
 
-![Action buttons in the detail view](media/4.1.2_d.png)![Action buttons in the detail view](media/4.1.2_e.png)  
+![Action buttons in the detail view](media/4.1.2_d.png) ![Action buttons in the detail view](media/4.1.2_e.png)  
 *Action buttons in the detail view*
 
 
@@ -111,7 +111,7 @@ A detail view generally includes various actions that users can run on the page.
 In the detail view, 'Back' key on the device always takes the user to the previous screen. Place a 'Cancel' button on the screen to allow users to quit a current task. A 'Cancel' button may be provided with action buttons that require confirmation, such as 'Save', 'Done', or 'Send'.
 
 
-![Screen navigation](media/4.1.2_f.png)![Screen navigation](media/4.1.2_g.png)  
+![Screen navigation](media/4.1.2_f.png) ![Screen navigation](media/4.1.2_g.png)  
 *Screen navigation*
 
 
@@ -158,5 +158,5 @@ In the edit mode, provide standard UI components, such as radio buttons, checkbo
 
 
 
-![Editing settings](media/4.1.3_b.png)<br>
+![Editing settings](media/4.1.3_b.png)  
 *Editing settings*

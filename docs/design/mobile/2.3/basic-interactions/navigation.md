@@ -77,7 +77,7 @@ To return to your application, the user must tap the application icon on the **H
  
 
 **Video: Navigation to the Home screen (click to play)**  
-![](media/navigation_03_0 .mp4)
+![](media/navigation_03_0.mp4)
 
 
  

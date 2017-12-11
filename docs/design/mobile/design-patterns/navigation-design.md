@@ -1,4 +1,4 @@
-﻿# Navigation Design
+# Navigation Design
 
 
 
@@ -21,7 +21,7 @@ For a device to be compliant with Tizen’s Compliance Specification, it MUST pr
  
 
 
-![Navigation using the Back key](media/4.7.1_a_.png)![Navigation using the Back key](media/4.7.1_b_.png)![Navigation using the Back key](media/4.7.1_c_.png)  
+![Navigation using the Back key](media/4.7.1_a_.png) ![Navigation using the Back key](media/4.7.1_b_.png) ![Navigation using the Back key](media/4.7.1_c_.png)  
 *Navigation using the Back key*
 
 
@@ -55,7 +55,7 @@ Also, users can touch and hold the Home key to access the Recent screen and tap 
  
 
 
-![Navigation to the Home screen](media/4.7.2_a_.png)![Navigation to the Home screen](media/4.7.2_b_.png)![Navigation to the Home screen](media/4.7.2_c_.png)  
+![Navigation to the Home screen](media/4.7.2_a_.png) ![Navigation to the Home screen](media/4.7.2_b_.png) ![Navigation to the Home screen](media/4.7.2_c_.png)  
 *Navigation to the Home screen*
 
 
@@ -82,7 +82,7 @@ The following figure explains the difference between the changes in screens and 
 
 
 
-![Navigation when view changes](media/4.7.3_a_.png)![Navigation when view changes](media/4.7.3_b_.png)![Navigation when view changes](media/4.7.3_c_.png)![Navigation when view changes](media/6.7.3-02.png)  
+![Navigation when view changes](media/4.7.3_a_.png) ![Navigation when view changes](media/4.7.3_b_.png) ![Navigation when view changes](media/4.7.3_c_.png) ![Navigation when view changes](media/6.7.3-02.png)  
 *Navigation when view changes*
 
 
@@ -101,7 +101,7 @@ For example, users may launch a gallery app to attach an image while writing an 
 
 
 
-![Navigation between apps](media/4.7.4_a_.png)![Navigation between apps](media/navigation_between_apps_2nd.png)![Navigation between apps](media/navigation_between_apps_3rd.png)![Navigation between apps](media/navigation_between_apps_4th.png)![Navigation between apps](media/navigation_between_apps_5th.png)![Navigation between apps](media/4.7.4_f_.png)  
+![Navigation between apps](media/4.7.4_a_.png) ![Navigation between apps](media/navigation_between_apps_2nd.png) ![Navigation between apps](media/navigation_between_apps_3rd.png) ![Navigation between apps](media/navigation_between_apps_4th.png) ![Navigation between apps](media/navigation_between_apps_5th.png) ![Navigation between apps](media/4.7.4_f_.png)  
 *Navigation between apps*
 
 
@@ -156,7 +156,7 @@ You can also offer information about the selected items (for example, the number
 *%d indicates a limited number)*
 
 
-![Multi-selection in a list view](media/4.7.5_b_.png)![Multi-selection in a list view](media/4.7.5_c_.png)![Multi-selection in a list view](media/4.7.5_d_.png)![Multi-selection in a list view](media/4.7.5_e_.png)  
+![Multi-selection in a list view](media/4.7.5_b_.png) ![Multi-selection in a list view](media/4.7.5_c_.png) ![Multi-selection in a list view](media/4.7.5_d_.png) ![Multi-selection in a list view](media/4.7.5_e_.png)  
 *Multi-selection in a list view*
 
 
@@ -164,11 +164,9 @@ You can also offer information about the selected items (for example, the number
 
 
 
-![Multi-selection in a grid view](media/user_action_inside_an_app_5th.png)![Multi-selection in a grid view](media/user_action_inside_an_app_6th.png)![Multi-selection in a grid view](media/user_action_inside_an_app_7th.png)![Multi-selection in a grid view](media/user_action_inside_an_app_8th.png)  
+![Multi-selection in a grid view](media/user_action_inside_an_app_5th.png) ![Multi-selection in a grid view](media/user_action_inside_an_app_6th.png) ![Multi-selection in a grid view](media/user_action_inside_an_app_7th.png) ![Multi-selection in a grid view](media/user_action_inside_an_app_8th.png)  
 *Multi-selection in a grid view*
 
-
- 
 
  
 
@@ -177,7 +175,7 @@ The 'Select All' action button scrolls with the list. Tapping the 'Select All' b
  
 
 
-![Select All feature](media/4.7.5_j_.png)![Select All feature](media/4.7.5_k.png)  
+![Select All feature](media/4.7.5_j_.png) ![Select All feature](media/4.7.5_k.png)  
 *Select All feature*
 
 
@@ -198,7 +196,7 @@ Once the user has deleted the data, provide a visual cue to let users know that 
  
 
 
-![Deleting items in a list view](media/4.7.5_l_.png)![Deleting items in a list view](media/4.7.5_j_.png)![Deleting items in a list view](media/4.7.5_k.png)![Deleting items in a list view](media/4.7.5_m.png)![Deleting items in a list view](media/4.7.5_n.png)  
+![Deleting items in a list view](media/4.7.5_l_.png) ![Deleting items in a list view](media/4.7.5_j_.png) ![Deleting items in a list view](media/4.7.5_k.png) ![Deleting items in a list view](media/4.7.5_m.png) ![Deleting items in a list view](media/4.7.5_n.png)  
 *Deleting items in a list view*
 
  
@@ -210,7 +208,7 @@ Provide a confirmation pop-up message to prevent unintended deletions. Do not us
  
 
 
-![Deleting items in a detail view](media/4.7.5_o_tu.png)![Deleting items in a detail view](media/4.7.5_p_tu.png)![Deleting items in a detail view](media/4.7.5_q_tu.png)  
+![Deleting items in a detail view](media/4.7.5_o_tu.png) ![Deleting items in a detail view](media/4.7.5_p_tu.png) ![Deleting items in a detail view](media/4.7.5_q_tu.png)  
 *Deleting items in a detail view*
 
 
@@ -233,7 +231,7 @@ In Create or Edit mode, the title bar (refer to [Title Bar](../ui-components/nav
 
 
 
-![Explicit save](media/4.7.5_r_.png)![Explicit save](media/4.7.5_s_.png)  
+![Explicit save](media/4.7.5_r_.png) ![Explicit save](media/4.7.5_s_.png)  
 *Explicit save*
 
 
@@ -245,7 +243,7 @@ In the simple Edit mode, like when changing a value in the Settings menu, you do
  
 
 
-![Implicit save](media/6.7.5_v7-01.png)![Implicit save](media/6.7.5_v7-02.png)![Implicit save](media/6.7.5_v7-03.png)  
+![Implicit save](media/6.7.5_v7-01.png) ![Implicit save](media/6.7.5_v7-02.png) ![Implicit save](media/6.7.5_v7-03.png)  
 *Implicit save*
 
 
@@ -255,9 +253,5 @@ In the simple Edit mode, like when changing a value in the Settings menu, you do
 
 If the action is destructive, you can use a pop-up confirmation. Use simple and clear text to inform users of the situation.
 
-![\#](media/4.7.5_q_tu1.png)  
-*Do*
-
-
-![\#](media/4.7.5_w_tu.png)  
-*Don't*
+![Do](media/4.7.5_q_tu1.png) *Do*  
+![Don't](media/4.7.5_w_tu.png)  *Don't*

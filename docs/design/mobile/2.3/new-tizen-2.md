@@ -22,7 +22,7 @@ The layout structure primarily consists of the header and content areas. In a sm
 ## Notifications
 
 
-When showing a pop-up, the width of the popup fits the width of the screen in portrait mode. For seamless usage, the pop-up appears from the bottom center of the screen. In addition, toast pop-ups can be used to inform the user of simple notifications or changes in the current state. For more information, see [Notifications](../../basic-interactions/notifications.md).
+When showing a pop-up, the width of the popup fits the width of the screen in portrait mode. For seamless usage, the pop-up appears from the bottom center of the screen. In addition, toast pop-ups can be used to inform the user of simple notifications or changes in the current state. For more information, see [Notifications](./basic-interactions/notifications.md).
 
  
 
@@ -38,5 +38,5 @@ When showing a pop-up, the width of the popup fits the width of the screen in po
 
 In addition to the major changes, there are the following changes in Tizen 2.3:
 
--   **Header layout**: The header string is center-aligned. If a button is needed, place it as an icon or text. For more information, see [Header](../../design-library/header-0.md).
--   **Controls**: New control elements suitable for the Tizen 2.3 light theme have been added. For more information, see [Asset Library](../../asset-library.md).
+-   **Header layout**: The header string is center-aligned. If a button is needed, place it as an icon or text. For more information, see [Header](./design-library/header-0.md).
+-   **Controls**: New control elements suitable for the Tizen 2.3 light theme have been added. For more information, see [Asset Library](./asset-library.md).

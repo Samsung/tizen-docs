@@ -30,7 +30,7 @@ Design the preferences as shown in the following figure. Classify your app setti
 
 
 
-![General settings](media/4.8.1_c.png)![General settings](media/4.8.1_d.png)  
+![General settings](media/4.8.1_c.png) ![General settings](media/4.8.1_d.png)  
 *General settings*
 
  
@@ -51,7 +51,7 @@ Secondary text is used to show statuses or help text.
 -   Help text : Provides useful information about the item in the list.
 
 
-![Secondary texts](media/4.8.2_a.png)![Secondary texts](media/4.8.2_b.png)  
+![Secondary texts](media/4.8.2_a.png) ![Secondary texts](media/4.8.2_b.png)  
 *Secondary texts*
 
  
@@ -63,7 +63,7 @@ These controls help the user enable or disable specific functions.
 Refer to [Toggle](../ui-components/user-input-components.md#check_) for more information.
 
 
-![Toggles](media/4.8.2_c.png)![Toggles](media/4.8.2_d.png)  
+![Toggles](media/4.8.2_c.png) ![Toggles](media/4.8.2_d.png)  
 *Toggles*
 
  
@@ -110,7 +110,7 @@ This control is used when setting an option when only one choice can be made.
 Refer to [Radio Button](../ui-components/user-input-components.md#radio_) for more information.
 
 
-![Radio button](media/4.8.2_g.png)![Radio button](media/4.8.2_h.png)![Radio button](media/4.8.2_i.png)  
+![Radio button](media/4.8.2_g.png) ![Radio button](media/4.8.2_h.png) ![Radio button](media/4.8.2_i.png)  
 *Radio button*
 
 
@@ -131,13 +131,13 @@ If a setting option is dependent on another setting, dim the option when the pri
  
 
 
-![Dependency](media/4.8.3_a.png)![Dependency](media/4.8.3_b.png)
+![Dependency](media/4.8.3_a.png) ![Dependency](media/4.8.3_b.png)
 
 
  
 
 
-![Dependency](media/4.8.3_c.png)![Dependency](media/4.8.3_d.png)  
+![Dependency](media/4.8.3_c.png) ![Dependency](media/4.8.3_d.png)  
 *Dependency*
 
 There are many examples of dependent settings in the UI. In the General settings, when Flight mode is enabled, Wi-Fi is disabled. When the incoming call sound value is reduced to “0,” the device switches to vibrate mode. You need to consider all dependent functions when designing settings.
@@ -167,7 +167,7 @@ Use the group index view to easily classify and associate features. It makes set
  
 
 
-![Group index view](media/4.8.3_f.png)![Group index view](media/4.8.3_g.png)  
+![Group index view](media/4.8.3_f.png) ![Group index view](media/4.8.3_g.png)  
 *Group index view*
 
 

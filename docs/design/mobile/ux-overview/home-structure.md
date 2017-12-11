@@ -17,7 +17,7 @@ The Home screen is where widgets are located. Widgets display the main informati
 On the Home screen, two fixed buttons are located at the bottom corners. The bottom-left button is the Menu button that is used to show the Home settings, and the bottom-right button is used to direct users to the All apps screen.
 
 
-![Home screen](media/3.1.1_a.png)![Home screen](media/3.1.1_b.png)  
+![Home screen](media/3.1.1_a.png) ![Home screen](media/3.1.1_b.png)  
 *Home screen*
 
 
@@ -31,7 +31,7 @@ The All apps screen shows all the apps that are installed on the device. A user-
 On the All apps screen, two fixed buttons are located in the bottom corners of the screen. The bottom-left button is the Menu button that is used to show the All apps settings, and the bottom-right button is used to direct users to the Home screen.
 
 
-![All apps screen](media/3.1.1_c_.png)![All apps screen](media/3.1.1_d.png)  
+![All apps screen](media/3.1.1_c_.png) ![All apps screen](media/3.1.1_d.png)  
 *All apps screen*
 
 
@@ -46,7 +46,7 @@ Users can open the Recent screen by pressing and holding the hardware Home key. 
 
 
 
-![Recent screen](media/3.1.1_e.png)![Recent screen](media/3.1.1_f.png)  
+![Recent screen](media/3.1.1_e.png) ![Recent screen](media/3.1.1_f.png)  
 *Recent screen*
 
 
@@ -60,7 +60,7 @@ Other than presenting time and date information, the Lock screen also provides c
 
 
 
-![Lock screen](media/3.1.1_g.png)![Lock screen](media/3.1.1_h.png)  
+![Lock screen](media/3.1.1_g.png) ![Lock screen](media/3.1.1_h.png)  
 *Lock screen*
 
 
@@ -75,5 +75,5 @@ The Quick settings panel contains shortcut buttons that allow users to switch be
 
 
 
-![Notification panel](media/3.1.1_i.png)![Notification panel](media/3.1.1_j.png)  
+![Notification panel](media/3.1.1_i.png) ![Notification panel](media/3.1.1_j.png)  
 *Notification panel*

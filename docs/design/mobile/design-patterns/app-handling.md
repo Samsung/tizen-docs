@@ -1,4 +1,4 @@
-﻿# App Handling
+# App Handling
 
 
 
@@ -59,7 +59,7 @@ Tizen supports multitask handling. Users can see the list of recently used apps 
 
 
 
-![Recent screen](media/4.2.2.png)<br>
+![Recent screen](media/4.2.2.png)  
 *Recent screen*
 
 
@@ -67,9 +67,9 @@ To support multitasking, your app should be capable of running in the background
 
 The following lists the guidelines for designing apps that support multitasking.
 
-Design your apps to be ready for unexpected switching.
--   Users can switch between apps any time. Your app should be capable of saving the current state appropriately to allow users to continue to use your app from where they left off. If it is a content-oriented app, such as a game, or a media player, your app should pause automatically to prevent users from missing content.
+- Design your apps to be ready for unexpected switching.
+  *   Users can switch between apps any time. Your app should be capable of saving the current state appropriately to allow users to continue to use your app from where they left off. If it is a content-oriented app, such as a game, or a media player, your app should pause automatically to prevent users from missing content.
 
-Continue and complete user task, if appropriate.
--   Apps, such as music players or call apps, should run in the background when users open another app in the foreground.
--   Design your app to run in the background and complete a user task if the user explicitly intended it, or if it is a simple task which does not require additional user input.
+- Continue and complete user task, if appropriate.
+  *  Apps, such as music players or call apps, should run in the background when users open another app in the foreground.
+  *  Design your app to run in the background and complete a user task if the user explicitly intended it, or if it is a simple task which does not require additional user input.

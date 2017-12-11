@@ -1,5 +1,4 @@
-﻿# Widgets
-
+# Widgets
 
 
 Widgets are essential components for Home screen customization. Working together with the host apps, widgets notify users of important information at a glance. Using widgets, users may gain access to certain app features without opening the app.
@@ -13,7 +12,7 @@ Information widgets are designed to present informative, timely content that use
 
 
 
-![Calendar and Gallery widgets](media/4.4.1_a.png)![Calendar and Gallery widgets](media/4.4.1_b.png)  
+![Calendar and Gallery widgets](media/4.4.1_a.png) ![Calendar and Gallery widgets](media/4.4.1_b.png)  
 *Calendar and Gallery widgets*
 
 <a name="interactive-widgets"></a>
@@ -77,15 +76,8 @@ In addition to displaying content, widgets provide direct paths to the host appl
 
 Widget size is important, because it determines the amount of information that can be presented in the widget. In general, widgets are designed in 4x2 and 4x4 grids to ensure enough space for displaying essential information. Tizen 2.4 allows only for fixed-size widgets. Fixed-sized widgets make it easier for users to arrange the widgets on the Home screen in a more consistent and orderly manner.
 
-
-
-![\#](media/4.4.1_h.png)  
-*Do*
-
-
-![\#](media/4.4.1_i.png)  
-*Don't*
-
+![Do](media/4.4.1_h.png)   *Do*  
+![Don't](media/4.4.1_i.png)  *Don't*  
  
 
 ##### Configuration

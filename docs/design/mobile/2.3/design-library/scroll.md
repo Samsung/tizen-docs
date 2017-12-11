@@ -58,8 +58,8 @@ Normally, the index is in alphabetical order, but it can also be based on fields
 
 **Table: Index order hierarchy**
 
-| **PRIMARY LANGUAGE**                 | **INDEX ORDER**                      |
-|--------------------------------------|--------------------------------------|
+| PRIMARY LANGUAGE                 | INDEX ORDER                      |
+|----------------------------------|----------------------------------|
 |  Latin (including English)           | 1.  Local language <br>  2.  Symbols<br>  3.  Numbers    |
 |  Non-Latin                           | 1.  Local language <br> 2.  English<br> 3. Symbols <br> 4.  Numbers |
 

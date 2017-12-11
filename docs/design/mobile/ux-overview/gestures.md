@@ -4,8 +4,8 @@ The Tizen platform supports a wide variety of gestures that allow users to direc
 
 When you design your apps, make sure you match the gestures in your app with those provided by the Tizen platform. This ensures consistent user experience, especially when multiple apps are running at the same time. The following lists guidelines for designing new gestures for your apps.
 
--   DO NOT use the basic touch gestures defined in this guideline for different actions.
--   DO NOT assign custom gestures for the basic actions that already have common gestures assigned to them.
+> -   DO NOT use the basic touch gestures defined in this guideline for different actions.
+> -   DO NOT assign custom gestures for the basic actions that already have common gestures assigned to them.
 
 
 

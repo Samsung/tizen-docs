@@ -10,7 +10,7 @@ The portrait orientation is the default screen orientation for most app designs 
 
 
 
-![Portrait screen layout](media/4.5.1_a.png)![Portrait screen layout](media/4.5.1_b.png)  
+![Portrait screen layout](media/4.5.1_a.png) ![Portrait screen layout](media/4.5.1_b.png)  
 *Portrait screen layout*
 
 
@@ -41,7 +41,7 @@ Consider using the landscape orientation when:
 
 
 
-![Landscape screen layout](media/4.5.1_c.png)![Landscape screen layout](media/4.5.1_d.png)  
+![Landscape screen layout](media/4.5.1_c.png) ![Landscape screen layout](media/4.5.1_d.png)  
 *Landscape screen layout*
 
 
@@ -58,7 +58,7 @@ Natural transition between portrait and landscape orientations is a standard pra
 
 
 
-![Portrait and landscape orientations](media/4.5.1_e.png)![Portrait and landscape orientations](media/4.5.1_f.png)  
+![Portrait and landscape orientations](media/4.5.1_e.png) ![Portrait and landscape orientations](media/4.5.1_f.png)  
 *Portrait and landscape orientations*
 
 
@@ -71,7 +71,7 @@ The following figure explains why landscape orientation is ideal for video playb
 
 
 
-![Portrait and landscape orientations in a video app](media/4.5.1_g_.png)![Portrait and landscape orientations in a video app](media/4.5.1_h_.png)  
+![Portrait and landscape orientations in a video app](media/4.5.1_g_.png) ![Portrait and landscape orientations in a video app](media/4.5.1_h_.png)  
 *Portrait and landscape orientations in a video app*
 
 
@@ -84,5 +84,5 @@ The Calculator app in the following example switches between the two views depen
 
 
 
-![Portrait and landscape orientations in a calculator app](media/4.5.1_i.png)![Portrait and landscape orientations in a calculator app](media/4.5.1_j.png)  
+![Portrait and landscape orientations in a calculator app](media/4.5.1_i.png) ![Portrait and landscape orientations in a calculator app](media/4.5.1_j.png)  
 *Portrait and landscape orientations in a calculator app*

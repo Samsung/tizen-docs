@@ -1,4 +1,4 @@
-﻿# Notifications
+# Notifications
 
 You can use the notification API to notify users of the new events in your app, such as new messages or updates.
 
@@ -22,7 +22,7 @@ On the notification panel, users can check the current event they are notified f
 
 
 
-![Screen navigation](media/4.3.1_a_.png)![Screen navigation](media/4.3.1_b_.png)<br>
+![Screen navigation](media/4.3.1_a_.png) ![Screen navigation](media/4.3.1_b_.png)  
 *Opening and closing the notification panel*
 
 
@@ -35,8 +35,8 @@ If an app has more than two event notifications, they will be presented on the N
 
 
 
-![Example layouts for event notifications](media/4.3.1_c_.png)<br>
-*>Example layouts for event notifications*
+![Example layouts for event notifications](media/4.3.1_c_.png)  
+*Example layouts for event notifications*
 
 
 
@@ -45,7 +45,7 @@ Progress indicators and activity indicators show the progress of current tasks, 
 
 
 
-![Progress/activity indicators](media/4.3.1_e_.png)<br>
+![Progress/activity indicators](media/4.3.1_e_.png)  
 *Progress/activity indicators*
 
 
@@ -57,7 +57,7 @@ You can also include mini controllers to help users conveniently control apps, s
 
 
 
-![A mini controller for music control](media/4.3.1_g.png)<br>
+![A mini controller for music control](media/4.3.1_g.png)  
 *A mini controller for music control*
 
 
@@ -72,7 +72,7 @@ Use instant notifications for simple notifications (such as missed calls, voice 
 
 
 
-![Instant notifications](media/4.3.1_h.png)<br>
+![Instant notifications](media/4.3.1_h.png)  
 *nstant notifications*
 
 
@@ -118,24 +118,21 @@ We recommend that you design your app to display an active notification instead 
 
 
 > **Tips for choosing the notification types**  
-
-Refer to the following table to choose the notification type that best suits the message you want to deliver. A time-critical message with higher priority may require a more intrusive notification type.
-
-
+> Refer to the following table to choose the notification type that best suits the message you want to deliver. A time-critical message with higher priority may require a more intrusive notification type.
 
  
 
 
   |Type of notification alert      |          Category of event|
   |--------------------------------|---------------------------|
-  |Full view notification(when the screen is locked)<br>Active notification(when the screen is unlocked) and Notification panel |    Time-critical events with high priority<br>Ex) Incoming calls^\*^, alarms^\*^, reminders, etc.|
+  |Full view notification(when the screen is locked)<br>Active notification(when the screen is unlocked) and Notification panel |    Time-critical events with high priority<br>Ex) Incoming calls\*, alarms\*, reminders, etc.|
   |  Active notification & Notification panel  |     Events that require user responses<br> Ex) Messages, Chat events |
   |Instant notification & Notification panel | Events that are not involved in other categories. <br>  Ex) Missed calls, missed events, emails, sign-out notifications, progress notifications (Downloading, Uploading, Installing, Import), completion notifications (Download, upload, installation, import, screen capture), connection error notifications (Wi-Fi, Tethering), Data limit notifications, etc.|
   |Notification panel (optional)|    Events with lower priority<br>Contextual or background information<br>  Ex) Public or undirected social updates, software update notifications, weather information, location information, etc.
 
 
 
-*Although Tizen’s notification API is well suited for designing notifications for time-sensitive events, it has only a limited set of features available. We recommend that you design your own notifications to include unique features and visual effects for notification views. When you design your own notification views, follow the basic design rules to avoid confusion and maintain consistency.
+\* Although Tizen’s notification API is well suited for designing notifications for time-sensitive events, it has only a limited set of features available. We recommend that you design your own notifications to include unique features and visual effects for notification views. When you design your own notification views, follow the basic design rules to avoid confusion and maintain consistency.
 
  
 <a name="badges"></a>
@@ -146,8 +143,7 @@ Not all events require immediate notifications. You can use badges to notify use
 
 
 
-![A badge](media/4.3.5.png)
-
+![A badge](media/4.3.5.png)  
 *A badge*
 
 
