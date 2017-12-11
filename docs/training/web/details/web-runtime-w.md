@@ -1,8 +1,5 @@
 
-
-
-Web Runtime
-===========
+# Web Runtime
 
 The Web Runtime (WRT) engine allows Web applications to run outside the
 browser. You can install Web applications and use them as standalone
@@ -25,25 +22,18 @@ The Web Runtime features include the following:
     Provides information on the key security and privacy considerations
     for Web applications.
 
-Managing Web Applications <a name="manage"></a>
--------------------------
+<a name="manage"></a>
+## Managing Web Applications
 
-The Web Runtime supports the following Web application types:
-
+The Web Runtime supports the following Web application types:  
 -   Packaged Web applications
 
 -   Hosted Web applications
 
-All Web applications must be packaged according to the [Widget Packaging
-and XML Configuration
-guidelines](https://www.w3.org/TR/2011/REC-widgets-20110927/). However,
-unlike packaged Web applications, the hosted Web applications have an
-externally hosted document as their starting page. For more information,
-see Extending Configuration Elements (in
+All Web applications must be packaged according to the [Widget Packaging and XML Configuration
+guidelines](https://www.w3.org/TR/2011/REC-widgets-20110927/). However, unlike packaged Web applications, the hosted Web applications have an externally hosted document as their starting page. For more information, see Extending Configuration Elements (in
 [mobile](../../../tizen-studio/web-tools/config-editor-w.md#mw_extend)
-and
-[wearable](../../../tizen-studio/web-tools/config-editor-w.md#ww_extend)
-applications).
+and [wearable](../../../tizen-studio/web-tools/config-editor-w.md#ww_extend) applications).
 
 You can manage Web applications by:
 
@@ -70,15 +60,11 @@ You can manage Web applications by:
         or Platform level API privileges are declared in the
         configuration file.
 
-
-
-  > **Note** <BR>
+  > **Note**  
   > A Web application can be installed from the Tizen Store or
     side-loaded (for example, through a browser or Bluetooth). The
     `<feature>` element is ignored in the Tizen Web application
     installation process.
-
-
 
 -   Updating Web applications
 
@@ -132,8 +118,8 @@ You can manage Web applications by:
     and XML Configuration
     recommendations](https://www.w3.org/TR/2011/REC-widgets-20110927/).
 
-Web Runtime API Support <a name="runtime"></a>
------------------------
+<a name="runtime"></a>
+## Web Runtime API Support
 
 The main functionality of the Web Runtime is to provide the following
 Tizen Web APIs to Web applications:
@@ -151,13 +137,9 @@ navigation.
 Tizen Web APIs can be accessed in the top-level browsing context, such
 as main document window, and nested browsing contexts, such as iframes.
 
-
-
-> **Note** <br>
+> **Note**  
 > Tizen Device API can only be used with a locally packaged page.
 Tizen Device APIs are not available in cross-origin pages.
-
-
 
 To access the host page of your Web application, add the domain for
 access in the `config.xml` file. For more information, see [Content
@@ -170,8 +152,8 @@ The Web Runtime also supports the following features:
 -   `maximized` and `fullscreen` view modes of the ['view-mode' Media
     Feature](http://www.w3.org/TR/view-mode/).
 
-Web Application Security and Privacy <a name="security"></a>
-------------------------------------
+<a name="security"></a>
+## Web Application Security and Privacy
 
 The Web application security consists of the following elements:
 
@@ -182,7 +164,8 @@ The Web application security consists of the following elements:
 -   [Tizen Device API Security Policy](#device)
 -   [Content Security Policy](#content_sec)
 
-### Web Application Signature <a name="signature"></a>
+<a name="signature"></a>
+### Web Application Signature
 
 The Web Runtime follows the [XML digital widget
 signature](http://www.w3.org/TR/2011/PR-widgets-digsig-20110811/)
@@ -202,7 +185,8 @@ process:
 -   If the signature of a Web application is invalid, it cannot
     be installed.
 
-### Web Application Protection <a name="protect"></a>
+<a name="protect"></a>
+### Web Application Protection
 
 For Web applications that explicitly turn on encryption (in
 [mobile](../../../tizen-studio/web-tools/config-editor-w.md#mw_setting)
@@ -210,19 +194,17 @@ and
 [wearable](../../../tizen-studio/web-tools/config-editor-w.md#ww_setting)
 applications) using the `<tizen:setting/>` element in the configuration
 file, the Web Runtime provides the following protection features:
+-   HTML, JavaScript, and CSS files of the Web application stored by the    device are encrypted.
+-   When the Web application is launched, the WRT decrypts all of its   resources in a manner which is transparent to the Web    application itself.
 
--   HTML, JavaScript, and CSS files of the Web application stored by the
-    device are encrypted.
--   When the Web application is launched, the WRT decrypts all of its
-    resources in a manner which is transparent to the Web
-    application itself.
-
-### Private Storage Support <a name="storage"></a>
+<a name="storage"></a>
+### Private Storage Support
 
 Each Web application has its own private storage space that is not
 accessible to any other application.
 
-### HTML5 API Security Policy <a name="html5"></a>
+<a name="html5"></a>
+### HTML5 API Security Policy
 
 The Web applications can use HTML5 APIs, some of which need user
 permission to execute the API call. For such APIs, the Web Runtime
@@ -336,7 +318,8 @@ Video Recording (in **wearable applications only**)</td>
 </tr>
 </table>
 
-### Tizen Device API Security Policy <a name="device"></a>
+<a name="device"></a>
+### Tizen Device API Security Policy
 
 Web Runtime also provides access to sensitive Device API features after
 consulting the platform-defined security policy. A Web application or an
@@ -416,8 +399,8 @@ Installation fail for `config.xml` use
 </tr>
 </table>
 
-
-### Content Security Policy <a name="content_sec"></a>
+<a name="content_sec"></a>
+### Content Security Policy
 
 The Web applications can mitigate various kinds of content injection
 vulnerabilities, such as cross-site scripting (XSS). The content
@@ -462,15 +445,11 @@ mode**. In this mode, the Web application network and content security
 is enforced by the legacy `<access>` tag according to [Widget Access
 Request Policy](http://www.w3.org/TR/2012/REC-widgets-access-20120207/).
 
-
-> **Note** <br>
+> **Note**  
 > The default CSP enforcement is subject to change in the future.
 
-
-
-
-
-> **Note** <br>
+<br>
+> **Note**  
 > If a Web application declares the `<tizen:allow-navigation>`
 element in its configuration document, the main resource navigation
 (through the `window.open()` method or a hyperlink) to an external URL

@@ -4,37 +4,41 @@ You can create a native application project by selecting from a variety of templ
 
 To create a native application project:
 
-1. In the Tizen Studio, select **File > New > Tizen Project**.![Creating a new project](./media/create_project_1_n.png)The Project Wizard opens.
+1. In the Tizen Studio, select **File > New > Tizen Project**.  
+![Creating a new project](media/create_project_1_n.png)
+
+ The Project Wizard opens.
 
 2. In the Project Wizard, define the project details.
 
    The Project Wizard is used to create the basic application skeleton with the required folder structure and mandatory files. You can easily create different applications by selecting an applicable template or sample for the Project Wizard to use.
 
-   1. Select the **Template** project type and click **Next**.
+   a. Select the **Template** project type and click **Next**.
 
-      ![Selecting the project type](./media/create_project_wizard_type.png)
+      ![Selecting the project type](media/create_project_wizard_type.png)
 
-   2. Select the profile (**Mobile** or **Wearable**) and version from a drop-down list and click **Next**.
+   b. Select the profile (**Mobile** or **Wearable**) and version from a drop-down list and click **Next**.
 
-      ![Selecting the profile and version](./media/create_project_wizard_version_wearable.png)
+      ![Selecting the profile and version](media/create_project_wizard_version_wearable.png)
 
-   3. Select the **Native Application** application type and click **Next**.
+   c. Select the **Native Application** application type and click **Next**.
 
-      ![Selecting the application type](./media/create_project_wizard_app_wearable.png)
+      ![Selecting the application type](media/create_project_wizard_app_wearable.png)
 
-   4. Select the template you want to use and click **Next**.
+   d. Select the template you want to use and click **Next**.
 
-      ![Selecting the template](./media/create_project_wizard_template_wn.png)
+      ![Selecting the template](media/create_project_wizard_template_wn.png)
 
-   5. Define the project properties and click **Finish**.
+   e. Define the project properties and click **Finish**.
 
       You can fill the project name. You can also select the location and working sets by clicking **More properties**.
 
-      **Note**The Tizen API names cannot be used as project names. The project name must be more than 2 characters and is restricted to the following regular expression: [a-zA-Z][a-zA-Z0-9-]{2,49}.
+      > **Note**  
+      > The Tizen API names cannot be used as project names. The project name must be more than 2 characters and is restricted to the following regular expression: [a-zA-Z][a-zA-Z0-9-]{2,49}.
 
-      ![Defining properties](./media/create_project_wizard_properties_wn.png)
+      ![Defining properties](media/create_project_wizard_properties_wn.png)
 
-      The Project Wizard sets up the project, creates the application files using the default content from the template, and closes. For more information on the Project Wizard and the available templates, see [Creating Tizen Projects with Tizen Project Wizard](../../../../org.tizen.studio/html/native_tools/project_wizard_n.htm).
+      The Project Wizard sets up the project, creates the application files using the default content from the template, and closes. For more information on the Project Wizard and the available templates, see [Creating Tizen Projects with Tizen Project Wizard](../../../tizen-studio/native-tools/project-wizard-n.md).
 
 The new application project is shown in the **Project Explorer** view of the Tizen Studio, with default content in the `tizen-manifest.xml` file as well as in several project folders.
 

@@ -1,6 +1,6 @@
 
-Overview of Tizen UI Development
-================================
+# Overview of Tizen UI Development
+
 
 This guide gives a brief description of UI structures and demonstrates
 how you can develop and design native UI applications with tools.
@@ -24,9 +24,8 @@ same thing. Since EFL is mainly a project for the Window Manager, in the
 Tizen UI framework, its features are defined for mobile, wearable, and
 TV characteristics.
 
-
-Benefits of EFL <a id="benefit"></a>
----------------
+<a name="benefit"></a>
+## Benefits of EFL
 
 EFL provides streamlined graphic core libraries that you need to create
 powerful applications. EFL has comparatively low memory requirements but
@@ -54,9 +53,9 @@ An important aspect of EFL is efficiency, both in speed and size:
     blending, interpolated scaling, and transforms with dithering.
 
 
+<a name="key"></a>
+## Key Characteristics of EFL
 
-Key Characteristics of EFL <a id="key"></a>
---------------------------
 
 The key characteristics of EFL explain why Tizen has adopted EFL as its
 UI framework:
@@ -109,9 +108,9 @@ The following figure describes the behavior of the EDC files.
 
 ![EDC file behavior](./media/ui_builder_edc.png)
 
+<a name="efl_structure"></a>
+## EFL Structure on Tizen
 
-EFL Structure on Tizen <a id="efl_structure"></a>
-----------------------
 
 EFL is a collection of libraries that cover a range of functionality
 from managing the application life-cycle to rendering graphical objects.
@@ -122,7 +121,7 @@ still access the layers below it for common tasks, as there is no need
 for Elementary to wrap things that work perfectly well as-is.
 
 To learn more about each library, go to
-[Introduction](../../../../org.tizen.guides/html/native/ui/efl/introduction_n.htm).
+[Introduction](../../../guides/native/ui/efl/introduction-n.md).
 This section only briefly describes the hierarchical structure of your
 application on Tizen.
 
@@ -172,9 +171,9 @@ libraries as a basis:
         libraries, and handle errors and memory pools.
 
 
+<a name="ui_hierarchy"></a>
+## UI Hierarchy Structure
 
-UI Hierarchy Structure <a id="ui_hierarchy"></a>
-----------------------
 
 To develop a UI application, you must understand the hierarchy structure
 used in EFL.
@@ -220,9 +219,9 @@ views), the following figure illustrates a possible structure.
 
 ![UI hierarchy structure](./media/ui_builder_ui_hierarchy.png)
 
+<a name="library"></a>
+## Elementary UI Component Library
 
-Elementary UI Component Library <a id="library"></a>
--------------------------------
 
 The EFL Elementary is a set of fast, finger-friendly, scalable, and
 themeable UI component libraries. The number of supported UI components
@@ -313,5 +312,3 @@ touch events and the user finger size.
     (selected/unselected), an optional icon, and an optional label. Even
     though it is usually grouped with 2 or more other radio components,
     it can also be used alone.
-
-

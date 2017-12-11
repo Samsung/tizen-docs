@@ -1,6 +1,5 @@
 
-Image Capturing with the Camera
-===============================
+# Image Capturing with the Camera
 
 You can capture still images with the device's internal camera and keep
 images on your target device using the Camera API (in
@@ -29,8 +28,7 @@ mode.
 ![Camera state changes](./media/camera_state_changes_n.png)
 
 
-Initializing the Camera <a id="camera_init"></a>
------------------------
+## Initializing the Camera
 
 To initialize the camera, create a handle for the camera, configure the
 camera settings, and register callback functions for the events of
@@ -43,7 +41,7 @@ preview and auto-focus:
     applications), include the &lt;camera.h&gt; header file in your
     application:
 
-    ```
+    ```c++
     #include <camera.h>
     ```
 
@@ -53,7 +51,7 @@ preview and auto-focus:
     define a `camdata` structure type, to store global data related to
     the camera handle:
 
-    ```
+    ```c++
     struct _camdata {
         Evas_Object *win;
         Evas_Object *rect;
@@ -111,7 +109,7 @@ preview and auto-focus:
         `camera_attr_set_image_quality()` function. The quality value
         ranges from 1 (lowest quality) to 100 (highest quality).
 
-        ```
+        ```c++
         error_code = camera_attr_set_image_quality(cam_data.g_camera, 100);
         ```
 
@@ -125,14 +123,11 @@ preview and auto-focus:
         The following example shows how to set the display according to
         the `display_type` parameter:
 
-        <div class="note">
-
-        **Note** The camera state must be `CAMERA_STATE_CREATED` and the
+        > **Note**  
+        > The camera state must be `CAMERA_STATE_CREATED` and the
         `create_base_gui()` function must be called before previewing.
 
-        </div>
-
-        ```
+        ```c++
         int error_code = CAMERA_ERROR_NONE;
         Evas_Object *g_eo = NULL;
 
@@ -195,7 +190,7 @@ preview and auto-focus:
         the first found supported resolution, which is returned from the
         `camera_foreach_supported_preview_resolution()` function:
 
-        ```
+        ```c++
         int resolution[2];
 
         static bool
@@ -225,7 +220,7 @@ preview and auto-focus:
         [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__CAMERA__MODULE.html#ga18b291f5f688ef92692b0cc273fd6ece)
         applications), such as `NV12`, `NV16`, and `JPEG`.
 
-        ```
+        ```c++
         error_code = camera_set_capture_format(cam_data.g_camera, CAMERA_PIXEL_FORMAT_JPEG);
         ```
 
@@ -246,7 +241,7 @@ preview and auto-focus:
         callback, which starts auto-focusing using the
         `camera_start_focusing()` function:
 
-        ```
+        ```c++
         error_code = camera_set_preview_cb(cam_data.g_camera, _camera_preview_cb, NULL);
 
         static void
@@ -293,7 +288,7 @@ preview and auto-focus:
         callback, which starts capturing focused frames using the
         `camera_start_capture()` function:
 
-        ```
+        ```c++
         static void
         _camera_focus_cb(camera_focus_state_e state, void *user_data)
         {
@@ -310,15 +305,14 @@ preview and auto-focus:
 
 
 
-Previewing and Capturing Images <a id="preview_capture"></a>
--------------------------------
+## Previewing and Capturing Images
 
 After initializing the camera, you can start the preview, auto-focus,
 and capturing processes to take a photo. The camera preview starts with
 the `camera_start_preview()` function call, and it draws frames on the
 screen and allows you to capture frames as still images:
 
-```
+```c++
 error_code = camera_start_preview(cam_data.g_camera);
 ```
 
@@ -337,7 +331,7 @@ The following example code implements the `_camera_capturing_cb()`
 callback, which saves the captured frame as a JPEG image, whose format
 is set by the `camera_set_capture_format()` function:
 
-```
+```c++
 static void
 _camera_capturing_cb(camera_image_data_s* image, camera_image_data_s* postview, camera_image_data_s* thumbnail, void *user_data)
 {
@@ -361,7 +355,7 @@ callback, which waits 0.025 seconds before restarting the camera preview
 with auto-focusing. By waiting 0.025 seconds, the callback keeps the
 captured image on the screen for 0.025 seconds.
 
-```
+```c++
 static void
 _camera_completed_cb(void *user_data)
 {
@@ -377,8 +371,7 @@ _camera_completed_cb(void *user_data)
 ```
 
 
-Stopping the Camera <a id="camera_stop"></a>
--------------------
+## Stopping the Camera
 
 After you have finished working with the camera, you need to stop the
 camera and clean up the application environment:
@@ -392,12 +385,10 @@ camera and clean up the application environment:
 4.  Destroy the camera handle and release all the allocated resources
     using the `camera_destroy()` function.
 
-```
+```c++
 error_code = camera_stop_preview(cam_data.g_camera);
 error_code = camera_destroy(cam_data.g_camera);
 
 if (error_code != CAMERA_ERROR_NONE)
     dlog_print(DLOG_INFO, LOG_TAG, "fail to destroy camera: error code = %d", error_code);
 ```
-
-

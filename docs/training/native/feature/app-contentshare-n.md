@@ -1,5 +1,4 @@
-Creating Applications with Content Sharing
-==========================================
+# Creating Applications with Content Sharing
 
 If you want to create applications that offer content sharing features
 to the user, Tizen provides various options for you.
@@ -64,5 +63,3 @@ application can share the content with other applications. On the other
 hand, to allow other applications to find and launch your application,
 you can advertise your application features by declaring your
 application control information in the `tizen-manifest.xml` file.
-
-

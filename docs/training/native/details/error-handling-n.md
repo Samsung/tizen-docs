@@ -1,5 +1,5 @@
-Error Handling
-==============
+# Error Handling
+
 
 How to query error codes for a certain API function is determined by how
 the function returns error codes. In this sense, there are 2 kinds of
@@ -52,7 +52,7 @@ native APIs in Tizen:
 
     For example:
 
-    ```
+    ```c++
     char* errMsg;
     location_manager_h location_handle;
     int result = location_manager_create(LOCATION_METHOD_GPS, location_handle);
@@ -69,5 +69,3 @@ native APIs in Tizen:
 
 Every error code in the Tizen native API is represented as an integer
 value.
-
-

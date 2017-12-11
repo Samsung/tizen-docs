@@ -1,7 +1,5 @@
 
-
-Tizen APIs
-==========
+# Tizen APIs
 
 Using the Tizen Web API modules, you can develop rich Web applications
 and build great application experiences with well-known Web programming

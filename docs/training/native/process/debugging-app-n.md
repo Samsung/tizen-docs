@@ -81,7 +81,7 @@ EFL provides a tool (`EINA_LOG`) for logging information. It has the following l
 
 Execute the application using one of the following commands:
 
-```
+```c++
 EINA_LOG_LEVEL=1 ./sample
 /* OR */
 export EINA_LOG_LEVEL=1
@@ -97,7 +97,7 @@ The following log is shown when the `ecore_idler_del()` function is used and the
 
 When you use `ecore_timer`, `ecore_animator`, and `ecore_idler`, you can often see this log.
 
-```
+```c++
 ERR<4268>:ecore ecore.c:558 _ecore_magic_fail()
 *** ECORE ERROR: Ecore Magic Check Failed!!!
 *** IN FUNCTION: ecore_idler_del()
@@ -111,13 +111,13 @@ To fix the problem:
 
 1. Make a new `ecore_idler` and save the pointer address to `myidler`:
 
-   ```
+   ```c++
    Ecore_Idler *myidler = ecore_idler_add(_idler_cb, data);
    ```
 
 2. Define the idler callback. When it returns `ECORE_CALLBACK_CANCEL`, the `ecore_idler` is deleted. The pointer address in `myidler` is not deleted. So you add `myidler = NULL`:
 
-   ```
+   ```c++
    static Eina_Bool
    _idler_cb(void *data)
    {
@@ -129,7 +129,7 @@ To fix the problem:
 
    Similarly, if you use the `ecore_idler_del()` function, add `myidler = NULL`:
 
-   ```
+   ```c++
    if (myidler) {
        ecore_idler_del(myidler);
        myidler = NULL;
@@ -156,7 +156,7 @@ ERR<4266>:ecore ecore.c:571 _ecore_magic_fail() *** NAUGHTY PROGRAMMER!!!
 
 The `elm_object_part_content_set()` function is often used as follows:
 
-```
+```c++
 btn = elm_button_add(win)
 elm_object_part_content_set(btn, "hahaha", tmp);
 ```
@@ -187,7 +187,7 @@ The following examples are common mistakes when writing EDC:
 
 - If you write the following EDC code, part1 is calculated by part2 and part2 is calculated by part1:
 
-  ```
+  ```c++
   collections {
      group {
         name: "circular_dependency";
@@ -237,7 +237,7 @@ The following examples are common mistakes when writing EDC:
 
 - If you write the following EDC code, part1 is calculated by part2 and part1 is of the minimum size, (100, 100). But the size of part2 is no bigger than 50. So Edje has no idea how to calculate part1.
 
-  ```
+  ```c++
   collections {
      group {
         name: "fixed";
@@ -293,7 +293,8 @@ To set or unset a break point, right-click in the marker bar area on the left si
 You can view and manage the existing break points in the **Breakpoints** view:
 
 - To remove a break point, right-click it and select **Remove**.When you remove a break point, the corresponding icon is removed from the marker bar are in the editor too.
-- To enable or disable a break point, toggle the check box of the break point, or right-click the break point and select **Enable** or **Disable**.This allows you to temporarily disable a break point without losing the information it contains.
+- To enable or disable a break point, toggle the check box of the break point, or right-click the break point and select **Enable** or **Disable**.  
+This allows you to temporarily disable a break point without losing the information it contains.
 
 ### Break Point Properties
 
@@ -303,8 +304,20 @@ To edit the properties:
 
 1. Right-click in the marker bar area and select **Breakpoint Properties**.
 2. To define actions, select **Actions** in the left side menu.
-3. Click **New** and select an action type. The available action types are:Sound ActionYou can make a sound when the break point stops.Log ActionYou can see log messages in the **Console** view.Resume ActionThe program execution continues after a specified time.External Tool ActionYou can make your own action.Click **Attach** after setting the action attributes.
-4. To define common properties where the break point stops, select **Common** in the left side menu.For example, you can specify a condition using an expression. The break point stops the execution only if the condition is matched. The **Ignore count** field defines the count where the break point stops.
+3. Click **New** and select an action type. The available action types are:  
+  - Sound Action  
+  You can make a sound when the break point stops.
+  - Log Action  
+  You can see log messages in the **Console** view.
+  - Resume Action  
+  The program execution continues after a specified time.
+  - External Tool Action  
+  You can make your own action.  
+
+  Click **Attach** after setting the action attributes.
+4. To define common properties where the break point stops, select **Common** in the left side menu.  
+
+ For example, you can specify a condition using an expression. The break point stops the execution only if the condition is matched. The **Ignore count** field defines the count where the break point stops.
 
 ## Watch Points
 
@@ -329,8 +342,12 @@ The **Expressions** view allows you to evaluate the data related to expressions.
 
 The **Expressions** view can be used in the following ways:
 
-- In the **Expressions** view:Right-click and select **Add Watch Expression**.Type the expression that you want to evaluate.
-- In the **Variables** view:Select the variable to watch.Drag and drop it into the **Expressions** view.
+- In the **Expressions** view:  
+  1. Right-click and select **Add Watch Expression**.
+  2. Type the expression that you want to evaluate.
+- In the **Variables** view:  
+  1. Select the variable to watch.
+  2. Drag and drop it into the **Expressions** view.
 
 **Figure: Expressions view**
 
@@ -364,7 +381,7 @@ To debug your application on the emulator:
 
 4. Use the application in the emulator as you would on a target device.
 
-   While the application is running, the Tizen Studio [Log view](../../../../org.tizen.studio/html/common_tools/log_view.htm) shows the log, debug, and exception messages from the methods defined in the log macros.
+   While the application is running, the Tizen Studio [Log view](../../../tizen-studio/common-tools/log-view.md) shows the log, debug, and exception messages from the methods defined in the log macros.
 
 5. To stop debugging, do one of the following:
 
@@ -373,13 +390,14 @@ To debug your application on the emulator:
 
 After debugging, run your application again to check its functionality and to ensure that the bugs detected during the debugging process are fixed.
 
-In the emulator settings, you can change the display language settings, keyboard language settings, proxy address, and location settings. In addition, you can use the [Emulator Control Panel](../../../../org.tizen.studio/html/common_tools/emulator_control_panel.htm) to generate application events (such as sensor data, incoming calls, or location data) for debugging and testing purposes.
+In the emulator settings, you can change the display language settings, keyboard language settings, proxy address, and location settings. In addition, you can use the [Emulator Control Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) to generate application events (such as sensor data, incoming calls, or location data) for debugging and testing purposes.
 
 ## Using Developer Options
 
 You can utilize additional features for application development and debugging by enabling the developer options.
 
-**Note**The developer options are currently supported on the Tizen 2.3.2 wearable emulator only.
+> **Note**  
+> The developer options are currently supported on the Tizen 2.3.2 wearable emulator only.
 
 The developer options allow you to make the pixel ratio visible on the screen:
 
@@ -387,8 +405,8 @@ The developer options allow you to make the pixel ratio visible on the screen:
 
 2. Select **On pixel ratio**.
 
-3. ![Developer options](./media/developer_options.png) ![On pixel ratio](./media/turn_on_opr.png)
+ ![Developer options](./media/developer_options.png) ![On pixel ratio](./media/turn_on_opr.png)
 
-4. To see the OPR (on pixel ratio) at the top of the screen, go to the home screen.
+3. To see the OPR (on pixel ratio) at the top of the screen, go to the home screen.
 
    ![Viewing OPR](./media/watch_face_opr.png)

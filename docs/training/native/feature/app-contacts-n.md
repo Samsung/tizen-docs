@@ -1,6 +1,5 @@
 
-Creating Applications with Contacts
-===================================
+# Creating Applications with Contacts
 
 If you want to create applications that offer contact management
 features to the user, Tizen provides various options for you.
@@ -36,5 +35,3 @@ features:
         various filtered queries.
     -   You can manage group members by adding and removing contacts
         within a group.
-
-

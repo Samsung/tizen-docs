@@ -1,6 +1,5 @@
 
-Contact Management
-==================
+# Contact Management
 
 The basic tasks involved in contact management operations are creating
 and updating contacts, retrieving and deleting persons, and linking
@@ -8,9 +7,8 @@ contacts and persons. The following sections provide you with the
 fundamental building blocks for managing contact details in the Contacts
 database.
 
-
-Connecting to the Contact Service <a id="initializing"></a>
----------------------------------
+<a name="initializing"></a>
+## Connecting to the Contact Service
 
 To initialize the contact service and use the functions and data types
 of the Contacts API, you must include the `<contacts.h>` header file in
@@ -19,7 +17,7 @@ operations, such as fetching, inserting, or updating, you must also
 connect to the contact service by calling the `contacts_connect()`
 function.
 
-```
+```c++
 #include <contacts.h>
 
 int error_code;
@@ -32,23 +30,21 @@ if (error_code != CONTACTS_ERROR_NONE)
 When you no longer need it, disconnect from the contact service using
 the `contacts_disconnect()` function.
 
-<div class="note">
-
-**Note** To use the Contacts API, your application has to request
+> **Note**  
+> To use the Contacts API, your application has to request
 permission by adding the following privileges to the
-`tizen-manifest.xml` file in the application package:
-```
-<privileges>
-   <privilege>http://tizen.org/privilege/contact.read</privilege>
-   <privilege>http://tizen.org/privilege/contact.write</privilege>
-</privileges>
-```
-
-</div>
+`tizen-manifest.xml` file in the application package:  
+> ```xml
+> <privileges>
+>   <privilege>http://tizen.org/privilege/contact.read</privilege>
+>   <privilege>http://tizen.org/privilege/contact.write</privilege>
+> </privileges>
+> ```
 
 
-Retrieving Persons <a id="retrieving"></a>
-------------------
+
+<a name="retrieving"></a>
+## Retrieving Persons
 
 You can retrieve person details in many ways:
 
@@ -56,7 +52,7 @@ You can retrieve person details in many ways:
     person's details using the `contacts_db_get_record()` function,
     whose first parameter is the `_contacts_person._uri` view:
 
-    ```
+    ```c++
     contacts_record_h person = NULL;
     const int person_id = ... /* Get the person ID */
     int error_code;
@@ -77,7 +73,7 @@ You can retrieve person details in many ways:
     The following example shows how to find all person records that
     contain the keyword "John".
 
-    ```
+    ```c++
     contacts_list_h list = NULL;
 
     error_code = contacts_db_search_records(_contacts_person._uri, "John", 0, 0, &list);
@@ -120,7 +116,7 @@ You can retrieve person details in many ways:
     To simplify the example code, error handling has been omitted,
     except for the final check.
 
-    ```
+    ```c++
     static bool
     _get_associated_contacts(contacts_record_h record, contacts_list_h *associated_contacts)
     {
@@ -161,7 +157,7 @@ You can retrieve person details in many ways:
     `_contacts_person_number` view. For the default phone number, the
     property is set to `true`.
 
-    ```
+    ```c++
     static bool
     _get_default_phone_number(contacts_record_h record, char **default_phone_number)
     {
@@ -211,9 +207,8 @@ You can retrieve person details in many ways:
     ```
 
 
-
-Updating Contacts <a id="updating"></a>
------------------
+<a name="updating"></a>
+## Updating Contacts
 
 To update the information for existing contacts, you must retrieve,
 change, and save the information you want to update:
@@ -223,7 +218,7 @@ change, and save the information you want to update:
     second parameter. Alternatively, you can retrieve the contact using
     a search function, such as `contacts_db_get_records_with_query()`.
 
-    ```
+    ```c++
     int contact_id = ... /* Get the contact ID */
     contacts_record_h contact = NULL;
 
@@ -234,7 +229,7 @@ change, and save the information you want to update:
     -   The following example sets a new first name for the contact
         record by updating a child record:
 
-        ```
+        ```c++
         contacts_record_h name = NULL;
         /* Retrieve the contact's name record */
         /* Record index is set to 0, since there is only 1 child record of type "name" */
@@ -252,7 +247,7 @@ change, and save the information you want to update:
         index 0 as the second parameter. If the contact has multiple
         events, you must iterate through them.
 
-        ```
+        ```c++
         contacts_record_h event = NULL;
         /* Retrieve the contact's birthday event record */
         error_code = contacts_record_get_child_record_at_p(contact, _contacts_contact.event, 0, &event);
@@ -266,7 +261,7 @@ change, and save the information you want to update:
         the contact. Each address can be traversed by using the
         `contacts_record_get_child_record_at_p()` function.
 
-        ```
+        ```c++
         int contact_id = ... /* Get the contact ID */
         int address_num = 0;
         int i = 0;
@@ -284,24 +279,17 @@ change, and save the information you want to update:
 3. Apply the changes to the database using the
     `contacts_db_update_record()` function:
 
-    ```
+    ```c++
     error_code = contacts_db_update_record(contact);
 
     if (error_code != CONTACTS_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "failed to update record: error code = %d", error_code);
     ```
 
-    <div class="note">
-
-    **Note** The `contacts_record_set_XXX()` functions only change the
+    > **Note**  
+    > The `contacts_record_set_XXX()` functions only change the
     data in the memory object, not in the Contacts database. Normally,
-    to update the database, you must update each record separately using
-    the `contacts_db_update_record()` function. However, if you retrieve
-    a child record using the `contacts_record_get_child_record_at_p()`
-    function, you only need to update the parent record to the database;
-    the child record is updated automatically with the parent record.
-
-    </div>
+    to update the database, you must update each record separately using    the `contacts_db_update_record()` function. However, if you retrieve    a child record using the `contacts_record_get_child_record_at_p()`    function, you only need to update the parent record to the database;    the child record is updated automatically with the parent record.
 
 4. When no longer needed, destroy the contact handle and release all
     its resources using the `contacts_record_destroy()` function.
@@ -310,7 +298,7 @@ change, and save the information you want to update:
     child records automatically, irrespective of how the child records
     were added (individually or along with their parent record).
 
-    ```
+    ```c++
     error_code = contacts_record_destroy(contact, true);
 
     if (error_code != CONTACTS_ERROR_NONE)
@@ -318,9 +306,8 @@ change, and save the information you want to update:
     ```
 
 
-
-Creating a Contact <a id="creating"></a>
-------------------
+<a name="creating"></a>
+## Creating a Contact
 
 To create a new contact, you must create a contact handle, set the
 contact properties, insert the contact into the database, and destroy
@@ -330,7 +317,7 @@ the handle:
     function with the `_contacts_contact._uri` property as the first
     parameter:
 
-    ```
+    ```c++
     contacts_record_h contact;
 
     error_code = contacts_record_create(_contacts_contact._uri, &contact);
@@ -364,7 +351,7 @@ the handle:
         `contacts_record_create()` function is the
         `_contacts_name._uri` property.
 
-        ```
+        ```c++
         contacts_record_h name;
 
         error_code = contacts_record_create(_contacts_name._uri, &name);
@@ -387,7 +374,7 @@ the handle:
             variable, which is saved in the `_contacts_image.path`
             property by the `contacts_record_set_str()` function.
 
-        ```
+        ```c++
         contacts_record_h image;
 
         error_code = contacts_record_create(_contacts_image._uri, &image);
@@ -413,7 +400,7 @@ the handle:
         `_contacts_number._uri` property as the second parameter of the
         `contacts_record_create()` function.
 
-        ```
+        ```c++
         contacts_record_h number;
 
         error_code = contacts_record_create(_contacts_number._uri, &number);
@@ -447,7 +434,7 @@ the handle:
         Add the event record to the contact as a child record using the
         `contacts_record_add_child_record()` function.
 
-        ```
+        ```c++
         contacts_record_h event;
 
         error_code = contacts_record_create(_contacts_event._uri, &event);
@@ -474,7 +461,7 @@ the handle:
     second parameter of the function is for the contact ID, which is
     unique and assigned by the system.
 
-    ```
+    ```c++
     int id = -1;
 
     error_code = contacts_db_insert_record(contact, &id);
@@ -487,28 +474,26 @@ the handle:
     child records automatically, irrespective of how the child records
     were added (individually or along with their parent record).
 
-    ```
+    ```c++
     error_code = contacts_record_destroy(contact, true);
     ```
 
 
-
-Deleting a Person <a id="deleting"></a>
------------------
+<a name="deleting"></a>
+## Deleting a Person
 
 By using the `contacts_db_delete_record()` function, you can delete a
 person record from the database with related child records. The person
 ID is given to the function as the second parameter.
 
-```
+```c++
 int person_id = ... /* Get the person ID */
 
 error_code = contacts_db_delete_record(_contacts_person._uri, person_id);
 ```
 
-
-Linking and Unlinking Persons and Contacts <a id="linking"></a>
-------------------------------------------
+<a name="linking"></a>
+## Linking and Unlinking Persons and Contacts
 
 A person can be associated with multiple contacts, so you need to know
 how to manage the associations between a person and its contacts:
@@ -531,7 +516,7 @@ When you create a contact, it is automatically linked to a person:
 - If the contact cannot be linked to any existing person, a new person
     is automatically created and linked to the contact.
 
-```
+```c++
 contacts_record_h contact = NULL;
 
 error_code = CONTACTS_ERROR_NONE;
@@ -568,7 +553,7 @@ You can modify the contact and person linking, as needed:
     is left with both their original contacts and the other
     person's contacts.
 
-    ```
+    ```c++
     int person_id1 = ... /* Get the person ID whose contacts are merged elsewhere */
     int person_id2 = ... /* Get the person ID to which contacts are merged */
 
@@ -589,7 +574,7 @@ You can modify the contact and person linking, as needed:
     removes the contact from the person, creates a new person, and links
     the contact to the new person.
 
-    ```
+    ```c++
     int person_id = ... /* Get the person ID */
     int contact_id = ... /* Get the contact ID */
     int unlinked_person_id;
@@ -603,5 +588,3 @@ You can modify the contact and person linking, as needed:
     **Figure: Unlinking a contact**
 
     ![Unlinking a contact](./media/app_contacts_unlinking.png)
-
-

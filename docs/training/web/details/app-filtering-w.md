@@ -1,6 +1,5 @@
 
-Application Filtering
-=====================
+# Application Filtering
 
 The Tizen platform provides a wide range of features across a variety of
 hardware and software components. Among the features, there are some
@@ -9,8 +8,8 @@ application stores to correctly select your application for installation
 on an appropriate device, the feature and profile information must be
 correctly declared in your application.
 
-Feature-based Filtering <a name="filter_w"></a>
------------------------
+<a name="filter_w"></a>
+## Feature-based Filtering
 
 Some features can be selectively supported by the Tizen device
 manufacturer. To prevent problems when the user is trying to run your
@@ -51,7 +50,7 @@ thus prevents incompatible applications from being installed.
 
 **Figure: Feature-based filtering**
 
-![Feature-based filtering](./media/app-filtering-basic-flow.png)
+![Feature-based filtering](./media/app_filtering_basic_flow.png)
 
 When multiple features are defined in the feature list for feature-based
 filtering, the Tizen Store creates the filtering condition for all using
@@ -62,7 +61,8 @@ list of the application package, only a device that has both those
 features can show the application on the Tizen Store application list
 for downloading.
 
-### Screen Size Feature <a name="screen_size"></a>
+<a name="screen_size"></a>
+### Screen Size Feature
 
 The screen size feature is the only exception to the normal feature
 handling process described above. When the screen size is defined in the
@@ -320,7 +320,8 @@ If no screen size key is declared, it is assumed that the application supports o
 </tr>
 </table>
 
-### Feature Hierarchy <a name="hierarchy"></a>
+<a name="hierarchy"></a>
+### Feature Hierarchy
 
 The feature keys have a hierarchy. For example, consider the
 `http://tizen.org/feature/location`,
@@ -346,11 +347,11 @@ The feature keys have a hierarchy. For example, consider the
     `http://tizen.org/feature/location.wps` features together, only a
     device which supports both those features can show the application.)
 
-### Adding the Feature List <a name="adding"></a>
+<a name="adding"></a>
+### Adding the Feature List
 
 To enable filtering for your Web application, add the feature list for
-the application `config.xml` file:
-
+the application `config.xml` file:  
 1.  To open the Web application configuration editor in the Tizen
     Studio, double-click the `config.xml` file in the **Project
     Explorer** view.
@@ -363,7 +364,7 @@ configuration editor, you can see the added code in the **Source** tab.
 
 The following example shows the setting in the `config.xml` file code:
 
-``` {.prettyprint}
+```xml
 <tizen:feature name="http://tizen.org/feature/network.nfc"/>
 ```
 
@@ -860,21 +861,9 @@ Specify this key, if the application requires the speech synthesis (text-to-spee
 
 **Table: Available requirements for mobile Web Runtime**
 
-<table>
-<tr>
-<th>Feature key</th>
-<th>Description</th>
-<th>Since</th>
-</tr>
-<tr>
-
-<td>
-
-`http://tizen.org/feature/shell.appwidget`</td>
-<td>Specify this key, if the application requires the Widget feature. Since 2.3.1, this key indicates only the native Widget.</td>
-<td>2.2.1</td>
-</tr>
-</table>
+| Feature key | Description | Since |
+| --- | --- | --- | --- |
+|`http://tizen.org/feature/shell.appwidget`|Specify this key, if the application requires the Widget feature. Since 2.3.1, this key indicates only the native Widget.| 2.2.1 |
 
 
 **Table: Available requirements for wearable Web Device APIs**
@@ -1387,68 +1376,19 @@ Specify this key, if the application requires the speech synthesis (text-to-spee
 
 **Table: Available requirements for wearable Web Supplementary APIs**
 
-<table>
-<tr>
-<th>Feature key</th>
-<th>Description</th>
-<th>Since</th>
-</tr>
-<tr>
-
-<td>
-
-`http://tizen.org/feature/media.audio_recording`</td>
-<td>
-
-Specify this key, if the application requires the audio recording functionality of the device for using the [Camera API (Tizen Extension)](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#camera) (Audio Recording) API.</td>
-<td>2.3</td>
-</tr>
-<tr>
-<td>
-
-`http://tizen.org/feature/media.image_capture`</td>
-<td>
-
-Specify this key, if the application requires the image capture functionality of the device for using the [Camera API (Tizen Extension)](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#camera) (Image Recording) API.</td>
-<td>2.3</td>
-</tr>
-<tr>
-<td>
-
-`http://tizen.org/feature/media.video_recording`</td>
-<td>
-
-Specify this key, if the application requires the video recording functionality of the device for using the [Camera API (Tizen Extension)](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#camera) (Video Recording) API.</td>
-<td>2.3</td>
-</tr>
-</table>
+| Feature key | Description | Since |
+| --- | --- | --- |
+| `http://tizen.org/feature/media.audio_recording` | Specify this key, if the application requires the audio recording functionality of the device for using the [Camera API (Tizen Extension)](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#camera) (Audio Recording) API. | 2.3 |
+|`http://tizen.org/feature/media.image_capture` | Specify this key, if the application requires the image capture functionality of the device for using the [Camera API (Tizen Extension)](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#camera) (Image Recording) API. | 2.3 |
+| `http://tizen.org/feature/media.video_recording` | Specify this key, if the application requires the video recording functionality of the device for using the [Camera API (Tizen Extension)](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#camera) (Video Recording) API. | 2.3 |
 
 
 **Table: Available requirements for wearable Web Runtime**
 
-<table>
-<tr>
-<th>Feature key</th>
-<th>Description</th>
-<th>Since</th>
-</tr>
-<tr>
-
-<td>
-
-`http://tizen.org/feature/shell.appwidget`</td>
-<td>Specify this key, if the application requires the Widget feature. Since 2.3.1, this key indicates only the native Widget.</td>
-<td>2.2.1</td>
-</tr>
-<tr>
-
-<td>
-
-`http://tizen.org/feature/web.service`</td>
-<td>Specify this key, if the application requires the Web service application feature.</td>
-<td>2.3</td>
-</tr>
-</table>
+|Feature key|Description|Since|
+| --- | --- | --- |
+|`http://tizen.org/feature/shell.appwidget`|Specify this key, if the application requires the Widget feature. Since 2.3.1, this key indicates only the native Widget.|2.2.1|
+|`http://tizen.org/feature/web.service`|Specify this key, if the application requires the Web service application feature.|2.3|
 
 
 **Table: Available requirements for TV Web Device APIs**
@@ -1516,9 +1456,8 @@ Specify this key, if the application requires the TV setting functionality for u
 </tr>
 </table>
 
-
-Profile-based Filtering <a name="profile_w"></a>
------------------------
+<a name="profile_w"></a>
+## Profile-based Filtering
 
 A Tizen profile describes the requirements for a category of Tizen
 devices that have a common application execution environment.
@@ -1536,37 +1475,16 @@ attributes.
 
 **Table: Tizen profiles and profile name attributes**
 
-<table>
-<tr>
-<th>Tizen profile</th>
-<th>Profile name attribute</th>
-</tr>
-<tr>
-<td>Mobile</td>
-
-<td>
-
-`mobile`</td>
-</tr>
-<tr>
-<td>Wearable</td>
-<td>
-
-`wearable`</td>
-</tr>
-<tr>
-<td>TV</td>
-<td>
-
-`TV`</td>
-</tr>
-</table>
-
+| Tizen profile | Profile name attribute |
+| --- | --- |
+|Mobile|`mobile`|
+|Wearable|`wearable`|
+|TV|`TV`|
 
 In a Web application, the profile name element can be added to the
 `config.xml` file as follows:
 
-``` {.prettyprint}
+```xml
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" ... >
    <tizen:profile name="mobile"/>
 ```
@@ -1576,8 +1494,8 @@ element in an application. The store only shows the applications with a
 profile name matching the device profile to prevent unsupported
 applications from being installed.
 
-Single Web Application for Multiple Profiles <a name="multi_profile"></a>
---------------------------------------------
+<a name="multi_profile"></a>
+## Single Web Application for Multiple Profiles
 
 Applications are created for a single specific target profile and can
 only run on devices compliant to that profile. However, it is easily

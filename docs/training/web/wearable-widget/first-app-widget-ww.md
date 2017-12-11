@@ -1,7 +1,5 @@
 
-
-Creating Your First Tizen Wearable Web Widget Application
-=========================================================
+# Creating Your First Tizen Wearable Web Widget Application
 
 **Welcome to Tizen wearable Web widget application development!**
 
@@ -16,7 +14,7 @@ screen) that can contain widget applications.
 **Figure: Widget application on a wearable device**
 
 ![Widget application on a wearable
-device](./media/widget-app-wearable-widget.png)
+device](./media/widget_app_wearable_widget.png)
 
 Study the following instructions to help familiarize yourself with the
 Tizen [Web application development
@@ -61,34 +59,28 @@ Studio](../../../tizen-studio/web-tools/cover-web-w.md) to
 ease the tasks of creating functionality and designing the application
 UI.
 
-Creating a Project <a name="create"></a>
-------------------
+<a name="create"></a>
+## Creating a Project
 
 The following example shows you how to create and configure a basic
 wearable Web widget application project in the Tizen Studio. An
 application project contains all the files that make up an application.
 
 
-
-> **Note** <br>
+> **Note**  
 > For user convenience, standalone widget application packages
-are not allowed in the Tizen market place.
-Use a standalone widget application for testing purposes. If you want to
-publish the application in the Tizen market place, combine it with at
-least 1 UI application in the same package. For more information, see
-[Developing Multiple Projects as a Combined
+are not allowed in the Tizen market place.  
+>
+> Use a standalone widget application for testing purposes. If you want to publish the application in the Tizen market place, combine it with at least 1 UI application in the same package. For more information, see [Developing Multiple Projects as a Combined
 Package](../process/app-dev-process-w.md#multi).
 
-
-
 The following figure illustrates the application to be created. The
-application screen displays the **Hello, Web Widget!** text and no user
-interaction is provided.
+application screen displays the **Hello, Web Widget!** text and no user interaction is provided.
 
 **Figure: Wearable Web Widget application**
 
 ![Wearable Web Widget
-application](./media/basic-app-running-ww-widget.png)
+application](./media/basic_app_running_ww_widget.png)
 
 To create the application project:
 
@@ -97,7 +89,7 @@ To create the application project:
 2.  Make sure the **Web** perspective is selected in the top right
     corner of the Tizen Studio window.
 
-    ![Checking the perspective](./media/change-perspective-w.png)
+    ![Checking the perspective](./media/change_perspective_w.png)
 
     If not, select it. If the perspective is not visible, in the Tizen
     Studio menu, select **Window &gt; Perspective &gt; Open
@@ -107,7 +99,7 @@ To create the application project:
     Project**.
 
     ![Creating a new Tizen Web
-    project](./media/create-project-1-w.png)
+    project](./media/create_project_1_w.png)
 
     The Project Wizard opens.
 
@@ -120,29 +112,29 @@ To create the application project:
 
     a.  Select the **Template** project type and click **Next**.
 
-      ![Selecting the project        type](./media/create-project-wizard-type.png)
+      ![Selecting the project        type](./media/create_project_wizard_type.png)
 
     b.  Select the profile (**Wearable**) and version from a drop-down        list and click **Next**.
 
       The version depends on the platform version you have installed
       and with which you are developing the application.
 
-      ![Selecting the profile and        version](./media/create-project-wizard-version-wearable.png)
+      ![Selecting the profile and        version](./media/create_project_wizard_version_wearable.png)
 
     c.  Select the **Web Application** application type and click        **Next**.
 
-      ![Selecting the application        type](./media/create-project-wizard-app-web-wearable.png)
+      ![Selecting the application        type](./media/create_project_wizard_app_web_wearable.png)
 
     d.  Select the **Widget** template and click **Next**.
 
-      ![Selecting the        template](./media/create-project-wizard-template-ww-widget.png)
+      ![Selecting the        template](./media/create_project_wizard_template_ww_widget.png)
 
     e.  Define the project properties and click **Finish**.
 
       You can fill the project name (3-50 characters) and the unique
       package ID. You can also select the location and working sets by        clicking **More properties**.
 
-      ![Defining        properties](./media/create-project-wizard-properties-ww-widget.png)
+      ![Defining        properties](./media/create_project_wizard_properties_ww_widget.png)
 
       The Project Wizard sets up the project, creates the application        files using the default content from the template, and closes.        For more information on the Project Wizard and the available        templates, see [Creating Tizen Projects with Tizen Project        Wizard](../../../tizen-studio/web-tools/project-wizard-w.md).
 
@@ -170,22 +162,16 @@ most important files and folders include:
 **Figure: Application in the Project Explorer**
 
 ![Application in the Project
-Explorer](./media/basic-app-project-explorer-ww-widget.png)
+Explorer](./media/basic_app_project_explorer_ww_widget.png)
 
-
-
-> **Note** <br>
+> **Note**  
 > You can [validate your widget](#validate) and [view and modify
-the application configuration](#configuration) in the Web application
-configuration editor. In this example, no configuration changes are
-required.
+the application configuration](#configuration) in the Web application configuration editor. In this example, no configuration changes are required.
 
+Your application project is now ready for further actions. Next, build the application.
 
-
-Your application project is now ready for further actions. Next, build
-the application.
-
-### Checking the Application with the API Validator <a name="validate"></a>
+<a name="validate"></a>
+### Checking the Application with the API Validator
 
 You can validate a Tizen wearable widget application using one of 3
 validators:
@@ -200,7 +186,7 @@ WebWidget**, and check the applicable check boxes.
 
 **Figure: Validation preferences**
 
-![Validation preferences](./media/widget-validate-pref-w.png)
+![Validation preferences](./media/widget_validate_pref_w.png)
 
 The validation is performed automatically when the project or package is
 built, or when the application is run.
@@ -212,7 +198,7 @@ X**).
 
 **Figure: Validation results**
 
-![Validation results](./media/widget-validate-result-w.png)
+![Validation results](./media/widget_validate_result_w.png)
 
 ### Managing the Application Configuration <a name="configuration"></a>
 
@@ -226,7 +212,7 @@ To view and modify the application configuration:
     details using the various tabs:
 
     ![Configuring the
-    application](./media/basic-app-config-widget-w.png)
+    application](./media/basic_app_config_widget_w.png)
 
     -   **Overview**: Define general information, such as the name and
         icon of the application.
@@ -252,25 +238,17 @@ To view and modify the application configuration:
 
     -   **Source**: View and edit the source code of the
         `config.xml` file. Changes made and saved on the other tabs are
-        reflected in the source code and vice versa.
+        reflected in the source code and vice versa.  
+        > **Note**  
+        > The `config.xml` file must conform to both the XML file
+        format and the W3C specification requirements. Editing the file  in the **Source** tab is intended for advanced users only.
 
-        <div class="note">
+3.  To save any changes, in the Tizen Studio menu, select **File &gt;    Save All**.
 
-        **Note** <br>The `config.xml` file must conform to both the XML file
-        format and the W3C specification requirements. Editing the file
-        in the **Source** tab is intended for advanced users only.
+For more information on configuring the application, see [Setting the Web Application Configuration](../process/setting-properties-w.md#set_widget).
 
-        </div>
-
-3.  To save any changes, in the Tizen Studio menu, select **File &gt;
-    Save All**.
-
-For more information on configuring the application, see [Setting the
-Web Application
-Configuration](../process/setting-properties-w.md#set_widget).
-
-Building Your Application <a name="build"></a>
--------------------------
+<a name="build"></a>
+## Building Your Application
 
 After you have created the application project, you can implement the
 required features. In this example, only the default features from the
@@ -295,7 +273,7 @@ You can build the application in the following ways:
         Automatically**.
 
         ![Using the automatic
-        build](./media/build-automatic-widget.png)
+        build](./media/build_automatic_widget.png)
 
         A check mark appears next to the menu option.
 
@@ -313,7 +291,7 @@ You can build the application in the following ways:
     **Figure: Manually building the application**
 
     ![Manually building the
-    application](./media/build-manual-widget-ww.png)
+    application](./media/build_manual_widget_ww.png)
 
     Alternatively, you can also select the project in the **Project
     Explorer** view and do one of the following:
@@ -323,45 +301,39 @@ You can build the application in the following ways:
 
 After you have built the application, run it.
 
-Running Your Application <a name="run"></a>
-------------------------
+<a name="run"></a>
+## Running Your Application
 
 You can run the Web widget application on the
 [emulator](../process/run-debug-app-w.md#emulator) or a [real target
 device](../process/run-debug-app-w.md#target).
 
-
-
-> **Note** <br>
+> **Note**  
 > Since the Web Simulator does not support a circular UI, this
-topic does not cover the instructions for running the application on the
-Web Simulator.
+topic does not cover the instructions for running the application on the Web Simulator.
 
-
-
-### Running on the Emulator <a name="emulator"></a>
+<a name="emulator"></a>
+### Running on the Emulator
 
 To run the application on the emulator:
 
 1.  Launch an emulator instance in the [Emulator
-    Manager](../../../tizen-studio/common-tools/emulator-manager.md):
-
+    Manager](../../../tizen-studio/common-tools/emulator-manager.md):  
 
     a.  In the Tizen Studio menu, select **Tools &gt; Emulator        Manager**.
 
-      ![Emulator Manager](./media/emulator-icon.png)
+      ![Emulator Manager](./media/emulator_icon.png)
 
-    b.  In the Emulator Manager, select a wearable emulator from the
-      list and click **Launch**.
+    b.  In the Emulator Manager, select a wearable emulator from the   list and click **Launch**.
 
       If no applicable emulator instance exists, [create a new
       one](../../../tizen-studio/common-tools/emulator-manager.md#create).
 
-      ![Launching the        emulator](./media/emulator-instance-launch-wearable.png)
+      ![Launching the        emulator](./media/emulator_instance_launch_wearable.png)
 
-      The emulator is launched in its own window. You can also see the        new emulator instance in the **Device Manager**. To view the        emulator folder structure, click the arrow next to the        emulator instance.
+     c. The emulator is launched in its own window. You can also see the        new emulator instance in the **Device Manager**. To view the        emulator folder structure, click the arrow next to the        emulator instance.
 
-      ![Emulator](./media/emulator-window-wearable.png)
+      ![Emulator](./media/emulator_window_wearable.png)
 
 2.  Generate a security profile.
 
@@ -370,59 +342,43 @@ To run the application on the emulator:
     profile](../../../tizen-studio/common-tools/certificate-registration.md)
     in the Tizen Studio.
 
-3.  Run the application:
+3.  Run the application:  
+    a.  In the **Project Explorer** view, right-click the project and     select **Run As &gt; Tizen Web Application**.
 
-
-    a.  In the **Project Explorer** view, right-click the project and        select **Run As &gt; Tizen Web Application**.
-
-      ![Running the application](./media/app-run-ww-widget.png)
+      ![Running the application](./media/app_run_ww_widget.png)
 
       Alternatively, you can also select the project in the **Project        Explorer** view and do one of the following:
 
       -   Press the **Ctrl+F11** key.
       -   Click the run icon in the toolbar.
 
-      If you have created multiple emulator instances, select the
-      instance you want from the combo box in the toolbar before
-      selecting to run the application. If you select an offline
-      emulator, it is automatically launched when you select to run
-      the application.
+    If you have created multiple emulator instances, select the    instance you want from the combo box in the toolbar before     selecting to run the application. If you select an offline     emulator, it is automatically launched when you select to run   the application.
 
-      ![Selecting the emulator to        use](./media/app-run-multiple-emulators.png)
+      ![Selecting the emulator to        use](./media/app_run_multiple_emulators.png)
 
     b.  Confirm that the application launches on the emulator.
 
-      ![Application running in the        emulator](./media/emulator-running-ww-widget.png)
+      ![Application running in the        emulator](./media/emulator_running_ww_widget.png)
 
+    > **Note**  
+    > If the emulator display has switched off, you cannot
+      see the application launch. To switch the display on, click the     **Power** key (in the right bottom corner of the emulator).
 
-
-  >    **Note** <br>
-  > If the emulator display has switched off, you cannot
-        see the application launch. To switch the display on, click the
-        **Power** key (in the right bottom corner of the emulator).
-
-
-
-
-  The above screen is shown through the Viewer, to allow you to
+    The above screen is shown through the Viewer, to allow you to
       develop a lone widget application for testing purposes.
 
-To see the widget running on the home screen, add the widget
-      there:
+   To see the widget running on the home screen, add the widget
+      there:  
+      *  Press the **Back** key (in the top right corner of the     emulator device) to return to the home screen (showing a      watch face).
+      *  Swipe the home screen to the right and select **+**.
+      *  Scroll down until you see your widget application, and          select it.
 
+     ![Adding to home        screen](./media/widget_run_add_home_wn.png)
 
-  *  Press the **Back** key (in the top right corner of the        emulator device) to return to the home screen (showing a          watch face).
-
-  *  Swipe the home screen to the right and select **+**.
-
-  *  Scroll down until you see your widget application, and          select it.
-
-  ![Adding to home        screen](./media/widget-run-add-home-wn.png)
-
-  You can see the added widget on the home screen. To access the
+   You can see the added widget on the home screen. To access the
       widget from the home screen, swipe right.
 
-  ![Home screen widget](./media/widget-run-home-wn.png)
+   ![Home screen widget](./media/widget_run_home_wn.png)
 
   While the application is running, the **Log** view in the Tizen        Studio shows the log, debug, and exception messages from the        methods defined in the log macros. To see the view, in the Tizen        Studio menu, go to **Window &gt; Show View &gt; Log**.
 
@@ -432,20 +388,19 @@ Panel](../../../tizen-studio/common-tools/emulator-control-panel.md)
 and [Using Extended Emulator
 Features](../../../tizen-studio/common-tools/emulator-features.md).
 
-### Running on a Target Device <a name="target"></a>
+<a name="target"></a>
+### Running on a Target Device
 
 To run the application on a target device:
 
-1.  Connect the wearable target device to your computer:
-
-
-    a.  Define settings on the device:
+1.  Connect the wearable target device to your computer:  
+    a.  Define settings on the device:  
       -   Go to **Settings &gt; Connections**, and switch
             on Bluetooth.
 
-            ![Switch on Bluetooth](./media/emulator-target-bt.png)
+            ![Switch on Bluetooth](./media/emulator_target_bt.png)
 
-            ![Switch on Bluetooth](./media/emulator-target-bt2.png)
+            ![Switch on Bluetooth](./media/emulator_target_bt2.png)
 
       -   Go to **Settings &gt; Connections**, and switch on Wi-Fi.
 
@@ -454,21 +409,19 @@ To run the application on a target device:
 
             Note the IP address the device is using.
 
-            ![Switch on Wi-Fi](./media/emulator-target-wifi.png)
+            ![Switch on Wi-Fi](./media/emulator_target_wifi.png)
 
       -   Go to **Settings &gt; Gear info**, and switch on the
             debugging mode.
 
             ![Switch on
-            debugging](./media/emulator-target-debug.png)
+            debugging](./media/emulator_target_debug.png)
 
-    b.  In the terminal, enter the following commands:
-
-      ``` {.prettyprint}
+    b.  In the terminal, enter the following commands:  
+    ```bash
         cd tizen-sdk/tools
         ./sdb connect <IP address of Gear S2>
-
-      ```
+    ```
 
      Use the IP address you noted before.
 
@@ -478,11 +431,11 @@ To run the application on a target device:
 
     c.  In the first attempt, the connection fails and the device asks        for user confirmation. To allow Gear to read log data, copy        files to and from your computer, and install the application        manually, click the accept mark.
 
-     ![Allow Gear to access        data](./media/remote-allow-gear-ww.png)
+      ![Allow Gear to access        data](./media/remote_allow_gear_ww.png)
 
     d.  In the **Device Manager**, confirm that the device is connected        (shown in the device list).
 
-     ![Device is connected](./media/remote-connected-ww.png)
+      ![Device is connected](./media/remote_connected_ww.png)
 
 2.  Generate an author certificate.
 
@@ -491,51 +444,44 @@ To run the application on a target device:
     profile](../../../tizen-studio/common-tools/certificate-registration.md)
     in the Tizen Studio.
 
-3.  Run the application:
-
-    a.  In the **Device Manager**, select the device.
-
+3.  Run the application:  
+    a.  In the **Device Manager**, select the device.  
     b.  In **Project Explorer** view, right-click the project and select        **Run As &gt; Tizen Web Application**.
 
-      ![Running the application](./media/app-run-ww-widget.png)
+      ![Running the application](./media/app_run_ww_widget.png)
 
       Alternatively, you can also select the project in the **Project        Explorer** view and do one of the following:
 
       -   Press the **Ctrl+F11** key.
       -   Click the run icon in the toolbar.
 
-      If you have both a connected device and existing emulator
-      instances, select the device from the combo box in the toolbar
-      before selecting to run the application.
+    If you have both a connected device and existing emulator
+    instances, select the device from the combo box in the toolbar
+    before selecting to run the application.
 
-
-      ![Selecting the device to        use](./media/app-run-multiple-emulators.png)
+      ![Selecting the device to        use](./media/app_run_multiple_emulators.png)
 
     c.  Confirm that the application launches on the target device.
 
       Like with the [emulator](#viewer), you must add the widget to
       the home screen before you can see it.
 
-
-
-  >  **Note** <br>
+  >  **Note**  
   > The application is launched using the default debug
-    run configuration. To create and use another configuration:
+    run configuration. To create and use another configuration:  
   > 1.  In the `Project Explorer` view, right-click the project and
         select `Run As > Run Configurations`.
   > 2.  In the `Run Configurations` window, click the
         `New Launch Configuration` icon (![New Launch Configuration
-        icon](./media/run-new-config-wn.png)), define the
+        icon](./media/run_new_config_wn.png)), define the
         configuration details, and launch the application by clicking
         `Run`.
-
   >
-  > ![Run Configurations        window](./media/run-configurations-w-widget.png)
+  > ![Run Configurations       window](./media/run_configurations_w_widget.png)
 
 
-
-Building a Simple UI <a name="ui"></a>
---------------------
+<a name="ui"></a>
+## Building a Simple UI
 
 The following example is based on a template project for a wearable
 widget application, which was introduced in [Creating a
@@ -545,7 +491,8 @@ The template project makes it easy to create your widget application.
 Without modification, you can build and run the project. However, it is
 important to understand the following template code to customize it.
 
-### Initializing the Widget Application <a name="init"></a>
+<a name="init"></a>
+### Initializing the Widget Application
 
 To initialize the widget application:
 
@@ -557,7 +504,7 @@ To initialize the widget application:
     the widget requires privileges, add them to the `config.xml` file
     as well.
 
-    ``` {.prettyprint}
+    ```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <widget xmlns:tizen="http://tizen.org/ns/widgets" xmlns="http://www.w3.org/ns/widgets"
             id="http://yourdomain/HelloWebWidget" version="1.0.0">
@@ -588,10 +535,8 @@ To initialize the widget application:
     Web UI application, you can package the widget with a Web UI
     application:
 
-    a.  Create a Web UI application and the widget application.
-
-    b.  In the **Project Explorer** view, right-click the Web        application, and select **Properties &gt; Tizen Studio &gt;        Package &gt; Multi**, and select the widget to be included in        the package.
-
+    a.  Create a Web UI application and the widget application.  
+    b.  In the **Project Explorer** view, right-click the Web        application, and select **Properties &gt; Tizen Studio &gt;        Package &gt; Multi**, and select the widget to be included in        the package.  
     c.  Click **OK**.
 
     In the following figure, the **Widget** widget application is
@@ -599,13 +544,13 @@ To initialize the widget application:
     application indicates this with the **\[with App\]** text.
 
     ![Widget application
-    reference](./media/widget-app-reference-w.png)
+    reference](./media/widget_app_reference_w.png)
 
-### Creating the Widget Application <a name="creating"></a>
+<a name="creating"></a>
+### Creating the Widget Application
 
-The widget application consists of the following folder architecture:
-
-``` {.prettyprint}
+The widget application consists of the following folder architecture:  
+```
 widget
    css
       style.css
@@ -635,7 +580,7 @@ To create the widget application:
     application using HTML elements. In addition, it imports the
     JavaScript and CSS files.
 
-    ``` {.prettyprint}
+    ```xml
     <!DOCTYPE html>
     <html>
        <head>
@@ -658,7 +603,7 @@ To create the widget application:
 
     The `index.html` file imports the `style.css` file.
 
-    ``` {.prettyprint}
+    ```xml
     html, body {
        width: 100%;
        height: 100%;

@@ -1,5 +1,4 @@
-Creating Applications with Sensors
-==================================
+# Creating Applications with Sensors
 
 A sensor is a device that detects or senses various signals or stimuli,
 such as acceleration, distance, orientation, and magnetic field
@@ -39,5 +38,3 @@ features:
         application features to the user.
     -   You can request proximity sensor events to be delivered to the
         application, where you can process and display them.
-
-

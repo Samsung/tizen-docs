@@ -1,6 +1,6 @@
 
-Security and API Privileges
-===========================
+# Security and API Privileges
+
 
 To effectively protect the device system and user private data, the
 Tizen security architecture is based on privileges and application
@@ -36,32 +36,31 @@ application. For the application to use the API, the privilege must be
 declared in the `tizen-manifest.xml` file and the user must have
 switched it on.
 
-**Note** In applications with the platform version 3.0 or higher, if you
+> **Note**  
+> In applications with the platform version 3.0 or higher, if you
 use privacy-related privileged APIs, make sure that the user has
 switched the privilege on before making the function call. Otherwise,
 the application does not work as expected.
+>
+>
 Since Tizen 4.0, the status of privacy-related privileges can be
-[resolved at
-runtime](../../../../org.tizen.guides/html/native/security/requesting_permissions_n.htm)
-using the Privacy Privilege Manager API (in
-[mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SECURITY__FRAMEWORK__PRIVACY__PRIVILEGE__MANAGER__MODULE.html)
-and
-[wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SECURITY__FRAMEWORK__PRIVACY__PRIVILEGE__MANAGER__MODULE.html)
+[resolved at runtime](../../../../org.tizen.guides/html/native/security/requesting_permissions_n.htm) using the Privacy Privilege Manager API (in
+[mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SECURITY__FRAMEWORK__PRIVACY__PRIVILEGE__MANAGER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SECURITY__FRAMEWORK__PRIVACY__PRIVILEGE__MANAGER__MODULE.html)
 applications).
 
 The Tizen Studio also provides privilege checker tools to check whether
 the Tizen application source code contains any privilege violations. For
 more information, see [Verifying APIs and
-Privileges](../../../../org.tizen.studio/html/native_tools/api_checker_n.htm).
+Privileges](../../../tizen-studio/native-tools/api-checker-n.md).
 
+<a name="mobile"></a>
+## Mobile Native API Privileges
 
-Mobile Native API Privileges <a id="mobile"></a>
-----------------------------
 
 The following table lists the API privileges, which you must declare
 when using security-sensitive API modules in mobile native applications.
 
-****Table: Mobile native API privileges**
+**Table: Mobile native API privileges**
 
 | Privilege                                | Level    | Privacy      | Since | Description                              |
 | ---------------------------------------- | -------- | ------------ | ----- | ---------------------------------------- |
@@ -163,9 +162,8 @@ when using security-sensitive API modules in mobile native applications.
 | `http://tizen.org/privilege/wifidirect`  | public   | -            | 2.3   | The application can enable and disable Wi-Fi Direct®, manage Wi-Fi Direct connections, and change Wi-Fi Direct settings. |
 | `http://tizen.org/privilege/window.priority.set` | public   | -            | 2.3   | The application can appear on top of other windows and screens, including the lock screen, according to the order of priority of the windows. This can prevent the user from interacting with other applications or screens until the window for the application is closed. |
 
-
-Wearable Native API Privileges <a id="wearable"></a>
-------------------------------
+<a name="wearable"></a>
+## Wearable Native API Privileges
 
 The following table lists the API privileges, which you must declare
 when using security-sensitive API modules in wearable native
@@ -260,9 +258,9 @@ applications.
 | `http://tizen.org/privilege/power`       | public   | -            | 2.3.1 | The application can control power-related settings, such as dimming the screen. |
 | `http://tizen.org/privilege/push`        | public   | -            | 2.3.1 | The application can receive notifications from the Internet. This can result in additional charges depending on the user's payment plan. |
 
+<a name="nonAPI"></a>
+## Non-API Bound Privileges
 
-Non-API Bound Privileges <a id="nonAPI"></a>
-------------------------
 
 Tizen application privileges are loosely bound to APIs, so most of the
 privileges can be identified by the APIs that the application calls.
@@ -281,5 +279,3 @@ The following table lists the non-API bound privileges.
 | `http://tizen.org/privilege/externalstorage` | public | 2.3 / 2.3.1            | Similar to the media storage, many devices support external storages, such as MicroSD card or USB memory. As with the media storage, the access to an external storage must be protected with a privilege. You can find the absolute path of the external storage with the [Storage](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__STORAGE__MODULE.html) API functions, such as `storage_get_root_directory()`.<br><br>If your application does not have this privilege, all file operations fail with a permission denied error. If you have this privilege, you have full access to the external storage. |
 | `http://tizen.org/privilege/externalstorage.appdata` | public | 2.3 / 2.3.1            | Many devices support external storages, such as MicroSD card or USB memory. As with the media storage, the access to an external storage must be protected with a privilege.<br><br>If your application does not have this privilege, no file operations with the application data stored in the external storage area succeed and you receive a permission denied error. If you have this privilege, you can store data in the application-specific directory of the external storage. You can find the path for storing data in the external storage with, for example, the `app_get_external_data_path()`, `app_get_external_cache_path()`, and `app_get_external_shared_data_path()` functions. |
 | `http://tizen.org/privilege/appdir.shareddata` | public | 3.0 / 3.0              | Since Tizen 3.0, the application must have this privilege to support the `shared/data` directory.<br><br>The `app_get_shared_data_path()` and `app_manager_get_shared_data_path()` functions return an error when the application does not have this privilege. Note that the `shared/data` directory is writable for the application itself and readable for all other applications. You must be careful when you use this privilege and share data through the `shared/data` directory. For a more secure way of sharing files with another application, try to pass the file path through an application control. |
-
-

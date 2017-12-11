@@ -1,6 +1,5 @@
 
-Video Playback and Recording
-============================
+# Video Playback and Recording
 
 Tizen enables your application to manage video content and provides
 control functions for using video resources. To play and record video
@@ -20,8 +19,7 @@ Tizen supports various video formats, including WMV, ASF, MP4, 3GP, AVI,
 MKV, and OGG. The available formats depend on the target device.
 
 
-Playing Video <a id="video_play"></a>
--------------
+## Playing Video
 
 To play video files stored on the device, use the Player API (in
 [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__PLAYER__MODULE.html)
@@ -48,7 +46,7 @@ The following figure illustrates the player state changes.
 
 ![Player state changes](./media/player_state_changes_n.png)
 
-### Initializing the Video Player <a id="video_init"></a>
+### Initializing the Video Player
 
 You can create a player by calling the `player_create()` function, which
 returns a player handle on success. You need the player handle in
@@ -66,13 +64,13 @@ callbacks to handle playback events:
     applications), include the `<player.h>` header file in your
     application:
 
-    ```
+    ```c++
     #include <player.h>
     ```
 
 2. Define a variable for the player handle, and create the handle:
 
-    ```
+    ```c++
     struct appdata {
         player_h player;
     };
@@ -99,7 +97,7 @@ callbacks to handle playback events:
     internal storage paths. To access and use internal storage, include
     the `<storage.h>` header file in your application.
 
-    ```
+    ```c++
     #include <storage.h>
 
     #define MP4_SAMPLE "SampleVideo.mp4";
@@ -152,7 +150,7 @@ callbacks to handle playback events:
     Once the storage path is set, you can specify the video file to play
     using the `player_set_uri()` function with the player handle:
 
-    ```
+    ```c++
     error_code = player_set_uri(ad->player, video_path);
     if (error_code != PLAYER_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "failed to set URI: error code = %d", error_code);
@@ -161,7 +159,7 @@ callbacks to handle playback events:
 4. Create UI buttons and add callback functions for your application to
     control the playback:
 
-    ```
+    ```c++
     static void
     create_base_gui(appdata_s *ad)
     {
@@ -190,7 +188,7 @@ callbacks to handle playback events:
 
     -   Interruption notifications:
 
-        ```
+        ```c++
         static void
         _player_interrupted_cb(player_interrupted_code_e code, void *data)
         {
@@ -218,7 +216,7 @@ callbacks to handle playback events:
 
     - End notifications:
 
-        ```
+        ```c++
         static void
         _player_completed_cb(void *_data)
         {
@@ -236,7 +234,7 @@ callbacks to handle playback events:
 
     - Error notifications:
 
-        ```
+        ```c++
         static void
         _player_error_cb(int error_code, void *user_data)
         {
@@ -252,7 +250,7 @@ callbacks to handle playback events:
         }
         ```
 
-### Managing Video Playback <a id="video_playback"></a>
+### Managing Video Playback
 
 To manage playback:
 
@@ -263,7 +261,7 @@ To manage playback:
     connected to the display. The display handle can be retrieved using
     the `GET_DISPLAY()` function.
 
-    ```
+    ```c++
     error_code = player_set_display(ad->player, PLAYER_DISPLAY_TYPE_OVERLAY, GET_DISPLAY(evas_obj));
     ```
 
@@ -274,7 +272,7 @@ To manage playback:
     function, which changes the player state from `PLAYER_STATE_IDLE` to
     `PLAYER_STATE_READY`:
 
-    ```
+    ```c++
     error_code = player_prepare(ad->player);
     if (error_code != PLAYER_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "failed to prepare player: error code = %d", error_code);
@@ -284,7 +282,7 @@ To manage playback:
     `player_start()` function. The player state changes to
     `PLAYER_STATE_PLAYING`.
 
-    ```
+    ```c++
     error_code = player_start(ad->player);
     if (error_code != PLAYER_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "failed to start player: error code = %d", error_code);
@@ -296,7 +294,7 @@ To manage playback:
     By calling the `player_pause()` function, you can pause playback and
     change the player state to `PLAYER_STATE_PAUSED`.
 
-### Configuring the Video Playback <a id="video_configure"></a>
+### Configuring the Video Playback
 
 During video playback, you can manage the display settings – display
 mode and display orientation – as needed. Before setting the parameters,
@@ -311,7 +309,7 @@ To configure the display settings:
     `player_set_display_visible()` function with `true` as the second
     parameter:
 
-    ```
+    ```c++
     bool is_visible;
 
     error_code = player_is_display_visible(ad->player, &is_visible);
@@ -332,7 +330,7 @@ To configure the display settings:
     [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gaafcf6f7487d8cb376e1851a6e1253f3a) applications).
     Note that the DST ROI mode is deprecated since Tizen 3.0.
 
-    ```
+    ```c++
     error_code = player_set_display_mode(ad->player, PLAYER_DISPLAY_MODE_FULL_SCREEN);
     dlog_print(DLOG_ERROR, LOG_TAG, "player_set_display_mode = %d", error_code);
     ```
@@ -345,12 +343,12 @@ To configure the display settings:
     and
     [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gab8c4c170d4b2628a09831edc8d652302) applications).
 
-    ```
+    ```c++
     error_code = player_set_display_rotation(ad->player, PLAYER_DISPLAY_ROTATION_90);
     dlog_print(DLOG_ERROR, LOG_TAG, "player_set_display_mode = %d", error_code);
     ```
 
-### Terminating the Video Player <a id="video_terminate"></a>
+### Terminating the Video Player
 
 When you are finished using the player, release all the resources
 allocated to it:
@@ -359,7 +357,7 @@ allocated to it:
     changes the player state to `PLAYER_STATE_IDLE`.
 2.  Destroy the player handle using the `player_destroy()` function.
 
-```
+```c++
 error_code = player_stop(ad->player);
 error_code = player_unprepare(ad->player);
 error_code = player_destroy(ad->player);
@@ -369,8 +367,7 @@ if (error_code != PLAYER_ERROR_NONE)
 ```
 
 
-Recording Video <a id="video_record"></a>
----------------
+# Recording Video
 
 To record video, use the Recorder API (in
 [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html)
@@ -391,7 +388,7 @@ The following figure illustrates the general recorder state changes.
 
 ![Recorder state changes](./media/recorder_state_changes_n.png)
 
-### Initializing the Video Recorder <a id="init_video_rec"></a>
+### Initializing the Video Recorder
 
 To prepare the recorder for the recording session, and to define the
 necessary callbacks to handle recording events:
@@ -403,7 +400,7 @@ necessary callbacks to handle recording events:
     applications), include the `<recorder.h>` header file in your
     application:
 
-    ```
+    ```c++
     #include <recorder.h>
     ```
 
@@ -416,7 +413,7 @@ necessary callbacks to handle recording events:
     Boolean variable specifying whether the video recorder is
     switched off.
 
-    ```
+    ```c++
     #include <camera.h>
 
     struct recdata {
@@ -428,7 +425,7 @@ necessary callbacks to handle recording events:
 
 3. Define configuration values for the camera and the video recorder:
 
-    ```
+    ```c++
     static const int RECORD_TIME=2;
     static const int RECORD_LIMIT=4;
     #define FILENAME_PREFIX "VIDEO"
@@ -445,7 +442,7 @@ necessary callbacks to handle recording events:
         camera to access and the camera handle to be returned. The
         camera state is set as `CAMERA_STATE_CREATED`.
 
-        ```
+        ```c++
         static recdata rec_data;
 
         int error_code = 0;
@@ -467,7 +464,7 @@ necessary callbacks to handle recording events:
         video recorder handles as parameters. The state of the video
         recorder is set as `RECORDER_STATE_CREATED`.
 
-        ```
+        ```c++
         /* Create the video recorder handle */
         error_code = recorder_create_videorecorder(rec_data.camera, &rec_data.recorder);
         if (error_code != RECORDER_ERROR_NONE)
@@ -477,7 +474,7 @@ necessary callbacks to handle recording events:
 4. Register appropriate callback functions to receive notifications
     about recorder state changes or reaching the recording limit:
 
-    ```
+    ```c++
     /* Set the state change callback for the video recorder */
     error_code = recorder_set_state_changed_cb(rec_data.recorder, on_state_changed_cb, NULL);
     if (error_code != RECORDER_ERROR_NONE)
@@ -506,7 +503,7 @@ necessary callbacks to handle recording events:
         Using the returned value and the `recorder_set_video_encoder()`
         function, you can set the video recorder codec:
 
-        ```
+        ```c++
         recorder_video_codec_e supported_codec;
 
         static bool
@@ -527,7 +524,7 @@ necessary callbacks to handle recording events:
     - To set the video encoder bitrate, use the
         `recorder_attr_set_video_encoder_bitrate()` function:
 
-        ```
+        ```c++
         /* Set the video encoder bitrate */
         error_code = recorder_attr_set_video_encoder_bitrate(rec_data.recorder, g_bitrate);
         ```
@@ -536,7 +533,7 @@ necessary callbacks to handle recording events:
         `recorder_set_file_format()` function. Make sure that the file
         format matches the video codec.
 
-        ```
+        ```c++
         /* Set the file format */
         error_code = recorder_set_file_format(rec_data.recorder, RECORDER_FILE_FORMAT_MP4);
         ```
@@ -544,7 +541,7 @@ necessary callbacks to handle recording events:
     - To set the file name, use the `recorder_set_filename()`
         function:
 
-        ```
+        ```c++
         struct tm localtime = {0};
         time_t rawtime = time(NULL);
         char filename[256] = {'\0'};
@@ -568,7 +565,7 @@ necessary callbacks to handle recording events:
         `recorder_attr_set_audio_encoder_bitrate()`, and
         `recorder_attr_set_audio_samplerate()` functions, respectively.
 
-### Managing Video Recording <a id="video_rec"></a>
+### Managing Video Recording
 
 When the recorder handle is created, the video recorder is in the
 `RECORDER_STATE_CREATED` state. To start recording, the video recorder
@@ -580,7 +577,7 @@ To manage recording:
     which changes the player state from `RECORDER_STATE_CREATED` to
     `RECORDER_STATE_READY`:
 
-    ```
+    ```c++
     error_code = recorder_prepare(rec_data.recorder);
     ```
 
@@ -588,7 +585,7 @@ To manage recording:
     `recorder_start()` function. The recorder state changes to
     `RECORDER_STATE_RECORDING`.
 
-    ```
+    ```c++
     error_code = recorder_start(rec_data.recorder);
     ```
 
@@ -600,7 +597,7 @@ To manage recording:
         state, you can resume or stop recording. To resume, call the
         `recorder_start()` function.
 
-        ```
+        ```c++
         error_code = recorder_pause(rec_data.recorder);
         ```
 
@@ -611,13 +608,13 @@ To manage recording:
         `recorder_cancel()` function. Both functions set the video
         recorder state to `RECORDER_STATE_READY`.
 
-        ```
+        ```c++
         error_code = recorder_commit(rec_data.recorder);
         /* OR */
         error_code = recorder_cancel(rec_data.recorder);
         ```
 
-### Terminating the Video Recorder <a id="terminate_video_rec"></a>
+### Terminating the Video Recorder
 
 After you finish video recording, release all the resources allocated to
 the video recorder:
@@ -629,12 +626,10 @@ the video recorder:
     `recorder_destroy()` function. The recorder state changes to
     `RECORDER_STATE_NONE`.
 
-```
+```c++
 error_code = recorder_unprepare(rec_data->recorder);
 error_code = recorder_destroy(rec_data.recorder);
 
 if (error_code != RECORDER_ERROR_NONE)
     dlog_print(DLOG_ERROR, LOG_TAG, "fail to destroy recorder: error code = %d", error_code);
 ```
-
-

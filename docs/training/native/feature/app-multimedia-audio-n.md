@@ -1,6 +1,5 @@
 
-Audio Playback and Recording
-============================
+# Audio Playback and Recording
 
 Tizen enables your application to manage audio content. It also provides
 control functions for using audio resources. The resources can be media
@@ -11,8 +10,7 @@ Tizen supports various audio formats, including MP3, AAC, WMA, M4A, 3GA,
 WAV, and AMR. The available formats depend on the target device.
 
 
-Playing Audio <a id="audio_play"></a>
--------------
+## Playing Audio
 
 To play audio files stored on the device, use the Player API (in
 [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__PLAYER__MODULE.html)
@@ -28,7 +26,7 @@ The following figure illustrates the player state changes.
 
 ![Player state changes](./media/player_state_changes_n.png)
 
-### Initializing the Audio Player {#player_init}
+### Initializing the Audio Player
 
 You can create a player by calling the `player_create()` function, which
 returns a player handle on success. You need the player handle in
@@ -46,13 +44,13 @@ callbacks to handle playback events:
     applications), include the `<player.h>` header file in your
     application:
 
-    ```
+    ```c++
     #include <player.h>
     ```
 
 2. Define a variable for the player handle, and create the handle:
 
-    ```
+    ```c++
     struct appdata {
         player_h player;
     };
@@ -79,7 +77,7 @@ callbacks to handle playback events:
     internal storage paths. To access and use internal storage, include
     the `<storage.h>` header file in your application.
 
-    ```
+    ```c++
     #include <storage.h>
 
     #define MP3_SAMPLE "SampleAudio.mp3";
@@ -137,7 +135,7 @@ callbacks to handle playback events:
     Once the storage path is set, you can specify the audio file to play
     using the `player_set_uri()` function with the player handle:
 
-    ```
+    ```c++
     error_code = player_set_uri(ad->player, audio_path);
     if (error_code != PLAYER_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "failed to set URI: error code = %d", error_code);
@@ -146,7 +144,7 @@ callbacks to handle playback events:
 4. Create UI buttons and add callback functions for your application to
     control the playback:
 
-    ```
+    ```c++
     static void
     create_base_gui(appdata_s *ad)
     {
@@ -175,7 +173,7 @@ callbacks to handle playback events:
 
     -   Interruption notifications:
 
-        ```
+        ```c++
         static void
         _player_interrupted_cb(player_interrupted_code_e code, void *data)
         {
@@ -203,7 +201,7 @@ callbacks to handle playback events:
 
     - End notifications:
 
-        ```
+        ```c++
         static void
         _player_completed_cb(void *data)
         {
@@ -226,7 +224,7 @@ callbacks to handle playback events:
 
     - Error notifications:
 
-        ```
+        ```c++
         static void
         _player_error_cb(int error_code, void *user_data)
         {
@@ -242,7 +240,7 @@ callbacks to handle playback events:
         }
         ```
 
-### Managing Audio Playback <a id="playback"></a>
+### Managing Audio Playback
 
 When the player is created, it is in the `PLAYER_STATE_IDLE` state. To
 start playback, it must be in the `PLAYER_STATE_READY` state.
@@ -253,7 +251,7 @@ To manage playback:
     function, which changes the player state from `PLAYER_STATE_IDLE` to
     `PLAYER_STATE_READY`:
 
-    ```
+    ```c++
     error_code = player_prepare(ad->player);
     if (error_code != PLAYER_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "failed to prepare player: error code = %d", error_code);
@@ -263,7 +261,7 @@ To manage playback:
     `player_start()` function. The player state changes to
     `PLAYER_STATE_PLAYING`.
 
-    ```
+    ```c++
     error_code = player_start(ad->player);
     if (error_code != PLAYER_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "failed to start player: error code = %d", error_code);
@@ -275,7 +273,7 @@ To manage playback:
     By calling the `player_pause()` function, you can pause playback and
     change the player state to `PLAYER_STATE_PAUSED`.
 
-### Terminating the Audio Player <a id="player_terminate"></a>
+### Terminating the Audio Player
 
 When you are finished using the player, release all the resources
 allocated to it:
@@ -284,7 +282,7 @@ allocated to it:
     changes the player state to `PLAYER_STATE_IDLE`.
 2.  Destroy the player handle using the `player_destroy()` function.
 
-```
+```c++
 error_code = player_stop(ad->player);
 error_code = player_unprepare(ad->player);
 error_code = player_destroy(ad->player);
@@ -294,8 +292,7 @@ if (error_code != PLAYER_ERROR_NONE)
 ```
 
 
-Recording Audio <a id="audio_record"></a>
----------------
+## Recording Audio
 
 To record audio, use the Recorder API (in
 [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html)
@@ -316,7 +313,7 @@ The following figure illustrates the general recorder state changes.
 
 ![Recorder state changes](./media/recorder_state_changes_n.png)
 
-### Initializing the Audio Recorder <a id="recorder_init"></a>
+### Initializing the Audio Recorder
 
 To prepare the recorder for the recording session, and to define the
 necessary callbacks to handle recording events:
@@ -328,7 +325,7 @@ necessary callbacks to handle recording events:
     applications), include the `<recorder.h>` header file in your
     application:
 
-    ```
+    ```c++
     #include <recorder.h>
     ```
 
@@ -337,7 +334,7 @@ necessary callbacks to handle recording events:
     returns a handle for the audio recorder and the state of the audio
     recorder is set as `RECORDER_STATE_CREATED`.
 
-    ```
+    ```c++
     static recorder_h g_recorder;
 
     /* Create the audio recorder handle */
@@ -352,7 +349,7 @@ necessary callbacks to handle recording events:
     -   The following example code implements a simple callback that
         prints the previous and current audio recorder states:
 
-        ```
+        ```c++
         error_code = recorder_set_state_changed_cb(g_recorder, _state_changed_cb, NULL);
 
         static void
@@ -365,7 +362,7 @@ necessary callbacks to handle recording events:
     - The following example code implements a simple callback that
         prints a notification about reaching the recording limit:
 
-        ```
+        ```c++
         error_code = recorder_set_recording_limit_reached_cb(g_recorder, _recorder_recording_limit_reached_cb, NULL);
 
         static void
@@ -387,7 +384,7 @@ necessary callbacks to handle recording events:
         and
         [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html#ga431bd585d929f13a71ecefd58ed17d46) applications).
 
-        ```
+        ```c++
         #define FILENAME_PREFIX "AUDIO"
         struct tm localtime = {0};
         time_t rawtime = time(NULL);
@@ -407,7 +404,7 @@ necessary callbacks to handle recording events:
         and
         [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html#ga7d3dbf7b0b3ef68101562b89e81ecf1e) applications).
 
-        ```
+        ```c++
         /* Set the file format according to the audio encoder */
         error_code = recorder_set_file_format(g_recorder, RECORDER_FILE_FORMAT_3GP);
         ```
@@ -417,7 +414,7 @@ necessary callbacks to handle recording events:
         are the full path and the name of the file for the recorded
         audio data to be saved.
 
-        ```
+        ```c++
         /* Create the file name */
         if (localtime_r(&rawtime, &localtime) != NULL) {
             size = snprintf(filename, sizeof(filename), "%s/%s-%04i-%02i-%02i_%02i:%02i:%02i.3gp",
@@ -440,7 +437,7 @@ necessary callbacks to handle recording events:
         and
         [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html#ga0e73accfbca1b992c29a2128acebbbf3) applications).
 
-        ```
+        ```c++
         /* Set the maximum file size to 1024 (kB) */
         error_code = recorder_attr_set_size_limit(g_recorder, 1024);
 
@@ -454,7 +451,7 @@ necessary callbacks to handle recording events:
         error_code = recorder_attr_set_audio_samplerate(g_recorder, 44100);
         ```
 
-### Managing Audio Recording <a id="audio_rec"></a>
+### Managing Audio Recording
 
 When the recorder handle is created, the audio recorder is in the
 `RECORDER_STATE_CREATED` state. To start recording, the audio recorder
@@ -466,7 +463,7 @@ To manage recording:
     which changes the player state from `RECORDER_STATE_CREATED` to
     `RECORDER_STATE_READY`:
 
-    ```
+    ```c++
     error_code = recorder_prepare(g_recorder);
     ```
 
@@ -474,7 +471,7 @@ To manage recording:
     `recorder_start()` function. The recorder state changes to
     `RECORDER_STATE_RECORDING`.
 
-    ```
+    ```c++
     error_code = recorder_start(g_recorder);
     ```
 
@@ -486,7 +483,7 @@ To manage recording:
         state, you can resume or stop recording. To resume, call the
         `recorder_start()` function.
 
-        ```
+        ```c++
         error_code = recorder_pause(g_recorder);
         ```
 
@@ -500,7 +497,7 @@ To manage recording:
         The following example code first checks the audio recorder
         state, and then stops the recorder and saves the data to a file:
 
-        ```
+        ```c++
         /* Check the audio recorder state */
         static bool
         _recorder_expect_state(recorder_h recorder, recorder_state_e expected_state)
@@ -526,7 +523,7 @@ To manage recording:
         }
         ```
 
-### Terminating the Audio Recorder <a id="recorder_terminate"></a>
+### Terminating the Audio Recorder
 
 After you finish audio recording, release all the resources allocated to
 the audio recorder:
@@ -538,12 +535,10 @@ the audio recorder:
     `recorder_destroy()` function. The recorder state changes to
     `RECORDER_STATE_NONE`.
 
-```
+```c++
 error_code = recorder_unprepare(g_recorder);
 error_code = recorder_destroy(g_recorder);
 
 if (error_code != RECORDER_ERROR_NONE)
     dlog_print(DLOG_ERROR, LOG_TAG, "fail to destroy recorder: error code = %d", error_code);
 ```
-
-

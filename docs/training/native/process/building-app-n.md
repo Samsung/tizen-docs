@@ -1,6 +1,6 @@
 
-Building Applications
-=====================
+# Building Applications
+
 
 In the Tizen Studio, different build configurations are available for
 different development steps:
@@ -28,16 +28,14 @@ different development steps:
     Stripping is done only in the packaging step for the
     ARM architecture.
 
-    <div class="note">
+    >  **Note**   
+    > The Tizen Studio automatically switches application logging
+    off in the release mode. To enable logging in the release mode:  
+    >   1.  In the Tizen Studio menu, select `Project > Properties`.
+    >   2.  In the `Properties` window, go to        `C/C++Build > Settings > C Complier > Debugging`.
+    >   3.  Select the `Enable application logging` check box.
 
-    **Note** The Tizen Studio automatically switches application logging
-    off in the release mode. To enable logging in the release mode:
-    1.  In the Tizen Studio menu, select `Project > Properties`.
-    2.  In the `Properties` window, go to
-        `C/C++Build > Settings > C Complier > Debugging`.
-    3.  Select the `Enable application logging` check box.
 
-    </div>
 
 To set the target architecture:
 
@@ -48,19 +46,16 @@ To set the target architecture:
     appropriate architecture.
 
 
-
-Building the Application in the Tizen Studio <a id="build"></a>
---------------------------------------------
+<a name="build"></a>
+## Building the Application in the Tizen Studio
 
 To create an application project build:
 
 1.  Select the build configuration:
 
-    1.  Right-click the project in the Tizen Studio **Project
-        Explorer** view.
+    a.  Right-click the project in the Tizen Studio **Project        Explorer** view.
 
-    2.  Select **Build Configurations &gt; Set Active**, and select the
-        build configuration you need.
+    b.  Select **Build Configurations &gt; Set Active**, and select the        build configuration you need.
 
 2. Build the project:
 
@@ -76,18 +71,17 @@ To create an application project build:
 
         Build the application binaries for executing the code:
 
-        1.  Select the project in the **Project Explorer** view.
+        a.  Select the project in the **Project Explorer** view.
 
-        2.  In the Tizen Studio menu, select **Project &gt; Build
-            Project**.
+        b.  In the Tizen Studio menu, select **Project &gt; Build            Project**.
 
 3. Check your application project source code for any API or privilege
     violations, which are displayed in the **Problems** view.
 
 
+<a name="prop"></a>
+## Build Properties
 
-Build Properties <a id="prop"></a>
-----------------
 
 To build project, you can choose many options. For example, optimization
 level, debugging support, or include path and library link options.
@@ -139,8 +133,7 @@ To set the build properties:
 
         Shows the description of the selected framework.
 
-5. In the **Properties** window, go to **C/C++ Build &gt; Settings &gt;
-    Tool Settings**.
+5. In the **Properties** window, go to **C/C++ Build &gt; Settings &gt;    Tool Settings**.
 
     This tab includes a build toolchain on left tree view. A toolchain
     has 3 main items:
@@ -171,15 +164,11 @@ To set the build properties:
 
             Set debugging options
 
-            <div class="note">
+            > **Note**  
+            > The **Enable Application logging** option is
+            enabled for the **Debug** build configuration. The option is        disabled in the **Release** configuration.
 
-            **Note** The **Enable Application logging** option is
-            enabled for the **Debug** build configuration. The option is
-            disabled in the **Release** configuration.
-
-            </div>
-
-        - Warnings
+      - Warnings
 
             Set warning options
 
@@ -245,5 +234,3 @@ To set the build properties:
         options
 
 For more information on build configuration, see the CDT guide.
-
-

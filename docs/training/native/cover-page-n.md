@@ -1,5 +1,4 @@
-Introduction to Native Applications
-===================================
+# Introduction to Native Applications
 
 The introduction to native applications documentation provides overall
 information you need to become familiar with native-specific Tizen

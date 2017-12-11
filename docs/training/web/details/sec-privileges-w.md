@@ -1,8 +1,5 @@
 
-
-
-Security and API Privileges
-===========================
+# Security and API Privileges
 
 To effectively protect the device system and user private data, the
 Tizen security architecture is based on privileges and application
@@ -38,29 +35,22 @@ application. For the application to use the API, the privilege must be
 declared in the `config.xml` file and the user must have switched it on.
 
 
-> **Note** <br>
+> **Note**  
 > In applications with the platform version 3.0 or higher, if you
 use privacy-related privileged APIs, make sure that the user has
-switched the privilege on before making the function call. Otherwise,
-the application does not work as expected.
-Since Tizen 4.0, the status of privacy-related privileges can be
-[resolved at
-runtime](../../../guides/web/security/ppm-w.md) using
-the Privacy Privilege API (in
-[mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/ppm.html)
-and
-[wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/ppm.html)
-applications).
-
-
+switched the privilege on before making the function call. Otherwise, the application does not work as expected.
+>
+> Since Tizen 4.0, the status of privacy-related privileges can be
+[resolved at runtime](../../../guides/web/security/ppm-w.md) using
+the Privacy Privilege API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/ppm.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/ppm.html) applications).
 
 The Tizen Studio also provides privilege checker tools to check whether
 the Tizen application source code contains any privilege violations. For
 more information, see [Verifying Privilege
 Usage](../../../tizen-studio/web-tools/privilege-checker-w.md).
 
-Mobile Web API Privileges <a name="mobile"></a>
--------------------------
+<a name="mobile"></a>
+## Mobile Web API Privileges
 
 The following tables list the API privileges, which you must declare
 when using security-sensitive API modules in mobile Web applications.
@@ -734,32 +724,12 @@ The application can access geographic locations using the [Geolocation](https://
 
 **Table: Mobile Web Supplementary API privileges**
 
-<table>
-<tr>
-<th>Privilege</th>
-<th>Level</th>
-<th>Since</th>
-<th>Description</th>
-</tr>
-<tr>
+| Privilege | Level | Since | Description |
+| --- | --- | --- | --- |
+| `http://tizen.org/privilege/fullscreen` |public | 2.2.1 | The application can display in the full-screen mode using the [FullScreen API - Mozilla](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#fullscreen) API.<br>**Privilege behavior:** <br> - If this privilege is defined, permission is granted without user interaction. Otherwise, permission is granted by user interaction. |
 
-<td>
-
-`http://tizen.org/privilege/fullscreen`</td>
-<td>public</td>
-<td>2.2.1</td>
-<td>
-
-The application can display in the full-screen mode using the [FullScreen API - Mozilla](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#fullscreen) API.<br>
-
-**Privilege behavior:**<br>
-- If this privilege is defined, permission is granted without user interaction. Otherwise, permission is granted by user interaction.
-</td>
-</tr>
-</table>
-
-Wearable Web API Privileges <a name="wearable"></a>
----------------------------
+<a name="wearable"></a>
+## Wearable Web API Privileges
 
 The following tables list the API privileges, which you must declare
 when using security-sensitive API modules in wearable Web applications.
@@ -1325,52 +1295,13 @@ The application can access geographic locations using the [Geolocation](https://
 
 **Table: Wearable Web Supplementary API privileges**
 
-<table>
-<tr>
-<th>Privilege</th>
-<th>Level</th>
-<th>Privacy</th>
-<th>Since</th>
-<th>Description</th>
-</tr>
-<tr>
+| Privilege | Level | Privacy | Since | Description |
+| --- | --- | --- | --- | --- |
+|`http://tizen.org/privilege/camera`| public | Camera and Microphone | 2.2.1 | The application can capture video and image on a target device using the [Camera API (Tizen Extension)](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#camera) (Video Recording and Image Capture) API.<br> **Privilege behavior:**<br>- In the local domain, if this privilege is defined, permission is granted. Otherwise, execution is blocked.<br>- In the remote domain, execution is blocked. |
+|`http://tizen.org/privilege/audiorecorder` | public | Microphone | 2.2.1 | The application can record an audio stream on a target device using the [Camera API (Tizen Extension)](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#camera) (Audio Recording) API.<br>**Privilege behavior:**<br>- In the local domain, if this privilege is defined, permission is granted. Otherwise, execution is blocked.<br>- In the remote domain, execution is blocked.|
 
-<td>
-
-`http://tizen.org/privilege/camera`</td>
-<td>public</td>
-<td>Camera and Microphone</td>
-<td>2.2.1</td>
-<td>
-
-The application can capture video and image on a target device using the [Camera API (Tizen Extension)](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#camera) (Video Recording and Image Capture) API.<br>
-
-**Privilege behavior:**<br>
-- In the local domain, if this privilege is defined, permission is granted. Otherwise, execution is blocked.<br>
-- In the remote domain, execution is blocked.
-</td>
-</tr>
-<tr>
-
-<td>
-
-`http://tizen.org/privilege/audiorecorder`</td>
-<td>public</td>
-<td>Microphone</td>
-<td>2.2.1</td>
-<td>
-
-The application can record an audio stream on a target device using the [Camera API (Tizen Extension)](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#camera) (Audio Recording) API.<br>
-
-**Privilege behavior:**<br>
-- In the local domain, if this privilege is defined, permission is granted. Otherwise, execution is blocked.<br>
-- In the remote domain, execution is blocked.
-</td>
-</tr>
-</table>
-
-TV Web API Privileges <a name="tv"></a>
----------------------
+<a name="tv"></a>
+## TV Web API Privileges
 
 The following tables list the API privileges, which you must declare
 when using security-sensitive API modules in TV Web applications.
@@ -1667,28 +1598,6 @@ when using security-sensitive API modules in TV Web applications.
 
 **Table: TV Web W3C/HTML5 API privileges**
 
-<table>
-
-<tr>
-<th>Privilege</th>
-<th>Level</th>
-<th>Since</th>
-<th>Description</th>
-</tr>
-<tr>
-
-<td>
-
-`http://tizen.org/privilege/unlimitedstorage`</td>
-<td>public</td>
-<td>3.0</td>
-<td>
-
-The application can use the storage with unlimited size with the [Indexed Database](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#database) API.<br>
-
-**Privilege behavior:**<br>
-- In the local domain, if this privilege is defined, permission is granted. Otherwise, pop-up user prompt is used.<br>
-- In the remote domain, pop-up user prompt is used.
-</td>
-</tr>
-</table>
+| Privilege | Level | Since | Description |
+| --- | --- | --- | --- |
+|`http://tizen.org/privilege/unlimitedstorage`| public | 3.0 | The application can use the storage with unlimited size with the [Indexed Database](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#database) API.<br>**Privilege behavior:**<br>- In the local domain, if this privilege is defined, permission is granted. Otherwise, pop-up user prompt is used.<br>- In the remote domain, pop-up user prompt is used. |
