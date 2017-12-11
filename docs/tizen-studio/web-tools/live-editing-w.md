@@ -7,13 +7,15 @@ When you change the source code in the Tizen Studio, the running application is 
 
 You can monitor how the changes you have made in a file are rendered in the target window without refreshing the page manually.
 
-## About Live Editing<a name="about"></a>
+<a name="about"></a>
+## About Live Editing
 
 Live editing is a special feature, which applies source changes to the running application immediately without building, packaging, and relaunching the application. All changes made in the HTML, CSS, and JavaScript files are automatically and immediately reflected in the running application.
 
 This feature can be used in the [Previewer](previewer-w.md) view and when running the application in the emulator or the Web simulator.
 
-## Configuring Live Editing<a name="prerequisites"></a>
+<a name="prerequisites"></a>
+## Configuring Live Editing
 
 Live editing is disabled by default.
 

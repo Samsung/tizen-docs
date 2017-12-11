@@ -13,7 +13,8 @@ The Tizen Studio supports Web API, W3C API, jQuery API, and jQuery Mobile API. T
 
 ![Content assist in the JavaScript editor](./media/content_assist.png)
 
-## Using the Content Assist<a name="assist"></a>
+<a name="assist"></a>
+## Using the Content Assist
 
 To use the content assist in the source editor (JavaScript editor, CSS editor or HTML editor):
 
@@ -25,7 +26,8 @@ To use the content assist in the source editor (JavaScript editor, CSS editor or
 
    Navigate and select lines in the list with the arrow keys or by scrolling the mouse. This displays the JSDoc information for the selected line.
 
-## Adding User-defined APIs<a name="user_defined"></a>
+<a name="user_defined"></a>
+## Adding User-defined APIs
 
 To activate the content assist for user-defined and third-party APIs:
 

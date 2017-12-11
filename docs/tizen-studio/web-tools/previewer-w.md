@@ -7,7 +7,8 @@ To test a Web application, or a single Web page as part of a client application,
 
 Not only can you preview the source code you have developed, you can also visually define the type and hierarchy of the selector to help development.
 
-## About the Previewer<a name="about"></a>
+<a name="about"></a>
+## About the Previewer
 
 The Tizen Studio provides a previewer window for instantly previewing the entire look and feel of the application.
 
@@ -18,7 +19,8 @@ The following limitations apply to the HTML previewer:
 - The Device API cannot be run in the emulator.
 - Some network environments do not support live editing.
 
-## Using the HTML and CSS Previewer<a name="use"></a>
+<a name="use"></a>
+## Using the HTML and CSS Previewer
 
 To use the HTML and CSS previewer:
 

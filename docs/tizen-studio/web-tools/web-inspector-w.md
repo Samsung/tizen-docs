@@ -23,7 +23,8 @@ When debugging with the [emulator](https://developer.tizen.org/development/tizen
 
 When the JavaScript Debugger is started, the **Network** panel is off. To enable the **Network** panel and start monitoring the resource loading status, press the F5 key. This reloads the current page and displays the load time on the **Network** panel.
 
-## Elements Panel<a name="element"></a>
+<a name="element"></a>
+## Elements Panel
 
 The **Elements** panel of the JavaScript Debugger allows you to see the Web page components (the DOM tree, CSS style, and Document Object Model).
 
@@ -31,7 +32,8 @@ The **Elements** panel of the JavaScript Debugger allows you to see the Web page
 
 ![Elements panel](./media/remote_inspector_elements.png)
 
-## Resources Panel<a name="resource"></a>
+<a name="resource"></a>
+## Resources Panel
 
 The **Resources** panel of the JavaScript Debugger allows you to inspect resources. You can interact with frames containing resources, such as HTML, JavaScript, CSS, images, and fonts. You can also inspect HTML5 databases, local storage, cookies, and application cache.
 
@@ -39,7 +41,8 @@ The **Resources** panel of the JavaScript Debugger allows you to inspect resourc
 
 ![Resources panel](./media/remote_inspector_resources.png)
 
-## Network Panel<a name="network"></a>
+<a name="network"></a>
+## Network Panel
 
 The **Network** panel of the JavaScript Debugger allows you to inspect resources downloaded over the network. You can also inspect the HTTP header, response, cookies, and preview.
 
@@ -47,7 +50,8 @@ The **Network** panel of the JavaScript Debugger allows you to inspect resources
 
 ![Network panel](./media/remote_inspector_network.png)
 
-## Sources Panel<a name="source"></a>
+<a name="source"></a>
+## Sources Panel
 
 The **Sources** panel of the JavaScript Debugger allows you to inspect the JavaScript source page. You can debug your JavaScript code. This panel supports watch expressions, callstack, scope variables, and break point operation. In addition, it supports basic debugging operations: continue, step over, step into, and step out.
 
@@ -55,7 +59,8 @@ The **Sources** panel of the JavaScript Debugger allows you to inspect the JavaS
 
 ![Sources panel](./media/remote_inspector_sources.png)
 
-## Timeline Panel<a name="time"></a>
+<a name="time"></a>
+## Timeline Panel
 
 The **Timeline** panel of the JavaScript Debugger allows you to perform advanced timing and speed analysis. You can see how long the browser takes to handle DOM events, and render and paint windows.
 
@@ -63,7 +68,8 @@ The **Timeline** panel of the JavaScript Debugger allows you to perform advanced
 
 ![Timeline panel](./media/remote_inspector_timeline.png)
 
-## Profiles Panel<a name="profile_panel"></a>
+<a name="profile_panel"></a>
+## Profiles Panel
 
 The **Profiles** panel of the JavaScript Debugger allows you to inspect the JavaScript performance analyses. You can inspect CPU profiles or CSS Select profiles.
 
@@ -71,7 +77,8 @@ The **Profiles** panel of the JavaScript Debugger allows you to inspect the Java
 
 ![Profiles panel](./media/remote_inspector_profiles.png)
 
-## Console Panel<a name="console"></a>
+<a name="console"></a>
+## Console Panel
 
 The **Console** panel of the JavaScript Debugger allows you to inspect the JavaScript console operation. You can interact with your page programmatically. Any errors or warnings on your page are shown in the console.
 

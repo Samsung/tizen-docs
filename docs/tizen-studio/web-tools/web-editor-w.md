@@ -7,7 +7,8 @@ Tizen Web Editor is a powerful tool for creating and modifying source code. It s
 
 Tizen Web Editor provides support for JavaScript, HTML, and CSS file editing.
 
-## Checking the Syntax<a name="syntax"></a>
+<a name="syntax"></a>
+## Checking the Syntax
 
 The Tizen Studio provides a code checking tool to help you to identify and correct problems with the structural quality of your code.
 
@@ -58,7 +59,8 @@ By default, the CSS or JavaScript syntax check is operated when a document is sa
 
 For more information, see [CSSLint](https://github.com/CSSLint/csslint/wiki/Rules) and [JavaScriptLint](http://jshint.com/).
 
-## Editing HTML<a name="editing"></a>
+<a name="editing"></a>
+## Editing HTML
 
 When editing HTML documents for mobile applications, you can take advantage of the advanced content assist and content hover features, as well as advanced file refactoring.
 
@@ -136,7 +138,8 @@ The advanced file refactoring has the following features:
 
 ![After CSS file rename refactoring](./media/web_editor_after_refac.png)
 
-## Previewer<a name="previewer"></a>
+<a name="previewer"></a>
+## Previewer
 
 To test a Web application, or a single Web page as part of a client application, use the previewer window.
 
@@ -144,7 +147,8 @@ Not only can you preview the source code you have developed, you can also visual
 
 For more information, see [Previewing Pages in a Browser](previewer-w.md).
 
-## Using JavaScript Log Console View<a name="js_log"></a>
+<a name="js_log"></a>
+## Using JavaScript Log Console View
 
 The **JavaScript Log Console** view is a tool that helps to debug the log analysis using the JavaScript Console API when developing Web applications. The **JavaScript Log Console** view is active only in the **Debug** launch mode.
 
@@ -164,13 +168,15 @@ Using the console functions provided to JavaScript code, the view shows the log 
 
 ![JavaScript log method colors](./media/web_editor_js_log.png)
 
-## Live Edit<a name="live_edit"></a>
+<a name="live_edit"></a>
+## Live Edit
 
 When you change the source code in the Tizen Studio, the running application is updated instantly without any reloading process.
 
 For more information, see [Live Editing of HTML, CSS, and JavaScript](live-editing-w.md).
 
-## Code Beautifier and Minifier<a name="code"></a>
+<a name="code"></a>
+## Code Beautifier and Minifier
 
 The Code Beautifier is a tool that can help you understand code and make it easier to read.
 
@@ -178,13 +184,15 @@ The Code Minifier is a smart compression tool. Minification is the process of co
 
 For more information, see [Cleaning Up Your Code](code-productivity-w.md).
 
-## Web Unit Testing<a name="test"></a>
+<a name="test"></a>
+## Web Unit Testing
 
 If you are implementing a component in your application, you must test it to ensure that it does not behave in an unexpected way.
 
 For more information, see [Web Unit Testing Tool](web-unit-test-tool-w.md).
 
-## REST Viewer<a name="rest"></a>
+<a name="rest"></a>
+## REST Viewer
 
 The REST Viewer supports the testing, test case management, and automatic code generation features of the REST API. You can easily develop Web applications using the REST API.
 

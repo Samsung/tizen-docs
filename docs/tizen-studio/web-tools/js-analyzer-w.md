@@ -15,7 +15,8 @@ JSA supports 2 analyzer types:
 
   Contains a checker for stale objects that cause possible memory leaks.The Stale Object Checker is a dynamic analysis tool that requires executing the application in a runtime environment. This checker examines all the JavaScript objects created during its execution and points out relatively critical staled objects.
 
-## Using the JavaScript Analyzer<a name="use"></a>
+<a name="use"></a>  
+## Using the JavaScript Analyzer
 
 To analyze a Web application with the JSA in the Tizen Studio, choose the target project in the **Project Explorer** view, open the context menu, and select **Check JavaScript Rules**.
 
@@ -35,7 +36,8 @@ If JavaScript Analyzer detects code that can cause potential problems during its
 
 ![Problems view](./media/js_problems_view.png)
 
-## Setting JavaScript Rules<a name="settingrules"></a>
+<a name="settingrules"></a>
+## Setting JavaScript Rules
 
 You can enable or disable the JavaScript rules in JavaScript Analyzer preferences.
 
@@ -48,9 +50,11 @@ To enable or disable the rules:
 
 ![Preferences](./media/js_settings_rules.png)
 
-## Supported Rules<a name="support"></a>
+<a name="support"></a>
+## Supported Rules
 
-### Coding Rules<a name="coding"></a>
+<a name="coding"></a>
+### Coding Rules
 
 The JSA provides coding rules to help in writing better JavaScript code. For more information on these rules, see JSLint and [Google JavaScript Guide](https://github.com/google/styleguide/blob/gh-pages/javascriptguide.xml).
 
@@ -498,8 +502,8 @@ The JSA displays the following message:
 [CodingRule] Opening brace '{' character should appear in the same line with the statement.
 
 ```
-
-### Web API Usage Rules<a name="api"></a>
+<a name="api"></a>
+### Web API Usage Rules
 
 Tizen Web APIs extend JavaScript APIs to enable you to use the device capabilities provided by Tizen devices. The Tizen Web APIs are designed to be simple and intuitive. The following rules notify you when the APIs are used improperly.
 
@@ -698,7 +702,8 @@ The JSA displays the following message:
 
 ```
 
-## Using the Stale Object Checker<a name="stalechecker"></a>
+<a name="stalechecker"></a>
+## Using the Stale Object Checker
 
 To analyze a Web application with the Stale Object Checker in the Tizen Studio:
 
@@ -716,7 +721,8 @@ To analyze a Web application with the Stale Object Checker in the Tizen Studio:
 
    The Stale Object Checker continues to inspect the data collected and launches a result page at `http://localhost:9000`. The result page can be accessed by any Web browser in the PC.![Confirmation of the recording stop](./media/js_stale_stop_alert.png)
 
-### Result Page View<a name="resultpage"></a>
+<a name="resultpage"></a>
+### Result Page View
 
 The result page appears with the view shown in the following figure. The page is composed of 2 parts: issue table and all-sites timeline. You can switch between the parts using the menu at the top of the page.
 
@@ -733,7 +739,8 @@ The following details are provided in the issue table:
 
 A stale instance is any instance whose staleness value is not zero at a specific time. The object staleness defines the time interval between the last use and the moment when the object is unreachable. For example, if the object has never been used, the staleness is the unreachable moment minus the creation time. If the object has been used, the staleness is the unreachable moment minus the last use time.
 
-#### Issue Table<a name="issuetable"></a>
+<a name="issuetable"></a>
+#### Issue Table
 
 When you click a site in the issue table, a set of detailed information on a leak occurrence is shown. In the source view, the code segment that is creating stale objects (possibly causing a memory leak) is marked with a colored box.
 
@@ -755,7 +762,8 @@ In the above figure:
 
 - In the access paths view, you can find out the scope of an object at runtime, which can lead to the location of the memory leak.
 
-#### All-Sites Timeline<a name="allsites"></a>
+<a name="allsites"></a>
+#### All-Sites Timeline
 
 The all-sites time shows the timeline for all the objects created during the execution. The timeline graph in the issue table (figure above) shows the diagram for a specific site while the timeline in the all-sites page (figure below) indicates the diagram for all sites in the application. The pie charts shows the proportion of each site in all allocated and stale objects.
 
@@ -763,7 +771,8 @@ The all-sites time shows the timeline for all the objects created during the exe
 
 ![All-sites timeline page](./media/js_stale_all_site.png)
 
-### Timer Sample Code<a name="samplecode"></a>
+<a name="samplecode"></a>
+### Timer Sample Code
 
 When you click **start**, the Timer starts to run. If you click again, the timer stops. The `exitApp()` function registers an event handler for the Tizen **Back** key to terminate the application when the **Back** key is pressed. 
 
@@ -805,7 +814,8 @@ This code site is detected as a leak because the handler function objects create
 
 In the "Timeline" graph, you can see how the number of stale instances increases steadily. This graph shows any objects created at this code site that have not been used before the application exits.
 
-### Calculator Sample Code<a name="samplecode2"></a>
+<a name="samplecode2"></a>
+### Calculator Sample Code
 
 When you click a number button, the `command()` function is executed. The `init()` function registers an event handler for the Tizen **Back** key.
 

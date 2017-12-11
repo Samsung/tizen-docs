@@ -19,7 +19,8 @@ In this view, you can:
 - Restore deleted files from local history
 - Import or export files and projects
 
-## Opening the Project Explorer View<a name="opening"></a>
+<a name="opening"></a>
+## Opening the Project Explorer View
 
 Usually, the **Project Explorer** view is located in the upper-left side of the Tizen Studio. You can change the position by dragging and dropping it. If you close the view, you can show it again by selecting **Project Explorer** in **Window > Show View > Other > General**.
 
@@ -27,7 +28,8 @@ Usually, the **Project Explorer** view is located in the upper-left side of the 
 
 ![Opening the view](./media/proj_explorer_general.png) 
 
-## Using the Project Explorer View<a name="view"></a>
+<a name="view"></a>
+## Using the Project Explorer View
 
 The files that you select in the **Project Explorer** view affect the information that is displayed in the other views. You can execute and set some operations and configurations by clicking the icons (![Toolbar icons](./media/proj_explorer_op_config.png)) in the toolbar.
 

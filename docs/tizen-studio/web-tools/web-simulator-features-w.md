@@ -5,7 +5,8 @@
 
 The Web Simulator has several features for developing Web applications.
 
-## Basic Panel Operation<a name="basic"></a>
+<a name="basic"></a>
+## Basic Panel Operation
 
 The Web Simulator provides the following panel operations:
 
@@ -21,11 +22,13 @@ The Web Simulator provides the following panel operations:
 
   Each panel can be displayed or hidden by clicking the panel-setting button on the right side of the application address bar.
 
-## Panels<a name="panels"></a>
+  <a name="panels"></a>
+## Panels
 
 The Web Simulator has the following panels which allow you to control the simulation conditions of various device aspects:
 
-### Orientation and Zooming<a name="orient"></a>
+<a name="orient"></a>
+### Orientation and Zooming
 
 In the **Orientation and Zooming** panel, you can switch the orientation between the portrait and landscape modes. If your application has subscribed to the orientation change event, it receives the event and the subscribed event handler is invoked. 
 
@@ -35,7 +38,8 @@ You can also set the zoom level of your application to view specific areas of th
 
 ![Orientation and Zooming panel](./media/simulator_panel_resolution_orientation.png)
 
-### System Summary<a name="system"></a>
+<a name="system"></a>
+### System Summary
 
 The **System Summary** panel displays generic information and settings about the application, system, device, and platform.
 
@@ -43,7 +47,8 @@ The **System Summary** panel displays generic information and settings about the
 
 ![System Summary panel](./media/simulator_panel_system_summary.png)
 
-### Geolocation<a name="geo"></a>
+<a name="geo"></a>
+### Geolocation
 
 The **Geolocation** panel contains location-related settings. You can set the local time zone to test whether your application reacts properly when the target device is located in different geographical areas.
 
@@ -60,7 +65,8 @@ To simulate a custom, multi-point route:
 3. Double-click the map to end route creation.
 4. To send the geolocation data to the application along the defined route, click the play button. You can also set the speed of playback.
 
-### Application Configuration<a name="config"></a>
+<a name="config"></a>
+### Application Configuration
 
 The **Application Configuration** panel displays a graphical representation of the `config.xml` file. You can use it to ensure the validity of your application configuration.
 
@@ -70,7 +76,8 @@ For more information on the configuration details, see [W3C/HTML5 Specifications
 
 ![Application Configuration panel](./media/simulator_panel_feature_configuration.png)
 
-### Sensors<a name="sensor"></a>
+<a name="sensor"></a>
+### Sensors
 
 The **Sensors** panel provides slide bars to configure the ambient, accelerometer, and magnetic field sensors.
 
@@ -98,7 +105,8 @@ To set the magnetic field, enter the X, Y, and Z axis values.
 
 ![Sensor without WebGL](./media/simulator_sensor_webgl.png)
 
-### Packages and Applications<a name="package"></a>
+<a name="package"></a>
+### Packages and Applications
 
 The **Packages and Applications** panel provides a simulated packages and applications management center on a device. It lists available and installed packages and applications on a device:
 
@@ -161,7 +169,8 @@ The Web Simulator does not have a home screen. Therefore, when the `application.
 
 ![Launch an application again](./media/app_exit.png)
 
-### Communications in Mobile Applications<a name="communication"></a>
+<a name="communication"></a>
+### Communications in Mobile Applications
 
 In the **Communications** panel, you can handle calls, messages, and the push service.
 
@@ -223,7 +232,8 @@ The application receives push notifications using the Tizen [Push](https://devel
 
 ![Push tab](./media/simulator_panel_push.png)
 
-### Network Management in Mobile Applications<a name="network"></a>
+<a name="network"></a>
+### Network Management in Mobile Applications
 
 The **Network Management** panel is used to manage network capabilities, such as Wi-Fi, cellular network (2G, 3G, and 4G), NFC, Bluetooth, and bearer selection. 
 
@@ -249,7 +259,8 @@ The **Bearer Selection** section provides network bearer selection management by
 
 Your application can manage network devices and network status using the Tizen [NFC](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html), [Bluetooth](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/bluetooth.html), and [Network Bearer Selection](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/networkbearerselection.html) APIs.
 
-### Power Manager in Mobile Applications<a name="power"></a>
+<a name="power"></a>
+### Power Manager in Mobile Applications
 
 The **Power Manager** panel provides controls for managing the state of the battery and power resources.
 
@@ -259,7 +270,8 @@ The **Power Manager** panel provides controls for managing the state of the batt
 
 The **BATTERY** section simulates the device battery level. Your application can retrieve the current battery status using the Tizen [System Information](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/systeminfo.html) API.
 
-### Download in Mobile Applications<a name="download"></a>
+<a name="download"></a>
+### Download in Mobile Applications
 
 The **Download** panel allows you to create a simulated download object with custom size, MIME type, and download speed. All simulated download objects support start, cancel, pause, and resume operations, and provide status feedback mechanism. You can use the simulated download object created by the panel to test various conditions for your application.
 
@@ -277,7 +289,8 @@ tizen.download.setListener(downloadId, listener);
 
 ![Download panel](./media/simulator_panel_download.png)
 
-### Notification in Mobile Applications<a name="noti"></a>
+<a name="noti"></a>
+### Notification in Mobile Applications
 
 The **Notification** panel provides a notification center administrating system notifications. As the Simulator has no real desktop UI components, such as status bar or notification tray, the panel serves as the final rendering place of all the notifications. You can easily verify that the notification details you created with the Tizen [Notification](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html) API are correct.
 
