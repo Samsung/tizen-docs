@@ -31,7 +31,6 @@ Different Tizen platforms require different icon sizes. For example, mobile devi
 |  Mobile   |  WVGA       |  81x81|
 |  Wearable  | 360 x 360   | 152 x 152|
 
- 
 
  
 <a name="app-icons"></a>
@@ -65,7 +64,7 @@ Carefully choose the icon background color when designing an icon for your app. 
 
 
 
-![Your icons should be visible against any background](media/03.png)![Your icons should be visible against any background](media/2.2.1_d.png)  
+![Your icons should be visible against any background](media/03.png) ![Your icons should be visible against any background](media/2.2.1_d.png)  
 *Your icons should be visible against any background*
 
 
@@ -77,34 +76,37 @@ Carefully choose the icon background color when designing an icon for your app. 
 Icon always uses circle container. Avoid complicated shape.
 
 
-  ![\#](media/082315_icon_do_dont-48.png)   ![\#](media/082315_icon_do_dont-47.png)  
-  Do                                                                      Don't
+  ![Do](media/082315_icon_do_dont-48.png)  Do   
 
+  ![Don't](media/082315_icon_do_dont-47.png)  Don't
 
  
 
 Cicle container can not distorted or replaced to different shapes.
 
 
-  ![\#](media/082315_icon_do_dont-50.png)   ![\#](media/082315_icon_do_dont-49.png)  
-  Do                                                                      Don't
+  ![Do](media/082315_icon_do_dont-50.png)   Do  
 
+  ![Don't](media/082315_icon_do_dont-49.png)  Don't
  
 
 Place object on center. Do not place object around edge of container.
 
-  ![\#](media/082315_icon_do_dont-52.png)   ![\#](media/082315_icon_do_dont-51.png)  
-  Do                                                                      Don't
+  ![Do](media/082315_icon_do_dont-52.png)  Do  
 
+  ![Don't](media/082315_icon_do_dont-51.png)     Don't
  
 
 Tizen recommends soft gradient on container. Avoid solid color for background or disoriented gradient directions.
 
-  ![\#](media/082315_icon_do_dont2-53.png)   ![\#](media/082315_icon_do_dont-53.png)  
-  Do                                                                       Don't
+  ![Do](media/082315_icon_do_dont2-53.png)  Do  
 
-  ![\#](media/082315_icon_do_dont2-53.png)   ![\#](media/082315_icon_do_dont3-53.png)  
-  Do                                                                       Don't
+  ![Don't](media/082315_icon_do_dont-53.png)  Don't
+
+
+  ![Do](media/082315_icon_do_dont2-53.png)  Do
+
+  ![Don't](media/082315_icon_do_dont3-53.png)  Don't
 
  
 
@@ -162,10 +164,8 @@ Unlike action icons, informative icons are not touchable. They help users unders
 
 
 
-![Call log icons categorize received, missed, and outgoing calls](media/2.2.2_c.png)![Call log icons categorize received, missed, and outgoing calls](media/11_2.png)  
+![Call log icons categorize received, missed, and outgoing calls](media/2.2.2_c.png) ![Call log icons categorize received, missed, and outgoing calls](media/11_2.png)  
 *Call log icons categorize received, missed, and outgoing calls*
-
-
 
  
 <a name="custom-icons"></a>
@@ -179,10 +179,10 @@ The following are the basic requirements for brand icons:
 -   Size : Sizes may vary. Choose a size that provides a good balance with the content on the screen.
 -   Style : Use simple pictographic icons that are easy to understand. Do not apply outline strokes or shadows.
 
-  ![\#](media/2.2.3_b.png)   ![\#](media/2.2.3_a.png)  
-  Do                                                              Don't
+  ![Do](media/2.2.3_b.png) Do  
+  ![Don't](media/2.2.3_a.png)  Don't
 
 -   Color : Design icons with colors that are easily noticeable. Use dark colors over light backgrounds and light colors over dark backgrounds to ensure optimal visibility.
 
-  ![\#](media/2.2.3_b.png)   ![\#](media/2.2.3_c.png)  
-  Do                                                              Don't
+  ![Do](media/2.2.3_b.png) Do
+  ![Don't](media/2.2.3_c.png)  Don't
