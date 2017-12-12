@@ -1,6 +1,5 @@
 
-Sending Content to Other Applications
-=====================================
+# Sending Content to Other Applications
 
 You can send various types of content to other applications, including
 text, binaries, and files. The following sections provide you with the
@@ -8,8 +7,7 @@ fundamental building blocks for sharing your application data with other
 applications.
 
 
-Sending Text <a id="text"></a>
-------------
+## Sending Text
 
 The most common content sharing use case is sending text to another
 application. For example, a Web browser can share the URL of the
@@ -20,7 +18,7 @@ Use the `APP_CONTROL_OPERATION_SHARE` operation and the `text/plain`
 MIME type to create an application control request, and define the text
 content to be shared in the `APP_CONTROL_DATA_TEXT` extra data:
 
-```
+```c++
 #include <app_control.h>
 
 app_control_h app_control;
@@ -42,25 +40,17 @@ application is found to match the given conditions, that application is
 launched. If multiple matching applications are found, the application
 selector is shown and the user can select the application they want.
 
-<div class="note">
-
-**Note** When using application controls, pay attention to the
-following:
--   Since Tizen 2.4, application controls that launch [service
-    applications](../../../../org.tizen.guides/html/native/app_management/service_app_n.htm)
-    outside the current package are not supported. Because of this, a
-    service application can only be launched explicitly by an
-    application in the same package.
--   The operation is mandatory information for sending a launch request.
-    If the operation is not specified, the
-    `APP_CONTROL_OPERATION_DEFAULT` operation is used. In that case, the
-    application ID is mandatory to explicitly launch an application.
-
-</div>
+> **Note**  
+> When using application controls, pay attention to the
+following:  
+> -   Since Tizen 2.4, application controls that launch [service
+    applications](../../../../org.tizen.guides/html/native/app_management/service_app_n.htm)    outside the current package are not supported. Because of this, a     service application can only be launched explicitly by an    application in the same package.
+> -   The operation is mandatory information for sending a launch request.    If the operation is not specified, the
+    `APP_CONTROL_OPERATION_DEFAULT` operation is used. In that case, the    application ID is mandatory to explicitly launch an application.
 
 
-Sending Binaries <a id="binaries"></a>
-----------------
+
+## Sending Binaries
 
 Depending on the number of binary content items to be shared, you can
 use the `APP_CONTROL_OPERATION_SHARE` (for a single item) or
@@ -71,7 +61,7 @@ location of the content to be shared is defined in the
 The following example demonstrates how to share a single binary content
 item and multiple items:
 
-```
+```c++
 /* Single item */
 #define PATH_MAX 128
 
@@ -119,8 +109,7 @@ If you try to share a set of files with different MIME types, use
 `audio/ogg`, the MIME type must be `*/*`.
 
 
-Sending Files <a id="files"></a>
--------------
+## Sending Files
 
 When sharing files, you can use the `app_control_set_uri()` function to
 set the file URI with the `file://` scheme.
@@ -136,7 +125,7 @@ terminated. The called application can just read the file.
 The following example launches a viewer application with the operation,
 URI, and MIME type:
 
-```
+```c++
 #include <app.h>
 #include <dlog.h>
 
@@ -162,5 +151,3 @@ else
 
 app_control_destroy(app_control);
 ```
-
-

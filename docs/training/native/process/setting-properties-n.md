@@ -3,13 +3,16 @@
 Before you implement the actual application functionality, define all the necessary properties for your application project:
 
 - To set the [application project properties for API and privilege checks](#api), right-click the project in the Tizen Studio **Project Explorer** view and select **Properties**. After setting or changing a property, click **OK**.
-- To define the [application manifest settings](#manifest), edit the `tizen-manifest.xml` file.**Note**Only modify the manifest file by using the manifest editor in the Tizen Studio. If you create or edit the `tizen-manifest.xml` file using any other text editor, your application may not work as expected.
+- To define the [application manifest settings](#manifest), edit the `tizen-manifest.xml` file.
+
+> **Note**  
+> Only modify the manifest file by using the manifest editor in the Tizen Studio. If you create or edit the `tizen-manifest.xml` file using any other text editor, your application may not work as expected.
 
 After you have finished setting the project properties, you are ready to [design the UI and implement the application code](app-dev-process-n.md#designing).
 
 ## Checking API and Privilege Usage
 
-You can [check the source code in your project for any violation of API and privilege usage](../../../../org.tizen.studio/html/native_tools/api_checker_n.htm). To enable the non-default checks (the default checks are always performed):
+You can [check the source code in your project for any violation of API and privilege usage](../../../tizen-studio/native-tools/api-checker-n.md). To enable the non-default checks (the default checks are always performed):
 
 1. In the **Properties** window, select **C/C++ Build > Tizen Settings > API and Privilege Checker Properties**.
 2. Select the required checks in the **Privilege Check** panel.
@@ -21,7 +24,8 @@ To perform the usage checks automatically during specific tasks, select the requ
 
 You can also perform the usage checks manually after building the application, by right-clicking the project in the **Project Explorer** view and selecting **Check API and Privilege Violations With Build**. The results are displayed in the **Problems** view.
 
-**Note**If the application has conflicting API versions, the build fails and the results are displayed in the **Problems** view.
+> **Note**  
+> If the application has conflicting API versions, the build fails and the results are displayed in the **Problems** view.
 
 ## Setting the Application Manifest
 
@@ -29,9 +33,9 @@ The application manifest consists of application information, such as package, v
 
 **Figure: Setting the application manifest**
 
-![Setting the application manifest](./media/tizen_project_explorer.png)
+![Setting the application manifest](media/tizen_project_explorer.png)
 
-You can [edit the application properties using the form tabs of the manifest editor](../../../../org.tizen.studio/html/native_tools/manifest_text_editor_n.htm#editing).
+You can [edit the application properties using the form tabs of the manifest editor](../../../tizen-studio/native-tools/manifest-text-editor-n.md#editing).
 
 ### Defining and Editing General Information in the Overview Tab
 
@@ -129,10 +133,19 @@ You can provide localized versions of the application name (label) and descripti
 
 To add a localized name or description:
 
-- In the **Name** panel, click **+**. Select the language, define the application name for that language, and click **OK**.The following example shows the setting in the `tizen-manifest.xml` file code:`<label xml:lang="en-us">This is a sample</label>`
-- In the **Description** panel, click **+**. Select the language, define the application description text for that language, and click **OK**.The following example shows the setting in the `tizen-manifest.xml` file code:`<description xml:lang="en-us">This is a sample</description>`
+- In the **Name** panel, click **+**. Select the language, define the application name for that language, and click **OK**.  
+The following example shows the setting in the `tizen-manifest.xml` file code:  
+```
+<label xml:lang="en-us">This is a sample</label>
+```
 
-You can localize a native application to adapt to various languages and cultural environments by creating different native application versions for different languages. For more information, see [Localizing Application Resources](../../../../org.tizen.studio/html/native_tools/po_file_editor_n.htm).
+- In the **Description** panel, click **+**. Select the language, define the application description text for that language, and click **OK**.  
+The following example shows the setting in the `tizen-manifest.xml` file code:  
+```
+<description xml:lang="en-us">This is a sample</description>
+```
+
+You can localize a native application to adapt to various languages and cultural environments by creating different native application versions for different languages. For more information, see [Localizing Application Resources](../../../tizen-studio/native-tools/po-file-editor-n.md).
 
 ### Defining Advanced Features in the Advanced Tab
 
@@ -144,20 +157,29 @@ You can perform the following tasks using the **Advanced** tab:
 
   In the **Meta Data** section, you can add user-defined key-value pairs to the application to be used for filtering in the package manager.
 
-- Export [data control](../../../../org.tizen.guides/html/native/app_management/data_control_n.htm) functionality.A service application can act as a service provider and allow other applications to access specific data.To define the kind of access and data your service application provides to other applications, click **+** in the **Data Control** section, and define the data control details.
+- Export [data control](../../../guides/native/app-management/data-control-n.md) functionality.  
+A service application can act as a service provider and allow other applications to access specific data.  
+To define the kind of access and data your service application provides to other applications, click **+** in the **Data Control** section, and define the data control details.
 
 - Set miscellaneous options.
 
   In the **Miscellaneous Options** section, you can set various application options:
 
-  - **Manage task**Define whether the application is shown in the task manager.
-  - **No display**In UI applications, define whether the application is hidden in the device application tray. In service applications, this settings is always **true**.
-  - **Hardware acceleration**Define whether hardware acceleration is enabled for the application.
-  - **Launch Mode**Define the launch mode of the application (whether the application is launched as a main or sub application, or whether a caller application defines the launch mode when the application is launched by an application control request).
+  - **Manage task**  
+  Define whether the application is shown in the task manager.
+
+  - **No display**  
+  In UI applications, define whether the application is hidden in the device application tray. In service applications, this settings is always **true**.
+
+  - **Hardware acceleration**  
+  Define whether hardware acceleration is enabled for the application.  
+
+  - **Launch Mode**  
+  Define the launch mode of the application (whether the application is launched as a main or sub application, or whether a caller application defines the launch mode when the application is launched by an application control request).
 
 - Define application controls.
 
-  You can [export the application control functionality](../../../../org.tizen.guides/html/native/app_management/app_controls_n.htm#export_appcontrol) of your application.
+  You can [export the application control functionality](../../../guides/native/app-management/app-controls-n.htm#export_appcontrol) of your application.
 
   To define an application control used to access the functionality of your application, click **+** in the **Application Control** section.
 
@@ -184,7 +206,7 @@ You can perform the following tasks using the **Advanced** tab:
 
 - Add the background category type (since Tizen 2.4).
 
-  You can [describe the background category](../../../../org.tizen.guides/html/native/app_management/efl_ui_app_n.htm#bg-category) of your Tizen native application.
+  You can [describe the background category](../../../guides/native/app-management/efl-ui-app-n.md#bg-category) of your Tizen native application.
 
   To add background category types to allow running in the background, click **+** in the **Background Category** panel, select the category type, and click **OK**.
 
@@ -203,9 +225,9 @@ You can perform the following tasks using the **Advanced** tab:
   | Icon              | `String`  | File path of the shortcut icon.This is a mandatory property. |
   | Name              | `String`  | Localization support for the display name.To add a localized name, click **+** in the **Name** panel, select the language, define the display name for that language, and click **OK**. |
 
-  ### Editing the tizen-manifest.xml File in the Source Tab
+### Editing the tizen-manifest.xml File in the Source Tab
 
-  The **Source** tab of the manifest editor shows the code of the `tizen-manifest.xml` file. You can [edit the basic syntax of the XML document](../../../../org.tizen.studio/html/native_tools/manifest_text_editor_n.htm) and also see how changes made on the other tabs are reflected in the raw XML source content.
+  The **Source** tab of the manifest editor shows the code of the `tizen-manifest.xml` file. You can [edit the basic syntax of the XML document](../../../tizen-studio/native-tools/manifest-text-editor-n.md) and also see how changes made on the other tabs are reflected in the raw XML source content.
 
-  **Note**
-  If you edit application information manually in the `tizen-manifest.xml` file source code, you can introduce errors preventing the application from running normally.
+>  **Note**    
+>  If you edit application information manually in the `tizen-manifest.xml` file source code, you can introduce errors preventing the application from running normally.

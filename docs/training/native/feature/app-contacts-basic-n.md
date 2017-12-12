@@ -1,15 +1,13 @@
 
-Basic Concepts
-==============
+# Basic Concepts
 
 To be able to use contact features in your application, you must first
 understand how the basic concepts of **contact** and **person** are
 related, and how the contact information is stored in the Contacts
 database using records and views.
 
-
-Contacts and Persons <a id="contacts"></a>
---------------------
+<a name="contacts"></a>
+## Contacts and Persons
 
 The contact and person are 2 different concepts:
 
@@ -35,9 +33,8 @@ Contact3).
 
 ![Contact structure](./media/app_contacts_contact_structure.png)
 
-
-Records and Views <a id="records"></a>
------------------
+<a name="records"></a>
+## Records and Views
 
 Records and views are important concepts in the Contacts API. Although a
 record represents an actual record in the internal database, you can
@@ -91,10 +88,8 @@ type of record you want to operate on. The following example code
 creates a contact record and obtains the record handle using the
 `_contacts_contact._uri` property:
 
-```
+```c++
 contacts_record_h contact = NULL;
 
 contacts_record_create(_contacts_contact._uri, &contact);
 ```
-
-

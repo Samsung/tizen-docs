@@ -1,6 +1,5 @@
 
-Proximity Sensor Usage
-======================
+# Proximity Sensor Usage
 
 The proximity sensor can measure the distance of an object from the
 front of the device. Some sensors only report the maximum measurement
@@ -9,8 +8,7 @@ attempting to measure the distance values, you need to know whether the
 device supports the proximity sensor.
 
 
-Determining Whether the Sensor Is Supported <a id="support"></a>
--------------------------------------------
+## Determining Whether the Sensor Is Supported
 
 To determine whether the proximity sensor is supported on the device:
 
@@ -30,7 +28,7 @@ To determine whether the proximity sensor is supported on the device:
         proximity sensor is supported, and the current distance value.
         As a result, a variable is defined for both of these values.
 
-    ```
+    ```c++
     #include "sensorproximity.h"
     #include <sensor.h>
 
@@ -57,7 +55,7 @@ To determine whether the proximity sensor is supported on the device:
     - The `my_box_pack()` function adds a UI component to a
         box container.
 
-    ```
+    ```c++
     static void
     show_is_supported(appdata_s *ad)
     {
@@ -92,7 +90,7 @@ To determine whether the proximity sensor is supported on the device:
     must modify the source code at the bottom of the `create_base_gui()`
     function as follows:
 
-    ```
+    ```c++
     /* Conformant */
     /*
        Create and initialize elm_conformant
@@ -146,8 +144,7 @@ To determine whether the proximity sensor is supported on the device:
 
 
 
-Requesting Sensor Events <a id="event"></a>
-------------------------
+## Requesting Sensor Events
 
 To implement a feature that requests the corresponding event as the
 proximity sensor detects an object, and displays the distance value on
@@ -161,7 +158,7 @@ the screen:
     -   The `sensor_info` is a global variable of the
         `sensorinfo_s` structure.
 
-    ```
+    ```c++
     struct appdata {
         Evas_Object *win;
         Evas_Object *conform;
@@ -205,7 +202,7 @@ the screen:
             callback function name, and user data.
         -   The `sensor_listener_start()` function starts the listener.
 
-    ```
+    ```c++
     static void
     _new_sensor_value(sensor_h sensor, sensor_event_s *sensor_data, void *user_data)
     {
@@ -233,7 +230,7 @@ the screen:
     starts running, invoke the above `start_proximity_sensor()` function
     at the end of the `create_base_gui()` function:
 
-    ```
+    ```c++
     /* Show the window after the base GUI is set up */
     evas_object_show(ad->win);
 
@@ -247,15 +244,8 @@ the screen:
     To test on the emulator, use the [control
     panel](../../../../org.tizen.studio/html/common_tools/emulator_control_panel.htm):
 
-    1.  Right-click the emulator and select **Control Panel**.
-    2. Click **Next** in the lower-right corner until you see the
-        **Proximity** box.
-    3. Click the box to toggle between **Far** and **Near** values. The
-        **Near** value in the control panel makes the second label
-        component on the application screen show **0.0**. If you change
-        the value to **Far**, the label component displays **5.0**.
+    a.  Right-click the emulator and select **Control Panel**.  
+    b. Click **Next** in the lower-right corner until you see the        **Proximity** box.  
+    c. Click the box to toggle between **Far** and **Near** values. The        **Near** value in the control panel makes the second label        component on the application screen show **0.0**. If you change        the value to **Far**, the label component displays **5.0**.
 
-        ![Proximity sensor emulator control
-        panel](./media/sensor_proximity_emulator.png)
-
-
+      ![Proximity sensor emulator control        panel](./media/sensor_proximity_emulator.png)

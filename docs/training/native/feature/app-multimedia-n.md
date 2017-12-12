@@ -1,5 +1,4 @@
-Creating Applications with Multimedia
-=====================================
+# Creating Applications with Multimedia
 
 If you want to create applications that offer multimedia features to the
 user, Tizen provides various options for you.
@@ -27,5 +26,3 @@ features:
     -   You can capture and save images for later use.
     -   When handling the device camera, you can control which device
         camera to use and how to configure the camera settings.
-
-

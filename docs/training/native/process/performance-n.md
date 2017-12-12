@@ -17,8 +17,11 @@ To improve the performance of an application:
 
 The Tizen Studio supports various tools which help to measure and increase performance at runtime:
 
-- [Dynamic Analyzer](../../../../org.tizen.studio/html/common_tools/da_overview.htm)The Dynamic Analyzer helps to identify bottlenecks and improve resource usage patterns in applications. For more information on its usage, see [Dynamic Analysis](#dynamic).
-- [Valgrind](../../../../org.tizen.studio/html/native_tools/valgrind_n.htm)Valgrind detects memory errors or leaks. This tool helps to improve memory usage patterns in native applications. For more information on its usage, see [Valgrind Analysis](#valgrind_analysis).
+- [Dynamic Analyzer](../../../tizen-studio/common-tools/da-overview.md)  
+The Dynamic Analyzer helps to identify bottlenecks and improve resource usage patterns in applications. For more information on its usage, see [Dynamic Analysis](#dynamic).
+
+- [Valgrind](../../../tizen-studio/native-tools/valgrind-n.md)  
+Valgrind detects memory errors or leaks. This tool helps to improve memory usage patterns in native applications. For more information on its usage, see [Valgrind Analysis](#valgrind_analysis).
 
 Measuring performance allows you to identify bottlenecks that take a critical amount of time during the program execution and to compare the code execution time before and after optimization.
 
@@ -42,8 +45,11 @@ To make your applications powerful, faster, and more stable, you need to analyze
 
 The following instructions and examples help you to use the Dynamic Analyzer effectively:
 
-- [Running Dynamic Analyzer](#running)Describes how to launch the Dynamic Analyzer.
-- [Using the Analysis Result](#result)Describes how to utilize the Dynamic Analyzer for various improvement purposes.
+- [Running Dynamic Analyzer](#running)  
+Describes how to launch the Dynamic Analyzer.
+
+- [Using the Analysis Result](#result)  
+Describes how to utilize the Dynamic Analyzer for various improvement purposes.
 
 ### Running Dynamic Analyzer
 
@@ -51,13 +57,16 @@ You can launch the Dynamic Analyzer in the Tizen Studio or as a standalone appli
 
 - To launch the Dynamic Analyzer in the Tizen Studio:
   1. Right-click your project in the Tizen Studio **Project Explorer** view.
-  2. Select **Profile As > Profile with Dynamic Analyzer**.The selected project is built, packaged, and installed on the target device. The Dynamic Analyzer is launched and the profiling starts automatically.
+  2. Select **Profile As > Profile with Dynamic Analyzer**.  
+
+   The selected project is built, packaged, and installed on the target device. The Dynamic Analyzer is launched and the profiling starts automatically.
+
 - To run the Dynamic Analyzer as a standalone from the Tizen Studio submenu:
   1. Launch the Dynamic Analyzer from the Tizen Studio **Tools > Dynamic Analyzer** menu.
   2. Select the target device and the application to be traced from the combo box in the Dynamic Analyzer toolbar.
   3. Click the **Start** button.
 
-The performance details of your application retrieved during tracing are stored in trace files. You can manage the trace files through the Dynamic Analyzer toolbar. For usage details, see [Handling Common Dynamic Analyzer Tasks](../../../../org.tizen.studio/html/common_tools/da_common.htm) and [Handling Advanced Dynamic Analyzer Tasks](../../../../org.tizen.studio/html/common_tools/da_advanced.htm).
+The performance details of your application retrieved during tracing are stored in trace files. You can manage the trace files through the Dynamic Analyzer toolbar. For usage details, see [Handling Common Dynamic Analyzer Tasks](../../../tizen-studio/common-tools/da-common.md) and [Handling Advanced Dynamic Analyzer Tasks](../../../tizen-studio/common-tools/da-advanced.md).
 
 #### Using the Command Line Interface to Access Dynamic Analyzer Features
 
@@ -67,7 +76,7 @@ The Dynamic Analyzer provides access to its features through the Command Line In
 - CLI tool can be used in GUI-less environments, and the collected profile data can be transferred into other environment where it can be further analyzed with the Dynamic Analyzer GUI.
 - CLI tool can be used by people who do not like to use graphical user interfaces at all.
 
-For more information on using the Dynamic Analyzer CLI, see [Command Line Interface](../../../../org.tizen.studio/html/common_tools/da_advanced.htm#cli).
+For more information on using the Dynamic Analyzer CLI, see [Command Line Interface](../../../tizen-studio/common-tools/da-advanced.md#cli).
 
 ### Using the Analysis Result
 
@@ -75,9 +84,14 @@ After the profiling is terminated by the Dynamic Analyzer, analyze the result. T
 
 The following instructions help you to use the analysis result:
 
-- [Performance Analysis](#performance_analysis)Describes how to analyze application performance.
-- [Detecting Leaks](#detecting)Describes how to detect memory and resource leaks.
-- [Multi-threaded Application and Synchronization Analysis](#multithread)Describes how to analyze threads and synchronization.
+- [Performance Analysis](#performance_analysis)  
+Describes how to analyze application performance.
+
+- [Detecting Leaks](#detecting)  
+Describes how to detect memory and resource leaks.
+
+- [Multi-threaded Application and Synchronization Analysis](#multithread)  
+Describes how to analyze threads and synchronization.
 
 #### Performance Analysis
 
@@ -92,7 +106,7 @@ To analyze performance of the application with the Dynamic Analyzer, use the fol
   To detect and fix the methods consuming the most time:
 
   - Select the **View > Report > Function Profiling** in the menu to show the Function Profiling table displaying the methods consuming the most time. Click the title of a column to view the sorted results.
-  - To view the execution time of the methods called within a specific time period, use the [range inspection feature](../../../../org.tizen.studio/html/common_tools/da_advanced.htm#range) of the Dynamic Analyzer.
+  - To view the execution time of the methods called within a specific time period, use the [range inspection feature](../../../tizen-studio/common-tools/da-advanced.md#range) of the Dynamic Analyzer.
 
   **Figure: Function Profiling table**
 
@@ -126,11 +140,11 @@ To analyze performance of the application with the Dynamic Analyzer, use the fol
 
 #### Detecting Leaks
 
-To improve the performance of your application, you can use the Dynamic Analyzer to detect memory leaks. Memory leaks occur when memory capacity that is dynamically allocated during application execution is not returned after the execution stops. Severe or accumulating memory leaks can affect the performance of your application along with other applications and programs. For more information, see [Performing Memory Analysis](../../../../org.tizen.studio/html/common_tools/da_memory.htm).
+To improve the performance of your application, you can use the Dynamic Analyzer to detect memory leaks. Memory leaks occur when memory capacity that is dynamically allocated during application execution is not returned after the execution stops. Severe or accumulating memory leaks can affect the performance of your application along with other applications and programs. For more information, see [Performing Memory Analysis](../../../tizen-studio/common-tools/da-memory.md).
 
 #### Multi-threaded Application and Synchronization Analysis
 
-Understanding the thread execution in multi-threaded applications can be challenging. The GDB (GNU Debugger) supports the process of debugging multi-threaded applications, but since it uses synchronization objects, the debugging can be quite difficult. The Dynamic Analyzer, on the other hand, provides effective thread analysis features. For more information, see [Performing Thread Analysis](../../../../org.tizen.studio/html/common_tools/da_thread.htm).
+Understanding the thread execution in multi-threaded applications can be challenging. The GDB (GNU Debugger) supports the process of debugging multi-threaded applications, but since it uses synchronization objects, the debugging can be quite difficult. The Dynamic Analyzer, on the other hand, provides effective thread analysis features. For more information, see [Performing Thread Analysis](../../../tizen-studio/common-tools/da-thread.md).
 
 ## Valgrind Analysis
 
@@ -138,8 +152,11 @@ Valgrind helps you to detect memory errors or leaks in your application at runti
 
 The following instructions and examples help you to use Valgrind effectively:
 
-- [Running Valgrind](#running_valgrind)Describes how to launch Valgrind with your application.
-- [Viewing Valgrind Result](#valgrind_result)Describes the information provided through Valgrind analysis.
+- [Running Valgrind](#running_valgrind)  
+Describes how to launch Valgrind with your application.
+
+- [Viewing Valgrind Result](#valgrind_result)  
+Describes the information provided through Valgrind analysis.
 
 ### Running Valgrind
 
@@ -151,7 +168,13 @@ To set the Valgrind options for your application:
 
 3. Select the created configuration.
 
-4. Go to the **Memory Profile Options > Collect data** tab:Select from 2 types of memory profiling settings:Memory error and memory leak checkingThis option uses the **Memcheck** tool to profile your application.Heap memory profilingThis option uses the **Massif** tool to profile your application.
+4. Go to the **Memory Profile Options > Collect data** tab:  
+Select from 2 types of memory profiling settings:  
+  - Memory error and memory leak checking  
+  This option uses the **Memcheck** tool to profile your application.
+
+  - Heap memory profiling  
+  This option uses the **Massif** tool to profile your application.
 
 5. On the **General setting** tab, set the general Valgrind options. These options are used for both **Memcheck** and **Massif** profiling.
 

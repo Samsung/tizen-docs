@@ -1,5 +1,5 @@
-<a id="tizen-training"></a>
-# Training 
+<a name="tizen-training"></a>
+# Overview
 
 **Welcome to Tizen!**
 
@@ -28,7 +28,7 @@ To get started with the development of your own Tizen applications:
     dream application.
 
 
-<a id="type"></a>
+<a name="type"></a>
 ## Tizen Application Types
 
 The Tizen platform supports 3 primary application types:
@@ -91,7 +91,8 @@ more powerful applications. The Tizen platform ensures that all Tizen
 applications have consistent look and feel, regardless of whether you
 use the native or Web framework to create them.
 
-Tizen Profiles <a id="profiles"></a>
+<a name="profiles"></a>
+## Tizen Profiles
 Tizen is built to work on a wide variety of platforms with a focus on
 embedded devices. In order to accommodate the various types of devices,
 a set of profiles has been defined to make it easier to develop
@@ -117,14 +118,13 @@ type only.
 
 ![Applications using the TV profile](media/profile_tv.png)
 
-
-## Tizen Documentation <a id="doc"></a>
+ <a name="doc"></a>
+## Tizen Documentation
 
 To make the most of your Tizen applications, get familiar with the Tizen
 documentation:
 
 -   [Training](./cover-page.md)
-
 
     The training section provides overall information you need to become
     familiar with Tizen programming and the Tizen application model. Its
@@ -159,7 +159,7 @@ documentation:
 
     The Visual Studio Tools for Tizen introduces the Tizen development
     environment and related tools you can use when developing your Tizen
-    .NET application.
+    .NET applications.
 
 When using the Tizen documentation, look for the profile icons in the
 upper-right corner of each page. The icons (listed in the following
@@ -179,11 +179,10 @@ application profiles.
 | Wearable Web            | ![Wearable Web](media/wearable_s_w.png) or ![Optional wearable Web](media/wearable_s_w_optional.png) |
 | TV Web                  | ![TV Web](media/tv_s_w.png) or ![Optional TV Web](media/tv_s_w_optional.png) |
 
-**Note**  
+> **Note**  
 > In Tizen native APIs and Web Device APIs, there are 2 types of APIs: mandatory and optional. The fully gray profile icon (as shown in the table above) refers to an optional API.
+>
+> The mandatory APIs are always available on all Tizen devices. The optional APIs provide functionality that depends on the available device hardware or software capabilities, and they may not be available on all Tizen devices.
 
-The mandatory APIs are always available on all Tizen devices. The optional APIs provide functionality that depends on the available device
-hardware or software capabilities, and they may not be available on all Tizen devices.
-
-To become familiar with some terms that you encounter throughout this site, see [Glossary](https://developer.tizen.org/development/getting-started/glossary).
+To become familiar with some terms that you encounter throughout this site, see [Glossary](https://developer.tizen.org/development/getting-started/glossary).  
 To see the trademark notice list, see [Trademarks](https://developer.tizen.org/development/training/trademarks).

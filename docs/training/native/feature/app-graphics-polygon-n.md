@@ -1,5 +1,4 @@
-Polygons on the Canvas
-======================
+# Polygons on the Canvas
 
 You can draw various polygons, such as triangles and pentagons, on a
 canvas.
@@ -29,7 +28,7 @@ To implement polygons in an application:
 
     The label is not used in this example, so annotate it.
 
-    ```
+    ```c++
     /*
        Conformant
        Create and initialize elm_conformant
@@ -81,7 +80,7 @@ To implement polygons in an application:
     Create a pentagon by adding new code to the
     `create_base_gui()` function.
 
-    ```
+    ```c++
     /* Polygon triangle */
     Evas_Object *polygon = evas_object_polygon_add(canvas);
     evas_object_polygon_point_add(polygon, 20, 50);
@@ -106,5 +105,3 @@ To implement polygons in an application:
     A pink pentagon is displayed next to the yellow triangle.
 
     ![Create the project](./media/graphics_pentagon.png)
-
-

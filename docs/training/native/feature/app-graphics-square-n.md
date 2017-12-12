@@ -1,5 +1,4 @@
-Squares on the Canvas
-=====================
+# Squares on the Canvas
 
 To handle simple graphics elements in your application, start by
 learning how to draw a square on the screen. When you add multiple
@@ -52,7 +51,7 @@ application with 3 squares:
 
     The label is not used in this example, so annotate it.
 
-    ```
+    ```c++
     /*
        Conformant
        Create and initialize elm_conformant
@@ -116,5 +115,3 @@ application with 3 squares:
     semi-transparency has been applied.
 
     ![Create the project](./media/graphics_squares.png)
-
-

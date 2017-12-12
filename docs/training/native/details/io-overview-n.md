@@ -1,5 +1,5 @@
-File System Directory Hierarchy
-===============================
+# File System Directory Hierarchy
+
 
 The Tizen platform uses the underlying Linux file system.
 

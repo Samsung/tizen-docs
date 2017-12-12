@@ -1,7 +1,5 @@
 
-
-Creating Your First Tizen Mobile Web Application
-================================================
+# Creating Your First Tizen Mobile Web Application
 
 **Welcome to Tizen mobile Web application development!**
 
@@ -52,8 +50,8 @@ Studio](../../../tizen-studio/web-tools/cover-web-w.md) to
 ease the tasks of creating functionality and designing the application
 UI.
 
-Creating a Project <a name="create"></a>
-------------------
+<a name="create"></a>
+## Creating a Project
 
 The following example shows you how to create and configure a basic
 mobile Web application project in the Tizen Studio. An application
@@ -70,8 +68,8 @@ The following figure illustrates the application to be created:
 
 **Figure: Mobile Web Basic application**
 
-![Mobile Web Basic application](./media/basic-app-running-1-mw.png)
-![Mobile Web Basic application](./media/basic-app-running-2-mw.png)
+![Mobile Web Basic application](./media/basic_app_running_1_mw.png)
+![Mobile Web Basic application](./media/basic_app_running_2_mw.png)
 
 To create the application project:
 
@@ -80,7 +78,7 @@ To create the application project:
 2.  Make sure the **Web** perspective is selected in the top right
     corner of the Tizen Studio window.
 
-    ![Checking the perspective](./media/change-perspective-w.png)
+    ![Checking the perspective](./media/change_perspective_w.png)
 
     If not, select it. If the perspective is not visible, in the Tizen
     Studio menu, select **Window &gt; Perspective &gt; Open
@@ -90,7 +88,7 @@ To create the application project:
     Project**.
 
     ![Creating a new Tizen Web
-    project](./media/create-project-1-w.png)
+    project](./media/create_project_1_w.png)
 
     The Project Wizard opens.
 
@@ -103,28 +101,28 @@ To create the application project:
 
     a.  Select the **Template** project type and click **Next**.
 
-    ![Selecting the project        type](./media/create-project-wizard-type.png)
+    ![Selecting the project        type](./media/create_project_wizard_type.png)
 
     b.  Select the profile (**Mobile**) and version from a drop-down list and click **Next**.
 
       The version depends on the platform version you have installed        and with which you are developing the application.
 
-    ![Selecting the profile and        version](./media/create-project-wizard-version.png)
+    ![Selecting the profile and        version](./media/create_project_wizard_version.png)
 
     c.  Select the **Web Application** application type and click
       **Next**.
 
-    ![Selecting the application        type](./media/create-project-wizard-app-web.png)
+    ![Selecting the application        type](./media/create_project_wizard_app_web.png)
 
     d.  Select the **Basic UI** template and click **Next**.
 
-      ![Selecting the        template](./media/create-project-wizard-template-mw.png)
+      ![Selecting the        template](./media/create_project_wizard_template_mw.png)
 
     e.  Define the project properties and click **Finish**.
 
       You can fill the project name (3-50 characters) and the unique       package ID. You can also select the location and working sets by        clicking **More properties**.
 
-      ![Defining        properties](./media/create-project-wizard-properties-mw.png)
+      ![Defining        properties](./media/create_project_wizard_properties_mw.png)
 
       The Project Wizard sets up the project, creates the application        files using the default content from the template, and closes.
       For more information on the Project Wizard and the available
@@ -152,21 +150,21 @@ most important files and folders include:
 **Figure: Application in the Project Explorer**
 
 ![Application in the Project
-Explorer](./media/basic-app-project-explorer-mw.png)
+Explorer](./media/basic_app_project_explorer_mw.png)
 
 
 
-> **Note** <br>
+> **Note**   
 > You can [view and modify the application
-configuration](#configuration) in the Web application configuration
-editor. In this example, no configuration changes are required.
+configuration](#configuration) in the Web application configuration editor. In this example, no configuration changes are required.
 
 
 
 Your application project is now ready for further actions. Next, build
 the application.
 
-### Managing the Application Configuration <a name="configuration"></a>
+<a name="configuration"></a>
+### Managing the Application Configuration
 
 To view and modify the application configuration:
 
@@ -177,7 +175,7 @@ To view and modify the application configuration:
 2.  In the configuration editor, view and modify the configuration
     details using the various tabs:
 
-    ![Configuring the application](./media/basic-app-config-w.png)
+    ![Configuring the application](./media/basic_app_config_w.png)
 
     -   **Overview**: Define general information, such as the name and
         icon of the application.
@@ -205,23 +203,18 @@ To view and modify the application configuration:
         `config.xml` file. Changes made and saved on the other tabs are
         reflected in the source code and vice versa.
 
-
-
-  >  **Note** <br>
-  > The `config.xml` file must conform to both the XML file
+     >  **Note**  
+     > The `config.xml` file must conform to both the XML file
         format and the W3C specification requirements. Editing the file        in the **Source** tab is intended for advanced users only.
 
-
-
-3.  To save any changes, in the Tizen Studio menu, select **File &gt;
-    Save All**.
+3.  To save any changes, in the Tizen Studio menu, select **File &gt;    Save All**.
 
 For more information on configuring the application, see [Setting the
 Web Application
 Configuration](../process/setting-properties-w.md#set_widget).
 
-Building Your Application <a name="build"></a>
--------------------------
+<a name="build"></a>
+## Building Your Application
 
 After you have created the application project, you can implement the
 required features. In this example, only the default features from the
@@ -245,7 +238,7 @@ You can build the application in the following ways:
     2.  In the Tizen Studio menu, select **Project &gt; Build
         Automatically**.
 
-        ![Using the automatic build](./media/build-automatic-w.png)
+        ![Using the automatic build](./media/build_automatic_w.png)
 
         A check mark appears next to the menu option.
 
@@ -263,7 +256,7 @@ You can build the application in the following ways:
     **Figure: Manually building the application**
 
     ![Manually building the
-    application](./media/build-manual-mw.png)
+    application](./media/build_manual_mw.png)
 
     Alternatively, you can also select the project in the **Project
     Explorer** view and do one of the following:
@@ -273,15 +266,16 @@ You can build the application in the following ways:
 
 After you have built the application, run it.
 
-Running Your Application <a name="run"></a>
-------------------------
+<a name="run"></a>
+## Running Your Application
 
 You can run the Web application on the
 [emulator](../process/run-debug-app-w.md#emulator), [Web
 Simulator](../process/run-debug-app-w.md#simulator), or a [real target
 device](../process/run-debug-app-w.md#target).
 
-### Running on the Emulator <a name="emulator"></a>
+<a name="emulator"></a>
+### Running on the Emulator
 
 To run the application on the emulator:
 
@@ -290,18 +284,18 @@ To run the application on the emulator:
     a.  In the Tizen Studio menu, select **Tools &gt; Emulator
       Manager**.
 
-      ![Emulator Manager](./media/emulator-icon.png)
+      ![Emulator Manager](./media/emulator_icon.png)
 
     b.  In the Emulator Manager, select a mobile emulator from the list        and click **Launch**.
 
       If no applicable emulator instance exists, [create a new
       one](../../../tizen-studio/common-tools/emulator-manager.md#create).
 
-      ![Launching the        emulator](./media/emulator-instance-launch.png)
+      ![Launching the        emulator](./media/emulator_instance_launch.png)
 
       The emulator is launched in its own window. You can also see the        new emulator instance in the **Device Manager**. To view the        emulator folder structure, click the arrow next to the        emulator instance.
 
-      ![Emulator](./media/emulator-window-mobile.png)
+      ![Emulator](./media/emulator_window_mobile.png)
 
 2.  Generate a security profile.
 
@@ -313,7 +307,7 @@ To run the application on the emulator:
 3.  Run the application:
     a.  In the **Project Explorer** view, right-click the project and        select **Run As &gt; Tizen Web Application**.
 
-      ![Running the application](./media/app-run-mw.png)
+      ![Running the application](./media/app_run_mw.png)
 
       Alternatively, you can also select the project in the **Project        Explorer** view and do one of the following:
       -   Press the **Ctrl+F11** key.
@@ -322,27 +316,20 @@ To run the application on the emulator:
       If you have created multiple emulator instances, select the
       instance you want from the combo box in the toolbar before
       selecting to run the application. If you select an offline
-      emulator, it is automatically launched when you select to run
-      the application.
+      emulator, it is automatically launched when you select to run      the application.
 
-
-    ![Selecting the emulator to      use](./media/app-run-multiple-emulators.png)
+     ![Selecting the emulator to      use](./media/app_run_multiple_emulators.png)
 
     b.  Confirm that the application launches on the emulator.
 
-      ![Application running in the        emulator](./media/emulator-running-mw.png)
+      ![Application running in the        emulator](./media/emulator_running_mw.png)
 
-
-
-  >    **Note** <br>
-  > If the emulator display has switched off, you cannot
+     >    **Note**  
+     > If the emulator display has switched off, you cannot
         see the application launch. To see the application on the
-        emulator screen:
-        a.  To switch the display on, in the key window next to the
-            emulator screen, click `Power`.
-        b.  On the home screen, swipe left.
-
-
+        emulator screen:  
+        >         a.  To switch the display on, in the key window next to the            emulator screen, click `Power`.  
+        >         b.  On the home screen, swipe left.
 
   While the application is running, the **Log** view in the Tizen        Studio shows the log, debug, and exception messages from the        methods defined in the log macros. To see the view, in the Tizen        Studio menu, go to **Window &gt; Show View &gt; Log**.
 
@@ -351,14 +338,15 @@ Panel](../../../tizen-studio/common-tools/emulator-control-panel.md)
 and [Using Extended Emulator
 Features](../../../tizen-studio/common-tools/emulator-features.md).
 
-### Running on the Web Simulator <a name="simulator"></a>
+<a name="simulator"></a>
+### Running on the Web Simulator
 
 To run the application on the Web Simulator:
 
 1.  In the **Project Explorer** view, right-click the project and select
     **Run As &gt; Tizen Web Simulator Application**.
 
-    ![Running the application](./media/simulator-run-mw.png)
+    ![Running the application](./media/simulator_run_mw.png)
 
     Alternatively, you can also select the project in the **Project
     Explorer** view and click the run icon in the toolbar.
@@ -366,13 +354,14 @@ To run the application on the Web Simulator:
 2.  Confirm that the application launches on the Web Simulator.
 
     ![Application running in the Web
-    Simulator](./media/simulator-running-mw.png)
+    Simulator](./media/simulator_running_mw.png)
 
 For more information on using the Web Simulator features, see [Taking
 Advantage of Web Simulator
 Features](../../../tizen-studio/web-tools/web-simulator-features-w.md).
 
-### Running on a Target Device <a name="target"></a>
+<a name="target"></a>
+### Running on a Target Device
 
 To run the application on a target device:
 
@@ -388,7 +377,7 @@ To run the application on a target device:
     a.  In the **Device Manager**, select the device.
     b.  In **Project Explorer** view, right-click the project and select        **Run As &gt; Tizen Web Application**.
 
-      ![Running the application on a target        device](./media/app-run-mw.png)
+      ![Running the application on a target        device](./media/app_run_mw.png)
 
       Alternatively, you can also select the project in the **Project        Explorer** view and do one of the following:
 
@@ -398,37 +387,30 @@ To run the application on a target device:
       If you have both a connected device and existing emulator
       instances, select the device from the combo box in the toolbar        before selecting to run the application.
 
-
-    ![Selecting the device to        use](./media/app-run-multiple-emulators.png)
+     ![Selecting the device to        use](./media/app_run_multiple_emulators.png)
 
     c.  Confirm that the application launches on the target device.
 
-
-
->    **Note** <br>
-> The application is launched using the default debug
-    run configuration. To create and use another configuration:
->  1.  In the `Project Explorer` view, right-click the project and
-        select `Run As > Run Configurations`.
->  2.  In the `Run Configurations` window, click the
-        `New Launch Configuration` icon (![New Launch Configuration
-        icon](./media/run-new-config-wn.png)), define the
-        configuration details, and launch the application by clicking
-        `Run`.
-
->
->   ![Run Configurations
+ >    **Note**  
+ > The application is launched using the default debug
+    run configuration. To create and use another configuration:  
+    >  1.  In the `Project Explorer` view, right-click the project and        select `Run As > Run Configurations`.
+    >  2.  In the `Run Configurations` window, click the
+        `New Launch Configuration` icon (![New Launch Configuration        icon](./media/run_new_config_wn.png)), define the
+        configuration details, and launch the application by clicking        `Run`.
+      >
+      >   ![Run Configurations
         window](./media/run-configurations-w.png)
 
 
-
-Building a Simple UI <a name="ui"></a>
---------------------
+<a name="ui"></a>
+## Building a Simple UI
 
 Tizen Web UI supports various aspects of creating a visual outlook for
 the user application to ensure the best possible user experience.
 
-### W3C/HTML <a name="w3c"></a>
+<a name="w3c"></a>
+### W3C/HTML
 
 The W3C specifications provide HTML and CSS features for creating a user
 interface. With HTML, you can define the structure of the application
@@ -445,7 +427,7 @@ The `<html>` element is the top-level element of the HTML DOM tree that
 wraps the entire document, and it has the `<head>` and `<body>` elements
 as child nodes:
 
-``` {.prettyprint}
+```xml
 <!DOCTYPE html>
 <html>
    <head>
@@ -467,7 +449,7 @@ title of HTML document, CSS, and JavaScript:
 -   `<style>`, `<link>`: Sets the styles of the document.
 -   `<script>`, `<noscript>`: Adds functions to the document.
 
-``` {.prettyprint}
+```xml
 <!DOCTYPE html>
 <html>
    <head>
@@ -489,7 +471,7 @@ title of HTML document, CSS, and JavaScript:
 The `<body>` element defines the area displaying content on the browser
 screen:
 
-``` {.prettyprint}
+```xml
 <body>
    <div id="main" class="page">
       <div class="contents">
@@ -503,12 +485,12 @@ The HTML code displays the **Basic** text on the screen.
 
 **Figure: Screen with Basic text**
 
-![Screen with Basic text](./media/basic-app-running-1-mw.png)
+![Screen with Basic text](./media/basic_app_running_1_mw.png)
 
-#### CSS <a name="css"></a>
+<a name="css"></a>
+#### CSS
 
-CSS (Cascading Style Sheets) specifies the layout and styling of the Web
-application.
+CSS (Cascading Style Sheets) specifies the layout and styling of the Web application.
 
 There are various ways to connect CSS with HTML:
 
@@ -523,7 +505,7 @@ to the HTML file using a `<link>` element in the `<head>` element.
 
 The following code shows how to link to a CSS file:
 
-``` {.prettyprint}
+```xml
 <!DOCTYPE html>
 <html>
    <head>
@@ -547,7 +529,7 @@ an element with the `content-text` class name:
 
 -   `css/style.css`:
 
-    ``` {.prettyprint}
+    ```xml
     html,
     body {
        width: 100%;
@@ -576,7 +558,7 @@ an element with the `content-text` class name:
 
 -   `index.html`:
 
-    ``` {.prettyprint}
+    ```xml
     <body>
        <div id="main" class="page">
           <div class="contents">
@@ -591,7 +573,7 @@ By default, the text uses the `#ffffff` color (white), defined for the
 for the `content-text` class, the text color changes (in this case, to
 `#ff0000` red):
 
-``` {.prettyprint}
+```xml
 #content-text {
    font-weight: bold;
    font-size: 5em;
@@ -602,9 +584,10 @@ for the `content-text` class, the text color changes (in this case, to
 **Figure: Screen with a new text color**
 
 ![Screen with a new text
-color](./media/build-ui-basic-textbox-mw.png)
+color](./media/build_ui_basic_textbox_mw.png)
 
-### TAU (Tizen Advanced UI) <a  name="tau"></a>
+<a  name="tau"></a>
+### TAU (Tizen Advanced UI)
 
 TAU is a Web UI library that enables you to create and manage various
 kinds of UI components. The components represent a visual UI element,
@@ -617,7 +600,7 @@ figure shows the role of TAU and its relation with the Web application.
 **Figure: TAU and the Web application**
 
 ![TAU and the Web
-application](./media/simple-ui-tau-relation-mw.png)
+application](./media/simple_ui_tau_relation_mw.png)
 
 To create a Web application and design its UI with TAU:
 
@@ -631,7 +614,7 @@ To create a Web application and design its UI with TAU:
     TAU template.
 
     ![TAU package
-    installation](./media/simple-ui-update-mgr-ww.png)
+    installation](./media/simple_ui_update_mgr_ww.png)
 
 2.  Start the application development with the TAU library.
 
@@ -645,7 +628,7 @@ To create a Web application and design its UI with TAU:
     before closing the body element. The following example shows a basic
     TAU template.
 
-    ``` {.prettyprint}
+    ```xml
     <!DOCTYPE html>
     <html>
        <head>
@@ -684,7 +667,7 @@ To create a Web application and design its UI with TAU:
     The following example shows a basic TAU template. Overwrite the
     `index.html` file content with the following code:
 
-    ``` {.prettyprint}
+    ```xml
     <!DOCTYPE html>
     <html>
        <head>
@@ -702,42 +685,38 @@ To create a Web application and design its UI with TAU:
 
     To create a project with a TAU template:
 
-    a.  Go to **File &gt; New &gt; Tizen Project**.
+    a.  Go to **File &gt; New &gt; Tizen Project**.  
     b.  Select **Template &gt; Mobile v2.4 &gt; Web Application &gt; TAU        SinglePage**.
 
-      ![Creating a new        project](./media/simple-ui-tau-create-mw.png)
+      ![Creating a new        project](./media/simple_ui_tau_create_mw.png)
 
     c.  Change the project name and properties and click **Finish**.
 
-      ![Changing        properties](./media/simple-ui-tau-properties-mw.png)
+      ![Changing        properties](./media/simple_ui_tau_properties_mw.png)
 
     d.  In the **Project Explorer** view, view the project.
 
       The TAU library is located in the `lib` folder.
 
-      ![TAU library directory](./media/simple-ui-tau-dir-mw.png)
+      ![TAU library directory](./media/simple_ui_tau_dir_mw.png)
 
 3.  Create a simple page.
 
     a.  Open the `index.html` file. The body element of the HTML file        contains 1 or more pages.
 
     b.  To create a page in the `<body>` element, use the `ui-page`
-      class with the `<div>` element:
-
-    ```
+      class with the `<div>` element:  
+      ```xml
         <body>
            <div class="ui-page" id="main">
            </div>
            <!--Script import-->
            <script> ... </script>
         </body>
+       ```
 
-    ```
-
-
-    c.  To layout the page, add a content area with the `ui-content`        class, a header with the `ui-header` class, and a footer with        the `ui-footer` class:
-
-      ```
+    c.  To layout the page, add a content area with the `ui-content`        class, a header with the `ui-header` class, and a footer with        the `ui-footer` class:  
+    ```xml
         <body>
            <div class="ui-page" id="main">
               <div class="ui-header" data-position="fixed">
@@ -757,12 +736,10 @@ To create a Web application and design its UI with TAU:
       The following figure shows the screen that you can see if you
       run this code with the emulator.
 
-      ![Hello TAU](./media/simple-ui-hello-tau-mw.png)
+      ![Hello TAU](./media/simple_ui_hello_tau_mw.png)
 
-    d.  You can add your own style in the content and footer area with a        defined `id` attribute:
-
-
-      ```
+    d.  You can add your own style in the content and footer area with a        defined `id` attribute:  
+      ```xml
         <body>
            <div class="ui-page" id="main">
               <div class="ui-header" data-position="fixed">
@@ -780,11 +757,10 @@ To create a Web application and design its UI with TAU:
 
       ```
 
-
     In the `style.css` file, add the CSS styles for the new `id`
     attributes:
 
-      ```
+      ```xml
         #contentArea {
            background-color: white;
         }
@@ -796,7 +772,7 @@ To create a Web application and design its UI with TAU:
 
       With your new styles, the screen looks like this.
 
-      ![Hello TAU](./media/simple-ui-tau-css-mw.png)
+      ![Hello TAU](./media/simple_ui_tau_css_mw.png)
 
     The page looks better, but not great yet. You can create your
     application UI with basic TAU UI components in the following steps.
@@ -809,7 +785,7 @@ To create a Web application and design its UI with TAU:
     -   Create a simple and basic static list. Overwrite the
         `index.html` file content with the following code:
 
-        ``` {.prettyprint}
+        ```xml
         <body>
            <div class="ui-page" id="main">
               <div class="ui-header" data-position="fixed">
@@ -829,14 +805,14 @@ To create a Web application and design its UI with TAU:
 
         The screen now shows a basic list.
 
-        ![TAU list](./media/simple-ui-tau-list-mw.png)
+        ![TAU list](./media/simple_ui_tau_list_mw.png)
 
     -   For a more advanced option, you can also create an anchor
         listview (whose items can be clicked to navigate to other pages
         or show a popup). Overwrite the `<ul class="ui-listview">`
         element content with the following code:
 
-        ``` {.prettyprint}
+        ```xml
         <body>
            <div class="ui-page" id="main">
               <div class="ui-header" data-position="fixed">
@@ -857,7 +833,7 @@ To create a Web application and design its UI with TAU:
         The screen now shows a basic anchor list.
 
         ![TAU anchor
-        list](./media/simple-ui-tau-anchor-list-mw.png)
+        list](./media/simple_ui_tau_anchor_list_mw.png)
 
 5.  Add a button in the footer.
 
@@ -869,7 +845,7 @@ To create a Web application and design its UI with TAU:
     `<div class="ui-footer">...</div>` element after the
     `<div class="ui-content">...</div>` element:
 
-    ``` {.prettyprint}
+    ```xml
     <body>
        <div class="ui-page" id="main">
           <div class="ui-header" data-position="fixed">
@@ -892,7 +868,7 @@ To create a Web application and design its UI with TAU:
 
     When you run the application, the following screen is displayed.
 
-    ![TAU button](./media/simple-ui-tau-button-mw.png)
+    ![TAU button](./media/simple_ui_tau_button_mw.png)
 
 6.  Create another page.
 
@@ -902,10 +878,8 @@ To create a Web application and design its UI with TAU:
 
     a.  In the Tizen Studio, you can create a new HTML file and
       rename it. Create a `second.html` file with the following
-      content:
-
-
-      ```
+      content:  
+      ```xml
         <!DOCTYPE html>
         <html>
            <head>
@@ -927,10 +901,8 @@ To create a Web application and design its UI with TAU:
       ```
 
     b.  Decorate the page in the same way as `index.html`. In the
-      `style.css` file, add the following CSS style:
-
-
-      ```
+      `style.css` file, add the following CSS style:  
+      ```xml
         #secondPage {
            background-color: white;
         }
@@ -939,10 +911,8 @@ To create a Web application and design its UI with TAU:
     c.  Create navigation between the `index.html` and        `second.html` pages.
 
       Go back to the `index.html` file and add a file path in the
-      listview `<li><a href>` element:
-
-
-      ```
+      listview `<li><a href>` element:  
+      ```xml
         <ul class="ui-listview">
            <li class="ui-li-anchor"><a href="second.html">Go to Second Page</a></li>
            <li class="ui-li-anchor"><a href="#">Anchor List 2</a></li>
@@ -954,7 +924,7 @@ To create a Web application and design its UI with TAU:
 
     d.  Run the code, and see how you can move from the `index.html`        page to the `second.html` page.
 
-      ![Move to second page](./media/simple-ui-tau-move-mw.png)
+      ![Move to second page](./media/simple_ui_tau_move_mw.png)
 
     Now, you can navigate from the first to the second page. In the next
     steps, you learn how to go back to the first page and exit the
@@ -969,10 +939,8 @@ To create a Web application and design its UI with TAU:
 
     Create a new `app.js` JavaScript file:
 
-    a.  In the `index.html` file, add the        `<script src="app.js"></script>` line before closing the        `</body>` element:
-
-
-      ```
+    a.  In the `index.html` file, add the        `<script src="app.js"></script>` line before closing the        `</body>` element:  
+    ```xml
         <body>
            <div class="ui-page" id="main">
               <div class="ui-header" data-position="fixed">
@@ -994,15 +962,13 @@ To create a Web application and design its UI with TAU:
     b.  In the **Project Explorer** view, right-click the project and        select **New &gt; JavaScript Source File**.
 
       ![Create a new JavaScript
-      file](./media/simple-ui-tau-new-js-mw.png)
+      file](./media/simple_ui_tau_new_js_mw.png)
 
     c.  Write the file name as **app.js** and click **Finish**.
 
     d.  In the `app.js` file, all kinds of logic can be added to
-      the application. In this case, add several lines for handling        navigation:
-
-
-      ```
+      the application. In this case, add several lines for handling        navigation:  
+      ```javascript
         (function() {
             window.addEventListener('tizenhwkey', function(ev) {
                 if (ev.keyName === 'back') {
@@ -1030,10 +996,8 @@ To create a Web application and design its UI with TAU:
 
     The following example shows how to handle the back key input with
     page navigation and application exit. This code is included in the
-    **TAU Basic** project template `main.js` file by default.
-
-
-    ```
+    **TAU Basic** project template `main.js` file by default.  
+    ```javascript
     (function() {
         window.addEventListener('tizenhwkey', function(ev) {
             if (ev.keyName === 'back') {

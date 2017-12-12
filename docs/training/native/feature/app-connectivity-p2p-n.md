@@ -1,6 +1,5 @@
 
-P2P Connections with Wi-Fi Direct®
-==================================
+# P2P Connections with Wi-Fi Direct®
 
 Wi-Fi Direct® (synonym for Wi-Fi P2P (Peer-to-Peer)) is a technology
 that allows you to find nearby Wi-Fi Direct devices and form a Wi-Fi
@@ -27,9 +26,8 @@ clients. A group can be created by:
 The following sections demonstrate how to find and connect to nearby
 devices using Wi-Fi Direct.
 
-
-Required Privileges and Features <a id="privilege"></a>
---------------------------------
+<a name="privilege"></a>
+## Required Privileges and Features
 
 Applications that use Wi-Fi Direct must declare the required privileges
 in the `tizen-manifest.xml` file. For more information on the Tizen
@@ -39,7 +37,7 @@ Privileges](../details/sec-privileges-n.md).
 To perform the Wi-Fi Direct operations, the application manifest must
 include the following privileges:
 
-```
+```xml
 <privileges>
    <privilege>http://tizen.org/privilege/network.get</privilege>
    <privilege>http://tizen.org/privilege/internet</privilege>
@@ -47,13 +45,12 @@ include the following privileges:
 </privileges>
 ```
 
-<div class="note">
 
-**Note** Wi-Fi Direct does not require an Internet connection, but it
+> **Note**  
+> Wi-Fi Direct does not require an Internet connection, but it
 needs the `http://tizen.org/privilege/internet` privilege because it
 uses standard sockets.
 
-</div>
 
 To perform the Wi-Fi Direct operations, the device must support the
 following [features](../details/app-filtering-n.md):
@@ -64,18 +61,16 @@ following [features](../details/app-filtering-n.md):
 -   `http://tizen.org/feature/network.wifi.direct.service_discovery`
 
 
-
-Wi-Fi Direct Settings <a id="setting"></a>
----------------------
+<a name="setting"></a>
+## Wi-Fi Direct Settings
 
 To use Wi-Fi P2P, you must confirm that 2 devices are connected through
 Wi-Fi Direct. To see the Wi-Fi Direct settings, go to **Settings &gt;
 Wi-Fi &gt; Wi-Fi Direct** on the device. To listen for the Wi-Fi Direct
 states, set a callback function.
 
-
-Implementing Wi-Fi Direct <a id="implement"></a>
--------------------------
+<a name="implement"></a>
+## Implementing Wi-Fi Direct
 
 To use Wi-Fi P2P, you must activate Wi-Fi Direct and start the service.
 If you want to listen for Wi-Fi Direct states, you must also set a
@@ -85,7 +80,7 @@ To implement a Wi-Fi Direct connection:
 
 1.  Initialize Wi-Fi Direct to use all Wi-Fi Direct functions:
 
-    ```
+    ```c++
     #include <wifi_direct.h>
     int error_code;
 
@@ -105,7 +100,7 @@ To implement a Wi-Fi Direct connection:
     invoked whenever a Wi-Fi Direct local device activates or
     deactivates:
 
-    ```
+    ```c++
     /*
        Get the Wi-Fi Direct activation and deactivation events
        in device_state_changed_cb() callback
@@ -138,7 +133,7 @@ To implement a Wi-Fi Direct connection:
 
 3. Start the discovery to find nearby peer devices:
 
-    ```
+    ```c++
     void
     discovery_state_changed_cb(wifi_direct_error_e error_code,
                                wifi_direct_discovery_state_e discovery_state, void *user_data);
@@ -159,7 +154,7 @@ To implement a Wi-Fi Direct connection:
     `wifi_direct_discovered_peer_cb()` callback, which provides
     information about the peers that Wi-Fi P2P has detected:
 
-    ```
+    ```c++
     char * mac_address = NULL;
 
     bool
@@ -196,7 +191,7 @@ To implement a Wi-Fi Direct connection:
 
 5. Connect a specific Wi-Fi Direct peer device:
 
-    ```
+    ```c++
     static void
     connection_state_changed_cb(wifi_direct_error_e error_code,
                                 wifi_direct_connection_state_e connection_state,
@@ -259,7 +254,7 @@ To implement a Wi-Fi Direct connection:
 6. When the connection is no longer needed, disconnect the Wi-Fi Direct
     device:
 
-    ```
+    ```c++
     error_code = wifi_direct_disconnect(mac_address);
     if (error_code != WIFI_DIRECT_ERROR_NONE) {
         printf("Fail to disconnect\n");
@@ -271,7 +266,7 @@ To implement a Wi-Fi Direct connection:
 7. To deactivate Wi-Fi Direct when it is no longer needed (or the
     application is exiting):
 
-    ```
+    ```c++
     /* Power off the local device using the wifi_direct_deactivate() function */
     /* Deactivate Wi-Fi Direct */
     wifi_direct_deactivate(NULL);
@@ -292,15 +287,14 @@ To implement a Wi-Fi Direct connection:
     Power off the local device using the `wifi_direct_deactivate()`
     function:
 
-    ```
+    ```c++
     /* Release Wi-Fi Direct */
     wifi_direct_deinitialize();
     ```
 
 
-
-Difference Between Wi-Fi Direct and TDLS <a id="TDLS"></a>
-----------------------------------------
+<a name="TDLS"></a>
+## Difference Between Wi-Fi Direct and TDLS
 
 There are 2 protocol technologies to connect directly with each other
 for Wi-Fi devices:
@@ -366,5 +360,3 @@ TDLS is not the same as, nor does it replace Wi-Fi Direct. TDLS is used
 to optimize the traffic flow in a network, while Wi-Fi Direct is used to
 quickly connect devices to one another while on the go, even when a
 Wi-Fi network is unavailable.
-
-

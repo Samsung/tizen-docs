@@ -1,6 +1,5 @@
 
-Network Operations
-==================
+# Network Operations
 
 The basic tasks involved in network operations are connecting to the
 network, downloading HTTP content, and parsing data in XML and JSON
@@ -8,9 +7,8 @@ formats. The following sections provide you with the fundamental
 building blocks for creating Tizen applications that download content
 and parse data efficiently.
 
-
-Connecting to the Network <a id="connection"></a>{#connection}
--------------------------
+<a name="connection"></a>
+## Connecting to the Network
 
 You can write applications that create a network connection and check
 the connection status over that connection. The connected application
@@ -34,7 +32,7 @@ see [Security and API Privileges](../details/sec-privileges-n.md).
 To perform the network operations, the application manifest must include
 the following privileges:
 
-```
+```xml
 <privileges>
    <privilege>http://tizen.org/privilege/network.get</privilege>
 </privileges>
@@ -75,7 +73,7 @@ Wi-Fi and mobile data access.
 The following example demonstrates how to create a connection handle and
 check the currently used connection type with the Connection API:
 
-```
+```c++
 #include <tizen.h>
 #include <service_app.h>
 #include "service.h" /* Auto-generated header file by the Tizen Studio */
@@ -141,9 +139,8 @@ main(int argc, char* argv[])
 }
 ```
 
-
-Downloading HTTP Content <a id="download"></a>
-------------------------
+<a name="download"></a>
+## Downloading HTTP Content
 
 After a network connection is established, the application can download
 HTTP content from the Internet. There are 2 ways to download HTTP
@@ -168,7 +165,7 @@ Privileges](../details/sec-privileges-n.md).
 To perform the HTTP download operations, the application manifest must
 include the following privileges:
 
-```
+```xml
 <privileges>
    <privilege>http://tizen.org/privilege/download</privilege>
    <privilege>http://tizen.org/privilege/mediastorage</privilege>
@@ -189,7 +186,7 @@ a Web browser.
 The following example demonstrates how to perform an HTTP download with
 libcurl:
 
-```
+```c++
 #include <tizen.h>
 #include <service_app.h>
 #include "service.h" /* Auto-generated header file by the Tizen Studio */
@@ -250,7 +247,7 @@ The `ecore_thread_feedback()` function allows the
 `download_thread_run_cb()` callback to call the `download_feedback_cb()`
 callback:
 
-```
+```c++
 static void
 download_thread_run_cb(void *data, Ecore_Thread *thread)
 {
@@ -384,7 +381,7 @@ canceled, or downloading.
 
 The following example demonstrates how to perform an HTTP download:
 
-```
+```c++
 #include <tizen.h>
 #include <service_app.h>
 #include "service.h" /* Auto-generated header file by the Tizen Studio */
@@ -504,9 +501,8 @@ main(int argc, char* argv[])
 }
 ```
 
-
-Parsing XML and JSON <a id="parse"></a>
---------------------
+<a name="parse"></a>
+## Parsing XML and JSON
 
 The responses of many open APIs are composed of XML or JSON data. Tizen
 provides the [JSON-GLIB](https://developer.gnome.org/json-glib/) library
@@ -522,7 +518,7 @@ Privileges](../details/sec-privileges-n.md).
 To perform the download operations and read and write to a file system,
 the application manifest must include the following privileges:
 
-```
+```xml
 <privileges>
    <privilege>http://tizen.org/privilege/filesystem.read</privilege>
    <privilege>http://tizen.org/privilege/filesystem.write</privilege>
@@ -539,7 +535,7 @@ this library and install it on your project.
 
 The following example demonstrates how to parse a JSON file:
 
-```
+```c++
 #include <json-glib/json-glib.h>
 
 /* Called a moment after downloading */
@@ -649,17 +645,15 @@ brackets. HTML is the most well-known markup language. Though the
 library is written in C, a variety of language bindings make it
 available in other environments.
 
-<div class="note">
-
-**Note** For more examples and tutorials, see [libxml
+> **Note**  
+> For more examples and tutorials, see [libxml
 Tutorial](http://www.xmlsoft.org/tutorial/index.html).
 
-</div>
 
 The following example comes from the libxml Tutorial. It demonstrates
 how to parse and validate an XML file to a tree and free the result:
 
-```
+```c++
 /*
    section: Parsing
    synopsis: Parse and validate an XML file to a tree and free the result
@@ -734,5 +728,3 @@ main(int argc, char **argv)
     return(0);
 }
 ```
-
-

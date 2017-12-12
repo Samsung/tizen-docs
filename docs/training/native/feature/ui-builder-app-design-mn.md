@@ -1,6 +1,6 @@
 
-Designing Your Native Application
-=================================
+# Designing Your Native Application
+
 
 You can approach the task of designing a native application with several
 methods. On the one hand, you can edit the application in the Tizen
@@ -20,9 +20,9 @@ the **WYSIWYG Editor** view:
 
 You can switch between the editors as needed.
 
+<a name="project"></a>
+## Creating a Project
 
-Creating a Project <a id="project"></a>
-------------------
 
 To create a native UI Builder project:
 
@@ -35,7 +35,7 @@ To create a native UI Builder project:
     template offers a single view. For more information on the Project
     Wizard and templates, see [Creating Tizen Projects with Tizen
     Project
-    Wizard](../../../../org.tizen.studio/html/native_tools/project_wizard_n.htm).
+    Wizard](../../../tizen-studio/native-tools/project-wizard-n.md).
 
     ![Project templates](./media/ui_builder_templates.png)
 
@@ -43,8 +43,7 @@ To create a native UI Builder project:
 
     ![Project templates](./media/ui_builder_project_details.png)
 
-After you have created the project, the Tizen Studio changes to the **UI
-Builder** perspective with the applicable views, and the project
+After you have created the project, the Tizen Studio changes to the **UI Builder** perspective with the applicable views, and the project
 structure is shown in the **Project Explorer** view.
 
 **Figure: UI Builder views and default project structure**
@@ -69,9 +68,9 @@ and files.
 | ![Icon](./media/ui_builder_icon.png) `icon.png` | Application icon file                    |
 | ![Manifest](./media/ui_builder_manifest.png) `tizen-manifest.xml` | Tizen native application manifest XML file |
 
+<a name="view"></a>
+## Designing a UI Layout for a View
 
-Designing a UI Layout for a View <a id="view"></a>
---------------------------------
 
 ### Using the Design Editor
 
@@ -134,7 +133,7 @@ section describes some of the features that are available in the
 
 For more information on the XML schema of the layout file, see [Managing
 UI Component Attributes in
-layout.xml](../../../../org.tizen.studio/html/native_tools/component_attributes_n.htm).
+layout.xml](../../../tizen-studio/native-tools/component-attributes-n.md).
 
 To use the XML editor and its helpful features:
 
@@ -215,9 +214,9 @@ To add a new view:
     **Properties** view.
 
 
+<a name="binding"></a>
+## Binding an Event Handler to the UI Component
 
-Binding an Event Handler to the UI Component <a id="binding"></a>
---------------------------------------------
 
 An event handler is part of the application logic. It is called by the
 Tizen framework when any user interaction, such as a mouse click or
@@ -280,7 +279,7 @@ To add an event handler to a specific UI component:
 
     The signature contains the following parameters:
 
-    ```
+    ```c++
     void view1_button1_onclicked(uib_view1_view_context *vc, Evas_Object *obj, void *event_info)
     ```
 
@@ -288,7 +287,7 @@ To add an event handler to a specific UI component:
         component in the view through this structure. The following code
         example shows a sample of the view context.
 
-        ```
+        ```c++
         struct _uib_view1_view_context {
             /* Parent evas_object which was parameter of create function */
             Evas_Object *parent;
@@ -326,9 +325,9 @@ To add an event handler to a specific UI component:
     ![Content assist](./media/ui_builder_content_assist.png)
 
 
+<a name="storyboard"></a>
+## Adding an Event Handler from the Storyboard
 
-Adding an Event Handler from the Storyboard <a id="storyboard"></a>
--------------------------------------------
 
 To transition between pages in your application, use the **Storyboard**
 feature of the **Design** editor. In the **Storyboard**, you can see all
@@ -387,9 +386,9 @@ To create a connection:
     operations](./media/ui_builder_storyboard_transitions.png)
 
 
+<a name="emulator"></a>
+## Running the Application in the Emulator
 
-Running the Application in the Emulator <a id="emulator"></a>
----------------------------------------
 
 You can run your application in the emulator. The device emulator,
 provided with the Tizen Studio, imitates the target environment running
@@ -415,5 +414,3 @@ The following figure shows the running application. If you click the
 **Figure: Running Login application**
 
 ![Running Login application](./media/ui_builder_run.png)
-
-

@@ -1,6 +1,5 @@
 
-Getting Started with Web Applications
-=====================================
+# Getting Started with Web Applications
 
 When creating your first Tizen Web application, you can select from the
 following options, which all use the Web-native languages, such as

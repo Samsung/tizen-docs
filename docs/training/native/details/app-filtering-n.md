@@ -1,6 +1,6 @@
 
-Application Filtering
-=====================
+# Application Filtering
+
 
 The Tizen platform provides a wide range of features across a variety of
 hardware and software components. Among the features, there are some
@@ -9,9 +9,9 @@ application stores to correctly select your application for installation
 on an appropriate device, the feature and profile information must be
 correctly declared in your application.
 
+<a name="filter_n"></a>
+## Feature-based Filtering
 
-Feature-based Filtering <a id="filter_n"></a>
------------------------
 
 Some features can be selectively supported by the Tizen device
 manufacturer. To prevent problems when the user is trying to run your
@@ -63,7 +63,8 @@ list of the application package, only a device that has both those
 features can show the application on the Tizen Store application list
 for downloading.
 
-### Screen Size Feature <a id="screen_size"></a>
+<a name="screen_size"></a>
+### Screen Size Feature
 
 The screen size feature is the only exception to the normal feature
 handling process described above. When the screen size is defined in the
@@ -97,7 +98,8 @@ The following table lists the available screen size features.
 | `http://tizen.org/feature/screen.size.normal.1080.1920` | Specify this key, if the application supports the 1080 x 1920 resolution on the normal screen size.<br><br>You can specify multiple `http://tizen.org/feature/screen.size.normal.*` keys, if your application supports multiple screen resolutions on the normal screen size. However, you cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously.<br><br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.2.1 |
 | `http://tizen.org/feature/screen.size.all` | Specify this key, if the application supports all possible current and future screen sizes and all possible current and future resolutions per screen size.<br><br>You cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously. If you do, only the most specific resolution key is considered and the less specific resolution keys are ignored. For example, if you specify both `http://tizen.org/feature/screen.size.all` and `http://tizen.org/feature/screen.size.normal.320.480` keys, only the `http://tizen.org/feature/screen.size.normal.320.480` key is applied.<br><br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.2.1 |
 
-### Feature Hierarchy <a id="hierarchy"></a>
+<a name="hierarchy"></a>
+### Feature Hierarchy
 
 The feature keys have a hierarchy. For example, consider the
 `http://tizen.org/feature/location`,
@@ -123,7 +125,8 @@ The feature keys have a hierarchy. For example, consider the
     `http://tizen.org/feature/location.wps` features together, only a
     device which supports both those features can show the application.)
 
-### Adding the Feature List <a id="adding"></a>
+<a name="adding"></a>
+### Adding the Feature List
 
 To enable filtering for your native application, add the feature list
 for the application `tizen-manifest.xml` file:
@@ -132,8 +135,8 @@ for the application `tizen-manifest.xml` file:
     `tizen-manifest.xml` file in the **Project Explorer** view.
 2. Select the features you need, one at a time:
 
-    a.  In the **Features** tab, click **+**.
-    b.  Select a feature.
+    a.  In the **Features** tab, click **+**.  
+    b.  Select a feature.  
     c.  Click **OK**.
 
     The manifest file (`tizen-manifest.xml`) is updated automatically.
@@ -445,9 +448,9 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/vision.qrcode_recognition` | Specify this key, if the application requires the QR code recognition feature. | 2.2.1 |
 | `http://tizen.org/feature/watch_app`     | Specify this key, if the application requires the watch application feature. | 4.0   |
 
+<a name="profile_n"></a>
+## Profile-based Filtering
 
-Profile-based Filtering <a id="profile_n"></a>
------------------------
 
 A Tizen profile describes the requirements for a category of Tizen
 devices that have a common application execution environment.
@@ -472,12 +475,11 @@ attributes.
 In a native application, the profile name element can be added to the
 `tizen-manifest.xml` file as follows:
 
-```
+```xml
 <manifest xmlns="http://tizen.org/ns/packages" api-version="2.3.1" ... >
    <profile name="mobile"/>
 ```
 
 The Tizen Store compares the device profile and the `profile name`
-element in an application. The store only shows the applications with a
-profile name matching the device profile to prevent unsupported
+element in an application. The store only shows the applications with a profile name matching the device profile to prevent unsupported
 applications from being installed.

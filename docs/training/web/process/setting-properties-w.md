@@ -1,7 +1,5 @@
 
-
-Setting Project Properties
-==========================
+# Setting Project Properties
 
 Before you implement the actual application functionality, define all
 the necessary properties for your application project:
@@ -10,44 +8,34 @@ the necessary properties for your application project:
     [JSON properties](#set_json), right-click the project in the Tizen
     Studio **Project Explorer** view and select **Properties**. After
     setting or changing a property, click **OK**.
--   To define the [Web application configuration](#set_widget), edit the
-    `config.xml` file.
-
-
-  > **Note** <br>
+-   To define the [Web application configuration](#set_widget), edit the    `config.xml` file.  
+  > **Note**  
   > Only modify the Web application configuration by using the
-    configuration editor in the Tizen Studio. If you create or edit the
-    `config.xml` file using any other text editor, your application may
-    not work as expected.
-
-
+    configuration editor in the Tizen Studio. If you create or edit the    `config.xml` file using any other text editor, your application may    not work as expected.
 
 After you have finished setting the project properties, you are ready to
 [design the UI](app-dev-process-w.md#design).
 
-Setting Build Properties <a name="set"></a>
-------------------------
+<a name="set"></a>
+## Setting Build Properties
 
 You can set build properties for your project. To select the build
 properties:
 
 1.  In the **Properties** window, select **Tizen Studio &gt;
     Package &gt; Web**.
-2.  Check **Optimize web resources**, and add any files for excluding
-    optimization in the **Optimization** panel.
+2.  Check **Optimize web resources**, and add any files for excluding    optimization in the **Optimization** panel.
 
-Setting the JSON Property <a name="set_json"></a>
--------------------------
+<a name="set_json"></a>
+## Setting the JSON Property
 
 You can set a JSON property for your project. To select the JSON
-property:
-
-1.  In the **Properties** window, select **Tizen Studio &gt; Web &gt;
-    JSON Properties**.
+property:  
+1.  In the **Properties** window, select **Tizen Studio &gt; Web &gt;    JSON Properties**.
 2.  Check **Enable JSON validation in project**.
 
-Setting the Web Application Configuration <a name="set_widget"></a>
------------------------------------------
+<a name="set_widget"></a>
+## Setting the Web Application Configuration
 
 The Web application configuration consists of application information,
 such as version, features, and privileges, which are available for the
@@ -58,13 +46,14 @@ application configuration editor, double-click the application
 **Figure: Setting the application configuration**
 
 ![Setting the application
-configuration](./media/tizen-project-explorer-w.png)
+configuration](./media/tizen_project_explorer_w.png)
 
 You can [edit the application properties using the form tabs of the Web
 application configuration
 editor](../../../tizen-studio/web-tools/config-editor-w.md#edit).
 
-### Defining and Editing General Information in the Overview Tab <a name="overview"></a>
+<a name="overview"></a>
+### Defining and Editing General Information in the Overview Tab
 
 You can define and edit general information about the application in the
 **Overview** tab of the Web application configuration editor.
@@ -97,18 +86,11 @@ You can perform the following tasks using the **Overview** tab:
     The following table describes the available icon format and size.
 
     **Table: Icon format and size**
+    
 
-<table>
-<tr>
-  <th> Format </th>
-  <th> Size [Xhigh (HD)] </th>
-</tr>
-<tr>
-  <td> 32-bit PNG with alpha</td>
-  <td> 117 x 117 pixels </td>
-</tr>
-</table>
-
+  | Format | Size [Xhigh (HD)]  |  
+  |------|-----------------|  
+  | 32-bit PNG with alpha | 117 x 117 pixels  |
 
 -   Define the application author, license, and description in the
     **Managing the Application** section:
@@ -126,14 +108,14 @@ You can perform the following tasks using the **Overview** tab:
         associated with the software or content license.
     -   **Description** field represents the human-readable description
         of the Tizen Web application package.
--   Define the UI preferences of the application in the **Managing the
-    Application UI** section:
+-   Define the UI preferences of the application in the **Managing the    Application UI** section:
     -   **Width** field represents the start-up file viewport width.
     -   **Height** field represents the start-up file viewport height.
     -   **View Modes** field represents the preferred view mode
         (maximized fullscreen).
 
-### Declaring Required Software or Hardware Features in the Features Tab <a name="feature"></a>
+<a name="feature"></a>
+### Declaring Required Software or Hardware Features in the Features Tab
 
 You can declare any device software or hardware features that your
 application requires to run properly. The declaration can be used for
@@ -152,13 +134,13 @@ To enable filtering for your Web application:
     user's device.
 
 After saving the feature information with the Web application
-configuration editor, you can see the added code in the **Source** tab:
-
-``` {.prettyprint}
+configuration editor, you can see the added code in the **Source** tab:  
+```xml
 <feature name="http://tizen.org/feature/network.nfc"/>
 ```
 
-### Specifying Privileges in the Privileges Tab <a name="privilege"></a>
+<a name="privilege"></a>
+### Specifying Privileges in the Privileges Tab
 
 You can use features and services provided by privileged APIs, which
 handle platform and user-sensitive data. You can specify an API, or API
@@ -181,13 +163,13 @@ To add a privilege:
 3.  Click **Finish**.
 
 After saving the privilege information with the Web application
-configuration editor, you can see the added code in the **Source** tab:
-
-``` {.prettyprint}
+configuration editor, you can see the added code in the **Source** tab:  
+```xml
 <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
 ```
 
-### Defining External Access Policies in the Policy Tab <a name="policy"></a>
+<a name="policy"></a>
+### Defining External Access Policies in the Policy Tab
 
 According to the W3C Access Requests Policy (WARP), you cannot access
 external network resources by default. If you require access to an
@@ -240,16 +222,16 @@ The following table lists the policy properties you can edit in the
 
 
 After setting the policy information with the Web application
-configuration editor, you can see the added code in the **Source** tab:
-
-``` {.prettyprint}
+configuration editor, you can see the added code in the **Source** tab:  
+```xml
 <access origin="http://www.tizen.org" subdomains="true"/>
 <tizen:allow-navigation>tizen.org *.tizen.org<tizen:allow-navigation/>
 <tizen:content-security-policy>script-src 'self'</tizen:content-security-policy>
 <tizen:content-security-policy-report-only>script-src 'self';</tizen:content-security-policy-report-only>
 ```
 
-### Adding Localized Application Details in the Localization Tab <a name="localization"></a>
+<a name="localization"></a>
+### Adding Localized Application Details in the Localization Tab
 
 You can provide localized versions of the application name, description,
 and license in the **Localization** tab of the Web application
@@ -260,9 +242,8 @@ To add a localized name, description, or license:
 -   In the **Name** panel, click **+**. Select the language, define the
     application name for that language, and click **OK**.
 
-    The following example shows the setting in the `config.xml` file:
-
-    ``` {.prettyprint}
+    The following example shows the setting in the `config.xml` file:  
+    ```xml
     <name xml:lang="en-gb">Lee</name>
     ```
 
@@ -270,19 +251,16 @@ To add a localized name, description, or license:
     define the application description for that language, and click
     **OK**.
 
-    The following example shows the setting in the `config.xml` file:
-
-    ``` {.prettyprint}
+    The following example shows the setting in the `config.xml` file:  
+    ```xml
     <description xml:lang="en-gb">Widget</description>
     ```
 
 -   In the **License** panel, click **+**. Select a language, define the
     license and license URI for that language, and click **OK**.
 
-    The following example shows the setting in the `config.xml` file
-    code:
-
-    ``` {.prettyprint}
+    The following example shows the setting in the `config.xml` file   code:  
+    ```xml
     <license xml:lang="en-gb" href=" http://www.apache.org/licenses/LICENSE-2.0.html">
        Apache License, Version 2.0
     </license>
@@ -293,7 +271,8 @@ cultural environments by creating different Web application versions for
 different languages. For more information, see [Localizing Web
 Applications](../../../tizen-studio/web-tools/web-localization-w.md).
 
-### Declaring Name-value Pairs in the Preferences Tab <a name="preferences"></a>
+<a name="preferences"></a>
+### Declaring Name-value Pairs in the Preferences Tab
 
 You can declare name-value pairs which can be set and retrieved using
 the Widget Interface API (in
@@ -309,13 +288,13 @@ values in the **Name** and **Value** columns. You can set a preference
 as read-only by setting the **Read-only** column value as **true**.
 
 After saving the preference information with the Web application
-configuration editor, you can see the added code in the **Source** tab:
-
-``` {.prettyprint}
+configuration editor, you can see the added code in the **Source** tab:  
+```xml
 <preference name="key" value="value" readonly="false"/>
 ```
 
-### Configuring the Tizen Schema Extension in the Tizen Tab <a name="tizen"></a>
+<a name="tizen"></a>
+### Configuring the Tizen Schema Extension in the Tizen Tab
 
 The **Tizen** tab of the Web application configuration editor shows the
 Tizen schema extension. Some of the attributes specified on this tab are
@@ -638,13 +617,8 @@ can edit.
 The **Source** tab of the Web application configuration editor shows the
 code of the `config.xml` file. You can [edit the basic syntax of the XML
 document](../../../tizen-studio/web-tools/config-editor-w.md)
-and also see how changes made on the other tabs are reflected in the raw
-XML source content.
+and also see how changes made on the other tabs are reflected in the raw XML source content.
 
-
-
-> **Note** <br>
+> **Note**  
 > The `config.xml` must conform not only to the XML file format
-but also to the W3C specification requirements. If you edit application
-information manually in the `config.xml` file source code, you can
-introduce errors preventing the application from running normally.
+but also to the W3C specification requirements. If you edit application information manually in the `config.xml` file source code, you can introduce errors preventing the application from running normally.

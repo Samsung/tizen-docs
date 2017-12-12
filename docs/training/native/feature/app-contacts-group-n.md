@@ -1,6 +1,5 @@
 
-Group Management
-================
+# Group Management
 
 The basic tasks involved in group management operations are retrieving
 group information, creating, updating, and deleting groups, and managing
@@ -8,16 +7,15 @@ group members. The following sections provide you with the fundamental
 building blocks for combining individual contacts to groups to manage
 them more efficiently.
 
-
-Retrieving Groups <a id="retrieving"></a>
------------------
+<a name="retrieving"></a>
+## Retrieving Groups
 
 A group is a collection of contacts from the same address book.
 Retrieving a single group is very similar to retrieving a single person:
 use the same function (`contacts_db_get_record()`) while setting the
 first parameter to the relevant group view (`_contacts_group._uri`).
 
-```
+```c++
 contacts_record_h group;
 int group_id = ... /* Get the group ID */
 int error_code;
@@ -43,7 +41,7 @@ meeting the condition using queries and filters:
 
 To simplify the example code, error handling has been omitted.
 
-```
+```c++
 contacts_list_h list = NULL;
 contacts_query_h query = NULL;
 contacts_filter_h filter = NULL;
@@ -69,9 +67,8 @@ function defines a limit for the number of results. Since the parameter
 is set to `0` in the above example, the function returns all the groups
 matching the query.
 
-
-Updating Groups <a id="updating"></a>
----------------
+<a name="updating"></a>
+## Updating Groups
 
 To update information in an existing group, you must first retrieve the
 group to update. Then, you can change the group properties, apply the
@@ -80,7 +77,7 @@ release all the resources for it.
 
 1.  Retrieve the group you want to update:
 
-    ```
+    ```c++
     int group_id = ... /* Get the group ID */
 
     contacts_record_h group = NULL;
@@ -95,7 +92,7 @@ release all the resources for it.
 
     The following example changes the name and image of the group:
 
-    ```
+    ```c++
     error_code = contacts_record_set_str(group, _contacts_group.name, "Family");
 
     char *resource_path = app_get_resource_path();
@@ -107,7 +104,7 @@ release all the resources for it.
 
 3. Apply the changes to the database:
 
-    ```
+    ```c++
     error_code = contacts_db_update_record(group);
     ```
 
@@ -116,14 +113,13 @@ release all the resources for it.
     If you set the second parameter to `true`, the function destroys any
     child records automatically.
 
-    ```
+    ```c++
     error_code = contacts_record_destroy(group, true);
     ```
 
 
-
-Creating a Group <a id="creating"></a>
-----------------
+<a name="creating"></a>
+## Creating a Group
 
 To create a new group, you must create a group handle, set the group
 properties, insert the group into the database, and destroy the group
@@ -136,7 +132,7 @@ handle:
     the `_contacts_group._uri` property, because you are creating
     a group. The second parameter stores the new group handle.
 
-    ```
+    ```c++
     contacts_record_h group = NULL;
 
     error_code = contacts_record_create(_contacts_group._uri, &group);
@@ -153,7 +149,7 @@ handle:
         `contacts_record_set_str()` function with the
         `_contacts_group.name` property as the second parameter:
 
-        ```
+        ```c++
         error_code = contacts_record_set_str(group, _contacts_group.name, "Neighbors");
         ```
 
@@ -161,7 +157,7 @@ handle:
         path and then set it to the property similarly as the group name
         above:
 
-        ```
+        ```c++
         char *resource_path = app_get_resource_path();
         char temp_path[1024];
         snprintf(temp_path, sizeof(temp_path), "%s/group_image.jpg", resource_path);
@@ -173,7 +169,7 @@ handle:
 
 3. Insert the group into the Contacts database:
 
-    ```
+    ```c++
     int added_group_id = -1;
 
     error_code = contacts_db_insert_record(group, &added_group_id);
@@ -184,14 +180,13 @@ handle:
     If you set the second parameter to `true`, the function destroys any
     child records automatically.
 
-    ```
+    ```c++
     error_code = contacts_record_destroy(group, true);
     ```
 
 
-
-Deleting a Group <a id="deleting"></a>
-----------------
+<a name="deleting"></a>
+## Deleting a Group
 
 You can delete a group record from the Contacts database exactly like
 you delete a person: use the `contacts_db_delete_record()` function. The
@@ -199,15 +194,14 @@ difference is the first parameter, which for the group deletion is set
 to the group property (`_contacts_group._uri`). The ID of the group to
 be deleted is given as the second parameter.
 
-```
+```c++
 int group_id = ... /* Get the group ID */
 
 error_code = contacts_db_delete_record(_contacts_group._uri, group_id);
 ```
 
-
-Managing Group Members <a id="managing"></a>
-----------------------
+<a name="managing"></a>
+## Managing Group Members
 
 Group members are contacts from the same address book. With a contact ID
 and group ID on hand, you can add and remove contacts within a group
@@ -216,7 +210,7 @@ using the `contacts_group_add_contact()` and
 
 -   Adding a group member:
 
-    ```
+    ```c++
     int contact_id = ... /* Get the contact ID */
     int group_id = ... /* Get the group ID */
 
@@ -225,7 +219,7 @@ using the `contacts_group_add_contact()` and
 
 - Removing a group member:
 
-    ```
+    ```c++
     int contact_id = ... /* Get the contact ID */
     int group_id = ... /* Get the group ID */
 
@@ -238,7 +232,7 @@ member details of a group as follows:
 1.  Create and run a query for retrieving a list of all persons in the
     group:
 
-    ```
+    ```c++
     contacts_query_h query = NULL;
     contacts_filter_h filter = NULL;
     contacts_list_h list = NULL;
@@ -259,7 +253,7 @@ member details of a group as follows:
     The following example retrieves the ID and display name of
     each person.
 
-    ```
+    ```c++
     contacts_record_h person = NULL;
     int error_code;
 
@@ -281,10 +275,8 @@ member details of a group as follows:
 3. When no longer needed, destroy the handles to release all the
     resources assigned to them:
 
-    ```
+    ```c++
     contacts_list_destroy(list, true);
     contacts_filter_destroy(filter);
     contacts_query_destroy(query);
     ```
-
-
