@@ -402,14 +402,14 @@ The following tables provide more information on the barcode generation specific
 
 | 1D or 2D           | Type                                     | Description                              | Example                                  |
 | ------------------ | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| 1-D                | UPC-A                                    | Universal product code with numeric 12-digit | ![UPC-A](../../images/mediavision_upc_a.png) |
-|  1-D |UPC-E              | Universal product code with numeric 6-digit | ![UPC-E](../../images/mediavision_upc_e.png) |                                          
-|  1-D | EAN-8              | International article number with numeric 8-digit | ![EAN-8](../../images/mediavision_ean_8.png) |                                          
-|   1-D | EAN-13             | International article number with numeric 13-digit | ![EAN-13](../../images/mediavision_ean_13.png) |                                         
-|   1-D | CODE-128           | Code 128; supports alphanumeric or numeric-only | ![CODE-128](../../images/mediavision_code_128.png) |                                          |
-|   1-D | CODE-39            | Code 39; supports 34 characters consisting of uppercase letters (A to Z), numeric digits (0 to 9), and special characters(-, ., $, /, %, space) | ![CODE-39](../../images/mediavision_code_39.png) |                                          |
-|   1-D | INTERLEAVED 2 of 5 | Interleaved 2 of 5 with numeric digits   | ![UPC-A](../../images/mediavision_interleaved_2_5.png) |                                          |
-| 2-D                | QR code                                  | Quick Response code                      | ![UPC-A](../../images/mediavision_qr.png) |
+| 1-D                | UPC-A                                    | Universal product code with numeric 12-digit | ![UPC-A](./media/mediavision_upc_a.png) |
+|  1-D |UPC-E              | Universal product code with numeric 6-digit | ![UPC-E](./media/mediavision_upc_e.png) |                                          
+|  1-D | EAN-8              | International article number with numeric 8-digit | ![EAN-8](./media/mediavision_ean_8.png) |                                          
+|   1-D | EAN-13             | International article number with numeric 13-digit | ![EAN-13](./media/mediavision_ean_13.png) |                                         
+|   1-D | CODE-128           | Code 128; supports alphanumeric or numeric-only | ![CODE-128](./media/mediavision_code_128.png) |                                          |
+|   1-D | CODE-39            | Code 39; supports 34 characters consisting of uppercase letters (A to Z), numeric digits (0 to 9), and special characters(-, ., $, /, %, space) | ![CODE-39](./media/mediavision_code_39.png) |                                          |
+|   1-D | INTERLEAVED 2 of 5 | Interleaved 2 of 5 with numeric digits   | ![UPC-A](./media/mediavision_interleaved_2_5.png) |                                          |
+| 2-D                | QR code                                  | Quick Response code                      | ![UPC-A](./media/mediavision_qr.png) |
 
 **Table: Supported QR code specifications**
 

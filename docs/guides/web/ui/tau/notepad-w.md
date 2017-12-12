@@ -100,7 +100,8 @@ To create a simple notepad application using the TAU library:
       </div>
       ```
 
-      ​	**Note**	In mobile applications, pages are constructed using the `data-role` attribute, while the wearable applications use the `class` attribute. In addition, the value of the `data-role` attribute in mobile applications differs from the `class` attribute value in the wearable applications.
+		> **Note**
+		> In mobile applications, pages are constructed using the `data-role` attribute, while the wearable applications use the `class` attribute. In addition, the value of the `data-role` attribute in mobile applications differs from the `class` attribute value in the wearable applications.
 
    2. On the editing page, the header and footer are similar to the main page.
 

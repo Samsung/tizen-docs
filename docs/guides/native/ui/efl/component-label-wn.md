@@ -8,7 +8,7 @@ This feature is supported in wearable applications only.
 
 The label component displays text with a simple HTML-like markup.
 
-For more information, see the [Label](../../../../../org.tizen.native.wearable.apireference/group__Label.html) API.
+For more information, see the [Label](../../../../../org.tizen.native.wearable.apireference/group__Elm__Label.html) API.
 
 **Figure: Label component**
 
@@ -64,9 +64,8 @@ To receive notifications about the label events, listen for the following signal
 - `anchor,mouse,down`: The anchor is pressed by mouse down.The `event_info` callback parameter points to an `Elm_Label_Anchor_Info` object.
 - `anchor,mouse,up`: The anchor is released by mouse up.The `event_info` callback parameter points to an `Elm_Label_Anchor_Info` object.
 
-**Note**
-
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 To register and define a callback for the `slide,end` signal:
 

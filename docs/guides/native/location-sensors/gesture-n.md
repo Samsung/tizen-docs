@@ -66,8 +66,8 @@ The following gesture events are supported on Tizen devices:
 
   ![Snap events +X, +Y, and +Z](./media/snap.png)
 
-  **Note**
-  The snap motion does not operate correctly if the device is tilted improperly. For example, the device must be held straight in a portrait mode for best accuracy. Similarly, when the device is tilted 90 degrees along the Z axis from the above position (+X or -X points to the earth), the snap motion in a landscape mode works best. This means that when a user lies down holding the device, the snap motion may not work accurately.
+  > **Note**  
+  > The snap motion does not operate correctly if the device is tilted improperly. For example, the device must be held straight in a portrait mode for best accuracy. Similarly, when the device is tilted 90 degrees along the Z axis from the above position (+X or -X points to the earth), the snap motion in a landscape mode works best. This means that when a user lies down holding the device, the snap motion may not work accurately.
 
 - Tilt
 
@@ -93,8 +93,8 @@ The following gesture events are supported on Tizen devices:
 
   ![Wrist-up event](./media/wrist_up.png)
 
-**Note**
-You can test the gesture recognition functionality only on a target device. The emulator does not support this feature.
+> **Note**  
+> You can test the gesture recognition functionality only on a target device. The emulator does not support this feature.
 
 ## Prerequisites
 

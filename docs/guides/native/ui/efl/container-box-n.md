@@ -5,7 +5,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
 
-The box container arranges UI components in a linear order, horizontally or vertically. It is a non-graphical object: it adds no graphics to or around the objects it holds. For more information, see the Box API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Box.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Box.html) applications).
+The box container arranges UI components in a linear order, horizontally or vertically. It is a non-graphical object: it adds no graphics to or around the objects it holds. For more information, see the Box API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Elm__Box.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Elm__Box.html) applications).
 
 **Figure: Box component structure**
 
@@ -252,5 +252,5 @@ evas_object_size_hint_weight_set(image, EVAS_HINT_EXPAND, 0.7);
 evas_object_size_hint_align_set(image, EVAS_HINT_FILL, EVAS_HINT_FILL);
 ```
 
-**Note**
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

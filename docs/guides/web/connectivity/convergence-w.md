@@ -29,7 +29,8 @@ The following Convergence services are currently provided:
 
   You can spawn 2 types of instances: server and client. Typically, the client finds available server services through a discovery, establishes a connection with one of the servers, and launches an application on the server side. The server cannot launch an application on the client side. Both the client and server can exchange text messages and binary payloads.
 
-  ​	**Note**	The server for the AppCommunicationService can only be implemented on a TV device based on Tizen 3.0. You can develop a mobile or wearable client for the AppCommunicationService, if a server exists.
+> **Note**
+> The server for the AppCommunicationService can only be implemented on a TV device based on Tizen 3.0. You can develop a mobile or wearable client for the AppCommunicationService, if a server exists.
 
 - RemoteAppControlService            
 

@@ -47,9 +47,8 @@ Once the screen reader is enabled, you can configure it by setting the speech ra
 
 ## Setting the Font Size
 
-**Note**	
-
-Changing the font size in the accessibility settings overrides the font size in all applications.
+> **Note**	
+> Changing the font size in the accessibility settings overrides the font size in all applications.
 
 To change the system font size:
 

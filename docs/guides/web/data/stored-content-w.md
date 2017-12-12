@@ -6,9 +6,9 @@
 - Tizen 2.3.1 and Higher for Wearable
 - Tizen 3.0 and Higher for TV
 
-Tizen enables you to search for content (images, videos, music or other) located on the local device storage. You can also perform content management tasks, such as viewing and updating content attributes.
+You can search for content (such as images, videos, and music) located in the local device storage. You can also perform content management tasks, such as viewing and updating content attributes.
 
-The Content API is mandatory for both Tizen mobile and wearable profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The Content API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The main features of Content API include:
 
@@ -42,7 +42,8 @@ The main features of Content API include:
 
 The Content API uses the same `ContentManager` interface instance (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/content.html#ContentManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/content.html#ContentManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/content.html#ContentManager) applications) for all content-related functionalities. The instance provides higher efficiency by performing batch operations on content items.
 
-​	**Note**	The batch mode does not provide progress information about operations. To ensure that you can view the progress, break the batch operation down into multiple smaller batch operations. For example, break down a batch of 100 update requests into 10 batch operations that update 10 records at a time. Breaking down a batch operation also helps you avoid blocking other database operations, such as add or remove.
+> **Note**
+> The batch mode does not provide progress information about operations. To ensure that you can view the progress, break the batch operation down into multiple smaller batch operations. For example, break down a batch of 100 update requests into 10 batch operations that update 10 records at a time. Breaking down a batch operation also helps you avoid blocking other database operations, such as add or remove.
 
 ## Prerequisites
 
@@ -102,7 +103,8 @@ You can manage content in many ways:
 - If a content item is copied or moved, you cannot find it because a scan is not performed automatically. You can retrieve a copied or moved item with the `find()` method after calling the `scanFile()` method.
 - You can create a thumbnail for a content item using the `createThumbnail()` method.
 
-​	**Note**	You can only view (and not update) the read-only attributes.
+> **Note**
+> You can only view (and not update) the read-only attributes.
 
 To view and update content details:
 

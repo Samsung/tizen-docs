@@ -85,8 +85,8 @@ To start the geofence service:
    geofence_manager_add_place(manager, "place_name", &place_id);
    ```
 
-   **Note**
-   A place is used to accommodate a number of geofences and is identified by a place ID. Each place can have a name. A geofence is identified by a geofence ID.
+   > **Note**  
+   > A place is used to accommodate a number of geofences and is identified by a place ID. Each place can have a name. A geofence is identified by a geofence ID.
 
 3. Create the geofences:
 
@@ -164,8 +164,8 @@ To track the state of the geofence, use the geofence event callback. The geofenc
    }
    ```
 
-   **Note**
-   The geofence change event callback is used to let the user know whether the request is successful on the server side. This event callback is invoked only in the case of an asynchronous API. For a synchronous API, an error is immediately returned.
+   > **Note**  
+   > The geofence change event callback is used to let the user know whether the request is successful on the server side. This event callback is invoked only in the case of an asynchronous API. For a synchronous API, an error is immediately returned.
 
 ## Tracking the User for Geofence Crossing Alerts
 

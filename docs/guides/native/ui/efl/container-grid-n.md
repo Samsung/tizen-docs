@@ -5,7 +5,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
 
-The grid container places its elements at specific positions along a fixed grid, where the position of each object is given as a percentage of the full width and height of the grid. For more information, see the Grid API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Grid.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Grid.html) applications).
+The grid container places its elements at specific positions along a fixed grid, where the position of each object is given as a percentage of the full width and height of the grid. For more information, see the Grid API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Elm__Grid.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Elm__Grid.html) applications).
 
 **Figure: Grid component structure**
 
@@ -80,6 +80,5 @@ elm_grid_pack(grid, button, 10, 80, 30, 10);
 evas_object_show(button);
 ```
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

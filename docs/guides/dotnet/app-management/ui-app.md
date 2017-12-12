@@ -1,5 +1,4 @@
-Basic UI Application
-====================
+# UI Application
 
 ## Dependencies
 
@@ -22,8 +21,8 @@ To create a basic UI application, you must:
     you want it to run in the background.
 
 
-Event Handling <a id="callback"></a>
---------------
+<a name="callback"></a>
+## Event Handling 
 
 The following table lists the methods that are triggered when the
 application state changes.
@@ -53,8 +52,9 @@ system events occur. The following table lists the related methods.
 | `OnLocaleChanged()`            | This method is responsible for refreshing the display into the new language. |
 | `OnRegionFormatChanged()`      | This method is responsible for refreshing the display into the new time zone. |
 
-Application States and Transitions <a id="state_trans"></a>
-----------------------------------
+<a name="state_trans"></a>
+## Application States and Transitions 
+
 
 The Tizen .NET application can be in one of several application states.
 
@@ -84,20 +84,18 @@ The following figure illustrates the application state transitions.
 transitions](./media/app_state_transitions_cs.png)
 
 
-Prerequisites
--------------
+## Prerequisites
 
 To use the methods and properties of the
 [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html)
 namespace, include it in your application:
 
-``` {.prettyprint}
+``` 
 using Tizen.Applications;
 ```
 
-
-Handling the Application Fundamentals <a id="fundamentals"></a>
--------------------------------------
+<a name="fundamentals"></a>
+## Handling the Application Fundamentals 
 
 The
 [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html)
@@ -118,7 +116,7 @@ To manage the application life-cycle:
     The following code is a minimal application using the
     `Tizen.Applications` namespace. It only builds and runs.
 
-    ``` {.prettyprint}
+    ``` 
     class App : CoreUIApplication
     {
         static void Main(string[] args)
@@ -148,7 +146,7 @@ To manage the application life-cycle:
         switches to a mode which uses less resources.
     -   `OnResume()`: Sets the application window to be visible again.
 
-    ``` {.prettyprint}
+    ``` 
     class App : CoreUIApplication
     {
         protected override void OnCreate()
@@ -221,8 +219,8 @@ To manage the application life-cycle:
         `Tizen.Applications.AppControl.ExtraDataCollection` class.
 
 
-Background Categories <a id="allow_bg"></a>
----------------------
+<a name="allow_bg"></a>
+## Background Categories 
 
 An application is not allowed to run in the background except when it is
 explicitly declared to do so. The following table lists the background
@@ -239,12 +237,13 @@ categories that allow an application to run in the background.
 | Sensor (context)               | Processing context data from the sensors, such as gesture | [Tizen.Sensor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.html) | `sensor`                                 |
 | IoT Communication/Connectivity | Communicating between external devices in the background (such as Wi-Fi and Bluetooth) | [Tizen.Network.WiFi](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFi.html) <br> [Tizen.Network.Bluetooth](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Bluetooth.html) | `iot-communication`                      |
 
-### Describing the Background Category <a id="bg-category"></a>
+<a name="bg-category"></a>
+### Describing the Background Category 
 
 An application with a background running capability must declare the
 background category in its manifest file:
 
-``` {.prettyprint}
+``` 
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns="http://tizen.org/ns/packages" api-version="4" package="org.tizen.example.TestApp" version="1.0.0">
    <profile name="common" />

@@ -5,7 +5,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 3.0 and Higher for Wearable
 
-Tizen enables you to set Web view properties.
+You can set Web view properties.
 
 This feature is supported in mobile and TV applications only.
 

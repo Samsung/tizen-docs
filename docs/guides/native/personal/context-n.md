@@ -143,8 +143,8 @@ Through contextual history, you can mainly retrieve statistics for 3 categories 
 | Media playback history:<br> `CONTEXT_HISTORY_PEAK_TIME_FOR_MUSIC`<br>`CONTEXT_HISTORY_PEAK_TIME_FOR_VIDEO`<br>`CONTEXT_HISTORY_COMMON_SETTING_FOR_MUSIC`<br>`CONTEXT_HISTORY_COMMON_SETTING_FOR_VIDEO` | Media playback events, including music and video playback, can be logged. From this data, the following statistics are provided:<br><br>- Peak time for music or video playback, or the time period when the user most frequently listens to music or watches videos during the day.The result is a sorted list of hours of the day, in a descending order of the playback count in each one-hour time slot.<br>- Common settings for music or video playback, or the most common setting values when listening to music or watching videos.<br><br>The required privilege is `http://tizen.org/privilege/mediahistory.read`.For more information on other media content metadata, such as when or how many times media content is played, see the [Media Content and Metadata](../media/media-content-n.md) guide. |
 | Communication history:`CONTEXT_HISTORY_FREQUENTLY_COMMUNICATED_ADDRESS` | Applications can retrieve the contacts the user has called or messaged most frequently.The required privilege is `http://tizen.org/privilege/callhistory.read`.<br>For more information on the communication history, see the [Contacts](contacts-n.md) guide. |
 
-**Note**
-To compute the above usage history statistics, it is necessary to store and aggregate contextual events. In many cases, immediately reflecting the contextual events to the statistics costs more than applying the events in a batch later. For this reason, the above history statistics may not show up-to-date results all the time.
+> **Note**  
+> To compute the above usage history statistics, it is necessary to store and aggregate contextual events. In many cases, immediately reflecting the contextual events to the statistics costs more than applying the events in a batch later. For this reason, the above history statistics may not show up-to-date results all the time.
 
 ## Filters and Attributes
 

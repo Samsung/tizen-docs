@@ -8,7 +8,7 @@ This feature is supported in wearable applications only.
 
 The GLView component renders OpenGL® in an Elementary object, which hides Evas GL complexity.
 
-For more information, see the [OpenGL® ES](../../graphics/opengl-n.md) guide and the [GLView](../../../../../org.tizen.native.wearable.apireference/group__GLView.html) API.
+For more information, see the [OpenGL® ES](../../graphics/opengl-n.md) guide and the [GLView](../../../../../org.tizen.native.wearable.apireference/group__Elm__GLView.html) API.
 
 **Figure: GLView component**
 
@@ -92,9 +92,8 @@ To receive notifications about the GLView events, listen for the following signa
 - `focused`: The GLView component is focused.The `event_info` callback parameter points at an `Elm_Focus_Info` object.
 - `unfocused`: The GLView object is unfocused.
 
-**Note**
-
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> **Note**
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 To register and define a callback for the `focused` signal:
 
@@ -114,6 +113,5 @@ focused_cb(void *data, Evas_Object *obj, void  *event_info)
 }
 ```
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

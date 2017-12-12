@@ -31,6 +31,5 @@ EFL provides the following animation and effect features:
 
   For more information, see [Transformation with Evas Map](./evas-map-animation-n.md) and [Creating Evas Map Effects](./evas-map-effects-n.md).
 
-**Note**	
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**	
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

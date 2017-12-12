@@ -12,7 +12,7 @@ The popup component shows a popup area that can contain:
 - Content area
 - Action area with up to 3 buttons (optional)
 
-For more information, see the [Popup](../../../../../org.tizen.native.wearable.apireference/group__Popup.html) API.
+For more information, see the [Popup](../../../../../org.tizen.native.wearable.apireference/group__Elm__Popup.html) API.
 
 **Figure: Popup component**
 
@@ -203,9 +203,8 @@ To receive notifications about the popup events, listen for the following signal
 - `timeout`: The popup is closed as a result of the timeout.
 - `block,clicked`: The user clicks on the blocked event area.The blocked event area is the translucent region around the visible popup region.
 
-**Note**
-
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 To register and define a callback for the `timeout` signal:
 
@@ -221,6 +220,5 @@ _timeout_cb(void *data, Evas_Object *obj, void *event_info)
 }
 ```
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

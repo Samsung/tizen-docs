@@ -212,9 +212,19 @@ You can set the following options in the Elementary configuration:
 
   Elementary allows UI mirroring both on a single object and on the entire UI. If mirroring is enabled, an Elementary UI component displays as if there was a vertical mirror in the middle of it. Only the controls and the disposition of the UI component are mirrored. Text is not mirrored.
 
-  ```
-  elm_config_mirrored_set(EINA_TRUE);
-  ```
+     By default, UI mirroring is automatically enabled or disabled according to the system language. To manually apply UI mirroring:
+
+    1.  Disable the automatic mirroring:
+
+        ```
+        elm_config_language_auto_mirrored_set(EINA_FALSE);
+        ```
+
+    2.  Manually enable or disable UI mirroring by using the `elm_config_mirrored_set()` function:
+
+        ```
+        elm_config_mirrored_set(EINA_TRUE);
+        ```
 
 - To set the frame rate:
 

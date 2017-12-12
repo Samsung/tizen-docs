@@ -16,5 +16,6 @@ You can use the following application data exchange features in your Web applica
 
 - [Data Control](./app-management/data-w.md)
 
-  You can exchanging SQL- or key-value-type data between applications. All applications (consumers) can request data shared by other applications (providers), and 1 provider can server multiple consumers.
+  You can exchanging SQL- or key-value-type data between applications. All applications (consumers) can request data shared by other applications (providers), and 1 provider can serve multiple consumers.
+
 

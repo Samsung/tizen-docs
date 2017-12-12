@@ -112,26 +112,25 @@ In the example, the "Hello World" text label has been given the full width, not 
 
 ## Using Decorations
 
-For text decorations, `TextLabel` provides several properties.
+For text decorations, `TextLabel` provides several properties. All properties are writable and none are animatable.
 
 **Table: TextLabel properties**
 
-| Property               | Type    | Writable | Animatable |
-| ---------------------- | ------- | -------- | ---------- |
-| `RENDERING_BACKEND`    | Integer | Yes      | No         |
-| `TEXT`                 | String  | Yes      | No         |
-| `FONT_FAMILY`          | String  | Yes      | No         |
-| `FONT_STYLE`           | String  | Yes      | No         |
-| `POINT_SIZE`           | Float   | Yes      | No         |
-| `MULTI_LINE`           | Boolean | Yes      | No         |
-| `HORIZONTAL_ALIGNMENT` | String  | Yes      | No         |
-| `VERTICAL_ALIGNMENT`   | String  | Yes      | No         |
-| `TEXT_COLOR`           | Vector4 | Yes      | No         |
-| `SHADOW_OFFSET`        | Vector2 | Yes      | No         |
-| `SHADOW_COLOR`         | Vector4 | Yes      | No         |
-| `UNDERLINE_ENABLED`    | Boolean | Yes      | No         |
-| `UNDERLINE_COLOR`      | Vector4 | Yes      | No         |
-| `UNDERLINE_HEIGHT`     | Float   | Yes      | No         |
+| Property               | Type    |
+| ---------------------- | ------- |
+| `TEXT`                 | String  |
+| `FONT_FAMILY`          | String  |
+| `FONT_STYLE`           | String  |
+| `POINT_SIZE`           | Float   |
+| `MULTI_LINE`           | Boolean |
+| `HORIZONTAL_ALIGNMENT` | String  |
+| `VERTICAL_ALIGNMENT`   | String  |
+| `TEXT_COLOR`           | Vector4 |
+| `SHADOW_OFFSET`        | Vector2 |
+| `SHADOW_COLOR`         | Vector4 |
+| `UNDERLINE_ENABLED`    | Boolean |
+| `UNDERLINE_COLOR`      | Vector4 |
+| `UNDERLINE_HEIGHT`     | Float   |
 
 ### Color
 

@@ -177,10 +177,8 @@ You can register callback functions connected to the following signals for an ic
 | `thumb,done`  | The `elm_icon_thumb_set()` function is completed with success. | `NULL`       |
 | `thumb,error` | The `elm_icon_thumb_set()` function fails. | `NULL`       |
 
-**Note**
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

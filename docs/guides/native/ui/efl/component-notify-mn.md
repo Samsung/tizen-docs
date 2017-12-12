@@ -4,7 +4,7 @@
 
 - Tizen 2.4 and Higher for Mobile
 
-The notify UI component displays a container in a particular region of the parent object. It can receive some content, and become automatically hidden after a certain amount of time. The [popup](component-popup-mn.md) component is very similar to the notify component, but supports many common layouts. For more information, see the [Notify](../../../../../org.tizen.native.mobile.apireference/group__Notify.html) API.
+The notify UI component displays a container in a particular region of the parent object. It can receive some content, and become automatically hidden after a certain amount of time. The [popup](component-popup-mn.md) component is very similar to the notify component, but supports many common layouts. For more information, see the [Notify](../../../../../org.tizen.native.mobile.apireference/group__Elm__Notify.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -114,10 +114,8 @@ You can register callback functions connected to the following signals for a not
 | `timeout`       | The timeout count ends and the notify component is hidden. | `NULL`       |
 | `block,clicked` | The user clicks outside the notify component. | `NULL`       |
 
-**Note**
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

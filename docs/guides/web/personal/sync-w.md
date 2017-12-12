@@ -20,7 +20,8 @@ The main features of the Data Synchronization API include:
 
   After starting the synchronization process, you can [monitor the progress](./personal/sync-w.md#Starting_Sync) of the operation.
 
-​	**Note**	As a prerequisite to synchronizing your device data with the server, you must create an OMA DS server account.
+> **Note**
+> As a prerequisite to synchronizing your device data with the server, you must create an OMA DS server account.
 
 ## Prerequisites
 

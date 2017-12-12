@@ -273,8 +273,8 @@ To run the media codec loop:
 
      The eos callback is invoked if the eos packet is decoded or encoded and the eos callback is registered with the `mediacodec_set_eos_cb()` function.
 
-   **Note**
-   You must set the flags before calling the `mediacodec_process_input()` function.
+   > **Note**  
+   > You must set the flags before calling the `mediacodec_process_input()` function.
 
 3. Start the media codec loop using the `mediacodec_process_input()` and `mediacodec_get_output()` functions:
 

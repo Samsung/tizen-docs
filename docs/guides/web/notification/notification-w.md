@@ -1,6 +1,6 @@
 # Notifications
 
-Tizen enables you to provide notifications about application events.
+You can provide notifications about application events.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -24,7 +24,8 @@ The main features of the Notification API include:
 
 To display a notification, you need to create a `Notification` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#Notification) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#Notification) applications), or its subtype.
 
-​	**Note**	The `StatusNotification` subtype (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#StatusNotification) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#StatusNotification) applications) is deprecated since Tizen 4.0. To display notifications in the status bar, use the `UserNotification` subtype (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#UserNotification) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#UserNotification) applications).
+> **Note**
+> The `StatusNotification` subtype (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#StatusNotification) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#StatusNotification) applications) is deprecated since Tizen 4.0. To display notifications in the status bar, use the `UserNotification` subtype (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#UserNotification) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#UserNotification) applications).
 
 ## Prerequisites
 

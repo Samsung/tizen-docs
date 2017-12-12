@@ -1578,6 +1578,5 @@ To manage the generic value:
 
 - To create an `Eina_Value_List`, use the `eina_value_list_setup()` function. The function initializes a generic value storage of the list type. The first parameter is the "object" value, and the second one is the type (how to manage the stored list members).
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

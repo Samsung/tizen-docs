@@ -103,7 +103,7 @@ The main HTML and CSS features are:
 
 - **Designing for multiple screens**
 
-  Tizen supports various device types with several different screen sizes.To provide optimal user experiences, it is important to design your application to support different screen sizes. In addition to different devices, you must also consider system configuration changes, such as the default home screen layout and system fonts after OS upgrades, since they can change the size of the viewable content screen. Such changes affect the application layout, and can lead to an undesirable UI design layout. Use the following topics to design your application to be highly flexible and adaptive against these possibilities.
+  Tizen supports various device types with several different screen sizes.To provide an optimal user experience, it is important to design your application to support different screen sizes. In addition to different devices, you must also consider system configuration changes, such as the default home screen layout and system fonts after OS upgrades, since they can change the size of the viewable content screen. Such changes affect the application layout, and can lead to an undesirable UI design layout. Use the following topics to design your application to be highly flexible and adaptive against these possibilities.
 
   - [Multiple UI Layouts](./w3c/ui/ui-layout-ww.md) **in wearable applications only**	
 

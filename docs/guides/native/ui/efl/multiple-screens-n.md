@@ -108,7 +108,8 @@ collections {
 }
 ```
 
-​	**Note**	The base scale for the WVGA resolution is 1.8 and for the HD resolution 2.4.
+> **Note**
+> The base scale for the WVGA resolution is 1.8 and for the HD resolution 2.4.
 
 ### Setting the Base Scale in the C Code
 

@@ -17,7 +17,7 @@ The new text features in WOFF File Format 2.0 (in mobile applications) and 1.0 (
 
 ## Using the WOFF File Format
 
-To enhance the user experience of your application, you must learn to use the WOFF (Web Open Font Format) file format 1.0, which is a W3C standard font packaging format used in Web pages:
+To use the WOFF (Web Open Font Format) file format, which is a W3C standard font packaging format used in Web pages:
 
 1. Download and use fonts installed on the Web server by creating [`@font-face` rules](http://www.w3.org/TR/2013/CR-css-fonts-3-20131003/#font-face-rule). Within the rules, you can define the following properties:`font-family`Defines a name for the font. This property is mandatory.`src`Defines the URL of the font file on the server. This property is mandatory. If the `local` attribute is defined, the font resource is not downloaded from the server if it already exists in the local storage. `font-stretch`Defines the way the font is stretched. This property is optional.`font-style`Defines the font style. This property is optional.`font-weight`Defines the font weight. This property is optional.Define the rules with in a `<style>` element in the `<head>` section of a Web page:
 

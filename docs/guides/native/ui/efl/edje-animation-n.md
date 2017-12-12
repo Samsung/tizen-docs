@@ -17,9 +17,8 @@ The Edje animations are based on a simple principle of moving from one state to 
 
 To start an animation, a program must receive a signal from a source. Edje handles many kinds of signals, including mouse events.
 
-**Note**
-
-To show the signals used in a specific EDJ file, use the `edje_player -p <filename>.edj` command.
+> **Note**  
+> To show the signals used in a specific EDJ file, use the `edje_player -p <filename>.edj` command.
 
 For example, to start an animation to change the color and position of a rectangle when the rectangle is clicked, the program must receive a `mouse,clicked,1` signal. To create this animation:
 
@@ -169,6 +168,5 @@ To chain programs:
    }
    ```
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

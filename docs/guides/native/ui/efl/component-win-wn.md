@@ -4,7 +4,7 @@
 
 - Tizen 2.3.1 and Higher for Wearable
 
-Win stands for window, and the win component is a graphical control element containing the graphical user interface of a program. The window component is the bottommost UI component in an EFL application. In most cases, when an application is launched, a window that fits into the device screen is created and shown. For more information, see the [Win](../../../../../org.tizen.native.wearable.apireference/group__Win.html) API.
+Win stands for window, and the win component is a graphical control element containing the graphical user interface of a program. The window component is the bottommost UI component in an EFL application. In most cases, when an application is launched, a window that fits into the device screen is created and shown. For more information, see the [Win](../../../../../org.tizen.native.wearable.apireference/group__Elm__Win.html) API.
 
 This feature is supported in wearable applications only.
 
@@ -133,10 +133,8 @@ You can register callback functions connected to the following signals for a win
 | `aux,hint,allowed`       | The window auxiliary hint is allowed.    | `NULL`       |
 | `access,changed`         | The access function of the window changes. | `NULL`       |
 
-**Note**
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

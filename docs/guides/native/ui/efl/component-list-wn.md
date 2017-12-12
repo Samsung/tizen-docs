@@ -8,7 +8,7 @@ This feature is supported in wearable applications only.
 
 The list is a very simple UI component used to manage a limited number of items. For lists with a lot of items, use the [Genlist](component-genlist-wn.md).
 
-For more information, see the [List](../../../../../org.tizen.native.wearable.apireference/group__List.html) API.
+For more information, see the [List](../../../../../org.tizen.native.wearable.apireference/group__Elm__List.html) API.
 
 **Figure: List component**
 
@@ -182,9 +182,8 @@ To receive notifications about list events, listen for the following signals:
 - `highlighted`: An item on the list is highlighted.The `event_info` callback parameter points at the highlighted item.
 - `unhighlighted`: An item in the list is unhighlighted.The `event_info` callback parameter points at the unhighlighted item.
 
-**Note**
-
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 To register and define a callback for the `clicked,double` signal:
 

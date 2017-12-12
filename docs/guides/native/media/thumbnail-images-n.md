@@ -86,8 +86,8 @@ To enable your application to use the thumbnail util functionality:
    }
    ```
 
-**Note**
-The Thumbnail Util functions can use both common content in the device storage (internal or external) and private content in your application data.
+> **Note**  
+> The Thumbnail Util functions can use both common content in the device storage (internal or external) and private content in your application data.
 
 ## Extracting a Thumbnail
 

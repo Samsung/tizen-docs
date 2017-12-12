@@ -41,7 +41,8 @@ You can specify the color of an element with the following formats:
 
   The HSL color model is extended to include "alpha" to allow the color opacity to be specified. The HSLA values are defined using the HSL notation where a final alpha value is added (range from 0.1 to 1). For example: `hsla(120, 100%, 50%, 0.8)`.
 
-​	**Note**	The CSS2 System Color values have been deprecated in favor of the CSS3 UI 'appearance' property.
+> **Note**
+> The CSS2 System Color values have been deprecated in favor of the CSS3 UI 'appearance' property.
 
 ## Specifying a Color for an Element
 

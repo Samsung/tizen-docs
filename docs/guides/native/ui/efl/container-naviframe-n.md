@@ -5,7 +5,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
 
-The naviframe container manages many views by stacking them and displaying the topmost one. For more information, see the Naviframe API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Naviframe.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Naviframe.html) applications).
+The naviframe container manages many views by stacking them and displaying the topmost one. For more information, see the Naviframe API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Elm__Naviframe.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Elm__Naviframe.html) applications).
 
 ## Basic Usage
 
@@ -131,10 +131,8 @@ You can register callback functions connected to the following signals for a nav
 | `title,transition,finished` | The title area transition has finished changing the state of the title. | `NULL`       |
 | `title,clicked`             | The title area is clicked.               | `NULL`       |
 
-**Note**
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

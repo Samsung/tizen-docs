@@ -318,7 +318,6 @@ To disable smoothing when rendering a map, use the `evas_map_smooth_set()` funct
 ```
 evas_map_smooth_set(m, EINA_FALSE);
 ```
-
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+ 
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

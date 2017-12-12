@@ -2,7 +2,7 @@
 
 You can access and monitor the [device and system properties](./device/system-information-w.md#properties) (both hardware and capability), such as the battery level, available device storage, version number, model name, and the cellular network being used.
 
-The System Information API is mandatory for both Tizen mobile and wearable profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The System Information API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The main features of the System Information API include:
 
@@ -80,7 +80,7 @@ Retrieve information about the property states using the applicable methods of t
    }
    ```
 
-3. Retrieve the current states of a specific device property using the `getPropertyValueArray()` method. For example, you can check the state of SIM cards, which are mounted in the Tizen device.
+3. Retrieve the current states of a specific device property using the `getPropertyValueArray()` method. For example, you can check the state of SIM cards mounted in the Tizen device.
 
    ```
    function successCallback(properties) {
@@ -93,7 +93,7 @@ Retrieve information about the property states using the applicable methods of t
    tizen.systeminfo.getPropertyValueArray('SIM', successCallback);
    ```
 
-4. Retrieve the number of system property information using the `getCount()` method. For example, you can check the number of SIM cards, which are installed in the Tizen device.
+4. Retrieve the number of system property information using the `getCount()` method. For example, you can check the number of SIM cards installed in the Tizen device.
 
    ```
    console.log('The number of SIM cards in the device is ' + tizen.systeminfo.getCount('SIM'));

@@ -40,4 +40,5 @@ collections {
 - `sounds` blockThe `sounds` block contains 1 or more sound sample and tone items.`tone [tone name] [frequency]`Sets the sound of the given frequency.`sounds.sample` blockThe `sample` block defines the sound sample.`name [sample name] [compression type] (quality)`Used to include each sound file. The full path to the directory holding the sounds can be defined later with the `edje_cc` tool's `-sd` option. The valid compression types are:	    `RAW`: Uncompressed    `COMP`: Lossless compression    `LOSSY [-0.1 - 1.0]`: Lossy compression with quality from 0.0 to 1.0    `AS_IS`: No compression or encoding, write the file information as it is	`source [file name]`Sets the sound source file name (mono or stereo WAV file; only files with the 44.1 KHz sample rate are supported for now).
 - `group` blockThe [group](./learn-edc-group-n.md) block defines Edje Objects.
 
-​	**Note**	Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**	
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

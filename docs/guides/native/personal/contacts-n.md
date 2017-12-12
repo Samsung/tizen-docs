@@ -200,8 +200,8 @@ To manage the record using the handle, you can use the URI, views, or basic type
 
   With a record handle, you can access all records of a specific type related to the given record.
 
-  **Note**
-  The string getter functions have the `_p` postfix. It means that the returned value should not be freed by the application, as it is a pointer to data in an existing record.The following example shows that there are 2 ways of getting the string property:`contacts_record_get_str(record, _contacts_person.display_name, &display_name);contacts_record_get_str_p(record, _contacts_person.display_name, &display_name);`In the first case, the returned string must be freed by the application. In the second one, the `display_name` value is freed automatically when destroying the record handle.
+  > **Note**  
+  > The string getter functions have the `_p` postfix. It means that the returned value should not be freed by the application, as it is a pointer to data in an existing record.The following example shows that there are 2 ways of getting the string property:`contacts_record_get_str(record, _contacts_person.display_name, &display_name);contacts_record_get_str_p(record, _contacts_person.display_name, &display_name);`In the first case, the returned string must be freed by the application. In the second one, the `display_name` value is freed automatically when destroying the record handle.
 
 ### Child Records
 
@@ -241,11 +241,11 @@ contacts_db_insert_record(contact, &contact_id);
 contacts_record_destroy(contact, true);
 ```
 
-**Note**
-For an application to insert private images in contacts, the following conditions apply:
-	- The application must have the `http://tizen.org/privilege/contact.write` privilege to use the database modifying functions, such as `contacts_db_insert_record()`.
-	- The application's private directory and files must have the `read` permission of others, such as `644`. SMACK protects the `read` permission from the other applications.
-	- The application can erase the image after destroying the contact record using the `contacts_record_destroy()` function.
+> **Note**  
+> For an application to insert private images in contacts, the following conditions apply:
+> 	- The application must have the `http://tizen.org/privilege/contact.write` privilege to use the database modifying functions, such as `contacts_db_insert_record()`.
+> 	- The application's private directory and files must have the `read` permission of others, such as `644`. SMACK protects the `read` permission from the other applications.
+> 	- The application can erase the image after destroying the contact record using the `contacts_record_destroy()` function.
 
 Identifiers can be used to establish a relationship between 2 records. The following code example sets an address record's `contact_id` property to the ID of the contact. The `contact_id` relates between the address record and the contact which is identified by the `contact_id`. After the ID is set, the address becomes one of the addresses connected to the contact. The address is now the contact's child record, and the contact is the parent record.
 
@@ -665,8 +665,8 @@ To create a new contact:
    error_code = contacts_record_create(_contacts_contact._uri, &contact);
    ```
 
-   **Note**
-   Records created with the `contacts_record_create()` function are memory objects, with `contacts_record_h` type variables as their handles. If you changes these objects, the changes are not reflected in the contact database until you explicitly insert or update the objects to the database using the `contacts_db_insert_record()` or `contacts_db_update_record()` function.
+   > **Note**  
+   > Records created with the `contacts_record_create()` function are memory objects, with `contacts_record_h` type variables as their handles. If you changes these objects, the changes are not reflected in the contact database until you explicitly insert or update the objects to the database using the `contacts_db_insert_record()` or `contacts_db_update_record()` function.
 
 2. Set the contact properties:
 
@@ -724,8 +724,8 @@ To create a new contact:
         error_code = contacts_record_add_child_record(contact, _contacts_contact.image, image);
         ```
 
-     **Note**
-     To set private images for contacts, the application must meet the following conditions:The application's private directory and files must have the `read` permission for others, such as `644`. SMACK protects the `read` permission from other applications.The application must delete the image after destroying the contact record (using the `contacts_record_destroy()` function).
+     > **Note**  
+     > To set private images for contacts, the application must meet the following conditions:The application's private directory and files must have the `read` permission for others, such as `644`. SMACK protects the `read` permission from other applications.The application must delete the image after destroying the contact record (using the `contacts_record_destroy()` function).
 
    - To set an event for the contact:
 
@@ -917,8 +917,8 @@ To retrieve multiple persons:
 
       Move forward and backward within the list using the `contacts_list_next()` and `contacts_list_prev()` functions, and retrieve the current person using the `contacts_list_get_current_record_p()` function.
 
-      **Note**
-      Some functions have the `_p` postfix. The postfix means that the returned value must not be freed by the application, as it is a pointer to the data in an existing record.
+      > **Note**  
+      > Some functions have the `_p` postfix. The postfix means that the returned value must not be freed by the application, as it is a pointer to the data in an existing record.
 
       The following example iterates through the list and retrieves the display name of each person:
 
@@ -1274,8 +1274,8 @@ To update contact details:
 
    The example assumes the birthday event is the only event defined for the contact, meaning you can retrieve the event record using the `contacts_record_get_child_record_at_p()` function with the record index set to 0. If the contact has multiple events defined, you must iterate through them.
 
-   **Note**
-   The `contacts_record_set_XXX()` functions only change the data in the memory object, not in the contact database. Normally, to update the database, you need to update each record separately using the `contacts_db_update_record()` function. However, if you retrieve a child record using the `contacts_record_get_child_record_at_p()` function, you only need to update the parent record to the database; the child record is updated automatically with the parent record.
+   > **Note**  
+   > The `contacts_record_set_XXX()` functions only change the data in the memory object, not in the contact database. Normally, to update the database, you need to update each record separately using the `contacts_db_update_record()` function. However, if you retrieve a child record using the `contacts_record_get_child_record_at_p()` function, you only need to update the parent record to the database; the child record is updated automatically with the parent record.
 
 3. Update the contact using the `contacts_db_update_record()` function:
 
@@ -1605,8 +1605,8 @@ To retrieve multiple groups:
 
       Move forward and backward within the list using the `contacts_list_next()` and `contacts_list_prev()` functions, and retrieve the current group using the `contacts_list_get_current_record_p()` function.
 
-      **Note**
-      Some functions have the `_p` postfix. The postfix means that the returned value must not be freed by the application, as it is a pointer to the data in an existing record.
+      > **Note**  
+      > Some functions have the `_p` postfix. The postfix means that the returned value must not be freed by the application, as it is a pointer to the data in an existing record.
 
       The following example iterates through the list and retrieves the name of each group:
 
@@ -1900,8 +1900,8 @@ To create a vCard stream from a person:
    error_code = contacts_vcard_make_from_person(record, &vcard_stream);
    ```
 
-   **Note**
-   The contacts service allows you to create a vCard stream from a person, contact, or my profile (using the `contacts_vcard_make_from_person()`, `contacts_vcard_make_from_contact()`, or `contacts_vcard_make_from_my_profile()` function).
+   > **Note**
+   > The contacts service allows you to create a vCard stream from a person, contact, or my profile (using the `contacts_vcard_make_from_person()`, `contacts_vcard_make_from_contact()`, or `contacts_vcard_make_from_my_profile()` function).
 
 3. When no longer needed, free the vCard stream, destroy the person handle, and release all its resources:
 
@@ -2096,8 +2096,8 @@ To retrieve multiple speed dials:
 
       Move forward and backward within the list using the `contacts_list_next()` and `contacts_list_prev()` functions, and retrieve the current speed dial using the `contacts_list_get_current_record_p()` function.
 
-      **Note**
-      Some functions have the `_p` postfix. The postfix means that the returned value must not be freed by the application, as it is a pointer to the data in an existing record.
+      > **Note**  
+      > Some functions have the `_p` postfix. The postfix means that the returned value must not be freed by the application, as it is a pointer to the data in an existing record.
 
       The following example iterates through the list and retrieves the number of each speed dial:
 
@@ -2447,9 +2447,9 @@ To retrieve multiple log entries:
    1. Use a loop to iterate through the list and retrieve the log details.
 
       Move forward and backward within the list using the `contacts_list_next()` and `contacts_list_prev()` functions, and retrieve the current log using the `contacts_list_get_current_record_p()` function.
-
-      **Note**
-      Some functions have the `_p` postfix. The postfix means that the returned value must not be freed by the application, as it is a pointer to the data in an existing record.
+  
+      > **Note**  
+      > Some functions have the `_p` postfix. The postfix means that the returned value must not be freed by the application, as it is a pointer to the data in an existing record.
 
       The following example iterates through the list and retrieves the type of each log:
 
@@ -2614,8 +2614,8 @@ To insert a new record into the contact database:
       error_code = contacts_record_add_child_record(hcontact, _contacts_contact.address, haddress);
       ```
 
-      **Note**
-      Do not destroy the child record handle.
+      > **Note**  
+      > Do not destroy the child record handle.
 
 3. Insert the record into the contact database. You receive the ID of the record in the database.
 
@@ -2625,8 +2625,8 @@ To insert a new record into the contact database:
    error_code = contacts_db_insert_record(hcontact, &id);
    ```
 
-   **Note**
-   Do not manually insert any of the child records into the database. The system inserts the child records automatically along with the parent record.
+   > **Note**  
+   > Do not manually insert any of the child records into the database. The system inserts the child records automatically along with the parent record.
 
 4. When no longer needed, destroy the record handle and release all its resources:
 
@@ -2768,8 +2768,8 @@ To retrieve the record details:
 
      For a list of properties by view, see View/Property (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html) applications).
 
-     **Note**
-     Do not pass any data returned by a function with the `_p` suffix to the `free()` function.
+     > **Note**  
+     > Do not pass any data returned by a function with the `_p` suffix to the `free()` function.
 
      To retrieve contact details into the `contact_gl_data_t` structure:
 
@@ -3053,8 +3053,8 @@ To retrieve multiple records at the same time using a list:
    - Move forward and backward within the list using the `contacts_list_prev()`, `contacts_list_next()`, `contacts_list_first()`, and `contacts_list_last()` functions.
    - Retrieve the current record using the `contacts_list_get_current_record_p()` function. By default, before iterating through the list, the current record is the first record.
 
-   **Note**
-   Some functions have the `_p` postfix. The postfix means that the returned value must not be freed by the application, as it is a pointer to the data in an existing record.
+   > **Note**  
+   > Some functions have the `_p` postfix. The postfix means that the returned value must not be freed by the application, as it is a pointer to the data in an existing record.
 
    To retrieve the record details:
 
@@ -3345,8 +3345,8 @@ To import contacts from the SIM card:
    dlog_print(DLOG_DEBUG, LOG_TAG, "SIM %s completed", completed ? "" : "not ");
    ```
 
-   **Note**
-   You cannot access contacts on a SIM card that has not been initialized.
+   > **Note**  
+   > You cannot access contacts on a SIM card that has not been initialized.
 
 2. Import the contacts:
 
@@ -3363,8 +3363,8 @@ Importing contacts from a vCard file involves parsing the vCard file for contact
 
 To import contacts from vCard streams:
 
-**Note**
-This use case imports contacts from every vCard file in a given directory.
+> **Note**  
+> This use case imports contacts from every vCard file in a given directory.
 
 1. Retrieve the path to the source directory containing the vCard files you want to import.
 

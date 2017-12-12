@@ -22,7 +22,8 @@ There are several event types in EFL, and their use depends on the level of the 
 
 ![Event types in the EFLs](./media/events_scope.png)
 
-​	**Note**	There are also [Edje signals](./event-types-n.md#edje), which come from program blocks in the theme EDC files. They can be used from the high level Elementary APIs or the low level Edje APIs.
+> **Note**	  
+> There are also [Edje signals](./event-types-n.md#edje), which come from program blocks in the theme EDC files. They can be used from the high level Elementary APIs or the low level Edje APIs.
 
 ## Basic Event Flow
 
@@ -43,4 +44,5 @@ The following figure illustrates the event flow that follows a click on the scre
 
 ![Event flow for a user click](./media/events_flow.png)
 
-​	**Note**	Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**	
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

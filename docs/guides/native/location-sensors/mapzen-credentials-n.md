@@ -4,8 +4,8 @@
 
 Mapzen products help you put a map anywhere, search and route the planet, and try a world of open data. They are built from open-source tools that are packaged into a Web service and hosted on the Mapzen servers. If you want to use Mapzen services, you must create a Mapzen developer account and a valid API key, and keep your requests to the service within certain rate limits.
 
-**Note**
-Mapzen products are available for any use, including commercial purposes. You must follow the [attribution requirements](https://mapzen.com/rights/) for the data source, and also provide acknowledgment to Mapzen if you are using these Web services.
+> **Note**  
+> Mapzen products are available for any use, including commercial purposes. You must follow the [attribution requirements](https://mapzen.com/rights/) for the data source, and also provide acknowledgment to Mapzen if you are using these Web services.
 
 Mapzen developer account authentication is made through [GitHub](https://github.com), which is a Web site that enables people to collaborate on a project. You need a GitHub account to create a Mapzen developer account, as there is currently no other form of authentication.
 

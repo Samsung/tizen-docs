@@ -8,7 +8,7 @@
 
 You can use events provided by Cordova in Web applications by registering custom listeners with no parameters. The Events API has no objects or properties.
 
-The Events API is mandatory for both Tizen mobile and wearable profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The Events API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The Events API provides the following events:
 

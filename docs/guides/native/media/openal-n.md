@@ -44,8 +44,8 @@ The main features of the OpenAL API include:
 
   When your audio stream is no longer needed or inactive for a long time, destroy the context by calling the `alcDestroyContext()` function.
 
-  **Note**
-  The device cannot fall into a sleep state while the context is not destroyed. To avoid unwanted battery consumption, destroy the context punctually.
+  > **Note**  
+  > The device cannot fall into a sleep state while the context is not destroyed. To avoid unwanted battery consumption, destroy the context punctually.
 
 - Requesting a source and buffer
 
@@ -105,8 +105,8 @@ To enable your application to use the OpenAL functionality:
 
    The `alcOpenDevice()` function opens the audio device through the PulseAudio.
 
-   **Note**
-   Tizen 3.0 works with a stream information concept. To integrate OpenAL with stream information, use the `alcOpenDeviceNew()` function (since Tizen 3.0) instead of the `alcOpenDevice()` function, and give the sound stream information handle as a parameter. To create the handle, include the `sound_manager.h` header file and call the `sound_manager_create_stream_information()` function.
+   > **Note**  
+   > Tizen 3.0 works with a stream information concept. To integrate OpenAL with stream information, use the `alcOpenDeviceNew()` function (since Tizen 3.0) instead of the `alcOpenDevice()` function, and give the sound stream information handle as a parameter. To create the handle, include the `sound_manager.h` header file and call the `sound_manager_create_stream_information()` function.
 
 3. If the device is opened successfully, create a context for the device using the `alcCreateContext()` function, and set the context as active using the `alcMakeContextCurrent()` function:
 

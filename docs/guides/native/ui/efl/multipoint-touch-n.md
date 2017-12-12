@@ -233,7 +233,8 @@ create_main_view(appdata_s *ad)
 }
 ```
 
-​	**Note**	The event types for a touch event contain the "MOUSE" keyword due to backward compatibility with Tizen 2.3. Before the multi-point touch concept was introduced, there was no difference between a single touch event and a mouse event. As a result, the single touch event used the `EVAS_CALLBACK_MOUSE_DOWN/UP/MOVE` event types.
+> **Note**
+> The event types for a touch event contain the "MOUSE" keyword due to backward compatibility with Tizen 2.3. Before the multi-point touch concept was introduced, there was no difference between a single touch event and a mouse event. As a result, the single touch event used the `EVAS_CALLBACK_MOUSE_DOWN/UP/MOVE` event types.
 
 The following touch event types are supported:
 

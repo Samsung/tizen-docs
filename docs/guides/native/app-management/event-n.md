@@ -148,7 +148,8 @@ To subscribe to a predefined system event or user-defined event:
 
 To register an interest in a Launch-On-Event, define the `http://tizen.org/appcontrol/operation/launch_on_event` operation in the `tizen-manifest.xml` file.
 
-**Note**Only service applications can register and receive Launch-On-Events.The Launch-On-Event operation cannot be requested using the `app_control_send_launch_request()` function, unlike other application control operations.
+> **Note**  
+> Only service applications can register and receive Launch-On-Events.The Launch-On-Event operation cannot be requested using the `app_control_send_launch_request()` function, unlike other application control operations.
 
 The following table shows the system events that support Launch-On-Event.
 

@@ -33,11 +33,12 @@ Tizen windows have a layer hierarchy. Window layers are logical containers used 
 
 Each window is set to a specific layer according to its type or properties. Most application windows belong to the normal layer. However, for an important alarm or other information crucial to the user, you can set the window to belong to the notification layer. This ensures that the user notices the information immediately, because the window belonging to the notification layer is always shown above the windows in the normal layer.
 
-The notification layer contains 3 levels, which define the priority of a notification window:
+The notification layer contains 4 levels, which define the priority of a notification window:
 
-- `EFL_UTIL_NOTIFICATION_LEVEL_1`: Default level, to which most windows are set. It is used as a normal notification popup.
-- `EFL_UTIL_NOTIFICATION_LEVEL_2`: Higher level; the windows on this level are always on top of the level 1 windows. It is used for the lock screen window in general.
-- `EFL_UTIL_NOTIFICATION_LEVEL_3`: Highest level, which very few applications can use. It is used in case the user needs to be notified in any circumstances. For example, the incoming call popup uses this level.
+-   `EFL_UTIL_NOTIFICATION_LEVEL_DEFAULT`: Default level, to which most windows are set. It is used as a normal notification popup.
+-   `EFL_UTIL_NOTIFICATION_LEVEL_MEDIUM`: Higher level than default; the windows on this level are always on top of the default level windows. It is used for the lock screen window in general.
+-   `EFL_UTIL_NOTIFICATION_LEVEL_HIGH`: Higher level than medium; the windows on this level are always on top of the medium windows.
+-   `EFL_UTIL_NOTIFICATION_LEVEL_TOP`: Highest level, which very few applications can use. It is used in case the user needs to be notified in any circumstances. For example, the incoming call popup uses this level.
 
 **Figure: Notification levels**
 
@@ -96,13 +97,12 @@ To use the functions and data types of the EFL UTIL API (in [mobile](../../../..
 
 To create notification windows and access the current notification level of an existing notification window:
 
-- Create a notification window with the default notification level (`EFL_UTIL_NOTIFICATION_LEVEL_1`):
+-   Create a notification window with the default notification level (`EFL_UTIL_NOTIFICATION_LEVEL_DEFAULT`):
 
   - To create a new window and give it the `NOTIFICATION` type, call the `elm_win_add()` function with the third parameter set to `ELM_WIN_NOTIFICATION`:
 
     ```
     #include <Elementary.h>
-    #include <efl_util.h>
     #include <dlog.h>
 
     static Evas_Object*
@@ -117,11 +117,16 @@ To create notification windows and access the current notification level of an e
             return NULL;
     ```
 
-  - To set the notification level, call the `efl_util_set_notification_window_level()` function:
+  - To set the notification level, call the `efl_util_set_notification_window_level()` function.
+
+    If the window is not of the notification type, the function returns the `EFL_UTIL_ERROR_NOT_SUPPORTED_WINDOW_TYPE` error. If the application does not have a permission to set a notification level, the function returns the `TIZEN_ERROR_PERMISSION_DENIED` error.
 
     ```
         /* Set the NOTIFICATION level */
         error = efl_util_set_notification_window_level(eo, EFL_UTIL_NOTIFICATION_LEVEL_1);
+		if (error != EFL_UTIL_ERROR_NONE) {
+                /* Error handling for each error code */
+        }
 
         elm_win_title_set(eo, name);
         elm_win_autodel_set(eo, EINA_TRUE);
@@ -135,7 +140,6 @@ To create notification windows and access the current notification level of an e
 
   ```
   #include <Elementary.h>
-  #include <efl_util.h>
   #include <dlog.h>
 
   void
@@ -153,11 +157,17 @@ To create notification windows and access the current notification level of an e
       /* Check the return value */
       if (error== EFL_UTIL_ERROR_NONE) {
           switch (notification_level) {
-          case EFL_UTIL_NOTIFICATION_LEVEL_1:
-              /* Do something for level 1 */
-              break;
-          case EFL_UTIL_NOTIFICATION_LEVEL_2:
-              /* Do something for level 2 */
+          case EFL_UTIL_NOTIFICATION_LEVEL_DEFAULT:
+                /* Do something for default level */
+                break;
+            case EFL_UTIL_NOTIFICATION_LEVEL_MEDIUM:
+                /* Do something for medium level */
+                break;
+            case EFL_UTIL_NOTIFICATION_LEVEL_HIGH:
+                /* Do something for high level */
+                break;
+            case EFL_UTIL_NOTIFICATION_LEVEL_TOP:
+                /* Do something for top level */
               break;
           }
       } else {
@@ -174,7 +184,6 @@ To take a screenshot:
 
    ```
    #include <tbm_surface.h>
-   #include <X11/Xlib.h>
 
    void
    capture()

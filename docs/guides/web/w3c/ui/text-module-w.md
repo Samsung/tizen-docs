@@ -17,7 +17,7 @@ The new text features in CSS Text Module Level 3 include:
 
 ## Manipulating Text
 
-To enhance the user experience of your application, you must learn to handle line breaking, justification, alignment, white space handling, and text transformations using CSS text properties:
+To use CSS text properties to manipulate line breaking, justification, alignment, white space handling, and text transformations:
 
 1. Define the `text-transform` property within a `<style>` element in the `<head>` section of the Web page to control the text capitalization:
 
@@ -168,4 +168,5 @@ The following figure shows examples of manipulating the text properties.
 
 ![Text properties (in mobile applications only)](./media/text_properties.png)
 
-​	**Note**	For a complete list of CSS Text Module Level 3 text properties (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#text) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#text) applications) and their possible values, see the [Property index](http://www.w3.org/TR/2013/WD-css-text-3-20131010/#property-index).
+	> **Note**	
+	> For a complete list of CSS Text Module Level 3 text properties (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#text) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#text) applications) and their possible values, see the [Property index](http://www.w3.org/TR/2013/WD-css-text-3-20131010/#property-index).

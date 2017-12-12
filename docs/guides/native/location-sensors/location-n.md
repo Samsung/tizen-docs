@@ -32,8 +32,8 @@ With the location manager, you can:
 - [Retrieve satellite information](#satellite)
 - [Track routes](#track)
 
-**Note**
-To test the Tizen location-based services on the emulator, provide location data (longitude and latitude) using the Emulator Control Panel.Since satellite data is not supported on the emulator, GPS status data is available on a target device only.
+> **Note**  
+> To test the Tizen location-based services on the emulator, provide location data (longitude and latitude) using the Emulator Control Panel.Since satellite data is not supported on the emulator, GPS status data is available on a target device only.
 
 Asynchronous location-related updates and region monitoring notifications are implemented with callback interfaces (functions whose names end with "cb").
 
@@ -52,6 +52,8 @@ Using the `location_method_e` structure (in [mobile](../../../../org.tizen.nativ
 - GPS, which uses the global positioning system
 - WPS, which uses the Wi-Fi positioning system
 - Hybrid, which selects the best method available at the moment
+- Passive, which passively receives location updates
+- Fused, which uses the fused location method
 
 Based on the desired method, the location manager provides best-effort location-based services, such as an asynchronous location update or region monitoring notification.
 
@@ -69,8 +71,8 @@ The **GPS** setting controls the Global Positioning System usage. It uses GPS sa
 
 All location settings are initially enabled, if the device supports GPS. To disable them, the user must manually toggle the buttons. The manual task required from the user is understood as an implicit user consent.
 
-**Note**
-Either the **GPS** or the **Wireless networks** setting must be enabled to retrieve the current location of the device user.
+> **Note**  
+> Either the **GPS** or the **Wireless networks** setting must be enabled to retrieve the current location of the device user.
 
 Once the **GPS** or **Wireless networks** setting is enabled, the user can control the usage of the location data for each application separately using the privacy setting. If the privacy setting of the application is disabled, location data is no longer available for the application.
 
@@ -90,7 +92,8 @@ To start the location service:
 
 1. Create a location manager handle using the `location_manager_create()` function before you use the location service.
 
-   In this example, GPS is used as the source of the position data, so the first parameter is `LOCATIONS_METHOD_GPS`. You can use other values of the `location_method_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__LOCATION__MANAGER__MODULE.html#gaec8a29c8b701753a7c9d91f4f8acfac5) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__LOCATION__MANAGER__MODULE.html#gaec8a29c8b701753a7c9d91f4f8acfac5) applications), such as `LOCATIONS_METHOD_HYBRID` or `LOCATIONS_METHOD_WPS`. `LOCATIONS_METHOD_HYBRID` uses both `LOCATIONS_METHOD_GPS` and `LOCATIONS_METHOD_WPS`, but the latter is less accurate.
+       In this example, GPS is used as the source of the position data, so the first parameter is `LOCATIONS_METHOD_GPS`. You can use other values of the `location_method_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__LOCATION__MANAGER__MODULE.html#gaec8a29c8b701753a7c9d91f4f8acfac5) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__LOCATION__MANAGER__MODULE.html#gaec8a29c8b701753a7c9d91f4f8acfac5) applications), such as `LOCATIONS_METHOD_HYBRID`, `LOCATIONS_METHOD_WPS`, `LOCATIONS_METHOD_PASSIVE`, or `LOCATIONS_METHOD_FUSED`. `LOCATIONS_METHOD_HYBRID` uses both `LOCATIONS_METHOD_GPS` and `LOCATIONS_METHOD_WPS`, but the latter is less accurate.
+
 
    ```
    location_manager_h manager;
@@ -98,7 +101,9 @@ To start the location service:
    ```
 
    Each location manager is an independent service. Multiple location managers can be created in the same application to provide different services, such as GPS and Bluetooth. Callbacks are set for a given location manager and are called only if the service is started for their manager.
-
+   > **Note** 
+   > The location manager is not thread-safe and depends on the main loop. Implement the location service within the main loop, and do not use it in a thread.
+   
 2. Start the location service using the `location_manager_start()` function. This call is asynchronous and only initiates the process of starting the location manager service. Once the manager is started, the registered callbacks are invoked when their corresponding events take place. To know when the service becomes enabled, use the `location_manager_set_service_state_changed_cb()` function.
 
    ```
@@ -219,8 +224,8 @@ You can get a notification of the position update using the position update call
    }
    ```
 
-   **Note**
-   The callback is called only if the location manager has been started. The same holds for all other callbacks registered with the manager.
+   > **Note**  
+   > The callback is called only if the location manager has been started. The same holds for all other callbacks registered with the manager.
 
 ## Using Location Bounds
 
@@ -340,8 +345,8 @@ You can retrieve and update information about a satellite visible to the device.
     }
     ```
 
-**Note**
-The callback is called only if the location manager has been started. The same holds for all other callbacks registered with the manager.
+> **Note**  
+> The callback is called only if the location manager has been started. The same holds for all other callbacks registered with the manager.
 
 ## Tracking the Route
 

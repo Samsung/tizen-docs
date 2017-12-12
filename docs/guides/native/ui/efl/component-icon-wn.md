@@ -6,7 +6,7 @@ The icon component is used to display standard icon images, such as "delete", "h
 
 The icon component inherits from the image component, which means that image functions can be used on the icon component.
 
-For more information, see the [Icon](../../../../../org.tizen.native.wearable.apireference/group__Icon.html) API.
+For more information, see the [Icon](../../../../../org.tizen.native.wearable.apireference/group__Elm__Icon.html) API.
 
 **Figure: Icon hierarchy**
 
@@ -57,12 +57,10 @@ To receive notifications about the icon events, listen for the following signals
 - `thumb,done`: The `elm_icon_thumb_set()` function is completed with success.
 - `thumb,error`: The `elm_icon_thumb_set()` function fails.
 
-**Note**
-
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 In both cases, the `event_info` callback parameter is `NULL`.
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

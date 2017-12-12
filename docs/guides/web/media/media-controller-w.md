@@ -3,9 +3,9 @@
 ## Dependencies
 
 - Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for Wearable
 
-Tizen provides a functionality for you to communicate between the media controller server and client.
+You can have your client application communicate with a media server.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -26,7 +26,7 @@ The main features of the Media Controller API include:
 
   - Receiving notifications from the server
 
-  You can [receive notifications on changed made by the server](./media/media-controller-w.md#noti) by registering a listener with the `addPlaybackInfoChangeListener()` method.
+  You can [receive notifications on changes made by the server](./media/media-controller-w.md#noti) by registering a listener with the `addPlaybackInfoChangeListener()` method.
 
   - Sending custom commands
 
@@ -59,7 +59,7 @@ To manage the media controller features in your application, you must learn to s
    var mcClient = tizen.mediaController.getClient();
    ```
 
-3. Define a success (and optionally error) event handler by implementing the `MediaControllerServerInfoArraySuccessCallback` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/mediacontroller.html#MediaControllerServerInfoArraySuccessCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/mediacontroller.html#MediaControllerServerInfoArraySuccessCallback) applications):
+3. Define a success (and optionally, an error) event handler by implementing the `MediaControllerServerInfoArraySuccessCallback` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/mediacontroller.html#MediaControllerServerInfoArraySuccessCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/mediacontroller.html#MediaControllerServerInfoArraySuccessCallback) applications):
 
    ```
    var mcServerInfo;
@@ -191,7 +191,7 @@ To manage the media controller features in your application, you must learn to s
       };
       ```
 
-   2. Define a success (and optionally error) callback implementing the `MediaControllerSendCommandSuccessCallback` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/mediacontroller.html#MediaControllerSendCommandSuccessCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/mediacontroller.html#MediaControllerSendCommandSuccessCallback) applications):
+   2. Define a success (and optionally, an error) callback implementing the `MediaControllerSendCommandSuccessCallback` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/mediacontroller.html#MediaControllerSendCommandSuccessCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/mediacontroller.html#MediaControllerSendCommandSuccessCallback) applications):
 
       ```
       function sendCommandSuccessCallback(response) {

@@ -40,9 +40,8 @@ The `ecore_animator_timeline_add()` function allows you to define an animator th
 - The second parameter is the callback function that performs the actual animation.
 - The third parameter is the data passed to the callback function. This is usually the Evas object to animate.
 
-**Note**
-
-The function returns a pointer to an `Ecore_Animator` object, which you can use to control the animation execution.
+> **Note**
+> The function returns a pointer to an `Ecore_Animator` object, which you can use to control the animation execution.
 
 The following example performs a linear horizontal move of 500 pixels (from 0 to 500 on the X axis) in 8 seconds, while keeping the Y axis position unchanged:
 
@@ -63,9 +62,8 @@ _my_animation(void *data, double pos)
 ecore_animator_timeline_add(8, _my_animation, my_evas_object);
 ```
 
-**Note**
-
-The callback function can return `ECORE_CALLBACK_RENEW` to keep the animator running, or `ECORE_CALLBACK_CANCEL` to stop the animator and delete it automatically at any time. If the callback returns `ECORE_CALLBACK_CANCEL` (or `0`), the animator is automatically deleted from the list of pointers to free up the allocated memory.The callback function receives a timeline position (second parameter) with a value between 0.0 (start) to 1.0 (end) to indicate where along the timeline the animator is running.
+> **Note**  
+> The callback function can return `ECORE_CALLBACK_RENEW` to keep the animator running, or `ECORE_CALLBACK_CANCEL` to stop the animator and delete it automatically at any time. If the callback returns `ECORE_CALLBACK_CANCEL` (or `0`), the animator is automatically deleted from the list of pointers to free up the allocated memory.The callback function receives a timeline position (second parameter) with a value between 0.0 (start) to 1.0 (end) to indicate where along the timeline the animator is running.
 
 ## Starting an Infinite Animation
 
@@ -76,9 +74,8 @@ To create an animation that runs for an unspecified amount of time, use the `eco
 
 This function works the same way as the `ecore_animation_timeline_add()` function, except that its interval is based on the frame rate. Using the frame rate as a basis benefits performance, especially in the case of multiple animations, since it enables you to use a different timer for each callback function.
 
-**Note**
-
-The function returns a pointer to an `Ecore_Animator` object, which you can use to control the animation execution.
+> **Note**  
+> The function returns a pointer to an `Ecore_Animator` object, which you can use to control the animation execution.
 
 The following example creates a rectangle sliding from left to right and back again. When the rectangle hits the edge of the screen, it changes direction.
 
@@ -107,9 +104,8 @@ if (anim != NULL)
     ecore_animator_del(anim);
 ```
 
-**Note**
-
-The callback function can return `ECORE_CALLBACK_RENEW` or `EINA_TRUE` to keep the animator running, or `ECORE_CALLBACK_CANCEL` or `EINA_FALSE` to stop the animator and delete it automatically at any time.If the callback returns `ECORE_CALLBACK_RENEW` or `EINA_TRUE`, you must delete the animator manually when it is no longer needed. Use the `ecore_animator_del()` function, which frees the memory allocated to the `Ecore_Animator` object by deleting the pointer.
+> **Note**  
+> The callback function can return `ECORE_CALLBACK_RENEW` or `EINA_TRUE` to keep the animator running, or `ECORE_CALLBACK_CANCEL` or `EINA_FALSE` to stop the animator and delete it automatically at any time.If the callback returns `ECORE_CALLBACK_RENEW` or `EINA_TRUE`, you must delete the animator manually when it is no longer needed. Use the `ecore_animator_del()` function, which frees the memory allocated to the `Ecore_Animator` object by deleting the pointer.
 
 ## Starting a Delayed Animation
 
@@ -250,9 +246,8 @@ Tizen supports default and custom timer sources:
 
   To tweak the performance, change the frametime value using the `ecore_animator_frametime_set()` function with the new frametime as the parameter.
 
-  **Note**
-
-  If the value is too small, it can cause performance issues, whereas a too high value can cause the animation to seem jerky.
+  > **Note**  
+  > If the value is too small, it can cause performance issues, whereas a too high value can cause the animation to seem jerky.
 
   To get the current frametime value, use the `ecore_animator_frametime_get()` function.
 
@@ -280,6 +275,5 @@ Tizen supports default and custom timer sources:
 
   To drive the timer based on an input tick source (such as another application using the IPC or a vertical blanking interrupt), you can use the `ecore_animator_custom_source_tick_begin_callback_set()` and `ecore_animator_custom_source_tick_end_callback_set()` functions. These functions define callbacks that are called when the tick starts and ends, allowing you to set the functions to start and stop the ticking source.
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

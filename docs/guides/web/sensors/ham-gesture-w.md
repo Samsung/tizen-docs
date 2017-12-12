@@ -1,4 +1,4 @@
-# Gesture Recogniton
+# Gesture Recognition
 
 ## Dependencies
 

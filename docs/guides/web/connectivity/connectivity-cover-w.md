@@ -29,3 +29,7 @@ You can use the following connectivity and wireless features in your Web applica
 - [Content Downloads](./connectivity/download-w.md)
 
   You can download files from the Internet. You can also monitor the download progress to keep the user informed of the status.
+  
+- [Network Bearer Selection](nbs-w.md) **in mobile applications only**
+
+  You can request a preferred connection network type for a domain.

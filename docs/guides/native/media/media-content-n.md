@@ -860,17 +860,6 @@ To read media folder information, define a callback for the `media_folder_foreac
          }
      ```
 
-   - Get the last modified time:
-
-     ```
-         time_t time = 0;
-
-         ret = media_folder_get_modified_time(folder, &time);
-         if (MEDIA_CONTENT_ERROR_NONE != ret)
-             /* Error handling */
-         else
-             dlog_print(DLOG_DEBUG, LOG_TAG, "Modified time: %s", ctime(&time));
-     ```
 
    - Get the media item count in the folder with the `media_folder_get_media_count_from_db()` function.The second parameter is the filter. If it is set to `NULL`, all media is counted.`    int item_count = -1;    ret = media_folder_get_media_count_from_db(folder_id, NULL, &item_count);    if (MEDIA_CONTENT_ERROR_NONE != ret)        /* Error handling */    else        dlog_print(DLOG_DEBUG, LOG_TAG,                   "Number of media contents: %d\n", item_count);    free(folder_id);    return true;}`
 
@@ -1006,7 +995,6 @@ To access media item information:
                int width = 0;
                int height = 0;
                char *datetaken = NULL;
-               char *burst_id = NULL;
 
                ret = media_info_get_image(media_handle, &image_handle);
                if (ret != MEDIA_CONTENT_ERROR_NONE) {
@@ -1016,7 +1004,6 @@ To access media item information:
                    image_meta_get_height(image_handle, &height);
                    image_meta_get_orientation(image_handle, &orientation);
                    image_meta_get_date_taken(image_handle, &datetaken);
-                   image_meta_get_burst_id(image_handle, &burst_id);
 
                    dlog_print(DLOG_DEBUG, LOG_TAG, "This is an image");
                    dlog_print(DLOG_DEBUG, LOG_TAG,
@@ -1026,8 +1013,6 @@ To access media item information:
 
                if (datetaken)
                    free(datetaken);
-               if (burst_id)
-                   free(burst_id);
 
                image_meta_destroy(image_handle);
            } else if (media_type == MEDIA_CONTENT_TYPE_VIDEO) {

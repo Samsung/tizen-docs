@@ -13,7 +13,7 @@ The CSS3 version has caused changes in the Selector, Color, Web Form, and Fonts 
 
 - User interface selectors
 
-  The CSS Selector is an essential module for applying a CSS to HTML in order to enable the DOM element selection. The [pseudo-element selectors](http://www.w3.org/TR/2012/WD-css3-ui-20120117/#user-interface-selectors) can be used to assign the user interface state. With the selectors, you can [change the Web form style](./w3c/ui/basic-ui-w.md#selector) according to the user input without using JavaScript.
+  The CSS Selector is an essential module for applying a CSS to HTML in order to enable the DOM element selection. The [pseudo-class selectors](https://www.w3.org/TR/2013/WD-selectors4-20130502/#pseudo-classes) can be used to assign the user interface state. With the selectors, you can [change the Web form style](#selector) according to the user input without using JavaScript.
 
 - Box model properties
 
@@ -34,9 +34,9 @@ The CSS3 version has caused changes in the Selector, Color, Web Form, and Fonts 
   - The `outline` properties make the box outstanding.
   - The `text-overflow` property handles the text extending outside the box.
 
-## Using Pseudo-element Selectors
+## Using Pseudo-class Selectors
 
-To enhance the user experience of your application, you must learn how to use pseudo-element selectors:
+To use pseudo-class selectors:
 
 1. Use the pseudo-classes, such as `:enabled` and `:disabled`, to add different styles based on the state of the DOM elements:
 
@@ -45,7 +45,8 @@ To enhance the user experience of your application, you must learn how to use ps
    input: disabled {border: 1px solid red}
    ```
 
-   ​	**Note**	In the versions prior to CSS3, pseudo-elements, such as `:hover`, `:active`, and `:focus`, were used, and required an attribute selector. Since the `:enabled` and `:disabled` classes are not influenced by the `display` and `visibility` attributes, they improve the accessibility.
+> **Note**
+> In the versions prior to CSS3, pseudo-classes, such as `:hover`, `:active`, and `:focus`, were used, and required an attribute selector. Since the `:enabled` and `:disabled` classes are not influenced by the `display` and `visibility` attributes, they improve the accessibility.
 
 2. To control the state of the HTML5 Web Forms (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#forms) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#forms) applications), use the `:in-range` and `:out-of-range` pseudo-classes.They check for any values that have exceeded the inserted range. (The following figure applies to mobile applications only.)
 
@@ -93,9 +94,10 @@ For the complete source code related to this use case, see the following files:
 
 ## Using Box Model Properties
 
-To enhance the user experience of your application, you must learn how to use box model properties:
+To use the box model properties in your application:
 
-​	**Note**	The properties dependent on mouse and keyboard functions are not discussed in this topic.
+> **Note**
+> The properties dependent on mouse and keyboard functions are not discussed in this topic.
 
 1. To assign the area that is included in the width and height of the box automatically, use the `box-sizing` property. To assign the width without a margin, use the `box-sizing: border-box` property.
 

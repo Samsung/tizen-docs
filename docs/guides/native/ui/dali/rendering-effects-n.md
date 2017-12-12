@@ -50,6 +50,5 @@ There are certain restrictions when writing stereoscopic applications using DALi
 
 - Stereo render tasks render everything added to the stage's root layer. If the application must render an object hierarchy to an off-screen buffer, it must set the exclusive flag on that render task so that the stereo tasks do not render that particular subtree. To set the exclusive flag in a render task, use the `SetExclusive()` function defined in the render task.
 
-**Note**
-
-DALi stereoscopic viewing mode is still under development, and may not be mature enough for commercialized applications at the moment. For example, distortion correction is not supported yet. Tizen continues to improve the stereoscopic mode to give you a chance to provide a more exciting and immersive user experience to your customers.
+> **Note**  
+> DALi stereoscopic viewing mode is still under development, and may not be mature enough for commercialized applications at the moment. For example, distortion correction is not supported yet. Tizen continues to improve the stereoscopic mode to give you a chance to provide a more exciting and immersive user experience to your customers.

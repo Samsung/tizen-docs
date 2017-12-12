@@ -449,8 +449,8 @@ To track faces:
 
    3. Use the `mv_face_track()` function to track the face.
 
-	**Note**
-    Control the `g_source` handle carefully. Do not update it to the next preview image while the `mv_face_track()` function processes the `g_source` handle with the current preview image.
+	> **Note**  
+    > Control the `g_source` handle carefully. Do not update it to the next preview image while the `mv_face_track()` function processes the `g_source` handle with the current preview image.
     
     ```
     error_code = mv_face_track(facedata.g_source, facedata.g_face_track_model,

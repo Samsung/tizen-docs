@@ -34,7 +34,7 @@ For a complete application layout that considers all the above issues, see [Sing
 
 ### Viewport and Other Meta Tags
 
-The viewport is a screen area that the Web engine displays in the UI and, in the Web world, the `viewport` meta tag is used to inform the Web engine that this content is written for a specific form factor, such as device width. The `viewport` meta tag was introduced by Apple to fill the screen resolution gap between initial Smartphone (for example, 320 px) and PC (for example, 980 px). Basically, the `viewport` meta tag helps the Web engine to determine the scale factor for the content on the current device.
+The viewport is a screen area that the Web engine displays in the UI and, in the Web world, the `viewport` meta tag is used to inform the Web engine that this content is written for a specific form factor, such as device width. The `viewport` meta tag was introduced by Apple to fill the screen resolution gap between initial Smart phone (for example, 320 px) and PC (for example, 980 px). Basically, the `viewport` meta tag helps the Web engine to determine the scale factor for the content on the current device.
 
 To use the tag in an HTML file, set its name and content:
 
@@ -334,7 +334,8 @@ The following table lists the CSS media features, which you can use to specify t
 
 Tizen supports a special media query feature for a circular device shape. The following table lists the supported media features.
 
-​	**Note**	This feature is supported since **2.3.1**.
+> **Note**
+> This feature is supported since **2.3.1**.
 
 **Table: Tizen specialized media feature**
 
@@ -371,7 +372,8 @@ If you use the `orientation: portrait/landscape` feature, the layout can change 
 
 You can configure the device circular mode using the `-tizen-geometric-shape` attribute in the Tizen environment. The following example shows how to use the `-tizen-geometric-shape` feature.
 
-​	**Note**	This feature is supported since **2.3.1**.
+> **Note**
+> This feature is supported since **2.3.1**.
 
 ```
 @media all and (-tizen-geometric-shape: circle) {
@@ -470,7 +472,8 @@ To migrate the application, use the following steps:
    }
    ```
 
-   ​	**Note**	The **relative layout** concept is described in more detail in [Relative Layout](./w3c/ui/ui-layout-ww.md#relative).
+	> **Note**
+	> The **relative layout** concept is described in more detail in [Relative Layout](./w3c/ui/ui-layout-ww.md#relative).
 
 2. Set extra spaces both at the top and bottom. 
 

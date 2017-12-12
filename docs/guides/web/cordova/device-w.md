@@ -8,7 +8,7 @@
 
 You can use a `device` global dictionary to access the device information, such as hardware UUID (unique ID) and software version.
 
-The Device API is mandatory for both Tizen mobile and wearable profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The Device API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The following table lists the properties available in the global `Device` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/device.html#Device), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/device.html#Device), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/device.html#Device) applications), and which allow you to [access specific device information](./cordova/device-w.md#loginfo).
 

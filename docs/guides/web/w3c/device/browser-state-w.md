@@ -18,7 +18,8 @@ The `navigator.onLine` attribute returns `false`, if the browser cannot establis
 | `online`           | Event            | When the return value of the `onLine` attribute changes from `false` to `true`, a connection is established and this event is triggered. |
 | `offline`          | Event            | When the return value of the `onLine` attribute changes from `true` to `false`, a connection is lost and this event is triggered. |
 
-​	**Note**	The device can be connected to the network without access to the Internet.
+> **Note**
+> The device can be connected to the network without access to the Internet.
 
 ## Retrieving the Browser State
 

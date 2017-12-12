@@ -8,7 +8,7 @@ This feature is supported in wearable applications only.
 
 The image component can load and display an image from a disk file or a memory region.
 
-For more information, see the [Image](../../../../../org.tizen.native.wearable.apireference/group__Image.html) API.
+For more information, see the [Image](../../../../../org.tizen.native.wearable.apireference/group__Elm__Image.html) API.
 
 **Figure: Image component**
 
@@ -89,9 +89,8 @@ To receive notifications about the image events, listen for the following signal
 - `drop`: An image typed object is dropped onto the object in question.The `event_info` callback parameter is the path to that image file.
 - `clicked`: The image is clicked.The `event_info` callback parameter is `NULL`.
 
-**Note**
-
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> **Note**    
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 To register and define a callback for the `clicked` signal:
 
@@ -109,6 +108,5 @@ clicked_cb(void *data, Evas_Object *obj, void *event_info)
 }
 ```
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

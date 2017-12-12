@@ -8,7 +8,7 @@
 
 You can write messages to the system console for debugging purposes.
 
-The Console API is mandatory for both Tizen mobile and wearable profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The Console API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The main features of the Console API include:
 
@@ -24,7 +24,8 @@ The main features of the Console API include:
 
   You can [measure the time elapsed during an operation](./cordova/console-w.md#logtiming).
 
-​	**Note**	To see the results of the message writing, use the system console available in your Tizen Studio or use the `sdb dlog` command.
+> **Note**
+> To see the message writing results, use the system console in the Tizen Studio or use the `sdb dlog` command.
 
 The global `console` object contains some additional features defined by Cordova.
 
@@ -52,7 +53,8 @@ console.log('console.log works well');
 console.error('console.error works well');
 ```
 
-​	**Note**	To see the writing results, use the system console available in your Tizen Studio or use the `sdb dlog` command.
+> **Note**
+> To see the writing results, use the system console available in your Tizen Studio or use the `sdb dlog` command.
 
 ## Formatting Objects
 

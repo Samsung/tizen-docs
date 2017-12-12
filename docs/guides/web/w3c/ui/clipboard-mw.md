@@ -26,7 +26,7 @@ The most common way of providing clipboard features in an application is to crea
 
 ## Copying Content
 
-To enhance the user experience of your application with clipboard operations, you must learn to use the `copy` event:
+To copy content using the `copy` event:
 
 1.  Add an event listener to detect the `copy` event:
 
@@ -48,7 +48,8 @@ To enhance the user experience of your application with clipboard operations, yo
            var range = window.getSelection();
    ```
 
-   ​	**Note**	If the current selection is not influenced and there is no selected range, the clipboard imports the `setData()` method. The copied content cannot be edited apart from adding a [DataTransferItemList](http://www.w3.org/TR/2014/WD-html51-20140617/editing.html#the-datatransferitemlist-interface) item.
+> **Note**
+> If the current selection is not influenced and there is no selected range, the clipboard imports the `setData()` method. The copied content cannot be edited apart from adding a [DataTransferItemList](http://www.w3.org/TR/2014/WD-html51-20140617/editing.html#the-datatransferitemlist-interface) item.
 
 3. Store the data of the selected range:
 
@@ -66,7 +67,7 @@ For the complete source code related to this use case, see the following file:
 
 ## Cutting Content
 
-To enhance the user experience of your application with clipboard operations, you must learn to use the `cut` event:
+To cut content using the `cut` event:
 
 1.  Add an event listener to detect the `cut` event:
 
@@ -96,7 +97,8 @@ To enhance the user experience of your application with clipboard operations, yo
    </script>
    ```
 
-   ​	**Note**	Before the `setData()` method is imported, the basic motion of the system event must be cancelled using the `preventDefault()` method. Otherwise, the data to be allocated to the clipboard is overwritten by the system clipboard.
+> **Note**	
+> Before the `setData()` method is imported, the basic motion of the system event must be cancelled using the `preventDefault()` method. Otherwise, the data to be allocated to the clipboard is overwritten by the system clipboard.
 
 ### Source Code
 
@@ -106,7 +108,7 @@ For the complete source code related to this use case, see the following file:
 
 ## Pasting Content
 
-To enhance the user experience of your application with clipboard operations, you must learn to use the `paste` event:
+To paste content using the `paste` event:
 
 1.  Add an event listener to detect the `paste` event:
 
@@ -142,7 +144,7 @@ For the complete source code related to this use case, see the following file:
 
 ## Copying and Pasting Content into an Editable Element
 
-To enhance the user experience of your application with clipboard operations, you must learn to copy content and paste it in an editable HTML element:
+To copy and paste content in an editable HTML element:
 
 1. Define the editable element into which copied data is to be pasted:
 

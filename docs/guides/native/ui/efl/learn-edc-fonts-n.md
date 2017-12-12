@@ -20,4 +20,5 @@ fonts {
 
 - `font [font filename] [font alias]`This property is included for each font, and it defines the `font file` and `alias`. The full path to the directory containing the font files can be defined later with the `edje_cc` tool's `-fd` option.
 
-​	**Note**	Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**	
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

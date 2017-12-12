@@ -1,52 +1,29 @@
-Secure Repository
-=================
-
+# Secure Key Management
 ## Dependencies
+-   Tizen 4.0 and Higher
 
-- Tizen 4.0 and Higher
+You can use a secure repository to store keys, certificates, and sensitive data related to users and their password-protected applications. In addition, the repository provides cryptographic operations for generating new key pairs and verifying signatures. The central secure repository is protected by a password.
 
-You can use a secure repository to store keys, certificates, and
-sensitive data related to users and their password-protected
-applications. In addition, the repository provides cryptographic
-operations for generating new key pairs and verifying signatures. The
-central secure repository is protected by a password.
+The secure repository features are provided by a key manager. An application functions as a key manager client, and accesses the secure repository through the key manager.
 
-The secure repository features are provided by a key manager. An
-application functions as a key manager client, and accesses the secure
-repository through the key manager.
-
-The main features of the Tizen.Security.SecureRepository namespace
-include:
+The main features of the Tizen.Security.SecureRepository namespace include:
 
 -   Data store policy
 
-    A client can specify simple access rules when storing items in the
-    secure repository:
+    A client can specify simple access rules when storing items in the secure repository:
 
     -   Extractable or non-extractable
-        -   Only for data tagged as extractable, the secure repository
-            returns the raw value of the data.
-        -   If data is tagged as non-extractable, the secure repository
-            does not return its raw value. In that case, the secure
-            repository provides secure cryptographic operations for
-            non-exportable keys without revealing the key values to
-            the clients.
+        -   Only for data tagged as extractable, the secure repository returns the raw value of the data.
+        -   If data is tagged as non-extractable, the secure repository does not return its raw value. In that case, the secure repository provides secure cryptographic operations for non-exportable keys without revealing the key values to the clients.
     -   Per key password
-        -   All data in the secure repository is protected by a
-            user password.
-        -   A client can encrypt its data using their own
-            password additionally.
-        -   If a client provides a password when storing data, the data
-            is encrypted with the password. This password must be
-            provided when getting the data from the secure repository.
-- Access control
+        -   All data in the secure repository is protected by a user password.
+        -   A client can encrypt its data using their own password additionally.
+        -   If a client provides a password when storing data, the data is encrypted with the password. This password must be provided when getting the data from the secure repository.
+-   Access control
 
-    By default, only the data owner can access the data. If the owner
-    grants access to other applications, those applications can read or
-    delete the data from the secure depository.
+    By default, only the data owner can access the data. If the owner grants access to other applications, those applications can read or delete the data from the secure depository.
 
-    When an application is deleted, the data and access control
-    information granted by the application are also removed.
+    When an application is deleted, the data and access control information granted by the application are also removed.
 
 **Figure: Key manager process**
 
@@ -61,7 +38,7 @@ The key manager provides 2 types of operations:
     -   [Save, get, or remove a key](#save_get_remove_keys)
     -   [Save, get, or remove a certificate](#save_get_remove_certs)
     -   [Save, get, or remove data](#save_get_remove_data)
-- Secure crypto operations
+-   Secure crypto operations
 
     With non-extractable keys and certificates, you can:
 
@@ -71,45 +48,29 @@ The key manager provides 2 types of operations:
     -   [Load a certificate file or a PKCS\#12 file](#load_file)
     -   [Implement access control](#access_control)
 
+## Aliases
 
-Aliases
--------
+All data stored in the secure repository is saved under an alias, which is a text string that must conform to certain conditions:
+-   The format of an alias is "&lt;package\_id&gt; &lt;name&gt;" and the name cannot contain any white space characters.
+-   If the client does not provide the package ID, the `CreateFullAlias()` method of the [Tizen.Security.SecureRepository.Manager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.Manager.html) class adds the client package ID to the name internally.
+-   The client can only specify its own package ID in the alias when storing a key, certificate, or data.
+-   The client must specify the package ID of the owner in the alias to retrieve a key, certificate, or data shared by other applications.
 
-All data stored in the secure repository is saved under an alias, which
-is a text string that must conform to certain conditions:
--   The format of an alias is "&lt;package\_id&gt; &lt;name&gt;" and the
-    name cannot contain any white space characters.
--   If the client does not provide the package ID, the
-    `CreateFullAlias()` method of the
-    [Tizen.Security.SecureRepository.Manager](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Security_1_1SecureRepository_1_1Manager.html)
-    class adds the client package ID to the name internally.
--   The client can only specify its own package ID in the alias when
-    storing a key, certificate, or data.
--   The client must specify the package ID of the owner in the alias to
-    retrieve a key, certificate, or data shared by other applications.
+## Prerequisites
 
+To use the methods and properties of the [Tizen.Security.SecureRepository](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.html) namespace, include it in your application:
 
-Prerequisites
--------------
-
-To use the methods and properties of the
-[Tizen.Security.SecureRepository](https://developer.tizen.org/dev-guide/csapi/namespaceTizen_1_1Security_1_1SecureRepository.html)
-namespace, include it in your application:
-
-``` {.prettyprint}
+``` 
 using Tizen.Security.SecureRepository;
 ```
 
-
-Saving, Getting, or Removing a Key <a id="save_get_remove_keys"></a>
-----------------------------------
+<a name="save_get_remove_keys"></a>
+## Saving, Getting, or Removing a Key 
 
 To store, retrieve, or remove a client's keys from the key manager:
--   Save a new key by using the `Save()` method of the
-    [Tizen.Security.SecureRepository.KeyManager](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Security_1_1SecureRepository_1_1KeyManager.html)
-    class:
+-   Save a new key by using the `Save()` method of the [Tizen.Security.SecureRepository.KeyManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.KeyManager.html) class:
 
-    ``` {.prettyprint}
+    ``` 
     using System;
     using System.Text;
 
@@ -179,9 +140,9 @@ To store, retrieve, or remove a client's keys from the key manager:
     }
     ```
 
-- Get a specific key with a given alias by using the `Get()` method:
+-   Get a specific key with a given alias by using the `Get()` method:
 
-    ``` {.prettyprint}
+    ``` 
     string alias = "C#API_KEY_TEST";
 
     try
@@ -194,10 +155,9 @@ To store, retrieve, or remove a client's keys from the key manager:
     }
     ```
 
-- Get the entire list of key aliases the client has access to by using
-    the `GetAliases()` method:
+-   Get the entire list of key aliases the client has access to by using the `GetAliases()` method:
 
-    ``` {.prettyprint}
+    ``` 
     try
     {
         IEnumerable<string> aliases = KeyManager.GetAliases();
@@ -208,9 +168,9 @@ To store, retrieve, or remove a client's keys from the key manager:
     }
     ```
 
-- Remove the key using the `RemoveAlias()` method:
+-   Remove the key using the `RemoveAlias()` method:
 
-    ``` {.prettyprint}
+    ``` 
     string alias = "C#API_KEY_TEST";
 
     try
@@ -223,18 +183,14 @@ To store, retrieve, or remove a client's keys from the key manager:
     }
     ```
 
+<a name="save_get_remove_certs"></a>	
+## Saving, Getting, or Removing a Certificate
 
-Saving, Getting, or Removing a Certificate <a id="save_get_remove_certs"></a>
-------------------------------------------
+To store, retrieve, or remove a client's certificates from the key manager:
 
-To store, retrieve, or remove a client's certificates from the key
-manager:
+-   Save a new certificate by using the `Save()` method of the [Tizen.Security.SecureRepository.CertificateManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.CertificateManager.html) class:
 
--   Save a new certificate by using the `Save()` method of the
-    [Tizen.Security.SecureRepository.CertificateManager](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Security_1_1SecureRepository_1_1CertificateManager.html)
-    class:
-
-    ``` {.prettyprint}
+    ``` 
     using System.Text;
 
     string certPem = "-----BEGIN CERTIFICATE-----\n" +
@@ -278,10 +234,9 @@ manager:
     }
     ```
 
-- Get a specific certificate with a given alias by using the `Get()`
-    method:
+-   Get a specific certificate with a given alias by using the `Get()` method:
 
-    ``` {.prettyprint}
+    ``` 
     string alias = "C#API_CERT_TEST";
 
     try
@@ -294,10 +249,9 @@ manager:
     }
     ```
 
-- Get the entire list of certificate aliases the client has access to
-    by using the `GetAliases()` method:
+-   Get the entire list of certificate aliases the client has access to by using the `GetAliases()` method:
 
-    ``` {.prettyprint}
+    ``` 
     try
     {
         IEnumerable<string> aliases = CertificateManager.GetAliases();
@@ -308,9 +262,9 @@ manager:
     }
     ```
 
-- Remove the certificate using the `RemoveAlias()` method:
+-   Remove the certificate using the `RemoveAlias()` method:
 
-    ``` {.prettyprint}
+    ``` 
     string alias = "C#API_CERT_TEST";
 
     try
@@ -323,17 +277,14 @@ manager:
     }
     ```
 
-
-Saving, Getting, or Removing Data <a id="save_get_remove_data"></a>
----------------------------------
+<a name="save_get_remove_data"></a>	
+## Saving, Getting, or Removing Data
 
 To store, retrieve, or remove a client's data from the key manager:
 
--   Save new data using the `Save()` method of the
-    [Tizen.Security.SecureRepository.DataManager](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Security_1_1SecureRepository_1_1DataManager.html)
-    class:
+-   Save new data using the `Save()` method of the [Tizen.Security.SecureRepository.DataManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.DataManager.html) class:
 
-    ``` {.prettyprint}
+    ``` 
     using System;
 
     string alias = "C#API_DATA_TEST";
@@ -353,10 +304,9 @@ To store, retrieve, or remove a client's data from the key manager:
     }
     ```
 
-- Get a specific item of data with a given alias by using the `Get()`
-    method:
+-   Get a specific item of data with a given alias by using the `Get()` method:
 
-    ``` {.prettyprint}
+    ``` 
     string alias = "C#API_KEY_TEST";
 
     try
@@ -369,10 +319,9 @@ To store, retrieve, or remove a client's data from the key manager:
     }
     ```
 
-- Get the entire list of data aliases the client has access to by
-    using the `GetAliases()` method:
+-   Get the entire list of data aliases the client has access to by using the `GetAliases()` method:
 
-    ``` {.prettyprint}
+    ``` 
     try
     {
         IEnumerable<string> aliases = DataManager.GetAliases();
@@ -383,9 +332,9 @@ To store, retrieve, or remove a client's data from the key manager:
     }
     ```
 
-- Remove the item of data using the `RemoveAlias()` method:
+-   Remove the item of data using the `RemoveAlias()` method:
 
-    ``` {.prettyprint}
+    ``` 
     string alias = "C#API_KEY_TEST";
 
     try
@@ -398,19 +347,16 @@ To store, retrieve, or remove a client's data from the key manager:
     }
     ```
 
+<a name="creating_keys"></a>	
+## Creating Keys
 
-Creating Keys <a id="creating_keys"></a>
--------------
-
-You can create 4 kinds of keys or key pairs with the
-[Tizen.Security.SecureRepository.KeyManager](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Security_1_1SecureRepository_1_1KeyManager.html)
-class: RSA, ECDSA, DSA, and AES.
+You can create 4 kinds of keys or key pairs with the [Tizen.Security.SecureRepository.KeyManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.KeyManager.html) class: RSA, ECDSA, DSA, and AES.
 
 To create keys:
 
 -   Create an RSA key pair using the `CreateRsaKeyPair()` method:
 
-    ``` {.prettyprint}
+    ``` 
     string aliasPrivate = "C#API_KEY_PRIVATE";
     string aliasPublic = "C#API_KEY_PUBLIC";
     int size = 2048;
@@ -427,9 +373,9 @@ To create keys:
     }
     ```
 
-- Create an ECDSA key pair using the `CreateEcdsaKeyPair()` method:
+-   Create an ECDSA key pair using the `CreateEcdsaKeyPair()` method:
 
-    ``` {.prettyprint}
+    ``` 
     string aliasPrivate = "C#API_KEY_PRIVATE";
     string aliasPublic = "C#API_KEY_PUBLIC";
     EllipticCurveType type = EllipticCurveType.Prime256V1;
@@ -446,9 +392,9 @@ To create keys:
     }
     ```
 
-- Create an DSA key pair using the `CreateDsaKeyPair()` method:
+-   Create an DSA key pair using the `CreateDsaKeyPair()` method:
 
-    ``` {.prettyprint}
+    ``` 
     string aliasPrivate = "C#API_KEY_PRIVATE";
     string aliasPublic = "C#API_KEY_PUBLIC";
     int size = 2048;
@@ -465,9 +411,9 @@ To create keys:
     }
     ```
 
-- Create an AES key by using the `CreateAesKey()` method:
+-   Create an AES key by using the `CreateAesKey()` method:
 
-    ``` {.prettyprint}
+    ``` 
     string alias = "C#API_KEY_TEST";
 
     try
@@ -481,17 +427,14 @@ To create keys:
     }
     ```
 
-
-Creating and Verifying Signatures <a id="create_verify_sigs"></a>
----------------------------------
+<a name="create_verify_sigs"></a>	
+## Creating and Verifying Signatures 
 
 To create and verify a signature:
 
-1.  Create an RSA key pair with the `CreateRsaKeyPair()` method of the
-    [Tizen.Security.SecureRepository.KeyManager](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Security_1_1SecureRepository_1_1KeyManager.html)
-    class:
+1.  Create an RSA key pair with the `CreateRsaKeyPair()` method of the [Tizen.Security.SecureRepository.KeyManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.KeyManager.html) class:
 
-    ``` {.prettyprint}
+    ``` 
     string aliasPrivate = "C#API_KEY_PRIVATE";
     string aliasPublic = "C#API_KEY_PUBLIC";
     int size = 2048;
@@ -508,11 +451,9 @@ To create and verify a signature:
     }
     ```
 
-2. Create the signature as a new instance of the
-    [Tizen.Security.SecureRepository.Crypto.Signature](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Security_1_1SecureRepository_1_1Crypto_1_1Signature.html)
-    class:
+2.  Create the signature as a new instance of the [Tizen.Security.SecureRepository.Crypto.Signature](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.Crypto.Signature.html) class:
 
-    ``` {.prettyprint}
+    ``` 
     using System;
 
     byte[] message = new byte[16];
@@ -531,17 +472,15 @@ To create and verify a signature:
         var signature = new SecureRepository.Crypto.Signature(rsaParam);
     ```
 
-3. Sign the message with the `Sign()` method of the
-    `Tizen.Security.SecureRepository.Crypto.Signature` class:
+3.  Sign the message with the `Sign()` method of the `Tizen.Security.SecureRepository.Crypto.Signature` class:
 
-    ``` {.prettyprint}
+    ``` 
         var sig = signature.Sign(aliasPrivate, null, message);
     ```
 
-4. Verify the signature with the `Verify()` method of the
-    `Tizen.Security.SecureRepository.Crypto.Signature` class:
+4.  Verify the signature with the `Verify()` method of the `Tizen.Security.SecureRepository.Crypto.Signature` class:
 
-    ``` {.prettyprint}
+    ``` 
         bool valid = signature.Verify(aliasPublic, null, message, sig);
     }
     catch (Exception e)
@@ -550,22 +489,16 @@ To create and verify a signature:
     }
     ```
 
+<a name="cert_chain"></a>
+## Verifying and Returning a Certificate Chain 
 
-Verifying and Returning a Certificate Chain <a id="cert_chain"></a>
--------------------------------------------
-
-The certificate manager verifies a certificate chain and returns it. The
-trusted root certificate of the chain must exist in the system
-certificate storage or be specified in the parameters.
+The certificate manager verifies a certificate chain and returns it. The trusted root certificate of the chain must exist in the system certificate storage or be specified in the parameters.
 
 To handle certificate chains:
 
--   Verify and return a certificate chain using the
-    `GetCertificateChain()` method of the
-    [Tizen.Security.SecureRepository.CertificateManager](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Security_1_1SecureRepository_1_1CertificateManager.html)
-    class:
+-   Verify and return a certificate chain using the `GetCertificateChain()` method of the [Tizen.Security.SecureRepository.CertificateManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.CertificateManager.html) class:
 
-    ``` {.prettyprint}
+    ``` 
     string certPath = "/tmp/ckmc_leaf_cert.pem";
     string certIntermediatePath = "/tmp/ckmc_intermediate_cert.pem";
 
@@ -583,11 +516,9 @@ To handle certificate chains:
     }
     ```
 
-- Verify and return a certificate chain using trusted CA certificates
-    in exactly the same way, by passing the additional list of trusted
-    certificates to the `GetCertificateChain()` method as a parameter:
+-   Verify and return a certificate chain using trusted CA certificates in exactly the same way, by passing the additional list of trusted certificates to the `GetCertificateChain()` method as a parameter:
 
-    ``` {.prettyprint}
+    ``` 
     string certPath = "/tmp/ckmc_leaf_cert.pem";
     string certIntermediatePath = "/tmp/ckmc_intermediate_cert.pem";
     string certRootPath = "/tmp/ckmc_root_cert.pem";
@@ -611,22 +542,16 @@ To handle certificate chains:
     }
     ```
 
+<a name="load_file"></a>	
+## Loading a Certificate File or a PKCS\#12 File
 
-Loading a Certificate File or a PKCS\#12 File <a id="load_file"></a>
----------------------------------------------
-
-You can load a certificate from a file in the DER or PEM formats. The
-secure repository can also load a private key, certificate, or chain of
-CA certificates from a PKCS\#12 file.
+You can load a certificate from a file in the DER or PEM formats. The secure repository can also load a private key, certificate, or chain of CA certificates from a PKCS\#12 file.
 
 To load files:
 
--   Load a certificate from an external file with the `Load()` method of
-    the
-    [Tizen.Security.SecureRepository.Certificate](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Security_1_1SecureRepository_1_1Certificate.html)
-    class:
+-   Load a certificate from an external file with the `Load()` method of the [Tizen.Security.SecureRepository.Certificate](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.Certificate.html) class:
 
-    ``` {.prettyprint}
+    ``` 
     string certPath = "/tmp/ckmc_test_cert.pem";
 
     try
@@ -639,12 +564,9 @@ To load files:
     }
     ```
 
-- Load keys, certificates, or certificate chains from a PKCS\#12 file
-    by using the `Load()` method of the
-    [Tizen.Security.SecureRepository.Pkcs12](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Security_1_1SecureRepository_1_1Pkcs12.html)
-    class:
+-   Load keys, certificates, or certificate chains from a PKCS\#12 file by using the `Load()` method of the [Tizen.Security.SecureRepository.Pkcs12](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.Pkcs12.html) class:
 
-    ``` {.prettyprint}
+    ``` 
     string p12Path = "/tmp/ckmc_test_pkcs.p12";
     string p12Pass = "password";
 
@@ -662,21 +584,16 @@ To load files:
     }
     ```
 
+<a name="access_control"></a>	
+## Implementing Access Control 
 
-Implementing Access Control <a id="access_control"></a>
----------------------------
-
-Each client can adjust access control rules for their own data,
-certificates, and keys.
+Each client can adjust access control rules for their own data, certificates, and keys.
 
 To implement access control rules:
 
-1.  Store the data for which you want to define access control rules by
-    using the `Save()` method of the
-    [Tizen.Security.SecureRepository.DataManager](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Security_1_1SecureRepository_1_1DataManager.html)
-    class:
+1.  Store the data for which you want to define access control rules by using the `Save()` method of the [Tizen.Security.SecureRepository.DataManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.DataManager.html) class:
 
-    ``` {.prettyprint}
+    ``` 
     using System;
     using System.Text;
 
@@ -695,17 +612,10 @@ To implement access control rules:
     }
     ```
 
-2. Set access control rules:
-    -   Set a rule for a client application with the
-        "other\_package\_id" package ID to give it permission to read or
-        remove the data. Use the `SetPermission()` method of the
-        [Tizen.Security.SecureRepository.Manager](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Security_1_1SecureRepository_1_1Manager.html)
-        class, and define the permissions in the third parameter by
-        using the
-        [Tizen.Security.SecureRepository.Permission](https://developer.tizen.org/dev-guide/csapi/namespaceTizen_1_1Security_1_1SecureRepository.html#a7b6d45c4d50c65f74aa95f01ee754483)
-        enumeration values:
+2.  Set access control rules:
+    -   Set a rule for a client application with the "other\_package\_id" package ID to give it permission to read or remove the data. Use the `SetPermission()` method of the [Tizen.Security.SecureRepository.Manager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.Manager.html) class, and define the permissions in the third parameter by using the [Tizen.Security.SecureRepository.Permission](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.Permission.html) enumeration values:
 
-        ``` {.prettyprint}
+        ``` 
         try
         {
             Manager.SetPermission(alias, "other_package_id", (int) Permission.Read | (int) Permission.Remove);
@@ -716,11 +626,9 @@ To implement access control rules:
         }
         ```
 
-    - Set a rule for the same client application as above to deny it
-        permission to access the data. In the`SetPermission()` method,
-        set the third parameter to `None`:
+    -   Set a rule for the same client application as above to deny it permission to access the data. In the `SetPermission()` method, set the third parameter to `None`:
 
-        ``` {.prettyprint}
+        ``` 
         try
         {
             Manager.SetPermission(alias, "other_package_id", (int) Permission.None);
@@ -730,3 +638,4 @@ To implement access control rules:
             /// Error handling
         }
         ```
+

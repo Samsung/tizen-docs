@@ -7,10 +7,6 @@ The sound manager allows you to control the audio behavior of your application.
 
 The main features of the Sound Manager API include:
 
-- Setting sound session types
-
-  You can [set the sound session type](#set), which specifies the behavior of your application sound across the system.
-
 - Controlling the volume
 
   You can [control the output volume](#manage) by managing the sound type and its volume level.
@@ -19,9 +15,17 @@ The main features of the Sound Manager API include:
 
   You can [use the query functions](#query_device) to get various information, such as the state of the sound devices.
 
-- Managing sound session parameters
+- Creating a sound stream information handle
 
-  You can [retrieve and set basic sound session parameters](#session) to control the audio behavior of your application.
+  You can [create a sound stream information handle](#stream_policy) for your application's sound stream, specifying the behavior of the sound stream across the system, and allowing stream playback and recording APIs to access it.
+
+- Managing stream focus
+
+  You can [control the focus](#stream_focus) of your sound stream.
+
+- Controlling manual stream routing
+
+  You can manually [route your stream](#stream_routing) to a specific device.
 
 ## Prerequisites
 
@@ -31,80 +35,30 @@ To use the functions and data types of the Sound Manager API (in [mobile](../../
 #include <sound_manager.h>
 ```
 
-## Setting the Sound Session Type
-
-The Sound Manager API offers 5 different sound session types: media, alarm, notification, emergency and VOIP. According to these types, your application's audio works in a specific way to mix with sounds of other applications or to respond to an audio interruption made by another application.
-
-The alarm, notification, emergency, and VOIP sessions are prioritized over the media session. For example, when an alarm is activated while you are playing a media file, the system pauses the media session, and the alarm session gets the permission to play its sound.
-
-You can set options for how to start a new media session or respond to an audio interruption during an active media session using the `sound_session_option_for_start_e` (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SOUND__MANAGER__SESSION__MODULE.html#ga26a030df874992a461af04255c6c3eef) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__SOUND__MANAGER__SESSION__MODULE.html#ga26a030df874992a461af04255c6c3eef) applications) and `sound_session_option_for_during_play_e` (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SOUND__MANAGER__SESSION__MODULE.html#ga132bd49bd7d0f5037cc292f9c7ad1c32) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__SOUND__MANAGER__SESSION__MODULE.html#ga132bd49bd7d0f5037cc292f9c7ad1c32) applications) enumerators. A media session is not able to interrupt or block the other types of sound sessions, no matter what options you have set.
-
-You can also set options for resuming the media session when the interruption ends by using the `sound_session_option_for_resumption_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SOUND__MANAGER__SESSION__MODULE.html#ga20d1d7fa84dc322f03b58d42806cd9d9) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__SOUND__MANAGER__SESSION__MODULE.html#ga20d1d7fa84dc322f03b58d42806cd9d9) applications). The sound system notifies the media session when the interruption ends, and you are able to resume your session.
-
-To set the sound session type for your application and monitor sound session interruptions:
-
-1. Set the sound session type using the `sound_manager_set_session_type()` function. The parameter defines the sounds session type using the `sound_session_type_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SOUND__MANAGER__SESSION__MODULE.html#ga125699870d48881ea153a4fce7140958) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__SOUND__MANAGER__SESSION__MODULE.html#ga125699870d48881ea153a4fce7140958) applications).
-
-   ```
-   int error_code;
-
-   error_code = sound_manager_set_session_type(SOUND_SESSION_TYPE_MEDIA);
-   ```
-
-   The function sets the type across the system.
-
-2. To receive a notification whenever the sound session is interrupted:
-
-   1. Register a callback using the `sound_manager_set_session_interrupted_cb()` function:
-
-      ```
-      error_code = sound_manager_set_session_interrupted_cb(_sound_session_interrupted_cb, NULL);
-      ```
-
-   2. Define the session interrupt callback. The first parameter defines the interruption source using the `sound_session_interrupted_code_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SOUND__MANAGER__SESSION__MODULE.html#ga9d7c723a05f1eab1b1d535bfad527b93) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__SOUND__MANAGER__SESSION__MODULE.html#ga9d7c723a05f1eab1b1d535bfad527b93) applications).
-
-      ```
-      static void
-      sound_session_interrupted_cb(sound_session_interrupted_code_e code, void *user_data)
-      {
-          if (code == SOUND_SESSION_INTERRUPTED_BY_MEDIA)
-              /* Session interrupted by media application, handle accordingly */
-          if (code == SOUND_SESSION_INTERRUPTED_COMPLETED)
-              /* Interruption completed, handle accordingly */
-      }
-      ```
-
-   3. When no longer needed, deregister the callback:
-
-      ```
-      error_code = sound_manager_unset_session_interrupted_cb();
-      ```
 
 ## Controlling the Volume
 
-You can manage the volume level of a particular sound type. With the Sound Manager API, you can set and get a volume level and a maximum volume level of a particular sound type.
+You can manage the volume level of a particular sound type. With the Sound Manager API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) applications), you can set and get a volume level and a maximum volume level of a particular sound type.
 
-Normally, if there is an active output stream, the `sound_manager_get_current_sound_type()` function returns the sound type of that stream, and if not, it returns an error message. However, you can set a particular sound type as current using the `sound_manager_set_current_sound_type()` function. This enables other applications, such as a volume application, to manage the volume level of the particular sound type even though it is not currently playing.
-
-**Note**
-Setting the current sound type affects the entire system. When no longer needed, unset the current sound type using the `sound_manager_unset_current_sound_type()` function.
+Normally, if there is an active output stream, the `sound_manager_get_current_sound_type()` function returns the sound type of that stream, and if not, it returns an error message.
 
 To control the volume of your application:
 
 1. To receive a notification whenever the volume changes:
 
-   1. Register a callback using the `sound_manager_set_volume_changed_cb()` function:
+   1. Register a callback using the `sound_manager_add_volume_changed_cb()` function:
 
       ```
-      error_code = sound_manager_set_volume_changed_cb(_sound_manager_volume_changed_cb, NULL);
+      int id;
+      int error_code;
+
+      error_code = sound_manager_add_volume_changed_cb(_sound_manager_volume_changed_cb, NULL, &id);
       ```
 
    2. Define the volume change callback. When the volume changes, use the callback to determine which sound type has changed and what the new volume level is.
 
       ```
       #define MBUF 128
-
-      int error_code;
 
       static void
       _sound_manager_volume_changed_cb(sound_type_e type, unsigned int volume, void* user_data)
@@ -123,15 +77,11 @@ To control the volume of your application:
 
    ```
    int ret;
-   sound_session_type_e type = SOUND_SESSION_TYPE_MEDIA;
-
    int cur_vol = 0;
-
-   ret = sound_manager_get_volume(type, &cur_vol);
-
    int max_vol = 0;
 
-   ret = sound_manager_get_max_volume(type, &max_vol);
+   ret = sound_manager_get_volume(SOUND_TYPE_MEDIA, &cur_vol);
+   ret = sound_manager_get_max_volume(SOUND_TYPE_MEDIA, &max_vol);
    ```
 
 3. To set the volume level, use the `sound_manager_set_volume()` function.
@@ -140,7 +90,6 @@ To control the volume of your application:
 
    ```
    int ret;
-   sound_session_type_e type = SOUND_SESSION_TYPE_MEDIA;
    int value;
 
    /*
@@ -148,16 +97,16 @@ To control the volume of your application:
       by using the sound_manager_get_max_volume() function
    */
 
-   ret = sound_manager_set_volume(type, value);
+   ret = sound_manager_set_volume(SOUND_TYPE_MEDIA, value);
    ```
 
 ## Querying Sound Devices
 
 The audio behavior of your application must change depending on the sound devices that are connected.
 
-Use the `sound_manager_get_current_device_list()` function to get the list handle of the currently connected sound devices. With the sequential search of this device list, you can get the device handle of each device on the list. You can use the `sound_manager_get_next_device()` and `sound_manager_get_prev_device()` functions for a sequential search of the device list.
+Use the `sound_manager_get_device_list()` function to get the list handle of the currently connected sound devices. With the sequential search of this device list, you can get the device handle of each device on the list. You can use the `sound_manager_get_next_device()` and `sound_manager_get_prev_device()` functions for a sequential search of the device list.
 
-To get a notification when the sound device connection or information has changed, register the `sound_manager_set_device_connected_cb()` and `sound_manager_set_device_information_changed_cb()` callbacks. The initial state of the connected sound device is deactivated.
+To get a notification when the sound device connection has changed, register a callback using the `sound_manager_add_device_connection_changed_cb()` function.
 
 To query sound device information:
 
@@ -177,7 +126,7 @@ To query sound device information:
 
    2. Retrieve the sound device list handle and sound device handles.
 
-      To query sound device information, you need a list of currently connected sound devices and a handle for each sound device you want query. To retrieve the list handle, use the `sound_manager_get_current_device_list()` function. To retrieve the sound device handles, use `sound_manager_get_next_device()` and `sound_manager_get_prev_device()` functions with the list handle as a parameter.
+      To query sound device information, you need a list of currently connected sound devices and a handle for each sound device you want to query. To retrieve the list handle, use the `sound_manager_get_device_list()` function. To retrieve the sound device handles, use `sound_manager_get_next_device()` and `sound_manager_get_prev_device()` functions with the list handle as a parameter.
 
       ```
       sound_device_list_h list;
@@ -185,18 +134,17 @@ To query sound device information:
       sound_device_type_e type;
       sound_device_io_direction_e direction;
 
-      ret = sound_manager_get_current_device_list(mask, &list);
+      ret = sound_manager_get_device_list(mask, &list);
       ```
 
    3. Retrieve the sound device information.
 
       With the device handle, you can query the sound device information with the following functions:
 
-      - `sound_manger_get_device_type()`: To get the device type.
+      - `sound_manager_get_device_type()`: To get the device type.
       - `sound_manager_get_device_io_direction()`: To get the device IO direction.
       - `sound_manager_get_device_id()`: To get the device ID.
       - `sound_manager_get_device_name()`: To get the device name.
-      - `sound_manager_get_device_state()`: To get the device state.
 
       When calling the query functions, use the sound device handle as the first parameter (input) and the device information type enumerator as the second parameter (output).
 
@@ -219,24 +167,34 @@ To query sound device information:
           /* End of the available devices, handle accordingly */
       ```
 
+   4. Free the sound device list handle.
+
+      When you are done retrieving all the devices, free the device list handle and all the list members with the `sound_manager_free_device_list()` function:
+
+      ```
+      ret = sound_manager_free_device_list(list);
+      if (ret != SOUND_MANAGER_ERROR_NONE)
+          /* Failed to free the device list*/
+      ```
+
 2. To receive a notification whenever the sound device connection state changes:
 
-   1. Register a callback using the `sound_manager_set_device_connected_cb()` function. Use the mask to filter the callback information.
+   1. Register a callback using the `sound_manager_add_device_connection_changed_cb()` function. Use the mask to filter the callback information.
 
       ```
       mask = SOUND_DEVICE_IO_DIRECTION_OUT_MASK | SOUND_DEVICE_IO_DIRECTION_BOTH_MASK;
 
-      ret = sound_manager_set_device_connected_cb(mask, _sound_device_connected_cb, NULL);
+      ret = sound_manager_add_device_connection_changed_cb(mask, _sound_device_connection_changed_cb, NULL);
       ```
 
-      **Note**
-      The initial state of the connected sound device is deactivated.
+      > **Note**  
+	  > The initial state of the internal sound device is connected.
 
-   2. Define the state change callback:
+   2. Define the connection state changed callback:
 
       ```
       static void
-      _sound_device_connected_cb(sound_device_h device, bool is_connected, void* user_data)
+      _sound_device_connection_changed_cb(sound_device_h device, bool is_connected, void* user_data)
       {
           int ret;
           sound_device_type_e type;
@@ -257,147 +215,158 @@ To query sound device information:
       }
       ```
 
-3. To receive a notification whenever the sound device information changes:
+## Creating a Sound Stream Handle
 
-   1. Register a callback using the `sound_manager_set_device_information_changed_cb()` function. Use the mask to filter the callback information.
+You can manage sound streams with sound stream information handles. Once a handle created, it is used in the stream playback and recording APIs, such as Player (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__PLAYER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__PLAYER__MODULE.html) applications), WAV Player (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__WAV__PLAYER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__WAV__PLAYER__MODULE.html) applications), and Audio I/O (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__AUDIO__IO__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__AUDIO_IO__MODULE.html) applications), to manage your sound streams. An application can have multiple stream information handles and each handle can have multiple sound streams.
 
-      ```
-      mask = SOUND_DEVICE_IO_DIRECTION_OUT_MASK | SOUND_DEVICE_IO_DIRECTION_BOTH_MASK;
+When you create the handle, you also set the sound stream type and [register a callback for sound stream focus changes](#stream_focus).
 
-      ret = sound_manager_set_device_information_changed_cb(mask,
-                                                            _sound_device_information_changed_cb,
-                                                            NULL);
-      ```
+The available sound stream types are defined in the `sound_stream_type_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SOUND__MANAGER__STREAM__POLICY__MODULE.html#gac33f64ee1b28af0529e2d0904c41e51f) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__SOUND__MANAGER__STREAM__POLICY__MODULE.html#gac33f64ee1b28af0529e2d0904c41e51f) applications). Fundamentally, the `SYSTEM`, `ALARM`, `NOTIFICATION`, `EMERGENCY`, `VOICE_INFORMATION`, and `RINGTONE_VOIP` types are treated as playback streams, and the `VOICE_RECOGNITION` type as a recording stream. The `MEDIA` type can be both a playback and a recording stream depending on how it is used, and the `VOIP` type has the characteristics of both playback and recording streams. The routing path and sound type of the sound stream are determined internally through the system based on the stream type.
 
-   2. Define the information change callback:
+As shown in the following table, the playback stream types are matched to sound types, which are used for volume control.
 
-      ```
-      static void
-      _sound_device_information_changed_cb(sound_device_h device,
-                                           sound_device_changed_info_e changed_info,
-                                           void* user_data)
-      {
-          int ret;
-          sound_device_type_e type;
-          sound_device_state_e state;
-          sound_device_io_direction_e direction;
+**Table: Corresponding sound type for each sound stream type**
 
-          ret = sound_manager_get_device_type(device, &type);
-          if (type == SOUND_DEVICE_BLUETOOTH) {
-              if (changed_info == SOUND_DEVICE_CHANGED_INFO_STATE) {
-                  ret = sound_manager_get_device_state(device, &state);
-                  if (state == SOUND_DEVICE_STATE_DEACTIVATED)
-                      /* Bluetooth device has been deactivated, handle accordingly */
-                  else
-                      /* Handle accordingly */
-              } else {
-                  ret = sound_manager_get_device_io_direction(device, &direction);
-                  if (direction == SOUND_DEVICE_IO_DIRECTION_OUT)
-                      /*
-                         IO direction of the Bluetooth device is now out,
-                         handle accordingly
-                      */
-                  else
-                      /* Handle accordingly */
-              }
-          } else {
-              /* Handle accordingly */
-          }
+| Sound stream type                     | Direction          | Sound type                |
+| ------------------------------------- | ------------------ | ------------------------- |
+| `SOUND_STREAM_TYPE_ALARM`             | Playback           | `SOUND_TYPE_ALARM`        |
+| `SOUND_STREAM_TYPE_MEDIA`             | Playback/recording | `SOUND_TYPE_MEDIA`        |
+| `SOUND_STREAM_TYPE_NOTIFICATION`      | Playback           | `SOUND_TYPE_NOTIFICATION` |
+| `SOUND_STREAM_TYPE_RINGTONE_VOIP`     | Playback           | `SOUND_TYPE_RINGTONE`     |
+| `SOUND_STREAM_TYPE_SYSTEM`            | Playback           | `SOUND_TYPE_SYSTEM`       |
+| `SOUND_STREAM_TYPE_VOICE_INFORMATION` | Playback           | `SOUND_TYPE_VOICE`        |
+| `SOUND_STREAM_TYPE_VOICE_RECOGNITION` | Recording          | N/A                       |
+| `SOUND_STREAM_TYPE_VOIP`              | Playback/recording | `SOUND_TYPE_VOIP`         |
+
+To create a sound stream information handle, use the `sound_manager_create_stream_information()` function:
+
+```
+int error_code;
+sound_stream_info_h stream_info;
+
+error_code = sound_manager_create_stream_information(SOUND_STREAM_TYPE_MEDIA, sound_stream_focus_state_changed_cb,
+                                                     NULL, &stream_info);
+```
+
+## Managing Stream Focus
+
+Setting a sound stream type and acquiring focus gives you more control over the audio behavior of your application. You have the authority to control the sound stream across the system.
+
+To activate a sound stream, you must acquire stream focus. Once focus has been acquired, you can start playing or recording sound. Acquiring stream focus is possible at any time after the stream information handle has been created. The Sound Manager offers stream focus for both playback and recording, allowing you to control the playback and recording streams independently. You can acquire both playback and recording focus for your stream at the same time.
+
+To manage stream focus:
+
+- Acquiring stream focus
+
+  Acquire stream focus for your sound stream using the `sound_manager_acquire_focus()` function. Pass the stream information handle you have created to specify for which sound stream you want to acquire the focus. Once the focus has been acquired, you can activate your sound stream.
+
+  To set the stream focus type, use the values of the `sound_stream_focus_mask_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SOUND__MANAGER__STREAM__POLICY__MODULE.html#ga7087e13ccf2fe610dd1a93b2226f2e72) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__SOUND__MANAGER__STREAM__POLICY__MODULE.html#ga7087e13ccf2fe610dd1a93b2226f2e72) applications).
+
+  ```
+  int error_code;
+  int behavior = SOUND_BEHAVIOR_NONE;
+
+  error_code = sound_manager_acquire_focus(stream_info, SOUND_STREAM_FOCUS_FOR_BOTH, behavior, NULL);
+  if (!error_code)
+      /* Activate your sound stream */
+  ```
+
+  Release the stream focus when you no longer need it by using the `sound_manager_release_focus()` function:
+
+  ```
+  /* Your sound stream has finished */
+  error_code = sound_manager_release_focus(stream_info, SOUND_STREAM_FOCUS_FOR_BOTH, behavior, NULL);
+  ```
+
+- Subscribing to the stream focus change notifications
+
+  To be informed when a stream focus change has occurred, define the `sound_stream_focus_state_changed_cb()` callback. The callback is registered when you [create the stream information handle](#stream_policy).
+
+  To get the current state of your stream focus within the callback, call the `sound_manager_get_focus_state()` function.
+
+  The following example uses a sound stream which has both playback and recording focus:
+
+  ```
+  static void
+  sound_stream_focus_state_changed_cb(sound_stream_info_h stream_info, sound_stream_focus_mask_e focus_mask,
+                                      sound_stream_focus_state_e focus_state, sound_stream_focus_change_reason_e reason_for_change,
+                                      int sound_behavior, const char *additional_info, void *user_data)
+  {
+      int error_code;
+      sound_stream_focus_state_e state_for_playback;
+      sound_stream_focus_state_e state_for_recording;
+
+      error_code = sound_manager_get_focus_state(stream_info, &state_for_playback, &state_for_recording);
+      if (!error_code) {
+          if (state_for_playback == SOUND_STREAM_FOCUS_STATE_RELEASED || state_for_recording == SOUND_STREAM_FOCUS_STATE_RELEASED)
+              /* Focus lost, pause/stop the sound stream */
+          if (state_for_playback == SOUND_STREAM_FOCUS_STATE_ACQUIRED && state_for_recording == SOUND_STREAM_FOCUS_STATE_ACQUIRED)
+              /* Focus regained, you can resume the sound stream */
       }
-      ```
+      printf("The stream focus changed by [%d]", reason_for_change);
+  }
+  ```
 
-## Managing Sound Session Parameters
+- Reacquiring focus
 
-To retrieve and set basic sound session parameters:
+  When a stream loses focus, it can reacquire it automatically. Focus reacquisition is enabled by default. To disable it, call the `sound_manager_set_focus_reacquisition()` function with the second parameter set to `false`.
 
-1. To receive a notification whenever the sound session is interrupted:
+  Consider the following example of 2 applications that both need to acquire playback focus to play their respective streams:
 
-   1. Register a callback using the `sound_manager_set_session_interrupted_cb()` function:
+  1. Initially, application A has acquired playback focus.
+  2. Application B requests to acquire playback focus. This releases the playback focus previously acquired by application A.
+  3. After application B requests to release playback focus, application A reacquires it automatically if the reacquisition property has been enabled in its stream information.
 
-      ```
-      sound_manager_set_session_interrupted_cb(_sound_session_interrupted_cb, NULL);
-      ```
+  To disable the reacquisition property:
 
-   2. Define the session interrupt callback. The first parameter defines the interruption source using the `sound_session_interrupted_code_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SOUND__MANAGER__SESSION__MODULE.html#ga9d7c723a05f1eab1b1d535bfad527b93) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__SOUND__MANAGER__SESSION__MODULE.html#ga9d7c723a05f1eab1b1d535bfad527b93) applications).
+  ```
+  bool enable;
+  sound_manager_get_focus_reacquisition(stream_info, &enable);
+  if (enable == true) {
+      enable = false;
+      sound_manager_set_focus_reacquisition(stream_info, enable);
+  }
+  ```
 
-      ```
-      void
-      _sound_session_interrupted_cb(sound_session_interrupted_code_e code, void* userdata)
-      {
-          dlog_print(DLOG_INFO, LOG_TAG, "Interrupt code: %d\n", code);
+## Controlling Manual Stream Routing
 
-          dlog_print(DLOG_INFO, LOG_TAG,
-                     "SOUND_SESSION_INTERRUPTED_COMPLETED %d | "\
-                     "SOUND_SESSION_INTERRUPTED_BY_MEDIA %d | "\
-                     "SOUND_SESSION_INTERRUPTED_BY_CALL %d | "\
-                     "SOUND_SESSION_INTERRUPTED_BY_EARJACK_UNPLUG %d | "\
-                     "SOUND_SESSION_INTERRUPTED_BY_RESOURCE_CONFLICT %d | "\
-                     "SOUND_SESSION_INTERRUPTED_BY_ALARM %d | "\
-                     "SOUND_SESSION_INTERRUPTED_BY_EMERGENCY %d | "\
-                     "SOUND_SESSION_INTERRUPTED_BY_NOTIFICATION %d\n\n",
+Stream routing means selecting a device for the stream. Each sound stream has a routing type, which can be automatic or manual:
 
-                     SOUND_SESSION_INTERRUPTED_COMPLETED,
-                     SOUND_SESSION_INTERRUPTED_BY_MEDIA,
-                     SOUND_SESSION_INTERRUPTED_BY_CALL,
-                     SOUND_SESSION_INTERRUPTED_BY_EARJACK_UNPLUG,
-                     SOUND_SESSION_INTERRUPTED_BY_RESOURCE_CONFLICT,
-                     SOUND_SESSION_INTERRUPTED_BY_ALARM,
-                     SOUND_SESSION_INTERRUPTED_BY_EMERGENCY,
-                     SOUND_SESSION_INTERRUPTED_BY_NOTIFICATION);
-      }
-      ```
+- In automatic stream routing, you cannot select a specific device. The Audio Framework controls automatic stream routing for all stream types, except `SOUND_STREAM_TYPE_VOIP` and `SOUND_STREAM_TYPE_MEDIA_EXTERNAL_ONLY`.
+- In manual stream routing, you must select a particular device to be used for the steam. Manual stream routing is done for the `SOUND_STREAM_TYPE_VOIP` and `SOUND_STREAM_TYPE_MEDIA_EXTERNAL_ONLY` stream types. To add a device for manual stream routing, use the `sound_manager_add_device_for_stream_routing()` function, and apply stream routing with the `sound_manager_apply_stream_routing()` function.
 
-2. Manage the session type.
+To add an external USB device for stream routing:
 
-   To start a sound session, this use case uses the Tone Player API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html) applications). For more information, see the [Tone Player](media_playback_n.htm#tone).
-
-   To determine and change the session type, use the following functions. The `sound_session_type_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SOUND__MANAGER__SESSION__MODULE.html#ga125699870d48881ea153a4fce7140958) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__SOUND__MANAGER__SESSION__MODULE.html#ga125699870d48881ea153a4fce7140958) applications) defines the available sound session types.
+1. Create a stream information handle with the `sound_manager_create_information()` function and a device list with the `sound_manager_get_device_list()` function:
 
    ```
-   #include <tone_player.h>
-   int id;
-   sound_session_type_e type;
+   int ret;
+   sound_device_list_h device_list;
+   sound_device_h device;
+   sound_device_type_e type;
 
-   tone_player_start(TONE_TYPE_ANSI_DIAL, SOUND_SESSION_TYPE_MEDIA, 10000, &id);
-
-   sound_manager_get_session_type(&type);
-
-   dlog_print(DLOG_INFO, LOG_TAG, "-Session type %d:\n"
-              "SOUND_SESSION_TYPE_MEDIA %d | "\
-              "SOUND_SESSION_TYPE_ALARM %d | "\
-              "SOUND_SESSION_TYPE_NOTIFICATION %d | "\
-              "SOUND_SESSION_TYPE_EMERGENCY %d \n",
-              type,
-              SOUND_SESSION_TYPE_MEDIA,
-              SOUND_SESSION_TYPE_ALARM,
-              SOUND_SESSION_TYPE_NOTIFICATION,
-              SOUND_SESSION_TYPE_EMERGENCY);
-
-   sound_manager_set_session_type(SOUND_SESSION_TYPE_NOTIFICATION);
+   ret = sound_manager_create_stream_information(SOUND_STREAM_TYPE_MEDIA_EXTERNAL_ONLY, focus_cb,
+                                                 cb_userdata, &stream_info);
+   ret = sound_manager_get_device_list(SOUND_DEVICE_IO_DIRECTION_IN_MASK, &device_list);
    ```
 
-3. Manage the session options.
-
-   To specify the sound session behavior at playback start, during playback, and after an interruption, use the following functions:
+2. Go through the device list to find the external USB device, then add it to the stream information handle with the `sound_manager_add_device_for_stream_routing()` function and apply the manual stream routing with the `sound_manager_apply_stream_routing()` function:
 
    ```
-   sound_session_option_for_starting_e start;
-   sound_session_option_for_during_play_e play;
-   sound_session_option_for_resumption_e res;
-
-   sound_manager_get_media_session_option(&start, &play);
-   sound_manager_get_media_session_resumption_option(&res);
-
-   sound_manager_set_media_session_option(SOUND_SESSION_OPTION_PAUSE_OTHERS_WHEN_START,
-                                          SOUND_SESSION_OPTION_INTERRUPTIBLE_DURING_PLAY);
-
-   sound_manager_set_media_session_resumption_option(SOUND_SESSION_OPTION_RESUMPTION_BY_SYSTEM_OR_MEDIA_PAUSED);
+   while (!(ret = sound_manager_get_next_device(device_list, &device))) {
+       ret = sound_manager_get_device_type(device, &type);
+       ret = sound_manager_get_device_io_direction(device, &direction);
+       if (/* Device type is USB */) {
+           ret = sound_manager_add_device_for_stream_routing(stream_info, device);
+           ret = sound_manager_apply_stream_routing(stream_info);
+           break;
+       }
+   }
    ```
 
-   The `sound_session_option_for_starting_e` (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SOUND__MANAGER__SESSION__MODULE.html#ga26a030df874992a461af04255c6c3eef) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__SOUND__MANAGER__SESSION__MODULE.html#ga26a030df874992a461af04255c6c3eef) applications), `sound_session_option_for_during_play_e` (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SOUND__MANAGER__SESSION__MODULE.html#ga132bd49bd7d0f5037cc292f9c7ad1c32) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__SOUND__MANAGER__SESSION__MODULE.html#ga132bd49bd7d0f5037cc292f9c7ad1c32) applications), and `sound_session_option_for_resumption_e` (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SOUND__MANAGER__SESSION__MODULE.html#ga20d1d7fa84dc322f03b58d42806cd9d9) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__SOUND__MANAGER__SESSION__MODULE.html#ga20d1d7fa84dc322f03b58d42806cd9d9)applications) enumerations define the available sound session options.
-
-4. After you no longer need the session interrupt callback, deregister it:
+3. Once you have applied the stream routing, free the device list with the `sound_manager_free_device_list()` function:
 
    ```
-   sound_manager_unset_session_interrupted_cb();
+   /* Free the device list */
+   sound_manager_free_device_list(device_list);
    ```

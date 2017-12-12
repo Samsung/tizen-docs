@@ -10,7 +10,7 @@ The index component gives you an index for quick access to a group of other UI i
 
 In the default theme, the index component is a one-finger-wide area on the right side of the index component's container. Generally, it is used together with lists, generic lists, or generic grids.
 
-For more information, see the [Index](../../../../../org.tizen.native.wearable.apireference/group__Index.html) API.
+For more information, see the [Index](../../../../../org.tizen.native.wearable.apireference/group__Elm__Index.html) API.
 
 **Figure: Index component**
 
@@ -74,9 +74,8 @@ To receive notifications about the index events, listen for the following signal
 - `level,up`: The user moves a finger from the first level to the second level.
 - `level,down`: The user moves a finger from the second level to the first level.
 
-**Note**
-
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> **Note**
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 Register and define the associated callback to perform appropriate actions. For example, when the `selected` signal occurs, show a given area or child object depending on the selected index item:
 

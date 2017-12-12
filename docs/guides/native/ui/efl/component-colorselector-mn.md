@@ -4,7 +4,7 @@
 
 - Tizen 2.4 and Higher for Mobile
 
-The colorselector UI component allows users to select a color. For more information, see the [Colorselector](../../../../../org.tizen.native.mobile.apireference/group__Colorselector.html) API.
+The colorselector UI component allows users to select a color. For more information, see the [Colorselector](../../../../../org.tizen.native.mobile.apireference/group__Elm__Colorselector.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -123,10 +123,8 @@ You can register callback functions connected to the following signals for a col
 | `color,item,selected`    | The color item is pressed.               | The pressed color item      |
 | `color,item,longpressed` | The color item is long-pressed.          | The long-pressed color item |
 
-**Note**
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

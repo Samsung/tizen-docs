@@ -5,7 +5,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 3.0 and Higher for Wearable
 
-Tizen enables you to manage input device keys.
+You can manage input device keys.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -81,7 +81,8 @@ To gather information about the key by its name:
 
 When you want to react to input device key presses, register the applicable key using the `InputDeviceManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/inputdevice.html#InputDeviceManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/inputdevice.html#InputDeviceManager) applications). After registering the input device key, the application receives a DOM keyboard event when the key is pressed or released. When the events are no longer needed, deregister the key.
 
-​	**Note**	The application cannot register the mandatory keys (**ArrowLeft**, **ArrowRight**, **ArrowUp**, **ArrowDown**, **Enter**, and **Back**).
+> **Note**
+> The application cannot register the mandatory keys (**ArrowLeft**, **ArrowRight**, **ArrowUp**, **ArrowDown**, **Enter**, and **Back**).
 
 To manage input device keys, you must learn to change the action of a supported key:
 

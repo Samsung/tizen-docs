@@ -17,7 +17,8 @@ The main features of the XMLHttpRequest API include:
 
   To [send a cross-origin request](./w3c/communication/xmlhttprequest-w.md#Sending_Request), you must create an [XMLHttpRequest](http://www.w3.org/TR/2014/WD-XMLHttpRequest-20140130/#dom-xmlhttprequest) interface instance and use its `open()` method. Set the request URL method parameter as the cross-origin URL.
 
-  ​	**Note**	For the cross-origin request to work, [the authority for the external domain access must be set](./w3c/security/cors-w.md#Using_Simple_Requests) in the server belonging to the cross-origin URL.
+> **Note**
+> For the cross-origin request to work, [the authority for the external domain access must be set](./w3c/security/cors-w.md#Using_Simple_Requests) in the server belonging to the cross-origin URL.
 
 - Supporting various response types
 
@@ -50,7 +51,8 @@ To use the XML HTTP request features in your application, you must learn to send
    </script>
    ```
 
-   ​	**Note**	Cross-domain access only works if [the server allows the domain access of the client](./w3c/security/cors-w.md#Using_Simple_Requests).
+	> **Note**
+	> Cross-domain access only works if [the server allows the domain access of the client](./w3c/security/cors-w.md#Using_Simple_Requests).
 
 ### Source Code
 

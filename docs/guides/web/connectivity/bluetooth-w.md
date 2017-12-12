@@ -43,7 +43,7 @@ The main Bluetooth (4.0) Low Energy features include:
 
 - Managing the advertising options     
 
-  You can [manage advertising](./connectivity/bluetooth-w.md#Managing_Advertising) to control how your device announces itself to other Bluetooth Low Energy devices to be discovered.
+  You can [manage advertising](./connectivity/bluetooth-w.md#Managing_Advertising) to control how your device announces itself to other Bluetooth Low Energy devices for discovery.
 
 - Connecting to a Bluetooth Low Energy device     
 
@@ -195,7 +195,8 @@ To search for remote devices and get the known devices:
    adapter.discoverDevices(discoverDevicesSuccessCallback, null);
    ```
 
-   ​	**Note**	To allow other Bluetooth devices to find your device, you must set the device to be visible through the system settings.
+> **Note**
+> To allow other Bluetooth devices to find your device, you must set the device to be visible through the system settings.
 
 3. To retrieve known devices (which have been previously paired or searched for), use the `getKnownDevices()` method.
 
@@ -231,7 +232,8 @@ To create a bond with a Bluetooth device:
    adapter.createBonding('35:F4:59:D1:7A:03', onBondingSuccessCallback, onErrorCallback);
    ```
 
-   ​	**Note**	The MAC address of the Bluetooth device is a `BluetoothAddress` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bluetooth.html#BluetoothAddress) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/bluetooth.html#BluetoothAddress) applications). You can get the MAC address of the peer device from the `BluetoothDevice` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bluetooth.html#BluetoothDevice) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/bluetooth.html#BluetoothDevice) applications), which is returned in the success callback of the `BluetoothAdapter`'s `getKnownDevices()` and `discoverDevices()` methods.
+> **Note**
+> The MAC address of the Bluetooth device is a `BluetoothAddress` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bluetooth.html#BluetoothAddress) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/bluetooth.html#BluetoothAddress) applications). You can get the MAC address of the peer device from the `BluetoothDevice` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bluetooth.html#BluetoothDevice) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/bluetooth.html#BluetoothDevice) applications), which is returned in the success callback of the `BluetoothAdapter`'s `getKnownDevices()` and `discoverDevices()` methods.
 
 3. To end the bond with a remote device, use the `destroyBonding()` method:
 
@@ -257,7 +259,8 @@ To connect to services provided by a server device to the client devices:
    adapter.registerRFCOMMServiceByUUID(serviceUUID, 'My service');
    ```
 
-   ​	**Note**	For P2P communication between 2 instances of the same application, the UUID can be hard-coded in your application. To retrieve the UUID of a Bluetooth device, use the `BluetoothDevice` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bluetooth.html#BluetoothDevice) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/bluetooth.html#BluetoothDevice) applications). The object has an array of UUIDs available for the device.
+> **Note**
+> For P2P communication between 2 instances of the same application, the UUID can be hard-coded in your application. To retrieve the UUID of a Bluetooth device, use the `BluetoothDevice` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bluetooth.html#BluetoothDevice) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/bluetooth.html#BluetoothDevice) applications). The object has an array of UUIDs available for the device.
 
    When the service has been successfully registered, the `BluetoothServiceSuccessCallback` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bluetooth.html#BluetoothServiceSuccessCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/bluetooth.html#BluetoothServiceSuccessCallback) applications) is triggered.
 
@@ -364,7 +367,8 @@ To search for remote Bluetooth devices:
    }
    ```
 
-   ​	**Note**	To allow other Bluetooth devices to find your device, you must set the device to be visible through the system settings.	
+> **Note**
+> To allow other Bluetooth devices to find your device, you must set the device to be visible through the system settings.	
 
 2. Retrieve a `BluetoothLEAdapter` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bluetooth.html#BluetoothLEAdapter) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/bluetooth.html#BluetoothLEAdapter) applications) with the `getLEAdapter()` method of the `BluetoothManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bluetooth.html#BluetoothManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/bluetooth.html#BluetoothManager) applications):
 
@@ -412,7 +416,8 @@ To control what information is advertised by the device:
    }, 'LOW_LATENCY', connectable);
    ```
 
-   ​	**Note**	To learn how to make your mobile device visible to other Bluetooth devices, see [Managing the Local Bluetooth Adapter](./connectivity/bluetooth-w.md#Managing_BT_Adapter).
+> **Note**
+> To learn how to make your mobile device visible to other Bluetooth devices, see [Managing the Local Bluetooth Adapter](./connectivity/bluetooth-w.md#Managing_BT_Adapter).
 
 3. To disable the advertising, use the `stopAdvertise()` method of the `BluetoothLEAdapter` interface:
 

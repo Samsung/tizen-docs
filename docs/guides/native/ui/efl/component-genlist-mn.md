@@ -4,7 +4,7 @@
 
 - Tizen 2.4 and Higher for Mobile
 
-The genlist UI component displays a scrollable list of items. It allows you to manage a lot of items while still being fast and having a low memory footprint, as only visible items are allocated in the memory. For more information, see the [Genlist](../../../../../org.tizen.native.mobile.apireference/group__Genlist.html) API.
+The genlist UI component displays a scrollable list of items. It allows you to manage a lot of items while still being fast and having a low memory footprint, as only visible items are allocated in the memory. For more information, see the [Genlist](../../../../../org.tizen.native.mobile.apireference/group__Elm__Genlist.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -348,9 +348,8 @@ To manage the item selection, use the following functions:
 - `elm_genlist_selected_item_get()`: Retrieve the selected item.
 - `elm_genlist_selected_items_get()`: Retrieve the list of the currently selected items.
 
-**Note**
-
-The item selection comes with a highlight effect. If the user wants to cancel the highlight by touch off, you must cancel the select operation in the `select()` callback:
+> **Note**  
+> The item selection comes with a highlight effect. If the user wants to cancel the highlight by touch off, you must cancel the select operation in the `select()` callback:
 
 ```
 static void
@@ -466,6 +465,8 @@ You can register callback functions connected to the following signals for a gen
 | `pressed`              | The item is pressed by mouse down.       | `Elm_Object_Item` object that contains the pressed item |
 | `released`             | The item is released by mouse up.        | `Elm_Object_Item` object that contains the released item |
 
-**Note**The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-**Note**Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

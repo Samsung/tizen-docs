@@ -39,7 +39,8 @@ You can define various properties to control the elements within the coordinate 
 - `transform-style`This property defines the rendering of the inherited element in the 3D space. Animation property has been added in the example for easier comprehension.
 - `perspective`This property changes the perspective of the element being expressed. A 3D transform element must be used together with this property to emphasize the expression of the X axis.
 - `perspective-origin`This property defines the location facing the element.
-- `backface-visibility`This property defines whether the backface of the transformed element is expressed.
+- `backface-visibility`This property defines whether the backside of the transformed element is expressed.
+
 
 ```
 <head>
@@ -204,7 +205,7 @@ The following code snippet demonstrates how to implement a 3D transform. For a c
 
 ## Creating an Animation with Transforms
 
-To enhance the user experience of your application, you must learn to use transforms with animations. This example uses the animation from the [Creating a Logo Animation](./w3c/ui/animation-w.md#create) use case as a basis, and adds a more diverse visual effect to it with the `transform` property. In the modified animation:
+You can create an animation with transforms. The following example uses the animation from the [Creating a Logo Animation](animation_w.htm#create) use case as a basis, and adds a more diverse visual effect to it with the `transform` property. In the modified animation:
 
 - As in the original animation, no elements are initially shown on the screen.
 - The Tizen logo gradually appears in the middle of the screen, and as it moves to the right, it becomes smaller. With the `transform` property, the logo is made to rotate.
@@ -273,7 +274,8 @@ To enhance the user experience of your application, you must learn to use transf
       }
       ```
 
-      ​	**Note**	For a rotation, the image has to be carefully created to ensure the correct end result. The rotation occurs with the center of the element as the center. If the rotation center must be moved because the image center is not aligned, use the `transform-origin` property to adjust the rotation location.
+		> **Note**
+		> For a rotation, the image has to be carefully created to ensure the correct end result. The rotation occurs with the center of the element as the center. If the rotation center must be moved because the image center is not aligned, use the `transform-origin` property to adjust the rotation location.
 
    2. Create the keyframes for the first letter in the word "TIZEN". In the animation, due to the `translate3d()` and `rotateY()` methods, each letter transforms slightly from the right to the left as it comes in.![Animation](./media/css_transforms2.png)
 
@@ -344,7 +346,7 @@ For the complete source code related to this use case, see the following files:
 
 ## Creating Fade Animation Effects
 
-To enhance the user experience of your application, you must learn to use fade animation effects.
+You can create fade animation effects using a modal layer pop-up. The modal layer pop-up can be used to, for example, show enlarged thumbnail images or notice messages. The modal layer pop-up has the following basic properties:
 
 The modal layer pop-up can be used to, for example, show enlarged thumbnail images or notice messages. The modal layer pop-up has the following basic properties:
 
@@ -415,11 +417,13 @@ To create fade effects:
 
   In certain browsers, even if the style of only 1 layer is changed, the entire document is repainted. As the repainting takes only a moment, any animation effects that are supposed to happen cannot be executed in such a short time. This issue occurs frequently in Android™ with severe fragmentation.
 
-  ​	**Note**	If a new layer is created in Android 4.0X version, and if the fade effect is used, it only shows the initial value and the result value of the layer style.
+		> **Note**
+		> If a new layer is created in Android 4.0X version, and if the fade effect is used, it only shows the initial value and the result value of the layer style.
 
   To avoid such a situation to the maximum possible extent, CPU tasks must be reduced to the minimum, and it is better to use transition or animation that uses the internal timer of the browser.
 
-  ​	**Note**	When using 3D effects, `-webkit-transform: translateZ(0);` can be used to accelerate the hardware. However, since hardware acceleration support varies among operating systems and devices, the resulting effects can vary too. Moreover, on Android 2.1 or iOS 3.X and below, transitions and animations may not be realized.
+		> **Note**
+		> When using 3D effects, `-webkit-transform: translateZ(0);` can be used to accelerate the hardware. However, since hardware acceleration support varies among operating systems and devices, the resulting effects can vary too. Moreover, on Android 2.1 or iOS 3.X and below, transitions and animations may not be realized.
 
 - Create a modal layer pop-up using CSS3:
 
@@ -482,21 +486,23 @@ The following figures illustrate the difference in memory performance, when usin
 
 When the styles are applied using JavaScript, the UI thread is used to create the pop-up. The UI thread increases the usage of CPU memory in proportion to the number of pop-ups used.
 
-​	**Note**	Tizen provides remote debugging through the [JavaScript Debugger tool](../../../../org.tizen.studio/html/web_tools/web_inspector_w.htm).
+	> **Note**
+	> Tizen provides remote debugging through the [JavaScript Debugger tool](../../../../org.tizen.studio/html/web_tools/web_inspector_w.htm).
 
-​	**Note**	If CSS is used, the handling of JavaScript events and UI DOM operations becomes unnecessary, so the load of the UI thread decreases, and the usage of CPU memory decreases as well. However, CSS3 transitions cannot be applied to versions below Android 2.3 and for versions above iOS 4.3, which are still widely used, so attention is needed when distributing it to various devices.
+	> **Note**
+	> If CSS is used, the handling of JavaScript events and UI DOM operations becomes unnecessary, so the load of the UI thread decreases, and the usage of CPU memory decreases as well. However, CSS3 transitions cannot be applied to versions below Android 2.3 and for versions above iOS 4.3, which are still widely used, so attention is needed when distributing it to various devices.
 
 ## Using Hardware Acceleration
 
 The rendering performance of a Web application depends on both the Tizen platform and application design.
 
-In hardware acceleration, GPU is used to perform a method faster than is possible if the application is running on the CPU. It enhances the rendering performance in the dynamic objects used in Web applications.
+With hardware acceleration, the GPU is used to perform a method faster than is possible if the application is running on the CPU. It enhances the rendering performance in the dynamic objects used in Web applications.
 
 ### Using CSS Transition and 3D Transform
 
 To improve the rendering performance, separate moving elements to independent layers as much as possible. You can use CSS transition with the `-webkit-transition` CSS attribute, or 3D transform with the `-webkit-transform` attribute. For the best performance, set the `-webkit-transform` attribute to the 3D type.
 
-In all the following examples, a blue box moves from top left to bottom right for a second.
+In the following examples, a blue box moves from the top left diagonally downward for 1 second.
 
 **Figure: Blue box**
 
@@ -504,7 +510,7 @@ In all the following examples, a blue box moves from top left to bottom right fo
 
 - Use CPU painting: 
 
-  JavaScript performs CPU painting for a moving element for each frame at 16 ms interval using the `setTimeout()` method over the changing top-left coordinate. This approach does not use hardware acceleration, but only running on the CPU.
+  JavaScript performs CPU painting for a moving element for each frame at 16 ms interval using the `setTimeout()` method over the changing top-left coordinate. This approach does not use hardware acceleration, only the CPU.
 
   1. Construct the blue box and set its position on the screen:
 

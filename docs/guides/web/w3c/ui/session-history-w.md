@@ -31,7 +31,8 @@ Learning how to manage the session history enhances the user browsing experience
    </script>
    ```
 
-   ​	**Note**	The `pushState()` method accepts the `data`, `title`, and `url` (optional) parameters. The `title` parameter refers to the key value used to search for entries saved in the session history, and is currently ignored in all browsers.
+	> **Note**	
+	> The `pushState()` method accepts the `data`, `title`, and `url` (optional) parameters. The `title` parameter refers to the key value used to search for entries saved in the session history, and is currently ignored in all browsers.
 
 2. To update the entry details, use the `replaceState()` method:
 

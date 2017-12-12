@@ -168,7 +168,8 @@ main(int argc, char* argv[])
         dlog_print(DLOG_ERROR, LOG_TAG, "watch_app_main() failed. err = %d", ret);
 
     return ret;
-}```
+}
+```
 
 ## Managing System-related Callbacks
 
@@ -289,8 +290,8 @@ With the time handle, you can draw the UI for your watch application:
     ```
 3. When you no longer need the `watch_time_h` time handle, release it with the `watch_time_delete()` function.
 
-**Note**
-To draw the UI, use a single window that is returned by the `watch_app_get_elm_win()` function. Do not create additional windows. A stack of watch application windows gets corrupted, because the platform handles the watch application window in a special way.
+> **Note**  
+> To draw the UI, use a single window that is returned by the `watch_app_get_elm_win()` function. Do not create additional windows. A stack of watch application windows gets corrupted, because the platform handles the watch application window in a special way.
 
 ## Getting the Current Time
 

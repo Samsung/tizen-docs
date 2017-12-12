@@ -20,7 +20,7 @@ You can create a thumbnail from an input media file. The thumbnail can be a vide
 You can detect or generate various barcodes. You can also track how faces or image objects move in consecutive camera preview images as well as perceive faces or objects in still images.
 
 - [Audio Management](audio-n.md)
-You can control the audio behavior of the application. You can control the output volume and sound session types, and query various information from sound devices. You can also use OpenAL to specify the objects and operations in producing high-quality audio output.
+You can control the audio behavior of the application. You can control the output volume and sound session types, query various information from sound devices, and use sound pools. You can use OpenAL to specify the objects and operations in producing high-quality audio output.
 
 - [Media Playback](media-playback-n.md)
 You can manage the playback of different media file types. You can play audio and video files, and tones. You can also manage the state of the media player.

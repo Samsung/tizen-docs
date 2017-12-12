@@ -38,8 +38,8 @@ The Smartcard API is a reference implementation of the SIMalliance Open Mobile 3
 - Allocation style differs dramatically. The Open Mobile API can facilitate the memory management by calling the API twice (for an example, see section 6.3.1, Usage pattern, in the SIMalliance Open Mobile 3.0 API specification). However, Tizen Smartcard API does not follow this allocation style.
 - For the `SE Service` object management, Tizen provides functions for initialization and deinitialization.
 
-**Note**
-On some Tizen devices, after a specified time, the screen is automatically switched off and the CPU goes to the resting state. If this occurs during communication with the SE using the Smartcard API, the API may not function normally.To avoid the screen switching off and the CPU going to the resting state, use the [Device](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__DEVICE__MODULE.html) API to lock the device CPU (not the display):
+> **Note**  
+> On some Tizen devices, after a specified time, the screen is automatically switched off and the CPU goes to the resting state. If this occurs during communication with the SE using the Smartcard API, the API may not function normally.To avoid the screen switching off and the CPU going to the resting state, use the [Device](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__DEVICE__MODULE.html) API to lock the device CPU (not the display):
 ```
 #include <nfc.h>
 #include <device/power.h>

@@ -38,7 +38,8 @@ The main Web SQL database features include:
 
   For the properties that can be delivered with the `sqlError` object, see [Errors and exceptions](http://www.w3.org/TR/2010/NOTE-webdatabase-20101118/?cp=3_0_6_0_5_6#errors-and-exceptions).
 
-  ​**Note**	The Web SQL Database API is still in group note state, but Tizen supports it as it is already widely used in the industry.
+​> **Note*
+> The Web SQL Database API is still in group note state, but Tizen supports it as it is already widely used in the industry.
 
 ## Opening a Database Asynchronously
 
@@ -59,7 +60,8 @@ try {
 
 The method takes the following arguments: unique name of the database, expected version of the database to be opened (if an empty string is given any version can be loaded), display name, the estimated size of database (number of bytes), and, optionally, the database creation event handler.
 
-​	**Note**	The creation event handler is invoked only once if the database does not exist. There is no event handler for the database `opened` event.
+> **Note**
+> The creation event handler is invoked only once if the database does not exist. There is no event handler for the database `opened` event.
 
 ### Source Code
 
@@ -69,7 +71,7 @@ For the complete source code related to this use case, see the following file:
 
 ## Executing SQL Statements Asynchronously
 
-To provide users with SQL database features, you must learn to execute SQL statements asynchronously:
+To execute SQL statements asynchronously:
 
 1. In the Web SQL Database API, each SQL statement must be executed under a transaction. To create a transaction, use either `transaction()` or  `readTransaction()` method returned by the `openDatabase()` method:
 
@@ -83,7 +85,8 @@ To provide users with SQL database features, you must learn to execute SQL state
 
    The difference between the `transaction()` and `readTransaction()` methods is that the latter cannot be used with SQL statements that change the database (such as `INSERT`, `UPDATE`, `DELETE`, or `CREATE`).
 
-   ​	**Note**	When possible, use the `readTransaction()` to obtain better execution performance of SQL statements.
+> **Note**
+> When possible, use the `readTransaction()` to obtain better execution performance of SQL statements.
 
 2. To execute a SQL statement, use the `executeSql()` method. The SQL statement is the first parameter of the method and cannot contain SQL transaction statements (such as `BEGIN`, `END`, or `ROLLBACK`):
 
@@ -102,7 +105,8 @@ To provide users with SQL database features, you must learn to execute SQL state
    sqlTransaction.executeSql('SELECT * FROM tizenTable WHERE id=?', [value]);
    ```
 
-   ​	**Note**	Use an array to pass the arguments to secure SQL statements from SQL injection attacks.
+> **Note**
+> Use an array to pass the arguments to secure SQL statements from SQL injection attacks.
 
 ### Source Code
 
@@ -178,11 +182,12 @@ try {
 
 The method takes the following arguments: unique name of the database, expected version of the database to be opened (if an empty string is given any version can be loaded), display name, the estimated size of database (number of bytes), and, optionally, the database creation event handler.
 
-​	**Note**	The creation event handler is invoked only once if the database does not exist. There is no event handle for the database opened event but, in the synchronous database API, no other code is run until the database creation operation is completed.
+> **Note**
+> The creation event handler is invoked only once if the database does not exist. There is no event handle for the database opened event but, in the synchronous database API, no other code is run until the database creation operation is completed.
 
 ## Executing SQL Statements Synchronously
 
-To provide users with SQL database features, you must learn to execute SQL statements synchronously:
+TTo execute SQL statements synchronously:
 
 1. In the Web SQL Database API, each SQL statement must be executed under a transaction. To create a transaction, use either `transaction()` or  `readTransaction()` method returned by the `openDatabaseSync()` method:
 
@@ -196,7 +201,8 @@ To provide users with SQL database features, you must learn to execute SQL state
 
    The difference between the `transaction()` and `readTransaction()` methods is that the latter cannot be used with SQL statements that change the database (such as `INSERT`, `UPDATE`, `DELETE`, or `CREATE`).
 
-   ​	**Note**	When possible, use the `readTransaction()` to obtain better execution performance of SQL statements.
+> **Note**
+> When possible, use the `readTransaction()` to obtain better execution performance of SQL statements.
 
 2. To execute a SQL statement, use the `executeSql()` method. The SQL statement is the first parameter of the method and cannot contain SQL transaction statements (such as `BEGIN`, `END`, or `ROLLBACK`):
 
@@ -212,7 +218,8 @@ To provide users with SQL database features, you must learn to execute SQL state
                                                     ['Ulysses', 'James Joyce']);
    ```
 
-   ​	**Note**	Use an array to pass the arguments to secure SQL statements from SQL injection attacks.
+> **Note**
+> Use an array to pass the arguments to secure SQL statements from SQL injection attacks.
 
 ## Accessing SQL Results Synchronously
 
@@ -257,4 +264,5 @@ try {
 }
 ```
 
-​	**Note**	In the synchronous database API, the script execution is stopped until the transaction is completed.
+> **Note**
+> In the synchronous database API, the script execution is stopped until the transaction is completed.

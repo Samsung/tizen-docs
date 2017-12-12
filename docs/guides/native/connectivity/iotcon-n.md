@@ -194,8 +194,8 @@ To find resources:
     }
     ```
 
- **Note**
-The callback parameters are valid only within the callback function. Use the clone handle, if you want to use a parameter after the callback function.
+ > **Note**  
+ > The callback parameters are valid only within the callback function. Use the clone handle, if you want to use a parameter after the callback function.
 
 3. To set the timeout interval (in seconds) for the asynchronous functions of the Client (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__IOT__CONNECTIVITY__CLIENT__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__IOT__CONNECTIVITY__CLIENT__MODULE.html) applications) and Remote Resource (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html) applications) APIs, use the `iotcon_set_timeout()` function:
 
@@ -203,8 +203,8 @@ The callback parameters are valid only within the callback function. Use the clo
     `int ret;ret = iotcon_set_timeout(10);if (IOTCON_ERROR_NONE != ret)    /* Error handling */`
     ```
 
-  **Note**
- The `iotcon_set_timeout()` function has an effect on the following asynchronous functions:
+  > **Note**  
+  > The `iotcon_set_timeout()` function has an effect on the following asynchronous functions:
     -`iotcon_find_resource()`
     -`iotcon_find_device_info()`
     -`iotcon_find_platform_info()`
