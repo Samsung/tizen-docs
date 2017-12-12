@@ -38,7 +38,8 @@ To add a user view for the ported GLView11Cube application screen through the **
 1. Right-click the **SettingsUIwithUIB** project in the **Project Explorer** view and select **User View Manager**.
 2. Add a **glview11cube** view.![User View Manager](./media/prjm_combi_user_view_mng.png)Enter **glview11cube** in the field as a name for the new user view.Click **Add**.Click **Finish**.
 
-**Note**The pencil (![Existing user view](./media/prjm_combi_pencil.png)) icon in the list refers to an existing user view. If you remove an existing user view, the logic based on that view is also removed. This cannot be undone.
+> **Note**  
+> The pencil (![Existing user view](./media/prjm_combi_pencil.png)) icon in the list refers to an existing user view. If you remove an existing user view, the logic based on that view is also removed. This cannot be undone.
 
 ## Designing the Ported View
 

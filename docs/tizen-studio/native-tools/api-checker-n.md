@@ -50,7 +50,8 @@ To customize the API Checker:
 
 You can quick-fix some of the issues found by the API Checker, such as use of undefined and unused privileges.
 
-**Note**Deprecated API and version mismatch issues cannot be quick-fixed. You must fix them manually.
+> **Note**  
+> Deprecated API and version mismatch issues cannot be quick-fixed. You must fix them manually.
 
 To quick-fix issues:
 

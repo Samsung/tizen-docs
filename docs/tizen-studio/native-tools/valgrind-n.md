@@ -18,5 +18,5 @@ The Tizen Studio supports the following tools:
 
 The Tizen Studio provides the interface for [running Valgrind with your application](../../../org.tizen.training/html/native/process/performance_n.htm#running_valgrind) easily. After performance profiling is terminated, you can see the [profiling result](../../../org.tizen.training/html/native/process/performance_n.htm#valgrind_result) and use it for improving performance.
 
-**Note**
-Valgrind is not supported since Tizen 3.0. As an alternative, you can use the [Leak Sanitizer](../common-tools/da-memory.md#leaks) for heap allocation tracing.
+> **Note**  
+> Valgrind is not supported since Tizen 3.0. As an alternative, you can use the [Leak Sanitizer](../common-tools/da-memory.md#leaks) for heap allocation tracing.

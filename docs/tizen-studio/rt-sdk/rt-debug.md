@@ -32,7 +32,9 @@ To debug the application:
 
    ![Debugging the project](./media/rt_debug.png)
 
-4. In the debug config select dialog, select a debug flashing option and click **OK**.![Debug configuration](./media/rt_debug_config.png)
+4. In the debug config select dialog, select a debug flashing option and click **OK**.
+
+   ![Debug configuration](./media/rt_debug_config.png)
 
 5. Before the debugging starts, the Confirm Perspective Switch dialog is shown.
 
@@ -50,12 +52,12 @@ To debug the application:
 
    ![Debug toolbar](./media/rt_debug_toolbar.png)
 
-> **Note**<br>
+> **Note**  
 >OpenOCD (or other remote debuggers) can only create as many debugger instances as there are connected devices. So if you connect only 1 device, you cannot create 2 debugger instances.
 >
 >When working with only 1 debugger instance, you must stop the previously running debugging operation to start a new debugging operation.
 >
 >If you run more than 1 debugger at the same time, you get an error.
 >
->**Figure: Error when trying to run multiple debuggers**
+>**Figure: Error when trying to run multiple debuggers**  
 > ![Error when trying to run multiple debuggers](./media/rt_multiple_debugger_error.png)

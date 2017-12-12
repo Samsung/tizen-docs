@@ -8,81 +8,89 @@ You can use the Device/Resource Model Manager to select a device model for inter
 
 With the Model Manager, you can:
 
-* Check device, resource, and property information
-* Select, add, and restore resources
-* Import and export device models
-* Generate stub code
+- Check device, resource, and property information
+- Select, add, and restore resources
+- Import and export device models
+- Generate stub code
 
 The Model Manager is displayed while creating a new project with SmartThings&trade; functionality. If you want to access the Model Manager later again, in the **Project Explorer** view, right-click the project and select **Manage ST-Things Resource**.
 
 **Figure: Model Manager main view**
 
-![Model Manager main view](./media/rt_model_manager.png)
+![Model Manager main view](media/rt_model_manager.png)
 
-## Checking Device, Resource, and Property Information <a name="check-information"></a>
+<a name="check-information"></a>
+## Checking Device, Resource, and Property Information
 
 To access information:
 
-* Select a device model in the **Device Name** list of the **Device/Platform** section to see device, platform, and resource information.
-* Select a resource in the left panel of the **Resource/Property** section to see the its description and property information.
-* Select a property in the right panel of the **Resource/Property** section to see its description.
+- Select a device model in the **Device Name** list of the **Device/Platform** section to see device, platform, and resource information.
+- Select a resource in the left panel of the **Resource/Property** section to see the its description and property information.
+- Select a property in the right panel of the **Resource/Property** section to see its description.
 
 **Figure: Viewing information**
 
-![Viewing information](./media/rt_model_select_property.png)
+![Viewing information](media/rt_model_select_property.png)
 
-
-## Managing Resources <a name="select-resources"></a>
+<a name="select-resources"></a>
+## Managing Resources
 
 You can select, add, and restore resources:
 
-* To select all resources, click the checkbox on the **Resource/Property** toolbar.
+- To select all resources, click the checkbox on the **Resource/Property** toolbar.
 
   **Figure: Select all resources**
 
-  ![Select all resources](./media/rt_model_select_all.png)
+  ![Select all resources](media/rt_model_select_all.png)
 
   To deselect all resources, clear the checkbox.
 
-* To add a new resource:
+- To add a new resource:
   1. Click **Add Resource**.
 
-	  ![Add Resource button](./media/rt_model_add_resource.png)
+	 ![Add Resource button](media/rt_model_add_resource.png)
 
   2. In the Add Resource window, select the type of resource to be added, edit its information, and click **OK**.
 
-    ![Add Resource window](./media/rt_model_add_resource_window.png)
+     ![Add Resource window](media/rt_model_add_resource_window.png)
 
-    The new resource appears in the list in the **Resource/Property** section of the Model Manager main view.
+     The new resource appears in the list in the **Resource/Property** section of the Model Manager main view.
 
-* To restore the resources, click **Restore default**. This restores the initial resource state of the device, deleting all changes that have been made.
+- To restore the resources, click **Restore default**. This restores the initial resource state of the device, deleting all changes that have been made.
 
-    **Figure: Restore all resources**
+  **Figure: Restore all resources**
 
-    ![Restore all resources](./media/rt_model_restore_resources.png)
+  ![Restore all resources](media/rt_model_restore_resources.png)
 
 ## Importing Device Models<a name="import-device"></a>
 
 To import a device model:
 
 1. Click **Import** on the **Device/Platform** toolbar.
-  ![Import model button](./media/rt_model_import_model.png)
+
+   ![Import model button](media/rt_model_import_model.png)
 
 2. Select the JSON file containing the device model to be imported and click **OK**.
-	![Import model window](./media/rt_model_import_model_window.png)
+
+   ![Import model window](media/rt_model_import_model_window.png)
 
 3. The imported device shows up in the device list with the **Custom** type.
-	![Custom device model imported](./media/rt_model_import_model_finished.png)
 
-## Exporting Device Models<a name="export-device"></a>
+   ![Custom device model imported](media/rt_model_import_model_finished.png)
+
+
+<a name="export-device"></a>
+## Exporting Device Models
 
 To export a device model:
 
 1. Select the model to be exported and click **Export** on the **Device/Platform** toolbar.
-	![Export model button](./media/rt_model_export_model.png)
+
+   ![Export model button](media/rt_model_export_model.png)
 
 2. The device model is exported as a JSON file. Enter a file name for the exported model and click **OK**.
-	![Export model window](./media/rt_model_export_model_window.png)
+
+   ![Export model window](media/rt_model_export_model_window.png)
 
 
 ## Generating Stub Code<a name="stub-code"></a>
@@ -91,24 +99,25 @@ When you click **Finish** in the Model Manager, the code for processing the reso
 
 **Figure: Source code generated by the Model Manager**
 
-![Source files generated by the Model Manager](./media/rt_model_code.png)
-![Source code generated by the Model Manager](./media/rt_model_code_opened.png)
+![Source files generated by the Model Manager](media/rt_model_code.png)
+
+![Source code generated by the Model Manager](media/rt_model_code_opened.png)
 
 When the project is created, template code for the selected device and resources is automatically generated and opened for editing:
-* `common_handlers.c`
-	-  Reset, ownership transfer, and status change handlers
-	- You need to write additional code for the functionality you want.
-* `resource_<uri>.c`
-	- Get and set handlers for a resource
-	- You need to write additional code for the functionality you want.
-	- Refer to annotation or TODO in the resource file.
-* `Makefile` and `Make.defs`
-	-  Makefile for building the project
-* `st_things_main.c`, `things.c`, `things.h`
-	-  Project initialization, handler registration, and main loop
+- `common_handlers.c`
+  - Reset, ownership transfer, and status change handlers
+  - You need to write additional code for the functionality you want.
+- `resource_<uri>.c`
+  - Get and set handlers for a resource
+  - You need to write additional code for the functionality you want.
+  - Refer to annotation or TODO in the resource file.
+- `Makefile` and `Make.defs`
+  - Makefile for building the project
+- `st_things_main.c`, `things.c`, `things.h`
+  - Project initialization, handler registration, and main loop
 
 If you edit the SmartThings&trade; resources in your project later on, the Model Manager automatically backs the existing source files with a `.bak` extension.
 
 **Figure: Backup files**
 
-![Backup files](./media/rt_model_manage_backups.png)
+![Backup files](media/rt_model_manage_backups.png)

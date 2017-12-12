@@ -1,6 +1,6 @@
 # Performing File Analysis
 
-# Dependencies
+## Dependencies
 
 - Tizen Studio 1.0 and Higher
 

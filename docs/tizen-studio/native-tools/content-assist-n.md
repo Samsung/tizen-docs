@@ -21,7 +21,8 @@ To receive the API suggestions manually, type at least one letter of content, an
 
 ![API assist](./media/content_assist_api.png)
 
-**Note**The API assist feature is based on Content Assist in Eclipse Mars. Like in Eclipse, you can customize the feature: in the Tizen Studio, go to **Window > Preferences > C/C++ > Editor > Content Assist**. For more information, see the [Content Assist preferences](http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.cdt.doc.user%2Freference%2Fcdt_u_c_editor_con_assist.htm) help page.
+> **Note**  
+> The API assist feature is based on Content Assist in Eclipse Mars. Like in Eclipse, you can customize the feature: in the Tizen Studio, go to **Window > Preferences > C/C++ > Editor > Content Assist**. For more information, see the [Content Assist preferences](http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.cdt.doc.user%2Freference%2Fcdt_u_c_editor_con_assist.htm) help page.
 
 ## API Hover
 
@@ -31,5 +32,5 @@ When you hover over a Tizen native API function in the source editor, a popup wi
 
 ![API hover](./media/content_assist_api_hover.png)
 
-**Note**
-The API hover feature is based on Hovers in Eclipse Mars. Like in Eclipse, you can customize hover behavior: in the Tizen Studio, go to **Window > Preferences > C/C++ > Editor > Hovers**. For more information, see the [Hovers preferences](http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.cdt.doc.user%2Freference%2Fcdt_u_c_editor_hov.htm) help page.
+> **Note**  
+> The API hover feature is based on Hovers in Eclipse Mars. Like in Eclipse, you can customize hover behavior: in the Tizen Studio, go to **Window > Preferences > C/C++ > Editor > Hovers**. For more information, see the [Hovers preferences](http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.cdt.doc.user%2Freference%2Fcdt_u_c_editor_hov.htm) help page.

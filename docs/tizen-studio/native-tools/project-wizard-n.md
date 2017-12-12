@@ -58,7 +58,7 @@ Based on the selected profile and version, a list of templates is shown in the t
 
 **Figure: Selecting the profile and version**
 
-![File analysis](./media/project_wizard_profile_n.png)
+![File analysis](./media/project_wizard_profile.png)
 
 To move to the next step, select the profile and version, and click **Next**.
 

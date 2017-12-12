@@ -13,4 +13,3 @@ This site introduces InMobi Tizen Ads for Tizen Web applications, native applica
   - Tizen Native application: Tizen Native application uses EFL (Enlightenment Foundation Libraries) for the application UI. The application is developed using C and it can access advanced device-specific features.
   - Unity game on Tizen: To use Tizen Ads in your Unity game, you need the Unity SDK version 5.4.1 or above for privilege addition support. The game is developed using C#.
 
-  

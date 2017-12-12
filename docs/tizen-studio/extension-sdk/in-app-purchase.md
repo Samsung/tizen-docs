@@ -887,10 +887,11 @@ The sample native application allows a user to show a list of items for purchase
 
 In developer mode, the top of the screen, it is possible to scroll up and down direction.
 
-[Download the sample native application.](https://developer.tizen.org/sites/default/files/page/iap_programming_guide_appcontrol_20151214.zip)
+[Download the sample native application.](media/native_sample_application_source_code_20151222.zip)
+
 
 ### 2. Sample Web Application
 
 The sample Web application allows a user to show a list of items for purchase, purchase an item, show purchased items, and make a purchase.
 
-[Download the sample Web application.](https://developer.tizen.org/sites/default/files/page/web_sample_application_source_code_20150113.zip)
+[Download the sample Web application.](media/web_sample_application_source_code_20150113.zip)

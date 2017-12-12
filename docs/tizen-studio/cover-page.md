@@ -3,7 +3,7 @@
 - Tizen Studio 1.0 and Higher
 
 
-**Tizen Studio 1.2 is now launched!**
+**Tizen Studio 2.0 is now launched!**
 
 
 
@@ -19,17 +19,19 @@ To develop your applications, use the set of tools provided by the Tizen Studio:
 
 
 
-- [Download](download/download.md)Learn about installing and updating the Tizen Studio. You may need to install additional packages to develop applications for various platforms.
+- [Download](download/download.md) Learn about installing and updating the Tizen Studio. You may need to install additional packages to develop applications for various platforms.
 
-- [Native Tools](native-tools/cover-native-n.md)Learn about the available native application development tools. Native applications are developed using the C programming language. You can create an application project, edit the code to meet your needs, and run the application on the emulator or a target device.
+- [Native Tools ](native-tools/cover-native-n.md)Learn about the available native application development tools. Native applications are developed using the C programming language. You can create an application project, edit the code to meet your needs, and run the application on the emulator or a target device.
 
-- [Web Tools](web-tools/cover-web-w.md)Learn about the available Web application development tools. Web applications are developed using the JavaScript, HTML, and CSS languages. You can create an application project, edit the code to meet your needs, and run the application on the emulator, simulator, or a target device.
+- [Web Tools ](web-tools/cover-web-w.md)Learn about the available Web application development tools. Web applications are developed using the JavaScript, HTML, and CSS languages. You can create an application project, edit the code to meet your needs, and run the application on the emulator, simulator, or a target device.
 
-- [Platform Tools](platform-tools/cover-platform.md)Learn about the platform development environment that helps you develop preloaded platform applications, platform libraries, and device drivers in Ubuntu.
+- [Platform Tools](platform-tools/cover-platform.md) Learn about the platform development environment that helps you develop preloaded platform applications, platform libraries, and device drivers in Ubuntu.
 
-- [RT IDE](rt-sdk/rt-sdk.md)Learn about the Tizen Studio for RT and how you can develop lightweight RTOS-based applications.
+- [Tizen Studio for RT](rt_sdk/rt_cover.md) Learn about the Tizen Studio for RT and how you can develop lightweight RTOS-based applications.
 
-- [Extension SDK](extension-sdk/extension-sdk.md)Learn about monetizing your Tizen applications by offering in-app purchases and using the InMobi Tizen Ad SDK.
+- [Configurable SDK](configurable_sdk/configurable_sdk.md) Learn about using the Tizen Studio to develop applications in a customizable Tizen platform environment.
+
+  ​
 
 
 
