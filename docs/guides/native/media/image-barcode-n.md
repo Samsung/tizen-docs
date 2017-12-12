@@ -213,11 +213,20 @@ To detect barcodes:
            error_code = media_packet_destroy(pkt);
            pkt = NULL;
        }
+
+    ~~~
+
+   }
    ```
 
 2. In the `_camera_media_packet_preview_cb()` callback, detect barcodes in the image using the `mv_barcode_detect()` function:
 
    ```
+   static void
+   _camera_media_packet_preview_cb(media_packet_h pkt, void *user_data)
+   {
+      ~~~
+
        error_code = mv_barcode_detect(bardetdata.g_source, bardetdata.g_engine_cfg,
                                       mv_roi, _barcode_detected_cb, NULL);
        if (error_code != MEDIA_VISION_ERROR_NONE)
