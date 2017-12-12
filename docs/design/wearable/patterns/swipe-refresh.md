@@ -34,6 +34,6 @@ Refreshing can also load more content than is currently displayed. Content is lo
           Displaying overscroll effect                                Load more or read more content
 
 
->**Tip**  
->-   Home screen, widgets, and pop-ups can’t load more content through refreshing.
->-   A progress bar is displayed at the center of the empty space where the refreshed content will appear and should remain there until the new content is fully loaded.
+> **Tip**  
+> -  Home screen, widgets, and pop-ups can’t load more content through refreshing.
+> -  A progress bar is displayed at the center of the empty space where the refreshed content will appear and should remain there until the new content is fully loaded.

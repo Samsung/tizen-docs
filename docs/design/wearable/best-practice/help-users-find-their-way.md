@@ -8,14 +8,14 @@ The Gear's small display can (and should) only display a limited amount of conte
 
     News Briefing curates news from user-designated categories into a list. In a detailed news page, content is loaded smoothly within the same page, reducing the navigation depth for a seamless experience.
 
-    ![](media/bestpractice_newsbriefing_1-150x150.jpeg)![](media/bestpractice_newsbriefing_1.jpeg)![](media/bestpractice_newsbriefing_2-150x150.png)![](media/bestpractice_newsbriefing_3-150x150.png)![](media/bestpractice_newsbriefing_4-150x150.png)  
+    ![](media/bestpractice_newsbriefing_1-150x150.png)  ![](media/bestpractice_newsbriefing_2-150x150.png) ![](media/bestpractice_newsbriefing_3-150x150.png) ![](media/bestpractice_newsbriefing_4-150x150.png)  
     *The image, title, and text are provided in order for simple navigation.*
 
 -   **Spotify**
 
     Spotify lists music in a simple structure, allowing users to navigate playlists intuitively. The bottom button on each screen takes the user immediately to the song that’s currently playing.
 
-    ![](media/bestpractice_spotify_1-150x150.png)![](media/bestpractice_spotify_2-150x150.png)![](media/bestpractice_spotify_3-150x150.png)![](media/bestpractice_spotify_4-150x150.png)  
+    ![](media/bestpractice_spotify_1-150x150.png) ![](media/bestpractice_spotify_2-150x150.png) ![](media/bestpractice_spotify_3-150x150.png) ![](media/bestpractice_spotify_4-150x150.png)  
     *The fixed button at the bottom takes users to the currently playing song.*
 
 ## Things to check

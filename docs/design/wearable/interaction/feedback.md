@@ -1,4 +1,4 @@
-# auditory, and haptic feedback. Whichever the type
+# Feedback
 
 The Gear offers visual, auditory, and haptic feedback. Whichever the type of feedback being used, it should clearly communicate the result of a user’s input. You can combine more than one type of feedback when you need to emphasize user input.
 
@@ -99,12 +99,14 @@ Visual responses inform users of a current state. Provide visual feedback to inf
 -   **Adjusting the color opacity**
 
     You can adjust the color opacity of a button by 40% to indicate that the button has been pressed.
+
    **Normal                                                                  Pressed**
 
     ![](media/interaction_7.5.1_2-850x174.png)  
     Opacity 100%                                                 Opacity 40%
 
     *The opacity of the entire container is adjusted to 40% when users press a colored icon.*  
+
     **Normal                                                                  Pressed**
     ![](media/interaction_7.5.1_3-850x174.png)  
    Opacity 100%                                                  Opacity 40%        
@@ -157,8 +159,8 @@ The table below shows some examples of the Gear's auditory responses for each ty
 
 
 
->**Tip**
->Media and system sounds will be automatically muted when users set their sound profile to Mute or Vibration mode.
+> **Tip**  
+> Media and system sounds will be automatically muted when users set their sound profile to Mute or Vibration mode.
 
  
 

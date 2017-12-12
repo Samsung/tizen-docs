@@ -32,5 +32,5 @@ Empty states can allow users to add content when there is no content to display.
 
     Provide short text to inform users on if and how they can add content.
 
->**Tip**  
->Title bars for empty states are only provided for apps and not for widgets.
+> **Tip**    
+> Title bars for empty states are only provided for apps and not for widgets.

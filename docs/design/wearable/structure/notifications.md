@@ -56,12 +56,12 @@ All elements of notifications can be customized to deliver information in the mo
        <th> Notificaiton card </th>
      </tr>
      <tr>
-       <td> Full pop-up alert  ![](media/structure_5.3.3_1_1_full_pop-up-150x96.png) </td>
+       <td> Full pop-up alert<br>![](media/structure_5.3.3_1_1_full_pop-up-150x96.png) </td>
        <td rowspan="2"> ![](media/structure_5.3.3_1_2notification_panel-150x94.png) </td>
        <td rowspan="2"> ![](media/structure_5.3.3_1_3card-300x158.png) </td>
      </tr>
      <tr>
-       <td> Small  ![](media/structure_5.3.3_1_1_small_pop-up-150x96.png)</td>
+       <td> Small<br>![](media/structure_5.3.3_1_1_small_pop-up-150x96.png)</td>
      </tr>
     </table>
 

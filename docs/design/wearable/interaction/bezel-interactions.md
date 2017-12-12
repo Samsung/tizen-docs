@@ -103,8 +103,8 @@ Bezel interaction can adjust values such as the volume, date, and time.
     *A tap switches input fields when adjusting multiple sets of values.*
 
 
->**Tip**
->Each screen should have only one element that’s controlled by the rotary action. If you need more than one element to be controlled by the bezel, let users tap the element to enter a separate screen first, and then control it with the rotary action.
+> **Tip**  
+> Each screen should have only one element that’s controlled by the rotary action. If you need more than one element to be controlled by the bezel, let users tap the element to enter a separate screen first, and then control it with the rotary action.
 
 
 ## Confirm

@@ -82,8 +82,8 @@ Anchored views display content on screen layers, which users can navigate by rot
     Dial screens are well suited for displaying information that can’t be arranged evenly. When users rotate the bezel, the indicator moves around the screen bringing items and information into focus. The index indicator selects and displays specific information in a simple and easy way.
 
     ![](media/navigation_6.2.3_2-850x206.png)  
-    *The S Health app displays the time of the user’s activities along with detailed records.*\
-    *Since the activities are recorded at irregular time intervals when the user actually moves, using a dial is effective for displaying random periods of time.*
+    *The S Health app displays the time of the user’s activities along with detailed records.  
+    Since the activities are recorded at irregular time intervals when the user actually moves, using a dial is effective for displaying random periods of time.*
 
 ## Freeform view
 

@@ -92,8 +92,8 @@ A swipe is a less precise movement than a drag. You can also customize the swipe
     Swipe down from the top of the screen to refresh content. This interaction is useful if your app deals with content in real-time. A loading indicator at the top of the screen should be shown when a screen is refreshing. Refer to [Update content](../patterns/swipe-refresh.md#update) for more details.
 
 
->**Tip**
->Show an indicator, circular scroll bar, or loading indicator as appropriate when users swipe. These visual cues help users interact smoothly with the Gear.
+> **Tip**  
+> Show an indicator, circular scroll bar, or loading indicator as appropriate when users swipe. These visual cues help users interact smoothly with the Gear.
 
 
 ## Bezel swipe down
@@ -115,5 +115,5 @@ Users can touch and hold a list or an icon to begin selecting multiple items. Yo
     ![](media/interaction_7.1.5-850x174.png)
 
 
->**Tip**
->The number of selected items is displayed at the top of the screen. This visual cue gives users confidence that the system is responding to their input.
+> **Tip**  
+> The number of selected items is displayed at the top of the screen. This visual cue gives users confidence that the system is responding to their input.

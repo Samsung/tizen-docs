@@ -7,7 +7,7 @@ Effective animations help users understand the changes of on-screen elements. An
 The Gear can show animations where objects glide across the screen as if they were blown by a breeze. Provide animations with this look and feel by precisely adjusting the timing and ease of the gliding effect.
 
   ------------------------------------ ------------------------------------
-![](media/8.4.1.lookandfeel_do_0.mp4) ![](media/8.4.1.lookandfeel_dont_0.mp4)                      
+![Do](media/8.4.1.lookandfeel_do_0.mp4)   ![Don't](media/8.4.1.lookandfeel_dont_0.mp4)                      
   ------------------------------------ ------------------------------------
 
 *Animations should glide across the screen like a gentle breeze.*
@@ -21,7 +21,7 @@ When transitioning between screens, use consistent animations to indicate whethe
     Animated transitions between screens should visually show the hierarchy of each screen. Let animations introduce layers based on where the layers are actually coming from. Users should be able to determine the hierarchy of the transitioning screens solely from the animation. For example, it can confuse users if a screen to the left of the current screen comes in from the right-hand side.
 
       ------------------------------------ ------------------------------------
-      ![](media/8.4.2.visualhierarchy_do) ![](media/8.4.2.visualhierarchy_dont.mp4)
+      ![Do](media/8.4.2.visualhierarchy_do)   ![Don't](media/8.4.2.visualhierarchy_dont.mp4)
       ------------------------------------ ------------------------------------
 
     *Animations should show the visual hierarchy between the transitioning screens.*
@@ -31,7 +31,7 @@ When transitioning between screens, use consistent animations to indicate whethe
     Animations that appear simultaneously on the same screen should be consistent. Uniform animations help users understand what is happening on the screen. Only apply a different animation style when there’s a clear reason to do so.
 
       ------------------------------------ ------------------------------------
-      ![](media/8.4.2.uniformstyle_do.mp4) ![](media/8.4.2.uniformstyle_dont.mp4)  
+      ![Do](media/8.4.2.uniformstyle_do.mp4)   ![Don't](media/8.4.2.uniformstyle_dont.mp4)  
        ------------------------------------ ------------------------------------
 
     *A uniform animation style should be applied when multiple objects need to appear on the screen at once.*
@@ -65,7 +65,7 @@ Animated feedback helps users distinguish outputs from inputs. Feedback should b
     You can use a fade animation when users release a touch so users know which object they last interacted with.
 
   ------------------------------------ ------------------------------------
-  ![](media/8.4.3.touchfeedback_do_6.mp4) ![](media/8.4.3.touchfeedback_dont_4.mp4)
+  ![Do](media/8.4.3.touchfeedback_do_6.mp4)   ![Don't](media/8.4.3.touchfeedback_dont_4.mp4)
   ------------------------------------ ------------------------------------
 
 *The fade animation is provided when users release a touch, showing which object they last interacted with. Changing the object size is not recommended.*
@@ -87,40 +87,39 @@ Animations hint at how to interact with your app, allowing users to easily deter
 *An animation can suggest a rotary action to answer/reject a call.*
 
 
+
 File attachments: 
 
+![3.dynamic\_motion.mp4](https://developer.tizen.org/sites/default/files/documentation/3.dynamic_motion.mp4)
 
+![7.2.6.visual\_indicators\_do.mp4](https://developer.tizen.org/sites/default/files/documentation/7.2.6.visual_indicators_do.mp4)
 
-![File](https://developer.tizen.org/modules/file/icons/video-x-generic.png "video/mp4"){.file-icon} [3.dynamic\_motion.mp4](https://developer.tizen.org/sites/default/files/documentation/3.dynamic_motion.mp4)
+![8.4.1.lookandfeel\_dont.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.1.lookandfeel_dont_0.mp4)
 
-![File](https://developer.tizen.org/modules/file/icons/video-x-generic.png "video/mp4"){.file-icon} [7.2.6.visual\_indicators\_do.mp4](https://developer.tizen.org/sites/default/files/documentation/7.2.6.visual_indicators_do.mp4)
+![8.4.2.seamlesstransition.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.2.seamlesstransition.mp4)
 
-![File](https://developer.tizen.org/modules/file/icons/video-x-generic.png "video/mp4"){.file-icon} [8.4.1.lookandfeel\_dont.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.1.lookandfeel_dont_0.mp4)
+![8.4.2.uniformstyle\_do.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.2.uniformstyle_do.mp4)
 
-![File](https://developer.tizen.org/modules/file/icons/video-x-generic.png "video/mp4"){.file-icon} [8.4.2.seamlesstransition.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.2.seamlesstransition.mp4)
+![8.4.2.uniformstyle\_dont.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.2.uniformstyle_dont.mp4)
 
-![File](https://developer.tizen.org/modules/file/icons/video-x-generic.png "video/mp4"){.file-icon} [8.4.2.uniformstyle\_do.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.2.uniformstyle_do.mp4)
+![8.4.2.visualhierarchy\_do.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.2.visualhierarchy_do.mp4)
 
-![File](https://developer.tizen.org/modules/file/icons/video-x-generic.png "video/mp4"){.file-icon} [8.4.2.uniformstyle\_dont.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.2.uniformstyle_dont.mp4)
+![8.4.2.visualhierarchy\_dont.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.2.visualhierarchy_dont.mp4)
 
-![File](https://developer.tizen.org/modules/file/icons/video-x-generic.png "video/mp4"){.file-icon} [8.4.2.visualhierarchy\_do.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.2.visualhierarchy_do.mp4)
+![8.4.3.bezel\_.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.3.bezel__0.mp4)
 
-![File](https://developer.tizen.org/modules/file/icons/video-x-generic.png "video/mp4"){.file-icon} [8.4.2.visualhierarchy\_dont.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.2.visualhierarchy_dont.mp4)
+![8.4.4.affordance.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.4.affordance.mp4)
 
-![File](https://developer.tizen.org/modules/file/icons/video-x-generic.png "video/mp4"){.file-icon} [8.4.3.bezel\_.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.3.bezel__0.mp4)
+![9.7.overscroll.mp4](https://developer.tizen.org/sites/default/files/documentation/9.7.overscroll.mp4)
 
-![File](https://developer.tizen.org/modules/file/icons/video-x-generic.png "video/mp4"){.file-icon} [8.4.4.affordance.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.4.affordance.mp4)
+![1.2.1.directionconnection1\_health.mp4](https://developer.tizen.org/sites/default/files/documentation/1.2.1.directionconnection1_health.mp4)
 
-![File](https://developer.tizen.org/modules/file/icons/video-x-generic.png "video/mp4"){.file-icon} [9.7.overscroll.mp4](https://developer.tizen.org/sites/default/files/documentation/9.7.overscroll.mp4)
+![1.2.1.directionconnection2\_moreoption.mp4](https://developer.tizen.org/sites/default/files/documentation/1.2.1.directionconnection2_moreoption.mp4)
 
-![File](https://developer.tizen.org/modules/file/icons/video-x-generic.png "video/mp4"){.file-icon} [1.2.1.directionconnection1\_health.mp4](https://developer.tizen.org/sites/default/files/documentation/1.2.1.directionconnection1_health.mp4)
+![8.4.1.easing\_do.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.1.easing_do.mp4)
 
-![File](https://developer.tizen.org/modules/file/icons/video-x-generic.png "video/mp4"){.file-icon} [1.2.1.directionconnection2\_moreoption.mp4](https://developer.tizen.org/sites/default/files/documentation/1.2.1.directionconnection2_moreoption.mp4)
+![8.4.1.easing\_do\_nt.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.1.easing_do_nt.mp4)
 
-![File](https://developer.tizen.org/modules/file/icons/video-x-generic.png "video/mp4"){.file-icon} [8.4.1.easing\_do.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.1.easing_do.mp4)
+![8.4.3.touchfeedback\_do.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.3.touchfeedback_do_10.mp4)
 
-![File](https://developer.tizen.org/modules/file/icons/video-x-generic.png "video/mp4"){.file-icon} [8.4.1.easing\_do\_nt.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.1.easing_do_nt.mp4)
-
-![File](https://developer.tizen.org/modules/file/icons/video-x-generic.png "video/mp4"){.file-icon} [8.4.3.touchfeedback\_do.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.3.touchfeedback_do_10.mp4)
-
-![File](https://developer.tizen.org/modules/file/icons/video-x-generic.png "video/mp4"){.file-icon} [8.4.3.touchfeedback\_dont.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.3.touchfeedback_dont_5.mp4)
+![8.4.3.touchfeedback\_dont.mp4](https://developer.tizen.org/sites/default/files/documentation/8.4.3.touchfeedback_dont_5.mp4)

@@ -1,4 +1,4 @@
-# PatternsPatterns
+# Patterns
 
 Common functions should be presented in your app in the same way as other apps. Providing the same function in different ways will confuse users.
 

@@ -24,5 +24,5 @@ Permission pages should include:
 
     You can ask users if their permission should apply every time they open the app. If users select the *Don’t ask again* checkbox, the page won’t appear again.
 
->**Tip**  
->If you need to ask permission for a number of functions, show the permissions in sequence.
+> **Tip**  
+> If you need to ask permission for a number of functions, show the permissions in sequence.

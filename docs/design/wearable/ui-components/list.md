@@ -5,7 +5,7 @@
 
 A list arranges multiple items in a single column.
 
-|**List**|---------|
+|List|  |
 |--------|---------|  
 |**Native**|enlist|
 |**Web**|List / Virtual List<br>(+ Snap List view, Marquee)|
@@ -37,7 +37,7 @@ A list shows multiple items that belong to the same category. Users can select a
 
 Indexes help users quickly find the item they want by dividing a long list into groups. Groups can be browsed more easily and can be indexed in alphabetical order, by category, date, or time.
 
-|**Group index**|              |  
+|Group index|              |  
 |---------------|--------------|
 |**Native**|Genlist > <br>Groupindex|
 |**Web**|-|

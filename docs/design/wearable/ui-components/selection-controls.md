@@ -70,5 +70,5 @@ Selection controls are used with list items or text content when users need to m
   ![](media/ui_components_10.10.3_3-850x174.png)  
     *Radio buttons are usedwhen users can select only a single item from a list.*
 
->**Tip**  
->Lists that ask users to choose a ringtone or vibration can be set to play a preview when an item is selected.
+> **Tip**  
+> Lists that ask users to choose a ringtone or vibration can be set to play a preview when an item is selected.

@@ -12,9 +12,8 @@ The delete function removes items from an editable list on your app. Users delet
 **Delete a single item**
 
 ![](media/pattern_9.3_2-850x174.png)  
-*Users can access the Delete button through more options.*
-
-*Multi-selection or single selection is available depending on the content.*
+*Users can access the Delete button through more options.  
+Multi-selection or single selection is available depending on the content.*
 
 ## Delete feedback
 

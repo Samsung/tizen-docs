@@ -5,5 +5,5 @@ The Gear responds to movements from a user’s wrist. It automatically reveals t
 
 
 ![](media/wearable_2.1.0-850x386.png)  
-*When the user starts running, Light Jogging starts in the S Health app.*  
-*The Gear provides intimate responses by displaying heart rate or encouraging the user to run faster.*
+*When the user starts running, Light Jogging starts in the S Health app.  
+The Gear provides intimate responses by displaying heart rate or encouraging the user to run faster.*

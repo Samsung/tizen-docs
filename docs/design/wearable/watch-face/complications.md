@@ -49,8 +49,8 @@ There are 5 types of complication depending on the type of data you want to prov
 
 
 
->**Tip**
->The Gear Watch Designer helps you design your own complications. You can create your own images or set your complication as a button that opens an app. Visit to the [Gear Watch Designer](http://developer.samsung.com/gear/design/watch-designer) site for more details.
+> **Tip**  
+> The Gear Watch Designer helps you design your own complications. You can create your own images or set your complication as a button that opens an app. Visit to the [Gear Watch Designer](http://developer.samsung.com/gear/design/watch-designer) site for more details.
 
 
 

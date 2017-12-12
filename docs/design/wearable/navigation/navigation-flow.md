@@ -22,5 +22,5 @@ Use hierarchical navigation when you can't display all the content at one level,
 Back navigation returns users to the previous screen, allowing users to retrace their steps and determine where they are. Users backtrack to the previous screen by tapping the Back key or swiping down from the bezel.
 
 
->**Tip**  
->The Back key returns users to the previous screen, and the Home key takes them to the watch face. If a user is already on the watch face, pressing the Home key takes them to the [Apps](../structure/apps.md) screen.
+> **Tip**  
+> The Back key returns users to the previous screen, and the Home key takes them to the watch face. If a user is already on the watch face, pressing the Home key takes them to the [Apps](../structure/apps.md) screen.

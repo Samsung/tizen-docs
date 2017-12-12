@@ -1,4 +1,4 @@
-# after 2 seconds. They’re useful when you want to show simple and short b
+# Toasts
 
 Toast pop-ups display information and disappear automatically after 2 seconds. They’re useful when you want to show simple and short bites of information. For more important messages, only use toasts when absolutely necessary. Using a graphic toast pop-up can help users understand information more easily.
 
@@ -17,7 +17,7 @@ You can use toasts to show the result of non-critical actions and provide simple
     Toasts don’t allow scrolling. If you have long text that doesn’t fit on one screen, use a confirmation pop-up instead.
 
 ## Types
- 
+
 -   **Graphic toasts**
 
     A graphic toast pop-up displays an icon or an icon with short text. You can provide up to 2 lines of text below the icon, but the simpler the better. (e.g. Photo deleted, Message sent, Update shared) You can use a [common set](http://developer.samsung.com/gear/design/resource/basic-ui) to minimize fragmentation, or use your own customized icon to express your app’s identity.

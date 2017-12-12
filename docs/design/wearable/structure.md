@@ -3,6 +3,7 @@
 Understanding the Gear’s home structure is the key to designing engaging apps. The Gear’s simple home structure provides easy access to useful features. From the watch face that forms the center of this structure, users can access notifications, widgets, and the moment bar by swiping or rotating the bezel, and bring up the app list by pressing the Home key.
 
 ![](media/structure_5.0.0-850x348.png)
+
 -   **Watch face**
 
     The watch face presents useful information as well as the current time. It is displayed whenever users turn on the Gear’s screen or press the Home key. Since users see the watch face most often, it should both provide useful information and satisfy the user's design tastes. While only one watch face can be used at a time, users can switch their watch face regularly.

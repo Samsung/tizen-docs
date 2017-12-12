@@ -13,8 +13,8 @@ Launch screens are shown when the user launches your app. Avoid leaving the scre
 *Express your app’s identity straight away.*
 
 
->**Tip**
->Avoid using text in launch screens unless it forms part of a brand logo.
+> **Tip**  
+> Avoid using text in launch screens unless it forms part of a brand logo.
 
 
 ## Welcome pages
