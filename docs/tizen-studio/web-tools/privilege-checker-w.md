@@ -5,7 +5,8 @@
 
 The Tizen Studio provides a checker to identify potential [privilege](https://developer.tizen.org/development/training/web-application/application-development-process/setting-project-properties/api-privileges) violation problems in the application code. This check is performed automatically, and you can easily verify the source code in your project.
 
-## Using the Privilege Checker<a name="use"></a>
+<a name="use"></a>
+## Using the Privilege Checker
 
 The Privilege Checker is enabled by default. It is automatically performed during the [build process](https://developer.tizen.org/development/training/web-application/application-development-process#build) or code editing.
 
@@ -18,7 +19,8 @@ To perform the check manually:
 
 ![Privilege Checker](./media/privilege_checker.png)
 
-## Setting the Options<a name="set"></a>
+<a name="set"></a>
+## Setting the Options
 
 To set the Privilege Checker options, go to **Menu > Preferences > Tizen Studio > Web > Editor > Privilege**.
 

@@ -22,7 +22,8 @@ There are 2 main use cases when you need to compose and run requests to a RESTfu
 - When you have developed a RESTful Web service and want to make sure it works as expected: that it is accessible in compliance with the specification and that it responds correctly.
 - When you are developing an application that addresses a RESTful Web service. In this case, it is helpful to investigate the access to the service and the required input data before you start development. During development, you can also call the Web service from outside your application. This can help locate errors where your application gives unexpected output even though no logical errors are detected in your code, and you suspect that the bottleneck is the interaction with the Web service.
 
-## Using the REST Viewer<a name="use"></a>
+<a name="use"></a>
+## Using the REST Viewer
 
 The REST Viewer displays the components of the [WADL](http://www.w3.org/Submission/wadl/) (Web Application Description Language) document in a hierarchical structure.
 
@@ -41,7 +42,8 @@ The WADL document can contain 4 types of WADL components:
 
 To open the REST Viewer settings, go to **Preferences > Tizen Studio > REST Viewer**, or click the ![Setting icon](./media/rest_icon_setting.png) icon on the **REST Viewer** view toolbar.
 
-## Creating and Managing WADL Components<a name="wadl"></a>
+<a name="wadl"></a>
+## Creating and Managing WADL Components
 
 To use the REST Viewer, you need a WADL document. If a WADL document is provided by the REST API service provider, you can import it. You can also export a test case so that others can use it.
 
@@ -93,7 +95,8 @@ Fill in the necessary details:
   - **Type**: Parameter type as an XML-qualified name
   - **Required**: Whether the parameter is required to be present
 
-## Authenticating the Application<a name="authenticate"></a>
+<a name="authenticate"></a>
+## Authenticating the Application
 
 The REST Viewer can help you test applications that require authentication services.
 
@@ -108,7 +111,8 @@ In the same location, you can define the authentication details:
 
 ![Authentication details](./media/rest_authenticate.png)
 
-## Testing the APIs<a name="test"></a>
+<a name="test"></a>
+## Testing the APIs
 
 You can test the selected API on the REST Viewer and view the results.
 
@@ -142,7 +146,8 @@ After setting the variables and running the test, the result is displayed in the
 
 ![Test result](./media/rest_test.png)
 
-## Automatic Code Generation<a name="autogenerate"></a>
+<a name="autogenerate"></a>
+## Automatic Code Generation
 
 You can use the REST Viewer to send asynchronous requests with the REST APIs.
 

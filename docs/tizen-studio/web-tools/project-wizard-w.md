@@ -16,7 +16,8 @@ To open the Tizen Project Wizard, use one of the following:
 - Right-click in the **Project Explorer** view, and select **New > Tizen Project**.
 - If there is no project in the workspace, click the **New** icon (![New icon](./media/project_wizard_icon_new.png)) in the **Project Explorer** view toolbar.
 
-## Project Type<a name="type"></a>
+<a name="type"></a>
+## Project Type
 
 When the Tizen Project Wizard opens, you must first select the project type.
 
@@ -36,7 +37,8 @@ The **Sample** option provides a list of sample applications demonstrating vario
 
 To move to the next step, select the project type and click **Next**.
 
-## Profile and Version<a name="version"></a>
+on<a name="version"></a>
+## Profile and Versi
 
 You can select the profile and version supported by your project, such as a mobile or wearable device. In addition, the Tizen Studio shows you which platforms among the supported platforms have been installed.
 
@@ -48,7 +50,8 @@ Based on the selected profile and version, a list of templates is shown in the t
 
 To move to the next step, select the profile and version, and click **Next**.
 
-## Application Type<a name="app_type"></a>
+<a name="app_type"></a>
+## Application Type
 
 You can select the Web or native application type for your project. For more information, see [Web Application](https://developer.tizen.org/development/training/web-application) and [Native Application](https://developer.tizen.org/development/training/native-application).
 
@@ -60,7 +63,8 @@ Based on the selected application type, a list of templates is shown in the temp
 
 To move to the next step, select the application type and click **Next**.
 
-## Template<a name="template"></a>
+<a name="template"></a>
+## Template
 
 You can select the template for your project while viewing information about a variety of templates. The Tizen Project Wizard creates the project based on the selected template.
 
@@ -70,7 +74,8 @@ You can select the template for your project while viewing information about a v
 
 To move to the next step, select the template and click **Next**.
 
-## Project Properties<a name="properties"></a>
+<a name="properties"></a>
+## Project Properties
 
 You can set basic project properties, such as the project name, location, and working sets.
 

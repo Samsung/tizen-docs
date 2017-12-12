@@ -7,7 +7,8 @@ Tizen Studio Web preferences are used to configure the workspace details, such a
 
 You can customize your Tizen Studio with the Web preferences introduced in the following sections.
 
-## Setting Web Preferences<a name="preferences"></a>
+<a name="preferences"></a>
+## Setting Web Preferences
 
 To set Web preferences, go to **Window > Preferences > Tizen Studio > Web** in the Tizen Studio menu.
 
@@ -20,7 +21,8 @@ To set Web preferences, go to **Window > Preferences > Tizen Studio > Web** in t
 
 The preferences are listed in the left pane, and you can search for items by using the search box in the upper left.
 
-## Widget ID<a name="widget"></a>
+<a name="widget"></a>
+## Widget ID
 
 To set a customized prefix for the widget ID, go to **Window > Preferences > Tizen Studio > Web**, and enter the value in the **Widget ID prefix** field. The default value of this field is **http://yourdomain/**.
 
@@ -30,7 +32,8 @@ The value is automatically used in all widget IDs when you create a new Web appl
 
 ![Widget ID](./media/ide_pref_widget_id.png)
 
-## Google Chrome™ Browser Path<a name="chrome"></a>
+<a name="chrome"></a>
+## Google Chrome™ Browser Path
 
 Go to **Tizen Studio > Web > Chrome**.
 
@@ -38,7 +41,8 @@ The Google Chrome™ browser location is automatically set if the browser is ins
 
 If you have installed the browser in a custom location, the Tizen Studio cannot automatically detect the path and you must set the location manually.
 
-## Editor<a name="editor"></a>
+<a name="editor"></a>
+## Editor
 
 Go to **Tizen Studio > Web > Editor**.
 
@@ -46,13 +50,15 @@ Tizen Studio provides advanced editor features, such as file path content assist
 
 To specify folders that you want to exclude from file searching, go to **Project Resource Lookup Setting > Excluded Folders**.
 
-## Configuration Editor<a name="config"></a>
+<a name="config"></a>
+## Configuration Editor
 
 Go to **Tizen Studio > Web > Editor > Configuration Editor**.
 
 To stop error messages from being displayed if you incorrectly modify the `config.xml` source file, select the **Don't show error message** check box.
 
-## CSS Editor<a name="css"></a>
+<a name="css"></a>
+## CSS Editor
 
 Go to **Tizen Studio > Web > Editor > CSS Editor**.
 
@@ -71,13 +77,15 @@ You can set the following validation levels:
 
 You can exclude CSS files from parsing by specifying pattern strings, separated by a comma, in the **Exclude files that match these patterns from validation** field. The default value in this field is **min, jquery, jqm-docs, phonegap, sencha, tizen-web-ui-fw, dowhide, globalize, coderdeck, modernizr, tau**. For instance, since parsing the `jquery.min.css` file generates many warnings, the default pattern string values exclude the parsing of this CSS file.
 
-## HTML Editor<a name="html"></a>
+<a name="html"></a>
+## HTML Editor
 
 Go to **Tizen Studio > Web > Editor > HTML Editor**.
 
 You can set the visibility of the breadcrumb control in the HTML editor. If you clear the **Show breadcrumb** checkbox, the breadcrumb control is not visible in the HTML editor.
 
-## JavaScript Editor<a name="java"></a>
+<a name="java"></a>
+## JavaScript Editor
 
 Go to **Tizen Studio > Web > Editor > JavaScript Editor**.
 
@@ -96,13 +104,15 @@ You can set the following check levels:
 
 You can exclude JS files from parsing by specifying pattern strings, separated by a comma, in the **Exclude files that match these patterns from validation** field. The default value in this field is **min, jquery, jqm-docs, phonegap, sencha, tizen-web-ui-fw, dowhide, globalize, coderdeck, modernizr, tau**. For instance, since parsing the `jquery.min.js` file generates many warnings, the default pattern string values exclude the parsing of this JS file.
 
-## Json Editor<a name="json"></a>
+<a name="json"></a>
+## Json Editor
 
 Go to **Tizen Studio > Web > Editor > Json Editor**.
 
 You can insert spaces for tabs in JSON by selecting the **Insert Spaces for Tabs** check box. In the **Number of spaces to indent** field, enter the number of spaces to indent for tabs.
 
-## Privilege<a name="privilege"></a>
+<a name="privilege"></a>
+## Privilege
 
 Go to **Tizen Studio > Web > Editor > Privilege**.
 
@@ -121,13 +131,15 @@ You can set the following check levels:
 
 You can exclude JS files from parsing by specifying pattern strings, separated by a comma, in the **Exclude files that match these patterns from validation** field. The default value in this field is **min, jquery, jqm-docs, phonegap, sencha, tizen-web-ui-fw, dowhide, globalize, coderdeck, modernizr, tau**. For instance, since parsing the `jquery.min.js` file generates many warnings, the default pattern string values exclude the parsing of this JS file.
 
-## Launch<a name="launch"></a>
+<a name="launch"></a>
+## Launch
 
 Go to **Tizen Studio > Web > Launch**.
 
 Select the option, if you want to launch the application even when the `config.xml` file has an error. The option is cleared by default.
 
-## Live Editing<a name="live"></a> 
+<a name="live"></a> 
+## Live Editing
 
 Go to **Tizen Studio > Web > Live Editing**.
 
