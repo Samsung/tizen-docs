@@ -28,7 +28,7 @@ To learn how to implement a title bar, see [Naviframe](../../../guides/native/ui
 Title bar
 
 
-![Title bar with a Back button ](media/5.1.1_b-260x39.png) ![Title bar with other action buttons](media/5.1.1_c-260x39.png)  
+![Title bar with a Back button ](media/5.1.1_b-260x39.png)![Title bar with other action buttons](media/5.1.1_c-260x39.png)  
 Title bar with a 'Back' button and a title bar with other action buttons
 
 
@@ -103,7 +103,7 @@ To learn how to implement a scroll bar, see [Scroller](../../../guides/native/u
 
 
 
-![Scroll bar](media/5.1.4_a-259x460.png){width="259" ![Scroll bar](media/5.1.4_b-259x460.png)  
+![Scroll bar](media/5.1.4_a-259x460.png)![Scroll bar](media/5.1.4_b-259x460.png)  
 Scroll bars
 
 

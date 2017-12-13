@@ -3,10 +3,8 @@
 Tizen 2.3 uses the [TizenSans family fonts](visual-style/typography-0.html). The TizenSans family consists of regular and medium weight fonts. You can download useful fonts from [here](https://developer.tizen.org/sites/default/files/documentation/fonts_tizensans_1.zip) and use them in your applications.
 
  
-
-**Figure: TizenSans fonts**
-
-![](media/regular_medium_font_weight.png)
+**Figure: TizenSans fonts**  
+<img alt="" src="media/regular_medium_font_weight.png" width="578" height="509" />
 
 
 ## 2D Icons
@@ -17,10 +15,8 @@ The [2D icon style](visual-style/icons-0.md) in the Tizen 2.3 gives a generally
 
  
 
-**Figure: 2D icons**
-
-![](media/assetlibrary_2.png)
-
+**Figure: 2D icons**  
+<img alt="" height="304" src="media/assetlibrary_2.png" width="248" />
 
 ## Controls (GUI Components)
 
@@ -30,6 +26,5 @@ Tizen 2.3 has various types of [controls](design-library/button.md) that can b
 
  
 
-**Figure: **Controls (GUI Components****)
-
-![](media/assetlibrary_3.png)
+**Figure: Controls (GUI Components)**  
+<img alt="" height="270" src="media/assetlibrary_3.png" width="711" />

@@ -5,13 +5,8 @@ Each view in a Tizen app contains one or more primary goals. Select screen layou
 You can also design your own layout if you design an app to serve specific needs. The following are examples of custom layouts for specific needs.
 
  
-
-
-
-![A full view layout dedicated for a camera app](media/4.6_.png)  
+<img alt="A full view layout dedicated for a camera app" src="media/4.6_.png" style="height:460px;" />  
 *A full view layout dedicated for a camera app*
-
-
 
  
 
@@ -24,15 +19,11 @@ The header is the top portion of a view. The following lists the role of a heade
 -   The header can include an on-screen Back button (refer to [On-screen Back Button](navigation-design.md) for details).
 
  
-
-
-
-![Header](media/4.6.1_a.png)  
+<img alt="Header" src="media/4.6.1_a.png" style="height:460px;" />    
 *Header*
 
 
-
-![Header with buttons](media/4.6.1_b_.png)  
+<img src="media/4.6.1_b_.png" alt="Header with buttons" style="width:260px;" />  
 *Header with buttons*
 
 
@@ -51,9 +42,7 @@ The following lists the guidelines for designing the content in a view:
 -   In case you design your own UI elements (controls), ensure that they are large enough for user interaction (40 px x 40 px minimum in WVGA screen resolution).
 
  
-
-
-![Header](media/4.6.2.png)  
+<img alt="Header" src="media/4.6.2.png" style="height:460px;" />    
 *Header*
 
 
@@ -64,7 +53,5 @@ The footer contains user interfaces for extended user actions. On this part of t
 
 In the following example, the Scan button is provided in the footer to provide essential functionality for the Wi-Fi feature.
 
-
-
-![Footer](media/4.6.3.png)  
+<img alt="Footer" src="media/4.6.3.png" style="height:460px;" />  
 *Footer*

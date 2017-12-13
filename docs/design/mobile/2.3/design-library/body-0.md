@@ -18,11 +18,8 @@ You can use the following list types:
 
  
 
-**Figure: List items**
-
-**![](media/list_items.png)**
-
- 
+**Figure: List items**  
+<img alt="" height="164" src="media/list_items.png" width="240" />
 
 ## Index List
 
@@ -35,10 +32,8 @@ Use an index list if you can group your list items according to consistent, orde
 
  
 
-**Figure: Index list**
-
-**![](media/index_list.png)**
-
+**Figure: Index list**  
+<img alt="" height="400" src="media/index_list.png" width="490" />
 
 
 > **NOTE**  
@@ -55,6 +50,5 @@ Use a grid list to display multiple thumbnail images. Even though the grid list 
 
  
 
-**Figure: Grid list**
-
-**![](media/17_01_gallery.png)**
+**Figure: Grid list**  
+<img alt="" height="400" src="media/17_01_gallery.png" width="240" />

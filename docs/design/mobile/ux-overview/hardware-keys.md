@@ -8,5 +8,5 @@ All Tizen apps MUST support the following functions via the device’s hardware 
 -   Volume : used to adjust volumes for calls, notifications, media, and system features.
 -   Power (Optional) : used to turn the device or display on or off. The power key may not be provided if the device does not require power on/off features.
 
-![Hardware keys dedicated to system functions](media/device-01-01-01.png)  
+<img alt="Hardware keys dedicated to system functions" src="media/device-01-01-01.png" style="height:550px;" />  
 *Hardware keys dedicated to system functions.*

@@ -81,11 +81,11 @@ Music player on a mobile device
 
 Text with vivid colors, such as yellow, blue, and green may cause confusion. The following examples show that inconsistent use of vivid colors results in imbalances and distractions on the screen.
 
+| ![Do](media/2.4.2_c-360x445.png) | ![Don't](media/2.4.2_d-360x445.png) |
+| :---: | :---: |  
+| *Do* | *Don't* |
 
 
-![Do](media/2.4.2_c-360x445.png) Do
-
-![Don't](media/2.4.2_d-360x445.png) Don't
  
 
 Color Structure
@@ -103,10 +103,10 @@ The main theme background (gradient) is placed at the bottom layer. In specific 
 Three color layers with different opacities over the background
 
 
-![The resulting screen](media/2.4.3_b.png)
-
+<div align="right">
+    <img src="media/2.4.3_b.png" alt="The resulting screen" width="360" height="360" />  
 The resulting screen
-
+</div>
 
  
 

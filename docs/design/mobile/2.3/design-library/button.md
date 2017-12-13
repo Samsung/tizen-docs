@@ -10,19 +10,19 @@ Buttons can have a shape around them. You can present a button as only text with
 
 **Button**: Executes a specific function.
 
-![](media/design_library_button.png)
+<img alt="" height="48" src="media/design_library_button.png" width="240" />
 
 **On/off button**: Enables or disables a function.
 
-![](media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_16.png)
+<img alt="" height="48" src="media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_16.png" width="240" />
 
 **Check box**: Selects multiple items.
 
-![](media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_17.png)
+<img alt="" height="48" src="media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_17.png" width="240" />
 
 **Radio button**: Selects a single item.
 
-![](media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_18.png)
+<img alt="" height="48" src="media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_18.png" width="240" />
 
 Keep the following guidelines in mind when designing application controls:
 

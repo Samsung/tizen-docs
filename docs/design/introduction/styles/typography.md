@@ -11,11 +11,8 @@ Breeze Sans, the main typeface, is specifically designed for the Tizen UI since 
 
 Breeze Sans typeface comes in light, medium, regular, and condensed variants, and each variant has thin, light, regular, medium, bold, and Num-3L types. You can download Breeze Sans typeface from [Here](https://developer.tizen.org/sites/default/files/documentation/breeze_sans.zip).
 
-
-
-![Breeze Sans](media/16.png) ![Breeze Sans](media/16-2-15.png)  
+<img alt="Breeze Sans" src="media/16.png" style="width:390px;" /> <img alt="Breeze Sans" src="media/16-2-15.png" style="width:390px; margin-left:9px; margin-bottom:377px;" />  
 *Breeze Sans*
-
 
  
 
@@ -34,8 +31,7 @@ Use light text on dark backgrounds and dark text on light backgrounds. If you ch
 
 Refer to [Colors](colors.md) for detailed information about background and text colors.
 
-
-![Combination of text and background colors for high contrast](media/2.1_set_alarm.png) ![Combination of text and background colors for high contrast](media/1.1_findmydevice.png)  
+<img src="media/2.1_set_alarm.png" alt="Combination of text and background colors for high contrast" style="width:190px;" /> <img src="media/1.1_findmydevice.png" alt="Combination of text and background colors for high contrast" style="width:190px; margin-left:15px;" />   
 *Combination of text and background colors for high contrast*
 
 
@@ -45,8 +41,7 @@ Refer to [Colors](colors.md) for detailed information about background and text 
 
 Use text colors that stand out for important actions, and apply them consistently throughout the entire system. This will help users intuitively understand what the colors stand for.
 
-
-![Blue action text on Wearable circular type](media/7.5_popup_bottom_button_2_.png) ![Blue action text on Wearable circular type](media/blueactiontext.png)  
+<img src="media/7.5_popup_bottom_button_2_.png" alt="Blue action text on Wearable circular type" style="width:190px;" /> <img src="media/blueactiontext.png" alt="Blue action text on Wearable circular type" style="width:190px; margin-left:15px;" />    
 *Blue action text on Wearable circular type*
 
 
@@ -59,12 +54,9 @@ Consistently use one font throughout your app. Displaying multiple typefaces in 
 
 For example, use bold type for the title and regular type for the body text. This allows for text-oriented designs that are consistent and distinctive.
 
-
-
-![Do](media/2.3.2_c.png) *Do*
-
-![Don't](media/2.3.2_d.png) *Don't*
-
+| <img src="media/2.3.2_c.png" alt="#" style="width:300px;" /> | <img src="media/2.3.2_d.png" alt="#" style="width:300px;" /> |
+| :---: | :---: |
+| *Do* | *Don't* |
 
  
 
@@ -72,9 +64,7 @@ For example, use bold type for the title and regular type for the body text. Thi
 
 Do not juxtapose text with varying sizes. Create a font size chart and refer to it when choosing the font sizes. Such practice helps you create more consistent and natural layout designs.
 
-
-
-![Recommended font sizes for the mobile and wearable app designs](media/core_size_mobile-10.png) ![Recommended font sizes for the mobile and wearable app designs](media/core_size_wearable-13.png)  
+<img alt="Recommended font sizes for the mobile and wearable app designs" src="media/core_size_mobile-10.png" style="width:390px;" /> <img alt="Recommended font sizes for the mobile and wearable app designs" src="media/core_size_wearable-13.png" style="width:390px; margin-left:9px; margin-bottom:244px;" />  
 *Recommended font sizes for the mobile app designs*
 
 

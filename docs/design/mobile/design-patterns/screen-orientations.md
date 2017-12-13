@@ -7,15 +7,11 @@
 The portrait orientation is the default screen orientation for most app designs because it’s the way people naturally hold their devices.
 
  
-
-
-
-![Portrait screen layout](media/4.5.1_a.png) ![Portrait screen layout](media/4.5.1_b.png)  
+<img alt="Portrait screen layout" src="media/4.5.1_a.png" style="height:460px; " /><img alt="Portrait screen layout" src="media/4.5.1_b.png" style="height:460px; margin-left: 10px;" />  
 *Portrait screen layout*
 
 
 
- 
 
 ##### Landscape Orientation
 
@@ -38,27 +34,17 @@ Consider using the landscape orientation when:
 -   You can design your app to provide advanced features in the landscape orientation. By including only the features people frequently use, keep the portrait orientation simple and easy to use, while providing more specific and complex features in the landscape orientation (for example, the scientific mode in a Calculator app).
 
  
-
-
-
-![Landscape screen layout](media/4.5.1_c.png) ![Landscape screen layout](media/4.5.1_d.png)  
+<img alt="Landscape screen layout" src="media/4.5.1_c.png" style="width:460px; margin-bottom:10px;" /><img alt="Landscape screen layout" src="media/4.5.1_d.png" style="width:460px;" />  
 *Landscape screen layout*
 
 
-
- 
-
- 
 
 ##### Transition between Different Screen Orientations
 
 Natural transition between portrait and landscape orientations is a standard practice in today's mobile devices. Relative screen layout allows for identical UI component placement in different view modes. However, controls on the screen may have to be adjusted to suit the space allowed in the given orientations. When you design an app that supports both the orientations, ensure that all the features offered in one orientation are also available in the other.
 
  
-
-
-
-![Portrait and landscape orientations](media/4.5.1_e.png) ![Portrait and landscape orientations](media/4.5.1_f.png)  
+<img alt="Portrait and landscape orientations" src="media/4.5.1_e.png" style="height:440px; " /><img alt="Portrait and landscape orientations" src="media/4.5.1_f.png" style="width:440px; margin-left: 10px;" />  
 *Portrait and landscape orientations*
 
 
@@ -68,10 +54,7 @@ Natural transition between portrait and landscape orientations is a standard pra
 The following figure explains why landscape orientation is ideal for video playback. While the same video can be displayed in both the portrait and landscape orientations, landscape orientation is capable of making the best use of the screen size and displaying larger content.
 
  
-
-
-
-![Portrait and landscape orientations in a video app](media/4.5.1_g_.png) ![Portrait and landscape orientations in a video app](media/4.5.1_h_.png)  
+<img alt="Portrait and landscape orientations in a video app" src="media/4.5.1_g_.png" style="height:440px;" /><img alt="Portrait and landscape orientations in a video app" src="media/4.5.1_h_.png" style="width:440px; margin-left: 10px;" />  
 *Portrait and landscape orientations in a video app*
 
 
@@ -81,8 +64,5 @@ The following figure explains why landscape orientation is ideal for video playb
 The Calculator app in the following example switches between the two views depending on the physical orientation of the device. Note that it displays more advanced features only in landscape orientation.
 
  
-
-
-
-![Portrait and landscape orientations in a calculator app](media/4.5.1_i.png) ![Portrait and landscape orientations in a calculator app](media/4.5.1_j.png)  
+<img alt="Portrait and landscape orientations in a calculator app" src="media/4.5.1_i.png" style="height:440px;" /><img alt="Portrait and landscape orientations in a calculator app" src="media/4.5.1_j.png" style="width:440px; margin-left: 10px;" />  
 *Portrait and landscape orientations in a calculator app*

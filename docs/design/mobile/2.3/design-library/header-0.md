@@ -18,16 +18,13 @@ The basic header appears as a bar containing a string. When necessary, you can d
 
  
 
-**Figure: Basic header**
-
-**![](media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_01.png)**
+**Figure: Basic header**  
+<img alt="" height="400" src="media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_01.png" width="240" />
 
  
 
-**Figure: Header with buttons**
-
-**![](media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_02.png)**
-
+**Figure: Header with buttons**  
+<img alt="" height="36" src="media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_02.png" width="240" />
  
 
 Keep the following guidelines in mind when including buttons in a basic header:
@@ -54,11 +51,8 @@ Keep the following guidelines in mind when using tabs in the header:
 
  
 
-**Figure: Tabs**
-
-**![](media/tabs.png)**
-
- 
+**Figure: Tabs**  
+<img alt="" height="98" src="media/tabs.png" width="240" />
 
 
 <a name="tab_title"></a>
@@ -70,6 +64,5 @@ To add an additional title for all tab items, you can combine a row of tabs with
 
  
 
-**Figure: Tab with a title**
-
-![](media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_05.png)
+**Figure: Tab with a title**  
+<img alt="" height="72" src="media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_05.png" width="240" />

@@ -21,10 +21,8 @@ The following figure shows how to create a new memo in the Memo application. The
 
  
 
-**Figure: Creating a new item**
-
-**![](media/01_edit_contacts_01_2.png)**
-
+**Figure: Creating a new item**  
+<img alt="" height="400" src="media/01_edit_contacts_01_2.png" width="240" />
 
 ## Deleting an Item
 

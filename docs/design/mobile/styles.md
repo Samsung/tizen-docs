@@ -35,19 +35,16 @@ Different text colors may be used depending on the level of text information and
 
  
 
-
-![White text against a dark background (theme color)](media/2.3_a.png)  
+<img src="media/2.3_a.png" alt="White text against a dark background (theme color)" style="width:260px;" />  
 *White text against a dark background (theme color)*
 
-![Colored text against a white background](media/2.3_b.png)  
+<img src="media/2.3_b.png" alt="Colored text against a white background" style="width:260px;" />  
 *Colored text against a white background*
 
-
-![Black primary text against a white background](media/2.3_c.png)  
+<img src="media/2.3_c.png" alt="Black primary text against a white background" style="width:260px;" />   
 *Black primary text against a white background*
 
-
-![Gray secondary text against a light blue background](media/2.3_d.png)  
+<img src="media/2.3_d.png" alt="Gray secondary text against a light blue background" style="width:260px;" />   
 *Gray secondary text against a light blue background*
 
 
@@ -56,9 +53,9 @@ The following examples show how different text colors appear on the call log scr
 Once again, the text colors should be decided based on the color of the background. Black or gray text usually fails to stand out against darker backgrounds, resulting in decreased visibility.
 
 
-
-![Do](media/2.3_g.png)  *Do*    
-![Don't](./media/2.3_f.png)  *Don't*
+ | <img src="media/2.3_g.png" alt="#" style="width:260px;" />| <img src="media/2.3_f.png" alt="#" style="width:260px;" /> |
+| :--: | :--: |
+| *Do* | *Don't* |
 
 
 
@@ -71,13 +68,12 @@ Tizen mobile devices use multilayered page structure, with the main theme backgr
 
 The list view is one example that can help you understand how superimposed layers with gradient and text items appear against the background. Semi-transparent stripes of gradient on top of the main background create subtle dividers for each list item, above which list item text layer is placed.
 
-
-![Multilayered screen structurecreated by layers of different opacities over the background gradient.](media/2.4.3_c.png) ![Multilayered screen structurecreated by layers of different opacities over the background gradient.](media/2.2.2_a.png)  
+<img alt="Multilayered screen structurecreated by layers of different opacities over the background gradient." src="media/2.4.3_c.png" style="height:300px; margin-right:4px;" /><img alt="Multilayered screen structurecreated by layers of different opacities over the background gradient." src="media/2.2.2_a.png" style="height:300px; margin-right:4px;" />  
 *Multilayered screen structurecreated by layers of different opacities over the background gradient.*
 
 
 
 Different opacity levels on a list create an interesting gradient. On the item list layer, the opacity level of the first list item is 100 percent, and it decreases by 4 percent for each item after it until the twentieth item. After the twentieth item, the opacity level begins to increase by 4 percent until it reaches 100 percent again.
 
-![Scrolling a list](media/list_scroll.png)  
+<img alt="Scrolling a list" src="media/list_scroll.png" style="width:91%;" />  
 *Scrolling a list*

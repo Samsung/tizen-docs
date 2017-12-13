@@ -15,10 +15,8 @@ Offer the **Menu**, **Back**, and **Home** keys as physical (hardware) keys.
 
  
 
-**Figure: Physical keys**
-
-![](media/01_navigation_messages01_2.png)
-
+**Figure: Physical keys**  
+<img alt="" height="490" src="media/01_navigation_messages01_2.png" width="240" />
 
 
 ## Back Key and Cancel Button
@@ -114,11 +112,8 @@ Use tabs when screens change rapidly, for example, when a different screen (such
 
  
 
-**Figure: Tabs used in call and music applications**
-
-**![](media/tabs_for_music_applications.png)**
-
-   
+**Figure: Tabs used in call and music applications**  
+<img alt="" height="400" src="media/tabs_for_music_applications.png" width="490" /> 
 
 The position of the tabs at the top of the screen can make them hard to reach. To make it easier to switch between views, the user can swipe anywhere in a tab view to navigate to adjacent tabs.
 
@@ -149,11 +144,8 @@ To ensure a structured drawer list, use visual grouping, for example, adding bac
 
  
 
-**Figure: Drawers**
-
-**![](media/drawers.png)**
-
-
+**Figure: Drawers**  
+<img alt="" height="400" src="media/drawers.png" width="490" />
 
 ## Navigation between Applications
 

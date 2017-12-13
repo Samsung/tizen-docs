@@ -20,9 +20,8 @@ However, the basic scroll bar disappears after a certain amount of time, and the
 
  
 
-**Figure: Scroll bar**
-
-![](media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_11.png)
+**Figure: Scroll bar**  
+<img alt="" height="400" src="media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_11.png" width="240" />
 
 
 <a name="screen_handler"></a>
@@ -37,10 +36,8 @@ However, use screen handlers only when the scrolling range is relatively long or
 
  
 
-**Figure: Screen handler**
-
-![](media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_12.png)
-
+**Figure: Screen handler**  
+<img alt="" height="400" src="media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_12.png" width="240" />
  
 
 

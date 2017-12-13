@@ -16,8 +16,7 @@ The Home screen is where widgets are located. Widgets display the main informati
 
 On the Home screen, two fixed buttons are located at the bottom corners. The bottom-left button is the Menu button that is used to show the Home settings, and the bottom-right button is used to direct users to the All apps screen.
 
-
-![Home screen](media/3.1.1_a.png) ![Home screen](media/3.1.1_b.png)  
+<img alt="Home screen" src="media/3.1.1_a.png" style="height:350px; margin-right:20px;" /><img alt="Home screen" src="media/3.1.1_b.png" style="height:460px;" />  
 *Home screen*
 
 
@@ -30,8 +29,7 @@ The All apps screen shows all the apps that are installed on the device. A user-
 
 On the All apps screen, two fixed buttons are located in the bottom corners of the screen. The bottom-left button is the Menu button that is used to show the All apps settings, and the bottom-right button is used to direct users to the Home screen.
 
-
-![All apps screen](media/3.1.1_c_.png) ![All apps screen](media/3.1.1_d.png)  
+<img alt="All apps screen" src="media/3.1.1_c_.png" style="height:350px; margin-right:20px;" /><img alt="All apps screen" src="media/3.1.1_d.png" style="height:460px;" />  
 *All apps screen*
 
 
@@ -44,9 +42,7 @@ The Recent screen is where a list of recently used apps is displayed. On the Rec
 
 Users can open the Recent screen by pressing and holding the hardware Home key. They can then tap an app in the list to re-open it. Tapping the Clear all button at the top of the list clears all the entries listed in the Recent screen. Users can also remove an individual app in the list by dragging it to the left or right.
 
-
-
-![Recent screen](media/3.1.1_e.png) ![Recent screen](media/3.1.1_f.png)  
+<img alt="Recent screen" src="media/3.1.1_e.png" style="height:350px; margin-right:20px;" /><img alt="Recent screen" src="media/3.1.1_f.png" style="height:460px;" />  
 *Recent screen*
 
 
@@ -58,9 +54,7 @@ Because the Lock screen is the first screen the users see each time they wake up
 
 Other than presenting time and date information, the Lock screen also provides convenient options for replying to received messages, emails, or missed calls.
 
-
-
-![Lock screen](media/3.1.1_g.png) ![Lock screen](media/3.1.1_h.png)  
+<img alt="Lock screen" src="media/3.1.1_g.png" style="height:350px; margin-right:20px;" /><img alt="Lock screen" src="media/3.1.1_h.png" style="height:460px; " />  
 *Lock screen*
 
 
@@ -73,7 +67,5 @@ The notification panel allows users to view unread notifications, provides acces
 
 The Quick settings panel contains shortcut buttons that allow users to switch between modes and turn specific features on or off. Refer to [Notifications](../design-patterns/notifications.md) for detailed information.
 
-
-
-![Notification panel](media/3.1.1_i.png) ![Notification panel](media/3.1.1_j.png)  
+<img alt="Notification panel" src="media/3.1.1_i.png" style="height:350px; margin-right:20px;" /><img alt="Notification panel" src="media/3.1.1_j.png" style="height:460px;" />    
 *Notification panel*

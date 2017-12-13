@@ -240,7 +240,7 @@ To learn how to implement date and time pickers, see [Datetime](../../../guides
 Time picker
 
 
-![Date picker](media/are-250x121.png) ![Date picker](media/5-250x136.png)  
+![Date picker](media/are-250x121.png)![Date picker](media/5-250x136.png)  
 Date pickers
 
 

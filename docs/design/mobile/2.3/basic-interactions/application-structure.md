@@ -34,11 +34,8 @@ As the first screen of your application, the **Main** view plays a vital role in
 
  
 
-**Figure: Main view of the Tizen Store application**
-
-**![](media/01_application_structure_tizen_store_01.png)**
-
- 
+**Figure: Main view of the Tizen Store application**  
+<img alt="" height="400" src="media/01_application_structure_tizen_store_01.png" width="240" /> 
 
 
 
@@ -57,12 +54,8 @@ The basic functions are as follows:
 
  
 
-**Figure: Content management using the More menu**
-
- 
-
-**![](media/02_applicationstructure_myfiles_01.png)**
-
+**Figure: Content management using the More menu**  
+<img alt="" height="400" src="media/02_applicationstructure_myfiles_01.png" width="240" />
  
 
 
@@ -80,11 +73,8 @@ Display content elements, such as images or text, so that users recognize the co
 
  
 
-**Figure:** **Displaying content in the Detail view** 
-
-![](media/applicationstructure_detail_view.png)
-
- 
+**Figure:** **Displaying content in the Detail view**  
+<img alt="" height="810" src="media/applicationstructure_detail_view.png" width="490" />
 
 
 
@@ -98,12 +88,8 @@ The **Detail** view displays various functions that users can execute in the cur
 
  
 
-**Figure:** **Function buttons in the Detail view**
-
-![](media/applicationstructure_function_buttons02.png)
-
- 
-
+**Figure:** **Function buttons in the Detail view**  
+<img alt="" height="400" src="media/applicationstructure_function_buttons02.png" width="490" />
 
 
 ------------------------------------------------------------------------
@@ -140,13 +126,8 @@ When a user completes or cancels a task, the mode should automatically change fr
 
  
 
-**Figure: Managing items**
-
-**![](media/09_applicationstructure_contacts_04.png)**
-
- 
-
-
+**Figure: Managing items**  
+<img alt="" height="400" src="media/09_applicationstructure_contacts_04.png" width="240" />
 
 ## Edit Mode in the Detail View
 
@@ -171,6 +152,5 @@ Use the edit mode to let users set or update settings values using standard UI c
 
  
 
-**Figure: Editing settings**
-
-![](media/10_applicationstructure_clock_02.png)
+**Figure: Editing settings**  
+<img alt="" height="400" src="media/10_applicationstructure_clock_02.png" width="240" />
