@@ -4,8 +4,8 @@ Bezel interactions refer to rotating the bezel to explore the screen. Users can 
 
 |Interaction |    | Example |
 |------------|----|--------|
-|Turn the bezel clockwise|![](media/interaction_7.2.0_1.png)| Scroll right<br>Down<br>Increase<br>value<br>Accept<br>Zoom in|
-|Turn the bezel counterclockwise|![](media/interaction_7.2.0_2.png)|Scroll left<br>Up<br>Reduce value<br>Reject<br>Zoom out<br>|
+|Turn the bezel clockwise|<img src="media/interaction_7.2.0_1.png" width="128" height="91" />| Scroll right<br>Down<br>Increase<br>value<br>Accept<br>Zoom in|
+|Turn the bezel counterclockwise|<img src="media/interaction_7.2.0_2.png" width="132" height="91" />|Scroll left<br>Up<br>Reduce value<br>Reject<br>Zoom out<br>|
 
 ## Basics
 

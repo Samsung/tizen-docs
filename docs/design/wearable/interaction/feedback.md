@@ -149,13 +149,13 @@ Auditory responses deliver feedback on the user's touch or gestures. Using diffe
 The table below shows some examples of the Gear's auditory responses for each type of interaction.
 
 
-|Touch/mode change        |![](media/interaction_7.5.3_icon_play1.png) | ![](media/interaction_7.5.3_icon_01.png) |
+|Touch/mode change        |<img src="media/interaction_7.5.3_icon_play1.png" width="70" height="70" /> |<img src="media/interaction_7.5.3_icon_01.png" width="220" height="40" /> |
 |--------------------------|--------------------------|--------------------------|
-| Nokey (reach limit)      | ![](media/interaction_7.5.3_icon_play1.png) | ![](media/interaction_7.5.3_icon_02.png) |
-| Up/down                  | ![](media/interaction_7.5.3_icon_play2.png) | ![](media/interaction_7.5.3_icon_03_02.png) |
-| On/off, Enable/disable   | ![](media/interaction_7.5.3_icon_play2.png) | ![](media/interaction_7.5.3_icon_04.png) |
-| Confirm/start/success    | ![](media/interaction_7.5.3_icon_play1.png) | ![](media/interaction_7.5.3_icon_05.png) |
-| Error/alert              | ![](media/interaction_7.5.3_icon_play1.png) | ![](media/interaction_7.5.3_icon_06.png) |
+| Nokey (reach limit)      |<img src="media/interaction_7.5.3_icon_play1.png" width="70" height="70" /> |<img src="media/interaction_7.5.3_icon_02.png" width="220" height="40" /> |
+| Up/down                  |<img src="media/interaction_7.5.3_icon_play2.png" width="160" height="70" /> |<img src="media/interaction_7.5.3_icon_03_02.png" width="220" height="40" /> |
+| On/off, Enable/disable   |<img src="media/interaction_7.5.3_icon_play2.png" width="160" height="70" /> |<img src="media/interaction_7.5.3_icon_04.png" width="220" height="40" /> |
+| Confirm/start/success    |<img src="media/interaction_7.5.3_icon_play1.png" width="70" height="70" /> |<img src="media/interaction_7.5.3_icon_05.png" width="220" height="40" /> |
+| Error/alert              |<img src="media/interaction_7.5.3_icon_play1.png" width="70" height="70" /> |<img src="media/interaction_7.5.3_icon_06.png" width="220" height="40" /> |
 
 
 

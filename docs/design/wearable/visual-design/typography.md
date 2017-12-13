@@ -4,7 +4,7 @@ The way you present text greatly affects your app's readability. There is no lim
 
 ## System font
 
-The Gear uses Breeze Sans as a system font. Breeze Sans comes in light, regular, medium, bold, and condensed. The condensed option also comes in thin, light, regular, medium, and bold types. You can download Breeze Sans typeface [here](../../platform/styles/typography.md).
+The Gear uses Breeze Sans as a system font. Breeze Sans comes in light, regular, medium, bold, and condensed. The condensed option also comes in thin, light, regular, medium, and bold types. You can download Breeze Sans typeface [here](../../introduction/styles/typography.md).
 
  
 

@@ -12,7 +12,7 @@ Touch is the Gear’s base interaction platform, with taps and swipes widely use
      </tr>
      <tr>
        <td> Tap </td>
-       <td> ![](media/interaction_7.1.0_1-150x120.png) </td>
+       <td> ![](media/interaction_7.1.0_1-150x120.png)</td>
        <td> Action/select </td>
      </tr>
      <tr>

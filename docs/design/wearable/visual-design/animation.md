@@ -21,7 +21,7 @@ When transitioning between screens, use consistent animations to indicate whethe
     Animated transitions between screens should visually show the hierarchy of each screen. Let animations introduce layers based on where the layers are actually coming from. Users should be able to determine the hierarchy of the transitioning screens solely from the animation. For example, it can confuse users if a screen to the left of the current screen comes in from the right-hand side.
 
       ------------------------------------ ------------------------------------
-      ![Do](media/8.4.2.visualhierarchy_do)   ![Don't](media/8.4.2.visualhierarchy_dont.mp4)
+      ![Do](media/8.4.2.visualhierarchy_do.mp4)   ![Don't](media/8.4.2.visualhierarchy_dont.mp4)
       ------------------------------------ ------------------------------------
 
     *Animations should show the visual hierarchy between the transitioning screens.*
