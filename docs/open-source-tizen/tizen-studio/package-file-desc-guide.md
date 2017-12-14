@@ -22,7 +22,7 @@ Project structure for developing, packaging, and building extensions requires th
   - `<package name>.remove.<TARGET OS>`: post-removal script
 
 
-### pkginfo.manifest File
+### `pkginfo.manifest` File
 
 This file contains information about the packages created by the source build. It consists of sections and fields:
   
@@ -64,7 +64,7 @@ Sections are separated by 2 newline characters (`\n \n`), and each section conta
   ```
 
 
-### build.<OS> File
+### `build.<OS>` File
 
 This file consists of a shell script. You need to implement some of the following functions:
 
@@ -88,7 +88,7 @@ install() {
 }
 ```
 
-### changelog File
+### `changelog` File
 
 This file is included in the package file (.zip). When a new package is deployed, the changelog is updated.
 
