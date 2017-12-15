@@ -77,7 +77,7 @@ Registering a listener for badge count changes to react to new badges and displa
 
    `BDb5tZJe47.TestSample` is the application ID of the application to monitor. The first argument of the `addChangeListener()` method is an array of application identifiers. This allows you to bind the listener to several applications at same time.
 
-2. To stop receiving notification about badge changes, use the `removeChangeListener ()` method:
+2. To stop receiving notifications about badge changes, use the `removeChangeListener()` method:
 
    ```
    tizen.badge.removeChangeListener(['BDb5tZJe47.TestSample']);

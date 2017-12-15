@@ -70,7 +70,9 @@ The `<head>` element contains the information that the browser refers to when re
 The `<head>` contains the following subelements:
 
 - `<title>`: Defines the title of the document.
-- `<meta>`: Defines information, such as encoding, creator, and keywords of the document.	**Note**	The [viewport element](http://www.w3.org/TR/css-device-adapt/#the-viewport-rule), which sets the screen area, is included in the meta information.
+- `<meta>`: Defines information, such as encoding, creator, and keywords of the document.	
+> **Note**	
+> The [viewport element](http://www.w3.org/TR/css-device-adapt/#the-viewport-rule), which sets the screen area, is included in the meta information.
 - `<style>`, `<link>`: Sets the styles of the document.
 - `<script>`, `<noscript>`: Adds functions to the document. 
 
@@ -207,7 +209,8 @@ Using the order above, if all other color styles are applied to `<p>` elements, 
 
 Generally, when the `@import` attribute is used, connect to the top of CSS file that has been linked externally, as illustrated in the following figure. If the attribute is applied in the middle of the CSS file, it is difficult to know the point where CSS has been applied, and to find the file connected to the source in the future. Therefore, group the CSS file at the top.
 
-​	**Note**	Using the `@import` attribute gives the same result as connecting an external file, but it does not function correctly in older browsers (IE 5.5 and below).
+> **Note**	
+> Using the `@import` attribute gives the same result as connecting an external file, but it does not function correctly in older browsers (IE 5.5 and below).
 
 **Figure: Using the @import attribute**
 
@@ -263,7 +266,8 @@ The following example shows how you can use JavaScript with HTML either by linki
 
 Both ways described above give the same result in behavior. However, the position of the JavaScript code affects the order in which the methods are called.
 
-​	**Note**	Previously, adding JavaScript code within head tag was recommended because it is easy to maintain. Currently, adding it to the end of the body and executing it after parsing the HTML document is common.
+> **Note**
+> Previously, adding JavaScript code within head tag was recommended because it is easy to maintain. Currently, adding it to the end of the body and executing it after parsing the HTML document is common.
 
 ### JavaScript Events
 
@@ -348,4 +352,5 @@ To provide users with JavaScript-based features, you must learn to use JavaScrip
 
   The JavaScript code within the `<body>` element is sent to Interpreter. The anonymous method is immediately executed, and the HTML DOM structure is set up. The methods in the `$(document).ready()` method and in the `onload` event are executed in the stored order.
 
-​	**Note**	jQuery has to be called from both the `<head>` and `<body>` elements. The `logText` variable has to be called from the `<body>` element. The method connected to the `onload` event in the `<head>` element is not executed.
+> **Note**
+> jQuery has to be called from both the `<head>` and `<body>` elements. The `logText` variable has to be called from the `<body>` element. The method connected to the `onload` event in the `<head>` element is not executed.

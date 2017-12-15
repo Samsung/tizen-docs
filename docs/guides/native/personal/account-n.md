@@ -25,8 +25,8 @@ The main features of the Account Manager API include:
 
   The `account.h` header file handles account-related information. You can [query the account details](#queries) with database queries, [retrieve the account type](#type), and [update the account information](#update). For a list of modifiable account properties, see [Account and Account Provider Properties](#acc_property).
 
-**Note**
-Account providers, such as Google and Facebook, represent specific service provider-related information or protocol that provides the user accounts. To add, update, or remove an accounts, you must register a specific account provider for all your applications belonging to the same package.To register an account provider, define the [account provider information](#accprovider_property) in the `Account` tab of the manifest editor, and implement the [account application control](#appcontrol).If the application has defined the account provider information and implements the appcontrol for the account provider, the account provider is automatically registered when the application is installed.
+> **Note**  
+> Account providers, such as Google and Facebook, represent specific service provider-related information or protocol that provides the user accounts. To add, update, or remove an accounts, you must register a specific account provider for all your applications belonging to the same package.To register an account provider, define the [account provider information](#accprovider_property) in the `Account` tab of the manifest editor, and implement the [account application control](#appcontrol).If the application has defined the account provider information and implements the appcontrol for the account provider, the account provider is automatically registered when the application is installed.
 
 ## Account Application Control
 
@@ -254,8 +254,8 @@ To retrieve account providers by a specific capability:
 
 To remove an account, use the `account_delete_from_db_by_id()`, `account_delete_from_db_by_user_name()`, or `account_delete_from_db_by_package_name()` function. They all remove a given account record.
 
-**Note**
-To get the ID needed as a parameter of the `account_delete_from_db_by_id()` function, use the `account_get_account_id()` function.
+> **Note**  
+> To get the ID needed as a parameter of the `account_delete_from_db_by_id()` function, use the `account_get_account_id()` function.
 
 ```
 ret = account_delete_from_db_by_id(account_id);

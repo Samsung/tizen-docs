@@ -11,6 +11,8 @@ The content object is treated as a single image by the Evas map. If you have a c
 
 The mapbuf component inherits from the container component, which means that container functions can be used on the mapbuf component. The mapbuf component emits no signals.
 
+For more information, see the Mapbuf API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Elm__Mapbuf.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Elm__Mapbuf.html) applications).
+
 **Figure: Mapbuf hierarchy**
 
 ![Mapbuf hierarchy](./media/mapbuf_tree.png)
@@ -36,9 +38,8 @@ To add content to the mapbuf component, use the `elm_object_content_set()` funct
 elm_object_content_set(mapbuf, content);
 ```
 
-**Note**
-
-Calling the `elm_object_content_set(mapbuf, content)` function is equivalent to calling the `elm_object_part_content_set(mapbuf, "default", content)` function.
+> **Note**  
+> Calling the `elm_object_content_set(mapbuf, content)` function is equivalent to calling the `elm_object_part_content_set(mapbuf, "default", content)` function.
 
 To activate smooth map rendering and alpha rendering for the mapbuf component:
 
@@ -55,6 +56,5 @@ To use the mapbuf component, activate it:
 elm_mapbuf_enabled_set(mapbuf, EINA_TRUE);
 ```
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

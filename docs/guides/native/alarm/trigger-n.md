@@ -86,7 +86,8 @@ The main features of the Contextual Trigger API include:
 
 
 
-  **Note**A rule can be enabled, disabled, or removed only by the owner application that composed and registered the rule.
+  > **Note**  
+  > A rule can be enabled, disabled, or removed only by the owner application that composed and registered the rule.
 
 
 
@@ -98,9 +99,8 @@ The main features of the Contextual Trigger API include:
 
 
 
-**Note**
-
-If you only need to monitor a fundamental system event, such as the USB connection status, to launch a service application, and no condition is required, use [event callbacks](../app-management/efl-ui-app-n.md#callback). In these cases, using the event system instead of the contextual trigger is more efficient, as the contextual trigger runs a rule engine to manage state changes of multiple event and condition items simultaneously.
+> **Note**  
+> If you only need to monitor a fundamental system event, such as the USB connection status, to launch a service application, and no condition is required, use [event callbacks](../app-management/efl-ui-app-n.md#callback). In these cases, using the event system instead of the contextual trigger is more efficient, as the contextual trigger runs a rule engine to manage state changes of multiple event and condition items simultaneously.
 
 
 

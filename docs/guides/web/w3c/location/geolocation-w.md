@@ -18,7 +18,8 @@ Using the `Geolocation` interface, you can [retrieve position information](./w3c
   - `timeout` defines the maximum length of time that is allowed to pass from the call until the corresponding success event handler is invoked.
   - `maximumAge` indicates that the application can accept cached location information whose age is no greater than the specified time.
 
-   ​**Note**In almost all cases, the location information reveals the location of the device user. To provide privacy for the user, a confirmation mechanism is provided for the geolocation features.
+​> **Note*
+> In almost all cases, the location information reveals the location of the device user. To provide privacy for the user, a confirmation mechanism is provided for the geolocation features.
 
 ## Retrieving Location Information
 

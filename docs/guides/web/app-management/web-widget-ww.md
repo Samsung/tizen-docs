@@ -4,7 +4,7 @@
 
 - Tizen 2.3.2 and Higher for Wearable
 
-Widget applications (or simply widgets) are specialized applications useful in providing users with a quick view of specific information from the parent application. Also, widgets allow users to access certain features without launching the parent applications. Combined with the parent application, your widget can have various features to increase the usability of your application set.
+A widget application (or widget) is a specialized application that provides users with a quick view of specific information from the parent application. In addition, the widget can allow the user to access certain features without launching the parent application. Combined with the parent application, your widget can have various features to increase the usability of your application set.
 
 This feature is supported in wearable applications only.
 
@@ -35,7 +35,7 @@ Web widgets use only a subset of HTML, CSS, and DOM APIs available for Web appli
 - The image resolution in a widget must be less than 1.5 times the base image resolution of the Web Widget Specification.
 - Only JPEG, PNG, and GIF formats are allowed for image files.
 
-You can create a standalone Web widget, with no parent Web application. In this case, the parent Web application is generated automatically by the Tizen Studio during packaging. However, this kind of widget is used for development and testing purposes only. To be published on the Tizen Store, Web widgets must be combined with a real parent application.
+You can create a standalone Web widget, with no parent Web application. In this case, the parent Web application is generated automatically by the Tizen Studio during packaging. However, this kind of widget is used for development and testing purposes only. To be published in the Tizen Store, Web widgets must be combined with a real parent application.
 
 More than 1 Web widget can be included in a parent Web application, and all widgets and the parent are bundled in 1 package by the Tizen Studio. Web widget resources are included in its Web application package. The Tizen platform installs the Web widget when its parent Web application is installed, and uninstalls the Web widget when its parent Web application is uninstalled. The Web widget resources are all removed together with its parent.
 
@@ -133,7 +133,7 @@ The following examples show the `config.xml` files in a Web application package:
   <widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets"
      id="http://yourdomain/DynamicSample">
 
-     <!--Information about the widget001-->
+     <!--Information about widget001-->
      <tizen:app-widget id="Zyj5WRVa13.DynamicSample.widget001" primary="true">
         <tizen:widget-label>TEST_1</tizen:widget-label>
         <tizen:widget-content src="widget/widget001/index.html">
@@ -141,7 +141,7 @@ The following examples show the `config.xml` files in a Web application package:
         </tizen:widget-content>
      </tizen:app-widget>
 
-     <!--Information about the widget002-->
+     <!--Information about widget002-->
      <tizen:app-widget id="Zyj5WRVa13.DynamicSample.widget002" primary="false">
         <tizen:widget-label>TEST_2</tizen:widget-label>
         <tizen:widget-content src="widget/widget002/index.html">
@@ -155,7 +155,7 @@ The following examples show the `config.xml` files in a Web application package:
   </widget>
   ```
 
-- The `config.xml` file of the widget001:
+- The `config.xml` file for widget001:
 
   ```
   <tizen:app-widget id="Zyj5WRVa13.DynamicSample.widget001" primary="true">
@@ -166,7 +166,7 @@ The following examples show the `config.xml` files in a Web application package:
   </tizen:app-widget>
   ```
 
-- The `config.xml` file of the widget002:
+- The `config.xml` file for widget002:
 
   ```
   <tizen:app-widget id="Zyj5WRVa13.DynamicSample.widget002" primary="false">
@@ -327,7 +327,8 @@ The following UI layouts with code examples are common use cases in widgets on w
 
   ![Vertical split layout](./media/webwidget_vertical_split_layout.png)
 
-  ​	**Note**	The widget engine only supports the `block`, `inline`, `inline-block`, and `none` values for the `display` property.`#more {   .display: inline-block;}`
+> **Note**
+> The widget engine only supports the `block`, `inline`, `inline-block`, and `none` values for the `display` property.`#more {   .display: inline-block;}`
 
   ```
   <head>
@@ -601,7 +602,7 @@ function onload() {
 
 ### Animation
 
-For simple and smooth animation effect, use the `requestAnimationFrame()` JavaScript method.
+For simple and smooth animation effects, use the `requestAnimationFrame()` JavaScript method.
 
 The following example shows a weather widget implementation with an image animation.
 
@@ -818,7 +819,8 @@ In addition, to launch an application, its application ID must be used to identi
 tizen.application.launch('ApplicationIDToLaunch', onGetAppsContextSuccess);
 ```
 
-​	**Note**	It is not recommended for a Web widget to launch other Web widgets. This feature is deprecated in Tizen 3.0.
+> **Note**
+> It is not recommended for a Web widget to launch other Web widgets. This feature is deprecated in Tizen 3.0.
 
 ### Communicating with a Host Application on a Host Device
 
@@ -1114,7 +1116,7 @@ d.toLocaleTimeString(); /* "7:38:05 AM" */
 
 ## Debugging
 
-You can debug and validate your Web widget. Currently, there are 2 approaches in debugging a Web widget:
+You can debug and validate your Web widget. Currently, there are 2 approaches to debugging a Web widget:
 
 - Console log
 - Web debugger
@@ -1308,7 +1310,7 @@ The Web widget engine supports the `<br>` and `<span>` elements for text-level s
 
 #### What is the best way to use the `<img>` element?
 
-To increase performance and reduce memory size, the Web widget engine imposes 2 limitations on the `<img>` element:
+To increase performance and reduce the memory footprint, the Web widget engine imposes 2 limitations on the `<img>` element:
 
 - Supported image file formats: PNG, JPG, GIF
 - Supported resolutions: lower than 1.5 times the base image resolution

@@ -5,8 +5,8 @@
 
 The activity recognizer can monitor user activities. You can [detect walking and running activity](#activity). You can also recognize the stationary state and activities on a moving vehicle.
 
-**Note**
-You can test the activity recognition functionality only on a target device. The emulator does not support this feature.
+> **Note**  
+> You can test the activity recognition functionality only on a target device. The emulator does not support this feature.
 
 ## Prerequisites
 

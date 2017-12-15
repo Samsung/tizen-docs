@@ -75,9 +75,8 @@ In the Tizen 2.4 release, the screen reader is available only inside the UI Comp
 
 ![UI Components sample application](./media/ui-controls.png) ![UI Components sample application](./media/ui-controls-accessibility.png) ![Screen reader](./media/ui-controls-accessibility-screen-reader.png)
 
-**Note**	
-
-If reading of any arbitrary text directly from the application needs to be synchronized with the screen reader voice output, you must use the Tizen platform TTS API (in [mobile](http://org.tizen.native.mobile.apireference/group__CAPI__UIX__TTS__MODULE.html) and [wearable](http://org.tizen.native.wearable.apireference/group__CAPI__UIX__TTS__MODULE.html) applications), which is also used by the screen reader.
+> **Note**	
+> If reading of any arbitrary text directly from the application needs to be synchronized with the screen reader voice output, you must use the Tizen platform TTS API (in [mobile](http://org.tizen.native.mobile.apireference/group__CAPI__UIX__TTS__MODULE.html) and [wearable](http://org.tizen.native.wearable.apireference/group__CAPI__UIX__TTS__MODULE.html) applications), which is also used by the screen reader.
 
 ### Making UI Components Readable
 
@@ -109,13 +108,15 @@ The screen reader reads the information in the following order when the user sel
 The following table lists the functions you can use to set EFL Elementary UI component information to be read by the screen reader, and to support internationalization (i18n) for the information.
 
 **Table: Functions for making UI components readable**
-
 | Function                                 | Description                              |
 | ---------------------------------------- | ---------------------------------------- |
-| `void elm_atspi_accessible_name_set(Elm_Interface_Atspi_Accessible *obj, const char *text)` | Set a text of an object.				`obj`: Elementary object		`text`: New accessible name for the object |
-| `void elm_atspi_accessible_role_set(Elm_Interface_Atspi_Accessible *obj, Elm_Atspi_Role role)` | Set the accessible role.				`obj`: Elementary object		`role`: New accessible role for the object |
-| `void elm_atspi_accessible_description_set(Elm_Interface_Atspi_Accessible *obj, const char *text)` | Set the accessible description.				`obj`: Elementary object		`text`: Description text for the object |
-| `void elm_atspi_accessible_translation_domain_set(Elm_Interface_Atspi_Accessible *obj, const char *domain)` | Bind the translation domain to the accessible object.				`obj`: Elementary object		`domain`: Translation domain (name space for translation keys) |
+| `void elm_atspi_accessible_name_set(Elm_Interface_Atspi_Accessible *obj, const char *text)` | Set a text of an object.`obj`: Elementary object`text`: New accessible name for the object |
+| `void elm_atspi_accessible_name_cb_set(Elm_Interface_Atspi_Accessible *obj, Elm_Atspi_Reading_Info_Cb name_cb, const void *data)` | Set the accessible name information callback for an object.`obj`: Elementary object`name_cb`: Accessible name information callback for the object`data`: Data passed to the accessible name information callback |
+| `void elm_atspi_accessible_role_set(Elm_Interface_Atspi_Accessible *obj, Elm_Atspi_Role role)` | Set the accessible role.`obj`: Elementary object`role`: New accessible role for the object |
+| `void elm_atspi_accessible_description_set(Elm_Interface_Atspi_Accessible *obj, const char *text)` | Set the accessible description.`obj`: Elementary object`text`: Description text for the object |
+| `void elm_atspi_accessible_description_cb_set(Elm_Interface_Atspi_Accessible *obj, Elm_Atspi_Reading_Info_Cb description_cb, const void *data)` | Set the accessible description information callback for an object.`obj`: Elementary object`description_cb`: Accessible description information callback for the object`data`: Data passed to the accessible description information callback |
+| `void elm_atspi_accessible_translation_domain_set(Elm_Interface_Atspi_Accessible *obj, const char *domain)` | Bind the translation domain to the accessible object.`obj`: Elementary object`domain`: Translation domain (name space for translation keys) |
+
 
 **Figure: Readable components in the UI Components sample**
 
@@ -223,27 +224,48 @@ The Elementary library sets the default information (label, traits, state) for t
 
   If the user highlights the button and the display language is set to English (US), the screen reader says "Test Name, button, one finger double tap to activate" (it reads out the component custom name, default trait, and description from the `en_US.po` file). If the display language is changed, the description string from the relevant PO file is used.
 
-- Button with an accessible name 
+- Button with an accessible name and an accessible description
 
-  Use the `elm_atspi_accessible_name_set()` function to define an accessible name.
+  - Use the `elm_atspi_accessible_name_set()` function to define an accessible name.
 
-  ```
-  /* File: src/accessibility/screen_reader/description.c */
+    ```
+    /* File: src/accessibility/screen_reader/description.c */
 
-  btn = elm_button_add(layout);
-  elm_object_text_set(btn, "Test Name");
-  elm_object_style_set(btn, "default");
-  elm_object_part_content_set(layout, "button_a11y_name", btn);
-  elm_atspi_accessible_name_set(btn, "IDS_BUTTON_NAME");
-  elm_atspi_accessible_translation_domain_set(btn, PACKAGE);
-  ```
+    btn = elm_button_add(layout);
+    elm_object_text_set(btn, "Test Name");
+    elm_object_style_set(btn, "default");
+    elm_object_part_content_set(layout, "button_a11y_name", btn);
+    elm_atspi_accessible_name_set(btn, "IDS_BUTTON_NAME");
+    elm_atspi_accessible_translation_domain_set(btn, PACKAGE);
+    ```
 
-  If the user highlights the button, the screen reader says "Button accessibility name, button"  (it reads out the component accessible name from the `en_US.po` file and the default trait). If the display language is changed, the accessible name string from the relevant PO file is used.
+    If the user highlights the button, the screen reader says "Button accessibility name, button" (it reads out the component accessible name from the `en_US.po` file and the default trait). If the display language is changed, the accessible name string from the relevant PO file is used.
 
-  The `elm_atspi_accessible_name_set()` function overrides the custom name set earlier with the `elm_object_text_set()` function.
+    The `elm_atspi_accessible_name_set()` function overrides the custom name set earlier with the `elm_object_text_set()` function.
+
+  - You can also use the `elm_atspi_accessible_name_cb_set()` and `elm_atspi_accessible_description_cb_set()` functions to define callbacks that return an accessible name and description for the button.
+
+    ```
+    static char*
+    _accessible_name_cb(void *data, Evas_Object *obj)
+    {
+        return strdup("Accessible Name");
+    }
+    static char*
+    _accessible_description_cb(void *data, Evas_Object *obj)
+    {
+        return strdup("Accessible Description");
+    }
+
+    btn = elm_button_add(layout);
+    elm_object_text_set(btn, "Test Name");
+    elm_atspi_accessible_name_cb_set(btn, _accessible_name_cb, NULL);
+    elm_atspi_accessible_description_cb_set(btn, _accessible_description_cb, NULL);
+    ```
+
+    If the user highlights the button, the screen reader says "Accessible Name, button, Accessible Description".
 
 You can also create a custom reading of multi-style components. Sometimes, it is necessary to have different voice output depending on the style assigned to the UI component. The `default` style is handled "out of the box" by the accessibility framework, but you must handle any alternative styles on the application side. The Elementary checkbox component offers a good example of alternative styles:
-
 - `default` style in a checkbox:The reading must be "<label>, <state>", where <label> is a text assigned to the checkbox and <state> is read as "selected" or "not selected", depending on the checkbox state.
 - `favorite` style in a checkbox:The reading must be "Favorite button, <state>", where <state> is read as "selected" or "not selected", depending on the checkbox state.
 - `on&off` style in a checkbox:The reading must be "On/off button, <state>", where <state> is read as "on" or "off", depending on the checkbox state.
@@ -262,6 +284,41 @@ elm_object_style_set(check, "on&off");
 elm_atspi_accessible_role_set(check, ELM_ATSPI_ROLE_TOGGLE_BUTTON);
 elm_atspi_accessible_name_set(check, "On, off");
 ```
+### Setting the UI Reading Information Types
+
+By default, the screen reader uses all accessible information types for an Elementary object, such as label (name), traits, and state. To limit the information types to be used, you can define a list of reading information types.
+
+The following table lists the function you can use to define the reading information types for an object.
+
+**Table: Function for setting the reading information types**
+
+| Function                                 | Description                              |
+| ---------------------------------------- | ---------------------------------------- |
+| `void elm_atspi_accessible_reading_info_type_set(Elm_Interface_Atspi_Accessible *obj, Elm_Atspi_Reading_Info_Type_Mask reading_info)` | Set the reading information types for an accessible object.`obj`: Elementary object`reading_info`: Reading information types |
+
+The following source code snippet demonstrates how to set the reading information types for an accessible object in the application source code:
+
+```
+static char*
+_accessible_name_cb(void *data, Evas_Object *obj)
+{
+    return strdup("Accessible Name");
+}
+static char*
+_accessible_description_cb(void *data, Evas_Object *obj)
+{
+    return strdup("Accessible Description");
+}
+
+btn = elm_button_add(layout);
+elm_object_text_set(btn, "Test Name");
+elm_atspi_accessible_name_cb_set(btn, _accessible_name_cb, NULL);
+elm_atspi_accessible_description_cb_set(btn, _accessible_description_cb, NULL);
+elm_atspi_accessible_reading_info_type_set(btn, (ELM_ACCESSIBLE_READING_INFO_TYPE_NAME |
+                                                 ELM_ACCESSIBLE_READING_INFO_TYPE_DESCRIPTION));
+```
+
+If the user highlights the button, the screen reader says "Accessible Name, Accessible Description", which corresponds to the selected `ELM_ACCESSIBLE_READING_INFO_TYPE_NAME` and `ELM_ACCESSIBLE_READING_INFO_TYPE_DESCRIPTION` reading information types. It does not read the `ELM_ACCESSIBLE_READING_INFO_TYPE_TRAITS` type reading information, which in this case is "button".
 
 ### Setting the UI Reading Order
 

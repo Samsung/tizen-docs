@@ -5,7 +5,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 4.0 and Higher for Wearable
 
-Tizen enables you to manage your schedule and tasks in calendars. A calendar is a collection of events or tasks, depending upon the calendar type. Each event or task has a series of attributes, such as purpose, starting time, and duration.
+You can manage your schedule and tasks in calendars. A calendar is a collection of events or tasks, depending upon the calendar type. Each event or task has a series of attributes, such as purpose, starting time, and duration.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -23,7 +23,8 @@ The main features of the Calendar API include:
 
   You can create multiple [events](./personal/calendar-w.md#Adding_Events_Batch) or [tasks](./personal/calendar-w.md#Adding_Tasks_Batch), and manage multiple calendar [events](./personal/calendar-w.md#Managing_Event_Batch) or [tasks](./personal/calendar-w.md#Managing_Task_Batch) simultaneously by using the applicable batch methods. The batch mode provides faster, optimized processing of multiple calendar items.
 
-  ​	**Note**	The batch mode does not provide progress information about operations. To ensure that you can view the progress, break the batch operation down into multiple smaller batch operations. For example, break down a batch of 100 update requests into 10 batch operations that update 10 records at a time. Breaking down a batch operation also helps you avoid blocking other database operations, such as add or remove.
+> **Note**
+> The batch mode does not provide progress information about operations. To ensure that you can view the progress, break the batch operation down into multiple smaller batch operations. For example, break down a batch of 100 update requests into 10 batch operations that update 10 records at a time. Breaking down a batch operation also helps you avoid blocking other database operations, such as add or remove.
 
 - iCalendar 2.0 format conversions
 
@@ -51,14 +52,15 @@ To enable your application to use the calendar functionality:
 
 2. To use the Calendar API, the application has to request permission by adding the following privileges to the `config.xml` file:
 
-3. ```
+   ```
    <tizen:privilege name="http://tizen.org/privilege/calendar.read"/>
    <tizen:privilege name="http://tizen.org/privilege/calendar.write"/>
    ```
 
 ## Creating a Calendar
 
-​	**Note**	The created calendar is associated with a specified account. Therefore, you must retrieve the account before creating a new calendar.
+> **Note**
+> The created calendar is associated with a specified account. Therefore, you must retrieve the account before creating a new calendar.
 
 To create a new calendar:
 
@@ -116,7 +118,8 @@ To access the device calendars and retrieve calendar objects:
 
 The events are identified using the `CalendarEventId`, which is a `CalendarItemId` typedef (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarItemId) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarItemId) applications). In recurring events, the `CalendarEventId` contains a recurrence ID (`rid`) in addition to the actual event ID, to separately identify each occurrence of the recurring event.
 
-​	**Note**	Due to time zone and daylight saving time, an event for "today" can actually occur in the past or in the future.
+> **Note**
+> Depending on the time zone and daylight saving time, an event for "today" can actually occur in the past or in the future.
 
 Using the `CalendarEvent` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarEvent) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarEvent) applications), you can:
 
@@ -196,7 +199,8 @@ To add events to a calendar in the batch mode:
    });
    ```
 
-   ​	**Note**	To keep the example as simple as possible, the array above includes only 1 event.
+> **Note**
+> To keep the example as simple as possible, the array above includes only 1 event.
 
 3. Use the `addBatch()` method of the `Calendar` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#Calendar) applications) to add the events in the array to the calendar:
 
@@ -204,7 +208,8 @@ To add events to a calendar in the batch mode:
    calendar.addBatch([ev]);
    ```
 
-   ​	**Note**	The `addBatch()` method is asynchronous, and its callbacks must be used to react to the success or failure of the operation.
+> **Note**
+> The `addBatch()` method is asynchronous, and its callbacks must be used to react to the success or failure of the operation.
 
 ### Managing a Single Event
 
@@ -482,7 +487,8 @@ To add tasks to a calendar in the batch mode:
    });
    ```
 
-   ​	**Note**	To keep the example as simple as possible, the array above includes only 1 task.
+> **Note**
+> To keep the example as simple as possible, the array above includes only 1 task.
 
 3. Use the `addBatch()` method of the `Calendar` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#Calendar) applications) to add the tasks in the array to the calendar:
 
@@ -490,7 +496,8 @@ To add tasks to a calendar in the batch mode:
    calendar.addBatch([task]);
    ```
 
-   ​	**Note**	The `addBatch()` method is asynchronous, and its callbacks must be used if you want to react to the success or failure of the operation.
+> **Note**
+> The `addBatch()` method is asynchronous, and its callbacks must be used if you want to react to the success or failure of the operation.
 
 ### Managing a Single Task
 

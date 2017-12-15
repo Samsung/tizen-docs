@@ -784,6 +784,5 @@ To add lighting for the objects, which is useful with 3D transforms, use the `ev
 - `lightr`, `lightg` and `lightb` are the local light source colors;
 - `ambientr`, `ambientg` and `ambientb` are the ambient light colors. Evas sets the color of each point based on the distance to the light source, the angle with which the object is facing the light and the ambient light. The orientation of each point is important. If the map is defined counter-clockwise, the object faces away from you and becomes obscured, since no light does not reflect from it.
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

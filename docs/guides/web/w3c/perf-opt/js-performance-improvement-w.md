@@ -76,7 +76,8 @@ for (var i = 0, len = array_list.length; i < len; i++) {
 
 ![JavaScript performance improvement result (in mobile applications only)](./media/js_perform_result_loop.png)
 
-​	**Note**	By caching the `array_list.length` before using it, as shown in the second example above, better performance is achieved. For more information, see [Using cached array length](./w3c/perf_opt/js-performance-improvement-w.md#arraylength).
+> **Note**
+> By caching the `array_list.length` before using it, as shown in the second example above, better performance is achieved. For more information, see [Using cached array length](./w3c/perf_opt/js-performance-improvement-w.md#arraylength).
 
 **Table: JavaScript performance improvement result**
 

@@ -9,7 +9,7 @@ Tizen provides various methods for setting the fonts of the application text. Ba
 
 The font handling methods include:
 
-- [Setting the font for a UI component](./font-setting-n.md#component) using the Elementary Fonts API (in [mobile](http://org.tizen.native.mobile.apireference/group__Fonts.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Fonts.html) applications)
+- [Setting the font for a UI component](./font-setting-n.md#component) using the Elementary Fonts API (in [mobile](http://org.tizen.native.mobile.apireference/group__Fonts.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Elm__Fonts.html) applications)
 
 - [Setting the font using the EDC file](./font-setting-n.md#edc)
 
@@ -118,14 +118,18 @@ To set a font for a UI component:
 
 - Set the font for a common UI component:
 
-  ​	**Note**	If you add markup tags for the font inside the text, you can change the font of the text. However, you cannot set the font for a text part in EDC the same way (using markup tags), because the `TEXT` type does not support markup tags.
+> **Note**  
+> If you add markup tags for the font inside the text, you can change the font of the text. However, you cannot set the font for a text part in EDC the same way (using markup tags), because the `TEXT` type does not support markup tags.
 
   ```
   char *buf = "<font=Sans:style=Regular font_size=50>Hello</font/>Font";
   elm_object_part_text_set(layout, "textblock1", buf);
   ```
 
-- Set the font for an entry component (in [mobile](http://org.tizen.native.mobile.apireference/group__Entry.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Entry.html) applications) using the `elm_entry_text_style_user_push()` function. It overrides the default style of the entry component for each attribute.	**Note**	The `elm_entry_text_style_user_push()` function only affects the main text of the UI component. To change the font of the guide text, you have to add markup tags.`/* Main text font */char *user_style = "DEFAULT='font=Sans:style=Regular font_size=40'";elm_entry_text_style_user_push(entry, user_style);/* Guide text font */elm_object_part_text_set(entry, "elm.guide",                         "<font=Sans:style=Regular font_size=40>Guide Text</font>");`
+- Set the font for an entry component (in [mobile](http://org.tizen.native.mobile.apireference/group__Entry.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Entry.html) applications) using the `elm_entry_text_style_user_push()` function. It overrides the default style of the entry component for each attribute.	
+
+> **Note**  
+> The `elm_entry_text_style_user_push()` function only affects the main text of the UI component. To change the font of the guide text, you have to add markup tags.`/* Main text font */char *user_style = "DEFAULT='font=Sans:style=Regular font_size=40'";elm_entry_text_style_user_push(entry, user_style);/* Guide text font */elm_object_part_text_set(entry, "elm.guide",                         "<font=Sans:style=Regular font_size=40>Guide Text</font>");`
 
 ## Setting the Font Using EDC
 
@@ -204,7 +208,8 @@ To create a layout with text using the EDC, you can set the font for each text o
 
 You can use the Edje Class: Text API (in [mobile](http://org.tizen.native.mobile.apireference/group__Edje__Object__Text__Class.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Edje__Object__Text__Class.html) applications) to change multiple text occurrences as a batch. If you set a new font or font size to a text class, the change is applied to multiple objects.
 
-​	**Note**	Note that the `text_class` cannot be used in a UI component with markup text or the `elm_entry_text_style_user_push()` function. You must set the `text_class` in EDC.
+> **Note**	
+> Note that the `text_class` cannot be used in a UI component with markup text or the `elm_entry_text_style_user_push()` function. You must set the `text_class` in EDC.
 
 To set the text class, you can use reserved words or make your own text class:
 

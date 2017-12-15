@@ -30,7 +30,8 @@ The main features of the HTML5 Drag and drop API include:
 
   You can [transfer data from the drag source to the drop target](./w3c/ui/drag-drop-mw.md#transfer). The `DataTransfer` interface instance receives the `dragstart` event and fills itself with the data to be transferred. It then receives a `drop` event, and puts the data into the drop target. 
 
-​	**Note**	To use drag and drop on a Tizen device, long-press the draggable element. When the context menu opens, select **Drag**.
+> **Note**	
+> To use drag and drop on a Tizen device, long-press the draggable element. When the context menu opens, select **Drag**.
 
 ## Handling Drag and Drop Events
 

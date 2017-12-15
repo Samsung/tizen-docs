@@ -73,7 +73,7 @@ Learning how to retrieve call history items using different parameters allows yo
      var numberFilter = new tizen.AttributeFilter('remoteParties.remoteParty', 'EXACTLY', '123456789');
      ```
 
-   -  The `CompositeFilter` type represents a set of filters. The `UNION` type composite filter matches any object that is matched by any of its filters; the `INTERSECTION` type composite filter matches all objects that are matched by all of its filters.
+   -  The `CompositeFilter` type represents a set of filters. The `UNION` type composite filter matches any object that is matched by any of its filters; the `INTERSECTION` type composite filter matches all objects that are matched by all its filters.
 
      For example, the following code snippet defines a set of filters that include in the query results only the video calls where the remote party has the telephone number 123456789 and the call has started during the year 2009 or 2011:
 

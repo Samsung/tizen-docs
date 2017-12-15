@@ -50,7 +50,7 @@ at the actions.
 The configuration file is parsed using `libconfig`. For a detailed description of the
 grammar, see the [libconfig documentation](http://hyperrealm.com/libconfig/libconfig_manual.html#Configuration-File-Grammar).
 
-### action_handlers
+### `action_handlers`
 
 `action_handlers` is a dictionary, in which shell commands (action
 handlers) are assigned names (actions). The names are used later in
@@ -65,7 +65,7 @@ action_handlers = {
 }
 ```
 
-### menus
+### `menus`
 
 Actions (names) are used in the `menus` dictionary, which
 comprises all pages of the menu system presented by
@@ -173,7 +173,7 @@ menus = {
 >
 > The first argument of the macro is an action, and the second is the value to assign to the `exit_after_action` element.
 
-### screens
+### `screens`
 
 Each action can either execute an action handler (a shell command) or switch to a screen. The screens are configured in
 their dictionary as follows:
@@ -240,7 +240,7 @@ The above entries contain 2 parameter groups:
   - `allow_force_reboot`: Reboot after executing an action
 
 
-### descriptions
+### `descriptions`
 
 The elements of the `descriptions` dictionary hold screen titles and
 brief descriptions for screen entries:
@@ -523,39 +523,43 @@ animations = {
 };
 ```
 
-## Adding New Files to the ramdisk-recovery Partition.
+## Adding New Files to the `ramdisk-recovery` Partition
 
 The `ramdisk-recovery` partition is created along with the `rootfs`
 partition (methods for creating images are beyond the scope of this
-document). Files to be added to the `ramdisk-recovery` partition need
-to be available in Tizen RPM packages first. The partition is
-populated with files by the `mkinitrd-recovery.sh` script started
-automatically as a part of `%posttrans` RPM script of the
-`initrd-recovery` package. To install selected file in the recovery
-image, its RPM needs to be installed before `initrd-recovery`. The
-easiest way to assure this is to list the package as one of
-dependencies in the `initrd-recovery.spec` file.
+document):
+
+- Files to be added to the `ramdisk-recovery` partition must
+be available in Tizen RPM packages.
+- Files are added to the partition by the `mkinitrd-recovery.sh` script, which is started
+automatically as a part of the `%posttrans` RPM script of the `initrd-recovery` package.
+
+To install a selected file in the recovery
+image, its RPM needs to be installed before `initrd-recovery` is run. The
+easiest way to make sure this happens is to list the package as a
+dependency in the `initrd-recovery.spec` file.
 
 The `mkinitrd-recovery.sh` script copies or moves files from the
-`rootfs` partition to `initrd-recovery` partition according to
-directions provided in files stored in the
-`/usr/share/initrd-recovery/initrd.list.d` directory. The
-configuration files should come in RPM packages together with the
-files to be put on `initrd-recovery`.  The configuration files are
-interpreted as shell scripts and are supposed to set the following
+`rootfs` partition to the `initrd-recovery` partition according to
+directions provided in configuration files stored in the
+`/usr/share/initrd-recovery/initrd.list.d` directory. These files
+must be packaged in the RPM packages together with the
+files to be put on the `initrd-recovery` partition. The configuration files are
+interpreted as shell scripts and can be used to set the following
 variables:
 
-- `DIRECTORIES`: Create directories
-- `DIR_SYMLINKS`: Create symbolic links to directories
-- `LIBONLYS`: Copy **only** libraries required by listed executable files
-- `MVWITHLIBS`: Move listed executable files and copy required libraries
-- `SYMLINKS`: Create symbolic links
-- `VERBATIMS`: Copy listed files, list non-executable files here
-- `WITHLIBS`: Copy listed executable files and required libraries
+- `DIRECTORIES`: Create directories.
+- `DIR_SYMLINKS`: Create symbolic links to directories.
+- `LIBONLYS`: Copy **only** the libraries required by the listed executable files.
+- `MVWITHLIBS`: Move the listed executable files and copy the required libraries.
+- `SYMLINKS`: Create symbolic links.
+- `VERBATIMS`: Copy the listed files. List non-executable files here.
+- `WITHLIBS`: Copy the listed executable files and the required libraries.
 
-Below are examples of the above lists. Please note that elements
-SYMLINKS and DIR_SYMLINKS are pairs of filenames separated with
-colons:
+The `SYMLINKS` and `DIR_SYMLINKS` variables contain pairs of filenames separated with
+colons.
+
+The following section contains examples of the above variables:
 
 ```
 DIRECTORIES="
@@ -597,10 +601,10 @@ SYMLINKS="
 "
 ```
 
-This real-world example comes from the `initrd-recovery`
-package. According to this configuration `mkinitrd-recovery.sh` copies
+The following real-world example comes from the `initrd-recovery`
+package. Following this configuration, `mkinitrd-recovery.sh` copies
 some basic tools to the `initrd-recovery` partition, moves `init` and
-`minireboot` and creates some symlinks.
+`minireboot`, and creates some symlinks:
 
 ```
 MVWITHLIBS="

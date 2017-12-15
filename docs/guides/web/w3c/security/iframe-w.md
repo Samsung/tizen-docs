@@ -30,7 +30,8 @@ The main feature of the `iframe` element is the `sandbox` attribute (in [mobile]
   - `allow-scripts` Enables script execution, but blocks pop-ups.
   - `allow-popups`Enables [ opening a pop-up window from the sandboxed element](./w3c/security/iframe-w.md#Sandboxed_Popups).
 
-​	**Note**	The `scrolling`, `align`, `frameborder`, `marginheight`, `marginwidth`, `longdesc`, and `seamless` HTML5 attributes are no longer supported in the latest HTML5 version.
+> **Note**
+> The `scrolling`, `align`, `frameborder`, `marginheight`, `marginwidth`, `longdesc`, and `seamless` HTML5 attributes are no longer supported in the latest HTML5 version.
 
 ## Accessing Sandboxed Cookies
 

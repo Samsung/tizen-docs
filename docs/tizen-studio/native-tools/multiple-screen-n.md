@@ -11,16 +11,16 @@ Tizen runs on a variety of mobile, wearable, and TV devices that offer different
 - Auto-setting UI resources based on the screen size
 - Internationalization (i18n)
 
-**Note**
-**Screen density**
-Screen density is usually referred to as DPI (dots per inch), which means the number of individual dots that can be placed in a line within the span of 1 inch (2.54 cm).
-
-**Resource**
-Resources are, for example, images, strings, application binary, and references of external places (such as files and networks). They are used only on runtime in Tizen.When you support multiple screens, you must use the resources with the application binary:File types – images, EDJ, text, video, and audioStrings for localization
-
-**Internationalization and localization**
-Tizen provides localized resources to make your application usable for different countries. The Tizen Studio supports the **Resource Manager**
-view and string localization (with the PO file editor). By using the Resource Manager, you can make an application that contains a variety of languages.
+> **Note**  
+> **Screen density**
+> Screen density is usually referred to as DPI (dots per inch), which means the number of individual dots that can be placed in a line within the span of 1 inch (2.54 cm).
+>
+> **Resource**
+> Resources are, for example, images, strings, application binary, and references of external places (such as files and networks). They are used only on runtime in Tizen.When you support multiple screens, you must use the resources with the application binary:File types – images, EDJ, text, video, and audioStrings for localization
+> 
+> **Internationalization and localization**
+> Tizen provides localized resources to make your application usable for different countries. The Tizen Studio supports the **Resource Manager**
+> view and string localization (with the PO file editor). By using the Resource Manager, you can make an application that contains a variety of languages.
 
 ## Configuring Multiple Screens
 
@@ -67,26 +67,26 @@ Many devices need different screens for portrait and landscape orientations. In 
 
 The screen configuration consists of resources and UI layouts. The resources consist of the screen density and locale, while the UI layout consists of the screen resolution and screen orientation.
 
-**Note**
-**Screen resolution**
-The total number of physical pixels on a screen.
-
-**Screen orientation**
-The way in which a rectangular screen is oriented for normal viewing:Landscape: the width of the display area is greater than the height.Portrait: the height of the display area is greater than the width.
+> **Note**  
+> **Screen resolution**
+> The total number of physical pixels on a screen.
+>
+> **Screen orientation**
+> The way in which a rectangular screen is oriented for normal viewing:Landscape: the width of the display area is greater than the height.Portrait: the height of the display area is greater than the width.
 
 The following table shows the components for multiple screens.
 
 **Table: Components for multiple screens**
 
-| Category                           | Component                                | Description                              |
-| ---------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| Tizen Studio                       | Resource Manager                         | Provides the features to add, delete, or change the resources for the screen configuration and supports drag and drop for placing the UI layout.Paths of alternative resources used for multiple screens are written in the `res.xml` file, which is referenced at runtime. |
-| | PO file editor                     | Supports string editing. You can add a localized string in the editor. |                                          
-| | Multiple UI layout                 | Supports the device-specific UI layout.  |                                          
-| Tizen platform                     | Application module                       | Manages the application life-cycle. Using a callback function, it notifies you about application state change events. When the screen orientation or locale changes, this event must be sent to the module which handles multiple screens. For more information, see the [Applications](../../../org.tizen.guides/html/native/app_management/applications_n.htm) guide. |
-| | Resource Management module         | Displays the appropriate resource file on the screen by using a resource key.                                           |
-| | Internationalization module (i18n) | Provides the localized string at runtime. |                                          
-| | EFL library                        | Is a graphics engine responsible for the UI representation in the UI component that makes up the application screen. This supports the [automatic scaling](../../../org.tizen.guides/html/native/ui/efl/multiple_screens_n.htm) function to express the natural screen without distortion on a variety of devices.                                           |
+| Category       | Component                          | Description                              |
+| -------------- | ---------------------------------- | ---------------------------------------- |
+| Tizen Studio   | Resource Manager                   | Provides the features to add, delete, or change the resources for the screen configuration and supports drag and drop for placing the UI layout.Paths of alternative resources used for multiple screens are written in the `res.xml` file, which is referenced at runtime. |
+|                | PO file editor                     | Supports string editing. You can add a localized string in the editor. |
+|                | Multiple UI layout                 | Supports the device-specific UI layout.  |
+| Tizen platform | Application module                 | Manages the application life-cycle. Using a callback function, it notifies you about application state change events. When the screen orientation or locale changes, this event must be sent to the module which handles multiple screens. For more information, see the [Applications](../../../org.tizen.guides/html/native/app_management/applications_n.htm) guide. |
+|                | Resource Management module         | Displays the appropriate resource file on the screen by using a resource key. |
+|                | Internationalization module (i18n) | Provides the localized string at runtime. |
+|                | EFL library                        | Is a graphics engine responsible for the UI representation in the UI component that makes up the application screen. This supports the [automatic scaling](../../../org.tizen.guides/html/native/ui/efl/multiple_screens_n.htm) function to express the natural screen without distortion on a variety of devices. |
 
 ## Designing Applications with Multiple Screens
 
@@ -118,7 +118,7 @@ To localize a string:
 
 2. Add a Background UI component by dragging and dropping a background from the **Palette** to the grid.
 
-3. Add a Button UI component by dragging and dropping a button from the **Palette** to the grid.
+3. Add 2 Button UI components by dragging and dropping a button from the **Palette** to the grid.
 
 4. Input a string key.
 
@@ -128,11 +128,11 @@ To localize a string:
 
    If you change a locale on the toolbar, the view shows a preview of the localized string.
 
-**Note**
-**Variation property of the UI component**
-UI component properties are classified based on the screen configuration type into basic and variable properties. The variable properties consist of the following:
-   - Visibility: Whether the UI component is shown (`true`) or hidden (`false`).
-   - Packing: Position and size of the UI component attached to the parent container. The packing information has different meanings in different kinds of UI containers. For more information, see [Meta Schema in layout.xml](component_attributes_n.htm) (Grid section).
+> **Note**  
+> **Variation property of the UI component**
+> UI component properties are classified based on the screen configuration type into basic and variable properties. The variable properties consist of the following:
+> - Visibility: Whether the UI component is shown (`true`) or hidden (`false`).
+> - Packing: Position and size of the UI component attached to the parent container. The packing information has different meanings in different kinds of UI containers. For more information, see [Meta Schema in layout.xml](component_attributes_n.htm) (Grid section).
 
 ### Alternative Resources
 
@@ -149,8 +149,8 @@ To use alternative resources, you must follow the naming configuration rules.
 
 For example, the resource naming for the English locale and medium density is defined as `en_US-MDPI`.
 
-**Note**
-If there is no alternative resource corresponding to a specific locale, the default resource is displayed on the screen.If there is no default resource, a blank is displayed on the screen. To avoid blanks, set a default resource.
+> **Note**  
+> If there is no alternative resource corresponding to a specific locale, the default resource is displayed on the screen.If there is no default resource, a blank is displayed on the screen. To avoid blanks, set a default resource.
 
 By using the **Resource Manager** view, you can set specific resources for the locale and screen density:
 

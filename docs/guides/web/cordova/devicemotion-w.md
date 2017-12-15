@@ -8,7 +8,7 @@
 
 You can access the [acceleration values](./cordova/devicemotion-w.md#values) from the device accelerometer.
 
-The Device Motion API is mandatory for both Tizen mobile and wearable profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The Device Motion API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The main features of the Device Motion API include:
 

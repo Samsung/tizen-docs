@@ -83,7 +83,7 @@ The following code snippet demonstrates how to set the background color, images,
 
 ## Creating Backgrounds
 
-To enhance the user experience of your application, you must learn to create a multilayer background with the parallax effect using the [CSS box model](http://www.w3.org/TR/CSS2/box.html). The background consists of 3 images on separate layers, and 2 of the layers can be moved over each other.
+You can create a multilayer background with a parallax effect using the [CSS box model](http://www.w3.org/TR/CSS2/box.html). The background consists of 3 images on separate layers, and 2 of the layers can be moved over each other.
 
 **Figure: Background with the parallax effect**
 

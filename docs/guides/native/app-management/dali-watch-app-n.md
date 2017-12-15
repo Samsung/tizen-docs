@@ -10,8 +10,8 @@ To create a DALi watch application, you must:
 
 - Use the [Dali::WatchApplication class](#api).
 
-	**Note**
-A DALi watch application is implemented similarly to a [DALi basic UI application](dali-basic-app-n.md), since the [Dali::WatchApplication](../../../../org.tizen.native.wearable.apireference/classDali_1_1WatchApplication.html) class inherits from the [Dali::Application](../../../../org.tizen.native.wearable.apireference/classDali_1_1Application.html) class. Consequently, make sure you are familiar with the basic UI application details before tackling a watch application.
+	> **Note**  
+	> A DALi watch application is implemented similarly to a [DALi basic UI application](dali-basic-app-n.md), since the [Dali::WatchApplication](../../../../org.tizen.native.wearable.apireference/classDali_1_1WatchApplication.html) class inherits from the [Dali::Application](../../../../org.tizen.native.wearable.apireference/classDali_1_1Application.html) class. Consequently, make sure you are familiar with the basic UI application details before tackling a watch application.
 
 - Make sure you [start the event loop](#mainloop).
 

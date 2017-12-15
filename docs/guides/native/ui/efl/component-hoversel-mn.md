@@ -10,7 +10,7 @@ The hoversel component is a button that pops up a list of items (automatically c
 
 The hoversel component inherits from the button component, which means that button functions can be used on the hoversel component.
 
-For more information, see the [Hoversel](../../../../../org.tizen.native.mobile.apireference/group__Hoversel.html) API.
+For more information, see the [Hoversel](../../../../../org.tizen.native.mobile.apireference/group__Elm__Hoversel.html) API.
 
 **Figure: Hoversel component**
 
@@ -122,9 +122,8 @@ You can register callback functions connected to the following signals for a hov
 | `expanded`         | The hoversel is activated by clicking the hoversel or by a function. | `NULL`            |
 | `language,changed` | The program language changes.            | `NULL`            |
 
-**Note**
-
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 The following example shows how to define and register a callback for the `dismissed` signal:
 
@@ -140,6 +139,5 @@ dismissed_cb(void *data, Evas_Object *obj, void *event_info)
 }
 ```
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

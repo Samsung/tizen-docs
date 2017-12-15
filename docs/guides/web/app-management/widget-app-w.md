@@ -9,7 +9,8 @@ You can manage installed widgets and widget instances in various ways, such as r
 
 This feature is supported in mobile and wearable applications only.
 
-​	**Note**	Do not use "widget" as a name for any of your global variables, as it is the name of a global W3C object.
+> **Note**
+> Do not use "widget" as a name for any of your global variables, as it is the name of a global W3C object.
 
 The main features of the Widget Service API include:
 
@@ -25,6 +26,7 @@ The main features of the Widget Service API include:
 
   You can [manage widget instances](./app-management/widget-app-w.md#instance) by changing the instance data update interval and managing the instance content.
 
+<a name="widget"></a>
 ## Widget Retrieval
 
 Using the `WidgetServiceManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/widgetservice.html#WidgetServiceManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/widgetservice.html#WidgetServiceManager) applications), you can:
@@ -32,6 +34,7 @@ Using the `WidgetServiceManager` interface (in [mobile](../../../../org.tizen.we
 - Retrieve a widget or widgets using the `getWidgets()` method.
 - Receive information about the primary widget ID or size related to the specific size type.
 
+<a name="get_widget"></a>
 ### Retrieving a Widget
 
 Learning how to retrieve the installed widget list is a basic widget management skill:
@@ -61,6 +64,7 @@ Learning how to retrieve the installed widget list is a basic widget management 
    var myWidget = tizen.widgetservice.getWidget('org.tizen.gallery.widget');
    ```
 
+<a name="info"></a>
 ### Retrieving ID and Size Information
 
 Learning how to retrieve the primary widget ID or size makes using the Widget Service API easy and convenient:
@@ -77,6 +81,7 @@ Learning how to retrieve the primary widget ID or size makes using the Widget Se
   var widgetSize = tizen.widgetservice.getSize('4x4');
   ```
 
+<a name="management"></a>
 ## Widget Management
 
 Using the `Widget` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/widgetservice.html#Widget) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/widgetservice.html#Widget) applications), you can:
@@ -86,6 +91,7 @@ Using the `Widget` interface (in [mobile](../../../../org.tizen.web.apireference
 - Get variants of a specified size type.
 - Monitor state changes in an installed widget.
 
+<a name="name"></a>
 ### Retrieving the Widget Name
 
 To retrieve the widget name:
@@ -102,11 +108,13 @@ To retrieve the widget name:
    var name = myWidget.getName('en-us');
    ```
 
+<a name="instances"></a>
 ### Retrieving Widget Instances
 
 Learning how to retrieve information about installed widget instances makes the Widget Service API more useful:
 
-​	**Note**	The [WidgetInstance.id](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/widgetservice.html#WidgetInstance::id) value is volatile and can change after device reboot.
+> **Note**
+> The `WidgetInstance.id` value (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/widgetservice.html#WidgetInstance::id) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/widgetservice.html#WidgetInstance::id) applications) is volatile and can change after device reboot.
 
 1. Define a success handler implementing the `WidgetInstancesCallback` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/widgetservice.html#WidgetInstancesCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/widgetservice.html#WidgetInstancesCallback) applications). Optionally, you can specify an error handler too.
 
@@ -126,9 +134,10 @@ Learning how to retrieve information about installed widget instances makes the 
    myWidget.getInstances(successCallback, errorCallback);
    ```
 
+<a name="variants"></a>
 ### Retrieving Widget Variants
 
-To retrieve variants representing all of the supported widget size types:
+To retrieve variants representing all the supported widget size types:
 
 1. Define a success handler implementing the `WidgetVariantsCallback` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/widgetservice.html#WidgetVariantsCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/widgetservice.html#WidgetVariantsCallback) applications). Optionally, you can specify an error handler too.
 
@@ -160,6 +169,7 @@ To retrieve variants representing all of the supported widget size types:
    var variant = myWidget.getVariant('4x4');
    ```
 
+<a name="receive"></a>
 ### Monitoring Widget Changes
 
 Learning to receive notifications when the state of the widget has been changed is a useful widget management skill. There are 4 states that can be noticed: `CREATE`, `DESTROY`, `PAUSE`, and `RESUME`.
@@ -190,6 +200,7 @@ Learning to receive notifications when the state of the widget has been changed 
    myWidget.removeStateChangeListener(watchId);
    ```
 
+<a name="instance"></a>
 ## Widget Instance Management
 
 Using the `WidgetInstance` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/widgetservice.html#WidgetInstance) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/widgetservice.html#WidgetInstance) applications), you can:
@@ -197,8 +208,10 @@ Using the `WidgetInstance` interface (in [mobile](../../../../org.tizen.web.apir
 - Change the update period of the instance using the `changeUpdatePeriod()` method.
 - Send or get content to and from the widget instance.
 
-​	**Note**	These features are not supported by Web widgets. You can only use them in Web applications to manage installed widgets. For more information, see [Web Device API supported by Widget Engine](https://developer.tizen.org/dev-guide/2.3.2/org.tizen.web.apireference/html/widget_spec/web_widget.html#user-content-web-device-api).
+> **Note**
+> These features are not supported by Web widgets. You can only use them in Web applications to manage installed widgets. For more information, see [Web Device API supported by Widget Engine](https://developer.tizen.org/dev-guide/2.3.2/org.tizen.web.apireference/html/widget_spec/web_widget.html#user-content-web-device-api).
 
+<a name="period"></a>
 ### Changing the Update Period
 
 To change the update interval for the widget instance:
@@ -221,6 +234,7 @@ To change the update interval for the widget instance:
    instance.changeUpdatePeriod(2);
    ```
 
+<a name="content"></a>
 ### Sending and Getting Content
 
 Learning how to send and get the widget content is a useful widget management skill:

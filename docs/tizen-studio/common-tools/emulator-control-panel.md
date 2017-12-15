@@ -1,5 +1,5 @@
 # Using Emulator Control Keys, Menu, and Panel
-# Dependencies
+## Dependencies
 
 - Tizen Studio 1.0 and Higher
 
@@ -24,8 +24,8 @@ The control keys are visible on the emulator when you start it. To access the co
 
 The emulator can use a general purpose or profile-specific skin. While the profile-specific skin provides a realistic skin and hardware keys, the general purpose skin shows a consistent frame on every state of resolution, scale, or rotation, and enables you to change the emulator display resolution to custom values. You can also see the key window.
 
-**Note**
-The layout of the general purpose skin is not configurable like the profile-specific skin.
+> **Note**  
+> The layout of the general purpose skin is not configurable like the profile-specific skin.
 
 - Key window
 
@@ -43,22 +43,23 @@ The following figure illustrates the general purpose skin emulator.
 
 ![General purpose skin emulator](./media/emulator_control_general.png)
 
-**Note**You can create a custom resolution emulator by using the [Emulator Manager CLI](emulator-manager.md#control), and launch it with the general purpose skin. It is not guaranteed that all applications are correctly shown in the custom resolution.
+> **Note**  
+> You can create a custom resolution emulator by using the [Emulator Manager CLI](emulator-manager.md#control), and launch it with the general purpose skin. It is not guaranteed that all applications are correctly shown in the custom resolution.
 
 ### Control Keys
 
 The following hardware keys are available on the emulator:
 
 - **Menu** (mobile only)
-When tapped, a list of options available for the current screen opens.
+  When tapped, a list of options available for the current screen opens.
 - **Home** (mobile only)
-When long-pressed, the Task switcher application opens as on a real device.
+  When long-pressed, the Task switcher application opens as on a real device.
 - **Back**
-When tapped, the emulator returns to the previous screen.
+  When tapped, the emulator returns to the previous screen.
 - **Power**
-You can power off the display by tapping the **Power** key in most situations. Sometimes, the display does not power off when you tap the **Power** key. This is to guarantee the operation of a current application, such as the Stopwatch in the Clock application. If you tap the **Power** or **Home** key again, the display is powered on.
+  You can power off the display by tapping the **Power** key in most situations. Sometimes, the display does not power off when you tap the **Power** key. This is to guarantee the operation of a current application, such as the Stopwatch in the Clock application. If you tap the **Power** or **Home** key again, the display is powered on.
 - **Volume Up** and **Volume Down** (mobile only)
-When tapped, the volume changes accordingly.
+  When tapped, the volume changes accordingly.
 
 ### Context Menu
 
@@ -91,43 +92,43 @@ You can access the context menu by right-clicking on the emulator. In the menu, 
   | **Emulator Version**       | Tizen Studio version                     |
 
 - **Always On Top**
-Select this option to keep the emulator window on top of other windows.
+  Select this option to keep the emulator window on top of other windows.
 
 - **Rotate**
-Select either **Portrait**, **Landscape**, **Reverse Portrait**, or **Reverse Landscape** as the orientation of the emulator.
+  Select either **Portrait**, **Landscape**, **Reverse Portrait**, or **Reverse Landscape** as the orientation of the emulator.
 
 - **Scale** (mobile only)
-Scale the size of the emulator between 1x, 1/2x (default), 3/4x, and 1/4x.
+  Scale the size of the emulator between 1x, 1/2x (default), 3/4x, and 1/4x.
 
 - **Advanced > Controller**
-Show or hide the controller window.
+  Show or hide the controller window.
 
-  **Note**
-  The **Controller** menu is not supported in the profile-specific skin.
+  > **Note**  
+  > The **Controller** menu is not supported in the profile-specific skin.
 
 - **Advanced > Screenshot**
-Capture a screenshot of the emulator.
+  Capture a screenshot of the emulator.
 
 - **Advanced > About**
-Display the emulator version and build time.
+  Display the emulator version and build time.
 
 - **Advanced > Force Reboot**
-Force the emulator to reboot. Since force rebooting the emulator can cause problems, use the reboot option from the SDB shell to reboot the emulator. Use **Force Reboot** only when absolutely necessary.
+  Force the emulator to reboot. Since force rebooting the emulator can cause problems, use the reboot option from the SDB shell to reboot the emulator. Use **Force Reboot** only when absolutely necessary.
 
 - **Advanced > Force Close**
-Force the emulator to exit. Since force stopping the emulator can cause problems, use the **Close** option to exit the emulator. Use **Force Close** only when absolutely necessary.
+  Force the emulator to exit. Since force stopping the emulator can cause problems, use the **Close** option to exit the emulator. Use **Force Close** only when absolutely necessary.
 
 - **Shell**
-Open a Smart Development Bridge (SDB) shell command window.
+  Open a Smart Development Bridge (SDB) shell command window.
 
 - **Control Panel**
-Control or monitor the state of the emulator dynamically.
+  Control or monitor the state of the emulator dynamically.
 
 - **Close**
-Exit the emulator.
+  Exit the emulator.
 
-**Note**
-In Ubuntu, you must change a global GNOME setting to view the menu icons:In the command console, execute the `gconf-editor` command.In the tree, navigate to `desktop > gnome > interface`.Enable the `menus_have_icons` option.
+> **Note**  
+> In Ubuntu, you must change a global GNOME setting to view the menu icons:In the command console, execute the `gconf-editor` command.In the tree, navigate to `desktop > gnome > interface`.Enable the `menus_have_icons` option.
 
 ## Using the Control Panel
 
@@ -147,33 +148,33 @@ To open the control panel:
 
 1. Launch the emulator.
 2. Right-click the emulator and select **Control Panel**.
-![Opening the control panel](./media/emulator_control_panel_open.png)
+   ![Opening the control panel](./media/emulator_control_panel_open.png)
 
 The following table lists the control panel features and their availability on different profiles. The instructions for using the features are described below the table. You can use various [keyboard shortcuts](keyboard-shortcuts.md#ecp) for control panel tasks.
 
 **Table: Control panel features**
 
-| Feature                |  | Mobile                                   | Wearable                                 | Description                              |
-| ---------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| Network                |  | Yes                                      | Yes                                      | You can control the user network and forward a remote or local port to an inside port of the emulator. |
-| Host Directory Sharing |  |Yes | Yes | You can transfer files through the host directory sharing feature without using the SDB utility.                                         |
-| App Manager       |     | No   | Yes                                    | You can see user-installed applications and uninstall them.                                           |
-| Battery                | | Yes  | Yes                                    | You can set the battery level and charger status.                                           |
-| RSSI                   | | Yes | No                                       | You can set the remote signal strength.                                          |
-| Sensor                 | 3-Axis     | Yes                              | Yes                                      | You can simulate user acceleration, magnetic, and gyroscope values. |
-|  | Light | Yes | Yes                  | You can simulate a lux value for the light sensor. |
-|  | Proximity  | Yes | Yes             | You can simulate the presence of nearby objects.  |
-|  | Pressure   | Yes | Yes              | You can simulate an hPa value for the pressure sensor.|
-|  | Ultraviolet  | Yes | Yes            | You can simulate an ultraviolet index value.  |
-|  | Heart Rate Monitor  | Yes | Yes    | You can simulate the user heart rate and peak-to-peak time.|
-|  | Pedometer  | Yes | Yes              | You can simulate user movement with the device. |
-| Earjack     | | Yes           | No                                       | You can add or remove a headset.                                              |
-| USB        | | Yes            | Yes                                      | You can add or remove a USB device.                                                |
-| SD Card  | | Yes              | No                                       | You can simulate a 4G, 8G, 16G, or 32G SD card.                                           |
-| NFC      | | Yes              | Yes                                      | You can simulate near-field communication (NFC) events.                                           |
-| Location   | | Yes  | Yes          | You can simulate latitude and longitude values using a map, manually, or from a log file.                                                                                     |
-| Telephony | | Yes  | Yes            | You can make and receive a call. You can also send and receive SMS messages.                                                                                     |
-| Memory   | | Yes  | Yes                      | You can set the memory status.                                                                             |
+| Feature                |                    | Mobile | Wearable | Description                              |
+| ---------------------- | ------------------ | ------ | -------- | ---------------------------------------- |
+| Network                |                    | Yes    | Yes      | You can control the user network and forward a remote or local port to an inside port of the emulator. |
+| Host Directory Sharing |                    | Yes    | Yes      | You can transfer files through the host directory sharing feature without using the SDB utility. |
+| App Manager            |                    | No     | Yes      | You can see user-installed applications and uninstall them. |
+| Battery                |                    | Yes    | Yes      | You can set the battery level and charger status. |
+| RSSI                   |                    | Yes    | No       | You can set the remote signal strength.  |
+| Sensor                 | 3-Axis             | Yes    | Yes      | You can simulate user acceleration, magnetic, and gyroscope values. |
+|                        | Light              | Yes    | Yes      | You can simulate a lux value for the light sensor. |
+|                        | Proximity          | Yes    | Yes      | You can simulate the presence of nearby objects. |
+|                        | Pressure           | Yes    | Yes      | You can simulate an hPa value for the pressure sensor. |
+|                        | Ultraviolet        | Yes    | Yes      | You can simulate an ultraviolet index value. |
+|                        | Heart Rate Monitor | Yes    | Yes      | You can simulate the user heart rate and peak-to-peak time. |
+|                        | Pedometer          | Yes    | Yes      | You can simulate user movement with the device. |
+| Earjack                |                    | Yes    | No       | You can add or remove a headset.         |
+| USB                    |                    | Yes    | Yes      | You can add or remove a USB device.      |
+| SD Card                |                    | Yes    | No       | You can simulate a 4G, 8G, 16G, or 32G SD card. |
+| NFC                    |                    | Yes    | Yes      | You can simulate near-field communication (NFC) events. |
+| Location               |                    | Yes    | Yes      | You can simulate latitude and longitude values using a map, manually, or from a log file. |
+| Telephony              |                    | Yes    | Yes      | You can make and receive a call. You can also send and receive SMS messages. |
+| Memory                 |                    | Yes    | Yes      | You can set the memory status.           |
 
 ### Controlling the Network Setting
 
@@ -198,8 +199,8 @@ The control panel can be used to simulate various device data:
 - In the **USB** card, you can connect or disconnect a USB device.
 - In the **RSSI** card, you can set the RSSI (remote signal strength indicator) information level.
 - In the **SDCard** card, you can attach or detach an SD card to or from the emulator at runtime. You can attach a **4G**, **8G**, **16G**, or **32G** SD card.
-**Note**
-The same SD card cannot be attached to multiple emulators at the same time.
+  > **Note**  
+  > The same SD card cannot be attached to multiple emulators at the same time.
 
 Device information set using the control panel is reflected on the indicator bar of the emulator screen.
 
@@ -223,8 +224,8 @@ In the **Location** card, you can provide simulated responses to location data r
 
 In the **NFC** card, you can test near-field communication (NFC) features.
 
-**Note**
-The control panel only sends NFC-related events to the emulator. There is no actual information exchange between the control panel and emulator. Therefore, for information exchange features, such as writing information to an NFC tag, the emulator simply displays a success message.
+> **Note**  
+> The control panel only sends NFC-related events to the emulator. There is no actual information exchange between the control panel and emulator. Therefore, for information exchange features, such as writing information to an NFC tag, the emulator simply displays a success message.
 
 - Creating NFC data exchange format (NDEF) messages
 
@@ -262,17 +263,17 @@ In the control panel, you can model user actions, such as shaking, throwing, and
 
 - In the **Sensor** card, you can control the 3-axis sensors. The popup consists of 4 tabs, where you can adjust the acceleration, magnetic, and gyro sensors of the emulator instance. In the **GUI** tab, you can intuitively adjust various sensor data by using 3D graphics.
   - GUI
-  In the **GUI** tab, you can select an active sensor and move the 3D model of the emulator instance with the 3 axis sliders or the direction buttons (**Portrait**, **Landscape**, **Reverse Portrait**, and **Reverse Landscape**). The instance monitor displays the acceleration, magnetic, and gyro values.To better control the movement, select the **With axis** checkbox to see the axes in the emulator image. You can also fix the Y or Z axis by selecting the **X/Z** or **X/Y** radio button, respectively. To change the emulator accelerator value in the direction of the movement, select the **Move** radio button.
-  
+    In the **GUI** tab, you can select an active sensor and move the 3D model of the emulator instance with the 3 axis sliders or the direction buttons (**Portrait**, **Landscape**, **Reverse Portrait**, and **Reverse Landscape**). The instance monitor displays the acceleration, magnetic, and gyro values.To better control the movement, select the **With axis** checkbox to see the axes in the emulator image. You can also fix the Y or Z axis by selecting the **X/Z** or **X/Y** radio button, respectively. To change the emulator accelerator value in the direction of the movement, select the **Move** radio button.
+
   - Acceleration
-  In the **Acceleration** tab, you can control the acceleration of the instance along the coordinate axes. When the emulated device is stationary and vertical in portrait orientation, the acceleration value of the Y axis is 1 g (gravitational acceleration). You can control the acceleration 3-axis values from -2 g to 2 g, using the sliders.
-  
+    In the **Acceleration** tab, you can control the acceleration of the instance along the coordinate axes. When the emulated device is stationary and vertical in portrait orientation, the acceleration value of the Y axis is 1 g (gravitational acceleration). You can control the acceleration 3-axis values from -2 g to 2 g, using the sliders.
+
   - Magnetic
-  In the **Magnetic** tab, you can control the magnetic field values of the instance along the coordinate axes. When the emulated device is stationary and vertical in portrait orientation, the Y axis is at true north and the magnetic field strength values are 1, 0, and -10 µT (microtesla). You can control the magnetic field 3-axis values from -2000 µT to 2000 µT, using the sliders.
-  
+    In the **Magnetic** tab, you can control the magnetic field values of the instance along the coordinate axes. When the emulated device is stationary and vertical in portrait orientation, the Y axis is at true north and the magnetic field strength values are 1, 0, and -10 µT (microtesla). You can control the magnetic field 3-axis values from -2000 µT to 2000 µT, using the sliders.
+
   - Gyro
-  In the **Gyro** tab, You can control the gyro (rotation angle per second) of the instance along the coordinate axes. You can control the gyro 3-axis values from -573 degrees/s to 573 degrees/s, using the sliders.
-  
+    In the **Gyro** tab, You can control the gyro (rotation angle per second) of the instance along the coordinate axes. You can control the gyro 3-axis values from -573 degrees/s to 573 degrees/s, using the sliders.
+
 You can simulate a single event on the individual sensor, or use sensor data files to simulate sequences of events on the sensor. A sensor data file consists of predefined events. It is written in ASCII. By loading a data file in the **Acceleration**, **Magnetic**, or **Gyro** tab, you can play a sequence of predefined events. You can also add multiple data files to be played in sequence. The format of each line in the event file is:
 ```
 timestamp, x, y, z
@@ -298,8 +299,8 @@ In the **Telephony** card, you can generate incoming calls and messages:
 
   Incoming calls are generated in the **Call** tab.
 
-  **Note**
-  A Mobile Termination (MT) call is made from the Emulator Control Panel to the emulator. A Mobile Origination (MO) call is made from the emulator to the Emulator Control Panel using the emulator's phone application.
+  > **Note**  
+  > A Mobile Termination (MT) call is made from the Emulator Control Panel to the emulator. A Mobile Origination (MO) call is made from the emulator to the Emulator Control Panel using the emulator's phone application.
 
   To make an MT call:
 
@@ -374,60 +375,60 @@ The following tables list the commands supported by the control panel CLI.
 
 **Table: CLI common commands**
 
-| Command            | Syntax                                   | Description                              |
-| ------------------ | ---------------------------------------- | ---------------------------------------- |
-| `help`             | `help [device]`                          | To get help, type the command as `help`. For a more specific device help, use the device parameter. |
-| `keycode`          | keycode <key-code> [period &#124; press &#124; release] | To enter a key code for a mobile device: <br/> `114`: Volume down <br/> `115`: Volume up <br/> `139`: Home <br/> `158`: Back <br/> `169`: Menu |
-| `hmp`              | `hmp <hmp command>`                      | Access the QEMU human monitor protocol commands. For a list of provided commands, enter the `ecp-cli hmp help` command. |
-| `qmp`              | `qmp <qmp command>`                      | Access the QEMU monitoring protocol. The commands are handled in JSON format, and do not require `{"execute": "qmp_capabilities"}` to be in the control mode. <br/>In the shell mode, the shell does not support the double quotation mark (") as an argument. For the JSON arguments, use \" (backslash + double quotation mark) instead. |
-| `hds`              | `hds mount <host path> <guest path>`     | Enable the host directory sharing feature between the specified `<host path>` and the emulator's `<guest path>`. The specified path must be a folder, not a file. |
-| `hds`              |`hds unmount <id>` | Unmount the mounted host directory sharing path. The `id` is the HDS ID and you can get it from the `hds status` command.                                           |
-| `hds`              |`hds status`       | Show the current host directory sharing status.                                           |
+| Command   | Syntax                                   | Description                              |
+| --------- | ---------------------------------------- | ---------------------------------------- |
+| `help`    | `help [device]`                          | To get help, type the command as `help`. For a more specific device help, use the device parameter. |
+| `keycode` | keycode <key-code> [period &#124; press &#124; release] | To enter a key code for a mobile device: <br/> `114`: Volume down <br/> `115`: Volume up <br/> `139`: Home <br/> `158`: Back <br/> `169`: Menu |
+| `hmp`     | `hmp <hmp command>`                      | Access the QEMU human monitor protocol commands. For a list of provided commands, enter the `ecp-cli hmp help` command. |
+| `qmp`     | `qmp <qmp command>`                      | Access the QEMU monitoring protocol. The commands are handled in JSON format, and do not require `{"execute": "qmp_capabilities"}` to be in the control mode. <br/>In the shell mode, the shell does not support the double quotation mark (") as an argument. For the JSON arguments, use \" (backslash + double quotation mark) instead. |
+| `hds`     | `hds mount <host path> <guest path>`     | Enable the host directory sharing feature between the specified `<host path>` and the emulator's `<guest path>`. The specified path must be a folder, not a file. |
+| `hds`     | `hds unmount <id>`                       | Unmount the mounted host directory sharing path. The `id` is the HDS ID and you can get it from the `hds status` command. |
+| `hds`     | `hds status`                             | Show the current host directory sharing status. |
 
 **Table: CLI profile commands**
 
-| Feature command    | Sub-command                              | Mobile                                   | Wearable                                 | Syntax                         |
-| ------------------ | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ------------------------------ |
-| `telephony`        | `call dial`                              | Yes                                      | Yes                                      | `telephony call dial <number>` |
-| | `call hidden-dial` | Yes | Yes | `telephony call hidden-dial <number>`     |
-| | `call connect`     | Yes | Yes  | `telephony call connect`                     |
-| | `call disconnect`  | Yes | Yes  | `telephony call disconnect <call id>`        |
-| | `sms send`         | Yes | Yes  | `telephony sms send <number> <text>`         |
-| | `sms set`          | Yes | Yes  | `telephony sms set <available`&#124;`unavailable>`      |
-| | `sms status`       | Yes | Yes  | `telephony sms status`                       |
-| | `sms mms_status`   | Yes | Yes  | `telephony sms mms_status`                   |
-| `location`         | `set`   | Yes | Yes                                 | `location set <longitude> <latitude>`                                |
-| | `status`  | Yes | Yes          | `location status`|
-| | `stop`    | Yes | Yes          | `location stop`                            |
-| | `file`    | Yes | Yes          | `location file <file-path>`                |
-| `battery`          | `level`  | Yes | Yes                                | `battery level <percent>`    |
-| | `charger`        | Yes | Yes  | `battery charger <on`&#124;`off>`                 |
-| | `status`         | Yes | Yes  | `battery status`                             |
-| `earjack`          | `set`       | Yes                             | No                                       | `earjack set <3wire`&#124;`4wire`&#124;`off>`                                      |
-|  | `status`        | Yes | No     | `earjack status`                             |
-| `usb`              | `set`                                    | Yes | Yes                                      | `usb set <on`&#124;`off>`                                               |
-| | `status`         |Yes | Yes  | `usb status`                               |
-| `rssi`             | `set`        | Yes                            | No                                       | `rssi set <0~4>`                                                         |
-|  | `status`        | Yes | No   | `rssi status`                                |
-| `sdcard`           | `attach`    | Yes | No                             | `sdcard attach <sdcard_[ 4`&#124;`8`&#124;`16`&#124;`32 ]G>`                              |
-|  | `detach`           | Yes | No   |`sdcard detach <sdcard_[ 4`&#124;`8`&#124;`16`&#124;`32 ]G>`     |
-| | `status`           | Yes | No   |`sdcard status`                               |
-| `nfc`              | `tag attach`                             | Yes  | Yes                                    | `nfc tag attach <tag type> <NDEF message>`                                 |
-| | `tag detach`       | Yes | Yes  |`nfc tag detach`                              |
-| | `p2p attach`       | Yes | Yes  |`nfc p2p attach`                              |
-| | `p2p send`         | Yes | Yes  |`nfc p2p send <NDEF message>`                 |
-| | `p2p detach`       | Yes | Yes  |`nfc p2p detach`                              |
-| | `status`           | Yes | Yes  |`nfc status`                                  |
-| `sensor`           | `accelerometer`        | Yes | yes                  | `sensor accelerometer <x> <y> <z>`|
-| | `gyroscope`        | Yes | Yes  |`sensor gyroscope <x> <y> <z>`                |
-| | `magnetic`         | Yes | Yes  |`sensor magnetic <x> <y> <z>`                 |
-| | `proximity`        | Yes | Yes  |`sensor proximity <value>`                    |
-| | `light`            | Yes | Yes  |`sensor light <value>`                        |
-| | `pressure`         | Yes | Yes  |`sensor pressure <level>`                     |
-| | `uv`               | Yes | Yes  |`sensor uv <level>`                           |
-| | `hrm`              | Yes | Yes  |`sensor hrm <level>`                          |
-| | `pedometer`        | Yes | Yes  |`sensor pedometer <state>`                    |
-| | `status`           | Yes | Yes  |`sensor status [sensor]`                      |
-| | `file`             | Yes | Yes  |`sensor file <sensor> <path>`                 |
-| `low_memory`       | `set`    | Yes | Yes                                | `low_memory set <hard-warning`&#124;`soft-warning`&#124;`normal>`  |
-| | `status`           | yes | Yes | `low_memory status`                           |
+| Feature command | Sub-command        | Mobile | Wearable | Syntax                                   |
+| --------------- | ------------------ | ------ | -------- | ---------------------------------------- |
+| `telephony`     | `call dial`        | Yes    | Yes      | `telephony call dial <number>`           |
+|                 | `call hidden-dial` | Yes    | Yes      | `telephony call hidden-dial <number>`    |
+|                 | `call connect`     | Yes    | Yes      | `telephony call connect`                 |
+|                 | `call disconnect`  | Yes    | Yes      | `telephony call disconnect <call id>`    |
+|                 | `sms send`         | Yes    | Yes      | `telephony sms send <number> <text>`     |
+|                 | `sms set`          | Yes    | Yes      | `telephony sms set <available`&#124;`unavailable>` |
+|                 | `sms status`       | Yes    | Yes      | `telephony sms status`                   |
+|                 | `sms mms_status`   | Yes    | Yes      | `telephony sms mms_status`               |
+| `location`      | `set`              | Yes    | Yes      | `location set <longitude> <latitude>`    |
+|                 | `status`           | Yes    | Yes      | `location status`                        |
+|                 | `stop`             | Yes    | Yes      | `location stop`                          |
+|                 | `file`             | Yes    | Yes      | `location file <file-path>`              |
+| `battery`       | `level`            | Yes    | Yes      | `battery level <percent>`                |
+|                 | `charger`          | Yes    | Yes      | `battery charger <on`&#124;`off>`        |
+|                 | `status`           | Yes    | Yes      | `battery status`                         |
+| `earjack`       | `set`              | Yes    | No       | `earjack set <3wire`&#124;`4wire`&#124;`off>` |
+|                 | `status`           | Yes    | No       | `earjack status`                         |
+| `usb`           | `set`              | Yes    | Yes      | `usb set <on`&#124;`off>`                |
+|                 | `status`           | Yes    | Yes      | `usb status`                             |
+| `rssi`          | `set`              | Yes    | No       | `rssi set <0~4>`                         |
+|                 | `status`           | Yes    | No       | `rssi status`                            |
+| `sdcard`        | `attach`           | Yes    | No       | `sdcard attach <sdcard_[ 4`&#124;`8`&#124;`16`&#124;`32 ]G>` |
+|                 | `detach`           | Yes    | No       | `sdcard detach <sdcard_[ 4`&#124;`8`&#124;`16`&#124;`32 ]G>` |
+|                 | `status`           | Yes    | No       | `sdcard status`                          |
+| `nfc`           | `tag attach`       | Yes    | Yes      | `nfc tag attach <tag type> <NDEF message>` |
+|                 | `tag detach`       | Yes    | Yes      | `nfc tag detach`                         |
+|                 | `p2p attach`       | Yes    | Yes      | `nfc p2p attach`                         |
+|                 | `p2p send`         | Yes    | Yes      | `nfc p2p send <NDEF message>`            |
+|                 | `p2p detach`       | Yes    | Yes      | `nfc p2p detach`                         |
+|                 | `status`           | Yes    | Yes      | `nfc status`                             |
+| `sensor`        | `accelerometer`    | Yes    | yes      | `sensor accelerometer <x> <y> <z>`       |
+|                 | `gyroscope`        | Yes    | Yes      | `sensor gyroscope <x> <y> <z>`           |
+|                 | `magnetic`         | Yes    | Yes      | `sensor magnetic <x> <y> <z>`            |
+|                 | `proximity`        | Yes    | Yes      | `sensor proximity <value>`               |
+|                 | `light`            | Yes    | Yes      | `sensor light <value>`                   |
+|                 | `pressure`         | Yes    | Yes      | `sensor pressure <level>`                |
+|                 | `uv`               | Yes    | Yes      | `sensor uv <level>`                      |
+|                 | `hrm`              | Yes    | Yes      | `sensor hrm <level>`                     |
+|                 | `pedometer`        | Yes    | Yes      | `sensor pedometer <state>`               |
+|                 | `status`           | Yes    | Yes      | `sensor status [sensor]`                 |
+|                 | `file`             | Yes    | Yes      | `sensor file <sensor> <path>`            |
+| `low_memory`    | `set`              | Yes    | Yes      | `low_memory set <hard-warning`&#124;`soft-warning`&#124;`normal>` |
+|                 | `status`           | yes    | Yes      | `low_memory status`                      |

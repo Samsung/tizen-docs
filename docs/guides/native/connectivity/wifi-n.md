@@ -26,8 +26,8 @@ The main features of the Wi-Fi Manager API include:
 
   You can also register callbacks for monitoring changes in the Wi-Fi device state (whether Wi-Fi is activated) and the RSSI level of the Wi-Fi connection.
 
-**Note**
-You can test the Wi-Fi functionality only on a target device. The emulator does not support this feature.
+> **Note**  
+> You can test the Wi-Fi functionality only on a target device. The emulator does not support this feature.
 
 ## Prerequisites
 
@@ -65,8 +65,8 @@ To enable your application to use the Wi-Fi functionality:
    wifi_manager_deinitialize(wifi);
    ```
 
-**Note**
-The Wi-Fi feature is not thread-safe and depends on the ecore main loop. Implement Wi-Fi within the ecore main loop, and do not use it in a thread.
+> **Note**  
+> The Wi-Fi feature is not thread-safe and depends on the ecore main loop. Implement Wi-Fi within the ecore main loop, and do not use it in a thread.
 
 ## Activating a Wi-Fi Device
 

@@ -5,7 +5,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
 
-Tizen enables you to access a device's power resources. Currently, the screen and CPU power resources are supported, allowing you to request a specific power state and control the brightness of the screen.
+You can access a device's power resources. Currently, the screen and CPU power resources are supported, allowing you to request a specific power state and control the brightness of the screen.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -46,7 +46,8 @@ The following table lists the levels you can request.
 | `SCREEN_NORMAL` | In this state, the screen uses the default brightness the user has configured for the device. When this state is requested, the device does not go to the `SCREEN_DIM` state automatically. |
 | `CPU_AWAKE`     | In this state, the CPU is awake. When this state is requested, the device does not go to `SLEEP` state automatically. |
 
-​	**Note**	If you request a new power state without releasing the previous state, the Tizen platform follows the highest minimum state requested.
+> **Note**
+> If you request a new power state without releasing the previous state, the Tizen platform follows the highest minimum state requested.
 
 To request and release the power state:
 
@@ -62,7 +63,7 @@ To request and release the power state:
    tizen.power.release('SCREEN');
    ```
 
-3. To listen to the screen state changes, use the `setScreenStateChangeListener()` method:
+3. To listen for the screen state changes, use the `setScreenStateChangeListener()` method:
 
    ```
    function onScreenStateChanged(previousState, changedState) {

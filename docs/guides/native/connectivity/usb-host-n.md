@@ -164,7 +164,8 @@ To receive notifications when a USB device is attached or detached:
 
 1. Define and register a callback, which is called when the device is attached or detached.
 
-   Define the events you want to monitor in the third parameter of the `usb_host_set_hotplug_cb()` function. The available values are: `USB_HOST_HOTPLUG_EVENT_ATTACH`, `USB_HOST_HOTPLUG_EVENT_DETACH`, and `USB_HOST_HOTPLUG_EVENT_ANY`.
+   Define the events you want to monitor in the third parameter of the `usb_host_set_hotplug_cb()` function, using the values of the [usb\_host\_hotplug\_event\_e](../../../../org.tizen.native.mobile.apireference/group__CAPI__USB__HOST__HOTPLUG__MODULE.html#ga1c4a0899703bf547abd2cf4dc36fffe9) enumeration.
+
 
    ```
    void

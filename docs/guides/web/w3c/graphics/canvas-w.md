@@ -33,7 +33,8 @@ For all canvas objects (images, shapes, text, and lines), you can define colors 
 
 In mobile applications only, in HTML5, the [Scalable Vector Graphics (SVG) 2](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#svg) API provides similar features as the canvas. Their difference is that SVG expresses graphics using vectors, while the canvas is based on pixels. To express complex graphics, use the canvas, and to express graphics with a liberal expansion or reduction, use [SVG](./w3c/graphics/svg-w.md).
 
-​	**Note**	The canvas currently supports 2D graphics only, since the 3D graphics specification is still in progress. The [WebGL™](https://www.khronos.org/registry/webgl/specs/1.0/) API is currently called 3D Canvas, and is used to express 3D graphics. For more information on the performance differences between Canvas 2D and WebGL™ in mobile applications, see [Performance Comparison of Canvas 2D and WebGL™](./w3c/graphics/canvas-w.md#comparison).
+> **Note**
+> The canvas currently supports 2D graphics only, since the 3D graphics specification is still in progress. The [WebGL™](https://www.khronos.org/registry/webgl/specs/1.0/) API is currently called 3D Canvas, and is used to express 3D graphics. For more information on the performance differences between Canvas 2D and WebGL™ in mobile applications, see [Performance Comparison of Canvas 2D and WebGL™](./w3c/graphics/canvas-w.md#comparison).
 
 ## Using a Canvas
 
@@ -84,7 +85,8 @@ For the complete source code related to this use case, see the following files:
 
 To use images on the canvas, use the `drawImage()` method of the HTML Canvas 2D Context API. The method receives information, such as the image URL and position, and where it is indicated, and then creates the image on the canvas. The created image is pixel-based.
 
-​	**Note**	To edit the created image, you must comply with the same-origin policy.
+> **Note**
+> To edit the created image, you must comply with the same-origin policy.
 
 To use images on a canvas:
 
@@ -215,7 +217,8 @@ To create and draw shapes on a canvas:
 
    ![Transform shapes (in mobile applications only)](./media/canvas_drawing_shapes3.png)
 
-​	**Note**	For a canvas, the rendering occurs in the order from the back of the input source.
+> **Note**
+> For a canvas, the rendering occurs in the order from the back of the input source.
 
 ### Source Code
 
@@ -405,7 +408,8 @@ To create text and lines on a canvas:
    context.measureText('textAlign=end', 150, 100);
    ```
 
-​	**Note**	When drawing multiple images on a canvas, indicate the starting point with the `beginPath()` method to prevent unforeseen errors.
+> **Note**	
+> When drawing multiple images on a canvas, indicate the starting point with the `beginPath()` method to prevent unforeseen errors.
 
 ### Source Code
 

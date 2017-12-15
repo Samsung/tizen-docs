@@ -6,7 +6,8 @@
 
 You can create UI applications based on pure EFL code. However, when expanding the UI view of the application or developing an optimized application for a new device, code maintenance and development productivity can slow down. For efficiency, consider converting your application to a UI Builder application. The Tizen native UI Builder supports UI layouts and visual editing methods for creating new UI screens for various devices.
 
-**Note**You cannot convert EFL widget applications or DALi UI applications to UI Builder projects. Only EFL basic UI and watch application projects can be converted (based on the `tizen-manifest.xml` file).
+> **Note**  
+> You cannot convert EFL widget applications or DALi UI applications to UI Builder projects. Only EFL basic UI and watch application projects can be converted (based on the `tizen-manifest.xml` file).
 
 ## Conversion Advantages
 
@@ -21,14 +22,14 @@ If you convert your project to a UI Builder project, you can use the visual edit
 
 Even a beginner can develop a UI Builder project easily:
 
-- With the **Design** tab:You can create and place UI components by dragging and dropping them from the **Palette** to the design area.You can lay out the UI components by, for example, moving and sizing.You can preview the application screen in real time without running the emulator.
-- With the **Source** tab:You can author a view (screen) using only the name and attributes of the UI component, without knowing the Elementary API.You can use the auto-completion function for XML grammar in the XML editor.
+- With the **Design** editor:You can create and place UI components by dragging and dropping them from the **Palette** to the design area.You can lay out the UI components by, for example, moving and sizing.You can preview the application screen in real time without running the emulator.
+- With the **Source** editor:You can author a view (screen) using only the name and attributes of the UI component, without knowing the Elementary API.You can use the auto-completion function for XML grammar in the XML editor.
 
 ### Rapid Response to Requirements
 
 You can handle development requirements quickly:
 
-- With the **Storyboard** tab:You do not need to handle the flow of views through Elementary API code editing.You can see the flow and connection status of each screen at a glance, and add connections between views with a single click (**Ctrl + Mouse drag**).
+- With the **Storyboard** :You do not need to handle the flow of views through Elementary API code editing. You can see the flow and connection status of each screen at a glance, and add connections between views with a single click (**Shift + Mouse drag**).
 - With the **Outline** view:You can see the entire UI component hierarchy of the application at a glance.You can configure an appropriate view by selecting from among an empty view, various view templates, and a popup style view.
 
 ### Application Optimization and Maintenance
@@ -66,10 +67,10 @@ To display visually-edited views (created in the UI Builder) and code-based user
 
 | Name       | Type                                     | Description                              |
 | ---------- | ---------------------------------------- | ---------------------------------------- |
-| window     | Elementary window (in [mobile](../../../org.tizen.native.mobile.apireference/group__Win.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Win.html) applications) | Forms the first window of the application. |
-| bg         | Background (in [mobile](../../../org.tizen.native.mobile.apireference/group__Bg.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Bg.html) applications) | Sets a background for a window or any container object. |
-| conformant | Conformant (in [mobile](../../../org.tizen.native.mobile.apireference/group__Conformant.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Conformant.html) applications) | Provides space for indicators, virtual keypads, and softkey windows. |
-| naviframe  | Naviframe (in [mobile](../../../org.tizen.native.mobile.apireference/group__Naviframe.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Naviframe.html) applications) | Manages UI Builder views.                |
+| window     | Elementary window (in [mobile](../../../org.tizen.native.mobile.apireference/group__Elm__Win.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Elm__Win.html) applications) | Forms the first window of the application. |
+| bg         | Background (in [mobile](../../../org.tizen.native.mobile.apireference/group__Elm__Bg.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Elm__Bg.html) applications) | Sets a background for a window or any container object. |
+| conformant | Conformant (in [mobile](../../../org.tizen.native.mobile.apireference/group__Elm__Conformant.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Elm__Conformant.html) applications) | Provides space for indicators, virtual keypads, and softkey windows. |
+| naviframe  | Naviframe (in [mobile](../../../org.tizen.native.mobile.apireference/group__Elm__Naviframe.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Elm__Naviframe.html) applications) | Manages UI Builder views.                |
 
 ## Converting to a UI Builder Project
 
@@ -90,14 +91,18 @@ To convert the project:
 
 1. Open the **Convert to UI Builder Project** wizard.Right-click the **SettingsUI** project in the **Project Explorer** view, and select **Convert to UI Builder Project**.![Convert the sample project](./media/uib_convert_conversion.png)
 
-2. Confirm the conversion by clicking **Next**.![Confirm the conversion](./media/uib_convert_confirm.png)**Note**When a wearable project is converted, the shape type selection appears after the opening step. The UI Builder provides different shape designs according to the shape type. Select the appropriate one for the converted project.![Select the shape type](./media/uib_convert_shape.png)
+2. Confirm the conversion by clicking **Next**.![Confirm the conversion](./media/uib_convert_confirm.png)
+  > **Note**  
+  > When a wearable project is converted, the shape type selection appears after the opening step. The UI Builder provides different shape designs according to the shape type. Select the appropriate one for the converted project.![Select the shape type](./media/uib_convert_shape.png)
 
 3. Select the application entry point:
 
    ![Select the entry point](./media/uib_convert_entry.png)
 
    1. Click **Browse**.
-   2. Select the `settingsui.c` file (path: `SettingsUI/src`) and click **Next**.**Note**The `settingsui.c` file has a `main()` function corresponding to the application entry point. If you select the wrong file, a warning message appears and the **Next** button is disabled.
+   2. Select the `settingsui.c` file (path: `SettingsUI/src`) and click **Next**.
+     > **Note**  
+	 > The `settingsui.c` file has a `main()` function corresponding to the application entry point. If you select the wrong file, a warning message appears and the **Next** button is disabled.
 
 4. Add a user view:
 
@@ -109,13 +114,14 @@ To convert the project:
    4. Click **Start-up**:An arrow appears at the end of the selected user view name. If the start-up view already exists in the **Outline** view, it is replaced by the selected user view.If you want to cancel the selection, click **Start-up** again. The start-up view is changed to the previously selected user view.
    5. Click **Finish**.
 
-The converted project (**SettingsUIwithUIB**) appears in the **Project Explorer** view, the perspective is changed to **UI Builder**, and the **Design** tab of the **Layout Editor** view is opened. You can now develop the project using the UI Builder features.
+The converted project (**SettingsUIwithUIB**) appears in the **Project Explorer** view, the perspective is changed to **UI Builder**, and the **Design** editor is opened. You can now develop the project using the UI Builder features.
 
 **Figure: Structure of a converted project**
 
 ![Structure of a converted project](./media/uib_convert_structure.png)
 
-**Note**The converted project follows specific naming conventions:A suffix ("withUIB") is added at the end of the original project name.If the same name with the same suffix already exists on the workspace, an empty serial number is appended to the end of the filename.
+> **Note**  
+> The converted project follows specific naming conventions:A suffix ("withUIB") is added at the end of the original project name.If the same name with the same suffix already exists on the workspace, an empty serial number is appended to the end of the filename.
 
 ## Using UI Builder Features
 
@@ -147,9 +153,8 @@ To edit view2:
 
 ### Defining Transitions Between Views
 
-By using the **Storyboard** tab, you can easily switch between the views. To define transitions between views:
-
-1. In the **Layout Editor** view, select the **Storyboard** tab.
+1. By using the **Storyboard**, you can easily switch between the views. To define transitions between views:
+   1.  In the **Layout Editor** view, select the **Storyboard**.
 2. Click the button in view1, hold down the **Ctrl** key and drag and drop the mouse cursor over view2.
 
 **Figure: Connecting views**

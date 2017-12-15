@@ -40,7 +40,9 @@ Depending on the touch type, different touch events occur:
 
 - When the user first touches the element and removes their finger from the screen, the [touchstart](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchstart-event) and [touchend](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchend-event) events occur.**Figure: Simple touch (in mobile applications only)**![Simple touch (in mobile applications only)](./media/touch1.png)
 - When the user moves their finger across the element, and then removes their finger, the `touchstart`, [touchmove](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchmove-event), and `touchend` events occur.**Figure: Moving touch (in mobile applications only)**![Moving touch (in mobile applications only)](./media/touch2.png)
-- When the user long-presses the DOM element, such as text or image, in the element, the `touchstart` and [touchcancel](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchcancel-event) events occur.**Figure: Canceling touch with a long press (in mobile applications only)**![Canceling touch with a long press (in mobile applications only)](./media/touch3.png)	**Note**	In Tizen, the `touchcancel` event occurs when a context menu is activated by a long press of a DOM element, such as text or image.
+- When the user long-presses the DOM element, such as text or image, in the element, the `touchstart` and [touchcancel](http://www.w3.org/TR/2013/REC-touch-events-20131010/#the-touchcancel-event) events occur.**Figure: Canceling touch with a long press (in mobile applications only)**![Canceling touch with a long press (in mobile applications only)](./media/touch3.png)	
+> **Note**	
+> In Tizen, the `touchcancel` event occurs when a context menu is activated by a long press of a DOM element, such as text or image.
 
 Learning how to handle touch events improves the user interaction of your application:
 
@@ -83,7 +85,8 @@ Learning how to handle touch events improves the user interaction of your applic
    </script>
    ```
 
-​	**Note**	Since the device input takes place by touching the screen, sometimes the features of your application and the browser can respond simultaneously to the same touch event. To prevent the unintended effects (for example, the customized gesture and the browser scroll operating simultaneously), use the `preventDefault()` method to prevent the basic browser events:
+	> **Note**	
+    > Since the device input takes place by touching the screen, sometimes the features of your application and the browser can respond simultaneously to the same touch event. To prevent the unintended effects (for example, the customized gesture and the browser scroll operating simultaneously), use the `preventDefault()` method to prevent the basic browser events:
 
 ```
 <script>

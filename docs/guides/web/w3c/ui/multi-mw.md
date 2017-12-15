@@ -20,7 +20,7 @@ You can manage the following column-related features:
 
  When the layout is set to a constant number of columns using the `column-count` (or `-webkit-column-count)` property, the column width is set to fill the available horizontal space.
 
-In the following code snippet and figure, the column number is set to 4. As a result, on a 480 x 800 display (shown at the top), the column width is 116 px, whereas on a 720 x 1280 display (shown at the bottom), the column with is 143 px.
+In the following code snippet and figure, the column number is set to 4. As a result, on a 480 x 800 display (shown at the top), the column width is 116 px, whereas on a 720 x 1280 display (shown at the bottom), the column width is 143 px.
 
 The following code snippet demonstrates how to use the `column-count` property. For a complete source code, see [multi_column_column_count/renamed_index.html](http://download.tizen.org/misc/examples/w3c_html5/dom_forms_and_styles/css_multi_column_layout_module/multi_column_column_count).
 
@@ -105,7 +105,8 @@ article {
 
 ![Column rule](./media/column_rule.png)
 
-​	**Note**	In Tizen 2.2, to avoid displaying the rules incorrectly, do not use the `column-rule` (or `-webkit-column-rule`) property with horizontal scrolling of the columns.
+	> **Note**	
+	> In Tizen 2.2, to avoid displaying the rules incorrectly, do not use the `column-rule` (or `-webkit-column-rule`) property with horizontal scrolling of the columns.
 
 ## Setting the Column Span
 
@@ -153,7 +154,7 @@ article.lower section {
 
 ## Creating a Basic Layout
 
-To enhance the user experience of your application by providing a consistent behavior across a wide range of displays with different resolution and orientation, you must learn to create a basic layout using CSS:
+To create a basic layout for your application using CSS, providing consistent behavior across a wide range of displays with different resolutions and orientations:
 
 1. Create the HTML layout, defining separate sections for the column content and including an image file:
 
@@ -293,7 +294,7 @@ For the complete source code related to this use case, see the following files:
 
 ## Creating a Layout with Dynamic Content
 
-To enhance the user experience of your application by providing a consistent behavior across a wide range of displays with different resolution and orientation, you must learn to create a layout displaying a varying amount of content using CSS:
+To use CSS to create a layout that provides varying amounts of content, providing consistent behavior across a wide range of displays with different resolutions and orientations:
 
 1. Create the HTML layout. The `article` element displays the columns, and the `nav` element contains buttons to add and remove content in the columns.
 

@@ -19,6 +19,5 @@ The main features of Eina are:
 
   Eina provides a number of tools, such as string manipulation, that make your life easier when coding applications.
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

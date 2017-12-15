@@ -114,3 +114,5 @@ Size hints are a set of functions that can be used on any Evas object. You reque
 - Aspect
 
   To fix the dimensional proportions of the object, use the `evas_object_size_hint_aspect_set()` function. When the aspect size hint is set, Evas tries to fix the dimensional proportions of the object.
+  
+For examples on the use of the alignment, weight, and minimum and maximum size properties, see [Box](container_box_n.htm).

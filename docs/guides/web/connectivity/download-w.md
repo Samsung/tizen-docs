@@ -6,9 +6,9 @@
 - Tizen 2.3.1 and Higher for Wearable
 - Tizen 3.0 and Higher for TV
 
-Tizen enables you to download files from the Internet. You can also monitor the download progress and status.
+You can download files from the Internet and monitor the progress and status of ongoing downloads.
 
-The Download API is mandatory for the Tizen mobile profile, but optional for the wearable profile. This means that it is supported in all mobile devices, but may not be supported in all wearable devices. The Download API is supported on all Tizen Emulators.
+The Download API is mandatory for the Tizen mobile profile, but optional for wearable and TV profiles. This means that it is supported on all mobile devices, but may not be supported on all wearable and TV devices. The Download API is supported on all Tizen Emulators.
 
 The main features of the Download API include:
 
@@ -38,7 +38,7 @@ To provide the user access to Internet resources, you must learn how to manage d
    var downloadRequest = new tizen.DownloadRequest('http://download.tizen.org/tools/README.txt', 'downloads');
    ```
 
-   The final parameter (`downloads`) defines the folder where the downloaded content is stored. The parameter uses a relative folder location defined in the Filesystem API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/filesystem.html), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/filesystem.html), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/filesystem.html) applications). The folder is not an absolute folder location, but instead uses a [virtual root location](./data/file-system-w.md) (`downloads` is the default download location in the virtual root).
+   The final parameter (`downloads`) defines the folder where the downloaded content is stored. The parameter uses a relative folder location defined in the Filesystem API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/filesystem.html), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/filesystem.html), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/filesystem.html) applications). The folder is not an absolute folder location, but instead uses a [virtual root location](../data/file_system_w.htm#roots) (`downloads` is the default download location in the virtual root).
 
 2. It is not possible to download anything when the device is not connected to a network. To check whether any connection is available, use the `getPropertyValue()` method of the `SystemInfo` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/systeminfo.html#SystemInfo), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/systeminfo.html#SystemInfo), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/systeminfo.html#SystemInfo) applications):
 
@@ -83,7 +83,7 @@ To provide the user access to Internet resources, you must learn how to manage d
    };
    ```
 
-4. To start the download of the HTML file from the Internet, use the `start()` method of the `DownloadManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/download.html#DownloadManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/download.html#DownloadManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/download.html#DownloadManager) applications):
+4. To start downloading the file from the Internet, use the `start()` method of the `DownloadManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/download.html#DownloadManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/download.html#DownloadManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/download.html#DownloadManager) applications):
 
    ```
    downloadId = tizen.download.start(downloadRequest, listener);
@@ -143,4 +143,4 @@ To provide the user access to Internet resources, you must learn how to check th
    var MIMEType = tizen.download.getMIMEType(downloadId);
    ```
 
-   The method returns the MIME type the target file which has started downloading
+ 

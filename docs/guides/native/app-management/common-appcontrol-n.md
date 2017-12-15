@@ -5,8 +5,8 @@
 
 An application control provides functions for launching other applications with a specific operation, URI, MIME type, and extra data. The requesting application can get a result back from the launched application. This topic introduces the common application controls that you can use.
 
-**Note**
-It is possible that no application suitable to receive the application control exists. Verify that a suitable application exists before you send the launch request.
+> **Note**  
+> It is possible that no application suitable to receive the application control exists. Verify that a suitable application exists before you send the launch request.
 
 ## Browser
 

@@ -7,8 +7,8 @@
 - Tizen 3.0 and Higher for TV
 
 Tizen Web guides introduce various features for Web applications. The features are supported in the Web APIs, and you can use them in creating Tizen applications.
-
-​	**Note**	The feature support differs depending on the application profile (mobile, wearable, or TV). For a complete list of APIs and their supported profiles, see [Web API References](../../../../org.tizen.web.apireference/html/web_api_reference.htm).
+> **Note**  
+> The feature support differs depending on the application profile (mobile, wearable, or TV). For a complete list of APIs and their supported profiles, see [Web API References](../../../../org.tizen.web.apireference/html/web_api_reference.htm).
 
 Select the feature you are interested in and see what Tizen offers for your application:
 
@@ -52,9 +52,9 @@ Select the feature you are interested in and see what Tizen offers for your appl
 
   The sensor features provide information about the surrounding environment of the device. You can access data from various device sensors, which provide information on the physical environment the device is in, and the gestures and activities the user is engages in.
 
-- [Text Input](./text-input/text-input-cover-w.md) **in mobile and wearable applications only**
+- [Text Input and Voice](./text-input/text-input-cover-w.md) **in mobile and wearable applications only**
 
-  The text input features introduce how you can provide customized keyboards. You can also define keyboard commands to trigger specific actions.
+  The text input and Voice features introduce how you can provide customized keyboards and Voice commands. You can also define keyboard commands to trigger specific actions.
 
 - [Personal Data](./personal/personal-cover-w.md) **in mobile and wearable applications only**
 
@@ -79,5 +79,13 @@ Select the feature you are interested in and see what Tizen offers for your appl
 - [W3C/HTML5/Supplementary Features](./w3c/w3c-cover-w.md) **in mobile and wearable applications only**
 
   The W3C, HTML5, and supplementary features cover various functionalities you can use in your application. You can use graphics, media, storage, and location features, as well as manage communication and security. These features also enable you to create an application UI using HTML and CSS.
+​
+> **Note**  
+> In Tizen Web Device APIs, there are 2 types of APIs: mandatory and optional.
+The mandatory APIs are always available on all Tizen devices. The optional APIs provide functionality that depends on the available device hardware or software capabilities, and they may not be available on all Tizen devices. For example, the Bluetooth and NFC API hardware features are optional, and not supported on all devices.
 
-​	**Note**	In Tizen Web Device APIs, there are 2 types of APIs: mandatory and optional.The mandatory APIs are always available on all Tizen devices. The optional APIs provide functionality that depends on the available device hardware or software capabilities, and they may not be available on all Tizen devices. For example, the Bluetooth and NFC API hardware features are optional, and not supported on all devices.To determine the availability of optional APIs, use the `tizen.systeminfo.getCapability()` method of the System Information API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/systeminfo.html#SystemInfo), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/systeminfo.html#SystemInfo), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/systeminfo.html#SystemInfo) applications).Note that all mandatory APIs are supported on the Tizen Emulators, while the optional APIs may or may not be supported. For more information on support for each API, see [Tizen Web Device API Reference](../../../../org.tizen.web.apireference/html/device_api/device_api_cover.html).
+To determine the availability of optional APIs, use the `tizen.systeminfo.getCapability()` method of the System Information API (in [mobile](../../../org.tizen.web.apireference/html/device_api/mobile/tizen/systeminfo.html), [wearable](../../../org.tizen.web.apireference/html/device_api/wearable/tizen/systeminfo.html), and [TV](../../../org.tizen.web.apireference/html/device_api/tv/tizen/systeminfo.html) applications).
+
+Note that all mandatory APIs are supported on the Tizen Emulators, while the optional APIs may or may not be supported. For more information on support for each API, see [Tizen Web Device API Reference](../../../org.tizen.web.apireference/html/device_api/device_api_cover.html).
+
+To compare API support between Web Device API modules and native API modules, see [Tizen 3.0 Native and Web API Modules](attachments/Tizen-3.0-Native-Web-API-Modules.pdf).

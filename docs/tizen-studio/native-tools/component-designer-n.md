@@ -46,7 +46,8 @@ The list of groups is located on the left side of the Component Designer, and ho
 
 On the top of the navigation bar, 2 icons allow you to add a new group into the project or delete an existing group. If you add a new group, a simple dialog wizard opens, and sets a name for new group and selects a source group, if one is required to create a copy or alias.
 
-**Note**Copy and alias are different entities. A copied group is an independent group with all parameters copied from the source group. An alias, however, is only a link. The alias group has a specific icon (![Link](./media/comp_des_icon_link.png)) and the opened alias group does not allow you to work with the part/program navigation or with parts on the workspace.
+> **Note**  
+> Copy and alias are different entities. A copied group is an independent group with all parameters copied from the source group. An alias, however, is only a link. The alias group has a specific icon (![Link](./media/comp_des_icon_link.png)) and the opened alias group does not allow you to work with the part/program navigation or with parts on the workspace.
 
 The group list is a tree view, whose structure is based on the group name tokens (separated by "/" characters). For example, the default Elementary theme contains a lot of groups with styles for Elementary components, such as `elm/check/base/default`:
 
@@ -94,9 +95,9 @@ To manage primitives:
   | ![Box](./media/comp_des_icon_box.png)  | Box       | ![Table](./media/comp_des_icon_table.png) | Table   |
   | ![Proxy](./media/comp_des_icon_proxy.png) | Proxy     | ![Spacer](./media/comp_des_icon_spacer.png) | Spacer  |
 
-  Some parts can contain items in addition to states, for example, a box or table. Such items are shown as a different list, which is expandable and shows the number of items already inside the part. When such item (box or table) is selected, you can add new items to it. You cannot add any items to any other part type.
-
-  **Note**To explore the tree, double-click a node or press the right arrow icon.
+  Some parts can contain items in addition to states, for example, a box or table. Such items are shown as a different list, which is expandable and shows the number of items already inside the part. When such item (box or table) is selected, you can add new items to it. You cannot add any items to any other part typ
+  > **Note**
+  > To explore the tree, double-click a node or press the right arrow icon.
 
 - Programs
 
@@ -128,7 +129,8 @@ The workspace group view is a scrollable view where the background is preset by 
 - Parts can be manipulated by a mouse pointer.
 - Parts can be selected and highlighted, and also resized using the [highlight handlers](#highlight).
 
-**Note**Clicking a part selects it and loads the part properties. Clicking an already selected part switches between the part state and the part (and switches their properties as well).
+> **Note**  
+> Clicking a part selects it and loads the part properties. Clicking an already selected part switches between the part state and the part (and switches their properties as well).
 
 If you right-click the group view background, a context menu opens. You can select actions, such as undo, redo, and show/hide rulers and certain scales (or both). The group view also contains rulers to show the relative and absolute sizes.
 
@@ -412,7 +414,8 @@ Color classes are designed to simplify color adjustment in your theme. Changing 
 
 For most part types, only the first color matters. Only the text parts can use all 3 colors.
 
-**Note**If you want some part to have a slightly different color, you can specify both a color and color class. In this case, their values are multiplied. For example, if you have a background color class with the green main color (255, 0, 0, 255) and a part with this color class and a half-transparent white color (255, 255, 255, 127), the resulting part color is (255, 0, 0, 127).
+> **Note**  
+> If you want some part to have a slightly different color, you can specify both a color and color class. In this case, their values are multiplied. For example, if you have a background color class with the green main color (255, 0, 0, 255) and a part with this color class and a half-transparent white color (255, 255, 255, 127), the resulting part color is (255, 0, 0, 127).
 
 ## Shortcuts
 

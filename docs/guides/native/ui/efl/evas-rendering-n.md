@@ -199,6 +199,5 @@ The engines implement the rendering of all the basic objects by themselves, beca
 
 If a particular engine does not have the provision for a certain primitive object, it reverts back to using a default software version.
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

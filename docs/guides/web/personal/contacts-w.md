@@ -5,7 +5,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 4.0 and Higher for Wearable
 
-Tizen enables you to manage the contacts and persons listed in your address books. A `Contact` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/contact.html#Contact) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/contact.html#Contact) applications) is always associated with a specific address book. A `Person` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/contact.html#Person) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/contact.html#Person) applications) is an aggregation of 1 or more contacts associated with the same person.
+You can manage the contacts and persons listed in your address books. A `Contact` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/contact.html#Contact) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/contact.html#Contact) applications) is always associated with a specific address book. A `Person` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/contact.html#Person) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/contact.html#Person) applications) is an aggregation of 1 or more contacts associated with the same person.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -27,7 +27,8 @@ The main features of the Contact API include:
 
   You can also [create](./personal/contacts-w.md#Adding_Multiple_Contact) and [manage](./personal/contacts-w.md#Managing_Multiple_Contact) multiple contacts simultaneously using the batch mode. The batch mode provides faster, optimized processing of multiple contacts.
 
-  ​	**Note**	The batch mode does not provide progress information about operations. To ensure that you can view the progress, break the batch operation down into multiple smaller batch operations. For example, break down a batch of 100 update requests into 10 batch operations that update 10 records at a time. Additionally, breaking down a batch operation helps you avoid blocking other database operations, such as add or remove.
+> **Note**
+> The batch mode does not provide progress information about operations. To ensure that you can view the progress, break the batch operation down into multiple smaller batch operations. For example, break down a batch of 100 update requests into 10 batch operations that update 10 records at a time. Additionally, breaking down a batch operation helps you avoid blocking other database operations, such as add or remove.
 
   If you want to receive notifications for batch mode operations, note that each requested batch operation generates only a single event.
 
@@ -68,7 +69,8 @@ To enable your application to use the contact functionality:
 
 ## Creating an Address Book
 
-​	**Note**	The created address book is associated with a specified account. Therefore, you must retrieve the account before creating a new address book.
+> **Note**
+> The created address book is associated with a specified account. Therefore, you must retrieve the account before creating a new address book.
 
 To create a new address book:
 
@@ -121,7 +123,7 @@ To access the address books in which the contacts are listed:
   function addressBooksCB(addressBooks) {
       if (addressBooks.length > 0) {
           addressBook = addressBooks[0];
-          console.log('The addressbook name is ' + addressBook.name);
+          console.log('The address book name is ' + addressBook.name);
       }
   }
 
@@ -262,7 +264,8 @@ To receive notifications when contact information changes:
    watcherId = addressbook.addChangeListener(watcher);
    ```
 
-   ​	**Note**	The listener object that is the first argument of the `addChangeListener()` method must have at least 1 event handler defined. If no handlers are defined, a `TypeMismatchError` error occurs.
+> **Note**
+> The listener object that is the first argument of the `addChangeListener()` method must have at least 1 event handler defined. If no handlers are defined, a `TypeMismatchError` error occurs.
 
 4. To stop the notifications, use the `removeChangeListener()` method of the `Addressbook` interface:
 
@@ -302,7 +305,8 @@ To add multiple contacts to an address book in the batch mode:
    addressbook.addBatch([c1, c2]);
    ```
 
-   ​	**Note**	The `addBatch()` method is asynchronous. Make sure you provide success and error callbacks with it.
+> **Note**
+> The `addBatch()` method is asynchronous. Make sure you provide success and error callbacks with it.
 
 ## Managing Multiple Contacts in the Batch Mode
 
@@ -358,7 +362,8 @@ To manage multiple contacts in your address books in the batch mode:
    }
    ```
 
-   ​**Note**	The `updateBatch()` and `removeBatch()` methods are asynchronous. Make sure you provide success and error callbacks with them.
+​> **Note*
+> The `updateBatch()` and `removeBatch()` methods are asynchronous. Make sure you provide success and error callbacks with them.
 
 ## Managing Contact Groups
 

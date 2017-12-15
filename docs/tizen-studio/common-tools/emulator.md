@@ -1,5 +1,5 @@
 # Running Applications on the Emulator
-# Dependencies
+## Dependencies
 
 - Tizen Studio 1.0 and Higher
 
@@ -77,8 +77,8 @@ If the CPU VT is disabled in the **Emulator Configuration** view on the Emulator
 
      The HAXM driver is installed during the Tizen Studio installation. For more information on installing HAXM, see [Hardware Accelerated Execution Manager](../download/hardware-accelerated-execution-manager.md).
 
-   **Note**
-   If the installation fails with a VT-related message, check the CPU feature and BIOS settings. If the installation fails with an NX-related message, enable NX (or PAE and DEP) -related item in the BIOS. In addition, make sure that the operating system supports the NX feature (for more information, see [MSDN](http://msdn.microsoft.com/en-us/library/windows/hardware/ff542275%28v=vs.85%29.aspx)).
+   > **Note**  
+   > If the installation fails with a VT-related message, check the CPU feature and BIOS settings. If the installation fails with an NX-related message, enable NX (or PAE and DEP) -related item in the BIOS. In addition, make sure that the operating system supports the NX feature (for more information, see [MSDN](http://msdn.microsoft.com/en-us/library/windows/hardware/ff542275%28v=vs.85%29.aspx)).
 
    No configuration is required for KVM or HAX.
 
@@ -96,21 +96,21 @@ The following table lists the basic features supported in the emulator.
 
 **Table: Supported emulator features**
 
-| Feature                | Detail                                   | Status                                   | Notes                                    |
-| ---------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| Skin                   | Skins are fitted to the screen resolution:Mobile:WVGA (480 x 800, default)qHD (540 x 960)HD (720 x 1280)Wearable:320 x 320360 x 360 (default)360 x 4804 orientation modes are supported:Portrait (default), landscape, reverse portrait, and reverse landscape | Supported                                | 2 skin layout types are supported:Profile-specific skinGeneral purpose skin |
-| Touch                  | Maru touchscreen device    | Supported             | Multi-touch is supported.                                                          |
-| Key                    | HW keys, host keyboard, and SW keypad    |Supported | The host keyboard is not supported for the wearable emulator. |                                          
-| Rotary                 | 360 levels of clockwise or counter-clockwise rotation |Supported | -                                                                                  |
-| Display                | VGA card with 100 levels of brightness control |   Supported                                       |                                          |
-| OpenGL® ES             |   Compatible with OpenGL® ES 1.1 and 2.0OpenGL® ES API pass-through through PCI |Supported |The OpenGL® ES 1.1 functionality is not guaranteed on the emulator, unless the graphics hardware of your computer supports OpenGL® 1.5.The OpenGL® ES 2.0 functionality is not guaranteed on the emulator, unless the graphics hardware of your computer supports OpenGL® 2.1.The host machine must support OpenGL® 1.4.                                           |
-| Sound                  | AC97 device                              |Supported | **Audio in:**Make sure that the input volume of the microphone is enough to record your voice or songs on the host machine.On Windows® 7, inject the microphone into the host machine before starting the emulator.**Audio out:**On Windows® 7, enable at least 1 audio out device before starting the emulator. Make sure that the volume icon in the tray is not disabled.While the emulator is running, do not disable the audio out device, as it can lock the audio system of the guest platform.                                           |
-| Network connection     | Virtio                                   |Supported  | Raw socket protocol, such as ICMP, is not supported.                                           |
-| Emulator Control Panel | The Emulator Control Panel (ECP) supports different features depending on the device profile:Mobile:Device Manager: Device Tree, Network, Host Directory SharingEvent Injector: Battery, RSSI, 3-Axis Sensor, Light, Proximity, Pressure, Ultraviolet, Heart Rate Monitor, Motion, Ear Jack, USB, SDCard, Location, TelephonyWearable:Device Manager: Network, Host Directory SharingApp Manager: UninstallerEvent Injector: Battery, 3-Axis Sensor, Light, Proximity, Pedometer, Pressure, Ultraviolet, Heart Rate Monitor, Gesture, USB |Supported |  The ECP is a standalone tool, which replaces the Event Injector. It helps to control and monitor the emulator features, and can be launched from the emulator context menu.                                           |
-| Camera                 | Virtual camera device connecting a host machine's Webcam:Support: preview, capture, and recordImage format: YUYV, I420, and YV12Attributes: brightness and contrastResolution: 160 x 120, 176 x 144, 320 x 240, 352 x 288, and 640 x 480Video resolution: 1280 x 720 for the WVGA, 320 x 240 for the WQVGA, and 640 x 480 for the HVGA devicesSupported video codecs: MPEG-4, H.263, H.264, and VC-1 for both encoding and decoding |Supported |  While recording a video using the emulator, an audio-video synchronization error can occur depending on your computer hardware and performance.                                           |
-| Bluetooth              | -                                        | Not supported                            | -                                        |
-| Wi-Fi                  | -                                         | Not supported                                          |                                          |
-| Wi-Fi Direct®          | -                                         |  Not supported                                         |                                          |
+| Feature                | Detail                                   | Status        | Notes                                    |
+| ---------------------- | ---------------------------------------- | ------------- | ---------------------------------------- |
+| Skin                   | Skins are fitted to the screen resolution:Mobile:WVGA (480 x 800, default)qHD (540 x 960)HD (720 x 1280)Wearable:320 x 320360 x 360 (default)360 x 4804 orientation modes are supported:Portrait (default), landscape, reverse portrait, and reverse landscape | Supported     | 2 skin layout types are supported:Profile-specific skinGeneral purpose skin |
+| Touch                  | Maru touchscreen device                  | Supported     | Multi-touch is supported.                |
+| Key                    | HW keys, host keyboard, and SW keypad    | Supported     | The host keyboard is not supported for the wearable emulator. |
+| Rotary                 | 360 levels of clockwise or counter-clockwise rotation | Supported     | -                                        |
+| Display                | VGA card with 100 levels of brightness control | Supported     |                                          |
+| OpenGL® ES             | Compatible with OpenGL® ES 1.1 and 2.0OpenGL® ES API pass-through through PCI | Supported     | The OpenGL® ES 1.1 functionality is not guaranteed on the emulator, unless the graphics hardware of your computer supports OpenGL® 1.5.The OpenGL® ES 2.0 functionality is not guaranteed on the emulator, unless the graphics hardware of your computer supports OpenGL® 2.1.The host machine must support OpenGL® 1.4. |
+| Sound                  | AC97 device                              | Supported     | **Audio in:**Make sure that the input volume of the microphone is enough to record your voice or songs on the host machine.On Windows® 7, inject the microphone into the host machine before starting the emulator.**Audio out:**On Windows® 7, enable at least 1 audio out device before starting the emulator. Make sure that the volume icon in the tray is not disabled.While the emulator is running, do not disable the audio out device, as it can lock the audio system of the guest platform. |
+| Network connection     | Virtio                                   | Supported     | Raw socket protocol, such as ICMP, is not supported. |
+| Emulator Control Panel | The Emulator Control Panel (ECP) supports different features depending on the device profile:Mobile:Device Manager: Device Tree, Network, Host Directory SharingEvent Injector: Battery, RSSI, 3-Axis Sensor, Light, Proximity, Pressure, Ultraviolet, Heart Rate Monitor, Motion, Ear Jack, USB, SDCard, Location, TelephonyWearable:Device Manager: Network, Host Directory SharingApp Manager: UninstallerEvent Injector: Battery, 3-Axis Sensor, Light, Proximity, Pedometer, Pressure, Ultraviolet, Heart Rate Monitor, Gesture, USB | Supported     | The ECP is a standalone tool, which replaces the Event Injector. It helps to control and monitor the emulator features, and can be launched from the emulator context menu. |
+| Camera                 | Virtual camera device connecting a host machine's Webcam:Support: preview, capture, and recordImage format: YUYV, I420, and YV12Attributes: brightness and contrastResolution: 160 x 120, 176 x 144, 320 x 240, 352 x 288, and 640 x 480Video resolution: 1280 x 720 for the WVGA, 320 x 240 for the WQVGA, and 640 x 480 for the HVGA devicesSupported video codecs: MPEG-4, H.263, H.264, and VC-1 for both encoding and decoding | Supported     | While recording a video using the emulator, an audio-video synchronization error can occur depending on your computer hardware and performance. |
+| Bluetooth              | -                                        | Not supported | -                                        |
+| Wi-Fi                  | -                                        | Not supported |                                          |
+| Wi-Fi Direct®          | -                                        | Not supported |                                          |
 
 ### OpenGL® ES Acceleration Support
 
@@ -119,7 +119,8 @@ For the emulator to support OpenGL® ES acceleration, you need:
 - Graphics chipset driver that supports OpenGL® 1.4 installed on the host machine
 - All chipset vendors and driver versions available to support the OpenGL® 1.4 standard
 
-**Note**The emulator supports only ES 1.1, ES 2.0, and EGL™ 1.4 versions.
+> **Note**  
+> The emulator supports only ES 1.1, ES 2.0, and EGL™ 1.4 versions.
 
 ### Differences Between the Emulator and Target
 
@@ -134,26 +135,26 @@ The following tables describe the differences between a real target device and t
 
 **Table: Comparison summary**
 
-| Category                      | Subject                                  | Physical target                          | Emulator                                 |
-| ----------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| Development environment       | Target                                   | Buy a target device or reference board (by model) | Download the Tizen Studio (multi-profile and multi-model support) |
-|  | Network                       | Need Bluetooth                           | Only the network environment                                                       |
-|  | Target connection             | USB                                      | IPC (TCP/UDP)                                                                     |
-|  | Source and package management | Source and package for target            | Source and package for the emulator                                                |
-|  | Host Directory Sharing        | Not supported                            | Supported                                                                          |
-| Portability                   | Screen resolution                        | Fixed                                    | Configurable                             |
-|  | RAM, storage size             |       Fixed                                   |      Configurable                                                                              |
-|  | 2D and 3D acceleration API    | GPU-dependent                            | GPU-independent (common set)                                                       |
-|  | CP, telephony                 | Fully supported                          | Partially supported (only SMS and voice call)                                           |
-|  | Wi-Fi                         | Fully supported   | Partially supported (using Ethernet)                                                                                         |
-|  | Sensor                        | Fully supported   | Partially supported (using the Emulator Control Panel)                                                                                     |
-|  | PnP, external connection      | Fully supported                                             |  Partially supported (using the Emulator Control Panel)                                                                                  |
-|  | Camera                        | Fully supported  |Partially supported (preview, capture, recording, contrast, and brightness)                                                                                   |
-|  | Vibration, haptic             | Fully supported  | Not supported                                                                                                             |
-|  | Bluetooth                     | Fully supported                                           |                                                          Not supported                          |
-| Performance                   | CPU performance                          | Mobile CPU                               | Desktop CPU (with hardware virtualization) |
-|  | GPU performance               | Real GPU                                 | Desktop GPU (relatively slow)                                                      |
-|  | I/O performance               | Real HW I/O                              | Emulated I/O (relatively slow)                                                     |
+| Category                | Subject                       | Physical target                          | Emulator                                 |
+| ----------------------- | ----------------------------- | ---------------------------------------- | ---------------------------------------- |
+| Development environment | Target                        | Buy a target device or reference board (by model) | Download the Tizen Studio (multi-profile and multi-model support) |
+|                         | Network                       | Need Bluetooth                           | Only the network environment             |
+|                         | Target connection             | USB                                      | IPC (TCP/UDP)                            |
+|                         | Source and package management | Source and package for target            | Source and package for the emulator      |
+|                         | Host Directory Sharing        | Not supported                            | Supported                                |
+| Portability             | Screen resolution             | Fixed                                    | Configurable                             |
+|                         | RAM, storage size             | Fixed                                    | Configurable                             |
+|                         | 2D and 3D acceleration API    | GPU-dependent                            | GPU-independent (common set)             |
+|                         | CP, telephony                 | Fully supported                          | Partially supported (only SMS and voice call) |
+|                         | Wi-Fi                         | Fully supported                          | Partially supported (using Ethernet)     |
+|                         | Sensor                        | Fully supported                          | Partially supported (using the Emulator Control Panel) |
+|                         | PnP, external connection      | Fully supported                          | Partially supported (using the Emulator Control Panel) |
+|                         | Camera                        | Fully supported                          | Partially supported (preview, capture, recording, contrast, and brightness) |
+|                         | Vibration, haptic             | Fully supported                          | Not supported                            |
+|                         | Bluetooth                     | Fully supported                          | Not supported                            |
+| Performance             | CPU performance               | Mobile CPU                               | Desktop CPU (with hardware virtualization) |
+|                         | GPU performance               | Real GPU                                 | Desktop GPU (relatively slow)            |
+|                         | I/O performance               | Real HW I/O                              | Emulated I/O (relatively slow)           |
 
 #### Input System
 
@@ -162,7 +163,7 @@ The following tables describe the differences between a real target device and t
 | Category                       | Physical target        | Emulator                           |
 | ------------------------------ | ---------------------- | ---------------------------------- |
 | Touch screen panel             | Real device and driver | Virtual (VirtIO) device and driver |
-| Host keyboard and hardware key | Real device and driver |  Virtual (VirtIO) device and driver|
+| Host keyboard and hardware key | Real device and driver | Virtual (VirtIO) device and driver |
 
 #### Graphics and Display
 
@@ -177,33 +178,33 @@ The following tables describe the differences between a real target device and t
 
 **Table: Virtual sensor differences**
 
-| Category           | Physical target                          | Emulator                                 |                                          |
-| ------------------ | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| Sensor             | Acceleration                             | Receives the actual acceleration value of the device. | Receives the virtual acceleration value through the Emulator Control Panel.When the emulated device is stationary and vertical in portrait orientation, the acceleration values are 0, 1, and 0 g. |
-| | Gyro               | Receives the actual gyroscope value of the device. | Receives the virtual gyroscope value through the Emulator Control Panel. |
-| | Geomagnetic        | Receives the actual geomagnetic value of the device. | Receives the virtual geomagnetic value through the Emulator Control Panel.When the emulated device is stationary and vertical in portrait orientation, the Y axis is at true north and the magnetic field strength values are 1, 0, and -10 µT. |
-| | Proximity          | Receives the actual proximity value of the device. | Receives the virtual proximity value through the Emulator Control Panel.You can register an event handler for the proximity sensor and test it with the Emulator Control Panel. However, the screen does not power off during the event because the emulator does not connect to the power manager. |
-| | Light              | Receives the actual ambient light value of the device. | Receives the virtual ambient light value through the Emulator Control Panel.You can register an event handler for the light sensor and test it with the Emulator Control Panel. However, in order to test the screen brightness change, the brightness setting must be automatic in the setting application.                                           |
-| | Pressure           | Receives the actual pressure value of the device. | Receives the virtual actual pressure value through the Emulator Control Panel.                                           |
-| | Ultraviolet        | Receives the actual ultraviolet value of the device. | Receives the virtual actual ultraviolet value through the Emulator Control Panel.                                           |
-| | Heart Rate Monitor | Receives the actual heart rate and peak-to-peak values of the device. | Receives the virtual actual heart rate and peak-to-peak values through the Emulator Control Panel.                                           |
-| Device             | Battery                                  | Receives the actual battery value of the device. | Receives the virtual battery value through the Emulator Control Panel.You can change the battery level and the charger connection status. |
-| | Earjack            | Receives the actual earjack connection event of the device. | Receives the earjack connection event through the Emulator Control Panel.You can select a 3-wire or 4-wire connection, or set the earjack as disconnected.                                        |
-| | USB                | Receives the actual USB connection event of the device. | Receives the USB connection event through the Emulator Control Panel.                                          |
-|  | RSSI               | Receives the actual RSSI value of the device. | Receives the virtual RSSI value through the Emulator Control Panel.                                          |
-| Location           | Log                                      | Supported by lbsFW.                      | Receives the virtual GPS log file through the Emulator Control Panel.You can use a log file of the NMEA format. |
-| | Manual             | Not supported.                           | Receives the virtual longitude and latitude values through the Emulator Control Panel.                                       |
-| | Map                | Not supported.                           | Receives the virtual longitude, latitude, altitude, and horizontal accuracy values through the Emulator Control Panel map.                                           |
-| | Auto               | Receives the actual GPS coordinates of the device. | Not supported.                                                                     |
+| Category | Physical target    | Emulator                                 |                                          |
+| -------- | ------------------ | ---------------------------------------- | ---------------------------------------- |
+| Sensor   | Acceleration       | Receives the actual acceleration value of the device. | Receives the virtual acceleration value through the Emulator Control Panel.When the emulated device is stationary and vertical in portrait orientation, the acceleration values are 0, 1, and 0 g. |
+|          | Gyro               | Receives the actual gyroscope value of the device. | Receives the virtual gyroscope value through the Emulator Control Panel. |
+|          | Geomagnetic        | Receives the actual geomagnetic value of the device. | Receives the virtual geomagnetic value through the Emulator Control Panel.When the emulated device is stationary and vertical in portrait orientation, the Y axis is at true north and the magnetic field strength values are 1, 0, and -10 µT. |
+|          | Proximity          | Receives the actual proximity value of the device. | Receives the virtual proximity value through the Emulator Control Panel.You can register an event handler for the proximity sensor and test it with the Emulator Control Panel. However, the screen does not power off during the event because the emulator does not connect to the power manager. |
+|          | Light              | Receives the actual ambient light value of the device. | Receives the virtual ambient light value through the Emulator Control Panel.You can register an event handler for the light sensor and test it with the Emulator Control Panel. However, in order to test the screen brightness change, the brightness setting must be automatic in the setting application. |
+|          | Pressure           | Receives the actual pressure value of the device. | Receives the virtual actual pressure value through the Emulator Control Panel. |
+|          | Ultraviolet        | Receives the actual ultraviolet value of the device. | Receives the virtual actual ultraviolet value through the Emulator Control Panel. |
+|          | Heart Rate Monitor | Receives the actual heart rate and peak-to-peak values of the device. | Receives the virtual actual heart rate and peak-to-peak values through the Emulator Control Panel. |
+| Device   | Battery            | Receives the actual battery value of the device. | Receives the virtual battery value through the Emulator Control Panel.You can change the battery level and the charger connection status. |
+|          | Earjack            | Receives the actual earjack connection event of the device. | Receives the earjack connection event through the Emulator Control Panel.You can select a 3-wire or 4-wire connection, or set the earjack as disconnected. |
+|          | USB                | Receives the actual USB connection event of the device. | Receives the USB connection event through the Emulator Control Panel. |
+|          | RSSI               | Receives the actual RSSI value of the device. | Receives the virtual RSSI value through the Emulator Control Panel. |
+| Location | Log                | Supported by lbsFW.                      | Receives the virtual GPS log file through the Emulator Control Panel.You can use a log file of the NMEA format. |
+|          | Manual             | Not supported.                           | Receives the virtual longitude and latitude values through the Emulator Control Panel. |
+|          | Map                | Not supported.                           | Receives the virtual longitude, latitude, altitude, and horizontal accuracy values through the Emulator Control Panel map. |
+|          | Auto               | Receives the actual GPS coordinates of the device. | Not supported.                           |
 
 #### Telephony
 
 **Table: Telephony differences**
 
-| Category  | Physical target             | Emulator                                 |                                          |
-| --------- | --------------------------- | ---------------------------------------- | ---------------------------------------- |
-| Telephony | Call                        | Calls and video calls are supported.     | Call waiting, outgoing call barring, and voice calls with the Emulator Control Panel are supported.Video calls, call forwarding, incoming call barring, and emulator-to-emulator calls are not supported. |
-| Telephony | SMS       | SMS messaging is supported. | SMS messaging with the Emulator Control Panel is supported.Sending emulator-to-emulator SMS messages is not supported.                                          |
+| Category  | Physical target | Emulator                             |                                          |
+| --------- | --------------- | ------------------------------------ | ---------------------------------------- |
+| Telephony | Call            | Calls and video calls are supported. | Call waiting, outgoing call barring, and voice calls with the Emulator Control Panel are supported.Video calls, call forwarding, incoming call barring, and emulator-to-emulator calls are not supported. |
+| Telephony | SMS             | SMS messaging is supported.          | SMS messaging with the Emulator Control Panel is supported.Sending emulator-to-emulator SMS messages is not supported. |
 
 #### Power Management
 
@@ -218,6 +219,6 @@ The following tables describe the differences between a real target device and t
 
 **Table: Media format and codec differences**
 
-| Category |  | Physical target | Emulator  |
-| -------- | --------------- | --------- | ------------- |
-| Decoder  | FLAC            | Supported | Not supported |
+| Category |      | Physical target | Emulator      |
+| -------- | ---- | --------------- | ------------- |
+| Decoder  | FLAC | Supported       | Not supported |

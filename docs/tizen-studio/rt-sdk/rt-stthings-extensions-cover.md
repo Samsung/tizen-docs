@@ -11,6 +11,6 @@ The Tizen Studio for RT supports the [OCF](https://openconnectivity.org) (Open C
 
 To develop IoT applications with SmartThings&trade;:
 
-* [Create a SmartThings&trade; project](rt-create-smartthings.md).
-* [Build the SmartThings&trade; project](rt-build-smartthings.md).
-* [Manage devices and resources](rt-model-manager.md) through the Model Manager.
+- [Create a SmartThings&trade; project](rt-create-smartthings.md).
+- [Build the SmartThings&trade; project](rt-build-smartthings.md).
+- [Manage devices and resources](rt-model-manager.md) through the Model Manager.

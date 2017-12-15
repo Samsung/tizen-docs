@@ -8,7 +8,7 @@
 
 The [Tizen Studio](../../../../org.tizen.studio/html/cover_page.htm) enables you to create Web applications for mobile and wearable devices. A Web application consists of HTML, JavaScript, and CSS combined in a package, which can be installed on the Tizen device. A [Web application package](../../../../org.tizen.training/html/web/process/app_dev_process_w.htm#package) includes all the support files that are needed by the Web application. Therefore, a Web application can run without any additional external resources or network connectivity after installation.
 
-The Application API is mandatory for both Tizen mobile and wearable profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The Application API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
 ## Web Application Models
 
@@ -24,9 +24,9 @@ Tizen provides various application models to allow you to create applications ta
 
 - [Service Application](./app-management/service-app-w.md)	The service application is a Tizen Web application without a graphical user interface that runs in the background. They can be very useful in performing activities (such as getting sensor data in the background) that need to run periodically or continuously, but do not require any user intervention.
 
-- [Widget Application](./app-management/web-widget-ww.md) **in wearable applications only**	The widget application (or widget) is the specialized application that is useful in providing users with quick view of specific information from the parent application. Also, the widget allows users to access certain features without launching the applications. Combined with their parent application, your widgets can have various features to increase usability of your applications.
+- [Widget Application](./app-management/web-widget-ww.md) **in wearable applications only**	The widget application (or widget) is a specialized application that provides the user with a quick view of specific information from the parent application. In addition, the widget allows the user to access certain features without launching the parent application. Combined with the parent application, your widget can have various features to increase the usability of your application.
 
-- Watch Application **in wearable applications only**	Tizen watch application is one of Tizen Web applications for wearable devices. It can be shown on the idle screen of the wearable device.
+- Watch Application **in wearable applications only**	The watch application provides a watch face as its user interface, showing the current time and updating it every second. The watch application can be shown on the idle screen of the wearable device.
 
 ## Application Package Manager
 

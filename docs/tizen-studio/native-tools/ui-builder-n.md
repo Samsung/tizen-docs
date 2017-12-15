@@ -10,12 +10,12 @@ The native UI Builder is not only a UI layout code generating tool. It also supp
 
 ## Designing a User Interface
 
-The native UI Builder offers 2 ways to develop a native application UI:
+The native UI Builder offers 2 ways to develop a native application UI with the UI editor toggle button in the top toolbar area:
 
-- You can use WYSIWYG editing in the **Design** tab.
-- You can use XML element editing in the **Source** tab.
+-   You can use WYSIWYG editing in the **Design** editor.
+-   You can use XML element editing in the **Source** editor.
 
-The **Design** and **Source** tabs are visible in the **Layout Editor** view. You can switch between the tabs as needed.
+The **Design** and **Source** editors are visible in the **Layout Editor** view. You can switch between the editors as needed.
 
 ### Editing the UI Layout in the WYSIWYG Mode
 
@@ -23,19 +23,29 @@ To create a UI layout:
 
 1. Create a view.
 
-   A Tizen native application is composed of multiple views through which the user navigates. The view is an editing unit in the native UI Builder.
+    A Tizen native application is composed of multiple views through which the user navigates. The view is an editing unit in the native UI Builder.
 
    To add a new view in the **Outline** view, click the **Empty View** icon in the toolbar (marked by a red circle in the following figure), or right-click the **Outline** view area and select **Add** and the applicable view.
 
-   ![Empty view](./media//ui_builder_empty_view.png) ![Empty view](./media//ui_builder_empty_view2.png)
+   ![Empty view](./media/ui_builder_empty_view.png) ![Empty view](./media/ui_builder_empty_view2.png)
+
+   -   With the **Palette**:
+
+   ​     You can add a view from the **Palette**. The **Ctxpopup** view and **Popup** view are available for mobile applications only.
+
+   ​     To add a new view from the **Palette**, drag and drop the view from the **Palette** to the canvas.
+
+   ![Empty view](./media/ui_builder_view_drag_and_drop.png)
+
+   ​
 
 2. Add a UI container to the view.
 
    Each view must have a root container as the topmost UI component on the canvas. To place the root container, use the components in the **UI containers** category of the **Palette** view. You can drag and drop the component from the **Palette** to the canvas.
 
-   If you select an empty view in the **Outline** view, only the UI container components are shown in the **Palette**. After you place a root container, the other components become visible in the **Palette**.
+   The following figure shows the **Outline** view after adding a grid root container from the **Palette** to the empty view.
 
-   The following figures show first the **Palette** with an empty view, and next the **Palette** after adding the root container.
+   ​
 
    ![Palette](./media/ui_builder_palette.png)
 
@@ -88,11 +98,11 @@ Use the buttons in the dialog to manage the styles:
 
 ### Editing the UI Layout in the XML Mode
 
-You can create the UI layout in the native UI Builder by using the XML editor in the **Source** tab to edit the layout file. For more information on the `layout.xml` file format and supported elements, see [Managing UI Component Attributes in layout.xml](component-attributes-n.md).
+You can create the UI layout in the native UI Builder by using the XML editor in the **Source** editor to edit the layout file. For more information on the `layout.xml` file format and supported elements, see [Managing UI Component Attributes in layout.xml](component_attributes_n.htm).
 
-While editing in the **Source** tab, you can preview the resulting layout in the preview pane.
+While editing in the **Source** editor, you can preview the resulting layout in the preview pane.
 
-**Figure: Source tab**
+**Figure: Source editor**
 
 ![Source tab](./media/ui_builder_source_tab.png)
 
@@ -100,17 +110,22 @@ The native UI Builder provides content assist functionality, which helps you to 
 
 If you select an element in the suggested list with content assist, the auto-complete feature automatically adds the end element.
 
-If you move a focus to another UI component in the **Source** tab, the selection in the preview pane is automatically synchronized. Similarly, if you change the selection in the preview pane, the focus in the **Source** tab moves accordingly.
+If you move a focus to another UI component in the **Source** editor, the selection in the preview pane is automatically synchronized. Similarly, if you change the selection in the preview pane, the focus in the **Source** tab moves accordingly.
 
 ## Binding an Event Handler
 
 An event handler is part of the application logic. It is called by the Tizen framework when any user interaction, such as a mouse click or touch, occurs. The event types vary between UI components, and the event information data depends on the UI component and event type.
 
-You can add event handlers for UI component events in the **Properties** view. To [add view transition events between views](storyboard-n.md), use the **Storyboard** tab in the **Layout Editor** view.
+You can add event handlers for UI component events in the **Properties** view. To [add view transition events between views](storyboard_n.htm), use the **Storyboard** in the **Layout Editor** view.
+
+> **Note**  
+> Since Tizen Studio 2.0, the top **Storyboard** tab has been removed and the storyboard feature has been included in the layout editor. The storyboard feature in the **Layout Editor** view gives you a natural understanding of the overall flow of views when you create a screen, and you can write application prototyping for planning and designing your application.
+
+
 
 ### Adding an Event Handler to a Specific UI Component
 
-If you select a UI component in the **Design** tab, all available event types for the selected UI component are displayed in the **Event** section of the **Properties** view:
+If you select a UI component in the **Design** editor, all available event types for the selected UI component are displayed in the **Event** section of the **Properties** view:
 
 - To add an event handler for an event type, click ![Add event handler](./media/ui_builder_add.png) next to the event type. The area below the event is expanded, and a suggested event handler name is shown in gray color.
 - To go to the event handler source, click ![Get the event handler](./media/ui_builder_get.png).

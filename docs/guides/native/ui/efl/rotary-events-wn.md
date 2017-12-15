@@ -206,7 +206,8 @@ To receive and manage rotary events:
 
      The slider step defines how much a rotary event increases or decreases the slider value.
 
-     ​	**Note**	Since the EFL Extension API is used to create the slider component, the rotary event callbacks are registered internally and automatically change the slider value based on the slider step. To receive a rotary event for an EFL Extension object, you only need to set the object as activated.
+		> **Note**
+		> Since the EFL Extension API is used to create the slider component, the rotary event callbacks are registered internally and automatically change the slider value based on the slider step. To receive a rotary event for an EFL Extension object, you only need to set the object as activated.
 
      ```
          /* Set the slider as activated */

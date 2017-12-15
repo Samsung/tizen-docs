@@ -35,8 +35,8 @@ The main features of the Image Util API include:
 
     - JPEG, PNG, GIF, BMP
 
-    **Note**
-    Animated GIF format is not supported for decoding.
+    > **Note**  
+    > Animated GIF format is not supported for decoding.
 
   - Output image formats for encoding:
 
@@ -138,8 +138,8 @@ To convert an image from one color space to another:
                                   user_data);
    ```
 
-   **Note**
-   Here, the `image_util_transform_run()` function only converts the color space. The function does not change the image width or height, or any other image property.Because of the restrictions of the image processing library, not all color space combinations are supported for conversion. For example, the NV12 format is commonly used in hardware chips, but it is not supported by the library.If hardware acceleration is enabled, you can execute 2 more image transformations using the same transformation handle.
+   > **Note**  
+   > Here, the `image_util_transform_run()` function only converts the color space. The function does not change the image width or height, or any other image property.Because of the restrictions of the image processing library, not all color space combinations are supported for conversion. For example, the NV12 format is commonly used in hardware chips, but it is not supported by the library.If hardware acceleration is enabled, you can execute 2 more image transformations using the same transformation handle.
 
 5. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
 
@@ -180,8 +180,8 @@ To resize an image:
                                   user_data);
    ```
 
-   **Note**
-   The image format has no effect on the transformation.If the color space is YUV, the target image width and height must be multiples of 8. This restriction does not apply to RGB images.If hardware acceleration is enabled, you can execute 2 more image transformations using the same transformation handle.
+   > **Note**  
+   > The image format has no effect on the transformation.If the color space is YUV, the target image width and height must be multiples of 8. This restriction does not apply to RGB images.If hardware acceleration is enabled, you can execute 2 more image transformations using the same transformation handle.
 
 5. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
 
@@ -224,8 +224,8 @@ To rotate an image:
                                   user_data);
    ```
 
-   **Note**
-   The image format has no effect on the transformation.If the color space is YUV, the target image width and height must be multiples of 8. This restriction does not apply to RGB images.If hardware acceleration is enabled, you can execute 2 more image transformations using the same transformation handle.
+   > **Note**  
+   > The image format has no effect on the transformation.If the color space is YUV, the target image width and height must be multiples of 8. This restriction does not apply to RGB images.If hardware acceleration is enabled, you can execute 2 more image transformations using the same transformation handle.
 
 5. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
 
@@ -266,8 +266,8 @@ To crop an image:
                                   user_data);
    ```
 
-   **Note**
-   Because of a YUV restriction, and because the crop start position can be set arbitrarily, the cropped image width and height must be even.If hardware acceleration is enabled, you can execute 2 more image transformations using the same transformation handle.
+   > **Note**  
+   > Because of a YUV restriction, and because the crop start position can be set arbitrarily, the cropped image width and height must be even.If hardware acceleration is enabled, you can execute 2 more image transformations using the same transformation handle.
 
 5. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
 
@@ -285,7 +285,7 @@ To decode a JPEG, PNG, GIF, or BMP image:
 
    ```
    image_util_decode_h decode_h = NULL;
-   ret = image_util_decode_create(decode_h);
+   ret = image_util_decode_create(&decode_h);
    ```
 
 2. Set the image to the input path or buffer using the `image_util_decode_set_input_path()` or `image_util_decode_set_input_buffer()` function:
@@ -309,8 +309,8 @@ To decode a JPEG, PNG, GIF, or BMP image:
    ret = image_util_decode_set_jpeg_downscale(decode_h, IMAGE_UTIL_DOWNSCALE_1_1);
    ```
 
-   **Note**
-   Because of decoder limitations, color space setting and JPEG downscaling are only supported for JPEG images.The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF and BMP images are decoded to `IMAGE_UTIL_COLORSPACE_RGBA8888`.
+   > **Note**  
+   > Because of decoder limitations, color space setting and JPEG downscaling are only supported for JPEG images.The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF and BMP images are decoded to `IMAGE_UTIL_COLORSPACE_RGBA8888`.
 
 5. Execute the decoding using the `image_util_decode_run()` function:
 
@@ -336,7 +336,7 @@ To encode a raw image:
    ```
    image_util_type_e encoder_type = IMAGE_UTIL_JPEG;
    image_util_encode_h encode_h = NULL;
-   ret = image_util_encode_create(encoder_type, encode_h);
+   ret = image_util_encode_create(encoder_type, &encode_h);
    ```
 
 2. Set the image to the input buffer using the `image_util_encode_set_input_buffer()` function:
@@ -352,8 +352,8 @@ To encode a raw image:
    ret = image_util_encode_set_colorspace(encode_h, IMAGE_UTIL_COLORSPACE_RGBA8888);
    ```
 
-   **Note**
-   Because of encoder limitations, color space setting is only supported for encoding JPEG images.The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF and BMP images are encoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
+   > **Note**  
+   > Because of encoder limitations, color space setting is only supported for encoding JPEG images.The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF and BMP images are encoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
 
 4. To save the encoded image, set the output path or buffer using the `image_util_encode_set_output_path()` or `image_util_encode_set_output_buffer()` function:
 
@@ -367,7 +367,8 @@ To encode a raw image:
    ret = image_util_encode_set_jpeg_downscale(decode_h, IMAGE_UTIL_DOWNSCALE_1_1);
    ```
 
-   **Note**Because of encoder limitations, quality setting is only supported for JPEG images, and compression is only supported for PNG images.The default JPEG quality is 75. The default PNG compression is `IMAGE_UTIL_PNG_COMPRESSION_6`.
+   > **Note**  
+   > Because of encoder limitations, quality setting is only supported for JPEG images, and compression is only supported for PNG images.The default JPEG quality is 75. The default PNG compression is `IMAGE_UTIL_PNG_COMPRESSION_6`.
 
 6. Execute the encoding using the `image_util_encode_run()` function:
 

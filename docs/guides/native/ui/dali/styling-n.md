@@ -251,9 +251,8 @@ When styling UI components, consider the following issues:
 
   For style properties that explicitly map to a known DALi property with the `Vector4` type, the style system can deduce that the map can also represent a color. In this case, the style system also accepts alternative color representations.
 
-  **Note**
-
-  This type deduction does not work in the visual property maps where there is no explicit mapping.
+  > **Note**  
+  > This type deduction does not work in the visual property maps where there is no explicit mapping.
 
   The usual representation is a `Vector4` with its components mapped to the R, G, B and A components in the range of 0-1:
 

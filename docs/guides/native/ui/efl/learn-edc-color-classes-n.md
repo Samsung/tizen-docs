@@ -27,4 +27,5 @@ color_classes {
 - `color2 [red] [green] [blue] [alpha]`Used as an outline in text and textblock parts.
 - `color3 [red] [green] [blue] [alpha]`Used as a shadow in text and textblock parts.
 
-​	**Note**	Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**	
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

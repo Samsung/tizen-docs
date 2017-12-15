@@ -140,8 +140,8 @@ To scan for all available radio frequencies:
    }
    ```
 
-   **Note**
-   Do not call radio functions (such as `radio_set_frequency()` or `radio_start()`) in the callback function.
+   > **Note**  
+   > Do not call radio functions (such as `radio_set_frequency()` or `radio_start()`) in the callback function.
 
 ## Tuning the Radio
 

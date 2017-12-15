@@ -43,8 +43,8 @@ To enable your application to use the alarm functionality:
 
 ## Setting an Alarm after Specific Time
 
-**Note**
-Since 2.4, the `alarm_schedule_after_delay()` function does not support an exact period and delay to minimize device wake-ups. The system can adjust when the alarm expires.
+> **Note**  
+> Since 2.4, the `alarm_schedule_after_delay()` function does not support an exact period and delay to minimize device wake-ups. The system can adjust when the alarm expires.
 
 To set an alarm after a specific time:
 
@@ -117,7 +117,8 @@ date.tm_sec += 4;
 ret = alarm_schedule_at_date(app, &date, 0, &alarm_id);
 ```
 
-**Note**The `alarm_schedule_at_date()` function has been deprecated since Tizen 2.4. Use the `alarm_schedule_once_at_date()` function instead.
+> **Note**  
+> The `alarm_schedule_at_date()` function has been deprecated since Tizen 2.4. Use the `alarm_schedule_once_at_date()` function instead.
 
 ## Setting a Recurring Alarm at a Specific Time of the Day
 

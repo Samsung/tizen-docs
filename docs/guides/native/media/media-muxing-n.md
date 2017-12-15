@@ -79,8 +79,8 @@ The following figure illustrates the general media demuxer state changes.
 
 ![Media demuxer state changes](./media/demuxer.png)
 
-**Note**
-All file types and container formats are not guaranteed to support the Media Demuxer API.
+> **Note**  
+> All file types and container formats are not guaranteed to support the Media Demuxer API.
 
 ## Prerequisites
 

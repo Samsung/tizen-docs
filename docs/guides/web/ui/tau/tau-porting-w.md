@@ -32,7 +32,8 @@ If you want to use deprecated components, you can import those files. See the fo
 </html>
 ```
 
-​	**Note**	The `tau.support-2.3` file is only for backward compatibility. The above components are **DEPRECATED since Tizen 2.4** and are deleted in Tizen 3.0.
+> **Note**
+> The `tau.support-2.3` file is only for backward compatibility. The above components are **DEPRECATED since Tizen 2.4** and are deleted in Tizen 3.0.
 
 ## Component Definitions
 
@@ -67,7 +68,8 @@ The following example shows how to define the UI components before and after:
   </div>
   ```
 
-  ​	**Note**	The old selector with `data-role` can still be used in 2.4, but it is **DEPRECATED** and no longer supported in the next version.
+> **Note**
+> The old selector with `data-role` can still be used in 2.4, but it is **DEPRECATED** and no longer supported in the next version.
 
 - After:
 
@@ -560,7 +562,7 @@ If your application used the above deprecated components, see the following exam
 
 ## Event Handling
 
-Some events are changed. The following examples illustrate how to handle events:
+Some events have changed. The following examples illustrate how to handle events:
 
 - Swipe event    
 

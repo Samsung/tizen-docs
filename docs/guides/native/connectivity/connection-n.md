@@ -36,8 +36,8 @@ The main features of the Connection API include:
 
   You can [gather various statistics on the network usage](#info), such as the amounts of sent and received data, using the Connection Statistics API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html) applications). You can also retrieve the cumulative size of packets sent or received since the last reset based on the operation mode, such as packet switching (PS). To define the specific type of statistics information you want, use the `connection_statistics_type_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html#ga24b29d70490e8cd9ee34f45615ea1c63) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html#ga24b29d70490e8cd9ee34f45615ea1c63) applications).
 
-  **Note**
-  Statistics are supported for Wi-Fi and cellular connections only.
+  > **Note**  
+  > Statistics are supported for Wi-Fi and cellular connections only.
 
   You can re-initialize the statistics with the `connection_reset_statistics()` function.
 
@@ -53,8 +53,8 @@ To manage IP sockets, you can:
 4. [Create the client-side socket, and communicate with the remote host](#socket_create), or [create the server-side socket, and communicate with the client](#socket_createserver).
 5. [Close the socket](#socket_close) and release the resources.
 
-**Note**
-To handle HTTP and HTTPS requests in a proxy environment, [get the proxy address](#detail) using the Connection Manager and then set the proxy address using the Connection Profile API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html) applications).For libcurl, you can [use the `CURLOPT_PROXY` option](curl_n.htm#manage).
+> **Note**  
+> To handle HTTP and HTTPS requests in a proxy environment, [get the proxy address](#detail) using the Connection Manager and then set the proxy address using the Connection Profile API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html) applications).For libcurl, you can [use the `CURLOPT_PROXY` option](curl_n.htm#manage).
 
 ## Prerequisites
 

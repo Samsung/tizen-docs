@@ -23,8 +23,8 @@ To uninstall the Tizen Studio:
 
    ![Uninstaller selections](./media/uninstall_sdk_selection.png)
 
-   **Note**
-   Before proceeding, back up all data and files that you want to keep. Once started, uninstallation cannot be canceled and removed files cannot be restored.
+   > **Note**  
+   > Before proceeding, back up all data and files that you want to keep. Once started, uninstallation cannot be canceled and removed files cannot be restored.
 
 3. To remove all installed platforms and tools, as well as user-created data and files, click **Uninstall**.If you have selected to uninstall the SDK data or KeyStore components, they are also removed.![Uninstallation in progress](./media/uninstall_sdk_progress.png)
 

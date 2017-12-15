@@ -28,7 +28,8 @@ The main features of the Wi-Fi Direct API include:
 
   You can [create a Wi-Fi Direct group](#creating_group) and manage the group.
 
-**Note**You can test the Wi-Fi Direct functionality on a target device only. The [emulator](../../../../org.tizen.studio/html/common_tools/emulator.htm) does not support this feature.
+> **Note**  
+> You can test the Wi-Fi Direct functionality on a target device only. The [emulator](../../../../org.tizen.studio/html/common_tools/emulator.htm) does not support this feature.
 
 ## Prerequisites
 

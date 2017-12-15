@@ -62,7 +62,8 @@ To set the cache manifest file content:
    /main.js
    ```
 
-   ​	**Note**	The `# 2013-03-18 v2.0.0` line is used for searching. When the content in an image or file list is changed, it does not automatically update the cache. It is updated if the manifest file is changed. Even if the content in the description is changed, cache update is possible.
+> **Note**
+> The `# 2013-03-18 v2.0.0` line is used for searching. When the content in an image or file list is changed, it does not automatically update the cache. It is updated if the manifest file is changed. Even if the content in the description is changed, cache update is possible.
 
 2. Define the files to be cached in the `CACHE` section:
 
@@ -73,7 +74,8 @@ To set the cache manifest file content:
 
    This is the default section for entries. Files listed under this header are explicitly cached after they are downloaded for the first time.
 
-   ​	**Note**	The `CACHE` section can be omitted, if automatic cache save is used.
+> **Note**
+> The `CACHE` section can be omitted, if automatic cache save is used.
 
 3. Define the online white list in the `NETWORK` section:
 
@@ -94,7 +96,8 @@ To set the cache manifest file content:
 
    This section is optional and used to specify fallback pages in case a resource is inaccessible. In the example above, if the file in the `/tizen` folder cannot be loaded in an offline state, it is replaced with the `tizen_offline.html` file.
 
-​	**Note**	The cached version of the file is displayed to the user even when an updated file is uploaded to the server. If the file is updated, the manifest file must be changed accordingly. The cache size in a mobile or desktop Web browser is normally set as 5 MB per domain.
+> **Note**
+> The cached version of the file is displayed to the user even when an updated file is uploaded to the server. If the file is updated, the manifest file must be changed accordingly. The cache size in a mobile or desktop Web browser is normally set as 5 MB per domain.
 
 ## Updating the Cache
 
@@ -145,7 +148,8 @@ To update the cache:
    </script>
    ```
 
-​	**Note**	The files used in this example are Web server source files. A change in the client cache occurs when the server file changes.
+> **Note**
+> The files used in this example are Web server source files. A change in the client cache occurs when the server file changes.
 
 ### Source Code
 

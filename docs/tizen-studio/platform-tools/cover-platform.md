@@ -6,7 +6,7 @@
 
 The Tizen Studio provides a platform development environment that helps you develop preloaded platform applications, platform libraries, and device drivers in Ubuntu.
 
-> **Note**<br>
+> **Note**  
 > Platform development is supported in Ubuntu 14.04 and higher (32- or 64-bit) only.
 
 By using the Tizen Studio for Ubuntu, you can, for example:
@@ -49,7 +49,8 @@ To use the Platform Project Wizard:
 
 1. In the Tizen Studio menu, select **File > New > Other > Tizen > Tizen Platform Project**.
 2. In the Tizen Platform Project Wizard, select a sample (for example, **Hello EFL**).If the project option you want does not appear, check that you are using the correct perspective (Tizen Platform). To switch perspectives, go to **Window > Perspective > Open Perspective > Other** and select the perspective you want.
-3. Fill in the project details and click **Finish**.![File analysis](./media/platform_project_wizard.png)
+3. Fill in the project details and click **Finish**.
+   ![File analysis](./media/platform_project_wizard.png)
 
 ### Building the Platform Project
 
@@ -119,18 +120,16 @@ To debug a coredump archive:
 
 1. Connect a device to your computer.
 2. In the **Device Manager**, select the device for which a coredump archive to debug exists (for example, `/opt/usr/share/crash/`).
-3. In the **Project Explorer** view, right-click the project and select **Debug As > Tizen Platform Project – Coredump**.
-4. In the **Launch Configuration** dialog, select a core dumped file (`*.coredump`) and CS file (`*.cs`) by clicking **Remote Browse** or **Local Browse**.
- ![Selecting files](./media/platform_codedump_files.png)
-
- If the coredump information is displayed, click **Next**, select a rootstrap, and click **Next** again. (It takes about 1~5 minutes when installing the required libraries.)
- ![Selecting rootstrap](./media/platform_rootstrap.png)
-
+3. In the **Project Explorer** view, right-click the project and select **Debug As > Tizen Platform Project - Coredump**.
+4. In the **Launch Configuration** dialog, select a core dumped file (`*.coredump`) and CS file (`*.cs`) by clicking **Remote Browse** or **Local Browse**.  
+   
+   ![Selecting files](./media/platform_codedump_files.png)  
+   
+   If the coredump information is displayed, click **Next**, select a rootstrap, and click **Next** again. (It takes about 1~5 minutes when installing the required libraries.)
+   
+   ![Selecting rootstrap](./media/platform_rootstrap.png)
 5. Manage the packages:
-
-  a. Check whether the packages are installed successfully.
-
-  b. If there is package problem, click **Package Manager** and install packages.
-   ![Checking packages](./media/platform_packages.png)
-
-  c. Click **Finish**, if it is enabled.
+   1. Check whether the packages are installed successfully.
+   2. If there is package problem, click **Package Manager** and install packages.  
+      ![Checking packages](./media/platform_packages.png)
+   3. Click **Finish**, if it is enabled.

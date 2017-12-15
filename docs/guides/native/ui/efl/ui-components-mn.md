@@ -51,4 +51,5 @@ The mobile UI components are designed to allow the user to interact with touch s
 | Miscellaneous          | [Map](./component-map-mn.md) | [The map component can  display a geographic map. The default map data is provided by the  OpenStreetMap project.](http://www.openstreetmap.org/) |
 | Miscellaneous          | [Plug](./component-plug-mn.md) | The  plug component allows you to show an Evas object created by another process.  It can be used anywhere like any other Elementary UI component. |
 
-​	**Note**	Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

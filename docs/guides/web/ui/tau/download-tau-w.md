@@ -11,7 +11,8 @@ This feature is supported in mobile and wearable applications only.
 
 To download and build TAU from Git:
 
-​	**Note**	To build the TAU library, make sure that you have both Git and `Node.js` installed.
+> **Note**
+> To build the TAU library, make sure that you have both Git and `Node.js` installed.
 
 1. Download the Git repository:
 

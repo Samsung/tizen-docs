@@ -80,7 +80,8 @@ To take advantage of the camera features, you must learn to manage the camera:
                                        recorderSettingErrorCallback);
   ```
 
-  **Note**	If a setting cannot be set, the error callback is called to resolve the issue.	
+> **Note**
+> If a setting cannot be set, the error callback is called to resolve the issue.	
 
 ## Deallocating the Camera Preview Stream
 

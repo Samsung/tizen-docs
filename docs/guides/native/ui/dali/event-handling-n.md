@@ -285,8 +285,8 @@ Gesture is a user-friendly high-level event produced from a stream of touch even
 
 If an actor is attached to a gesture detector and the detector recognizes a user intention (detects a predefined pattern in a stream of touch events), the actor emits a detected gesture signal to the application.
 
-**Note**
-Instances of gesture detectors must not be local variables, because gestures cannot be detected after they are destroyed.
+> **Note**  
+> Instances of gesture detectors must not be local variables, because gestures cannot be detected after they are destroyed.
 
 DALi currently supports following gesture detectors:
 

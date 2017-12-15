@@ -24,7 +24,8 @@ The main features of the Page Visibility API include:
 
   For example, in a video player application, you can change the play status of the application based on the event: pause the playback when the page becomes hidden, and continue playing when the page becomes visible again.
 
-​	**Note**	Tizen supports the WebKit-based Page Visibility API. When using the Page Visibility API, you must include the webkit prefix.
+> **Note**
+> Tizen supports the WebKit-based Page Visibility API. When using the Page Visibility API, you must include the webkit prefix.
 
 ## Retrieving the Page Visibility Status
 
@@ -61,7 +62,8 @@ To optimize the performance of your application, you must learn to retrieve the 
 
    Tizen does not currently support the `prerender` and `unloaded` types.
 
-​	**Note**	Since Tizen supports the WebKit-based page visibility, you must include the webkit prefix in the attributes.
+> **Note**
+> Since Tizen supports the WebKit-based page visibility, you must include the webkit prefix in the attributes.
 
 **Figure: Page visibility (in mobile applications only)**
 

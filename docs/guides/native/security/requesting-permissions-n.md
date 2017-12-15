@@ -35,8 +35,8 @@ To enable your application to use the privacy-related privileges functionality:
 
    It means that the functions can be employed in any UI event callback (such as button callbacks, timer callbacks, handlers for system events, and application state change event callbacks). If you want to resolve privileges during application startup, call these functions from the resume event callback (`app_resume_cb()`).
 
-   **Note**
-   The Privacy Privilege Manager functions are not thread-safe.
+   > **Note**  
+   > The Privacy Privilege Manager functions are not thread-safe.
 
 ## Requesting Permissions
 
@@ -54,7 +54,7 @@ To check whether an application has permission to use a privilege, and to reques
         int ret = ppm_check_permission(privilege, &result);
     ```
     
-    The result of the call is stored in the variable passed as the second parameter (for available results, see the `ppm_check_result_e` enumeration).
+    The result of the call is stored in the variable passed as the second parameter (for available results, see the `ppm_check_result_e` enumeration in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga41f409d8b9d4c27d41b907bdb0975f0c) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga41f409d8b9d4c27d41b907bdb0975f0c) applications).
 
 2. React to the permission check appropriately:
 
@@ -94,7 +94,7 @@ To check whether an application has permission to use a privilege, and to reques
 
 3. If you need to request user permission, handle the user decision within the callback.
 
-   The user decision is returned in the callback as a value of the `ppm_request_result_e` enumeration.
+   The user decision is returned in the callback as a value of the `ppm_request_result_e` enumeration (in [mobile](../../../..//org.tizen.native.mobile.apireference/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga0be419f8be0a398fd6e9af29f9c3e29b) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga0be419f8be0a398fd6e9af29f9c3e29b) applications).
 
    ```
    void
@@ -126,5 +126,5 @@ To check whether an application has permission to use a privilege, and to reques
 
    If the decision is definitive, any subsequent `ppm_request_permission()` calls result in an immediate response with an appropriate result: `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_ALLOW_FOREVER` or `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_FOREVER`. However, the user can change the status of privacy-related privileges later by modifying the privacy settings on the device. For this reason, the application must always check the status of privacy-related privileges before using protected functionality.
 
-**Note**
-Since the privileges are grouped, the user's decision regarding one privilege applies to the whole group of related privileges. For example, if the user has granted permission to use the `http://tizen.org/privilege/account.read` privilege, permission is automatically granted to the `http://tizen.org/privilege/account.write` privilege also. Be aware that both privileges need to be declared in the application manifest file. If you declare only one of them, the above rule does not apply.
+> **Note**  
+> Since the privileges are grouped, the user's decision regarding one privilege applies to the whole group of related privileges. For example, if the user has granted permission to use the `http://tizen.org/privilege/account.read` privilege, permission is automatically granted to the `http://tizen.org/privilege/account.write` privilege also. Be aware that both privileges need to be declared in the application manifest file. If you declare only one of them, the above rule does not apply.

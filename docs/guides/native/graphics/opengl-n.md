@@ -7,7 +7,12 @@ Today, most smart devices are equipped with Graphics Processing Units (GPU). Thi
 
 Tizen native applications can use OpenGL® ES not only for creating a 3D scene but also for a 2D scene that requires fast interaction. OpenGL® ES is also good for improving performance and reducing power consumption when the native application performs computation-intensive tasks that can be run in parallel.
 
-Tizen 2.x almost completely supports OpenGL® ES 2.0. OpenGL® ES 3.0 features are supported since Tizen 2.4.
+Different Tizen versions support different OpenGL® ES versions:
+
+-   OpenGL® ES 1.1 and 2.0 are supported by Tizen 2.3 and higher.
+-   OpenGL® ES 3.0 is supported by Tizen 2.4 and higher.
+-   OpenGL® ES 3.1 is supported by Tizen 3.0 and higher.
+-   OpenGL® ES 3.2 is supported by Tizen 4.0 and higher.
 
 EGL™ is another specification for binding OpenGL® ES to the native windowing systems. To set up the EGL™ environment, you normally need to understand the native windowing system and EGL™ specification in detail. In Tizen, however, its native UI components and 2D canvas (Elementary and Evas, respectively) replace the role of EGL™ to provide a simple way to use OpenGL® ES. To maintain the best device performance, the Tizen Studio makes the native windowing system and EGL™ APIs invisible.
 
@@ -484,8 +489,8 @@ To enhance rendering performance, the Direct Rendering option is supported.
 
   To use the Direct Rendering mode since Tizen 2.3.1, set the same option values (depth, stencil, and MSAA) to a rendering engine and an `Evas_GL_Config` object. You can set the option values to a rendering engine using the `elm_config_accel_preference_set()` function. If the `Evas_GL_Config` object option values are bigger or higher than the rendering engine's, the Direct Rendering mode is disabled.
 
-  **Note**
-  If direct rendering is enabled, EvasGL renders directly to the back buffer of the window. Otherwise, EvasGL renders to the off screen buffer, then composited to the back buffer of the window.Although direct rendering is enabled, EvasGL not always renders directly to the back buffer. The following conditions disable direct rendering and force a fallback to indirect rendering in a frame buffer:If the object's color is not 255,255,255,255.If the object has an Evas map.If the object size is different from the viewport (`RESIZE_POLICY_SCALE`).If the window is rotated and `CLIENT_SIDE_ROTATION` is not set.If the GLView policy is set to `ALWAYS` render or the EvasGL does not use pixel getter callback.
+  > **Note**  
+  > If direct rendering is enabled, EvasGL renders directly to the back buffer of the window. Otherwise, EvasGL renders to the off screen buffer, then composited to the back buffer of the window.Although direct rendering is enabled, EvasGL not always renders directly to the back buffer. The following conditions disable direct rendering and force a fallback to indirect rendering in a frame buffer:If the object's color is not 255,255,255,255.If the object has an Evas map.If the object size is different from the viewport (`RESIZE_POLICY_SCALE`).If the window is rotated and `CLIENT_SIDE_ROTATION` is not set.If the GLView policy is set to `ALWAYS` render or the EvasGL does not use pixel getter callback.
 
   **Caution**
   In the render callback function, call only OpenGL® ES functions.If the OpenGL® ES functions are called outside the render callback function, you must call the `evas_gl_make_current()` function before the OpenGL® ES function calls. However, this results in a performance degradation due to context switching, and only works if the target surface is not an `Evas_GL_Surface` with Direct Rendering enabled.If the target buffer is an `Evas_GL_Surface` with Direct Rendering enabled, all OpenGL® ES functions must be called from the render callback function only. All other operations can break the rendering order, causing unexpected rendering.

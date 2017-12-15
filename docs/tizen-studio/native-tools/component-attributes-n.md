@@ -108,7 +108,7 @@ The following attributes are used for all UI components.
 | Attribute               | Value                          | Function                             |
 | ----------------------- | ------------------------------ | ------------------------------------ |
 | `align_h`               | `left, right, center, 0 ~ 1.0` | `evas_object_size_hint_align_set()`  |
-| `align_v`               | `top, bottom, center, 0 ~ 1.0` |   `evas_object_size_hint_align_set()`|
+| `align_v`               | `top, bottom, center, 0 ~ 1.0` | `evas_object_size_hint_align_set()`  |
 | `weight_h` or `eight_v` | `0 ~ 1.0`                      | `evas_object_size_hint_weight_set()` |
 
 Some UI component attributes depend on the type of the UI container. For example, if the `<button>` element is a child of a `<grid>` element, the `<button>` element must have `pack_x`, `pack_y`, `pack_w`, and `pack_h` attributes.
@@ -276,15 +276,15 @@ The following attributes are used for the scroller container.
 
 **Table: Scroller attributes**
 
-| Attribute                          | Value                                    | Function                             |
-| ---------------------------------- | ---------------------------------------- | ------------------------------------ |
-| `id`                               | Automatically incrementing and editable. Duplicates are not allowed. | `elm_scroller_add()`                 |
-| `style`                            | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`             |
-| `colors`                           | `#000000 ~ #ffffff`See the [supported properties](#supported_properties) for each profile and version. | `elm_object_color_class_color_set()` |
-| `content_min_w` or `content_min_h` | `true` or `false`                        | `elm_scroller_content_min_limit()`   |
-| `propagate_events`                 | `true` or `false`                        |`elm_scroller_propagate_events_set()`                                          |
-| `visible`                          | `true` or `false`                        |`evas_object_show()`                                                           |
-| `scrollbar_h` or `scrollbar_v`     | `auto`, `true`, or `false`               | `elm_scroller_policy_set()`          |
+| Attribute                          | Value                                    | Function                              |
+| ---------------------------------- | ---------------------------------------- | ------------------------------------- |
+| `id`                               | Automatically incrementing and editable. Duplicates are not allowed. | `elm_scroller_add()`                  |
+| `style`                            | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`              |
+| `colors`                           | `#000000 ~ #ffffff`See the [supported properties](#supported_properties) for each profile and version. | `elm_object_color_class_color_set()`  |
+| `content_min_w` or `content_min_h` | `true` or `false`                        | `elm_scroller_content_min_limit()`    |
+| `propagate_events`                 | `true` or `false`                        | `elm_scroller_propagate_events_set()` |
+| `visible`                          | `true` or `false`                        | `evas_object_show()`                  |
+| `scrollbar_h` or `scrollbar_v`     | `auto`, `true`, or `false`               | `elm_scroller_policy_set()`           |
 
 ### Table (![Table](./media/component_attributes_table_icon.png))
 
@@ -377,7 +377,7 @@ The following attributes are used for the calendar component.
 | ------------------------ | ---------------------------------------- | --------------------------------- |
 | `id`                     | Automatically incrementing and editable. Duplicates are not allowed. | `elm_calendar_add()`              |
 | `disable`                | `true` or `false`                        | `elm_object_disabled_set()`       |
-| `visible`                | `true` or `false`                        |`evas_object_show()`                     |
+| `visible`                | `true` or `false`                        | `evas_object_show()`              |
 | `min_year` or `max_year` | `integer`                                | `elm_calendar_min_max_year_set()` |
 | `select_mode`            | `default`, `always`, `none`, or `ondemand` | `elm_calendar_select_mode_set()`  |
 | `interval`               | `double`                                 | `elm_calendar_interval_set()`     |
@@ -396,14 +396,14 @@ The following attributes are used for the check component.
 
 **Table: Check attributes**
 
-| Attribute | Value                                    | Function                 |
-| --------- | ---------------------------------------- | ------------------------ |
-| `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_check_add()`        |
-| `state`   | `true` or `false`                        | `elm_check_state_set()`  |
-| `disable` |  `true` or `false`                        | `elm_object_disabled_set()`              |
-| `visible` |  `true` or `false`                        | `evas_object_show()`                     |
-| `text`    | `#string` </br>See the [supported properties](#supported_properties) for each profile and version. | `elm_object_text_set()`  |
-| `style`   | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()` |
+| Attribute | Value                                    | Function                    |
+| --------- | ---------------------------------------- | --------------------------- |
+| `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_check_add()`           |
+| `state`   | `true` or `false`                        | `elm_check_state_set()`     |
+| `disable` | `true` or `false`                        | `elm_object_disabled_set()` |
+| `visible` | `true` or `false`                        | `evas_object_show()`        |
+| `text`    | `#string` </br>See the [supported properties](#supported_properties) for each profile and version. | `elm_object_text_set()`     |
+| `style`   | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`    |
 
 ### Colorselector (![Colorselector](./media/component_attributes_colorselector_icon.png)) in Mobile Applications
 
@@ -448,7 +448,7 @@ The `<ctxpopup>` element must be placed as a child of the `<view>` element, and 
 | `direction` | `horizontal` or `vertical`               | `elm_ctxpopup_horizontal_set()` |
 | `style`     | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`        |
 | `disable`   | `true` or `false`                        | `elm_object_disabled_set()`     |
-| `visible`   | `true` or `false`                        |`evas_object_show()`                     |
+| `visible`   | `true` or `false`                        | `evas_object_show()`            |
 
 ### Ctxpopupitem
 
@@ -479,7 +479,7 @@ The following attributes are used for the datetime component.
 | --------- | ---------------------------------------- | ------------------------------------ |
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_datetime_add()`                 |
 | `disable` | `true` or `false`                        | `elm_object_disabled_set()`          |
-| `visible` | `true` or `false`                        |`evas_object_show()`                     |
+| `visible` | `true` or `false`                        | `evas_object_show()`                 |
 | `style`   | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`             |
 | `colors`  | `#000000 ~ #ffffff`See the [supported properties](#supported_properties) for each profile and version. | `elm_object_color_class_color_set()` |
 
@@ -499,19 +499,19 @@ The following attributes are used for the entry component.
 
 **Table: Entry attributes**
 
-| Attribute          | Value                                    | Function                           |
-| ------------------ | ---------------------------------------- | ---------------------------------- |
-| `id`               | Automatically incrementing and editable. Duplicates are not allowed. | `elm_entry_add()`                  |
-| `scroll`           | `true` or `false`                        | `elm_entry_scrollable_set()`       |
-| `single_line`      | `true` or `false`                        |`elm_entry_single_line_set()`            |
-| `password`         | `true` or `false`                        |`elm_entry_password_set()`               |
-| `editable`         | `true` or `false`                        |`elm_entry_editable_set()`               |
-| `context_menu`     | `true` or `false`                        |`elm_entry_context_menu_disabled_set()`  |
-| `file_text_format` | `plain_utf8` or `markup_utf8`            | `elm_entry_file_text_format_set()` |
-| `disable`          | `true` or `false`                        | `elm_object_disabled_set()`        |
-| `visible`          | `true` or `false`                        |`evas_object_show()`                     |
-| `text`             | `#string`                                | `elm_object_text_set()`            |
-| `src`              | `#string`                                |`elm_entry_file_set()`                   |
+| Attribute          | Value                                    | Function                                |
+| ------------------ | ---------------------------------------- | --------------------------------------- |
+| `id`               | Automatically incrementing and editable. Duplicates are not allowed. | `elm_entry_add()`                       |
+| `scroll`           | `true` or `false`                        | `elm_entry_scrollable_set()`            |
+| `single_line`      | `true` or `false`                        | `elm_entry_single_line_set()`           |
+| `password`         | `true` or `false`                        | `elm_entry_password_set()`              |
+| `editable`         | `true` or `false`                        | `elm_entry_editable_set()`              |
+| `context_menu`     | `true` or `false`                        | `elm_entry_context_menu_disabled_set()` |
+| `file_text_format` | `plain_utf8` or `markup_utf8`            | `elm_entry_file_text_format_set()`      |
+| `disable`          | `true` or `false`                        | `elm_object_disabled_set()`             |
+| `visible`          | `true` or `false`                        | `evas_object_show()`                    |
+| `text`             | `#string`                                | `elm_object_text_set()`                 |
+| `src`              | `#string`                                | `elm_entry_file_set()`                  |
 
 ### Flipselector (![Flipselector](./media/component_attributes_flipselector_icon.png))
 
@@ -532,7 +532,7 @@ The following attributes are used for the flipselector component.
 | --------- | ---------------------------------------- | --------------------------- |
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_flipselector_add()`    |
 | `disable` | `true` or `false`                        | `elm_object_disabled_set()` |
-| `visible` | `true` or `false`                        |`evas_object_show()`                     |
+| `visible` | `true` or `false`                        | `evas_object_show()`        |
 
 ### Flipselectoritem
 
@@ -543,7 +543,7 @@ A flipselector item component can be placed as a child of the flipselector conta
 | Attribute | Value                                    | Function                         |
 | --------- | ---------------------------------------- | -------------------------------- |
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_flipselector_item_append()` |
-| `text`    | `#string`                                |`elm_flipselector_item_append()`                                  |
+| `text`    | `#string`                                | `elm_flipselector_item_append()` |
 
 ### Gengrid (![Gengrid](./media/component_attributes_gengrid_icon.png)) in Mobile Applications
 
@@ -569,7 +569,7 @@ The following attributes are used for the gengrid component.
 | ------------------------------ | ---------------------------------------- | -------------------------------- |
 | `id`                           | Automatically incrementing and editable. Duplicates are not allowed. | `elm_gengrid_add()`              |
 | `visible`                      | `true` or `false`                        | `evas_object_show()`             |
-| `disable`                      | `true` or `false`                        | `elm_object_disabled_set()`              |
+| `disable`                      | `true` or `false`                        | `elm_object_disabled_set()`      |
 | `style`                        | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`         |
 | `select_mode`                  | `default`, `always`, `none`, or `display_only` | `elm_gengrid_select_mode_set()`  |
 | `direction`                    | `horizontal` or `vertical`               | `elm_gengrid_horizontal_set()`   |
@@ -586,12 +586,12 @@ A gengrid item component can be placed as a child of the gengrid component. Each
 | Attribute  | Value                                    | Function                                 |
 | ---------- | ---------------------------------------- | ---------------------------------------- |
 | `id`       | Automatically incrementing and editable. Duplicates are not allowed. | `elm_gengrid_item_append()`              |
-| `style`    | See the [supported properties](#supported_properties) for each profile and version |   `elm_gengrid_item_append()`                                        |
+| `style`    | See the [supported properties](#supported_properties) for each profile and version | `elm_gengrid_item_append()`              |
 | `colors`   | `#000000 ~ #ffffff` </br>See the [supported properties](#supported_properties) for each profile and version. | `elm_object_item_color_class_color_set()` |
 | `text`     | `#string`                                | `elm_gengrid_item_append()`              |
-| `src`      | `#string`                                         | `elm_gengrid_item_append()`                                          |
+| `src`      | `#string`                                | `elm_gengrid_item_append()`              |
 | `selected` | `true` or `false`                        | `elm_gengrid_item_selected_set()`        |
-| `disabled` | `true` or `false`                        |`elm_object_item_disabled_set()`         |
+| `disabled` | `true` or `false`                        | `elm_object_item_disabled_set()`         |
 
 ### Genlist (![Genlist](./media/component_attributes_genlist_icon.png))
 
@@ -620,7 +620,7 @@ The following attributes are used for the genlist component.
 | `select_mode`                  | `default`, `always`, `none`, or `display_only`See the [supported properties](#supported_properties) for each profile and version. | `elm_genlist_select_mode_set()` |
 | `style`                        | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`        |
 | `disable`                      | `true` or `false`                        | `elm_object_disabled_set()`     |
-| `visible`                      | `true` or `false`                        |`evas_object_show()`                     | 
+| `visible`                      | `true` or `false`                        | `evas_object_show()`            |
 | `homogeneous`                  | `true` or `false` </br>See the [supported properties](#supported_properties) for each profile and version. | `elm_genlist_homogeneous_set()` |
 | `scrollbar_h` or `scrollbar_v` | `auto`, `true`, or `false`               | `elm_scroller_policy_set()`     |
 
@@ -633,15 +633,15 @@ A genlist item component can be placed as a child of the genlist component. Each
 | Attribute           | Value                                    | Function                                 |
 | ------------------- | ---------------------------------------- | ---------------------------------------- |
 | `id`                | Automatically incrementing and editable. Duplicates are not allowed. | `elm_genlist_item_append()`              |
-| `end_image_path`    | `#string`                                |         `elm_genlist_item_append()`                                 |
-| `end_standard_icon` | See the [supported properties](#supported_properties) for each profile and version | `elm_genlist_item_append()`                                         |
-| `image_path`        | `#string`                                |   `elm_genlist_item_append()`                                       |
+| `end_image_path`    | `#string`                                | `elm_genlist_item_append()`              |
+| `end_standard_icon` | See the [supported properties](#supported_properties) for each profile and version | `elm_genlist_item_append()`              |
+| `image_path`        | `#string`                                | `elm_genlist_item_append()`              |
 | `style`             | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`                 |
 | `colors`            | `#000000 ~ #ffffff` </br>See the [supported properties](#supported_properties) for each profile and version. | `elm_object_item_color_class_color_set()` |
 | `text`              | `#string`                                | `elm_genlist_item_append()`              |
 | `selected`          | `true` or `false` </br> See the [supported properties](#supported_properties) for each profile and version. | `elm_genlist_item_selected_set()`        |
 | `standard_icon`     | See the [supported properties](#supported_properties) for each profile and version | `elm_genlist_item_append()`              |
-| `sub_text`          | `#string`                                |  `elm_genlist_item_append()`                                         |
+| `sub_text`          | `#string`                                | `elm_genlist_item_append()`              |
 
 ### Hoversel (![Image](./media/component_attributes_hoversel_icon.png)) in Mobile Applications
 
@@ -665,7 +665,7 @@ The following attributes are used for the hoversel component.
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_hoversel_add()`        |
 | `text`    | `#string`                                | `elm_object_text_set()`     |
 | `disable` | `true` or `false`                        | `elm_object_disabled_set()` |
-| `visible` | `true` or `false`                        |  `elm_object_disabled_set()` |
+| `visible` | `true` or `false`                        | `elm_object_disabled_set()` |
 
 ### Hoverselitem in Mobile Applications
 
@@ -676,7 +676,7 @@ A hoversel item component can be placed as a child of the hoversel component. Ea
 | Attribute | Value                                    | Function                     |
 | --------- | ---------------------------------------- | ---------------------------- |
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_hoversel_item_append()` |
-| `text`    | `#string`                                | `elm_hoversel_item_append()`                             |
+| `text`    | `#string`                                | `elm_hoversel_item_append()` |
 
 ### Image (![Image](./media/component_attributes_image_icon.png))
 
@@ -698,10 +698,10 @@ The following attributes are used for the image component.
 | `id`                               | Automatically incrementing and editable. Duplicates are not allowed. | `elm_image_add()`              |
 | `src`                              | `#string`                                | `elm_image_file_set()`         |
 | `aspect_fixed`                     | `true` or `false`                        | `elm_image_aspect_fixed_set()` |
-| `fill_outside`                     | `true` or `false`                        |`elm_image_fill_outside_set()`           |  
-| `resizable_up` or `resizable_down` | `true` or `false`                        |`elm_image_resizable_set()`              | 
-| `no_scale`                         | `true` or `false`                        |`elm_image_no_scale_set()`               |  
-| `visible`                          | `true` or `false`                        |`evas_object_show()`                     | 
+| `fill_outside`                     | `true` or `false`                        | `elm_image_fill_outside_set()` |
+| `resizable_up` or `resizable_down` | `true` or `false`                        | `elm_image_resizable_set()`    |
+| `no_scale`                         | `true` or `false`                        | `elm_image_no_scale_set()`     |
+| `visible`                          | `true` or `false`                        | `evas_object_show()`           |
 
 ### Index (![Index](./media/component_attributes_index_icon.png))
 
@@ -719,12 +719,12 @@ The following attributes are used for the index component.
 
 **Table: Index attributes**
 
-| Attribute   | Value                                    | Function                            |
-| ----------- | ---------------------------------------- | ----------------------------------- |
-| `id`        | Automatically incrementing and editable. Duplicates are not allowed. | `elm_index_add()`                   |
-| `autohide`  | `true` or `false`                        | `elm_index_autohide_disabled_set()` |
-| `indicator` | `true` or `false`                        |`elm_index_indicator_disabled_set()`     |                 
-| `visible`   | `true` or `false`                        |`evas_object_show()`                     |               
+| Attribute   | Value                                    | Function                             |
+| ----------- | ---------------------------------------- | ------------------------------------ |
+| `id`        | Automatically incrementing and editable. Duplicates are not allowed. | `elm_index_add()`                    |
+| `autohide`  | `true` or `false`                        | `elm_index_autohide_disabled_set()`  |
+| `indicator` | `true` or `false`                        | `elm_index_indicator_disabled_set()` |
+| `visible`   | `true` or `false`                        | `evas_object_show()`                 |
 
 ### Indexitem
 
@@ -735,7 +735,7 @@ An index item component can be placed as a child of the index component. Each it
 | Attribute | Value                                    | Function                  |
 | --------- | ---------------------------------------- | ------------------------- |
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_index_item_append()` |
-| `text`    | `#string`                                |`elm_index_item_append()`                           |
+| `text`    | `#string`                                | `elm_index_item_append()` |
 
 ### Label (![Label](./media/component_attributes_label_icon.png))
 
@@ -779,7 +779,7 @@ The following attributes are used for the layout component.
 | ---------------- | ---------------------------------------- | --------------------------- |
 | `id`             | Automatically incrementing and editable. Duplicates are not allowed. | `elm_layout_add()`          |
 | `disable`        | `true` or `false`                        | `elm_object_disabled_set()` |
-| `visible`        |  `true` or `false`                        |`evas_object_show()`                     |
+| `visible`        | `true` or `false`                        | `evas_object_show()`        |
 | `src` or `group` | `#string`                                | `elm_layout_file_set()`     |
 
 ### List (![List](./media/component_attributes_list_icon.png))
@@ -807,7 +807,7 @@ The following attributes are used for the list component.
 | `multi_select`                 | `true` or `false`                        | `elm_list_multi_select_set()` |
 | `mode`                         | `compress`, `scroll`, `limit`, or `expand` | `elm_list_mode_set()`         |
 | `disable`                      | `true` or `false`                        | `elm_object_disabled_set()`   |
-| `visible`                      | `true` or `false`                        |`evas_object_show()`                     |
+| `visible`                      | `true` or `false`                        | `evas_object_show()`          |
 | `scrollbar_h` or `scrollbar_v` | `auto`, `true`, or `false`               | `elm_scroller_policy_set()`   |
 
 ### Listitem
@@ -819,7 +819,7 @@ A list item component can be placed as a child of the list component. Each item 
 | Attribute  | Value                                    | Function                       |
 | ---------- | ---------------------------------------- | ------------------------------ |
 | `id`       | Automatically incrementing and editable. Duplicates are not allowed. | `elm_list_item_append()`       |
-| `text`     | `#string`                                | `elm_list_item_append()`                               |
+| `text`     | `#string`                                | `elm_list_item_append()`       |
 | `selected` | `true` or `false`                        | `elm_list_item_selected_set()` |
 
 ### Map (![map](./media/component_attributes_map_icon.png))
@@ -841,7 +841,7 @@ The following attributes are used for the map component.
 | `id`         | Automatically incrementing and editable. Duplicates are not allowed. | `elm_map_add()`         |
 | `zoom_level` | `integer (0~)`                           | `elm_map_zoom_set()`    |
 | `longitude`  | `double`                                 | `elm_map_region_show()` |
-| `latitude`   |  `double`                                         |  `elm_map_region_show()`                       |
+| `latitude`   | `double`                                 | `elm_map_region_show()` |
 | `visible`    | `true` or `false`                        | `evas_object_show()`    |
 
 ### Multibuttonentry (![Multibutton entry](./media/component_attributes_multibuttonentry_icon.png)) in Mobile Applications
@@ -864,9 +864,9 @@ The following attributes are used for the multibutton entry component.
 | ---------- | ---------------------------------------- | ------------------------------------- |
 | `id`       | Automatically incrementing and editable. Duplicates are not allowed. | `elm_multibuttonentry_add()`          |
 | `editable` | `true` or `false`                        | `elm_multibuttonentry_editable_set()` |
-| `expanded` | `true` or `false`                        |`elm_multibuttonentry_expanded_set()`    |
-| `disable`  | `true` or `false`                        |`elm_object_disabled_set()`              |
-| `visible`  | `true` or `false`                        |`evas_object_show()`                     |
+| `expanded` | `true` or `false`                        | `elm_multibuttonentry_expanded_set()` |
+| `disable`  | `true` or `false`                        | `elm_object_disabled_set()`           |
+| `visible`  | `true` or `false`                        | `evas_object_show()`                  |
 
 ### Multibuttonentryitem in Mobile Applications
 
@@ -877,7 +877,7 @@ A multibutton entry item component can be placed as a child of the multibutton e
 | Attribute | Value                                    | Function                             |
 | --------- | ---------------------------------------- | ------------------------------------ |
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_multibuttonentry_item_append()` |
-| `text`    | `#string`                                |  `elm_multibuttonentry_item_append()`                                    |
+| `text`    | `#string`                                | `elm_multibuttonentry_item_append()` |
 
 ### Popup
 
@@ -894,7 +894,7 @@ A popup component (in [mobile](../../../org.tizen.guides/html/native/ui/efl/comp
 | `height`  | `integer`                                | `evas_object_size_hint_min_set()`    |
 | `timeout` | `double`                                 | `elm_popup_timeout_set()`            |
 | `disable` | `true` or `false`                        | `elm_object_disabled_set()`          |
-| `visible` | `true` or `false`                        |`evas_object_show()`                     |
+| `visible` | `true` or `false`                        | `evas_object_show()`                 |
 
 ### Progressbar (![Progressbar](./media/component_attributes_progressbar_icon.png))
 
@@ -941,10 +941,10 @@ The following attributes are used for the radio component.
 | ------------- | ---------------------------------------- | ----------------------------- |
 | `id`          | Automatically incrementing and editable. Duplicates are not allowed. | `elm_radio_add()`             |
 | `state_value` | `#number`                                | `elm_radio_state_value_set()` |
-| `value`       | `#number`                                |`elm_radio_value_set()`                  |
+| `value`       | `#number`                                | `elm_radio_value_set()`       |
 | `text`        | `#string`</br>See the [supported properties](#supported_properties) for each profile and version. | `elm_object_text_set()`       |
 | `disable`     | `true` or `false`                        | `elm_object_disabled_set()`   |
-| `visible`     | `true` or `false`                        |`evas_object_show()`                     |
+| `visible`     | `true` or `false`                        | `evas_object_show()`          |
 
 ### Slider (![Slider](./media/component_attributes_slider_icon.png))
 
@@ -966,14 +966,14 @@ The following attributes are used for slider component.
 | `id`               | Automatically incrementing and editable. Duplicates are not allowed. | `elm_slider_add()`                   |
 | `indicator`        | `true` or `false`See the [supported properties](#supported_properties) for each profile and version. | `elm_slider_indicator_show_set()`    |
 | `min`              | 0 ~                                      | `elm_slider_min_max_set()`           |
-| `step`             | 0 ~                                      |`elm_slider_step_set()`                  |
-| `max`              | 0 ~                                      |`elm_slider_min_max_set()`               |
-| `value`            | 0 ~                                      |`elm_slider_value_set()`                 |
+| `step`             | 0 ~                                      | `elm_slider_step_set()`              |
+| `max`              | 0 ~                                      | `elm_slider_min_max_set()`           |
+| `value`            | 0 ~                                      | `elm_slider_value_set()`             |
 | `inverted`         | `true` or `false` </br>See the [supported properties](#supported_properties) for each profile and version. | `elm_slider_inverted_set()`          |
 | `indicator_format` | `#string` </br>See the [supported properties](#supported_properties) for each profile and version. | `elm_slider_indicator_format_set()`  |
 | `direction`        | `horizontal` or `vertical`See the [supported properties](#supported_properties) for each profile and version. | `elm_slider_horizontal_set()`        |
 | `disable`          | `true` or `false`                        | `elm_object_disabled_set()`          |
-| `visible`          | `true` or `false`                        |`evas_object_show()`                     |
+| `visible`          | `true` or `false`                        | `evas_object_show()`                 |
 | `style`            | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`             |
 | `colors`           | `#000000 ~ #ffffff`See the [supported properties](#supported_properties) for each profile and version. | `elm_object_color_class_color_set()` |
 
@@ -997,10 +997,10 @@ The following attributes are used for the spinner component.
 | `id`       | Automatically incrementing and editable. Duplicates are not allowed. | `elm_spinner_add()`                  |
 | `editable` | `true` or `false`                        | `elm_spinner_editable_set()`         |
 | `step`     | 0 ~                                      | `elm_spinner_step_set()`             |
-| `min`      | 0 ~                                      |`elm_spinner_min_max_set()`              |
-| `max`      | 0 ~                                         |`elm_spinner_min_max_set()`                                      |
+| `min`      | 0 ~                                      | `elm_spinner_min_max_set()`          |
+| `max`      | 0 ~                                      | `elm_spinner_min_max_set()`          |
 | `disable`  | `true` or `false`                        | `elm_object_disabled_set()`          |
-| `visible`  | `true` or `false`                        |`evas_object_show()`                     |
+| `visible`  | `true` or `false`                        | `evas_object_show()`                 |
 | `style`    | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`             |
 | `colors`   | `#000000 ~ #ffffff`</br>See the [supported properties](#supported_properties) for each profile and version. | `elm_object_color_class_color_set()` |
 
@@ -1034,7 +1034,7 @@ The following attributes are used for the toolbar component.
 | `direction`         | `horizontal` or `vertical`               | `elm_toolbar_horizontal_set()`          |
 | `shrink_mode`       | `none`, `hide`, `scroll`, `menu`, or `expand` | `elm_toolbar_shrink_mode_set()`         |
 | `transverse_expand` | `true` or `false`                        | `elm_toolbar_transverse_expanded_set()` |
-| `visible`           |  `true` or `false`                        |`evas_object_show()`                     |
+| `visible`           | `true` or `false`                        | `evas_object_show()`                    |
 
 ### Toolbaritem in Mobile Applications
 
@@ -1047,7 +1047,7 @@ A toolbar item component can be placed as a child of the toolbar component. Each
 | `id`       | Automatically incrementing and editable. Duplicates are not allowed. | `elm_toolbar_item_append()`       |
 | `disable`  | `true` or `false`                        | `elm_object_item_disabled_set()`  |
 | `text`     | `#string`                                | `elm_toolbar_item_append()`       |
-| `src`      | `#string`                                |`elm_toolbar_item_icon_set()`            |
+| `src`      | `#string`                                | `elm_toolbar_item_icon_set()`     |
 | `selected` | `true` or `false`                        | `elm_toolbar_item_selected_set()` |
 
 ### Properties Supported for Each Component
@@ -1056,183 +1056,183 @@ Some properties are supported only in specific profiles. The following table lis
 
 **Table: Properties supported in specific profiles**
 
-| Component               | Attribute                  | Mobile  2.3/2.3.1 | Mobile 2.4 | Mobile 3.0 | Wearable square  2.3.1 | Wearable circle  2.3.1/2.3.2 | Wearable circle  3.0 |
-| ----------------------- | -------------------------- | ----------------- | ---------- | ---------- | ---------------------- | ---------------------------- | -------------------- |
-| Panel                   | id                         | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Panel                   | visible                    | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Panel                   | orient                     | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Panel                   | hidden                     | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Panes                   | id                         | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Panes                   | visible                    | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Panes                   | direction                  | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Panes                   | fixed                      | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Panes                   | right_size                 | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Scroller                | id                         | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Scroller                | style                      | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Scroller                | colors                     | No                | No         | Yes        | No                     | No                           | No                   |
-| Scroller                | content_min_w              | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Scroller                | content_min_h              | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Scroller                | propagate_events           | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Scroller                | visible                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Scroller                | scrollbar_h                | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Scroller                | scrollbar_v                | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Button                  | id                         | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Button                  | disable                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Button                  | visible                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Button                  | text                       | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Button                  | style                      | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Button                  | colors                     | No                | No         | Yes        | No                     | No                           | No                   |
-| Calendar                | id                         | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Calendar                | disable                    | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Calendar                | visible                    | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Calendar                | min_year or max_year       | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Calendar                | select_mode                | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Calendar                | interval                   | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Check                   | id                         | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Check                   | state                      | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Check                   | disable                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Check                   | visible                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Check                   | text                       | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Check                   | style                      | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Colorselector           | id                         | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Colorselector           | visible                    | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Ctxpopup                | id                         | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Ctxpopup                | direction                  | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Ctxpopup                | style                      | Yes               | No         | No         | No                     | Yes                          | Yes                  |
-| Ctxpopup                | disable                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Ctxpopup                | visible                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Datetime                | id                         | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Datetime                | disable                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Datetime                | visible                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Datetime                | style                      | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Datetime                | colors                     | No                | No         | Yes        | No                     | No                           | No                   |
-| Entry                   | id                         | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Entry                   | scroll                     | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Entry                   | single_line                | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Entry                   | password                   | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Entry                   | editable                   | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Entry                   | context_menu               | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Entry                   | file_text_format           | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Entry                   | disable                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Entry                   | visible                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Entry                   | text                       | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Entry                   | src                        | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Flipselector            | id                         | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Flipselector            | disable                    | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Flipselector            | visible                    | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Flipselector  item      | id                         | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Flipselector  item      | text                       | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Gengrid                 | id                         | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Gengrid                 | visible                    | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Gengrid                 | disable                    | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Gengrid                 | style                      | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Gengrid                 | select_mode                | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Gengrid                 | direction                  | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Gengrid                 | item_size_w or item_size_h | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Gengrid                 | multi_select               | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Gengrid                 | scrollbar_h or scrollbar_v | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Gengrid  item           | id                         | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Gengrid  item           | style                      | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Gengrid  item           | colors                     | No                | No         | Yes        | No                     | No                           | No                   |
-| Gengrid  item           | text                       | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Gengrid  item           | src                        | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Gengrid  item           | selected                   | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Gengrid  item           | disabled                   | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Genlist                 | id                         | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Genlist                 | select_mode                | Yes               | Yes        | Yes        | Yes                    | No                           | No                   |
-| Genlist                 | style                      | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Genlist                 | disable                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Genlist                 | visible                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Genlist                 | homogeneous                | Yes               | Yes        | Yes        | Yes                    | No                           | No                   |
-| Genlist                 | scrollbar_h or scrollbar_v | Yes               | Yes        | Yes        | Yes                    | No                           | No                   |
-| Genlist  item           | id                         | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Genlist  item           | end_image_path             | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Genlist  item           | end_standard_icon          | Yes               | Yes        | Yes        | Yes                    | No                           | No                   |
-| Genlist  item           | image_path                 | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Genlist  item           | style                      | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Genlist  item           | colors                     | No                | No         | Yes        | No                     | No                           | No                   |
-| Genlist  item           | text                       | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Genlist  item           | selected                   | Yes               | Yes        | Yes        | Yes                    | No                           | No                   |
-| Genlist  item           | standard_icon              | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Genlist  item           | sub_text                   | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Hoversel                | id                         | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Hoversel                | text                       | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Hoversel                | disable                    | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Hoversel                | visible                    | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Hoversel  item          | id                         | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Hoversel  item          | text                       | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Index  item             | id                         | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Index  item             | text                       | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| List                    | id                         | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| List                    | direction                  | No                | No         | No         | Yes                    | Yes                          | Yes                  |
-| List                    | select_mode                | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| List                    | multi_select               | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| List                    | mode                       | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| List                    | disable                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| List                    | visible                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| List                    | scrollbar_h                | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| List                    | scrollbar_v                | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Multibutton  entry      | id                         | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Multibutton  entry      | editable                   | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Multibutton  entry      | expanded                   | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Multibutton  entry      | disable                    | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Multibutton  entry      | visible                    | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Multibutton  entry item | id                         | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Multibutton  entry item | text                       | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Progressbar             | id                         | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Progressbar             | span_size                  | Yes               | Yes        | Yes        | Yes                    | No                           | No                   |
-| Progressbar             | value                      | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Progressbar             | inverted                   | Yes               | Yes        | Yes        | Yes                    | No                           | No                   |
-| Progressbar             | disable                    | No                | No         | No         | No                     | Yes                          | Yes                  |
-| Progressbar             | visible                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Progressbar             | style                      | No                | Yes        | Yes        | Yes                    | No                           | No                   |
-| Progressbar             | min or max                 | No                | No         | No         | No                     | Yes                          | Yes                  |
-| Popup                   | id                         | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Popup                   | title                      | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Popup                   | style                      | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Popup                   | colors                     | No                | No         | Yes        | No                     | No                           | No                   |
-| Popup                   | height                     | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Popup                   | timeout                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Popup                   | disable                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Popup                   | visible                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Radio                   | id                         | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Radio                   | state_value                | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Radio                   | value                      | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Radio                   | text                       | No                | Yes        | Yes        | No                     | No                           | No                   |
-| Radio                   | disable                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Radio                   | visible                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Slider                  | id                         | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Slider                  | indicator                  | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Slider                  | min                        | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Slider                  | step                       | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Slider                  | max                        | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Slider                  | value                      | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Slider                  | inverted                   | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Slider                  | indicator_format           | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Slider                  | direction                  | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Slider                  | disable                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Slider                  | visible                    | Yes               | Yes        | Yes        | Yes                    | Yes                          | Yes                  |
-| Slider                  | style                      | Yes               | Yes        | Yes        | Yes                    | No                           | No                   |
-| Slider                  | colors                     | No                | No         | Yes        | No                     | No                           | No                   |
-| Spinner                 | id                         | Yes               | Yes        | Yes        | Yes                    | No                           | No                   |
-| Spinner                 | editable                   | Yes               | Yes        | Yes        | Yes                    | No                           | No                   |
-| Spinner                 | step                       | Yes               | Yes        | Yes        | Yes                    | No                           | No                   |
-| Spinner                 | min                        | Yes               | Yes        | Yes        | Yes                    | No                           | No                   |
-| Spinner                 | max                        | Yes               | Yes        | Yes        | Yes                    | No                           | No                   |
-| Spinner                 | disable                    | Yes               | Yes        | Yes        | Yes                    | No                           | No                   |
-| Spinner                 | visible                    | Yes               | Yes        | Yes        | Yes                    | No                           | No                   |
-| Spinner                 | style                      | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Spinner                 | colors                     | No                | No         | Yes        | No                     | No                           | No                   |
-| Toolbar                 | id                         | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Toolbar                 | homogeneous                | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Toolbar                 | select_mode                | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Toolbar                 | icon_size                  | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Toolbar                 | direction                  | Yes               | No         | No         | No                     | No                           | No                   |
-| Toolbar                 | shrink_mode                | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Toolbar                 | transverse_expand          | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Toolbar                 | visible                    | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Toolbar  item           | id                         | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Toolbar  item           | disable                    | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Toolbar  item           | text                       | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Toolbar  item           | src                        | Yes               | Yes        | Yes        | No                     | No                           | No                   |
-| Toolbar item            | selected                   | Yes               | Yes        | Yes        | No                     | No                           | No                   |
+| Component               | Attribute                  | Mobile  2.3/2.3.1 | Mobile 2.4 | Mobile 3.0/4.0 | Wearable square  2.3.1 | Wearable circle  2.3.1/2.3.2 | Wearable circle  3.0/4.0 |
+| ----------------------- | -------------------------- | ----------------- | ---------- | -------------- | ---------------------- | ---------------------------- | ------------------------ |
+| Panel                   | id                         | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Panel                   | visible                    | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Panel                   | orient                     | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Panel                   | hidden                     | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Panes                   | id                         | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Panes                   | visible                    | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Panes                   | direction                  | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Panes                   | fixed                      | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Panes                   | right_size                 | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Scroller                | id                         | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Scroller                | style                      | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Scroller                | colors                     | No                | No         | Yes            | No                     | No                           | No                       |
+| Scroller                | content_min_w              | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Scroller                | content_min_h              | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Scroller                | propagate_events           | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Scroller                | visible                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Scroller                | scrollbar_h                | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Scroller                | scrollbar_v                | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Button                  | id                         | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Button                  | disable                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Button                  | visible                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Button                  | text                       | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Button                  | style                      | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Button                  | colors                     | No                | No         | Yes            | No                     | No                           | No                       |
+| Calendar                | id                         | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Calendar                | disable                    | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Calendar                | visible                    | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Calendar                | min_year or max_year       | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Calendar                | select_mode                | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Calendar                | interval                   | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Check                   | id                         | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Check                   | state                      | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Check                   | disable                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Check                   | visible                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Check                   | text                       | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Check                   | style                      | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Colorselector           | id                         | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Colorselector           | visible                    | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Ctxpopup                | id                         | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Ctxpopup                | direction                  | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Ctxpopup                | style                      | Yes               | No         | No             | No                     | Yes                          | Yes                      |
+| Ctxpopup                | disable                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Ctxpopup                | visible                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Datetime                | id                         | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Datetime                | disable                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Datetime                | visible                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Datetime                | style                      | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Datetime                | colors                     | No                | No         | Yes            | No                     | No                           | No                       |
+| Entry                   | id                         | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Entry                   | scroll                     | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Entry                   | single_line                | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Entry                   | password                   | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Entry                   | editable                   | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Entry                   | context_menu               | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Entry                   | file_text_format           | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Entry                   | disable                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Entry                   | visible                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Entry                   | text                       | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Entry                   | src                        | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Flipselector            | id                         | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Flipselector            | disable                    | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Flipselector            | visible                    | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Flipselector  item      | id                         | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Flipselector  item      | text                       | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Gengrid                 | id                         | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Gengrid                 | visible                    | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Gengrid                 | disable                    | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Gengrid                 | style                      | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Gengrid                 | select_mode                | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Gengrid                 | direction                  | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Gengrid                 | item_size_w or item_size_h | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Gengrid                 | multi_select               | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Gengrid                 | scrollbar_h or scrollbar_v | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Gengrid  item           | id                         | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Gengrid  item           | style                      | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Gengrid  item           | colors                     | No                | No         | Yes            | No                     | No                           | No                       |
+| Gengrid  item           | text                       | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Gengrid  item           | src                        | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Gengrid  item           | selected                   | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Gengrid  item           | disabled                   | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Genlist                 | id                         | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Genlist                 | select_mode                | Yes               | Yes        | Yes            | Yes                    | No                           | No                       |
+| Genlist                 | style                      | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Genlist                 | disable                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Genlist                 | visible                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Genlist                 | homogeneous                | Yes               | Yes        | Yes            | Yes                    | No                           | No                       |
+| Genlist                 | scrollbar_h or scrollbar_v | Yes               | Yes        | Yes            | Yes                    | No                           | No                       |
+| Genlist  item           | id                         | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Genlist  item           | end_image_path             | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Genlist  item           | end_standard_icon          | Yes               | Yes        | Yes            | Yes                    | No                           | No                       |
+| Genlist  item           | image_path                 | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Genlist  item           | style                      | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Genlist  item           | colors                     | No                | No         | Yes            | No                     | No                           | No                       |
+| Genlist  item           | text                       | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Genlist  item           | selected                   | Yes               | Yes        | Yes            | Yes                    | No                           | No                       |
+| Genlist  item           | standard_icon              | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Genlist  item           | sub_text                   | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Hoversel                | id                         | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Hoversel                | text                       | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Hoversel                | disable                    | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Hoversel                | visible                    | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Hoversel  item          | id                         | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Hoversel  item          | text                       | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Index  item             | id                         | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Index  item             | text                       | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| List                    | id                         | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| List                    | direction                  | No                | No         | No             | Yes                    | Yes                          | Yes                      |
+| List                    | select_mode                | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| List                    | multi_select               | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| List                    | mode                       | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| List                    | disable                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| List                    | visible                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| List                    | scrollbar_h                | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| List                    | scrollbar_v                | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Multibutton  entry      | id                         | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Multibutton  entry      | editable                   | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Multibutton  entry      | expanded                   | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Multibutton  entry      | disable                    | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Multibutton  entry      | visible                    | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Multibutton  entry item | id                         | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Multibutton  entry item | text                       | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Progressbar             | id                         | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Progressbar             | span_size                  | Yes               | Yes        | Yes            | Yes                    | No                           | No                       |
+| Progressbar             | value                      | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Progressbar             | inverted                   | Yes               | Yes        | Yes            | Yes                    | No                           | No                       |
+| Progressbar             | disable                    | No                | No         | No             | No                     | Yes                          | Yes                      |
+| Progressbar             | visible                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Progressbar             | style                      | No                | Yes        | Yes            | Yes                    | No                           | No                       |
+| Progressbar             | min or max                 | No                | No         | No             | No                     | Yes                          | Yes                      |
+| Popup                   | id                         | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Popup                   | title                      | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Popup                   | style                      | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Popup                   | colors                     | No                | No         | Yes            | No                     | No                           | No                       |
+| Popup                   | height                     | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Popup                   | timeout                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Popup                   | disable                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Popup                   | visible                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Radio                   | id                         | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Radio                   | state_value                | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Radio                   | value                      | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Radio                   | text                       | No                | Yes        | Yes            | No                     | No                           | No                       |
+| Radio                   | disable                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Radio                   | visible                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Slider                  | id                         | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Slider                  | indicator                  | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Slider                  | min                        | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Slider                  | step                       | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Slider                  | max                        | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Slider                  | value                      | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Slider                  | inverted                   | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Slider                  | indicator_format           | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Slider                  | direction                  | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Slider                  | disable                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Slider                  | visible                    | Yes               | Yes        | Yes            | Yes                    | Yes                          | Yes                      |
+| Slider                  | style                      | Yes               | Yes        | Yes            | Yes                    | No                           | No                       |
+| Slider                  | colors                     | No                | No         | Yes            | No                     | No                           | No                       |
+| Spinner                 | id                         | Yes               | Yes        | Yes            | Yes                    | No                           | No                       |
+| Spinner                 | editable                   | Yes               | Yes        | Yes            | Yes                    | No                           | No                       |
+| Spinner                 | step                       | Yes               | Yes        | Yes            | Yes                    | No                           | No                       |
+| Spinner                 | min                        | Yes               | Yes        | Yes            | Yes                    | No                           | No                       |
+| Spinner                 | max                        | Yes               | Yes        | Yes            | Yes                    | No                           | No                       |
+| Spinner                 | disable                    | Yes               | Yes        | Yes            | Yes                    | No                           | No                       |
+| Spinner                 | visible                    | Yes               | Yes        | Yes            | Yes                    | No                           | No                       |
+| Spinner                 | style                      | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Spinner                 | colors                     | No                | No         | Yes            | No                     | No                           | No                       |
+| Toolbar                 | id                         | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Toolbar                 | homogeneous                | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Toolbar                 | select_mode                | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Toolbar                 | icon_size                  | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Toolbar                 | direction                  | Yes               | No         | No             | No                     | No                           | No                       |
+| Toolbar                 | shrink_mode                | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Toolbar                 | transverse_expand          | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Toolbar                 | visible                    | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Toolbar  item           | id                         | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Toolbar  item           | disable                    | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Toolbar  item           | text                       | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Toolbar  item           | src                        | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+| Toolbar item            | selected                   | Yes               | Yes        | Yes            | No                     | No                           | No                       |

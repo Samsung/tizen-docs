@@ -392,8 +392,8 @@ To initialize the player for use:
 
      The player error callback is triggered when the player stops working due to an error. You can use the callback to try to recover from the error. For example, try to change the player state to `PLAYER_STATE_READY` by calling the `player_stop()` function. Then remove all other callbacks and reset the player by calling the `player_unprepare()` function. At the end, the player is in the `PLAYER_STATE_IDLE` state, so you can release the resources allocated to the player.
 
-     **Note**
-     Do not call the `player_destroy()` function from the called context, as this can cause the `PLAYER_ERROR_INVALID_OPERATION` error.
+     > **Note**  
+     > Do not call the `player_destroy()` function from the called context, as this can cause the `PLAYER_ERROR_INVALID_OPERATION` error.
 
 ## Playing an Audio File
 
@@ -441,8 +441,8 @@ To play a video file:
 
    After the `player_set_display()` function has been successfully executed, the player is connected to the display.
 
-   **Note**
-   For an overlay surface, when the device orientation changes, the displayed video does not rotate automatically. If you want to change the video orientation according to the device orientation, use the `player_set_display_rotation()` function within the `app_device_orientation_cb()` callback function used by the application. For an Evas surface, the Evas object for the video is rotated by the window manager used by the application, not by the `player_set_display_rotation()` function.
+   > **Note**  
+   > For an overlay surface, when the device orientation changes, the displayed video does not rotate automatically. If you want to change the video orientation according to the device orientation, use the `player_set_display_rotation()` function within the `app_device_orientation_cb()` callback function used by the application. For an Evas surface, the Evas object for the video is rotated by the window manager used by the application, not by the `player_set_display_rotation()` function.
 
 3. Prepare the player for playback using the `player_prepare()` function:
 
@@ -693,8 +693,8 @@ To retrieve information about the audio and video streams:
 
 1. [Create the player handle](#init_handle), [prepare and start the player](#play_video), and [set the display parameters](#set_parameters).
 
-   **Note**
-   To retrieve the stream information, the player state must be either `PLAYER_STATE_PLAYING` or `PLAYER_STATE_PAUSED`.
+   > **Note**  
+   > To retrieve the stream information, the player state must be either `PLAYER_STATE_PLAYING` or `PLAYER_STATE_PAUSED`.
 
 2. Retrieve the stream information:
 
@@ -784,7 +784,8 @@ To retrieve information about the audio and video streams:
      dlog_print(DLOG_INFO, LOG_TAG, "player_get_content_info year = %d", year);
      ```
 
-     **Note**The values must be released using the `free()` function.
+     > **Note**  
+	 > The values must be released using the `free()` function.
 
    - Album artwork
 
@@ -820,8 +821,8 @@ To insert subtitles to a video file:
    free(path);
    ```
 
-   **Note**
-   You can set the subtitle path when the player state is `PLAYER_STATE_IDLE`, `PLAYER_STATE_READY`, `PLAYER_STATE_PLAYING`, or `PLAYER_STATE_PAUSED`.
+   > **Note**  
+   > You can set the subtitle path when the player state is `PLAYER_STATE_IDLE`, `PLAYER_STATE_READY`, `PLAYER_STATE_PLAYING`, or `PLAYER_STATE_PAUSED`.
 
 ## Starting and Stopping the WAV Player
 

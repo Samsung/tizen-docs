@@ -5,7 +5,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
 
-The table container acts like a box container, but with 2 dimensions. It provides the same kind of APIs as a box. An item inside a table can span multiple columns and rows, and even overlap with other items. For more information, see the Table API (in [mobile](http://org.tizen.native.mobile.apireference/group__Table.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Table.html)applications).
+The table container acts like a box container, but with 2 dimensions. It provides the same kind of APIs as a box. An item inside a table can span multiple columns and rows, and even overlap with other items. For more information, see the Table API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Elm__Table.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Elm__Table.html) applications).
 
 **Figure: Table component structure**
 
@@ -117,6 +117,5 @@ To manage the table items:
 
 - To clear all table items, use the `elm_table_clear()` function. If the clear parameter is `EINA_TRUE`, the table items are deleted as the `evas_object_del()` function is called on each item.
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

@@ -6,9 +6,9 @@
 - Tizen 2.3.1 and Higher for Wearable
 - Tizen 3.0 and Higher for TV
 
-Tizen enables you to schedule an application to be run at a specific time. When an alarm is triggered, the application is launched (unless it is already running).
+You can schedule an application to be run at a specific time. When an alarm is triggered, the application is launched (unless it is already running).
 
-The Alarm API is mandatory for both Tizen mobile and wearable profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The Alarm API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The main features of the Alarm API include:
 
@@ -86,7 +86,8 @@ To obtain a list of alarms, and create and delete alarms:
      var alarm4 = new tizen.AlarmAbsolute(date, ['SA', 'SU']);
      ```
 
-     ​	**Note**	You cannot define both a time period and a weekday recurrence for the same alarm.
+		> **Note**
+		> You cannot define both a time period and a weekday recurrence for the same alarm.
 
    - To create a recurring relative alarm, create an instance of the `AlarmRelative` interface.
 
@@ -114,7 +115,7 @@ To obtain a list of alarms, and create and delete alarms:
 
 ## Launching Applications with Alarms
 
-Learning how to launch application with alarms is a basic alarm management skill:
+Learning how to launch applications with alarms is a basic alarm management skill:
 
 1. To launch an application when an alarm is triggered, you must define the application as a parameter in the `add()` method used to add the created alarm to the system:
 
@@ -191,7 +192,7 @@ To create an alarm notification with the `AlarmRelative` alarm type and `UserNot
    /* Create ApplicationControl object */
    var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/default',
                                                  null, 'image/jpg', null);
-   /* You can add additional attibutes to the notification dictionary */
+   /* You can add additional attributes to the notification dictionary */
    var notificationDict = {
        content: 'This is a simple notification\'s content.',
        actions: {
@@ -220,4 +221,4 @@ To create an alarm notification with the `AlarmRelative` alarm type and `UserNot
    console.log('Notification title: ' + noti.title + ', content: ' + noti.content);
    ```
 
-   You can [remove the alarm notification](./alarm/removeAlarm) with the `tizen.alarm.remove()` method.
+   You can [remove the alarm notification](./alarm/#removeAlarm) with the `tizen.alarm.remove()` method.

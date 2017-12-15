@@ -5,7 +5,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
 
-To provide tactile feedback to the user or to interact with the user even when the device volume is low, you can [make a Tizen device vibrate](./w3c/device/vibration-w.md#manage). The vibration provides better user experience and therefore improves the perception of your application. 
+To provide tactile feedback to the user or to interact with the user even when the device volume is low, you can [make a Tizen device vibrate](#manage). The vibration can provide a better user experience and improve the perception of your application.
 
 This feature is supported in mobile and wearable applications only.
 

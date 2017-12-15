@@ -40,41 +40,41 @@ field.SetProperty( TextField::Property::HORIZONTAL_ALIGNMENT, "BEGIN" );
 
 ## Using Decorations
 
-For text decorations, the following `TextLabel` class properties are available.
+For text decorations, the following `TextField` class properties are available. All properties are writable and none are animatable.
 
 **Table: TextField properties**
 
-| Property                               | Type      | Writable | Animatable |
-| -------------------------------------- | --------- | -------- | ---------- |
-| `RENDERING_BACKEND`                    | Integer   | Yes      | No         |
-| `TEXT`                                 | String    | Yes      | No         |
-| `PLACEHOLDER_TEXT`                     | String    | Yes      | No         |
-| `PLACEHOLDER_TEXT_FOCUSED`             | String    | Yes      | No         |
-| `FONT_FAMILY`                          | String    | Yes      | No         |
-| `FONT_STYLE`                           | String    | Yes      | No         |
-| `POINT_SIZE`                           | Float     | Yes      | No         |
-| `MAX_LENGTH`                           | Integer   | Yes      | No         |
-| `EXCEED_POLICY`                        | Integer   | Yes      | No         |
-| `HORIZONTAL_ALIGNMENT`                 | String    | Yes      | No         |
-| `VERTICAL_ALIGNMENT`                   | String    | Yes      | No         |
-| `COLOR`                                | Vector4   | Yes      | No         |
-| `SHADOW_OFFSET`                        | Vector2   | Yes      | No         |
-| `SHADOW_COLOR`                         | Vector4   | Yes      | No         |
-| `PRIMARY_CURSOR_COLOR`                 | Vector4   | Yes      | No         |
-| `SECONDARY_CURSOR_COLOR`               | Vector4   | Yes      | No         |
-| `ENABLE_CURSOR_BLINK`                  | Boolean   | Yes      | No         |
-| `CURSOR_BLINK_INTERVAL`                | Float     | Yes      | No         |
-| `CURSOR_BLINK_DURATION`                | Float     | Yes      | No         |
-| `GRAB_HANDLE_IMAGE`                    | String    | Yes      | No         |
-| `GRAB_HANDLE_PRESSED_IMAGE`            | String    | Yes      | No         |
-| `SCROLL_THRESHOLD`                     | Float     | Yes      | No         |
-| `SCROLL_SPEED`                         | Float     | Yes      | No         |
-| `SELECTION_HANDLE_IMAGE_RIGHT`         | String    | Yes      | No         |
-| `SELECTION_HANDLE_PRESSED_IMAGE_LEFT`  | String    | Yes      | No         |
-| `SELECTION_HANDLE_PRESSED_IMAGE_RIGHT` | String    | Yes      | No         |
-| `SELECTION_HIGHLIGHT_COLOR`            | Vector4   | Yes      | No         |
-| `DECORATION_BOUNDING_BOX`              | Rectangle | Yes      | No         |
-| `INPUT_METHOD_SETTINGS`                | Map       | Yes      | No         |
+| Property                               | Type      |
+| -------------------------------------- | --------- |
+| `RENDERING_BACKEND`                    | Integer   |
+| `TEXT`                                 | String    |
+| `PLACEHOLDER_TEXT`                     | String    |
+| `PLACEHOLDER_TEXT_FOCUSED`             | String    |
+| `FONT_FAMILY`                          | String    |
+| `FONT_STYLE`                           | String    |
+| `POINT_SIZE`                           | Float     |
+| `MAX_LENGTH`                           | Integer   |
+| `EXCEED_POLICY`                        | Integer   |
+| `HORIZONTAL_ALIGNMENT`                 | String    |
+| `VERTICAL_ALIGNMENT`                   | String    |
+| `COLOR`                                | Vector4   |
+| `SHADOW_OFFSET`                        | Vector2   |
+| `SHADOW_COLOR`                         | Vector4   |
+| `PRIMARY_CURSOR_COLOR`                 | Vector4   |
+| `SECONDARY_CURSOR_COLOR`               | Vector4   |
+| `ENABLE_CURSOR_BLINK`                  | Boolean   |
+| `CURSOR_BLINK_INTERVAL`                | Float     |
+| `CURSOR_BLINK_DURATION`                | Float     |
+| `GRAB_HANDLE_IMAGE`                    | String    |
+| `GRAB_HANDLE_PRESSED_IMAGE`            | String    |
+| `SCROLL_THRESHOLD`                     | Float     |
+| `SCROLL_SPEED`                         | Float     |
+| `SELECTION_HANDLE_IMAGE_RIGHT`         | String    |
+| `SELECTION_HANDLE_PRESSED_IMAGE_LEFT`  | String    |
+| `SELECTION_HANDLE_PRESSED_IMAGE_RIGHT` | String    |
+| `SELECTION_HIGHLIGHT_COLOR`            | Vector4   |
+| `DECORATION_BOUNDING_BOX`              | Rectangle |
+| `INPUT_METHOD_SETTINGS`                | Map       |
 
 To change the color of the text, use the `TEXT_COLOR` property. An alternative color can be used for placeholder text by setting the `PLACEHOLDER_TEXT_COLOR` property. Unlike the `Actor::COLOR` property, these properties do not affect child actors added to the `TextField`.
 

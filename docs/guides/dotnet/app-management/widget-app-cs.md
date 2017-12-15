@@ -37,7 +37,8 @@ The main widget application features include:
     The widget application can [draw a UI on the home
     screen](#get_window).
 
-    **Note** The widget application UI has a limitation with the scroll
+    > **Note**   
+	> The widget application UI has a limitation with the scroll
     action to provide a better user experience. Design the widget UI to
     display all the information within the given area of the
     screen points.
@@ -48,9 +49,8 @@ The main widget application features include:
     application window in a special way.
 
     ​
-
-Widget Application and Widget Instance <a id="app_instance"></a>
---------------------------------------
+<a name="app_instance"></a>
+## Widget Application and Widget 
 
 The
 [Tizen.Applications.WidgetApplication](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Applications_1_1WidgetApplication.html)
@@ -71,9 +71,8 @@ same widget application process.
 ![Each widget application has 1 or more widget
 instances](./media/widget_homescreen.png)
 
-
-Widget Instance States and Events <a id="instance"></a>
----------------------------------
+<a name="instance"></a>
+## Widget Instance States and Events 
 
 The following figure illustrates the widget instance states during the
 instance life-cycle:
@@ -107,7 +106,7 @@ You can declare a widget class by inheriting the
 [Tizen.Applications.WidgetBase](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Applications_1_1WidgetBase.html)
 class. For example:
 
-``` {.prettyprint}
+``` 
 class MyWidget : WidgetBase
 {
     public override void OnCreate(Bundle content, int w, int h) {}
@@ -125,8 +124,7 @@ class MyWidget : WidgetBase
 ```
 
 
-Prerequisites
--------------
+## Prerequisites
 
 To enable your application to use the widget functionality:
 
@@ -134,7 +132,7 @@ To enable your application to use the widget functionality:
     [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/namespaceTizen_1_1Applications.html)
     namespace, include it in your application:
 
-    ``` {.prettyprint}
+    ``` 
     using Tizen.Applications;
     ```
 
@@ -145,7 +143,7 @@ To enable your application to use the widget functionality:
     The following code example shows how the `<widget-application>`
     element is consequently added to the `tizen-manifest.xml` file:
 
-    ``` {.prettyprint}
+    ``` 
     <?xml version="1.0" encoding="utf-8"?>
     <manifest xmlns="http://tizen.org/ns/packages" api-version="3.0" package="@PACKAGE_NAME@" version="@VERSION@">
        <profile name="common" />
@@ -161,9 +159,8 @@ To enable your application to use the widget functionality:
     </manifest>
     ```
 
-
-Creating the Widget Application <a id="create"></a>
--------------------------------
+<a name="create"></a>
+## Creating the Widget Application
 
 The widget application starts with the `Main()` function, which creates
 and initializes the application. The `Run()` method of the
@@ -183,7 +180,7 @@ constructors:
 A widget viewer application can add the widget application by using the
 widget application ID.
 
-``` {.prettyprint}
+``` 
 class Program
 {
     static void Main(string[] args)
@@ -200,9 +197,8 @@ class Program
 }
 ```
 
-
-Managing the Widget Instance Life-cycle <a id="life-cycle"></a>
----------------------------------------
+<a name="life-cycle"></a>
+## Managing the Widget Instance Life-cycle
 
 To manage the widget instance life-cycle:
 
@@ -210,7 +206,7 @@ To manage the widget instance life-cycle:
     [Tizen.Applications.WidgetBase](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Applications_1_1WidgetBase.html)
     class:
 
-    ``` {.prettyprint}
+    ``` 
     class MyWidget : WidgetBase {}
     ```
 
@@ -222,7 +218,7 @@ To manage the widget instance life-cycle:
         UI](#get_window). If bundle content is not `NULL`, restore the
         previous status.
 
-        ``` {.prettyprint}
+        ``` 
         public override void OnCreate(Bundle content, int w, int h)
         {
             try
@@ -245,7 +241,7 @@ To manage the widget instance life-cycle:
         termination is not `WidgetDestroyType.Permanent`, store the
         current status with the incoming bundle.
 
-        ``` {.prettyprint}
+        ``` 
         public override void OnDestroy(WidgetDestroyType reason, Bundle content)
         {
             if (reason != WidgetDestroyType.Permanent)
@@ -260,7 +256,7 @@ To manage the widget instance life-cycle:
         becomes invisible. The framework can destroy a paused
         widget instance.
 
-        ``` {.prettyprint}
+        ``` 
         public override void OnPause() {}
         ```
 
@@ -270,7 +266,7 @@ To manage the widget instance life-cycle:
         Take the necessary actions when the widget instance
         becomes visible.
 
-        ``` {.prettyprint}
+        ``` 
         public override void OnResume() {}
         ```
 
@@ -279,7 +275,7 @@ To manage the widget instance life-cycle:
 
         Take the necessary actions to accommodate the new size.
 
-        ``` {.prettyprint}
+        ``` 
         public override void OnResize(int w, int h) {}
         ```
 
@@ -290,18 +286,17 @@ To manage the widget instance life-cycle:
         `isForce` parameter is `true`, the widget can be updated even in
         the pause state.
 
-        ``` {.prettyprint}
+        ``` 
         public override void OnUpdate(Bundle content, bool isForce) {}
         ```
 
-
-Drawing the Widget UI <a id="get_window"></a>
----------------------
+<a name="get_window"></a>
+## Drawing the Widget UI 
 
 The widget UI is drawn in the `OnCreate()` callback of your widget
 class:
 
-``` {.prettyprint}
+``` 
 public override void OnCreate(Bundle content, int w, int h)
 {
     try
@@ -348,9 +343,8 @@ public override void OnCreate(Bundle content, int w, int h)
 }
 ```
 
-
-Data Sharing Between the Widget Application and Other Applications <a id="share"></a>
-------------------------------------------------------------------
+<a name="share"></a>
+## Data Sharing Between the Widget Application and Other Applications
 
 You can share data between widget applications and UI (or service)
 applications. However, you must understand that this kind of data

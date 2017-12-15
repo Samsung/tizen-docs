@@ -5,7 +5,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
 
-The conformant container accounts for the space taken by the indicator, virtual keyboard, and softkey windows. The content area of the conformant is resized and positioned based on the space available. For more information, see the Conformant API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Conformant.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Conformant.html)applications).
+The conformant container accounts for the space taken by the indicator, virtual keyboard, and softkey windows. The content area of the conformant is resized and positioned based on the space available. For more information, see the Conformant API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Elm__Conformant.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Elm__Conformant.html) applications).
 
 **Figure: Conformant component structure**
 
@@ -44,11 +44,9 @@ You can register callback functions connected to the following signals for a con
 | `virtualkeypad,size,changed` | The virtual keyboard size has changed.   | `NULL`       |
 | `clipboard,state,on`         | The clipboard has been switched on.      | `NULL`       |
 | `clipboard,state,off`        | The clipboard has been switched off.     | `NULL`       |
+  
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-**Note**
-
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

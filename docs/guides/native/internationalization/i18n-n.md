@@ -3,7 +3,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
 
-You can generate flexible number or date format patterns, format and parse dates and numbers for any locale, and manage time zones. The i18n API is implemented by using the ICU library.
+You can generate flexible number or date format patterns, format and parse dates and numbers for any locale, manage time zones, create alphabetic indexes, and manage right-to-left scripts, such as Arabic. The i18n API is implemented by using the ICU library.
 
 The main features of the i18n API include:
 
@@ -29,6 +29,42 @@ The main features of the i18n API include:
 
   You can use the Ulocale functions to [tailor information according to a specific geographical, cultural, or political region](#ulocale). With the Timezone functions, you can [get the time zone name, ID, DST settings, raw offset, and region code](#tmz).
 
+- Managing alphabetic indexes
+
+  You can use the Alphabetic Index functions to [generate a list of labels](#alpha_idx) that can be used as an index.
+
+- Managing the field position in formatted output
+
+  You can [identify fields for formatting purposes](#field_pos) with FieldPosition.
+
+- Managing string formatting
+
+  You can use the Format functions to [manage the string representations of objects or values](#format).
+
+- Managing measurement values with units
+
+  You can [store numeric measurement values with various units.](#measure)
+
+- Tracking the parsing position
+
+  You can [track the current position while parsing](#parse_position) with ParsePosition.
+
+- Converting time scales
+
+  You can [convert datetimes between time scales](#utmscale) with Utmscale.
+
+- Managing bidirectional text
+
+  You can [manage text containing both LTR and RTL characters](#ubidi) with Ubidi.
+
+- Shaping Arabic characters
+
+  You can [shape Arabic letters and digits](#ushape) with Ushape.
+
+- Creating pluralization rules
+
+  You can use [conditions and keywords to manage word pluralization](#plural_rules), with PluralRules.
+
 - Retrieving the ICU version
 
   You can [retrieve the currently-used version of the ICU library](#manage_version) with Uversion.
@@ -37,8 +73,9 @@ The main features of the i18n API include:
 
   You can [iterate through strings](#uchar_iter), in a safe way, with UCharIter.
 
-**Note**
-The Uversion and UCharIter APIs are supported since Tizen 4.0.
+> **Note**  
+> The Alphabetic Index, FieldPosition, Format, Formattable, Measure, MeasureFormat, MeasureUnit, ParsePosition, Ubidi, Ushape, and Utmscale APIs are supported since Tizen 3.0. The PluralRules, Uversion, and UCharIter APIs are supported since Tizen 4.0.
+
 
 ## Location Boundaries with Ubrk
 
@@ -73,8 +110,8 @@ A Ucalendar object can produce all the time field values needed to implement the
 | Time of day                              | `I18N_UCALENDAR_HOUR_OF_DAY`             |
 | Time of day | `I18N_UCALENDAR_AM_PM + I18N_UCALENDAR_HOUR` |                                          
 
-**Note**
-For some non-Gregorian calendars, different fields are necessary for complete disambiguation. For example, a full specification of the historical Arabic astronomical calendar requires the year, month, day-of-month and day-of-week in some cases.
+> **Note**  
+> For some non-Gregorian calendars, different fields are necessary for complete disambiguation. For example, a full specification of the historical Arabic astronomical calendar requires the year, month, day-of-month and day-of-week in some cases.
 
 When computing a Udate from the time fields, 2 special circumstances can arise. The information can be insufficient to compute the Udate (you have only the year and the month, but not the day of the month), or the information can be inconsistent (such as "Tuesday, July 15, 1996" even though July 15, 1996 is actually a Monday).
 
@@ -314,7 +351,8 @@ Sets can be intersected using the '&' operator or the asymmetric set difference 
 | `[:Lu:]` or `\p{Lu}`  | Set of characters having the specified Unicode property, in this case Unicode uppercase letters |
 | `[:^Lu:]` or `\P{Lu}` | Set of characters not having the given Unicode property |
 
-**Note**You cannot add an empty string ("") to a set.
+> **Note**  
+> You cannot add an empty string ("") to a set.
 
 ### Formal Syntax
 
@@ -359,9 +397,352 @@ The mapping tables and some of the source code of the tools that collected these
 
 For more information on character sets, codepages, and encodings, see [Coded Character Sets](http://www.ibm.com/software/globalization/topics/charsets/) on the IBM site.
 
+## Alphabetic Index Creation
+
+The Alphabetic Index API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html) applications) allows you to [generate a list of alphabetical labels](#alpha_idx_example) that can be used as an "index", such as in a UI. In other words, it is a list of clickable characters (or character sequences) that allow the user to see a segment (bucket) of a larger target list. Each label corresponds to a bucket in the target list, where all items in the bucket are greater than or equal to the selected character, based on the locale's collation order. Strings added to the index are sorted and placed in order in the appropriate bucket.
+
+You can use the index directly, or with a client that does not support localized collation. The following example shows an alphabetical index.
+
+The Alphabetic Index API also supports creating buckets for strings that are sorted before the first label (underflow), after the last label (overflow), and between scripts (inflow). For example, if an index is constructed with labels for Russian and for English characters, Greek characters can be placed in an inflow bucket between the other 2 scripts.
+
+## Field Identification in Formatted Output
+
+The FieldPosition API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__FIELD__POSITION__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__FIELD__POSITION__MODULE.html) applications) allows you to [manage the field positions in formatted output](#field_pos_example).
+
+Fields are identified by constants defined in the `xxx_format_field_e` enumerations.
+
+The field position within formatted output is tracked with 2 indices: the indices of the first and the last characters of the field. Some formatting functions require a field position object as a parameter. These formatting functions can be used to perform partial formatting or retrieve information about formatted output, such as field positions.
+
+## String Format Management
+
+The Format API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__FORMAT__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__FORMAT__MODULE.html) applications) allows you to [manage formatting for displayed strings](#format_examples).
+
+The Format API specifies the protocol for classes which convert between objects or values, such as numeric values and dates, and their string representations. These representations can be localized or contain localized characters or strings.
+
+There is no function for creating an `i18n_format_h` object, as this module uses a mechanism similar to inheritance in object-oriented languages. All functions with the `i18n_format_h` handle as a parameter can instead take the handle to a more specific format object from the derived classes.
+
+The Formattable API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__FORMATTABLE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__FORMATTABLE__MODULE.html) applications) allows you to [interconvert between Udate, char string, and primitive numeric types](#formattable_examples), such as double and long.
+
+Internally, an `i18n_formattable_h` handle holds an object that is a union of primitive types. As such, it can only store 1 flavor of data at a time. To determine what flavor of data it contains, use the `i18n_formattable_get_type()` function.
+
+The Formattable API is a helping object for the Format API and its derived format objects. The formattable object holds the value to be formatted or the formatting result.
+
+## Measurement Values with Units
+
+The Measure API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__MEASURE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__MEASURE__MODULE.html) applications) allows you to [create measure objects containing a numerical value and a measurement unit](#measure_examples). You can, for example, store a length value in feet or meters.
+
+The MeasureUnit API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__MEASURE__UNIT__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__MEASURE__UNIT__MODULE.html) applications) allows you to [create measure unit objects](#measure_unit_examples) and combine them with numerical values to create measure objects. The [measure objects can also be formatted](#measure_format_examples) using the MeasureFormat API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html)applications).
+
+The following table lists the supported measures and units.
+
+**Table: Measures and units**
+
+| Measure      | Unit                      | Symbol     |
+| ------------ | ------------------------- | ---------- |
+| Acceleration | g-force                   | g-force    |
+| Acceleration | meter  per second squared | m/s2       |
+| Angle        | arc  minute               | arcmin     |
+| Angle        | arc  second               | arcsec     |
+| Angle        | degree                    | °          |
+| Angle        | radian                    | rad        |
+| Area         | acre                      | ac         |
+| Area         | hectare                   | ha         |
+| Area         | square  centimeter        | cm2        |
+| Area         | square  meter             | m2         |
+| Area         | square  kilometer         | km2        |
+| Area         | square  foot              | ft2        |
+| Area         | square  inch              | in2        |
+| Area         | square  mile              | mi2        |
+| Area         | square  yard              | yd2        |
+| Consumption  | liter  per kilometer      | l/km       |
+| Consumption  | mile  per gallon          | mpg        |
+| Digital      | bit                       | bit        |
+| Digital      | byte                      | B          |
+| Digital      | kilobit                   | kbit       |
+| Digital      | kilobyte                  | kB         |
+| Digital      | megabit                   | Mbit       |
+| Digital      | megabyte                  | MB         |
+| Digital      | gigabit                   | Gbit       |
+| Digital      | gigabyte                  | GB         |
+| Digital      | terabit                   | Tbit       |
+| Digital      | terabyte                  | TB         |
+| Duration     | nanosecond                | ns         |
+| Duration     | microsecond               | µs         |
+| Duration     | millisecond               | ms         |
+| Duration     | second                    | s          |
+| Duration     | minute                    | min        |
+| Duration     | hour                      | h          |
+| Duration     | day                       | d          |
+| Duration     | week                      | week       |
+| Duration     | month                     | month      |
+| Duration     | year                      | year       |
+| Electric     | ampere                    | A          |
+| Electric     | milliampere               | mA         |
+| Electric     | ohm                       | Ω          |
+| Electric     | volt                      | V          |
+| Energy       | calorie                   | cal        |
+| Energy       | kilocalorie               | kcal       |
+| Energy       | food  calorie             | Cal        |
+| Energy       | joule                     | J          |
+| Energy       | kilojoule                 | kJ         |
+| Energy       | kilowatt-hour             | kWh        |
+| Frequency    | hertz                     | Hz         |
+| Frequency    | kilohertz                 | kHz        |
+| Frequency    | megahertz                 | MHz        |
+| Length       | picometer                 | pm         |
+| Length       | nanometer                 | nm         |
+| Length       | micrometer                | µm         |
+| Length       | millimeter                | mm         |
+| Length       | centimeter                | cm         |
+| Length       | decimeter                 | dm         |
+| Length       | meter                     | m          |
+| Length       | kilometer                 | km         |
+| Length       | inch                      | in         |
+| Length       | foot                      | ft         |
+| Length       | fathom                    | fathom     |
+| Length       | yard                      | yd         |
+| Length       | furlong                   | fur        |
+| Length       | mile                      | mi         |
+| Length       | nautical  mile            | nmi        |
+| Length       | astronomical  unit        | au         |
+| Length       | light  year               | ly         |
+| Length       | parsec                    | pc         |
+| Illuminance  | lux                       | lx         |
+| Mass         | carat                     | ct         |
+| Mass         | microgram                 | µg         |
+| Mass         | milligram                 | mg         |
+| Mass         | gram                      | g          |
+| Mass         | kilogram                  | kg         |
+| Mass         | metric  ton               | t          |
+| Mass         | ounce                     | oz         |
+| Mass         | troy  ounce               | oz  t      |
+| Mass         | pound                     | lb         |
+| Mass         | stone                     | st         |
+| Mass         | ton                       | ton        |
+| Power        | horsepower                | hp         |
+| Power        | milliwatt                 | mW         |
+| Power        | watt                      | W          |
+| Power        | kilowatt                  | kW         |
+| Power        | megawatt                  | MW         |
+| Power        | gigawatt                  | GW         |
+| Pressure     | hectopascal               | hPa        |
+| Pressure     | inch  of mercury          | inHg       |
+| Pressure     | millibar                  | mbar       |
+| Pressure     | millimeter  of mercury    | mmHg       |
+| Pressure     | pound  per square inch    | psi        |
+| Proportion   | karat                     | K  or kt   |
+| Speed        | meter  per second         | m/s        |
+| Speed        | kilometer  per hour       | km/h       |
+| Speed        | mile  per hour            | mph        |
+| Temperature  | degree  Celsius           | °C         |
+| Temperature  | degree  Fahrenheit        | °F         |
+| Temperature  | kelvin                    | K          |
+| Volume       | acre-foot                 | ac-ft      |
+| Volume       | bushel                    | bsh  or bu |
+| Volume       | milliliter                | ml         |
+| Volume       | centiliter                | cl         |
+| Volume       | deciliter                 | dl         |
+| Volume       | liter                     | l          |
+| Volume       | hectoliter                | hl         |
+| Volume       | megaliter                 | Ml         |
+| Volume       | cubic  centimeter         | cm3        |
+| Volume       | cubic  foot               | ft3        |
+| Volume       | cubic  inch               | in3        |
+| Volume       | cubic  kilometer          | km3        |
+| Volume       | cubic  meter              | m3         |
+| Volume       | cubic  mile               | mi3        |
+| Volume       | cubic  yard               | yd3        |
+| Volume       | cup                       | cup        |
+| Volume       | fluid  ounce              | fl  oz     |
+| Volume       | gallon                    | gal        |
+| Volume       | pint                      | pt         |
+| Volume       | quart                     | qt         |
+| Volume       | teaspoon                  | tsp        |
+| Volume       | tablespoon                | tbsp       |
+
+## Parse Position Tracking
+
+The ParsePosition API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__PARSE__POSITION__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__PARSE__POSITION__MODULE.html) applications) is used by the Format API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__FORMAT__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__FORMAT__MODULE.html) applications) and the MeasureFormat API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html) applications) API to [track the current position while parsing](#parse_position_examples).
+
+The `xxx_parse_object()` functions require a parse position pointer as an argument. By design, you can use the same parse position pointer as you parse through a string with various formats, since the index parameter records the current position.
+
+## Bidirectional Text Management with Ubidi
+
+The Ubidi API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__UBIDI__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__UBIDI__MODULE.html) applications) allows you to [use the Unicode Bidirectional Algorithm](#ubidi_examples) to correctly display text containing characters that flow from right to left, such as Arabic and Hebrew scripts.
+
+The algorithm is defined in the [Unicode Standard Annex #9, Unicode Bidirectional Algorithm](http://unicode.org/reports/tr9/). Libraries that perform a bidirectional algorithm and reorder strings accordingly are sometimes called "Storage Layout Engines".
+
+## Arabic Character Shaping with Ushape
+
+The Ushape API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__USHAPE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__USHAPE__MODULE.html) applications) allows you to [manage Arabic character shapes](#ushape_examples).
+
+To shape Arabic text, use the `i18n_ushape_shape_arabic()` function with the appropriate shaping options. There are various digit and letter shaping options, which you can combine using the "|" pipe operation.
+
+The following table lists some common sets of shaping options for digits.
+
+**Table: Digit shaping option combinations**
+
+| Digit options                            | Result                                   |
+| ---------------------------------------- | ---------------------------------------- |
+| `I18N_USHAPE_DIGIT_EN2AN | I18N_USHAPE_DIGIT_TYPE_AN` | Replace all European digits with Arabic-Indic digits |
+| `I18N_USHAPE_DIGIT_EN2AN | I18N_USHAPE_DIGIT_TYPE_AN_EXTENDED` | Replace all European digits with Extended Arabic-Indic digits |
+| `I18N_USHAPE_DIGIT_AN2EN | I18N_USHAPE_DIGIT_TYPE_AN` | Replace all Arabic-Indic digits with European digits |
+| `I18N_USHAPE_DIGIT_AN2EN | I18N_USHAPE_DIGIT_TYPE_AN_EXTENDED` | Replace all Extended Arabic-Indic digits with European digits |
+| `I18N_USHAPE_DIGIT_ALEN2AN_INIT_AL | I18N_USHAPE_DIGIT_TYPE_AN` | Replace all European digits with Arabic-Indic digits, if the most recent strongly-directional character is an Arabic letter, and the first preceding strongly-directional character is assumed to be an Arabic letter. |
+| `I18N_USHAPE_DIGIT_ALEN2AN_INIT_AL | I18N_USHAPE_DIGIT_TYPE_AN_EXTENDED` | Replace all European digits with Extended Arabic-Indic digits, if the most recent strongly-directional character is an Arabic letter, and the first preceding strongly-directional character is assumed to be an Arabic letter. |
+| `I18N_USHAPE_DIGIT_ALEN2AN_INIT_LR | I18N_USHAPE_DIGIT_TYPE_AN` | Replace all European digits with Arabic-Indic digits, if the most recent strongly-directional character is an Arabic letter, and the first preceding strongly-directional character is assumed to not be an Arabic letter. |
+| `I18N_USHAPE_DIGIT_ALEN2AN_INIT_LR | I18N_USHAPE_DIGIT_TYPE_AN_EXTENDED` | Replace all European digits with Extended Arabic-Indic digits, if the most recent strongly-directional character is an Arabic letter, and the first preceding strongly-directional character is assumed to not be an Arabic letter. |
+
+The following table lists some shaping options for letters.
+
+**Table: Letter shaping options**
+
+| Letter options                           | Result                                   |
+| ---------------------------------------- | ---------------------------------------- |
+| `I18N_USHAPE_LETTERS_NOOP`               | Do not perform letter shaping            |
+| `I18N_USHAPE_LETTERS_SHAPE`              | Replace abstract letter characters with shaped ones |
+| `I18N_USHAPE_LETTERS_UNSHAPE`            | Replace shaped letter characters with abstract ones |
+| `I18N_USHAPE_LETTERS_SHAPE_TASHKEEL_ISOLATED` | Same as `I18N_USHAPE_LETTERS_SHAPE`, but also replace tashkeel medial forms with isolated forms |
+| `I18N_USHAPE_TEXT_DIRECTION_VISUAL_LTR`  | The source is in visual LTR order; the leftmost displayed character stored first |
+| `I18N_USHAPE_TEXT_DIRECTION_VISUAL_RTL`  | The source is in visual RTL order; the rightmost displayed character stored first |
+| `I18N_USHAPE_TEXT_DIRECTION_LOGICAL`     | The source is in the logical (keyboard) order |
+| `I18N_USHAPE_TASHKEEL_BEGIN`             | Replace tashkeel characters with spaces placed at the beginning of the buffer |
+| `I18N_USHAPE_TASHKEEL_END`               | Replace tashkeel characters with spaces placed at the end of the buffer |
+| `I18N_USHAPE_TASHKEEL_RESIZE`            | Remove tashkeel characters and reduce the length of the buffer |
+| `I18N_USHAPE_TASHKEEL_REPLACE_BY_TATWEEL` | Replace tashkeel characters with tatweel if they are connected to adjacent characters (shaped on tatweel) or replace by space if they are not connected |
+| `I18N_USHAPE_PRESERVE_PRESENTATION`      | Do not replace Arabic Presentation Forms-A and Arabic Presentation Forms-B characters with U+06xx characters before shaping |
+| `I18N_USHAPE_PRESERVE_PRESENTATION_NOOP` | Replace Arabic Presentation Forms-A and Arabic Presentation Forms-B before shaping |
+| `I18N_USHAPE_AGGREGATE_TASHKEEL_NOOP`    | Do not aggregate tashkeel characters     |
+| `I18N_USHAPE_AGGREGATE_TASHKEEL`         | Replace any combination of U+0651 with one of U+064C, U+064D, U+064E, U+064F, or U+0650 with U+FC5E, U+FC5F, U+FC60, U+FC61, or U+FC62, respectively |
+| `I18N_USHAPE_YEHHAMZA_TWOCELL_NEAR`      | Expand the "yeh hamza" character into 2 characters when near a space |
+| `I18N_USHAPE_SEEN_TWOCELL_NEAR`          | Expand the "seen" character into 2 characters when near a space |
+
+> **Note**  
+> Not all option combinations make sense. For example, the combination `I18N_USHAPE_TASHKEEL_END | I18N_USHAPE_TASHKEEL_RESIZE` results in unexpected behavior.
+
+## Time Scale Conversion with Utmscale
+
+The Utmscale API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__UTMSCALE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__UTMSCALE__MODULE.html) applications) allows you to [convert between time scales](#utmscale_examples).
+
+There are various conventions for binary datetime, depending on the platform and protocol. Some of these have severe drawbacks. For example, 32-bit Unix time (seconds since Jan 1, 1970) cannot support datetimes beyond the beginning of the year 2038. Arithmetic manipulations can also cause serious problems. For example, when calculating the average of 2 datetimes, if you calculate them with `average_time = (time1 + time2)/2`, there can be overflow even with dates around the present. Additionally, there is the issue of converting between different systems.
+
+The `i18n_utmscale_scale_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__UTMSCALE__MODULE.html#ga1422c14e213019536188c0db3286e438) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__UTMSCALE__MODULE.html#ga1422c14e213019536188c0db3286e438) applications) defines the supported time scales. Their details are listed in the following table.
+
+**Table: Time scales**
+
+| Enumeration value                      | Usage                                    | Datatype             | Unit                             | Epoch             |
+| -------------------------------------- | ---------------------------------------- | -------------------- | -------------------------------- | ----------------- |
+| `I18N_UTMSCALE_JAVA_TIME`              | Java Development Kit                     | `int64_t`            | milliseconds                     | January 1, 1970   |
+| `I18N_UTMSCALE_UNIX_TIME`              | Unix systems                             | `int32_t or int64_t` | seconds                          | January 1, 1970   |
+| `I18N_UTMSCALE_ICU4C_TIME`             | ICU4C                                    | `double`             | milliseconds                     | January 1, 1970   |
+| `I18N_UTMSCALE_WINDOWS_FILE_TIME`      | Windows file times                       | `int64_t`            | ticks (1 tick = 100 nanoseconds) | January 1, 1601   |
+| `I18N_UTMSCALE_DOTNET_DATE_TIME`       | .NET framework `System.DataTime` structure | `int64_t`            | ticks (1 tick = 100 nanosecods)  | January 1, 0001   |
+| `I18N_UTMSCALE_MAC_OLD_TIME`           | Older Macintosh systems                  | `int32_t or int64_t` | seconds                          | January 1, 1904   |
+| `I18N_UTMSCALE_MAC_TIME`               | Newer Macintosh systems                  | `double`             | seconds                          | January 1, 2001   |
+| `I18N_UTMSCALE_EXCEL_TIME`             | Excel                                    | ?                    | days                             | December 31, 1899 |
+| `I18N_UTMSCALE_DB2_TIME`               | DB2                                      | ?                    | days                             | December 31, 1899 |
+| `I18N_UTMSCALE_UNIX_MICROSECONDS_TIME` | Unix systems                             | `long`               | microseconds                     | January 1, 1970   |
+
+All the epochs start at 00:00 AM (the earliest possible time on the day in question), and are assumed to be UTC.
+
+The ranges for different datatypes are given in the following table, with all values in years. The range of years includes the entire range expressible with positive and negative values of the datatype. The range of years for `double` is the range that does not lose precision to the corresponding unit.
+
+**Table: Datatype ranges**
+
+| Unit                   | `int64_t`      | `double`       | `int32_t` |
+| ---------------------- | -------------- | -------------- | --------- |
+| 1 second               | 5.84542×1011   | 285,420,920.94 | 136.10    |
+| 1 millisecond          | 584,542,046.09 | 285,420.92     | 0.14      |
+| 1 microsecond          | 584,542.05     | 285.42         | 0.00      |
+| 100 nanoseconds (tick) | 58,454.20      | 28.54          | 0.00      |
+| 1 nanosecond           | 584.5420461    | 0.2854         | 0.00      |
+
+ICU implements the .NET framework `System.DateTime` as the universal time scale 'pivot', and uses the full range allowed by the datatype, allowing for datetimes back to 29,000 BC and up to 29,000 AD. This time scale is very fine-grained, does not lose precision, and covers a range that meets most requirements. Using the Utmscale functions, datetimes can be converted to the pivot time scale, safely manipulated, and converted back to any other time scale.
+
+## Pluralization Rule Creation
+
+Languages define plural categories in various ways. The PluralRules API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__PLURAL__RULES__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__PLURAL__RULES__MODULE.html) applications) allows you to [create rules for determining the appropriate plural word form](#plural_rules_examples) when formatting messages using numeric placeholders.
+
+Rules are constructed from a text description consisting of a list of keywords and conditions. The `i18n_plural_rules_select_int32()` and `i18n_plural_rules_select_double()` functions examine each condition in order and return the keyword for the first condition that matches the given number. If no condition matches, the default rule ('other') is returned.
+
+Rules are expressed using the following syntax:
+
+```
+rules           = rule (';' rule)*
+rule            = keyword ':' condition
+keyword         = <identifier>
+```
+
+There are 6 predefined keywords in ICU - 'zero', 'one', 'two', 'few', 'many' and 'other'. Keywords can be user-defined or retrieved from ICU locale data, and must be a sequence of characters that do not have the Unicode `Pattern_Syntax` or `Pattern_White_Space`properties.
+
+Conditions are expressed using the following syntax:
+
+```
+condition       = and_condition ('or' and_condition)*
+and_condition   = relation ('and' relation)*
+relation        = is_relation | in_relation | within_relation | 'n' <EOL>
+is_relation     = expr 'is' ('not')? value
+in_relation     = expr ('not')? 'in' range_list
+within_relation = expr ('not')? 'within' range
+expr            = ('n' | 'i' | 'f' | 'v' | 'j') ('mod' value)?
+range_list      = (range | value) (',' range_list)*
+value           = digit+  ('.' digit+)?
+digit           = 0|1|2|3|4|5|6|7|8|9
+range           = value'..'value
+```
+
+> **Note**  
+> While 'in' only includes integers in the specified range, 'within' includes all values in the range. Using 'within' with a `range_list` consisting entirely of values is the same as using 'in'.
+
+The following examples show how rules can be constructed:
+
+- "one: n is 1; few: n in 2..4"
+
+  This example defines 2 rules: for 'one' and 'few'. The condition for 'one' is "n is 1", which means that the number must be 1 for this condition to pass. The condition for 'few' is "n in 2..4", which means that the number must be between 2 and 4 inclusive for this condition to pass. All other numbers are assigned the keyword "other" by the default rule.
+
+- "zero: n is 0; one: n is 1; zero: n mod 100 in 1..19"
+
+  This example shows how the same keyword can be defined multiple times. Each rule is examined in order, and the first keyword whose condition passes is returned. In the last rule, a modulus is applied to n.
+
+- "one: n is 1; few: n mod 10 in 2..4 and n mod 100 not in 12..14"
+
+  This example shows conjunction and negation. The condition for 'few' has 2 parts, both of which must be met:
+
+  1. "n mod 10 in 2..4"
+
+     This applies a modulus to n, as in the previous example. It matches all numbers ending in 2, 3, and 4.
+
+  2. "n mod 100 not in 12..14"
+
+     This applies a different modulus and also negation. It matches all numbers not ending in 12, 13, or 14.
+
+Pluralization conditions can also be defined based on specific parts of the numeric value.
+
+**Table: Numeric value parts**
+
+| Symbol | Value                                    |
+| ------ | ---------------------------------------- |
+| `n`    | Absolute value of the number (integer and decimals) |
+| `i`    | Integer digits of `n`                    |
+| `f`    | Fractional digits of `n`                 |
+| `v`    | Number of fractional digits in `n`       |
+| `j`    | Absolute value of an integer number that has no fractional digits. For example, "j is 3" fails for 3.1 or 3.0. |
+
+**Table: Numeric value part examples**
+
+| Number (`n`) | Integer digits (`i`) | Fractional digits (`f`) | Number of fractional digits (`v`) |
+| ------------ | -------------------- | ----------------------- | --------------------------------- |
+| 1.0          | 1                    | 0                       | 1                                 |
+| 1.00         | 1                    | 0                       | 2                                 |
+| 1.3          | 1                    | 3                       | 1                                 |
+| 1.03         | 1                    | 3                       | 2                                 |
+| 1.23         | 1                    | 23                      | 2                                 |
+
+For more information on how to create rules, see [Unicode Technical Standard #35, Unicode Locale Data Markup Language Part 3, Numbers: Language Plural Rules](https://www.unicode.org/reports/tr35/tr35-numbers.html#Language_Plural_Rules).
+
 ## String Iteration with UCharIter
 
-The UCharIter API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__UCHARITER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__UCHARITER__MODULE.html) applications) allows you to [iterate through strings](#uchar_iter_examples).
+The UCharIter API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__UCHAR__ITER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__UCHAR__ITER__MODULE.html) applications) allows you to [iterate through strings](#uchar_iter_examples).
 
 The `current()` and `next()` functions only check the current index against the limit, and the `previous()` function only checks the current index against the start, to see if the iterator has already reached the beginning of the iteration range. The assumption - in all iterators - is that the index is moved though the API, which means that it cannot go out of bounds, or that the index is modified though the application code by a developer who knows enough about the iterator implementation to set valid index values.
 
@@ -395,7 +776,8 @@ Character and string management tasks include:
 - [Concatenating Ustrings](#concatenate)
 - [Finding a substring](#substring)
 
-**Note**All source and destination buffers must be different.
+> **Note**  
+> All source and destination buffers must be different.
 
 ### Comparing Ustrings
 
@@ -1445,39 +1827,1097 @@ To manage sets:
     i18n_ubool contains = i18n_uset_contains_string(set, input_ustring, -1);
     ```
 
+## Managing Alphabetic Indexes
+
+Since Tizen 3.0, you can generate an alphabetical list of clickable labels by using the Alphabetic Index API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html) applications).
+
+To generate and manage an alphabetic index:
+
+1. To create an alphabetic index object for a specific locale:
+
+   ```
+   i18n_alpha_idx_create("en", "US", &alpha_idx);
+   ```
+
+2. To manage index labels:
+
+   - To add labels from a specific locale:
+
+     ```
+     i18n_alpha_idx_add_labels(alpha_idx, "ko", "KR");
+     ```
+
+   - To add custom labels to the index:
+
+     ```
+     int record_data = 7;
+     i18n_alpha_idx_add_record(alpha_idx, "AAA", &record_data); /* Adds label "AAA" at position 7 in index */
+     ```
+
+   - To manage the default label used for abbreviated buckets between other index characters:
+
+     - To get the default label:
+
+       ```
+       char *label = NULL;
+       i18n_alpha_idx_get_inflow_label(alpha_idx, &label);
+       ```
+
+     - To set the default label:
+
+       ```
+       const char *label = "Desired label";
+       i18n_alpha_idx_set_inflow_label(alpha_idx, label);
+       ```
+
+   - To manage the overflow label used for items sorted after the last normal label:
+
+     - To get the overflow label:
+
+       ```
+       char *label;
+       i18n_alpha_idx_get_overflow_label(alpha_idx, &label);
+       ```
+
+     - To set the overflow label:
+
+       ```
+       char *label = "Overflow label";
+       i18n_alpha_idx_set_overflow_label(alpha_idx, label);
+       ```
+
+   - To manage the underflow label used for items sorted before the first normal label:
+
+     - To get the underflow label:
+
+       ```
+       char *label;
+       i18n_alpha_idx_get_underlow_label(alpha_idx, &label);
+       ```
+
+     - To set the underflow label:
+
+       ```
+       char *label = "Underflow label";
+       i18n_alpha_idx_set_underflow_label(alpha_idx, label);
+       ```
+
+   - To manage the number of labels permitted in the index:
+
+     - To get the number of labels permitted in the index:
+
+       ```
+       int32_t count = 0;
+       i18n_alpha_idx_get_max_label_count(alpha_idx, &count);
+       ```
+
+     - To set the number of labels permitted in the index:
+
+       ```
+       int32_t count = 50;
+       i18n_alpha_idx_set_max_label_count(alpha_idx, count);
+       ```
+
+   - To get the label of the current bucket:
+
+     ```
+     char *record_name;
+     i18n_alpha_idx_get_bucket_label(alpha_idx, &record_name);
+     ```
+
+   - To get the label type of the current bucket:
+
+     ```
+     i18n_alpha_idx_label_type_e type;
+     i18n_alpha_idx_get_bucket_label_type(alpha_idx, &type);
+     ```
+
+3. To move around the index:
+
+   - To set the next bucket as the current bucket:
+
+     ```
+     bool available;
+     i18n_alpha_idx_get_next_bucket(alpha_idx, &available);
+     ```
+
+   - To set the next record as the current record in the current bucket:
+
+     ```
+     bool available;
+     i18n_alpha_idx_get_next_record(alpha_idx, &available);
+     ```
+
+   - To reset the iterators:
+
+     - To reset the bucket iterator:
+
+       ```
+       i18n_alpha_idx_reset_bucket_iter(alpha_idx);
+       ```
+
+       The iterator is set before the first bucket. To move the iterator to the first bucket, use the
+
+
+       ```
+       i18n_alpha_idx_next_bucket()
+       ```
+
+​        
+
+       function.
+
+     - To reset the record iterator:
+
+       ```
+       i18n_alpha_idx_reset_record_iter(alpha_idx);
+       ```
+    
+       The iterator is set before the first record in the current bucket. To move the iterator to the first record, use the
+
+​        
+
+       ```
+       i18n_alpha_idx_next_record()
+       ```
+
+​        
+
+       function.
+
+4. To retrieve information:
+
+   - To get the number of various objects in the index:
+
+     - To get the number of buckets in the index:
+
+       ```
+       int32_t count = 0;
+       i18n_alpha_idx_get_bucket_count(alpha_idx, &count);
+       ```
+
+     - To get the total number of records in all buckets:
+
+       ```
+       int32_t count = 0;
+       i18n_alpha_idx_get_record_count(alpha_idx, &count);
+       ```
+
+     - To get the number of records in the current bucket:
+
+       ```
+       int32_t count = 0;
+       i18n_alpha_idx_get_bucket_record_count(alpha_idx, &count);
+       ```
+
+   - To get the bucket index:
+
+     - For a bucket with a specific name:
+
+       ```
+       int32_t index = -1;
+       const char *name = "Desired bucket";
+       i18n_alpha_idx_get_bucket_index(alpha_idx, name, &index);
+       ```
+
+     - For the current bucket:
+
+       ```
+       int32_t index = -1;
+       i18n_alpha_idx_get_current_bucket_index(alpha_idx, &index);
+       ```
+
+   - To get the current record name:
+
+     ```
+     char *name;
+     i18n_alpha_idx_get_record_name(alpha_idx, &name);
+     ```
+
+   - To get the pointer to the current record:
+
+     ```
+     void *data = NULL;
+     data = i18n_alpha_idx_get_record_data(alpha_idx);
+     ```
+
+5. To clear all records from the index:
+
+   ```
+   i18n_alpha_idx_clear_records(alpha_idx);
+   ```
+
+6. When no longer needed, destroy the index:
+
+   ```
+   i18n_alpha_idx_destroy(alpha_idx);
+   ```
+
+## Managing the Field Position
+
+Since Tizen 3.0, you can use the FieldPosition API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__FIELD__POSITION__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__FIELD__POSITION__MODULE.html) applications) to manage the field position for formatted output.
+
+To manage the field position:
+
+1. Create a field position pointer:
+
+   - Without a specific field:
+
+     ```
+     i18n_field_position_h field_pos;
+     i18n_field_position_create(&field_pos);
+     ```
+
+   - With a specific field:
+
+     ```
+     i18n_field_position_h field_pos;
+     int32_t field = 10;
+     i18n_field_position_create_for_field(field, &field_pos);
+     ```
+
+2. To retrieve field position information:
+
+   - To retrieve the field identifier:
+
+     ```
+     int32_t field;
+     i18n_field_position_get_field(field_pos, &field);
+     ```
+
+   - To retrieve the index of the first character in the requested field:
+
+     ```
+     int32_t begin_index;
+     i18n_field_position_get_begin_index(field_position, &begin_index);
+     ```
+
+   - To retrieve the index of the character after the last character in the requested field:
+
+     ```
+     int32_t end_index;
+     i18n_field_position_get_end_index(field_position, &end_index);
+     ```
+
+3. To set field position information:
+
+   - To set the field identifier:
+
+     ```
+     int32_t field;
+     i18n_field_position_set_field(field_pos, field);
+     ```
+
+   - To set the start index:
+
+     ```
+     int32_t begin_index;
+     i18n_field_position_set_begin_index(field_position, begin_index);
+     ```
+
+   - To set the end index:
+
+     ```
+     int32_t end_index;
+     i18n_field_position_set_end_index(field_position, end_index);
+     ```
+
+4. To clone the field position pointer:
+
+   ```
+   i18n_field_position_h clone;
+   i18n_field_position_clone(field_pos, &clone);
+   ```
+
+5. When no longer needed, destroy the field position pointer:
+
+   ```
+   i18n_field_position_destroy(field_pos);
+   ```
+
+## Managing String Formatting
+
+Since Tizen 3.0, you can use the Format API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__FORMAT__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__FORMAT__MODULE.html) applications) to manage format objects, which derive from this module, and their string representations:
+
+1. To clone a format object:
+
+   ```
+   i18n_format_h original; /* original can be pointer to any object whose class derives from the Format module */
+   i18n_format_h clone;
+   i18n_format_clone(original, &clone);
+   ```
+
+2. To retrieve the locale from a format object:
+
+   ```
+   i18n_ulocale_data_locale_type_e type = I18N_ULOCALE_DATA_LOCALE_TYPE_ACTUAL_LOCALE;
+   char *language = NULL;
+   char *country = NULL;
+   i18n_format_get_locale(format, type, &language, &country);
+   /* For example, language is "en" and country is "US" */
+   ```
+
+3. To retrieve the string representation of a format object:
+
+   - Without a field position:
+
+     ```
+     double double_to_set = 13.0;
+     i18n_formattable_h formattable = NULL;
+     i18n_formattable_create_with_double(double_to_set, &formattable);
+
+     char *append_to = "Price: ";
+     i18n_format_format(format, formattable, &append_to);
+     /* append_to buffer now contains "Price: $13.00" string */
+     ```
+
+   - With a field position:
+
+     ```
+     double double_to_set = 13.0;
+     i18n_formattable_h formattable = NULL;
+     i18n_formattable_create_with_double(double_to_set, &formattable);
+     char *append_to = "Price: ";
+
+     i18n_field_position_h field_position = NULL;
+     i18n_field_position_create(&field_position);
+     i18n_format_format_with_field_position(format, formattable, &append_to, field_position);
+     /* Same result as example above */
+     ```
+
+4. To parse a string to a format object:
+
+   - Without a parse position:
+
+     ```
+     const char *source = "$1,234.56";
+     i18n_formattable_h result = NULL;
+     i18n_format_parse_object(format, source, &result);
+
+     double value = 0;
+     i18n_formattable_get_double(result, &value);
+     /* value variable now contains 1234.56 as double */
+     ```
+
+   - With a parse position:
+
+     ```
+     char *source = "$1,234.56 $456.78";
+     i18n_formattable_h result = NULL;
+     i18n_parse_position_h parse_position = NULL;
+     int32_t index = 10; /* Index set after 10th character in source string */
+     i18n_parse_position_create_with_index(index, &parse_position);
+
+     /* Parses from 10th character to next space character */
+     i18n_format_parse_object_with_parse_position(format, source, parse_position, &result);
+     i18n_parse_position_destroy(parse_position);
+
+     double value = 0;
+     i18n_formattable_get_double(result, &value);
+     /* Value retrieved is 456.78. If index was 0, result is 1234.56 */
+     ```
+
+5. When no longer needed, destroy the format object pointer:
+
+   ```
+   i18n_format_destroy(format);
+   ```
+
+### Converting Between Types
+
+You can use the Formattable API (in 
+
+mobile
+
+ and 
+
+wearable
+
+ applications) to convert between data types.
+
+To manage formattable objects:
+
+1. To create a formattable handler:
+
+   - Without a specified data type:
+
+     ```
+     i18n_formattable_h formattable;
+     i18n_formattable_create_default(&formattable);
+     ```
+
+   - With a specified data type, for example, `double`:`double value = 20;i18n_formattable_create_double(value, &formattable);`You can also create handles for `udate`, `long`, `int64`, `char` pointer, and formattable array.
+
+2. To clone a formattable object:
+
+   ```
+   i18n_formattable_h clone;
+   i18n_formattable_clone(formattable, &clone);
+   ```
+
+3. To retrieve formattable object information:
+
+   - To check whether the value in the formattable object is numeric:
+
+     ```
+     bool is_numeric;
+     i18n_formattable_is_numeric(formattable, &is_numeric);
+     ```
+
+   - To get the data type of the value in a formattable object:
+
+     ```
+     i18n_formattable_type_e type;
+     i18n_formattable_get_type(formattable, &type);
+     ```
+
+   - To retrieve the value of the formattable object, use the `i18n_formattable_get_xxx()` function corresponding to the value's data type:`double value;i18n_formattable_get_double(formattable, &value);`
+
+   - To compare whether 2 formattable objects are equal:
+
+     ```
+     bool equal;
+     i18n_formattable_equal(formattable, clone, &equal);
+     ```
+
+     You can also compare whether 2 objects are not equal, using the `i18n_formattable_not_equal()` function.
+
+4. To set a formattable object in a formattable array:
+
+   ```
+   i18n_formattable_h array[3] = {NULL};
+   i18n_formattable_h element;
+
+   i18n_formattable_create_with_formattable_array(array, 3, &formattable);
+   i18n_formattable_create_double(30, &element);
+
+   i18n_formattable_element_at(formattable, 0, &element);
+   ```
+
+5. To set the type of a formattable object, for example, to `int64_t`:`int64_t value = 15;i18n_formattable_set_int64(formattable, value);`You can also set the type to `double`, `array`, `udate`, `long`, or `string`, using the corresponding `i18n_formattable_set_xxx()` function.
+
+6. When no longer needed, destroy the formattable object pointer:
+
+   ```
+   i18n_formattable_destroy(formattable);
+   ```
+
+## Managing Measure Objects
+
+Since Tizen 3.0, you can use the Measure API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__MEASURE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__MEASURE__MODULE.html) applications) to create measure objects, containing a numerical value and a measurement unit.
+
+> **Note**  
+> A measure object is immutable, so if you want to change its value, you must create a new object with the new value.
+
+To manage measure objects:
+
+1. To create a measure object:
+
+   ```
+   i18n_measure_h measure;
+   i18n_formattable_h formattable;
+   i18n_measure_unit_h unit;
+   double value = 7;
+
+   i18n_formattable_create_with_double(value, &formattable);
+   i18n_measure_unit_create_gigabit(&unit);
+
+   i18n_measure_create(formattable, unit, &measure);
+   /* Created object contains "7 Gigabits" */
+   ```
+
+2. To clone a measure object:
+
+   ```
+   i18n_measure_h clone;
+   i18n_measure_clone(measure, &clone);
+   ```
+
+3. To get the numeric value:
+
+   ```
+   i18n_formattable_h formattable;
+   i18n_measure_get_number(measure, &formattable);
+   /* formattable contains 7 as double */
+   ```
+
+4. To get the measurement unit:
+
+   ```
+   i18n_measure_unit_h unit;
+   i18n_measure_get_unit(measure, &unit);
+   /* unit contains Gigabits value */
+   ```
+
+5. When no longer needed, destroy the measure object:
+
+   ```
+   i18n_measure_destroy(measure);
+   ```
+
+### Managing Measurement Units
+
+You can use the MeasureUnit API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__MEASURE__UNIT__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__MEASURE__UNIT__MODULE.html) applications) to create measure unit objects, which can be passed to the Measure or MeasureFormat (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html) applications) APIs.
+
+1. To create a liter unit object:
+
+   ```
+   i18n_measure_unit_h unit;
+   i18n_measure_unit_create_liter(&unit);
+   ```
+
+   You can create measure unit objects for various units, using the corresponding `i18n_measure_unit_create_xxx()` functions.
+
+2. To clone a measure unit object:
+
+   ```
+   i18n_measure_unit_h clone;
+   i18n_measure_unit_clone(unit, &clone);
+   ```
+
+3. To retrieve information about a measure unit object:
+
+   - To retrieve the unit type:
+
+     ```
+     char *type;
+     i18n_measure_unit_get_type(unit, &type);
+     ```
+
+   - To retrieve the unit subtype:
+
+     ```
+     char *subtype;
+     i18n_measure_unit_get_subtype(unit, &subtype);
+     ```
+
+4. To retrieve all available units:
+
+   ```
+   int32_t max = 20;
+   i18n_measure_unit_h array[20];
+   int32_t available;
+
+   i18n_measure_unit_get_available(max, &array, &available);
+   ```
+
+5. To retrieve the available units for a specific measure:
+
+   ```
+   int32_t max = 20;
+   const char *type = "volume"; /* Specify the measure */
+   i18n_measure_unit_h array[20];
+   int32_t available;
+
+   i18n_measure_unit_get_available_with_type(max, type, &array, &available);
+   ```
+
+6. To invoke a callback for each available measure unit:
+
+   1. Define the callback function:
+
+      ```
+      void
+      measure_unit_available_types_cb(const char *type_id, void *user_data)
+      {
+          char *text = (char *)user_data;
+          fprintf(stderr, "type_id : %s\n", text);
+
+          return false;
+      }
+      ```
+
+   2. Invoke the foreach function, using the callback and the data to pass to it as parameters.
+
+      The data passed in the second parameter is used as the `user_data` parameter in the callback.
+
+      ```
+      char *data = "data";
+      i18n_measure_unit_foreach_available_type(measure_unit_available_types_cb, data);
+      ```
+
+7. When no longer needed, destroy the measure unit object:
+
+   ```
+   i18n_measure_unit_destroy(unit);
+   ```
+
+### Formatting Measure Objects
+
+You can format measure objects using the MeasureFormat API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html) applications).
+
+To format measure objects:
+
+1. To create a format object:
+
+   ```
+   const char *language = "en";
+   const char *country = "US";
+   i18n_measure_format_h format;
+   i18n_measure_format_create(language, country, I18N_UMEASFMT_WIDTH_WIDE, &measure_format);
+   ```
+
+2. To clone a format object:
+
+   ```
+   i18n_format_h clone;
+   i18n_measure_format_clone(measure_format, &clone);
+   ```
+
+3. To format an object to produce a string:
+
+   ```
+   i18n_formattable_h formattable;
+   double double_to_set = 13.0;
+   i18n_formattable_create_with_double(double_to_set, &formattable);
+
+   const char *input = "Price: ";
+   int length = strlen(input);
+   char *append_to = (char *) malloc (sizeof(input[0]) * (length + 1));
+   strncpy(append_to, input, length + 1);
+
+   i18n_field_position_h field_position;
+   i18n_field_position_create_for_field(0, &field_position);
+   i18n_field_position_set_field(field_position, 1);
+
+   i18n_measure_format_format(measure_format, formattable, &append_to, field_position);
+   ```
+
+4. To parse a string to produce an object:
+
+   ```
+   i18n_formattable_h formattable;
+   i18n_parse_position_h parse_position;
+   i18n_parse_position_create(&parse_position);
+
+   i18n_unumber_format_h num_format;
+   i18n_uparse_error_s parse_err;
+   i18n_unumber_create(I18N_UNUMBER_NUMBERING_SYSTEM, NULL, -1,
+                       I18N_ULOCALE_US, &parse_err, &num_format);
+
+   const char *source = "X";
+   i18n_measure_format_parse_object(num_format, source, parse_position, &formattable);
+   ```
+
+5. To retrieve the currency formatter:
+
+   - For a specific locale:
+
+     ```
+     const char *language = I18N_ULOCALE_KOREAN;
+     const char *country = "KR";
+
+     i18n_measure_format_create_currency_format_from_locale(language, country, &measure_format);
+     ```
+
+   - For the default locale:
+
+     ```
+     i18n_measure_format_create_currency_format(&measure_format);
+     ```
+
+6. Since Tizen 4.0, you can:
+
+   - Format an object to produce a string:
+
+     ```
+     i18n_formattable_h formattable;
+     i18n_field_position_h field_position;
+     const char *sample_string = "Price: ";
+
+     i18n_uchar append_to[BUFSIZE] = {0};
+     i18n_ustring_copy_ua_n(append_to, sample_string, BUFSIZE);
+
+     const char *language = I18N_ULOCALE_ENGLISH;
+     const char *country = "US";
+     i18n_measure_format_create_currency_format_from_locale(language, country, &measure_format);
+
+     double double_to_set = 13.0;
+     i18n_formattable_create_with_double(double_to_set, &formattable);
+
+     i18n_field_position_create_for_field(I18N_FIELD_POSITION_DONT_CARE, &field_position);
+
+     int output_length = -1;
+     i18n_measure_format_format_buff(measure_format, formattable, field_position,
+                                     BUFSIZE, append_to, &output_length);
+     /* append_to buffer contains "Price: $13.00" string */
+     ```
+
+   - Format a measure object to produce a string:
+
+     ```
+     i18n_measure_unit_h measure_unit = NULL;
+     i18n_measure_unit_create_kilometer(&measure_unit);
+
+     double number = 6000;
+     i18n_formattable_h formattable = NULL;
+     i18n_formattable_create_with_double(number, &formattable);
+
+     i18n_measure_h measure;
+     i18n_measure_create(formattable, measure_unit, &measure);
+
+     int n_measures = 1;
+     i18n_field_position_h field_position;
+     i18n_uchar append_to[BUFSIZE] = {0};
+
+     i18n_field_position_create_for_field(I18N_FIELD_POSITION_DONT_CARE, &field_position);
+
+     int output_length = -1;
+     i18n_measure_format_format_measures(measure_format, measure, n_measures,
+                                         field_position, BUFSIZE, append_to, &output_length);
+     /* append_to buffer contains "6,000 kilometers" */
+     ```
+
+   - Format a measure per unit:
+
+     ```
+     i18n_measure_unit_h measure_unit;
+     i18n_measure_unit_h measure_unit_2;
+     i18n_measure_unit_create_second(&measure_unit);
+     i18n_measure_unit_create_kilometer(&measure_unit_2);
+
+     double number = 10;
+     i18n_formattable_h formattable = NULL;
+     i18n_formattable_create_with_double(number, &formattable);
+
+     i18n_measure_h measure = NULL;
+     i18n_measure_create(formattable, measure_unit_2, &measure);
+     ```
+
+
+     i18n_uchar append_to[BUFSIZE] = {0};
+     i18n_field_position_h field_position;
+     i18n_field_position_create_for_field(I18N_FIELD_POSITION_DONT_CARE, &field_position);
+    
+     int output_length = -1;
+     ret = i18n_measure_format_format_measure_per_unit(measure_format, measure, measure_unit,
+                                                       field_position, BUFSIZE, append_to, &output_length);
+     /* append_to buffer contains "10 kilometers per second" string */
+     ```
+
+7. When it is no longer needed, destroy the measure format object:
+
+   ```
+   i18n_measure_format_destroy(measure_format);
+   ```
+
+## Managing the Parse Position
+
+Since Tizen 3.0, you can use the ParsePosition API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__PARSE__POSITION__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__PARSE__POSITION__MODULE.html) applications) to track the current position while parsing.
+
+To manage the parse position:
+
+1. To create a parse position object:
+
+   - Without specifying a position index:
+
+     ```
+     i18n_parse_position_h parse_position;
+     i18n_parse_position_create(&parse_position);
+     ```
+
+   - At a specific position index:
+
+     ```
+     i18n_parse_position_h parse_position;
+     i18n_parse_position_create_with_index(new_text_offset, &parse_position);
+     ```
+
+2. To clone a parse position pointer:
+
+   ```
+   i18n_parse_position_h parse_position_clone;
+   i18n_parse_position_clone(parse_position, &parse_position_clone);
+   ```
+
+3. To manage the parse position index:
+
+   - To set the index:
+
+     ```
+     int32_t parse_position_index = 4;
+     i18n_parse_position_set_index(parse_position, parse_position_index);
+     ```
+
+   - To retrieve the index:
+
+     ```
+     int32_t parse_position_index;
+     i18n_parse_position_get_index(parse_position, &parse_position_index);
+     ```
+
+4. To calculate the parsed length:
+
+   ```
+   i18n_format_h num_format;
+   i18n_uparse_error_s parse_err;
+   i18n_unumber_create(I18N_UNUMBER_PERCENT, NULL, -1, I18N_ULOCALE_US, &parse_err, &num_format);
+
+   i18n_parse_position_h parse position;
+   i18n_parse_position_create_with_index(3, &parse_position);
+
+   i18n_formattable_h result;
+   char* text_to_parse = "1234567%";
+   int32_t begin;
+   int32_t end;
+   i18n_parse_position_get_index(parse_position, &begin);
+   i18n_format_parse_object_with_parse_position(num_format, text_to_parse, parse_position, &result);
+   i18n_parse_position_get_index(parse_position, &end);
+
+   int length = end - begin;
+   ```
+
+5. When it is no longer needed, destroy the parse position object:
+
+   ```
+   i18n_parse_position_destroy(parse_position);
+   ```
+
+## Managing Bidirectional Text
+
+Since Tizen 3.0, you can use the Ubidi API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__UBIDI__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__UBIDI__MODULE.html) applications) to implement the Unicode Bidirectional Algorithm.
+
+To manage bidirectional text:
+
+1. To create an Ubidi object:
+
+   - To create a default Ubidi object:
+
+     ```
+     i18n_ubidi_h ubidi;
+     i18n_ubidi_create(&ubidi);
+     ```
+
+   - To create a Ubidi object with preallocated memory for internal structures:
+
+     ```
+     i18n_ubidi_h ubidi;
+     int max_length = 100;
+     int max_run_count = 100;
+     i18n_ubidi_create(max_length, max_run_count, &ubidi);
+     ```
+
+2. To retrieve the paragraph details:
+
+   ```
+   int32_t para_start;
+   int32_t para_limit;
+   i18n_ubidi_level para_level;
+   i18n_ubidi_get_paragraph_by_index(ubidi, 2, &para_index, &para_limit, &para_level);
+   ```
+
+3. To retrieve Ubidi object information:
+
+   - To get the length:
+
+     ```
+     int32_t length;
+     i18n_ubidi_get_length(ubidi, &length);
+     ```
+
+   - To retrieve the number of runs:
+
+     ```
+     int32_t count;
+     i18n_ubidi_count_runs(ubidi, &count);
+     ```
+
+   - To retrieve the text direction:
+
+     ```
+     i18n_ubidi_direction_e direction;
+     i18n_ubidi_get_direction(ubidi, &direction);
+     ```
+
+4. To reorder the Ubidi string:
+
+   ```
+   uint16_t options = I18N_UBIDI_OUTPUT_REVERSE;
+   int32_t dest_size = 20;
+   i18n_uchar dest[dest_size];
+   int32_t output_length;
+   i18n_ubidi_write_reordered(ubidi, options, dest_size, dest, &output_length);
+   ```
+
+5. To retrieve the index map:
+
+   - To get the logical-to-visual map:
+
+     ```
+     int32_t index_map[20];
+     i18n_ubidi_get_logical_map(ubidi, index_map);
+     ```
+
+   - To get the visual-to-logical map:
+
+     ```
+     int32_t index_map[20];
+     i18n_ubidi_get_visual_map(ubidi, index_map);
+     ```
+
+6. When no longer needed, destroy the Ubidi object:
+
+   ```
+   i18n_ubidi_destroy(ubidi);
+   ```
+
+## Shaping Arabic Characters
+
+Since Tizen 3.0, you can use the Ushape API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__USHAPE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__USHAPE__MODULE.html) applications) to manage Arabic character shapes.
+
+- To replace all European digits with Extended Arabic-Indic digits:
+
+  ```
+  const i18n_uchar *source = "...arabic source...";
+  uint32_t options = I18N_USHAPE_DIGITS_EN2AN | I18N_USHAPE_DIGIT_TYPE_AN_EXTENDED;
+  const int32_t dest_size = 20;
+  i18n_uchar dest[dest_size];
+  int32_t dest_len;
+  i18n_ushape_shape_arabic(source, -1, options, dest_size, dest, &dest_len);
+  char buf[50];
+  i18n_ustring_copy_au(buf, dest);
+  ```
+
+- To replace all abstract letters with shaped letters, shape all tashkeel letters into the isolated forms, preserve Arabic Presentation Forms-A and Arabic Presentation Forms-B characters, and replace any combination of U+0651 with one of U+064C, U+064D, U+064E, U+064F, or U+0650 with U+FC5E, U+FC5F, U+FC60, U+FC61, or U+FC62, respectively:
+
+  ```
+  const i18n_uchar *source = "...arabic source...";
+  uint32_t options = I18N_USHAPE_LETTERS_SHAPE_TASHKEEL_ISOLATED | I18N_USHAPE_TEXT_DIRECTION_VISUAL_LTR
+                     | I18N_USHAPE_PRESERVE_PRESENTATION | I18N_USHAPE_AGGREGATE_TASHKEEL;
+  const int32_t dest_size = 20;
+  i18n_uchar dest[dest_size];
+  int32_t dest_len;
+  i18n_ushape_shape_arabic(source, -1, options, dest_size, dest, &dest_len);
+  char buf[50];
+  i18n_ustring_copy_au(buf, dest);
+  ```
+
+## Converting Time Scales
+
+Since Tizen 3.0, you can use the Utmscale API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__UTMSCALE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__UTMSCALE__MODULE.html) applications) to convert binary datetimes between various platform-dependent time scales.
+
+To convert a datetime value:
+
+1. To retrieve conversion constants for a specific time scale, use the `i18n_utmscale_get_time_scale_value()` function with the values of the `i18n_utmscale_value_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__UTMSCALE__MODULE.html#ga34893d20b446359e32767b57e6cdde29) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__UTMSCALE__MODULE.html#ga34893d20b446359e32767b57e6cdde29) applications):`int64_t value = NULL;i18n_utmscale_get_time_scale_value(I18N_UTMSCALE_JAVA_TIME, I18N_UTMSCALE_VALUE_UNITS, &value);/* Returns 10000, the number of universal time units (ticks) in each Java time unit (milliseconds) */`
+
+2. To convert the retrieved `int64_t` Java time to universal time scale:`int64_t universal_time = NULL;i18n_utmscale_from_int64(value, I18N_UTMSCALE_ICU4C_TIME, &universal_time);`
+
+3. To convert the universal time value back to Java time:
+
+   ```
+   i18n_utmscale_to_int64(universal_time, I18N_UTMSCALE_JAVA_TIME, &value);
+   ```
+
+## Managing Pluralization Rules
+
+Since Tizen 4.0, you can use the PluralRules API (in 
+
+mobile
+
+ and 
+
+wearable
+
+ applications) to create rules for number-dependent word representations.
+
+To manage plural rules:
+
+1. Create a plural rules object:
+
+   - Without a rules description:
+
+     ```
+     i18n_plural_rules_h rules;
+     i18n_plural_rules_create(&rules);
+     ```
+
+   - With a rules description as a string:
+
+     ```
+     i18n_plural_rules_h rules;
+     const char *description = "one: n is 1; few: n in 2..4";
+     i18n_plural_rules_create_rules_from_descr(description, &rules);
+     ```
+
+2. To clone a plural rules object:
+
+   ```
+   i18n_plural_rules_h clone;
+   i18n_plural_rules_clone(rules, &clone);
+   ```
+
+3. To retrieve predefined rules for a specific locale:
+
+   ```
+   i18n_plural_rules_for_locale("en", "US", I18N_UPLURAL_TYPE_CARDINAL, &rules);
+   ```
+
+4. To retrieve the keyword for the first rule that applies to the given number:
+
+   ```
+   int32_t number = 1;
+   i18n_uchar buffer[BUFSIZE] = { 0 };
+
+   int output_length = -1;
+   i18n_plural_rules_select_int32(rules, number, BUFSIZE, buffer, &length);
+   ```
+
+   You can also retrieve the keyword for a double-type number, using the `i18n_plural_rules_select_double()` function.
+
+5. To retrieve keyword information:
+
+   - To retrieve all keywords from the plural rules object:
+
+     ```
+     i18n_uenumeration_h result = NULL;
+     i18n_plural_rules_get_keywords(rules, &result);
+     ```
+
+   - To retrieve sample values for a specific keyword:
+
+     ```
+     double array[BUFSIZE] = {0};
+     const char *keyword = "few";
+     int32_t count = 0;
+     i18n_plural_rules_get_samples(rules, keyword, array, BUFSIZE, &count);
+     ```
+
+   - To check whether a given keyword is defined in the rules:
+
+     ```
+     i18n_ubool is_keyword = false;
+     const char *keyword = "few";
+     i18n_plural_rules_is_keyword(rules, keyword, &is_keyword);
+     ```
+
+   - To retrieve the default keyword:
+
+     ```
+     i18n_uchar buffer[BUFSIZE] = {0};
+     int32_t length = 0;
+     i18n_plural_rules_get_keyword_other(rules, BUFSIZE, buffer, &length);
+     ```
+
+6. When no longer needed, destroy the plural rules object:
+
+   ```
+   i18n_plural_rules_destroy(rules);
+   ```
+
 ## Retrieving the ICU Version
 
-Since Tizen 4.0, you can retrieve the current ICU library version by using the Uversion API.
+Since Tizen 4.0, you can retrieve the current ICU library version by using the Uversion API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__UVERSION__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__UVERSION__MODULE.html) applications).
 
 To retrieve the current version:
 
-1. To get the current ICU version, use the `i18n_uversion_get_version()` function, which returns the version number in a `uversion` array, in hexadecimal format:
-
-    ```
-    i18n_uversion_info array;
-    i18n_uversion_get_version(array);
-    ```
-
+1. To get the current ICU version, use the `i18n_uversion_get_version()` function, which returns the version number in a `uversion` array, in hexadecimal format:`i18n_uversion_info array;i18n_uversion_get_version(array);`
 2. To convert the version number between hexadecimal and dotted decimal format:
-   - To convert the version number from hexadecimal format into a string in dotted decimal format, use the `i18n_uversion_to_string()` function:
-
-    ```
-    char *decimal_version;
-    i18n_uversion_to_string(array, decimal_version);
-    ```
-
-   - To convert the version number from a string in dotted decimal format to hexadecimal format, use the `i18n_uversion_from_string()` function:
-
-    ```
-    char *decimal_version = "57.1";
-    i18n_uversion_from_string(decimal_version, version);
-    ```
-
-    If your source string is of the `i18n_uchar` type, use the `i18n_uversion_from_ustring()` function instead.
+   - To convert the version number from hexadecimal format into a string in dotted decimal format, use the `i18n_uversion_to_string()` function:`char *decimal_version;i18n_uversion_to_string(array, decimal_version);`
+   - To convert the version number from a string in dotted decimal format to hexadecimal format, use the `i18n_uversion_from_string()` function:`char *decimal_version = "57.1";i18n_uversion_from_string(decimal_version, version);`If your source string is of the `i18n_uchar` type, use the `i18n_uversion_from_ustring()` function instead.
 
 ## Iterating through Strings
 
-Since Tizen 4.0, you can use UcharIter API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__UCHARITER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__UCHARITER__MODULE.html) applications) to safely iterate through strings:
+Since Tizen 4.0, you can use UcharIter API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__BASE__UTILS__I18N__UCHAR__ITER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__BASE__UTILS__I18N__UCHAR__ITER__MODULE.html) applications) to safely iterate through strings:
 
 1. Create a UCharIter pointer:
 
@@ -1488,13 +2928,7 @@ Since Tizen 4.0, you can use UcharIter API (in [mobile](../../../../org.tizen.na
 
 2. Set up iteration over a string of a specific type:
 
-   - `i18n_uchar` string:
-
-    ```
-    i18n_uchar *uchar_string = "UChar test string";
-    int32_t ulen = i18n_ustring_get_length(uchar_string);
-    i18n_uchar_iter_set_string(uchar_iter, uchar_string, ulen);
-    ```
+   - `i18n_uchar` string:`i18n_uchar *uchar_string = "UChar test string";int32_t ulen = i18n_ustring_get_length(uchar_string);i18n_uchar_iter_set_string(uchar_iter, uchar_string, ulen);`
 
    - UTF-16BE string:
 

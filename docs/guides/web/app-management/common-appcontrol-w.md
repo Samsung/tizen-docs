@@ -8,15 +8,18 @@
 
 An application control provides functions for launching other applications with a specific operation, URI, MIME type, and extra data. The requesting application can get a result back from the launched application. This topic introduces the common application controls that you can use. 
 
-The Application API is mandatory for both Tizen mobile and wearable profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The Application API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
 All the common application controls are supported in mobile applications. The input delegator is supported in mobile and TV applications since Tizen 4.0, with limited features. In wearable applications, only the map and input delegator application controls are supported.
 
-​	**Note**	It is possible that no application suitable to receive the application control exists. In that case, before you send the launch request, verify that a suitable application exists.
+> **Note**
+> It is possible that no application suitable to receive the application control exists. In that case, before you send the launch request, verify that a suitable application exists.
 
-## Browser in Mobile Applications
+## Browser
 
 ### Performing a Web Search
+
+The search operation is supported in mobile and TV applications only.
 
 To find what you are looking for on the Web, use the `http://tizen.org/appcontrol/operation/search` operation.
 
@@ -51,7 +54,9 @@ tizen.application.launchAppControl(appControl, null, function() {
 
 ### Loading a Web Page
 
-To open a web page, use the `http://tizen.org/appcontrol/operation/view` operation and specify the Web URL in the URI.
+The view operation is supported in mobile applications only.
+
+To open a Web page, use the `http://tizen.org/appcontrol/operation/view` operation and specify the Web URL in the URI.
 
 **Figure: Loading a Web page**
 
@@ -89,7 +94,8 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-## Calendar in Mobile Applications
+## Calendar
+The calendar application control is supported in mobile applications only.
 
 ### Adding a Calendar Event
 
@@ -211,7 +217,7 @@ For example: `file://<media storage path>/file.vcs`
 
 #### MIME Type
 
-- `application/vnd.tizen.calendar`		When viewing an event by event ID, the event ID (ID in the `_calendar_event` view) extra data and `application/vnd.tizen.calendar` MIME type must be specified.		
+- `application/vnd.tizen.calendar`		If viewing an event by event ID, the event ID (ID in the `_calendar_event` view) extra data and `application/vnd.tizen.calendar` MIME type must be specified.		
 - `text/x-vcalendar` (for vcalendar file)
 - `text/vcalendar` (for vcalendar file)
 
@@ -295,7 +301,8 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-## Call in Mobile Applications
+## Call
+The call application control is supported in mobile and wearable applications only.
 
 ### Making a Phone Call
 
@@ -363,7 +370,8 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-## Camera in Mobile Applications
+## Camera
+The camera application control is supported in mobile applications only.
 
 ### Capturing a Picture or Video
 
@@ -481,9 +489,10 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-## Contact in Mobile Applications
+## Contact
 
 ### Adding a Contact
+The contact adding operation is supported in mobile and wearable applications only. Wearable applications support the `http://tizen.org/appcontrol/data/phone` and `http://tizen.org/appcontrol/data/name` keys only as extra input.
 
 To add a new contact, use the `http://tizen.org/appcontrol/operation/add` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
@@ -533,6 +542,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ### Editing a Contact
+The contact editing operation is supported in mobile applications only.
 
 To edit a known contact, use the `http://tizen.org/appcontrol/operation/edit` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
@@ -582,6 +592,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ### Viewing a Contact
+The contact viewing operation is supported in mobile and wearable applications only. Wearable applications support the `application/vnd.tizen.contact` MIME type only.
 
 To display a specified contact in the contact database, use the `http://tizen.org/appcontrol/operation/view` operation. To specify various contact details, refer to the extras defined below.
 
@@ -601,7 +612,7 @@ To display a specified contact from a vcard file, use the `file:` URI. To displa
 
 #### MIME Type
 
-- `application/vnd.tizen.contact`	When viewing a contact by person ID, the person ID (ID in the `_contact_person` view) extra data and `application/vnd.tizen.contact` MIME type must be specified.	
+- `application/vnd.tizen.contact`	If viewing a contact by person ID, the person ID (ID in the `_contact_person` view) extra data and `application/vnd.tizen.contact` MIME type must be specified.	
 - `text/vcard`
 - `text/x-vcard`
 
@@ -641,6 +652,8 @@ function launchViewVcard(uri) {
 ```
 
 ### Selecting a Contact
+
+The contact selection operation is supported in mobile and wearable applications only. Wearable applications support only the `single` value in the `http://tizen.org/appcontrol/data/selection_mode` key and the `id` and `phone` values in the `http://tizen.org/appcontrol/data/type` key.
 
 To select a specified contact in the user's contacts, use the `http://tizen.org/appcontrol/operation/pick` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
@@ -706,6 +719,7 @@ function launchContactPick(selectionMode, dataType) {
 ```
 
 ### Sharing a Contact
+The contact sharing operation is supported in mobile applications only.
 
 To share a single contact, use the `http://tizen.org/appcontrol/operation/share` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
@@ -742,6 +756,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ### Sharing Multiple Contacts
+The multiple contact sharing operation is supported in mobile applications only.
 
 To share a set of contacts, use the `http://tizen.org/appcontrol/operation/multi_share` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
@@ -776,7 +791,8 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-## Email in Mobile Applications
+## Email
+The email application control is supported in mobile applications only.
 
 ### Composing an Email
 
@@ -847,7 +863,7 @@ To share a single file of any MIME type in an email message, use the `http://tiz
 
 Any MIME type that your application needs, such as `image/jpg`, `video/*`, or `*/*`
 
-When sharing a single item through `http://tizen.org/appcontrol/data/path` and the URI is specified with `mailto:`, the MIME type must be explicitly set. 
+If sharing a single item through `http://tizen.org/appcontrol/data/path` and the URI is specified with `mailto:`, the MIME type must be explicitly set. 
 
 #### Extra Input
 
@@ -962,7 +978,8 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-## File Storage in Mobile Applications
+## File Storage
+The file storage application control is supported in mobile applications only.
 
 ### Retrieving a Specific Type of File
 
@@ -1035,11 +1052,11 @@ tizen.application.launchAppControl(appControl, null, function() {
 
 ## Input Delegator
 
-​        **Note**        The input delegator is supported in wearable applications since Tizen 2.3.2, and in mobile and TV applications, with limited features, since Tizen 4.0.    
+​The input delegator application control is supported in wearable applications since Tizen 2.3.2, and in mobile and TV applications since Tizen 4.0. Some of the input types are not supported in mobile and TV applications.
 
 ### Receiving User Input
 
-To receive specific type of input from the user, use the `http://tizen.org/appcontrol/operation/get_input` operation. To give an option for the input delegator, refer to the extras defined below.
+To receive a specific type of input from the user, use the `http://tizen.org/appcontrol/operation/get_input` operation. To give an option for the input delegator, refer to the extras defined below.
 
 **Figure: Receiving user input**
 
@@ -1094,7 +1111,8 @@ tizen.application.launchAppControl(appControl, null, function() {
 
 ## Map
 
-​	**Note**	In wearable applications, this application control is available since Tizen 2.3.2.
+​The map application control is supported in mobile and wearable applications only. In wearable applications, this application control is available since Tizen 2.3.2.
+
 
 ### Showing a Location on a Map
 
@@ -1183,9 +1201,10 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, appControlReplyCallback);
 ```
 
-## Message in Mobile Applications
+## Message
 
 ### Composing a Message
+The message composition operation is supported in mobile applications only.
 
 To compose a new message, use the `http://tizen.org/appcontrol/operation/compose` operation. To specify various message details, refer to the extras defined below.
 
@@ -1228,6 +1247,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ### Sharing a Single Item Using a Message
+The single item sharing operation is supported in mobile applications only.
 
 To share a single item using an MMS message, use the `http://tizen.org/appcontrol/operation/share` operation.
 
@@ -1248,7 +1268,7 @@ To share a single item using an MMS message, use the `http://tizen.org/appcontro
 
 Any MIME type that your application needs, such as `image/jpg`, `video/*`, or `*/*`
 
-When sharing a single item through `http://tizen.org/appcontrol/data/path` and the URI is specified with `mmsto:`, the MIME type must be explicitly set.
+If sharing a single item through `http://tizen.org/appcontrol/data/path` and the URI is specified with `mmsto:`, the MIME type must be explicitly set.
 
 #### Extra Input
 
@@ -1272,6 +1292,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ### Sharing Multiple Items Using a Message
+The multiple item sharing operation is supported in mobile applications only.
 
 To share multiple items using an MMS message, use the `http://tizen.org/appcontrol/operation/multi_share` operation.
 
@@ -1319,6 +1340,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ### Sharing Text in a Message
+The text sharing operation is supported in mobile and wearable applications only.
 
 To share any text with an SMS or MMS message, use the `http://tizen.org/appcontrol/operation/share_text` operation.
 
@@ -1362,9 +1384,10 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-## Multimedia in Mobile Applications
+## Multimedia
 
 ### Playing an Audio or Video File
+The audio or video file playback operation is supported in mobile and wearable applications only.
 
 To play an audio or video file, use the `http://tizen.org/appcontrol/operation/view` operation with a URI. To specify various details, refer to the extras defined below.
 
@@ -1406,6 +1429,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ### Viewing an Image File
+The image file viewing operation is supported in mobile and wearable applications only.
 
 To display an image file, use the `http://tizen.org/appcontrol/operation/view` operation with a URI. To specify various details, refer to the extras defined below.
 
@@ -1437,6 +1461,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 ```
 
 ### Retrieving a Media File
+The media file retrieval operation is supported in mobile and wearable applications only. Wearable applications support the `image/*` MIME type only.
 
 To retrieve a specific type of media file, use the `http://tizen.org/appcontrol/operation/pick` operation. To specify various details, refer to the extras defined below.
 
@@ -1477,7 +1502,9 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-## System Settings in Mobile Applications
+## System Settings
+The system settings application control is supported in mobile applications only.
+
 
 ### Showing System Settings
 
@@ -1504,7 +1531,9 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-## Settings for Bluetooth in Mobile Applications
+## Settings for Bluetooth
+The Bluetooth settings application control is supported in mobile and wearable applications only.
+
 
 ### Showing Bluetooth Settings to Activate Bluetooth
 
@@ -1556,13 +1585,14 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-## Settings for Location in Mobile Applications
+## Settings for Location
+The location settings application control is supported in mobile applications only.
 
 ### Showing Location Settings
 
 To launch the location setting application to allow the user to configure the source of the location information, use the `http://tizen.org/appcontrol/operation/setting/location` operation.
 
-If the location service is not active when an application tries to use the `HumanActivityMonitorManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/humanactivitymonitor.html) or [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/humanactivitymonitor.html) applications), an error occurs. To solve the problem, the application can try to launch the location setting application to let the user enable the location service. The user can activate the GPS, network positioning using the Wi-Fi Positioning System (WPS) and cellular network, or both.
+If the location service is not active when an application tries to use the `HumanActivityMonitorManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/humanactivitymonitor.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/humanactivitymonitor.html) applications), an error occurs. To solve the problem, the application can try to launch the location setting application to let the user enable the location service. The user can activate the GPS, network positioning using the Wi-Fi Positioning System (WPS) and cellular network, or both.
 
 **Figure: Showing location settings**
 
@@ -1585,7 +1615,8 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-## Settings for NFC in Mobile Applications
+## Settings for NFC
+The NFC settings application control is supported in mobile applications only.
 
 ### Showing NFC Settings
 
@@ -1618,7 +1649,8 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-## Settings for Wi-Fi in Mobile Applications
+## Settings for Wi-Fi
+The Wi-Fi settings application control is supported in mobile applications only.
 
 ### Showing Wi-Fi Settings
 
@@ -1645,7 +1677,8 @@ tizen.application.launchAppControl(appControl, null, function() {
 }, null);
 ```
 
-## Voice Recorder in Mobile Applications
+## Voice Recorder
+The voice recorder application control is supported in wearable applications only.
 
 ### Recording Audio
 

@@ -11,10 +11,10 @@ You can use the following security features in your native applications:
 You can provide a secure repository for keys, certificates, and sensitive data related to users and their password-protected applications. You can also use secure cryptographic operations for non-exportable keys without revealing the key values to clients.
 
 - [Privilege Information](privilege-n.md)
-You can retrieve information about existing permissions granted by a privilege The information can be delivered to the user as a notification.
+You can retrieve information about existing permissions granted by a privilege. The information can be delivered to the user as a notification.
 
 - [Privacy-related Permissions](requesting-permissions-n.md)
-You can check current permissions for privacy-related privileges and request user permission to use specifed privileges.
+YYou can check current permissions for privacy-related privileges and request user permission to use specific privileges.
 
 - [Cryptographic Operations](yaca-n.md)
 You can encrypt and decrypt data with symmetric or asymmetric encryption, and manage keys with YACA (Yet Another Crypto API). You can also digest messages and create digital signatures.

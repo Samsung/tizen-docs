@@ -8,7 +8,7 @@ This feature is supported in wearable applications only.
 
 Genlist is a UI component that displays a scrollable list of items. It allows you to manage a lot of items while still being fast and having a low memory footprint, as only the visible items are allocated in the memory.
 
-For more information, see the [Genlist](../../../../../org.tizen.native.wearable.apireference/group__Genlist.html) API.
+For more information, see the [Genlist](../../../../../org.tizen.native.wearable.apireference/group__Elm__Genlist.html) API.
 
 **Figure: Genlist component**
 
@@ -121,13 +121,10 @@ To manage items:
 
   To help inspect the list items, move to the item at the top of the list with the `elm_genlist_first_item_get()` function, which returns the item pointer. The `elm_genlist_last_item_get()` function moves to the item at the end of the list. The `elm_genlist_item_next_get()` and `elm_genlist_item_prev_get()` functions move to the next and previous items relative to the indicated item. Using these calls you can go through the entire item list or tree.
 
-  **Note**
-
-  As a tree, the items are flattened on the list, so the `elm_genlist_item_parent_get()` function gives you the name of the parent item (even to skip them if needed).
-
-  The `elm_genlist_item_show()` function scrolls the scroller to show the desired item as visible.
-
-  The `elm_object_item_data_get()` function returns the data pointer set by the item creation functions.
+  > **Note**
+  > As a tree, the items are flattened on the list, so the `elm_genlist_item_parent_get()` function gives you the name of the parent item (even to skip them if needed).
+  > The `elm_genlist_item_show()` function scrolls the scroller to show the desired item as visible.
+  > The `elm_object_item_data_get()` function returns the data pointer set by the item creation functions.
 
 - Update items:
 
@@ -139,9 +136,8 @@ To select or deselect items manually, use the `elm_genlist_item_selected_set()` 
 
 To prevent a selection, you can disable an item with the `elm_object_item_disabled_set()` function.
 
-**Note**
-
-Calling this function does not show or hide any child of an item (if it is a parent). You must manually delete and create them on the callbacks of the `expanded` or `contracted` signals.
+> **Note**  
+> Calling this function does not show or hide any child of an item (if it is a parent). You must manually delete and create them on the callbacks of the `expanded` or `contracted` signals.
 
 ## Using the Genlist Callbacks
 
@@ -185,10 +181,8 @@ To receive notifications about the genlist events, listen for the following sign
 - `language,changed` The program language is changed.The `event_info` callback parameter is `NULL`.
 - `tree,effect,finished`: The genlist tree effect is finished.The `event_info` callback parameter is `NULL`.
 
-**Note**
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

@@ -1,5 +1,5 @@
 # Checking Logs with Log View
-# Dependencies
+## Dependencies
 
 - Tizen Studio 1.0 and Higher
 
@@ -30,7 +30,7 @@ Each device has at least 1 default log tab associated with it. If a device is co
   2. Enter the tab name in the **Name** field and select a device in the **Device** list.
   3. Enter the search keywords in the **Tag**, **Pid**, and **Message** fields.
   4. Click **OK**.
-  ![Adding a log tab](./media/log_view_add_tab.png)
+     ![Adding a log tab](./media/log_view_add_tab.png)
 - Removing a log tab:
   1. Click the log tab to be removed.
   2. Click the **Remove LogTab** button (![Remove LogTab icon](./media/log_view_icon_remove_tab.png)).

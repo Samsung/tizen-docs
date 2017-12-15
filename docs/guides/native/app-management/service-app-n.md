@@ -87,13 +87,13 @@ Pay specific attention to the following attributes:
 
 - `auto-restart`If set to `true`, the application restarts whenever it terminates abnormally. If the application is running, it is launched after installing or updating the package.
 
-  **Note**
-  This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices. Because of this, the `auto-restart` attribute used in a lower API version package than 2.4 is ignored on devices with the Tizen platform version 2.4 and higher.
+  > **Note**  
+  > This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices. Because of this, the `auto-restart` attribute used in a lower API version package than 2.4 is ignored on devices with the Tizen platform version 2.4 and higher.
 
 - `on-boot`If set to `true`, the application launches on boot time, and after installing or updating the package. The application does not start if this attribute is removed after updating the package.
 
-  **Note**
-  This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices. Because of this, the `on-boot` attribute used in a lower API version package than 2.4 is ignored on devices with the Tizen platform version 2.4 and higher.
+  > **Note**  
+  > This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices. Because of this, the `on-boot` attribute used in a lower API version package than 2.4 is ignored on devices with the Tizen platform version 2.4 and higher.
 
 The following table defines the behaviors resulting from the attribute combinations:
 

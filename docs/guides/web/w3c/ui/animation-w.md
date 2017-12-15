@@ -103,7 +103,8 @@ The following code snippet demonstrates how to use animation properties:
 </body>
 ```
 
-​	**Note**	The `hover` pseudo class in Tizen maintains a `mouseover` state when an element is tapped, and becomes a `mouseout` state when another element is tapped.
+> **Note**
+> The `hover` pseudo class in Tizen maintains a `mouseover` state when an element is tapped, and becomes a `mouseout` state when another element is tapped.
 
 The `animation` property allows you to define all the animation properties in a shorthand mode in the order of `animation-name` | `animation-duration` | `animation-timing-function` | `animation-delay` | `animation-iteration-count` | `animation-direction` | `animation-fill-mode`. If you omit a property value, a default value is used instead.
 
@@ -130,7 +131,7 @@ For the complete source code related to this use case, see the following files:
 
 ## Creating a Logo Animation
 
-To enhance the user experience of your application, you must learn to create a logo animation, where element properties can be assigned and changed for each element and keyframe. The logo animation is similar to the animation that appears when a Tizen device (or the emulator) is switched on:
+You can create an animation where element properties can be assigned and changed for each element and keyframe. The logo animation in the following example is similar to the animation that appears when a Tizen device (or the emulator) is switched on:
 
 1. No elements are initially shown on the screen.  
 2. The Tizen logo gradually appears in the middle of the screen, and as it moves to the right, it becomes smaller.
@@ -205,7 +206,8 @@ To create a logo animation:
       }
       ```
 
-      ​	**Note**	If the 100% keyframe is not defined, the animation is executed based on the original properties, and the logo size increases to its original size at the end.
+	> **Note**
+	> If the 100% keyframe is not defined, the animation is executed based on the original properties, and the logo size increases to its original size at the end.
 
    3. Create the keyframes to implement the flow for each letter in the word "TIZEN":
 

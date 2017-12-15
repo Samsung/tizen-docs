@@ -5,7 +5,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
 
-Tizen enables you to access local storage to read file information. In mobile applications, you can also manipulate files by accessing sandboxed file systems.
+You can access local storage to read file information. In mobile applications, you can also manipulate files by accessing sandboxed file systems.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -56,7 +56,8 @@ Reading basic information, such as file name, size, MIME type, modification date
    <div id="selectedFileInfoList"></div>
    ```
 
-   ​	**Note**	To enable multiple upload, use the `multiple` attribute.
+	> **Note**	
+	> To enable multiple upload, use the `multiple` attribute.
 
 2. Create a `FileList` instance (in [mobile](http://www.w3.org/TR/2015/WD-FileAPI-20150421/#dfn-filelist) and [wearable](http://www.w3.org/TR/2011/WD-FileAPI-20111020/#dfn-filelist) applications):
 
@@ -254,7 +255,8 @@ Requesting access to sandboxed sections of a local file system is a useful file 
    </script>
    ```
 
-   ​	**Note**	The `requestFileSystem()` method is created in the Web application program when it is initially called.The directory file in the file system root can be searched, created and deleted by accessing local file system.
+> **Note**	
+> The `requestFileSystem()` method is created in the Web application program when it is initially called.The directory file in the file system root can be searched, created and deleted by accessing local file system.
 
 ### Source Code
 
@@ -321,7 +323,8 @@ Reading a file or directory in a sandboxed section of a local file system is a u
  </script>
  ```
 
- ​**Note**	For error handling, see [Accessing a Sandboxed File System](./w3c/storage/file-w.md#access).
+	> ​**Note**	 
+	> For error handling, see [Accessing a Sandboxed File System](./w3c/storage/file-w.md#access).
 
 **Figure: Displaying files**
 
@@ -377,7 +380,8 @@ Creating a directory or file in a sandboxed section of a local file system is a 
     </script>
     ```
 
-    **Note**	For error handling, see [Accessing a Sandboxed File System](./w3c/storage/file-w.md#access).
+> **Note**
+> For error handling, see [Accessing a Sandboxed File System](./w3c/storage/file-w.md#access).
 
     **Figure: Adding a file**![Adding a file](./media/file5.png)
 
@@ -422,7 +426,8 @@ Deleting a directory or file in a sandboxed section of a local file system is a 
    </script>
    ```
 
-   **Note**	For error handling, see [Accessing a Sandboxed File System](./w3c/storage/file-w.md#access).
+> **Note**
+> For error handling, see [Accessing a Sandboxed File System](./w3c/storage/file-w.md#access).
 
    **Figure: Deleting files**![Deleting files](./media/file6.png)
 

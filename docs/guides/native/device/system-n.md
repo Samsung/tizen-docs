@@ -41,8 +41,8 @@ To obtain the information, query a feature or system key.
 | [Build](#build)                    | [Model name](#modelname)       | [Sound](#sound)                  | -                                |
 | [Manufacturer](#manufacturer)      | [Platform](#platformsys)       | [TizenID](#tizenid)              | -                                |
 
-**Note**
-Some device-specific information keys look similar to feature keys for application filtering, but their usage differs. Feature keys for device-specific information are used to determine whether the feature is supported in the system. Feature keys for application filtering let the Tizen Store filter applications based on features.
+> **Note**  
+> Some device-specific information keys look similar to feature keys for application filtering, but their usage differs. Feature keys for device-specific information are used to determine whether the feature is supported in the system. Feature keys for application filtering let the Tizen Store filter applications based on features.
 
 ## Prerequisites
 
@@ -298,7 +298,7 @@ The following table lists the network feature keys.
 | Key                                      | Type   | Description                              |
 | ---------------------------------------- | ------ | ---------------------------------------- |
 | `http://tizen.org/feature/network.bluetooth` | `bool` | The platform returns `true` for this key, if the device supports Bluetooth. |
-| `http://tizen.org/feature/network.bluetooth.audio.call` | `bool` | The platform returns `true` for this key, if the device supports Bluetooth Handsfree Profile (HFP). |
+| `http://tizen.org/feature/network.bluetooth.audio.call` | `bool` | The platform returns `true` for this key, if the device supports Bluetooth Hands-free Profile (HFP). |
 | `http://tizen.org/feature/network.bluetooth.audio.controller` | `bool` | The platform returns `true` for this key, if the device supports the Bluetooth Advanced Audio Distribution (A2DP) sink feature and the Bluetooth Audio Video Remote Control (AVRCP) controller feature. |
 | `http://tizen.org/feature/network.bluetooth.audio.media` | `bool` | The platform returns `true` for this key, if the device supports Bluetooth Advanced Audio Distribute Profile (A2DP). |
 | `http://tizen.org/feature/network.bluetooth.health` | `bool` | The platform returns `true` for this key, if the device supports Bluetooth Health Device Profile (HDP). |

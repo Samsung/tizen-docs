@@ -13,7 +13,7 @@ The main features of the Battery Status API include:
 
 - Retrieving the battery status   
 
-  You can use the attributes of the `BatteryManager` interface (in [mobile](https://www.w3.org/TR/2016/CR-battery-status-20160707/#the-batterymanager-interface) and [wearable](http://www.w3.org/TR/2012/CR-battery-status-20120508/#batterymanager-interface) applications) to [check the battery status information](./w3c/device/battery-w.md#retrieve), such as battery charging status, remaining charging time (until fully charged), remaining battery life (until battery is empty), and battery charge level.
+  You can use the attributes of the `BatteryManager` interface (in [mobile](https://www.w3.org/TR/2016/CR-battery-status-20160707/#the-batterymanager-interface) and [wearable](http://www.w3.org/TR/2012/CR-battery-status-20120508/#batterymanager-interface) applications) to [check the battery status information](#retrieve), such as battery charging status and battery charge level.
 
 - Detecting battery status changes
 
@@ -44,7 +44,7 @@ To enhance the user interaction with the device, you must learn to retrieve and 
    </script>
    ```
 
-3. Use the attributes of the `BatteryManager` interface (in [mobile](https://www.w3.org/TR/2016/CR-battery-status-20160707/#the-batterymanager-interface) and [wearable](http://www.w3.org/TR/2012/CR-battery-status-20120508/#batterymanager-interface) applications) to display the battery charging status, remaining charging time, remaining battery life, and battery charge level:
+3. Use the attributes of the `BatteryManager` interface (in [mobile](https://www.w3.org/TR/2016/CR-battery-status-20160707/#the-batterymanager-interface) and [wearable](http://www.w3.org/TR/2012/CR-battery-status-20120508/#batterymanager-interface) applications) to display the battery charging status and battery charge level:
 
    ```
    <script>

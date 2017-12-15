@@ -110,7 +110,8 @@ The array buffer view shares information between views of all types, and has the
 
   2 The `Uint8ClampedArray` is a special view, and it replaces the `CanvasPixelArray`.
 
-  ​	**Note**	There are no restrictions related to sorting the typed array view types.
+	> **Note**	
+	> There are no restrictions related to sorting the typed array view types.
 
 - DataView view types
 
@@ -143,7 +144,8 @@ To handle binary data in your application with JavaScript, you must learn to acc
    </script>
    ```
 
-   ​	**Note**	In the above code, to access a buffer with an array of 16-bit signed integers, use the `Int16Array` instance that references an array buffer.
+	> **Note**
+	> In the above code, to access a buffer with an array of 16-bit signed integers, use the `Int16Array` instance that references an array buffer.
 
 2. Create a typed array view:
 
@@ -268,7 +270,8 @@ To handle binary data in your application with JavaScript, you must learn to del
      </script>
      ```
 
-   - ​	**Note**	The pixel array of a canvas can be created and edited without direct manipulation of the canvas element.  
+	> **Note**	
+	> The pixel array of a canvas can be created and edited without direct manipulation of the canvas element.  
 
 3. For the XMLHttpRequest API (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#httpreq) and [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#httpreq) applications), set the response type of the `XMLHttpRequest` object as `arraybuffer` to receive a typed array response. This allows you to parse the binary file through the network.
 

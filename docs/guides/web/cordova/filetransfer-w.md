@@ -8,7 +8,7 @@
 
 You can transfer files using HTTP requests, and download and upload files. You can also track a transfer's progress and abort it as needed. The default HTTP method is `POST`, but `PUT` is also supported.
 
-The File Transfer API is mandatory for both Tizen mobile and wearable profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The File Transfer API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The main features of the File Transfer API include:
 

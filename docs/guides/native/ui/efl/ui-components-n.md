@@ -7,7 +7,7 @@
 
 Elementary library provides a set of pre-built UI components that allow you to build a rich graphical user interface for your applications. Each profile provides a different set of UI components, as you can see in [Mobile UI Components](./ui-components-mn.md) and [Wearable UI Components](./ui-components-wn.md).
 
-The preconditions of using Elementary UI components are covered in [Getting Started with EFL UI Programming](./getting-started-n.md). Elementary UI components share the same APIs for general features. For more information, see the General API (in [mobile](http://org.tizen.native.mobile.apireference/group__General.html) and [wearable](http://org.tizen.native.wearable.apireference/group__General.html) applications).
+The preconditions of using Elementary UI components are covered in [Getting Started with EFL UI Programming](./getting-started-n.md). Elementary UI components share the same APIs for general features. For more information, see the General API (in [mobile](http://org.tizen.native.mobile.apireference/group__Elm__General.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Elm__General.html) applications).
 
 **Figure: Mobile UI components**
 
@@ -106,4 +106,5 @@ For more information on UI components in general, see the following topics:
 - [Managing UI Component Focus](./component-focus-n.md)   The Elementary user interface has the concept of "focus". A UI component receives input from the user when it is focused.   
 - [Scaling](./ui-scalability-n.md)   To ensure that your application works well on diverse devices, you must consider scalability when designing the application layout.   
 
-​	**Note**	Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

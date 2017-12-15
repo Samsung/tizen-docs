@@ -4,7 +4,7 @@
 
 - Tizen 2.4 and Higher for Mobile
 
-The datetime UI component displays date and time values. For more information, see the [Datetime](../../../../../org.tizen.native.mobile.apireference/group__Datetime.html) API.
+The datetime UI component displays date and time values. For more information, see the [Datetime](../../../../../org.tizen.native.mobile.apireference/group__Elm__Datetime.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -20,7 +20,7 @@ To use a datetime component in your application:
    datetime = elm_datetime_add(parent);
    ```
 
-2. Set a [style](#style) and format. The datetime format is a combination of LIBC standard characters, such as "%d %b %Y %I : %M %M". For more information on the format characters, see the [Datetime](../../../../../org.tizen.native.mobile.apireference/group__Datetime.html) API.
+2.  Set a [style](#style) and format. The datetime format is a combination of LIBC standard characters, such as "%d %b %Y %I : %M %M". For more information on the format characters, see the [Datetime](../../../../../org.tizen.native.mobile.apireference/group__Elm__Datetime.html) API.
 
    - Set a style to the datetime component with the `elm_object_style_set()` function. If you use the default style, you can skip this step.
 
@@ -147,9 +147,8 @@ The following table lists the available component styles.
 | `time_layout`          | ![elm/datetime/base/time_layout](./media/datetime_time_layout.png) |
 | `time_layout_24hr`     | ![elm/datetime/base/time_layout_24hr](./media/datetime_time_24h.png) |
 
-**Note**
-
-Pay attention to the following UX issue since Tizen 2.3:The `time_layout` and `time_layout_24hr` styles need a full-length format that includes the year, month, day, hour, minute, and AM/PM. Each style shows specific fields from the format, limited by the UX concept:`date_layout` (default): Year, month, day`time_layout`: Hour, minute, AM/PM button`time_layout_24hr`: Hour, minuteIf you call the `elm_datetime_field_visible_set()` function for a field that is not supported in the current style, the function does not work.
+>  **Note**  
+> Pay attention to the following UX issue since Tizen 2.3:The `time_layout` and `time_layout_24hr` styles need a full-length format that includes the year, month, day, hour, minute, and AM/PM. Each style shows specific fields from the format, limited by the UX concept:`date_layout` (default): Year, month, day`time_layout`: Hour, minute, AM/PM button`time_layout_24hr`: Hour, minuteIf you call the `elm_datetime_field_visible_set()` function for a field that is not supported in the current style, the function does not work.
 
 ## Callbacks
 
@@ -162,10 +161,8 @@ You can register callback functions connected to the following signals for a dat
 | `changed`          | The datetime field values change. | `NULL`       |
 | `language,changed` | The system locale changes.        | `NULL`       |
 
-**Note**
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

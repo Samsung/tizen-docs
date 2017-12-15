@@ -6,10 +6,11 @@
 - Tizen 2.3.1 and Higher for Wearable
 
 You can create a simple application using TAU Animation. With the following example, you can learn how to import TAU Animation into your application and create a basic simple application with animation.
+This feature is supported in mobile and wearable applications only.
 
 ## Loading a TAU Animation
 
-You can import the TAU Animation with HTML:
+You can import the TAU Animation module with HTML:
 
 ```
 <head>
@@ -18,9 +19,10 @@ You can import the TAU Animation with HTML:
 </head>
 ```
 
-`tau.animation` is the namespace of the TAU Animation. You can call TAU Animation methods through this namespace.
+`tau.animation` is the namespace of the TAU Animation module. You can call TAU Animation methods through this namespace.
 
-​	**Note**	To get the `tau.animation.min.js` library, create a new project from the [UIComponent](https://developer.tizen.org/development/sample/web/UI/TAU_UI_Components) sample. The library is included in the sample's `lib/tau/animation` directory.
+> **Note**
+> To get the `tau.animation.min.js` library, create a new project from the [UIComponent](https://developer.tizen.org/development/sample/web/UI/TAU_UI_Components) sample. The library is included in the sample's `lib/tau/animation` directory.
 
 ## Creating TAU Animations
 
@@ -37,7 +39,7 @@ t('#redBox').tween('swing', 1000);
 t('#blueBox').tween({rotateZ: 120}, 1000).tween({translateX: 400}, 1000);
 ```
 
-If you want to animate the HTML element directly, you can use `mixin`. You can animate any effect, transform, or CSS property. You can use the 'target' method. Like a CSS selector, '.' means class selector, '#' means ID selector. Also, a pure HTML element can be a parameter of the target method.
+If you want to animate the HTML element directly, you can use `mixin`. You can animate any effect, transform, or CSS property. You can use the 'target' method. Like in CSS selectors, '.' is a class selector and '\#' is an ID selector. Also, a pure HTML element can be a parameter of the target method.
 
 Available animation methods:
 
@@ -111,7 +113,7 @@ Available animation methods:
   t('.box').tween({rotateZ: 120}, {duration: 1000, stagger: 200});
   ```
 
-The following code snippet shows the full code for the first animation example described above.
+The following example shows the full code for the first animation described above.
 
 ```
 <!DOCTYPE html>

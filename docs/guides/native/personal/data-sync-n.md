@@ -41,8 +41,8 @@ Use the [sync manager variables](#variables) with the sync job functions. The sy
 
 ## Sync Adapter
 
-**Note**
-The Sync Adapter API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYNC__ADAPTER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYNC__ADAPTER__MODULE.html) applications) operations must be carried out by a service application (which operates data synchronization) before using the Sync Manager API.The number of service applications that can set callbacks is restricted to only 1 per package.
+> **Note**> > 
+> The Sync Adapter API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYNC__ADAPTER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYNC__ADAPTER__MODULE.html) applications) operations must be carried out by a service application (which operates data synchronization) before using the Sync Manager API.The number of service applications that can set callbacks is restricted to only 1 per package.
 
 The Sync Adapter API allows you to:
 

@@ -28,8 +28,8 @@ styles {
   -  `font`	 
 
   -  `font_size`
-
-    ​	**Note**	The font size is a point size, and the size of the rendered text is affected by the ppi information. The system basic ppi is 96, and you can change it in the emulator menu.	  	  
+> **Note**
+> The font size is a point size, and the size of the rendered text is affected by the ppi information. The system basic ppi is 96, and you can change it in the emulator menu.	  	  
 
   - `color`	
 
@@ -67,4 +67,5 @@ styles {
   }
   ```
 
-​	**Note**	Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**	
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

@@ -12,3 +12,6 @@ You can use OpenAL software interface to audio hardware for a variety of audio p
 
 - [Sound Manager](sound-n.md)
 You can control the output volume of your application. You can manage sound session types, and define which session type is used for your application. You can also query for various information related to the connected sound devices.
+
+- [Sound Pools](sound-pool-n.md)
+You can use sound pools, which are basically collections of sounds. You can load multiple sound sources to a sound pool and manage their playback as a group.

@@ -6,9 +6,9 @@
 - Tizen 2.3.1 and Higher for Wearable
 - Tizen 3.0 and Higher for TV
 
-Tizen Web applications can communicate with other Web or native applications. The message data type for the communication is map data, which consists of a string key and value that can be a string, string array, byte stream, or byte stream array.
+Your Web applications can communicate with other Web or native applications. The message data type for the communication is map data, which consists of a string key and value that can be a string, string array, byte stream, or byte stream array.
 
-The Message Port API is mandatory for both Tizen mobile and wearable profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The Message Port API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The main features of the Message Port API include:
 
@@ -107,7 +107,7 @@ Learning how to send messages to and receive responses from other Tizen applicat
    remotePort.sendMessage(messageData);
    ```
 
-   If you expect a response message, pass the instance of the `LocalMessagePort` interface as a second parameter of `sendMessage()` method to specify the message port where the response is sent:
+   If you expect a response message, pass the instance of the `LocalMessagePort` interface as the second parameter of the `sendMessage()` method to specify the message port where the response is sent:
 
    ```
    remotePort.sendMessage(messageData, localPort);

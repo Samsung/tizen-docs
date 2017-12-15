@@ -6,9 +6,9 @@
 - Tizen 2.3.1 and Higher for Wearable
 - Tizen 3.0 and Higher for TV
 
-Tizen provides various application management features, including application launching, event handling, and information retrieval.
+You can use various application management features, including application launching, event handling, and information retrieval.
 
-The Application API is mandatory for both Tizen mobile and wearable profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The Application API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The main application management features are:
 
@@ -48,7 +48,7 @@ The application control consists of an operation, URI, MIME type, and some data,
 
 1. The calling application launches the application control with the `launchAppControl()` method of the `Application` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#Application), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#Application), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#Application) applications).
 2. The provider application calls the `getRequestedAppControl()` method of the `Application` interface to get the reference of the `RequestedApplicationControl` object. This object contains the application control passed by the `launchAppControl()` method from the calling application.
-3. The provider application calls either the `replyResult()` method (in case of success) or the `replyFailure()` method (in case of failure) of the `RequestedApplicationControl` interface to return control back to the calling application. The result of the provided operation (if any), is delivered as an array of `ApplicationControlData` objects (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationControlData), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationControlData), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#ApplicationControlData) applications). 
+3.  The provider application calls either the `replyResult()` method (on success) or the `replyFailure()` method (on failure) of the `RequestedApplicationControl` interface to return control back to the calling application. The result of the provided operation (if any), is delivered as an array of `ApplicationControlData` objects (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationControlData), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationControlData), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#ApplicationControlData) applications).
 4. The calling application receives the result through the `ApplicationControlDataArrayReplyCallback` event handler (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationControlDataArrayReplyCallback), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationControlDataArrayReplyCallback), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#ApplicationControlDataArrayReplyCallback) applications).
 
 The application control uses the following primary information:
@@ -59,7 +59,8 @@ The application control uses the following primary information:
 
   Used to identify the provider application of the requested application control.
 
-  ​	**Note**	Since Tizen 2.4, the platform-defined application controls and aliased application IDs which were defined in previous Tizen versions may not be supported. If they are used, the application control behavior is undefined and cannot be guaranteed.
+> **Note**
+> Since Tizen 2.4, the platform-defined application controls and aliased application IDs which were defined in previous Tizen versions may not be supported. If they are used, the application control behavior is undefined and cannot be guaranteed.
 
 - Operation
 
@@ -80,7 +81,8 @@ You can take advantage of the Tizen [common application functionalities](./app-m
 
 If you specify the exact application ID of the application for the `launchAppControl()` method of the `Application` interface, you can request the application control from a specific application. The application ID determines which application is launched and the application performs the operation as specified in the control request.
 
-​	**Note**	An explicit launch request cannot be completed if the user does not have the specified application on their device. Hence implicit launches can be more effective, because the system can find an available application to complete the request. The implicit launch can also enhance the user experience because it allows the user to select a preferred application to complete the task.
+> **Note**	
+> An explicit launch request cannot be completed if the user does not have the specified application on their device. Hence implicit launches can be more effective, because the system can find an available application to complete the request. The implicit launch can also enhance the user experience because it allows the user to select a preferred application to complete the task.
 
 ### Implicit Launch
 
@@ -263,8 +265,10 @@ You can retrieve information about applications in various ways:
 
 - Retrieve information about installed applications with the `getAppInfo()` and `getAppsInfo()` methods of the `ApplicationManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#ApplicationManager) applications).	 These methods can be used to access the `ApplicationInformation` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationInformation), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationInformation), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#ApplicationInformation) applications) to retrieve information about installed applications, such as their name, icon path, and version.
 - Retrieve information about running applications with the `getAppContext()` and `getAppsContext()` methods of the `ApplicationManager` interface.	 These methods can be used to access the `ApplicationContext` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationContext), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationContext), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#ApplicationContext) applications) to retrieve the application ID and context ID of the running application.	 The application ID can be used to retrieve application information, or to launch an application. The context ID is a unique identifier given by the platform to a running application.
-- Retrieve information about battery usage per application with the `getBatteryUsageInfo()` method of the `ApplicationManager` interface **in mobile applications only**.	 You can retrieve battery usage information starting from a specific number of days ago, or since the battery was last fully charged. You can also select the number of applications included in the returned [ApplicationBatteryUsage](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationBatteryUsage) data array.
-- Retrieve information about usage statistics per application with the `getAppsUsageInfo()` method of the `ApplicationManager` interface **in mobile applications only**.	 The statistics include the most frequently or recently used applications. You can retrieve application usage information from a specific time period, or starting from a specific number of days ago. You can also select the number of applications included in the returned [ApplicationUsage](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationUsage) data array.
+- Retrieve information about battery usage per application with the `getBatteryUsageInfo()` method of the `ApplicationManager` interface **in mobile and wearable applications only**.
+  You can retrieve battery usage information starting from a specific number of days ago, or since the battery was last fully charged. You can also select the number of applications included in the returned `ApplicationBatteryUsage` data array (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationBatteryUsage) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationBatteryUsage) applications).
+- Retrieve information about usage statistics per application with the `getAppsUsageInfo()` method of the `ApplicationManager` interface **in mobile and wearable applications only**.
+  The statistics include the most frequently or recently used applications. You can retrieve application usage information from a specific time period, or starting from a specific number of days ago. You can also select the number of applications included in the returned `ApplicationUsage` data array (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationUsage) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationUsage) applications).
 
 Learning how to retrieve information about installed and running applications allows you to manage all the device applications from your application: 
 
@@ -292,7 +296,7 @@ Learning how to retrieve information about installed and running applications al
 
 - To retrieve basic application information, use the `getAppInfo()` method of the `ApplicationManager` interface.
 
-  Provide the application ID of the application whose information you want as a parameter for the method. If no application ID is set, the method retrieves the information about the application calling the method.
+  Provide the application ID of the application whose information you want as a parameter for the method. If no application ID is set, the method uses the details of the application calling the method.
 
   ```
   var appinfo = tizen.application.getAppInfo('org.tizen.application');
@@ -302,7 +306,7 @@ Learning how to retrieve information about installed and running applications al
 
 - To retrieve application context information, use the `getAppContext()` method of the `ApplicationManager` interface.
 
-  Provide the context ID of the application whose context information you want as a parameter for the method. If no context ID is set, the method retrieves the information about the application calling the method.
+  Provide the context ID of the application whose context information you want as a parameter for the method. If no context ID is set, the method uses the details of the application calling the method.
 
   ```
   var appContext = tizen.application.getAppContext();
@@ -343,7 +347,8 @@ Learning how to retrieve information about installed and running applications al
   tizen.application.getAppsUsageInfo(successCallback, errorCallback, "RECENTLY");
   ```
 
-  ​	**Note**	Statistics are available for the last 90 days. If you set a time filter that starts from more than 90 days ago, only the period that falls within the last 90 days is included in the returned array.
+> **Note**
+> Statistics are available for the last 90 days. If you set a time filter that starts from more than 90 days ago, only the period that falls within the last 90 days is included in the returned array.
 
 ## Managing Applications
 
@@ -544,7 +549,8 @@ When a Web application becomes invisible (moves to the background), it is suspen
 
 Since Tizen 2.4, the background process management policy has been changed. The system does not allow applications to run in the background except when they are explicitly declared to do so by having a specific background category. For more information on the available background categories, see the [Allowed background application policy](../../../../org.tizen.guides_HTM/html/native/app-management/efl_ui_app_n.htm#allow_bg_table) table.
 
-​	**Note**	To guarantee that a Web application runs in the background, at least 1 `background-category` element must be declared in the `config.xml` file (in [mobile](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#mw_bg_category) and [wearable](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#ww_bg_category) applications), and the `background-support` attribute of the `<tizen:setting>` element must be set to `enable`.
+> **Note**
+> To guarantee that a Web application runs in the background, at least 1 `background-category` element must be declared in the `config.xml` file (in [mobile](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#mw_bg_category) and [wearable](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#ww_bg_category) applications), and the `background-support` attribute of the `<tizen:setting>` element must be set to `enable`.
 
 The following `config.xml` file example shows how an application can be configured to run in the background:
 
@@ -567,7 +573,7 @@ The following `config.xml` file example shows how an application can be configur
 
 Learning how to receive notifications allows you to monitor when the status of an application installed on a device is changed (it is enabled or disabled):
 
-1. To receive status change notifications about installed applications, add a listener that is triggered each time the application status changes.
+1. To receive status change notifications for installed applications, add a listener that is triggered each time the application status changes.
 
    If you want to monitor the status of a specific application (instead of all installed applications), provide the application ID as a second parameter to the `addAppStatusChangeListener()` method.
 

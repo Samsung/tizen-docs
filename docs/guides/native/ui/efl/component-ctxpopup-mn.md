@@ -4,7 +4,7 @@
 
 - Tizen 2.4 and Higher for Mobile
 
-The ctxpopup UI component pops up and shows a list of items inside it. For more information, see the [Ctxpopup](../../../../../org.tizen.native.mobile.apireference/group__Ctxpopup.html) API.
+The ctxpopup UI component pops up and shows a list of items inside it. For more information, see the [Ctxpopup](../../../../../org.tizen.native.mobile.apireference/group__Elm__Ctxpopup.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -179,10 +179,8 @@ You can register callback functions connected to the following signals for a ctx
 | ----------- | -------------------------- | ------------ |
 | `dismissed` | The ctxpopup is dismissed. | `NULL`       |
 
-**Note**
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

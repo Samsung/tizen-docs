@@ -44,9 +44,8 @@ To create a new circle surface:
   surface = eext_circle_surface_naviframe_add(naviframe);
   ```
 
-**Note**
-
-A circle surface is a non-graphical object. It adds no graphics to or around the objects it holds.
+> **Note**
+> A circle surface is a non-graphical object. It adds no graphics to or around the objects it holds.
 
 ## Adding Circle Objects to the Circle Surface
 
@@ -72,6 +71,5 @@ You can, however, explicitly use the `eext_circle_surface_del()` function to del
 eext_circle_surface_del(surface);
 ```
 
-**Note**
-
-The `eext_circle_surface_del()` function does not delete the connected circle objects.
+> **Note**  
+> The `eext_circle_surface_del()` function does not delete the connected circle objects.

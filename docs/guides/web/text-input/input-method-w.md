@@ -98,7 +98,8 @@ The following table lists the events that you can implement in your handler obje
 | `onUpdateSurroundingText(cursor, text)`  | Handler for the surrounding text signal update.                    `cursor` parameter: Cursor position.          `text` parameter: Surrounding text near the cursor. |
 | `onUpdateSelection(text)`                | Handler for the selection signal update.                    `text` parameter: Currently selected text. |
 
-​	**Note**	The Device APIs are currently not supported in Web IME applications. Device API support is expected to be included in the next version.
+> **Note**
+> The Device APIs are currently not supported in Web IME applications. Device API support is expected to be included in the next version.
 
 ## Web IME Configuration
 
@@ -116,7 +117,8 @@ Tizen has the following additional configuration elements:
 
 - ​    `tizen:uuid`	Added to identify the Web IME application type. If this element is defined, the application type is IME.
 
-  ​	**Note**	The Device APIs are currently not supported in Web IME applications. Device API support is expected to be included in the next version.
+> **Note**
+> The Device APIs are currently not supported in Web IME applications. Device API support is expected to be included in the next version.
 
   ```
   <tizen:uuid>6153122a-a429-40d2-ef21-a75f468c202c</tizen:uuid> 
@@ -131,11 +133,12 @@ Tizen has the following additional configuration elements:
   </tizen:languages> 
   ```
 
-​	**Note**	2-letter primary codes are reserved for [ISO639] language abbreviations. 2-letter codes include `fr` (French), `de` (German), `it` (Italian), `nl` (Dutch), `el` (Greek), `es` (Spanish), `pt` (Portuguese), `ar` (Arabic), `he` (Hebrew), `ru` (Russian), `zh` (Chinese), `ja` (Japanese), `hi` (Hindi), `ur` (Urdu), and `sa` (Sanskrit).Any 2-letter subcode is understood to be a [ISO3166] country code. For more information, see [http://www.w3.org/TR/html401/struct/dirlang.html](http://www.w3.org/TR/html401/struct/dirlang.html).
+> **Note**
+> 2-letter primary codes are reserved for [ISO639] language abbreviations. 2-letter codes include `fr` (French), `de` (German), `it` (Italian), `nl` (Dutch), `el` (Greek), `es` (Spanish), `pt` (Portuguese), `ar` (Arabic), `he` (Hebrew), `ru` (Russian), `zh` (Chinese), `ja` (Japanese), `hi` (Hindi), `ur` (Urdu), and `sa` (Sanskrit).Any 2-letter subcode is understood to be a [ISO3166] country code. For more information, see [http://www.w3.org/TR/html401/struct/dirlang.html](http://www.w3.org/TR/html401/struct/dirlang.html).
 
 ## Hardware Key Events
 
-The Web IME is capable of not only showing a soft keyboard and emitting key events to client application, but also handling hardware key events and translating them to a specific language. This is very common when entering texts in CJK (Chinese, Japanese, and Korean) languages, where each key event must be composed to produce a final result string.
+The Web IME is capable of not only showing a soft keyboard and emitting key events to the client application, but also handling hardware key events and translating them to a specific language. This is very common when entering texts in CJK (Chinese, Japanese, and Korean) languages, where each key event must be composed to produce a final result string.
 
 When a hardware key is pressed, the client application receives the key event and requests the Input Service framework to translate the key event. The request is then delivered to the currently selected Web IME through the event handler.
 
@@ -143,7 +146,8 @@ When creating the handler object for `WebHelperClient`, implement the `onProcess
 
 The following example translates the key event to a string "ㅁ", which is a Korean character mapped to the `a` key event. 
 
-​	**Note**	To provide full support for Korean character composition, a more complex process is needed. This example is only a demonstration.
+> **Note**
+> To provide full support for Korean character composition, a more complex process is needed. This example is only a demonstration.
 
 ```
 var WebHelperClientHandler = {

@@ -6,9 +6,9 @@
 - Tizen 2.3.1 and Higher for Wearable
 - Tizen 3.0 and Higher for TV
 
-Tizen enables you to [access the files and directories](./data/file-system-w.md#access) in the device file system.
+You can [access the files and directories](./data/file-system-w.md#access) in the device file system.
 
-The Filesystem API is mandatory for both Tizen mobile and wearable profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The Filesystem API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The Filesystem API provides access to accessible parts of the file system, which are represented as [virtual root locations](./data/file-system-w.md#roots).
 
@@ -34,7 +34,8 @@ You can access the virtual file system using the `FileSystemManager` interface (
 
 - To access a file or directory within the virtual file system, you must use the fully qualified path, `<root name>/<path>`, where `<rootname>` is the name of the virtual root and `<path>` is the relative path to the file or directory within the root.
 
-  ​	**Note**	When you use a path to access the device file system, make sure that the file path encoding uses the default encoding of the platform.
+> **Note**
+> When you use a path to access the device file system, make sure that the file path encoding uses the default encoding of the platform.
 
 - To access a file or directory, you must also retrieve a file handle using the `resolve()` method of the `FileSystemManager` interface.A file handle is a reference object that points to and represents a file or directory.
 
@@ -117,7 +118,8 @@ To manage file storages:
 
 You can create files and directories using the `createFile()` and `createDirectory()` methods. The file or directory is created relative to the current directory that the operation is performed on.
 
-​	**Note**	Do not use "." or ".." characters in the directory or file path components.
+> **Note**
+> Do not use "." or ".." characters in the directory or file path components.
 
 To create and delete files and directories:
 
@@ -205,7 +207,9 @@ To get files and file details from the file system:
 You can manage files and directories in many ways:
 
 - You can read and write to a file by first using the `openStream()` method to open the file. You can specify the file mode and encoding.The `openStream()` method returns a `FileStream` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/filesystem.html#FileStream), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/filesystem.html#FileStream), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/filesystem.html#FileStream) applications), which is a handle to the opened file. All actual operations, such as read, write, or close, on the file are performed through the `FileStream` object based on a position attribute, which represents the current position in the file.
- - You can copy and move files and directories within the virtual file system with the `copyTo()` and `moveTo()` methods.If a file or directory of the same name already exists in the target location, the overwrite input parameter of the method defines whether the existing file is overwritten.**Note**	The file or directory to be copied or moved must be located under the current directory.
+ - You can copy and move files and directories within the virtual file system with the `copyTo()` and `moveTo()` methods.If a file or directory of the same name already exists in the target location, the overwrite input parameter of the method defines whether the existing file is overwritten.
+	> **Note**
+	> The file or directory to be copied or moved must be located under the current directory.
 
 To read and write to files, and move and copy files and directories:
 

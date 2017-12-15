@@ -5,8 +5,8 @@
 
 Tizen provides localized resources to make your application usable for different countries. The localization is based on the Internationalization API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__I18N__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__I18N__MODULE.html) applications), which makes strings translatable and places them in `.po` (portable object) files.
 
-**Note**
-The `.po` files must be placed in the `res/po` directory of the application. The files can be edited using the [PO file editor](../../../../org.tizen.studio/html/native_tools/po_file_editor_n.htm) provided by the Tizen Studio.The `.po` file is compiled into a `.mo` file, and the `.mo` file name is defined using the project name that you define when you create the project in the Tizen Studio. The application ID is made based on the project name, and the framework finds the application `.mo` file based on the application ID.Be careful if you change the application ID in the Tizen manifest editor later, because the `.mo` file name is not automatically changed, and problems can occur when getting the string resources.
+> **Note**  
+> The `.po` files must be placed in the `res/po` directory of the application. The files can be edited using the [PO file editor](../../../../org.tizen.studio/html/native_tools/po_file_editor_n.htm) provided by the Tizen Studio.The `.po` file is compiled into a `.mo` file, and the `.mo` file name is defined using the project name that you define when you create the project in the Tizen Studio. The application ID is made based on the project name, and the framework finds the application `.mo` file based on the application ID.Be careful if you change the application ID in the Tizen manifest editor later, because the `.mo` file name is not automatically changed, and problems can occur when getting the string resources.
 
 The application must load the proper resource set depending on the current device locale. If no matching resource set is found for the current locale, the default resource set is used.
 
@@ -26,8 +26,8 @@ The most common way to use a translation in your application strings involves th
 
 To set the text for a "non-default" part as translatable, use the `elm_object_translatable_part_text_set()` and `elm_object_item_translatable_part_text_set()` functions.
 
-**Note**
-Always provide the untranslated string as a parameter to the above functions. The EFL triggers the translation itself and re-translates the string automatically, if the system language changes.
+> **Note**  
+> Always provide the untranslated string as a parameter to the above functions. The EFL triggers the translation itself and re-translates the string automatically, if the system language changes.
 
 ## Translating Texts Directly
 
@@ -39,8 +39,8 @@ To retrieve the translation for a given text, use the `i18n_get_text()` function
 char *i18n_get_text(const char *msgid);
 ```
 
-**Note**
-Do not modify or free the return value of the `i18n_get_text()` function. It is statically allocated.
+> **Note**  
+> Do not modify or free the return value of the `i18n_get_text()` function. It is statically allocated.
 
 The following example shows how you can define the text translation for a genlist item, when the "Some Text" string is defined as a `msgid` field in the `.po` file:
 

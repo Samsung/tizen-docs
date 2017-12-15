@@ -26,8 +26,8 @@ To set the package repository:
 4. On your selection in the **Distribution** combo box, different snapshots are listed in the snapshot box. By switching off the **Auto Update** switch, you can select the specific snapshot in the list. If you leave the switch on, the Package Manager always updates all the packages from the latest snapshot.
 5. Click **OK** to confirm your setting.
 
-**Note**
-If you switch off the **Auto Update** option, you can select an earlier snapshot than the snapshot you are currently using. Be careful when doing this, since the update can cause entire packages to be removed to guarantee system integrity.
+> **Note**  
+> If you switch off the **Auto Update** option, you can select an earlier snapshot than the snapshot you are currently using. Be careful when doing this, since the update can cause entire packages to be removed to guarantee system integrity.
 
 ### Configuring the SDK Image
 
@@ -36,8 +36,8 @@ To install or update packages with the SDK image:
 1. Enter the full path of the SDK image file in the **Package Repository** box, or click ![Browse](./media/advanced_conf_browse.png) next to the combo box to open the file browser.In the file browser, select the SDK image file, and click **OK**. When you select the image file, the image's origin repository information is displayed below the combo box.
 2. Click **OK** to confirm your setting.
 
-**Note**
-If you install or update packages using an image file, the SDK image's origin repository URL or distribution ID can be different than the current packages' URL or distribution ID. Be careful when doing this, since the installation or update can cause entire packages to be removed to guarantee system integrity.
+> **Note**  
+> If you install or update packages using an image file, the SDK image's origin repository URL or distribution ID can be different than the current packages' URL or distribution ID. Be careful when doing this, since the installation or update can cause entire packages to be removed to guarantee system integrity.
 
 ## Configuring the Extension SDK Repository
 
@@ -86,8 +86,8 @@ To activate or deactivate the extra repository:
 2. Select the ![Switch icon](./media/advanced_conf_icon_switch.png) on-off switch icon in the **Activation** column in the repository table.![Activating or deactivating an extra repository](./media/advanced_conf_activate_extra.png)
 3. Click **OK** to confirm.
 
-**Note**
-If the extension repository is deactivated, the packages from that repository are no longer shown in the Package Manager. However, if you activate the extension repository, the packages are shown in the Package Manager again.
+> **Note**  
+> If the extension repository is deactivated, the packages from that repository are no longer shown in the Package Manager. However, if you activate the extension repository, the packages are shown in the Package Manager again.
 
 ## Configuring the Proxy
 

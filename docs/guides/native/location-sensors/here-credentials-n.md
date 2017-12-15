@@ -18,8 +18,8 @@ To get credentials:
 
    2. Provide your contact details, and agree to the terms and conditions.
 
-      **Note**
-      The registration does not support some regions and countries. If your contact details contain such a region or country, you cannot register a new application.
+      > **Note**  
+      > The registration does not support some regions and countries. If your contact details contain such a region or country, you cannot register a new application.
 
 3. Generate the credentials.
 
@@ -39,5 +39,5 @@ To get credentials:
    error = maps_service_set_provider_key(maps, "XXXX/YYYY")
    ```
 
-   **Note**
-   According to the HERE Maps:The app ID uniquely identifies your application.The app code is used in the authentication process to identify a session.
+   > **Note**  
+   > According to the HERE Maps:The app ID uniquely identifies your application.The app code is used in the authentication process to identify a session.

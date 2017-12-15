@@ -145,6 +145,5 @@ You can register callback functions connected to the following signals for a cir
 | --------------- | ------------------------------------- | ------------ |
 | `value,changed` | The value of a circle slider changes. | `NULL`       |
 
-**Note**
-
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.

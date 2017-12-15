@@ -11,15 +11,15 @@ The main features of the Curl API include:
 
   To allow the application to handle HTTP and HTTPS requests with various options, you must initialize the libcurl library and the connection.
 
-  **Note**
-  In some cases, such as with Internet access, your application requires some privileges. For more information on which privileges to set in the application manifest file, see [Non-API Bound Privileges](../../../../org.tizen.training/html/native/details/sec_privileges_n.htm#nonAPI).
+  > **Note**  
+  > In some cases, such as with Internet access, your application requires some privileges. For more information on which privileges to set in the application manifest file, see [Non-API Bound Privileges](../../../../org.tizen.training/html/native/details/sec_privileges_n.htm#nonAPI).
 
 - Managing the proxy address
 
   You can [get and set the proxy address](#manage) in multiple ways.
 
-  **Note**
-  In a proxy environment, the libcurl library does not know the proxy address. To handle HTTP and HTTPS requests in a proxy environment, first get the proxy address using the [connection manager](connection-n.md), and then set the proxy address using the Curl API.
+  > **Note**  
+  > In a proxy environment, the libcurl library does not know the proxy address. To handle HTTP and HTTPS requests in a proxy environment, first get the proxy address using the [connection manager](connection-n.md), and then set the proxy address using the Curl API.
 
 - Transferring HTTP requests
 

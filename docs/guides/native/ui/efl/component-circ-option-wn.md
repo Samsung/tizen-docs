@@ -84,11 +84,9 @@ To receive notifications about the more option events, listen for the following 
 - `more,option,opened`: The layout with the rotary selector is shown.
 - `more,option,closed`: The layout with the rotary selector is hidden.
 
-**Note**
-
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-
-In all these signals, the `event_info` callback parameter is `NULL`.
+> **Note**
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> In all these signals, the `event_info` callback parameter is `NULL`.
 
 To register and define a callback for the `more,option,opened` signal:
 

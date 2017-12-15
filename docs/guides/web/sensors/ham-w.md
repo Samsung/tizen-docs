@@ -5,7 +5,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
 
-Tizen enables you to access and record human activity data from various [sensors](./sensors/ham-w.md#capability) and [recorders](./sensors/ham-w.md#recorder) on the device.
+You can access and record human activity data from various [sensors](./sensors/ham-w.md#capability) and [recorders](./sensors/ham-w.md#recorder) on the device.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -69,7 +69,7 @@ Enabling the monitor and retrieving data is a basic Human Activity Monitor (HAM)
 
    ```
    function onchangedCB() {
-       console.log('You are looking at your smartwatch');
+       console.log('You are looking at your smart watch');
    }
 
    tizen.humanactivitymonitor.start('WRIST_UP', onchangedCB)

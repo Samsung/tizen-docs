@@ -8,7 +8,7 @@ This feature is supported in wearable applications only.
 
 The button component is a simple push button, which is composed of a label icon and an icon object. The button supports the autorepeat feature.
 
-For more information, see the [Button](../../../../../org.tizen.native.wearable.apireference/group__Button.html) API.
+For more information, see the [Button](../../../../../org.tizen.native.wearable.apireference/group__Elm__Button.html) API.
 
 **Figure: Button component**
 
@@ -78,7 +78,8 @@ To receive notifications about the button events, listen for the following signa
 - `pressed`: The button is pressed.
 - `unpressed`: The button is released after being pressed.
 
-**Note**The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 In all cases, the `event_info` callback parameter is `NULL`.
 
@@ -128,6 +129,5 @@ To manage the autorepeat feature:
   elm_button_autorepeat_gap_timeout_set(button, 0.5);
   ```
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

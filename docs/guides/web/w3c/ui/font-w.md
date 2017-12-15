@@ -17,7 +17,7 @@ The new text features in CSS Fonts Module Level 3 API include:
 
 ## Manipulating Fonts
 
-To enhance the user experience of your application, you must learn to handle fonts using CSS font properties:
+To manipulate fonts using CSS font properties:
 
 1. Define the `font-style` property within a `<style>` element in the `<head>` section of the Web page to apply different font styles:
 
@@ -141,4 +141,5 @@ The following figure shows examples of manipulating the text font properties.
 
 ![Font properties (in mobile applications only)](./media/font_properties.png)
 
-​	**Note**	For a complete list of CSS Fonts Module Level 3 font properties (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#font) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#font) applications) and their possible values, see the [Property index](http://www.w3.org/TR/2013/CR-css-fonts-3-20131003/#property-index).
+> **Note**
+> For a complete list of CSS Fonts Module Level 3 font properties (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#font) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#font) applications) and their possible values, see the [Property index](http://www.w3.org/TR/2013/CR-css-fonts-3-20131003/#property-index).

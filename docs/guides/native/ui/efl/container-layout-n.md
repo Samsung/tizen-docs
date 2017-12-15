@@ -5,7 +5,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
 
-The layout container enables you to define a look and feel of the UI with animation and basic event response by using an Edje design file. For more information, see the Layout API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Layout.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Layout.html) applications).
+The layout container enables you to define a look and feel of the UI with animation and basic event response by using an Edje design file. For more information, see the Layout API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Elm__Layout.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Elm__Layout.html) applications).
 
 EDC (Edje data collection) is a script language provided by Edje, which is a library in charge of the high-level layouting in EFL. An EDC file describes how the elements of the UI are positioned. An EDC file has an extension `.edc`. For more information on the syntax of EDC, see [Layouting with EDC](learn-edc-intro-n.md).
 
@@ -178,6 +178,5 @@ The following predefined themes are available in the mobile profile:
   elm_object_part_text_set(ly, "elm.help.text", "Hi All :)");
   ```
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

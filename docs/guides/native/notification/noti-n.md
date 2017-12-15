@@ -200,7 +200,7 @@ You can set the following attributes for a notification:
 
   To set how applications display the notification, use the `notification_set_display_applist()` function.
 
-  The second parameter defines the notification display option, whose possible values are listed in the `_notification_display_applist` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__NOTIFICATION__MODULE.html#gaf7944456661e023a3bac1f430eb680a2) and [wearable](../../../../org.tizen.native.wearable.apireference/group__NOTIFICATION__MODULE.html#gaf7944456661e023a3bac1f430eb680a2) applications). You can set multiple options with the "|" pipe operation.
+  The second parameter defines the notification display option, whose possible values are listed in the `_notification_display_applist` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__NOTIFICATION__MODULE.html#ga12754b4babd618f4870d9fb2904e19ae) and [wearable](../../../../org.tizen.native.wearable.apireference/group__NOTIFICATION__MODULE.html#ga12754b4babd618f4870d9fb2904e19ae) applications). You can set multiple options with the "|" pipe operation.
 
   ```
   ret = notification_set_display_applist(notification,

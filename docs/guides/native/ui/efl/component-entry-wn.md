@@ -17,7 +17,7 @@ The entry component is a box where the user can enter text. It supports the foll
 
 The entry component includes an Evas [Textblock](../../../../../org.tizen.native.wearable.apireference/group__Evas__Object__Textblock.html) in it, which means that it supports the features of the textblock component, such as text wrapping and formatted markup text.
 
-For more information, see the [Entry](../../../../../org.tizen.native.wearable.apireference/group__Entry.html) API.
+For more information, see the [Entry](../../../../../org.tizen.native.wearable.apireference/group__Elm__Entry.html) API.
 
 **Figure: Entry component**
 
@@ -216,9 +216,8 @@ To configure the entry functionality:
   elm_entry_editable_set(entry, EINA_FALSE);
   ```
 
-  **Note**
-
-  Even when the entry component is set to be uneditable by the user, you can still use the `elm_entry_entry_append()` and `elm_entry_entry_insert()` functions to modify its text programmatically.
+  > **Note**  
+  > Even when the entry component is set to be uneditable by the user, you can still use the `elm_entry_entry_append()` and `elm_entry_entry_insert()` functions to modify its text programmatically.
 
 - Set the password mode.
 
@@ -262,7 +261,7 @@ You can format the entry text in many ways:
 
 - Format the entry text with markup elements that are defined in the theme.
 
-  For example, you can use the `<br>` element to insert a line break. For a list of available markup elements, see [Formatted text](../../../../../org.tizen.native.wearable.apireference/group__Entry.html#entry-markup).
+  For example, you can use the `<br>` element to insert a line break. For a list of available markup elements, see [Formatted text](../../../../../org.tizen.native.wearable.apireference/group__Elm__Entry.html#entry-markup).
 
 - Add special markups within the entry text:
 
@@ -328,11 +327,9 @@ To receive notifications about the entry events, listen for the following signal
 - `theme,changed`: The theme is changed.
 - `undo,request`: The request is undone.
 
-**Note**
-
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-
-If not mentioned separately, the `event_info` callback parameter in all signals is `NULL`.
+> **Note**
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> If not mentioned separately, the `event_info` callback parameter in all signals is `NULL`.
 
 To register and define a callback for the `focused` signal:
 
@@ -350,6 +347,5 @@ focused_cb(void *data, Evas_Object *obj, void *event_info)
 }
 ```
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

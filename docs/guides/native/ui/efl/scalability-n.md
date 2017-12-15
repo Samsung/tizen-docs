@@ -77,8 +77,8 @@ When designing the application layout to be scalable, you must pay attention to 
 ## Scalability Using Elementary UI Components
 
 The Tizen platform provides a UI component toolkit library, called Elementary, that includes an extensive set of UI components. You can use the Elementary UI components to compose your application user interface (UI). While creating the UI, you can set specific properties for the UI components to control the scalable behavior of the UI. Before you try to create a scalable UI using Elementary UI components, make sure you understand some core concepts, such as how to create effective layouts with containers, and how to use the weight and align properties.
-
-​	**Note**	The Elementary library provides 3 groups of APIs:Infrastructure: Control of the behavior of Elementary objects.Container: UI component that can contain other UI components.UI component: Elementary UI component, such as button, list, or check or radio box.
+> **Note**
+> The Elementary library provides 3 groups of APIs:Infrastructure: Control of the behavior of Elementary objects.Container: UI component that can contain other UI components.UI component: Elementary UI component, such as button, list, or check or radio box.
 
 ### Using Containers for Effective Layouts
 
@@ -502,7 +502,8 @@ For example, the following table illustrates what happens to the parts marked wi
 
  ![Original image [1920x1280 (8:5)]](./media/scale_original_image.png) 
 
-​	**Note**	To set the required aspect ratio, use the `evas_object_size_hint_aspect_set()` function or the `aspect_preference` property in the EDC file.
+	> **Note**
+	> To set the required aspect ratio, use the `evas_object_size_hint_aspect_set()` function or the `aspect_preference` property in the EDC file.
 
 **Table: Image resizing effects with a specific aspect ratio**
 

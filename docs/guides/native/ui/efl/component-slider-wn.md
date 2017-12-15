@@ -4,7 +4,7 @@
 
 - Tizen 2.3.1 and Higher for Wearable
 
-The slider UI component is a draggable item used to select a value within a certain range. For more information, see the [Slider](../../../../../org.tizen.native.wearable.apireference/group__Slider.html) API.
+The slider UI component is a draggable item used to select a value within a certain range. For more information, see the [Slider](../../../../../org.tizen.native.wearable.apireference/group__Elm__Slider.html) API.
 
 This feature is supported in wearable applications only.
 
@@ -108,10 +108,8 @@ You can register callback functions connected to the following signals for a sli
 | `slider,drag,start` | Dragging the slider indicator around has started. | `NULL`       |
 | `slider,drag,stop`  | Dragging the slider indicator around has stopped. | `NULL`       |
 
-**Note**
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

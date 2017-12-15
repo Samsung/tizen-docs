@@ -118,6 +118,9 @@ To enable your application to use the Bluetooth functionality:
    }
    ```
 
+   > **Note**  
+   > The Bluetooth feature is not thread-safe and depends on the main loop. Implement Bluetooth within the main loop, and do not use it in a thread.
+
 ## Enabling and Disabling Bluetooth
 
 To allow the user to enable or disable Bluetooth, use the application control to display the Bluetooth activation settings.
@@ -432,8 +435,8 @@ To find remote Bluetooth devices, you can either discover them and bond with the
 
   To remove a device from the bonded list, call the `bt_device_destroy_bond()` function.
 
-**Note**
-A Bluetooth device must be in a discovery mode (visible) for other devices to find it and connect to it. If you want other devices to find your device, you must set the device to be visible.
+	> **Note**  
+	> A Bluetooth device must be in a discovery mode (visible) for other devices to find it and connect to it. If you want other devices to find your device, you must set the device to be visible.
 
 To manage the device visibility and enable discovery:
 
@@ -612,8 +615,8 @@ To connect to other devices:
         return;
     }
   ```
-  **Note**
-  When you connect to a Bluetooth server device, retrieve the server socket file descriptor (`bt_socket_connection_s->socket_fd`) in the callback and store it for later use. You need the file descriptor when sending data or disconnecting from the service.
+  > **Note**  
+  > When you connect to a Bluetooth server device, retrieve the server socket file descriptor (`bt_socket_connection_s->socket_fd`) in the callback and store it for later use. You need the file descriptor when sending data or disconnecting from the service.
 
   2. Request a connection to the Bluetooth server using the `bt_socket_connect_rfcomm()` function.
 
@@ -1717,8 +1720,8 @@ To discover nearby LE devices, perform an LE scan operation:
 
 Perform the LE discovery operation to discover nearby Bluetooth LE devices. You can register and deregister a callback for the LE discovery operation through the set and unset callback functions. The registered device discovery callback provides details of the discovered devices and the state of the discovery (started, finished, found).
 
-**Note**
-The APIs used in this use case are deprecated since Tizen 2.3.1. For scanning nearby BLE devices in Tizen 2.3.1 and higher, see [Managing Bluetooth LE Scans](#le_scan).
+> **Note**  
+> The APIs used in this use case are deprecated since Tizen 2.3.1. For scanning nearby BLE devices in Tizen 2.3.1 and higher, see [Managing Bluetooth LE Scans](#le_scan).
 
 To start the BLE discovery operation:
 

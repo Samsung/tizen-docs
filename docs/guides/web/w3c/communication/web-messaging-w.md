@@ -100,7 +100,8 @@ Learning how to use channel messaging enhances the communication capabilities of
    </script>
    ```
 
-   ​	**Note**	The `postMessage()` method can have 3 parameters: `message`, `origin` (in [mobile](http://www.w3.org/TR/2015/REC-webmessaging-20150519/#security-postmsg) and [wearable](http://www.w3.org/TR/2012/CR-webmessaging-20120501/#security-postmsg) applications), and `ports`.According to the W3C specifications, the arguments are ordered as `message`, `origin`, and `ports`. However, in Tizen, the order used is actually `message`, `ports`, and `origin`. This approach is used in all browsers that currently support the `MessageChannel` interface.
+> **Note**
+> The `postMessage()` method can have 3 parameters: `message`, `origin` (in [mobile](http://www.w3.org/TR/2015/REC-webmessaging-20150519/#security-postmsg) and [wearable](http://www.w3.org/TR/2012/CR-webmessaging-20120501/#security-postmsg) applications), and `ports`.According to the W3C specifications, the arguments are ordered as `message`, `origin`, and `ports`. However, in Tizen, the order used is actually `message`, `ports`, and `origin`. This approach is used in all browsers that currently support the `MessageChannel` interface.
 
 2. Define a `message` event in the `window` object of document B, and register the event handler in the `port` sent from document A.
 

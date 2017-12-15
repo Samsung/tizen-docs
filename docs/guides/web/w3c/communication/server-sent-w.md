@@ -28,7 +28,8 @@ To take advantage of the server push feature, you must learn to connect to the s
        var eventSource = new EventSource(serverPage);
    ```
 
-   ​	**Note**	For the server push to work, the `serverPage` parameter must contain the actual push server URL.
+> **Note**
+> For the server push to work, the `serverPage` parameter must contain the actual push server URL.
 
 2. Implement the event handler for the [open](http://www.w3.org/TR/2015/REC-eventsource-20150203/#handler-eventsource-onopen) event:
 

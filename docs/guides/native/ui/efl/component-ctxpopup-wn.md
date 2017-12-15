@@ -8,7 +8,7 @@ This feature is supported in wearable applications only.
 
 The context popup (ctxpopup) component is a contextual popup that can show a list of items inside it.
 
-For more information, see the [Ctxpopup](../../../../../org.tizen.native.wearable.apireference/group__Ctxpopup.html) API.
+For more information, see the [Ctxpopup](../../../../../org.tizen.native.wearable.apireference/group__Elm__Ctxpopup.html) API.
 
 **Figure: Ctxpopup component**
 
@@ -112,7 +112,8 @@ To manage the ctxpopup items:
 
 To receive notifications about the ctxpopup events, listen for the `dismissed` signal, which is called when the ctxpopup is dismissed.
 
-**Note**The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 The `event_info` callback parameter is `NULL`.
 
@@ -132,6 +133,5 @@ dismissed_cb(void *data, Evas_Object *obj, void *event_info)
 }
 ```
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

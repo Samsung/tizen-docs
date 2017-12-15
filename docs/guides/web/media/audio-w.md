@@ -1,6 +1,6 @@
 # Audio Management
 
-Tizen enables you to control the volume level of several sound types and get information about the current sound mode and the state of the current sound devices. The available sound types include, for example, system, notifications, alarms, and media.
+You can control the volume level of several sound types and get information about the current sound mode and the state of the current sound devices. The available sound types include, for example, system, notifications, alarms, and media.
 
 This feature is supported in mobile and wearable applications only.
 

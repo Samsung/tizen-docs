@@ -1,5 +1,5 @@
 # Using Extended Emulator Features
-# Dependencies
+## Dependencies
 
 - Tizen Studio 1.0 and Higher
 
@@ -76,8 +76,8 @@ You can also add a shared directory in the Emulator Control Panel (ECP):
 3. Select the **Host Directory Sharing** tab.
 4. Add or remove the host computer directory.
 
-**Note**
-You must have read/write permissions for the directory you want to share.
+> **Note**  
+> You must have read/write permissions for the directory you want to share.
 
 ## Using a Camera
 
@@ -93,8 +93,8 @@ Before running the application, install a USB-connected Webcam or embedded Webca
 $ dpkg -l | grep libv4l-0
 ```
 
-**Note**
-The Webcam must support video4linux2. (Currently, only `/dev/video0` is supported.)Multiple instances of the emulator can be launched, but only a single emulator instance can use the camera feature.Depending on the Webcam in use, the emulator camera feature may not work properly.
+> **Note**  
+> The Webcam must support video4linux2. (Currently, only `/dev/video0` is supported.)Multiple instances of the emulator can be launched, but only a single emulator instance can use the camera feature.Depending on the Webcam in use, the emulator camera feature may not work properly.
 
 The following table lists the host Webcam features.
 
@@ -123,12 +123,12 @@ The emulator provides 3 methods of proxy configuration. They can be configured i
 - **Use host proxy**: sets the same proxy value that the host uses.
 - **Use manual proxy**: sets manually a proxy value different from the host.
 
-**Note**
-The following preallocated addresses are not supported as a manual proxy:
-- Localhost
-- 127.0.0.1/8
-- 10.0.2.0/24
-Automatic proxy configuration is not supported due to licensing issues.
+> **Note**  
+> The following preallocated addresses are not supported as a manual proxy:
+> - Localhost
+> - 127.0.0.1/8
+> - 10.0.2.0/24
+>  Automatic proxy configuration is not supported due to licensing issues.
 
 ### NAT (Network Address Translation)
 
@@ -172,8 +172,8 @@ Inbound connections from external to the emulator fail in the NAT backend. If yo
   2. On A, append the `,hostfwd tcp:127.0.0.1:<B's localPort>-:<A's serverPort>` redirection option in the `vm_launch.conf` file.
   3. On B, let the client connect to `10.0.2.2:<B's localPort>`.
 
-  **Note**
-  The appending value of the configuration file is removed when the user changes the VM setting on the Emulator Manager.
+  > **Note**  
+  > The appending value of the configuration file is removed when the user changes the VM setting on the Emulator Manager.
 
 ### Bridge (Bridged Network)
 
@@ -188,9 +188,9 @@ The bridge backend requires a dedicated IP for the emulator and you can communic
 
 ![Emulator bridged network architecture](./media/emulator_feature_bridge_architecture.png)
 
-**Note**
-- Network bridging does not work when the underlying physical network device is a wireless device.
-- On macOS, only a physical network device named `en0` can be used for bridging.
+> **Note**  
+> - Network bridging does not work when the underlying physical network device is a wireless device.
+> - On macOS, only a physical network device named `en0` can be used for bridging.
 
 When the Emulator Manager creates an emulator instance, it also checks the emulator IP and sets the properties of the bridged network in **Emulator Manager > Network Configuration** automatically.
 
@@ -275,8 +275,8 @@ To create your own skin layout:
 
    The image defined in your modified XML meta file is displayed when the emulator is launched.
 
-**Note**
-If you reinstall the Tizen Studio, the custom skin folders are reset.
+> **Note**  
+> If you reinstall the Tizen Studio, the custom skin folders are reset.
 
 ## Using EventCast
 
@@ -328,8 +328,8 @@ To connect the EventCaster application to the emulator:
 
      On Android 4.0 and newer, it is in **Settings > Developer options**.
 
-     **Note**
-     On Android 4.2 and newer, the developer options are hidden by default. To make them available, go to **Settings > About phone** and tap **Build number** 7 times. Return to the previous screen to find the developer options.
+     > **Note**  
+     > On Android 4.2 and newer, the developer options are hidden by default. To make them available, go to **Settings > About phone** and tap **Build number** 7 times. Return to the previous screen to find the developer options.
 
   2. Enable USB debugging.
 
@@ -536,7 +536,7 @@ The following table describes the directory structure of the user-specific files
 | `.tizen-em-info`                         | Configuration file for the Emulator Manager |
 | `emulator-manager.log`                   | Emulator Manager log file                |
 | `last-created_<PROFILE>.xml`             | File for saving the VM properties that the user created last. When user creates a new VM next time, properties in this file are displayed as default. |
-| `<VM_NAME>/`                             | Target-specific media                   |
+| `<VM_NAME>/`                             | Target-specific media                    |
 | `<VM_NAME>/emulimg-<VM_NAME>.<ARCHITECTURE>` | Writable `<VM_NAME>` image file          |
 | `<VM_NAME>/gui.property`                 | Hidden data for the emulator GUI         |
 | `<VM_NAME>/logs/`                        | Log files (emulator and kernel logs)     |

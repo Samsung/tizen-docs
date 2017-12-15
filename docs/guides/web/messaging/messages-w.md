@@ -4,7 +4,7 @@
 
 - Tizen 2.4 and Higher for Mobile
 
-Tizen enables you to create applications with messaging functionalities for SMS, MMS, and email.
+You can use messaging functionalities, such as SMS, MMS, and email.
 
 This feature is supported in mobile applications only.
 
@@ -47,7 +47,8 @@ To use the [Messaging](../../../../org.tizen.web.apireference/html/device_api/mo
 
 You can create a message by using the [Message](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#Message) object constructor, and you can set the message attributes and parameters using a [MessageInit](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessageInit) object (for example, you can set the message service type - SMS, MMS or email - by using the `type` parameter).
 
-​	**Note**	The system assigns a unique read-only message ID to each message the first time it is processed, such as when sending it or creating a draft message for it.
+> **Note**
+> The system assigns a unique read-only message ID to each message the first time it is processed, such as when sending it or creating a draft message for it.
 
 To create and send messages:
 
@@ -383,4 +384,5 @@ To receive notifications when messages and message folders are added, updated, o
    msgService.messageStorage.removeChangeListener(watchId);
    ```
 
-​	**Note**	To provide notifications for changes in specific conversations or message folders, use the applicable methods and event handlers similarly as above.
+> **Note**
+> To provide notifications for changes in specific conversations or message folders, use the applicable methods and event handlers similarly as above.

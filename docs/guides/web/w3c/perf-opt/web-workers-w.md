@@ -25,7 +25,8 @@ The main features of the Web Workers API include:
 
 Web workers are not DOM-dependent. They handle pure data, which makes them especially suitable for JavaScript code that takes a long time to execute.
 
-​	**Note**	Workers use a same-origin policy and therefore using some of the browser resources, such as `DOM`, `document`, `window`, and `parent`, is not possible, and they must be activated by creating separate JavaScript files. However, ECMA JavaScript and the methods included in the Web Workers API, such as `postMessage()`, `location`, `navigator`, and `importScripts()` can be used. The `self` and `location` attributes are also supported.
+> **Note**
+> Workers use a same-origin policy and therefore using some of the browser resources, such as `DOM`, `document`, `window`, and `parent`, is not possible, and they must be activated by creating separate JavaScript files. However, ECMA JavaScript and the methods included in the Web Workers API, such as `postMessage()`, `location`, `navigator`, and `importScripts()` can be used. The `self` and `location` attributes are also supported.
 
 ## Creating a Web Worker and Handling Errors
 
@@ -245,7 +246,8 @@ You can test the application performance using the [Web Inspector](../../../../o
 
 ![UI thread application memory performance](./media/uithreadapp_memory_inspector.png)
 
-​	**Note**	Since launching the Web Inspector takes up a lot of CPU resources, a lot of additional delays are recorded in the Timeline panel. If the Web Inspector is not used, the delay is approximately 6000 milliseconds.
+> **Note**
+> Since launching the Web Inspector takes up a lot of CPU resources, a lot of additional delays are recorded in the Timeline panel. If the Web Inspector is not used, the delay is approximately 6000 milliseconds.
 
 ### Using Multi-thread Web Workers
 
@@ -360,7 +362,8 @@ The following table shows the response speed and memory performance based on the
 | 7                 | 2340 milliseconds | 23.73 KB |
 | 8                 | 2400 milliseconds | 23.73 KB |
 
-​	**Note**	The Web worker support depends on the type and version of the operating system. If the system does not support multiple processors, using multiple Web workers does not greatly improve the application performance. However, since Web workers are based on HTML5 Web optimization and can use multiple cores, they provide much better performance in Tizen as in other operating systems.
+> **Note**
+> The Web worker support depends on the type and version of the operating system. If the system does not support multiple processors, using multiple Web workers does not greatly improve the application performance. However, since Web workers are based on HTML5 Web optimization and can use multiple cores, they provide much better performance in Tizen as in other operating systems.
 
 ## JavaScript Performance
 

@@ -10,7 +10,7 @@ The spinner component increases or decreases a numeric value with the arrow butt
 
 The spinner component inherits from the layout component, which means that layout functions can be used on the spinner component.
 
-For more information, see the [Spinner](../../../../../org.tizen.native.mobile.apireference/group__Spinner.html) API.
+For more information, see the [Spinner](../../../../../org.tizen.native.mobile.apireference/group__Elm__Spinner.html) API.
 
 **Figure: Spinner component**
 
@@ -117,9 +117,8 @@ To receive notifications about the spinner events, listen for the following sign
 - `delay,changed`: The user stops dragging for a very short period or releases the finger or mouse. The signal is emitted a short time after the user changes the value, to avoid possibly expensive reactions to the value change.
 - `language,changed`: The program language is changed.
 
-**Note**
-
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> **Note**
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 To register and define a callback for the `delay,changed` signal:
 
@@ -137,6 +136,5 @@ delay_changed_cb(void *data, Evas_Object *obj, void *event_info)
 }
 ```
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

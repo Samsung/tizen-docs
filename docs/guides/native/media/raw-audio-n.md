@@ -186,8 +186,8 @@ To play audio:
 
 ### Modifying the Audio Sample Volume
 
-**Note**
-Modifying the volume only works if you have not emptied the local buffer or deinitialized the input audio device.
+> **Note**  
+> Modifying the volume only works if you have not emptied the local buffer or deinitialized the input audio device.
 
 To modify the volume of the audio sample stored in the local buffer:
 

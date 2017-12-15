@@ -56,7 +56,7 @@ The main features of the NFC API include:
 
   **Figure: Traditional card emulation**
 
-  ![Traditional card emulation](../../images/nfc_card_emulation.png)
+  ![Traditional card emulation](./media/nfc_card_emulation.png)
 
   With the Card Emulation API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__NFC__SE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__NETWORK__NFC__SE__MODULE.html) applications), you can:
 
@@ -66,8 +66,8 @@ The main features of the NFC API include:
   - Send an application protocol data unit (APDU) to a secure element.
   - Retrieve an Answer To Reset (ATR) from a secure element.
 
-  **Note**
-  Pay attention to the following:Secure element access is not supported in Tizen 2.3. The Card Emulation API of Tizen 2.3 only supports enabling and disabling the NFC card emulation mode, and retrieving the card emulation status.Security problems can occur in some Card Emulation APIs. The security level can be determined by the manufacturer usage. If a security issue occurs, contact the product manufacturer. For more information on the security levels, see the [GSMA specification](http://www.gsma.com/digitalcommerce/wp-content/uploads/2013/12/GSMA-NFC05-NFC-Handset-APIs-Requirement-Specification-version-4-1.pdf).
+  > **Note**  
+  > Pay attention to the following:Secure element access is not supported in Tizen 2.3. The Card Emulation API of Tizen 2.3 only supports enabling and disabling the NFC card emulation mode, and retrieving the card emulation status.Security problems can occur in some Card Emulation APIs. The security level can be determined by the manufacturer usage. If a security issue occurs, contact the product manufacturer. For more information on the security levels, see the [GSMA specification](http://www.gsma.com/digitalcommerce/wp-content/uploads/2013/12/GSMA-NFC05-NFC-Handset-APIs-Requirement-Specification-version-4-1.pdf).
 
 - Host-based card emulation (HCE)
 
@@ -75,7 +75,7 @@ The main features of the NFC API include:
 
   **Figure: Card emulation with HCE**
 
-  ![Card emulation with HCE](../../images/nfc_card_emulation_hce.png)
+  ![Card emulation with HCE](./media/nfc_card_emulation_hce.png)
 
   HCE allows you to create your own card emulation system and bypass the SE. This approach brings 2 advantages:
 
@@ -94,7 +94,7 @@ The main features of the NFC API include:
 
   **Figure: HCE routing**
 
-  ![HCE routing](../../images/nfc_hce_routing.png)
+  ![HCE routing](./media/nfc_hce_routing.png)
 
 ## Prerequisites
 
@@ -167,7 +167,7 @@ The NFC API does not contain functions for enabling or disabling NFC. You must d
 
 **Figure: NFC settings application (off screen on the left and on screen on the right)**
 
-![NFC settings application](../../images/nfc_onoff.png)
+![NFC settings application](./media/nfc_onoff.png)
 
 ```
 #include <app_control.h>
@@ -1010,8 +1010,8 @@ To create a card emulation application:
    - Call the `nfc_se_set_preferred_handler()` function when the application is resumed from the paused state.
    - Call the `nfc_se_unset_preferred_handler()` function when the application is paused.
 
-   **Note**
-   The "preferred" functions are available since Tizen 3.0.Because of security issues, the API usage policy is different for each Tizen device. For example, if the application is in the payment category, using the "preferred" functions can be prohibited depending on the device.
+   > **Note**  
+   > The "preferred" functions are available since Tizen 3.0.Because of security issues, the API usage policy is different for each Tizen device. For example, if the application is in the payment category, using the "preferred" functions can be prohibited depending on the device.
 
    The following example shows the entire preferred application sample code:
 
@@ -1129,8 +1129,8 @@ To prepare NFC P2P:
 
 1. Make sure you have 2 target devices that support the NFC P2P mode.
 
-   **Note**
-   The device screen must be unlocked to use NFC.
+   > **Note**  
+   > The device screen must be unlocked to use NFC.
 
 2. To start using the NFC API, initialize the API by calling the `nfc_manager_initialize()` function:
 

@@ -4,9 +4,10 @@
 
 - Tizen 2.3.2 and Higher for Wearable
 
-A service application is a type of Tizen Web application that provides an environment for running JavaScript in the background without a graphical user interface (the application follows the [ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm)). The service application is used to perform tasks which need to run periodically or continuously but do not require user interaction. For example, a service application can be used for getting data or listening for platform events in the background. As service applications do not have UI components, they run on top of a more light-weight runtime than UI applications. Therefore, you can expect them to perform better and consume less memory.
+A service application is a type of Tizen Web application that provides an environment for running JavaScript in the background without a graphical user interface (the application follows the [ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm)). The service application is used to perform tasks that need to run periodically or continuously, but do not require any user interaction. For example, a service application can be used for getting data or listening for platform events in the background. As service applications do not have UI components, they run on top of a more light-weight runtime than UI applications. Therefore, you can expect them to perform better and consume less memory.
 
-​	**Note**	This feature is supported in wearable applications only. The Web service application is an optional feature, which means that it may not be supported on all wearable devices. You can check the device capability by using the `getCapability()` method of the [SystemInfo](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/systeminfo.html#SystemInfo) interface. For more information, see [Application Filtering](../../../../org.tizen.training/html/web/details/app_filtering_w.htm).
+> **Note**
+> This feature is supported in wearable applications only. The Web service application is an optional feature, which means that it may not be supported on all wearable devices. You can check the device capability by using the `getCapability()` method of the [SystemInfo](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/systeminfo.html#SystemInfo) interface. For more information, see [Application Filtering](../../../../org.tizen.training/html/web/details/app_filtering_w.htm).
 
 The main features of the service application include:
 
@@ -30,7 +31,8 @@ The main features of the service application include:
 
 The device main menu does not contain any icons for service applications, because the applications run in the background. The task switcher does not show them either. Service applications can run simultaneously with other service and UI applications.
 
-​	**Note**	The wearable service application requires [partner-level certification](../../../../org.tizen.training/html/web/details/sec_privileges_w.htm) in Tizen 2.3.
+> **Note**
+> The wearable service application requires [partner-level certification](../../../../org.tizen.training/html/web/details/sec_privileges_w.htm) in Tizen 2.3.
 
 ## Prerequisites
 
@@ -65,8 +67,10 @@ To enable your application to use the service application functionality:
    <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
    ```
 
-​	**Note**	No privileges need to be separately defined for service applications, since the service application is always packaged with a UI application, and a scope of a privilege defined for the UI application covers the entire application package.
+> **Note**
+> No privileges need to be separately defined for service applications, since the service application is always packaged with a UI application, and a privilege defined for the UI application covers the entire application package.
 
+<a name="create"></a>
 ## Managing the Service Application Life-cycle
 
 To run a service application, you must export a number of callbacks using the [CommonJS Modules](http://wiki.commonjs.org/wiki/Modules/1.1) API. The callbacks need to be added to the `module.exports` object, which is provided by the environment. The following callbacks are called when there are life-cycle changes or application control events which are triggered by the application management framework:
@@ -125,6 +129,7 @@ Learning how to manage service application callbacks is a basic application mana
    }
    ```
 
+<a name="package"></a>
 ## Packaging a Service Application
 
 A Web application package can contain 1 Web UI application and several service applications. Each application in the Web application package shares the same package ID and has a unique application ID. In the following example, you can use the `<tizen:application>` element to define information for the Web UI application. The `<tizen:service>` element is used to define information about the service application. The UI application and the service application have the same package ID and different application IDs.
@@ -151,6 +156,7 @@ To package the service application with a UI application, define the service in 
 </widget>
 ```
 
+<a name="launch"></a>
 ## Launching a Service Application
 
 Learning how to launch a service application is a basic application management skill:
@@ -175,6 +181,7 @@ Learning how to launch a service application is a basic application management s
   <tizen:service id="websvcapp0.service1" on-boot="true">
   ```
 
+<a name="terminate"></a>
 ## Terminating a Service Application
 
 Learning how to terminate a service application is a basic application management skill:
@@ -203,6 +210,7 @@ Learning how to terminate a service application is a basic application managemen
    var watchId = localMsgPort.addMessagePortListener(onreceived);
    ```
 
+<a name="fund"></a>
 ## Supported APIs for Service Applications
 
 You can use a selection of the following Tizen wearable Web Device APIs to interact with the platform or other service applications. More Device APIs for service applications are supported in the next release.

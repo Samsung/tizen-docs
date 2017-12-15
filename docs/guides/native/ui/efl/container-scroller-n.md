@@ -5,7 +5,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
 
-The scroller container holds and clips a single object and allows you to scroll across it. This means that the user can use a scroll bar or a finger to drag the viewable region across the object, moving through a much larger area than is contained in the viewport. A scroller always has a default minimum size that is not limited by its content. For more information, see the Scroller API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Scroller.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Scroller.html) applications).
+The scroller container holds and clips a single object and allows you to scroll across it. This means that the user can use a scroll bar or a finger to drag the viewable region across the object, moving through a much larger area than is contained in the viewport. A scroller always has a default minimum size that is not limited by its content. For more information, see the Scroller API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Elm__Scroller.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Elm__Scroller.html) applications).
 
 ## Basic Usage
 
@@ -114,7 +114,8 @@ You can register callback functions connected to the following signals for a scr
 | `hbar,unpress`        | The horizontal scroll bar is unpressed.  | `NULL`       |
 | `scroll,page,changed` | The visible page has changed.            | `NULL`       |
 
-**Note**The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> **Note**  
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 ## Example
 
@@ -182,6 +183,5 @@ To create a picture slideshow:
    elm_scroller_page_show(obj, 0, 0);
    ```
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

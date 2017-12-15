@@ -15,6 +15,5 @@ The Ecore library provides convenience functions, which allow you to manage the 
 
   The Ecore library provides concurrent processing mechanisms through Ecore threads. An Ecore thread is not a simple wrapper for standard POSIX threads, and it is not meant to be used to run parallel tasks throughout the entire duration of the application, especially when these tasks are performance-critical. Ecore manages tasks using a pool of threads based on system configuration, such as the number of processors the system has, and the maximum amount of concurrent threads set for the application.There are 2 types of threads in Tizen applications:Main thread that contains the main loopWorker threads that support concurrent processing. In parallel processing, applications must keep the UI updated while processing the data related to the UI.
 
-**Note**
-
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

@@ -4,7 +4,7 @@
 
 - Tizen 2.4 and Higher for Mobile
 
-Tizen enables you to access and control the FM radio on the device.
+You can access and control the FM radio on the device.
 
 This feature is supported in mobile applications only.
 
@@ -22,7 +22,7 @@ The main features of the FM Radio API include:
 
   The Tizen system has a feature to prevent interference between the radio and other sound sources. The radio sound is interrupted in reaction to various events, such as an incoming call or notification. You can use the `oninterrupted` event handler to [detect the reason for the interruption](./media/radio-w.md#get_info).
 
-The available operations depend on the current radio state. To get information about the current radio state, read the `state` attribute of the [FMRadioManager](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/fmradio.html#FMRadioManager) interface (the [RadioState](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/fmradio.html#RadioState) enum specifies the possible state values). The following figure illustrates  the radio states and transitions between them.
+The available operations depend on the current radio state. To get information about the current radio state, read the `state` attribute of the [FMRadioManager](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/fmradio.html#FMRadioManager) interface (the [RadioState](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/fmradio.html#RadioState) enumeration specifies the possible state values). The following figure illustrates the radio states and transitions between them.
 
 **Figure: FM radio states and transitions**
 
@@ -32,7 +32,9 @@ The available operations depend on the current radio state. To get information a
 
 Starting and stopping an FM radio and changing the frequency is a basic FM radio management skill:
 
-1. To start the FM radio, use the `start()` method of the [FMRadioManager](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/fmradio.html#FMRadioManager) interface:	**Note**	Always check the current state before using any state-dependent functions.
+1. To start the FM radio, use the `start()` method of the [FMRadioManager](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/fmradio.html#FMRadioManager) interface:	
+> **Note**	
+> Always check the current state before using any state-dependent functions.
 
    ```
    var radioState = tizen.fmradio.state;

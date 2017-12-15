@@ -11,8 +11,8 @@ The main features of the Resource Manager API include:
 
   You can [set resources](#set) for your application in the **Resource Manager** view in the Tizen Studio. By setting specific resources for specific languages and screen resolutions, you ensure that the application works flawlessly on multiple devices.
 
-  **Note**
-  The Resource Manager tool is supported since Tizen 2.4.If you cannot access the `Resource Manager` view in the Tizen Studio, check the version and API version attributes in the `<manifest>` element of the application manifest file.For more information on the Resource Manager tool, see [Providing Resources for Multiple Device Types](../../../../org.tizen.studio/html/native_tools/resource_manager_n.htm).
+  > **Note**  
+  > The Resource Manager tool is supported since Tizen 2.4.If you cannot access the `Resource Manager` view in the Tizen Studio, check the version and API version attributes in the `<manifest>` element of the application manifest file.For more information on the Resource Manager tool, see [Providing Resources for Multiple Device Types](../../../../org.tizen.studio/html/native_tools/resource_manager_n.htm).
 
 - Using the resources
 
@@ -25,8 +25,8 @@ The main features of the Resource Manager API include:
 
   You can [test the different resources by running them in the emulator](#check_resource).
 
-  **Note**
-  The resource files must be set to be in different folders and have the same filename.
+  > **Note**  
+  > The resource files must be set to be in different folders and have the same filename.
 
 ## Prerequisites
 
@@ -50,8 +50,8 @@ To set the resources:
 
    ![Add images](./media/resource_manager_add_images.png) ![Image files for variants](./media/resource_manager_image_files.png)
 
-   **Note**
-   The file names of the resources that you want to use interchangeably depending on the device conditions must be the same.
+   > **Note**  
+   > The file names of the resources that you want to use interchangeably depending on the device conditions must be the same.
 
    ​
 
@@ -108,7 +108,7 @@ app_terminate(void *data)
 
 To check how the resources are shown on different device configurations, create emulator instances with different resolutions with the [Emulator Manager](../../../../org.tizen.studio/html/common_tools/emulator_manager.htm) and run the application on the instances using different language settings:
 
-1. Open the Emulator Manager from the **Connection Explorer** view in the Tizen Studio.![Connection Explorer buttons](./media/resource_manager_conn_explorer.png)If the **Connection Explorer** view is not visible, open it: in the Tizen Studio menu, go to **Window > Show View > Connection Explorer** or **Window > Show View > Other > Tizen > Connection Explorer**.
+1. Open the Emulator Manager by selecting **Tools &gt; Emulator Manager** in the Tizen Studio menu. ![Emulator Manager](./media/resource_manager_conn_explorer.png)
 
 2. In the **Emulator Manager** window, the HD Mobile emulator has already been created.Next, create an emulator instance with a WVGA resolution by clicking **Create**.![Create a new emulator](./media/resource_manager_emulator_new.png)Select mobile, and the **WVGA Mobile** template. Click **Finish**. If the HD Mobile emulator has not been created, create it as well. For more information on creating an emulator instance, see [Creating Emulator Instances](../../../../org.tizen.studio/html/common_tools/emulator_manager.htm#create).
 

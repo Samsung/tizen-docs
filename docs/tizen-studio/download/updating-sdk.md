@@ -62,8 +62,8 @@ If you are using the Tizen Studio offline, you can update the packages with an i
 2. Enter the full path of the image file in the **Package Repository** box, or click **...** next to the combo box to open the file browser. In the file browser, select the image file, and click **Open** to close the dialog. If the image file is valid, detailed information about the image is displayed below the combo box.
 3. Click **OK** to close the **Configuration** dialog. The **Update available** button appears after the platforms and tools in the image file are re-loaded. Now you can update and install additional platforms and tools with the image file.
 
-**Note**
-Make sure that the image file includes a newer Tizen Studio version than your installed version before updating or installing with the image file.
+> **Note**  
+> Make sure that the image file includes a newer Tizen Studio version than your installed version before updating or installing with the image file.
 
 ## Installing Additional Packages
 

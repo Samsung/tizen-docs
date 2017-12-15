@@ -25,8 +25,8 @@ The main features of the Widget Application API include:
 
   The widget application can [draw a UI on the home screen](#get_window).
 
-  **Note**
-  The widget application UI has a limitation with the scroll action to provide a better user experience. Design the widget UI to display all the information within the given area of the screen points.To draw the UI, use a single window that is returned by the `widget_app_get_elm_win()` function. Do not create additional windows. A stack of widget application windows gets corrupted, because the platform handles the widget application window in a special way.
+  > **Note**  
+  > The widget application UI has a limitation with the scroll action to provide a better user experience. Design the widget UI to display all the information within the given area of the screen points.To draw the UI, use a single window that is returned by the `widget_app_get_elm_win()` function. Do not create additional windows. A stack of widget application windows gets corrupted, because the platform handles the widget application window in a special way.
 
 ## Widget Application and Widget Instance
 
@@ -490,5 +490,5 @@ For example, a music-player-service service application is needed to control the
 
 ![Sharing through data control](./media/widget_data_control_share.png)
 
-**Note**
-For user convenience, a STANDALONE widget application package is not allowed in the Tizen Store.You can make a STANDALONE widget application in the Tizen Studio for test purposes. However, to publish it, you must combine it with at least 1 UI application in the package. For more information, see [Developing Multiple Projects as a Combined Package](../../../../org.tizen.training/html/native/process/app_dev_process_n.htm#develop).
+> **Note**  
+> For user convenience, a STANDALONE widget application package is not allowed in the Tizen Store.You can make a STANDALONE widget application in the Tizen Studio for test purposes. However, to publish it, you must combine it with at least 1 UI application in the package. For more information, see [Developing Multiple Projects as a Combined Package](../../../../org.tizen.training/html/native/process/app_dev_process_n.htm#develop).

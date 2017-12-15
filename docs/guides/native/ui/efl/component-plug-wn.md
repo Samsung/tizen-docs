@@ -43,9 +43,8 @@ To use the plug:
    Evas_Object *plug_img = elm_plug_image_object_get(plug);
    ```
 
-   **Note**
-
-   The socket to connect to must be started with the `elm_win_socket_listen()` function in the other process on the remote window object (`remote_win`):
+   > **Note**
+   > The socket to connect to must be started with the `elm_win_socket_listen()` function in the other process on the remote window object (`remote_win`):
 
    ```
    /* Create a remote window in the other process */
@@ -63,9 +62,8 @@ To receive notifications about the plug events, listen for the following signals
 - `image,deleted`: The server side is deleted.The `event_info` callback parameter is `NULL`.
 - `image,resized`: The server side is resized.The `event_info` callback parameter is `Evas_Coord_Size` (2 integers).
 
-**Note**
-
-The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
+> **Note**
+> The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 To register and define a callback for the `clicked` signal:
 

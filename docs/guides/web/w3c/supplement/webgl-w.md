@@ -25,7 +25,8 @@ The main features of WebGL™ include:
 
   A buffer is a memory block for storing temporary data. In WebGL™, you must [create a vertex buffer object (VBO) to store vertex attributes](./w3c/supplement/webgl-w.md#buffer), such as location, color, and texture coordinates.
 
-  ​	**Note**	The `deleteBuffer()` method can be used to delete the buffer.
+> **Note**
+> The `deleteBuffer()` method can be used to delete the buffer.
 
 - Drawing on the screen   
 
@@ -61,7 +62,7 @@ The main features of WebGL™ include:
 
 ## Importing the WebGL™ Context
 
-To enhance the user experience of your application with WebGL™ features, you must learn to import the WebGL™ context from the HTML5 `<canvas>` element:
+To import the WebGL™ context from the HTML5 `<canvas>` element:
 
 1. Define the `<canvas>` element ID and set its width and height:
 
@@ -71,7 +72,8 @@ To enhance the user experience of your application with WebGL™ features, you m
    </body>
    ```
 
-   ​	**Note**	If the width and height are not set, the default size, 300 x 150 px, is used.
+> **Note**
+> If the width and height are not set, the default size, 300 x 150 px, is used.
 
 2. Use the `getContext()` method of the `Canvas` object to import the WebGL™ context:
 
@@ -108,7 +110,7 @@ For the complete source code related to this use case, see the following file:
 
 ## Initializing Programs and Shaders
 
-To enhance the user experience of your application with WebGL™ features, you must learn to bind the shaders and GLSL ES in WebGL™ by using shaders and programs:
+To bind the shaders and GLSL ES in WebGL™ by using shaders and programs:
 
 1. Define the vertex shader and fragment shader using the `gl_Position` and `gl_FragColor` variables of the [OpenGL® ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf) (GLSL ES):
 
@@ -154,7 +156,8 @@ To enhance the user experience of your application with WebGL™ features, you m
        gl.compileShader(fshader);
    ```
 
-   ​	**Note**	After a shader has been used, you can use the `deleteShader()` method to delete it.
+> **Note**	
+> After a shader has been used, you can use the `deleteShader()` method to delete it.
 
 5. Import the `createProgram()` method to create a new instance of the [WebGLProgram](https://www.khronos.org/registry/webgl/specs/1.0/#5.6) object, in which the shaders are then attached:
 
@@ -184,7 +187,8 @@ To enhance the user experience of your application with WebGL™ features, you m
    </script>
    ```
 
-   ​	**Note**	After a  WebGL™ program has been used, you can use the `deleteProgram()` method to delete it.
+> **Note**
+> After a  WebGL™ program has been used, you can use the `deleteProgram()` method to delete it.
 
 ### Source Code
 
@@ -194,7 +198,7 @@ For the complete source code related to this use case, see the following file:
 
 ## Initializing Buffers
 
-To enhance the user experience of your application with WebGL™ features, you must learn to create buffers, bind them, and store data in them:
+To create buffers, bind them, and store data in them:
 
 1. To create a triangle (shown on the left in the figure), define the coordinates of a triangle according to the WebGL™ coordinate system (shown on the right):
 
@@ -299,7 +303,7 @@ For the complete source code related to this use case, see the following files:
 
 ## Setting Colors
 
-To enhance the user experience of your application with WebGL™ features, you must learn to set colors using attributes and a buffer:
+To set colors using attributes and a buffer:
 
 1. Define the vertex shader and fragment shader using the `gl_Position` and `gl_FragColor` variables of the [OpenGL® ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf) (GLSL ES):
 
@@ -379,13 +383,14 @@ For the complete source code related to this use case, see the following file:
 
 ## Setting Textures
 
-To enhance the user experience of your application with WebGL™ features, you must learn to use a texture, which is an image applied to the surface:
+To apply an image from a file to a surface as a texture:
 
 1. Define the vertex shader and fragment shader using the `gl_Position` and `gl_FragColor` variables of the [OpenGL® ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf) (GLSL ES). In this example, the texture coordinate attribute is used instead of the vertex coordinate attribute.
 
    Set the variable to pass the texture coordinate over to the fragment shader. Define the formula for calculating the texture coordinates.
 
-   ​	**Note**	The coordinate range of a vertex is -1 ~ 1, and the coordinate range of a texture is 0 ~ 1.
+> **Note**
+> The coordinate range of a vertex is -1 ~ 1, and the coordinate range of a texture is 0 ~ 1.
 
    ```
    <script id="vshader" type="x-shader/x-vertex">
@@ -409,7 +414,8 @@ To enhance the user experience of your application with WebGL™ features, you m
    </script>
    ```
 
-   ​	**Note**	The texture coordinates uses the `s, t` pair.
+> **Note**	
+> The texture coordinates use the `s, t` pair.
 
 2. Create a new `texture` instance using the `createTexture()` method:
 
@@ -418,7 +424,8 @@ To enhance the user experience of your application with WebGL™ features, you m
        var texture = gl.createTexture();
    ```
 
-   ​	**Note**	After a texture has been used, you can use the `deleteTexture()` method to delete it.
+> **Note**	
+> After a texture has been used, you can use the `deleteTexture()` method to delete it.
 
 3. Load the image file to be used as texture data, and bind the texture using the `bindTexture()` method:
 
@@ -470,7 +477,7 @@ For the complete source code related to this use case, see the following files:
 
 ## Creating an Animation
 
-To enhance the user experience of your application with WebGL™ features, you must learn to adjust and move object coordinates to create an animation:
+To create an animation by adjusting and moving object coordinates:
 
 1. Calculate the central point:
 
@@ -515,7 +522,9 @@ To enhance the user experience of your application with WebGL™ features, you m
 
 3. Change the value of the variable in order to calculate the central point. Render the circle with the central point and vertex location, using the `TRIANGLE_FAN` argument that allows all triangles to share a central point to make a circle.`        /* Change the angle value to change the central point coordinates */        angle += 0.01;        var triangleVerticesBuffer = gl.createBuffer();        gl.bindBuffer(gl.ARRAY_BUFFER, triangleVerticesBuffer);        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);        var vertexPositionAttribute = gl.getAttribLocation(program, 'attVertexPos');        gl.enableVertexAttribArray(vertexPositionAttribute);        gl.vertexAttribPointer(vertexPositionAttribute, 2, gl.FLOAT, false, 0, 0);        gl.drawArrays(gl.TRIANGLE_FAN, 0, n + 2);    }`
 
-4. Use the `setInterval()` method to set the rendering interval of the circle:`    window.setInterval(function() {draw();}, 10);</script>`	**Note**	Instead of the `setInterval()` method, you can also use the script-based W3C `requestAnimationFrame()` method.
+4. Use the `setInterval()` method to set the rendering interval of the circle:`    window.setInterval(function() {draw();}, 10);</script>`	
+> **Note**	
+> Instead of the `setInterval()` method, you can also use the script-based W3C `requestAnimationFrame()` method.
 
 The following figure shows the animation as it is displayed on the screen.
 
@@ -531,7 +540,7 @@ For the complete source code related to this use case, see the following file:
 
 ## Creating a 3D Perspective
 
-To enhance the user experience of your application with WebGL™ features, you must learn to create 3D perspective using the [glMatrix library](https://github.com/toji/gl-matrix):
+To create a 3D perspective, you can use the [glMatrix library](https://github.com/toji/gl-matrix):
 
 1. Set the vertex coordinate and color buffer values to draw 2 triangles:
 
@@ -675,7 +684,7 @@ For the complete source code related to this use case, see the following files:
 
 ## Using Touch Events
 
-To enhance the user experience of your application with WebGL™ features, you must learn to apply a texture and 3D perspective with touch events using the [glMatrix library](https://github.com/toji/gl-matrix). The following example demonstrates how to display and turn a dice on the screen based on touch events.
+You can apply a texture and 3D perspective with touch events by using the [glMatrix library](https://github.com/toji/gl-matrix). The following example demonstrates how to display and turn a dice on the screen based on touch events:
 
 1. Define the vertex shader and fragment shader using the `gl_Position` and `gl_FragColor` variables of the [OpenGL® ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf) (GLSL ES):
 
@@ -880,7 +889,8 @@ To enhance the user experience of your application with WebGL™ features, you m
 
 9. Import the `mat4()` method module and define it using the utility methods:
 
-   ​	**Note**	The `perspective()` method is not WebGL™-embedded, so it must be used directly, or a third-party matrix library must be used.
+> **Note**
+> The `perspective()` method is not WebGL™-embedded, so it must be used directly, or a third-party matrix library must be used.
 
    ```
            mat4.perspective(45, canvas.width / canvas.height, 0.1, 100.0, pMatrix);
@@ -964,7 +974,7 @@ For the complete source code related to this use case, see the following files:
 
 ## Using WebGL™ Frameworks
 
-To enhance the user experience of your application with WebGL™ features, you must learn to use the three.js framework:
+To use the three.js framework for your WebGL™ application:
 
 1. Download the [three.js library](http://threejs.org/) and include it in the HTML file:
 
@@ -1068,7 +1078,8 @@ To enhance the user experience of your application with WebGL™ features, you m
        }
    ```
 
-   ​	**Note**	In WebGL™, there is no `Camera` object.
+> **Note**	
+> In WebGL™, there is no `Camera` object.
 
 6. Create a new `Scene` instance and create the mesh and light elements using the `createMeshs()` and `setupLight()` methods:
 
