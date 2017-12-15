@@ -522,3 +522,108 @@ animations = {
     };
 };
 ```
+
+## Adding New Files to the ramdisk-recovery Partition.
+
+The `ramdisk-recovery` partition is created along with the `rootfs`
+partition (methods for creating images are beyond the scope of this
+document). Files to be added to the `ramdisk-recovery` partition need
+to be available in Tizen RPM packages first. The partition is
+populated with files by the `mkinitrd-recovery.sh` script started
+automatically as a part of `%posttrans` RPM script of the
+`initrd-recovery` package. To install selected file in the recovery
+image, its RPM needs to be installed before `initrd-recovery`. The
+easiest way to assure this is to list the package as one of
+dependencies in the `initrd-recovery.spec` file.
+
+The `mkinitrd-recovery.sh` script copies or moves files from the
+`rootfs` partition to `initrd-recovery` partition according to
+directions provided in files stored in the
+`/usr/share/initrd-recovery/initrd.list.d` directory. The
+configuration files should come in RPM packages together with the
+files to be put on `initrd-recovery`.  The configuration files are
+interpreted as shell scripts and are supposed to set the following
+variables:
+
+- `DIRECTORIES`: Create directories
+- `DIR_SYMLINKS`: Create symbolic links to directories
+- `LIBONLYS`: Copy **only** libraries required by listed executable files
+- `MVWITHLIBS`: Move listed executable files and copy required libraries
+- `SYMLINKS`: Create symbolic links
+- `VERBATIMS`: Copy listed files, list non-executable files here
+- `WITHLIBS`: Copy listed executable files and required libraries
+
+Below are examples of the above lists. Please note that elements
+SYMLINKS and DIR_SYMLINKS are pairs of filenames separated with
+colons:
+
+```
+DIRECTORIES="
+/var/tmp
+/usr/lib/odbc
+"
+
+# LinkFileName:Target
+DIR_SYMLINKS="
+/lib:usr/lib
+/opt:system/opt
+"
+
+LIBONLYS="
+/bin/bash
+/bin/kill
+"
+
+MVWITHLIBS="
+/usr/libexec/initrd-recovery/minireboot
+/usr/libexec/system-recovery/system-recovery.gui
+"
+
+WITHLIBS="
+/usr/bin/sync
+/usr/bin/touch
+"
+
+VERBATIMS="
+/usr/share/system-recovery/res/images/font.png
+/usr/share/system-recovery/res/images/menu-title.png
+/usr/share/system-recovery/system-recovery.cfg
+"
+
+# LinkFileName:Target
+SYMLINKS="
+/sbin/recovery-init:/usr/libexec/system-recovery/recovery-init
+/usr/lib/bufmgr/libtbm_default.so:libtbm_sprd.so
+"
+```
+
+This real-world example comes from the `initrd-recovery`
+package. According to this configuration `mkinitrd-recovery.sh` copies
+some basic tools to the `initrd-recovery` partition, moves `init` and
+`minireboot` and creates some symlinks.
+
+```
+MVWITHLIBS="
+/usr/libexec/initrd-recovery/init
+/usr/libexec/initrd-recovery/minireboot
+"
+
+WITHLIBS="
+/usr/bin/bash
+/usr/bin/cat
+/usr/bin/mkdir
+/usr/bin/mount
+/usr/bin/sleep
+/usr/bin/sync
+/usr/bin/umount
+/usr/sbin/blkid
+"
+
+# LinkFileName:Target
+SYMLINKS="
+/bin/sh:bash
+/sbin/init:/usr/libexec/initrd-recovery/init
+/sbin/minireboot:/usr/libexec/initrd-recovery/minireboot
+/sbin/reboot:/usr/libexec/initrd-recovery/minireboot
+"
+```
