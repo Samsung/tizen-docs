@@ -27,6 +27,7 @@
 ### [Kernel](open-source-project/porting/kernel.md)
 ### [System](open-source-project/porting/system.md)
 ### [Graphics and UI](open-source-project/porting/graphics-and-ui.md)
+### [Recovery](open-source-project/porting/recovery.md)
 ### [Multimedia](open-source-project/porting/multimedia.md)
 ### [Connectivity](open-source-project/porting/connectivity.md)
 ### [Location](open-source-project/porting/location.md)
@@ -81,17 +82,3 @@
 ### Release Notes
 #### [Tizen RT 1.0 M1](open-source-project/tizen-rt/release-notes/tizen-rt-1-0-m1.md)
 <!-- End of Tizen Platform -->
-
-<!-- Tizen .NET Content -->
-# <!--Tizen .NET (TBD)-->
-## <!--Getting Started-->
-## <!--Guides-->
-## <!--API Reference-->
-## <!--VS Tools-->
-## <!--Samples-->
-<!-- End of Tizen .NET -->
-
-<!-- Tizen Native/Web Application Content -->
-# <!--Tizen Native/Web Application (TBD)-->
-<!-- End of Tizen Native/Web Application -->
-

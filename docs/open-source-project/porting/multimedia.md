@@ -35,7 +35,7 @@ The following list defines the major functions for the camera HAL interface:
 
 - Functions for initialization and deinitialization:
 
-  ```c
+  ```cpp
   /*Initializes new camera HAL handle */
   int camera_init(void **camera_handle);	
 
@@ -44,7 +44,7 @@ The following list defines the major functions for the camera HAL interface:
   ```
 - Functions for opening and closing the camera device:
 
-  ```c
+  ```cpp
   /* Opens the camera device */
   int camera_open_device(void *camera_handle, int device_index);
 
@@ -53,7 +53,7 @@ The following list defines the major functions for the camera HAL interface:
   ```
 - Functions for getting device information:
 
-  ```c
+  ```cpp
   /* Gets the camera device list */
   int camera_get_device_list(void *camera_handle, camera_device_list_t *device_list);
 
@@ -65,7 +65,7 @@ The following list defines the major functions for the camera HAL interface:
   ```
 - Functions for preview and capture:
 
-  ```c
+  ```cpp
   typedef struct camera_format {
       camera_pixel_format_t stream_format;
       camera_resolution_t stream_resolution;
@@ -109,7 +109,7 @@ The following list defines the major functions for the camera HAL interface:
   ```
 - Functions for video recording:
 
-  ```c
+  ```cpp
   /* Stops capturing still images */
   int camera_set_video_stream_format(void *camera_handle, camera_format_t *format);
 
@@ -129,7 +129,7 @@ The following list defines the major functions for the camera HAL interface:
   ```
 - Functions for controlling the camera device:
 
-  ```c
+  ```cpp
   #define CAMERA_COMMAND_BASE                     ((int64_t)1)
   #define CAMERA_COMMAND_WHITE_BALANCE            ((int64_t)(CAMERA_COMMAND_BASE << 1))
   #define CAMERA_COMMAND_ISO                      ((int64_t)(CAMERA_COMMAND_BASE << 2))
@@ -340,7 +340,7 @@ The following list defines the major functions for the radio HAL interface:
 
 - Functions for initialization and deinitialization:
 
-  ```c
+  ```cpp
   /* Initializes a new radio HAL handle */
   radio_error_t radio_init(void **radio_handle);
 
@@ -350,7 +350,7 @@ The following list defines the major functions for the radio HAL interface:
 
 - Functions for preparing and unpreparing the radio device:
 
-  ```c
+  ```cpp
   /* Prepares the radio device */
   radio_error_t radio_prepare_device(void *radio_handle);
   
@@ -360,7 +360,7 @@ The following list defines the major functions for the radio HAL interface:
 
 - Functions for opening and closing the radio device:
 
-  ```c
+  ```cpp
   /* Opens the radio device */
   radio_error_t radio_open_device(void *radio_handle);
 
@@ -370,7 +370,7 @@ The following list defines the major functions for the radio HAL interface:
 
 - Functions for starting and stopping the radio device:
 
-  ```c
+  ```cpp
   /* Starts the radio device */
   radio_error_t radio_start(void *radio_handle);
 
@@ -380,7 +380,7 @@ The following list defines the major functions for the radio HAL interface:
 
 - Functions for setting and getting the frequency:
 
-  ```c
+  ```cpp
   /* Gets the radio frequency */
   radio_error_t radio_get_frequency(void *radio_handle, uint32_t *frequency);
 
@@ -390,7 +390,7 @@ The following list defines the major functions for the radio HAL interface:
 
 - Functions for seeking channels:
 
-  ```c
+  ```cpp
   typedef enum radio_seek_direction_type {
       RADIO_SEEK_DIRECTION_UP, /* Seek upward */
       RADIO_SEEK_DIRECTION_DOWN /* Seek downward */
@@ -402,7 +402,7 @@ The following list defines the major functions for the radio HAL interface:
 
 - Functions for  muting and unmuting the radio device:
 
-  ```c
+  ```cpp
   /* Mutes the radio */
   radio_error_t radio_mute(void *radio_handle);
 
@@ -413,7 +413,7 @@ The following list defines the major functions for the radio HAL interface:
 
 - Functions for setting and getting the volume:
 
-  ```c
+  ```cpp
   /* Gets the current radio volume */
   radio_error_t radio_get_volume(void *radio_handle, float *volume);
 
@@ -426,7 +426,7 @@ The following list defines the major functions for the radio HAL interface:
 
 - Functions for getting the signal strength:
 
-  ```c
+  ```cpp
   /* Gets the current signal strength of the radio */
   radio_error_t radio_set_media_volume(void *radio_handle, uint32_t level);
   ```
@@ -467,7 +467,7 @@ The following figure illustrates the different audio layers.
 
 The following example defines the major functions for the audio HAL interface:
 
-```c
+```cpp
 /* Initializes the audio HAL handle */
 audio_return_t audio_init(void **audio_handle); 
 
@@ -914,7 +914,7 @@ Original Waylandsink lists various video formats, but Wayland only supports the 
 
 To use the TBM Video Format, Waylandsink needs to bind `tizen_policy_interface`, `tizen_video_interface`, and `register listener` and get the video formats as a callback.
 
-```c
+```cpp
 static void handle_tizen_video_format(void *data, struct tizen_video *tizen_video, uint32_t format) {
     GstWlDisplay *self = data;
     FUNCTION;
@@ -950,7 +950,7 @@ The SN12, SN21, ST12, SR32, and S320 formats are identical to NV12, NV21, NV12MT
 
 The Gst Element must use the MMVideoBuffer type when transferring TBM buffer. tbm bo must be stored in bo of MMVideoBufferHandle, and the type must be MM_VIDEO_BUFFER_TYPE_TBM_BO. Waylandsink makes wl_buffer by using the MMVideoBuffer information. If the video frame is not rendered, Waylandsink must make sure that the information in MMVideoBuffer in GstBuffer received from Camerasrc or Video Codec is correct.
 
-```c
+```cpp
 typedef struct {
     MMVideoBufferType type; /* Buffer type - the handle field that type indicates must be filled, and other handle fields are optional */
     MMPixelFormatType format; /* Buffer type */
@@ -1010,7 +1010,7 @@ Sometimes, it is necessary to return `GstBuffer` while maintaining the video fra
 
 1. Gapless video playback  
    Waylandsink receives the `GST_EVENT_CUSTOM_DOWNSTREAM` event from the player when it performs gapless video playback. The player creates a `FlushBuffer`.
-   ```c
+   ```cpp
    #define GST_APP_EVENT_FLUSH_BUFFER_NAME "application/flush-buffer"
 
    static gboolean gst_wayland_sink_event(GstBaseSink * bsink, GstEvent * event) {
@@ -1044,7 +1044,7 @@ disable-overlay : Stop using overlay by destroying wl_window and wl_display, Use
                               Boolean. Default: false
 ```
 
-```c
+```cpp
 gst_wayland_sink_set_property(GObject * object, guint prop_id, const GValue * value, GParamSpec * pspec) {
     [...]
     case PROP_DISABLE_OVERLAY:
@@ -1079,7 +1079,7 @@ gst_video_overlay_set_wl_window_wl_surface_id(GST_VIDEO_OVERLAY(player->pipeline
 
 Changing the gst-pipeline of the player is labor-intensive, so Waylandsink provides a fakesink functionality. If this property is set to `true`, Waylandsink sends a handoff signal to the player.
 
-```c
+```cpp
 static GstFlowReturn gst_wayland_sink_render(GstBaseSink * bsink, GstBuffer * buffer) {
     [...]
     /* fakesink function for media stream callback case */
@@ -1115,7 +1115,7 @@ rotate   : Rotate angle of display output
 ```
 
 The enumeration values used by the player or camera need to be converted to values used by Wayland.
-```c
+```cpp
 static gint gst_wl_window_find_rotate_transform(guint rotate_angle) {
     gint transform = WL_OUTPUT_TRANSFORM_NORMAL;
     switch (rotate_angle) {
@@ -1154,7 +1154,7 @@ Waylandsink can flip the angle of the display output. The default value of the `
 ```
 
 Wayland has no flip function, so Waylandsink must implement flipping by rotating the video viewport:
-```c
+```cpp
 static gint gst_wl_window_find_flip_transform(guint flip) {
     gint transform = WL_OUTPUT_TRANSFORM_NORMAL;
     FUNCTION;
@@ -1186,7 +1186,7 @@ tizen_viewport_set_transform(window->tizen_video_viewport, transform);
 
 Waylandsink can make the video frame visible or invisible on the display. To make the video frame invisible, attach `NULL`. To make the video fame visible, Waylandsink needs to keep the last rendered video frame.
 
-```c
+```cpp
 /* invisible */
 static void gst_wayland_sink_stop_video(GstWaylandSink * sink) {
     FUNCTION;
@@ -1214,7 +1214,7 @@ display-geometry-method: Geometrical method for display
 ```
 These are provided by using `tizen_viewport` since Tizen 3.0.
 
-```c
+```cpp
 enum {
     DISP_GEO_METHOD_LETTER_BOX = 0,
     DISP_GEO_METHOD_ORIGIN_SIZE,
@@ -1231,7 +1231,7 @@ if (tizen_disp_mode > -1) {
 ```
 
 ROI coordinates can be set only when the value of `display-geometry-method` is set to 5, and ROI coordinates are obtained from `gst_video_overlay_set_render_rectangle()` from the player or camera.
-```c
+```cpp
 if (window->disp_geo_method.value == DISP_GEO_METHOD_CUSTOM_ROI) {
     tizen_viewport_set_destination(window->tizen_video_viewport, window->roi.x, window->roi.y, window->roi.w, window->roi.h);
 }

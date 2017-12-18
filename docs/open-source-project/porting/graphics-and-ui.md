@@ -257,7 +257,7 @@ lrwxrwxrwx 1 root root    14 Jul 28  2016 libtdm-default.so -> libtdm-drm.so
 
 The TDM backend module must define the global data symbol with the name `tdm_backend_module_data`. The TDM frontend reads this symbol at the initialization time. TDM calls the `init()` function of the `tdm_backend_module_data`. For more information, see [tdm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtdm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
 
-```c
+```cpp
 typedef struct _tdm_backend_module {
     const char *name; /* The module name of the backend module */
     const char *vendor; /* The vendor name of the backend module */
@@ -295,7 +295,7 @@ tdm_backend_module tdm_backend_module_data = {
 
 The TDM backend must register the `tdm_func_display()`, `tdm_func_output()`, and `tdm_func_layer()` functions with the `tdm_backend_register_func_display()`, `tdm_backend_register_func_output()`, and `tdm_backend_register_func_layer()` functions in the `tdm_backend_module_data` `init()` function.
 
-```c
+```cpp
 #include <tdm_backend.h>
 
 tdm_backend_data*
@@ -615,7 +615,7 @@ The following figure illustrates the OpenGL&reg; ES drawing API flow.
 
 The following code snippet shows a simple example of the Tizen Porting Layer:
 
-```c
+```cpp
 dpy = tpl_display_create(...);
 sfc = tpl_surface_create(dpy, ...);
 

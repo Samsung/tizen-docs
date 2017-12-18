@@ -150,7 +150,7 @@ OEM developers must implement the API defined in the header files of the `libdev
 
 The following code snippet shows the device HAL structure:
 
-```c
+```cpp
 #define MAKE_TAG_CONSTANT(A,B,C,D) (((A) << 24) | ((B) << 16) | ((C) << 8) | (D))
 #define HARDWARE_INFO_TAG MAKE_TAG_CONSTANT('T','H','I','T')
 
@@ -190,7 +190,7 @@ The battery HAL provides functions for getting the battery status. The HAL inter
 
 The following code snippet shows the battery HAL interface:
 
-```c
+```cpp
 /*
    Device ID
 */
@@ -244,7 +244,7 @@ The following table lists the battery HAL functions.
 
 The following code snippet shows an example of the battery HAL:
 
-```c
+```cpp
 #define BATTERY_ROOT_PATH "/sys/class/power_supply"
 
 static int
@@ -349,7 +349,7 @@ The display HAL provides functions for controlling the display brightness. The H
 
 The following code snippet shows the display HAL interface:
 
-```c
+```cpp
 /*
    Device ID
 */
@@ -382,7 +382,7 @@ The following table lists the display HAL functions.
 
 The following code snippet shows an example of the display HAL:
 
-```c
+```cpp
 #ifndef BACKLIGHT_PATH
 #define BACKLIGHT_PATH "/sys/class/backlight/panel"
 #endif
@@ -479,7 +479,7 @@ The external connector HAL provides functions for getting the external connector
 
 The following code snippet shows the interface of the external connector HAL:
 
-```c
+```cpp
 /*
    Device ID
 */
@@ -530,7 +530,7 @@ The following table lists the external connector HAL functions.
 
 The following code snippet shows an example of the external connector HAL:
 
-```c
+```cpp
 #define SWITCH_ROOT_PATH "/sys/devices/virtual/switch"
 
 static struct switch_device {
@@ -610,7 +610,7 @@ The LED HAL provides functions for controlling LEDs. The HAL interface is define
 
 The following code snippet shows the interface of the LED HAL:
 
-```c
+```cpp
 /*
    Device ID
 */
@@ -667,7 +667,7 @@ The following table lists the LED HAL functions.
 
 The following code snippet shows an example of the LED HAL:
 
-```c
+```cpp
 #ifndef CAMERA_BACK_PATH
 #define CAMERA_BACK_PATH "/sys/class/leds/torch-sec1"
 #endif
@@ -772,7 +772,7 @@ The IR HAL provides functions for controlling IR transmission. The HAL interface
 
 The following code snippet shows the interface of the IR HAL:
 
-```c
+```cpp
 /*
    Device ID
 */
@@ -803,7 +803,7 @@ The following table lists the IR HAL functions.
 
 The following code snippet shows an example of the IR HAL:
 
-```c
+```cpp
 #define IRLED_CONTROL_PATH "/sys/class/ir/ir_send"
 
 static int
@@ -866,7 +866,7 @@ The touchscreen HAL provides functions for switching the touchscreen on and off.
 
 The following code snippet shows the interface of the touchscreen HAL:
 
-```c
+```cpp
 /*
    Device ID
 */
@@ -902,7 +902,7 @@ The following table lists the touchscreen HAL functions.
 
 The following code snippet shows an example of the touchscreen HAL:
 
-```c
+```cpp
 #define TURNON_TOUCHSCREEN 1
 #define TURNOFF_TOUCHSCREEN 0
 #define TOUCHSCREEN_PATH "/sys/class/input/touchscreen/enable"
@@ -1056,7 +1056,7 @@ The Tizen HAL sensor types are also defined in the `sensor_hal_types.h` header f
 
 The following code snippet shows the interface of the sensor HAL in the `sensor_hal.h` header file:
 
-```c
+```cpp
 /*
    Create devices
 */
@@ -1124,7 +1124,7 @@ The following table describes the functions of the `sensor_device` interface.
 
 The following code snippet shows the interface of the sensor HAL types in the `sensor_hal_type.h` header file:
 
-```c
+```cpp
 /*
    Sensor Types
    These types are used to control the sensors
@@ -1195,7 +1195,7 @@ typedef enum {
 
 The following code snippet shows the interface of the sensor HAL information in the `sensor_hal_type.h` header file:
 
-```c
+```cpp
 /*
    A platform sensor handler is generated based on this handle
    This ID can be assigned by HAL developer, so it must be unique in 1 sensor_device.
@@ -1319,7 +1319,7 @@ extern "C" int create(sensor_device_t **devices) {
 }
 ```
 
-```c
+```cpp
 /* In accel_device.h */
 #ifndef _ACCEL_DEVICE_H_
 #define _ACCEL_DEVICE_H_
@@ -1735,7 +1735,7 @@ The sensorhub HAL can be developed by using the `sensor_device` interface. An ex
 
 IDs can be assigned by the vendor or manufacturer for the sensorhub sensors by using the following `sensor_info_t` interface:
 
-```c
+```cpp
 typedef struct sensor_info_t {
     uint32_t id;
     const char *name;
@@ -1754,7 +1754,7 @@ typedef struct sensor_info_t {
 
 The following code snippet shows an example of a sensorhub HAL implementation:
 
-```c
+```cpp
 #include <algorithm>
 #include <sensor_log.h>
 
@@ -2001,7 +2001,7 @@ sensorhub_device::parse_debug(const char *hub_data, int data_len) {
 }
 ```
 
-```c
+```cpp
 #include <unistd.h>
 #include <string.h>
 #include <fcntl.h>
