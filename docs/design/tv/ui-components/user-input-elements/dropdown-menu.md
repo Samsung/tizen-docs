@@ -26,5 +26,5 @@ The following guidelines apply to drop-down menus:
 
 
 
-![drop-down menu](media/uc_03_6_ui_dropdown_menu_re-850x478.png)<br>
+![drop-down menu](media/uc_03_6_ui_dropdown_menu_re-850x478.png)  
 *Drop-down menu with selected option as label*

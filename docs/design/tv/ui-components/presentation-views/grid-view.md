@@ -19,5 +19,5 @@ The following guidelines apply to grid items:
 
 
 
-![grid view](media/uc_02_1_ui_grid_view_re-850x478.png)<br>
+![grid view](media/uc_02_1_ui_grid_view_re-850x478.png)  
 *Grid view*

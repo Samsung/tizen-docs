@@ -7,5 +7,5 @@ The following guidelines apply to scrolling:
 - The header and footer areas are not scrolled.
 - The scroll bar appears when the user scrolls the content.
 
-![scrolling](media/pt_11_scrolling-850x478.png)<br>
+![scrolling](media/pt_11_scrolling-850x478.png)  
 *Scrolling through a sublist*

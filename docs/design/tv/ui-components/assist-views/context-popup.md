@@ -13,5 +13,5 @@ A context popup item can be in either of the following states:
 
 
 
-![context popup](media/uc_04_3_ui_context_popup_re-850x478.png)<br>
+![context popup](media/uc_04_3_ui_context_popup_re-850x478.png)  
 *Context popup*

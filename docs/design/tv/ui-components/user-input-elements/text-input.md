@@ -11,7 +11,5 @@ The following guidelines apply to guide text:
 -   <span>If it is not possible to provide an input example, do not use guide text.</span>
 -   The guide text disappears when the user enters text into the input field.
 
-
-
-![text input](media/uc_03_5_ui_text_input_1.png)<br>
+<img alt="uc_03_5_ui_text_input_1.png" height="160" src="media/uc_03_5_ui_text_input_1.png" width="720" />  
 *Parts of a text input component*

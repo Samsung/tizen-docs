@@ -9,10 +9,10 @@ The following guidelines apply to the header area:
 
 
 
-![header](media/pt_08_footer_area_re-850x478.png)<br>
+![header](media/pt_08_footer_area_re-850x478.png)  
 *Header area on the screen*
 
 
 
-![header with tabs](media/pt_06_header_with_tabs_re-850x195.png)<br>
+![header with tabs](media/pt_06_header_with_tabs_re-850x195.png)  
 *Header area examples with and without tabs*

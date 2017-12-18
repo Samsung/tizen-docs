@@ -16,21 +16,22 @@ Notifications deliver meaningful information from an app and connect users to th
 There are 2 types of alerts:
 
 -   Full pop-ups are displayed when a notification arrives when the Gear is turned off. They lead to a corresponding notification card depending on a user’s settings(Auto show details should be turned On in the Gear Manager (mobile) -> Notifications -> Auto show details.). Users can view details or perform a task on the notification card.
--   Small pop-ups appear at the top of the screen when the Gear is turned on. These smaller pop-ups minimize interruptions to the user’s workflow and take them to a corresponding notification card when tapped.  
+-   Small pop-ups appear at the top of the screen when the Gear is turned on. These smaller pop-ups minimize interruptions to the user’s workflow and take them to a corresponding notification card when tapped.
 
-    ![](media/structure_5.3.1-850x174.png)  
-       Full pop-up alert                                           Small pop-up alert  
-    *A notification can be either a full or small pop-up.*
+| ![](media/structure_5.3.1-850x174_1.png) | ![](media/structure_5.3.1-850x174_2.png)  |
+|:--:|:--:|
+| Full pop-up alert  |   Small pop-up alert |  
+*A notification can be either a full or small pop-up.*
 
 ## Notification board
 
 Notifications received on the Gear appear on the notification board, located to the left of the watch face. Users can look through notification panels one by one, starting from the most recent. When they tap one of the panels, it expands into a notification card to show more details.
 
-**Notification board**
+**Notification board**  
 
-  Notification panel                               Notification card expanded
-
-![](media/structure_5.3.2-850x368.png)  
+| Notification panel | | Notification card expanded |
+|:--:|:--:|:--:|
+| ![](media/structure_5.3.2-850x368_1.png) | ![](media/structure_5.3.2-850x368_2.png) |![](media/structure_5.3.2-850x368_3.png) |  
 *The notification board consists of notification panels, which expand into notification cards.*
 
 -   **Notification panels**
@@ -71,16 +72,9 @@ All elements of notifications can be customized to deliver information in the mo
 
     App icons show which app the notification corresponds to. You can design separate icons for the notification board to optimally brand your app. If you don't provide an icon design for the notification board, an app icon will appear at the top center of the notification panel.
 
-  <table>
-   <tr>
-     <td colspan="3"> ![](media/structure_5.3.3_2-850x174.png)</td>
-   </tr>
-   <tr>
-     <td> Original app icon </td>
-     <td> When a separate icon is designed for the notification board. </td>
-     <td> When no separate icon is designed for the notification board. </td>
-   </tr>
-  </table>
+|![](media/structure_5.3.3_2-850x174_1.png)|![](media/structure_5.3.3_2-850x174_2.png)|![](media/structure_5.3.3_2-850x174_3.png)|
+  |:--:|:--:|:--:|
+  |Original app icon|When a separate icon is designed for the notification board.| When no separate icon is designed for the notification board.|
 
 
 -   **Title**

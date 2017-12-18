@@ -10,13 +10,10 @@ There are 2 types of date&time pickers:
 -   The time picker is used to set time values. It consists of an hour, a minute, and an am/pm picker (only in 12-hour format).
 
 
-
-![picker2 date](media/uc_03_8_ui_picker_2_date.png)<br>
+<img alt="uc_03_8_ui_picker_2_date.png" height="200" src="media/uc_03_8_ui_picker_2_date.png" width="640" />  
 *Date picker*
 
-
-
-![picker 3 time](media/uc_03_8_ui_picker_3_time.png)<br>
+<img alt="c_03_8_ui_picker_3_time.png" height="200" src="media/uc_03_8_ui_picker_3_time.png" width="640" />  
 *Time picker*
 
 

@@ -6,5 +6,5 @@ background.
 
 
 
-![circlur icons](media/dp_01_sim_circle_re-850x478.png)<br>
+![circlur icons](media/dp_01_sim_circle_re-850x478.png)  
 *Circular icons taking less space on the screen.*

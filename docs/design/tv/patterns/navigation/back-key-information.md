@@ -8,5 +8,5 @@ When the user presses the **Back** key on the remote control, there are 2 possib
 
 ![back key information](media/pt_13_back_key_information_1_re-850x478.png)
 
-![back key information 2](media/pt_13_back_key_information_2_re-850x478.png)<br>
+![back key information 2](media/pt_13_back_key_information_2_re-850x478.png)  
 *Back key actions: Quit and Front*

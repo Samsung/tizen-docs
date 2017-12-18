@@ -17,7 +17,5 @@ The following guidelines apply to radio buttons:
 - When 1 option is selected, the other options are automatically unselected.
 - The label is always located to the right of the radio button.
 
-
-
-![Radio Buttons](media/uc_03_2_ui_checkboxes.png)<br>
+<img alt="uc_03_2_ui_checkboxes.png" height="80" src="media/uc_03_2_ui_checkboxes.png" width="200" />  
 *Unselected and selected radio buttons*

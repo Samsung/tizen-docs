@@ -7,26 +7,11 @@ You can accommodate more information on the Gear’s small display by choosing a
 -   anchored
 -   freeform
 -   temporary
-<table>
-     <tr>
-       <th> Vertically oriented screens </th>
-       <th> Horizontally oriented screens </th>
-       <th> Screens with stacked layers </th>
-       <th> Screens with large content </th>
-       <th> Screens with a temporary overlay </th>
-     </tr>
-     <tr>
-       <td colspan="5"> ![](media/navigation_6.2.0-850x147.png) </td>
-     </tr>
-     <tr>
-       <td>Vertical view</td>
-       <td>Horizontal view</td>
-       <td>Anchored view</td>
-       <td>Freeform view</td>
-       <td>Temporary view</td>
-     </tr>
-    </table>
 
+| Vertically oriented screens | Horizontally oriented screens | Screens with stacked layers | Screens with large content | Screens with a temporary overlay |
+| :--: | :--: | :--: | :--: | :--: |
+| ![](media/navigation_6.2.0-850x147_1.png) |![](media/navigation_6.2.0-850x147_2.png) | ![](media/navigation_6.2.0-850x147_3.png) |![](media/navigation_6.2.0-850x147_4.png) |![](media/navigation_6.2.0-850x147_5.png) |
+| Vertical view | Horizontal view | Anchored view | Freeform view | Temporary view |   
 *Basic structures of 5 screen views*
 
 ## Vertical view

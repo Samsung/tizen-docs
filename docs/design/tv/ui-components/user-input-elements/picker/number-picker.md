@@ -11,7 +11,5 @@ A number picker can be in either of the following states:
 -   Activated
 -   Disabled
 
-
-
-![picker number](media/uc_03_8_ui_picker_1_number.png)<br>
+<img alt="uc_03_8_ui_picker_1_number.png" height="200" src="media/uc_03_8_ui_picker_1_number.png" width="300" />  
 *Number picker*

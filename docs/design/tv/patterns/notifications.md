@@ -9,10 +9,8 @@ A notification appears within an action popup or toast:
 
 
 
-![notifications 1](media/pt_18_notifications_1-850x478.png)<br>
+![notifications 1](media/pt_18_notifications_1-850x478.png)  
 *Action popup*
 
-
-
-![notifications 2](media/pt_18_notifications_2-850x478.png)<br>
+![notifications 2](media/pt_18_notifications_2-850x478.png)  
 *Toast*

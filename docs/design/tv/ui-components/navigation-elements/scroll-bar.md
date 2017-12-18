@@ -13,5 +13,5 @@ The following guidelines apply to scroll bars:
 
 
 
-![scroll bar](media/uc_01_3_ui_scroll_bar-850x478.png)<br>
+![scroll bar](media/uc_01_3_ui_scroll_bar-850x478.png)  
 *List with a scroll bar*

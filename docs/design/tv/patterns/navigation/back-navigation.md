@@ -9,5 +9,5 @@ The following guidelines apply to back navigation:
 
 
 
-![back](media/pt_10_back-850x154.png)<br>
+![back](media/pt_10_back-850x154.png)  
 *Navigation using the Back key*

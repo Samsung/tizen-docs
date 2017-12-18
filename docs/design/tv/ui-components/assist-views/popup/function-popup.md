@@ -10,5 +10,5 @@ The following guideline applies to function popups:
 
 
 
-![popup 2 function](media/uc_04_1_ui_popup_2_function-850x478.png)<br>
+![popup 2 function](media/uc_04_1_ui_popup_2_function-850x478.png)  
 *Function popup at the bottom of the screen*

@@ -4,5 +4,5 @@ A detail screen is the lower depth of the full screen. It contains the detailed 
 
 
 
-![detail screen](media/pt_04_detail_screen-850x478.png)<br>
+![detail screen](media/pt_04_detail_screen-850x478.png)  
 *Detail screen example of a movie play screen*

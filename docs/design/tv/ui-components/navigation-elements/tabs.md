@@ -19,10 +19,9 @@ The following guidelines apply to tabs:
 
 
 
-![tabs 1](media/uc_01_2_ui_tabs_1_re-850x35.png)<br>
+![tabs 1](media/uc_01_2_ui_tabs_1_re-850x35.png)  
 *Tab bar*
 
 
-
-![tabs 2](media/uc_01_2_ui_tabs_2_re-850x89.png)<br>
+![tabs 2](media/uc_01_2_ui_tabs_2_re-850x89.png)  
 *Title bar with tabs*

@@ -19,5 +19,5 @@ The following guidelines apply to list items:
 
 
 
-![list view](media/uc_02_2_ui_list_view-850x949.png)<br>
+![list view](media/uc_02_2_ui_list_view-850x949.png)  
 *List view*

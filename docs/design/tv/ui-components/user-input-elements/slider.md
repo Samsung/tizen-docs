@@ -10,7 +10,5 @@ A slider can be in either of the following states:
 -   Focused
 -   Disabled
 
-
-
-![slider](media/uc_03_7_ui_slider.png)<br>
+<img alt="uc_03_7_ui_slider.png" height="160" src="media/uc_03_7_ui_slider.png" width="540" />  
 *Slider*

@@ -11,7 +11,5 @@ A check box can be in either of the following states:
 -   Focused
 -   Disabled
 
-
-
-![radio buttons](media/uc_03_4_ui_radiobuttons.png)<br>
+<img alt="uc_03_4_ui_radiobuttons.png" height="80" src="media/uc_03_4_ui_radiobuttons.png" width="200" />  
 *Unselected and selected check boxes*

@@ -4,5 +4,5 @@ A TV and a remote control have hardware keys which are used to control various f
 
 The following image shows the hardware keys of the TV and the remote control.
 
-![hardware keys](media/ux_19_hardware_keys-850x412.png)<br>
+![hardware keys](media/ux_19_hardware_keys-850x412.png)  
 *Hardware keys.*

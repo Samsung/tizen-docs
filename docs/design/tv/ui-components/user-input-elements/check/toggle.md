@@ -11,7 +11,5 @@ A toggle can be in either of the following states:
 -   Focused
 -   Disabled
 
-
-
-![toggles](media/uc_03_3_ui_toggles.png)<br>
+<img alt="uc_03_3_ui_toggles.png" height="80" src="media/uc_03_3_ui_toggles.png" width="200" />  
 *Unselected and selected toggles*

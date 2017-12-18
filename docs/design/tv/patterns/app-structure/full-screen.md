@@ -4,5 +4,5 @@ A full screen is the main view of each application. It provides the way to acces
 
 
 
-![full screen](media/pt_03_full_screen_re-850x478.png)<br>
+![full screen](media/pt_03_full_screen_re-850x478.png)  
 *Full screen example of a movie screen*

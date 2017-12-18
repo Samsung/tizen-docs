@@ -13,5 +13,5 @@ The following guidelines apply to action popups:
 
 
 
-![popup 1 action](media/uc_04_1_ui_popup_1_action-850x478.png)<br>
+![popup 1 action](media/uc_04_1_ui_popup_1_action-850x478.png)  
 *Action popup*

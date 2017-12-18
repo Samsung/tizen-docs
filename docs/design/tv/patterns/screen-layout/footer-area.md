@@ -4,10 +4,9 @@ A footer area generally has buttons and drop-down menus. They help the user to e
 
 
 
-![footer area](media/pt_08_footer_area_re-850x478.png)<br>
+![footer area](media/pt_08_footer_area_re-850x478.png)  
 *Footer area on the screen*
 
 
-
-![footer with dropdown menus](media/pt_09_footer_with_dropdown_menus_re-850x317.png)<br>
+![footer with dropdown menus](media/pt_09_footer_with_dropdown_menus_re-850x317.png)  
 *Footer with drop-down menus*
