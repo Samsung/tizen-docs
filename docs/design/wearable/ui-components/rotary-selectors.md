@@ -74,7 +74,9 @@ The rotary selector arranges multiple items around the circular edge of the scre
 | Touch Area |
 | :--: |
 |   ![](media/ui_components_10.6.4_1_6-850x258.png) |
-| ** Rotary selector icon color More options icon color** |
+
+| Rotary selector icon color More options icon color |
+| :--: |
 |  ![](media/ui_components_10.6.4_1_7-850x212.png) |
 
 -   **Title**
