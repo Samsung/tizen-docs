@@ -1,16 +1,18 @@
 # Basic Functions do not exist or work properly
 
-![img](media/basic_functions_do_not_exist_or_work_properly_1.jpg) 
+  ![img](media/basic_functions_do_not_exist_or_work_properly_1.jpg) 
 
+  
 Not in compliance with the following Validation guidelines.
 
 - Application should provide functions according to the description or help.
 - Each feature of application should work without malfunction.
-- If application’s function does not work as expected, it will be rejected.
+- If application's function does not work as expected, it will be rejected.
 
 ## Defect Examples    
-![img](media/basic_functions_do_not_exist_or_work_properly_2.jpg)
+  ![img](media/basic_functions_do_not_exist_or_work_properly_2.jpg)
 
+	
 1. Does not provide functions as explained in the description or help.
    1. Defect: Some of the functions described in description are not provided in application.
    2. Solution: Certain functions should be provided according to the description.
@@ -25,5 +27,5 @@ Not in compliance with the following Validation guidelines.
 
 ## Self-check List
 
-- [Ⅲ-1] All the menus and functions operate successfully without any problems.
-- [Ⅵ-5] Menu name should be related to its content to let users identify application functions.
+- [3-1] All the menus and functions operate successfully without any problems.
+- [6-5] Menu name should be related to its content to let users identify application functions.

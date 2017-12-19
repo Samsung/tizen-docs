@@ -21,7 +21,6 @@
    | 16+   | T      | 16+  | 15+  | 16+      |
    | 18+   | Mature | 18+  | 18+  | 18+      |
 
-   ​
 
 2. Details of Rating Categories
 

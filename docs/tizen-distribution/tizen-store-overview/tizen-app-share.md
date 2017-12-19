@@ -8,7 +8,7 @@ You can check more details on the Tizen App Share guide video.
 - Tizen-Tizen: [https://www.youtube.com/watch?v=gf-AQIajLrc](https://www.youtube.com/watch?v=gf-AQIajLrc) 
 - Android-Tizen: [https://www.youtube.com/watch?v=rS3y68N7aHI](https://www.youtube.com/watch?v=rS3y68N7aHI) 
 
-> ** Note **  
+> **Note**  
 >
 > Tizen App Share is available on the recently launched Samsung Z4 device onwards, and may gradually be made available on other existing Tizen devices. All apps that have been registered in Tizen Store can be distributed to end users via Tizen App Share.
 

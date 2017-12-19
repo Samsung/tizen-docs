@@ -2,7 +2,7 @@
 
 1. Usability Evaluation Definition
 
-   Usability is a necessary condition for survival. If an application is difficult to use, not interesting or not looks good, people will never use it again. In order to offer good quality applications to Tizen Store users, good usability is required as well as other software quality related requirements. Tizen Validation team regard that developer’s success is closely related with customer’s satisfaction. So, based on international consensus standard, we defined application usability as overall satisfaction on application usage. It covers interest, reliability (performance), easy to use, enough features to achieve goals and application design.
+   Usability is a necessary condition for survival. If an application is difficult to use, not interesting or not looks good, people will never use it again. In order to offer good quality applications to Tizen Store users, good usability is required as well as other software quality related requirements. Tizen Validation team regard that developer's success is closely related with customer's satisfaction. So, based on international consensus standard, we defined application usability as overall satisfaction on application usage. It covers interest, reliability (performance), easy to use, enough features to achieve goals and application design.
 
 2. Usability Evaluation Criteria
 
@@ -12,14 +12,14 @@
 
       | Definition     | Level of interest or usefulness  delivering to user. The main purpose of this standard is to measure how much  users would want the applications and how frequently would be used. |
       | -------------- | ---------------------------------------- |
-      | Questionnaries | - Does it  have interesting contents or level that user expected? <br/>- Does it help user be more effective?    <br/>- Does it give users more control over the activities in their life?    <br/>- Does it make the things that user wants to accomplish easier to get  done?    <br/>- Does it meet user’s needs?    <br/>- Would occasional and regular users like it? |
+      | Questionnaries | - Does it  have interesting contents or level that user expected? <br/>- Does it help user be more effective?    <br/>- Does it give users more control over the activities in their life?    <br/>- Does it make the things that user wants to accomplish easier to get  done?    <br/>- Does it meet user's needs?    <br/>- Would occasional and regular users like it? |
 
 
    2. Reliability(Performance)
 
       | Definition     | How fast and less errors while  using application. |
       | -------------- | ---------------------------------------- |
-      | Questionnaries | - Is there any critical problems? (crash / force quitting)    <br/>- Is there any major problems? (main feature doesn’t work, it returns wrong  result)    <br/>- Is it a few possibilities to occur problems?    <br/>- Is it available to enjoy in a fast manner?    <br/>- Does it handle exception cases?    <br/>- Is loading time is fast? (within 10 sec according to the validation  guide)    <br/>- Is it easy to recover from mistake or wrong input? |
+      | Questionnaries | - Is there any critical problems? (crash / force quitting)    <br/>- Is there any major problems? (main feature doesn't work, it returns wrong  result)    <br/>- Is it a few possibilities to occur problems?    <br/>- Is it available to enjoy in a fast manner?    <br/>- Does it handle exception cases?    <br/>- Is loading time is fast? (within 10 sec according to the validation  guide)    <br/>- Is it easy to recover from mistake or wrong input? |
 
    3. Easy to use
 

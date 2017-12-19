@@ -3,12 +3,12 @@
 1. Functionality
 
    1. Application should be installed on its target device without any errors.
-   2. Icon image should be displayed on the target device’s main menu after installation.
+   2. Icon image should be displayed on the target device's main menu after installation.
    3. Application should be launched within 10 seconds after clicking on the icon unless there is a visual indication of progress, e.g. a progress bar.
    4. Application should provide the functions corresponding to its description.
    5. Each feature of an application should work normally without malfunctions.
    6. Users should be able to upgrade to the newest version without any errors.
-   7. If an application’s function does not work as expected, it will be rejected.
+   7. If an application's function does not work as expected, it will be rejected.
    8. It should be possible to remove application without any errors.
    9. Application should not crash or cause malfunctions due to H/W usage (e.g. MENU, HOME, BACK, VOLUME, HOLD key).
    10. H/W key itself should work as user can normally expect when user executes application. See the [Tizen UX Guide](https://developer.tizen.org/documentation/ux-guide/basic-interaction/navigation) for further details.
@@ -32,7 +32,7 @@
       - Application should cover the entire screen of a device
       - .Application should use input capabilities applicable to the device.
       - Application should not contain any overlapped or truncated text, graphics distortion, or any kinds of display errors.
-      - Application should be displayed and work correctly regardless of the screen’s orientation.
+      - Application should be displayed and work correctly regardless of the screen's orientation.
 
 3. Metadata
 
@@ -135,7 +135,7 @@
 
 11. User Privacy and Opt-in
 
-    1. Application that uses transfers and/or transmits the user’s location information must notify the user prior to each use of the application and obtain their consent.
+    1. Application that uses transfers and/or transmits the user's location information must notify the user prior to each use of the application and obtain their consent.
     2. Application that uses personal information must notify users how and why their personal data is gathered disclosed or shared. Example of such data include:
        - Contacts
        - Phone numbers
@@ -145,7 +145,7 @@
        - Browsing history
        - Location information
        - Other data saved on mobile devices or cloud storage services
-    3. Transmission of personal information is forbidden without the user’s explicit consent (Opt-in) and must be encrypted while being transmitted.
+    3. Transmission of personal information is forbidden without the user's explicit consent (Opt-in) and must be encrypted while being transmitted.
     4. Transmission of personal information to a third-party must be disclosed to the Tizen Validation Team in the Notes to Validation Team notes section on the submission page.
 
 12. Advertisement
@@ -156,7 +156,7 @@
        - Any advertisement must consistent with age rating of its application. (e.g. application for all ages should not contain advertisement for 18+.)
     3. Application must not include any type of illegal substance, activity or service which can mislead or deceive users.
     4. Application must not include any type of Push advertisement.
-    5. Please note that you should declare clearly and accurately use of In app Ad in the Tizen Seller Office. When registering your app to the Tizen seller office, you’ll be asked whether your app contains In App Ad. Even you indicate that your app does not contain In App Ad but it has ad functionality or displays any ads, your app will be rejected. Any information on  application misleading users will be rejected.
+    5. Please note that you should declare clearly and accurately use of In app Ad in the Tizen Seller Office. When registering your app to the Tizen seller office, you'll be asked whether your app contains In App Ad. Even you indicate that your app does not contain In App Ad but it has ad functionality or displays any ads, your app will be rejected. Any information on  application misleading users will be rejected.
 
 
 

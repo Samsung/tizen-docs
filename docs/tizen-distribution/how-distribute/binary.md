@@ -1,10 +1,10 @@
 # Binary
 
-This is the first stage of registering an application in Tizen Store Seller Office. If you register your application's title and a binary file, you can save application information temporarily. When you update an application which is on sale after the registration, you can register multiple binaries. Refer to the ‘Registering Multiple Binaries’ guide for details on how to register and manage multiple binaries.
+This is the first stage of registering an application in Tizen Store Seller Office. If you register your application's title and a binary file, you can save application information temporarily. When you update an application which is on sale after the registration, you can register multiple binaries. Refer to the 'Registering Multiple Binaries' guide for details on how to register and manage multiple binaries.
 
  
 
-## 1) Application Title (in Default Language)
+## Application Title (in Default Language)
 
 ![img](media/1_.png)
 
@@ -13,11 +13,11 @@ This is the first stage of registering an application in Tizen Store Seller Offi
 
  
 
-## 2) Binary File & Supported Device
+## Binary File & Supported Device
 
 ![img](media/2_.png)
 
-1. Click the [Upload a new binary] button to upload a binary file. The format of the binary file must be “.tpk” or “.wgt”. 
+1. Click the [Upload a new binary] button to upload a binary file. The format of the binary file must be ".tpk" or ".wgt". 
 
    - Before selecting a file to upload
 
@@ -32,10 +32,6 @@ This is the first stage of registering an application in Tizen Store Seller Offi
 2. Click the [Save] button to complete the upload of the binary.
 
 3. If an information message appears when you click the [Save] button, upload the file again after making the necessary modifications. If an error occurs while uploading the file, modify the binary file according to the error message before you try again; if the same error persists after the modification, contact us via My Q&A.
-
-   ​
-
-   ​
 
    | Message Type                             | Cause                                    | Modification Method                      |
    | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
@@ -68,31 +64,43 @@ This is the first stage of registering an application in Tizen Store Seller Offi
 
     
 
-   ※ Example of device settings
-
-   - If 10 devices are recommended at the time of initial registration and 5 devices are selected for application registration, then additional devices may be added after the start of sales (distribution) or after update, and deletion of devices is possible (if a device is deleted, re-download by users who previously purchased the application from that device is not possible).
-   - If an application is submitted for validation and “Rejected” before sales begin, it is possible to both add to and delete devices from the list of 5 devices for which validation is requested. Also, if the application is only “Rejected” for validation on some devices, approval will be granted for re-registration after the rejected devices are excluded.
-   - "Rejected" will be displayed in the Supported Y/N column for unsupported devices of which binaries did not pass the validation.
+   - Example of device settings
+     - If 10 devices are recommended at the time of initial registration and 5 devices are selected for application registration, then additional devices may be added after the start of sales (distribution) or after update, and deletion of devices is possible (if a device is deleted, re-download by users who previously purchased the application from that device is not possible).
+     - If an application is submitted for validation and "Rejected" before sales begin, it is possible to both add to and delete devices from the list of 5 devices for which validation is requested. Also, if the application is only "Rejected" for validation on some devices, approval will be granted for re-registration after the rejected devices are excluded.
+     - "Rejected" will be displayed in the Supported Y/N column for unsupported devices of which binaries did not pass the validation.
 
     
 
 8. For multiple binaries, click the number of supported devices in Supported Devices in the auto detection area of each binary file, and you can check the devices supported by each binary in a pop-up window.
 
-9. If you want to apply the DRM option for your binary, select ‘Yes’ as the DRM option when you register an application.
+9. If you want to apply the DRM option for your binary, select 'Yes' as the DRM option when you register an application.
 
-## 3) Expansion File Upload
+## Expansion File Upload
 
 Expansion files are supported only in API 2.4 or higher versions. After uploading binary files, you can upload up to 2 GB of expansion files.
 
 - After registering binary files, before registering expansion files.
+ 
+
   ![img](media/distribution_binary_04.jpg)
+  
+  
 - After registering binary files and expansion files
+ 
+
   ![img](media/distribution_binary_05.jpg)
+  
+  
 - Binary files and expansion files have been uploaded
+ 
+
   ![img](media/distribution_binary_06.jpg)
+  
 
-## 4) Validation Information
+## Validation Information
 
-Enter any notes that should be considered when the application is validated. You can add a file attachment or a URL to be used for reference during validation.
+- Enter any notes that should be considered when the application is validated. You can add a file attachment or a URL to be used for reference during validation.
 
-![img](media/distribution_binary_07.jpg)
+
+  ![img](media/distribution_binary_07.jpg)
+

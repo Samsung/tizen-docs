@@ -13,25 +13,25 @@ Not in compliance with the following Validation guidelines.
 ![img](media/fail_to_install_execute_or_terminate_application_2.jpg) 
 
 1. Application fails to be installed.
-   \- Defect: Application file can’t be installed because of its invalid format file type.
-   \- Defect: User cannot download essential data even if the network is available.
-   \- Solution: Application should be installed successfully.
+   - Defect: Application file can't be installed because of its invalid format file type.
+   - Defect: User cannot download essential data even if the network is available.
+   - Solution: Application should be installed successfully.
 2. Application fails to be executed.
-   \- Defect: Application is terminated by force right after executing application.
-   \- Defect: Application is not opened and shows no response when user clicks icon.
-   \- Solution: Application should be executed successfully.
+   - Defect: Application is terminated by force right after executing application.
+   - Defect: Application is not opened and shows no response when user clicks icon.
+   - Solution: Application should be executed successfully.
 3. Application fails to be terminated.
 
 ## Self-check List
 
-- [Ⅱ-1] The size of file*4MB (multiplied by 4MB) must not exceed the internal memory of device.
-- [Ⅱ-2] Application must be installed for the targeted devices without any problems.
-- [Ⅱ-3] Application must be uninstalled as user expects.
-- [Ⅱ-4] Application should be executed without any problems.
-- [Ⅱ-5] Application must be closed without any problems by following options.
-  \- 5-1) Using the exit option in application
-  \- 5-2) Using the Task Manager
-- [Ⅵ-1] It should be possible to reinstall the deleted application on the device.
+- [2-1] The size of file*4MB (multiplied by 4MB) must not exceed the internal memory of device.
+- [2-2] Application must be installed for the targeted devices without any problems.
+- [2-3] Application must be uninstalled as user expects.
+- [2-4] Application should be executed without any problems.
+- [2-5] Application must be closed without any problems by following options.
+  - 5-1) Using the exit option in application
+  - 5-2) Using the Task Manager
+- [6-1] It should be possible to reinstall the deleted application on the device.
 
 
 > **TIP to Solve This Issue:**
