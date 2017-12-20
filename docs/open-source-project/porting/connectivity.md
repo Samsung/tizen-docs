@@ -253,7 +253,7 @@ During initialization, the `nfc-manager` loads the `nfc-plugin.so` library, sear
 
 The following example shows the `onload()` function:
 
-```c
+```cpp
 Bool
 onload(net_nfc_oem_interface_s *oem_interfaces) {
     oem_interfaces->init = xxx;  /* xxx refers to plugin APIs */
@@ -268,7 +268,7 @@ onload(net_nfc_oem_interface_s *oem_interfaces) {
 
 The NFC OAL interfaces are defined in the following structure. Use the `net_nfc_oem_controller.h` header file.
 
-```c
+```cpp
 typedef struct _net_nfc_oem_interface_s {
     net_nfc_oem_controller_init init;
     net_nfc_oem_controller_deinit deinit;
@@ -318,13 +318,13 @@ typedef struct _net_nfc_oem_interface_s {
 
 The `nfc_oem_interface_s` struct is exported in the `nfc-plugin`. Using this interface structure, the `nfc-manager` communicates with the OAL interfaces at runtime. The NFC plugin loads when the `nfc-manager` is started and the plugin `init()` function is called to initialize the NFC chip.
 
-```c
+```cpp
 int (*init) (net_nfc_oem_controller_init*);
 ```
 
 The `nfc-manager` issues the `deinit()` function to deinitialize the NFC chip:
 
-```c
+```cpp
 int (*deinit) (net_nfc_oem_controller_deinit *);
 ```
 

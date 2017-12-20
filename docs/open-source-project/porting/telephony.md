@@ -94,7 +94,7 @@ This section provides guidance to OEM vendors to develop various Telephony plugi
 
 Each telephony plugin must provide a descriptor structure:
 
-```c
+```cpp
 struct tcore_plugin_define_desc {
     /* Name of the plugin */
     gchar *name;
@@ -126,7 +126,7 @@ OEMs need to specifically implement the modem and modem interface plugins to sup
 
 To provide call services, the following functions must be implemented:
 
-```c
+```cpp
 struct tcore_call_operations {  
     /* Call 'dial' function reference */
     TReturn (*dial)(CoreObject *o, UserRequest *ur); 
@@ -158,7 +158,7 @@ struct tcore_call_operations {
 
 To provide SMS services, the following functions must be implemented:
 
-```c
+```cpp
 struct tcore_sms_operations {
     /* For UMTS, SMS 'send' function reference */
     TReturn (*send_umts_msg)(CoreObject *o, UserRequest *ur);
@@ -193,7 +193,7 @@ struct tcore_sms_operations {
 
 To provide network services, the following functions must be implemented:
 
-```c
+```cpp
 struct tcore_network_operations {
     /* Network 'search' function reference */
     TReturn (*search)(CoreObject *o, UserRequest *ur); 
@@ -222,7 +222,7 @@ struct tcore_network_operations {
 
 To provide HAL operations, the following functions must be implemented:
 
-```c
+```cpp
 struct tcore_hal_operations {
     /* HAL 'power' function reference */
     TReturn (*power)(TcoreHal *hal, gboolean flag); 
@@ -268,7 +268,7 @@ Telephony packages:
 
 ## Sample Modem Interface Plugin Implementation
 
-```c
+```cpp
 /* HAL Operations */
 static struct tcore_hal_operations hal_ops = {
     .power = hal_power,
@@ -465,7 +465,7 @@ EXPORT_API struct tcore_plugin_define_desc plugin_define_desc = {
 
 ### Sample Modem Plugin Implementation
 
-```c
+```cpp
 static
 gboolean on_load() {
     dbg("LOAD!!!");

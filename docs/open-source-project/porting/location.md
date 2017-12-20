@@ -48,7 +48,7 @@ The `lbs-server-plugin-dev` package source files can be found in the following d
 
 The `gps_plugin_intf.h` header file includes the API interfaces for the communication between the lbs-server and its GPS plugin.
 
-```c
+```cpp
 typedef struct {
     /* Initialize the plugin module and register callback function for event delivery */
     int (*init) (gps_event_cb gps_event_cb, void *user_data);
@@ -59,25 +59,25 @@ typedef struct {
 } gps_plugin_interface;
 ```
 
-```c
+```cpp
 const gps_plugin_interface *get_gps_plugin_interface();
 ```
 
 The `get_gps_plugin_interface()` function must be exported in the GPS plugin. It gives the `gps_plugin_interface` structure to the lbs-server, and the lbs-server communicates through these interfaces. When the lbs-server is started, the GPS plugin is loaded and the `init()` function is called. At this moment, a GPS device must be initialized.
 
-```c
+```cpp
 int (*init) (gps_event_cb gps_event_cb, void *user_data);
 ```
 
 When the `init()` function is called, the `gps_event_cb` callback is set. GPS events and data from a GPS device are delivered through the callback.
 
-```c
+```cpp
 typedef int (*gps_event_cb) (gps_event_info_t *gps_event_info, void *user_data);
 ```
 
 The following example describes the GPS events:
 
-```c
+```cpp
 typedef enum {
     GPS_EVENT_START_SESSION = 0x0000, /* The session is started */
     GPS_EVENT_STOP_SESSION, /* The session is stopped */
@@ -99,13 +99,13 @@ typedef enum {
 
 The GPS events contain specific GPS event data which is part of the delivered `gps_event_data_t` (see the `gps_plugin_intf.h` file). When the lbs-server wants to make a request to a GPS device, the `request()` function is called:
 
-```c
+```cpp
 int (*request) (gps_action_t gps_action, void *gps_action_data, gps_failure_reason_t *reason_code);
 ```
 
 Each request is classified by `gps_action_t`.
 
-```c
+```cpp
 typedef enum {
     GPS_ACTION_SEND_PARAMS = 0x00,
     GPS_ACTION_START_SESSION,
@@ -124,7 +124,7 @@ With the standalone GPS (unassisted GPS), the `GPS_ACTION_START_SESSION` and `GP
 
 To shut down the lbs-server, deinitialize the GPS device with the `deinit()` function:
 
-```c
+```cpp
 int (*deinit) (gps_failure_reason_t *reason_code);
 ```
 
@@ -134,7 +134,7 @@ The `check_plugin_module(char* module_name)` function checks the access to the a
 
 Add the necessary path definitions:
 
-```c
+```cpp
 #define PLATFORM_PATH "/sys/devices/platform"
 #define PLUGIN_PATH PLATFORM_PATH"/xxxxx_gps"
 ```
@@ -197,7 +197,7 @@ The `capi-maps-service-plugin-devel` package source files can be found in the fo
 
 The `module.h` header file includes the API interfaces for the communication between the Maps and its plugin.
 
-```c
+```cpp
 typedef struct _interface_s {
     /* Plugin dedicated functions */
     maps_plugin_init_f maps_plugin_init;
