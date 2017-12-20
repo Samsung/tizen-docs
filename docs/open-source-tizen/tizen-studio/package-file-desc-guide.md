@@ -90,12 +90,12 @@ install() {
 
 ### `changelog` File
 
-This file is included in the package file (`.zip`). When a new package is deployed, the changelog is updated. &lt;Version Up is required&gt;
+This file is included in the package file (.zip). When a new package is deployed, the changelog is updated.
 
 ```text
  * 1.0.12    // Same as pkginfo.manifest version
 - Title, Desc ,,
-== Sujin Lee <lee.sujin@samsung.com> 20XX-XX-XX
+==  John Doe <John@abcd.com> 20XX-XX-XX
 ```
 
 ## Package Name Creation Rules

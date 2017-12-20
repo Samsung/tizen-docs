@@ -55,8 +55,6 @@ To build the code locally for testing:
 
    A `snapshots` folder is created in the specified location and a snapshot is created under it.
 
-   ![Snapshot creation results](media/snapshot-result.png)
-
 
 5. Create an installation image.  
    Currently, installation is only supported through the Package Manager. Therefore, to install the package, you must create an image.
@@ -68,8 +66,6 @@ To build the code locally for testing:
    ## -u, --url             base repository URL
    ## -O, --output          image name
    ```
-
-   ![Image creation results](media/image-result.png)
 
 
 6. Install the package with the Package Manager.  

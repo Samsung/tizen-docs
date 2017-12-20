@@ -47,7 +47,7 @@ To modify the content of the certificate type selection window of the Certificat
 
    ![Changes to plugin.xml](media/cert-ext.png)
 
-3. Add `org.tizen.common.sign.ui` into the `Require-bundle` attribute list:
+3. Add `org.tizen.common.sign.ui` to the `Require-bundle` attribute in the `plugin.xml` file:
 
    ```text
    Require-Bundle: org.eclipse.ui,
