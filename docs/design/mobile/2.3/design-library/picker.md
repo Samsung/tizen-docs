@@ -16,17 +16,15 @@ You can use the following types of time pickers:
 
  
 
-**Figure: Time picker**
-
-![](media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_26.png)
+**Figure: Time picker**  
+<img alt="" height="141" src="media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_26.png" width="240" />
  
 
 The user can select setting values by tapping each field in the picker and sweeping sideways.
 
  
 
-**Video: Time picker interaction (click to play)**  
-![](media/designlibrary_03.mp4)
+[**Video: Time picker interaction (click to play)**](media/designlibrary_03.mp4)
 
 ## Color Picker
 
@@ -35,9 +33,8 @@ The color picker provides a set of color cells. The user can select a color by t
 
  
 
-**Figure: Color picker**
-
-![](media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_28.png)
+**Figure: Color picker**  
+<img alt="" height="158" src="media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_28.png" width="480" />
 
  
 

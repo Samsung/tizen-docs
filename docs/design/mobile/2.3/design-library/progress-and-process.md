@@ -10,9 +10,8 @@ Use a progress indicator when the duration or volume of the entire task can be p
 
  
 
-**Figure: Progress indicators**
-
-![](media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_29.png)
+**Figure: Progress indicators**  
+<img alt="" height="96" src="media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_29.png" width="240" />
 
  
 
@@ -20,6 +19,5 @@ Use a process indicator when the duration or volume of the task cannot be predic
 
  
 
-**Figure: Process indicator in a pop-up**
-
-![](media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_30.png)
+**Figure: Process indicator in a pop-up**  
+<img alt="" height="48" src="media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_30.png" width="240" />

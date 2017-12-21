@@ -6,10 +6,8 @@ To promote better touch interaction with visual cues, Tizen 2.3 offers several c
 
  
 
-**Figure: Tizen buttons**
-
-![](media/tizen_buttons.png)
-
+**Figure: Tizen buttons**  
+<img alt="" height="197" src="media/tizen_buttons.png" width="767" />
  
 
 **Table: Button states**
@@ -30,10 +28,8 @@ The following figure illustrates button states (icon buttons in the edit mode of
 
  
 
-**Figure: Button examples**
-
-![](media/touch_feedback_contacts_03.png)
-
+**Figure: Button examples**  
+<img alt="" height="400" src="media/touch_feedback_contacts_03.png" width="490" />
  
 
 > **NOTE**  

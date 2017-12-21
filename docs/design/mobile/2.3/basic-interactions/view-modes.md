@@ -32,30 +32,23 @@ Switching seamlessly from portrait to landscape view is a standard practice in t
 
  
 
-**Figure: Portrait and landscape views**
-
-**![](media/views.png)**
-
-
+**Figure: Portrait and landscape views**  
+<img alt="" height="400" src="media/views.png" width="650" />
 
 In the following figure, the Video app shows the same information in portrait and landscape, but the screen dimension allows for displaying more contents to be shown.
 
  
 
-**Figure: Portrait and landscape views in the Video app**
-
-**![](media/view_mode_video.png)**
-
+**Figure: Portrait and landscape views in the Video app**  
+<img alt="" height="400" src="media/view_mode_video.png" width="650" />
   
 
 In the following figure, the Calculator app switches between modes depending on orientation, showing a more advanced calculator in the landscape view.
 
  
 
-**Figure: Portrait and landscape views in the Calculator app**
-
-**![](media/view_mode_calculator.png)**
-
+**Figure: Portrait and landscape views in the Calculator app**  
+<img alt="" height="400" src="media/view_mode_calculator.png" width="650" />
  
 
 
@@ -69,10 +62,8 @@ Use the full landscape view for special purposes, such as games, video player, o
 
  
 
-**Figure: Full landscape view**
-
-**![](media/view_mode_camera_01.png)**
-
+**Figure: Full landscape view**  
+<img alt="" src="media/view_mode_camera_01.png" width="400" height="240" />
  
 
 Consider the following when designing an application using the landscape view:

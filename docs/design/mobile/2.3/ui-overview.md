@@ -20,9 +20,8 @@ In Tizen, each view supports one or more primary user goals. For this reason, th
 
  
 
-**Figure: Screen areas**
-
-**![](media/tizen-lite-ux-design-guide_uioverview_v1.2_140922_core_01.png)**
+**Figure: Screen areas**  
+<img alt="" height="400" src="media/tizen-lite-ux-design-guide_uioverview_v1.2_140922_core_01.png" width="240" />
 
  
 
@@ -30,20 +29,16 @@ The header area contains a title that describes the content of the screen. It al
 
  
 
-**Figure: Header area examples**
-
-**![](media/headers.png)**
-
+**Figure: Header area examples**  
+<img alt="" height="154" src="media/headers.png" width="240" />
  
 
 The content area displays the application content, such as options and lists, to the user.
 
  
 
-**Figure: Content area**
-
-![](media/content_area.png)
-
+**Figure: Content area**  
+<img alt="" height="400" src="media/content_area.png" width="490" />
  
 
 A variety of different information and controls can be placed in the content area.
@@ -65,10 +60,8 @@ For more information about additional UI components, see [Basic Interactions](./
 
  
 
-**Figure: Application screen structure**
-
-**![](media/uioverview_app_screen.png)**
-
+**Figure: Application screen structure**  
+<img alt="" height="482" src="media/uioverview_app_screen.png" width="440" />
  
 
 ### Lock Screen
@@ -79,11 +72,8 @@ Besides presenting information, such as time and date, the Tizen **Lock** screen
 
  
 
-**Figure: Lock screen**
-
-**![](media/uioverview_lock_screen.png)**
-
- 
+**Figure: Lock screen**  
+<img alt="" src="media/uioverview_lock_screen.png" width="660" height="482" />
 
 
 
@@ -97,11 +87,8 @@ The **Home** screen is a customizable space that displays applications currently
 
  
 
-**Figure: Home screen**
-
-**![](media/uioverview_home_screen.png)**
-
- 
+**Figure: Home screen**  
+<img alt="" src="media/uioverview_home_screen.png" width="660" height="482" /> 
 
 
 ------------------------------------------------------------------------
@@ -118,12 +105,8 @@ The quick setting is a flexible shortcut area to toggle modes or settings on and
 
  
 
-**Figure: Notification panel**
-
-**![](media/uioverview_noti_screen.png)**
-
- 
-
+**Figure: Notification panel**  
+<img alt="" src="media/uioverview_noti_screen.png" width="660" height="482" />
 
 
 ------------------------------------------------------------------------
@@ -166,14 +149,14 @@ The following table lists the Tizen gestures you can use to offer intuitive touc
 
 | TYPE                     | MARK                     | DESCRIPTION              |
 |--------------------------|--------------------------|--------------------------|
-| Tap                      | ![](media/ui_overview_tap.png) | Selects an item or executes functions if the area has no other touch interaction applied.    |
-| Double tap               | ![](media/ui_overview_doubletap.png) | Returns to default view level in zooming. |
-| Long tap                 | ![](media/ui_overview_longtap.png)| Opens a context-specific screen, enters editing mode. |
-| Swipe                    | ![](media/ui_overview_swipe.png) | Scrolls a list of items or, if used horizontally and applied to an individual list item, executes the primary function. |
-| Flick                    | ![](media/ui_overview_flick.png) | Swipes or pans quickly.  |
-| Drag and drop            | ![](media/ui_overview_drag.png)  | Touching and holding then dragging an object moves it to the desired location when the user releases his or her finger. |
-| Pinch zoom in            | ![](media/ui_overview_zoomin.png) | Pinching open zooms in.  |
-| Pinch zoom out           | ![](media/ui_overview_zoomout.png) | Pinching close zooms out.  |
+| Tap                      | <img alt="" height="60" src="media/ui_overview_tap.png" width="60" /> | Selects an item or executes functions if the area has no other touch interaction applied.    |
+| Double tap               | <img alt="" height="60" src="media/ui_overview_doubletap.png" width="60" /> | Returns to default view level in zooming. |
+| Long tap                 | <img alt="" height="60" src="media/ui_overview_longtap.png" width="60" />| Opens a context-specific screen, enters editing mode. |
+| Swipe                    |<img alt="" height="114" src="media/ui_overview_swipe.png" width="60" /> | Scrolls a list of items or, if used horizontally and applied to an individual list item, executes the primary function. |
+| Flick                    | <img alt="" height="114" src="media/ui_overview_flick.png" width="60" /> | Swipes or pans quickly.  |
+| Drag and drop            | <img alt="" height="114" src="media/ui_overview_drag.png" width="60" />  | Touching and holding then dragging an object moves it to the desired location when the user releases his or her finger. |
+| Pinch zoom in            |<img alt="" height="114" src="media/ui_overview_zoomin.png" width="109" /> | Pinching open zooms in.  |
+| Pinch zoom out           |<img alt="" height="114" src="media/ui_overview_zoomout.png" width="109" /> | Pinching close zooms out.  |
 
 
 

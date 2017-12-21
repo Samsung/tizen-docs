@@ -26,12 +26,8 @@ Design the preferences as shown in the following figure. Classify your applicati
 
  
 
-**Figure: General settings**
-
-**![](media/general_settings.png)**
-
- 
-
+**Figure: General settings**  
+<img alt="" height="400" src="media/general_settings.png" width="490" />
 
 
 ## Preference UI Controls
@@ -45,16 +41,12 @@ The UI control types for designing application preferences are as follows:
 
 **Status**: Show the present state within the list.
 
-![](media/status.png)
-
+<img alt="" height="117" src="media/status.png" width="240" />
  
 
 **Help text**: Show the help text with in the list.  
 
-![](media/settings_05.png)
-
- 
-
+<img alt="" height="66" src="media/settings_05.png" width="240" />
 
 
 ------------------------------------------------------------------------
@@ -67,12 +59,8 @@ This control helps the user enable or disable a specific function. The control c
 
  
 
-**Figure: On/off switch**
-
-**![](media/settings_06.png)**
-
- 
-
+**Figure: On/off switch**  
+<img alt="" height="48" src="media/settings_06.png" width="240" />
 
 
 ------------------------------------------------------------------------
@@ -85,6 +73,5 @@ These controls are useful when adjusting values in settings in multiple steps or
 
  
 
-**Figure: Sliders**
-
-![](media/tizen-lite-ux-design-guide_settings_v1.1_140822_core_01.png)
+**Figure: Sliders**  
+<img alt="" height="192" src="media/tizen-lite-ux-design-guide_settings_v1.1_140822_core_01.png" width="240" />

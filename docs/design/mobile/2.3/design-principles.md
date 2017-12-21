@@ -18,26 +18,23 @@ Compose your content so that important information stands out. Highlight primary
 
 
 
-**Figure: Showcasing primary content**
-
-![](media/designprinciples_primary_content.png)
+**Figure: Showcasing primary content**  
+<img alt="" height="400" src="media/designprinciples_primary_content.png" width="490" />
 
 ------------------------------------------------------------------------------
 ### Present Information According to Importance
 
 Offer information based on its degree of importance. For example, deliver simple messages, such as "Saving..." or "Deleting...", on the indicator to avoid interrupting the user in the main body of the application.
 
-**Figure: Displaying a less important message in the indicator**
-
-![](media/03_designprinciples_statusbar_01.png)
+**Figure: Displaying a less important message in the indicator**  
+<img alt="" height="73" src="media/03_designprinciples_statusbar_01.png" width="240" />
 
 ### Put the Emphasis on Fun!
 
 Make the process of accessing content enjoyable for the users. By designing applications with visually compelling layouts and engaging, interactive graphics, you can enhance the user experience.
 
-**Figure: Interactive view**
-
-![](media/04_designprinciples_tizen_store_01_3.png)
+**Figure: Interactive view**  
+<img alt="" height="400" src="media/04_designprinciples_tizen_store_01_3.png" width="240" />
 
 ------------------------------------------------------------------------------
 
@@ -45,10 +42,7 @@ Make the process of accessing content enjoyable for the users. By designing appl
 
 In the Detail view, show essential information on the first screen and enable scrolling down to see additional information.
 
-**Video: Displaying more information with a scroll (click to play)**
-
-
-![](media/designprinciples_01.mp4)
+[**Video: Displaying more information with a scroll (click to play)**](media/designprinciples_01.mp4)
 
 ## Focused
 
@@ -62,8 +56,7 @@ When determining focus levels in your application, keep the following guidelines
 
 Display the most used functions on the first screen. Use the **Menu** key to house any functions users need less frequently.
 
-**Video: Functions located behind the Menu key (click to play)**  
-![](media/designprinciples_02.mp4)
+[**Video: Functions located behind the Menu key (click to play)**](media/designprinciples_02.mp4)
 
 ------------------------------------------------------------------------------
 
@@ -71,24 +64,21 @@ Display the most used functions on the first screen. Use the **Menu** key to hou
 
 Differentiate between the essential information that is always displayed and additional information that can be displayed only when a user requests it.
 
-**Video: Hiding the name field (click to play)**  
-![](media/designprinciples_03.mp4)
+[**Video: Hiding the name field (click to play)**](media/designprinciples_03.mp4)
 
 ------------------------------------------------------------------------------
 ### Minimize User Effort
 
 By promoting user access to the major functions in your application, you minimize the effort required. For example, when a user wants to create a new item, you can automatically move the focus to the required input field and offer the virtual keypad.
 
-**VIdeo: Moving the focus to the input area (click to play)**  
-![](media/designprinciples_04.mp4)
+[**VIdeo: Moving the focus to the input area (click to play)**](media/designprinciples_04.mp4)
 
 ------------------------------------------------------------------------------
 ### Make It Clear What Can Be Done
 
 Disable or hide functions that are not available in certain circumstances. For example, you can disable the Save button to let users know that a required field is empty.
 
-**Video: Indicating that an event cannot be saved (click to play)**  
-![](media/designprinciples_05.mp4)
+[**Video: Indicating that an event cannot be saved (click to play)**](media/designprinciples_05.mp4)
 
 ## Tailored: Delivering Customization and Personalization
 
@@ -100,9 +90,8 @@ When planning the customization capabilities of your application, keep the follo
 
 By taking the behavioral patterns of each user into account, your application can deliver a more personalized experience. For example, by ensuring the most frequently or recently used applications are easily accessible, you support users that want to find an application or content as quickly as possible.
 
-**Figure: Frequently used contacts in the Contact application**
-
-![](media/05_designprinciples_contacts_09.png)
+**Figure: Frequently used contacts in the Contact application**  
+<img alt="" height="400" src="media/05_designprinciples_contacts_09.png" width="245" />
 
 ------------------------------------------------------------------------------
 ### Use Customization to Enhance Usability
@@ -115,6 +104,5 @@ Make sure you support customization that not only improves your application appe
 
 Based on the usage of your application, you can understand and recommend content the user wants. For example, by providing recommendations, Favorites, or History, you can help users perform tasks more conveniently and efficiently.
 
-**Figure: Showing browsing history**
-
-![](media/06designprinciples_internet_01.png)
+**Figure: Showing browsing history**  
+<img alt="" height="400" src="media/06designprinciples_internet_01.png" width="240" />

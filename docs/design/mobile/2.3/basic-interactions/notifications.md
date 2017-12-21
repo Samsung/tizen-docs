@@ -37,8 +37,7 @@ Users can access the Notification panel from anywhere in the OS simply by pullin
 
  
 
-**Video: Opening and closing the Notification panel (click to play)**  
-![](media/notifications_01_0.mp4)
+[**Video: Opening and closing the Notification panel (click to play)**](media/notifications_01_0.mp4)
 
 
  
@@ -47,11 +46,8 @@ If the content to display exceeds a single page, the screen can be scrolled up a
 
  
 
-**Figure: On-going task display**
-
-**![](media/06_notification_panel.png)**
-
- 
+**Figure: On-going task display**  
+<img alt="" height="165" src="media/06_notification_panel.png" width="240" />
 
 The event notification shows information about new events that the user has not checked yet, such as the title of the event, sender, short contents, app icon, and timestamp.
 
@@ -59,10 +55,8 @@ If an application has more than 2 event notifications, present them in a single 
 
  
 
-**Figure: Example layout for event notifications**
-
-**![](media/event_notifications.png)**
-
+**Figure: Example layout for event notifications**  
+<img alt="" height="48" src="media/event_notifications.png" width="490" />
  
 
 
@@ -86,11 +80,8 @@ Depending on the nature of the information, notifications fall into one of the f
 
  
 
-**Figure: Notification pop-ups**
-
-**![](media/popups.png)**
-
-  
+**Figure: Notification pop-ups**  
+<img alt="" height="150" src="media/popups.png" width="740" />
 
 
 
@@ -104,11 +95,8 @@ Use the toast pop-up to inform the user of a task result or changes in the curre
 
  
 
-**Figure: Toast pop-up**
-
-**![](media/notifications_statusbar_02.png)**
-
- 
+**Figure: Toast pop-up**  
+<img alt="" height="400" src="media/notifications_statusbar_02.png" width="240" />
 
 
 ### Badge
@@ -120,9 +108,8 @@ Not all events require immediate notification. In such cases, you can use a badg
 
  
 
-**Figure: Badge notifications**
-
-**![](media/badge-240x150.png)**
+**Figure: Badge notifications**  
+![](media/badge-240x150.png)
 
  
 
@@ -154,11 +141,9 @@ Provide the action the user must take to dismiss this event. Use action buttons 
 
  
 
-**Figure: Full view notification**
+**Figure: Full view notification**  
+<img alt="" height="400" src="media/1.1.incoming_call.png" width="240" />
 
-**![](media/1.1.incoming_call.png)**
-
- 
 
 
 
@@ -177,6 +162,5 @@ Use instant notifications for:
 
  
 
-**Figure: Instant notification**
-
-**![](media/notifications_statusbar_01.png)**
+**Figure: Instant notification**  
+<img alt="" height="400" src="media/notifications_statusbar_01.png" width="240" />
