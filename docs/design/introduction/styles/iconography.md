@@ -39,11 +39,8 @@ Different Tizen platforms require different icon sizes. For example, mobile devi
 
 App icons are important because they visually represent your app on the Home screen. App icons must be attractive enough to draw a user’s attention and they have to deliver meaningful information about your apps.
 
-
-![Example of a Tizen app icon](media/01.png)  
+<img alt="Example of a Tizen app icon" src="media/01.png" style="width:390px; margin-right:4px;" />  
 *Example of a Tizen app icon*
-
-
 
  
 
@@ -52,7 +49,7 @@ App icons are important because they visually represent your app on the Home scr
 Tizen’s system icons are displayed as circles. Although this requirement creates challenges in designing icons, the shape allows for a uniformity that ties different icons together for a consistent look and feel.
 
 
-![Original circle concept, initial sketch](media/02.png)  
+<img alt="Original circle concept, initial sketch" src="media/02.png" style="width:390px; margin-right:4px;" />  
 *Original circle concept, initial sketch*
 
 
@@ -62,9 +59,7 @@ Tizen’s system icons are displayed as circles. Although this requirement creat
 
 Carefully choose the icon background color when designing an icon for your app. The background color greatly affects the visibility of your icon. Since the icon will be used to distinguish your app, icons should be designed for easy recognition. An icon with a carefully selected background color makes your icon design easy to notice, no matter where you place it.
 
-
-
-![Your icons should be visible against any background](media/03.png) ![Your icons should be visible against any background](media/2.2.1_d.png)  
+<img alt="Your icons should be visible against any background" src="media/03.png" style="width:390px; margin-right:4px;" /> <img alt="Your icons should be visible against any background" src="media/2.2.1_d.png" style="width:390px; margin-right:4px;" />  
 *Your icons should be visible against any background*
 
 
@@ -76,46 +71,47 @@ Carefully choose the icon background color when designing an icon for your app. 
 Icon always uses circle container. Avoid complicated shape.
 
 
-  ![Do](media/082315_icon_do_dont-48.png)  Do   
-
-  ![Don't](media/082315_icon_do_dont-47.png)  Don't
+| <img src="media/082315_icon_do_dont-48.png" alt="#" style="width:200px;" /> | <img src="media/082315_icon_do_dont-47.png" alt="#" style="width:200px;" /> |
+| :---: | :---: |  
+| *Do* | *Don't* |
 
  
 
 Cicle container can not distorted or replaced to different shapes.
 
+| <img src="media/082315_icon_do_dont-50.png" alt="#" style="width:200px;" /> | <img src="media/082315_icon_do_dont-49.png" alt="#" style="width:200px;" /> |
+| :---: | :---: |  
+| *Do* | *Don't* |
 
-  ![Do](media/082315_icon_do_dont-50.png)   Do  
 
-  ![Don't](media/082315_icon_do_dont-49.png)  Don't
- 
 
 Place object on center. Do not place object around edge of container.
 
-  ![Do](media/082315_icon_do_dont-52.png)  Do  
 
-  ![Don't](media/082315_icon_do_dont-51.png)     Don't
- 
+| <img src="media/082315_icon_do_dont-52.png" alt="#" style="width:200px;" /> | <img src="media/082315_icon_do_dont-51.png" alt="#" style="width:200px;" /> |
+| :---: | :---: |  
+| *Do* | *Don't* |
+
+
 
 Tizen recommends soft gradient on container. Avoid solid color for background or disoriented gradient directions.
 
-  ![Do](media/082315_icon_do_dont2-53.png)  Do  
 
-  ![Don't](media/082315_icon_do_dont-53.png)  Don't
+| <img src="media/082315_icon_do_dont2-53.png" alt="#" style="width:200px;" /> | <img src="media/082315_icon_do_dont-53.png" alt="#" style="width:200px;" /> |
+| :---: | :---: |  
+| *Do* | *Don't* |
 
 
-  ![Do](media/082315_icon_do_dont2-53.png)  Do
+| <img src="media/082315_icon_do_dont2-53.png" alt="#" style="width:200px;" /> | <img src="media/082315_icon_do_dont3-53.png" alt="#" style="width:200px;" /> |
+| :---: | :---: |  
+| *Do* | *Don't* |
 
-  ![Don't](media/082315_icon_do_dont3-53.png)  Don't
 
  
 
 Lighting starts from top and end at the bottom
 
-
-
-![Recommended lightening](media/082315_icon_do_dont-46.png)  
-
+<img src="media/082315_icon_do_dont-46.png" alt="Recommended lightening" style="width:200px;" />  
 *Recommended lightening*
 
 
@@ -134,8 +130,7 @@ Interactive icons allow for instant actions, or provide additional information a
 
 On the screen, you can add an action bar and place 'Refresh', 'Back', 'Expand', or 'Close' action icons on it. Sometimes, text buttons, such as 'Cancel' and 'Done', may be added if applicable.
 
-
-![An example of floating action button](media/2.2.2_a.png) ![An example of floating action button](media/06_0.png)  
+<img alt="An example of floating action button" src="media/2.2.2_a.png" style="height:360px;" /> <img alt="An example of floating action button" src="media/06_0.png" style="height:390px; margin-left:9px;" />  
 *An example of floating action button*
 
 
@@ -162,9 +157,7 @@ The Tizen SDK also includes default action icons for turning on or off certain f
 
 Unlike action icons, informative icons are not touchable. They help users understand the content by providing self-explanatory visual information. In the examples below, the icons on the left of the call log categorize the type of call records as missed and received. On the other hand, the weather icon on the circular type wearable device in the example provides brief weather information at a glance.
 
-
-
-![Call log icons categorize received, missed, and outgoing calls](media/2.2.2_c.png) ![Call log icons categorize received, missed, and outgoing calls](media/11_2.png)  
+<img alt="Call log icons categorize received, missed, and outgoing calls" src="media/2.2.2_c.png" style="height:360px;" /> <img alt="Call log icons categorize received, missed, and outgoing calls" src="media/11_2.png" style="height:390px; margin-left:9px;" />  
 *Call log icons categorize received, missed, and outgoing calls*
 
  
@@ -179,10 +172,13 @@ The following are the basic requirements for brand icons:
 -   Size : Sizes may vary. Choose a size that provides a good balance with the content on the screen.
 -   Style : Use simple pictographic icons that are easy to understand. Do not apply outline strokes or shadows.
 
-  ![Do](media/2.2.3_b.png) Do  
-  ![Don't](media/2.2.3_a.png)  Don't
+| <img src="media/2.2.3_b.png" alt="#" style="width:200px;" /> | <img src="media/2.2.3_a.png" alt="#" style="width:200px;" /> |
+ | :---: | :---: |  
+ | *Do* | *Don't* |
+
 
 -   Color : Design icons with colors that are easily noticeable. Use dark colors over light backgrounds and light colors over dark backgrounds to ensure optimal visibility.
 
-  ![Do](media/2.2.3_b.png) Do
-  ![Don't](media/2.2.3_c.png)  Don't
+| <img src="media/2.2.3_b.png" alt="#" style="width:200px;" /> | <img src="media/2.2.3_c.png" alt="#" style="width:200px;" /> |
+| :---: | :---: |  
+| *Do* | *Don't* |
