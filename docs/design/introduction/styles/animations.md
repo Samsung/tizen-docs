@@ -8,11 +8,8 @@ The idea of on-screen animation effects in the Tizen UI was inspired by the beha
 
 The concept of fluid animation design represents the look and feel of a gentle breeze. Objects glide across the screen as if they were blown by a gentle breeze.
 
-![Do (Click to play)](media/animations_doencoded.webm)   
-*Do (Click to play)*
-
-![Don't (Click to play)](media/animations_donsencoded.webm)   
-*Don't (Click to play)*
+* [Video of gentle breeze [Do]](media/animations_doencoded.webm) * (Click to play)*  
+* [Video of gentle breeze [Don't]](media/animations_donsencoded.webm)   *(Click to play)*
 
 
 ##### Consistent Flow
@@ -22,11 +19,8 @@ Animations on the screen should have a consistent direction. Disorienting animat
 
 > Avoid overusing animations. Add animations to tasks only if they are related to the task and can enhance users’ understanding of the task. Meaningless, irrelevant animations only add confusion.
 
-![Do (Click to play)](media/2.5_c_1.webm)   
-*Do (Click to play)*
-
-![Don't (Click to play)](media/2.5_d_1.webm)   
-*Don't (Click to play)*
+* [Video of consistent flow [Do]](media/2.5_c_1.webm)  * (Click to play)*
+* [Video of consistent flow [Don't]](media/2.5_d_1.webm)    *(Click to play)*
 
  
 When you design animations for different layers on the screen, provide them based on the actual movement of the layer they belong to.
@@ -52,8 +46,5 @@ When you design animations for buttons or icons, there are a few rules to follow
 -   Ensure that users clearly recognize the animation effect. To make the effect visible, design the initial animation in a size no less than 80% of the UI size, and then allow it to grow to 100%.
 
 
-![Do (Click to play)](media/2.5_h_1.webm)   
-*Do (Click to play)*
-
-![Don't (Click to play)](media/2.5_i_1.webm)   
-*Don't (Click to play)*
+* [Video of dispersion [Do]](media/2.5_h_1.webm) *(Click to play)*
+* [Video of dispersion [Don't]](media/2.5_i_1.webm)  *(Click to play)*

@@ -6,19 +6,19 @@ Tizen uses simple icon designs with subtle shadows. The following are guidelines
 
  
 
-##### Use Icon Designs That Are Easy to Understand
+#### Use Icon Designs That Are Easy to Understand
 
 When you design icons, ensure that they are easily understood without any additional description. Where applicable, use universal designs that are familiar to users. It’s a good idea to perform a usability test on the icons after designing them.
 
  
 
-##### Do Not Copy Real Life Objects, Iconize them
+#### Do Not Copy Real Life Objects, Iconize them
 
 Use flat, simple designs to describe the main characteristics of an app. Design your icons to emphasize the shapes of objects so that they can be easily recognized, and match the style with the app icons that are displayed on the Home screen. Do not try to include realistic photos, detailed lines, or complicated shapes in your icons.
 
  
 
-##### Prepare Differently Sized Icons for OS and Device Compatibility
+#### Prepare Differently Sized Icons for OS and Device Compatibility
 
 Different Tizen platforms require different icon sizes. For example, mobile devices with a WVGA display and those with an HD display require icons in different sizes since Tizen SDK 2.4. Circular type wearable devices also require device-specific icon sizes.
 
@@ -27,8 +27,8 @@ Different Tizen platforms require different icon sizes. For example, mobile devi
 |  Device  |   Resolution  | Icon asset size |
 | ---------| ------------| -----------------|
 |  Mobile  |   HD        |   118 x 118|
-|  Mobile  |   WQHD      |   236x236|
-|  Mobile   |  WVGA       |  81x81|
+|  Mobile  |   WQHD      |   236 x 236|
+|  Mobile   |  WVGA       |  81 x 81|
 |  Wearable  | 360 x 360   | 152 x 152|
 
 
@@ -40,33 +40,36 @@ Different Tizen platforms require different icon sizes. For example, mobile devi
 App icons are important because they visually represent your app on the Home screen. App icons must be attractive enough to draw a user’s attention and they have to deliver meaningful information about your apps.
 
 <img alt="Example of a Tizen app icon" src="media/01.png" style="width:390px; margin-right:4px;" />  
+
 *Example of a Tizen app icon*
 
  
 
-##### Shape It in a Circle
+#### Shape It in a Circle
 
 Tizen’s system icons are displayed as circles. Although this requirement creates challenges in designing icons, the shape allows for a uniformity that ties different icons together for a consistent look and feel.
 
 
 <img alt="Original circle concept, initial sketch" src="media/02.png" style="width:390px; margin-right:4px;" />  
+
 *Original circle concept, initial sketch*
 
 
  
 
-##### Icon Colors and Background
+#### Icon Colors and Background
 
 Carefully choose the icon background color when designing an icon for your app. The background color greatly affects the visibility of your icon. Since the icon will be used to distinguish your app, icons should be designed for easy recognition. An icon with a carefully selected background color makes your icon design easy to notice, no matter where you place it.
 
 <img alt="Your icons should be visible against any background" src="media/03.png" style="width:390px; margin-right:4px;" /> <img alt="Your icons should be visible against any background" src="media/2.2.1_d.png" style="width:390px; margin-right:4px;" />  
+
 *Your icons should be visible against any background*
 
 
 
  
 
-##### Icon Patterns in Tizen
+#### Icon Patterns in Tizen
 
 Icon always uses circle container. Avoid complicated shape.
 
@@ -112,6 +115,7 @@ Tizen recommends soft gradient on container. Avoid solid color for background or
 Lighting starts from top and end at the bottom
 
 <img src="media/082315_icon_do_dont-46.png" alt="Recommended lightening" style="width:200px;" />  
+
 *Recommended lightening*
 
 
@@ -126,7 +130,7 @@ Interactive icons allow for instant actions, or provide additional information a
 
  
 
-##### Action Icons
+#### Action Icons
 
 On the screen, you can add an action bar and place 'Refresh', 'Back', 'Expand', or 'Close' action icons on it. Sometimes, text buttons, such as 'Cancel' and 'Done', may be added if applicable.
 
@@ -153,7 +157,7 @@ The Tizen SDK also includes default action icons for turning on or off certain f
 
  
 
-##### Informative Icons
+#### Informative Icons
 
 Unlike action icons, informative icons are not touchable. They help users understand the content by providing self-explanatory visual information. In the examples below, the icons on the left of the call log categorize the type of call records as missed and received. On the other hand, the weather icon on the circular type wearable device in the example provides brief weather information at a glance.
 
