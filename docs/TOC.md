@@ -81,4 +81,17 @@
 ### [Long-term Goals](open-source-project/tizen-rt/rt-goal.md)
 ### Release Notes
 #### [Tizen RT 1.0 M1](open-source-project/tizen-rt/release-notes/tizen-rt-1-0-m1.md)
+
+## Tizen Studio
+### [Overview](open-source-project/tizen-studio/README.md)
+### [Contributing to Tizen Studio](open-source-project/tizen-studio/contribute-gerrit.md)
+### Developing Extensions
+#### [IDE Extension Development](open-source-project/tizen-studio/web-extension-guide.md)
+#### [Emulator Extension Development](open-source-project/tizen-studio/emulator-extension-guide.md)
+#### [Package File Description](open-source-project/tizen-studio/package-file-desc-guide.md)
+#### [Metapackage File Description](open-source-project/tizen-studio/meta-package.md)
+### Building Tizen Studio Code
+#### [Build Environment](open-source-project/tizen-studio/environment.md)
+#### [Local Build Guide](open-source-project/tizen-studio/local-build.md)
+
 <!-- End of Tizen Platform -->
