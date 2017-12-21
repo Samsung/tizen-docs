@@ -103,7 +103,7 @@ To learn how to implement a scroll bar, see [Scroller](../../../guides/native/u
 
 
 
-![Scroll bar](media/5.1.4_a-259x460.png){width="259" ![Scroll bar](media/5.1.4_b-259x460.png)  
+![Scroll bar](media/5.1.4_a-259x460.png) ![Scroll bar](media/5.1.4_b-259x460.png)  
 Scroll bars
 
 
@@ -133,5 +133,5 @@ To learn how to implement a page indicator, see [Index](../../../guides/native/
 
 
 
-[![Page indicator](media/5.1.4_d-259x460.png)<br>
+![Page indicator](media/5.1.4_d-259x460.png)  
 Page indicator

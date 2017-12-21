@@ -44,9 +44,8 @@ This section provides guidelines for designing the main view of your app. Read t
 
 The Main view is the first screen on your app. It provides key information to help users recognize your app’s essential features and allows them to understand the app structure. If you need to divide the information into different categories, use tabs in the header.
 
+<img alt="Main view example of a call app" src="media/4.1.1_a.png" height="460px" />  
 
-
-![Main view example of a call app](media/4.1.1_a.png)  
 *Main view example of a call app*
 
 
@@ -66,10 +65,8 @@ You can place floating action buttons on the top level view of your app for app-
 For example, you can provide a 'Create' floating action button for a calendar app, or a 'Compose' floating action button for a messaging app, and then provide other less important action buttons in the 'More' menu screen. Refer to [Floating Action Button](../ui-components/assist-views.md#floating_) for details.
 
  
+<img alt="The main action is provided as a floating action button on the main view page." src="media/4.1.1_b.png" height="460px" /> <img alt="The main action is provided as a floating action button on the main view page." src="media/4.1.1_c.png" height="460px" margin-left="10px" />  
 
-
-
-![The main action is provided as a floating action button on the main view page.](media/4.1.1_b.png) ![The main action is provided as a floating action button on the main view page.](media/4.1.1_c.png)  
 *The main action is provided as a floating action button on the main view page.*
 
 
@@ -86,9 +83,8 @@ This section provides guidelines for designing your app’s detail view. Read an
 
 In the detail view, display content elements, such as images or text, so that users can recognize the information immediately.
 
+<img alt="Displaying content in the detail view" src="media/4.1.2_a.png" height="460px" /> <img alt="Displaying content in the detail view" src="media/4.1.2_b.png" height="460px" margin-left="10px" />  
 
-
-![Displaying content in the detail view](media/4.1.2_a.png) ![Displaying content in the detail view](media/4.1.2_b.png)  
 *Displaying content in the detail view*
 
  
@@ -97,9 +93,8 @@ In the detail view, display content elements, such as images or text, so that us
 
 A detail view generally includes various actions that users can run on the page. You can place the action buttons either directly on your app screen or on the 'More' menu screen. Do not display too many action buttons on the screen because they may distract users. Place only the main actions on the screen and add others on the 'More' menu screen.
 
+<img alt="Action buttons in the detail view" src="media/4.1.2_d.png" height="460px" /> <img alt="Action buttons in the detail view" src="media/4.1.2_e.png" height="460px" margin-left="10px" />  
 
-
-![Action buttons in the detail view](media/4.1.2_d.png) ![Action buttons in the detail view](media/4.1.2_e.png)  
 *Action buttons in the detail view*
 
 
@@ -110,8 +105,8 @@ A detail view generally includes various actions that users can run on the page.
 
 In the detail view, 'Back' key on the device always takes the user to the previous screen. Place a 'Cancel' button on the screen to allow users to quit a current task. A 'Cancel' button may be provided with action buttons that require confirmation, such as 'Save', 'Done', or 'Send'.
 
+<img alt="Screen navigation" src="media/4.1.2_f.png" height="460px" /> <img alt="Screen navigation" src="media/4.1.2_g.png" height="460px" margin-left="10px" />  
 
-![Screen navigation](media/4.1.2_f.png) ![Screen navigation](media/4.1.2_g.png)  
 *Screen navigation*
 
 
@@ -131,9 +126,8 @@ You can provide check boxes in the main view edit mode to allow users to manage 
 
 The screen automatically switches back from the edit mode to the normal mode when users complete or cancel the task.
 
+<img alt="Managing multiple items with check boxes" src="media/4.1.3_a.png" height="460px" />  
 
-
-![Managing multiple items with check boxes](media/4.1.3_a.png)  
 *Managing multiple items with check boxes*
 
 
@@ -156,7 +150,6 @@ In the edit mode, users can create, delete, or edit the content in the detail vi
 
 In the edit mode, provide standard UI components, such as radio buttons, checkboxes, and sliders, to allow users to adjust setting values. Also, provide action buttons for completing or canceling the task after users have adjusted the settings.
 
+<img alt="Editing settings" src="media/4.1.3_b.png" height="460px" />  
 
-
-![Editing settings](media/4.1.3_b.png)  
 *Editing settings*

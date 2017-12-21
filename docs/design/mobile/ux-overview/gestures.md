@@ -20,10 +20,10 @@ The following table lists the basic Tizen gestures you can use to offer intuitiv
 
   |Name        |     Symbol              |                                   Description|
   |------------|-------------------------|----------------------------------------------|
-  |Tap         |     ![](media/gesture_tap-03.png) |            Selects an item or executes functions if the area has no other touch interaction applied.|
-  |Double tap  |     ![](media/gesture_double_tab-04.png)  |    Zooms in to the predefined view level. Returns to default view level in zooming (if already zoomed in).|
-  |Touch and hold |  ![](media/gesture_double_tab-05-05.png) |  Executes specific functions. On the Home screen, enters edit mode. In apps, selects text.|
-  |Swipe / Flick  |  ![](media/150709_wireframe-07.png) |       Swipe is used to scroll through a list of items or to pan the screen.<br>                                                                                           Flick is a quick swipe. It is used to quickly scroll through a list of items or to quickly pan the screen.|
-  |Drag and drop |   ![](media/gesture_drag_drop-07.png)    |   Touching, holding, and then dragging an object moves it to the desired location when the user releases his or her finger.|
-  |Zoom in      |    ![](media/gesture_zoomin-08.png)   |       Touching two fingers to the screen and spreading them apart zooms in on the screen.|
-  |Zoom out     |    ![](media/150709_wireframe-09.png) |       Touching two fingers to the screen and pinching them together zooms out on the screen.|
+  |Tap         |  <img src="media/gesture_tap-03.png" width="40px" /> |            Selects an item or executes functions if the area has no other touch interaction applied.|
+  |Double tap  |  <img src="media/gesture_double_tab-04.png" width="45px" /> |    Zooms in to the predefined view level. Returns to default view level in zooming (if already zoomed in).|
+  |Touch and hold | <img src="media/gesture_double_tab-05-05.png" width="45px" /> |  Executes specific functions. On the Home screen, enters edit mode. In apps, selects text.|
+  |Swipe / Flick  | <img src="media/150709_wireframe-07.png" width="43px" /> |       Swipe is used to scroll through a list of items or to pan the screen.<br>                                                                                           Flick is a quick swipe. It is used to quickly scroll through a list of items or to quickly pan the screen.|
+  |Drag and drop | <img src="media/gesture_drag_drop-07.png" width="43px" />  |   Touching, holding, and then dragging an object moves it to the desired location when the user releases his or her finger.|
+  |Zoom in      |  <img src="media/gesture_zoomin-08.png" width="105px" />  |       Touching two fingers to the screen and spreading them apart zooms in on the screen.|
+  |Zoom out     | <img src="media/150709_wireframe-09.png" width="105px" />  |       Touching two fingers to the screen and pinching them together zooms out on the screen.|
