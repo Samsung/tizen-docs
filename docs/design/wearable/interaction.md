@@ -1,6 +1,6 @@
 # Interaction
 
-![](media/7.0.png)  
+<img alt="" height="428" src="media/7.0.png" width="800" />
 
 The Gear receives user input through touch, rotary actions, gestures, and voice, and returns feedback through haptic, sound, and visual responses.
 

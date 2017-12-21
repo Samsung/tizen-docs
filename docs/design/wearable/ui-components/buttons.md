@@ -50,7 +50,7 @@ Tapping a button performs an action. They can appear on almost any screen, shoul
     These buttons appear when users select items from a list and you want to define the maximum number of selections. These buttons should be disabled if there’s a limit in the number of items users can select, or no item was selected.
 
 |**Selection mode action button**||
-    |---------------|--------------------|
+|---------------|--------------------|
 |    **Native** |(Circle) UI Components<br>(+ SDK : Ctxpopup)|
 |    **Web**|    -|
 

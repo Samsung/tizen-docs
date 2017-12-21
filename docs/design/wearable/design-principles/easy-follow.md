@@ -10,10 +10,9 @@ Users should be able to control the Gear quickly and conveniently. Avoid making 
 
 Intuitive and meaningful connections between interactions and components on the screen can help users better understand the information and its context. Consider bezel control when designing your interface, as it should suggest how users should use the bezel to navigate and interact.
 
-  ---------------------------------------------- ----------------------------------------------
-![](media/1.2.1.directionconnection2_moreoption.mp4)  ![](media/1.2.1.directionconnection1_health.mp4)  
-  ---------------------------------------------- ----------------------------------------------
 
+* [Video 1 of bezel control](media/1.2.1.directionconnection2_moreoption.mp4)
+* [Video 2 of bezel control](media/1.2.1.directionconnection1_health.mp4)  
 *The interface design suggests how the user should utilize the bezel.*
 
 ## 2. Keep a consistent theme

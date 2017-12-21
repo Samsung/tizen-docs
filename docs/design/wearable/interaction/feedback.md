@@ -10,16 +10,16 @@ The Gear offers visual, auditory, and haptic feedback. Whichever the type of fee
      </tr>
      <tr>
        <td> Haptic response </td>
-       <td> ![](media/interaction_7.5.0_1-100x91.png) </td>
+       <td> <img src="media/interaction_7.5.0_1-100x91.png"> </td>
        <td rowspan="3"> Respond to user input </td>
      </tr>
      <tr>
        <td> Visual response </td>
-       <td> ![](media/interaction_7.5.0_2-100x127.png) </td>
+       <td> <img src="media/interaction_7.5.0_2-100x127.png"> </td>
      </tr>
      <tr>
        <td> Sound response </td>
-       <td> ![](media/interaction_7.5.0_3-100x90.png) </td>
+       <td> <img src="media/interaction_7.5.0_3-100x90.png"> </td>
      </tr>
     </table>
 
@@ -37,39 +37,13 @@ Haptic responses deliver feedback to users through vibration without requiring t
 
 -   **Sample vibration Patterns**
 
-<table>
-     <tr>
-       <th> Examples </th>
-       <th>   </th>
-       <th> Meaning </th>
-     </tr>
-     <tr>
-       <td> Single short<br>*(e.g. 100 ms)* </td>
-       <td> ![](media/interaction_7.5.1_1_1-77x45.png) </td>
-       <td> Provides simple information </td>
-     </tr>
-     <tr>
-       <td> Single long<br>*(e.g. 500 ms)* </td>
-       <td> ![](media/interaction_7.5.1_1_2-126x45.png) </td>
-       <td> Signals a clear status<br>*(e.g. completion of a task)* </td>
-     </tr>
-     <tr>
-       <td> 2-3 times fast </td>
-       <td> ![](media/interaction_7.5.1_1_3-211x45.png) </td>
-       <td> Provides a warning or an alert </td>
-     </tr>
-     <tr>
-       <td> 2-3 times middle speed </td>
-       <td> ![](media/interaction_7.5.1_1_4-263x45.png) </td>
-       <td> Provides a general notification </td>
-     </tr>
-     <tr>
-       <td> 2-3 times slow<br>*(e.g. 60 times / min=60 BPM)* </td>
-       <td> ![](media/interaction_7.5.1_1_1-77x45.png) </td>
-       <td> Provides an alert about an incoming/ongoing event </td>
-     </tr>
-    </table>
-
+| Examples | | Meaning |
+| --- | --- | ---|
+| Single short<br>*(e.g. 100 ms)* | ![](media/interaction_7.5.1_1_1-77x45.png) | Provides simple information |
+| Single long<br>*(e.g. 500 ms)* | ![](media/interaction_7.5.1_1_2-126x45.png) | Signals a clear status<br>*(e.g. completion of a task)* |
+|  2-3 times fast | ![](media/interaction_7.5.1_1_3-211x45.png) | Provides a warning or an alert |
+| 2-3 times middle speed | ![](media/interaction_7.5.1_1_4-263x45.png) | Provides a general notification |
+| 2-3 times slow<br>*(e.g. 60 times / min=60 BPM)* |  ![](media/interaction_7.5.1_1_5-407x45.png) | Provides an alert about an incoming/ongoing event |
 
 
 -   **Duration of vibrations**
@@ -100,34 +74,37 @@ Visual responses inform users of a current state. Provide visual feedback to inf
 
     You can adjust the color opacity of a button by 40% to indicate that the button has been pressed.
 
-   **Normal                                                                  Pressed**
+| Normal | Pressed |
+| :--: | :--: |
+|![](media/interaction_7.5.1_2-850x174_1.png)| ![](media/interaction_7.5.1_2-850x174_2.png)  |
+| Opacity 100% | Opacity 40% |  
 
-    ![](media/interaction_7.5.1_2-850x174.png)  
-    Opacity 100%                                                 Opacity 40%
+  *The opacity of the entire container is adjusted to 40% when users press a colored icon.*  
 
-    *The opacity of the entire container is adjusted to 40% when users press a colored icon.*  
+| Normal | Pressed |
+| :--: | :--: |
+|   ![](media/interaction_7.5.1_3-850x174_1.png)  |   ![](media/interaction_7.5.1_3-850x174_2.png)  |
+| Opacity 100% | Opacity 40% |  
 
-    **Normal                                                                  Pressed**
-    ![](media/interaction_7.5.1_3-850x174.png)  
-   Opacity 100%                                                  Opacity 40%        
-
-    *The color opacity of the whole container drops to 40% when users press a text button.*
+  *The color opacity of the whole container drops to 40% when users press a text button.*
 
 -   **Adjusting the size**
 
     You can adjust the size of a button to indicate that the button has been pressed.
 
-    **Normal                                                     Pressed**
+| Normal | Pressed |
+| :--: | :--: |
+|     ![](media/2-800x166_1.png)  |     ![](media/2-800x166_2.png)  |
+|  Scale 100% |  Scale 110%  |  
 
-    ![](media/2-800x166.png)  
-    Scale 100%                                                              Scale 110%                            
-    *When users press a 2D icon without a container, a circle appears around the button and is scaled up to 110% of its original size*
+  *When users press a 2D icon without a container, a circle appears around the button and is scaled up to 110% of its original size*
 
-    **Normal                                                                  Pressed**
-
-    ![](media/interaction_7.5.1_5-850x174.png)  
-    Scale 100%                                                         Scale 110%                              
-    *When users touch the screen itself, the screen is scaled down to 90% and then returns to 100%.*
+  | Normal | Pressed |
+  | :--: | :--: |
+  |     ![](media/interaction_7.5.1_5-850x174_1.png)    |         ![](media/interaction_7.5.1_5-850x174_2.png)    |
+  |  Scale 100% |  Scale 110%  |  
+       
+  *When users touch the screen itself, the screen is scaled down to 90% and then returns to 100%.*
 
 
 ## Auditory responses
@@ -148,14 +125,14 @@ Auditory responses deliver feedback on the user's touch or gestures. Using diffe
 
 The table below shows some examples of the Gear's auditory responses for each type of interaction.
 
-
-|Touch/mode change        |![](media/interaction_7.5.3_icon_play1.png) | ![](media/interaction_7.5.3_icon_01.png) |
+| | | |
 |--------------------------|--------------------------|--------------------------|
-| Nokey (reach limit)      | ![](media/interaction_7.5.3_icon_play1.png) | ![](media/interaction_7.5.3_icon_02.png) |
-| Up/down                  | ![](media/interaction_7.5.3_icon_play2.png) | ![](media/interaction_7.5.3_icon_03_02.png) |
-| On/off, Enable/disable   | ![](media/interaction_7.5.3_icon_play2.png) | ![](media/interaction_7.5.3_icon_04.png) |
-| Confirm/start/success    | ![](media/interaction_7.5.3_icon_play1.png) | ![](media/interaction_7.5.3_icon_05.png) |
-| Error/alert              | ![](media/interaction_7.5.3_icon_play1.png) | ![](media/interaction_7.5.3_icon_06.png) |
+|Touch/mode change        |<img src="media/interaction_7.5.3_icon_play1.png" width="70" height="70" /> |<img src="media/interaction_7.5.3_icon_01.png" width="220" height="40" /> |
+| Nokey (reach limit)      |<img src="media/interaction_7.5.3_icon_play1.png" width="70" height="70" /> |<img src="media/interaction_7.5.3_icon_02.png" width="220" height="40" /> |
+| Up/down                  |<img src="media/interaction_7.5.3_icon_play2.png" width="160" height="70" /> |<img src="media/interaction_7.5.3_icon_03_02.png" width="220" height="40" /> |
+| On/off, Enable/disable   |<img src="media/interaction_7.5.3_icon_play2.png" width="160" height="70" /> |<img src="media/interaction_7.5.3_icon_04.png" width="220" height="40" /> |
+| Confirm/start/success    |<img src="media/interaction_7.5.3_icon_play1.png" width="70" height="70" /> |<img src="media/interaction_7.5.3_icon_05.png" width="220" height="40" /> |
+| Error/alert              |<img src="media/interaction_7.5.3_icon_play1.png" width="70" height="70" /> |<img src="media/interaction_7.5.3_icon_06.png" width="220" height="40" /> |
 
 
 
@@ -178,9 +155,9 @@ The table below shows some examples of the Gear's auditory responses for each ty
 
     Refer to the table below for the default volume of each stream type.  
 
-| Ringtone        | Notification    | Media           | System          |
-|-----------------|-----------------|-----------------|-----------------|
-| 11              | 11              | 7               | 9               |
+| Ringtone   | Notification   | Media       | System      |
+|:--:|:--:|:--:|:--:|
+| 11      | 11        | 7       | 9          |
 
 -   **Sound and vibration**
 

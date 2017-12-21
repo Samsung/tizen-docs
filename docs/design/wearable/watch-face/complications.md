@@ -21,32 +21,31 @@ There are 5 types of complication depending on the type of data you want to prov
 
     Text complications only show information with numbers and letters.
 
-    ![](media/watchface_4.3.1_1.png)  
+    <img src="media/watchface_4.3.1_1.png" width="1760" height="288" />
 
 -   **Text and icon**
 
     Text and icon complications indicate information with an icon and show the current data value with text.
 
-    ![](media/watchface_4.3.1_2.png)
+    <img src="media/watchface_4.3.1_2.png" width="1760" height="288" />
 
 -   **Icon**
 
     Icon complications provide a shortcut link through an icon with no accompanying text.
 
-    ![](media/watchface_4.3.1_3.png)
+    <img src="media/watchface_4.3.1_3.png" width="1760" height="288" />
 
 -   **Gauge**
 
     Gauge complications show data values as a percentage using a circular progress bar or an icon that changes according to the status of a given value.
 
-    ![](media/watchface_4.3.1_4.png)
+    <img src="media/watchface_4.3.1_4.png" width="1760" height="288" />
 
 -   **Hands**
 
     Hands complications show the relative level of a data value compared to a whole by using hands.
 
-    ![](media/watchface_4.3.1_5.png)
-
+    <img src="media/watchface_4.3.1_5.png" width="1760" height="288" />
 
 
 > **Tip**  

@@ -12,30 +12,30 @@ Touch is the Gear’s base interaction platform, with taps and swipes widely use
      </tr>
      <tr>
        <td> Tap </td>
-       <td> ![](media/interaction_7.1.0_1-150x120.png) </td>
+       <td> <img height="120" src="media/interaction_7.1.0_1-150x120.png" width="150" /> </td>
        <td> Action/select </td>
      </tr>
      <tr>
        <td> Double tap </td>
-       <td> ![](media/interaction_7.1.0_2-150x120.png) </td>
+       <td> <img height="120" src="media/interaction_7.1.0_2-150x120.png" width="150" /> </td>
        <td> Zoom in or out </td>
      </tr>
      <tr>
        <td rowspan="2"> Swipe </td>
-       <td> ![](media/interaction_7.1.0_3-150x120.png) </td>
+       <td> <img height="120" src="media/interaction_7.1.0_3-150x120.png" width="150" /></td>
        <td rowspan="2"> Scroll left, right, up, or down </td>
      </tr>
      <tr>
-        <td> ![\#](media/interaction_7.1.0_4-150x120.png) </td>
+        <td> <img alt="#" height="120" src="media/interaction_7.1.0_4-150x120.png" width="150" /> </td>
      </tr>
      <tr>
        <td> Bezel swipe down </td>
-       <td> ![](media/interaction_7.1.0_4-150x120.png) </td>
+       <td> <img height="120" src="media/interaction_7.1.0_4-150x120.png" width="150" /> </td>
        <td> Go back </td>
      </tr>
      <tr>
        <td> Touch and hold </td>
-       <td> ![](media/interaction_7.1.0_5-150x120.png) </td>
+       <td> <img height="120" src="media/interaction_7.1.0_5-150x120.png" width="150" /> </td>
        <td> Go to select mode </td>
      </tr>
 </table>

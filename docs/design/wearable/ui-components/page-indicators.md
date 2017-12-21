@@ -22,20 +22,10 @@ Page indicators are presented at the top of the screen as dots that represent ea
 
     These indicators curve around the top edge of the screen when the pages are navigated by a rotary action and a swipe. They can form an arc of up to 120 degrees and are center-aligned.
 
-    <table>
-     <tr>
-       <th> **Circular page indicators** </th>    
-       <th>  </th>
-     </tr>
-     <tr>
-       <td> **Native** </td>
-       <td> Index > circle </td>
-     </tr>
-     <tr>
-       <td> **Web** </td>
-       <td> - </td>
-     </tr>
-    </table>
+| Circular page indicators | |
+| --- | --- |
+| **Native** | Index > circle |
+| **Web** |  - |
 
   ![](media/ui_components_10.12.3_1-850x174.png)  
     *Circular page indicators are provided when both the rotary action and swiping are available for page navigation.*
@@ -45,20 +35,10 @@ Page indicators are presented at the top of the screen as dots that represent ea
 
     These indicators form a horizontal line at the top edge of the screen when navigation is through swiping only. This type of indicator is recommended when the rotary action controls other functions and can’t be used for page navigation.
 
-    <table>
-     <tr>
-       <th> **Linear page indicators** </th>    
-       <th>  </th>
-     </tr>
-     <tr>
-       <td> **Native** </td>
-       <td> Index > thumbnail </td>
-     </tr>
-     <tr>
-       <td> **Web** </td>
-       <td> Page Indicator<br>(+Section Changer) </td>
-     </tr>
-    </table>
+| Linear page indicators | |
+| --- | --- |
+| **Native** |  Index > thumbnail |
+|  **Web** |  Page Indicator<br>(+Section Changer) |
 
   ![](media/ui_components_10.12.3_2-850x174.png)  
     *Linear page indicators are provided when swiping is the only available interaction for page navigation.*
