@@ -18,10 +18,8 @@ Users navigate from one screen to another by tapping interactive UI elements (fo
 
 For a device to be compliant with Tizen’s Compliance Specification, it MUST provide a Back key (or a Back button) through dedicated physical (hardware) or software implementation. In general, the Back key is provided at the bottom of the device and is used to return to the previous screen or to cancel a task that is in progress.
 
- 
+<img src="media/4.7.1_a_.png" margin-right="3px" width="260px" alt="Navigation using the Back key" /> <img src="media/4.7.1_b_.png" margin-right="3px" width="260px" alt="Navigation using the Back key" /> <img src="media/4.7.1_c_.png" width="260px" alt="Navigation using the Back key" />
 
-
-![Navigation using the Back key](media/4.7.1_a_.png) ![Navigation using the Back key](media/4.7.1_b_.png) ![Navigation using the Back key](media/4.7.1_c_.png)  
 *Navigation using the Back key*
 
 
@@ -52,10 +50,8 @@ A press on the Home key sends the currently running app to the background and di
 
 Also, users can touch and hold the Home key to access the Recent screen and tap an app icon to launch it again. Refer to [Recent Screen](../ux-overview/home-structure.md#recent) for details.
 
- 
+<img src="media/4.7.2_a_.png" margin-right="3px" width="260px" alt="Navigation to the Home screen" /> <img src="media/4.7.2_b_.png" margin-right="3px" width="260px" alt="Navigation to the Home screen" /> <img src="media/4.7.2_c_.png" width="260px" alt="Navigation to the Home screen" />  
 
-
-![Navigation to the Home screen](media/4.7.2_a_.png) ![Navigation to the Home screen](media/4.7.2_b_.png) ![Navigation to the Home screen](media/4.7.2_c_.png)  
 *Navigation to the Home screen*
 
 
@@ -79,10 +75,8 @@ The following lists cases where the views change within a screen:
 The following figure explains the difference between the changes in screens and views.
 
  
+<img src="media/4.7.3_a_.png" margin-right="2px" width="195px" alt="Navigation when view changes" /> <img src="media/4.7.3_b_.png" margin-right="2px" width="195px" alt="Navigation when view changes" /> <img src="media/4.7.3_c_.png" margin-right="2px" width="195px" alt="Navigation when view changes" /> <img src="media/6.7.3-02.png" margin-right="2px" width="195px" alt="Navigation when view changes" />    
 
-
-
-![Navigation when view changes](media/4.7.3_a_.png) ![Navigation when view changes](media/4.7.3_b_.png) ![Navigation when view changes](media/4.7.3_c_.png) ![Navigation when view changes](media/6.7.3-02.png)  
 *Navigation when view changes*
 
 
@@ -97,11 +91,8 @@ When the task is completed, the newly launched app is automatically closed and t
 
 For example, users may launch a gallery app to attach an image while writing an e-mail or a message. The gallery app is automatically closed after attaching the image. Users can also cancel attaching the image and close the email or messaging app using the 'Back' key.
 
- 
+<img src="media/4.7.4_a_.png" margin-right="3px" width="260px" alt="Navigation between apps" /> <img src="media/navigation_between_apps_2nd.png" margin-right="3px" width="260px" alt="Navigation between apps" /> <img src="media/navigation_between_apps_3rd.png" margin-right="3px" width="260px" alt="Navigation between apps" /> <img src="media/navigation_between_apps_4th.png" margin-right="3px" width="260px" alt="Navigation between apps" /> <img src="media/navigation_between_apps_5th.png" margin-right="3px" width="260px" alt="Navigation between apps" /> <img src="media/4.7.4_f_.png" margin-right="3px" width="260px" alt="Navigation between apps" />  
 
-
-
-![Navigation between apps](media/4.7.4_a_.png) ![Navigation between apps](media/navigation_between_apps_2nd.png) ![Navigation between apps](media/navigation_between_apps_3rd.png) ![Navigation between apps](media/navigation_between_apps_4th.png) ![Navigation between apps](media/navigation_between_apps_5th.png) ![Navigation between apps](media/4.7.4_f_.png)  
 *Navigation between apps*
 
 
@@ -129,10 +120,8 @@ To allow the users to create new items quickly and easily, refer to the followin
 -   Show the fields users previously used by default. If a field has been just added (without any value input) or removed, set the value as predefined value (if one exists) and do not provide this field as a default next time.
 
  
+<img src="media/4.7.5_a.png" alt="Create mode" height="460px" />  
 
-
-
-![Create mode](media/4.7.5_a.png)  
 *Create mode*
 
 
@@ -155,16 +144,13 @@ You can also offer information about the selected items (for example, the number
 |  Multiselect mode(limited)|      0 / %d selected |      1 / %d selected    |
 *%d indicates a limited number)*
 
+<img src="media/4.7.5_b_.png" margin-right="2px" width="195px" alt="Multi-selection in a list view" /> <img src="media/4.7.5_c_.png" margin-right="2px" width="195px" alt="Multi-selection in a list view" /> <img src="media/4.7.5_d_.png" margin-right="2px" width="195px" alt="Multi-selection in a list view" /> <img src="media/4.7.5_e_.png" margin-right="2px" width="195px" alt="Multi-selection in a list view" />  
 
-![Multi-selection in a list view](media/4.7.5_b_.png) ![Multi-selection in a list view](media/4.7.5_c_.png) ![Multi-selection in a list view](media/4.7.5_d_.png) ![Multi-selection in a list view](media/4.7.5_e_.png)  
 *Multi-selection in a list view*
 
 
- 
+<img src="media/user_action_inside_an_app_5th.png" margin-right="2px" width="195px" alt="Multi-selection in a grid view" /> <img src="media/user_action_inside_an_app_6th.png" margin-right="2px" width="195px" alt="Multi-selection in a grid view" /> <img src="media/user_action_inside_an_app_7th.png" margin-right="2px" width="195px" alt="Multi-selection in a grid view" /> <img src="media/user_action_inside_an_app_8th.png" margin-right="2px" width="195px" alt="Multi-selection in a grid view" />  
 
-
-
-![Multi-selection in a grid view](media/user_action_inside_an_app_5th.png) ![Multi-selection in a grid view](media/user_action_inside_an_app_6th.png) ![Multi-selection in a grid view](media/user_action_inside_an_app_7th.png) ![Multi-selection in a grid view](media/user_action_inside_an_app_8th.png)  
 *Multi-selection in a grid view*
 
 
@@ -172,10 +158,8 @@ You can also offer information about the selected items (for example, the number
 
 The 'Select All' action button scrolls with the list. Tapping the 'Select All' button selects all the items in the list, and tapping it again deselects all the selected items.
 
- 
+<img src="media/4.7.5_j_.png" height="460px" alt="Select All feature" /> <img src="media/4.7.5_k.png" margin-left="10px" height="460px" alt="Select All feature" />  
 
-
-![Select All feature](media/4.7.5_j_.png) ![Select All feature](media/4.7.5_k.png)  
 *Select All feature*
 
 
@@ -193,10 +177,8 @@ In the list view, users can select and delete multiple items using the multisele
 
 Once the user has deleted the data, provide a visual cue to let users know that the action was successfully completed. You can also display the current status via text, such as “No images,” if necessary. Do not provide a confirmation pop-up to ask for the final confirmation, since users’ intentions have already been fully reflected during the item selection. If it takes a long time to complete the delete action, provide an activity indicator to show the progress (refer to [Progress Components](../ui-components/presentation-views.md#progress_) for details).
 
- 
+<img src="media/4.7.5_l_.png" margin-right="2px" width="155px" alt="Deleting items in a list view" /> <img src="media/4.7.5_j_.png" margin-right="2px" width="155px" alt="Deleting items in a list view" /> <img src="media/4.7.5_k.png" margin-right="2px" width="155px" alt="Deleting items in a list view" /> <img src="media/4.7.5_m.png" margin-right="2px" width="155px" alt="Deleting items in a list view" /> <img src="media/4.7.5_n.png" margin-right="2px" width="155px" alt="Deleting items in a list view" />  
 
-
-![Deleting items in a list view](media/4.7.5_l_.png) ![Deleting items in a list view](media/4.7.5_j_.png) ![Deleting items in a list view](media/4.7.5_k.png) ![Deleting items in a list view](media/4.7.5_m.png) ![Deleting items in a list view](media/4.7.5_n.png)  
 *Deleting items in a list view*
 
  
@@ -205,15 +187,9 @@ Once the user has deleted the data, provide a visual cue to let users know that 
 
 Provide a confirmation pop-up message to prevent unintended deletions. Do not use a pop-up message if the delete (or remove) action is not actually destructive. This is usually the case when users delete shortcuts to actual objects rather than the objects themselves. You can provide simple feedback, such as visual effects or toast pop-up, to explicitly show the deletion progress.
 
- 
+<img src="media/4.7.5_o_tu.png" width="260px" alt="Deleting items in a detail view" /> <img src="media/4.7.5_p_tu.png" margin-left="3px" width="260px" alt="Deleting items in a detail view" /> <img src="media/4.7.5_q_tu.png" margin-left="3px" width="260px" alt="Deleting items in a detail view" />  
 
-
-![Deleting items in a detail view](media/4.7.5_o_tu.png) ![Deleting items in a detail view](media/4.7.5_p_tu.png) ![Deleting items in a detail view](media/4.7.5_q_tu.png)  
 *Deleting items in a detail view*
-
-
-
- 
 
  
 
@@ -228,30 +204,24 @@ Your app can provide many actions and some of them may be irreversible. If actio
 In Create or Edit mode, the title bar (refer to [Title Bar](../ui-components/navigation-elements.md#title_) for details) provides 'Cancel' and 'Done' buttons (depending on the situation, a 'Send' or 'Delete' button can be provided instead of a 'Done' button). Users can tap the 'Done' button to finish their task. If users tap the 'Cancel' button, provide a pop-up confirmation window to verify that they want to discard their work. If there is no change in the content, you don’t need to confirm anything.
 
  
+<img src="media/4.7.5_r_.png" height="460px" alt="Explicit save" /> <img src="media/4.7.5_s_.png" margin-left="10px" height="460px" alt="Explicit save" />
 
-
-
-![Explicit save](media/4.7.5_r_.png) ![Explicit save](media/4.7.5_s_.png)  
 *Explicit save*
 
 
 
- 
-
 In the simple Edit mode, like when changing a value in the Settings menu, you don’t have to provide a pop-up message asking users about discarding their work. In these cases, it is recommended that your app save the most recent state when users return to the previous screen. For that reason, there is no 'Cancel' or 'Done' button.
 
- 
+<img src="media/6.7.5_v7-01.png" width="260px" alt="Implicit save" /> <img src="media/6.7.5_v7-02.png" margin-left="3px" width="260px" alt="Implicit save" /> <img src="media/6.7.5_v7-03.png" margin-left="3px" width="260px" alt="Implicit save" />  
 
-
-![Implicit save](media/6.7.5_v7-01.png) ![Implicit save](media/6.7.5_v7-02.png) ![Implicit save](media/6.7.5_v7-03.png)  
 *Implicit save*
 
 
- 
 
 -   Pop-up Confirmation
 
 If the action is destructive, you can use a pop-up confirmation. Use simple and clear text to inform users of the situation.
 
-![Do](media/4.7.5_q_tu1.png) *Do*  
-![Don't](media/4.7.5_w_tu.png)  *Don't*
+| <img src="media/4.7.5_q_tu1.png" alt="#" height="460px" /> | <img src="media/4.7.5_w_tu.png" alt="#" height="460px" /> |
+| :--: | :--: |
+| *Do* | *Don't* |

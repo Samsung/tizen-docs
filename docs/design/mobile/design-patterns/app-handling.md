@@ -57,9 +57,8 @@ Needless to say, it is always best to ensure that your app does not terminate un
 
 Tizen supports multitask handling. Users can see the list of recently used apps in the Recent screen and switch between the apps by simply tapping the icons. Refer to [Recent Screen](../ux-overview/home-structure.md#recent) for details.
 
+<img alt="Recent screen" src="media/4.2.2.png" height="460px" />  
 
-
-![Recent screen](media/4.2.2.png)  
 *Recent screen*
 
 
