@@ -16,10 +16,8 @@ Place a search field at the top of a list or grid item.
 
  
 
-**Figure: Search field**
-
-![](media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_33.png)
-
+**Figure: Search field**  
+<img alt="" height="48" src="media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_33.png" width="240" />
  
 
 ## Search Button
@@ -32,6 +30,5 @@ In the search result, text that is identical to the search word is marked with a
 
  
 
-**Figure: Search interaction**
-
-![](media/designlibrary_contacts_01.png)
+**Figure: Search interaction**  
+<img alt="" height="400" src="media/designlibrary_contacts_01.png" width="240" />

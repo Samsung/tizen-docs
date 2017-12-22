@@ -21,10 +21,8 @@ The following figure shows how to create a new memo in the Memo application. The
 
  
 
-**Figure: Creating a new item**
-
-**![](media/01_edit_contacts_01_2.png)**
-
+**Figure: Creating a new item**  
+<img alt="" height="400" src="media/01_edit_contacts_01_2.png" width="240" />
 
 ## Deleting an Item
 
@@ -39,8 +37,7 @@ The feedback can be followed by a pop-up used to prompt the user to confirm a de
 
  
 
-**Video: Deleting items (click to play)**  
-![](media/deleting_items.mp4)
+[**Video: Deleting items (click to play)**](media/deleting_items.mp4)
 
 
 ## Moving and Copying an Item
@@ -52,8 +49,7 @@ The user can move and copy single or multiple items from a list. Moving or copy
 
  
 
-**Video: Moving an item (click to play)**  
-![](media/deleting_items02.mp4)
+[**Video: Moving an item (click to play)**](media/deleting_items02.mp4)
 
 ## Multi-selection
 
@@ -72,14 +68,8 @@ Multi-selection in a grid list works the same way as in a stacked list. The sele
 
  
 
-**Video: Multi-selection in the list view (click to play)**  
-![](media/deleting_items03.mp4)
-
-
- 
-
-**Video: Multi-selection in the grid view (click to play)**  
-![](media/deleting_items04.mp4)
+* [**Video: Multi-selection in the list view (click to play)**](media/deleting_items03.mp4)
+* [**Video: Multi-selection in the grid view (click to play)**](media/deleting_items04.mp4)
 
 
  
@@ -88,8 +78,7 @@ The select all feature scrolls with the list. By tapping **Select all**, the use
 
  
 
-**Video: Select all (click to play)**  
-![](media/deleting_items05.mp4)
+[**Video: Select all (click to play)**](media/deleting_items05.mp4)
 
 
  

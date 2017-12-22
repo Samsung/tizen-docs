@@ -12,10 +12,8 @@ Tizen 2.3 offers UI components for WVGA (480 x 800), HD (720 x 1280) and FHD (10
 
  
 
-**Figure: WVGA, HD and FHD resolutions**
-
-![](media/display_resolutions_02.png)
-
+**Figure: WVGA, HD and FHD resolutions**  
+<img alt="" height="427" src="media/display_resolutions_02.png" width="740" />
  
 
 
@@ -31,12 +29,9 @@ In the main body content, component sizes, such as text and list height, do not 
 
  
 
-**Figure: Screen orientation with a list view**
-
-![](media/display_listview.png)
-
+**Figure: Screen orientation with a list view**  
+<img alt="" height="400" src="media/display_listview.png" width="650" />
  
 
-**Figure: Screen orientation with a grid view**
-
-![](media/display_gridview.png)
+**Figure: Screen orientation with a grid view**  
+<img alt="" height="400" src="media/display_gridview.png" width="650" />

@@ -15,10 +15,8 @@ The main icon represents the application. It is normally used on the **Home** 
 
  
 
-**Figure: Main icons**
-
-![](media/home_01.png)
-
+**Figure: Main icons**  
+<img alt="" height="228" src="media/home_01.png" width="480" />
  
 
 The main icon should have the following properties:
@@ -34,10 +32,8 @@ Even though each icon on the **Menu** screen has a round frame on the edge of th
 
  
 
-**Figure: Main icon surroundings**
-
-![](media/main_icon_surr.png)
-
+**Figure: Main icon surroundings**  
+<img alt="" height="96" src="media/main_icon_surr.png" width="308" />
  
 
 
@@ -49,10 +45,8 @@ The 2D icon style gives a generally round impression. The icons have 3 statuses 
 
  
 
-**Figure: 2D icons**
-
-![](media/icons_2d_01.png)
-
+**Figure: 2D icons**  
+<img alt="" height="211" src="media/icons_2d_01.png" width="369" />
  
 
 You can design icons for your application based on your brand identity or character. However, to maintain visual consistency, always give priority to the Tizen 2.3 2D style. Carefully consider the color and size of the area where you position the icon and make sure the icon visible in each state.
@@ -61,9 +55,8 @@ When you design a 2D icon, make sure you represent its status (normal, pressed o
 
  
 
-**Figure: 2D icon status colors**
-
-![](media/icons_2d_02.png)
+**Figure: 2D icon status colors**  
+<img alt="" height="163" src="media/icons_2d_02.png" width="369" />
 
  
 

@@ -15,10 +15,8 @@ Offer the **Menu**, **Back**, and **Home** keys as physical (hardware) keys.
 
  
 
-**Figure: Physical keys**
-
-![](media/01_navigation_messages01_2.png)
-
+**Figure: Physical keys**  
+<img alt="" height="490" src="media/01_navigation_messages01_2.png" width="240" />
 
 
 ## Back Key and Cancel Button
@@ -34,8 +32,7 @@ The default position for the **Back** key is on the bottom right side of the dev
 
  
 
-**Video: Navigation using the Back key (click to play)**  
-![](media/navigation_01.mp4)
+[**Video: Navigation using the Back key (click to play)**](media/navigation_01.mp4)
 
 
 
@@ -45,8 +42,7 @@ The following figure shows the navigation path from the file manager screen to a
 
  
 
-**Video: Navigation between folders (click to play)**  
-![](media/navigation_02.mp4)
+[**Video: Navigation between folders (click to play)**](media/navigation_02.mp4)
 
 
 
@@ -76,8 +72,7 @@ To return to your application, the user must tap the application icon on the **H
 
  
 
-**Video: Navigation to the Home screen (click to play)**  
-![](media/navigation_03_0.mp4)
+[**Video: Navigation to the Home screen (click to play)**](media/navigation_03_0.mp4)
 
 
  
@@ -92,8 +87,7 @@ If the user opens an application from the Notification panel tapping the **Back*
 
  
 
-**Video: Navigation with the Notification panel (click to play)**  
-![](media/navigation_04.mp4)
+[**Video: Navigation with the Notification panel (click to play)**](media/navigation_04.mp4)
 
 
 
@@ -114,11 +108,8 @@ Use tabs when screens change rapidly, for example, when a different screen (such
 
  
 
-**Figure: Tabs used in call and music applications**
-
-**![](media/tabs_for_music_applications.png)**
-
-   
+**Figure: Tabs used in call and music applications**  
+<img alt="" height="400" src="media/tabs_for_music_applications.png" width="490" /> 
 
 The position of the tabs at the top of the screen can make them hard to reach. To make it easier to switch between views, the user can swipe anywhere in a tab view to navigate to adjacent tabs.
 
@@ -128,8 +119,7 @@ When using tabs, avoid using other components that also use horizontal scroll, s
 
  
 
-**Video: Tab interaction (click to play)**  
-![](media/navigation_05.mp4)
+[**Video: Tab interaction (click to play)**](media/navigation_05.mp4)
 
 
 
@@ -149,11 +139,8 @@ To ensure a structured drawer list, use visual grouping, for example, adding bac
 
  
 
-**Figure: Drawers**
-
-**![](media/drawers.png)**
-
-
+**Figure: Drawers**  
+<img alt="" height="400" src="media/drawers.png" width="490" />
 
 ## Navigation between Applications
 
@@ -164,5 +151,4 @@ When an application brings another application to the foreground, the user shoul
 
  
 
-**Video: Navigation between applications (click to play)**  
-![](media/navigation_06.mp4)
+[**Video: Navigation between applications (click to play)**](media/navigation_06.mp4)

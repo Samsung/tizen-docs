@@ -13,11 +13,10 @@ The layout structure primarily consists of the header and content areas. In a sm
 
  
 
-**Figure: Application screen structure and the More menu**
+**Figure: Application screen structure and the More menu**  
+<img alt="" height="400" src="media/app_screen_structure.png" width="490" />
 
-**![](media/app_screen_structure.png)**
 
- 
 
 ## Notifications
 
@@ -26,11 +25,8 @@ When showing a pop-up, the width of the popup fits the width of the screen in po
 
  
 
-**Figure: Notification and toast pop-up**
-
-**![](media/toast_popup.png)**
-
-
+**Figure: Notification and toast pop-up**  
+<img alt="" height="400" src="media/toast_popup.png" width="490" />
 
 ------------------------------------------------------------------------
 
