@@ -4,7 +4,7 @@
 - Tizen Studio 1.0 and Higher
 
 
-This document describes the meta schema of the `layout.xml` file, which can be used in the native UI Builder. You can edit the `layout.xml` file through the [Source tab](ui-builder-n.md) of the UI Builder.
+This document describes the meta schema of the `layout.xml` file, which can be used in the native UI Builder. You can edit the `layout.xml` file through the [Source editor](ui-builder-n.md) of the UI Builder.
 
 ## Element Hierarchy of the layout.xml File
 
@@ -24,7 +24,7 @@ The following example illustrates the content and structure of the `layout.xml` 
         <configuration orientation="landscape" name="sd" id="configuration1" type="specific" device="HD"/>
     </mscreen>
     <views startup="view1">
-        <view id="view1" indicator="true" screen_orientation="full_sensor" type="view">
+        <view id="view1" indicator="true" page_location_x="0" page_location_y="0" screen_orientation="full_sensor" type="view">
             <grid align_h="fill" vsize_w="1000" align_v="fill" visible="true" weight_v="1"
                   id="grid1" weight_h="1" vsize_h="1000">
                 <button align_v="fill" visible="true" weight_v="1" pack_h="49" weight_h="1" align_h="fill"
@@ -144,6 +144,7 @@ The following attributes are used for all `<event>` elements.
 | -------------------- | ---------------------------------------- |
 | `function_name`      | Name of the function                     |
 | `signal`             | Unique component signal; see the component documentation for details |
+| `source`             | Source of accepted signal. Only used for the custom UI component. |
 | `connection_wrapper` | Connection wrapper function's name       |
 | `target`             | Target view ID to transform              |
 
@@ -165,6 +166,8 @@ The following attributes are used for `<view>` element.
 | `indicator`          | `true` or `false`                        |
 | `screen_orientation` | `no_sensor`, `only_portrait`, `only_landscape`, or `full_sensor` |
 | `type`               | `view` or `popup`                        |
+| `page_location_x`    | `#number`                                |
+| `page_location_y`    | `#number`                                |
 
 ### Box (![Box](./media/component_attributes_box_icon.png))
 
@@ -1236,3 +1239,36 @@ Some properties are supported only in specific profiles. The following table lis
 | Toolbar  item           | text                       | Yes               | Yes        | Yes            | No                     | No                           | No                       |
 | Toolbar  item           | src                        | Yes               | Yes        | Yes            | No                     | No                           | No                       |
 | Toolbar item            | selected                   | Yes               | Yes        | Yes            | No                     | No                           | No                       |
+
+## Component Attributes – Custom UI Component
+
+```
+<customcomponent>
+```
+
+### Custom UI Component (![Custom UI Component](file:///D:/git/online-doc/org.tizen.studio/html/new/images/component_attributes_custom_icon.png))
+
+A [custom UI component](ui-builder-customcomponent.md) is a component you can create through EDC.
+
+```
+<customcomponent visible="true" resize_mode="none"
+                 src="custom-components/Switch.edj" name="Switch" id="customcomponent1"
+                 colors="off_track_color:off_track_color.#C8C8C8; on_track_color:on_track_color.#008AEE; off_thumb_color:off_thumb_color.#ffffff; on_thumb_color:on_thumb_color.#ffffff; "
+                 group="main" states="state:off.to,state,default,0.; " pack_x="508"
+                 pack_y="447" pack_w="140" pack_h="81"/>
+```
+
+The following attributes are used for the custom UI component.
+
+**Table: Custom UI component attributes**
+
+| Attribute        | Value                                    | Function                             |
+| ---------------- | ---------------------------------------- | ------------------------------------ |
+| `id`             | Automatically incrementing and editable. Duplicates are not allowed. | `edje_object_add()`                  |
+| `name`           | The identifier of the component          | -                                    |
+| `src` or `group` | `#string`                                | `edje_object_file_set()`             |
+| `resize_mode`    | `both`, `horizontal`, `vertical`, or `none` | `evas_object_size_hint_aspect_set()` |
+| `visible`        | `true` or `false`                        | `evas_object_show()`                 |
+| `colors`         | Set of `color_name:class_name.#000000 ~ #ffffff` | `edje_object_color_class_set()`      |
+| `states`         | Set of `state_name:value_name.signal.source` | `edje_object_signal_emit()`          |
+| `texts`          | Set of `text_name:part_name.#string`     | `edje_object_part_text_set()`        |

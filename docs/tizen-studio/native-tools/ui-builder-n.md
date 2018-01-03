@@ -4,9 +4,9 @@
 - Tizen Studio 1.0 and Higher
 
 
-The Tizen native UI Builder is a graphical user interface builder tool that simplifies the creation of Tizen native application UIs by allowing you to arrange UI components using drag-and-drop operations.
+The Tizen native UI Builder is a graphical user interface builder tool that simplifies the creation of Tizen native application UIs by allowing you to arrange UI components using drag-and-drop operations. You can also create [customized UI components](ui-builder-customcomponent.md) for application-specific purposes.
 
-The native UI Builder is not only a UI layout code generating tool. It also supports an easy-to-use programming model, allows you to [support multiple screens](multiple-screen-n.md) within a single application, and makes it possible to [manage various data sources through databinding](ui-builder-databind-n.md). If you have an existing EFL UI project, you can [convert it to a UI Builder project](ui-builder-conversion-n.md) to ease the task of expanding the application and optimizing it to new devices.
+The native UI Builder is not only a UI layout code generating tool. It also supports an easy-to-use programming model, allows you to [support multiple screens](multiple-screen_n.md) within a single application, and makes it possible to [manage various data sources through databinding](ui-builder-databind-n.md). If you have an existing EFL UI project, you can [convert it to a UI Builder project](ui-builder-conversion-n.md) to ease the task of expanding the application and optimizing it to new devices.
 
 ## Designing a User Interface
 
@@ -29,7 +29,7 @@ To create a UI layout:
 
    ![Empty view](./media/ui_builder_empty_view.png) ![Empty view](./media/ui_builder_empty_view2.png)
 
-   -   With the **Palette**:
+-    With the **Palette**:
 
    ​     You can add a view from the **Palette**. The **Ctxpopup** view and **Popup** view are available for mobile applications only.
 

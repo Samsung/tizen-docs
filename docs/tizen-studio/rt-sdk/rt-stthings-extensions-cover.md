@@ -13,4 +13,5 @@ To develop IoT applications with SmartThings&trade;:
 
 - [Create a SmartThings&trade; project](rt-create-smartthings.md).
 - [Build the SmartThings&trade; project](rt-build-smartthings.md).
+- [Manage SmartThings™ certificates](rt-certificate-smartthings.md).
 - [Manage devices and resources](rt-model-manager.md) through the Model Manager.

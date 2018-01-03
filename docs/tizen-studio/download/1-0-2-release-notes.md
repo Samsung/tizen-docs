@@ -1,5 +1,3 @@
-![Mobile](./media/mobile_s_wn.png) ![Wearable](./media/wearable_s_wn.png)
-
 # Tizen Studio 1.0.2 Release Notes
 
 - Release Date: Dec 23, 2016

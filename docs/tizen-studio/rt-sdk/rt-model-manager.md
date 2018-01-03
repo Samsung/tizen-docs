@@ -10,7 +10,7 @@ With the Model Manager, you can:
 
 - Check device, resource, and property information
 - Select, add, and restore resources
-- Import and export device models
+- Import, export, save, and delete device models
 - Generate stub code
 
 The Model Manager is displayed while creating a new project with SmartThings&trade; functionality. If you want to access the Model Manager later again, in the **Project Explorer** view, right-click the project and select **Manage ST-Things Resource**.
@@ -24,7 +24,7 @@ The Model Manager is displayed while creating a new project with SmartThings&tra
 
 To access information:
 
-- Select a device model in the **Device Name** list of the **Device/Platform** section to see device, platform, and resource information.
+- Select a device model in the **Default** or **Custom** tabs of the **Device/Platform** section to see device, platform, and resource information.
 - Select a resource in the left panel of the **Resource/Property** section to see the its description and property information.
 - Select a property in the right panel of the **Resource/Property** section to see its description.
 
@@ -74,7 +74,11 @@ To import a device model:
 
    ![Import model window](media/rt_model_import_model_window.png)
 
-3. The imported device shows up in the device list with the **Custom** type.
+3.  Input a device name and click **OK**.
+
+    ![Input name dialog](media/rt_model_input_name_dialog.png)
+
+4. The imported device shows up in the device list, in the **Custom** tab.
 
    ![Custom device model imported](media/rt_model_import_model_finished.png)
 
@@ -92,8 +96,41 @@ To export a device model:
 
    ![Export model window](media/rt_model_export_model_window.png)
 
+<a name="save-device"></a>
+Saving Device Models
 
-## Generating Stub Code<a name="stub-code"></a>
+To save a device model:
+
+1.  Select the model to be saved and click **Save As** on the **Device/Platform** toolbar.
+
+    ![Save model button](media/rt_model_saveas_model.png)
+
+2.  Input a device name and click **OK**.
+
+    ![Input name dialog](media/rt_model_input_name_dialog.png)
+
+3.  The saved device shows up in the device list, in the **Custom** tab.
+
+    ![Custom device model saved](media/rt_model_import_model_finished.png)
+
+
+<a name="delete-device"></a>
+Deleting Device Models
+
+To delete a device model:
+
+1.  Select the model to be deleted and click **Delete** on the **Device/Platform** toolbar.
+
+    ![Delete model button](media/rt_model_delete_model.png)
+
+2.  Confirm the deletion by clicking **OK**.
+
+    ![Delete model dialog](media/rt_model_delete_dialog.png)
+
+    The selected model is deleted..
+
+<a name="stub-code"></a>	
+## Generating Stub Code
 
 When you click **Finish** in the Model Manager, the code for processing the resource is automatically created for the selected device.
 
