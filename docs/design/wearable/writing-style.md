@@ -61,45 +61,11 @@ Use the following terms when referring to a specific device/state, or indicating
 
 Abbreviate words when the full version is too long to fit the screen.
 
-
-<table>
-     <tr>
-       <th> Full </th>    
-       <th> Abbreviated </th>
-     </tr>
-     <tr>
-       <td> Application </td>
-       <td> App </td>
-     </tr>
-     <tr>
-       <td> SIM card </td>
-       <td> SIM </td>
-     </tr>
-     <tr>
-       <td> Days of the week </td>
-       <td> Mon, Tue, Wed, Thu, Fri, Sat, Sun </td>
-     </tr>
-    </table>
-
-  <table>
-         <tr>
-           <th> Full </th>    
-           <th> Abbreviated </th>
-         </tr>
-         <tr>
-           <td> Kilometer, centimeter, mile </td>
-           <td> km, cm, mi </td>
-         </tr>
-         <tr>
-           <td> Minutes, hours, seconds </td>
-           <td> min, hr, sec </td>
-         </tr>
-         <tr>
-           <td> Currencies </td>
-           <td> ISO currency code </td>
-         </tr>
-        </table>
-
+| Full | Abbreviated | | Full | Abbreviated |
+| -- | -- | -- | -- | -- |
+| Application | App | | Kilometer, centimeter, mile |  km, cm, mi |
+| SIM card |  SIM | |  Minutes, hours, seconds | min, hr, sec |
+| Days of the week |  Mon, Tue, Wed, Thu, Fri, Sat, Sun | | Currencies |  ISO currency code |
 
 
 <a name="date_time"></a>
@@ -122,7 +88,7 @@ The styles below are used to display the date and time.
        <td> Jan (1) </td>
        <td> Dec(12) </td>
        <td rowspan="3"> Today(for date of birth,12/31/2016) </td>
-       <td rowspan="2"> *Max. Day: It depends on the month.* </td>
+       <td rowspan="2"> <i>Max. Day: It depends on the month.</i> </td>
      </tr>
      <tr>
        <td> Day </td>
@@ -133,7 +99,7 @@ The styles below are used to display the date and time.
        <td> Year </td>
        <td> 1900 </td>
        <td> 2050 </td>
-       <td> *Year: The indicator is reset every 100 years. (It can be stopped according to app’s limitation.)* </td>
+       <td> <i>Year: The indicator is reset every 100 years. (It can be stopped according to app’s limitation.)</i> </td>
      </tr>
      <tr>
        <td rowspan="4"> Time </td>
@@ -141,7 +107,7 @@ The styles below are used to display the date and time.
        <td> 1 </td>
        <td> 12 </td>
        <td rowspan="4"> Current Time </td>
-       <td rowspan="4"> *Can be customized to show seconds.* </td>
+       <td rowspan="4"> <i>Can be customized to show seconds.</i> </td>
      </tr>
      <tr>
        <td> 1 </td>

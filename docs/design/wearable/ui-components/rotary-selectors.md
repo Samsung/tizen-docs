@@ -54,45 +54,41 @@ The rotary selector arranges multiple items around the circular edge of the scre
 
     ![](media/ui_components_10.6.4_1_1-850x237.png)
 
-    **Normal                                                                              Selected**
+| Normal | Selected |
+  | :--: | :--: |
+  | ![](media/ui_components_10.6.4_1_2-850x219_1.png) | ![](media/ui_components_10.6.4_1_2-850x219_2.png) |
 
-    ![](media/ui_components_10.6.4_1_2-850x219.png)  
+| 2nd layer icon | 3rd layer icon |
+| :--: | :--: |
+|   ![](media/ui_components_10.6.4_1_3-850x148_1.png)  |   ![](media/ui_components_10.6.4_1_3-850x148_2.png) |
+| **The 2nd layer icon rotates 7° from the 1st layer icon.** | **The 3rd layer icon rotates 3° from the 2nd layer icon** |
 
-    **2^nd^ layer icon                                                               3^rd^ layer icon**
+| ![](media/ui_components_10.6.4_1_4-850x104_1.png) | ![](media/ui_components_10.6.4_1_4-850x104_2.png)
+| :--: | :--: |
+| The center of an icon is used as coordinates. | A normal icon is reduced to 56x56 from the selected icon size of 68x68. |
 
-    ![](media/ui_components_10.6.4_1_3-850x148.png)
+| Normal | Selected |
+| :--: | :--: |
+| ![](media/ui_components_10.6.4_1_5-850x260_1.png) | ![](media/ui_components_10.6.4_1_5-850x260_2.png) |
 
-    **The 2^nd^ layer icon rotates 7 ° from the 1st layer icon.        The 3^rd^ layer icon rotates 3° from the 2nd layer icon**
+| Touch Area |
+| :--: |
+|   ![](media/ui_components_10.6.4_1_6-850x258.png) |
 
-    ![](media/ui_components_10.6.4_1_4-850x104.png)
-
-    <table>
-     <tr>
-       <td> The center of an icon<br>is used as coordinates. </td>
-       <td> A normal icon is reduced to 56x56 from the<br>selected icon size of 68x68. </td>
-     </tr>
-    </table>
-      **Normal                                                                              Selected**
-
-    ![](media/ui_components_10.6.4_1_5-850x260.png)
-
-    **Touch Area**
-
-    ![](media/ui_components_10.6.4_1_6-850x258.png)
-
-    **Rotary selector icon color More options icon color**
-
-    ![](media/ui_components_10.6.4_1_7-850x212.png)
+| Rotary selector icon color More options icon color |
+| :--: |
+|  ![](media/ui_components_10.6.4_1_7-850x212.png) |
 
 -   **Title**
 
-    ![](media/ui_components_10.6.4_2_1-850x240.png)
+| ![](media/ui_components_10.6.4_2_1-850x240_1.png) | ![](media/ui_components_10.6.4_2_1-850x240_2.png) | ![](media/ui_components_10.6.4_2_1-850x240_3.png) |
+| :--: | :--: | :--: |
+| 1 line text | 2 line text | Icon only |
 
-    1 line text                  2 line text                       Icon only
 
-    ![](media/ui_components_10.6.4_2_2-850x248.png)
-
-    Icon + Text                     1 line text + Subtext                  2 line text + Subtext
+| ![](media/ui_components_10.6.4_2_2-850x248_1.png) |  ![](media/ui_components_10.6.4_2_2-850x248_2.png) |  ![](media/ui_components_10.6.4_2_2-850x248_3.png) |
+| :--: | :--: | :--: |
+| Icon + Text |  1 line text + Subtext   |  2 line text + Subtext |
 
 -   **More options**
 

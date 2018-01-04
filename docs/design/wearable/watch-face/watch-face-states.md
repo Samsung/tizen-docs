@@ -23,14 +23,40 @@ Always-on states should only include key watch face components like the hour and
 
     High color mode has no color restrictions and can replicate elaborate designs of active states more closely than low-bit color mode. It’s recommended to design for high color mode to create a visually compelling watch face, but note that high color designs will be displayed in low-bit color if a device doesn’t support high color.
 
-**Active states                                              Always-on states**
+<table align="center">
+ <tr>
+  <th> Active states </th>
+  <th colspan="2"> Always-on states </th>
+ </tr>
+ <tr>
+  <td> <img src="media/watchface_4.2.2_1_1_1.png"> </td>
+  <td> <img src="media/watchface_4.2.2_1_1_2.png"> </td>
+  <td> <img src="media/watchface_4.2.2_1_1_3.png"> </td>
+ </tr>
+ <tr>
+  <td> </td>
+  <td> High color </td>
+  <td> Low bit color </td>
+ </tr>
+</table>
 
-![](media/watchface_4.2.2_1_1.png)  
-                                           High color                   Low bit color  
-**Active states                                              Always-on states**
+<table align="center">
+ <tr>
+  <th> Active states </th>
+  <th colspan="2"> Always-on states </th>
+ </tr>
+ <tr>
+  <td> <img src="media/watchface_4.2.2_1_2_1.png"> </td>
+  <td> <img src="media/watchface_4.2.2_1_2_2.png"> </td>
+  <td> <img src="media/watchface_4.2.2_1_2_3.png"> </td>
+ </tr>
+ <tr>
+  <td> </td>
+  <td> High color </td>
+  <td> Low bit color </td>
+ </tr>
+</table>  
 
-![](media/watchface_4.2.2_1_2.png)  
-                                                 High color                   Low bit color  
 *The appearance of watch face designs may vary depending on the color mode and state.*
 
 -   **On Pixel Ratio (OPR)**
@@ -46,26 +72,46 @@ Don’t simply lower the brightness level of an active state to create an always
 
   > **Tip**  
   > You can check the OPR value with always-on states when **Settings -> Developer options -> On Pixel Ratio** is on. [Developer options screen](http://developer.samsung.com/gear/develop/testing-your-app-on-gear) is hidden by default. To make it visible, open the Gear's Settings menu, select About Gear and click the Software version five times.  
-    ![](media/watchface_4.1_tip-750x153.png)
+  >  ![](media/watchface_4.1_tip-750x153.png)
 
-     
-**Active states                        Always-on states**  
-![](media/watchface_4.2.2_3-600x182.png)  
+
+| Active states | Always-on states |
+| :--: | :--: |
+| ![](media/watchface_4.2.2_3-600x182_1.png) | ![](media/watchface_4.2.2_3-600x182_2.png) |  
+
 *When adjusting the OPR for always-on states, take visibility into account rather than simply lowering the overall brightness.*
 
 -   **Screen burn**
 
     When the Gear uses an always-on state, the watch face regularly moves around the screen by just a few pixels to prevent a burn-in effect from occurring on the OLED display. Be aware that design elements near the edge of a watch face can be pushed out of the display when this happens. Replace bright colors with black for the background, and avoid applying high brightness and high chroma to a large block of pixels. For an analog watch face, leave the center empty or dark.
 
-**Active states                             Always-on states**  
-![](media/watchface_4.2.2_4-600x123.png)  
+| Active states | Always-on states |
+  | :--: | :--: |
+  | ![](media/watchface_4.2.2_4-600x123_1.png)  | ![](media/watchface_4.2.2_4-600x123_2.png)  |  
+
 *Lower the brightness and chroma of the pivot and other fixed elements to prevent a screen burn-in.*
 
 - **Always-on state default screens**
 
     The Gear provides different default screens for always-on states according to watch face type and color mode. If a watch face does not have a corresponding always-on state, the system provides a default one.
 
-    **Low bit color mode (Gear S2)                                        High color mode (Gear S3)**
-![](media/watchface_4.2.2_5-600x123.png)  
-Analog                           Digital         Analog                           Digital   
+<table>
+ <tr>
+  <th colspan="2"> Low bit color mode (Gear S2) </th>
+  <th colspan="2"> High color mode (Gear S3) </th>
+ </tr>
+ <tr>
+  <td> <img src="media/watchface_4.2.2_5-600x123_1.png"> </td>
+  <td> <img src="media/watchface_4.2.2_5-600x123_2.png"> </td>
+  <td> <img src="media/watchface_4.2.2_5-600x123_3.png"> </td>
+  <td> <img src="media/watchface_4.2.2_5-600x123_4.png"> </td>
+ </tr>
+ <tr>
+  <td> Analog </td>
+  <td> Digital </td>
+  <td> Analog </td>
+  <td> Digital </td>
+ </tr>
+</table>  
+
 *The default screen is applied to always-on states unless a separate screen is designed.*

@@ -23,20 +23,11 @@ Use indicators to show the progress of data loading or other similar tasks.
 -   **Progress indicators**
 
     A progress indicator helps users determine how long they’ll be waiting by displaying how far a task has progressed. You can show progress with a percentage scale or a fraction indicator. The indicator will disappear when the task is completed.  
-    <table>
-     <tr>
-       <th> **Progress Indicator** </th>    
-       <th>  </th>
-     </tr>
-     <tr>
-       <td> **Native** </td>
-       <td> Progress Bar </td>
-     </tr>
-     <tr>
-       <td> **Web** </td>
-       <td> Progress Bar </td>
-     </tr>
-    </table>
+
+    | Progress Indicator | |
+    | -- | -- |
+    | **Native** | Progress Bar |
+    |  **Web** | Progress Bar |
 
     -   **Full progress indicator**  
       You can display a full progress indicator around the edge of the screen.
@@ -62,21 +53,11 @@ Use indicators to show the progress of data loading or other similar tasks.
 
     Activity indicators inform users that a task is ongoing without specifying the progress rate. The indicator disappears when the task is completed.
 
-    <table>
-     <tr>
-       <th> **Activity Indicator (Full)** </th>    
-       <th>  </th>
-     </tr>
-     <tr>
-       <td> **Native** </td>
-       <td> Progress Bar > process </td>
-     </tr>
-     <tr>
-       <td> **Web** </td>
-       <td> Progressing </td>
-     </tr>
-    </table>
-
+    | Activity Indicator (Full) | |
+    | -- | -- |
+    | **Native** | Progress Bar > process |
+    | **Web** | Progressing |
+    
     -   **Full activity indicator**
 
         You can display a full activity indicator around the edge of the screen to indicate that an action is ongoing. The indicator keeps spinning around the edge until the action is completed.
