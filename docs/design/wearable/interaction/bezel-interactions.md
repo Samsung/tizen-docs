@@ -72,8 +72,6 @@ Turning the bezel can navigate between screens or elements on one screen.
 
 Bezel interaction can adjust values such as the volume, date, and time.
 
- 
-
 -   **Assign consistent meanings to each direction**
 
     Rotating the bezel clockwise means an increase, and rotating it counterclockwise means a decrease.
@@ -102,10 +100,8 @@ Bezel interaction can adjust values such as the volume, date, and time.
     ![](media/interaction_7.2.3_2-850x206.png)  
     *A tap switches input fields when adjusting multiple sets of values.*
 
-
 > **Tip**  
 > Each screen should have only one element that’s controlled by the rotary action. If you need more than one element to be controlled by the bezel, let users tap the element to enter a separate screen first, and then control it with the rotary action.
-
 
 ## Confirm
 
@@ -125,17 +121,24 @@ Use the bezel to zoom in to or out from content on the screen. Zooming is partic
 
 You can customize the bezel interactions in your app to create a unique experience. For example, the game Monster Vampire lets users control the bat catcher by rotating the bezel.
 
- 
-
 -   **Use clockwise rotation for an increase in value, and counterclockwise rotation for a decrease in value**
 
 ![](media/interaction_7.2.6_1-850x224.png)
  
 
 -   **Provide appropriate visual indicators**  
-![](media/7.2.6.visual_indicators_do.mp4) ![](media/7.2.6.visual_indicators_dont.mp4)                       
+<table>
+ <tr>
+  <td><video controls>    <source src="media/7.2.6.visual_indicators_do.mp4" type=video/mp4> </video> </td>
+  <td> <video controls>    <source src="media/7.2.6.visual_indicators_dont.mp4" type=video/mp4> </video> </td>  
+ </tr>
+ <tr>
+  <td> ![](media/do_bar.png) </td>
+  <td> ![](media/dont_bar-296x12.png) </td>
+ </tr>
+</table>
 
-      ------------------------------------ ------------------------------------
+-----------
 
 -   **Select only one item to control with the bezel**
 
@@ -143,8 +146,6 @@ You can customize the bezel interactions in your app to create a unique experien
 
     ![](media/interaction_7.2.6_3-850x174.png)  
     *If a rotary action adjusts the time of an alarm, it should not be used to control other input fields.*
-
- 
 
 -   **Customize where your indicator starts**
 
