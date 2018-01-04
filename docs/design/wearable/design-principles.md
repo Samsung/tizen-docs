@@ -12,8 +12,6 @@ The Gear is worn on the wrist and its interactions with users take place in a sp
 
 Your app will have a greater impact when you focus on a simple, core idea. Place the main content in the center of the screen in a font large enough to draw the user’s attention. Excessive detail or features detract from the central theme, so keep it simple and streamline the flow between screens. Increase your app’s scannability by allowing tasks to be completed in only a few steps.
 
-
-
 ![](media/design_principle_1.1.1-850x174.png)  
 *The main content is emphasized in the middle of the screen.*
 
@@ -33,8 +31,14 @@ Users should be able to control the Gear quickly and conveniently. Avoid making 
 
 Intuitive and meaningful connections between interactions and components on the screen can help users better understand the information and its context. Consider bezel control when designing your interface, as it should suggest how users should use the bezel to navigate and interact.
 
-* [Video of intuitive interactions 1](media/1.2.1.directionconnection2_moreoption.mp4)
-* [Video of intuitive interactions 2](media/1.2.1.directionconnection1_health.mp4)  
+<video controls>
+  <source src="media/1.2.1.directionconnection2_moreoption.mp4" type=video/mp4>
+</video>
+
+<video controls>
+  <source src="media/1.2.1.directionconnection1_health.mp4" type=video/mp4>
+</video>
+
 *The interface design suggests how the user should utilize the bezel.*
 
 ### Keep a consistent theme
@@ -57,8 +61,6 @@ Your app should provide immediate feedback as a natural response to user input b
 
 Adequately sized on-screen UI elements make interacting with your app easier. It can be difficult to use the Gear if buttons are too small or components take up too much screen space.
 
-
-
 ![](media/design_principle_1.3.2-850x174.png)  
 *Components are relatively large so users can touch them easily.*
 
@@ -73,8 +75,6 @@ Users will decided whether to download your app by asking themselves how it will
 ### Design stylish screens
 
 The Gear is a fashion accessory as well as a smart watch. Stylish designs that incorporate typographic and graphical elements for decorative purposes will make your app more attractive.
-
-
 
 ![](media/design_principle_1.4.2-850x174.png)  
 *A well-designed watch face works as a fashion item.*
