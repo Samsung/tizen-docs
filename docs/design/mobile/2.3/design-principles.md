@@ -16,8 +16,6 @@ When prioritizing your content and planning your information presentation, keep 
 
 Compose your content so that important information stands out. Highlight primary content by applying different font sizes and colors or by changing the layout.
 
-
-
 **Figure: Showcasing primary content**  
 <img alt="" height="400" src="media/designprinciples_primary_content.png" width="490" />
 
@@ -42,7 +40,10 @@ Make the process of accessing content enjoyable for the users. By designing appl
 
 In the Detail view, show essential information on the first screen and enable scrolling down to see additional information.
 
-[**Video: Displaying more information with a scroll (click to play)**](media/designprinciples_01.mp4)
+**Video: Displaying more information with a scroll (click to play)**
+<video controls>
+  <source src="media/designprinciples_01.mp4" type=video/mp4>
+</video>
 
 ## Focused
 
@@ -56,7 +57,10 @@ When determining focus levels in your application, keep the following guidelines
 
 Display the most used functions on the first screen. Use the **Menu** key to house any functions users need less frequently.
 
-[**Video: Functions located behind the Menu key (click to play)**](media/designprinciples_02.mp4)
+**Video: Functions located behind the Menu key (click to play)**
+<video controls>
+  <source src="media/designprinciples_02.mp4" type=video/mp4>
+</video>
 
 ------------------------------------------------------------------------------
 
@@ -64,21 +68,30 @@ Display the most used functions on the first screen. Use the **Menu** key to hou
 
 Differentiate between the essential information that is always displayed and additional information that can be displayed only when a user requests it.
 
-[**Video: Hiding the name field (click to play)**](media/designprinciples_03.mp4)
+**Video: Hiding the name field (click to play)**
+<video controls>
+  <source src="media/designprinciples_03.mp4" type=video/mp4>
+</video>
 
 ------------------------------------------------------------------------------
 ### Minimize User Effort
 
 By promoting user access to the major functions in your application, you minimize the effort required. For example, when a user wants to create a new item, you can automatically move the focus to the required input field and offer the virtual keypad.
 
-[**VIdeo: Moving the focus to the input area (click to play)**](media/designprinciples_04.mp4)
+**Video: Moving the focus to the input area (click to play)**
+<video controls>
+  <source src="media/designprinciples_04.mp4" type=video/mp4>
+</video>
 
 ------------------------------------------------------------------------------
 ### Make It Clear What Can Be Done
 
 Disable or hide functions that are not available in certain circumstances. For example, you can disable the Save button to let users know that a required field is empty.
 
-[**Video: Indicating that an event cannot be saved (click to play)**](media/designprinciples_05.mp4)
+**Video: Indicating that an event cannot be saved (click to play)**
+<video controls>
+  <source src="media/designprinciples_05.mp4" type=video/mp4>
+</video>
 
 ## Tailored: Delivering Customization and Personalization
 
