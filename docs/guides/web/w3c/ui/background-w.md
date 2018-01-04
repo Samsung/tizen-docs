@@ -4,10 +4,9 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 You can manage the CSS properties for [specifying the border style or background of any HTML element](./w3c/ui/background-w.md#create).
-
-This feature is supported in mobile and wearable applications only.
 
 The main features of the CSS Backgrounds and Borders Module Level 3 API include:
 

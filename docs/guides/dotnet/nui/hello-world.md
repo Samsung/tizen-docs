@@ -1,4 +1,6 @@
 # NUI Hello World Tutorial
+## Dependencies
+-   Tizen 4.0 and Higher
 
 The tutorial shows how to create and display "Hello World" using a text label.
 

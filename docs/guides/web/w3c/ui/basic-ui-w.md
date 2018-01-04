@@ -4,10 +4,9 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 You can apply styles to HTML documents.
-
-This feature is supported in mobile and wearable applications only.
 
 The CSS3 version has caused changes in the Selector, Color, Web Form, and Fonts CSS modules. In addition, the CSS3 UI API also handles changes related to the following user interface items:
 
@@ -48,7 +47,7 @@ To use pseudo-class selectors:
 > **Note**
 > In the versions prior to CSS3, pseudo-classes, such as `:hover`, `:active`, and `:focus`, were used, and required an attribute selector. Since the `:enabled` and `:disabled` classes are not influenced by the `display` and `visibility` attributes, they improve the accessibility.
 
-2. To control the state of the HTML5 Web Forms (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#forms) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#forms) applications), use the `:in-range` and `:out-of-range` pseudo-classes.They check for any values that have exceeded the inserted range. (The following figure applies to mobile applications only.)
+2. To control the state of the HTML5 Web Forms (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#forms), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#forms), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#forms) applications), use the `:in-range` and `:out-of-range` pseudo-classes.
 
    ```
    <!--HTML-->

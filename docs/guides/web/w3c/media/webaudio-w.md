@@ -3,10 +3,11 @@
 ## Dependencies
 
 - Tizen 2.4 and Higher for Mobile
+- Tizen 3.0 and Higher for TV
 
 You can include high-quality sound in your application by setting space and direction through audio data, and synthetizing them. This is used in the audio engines of sophisticated games to mix, process, and filter effects.
 
-This feature is supported in mobile applications only.
+This feature is supported in mobile and TV applications only.
 
 The main features of the Web Audio API include:
 

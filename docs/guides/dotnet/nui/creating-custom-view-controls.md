@@ -1,4 +1,6 @@
 # Custom View Controls
+## Dependencies
+-   Tizen 4.0 and Higher
 
 NUI provides the ability to create custom views.
 

@@ -4,10 +4,9 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 Timing control is used mainly in animations for cyclic script execution synchronized with screen changes.
-
-This feature is supported in mobile and wearable applications only.
 
 Making script-based animations requires updating the properties of the animated objects in each frame. In computerized animations, the frame rate is normally 30 or 60 fps (frames per second), because the human eye perceives a sequence of images as an animation when they change at least 12-15 times per second. The `requestAnimationFrame()` (or `webkitRequestAnimationFrame()`) method enables [scheduling the animation frame update requests](./w3c/perf_opt/timing-control-w.md#Creating_App). The frame update rate depends on implementation. In Tizen 2.2, it is about 60 fps.
 

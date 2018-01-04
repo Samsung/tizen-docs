@@ -1,8 +1,12 @@
 # Server-Sent Events
+## Dependencies
+
+- Tizen 2.4 and Higher for Mobile
+- Tizen 3.0 and Higher for TV
 
 The Server-Sent Events feature is used to implement server push functionality in a Web environment. The server push feature has evolved over time from a hidden IFrame through Ajax polling and Comet to the current implementation of server-sent events.
 
-This feature is supported in mobile applications only.
+This feature is supported in mobile and TV applications only.
 
 The Server-Sent Events API defines a simple data structure and interface, and a communication mechanism to realize the server push. In addition, it can handle the received data in the general DOM event format. However, the API repeatedly requests the data from the client to the server, so it is not a complete server push. The repeat period of the server request is determined by the `retry` field value of the [event stream data](http://www.w3.org/TR/2015/REC-eventsource-20150203/#event-stream-interpretation). If the value is not defined, the repeat period is the default value of the browser.
 

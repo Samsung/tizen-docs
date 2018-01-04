@@ -165,7 +165,7 @@ The following table lists the measurement data that the accelerometer provides.
 
 | Measurement | Type                 | Range                               | Unit         |
 | ----------- | -------------------- | ----------------------------------- | ------------ |
-| Timestamp   | `unsigned long long` | -                                   | Microseconds |
+| TimeSpan   | `TimeSpan` | -                                   | Microseconds |
 | X           | `float`              | Min. value = -19.6Max. value = 19.6 | m/s2         |
 | Y           | `float`              | Min. value = -19.6Max. value = 19.6 | m/s2         |
 | Z           | `float`              | Min. value = -19.6Max. value = 19.6 | m/s2         |
@@ -196,8 +196,8 @@ The following table lists the measurement data that the geomagnetic rotation vec
 
 | Measurement | Type                     | Range                         | Unit         |
 | ----------- | ------------------------ | ----------------------------- | ------------ |
-| Timestamp   | `unsigned long long`     | -                             | Microseconds |
-| Accuracy    | `sensor_data_accuracy_e` | -                             | int          |
+| TimeSpan   | `TimeSpan`     | -                             | Microseconds |
+| Accuracy    | `SensorDataAccuracy` | -                             | int          |
 | X           | `float`                  | Min. value = -1Max. value = 1 | -            |
 | Y           | `float`                  | Min. value = -1Max. value = 1 | -            |
 | Z           | `float`                  | Min. value = -1Max. value = 1 | -            |
@@ -220,7 +220,7 @@ The following table lists the measurement data that the gravity sensor provides.
 
 | Measurement | Type                 | Range                             | Unit         |
 | ----------- | -------------------- | --------------------------------- | ------------ |
-| Timestamp   | `unsigned long long` | -                                 | Microseconds |
+| TimeSpan   | `TimeSpan` | -                                 | Microseconds |
 | X           | `float`              | Min. value = -9.8Max. value = 9.8 | m/s2         |
 | Y           | `float`              | Min. value = -9.8Max. value = 9.8 | m/s2         |
 | Z           | `float`              | Min. value = -9.8Max. value = 9.8 | m/s2         |
@@ -240,7 +240,7 @@ The following table lists the measurement data that the gyroscope provides.
 
 | Measurement | Type                 | Range                                 | Unit            |
 | ----------- | -------------------- | ------------------------------------- | --------------- |
-| Timestamp   | `unsigned long long` | -                                     | Microseconds    |
+| TimeSpan   | `TimeSpan` | -                                     | Microseconds    |
 | X           | `float`              | Min. value = -573.0Max. value = 573.0 | Degrees/s (°/s) |
 | Y           | `float`              | Min. value = -573.0Max. value = 573.0 | Degrees/s (°/s) |
 | Z           | `float`              | Min. value = -573.0Max. value = 573.0 | Degrees/s (°/s) |
@@ -257,8 +257,8 @@ The following table lists the measurement data that the gyroscope rotation vecto
 
 | Measurement | Type                     | Range                         | Unit         |
 | ----------- | ------------------------ | ----------------------------- | ------------ |
-| Timestamp   | `unsigned long long`     | -                             | Microseconds |
-| Accuracy    | `sensor_data_accuracy_e` | -                             | int          |
+| TimeSpan   | `TimeSpan`     | -                             | Microseconds |
+| Accuracy    | `SensorDataAccuracy` | -                             | int          |
 | X           | `float`                  | Min. value = -1Max. value = 1 | -            |
 | Y           | `float`                  | Min. value = -1Max. value = 1 | -            |
 | Z           | `float`                  | Min. value = -1Max. value = 1 | -            |
@@ -275,7 +275,7 @@ The following table lists the measurement data that the HRM sensor provides.
 
 | Measurement | Type                 | Range                          | Unit         |
 | ----------- | -------------------- | ------------------------------ | ------------ |
-| Timestamp   | `unsigned long long` | -                              | Microseconds |
+| TimeSpan   | `TimeSpan` | -                              | Microseconds |
 | HeartRate   | `int`                | Min. value = 0Max. value = 240 | -            |
 
 <a name="humidity"></a>
@@ -290,7 +290,7 @@ The following table lists the measurement data that the humidity sensor provides
 
 | Measurement | Type                 | Range | Unit         |
 | ----------- | -------------------- | ----- | ------------ |
-| Timestamp   | `unsigned long long` | -     | Microseconds |
+| TimeSpan   | `TimeSpan` | -     | Microseconds |
 | Humidity    | `float`              | 100   | %            |
 
  <a name="light"></a>
@@ -307,7 +307,7 @@ The following table lists the measurement data that the light sensor provides.
 
 | Measurement | Type                 | Range                            | Unit         |
 | ----------- | -------------------- | -------------------------------- | ------------ |
-| Timestamp   | `unsigned long long` | -                                | Microseconds |
+| TimeSpan   | `TimeSpan` | -                                | Microseconds |
 | Level       | `float`              | Min. value = 0Max. value = 45875 | Lux          |
 
  <a name="lin_accelerometer"></a>
@@ -330,7 +330,7 @@ The following table lists the measurement data that the linear acceleration sens
 
 | Measurement | Type                 | Range                               | Unit         |
 | ----------- | -------------------- | ----------------------------------- | ------------ |
-| Timestamp   | `unsigned long long` | -                                   | Microseconds |
+| TimeSpan   | `TimeSpan` | -                                   | Microseconds |
 | X           | `float`              | Min. value = -19.6Max. value = 19.6 | m/s2         |
 | Y           | `float`              | Min. value = -19.6Max. value = 19.6 | m/s2         |
 | Z           | `float`              | Min. value = -19.6Max. value = 19.6 | m/s2         |
@@ -353,7 +353,7 @@ The following table lists the measurement data that the magnetic sensor provides
 
 | Measurement | Type                 | Unit             |
 | ----------- | -------------------- | ---------------- |
-| Timestamp   | `unsigned long long` | Microseconds     |
+| TimeSpan   | `TimeSpan` | Microseconds     |
 | X           | `float`              | µT (microteslas) |
 | Y           | `float`              | µT (microteslas) |
 | Z           | `float`              | µT (microteslas) |
@@ -379,7 +379,7 @@ The following table lists the measurement data that the orientation sensor provi
 
 | Measurement | Type                 | Range                             | Unit         |
 | ----------- | -------------------- | --------------------------------- | ------------ |
-| Timestamp   | `unsigned long long` | -                                 | Microseconds |
+| TimeSpan   | `TimeSpan` | -                                 | Microseconds |
 | Azimuth     | `float`              | Min. value = 0Max. value = 360    | Degrees (°)  |
 | Pitch       | `float`              | Min. value = -180Max. value = 180 | Degrees (°)  |
 | Roll        | `float`              | Min. value = -90Max. value = 90   | Degrees (°)  |
@@ -404,7 +404,7 @@ The following table lists the measurement data that the pedometer provides.
 
 | Measurement           | Range                          | Unit         |
 | --------------------- | ------------------------------ | ------------ |
-| Timestamp             | -                              | Microseconds |
+| TimeSpan             | -                              | Microseconds |
 | StepCount             | Min. value = 0Max. value = 224 | Steps        |
 | WalkStepCount         | Min. value = 0Max. value = 224 | Steps        |
 | RunningStepCount      | Min. value = 0Max. value = 224 | Steps        |
@@ -428,7 +428,7 @@ The following table lists the measurement data that the pressure sensor provides
 
 | Measurement | Type                 | Range                             | Unit         |
 | ----------- | -------------------- | --------------------------------- | ------------ |
-| Timestamp   | `unsigned long long` | -                                 | Microseconds |
+| TimeSpan   | `TimeSpan` | -                                 | Microseconds |
 | Pressure    | `float`              | Min. value = 260Max. value = 1260 | hPa          |
 
 <a name="proximity"></a>
@@ -445,7 +445,7 @@ The following table lists the measurement data that the proximity sensor provide
 
 | Measurement | Type                  | Range | Unit         |
 | ----------- | --------------------- | ----- | ------------ |
-| Timestamp   | `unsigned long long`  | -     | Microseconds |
+| TimeSpan   | `TimeSpan`  | -     | Microseconds |
 | Proximity   | `ProxmitySensorState` | -     | -            |
 
 The `ProximitySensorState` property is one of the values of the [Tizen.Sensor.ProximitySensorState](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.ProximitySensorState.html) enumeration: `Unknown`, `Far`, or `Near`.
@@ -461,8 +461,8 @@ The following table lists the measurement data that the rotation vector sensor p
 
 | Measurement | Type                     | Range                         | Unit         |
 | ----------- | ------------------------ | ----------------------------- | ------------ |
-| Timestamp   | `unsigned long long`     | -                             | Microseconds |
-| Accuracy    | `sensor_data_accuracy_e` | -                             | int          |
+| TimeSpan   | `TimeSpan`     | -                             | Microseconds |
+| Accuracy    | `SensorDataAccuracy` | -                             | int          |
 | X           | `float`                  | Min. value = -1Max. value = 1 | -            |
 | Y           | `float`                  | Min. value = -1Max. value = 1 | -            |
 | Z           | `float`                  | Min. value = -1Max. value = 1 | -            |
@@ -480,7 +480,7 @@ The following table lists the measurement data that the sleep monitor provides.
 
 | Measurement | Unit         |
 | ----------- | ------------ |
-| Timestamp   | Microseconds |
+| TimeSpan   | Microseconds |
 | SleepState  | -            |
 
 The `SleepState` property is one of the values of the [Tizen.Sensor.SleepMonitorState](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.SleepMonitorState.html) enumeration: `Unknown`, `Wake`, or `Sleep`.
@@ -498,7 +498,7 @@ The following table lists the measurement data that the temperature sensor provi
 
 | Measurement | Type                 | Range                            | Unit         |
 | ----------- | -------------------- | -------------------------------- | ------------ |
-| Timestamp   | `unsigned long long` | -                                | Microseconds |
+| TimeSpan   | `TimeSpan` | -                                | Microseconds |
 | Temperature | `float`              | Min. value = -30Max. value = 100 | °C           |
 
  <a name="ultraviolet"></a>
@@ -513,7 +513,7 @@ The following table lists the measurement data that the ultraviolet sensor provi
 
 | Measurement      | Type                 | Range                         | Unit         |
 | ---------------- | -------------------- | ----------------------------- | ------------ |
-| Timestamp        | `unsigned long long` | -                             | Microseconds |
+| TimeSpan        | `TimeSpan` | -                             | Microseconds |
 | UltravioletIndex | `float`              | Min. value = 0Max. value = 15 | UV index     |
 
  <a name="uncal_gyro"></a>
@@ -528,13 +528,13 @@ The following table lists the measurement data that the uncalibrated gyroscope p
 
 | Measurement             | Type                 | Range                                 | Unit            |
 | ----------------------- | -------------------- | ------------------------------------- | --------------- |
-| Timestamp               | `unsigned long long` | -                                     | Microseconds    |
+| TimeSpan               | `TimeSpan` | -                                     | Microseconds    |
 | X                       | `float`              | Min. value = -573.0Max. value = 573.0 | Degrees/s (°/s) |
 | Y                       | `float`              | Min. value = -573.0Max. value = 573.0 | Degrees/s (°/s) |
 | Z                       | `float`              | Min. value = -573.0Max. value = 573.0 | Degrees/s (°/s) |
-| Drift around the X axis | `float`              | Min. value = -573.0Max. value = 573.0 | Degrees/s (°/s) |
-| Drift around the Y axis | `float`              | Min. value = -573.0Max. value = 573.0 | Degrees/s (°/s) |
-| Drift around the Z axis | `float`              | Min. value = -573.0Max. value = 573.0 | Degrees/s (°/s) |
+| BiasX | `float`              | Min. value = -573.0Max. value = 573.0 | Degrees/s (°/s) |
+| BiasY | `float`              | Min. value = -573.0Max. value = 573.0 | Degrees/s (°/s) |
+| BiasZ | `float`              | Min. value = -573.0Max. value = 573.0 | Degrees/s (°/s) |
 
 <a name="uncal_magnetic"></a>
 ## Uncalibrated Magnetic Sensor 
@@ -553,11 +553,11 @@ The following table lists the measurement data that the uncalibrated magnetic se
 
 | Measurement | Type                 | Unit             |
 | ----------- | -------------------- | ---------------- |
-| Timestamp   | `unsigned long long` | Microseconds     |
+| TimeSpan   | `TimeSpan` | Microseconds     |
 | X           | `float`              | µT (microteslas) |
 | Y           | `float`              | µT (microteslas) |
 | Z           | `float`              | µT (microteslas) |
-| X-axis bias | `float`              | µT (microteslas) |
-| Y-axis bias | `float`              | µT (microteslas) |
-| Z-axis bias | `float`              | µT (microteslas) |
+| BiasX | `float`              | µT (microteslas) |
+| BiasY | `float`              | µT (microteslas) |
+| BiasZ | `float`              | µT (microteslas) |
 

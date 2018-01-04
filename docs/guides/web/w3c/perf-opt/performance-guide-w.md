@@ -4,10 +4,11 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 The performance and optimization features include animation rate and page visibility control, and Web worker management.
 
-The following performance and optimization features apply in **mobile and wearable applications only**:
+The main performance and optimization features are:
 
 - [Page Visibility](./w3c/perf_opt/page-w.md)  
 

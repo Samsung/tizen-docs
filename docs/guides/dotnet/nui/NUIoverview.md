@@ -1,4 +1,6 @@
 # NUI Overview
+## Dependencies
+-   Tizen 4.0 and Higher
 
 NUI (Natural User Interface) is a C\# toolkit on top of the DALi (Dynamic Animation Library) graphics library, which is written in C++.
 

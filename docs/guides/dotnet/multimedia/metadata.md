@@ -195,7 +195,7 @@ The following table lists the metadata you can edit.
 
 ****Table: Editable metadata attributes**
 
-| Attribute     | Description                        | Property or method of the [Tizen.Multimedia.MetadataExtractor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MetadataExtractor.html) class |
+| Attribute     | Description                        | Property or method of the Tizen.Multimedia.MetadataEditor (https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MetadataEditor.html)class |
 | ------------- | ---------------------------------- | ---------------------------------------- |
 | Artist        | Artist of the audio content        | `Artist`                                 |
 | Title         | Title of the audio content         | `Title`                                  |

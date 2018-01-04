@@ -4,6 +4,7 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 The HTML5 canvas allows you to use graphics on the screen, and draw and manage various shapes. The HTML Canvas 2D Context API (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#canvas2d) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#canvas2d) applications) defines a special canvas element that expresses images or shapes with JavaScript.
 
