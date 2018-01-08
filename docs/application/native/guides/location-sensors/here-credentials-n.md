@@ -1,6 +1,4 @@
 # Getting HERE Maps Credentials
-##Dependencies
-- Tizen 2.4 and Higher for Mobile
 
 The HERE Maps Plug-in for the Maps Service API is based on the HERE Maps services. It is provided as an example in the Tizen platform, and to use it on the HERE Maps, you need credentials for it.
 
@@ -41,3 +39,7 @@ To get credentials:
 
    > **Note**  
    > According to the HERE Maps:The app ID uniquely identifies your application.The app code is used in the authentication process to identify a session.
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile

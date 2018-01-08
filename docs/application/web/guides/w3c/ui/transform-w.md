@@ -4,10 +4,9 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 Transforms allow you to modify the coordinate space where each element is positioned. The elements can be translated, rotated, and scaled in 2- or 3-dimensional space. According to the API, the coordinate system is a visual formatting model, and positions and sizes in the coordinate space are expressed in pixels, starting in the origin of point with positive values proceeding to the right and down.
-
-This feature is supported in mobile and wearable applications only.
 
 The main features of the CSS Transforms API include:
 

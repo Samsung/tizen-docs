@@ -4,10 +4,9 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 You can apply various text effects easily.
-
-This feature is supported in mobile and wearable applications only.
 
 The new text features in CSS Text Module Level 3 include:
 
@@ -169,4 +168,4 @@ The following figure shows examples of manipulating the text properties.
 ![Text properties (in mobile applications only)](./media/text_properties.png)
 
 	> **Note**	
-	> For a complete list of CSS Text Module Level 3 text properties (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#text) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#text) applications) and their possible values, see the [Property index](http://www.w3.org/TR/2013/WD-css-text-3-20131010/#property-index).
+	> For a complete list of CSS Text Module Level 3 text properties (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#text), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#text), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#text) applications) and their possible values, see the [Property index](http://www.w3.org/TR/2013/WD-css-text-3-20131010/#property-index).

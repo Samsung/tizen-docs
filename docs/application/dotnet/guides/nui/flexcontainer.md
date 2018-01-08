@@ -1,4 +1,6 @@
 # Flex Container
+## Dependencies
+-   Tizen 4.0 and Higher
 
 A flex container contains items, such as buttons, text labels, and images.
 

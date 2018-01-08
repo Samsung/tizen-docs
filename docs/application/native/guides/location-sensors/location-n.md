@@ -1,7 +1,4 @@
 # Location Information
-##Dependencies
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
 
 Location information allows you to get a device's geographic position. Additionally, location-related information can contain information about altitude, accuracy of the location and altitude readings, and the user's movement speed and direction. The location manager manages location information on the device.
 
@@ -443,3 +440,9 @@ To get information about the current position, velocity, and distance:
    ```
 
    To get more a precise traveled distance, sum the distances between each 2 consecutive points, delivered by the periodic position update callback.
+
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

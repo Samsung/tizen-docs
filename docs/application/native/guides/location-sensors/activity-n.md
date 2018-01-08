@@ -1,7 +1,4 @@
 # Activity Recognition
-##Dependencies
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
 
 The activity recognizer can monitor user activities. You can [detect walking and running activity](#activity). You can also recognize the stationary state and activities on a moving vehicle.
 
@@ -56,3 +53,10 @@ To set and unset callback functions for the activity monitor and retrieve detail
    activity_stop_recognition(handle);
    activity_release(handle);
    ```
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable
+- API Reference
+
+

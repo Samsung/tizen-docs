@@ -4,10 +4,9 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 Animations (like [transitions](./w3c/ui/transition-w.md)) change the presentational value of the CSS properties over time. The principal difference between animations and transitions is that while transitions are triggered implicitly when property values change, animations are explicitly executed when the animation properties are applied. This means that for animations, you must [use animation keyframes to define explicit values for the properties](./w3c/ui/animation-w.md#create) being animated.
-
-This feature is supported in mobile and wearable applications only.
 
 The main features of the CSS Animations Module Level 3 API include:
 

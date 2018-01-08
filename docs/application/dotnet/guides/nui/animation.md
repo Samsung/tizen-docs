@@ -1,5 +1,7 @@
 # Animation
+## Dependencies
 
+-   Tizen 4.0 and Higher
 
 You can use animation to allow your objects to move around and change their properties for a specified duration.
 

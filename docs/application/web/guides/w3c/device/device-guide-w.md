@@ -4,6 +4,7 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 The device features include device-specific features, such as managing vibration and monitoring the browser state.
 
@@ -25,10 +26,10 @@ The main device features are:
 
   Enables you to implement different vibration patterns on a Tizen device.
 
-- [HTML5 Browser state](./w3c/device/browser-state-w.md) **in mobile applications only**   
+- [HTML5 Browser state](./w3c/device/browser-state-w.md)  **in mobile and TV applications only**  
 
   Enables you to retrieve information about the network connection state of the browser.
 
-- [Screen Orientation](./w3c/device/screen-orientation-w.md) **in mobile applications only**   
+- [Screen Orientation](./w3c/device/screen-orientation-w.md)  **in mobile and TV applications only**  
 
   Enables you to retrieve the current screen orientation state, monitor state changes, and lock the screen to a specific orientation.

@@ -4,10 +4,11 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 The security features include HTML element and client-side cross-origin request control.
 
-The following security features apply in **mobile and wearable applications only**:
+The main security features are:
 
 - [Cross-Origin Resource Sharing](./w3c/security/cors-w.md)  
 

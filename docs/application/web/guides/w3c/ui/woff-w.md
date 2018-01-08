@@ -4,12 +4,11 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 You can decode and restore font data easily.
 
-This feature is supported in mobile and wearable applications only.
-
-The new text features in WOFF File Format 2.0 (in mobile applications) and 1.0 (in wearable applications) include:
+The new text features in WOFF File Format 2.0 (in mobile and TV applications) and 1.0 (in wearable applications) include:
 
 - Decoding and restoring font data
 

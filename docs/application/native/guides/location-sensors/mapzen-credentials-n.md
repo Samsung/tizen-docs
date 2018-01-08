@@ -1,6 +1,4 @@
 # Getting a Mapzen API Key
-##Dependencies
-- Tizen 3.0 and Higher for Mobile
 
 Mapzen products help you put a map anywhere, search and route the planet, and try a world of open data. They are built from open-source tools that are packaged into a Web service and hosted on the Mapzen servers. If you want to use Mapzen services, you must create a Mapzen developer account and a valid API key, and keep your requests to the service within certain rate limits.
 
@@ -52,3 +50,7 @@ To check your usage for a specific API key:
 If you exceed the rate limits, the server's response to your query contains a specific [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) in the header. The typical errors for exceeded limits are "403 Forbidden" and "429 Too Many Requests".
 
 Not all queries count towards your rate limit. Mapzen uses server caching to deliver commonly requested content as quickly as possible. Queries served from the cache are not included in the rate limit count. For example, queries can be served from the cache when the user browses a map with vector tiles in a popular extent or repeatedly performs an identical geocoding search.
+
+## Related Information
+- Dependencies
+  - Tizen 3.0 and Higher for Mobile

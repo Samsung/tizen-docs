@@ -67,12 +67,12 @@ To define recording options for video recording:
                                                    bitRate: 288000);
     ```
 
-    To get a list of video codecs the device supports, use the `GetSupportedVideoEncodings()` method of the [Tizen.Multimedia.StreamRecorder.Capabilities](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.StreamRecorder.Capabilities.html) class. The following example retrieves the first supported codec found:
+    To get a list of video codecs the device supports, use the `GetSupportedVideoCodecs()` method of the [Tizen.Multimedia.StreamRecorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.StreamRecorder.html) class. The following example retrieves the first supported codec found:
 
     ``` 
     var streamRecorder = new StreamRecorder();
 
-    var videoCodec = streamRecorder.Capabilities.GetSupportedVideoEncodings().First();
+    var videoCodec = streamRecorder.GetSupportedVideoCodecs().First();
     ```
 
      > **Note**   

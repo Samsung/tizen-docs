@@ -25,16 +25,13 @@ For example, for power management reasons, well-designed applications reduce res
 ## Native Application Life-cycle
 
 A Tizen native application can be in one of several different states.
-Typically, the application is launched by the user from the Launcher, or by another application. When the application is starting, the
-`app_create_cb()` function is executed and the main event loop starts.  The application normally at the top window, with focus.
+Typically, the application is launched by the user from the Launcher, or by another application. When the application is starting, the `app_create_cb()` function is executed and the main event loop starts.  The application normally at the top window, with focus.
 
 When the application loses the focus status, the `app_pause_cb()` callback is invoked. The application can go into the pause state, which means that your application is not terminated but continues to run in
 the background, when: 
 -   A new application is launched by the request of your application.
 -   The user requests to go to the home screen.
--   A system event (such as an incoming phone call) occurs and causes a
-    resident application with a higher priority to become active and
-    temporarily hide your application.
+-   A system event (such as an incoming phone call) occurs and causes a resident application with a higher priority to become active and temporarily hide your application.
 -   An alarm is triggered for another application, which becomes the
     topmost window and hides your application.
 
@@ -45,8 +42,7 @@ When your application becomes visible again, the `app_resume_cb()` callback is i
 
 -   Another application requests your application to run (for example, the Task Navigator, which shows all running applications and lets user select any application to run).
 -   All applications on top of your application in the window stack finish.
--   An alarm is triggered for your application, bringing it to the front
-    and hiding other applications.
+-   An alarm is triggered for your application, bringing it to the front and hiding other applications.
 
 When your application starts exiting, the `app_terminate_cb()` callback is invoked. Your application can start the termination process, when:
 -   Your application itself requests to exit by calling the `ui_app_exit()` or `service_app_exit()` function to terminate the
@@ -62,50 +58,32 @@ Application state changes are managed by the underlying framework. For more info
 ## Starting the Tizen Native Application
 
 
-An application can be launched by the user from the Launcher or by
-another application. Either way, the Application Framework starts the
-application by creating a new process and calling the application entry
-point. Like in a conventional Linux application, the application main
-function is the entry point. For more information on launching native
-applications, see [Application
+An application can be launched by the user from the Launcher or by another application. Either way, the Application Framework starts the
+application by creating a new process and calling the application entry point. Like in a conventional Linux application, the application main
+function is the entry point. For more information on launching native applications, see [Application
 Controls](../../../guides/native/app-management/app-controls-n.md).
 
 <a name="packageID"></a>
 ## Package ID and Application ID
 
 
-When developing a Tizen application, you must define a package and
-application ID:
+When developing a Tizen application, you must define a package and application ID:
 
 -   Package ID
 
-    The package ID, such as `org.tizen.message` or `org.tizen.call`, is
-    the application package identifier.
+    The package ID, such as `org.tizen.message` or `org.tizen.call`, is the application package identifier.
 
-    The package ID functions as a unit for package installation,
-    uninstallation, and updates. It is also the unit of the application
-    package DRM, sandboxing, and privilege.
+    The package ID functions as a unit for package installation, uninstallation, and updates. It is also the unit of the application package DRM, sandboxing, and privilege.
 
 - Application ID
 
-    The application ID (`appid`) is the application identifier. Multiple
-    applications are allowed in a package and the application ID is used
-    to identify the different applications.
+    The application ID (`appid`) is the application identifier. Multiple applications are allowed in a package and the application ID is used to identify the different applications.
 
-    The application ID must be the same as the package ID if the package
-    contains a single application. If [the package contains multiple
-    applications](../process/app-dev-process-n.md#develop), the
-    application ID must be assigned with the package ID as a prefix. For
-    example, if the `org.tizen.message` package contains 2 applications,
-    the main application is named as `org.tizen.message`, and the second
-    application is named as `org.tizen.message.app2`.
+    The application ID must be the same as the package ID if the package contains a single application. If [the package contains multiple applications](../process/app-dev-process-n.md#develop), the application ID must be assigned with the package ID as a prefix. For example, if the `org.tizen.message` package contains 2 applications, the main application is named as `org.tizen.message`, and the second application is named as `org.tizen.message.app2`.
 
-    The application ID functions as a unit for launching and terminating
-    applications, and for App Control.
+    The application ID functions as a unit for launching and terminating applications, and for App Control.
 
-You can use the a\~z, A\~Z, 0\~9, ".", "-", and "\_" characters for the
-package and application ID. Both values must be shorter than 50
-characters.
+You can use the a\~z, A\~Z, 0\~9, ".", "-", and "\_" characters for the package and application ID. Both values must be shorter than 50 characters.
 
 The following figure shows how to use the package and application ID.
 
@@ -119,28 +97,21 @@ The following figure shows how to use the package and application ID.
 
 The following list shows the directory hierarchy:
 
--   `bin`: Executable binary path
+- `bin`: Executable binary path
 - `lib`: Library path
 - `res`: Resource path
-- `data`: The application's own directory (read or write); no initial
-    data
+- `data`: The application's own directory (read or write); no initial data
 - `shared/`: For sharing with other applications
 
-    Sandboxing refers to an application package which can access its own
-    directories only. It is used to share resources in the
-    `shared` directories.
+    Sandboxing refers to an application package which can access its own directories only. It is used to share resources in the `shared` directories.
 
-    In sandboxing, [SMACK](#installer) is used, and discretionary access
-    control (DAC) is applied to application package directories
-    and files. The uid(root, app) is applied to directories and files.
+    In sandboxing, [SMACK](#installer) is used, and discretionary access control (DAC) is applied to application package directories and files. The uid(root, app) is applied to directories and files.
 
-The `tizen-manifest.xml` file and signature files are located in the
-application root directory.
+The `tizen-manifest.xml` file and signature files are located in the application root directory.
 
 ### Permissions
 
-The installed packages have a user ID, a group ID, permissions, and a
-smack label.
+The installed packages have a user ID, a group ID, permissions, and a smack label.
 
 **Figure: Permissions**
 
@@ -152,26 +123,26 @@ The following table shows the details of files and directories.
 
 | Name                   | File or directory | Owner:Group | Permission | Smack label             |
 | ---------------------- | ----------------- | ----------- | ---------- | ----------------------- |
-| `bin`                  | Directory         | root:root   | rwxr-xr-x  | {PackageId}^1^            |
+| `bin`                  | Directory         | root:root   | rwxr-xr-x  | {PackageId}<sup>1</sup>            |
 | `data`                 | Directory         | app:app     | rwxr-xr-x  | {PackageId}             |
 | `lib`                  | Directory         | root:root   | rwxr-xr-x  | {PackageId}             |
 | `res`                  | Directory         | root:root   | rwxr-xr-x  | {PackageId}             |
 | `shared`               | Directory         | root:root   | rwxr-xr-x  | -                       |
-| `shared/data`          | Directory         | app:app     | rwxr-xr-x  | {Random}^2^, transmute    |
+| `shared/data`          | Directory         | app:app     | rwxr-xr-x  | {Random}<sup>2</sup> transmute    |
 | `shared/res`           | Directory         | root:root   | rwxr-xr-x  | -                       |
-| `shared/trusted`       | Directory         | app:app     | rwxr-xr-x  | {Cert Hash}^3^, transmute |
+| `shared/trusted`       | Directory         | app:app     | rwxr-xr-x  | {Cert Hash}<sup>3</sup> transmute |
 | `author-signature.xml` | File              | root:root   | rwxr-xr-x  | {PackageId}             |
 | `signature1.xml`       | File              | root:root   | rwxr-xr-x  | {PackageId}             |
 | `signature2.xml`       | File              | root:root   | rwxr-xr-x  | {PackageId}             |
 | `signatureN.xml`       | File              | root:root   | rwxr-xr-x  | {PackageId}             |
 | `tizen-manifest.xml`   | File              | root:root   | rwxr-xr-x  | {PackageId}             |
 
-^1^ The {PackageId} is the package ID, such as `org.tizen.browser`.
+<sup>1</sup> The {PackageId} is the package ID, such as `org.tizen.browser`.
 
-^2^ {Random} means that there is a 28-byte random string created by the
+<sup>2</sup> {Random} means that there is a 28-byte random string created by the
 smack module.
 
-^3^ {Cert Hash} refers to a 28-byte string where \[Raw Hash\] equals to
+<sup>3</sup> {Cert Hash} refers to a 28-byte string where \[Raw Hash\] equals to
 Base64Encode (SHA1 author certificate in `author-signature.xml`) and
 {Cert Hash} replaces "/" with "\#" in \[Raw Hash\].
 
@@ -207,24 +178,17 @@ elements.
 ## Signature
 
 
-A Tizen package is digitally signed by an author and 1 or more
-distributors to produce a signature file that cryptographically covers
-all the package files.
+A Tizen package is digitally signed by an author and 1 or more distributors to produce a signature file that cryptographically covers all the package files.
 
-There are 2 types of signatures:
+There are two types of signatures:
 
 -   Author signature
 
-    The author signature specifies which entity alleges to have authored
-    the package, that the integrity of the package is as the author
-    intended, and whether a set of packages came from the same author.
+    The author signature specifies which entity alleges to have authored the package, that the integrity of the package is as the author intended, and whether a set of packages came from the same author.
 
 - Distributor signature
 
-    The distributor signature specifies that a particular distributor
-    has distributed a package, that the integrity of the package is as
-    the distributor intended, and whether a set of packages came from
-    the same distributor.
+    The distributor signature specifies that a particular distributor has distributed a package, that the integrity of the package is as the distributor intended, and whether a set of packages came from the same distributor.
 
 The following image describes the relationship between the signatures.
 
@@ -241,19 +205,15 @@ The following figure describes how the application installer works.
 
 ![Installer](./media/installer.png)
 
-The installer applies smack according to the privileges that are
-specified in the `tizen-manifest.xml` file.
+The installer applies smack according to the privileges that are specified in the `tizen-manifest.xml` file.
 
-An application can only access the resources that are allowed by the
-privileges. The privileges are used in the Tizen Store to show the
-permissions and receive user consent.
+An application can only access the resources that are allowed by the privileges. The privileges are used in the Tizen Store to show the permissions and receive user consent.
 
 <a name="commands"></a>
 ## Package Commands
 
 
-You can use shell commands to install, uninstall, update, and launch
-applications.
+You can use shell commands to install, uninstall, update, and launch applications.
 
 **Figure: Tizen Studio interactions**
 
@@ -263,34 +223,21 @@ applications.
 
 ## Native Applications Tutorials
 
-The introduction to native applications documentation provides overall
-information you need to become familiar with native-specific Tizen
-programming and the Tizen application model:
+The introduction to native applications documentation provides overall information you need to become familiar with native-specific Tizen programming and the Tizen application model:
 
 - [Getting Started](getting-started/first-app.md)
 
-    Demonstrates how you can create your first simple
-    native application.
-
-- [Application Development Process](process/app-dev-process-n.md)
-
-    Teaches you how to create a Tizen application from the initial
-    application planning stage to the end stages where you are ready to
-    run and package your application.
+    Demonstrates how you can create your first simple native application.
 
 
 - [Overview of Tizen UI Development](feature/ui-builder-overview-mn.md)
 
-    Describes the basic characteristics and components of UI development
-    with EFL.
+    Describes the basic characteristics and components of UI development with EFL.
 
 - [Designing Your Native Application](feature/ui-builder-app-design-mn.md)
 
-    Teaches you how to develop a native application using the native UI
-    Builder tool.
+    Teaches you how to develop a native application using the native UI Builder tool.
 
 - [Understanding Tizen Programming](details/details-n.md)
 
-    Introduces the Tizen platform, its architecture, and some useful
-    programming concepts you need to take into account when designing
-    Tizen applications.
+    Introduces the Tizen platform, its architecture, and some useful programming concepts you need to take into account when designing Tizen applications.

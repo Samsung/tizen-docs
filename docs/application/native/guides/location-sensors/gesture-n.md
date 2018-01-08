@@ -1,7 +1,4 @@
 # Gesture Recognition
-##Dependencies
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
 
 With gesture recognition, you can monitor user gestures.
 
@@ -163,3 +160,8 @@ To set and unset callback functions for user gestures:
    gesture_stop_recognition(handle);
    gesture_release(handle);
    ```
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

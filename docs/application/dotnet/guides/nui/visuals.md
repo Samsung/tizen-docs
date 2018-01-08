@@ -1,4 +1,6 @@
 # Visuals
+## Dependencies
+-   Tizen 4.0 and Higher
 
 Visuals are the main building block for controls. You can create a reusable rendering logic, which can be used by all controls, using visuals. The content rendering can be controlled using properties. Visuals also respond to view size and color changes, and can perform clipping at the renderer level.
 

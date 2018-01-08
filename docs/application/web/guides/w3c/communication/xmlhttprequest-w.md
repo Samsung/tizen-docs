@@ -4,10 +4,9 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 You can send HTTP (or HTTPS) [requests](http://www.w3.org/TR/2014/WD-XMLHttpRequest-20140130/#request) to and receive [responses](http://www.w3.org/TR/2014/WD-XMLHttpRequest-20140130/#response) from a Web server using JavaScript. The API is based on the [HTML5](http://www.w3.org/TR/2014/CR-html5-20140429/) specification and the Ajax mechanism widely used in the Web environment, and it has been enhanced from the older [XMLHttpRequest](http://www.w3.org/TR/2012/WD-XMLHttpRequest-20121206/) API.
-
-This feature is supported in mobile and wearable applications only.
 
 The main features of the XMLHttpRequest API include:
 

@@ -4,10 +4,9 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 You can manage the CSS properties for [specifying the color and opacity of an HTML element](./w3c/ui/color-w.md#specify), and the CSS color value type. To increase user satisfaction, you can also [create color generators](./w3c/ui/color-w.md#create) to allow the user to set the color.
-
-This feature is supported in mobile and wearable applications only.
 
 You can specify the color of an element with the following formats:
 

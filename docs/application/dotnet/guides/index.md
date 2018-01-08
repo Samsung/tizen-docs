@@ -14,6 +14,10 @@ Select the feature you are interested in and see what Tizen offers for your appl
 
     The application management features cover the various application models available for Tizen .NET applications. They describe the application life-cycle and resources, and the communication methods available for the application.
 
+-   [Natural User Interface](nui/NUIoverview.md)
+
+    The Natural User Interface (NUI) features provide various aspects of creating a visual outlook for the user application to ensure the best possible user experience. NUI is a rich GUI library for creating 2D or 3D applications. These applications are run on a range of Tizen devices, such as TVs and wearables. NUI is built on a multi-threaded architecture, enabling realistic smooth animations.
+
 -   [Internationalization](internationalization/internationalization-cover.md)
 
     The localization features define how you can ensure that your application works around the world in different locales and time zones. You can ensure that the phone number information is given correctly based on the current location of the device.

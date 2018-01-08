@@ -157,7 +157,7 @@ The accelerometer provides 3 components of acceleration (X, Y, and Z), as the fo
 
 ![Accelerometer vector and axes](./media/sensor_types_accelerometer_vector.png)
 
-The accelerometer outputs 4 values: 3 Cartesian axis values and a timestamp. The accelerometer sensor measures and returns the axes' values in "m/s^2^" (meters per second squared). When a device is moved in the ±X, ±Y, or ±Z direction, the corresponding output increases (+) or decreases (-).
+The accelerometer outputs 4 values: 3 Cartesian axis values and a timestamp. The accelerometer sensor measures and returns the axes' values in "m/s<sup>2</sup>" (meters per second squared). When a device is moved in the ±X, ±Y, or ±Z direction, the corresponding output increases (+) or decreases (-).
 
 The following table lists the measurement data that the accelerometer provides.
 
@@ -165,10 +165,10 @@ The following table lists the measurement data that the accelerometer provides.
 
 | Measurement | Type                 | Range                               | Unit         |
 | ----------- | -------------------- | ----------------------------------- | ------------ |
-| Timestamp   | `unsigned long long` | -                                   | Microseconds |
-| X           | `float`              | Min. value = -19.6Max. value = 19.6 | m/s2         |
-| Y           | `float`              | Min. value = -19.6Max. value = 19.6 | m/s2         |
-| Z           | `float`              | Min. value = -19.6Max. value = 19.6 | m/s2         |
+| TimeSpan   | `TimeSpan` | -                                   | Microseconds |
+| X           | `float`              | Min. value = -19.6<br>Max. value = 19.6 | m/s<sup>2</sup>         |
+| Y           | `float`              | Min. value = -19.6<br>Max. value = 19.6 | m/s<sup>2</sup>         |
+| Z           | `float`              | Min. value = -19.6<br>Max. value = 19.6 | m/s<sup>2</sup>         |
 
 The following table provides information about the accelerometer output for a device at rest.
 
@@ -196,12 +196,12 @@ The following table lists the measurement data that the geomagnetic rotation vec
 
 | Measurement | Type                     | Range                         | Unit         |
 | ----------- | ------------------------ | ----------------------------- | ------------ |
-| Timestamp   | `unsigned long long`     | -                             | Microseconds |
-| Accuracy    | `sensor_data_accuracy_e` | -                             | int          |
-| X           | `float`                  | Min. value = -1Max. value = 1 | -            |
-| Y           | `float`                  | Min. value = -1Max. value = 1 | -            |
-| Z           | `float`                  | Min. value = -1Max. value = 1 | -            |
-| W           | `float`                  | Min. value = -1Max. value = 1 | -            |
+| TimeSpan   | `TimeSpan`     | -                             | Microseconds |
+| Accuracy    | `SensorDataAccuracy` | -                             | int          |
+| X           | `float`                  | Min. value = -1<br>Max. value = 1 | -            |
+| Y           | `float`                  | Min. value = -1<br>Max. value = 1 | -            |
+| Z           | `float`                  | Min. value = -1<br>Max. value = 1 | -            |
+| W           | `float`                  | Min. value = -1<br>Max. value = 1 | -            |
 
 <a name="gravity"></a>
 ## Gravity Sensor 
@@ -212,7 +212,7 @@ The gravity sensor is a virtual sensor derived from the 3-axis acceleration sens
 
 ![Gravity sensor vector and axes](./media/sensor_types_gravity_frame.png)
 
-The gravity sensor outputs 4 values: 3 Cartesian axis values and a timestamp. The gravity sensor measures and returns axes values in "m/s^2^" (meters per second squared). When a device is rotated in the ±X, ±Y, or ±Z direction, the corresponding output increases (+) or decreases (-).
+The gravity sensor outputs 4 values: 3 Cartesian axis values and a timestamp. The gravity sensor measures and returns axes values in "m/s<sup>2</sup>" (meters per second squared). When a device is rotated in the ±X, ±Y, or ±Z direction, the corresponding output increases (+) or decreases (-).
 
 The following table lists the measurement data that the gravity sensor provides.
 
@@ -220,10 +220,10 @@ The following table lists the measurement data that the gravity sensor provides.
 
 | Measurement | Type                 | Range                             | Unit         |
 | ----------- | -------------------- | --------------------------------- | ------------ |
-| Timestamp   | `unsigned long long` | -                                 | Microseconds |
-| X           | `float`              | Min. value = -9.8Max. value = 9.8 | m/s2         |
-| Y           | `float`              | Min. value = -9.8Max. value = 9.8 | m/s2         |
-| Z           | `float`              | Min. value = -9.8Max. value = 9.8 | m/s2         |
+| TimeSpan   | `TimeSpan` | -                                 | Microseconds |
+| X           | `float`              | Min. value = -9.8<br>Max. value = 9.8 | m/s<sup>2</sup>         |
+| Y           | `float`              | Min. value = -9.8<br>Max. value = 9.8 | m/s<sup>2</sup>         |
+| Z           | `float`              | Min. value = -9.8<br>Max. value = 9.8 | m/s<sup>2</sup>         |
 
 <a name="gyro"></a>
 ## Gyroscope
@@ -240,10 +240,10 @@ The following table lists the measurement data that the gyroscope provides.
 
 | Measurement | Type                 | Range                                 | Unit            |
 | ----------- | -------------------- | ------------------------------------- | --------------- |
-| Timestamp   | `unsigned long long` | -                                     | Microseconds    |
-| X           | `float`              | Min. value = -573.0Max. value = 573.0 | Degrees/s (°/s) |
-| Y           | `float`              | Min. value = -573.0Max. value = 573.0 | Degrees/s (°/s) |
-| Z           | `float`              | Min. value = -573.0Max. value = 573.0 | Degrees/s (°/s) |
+| TimeSpan   | `TimeSpan` | -                                     | Microseconds    |
+| X           | `float`              | Min. value = -573.0<br>Max. value = 573.0 | Degrees/s (&deg;/s) |
+| Y           | `float`              | Min. value = -573.0<br>Max. value = 573.0 | Degrees/s (&deg;/s) |
+| Z           | `float`              | Min. value = -573.0<br>Max. value = 573.0 | Degrees/s (&deg;/s) |
 
  <a name="gyro_rotation"></a>
 
@@ -257,12 +257,12 @@ The following table lists the measurement data that the gyroscope rotation vecto
 
 | Measurement | Type                     | Range                         | Unit         |
 | ----------- | ------------------------ | ----------------------------- | ------------ |
-| Timestamp   | `unsigned long long`     | -                             | Microseconds |
-| Accuracy    | `sensor_data_accuracy_e` | -                             | int          |
-| X           | `float`                  | Min. value = -1Max. value = 1 | -            |
-| Y           | `float`                  | Min. value = -1Max. value = 1 | -            |
-| Z           | `float`                  | Min. value = -1Max. value = 1 | -            |
-| W           | `float`                  | Min. value = -1Max. value = 1 | -            |
+| TimeSpan   | `TimeSpan`     | -                             | Microseconds |
+| Accuracy    | `SensorDataAccuracy` | -                             | int          |
+| X           | `float`                  | Min. value = -1<br>Max. value = 1 | -            |
+| Y           | `float`                  | Min. value = -1<br>Max. value = 1 | -            |
+| Z           | `float`                  | Min. value = -1<br>Max. value = 1 | -            |
+| W           | `float`                  | Min. value = -1<br>Max. value = 1 | -            |
 
 <a name="hrm"></a>
 ## Heart Rate Monitor Sensor
@@ -275,8 +275,8 @@ The following table lists the measurement data that the HRM sensor provides.
 
 | Measurement | Type                 | Range                          | Unit         |
 | ----------- | -------------------- | ------------------------------ | ------------ |
-| Timestamp   | `unsigned long long` | -                              | Microseconds |
-| HeartRate   | `int`                | Min. value = 0Max. value = 240 | -            |
+| TimeSpan   | `TimeSpan` | -                              | Microseconds |
+| HeartRate   | `int`                | Min. value = 0<br>Max. value = 240 | -            |
 
 <a name="humidity"></a>
 
@@ -290,7 +290,7 @@ The following table lists the measurement data that the humidity sensor provides
 
 | Measurement | Type                 | Range | Unit         |
 | ----------- | -------------------- | ----- | ------------ |
-| Timestamp   | `unsigned long long` | -     | Microseconds |
+| TimeSpan   | `TimeSpan` | -     | Microseconds |
 | Humidity    | `float`              | 100   | %            |
 
  <a name="light"></a>
@@ -307,8 +307,8 @@ The following table lists the measurement data that the light sensor provides.
 
 | Measurement | Type                 | Range                            | Unit         |
 | ----------- | -------------------- | -------------------------------- | ------------ |
-| Timestamp   | `unsigned long long` | -                                | Microseconds |
-| Level       | `float`              | Min. value = 0Max. value = 45875 | Lux          |
+| TimeSpan   | `TimeSpan` | -                                | Microseconds |
+| Level       | `float`              | Min. value = 0<br>Max. value = 45875 | Lux          |
 
  <a name="lin_accelerometer"></a>
 
@@ -322,7 +322,7 @@ The linear acceleration sensor provides 3 components of acceleration (X, Y, and 
 
 ![User-acceleration sensor vector and axes](./media/sensor_types_useracceleration_vector.png)
 
-The linear acceleration sensor outputs 4 values: 3 Cartesian axis values and a timestamp. The linear acceleration sensor measures and returns axes values in "m/s^2^" (meters per second squared). When a device is accelerated in the ±X, ±Y, or ±Z direction, the corresponding output increases (+) or decreases (-). The acceleration output is shown in the same direction as the user-driven force.
+The linear acceleration sensor outputs 4 values: 3 Cartesian axis values and a timestamp. The linear acceleration sensor measures and returns axes values in "m/s<sup>2</sup>" (meters per second squared). When a device is accelerated in the ±X, ±Y, or ±Z direction, the corresponding output increases (+) or decreases (-). The acceleration output is shown in the same direction as the user-driven force.
 
 The following table lists the measurement data that the linear acceleration sensor provides.
 
@@ -330,10 +330,10 @@ The following table lists the measurement data that the linear acceleration sens
 
 | Measurement | Type                 | Range                               | Unit         |
 | ----------- | -------------------- | ----------------------------------- | ------------ |
-| Timestamp   | `unsigned long long` | -                                   | Microseconds |
-| X           | `float`              | Min. value = -19.6Max. value = 19.6 | m/s2         |
-| Y           | `float`              | Min. value = -19.6Max. value = 19.6 | m/s2         |
-| Z           | `float`              | Min. value = -19.6Max. value = 19.6 | m/s2         |
+| TimeSpan   | `TimeSpan` | -                                   | Microseconds |
+| X           | `float`              | Min. value = -19.6<br>Max. value = 19.6 | m/s<sup>2</sup>         |
+| Y           | `float`              | Min. value = -19.6<br>Max. value = 19.6 | m/s<sup>2</sup>         |
+| Z           | `float`              | Min. value = -19.6<br>Max. value = 19.6 | m/s<sup>2</sup>         |
 
  <a name="magnetic"></a>
 
@@ -353,7 +353,7 @@ The following table lists the measurement data that the magnetic sensor provides
 
 | Measurement | Type                 | Unit             |
 | ----------- | -------------------- | ---------------- |
-| Timestamp   | `unsigned long long` | Microseconds     |
+| TimeSpan   | `TimeSpan` | Microseconds     |
 | X           | `float`              | µT (microteslas) |
 | Y           | `float`              | µT (microteslas) |
 | Z           | `float`              | µT (microteslas) |
@@ -379,10 +379,10 @@ The following table lists the measurement data that the orientation sensor provi
 
 | Measurement | Type                 | Range                             | Unit         |
 | ----------- | -------------------- | --------------------------------- | ------------ |
-| Timestamp   | `unsigned long long` | -                                 | Microseconds |
-| Azimuth     | `float`              | Min. value = 0Max. value = 360    | Degrees (°)  |
-| Pitch       | `float`              | Min. value = -180Max. value = 180 | Degrees (°)  |
-| Roll        | `float`              | Min. value = -90Max. value = 90   | Degrees (°)  |
+| TimeSpan   | `TimeSpan` | -                                 | Microseconds |
+| Azimuth     | `float`              | Min. value = 0<br>Max. value = 360    | Degrees (&deg;)  |
+| Pitch       | `float`              | Min. value = -180<br>Max. value = 180 | Degrees (&deg;)  |
+| Roll        | `float`              | Min. value = -90<br>Max. value = 90   | Degrees (&deg;)  |
 
 The angular positions are measured using a fixed frame reference (X~E~, Y~E~, Z~E~).
 
@@ -404,10 +404,10 @@ The following table lists the measurement data that the pedometer provides.
 
 | Measurement           | Range                          | Unit         |
 | --------------------- | ------------------------------ | ------------ |
-| Timestamp             | -                              | Microseconds |
-| StepCount             | Min. value = 0Max. value = 224 | Steps        |
-| WalkStepCount         | Min. value = 0Max. value = 224 | Steps        |
-| RunningStepCount      | Min. value = 0Max. value = 224 | Steps        |
+| TimeSpan             | -                              | Microseconds |
+| StepCount             | Min. value = 0<br>Max. value = 2<sup>24</sup> | Steps        |
+| WalkStepCount         | Min. value = 0<br>Max. value = 2<sup>24</sup> | Steps        |
+| RunningStepCount      | Min. value = 0<br>Max. value = 2<sup>24</sup> | Steps        |
 | MovingDistance        | Min. value = 0                 | Meters       |
 | CalorieBurned         | Min. value = 0                 | kcal         |
 | LastSpeed             | Min. value = 0                 | km/h         |
@@ -428,8 +428,8 @@ The following table lists the measurement data that the pressure sensor provides
 
 | Measurement | Type                 | Range                             | Unit         |
 | ----------- | -------------------- | --------------------------------- | ------------ |
-| Timestamp   | `unsigned long long` | -                                 | Microseconds |
-| Pressure    | `float`              | Min. value = 260Max. value = 1260 | hPa          |
+| TimeSpan   | `TimeSpan` | -                                 | Microseconds |
+| Pressure    | `float`              | Min. value = 260<br>Max. value = 1260 | hPa          |
 
 <a name="proximity"></a>
 
@@ -445,7 +445,7 @@ The following table lists the measurement data that the proximity sensor provide
 
 | Measurement | Type                  | Range | Unit         |
 | ----------- | --------------------- | ----- | ------------ |
-| Timestamp   | `unsigned long long`  | -     | Microseconds |
+| TimeSpan   | `TimeSpan`  | -     | Microseconds |
 | Proximity   | `ProxmitySensorState` | -     | -            |
 
 The `ProximitySensorState` property is one of the values of the [Tizen.Sensor.ProximitySensorState](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.ProximitySensorState.html) enumeration: `Unknown`, `Far`, or `Near`.
@@ -461,12 +461,12 @@ The following table lists the measurement data that the rotation vector sensor p
 
 | Measurement | Type                     | Range                         | Unit         |
 | ----------- | ------------------------ | ----------------------------- | ------------ |
-| Timestamp   | `unsigned long long`     | -                             | Microseconds |
-| Accuracy    | `sensor_data_accuracy_e` | -                             | int          |
-| X           | `float`                  | Min. value = -1Max. value = 1 | -            |
-| Y           | `float`                  | Min. value = -1Max. value = 1 | -            |
-| Z           | `float`                  | Min. value = -1Max. value = 1 | -            |
-| W           | `float`                  | Min. value = -1Max. value = 1 | -            |
+| TimeSpan   | `TimeSpan`     | -                             | Microseconds |
+| Accuracy    | `SensorDataAccuracy` | -                             | int          |
+| X           | `float`                  | Min. value = -1<br>Max. value = 1 | -            |
+| Y           | `float`                  | Min. value = -1<br>Max. value = 1 | -            |
+| Z           | `float`                  | Min. value = -1<br>Max. value = 1 | -            |
+| W           | `float`                  | Min. value = -1<br>Max. value = 1 | -            |
 
  <a name="sleep_monitor"></a>
 
@@ -480,7 +480,7 @@ The following table lists the measurement data that the sleep monitor provides.
 
 | Measurement | Unit         |
 | ----------- | ------------ |
-| Timestamp   | Microseconds |
+| TimeSpan   | Microseconds |
 | SleepState  | -            |
 
 The `SleepState` property is one of the values of the [Tizen.Sensor.SleepMonitorState](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.SleepMonitorState.html) enumeration: `Unknown`, `Wake`, or `Sleep`.
@@ -498,8 +498,8 @@ The following table lists the measurement data that the temperature sensor provi
 
 | Measurement | Type                 | Range                            | Unit         |
 | ----------- | -------------------- | -------------------------------- | ------------ |
-| Timestamp   | `unsigned long long` | -                                | Microseconds |
-| Temperature | `float`              | Min. value = -30Max. value = 100 | °C           |
+| TimeSpan   | `TimeSpan` | -                                | Microseconds |
+| Temperature | `float`              | Min. value = -30<br>Max. value = 100 | °C           |
 
  <a name="ultraviolet"></a>
 
@@ -513,8 +513,8 @@ The following table lists the measurement data that the ultraviolet sensor provi
 
 | Measurement      | Type                 | Range                         | Unit         |
 | ---------------- | -------------------- | ----------------------------- | ------------ |
-| Timestamp        | `unsigned long long` | -                             | Microseconds |
-| UltravioletIndex | `float`              | Min. value = 0Max. value = 15 | UV index     |
+| TimeSpan        | `TimeSpan` | -                             | Microseconds |
+| UltravioletIndex | `float`              | Min. value = 0<br>Max. value = 15 | UV index     |
 
  <a name="uncal_gyro"></a>
 
@@ -528,13 +528,13 @@ The following table lists the measurement data that the uncalibrated gyroscope p
 
 | Measurement             | Type                 | Range                                 | Unit            |
 | ----------------------- | -------------------- | ------------------------------------- | --------------- |
-| Timestamp               | `unsigned long long` | -                                     | Microseconds    |
-| X                       | `float`              | Min. value = -573.0Max. value = 573.0 | Degrees/s (°/s) |
-| Y                       | `float`              | Min. value = -573.0Max. value = 573.0 | Degrees/s (°/s) |
-| Z                       | `float`              | Min. value = -573.0Max. value = 573.0 | Degrees/s (°/s) |
-| Drift around the X axis | `float`              | Min. value = -573.0Max. value = 573.0 | Degrees/s (°/s) |
-| Drift around the Y axis | `float`              | Min. value = -573.0Max. value = 573.0 | Degrees/s (°/s) |
-| Drift around the Z axis | `float`              | Min. value = -573.0Max. value = 573.0 | Degrees/s (°/s) |
+| TimeSpan               | `TimeSpan` | -                                     | Microseconds    |
+| X                       | `float`              | Min. value = -573.0<br>Max. value = 573.0 | Degrees/s (&deg;/s) |
+| Y                       | `float`              | Min. value = -573.0<br>Max. value = 573.0 | Degrees/s (&deg;/s) |
+| Z                       | `float`              | Min. value = -573.0<br>Max. value = 573.0 | Degrees/s (&deg;/s) |
+| BiasX | `float`              | Min. value = -573.0<br>Max. value = 573.0 | Degrees/s (&deg;/s) |
+| BiasY | `float`              | Min. value = -573.0<br>Max. value = 573.0 | Degrees/s (&deg;/s) |
+| BiasZ | `float`              | Min. value = -573.0<br>Max. value = 573.0 | Degrees/s (&deg;/s) |
 
 <a name="uncal_magnetic"></a>
 ## Uncalibrated Magnetic Sensor 
@@ -553,11 +553,11 @@ The following table lists the measurement data that the uncalibrated magnetic se
 
 | Measurement | Type                 | Unit             |
 | ----------- | -------------------- | ---------------- |
-| Timestamp   | `unsigned long long` | Microseconds     |
-| X           | `float`              | µT (microteslas) |
-| Y           | `float`              | µT (microteslas) |
-| Z           | `float`              | µT (microteslas) |
-| X-axis bias | `float`              | µT (microteslas) |
-| Y-axis bias | `float`              | µT (microteslas) |
-| Z-axis bias | `float`              | µT (microteslas) |
+| TimeSpan   | `TimeSpan` | Microseconds     |
+| X           | `float`              | &micro;T (microteslas) |
+| Y           | `float`              | &micro;T (microteslas) |
+| Z           | `float`              | &micro;T (microteslas) |
+| BiasX | `float`              | &micro;T (microteslas) |
+| BiasY | `float`              | &micro;T (microteslas) |
+| BiasZ | `float`              | &micro;T (microteslas) |
 

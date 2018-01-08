@@ -4,10 +4,9 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 The HTML markup is not as important as before, because JavaScript APIs can be used to create various functionalities. For example, graphics APIs (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#graphics) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#graphics) applications) can be used for making games, media APIs (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#media) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#media) applications) for creating video chats, and communication APIs (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#communication) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#communication) applications) for various types of messaging. However, HTML remains the basis of Web applications, and it is useful to be familiar with its behavior.
-
-This feature is supported in mobile and wearable applications only.
 
 The structure of the HTML document can be classified into DOCTYPE and HTML DOM (Document Object Model). When an HTML document is loaded, the browser renders the contents in its screen as follows:
 
