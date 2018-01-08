@@ -4,10 +4,9 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 Web workers run JavaScript in an independent thread instead of the main UI thread, improving the [JavaScript performance](./w3c/perf_opt/web-workers-w.md#js_performance) without affecting the UI.
-
-This feature is supported in mobile and wearable applications only.
 
 The main features of the Web Workers API include:
 
@@ -178,7 +177,7 @@ For the complete source code related to this use case, see the following files:
 
 ## Multi-threading
 
-Generally, Web applications are built and run using a single UI thread. Since only 1 task can be handled at a time, the Web application may not respond due to the execution time of a script block, resulting in lower application performance. To solve these performance-related issues, multi-thread Web workers (in [mobile](http://www.w3.org/TR/2015/WD-workers-20150924/) and [wearable](http://www.w3.org/TR/2012/CR-workers-20120501/) applications) can be used to provide distributed processing in applications. Use Web workers in applications that require complex calculations or parallel processing for better application performance.
+Generally, Web applications are built and run using a single UI thread. Since only 1 task can be handled at a time, the Web application may not respond due to the execution time of a script block, resulting in lower application performance. To solve these performance-related issues, multi-thread Web workers (in [mobile](http://www.w3.org/TR/2015/WD-workers-20150924/), [wearable](http://www.w3.org/TR/2012/CR-workers-20120501/), and [TV](http://www.w3.org/TR/2015/WD-workers-20150924/) applications) can be used to provide distributed processing in applications. Use Web workers in applications that require complex calculations or parallel processing for better application performance.
 
 Since the task of changing the image color using a canvas involves allocating a color value for each pixel of the image displayed on the screen, the program requires a complicated calculation to execute loops by the number of the pixels. The following examples of applying a color filter effects to an image to change the color show:
 

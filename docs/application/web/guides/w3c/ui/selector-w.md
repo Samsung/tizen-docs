@@ -4,10 +4,9 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 The selectors allow you to select element nodes in the DOM tree by matching them against a group of selectors, and testing whether the element matches a particular selector. Using selectors makes searching and selecting complex elements faster.
-
-This feature is supported in mobile and wearable applications only.
 
 You can use the `querySelector()` and `querySelectorAll()` methods to retrieve the element nodes. Both methods accept a single parameter, a string selector. The string selector is a selector or a group of selectors that can be surrounded by whitespace. If you use a selector group as the string selector with the `querySelector()` method, the method returns the first element (if any) that matches any of the selectors in the group.
 

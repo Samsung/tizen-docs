@@ -3,10 +3,11 @@
 ## Dependencies
 
 - Tizen 2.4 and Higher for Mobile
+- Tizen 3.0 and Higher for TV
 
 You can [manage the screen orientation state](./w3c/device/screen-orientation-w.md#manage) through the `Screen` interface.
 
-This feature is supported in mobile applications only.
+This feature is supported in mobile and TV applications only.
 
 The main features of the Screen Orientation API include:
 

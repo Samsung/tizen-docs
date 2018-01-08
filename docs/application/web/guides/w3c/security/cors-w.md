@@ -4,10 +4,9 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 Tizen supports the mechanism of cross-origin resource sharing (CORS), which can activate a client-side [cross-origin request](http://www.w3.org/TR/2014/REC-cors-20140116/#cross-origin-request-0) (COR).
-
-This feature is supported in mobile and wearable applications only.
 
 In CORS, new headers related to HTTP communication have been added to allow you to accept or reject CORs:
 

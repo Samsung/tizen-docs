@@ -1,4 +1,6 @@
 # Setting Up the NUI Development Environment on Ubuntu
+## Dependencies
+-   Tizen 4.0 and Higher
 
 This topic explains how to setup, build, and run NUI (DALi C\#) applications using Visual Studio Code (VSC). It assumes that the starting point is a completely 'clean' system, though that is not essential.
 

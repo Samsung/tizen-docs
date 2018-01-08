@@ -4,10 +4,9 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 Media queries allow you to [apply the CSS differently according to conditions](./w3c/ui/media-query-w.md#rule) based on the media type (type of device) and media features (viewport status). Previously, you were able to use the media type only and create Web services with fixed layouts. However, smart phones, tablets, and other devices with various resolutions require a liquid layout. HTML5 now makes various characteristics and conditional defining possible, and can be used to implement responsive Web design (RWD), which is a [liquid layout](./w3c/ui/media-query-w.md#create) that mainly reacts according to the device resolution.
-
-This feature is supported in mobile and wearable applications only.
 
 You can use media queries in 3 ways:
 
@@ -196,7 +195,7 @@ You can use media queries to determine the styles to be used in a Web document. 
    </div>
    ```
 
-2. Define basic styles for the page, using a flexible box (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#flexi) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#flexi) applications) and [multi-column](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#multicolumn) (in mobile applications only) layout with 2 columns. (The following figure applies to mobile applications only.)
+2. Define basic styles for the page, using a flexible box (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#flexi), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#flexi), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#flexi) applications) and multi-column (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#multicolumn) and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#multicolumn) applications only) layout with 2 columns. (The following figure applies to mobile applications only.)
 
    ```
    .container {

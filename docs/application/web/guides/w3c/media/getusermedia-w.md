@@ -4,16 +4,19 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 You can access multimedia streams, such as camera, on a local device. The feature can be used, for example, for real-time communication, recording, and surveillance.
-
-This feature is supported in mobile and wearable applications only.
 
 The main features of the getUserMedia API include:
 
 - Retrieving multimedia streams
 
   You can use the `navigator.webkitGetUserMedia()` method to request user access to [retrieve the multimedia streams](./w3c/media/getusermedia-w.md#access) of local devices, such as camera. The method returns the media as a JSON object.
+  
+  > **Note** 
+  > The TV applications support the `navigator.webkitGetUserMedia()` method for the microphone only, because a TV has no camera.
+
 
 - Capturing media
 
@@ -26,7 +29,7 @@ The main features of the getUserMedia API include:
 
 Learning how to access a video stream is a basic user media management skill:
 
-1. Create the HTML5 video element (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#video) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#video) applications) and a button used to control audio stream access:
+1. Create the HTML5 video element (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#video), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#video), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#video) applications) and a button used to control audio stream access:
 
    ```
    <body>

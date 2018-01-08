@@ -1,4 +1,6 @@
 # TextLabel
+## Dependencies
+-   Tizen 4.0 and Higher
 
 `TextLabel` is a NUI control that renders a short text string. Text labels are lightweight, non-editable, and do not respond to user input. They can support multiple languages and scripts, including right-to-left scripts, such as Arabic.
 

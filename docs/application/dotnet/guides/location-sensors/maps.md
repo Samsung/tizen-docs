@@ -36,10 +36,6 @@ The following map providers are supported:
 
     To use the HERE Maps, set the provider name to "HERE" and [get the HERE API keys](here-credentials.md).
 
--   [Mapzen Maps](https://mapzen.com) based on Mapzen services.
-
-    To use the Mapzen Maps, set the provider name to "MAPZEN" and [get the Mapzen API keys](mapzen-credentials.md).
-
 
 > **Note**   
 > To use the map service, you must get an access key to the map provider from the provider developer site. The service must be used according to the provider's Term of Use.

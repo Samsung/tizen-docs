@@ -51,7 +51,7 @@ To enable your application to use the input method management functionality:
 To launch the IME list menu to show the installed IMEs, use the `ShowIMEList()` method of the [Tizen.Uix.InputMethodManager.Manager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.InputMethodManager.Manager.html) class:
 
 ``` 
-void show_ime_list()
+void ShowImeList()
 {
     try
     {
@@ -70,7 +70,7 @@ void show_ime_list()
 To launch the IME selector menu to allow the user to select the default keyboard, use the `ShowIMESelector()` method of the [Tizen.Uix.InputMethodManager.Manager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.InputMethodManager.Manager.html) class:
 
 ``` 
-void show_ime_selector()
+void ShowImeSelector()
 {
     try
     {
@@ -91,7 +91,7 @@ To check whether a specific IME is enabled, to check the current default keyboar
 -   To check whether a specific IME is enabled, use the `IsIMEEnabled()` method of the [Tizen.Uix.InputMethodManager.Manager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.InputMethodManager.Manager.html) class. As a parameter, use the application ID of the IME whose status you want to check.
 
     ``` 
-    bool is_ime_enabled(string appId)
+    bool IsImeEnabled(string appId)
     {
         try
         {
@@ -111,7 +111,7 @@ To check whether a specific IME is enabled, to check the current default keyboar
 -   To check which IME is currently selected as the default keyboard, use the `GetActiveIME()` method, which returns the application ID of the currently selected IME as a string:
 
     ``` 
-    string get_active_ime()
+    string GetActiveIme()
     {
         string app_id = null;
         try
@@ -130,7 +130,7 @@ To check whether a specific IME is enabled, to check the current default keyboar
 -   To get the number of enabled (usable) IMEs, use the `GetEnabledIMECount()` method:
 
     ``` 
-    int get_enabled_ime_count()
+    int GetEnabledImeCount()
     {
         int count = Manager.GetEnabledIMECount();
 

@@ -4,17 +4,21 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 CSS attributes, such as `float`, `display`, and `position`, can be used to adjust and align the screen layout according to various resolutions. However, operating the layout accurately among changing screen sizes is difficult.
-
-This feature is supported in mobile and wearable applications only.
 
 Tizen supports the CSS Flexible Box Layout Module API that enables you to create an easily manageable flexible layout, which fluidly adjusts the layout according to viewport size changes. When you [create and use a flexible box layout](./w3c/ui/flexible-w.md#create), the alignment method or object (flex item) size within a specific area (flex container) can be adjusted.
 
 The main components of the flexible box layout include:
 
-- Flex container (in [mobile](http://www.w3.org/TR/2015/WD-css-flexbox-1-20150514/#flex-containers) and [wearable](http://www.w3.org/TR/2014/WD-css-flexbox-1-20140325/#flex-containers) applications), which refers to flex or inline-flex DOM elements assigned by the display.You can [use the flex container](./w3c/ui/flexible-w.md#usecont) to assign a flex area and the flex items included in it. The flex container properties are used to assign the indication area and alignment method.
-- Flex item (in [mobile](http://www.w3.org/TR/2015/WD-css-flexbox-1-20150514/#flex-items) and [wearable](http://www.w3.org/TR/2014/WD-css-flexbox-1-20140325/#flex-items) applications), which refers to the child nodes of the flex container.The flex item changes its size fluidly according to the area of the flex container. You can [define flex item properties](./w3c/ui/flexible-w.md#item) to assign the sizes of the respective items and the alignment method.
+-   Flex container (in [mobile](http://www.w3.org/TR/2015/WD-css-flexbox-1-20150514/#flex-containers), [wearable](http://www.w3.org/TR/2014/WD-css-flexbox-1-20140325/#flex-containers), and [TV](http://www.w3.org/TR/2015/WD-css-flexbox-1-20150514/#flex-containers) applications), which refers to flex or inline-flex DOM elements assigned by the display.
+
+    You can [use the flex container](#usecont) to assign a flex area and the flex items included in it. The flex container properties are used to assign the indication area and alignment method.
+
+-   Flex item (in [mobile](http://www.w3.org/TR/2015/WD-css-flexbox-1-20150514/#flex-items), [wearable](http://www.w3.org/TR/2014/WD-css-flexbox-1-20140325/#flex-items), and [TV](http://www.w3.org/TR/2015/WD-css-flexbox-1-20150514/#flex-items) applications), which refers to the child nodes of the flex container.
+
+    The flex item changes its size fluidly according to the area of the flex container. You can [define flex item properties](#item) to assign the sizes of the respective items and the alignment method.
 
 **Figure: Flexible box layout**
 

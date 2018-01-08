@@ -4,6 +4,7 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 The following techniques of writing JavaScript code can be used to improve application performance:
 
@@ -12,8 +13,6 @@ The following techniques of writing JavaScript code can be used to improve appli
 - [Using cached array length](./w3c/perf_opt/js-performance-improvement-w.md#arraylength)
 - [Using literal expressions](./w3c/perf_opt/js-performance-improvement-w.md#literal)
 - [Managing DOM control](./w3c/perf_opt/js-performance-improvement-w.md#dom)
-
-This feature is supported in mobile and wearable applications only.
 
 ## Removing the Debugging Statement
 

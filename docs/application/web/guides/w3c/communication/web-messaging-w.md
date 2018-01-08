@@ -4,6 +4,7 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 Web messaging is used to deliver messages between documents. Web messaging allows [cross-origin resource sharing (CORS)](./w3c/security/cors-w.md).
 
@@ -17,13 +18,13 @@ The main features of the HTML5 Web Messaging API include:
 
 - Channel messaging
 
-  You can [send and receive messages through the port](./w3c/communication/web-messaging-w.md#Channel_Messaging) of the `MessageChannel` interface (in [mobile](http://www.w3.org/TR/2015/REC-webmessaging-20150519/#message-channels) and [wearable](http://www.w3.org/TR/2012/CR-webmessaging-20120501/#message-channels) applications).
+   You can [send and receive messages through the port](#Channel_Messaging) of the `MessageChannel` interface (in [mobile](http://www.w3.org/TR/2015/REC-webmessaging-20150519/#message-channels), [wearable](http://www.w3.org/TR/2012/CR-webmessaging-20120501/#message-channels), and [TV](http://www.w3.org/TR/2015/REC-webmessaging-20150519/#message-channels) applications).
 
-With the Web Messaging API, messages are sent and received asynchronously using the `MessageEvent` object (in [mobile](http://www.w3.org/TR/2015/REC-webmessaging-20150519/#the-messageevent-interfaces) and [wearable](http://www.w3.org/TR/2012/CR-webmessaging-20120501/#event-definitions) applications), within 1 domain or between different domains.
+With the Web Messaging API, messages are sent and received asynchronously using the `MessageEvent` object (in [mobile](http://www.w3.org/TR/2015/REC-webmessaging-20150519/#the-messageevent-interfaces), [wearable](http://www.w3.org/TR/2012/CR-webmessaging-20120501/#event-definitions), and [TV](http://www.w3.org/TR/2015/REC-webmessaging-20150519/#the-messageevent-interfaces) applications), within 1 domain or between different domains.
 
 ## Using Cross-document Messaging
 
-Send the message from the sending page using the `postMessage()` method of the receiving page window object (in [mobile](http://www.w3.org/TR/2015/REC-webmessaging-20150519/#posting-messages) and [wearable](http://www.w3.org/TR/2012/CR-webmessaging-20120501/#posting-messages) applications). To receive the page, the receiving page window object must be registered to receive messages.
+Send the message from the sending page using the `postMessage()` method of the receiving page window object (in [mobile](http://www.w3.org/TR/2015/REC-webmessaging-20150519/#posting-messages), [wearable](http://www.w3.org/TR/2012/CR-webmessaging-20120501/#posting-messages), and [TV](http://www.w3.org/TR/2015/REC-webmessaging-20150519/#posting-messages) applications). To receive the page, the receiving page window object must be registered to receive messages.
 
 The `postMessage()` method supports the following parameters:
 
@@ -77,7 +78,7 @@ The `MessageChannel` instance broadcasts message sending and receiving, and has 
 
 Learning how to use channel messaging enhances the communication capabilities of your application:
 
-1. To send a message from document A to document B, create in document A a `MessageChannel` interface instance (in [mobile](http://www.w3.org/TR/2015/REC-webmessaging-20150519/#message-channels) and [wearable](http://www.w3.org/TR/2012/CR-webmessaging-20120501/#message-channels) applications), which has 2 `message port` attributes (in [mobile](http://www.w3.org/TR/2015/REC-webmessaging-20150519/#message-ports) and [wearable](http://www.w3.org/TR/2012/CR-webmessaging-20120501/#message-ports) applications): `port1` and `port2`.The `port2` attribute of the `MessageChannel` instance is delivered to document B through the `postMessage()` method of the document B window object:
+1.  To send a message from document A to document B, create in document A a `MessageChannel` interface instance (in [mobile](http://www.w3.org/TR/2015/REC-webmessaging-20150519/#message-channels), [wearable](http://www.w3.org/TR/2012/CR-webmessaging-20120501/#message-channels), and [TV](http://www.w3.org/TR/2015/REC-webmessaging-20150519/#message-channels) applications), which has 2 `message port` attributes (in [mobile](http://www.w3.org/TR/2015/REC-webmessaging-20150519/#message-ports), [wearable](http://www.w3.org/TR/2012/CR-webmessaging-20120501/#message-ports), [TV](http://www.w3.org/TR/2015/REC-webmessaging-20150519/#message-ports) applications): `port1` and `port2`.
 
    ```
    <script>
@@ -101,7 +102,8 @@ Learning how to use channel messaging enhances the communication capabilities of
    ```
 
 > **Note**
-> The `postMessage()` method can have 3 parameters: `message`, `origin` (in [mobile](http://www.w3.org/TR/2015/REC-webmessaging-20150519/#security-postmsg) and [wearable](http://www.w3.org/TR/2012/CR-webmessaging-20120501/#security-postmsg) applications), and `ports`.According to the W3C specifications, the arguments are ordered as `message`, `origin`, and `ports`. However, in Tizen, the order used is actually `message`, `ports`, and `origin`. This approach is used in all browsers that currently support the `MessageChannel` interface.
+> The `postMessage()` method can have 3 parameters: `message`, `origin` (in [mobile](http://www.w3.org/TR/2015/REC-webmessaging-20150519/#security-postmsg), [wearable](http://www.w3.org/TR/2012/CR-webmessaging-20120501/#security-postmsg), and [TV](http://www.w3.org/TR/2015/REC-webmessaging-20150519/#security-postmsg) applications), and `ports`.
+> According to the W3C specifications, the arguments are ordered as `message`, `origin`, and `ports`. However, in Tizen, the order used is actually `message`, `ports`, and `origin`. This approach is used in all browsers that currently support the `MessageChannel` interface.
 
 2. Define a `message` event in the `window` object of document B, and register the event handler in the `port` sent from document A.
 

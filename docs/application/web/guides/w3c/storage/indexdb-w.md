@@ -4,16 +4,15 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 In HTML5, an indexed database is a local storage used to store and manipulate key-value format data in a client. You can implement effective searches using an index, which is a specialized persistent key-value storage containing entries from the database based on specific property values.
-
-This feature is supported in mobile and wearable applications only.
 
 The main features of the Indexed Database API include:
 
 - Creating a database
 
-  Use the `IndexedDB.open()` method to [create a database](./w3c/storage/indexdb-w.md#db). In a database (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#database-concept) and [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#database-concept) applications), at least 1 object store (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#object-store-concept) and [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#object-store-concept) applications) must be present.
+  Use the `IndexedDB.open()` method to [create a database](#db). In a database (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#database-concept), [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#database-concept), and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#database-concept) applications), at least 1 object store (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#object-store-concept), [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#object-store-concept), and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#object-store-concept) applications) must be present.
 
 - Creating an object store
 
@@ -28,11 +27,11 @@ The main features of the Indexed Database API include:
   The stored data creates a key, assigned to a `keypath`, which in turn creates a value as a JSON object.
 
 > **Note**
-> Tizen supports the `READ_ONLY`, `READ_WRITE`, and `VERSION_CHANGE` transactions (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#transaction) and [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#transaction) applications) with the `unsigned short` type.
+> Tizen supports the `READ_ONLY`, `READ_WRITE`, and `VERSION_CHANGE` transactions (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#transaction), [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#transaction), and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#transaction) applications) with the `unsigned short` type.
 
 - Creating an index
 
-  In the object store, you can use the `createIndex()` method to [generate anindex](./w3c/storage/indexdb-w.md#index). You can search for and retrieve records stored in the index (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#index-concept) and [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#index-concept) applications) using other properties than the key, as the key is not always unique. You can also retrieve records containing arrays as keys.
+  In the object store, you can use the `createIndex()` method to [generate an index](#index). You can search for and retrieve records stored in the index (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#index-concept), [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#index-concept), and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#index-concept) applications) using other properties than the key, as the key is not always unique. You can also retrieve records containing arrays as keys.
 
 ## Creating a Database
 
@@ -77,10 +76,17 @@ For the complete source code related to this use case, see the following file:
 
 An object store can derive keys from the following sources:
 
-- Key generator (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#dfn-key-generator) and [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#dfn-key-generator) applications) Generates an increasing number every time a key is needed.
-- Key path (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#key-path-construct) and [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#key-path-construct) applications) Key is derived through a key path. 
-- Value (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#value-construct) and [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#value-construct) applications) Key is specified when a value is stored in the object store.
+- Key generator (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#dfn-key-generator), [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#dfn-key-generator), and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#dfn-key-generator) applications)
 
+    Generates an increasing number every time a key is needed.
+- Key path (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#key-path-construct), [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#key-path-construct), and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#key-path-construct) applications)
+
+    Key is derived through a key path.
+	
+- Value (in [mobile](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#value-construct), [wearable](http://www.w3.org/TR/2013/WD-IndexedDB-20130516/#value-construct), and [TV](http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#value-construct) applications)
+
+    Key is specified when a value is stored in the object store.
+	
 Creating and deleting an object store is a useful data management skill:
 
 1. To generate an object store for data storage, use the `createObjectStore()` method:

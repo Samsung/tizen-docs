@@ -4,15 +4,23 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 A Web storage stores data in key-value format. The process is similar to existing cookies, but by using the Web Storage API, structured objects can be stored, and the storage capacity is increased to 5 MB per domain. In addition, no server request is needed, so server traffic is significantly reduced.
 
-This feature is supported in mobile and wearable applications only.
-
 The Web Storage API provides 2 storage types:
 
-- Local storage (in [mobile](http://www.w3.org/TR/2015/CR-webstorage-20150609/#the-localstorage-attribute) and [wearable](http://www.w3.org/TR/2011/WD-webstorage-20110901/#the-localstorage-attribute) applications)Stores data to be used in multiple windows, beyond the current session, with no expiration date. The stored data is not deleted when the browser window is closed, and can be shared between browser windows.
-- Session storage (in [mobile](http://www.w3.org/TR/2015/CR-webstorage-20150609/#the-sessionstorage-attribute) and [wearable](http://www.w3.org/TR/2011/WD-webstorage-20110901/#the-sessionstorage-attribute) applications)Valid for only a single session.The data stored in a temporary storage can be shared in all browser windows within the same domain, but once the browser window is closed, data is deleted.If a new window is opened using a link, the session storage datais copied to the new window. However, if the data in the new window is edited, it is stored as a separate data item.
+-   Local storage (in [mobile](http://www.w3.org/TR/2015/CR-webstorage-20150609/#the-localstorage-attribute), [wearable](http://www.w3.org/TR/2011/WD-webstorage-20110901/#the-localstorage-attribute), and [TV](http://www.w3.org/TR/2015/CR-webstorage-20150609/#the-localstorage-attribute) applications)
+
+    Stores data to be used in multiple windows, beyond the current session, with no expiration date. The stored data is not deleted when the browser window is closed, and can be shared between browser windows.
+
+-   Session storage (in [mobile](http://www.w3.org/TR/2015/CR-webstorage-20150609/#the-sessionstorage-attribute), [wearable](http://www.w3.org/TR/2011/WD-webstorage-20110901/#the-sessionstorage-attribute), and [TV](http://www.w3.org/TR/2015/CR-webstorage-20150609/#the-sessionstorage-attribute) applications)
+
+    Valid for only a single session.
+
+    The data stored in a temporary storage can be shared in all browser windows within the same domain, but once the browser window is closed, data is deleted.
+
+    If a new window is opened using a link, the session storage data is copied to the new window. However, if the data in the new window is edited, it is stored as a separate data item.
 
 You can [save and read data in the local and session storages](./w3c/storage/web-storage-w.md#save). You can also [use the local storage](./w3c/storage/web-storage-w.md#use) to delete the data.
 

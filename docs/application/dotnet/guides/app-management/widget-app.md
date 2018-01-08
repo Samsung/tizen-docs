@@ -90,33 +90,12 @@ class MyWidget : WidgetBase
 
 ## Prerequisites
 
-To enable your application to use the widget functionality:
-
-1.  To use the methods and properties of the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html) namespace, include it in your application:
+To enable your application to use the widget functionality, include the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html) namespace in your application:
 
     ``` 
     using Tizen.Applications;
     ```
 
-2. In Visual Studio, open the **tizen-manifest.xml** file with the text editor and add the [&lt;widget-application&gt; manifest element](../../../../vstools/tools/manifest_editor.htm#widget_app).
-
-    The following code example shows how the `<widget-application>` element is consequently added to the `tizen-manifest.xml` file:
-
-    ``` 
-    <?xml version="1.0" encoding="utf-8"?>
-    <manifest xmlns="http://tizen.org/ns/packages" api-version="3.0" package="@PACKAGE_NAME@" version="@VERSION@">
-       <profile name="common" />
-       <widget-application appid="org.tizen.widgetsample"
-                           exec="widgetsample.dll"
-                           type="dotnet"
-                           main="true"
-                           update-period="0">
-            <icon>widgetsample.png</icon>
-            <label>widgetsample</label>
-            <support-size preview="widgetsample.png">4X4</support-size>
-       </widget-application>
-    </manifest>
-    ```
 
 <a name="create"></a>
 ## Creating the Widget Application 

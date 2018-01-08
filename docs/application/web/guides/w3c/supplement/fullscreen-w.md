@@ -3,10 +3,11 @@
 ## Dependencies
 
 - Tizen 2.4 and Higher for Mobile
+- Tizen 3.0 and Higher for TV
 
 You can [display an element in the fullscreen mode](./w3c/supplement/fullscreen-w.md#use). If the element uses the  [:full-screen](https://wiki.mozilla.org/index.php?title=Gecko:FullScreenAPI#full-screen_pseudo-class) CSS pseudo-class to switch to the fullscreen mode, a style can be assigned for the fullscreen mode.
 
-This feature is supported in mobile applications only.
+This feature is supported in mobile and TV applications only.
 
 To switch to the fullscreen and back:
 

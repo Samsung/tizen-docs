@@ -1,4 +1,6 @@
 # ImageView
+## Dependencies
+-   Tizen 4.0 and Higher
 
 An `ImageView` is a NUI control that displays an image. The following figure shows an image displayed with an ImageView.
 

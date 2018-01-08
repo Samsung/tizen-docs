@@ -174,6 +174,9 @@ The following table lists the available system setting keys.
 
 | Key                                      | Type     | Supported function type | Description                              |
 | ---------------------------------------- | -------- | ----------------------- | ---------------------------------------- |
+| `SYSTEM_SETTINGS_KEY_3G_DATA_NETWORK_ENABLED` | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the 3G data network is enabled. |
+| `SYSTEM_SETTINGS_KEY_ACCESSIBILITY_TTS`  | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the accessibility TTS is enabled on the device. |
+| `SYSTEM_SETTINGS_KEY_ADS_ID`             | `string` | `GETTER, NOTIFIER`      | Ads ID for each device.                  |
 | `SYSTEM_SETTINGS_KEY_DEFAULT_FONT_TYPE`  | `string` | `GETTER`                | Current system default font type.        |
 | `SYSTEM_SETTINGS_KEY_DEVICE_NAME`        | `string` | `GETTER, NOTIFIER`      | Device name.                             |
 | `SYSTEM_SETTINGS_KEY_DISPLAY_SCREEN_ROTATION_AUTO` | `bool`   | `GETTER, NOTIFIER`      | Indicates whether rotation control is automatic. |
@@ -185,23 +188,23 @@ The following table lists the available system setting keys.
 | `SYSTEM_SETTINGS_KEY_LOCALE_LANGUAGE`    | `string` | `GETTER, NOTIFIER`      | Current language setting in the <LANGUAGE>_<REGION> syntax. The language is an ISO 639-2 code, and the region is an ISO 3166-1 alpha-2 code. |
 | `SYSTEM_SETTINGS_KEY_LOCALE_TIMEFORMAT_24HOUR` | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the 24-hour clock is used. If the value is `false`, the 12-hour clock is used. |
 | `SYSTEM_SETTINGS_KEY_LOCALE_TIMEZONE`    | `string` | `GETTER, NOTIFIER`      | Current time zone.                       |
+| `SYSTEM_SETTINGS_KEY_LOCKSCREEN_APP`     | `string` | `GETTER, NOTIFIER`      | Lockscreen application package name.     |
+| `SYSTEM_SETTINGS_KEY_LOCK_STATE`         | `int`    | `GETTER, NOTIFIER`      | Current lock state.                      |
 | `SYSTEM_SETTINGS_KEY_MOTION_ACTIVATION`  | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the motion service is activated. |
+| `SYSTEM_SETTINGS_KEY_MOTION_ENABLED`     | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the device user has enabled the motion feature. |
 | `SYSTEM_SETTINGS_KEY_NETWORK_FLIGHT_MODE` | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the device is in the flight mode. |
 | `SYSTEM_SETTINGS_KEY_NETWORK_WIFI_NOTIFICATION` | `bool`   | `GETTER, NOTIFIER`      | Indicates whether Wi-Fi-related notifications are enabled on the device. |
+| `SYSTEM_SETTINGS_KEY_SCREEN_BACKLIGHT_TIME` | `int`    | `GETTER, NOTIFIER`      | Backlight time (in seconds). The following values can be used: 15, 30, 60, 120, 300, and 600. |
 | `SYSTEM_SETTINGS_KEY_SOUND_LOCK`         | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the screen lock sound is enabled on the device (for example, whether the LCD on/off sound is enabled). |
 | `SYSTEM_SETTINGS_KEY_SOUND_NOTIFICATION` | `string` | `GETTER, NOTIFIER`      | File path of the current notification tone set by the user. |
 | `SYSTEM_SETTINGS_KEY_SOUND_NOTIFICATION_REPETITION_PERIOD` | `int`    | `GETTER, NOTIFIER`      | Time period for notification repetitions. |
 | `SYSTEM_SETTINGS_KEY_SOUND_SILENT_MODE`  | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the device is in the silent mode. |
 | `SYSTEM_SETTINGS_KEY_SOUND_TOUCH`        | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the screen touch sound is enabled on the device. |
 | `SYSTEM_SETTINGS_KEY_TIME_CHANGED`       | `int`    | `NOTIFIER`              | Event that occurs when the system changes time to notify you about the time change. |
+| `SYSTEM_SETTINGS_KEY_ULTRA_DATA_SAVE`    | `int`    | `GETTER, NOTIFIER`      | Ultra Data Save status, which can be one of the `system_settings_uds_state_e` enumeration values (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__SYSTEM__SETTINGS__MODULE.html#ga59ffa706c8964ee1f6c6ab03b4efdac1) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__SYSTEM__SETTINGS__MODULE.html#ga59ffa706c8964ee1f6c6ab03b4efdac1)applications). |
+| `SYSTEM_SETTINGS_KEY_ULTRA_DATA_SAVE_PKG_LIST` | `string` | `NOTIFIER`              | Ultra Data Save Package List, which is a string containing whitelisted package names separated with semicolons (;). |
 | `SYSTEM_SETTINGS_KEY_USB_DEBUGGING_ENABLED` | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the USB debugging is enabled. |
+| `SYSTEM_SETTINGS_KEY_VIBRATION`          | `bool`   | `GETTER, NOTIFIER`      | Indicates whether vibration is enabled on the device. |
 | `SYSTEM_SETTINGS_KEY_WALLPAPER_HOME_SCREEN` | `string` | `GETTER, NOTIFIER`      | File path of the current home screen wallpaper. |
 | `SYSTEM_SETTINGS_KEY_WALLPAPER_LOCK_SCREEN` | `string` | `GETTER, NOTIFIER`      | File path of the current lock screen wallpaper. |
-| `SYSTEM_SETTINGS_KEY_3G_DATA_NETWORK_ENABLED` | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the 3G data network is enabled. |
-| `SYSTEM_SETTINGS_KEY_LOCKSCREEN_APP`     | `string` | `GETTER, NOTIFIER`      | Lockscreen application package name.     |
-| `SYSTEM_SETTINGS_KEY_MOTION_ENABLED`     | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the device user has enabled the motion feature. |
-| `SYSTEM_SETTINGS_KEY_SCREEN_BACKLIGHT_TIME` | `int`    | `GETTER, NOTIFIER`      | Backlight time (in seconds). The following values can be used: 15, 30, 60, 120, 300, and 600. |
-| `SYSTEM_SETTINGS_KEY_LOCK_STATE`         | `int`    | `GETTER, NOTIFIER`      | Current lock state.                      |
-| `SYSTEM_SETTINGS_KEY_ADS_ID`             | `string` | `GETTER, NOTIFIER`      | Ads ID for each device.                  |
-| `SYSTEM_SETTINGS_KEY_ULTRA_DATA_SAVE`    | `int`    | `GETTER, NOTIFIER`      | Ultra Data Save status, which can be one of the `system_settings_uds_state_e` enumeration values. (in <a href="../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__SYSTEM__SETTINGS__MODULE.html#ga59ffa706c8964ee1f6c6ab03b4efdac1">mobile</a> and <a href="../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__SYSTEM__SETTINGS__MODULE.html#ga59ffa706c8964ee1f6c6ab03b4efdac1">wearable</a> applications). |
-| `SYSTEM_SETTINGS_KEY_ULTRA_DATA_SAVE_PKG_LIST` | `string` | `NOTIFIER`              | Ultra Data Save Package List, which is a string containing whitelisted package names separated with semicolons (;). |
+

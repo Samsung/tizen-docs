@@ -4,10 +4,9 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 WebSocket in a Web environment enables connection-oriented full duplex communication, as with a TCP socket. (The server and browser can send and receive data in real-time through a continuously connected TCP line.)
-
-This feature is supported in mobile and wearable applications only.
 
 The difference between the previously used communication method in the Web environment and the new  Web socket lies in the protocol. The Web socket protocol uses HTTP in establishing a connection, however, all communication after the connection is established happens using the Web socket's independent protocol.
 

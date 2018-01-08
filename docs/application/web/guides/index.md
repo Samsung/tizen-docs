@@ -20,9 +20,9 @@ Select the feature you are interested in and see what Tizen offers for your appl
 
   Cordova features include common functionalities useful in creating Tizen Web applications.
 
-- [User Interface](./ui/ui-guide-w.md) **in mobile and wearable applications only**
+- [Tizen Advanced UI](./ui/tau/tau-w.md) **in mobile and wearable applications only**
 
-  The user interface features provide various aspects of creating a visual outlook for the user application to ensure the best possible user experience.
+  The Tizen Advanced UI (TAU) features provide various aspects of creating a visual outlook for the user application to ensure the best possible user experience.
 
 - [Localization](./localization/localization-w.md) **in mobile and wearable applications only**
 
@@ -76,7 +76,7 @@ Select the feature you are interested in and see what Tizen offers for your appl
 
   The error handling features are needed when everything does not go as planned. You can handle exceptions and other error situations in your application code.
 
-- [W3C/HTML5/Supplementary Features](./w3c/w3c-cover-w.md) **in mobile and wearable applications only**
+- [W3C/HTML5/Supplementary Features](./w3c/w3c-cover-w.md)
 
   The W3C, HTML5, and supplementary features cover various functionalities you can use in your application. You can use graphics, media, storage, and location features, as well as manage communication and security. These features also enable you to create an application UI using HTML and CSS.
 ​

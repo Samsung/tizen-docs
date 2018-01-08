@@ -1,4 +1,6 @@
 # Button
+## Dependencies
+-   Tizen 4.0 and Higher
 
 The NUI button controls include various button types:
 

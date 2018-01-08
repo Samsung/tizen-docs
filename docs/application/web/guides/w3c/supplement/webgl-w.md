@@ -4,10 +4,9 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 WebGL - Khronos is a graphics library for creating 3D visual elements in Web applications without separate plug-ins.
-
-This feature is supported in mobile and wearable applications only.
 
 WebGL™ is designed as a rendering context of the [HTML5  element](./w3c/graphics/canvas-w.md). The WebGL™ context is still being developed and has not been standardized. WebGL™ uses 3D rendering APIs derived from [OpenGL® ES 2.0](http://www.opengl.org/documentation/specs/version2.0/glspec20.pdf), and is realized by binding shaders and [OpenGL® ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.00.pdf) (GLSL ES) as JavaScript.
 

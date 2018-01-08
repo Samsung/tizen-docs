@@ -1,7 +1,4 @@
 # Location and Sensors
-##Dependencies
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
 
 The location and sensor features introduce how you can manage information about the geographical location and surrounding environment of the device, as well as human activity data. You can use a location service to track location information, and various device sensors to track the device environment and user activities.
 
@@ -24,3 +21,8 @@ You can use the activity recognizer to gather information about the user movemen
 
 - [Gesture Recognition](gesture-n.md)
 You can monitor user gestures, such as double-taps, shakes, tilts, and wrist up movements. You can receive notifications about different device movement patterns, identify device states, and trigger events when the movement data meets predefined conditions.
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

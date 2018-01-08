@@ -1,6 +1,4 @@
 # Geofences
-##Dependencies
-- Tizen 2.4 and Higher for Mobile
 
 A geofence is a virtual perimeter for a real-world geographic area. A geofence is defined by either a geopoint and radius for geopoint geofences, or by a MAC address for Wi-Fi and Bluetooth geofences. The geofence feature alerts the user when the geofence state changes (the user crosses the perimeter).
 
@@ -283,3 +281,7 @@ To get information about a geofence:
   free(bssid);
   free(ssid);
   ```
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+

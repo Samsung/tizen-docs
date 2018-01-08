@@ -1,4 +1,6 @@
 # Styling Controls with JSON
+## Dependencies
+-   Tizen 4.0 and Higher
 
 You can style a toolkit control with JSON. This topic uses a PushButton as an example control.
 

@@ -4,10 +4,10 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
+
 
 The HTML5 SVG supports 2D graphics through SVG (Scalable Vector Graphics). Prior to HTML5, SVG functioned based on XML, so it was only used in XHTML or with a separate SVG plug-in. Since HTML5, however, an `svg` tag is used in XML, and can be added as an inline element in HTML.
-
-This feature is supported in mobile and wearable applications only.
 
 The main SVG API features include:
 

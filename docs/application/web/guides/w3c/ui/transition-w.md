@@ -4,10 +4,9 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 Transitions allow you to enable implicit transitions, which describe how the CSS properties can be made to change smoothly from one value to another over a given duration.
-
-This feature is supported in mobile and wearable applications only.
 
 The main features of the CSS Transitions Module Level 3 API include:
 

@@ -1,7 +1,4 @@
 # Maps and Maps Service
-##Dependencies
-- Tizen 2.4 and Higher for Mobile
-- Tizen 3.0 and Higher for Wearable
 
 Map service features include geocoding, reverse geocoding, place searching, route calculation, and view widgets.
 
@@ -38,7 +35,6 @@ You can also [cancel service requests](#cancel) and [customize them](#preference
 The following map providers are supported:
 
 - [HERE Maps](https://developer.here.com) based on the [HERE REST API](https://developer.here.com/rest-apis).To use the HERE Maps, you need to [get credentials](here-credentials-n.md).
-- [Mapzen Maps](https://mapzen.com) based on Mapzen services.To use the Mapzen Maps, you need to [get the Mapzen API keys](mapzen-credentials-n.md).
 
 > **Note**  
 > To use the map service, you must get an access key to the map provider from the provider developer site. The service must be used according to the provider's Term of Use.
@@ -1190,3 +1186,8 @@ To handle map view events:
     if (error != MAPS_ERROR_NONE)
         /* Error handling */
     ```
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

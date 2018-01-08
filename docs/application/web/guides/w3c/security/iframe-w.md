@@ -4,12 +4,11 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 The HTML5 `iframe` element can be used to solve security and design issues in embedded Web content.
 
-This feature is supported in mobile and wearable applications only.
-
-The main feature of the `iframe` element is the `sandbox` attribute (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-iframe-sandbox) and [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#attr-iframe-sandbox) applications):
+The main feature of the `iframe` element is the `sandbox` attribute (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-iframe-sandbox), [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#attr-iframe-sandbox), and [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-iframe-sandbox) applications):
 
 - To enhance application security, you can use the `sandbox` attribute of the `iframe` object to control the execution of tasks that can result in unreliable content.
 
@@ -37,7 +36,7 @@ The main feature of the `iframe` element is the `sandbox` attribute (in [mobile]
 
 Learning how to control `iframe` element content when accessing the cookies of the parent document enhances the security features of your application:
 
-1. Create an `<input>` element of the `checkbox` type that enables the sandbox activation. In addition, create an `iframe` element with the `sandbox` property (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-iframe-sandbox) and [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#attr-iframe-sandbox) applications). To allow script execution in the `iframe` element content and cookie access, set the `sandbox` attribute value as `allow-same-origin`:
+1. Create an `<input>` element of the `checkbox` type that enables the sandbox activation. In addition, create an `iframe` element with the `sandbox` property (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-iframe-sandbox), [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#attr-iframe-sandbox), and [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-iframe-sandbox) applications). To allow script execution in the `iframe` element content and cookie access, set the `sandbox` attribute value as `allow-same-origin`:
 
    ```
    <input type="checkbox" id="chkSandbox" name="chkSandbox"
@@ -148,7 +147,7 @@ For the complete source code related to this use case, see the following files:
 
 Learning how to control `iframe` element content when redirecting a page enhances the security features of your application:
 
-1. Create an `<input>` element of the `checkbox` type that disables the sandbox. In addition, create an `iframe` element with the `sandbox` property (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-iframe-sandbox) and [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#attr-iframe-sandbox) applications):
+1. Create an `<input>` element of the `checkbox` type that disables the sandbox. In addition, create an `iframe` element with the `sandbox` property (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-iframe-sandbox), [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#attr-iframe-sandbox), and [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-iframe-sandbox) applications):
 
    ```
    <input type="checkbox" id="chkSandbox" name="chkSandbox"
@@ -221,7 +220,7 @@ For the complete source code related to this use case, see the following files:
 
 Learning how to control `iframe` element content when submitting a form enhances the security features of your application:
 
-1. Create an `<input>` element of the `checkbox` type that enables the sandbox activation. In addition, create an `iframe` element with the `sandbox` property (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-iframe-sandbox) and [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#attr-iframe-sandbox) applications). To allow form submission, set the `sandbox` attribute value as `allow-forms`:
+1. Create an `<input>` element of the `checkbox` type that enables the sandbox activation. In addition, create an `iframe` element with the `sandbox` property (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-iframe-sandbox), [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#attr-iframe-sandbox), and [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-iframe-sandbox) applications). To allow form submission, set the `sandbox` attribute value as `allow-forms`:
 
    ```
    <input type="checkbox" id="chkSandbox" name="chkSandbox"
@@ -306,7 +305,7 @@ For the complete source code related to this use case, see the following files:
 
 Learning how to control the opening of the `iframe` element content enhances the security features of your application:
 
-1. Create an `<input>` element of the `checkbox` type that enables the sandbox activation. In addition, create an `iframe` element with the `sandbox` property (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-iframe-sandbox) and [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#attr-iframe-sandbox) applications). To allow pop-ups, set the `sandbox` attribute value as `allow-popups`:
+1.  Create an `<input>` element of the `checkbox` type that enables the sandbox activation. In addition, create an `iframe` element with the `sandbox` property (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-iframe-sandbox), [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#attr-iframe-sandbox), and [TV](http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#attr-iframe-sandbox) applications). To allow pop-ups, set the `sandbox` attribute value as `allow-popups`:
 
    ```
    <input type="checkbox" id="chkSandbox" name="chkSandbox"

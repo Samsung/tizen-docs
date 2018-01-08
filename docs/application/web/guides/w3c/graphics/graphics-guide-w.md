@@ -4,10 +4,11 @@
 
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
+- Tizen 3.0 and Higher for TV
 
 The graphics features include creating and editing various kinds of images, shapes, text, and elements.
 
-The following graphics features apply in **mobile and wearable applications only**:
+The main graphics features are:
 
 - [HTML5 Canvas](./w3c/graphics/canvas-w.md)   
 
