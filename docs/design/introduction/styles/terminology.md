@@ -15,10 +15,10 @@ Example : Incoming calls, alarms, or media can be muted by placing your hand on 
 Q. What is the grammatical subject?  
 A. Incoming calls.
 
-Q. What is the action in this sentence?
+Q. What is the action in this sentence?  
 A. Muting the calls.
 
-Q. Does the subject (the calls) do the muting?
+Q. Does the subject (the calls) do the muting?  
 A. No, placing your hand on the screen mutes the calls. As the original subject doesn’t take any direct action, the sentence is passive and must be changed to active voice.
 
 > **CHANGE :** Incoming calls, alarms, or media can be muted by placing your hand on the  screen while the screen is on. (passive voice)  
