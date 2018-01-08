@@ -42,6 +42,7 @@ Follow these instructions to install the appropriate JDK version for your system
 
   Go to the [Ubuntu Web site](https://help.ubuntu.com/community/Java#Oracle_Java_8) for detailed instructions for installing the Oracle® JDK version 8.
 
+<a name="emulator"></a>
 ## Emulator Requirements
 
 The following table lists the CPU, screen resolution, graphic card, driver, and webcam requirements for using the Tizen emulator.

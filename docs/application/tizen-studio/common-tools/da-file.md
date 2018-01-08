@@ -1,9 +1,5 @@
 # Performing File Analysis
 
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
-
 The **File** tab of the Dynamic Analyzer shows information associated with file operations. The **File** tab can be enabled or disabled in runtime from the **Configuration** dialog. If the file analysis capabilities are disabled, the file API information is not displayed.
 
 The tab consists of the following views:
@@ -31,6 +27,7 @@ Terminology:
 - A target file is the file that has the function calls which you are interested in.
 - A non-target file is the opposite of the target file. For example, if you are only interested in internal calls, files that include direct calls are non-target files.
 
+<a name="chart"></a>
 ## File Chart
 
 The file chart has a separated child and parent chart. There can be only 1 parent chart of each file, whereas multiple child charts are supported. Multiple child charts are separated by PID and TID. The parent chart records all the operations performed by the child charts.
@@ -52,6 +49,7 @@ The file chart shows the following information:
   - Blue area or line indicates the concurrent writing or reading of the file without the lock.
   - Red line indicates that the API has failed. (F)
 
+<a name="api_list"></a>
 ## File API List
 
 The File API List table shows the APIs that are associated with the file selected in the file chart. When the child of the file is selected, this view shows information about the file included in the TID.
@@ -73,6 +71,7 @@ The table contains the following columns:
 - **Return** (integer): Return value of the called API
 - **Error code** (text): Value returned by the API; for the APIs associated with glibc, the value is the description of the error number
 
+<a name="details"></a>
 ## File Details
 
 The File Details view shows detailed information about the file selected in the file chart. When the child row of the file is selected, this view shows information about the file that is included in the TID.
@@ -90,3 +89,7 @@ The view contains the following fields:
 - **Write size**: Total size of write
 - **API count**: Total API count that is associated with the file
 - **Failed API count**: Number of failed APIs
+
+## Related Information
+* Dependencies
+  - Tizen Studio 1.0 and Higher

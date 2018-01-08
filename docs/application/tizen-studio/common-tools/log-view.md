@@ -1,7 +1,4 @@
 # Checking Logs with Log View
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
 
 This topic explains how to insert logging methods to your code and check the logs of your application in the **Log** view.
 
@@ -9,7 +6,7 @@ This topic explains how to insert logging methods to your code and check the log
 
 By default, the **Log** view is located at the bottom of the **Native** perspective. If you want to open the **Log** view manually, go to **Window > Show View > Other > Log** in the Tizen Studio menu.
 
-The **Log** view helps you debug your application by capturing all the events logged by the platform and your application. The **Log** view shows the logs through the [dlog logging service](../../../org.tizen.guides/html/native/error/system_logs_n.htm). The service consists of the dlogutil and dlog library. You can also see logs with the `dlogutil` command in the CLI environment, and create log entries with the dlog library.
+The **Log** view helps you debug your application by capturing all the events logged by the platform and your application. The **Log** view shows the logs through the [dlog logging service](../../native/guides/error/system-logs.md). The service consists of the dlogutil and dlog library. You can also see logs with the `dlogutil` command in the CLI environment, and create log entries with the dlog library.
 
 **Figure: Log view**
 
@@ -19,7 +16,7 @@ The **Log** view helps you debug your application by capturing all the events lo
 
 You can create a log message in your application with the dlog library. Before using the dlog library, make sure you know which priorities and tags to use and how to send the message to the log device. With appropriate properties and tags, it is easy to filter and check messages.
 
-For more information, see the [System Logs](../../../org.tizen.guides/html/native/error/system_logs_n.htm) guide.
+For more information, see the [System Logs](../../native/guides/error/system-logs.md) guide.
 
 ### Adding and Removing the Log Tab
 
@@ -71,3 +68,7 @@ In the log table, you have the following options and functions:
 - Exporting logs to a file
 
   You can export the current log messages in the log tab and save them as a log file by clicking the **Export the log** button (![Export the log button](./media/log_view_icon_export.png)).
+
+## Related information
+* Dependencies  
+  - Tizen Studio 1.0 and Higher

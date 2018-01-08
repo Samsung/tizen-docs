@@ -1,9 +1,5 @@
 # Monitoring Performance with Dynamic Analyzer
 
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
-
 The Dynamic Analyzer is a performance monitoring and analysis tool for your native and Web applications on a Tizen device or the emulator. The main focus of the Dynamic Analyzer is to analyze your application for potential performance issues, such as high usage of CPU, memory, file, or network operations.
 
 The Dynamic Analyzer is designed to analyze performance issues on your application after development, to help you optimize the application. The following figure shows the basic workflow for how the Dynamic Analyzer works with other Tizen tools:
@@ -51,3 +47,7 @@ The following table lists the supported features on the Dynamic Analyzer. Every 
 | Synchronization | ![Thread Analysis](./media/dynamic_analyzer_thread_analysis.png)Thread Analysis | Analyzes the internal threads of a process and its synchronization operation. | **Thread**           |
 | Energy          | ![Peripheral Status](./media/dynamic_analyzer_peripheral_status.png)Peripheral Status | Shows the on/off state of the Wi-Fi, Bluetooth, GPS, data network, and camera peripherals. | **Timeline**         |
 |                 | ![Power Estimation](./media/dynamic_analyzer_power_estimation.png)Power Estimation | Calculates the power consumption of the CPU, flash, LCD, Wi-Fi, and Bluetooth with an accurate estimation model. |                      |
+
+## Related information
+* Dependencies
+  - Tizen Studio 1.0 and Higher

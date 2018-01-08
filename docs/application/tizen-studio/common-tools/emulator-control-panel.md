@@ -1,7 +1,4 @@
 # Using Emulator Control Keys, Menu, and Panel
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
 
 Before deploying your application, it is important that you test it in an environment similar to a real device.
 
@@ -147,7 +144,7 @@ The control panel consists of 3 layers:
 To open the control panel:
 
 1. Launch the emulator.
-2. Right-click the emulator and select **Control Panel**.
+2. Right-click the emulator and select **Control Panel**.  
    ![Opening the control panel](./media/emulator_control_panel_open.png)
 
 The following table lists the control panel features and their availability on different profiles. The instructions for using the features are described below the table. You can use various [keyboard shortcuts](keyboard-shortcuts.md#ecp) for control panel tasks.
@@ -432,3 +429,7 @@ The following tables list the commands supported by the control panel CLI.
 |                 | `file`             | Yes    | Yes      | `sensor file <sensor> <path>`            |
 | `low_memory`    | `set`              | Yes    | Yes      | `low_memory set <hard-warning`&#124;`soft-warning`&#124;`normal>` |
 |                 | `status`           | yes    | Yes      | `low_memory status`                      |
+
+## Related Information
+* Dependencies
+  - Tizen Studio 1.0 and Higher

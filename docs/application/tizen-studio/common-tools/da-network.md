@@ -1,7 +1,4 @@
 # Performing Network Analysis
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
 
 The **Network** tab of the Dynamic Analyzer displays network information. It only supports the socket APIs of glibc.
 
@@ -15,6 +12,7 @@ The tab consists of the following views:
 
 ![Network analysis](./media/da_network_analysis.png)
 
+<a name="chart"></a>
 ## Network Chart
 
 The network chart displays the socket object in a tree format using a graph.
@@ -37,6 +35,7 @@ The line in the bar indicates the status of the API of the socket:
   - Purple area or line indicates the read area of the socket.
   - Lime green area or line indicates the write area of the socket.
 
+<a name="api_list"></a>
 ## Network API List
 
 The Network API List table displays the APIs associated with the socket object selected in the network chart.
@@ -59,6 +58,7 @@ The table contains the following columns:
 - **Payload** (text): Content of the data transfer
 - **Error code** (text): Error description of the API; a normal end return is **E_SUCCESS**
 
+<a name="details"></a>
 ## Network Details
 
 The Network Details view displays detailed information about the network socket object selected in the network chart.
@@ -78,3 +78,7 @@ The view contains the following fields:
 - **send ack time**: Received time after sending to the destination address
 - **Payload (ASCII)**: Content of the data transfer as ASCII
 - **Payload (hex Code)**: Content of the data transfer as Hex code
+
+## Related information
+* Dependencies
+  - Tizen Studio 1.0 and Higher
