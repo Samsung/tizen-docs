@@ -1,6 +1,6 @@
-
-
 # Tizen 4.0 Public M1
+
+Release Date: 31 May, 2017
 
 The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web and Native APIs.
 
