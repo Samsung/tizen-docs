@@ -9,11 +9,13 @@ The concept of fluid animation design represents the look and feel of a gentle b
 <video controls>
   <source src="media/animations_doencoded.webm" type=video/webm>
 </video>  
+
 *Do* (Click to play)
 
 <video controls>
   <source src="media/animations_donsencoded.webm" type=video/webm>
 </video>  
+
 *Don't* (Click to play)
 
 ##### Consistent Flow
@@ -25,11 +27,13 @@ Animations on the screen should have a consistent direction. Disorienting animat
 <video controls>
   <source src="media/2.5_c_1.webm" type=video/webm>
 </video>  
+
 *Do* (Click to play)
 
 <video controls>
   <source src="media/2.5_d_1.webm" type=video/webm>
 </video>  
+
 *Don't* (Click to play)
 
 When you design animations for different layers on the screen, provide them based on the actual movement of the layer they belong to.
@@ -53,9 +57,11 @@ When you design animations for buttons or icons, there are a few rules to follow
 <video controls>
   <source src="media/2.5_h_1.webm" type=video/webm>
 </video>  
+
 *Do* (Click to play)
 
 <video controls>
   <source src="media/2.5_i_1.webm" type=video/webm>
 </video>  
+
 *Don't* (Click to play)
