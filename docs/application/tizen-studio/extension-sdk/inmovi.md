@@ -63,21 +63,26 @@ To use InMobi Tizen Ads in Web applications:
    <script type="text/javascript" src="https://i.l.inmobicdn.net/sdk/jsac/p1/inmobi.js"></script>
    ```
 
-2. Request permission by adding the following privileges and access feature to the config.xml file:
-   `<!--To fetch ads from the InMobi Tizen Ads server-->
+2. Request permission by adding the following privileges and access feature to the config.xml file:  
+   ```
+   <!--To fetch ads from the InMobi Tizen Ads server-->
    <tizen:privilege name="http://tizen.org/privilege/internet"/>
    <!--To launch the browser for showing ads-->
    <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
    <!--To access cross domains-->
-   <access origin="*" subdomains="true"></access>`
+   <access origin="*" subdomains="true"></access>
+   ```
 
-3. Configure the parameters for the InMobi Tizen ad <div> element:siteid: Two IDs are provided during registration, one for banner ads and one for interstitial ads. Use the respective IDs for the type of ad to be created (Mandatory)slot: Corresponds to the dimensions of the slot or box where the ads appear in your application. (Mandatory)Currently supported slot numbers are 10 (300x250), 14 (320x480), and 15 (320x50).test: This parameter must be true during development and testing phase. It must be made false before publishing the application to receive the live ads.manual: This parameter must be set to true, otherwise it takes the default false value and the ad is rendered before the Web application page is rendered.autoRefresh: This is the auto refresh time in seconds. The minimum accepted value is 20.uIdMap: InMobi Tizen ad id as per user settings for personalized ads.`<script type="text/javascript">    var ad_id = '00000000-0000-0000-000000000000';</script><script type="text/javascript">    function requestAd() {        var inmobi_conf = {            siteid: "YOUR BANNER SITEID", /* Your banner site ID from InMobi registration */            slot: '15',            test: false,            manual: true,            autoRefresh: 20, /* In seconds, the minimum accepted value is 20 */            uIdMap: {TI: ad_id}        };        _inmobi.getNewAd(document.getElementById('tizen_15'), inmobi_conf);    }    function onSuccess(ad) {        ad_id = ad.id;        requestAd();    }    function onError(error) {        ad_id = '00000000-0000-0000-0000-000000000000';        requestAd();    }    function getAdId() {        try {            tizen.systeminfo.getPropertyValue('ADS', onSuccess, onError);        } catch (err) {            ad_id = '00000000-0000-0000-0000-000000000000';            requestAd();        }    } </script><body onload="getAdId()">  <div id="tizen_15">   <script type="text/javascript" src="https://i.l.inmobicdn.net/sdk/jsac/p1/inmobi.js"></script></div>`
+3. Configure the parameters for the InMobi Tizen ad <div> element:siteid: Two IDs are provided during registration, one for banner ads and one for interstitial ads. Use the respective IDs for the type of ad to be created (Mandatory)slot: Corresponds to the dimensions of the slot or box where the ads appear in your application. (Mandatory)Currently supported slot numbers are 10 (300x250), 14 (320x480), and 15 (320x50).test: This parameter must be true during development and testing phase. It must be made false before publishing the application to receive the live ads.manual: This parameter must be set to true, otherwise it takes the default false value and the ad is rendered before the Web application page is rendered.autoRefresh: This is the auto refresh time in seconds. The minimum accepted value is 20.uIdMap: InMobi Tizen ad id as per user settings for personalized ads.  
+```
+<script type="text/javascript">    var ad_id = '00000000-0000-0000-000000000000';</script><script type="text/javascript">    function requestAd() {        var inmobi_conf = {            siteid: "YOUR BANNER SITEID", /* Your banner site ID from InMobi registration */            slot: '15',            test: false,            manual: true,            autoRefresh: 20, /* In seconds, the minimum accepted value is 20 */            uIdMap: {TI: ad_id}        };        _inmobi.getNewAd(document.getElementById('tizen_15'), inmobi_conf);    }    function onSuccess(ad) {        ad_id = ad.id;        requestAd();    }    function onError(error) {        ad_id = '00000000-0000-0000-0000-000000000000';        requestAd();    }    function getAdId() {        try {            tizen.systeminfo.getPropertyValue('ADS', onSuccess, onError);        } catch (err) {            ad_id = '00000000-0000-0000-0000-000000000000';            requestAd();        }    } </script><body onload="getAdId()">  <div id="tizen_15">   <script type="text/javascript" src="https://i.l.inmobicdn.net/sdk/jsac/p1/inmobi.js"></script></div>
+```
 
 ## InMobi Tizen Ads for Native Applications
 
 This section describes the InMobi Tizen Ads APIs for Tizen native (EFL) applications. Familiarize yourself with Tizen native application development and EFL UI development before attempting to integrate the Ads SDK.
 
-The InMobi Tizen Ads SDK (inmobi-tizen-adsdk_1.0.3.zip) includes 1 library (Adlib) and 1 header file. To get started, [download the Tizen studio](https://developer.tizen.org/development/tizen-studio/download). If you are an existing user of Tizen SDK, [migrate from Tizen SDK to Tizen studio](https://developer.tizen.org/development/tizen-studio/download/tizen-studio-migration-guide). For more information on adding extension SDKs, see [Extension SDKs](https://developer.tizen.org/development/tizen-studio/download/configuring-package-manager).
+The InMobi Tizen Ads SDK (inmobi-tizen-adsdk_1.0.3.zip) includes 1 library (Adlib) and 1 header file. To get started, [download the Tizen studio](../setup/download.md). If you are an existing user of Tizen SDK, [migrate from Tizen SDK to Tizen studio](https://developer.tizen.org/development/tizen-studio/download/tizen-studio-migration-guide). For more information on adding extension SDKs, see [Extension SDKs](../setup/advanced-configution.md).
 
 To create InMobi Tizen ads in native applications:
 
@@ -111,7 +116,7 @@ To create InMobi Tizen ads in native applications:
    #include <adlib.h>
 
    adlib_err ret;
-   ret = adlib_init(const char *banner_site_id, const char *interstitial_site_id, const char *js_namespace, const char *js_src_url, const char *ad_conf_str_name); 
+   ret = adlib_init(const char *banner_site_id, const char *interstitial_site_id, const char *js_namespace, const char *js_src_url, const char *ad_conf_str_name);
    banner_site_id: "YOUR BANNER SITEID" /* Your banner site id from InMobi*/
    interstitial_site_id: "YOUR INTERSTITIAL SITEID" /* Your interstitial site id from InMobi*/
    js_namespace: "_inmobi" /*same string has to be passed*/
@@ -439,6 +444,6 @@ Category: User Experience
 
 This page will always host the latest version of the Inmobi Tizen Ad SDK. Advertizement service for older versions of the Ad SDK will be supported for only 90 days. When developer receives an email notice to udpate the Ad SDK, it is adviced to update quickly.
 
-File attachments: 
+File attachments:
 
  [tizen_inmobi_sdk_0831.zip](https://developer.tizen.org/sites/default/files/documentation/tizen_inmobi_sdk_0831.zip)

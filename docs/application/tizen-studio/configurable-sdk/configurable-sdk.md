@@ -2,11 +2,6 @@
 Configurable SDK
 ================
 
-## Dependencies
-
--   Tizen Studio 2.0 and Higher
-
-
 One of the main goals of Tizen 4.0 is configurability. The platform is not limited to a specific device type or profile, so vendors and platform developers can customize Tizen to support the functionalities they need.
 
 The main features of the Tizen mobile, wearable, and TV application life-cycles are extended to support configurable SDK platforms.
@@ -76,3 +71,7 @@ The package is created in the `Debug` subdirectory.
 **Figure: Created package**
 
 ![Created package](./media/configurable-package.png)
+
+## Related Information
+* Dependencies
+  -  Tizen Studio 2.0 and Higher
