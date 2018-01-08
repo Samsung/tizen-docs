@@ -4,7 +4,6 @@
 <a name="breeze-sans"></a>
 ## Breeze Sans
 
-
 Choosing the right typeface is important because Tizen apps rely on content-driven designs. Typefaces that are easy to read can improve the usability of the design by helping users better understand the content.
 
 Breeze Sans, the main typeface, is specifically designed for the Tizen UI since Tizen SDK 2.4. It provides excellent readability on all screen sizes, including the WVGA and HD resolutions.
@@ -15,16 +14,12 @@ Breeze Sans typeface comes in light, medium, regular, and condensed variants, an
 
 *Breeze Sans*
 
- 
-
 Recommended font sizes for the mobile app designs
 
 <a name="typeface-related-guidelines"></a>
 ## Typeface-related Guidelines
 
 These are the guidelines for choosing and applying the typefaces when you design a Tizen app:
-
- 
 
 ##### Design High Contrast Screens for Better Legibility
 
@@ -36,20 +31,13 @@ Refer to [Colors](colors.md) for detailed information about background and text 
 
 *Combination of text and background colors for high contrast*
 
-
- 
-
 ##### Keep the Text Colors Consistent
 
 Use text colors that stand out for important actions, and apply them consistently throughout the entire system. This will help users intuitively understand what the colors stand for.
 
-<img src="media/7.5_popup_bottom_button_2_.png" alt="Blue action text on Wearable circular type" width="190px" /> <img src="media/blueactiontext.png" alt="Blue action text on Wearable circular type" width="360" height="360" />    
+<img src="media/7.5_popup_bottom_button_2_.png" alt="Blue action text on Wearable circular type" width="190px" /> <img src="media/blueactiontext.png" alt="Blue action text on Wearable circular type" width="190px" margin-left="15px" />    
 
 *Blue action text on Wearable circular type*
-
-
-
- 
 
 ##### Avoid Using Multiple Typefaces
 
@@ -61,8 +49,6 @@ For example, use bold type for the title and regular type for the body text. Thi
 | :---: | :---: |
 | *Do* | *Don't* |
 
- 
-
 ##### Avoid Drastic Changes in Font Size
 
 Do not juxtapose text with varying sizes. Create a font size chart and refer to it when choosing the font sizes. Such practice helps you create more consistent and natural layout designs.
@@ -70,9 +56,6 @@ Do not juxtapose text with varying sizes. Create a font size chart and refer to 
 <img alt="Recommended font sizes for the mobile and wearable app designs" src="media/core_size_mobile-10.png" width="390px" />  <img alt="Recommended font sizes for the mobile and wearable app designs" src="media/core_size_wearable-13.png" width="390px" margin-left="9px" margin-bottom="244px" />  
 
 *Recommended font sizes for the mobile app designs*
-
-
- 
 
 ##### Consider Providing Accessibility Options for Users with Disabilities
 
