@@ -88,4 +88,4 @@ To determine the availability of optional APIs, use the `tizen.systeminfo.getCap
 
 Note that all mandatory APIs are supported on the Tizen Emulators, while the optional APIs may or may not be supported. For more information on support for each API, see [Tizen Web Device API Reference](../../../org.tizen.web.apireference/html/device_api/device_api_cover.html).
 
-To compare API support between Web Device API modules and native API modules, see [Tizen 3.0 Native and Web API Modules](attachments/Tizen-3.0-Native-Web-API-Modules.pdf).
+To compare API support between Web Device API modules and native API modules, see [Tizen 3.0 Native and Web API Modules](media/Tizen-3.0-Native-Web-API-Modules.pdf).
