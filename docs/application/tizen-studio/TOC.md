@@ -25,6 +25,7 @@
 #### [Databinding](native-tools/ui-builder-databind-n.md)
 #### [EFL to UI Builder Project Conversion](native-tools/ui-builder-conversion-n.md)
 #### [Combining Screens from Multiple Applications](native-tools/ui-project-migration-combi-n.md)
+#### [Custom UI Component](native-tools/ui-builder-customcomponent.md)
 ### [EDC Editor](native-tools/edc-editor-n.md)
 ### [Component Designer](native-tools/component-designer-n.md)
 ## Configuring Your App
@@ -114,21 +115,23 @@
 
 # RT IDE
 ## Getting Started
-### [Overview] (rt-ide/getting-started/oeverview.md)
-### [Installing Tizen Studio for RT](rt-ide/getting-started/rt-install.md)
-### [Managing a Project](rt-ide/getting-started/rt-create-project.md)
-### [Flashing the Project](rt-ide/getting-started/rt-flash.md)
-### [Using the Serial Terminal](rt-ide/getting-started/rt-terminal.md)
-### [Debugging the Project](rt-ide/getting-started/rt-debug.md)
-## SmartThings™ Extension
-### [Overview] (rt-ide/smart-things-extension/overview.md)
-### [Creating a SmartThings™ Project](rt-ide/smart-things-extension/create-smartthings.md)
-### [Building the SmartThings™ Project](rt-ide/smart-things-extension/build-smartthings.md)
-### [Device/Resource Model Manager](rt-ide/smart-things-extension/model-manager.md)
+### [Overview] (rt-ide/getting-started/overview.md)
+### [Installing Tizen Studio for RT](rt-ide/getting-started/install.md)
+### [Managing a Project](rt-ide/getting-started/create.md)
+### [Flashing the Project](rt-ide/getting-started/flash.md)
+### [Using the Serial Terminal](rt-ide/getting-started/terminal.md)
+### [Debugging the Project](rt-ide/getting-started/debug.md)
+## SmartThings&trade; Extension
+### [Overview] (rt-ide/smartthings-ext/overview.md)
+### [Creating a SmartThings&trade; Project](rt-ide/smartthings-ext/create-project.md)
+### [Building the SmartThings&trade; Project](rt-ide/smartthings-ext/build-project.md)
+### [Managing SmartThings&trade; Certificates](rt-ide/smartthings-ext/manage-certificate.md)
+### [Device/Resource Model Manager](rt-ide/smartthings-ext/model-manager.md)
 
 # [Configurable SDK](configurable-sdk/configurable-sdk.md)
 
 # Release Notes
+## [2.1 (Jan 3, 2018](release-notes/2-1-release-notes.md)
 ## [2.0 (Nov 1, 2017)](release-notes/2-0-release-notes.md)
 ## [1.3 (Oct 11, 2017)](release-notes/1-3-0-release-notes.md)
 ## [1.2 (May 10, 2017)](release-notes/1-2-0-release-notes.md)
@@ -137,5 +140,3 @@
 ## [1.0.2 (Dec 23, 2016)](release-notes/1-0-2-release-notes.md)
 ## [1.0.1 (Oct 28, 2016)](release-notes/1-0-1-release-notes.md)
 ## [1.0 (Sep 1, 2016)](release-notes/1-0-release-notes.md)
-
-
