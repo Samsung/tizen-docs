@@ -74,3 +74,14 @@
 ## Release Notes
 ### [Tizen RT 1.0 M1](tizen-rt/release-notes/tizen-rt-1-0-m1.md)
 
+# Tizen Studio
+## [Overview](tizen-studio/overview.md)
+## [Contributing to Tizen Studio](tizen-studio/contribute-gerrit.md)
+### Developing Extensions
+### [IDE Extension Development](tizen-studio/web-extension-guide.md)
+### [Emulator Extension Development](tizen-studio/emulator-extension-guide.md)
+### [Package File Description](tizen-studio/package-file-desc-guide.md)
+### [Metapackage File Description](tizen-studio/meta-package.md)
+## Building Tizen Studio Code
+### [Build Environment](tizen-studio/environment.md)
+### [Local Build Guide](tizen-studio/local-build.md)
