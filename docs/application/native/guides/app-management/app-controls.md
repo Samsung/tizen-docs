@@ -563,6 +563,7 @@ To run a specific application control with some preconfigured parameters:
        dlog_print(DLOG_ERROR, LOG_TAG, "app_control_destroy() failed. err = %d", ret);
    ```
 
+<a name="mode"></a>
 ## Controlling the Launch Mode
 
 In this use case, the caller application has a **Launch** button. When it is clicked, an application control is used to launch a sub application within the same group.
