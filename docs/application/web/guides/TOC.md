@@ -62,13 +62,13 @@
 # [Alarms](alarm/alarms-w.md)
 
 # Media and Camera
-## [JPEG File EXIF Information](media/jpeg-exif-w.md)
-## [Audio Management](media/audio-w.md)
-## [Audio Latency](media/player-util-w.md)
-## [Media Controller](media/media-controller-w.md)
-## [Media Key Events](media/media-key-w.md)
-## [Radio](media/radio-w.md)
-## [Camera](media/camera-w.md)
+## [JPEG File EXIF Information](multimedia/jpeg-exif-w.md)
+## [Audio Management](multimedia/audio-w.md)
+## [Audio Latency](multimedia/player-util-w.md)
+## [Media Controller](multimedia/media-controller-w.md)
+## [Media Key Events](multimedia/media-key-w.md)
+## [Radio](multimedia/radio-w.md)
+## [Camera](multimedia/camera-w.md)
 
 # Connectivity and Wireless
 ## [Bluetooth](connectivity/bluetooth-w.md)
