@@ -1,8 +1,4 @@
 # Updating Tizen Studio
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
-
 
 The Tizen Studio provides the Package Manager, a comprehensive package management tool for installing, updating, and removing platforms and tools. This topic describes how to install, update, and remove packages using the GUI version of the tool, and how to update packages with the CLI version of the tool.
 
@@ -117,3 +113,7 @@ package-manager-cli update [--accept-license] [--no-java-check] [--proxy <value>
 | `-f, --file <file path>`    | If you want to install packages from a local SDK image, specify the full path of the SDK image file. |
 | `-p, --password <password>` | Administrator (sudo) password for authentication. Ubuntu only. |
 | `--latest`                  | This option is only useful for updating the Tizen Studio to the latest version after you downgraded it manually to an earlier version. Otherwise, the Package Manager updates it to the latest version with or without this option. |
+
+## Related Information
+* Dependencies
+  - Tizen Studio 1.0 and Higher
