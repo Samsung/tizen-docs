@@ -1,9 +1,5 @@
 # Device/Resource Model Manager
 
-## Dependencies
-- Ubuntu Only
-
-
 You can use the Device/Resource Model Manager to select a device model for interworking with the SmartThings&trade; service.
 
 With the Model Manager, you can:
@@ -121,3 +117,8 @@ If you edit the SmartThings&trade; resources in your project later on, the Model
 **Figure: Backup files**
 
 ![Backup files](media/rt_model_manage_backups.png)
+
+
+## Related Information
+* Dependencies
+  - Ubuntu Only
