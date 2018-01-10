@@ -18,7 +18,7 @@ device](./media/widget_app_wearable_widget.png)
 
 Study the following instructions to help familiarize yourself with the
 Tizen [Web application development
-process](../process/app-dev-process-w.md) as well as using the Tizen
+process](../../tutorials/process/app-dev-process.md) as well as using the Tizen
 Studio and installing the created application on the emulator or target
 device. With the instructions, you can create and run a basic wearable
 Web widget application (a Web widget), which displays some text on the
@@ -26,11 +26,11 @@ screen with no user interaction:
 
 1.  Before you get started with developing Tizen applications, download
     and install the [Tizen
-    Studio](../../../tizen-studio/download/download.md).
+    Studio](../../../tizen-studio/setup/download.md).
 
     For more information on the installation process, see the
     [installation
-    guide](../../../tizen-studio/download/installing-sdk.md).
+    guide](../../../tizen-studio/setup/installing-sdk.md).
 
 2.  [Create a wearable Web widget project](#create) using the
     Tizen Studio.
@@ -55,7 +55,7 @@ screen with no user interaction:
 
 When you are developing a more complex application, you can take
 advantage of the [Web tools included in the Tizen
-Studio](../../../tizen-studio/web-tools/cover-web-w.md) to
+Studio](../../../tizen-studio/web-tools/cover-web.md) to
 ease the tasks of creating functionality and designing the application
 UI.
 
@@ -136,7 +136,7 @@ To create the application project:
 
       ![Defining        properties](./media/create_project_wizard_properties_ww_widget.png)
 
-      The Project Wizard sets up the project, creates the application        files using the default content from the template, and closes.        For more information on the Project Wizard and the available        templates, see [Creating Tizen Projects with Tizen Project        Wizard](../../../tizen-studio/web-tools/project-wizard-w.md).
+      The Project Wizard sets up the project, creates the application        files using the default content from the template, and closes.        For more information on the Project Wizard and the available        templates, see [Creating Tizen Projects with Tizen Project        Wizard](../../../tizen-studio/web-tools/project-wizard.md).
 
 You can see the created project in the **Project Explorer** view. The
 most important files and folders include:
@@ -200,7 +200,8 @@ X**).
 
 ![Validation results](./media/widget_validate_result_w.png)
 
-### Managing the Application Configuration <a name="configuration"></a>
+<a name="configuration"></a>
+### Managing the Application Configuration
 
 To view and modify the application configuration:
 
@@ -245,7 +246,7 @@ To view and modify the application configuration:
 
 3.  To save any changes, in the Tizen Studio menu, select **File &gt;    Save All**.
 
-For more information on configuring the application, see [Setting the Web Application Configuration](../process/setting-properties-w.md#set_widget).
+For more information on configuring the application, see [Setting the Web Application Configuration](../../tutorials/process/setting-properties.md#set_widget).
 
 <a name="build"></a>
 ## Building Your Application
@@ -305,8 +306,8 @@ After you have built the application, run it.
 ## Running Your Application
 
 You can run the Web widget application on the
-[emulator](../process/run-debug-app-w.md#emulator) or a [real target
-device](../process/run-debug-app-w.md#target).
+[emulator](../../tutorials/process/run-debug-app.md#emulator) or a [real target
+device](../../tutorials/process/run-debug-app.md#target).
 
 > **Note**  
 > Since the Web Simulator does not support a circular UI, this

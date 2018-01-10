@@ -9,7 +9,7 @@ CSS, and JavaScript.
 
 Study the following instructions to help familiarize yourself with the
 Tizen [Web application development
-process](../process/app-dev-process-w.md) as well as using the Tizen
+process](../../tutorials/process/app-dev-process.md) as well as using the Tizen
 Studio and installing the created application on the emulator or target
 device. With the instructions, you can create and run a basic mobile Web
 application, which displays some text on the screen and changes the text
@@ -17,11 +17,11 @@ when the user clicks it:
 
 1.  Before you get started with developing Tizen applications, download
     and install the [Tizen
-    Studio](../../../tizen-studio/download/download.md).
+    Studio](../../../tizen-studio/setup/download.md).
 
     For more information on the installation process, see the
     [installation
-    guide](../../../tizen-studio/download/installing-sdk.md).
+    guide](../../../tizen-studio/setup/installing-sdk.md).
 
 2.  [Create a mobile Web project](#create) using the Tizen Studio.
 
@@ -46,7 +46,7 @@ when the user clicks it:
 
 When you are developing a more complex application, you can take
 advantage of the [Web tools included in the Tizen
-Studio](../../../tizen-studio/web-tools/cover-web-w.md) to
+Studio](../../../tizen-studio/web-tools/cover-web.md) to
 ease the tasks of creating functionality and designing the application
 UI.
 
@@ -127,7 +127,7 @@ To create the application project:
       The Project Wizard sets up the project, creates the application        files using the default content from the template, and closes.
       For more information on the Project Wizard and the available
       templates, see [Creating Tizen Projects with Tizen Project
-      Wizard](../../../tizen-studio/web-tools/project-wizard-w.md).
+      Wizard](../../../tizen-studio/web-tools/project-wizard.md).
 
 You can see the created project in the **Project Explorer** view. The
 most important files and folders include:
@@ -211,7 +211,7 @@ To view and modify the application configuration:
 
 For more information on configuring the application, see [Setting the
 Web Application
-Configuration](../process/setting-properties-w.md#set_widget).
+Configuration](../../tutorials/process/setting-properties.md#set_widget).
 
 <a name="build"></a>
 ## Building Your Application
@@ -270,9 +270,9 @@ After you have built the application, run it.
 ## Running Your Application
 
 You can run the Web application on the
-[emulator](../process/run-debug-app-w.md#emulator), [Web
-Simulator](../process/run-debug-app-w.md#simulator), or a [real target
-device](../process/run-debug-app-w.md#target).
+[emulator](../../tutorials/process/run-debug-app.md#emulator), [Web
+Simulator](../../tutorials/process/run-debug-app.md#simulator), or a [real target
+device](../../tutorials/process/run-debug-app.md#target).
 
 <a name="emulator"></a>
 ### Running on the Emulator
@@ -358,7 +358,7 @@ To run the application on the Web Simulator:
 
 For more information on using the Web Simulator features, see [Taking
 Advantage of Web Simulator
-Features](../../../tizen-studio/web-tools/web-simulator-features-w.md).
+Features](../../../tizen-studio/web-tools/web-simulator-features.md).
 
 <a name="target"></a>
 ### Running on a Target Device
@@ -417,7 +417,8 @@ interface. With HTML, you can define the structure of the application
 screens, while CSS allows you to define the look and feel of the
 screens.
 
-#### HTML <a name="html"></a>
+<a name="html"></a>
+#### HTML
 
 HTML DOM is a structured model to control Web elements. It is an
 official W3C standard to express the document regardless of platforms or
@@ -1019,6 +1020,6 @@ To create a Web application and design its UI with TAU:
     The above steps have created a simple Tizen mobile Web application
     with the TAU library. For more advanced UI components and APIs, see
     [Tizen Advanced
-    UI](../../../guides/web/ui/tau/tau-w.md) and [TAU
+    UI](../../guides/ui/tau/tau.md) and [TAU
     API
     Reference](../../../../org.tizen.web.apireference/html/ui_fw_api/ui_fw_api_cover.htm).

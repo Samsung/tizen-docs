@@ -1,12 +1,12 @@
 
 # Tizen Web Application
 
-The [Tizen Studio](../../../tizen-studio/cover-page.md)
+The [Tizen Studio](../tizen-studio/index.md)
 enables you to create Web applications for mobile, wearable, and TV
 devices. A Web application consists of HTML, JavaScript, and CSS
 combined in a package, which can be installed on the Tizen device.
 
-A [Web application package](../process/app-dev-process-w.md#package)
+A [Web application package](./tutorials/process/app-dev-process.md#package)
 includes all the support files that are needed by the Web application.
 Therefore, a Web application can run without any additional external
 resources or network connectivity after installation.
@@ -53,14 +53,14 @@ The Tizen Web application must follow the guidelines of [W3C Widget
 Packaging and XML
 Configuration](https://www.w3.org/TR/2011/REC-widgets-20110927/) and
 Tizen extended configuration (in
-[mobile](../../../tizen-studio/web-tools/config-editor-w.md#mw_extend)
+[mobile](../tizen-studio/web-tools/config-editor.md#mw_extend)
 and
-[wearable](../../../tizen-studio/web-tools/config-editor-w.md#ww_extend)
+[wearable](../tizen-studio/web-tools/config-editor.md#ww_extend)
 applications).
 
 For more information on the configuration elements, see [Configuration
 Element
-Hierarchy](../../../tizen-studio/web-tools/config-editor-w.md#hierarchy).
+Hierarchy](../tizen-studio/web-tools/config-editor.md#hierarchy).
 
 <a name="wap"></a>
 ### Web Application Package

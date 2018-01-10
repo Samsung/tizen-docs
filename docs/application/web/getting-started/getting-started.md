@@ -5,25 +5,25 @@ When creating your first Tizen Web application, you can select from the
 following options, which all use the Web-native languages, such as
 HTML5, CSS, and JavaScript:
 
--   [Mobile Web application](mobile/first-app-mw.md)
+-   [Mobile Web application](mobile/first-app-m.md)
 
     A mobile application is targeted to run on smart phones, and can
     take advantage of a wide variety of functionalities available on
     those devices.
 
--   [Wearable Web application](wearable/first-app-ww.md)
+-   [Wearable Web application](wearable/first-app-w.md)
 
     A wearable application is targeted to run on smart watches, and can
     be optimized for the smaller screen.
 
 -   [Wearable Web watch
-    application](wearable-watch/first-app-watch-ww.md)
+    application](wearable-watch/first-app-watch-w.md)
 
     A wearable watch application is a customized watch face that can be
     shown as the device home screen.
 
 -   [Wearable Web widget
-    application](wearable-widget/first-app-widget-ww.md)
+    application](wearable-widget/first-app-widget-w.md)
 
     A wearable widget application is a small application that can be
     shown by specific UI applications (such as the home screen).
