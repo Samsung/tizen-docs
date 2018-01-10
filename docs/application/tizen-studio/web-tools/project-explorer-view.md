@@ -1,13 +1,10 @@
 # Managing Tizen Projects with Project Explorer View
-## Dependencies
-- Tizen Studio 1.0 and Higher
-
 
 The **Project Explorer** view allows you to view and manage Tizen projects. You can view and change the resources of a project in the view, and build, export, and convert projects through the view.
 
 **Figure: Project Explorer**
 
-![Project Explorer](./media/proj_explorer_w.png) 
+![Project Explorer](./media/proj_explorer_w.png)
 
 In this view, you can:
 
@@ -19,21 +16,23 @@ In this view, you can:
 - Restore deleted files from local history
 - Import or export files and projects
 
-## Opening the Project Explorer View<a name="opening"></a>
+<a name="opening"></a>
+## Opening the Project Explorer View
 
 Usually, the **Project Explorer** view is located in the upper-left side of the Tizen Studio. You can change the position by dragging and dropping it. If you close the view, you can show it again by selecting **Project Explorer** in **Window > Show View > Other > General**.
 
 **Figure: Opening the view**
 
-![Opening the view](./media/proj_explorer_general.png) 
+![Opening the view](./media/proj_explorer_general.png)
 
-## Using the Project Explorer View<a name="view"></a>
+<a name="view"></a>
+## Using the Project Explorer View
 
 The files that you select in the **Project Explorer** view affect the information that is displayed in the other views. You can execute and set some operations and configurations by clicking the icons (![Toolbar icons](./media/proj_explorer_op_config.png)) in the toolbar.
 
 **Figure: Executing operations**
 
-![Executing operations](./media/proj_explorer_right_click_w.png) 
+![Executing operations](./media/proj_explorer_right_click_w.png)
 
 To execute operations, such as copying, moving, creating new resources, and comparing resources with each other, right-click on any resource in the **Project Explorer** view, and select the desired action in the context menu. The items in the context menu depend on the focused item. Different folder and file types have different action options.
 
@@ -70,3 +69,7 @@ To execute operations, such as copying, moving, creating new resources, and comp
 | **Compare With**             | Allows you to do one of the following types of compares:  <br />  - Compare 2 or 3 selected resources with each other.<br />  - Compare the selected resource with remote versions (if the project is associated with a version control management system).<br />  - Compare the selected resource with a local history state.	<br />After you select the type of compare you want to do, you either see a compare editor or a compare dialog. In the compare editor, you can browse and copy various changes between the compared resources.  In the compare dialog, you can only browse through the changes. |
 | **Replace With**             | Allows you to replace the selected resource with another state from the local history. If the project is under version control management, there can be additional items supplied by the version control management system as well. |
 | **Properties**               | Displays the properties of the selected resource. The displayed properties depend on what type of resource is selected. Resource properties can include (but are not limited to):  <br />  - Path relative to the project in which it is held<br />  - Type of the resource<br />  - Absolute file system path, or name of the path variable when using linked resources<br />  - Resolved path variable when using a path variable for a linked resource<br />  - Size of the resource<br />  - Last modified date<br />  - Read-only status<br />  - Derived resource status<br />  - Execution arguments, if it is an executable resource<br />  - Program launchers, if it is able to be launched<br />  - Project dependencies, if any |
+
+## Related information
+* Dependencies
+  - Tizen Studio 1.0 and Higher

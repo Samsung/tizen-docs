@@ -1,7 +1,4 @@
 # Localizing Web Applications
-## Dependencies
-- Tizen Studio 1.0 and Higher
-
 
 Localization is the process of adapting your application for a specific region or language. Localization allows the application access to different resources without source code changes.
 
@@ -26,11 +23,11 @@ To open the **Web Localization** view:
 
 To use localized strings and resource content, you must add locales for them:
 
-1. Click the **Add locale(s)** button (![Add locale(s)](./media/web_loc_icon_add_locales.png)). 
+1. Click the **Add locale(s)** button (![Add locale(s)](./media/web_loc_icon_add_locales.png)).
 
    ![Adding locales](./media/web_loc_add_locales.png)
 
-2. In the **New Target Locale** table, select the locales you want. 
+2. In the **New Target Locale** table, select the locales you want.
 
    ![Selecting locales](./media/web_loc_select_locales.png)
 
@@ -46,7 +43,7 @@ A container named locales is created for the localized content. Under the contai
 
 To localize and handle strings, use the **String** tab:
 
-1. To add a localized string, click the **Add localization** button (![Add localization](./media/web_loc_icon_add_locales.png)) on the toolbar. 
+1. To add a localized string, click the **Add localization** button (![Add localization](./media/web_loc_icon_add_locales.png)) on the toolbar.
 
    ![Adding a string](./media/web_loc_add_localization_button.png)
 
@@ -76,14 +73,14 @@ When the string localization is complete, the following modifications are made i
 
   ![language.js](./media/web_loc_language_js.png)
 
-- The `<script>` element, whose `src` attribute is `language.js`, is added to the `index.html` file. 
+- The `<script>` element, whose `src` attribute is `language.js`, is added to the `index.html` file.
 
   **Figure: src element in index.html**
 
   ![src element in index.html](./media/web_loc_index_html.png)
 
   > **Note**  
-  > For more information on using localized string content, see [Localization](https://developer.tizen.org/development/guides/web-application/localization). 
+  > For more information on using localized string content, see [Localization](https://developer.tizen.org/development/guides/web-application/localization).
 
 ### Using Resources for Localization
 
@@ -103,10 +100,10 @@ To localize the missing resource:
 
 1. Click the **+** button on the resource tile.
 
-2. In the **Select a file to set** dialog, select a new resource to replace the default resource, and click **OK**. 
+2. In the **Select a file to set** dialog, select a new resource to replace the default resource, and click **OK**.
 
    ![Adding a resource](./media/web_loc_select_file_dialog.png)
-   
+
    The complex folder structures are created and the names of the resource files are replaced.
 
 ## Folder-based Localization
@@ -127,3 +124,7 @@ root/
             a.png
             c.png
 ```
+
+## Related information
+* Dependencies
+  - Tizen Studio 1.0 and Higher

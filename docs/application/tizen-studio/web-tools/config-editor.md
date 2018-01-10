@@ -1,7 +1,4 @@
 # Configuring Applications
-## Dependencies
-- Tizen Studio 1.0 and Higher
-
 
 The Tizen Web application configuration file is composed of XML elements, including the `<widget>` element as its root and other elements. These elements represent application information, such as [configuration elements](#elements) and Tizen extending configuration elements for [mobile](#mw_extend) and [wearable](#ww_extend) applications.
 
@@ -10,9 +7,10 @@ This configuration information is used when you install or run the Tizen Web app
 The configuration file can be easily edited with the [Web application configuration editor](#edit) (form editor), or you can modify the XML structure directly using the configuration source editor. With the form editor, you can set the project configuration (manifest), even if you have no experience with developing a Tizen Web application project. If you are fluent with the configuration file XML structure, you can create the configuration file directly through the configuration source editor.
 
 > **Note**  
-> The `config.xml` must conform to both the XML file format and the W3C specification requirements. Editing the file XML structure with the configuration source editor is intended for advanced users only. 
+> The `config.xml` must conform to both the XML file format and the W3C specification requirements. Editing the file XML structure with the configuration source editor is intended for advanced users only.
 
-## Editing the config.xml File<a name="edit"></a>
+<a name="edit"></a>
+## Editing the config.xml File
 
 There are 2 different ways to edit the `config.xml` file:
 
@@ -26,7 +24,7 @@ There are 2 different ways to edit the `config.xml` file:
 
      ![Source tab](./media/config_text.png)
 
-- Use the form tabs: 
+- Use the form tabs:
 
   1. Double-click the `config.xml` file in the **Project Explorer** view.
 
@@ -36,7 +34,8 @@ There are 2 different ways to edit the `config.xml` file:
 
   ![Form tabs](./media/config_form.png)
 
-## Configuration Element Hierarchy<a name="hierarchy"></a>
+<a name="hierarchy"></a>
+## Configuration Element Hierarchy
 
 The Tizen Web application configuration file consists of XML elements organized in a hierarchy. The following tree structure shows the relationship between the elements of the `config.xml` file.
 
@@ -46,9 +45,9 @@ The Tizen Web application configuration file consists of XML elements organized 
 |            |                                          | `<tizen:icon>`            |                       |
 |            |                                          | `<tizen:display-name>`    |                       |
 |            |                                          | `<tizen:capability>`      |                       |
-|            | `<tizen:account>` (in [mobile](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#mw_account) or [wearable](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#ww_account)) |                           |                       |
-|            | `<tizen:allow-navigation>` (in [mobile](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#mw_navigation) or [wearable](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#ww_allownavigation)) |                           |                       |
-|            | `<tizen:app-control>` (in [mobile](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#mw_appcontrol) or [wearable](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#appcontrol)) |                           |                       |
+|            | `<tizen:account>` (in [mobile](#mw_account) or [wearable](#ww_account)) |                           |                       |
+|            | `<tizen:allow-navigation>` (in [mobile](#mw_navigation) or [wearable](#ww_allownavigation)) |                           |                       |
+|            | `<tizen:app-control>` (in [mobile](#mw_appcontrol) or [wearable](#appcontrol)) |                           |                       |
 |            |                                          | `<tizen:src>`             |                       |
 |            |                                          | `<tizen:operation>`       |                       |
 |            |                                          | `<tizen:uri>`             |                       |
@@ -59,19 +58,19 @@ The Tizen Web application configuration file consists of XML elements organized 
 |            |                                          | `<tizen:widget-content>`  |                       |
 |            |                                          |                           | `<tizen:widget-size>` |
 |            |                                          | `<tizen:widget-metadata>` |                       |
-|            | `<tizen:appdefined-privilege>` (in [mobile](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#mw_appdefined_privilege) or [wearable](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#ww_appdefined_privilege)) |                           |                       |
-|            | `<tizen:application>` (in [mobile](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#mw_application) or [wearable](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#ww_application)) |                           |                       |
+|            | `<tizen:appdefined-privilege>` (in [mobile](#mw_appdefined_privilege) or [wearable](#ww_appdefined_privilege)) |                           |                       |
+|            | `<tizen:application>` (in [mobile](#mw_application) or [wearable](#ww_application)) |                           |                       |
 |            | `<author>`                               |                           |                       |
 |            |                                          | `<span>`                  |                       |
-|            | `<tizen:background-category>` (in [mobile](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#mw_bg_category) or [wearable](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#ww_bg_category)) |                           |                       |
+|            | `<tizen:background-category>` (in [mobile](#mw_bg_category) or [wearable](#ww_bg_category)) |                           |                       |
 |            | `<tizen:category>` (in wearable only)    |                           |                       |
 |            | `<content>`                              |                           |                       |
-|            | `<tizen:content>` (in [mobile](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#mw_webapp) or [wearable](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#ww_tizencontent)) |                           |                       |
-|            | `<tizen:content-security-policy>` (in [mobile](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#mw_sec) or [wearable](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#ww_contentsecpolicy)) |                           |                       |
-|            | `<tizen:content-security-policy-report-only>` (in [mobile](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#mw_secreport) or [wearable](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#ww_contentsecpolicyreport)) |                           |                       |
+|            | `<tizen:content>` (in [mobile](#mw_webapp) or [wearable](#ww_tizencontent)) |                           |                       |
+|            | `<tizen:content-security-policy>` (in [mobile](#mw_sec) or [wearable](#ww_contentsecpolicy)) |                           |                       |
+|            | `<tizen:content-security-policy-report-only>` (in [mobile](#mw_secreport) or [wearable](#ww_contentsecpolicyreport)) |                           |                       |
 |            | `<description>`                          |                           |                       |
 |            |                                          | `<span>`                  |                       |
-|            | `<feature>` (in [mobile](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#mw_feature) or [wearable](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#ww_feature)) |                           |                       |
+|            | `<feature>` (in [mobile](#mw_feature) or [wearable](#ww_feature)) |                           |                       |
 |            |                                          | `<param>`                 |                       |
 |            | `<icon>`                                 |                           |                       |
 |            | `<tizen:ime>` (in wearable only)         |                           |                       |
@@ -80,13 +79,13 @@ The Tizen Web application configuration file consists of XML elements organized 
 |            |                                          |                           | `<tizen:language>`    |
 |            | `<license>`                              |                           |                       |
 |            |                                          | `<span>`                  |                       |
-|            | `<tizen:metadata>` (in [mobile](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#mw_metadata) or [wearable](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#ww_metadata)) |                           |                       |
+|            | `<tizen:metadata>` (in [mobile](#mw_metadata) or [wearable](#ww_metadata)) |                           |                       |
 |            | `<name>`                                 |                           |                       |
 |            |                                          | `<span>`                  |                       |
 |            | `<preference>`                           |                           |                       |
-|            | `<tizen:privilege>` (in [mobile](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#mw_privilege) or [wearable](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#ww_privilege)) |                           |                       |
-|            | `<tizen:provides-appdefined-privilege>` (in [mobile](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#mw_provides_appdefined_privilege) or [wearable](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#ww_provides_appdefined_privilege)) |                           |                       |
-|            | `<tizen:profile>` (in [mobile](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#mw_profile) or [wearable](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#ww_profile)) |                           |                       |
+|            | `<tizen:privilege>` (in [mobile](#mw_privilege) or [wearable](#ww_privilege)) |                           |                       |
+|            | `<tizen:provides-appdefined-privilege>` (in [mobile](#mw_provides_appdefined_privilege) or [wearable](#ww_provides_appdefined_privilege)) |                           |                       |
+|            | `<tizen:profile>` (in [mobile](#mw_profile) or [wearable](#ww_profile)) |                           |                       |
 |            | `<tizen:service>` (in wearable only)     |                           |                       |
 |            |                                          | `<tizen:name>`            |                       |
 |            |                                          | `<tizen:icon>`            |                       |
@@ -94,18 +93,18 @@ The Tizen Web application configuration file consists of XML elements organized 
 |            |                                          | `<tizen:description>`     |                       |
 |            |                                          | `<tizen:metadata>`        |                       |
 |            |                                          | `<tizen:category>`        |                       |
-|            | `<tizen:setting>` (in [mobile](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#mw_setting) or [wearable](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#ww_setting)) |                           |                       |
-|            | `<tizen:trust-anchor>` (in [mobile](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#mw_trust-anchor) or [wearable](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#ww_trust-anchor)) |                           |                       |
+|            | `<tizen:setting>` (in [mobile](#mw_setting) or [wearable](#ww_setting)) |                           |                       |
+|            | `<tizen:trust-anchor>` (in [mobile](#mw_trust-anchor) or [wearable](#ww_trust-anchor)) |                           |                       |
 
-## Configuration Elements<a name="elements"></a>
+<a name="elements"></a>
+## Configuration Elements
 
 The following tables summarize the W3C configuration elements used in the `config.xml` file of a Web application. For more information on the W3C element details, see [Widget Packaging and XML Configuration](https://www.w3.org/TR/2011/REC-widgets-20110927/) (the details of the Tizen extending configuration elements are described in [Extending Configuration Elements in Mobile Applications](#mw_extend) and [Extending Configuration Elements in Wearable Applications](#ww_extend)). For a quick view of the element hierarchy, see [Configuration Element Hierarchy](#hierarchy).
 
 | `<widget>` element                       |
 | ---------------------------------------- |
-| Represents the root element of a configuration document. <br />**Expected children:**<br />`<access>`, `<tizen:account>`, `<tizen:app-control>`, `<tizen:appdefined-privilege>`, `<tizen:application>`, `<author>`, `<content>`, `<tizen:content>`, `<description>`, `<feature>`, `<icon>`, `<license>`, `<name>`, `<preference>`, `<tizen:privilege>`,
-`<tizen:appdefined-privilege>`, `<tizen:application>`, `<author>`,
-`<tizen:setting>`<br />**Attributes:**<br />-`xml:lang`<br />-`dir`<br />-`id`<br />-`version`     <br />Specific version of the Tizen package. The expected value is `[0-255].[0-255].[0-65535]`.<br />-`height`<br />-`width`<br />-`viewmodes`<br />-`defaultlocale` |
+| Represents the root element of a configuration document. <br />**Expected children:**<br />`<access>`, `<tizen:account>`, `<tizen:app-control>`, `<tizen:appdefined-privilege>`, `<tizen:application>`, `<author>`, `<content>`, `<tizen:content>`, `<description>`, `<feature>`, `<icon>`, `<license>`, `<name>`, `<preference>`, `<tizen:privilege>`,`<tizen:appdefined-privilege>`, `<tizen:application>`, `<author>`,`<tizen:setting>`<br />**Attributes:**<br />-`xml:lang`<br />-`dir`<br />-`id`<br />-`version`     <br />Specific version of the Tizen package. The expected value is `[0-255].[0-255].[0-65535]`.<br />-`height`<br />-`width`<br />-`viewmodes`<br />-`defaultlocale` |
+
 
 | `<access>` element                       |
 | ---------------------------------------- |
@@ -147,7 +146,8 @@ The following tables summarize the W3C configuration elements used in the `confi
 | ---------------------------------------- |
 | Represents the generic container used mainly for internationalization. <br />**Expected children:**<br />`<span>` and `<text node>`<br />**Attributes:**<br />-`xml:lang`<br />-`dir` |
 
-## Extending Configuration Elements in Mobile Applications<a name="mw_extend"></a>
+<a name="mw_extend"></a>
+## Extending Configuration Elements in Mobile Applications
 
 The following sections show additional configuration elements used in the `config.xml` file of a Web application, but not included in the [Widget Packaging and XML Configuration guidelines](https://www.w3.org/TR/2011/REC-widgets-20110927/). For a quick view of the entire element hierarchy, see [Configuration Element Hierarchy](#hierarchy).
 
@@ -156,23 +156,26 @@ The following sections show additional configuration elements used in the `confi
 
 The maximum length of the attribute and the element (except `<tizen:metadata>`, W3C preference element) can be limited to 2048 bytes. In this case, leftover bytes are ignored.
 
-### Tizen Account<a name="mw_account"></a>
+<a name="mw_account"></a>
+### Tizen Account
 
 | `<tizen:account/>` element               |
 | ---------------------------------------- |
 | Used to register account provider information.      <br />**Occurrences:** <br />-0 or more<br />**Expected children:** <br />-`icon` <br />Mandatory. Since the icons are used on the device under **Settings > Accounts**, place them in a shared directory.<br />**Attributes:**<br />  -`Account`: File path of the account provider icon. The icon size is 72 x 72 pixels.<br />  -`AccountSmall`: File path of the account provider small icon. The icon size is 45 x 45 pixels. <br />-`display-name` <br />Mandatory; display name of the account provider<br />-`capability`<br />Optional; capability of the account provider. Capabilities are defined in the `http://<VENDOR_INFORMATION>/accounts/capability/<NAME>` IRI format.<br />**Attributes:** <br />-`multiple-account-support` <br />Mandatory; indicates whether multiple accounts are supported (available values: `true`, `false`)<br />**Example:**<br />`<tizen:account multiple-account-support="false">   <tizen:icon section="Account">account_provider_icon.png</tizen:icon>   <tizen:icon section="AccountSmall">account_provider_small_icon.png</tizen:icon>    <tizen:display-name xml:lang="en">AccountProviderExample</tizen:display-name>   <tizen:capability>http://tizen.org/account/capability/contact</tizen:capability></tizen:account>` |
 
-### Tizen Navigation Policy<a name="mw_navigation"></a>
+<a name="mw_navigation"></a>
+### Tizen Navigation Policy
 
 | `<tizen:allow-navigation/>` element      |
 | ---------------------------------------- |
 | Used to define a list of URL domains that are allowed to be navigated in using the Web application.      <br />**Occurrences:** <br />-0 or more        <br />If more than 1, the first occurrence is applied.<br />**Example:** <br />`<tizen:allow-navigation>tizen.org *.tizen.org<tizen:allow-navigation/>` |
 
-### Tizen Application Control<a name="mw_appcontrol"></a>
+<a name="mw_appcontrol"></a>
+### Tizen Application Control
 
 | `<tizen:app-control/>` element           |
 | ---------------------------------------- |
-| Used to indicate that the Web application can handle a specific operation with the specified MIME type and URI. For more information, see [Application Information and Controls](https://developer.tizen.org/development/guides/web-application/application-management/application-information-and-controls/application-controls).      <br />**Occurrences:** <br />-0 or more<br />**Expected children:**<br />- `src`			  <br />Attributes:<br />  -`name` <br />Mandatory; page handling the requests <br />  -`reload` <br />Optional; sets whether the page is reloaded when it is already loaded (available values: `enable` (default), `disable`)<br />**Since: 2.4**<br />
+| Used to indicate that the Web application can handle a specific operation with the specified MIME type and URI. For more information, see [Application Information and Controls](../../web/guides/app-management/app-controls.md).      <br />**Occurrences:** <br />-0 or more<br />**Expected children:**<br />- `src`			  <br />Attributes:<br />  -`name` <br />Mandatory; page handling the requests <br />  -`reload` <br />Optional; sets whether the page is reloaded when it is already loaded (available values: `enable` (default), `disable`)<br />**Since: 2.4**<br />
 > **Note**  	<br />>The `reload` attribute is supported since Tizen 2.4. If the `required_version` in the application's `config.xml` file is set to a version older than Tizen 2.4, and the `reload` attribute is used, the application installation fails.<br />- `operation` <br />Mandatory; string that defines the action to be performed<br />-`uri` and `mime`<br />Optional; additional parameters used for resolving application control requests<br />-   `privilege`  <br />Optional; additional parameter used for getting required API access privileges for application control requests <br /> **Example:** <br />`<tizen:app-control>   <tizen:src name="view.html" reload="disable"/>   <tizen:operation name="http://tizen.org/appcontrol/operation/view"/>   <tizen:uri name="http"/>   <tizen:mime name="image/jpeg"/>  <tizen:privilege name="http://tizen.org/privilege/alarm"/>  </tizen:app-control>` |
 
 ### Tizen App-defined Privilege
@@ -181,7 +184,8 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 | ---------------------------------------- |
 | Used to get the required access privileges provided by a provider package.<br />**Occurrences:**<br />- 0 or more**<br />Attributes:<br />-**`name`<br />Mandatory; name of the app-defined privilege<br />-`license`<br />Optional; name of the license file used to verify the privilege<br />**Example:**<br />`<tizen:appdefined-privilege name="http://{provider_pkgid}/appdefined/exampleprivilege1"/><tizen:appdefined-privilege license="example_license" name="http://{provider_pkgid}/appdefined/exampleprivilege2"/>` |
 
-### Tizen Application ID<a name="mw_application"></a>
+
+### Tizen Application ID
 
 | `<tizen:application/>` element           |
 | ---------------------------------------- |
@@ -189,7 +193,8 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 > **Note**  
 > The `launch_mode` attribute is supported since Tizen 2.4. If the `required_version` in the application's `config.xml` file is set to a version older than Tizen 2.4, and the `launch_mode` attribute is used, the application installation fails. <br />**Example:**<br />`<tizen:application id="1234abcDEF.projectname"                   package="1234abcDEF"                   required_version="2.4"                   launch_mode="caller"/>` |
 
-### Tizen Background Category<a name="mw_bg_category"></a>
+<a name="mw_bg_category"></a>
+### Tizen Background Category
 
 | `<tizen:background-category/>` element   |
 | ---------------------------------------- |
@@ -197,39 +202,45 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 > **Note**  
 > In addition to declaring the `<background-category>` element, you must [set the `<tizen:setting background-support>` attribute to `enable`](#mw_setting) to run Web applications in the background. <br />**Occurrences:** <br />-0 or more<br />**Attributes:** <br />-`value` <br />Mandatory; [background category](https://developer.tizen.org/development/guides/native-application/application-management/applications/ui-application#allow_bg_table)<br />**Example:**<br />`<tizen:background-category value="media"/>` |
 
-### Tizen-hosted Web Application<a name="mw_webapp"></a>
+<a name="mw_webapp"></a>
+### Tizen-hosted Web Application
 
 | `<tizen:content/>` element               |
 | ---------------------------------------- |
 | Used to point to a document which is hosted on an external server and acts as the Web application start page. The Tizen WRT allows the start page to be hosted on an external server.      <br />If the start page is contained in the widget package, it is defined with the [`<content>` W3C element](#content_element). If both `<content>` and `<tizen:content/>` elements are defined, the `<tizen:content/>` element is used.<br />**Occurrences:** <br />-0 or more        <br />If more than 1 `<tizen:content/>` element is specified, the first instance of the element is used.<br />**Attributes:**<br />-`src`<br />Mandatory; URI of the external start page<br />**Example:** <br />`<tizen:content src="https://www.tizen.org/"/>` |
 
-### Tizen Content Security Policy<a name="mw_sec"></a>
+<a name="mw_sec"></a>
+### Tizen Content Security Policy
 
 | `<tizen:content-security-policy/>` element |
 | ---------------------------------------- |
 | Used to define an additional content security policy for a packaged or hosted application.      <br />**Occurrences:** <br />-0 or more        <br />If more than 1, the first occurrence is applied.<br />**Example:** <br />`<tizen:content-security-policy>script-src 'self'</tizen:content-security-policy>` |
 
-### Tizen Content Security Policy Report Only<a name="mw_secreport"></a>
+<a name="mw_secreport"></a>
+### Tizen Content Security Policy Report Only
 
 | `<tizen:content-security-policy-report-only/>` element |
 | ---------------------------------------- |
 | Used to define an additional content security policy, for monitoring purposes, for a packaged or hosted application.      <br />**Occurrences:** <br />-0 or more        <br />If more than 1, the first occurrence is applied.<br />**Example:** <br />`<tizen:content-security-policy-report-only>   script-src 'self'; report-uri="http://example.com/report.cgi"</tizen:content-security-policy-report-only>` |
 
-### Tizen Feature<a name="mw_feature"></a>
+<a name="mw_feature"></a>
+### Tizen Feature
 
 | `<feature/>` element                     |
 | ---------------------------------------- |
 | Used to define hardware and software components for a Tizen application. This attribute is only used in the Tizen Store for filtering purposes. It is ignored by the Web Runtime installation procedure. <br />
 > **Note**  
-> Even though the `<feature/>` element is defined in the Widget Packaging and XML Configuration guidelines, an extended version is used in Tizen. <br />**Occurrences:** <br />-0 or more<br />**Attributes:** <br />-`name` <br />Mandatory; [feature key](https://developer.tizen.org/development/training/web-application/application-development-process/setting-project-properties#feature) URI<br />**Example:** <br />`<feature name="http://tizen.org/feature/network.bluetooth"/>` |
+> Even though the `<feature/>` element is defined in the Widget Packaging and XML Configuration guidelines, an extended version is used in Tizen. <br />**Occurrences:** <br />-0 or more<br />**Attributes:** <br />-`name` <br />Mandatory; [feature key](../../web/tutorials/process/setting-properties.md#feature) URI<br />**Example:** <br />`<feature name="http://tizen.org/feature/network.bluetooth"/>` |
 
-### Tizen Metadata<a name="mw_metadata"></a>
+<a name="mw_metadata"></a>
+### Tizen Metadata
 
 | `<tizen:metadata/>` element              |
 | ---------------------------------------- |
 | Used to define metadata information shared with other Web applications. The defined metadata can be accessed (read-only) through the Tizen [Application](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/application.html) API.      <br />**Occurrences:** <br />-0 or more<br />**Attributes:** <br />-`key`            <br />Mandatory; unique key string.<br />The maximum length can be limited to 80 bytes.  In this case, leftover bytes are ignored.<br />-`value`            <br />Optional; string.<br />The maximum length can be limited to 8192 bytes.  In this case, leftover bytes are ignored.<br />**Example:** <br />`<tizen:metadata key="key1"/><tizen:metadata key="key2" value="value/>` |
 
-### Tizen Privilege<a name="mw_privilege"></a>
+<a name="mw_privilege"></a>
+### Tizen Privilege
 
 | `<tizen:privilege/>` element             |
 | ---------------------------------------- |
@@ -241,13 +252,15 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 | ---------------------------------------- |
 | Used to specify the app-defined access privileges provided by a provider package.<br />**Occurrences:**0<br />- or more**<br />Attributes:**<br />-`name`<br />Mandatory; name of the app-defined privilege<br />-`license`<br />Optional; name of the license file used to verify the privilege<br />**Example:**<br />`<tizen:provides-appdefined-privilege name="http://{provider_pkgid}/appdefined/exampleprivilege1"/><tizen:provides-appdefined-privilege license="example_license" name="http://{provider_pkgid}/appdefined/exampleprivilege2"/>` |
 
-### Tizen Profile<a name="mw_profile"></a>
+<a name="mw_profile"></a>
+### Tizen Profile
 
 | `<tizen:profile/>` element               |
 | ---------------------------------------- |
 | Used to define the application profile.	  <br />**Occurrences:** <br />-1<br />**Attributes:** <br />-`name` <br />Mandatory; string<br />**Example:** <br />`<tizen:profile name="mobile"/>` |
 
-### Tizen Settings<a name="mw_setting"></a>
+<a name="mw_setting"></a>
+### Tizen Settings
 
 | `<tizen:setting/>` element               |
 | ---------------------------------------- |
@@ -261,28 +274,32 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 | ---------------------------------------- |
 | Used to assign your own SSL root certificates for the application's HTTPS communication.<br />**Occurrences:**<br />- 0 or 1<br />**Attributes:**<br />-`use-system-certs`<br />Mandatory; indicates whether system certificates are used (available values: `true`, `false`)<br />**Example:**<br />`<tizen:trust-anchor use-system-certs="false"/>` |
 
-## Extending Configuration Elements in Wearable Applications<a name="ww_extend"></a>
+<a name="ww_extend"></a>
+## Extending Configuration Elements in Wearable Applications
 
 The following sections show additional configuration elements used in the `config.xml` file of a Web application, but not included in the [Widget Packaging and XML Configuration guidelines](https://www.w3.org/TR/2011/REC-widgets-20110927/). For a quick view of the entire element hierarchy, see [Configuration Element Hierarchy](#hierarchy).
 
 > **Note**  
 > The extension elements are denoted as though the `xmlns:tizen="http://tizen.org/ns/widgets"` namespace declaration is in effect.	 <br />The maximum length of the attribute and the element (except `tizen:metadata`, W3C preference element) can be limited to 2048 bytes. In that case, leftover bytes are ignored.
 
-### Tizen Navigation Policy<a name="ww_allownavigation"></a>
+<a name="ww_allownavigation"></a>
+### Tizen Navigation Policy
 
 | `<tizen:allow-navigation/>` element      |
 | ---------------------------------------- |
 | Used to define a list of URL domains that are allowed to be navigated in using the Web application.	  <br />**Occurrences:**<br />-0 or more	    <br />If more than 1, the first occurrence is applied.<br />**Example:** <br />`<tizen:allow-navigation>tizen.org *.tizen.org<tizen:allow-navigation/>` |
 
-### Tizen Application Control<a name="appcontrol"></a>
+<a name="appcontrol"></a>
+### Tizen Application Control
 
 | `<tizen:app-control/>` element           |
 | ---------------------------------------- |
-| Used to indicate that the Web application can handle a specific operation with the specified MIME type and URI. For more information, see [Application Information and Controls](https://developer.tizen.org/development/guides/web-application/application-management/application-information-and-controls/application-controls).      <br />**Occurrences:** <br />-0 or more<br />**Expected children:** <br />-`src`		 <br />Attributes:<br />  -`name` <br />Mandatory; page handling the requests <br />  -`reload` <br />Optional; sets whether the page is reloaded when it is already loaded (available values: `enable` (default), `disable`)<br />**Since: 2.4**<br />
+| Used to indicate that the Web application can handle a specific operation with the specified MIME type and URI. For more information, see [Application Information and Controls](../../web/guides/app-management/app-controls.md).      <br />**Occurrences:** <br />-0 or more<br />**Expected children:** <br />-`src`		 <br />Attributes:<br />  -`name` <br />Mandatory; page handling the requests <br />  -`reload` <br />Optional; sets whether the page is reloaded when it is already loaded (available values: `enable` (default), `disable`)<br />**Since: 2.4**<br />
 > **Note**  
 > The `reload` attribute is supported since Tizen 2.4. If the `required_version` in the application's `config.xml` file is set to a version older than Tizen 2.4, and the `reload` attribute is used, the application installation fails. <br />-`operation` <br />Mandatory; string that defines the action to be performed<br />-`uri` and `mime`<br />Optional; additional parameters used for resolving application control requests<br />- `privilege` <br/>Optional; additional parameter used for getting required API access privileges for application control requests<br/>**Example:**<br />`<tizen:app-control>   <tizen:src name="view.html" reload="disable"/>   <tizen:operation name="http://tizen.org/appcontrol/operation/view"/>   <tizen:uri name="http"/>   <tizen:mime name="image/jpeg"/> <tizen:privilege name="http://tizen.org/privilege/alarm"/> </tizen:app-control>` |
 
-### Tizen Web Widget<a name="ww_webwidget"></a>
+<a name="ww_webwidget"></a>
+### Tizen Web Widget
 
 | `<tizen:app-widget/>` element            |
 | ---------------------------------------- |
@@ -320,47 +337,54 @@ The following sections show additional configuration elements used in the `confi
 > **Note**  
 > The `launch_mode` attribute is supported since Tizen 2.4. If the `required_version` in the application's `config.xml` file is set to a version older than Tizen 2.4, and the `launch_mode` attribute is used, the application installation fails. <br />**Example:**<br /> `<tizen:application id="1234abcDEF.projectname"                   package="1234abcDEF"                   required_version="2.4"                   ambient_support="enable"/>` |
 
-### Tizen Background Category<a name="ww_bg_category"></a>
+<a name="ww_bg_category"></a>
+### Tizen Background Category
 
 | `<tizen:background-category/>` element   |
 | ---------------------------------------- |
 | Used to represent the category of an application that is allowed to run in the background. <br />
 > **Note**  
-> In addition to declaring the `<background-category>` element, you must [set the `` attribute to `enable`](#ww_setting) to run Web applications in the background. <br />**Occurrences:** <br />-0 or more<br />**Attributes:** <br />-`value` <br />Mandatory; [background category](https://developer.tizen.org/development/guides/native-application/application-management/applications/ui-application#allow_bg_table)<br />**Example:** <br />`<tizen:background-category value="media"/>` |
+> In addition to declaring the `<background-category>` element, you must [set the `` attribute to `enable`](#ww_setting) to run Web applications in the background. <br />**Occurrences:** <br />-0 or more<br />**Attributes:** <br />-`value` <br />Mandatory; [background category](../../natvie/guides/app-management/efl-ui-app.md#background-categories)<br />**Example:** <br />`<tizen:background-category value="media"/>` |
 
-### Tizen Category<a name="ww_category"></a>
+<a name="ww_category"></a>
+### Tizen Category
 
 | `<tizen:category/>` element              |
 | ---------------------------------------- |
 | Used to define the categories to which the service application belongs.          <br />**Occurrences:** <br />-0 or more<br />**Attributes:** <br />-`name` <br />Mandatory; string<br />**Example:** <br />`<tizen:category name="http://tizen.org/category/wearable_clock"/>` |
 
-### Tizen Content<a name="ww_tizencontent"></a>
+<a name="ww_tizencontent"></a>
+### Tizen Content
 
 | `<tizen:content/>` element               |
 | ---------------------------------------- |
 | Used to define a start page hosted on an external server.	  <br />**Occurrences:** <br />-0 or moreIf more than 1, the first occurrence is considered and all others ignored.<br />**Attributes:**<br />-`src` <br />Mandatory; URI of an external start page<br />**Example:** <br />`<tizen:content src="https://www.tizen.org"/>` |
 
-### Tizen Content Security Policy<a name="ww_contentsecpolicy"></a>
+<a name="ww_contentsecpolicy"></a>
+### Tizen Content Security Policy
 
 | `<tizen:content-security-policy/>` element |
 | ---------------------------------------- |
 | Used to define an additional content security policy for a packaged or hosted application.	  <br />**Occurrences:** <br />-0 or more	    <br />If more than 1, the first occurrence is applied.<br />**Example:** <br />`<tizen:content-security-policy>script-src 'self'</tizen:content-security-policy>` |
 
-### Tizen Content Security Policy Report Only<a name="ww_contentsecpolicyreport"></a>
+<a name="ww_contentsecpolicyreport"></a>
+### Tizen Content Security Policy Report Only
 
 | `<tizen:content-security-policy-report-only/>` element |
 | ---------------------------------------- |
 | Used to define an additional content security policy, for monitoring purposes, for a packaged or hosted application.	  <br />**Occurrences:** <br />-0 or more	    <br />If more than 1, the first occurrence is applied.<br />**Example:** <br />`<tizen:content-security-policy-report-only>   script-src 'self'; report-uri="http://example.com/report.cgi"</tizen:content-security-policy-report-only>` |
 
-### Tizen Feature<a name="ww_feature"></a>
+<a name="ww_feature"></a>
+### Tizen Feature
 
 | `<feature/>` element                     |
 | ---------------------------------------- |
 | Used to define the hardware and software components for a Tizen wearable Web application. This attribute is only used in the Samsung Apps for filtering purposes. It is ignored by the Web Runtime installation procedure. <br />
 > **Note**  
-> Even though the `<feature/>` element is defined in the Widget Packaging and XML Configuration guidelines, an extended version is used in Tizen. <br />**Occurrences:** <br />-0 or more<br />**Attributes:**<br />-`name` <br />Mandatory; [feature key](https://developer.tizen.org/development/training/web-application/application-development-process/setting-project-properties#feature) URI<br />**Example:** <br />`<feature name="http://tizen.org/feature/network.bluetooth"/>` |
+> Even though the `<feature/>` element is defined in the Widget Packaging and XML Configuration guidelines, an extended version is used in Tizen. <br />**Occurrences:** <br />-0 or more<br />**Attributes:**<br />-`name` <br />Mandatory; [feature key](../../web/tutorials/process/setting-properties.md#feature) URI<br />**Example:** <br />`<feature name="http://tizen.org/feature/network.bluetooth"/>` |
 
-### Tizen IME<a name="ww_ime"></a>
+<a name="ww_ime"></a>
+### Tizen IME
 
 | `<tizen:ime/>` element                   |
 | ---------------------------------------- |
@@ -374,13 +398,15 @@ The following sections show additional configuration elements used in the `confi
 | ---------------------------------------- |
 | Used to define the supported input language of the current IME type application.	  <br />**Occurrences:** <br />-1 or more<br />**Example:** <br />`<tizen:languages>   <tizen:language>en-us</tizen:language>   <tizen:language>de-de</tizen:language></tizen:languages>` |
 
-### Tizen Metadata<a name="ww_metadata"></a>
+<a name="ww_metadata"></a>
+### Tizen Metadata
 
 | `<tizen:metadata/>` element              |
 | ---------------------------------------- |
 | Used to define metadata information shared with other Web applications. The defined metadata can be accessed (read-only) through the Tizen [Application](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/wearable/tizen/application.html) API.	  <br />**Occurrences:**<br />-0 or more<br />**Attributes:** <br />-`key`            <br />Mandatory; unique key string.The maximum length can be limited to 80 bytes. In that case, leftover bytes are ignored.<br />-`value`            <br />Optional; string.The maximum length can be limited to 8192 bytes. In that case, leftover bytes are ignored.<br />**Example:** <br />`<tizen:metadata key="key1"/><tizen:metadata key="key2" value="value/>` |
 
-### Tizen Privilege<a name="ww_privilege"></a>
+<a name="ww_privilege"></a>
+### Tizen Privilege
 
 | `<tizen:privilege/>` element             |
 | ---------------------------------------- |
@@ -399,8 +425,8 @@ The following sections show additional configuration elements used in the `confi
 | Used to define the application profile.<br />**Occurrences:**<br />- 1<br />**Attributes: **<br />-`name`<br />Mandatory; <br />string<br />**Example:**<br />`<tizen:profile name="wearable"/>` |
 
 
-
-### Tizen Service<a name="ww_service"></a>
+<a name="ww_service"></a>
+### Tizen Service
 
 | `<tizen:service/>` element               |
 | ---------------------------------------- |
@@ -440,10 +466,14 @@ The following sections show additional configuration elements used in the `confi
 | ---------------------------------------- |
 | Used to define additional application settings.<br />**Occurrences:**<br />- 0 or more<br />**Attributes:** <br />`background-support`<br />- Optional; application execution continues when it is moved to the background (available values: <br />`enable`<br />(execution continues in the background),<br /> `disable` <br />(default; application is suspended))<br />
 > **Note**<br />  
-> Since Tizen 2.4, the system manages background processes more tightly. Even if the `background-support` attribute is set to `enable`, a Web application process can be suspended in the background. To guarantee that the application runs in the background, [add at least one background category](https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#ww_bg_category) for the application with the `<tizen:background-category>` element. Only the background categories declared in the system can be used.<br />`context-menu`<br />Optional; sets whether the context menu is shown (available values: `enable` (default), `disable`)If this option is enabled, the context menu is visible to the user.<br />`encryption`<br />Optional; sets whether Web application resources are encrypted (available values: `enable`, `disable` (default))If this option is enabled, the application resources (HTML, JS and CSS files) are encrypted.<br />`screen-orientation`<br />Optional; sets whether it locks the orientation of the Web application (available values: `portrait` (default), `landscape`, `auto-rotation`)<br />`portrait` or `landscape`: orientation is locked to portrait or landscape respectively<br />`auto-rotation`: follows the device orientation setting<br />`install-location`<br />Optional; application installation location (available values: `auto` (default), `internal-only`, `prefer-external`)<br />`auto`: the system defines the installation location<br />`internal-only`: the application is installed in the device's internal storage<br />`prefer-external`: the application is installed in the external storage (if available)<br />`hwkey-event`<br />Optional; a hardware key event is sent to the Web application when the user presses the hardware key (available values: `enable` (default), `disable`)If this option is enabled, the `tizenhwkey` custom event is sent to the Web application. The `tizenhwkey` event object has a `keyName` attribute (available value: `back`).<br />**Example:**<br />`<tizen:setting background-support="enable"/><tizen:setting context-menu="disable"/><tizen:setting encryption="enable"/><tizen:setting screen-orientation="landscape"/><tizen:setting install-location="internal-only"/><tizen:setting hwkey-event="enable"/>` |
+> Since Tizen 2.4, the system manages background processes more tightly. Even if the `background-support` attribute is set to `enable`, a Web application process can be suspended in the background. To guarantee that the application runs in the background, [add at least one background category](#ww_bg_category) for the application with the `<tizen:background-category>` element. Only the background categories declared in the system can be used.<br />`context-menu`<br />Optional; sets whether the context menu is shown (available values: `enable` (default), `disable`)If this option is enabled, the context menu is visible to the user.<br />`encryption`<br />Optional; sets whether Web application resources are encrypted (available values: `enable`, `disable` (default))If this option is enabled, the application resources (HTML, JS and CSS files) are encrypted.<br />`screen-orientation`<br />Optional; sets whether it locks the orientation of the Web application (available values: `portrait` (default), `landscape`, `auto-rotation`)<br />`portrait` or `landscape`: orientation is locked to portrait or landscape respectively<br />`auto-rotation`: follows the device orientation setting<br />`install-location`<br />Optional; application installation location (available values: `auto` (default), `internal-only`, `prefer-external`)<br />`auto`: the system defines the installation location<br />`internal-only`: the application is installed in the device's internal storage<br />`prefer-external`: the application is installed in the external storage (if available)<br />`hwkey-event`<br />Optional; a hardware key event is sent to the Web application when the user presses the hardware key (available values: `enable` (default), `disable`)If this option is enabled, the `tizenhwkey` custom event is sent to the Web application. The `tizenhwkey` event object has a `keyName` attribute (available value: `back`).<br />**Example:**<br />`<tizen:setting background-support="enable"/><tizen:setting context-menu="disable"/><tizen:setting encryption="enable"/><tizen:setting screen-orientation="landscape"/><tizen:setting install-location="internal-only"/><tizen:setting hwkey-event="enable"/>` |
 
 ### Tizen Trust-anchor
 
 | <tizen:trust-anchor/> element            |
 | ---------------------------------------- |
 | Used to assign your own SSL root certificates for the application's HTTPS communication.<br />**Occurrences:**<br />-0 or 1<br />**Attributes:**<br />`use-system-certs`Mandatory; indicates whether system certificates are used (available values: `true`, `false`)<br />**Example:**<br />`<tizen:trust-anchor use-system-certs="false"/>` |
+
+## Related Information
+* Dependencies
+  - Tizen Studio 1.0 and Higher

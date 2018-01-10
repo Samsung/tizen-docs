@@ -1,7 +1,4 @@
 # Creating Tizen Projects with Tizen Project Wizard
-## Dependencies
-- Tizen Studio 1.0 and Higher
-
 
 The Tizen Project Wizard is a Tizen Studio tool that is used to create a Web application project.
 
@@ -16,7 +13,8 @@ To open the Tizen Project Wizard, use one of the following:
 - Right-click in the **Project Explorer** view, and select **New > Tizen Project**.
 - If there is no project in the workspace, click the **New** icon (![New icon](./media/project_wizard_icon_new.png)) in the **Project Explorer** view toolbar.
 
-## Project Type<a name="type"></a>
+<a name="type"></a>
+## Project Type
 
 When the Tizen Project Wizard opens, you must first select the project type.
 
@@ -29,14 +27,15 @@ The Tizen Studio provides various project templates and samples for mobile and w
 The **Template** option provides a list of templates with a basic structure where you can start the Web application project:
 
 - **Common** **Basic UI**: Empty template project for developing basic UI applications.
-- **Mobile** **TAU MasterDetail**: Empty template project for developing UI applications using TAU (Tizen Web UI Framework).**TAU MultiPage/SinglePage**: Empty template projects for developing multiple page and single page applications using TAU. 
-- **Wearable** **TAU Basic**: Empty template project for developing basic circular UI applications using TAU.**TAU List**: Empty template project for developing UI applications using a TAU list. **Web Input Method Editor**: Empty template project for developing Web-based IME (Input Method Editor) applications using HTML, CSS, and JavaScript code. **Widget**: Empty template project for developing widget applications. 
+- **Mobile** **TAU MasterDetail**: Empty template project for developing UI applications using TAU (Tizen Web UI Framework).**TAU MultiPage/SinglePage**: Empty template projects for developing multiple page and single page applications using TAU.
+- **Wearable** **TAU Basic**: Empty template project for developing basic circular UI applications using TAU.**TAU List**: Empty template project for developing UI applications using a TAU list. **Web Input Method Editor**: Empty template project for developing Web-based IME (Input Method Editor) applications using HTML, CSS, and JavaScript code. **Widget**: Empty template project for developing widget applications.
 
 The **Sample** option provides a list of sample applications demonstrating various API usage and UI design.
 
 To move to the next step, select the project type and click **Next**.
 
-## Profile and Version<a name="version"></a>
+<a name="version"></a>
+## Profile and Version
 
 You can select the profile and version supported by your project, such as a mobile or wearable device. In addition, the Tizen Studio shows you which platforms among the supported platforms have been installed.
 
@@ -48,9 +47,10 @@ Based on the selected profile and version, a list of templates is shown in the t
 
 To move to the next step, select the profile and version, and click **Next**.
 
-## Application Type<a name="app_type"></a>
+<a name="app_type"></a>
+## Application Type
 
-You can select the Web or native application type for your project. For more information, see [Web Application](https://developer.tizen.org/development/training/web-application) and [Native Application](https://developer.tizen.org/development/training/native-application).
+You can select the Web or native application type for your project. For more information, see [Web Application](../../web/tutorials/index.md) and [Native Application](../../native/tutorials/index.md).
 
 Based on the selected application type, a list of templates is shown in the template selection step.
 
@@ -60,7 +60,8 @@ Based on the selected application type, a list of templates is shown in the temp
 
 To move to the next step, select the application type and click **Next**.
 
-## Template<a name="template"></a>
+<a name="template"></a>
+## Template
 
 You can select the template for your project while viewing information about a variety of templates. The Tizen Project Wizard creates the project based on the selected template.
 
@@ -70,7 +71,8 @@ You can select the template for your project while viewing information about a v
 
 To move to the next step, select the template and click **Next**.
 
-## Project Properties<a name="properties"></a>
+<a name="properties"></a>
+## Project Properties
 
 You can set basic project properties, such as the project name, location, and working sets.
 
@@ -90,3 +92,7 @@ The options you can set are listed in the following table.
 | **Working sets**         | If you want to include the project to a specific working set, select a [working set](http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Fconcepts%2Fcworkset.htm). |
 
 After specifying the options, click **Finish** to create the new project.
+
+## Related information
+* Dependencies
+  - Tizen Studio 1.0 and Higher

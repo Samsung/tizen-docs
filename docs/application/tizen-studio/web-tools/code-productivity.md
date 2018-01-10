@@ -1,12 +1,8 @@
 # Cleaning Up Your Code
 
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
-
 The Tizen Studio provides features to assist with productive development. This topic describes the **Code Beautifier** and **Code Minifier** features in the Tizen Web Editor.
 
-## Using the Code Beautifier<a name="beautifier"></a>
+## Using the Code Beautifier
 
 The Code Beautifier is a tool that can help you understand code by making it easier to read. For example, by inserting indentations and alignments automatically, you can code more efficiently without compromising readability.
 
@@ -36,7 +32,7 @@ If you use the Code Beautifier in the **Source Editor** view, no new file is gen
 
 ![Code Beautifier with CSS file - after beautifying](./media/code_productivity_after_beautifying.png)
 
-## Using the Code Minifier<a name="minifier"></a>
+## Using the Code Minifier</a>
 
 Minification is the process of compressing the code from its original size to the smallest size, without affecting its operation. The Code Minifier is a smart compression tool which removes or modifies unnecessary characters from the code.
 
@@ -63,7 +59,7 @@ The Code Minifier has the following features:
 
 You can use the Code Minifier in 3 ways:
 
-- In the **Project Explorer** view, right-click an HTML, CSS, or JavaScript file in the project and select **Code Minifier**.	
+- In the **Project Explorer** view, right-click an HTML, CSS, or JavaScript file in the project and select **Code Minifier**.
 
   A minified (compressed) file with the `.min.<extension>` extension is generated, and a notification popup appears in the Tizen Studio.
 
@@ -80,3 +76,7 @@ If you use the Code Minifier in the **Source Editor** view, no new file is gener
 **Figure: Code Minifier with CSS file - after minifying**
 
 ![Code Minifier with CSS file - after minifying](./media/code_productivity_minifying_css_after.png)
+
+## Related Information
+* Dependencies
+  - Tizen Studio 1.0 and Higher

@@ -1,7 +1,4 @@
 # Analyzing JavaScript Problems
-## Dependencies
-- Tizen Studio 1.0 and Higher
-
 
 The JavaScript Analyzer (JSA) is an analysis tool, which helps to find problems in JavaScript code. When you develop a Web application with a new project in the Tizen Studio, you can run JSA to detect potential problems in your JavaScript code.
 
@@ -15,7 +12,8 @@ JSA supports 2 analyzer types:
 
   Contains a checker for stale objects that cause possible memory leaks.The Stale Object Checker is a dynamic analysis tool that requires executing the application in a runtime environment. This checker examines all the JavaScript objects created during its execution and points out relatively critical staled objects.
 
-## Using the JavaScript Analyzer<a name="use"></a>
+<a name="use"></a>
+## Using the JavaScript Analyzer
 
 To analyze a Web application with the JSA in the Tizen Studio, choose the target project in the **Project Explorer** view, open the context menu, and select **Check JavaScript Rules**.
 
@@ -35,7 +33,8 @@ If JavaScript Analyzer detects code that can cause potential problems during its
 
 ![Problems view](./media/js_problems_view.png)
 
-## Setting JavaScript Rules<a name="settingrules"></a>
+<a name="settingrules"></a>
+## Setting JavaScript Rules
 
 You can enable or disable the JavaScript rules in JavaScript Analyzer preferences.
 
@@ -48,9 +47,11 @@ To enable or disable the rules:
 
 ![Preferences](./media/js_settings_rules.png)
 
-## Supported Rules<a name="support"></a>
+<a name="support"></a>
+## Supported Rules
 
-### Coding Rules<a name="coding"></a>
+<a name="coding"></a>
+### Coding Rules
 
 The JSA provides coding rules to help in writing better JavaScript code. For more information on these rules, see JSLint and [Google JavaScript Guide](https://github.com/google/styleguide/blob/gh-pages/javascriptguide.xml).
 
@@ -92,7 +93,7 @@ The JSA displays the following message:
 
 #### Rule 2. Do Not Declare an Arguments Array within Functions
 
-If the `arguments` array is declared with `var` in functions, it causes duplication with the `arguments` JavaScript reserved keyword in the functions. 
+If the `arguments` array is declared with `var` in functions, it causes duplication with the `arguments` JavaScript reserved keyword in the functions.
 
 In the following example, the `var arguments = [];` statement in the function overwrites the `arguments` reserved keyword. As a result, the `arguments` reserved keyword in functions loses the ability to access the arguments of the function.
 
@@ -159,7 +160,7 @@ The JSA displays the following message:
 
 #### Rule 4. Do Not Use Extra Semicolons
 
-Extra semicolons make readability worse. In addition, they can cause unexpected operation of the program. 
+Extra semicolons make readability worse. In addition, they can cause unexpected operation of the program.
 
 This rule is described in the Google JavaScript Coding Style Guide. They say that "Extra comma and semicolon can make error."
 
@@ -186,7 +187,7 @@ The JSA displays the following message:
 
 #### Rule 5. Do Not Use the Delete Keyword
 
-Deleting the property of an object takes time. In addition, it changes the shape of the object. The change in the object's shape can cause decreased performance. 
+Deleting the property of an object takes time. In addition, it changes the shape of the object. The change in the object's shape can cause decreased performance.
 
 In the following example, the property `value` of the instance `obj` is deleted using the keyword `delete`. This leads the instance `obj` not to share the shape of the constructor `Obj` with other instances. For that reason, the performance can be slower.
 
@@ -212,7 +213,7 @@ The JSA displays the following message:
 
 #### Rule 6. Do Not Use Multi-line Literals
 
-Using multi-line string literals can cause unexpected operation of the program because of the whitespace at the beginning of each line and after the backslash (\). 
+Using multi-line string literals can cause unexpected operation of the program because of the whitespace at the beginning of each line and after the backslash (\).
 
 This rule is introduced by the Google JavaScript Style Guide. They say that "The whitespace at the beginning of each line can't be safely stripped at compile time; whitespace after the slash will result in tricky errors; and while most script engines support this, it is not part of ECMAScript."
 
@@ -285,7 +286,7 @@ Avoid creating primitive typed values using the constructor of a wrapper object.
 
 If a boolean variable is created by the constructor `Boolean`, its value is a wrapper object, not `true` or `false`. In the following example, the program always prints `true` because the variable `bool` is an object that has a value, `false`.
 
-This rule is introduced by the Google Javascript Style Guide. They say that "There's no reason to use wrapper objects for primitive types, plus they are dangerous." 
+This rule is introduced by the Google Javascript Style Guide. They say that "There's no reason to use wrapper objects for primitive types, plus they are dangerous."
 
 ```
 /* The variable bool is not false. It is an object with the value false */
@@ -309,7 +310,7 @@ The JSA displays the following message:
 
 #### Rule 10. Do Not Use the `for-in` Structure with Arrays
 
-If an array is used in a for-in statement, it can operate differently than in a normal for statement. 
+If an array is used in a for-in statement, it can operate differently than in a normal for statement.
 
 In the following example, you expect to print `a`, `b`, and `c`, but the program prints `0`, `1`, and `2`.
 
@@ -482,7 +483,7 @@ The JSA displays the following message:
 
 Invoking a code block with an opening brace '{' which does not appear in the same line with the statement is noticed, although the analysis proceeds without stopping.
 
-In the following example, the opening brace '{' must appear in the same line with the statement. If not, the JSA detects it and raises an alarm. 
+In the following example, the opening brace '{' must appear in the same line with the statement. If not, the JSA detects it and raises an alarm.
 
 ```
 /* Do Not Use Wrong Opening Brace */
@@ -499,7 +500,8 @@ The JSA displays the following message:
 
 ```
 
-### Web API Usage Rules<a name="api"></a>
+<a name="api"></a>
+### Web API Usage Rules
 
 Tizen Web APIs extend JavaScript APIs to enable you to use the device capabilities provided by Tizen devices. The Tizen Web APIs are designed to be simple and intuitive. The following rules notify you when the APIs are used improperly.
 
@@ -702,21 +704,22 @@ The JSA displays the following message:
 
 To analyze a Web application with the Stale Object Checker in the Tizen Studio:
 
-1. Choose the target project in the **Project Explorer** view, open the context menu, and select **Check Stale Object**. 
+1. Choose the target project in the **Project Explorer** view, open the context menu, and select **Check Stale Object**.
 
    ![Stale Object Checker in the menu](./media/js_stale_checker_menu.png)
 
-2. Select the testing platform: 
+2. Select the testing platform:
    - In the Tizen Device mode, the project is packaged as an application first, and then pushed to the Tizen device. The application launches automatically, allowing you to test it.
    - In the PC Browser mode, the Web application runs at `http://localhost:8888`.
 
 3. When all operations are finished on the Tizen device or PC browser, click **Stop Record** on the **Console** view toolbar or press **Alt + Shift + T** on the keyboard. ![Stop recording](./media/js_stale_console.png)
 
-4. After you stop recording, a confirmation message is displayed. Click **OK**. 
+4. After you stop recording, a confirmation message is displayed. Click **OK**.
 
    The Stale Object Checker continues to inspect the data collected and launches a result page at `http://localhost:9000`. The result page can be accessed by any Web browser in the PC.![Confirmation of the recording stop](./media/js_stale_stop_alert.png)
 
-### Result Page View<a name="resultpage"></a>
+<a name="resultpage"></a>
+### Result Page View
 
 The result page appears with the view shown in the following figure. The page is composed of 2 parts: issue table and all-sites timeline. You can switch between the parts using the menu at the top of the page.
 
@@ -733,7 +736,8 @@ The following details are provided in the issue table:
 
 A stale instance is any instance whose staleness value is not zero at a specific time. The object staleness defines the time interval between the last use and the moment when the object is unreachable. For example, if the object has never been used, the staleness is the unreachable moment minus the creation time. If the object has been used, the staleness is the unreachable moment minus the last use time.
 
-#### Issue Table<a name="issuetable"></a>
+<a name="issuetable"></a>
+#### Issue Table
 
 When you click a site in the issue table, a set of detailed information on a leak occurrence is shown. In the source view, the code segment that is creating stale objects (possibly causing a memory leak) is marked with a colored box.
 
@@ -745,7 +749,7 @@ In the above figure:
 
 - The anonymous event handler function at the line 10 is identified as a stale object that can cause a memory leak.
 
-- In the call tree view, a call hierarchy is shown for the function which contains the code that creates stale objects. The name of a node in the call tree view indicates the file name, line number, and column number. 
+- In the call tree view, a call hierarchy is shown for the function which contains the code that creates stale objects. The name of a node in the call tree view indicates the file name, line number, and column number.
 
   The "js/main_orig_.js:10:45" root element indicates that the memory leak occurs at line 10, column 45 in the `js/main_orig_.js` file.
 
@@ -755,7 +759,8 @@ In the above figure:
 
 - In the access paths view, you can find out the scope of an object at runtime, which can lead to the location of the memory leak.
 
-#### All-Sites Timeline<a name="allsites"></a>
+<a name="allsites"></a>
+#### All-Sites Timeline
 
 The all-sites time shows the timeline for all the objects created during the execution. The timeline graph in the issue table (figure above) shows the diagram for a specific site while the timeline in the all-sites page (figure below) indicates the diagram for all sites in the application. The pie charts shows the proportion of each site in all allocated and stale objects.
 
@@ -763,9 +768,10 @@ The all-sites time shows the timeline for all the objects created during the exe
 
 ![All-sites timeline page](./media/js_stale_all_site.png)
 
-### Timer Sample Code<a name="samplecode"></a>
+<a name="samplecode"></a>
+### Timer Sample Code
 
-When you click **start**, the Timer starts to run. If you click again, the timer stops. The `exitApp()` function registers an event handler for the Tizen **Back** key to terminate the application when the **Back** key is pressed. 
+When you click **start**, the Timer starts to run. If you click again, the timer stops. The `exitApp()` function registers an event handler for the Tizen **Back** key to terminate the application when the **Back** key is pressed.
 
 In the `runtime()` function, the `exitApp()` function is added by mistake. As a result, every time you click **start**, the `exitApp()` function is called, creates an anonymous function, and registers it to listen for the **Back** key events. When you test this application with the Stale Object Checker, multiple **start** button clicks are shown as a memory leak.
 
@@ -805,7 +811,8 @@ This code site is detected as a leak because the handler function objects create
 
 In the "Timeline" graph, you can see how the number of stale instances increases steadily. This graph shows any objects created at this code site that have not been used before the application exits.
 
-### Calculator Sample Code<a name="samplecode2"></a>
+<a name="samplecode2"></a>
+### Calculator Sample Code
 
 When you click a number button, the `command()` function is executed. The `init()` function registers an event handler for the Tizen **Back** key.
 
@@ -830,3 +837,7 @@ var init = function() {
 function command(num) {
     init(); /* Add the function call for memory leak */
 ```
+
+## Related information
+* Dependencies
+  - Tizen Studio 1.0 and Higher

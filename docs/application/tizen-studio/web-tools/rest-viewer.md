@@ -1,7 +1,4 @@
 # Using the REST Viewer
-## Dependencies
-- Tizen Studio 1.0 and Higher
-
 
 With the Tizen Studio, you can use RESTful Web services. The REST Viewer allows you to emulate interaction with a Web service by composing and running requests as if it were an application actually calling the service.
 
@@ -13,7 +10,7 @@ The REST Viewer offers the following benefits:
 
 - It provides a complete basic testing and test history management tool, without the need for additional testing tools.
 
-- The automatic code generation features improve coding productivity. 
+- The automatic code generation features improve coding productivity.
 
   You do not need to implement a REST API call unit code. It automatically updates whenever the specification of the REST API changes.
 
@@ -22,7 +19,8 @@ There are 2 main use cases when you need to compose and run requests to a RESTfu
 - When you have developed a RESTful Web service and want to make sure it works as expected: that it is accessible in compliance with the specification and that it responds correctly.
 - When you are developing an application that addresses a RESTful Web service. In this case, it is helpful to investigate the access to the service and the required input data before you start development. During development, you can also call the Web service from outside your application. This can help locate errors where your application gives unexpected output even though no logical errors are detected in your code, and you suspect that the bottleneck is the interaction with the Web service.
 
-## Using the REST Viewer<a name="use"></a>
+<a name="use"></a>
+## Using the REST Viewer
 
 The REST Viewer displays the components of the [WADL](http://www.w3.org/Submission/wadl/) (Web Application Description Language) document in a hierarchical structure.
 
@@ -41,14 +39,15 @@ The WADL document can contain 4 types of WADL components:
 
 To open the REST Viewer settings, go to **Preferences > Tizen Studio > REST Viewer**, or click the ![Setting icon](./media/rest_icon_setting.png) icon on the **REST Viewer** view toolbar.
 
-## Creating and Managing WADL Components<a name="wadl"></a>
+<a name="wadl"></a>
+## Creating and Managing WADL Components
 
 To use the REST Viewer, you need a WADL document. If a WADL document is provided by the REST API service provider, you can import it. You can also export a test case so that others can use it.
 
 With the REST Viewer, you can make new WADL components, and import and export WADL files. You can handle a selected WADL component only if you open a dialog to modify it. You cannot modify the selected component's parent or child components at the same time.
 
 > **Note**  
-> Some attributes are required to make a structure for the tree viewer even if they are optional in the WADL schema. 
+> Some attributes are required to make a structure for the tree viewer even if they are optional in the WADL schema.
 
 To manage the WADL components, in the **REST Viewer** view toolbar, click the following icons:
 
@@ -64,7 +63,7 @@ When you add a new WADL component, you must define its place in the WADL structu
 
 Fill in the necessary details:
 
-- **Service** 
+- **Service**
 
   *Title** (required): Short plain text description of the element being documented
 
@@ -72,28 +71,29 @@ Fill in the necessary details:
   **Base URI** (required): Base URI for each child resource identifier
   **Alias** (optional)
 
-- **Path** 
+- **Path**
   **Path** (required): Relative URI template for the resource identifier
   **Content Type** (default): Media type for the query component of the resource URI
 
-- **API** 
+- **API**
   **Id** (required): Method identifier
   **Method** (default): Used HTTP method
   **Description** (optional)
 
-- **Parameters** 
+- **Parameters**
   Describe the input to the method as a collection of parameters:
   - **Parent**: Name of component to manage the parameters
   - **Name**: Parameter name
   - **Value**
-  - **Style**: Parameter style: 
+  - **Style**: Parameter style:
     - **Header**: HTTP header for use in the request
     - **Query**: URI query parameter for the method
     - **File**
   - **Type**: Parameter type as an XML-qualified name
   - **Required**: Whether the parameter is required to be present
 
-## Authenticating the Application<a name="authenticate"></a>
+<a name="authenticate"></a>
+## Authenticating the Application
 
 The REST Viewer can help you test applications that require authentication services.
 
@@ -108,7 +108,8 @@ In the same location, you can define the authentication details:
 
 ![Authentication details](./media/rest_authenticate.png)
 
-## Testing the APIs<a name="test"></a>
+<a name="test"></a>
+## Testing the APIs
 
 You can test the selected API on the REST Viewer and view the results.
 
@@ -142,17 +143,18 @@ After setting the variables and running the test, the result is displayed in the
 
 ![Test result](./media/rest_test.png)
 
-## Automatic Code Generation<a name="autogenerate"></a>
+<a name="autogenerate"></a>
+## Automatic Code Generation
 
 You can use the REST Viewer to send asynchronous requests with the REST APIs.
 
 There are 2 ways to use automatic code generation:
 
-- Use the content assist feature. 
+- Use the content assist feature.
 
   You can activate the content assist with the prefix `rest.`.
 
-- Drag and drop: 
+- Drag and drop:
 
   1. Select the API model in the REST Viewer, and drag and drop it to the Web HTML Editor.
   2. Select the functions at the bottom of the dialog to get the code.
@@ -160,3 +162,7 @@ There are 2 ways to use automatic code generation:
 **Figure: Selecting functions for the REST API**
 
 ![Selecting functions for the REST API](./media/rest_functions.png)
+
+## Related information
+* Dependencies
+  - Tizen Studio 1.0 and Higher

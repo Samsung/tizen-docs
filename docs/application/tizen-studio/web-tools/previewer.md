@@ -1,13 +1,11 @@
 # Previewing Pages in a Browser
-## Dependencies
-- Tizen Studio 1.0 and Higher
-
 
 To test a Web application, or a single Web page as part of a client application, use the previewer window.
 
 Not only can you preview the source code you have developed, you can also visually define the type and hierarchy of the selector to help development.
 
-## About the Previewer<a name="about"></a>
+<a name="about"></a>
+## About the Previewer
 
 The Tizen Studio provides a previewer window for instantly previewing the entire look and feel of the application.
 
@@ -18,7 +16,8 @@ The following limitations apply to the HTML previewer:
 - The Device API cannot be run in the emulator.
 - Some network environments do not support live editing.
 
-## Using the HTML and CSS Previewer<a name="use"></a>
+<a name="use"></a>
+## Using the HTML and CSS Previewer
 
 To use the HTML and CSS previewer:
 
@@ -31,7 +30,11 @@ To use the HTML and CSS previewer:
 
 You can configure the previewer to suit your own preferences.
 
-You can [set the preview](IDE-preferences-w.md#live) in **Window > Preferences > Tizen Studio > Web > Live Editing**.
+You can [set the preview](IDE-preferences.md#live) in **Window > Preferences > Tizen Studio > Web > Live Editing**.
 
 > **Note**  
 > The previewer is based on the Google Chrome™ browser. The CSS preview can differ from the actual product. It allows you to see the overall outline.Some selectors and elements do not work on the CSS previewer.
+
+## Related Information
+* Dependencies
+  - Tizen Studio 1.0 and Higher
