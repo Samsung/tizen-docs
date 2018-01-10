@@ -1,7 +1,9 @@
-# Manifest Editor #
+# Manifest Editor
 
-A Tizen .NET application project contains a manifest file, called `tizen-manifest.xml`, which is used to describe the application information.  The manifest file is composed of XML elements, which include the root `<manifest>` element and its child elements representing application information, such as `<version>` and `<privileges>`. The child elements are organized into a specific hierarchy. The elements can have attributes associated with them, providing more information about the element.
+A Tizen .NET application project contains a manifest file, called `tizen-manifest.xml`, which is used to describe the application information. The manifest file is composed of XML elements, which include the root [`<manifest>`](#manifest) element and its child elements representing application information, such as `<version>`, and `<privileges>`. The [child elements are organized into a specific hierarchy](#hierarchy). The elements can have attributes associated with them, providing more information on the element.
 
+<a name="editing"></a>
+## Editing the Manifest File 
 There are 2 different ways to edit the `tizen-manifest.xml` file:
 
 - Use the manifest editor to modify the manifest in a form editor:
@@ -26,14 +28,13 @@ There are 2 different ways to edit the `tizen-manifest.xml` file:
 > The `tizen-manifest.xml` file must conform to both the standard XML file format and the Tizen .NET application specification requirements. Editing the manifest file XML structure with the text editor is intended for advanced users only. If the file does not conform to the standard and the requirements, errors can occur during installation.
 
 
-
-
+<a name="hierarchy"></a>
 ## Manifest Element Hierarchy
 
 The Tizen .NET application manifest file consists of XML elements organized in a hierarchy. The following tree structure shows the relationship between the elements of the `tizen-manifest.xml` file.
 
 | `<manifest>` |                                   |                          |                  |
-| ------------ | --------------------------------- | ------------------------ | ---------------- |
+|--------------|-----------------------------------|--------------------------|------------------|
 |              | `<author>`                        |                          |                  |
 |              | `<description>`                   |                          |                  |
 |              | `<profile>`                       |                          |                  |
@@ -67,13 +68,18 @@ The Tizen .NET application manifest file consists of XML elements organized in a
 |              |                                   | `<app-defined-privilege>`|                  |
 |              | `<feature>`                       |                          |                  |
 
+
+<a name="manifest"></a>
 ## Manifest Elements
 
-The following sections summarize the elements used in the `tizen-manifest.xml` file of a .NET application.
+The following sections summarize the elements used in the `tizen-manifest.xml` file of a Tizen .NET application.
 
-### <manifest> Element
+<a name="manifest_element"></a>
+### &lt;manifest&gt; Element 
 
-This element contains the manifest information for a Tizen .NET application. The `<manifest>` element is an easily readable description of the Tizen package and serves as a container for the other elements of the configuration document.
+This element contains the manifest information for a Tizen .NET application. 
+
+The `<manifest>` element is an easily-readable description of the Tizen package and serves as a container for the other elements of the configuration document.
 
 For more information on the relationship between the elements, see the [element hierarchy](#hierarchy).
 
@@ -84,14 +90,15 @@ For more information on the relationship between the elements, see the [element 
 **Expected children (in the following order):**
 
 | Child element           | Occurrences          |
-| ----------------------- | -------------------- |
+|-------------------------|----------------------|
 | `<author>`              | 1 (optional)         |
 | `<description>`         | 1 or more (optional) |
-| `<profile>`             |                      |
+| `<profile>`             | 1 or more (optional) |
 | `<ui-application>`      | 1 (optional)         |
-| `<shortcut-list>`       |                      |
-| `<account>`             |                      |
-| `<privileges>`          |                      |
+| `<shortcut-list>`       | 1 (optional)         |
+| `<account>`             | 1 (optional)         |
+| `<privileges>`          | 1 (optional)         |
+| `<provides-appdefined-privileges>` |  1 (optional) |
 | `<feature>`             | 1 or more (optional) |
 
 
@@ -105,7 +112,8 @@ For more information on the relationship between the elements, see the [element 
 
   Installation location for the application (available value: `"auto"`)
 
-  **Note**This attribute is read-only. Do not attempt to modify it.
+  > **Note**  
+  > This attribute is read-only. Do not attempt to modify it.
 
 - `package`
 
@@ -115,11 +123,12 @@ For more information on the relationship between the elements, see the [element 
 
   Package type of the application (available value: `"tpk"`)
 
-  **Note**This attribute is read-only. Do not attempt to modify it.
+  > **Note**  
+  > This attribute is read-only. Do not attempt to modify it.
 
 - `version`
 
-  Version number of the application (available value: number in the "x.y.z" format, where 0 <= x <= 255, 0 <= y <= 255, and 0 <= z <= 65535)
+  Version number of the application (available value: number in the "x.y.z" format, where 0 &lt;= x &lt;= 255, 0 &lt;= y &lt;= 255, and 0 &lt;= z &lt;= 65535)
 
 **For example:**
 
@@ -132,11 +141,13 @@ For more information on the relationship between the elements, see the [element 
    <shortcut-list>.....</shortcut-list>
    <account>.....</account>
    <privileges>.....</privileges>
+   <provides-appdefined-privileges>.....</provides-appdefined-privileges>
    <feature>.....</feature>
 </manifest>
 ```
 
-### <author> Element
+<a name="author"></a>
+### &lt;author&gt; Element
 
 This element represents the creator of the Tizen package.
 
@@ -166,7 +177,8 @@ For more information on the relationship between the elements, see the [element 
 <author email="email@email.com" href="http://test.com">author</author>
 ```
 
-### <description> Element
+<a name="description"></a>
+### &lt;description&gt; Element 
 
 This element contains an easily readable description of the Tizen package.
 
@@ -178,7 +190,9 @@ For more information on the relationship between the elements, see the [element 
 
 **Attributes:**
 
-- `xml:lang`Language and country code (available value: "<2-letter lowercase language code (ISO 639-1)>-<2-letter lowercase country code (ISO 3166-1 alpha-2)>")
+- `xml:lang`
+
+    Language and country code (available value: "&lt;2-letter lowercase language code (ISO 639-1)&gt;-&lt;2-letter lowercase country code (ISO 3166-1 alpha-2)&gt;")
 
 **Expected value:**
 
@@ -190,11 +204,10 @@ For more information on the relationship between the elements, see the [element 
 <description xml:lang="en-us">This is a sample</description>
 ```
 
-### <profile> Element
+<a name="profile_element"></a>
+### &lt;profile&gt; Element
 
-This element contains the targeted requirements for specific device categories, which layer on top of the Tizen Common Platform, including additional components for devices, APIs, and hardware requirements. The platform must conform to the Tizen common requirements as well as at least 1 profile.
-
-The `<profile>` element determines on which kind of device the Tizen package operates. This element has no child elements.
+In a Tizen .NET application, the `<profile>` element must be set to `common`. This element has no child elements.
 
 **Occurrences:**
 
@@ -202,15 +215,18 @@ The `<profile>` element determines on which kind of device the Tizen package ope
 
 **Attributes:**
 
-- `name`Profile name (available values: `common`, `mobile`, `tv`, `wearable`)
+-   `name`
+
+    Profile name (available values: `common`, `mobile`, `tv`, `wearable`)
 
 **For example:**
 
 ```xml
-<profile name="mobile"/>
+<profile name="common"/>
 ```
 
-### <ui-application> Element
+<a name="ui"></a>
+### &lt;ui-application&gt; Element
 
 This element contains the manifest information for a Tizen .NET UI application with a graphical user interface (GUI).
 
@@ -223,7 +239,7 @@ For more information on the relationship between the elements, see the [element 
 **Expected children (in the following order):**
 
 | Child element           | Occurrences          |
-| ----------------------- | -------------------- |
+|-------------------------| ---------------------|
 | `<label>`               | 1 or more (optional) |
 | `<icon>`                | 1 or more (optional) |
 | `<app-control>`         | 1 or more (optional) |
@@ -233,14 +249,43 @@ For more information on the relationship between the elements, see the [element 
 
 **Attributes:**
 
-- `appid`Application unique ID (string) This can be used for launching or terminating the application explicitly.
-- `exec`Application executable file path (string)
-- `hw-acceleration`Indicates the application hardware acceleration status (available values: not defined (depends on the system setting), `on` (use hardware acceleration), `off` (do not use hardware acceleration))By default, this value is not defined.
-- `launch_mode`Application launch mode (available values: `single` (launched as a main application), `group` (launched as a sub application), `caller` (caller application [defines the launch mode](../../../org.tizen.guides/html/native/app_management/app_controls_n.htm#mode) with the `app_control_set_launch_mode()` function))By default, this value is set to `single`.
-- `multiple`Indicates whether the application can be launched as a multiple (available values: `true`, `false`)**Note**This attribute is read-only. Do not attempt to modify it.
-- `nodisplay`Indicates whether the application is shown in the app tray (available values: `true`, `false`)
-- `taskmanage`Indicates whether the application is shown in the task manager (available values: `true`, `false`)
-- `type`Tizen application type (available values: `dotnet`)**Note**This attribute is read-only. Do not attempt to modify it.
+- `appid`  
+  Application unique ID (string)
+  This can be used for launching or terminating the application explicitly.
+
+- `exec`
+
+  Application executable file path (string)
+
+- `hw-acceleration`
+
+  Indicates the application hardware acceleration status (available values: not defined (depends on the system setting), `on` (use hardware acceleration), `off` (do not use hardware acceleration))
+  By default, this value is not defined.
+
+
+- `launch_mode`
+
+   Application launch mode (available values: `single` (launched as a main application), `group` (launched as a sub application), `caller` (caller application))
+
+- `multiple`
+
+  Indicates whether the application can be launched as a multiple (available values: `true`, `false`)
+  > **Note**  
+  > This attribute is read-only. Do not attempt to modify it.
+
+- `nodisplay`
+
+  Indicates whether the application is shown in the app tray (available values: `true`, `false`)
+
+- `taskmanage`
+
+  Indicates whether the application is shown in the task manager (available values: `true`, `false`)
+
+- `type`
+
+  Tizen application type (available values: `dotnet`)
+  > **Note**  
+  >This attribute is read-only. Do not attempt to modify it.
 
 **For example:**
 
@@ -257,10 +302,13 @@ For more information on the relationship between the elements, see the [element 
    <metadata key="testkey" value="testvalue"/>
    <datacontrol access="ReadOnly"
                 providerid="http://uiapp.com/datacontrol/provider/uiapp" type="Sql"/>
+   <splash-screens>
+      <splash-screen src="uiapp.jpg" type="img" dpi="hdpi" orientation="portrait" indicator-display="true"/>
+   </splash-screens>
 </ui-application>
 ```
-
-### <shortcut-list> Element
+<a name="shortcut-list"></a>
+### &lt;shortcut-list&gt; Element 
 
 This element contains the shortcut template list used for adding a shortcut to the home screen.
 
@@ -273,7 +321,7 @@ For more information on the relationship between the elements, see the [element 
 **Expected children:**
 
 | Child element | Occurrences |
-| ------------- | ----------- |
+|---------------| ------------|
 | `<shortcut>`  | 1 or more   |
 
 **For example:**
@@ -284,7 +332,8 @@ For more information on the relationship between the elements, see the [element 
 </shortcut-list>
 ```
 
-#### <shortcut> Element
+<a name="shortcut"></a>
+#### &lt;shortcut&gt; Element
 
 This element contains the information that indicates the shortcut for the application on the home screen.
 
@@ -295,15 +344,26 @@ This element contains the information that indicates the shortcut for the applic
 **Expected children:**
 
 | Child element | Occurrences |
-| ------------- | ----------- |
-| `<icon>`      | 1           |
+|---------------|-------------|
+| `<icon>`      | 1 or more   |
 | `<label>`     | 1 or more   |
 
 **Attributes:**
 
-- `appid`Application unique ID (string)This can be used for launching or terminating the application explicitly.
-- `extra_data`Data for user content (string)Shortcut element property in the manifest file
-- `extra_key`Key for user content (string)Shortcut element property in the manifest file
+- `appid`
+
+  Application unique ID (string)
+  This can be used for launching or terminating the application explicitly.
+
+- `extra_data`
+
+  Data for user content (string)
+  Shortcut element property in the manifest file.
+
+- `extra_key`
+
+  Key for user content (string)
+  Shortcut element property in the manifest file.
 
 **For example:**
 
@@ -314,8 +374,8 @@ This element contains the information that indicates the shortcut for the applic
    <label xml:lang="en-us">short</label>
 </shortcut>
 ```
-
-### <account> Element
+<a name="account"></a>
+### &lt;account&gt; Element
 
 This element contains a set of user accounts and account provider-related information for a Tizen application.
 
@@ -328,7 +388,7 @@ For more information on the relationship between the elements, see the [element 
 **Expected children:**
 
 | Child element        | Occurrences |
-| -------------------- | ----------- |
+|----------------------|-------------|
 | `<account-provider>` | 1 or more   |
 
 **For example:**
@@ -338,23 +398,30 @@ For more information on the relationship between the elements, see the [element 
    <account-provider>.....</account-provider>
 </account>
 ```
-
-#### <account-provider> Element
+<a name="accountprovider"></a>
+#### &lt;account-provider&gt; Element
 
 This element contains specific service provider or user account protocol-related information.
 
 **Expected children:**
 
 | Child element  | Occurrences          |
-| -------------- | -------------------- |
-| `<icon>`       | 1 (optional)         |
-| `<label>`      | 1 or more (optional) |
+|----------------|----------------------|
+| `<icon>`       | 1 or more            |
+| `<label>`      | 1 or more            |
 | `<capability>` | 1 or more (optional) |
 
 **Attributes:**
 
-- `appid`Application unique ID (string)This can be used for launching or terminating the application explicitly.
-- `multiple-accounts-support`Indicates whether multiple accounts are supported (available values: `true`, `false`)
+- `appid`
+
+  Application unique ID (string)
+  This can be used for launching or terminating the application explicitly.
+
+- `multiple-accounts-support`
+
+  Indicates whether multiple accounts are supported (available values: `true`, `false`)
+
 - `providerid`ID of the account provider (string)
 
 **For example:**
@@ -367,13 +434,15 @@ This element contains specific service provider or user account protocol-related
 </account-provider>
 ```
 
-#### <icon> Element
+#### &lt;icon&gt; Element
 
-This element contains the account provider icon image. Since the icons are used on the device under **Settings > Accounts**, place them in a shared directory.
+This element contains the account provider icon image. Since the icons are used on the device under **Settings &gt; Accounts**, place them in a shared directory.
 
 **Attributes:**
 
-- `section`Usage information for the icon image (available values: `account` (image size: 72 x 72 for density xhigh and 48 x 48 for density high), `account-small` (image size: 45 x 45 for density xhigh and 30 x 30 for density high))
+- `section`
+
+  Usage information for the icon image (available values: `account` (image size: 72 x 72 for density xhigh and 48 x 48 for density high), `account-small` (image size: 45 x 45 for density xhigh and 30 x 30 for density high))
 
 **Expected value:**
 
@@ -386,7 +455,8 @@ This element contains the account provider icon image. Since the icons are used 
 <icon section="account-small">uiapp.png</icon>
 ```
 
-#### <capability> Element
+<a name="capability"></a>
+#### &lt;capability&gt; Element
 
 This element contains the account provider capability. The capabilities are defined as `http://<VENDOR_INFORMATION>/account/capability/<NAME>`.
 
@@ -400,17 +470,18 @@ This element contains the account provider capability. The capabilities are defi
 <capability>http://tizen.org/account/capability/calendar</capability>
 ```
 
-### <privileges> Element
+<a name="privileges"></a>
+### &lt;privileges&gt; Element
 
 This element contains the set of required privileges for a Tizen application.
 
-Applications that use sensitive APIs must declare the required privileges in the `tizen-manifest.xml` file. Since the privilege categories differ for each API type, make sure you define the [correct privilege related to the API you need](../../../org.tizen.training/html/native/details/sec_privileges_n.htm).
+Applications that use sensitive APIs must declare the required privileges in the `tizen-manifest.xml` file.
 
-Click **+** to open the **Add Privilege** dialog.
+Click **Add** to open the **Privileges** dialog.
 
-**Figure: Editing the <privileges> element in the manifest editor**
+**Figure: Editing the &lt;privileges&gt; element in the Manifest Editor**
 
-![Editing the privileges element in the manifest editor](./media/manifest_privilege.png)
+![Editing the feature element in the Manifest Editor](media/vs_manifest_privileges.png)
 
 For more information on the relationship between the elements, see the [element hierarchy](#hierarchy).
 
@@ -421,18 +492,21 @@ For more information on the relationship between the elements, see the [element 
 **Expected children:**
 
 | Child element             | Occurrences          |
-| ------------------------- | -------------------- |
-| [`privilege`](#privilege) | 1 or more (optional) |
+|---------------------------|----------------------|
+| `<privilege>` | 1 or more (optional) |
+| `<appdefined-privilege>` | 1 or more (optional) |
 
 **For example:**
 
 ```xml
 <privileges>
    <privilege>.....</privilege>
+   <appdefined-privilege>.....</appdefined-privilege>
 </privileges>
 ```
 
-#### <privilege> Element
+<a name="privilege"></a>
+#### &lt;privilege&gt; Element
 
 This element contains a required privilege for a Tizen application.
 
@@ -450,7 +524,7 @@ For example:
 - `http://tizen.org/privilege/appmanager.launch`
 - `http://tizen.org/privilege/account.read`
 
-For more information on the expected values, see [Security and API Privileges](../../../org.tizen.training/html/native/details/sec_privileges_n.htm).
+For more information on the expected values, see [Security and API Privileges](../../native/tutorials/details/sec-privileges.md).
 
 **For example:**
 
@@ -458,12 +532,12 @@ For more information on the expected values, see [Security and API Privileges](.
 <privilege>http://tizen.org/privilege/application.admin</privilege>
 <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
 <privilege>http://tizen.org/privilege/account.read</privilege>
-<appdefined-privilege>http://{provider-pkgid}/appdefined/exampleprivilege2</appdefined-privilege>
 ```
 
-#### <appdefined-privilege> Element
+<a name="appdefined-privilege"></a>
+#### &lt;appdefined-privilege&gt; Element
 
-Used to get the required access privileges provided by a consumer package.
+This element is used to get the required access privileges provided by a consumer package.
 
 **Occurrences:**
 
@@ -471,7 +545,9 @@ Used to get the required access privileges provided by a consumer package.
 
 **Attributes:**
 
-- `license`Optional name of the license file used to verify the privilege
+- `license`
+
+  Optional name of the license file used to verify the privilege
 
 **Expected value:**
 
@@ -480,38 +556,51 @@ Used to get the required access privileges provided by a consumer package.
 **For example:**
 
 ```xml
-<appdefined-privilege license="example_license">http://{provider-pkgid}/appdefined/exampleprivilege1</appdefined-privilege>
+<appdefined-privilege license="example_license">
+   http://{provider-pkgid}/appdefined/exampleprivilege1
+</appdefined-privilege>
 <appdefined-privilege>http://{provider-pkgid}/appdefined/exampleprivilege2</appdefined-privilege>
 ```
 
-### <provides-appdefined-privilege> Element
+<a name="provides-appdefined-privileges"></a>
+### &lt;provides-appdefined-privileges&gt; Element
 
-Used to specify the app-defined access privileges provided by a provider package.
+This element specifies the app-defined access privileges provided by a provider package.
+
+For more information on the relationship between the elements, see the [element hierarchy](#hierarchy).
 
 **Occurrences:**
 
-- 0 or 1 (optional)
+- 1 (optional)
+
+**Expected children:**
+
+| Child element                                      | Occurrences |
+|----------------------------------------------------|----------------------|
+| `<appdefined-privilege>` | 1 or more (optional) |
 
 **For example:**
 
 ```xml
 <provides-appdefined-privileges>
-    <appdefined-privilege>.....</appdefined-privilege>
-    <appdefined-privilege>.....</appdefined-privilege>
+   <appdefined-privilege>.....</appdefined-privilege>
+   <appdefined-privilege>.....</appdefined-privilege>
 </provides-appdefined-privileges>
 ```
+<a name="appdefined-privilege2"></a>
+#### &lt;appdefined-privilege&gt; Element 
 
-#### <appdefined-privilege> Element
-
-Used to get the required access privileges provided by a provider package.
+This element is used to get the required access privileges provided by a provider package.
 
 **Occurrences:**
 
-- 0 or more (optional)
+-   1 or more (optional)
 
 **Attributes:**
 
-- `license`Optional name of the license file used to verify the privilege
+- `license`
+
+  Optional name of the license file used to verify the privilege
 
 **Expected value:**
 
@@ -520,21 +609,22 @@ Used to get the required access privileges provided by a provider package.
 **For example:**
 
 ```xml
-<provides-appdefined-privileges>
-    <appdefined-privilege license="example_license">http://{provider-pkgid}/appdefined/exampleprivilege1</appdefined-privilege>
-    <appdefined-privilege>http://{provider-pkgid}/appdefined/exampleprivilege2</appdefined-privilege>
-</provides-appdefined-privileges>
+<appdefined-privilege license="example_license">
+   http://{provider-pkgid}/appdefined/exampleprivilege1
+</appdefined-privilege>
+<appdefined-privilege>http://{provider-pkgid}/appdefined/exampleprivilege2</appdefined-privilege>
 ```
 
-### <feature> Element
+<a name="feature"></a>
+### &lt;feature&gt; Element 
 
 This element contains a list of required features for feature-based filtering in the Tizen Store.
 
 The element is used to define the hardware and software components for the Tizen application. In order to use or access an API that is specialized for each vendor or platform, the feature must be declared. This element has no child elements.
 
-**Figure: Editing the <feature> element in the manifest editor**
+**Figure: Editing the &lt;feature&gt; element in the Manifest Editor**
 
-![Editing the feature element in the manifest editor](./media/manifest_features.png)
+![Editing the feature element in the Manifest Editor](media/vs_manifest_features.png)
 
 For more information on the relationship between the elements, see the [element hierarchy](#hierarchy).
 
@@ -544,7 +634,10 @@ For more information on the relationship between the elements, see the [element 
 
 **Attributes:**
 
-- `name` (mandatory, a feature key URI)Item name used in feature-based filtering in the Tizen Store, for example, `"http://tizen.org/feature/camera"` or `"http://tizen.org/feature/fmradio"`For more information on the expected values and the application filtering mechanism, see [Application Filtering](../../../org.tizen.training/html/native/details/app_filtering_n.htm).
+- `name`
+
+  (mandatory, a feature key URI)
+  Item name used in feature-based filtering in the Tizen Store, for example, `"http://tizen.org/feature/camera"` or `"http://tizen.org/feature/fmradio"`
 
 **Expected value:**
 

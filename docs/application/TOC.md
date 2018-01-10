@@ -4,4 +4,5 @@
 ## [Web Application](web/index.md)
 ## [Tizen Studio](tizen-studio/index.md)
 ## [Visual Studio Tools for Tizen](vstools/index.md)
+## [Visual Studio Code Extension for Tizen](vscode-ext/index.md)
 ## [Distribute](distribute/index.md)

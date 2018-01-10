@@ -82,7 +82,7 @@ On a certain cadence, we push all commits from master branch into the live branc
 
 2. Type `git clone`, and then paste the URL you copied in 1. It will look like this, with your GitHub username instead of `YOUR-USERNAME`:
    ```bash
-   $ git clone https://github.com/YOUR-USERNAME/tizen-docs
+   $ git clone https://github.com/YOUR-USERNAME/tizen-docs.git
    ```
 3. Set to synchronize the original repository and the forked repository.
    ```bash

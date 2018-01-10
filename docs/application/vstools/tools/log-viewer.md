@@ -1,6 +1,6 @@
 # Log Viewer
 
-The Log Viewer enables you to check your log messages in Visual Studio. It shows the same messages as the **Log View** in the [Device Manager](device-manager.md). However, the Log Viewer is shown as its own view within the Visual Studio window, while the Device Manager **Log View** is always part of the separate Device Manager window.
+The Log Viewer enables you to check your log messages in Visual Studio. It shows the same messages as the [**Log View**](device-manager.md#logview) in the Device Manager. However, the Log Viewer is shown as its own view within the Visual Studio window, while the Device Manager Log View is always part of the separate Device Manager window.
 
 The Log Viewer helps you debug your application by capturing all the events logged by the platform and your application. The Log Viewer shows the logs through the dlog logging service. The service consists of the dlogutil and dlog library. You can also see logs with the `dlogutil` command in the CLI environment, and create log entries with the dlog library.
 
@@ -11,7 +11,7 @@ The Log Viewer helps you debug your application by capturing all the events logg
 The Log Viewer displays a log table consisting of the following fields:
 
 - **Time**: log time
-- **Level**: priority level that indicates the urgency of the log message
+- **Level**: priority level indicates the urgency of the log message
 - **Pid**: process ID
 - **Tid**: thread ID
 - **Tag**: identification of the log message source
@@ -21,7 +21,7 @@ The Log Viewer displays a log table consisting of the following fields:
 
 To launch the Log Viewer, in the Visual Studio menu, go to **Tools &gt; Tizen &gt; Tizen Log Viewer**.
 
-**Figure: Launching the Log Viewer**
+**Figure: Log Viewer launch**
 
 ![Launching the Log Viewer](media/logviewer-entry-point.png)
 

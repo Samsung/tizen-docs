@@ -33,7 +33,7 @@
 ## [Audio Management](multimedia/audio.md)
 ## [Media Playback](multimedia/media-playback.md)
 ## [Media Recording](multimedia/media-recording.md)
-## [Raw Audio Playback and Recording](media/raw-audio.md)
+## [Raw Audio Playback and Recording](multimedia/raw-audio.md)
 ## [Media Controller](multimedia/media-controller.md)
 ## [Media Conversions](multimedia/media-conversions.md)
 ## [Screen Mirroring](multimedia/screen-mirroring.md)
