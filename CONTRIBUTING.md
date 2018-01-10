@@ -78,30 +78,31 @@ On a certain cadence, we push all commits from master branch into the live branc
 
 ### How to PR
 1. Fork form the original repository, http://github.com/Samsung/tizen-docs.
+   (Ref. https://help.github.com/articles/fork-a-repo/)
 
-2. Clone the forked repository.
-   ```
-   $ git clone <forked repository URL>
+2. Type `git clone`, and then paste the URL you copied in 1. It will look like this, with your GitHub username instead of `YOUR-USERNAME`:
+   ```bash
+   $ git clone https://github.com/YOUR-USERNAME/tizen-docs
    ```
 3. Set to synchronize the original repository and the forked repository.
-   ```
+   ```bash
    $ git remote -v
    $ git remote add upstream http://github.com/Samsung/tizen-docs.git
    $ git remote -v
    ```
 4. Create a new branch on the forked repository or the local repository,
    and switch to the new branch.
-   ```
+   ```bash
    $ git checkout -b <new branch name>
    ```
 5. Create a local commit.
-   ```
+   ```bash
    $ git status
    $ git add
    $ git commit -a
    ```
 6. Push the branch
-   ```
+   ```bash
    $ git push origin <new branch name>
    ```
 7. Open a pull requst on http://github.com/Samsung/tizen-docs.git.
