@@ -8,23 +8,23 @@ The main features of the File API include:
 
 - Resolving the filesystem
 
-  A basic step necessary to perform other file actions is to [resolve a filesystem](./cordova/file-w.md#filesystemresolve), which results in a `FileSystem` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/file.html#FileSystem), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/file.html#FileSystem), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/file.html#FileSystem) applications) being retrieved. You can use the `root` member to perform other actions on this filesystem.
+  A basic step necessary to perform other file actions is to [resolve a filesystem](#resolving-filesystem-entries), which results in a `FileSystem` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/file.html#FileSystem), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/file.html#FileSystem), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/file.html#FileSystem) applications) being retrieved. You can use the `root` member to perform other actions on this filesystem.
 
 - Operating on directories
 
-  You can [create or remove a directory or file, or read all entries from a specific directory](./cordova/file-w.md#directories).
+  You can [create or remove a directory or file, or read all entries from a specific directory](#operating-on-directories).
 
 - Operating on entries
 
-  You can [get metadata, and move, copy, and remove entries](./cordova/file-w.md#entries). You can also look up the parent directory of the entry or return the entry URL.
+  You can [get metadata, and move, copy, and remove entries](#operating-on-entries). You can also look up the parent directory of the entry or return the entry URL.
 
 - Operating on files
 
-  You can [access file details](./cordova/file-w.md#files).
+  You can [access file details](#operating-on-files).
 
 - Reading and writing file content
 
-  You can [read file content, and create and write data to a file](./cordova/file-w.md#readwrite). Using the file readers and writers, you can read Blob objects in a specific format (data URL, test, binary string, and array buffer).
+  You can [read file content, and create and write data to a file](#reading-and-writing-file-content). Using the file readers and writers, you can read Blob objects in a specific format (data URL, test, binary string, and array buffer).
 
 ## Prerequisites
 
@@ -53,7 +53,7 @@ To enable your application to use the file functionality:
 
 To resolve the initial root for other filesystem operations:
 
-- Use the `requestFileSystem()` global async method:	
+- Use the `requestFileSystem()` global async method:
 
     - Define a callback for handling the success and failure of the operation:
 
@@ -276,7 +276,7 @@ To move, copy, and delete entries, or access entry metadata, parent information,
   });
   ```
 
-> **Note**
+> **Note**  
 > You cannot delete a non-empty directory or the filesystem root directory.
 
   The following output is shown in the system log:
@@ -304,7 +304,7 @@ To move, copy, and delete entries, or access entry metadata, parent information,
 
 ## Operating on Files
 
-To create files, see [Resolving Filesystem Entries](./cordova/file-w.md#filesystemresolve). To create a writer for a file and access file details:
+To create files, see [Resolving Filesystem Entries](#resolving-filesystem-entries). To create a writer for a file and access file details:
 
 - To create a `FileWriter` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/file.html#FileWriter), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/file.html#FileWriter), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/file.html#FileWriter) applications), use the `createWriter()` method:
 
@@ -520,3 +520,9 @@ To read and write file content:
   ```
   abort
   ```
+
+## Related Information
+* Dependencies
+  - Tizen 3.0 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable
+  - Tizen 3.0 and Higher for TV

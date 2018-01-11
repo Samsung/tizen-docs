@@ -1,11 +1,5 @@
 # Console Logging
 
-## Dependencies
-
-- Tizen 3.0 and Higher for Mobile
-- Tizen 3.0 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
 You can write messages to the system console for debugging purposes.
 
 The Console API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
@@ -14,15 +8,15 @@ The main features of the Console API include:
 
 - Writing log messages and errors
 
-  You can [write simple log and error messages](./cordova/console-w.md#loganderror) to the system console.
+  You can [write simple log and error messages](#writing-log-messages-and-errors) to the system console.
 
 - Formatting objects
 
-  You can [print a JavaScript representation of a specified object](./cordova/console-w.md#dirobject).
+  You can [print a JavaScript representation of a specified object](#formatting-objects).
 
 - Timing
 
-  You can [measure the time elapsed during an operation](./cordova/console-w.md#logtiming).
+  You can [measure the time elapsed during an operation](#measuring-timing).
 
 > **Note**
 > To see the message writing results, use the system console in the Tizen Studio or use the `sdb dlog` command.
@@ -94,3 +88,10 @@ To measure the time elapsed during an operation:
    ```
 
 3. Stop the timer by passing the same label to the `timeEnd()` method:`console.timeEnd('Big array initialization');`The following output is shown in the system console:`Big array initialization: 176ms`
+
+
+## Related Information
+* Dependencies
+  - Tizen 3.0 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable
+  - Tizen 3.0 and Higher for TV

@@ -1,11 +1,5 @@
 # File Transfers
 
-## Dependencies
-
-- Tizen 3.0 and Higher for Mobile
-- Tizen 3.0 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
 You can transfer files using HTTP requests, and download and upload files. You can also track a transfer's progress and abort it as needed. The default HTTP method is `POST`, but `PUT` is also supported.
 
 The File Transfer API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
@@ -14,19 +8,19 @@ The main features of the File Transfer API include:
 
 - Download
 
-  You can [download a file](./cordova/filetransfer-w.md#download) from a remote server.
+  You can [download a file](#downloading-files) from a remote server.
 
 - Upload
 
-  You can [upload a file](./cordova/filetransfer-w.md#upload) to a remote server.
+  You can [upload a file](#uploading-files) to a remote server.
 
 - Abort
 
-  You can [terminate an on-going transfer](./cordova/filetransfer-w.md#abort).
+  You can [terminate an on-going transfer](#aborting-transfers).
 
 - Progress tracking
 
-  You can [track the progress](./cordova/filetransfer-w.md#tracking_progress) of a file transfer.
+  You can [track the progress](#tracking-transfer-progress) of a file transfer.
 
 All file operations are accessible by the `FileTransfer` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/filetransfer.html#FileTransfer), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/filetransfer.html#FileTransfer), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/filetransfer.html#FileTransfer) applications).
 
@@ -204,3 +198,9 @@ uploaded: 512
 uploaded: 1024
 Success.  File uploaded.
 ```
+
+## Related Information
+* Dependencies
+  - Tizen 3.0 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable
+  - Tizen 3.0 and Higher for TV

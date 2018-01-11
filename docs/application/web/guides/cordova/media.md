@@ -1,40 +1,34 @@
 # Media Playback and Recording
 
-## Dependencies
-
-- Tizen 3.0 and Higher for Mobile
-- Tizen 3.0 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
 You can play and record audio files using various functionalities, such as play, stop, pause, volume change, and seek to position.
 
 The Media API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The main features of the Media API include:
 
-- Playing audio files	
+- Playing audio files
 
-  You can [start audio file playback](./cordova/media-w.md#play).
+  You can [start audio file playback](#playing-audio-files).
 
-- Seeking position	
+- Seeking position
 
-  You can [change the playing position](./cordova/media-w.md#seek).
+  You can [change the playing position](#seeking-position).
 
-- Changing the volume	
+- Changing the volume
 
-  You can [change the volume during playback](./cordova/media-w.md#volume).
+  You can [change the volume during playback](#changing-the-volume).
 
-- Using playback callbacks	
+- Using playback callbacks
 
-  You can [use callbacks](./cordova/media-w.md#callbacks) to handle playback success and errors, and various status events.
+  You can [use callbacks](#using-playback-callbacks) to handle playback success and errors, and various status events.
 
-- Getting the duration and position	
+- Getting the duration and position
 
-  You can [get the duration of the audio file, and retrieve the current position](./cordova/media-w.md#duration).
+  You can [get the duration of the audio file, and retrieve the current position](#getting-the-duration-and-position).
 
-- Recording audio	
+- Recording audio
 
-  You can [start and stop recording](./cordova/media-w.md#record).
+  You can [start and stop recording](#recording-audio).
 
 ## Prerequisites
 
@@ -324,3 +318,10 @@ To start and stop recording:
    ```
 
    Always release the media object when no longer needed.
+
+
+## Related Information
+* Dependencies   
+   - Tizen 3.0 and Higher for Mobile
+   - Tizen 3.0 and Higher for Wearable
+   - Tizen 3.0 and Higher for TV

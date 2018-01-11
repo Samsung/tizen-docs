@@ -1,11 +1,5 @@
 # Notification Dialogs
 
-## Dependencies
-
-- Tizen 3.0 and Higher for Mobile
-- Tizen 3.0 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
 You can make different types of notifications to the user, so that each time a notification dialog box is closed, the result is provided in a callback function. The `navigator.notification` object allows access to the Dialogs API.
 
 The Dialogs API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
@@ -14,19 +8,19 @@ The main features of the Dialogs API include:
 
 - Alerts        
 
-  You can [create an alert dialog box](./cordova/dialogs-w.md#alert), which shows an alert text and a dismiss button with custom text.
+  You can [create an alert dialog box](#creating-alerts), which shows an alert text and a dismiss button with custom text.
 
 - Confirmations        
 
-  You can [create a confirmation dialog box](./cordova/dialogs-w.md#confirm), which shows a confirmation text with a set of buttons.
+  You can [create a confirmation dialog box](#creating-confirmations), which shows a confirmation text with a set of buttons.
 
 - Prompts        
 
-  You can [create a prompt dialog box](./cordova/dialogs-w.md#prompt), which shows a prompt where the user can put some text, and a set of buttons.
+  You can [create a prompt dialog box](#creating-prompts), which shows a prompt where the user can put some text, and a set of buttons.
 
 - Beeps        
 
-  You can [make a beep sound](./cordova/dialogs-w.md#beep).
+  You can [make a beep sound](#making-beep-sounds).
 
 ## Prerequisites
 
@@ -137,3 +131,9 @@ To make a beep sound once or more:
   ```
   navigator.notification.beep(3);
   ```
+
+## Related Information
+* Dependencies  
+  - Tizen 3.0 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable
+  - Tizen 3.0 and Higher for TV

@@ -1,11 +1,5 @@
 # Network Information
 
-## Dependencies
-
-- Tizen 3.0 and Higher for Mobile
-- Tizen 3.0 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
 You can access information about the connection (such as cellular, Wi-Fi, or Ethernet) by reading the `navigator.connection.type` property. It is a textual representation of the current network status. Each time a connection is established or closed, the type changes.
 
 The Network Information API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
@@ -14,11 +8,11 @@ The main features of the Network Information API include:
 
 - Getting the connection status        
 
-  You can compare the `navigator.connection.type` value with one of the values in the `Connection` global dictionary to [check the current connection status](./cordova/network-information-w.md#connectionStatus).
+  You can compare the `navigator.connection.type` value with one of the values in the `Connection` global dictionary to [check the current connection status](#checking-the-connection-status).
 
 - Monitoring network status changes        
 
-  To [monitor the changes in the network status](./cordova/network-information-w.md#events), you can use the `document.addEventListener()` method to register the required callbacks.
+  To [monitor the changes in the network status](#handling-network-related-events), you can use the `document.addEventListener()` method to register the required callbacks.
 
 ## Prerequisites
 
@@ -114,3 +108,10 @@ Manage the situations where the device connects to and disconnects from a networ
    ```
 
    The `online` event fires when `connection.type` changes from `Connection.NONE` to any other value. Similarly, the `offline` event fires when `connection.type` becomes `Connection.NONE`.
+
+
+## Related Information
+* Dependencies   
+   - Tizen 3.0 and Higher for Mobile
+   - Tizen 3.0 and Higher for Wearable
+   - Tizen 3.0 and Higher for TV

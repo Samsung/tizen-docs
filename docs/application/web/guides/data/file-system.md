@@ -1,32 +1,26 @@
 # File System
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
-You can [access the files and directories](./data/file-system-w.md#access) in the device file system.
+You can [access the files and directories](#file-and-directory-access) in the device file system.
 
 The Filesystem API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
 
-The Filesystem API provides access to accessible parts of the file system, which are represented as [virtual root locations](./data/file-system-w.md#roots).
+The Filesystem API provides access to accessible parts of the file system, which are represented as [virtual root locations](#supported-virtual-roots).
 
 The main features of the Filesystem API include:
 
 - File storage management   
 
-  You can [manage different storages](./data/file-system-w.md#manage) on the device and retrieve additional information about the storages, including listing available storages and receiving storage change notifications.
+  You can [manage different storages](#managing-file-storages) on the device and retrieve additional information about the storages, including listing available storages and receiving storage change notifications.
 
 - Files and directory management   
 
-  You can [perform basic file and directory management tasks](./data/file-system-w.md#file_dir) using the `File` interface: 
+  You can [perform basic file and directory management tasks](#managing-files-and-directories) using the `File` interface:
 
-  - You can [create files and directories](./data/file-system-w.md#create) in the file system.
-  - You can [retrieve a list of files in a directory](./data/file-system-w.md#retrieve), the URI of a file, or the file content as a `DOMString`.
-  - You can [read or write to a file](./data/file-system-w.md#file_dir).
-  - You can [copy and move files and directories](./data/file-system-w.md#file_dir) within the virtual file system.
-  - You can [delete files and directories](./data/file-system-w.md#create) from the virtual file system.
+  - You can [create files and directories](#creating-and-deleting-files-and-directories) in the file system.
+  - You can [retrieve a list of files in a directory](#retrieving-files-and-file-details), the URI of a file, or the file content as a `DOMString`.
+  - You can [read or write to a file](#managing-files-and-directories).
+  - You can [copy and move files and directories](#managing-files-and-directories) within the virtual file system.
+  - You can [delete files and directories](#creating-and-deleting-files-and-directories) from the virtual file system.
 
 ## File and Directory Access
 
@@ -163,7 +157,7 @@ To create and delete files and directories:
 
 ## Retrieving Files and File Details
 
-You can retrieve a list of files or file URIs using the `listFiles()` and `toURI()` methods. The URI can be used to identify the file, for example, by using it as the `src` attribute on an HTML `img` element. 
+You can retrieve a list of files or file URIs using the `listFiles()` and `toURI()` methods. The URI can be used to identify the file, for example, by using it as the `src` attribute on an HTML `img` element.
 
 You can retrieve file content as a `DOMString` with the `readAsText()` method. The encoding input parameter of the method defines the format in which the file content is returned.
 
@@ -177,7 +171,7 @@ To get files and file details from the file system:
 
    The `File` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/filesystem.html#File), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/filesystem.html#File), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/filesystem.html#File) applications) is returned in the success event handler.
 
-2. To retrieve a list of all the files and their directories located in a specified directory, use the `listFiles()` method of the `File` object:`function onResolveSuccess(dir) {    dir.listFiles(onsuccess);}`The method returns an array of `File` objects. 
+2. To retrieve a list of all the files and their directories located in a specified directory, use the `listFiles()` method of the `File` object:`function onResolveSuccess(dir) {    dir.listFiles(onsuccess);}`The method returns an array of `File` objects.
 
 3. To retrieve the file URI, use the `toURI()` method:
 
@@ -188,7 +182,7 @@ To get files and file details from the file system:
            console.log('File name is ' + files[i].name + ', URI is ' + files[i].toURI());
    ```
 
-4. To retrieve the file content as a DOMString, use the `readAsText()` method. 
+4. To retrieve the file content as a DOMString, use the `readAsText()` method.
 
    The encoding input parameter of the method defines the format in which the file content is returned.
 
@@ -215,7 +209,7 @@ To read and write to files, and move and copy files and directories:
 
 1. To open a file, use the `openStream()` method of the `File` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/filesystem.html#File), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/filesystem.html#File), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/filesystem.html#File) applications).
 
-   The method returns a `FileStream` object, which is a handle to the opened file. 
+   The method returns a `FileStream` object, which is a handle to the opened file.
 
    ```
    var documentsDir;
@@ -275,3 +269,10 @@ The virtual roots form a collection of locations that function as a single virtu
 | `wgt-package`     | Location for storing Web application packages (read-only location). |
 | `wgt-private`     | Location for the Web application private storage. |
 | `wgt-private-tmp` | Location for the Web application private temporary storage. |
+
+
+## Related Information
+* Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 3.0 and Higher for TV

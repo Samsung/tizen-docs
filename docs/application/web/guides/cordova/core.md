@@ -1,11 +1,5 @@
 # Common Cordova
 
-## Dependencies
-
-- Tizen 3.0 and Higher for Mobile
-- Tizen 3.0 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
 You can handle common Cordova functionality, such as interfaces for success and error handlers.
 
 The Cordova API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
@@ -39,3 +33,8 @@ function onDeviceReady() {
     console.log('Connection type: ' + navigator.connection.type);
 }
 ```
+## Related Information
+* Dependencies
+  - Tizen 3.0 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable
+  - Tizen 3.0 and Higher for TV

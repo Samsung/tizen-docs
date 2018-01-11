@@ -1,11 +1,5 @@
 # Globalization
 
-## Dependencies
-
-- Tizen 3.0 and Higher for Mobile
-- Tizen 3.0 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
 You can get information about the user's locale, language, and time zone. You can also convert strings, numbers, and dates according to the user locale.
 
 The Globalization API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
@@ -16,18 +10,18 @@ The main features of the Globalization API include:
 
   You can obtain the following locale information:
 
-  - [Get the user's current language](./cordova/globalization-w.md#current_language) as the BCP 47 identifier (such as en-US).
-  - [Get the user's current locale](./cordova/globalization-w.md#current_locale) as the BCP 47 identifier (such as en-US).
-  - [Get the pattern string to format and parse currency](./cordova/globalization-w.md#currency) and the ISO 4217 currency code.
-  - [Get the names of months and names of the days of the week](./cordova/globalization-w.md#names_of_months_and_days).
-  - [Get the pattern string to format and parse dates](./cordova/globalization-w.md#date_format).
-  - [Get the first day of the week](./cordova/globalization-w.md#first_day_of_week).
-  - [Get the pattern string to format and parse numbers](./cordova/globalization-w.md#number_format).
-  - [Determine whether the Daylight Saving Time is in effect](./cordova/globalization-w.md#dst) for a given date.
+  - [Get the user's current language](#retrieving-the-current-kanguage) as the BCP 47 identifier (such as en-US).
+  - [Get the user's current locale](#retrieving-the-current-locale) as the BCP 47 identifier (such as en-US).
+  - [Get the pattern string to format and parse currency](#retrieving-the-currency-details) and the ISO 4217 currency code.
+  - [Get the names of months and names of the days of the week](#retrieving-the-names-of-the-months-and-days-of-the-week).
+  - [Get the pattern string to format and parse dates](#retrieving-the-date-format-details).
+  - [Get the first day of the week](#retrieving-the-first-day-of-the-week).
+  - [Get the pattern string to format and parse numbers](#retrieving-the-number-format-details).
+  - [Determine whether the Daylight Saving Time is in effect](#retrieving-the-daylight-saving-time-status) for a given date.
 
 - Converting data
 
-  You can [convert strings, numbers, and dates](./cordova/globalization-w.md#conversions) according to the user locale.
+  You can [convert strings, numbers, and dates](#performing-conversions) according to the user locale.
 
 All Globalization functions are accessible by the `navigator.globalization` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/globalization.html#GlobalizationManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/globalization.html#GlobalizationManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/globalization.html#GlobalizationManager) applications).
 
@@ -437,3 +431,9 @@ To make conversions between strings, numbers, and dates according to the current
 
   number: 1234.56
   ```
+
+## Related Information
+* Dependencies  
+  - Tizen 3.0 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable
+  - Tizen 3.0 and Higher for TV

@@ -1,12 +1,6 @@
 # Device Motions
 
-## Dependencies
-
-- Tizen 3.0 and Higher for Mobile
-- Tizen 3.0 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
-You can access the [acceleration values](./cordova/devicemotion-w.md#values) from the device accelerometer.
+You can access the [acceleration values](#acceleration-values) from the device accelerometer.
 
 The Device Motion API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
@@ -14,11 +8,11 @@ The main features of the Device Motion API include:
 
 - Getting the current acceleration        
 
-  You can [get the current acceleration](./cordova/devicemotion-w.md#getCurrentAcceleration) along the X, Y, and Z axes.
+  You can [get the current acceleration](#getting-the-current-acceleration) along the X, Y, and Z axes.
 
 - Monitoring the acceleration values        
 
-  You can [get the acceleration along the X, Y, and Z axes at regular intervals](./cordova/devicemotion-w.md#monitorAcceleration).
+  You can [get the acceleration along the X, Y, and Z axes at regular intervals](#monitoring-the-acceleration-values).
 
 ## Acceleration Values
 
@@ -119,3 +113,10 @@ To retrieve the acceleration along the X, Y, and Z axes at regular intervals:
    ```
    navigator.accelerometer.clearWatch(watchID);
    ```
+
+
+## Related Information
+* Dependencies   
+   - Tizen 3.0 and Higher for Mobile
+   - Tizen 3.0 and Higher for Wearable
+   - Tizen 3.0 and Higher for TV

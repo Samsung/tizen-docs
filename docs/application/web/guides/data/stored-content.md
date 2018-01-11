@@ -1,11 +1,5 @@
 # Stored Content Management
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
 You can search for content (such as images, videos, and music) located in the local device storage. You can also perform content management tasks, such as viewing and updating content attributes.
 
 The Content API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
@@ -14,15 +8,15 @@ The main features of Content API include:
 
 - Content retrieval   
 
-  You can [browse and search for content directories and content items](./data/stored-content-w.md#browse).
+  You can [browse and search for content directories and content items](#browsing-content).
 
 - Content management   
 
-  You can [view and edit content item details](./data/stored-content-w.md#manage). The details are common file information and metadata attributes of the media file.
+  You can [view and edit content item details](#managing-content). The details are common file information and metadata attributes of the media file.
 
 - Content change notifications   
 
-  You can keep the content in your application synchronized with an external content manager by [receiving notifications](./data/stored-content-w.md#receive) in your application when the content changes.
+  You can keep the content in your application synchronized with an external content manager by [receiving notifications](#receiving-notifications-on-content-changes) in your application when the content changes.
 
 - Playlist management   
 
@@ -30,15 +24,15 @@ The main features of Content API include:
 
   - Create playlists			
 
-    You can [create a new playlist](./data/stored-content-w.md#create) and add items to it. You can also create a new playlist by copying the content of an existing playlist.
+    You can [create a new playlist](#creating-a-playlist) and add items to it. You can also create a new playlist by copying the content of an existing playlist.
 
   - Manage playlists			
 
-    You can [retrieve playlists and delete them](./data/stored-content-w.md#manage_p).
+    You can [retrieve playlists and delete them](#managing-playlists).
 
   - Manage playlist items			
 
-    You can [manage playlist items](./data/stored-content-w.md#items) by adding and retrieving items, and changing the position of a single item or the order of all items.
+    You can [manage playlist items](#managing-playlist-items) by adding and retrieving items, and changing the position of a single item or the order of all items.
 
 The Content API uses the same `ContentManager` interface instance (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/content.html#ContentManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/content.html#ContentManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/content.html#ContentManager) applications) for all content-related functionalities. The instance provides higher efficiency by performing batch operations on content items.
 
@@ -56,7 +50,7 @@ To use the Content API (in [mobile](../../../../org.tizen.web.apireference/html/
 
 ## Browsing Content
 
-You can browse and search for content directories and content using the `getDirectories()` and `find()` methods of the `ContentManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/content.html#ContentManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/content.html#ContentManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/content.html#ContentManager) applications). When searching for content items, you can create [attribute filters](./data/data-filter-w.md#filter), [attribute range filters](./data/data-filter-w.md#range), and [composite filters](./data/data-filter-w.md#composite) based on [specific filter attributes](./data/data-filter-w.md#content_filter) of the `ContentManager` interface. You can also [sort the search results](./data/data-filter-w.md#use_modes).
+You can browse and search for content directories and content using the `getDirectories()` and `find()` methods of the `ContentManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/content.html#ContentManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/content.html#ContentManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/content.html#ContentManager) applications). When searching for content items, you can create [attribute filters](./data-filter.md#creating-attribute-filters), [attribute range filters](./data-filter.md#creating-attribute-range-filters), and [composite filters](./data-filter.md#creating-composite-filters) based on [specific filter attributes](./data-filter.md#content-filter-attributes) of the `ContentManager` interface. You can also [sort the search results](./data-filter.md#using-sorting-modes).
 
 To browse and search for content directories and content items in directories:
 
@@ -209,7 +203,7 @@ To receive notifications when content items are added, updated, or removed:
    var listenerId = tizen.content.addChangeListener(listener);
    ```
 
-3. To stop the notifications, use the `removeChangeListener()` method: 
+3. To stop the notifications, use the `removeChangeListener()` method:
 
    ```
    tizen.content.removeChangeListener(listenerId);
@@ -342,7 +336,7 @@ Learning how to manage list items is a basic playlist management skill:
 
   The example above moves the track 2 positions up on the playlist. The second parameter of the `move()` method can be a negative value, which means moving the track up, or a positive value, which means moving the track down. If the value is greater than number of tracks above or below, the item is accordingly moved to the beginning or end of the playlist.
 
-- To change the order of all items in the playlist, use the `setOrder()` method. This feature is useful when sorting the playlist.Following example reverses the order of the playlist items. For the `setOrder()` method to work, you must pass all items from the playlist. If an item is missing or an item from a different playlist is included, the `InvalidValuesError` exception is returned in the error callback. 
+- To change the order of all items in the playlist, use the `setOrder()` method. This feature is useful when sorting the playlist.Following example reverses the order of the playlist items. For the `setOrder()` method to work, you must pass all items from the playlist. If an item is missing or an item from a different playlist is included, the `InvalidValuesError` exception is returned in the error callback.
 
   1. Get all tracks using the `get()` method.
 
@@ -363,3 +357,10 @@ Learning how to manage list items is a basic playlist management skill:
 
      myPlaylist.setOrder(newOrder, setOrderSuccess);
      ```
+
+
+## Related Information
+* Dependencies     
+     - Tizen 2.4 and Higher for Mobile
+     - Tizen 2.3.1 and Higher for Wearable
+     - Tizen 3.0 and Higher for TV

@@ -1,30 +1,29 @@
 # Data Filtering and Sorting
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
 When managing large amounts of data, you can create filters to search for specific information, and make queries to receive only the information you are looking for. You can use various filter attributes and sort the received data.
 
 The Tizen API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The main data handling features of the Tizen API include:
 
-- Filters 
+- Filters
 
   The Tizen API supports the following filter types, which are subtypes of the `AbstractFilter` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#AbstractFilter), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#AbstractFilter), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#AbstractFilter) applications):
 
-  - `AttributeFilter` (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#AttributeFilter), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#AttributeFilter), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#AttributeFilter) applications)	 Matches objects containing a defined attribute or attribute value. The match is determined based on match flags defined with the `FilterMatchFlag` type definition.
-  - `AttributeRangeFilter`(in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#AttributeRangeFilter), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#AttributeRangeFilter), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#AttributeRangeFilter) applications)	 Matches objects containing an attribute whose values are within a particular range. 
-  - `CompositeFilter` (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#CompositeFilter), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#CompositeFilter), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#CompositeFilter) applications)	 Combines several filters into a set.
+  - `AttributeFilter` (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#AttributeFilter), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#AttributeFilter), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#AttributeFilter) applications)  
+  	 Matches objects containing a defined attribute or attribute value. The match is determined based on match flags defined with the `FilterMatchFlag` type definition.
 
-  You can create [attribute filters](./data/data-filter-w.md#filter), [attribute range filters](./data/data-filter-w.md#range), and [composite filters](./data/data-filter-w.md#composite) to search for specific data and [make complex queries](./data/data-filter-w.md#make). The attributes you can use with the filter types vary depending on the API you are using. For example, query methods related to the [calendar](./data/data-filter-w.md#calendar), [call history](./data/data-filter-w.md#call), [contact](./data/data-filter-w.md#contact), [content](./data/data-filter-w.md#content_filter), and [messaging](./data/data-filter-w.md#messaging) data each have their own sets of supported filter attributes.
+  - `AttributeRangeFilter`(in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#AttributeRangeFilter), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#AttributeRangeFilter), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#AttributeRangeFilter) applications)  
+  	 Matches objects containing an attribute whose values are within a particular range.
+
+  - `CompositeFilter` (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#CompositeFilter), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#CompositeFilter), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#CompositeFilter) applications)	  
+   Combines several filters into a set.
+
+  You can create [attribute filters](#creating-attribute-filters), [attribute range filters](#creating-attribute-range-filters), and [composite filters](#creating-composite-filters) to search for specific data and [make complex queries](#making-complex-queries-using-filters). The attributes you can use with the filter types vary depending on the API you are using. For example, query methods related to the [calendar](#calendar-filter-attributes), [call history](#call-history-filter-attributes), [contact](#contact-filter-attributes), [content](#content-filter-attributes), and [messaging](#messaging-filter-attributes) data each have their own sets of supported filter attributes.
 
 - Sorting   
 
-  You can [sort the results of queried data](./data/data-filter-w.md#use_modes) using the `SortMode` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#SortMode), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#SortMode), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#SortMode) applications).
+  You can [sort the results of queried data](#using-sorting-modes) using the `SortMode` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#SortMode), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#SortMode), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#SortMode) applications).
 
 ## Creating Attribute Filters
 
@@ -205,7 +204,7 @@ The following table lists the filter types you can use with specific calendar it
 | `attendees`             | No*                        | No                               |
 | `recurrenceRule`        | No*                        | No                               |
 
-\* The attribute filter is only supported with the `EXISTS` flag. 
+\* The attribute filter is only supported with the `EXISTS` flag.
 
 ## Call History Filter Attributes
 
@@ -388,3 +387,9 @@ The following table lists the filter attributes related to the `findFolders()` m
 
 > **Note**
 > The `FULLSTRING` value of the `FilterMatchFlag` enumerator (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#FilterMatchFlag), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#FilterMatchFlag), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#FilterMatchFlag) applications) is not supported and returns an error callback.
+
+## Related Information
+* Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 3.0 and Higher for TV

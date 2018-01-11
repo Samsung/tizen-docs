@@ -1,11 +1,5 @@
 # File Archiving
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
 You can manage ZIP archives and operate on the archived files.
 
 The Archive API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
@@ -14,19 +8,19 @@ The main features of the Archive API include:
 
 - Accessing archive content   
 
-  You can [read the content of an archive file](./data/file-archiving-w.md#read).
+  You can [read the content of an archive file](#reading-the-content-of-an-archive).
 
-- Creating new archives	
+- Creating new archives
 
-  You can [create archive files and add files into them](./data/file-archiving-w.md#create).
+  You can [create archive files and add files into them](#creating-an-archive).
 
-- Extracting archived files	
+- Extracting archived files
 
-  You can [extract a single file or all files from an archive file](./data/file-archiving-w.md#extract).
+  You can [extract a single file or all files from an archive file](#extracting-files-from-an-archive).
 
-- Aborting operations	
+- Aborting operations
 
-  You can [abort an on-going archive operation](./data/file-archiving-w.md#abort).
+  You can [abort an on-going archive operation](#aborting-file-operations).
 
 To start any kind of ZIP operation (packing or unpacking), you must first call the `open()` method of the `ArchiveManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/archive.html#ArchiveManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/archive.html#ArchiveManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/archive.html#ArchiveManager) applications). The first parameter is a `FileReference` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/archive.html#FileReference), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/archive.html#FileReference), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/archive.html#FileReference) applications), which can be a `File` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/filesystem.html#File), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/filesystem.html#File), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/filesystem.html#File) applications) or the virtual path. The second parameter is a `FileMode` enumerator (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/filesystem.html#FileMode), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/filesystem.html#FileMode), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/filesystem.html#FileMode) applications), whose values are described in the following table.
 
@@ -165,3 +159,9 @@ function openSuccess(archive) {
 
 tizen.archive.open('downloads/some_archive.zip', 'r', openSuccess);
 ```
+
+## Related Information
+* Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 3.0 and Higher for TV
