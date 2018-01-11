@@ -1,10 +1,5 @@
 # Sound and Vibration Feedback
 
-## Dependencies
-
-- Tizen 3.0 and Higher for Mobile
-- Tizen 3.0 and Higher for Wearable
-
 You can handle feedback patterns (media or vibration) that can be played as a reaction to specified actions.
 
 This feature is supported in mobile and wearable applications only.
@@ -13,11 +8,11 @@ The main features of the Feedback API include:
 
 - Checking for pattern support
 
-  You can [determine whether a specified media pattern type is available](./device/feedback-w.md#check).
+  You can [determine whether a specified media pattern type is available](#checking-the-pattern).
 
 - Setting a pattern
 
-  You can [set a predefined system pattern to be played as a reaction](./device/feedback-w.md#set) to specific actions. 
+  You can [set a predefined system pattern to be played as a reaction](#setting-the-media-pattern) to specific actions.
 
 Each feedback pattern can have separate media files of sound and vibration type. For example, when receiving a new email message, a predefined sound and vibration feedback pattern can be played.
 
@@ -56,3 +51,8 @@ To start and stop playing various types of predefined reactions:
    ```
    tizen.feedback.stop();
    ```
+
+## Related Information
+* Dependencies   
+   - Tizen 3.0 and Higher for Mobile
+   - Tizen 3.0 and Higher for Wearable

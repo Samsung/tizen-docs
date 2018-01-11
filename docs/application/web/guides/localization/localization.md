@@ -1,10 +1,5 @@
 # Localization
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 By localizing your application, you can ensure that your application works around the world in different locales.
 
 This feature is supported in mobile and wearable applications only.
@@ -35,7 +30,7 @@ To localize a Tizen Web application:
 
    "hello" is the key for the localized string, to be replaced by the value from the appropriate language.
 
-3. Load language resources. 
+3. Load language resources.
 
    To load language resources, add the `<script>` element containing the language resource file in your `index.html` file:
 
@@ -142,3 +137,8 @@ To localize a Tizen Web application:
    | Urdu                            | `ur-pk`     |
    | Uzbekistan                      | `uz-uz`     |
    | Vietnamese                      | `vi-vn`     |
+
+## Related Information
+* Dependencies   
+   - Tizen 2.4 and Higher for Mobile
+   - Tizen 2.3.1 and Higher for Wearable

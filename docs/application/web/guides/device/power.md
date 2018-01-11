@@ -1,10 +1,5 @@
 # Power States
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 You can access a device's power resources. Currently, the screen and CPU power resources are supported, allowing you to request a specific power state and control the brightness of the screen.
 
 This feature is supported in mobile and wearable applications only.
@@ -13,15 +8,15 @@ The main features of the Power API include:
 
 - Managing power resources
 
-  You can [request and release a specific power state](./device/power-w.md#manage).
+  You can [request and release a specific power state](#managing-power-resources).
 
 - Managing the screen brightness
 
-  You can [get and set the screen brightness](./device/power-w.md#brightness).
+  You can [get and set the screen brightness](#managing-the-screen-brightness).
 
 - Managing the screen state
 
-  You can [switch the screen on and off](./device/power-w.md#screen), and check whether the screen is on.
+  You can [switch the screen on and off](#managing-the-screen-state), and check whether the screen is on.
 
 ## Prerequisites
 
@@ -109,3 +104,8 @@ To check whether the screen is on, call the `isScreenOn()` method of the `PowerM
 ```
 var isScreenOn = tizen.power.isScreenOn();
 ```
+
+## Related Information
+* Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

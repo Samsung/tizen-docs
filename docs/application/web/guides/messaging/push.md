@@ -1,10 +1,5 @@
 # Push Notification
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 You can receive notifications from a push server. The push service is a client daemon that maintains a permanent connection between the device and the push server. Push enables you to push events from an application server to your application on a Tizen device. Connection with the push service is used to deliver push notifications to the application, and process the registration and deregistration requests.
 
 This feature is supported in mobile and wearable applications only.
@@ -17,30 +12,30 @@ The main features of the Push API include:
 
 - Registering to the push service   
 
-  You can [register to the push service](./messaging/push-w.md#Registering) and get the registration identifier.
+  You can [register to the push service](#registering-to-the-push-service) and get the registration identifier.
 
 - Receiving push notifications   
 
-  You can [connect to the push service and start receiving push notifications](./messaging/push-w.md#Receiving).
+  You can [connect to the push service and start receiving push notifications](#receiving-push-notifications).
 
 - Retrieving missed push messages   
 
-  While the application is not running, messages cannot be delivered. You can [retrieve such missed push messages](./messaging/push-w.md#UnreadNotifications) later.
+  While the application is not running, messages cannot be delivered. You can [retrieve such missed push messages](#retrieving-missed-push-messages) later.
 
 - Getting push messages when the application is launched by the push service   
 
-  The application can be launched by the push service. In that case, you must [determine the reason for the launch, and react to it](./messaging/push-w.md#HandlingWhenLaunched) appropriately. If the application is launched due to  a notification, you can [retrieve and read the last message delivered from the push service](./messaging/push-w.md#GetPushMessage).
+  The application can be launched by the push service. In that case, you must [determine the reason for the launch, and react to it](#handling-a-launch-by-the-push-service) appropriately. If the application is launched due to  a notification, you can [retrieve and read the last message delivered from the push service](#retrieving-messages-when-launched-by-the-push-service).
 
 - Sending push notifications  
 
-  The push service implements the RESTful open API for sending a push message. For more information on sending push notifications, see [Push Server](../../../../org.tizen.guides_HTM/html/native/messaging/push_server_n.htm).
+  The push service implements the RESTful open API for sending a push message. For more information on sending push notifications, see [Push Server](../../../native/guides/messaging/push-server.md).
 
-	> **Note**
-	> Remember about security issues when sending notifications with sensitive information. For a list of strongly recommended rules, see [Managing Security](../../../../org.tizen.guides_HTM/html/native/messaging/push_n.htm#security).
+	> **Note**  
+	> Remember about security issues when sending notifications with sensitive information. For a list of strongly recommended rules, see [Managing Security](../../../native/guides/messaging/push.md#managing-security).
 
 ## Architecture
 
-The architecture of the Tizen Push service is described in detail in the [mobile native Push guide](../../../../org.tizen.guides_HTM/html/native/messaging/push_n.htm#service).
+The architecture of the Tizen Push service is described in detail in the [mobile native Push guide](../../../native/guides/messaging/push.md#service-architecture).
 
 **Figure: Service architecture**
 
@@ -185,13 +180,13 @@ When a notification arrives at the device, its delivery mechanism depends on whe
 
     This happens when the action is set to `LAUNCH` in the message field when sending the notification from the application server. When the notification action arrives at the device, the push service forcibly launches the application and delivers the notification as a bundle.
 
-    For more information, see the [Retrieving Messages When Launched by the Push Service](./messaging/push-w.md#GetPushMessage) use case.
+    For more information, see the [Retrieving Messages When Launched by the Push Service](#retrieving-messages-when-launched-by-the-push-service) use case.
 
   - Store the notification at the push service database and request it later when the application is launched.        
 
     This happens when the action is set to `ALERT` or `SILENT` in the message field when sending the notification from the application server. When such a notification arrives at the device, the push service keeps the notification in the database and waits for the request from the application.
 
-    For more information, see the [Retrieving Missed Push Messages](./messaging/push-w.md#UnreadNotifications) use case.
+    For more information, see the [Retrieving Missed Push Messages](#retrieving-missed-push-messages) use case.
 
     The difference between the `ALERT` and `SILENT` actions is that the former shows an alert message in the quick panel and changes the badge count, while the latter does not. If the user clicks the alert message in the quick panel, the push service forcibly launches the application and delivers the notification.
 
@@ -261,7 +256,7 @@ tizen.push.disconnectService();
 tizen.push.disconnect();
 ```
 
-To learn how send a simple push notification to the device, see [Sending Push Notifications](../../../../org.tizen.guides_HTM/html/native/messaging/push_n.htm#send). For advanced features in sending notifications, see the [Push Server](../../../../org.tizen.guides_HTM/html/native/messaging/push_server_n.htm) guide for server developers.
+To learn how send a simple push notification to the device, see [Sending Push Notifications](../../../native/guides/messaging/push.md#sending-push-notifications). For advanced features in sending notifications, see the [Push Server](../../../native/guides/messaging/push-server.md) guide for server developers.
 
 ## Retrieving Missed Push Messages
 
@@ -384,3 +379,8 @@ To retrieve and read the last message:
        console.log(' - type: ' + pushMessage.type);
    }
    ```
+
+## Related Information
+* Dependencies   
+   - Tizen 2.4 and Higher for Mobile
+   - Tizen 2.3.1 and Higher for Wearable

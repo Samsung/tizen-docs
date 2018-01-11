@@ -1,23 +1,18 @@
 # System Settings
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
-You can access and modify some [system settings properties](./device/system-setting-w.md#properties), such as the home screen and lock screen wallpaper image, incoming call ringtone, and email notification tone.
+You can access and modify some [system settings properties](#system-settings-properties), such as the home screen and lock screen wallpaper image, incoming call ringtone, and email notification tone.
 
 This feature is supported in mobile and wearable applications only.
 
 The main features of the System Setting API include:
 
-- Device wallpaper management 
+- Device wallpaper management
 
-  You can [set the wallpaper](./device/system-setting-w.md#wall) of the home and lock screen.
+  You can [set the wallpaper](#managing-the-device-wallpapers) of the home and lock screen.
 
-- Device ringtone and notification tone management 
+- Device ringtone and notification tone management
 
-  You can [set the ringtone](./device/system-setting-w.md#tone) for incoming calls and [the tone for email notifications](./device/system-setting-w.md#tone).
+  You can [set the ringtone](#managing-ringtones-and-notification-tones) for incoming calls and [the tone for email notifications](#managing-ringtones-and-notification-tones).
 
 ## Prerequisites
 
@@ -111,3 +106,8 @@ The following table lists the supported system settings properties.
 | `LOCK_SCREEN`        | Provides information about the lock screen image of the device. |
 | `INCOMING_CALL`      | Provides information about the incoming call ringtone sound of the device. |
 | `NOTIFICATION_EMAIL` | Provides information about the notification email tone sound of the device. |
+
+## Related Information
+* Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

@@ -1,10 +1,5 @@
 # Web View Settings
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 3.0 and Higher for Wearable
-
 You can set Web view properties.
 
 This feature is supported in mobile and TV applications only.
@@ -13,11 +8,11 @@ The main features of the Web Setting API include:
 
 - Setting user agents
 
-  You can [set a custom user agent string](./device/web-view-w.md#set) for the running Web application.
+  You can [set a custom user agent string](#setting-a-user-agent-for-a-running-application) for the running Web application.
 
 - Deleting cookies
 
-  You can [delete all cookies](./device/web-view-w.md#delete) set for the running Web application.
+  You can [delete all cookies](#deleting-web-view-cookies) set for the running Web application.
 
 ## Setting a User Agent for a Running Application
 
@@ -44,3 +39,8 @@ function CookiesRemovedSuccessCallback() {
 
 tizen.websetting.removeAllCookies(CookiesRemovedSuccessCallback);
 ```
+
+## Related Information
+* Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

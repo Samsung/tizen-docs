@@ -1,9 +1,5 @@
 # Messages
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 You can use messaging functionalities, such as SMS, MMS, and email.
 
 This feature is supported in mobile applications only.
@@ -14,25 +10,25 @@ The main features of the Messaging API include:
 
 - Message writing and sending   
 
-  You can [create and send messages](./messaging/messages-w.md#Sending_Messages), and save message drafts.
+  You can [create and send messages](#creating-and-sending-messages), and save message drafts.
 
-  You can also retrieve information on available SIM cards and [select the SIM card with which to send a message](./messaging/messages-w.md#Selecting_the_SIM_Card).
+  You can also retrieve information on available SIM cards and [select the SIM card with which to send a message](#selecting-the-sim-card-for-sending-messages).
 
 - Message management   
 
-  You can [find, update, and delete messages](./messaging/messages-w.md#Managing_Messages) in the message storage.
+  You can [find, update, and delete messages](#managing-messages) in the message storage.
 
 - Finding folders   
 
-  You can [find message folders](./messaging/messages-w.md#Find_Folders) belonging to a message service.
+  You can [find message folders](#finding-folders) belonging to a message service.
 
 - Full message content retrieval from the email server   
 
-  You can [load email messages and attachments](./messaging/messages-w.md#Synchronizing_with_the_Server) from the email service and synchronize your email accounts.
+  You can [load email messages and attachments](#synchronizing-with-the-server) from the email service and synchronize your email accounts.
 
 - Message storage change notifications   
 
-  You can [receive notifications](./messaging/messages-w.md#Receiving_Notifications) when messages are added, updated, or deleted.
+  You can [receive notifications](#receiving-notifications-on-message-storage-changes) when messages are added, updated, or deleted.
 
 ## Prerequisites
 
@@ -100,7 +96,7 @@ To create and send messages:
                       new tizen.MessageAttachment('docs/mydoc.pdf', 'text/pdf')];
    ```
 
-3. Define the message sending success callback that is called if the message is sent successfully. (For email, that means that the message is sent to the email delivery system, not to the final recipient of the message.) 
+3. Define the message sending success callback that is called if the message is sent successfully. (For email, that means that the message is sent to the email delivery system, not to the final recipient of the message.)
 
    For messaging technologies, such as SMS, where the message is sent individually to every message recipient, the success callback must be invoked individually for each recipient.
 
@@ -169,7 +165,7 @@ To work with messages in the message store:
 
 1. Retrieve messages whose sender is "me" from the message storage using the `findMessages()` method of the `MessageStorage` interface .
 
-   When searching for messages, you can create [attribute filters](./data/data-filter-w.md#filter), [attribute range filters](./data/data-filter-w.md#range), and [composite filters](./data/data-filter-w.md#composite) based on [specific filter attributes](./data/data-filter-w.md#messaging). You can also [sort the search results](./data/data-filter-w.md#use_modes).
+   When searching for messages, you can create [attribute filters](../data/data-filter.md#creating-attribute-filters), [attribute range filters](../data/data-filter.md#creating-attribute-range-filters), and [composite filters](../data/data-filter.md#creating-composite-filters) based on [specific filter attributes](../data/data-filter.md#messaging-filter-attributes). You can also [sort the search results](../data/data-filter.md#using-sorting-modes).
 
    ```
    var emailService;
@@ -185,7 +181,7 @@ To work with messages in the message store:
 
    The `findMessages()` method returns an array of [Message](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#Message) objects as the search result.
 
-   The search result does not contain the actual bodies of the messages. To [load a message body](./messaging/messages-w.md#Synchronizing_with_the_Server), call the `loadMessageBody()` method of the [MessageService](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessageService) interface.
+   The search result does not contain the actual bodies of the messages. To [load a message body](#synchronizing-with-the-server), call the `loadMessageBody()` method of the [MessageService](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessageService) interface.
 
 2. To update a message in the message storage, use the `updateMessages()` method. The method uses an array of `Message` objects found previously by the `findMessages()` method as a parameter.
 
@@ -214,7 +210,7 @@ To work with messages in the message store:
 
 To find message folders, use the `findFolders()` method of the [MessageStorage](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessageStorage) interface:
 
-1. To retrieve the messaging service, use the `getMessageServices()` method of the [Messaging](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#Messaging) interface: 
+1. To retrieve the messaging service, use the `getMessageServices()` method of the [Messaging](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#Messaging) interface:
 
    ```
    var service;
@@ -243,7 +239,7 @@ To find message folders, use the `findFolders()` method of the [MessageStorage](
    }
    ```
 
-3. Define a filter (for attributes supported by the message folder filter, see [Messaging Filter Attributes](./data/data-filter-w.md#messaging)):
+3. Define a filter (for attributes supported by the message folder filter, see [Messaging Filter Attributes](../data/data-filter.md#messaging-filter-attributes)):
 
    ```
    var filter = new tizen.AttributeFilter('serviceId', 'EXACTLY', service.id);
@@ -259,7 +255,7 @@ To find message folders, use the `findFolders()` method of the [MessageStorage](
 
 To keep your email service accounts up-to-date, synchronize them with their respective external servers, such as Gmail and Microsoft Exchange, with the `sync()` method. You can also synchronize a single folder, such as the Inbox, with the `syncFolder()` method. You can specify the maximum number of messages that can be retrieved in each folder.
 
-It is possible that an email message is accessible through the [Message](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#Message) object, but its full body or attachment has not been downloaded yet. You can load email messages and attachments from the email service with the `loadMessageBody()` and `loadMessageAttachment()` methods of the [MessageService](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessageService) interface. 
+It is possible that an email message is accessible through the [Message](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#Message) object, but its full body or attachment has not been downloaded yet. You can load email messages and attachments from the email service with the `loadMessageBody()` and `loadMessageAttachment()` methods of the [MessageService](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessageService) interface.
 
 To load email messages and attachments and synchronize email:
 
@@ -384,5 +380,10 @@ To receive notifications when messages and message folders are added, updated, o
    msgService.messageStorage.removeChangeListener(watchId);
    ```
 
-> **Note**
+> **Note**  
 > To provide notifications for changes in specific conversations or message folders, use the applicable methods and event handlers similarly as above.
+
+
+## Related Information
+* Dependencies
+  - Tizen 2.4 and Higher for Mobile

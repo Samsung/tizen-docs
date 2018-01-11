@@ -1,11 +1,5 @@
 # Time and Date Management
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
 You can use locale-specific calendar features by retrieving date and time information. You can also change the date, time, and time zone, and make some date- and time-related calculations. The Time API overcomes several limitations of the JavaScript `Date` object.
 
 The Time API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
@@ -16,19 +10,19 @@ The main features of the Time API include:
 
 - Managing the current date, time, and time zone   
 
-  You can [retrieve the current date and time](./device/time-w.md#Retrieving_Date) or all available time zones, and check whether a specific year is a leap year.
+  You can [retrieve the current date and time](#retrieving-date-and-time) or all available time zones, and check whether a specific year is a leap year.
 
 - Getting the locale-specific date and time formats   
 
-  If locale-specific settings have been made on the device, the date must be displayed in the corresponding locale-specific format. Tizen supports several different date and time formats, and you can [retrieve the currently used formats](./device/time-w.md#Retrieving_Local_Date).
+  If locale-specific settings have been made on the device, the date must be displayed in the corresponding locale-specific format. Tizen supports several different date and time formats, and you can [retrieve the currently used formats](#retrieving-the-local-date-and-time-format).
 
 - Performing date- and time-related calculations   
 
-  You can [perform different calculations and comparisons on date and time data](./device/time-w.md#Calculating_Date) regardless of the time units used in the compared events.
+  You can [perform different calculations and comparisons on date and time data](#calculating-date-and-time-information) regardless of the time units used in the compared events.
 
 - Monitoring time and time zone changes   
 
-  You can [retrieve notifications on time changes](./device/time-w.md#Monitoring_Changes) performed by the user.
+  You can [retrieve notifications on time changes](#retrieving-time-change-notifications) performed by the user.
 
 ## Retrieving Date and Time
 
@@ -76,7 +70,7 @@ To handle date and time in your application:
       console.log('This year is a leap year.');
    ```
 
-    The `getFullYear()` method returns the year (4 digits) of the `TZDate` object. 
+    The `getFullYear()` method returns the year (4 digits) of the `TZDate` object.
 
 ## Retrieving the Local Date and Time Format
 
@@ -119,7 +113,7 @@ Calculate and compare time and date information using the applicable methods of 
 > **Note**
 > The unit of the returned `TimeDuration` object is equivalent to the largest possible unit amongst the source parameter units while making sure that precision is not lost in the result. This implies that if, for example, a comparison is done between "1 hour" and "20 minutes", the result is displayed as 40 minutes, not 0.67 hour. Although the hour is a bigger unit than the minute, the result is more precise if presented in minutes.
 
-2.  To compare 2 `TimeDuration` objects for equality, use the `equalsTo()` method: 
+2.  To compare 2 `TimeDuration` objects for equality, use the `equalsTo()` method:
 
    ```
    var d1 = new tizen.TimeDuration(60, 'MINS');
@@ -127,7 +121,7 @@ Calculate and compare time and date information using the applicable methods of 
    var ret = d1.equalsTo(d2); /* Returns true */
    ```
 
-3.  To check whether 1 `TimeDuration` object is shorter than another, use the `lessThan()` method: 
+3.  To check whether 1 `TimeDuration` object is shorter than another, use the `lessThan()` method:
 
    ```
    /* Check whether d1 is shorter than d2 */
@@ -136,7 +130,7 @@ Calculate and compare time and date information using the applicable methods of 
    var ret = d1.lessThan(d2); /* Returns true */
    ```
 
-4.  To check whether 1 `TimeDuration` object is longer than another, use the `greaterThan()` method: 
+4.  To check whether 1 `TimeDuration` object is longer than another, use the `greaterThan()` method:
 
    ```
    /* Check whether d1 is longer than d2 */
@@ -153,7 +147,7 @@ Calculate and compare time and date information using the applicable methods of 
    var tomorrow = now.addDuration(new tizen.TimeDuration(1, 'DAYS');
    ```
 
-    If the number of added time is negative, date or time is set to an earlier moment of time. 
+    If the number of added time is negative, date or time is set to an earlier moment of time.
 
 ## Retrieving Time Change Notifications
 
@@ -214,3 +208,9 @@ Getting notifications when the user changes the time or time zone allows you to 
      ```
      tizen.time.unsetTimezoneChangeListener();
      ```
+
+## Related Information
+* Dependencies     
+     - Tizen 2.4 and Higher for Mobile
+     - Tizen 2.3.1 and Higher for Wearable
+     - Tizen 3.0 and Higher for TV

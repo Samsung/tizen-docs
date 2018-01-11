@@ -1,11 +1,5 @@
 # Error Handling
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
 You can handle generic error situations in your application.
 
 The Tizen API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
@@ -16,12 +10,12 @@ The main error handling features of the Tizen API include:
 
   You can enable the Tizen APIs to throw errors synchronously with the `WebAPIException` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#WebAPIException), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#WebAPIException), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#WebAPIException) applications), or return errors in the error event handlers of asynchronous methods with the `WebAPIError` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#WebAPIError), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#WebAPIError), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#WebAPIError) applications).
 
-> **Note**
+> **Note**  
 > Do not use the `code` attribute of the `WebAPIException` interface to distinguish errors, because the code of the exception object is set to `0` for new error types that are not defined in [DOMException](http://www.w3.org/TR/dom/#domexception).
 
 - Generic event handling  
 
-  You can [handle the results of asynchronous operations](./error/error-w.md#use_handlers) with generic events. The operations can implemented using the `SuccessCallback` (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#SuccessCallback), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#SuccessCallback), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#SuccessCallback) applications) and `ErrorCallback` (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#ErrorCallback), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#ErrorCallback), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#ErrorCallback) applications) event handlers of the Tizen API.
+  You can [handle the results of asynchronous operations](#using-the-generic-event-handlers) with generic events. The operations can implemented using the `SuccessCallback` (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#SuccessCallback), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#SuccessCallback), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#SuccessCallback) applications) and `ErrorCallback` (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#ErrorCallback), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#ErrorCallback), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#ErrorCallback) applications) event handlers of the Tizen API.
 
 ## Using the Generic Event Handlers
 
@@ -50,3 +44,9 @@ Learning how to use generic, predefined event handlers allows you handle applica
 
    tizen.calendar.getCalendars('EVENT', calendarListCallback, errorCallback);
    ```
+
+## Related Information
+* Dependencies   
+   - Tizen 2.4 and Higher for Mobile
+   - Tizen 2.3.1 and Higher for Wearable
+   - Tizen 3.0 and Higher for TV

@@ -1,6 +1,6 @@
 # System Information
 
-You can access and monitor the [device and system properties](./device/system-information-w.md#properties) (both hardware and capability), such as the battery level, available device storage, version number, model name, and the cellular network being used.
+You can access and monitor the [device and system properties](#system-information-properties) (both hardware and capability), such as the battery level, available device storage, version number, model name, and the cellular network being used.
 
 The System Information API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
 
@@ -8,21 +8,21 @@ The main features of the System Information API include:
 
 - Checking the amount of total and available memory
 
-  You can [retrieve memory amounts](./device/system-information-w.md#memory), such as the total and available amount of system memory.
+  You can [retrieve memory amounts](#retrieving-the-memory-state), such as the total and available amount of system memory.
 
 - Retrieving device capability
 
-  You can [check the available capabilities of the device](./device/system-information-w.md#retrieve).
+  You can [check the available capabilities of the device](#retrieving-a-device-capability).
 
 - Checking device property states
 
-  You can [retrieve the current state of a specific device property](./device/system-information-w.md#state) to determine, for example, if your application has enough resources available to complete a task or a service successfully.
+  You can [retrieve the current state of a specific device property](#retrieving-the-current-state-of-a-property) to determine, for example, if your application has enough resources available to complete a task or a service successfully.
 
-  You can also [check and monitor the device orientation](./device/system-information-w.md#orientation), and retrieve the number of system property information to check, for example, the number of installed SIM cards in the device.
+  You can also [check and monitor the device orientation](#retrieving-and-monitoring-the-device-orientation), and retrieve the number of system property information to check, for example, the number of installed SIM cards in the device.
 
 - Receiving property state updates
 
-  You can [receive state updates](./device/system-information-w.md#receive) when a specific property changes.
+  You can [receive state updates](#receiving-notifications-on-property-value-changes) when a specific property changes.
 
 ## Prerequisites
 
@@ -52,7 +52,7 @@ The property state can determine whether your application has enough resources t
 
 Retrieve information about the property states using the applicable methods of the `SystemInfo` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/systeminfo.html#SystemInfo), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/systeminfo.html#SystemInfo), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/systeminfo.html#SystemInfo) applications):
 
-1. To check the current state of the property, use the `getPropertyValue()` method. 
+1. To check the current state of the property, use the `getPropertyValue()` method.
 
    The first method parameter must be of the `SystemInfoPropertyId` type (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/systeminfo.html#SystemInfoPropertyId), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/systeminfo.html#SystemInfoPropertyId), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/systeminfo.html#SystemInfoPropertyId) applications). For the available values, see the [Available properties](./device/system-information-w.md#property) table.
 
@@ -172,7 +172,7 @@ To receive notifications on property value changes:
 
    The method returns a watch identifier, which can be used to deregister the event handler.
 
-2. In the success event handler of the `addPropertyValueChangeListener()` method, define the notification event actions. 
+2. In the success event handler of the `addPropertyValueChangeListener()` method, define the notification event actions.
 
    In the following example, a warning about the low battery is logged to the console.
 
@@ -224,3 +224,9 @@ The system properties are defined as subtypes of the `SystemInfoProperty` interf
 | `SystemInfoPeripheral` (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/systeminfo.html#SystemInfoPeripheral), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/systeminfo.html#SystemInfoPeripheral), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/systeminfo.html#SystemInfoPeripheral) applications) | `PERIPHERAL`         | Provides information about the video output status. |
 | `SystemInfoMemory` (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/systeminfo.html#SystemInfoMemory), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/systeminfo.html#SystemInfoMemory), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/systeminfo.html#SystemInfoMemory) applications) | `MEMORY`             | Provides information about the memory state of the device. |
 | `SystemInfoADS` (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/systeminfo.html#SystemInfoADS), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/systeminfo.html#SystemInfoADS), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/systeminfo.html#SystemInfoADS) applications) | `ADS`                | Provides information about the advertisement service. |
+
+## Related Information
+* Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 3.0 and Higher for TV
