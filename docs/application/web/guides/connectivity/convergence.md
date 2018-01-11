@@ -1,10 +1,5 @@
 # Convergence Services
 
-## Dependencies
-
-- Tizen 4.0 and Higher for Mobile
-- Tizen 4.0 and Higher for Wearable
-
 You can establish connections between different devices as well as propagate data and commands among them using a collection of device-to-device Convergence services. The Convergence services are remote functions to access and control nearby devices. If you implement an application with the Convergence API, the application can discover devices within the same network, obtain information about available device-to-device Convergence services, connect to applicable devices, and execute the services remotely, while you need no understanding of the communication details, such as connectivity type.
 
 This feature is supported in mobile and wearable applications only.
@@ -13,15 +8,15 @@ The main features of the Convergence API include:
 
 - Service discovery		
 
-  You can [discover all Convergence services](./connectivity/convergence-w.md#Discovering_Devices) supported by nearby devices.
+  You can [discover all Convergence services](#searching-for-nearby-devices) supported by nearby devices.
 
 - Remote communication		
 
-  You can implement [communication between applications](./connectivity/convergence-w.md#Communication_Service) on remote devices.
+  You can implement [communication between applications](#setting-up-the-appcommunicationservice-and-exchanging-messages) on remote devices.
 
 - Remote launch and actions		
 
-  You can [launch applications remotely](./connectivity/convergence-w.md#Launch_App), and [request them to take specific actions](./connectivity/convergence-w.md#App_Control).
+  You can [launch applications remotely](#launching-an-application-remotely), and [request them to take specific actions](#sending-an-application-control-remotely).
 
 The following Convergence services are currently provided:
 
@@ -311,7 +306,7 @@ To launch an application on a remote device:
 
 ## Sending an Application Control Remotely
 
-The `ApplicationControl` object is used to request applications to perform particular actions. This use case shows how to ask an image viewer to display a picture. For more information on application controls, see [Application Controls](../../../../org.tizen.guides/html/web/app-management/app-controls-w.md).
+The `ApplicationControl` object is used to request applications to perform particular actions. This use case shows how to ask an image viewer to display a picture. For more information on application controls, see [Application Controls](../app-management/app-controls.md).
 
 1. Use the `startDiscovery()` method to search for and connect to a `RemoteAppControlService`:
 
@@ -364,3 +359,9 @@ The `ApplicationControl` object is used to request applications to perform parti
                                 remoteAppControlCallback, onerror);
    }
    ```
+
+
+## Related Information
+* Dependencies   
+   - Tizen 4.0 and Higher for Mobile
+   - Tizen 4.0 and Higher for Wearable

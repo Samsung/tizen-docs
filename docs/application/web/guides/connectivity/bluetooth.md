@@ -1,10 +1,5 @@
 # Bluetooth
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 You can use Bluetooth functionalities in your application, such as managing the local Bluetooth adapter, bonding, and exchanging data between Bluetooth-enabled devices. The Bluetooth standard provides a peer-to-peer (P2P) data exchange functionality over short distance between compliant devices.
 
 This feature is supported in mobile and wearable applications only.
@@ -13,65 +8,65 @@ The main features of the Bluetooth API include:
 
 - Managing the local Bluetooth adapter   
 
-  You can [enable and disable the local Bluetooth adapter](./connectivity/bluetooth-w.md#Managing_BT_Adapter), and change the device name for it.
+  You can [enable and disable the local Bluetooth adapter](#managing-the-local-bluetooth-adapter), and change the device name for it.
 
 - Discovering devices   
 
-  You can [discover other Bluetooth devices](./connectivity/bluetooth-w.md#Discovering_BT_Devices).
+  You can [discover other Bluetooth devices](#discovering-bluetooth-devices).
 
 - Creating a bond with a Bluetooth device   
 
-  You can [create a bond](./connectivity/bluetooth-w.md#Creating_Bond) with another device retrieved through the discovery process. Bonding allows the 2 devices to establish a connection.
+  You can [create a bond](#creating-a-bond-with-a-bluetooth-device) with another device retrieved through the discovery process. Bonding allows the 2 devices to establish a connection.
 
 - Connecting to and exchanging data with a Bluetooth device   
 
-  You can [connect to and exchange data with a remote Bluetooth device](./connectivity/bluetooth-w.md#Connecting_BT_device).
+  You can [connect to and exchange data with a remote Bluetooth device](#connecting-to-and-exchanging-data-with-a-bluetooth-device).
 
 - Communicating with a health source device   
 
-  The Health Device Profile defines the requirements for the Bluetooth health device implementation. In the profile, there are 2 device types: one device is a source, such as a blood pressure monitor or pulse oximeter, while the other is a sink, such as a mobile phone or laptop. You can use your device as a sink and [communicate with a health source device](./connectivity/bluetooth-w.md#Communicating_Health).
+  The Health Device Profile defines the requirements for the Bluetooth health device implementation. In the profile, there are 2 device types: one device is a source, such as a blood pressure monitor or pulse oximeter, while the other is a sink, such as a mobile phone or laptop. You can use your device as a sink and [communicate with a health source device](#communicating-with-a-health-source-device).
 
 The main Bluetooth (4.0) Low Energy features include:
 
 - Managing the local Bluetooth adapter     
 
-  The [Bluetooth adapter management](./connectivity/bluetooth-w.md#Managing_BT_Adapter) is performed the same way as in the regular Bluetooth API.
+  The [Bluetooth adapter management](#managing-the-local-bluetooth-adapter) is performed the same way as in the regular Bluetooth API.
 
 - Discovering Bluetooth Low Energy devices     
 
-  You can [discover Bluetooth Low Energy devices](./connectivity/bluetooth-w.md#Discovering_BT_LE_Devices) in range. Through the discovery process, you can obtain basic information about available remote devices, such as their names and provided services.
+  You can [discover Bluetooth Low Energy devices](#discovering-bluetooth-low-energy-devices) in range. Through the discovery process, you can obtain basic information about available remote devices, such as their names and provided services.
 
 - Managing the advertising options     
 
-  You can [manage advertising](./connectivity/bluetooth-w.md#Managing_Advertising) to control how your device announces itself to other Bluetooth Low Energy devices for discovery.
+  You can [manage advertising](#managing-the-advertising-options) to control how your device announces itself to other Bluetooth Low Energy devices for discovery.
 
 - Connecting to a Bluetooth Low Energy device     
 
-  You can [connect to a remote Bluetooth Low Energy device](./connectivity/bluetooth-w.md#Connecting). When connected, you can access services and characteristics of the remote device.
+  You can [connect to a remote Bluetooth Low Energy device](#connecting-to-a-bluetooth-low-energy-device). When connected, you can access services and characteristics of the remote device.
 
 - Receiving notifications on connection state changes     
 
-  You can [monitor the connection state](./connectivity/bluetooth-w.md#Connection_Notification) to detect when the connection to the remote device is lost.
+  You can [monitor the connection state](#receiving-notifications-on-connection-state-changes) to detect when the connection to the remote device is lost.
 
 - Retrieving Bluetooth GATT services     
 
-  You can [retrieve information about Bluetooth GATT services](./connectivity/bluetooth-w.md#Retrieving_Services) provided by the remote device.
+  You can [retrieve information about Bluetooth GATT services](#retrieving-bluetooth-gatt-services) provided by the remote device.
 
   Every GATT service defines characteristics it includes. By knowing the service, you know what features the Bluetooth device exposes.
 
 - Accessing the Bluetooth GATT characteristic value     
 
-  You can [read and write the Bluetooth GATT characteristic value](./connectivity/bluetooth-w.md#Characteristic_Value).
+  You can [read and write the Bluetooth GATT characteristic value](#accessing-the-bluetooth-gatt-characteristic-value).
 
   Characteristics allows you to monitor and sometimes control remote Bluetooth Low Energy devices. For example, a sensor reading can be exposed by the sensor device as a Bluetooth GATT characteristic.
 
 - Receiving notifications on characteristic value changes     
 
-  You can [monitor a characteristic value](./connectivity/bluetooth-w.md#Characterictic_Notification) to detect any changes, for example, in sensor readings and battery level.
+  You can [monitor a characteristic value](#receiving-notifications-on-characteristic-value-changes) to detect any changes, for example, in sensor readings and battery level.
 
 - Accessing the Bluetooth GATT descriptor value     
 
-  You can [read and write the Bluetooth GATT descriptor value](./connectivity/bluetooth-w.md#Descriptor_Value).
+  You can [read and write the Bluetooth GATT descriptor value](#accessing-the-bluetooth-gatt-descriptor-value).
 
 ## Prerequisites
 
@@ -129,7 +124,7 @@ To use the Bluetooth functionality of the device, you must switch the Bluetooth 
    };
    ```
 
-4. If necessary, request launching the Bluetooth Settings with the prepared 
+4. If necessary, request launching the Bluetooth Settings with the prepared
 
    ```
    if (adapter.powered) {
@@ -163,7 +158,7 @@ To use the Bluetooth functionality of the device, you must switch the Bluetooth 
 
 6. Set a friendly name for the device using the `setName()` method.
 
-   The name helps to recognize the device in a list of [retrieved devices](./connectivity/bluetooth-w.md#Discovering_BT_Devices).
+   The name helps to recognize the device in a list of [retrieved devices](#discovering-bluetooth-devices).
 
    ```
    adapter.setName(chatServerName);
@@ -245,7 +240,7 @@ To create a bond with a Bluetooth device:
 
 When you attempt to open a connection to another device, a Service Discovery Protocol (SDP) look-up is performed on the device, and the protocol and channel to be used for the connection are determined. If a connection is established and the socket is opened successfully, a `BluetoothSocket` instance (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bluetooth.html#BluetoothSocket) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/bluetooth.html#BluetoothSocket) applications) with an open state is returned. The socket is subsequently used for exchanging data between the connected devices.
 
-The Radio Frequency Communication (RFCOMM) is a set of transport protocols which allows multiple simultaneous connections to a device. If a device allows other devices to use its functionalities through this kind of connection, it is said to provide a service and it is called a server device. The devices that request the service are called client devices. 
+The Radio Frequency Communication (RFCOMM) is a set of transport protocols which allows multiple simultaneous connections to a device. If a device allows other devices to use its functionalities through this kind of connection, it is said to provide a service and it is called a server device. The devices that request the service are called client devices.
 
 To connect to services provided by a server device to the client devices:
 
@@ -264,7 +259,7 @@ To connect to services provided by a server device to the client devices:
 
    When the service has been successfully registered, the `BluetoothServiceSuccessCallback` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bluetooth.html#BluetoothServiceSuccessCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/bluetooth.html#BluetoothServiceSuccessCallback) applications) is triggered.
 
-3. Before establishing a connection, your device must be bonded with a peer device. For more information, see [Creating a Bond with a Bluetooth Device](./connectivity/bluetooth-w.md#Creating_Bond).
+3. Before establishing a connection, your device must be bonded with a peer device. For more information, see [Creating a Bond with a Bluetooth Device](#creating-a-bond-with-a-bluetooth-device).
 
 4. To connect to the server device, use the `connectToServiceByUUID()` method on the client device:
 
@@ -294,7 +289,7 @@ To connect to services provided by a server device to the client devices:
    var data = socket.readData();
    ```
 
-   When an incoming message is received from the peer device, the `onmessage` event handler in the `BluetoothSocket` interface is triggered. 
+   When an incoming message is received from the peer device, the `onmessage` event handler in the `BluetoothSocket` interface is triggered.
 
 ## Communicating with a Health Source Device
 
@@ -321,7 +316,7 @@ To increase the communication capabilities of your application, you must learn t
 
    When the sink application is registered successfully, the `BluetoothHealthApplicationSuccessCallback` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bluetooth.html#BluetoothHealthApplicationSuccessCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/bluetooth.html#BluetoothHealthApplicationSuccessCallback) applications) is invoked and you can get the registered sink application object.
 
-3. Before establishing a connection, your device must be bonded with a health source device. For more information, see [Creating a Bond with a Bluetooth Device](./connectivity/bluetooth-w.md#Creating_Bond).
+3. Before establishing a connection, your device must be bonded with a health source device. For more information, see [Creating a Bond with a Bluetooth Device](#creating-a-bond-with-a-bluetooth-device).
 
 4. To connect to the health source device, use the `connectToSource()` method of the `BluetoothHealthProfileHandler` interface:
 
@@ -368,7 +363,7 @@ To search for remote Bluetooth devices:
    ```
 
 > **Note**
-> To allow other Bluetooth devices to find your device, you must set the device to be visible through the system settings.	
+> To allow other Bluetooth devices to find your device, you must set the device to be visible through the system settings.
 
 2. Retrieve a `BluetoothLEAdapter` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bluetooth.html#BluetoothLEAdapter) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/bluetooth.html#BluetoothLEAdapter) applications) with the `getLEAdapter()` method of the `BluetoothManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bluetooth.html#BluetoothManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/bluetooth.html#BluetoothManager) applications):
 
@@ -417,7 +412,7 @@ To control what information is advertised by the device:
    ```
 
 > **Note**
-> To learn how to make your mobile device visible to other Bluetooth devices, see [Managing the Local Bluetooth Adapter](./connectivity/bluetooth-w.md#Managing_BT_Adapter).
+> To learn how to make your mobile device visible to other Bluetooth devices, see [Managing the Local Bluetooth Adapter](#managing-the-local-bluetooth-adapter).
 
 3. To disable the advertising, use the `stopAdvertise()` method of the `BluetoothLEAdapter` interface:
 
@@ -539,7 +534,7 @@ To receive notifications whenever the device connection is established or lost:
 
 To retrieve a list of GATT services (Generic Attribute) provided by a remote device:
 
-1. [Connect to a Bluetooth Low Energy device](./connectivity/bluetooth-w.md#Connecting).
+1. [Connect to a Bluetooth Low Energy device](#connecting-to-a-bluetooth-low-energy-device).
 
 2. Define a connection state change listener by implementing the `BluetoothLEConnectChangeCallback` (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bluetooth.html#BluetoothLEConnectChangeCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/bluetooth.html#BluetoothLEConnectChangeCallback) applications):
 
@@ -588,7 +583,7 @@ To retrieve a list of GATT services (Generic Attribute) provided by a remote dev
 
 To read and write a value of the Bluetooth characteristic:
 
-1. [Connect to a Bluetooth Low Energy device](./connectivity/bluetooth-w.md#Connecting).
+1. [Connect to a Bluetooth Low Energy device](#connecting-to-a-bluetooth-low-energy-device).
 
 2. Retrieve a list of GATT service UUIDs from the `uuids` attribute of the `BluetoothLEDevice` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bluetooth.html#BluetoothLEDevice) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/bluetooth.html#BluetoothLEDevice) applications):
 
@@ -652,7 +647,7 @@ To read and write a value of the Bluetooth characteristic:
 
 To monitor changes in a Bluetooth characteristic:
 
-1. [Connect to a Bluetooth Low Energy device](./connectivity/bluetooth-w.md#Connecting).
+1. [Connect to a Bluetooth Low Energy device](#connecting-to-a-bluetooth-low-energy-device).
 
 2. Retrieve a list of GATT service UUIDs from the `uuids` attribute of the `BluetoothLEDevice` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bluetooth.html#BluetoothLEDevice) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/bluetooth.html#BluetoothLEDevice) applications):
 
@@ -696,7 +691,7 @@ To monitor changes in a Bluetooth characteristic:
 
 To read and write a value of the Bluetooth descriptor:
 
-1. [Connect to a Bluetooth Low Energy device](./connectivity/bluetooth-w.md#Connecting).
+1. [Connect to a Bluetooth Low Energy device](#connecting-to-a-bluetooth-low-energy-device).
 
 2. Retrieve a list of GATT service UUIDs from the `uuids` attribute of the `BluetoothLEDevice` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bluetooth.html#BluetoothLEDevice) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/bluetooth.html#BluetoothLEDevice) applications):
 
@@ -755,3 +750,9 @@ To read and write a value of the Bluetooth descriptor:
 
    descriptor.writeValue(newValue, writeSuccess, writeFail);
    ```
+
+
+## Related information
+* Dependencies   
+   - Tizen 2.4 and Higher for Mobile
+   - Tizen 2.3.1 and Higher for Wearable

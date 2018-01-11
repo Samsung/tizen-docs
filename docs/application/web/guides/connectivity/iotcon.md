@@ -1,11 +1,5 @@
 # IoT Connectivity
 
-## Dependencies
-
-- Tizen 3.0 and Higher for Mobile
-- Tizen 3.0 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
 [IoTivity](https://www.iotivity.org/) offers seamless device-to-device connectivity to address the emerging needs of the Internet of Things (IoT) through the open source reference implementation of the OIC (Open Interconnect Consortium) standard specifications. IoT connectivity (Iotcon) provides the means of using IoTivity in Tizen.
 
 The Iotcon API is optional for Tizen mobile, wearable, and TV profiles, which means that it may not be supported on all mobile, wearable, and TV devices. The Iotcon API is supported on all Tizen Emulators.
@@ -14,23 +8,23 @@ IoT connectivity is usually handled with a server and client. The server is resp
 
 The main features of the Iotcon API include:
 
-- Creating a server	
+- Creating a server
 
-  You can [create a resource](./connectivity/iotcon-w.md#create-resource) and send a presence event to the client when it becomes online.
+  You can [create a resource](#creating-a-new-resource) and send a presence event to the client when it becomes online.
 
-  - Managing resources
+- Managing resources
 
   You can add types and interfaces to an existing resource.
 
-  - Creating a client
+- Creating a client
 
-  You can [find remote resources](./connectivity/iotcon-w.md#find-resources), [retrieve device and platform information](./connectivity/iotcon-w.md#find-device-infos), and listen for server presence events.
+  You can [find remote resources](#finding-remote-resources), [retrieve device and platform information](#retrieving-device-and-platform-information), and listen for server presence events.
 
-  - Remotely managing resources
+- Remotely managing resources
 
-  You can [retrieve](./connectivity/iotcon-w.md#remote-get) and [modify](./connectivity/iotcon-w.md#remote-put) the remote resource attributes with GET and PUT methods. You can also use POST and DELETE methods to modify the resources on a remote server. You can [monitor the resource attribute changes and the `isAlive` state](./connectivity/iotcon-w.md#remote-state-change).
+  You can [retrieve](#sending-get-requests) and [modify](#sending-put-requests) the remote resource attributes with GET and PUT methods. You can also use POST and DELETE methods to modify the resources on a remote server. You can [monitor the resource attribute changes and the `isAlive` state](#observing-resource-changes).
 
-  For more information on all available remote resource management methods, see the native [IoT Connectivity](../../../../org.tizen.guides_HTM/html/native/connectivity/iotcon_n.htm) guide.
+  For more information on all available remote resource management methods, see the native [IoT Connectivity](../../../native/guides/connectivity/iotcon.md) guide.
 
 ## Prerequisites
 
@@ -320,7 +314,7 @@ On the client side, you can read resource attributes:
    }
    ```
 
-2. [Find a remote resource](./connectivity/iotcon-w.md#find-resources).
+2. [Find a remote resource](#finding-remote-resources).
 
 3. Once you have a `RemoteResource` object, use the `methodGet()` method to send a request to the server. For a list of resource attributes you can request, see the API Reference (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/iotcon.html#RemoteResource), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/iotcon.html#RemoteResource), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/iotcon.html#RemoteResource) applications).
 
@@ -345,7 +339,7 @@ On the client side, you can modify remote resource attributes using the PUT meth
    }
    ```
 
-2. [Find a remote resource](./connectivity/iotcon-w.md#find-resources).
+2. [Find a remote resource](#finding-remote-resources).
 
 3. Once you have a `RemoteResource` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/iotcon.html#RemoteResource), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/iotcon.html#RemoteResource), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/iotcon.html#RemoteResource) applications), use the success callback to create a `Representation` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/iotcon.html#Representation), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/iotcon.html#Representation), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/iotcon.html#Representation) applications). This object represents the changes in attributes, types, and interfaces.
 
@@ -369,7 +363,7 @@ On the client side, you can modify remote resource attributes using the PUT meth
 
 On the client side, you can observe remote resource attribute changes with the `startObserving()` method, and the `isAlive` state with the `setResourceStateChangeListener()` method:
 
-1. [Find a remote resource](./connectivity/iotcon-w.md#find-resources).
+1. [Find a remote resource](#finding-remote-resources).
 
 2. Prepare a callback for state change events:
 
@@ -396,3 +390,9 @@ On the client side, you can observe remote resource attribute changes with the `
    ```
 
 You can monitor attribute changes in a remote resource similarly using the `startObserving()` method on the `RemoteResource` object.
+
+## Related Information
+* Dependencies
+  - Tizen 3.0 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable
+  - Tizen 3.0 and Higher for TV

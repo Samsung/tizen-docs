@@ -1,24 +1,18 @@
 # Content Downloads
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
 You can download files from the Internet and monitor the progress and status of ongoing downloads.
 
 The Download API is mandatory for the Tizen mobile profile, but optional for wearable and TV profiles. This means that it is supported on all mobile devices, but may not be supported on all wearable and TV devices. The Download API is supported on all Tizen Emulators.
 
 The main features of the Download API include:
 
-- Managing downloads 
+- Managing downloads
 
-  You can [start, pause, resume, and cancel a download](./connectivity/download-w.md#manage) of content using the `DownloadManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/download.html#DownloadManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/download.html#DownloadManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/download.html#DownloadManager) applications).
+  You can [start, pause, resume, and cancel a download](#managing-downloads) of content using the `DownloadManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/download.html#DownloadManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/download.html#DownloadManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/download.html#DownloadManager) applications).
 
 - Checking the download state and information
 
-  You can [access the current download state and retrieve the download information](./connectivity/download-w.md#check) using the `DownloadManager` interface. The states are defined in the `DownloadState` enumerator (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/download.html#DownloadState), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/download.html#DownloadState), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/download.html#DownloadState) applications).
+  You can [access the current download state and retrieve the download information](#checking-the-download-state-and-information) using the `DownloadManager` interface. The states are defined in the `DownloadState` enumerator (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/download.html#DownloadState), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/download.html#DownloadState), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/download.html#DownloadState) applications).
 
 ## Prerequisites
 
@@ -127,7 +121,7 @@ To provide the user access to Internet resources, you must learn how to check th
    var state = tizen.download.getState(downloadId);
    ```
 
-   The method returns a `DownloadState` enumerator value (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/download.html#DownloadState), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/download.html#DownloadState), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/download.html#DownloadState) applications). 
+   The method returns a `DownloadState` enumerator value (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/download.html#DownloadState), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/download.html#DownloadState), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/download.html#DownloadState) applications).
 
 3. Use the `getDownloadRequest()` method with the download ID as a parameter to get the download request details that the user has previously set:
 
@@ -143,4 +137,8 @@ To provide the user access to Internet resources, you must learn how to check th
    var MIMEType = tizen.download.getMIMEType(downloadId);
    ```
 
- 
+## Related Information
+* Dependencies   
+   - Tizen 2.4 and Higher for Mobile
+   - Tizen 2.3.1 and Higher for Wearable
+   - Tizen 3.0 and Higher for TV

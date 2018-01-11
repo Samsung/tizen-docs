@@ -1,10 +1,6 @@
 Network Bearer Selection
 ========================
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 You can set a cellular network as a preferred route for Internet connections with specified domains.
 
 This feature is supported in mobile applications only.
@@ -29,7 +25,7 @@ Prerequisites
 
 To use the [Network Bearer Selection](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/networkbearerselection.html) API, the application has to request permission by adding the following privileges to the `config.xml` file:
 
-``` 
+```
 <tizen:privilege name="http://tizen.org/privilege/internet"/>
 <tizen:privilege name="http://tizen.org/privilege/networkbearerselection"/>
 ```
@@ -42,7 +38,7 @@ To request a preferred route for Internet connection with the "www.tizen.org" ho
 
 1.  Define the needed callbacks:
 
-    ``` 
+    ```
     var statuscb = {
         onsuccess: function() {
             console.log('Routing policy requested');
@@ -59,19 +55,19 @@ To request a preferred route for Internet connection with the "www.tizen.org" ho
 
 2. To request a routing policy, use the `requestRouteToHost()` method of the [NetworkBearerSelection](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/networkbearerselection.html#NetworkBearerSelection) interface:
 
-    ``` 
+    ```
     tizen.networkbearerselection.requestRouteToHost('CELLULAR', 'www.tizen.org', statuscb, onerror);
     ```
 
 
 <a name="release"></a>
-## Releasing a Route 
+## Releasing a Route
 
 To cancel the routing policy for the connection with the "www.tizen.org" host:
 
 1.  Define the needed callbacks:
 
-    ``` 
+    ```
     function onsuccess() {
         console.log('Routing policy cancelled');
     }
@@ -83,6 +79,10 @@ To cancel the routing policy for the connection with the "www.tizen.org" host:
 
 2. To terminate the policy, use the `releaseRouteToHost()` method of the [NetworkBearerSelection](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/networkbearerselection.html#NetworkBearerSelection) interface:
 
-    ``` 
+    ```
     tizen.networkbearerselection.releaseRouteToHost('CELLULAR', 'www.tizen.org', onsuccess, onerror);
     ```
+
+## Related Information
+* Dependencies    
+    - Tizen 2.4 and Higher for Mobile

@@ -1,10 +1,5 @@
 # Secure Element Access
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 You can access secure elements in a device. You can access various secure elements, such as UICC and SIM cards, embedded secure elements, and secure SD cards.
 
 This feature is supported in mobile and wearable applications only.
@@ -13,19 +8,19 @@ The main features of the Secure Element API include:
 
 - Managing secure elements   
 
-  You can [manage secure elements](./connectivity/secure-element-w.md#Managing_Secure_Element) by retrieving all the available secure element readers and receiving notifications of reader changes using the `SEService` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/se.html#SEService) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/se.html#SEService) applications). You can also shut down secure elements.
+  You can [manage secure elements](#managing-secure-elements) by retrieving all the available secure element readers and receiving notifications of reader changes using the `SEService` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/se.html#SEService) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/se.html#SEService) applications). You can also shut down secure elements.
 
 - Opening sessions and channels   
 
-  You can [open a session](./connectivity/secure-element-w.md#Opening_Sessions) to connect to a secure element reader. Within a session, you can open basic or logical channels.
+  You can [open a session](#opening-sessions-and-channels) to connect to a secure element reader. Within a session, you can open basic or logical channels.
 
-- Transmitting APDUs to the applet	
+- Transmitting APDUs to the applet
 
-  You can [transmit application protocol data units (APDU)](./connectivity/secure-element-w.md#Transmitting_APDU) to a secure element using a channel.
+  You can [transmit application protocol data units (APDU)](#transmitting-apdus-to-secure-elements) to a secure element using a channel.
 
-- Closing sessions and channels	
+- Closing sessions and channels
 
-  When the channel or session is no longer needed, you can [close them](./connectivity/secure-element-w.md#Closing_Sessions).
+  When the channel or session is no longer needed, you can [close them](#closing-sessions-and-channels).
 
 ## Prerequisites
 
@@ -172,3 +167,9 @@ To use secure elements in your application, you must learn to close sessions and
    ```
    reader.closeSessions();
    ```
+
+
+## Related Information
+* Dependencies   
+   - Tizen 2.4 and Higher for Mobile
+   - Tizen 2.3.1 and Higher for Wearable

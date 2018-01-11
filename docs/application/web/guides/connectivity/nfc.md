@@ -1,11 +1,6 @@
 # Near Field Communication (NFC)
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
-The Near Field Communication (NFC) service enables information exchange between NFC-enabled devices (called "peers") or tags. The NFC-enabled devices can share contacts, photos, and videos, and can also act as smart cards. You can use an NFC-enabled device to [send NDEF messages to NFC tags](./connectivity/nfc-w.md#tag) to implement a variety of activities, such as paying the grocery bill or downloading a coupon. With application controls, you can [launch NFC applications](./connectivity/nfc-w.md#operations) when NFC-related operations occur.
+The Near Field Communication (NFC) service enables information exchange between NFC-enabled devices (called "peers") or tags. The NFC-enabled devices can share contacts, photos, and videos, and can also act as smart cards. You can use an NFC-enabled device to [send NDEF messages to NFC tags](#nfc-tags-and-ndef-messages) to implement a variety of activities, such as paying the grocery bill or downloading a coupon. With application controls, you can [launch NFC applications](#nfc-application-control-operations) when NFC-related operations occur.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -13,27 +8,27 @@ The main features of the NFC API include:
 
 - NFC device management   
 
-  You can [manage NFC connectivity](./connectivity/nfc-w.md#Managing_NFC_Conn) by enabling or disabling the NFC service.
+  You can [manage NFC connectivity](#managing-nfc-connectivity) by enabling or disabling the NFC service.
 
 - NFC tag and peer detection   
 
-  You can [receive notifications when an NFC tag or peer device has been detected](./connectivity/nfc-w.md#Detecting_NFC_Tags).
+  You can [receive notifications when an NFC tag or peer device has been detected](#detecting-nfc-tags-and-peer-devices).
 
 - NDEF message manipulation   
 
-  You can [handle NDEF messages](./connectivity/nfc-w.md#Handling_NDEF_Messages) by first creating NDEF records, and then adding the records to an NDEF message.
+  You can [handle NDEF messages](#handling-ndef-messages) by first creating NDEF records, and then adding the records to an NDEF message.
 
 - NDEF data exchange   
 
-  You can exchange NDEF data between [tags](./connectivity/nfc-w.md#Exchanging_NDEF_Tags) and [peers](./connectivity/nfc-w.md#Exchanging_NDEF_Peers).
+  You can exchange NDEF data between [tags](#exchanging-ndef-data-with-tags) and [peers](#exchanging-ndef-data-with-peers).
 
 - NFC card emulation   
 
-  You can [enable NFC card emulation and monitor the secure element transaction](./connectivity/nfc-w.md#Using_NFC_Card_Emulation) carried out by the device.
+  You can [enable NFC card emulation and monitor the secure element transaction](#using-nfc-card-emulation) carried out by the device.
 
 - NFC host-based card emulation (HCE)   
 
-  You can [handle HCE events and transactions](./connectivity/nfc-w.md#Using_NFC_Host_Based_Card_Emulation).
+  You can [handle HCE events and transactions](#using-nfc-host-based-card-emulation).
 
 NFC provides the following advantages over short-range communication technologies, such as Bluetooth:
 
@@ -399,7 +394,7 @@ To detect NFC HCE events and manage AID (Application ID):
       ```
 
       - The `application` element must contain a `name` attribute with an application name.
-      - The `application` element must contain 1 or more `wallet` elements, each of which must contain 1 or more `aid-group` elements. 
+      - The `application` element must contain 1 or more `wallet` elements, each of which must contain 1 or more `aid-group` elements.
       - The `aid-group` element is required to contain a `category` attribute with the `payment` or `other` value.
       - Each `aid-group` element must contain 1 or more `aid` elements, each of which contains a single AID. The `aid-group` can have as many `aid` elements as you want.
       - The `aid` element must contain the `aid`, `se_type`, `unlock`, and `power` attributes.
@@ -526,3 +521,9 @@ The following table lists the NFC operations, URI scheme and MIME.
 | `http://tizen.org/appcontrol/operation/nfc/card_emulation/default_changed` | `NULL`                                   | `NULL`                                   |
 
 \* The `<protocol_code>` and `<scheme>` must be in sync. See [NFCForum-TS-RTD_URI_1.0](http://members.nfc-forum.org/apps/group_public/document.php?document_id=5078) and NFC RTD (Record Type Definition) documentation on the NFC forum.
+
+
+## Related Information
+* Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable
