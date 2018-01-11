@@ -33,6 +33,12 @@ To enable your application to use the system setting functionality:
     <feature name="http://tizen.org/feature/systemsetting.home_screen"/>
     ```
 
+    To use all of SystemSettings property and event, you have to add below feature.
+    ``` 
+    <feature name="http://tizen.org/feature/systemsetting"/>
+    ```
+
+
     The following table lists the feature keys required by the specific properties and events of the `Tizen.System.SystemSettings` class.
 
     **Table: Feature keys related to system settings**
