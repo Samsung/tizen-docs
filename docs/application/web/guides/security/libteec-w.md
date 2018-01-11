@@ -7,7 +7,7 @@ TEE Communication
 - Tizen 4.0 and Higher for Wearable
 - Tizen 4.0 and Higher for TV
 
-You can create secure communications by executing your application in a trusted execution environment (TEE), and communicating with other applications within that environment. To implement TEE communication, you can use the LibTeec API, which is based on the GlobalPlatform® [TEE Client API](https://www.globalplatform.org/specificationsdevice.asp).
+You can create secure communications by executing your application in a trusted execution environment (TEE), and communicating with other applications within that environment. To implement TEE communication, you can use the LibTeec API, which is based on the GlobalPlatform&reg; [TEE Client API](https://www.globalplatform.org/specificationsdevice.asp).
 
 You can run applications in 2 environments: a rich environment (like Linux) with client applications (CA) and a secure environment with trusted applications (TA).
 

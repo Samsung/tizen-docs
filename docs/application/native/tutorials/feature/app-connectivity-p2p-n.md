@@ -1,7 +1,7 @@
 
-# P2P Connections with Wi-Fi Direct®
+# P2P Connections with Wi-Fi Direct&reg;
 
-Wi-Fi Direct® (synonym for Wi-Fi P2P (Peer-to-Peer)) is a technology
+Wi-Fi Direct&reg; (synonym for Wi-Fi P2P (Peer-to-Peer)) is a technology
 that allows you to find nearby Wi-Fi Direct devices and form a Wi-Fi
 Direct group to communicate over a peer-to-peer link without wireless
 access points (base stations) in the infrastructure mode.

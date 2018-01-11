@@ -30,7 +30,7 @@ The Grunt tool provides application performance improvement based on the decreas
 
 ### Prerequisites
 
-The commands used for installing and using Grunt work in the same manner, without any changes, across most of the major operating systems. To run the commands, you may need to use sudo (for Linux and BSD), or run your command shell as Administrator (for Windows®).
+The commands used for installing and using Grunt work in the same manner, without any changes, across most of the major operating systems. To run the commands, you may need to use sudo (for Linux and BSD), or run your command shell as Administrator (for Windows&reg;).
 
 ### Installing Grunt
 
@@ -77,7 +77,7 @@ The commands used for installing and using Grunt work in the same manner, withou
 
 ## Improvement through Grunt
 
-After running the Grunt plug-in, the following comparison result is shown through the inspector in the Google Chrome™ browser. The expected results vary depending on the application, but since the improvement effects are certain, it is recommended to use Grunt.
+After running the Grunt plug-in, the following comparison result is shown through the inspector in the Google Chrome&trade; browser. The expected results vary depending on the application, but since the improvement effects are certain, it is recommended to use Grunt.
 
 > **Note**
 > For the sake of comparing improvement, in the following examples, 2 Web applications have been arbitrarily chosen and named App#1 and App#2.

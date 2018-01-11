@@ -16,8 +16,8 @@ To determine whether the proximity sensor is supported on the device:
     template, and specify the project name as **SensorProximity**.
 
     For more information on how to create a project, see Creating a
-    Project (in [mobile](../mobile/first-app-mn.md#create) and
-    [wearable](../wearable/first-app-wn.md#create) applications).
+    Project (in [mobile](../../getting-started/mobile/first-app-mn.md#create) and
+    [wearable](../../getting-started/wearable/first-app-wn.md#create) applications).
 
 2. In the new project, open the `sensorproximity.c` source file in the
     `src` folder and add the required library header file and variables:
@@ -128,10 +128,10 @@ To determine whether the proximity sensor is supported on the device:
     show_is_supported(ad);
     ```
 
-5. Build (in [mobile](../mobile/first-app-mn.md#build) and
-    [wearable](../wearable/first-app-wn.md#build) applications) and run
-    (in [mobile](../mobile/first-app-mn.md#run) and
-    [wearable](../wearable/first-app-wn.md#run) applications)
+5. Build (in [mobile](../../getting-started/mobile/first-app-mn.md#build) and
+    [wearable](../../getting-started/wearable/first-app-wn.md#build) applications) and run
+    (in [mobile](../../getting-started/mobile/first-app-mn.md#run) and
+    [wearable](../../getting-started/wearable/first-app-wn.md#run) applications)
     the application. If the proximity sensor is supported, the
     **Proximity Sensor is support** message is shown on the
     device screen.
@@ -242,7 +242,7 @@ the screen:
     bring the device close to your face.
 
     To test on the emulator, use the [control
-    panel](../../../../org.tizen.studio/html/common_tools/emulator_control_panel.htm):
+    panel](../../../tizen-studio/common-tools/emulator-control-panel.md):
 
     a.  Right-click the emulator and select **Control Panel**.  
     b. Click **Next** in the lower-right corner until you see the        **Proximity** box.  

@@ -6,7 +6,7 @@
 
 # Tutorials
 ## Application Development Process
-### [Overview](/process/app-dev-process-n.md)
+### [Overview](tutorials/process/app-dev-process-n.md)
 ### [Creating the Application Project](tutorials/process/creating-app-project-n.md)
 ### [Setting Project Properties](tutorials/process/setting-properties-n.md)
 ### [Building Applications](tutorials/process/building-app-n.md)
@@ -32,7 +32,7 @@
 ### [Overview](tutorials/feature/app-connectivity-n.md)
 ### [Network Operations](tutorials/feature/app-connectivity-operation-n.md)
 ### [Network Usage](tutorials/feature/app-connectivity-usage-n.md)
-### [P2P Connections with Wi-Fi Direct®](tutorials/feature/app-connectivity-p2p-n.md)
+### [P2P Connections with Wi-Fi Direct&reg;](tutorials/feature/app-connectivity-p2p-n.md)
 
 ## Creating Applications with Contacts
 ### [Overview](tutorials/feature/app-contacts-n.md)

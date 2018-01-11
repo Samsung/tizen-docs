@@ -6,9 +6,9 @@
 
 This feature is supported in mobile applications only.
 
-The GLView component renders OpenGL® in an Elementary object, which hides Evas GL complexity.
+The GLView component renders OpenGL&reg; in an Elementary object, which hides Evas GL complexity.
 
-For more information, see the [OpenGL® ES](../../graphics/opengl-n.md) guide and the [GLView](../../../../../org.tizen.native.mobile.apireference/group__Elm__GLView.html) API.
+For more information, see the [OpenGL&reg; ES](../../graphics/opengl-n.md) guide and the [GLView](../../../../../org.tizen.native.mobile.apireference/group__Elm__GLView.html) API.
 
 **Figure: GLView component**
 
@@ -53,13 +53,13 @@ To configure the GLView:
 
 - Set the resize policy.
 
-  To set a policy that decides what to do with the OpenGL® ES surface when the GLView component is resized:
+  To set a policy that decides what to do with the OpenGL&reg; ES surface when the GLView component is resized:
 
   ```
   elm_glview_resize_policy_set(glview, ELM_GLVIEW_RESIZE_POLICY_RECREATE);
   ```
 
-  The OpenGL® ES surface is destroyed and recreated in the new size (default function). The resize policy can also be set to `ELM_GLVIEW_RESIZE_POLICY_SCALE`, in which case only the image object is scaled, not the underlying OpenGL® ES surface.
+  The OpenGL&reg; ES surface is destroyed and recreated in the new size (default function). The resize policy can also be set to `ELM_GLVIEW_RESIZE_POLICY_SCALE`, in which case only the image object is scaled, not the underlying OpenGL&reg; ES surface.
 
 - Set the GLView rendering policy.
 

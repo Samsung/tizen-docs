@@ -26,7 +26,7 @@ By using a proper way to store data, you can minimize any data-related security 
 
 - Using the key manager
 
-  The [key manager](../../../../org.tizen.guides/html/native/security/secure_key_n.htm) provides a secure repository for the keys, certificates, and sensitive data of the user and their applications.
+  The [key manager](../../guides/security/secure_key_n.htm) provides a secure repository for the keys, certificates, and sensitive data of the user and their applications.
 
   A client can specify simple access rules when storing data in the key manager:
 
@@ -89,12 +89,12 @@ File sharing is a basic mechanism for interchanging data between application pro
 
 ### Message Ports
 
-The Message Port API [supports one-to-one communication](../../../../org.tizen.guides/html/native/app_management/message_port_n.htm) between 2 applications. Tizen also supports trusted communication as an option for a more secure communication between 2 trusted applications.
+The Message Port API [supports one-to-one communication](../../guides/app_management/message_port_n.htm) between 2 applications. Tizen also supports trusted communication as an option for a more secure communication between 2 trusted applications.
 
 When you use the `message_port_register_trusted_local_port()` and `message_port_send_trusted_message()` functions, you can make the communication valid only between the applications that are developed by you. Since the platform checks the application author certificate for trusted communications, you can use these functions to make your applications communicate through a more secure channel.
 
 ### Data Control
 
-The Data Control API supports [communication between provider and consumer applications](../../../../org.tizen.guides/html/native/app_management/data_control_n.htm). One provider can provide data to many consumers in a structured way, such as SQL or map.
+The Data Control API supports [communication between provider and consumer applications](../../guides/app_management/data_control_n.htm). One provider can provide data to many consumers in a structured way, such as SQL or map.
 
 The consumer can request data from any provider, as long as the consumer knows the provider ID of the provider application. If the provider does not want to provide data to arbitrary consumers, it can check the application ID of the consumer in the callback handlers, such as `data_control_provider_sql_insert_request_cb()` or `data_control_provider_sql_select_request_cb()`. The provider can get the consumer application ID though the `data_control_provider_get_client_appid()` function, and then determine whether it allows that consumer to access its data.

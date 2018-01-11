@@ -34,7 +34,7 @@ The wearable UI components are designed to allow the user to interact with small
 | Assist  views         | [Popup](./component-popup-wn.md) | The  popup component shows a pop-up area that can contain a title area, a content  area, and an action area. |
 | Assist  views         | [Ctxpopup](./component-ctxpopup-wn.md) | The  ctxpopup component is a contextual popup that can show a list of items. |
 | Transition            | Transit                                  | The  transit component can apply several transition effects to an Evas object,  such as translations and rotations. |
-| Hardware acceleration | [GLView](./component-glview-wn.md) | The  GLView component can render OpenGL® in an Elementary object, hiding EvasGL  complexity. |
+| Hardware acceleration | [GLView](./component-glview-wn.md) | The  GLView component can render OpenGL&reg; in an Elementary object, hiding EvasGL  complexity. |
 | Miscellaneous         | [Plug](./component-plug-wn.md) | The  plug component allows you to show an Evas object created by another process.  It can be used anywhere like any other Elementary UI component. |
 
 

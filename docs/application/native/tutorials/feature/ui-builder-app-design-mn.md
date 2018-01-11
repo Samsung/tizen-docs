@@ -395,7 +395,7 @@ provided with the Tizen Studio, imitates the target environment running
 Tizen native applications. Using this replicated environment, you can
 test your application before deploying to a real target device. For more
 information, see [Running Applications on the
-Emulator](../../../../org.tizen.studio/html/common_tools/emulator.htm).
+Emulator](../../../tizen-studio/common-tools/emulator.md).
 
 To run the application:
 

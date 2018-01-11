@@ -267,8 +267,7 @@ Web Notifications (in **mobile applications only**)</td>
 
 <td>
 
-Storage (in **mobile and wearable applications only**)<br>
-(IndexedDB, FileSystem capacity, quota exceeding WebDatabase)
+Storage (IndexedDB, FileSystem capacity, quota exceeding WebDatabase)
 </td>
 <td>
 
@@ -283,7 +282,7 @@ Storage (in **mobile and wearable applications only**)<br>
 
 <td>
 
-FullScreen (in **mobile applications only**)</td>
+FullScreen  (in ** mobile and TV applications only**)</td>
 <td>
 
 `http://tizen.org/privilege/fullscreen`</td>
@@ -448,7 +447,6 @@ Request Policy](http://www.w3.org/TR/2012/REC-widgets-access-20120207/).
 > **Note**  
 > The default CSP enforcement is subject to change in the future.
 
-<br>
 > **Note**  
 > If a Web application declares the `<tizen:allow-navigation>`
 element in its configuration document, the main resource navigation

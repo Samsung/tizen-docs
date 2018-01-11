@@ -7,7 +7,7 @@ DALi uses a multi-threaded architecture to provide the best performance and scal
 
 - **Event thread**: Main thread in which the application code and event handling run.
 - **Update thread**: Updates the nodes on the scene as well as the running animations and constraints.
-- **Render thread**: OpenGL® drawing, texture, and geometry uploading.
+- **Render thread**: OpenGL&reg; drawing, texture, and geometry uploading.
 - **Resource thread**: Loads images and decodes them into bitmaps.
 
 **Figure: DALi thread architecture**

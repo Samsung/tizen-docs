@@ -150,7 +150,7 @@ Images can be used in Web applications in the following ways:
 
 - `IMG` element linking images directly to HTML
 - CSS `background` property expressing images as a background in HTML
-- [SVG (Scalable Vector Graphics)](./w3c/graphics/svg-w.md), [Canvas](./w3c/graphics/canvas-w.md), and [WebGL™](http://www.khronos.org/registry/webgl/specs/latest/) APIs implementing graphics in HTML
+- [SVG (Scalable Vector Graphics)](./w3c/graphics/svg-w.md), [Canvas](./w3c/graphics/canvas-w.md), and [WebGL&trade;](http://www.khronos.org/registry/webgl/specs/latest/) APIs implementing graphics in HTML
 
 When selecting an option from the list above, consider the type of the image resource you are going to use.
 

@@ -3,7 +3,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
 
-Tizen supports hardware acceleration since Tizen 2.3.1. If hardware acceleration is enabled, it increases rendering performance and allows you to use OpenGL® ES.
+Tizen supports hardware acceleration since Tizen 2.3.1. If hardware acceleration is enabled, it increases rendering performance and allows you to use OpenGL&reg; ES.
 
 You can enable hardware acceleration in the `tizen-manifest` file, using the manifest editor's **Advanced** tab.
 
@@ -21,7 +21,7 @@ The possible values are `on` (enabled) and `off` (disabled). If the value is not
 
 Normally, it is enough to modify the manifest file to enable hardware acceleration. In the following special cases, however, additional actions are required:
 
-- OpenGL® ES application
+- OpenGL&reg; ES application
 
   In addition to enabling hardware acceleration in the manifest file, you must also call the `elm_config_accel_preference_set()` function before creating an elm window.
 
@@ -29,7 +29,7 @@ Normally, it is enough to modify the manifest file to enable hardware accelerati
 
   ```
   elm_config_accel_preference_set("opengl");
-  win = elm_win_util_standard_add(name, "OpenGL® example");
+  win = elm_win_util_standard_add(name, "OpenGL&reg; example");
   ```
 
   This function and option are supported since Tizen 2.3.
@@ -38,12 +38,12 @@ Normally, it is enough to modify the manifest file to enable hardware accelerati
 
   ```
   elm_config_accel_preference_set("opengl:depth24:stencil8:msaa_high");
-  win = elm_win_util_standard_add(name, "OpenGL® example");
+  win = elm_win_util_standard_add(name, "OpenGL&reg; example");
   ```
 
   In the above example, the depth buffer size is 24 bit, stencil buffer size is 8 bit and MSAA is on with a high bit.
 
-  These special options are supported since Tizen 2.3.1. For more information, see the [OpenGL® ES](opengl-n.md) guide.
+  These special options are supported since Tizen 2.3.1. For more information, see the [OpenGL&reg; ES](opengl-n.md) guide.
 
 - EFL WebKit (EWK) application
 

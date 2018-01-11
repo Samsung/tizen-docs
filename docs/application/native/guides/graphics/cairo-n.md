@@ -19,13 +19,13 @@ The main features of the Cairo API include:
 
 ## Cairo in Tizen
 
-Cairo is a part of the Tizen Graphics layer. As shown in the following figure, the rendering functionality of Cairo is provided through the use of the APIs of the lower modules, such as Pixman or OpenGL® ES.
+Cairo is a part of the Tizen Graphics layer. As shown in the following figure, the rendering functionality of Cairo is provided through the use of the APIs of the lower modules, such as Pixman or OpenGL&reg; ES.
 
 **Figure: Cairo within the Tizen framework**
 
 ![Cairo within the Tizen framework](./media/cairo_tizen.png)
 
-The Cairo GL backend allows hardware-accelerated rendering by targeting the OpenGL® ES API. The goal of the Cairo GL backend is to achieve better performance with equal functionality to the Cairo Image backend, whenever possible.
+The Cairo GL backend allows hardware-accelerated rendering by targeting the OpenGL&reg; ES API. The goal of the Cairo GL backend is to achieve better performance with equal functionality to the Cairo Image backend, whenever possible.
 
 > **Note**  
 > Since Tizen only exposes EvasGL binding in place of EGL™, Cairo EvasGL APIs have been newly added and specified. To use the Cairo GL backend in Tizen, an application must include in its source code the `cairo-evas-gl.h` header file instead of `cairo-gl.h`.
@@ -117,11 +117,11 @@ To create the image surface:
 
 ### Creating a Cairo GL Surface in the Evas GL Backend
 
-With the Cairo GL backend, you can create a Cairo surface using OpenGL®. For more information on OpenGL®, see the [OpenGL® ES](opengl-n.md) guide.
+With the Cairo GL backend, you can create a Cairo surface using OpenGL&reg;. For more information on OpenGL&reg;, see the [OpenGL&reg; ES](opengl-n.md) guide.
 
 To create the GL surface:
 
-1. Since an application utilizing the Cairo GL backend in Tizen is based on Evas GL, an Evas GL handler must be created with the `evas_gl_new()` function during the initial stage.Afterwards, the `evas_gl_config`, `evas_gl_surface`, and `evas_gl_context` instances are created in that order. For more information on using Evas GL, see [Creating OpenGL® ES Applications](creating-opengles-n.md) and the [OpenGL® ES](opengl-n.md) guide.
+1. Since an application utilizing the Cairo GL backend in Tizen is based on Evas GL, an Evas GL handler must be created with the `evas_gl_new()` function during the initial stage.Afterwards, the `evas_gl_config`, `evas_gl_surface`, and `evas_gl_context` instances are created in that order. For more information on using Evas GL, see [Creating OpenGL&reg; ES Applications](creating-opengles-n.md) and the [OpenGL&reg; ES](opengl-n.md) guide.
 
     ```
     Evas_Object *win = elm_win_util_standard_add("Cairo GL Backend guide", " Cairo GL Backend guide");

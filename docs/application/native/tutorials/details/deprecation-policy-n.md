@@ -44,7 +44,7 @@ adopted in Tizen:
 
     **Table: Deprecation schedule**
 
-|      | **V1 (Tizen 2.4/2.3.1/2.3.2)<br>Deprecation notice** | **V2 (Tizen 3.0)<br>Deprecated since V1** | **V3 (Tizen 3.x)<br>Deprecated since V1** |
+    |      | **V1 (Tizen 2.4/2.3.1/2.3.2)<br>Deprecation notice** | **V2 (Tizen 3.0)<br>Deprecated since V1** | **V3 (Tizen 3.x)<br>Deprecated since V1** |
     | -------------------------------------- | ---------------------------------------- | --------------------------------- | --------------------------------- |
     | **API functionality**  | Available | Available  | **Not available**     |
     | **API symbol** | Available   |Available                        | **Not available**   |

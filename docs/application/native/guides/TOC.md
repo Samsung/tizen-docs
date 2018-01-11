@@ -34,10 +34,10 @@
 ## [Cairo Vector Graphics](graphics/cairo-n.md)
 ## [Graphic Buffer and Surface](graphics/graphic-buffer-n.md)
 ## [Hardware Acceleration](graphics/hw-acceleration-n.md)
-## OpenGL® ES
+## OpenGL&reg; ES
 ### [Overview](graphics/opengl-n.md)
-### [Creating OpenGL® ES Applications](graphics/creating-opengles-n.md)
-### [Polygon Mesh in OpenGL® ES](graphics/polygon-mesh-n.md)
+### [Creating OpenGL&reg; ES Applications](graphics/creating-opengles-n.md)
+### [Polygon Mesh in OpenGL&reg; ES](graphics/polygon-mesh-n.md)
 ### [Vertex Shader](graphics/vertex-shader-n.md)
 ### [Primitive Assembly and Rasterization](graphics/assembly-n.md)
 ### [Texturing](graphics/texturing-n.md)
@@ -48,8 +48,8 @@
 ### [Advanced Performance](graphics/adv-performance-n.md)
 ## Simple DirectMedia Layer (SDL)
 ### [Overview](graphics/sdl-n.md)
-### [SDL Graphics with Vulkan®](graphics/vulkan-n.md)
-### [SDL Graphics with Vulkan®](graphics/vulkan-n.md)
+### [SDL Graphics with Vulkan&reg;](graphics/vulkan-n.md)
+### [SDL Graphics with Vulkan&reg;](graphics/vulkan-n.md)
 
 # Notifications and Content Sharing
 ## [Notifications](notification/noti-n.md)
@@ -92,7 +92,7 @@
 ## [NFC](connectivity/nfc-n.md)
 ## [Smart Card](connectivity/smartcard-n.md)
 ## [Wi-Fi](connectivity/wifi-n.md)
-## [Wi-Fi Direct®](connectivity/wifi-direct-n.md)
+## [Wi-Fi Direct&reg;](connectivity/wifi-direct-n.md)
 ## [Telephony Information](connectivity/telephony-n.md)
 ## [USB Host](connectivity/usb-host-n.md)
 ## Internet and Content Downloads

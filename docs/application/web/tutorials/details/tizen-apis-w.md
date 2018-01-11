@@ -27,755 +27,108 @@ The following table lists the features provided by the [Mobile Web
 Device API
 Reference](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html).
 
-**Table: Device API features provided for mobile applications**
-
-
-<table>
-<tr>
-<th>Feature</th>
-<th>Purpose</th>
-<th>Documentation</th>
-</tr>
-
-<tr>
-<td>Base</td>
-<td>These APIs contain classes and interfaces that provide a set of basic definitions and interfaces that are used in the Tizen Device API.<BR>
-You can manage common files and ZIP archive files, and define filters and sorting modes for queries. You can also use generic success and error event handlers, in addition to a generic error interface and a simple coordinate interface for defining location information.
-</td>
-<td>
-
-- Guides: <br>
-[Data Storage and Management](../../../guides/web/data/data-cover-w.md) <br>
-[Error  Handling](../../../guides/web/error/error-w.md)<br>
-
-- API Reference:
-[Base](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Base)      
-</td>
-</tr>
-<tr>
-<td>Account</td>
-<td>This API contains classes and interfaces that enable you to manage account features.<br>
-You can use existing configured on-line accounts and providers, and create new accounts of known types.
-</td>
-<td>
-
-- Guides:
-[Personal Data](../../../guides/web/personal/personal-cover-w.md)<br>
-
-
-- API Reference: [Account](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Account)   
-</td>
-</tr>
-<tr>
-<td>Application Framework</td>
-<td>These APIs contain classes and interfaces that enable you to manage alarm, application, and package features.<br>
-You can schedule an application to be run at a specific time, retrieve information about the applications installed or running on the device, and enable package management.
-</td>
-<td>
-
-- Guides:
-[Alarms](../../../guides/web/alarm/alarms-w.md)  <br>
-[Application Management](../../../guides/web/app-management/app-management-cover-w.md)  <br>
-[Notifications](../../../guides/web/notification/notification-w.md)<br>
-[Text Input](../../../guides/web/text-input/text-input-cover-w.md)   <br>                 
-
-- API Reference:  [Application Framework](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Application)   
-
-</td>
-</tr>
-<tr>
-<td>Content</td>
-<td>These APIs contain classes and interfaces that enable you to manage content and download features.<br>
-You can search and manage multimedia content locally, download files from the Internet, and monitor the download progress and status.
-</td>
-<td>
-
-- Guides:
-[Connectivity and Wireless](../../../guides/web/connectivity/connectivity-cover-w.md)<br>
-[Data Storage and    Management](../../../guides/web/data/data-cover-w.md)              <br>              
-
-- API Reference:  [Content](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Contents)       
-
-</td>
-</tr>
-<tr>
-<td>Messaging</td>
-<td>These APIs contain classes and interfaces that enable you to manage SMS, MMS, and email messages.<br>
-You can send and receive messages, and receive push notifications from a push server.
-</td>
-<td>
-
-- Guides:  [Messaging](../../../guides/web/messaging/messaging-cover-w.md) <br>     
-
-- API Reference:   [Messaging](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Messaging)       
-
-</td>
-</tr>
-<tr>
-<td>Multimedia</td>
-<td>These APIs contain classes and interfaces that enable you to manage multimedia-related features.<br>
-You can change and monitor playback volume level, and listen to the FM radio.
-</td>
-<td>
-
-- Guides: [Media and   Camera](../../../guides/web/media/media-cover-w.md)
-<br>
-
-- API Reference:  [Multimedia](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Multimedia)      
-</td>
-</tr>
-<tr>
-<td>Network</td>
-<td>These APIs contain classes and interfaces that enable you to manage Bluetooth, NFC (Near Field Communication), and secure element features.<br>
-You can transfer data over a Bluetooth connection, share contacts, photos, and videos using NFC, and access secure elements, such as SIM card and secure SD card, in a device.
-</td>
-<td>
-
-- Guides: [Connectivity and Wireless](../../../guides/web/connectivity/connectivity-cover-w.md) <br>
-
-- API Reference:   [Network](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Network)        
-</td>
-</tr>
-<tr>
-<td>Security</td>
-<td>This API contains classes and interfaces that enable you to manage secure keys in your application.<br>
-You can use security functionalities, such as storing and recalling private data.
-</td>
-<td>
-
-- Guides:   [Security](../../../guides/web/security/security-cover-w.md)        <br>
-
-- API Reference:   [Security](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Security)   
-</td>
-</tr>
-<tr>
-<td>Social</td>
-<td>These APIs contain classes and interfaces that enable you to manage bookmark, calendar, call history, contact, and data synchronization features.<br>
-You can manage the Tizen Web browser bookmark list, calendar events and tasks, call history, and address books and contacts on a device, and you can synchronize device data, such as contacts and calendar events, with the OMA DS server.
-</td>
-<td>
-
-- Guides: [Personal Data](../../../guides/web/personal/personal-cover-w.md)     <br>
-
-
-- API Reference:  [Social](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Social)         
-</td>
-</tr>
-<tr>
-<td>System</td>
-<td>These APIs contain classes and interfaces that enable you to manage power, system information and setting, time, and Web setting features.<br>
-You can access the state of the device power resource, device system information, and device wallpaper settings. You can use locale-specific calendar features by retrieving date and time information, and set feedback patterns for specified actions. You can also manage time features, and set Web view properties, such as setting Web view user agents and deleting Web view cookies.
-</td>
-<td>
-
-- Guides:<br>
-[Device Settings and Systems](../../../guides/web/device/device-cover-w.md) <br>         
-[Meda and  Camera](../../../guides/web/media/media-cover-w.md) <br>
-[Sensors](../../../guides/web/sensors/sensors-cover-w.md)<br>
-
-- API Reference:    [System](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#System)    
-</td>
-</tr>
-<tr>
-<td>UIX</td>
-<td>This API contain classes and interfaces that enable you to set voice commands.<br>
-You can allow the user to control the Web application through their voice.
-</td>
-<td>
-
-- Guides: [Text Input and Voice](../../../guides/web/text-input/text-input-cover-w.md)<br>
-
-- API Reference: [UIX](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#UIX)  
-</td>
-</tr>
-<tr>
-<td>Cordova</td>
-<td>These APIs contain classes and interfaces that enable you use common functionalities in creating Tizen Web applications.<br>
-You can manage the device filesystem, individual files, and various events, access device and network information and the device accelerometer, create dialog boxes and system log entries, and play audio files.
-</td>
-<td>
-
-- Guides:    [Cordova](../../../guides/web/cordova/cordova-cover-w.md) <br>        
-
-- API Reference:    [Cordova](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Cordova)                  
-</td>
-</tr>
-<tr>
-<td>Web UI Framework</td>
-<td>These APIs contain classes and interfaces that enable you to manage the Tizen Advanced UI (TAU) features.<br>
-You can create and manage various kinds of UI components.
-</td>
-<td>
-
-- Guides: [Tizen Advanced  UI](../../../guides/web/ui/tau/tau-w.md)    <br>
-
-- API Reference: [Advanced  UI   Framework](../../../../org.tizen.web.apireference/html/ui_fw_api/ui_fw_api_cover.htm)                     
-</td>
-</tr>
-
-</table>
-
-
-
-The following table lists the features provided by the [Wearable Web
-Device API
-Reference](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html).
-
-**Table: Device API features provided for wearable applications**
-
-<table>
-<tr>
-<th>Feature</th>
-<th>Purpose</th>
-<th>Documentation</th>
-</tr>
-<tr>
-<td>Base</td>
-<td>These APIs contain classes and interfaces that provide a set of basic definitions and interfaces that are used in the Tizen Device API.<br>
-You can manage common files and ZIP archive files, and define filters and sorting modes for queries. You can also use generic success and error event handlers, in addition to a generic error interface and a simple coordinate interface for defining location information.
-</td>
-<td>
-
-- Guides:<br>
-[Data Storage and Management](../../../guides/web/data/data-cover-w.md)                   
-[Error Handling](../../../guides/web/error/error-w.md)   
-
-- API Reference:    [Base](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Base)                  
-</td>
-</tr>
-<tr>
-<td>Account</td>
-<td>This API contains classes and interfaces that enable you to manage account features.<br>
-You can use existing configured on-line accounts and providers, and create new accounts of known types.
-</td>
-<td>
-
-- Guides:  [Personal  Data](../../../guides/web/personal/personal-cover-w.md)           
-
-- API Reference:    [Account](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Account)       
-</td>
-</tr>
-<tr>
-<td>Application Framework</td>
-<td>These APIs contain classes and interfaces that enable you to manage alarm, application, and package features.<br>
-You can schedule an application to be run at a specific time, retrieve information about the applications installed or running on the device, and enable package management.
-</td>
-<td>
-
-- Guides:<br>
-[Alarms](../../../guides/web/alarm/alarms-w.md) <br>
-[Application   Management](../../../guides/web/app-management/app-management-cover-w.md)     <br>
-[Notifications](../../../guides/web/notification/notification-w.md)<br>  
-
-[Text Input](../../../guides/web/text_input/text-input-cover-w.md)    
-
-- API Reference:   [Application Framework](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Application)        
-</td>
-</tr>
-<tr>
-<td>Content</td>
-<td>These APIs contain classes and interfaces that enable you to manage content and download features.<br>
-You can search and manage multimedia content locally, download files from the Internet, and monitor the download progress and status.
-</td>
-<td>
-
-- Guides:<br>
-[Connectivity and  Wireless](../../../guides/web/connectivity/connectivity-cover-w.md)             
-[Data Storage and  Management](../../../guides/web/data/data-cover-w.md)                
-- API Reference:     [Content](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Contents)     
-</td>
-</tr>
-<tr>
-<td>Messaging</td>
-<td>This API contains classes and interfaces that enable you to manage push messaging.<br>
-You can receive push notifications from a push server.
-</td>
-<td>
-
-- Guides:    [Messaging](../../../guides/web/messaging/messaging-cover-w.md)       
-- API Reference:    [Messaging](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Messaging)  
-</td>
-</tr>
-<tr>
-<td>Multimedia</td>
-<td>These APIs contain classes and interfaces that enable you to manage multimedia-related features.<br>
-You can change and monitor playback volume level, and listen to the FM radio.
-</td>
-<td>
-
-- Guides: [Media and  Camera](../../../guides/web/media/media-cover-w.md)  
-
-- API Reference:    [Multimedia](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Multimedia)   
-</td>
-</tr>
-<tr>
-<td>Network</td>
-<td>These APIs contain classes and interfaces that enable you to manage Bluetooth, NFC (Near Field Communication), and secure element features.<br>
-You can transfer data over a Bluetooth connection, share contacts, photos, and videos using NFC, and access secure elements, such as SIM card and secure SD card, in a device.
-</td>
-<td>
-
-- Guides: [Connectivity and  Wireless](../../../guides/web/connectivity/connectivity-cover-w.md)        
-- API Reference:   [Network](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Network)      
-</td>
-</tr>
-<tr>
-<td>Security</td>
-<td>This API contains classes and interfaces that enable you to manage secure keys in your application.<br>
-You can use security functionalities, such as storing and recalling private data.
-</td>
-<td>
-
-- Guides:   [Security](../../../guides/web/security/security-cover-w.md)     
-
-- API Reference:   [Security](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Security)   
-</td>
-</tr>
-<tr>
-<td>Social</td>
-<td>These APIs contain classes and interfaces that enable you to manage calendar and contact features.<br>
-You can manage calendar events and tasks, address books, and contacts on a device.
-</td>
-<td>
-
-- Guides: [Personal Data](../../../guides/web/personal/personal-cover-w.md)               
-- API Reference:   [Social](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Social)   
-</td>
-</tr>
-<tr>
-<td>System</td>
-<td>These APIs contain classes and interfaces that enable you to manage power, system information and setting, and time features.<br>
-You can access the state of the device power resource, device system information, and device wallpaper settings. You can use locale-specific calendar features by retrieving date and time information, and set feedback patterns for specified actions. You can also manage time features.
-</td>
-<td>
-
-- Guides:<br>
-[Device Settings and Systems](../../../guides/web/device/device-cover-w.md) <br>
-[Media and Camera](../../../guides/web/media/media-cover-w.md)<br>  
-
-[Sensors](../../../guides/web/sensors/sensors-cover-w.md)<br>        
-
-- API Reference:   [System](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#System)      
-</td>
-</tr>
-<tr>
-<td>UIX</td>
-<td>This API contain classes and interfaces that enable you to set voice commands.<br>
-You can allow the user to control the Web application through their voice.
-</td>
-<td>
-
-- Guides: [Text Input and Voice](../../../guides/web/text-input/text-input-cover-w.md)
-
-- API Reference: [UIX](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#UIX)   
-
-</td>
-</tr>
-<tr>
-<td>Cordova</td>
-<td>These APIs contain classes and interfaces that enable you use common functionalities in creating Tizen Web applications.<br>
-You can manage the device filesystem, individual files, and various events, access device and network information and the device accelerometer, create dialog boxes and system log entries, and play audio files.
-</td>
-<td>
-
-- Guides:   [Cordova](../../../guides/web/cordova/cordova-cover-w.md)       
-
-- API Reference:   [Cordova](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Cordova)  
-</td>
-</tr>
-<tr>
-<td>Web UI Framework</td>
-<td>These APIs contain classes and interfaces that enable you to manage the Tizen Advanced UI (TAU) features.<br>
-You can create and manage various kinds of UI components.
-</td>
-<td>
-
-- Guides: [Tizen Advanced UI](../../../guides/web/ui/tau/tau-w.md)   
-
-- API Reference: [Advanced  UI Framework](../../../../org.tizen.web.apireference/html/ui_fw_api/ui_fw_api_cover.htm)                    
-</td>
-</tr>
-</table>
-
-
-
-The following table lists the features provided by the [TV Web Device
-API
-Reference](../../../../org.tizen.web.apireference/html/device_api/tv/index.html).
-
-**Table: Device API features provided for TV applications**
-
-<table>
-<tr>
-<th>Feature</th>
-<th>Purpose</th>
-<th>Documentation</th>
-</tr>
-<tr>
-<td>Base</td>
-<td>These APIs contain classes and interfaces that provide a set of basic definitions and interfaces that are used in the Tizen Device API.<br>
-You can manage common files and ZIP archive files, and define filters and sorting modes for queries. You can also use generic success and error event handlers, in addition to a generic error interface and a simple coordinate interface for defining location information.
-</td>
-<td>
-
-- Guides:<br>
-[Data Storage and  Management](../../../guides/web/data/data-cover-w.md)<br>
-[Error Handling](../../../guides/web/error/error-w.md)
-
-- API Reference:    [Base](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Tizen)                        
-</td>
-</tr>
-<tr>
-<td>Application Framework</td>
-<td>These APIs contain classes and interfaces that enable you to manage alarm, application, and package features.<br>
-You can schedule an application to be run at a specific time, retrieve information about the applications installed or running on the device, and enable package management.
-</td>
-<td>
-
-- Guides:<br>
-[Alarms](../../../guides/web/alarm/alarms-w.md) <br>
-[Application Management](../../../guides/web/app-management/app-management-cover-w.md)   
-
-- API Reference:   [Application Framework](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Application)    
-</td>
-</tr>
-<tr>
-<td>Content</td>
-<td>These APIs contain classes and interfaces that enable you to manage content and download features.<br>
-You can search and manage multimedia content locally, manipulate EXIF data in JPEG files, download files from the Internet, and monitor the download progress and status.
-</td>
-<td>
-
-- Guides:<br>
-[Connectivity and Wireless](../../../guides/web/connectivity/connectivity-cover-w.md)<br>
-[Data Storage and Management](../../../guides/web/data/data-cover-w.md)<br>
-[Media and Camera](../../../guides/web/media/media-cover-w.md)  
-
-- API Reference:    [Content](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Contents)       
-</td>
-</tr>
-<tr>
-<td>Messaging</td>
-<td>This API contains classes and interfaces that enable you to manage push messaging.<br>
-You can receive push notifications from a push server.
-</td>
-<td>
-
-- Guides:    [Messaging](../../../guides/web/messaging/messaging-cover-w.md)    
-
-- API Reference:   [Messaging](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Messaging)  
-</td>
-</tr>
-<tr>
-<td>Network</td>
-<td>This API contains classes and interfaces that enable you to manage IoT connectivity.<br>
-You can create a client and server, and manage their resources locally and remotely.
-</td>
-<td>
-
-- Guides: [Connectivity  and  Wireless](../../../guides/web/connectivity/connectivity-cover-w.md)  
-- API Reference:    [Network](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Network)      
-</td>
-</tr>
-<tr>
-<td>Security</td>
-<td>This API contains classes and interfaces that enable you to manage secure keys in your application.<br>
-You can use security functionalities, such as storing and recalling private data.
-</td>
-<td>
-
-- Guides:   [Security](../../../guides/web/security/security-cover-w.md)    
-
-- API Reference:    [Security](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Security)  
-</td>
-</tr>
-<tr>
-<td>System</td>
-<td>These APIs contain classes and interfaces that enable you to manage system information, time, and Web setting features.<br>
-You can access the device system information and use locale-specific calendar features by retrieving date and time information. You can also set Web view properties, such as setting Web view user agents and deleting Web view cookies.
-</td>
-<td>
-
-
-- Guides: [Device Settings  and   Systems](../../../guides/web/device/device-cover-w.md)     
-
-- API Reference:  [System](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#System)      
-</td>
-</tr>
-<tr>
-<td>UIX</td>
-<td>This API contain classes and interfaces that enable you to set voice commands.<br>
-You can allow the user to control the Web application through their voice.
-</td>
-<td>
-
-- Guides: [Text Input and Voice](../../../guides/web/text-input/text-input-cover-w.md)
-
-- API Reference: [UIX](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#UIX)  
-
-</td>
-</tr>
-<tr>
-<td>Cordova</td>
-<td>These APIs contain classes and interfaces that enable you use common functionalities in creating Tizen Web applications.<br>
-You can manage the device filesystem, individual files, and various events, access device and network information and the device accelerometer, create dialog boxes and system log entries, and play audio files.
-</td>
-<td>
-
-- Guides:  [Cordova](../../../guides/web/cordova/cordova-cover-w.md)     
-
-- API Reference:   [Cordova](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Cordova)  
-</td>
-</tr>
-<tr>
-<td>TV Controls</td>
-<td>These APIs contain classes and interfaces that enable you control the TV functionalities, such as channels and audio.<br>
-You can modify the volume level, switch TV channels, get program guide information, and manage TV settings. You can also access 3D mode information, monitor remote control key events, and control the main and PIP window on the TV screen.
-</td>
-<td>
-
-- API Reference: [TV Controls](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#TV%20Control)         
-</td>
-</tr>
-
-</table>
-
-The following table lists the features provided by the [Mobile Web
-W3C/HTML5 and Supplementaries API
-Reference](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html).
-
-**Table: W3C/HTML5 and some supplementary API features provided for
-mobile applications**
-
-<table>
-<tr>
-<th>Feature</th>
-<th>Purpose</th>
-<th>Documentation</th>
-</tr>
-<tr>
-<td>DOM, Forms and Styles</td>
-<td>These APIs enable you to create animations, specify the border and background styles of HTML elements, apply styles to HTML documents, specify the color and opacity of HTML elements, create flexible and multi-column layouts for Web applications, move, rotate, stretch, and scale elements, and add effects using CSS3 properties. They also enable you to use CSS and JavaScript code effectively with HTML elements, implement Web forms for user input, define media features for specific output devices, select element nodes in the DOM tree, and store information about the page that the user has viewed.</td>
-<td>
-
-- Guides:  [User Interface](../../../guides/web/w3c/ui/ui-guide-w.md)
-
-- API Reference: [DOM, Forms and  Styles](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#dom)
-</td>
-</tr>
-<tr>
-<td>Device</td>
-<td>These APIs enable you to retrieve the battery status and detect changes in it, detect rotation and acceleration motions, manage screen orientation, implement and control various types of touch events, and implement different vibration patterns on a Tizen device.</td>
-<td>
-
-- Guides:    [Device](../../../guides/web/w3c/device/device-guide-w.md)        
-
-- API Reference:  [Device](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#device)              
-</td>
-</tr>
-<tr>
-<td>Graphics</td>
-<td>These APIs enable you to create images, shapes, and text using the HTML5 canvas element and HTML canvas 2D context, and create and modify SVG elements in your application.</td>
-<td>
-
-- Guides:  [Graphics](../../../guides/web/w3c/graphics/graphics-guide-w.md)     
-- API Reference:  [Graphics](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#graphics)   
-</td>
-</tr>
-<tr>
-<td>Media</td>
-<td>These APIs enable you to access a local device to generate a multimedia stream, access the media capture capabilities based on their type, control multimedia playback and check supported media formats, and play audio content.</td>
-<td>
-
-- Guides:  [Media](../../../guides/web/w3c/media/media-guide-w.md)  
-
-- API Reference:  [Media](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#media)          
-</td>
-</tr>
-<tr>
-<td>Communication</td>
-<td>These APIs enable you to send and receive data between Web sites and through a message channel, exchange push data with the server, connect to the socket server to send and receive data, and use cross-origin resource sharing (CORS) to request and send data of various content types.</td>
-<td>
-
-- Guides:   [Communication](../../../guides/web/w3c/communication/comm_guide-w.md)    
-
-- API Reference:   [Communication](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#communication)
-</td>
-</tr>
-<tr>
-<td>Storage</td>
-<td>These APIs enable you to retrieve file content and information, slice data objects, manage sandboxed file systems, activate project resource caching and manage the cached resources, create an object store and save data in it, create databases and access them using SQL statements, and use session storage and local storage.</td>
-<td>
-
-- Guides:  [Storage](../../../guides/web/w3c/storage/storage-guide-w.md)  
-
-- API Reference:  [Storage](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#storage)      
-</td>
-</tr>
-<tr>
-<td>Security</td>
-<td>These APIs enable you to allow or block specific HTML elements on a Web page, and make cross-origin requests to resources, allowing a client-side Web application to obtain data retrieved from another origin.</td>
-<td>
-
-- Guides:   [Security](../../../guides/web/w3c/security/security-guide-w.md)  
-
-- API Reference:  [Security](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#security)        
-</td>
-</tr>
-<tr>
-<td>UI</td>
-<td>These APIs enable you to copy content and paste it in an editable area, create and manage draggable elements, and implement drag events.</td>
-<td>
-
-- Guides: [User Interface](../../../guides/web/w3c/ui/ui-guide-w.md)
-
-- API Reference:     [UI](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#ui)
-
-</td>
-</tr>
-<tr>
-<td>Performance and Optimization</td>
-<td>These APIs enable you to retrieve the visibility status of a Web document and detect changes in it, control animation frame rate, and create and manage HTML5 Web Workers to run an independent JavaScript thread in the background.</td>
-<td>
-
-- Guides: [Performance and Optimization](../../../guides/web/w3c/perf-opt/performance-guide-w.md)
-
-- API Reference:   [Performance and Optimization](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#performance)   
-</td>
-</tr>
-<tr>
-<td>Location</td>
-<td>These APIs enable you to retrieve and update position information.</td>
-<td>
-
-- Guides:   [Location](../../../guides/web/w3c/location/location-guide-w.md)
-
-- API Reference:  [Location](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#location)    
-</td>
-</tr>
-<tr>
-<td>Supplementary</td>
-<td>These APIs enable you to manage some supplementary features, such as displaying an element on full screen, accessing binary data in JavaScript, and using the WebGL™ graphics library to create 3D visual elements.</td>
-<td>
-
-- Guides: [Supplementary Features](../../../guides/web/w3c/supplement/supplement-guide-w.md)   
-- API Reference:  [Supplementary](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#Supplementary)        
-</td>
-</tr>
-
-</table>
-
-The following table lists the features provided by the [Wearable Web
-W3C/HTML5 and Supplementaries API
-Reference](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html).
-
-**Table: W3C/HTML5 and some supplementary API features provided for
-wearable applications**
-
-
-<table>
-<tr>
-<th>Feature</th>
-<th>Purpose</th>
-<th>Documentation</th>
-</tr>
-<tr>
-<td>DOM, Forms and Styles</td>
-<td>These APIs enable you to create animations, specify the border and background styles of HTML elements, apply styles to HTML documents, specify the color and opacity of HTML elements, create flexible layouts for Web applications, move, rotate, stretch, and scale elements, and add effects using CSS3 properties. They also enable you to use CSS and JavaScript code effectively with HTML elements, implement Web forms for user input, define media features for specific output devices, select element nodes in the DOM tree, and store information about the page that the user has viewed.</td>
-<td>
-
-- Guides: [User  Interface](../../../guides/web/w3c/ui/ui-guide-w.md)
-
-- API Reference: [DOM,   Forms and    Styles](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#dom)
-</td>
-</tr>
-<tr>
-<td>Device</td>
-<td>These APIs enable you to retrieve the battery status and detect changes in it, detect rotation and acceleration motions, implement and control various types of touch events, and implement different vibration patterns on a Tizen wearable device.</td>
-<td>
-
-- Guides:   [Device](../../../guides/web/w3c/device/device-guide-w.md)  
-
-- API Reference:   [Device](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#device)          
-</td>
-</tr>
-<tr>
-<td>Graphics</td>
-<td>These APIs enable you to create images, shapes, and text using the HTML5 canvas element and HTML canvas 2D context.</td>
-<td>
-
-- Guides:  [Graphics](../../../guides/web/w3c/graphics/graphics-guide-w.md)  
-
-- API Reference:  [Graphics](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#graphics)           
-</td>
-</tr>
-<tr>
-<td>Media</td>
-<td>These APIs enable you to access a local device to generate a multimedia stream, control multimedia playback and check supported media formats, and play audio content.</td>
-<td>
-
-- Guides:  [Media](../../../guides/web/w3c/media/media-guide-w.md)
-
-- API Reference:   [Media](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#media)         
-</td>
-</tr>
-<tr>
-<td>Communication</td>
-<td>These APIs enable you to send and receive data between Web sites and through a message channel, and connect to the socket server to send and receive data.</td>
-<td>
-
-- Guides:  [Communication](../../../guides/web/w3c/communication/comm-guide-w.md)
-
-- API Reference:   [Communication](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#communication)
-</td>
-</tr>
-<tr>
-<td>Storage</td>
-<td>These APIs enable you to retrieve file content and information, create an object store and save data in it, and use session storage and local storage.</td>
-<td>
-
-- Guides:   [Storage](../../../guides/web/w3c/storage/storage-guide-w.md)
-
-- API Reference:  [Storage](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#storage)      
-</td>
-</tr>
-<tr>
-<td>Security</td>
-<td>These APIs enable you to allow or block specific HTML elements on a Web page.</td>
-<td>
-
-- Guides:  [Security](../../../guides/web/w3c/security/security-guide-w.md)  
-
-- API Reference:   [Security](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#security)    
-</td>
-</tr>
-<tr>
-<td>Performance and Optimization</td>
-<td>These APIs enable you to retrieve the visibility status of a Web document and detect changes in it, control animation frame rate, and create and manage HTML5 Web Workers to run an independent JavaScript thread in the background.</td>
-<td>
-
-- Guides: [Performance and Optimization](../../../guides/web/w3c/perf-opt/performance-guide-w.md)  
-
-- API Reference: [Performance and Optimization](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#performance)     
-</td>
-</tr>
-<tr>
-<td>Location</td>
-<td>These APIs enable you to retrieve and update position information.</td>
-<td>
-
-- Guides:   [Location](../../../guides/web/w3c/location/location-guide-w.md)   
-
-- API Reference:   [Location](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#location)        
-</td>
-</tr>
-<tr>
-<td>Supplementary</td>
-<td>These APIs enable you to manage some supplementary features, such as managing the device camera, accessing binary data in JavaScript, and using the WebGL™ graphics library to create 3D visual elements.</td>
-<td>
-
-- Guides: [Supplementary Features](../../../guides/web/w3c/supplement/supplement-guide-w.md)  
-- API Reference:  [Supplementary](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#Supplementary)  
-</td>
-</tr>
-</table>
+- **Table: Device API features provided for mobile applications**
+
+  | Feature               | Purpose                                  | Documentation                            |
+  | --------------------- | ---------------------------------------- | ---------------------------------------- |
+  | Base                  | These APIs contain classes and interfaces that provide a set of basic definitions and interfaces that are used in the Tizen Device API.You can manage common files and ZIP archive files, and define filters and sorting modes for queries. You can also use generic success and error event handlers, in addition to a generic error interface and a simple coordinate interface for defining location information. | Guides:<br/>[Data Storage and Management](../../guides/data/data-cover-w.md)<br/>[Error Handling](../../guides/error/error-w.md) <br/> API Reference:<br/> [Base](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Base) |
+  | Account               | This API contains classes and interfaces that enable you to manage account features.You can use existing configured on-line accounts and providers, and create new accounts of known types. | Guides:<br/> [Personal Data](../../guides/personal/personal-cover-w.md)<br/>API Reference:<br/> [Account](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Account) |
+  | Application Framework | These APIs contain classes and interfaces that enable you to manage alarm, application, and package features.You can schedule an application to be run at a specific time, retrieve information about the applications installed or running on the device, and enable package management. | Guides:<br/>[Alarms](../../guides/alarm/alarms-w.md)<br/>[Application Management](../../guides/app-management/app-management-cover-w.md)<br/>[Notifications](../../guides/notification/notification-w.md)<br/>[Text Input](../../guides/text-input/text-input-cover-w.md)<br/>API Reference:<br/> [Application Framework](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Application) |
+  | Content               | These APIs contain classes and interfaces that enable you to manage content and download features.You can search and manage multimedia content locally, download files from the Internet, and monitor the download progress and status. | Guides:<br/>[Connectivity and Wireless](../../guides/connectivity/connectivity-cover-w.md)<br/>[Data Storage and Management](../../guides/data/data-cover-w.md)<br/>API Reference:<br/> [Content](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Contents) |
+  | Messaging             | These APIs contain classes and interfaces that enable you to manage SMS, MMS, and email messages.You can send and receive messages, and receive push notifications from a push server. | Guides:<br/> [Messaging](../../guides/messaging/messaging-cover-w.md)<br/>API Reference: <br/>[Messaging](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Messaging) |
+  | Multimedia            | These APIs contain classes and interfaces that enable you to manage multimedia-related features.You can change and monitor playback volume level, and listen to the FM radio. | Guides:<br/> [Media and Camera](../../guides/media/media-cover-w.md)<br/>API Reference: <br/>[Multimedia](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Multimedia) |
+  | Network               | These APIs contain classes and interfaces that enable you to manage Bluetooth, NFC (Near Field Communication), and secure element features.You can transfer data over a Bluetooth connection, share contacts, photos, and videos using NFC, and access secure elements, such as SIM card and secure SD card, in a device. | Guides:<br/> [Connectivity and Wireless](../../guides/connectivity/connectivity-cover-w.md)<br/>API Reference:<br/> [Network](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Network) |
+  | Security              | This API contains classes and interfaces that enable you to manage secure keys in your application.You can use security functionalities, such as storing and recalling private data. | Guides:<br/> [Security](../../guides/security/security-cover-w.md)<br/>API Reference:<br/> [Security](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Security) |
+  | Social                | These APIs contain classes and interfaces that enable you to manage bookmark, calendar, call history, contact, and data synchronization features.You can manage the Tizen Web browser bookmark list, calendar events and tasks, call history, and address books and contacts on a device, and you can synchronize device data, such as contacts and calendar events, with the OMA DS server. | Guides:<br/> [Personal Data](../../guides/personal/personal-cover-w.md)<br/>API Reference:<br/> [Social](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Social) |
+  | System                | These APIs contain classes and interfaces that enable you to manage power, system information and setting, time, and Web setting features.You can access the state of the device power resource, device system information, and device wallpaper settings. You can use locale-specific calendar features by retrieving date and time information, and set feedback patterns for specified actions. You can also manage time features, and set Web view properties, such as setting Web view user agents and deleting Web view cookies. | Guides:<br/>[Device Settings and Systems](../../guides/device/device-cover-w.md)<br/>[Media and Camera](../../guides/media/media-cover-w.md)<br/>[Sensors](../../guides/sensors/sensors-cover-w.md)<br/>API Reference:<br/> [System](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#System) |
+  | UIX                   | This API contain classes and interfaces that enable you to set voice commands.You can allow the user to control the Web application through their voice. | Guides:<br/> [Text Input and Voice](../../guides/text-input/text-input-cover-w.md)<br/>API Reference:<br/> [UIX](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#UIX) |
+  | Cordova               | These APIs contain classes and interfaces that enable you use common functionalities in creating Tizen Web applications.You can manage the device filesystem, individual files, and various events, access device and network information and the device accelerometer, create dialog boxes and system log entries, and play audio files. | Guides:<br/> [Cordova](../../guides/cordova/cordova-cover-w.md)<br/>API Reference:<br/> [Cordova](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Cordova) |
+  | Web UI Framework      | These APIs contain classes and interfaces that enable you to manage the Tizen Advanced UI (TAU) features.You can create and manage various kinds of UI components. | Guides:<br/> [Tizen Advanced UI](../../guides/ui/tau/tau-w.md)<br/>API Reference:<br/> [Advanced UI Framework](../../../../org.tizen.web.apireference/html/ui_fw_api/ui_fw_api_cover.htm) |
+
+  The following table lists the features provided by the [Wearable Web Device API Reference](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html).
+
+  **Table: Device API features provided for wearable applications**
+
+  | Feature               | Purpose                                  | Documentation                            |
+  | --------------------- | ---------------------------------------- | ---------------------------------------- |
+  | Base                  | These APIs contain classes and interfaces that provide a set of basic definitions and interfaces that are used in the Tizen Device API.You can manage common files and ZIP archive files, and define filters and sorting modes for queries. You can also use generic success and error event handlers, in addition to a generic error interface and a simple coordinate interface for defining location information. | Guides:<br/>[Data Storage and Management](../../guides/data/data-cover-w.md)<br/>[Error Handling](../../guides/error/error-w.md)<br/>API Reference: <br/>[Base](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Base) |
+  | Account               | This API contains classes and interfaces that enable you to manage account features.You can use existing configured on-line accounts and providers, and create new accounts of known types. | Guides: <br/>[Personal Data](../../guides/personal/personal-cover-w.md)<br/>API Reference:<br/> [Account](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Account) |
+  | Application Framework | These APIs contain classes and interfaces that enable you to manage alarm, application, and package features.You can schedule an application to be run at a specific time, retrieve information about the applications installed or running on the device, and enable package management. | Guides:<br/>[Alarms](../../guides/alarm/alarms-w.md)<br/>[Application Management](../../guides/app-management/app-management-cover-w.md)<br/>[Notifications](../../guides/notification/notification-w.md)<br/>[Text Input](../../guides/text-input/text-input-cover-w.md)<br/>API Reference:<br/> [Application Framework](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Application) |
+  | Content               | These APIs contain classes and interfaces that enable you to manage content and download features.You can search and manage multimedia content locally, download files from the Internet, and monitor the download progress and status. | Guides:<br/>[Connectivity and Wireless](../../guides/connectivity/connectivity-cover-w.md)<br/>[Data Storage and Management](../../guides/data/data-cover-w.md)<br/>API Reference:<br/> [Content](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Contents) |
+  | Messaging             | This API contains classes and interfaces that enable you to manage push messaging.You can receive push notifications from a push server. | Guides:<br/> [Messaging](../../guides/messaging/messaging-cover-w.md)<br/>API Reference:<br/> [Messaging](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Messaging) |
+  | Multimedia            | These APIs contain classes and interfaces that enable you to manage multimedia-related features.You can change and monitor playback volume level, and listen to the FM radio. | Guides:<br/> [Media and Camera](../../guides/media/media-cover-w.md)<br/>API Reference:<br/> [Multimedia](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Multimedia) |
+  | Network               | These APIs contain classes and interfaces that enable you to manage Bluetooth, NFC (Near Field Communication), and secure element features.You can transfer data over a Bluetooth connection, share contacts, photos, and videos using NFC, and access secure elements, such as SIM card and secure SD card, in a device. | Guides:<br/> [Connectivity and Wireless](../../guides/connectivity/connectivity-cover-w.md)<br/>API Reference: <br/>[Network](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Network) |
+  | Security              | This API contains classes and interfaces that enable you to manage secure keys in your application.You can use security functionalities, such as storing and recalling private data. | Guides: <br/>[Security](../../guides/security/security-cover-w.md)<br/>API Reference:<br/> [Security](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Security) |
+  | Social                | These APIs contain classes and interfaces that enable you to manage calendar and contact features.You can manage calendar events and tasks, address books, and contacts on a device. | Guides:<br/> [Personal Data](../../guides/personal/personal-cover-w.md)<br/>API Reference: <br/>[Social](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Social) |
+  | System                | These APIs contain classes and interfaces that enable you to manage power, system information and setting, and time features.You can access the state of the device power resource, device system information, and device wallpaper settings. You can use locale-specific calendar features by retrieving date and time information, and set feedback patterns for specified actions. You can also manage time features. | Guides:<br/>[Device Settings and Systems](../../guides/device/device-cover-w.md)<br/>[Media and Camera](../../guides/media/media-cover-w.md)<br/>[Sensors](../../guides/sensors/sensors-cover-w.md)<br/>API Reference:<br/> [System](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#System) |
+  | UIX                   | This API contain classes and interfaces that enable you to set voice commands.You can allow the user to control the Web application through their voice. | Guides:<br/> [Text Input and Voice](../../guides/text-input/text-input-cover-w.md)<br/>API Reference:<br/> [UIX](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#UIX) |
+  | Cordova               | These APIs contain classes and interfaces that enable you use common functionalities in creating Tizen Web applications.You can manage the device filesystem, individual files, and various events, access device and network information and the device accelerometer, create dialog boxes and system log entries, and play audio files. | Guides:<br/> [Cordova](../../guides/cordova/cordova-cover-w.md)<br/>API Reference:<br/> [Cordova](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Cordova) |
+  | Web UI Framework      | These APIs contain classes and interfaces that enable you to manage the Tizen Advanced UI (TAU) features.You can create and manage various kinds of UI components. | Guides:<br/>[Tizen Advanced UI](../../guides/ui/tau/tau-w.md)<br/>API Reference:<br/> [Advanced UI Framework](../../../../org.tizen.web.apireference/html/ui_fw_api/ui_fw_api_cover.htm) |
+
+  The following table lists the features provided by the [TV Web Device API Reference](../../../../org.tizen.web.apireference/html/device_api/tv/index.html).
+
+  **Table: Device API features provided for TV applications**
+
+  | Feature               | Purpose                                  | Documentation                            |
+  | --------------------- | ---------------------------------------- | ---------------------------------------- |
+  | Base                  | These APIs contain classes and interfaces that provide a set of basic definitions and interfaces that are used in the Tizen Device API.You can manage common files and ZIP archive files, and define filters and sorting modes for queries. You can also use generic success and error event handlers, in addition to a generic error interface and a simple coordinate interface for defining location information. | Guides:<br/>[Data Storage and Management](../../guides/data/data-cover-w.md)<br/>[Error Handling](../../guides/error/error-w.md)<br/>API Reference:<br/> [Base](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Tizen) |
+  | Application Framework | These APIs contain classes and interfaces that enable you to manage alarm, application, and package features.You can schedule an application to be run at a specific time, retrieve information about the applications installed or running on the device, and enable package management. | Guides:<br/>[Alarms](../../guides/alarm/alarms-w.md)<br/>[Application Management](../../guides/app-management/app-management-cover-w.md)<br/>API Reference:<br/> [Application Framework](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Application) |
+  | Content               | These APIs contain classes and interfaces that enable you to manage content and download features.You can search and manage multimedia content locally, manipulate EXIF data in JPEG files, download files from the Internet, and monitor the download progress and status. | Guides:<br/>[Connectivity and Wireless](../../guides/connectivity/connectivity-cover-w.md)<br/>[Data Storage and Management](../../guides/data/data-cover-w.md)<br/>[Media and Camera](../../guides/media/media-cover-w.md)<br/>API Reference: <br/>[Content](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Contents) |
+  | Messaging             | This API contains classes and interfaces that enable you to manage push messaging.You can receive push notifications from a push server. | Guides: <br/>[Messaging](../../guides/messaging/messaging-cover-w.md)<br/>API Reference: <br/>[Messaging](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Messaging) |
+  | Network               | This API contains classes and interfaces that enable you to manage IoT connectivity.You can create a client and server, and manage their resources locally and remotely. | Guides:<br/> [Connectivity and Wireless](../../guides/connectivity/connectivity-cover-w.md)<br/>API Reference: <br/>[Network](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Network) |
+  | Security              | This API contains classes and interfaces that enable you to manage secure keys in your application.You can use security functionalities, such as storing and recalling private data. | Guides:<br/> [Security](../../guides/security/security-cover-w.md)<br/>API Reference:<br/> [Security](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Security) |
+  | System                | These APIs contain classes and interfaces that enable you to manage system information, time, and Web setting features.You can access the device system information and use locale-specific calendar features by retrieving date and time information. You can also set Web view properties, such as setting Web view user agents and deleting Web view cookies. | Guides:<br/> [Device Settings and Systems](../../guides/device/device-cover-w.md)<br/>API Reference: <br/>[System](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#System) |
+  | UIX                   | This API contain classes and interfaces that enable you to set voice commands.You can allow the user to control the Web application through their voice. | Guides:<br/> [Text Input and Voice](../../guides/text-input/text-input-cover-w.md)<br/>API Reference:<br/> [UIX](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#UIX) |
+  | Cordova               | These APIs contain classes and interfaces that enable you use common functionalities in creating Tizen Web applications.You can manage the device filesystem, individual files, and various events, access device and network information and the device accelerometer, create dialog boxes and system log entries, and play audio files. | Guides:<br/> [Cordova](../../guides/cordova/cordova-cover-w.md)<br/>API Reference:<br/> [Cordova](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Cordova) |
+  | TV Controls           | These APIs contain classes and interfaces that enable you control the TV functionalities, such as channels and audio.You can modify the volume level, switch TV channels, get program guide information, and manage TV settings. You can also access 3D mode information, monitor remote control key events, and control the main and PIP window on the TV screen. | API Reference:<br/>[TV Controls](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#TVControl) |
+
+  The following table lists the features provided by the [Mobile Web W3C/HTML5 and Supplementaries API Reference](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html).
+
+  **Table: W3C/HTML5 and some supplementary API features provided for mobile applications**
+
+  | Feature                      | Purpose                                  | Documentation                            |
+  | ---------------------------- | ---------------------------------------- | ---------------------------------------- |
+  | DOM, Forms and Styles        | These APIs enable you to create animations, specify the border and background styles of HTML elements, apply styles to HTML documents, specify the color and opacity of HTML elements, create flexible and multi-column layouts for Web applications, move, rotate, stretch, and scale elements, and add effects using CSS3 properties. They also enable you to use CSS and JavaScript code effectively with HTML elements, implement Web forms for user input, define media features for specific output devices, select element nodes in the DOM tree, and store information about the page that the user has viewed. | Guides:<br/> [User Interface](../../guides/w3c/ui/ui-guide-w.md)<br/>API Reference:<br/> [DOM, Forms and Styles](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#dom) |
+  | Device                       | These APIs enable you to retrieve the battery status and detect changes in it, detect rotation and acceleration motions, manage screen orientation, implement and control various types of touch events, and implement different vibration patterns on a Tizen device. | Guides:<br/> [Device](../../guides/w3c/device/device-guide-w.md)<br/>API Reference:<br/> [Device](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#device) |
+  | Graphics                     | These APIs enable you to create images, shapes, and text using the HTML5 canvas element and HTML canvas 2D context, and create and modify SVG elements in your application. | Guides: <br/>[Graphics](../../guides/w3c/graphics/graphics-guide-w.md)<br/>API Reference: <br/>[Graphics](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#graphics) |
+  | Media                        | These APIs enable you to access a local device to generate a multimedia stream, access the media capture capabilities based on their type, control multimedia playback and check supported media formats, and play audio content. | Guides:<br/> [Media](../../guides/w3c/media/media-guide-w.md)<br/>API Reference:<br/> [Media](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#media) |
+  | Communication                | These APIs enable you to send and receive data between Web sites and through a message channel, exchange push data with the server, connect to the socket server to send and receive data, and use cross-origin resource sharing (CORS) to request and send data of various content types. | Guides: <br/>[Communication](../../guides/w3c/communication/comm-guide-w.md)<br/>API Reference: <br/>[Communication](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#communication) |
+  | Storage                      | These APIs enable you to retrieve file content and information, slice data objects, manage sandboxed file systems, activate project resource caching and manage the cached resources, create an object store and save data in it, create databases and access them using SQL statements, and use session storage and local storage. | Guides:<br/> [Storage](../../guides/w3c/storage/storage-guide-w.md)<br/>API Reference:<br/> [Storage](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#storage) |
+  | Security                     | These APIs enable you to allow or block specific HTML elements on a Web page, and make cross-origin requests to resources, allowing a client-side Web application to obtain data retrieved from another origin. | Guides:<br/> [Security](../../guides/w3c/security/security-guide-w.md)<br/>API Reference: <br/>[Security](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#security) |
+  | UI                           | These APIs enable you to copy content and paste it in an editable area, create and manage draggable elements, and implement drag events. | Guides:<br/> [User Interface](../../guides/w3c/ui/ui-guide-w.md)<br/>API Reference:<br/> [UI](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#ui) |
+  | Performance and Optimization | These APIs enable you to retrieve the visibility status of a Web document and detect changes in it, control animation frame rate, and create and manage HTML5 Web Workers to run an independent JavaScript thread in the background. | Guides:<br/> [Performance and Optimization](../../guides/w3c/perf-opt/performance-guide-w.md)<br/>API Reference: <br/>[Performance and Optimization](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#performance) |
+  | Location                     | These APIs enable you to retrieve and update position information. | Guides: <br/>[Location](../../guides/w3c/location/location-guide-w.md)<br/>API Reference:<br/> [Location](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#location) |
+  | Supplementary                | These APIs enable you to manage some supplementary features, such as displaying an element on full screen, accessing binary data in JavaScript, and using the WebGL&trade; graphics library to create 3D visual elements. | Guides: <br/>[Supplementary Features](../../guides/w3c/supplement/supplement-guide-w.md)<br/>API Reference: <br/>[Supplementary](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#Supplementary) |
+
+  The following table lists the features provided by the [Wearable Web W3C/HTML5 and Supplementaries API Reference](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html).
+
+  **Table: W3C/HTML5 and some supplementary API features provided for wearable applications**
+
+  | Feature                      | Purpose                                  | Documentation                            |
+  | ---------------------------- | ---------------------------------------- | ---------------------------------------- |
+  | DOM, Forms and Styles        | These APIs enable you to create animations, specify the border and background styles of HTML elements, apply styles to HTML documents, specify the color and opacity of HTML elements, create flexible layouts for Web applications, move, rotate, stretch, and scale elements, and add effects using CSS3 properties. They also enable you to use CSS and JavaScript code effectively with HTML elements, implement Web forms for user input, define media features for specific output devices, select element nodes in the DOM tree, and store information about the page that the user has viewed. | Guides:<br/> [User Interface](../../guides/w3c/ui/ui-guide-w.md)<br/>API Reference:<br/> [DOM, Forms and Styles](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#dom) |
+  | Device                       | These APIs enable you to retrieve the battery status and detect changes in it, detect rotation and acceleration motions, implement and control various types of touch events, and implement different vibration patterns on a Tizen wearable device. | Guides:<br/> [Device](../../guides/w3c/device/device-guide-w.md)<br/>API Reference:<br/> [Device](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#device) |
+  | Graphics                     | These APIs enable you to create images, shapes, and text using the HTML5 canvas element and HTML canvas 2D context. | Guides:<br/> [Graphics](../../guides/w3c/graphics/graphics-guide-w.md)<br/>API Reference:<br/> [Graphics](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#graphics) |
+  | Media                        | These APIs enable you to access a local device to generate a multimedia stream, control multimedia playback and check supported media formats, and play audio content. | Guides:<br/> [Media](../../guides/w3c/media/media-guide-w.md)<br/>API Reference: <br/>[Media](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#media) |
+  | Communication                | These APIs enable you to send and receive data between Web sites and through a message channel, and connect to the socket server to send and receive data. | Guides: <br/>[Communication](../../guides/w3c/communication/comm-guide-w.md)<br/>API Reference: <br/>[Communication](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#communication) |
+  | Storage                      | These APIs enable you to retrieve file content and information, create an object store and save data in it, and use session storage and local storage. | Guides:<br/> [Storage](../../guides/w3c/storage/storage-guide-w.md)<br/>API Reference:<br/> [Storage](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#storage) |
+  | Security                     | These APIs enable you to allow or block specific HTML elements on a Web page. | Guides:<br/> [Security](../../guides/w3c/security/security-guide-w.md)<br/>API Reference:<br/> [Security](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#security) |
+  | Performance and Optimization | These APIs enable you to retrieve the visibility status of a Web document and detect changes in it, control animation frame rate, and create and manage HTML5 Web Workers to run an independent JavaScript thread in the background. | Guides:<br/> [Performance and Optimization](../../guides/w3c/perf-opt/performance-guide-w.md)<br/>API Reference: <br/>[Performance and Optimization](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#performance) |
+  | Location                     | These APIs enable you to retrieve and update position information. | Guides:<br/> [Location](../../guides/w3c/location/location-guide-w.md)<br/>API Reference:<br/> [Location](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#location) |
+  | Supplementary                | These APIs enable you to manage some supplementary features, such as managing the device camera, accessing binary data in JavaScript, and using the WebGL&trade; graphics library to create 3D visual elements. | Guides:<br/> [Supplementary Features](../../guides/w3c/supplement/supplement-guide-w.md)<br/>API Reference: <br/>[Supplementary](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#Supplementary) |
+
+  The following table lists the features provided by the [TV Web W3C/HTML5 and Supplementaries API Reference](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html).
+
+  **Table: W3C/HTML5 and some supplementary API features provided for TV applications**
+
+  | Feature                      | Purpose                                  | Documentation                            |
+  | ---------------------------- | ---------------------------------------- | ---------------------------------------- |
+  | DOM, Forms and Styles        | These APIs enable you to create animations, specify the border and background styles of HTML elements, apply styles to HTML documents, specify the color and opacity of HTML elements, create flexible layouts for Web applications, move, rotate, stretch, and scale elements, and add effects using CSS3 properties. They also enable you to use CSS and JavaScript code effectively with HTML elements, implement Web forms for user input, define media features for specific output devices, select element nodes in the DOM tree, and store information about the page that the user has viewed. | Guides:<br/> [User Interface](../../guides/w3c/ui/ui-guide-w.md)<br/>API Reference:<br/> [DOM, Forms and Styles](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#dom) |
+  | Device                       | These APIs enable you to detect changes in screen orientation and network connectivity. | Guides:<br/> [Device](../../guides/w3c/device/device-guide-w.md)<br/>API Reference:<br/> [Device](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#device) |
+  | Graphics                     | These APIs enable you to create images, shapes, and text using the HTML5 canvas element and HTML canvas 2D context. | Guides: <br/>[Graphics](../../guides/w3c/graphics/graphics-guide-w.md)<br/>API Reference:<br/> [Graphics](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#graphics) |
+  | Media                        | These APIs enable you to access a local device to generate a multimedia stream, control multimedia playback and check supported media formats, and play audio content. | Guides: <br/>[Media](../../guides/w3c/media/media-guide-w.md)<br/>API Reference: <br/>[Media](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#media) |
+  | Communication                | These APIs enable you to send and receive data between Web sites and through a message channel, and connect to the socket server to send and receive data. | Guides: <br/>[Communication](../../guides/w3c/communication/comm-guide-w.md)<br/>API Reference: <br/>[Communication](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#communication) |
+  | Storage                      | These APIs enable you to retrieve file content and information, create an object store and save data in it, and use session storage and local storage. | Guides:<br/> [Storage](../../guides/w3c/storage/storage-guide-w.md)<br/>API Reference:<br/> [Storage](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#storage) |
+  | Security                     | These APIs enable you to allow or block specific HTML elements on a Web page. | Guides:<br/> [Security](../../guides/w3c/security/security-guide-w.md)<br/>API Reference:<br/> [Security](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#security) |
+  | Performance and Optimization | These APIs enable you to retrieve the visibility status of a Web document and detect changes in it, control animation frame rate, and create and manage HTML5 Web Workers to run an independent JavaScript thread in the background. | Guides:<br/> [Performance and Optimization](../../guides/w3c/perf-opt/performance-guide-w.md)<br/>API Reference:<br/> [Performance and Optimization](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#performance) |
+  | Supplementary                | These APIs enable you to manage some supplementary features, such as accessing binary data in JavaScript and using the WebGL&trade; graphics library to create 3D visual elements. | Guides: <br/>[Supplementary Features](../../guides/w3c/supplement/supplement-guide-w.md)<br/>API Reference: <br/>[Supplementary](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#Supplementary) |

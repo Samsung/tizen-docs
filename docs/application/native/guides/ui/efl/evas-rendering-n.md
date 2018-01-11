@@ -193,7 +193,7 @@ Evas can work with and provides multiple engines, such as:
 - `buffer`: All the rendering takes place in a buffer.
 - `fb`: Rendering takes place in the system's framebuffer.
 - `software_x11`: Renders to an X11 window; this is the most used engine.
-- `gl_x11`: Renders to an X11 window, except that it uses OpenGL®.
+- `gl_x11`: Renders to an X11 window, except that it uses OpenGL&reg;.
 
 The engines implement the rendering of all the basic objects by themselves, because they can often be accelerated by the hardware or backend software libraries to provide fast rendering.
 

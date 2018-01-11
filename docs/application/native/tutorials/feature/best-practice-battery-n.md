@@ -74,7 +74,7 @@ The application states are described in the following table.
 Application state changes are managed by the underlying framework. For
 more information on application state transitions, see [Application
 States and
-Transitions](../../../guides/native/app-management/efl-ui-app-n.md#state_trans).
+Transitions](../../guides/app-management/efl-ui-app-n.md#state_trans).
 
 ### Location Service Life-cycle
 

@@ -9,7 +9,7 @@ The GPU rendering pipeline is split into **programmable** stages (vertex and fra
 
 ![Stages of the GPU rendering pipeline](./media/gpu_stages.png)
 
-You have to provide programs for the vertex and fragment shaders. Without them, OpenGL® ES cannot draw anything. The vertex shader operates on every vertex stored in the vertex array and performs various operations. The essential among them is applying a series of **transforms** to the vertices.
+You have to provide programs for the vertex and fragment shaders. Without them, OpenGL&reg; ES cannot draw anything. The vertex shader operates on every vertex stored in the vertex array and performs various operations. The essential among them is applying a series of **transforms** to the vertices.
 
 **Figure: Spaces and transforms for vertex shader**
 
@@ -17,7 +17,7 @@ You have to provide programs for the vertex and fragment shaders. Without them, 
 
 ## Object Space, World Space, and World Transform
 
-Whereas the coordinate system used for creating an object is named **object space**, the virtual world containing all required objects is associated with the **world space**. The size, position, and orientation of an object in the world space are determined by what is called **world transform**. (OpenGL® ES calls this **model transform**.) Its main components are scaling, translation, and rotation. A distinct object has its own world transform. The following figure shows a world-transform example.
+Whereas the coordinate system used for creating an object is named **object space**, the virtual world containing all required objects is associated with the **world space**. The size, position, and orientation of an object in the world space are determined by what is called **world transform**. (OpenGL&reg; ES calls this **model transform**.) Its main components are scaling, translation, and rotation. A distinct object has its own world transform. The following figure shows a world-transform example.
 
 In the world space, many objects can exist. Among them, consider a teapot. In this example, its world transform is the combination of "rotation about the Y axis by 90 degrees" and "translation along the X axis by 7 units".
 
@@ -119,7 +119,7 @@ The output of the vertex shader must include the built-in variable, `gl_Position
 
 Using a vertex or fragment shader stored in a file, create a **shader object**:
 
-1. Load its source code into the OpenGL® ES program.
+1. Load its source code into the OpenGL&reg; ES program.
 2. Create a new shader object using the `glCreateShader()` function, which takes either the `GL_VERTEX_SHADER` or `GL_FRAGMENT_SHADER` attribute and returns the ID of the shader object.
 3. Store the source code into the shader object using the `glShaderSource()` function with the vertex or fragment shader's source code and the shader object ID.
 4. Compile the shader object using the `glCompileShader()` function.
@@ -131,9 +131,9 @@ Using the shader objects, create the **program object**:
 3. Link the program object using the `glLinkProgram()` function.
 4. Invoke the `glUseProgram()` function to use the program object for rendering.
 
-## Uniforms and Attributes in OpenGL® ES
+## Uniforms and Attributes in OpenGL&reg; ES
 
-Consider a dynamic environment, where the scene objects continuously move. In the example vertex shader, worldMat must be updated per frame. On the other hand, `viewProjMat` must be updated if the eye moves. The OpenGL® ES program must update and provide them for the vertex shader. For this purpose, first find the uniform locations that have been determined during the link phase. Given a uniform name in the shader, the `glGetUniformLocation()` function returns its location (denoted by an integer) in the program.
+Consider a dynamic environment, where the scene objects continuously move. In the example vertex shader, worldMat must be updated per frame. On the other hand, `viewProjMat` must be updated if the eye moves. The OpenGL&reg; ES program must update and provide them for the vertex shader. For this purpose, first find the uniform locations that have been determined during the link phase. Given a uniform name in the shader, the `glGetUniformLocation()` function returns its location (denoted by an integer) in the program.
 
 ```
 /* mProgram denotes the program object */
@@ -148,7 +148,7 @@ The vertex and index arrays for a polygon mesh are stored in the CPU memory, whi
 
 Instead of resending the arrays every time a mesh is drawn, a more efficient way is to cache the data in the GPU memory. The arrays are transferred only once, and the rendering is done from the GPU memory cache. To achieve this, use **vertex buffer objects** (VBO).
 
-There are 2 types of buffer objects in OpenGL® ES:
+There are 2 types of buffer objects in OpenGL&reg; ES:
 
 - **Array buffer object** represents the vertex array and is specified by `GL_ARRAY_BUFFER`.
 - **Element array buffer object** represents the index array and is specified by `GL_ELEMENT_ARRAY_BUFFER`.
@@ -159,7 +159,7 @@ To create and bind VBOs:
 2. Use the `glBindBuffer()` function, where the first parameter is either `GL_ARRAY_BUFFER` or `GL_ELEMENT_ARRAY_BUFFER`. This specifies what the buffer is used for. The `glBindBuffer()` function call creates a VBO.
 3. The buffer object is filled with data using the `glBufferData()` function, where the first parameter is either `GL_ARRAY_BUFFER` or `GL_ELEMENT_ARRAY_BUFFER` and the third parameter points to the vertex or index array.
 
-The OpenGL® ES program shown in the following example creates 2 VBOs:
+The OpenGL&reg; ES program shown in the following example creates 2 VBOs:
 
 ```
 glGenBuffers(2, &VBO);
@@ -181,7 +181,7 @@ The vertex array is often described as an "array of structures", where a structu
 
 ![Array of vertex structures](./media/vertex_structure_array.png)
 
-Such a structure must be presented to the shader. For this purpose, the OpenGL® ES program first invokes the `glEnableVertexAttribArray()` function to enable each parameter. After that, the `glVertexAttribPointer()` function is called. In this function, the first parameter denotes the parameter index, the second specifies the number (1, 2, 3, or 4) of components per parameter, fifth specifies the byte distance between the consecutive parameters of the same kind, and the sixth points to the first occurrence of the parameter in bytes. The OpenGL® ES program shown in the following example details `position`, `normal`, and `texCoord` parameters.
+Such a structure must be presented to the shader. For this purpose, the OpenGL&reg; ES program first invokes the `glEnableVertexAttribArray()` function to enable each parameter. After that, the `glVertexAttribPointer()` function is called. In this function, the first parameter denotes the parameter index, the second specifies the number (1, 2, 3, or 4) of components per parameter, fifth specifies the byte distance between the consecutive parameters of the same kind, and the sixth points to the first occurrence of the parameter in bytes. The OpenGL&reg; ES program shown in the following example details `position`, `normal`, and `texCoord` parameters.
 
 ```
 int stride = sizeof(VertexStruct); /* VertexStruct with 3 attributes */
@@ -229,14 +229,14 @@ glDrawElements(GL_TRIANGLES, /* Mode */
 
 ## GLView Example
 
-The following example code presents how to use OpenGL® ES APIs in the callbacks of the GLView. In the `init_glview()` callback function, compile and link the shaders, and create VBOs.
+The following example code presents how to use OpenGL&reg; ES APIs in the callbacks of the GLView. In the `init_glview()` callback function, compile and link the shaders, and create VBOs.
 
 ```
-/* OpenGL® ES initialization callback */
+/* OpenGL&reg; ES initialization callback */
 static void
 init_glview(Evas_Object *glview)
 {
-    /* Set OpenGL® ES state color to black */
+    /* Set OpenGL&reg; ES state color to black */
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
     appdata_s *ad = (appdata_s *)evas_object_data_get(glview, "ad");
@@ -312,10 +312,10 @@ create_vbo(appdata_s *ad)
 }
 ```
 
-In the `draw_glview()` callback, calculate the world, view, and projection matrices and then pass the combined matrix to the vertex shader through the `glUniformXXX()` function. When all uniforms are passed to the shader, the OpenGL® ES drawcall is made.
+In the `draw_glview()` callback, calculate the world, view, and projection matrices and then pass the combined matrix to the vertex shader through the `glUniformXXX()` function. When all uniforms are passed to the shader, the OpenGL&reg; ES drawcall is made.
 
 ```
-/* OpenGL® ES drawing callback */
+/* OpenGL&reg; ES drawing callback */
 static void
 draw_glview(Evas_Object *glview)
 {

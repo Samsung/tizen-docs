@@ -52,7 +52,7 @@
         Operations](native/feature/app-connectivity-operation-n.md)
     -   [Network Usage](native/feature/app-connectivity-usage-n.md)
     -   [P2P Connections with Wi-Fi
-        Direct®](native/feature/app-connectivity-p2p-n.md)
+        Direct&reg;](native/feature/app-connectivity-p2p-n.md)
 -   [Creating Applications with
     Contacts](native/feature/app-contacts-n.md)
     -   [Basic Concepts](native/feature/app-contacts-basic-n.md)

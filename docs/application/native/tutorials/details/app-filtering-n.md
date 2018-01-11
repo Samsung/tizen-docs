@@ -217,21 +217,21 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/network.tethering.wifi` | Specify this key, if the application requires the tethering over Wi-Fi feature. | 2.3   |
 | `http://tizen.org/feature/network.vpn`   | Specify this key, if the application requires the Virtual Private Network feature (VPN). | 3.0   |
 | `http://tizen.org/feature/network.wifi`  | Specify this key, if the application requires the use of any API that, in turn, requires the Wi-Fi feature. | 2.2.1 |
-| `http://tizen.org/feature/network.wifi.direct` | Specify this key, if the application requires the Wi-Fi Direct® feature. | 2.2.1 |
+| `http://tizen.org/feature/network.wifi.direct` | Specify this key, if the application requires the Wi-Fi Direct&reg; feature. | 2.2.1 |
 | `http://tizen.org/feature/network.wifi.direct.display` | Specify this key, if the application requires the Wi-Fi Direct display feature. | 2.3   |
 | `http://tizen.org/feature/network.wifi.direct.service_discovery` | Specify this key, if the application requires the Wi-Fi Direct service discovery feature. | 2.3   |
 | `http://tizen.org/feature/network.wifi.tdls` | Specify this key, if the application requires the Wi-Fi Tunneled Direct Link Setup (TDLS). | 3.0   |
-| `http://tizen.org/feature/opengles.texture_format.3dc` | Specify this key, if the application requires the 3DC texture format for OpenGL® ES. | 2.2.1 |
-| `http://tizen.org/feature/opengles.texture_format.atc` | Specify this key, if the application requires the ATC texture format for OpenGL® ES. | 2.2.1 |
-| `http://tizen.org/feature/opengles.texture_format.etc` | Specify this key, if the application requires the ETC texture format for OpenGL® ES. | 2.2.1 |
-| `http://tizen.org/feature/opengles.texture_format.ptc` | Specify this key, if the application requires the PTC texture format for OpenGL® ES. | 2.2.1 |
-| `http://tizen.org/feature/opengles.texture_format.pvrtc` | Specify this key, if the application requires the PVRTC texture format for OpenGL® ES. | 2.2.1 |
-| `http://tizen.org/feature/opengles.texture_format.utc` | Specify this key, if the application requires the UTC texture format for OpenGL® ES. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.1_1` | Specify this key, if the application requires OpenGL® ES version 1.1 at minimum.You can specify at most 1 OpenGL® ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.2_0` | Specify this key, if the application requires OpenGL® ES version 2.0.You can specify at most 1 OpenGL® ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.3_0` | Specify this key, if the application requires OpenGL® ES version 3.0.You can specify at most 1 OpenGL® ES version. If you specify multiple versions, only the highest one is considered. | 2.4   |
-| `http://tizen.org/feature/opengles.version.3_1` | Specify this key, if the application requires OpenGL® ES version 3.1.You can specify at most 1 OpenGL® ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
-| `http://tizen.org/feature/opengles.version.3_2` | Specify this key, if the application requires OpenGL® ES version 3.2.You can specify at most 1 OpenGL® ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
+| `http://tizen.org/feature/opengles.texture_format.3dc` | Specify this key, if the application requires the 3DC texture format for OpenGL&reg; ES. | 2.2.1 |
+| `http://tizen.org/feature/opengles.texture_format.atc` | Specify this key, if the application requires the ATC texture format for OpenGL&reg; ES. | 2.2.1 |
+| `http://tizen.org/feature/opengles.texture_format.etc` | Specify this key, if the application requires the ETC texture format for OpenGL&reg; ES. | 2.2.1 |
+| `http://tizen.org/feature/opengles.texture_format.ptc` | Specify this key, if the application requires the PTC texture format for OpenGL&reg; ES. | 2.2.1 |
+| `http://tizen.org/feature/opengles.texture_format.pvrtc` | Specify this key, if the application requires the PVRTC texture format for OpenGL&reg; ES. | 2.2.1 |
+| `http://tizen.org/feature/opengles.texture_format.utc` | Specify this key, if the application requires the UTC texture format for OpenGL&reg; ES. | 2.2.1 |
+| `http://tizen.org/feature/opengles.version.1_1` | Specify this key, if the application requires OpenGL&reg; ES version 1.1 at minimum.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
+| `http://tizen.org/feature/opengles.version.2_0` | Specify this key, if the application requires OpenGL&reg; ES version 2.0.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
+| `http://tizen.org/feature/opengles.version.3_0` | Specify this key, if the application requires OpenGL&reg; ES version 3.0.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.4   |
+| `http://tizen.org/feature/opengles.version.3_1` | Specify this key, if the application requires OpenGL&reg; ES version 3.1.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
+| `http://tizen.org/feature/opengles.version.3_2` | Specify this key, if the application requires OpenGL&reg; ES version 3.2.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv7` | Specify this key, if the application requires the ARMv7 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.cpu.arch.x86` | Specify this key, if the application requires the x86 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.sse2` | Specify this key, if the application requires the SSE2 Floating Point Unit (FPU) architecture. | 2.2.1 |
@@ -370,15 +370,15 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/network.vpn`   | Specify this key, if the application requires the Virtual Private Network feature (VPN). | 3.0   |
 | `http://tizen.org/feature/network.wifi`  | Specify this key, if the application requires the use of any API that, in turn, requires the Wi-Fi feature. | 2.2.1 |
 | `http://tizen.org/feature/network.wifi.tdls` | Specify this key, if the application requires the Wi-Fi Tunneled Direct Link Setup (TDLS). | 3.0   |
-| `http://tizen.org/feature/opengles.texture_format.3dc` | Specify this key, if the application requires the 3DC texture format for OpenGL® ES. | 2.2.1 |
-| `http://tizen.org/feature/opengles.texture_format.atc` | Specify this key, if the application requires the ATC texture format for OpenGL® ES. | 2.2.1 |
-| `http://tizen.org/feature/opengles.texture_format.etc` | Specify this key, if the application requires the ETC texture format for OpenGL® ES. | 2.2.1 |
-| `http://tizen.org/feature/opengles.texture_format.ptc` | Specify this key, if the application requires the PTC texture format for OpenGL® ES. | 2.2.1 |
-| `http://tizen.org/feature/opengles.texture_format.pvrtc` | Specify this key, if the application requires the PVRTC texture format for OpenGL® ES. | 2.2.1 |
-| `http://tizen.org/feature/opengles.texture_format.utc` | Specify this key, if the application requires the UTC texture format for OpenGL® ES. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.1_1` | Specify this key, if the application requires OpenGL® ES version 1.1 at minimum.You can specify at most 1 OpenGL® ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.2_0` | Specify this key, if the application requires OpenGL® ES version 2.0.You can specify at most 1 OpenGL® ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.3_0` | Specify this key, if the application requires OpenGL® ES version 3.0.You can specify at most 1 OpenGL® ES version. If you specify multiple versions, only the highest one is considered. | 2.4   |
+| `http://tizen.org/feature/opengles.texture_format.3dc` | Specify this key, if the application requires the 3DC texture format for OpenGL&reg; ES. | 2.2.1 |
+| `http://tizen.org/feature/opengles.texture_format.atc` | Specify this key, if the application requires the ATC texture format for OpenGL&reg; ES. | 2.2.1 |
+| `http://tizen.org/feature/opengles.texture_format.etc` | Specify this key, if the application requires the ETC texture format for OpenGL&reg; ES. | 2.2.1 |
+| `http://tizen.org/feature/opengles.texture_format.ptc` | Specify this key, if the application requires the PTC texture format for OpenGL&reg; ES. | 2.2.1 |
+| `http://tizen.org/feature/opengles.texture_format.pvrtc` | Specify this key, if the application requires the PVRTC texture format for OpenGL&reg; ES. | 2.2.1 |
+| `http://tizen.org/feature/opengles.texture_format.utc` | Specify this key, if the application requires the UTC texture format for OpenGL&reg; ES. | 2.2.1 |
+| `http://tizen.org/feature/opengles.version.1_1` | Specify this key, if the application requires OpenGL&reg; ES version 1.1 at minimum.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
+| `http://tizen.org/feature/opengles.version.2_0` | Specify this key, if the application requires OpenGL&reg; ES version 2.0.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
+| `http://tizen.org/feature/opengles.version.3_0` | Specify this key, if the application requires OpenGL&reg; ES version 3.0.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.4   |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv7` | Specify this key, if the application requires the ARMv7 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.cpu.arch.x86` | Specify this key, if the application requires the x86 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.sse2` | Specify this key, if the application requires the SSE2 Floating Point Unit (FPU) architecture. | 2.2.1 |

@@ -17,7 +17,7 @@ Before moving on to the fragment shader, consider the basics of texturing. The s
 
 ## Processing Texture Coordinates
 
-The texture coordinates are assigned to the vertices of the polygon mesh. (This process is called **surface parameterization** or simply **parameterization**, and it is done by graphics packages, such as 3ds Max.) The scan conversion is also done with the texture coordinates. In the following figure, the scan conversion interpolates the per-vertex texture coordinates to determine the per-fragment texture coordinates. For example, the lower-left corner fragment is assigned the texture coordinates, (1/8,1/8). OpenGL® ES simply multiplies the per-fragment texture coordinates by the texture resolution, `rx` and `ry`. If the resolution is 4x4, the texture coordinates, (1/8,1/8), are mapped to (0.5,0.5) and the lower-left corner texel is retrieved from the image texture.
+The texture coordinates are assigned to the vertices of the polygon mesh. (This process is called **surface parameterization** or simply **parameterization**, and it is done by graphics packages, such as 3ds Max.) The scan conversion is also done with the texture coordinates. In the following figure, the scan conversion interpolates the per-vertex texture coordinates to determine the per-fragment texture coordinates. For example, the lower-left corner fragment is assigned the texture coordinates, (1/8,1/8). OpenGL&reg; ES simply multiplies the per-fragment texture coordinates by the texture resolution, `rx` and `ry`. If the resolution is 4x4, the texture coordinates, (1/8,1/8), are mapped to (0.5,0.5) and the lower-left corner texel is retrieved from the image texture.
 
 **Figure: From the texture coordinates to the texel position**
 
@@ -63,9 +63,9 @@ To make the texture smaller, it is repeatedly down-sampled to a quarter size, an
 
 ![Mipmap generation process](./media/texturing_mipmap1.png) ![Mipmap generation process](./media/texturing_mipmap2.png)
 
-### Mipmap Generation in OpenGL® ES
+### Mipmap Generation in OpenGL&reg; ES
 
-To automatically generate a mipmap, OpenGL® ES invokes the `glGenerateMipmap()` function, where the parameter can be, for example, `GL_TEXTURE_2D` or `GL_TEXTURE_CUBE_MAP` (textures in OpenGL® ES 2.0 come in 2 forms: 2D textures and cube map textures). Use `GL_TEXTURE_2D` for general image texturing.
+To automatically generate a mipmap, OpenGL&reg; ES invokes the `glGenerateMipmap()` function, where the parameter can be, for example, `GL_TEXTURE_2D` or `GL_TEXTURE_CUBE_MAP` (textures in OpenGL&reg; ES 2.0 come in 2 forms: 2D textures and cube map textures). Use `GL_TEXTURE_2D` for general image texturing.
 
 ### Mipmapping for Minification
 
@@ -95,9 +95,9 @@ Note that the last case performs 3 levels of linear interpolations. It is called
 
 There is of course a third option: not to do mipmapping but to use the original image (at level 0) instead. It can be filtered either by nearest point sampling or by bilinear interpolation. Therefore, minification has 6 varieties in total.
 
-## Texturing in OpenGL® ES
+## Texturing in OpenGL&reg; ES
 
-When an image file is to be used as a texture, it is first loaded into the OpenGL® ES program. Then, you must take the following steps:
+When an image file is to be used as a texture, it is first loaded into the OpenGL&reg; ES program. Then, you must take the following steps:
 
 1. Use the `glGenTextures()` function, where the first parameter defines the number of texture objects to generate and the second parameter returns them in `textures`.
 2. Use the `glBindTexture()` function, where the first parameter specifies what the texture is used for as, for example, `GL_TEXTURE_2D` or `GL_TEXTURE_CUBE_MAP`.
@@ -106,11 +106,11 @@ When an image file is to be used as a texture, it is first loaded into the OpenG
 
 ## Texturing Example
 
-In order to generate a texture in OpenGL® ES, you usually have to decode the image file stored in the file system. In Tizen, you can use the Evas API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__Evas.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__Evas.html) applications) to get the decoded bitmap buffer from the image file, as shown in the following example. The code creates an independent `Ecore_Evas` object, which contains `Evas_Object`. It provides a method to decode the designated image file and store the bitmap data into its own buffer. You can get the internal buffer pointer and then upload the buffer to the texture.
+In order to generate a texture in OpenGL&reg; ES, you usually have to decode the image file stored in the file system. In Tizen, you can use the Evas API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__Evas.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__Evas.html) applications) to get the decoded bitmap buffer from the image file, as shown in the following example. The code creates an independent `Ecore_Evas` object, which contains `Evas_Object`. It provides a method to decode the designated image file and store the bitmap data into its own buffer. You can get the internal buffer pointer and then upload the buffer to the texture.
 
 ```
 /*
-   Create OpenGL® ES Texture object from image file path
+   Create OpenGL&reg; ES Texture object from image file path
    @param[in] parent Evas object
    @param[in] filename image file path
    @return texture id
