@@ -1,10 +1,5 @@
 # Application Icons
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 When an application has new information requiring user attention, such as missed calls or new messages, it has a number in the upper-right corner of the application icon. This number is called a badge. For example, when a new message is received, the badge appears on the application icon. The badge remains until the user reads the message.
 
 This feature is supported in mobile and wearable applications only.
@@ -17,11 +12,11 @@ The main features of the Badge API include:
 
 - Managing badges  
 
-  You can [set and get the badge number](./app-management/app-icons-w.md#manage).
+  You can [set and get the badge number](#managing-badges).
 
 - Listening for badge changes  
 
-  You can [receive notifications on badge changes](./app-management/app-icons-w.md#receive) to display and react to badges.
+  You can [receive notifications on badge changes](#receiving-notifications-on-badge-changes) to display and react to badges.
 
 ## Prerequisites
 
@@ -82,3 +77,9 @@ Registering a listener for badge count changes to react to new badges and displa
    ```
    tizen.badge.removeChangeListener(['BDb5tZJe47.TestSample']);
    ```
+
+
+## Related information
+* Dependencies
+   - Tizen 2.4 and Higher for Mobile
+   - Tizen 2.3.1 and Higher for Wearable

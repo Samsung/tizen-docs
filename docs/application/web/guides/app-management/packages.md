@@ -1,11 +1,5 @@
 # Package Information
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
 You can retrieve detailed information about packages, such as package name, icon path, version details, and package ID. You can receive notifications if packages are updated or removed, or new packages are installed. You can also perform package management tasks, such as installing or uninstalling packages.
 
 The Package API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
@@ -14,15 +8,15 @@ The main package information features are:
 
 - Package management   
 
-  You can [install or uninstall packages](./app-management/packages-w.md#manage).
+  You can [install or uninstall packages](#manage).
 
 - Package information retrieval   
 
-  You can display a list of installed packages on the device, and [retrieve package information](./app-management/packages-w.md#retrieve), such as name, ID, icon path, and version.
+  You can display a list of installed packages on the device, and [retrieve package information](#retrieve), such as name, ID, icon path, and version.
 
 - Package change notifications   
 
-  You can [receive notifications](./app-management/packages-w.md#receive) when packages are installed, updated, or uninstalled.
+  You can [receive notifications](#receive) when packages are installed, updated, or uninstalled.
 
 ## Prerequisites
 
@@ -134,3 +128,10 @@ Learning to receive notifications when the list of installed packages changes al
    ```
    tizen.package.unsetPackageInfoEventListener();
    ```
+
+
+## Related Information
+* Dependencies   
+   - Tizen 2.4 and Higher for Mobile
+   - Tizen 2.3.1 and Higher for Wearable
+   - Tizen 3.0 and Higher for TV

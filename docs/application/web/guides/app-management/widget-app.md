@@ -1,10 +1,5 @@
 # Widget Information
 
-## Dependencies
-
-- Tizen 3.0 and Higher for Mobile
-- Tizen 2.3.2 and Higher for Wearable
-
 You can manage installed widgets and widget instances in various ways, such as retrieving information about widgets, or getting the widget instances and receiving notifications when the state of the widget changes.
 
 This feature is supported in mobile and wearable applications only.
@@ -16,15 +11,15 @@ The main features of the Widget Service API include:
 
 - Widget retrieval   
 
-  You can [retrieve widgets](./app-management/widget-app-w.md#widget), for example, get the widgets installed on the device or information about their primary ID or size.
+  You can [retrieve widgets](#widget), for example, get the widgets installed on the device or information about their primary ID or size.
 
 - Widget management   
 
-  You can [manage individual widgets](./app-management/widget-app-w.md#management) by getting the widget name and a list of widget instances and widget variants, and by receiving notifications about the widget life-cycle events.
+  You can [manage individual widgets](#management) by getting the widget name and a list of widget instances and widget variants, and by receiving notifications about the widget life-cycle events.
 
 - Widget instance management   
 
-  You can [manage widget instances](./app-management/widget-app-w.md#instance) by changing the instance data update interval and managing the instance content.
+  You can [manage widget instances](#instance) by changing the instance data update interval and managing the instance content.
 
 <a name="widget"></a>
 ## Widget Retrieval
@@ -274,3 +269,9 @@ Learning how to send and get the widget content is a useful widget management sk
    ```
    instance.getContent(successCallback, errorCallback);
    ```
+
+
+## Related Information
+* Dependencies   
+   - Tizen 3.0 and Higher for Mobile
+   - Tizen 2.3.2 and Higher for Wearable

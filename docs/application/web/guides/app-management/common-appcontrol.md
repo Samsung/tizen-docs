@@ -1,12 +1,6 @@
 # Common Application Controls
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.2 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
-An application control provides functions for launching other applications with a specific operation, URI, MIME type, and extra data. The requesting application can get a result back from the launched application. This topic introduces the common application controls that you can use. 
+An application control provides functions for launching other applications with a specific operation, URI, MIME type, and extra data. The requesting application can get a result back from the launched application. This topic introduces the common application controls that you can use.
 
 The Application API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
@@ -612,7 +606,7 @@ To display a specified contact from a vcard file, use the `file:` URI. To displa
 
 #### MIME Type
 
-- `application/vnd.tizen.contact`	If viewing a contact by person ID, the person ID (ID in the `_contact_person` view) extra data and `application/vnd.tizen.contact` MIME type must be specified.	
+- `application/vnd.tizen.contact`	If viewing a contact by person ID, the person ID (ID in the `_contact_person` view) extra data and `application/vnd.tizen.contact` MIME type must be specified.
 - `text/vcard`
 - `text/x-vcard`
 
@@ -863,7 +857,7 @@ To share a single file of any MIME type in an email message, use the `http://tiz
 
 Any MIME type that your application needs, such as `image/jpg`, `video/*`, or `*/*`
 
-If sharing a single item through `http://tizen.org/appcontrol/data/path` and the URI is specified with `mailto:`, the MIME type must be explicitly set. 
+If sharing a single item through `http://tizen.org/appcontrol/data/path` and the URI is specified with `mailto:`, the MIME type must be explicitly set.
 
 #### Extra Input
 
@@ -1716,3 +1710,9 @@ tizen.application.launchAppControl(appControl, null, function() {
     console.log('launch application control failed. reason: ' + e.message);
 }, null);
 ```
+
+## Related Information
+* Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.2 and Higher for Wearable
+  - Tizen 3.0 and Higher for TV

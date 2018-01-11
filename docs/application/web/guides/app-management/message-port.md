@@ -1,11 +1,5 @@
 # Message Port
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
 Your Web applications can communicate with other Web or native applications. The message data type for the communication is map data, which consists of a string key and value that can be a string, string array, byte stream, or byte stream array.
 
 The Message Port API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
@@ -14,13 +8,13 @@ The main features of the Message Port API include:
 
 - Sending messages
 
-  A Tizen Web application can [send messages](./app-management/message-port-w.md#Manage_Message_Port) to another application using the `sendMessage()` method of the `RemoteMessagePort` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messageport.html#RemoteMessagePort), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/messageport.html#RemoteMessagePort), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/messageport.html#RemoteMessagePort) applications).
+  A Tizen Web application can [send messages](#managing-message-ports) to another application using the `sendMessage()` method of the `RemoteMessagePort` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messageport.html#RemoteMessagePort), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/messageport.html#RemoteMessagePort), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/messageport.html#RemoteMessagePort) applications).
 
 - Receiving messages
 
-  To [receive response messages](./app-management/message-port-w.md#Manage_Message_Port) from another application, your application can specify a local message port when it sends a message. You can receive response messages using the callback method which is registered through the `addMessagePortListener()` method of the `LocalMessagePort` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messageport.html#LocalMessagePort), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/messageport.html#LocalMessagePort), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/messageport.html#LocalMessagePort) applications).
+  To [receive response messages](#managing-message-ports) from another application, your application can specify a local message port when it sends a message. You can receive response messages using the callback method which is registered through the `addMessagePortListener()` method of the `LocalMessagePort` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messageport.html#LocalMessagePort), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/messageport.html#LocalMessagePort), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/messageport.html#LocalMessagePort) applications).
 
-  You can mostly receive message from applications implemented as Tizen native or Web applications. To implement a native application, see the native [Message Port Communication](../../../../org.tizen.guides_HTM/html/native/app-management/message_port_n.htm) guide.
+  You can mostly receive message from applications implemented as Tizen native or Web applications. To implement a native application, see the native [Message Port Communication](../../../native/guides/app-management/message-port.md) guide.
 
   **Figure: Sending and receiving messages**
 
@@ -112,3 +106,9 @@ Learning how to send messages to and receive responses from other Tizen applicat
    ```
    remotePort.sendMessage(messageData, localPort);
    ```
+
+## Related information
+* Dependencies   
+   - Tizen 2.4 and Higher for Mobile
+   - Tizen 2.3.1 and Higher for Wearable
+   - Tizen 3.0 and Higher for TV

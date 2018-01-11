@@ -1,38 +1,34 @@
 # Service Application
 
-## Dependencies
-
-- Tizen 2.3.2 and Higher for Wearable
-
 A service application is a type of Tizen Web application that provides an environment for running JavaScript in the background without a graphical user interface (the application follows the [ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm)). The service application is used to perform tasks that need to run periodically or continuously, but do not require any user interaction. For example, a service application can be used for getting data or listening for platform events in the background. As service applications do not have UI components, they run on top of a more light-weight runtime than UI applications. Therefore, you can expect them to perform better and consume less memory.
 
 > **Note**
-> This feature is supported in wearable applications only. The Web service application is an optional feature, which means that it may not be supported on all wearable devices. You can check the device capability by using the `getCapability()` method of the [SystemInfo](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/systeminfo.html#SystemInfo) interface. For more information, see [Application Filtering](../../../../org.tizen.training/html/web/details/app_filtering_w.htm).
+> This feature is supported in wearable applications only. The Web service application is an optional feature, which means that it may not be supported on all wearable devices. You can check the device capability by using the `getCapability()` method of the [SystemInfo](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/systeminfo.html#SystemInfo) interface. For more information, see [Application Filtering](../../tutorials/details/app-filtering.md).
 
 The main features of the service application include:
 
 - Managing the life-cycle
 
-  To manage a service application life-cycle, you must [define various callbacks](./app-management/service-app-w.md#create) to enable the application to be initialized and handle incoming requests.
+  To manage a service application life-cycle, you must [define various callbacks](#create) to enable the application to be initialized and handle incoming requests.
 
-  While the service application is running, you can [use the supported Web Device APIs](./app-management/service-app-w.md#fund) to interact with the platform or other service applications.
+  While the service application is running, you can [use the supported Web Device APIs](#fund) to interact with the platform or other service applications.
 
 - Packaging applications
 
-  You must always [package a service application](./app-management/service-app-w.md#package) with a UI application in a Web application package file. You can include multiple service applications in the same package with a single UI application.
+  You must always [package a service application](#package) with a UI application in a Web application package file. You can include multiple service applications in the same package with a single UI application.
 
 - Launching applications
 
-  You can [launch service applications](./app-management/service-app-w.md#launch) through another application by using the `launch()` and `launchAppControl()` methods of the [Application](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html) API by using an explicit application ID. You can also register service applications to be launched automatically at boot time.
+  You can [launch service applications](#launch) through another application by using the `launch()` and `launchAppControl()` methods of the [Application](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html) API by using an explicit application ID. You can also register service applications to be launched automatically at boot time.
 
 - Terminating applications
 
-  The service application can [terminate itself](./app-management/service-app-w.md#terminate) when it receives a certain request.
+  The service application can [terminate itself](#terminate) when it receives a certain request.
 
 The device main menu does not contain any icons for service applications, because the applications run in the background. The task switcher does not show them either. Service applications can run simultaneously with other service and UI applications.
 
 > **Note**
-> The wearable service application requires [partner-level certification](../../../../org.tizen.training/html/web/details/sec_privileges_w.htm) in Tizen 2.3.
+> The wearable service application requires [partner-level certification](../../tutorials/details/sec-privileges.md) in Tizen 2.3.
 
 ## Prerequisites
 
@@ -59,7 +55,7 @@ To enable your application to use the service application functionality:
    </widget>
    ```
 
-   The `<tizen:service>` element is a child of the `<widget>` element in the `config.xml` file. With the `<tizen:service>` element attributes, you can set the traits of a service application, such as application ID, auto restart, and boot launching capability. With the `<tizen:service>` child elements, you can set the starting script, name, and icon for the service application.The definition of all service elements is listed and explained in the [Extending Configuration Elements](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#ww_extend).
+   The `<tizen:service>` element is a child of the `<widget>` element in the `config.xml` file. With the `<tizen:service>` element attributes, you can set the traits of a service application, such as application ID, auto restart, and boot launching capability. With the `<tizen:service>` child elements, you can set the starting script, name, and icon for the service application.The definition of all service elements is listed and explained in the [Extending Configuration Elements](../../../tizen-studio/web-tools/config-editor.md#ww_extend).
 
 3. To use the [Application](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html) API, the application has to request permission by adding the following privilege to the `config.xml` file:
 
@@ -77,7 +73,7 @@ To run a service application, you must export a number of callbacks using the [C
 
 - `onStart()`: The entry point of the service. It is called after the service runtime finishes the set-up.
 - `onRequest()`: The listener for application control callbacks. It is provided to handle requests from other applications. You can understand the intention of the request and reply to it using the `tizen.application.getCurrentApplication().getRequestedAppControl()` method. This callback is also called when the application is first launched as an application launch is considered to be a request as well.
-- `onExit()`: This is called when the [service ends](./app-management/service-app-w.md#terminate). You can release resources or save the context by using this callback.
+- `onExit()`: This is called when the [service ends](#terminate). You can release resources or save the context by using this callback.
 
 **Figure: State transitions**
 
@@ -134,7 +130,7 @@ Learning how to manage service application callbacks is a basic application mana
 
 A Web application package can contain 1 Web UI application and several service applications. Each application in the Web application package shares the same package ID and has a unique application ID. In the following example, you can use the `<tizen:application>` element to define information for the Web UI application. The `<tizen:service>` element is used to define information about the service application. The UI application and the service application have the same package ID and different application IDs.
 
-The Web application package file is installed, updated, and uninstalled as a single [package](../../../../org.tizen.training/html/web/app_model/application_model_w.htm#package), making the life-cycles of the service applications and the UI application synchronous.
+The Web application package file is installed, updated, and uninstalled as a single [package](../../index.md#package), making the life-cycles of the service applications and the UI application synchronous.
 
 To package the service application with a UI application, define the service in the `config.xml` file. The `<tizen:service>` element allows you to define the characteristics of the service application. For example, you can specify the name, icon, and starting JavaScipt file of the service application.
 
@@ -227,3 +223,8 @@ You can use a selection of the following Tizen wearable Web Device APIs to inter
 | [Message Port](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/messageport.html) | This API provides methods for an application to communicate with other applications. |
 | [Power](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/power.html) | This API provides interfaces and methods for controlling power resources. Note that the `isScreenOn()`, `restoreScreenBrightness()`, `setScreenBrightness()`, and `getScreenBrightness()` methods are not supported for wearable Web service applications. |
 | [System Information](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/systeminfo.html) | This API provides information about the device's display, network, storage, and other capabilities. |
+
+
+## Related Information
+* Dependencies
+  - Tizen 2.3.2 and Higher for Wearable

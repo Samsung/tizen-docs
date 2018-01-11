@@ -207,6 +207,7 @@ To manage the application life-cycle:
 
 Since Tizen 2.4, an application is not allowed to run in the background except when it is explicitly declared to do so. The following table lists the background categories that allow an application to run in the background.
 
+<a name="allow_bg_table"></a>
 **Table: Allowed background application policy**
 
 | Background category            | Description                              | Related APIs                             | Manifest file <background-category> element value |

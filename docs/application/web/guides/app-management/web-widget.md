@@ -1,9 +1,5 @@
 # Widget Application
 
-## Dependencies
-
-- Tizen 2.3.2 and Higher for Wearable
-
 A widget application (or widget) is a specialized application that provides users with a quick view of specific information from the parent application. In addition, the widget can allow the user to access certain features without launching the parent application. Combined with the parent application, your widget can have various features to increase the usability of your application set.
 
 This feature is supported in wearable applications only.
@@ -683,7 +679,10 @@ The Web widget applications support the following events: `onload`, `onclick`, a
   }
   ```
 
-- `onclick`This event is generated when the user taps on an action button, whose function is specified by an HTML element. The following example code shows how to define the function for the **ADD WATER** button.**Figure: onclick event**![onclick event](./media/webwidget_onclick_event.png)
+- `onclick`This event is generated when the user taps on an action button, whose function is specified by an HTML element. The following example code shows how to define the function for the **ADD WATER** button.  
+
+**Figure: onclick event**  
+![onclick event](./media/webwidget_onclick_event.png)
 
   ```
   <!--HTML-->
@@ -1244,53 +1243,57 @@ It is important to prevent unnecessary performance degradation in widgets. As a 
 
 ## FAQ
 
-- [How are click and touch events handled in Web widgets?](./app-management/web-widget-ww.md#user-content-how-are-click--touch-events-handled-in-web-widgets)
-- [Can I apply heading styles to text?](./app-management/web-widget-ww.md#user-content-can-heading-styles-be-applied-to-text)
-- [Can I use hyperlinks in Web widgets?](./app-management/web-widget-ww.md#user-content-can-i-use-hyperlinks-in-web-widgets)
-- [Which font styles are supported?](./app-management/web-widget-ww.md#user-content-what-font-styles-are-supported)
-- [What is the best way to use the `` element?](./app-management/web-widget-ww.md#user-content-what-is-the-best-way-to-use-the-img-tag)
-- [Why can't I use iframes?](./app-management/web-widget-ww.md#user-content-why-cant-i-use-iframes)
-- [Which media elements are supported?](./app-management/web-widget-ww.md#user-content-what-media-elements-are-supported)
-- [How can I create tables?](./app-management/web-widget-ww.md#user-content-how-can-i-create-tables)
-- [What kind of forms can I use?](./app-management/web-widget-ww.md#user-content-what-kind-of-forms-can-i-use)
-- [How can I mimic select elements instead of using the `querySelector()` method?](./app-management/web-widget-ww.md#user-content-how-can-i-mimic-select-elements-instead-of-using-queryselector)
-- [How can I retrieve nodes without the `NodeIterator` object?](./app-management/web-widget-ww.md#user-content-how-can-i-retrieve-nodes-witout-nodeiterator)
-- [Is `innerHTML` or `innerText` supported?](./app-management/web-widget-ww.md#user-content-is-innerhtml-or-innertext-supported)
-- [How can logging be performed in the emulator?](./app-management/web-widget-ww.md#user-content-how-can-logging-be-performed-in-the-emulator)
-- [Why does the `responseXML` property return `undefined`?](./app-management/web-widget-ww.md#user-content-why-does-the-responsexml-property-return-undefined)
-- [How can I use the `response` and `responseType` attributes?](./app-management/web-widget-ww.md#user-content-where-can-i-find-a-guide-for-using-response-and-responsetype-attributes)
-- [How can I change the Web widget text font?](./app-management/web-widget-ww.md#user-content-how-can-i-change-web-widget-text-font)
-- [Can I set a border style, such as `border-radius`?](./app-management/web-widget-ww.md#user-content-can-i-set-a-border-style-like-border-radius)
-- [Can I animate images without a 2D canvas?](./app-management/web-widget-ww.md#user-content-can-images-be-animated-without-a-2-d-canvas)
-- [Is the Web Widget Specification a new Web standard?](./app-management/web-widget-ww.md#user-content-is-the-web-widget-specification-a-new-web-standard)
-- [Which elements or properties can I use?](./app-management/web-widget-ww.md#user-content-which-tags-and-properties-can-i-use)
-- [How can I design my Web widget layout for a circular shape?](./app-management/web-widget-ww.md#user-content-how-can-i-design-my-web-widget-layout-for-a-circular-shape)
-- [Can I use external JavaScript and CSS libraries?](./app-management/web-widget-ww.md#user-content-can-i-use-external-javascript-and-css-libraries)
-- [What kind of events can I use for user interaction?](./app-management/web-widget-ww.md#user-content-what-kind-of-events-can-i-use-for-user-interaction)
-- [How can I access the Internet from a Web widget, and what restrictions are there?](./app-management/web-widget-ww.md#user-content-how-can-i-access-the-internet-from-a-web-widget-and-what-restrictions-are-there)
-- [Is it possible to implement Web widgets without a Web application?](./app-management/web-widget-ww.md#user-content-is-it-possible-to-implement-only-web-widget-without-web-application)
-- [How can I determine which APIs are supported in Web widgets?](./app-management/web-widget-ww.md#user-content-how-can-i-determine-which-apis-are-supported-in-web-widgets)
-- [Can Web widgets reuse the JavaScript library or CSS styles of their parent Web application?](./app-management/web-widget-ww.md#user-content-can-web-widgets-re-use-the-javascript-library-or-css-styles-of-their-parent-web-application)
-- [What are the benefits of Web widgets compared with native widget applications?](./app-management/web-widget-ww.md#user-content-what-are-the-benefits-of-web-widget-apps-compared-with-native-widget-apps)
-- [What type of content is best for Web widgets?](./app-management/web-widget-ww.md#user-content-what-type-of-content-is-best-for-web-widget-apps)
-- [Can I use CSS `ellipsis`?](./app-management/web-widget-ww.md#user-content-can-i-use-css-ellipsis)
-- [Do my customers download the Web widgets when downloading a Web application?](./app-management/web-widget-ww.md#user-content-do-my-customers-download-web-widget-apps-when-downloading-a-web-app)
-- [Is the widget creation initiated by the widget adding and resuming actions?](./app-management/web-widget-ww.md#user-content-is-creation-initiated-by-the-add-widget-action-and-by-the-resume-widget-action)
-- [When a Web widget is removed, which events are fired?](./app-management/web-widget-ww.md#user-content-when-a-web-widget-is-removed-what-events-are-fired)
-- [What are the Web widget file size limitations (HTML, CSS, JavaScript)?](./app-management/web-widget-ww.md#user-content-what-are-the-web-widget-file-size-limitations-html-css-javascript)
+- [How are click and touch events handled in Web widgets?](#faq1)
+- [Can I apply heading styles to text?](#faq2)
+- [Can I use hyperlinks in Web widgets?](#faq3)
+- [Which font styles are supported?](#faq4)
+- [What is the best way to use the `<img>` element?](#faq5)
+- [Why can't I use iframes?](#faq6)
+- [Which media elements are supported?](#faq7)
+- [How can I create tables?](#faq8)
+- [What kind of forms can I use?](#faq9)
+- [How can I mimic select elements instead of using the `querySelector()` method?](#faq10)
+- [How can I retrieve nodes without the `NodeIterator` object?](#faq11)
+- [Is `innerHTML` or `innerText` supported?](#faq12)
+- [How can logging be performed in the emulator?](#faq13)
+- [Why does the `responseXML` property return `undefined`?](#faq14)
+- [How can I use the `response` and `responseType` attributes?](#faq15)
+- [How can I change the Web widget text font?](#faq16)
+- [Can I set a border style, such as `border-radius`?](#faq17)
+- [Can I animate images without a 2D canvas?](#faq18)
+- [Is the Web Widget Specification a new Web standard?](#faq19)
+- [Which elements or properties can I use?](#faq20)
+- [How can I design my Web widget layout for a circular shape?](#faq21)
+- [Can I use external JavaScript and CSS libraries?](#faq22)
+- [What kind of events can I use for user interaction?](#faq23)
+- [How can I access the Internet from a Web widget, and what restrictions are there?](#faq24)
+- [Is it possible to implement Web widgets without a Web application?](#faq25)
+- [How can I determine which APIs are supported in Web widgets?](#faq26)
+- [Can Web widgets reuse the JavaScript library or CSS styles of their parent Web application?](#faq27)
+- [What are the benefits of Web widgets compared with native widget applications?](#faq28)
+- [What type of content is best for Web widgets?](#faq29)
+- [Can I use CSS `ellipsis`?](#faq30)
+- [Do my customers download the Web widgets when downloading a Web application?](#faq31)
+- [Is the widget creation initiated by the widget adding and resuming actions?](#faq32)
+- [When a Web widget is removed, which events are fired?](#faq33)
+- [What are the Web widget file size limitations (HTML, CSS, JavaScript)?](#faq34)
 
+<a name="faq1"></a>
 #### How are click and touch events handled in Web widgets?
 
 The Web widget engine supports only the `onclick` event handler for click and touch events. Implement and bind an event handler to the target element. For more information, see [onclick Event](https://developer.tizen.org/dev-guide/2.3.2/org.tizen.web.apireference/html/widget_spec/web_widget.html#user-content-event).
 
+<a name="faq2"></a>
 #### Can I apply heading styles to text?
 
 The Web widget engine does not support HTML heading styles (`h1`, `h2`, ..., `h6`). The heading styles are typically used to structure Web pages displayed in browsers. To make a heading text, apply a suitable CSS `font-style` property.
 
+<a name="faq3"></a>
 #### Can I use hyperlinks in Web widgets?
 
 The Web widget engine does not support hyperlinks. To change from the current Web widget page, use a CSS transition or implement your service as a Web application.
 
+<a name="faq4"></a>
 #### Which font styles are supported?
 
 The Web widget engine supports the `<br>` and `<span>` elements for text-level semantics (for more information, see [HTML tag](https://developer.tizen.org/dev-guide/2.3.2/org.tizen.web.apireference/html/widget_spec/web_widget.html#user-content-html-tag)). You can also use CSS properties to make the text display like text with text-level semantics elements applied. The following table lists examples of typical element/CSS property correlations.
@@ -1308,6 +1311,7 @@ The Web widget engine supports the `<br>` and `<span>` elements for text-level s
 | `<b>`               | `font-weight: bold`                      |
 | `<u>`               | `text-decoration: underline`             |
 
+<a name="faq5"></a>
 #### What is the best way to use the `<img>` element?
 
 To increase performance and reduce the memory footprint, the Web widget engine imposes 2 limitations on the `<img>` element:
@@ -1315,14 +1319,17 @@ To increase performance and reduce the memory footprint, the Web widget engine i
 - Supported image file formats: PNG, JPG, GIF
 - Supported resolutions: lower than 1.5 times the base image resolution
 
+<a name="faq6"></a>
 #### Why can't I use iframes?
 
 Typically, iframes are used for embedding another document within the current document. However, Web widgets provide simple services and content. Therefore, the Web widget engine does not support iframes.
 
+<a name="faq7"></a>
 #### Which media elements are supported?
 
 The Web widget engine supports the `<img>` element only, and does not support `<audio>` and `<video>` elements.
 
+<a name="faq8"></a>
 #### How can I create tables?
 
 The Web widget engine does not support the `<table>` HTML element. To create a table-like layout, use the `<div>` and `<border>` elements, as shown in the following example:
@@ -1387,11 +1394,12 @@ The Web widget engine does not support the `<table>` HTML element. To create a t
    </div>
 </div>
 ```
-
+<a name="faq9"></a>
 #### What kind of forms can I use?
 
 The Web widget engine does not support the `<form>` element.  However, you can create form-like elements using the `<div>` element and CSS styles.
 
+<a name="faq10"></a>
 #### How can I mimic select elements instead of using the `querySelector()` method?
 
 The Web widget engine does not support the `querySelector()` method. However, you can create an alternative select element, as shown in the following example:
@@ -1408,6 +1416,7 @@ for (i = 0; i < c.length; i++) {
 }
 ```
 
+<a name="faq11"></a>
 #### How can I retrieve nodes without the `NodeIterator` object?
 
 The Web widget engine does not support the `NodeIterator` object. Retrieve the `children` attribute of a node as shown in the following example:
@@ -1421,6 +1430,7 @@ for (i = 0; i < c.length; i++) {
 }
 ```
 
+<a name="faq12"></a>
 #### Is `innerHTML` or `innerText` supported?
 
 The Web widget engine does not support `innerHTML` and `innerText` properties. To get the text data of an element, use the `textContent` attribute, as shown in the following example:
@@ -1430,90 +1440,116 @@ var parent = document.getElementById('parentDiv');
 var parentText = parent.textContent;
 ```
 
+<a name="faq13"></a>
 #### How can logging be performed in the emulator?
 
 Use the `console.log()` method in  the JavaScript code. You can see the logs in the Tizen Studio.
 
+<a name="faq14"></a>
 #### Why does the `responseXML` property return `undefined`?
 
 The `XMLHttpRequest()` method is supported only for the text data type. Therefore, the `responseXML` property is not necessary.
 
+<a name="faq15"></a>
 #### How can I use the `response` and `responseType` attributes?
 
 You cannot use them, because the `XMLHttpRequest()` method is supported for the text data type only. For more information, see [XMLHttpRequest](https://developer.tizen.org/dev-guide/2.3.2/org.tizen.web.apireference/html/widget_spec/web_widget.html#user-content-xmlhttprequest).
 
+<a name="faq16"></a>
 #### How can I change the Web widget text font?
 
 For performance reasons, the Web widget engine does not support the `font-family` CSS property. However, you can use combinations of `font-size`, `font-weight`, and `font-style` properties to change your Web widget font.
 
+<a name="faq17"></a>
 #### Can I set a border style, such as `border-radius`?
 
 The Web Widget Specification restricts some properties and values related to `border-radius`. For more information, see [Border](https://developer.tizen.org/dev-guide/2.3.2/org.tizen.web.apireference/html/widget_spec/web_widget.html#user-content-border).
 
+<a name="faq18"></a>
 #### Can I animate images without a 2D canvas?
 
-The Web Widget Specification supports the `requestAnimationFrame()` method and CSS transform for implementing animations. For an example code, see [Animation](./app-management/web-widget-ww.md#animation).
+The Web Widget Specification supports the `requestAnimationFrame()` method and CSS transform for implementing animations. For an example code, see [Animation](#animation).
 
+<a name="faq19"></a>
 #### Is the Web Widget Specification a new Web standard?
 
 No, the Web Widget Specification is a limited set of the W3C standard specification. The Web widget APIs are a subset of the Tizen Device APIs.
 
+<a name="faq20"></a>
 #### Which elements or properties can I use?
 
 For the supported elements and properties, see [Tizen Wearable Web Widget Specification](https://developer.tizen.org/dev-guide/2.3.2/org.tizen.web.apireference/html/widget_spec/web_widget.html).
 
+<a name="faq21"></a>
 #### How can I design my Web widget layout for a circular shape?
 
-There are no specific functions for a circular shape. For circular layout samples, see [Layout](./app-management/web-widget-ww.md#layout).
+There are no specific functions for a circular shape. For circular layout samples, see [Layout](#layout).
 
+<a name="faq22"></a>
 #### Can I use external JavaScript and CSS libraries?
 
-According to the Web Widget Specification, the content size of each Web widget is limited to 50 kB. For Web widget content that is less than or equal to 50 kB, JavaScript or CSS files can be included. However, for performance reasons, the files cannot be imported from an external network. For more information, see the external network resource section in [Performance Considerations](./app-management/web-widget-ww.md#performance).
+According to the Web Widget Specification, the content size of each Web widget is limited to 50 kB. For Web widget content that is less than or equal to 50 kB, JavaScript or CSS files can be included. However, for performance reasons, the files cannot be imported from an external network. For more information, see the external network resource section in [Performance Considerations](#performance-considerations).
 
+<a name="faq23"></a>
 #### What kind of events can I use for user interaction?
 
 Due to UX restrictions, Web widgets only allow the use of the `onclick` events for user interaction.
 
+<a name="faq24"></a>
 #### How can I access the Internet from a Web widget, and what restrictions are there?
 
-Accessing Internet is available through the `XMLHttpRequest()` method. For an example code, see [Communicating with a Web Server](./app-management/web-widget-ww.md#comm_server).
+Accessing Internet is available through the `XMLHttpRequest()` method. For an example code, see [Communicating with a Web Server](#communicating-with-a-web-server).
 
+<a name="faq25"></a>
 #### Is it possible to implement Web widgets without a Web application?
 
-For your convenience during testing and debugging only, the Web widget engine supports the "Only Web Widget Mode". To distribute Web widgets through the Tizen Store, each Web widget must have at least 1 parent Web application in the package. For more information, see [Application Model](./app-management/web-widget-ww.md#app_model).
+For your convenience during testing and debugging only, the Web widget engine supports the "Only Web Widget Mode". To distribute Web widgets through the Tizen Store, each Web widget must have at least 1 parent Web application in the package. For more information, see [Application Model](#application-model).
 
+<a name="faq26"></a>
 #### How can I determine which APIs are supported in Web widgets?
 
 For the APIs supported by the Web Widget Specification, see [Tizen Wearable Web Widget Specification](https://developer.tizen.org/dev-guide/2.3.2/org.tizen.web.apireference/html/widget_spec/web_widget.html). Additionally, the Tizen Studio provides a Web widget validator that indicates whether a typed-in API follows the Web Widget Specification.
 
+<a name="faq27"></a>
 #### Can Web widgets reuse the JavaScript library or CSS styles of their parent Web application?
 
 Because Web application and Web widget resources are isolated from each other, Web widgets cannot use the JavaScript or CSS files in their parent Web application. The virtual root paths of the Web application and its Web widgets are not the same. You can copy Web application JavaScript and CSS files to the Web widget's folder. However, the Web Widget Specification places more restrictions on the Web widget files than on the Web application files. Therefore, verify all copied Web application JavaScript and CSS files using the Web widget validator.
 
+<a name="faq28"></a>
 #### What are the benefits of Web widgets compared with native widget applications?
 
 Because Web widgets are implemented through the Web Widget Specification, Web-friendly developers can create Web widgets more easily and quickly than native widget applications.
 
+<a name="faq29"></a>
 #### What type of content is best for Web widgets?
 
 Typically as part of a Web application, Web widgets provide their users with important Web application functions (such as launching the parent Web application), and brief, important Web application information. Therefore, simple and lightweight services are best suited for Web widgets.
 
+<a name="faq30"></a>
 #### Can I use CSS `ellipsis`?
 
 Currently, CSS `ellipsis` is not supported. However, the string length can be limiting by using JavaScript. For an example code, see the Scrolling Text sample in [Animation](./app-management/web-widget-ww.md#animation).
 
+<a name="faq31"></a>
 #### Do my customers download the Web widgets when downloading a Web application?
 
 Yes, the Web widgets must be packaged together with their parent Web application. The entire package is distributed to customers through the Tizen Store.
 
+<a name="faq32"></a>
 #### Is the widget creation initiated by the widget adding and resuming actions?
 
-After the widget creation is initiated by the widget adding action, a resume action is not triggered. The resume action is triggered only when a Web widget is shown after being hidden (by rotating the Gear device bezel). For the Web widget life-cycle details, see [Life-cycle](./app-management/web-widget-ww.md#lifecycle).
+After the widget creation is initiated by the widget adding action, a resume action is not triggered. The resume action is triggered only when a Web widget is shown after being hidden (by rotating the Gear device bezel). For the Web widget life-cycle details, see [Life-cycle](#life-cycle).
 
+<a name="faq33"></a>
 #### When a Web widget is removed, which events are fired?
 
 After removal, no corresponding event is fired because no event is considered necessary for termination.
 
+<a name="faq34"></a>
 #### What are the Web widget file size limitations (HTML, CSS, JavaScript)?
 
-For the Web widget file and image size limits, see [Performance Considerations](./app-management/web-widget-ww.md#performance).
+For the Web widget file and image size limits, see [Performance Considerations](#performance-considerations).
+
+## Related Information
+* Dependencies
+  - Tizen 2.3.2 and Higher for Wearable

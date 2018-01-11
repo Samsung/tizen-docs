@@ -1,11 +1,5 @@
 # Data Control
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.2 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
 Data control allows you to read and modify data stored and provided by another application, and monitor changes in that data. The application storing and controlling the data is called a DataControl provider application. The application using the data is called a DataControl consumer application. A single DataControl provider can serve multiple DataControl consumers.
 
 The Data Control API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
@@ -14,15 +8,15 @@ The main data control features are:
 
 - Data storage as key-value pairs   
 
-  You can [get, add, update, and remove values assigned to a key](./app-management/data-w.md#map) using the `MappedDataControlConsumer` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/datacontrol.html#MappedDataControlConsumer), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/datacontrol.html#MappedDataControlConsumer), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/datacontrol.html#MappedDataControlConsumer) applications).
+  You can [get, add, update, and remove values assigned to a key](#managing-data-in-key-value-pairs) using the `MappedDataControlConsumer` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/datacontrol.html#MappedDataControlConsumer), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/datacontrol.html#MappedDataControlConsumer), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/datacontrol.html#MappedDataControlConsumer) applications).
 
 - Complex data storage using a SQL-type database and queries   
 
-  You can [select, insert, update, and remove data](./app-management/data-w.md#sql) using the `SQLDataControlConsumer` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/datacontrol.html#SQLDataControlConsumer), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/datacontrol.html#SQLDataControlConsumer), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/datacontrol.html#SQLDataControlConsumer) applications).
+  You can [select, insert, update, and remove data](#managing-sql-type-data) using the `SQLDataControlConsumer` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/datacontrol.html#SQLDataControlConsumer), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/datacontrol.html#SQLDataControlConsumer), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/datacontrol.html#SQLDataControlConsumer) applications).
 
 - Provider data change monitoring   
 
-  You can [receive notifications](./app-management/data-w.md#listener) about changes in DataControl provider applications.
+  You can [receive notifications](#monitoring-provider-data-changes) about changes in DataControl provider applications.
 
 ## Prerequisites
 
@@ -289,4 +283,10 @@ Learning how to add a listener allows you to receive notifications about DataCon
    ```
 
 > **Note**
-> To monitor DataControl provider data changes, it is not enough to implement a listener in the DataControl consumer. You also need to implement the data change sending functionality in the DataControl provider.	The data sending implementation determines the actual change data returned to the DataControl consumer. For more information on the DataControl provider implementation, see [Monitoring Data Changes](../../../../org.tizen.guides_HTM/html/native/app-management/data_control_n.htm#map3). 
+> To monitor DataControl provider data changes, it is not enough to implement a listener in the DataControl consumer. You also need to implement the data change sending functionality in the DataControl provider.	The data sending implementation determines the actual change data returned to the DataControl consumer. For more information on the DataControl provider implementation, see [Monitoring Data Changes](../../../native/guides/app-management/data-control.md#monitoring-data-changes). 
+
+## Related information
+* Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.2 and Higher for Wearable
+  - Tizen 3.0 and Higher for TV

@@ -1,24 +1,18 @@
 # Application Groups
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
 You can define the application launch mode and group your applications into entities that can be managed together.
 
 The Application API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The main application group features include:
 
-- Grouping applications in manageable entities	
+- Grouping applications in manageable entities
 
-  Application grouping has an effect on what happens when the user hides or exits an application. When applications [belong to the same group](./app-management/app-group-w.md#group), they are hidden and exited together.
+  Application grouping has an effect on what happens when the user hides or exits an application. When applications [belong to the same group](#group-behavior), they are hidden and exited together.
 
 - Controlling the launch mode    
 
-  The launch mode determines how a newly launched application is grouped. You can [control the launch mode](./app-management/app-group-w.md#mode) by:
+  The launch mode determines how a newly launched application is grouped. You can [control the launch mode](#controlling-the-launch-mode) by:
 
   - Setting it in the application `config.xml` file.
   - Defining it in an application control that is used to launch the application.
@@ -83,3 +77,9 @@ To launch an application in a `GROUP` mode:
        console.log('launch application control failed. reason: ' + e.message);
    }, appControlReplyCallback);
    ```
+
+## Related Information
+* Dependencies
+   - Tizen 2.4 and Higher for Mobile
+   - Tizen 2.3.1 and Higher for Wearable
+   - Tizen 3.0 and Higher for TV
