@@ -1,10 +1,6 @@
 # Configuring the Package Manager
 
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
-
-The Package Manager configuration allows you to manage the packages of the Tizen Studio. With the Package Manager configuration, you can change the options for the package repository for the main and extension SDK, as well as the proxy settings to access the package repository. If you want to configure the Package Manager in the command line interface, see [Updating with the CLI Package Manager](updating-sdk.md#cli_package_manager).
+The Package Manager configuration allows you to manage the packages of the Tizen Studio. With the Package Manager configuration, you can change the options for the package repository for the main and extension SDK, as well as the proxy settings to access the package repository. If you want to configure the Package Manager in the command line interface, see [Updating with the CLI Package Manager](updating-sdk.md#updating-with-the-cli-package-manager).
 
 ## Configuring the Main SDK Repository
 
@@ -53,7 +49,8 @@ To add an extra repository:
 
 1. In the **Configuration** dialog box, scroll down to the **Extension SDK** panel, or click **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png) to unfold it.
 2. Click **+** above the repository information table.
-3. Enter values to the **Name** and **Repository** fields in the **Add Repository** dialog box. The **Repository** field indicates the external server address. You can also click ![Browse](./media/advanced_conf_browse.png) to select a local image file or local server location.![Adding an extra repository](./media/advanced_conf_add_extra.png)
+3. Enter values to the **Name** and **Repository** fields in the **Add Repository** dialog box. The **Repository** field indicates the external server address. You can also click ![Browse](./media/advanced_conf_browse.png) to select a local image file or local server location.  
+![Adding an extra repository](./media/advanced_conf_add_extra.png)
 4. Click **OK**.
 5. In the **Configuration** dialog box, check the detailed repository information below the table.
 6. Click **OK** to confirm.
@@ -73,7 +70,8 @@ To modify an extra repository:
 
 1. In the **Configuration** dialog box, scroll down to the **Extension SDK** panel, or click **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png) to unfold it.
 2. Click the ![Edit icon](./media/advanced_conf_icon_edit.png) icon above the repository information table.
-3. Modify the values of the **Name** and **Repository** fields in the **Modify Repository** dialog box. The **Repository** field indicates the external server address. You can also click ![Browse](./media/advanced_conf_browse.png) to select a local image file or local server location.![Modifying an extra repository](./media/advanced_conf_edit_extra.png)
+3. Modify the values of the **Name** and **Repository** fields in the **Modify Repository** dialog box. The **Repository** field indicates the external server address. You can also click ![Browse](./media/advanced_conf_browse.png) to select a local image file or local server location.  
+![Modifying an extra repository](./media/advanced_conf_edit_extra.png)
 4. Click **OK**.
 5. In the **Configuration** dialog box, check that the repository information has changed below the table.
 6. Click **OK** to confirm.
@@ -83,7 +81,8 @@ To modify an extra repository:
 To activate or deactivate the extra repository:
 
 1. In the **Configuration** dialog box, scroll down to the **Extension SDK** panel, or click **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png) to unfold it.
-2. Select the ![Switch icon](./media/advanced_conf_icon_switch.png) on-off switch icon in the **Activation** column in the repository table.![Activating or deactivating an extra repository](./media/advanced_conf_activate_extra.png)
+2. Select the ![Switch icon](./media/advanced_conf_icon_switch.png) on-off switch icon in the **Activation** column in the repository table.  
+![Activating or deactivating an extra repository](./media/advanced_conf_activate_extra.png)
 3. Click **OK** to confirm.
 
 > **Note**  
@@ -93,9 +92,15 @@ To activate or deactivate the extra repository:
 
 The Package Manager provides the network option to configure a proxy to connect to repository servers. To set the proxy:
 
-1. Click the **Proxy Settings** button at the bottom of the **Configuration** dialog box.![Proxy settings window](./media/advanced_conf_proxy.png)
+1. Click the **Proxy Settings** button at the bottom of the **Configuration** dialog box.  
+![Proxy settings window](./media/advanced_conf_proxy.png)
 2. Select the proxy option you want to use:
    - **No proxy**: The Package Manager accesses the repository servers directly.
    - **System proxy settings**: The Package Manager accesses the repository servers through the system proxy.
    - **Manual proxy settings**: The Package Manager accesses the repository servers through the **IP** and **Port** value that you specify.
 3. Click **Apply** to confirm.
+
+
+## Related information
+* Dependencies
+  - Tizen Studio 1.0 and Higher

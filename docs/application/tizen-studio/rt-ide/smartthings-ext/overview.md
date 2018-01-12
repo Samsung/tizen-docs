@@ -1,8 +1,5 @@
 # SmartThings&trade; Extension
 
-## Dependencies
-- Ubuntu Only
-
 The Tizen Studio for RT provides many extended features for SmartThings&trade;-connected IoT applications.
 
 You can select a device model template from the Project Wizard and create a project that, by default , contains a lot of stub code for easy development. You only need to add user-defined logic or hardware-specific I/O control.
@@ -17,3 +14,6 @@ To develop IoT applications with SmartThings&trade;:
 - [Manage devices and resources](rt-model-manager.md) through the Model Manager.
 
 
+## Related Information
+* Dependencies
+  - Ubuntu Only

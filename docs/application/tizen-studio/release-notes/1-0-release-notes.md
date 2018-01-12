@@ -49,14 +49,17 @@
 ### Changed Features
 
 - Installer, Package Manager, and Uninstaller
-  - The Tizen Studio does not support OpenJDK any longer. Also, it requires Oracle® JDK 1.8 or higher.
+  - The Tizen Studio does not support OpenJDK any longer. Also, it requires Oracle&reg; JDK 1.8 or higher.
   - The new UX has been applied to the Installer, Package Manager (Update Manager), and Uninstaller.
   - The Update Manager title has been changed to **Package Manager**. The older versions of the Update Manager do not support the auto-update to the new Package Manager. If you want to use the new Package Manager, install the Tizen Studio using the new Installer.
-  - The Package Manager tabs have been changed to **Main SDK**, **Extension SDK**, and **Progress**:You can install, update, and remove the main packages in the **Main SDK** tab. In general, there are platforms and SDK tools for each profile in this tab.You can install, update, and remove extended packages in the **Extension SDK** tab.After clicking the install, update, or remove button in the **Main SDK** or **Extension SDK** tab, you can monitor the operation status in the **Progress** tab and on the head area of the Package Manager. You can cancel the operation while installing and updating packages.
+  - The Package Manager tabs have been changed to **Main SDK**, **Extension SDK**, and **Progress**:
+    - You can install, update, and remove the main packages in the **Main SDK** tab. In general, there are platforms and SDK tools for each profile in this tab.
+    - You can install, update, and remove extended packages in the **Extension SDK** tab.
+    - After clicking the install, update, or remove button in the **Main SDK** or **Extension SDK** tab, you can monitor the operation status in the **Progress** tab and on the head area of the Package Manager. You can cancel the operation while installing and updating packages.
 - Web and Native IDE
   - Unnecessary Eclipse plugins, such as JDT, PDE, mylin, birt, and egit, have been removed. Consequently, the required disk space for installing the IDE has been decreased about 100 MiB.
   - The new UX has been applied to the **Preference** and **Properties** dialogs. Various abundant items have been removed for simplicity.
-  - The `/home/developer/sdk_tools/lib` directory has been excluded in the linking reference of the native project's `-rpath` option.
+  - The `/home/developer/sdk_tools/lib` directory has been excluded in the linking reference of the native project&apos;s `-rpath` option.
 - Native UI Builder
   - The new UX has been applied.
   - Due to the new UX, the location of several views has changed:
@@ -67,7 +70,9 @@
     - The **Palette** has been moved to the right of the **Canvas**.
   - The **Event** tab of the **Properties** view has been removed and its functions have been merged to the **Attribute** tab. The **Attribute** tab provides the event information for a UI component.
   - The **Outline** view provides the UI component hierarchy of an application.
-  - The **Palette** has been improved to serve new users better:The UI component category has been redefined for simplicity.The **Palette** has been changed to show only the UI components that can be placed.
+  - The **Palette** has been improved to serve new users better:
+    - The UI component category has been redefined for simplicity.
+    - The **Palette** has been changed to show only the UI components that can be placed.
 - EDC Editor
   - The EDC Editor is renamed from **Enventor**.
   - The new UX has been applied.
@@ -86,7 +91,7 @@
     - Like the project wizard, the emulator instance creating process has been divided into several steps.
     - To increase understandability and decrease complexity, the emulator configuration has been separated into several tabs.
   - The event injection scenario has been changed. The UX of the Emulator Control Panel (ECP) has been renewed and improved:
-    - To improve the user's concentration on the values of an event injection device, the UX has been designed with a card selection style.
+    - To improve the user&apos;s concentration on the values of an event injection device, the UX has been designed with a card selection style.
 - Toolchain
   - The version of msys (collection of GNU utilities, such as bash, make, and gawk) tools has been upgraded to msys2.
 - Dynamic Analyzer
@@ -96,7 +101,7 @@
 
 - Web IDE and Native IDE
   - If JRE 1.8 was installed on your computer and you selected **IDE > Help > Help Contents**, the "HTTP ERROR:500" message sometimes appeared in the Help page due to the Eclipse Kepler bug. This issue has been fixed.
-  - Only on Windows®, if the project had a file with its name containing a non-ASCII character, the project packaging sometimes failed. This issue has been fixed.
+  - Only on Windows&reg;, if the project had a file with its name containing a non-ASCII character, the project packaging sometimes failed. This issue has been fixed.
 - Native IDE
   - When you tried to debug an application running on the connected target device through **Debug As > Tizen Native Application - Attach**, you could not attach the debugger to the application by using the **Debug Configurations** dialog. This issue has been fixed.
   - When you exported to the CLI project multiple projects packaged together, and one of the projects was the Static and Shared Library, the information for the referenced library project was not set in the `project_def.prop` file of the reference project. This issue has been fixed.
@@ -110,33 +115,35 @@
   - Due to an internal problem, the ECP CLI did not provide correct acceleration values for the 3-axis sensors. This issue has been fixed.
 - CLI and SDB
   - The build failure of the `.po` files, which occurred if the project type was an IME (Input Method Editor) application, has been fixed.
-  - When you executed the parallel build command with the `–j` option on Ubuntu, the `–j` option did not work. This issue has been fixed.
+  - When you executed the parallel build command with the `-j` option on Ubuntu, the `-j` option did not work. This issue has been fixed.
 
 ### Known Issues
 
 - Installer, Package Manager, and Uninstaller
   - If the SDK Update Notification appears when you start the Tizen IDE or emulator on macOS, a terminal (`shell.exec`) icon can appear on the dock for a few seconds.
-  - If there is a multibyte character in the Tizen SDK installation path, some development packages have a difficulty in finding the installed SDK's location when they are working.
+  - If there is a multibyte character in the Tizen SDK installation path, some development packages have a difficulty in finding the installed SDK&apos;s location when they are working.
 - Web IDE
   - The **Preview** tab in the Web Page Editor sometimes does not appear properly. Use an alternative feature, named Web SDK HTML Editor, which has enhanced features compared to the Web Page Editor. Instead of the **Preview** tab in the Web Page Editor, use the preview (**Ctrl + 4**) feature of the Web SDK HTML Editor.
 - Native IDE
-  - On Windows®, when you build a native project containing a PO file, the IDE sometimes stops responding. In this case, create a new workspace and move the project to it. The project may be built successfully there.
+  - On Windows&reg;, when you build a native project containing a PO file, the IDE sometimes stops responding. In this case, create a new workspace and move the project to it. The project may be built successfully there.
   - When you import some projects generated from Tizen 2.3 Rev2, the importing can take some time.
 - Native UI Builder
-  - When the WYSIWYG editor of the Native UI Builder for Windows® is running, a project deletion does not work properly. To solve the problem, close the editor.
-  - If the WYSIWYG editor of the Native UI Builder for Windows® runs over 12 hours, your computer slows down because of the editor's high memory usage. To solve the problem, restart the Tizen IDE.
+  - When the WYSIWYG editor of the Native UI Builder for Windows&reg; is running, a project deletion does not work properly. To solve the problem, close the editor.
+  - If the WYSIWYG editor of the Native UI Builder for Windows&reg; runs over 12 hours, your computer slows down because of the editor&apos;s high memory usage. To solve the problem, restart the Tizen IDE.
 - EDC Editor
   - You cannot add a new EDC file from the IDE if the EDC Editor is already launched. To avoid this problem, quit the EDC Editor before you add a new EDC file.
   - The EDC Editor application instances are limited to a single instance. However, due to a technical issue, multiple EDC Editor instances are allowed on macOS.
 - Emulator
-  - Ubuntu sometimes stops responding for a few seconds after closing the Emulator Manager. This issue is related to an IBus (Intelligent Input Bus) bug. When the issue occurs, restart the ibus-daemon by entering the `ibus-daemon –drx` command at the command prompt, and use another framework, such as uim and fcitx, for multilingual input.
-  - To use the Tizen emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen emulator from [Prerequisites for the Tizen Studio](https://developer.tizen.org/development/tizen-studio/download/installing-tizen-studio/prerequisites#emulator).If the host machine is using NVIDIA® Optimus® technology on either Ubuntu or Windows®, you must set the Tizen emulator to run with your NVIDIA graphics card. For Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). For Windows®, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the NVIDIA control panel.On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
+  - Ubuntu sometimes stops responding for a few seconds after closing the Emulator Manager. This issue is related to an IBus (Intelligent Input Bus) bug. When the issue occurs, restart the ibus-daemon by entering the `ibus-daemon -drx` command at the command prompt, and use another framework, such as uim and fcitx, for multilingual input.
+  - To use the Tizen emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen emulator from [Prerequisites for the Tizen Studio](../setup/prerequisites.md#emulator).
+    - If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows&reg;, you must set the Tizen emulator to run with your NVIDIA graphics card. For Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). For Windows&reg;, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the NVIDIA control panel.
+    - On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
   - On Ubuntu 14.04, a shortcut menu can sometimes appear transparent.
-  - On Windows®, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the emulator window is covered with another window. If you click the emulator window, the display surface runs correctly again.
-  - On Windows®, if a 'failed to allocate memory' error occurs while executing the emulator, try the following:
+  - On Windows&reg;, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the emulator window is covered with another window. If you click the emulator window, the display surface runs correctly again.
+  - On Windows&reg;, if a 'failed to allocate memory' error occurs while executing the emulator, try the following:
     - Close some other programs and try to launch the emulator again.
     - If the RAM size is set to 768 or 1024 MB for the VM in the Emulator Manager, change it to 512 MB.
-    - Increase the user area of the virtual memory in the system to 3 GB by entering the `bcdedit /set increaseuserva 3072` command on the console with administrator rights (Windows® 7 only), and reboot.
-  - If you use a MacBook Pro which has both Intel HD and NVIDIA® GPUs, when you execute the emulator with the **OpenGL ES ver. v1.1 & v2.0** option, the emulator can be unexpectedly terminated. Use the **OpenGL ES ver. v2.0 & v3.0** option.
+    - Increase the user area of the virtual memory in the system to 3 GB by entering the `bcdedit /set increaseuserva 3072` command on the console with administrator rights (Windows&reg; 7 only), and reboot.
+  - If you use a MacBook Pro which has both Intel HD and NVIDIA&reg; GPUs, when you execute the emulator with the **OpenGL ES ver. v1.1 & v2.0** option, the emulator can be unexpectedly terminated. Use the **OpenGL ES ver. v2.0 & v3.0** option.
 - SDB
   - To use the SDB bash completion feature, enter the `source .sdb-complete.bash` command on the bash shell. The feature runs manually since the official Tizen 2.4 release due to the Installer and Update Manager issue.

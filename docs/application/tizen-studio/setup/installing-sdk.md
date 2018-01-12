@@ -1,10 +1,5 @@
 # Installing Tizen Studio
 
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
-
-
 The installer has been renewed to provide a better user experience and show the unique Tizen philosophy. Using the new installer, you can now install the basic platform as well as useful tools step by step with a few clicks.
 
 You can use either the GUI or CLI version of the installer.
@@ -39,7 +34,7 @@ To install the Tizen Studio:
 
    If you want to install additional platforms and tools, launch the Package Manager by checking the **Launch the Package Manager** check box before clicking **Finish**.
 
-   Through the Tizen Studio Package Manager, you can both install and update additional tools. For more information on the Package Manager, see [Updating Tizen Studio](../download/updating-sdk.md).
+   Through the Tizen Studio Package Manager, you can both install and update additional tools. For more information on the Package Manager, see [Updating Tizen Studio](./updating-sdk.md).
 
 
    > **Note**  
@@ -52,7 +47,7 @@ The CLI (command line interface) provides functional tools for running the CLI i
 
 To install the Tizen Studio using the CLI installer:
 
-1. [Download the appropriate CLI installer for your platform](https://developer.tizen.org/development/tizen-studio/download).
+1. [Download the appropriate CLI installer for your platform](download.md).
 
 2. Run the CLI installer:
 
@@ -101,3 +96,8 @@ package-manager-cli install [--accept-license] [--no-java-check] [--proxy <value
 | `-f, --file <file path>`    | If you want to install packages from a local SDK image, specify the full path of the SDK image file. |
 | `-p, --password <password>` | Administrator (sudo) password for authentication. Ubuntu only. |
 | `<package name>[,…]`        | Name of the package you want to install. You can enter multiple package names (such as **NativeIDE** and **Emulator**).<br/>To retrieve the names of installable packages, use the following command:<br/>`package-manager-cli show-pkgs` |
+
+
+## Related information
+* Dependencies
+  - Tizen Studio 1.0 and Higher

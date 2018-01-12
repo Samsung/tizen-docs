@@ -1,9 +1,5 @@
 # Platform Development Tools
 
-## Dependencies
-- Tizen Studio 1.0.1 and Higher
-- Ubuntu Only
-
 The Tizen Platform IDE provides several tools to help your platform development tasks: **Rootstrap View**, Package Manager, Specfile Editor, content assist features, and PO file editor.
 
 ## Rootstrap View
@@ -47,7 +43,9 @@ On both tabs:
  - **Modify**: Modify the selected repository.
  - **Remove**: Remove the selected repository from the list.
  - **Move**: Move the selected repository up and down on the list.
-* **Packages** panel:
+
+ 
+* **Packages** panel:  
   - **Refresh**: Resynchronize the package index files from the package repositories. If the repositories are changed, the package index is refreshed.
   - **Upgrade**: Perform a distribution upgrade.
   - **Install**: Install selected packages.
@@ -105,3 +103,9 @@ The PO file editor is used to edit `.po` files to generate compiled gettext `.mo
 
   ![Adding a language](./media/platform_po_add.png)
 - To remove a language, in the **Supporting Languages** pane, click the **Remove Language** icon and select the applicable language code item in the **Remove Languages** dialog.
+
+
+## Related information
+* Dependencies
+  - Tizen Studio 1.0.1 and Higher
+  - Ubuntu Only

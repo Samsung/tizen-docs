@@ -1,7 +1,4 @@
 # Performing Memory Analysis
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
 
 You can analyze the memory usage of an application in the **Memory** tab of the Dynamic Analyzer.
 
@@ -20,27 +17,29 @@ The tab consists of the following views:
 
 ![Memory usage analysis](./media/da_memory_analysis.png)
 
+<a name="memory_chart"></a>
 ## Memory Chart
 
 The memory chart consists of various child charts:
 
-- **System Memory** chart
-  You can check the memory size of the system and process.
+- **System Memory** chart  
+  You can check the memory size of the system and process.  
   **Figure: System Memory chart**![System Memory chart](./media/da_memory_system.png)
-- **Process Memory** chart
+- **Process Memory** chart  
   You can check the memory size of the process:
   - **VSS**: Virtual Set Size
   - **RSS**: Resident Set Size
-  - **PSS**: Proportional Set Size
+  - **PSS**: Proportional Set Size  
     **Figure: Process Memory chart**![Process Memory chart](./media/da_memory_process.png)
-- **Heap Allocation** chart
+- **Heap Allocation** chart  
   You can check the allocated heap memory size of the process. It is calculated by "total allocation – total free":
   - **Total**: Allocated heap memory size of the process
-  - **Main Executable**: Allocated heap memory size of the main executable
-    **Figure: Heap Allocation chart**![Heap Allocation chart](./media/da_memory_heap.png)
-    When you select one of the heap allocation charts or its children, the corresponding **Statistics** table entry is also selected. This can be helpful if you need more detailed information on some process or library.
+  - **Main Executable**: Allocated heap memory size of the main executable  
+    **Figure: Heap Allocation chart**![Heap Allocation chart](./media/da_memory_heap.png)  
+    When you select one of the heap allocation charts or its children, the corresponding **Statistics** table entry is also selected. This can be helpful if you need more detailed information on some process or library.  
     **Figure: Cross-focusing from Heap Allocation charts to the Statistics table**![Cross-focusing from Heap Allocation charts to the Statistics table](./media/da_memory_heap_statistics.png)
 
+<a name="details"></a>
 ## Details
 
 You can check the changes in the system and process memory sizes in the **Details** table.
@@ -69,6 +68,7 @@ The table can contain, for example, the following rows:
 - **Main Executable**: "Allocated memory – free memory" of the main executable
 - **Each library**: "Allocated memory – free memory" of each library
 
+<a name="range"></a>
 ## Range Analysis
 
 You can add markers to the timeline to divide the timeline into intervals. The allocation and deallocation statistics are shown for each interval individually in the **Range Analysis** table.
@@ -88,8 +88,9 @@ Markers and intervals are numbered starting from zero. The **Range Analysis** ta
 
 ![Range Analysis table](./media/da_memory_range.png)
 
-For more information on using ranges with time markers, see [Range Inspection with Markers](da_advanced.md#marker).
+For more information on using ranges with time markers, see [Range Inspection with Markers](da-advanced.md#marker).
 
+<a name="statistics"></a>
 ## Statistics
 
 You can check the change in total allocated and free memory of each library in the **Statistics** table.
@@ -111,6 +112,7 @@ When you select one of the **Statistics** table entries, the corresponding heap 
 
 Note that heap allocation charts are always sorted according to the **Statistics** table entry order. You can change that order by clicking at one of the columns in the **Statistics** table. This is useful if you need to sort the library charts, for example, by persistent allocation size.
 
+<a name="map"></a>
 ## Memory Map
 
 You can check the memory mapping of a selected process in the **Memory Map** table. Using this table, you can understand the size of each library mapped onto a process, including the library's starting address (low address) and ending address (high address).
@@ -126,6 +128,7 @@ The table contains the following columns:
 - **Name**: Library file name, including the full path.
 - **Low- and High-address**: Address range of the library inside the process.
 
+<a name="allocation"></a>
 ## Persistent Allocations
 
 You can check the persistent allocations of the heap in the **Persistent Allocations** table and charts. To show the persistent allocation reports, select **View > Report > Persistent Allocations**.
@@ -154,10 +157,12 @@ The **Persistent Allocations** charts are shown above the **Heap Allocation** ch
 - **Process Persistent**: Size of the heap memory already allocated in the process and not freed by the end of the trace.
 - **Main Executable Persistent/Persistent**: Size of the heap memory already allocated by the main executable or each library, and not freed by the end of the trace.
 
+<a name="heap"></a>
 **Figure: Heap Allocation chart with the Persistent Allocation chart option enabled**
 
 ![Heap Allocation chart with the Persistent Allocation chart option enabled](./media/da_memory_persistent_chart.png)
 
+<a name="leaks"></a>
 ## Leaks
 
 You can find where memory leaks occurred in the application by enabling the **Leak Sanitizer** for the **Heap Allocation** tracing feature in the **Preferences** dialog.
@@ -186,6 +191,7 @@ The leaks are also marked in the **Persistent Allocations** table in an addition
 
 ![Persistent Allocations table with the Leak column](./media/da_memory_persistent_leaks.png)
 
+<a name="callstack"></a>
 ## CallStack
 
 You can see a call stack for each allocation from the **Persistent Allocations** or **Leaks** table in the **CallStack** table. To see the call stack, select the corresponding row in the **Persistent Allocations** or **Leaks** table.
@@ -199,3 +205,7 @@ The table contains the following columns:
 - **Function**: Name of the called function, or **<unknown>** if the function name cannot be determined
 - **Address**: Address of the instruction from where the next function was called, or **<unknown>** if the function name cannot be determined
 - **Binary path**: Path to the library which contains the defined function, or **<unknown library>** if it cannot be determined
+
+## Related information
+* Dependencies
+  - Tizen Studio 1.0 and Higher

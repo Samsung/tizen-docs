@@ -1,10 +1,5 @@
 # Prerequisites for the Tizen Studio
 
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
-
-
 Check the following prerequisites before attempting to install the Tizen Studio.
 
 ## OS and System Requirements
@@ -42,6 +37,7 @@ Follow these instructions to install the appropriate JDK version for your system
 
   Go to the [Ubuntu Web site](https://help.ubuntu.com/community/Java#Oracle_Java_8) for detailed instructions for installing the Oracle® JDK version 8.
 
+<a name="emulator"></a>
 ## Emulator Requirements
 
 The following table lists the CPU, screen resolution, graphic card, driver, and webcam requirements for using the Tizen emulator.
@@ -60,7 +56,7 @@ The following table lists the CPU, screen resolution, graphic card, driver, and 
 
 ## Google Chrome™ Browser Requirements
 
-You must install the Google Chrome™ browser to use the [Web Inspector](../web-tools/web-inspector-w.md) tool.
+You must install the Google Chrome™ browser to use the [Web Inspector](../web-tools/web-inspector.md) tool.
 
 Since the Web Inspector server uses the Web core in the platform, there is a limit on the Google Chrome™ browser version in your environment. For all functions of the Web Inspector to work properly, use the [Google Chrome™ browser version 52 or lower](http://www.slimjet.com/chrome/google-chrome-old-version.php).
 
@@ -86,3 +82,8 @@ The following table lists the additional requirements to be met before developin
 | ---------------------------------------- | ---------------------------------------- |
 | Prerequisite packages (webkitgtk and cpio) for developing applications | At the terminal prompt, enter the following command:<br/>`$ sudo apt-get install libwebkitgtk-1.0-0 cpio rpm2cpio` |
 | Prerequisite packages (glib, curl, sdl, pixel manipulation) for using the emulator | At the terminal prompt, enter the following command for Tizen Studio:<br/>`$ sudo apt-get install acl bridge-utils openvpn libfontconfig1 libglib2.0-0 libjpeg-turbo8 libpixman-1-0 libpng12-0 libsdl1.2debian libsm6 libv4l-0 libx11-xcb1 libxcb-icccm4 libxcb-image0 libxcb-randr0 libxcb-render-util0 libxcb-shape0 libxcb-xfixes0 libxi6` |
+
+
+## Related information
+* Dependencies
+  - Tizen Studio 1.0 and Higher

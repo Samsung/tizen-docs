@@ -1,8 +1,4 @@
 # Running Applications on the Emulator
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
-
 
 The Tizen emulator is a tool that reduces the inconvenience of testing the application on a real device, by providing an environment similar to a real device. In other words, if you do not have the real device, you can test on a virtual device with similar features.
 
@@ -26,7 +22,7 @@ To use the emulator, you need the Emulator Manager. If you do not have the Emula
 
 To start the emulator and run an application:
 
-1. Open the [Emulator Manager](emulator-manager.md#access).If you do not have an applicable emulator instance, [create one](emulator-manager.md#create).
+1. Open the [Emulator Manager](emulator-manager.md#access). If you do not have an applicable emulator instance, [create one](emulator-manager.md#create).
 2. Select the emulator instance and click **Launch**.
 3. Test your application in the emulator. You can launch your application in 2 ways:
    - In the Tizen Studio, select the project and click **Run As**.
@@ -37,9 +33,10 @@ The emulator device stores the installed application so you can run it again, if
 
 In the Emulator Manager, in addition to creating new emulator instances according to the environments you need, you can also [modify and delete emulator instances](emulator-manager.md#manage).
 
+<a name="speed"></a>
 ## Increasing the Application Execution Speed
 
-The Tizen x86 emulator exploits [KVM](http://www.linux-kvm.org/page/Main_Page) (Kernel-based Virtual Machine in Linux) or [HAX](../download/hardware-accelerated-execution-manager.md) (Hardware Accelerated eXecution in Windows® and macOS) with HW virtualization support.
+The Tizen x86 emulator exploits [KVM](http://www.linux-kvm.org/page/Main_Page) (Kernel-based Virtual Machine in Linux) or [HAX](../setup/hardware-accelerated-execution-manager.md) (Hardware Accelerated eXecution in Windows® and macOS) with HW virtualization support.
 
 If the CPU VT is disabled in the **Emulator Configuration** view on the Emulator Manager, check the following prerequisites and install KVM or HAX:
 
@@ -75,7 +72,7 @@ If the CPU VT is disabled in the **Emulator Configuration** view on the Emulator
 
    - In Windows® and macOS:
 
-     The HAXM driver is installed during the Tizen Studio installation. For more information on installing HAXM, see [Hardware Accelerated Execution Manager](../download/hardware-accelerated-execution-manager.md).
+     The HAXM driver is installed during the Tizen Studio installation. For more information on installing HAXM, see [Hardware Accelerated Execution Manager](../setup/hardware-accelerated-execution-manager.md).
 
    > **Note**  
    > If the installation fails with a VT-related message, check the CPU feature and BIOS settings. If the installation fails with an NX-related message, enable NX (or PAE and DEP) -related item in the BIOS. In addition, make sure that the operating system supports the NX feature (for more information, see [MSDN](http://msdn.microsoft.com/en-us/library/windows/hardware/ff542275%28v=vs.85%29.aspx)).
@@ -88,9 +85,10 @@ To run the emulator with the HW virtualization support in the Emulator Manager, 
 
 You can also run the emulator with the HW virtualization support from the command line, by including the `-enable-kvm` (in Ubuntu) or `-enable-hax` (in Windows® and macOS) option in the start-up command.
 
+<a name="supported"></a>
 ## Supported Features
 
-The emulator provides various virtual HW, media formats, codecs, and [OpenGL® ES acceleration](#opengl). For better performance of the OpenGL® ES support, the Tizen emulator exploits the latest feature of the graphic driver, so always [install the latest vendor-provided graphic driver](../download/prerequisites.md#emulator). The emulator, however, has some limitations and [differences compared to physical target devices](#target).
+The emulator provides various virtual HW, media formats, codecs, and [OpenGL® ES acceleration](#opengl). For better performance of the OpenGL® ES support, the Tizen emulator exploits the latest feature of the graphic driver, so always [install the latest vendor-provided graphic driver](../setup/prerequisites.md#emulator). The emulator, however, has some limitations and [differences compared to physical target devices](#target).
 
 The following table lists the basic features supported in the emulator.
 
@@ -122,6 +120,7 @@ For the emulator to support OpenGL® ES acceleration, you need:
 > **Note**  
 > The emulator supports only ES 1.1, ES 2.0, and EGL™ 1.4 versions.
 
+<a name="target"></a>
 ### Differences Between the Emulator and Target
 
 The following tables describe the differences between a real target device and the emulator. For more information, see the detailed differences in:
@@ -156,6 +155,7 @@ The following tables describe the differences between a real target device and t
 |                         | GPU performance               | Real GPU                                 | Desktop GPU (relatively slow)            |
 |                         | I/O performance               | Real HW I/O                              | Emulated I/O (relatively slow)           |
 
+<a name="input"></a>
 #### Input System
 
 **Table: Input differences**
@@ -165,6 +165,7 @@ The following tables describe the differences between a real target device and t
 | Touch screen panel             | Real device and driver | Virtual (VirtIO) device and driver |
 | Host keyboard and hardware key | Real device and driver | Virtual (VirtIO) device and driver |
 
+<a name="graphics"></a>
 #### Graphics and Display
 
 **Table: Graphics and display differences**
@@ -174,6 +175,7 @@ The following tables describe the differences between a real target device and t
 | Framebuffer device | Display controller in the processor | Virtual VGA card                     |
 | Backlight control  | LDI (LCD Driver IC) command         | Additional virtual device and driver |
 
+<a name="sensor"></a>
 #### Virtual Sensor (Emulator Control Panel)
 
 **Table: Virtual sensor differences**
@@ -197,6 +199,7 @@ The following tables describe the differences between a real target device and t
 |          | Map                | Not supported.                           | Receives the virtual longitude, latitude, altitude, and horizontal accuracy values through the Emulator Control Panel map. |
 |          | Auto               | Receives the actual GPS coordinates of the device. | Not supported.                           |
 
+<a name="telephony"></a>
 #### Telephony
 
 **Table: Telephony differences**
@@ -206,6 +209,7 @@ The following tables describe the differences between a real target device and t
 | Telephony | Call            | Calls and video calls are supported. | Call waiting, outgoing call barring, and voice calls with the Emulator Control Panel are supported.Video calls, call forwarding, incoming call barring, and emulator-to-emulator calls are not supported. |
 | Telephony | SMS             | SMS messaging is supported.          | SMS messaging with the Emulator Control Panel is supported.Sending emulator-to-emulator SMS messages is not supported. |
 
+<a name="power"></a>
 #### Power Management
 
 **Table: Power management differences**
@@ -215,6 +219,7 @@ The following tables describe the differences between a real target device and t
 | Display on/off | Display controller in the processor | Internal emulation                       |
 | Power off      | Power management in the processor   | ACPI (Advanced Configuration and Power Interface) |
 
+<a name="codec"></a>
 #### Supported Media Formats and Codecs
 
 **Table: Media format and codec differences**
@@ -222,3 +227,7 @@ The following tables describe the differences between a real target device and t
 | Category |      | Physical target | Emulator      |
 | -------- | ---- | --------------- | ------------- |
 | Decoder  | FLAC | Supported       | Not supported |
+
+## Related information
+* Dependencies
+  - Tizen Studio 1.0 and Higher

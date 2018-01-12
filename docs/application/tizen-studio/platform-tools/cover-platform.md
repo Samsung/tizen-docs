@@ -1,9 +1,5 @@
 # Developing Tizen Platform with the Tizen Studio
 
-## Dependencies
-- Tizen Studio 1.0.1 and Higher
-- Ubuntu Only
-
 The Tizen Studio provides a platform development environment that helps you develop preloaded platform applications, platform libraries, and device drivers in Ubuntu.
 
 > **Note**  
@@ -15,7 +11,7 @@ By using the Tizen Studio for Ubuntu, you can, for example:
 - Debug the platform modules with the correct rootstrap.
 - Update the rootstrap automatically.
 
-To use the Tizen Studio, download it from [https://developer.tizen.org/development/tizen-studio/download](https://developer.tizen.org/development/tizen-studio/download). For more information on the development tools, see [Platform Development Tools](platform-tools.md).
+To use the Tizen Studio, download it from [https://developer.tizen.org/development/tizen-studio/download](../setup/download.md). For more information on the development tools, see [Platform Development Tools](platform-tools.md).
 
 ## Prerequisites for Using the Platform IDE
 
@@ -58,7 +54,10 @@ After building your Tizen platform project, you can run and debug the platform. 
 
 1. Select a project in the **Project Explorer** view.
 2. Select a rootstrap in the **Rootstrap View**.
-3. In the **Project Explorer** view, right-click the project and select **Build Project**.A dialog box appears and monitors the progress of building and packaging the project.After packaging is completed, the package file is located in the `$<PROJECT_NAME>\Debug` or `$<PROJECT_NAME>\Release` folder within the project folder.
+3. In the **Project Explorer** view, right-click the project and select **Build Project**.  
+
+ A dialog box appears and monitors the progress of building and packaging the project.  
+ After packaging is completed, the package file is located in the `$<PROJECT_NAME>\Debug` or `$<PROJECT_NAME>\Release` folder within the project folder.
 
 If an error message appears in the **Console** view due to dependency problems, open the Package Manager and install the needed packages for building the project. After the installation is completed, rebuild the platform project to confirm that the dependency problems have been solved.
 
@@ -122,14 +121,20 @@ To debug a coredump archive:
 2. In the **Device Manager**, select the device for which a coredump archive to debug exists (for example, `/opt/usr/share/crash/`).
 3. In the **Project Explorer** view, right-click the project and select **Debug As > Tizen Platform Project - Coredump**.
 4. In the **Launch Configuration** dialog, select a core dumped file (`*.coredump`) and CS file (`*.cs`) by clicking **Remote Browse** or **Local Browse**.  
-   
+
    ![Selecting files](./media/platform_codedump_files.png)  
-   
+
    If the coredump information is displayed, click **Next**, select a rootstrap, and click **Next** again. (It takes about 1~5 minutes when installing the required libraries.)
-   
+
    ![Selecting rootstrap](./media/platform_rootstrap.png)
-5. Manage the packages:
-   1. Check whether the packages are installed successfully.
-   2. If there is package problem, click **Package Manager** and install packages.  
+5. Manage the packages:  
+   a. Check whether the packages are installed successfully.  
+   b. If there is package problem, click **Package Manager** and install packages.  
       ![Checking packages](./media/platform_packages.png)
-   3. Click **Finish**, if it is enabled.
+
+   c. Click **Finish**, if it is enabled.
+
+## Related information
+* Dependencies
+   - Tizen Studio 1.0.1 and Higher
+   - Ubuntu Only

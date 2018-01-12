@@ -1,11 +1,7 @@
 # Managing a Project
-## Dependencies
-
-- Ubuntu Only
 
 You can creating an RT project in the Tizen Studio, create application resources within the project, and build the project.
 
-<a name="create-project"></a>
 ## Creating a Project
 
 The Tizen RT Project Wizard is a Tizen Studio for RT tool that is used to create an RT project.
@@ -46,10 +42,9 @@ To create a project from a remote Git repository:
    ![Opening the wizard](media/rt_remote_wizard.png)
 
 2. In the New TizenRT Project Wizard, you can select the Git import method:  
-   - If you want to import from a new repository, [clone its URI](#clone).
-   - If you already cloned the Git repository you want, use an [existing local repository](#repository).
+   - If you want to import from a new repository, [clone its URI](#using-the-clone-uri-option).
+   - If you already cloned the Git repository you want, use an [existing local repository](#using-the-existing-local-repository-option).
 
-<a name="clone"></a>
 #### Using the Clone URI Option
 
 To import a project from a new repository:
@@ -79,7 +74,7 @@ The new project is shown in the **Project Explorer** view.
 **Figure: New project from a remote Git repository**  
 ![New project from a remote Git repository](media/rt_project_remote.png)
 
-#### Using the Existing Local Repository Option <a name="repository"></a>
+#### Using the Existing Local Repository Option
 
 To import a project from an existing repository:
 
@@ -106,7 +101,6 @@ The new project is shown in the **Project Explorer** view.
 **Figure: New project from a remote Git repository**  
 ![New project from a Git repository](media/rt_project_local.png)
 
-<a name="create-application"></a>
 ## Creating Your Application
 
 The Tizen RT App Wizard is a Tizen Studio for RT tool that is used to create RT application resources.
@@ -178,7 +172,6 @@ The **Outline** view displays the structure of the code currently open in the Co
 **Figure: Outline view**  
 ![Outline view](media/rt_outline_view.png)
 
-<a name="build-project"></a>
 ## Building the Project
 
 You must build your project before flashing or debugging it.
@@ -280,3 +273,7 @@ To modify the kernel configuration:
 
 2. Change the settings, **Save**, and **Exit**.  
   ![Modify kernel configuration](media/rt_kernel_modify.png)
+
+## Related information
+* Dependencies  
+  - Ubuntu Only

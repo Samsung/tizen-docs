@@ -47,7 +47,7 @@
     -   Playing sound is not supported on Windows® or macOS.
     -   The Component Designer crashes if an alias is selected as an added item's source group.
 -   Emulator
-    -   To use the Tizen emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen emulator from [Prerequisites for the Tizen Studio](https://developer.tizen.org/development/tizen-studio/download/installing-tizen-studio/prerequisites#emulator).
+    -   To use the Tizen emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen emulator from [Prerequisites for the Tizen Studio](../setup/prerequisites.md#emulator).
         -   If the host machine is using NVIDIA® Optimus® technology on either Ubuntu or Windows®, you must set the Tizen emulator to run with your NVIDIA graphics card. For Ubuntu, check the bumblebee project (<https://wiki.ubuntu.com/Bumblebee>). For Windows®, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the NVIDIA control panel.
         -   On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
     -   On Ubuntu 14.04, a shortcut menu can sometimes appear transparent.

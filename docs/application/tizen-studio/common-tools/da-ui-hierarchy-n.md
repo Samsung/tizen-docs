@@ -1,8 +1,4 @@
 # Performing UI Hierarchy Analysis
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
-
 
 The **UI Hierarchy** tab of the Dynamic Analyzer shows the information about the EFL UI objects (Evas, Elementary, and Edje). You can see the hierarchy relationship of all UI objects and detailed information about each UI object.
 
@@ -18,6 +14,7 @@ The tab consists of the following views:
 
 ![UI hierarchy analysis](./media/da_ui_analysis.png)
 
+<a name="hierarchy"></a>
 ## Hierarchy Tree
 
 The Hierarchy Tree view provides the following features:
@@ -53,6 +50,7 @@ The Hierarchy Tree view provides the following features:
 
   ![Hierarchy tree](./media/da_ui_hierarchy_tree.png)
 
+<a name="overview"></a>
 ## Overview
 
 The Overview area represents the entire tree in the map style. The Hierarchy Tree view displays an enlarged tree, which indicates a particular part of the whole tree in the Overview area.
@@ -63,6 +61,7 @@ Through the Overview area, you can move around the hierarchy tree. Select and mo
 
 ![Overview](./media/da_ui_overview.png)
 
+<a name="UI_object"></a>
 ## UI Object
 
 When you select a node in the Hierarchy Tree view, basic information about the selected UI object appears in a small balloon (UI Object view) above the node.
@@ -89,6 +88,7 @@ In the view, you can see:
 
 - The memory address of the UI object.
 
+<a name="properties"></a>
 ## Properties
 
 The Properties table shows a list of the properties for the selected UI object from the Hierarchy Tree view. To find an individual property, expand a category name by clicking the arrow on its left.
@@ -101,6 +101,7 @@ If the UI object is of the Elementary or Edje type, the view shows those categor
 
 ![Properties table](./media/da_ui_properties.png)
 
+<a name="layout"></a>
 ## Layout
 
 The Layout view shows a block representation of the application. When you select a node in the Hierarchy Tree view, the corresponding image is displayed and highlighted.
@@ -108,3 +109,7 @@ The Layout view shows a block representation of the application. When you select
 **Figure: Layout view**
 
 ![Layout view](./media/da_ui_layout.png)
+
+## Related information
+* Dependencies
+  - Tizen Studio 1.0 and Higher

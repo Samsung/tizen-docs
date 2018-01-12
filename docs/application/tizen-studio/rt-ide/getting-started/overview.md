@@ -1,9 +1,5 @@
 # Getting Started
 
-## Dependencies
-
-- Ubuntu Only
-
 The Tizen Studio for RT allows you to easily develop and test your RT application:
 
 1. [Install the Tizen Studio for RT](rt-install.md) on your computer.
@@ -58,7 +54,7 @@ Check the following prerequisites before installing the Tizen Studio for RT:
   <td> 6 GB or more</td>
 </tr>
 </table>
- 
+
 
 - RT platform requirements
 
@@ -72,3 +68,8 @@ Check the following prerequisites before installing the Tizen Studio for RT:
   You must install the webkitgtk package. At the terminal prompt, enter the following command:
 
   `$ sudo apt-get install libwebkitgtk-1.0-0`
+
+
+## Related Information
+* Dependencies  
+  - Ubuntu Only

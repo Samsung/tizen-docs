@@ -1,9 +1,5 @@
 # Command Line Interface Commands
 
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
-
 The Command Line Interface (CLI) provides functionalities for developing Tizen applications without the Tizen Studio. It includes the entire development process from creating the project to running the application.
 
 The CLI is located in the `$<TIZEN_STUDIO>/tools/ide/bin/` directory. For developing an application using the CLI, add the CLI directory path to the `$PATH` environment variable using the following command:
@@ -708,3 +704,7 @@ tizen version
   > tizen version
   Tizen CLI 1.3.5
   ```
+
+## Related Information
+* Dependencies  
+  - Tizen Studio 1.0 and Higher

@@ -1,7 +1,4 @@
 # Connecting Devices over Smart Development Bridge
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
 
 The Smart Development Bridge (SDB) is a command line tool that communicates with a connected target device (it can be an emulator instance or a real Tizen device).
 
@@ -20,6 +17,7 @@ You can find the SDB tools in the `$<TIZEN_STUDIO>/tools/` folder.
 
 The SDB can communicate with a target over a USB or Wi-Fi connection. To use the SDB over USB, open the system settings of the target device, and enable the **USB debugging** mode in **Settings > More system settings > Developer options** (the location can vary depending on the device).
 
+<a name="command"></a>
 ## Syntax and Commands
 
 Run the SDB with a shell using the following command:
@@ -184,3 +182,7 @@ For example, to view all log messages of the error and fatal priority in additio
 ```
 > sdb dlog MyApp:D *:E
 ```
+
+## Related information
+* Dependencies
+  - Tizen Studio 1.0 and Higher

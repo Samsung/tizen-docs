@@ -1,7 +1,4 @@
 # Creating a SmartThings&trade; Project
-## Dependencies
-- Ubuntu Only
-
 
 You can create a new SmartThings&trade; project from remote Git repositories as well as local templates. To create a new project:
 
@@ -13,4 +10,8 @@ You can create a new SmartThings&trade; project from remote Git repositories as 
 
   ![Creating a project from a Git repository](./media/rt_smartthings_git.png)
 
-For more detailed information on project creation, see [Creating a Project](rt-create-project.md#create-project).
+For more detailed information on project creation, see [Creating a Project](rt-create-project.md#creating-a-project).
+
+## Related information
+* Dependencies
+  - Ubuntu Only

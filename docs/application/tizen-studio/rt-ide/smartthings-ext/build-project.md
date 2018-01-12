@@ -1,9 +1,5 @@
 # Building the SmartThings&trade; Project
 
-## Dependencies
-- Ubuntu Only
-
-
 You must build your project before flashing or debugging it.
 
 You can build a Tizen RT project in 2 ways: using a batch build or build project command.
@@ -31,14 +27,12 @@ You can check the build logs in the **Console** view.
 **Figure: Build logs**   
 ![Build logs](media/rt_build_logs_smartthings.png)
 
-
-<a name="build_project"></a>
 ## Using Build Project
 
 To build your project using the build project command:
 
 1. In the **Project Explorer** view, select the project.
-2. In the Tizen Studio for RT toolbar, click the arrow next to the **Build TizenRT Project** icon (![Build icon](media/rt_icon_build.png)) and select **Select Board**.a  
+2. In the Tizen Studio for RT toolbar, click the arrow next to the **Build TizenRT Project** icon (![Build icon](media/rt_icon_build.png)) and select **Select Board**.    
   ![Build drop-down icon](media/rt_build_dropdown_menu.png)
 
 3. In the Select Board and PreDefine Option window, select the board (`artik053`) and build option (`st_things`) for building your project, and click **OK**.  
@@ -51,3 +45,7 @@ You can check the build logs in the **Console** view.
 
 **Figure: Build logs**  
 ![Build logs](media/rt_build_logs_smartthings.png)
+
+## Related Information
+* Dependencies
+  - Ubuntu Only

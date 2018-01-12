@@ -1,8 +1,4 @@
 # Keyboard Shortcuts
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
-
 
 The following tables introduce the keyboard shortcuts available for the various tools and actions.
 
@@ -165,6 +161,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 | Launch virtual machine | **Enter**     | **Enter**     | **Enter**       |
 | Select virtual machine | **Arrow Key** | **Arrow Key** | **Arrow Key**   |
 
+<a name="emulator"></a>
 ## Emulator
 
 **Table: Emulator shortcuts**
@@ -189,6 +186,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 | Volume +      | **Ctrl + Shift + ]**     | **Ctrl + Shift + ]**     | **Command + Shift + ]**     |
 | Volume -      | **Ctrl + Shift + [**     | **Ctrl + Shift + [**     | **Command + Shift + [**     |
 
+<a name="ecp"></a>
 ## Emulator Control Panel (ECP)
 
 **Table: ECP shortcuts**
@@ -275,3 +273,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 | Go to the given line                     | **Ctrl + L**                | **Ctrl + L**                | **Command + L**                |
 | Go to the top line                       | **Ctrl + Home**             | **Ctrl + Home**             | **Command + Home**             |
 | Go to the bottom line                    | **Ctrl + End**              | **Ctrl + End**              | **Command + End**              |
+
+## Related information
+* Dependencies
+  - Tizen Studio 1.0 and Higher

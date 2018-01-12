@@ -1,7 +1,4 @@
 # Handling Common Dynamic Analyzer Tasks
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
 
 The common tasks in the Dynamic Analyzer show how you can launch the Dynamic Analyzer and understand its user interface. Once you have installed your application on the emulator or Tizen device, you are ready to run the Dynamic Analyzer.
 
@@ -233,3 +230,7 @@ The Warning table contains the following columns:
 **Figure: Warning table**
 
 ![Warning table](./media/da_common_warning_table.png)
+
+## Related information
+* Dependencies
+  - Tizen Studio 1.0 and Higher
