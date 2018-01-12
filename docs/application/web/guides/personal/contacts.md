@@ -1,10 +1,5 @@
 # Contacts
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 4.0 and Higher for Wearable
-
 You can manage the contacts and persons listed in your address books. A `Contact` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/contact.html#Contact) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/contact.html#Contact) applications) is always associated with a specific address book. A `Person` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/contact.html#Person) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/contact.html#Person) applications) is an aggregation of 1 or more contacts associated with the same person.
 
 This feature is supported in mobile and wearable applications only.
@@ -13,34 +8,34 @@ The main features of the Contact API include:
 
 - Address book management
 
-  You can [create a new address book](./personal/contacts-w.md#Adding_Addressbook), or [access the device address books](./personal/contacts-w.md#Getting_Address_Books) to access existing contacts.
+  You can [create a new address book](#creating-an-address-book), or [access the device address books](#getting-address-books) to access existing contacts.
 
 - Contact management
 
-  You can [add](./personal/contacts-w.md#Adding_Contact) and [manage](./personal/contacts-w.md#Managing_Contact) a single contact at a time using synchronous operations.
+  You can [add](#adding-a-contact) and [manage](#managing-a-contact) a single contact at a time using synchronous operations.
 
-  You can also keep the address book in your application synchronized with an external contact manager by [receiving notifications](./personal/contacts-w.md#Receiving_Contact) in your application when contact information changes. Every change made to the address book triggers an event for which you can define a notification.
+  You can also keep the address book in your application synchronized with an external contact manager by [receiving notifications](#receiving-notifications-on-contact-changes) in your application when contact information changes. Every change made to the address book triggers an event for which you can define a notification.
 
 - Group and multiple contact management
 
-  You can [manage contact groups](./personal/contacts-w.md#Managing_Groups), including getting, updating, and deleting them, using the applicable methods of the `AddressBook` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/contact.html#AddressBook) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/contact.html#AddressBook) applications).
+  You can [manage contact groups](#managing-contact-groups), including getting, updating, and deleting them, using the applicable methods of the `AddressBook` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/contact.html#AddressBook) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/contact.html#AddressBook) applications).
 
-  You can also [create](./personal/contacts-w.md#Adding_Multiple_Contact) and [manage](./personal/contacts-w.md#Managing_Multiple_Contact) multiple contacts simultaneously using the batch mode. The batch mode provides faster, optimized processing of multiple contacts.
+  You can also [create](#adding-multiple-contacts-in-the-batch-mode) and [manage](#managing-multiple-contacts-in-the-batch-mode) multiple contacts simultaneously using the batch mode. The batch mode provides faster, optimized processing of multiple contacts.
 
-> **Note**
+> **Note**  
 > The batch mode does not provide progress information about operations. To ensure that you can view the progress, break the batch operation down into multiple smaller batch operations. For example, break down a batch of 100 update requests into 10 batch operations that update 10 records at a time. Additionally, breaking down a batch operation helps you avoid blocking other database operations, such as add or remove.
 
   If you want to receive notifications for batch mode operations, note that each requested batch operation generates only a single event.
 
 - Person management
 
-  You can [manage persons](./personal/contacts-w.md#Managing_Persons) using the applicable methods of the `ContactManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/contact.html#ContactManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/contact.html#ContactManager) applications).
+  You can [manage persons](#managing-persons) using the applicable methods of the `ContactManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/contact.html#ContactManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/contact.html#ContactManager) applications).
 
   Persons are automatically added or modified when contacts are added to or unlinked from existing persons. You cannot add persons directly.
 
 - vCard format conversions
 
-  You can convert the contacts to [vCard format](https://tools.ietf.org/html/rfc2426) or back to [import](./personal/contacts-w.md#Importing_Contact) and [export](./personal/contacts-w.md#Exporting_Contact) contacts.
+  You can convert the contacts to [vCard format](https://tools.ietf.org/html/rfc2426) or back to [import](#importing-contacts) and [export](#exporting-contacts) contacts.
 
   The vCard (RFC 2426) file format (`.vcf` or `.vcard`) is a standard for electronic business cards, which contain contact information, such as name, address, phone numbers, email addresses, URLs, logos, photographs, and audio clips.
 
@@ -69,7 +64,7 @@ To enable your application to use the contact functionality:
 
 ## Creating an Address Book
 
-> **Note**
+> **Note**  
 > The created address book is associated with a specified account. Therefore, you must retrieve the account before creating a new address book.
 
 To create a new address book:
@@ -197,7 +192,7 @@ To manage a contact in your address book:
       }
       ```
 
-      When searching for contacts, you can create [attribute filters](./data/data-filter-w.md#filter), [attribute range filters](./data/data-filter-w.md#range), and [composite filters](./data/data-filter-w.md#composite) based on [specific filter attributes](./data/data-filter-w.md#contact). You can also [sort the search results](./data/data-filter-w.md#use_modes). In this example, contacts whose first name contains "Chris" are retrieved and sorted in the ascending order based on their last name. The filter includes the standard English characters in the uppercase and lowercase. The entire list consists of ASCII characters from 32 to 126, and from 160 to 255.
+      When searching for contacts, you can create [attribute filters](../data/data-filter.md#creating-attribute-filters), [attribute range filters](../data/data-filter.md#creating-attribute-range-filters), and [composite filters](../data/data-filter.md#creating-composite-filters) based on [specific filter attributes](../data/data-filter.md#contact-filter-attributes). You can also [sort the search results](../data/data-filter.md#using-sorting-modes). In this example, contacts whose first name contains "Chris" are retrieved and sorted in the ascending order based on their last name. The filter includes the standard English characters in the uppercase and lowercase. The entire list consists of ASCII characters from 32 to 126, and from 160 to 255.
 
       The contacts that match the filter are passed as an array to the registered success event handler in the selected sorting order.
 
@@ -264,7 +259,7 @@ To receive notifications when contact information changes:
    watcherId = addressbook.addChangeListener(watcher);
    ```
 
-> **Note**
+> **Note**  
 > The listener object that is the first argument of the `addChangeListener()` method must have at least 1 event handler defined. If no handlers are defined, a `TypeMismatchError` error occurs.
 
 4. To stop the notifications, use the `removeChangeListener()` method of the `Addressbook` interface:
@@ -305,7 +300,7 @@ To add multiple contacts to an address book in the batch mode:
    addressbook.addBatch([c1, c2]);
    ```
 
-> **Note**
+> **Note**  
 > The `addBatch()` method is asynchronous. Make sure you provide success and error callbacks with it.
 
 ## Managing Multiple Contacts in the Batch Mode
@@ -331,7 +326,7 @@ To manage multiple contacts in your address books in the batch mode:
    }
    ```
 
-   When searching for contacts, you can create [attribute filters](./data/data-filter-w.md#filter), [attribute range filters](./data/data-filter-w.md#range), and [composite filters](./data/data-filter-w.md#composite) based on [specific filter attributes](./data/data-filter-w.md#contact). You can also [sort the search results](./data/data-filter-w.md#use_modes). In this example, contacts whose first name contains "Chris" are retrieved and sorted in the ascending order based on their last name.
+   When searching for contacts, you can you can create [attribute filters](../data/data-filter.md#creating-attribute-filters), [attribute range filters](../data/data-filter.md#creating-attribute-range-filters), and [composite filters](../data/data-filter.md#creating-composite-filters) based on [specific filter attributes](../data/data-filter.md#contact-filter-attributes).. You can also [sort the search results](../data/data-filter.md#using-sorting-modes). In this example, contacts whose first name contains "Chris" are retrieved and sorted in the ascending order based on their last name.
 
 3. To update contacts:      
 
@@ -362,7 +357,7 @@ To manage multiple contacts in your address books in the batch mode:
    }
    ```
 
-​> **Note*
+​> **Note**    
 > The `updateBatch()` and `removeBatch()` methods are asynchronous. Make sure you provide success and error callbacks with them.
 
 ## Managing Contact Groups
@@ -443,7 +438,7 @@ To manage persons in your contact database:
      tizen.contact.find(personsFoundCB, personsErrorCB, null, sortMode);
      ```
 
-     When searching for persons, you can create [attribute filters](./data/data-filter-w.md#filter), [attribute range filters](./data/data-filter-w.md#range), and [composite filters](./data/data-filter-w.md#composite) based on [specific filter attributes](./data/data-filter-w.md#contact). You can also [sort the search results](./data/data-filter-w.md#use_modes). In this example, all contacts are retrieved (since no filter is defined), and the result is sorted in the ascending order based on the most frequently used persons.
+     When searching for persons, you can create [attribute filters](../data/data-filter.md#creating-attribute-filters), [attribute range filters](../data/data-filter.md#creating-attribute-range-filters), and [composite filters](../data/data-filter.md#creating-composite-filters) based on [specific filter attributes](../data/data-filter.md#contact-filter-attributes).  You can also [sort the search results](../data/data-filter.md#using-sorting-modes). In this example, all contacts are retrieved (since no filter is defined), and the result is sorted in the ascending order based on the most frequently used persons.
 
   2. Update or delete the found persons in the `personsFoundCB()` event handler. In this example, the favorite flag of the first person is changed and the contact is updated using the `update()` method. The second person is deleted using the `remove()` method.
 
@@ -600,3 +595,8 @@ To create engaging applications with various contacts features, export contacts 
        var vcard = contacts[0].convertToString('VCARD_30');
    }
    ```
+
+## Related Information
+* Dependencies   
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 4.0 and Higher for Wearable

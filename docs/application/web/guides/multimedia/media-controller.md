@@ -1,10 +1,5 @@
 # Media Controller
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 3.0 and Higher for Wearable
-
 You can have your client application communicate with a media server.
 
 This feature is supported in mobile and wearable applications only.
@@ -18,21 +13,21 @@ The main features of the Media Controller API include:
 
 - Setting up the client and server pair      
 
-  You can [set up the client and server pair](./media/media-controller-w.md#create) by creating a new server using the `createServer()` method. On the client side, you can get a client and find active servers using the `getClient()` and `findServers()` methods.
+  You can [set up the client and server pair](#getting-the-client-and-server) by creating a new server using the `createServer()` method. On the client side, you can get a client and find active servers using the `getClient()` and `findServers()` methods.
 
 - Managing requests      
 
-  You can [send a request](./media/media-controller-w.md#request) from the client to the server to modify various playback attributes. In the server, you can set up a listener to react to the client request and perform the requested task.
+  You can [send a request](#managing-requests) from the client to the server to modify various playback attributes. In the server, you can set up a listener to react to the client request and perform the requested task.
 
   - Receiving notifications from the server
 
-  You can [receive notifications on changes made by the server](./media/media-controller-w.md#noti) by registering a listener with the `addPlaybackInfoChangeListener()` method.
+  You can [receive notifications on changes made by the server](#receiving-notifications-from-the-server) by registering a listener with the `addPlaybackInfoChangeListener()` method.
 
   - Sending custom commands
 
-  You can [use the client to send commands](./media/media-controller-w.md#send_command) with the `sendCommand()` method.
+  You can [use the client to send commands](#send_custom_commands) with the `sendCommand()` method.
 
-  To [receive and handle incoming commands](./media/media-controller-w.md#receive_command) in the server, use the `addCommandListener()` method.
+  To [receive and handle incoming commands](#receive_custom_commands) in the server, use the `addCommandListener()` method.
 
 ## Prerequisites
 
@@ -181,6 +176,7 @@ To manage the media controller features in your application, you must learn to r
 
 To manage the media controller features in your application, you must learn to send custom commands:
 
+<a name="send_custom_commands"></a>
 1. On the client side:
 
    1. Define your custom command:
@@ -209,6 +205,7 @@ To manage the media controller features in your application, you must learn to s
       mcServerInfo.sendCommand('myPlaylistFilter', sendCommandSuccessCallback, sendCommandErrorCallback);
       ```
 
+<a name="receive_custom_commands"></a>
 2. On the server side:
 
    1. Create the `MediaControllerReceiveCommandCallback` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/mediacontroller.html#MediaControllerReceiveCommandCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/mediacontroller.html#MediaControllerReceiveCommandCallback) applications) to define a listener for receiving custom commands from a client:
@@ -230,3 +227,8 @@ To manage the media controller features in your application, you must learn to s
       ```
 
       The `watcherId` variable stores the value, which can be used in the future to remove the listener from the server using the `removeCommandListener()` method.
+
+## Related Information
+* Dependencies      
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

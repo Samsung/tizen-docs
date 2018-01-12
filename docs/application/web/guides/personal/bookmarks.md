@@ -1,26 +1,22 @@
 # Bookmarks
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 You can manage the Tizen Web browser bookmarks by retrieving the current bookmark list. You can create or delete both bookmark folders and items.
 
 This feature is supported in mobile applications only.
 
 The main features of the Bookmark API include:
 
-- Creating bookmarks 
+- Creating bookmarks
 
-  You can [create bookmark folders and items](./personal/bookmarks-w.md#Creating_Bookmark) using the [BookmarkManager](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bookmark.html#BookmarkManager) interface.
+  You can [create bookmark folders and items](#creating-bookmark-folders-and-items) using the [BookmarkManager](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bookmark.html#BookmarkManager) interface.
 
-- Deleting bookmarks 
+- Deleting bookmarks
 
-  You can [delete bookmark folders and items](./personal/bookmarks-w.md#Deleting_Bookmark) using the `BookmarkManager` interface.
+  You can [delete bookmark folders and items](#deleting-bookmarks) using the `BookmarkManager` interface.
 
-- Retrieving bookmarks 
+- Retrieving bookmarks
 
-  You can [retrieve a list of current bookmarks](./personal/bookmarks-w.md#Retrieving_Bookmark) of the Tizen Web browser using the `BookmarkManager` interface.
+  You can [retrieve a list of current bookmarks](#retrieving-the-bookmark-list) of the Tizen Web browser using the `BookmarkManager` interface.
 
 ## Prerequisites
 
@@ -123,3 +119,7 @@ To create engaging applications with bookmark-related features, you must learn h
   ```
   tizen.bookmark.get(folder1, true);
   ```
+
+## Related Information
+* Dependencies  
+  - Tizen 2.4 and Higher for Mobile

@@ -6,21 +6,21 @@ This feature is supported in mobile and wearable applications only.
 
 The main features of the Sound API include:
 
-- Managing the volume level and sound mode 
+- Managing the volume level and sound mode
 
-  You can [set the volume level of a specific sound type](./media/audio-w.md#manage) with the `setVolume()` method. You can also [retrieve the current sound mode](./media/audio-w.md#manage) with the `getSoundMode()` method.
+  You can [set the volume level of a specific sound type](#managing-volume-and-sound-mode) with the `setVolume()` method. You can also [retrieve the current sound mode](#managing-volume-and-sound-mode) with the `getSoundMode()` method.
 
 - Getting a list of the current sound devices in a specified state
 
-  You can [retrieve a list of the current sound devices which are in a specified state](./media/audio-w.md#manage_sound_device) by using the `getConnectedDeviceList()` or `getActivatedDeviceList()` methods.
+  You can [retrieve a list of the current sound devices which are in a specified state](#managing-sound-devices) by using the `getConnectedDeviceList()` or `getActivatedDeviceList()` methods.
 
 - Monitoring changes in the volume level and sound mode
 
-  You can [monitor changes in the volume level and sound mode](./media/audio-w.md#monitor) by registering appropriate listeners.
+  You can [monitor changes in the volume level and sound mode](#monitoring-volume-and-sound-mode-changes) by registering appropriate listeners.
 
 - Monitoring changes in the sound device state
 
-  You can [monitor changes in the state of sound devices](./media/audio-w.md#monitor_sound_device) with the `addDeviceStateChangeListener()` method.
+  You can [monitor changes in the state of sound devices](#monitoring-the-sound-device-state) with the `addDeviceStateChangeListener()` method.
 
 ## Prerequisites
 
@@ -133,3 +133,8 @@ Learning how to monitor changes in the sound device state makes it easier for yo
    ```
    tizen.sound.removeDeviceStateChangeListener(listenerId);
    ```
+   
+## Related Information
+* Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

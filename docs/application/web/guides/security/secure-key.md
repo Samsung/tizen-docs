@@ -1,12 +1,6 @@
 # Secure Key Management
 
-## Dependencies
-
-- Tizen 3.0 and Higher for Mobile
-- Tizen 3.0 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
-The key manager allows you to [control data access](./security/secure-key-w.md#access) by securely storing in a central secure repository keys, certificates, and sensitive data related to users and their password-protected applications. Additionally, the key manager provides secure cryptographic operations for non-exportable keys without revealing the key values to clients. The central secure repository is protected by a password.
+The key manager allows you to [control data access](#data-access-control) by securely storing in a central secure repository keys, certificates, and sensitive data related to users and their password-protected applications. Additionally, the key manager provides secure cryptographic operations for non-exportable keys without revealing the key values to clients. The central secure repository is protected by a password.
 
 The Key Manager API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
 
@@ -14,15 +8,15 @@ The main features of the Key Manager API include:
 
 - Saving data		
 
-  You can [save data](./security/secure-key-w.md#save) to a repository, and define which applications are allowed to access and remove it.
+  You can [save data](#saving-data) to a repository, and define which applications are allowed to access and remove it.
 
 - Getting data		
 
-  You can [retrieve data](./security/secure-key-w.md#get) from a repository. You can access both data that you have added yourself, and data that another application has added and granted you permissions to access.
+  You can [retrieve data](#getting-data) from a repository. You can access both data that you have added yourself, and data that another application has added and granted you permissions to access.
 
 - Removing data		
 
-  You can [remove data](./security/secure-key-w.md#remove) from a repository. You can remove both data that you have added yourself, and data that another application has added and granted you permissions to remove.
+  You can [remove data](#removing-data) from a repository. You can remove both data that you have added yourself, and data that another application has added and granted you permissions to remove.
 
 ## Data Access Control
 
@@ -156,3 +150,9 @@ To remove data from a repository:
        var app_data = tizen.keymanager.removeData(aliases[0]);
    }
    ```
+
+## Related Information
+* Dependencies   
+  - Tizen 3.0 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable
+  - Tizen 3.0 and Higher for TV

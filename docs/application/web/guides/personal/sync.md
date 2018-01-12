@@ -1,9 +1,5 @@
 # Data Synchronization
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 You can synchronize device data, such as contacts and calendar events, with the OMA DS server using the [OMA](http://openmobilealliance.org/) DS (Data Synchronization) 1.2 protocol.
 
 This feature is supported in mobile applications only.
@@ -12,15 +8,15 @@ The main features of the Data Synchronization API include:
 
 - Creating a sync profile   
 
-  You can [create a profile](./personal/sync-w.md#Creating_Sync_Profile), define the profile name, and provide other profile and operation information using the applicable interfaces.
+  You can [create a profile](#creating-a-sync-profile), define the profile name, and provide other profile and operation information using the applicable interfaces.
 
   Tizen sets a limitation on the number of supported OMA DS profiles on the device. Before creating a new profile, you must check whether sync profile slots are available.
 
 - Retrieving synchronization process information   
 
-  After starting the synchronization process, you can [monitor the progress](./personal/sync-w.md#Starting_Sync) of the operation.
+  After starting the synchronization process, you can [monitor the progress](#starting-and-monitoring-data-synchronization) of the operation.
 
-> **Note**
+> **Note**  
 > As a prerequisite to synchronizing your device data with the server, you must create an OMA DS server account.
 
 ## Prerequisites
@@ -85,3 +81,7 @@ To start and monitor the data synchronization process:
    ```
    tizen.datasync.startSync(profileId, syncCallback);
    ```
+
+## Related Information
+* Dependencies   
+  - Tizen 2.4 and Higher for Mobile

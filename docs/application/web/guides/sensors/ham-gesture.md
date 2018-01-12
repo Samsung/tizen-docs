@@ -1,10 +1,5 @@
 # Gesture Recognition
 
-## Dependencies
-
-- Tizen 4.0 and Higher for Mobile
-- Tizen 4.0 and Higher for Wearable
-
 You can set your application to recognize specific user gestures and react when the user performs them. The various recognizable gestures include, for example, when the user taps, shakes up, or picks up the device, or moves it along an axis.
 
 This feature is supported in mobile and wearable applications only.
@@ -13,11 +8,11 @@ The main gesture recognition features of the Human Activity Monitor API include:
 
 - Checking the gesture support
 
-  You can [check whether a specific gesture type is supported](./sensors/ham-gesture-w.md#is_supported) on a device.
+  You can [check whether a specific gesture type is supported](#checking-the-gesture-support) on a device.
 
 - Receiving notifications
 
-  You can monitor when a defined gesture type is recognized, and [receive a notification about the gesture](./sensors/ham-gesture-w.md#add_listener).
+  You can monitor when a defined gesture type is recognized, and [receive a notification about the gesture](#receiving-notifications-on-recognized-gestures).
 
 ## Checking the Gesture Support
 
@@ -67,3 +62,8 @@ Learning how to register a listener for gesture recognition allows you to receiv
        console.log('Exception: ' + err.name);
    }
    ```
+
+## Related Information
+* Dependencies   
+  - Tizen 4.0 and Higher for Mobile
+  - Tizen 4.0 and Higher for Wearable

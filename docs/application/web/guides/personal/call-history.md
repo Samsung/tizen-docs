@@ -1,9 +1,5 @@
 # Call History
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 You can access information about various telephony services for circuit-switched telephony and voice over IP (VoIP). You can browse the call history of a device, remove call history entries, and monitor changes.
 
 This feature is supported in mobile applications only.
@@ -12,15 +8,15 @@ The main features of the Call History API include:
 
 - Call history tracking   
 
-  You can [search and store data about all incoming and outgoing calls](./personal/call-history-w.md#Searching_Call_History) using the [CallHistory](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/callhistory.html#CallHistory) interface. The retrieved data is displayed as a list using the [CallHistoryEntry](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/callhistory.html#CallHistoryEntry) interface.
+  You can [search and store data about all incoming and outgoing calls](#searching-for-call-history-items) using the [CallHistory](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/callhistory.html#CallHistory) interface. The retrieved data is displayed as a list using the [CallHistoryEntry](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/callhistory.html#CallHistoryEntry) interface.
 
 - Call history item deletion   
 
-  You can manage the call history by [removing unnecessary call history items](./personal/call-history-w.md#Removing_Call_History) using the `CallHistory` interface.
+  You can manage the call history by [removing unnecessary call history items](#removing-call-history-items) using the `CallHistory` interface.
 
 - Change monitoring   
 
-  You can register event listeners to [monitor changes in the call history](./personal/call-history-w.md#Monitoring_Call_History) using the [CallHistoryChangeCallback](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/callhistory.html#CallHistoryChangeCallback) listener interface.
+  You can register event listeners to [monitor changes in the call history](#monitoring-the-call-history) using the [CallHistoryChangeCallback](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/callhistory.html#CallHistoryChangeCallback) listener interface.
 
 ## Prerequisites
 
@@ -57,7 +53,7 @@ Learning how to retrieve call history items using different parameters allows yo
 
 3. Use the `filter` parameter of the `find()` method to define a filter for the query result set. A filter with the `CallHistoryEntry` attributes is used to limit the results of the call history search.
 
-   When searching for call history items, you can create [attribute filters](./data/data-filter-w.md#filter), [attribute range filters](./data/data-filter-w.md#range), and [composite filters](./data/data-filter-w.md#composite) based on [specific filter attributes](./data/data-filter-w.md#call).
+   When searching for call history items, you can create [attribute filters](../data/data-filter.md#creating-attribute-filters), [attribute range filters](../data/data-filter.md#creating-attribute-range-filters), and [composite filters](../data/data-filter.md#creating-composite-filters) based on [specific filter attributes](../data/data-filter.md#call-history-filter-attributes).
 
    You can define various filters:
 
@@ -97,7 +93,7 @@ Learning how to retrieve call history items using different parameters allows yo
      var ifilter = new tizen.CompositeFilter('INTERSECTION', [numberFilter, dataFilter, tfilter]);
      ```
 
-4. Use the `sortMode` parameter to [order the query result set](./data/data-filter-w.md#use_modes). If the parameter is undefined or set to `null`, the results are sorted by default in a descending order.
+4. Use the `sortMode` parameter to [order the query result set](../data/data-filter.md#using-sorting-modes). If the parameter is undefined or set to `null`, the results are sorted by default in a descending order.
 
    In the following code snippet, the found call history items are sorted according to the start time, in descending order:
 
@@ -200,3 +196,7 @@ Learning how to register change listeners allows you to synchronize the view of 
    ```
    tizen.callhistory.removeChangeListener(callHistoryListener);
    ```
+
+## Related Information
+* Dependencies   
+  - Tizen 2.4 and Higher for Mobile

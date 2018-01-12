@@ -1,11 +1,6 @@
 # Human Activity Monitor
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
-You can access and record human activity data from various [sensors](./sensors/ham-w.md#capability) and [recorders](./sensors/ham-w.md#recorder) on the device.
+You can access and record human activity data from various [sensors](#supported-monitors) and [recorders](#supported-recorders-in-wearable-applications) on the device.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -13,23 +8,23 @@ The main features of the Human Activity Monitor API include:
 
 - Retrieving data
 
-  You can [collect monitor data](./sensors/ham-w.md#retrieve).
+  You can [collect monitor data](#retrieving-data).
 
 - Managing data recording
 
-  You can [record human activity data and retrieve the saved data](./sensors/ham-w.md#record).
+  You can [record human activity data and retrieve the saved data](#managing-data-recording).
 
 - Using user-defined intervals
 
-  You can [change intervals for collecting data](./sensors/ham-w.md#interval).
+  You can [change intervals for collecting data](#using-user-defined-intervals).
 
 - Receiving notifications
 
-  You can [detect changes in the monitor data](./sensors/ham-w.md#receive).
+  You can [detect changes in the monitor data](#receiving-notifications-on-pedometer-data-changes).
 
 - Recognizing activity
 
-  You can [recognize activities](./sensors/ham-w.md#activity_recognition), or [determine whether the user is sleeping](./sensors/ham-w.md#sleep_monitor).
+  You can [recognize activities](#recognizing-an-activity), or [determine whether the user is sleeping](#monitoring-sleep).
 
 ## Prerequisites
 
@@ -44,7 +39,8 @@ To use the Human Activity Monitor API (in [mobile](../../../../org.tizen.web.api
 
 Enabling the monitor and retrieving data is a basic Human Activity Monitor (HAM) management skill:
 
-1. Check whether a sensor is supported using the `tizen.systeminfo.getCapability()` method to get the [appropriate capability](./sensors/ham-w.md#ham_capabilities).
+<a name="support"></a>
+1. Check whether a sensor is supported using the `tizen.systeminfo.getCapability()` method to get the [appropriate capability](#table_capabilities).
 
 2. To enable the monitor and start collecting data, use the `start()` method of the `HumanActivityMonitorManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) applications):
 
@@ -141,7 +137,7 @@ The Human Activity Monitor API allows you to record and retrieve saved sensor da
    /* To retrieve data from July 1, 2016 to July 31, 2016 */
    var query = {};
    query['startTime'] = (new Date(2016, 7, 1)).getTime() / 1000;
-   query['endTime'] = (new Date(2016, 7, 31)).getTime() / 1000; 
+   query['endTime'] = (new Date(2016, 7, 31)).getTime() / 1000;
    ```
 
 4. To get the data sliced by an interval, you can use a combination of the `anchorTime` and `interval` options in the `HumanActivityRecorderQuery` interface.  Some human activity recorder types do not allow slicing the data by an interval.
@@ -215,7 +211,7 @@ The Human Activity Monitor API allows the user to select their own intervals for
    tizen.humanactivitymonitor.getHumanActivityData('HRM', onsuccessCB, onerrorCB);
    ```
 
-3. To disable HAM when it is no longer required, use the `stop()` method of the 
+3. To disable HAM when it is no longer required, use the `stop()` method of the
 
    ```
    tizen.humanactivitymonitor.stop('HRM');
@@ -316,8 +312,9 @@ Learning how to detect whether the user is asleep is a basic Human Activity Moni
 
 ## Supported Monitors
 
-The following table introduces the available monitor types and lists the monitor capabilities you can use to [determine whether a specific monitor is supported](./sensors/ham-w.md#support) on a device.
+The following table introduces the available monitor types and lists the monitor capabilities you can use to [determine whether a specific monitor is supported](#support) on a device.
 
+<a name="table_capabilities"></a>
 **Table: Human activity monitors and capabilities**
 
 | Monitor                              | Capability                               | Notes                                    |
@@ -331,10 +328,15 @@ The following table introduces the available monitor types and lists the monitor
 
 ## Supported Recorders in Wearable Applications
 
-The following table introduces the available recorder types and lists the capabilities you can use to [determine whether a specific recorder is supported](./sensors/ham-w.md#support) on a device.
+The following table introduces the available recorder types and lists the capabilities you can use to [determine whether a specific recorder is supported](#support) on a device.
 
 **Table: Human activity recorders and capabilities**
 
 | Recorder | Capability                               | Notes                                    |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | Pressure | `http://tizen.org/feature/sensor.barometer` | Use the `startRecorder()` and `stopRecorder()` methods to record the pressure sensor data for the specific period of time. Use the `readRecorderData()` method to read the recorded pressure sensor data. |
+
+## Related Information
+* Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

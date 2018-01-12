@@ -1,12 +1,6 @@
 TEE Communication
 =================
 
-## Dependencies
-
-- Tizen 4.0 and Higher for Mobile
-- Tizen 4.0 and Higher for Wearable
-- Tizen 4.0 and Higher for TV
-
 You can create secure communications by executing your application in a trusted execution environment (TEE), and communicating with other applications within that environment. To implement TEE communication, you can use the LibTeec API, which is based on the GlobalPlatform® [TEE Client API](https://www.globalplatform.org/specificationsdevice.asp).
 
 You can run applications in 2 environments: a rich environment (like Linux) with client applications (CA) and a secure environment with trusted applications (TA).
@@ -25,7 +19,7 @@ The main features of the LibTeec API include:
 
     You can [pass commands from a client application to a trusted application](#secure_commands), including [using shared memory blocks](#shared_memory).
 
-> **Note** 
+> **Note**  
 > For security reasons, each device vendor usually uses their own TEE solution. If you intend your LibTeec application to be used on a real device, you must test your application on the TEE solution provided by the specific vendor. When developing and installing your trusted application, refer to the documentation provided by the vendor.
 
 
@@ -36,11 +30,11 @@ To enable your application to use the TEE communication functionality:
 
 -   To use the LibTeec API, the application has to request permission by adding the following privilege to the `config.xml` file:
 
-    ``` 
+    ```
     <tizen:privilege name="http://tizen.org/privilege/tee.client"/>
     ```
 
-    > **Note** 
+    > **Note**  
 	> To be able to use this privilege, your application must be signed with a partner-level certificate.
 
     The trusted applications must be placed in a non-secure application install or resource directory before they can be discovered and transferred to the TEE.
@@ -48,16 +42,16 @@ To enable your application to use the TEE communication functionality:
 
 
 <a name="connecting"></a>
-## Connecting Applications 
+## Connecting Applications
 
 To connect a client application to a trusted application, first create a new TEE context with the `getContext()` method, and then open a session with the trusted application with the `openSession()` method of the context, identifying the trusted application by its UUID:
 
-> **Note** 
+> **Note**  
 > A client application can connect only to its own trusted application. Built-in security rules prevent connecting to other trusted applications.
 
 
 <a name="secure_commands"></a>
-## Sending Secure Commands 
+## Sending Secure Commands
 
 After opening a session with a trusted application, a client application can execute methods in the trusted application by sending secure commands to the trusted application.
 
@@ -69,7 +63,7 @@ You can use 3 types of objects in the parameters array:
 -   `TeecTempMemory` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/libteec.html#TeecTempMemory), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/libteec.html#TeecTempMemory), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/libteec.html#TeecTempMemory) applications), which contains a local memory reference.
 -   `TeecRegisteredMemory` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/libteec.html#TeecRegisteredMemory), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/libteec.html#TeecRegisteredMemory), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/libteec.html#TeecRegisteredMemory) applications), which contains a registered shared memory reference.
 
-``` 
+```
 try {
     var gSession;
 
@@ -105,7 +99,7 @@ try {
 
 
 <a name="shared_memory"></a>
-## Using Shared Memory 
+## Using Shared Memory
 
 You can handle a block of data without copying it to and from the trusted environment. For example, the client application can share a block of encrypted data from a data provider with the trusted application, and the trusted application can decrypt it.
 
@@ -113,7 +107,7 @@ To share a memory block between a client application and a trusted application:
 
 1.  Allocate a new memory block as shared memory with the `allocateSharedMemory()` method:
 
-    ``` 
+    ```
     try {
         var gContext = tizen.teec.getContext();
         var gCleanup = false;
@@ -125,7 +119,7 @@ To share a memory block between a client application and a trusted application:
 
 2. Fill the memory block with data from the data provider and create a new shared memory reference based on the memory block:
 
-    ``` 
+    ```
         function cleanup() {
             if (gSession !== null) {
                 gSession.close();
@@ -158,7 +152,7 @@ To share a memory block between a client application and a trusted application:
 
 3. Pass the shared memory reference to the trusted application as a `TeecRegisteredMemory` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/libteec.html#TeecRegisteredMemory), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/libteec.html#TeecRegisteredMemory), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/libteec.html#TeecRegisteredMemory) applications) in the parameter array of the `invokeCommand()` method:
 
-    ``` 
+    ```
                 session.invokeCommand(1, [p1], commandSuccess, commandError);
             }
             gCleanup = true;
@@ -174,3 +168,9 @@ To share a memory block between a client application and a trusted application:
         console.log(err.name + ': ' + err.message);
     }
     ```
+
+## Related Information
+* Dependencies    
+  - Tizen 4.0 and Higher for Mobile
+  - Tizen 4.0 and Higher for Wearable
+  - Tizen 4.0 and Higher for TV

@@ -1,11 +1,5 @@
 # JPEG File EXIF Information
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
 You can access and modify EXIF information in a JPEG file (with the common `.jpg` extension).
 
 The Exif API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
@@ -14,19 +8,19 @@ The main features of the Exif API include:
 
 - Loading EXIF information
 
-  You can [retrieve EXIF information from a JPEG file](./media/jpeg-exif-w.md#load). You can also retrieve the thumbnail image of the file.
+  You can [retrieve EXIF information from a JPEG file](#loading-the-exif-data). You can also retrieve the thumbnail image of the file.
 
 - Adding EXIF information
 
-  You can [save EXIF information to  a JPEG file](./media/jpeg-exif-w.md#add) which currently has no EXIF information.
+  You can [save EXIF information to  a JPEG file](#adding-exif-data) which currently has no EXIF information.
 
 - Updating EXIF information
 
-  You can [modify EXIF information in a JPEG file](./media/jpeg-exif-w.md#update) and save the file.
+  You can [modify EXIF information in a JPEG file](#updating-the-exif-data) and save the file.
 
 - Copying EXIF information
 
-  You can [copy EXIF information from one JPEG file to another](./media/jpeg-exif-w.md#copy).
+  You can [copy EXIF information from one JPEG file to another](#copying-the-exif-data).
 
 ## Loading the EXIF Data
 
@@ -65,7 +59,7 @@ Learning how to retrieve EXIF data from JPEG files is a useful content managemen
    With a valid `exifInfo` object, you can access various `ExifInformation` attributes (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/exif.html#ExifInformation), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/exif.html#ExifInformation), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/exif.html#ExifInformation) applications), such as width, height, orientation, and flash.
 
 3. To retrieve the EXIF thumbnail from the image:
-    
+
    1. Resolve the input JPEG file:
 
       ```
@@ -217,3 +211,9 @@ Learning how to copy EXIF data between JPEG files is a useful content management
        tizen.exif.saveExifInfo(sourceExifInfo, onSaveSuccess, onSaveError);
    }
    ```
+
+## Related Information
+* Dependencies   
+   - Tizen 2.4 and Higher for Mobile
+   - Tizen 2.3.1 and Higher for Wearable
+   - Tizen 3.0 and Higher for TV

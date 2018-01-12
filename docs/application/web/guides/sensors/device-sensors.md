@@ -1,11 +1,6 @@
 # Device Sensors
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
-Tizen provides interfaces and methods to manage sensor data from [various sensors on the device](./sensors/device-sensors-w.md#capability). The main purpose of a sensor is to provide a value for the relevant environment parameter.
+Tizen provides interfaces and methods to manage sensor data from [various sensors on the device](#supported-sensors). The main purpose of a sensor is to provide a value for the relevant environment parameter.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -13,20 +8,21 @@ The main features of the Sensor API include:
 
 - Managing sensors
 
-  You can [enable the sensor, read sensor data, and disable the sensor](./sensors/device-sensors-w.md#manage).
+  You can [enable the sensor, read sensor data, and disable the sensor](#managing-sensors).
 
 - Receiving notifications
 
-  You can [receive notifications on sensor data changes](./sensors/device-sensors-w.md#receive).
+  You can [receive notifications on sensor data changes](#receiving-notifications-on-sensor-data-changes).
 
 - Obtaining sensor hardware information
 
-  You can [retrieve information about the technical limits of the sensor](./sensors/device-sensors-w.md#hw-information).
+  You can [retrieve information about the technical limits of the sensor](#obtaining-sensor-hardware-information).
 
 ## Managing Sensors
 
 Learning how to start, read and stop a sensor is a basic sensor management skill:
 
+<a name="support"></a>
 1. Check that the sensor is supported by the device using the `getCapability()` method of the `SystemInfo` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/systeminfo.html#SystemInfo) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/systeminfo.html#SystemInfo) applications) for the proper [capability](./sensors/device-sensors-w.md#capability) related to the sensor:
 
    ```
@@ -175,7 +171,7 @@ Learning how to retrieve information about the sensor hardware enables your appl
 
 ## Supported Sensors
 
-The following table lists the sensor capabilities you can use to [determine whether a specific sensor is supported](./sensors/device-sensors-w.md#support) on a device.
+The following table lists the sensor capabilities you can use to [determine whether a specific sensor is supported](#support) on a device.
 
 **Table: Sensors and capabilities**
 
@@ -197,3 +193,8 @@ The following table lists the sensor capabilities you can use to [determine whet
 | Pressure sensor                          | `http://tizen.org/feature/sensor.barometer` |
 | Proximity sensor                         | `http://tizen.org/feature/sensor.proximity` |
 | Ultraviolet sensor                       | `http://tizen.org/feature/sensor.ultraviolet` |
+
+## Related Information
+* Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

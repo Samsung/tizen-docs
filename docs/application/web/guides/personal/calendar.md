@@ -1,10 +1,5 @@
 # Calendar
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 4.0 and Higher for Wearable
-
 You can manage your schedule and tasks in calendars. A calendar is a collection of events or tasks, depending upon the calendar type. Each event or task has a series of attributes, such as purpose, starting time, and duration.
 
 This feature is supported in mobile and wearable applications only.
@@ -13,26 +8,26 @@ The main features of the Calendar API include:
 
 - Calendar management   
 
-  You can [create a new calendar](./personal/calendar-w.md#Creating_Calendar) using the `addCalendar()` method of the `CalendarManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarManager) applications) (you also need the Account API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/account.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/account.html) applications)).
+  You can [create a new calendar](#creating-a-calendar) using the `addCalendar()` method of the `CalendarManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarManager) applications) (you also need the Account API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/account.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/account.html) applications)).
 
 - Calendar item management   
 
-  You can manage calendar items (add a new [event](./personal/calendar-w.md#Adding_Events) or [task](./personal/calendar-w.md#Adding_Tasks) to a calendar, or manage a single calendar [event](./personal/calendar-w.md#Managing_Event) or [task](./personal/calendar-w.md#Managing_Task)) by using the applicable methods of the `Calendar` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#Calendar) applications). You can also delete or [update a single instance of a recurring event](./personal/calendar-w.md#Updating_Event).
+  You can manage calendar items (add a new [event](#adding-events-to-a-calendar) or [task](#adding-tasks-to-a-calendar) to a calendar, or manage a single calendar [event](#managing-a-single-event) or [task](#managing-a-single-task)) by using the applicable methods of the `Calendar` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#Calendar) applications). You can also delete or [update a single instance of a recurring event](#updating-recurring-events).
 
   When creating an important event or task, such as a monthly meeting or a task of paying a utility bill, you can set an alarm for it by using the `CalendarAlarm` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarAlarm) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarAlarm) applications). The alarm is triggered at a defined time to remind the user of the event or task.
 
-  You can create multiple [events](./personal/calendar-w.md#Adding_Events_Batch) or [tasks](./personal/calendar-w.md#Adding_Tasks_Batch), and manage multiple calendar [events](./personal/calendar-w.md#Managing_Event_Batch) or [tasks](./personal/calendar-w.md#Managing_Task_Batch) simultaneously by using the applicable batch methods. The batch mode provides faster, optimized processing of multiple calendar items.
+  You can create multiple [events](#adding-events-to-a-calendar-in-the-batch-mode) or [tasks](#adding-tasks-to-a-calendar-in-the-batch-node), and manage multiple calendar [events](#managing-multiple-events-in-the-batch-mode) or [tasks](#managing-multiple-tasks-in-the-batch-mode) simultaneously by using the applicable batch methods. The batch mode provides faster, optimized processing of multiple calendar items.
 
-> **Note**
+> **Note**  
 > The batch mode does not provide progress information about operations. To ensure that you can view the progress, break the batch operation down into multiple smaller batch operations. For example, break down a batch of 100 update requests into 10 batch operations that update 10 records at a time. Breaking down a batch operation also helps you avoid blocking other database operations, such as add or remove.
 
 - iCalendar 2.0 format conversions
 
-  You can convert a calendar [event](./personal/calendar-w.md#Converting_Event) or [task](./personal/calendar-w.md#Converting_Task) to the iCalendar format and back.
+  You can convert a calendar [event](#converting-event-formats) or [task](#converting-task-formats) to the iCalendar format and back.
 
 - Calendar change notifications   
 
-  You can keep the calendar in your application synchronized with user-specific calendars, such as a calendar on a social networking Web site, by [receiving notifications](./personal/calendar-w.md#Receiving_Calendar) in your application when calendar items change.
+  You can keep the calendar in your application synchronized with user-specific calendars, such as a calendar on a social networking Web site, by [receiving notifications](#receiving-notifications-on-calendar-changes) in your application when calendar items change.
 
 The Calendar API uses the `TZDate` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/time.html#TZDate) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/time.html#TZDate) applications) of the Time API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/time.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/time.html) applications) and not the standard JavaScript `Date` object to handle difficult issues related to the time zone, because the `TZDate` object handles exact time and provides various utility methods.
 
@@ -59,7 +54,7 @@ To enable your application to use the calendar functionality:
 
 ## Creating a Calendar
 
-> **Note**
+> **Note**  
 > The created calendar is associated with a specified account. Therefore, you must retrieve the account before creating a new calendar.
 
 To create a new calendar:
@@ -118,7 +113,7 @@ To access the device calendars and retrieve calendar objects:
 
 The events are identified using the `CalendarEventId`, which is a `CalendarItemId` typedef (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarItemId) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarItemId) applications). In recurring events, the `CalendarEventId` contains a recurrence ID (`rid`) in addition to the actual event ID, to separately identify each occurrence of the recurring event.
 
-> **Note**
+> **Note**  
 > Depending on the time zone and daylight saving time, an event for "today" can actually occur in the past or in the future.
 
 Using the `CalendarEvent` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarEvent) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarEvent) applications), you can:
@@ -199,7 +194,7 @@ To add events to a calendar in the batch mode:
    });
    ```
 
-> **Note**
+> **Note**  
 > To keep the example as simple as possible, the array above includes only 1 event.
 
 3. Use the `addBatch()` method of the `Calendar` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#Calendar) applications) to add the events in the array to the calendar:
@@ -208,7 +203,7 @@ To add events to a calendar in the batch mode:
    calendar.addBatch([ev]);
    ```
 
-> **Note**
+> **Note**  
 > The `addBatch()` method is asynchronous, and its callbacks must be used to react to the success or failure of the operation.
 
 ### Managing a Single Event
@@ -229,7 +224,7 @@ To manage a single event:
    myCalendar.find(eventSearchSuccessCallback);
    ```
 
-   When searching for calendar items, you can create [attribute filters](./data/data-filter-w.md#filter), [attribute range filters](./data/data-filter-w.md#range), and [composite filters](./data/data-filter-w.md#composite) based on [specific filter attributes](./data/data-filter-w.md#calendar). You can also [sort the search results](./data/data-filter-w.md#use_modes). In this example, all the events are retrieved because no filter is used.
+   When searching for calendar items, you can create [attribute filters](../data/data-filter.md#creating-attribute-filters), [attribute range filters](../data/data-filter.md#creating-attribute-range-filters), and [composite filters](../data/data-filter.md#creating-composite-filters) based on [specific filter attributes](../data/data-filter.md#calendar-filter-attributes). You can also [sort the search results](../data/data-filter.md#using-sorting-modes). In this example, all the events are retrieved because no filter is used.
 
 3. Update or delete the found item inside the `eventSearchSuccessCallback()` event handler.
 
@@ -269,7 +264,7 @@ To update recurring events:
                           eventExpandSuccessCB);
    ```
 
-   The expanded event instances have their own `id.uid` and `id.rid` attributes, where the `id.uid` attribute is the same for all instances. 
+   The expanded event instances have their own `id.uid` and `id.rid` attributes, where the `id.uid` attribute is the same for all instances.
 
 3. Update a single instance of the expanded recurring event.
 
@@ -305,7 +300,7 @@ To manage multiple events in the batch mode:
    myCalendar.find(eventSearchSuccessCallback, errorCallback);
    ```
 
-   When searching for calendar items, you can create [attribute filters](./data/data-filter-w.md#filter), [attribute range filters](./data/data-filter-w.md#range), and [composite filters](./data/data-filter-w.md#composite) based on [specific filter attributes](./data/data-filter-w.md#calendar). You can also [sort the search results](./data/data-filter-w.md#use_modes). In this example, all the events are retrieved because no filter is used.
+   When searching for calendar items, you can create [attribute filters](../data/data-filter.md#creating-attribute-filters), [attribute range filters](../data/data-filter.md#creating-attribute-range-filters), and [composite filters](../data/data-filter.md#creating-composite-filters) based on [specific filter attributes](../data/data-filter.md#calendar-filter-attributes). You can also [sort the search results](../data/data-filter.md#using-sorting-modes). In this example, all the events are retrieved because no filter is used.
 
 3. To update events:      
 
@@ -383,7 +378,7 @@ To convert the events to iCalendar format and back:
      }
      ```
 
-  To convert multiple strings and import them to a calendar, convert the strings one by one and then use the `addBatch()` method to [add all the events at once in a batch mode](./personal/calendar-w.md#Adding_Events_Batch).
+  To convert multiple strings and import them to a calendar, convert the strings one by one and then use the `addBatch()` method to [add all the events at once in a batch mode](#adding-events-to-a-calendar-in-the-batch-mode).
 
 - To convert an event to the iCalendar format:    
 
@@ -487,7 +482,7 @@ To add tasks to a calendar in the batch mode:
    });
    ```
 
-> **Note**
+> **Note**  
 > To keep the example as simple as possible, the array above includes only 1 task.
 
 3. Use the `addBatch()` method of the `Calendar` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#Calendar) applications) to add the tasks in the array to the calendar:
@@ -496,7 +491,7 @@ To add tasks to a calendar in the batch mode:
    calendar.addBatch([task]);
    ```
 
-> **Note**
+> **Note**  
 > The `addBatch()` method is asynchronous, and its callbacks must be used if you want to react to the success or failure of the operation.
 
 ### Managing a Single Task
@@ -517,7 +512,7 @@ To manage a single task:
    myCalendar.find(taskSearchSuccessCallback);
    ```
 
-   When searching for calendar items, you can create [attribute filters](./data/data-filter-w.md#filter), [attribute range filters](./data/data-filter-w.md#range), and [composite filters](./data/data-filter-w.md#composite) based on [specific filter attributes](./data/data-filter-w.md#calendar). You can also [sort the search results](./data/data-filter-w.md#use_modes). In this example, all the events are retrieved because no filter is used.
+   When searching for calendar items, you can create [attribute filters](../data/data-filter.md#creating-attribute-filters), [attribute range filters](../data/data-filter.md#creating-attribute-range-filters), and [composite filters](../data/data-filter.md#creating-composite-filters) based on [specific filter attributes](../data/data-filter.md#calendar-filter-attributes). You can also [sort the search results](../data/data-filter.md#using-sorting-modes). In this example, all the events are retrieved because no filter is used.
 
 3. Update or delete the found item inside the `taskSearchSuccessCallback()` event handler.
 
@@ -555,7 +550,7 @@ To manage multiple tasks in the batch mode:
    myCalendar.find(taskSearchSuccessCallback);
    ```
 
-   When searching for calendar items, you can create [attribute filters](./data/data-filter-w.md#filter), [attribute range filters](./data/data-filter-w.md#range), and [composite filters](./data/data-filter-w.md#composite) based on [specific filter attributes](./data/data-filter-w.md#calendar). You can also [sort the search results](./data/data-filter-w.md#use_modes). In this example, all the events are retrieved because no filter is used.
+   When searching for calendar items, you can create [attribute filters](../data/data-filter.md#creating-attribute-filters), [attribute range filters](../data/data-filter.md#creating-attribute-range-filters), and [composite filters](../data/data-filter.md#creating-composite-filters) based on [specific filter attributes](../data/data-filter.md#calendar-filter-attributes). You can also [sort the search results](../data/data-filter.md#using-sorting-modes). In this example, all the events are retrieved because no filter is used.
 
 3. To update tasks:      
 
@@ -634,7 +629,7 @@ To convert the task to iCalendar format and back:
      console.log('Task added with id ' + task.id);
      ```
 
-  To convert multiple strings and import them to a calendar, convert the strings one by one and then use the `addBatch()` method to [add all the tasks at once in a batch mode](./personal/calendar-w.md#Adding_Tasks_Batch).
+  To convert multiple strings and import them to a calendar, convert the strings one by one and then use the `addBatch()` method to [add all the tasks at once in a batch mode](#adding-tasks-to-a-calendar-in-the-batch-mode).
 
 - To convert a task to the iCalendar format:    
 
@@ -708,10 +703,15 @@ To receive notifications when calendar items are added, updated, or removed:
    watcherId = calendar.addChangeListener(watcher);
    ```
 
-4. To stop the notifications, use the `removeChangeListener()` method: 
+4. To stop the notifications, use the `removeChangeListener()` method:
 
    ```
    function cancelWatch() {
        calendar.removeChangeListener(watcherId);
    }
    ```
+
+## Related Information
+* Dependencies   
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 4.0 and Higher for Wearable

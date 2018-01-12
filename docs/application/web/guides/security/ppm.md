@@ -1,11 +1,6 @@
 Privacy-related Permissions
 ===========================
 
-## Dependencies
-
-- Tizen 4.0 and Higher for Mobile
-- Tizen 4.0 and Higher for Wearable
-
 You can check current permissions for privacy-related privileges and request user permission to use specified privileges.
 
 This feature is supported in mobile and wearable applications only.
@@ -22,17 +17,17 @@ The main features of the Privacy Privilege API include:
 
     If a required permission is missing, you can [request the user to grant it](#requesting) to be able to use privileged features.
 
-For a list of privacy-related privileges, see [Security and API Privileges](../../../../org.tizen.training/html/web/details/sec_privileges_w.htm).
+For a list of privacy-related privileges, see [Security and API Privileges](../../tutorials/details/sec-privileges.md).
 
 
 <a name="requesting"></a>
-## Requesting Permissions 
+## Requesting Permissions
 
 To check whether an application has permission to use a privilege, and to request permission if required:
 
 1.  To check whether an application has permission to use a particular privilege, use the `checkPermission()` method:
 
-    ``` 
+    ```
     var cameraPrivilege = "http://tizen.org/privilege/camera";
     var result = tizen.ppm.checkPermission(cameraPrivilege);
     ```
@@ -42,7 +37,7 @@ To check whether an application has permission to use a privilege, and to reques
 2. React to the permission check appropriately:
     -   If the result value is `PPM_ALLOW`, the application is allowed to perform operations related to the privilege. For example, the application can enable additional UI elements or functionalities.
 
-        ``` 
+        ```
         switch (result) {
             case "PPM_ALLOW":
                 /* Update UI and start accessing protected functionality */
@@ -51,7 +46,7 @@ To check whether an application has permission to use a privilege, and to reques
 
     - If the result value is `PPM_DENY`, the application is not allowed to perform operations related to the privilege. Any attempt to use such functionality without the user's consent fails. Usually, this means that invoking any API method that involves the privilege results in an error.
 
-        ``` 
+        ```
             case "PPM_DENY":
                 /* Show a message and terminate the application */
                 break;
@@ -61,7 +56,7 @@ To check whether an application has permission to use a privilege, and to reques
 
         The dialog box asking for user permission is shown only if the `requestPermission()` method does not throw an exception.
 
-        ``` 
+        ```
             case "PPM_ASK":
                 /* Request permission */
                 break;
@@ -72,7 +67,7 @@ To check whether an application has permission to use a privilege, and to reques
 
     The user decision is returned in the first parameter of the callback as a value of the `PermissionRequestResult` enumeration (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/ppm.html#PermissionRequestResult) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/ppm.html#PermissionRequestResult) applications). The second parameter contains the permission that is being requested.
 
-    ``` 
+    ```
     /* Define PermissionSuccessCallback */
     function permissionSuccess(result, privilege)
     {
@@ -97,4 +92,7 @@ To check whether an application has permission to use a privilege, and to reques
 > **Note**  
 > Since the privileges are grouped, the user's decision regarding 1 privilege applies to the whole group of related privileges. For example, if the user has granted permission to use the `http://tizen.org/privilege/account.read` privilege, permission is automatically granted to the `http://tizen.org/privilege/account.write` privilege also. Be aware that both privileges need to be declared in the application manifest file. If you declare only 1 of them, the above rule does not apply.
 
-
+## Related Information
+* Dependencies
+  - Tizen 4.0 and Higher for Mobile
+  - Tizen 4.0 and Higher for Wearable

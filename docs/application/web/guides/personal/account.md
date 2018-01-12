@@ -1,10 +1,5 @@
 # Account Management
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 4.0 and Higher for Wearable
-
 You can access user accounts and account providers. After getting a specific account, you can manage it, retrieve account information, and monitor changes in it. You can use existing configured on-line accounts and providers, and create new accounts of known types.
 
 This feature is supported in mobile and wearable applications only.
@@ -13,23 +8,23 @@ The main features of the Account API include:
 
 - Accessing accounts
 
-  You can [get a specific account or all available accounts](./personal/account-w.md#get_account).
+  You can [get a specific account or all available accounts](#retrieving-accounts).
 
 - Accessing account providers
 
-  You can [get a specific provider or all available providers](./personal/account-w.md#get_providers).
+  You can [get a specific provider or all available providers](#retrieving-providers).
 
 - Managing accounts
 
-  You can [add, update, and remove accounts](./personal/account-w.md#manage).
+  You can [add, update, and remove accounts](#managing-accounts).
 
 - Monitoring account changes
 
-  You can [register a listener](./personal/account-w.md#listener) and track changes in the account database.
+  You can [register a listener](#receiving-notifications-on-account-changes) and track changes in the account database.
 
 - Managing extended data
 
-  You can [set and get extended data](./personal/account-w.md#extend) for an account. The extended data is defined as key-value pairs.
+  You can [set and get extended data](#managing-extended-account-data) for an account. The extended data is defined as key-value pairs.
 
 To understand account management, you must be familiar with the following basic concepts:
 
@@ -136,7 +131,7 @@ To create accounts, you must learn how to get access to account providers:
 
 Creating, adding, updating, and deleting accounts is a basic account management skill:
 
-> **Note**
+> **Note**  
 > To perform these operations, your application must be the account provider.
 
 1. To create an account, first get an account provider. If your application is an account provider application (meaning that it contains the `<tizen:account>` element, in [mobile](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#mw_account) and [wearable](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#ww_account) applications, in its `config.xml` file), use the `getProvider()` method:
@@ -212,7 +207,7 @@ Learning how to register change listeners enables you to synchronize the view of
 
 Learning how to manage extended data for an account enables you to include account support into your applications:
 
-1. [Retrieve the account object](./personal/account-w.md#get_account).
+1. [Retrieve the account object](#retrieving-accounts).
 
 2. Manage the extended data for the retrieved account:
 
@@ -249,3 +244,8 @@ Learning how to manage extended data for an account enables you to include accou
            console.log('Error: ' + e.message);
        });
        ```
+
+## Related Information
+* Dependencies       
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 4.0 and Higher for Wearable

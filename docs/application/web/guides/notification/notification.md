@@ -8,23 +8,23 @@ The main features of the Notification API include:
 
 - Creating simple notifications   
 
-  You can [create a simple notification](./notification/notification-w.md#create) that provides the user information about their events.
+  You can [create a simple notification](#creating-simple-notifications) that provides the user information about their events.
 
 - Creating progress notifications  
 
-  You can [create a progress notification](./notification/notification-w.md#progress) that informs the user about the progress of an activity.
+  You can [create a progress notification](#creating-progress-notifications) that informs the user about the progress of an activity.
 
 - Managing notifications   
 
-  You can [retrieve, update, and remove posted notifications](./notification/notification-w.md#manage).
+  You can [retrieve, update, and remove posted notifications](#managing-notifications).
 
 - Managing notification templates   
 
-  You can [create a template](./notification/notification-w.md#templates) that can be reused in multiple notifications.
+  You can [create a template](#managing-notification-templates) that can be reused in multiple notifications.
 
 To display a notification, you need to create a `Notification` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#Notification) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#Notification) applications), or its subtype.
 
-> **Note**
+> **Note**  
 > The `StatusNotification` subtype (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#StatusNotification) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#StatusNotification) applications) is deprecated since Tizen 4.0. To display notifications in the status bar, use the `UserNotification` subtype (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#UserNotification) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#UserNotification) applications).
 
 ## Prerequisites
@@ -186,7 +186,7 @@ Learning how to manage notification templates allows you to create a template fr
 
 - To create a template:  
 
-  1. Create a [simple](./notification/notification-w.md#create) or [progress](./notification/notification-w.md#progress) notification to be used as a template.You do not need to post the notification to save it as a template.
+  1. Create a [simple](#creating-simple-notifications) or [progress](#creating-progress-notifications) notification to be used as a template.You do not need to post the notification to save it as a template.
 
      ```
      /* Assume that myNotification is a valid tizen.UserNotification object */
@@ -209,3 +209,8 @@ Learning how to manage notification templates allows you to create a template fr
   ```
 
   This method returns a `UserNotification` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#UserNotification) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#UserNotification) applications), even if the template was created based on a `StatusNotification` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#StatusNotification) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#StatusNotification) applications).
+
+## Related Information
+* Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable
