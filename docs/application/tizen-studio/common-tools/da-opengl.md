@@ -1,9 +1,5 @@
 # Performing OpenGL Analysis
 
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
-
 The **OpenGL ES** (Open Graphics Library) tab of the Dynamic Analyzer displays information about OpenGL® 2.0 and EvasGL.
 
 The tab consists of the following views:
@@ -20,6 +16,7 @@ The tab consists of the following views:
 
 ![OpenGL analysis](./media/da_opengl_analysis.png)
 
+<a name="chart"></a>
 ## OpenGL Chart
 
 The OpenGL chart displays the elapsed frame time with 2 charts:
@@ -36,6 +33,7 @@ The OpenGL chart displays the elapsed frame time with 2 charts:
 
   ![Frame rate chart analysis](./media/da_opengl_frame_analysis.png)
 
+<a name="statistics"></a>
 ## Statistics
 
 The Statistics table displays the API statistics related to EvasGL and OpenGL® 2.0.
@@ -51,6 +49,7 @@ The table contains the following columns:
 - **Count** (integer): Number of times the API was called
 - **API type** (text): What the API operates on and how
 
+<a name="api_list"></a>
 ## API List
 
 The API List table displays the APIs associated with the values selected in the chart.
@@ -72,6 +71,7 @@ The table contains the following columns:
 - **PID** (integer): API process ID
 - **TID** (integer): API thread ID
 
+<a name="redundant"></a>
 ## Redundant
 
 The Redundant table displays the APIs that are called repeatedly with the same parameters.
@@ -87,6 +87,7 @@ The table contains the following columns:
 - **API** (text): API name
 - **Parameter**: Input parameters of the API
 
+<a name="context"></a>
 ## Context
 
 The Context table displays the context rendering state associated with the item selected in the API List table. The title of the table refers to the context number of the selected API.
@@ -103,6 +104,7 @@ The table contains the following columns:
 
 Compare the **Default state** and **Current state** values to see the changes. The yellow color represents a changed state.
 
+<a name="program"></a>
 ## Program
 
 The Program table displays the program information associated with the items selected in the API List table.
@@ -120,6 +122,7 @@ The table contains the following columns:
 
 The same ID cannot be replicated in a context.
 
+<a name="texture"></a>
 ## Texture
 
 The Texture table displays the textures associated with the item selected in the API List table.
@@ -137,3 +140,7 @@ The table contains the following columns:
 - **WRAP_T** (text): Render state value of the WRAP_T texture
 - **MIN_FILTER** (text): Render state value of the MIN_FILTER texture
 - **MAG_FILTER** (text): Render state value of the MAG_FILTER texture
+
+## Related information
+* Dependencies
+  - Tizen Studio 1.0 and Higher

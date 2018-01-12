@@ -1,7 +1,4 @@
 # Using Extended Emulator Features
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
 
 The emulator features can be extended in many ways. With the emulator, you can:
 
@@ -15,6 +12,7 @@ The emulator features can be extended in many ways. With the emulator, you can:
 
 You can also familiarize yourself with the [emulator directory structure](#dir).
 
+<a name="multi"></a>
 ## Using Multi-point Touch
 
 To create a multi-point touch effect in the emulator, press and hold the **Ctrl** key (**Command** key in macOS), while mouse-clicking on the emulator screen.
@@ -57,6 +55,7 @@ To end the multi-point touch, release the **Ctrl** key (**Command** key in macOS
 
 ![Invalidating touched points](./media/emulator_feature_multitouch_invalidate.png)
 
+<a name="file"></a>
 ## Sharing a Directory
 
 You can share a directory between the emulator and your computer:
@@ -79,6 +78,7 @@ You can also add a shared directory in the Emulator Control Panel (ECP):
 > **Note**  
 > You must have read/write permissions for the directory you want to share.
 
+<a name="camera"></a>
 ## Using a Camera
 
 With the emulator, you can develop an application using the Camera API. The emulator provides a virtual camera. The virtual camera simulates frames by using the image files in a host computer or using the computer Webcam.
@@ -109,6 +109,7 @@ The following table lists the host Webcam features.
 | Capture resolution   | QSIF: 160 x 120QCIF: 176 x 144QVGA: 320 x 240CIF: 352 x 288VGA: 640 x 480 |                                          |
 | Attributes           | BrightnessContrast                       | Unsupported attributes can return an error. For example, the `camera_start_focusing()` method returns an error. |
 
+<a name="net"></a>
 ## Using Network Features
 
 The Tizen emulator provides 2 network backend types: NAT-based TCP/IP communication and a bridged network. By default, the NAT-based network is used. You can configure the network backend type in **Emulator Manager > Network Configuration**.
@@ -212,6 +213,7 @@ In the following host operating systems, you must configure the properties of th
   6. Right-click one of the selected network connections, and click **Bridge Connections**.
   7. Configure the TCP/IP of the **Network bridge**. Reuse the deleted TCP/IP configuration of step 4.
 
+<a name="skin"></a>
 ## Using Custom Skin Layout
 
 The emulator skin consists of an `<TIZEN_STUDIO>/platforms/<PLATFORM_VERSION>/<PROFILE>/emulator-resources/skins/<SKIN_NAME>/layout.xml` XML meta file. The file defines layout-related information, such as skin image file name, display location, and the location of hardware keys.
@@ -278,6 +280,7 @@ To create your own skin layout:
 > **Note**  
 > If you reinstall the Tizen Studio, the custom skin folders are reset.
 
+<a name="eventcast"></a>
 ## Using EventCast
 
 You can simulate events on the emulator using the Emulator Control Panel (ECP). However, simulating sensor events with the ECP is not very intuitive or convenient. While you are simulating events, it is impossible to touch the emulator screen simultaneously. EventCast enables you to simulate sensor and touch events more intuitively using a real target device.
@@ -359,6 +362,7 @@ To connect the EventCaster application to the emulator:
   6. Enter the IP address and port number using EventCaster and then click **Connect** on the ECP.If the emulator connects to the application successfully, the **Show Event** button in the application is activated.
   7. Click **Show Event**. You can now send a sensor or touch value to the emulator.
 
+<a name="startup"></a>
 ## Starting an Emulator with a Configuration File
 
 If you create an emulator instance using the Emulator Manager, a configuration file defining the emulator start-up options is generated (`<TIZEN_STUDIO_DATA>/emulator/vms/<VM_NAME>/vm_launch.conf`).
@@ -468,6 +472,7 @@ append="vm_name=${vm_name} video=LVDS-1:${display_resolution}-32@60 dpi=${displa
 -device virtio-maru-jack-pci,jacks=${jacks}
 ```
 
+<a name="dir"></a>
 ## Emulator Directory Structure
 
 The following table describes the content of the emulator directory, located in the `<TIZEN_STUDIO>/tools/emulator` folder.
@@ -544,3 +549,7 @@ The following table describes the directory structure of the user-specific files
 | `<VM_NAME>/vm_config.xml`                | Hardware configuration file              |
 | `<VM_NAME>/vm_launch.conf`               | Emulator start-up options file (for more information, see [Starting an Emulator with a Configuration File](#startup)) |
 | `<VM_NAME>/${USER}.lock`                 | Lock file used for synchronization between VM and ECP for set/get operations |
+
+## Related information
+* Dependencies
+  - Tizen Studio 1.0 and Higher

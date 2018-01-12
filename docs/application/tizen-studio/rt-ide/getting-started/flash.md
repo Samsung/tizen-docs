@@ -1,8 +1,5 @@
 # Flashing the Project
 
-## Dependencies
-- Ubuntu Only
-
 To upload your project on the board, you need to flash it:
 
 1. Connect the board to your computer.
@@ -39,3 +36,7 @@ If the flashing is successful, the success log is shown.
 **Figure: Flash success**
 
 ![Flash success](media/rt_flash_success.png)
+
+## Related Information
+* Dependencies
+  - Ubuntu Only

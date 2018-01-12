@@ -32,7 +32,7 @@
 - Native UI Builder
   - New feedback UX has been applied in the Design mode.
 - Emulator
-  - Support has been added for Google Maps' search box in the location card.
+  - Support has been added for Google Maps&apos; search box in the location card.
 - Dynamic Analyzer
   - Memory allocation trace table has been improved. The table name has been changed from **Memory Allocation** to **Persistent Allocation**, to make it clear that the table contains whole un-freed (persistent) memory allocations.
   - Timeline markers pinning a specific event are numbered.
@@ -42,13 +42,13 @@
 ### Fixed Bugs
 
 - Installer, Package Manager, and Uninstaller
-  - Some texts in the Package Manager info dialog were displayed in a different font setting on Windows®. This issue has been fixed.
-  - Texts were cut when the font size was set to "Large" on Windows®. This issue has been fixed.
+  - Some texts in the Package Manager info dialog were displayed in a different font setting on Windows&reg;. This issue has been fixed.
+  - Texts were cut when the font size was set to "Large" on Windows&reg;. This issue has been fixed.
 - Native UI Builder
-  - on Windows®, when the layout editor was running, the project deletion did not work properly. This issue has been fixed.
+  - on Windows&reg;, when the layout editor was running, the project deletion did not work properly. This issue has been fixed.
 - EDC Editor
   - Selected font in the Settings text editor was applied not only to the code text but also to the text in Settings. This issue has been fixed.
-  - Input text became non-editable in the Find/Replace and Go to Line windows when the windows were resumed after being minimized on Windows®. This issue has been fixed.
+  - Input text became non-editable in the Find/Replace and Go to Line windows when the windows were resumed after being minimized on Windows&reg;. This issue has been fixed.
 - CLI and SDB
   - When the Remote Device Manager displayed the Gear device connected over Wi-Fi, the device name was shown as "unknown" due to the SDB internal error. This issue has been fixed.
   - The bug, which caused the Unity 5.4.x and 5.5.x project to fail to be packaged, has been fixed.
@@ -68,19 +68,21 @@
 - Native IDE
   - When you import some projects generated from Tizen 2.3 Rev2, the importing can take some time.
 - Native UI Builder
-  - If the WYSIWYG editor of the Native UI Builder for Windows® runs over 12 hours, your computer slows down because of the editor's high memory usage. To solve the problem, restart the Tizen Studio.
+  - If the WYSIWYG editor of the Native UI Builder for Windows&reg; runs over 12 hours, your computer slows down because of the editor&apos;s high memory usage. To solve the problem, restart the Tizen Studio.
 - Emulator
   - Ubuntu sometimes stops responding for a few seconds after closing the Emulator Manager. This issue is related to an IBus (Intelligent Input Bus) bug. When the issue occurs, restart the ibus-daemon by entering the `ibus-daemon –drx` command at the command prompt, and use another framework, such as uim and fcitx, for multilingual input.
-  - To use the Tizen emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen emulator from [Prerequisites for the Tizen Studio](https://developer.tizen.org/development/tizen-studio/download/installing-tizen-studio/prerequisites).If the host machine is using NVIDIA® Optimus® technology on either Ubuntu or Windows®, you must set the Tizen emulator to run with your NVIDIA graphics card. For Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). For Windows®, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the NVIDIA control panel.On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
+  - To use the Tizen emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen emulator from [Prerequisites for the Tizen Studio](../setup/prerequisites.md).
+    - If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows&reg;, you must set the Tizen emulator to run with your NVIDIA graphics card. For Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). For Windows&reg;, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the NVIDIA control panel.
+    - On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
   - On Ubuntu 14.04, a shortcut menu can sometimes appear transparent.
-  - On Windows®, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the emulator window is covered with another window. If you click the emulator window, the display surface runs correctly again.
-  - On Windows®, if a 'failed to allocate memory' error occurs while executing the emulator, try the following:
+  - On Windows&reg;, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the emulator window is covered with another window. If you click the emulator window, the display surface runs correctly again.
+  - On Windows&reg;, if a 'failed to allocate memory' error occurs while executing the emulator, try the following:
     - Close some other programs and try to launch the emulator again.
     - If the RAM size is set to 768 or 1024 MB for the VM in the Emulator Manager, change it to 512 MB.
-    - Increase the user area of the virtual memory in the system to 3 GB by entering the `bcdedit /set increaseuserva 3072` command on the console with administrator rights (Windows® 7 only), and reboot.
-  - If you use a MacBook Pro which has both Intel HD and NVIDIA® GPUs, when you execute the emulator with the **OpenGL ES ver. v1.1 & v2.0** option, the emulator can be unexpectedly terminated. Use the **OpenGL ES ver. v2.0 & v3.0** option.
+    - Increase the user area of the virtual memory in the system to 3 GB by entering the `bcdedit /set increaseuserva 3072` command on the console with administrator rights (Windows&reg; 7 only), and reboot.
+  - If you use a MacBook Pro which has both Intel HD and NVIDIA&reg; GPUs, when you execute the emulator with the **OpenGL ES ver. v1.1 & v2.0** option, the emulator can be unexpectedly terminated. Use the **OpenGL ES ver. v2.0 & v3.0** option.
 - CLI and SDB
-  - To use the SDB bash completion feature, enter the `source .sdb-complete.bash` command on the bash shell. The Tizen Studio does not support the SDB bash auto-completion on Windows® (it is available on Ubuntu and macOS).
+  - To use the SDB bash completion feature, enter the `source .sdb-complete.bash` command on the bash shell. The Tizen Studio does not support the SDB bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
 - Dynamic Analyzer
   - The UI Hierarchy viewer feature and start-up profiling are not performed simultaneously.
   - The Dynamic Analyzer cannot perform Web application profiling with a commercial Tizen device due to the security policy.

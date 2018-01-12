@@ -1,11 +1,9 @@
 # Using the Serial Terminal
-## Dependencies
-- Ubuntu Only
 
 If you have flashed the project successfully, you can communicate with the board using the **Terminal** view.
 
 > **Note**  
->The board must be continuously connected to your computer.
+> The board must be continuously connected to your computer.
 
 The **Terminal** view provides various functions:
 
@@ -54,3 +52,7 @@ To see the available tash commands, run the `help` command on the TASH prompt. Y
 **Figure: Tash command list**
 
 ![Tash command list](media/rt_tash_commands.png)
+
+## Related information
+* Dependencies
+  - Ubuntu Only

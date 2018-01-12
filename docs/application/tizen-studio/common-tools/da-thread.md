@@ -1,8 +1,4 @@
 # Performing Thread Analysis
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
-
 
 The **Thread** tab of the Dynamic Analyzer displays information about threads and synchronization.
 
@@ -16,6 +12,7 @@ The tab consists of the following views:
 
 ![Thread analysis](./media/da_thread_analysis.png)
 
+<a name="chart"></a>
 ## Thread Chart
 
 The thread chart displays the thread and the related synchronization object in a tree format using a graph.
@@ -32,6 +29,7 @@ The chart classifies thread and synchronization object states by color and shape
 - Orange colored area of the synchronization object line displays the possession of that synchronization object (lock).
 - Gray colored area of the synchronization object line shows the waiting time for acquiring that synchronization object.
 
+<a name="api_list"></a>
 ## Thread API List
 
 The Thread API List table displays the APIs associated with the thread or synchronization object selected in the thread chart.
@@ -51,6 +49,7 @@ The table contains the following columns:
 - **Return** (integer): Return value
 - **Error Code** (text): Error description of the API; a normal end return is **E_SUCCESS**
 
+<a name="details"></a>
 ## Thread Details
 
 The Thread Details view displays detailed information about the thread or synchronization object selected in the thread chart.
@@ -67,3 +66,7 @@ The view contains the following fields:
 - **Start Time**: Start time of the thread
 - **End Time**: End time of the thread
 - **Attribute Type**: Attribute type of the thread
+
+## Related information
+* Dependencies
+  - Tizen Studio 1.0 and Higher

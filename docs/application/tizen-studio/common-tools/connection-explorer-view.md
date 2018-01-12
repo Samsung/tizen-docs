@@ -1,9 +1,5 @@
 # Managing and Connecting Devices for Testing
 
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
-
 The **Connection Explorer** view shows the devices connected to the system. A list of connected devices is available in tree view after connecting a device or launching a Tizen emulator. The **Connection Explorer** view provides the following actions for the connected devices:
 
 - Show a list of connected devices and connect devices for running and debugging the application.
@@ -58,3 +54,7 @@ You can set the following preferences for the **Connection Explorer** view:
 - Set the file transfer timeout value
 
 To see the preferences, go to **Window > Preferences > Tizen Studio > Tools > Connection Explorer**.
+
+## Related information
+* Dependencies
+ - Tizen Studio 1.0 and Higher

@@ -105,7 +105,7 @@ To register the item with the sales status:
 
 IAP uses an AppControl mechanism, and as such requires no updates to the application project. Working with IAP means simply getting the proper AppControl.
 
-For more information, see the Application Controls guide (in [native](../../../org.tizen.guides/html/native/app_management/app_controls_n.htm) and [Web](../../../org.tizen.guides/html/web/app_management/app_controls_w.htm) applications) and AppControl API (in [native](../../../org.tizen.native.mobile.apireference/group__CAPI__APP__CONTROL__MODULE.html) and [Web](../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html) applications).
+For more information, see the Application Controls guide (in [native](../../native/guides/app-management/app-controls.md) and [Web](../../web/guides/app-management/app-controls.md) applications) and AppControl API (in [native](../../../org.tizen.native.mobile.apireference/group__CAPI__APP__CONTROL__MODULE.html) and [Web](../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html) applications).
 
 ## 3. Programming Your Application to Work with IAP
 
@@ -652,6 +652,8 @@ The results of the operation are returned in the app control callback.The follow
       }
  }
  ```
+
+<a name="result_code"></a>
 - **Result code values**
 The following table lists the possible values of the `_result` key for the `org.tizen.inapppurchase.iapservice` application ID.
 
@@ -820,6 +822,7 @@ The results of the operation are returned in the app control callback.This data 
  }
  ```
 
+<a name="result_code_2"></a>
 - **Result code values**
  The following table lists the possible values of the `_result` key for the `org.tizen.inapppurchase.iapclient` application ID.
 

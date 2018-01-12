@@ -1,15 +1,12 @@
 # Handling Advanced Dynamic Analyzer Tasks
 
-## Dependencies
-
-- Tizen Studio 1.0 and Higher
-
 This topic explains some additional functionality of the Dynamic Analyzer.
 
 ## Range Inspection
 
 You can analyze specific ranges using markers or drag and drop operations.
 
+<a name="marker"></a>
 ### Range Inspection with Markers
 
 You can create markers at specific times and analyze the time between the markers:
@@ -286,3 +283,8 @@ In the command output:
   - **Build Time** is the build timestamp.
   - **Tizen Site** is the link to the Tizen Web site.
   - **Release Note** is the link to the Tizen Studio Release Notes.
+
+
+## Related Information
+* Dependencies
+  - Tizen Studio 1.0 and Higher
