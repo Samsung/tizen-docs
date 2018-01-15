@@ -1,9 +1,5 @@
 # Creating Thumbnails
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 You can create a thumbnail component with the SectionChanger API.
 
 This feature is supported in wearable applications only.
@@ -95,3 +91,7 @@ To implement the thumbnail component:
        });
    })();
    ```
+
+## Related Information
+* Dependencies   
+   - Tizen 2.3.1 and Higher for Wearable

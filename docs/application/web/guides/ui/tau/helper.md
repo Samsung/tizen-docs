@@ -1,9 +1,5 @@
 # Using the Helper Script
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 You can use the TAU helper script to support some components for the Web applications. SnapListMarqueeStyle allows you to create a marquee-able and expandable list style with the SnapListview.
 
 This feature is supported in wearable applications only.
@@ -18,7 +14,7 @@ You can use the helper script as follows:
 
 The SnapListMarqueeStyle helper provides a helper script to support creating some usable components for the list style. It supports making the list view more effective using the [SnapListview](../../../../org.tizen.web.apireference/html/ui_fw_api/Wearable_UIComponents/wearable_snaplistview.htm) and [Marquee](../../../../org.tizen.web.apireference/html/ui_fw_api/Wearable_UIComponents/wearable_marquee.htm) components.
 
-> **Note**
+> **Note**  
 > This helper script is supported since Tizen 2.3.
 
 The following example shows how to create your own listview style with SnapListMarqueeStyle. In the example, the list item text scrolls horizontally and the sub text appears if the list item is placed in the middle of the screen.
@@ -147,3 +143,7 @@ You can use the following methods with the SnapListMarqueeStyle:
       listHelper.destroy();
   </script>
   ```
+
+## Related Information
+* Dependencies  
+  - Tizen 2.3.1 and Higher for Wearable

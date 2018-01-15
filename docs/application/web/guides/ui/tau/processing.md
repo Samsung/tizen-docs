@@ -1,9 +1,5 @@
 # Creating Full Size Processing Components
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 You can create a full size processing component with the Processing API.
 
 This feature is supported in wearable applications only.
@@ -49,3 +45,7 @@ To implement the processing component:
       }
    }
    ```
+
+## Related Information
+* Dependencies   
+   - Tizen 2.3.1 and Higher for Wearable

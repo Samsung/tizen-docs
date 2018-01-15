@@ -1,17 +1,12 @@
 # Hello World
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 You can import TAU into your application and create a basic Hello World page with TAU.
 
 This feature is supported in mobile and wearable applications only.
 
 The following example shows a basic TAU template:
 
-```
+```xml
 <!DOCTYPE html>
 <html>
    <head>
@@ -32,7 +27,7 @@ The following example shows a basic TAU template:
 
 The Tizen Advanced UI (TAU)-based template provides 2 scaling methods: device-width and fixed-width.
 
-- Device-width scaling	
+- Device-width scaling
 
   This scaling mode is suited for most mobile devices, such as Tizen, iPhone, and Android™. In this mode, the viewport width is set to `device-width`, enabling rem scaling using the Rem and Em units. These units calculate the size of a source element automatically based on the container font size (Em) or the base font size (Rem). In Tizen Web applications, a 320 px screen width is assumed.
 
@@ -40,7 +35,7 @@ The Tizen Advanced UI (TAU)-based template provides 2 scaling methods: device-wi
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   ```
 
-- Fixed-width scaling	
+- Fixed-width scaling
 
   This scaling mode is best suited for Tizen devices, since the entire screen can be scaled on the viewport level. In the viewport scaling mode, set the size of all resources to fit the 360 px screen width.
 
@@ -60,7 +55,7 @@ The Tizen Advanced UI (TAU)-based template provides 2 scaling methods: device-wi
 
 You can import TAU with HTML. For better performance, all CSS files must be included in the header and all script elements must be put before the body element's close tag:
 
-```
+```xml
 <!DOCTYPE html>
 <html>
    <head>
@@ -101,7 +96,7 @@ To create a page in `<body>`, you can use the `"ui-page"` class with the `<div>`
 </body>
 ```
 
-Each page has a header, mandatory content, and a footer: 
+Each page has a header, mandatory content, and a footer:
 
 ```
 <body>
@@ -147,3 +142,8 @@ The following example shows a basic sample code for Hello World:
    </body>
 </html>
 ```
+
+## Related Information
+* Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

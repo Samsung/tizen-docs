@@ -1,8 +1,4 @@
 # Voice Control
-## Dependencies
-- Tizen 4.0 and Higher for Mobile
-- Tizen 4.0 and Higher for Wearable
-- Tizen 4.0 and Higher for TV
 
 You can enable the user to control the device through their voice. You can register general voice commands, which trigger a listener when the user speaks them. The voice control service recognizes the sound data recorded by the user and sends the result as a predefined command.
 
@@ -16,9 +12,9 @@ The main features of the Voice Control API include:
 
 - Retrieving information
 
-  You can [get the current language](#info). A command is valid only when the command language is the same as the current language. The current language can be changed with the voice control setting application or by changing the display language on the device.<br>
+  You can [get the current language](#info). A command is valid only when the command language is the same as the current language. The current language can be changed with the voice control setting application or by changing the display language on the device.
 
-  You can get a notification of the language change in a listener. If the display language is changed to a non-supported one, the voice control language changes to English.<br>
+  You can get a notification of the language change in a listener. If the display language is changed to a non-supported one, the voice control language changes to English.
 
 
 To use the voice control:
@@ -48,7 +44,7 @@ To use the voice control:
 
    1. Initialize a voice control client instance using the `getVoiceControlClient()` function:
 
-      ```
+      ```csharp
        var initializeVoiceCOntrolClient()
        {
            var client = tizen.voicecontrol.getVoiceControlClient();
@@ -57,7 +53,7 @@ To use the voice control:
 
    2. When voice control is no longer needed, deinitialize the instance:
 
-      ```
+      ```csharp
       var releaseVoiceControlClient()
       {
           var client = tizen.voicecontrol.getvoicecontrolClient();
@@ -67,21 +63,17 @@ To use the voice control:
       ```
 
 
-
-
-  > **Note** <br>
+  > **Note**  
   >    Do not call the `release()` function in a listener.
 
 <a name="callback"></a>
-## Managing Listeners 
+## Managing Listeners
 To set and unset listeners to get notifications about recognition results and language changes:
 
 
 * Add the current language change listener to be invoked when the system or application language changes:
 
-
-
-```
+```csharp
       /* Listener */
      var languageChangeListenerCallback = function(previous, current)
      {
@@ -105,20 +97,14 @@ To set and unset listeners to get notifications about recognition results and la
      }
 ```
 
-
-
-
-
 * Add the recognition result listener to be invoked when a voice command is recognized.
 
-
-
-   > **Note** <br>
+   > **Note**  
    >   If the recognition result produces a reject event, the voice control service has rejected the recognized command. Make sure that the command does not conflict with other commands and there are no duplicated commands.
 
-   To get the command, check the `list` parameter in the recognition result listener. The parameter is an array of recognized `VoiceControlCommand` instances. The `result` parameter contains the recognized text.<br>
+   To get the command, check the `list` parameter in the recognition result listener. The parameter is an array of recognized `VoiceControlCommand` instances. The `result` parameter contains the recognized text.
 
-```
+```csharp
      /* Listener */
      var resultListenerCallback = function(event, list, result)
      {
@@ -146,9 +132,9 @@ To set and unset listeners to get notifications about recognition results and la
 <a name="info"></a>
 ## Retrieving the Current Language
 
-To get the current language, use the `getCurrentLanguage()` function. The voice control recognition works for the current (default) language. To be notified of language changes, use the language change listener.<br>
+To get the current language, use the `getCurrentLanguage()` function. The voice control recognition works for the current (default) language. To be notified of language changes, use the language change listener.
 
-
+```csharp
      var getCurrentLang()
      {
          var client = tizen.voicecontrol.getVoiceControlClient();
@@ -160,36 +146,53 @@ To get the current language, use the `getCurrentLanguage()` function. The voice 
             Current language is: en_US
          */
      }
-
-
+```
 
 <a name="commands"></a>
 ## Managing Commands
 
-<p>To create a command list and commands:</p>
-<ol>
-<li>Create a command.</p>
-<p>Create a command with a command text and a command type. The command type is optional and the default command type is <code>FOREGROUND</code>.</p>
-<pre class="prettyprint">
+To create a command list and commands:
+
+1. Create a command.  
+
+ Create a command with a command text and a command type. The command type is optional and the default command type is <code>FOREGROUND</code>.
+```csharp
 var createCommandList()
 {
     var command1 = new tizen.VoiceControlCommand("alpha");
     var command2 = new tizen.VoiceControlCommand("bravo", "FOREGROUND");
     var command3 = new tizen.VoiceControlCommand("charlie")];
-</pre></li>
-<li>Create a command list.
-<p>The command list can include many commands, each with their own command text and type. The list can have <code>FOREGROUND</code> type commands, which are valid when the application is in a visible state.</p>
-<p>You can access the command list after you set it to the voice control and when you get the recognition result.</p>
-<pre class="prettyprint">
+```
+
+2.  Create a command list.  
+
+ The command list can include many commands, each with their own command text and type. The list can have <code>FOREGROUND</code> type commands, which are valid when the application is in a visible state.
+
+ You can access the command list after you set it to the voice control and when you get the recognition result.
+ ```csharp
     var commands = [command1, command2, command3];
-</pre></li>
-<li>Set and unset the command list.
-<p>You can set the command list with commands using the <code>setCommandList()</code> function.</p>
-<p>If you want to update the registered commands, set the command list again with the updated commands using the <code>setCommandList()</code> function.</p>
-<pre class="prettyprint">
+ ```
+
+3. Set and unset the command list.  
+
+ You can set the command list with commands using the `setCommandList()` function.
+
+ If you want to update the registered commands, set the command list again with the updated commands using the `setCommandList()` function.
+
+ ```csharp
     client.setCommandList(commands, "FOREGROUND");
-</pre><p>When no longer needed, unset the command list using the <code>unsetCommandList()</code> function:</p>
-<pre class="prettyprint">
+ ```
+
+ When no longer needed, unset the command list using the `unsetCommandList()` function:  
+ ```csharp
     if ("FOREGROUND" == type)
         client.unsetCommandList("FOREGROUND");
 }
+
+ ```
+
+## Related Information
+* Dependencies
+  - Tizen 4.0 and Higher for Mobile
+  - Tizen 4.0 and Higher for Wearable
+  - Tizen 4.0 and Higher for TV

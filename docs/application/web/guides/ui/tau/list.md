@@ -1,8 +1,4 @@
-# Creating Snap ListsDependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
-
+# Creating Snap Lists
 
 You can create a snap list component with the marquee component using the SnapListview API and the [helper script](./ui/tau/helper-ww.md).
 
@@ -126,3 +122,7 @@ To implement the list component:
        }
    });
    ```
+
+## Related Information
+* Dependencies
+  - Tizen 2.3.1 and Higher for Wearable

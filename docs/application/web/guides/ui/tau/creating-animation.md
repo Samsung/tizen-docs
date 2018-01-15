@@ -1,10 +1,5 @@
 # Creating Applications with Animation
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 You can create a simple application using TAU Animation. With the following example, you can learn how to import TAU Animation into your application and create a basic simple application with animation.
 This feature is supported in mobile and wearable applications only.
 
@@ -12,7 +7,7 @@ This feature is supported in mobile and wearable applications only.
 
 You can import the TAU Animation module with HTML:
 
-```
+```xml
 <head>
    <title>TAU Animation Sample</title>
    <script src="lib/tau/animation/tau.animation.min.js" type="text/javascript"></script>
@@ -21,19 +16,19 @@ You can import the TAU Animation module with HTML:
 
 `tau.animation` is the namespace of the TAU Animation module. You can call TAU Animation methods through this namespace.
 
-> **Note**
+> **Note**  
 > To get the `tau.animation.min.js` library, create a new project from the [UIComponent](https://developer.tizen.org/development/sample/web/UI/TAU_UI_Components) sample. The library is included in the sample's `lib/tau/animation` directory.
 
 ## Creating TAU Animations
 
 The following code snippet shows how to create a TAU Animation:
 
-```
+```xml
 <div id="redBox" style="background-color: 'red'; position:absolute; width:100px; height:100px;"></div>
 <div id="blueBox" style="background-color: 'blue'; position:absolute; width:100px; height:100px; left: 200px;"></div>
 ```
 
-```
+```javascript
 var t = tau.animation.target;
 t('#redBox').tween('swing', 1000);
 t('#blueBox').tween({rotateZ: 120}, 1000).tween({translateX: 400}, 1000);
@@ -45,7 +40,7 @@ Available animation methods:
 
 - Predefined effects
 
-  When the first parameter of the `tween()` method indicates a string (such as 'swing' above) instead of an object, it is a predefined effect animation. Various [predefined effects](./ui/tau/animation-w.md#effects) are available.
+  When the first parameter of the `tween()` method indicates a string (such as 'swing' above) instead of an object, it is a predefined effect animation. Various [predefined effects](./animation.md#predefined-effects) are available.
 
 - Chaining
 
@@ -60,14 +55,18 @@ Available animation methods:
   ```
 
   - `animation` is the part moving, such as a transform, CSS, or predefined effect.
-  - `transform` options:`translateX`, `translateY`, `translateZ`, `rotateX`, `rotateY`, `rotateZ`, `scaleX`, `scaleY`, `skewX`, `skewY`
-  - `css` options:`left`, `top`, `width`, `height`, `background-color`, `color`, `border`, `border-width`, `border-color`, `margin`, `marginTop`, `marginRight`, `marginBottom`, `marginLeft`, `padding`, `paddingTop`, `paddingRight`, `paddingBottom`, `paddingLeft`, `font-size`, `line-height`, `clip-path`, `background-position`, `background-size`, `box-shadow`
 
-  ```
+  - `transform` options:  
+  `translateX`, `translateY`, `translateZ`, `rotateX`, `rotateY`, `rotateZ`, `scaleX`, `scaleY`, `skewX`, `skewY`
+
+  - `css` options:  
+  `left`, `top`, `width`, `height`, `background-color`, `color`, `border`, `border-width`, `border-color`, `margin`, `marginTop`, `marginRight`, `marginBottom`, `marginLeft`, `padding`, `paddingTop`, `paddingRight`, `paddingBottom`, `paddingLeft`, `font-size`, `line-height`, `clip-path`, `background-position`, `background-size`, `box-shadow`
+
+  ```xml
   <div id="redBox" style="background-color: 'red'; position:absolute; width:100px; height:100px;"></div>
   ```
 
-  ```
+  ```javascript
   var t = tau.animation.target;
   t('#redBox').tween({rotateZ: 120}, 1000); /* Transform */
   /* CSS property */
@@ -79,7 +78,7 @@ Available animation methods:
 
   An `option` consists of a duration, ease, delay, callback, and stagger. In order to provide better usage, if you want to use only duration, you can set the duration as a number value like in the previous examples. If any other options are needed, you must make an `{option}` object and insert the `duration: value` into the object.
 
-  ```
+  ```xml
   <div id="redBox" style="background-color: 'red'; position:absolute; width:100px; height:100px;"></div>
   <div id="blueBox" style="background-color: 'blue'; position:absolute; width:100px; height:100px; left: 200px;"></div>
   <div class="box"></div>
@@ -88,7 +87,7 @@ Available animation methods:
   <div class="box"></div>
   ```
 
-  ```
+  ```javascript
   var t = tau.animation.target;
   t('#redBox').tween({rotateZ: 120}, 1000);
   t('#redBox').tween({rotateZ: 120}, {duration: 1000});
@@ -115,7 +114,7 @@ Available animation methods:
 
 The following example shows the full code for the first animation described above.
 
-```
+```xml
 <!DOCTYPE html>
 <html>
 <head>
@@ -155,3 +154,8 @@ The following example shows the full code for the first animation described abov
 </body>
 </html>
 ```
+
+## Related Information
+* Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

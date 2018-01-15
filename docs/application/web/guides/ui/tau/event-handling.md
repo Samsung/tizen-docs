@@ -1,10 +1,5 @@
 # Event Handling
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 The Tizen platform supports some device events for user interaction. To provide a full user experience for your application users, you must handle various events in your application.
 
 This feature is supported in mobile and wearable applications only.
@@ -27,7 +22,7 @@ The following figures show the hardware keys for mobile (on the left) and wearab
 
 To bind an event callback on the `tizenhwkey` events, use the following code:
 
-```
+```javascript
 window.addEventListener('tizenhwkey', function(ev) {
     if (ev.keyName == 'back') {
         /* Call window.history.back() to go to previous browser window */
@@ -45,7 +40,7 @@ The Tizen Device APIs provide an application exit method. Even if the applicatio
 
 With a TAU page, simply remember the ID of the main page. In the following example, the ID of the main page is `main`.
 
-```
+```javascript
 (function() {
     window.addEventListener('tizenhwkey', function(ev) {
         if (ev.keyName === 'back') {
@@ -69,7 +64,7 @@ The Tizen platform supports rotary events for user interaction on a wearable rot
 
 **Figure: Rotary device**
 
-![Rotary device](./media/rotary_event.png) 
+![Rotary device](./media/rotary_event.png)
 
 Rotary events are used to deliver the rotary device or sensor data to the application. The following table describes the rotary events.
 
@@ -81,9 +76,14 @@ Rotary events are used to deliver the rotary device or sensor data to the applic
 
 To bind an event callback on rotary events, use the following code:
 
-```
+```javascript
 document.addEventListener('rotarydetent', function(ev) {
     var direction = ev.detail.direction;
     /* Add behavior for detent detected event with a direction value */
 });
 ```
+
+## Related Information
+* Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

@@ -1,43 +1,40 @@
 # Animation
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 TAU Animation is a module for animating target objects. It allows you to make and use animation without using any other animation library. TAU Animation provides good usability, high performance, and various functionalities.
 
 This feature is supported in mobile and wearable applications only.
 
 TAU Animation provides the following features:
 
-- Single or group animation	
+- Single or group animation
 
   Provides usability from minimized parameters and APIs. You can easily make an animation or `TimeLine`.
 
-- Group effects	
+- Group effects
 
   Provided by a stagger. Insert a stagger into the option, and all objects in the group are applied a sequential delay.
 
-- Time control	
+- Time control
 
   You can use ease, duration, and delay.
 
-- Effect	
+- Effect
 
   Provides predefined effects. This means that you can use a fancy effect simply with a string instead of specifying an animation value. Predefined effects are fully controlled in TAU Animation. You can also stop the animation.
 
-- CSS animation	
+- CSS animation
 
   Target objects can be animated using CSS styles, such as `backgroundColor`, `border`, `margin`, `padding`, and `shadow`. A CSS animation can also be controlled by TAU Animation.
 
-- HTML element-based animation (in future)	
+- HTML element-based animation (in future)
 
   You can set an animation in an element instead of JavaScript. If you are skilled in HTML, you can make the animation in HTML.
 
-- Custom `KeyFrame` (in future)	You can make an animation based on a custom `KeyFrame`.
+- Custom `KeyFrame` (in future)  
 
-- Callbacks	
+	You can make an animation based on a custom `KeyFrame`.
+
+- Callbacks
 
   Provides the `onStart`, `onUpdate`, and `onComplete` callbacks. CSS animations do not support the `updateCallback` and `progress` callbacks. TAU Animation provides these features.
 
@@ -258,3 +255,8 @@ t('#blueBox').tween({translateY: [0, 150], rotateZ: [0, 180]}, {
 ```
 
 In the above animation, the box is translated along the Y axis from 0 to 150 and rotated from 0 to 180. Before translating and rotating, the `start` text is inserted into the box. After translating and rotating, the box's background color is changed to navy.
+
+## Related Information
+* Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

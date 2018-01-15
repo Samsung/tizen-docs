@@ -1,11 +1,6 @@
 # Managing Pages
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
-The basic building block of an application UI in the TAU library is the `Page` element, which includes all other elements. The element is optional and extendable, so you can have any element for grouping controls you want. 
+The basic building block of an application UI in the TAU library is the `Page` element, which includes all other elements. The element is optional and extendable, so you can have any element for grouping controls you want.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -103,7 +98,7 @@ To create a page:
    </div>
    ```
 
-   The popup works because TAU opens (makes visible) the page whose `id` attribute corresponds to the `#hashtag` page. This is basic page routing; for more information, see [Page Routing](./ui/tau/managing-page-w.md#pageRouting).
+   The popup works because TAU opens (makes visible) the page whose `id` attribute corresponds to the `#hashtag` page. This is basic page routing; for more information, see [Page Routing](#page-routing).
 
 ## Creating Multiple Pages in One HTML File
 
@@ -228,3 +223,8 @@ To manage page routing:
      </div>
   </div>
   ```
+
+## Related Information
+* Dependencies  
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

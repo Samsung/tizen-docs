@@ -1,9 +1,5 @@
 # IME Application
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 Tizen Web IME (Input Method Editor) applications are written in HTML5 for Tizen, combining HTML, JavaScript, and CSS into a package that can be installed on a Tizen device, such as Samsung Gear, or the Tizen emulator. Both the Tizen device and the emulator must run Tizen version 2.3 or higher to run Web IME applications.
 
 This feature is supported in wearable applications only.
@@ -33,7 +29,7 @@ Tizen Web IME can interact with 2 types of Tizen applications:
 - In-house (native) application
 - Downloaded (Web) application
 
-The [Web container is executed by the core Input Service Engine process](./text-input/input-method-w.md#architecture), allowing the Web IME to provide text input services to both Web applications and in-house native applications.
+The [Web container is executed by the core Input Service Engine process](#architecture), allowing the Web IME to provide text input services to both Web applications and in-house native applications.
 
 ## Supported APIs
 
@@ -62,7 +58,7 @@ The following table lists the `WebHelperClient` methods that you can invoke in y
 
 The following table lists the `WebHelperClient` enumerations that you can use when invoking the `sendKeyEvent()` and `forwardKeyEvent()` methods of the `WebHelperClient` object.
 
-**Table: WebHelperClient enumerations **
+**Table: WebHelperClient enumerations**
 
 | Enumeration | Description                              |
 | ----------- | ---------------------------------------- |
@@ -98,12 +94,12 @@ The following table lists the events that you can implement in your handler obje
 | `onUpdateSurroundingText(cursor, text)`  | Handler for the surrounding text signal update.                    `cursor` parameter: Cursor position.          `text` parameter: Surrounding text near the cursor. |
 | `onUpdateSelection(text)`                | Handler for the selection signal update.                    `text` parameter: Currently selected text. |
 
-> **Note**
+> **Note**  
 > The Device APIs are currently not supported in Web IME applications. Device API support is expected to be included in the next version.
 
 ## Web IME Configuration
 
-The Web IME configuration follows the Tizen packaging policy with certain extensions. Tizen applications are packaged according to the [Widget packaging guidelines](https://www.w3.org/TR/2011/REC-widgets-20110927/). For more information on Tizen extensions to configuration elements, see [Configuration Elements](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#elements) and [Extending Configuration Elements](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#ww_extend).
+The Web IME configuration follows the Tizen packaging policy with certain extensions. Tizen applications are packaged according to the [Widget packaging guidelines](https://www.w3.org/TR/2011/REC-widgets-20110927/). For more information on Tizen extensions to configuration elements, see [Configuration Elements](../../../tizen-studio/web-tools/config-editor.md#elements) and [Extending Configuration Elements](../../../tizen-studio/web-tools/config-editor.md#ww_extend).
 
 Internally, the application package manager is responsible for installing, uninstalling, and updating packages and storing their information.
 
@@ -112,7 +108,7 @@ Tizen has the following additional configuration elements:
 - ​    `tizen:category`	To identify with other IMEs, the Web IME application must contain the UUID information.
 
   ```
-  <tizen:category name="http://tizen.org/category/ime"/> 
+  <tizen:category name="http://tizen.org/category/ime"/>
   ```
 
 - ​    `tizen:uuid`	Added to identify the Web IME application type. If this element is defined, the application type is IME.
@@ -121,7 +117,7 @@ Tizen has the following additional configuration elements:
 > The Device APIs are currently not supported in Web IME applications. Device API support is expected to be included in the next version.
 
   ```
-  <tizen:uuid>6153122a-a429-40d2-ef21-a75f468c202c</tizen:uuid> 
+  <tizen:uuid>6153122a-a429-40d2-ef21-a75f468c202c</tizen:uuid>
   ```
 
 - ​    `tizen:languages`	The locale string in the `<tizen:language>` element can be used to display the input language the specific Input Method Editor supports. The `<tizen:languages>` parent element can have more than 1 `<tizen:language>` child element.
@@ -130,10 +126,10 @@ Tizen has the following additional configuration elements:
   <tizen:languages>
      <tizen:language>en-us</tizen:language>
      <tizen:language>en-gb</tizen:language>
-  </tizen:languages> 
+  </tizen:languages>
   ```
 
-> **Note**
+> **Note**  
 > 2-letter primary codes are reserved for [ISO639] language abbreviations. 2-letter codes include `fr` (French), `de` (German), `it` (Italian), `nl` (Dutch), `el` (Greek), `es` (Spanish), `pt` (Portuguese), `ar` (Arabic), `he` (Hebrew), `ru` (Russian), `zh` (Chinese), `ja` (Japanese), `hi` (Hindi), `ur` (Urdu), and `sa` (Sanskrit).Any 2-letter subcode is understood to be a [ISO3166] country code. For more information, see [http://www.w3.org/TR/html401/struct/dirlang.html](http://www.w3.org/TR/html401/struct/dirlang.html).
 
 ## Hardware Key Events
@@ -144,9 +140,9 @@ When a hardware key is pressed, the client application receives the key event an
 
 When creating the handler object for `WebHelperClient`, implement the `onProcessKeyEvent()` method if you want to translate each hardware key event.
 
-The following example translates the key event to a string "ㅁ", which is a Korean character mapped to the `a` key event. 
+The following example translates the key event to a string "ㅁ", which is a Korean character mapped to the `a` key event.
 
-> **Note**
+> **Note**  
 > To provide full support for Korean character composition, a more complex process is needed. This example is only a demonstration.
 
 ```
@@ -236,7 +232,13 @@ To create an IME application:
 
 1. To create the Web IME project, launch the Tizen Studio and go to **File > New > Tizen Project**.
 2. In the Project Wizard, select **Template** as the project type, **WEARABLE** profile and applicable version, **Web Application** type, and **Web Input Method Editor** template.
-3. Enter the project name and click **Finish**.   ![Create a Web IME project](./media/web_ime_create_project.png)
+3. Enter the project name and click **Finish**.   
+![Create a Web IME project](./media/web_ime_create_project.png)
 4. Modify the source code in, for example, the `index.html` and `style.css` files, as needed.
 5. Install the Web IME package  on the emulator. To run the application, go to **Run As > Tizen Web Application**.
-6. In the emulator, change the default keyboard with the Web IME you developed in **Setting > Text input**.   ![Setting main](./media/web_ime_setting_main.png)![Setting text input](./media/web_ime_setting_text_input.png)
+6. In the emulator, change the default keyboard with the Web IME you developed in **Setting > Text input**.   
+![Setting main](./media/web_ime_setting_main.png)![Setting text input](./media/web_ime_setting_text_input.png)
+
+## Related Information
+* Dependencies
+  - Tizen 2.3.1 and Higher for Wearable

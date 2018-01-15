@@ -1,9 +1,5 @@
 # Creating Footer Buttons
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 You can create a footer button component that is supported in both a rectangular and circular UI.
 
 This feature is supported in wearable applications only.
@@ -26,7 +22,7 @@ To implement footer buttons:
 
   Edit the HTML code to add the footer button component to your application screen.
 
-  ```
+  ```xml
   <div class="ui-page ui-page-active" id="bottomButtonPage">
      <header class="ui-header">
         <h2 class="ui-title">Bottom Button</h2>
@@ -46,7 +42,7 @@ To implement footer buttons:
 
      When there are multiple buttons, the buttons (except for the first button) use the drawer in the circular UI.
 
-     ```
+     ```xml
      <div class="ui-page ui-page-active" id="bottomButtonWithMorePage">
         <header class="ui-header">
            <h2 class="ui-title">Multiple Buttons</h2>
@@ -75,7 +71,7 @@ To implement footer buttons:
 
   2. Edit the CSS code to set the visual style of the buttons:
 
-     ```
+     ```css
      .drawer-elem {
         display: none;
      }
@@ -102,7 +98,7 @@ To implement footer buttons:
 
   3. Edit the JavaScript code to manage the footer button events and other functionalities:
 
-     ```
+     ```javascript
      (function() {
          var page = document.querySelector('#bottomButtonWithMorePage'),
              drawer = page.querySelector('#moreoptionsDrawer'),
@@ -117,3 +113,7 @@ To implement footer buttons:
          });
      })();
      ```
+
+## Related Information
+* Dependencies     
+  - Tizen 2.3.1 and Higher for Wearable

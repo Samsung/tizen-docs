@@ -1,9 +1,5 @@
 # UI Components
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 Each UI component in TAU has its own selector for autodetecting in an HTML file. The most popular selector is `class`. The old selector style is the `data-role`, which is deprecated. Some UI components have also simple HTML selectors, such as `button` (button component), or `input[type=checkbox]` (CheckboxRadio component).
 
 This feature is supported in mobile and wearable applications only.
@@ -162,3 +158,7 @@ To manage the UI components if the jQuery library is loaded:
        $('#indexscrollbar').indexscrollbar('destroy');
    </script>
    ```
+
+## Related Information
+* Dependencies   
+   - Tizen 2.4 and Higher for Mobile

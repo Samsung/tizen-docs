@@ -1,9 +1,5 @@
 # Creating Expandable Headers
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 You can create an expandable header component for your application. The expandable header offers events to support interactivity with other components.
 
 This feature is supported in wearable applications only.
@@ -61,3 +57,7 @@ page.addEventListener('headerexpandcomplete', function() {
     }
 }, false);
 ```
+
+## Related Information
+* Dependencies
+  - Tizen 2.3.1 and Higher for Wearable

@@ -1,10 +1,5 @@
 # Accessibility
 
-## Dependencies
-
-- Tizen 3.0 and Higher for Mobile
-- Tizen 3.0 and Higher for Wearable
-
 The [WAI-ARIA](http://www.w3.org/TR/wai-aria/) (Web Accessibility Initiative - Accessible Rich Internet Applications) is a standard to support easy access to Web content in Web applications. The WAI-ARIA is composed of a role, states, and property, and its current version is 1.0. The Tizen screen reader sends the screen information to the user with the text-to-speech technology from WAI-ARIA data.
 
 This feature is supported in mobile and wearable applications only.
@@ -19,9 +14,9 @@ The Tizen screen reader reads HTML elements in the following order:
 
 2. Other attributes than `role` and `aria-label`
 
-3. `role` attribute	
+3. `role` attribute
 
-4. `aria-label` attribute	
+4. `aria-label` attribute
 
 The following examples show how WAI-ARIA code is read using the text-to-speech functionality of the screen reader:
 
@@ -64,3 +59,8 @@ The `<img>` element supports the image alt text through the `alt` attribute:
 ```
 <img src="icon.jpg" alt="icon">
 ```
+
+## Related Information
+* Dependencies
+  - Tizen 3.0 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

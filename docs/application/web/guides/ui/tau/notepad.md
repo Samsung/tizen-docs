@@ -1,10 +1,5 @@
 # Creating a Notepad UI Application
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 The notepad application shows all the notes in the main page, and allows the user to add new notes, edit existing notes, and delete notes by swiping them. The notes on the main page can be scrolled and edited, and a button is provided for adding a new note. After you click a note, it is displayed in the edit page for editing.
 
 This feature is supported in mobile and wearable applications only.
@@ -29,7 +24,7 @@ To create a simple notepad application using the TAU library:
  - Wearable:
 
    ```
-   <link rel="stylesheet" type="text/css" href="lib/tau/wearable/theme/default/tau.min.css"/>	
+   <link rel="stylesheet" type="text/css" href="lib/tau/wearable/theme/default/tau.min.css"/>
    ```
 
  Add also your own styles for the application:
@@ -56,7 +51,7 @@ To create a simple notepad application using the TAU library:
 
 3. Create the pages: the main page for displaying the notes and the editing page for adding and editing notes.
 
-   1. The main page is the first page, defined with the `div` block with the `ui-page` class and `main` id.	
+   1. The main page is the first page, defined with the `div` block with the `ui-page` class and `main` id.
 
       - Add the title header (**Notes**) for the page:
 
@@ -100,7 +95,7 @@ To create a simple notepad application using the TAU library:
       </div>
       ```
 
-		> **Note**
+		> **Note**  
 		> In mobile applications, pages are constructed using the `data-role` attribute, while the wearable applications use the `class` attribute. In addition, the value of the `data-role` attribute in mobile applications differs from the `class` attribute value in the wearable applications.
 
    2. On the editing page, the header and footer are similar to the main page.
@@ -371,3 +366,8 @@ To create a simple notepad application using the TAU library:
    ```
 
    Now the application is ready and you can deploy it to a device or emulator.
+
+## Related Information
+* Dependencies   
+   - Tizen 2.4 and Higher for Mobile
+   - Tizen 2.3.1 and Higher for Wearable

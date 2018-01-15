@@ -1,9 +1,5 @@
 # Implementing More Options
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 In a rectangular UI, you can implement more options using the button and popup components. In a circular UI, the selector component provides the more options button. The following example shows how to create a more options button for the circular UI.
 
 This feature is supported in wearable applications only.
@@ -117,3 +113,7 @@ To implement the more options component:
        });
    })();
    ```
+
+## Related Information
+* Dependencies   
+   - Tizen 2.3.1 and Higher for Wearable

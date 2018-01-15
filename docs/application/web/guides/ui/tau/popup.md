@@ -1,9 +1,5 @@
 # Creating Popup Buttons
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 You can create bottom and side popup button components with the Popup API.
 
 This feature is supported in wearable applications only.
@@ -60,3 +56,7 @@ To implement the popup button component:
      </div>
   </div>
   ```
+
+## Related Information
+* Dependencies
+  - Tizen 2.3.1 and Higher for Wearable

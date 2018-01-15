@@ -1,9 +1,5 @@
 # 2.4 Porting Guide
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 This guide describes the changes required to migrate a TAU element from 2.3 to 2.4.
 
 This feature is supported in mobile applications only.
@@ -32,7 +28,7 @@ If you want to use deprecated components, you can import those files. See the fo
 </html>
 ```
 
-> **Note**
+> **Note**  
 > The `tau.support-2.3` file is only for backward compatibility. The above components are **DEPRECATED since Tizen 2.4** and are deleted in Tizen 3.0.
 
 ## Component Definitions
@@ -68,7 +64,7 @@ The following example shows how to define the UI components before and after:
   </div>
   ```
 
-> **Note**
+> **Note**  
 > The old selector with `data-role` can still be used in 2.4, but it is **DEPRECATED** and no longer supported in the next version.
 
 - After:
@@ -633,3 +629,7 @@ Some events have changed. The following examples illustrate how to handle events
 
   button.addEventListener('click', eventHandler);
   ```
+
+## Related Information
+* Dependencies  
+  - Tizen 2.4 and Higher for Mobile

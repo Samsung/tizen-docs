@@ -1,9 +1,5 @@
 # Applications for Circular UI
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 TAU supports different types of wearable devices (rectangular and circular) in the same application. To support a circular UI along with a rectangular UI, a media query is required.
 
 This feature is supported in wearable applications only.
@@ -17,7 +13,7 @@ To support the circular UI:
 3. Include the `link` element for the latest `tau.js` script file at the end of `<body>` element in HTML.
 4. For writing a separate code for a circular UI in JavaScript, you can use the `tau.support.shape.circle` property for detecting the circular device.
 
-```
+```xml
 <head name="viewport" content="width=device-width, user-scalable=no">
    <title>Support for Circular UI</title>
    <link rel="stylesheet" href="tau.css">
@@ -51,7 +47,7 @@ For some styles to be applied selectively, you can use the `-tizen-geometric-sha
 
 | -tizen-geometric-shape  |                        |
 | ----------------------- | ---------------------- |
-| Value                   | `rectangle` | `circle` |
+| Value                   | `rectangle`  &verbar;  `circle` |
 | Applied to              | Visual media types     |
 | Accept min/max prefixes | No                     |
 
@@ -71,7 +67,7 @@ For some styles to be applied selectively, you can use the `-tizen-geometric-sha
 
 TAU provides the `tau.support.shape.circle` property that checks whether the device screen is a circle. If you want to implement code selectively for a circular UI and rectangular UI, you can use the property with a boolean value. Note that for developing in a browser environment, this property is always set to `true` when the `tau.circle.css` file is loaded.
 
-```
+```csharp
 if (tau.support.shape.circle) {
     /* Implement your code for circular UI */
 } else {
@@ -98,3 +94,7 @@ The following components can be used on both rectangular and circular devices.
 | [Popup Button](./ui/tau/popup-ww.md) | Shows how to create a popup component.   |
 | [Index Scroll Bar](./ui/tau/indexscrollbar-ww.md) | Shows how to create an index scroll bar component. |
 | [More Options](./ui/tau/moreoptions-ww.md) | Shows how to create a more options button component. |
+
+## Related Information
+* Dependencies
+  - Tizen 2.3.1 and Higher for Wearable

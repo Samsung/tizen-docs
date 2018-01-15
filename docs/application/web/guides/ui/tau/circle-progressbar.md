@@ -1,9 +1,5 @@
 # Creating Circle-shaped Progress Bars
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 You can create a circle-shaped progress bar component with the CircleProgressBar API.
 
 This feature is supported in wearable applications only.
@@ -170,3 +166,7 @@ To implement the progress bar component:
        page.addEventListener('pagehide', pageHideHandler);
    }());
    ```
+
+## Related Information
+* Dependencies   
+   - Tizen 2.3.1 and Higher for Wearable

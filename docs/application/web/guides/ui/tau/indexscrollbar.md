@@ -1,9 +1,5 @@
 # Creating Index Scroll Bars
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 You can create a circle- or rectangle-shaped index scroll bar component with the CircularIndexScrollBar and IndexScrollBar APIs.
 
 This feature is supported in wearable applications only.
@@ -137,3 +133,7 @@ To implement the index scroll bar component:
        });
    }());
    ```
+
+## Related Information
+* Dependencies   
+   - Tizen 2.3.1 and Higher for Wearable

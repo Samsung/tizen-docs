@@ -1,9 +1,5 @@
 # Handling Rotary Events
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 The Tizen platform supports rotary events for user interaction on a wearable rotary device or sensor.
 
 This feature is supported in wearable applications only.
@@ -12,7 +8,7 @@ Rotary events are used to deliver the rotary device or sensor data to the applic
 
 **Figure: Rotary device and interaction direction**
 
-![Rotary device and interaction direction](./media/rotary_event.png) 
+![Rotary device and interaction direction](./media/rotary_event.png)
 
 ** Table: Rotary events**
 
@@ -314,3 +310,7 @@ You can change the value of the circle-shaped progress bar component with the ro
     }());
 </script>
 ```
+
+## Related Information
+* Dependencies
+  - Tizen 2.3.1 and Higher for Wearable
