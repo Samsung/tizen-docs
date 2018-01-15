@@ -19,7 +19,7 @@ To launch the emulator, do one of the following:
 -   Use the [Emulator
     Manager](../../../tizen-studio/common-tools/emulator-manager.md):
     1.  Start the Emulator Manager using the Desktop (in Ubuntu) or
-        Start menu (in Windows®), or using the command line.
+        Start menu (in Windows&reg;), or using the command line.
     2.  In the **Emulator Manager** window, select the emulator instance
         from the list.
 
@@ -102,9 +102,9 @@ Simulator](../../../tizen-studio/web-tools/web-simulator-w.md)
 using the **Project Explorer** view or the Tizen Studio menu.
 
 > **Note**  
-> The Tizen Web Simulator runs only on the Google Chrome™
+> The Tizen Web Simulator runs only on the Google Chrome&trade;
 browser. To use the Web Simulator, download and install the [Google
-Chrome™](http://www.google.com/chrome/) browser. You can manually
+Chrome&trade;](http://www.google.com/chrome/) browser. You can manually
 specify the installation location of the browser in the [simulator
 preferences](../../../tizen-studio/web-tools/web-simulator-w.md#pref).
 
@@ -127,7 +127,7 @@ specified in the **Content** field of the `config.xml` file. The mostly
 commonly specified file is `index.html`.
 
 The simulator renders your application on the browser using the
-[WebKit](http://www.webkit.org/) engine. All the Google Chrome™ browser
+[WebKit](http://www.webkit.org/) engine. All the Google Chrome&trade; browser
 development features are available (by pressing the **F12** keyboard
 key) in the simulator, as is the [Web
 Inspector](../../../tizen-studio/web-tools/web-inspector-w.md)
@@ -183,7 +183,7 @@ To debug your application on the target device:
         Web Application**.
     -   On the Tizen Studio toolbar, click **Debug**.
 
-    The Web Inspector tool is displayed in a new Google Chrome™
+    The Web Inspector tool is displayed in a new Google Chrome&trade;
     browser window. You can perform the following debugging tasks using
     the Web Inspector:
 
@@ -196,7 +196,7 @@ To debug your application on the target device:
    >  The Web Inspector always opens in a new window. Life-cycle
     synchronization between the application to be debugged and the Web    Inspector browser is not supported.    
    >
-   >  Installing the Google Chrome™ browser on the device is mandatory for    the Web Inspector to work. When the Google Chrome™ browser is    installed on the device, the Tizen Studio automatically detects it.    To select the browser path, go to
+   >  Installing the Google Chrome&trade; browser on the device is mandatory for    the Web Inspector to work. When the Google Chrome&trade; browser is    installed on the device, the Tizen Studio automatically detects it.    To select the browser path, go to
     `Window > Preferences > Tizen Studio > Web > Chrome`.
 
 6.  To debug the JavaScript code, click **Sources** in the Web

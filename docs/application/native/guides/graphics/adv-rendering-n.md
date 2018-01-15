@@ -7,25 +7,25 @@ This topic introduces various advanced methods for rendering.
 
 ## Sample Applications Using the Renderer Architecture
 
-In order to increase reusability, this section presents a simple OpenGL® ES-based renderer and a sample view architecture based on the renderer. Its class diagram is shown in the following figure. SampleLauncher creates a sample view instance, such as TexturingView. Each sample view inherits from the SampleView class, which creates the GLView and BasicRenderer instances.
+In order to increase reusability, this section presents a simple OpenGL&reg; ES-based renderer and a sample view architecture based on the renderer. Its class diagram is shown in the following figure. SampleLauncher creates a sample view instance, such as TexturingView. Each sample view inherits from the SampleView class, which creates the GLView and BasicRenderer instances.
 
 **Figure: Class diagram for sample views and renderer**
 
 ![Class diagram for sample views and renderer](./media/adv_render_class.png)
 
-The callback functions for GLView are registered as presented in [Creating OpenGL® ES Applications](creating-opengles-n.md). At the initialization stage, the sample view uses the FileLoader class to read the resource files, such as shaders, 3D objects, and texture images, from the Tizen application resource file path. These data are passed to BasicRenderer. At the initialization stage when the `init_glview()` callback is invoked, BasicRenderer uses the shader code and BasicShader to create, compile, and link the program object.
+The callback functions for GLView are registered as presented in [Creating OpenGL&reg; ES Applications](creating-opengles-n.md). At the initialization stage, the sample view uses the FileLoader class to read the resource files, such as shaders, 3D objects, and texture images, from the Tizen application resource file path. These data are passed to BasicRenderer. At the initialization stage when the `init_glview()` callback is invoked, BasicRenderer uses the shader code and BasicShader to create, compile, and link the program object.
 
 In addition to BasicShader, BasicRenderer uses, for example, BasicCamera, vertex array, and texture object ID, for rendering a scene. When rendering is requested by the sample view, BasicRenderer initializes color and depth buffers through the `glClear()` function, and then computes many data needed for rendering, such as world, view, and projection matrices. These are transferred to BasicShader, which invokes the `glUniformXXX()` function to pass them to the current program object. Finally, the `glDrawElements()` function is invoked.
 
-For handling texture images, the sample uses the TexData class. The sample application creates a TexData instance and passes it to FileLoader together with the file name of the texture image. Then, FileLoader stores the decoded pixel data into the TexData instance. When the TexData instance is given to BasicRender, OpenGL® ES functions, such as `glGenTexture()` and `glTexImage2D()`, are invoked. After the texture object is created and sampler uniforms, such as `sampler2D` and `samplerCube`, are passed to the fragment shader, texturing can be done.
+For handling texture images, the sample uses the TexData class. The sample application creates a TexData instance and passes it to FileLoader together with the file name of the texture image. Then, FileLoader stores the decoded pixel data into the TexData instance. When the TexData instance is given to BasicRender, OpenGL&reg; ES functions, such as `glGenTexture()` and `glTexImage2D()`, are invoked. After the texture object is created and sampler uniforms, such as `sampler2D` and `samplerCube`, are passed to the fragment shader, texturing can be done.
 
-For convenience, use the OpenGL® mathematics library, GLM. GLM is a header only C++ mathematics library for graphics software based on the OpenGL® shading language (GLSL) specification. GLM provides classes and functions designed and implemented with the same naming conventions and functionalities as in GLSL.
+For convenience, use the OpenGL&reg; mathematics library, GLM. GLM is a header only C++ mathematics library for graphics software based on the OpenGL&reg; shading language (GLSL) specification. GLM provides classes and functions designed and implemented with the same naming conventions and functionalities as in GLSL.
 
 ## Framebuffer Object and Render-to-texture
 
-In Tizen, the drawing surface is created by GLView. To render a scene, OpenGL® ES receives this surface, which is called 'on-screen buffer'. For simple applications, the on-screen-buffer alone is sufficient. However, if the application needs to render to a texture, for example, an 'off-screen-buffer' is helpful as it can be used as a texture. In OpenGL® ES, the Framebuffer Object (FBO) can be an 'off-screen-buffer' and also supports 'render to texture.'
+In Tizen, the drawing surface is created by GLView. To render a scene, OpenGL&reg; ES receives this surface, which is called 'on-screen buffer'. For simple applications, the on-screen-buffer alone is sufficient. However, if the application needs to render to a texture, for example, an 'off-screen-buffer' is helpful as it can be used as a texture. In OpenGL&reg; ES, the Framebuffer Object (FBO) can be an 'off-screen-buffer' and also supports 'render to texture.'
 
-OpenGL® ES provides functions to generate, bind, and configure an FBO. As shown in the following figure, the FBO consists of color, depth, and stencil attachments. It can be used as a texture by binding a texture object to its color or depth attachment point. On the other hand, OpenGL® ES supports a renderbuffer object, which is a 2D image buffer and can be bound to color, depth or stencil attachment point. FBO is useful for environment mapping, shadow mapping, post-processing and effects, including, for example, motion blur.
+OpenGL&reg; ES provides functions to generate, bind, and configure an FBO. As shown in the following figure, the FBO consists of color, depth, and stencil attachments. It can be used as a texture by binding a texture object to its color or depth attachment point. On the other hand, OpenGL&reg; ES supports a renderbuffer object, which is a 2D image buffer and can be bound to color, depth or stencil attachment point. FBO is useful for environment mapping, shadow mapping, post-processing and effects, including, for example, motion blur.
 
 **Figure: Framebuffer, renderbuffer, and texture objects**
 
@@ -115,7 +115,7 @@ A cube map is created by positioning a camera at the center of the object and re
 
 ![Composition of the cubemap texture](./media/adv_render_cube_composition.png)
 
-The [Texturing](texturing-n.md) topic presents how to create texture objects using OpenGL® ES APIs. For using a cube map texture, provide `GL_TEXTURE_CUBE_MAP` instead of `GL_TEXTURE_2D` for the `glGenTexture()` and `glBindTexture()` functions.
+The [Texturing](texturing-n.md) topic presents how to create texture objects using OpenGL&reg; ES APIs. For using a cube map texture, provide `GL_TEXTURE_CUBE_MAP` instead of `GL_TEXTURE_2D` for the `glGenTexture()` and `glBindTexture()` functions.
 
 The following code creates a cube map texture for environment mapping:
 

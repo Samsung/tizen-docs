@@ -106,11 +106,11 @@ app_terminate(void *data)
 
 ## Checking Resources with the Emulator Manager
 
-To check how the resources are shown on different device configurations, create emulator instances with different resolutions with the [Emulator Manager](../../../../org.tizen.studio/html/common_tools/emulator_manager.htm) and run the application on the instances using different language settings:
+To check how the resources are shown on different device configurations, create emulator instances with different resolutions with the [Emulator Manager](../../../tizen-studio/common_tools/emulator-manager.md) and run the application on the instances using different language settings:
 
 1. Open the Emulator Manager by selecting **Tools &gt; Emulator Manager** in the Tizen Studio menu. ![Emulator Manager](./media/resource_manager_conn_explorer.png)
 
-2. In the **Emulator Manager** window, the HD Mobile emulator has already been created.Next, create an emulator instance with a WVGA resolution by clicking **Create**.![Create a new emulator](./media/resource_manager_emulator_new.png)Select mobile, and the **WVGA Mobile** template. Click **Finish**. If the HD Mobile emulator has not been created, create it as well. For more information on creating an emulator instance, see [Creating Emulator Instances](../../../../org.tizen.studio/html/common_tools/emulator_manager.htm#create).
+2. In the **Emulator Manager** window, the HD Mobile emulator has already been created.Next, create an emulator instance with a WVGA resolution by clicking **Create**.![Create a new emulator](./media/resource_manager_emulator_new.png)Select mobile, and the **WVGA Mobile** template. Click **Finish**. If the HD Mobile emulator has not been created, create it as well. For more information on creating an emulator instance, see [Creating Emulator Instances](../../../tizen-studio/common_tools/emulator-manager.md#create).
 
 3. Run the application on the WVGA Mobile device emulator:
 

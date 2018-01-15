@@ -1,24 +1,24 @@
-# Creating OpenGL® ES Applications
+# Creating OpenGL&reg; ES Applications
 ## Dependencies
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
 
-The easiest way to use the OpenGL® ES API in a Tizen application is to rely on the `Elm_GLView` component. The `Elm_GLView` component is one of the Elementary UI components, which creates an OpenGL® ES target surface and a context. The `Elm_GLView` component can be embedded in any Tizen UI application. It is basically a wrapper of `Evas_GL`, the OpenGL®/EGL™ abstraction layer of EFL. By using the `Elm_GLView` component, you avoid having to consider how the EGL™ environment is coupled with the native windowing systems. Some macros provided by EFL also allow you to use OpenGL® ES APIs directly. In addition, the UI framework can access the surface where the GPU outputs the rendering result and make the entire scene as a combination of 2D and 3D components on a single canvas.
+The easiest way to use the OpenGL&reg; ES API in a Tizen application is to rely on the `Elm_GLView` component. The `Elm_GLView` component is one of the Elementary UI components, which creates an OpenGL&reg; ES target surface and a context. The `Elm_GLView` component can be embedded in any Tizen UI application. It is basically a wrapper of `Evas_GL`, the OpenGL&reg;/EGL™ abstraction layer of EFL. By using the `Elm_GLView` component, you avoid having to consider how the EGL™ environment is coupled with the native windowing systems. Some macros provided by EFL also allow you to use OpenGL&reg; ES APIs directly. In addition, the UI framework can access the surface where the GPU outputs the rendering result and make the entire scene as a combination of 2D and 3D components on a single canvas.
 
-The following example shows the steps to create an OpenGL® ES application. From now on, the `Elm_GLView` component is shortened to GLView.
+The following example shows the steps to create an OpenGL&reg; ES application. From now on, the `Elm_GLView` component is shortened to GLView.
 
 1. Create a basic application as presented in the [mobile](../../../../org.tizen.training/html/native/mobile/first_app_mn.htm#create) and [wearable](../../../../org.tizen.training/html/native/wearable/first_app_wn.htm#create) Tizen first application example.The UI application's skeleton makes available the window object, which can contain the GLView component.
 
 2. Enable hardware acceleration.
 
-   To develop an OpenGL® ES application, call the `elm_config_accel_preference_set()` function before creating the window. It makes an application use the GPU.
+   To develop an OpenGL&reg; ES application, call the `elm_config_accel_preference_set()` function before creating the window. It makes an application use the GPU.
 
    For developing an application with Elementary, create a window with the `elm_win_util_standard_add()` Elementary utility function.
 
    ```
    Evas_Object *win;
    elm_config_accel_preference_set("opengl");
-   win = elm_win_util_standard_add(name, "OpenGL® example");
+   win = elm_win_util_standard_add(name, "OpenGL&reg; example");
    ```
 
    You must also set hardware acceleration in the manifest file. For more information, see [Hardware Acceleration](hw-acceleration-n.md).
@@ -41,7 +41,7 @@ The following example shows the steps to create an OpenGL® ES application. From
    elm_glview_mode_set(glview, ELM_GLVIEW_ALPHA | ELM_GLVIEW_DEPTH);
    ```
 
-   Additionally, you can select the policies for resizing and rendering. The following example shows how to decide what to do with the OpenGL® ES surface when the GLView component is resized. With the default `ELM_GLVIEW_RESIZE_POLICY_RECREATE` option, the OpenGL® ES surface is destroyed and created again with the new size. The resizing policy can also be set to `ELM_GLVIEW_RESIZE_POLICY_SCALE`. In that case, only the image object is scaled, not the underlying OpenGL® ES surface.
+   Additionally, you can select the policies for resizing and rendering. The following example shows how to decide what to do with the OpenGL&reg; ES surface when the GLView component is resized. With the default `ELM_GLVIEW_RESIZE_POLICY_RECREATE` option, the OpenGL&reg; ES surface is destroyed and created again with the new size. The resizing policy can also be set to `ELM_GLVIEW_RESIZE_POLICY_SCALE`. In that case, only the image object is scaled, not the underlying OpenGL&reg; ES surface.
 
    ```
    /*
@@ -52,9 +52,9 @@ The following example shows the steps to create an OpenGL® ES application. From
    elm_glview_resize_policy_set(glview, ELM_GLVIEW_RESIZE_POLICY_RECREATE);
    ```
 
-4. Get the OpenGL® ES function pointer.
+4. Get the OpenGL&reg; ES function pointer.
 
-   Originally, an application must call the OpenGL® ES APIs using the `Evas_GL` abstraction layer in EFL. It means that you must get a set of function pointers for abstract OpenGL® ES functions from the `Evas_GL` object and call functions through the object. This can be annoying, especially when you want to reuse OpenGL® ES parts implemented at other platforms. To resolve this problem, EFL provides convenient helper macros, which are defined in the `Elementary_GL_Helpers.h` header file. The following example shows how to use the macros.
+   Originally, an application must call the OpenGL&reg; ES APIs using the `Evas_GL` abstraction layer in EFL. It means that you must get a set of function pointers for abstract OpenGL&reg; ES functions from the `Evas_GL` object and call functions through the object. This can be annoying, especially when you want to reuse OpenGL&reg; ES parts implemented at other platforms. To resolve this problem, EFL provides convenient helper macros, which are defined in the `Elementary_GL_Helpers.h` header file. The following example shows how to use the macros.
 
    ```
    #include <Elementary_GL_Helpers.h>
@@ -68,7 +68,7 @@ The following example shows the steps to create an OpenGL® ES application. From
        /* Create and initialize GLView */
        glview = elm_glview_add(parent);
 
-       /* Prepare to use OpenGL® ES APIs directly */
+       /* Prepare to use OpenGL&reg; ES APIs directly */
        ELEMENTARY_GLVIEW_GLOBAL_USE(glview);
    }
    ```
@@ -76,13 +76,13 @@ The following example shows the steps to create an OpenGL® ES application. From
    The `ELEMENTARY_GLVIEW_GLOBAL_DEFINE()` and `ELEMENTARY_GLVIEW_GLOBAL_USE()` macros must be in the same source code. If you have a global header file in your application, the `ELEMENTARY_GLVIEW_GLOBAL_DECLARE()` macro can be in the header file. However, you must be very careful when using these macros. The recommended solution is to use the `ELEMENTARY_GLVIEW_USE()` macro in every client function. The following are some situations where you must not use the helper macros:
 
    - When you use more than one Evas canvas at a time, such as multiple windows.
-   - If you use multiple OpenGL® ES APIs, such as OpenGL® ES 1.1, OpenGL® ES 2.0, and OpenGL® ES 3.0.
+   - If you use multiple OpenGL&reg; ES APIs, such as OpenGL&reg; ES 1.1, OpenGL&reg; ES 2.0, and OpenGL&reg; ES 3.0.
    - If you write or port a library that can be used by other applications.
 
    The helper macros must be used only for the following situations:
 
-   - When a single surface is used for OpenGL® ES rendering.
-   - When a single API set (either OpenGL® ES 1.1, OpenGL® ES 2.0, or OpenGL® ES 3.0) is used. In this case, the `ELEMENTARY_GLVIEW_GLOBAL_DECLARE()` macro must be used in a global header for the application.
+   - When a single surface is used for OpenGL&reg; ES rendering.
+   - When a single API set (either OpenGL&reg; ES 1.1, OpenGL&reg; ES 2.0, or OpenGL&reg; ES 3.0) is used. In this case, the `ELEMENTARY_GLVIEW_GLOBAL_DECLARE()` macro must be used in a global header for the application.
 
 5. Set up callback functions.
 
@@ -104,14 +104,14 @@ The following example shows the steps to create an OpenGL® ES application. From
       The initialization callback is called when the GLView is created.
 
       ```
-      /* OpenGL® ES init callback */
+      /* OpenGL&reg; ES init callback */
       static void
       init_glview(Evas_Object *glview)
       {
-          /* Set OpenGL® ES state color to pink */
+          /* Set OpenGL&reg; ES state color to pink */
           glClearColor(1.0, 0.2, 0.6, 1.0);
 
-          /* Do any form of OpenGL® ES initialization here */
+          /* Do any form of OpenGL&reg; ES initialization here */
           /* init_shaders(); */
           /* init_vertices(); */
       }
@@ -135,17 +135,17 @@ The following example shows the steps to create an OpenGL® ES application. From
 
    3. Set up the drawing callback.
 
-      The drawing callback is called whenever the GLView must be updated. The OpenGL® ES draw commands must be made here.
+      The drawing callback is called whenever the GLView must be updated. The OpenGL&reg; ES draw commands must be made here.
 
       ```
-      /* OpenGL® ES draw callback */
+      /* OpenGL&reg; ES draw callback */
       static void
       draw_glview(Evas_Object *glview)
       {
           /* Paint it pink */
           glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-          /* Usual OpenGL® ES draw commands come here */
+          /* Usual OpenGL&reg; ES draw commands come here */
           /* draw_scene(); */
       }
       ```
@@ -159,11 +159,11 @@ The following example shows the steps to create an OpenGL® ES application. From
       static void
       del_glview(Evas_Object *glview)
       {
-          /* Destroy all the OpenGL® ES resources here */
+          /* Destroy all the OpenGL&reg; ES resources here */
           /* destroy_shaders(); */
           /* destroy_objects(); */
       }
       ```
 
 > **Note**  
-> If the OpenGL® ES functions are called outside the 4 GLView callback functions, you must call the `evas_gl_make_current()` function before the OpenGL® ES function is called. However, this results in a performance degradation due to context switching, and only works if the direct rendering mode is not used.If Direct Rendering is enabled, all OpenGL® ES functions must be called from the 4 GLView callback functions only. All other operations can break the rendering order and cause unexpected rendering.
+> If the OpenGL&reg; ES functions are called outside the 4 GLView callback functions, you must call the `evas_gl_make_current()` function before the OpenGL&reg; ES function is called. However, this results in a performance degradation due to context switching, and only works if the direct rendering mode is not used.If Direct Rendering is enabled, all OpenGL&reg; ES functions must be called from the 4 GLView callback functions only. All other operations can break the rendering order and cause unexpected rendering.

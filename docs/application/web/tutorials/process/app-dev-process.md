@@ -17,7 +17,7 @@ The first step in creating a Tizen Web application is planning and
 designing it using the design tools of your choice.
 
 For information on planning and designing your applications, see [Tizen
-Web Guides](../../../guides/web/guides-w.md) and
+Web Guides](../../guides/index.md) and
 [Tizen Web API
 References](../../../../tizen.web.apireference/html/web_api_reference.htm).
 
@@ -237,7 +237,7 @@ To create and run a hybrid application:
 
 1.  Create a project for a [Web UI
     application](creating-app-project-w.md) and [native service
-    application](../../native/process/app-dev-process-n.md#creating).
+    application](../../../native/tutorials/process/app-dev-process-n.md#creating).
 2.  To establish a project reference between a UI and service
     application:  
   -   In the Web UI application project context menu, select
@@ -255,7 +255,7 @@ To create and run a hybrid application:
 
     To modify the build configuration of the service application, see
     [Building the
-    Application](../../native/process/app-dev-process-n.md#build).
+    Application](../../../native/tutorials/process/app-dev-process-n.md#build).
 
 > **Note**  
 > Tizen has limited a multi-project application combination

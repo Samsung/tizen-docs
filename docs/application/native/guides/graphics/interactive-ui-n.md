@@ -99,7 +99,7 @@ The following example adds and deletes an animator with the callback function:
     */
 
     /*
-       NOTE: If you delete OpenGL® ES, the animator keeps running trying to access it
+       NOTE: If you delete OpenGL&reg; ES, the animator keeps running trying to access it
        To prevent this, delete the animator with ecore_animator_del()
     */
 

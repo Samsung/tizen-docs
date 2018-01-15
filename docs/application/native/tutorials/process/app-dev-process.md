@@ -59,7 +59,7 @@ Implementing your application consists of:
     >    **Note**  
     > You can also design the application UI using the controls
     defined in the [User
-    Interface](../../../guides/native/ui/ui-cover-n.md) guides.
+    Interface](../../guides/ui/index.md) guides.
 
 
 
@@ -76,7 +76,7 @@ If needed, update the privileges of the application.
 Once you have finished implementing your application, you are ready to
 [build your application](#build).
 
-<a nam="build"></a>
+<a name="build"></a>
 ## Building the Application
 
 

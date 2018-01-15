@@ -102,7 +102,7 @@ To send push notifications:
    Since Tizen 3.0, the `BACKGROUNDLAUNCH` option is supported. When you send a notification to the device with the `BACKGROUNDLAUNCH` action value, the push service launches the application in the background (if it is not already running), and delivers the appData field to the application. The user cannot see that a notification is received, but they find out when they use the application the next time.
 
    > **Note**  
-   > For the `BACKGROUNDLAUNCH` notification, the `app_create()` and `app_control()` life-cycle callbacks are called, but the `app_resume()` callback is not called. However, the next time the user runs the application, the `app_resume()` callback is invoked normally. For more information on the life-cycle, see the [Applications](../../../../org.tizen.guides/html/native/app_management/applications_n.htm) guide.
+   > For the `BACKGROUNDLAUNCH` notification, the `app_create()` and `app_control()` life-cycle callbacks are called, but the `app_resume()` callback is not called. However, the next time the user runs the application, the `app_resume()` callback is invoked normally. For more information on the life-cycle, see the [Applications](../../guides/app_management/applications_n.htm) guide.
 
 4. Use the Rest APIs for sending push notifications.
 

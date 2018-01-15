@@ -1,9 +1,9 @@
-# Polygon Mesh in OpenGL® ES
+# Polygon Mesh in OpenGL&reg; ES
 ## Dependencies
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
 
-In real-time applications, such as games, an object is usually represented as a **polygon mesh**. The only polygon that OpenGL® ES supports is a triangle and because of this, a polygon mesh in OpenGL® ES implies a **triangle mesh**. Given an object, its polygon mesh can have different resolutions, as shown in the following figure.
+In real-time applications, such as games, an object is usually represented as a **polygon mesh**. The only polygon that OpenGL&reg; ES supports is a triangle and because of this, a polygon mesh in OpenGL&reg; ES implies a **triangle mesh**. Given an object, its polygon mesh can have different resolutions, as shown in the following figure.
 
 As the resolution is increased or the number of vertices increased, the polygon mesh samples the original smooth surface more accurately. However, rendering the mesh requires more time.
 
@@ -54,7 +54,7 @@ The following figure shows some fractions of the OBJ file, where v stands for ve
 
 ![Fractions of an OBJ file](./media/obj_fractions.png)
 
-The triangle mesh stored in the OBJ file is imported into the OpenGL® ES program to fill the vertex and index arrays. As the example mesh is composed of 48 triangles, the index array has 144 (48 times 3) elements, as shown in the following figure.
+The triangle mesh stored in the OBJ file is imported into the OpenGL&reg; ES program to fill the vertex and index arrays. As the example mesh is composed of 48 triangles, the index array has 144 (48 times 3) elements, as shown in the following figure.
 
 **Figure: Vertex and index arrays of a low-resolution sphere mesh**
 

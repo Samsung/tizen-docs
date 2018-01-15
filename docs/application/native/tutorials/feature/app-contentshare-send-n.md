@@ -44,7 +44,7 @@ selector is shown and the user can select the application they want.
 > When using application controls, pay attention to the
 following:  
 > -   Since Tizen 2.4, application controls that launch [service
-    applications](../../../../org.tizen.guides/html/native/app_management/service_app_n.htm)    outside the current package are not supported. Because of this, a     service application can only be launched explicitly by an    application in the same package.
+    applications](../../guides/app-management/service-app-n.md)    outside the current package are not supported. Because of this, a     service application can only be launched explicitly by an    application in the same package.
 > -   The operation is mandatory information for sending a launch request.    If the operation is not specified, the
     `APP_CONTROL_OPERATION_DEFAULT` operation is used. In that case, the    application ID is mandatory to explicitly launch an application.
 

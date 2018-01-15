@@ -3,7 +3,7 @@
 - Tizen 3.0 and Higher for Mobile
 - Tizen 3.0 and Higher for Wearable
 
-You can access graphics hardware using Vulkan® and OpenGL® ES through the Simple DirectMedia Layer (SDL), a cross-platform software development library. SDL is used for creating high-performance computer games, multimedia applications, and emulators. It provides a low-level hardware abstraction layer to computer multimedia hardware components. It can run on many operating systems, such as Android™, iOS, Linux, macOS, Windows®, and Tizen. For more information, see the [SDL Web site](https://libsdl.org/).
+You can access graphics hardware using Vulkan&reg; and OpenGL&reg; ES through the Simple DirectMedia Layer (SDL), a cross-platform software development library. SDL is used for creating high-performance computer games, multimedia applications, and emulators. It provides a low-level hardware abstraction layer to computer multimedia hardware components. It can run on many operating systems, such as Android™, iOS, Linux, macOS, Windows&reg;, and Tizen. For more information, see the [SDL Web site](https://libsdl.org/).
 
 The main features of the SDL API include:
 
@@ -17,7 +17,7 @@ The main features of the SDL API include:
 
 - Showing the status bar **in mobile applications only**You can [manage the status bar](#setting_indicator) used to display icons or notifications.
 
-SDL belongs to the hardware abstraction layer in Tizen. It allows managing video, audio, input devices, threads, and 3D graphics through graphics libraries, such as Vulkan® and OpenGL® ES. For information the comparative merits of Vulkan® and OpenGL®, see [Vulkan® vs. OpenGL®](#vulkan_vs_opengles). As shown in the following figure, SDL provides the application layer access to low-level 3D rendering API (Vulkan® and OpenGL® ES).
+SDL belongs to the hardware abstraction layer in Tizen. It allows managing video, audio, input devices, threads, and 3D graphics through graphics libraries, such as Vulkan&reg; and OpenGL&reg; ES. For information the comparative merits of Vulkan&reg; and OpenGL&reg;, see [Vulkan&reg; vs. OpenGL&reg;](#vulkan_vs_opengles). As shown in the following figure, SDL provides the application layer access to low-level 3D rendering API (Vulkan&reg; and OpenGL&reg; ES).
 
 **Figure: SDL in the Tizen framework**
 
@@ -49,7 +49,7 @@ The following SDL features are currently supported in Tizen:
 
   Use the `SDL_platform.h` and `SDL_power.h` header files.
 
-For the list of features not currently supported in Tizen, see the SDL API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__OPENSRC__SDL__FRAMEWORK.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__OPENSRC__SDL__FRAMEWORK.html) applications). In Tizen, SDL supports the Vulkan and OpenGL® ES graphics libraries only; the `SDL_render` library is not supported.
+For the list of features not currently supported in Tizen, see the SDL API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__OPENSRC__SDL__FRAMEWORK.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__OPENSRC__SDL__FRAMEWORK.html) applications). In Tizen, SDL supports the Vulkan and OpenGL&reg; ES graphics libraries only; the `SDL_render` library is not supported.
 
 > **Note**  
 > The following SDL header files related to the `SDL_render` library are not included in the Tizen native API:
@@ -58,30 +58,30 @@ For the list of features not currently supported in Tizen, see the SDL API (in [
 >  - `SDL_rect.h`
 >  - `SDL_surface.h`
 
-## Vulkan® vs. OpenGL®
+## Vulkan&reg; vs. OpenGL&reg;
 
-When you consider the differences and advantages between Vulkan® and OpenGL®, Vulkan® basically complements OpenGL® by addressing specific users who want to have a quite low-level API with a much better abstraction of the modern hardware giving a lot of control, predictability, and high performance at much greater efficiency. On the other hand, OpenGL® is a much higher-level API that does many things on your behalf inside the driver with less burden on you. It continues to be the API of choice for a wide range of developers who want to have the shortest path to a functionally correct application.
+When you consider the differences and advantages between Vulkan&reg; and OpenGL&reg;, Vulkan&reg; basically complements OpenGL&reg; by addressing specific users who want to have a quite low-level API with a much better abstraction of the modern hardware giving a lot of control, predictability, and high performance at much greater efficiency. On the other hand, OpenGL&reg; is a much higher-level API that does many things on your behalf inside the driver with less burden on you. It continues to be the API of choice for a wide range of developers who want to have the shortest path to a functionally correct application.
 
-When selecting the open graphics API (Vulkan® or OpenGL®) to use for a new application, or when considering the need to migrate an existing application from OpenGL® to Vulkan®, ask yourself the following questions:
+When selecting the open graphics API (Vulkan&reg; or OpenGL&reg;) to use for a new application, or when considering the need to migrate an existing application from OpenGL&reg; to Vulkan&reg;, ask yourself the following questions:
 
 - Do you want to have really low-level access and explicit control over the underlying GPU?
 - Is your application/driver CPU-bound, too slow, and consuming too much power?
 - Can your graphic work creation be parallelized and reused?
 - Can you deal with additional code complexity to squeeze out maximum performance?
 
-If your answer to any of the questions is **Yes**, consider using Vulkan® instead of OpenGL®. However, remember that Vulkan® comes at the cost of taking more responsibility at the application side from the driver.
+If your answer to any of the questions is **Yes**, consider using Vulkan&reg; instead of OpenGL&reg;. However, remember that Vulkan&reg; comes at the cost of taking more responsibility at the application side from the driver.
 
-The following table describes the differences and advantages between Vulkan® and OpenGL®.
+The following table describes the differences and advantages between Vulkan&reg; and OpenGL&reg;.
 
-**Table: Comparison between Vulkan® and OpenGL®**
+**Table: Comparison between Vulkan&reg; and OpenGL&reg;**
 
-|                         | Vulkan®                                  | OpenGL®                                  |
+|                         | Vulkan&reg;                                  | OpenGL&reg;                                  |
 | ----------------------- | ---------------------------------------- | ---------------------------------------- |
 | GPU control             | Explicit API allows you to manage the state and resources as per specific application needs, and relieves you from hidden optimizations giving more control on the GPU. | Implicit driver manages the state and resources based on heuristics, leading to overhead and inefficiencies. The application has **no control**. |
 | Multi-core friendliness | API is designed around asynchronous generation of command buffers across multiple threads and feeds them in sequence to a command pipeline, which reflects the realities of the modern hardware. | Originally designed for single-threaded architectures and does not allow the generation of graphic commands in parallel to command execution. |
-| Efficiency              | Vulkan® greatly reduces the CPU time spent in the driver with external validation and diagnostics layers that can be independently enabled and disabled, as needed. Offloads the render thread by delegating heavy CPU jobs to the application and opt-in layers. | Does a lot of redundant excessive validation for each draw call, such as runtime error checking, implicit tracking of resource usage, and synchronization, leading to much CPU overhead. |
-| Shader portability      | Vulkan® mandates the use of the intermediate byte code (SPIR-V) by the driver for shaders. This allows offline shader precompilation, and allows you to write shaders in languages other than GLSL. | Only GLSL is supported as a shader language, and the compiler is a part of the driver with vendor-specific semantics. No user control over the front end and higher runtime translation time. |
-| Code complexity         | Vulkan® is a much more verbose API, offering more control at the cost of more code complexity and responsibility at the application side. | OpenGL® driver manages many tasks inside the driver relieving you from the burden of managing these at the application end. |
+| Efficiency              | Vulkan&reg; greatly reduces the CPU time spent in the driver with external validation and diagnostics layers that can be independently enabled and disabled, as needed. Offloads the render thread by delegating heavy CPU jobs to the application and opt-in layers. | Does a lot of redundant excessive validation for each draw call, such as runtime error checking, implicit tracking of resource usage, and synchronization, leading to much CPU overhead. |
+| Shader portability      | Vulkan&reg; mandates the use of the intermediate byte code (SPIR-V) by the driver for shaders. This allows offline shader precompilation, and allows you to write shaders in languages other than GLSL. | Only GLSL is supported as a shader language, and the compiler is a part of the driver with vendor-specific semantics. No user control over the front end and higher runtime translation time. |
+| Code complexity         | Vulkan&reg; is a much more verbose API, offering more control at the cost of more code complexity and responsibility at the application side. | OpenGL&reg; driver manages many tasks inside the driver relieving you from the burden of managing these at the application end. |
 
 ## SDL Application Life-cycle in Tizen
 
@@ -123,7 +123,7 @@ When the application starts exiting, the `SDL_QUIT` and `SDL_TERMINATING` events
 
 ## Prerequisites
 
-Before using graphics libraries in Tizen, make sure you understand the basic functions of [OpenGL® ES](https://www.khronos.org/opengles/) and [Vulkan®](https://www.khronos.org/vulkan). For more information, see [SDL Graphics with OpenGL® ES](sdl-opengles-n.md) and [SDL Graphics with Vulkan®](vulkan-n.md).
+Before using graphics libraries in Tizen, make sure you understand the basic functions of [OpenGL&reg; ES](https://www.khronos.org/opengles/) and [Vulkan&reg;](https://www.khronos.org/vulkan). For more information, see [SDL Graphics with OpenGL&reg; ES](sdl-opengles-n.md) and [SDL Graphics with Vulkan&reg;](vulkan-n.md).
 
 ## Handling General SDL Events
 

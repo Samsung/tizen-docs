@@ -8,13 +8,13 @@
 
 WebGL - Khronos is a graphics library for creating 3D visual elements in Web applications without separate plug-ins.
 
-WebGL™ is designed as a rendering context of the [HTML5  element](./w3c/graphics/canvas-w.md). The WebGL™ context is still being developed and has not been standardized. WebGL™ uses 3D rendering APIs derived from [OpenGL® ES 2.0](http://www.opengl.org/documentation/specs/version2.0/glspec20.pdf), and is realized by binding shaders and [OpenGL® ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.00.pdf) (GLSL ES) as JavaScript.
+WebGL&trade; is designed as a rendering context of the [HTML5  element](./w3c/graphics/canvas-w.md). The WebGL&trade; context is still being developed and has not been standardized. WebGL&trade; uses 3D rendering APIs derived from [OpenGL&reg; ES 2.0](http://www.opengl.org/documentation/specs/version2.0/glspec20.pdf), and is realized by binding shaders and [OpenGL&reg; ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.00.pdf) (GLSL ES) as JavaScript.
 
-The main features of WebGL™ include:
+The main features of WebGL&trade; include:
 
-- Importing the WebGL™ context   
+- Importing the WebGL&trade; context   
 
-  You can use the `getContext()` method of the `Canvas` object to [import the WebGL™ context](./w3c/supplement/webgl-w.md#import).
+  You can use the `getContext()` method of the `Canvas` object to [import the WebGL&trade; context](./w3c/supplement/webgl-w.md#import).
 
 - Using programs and shaders   
 
@@ -22,7 +22,7 @@ The main features of WebGL™ include:
 
 - Using buffers   
 
-  A buffer is a memory block for storing temporary data. In WebGL™, you must [create a vertex buffer object (VBO) to store vertex attributes](./w3c/supplement/webgl-w.md#buffer), such as location, color, and texture coordinates.
+  A buffer is a memory block for storing temporary data. In WebGL&trade;, you must [create a vertex buffer object (VBO) to store vertex attributes](./w3c/supplement/webgl-w.md#buffer), such as location, color, and texture coordinates.
 
 > **Note**
 > The `deleteBuffer()` method can be used to delete the buffer.
@@ -33,7 +33,7 @@ The main features of WebGL™ include:
 
 - Applying realistic 3D effects   
 
-  To apply a more realistic 3D effect to objects in WebGL™, you can use the following features:
+  To apply a more realistic 3D effect to objects in WebGL&trade;, you can use the following features:
 
   - Texture
 
@@ -51,17 +51,17 @@ The main features of WebGL™ include:
 
   You can also [use touch effects](./w3c/supplement/webgl-w.md#touch) with textures and 3D perspectives.
 
-- WebGL™ frameworks
+- WebGL&trade; frameworks
 
-  Numerous [frameworks](http://www.khronos.org/webgl/wiki/User_Contributions#Frameworks) exist to easily import low-level methods to WebGL™ and to develop WebGL™ more productively.
+  Numerous [frameworks](http://www.khronos.org/webgl/wiki/User_Contributions#Frameworks) exist to easily import low-level methods to WebGL&trade; and to develop WebGL&trade; more productively.
 
-  The [three.js](https://github.com/mrdoob/three.js/) is one of the most widely used WebGL™ frameworks. It is a lightweight JavaScript library, in which many settings that need to be performed when developing WebGL™ are already set as basis. Consequently, three.js reduces the amount of overlapping code due to repetitive setting works.
+  The [three.js](https://github.com/mrdoob/three.js/) is one of the most widely used WebGL&trade; frameworks. It is a lightweight JavaScript library, in which many settings that need to be performed when developing WebGL&trade; are already set as basis. Consequently, three.js reduces the amount of overlapping code due to repetitive setting works.
 
   You can use the three.js framework to, for example, [apply light and camera effects](./w3c/supplement/webgl-w.md#framework).
 
-## Importing the WebGL™ Context
+## Importing the WebGL&trade; Context
 
-To import the WebGL™ context from the HTML5 `<canvas>` element:
+To import the WebGL&trade; context from the HTML5 `<canvas>` element:
 
 1. Define the `<canvas>` element ID and set its width and height:
 
@@ -74,7 +74,7 @@ To import the WebGL™ context from the HTML5 `<canvas>` element:
 > **Note**
 > If the width and height are not set, the default size, 300 x 150 px, is used.
 
-2. Use the `getContext()` method of the `Canvas` object to import the WebGL™ context:
+2. Use the `getContext()` method of the `Canvas` object to import the WebGL&trade; context:
 
    ```
    <script>
@@ -109,9 +109,9 @@ For the complete source code related to this use case, see the following file:
 
 ## Initializing Programs and Shaders
 
-To bind the shaders and GLSL ES in WebGL™ by using shaders and programs:
+To bind the shaders and GLSL ES in WebGL&trade; by using shaders and programs:
 
-1. Define the vertex shader and fragment shader using the `gl_Position` and `gl_FragColor` variables of the [OpenGL® ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf) (GLSL ES):
+1. Define the vertex shader and fragment shader using the `gl_Position` and `gl_FragColor` variables of the [OpenGL&reg; ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf) (GLSL ES):
 
    ```
    <script id="vshader" type="x-shader/x-vertex">
@@ -178,7 +178,7 @@ To bind the shaders and GLSL ES in WebGL™ by using shaders and programs:
        gl.linkProgram(program);
    ```
 
-8. Import the `useProgram()` method to enable WebGL™ to use the program:
+8. Import the `useProgram()` method to enable WebGL&trade; to use the program:
 
    ```
        /* Shaders are loaded and used */
@@ -187,7 +187,7 @@ To bind the shaders and GLSL ES in WebGL™ by using shaders and programs:
    ```
 
 > **Note**
-> After a  WebGL™ program has been used, you can use the `deleteProgram()` method to delete it.
+> After a  WebGL&trade; program has been used, you can use the `deleteProgram()` method to delete it.
 
 ### Source Code
 
@@ -199,7 +199,7 @@ For the complete source code related to this use case, see the following file:
 
 To create buffers, bind them, and store data in them:
 
-1. To create a triangle (shown on the left in the figure), define the coordinates of a triangle according to the WebGL™ coordinate system (shown on the right):
+1. To create a triangle (shown on the left in the figure), define the coordinates of a triangle according to the WebGL&trade; coordinate system (shown on the right):
 
    ![WebGL native coordinate system](./media/initializing_buffers_coordsystem.png)
 
@@ -227,7 +227,7 @@ To create buffers, bind them, and store data in them:
 4. Import the `bufferData()` method to store data to the VBO:
 
    ```
-       /* Convert to Float32Array format that allows the array to be used in WebGL™ */
+       /* Convert to Float32Array format that allows the array to be used in WebGL&trade; */
        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
    </script>
    ```
@@ -246,9 +246,9 @@ For the complete source code related to this use case, see the following file:
 
 ## Drawing Shapes on the Screen
 
-To enhance the user experience of your application with WebGL™ features, you must learn to display shapes on the screen using attribute array data and a drawing buffer:
+To enhance the user experience of your application with WebGL&trade; features, you must learn to display shapes on the screen using attribute array data and a drawing buffer:
 
-1. Import the `getAttribLocation()` method to bring the attribute location from the WebGL™ program:
+1. Import the `getAttribLocation()` method to bring the attribute location from the WebGL&trade; program:
 
    ```
    <script>
@@ -304,7 +304,7 @@ For the complete source code related to this use case, see the following files:
 
 To set colors using attributes and a buffer:
 
-1. Define the vertex shader and fragment shader using the `gl_Position` and `gl_FragColor` variables of the [OpenGL® ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf) (GLSL ES):
+1. Define the vertex shader and fragment shader using the `gl_Position` and `gl_FragColor` variables of the [OpenGL&reg; ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf) (GLSL ES):
 
    ```
    <script id="vshader" type="x-shader/x-vertex">
@@ -384,7 +384,7 @@ For the complete source code related to this use case, see the following file:
 
 To apply an image from a file to a surface as a texture:
 
-1. Define the vertex shader and fragment shader using the `gl_Position` and `gl_FragColor` variables of the [OpenGL® ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf) (GLSL ES). In this example, the texture coordinate attribute is used instead of the vertex coordinate attribute.
+1. Define the vertex shader and fragment shader using the `gl_Position` and `gl_FragColor` variables of the [OpenGL&reg; ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf) (GLSL ES). In this example, the texture coordinate attribute is used instead of the vertex coordinate attribute.
 
    Set the variable to pass the texture coordinate over to the fragment shader. Define the formula for calculating the texture coordinates.
 
@@ -441,7 +441,7 @@ To apply an image from a file to a surface as a texture:
            gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
    ```
 
-   The image data loaded in HTML has the opposite Y axis as the WebGL™ direction. Use the `gl.UNPACK_FLIP_Y_WEBGL` attribute to reverse the data and store it.
+   The image data loaded in HTML has the opposite Y axis as the WebGL&trade; direction. Use the `gl.UNPACK_FLIP_Y_WEBGL` attribute to reverse the data and store it.
 
 4. Use the loaded image file to fill the texture data. The `texImage2D()` method assigns the image to be used as a texture, and the `textParameteri()` method assigns a filter.
 
@@ -592,7 +592,7 @@ To create a 3D perspective, you can use the [glMatrix library](https://github.co
 
    ![2 triangles](./media/3d.png)
 
-2. Define the vertex shader and fragment shader with using the `gl_Position` and `gl_FragColor` variables of the [OpenGL® ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf) (GLSL ES), and modify the GLSL ES variables:
+2. Define the vertex shader and fragment shader with using the `gl_Position` and `gl_FragColor` variables of the [OpenGL&reg; ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf) (GLSL ES), and modify the GLSL ES variables:
 
    ```
    <script id="vshader" type="x-shader/x-vertex">
@@ -685,7 +685,7 @@ For the complete source code related to this use case, see the following files:
 
 You can apply a texture and 3D perspective with touch events by using the [glMatrix library](https://github.com/toji/gl-matrix). The following example demonstrates how to display and turn a dice on the screen based on touch events:
 
-1. Define the vertex shader and fragment shader using the `gl_Position` and `gl_FragColor` variables of the [OpenGL® ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf) (GLSL ES):
+1. Define the vertex shader and fragment shader using the `gl_Position` and `gl_FragColor` variables of the [OpenGL&reg; ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf) (GLSL ES):
 
    ```
    <script id="vshader" type="x-shader/x-vertex">
@@ -761,7 +761,7 @@ You can apply a texture and 3D perspective with touch events by using the [glMat
    </script>
    ```
 
-3. Use the `getContext()` method of the `canvas` object to import the WebGL™ context:
+3. Use the `getContext()` method of the `canvas` object to import the WebGL&trade; context:
 
    ```
    <script>
@@ -852,7 +852,7 @@ You can apply a texture and 3D perspective with touch events by using the [glMat
        }
    ```
 
-7. Initialize the WebGL™ texture and load the image to be used as the texture (the figure shows the coordinates of the image to be loaded):
+7. Initialize the WebGL&trade; texture and load the image to be used as the texture (the figure shows the coordinates of the image to be loaded):
 
    ```
       function initTexture(callback) {
@@ -889,7 +889,7 @@ You can apply a texture and 3D perspective with touch events by using the [glMat
 9. Import the `mat4()` method module and define it using the utility methods:
 
 > **Note**
-> The `perspective()` method is not WebGL™-embedded, so it must be used directly, or a third-party matrix library must be used.
+> The `perspective()` method is not WebGL&trade;-embedded, so it must be used directly, or a third-party matrix library must be used.
 
    ```
            mat4.perspective(45, canvas.width / canvas.height, 0.1, 100.0, pMatrix);
@@ -971,9 +971,9 @@ For the complete source code related to this use case, see the following files:
 - [webgl_dice.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl)
 - [dice.gif](http://download.tizen.org/misc/examples/w3c_html5/graphics/khronos_webgl/images)
 
-## Using WebGL™ Frameworks
+## Using WebGL&trade; Frameworks
 
-To use the three.js framework for your WebGL™ application:
+To use the three.js framework for your WebGL&trade; application:
 
 1. Download the [three.js library](http://threejs.org/) and include it in the HTML file:
 
@@ -1078,7 +1078,7 @@ To use the three.js framework for your WebGL™ application:
    ```
 
 > **Note**	
-> In WebGL™, there is no `Camera` object.
+> In WebGL&trade;, there is no `Camera` object.
 
 6. Create a new `Scene` instance and create the mesh and light elements using the `createMeshs()` and `setupLight()` methods:
 

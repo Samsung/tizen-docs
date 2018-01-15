@@ -3,7 +3,7 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 2.3.1 and Higher for Wearable
 
-The fragment shader returns a colored fragment, often called the **RGBAZ** fragment. A (for alpha) represents the fragment's opacity whereas Z represents the depth. In the output merger, the fragment competes or combines with the pixel in the **color buffer** to update the pixel's color. A and Z are used in this process. In addition to the color buffer, OpenGL® ES supports another buffer named **depth buffer** or **z-buffer**. It has the same resolution as the color buffer and stores the depth values of the pixels.
+The fragment shader returns a colored fragment, often called the **RGBAZ** fragment. A (for alpha) represents the fragment's opacity whereas Z represents the depth. In the output merger, the fragment competes or combines with the pixel in the **color buffer** to update the pixel's color. A and Z are used in this process. In addition to the color buffer, OpenGL&reg; ES supports another buffer named **depth buffer** or **z-buffer**. It has the same resolution as the color buffer and stores the depth values of the pixels.
 
 ## Depth Buffering
 
@@ -21,4 +21,4 @@ Suppose that the current fragment has a smaller depth than the pixel in the colo
 
 A typical blending equation is `αcf + (1-α)cp`, where `α` represents the fragment's opacity, `cf` is the fragment color, and `cp` is the pixel color. Assume that, in the [Depth buffering visualization](#buffer) figure, all vertices of the blue triangle have the RGBA color, (0,0,1,0.5), and those of the red triangle have (1,0,0,1). The scan conversion algorithm interpolates the RGB channels and the alpha channel in the same manner. Therefore, all fragments of the blue triangle are assigned (0,0,1,0.5), and those of the red triangle are (1,0,0,1). Then, the blue fragment is blended with the red pixel at 3 pixel positions. The blended color is (0.5,0,0.5). This process is named **alpha blending**.
 
-OpenGL® ES supports the `glBlendFunc()` function, where the first parameter specifies the blending coefficient for the incoming (source) fragment and the second parameter specifies the blending coefficient for the destination pixel. Many values, such as `GL_ZERO` and `GL_ONE`, can be assigned to the parameters, but `GL_SRC_ALPHA` best fits the incoming fragment while `GL_ONE_MINUS_SRC_ALPHA` best fits the destination pixel.
+OpenGL&reg; ES supports the `glBlendFunc()` function, where the first parameter specifies the blending coefficient for the incoming (source) fragment and the second parameter specifies the blending coefficient for the destination pixel. Many values, such as `GL_ZERO` and `GL_ONE`, can be assigned to the parameters, but `GL_SRC_ALPHA` best fits the incoming fragment while `GL_ONE_MINUS_SRC_ALPHA` best fits the destination pixel.

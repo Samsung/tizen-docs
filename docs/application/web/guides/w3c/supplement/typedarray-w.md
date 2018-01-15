@@ -6,7 +6,7 @@
 - Tizen 2.3.1 and Higher for Wearable
 - Tizen 3.0 and Higher for TV
 
-Typed Array - Khronos is an HTML5 feature that allows you to access binary data in JavaScript. It is designed to effectively handle the complex binary data of WebGL™. It provides better performance than the WebGL - Khronos API (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#webgl), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#webgl), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#webgl) applications) when manipulating binary data and handling the data of other HTML APIs.
+Typed Array - Khronos is an HTML5 feature that allows you to access binary data in JavaScript. It is designed to effectively handle the complex binary data of WebGL&trade;. It provides better performance than the WebGL - Khronos API (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#webgl), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#webgl), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#webgl) applications) when manipulating binary data and handling the data of other HTML APIs.
 
 The main features of the Typed Array - Khronos API include:
 
@@ -22,7 +22,7 @@ The main features of the Typed Array - Khronos API include:
 
   You can [deliver binary data](./w3c/supplement/typedarray-w.md#use) effectively in other HTML5 APIs that employ a typed array, such as:
 
-  - [WebGL™](./w3c/supplement/webgl-w.md)
+  - [WebGL&trade;](./w3c/supplement/webgl-w.md)
   - [Canvas](./w3c/graphics/canvas-w.md)
   - [XMLHttpRequest](./w3c/communication/xmlhttprequest-w.md)
 

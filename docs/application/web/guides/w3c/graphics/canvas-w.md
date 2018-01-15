@@ -35,7 +35,7 @@ For all canvas objects (images, shapes, text, and lines), you can define colors 
 In mobile applications only, in HTML5, the [Scalable Vector Graphics (SVG) 2](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#svg) API provides similar features as the canvas. Their difference is that SVG expresses graphics using vectors, while the canvas is based on pixels. To express complex graphics, use the canvas, and to express graphics with a liberal expansion or reduction, use [SVG](./w3c/graphics/svg-w.md).
 
 > **Note**
-> The canvas currently supports 2D graphics only, since the 3D graphics specification is still in progress. The [WebGL™](https://www.khronos.org/registry/webgl/specs/1.0/) API is currently called 3D Canvas, and is used to express 3D graphics. For more information on the performance differences between Canvas 2D and WebGL™ in mobile applications, see [Performance Comparison of Canvas 2D and WebGL™](./w3c/graphics/canvas-w.md#comparison).
+> The canvas currently supports 2D graphics only, since the 3D graphics specification is still in progress. The [WebGL&trade;](https://www.khronos.org/registry/webgl/specs/1.0/) API is currently called 3D Canvas, and is used to express 3D graphics. For more information on the performance differences between Canvas 2D and WebGL&trade; in mobile applications, see [Performance Comparison of Canvas 2D and WebGL&trade;](./w3c/graphics/canvas-w.md#comparison).
 
 ## Using a Canvas
 
@@ -420,13 +420,13 @@ For the complete source code related to this use case, see the following files:
 - [Text_Styles_2.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context)
 - [Text_Styles_4.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context)
 
-## Performance Comparison of Canvas 2D and WebGL™ in Mobile Applications
+## Performance Comparison of Canvas 2D and WebGL&trade; in Mobile Applications
 
 In Web documents prior to HTML5, only simple image loading was supported. To create graphic animations, you had to use a separate plug-in. However, as the graphic-related APIs have become more standardized, you can now express graphics by using only JavaScript, without a separate plug-in.
 
-When developing Web applications that need to express complex graphics, such as games, the most important issue to consider is graphic performance. Currently, the HTML Canvas 2D Context API and [WebGL™](https://www.khronos.org/registry/webgl/specs/1.0/) are used to express graphic elements in many games. The following example illustrates how to create an effective graphic animation by comparing the performance of the renderers in the Canvas 2D Context API and WebGL™.
+When developing Web applications that need to express complex graphics, such as games, the most important issue to consider is graphic performance. Currently, the HTML Canvas 2D Context API and [WebGL&trade;](https://www.khronos.org/registry/webgl/specs/1.0/) are used to express graphic elements in many games. The following example illustrates how to create an effective graphic animation by comparing the performance of the renderers in the Canvas 2D Context API and WebGL&trade;.
 
-To compare the performance, 2 simple Web applications must be created, using the Canvas 2D Context API and WebGL™:
+To compare the performance, 2 simple Web applications must be created, using the Canvas 2D Context API and WebGL&trade;:
 
 1. Create the applications with the following logic:
    1. Load an image.
@@ -437,16 +437,16 @@ To compare the performance, 2 simple Web applications must be created, using the
 3. Increase only the number of objects so that the same 1~N images, under the same conditions, are shown repeatedly based on 1~N.
 4. Measure the FPS as the number of repeatedly shown objects increase.
 
-The following figure shows the result of the test: As the number of objects increase, the performance of the Canvas 2D Context API rapidly decreases compared to WebGL™ (the result is subject to change according to the complexity of the application logic). As such, when expressing many graphic objects all differently, it is much more efficient to use WebGL™ than the Canvas 2D Context API.
+The following figure shows the result of the test: As the number of objects increase, the performance of the Canvas 2D Context API rapidly decreases compared to WebGL&trade; (the result is subject to change according to the complexity of the application logic). As such, when expressing many graphic objects all differently, it is much more efficient to use WebGL&trade; than the Canvas 2D Context API.
 
 **Figure: Test result**
 
 ![Test result](./media/comp_test_result.png)
 
-There is one problem with using WebGL™; the ratio of mobile browsers supporting it is quite low compared to the Canvas 2D Context API, and even when it is supported, usually only partial features are included (support for 3D acceleration, reflection effect, and camera effect is particularly low). The following figure shows the support status of WebGL™ in computer (top) and mobile (bottom) browsers, as published in [http://webglstats.com/](http://webglstats.com/) in June 2013.
+There is one problem with using WebGL&trade;; the ratio of mobile browsers supporting it is quite low compared to the Canvas 2D Context API, and even when it is supported, usually only partial features are included (support for 3D acceleration, reflection effect, and camera effect is particularly low). The following figure shows the support status of WebGL&trade; in computer (top) and mobile (bottom) browsers, as published in [http://webglstats.com/](http://webglstats.com/) in June 2013.
 
-**Figure: WebGL™ support in computer and mobile browsers**
+**Figure: WebGL&trade; support in computer and mobile browsers**
 
 ![WebGL support in computer and mobile browsers](./media/comp_test_support.png)
 
-Many mobile browsers do not support WebGL™ or only partially support WebGL™. Even though Tizen supports WebGL™, it is recommended to use the Canvas 2D Context API for small numbers of 2D drawings, since the API is supported in most mobile browsers. However, for performance critical applications, use WebGL™ for faster 2D performance.
+Many mobile browsers do not support WebGL&trade; or only partially support WebGL&trade;. Even though Tizen supports WebGL&trade;, it is recommended to use the Canvas 2D Context API for small numbers of 2D drawings, since the API is supported in most mobile browsers. However, for performance critical applications, use WebGL&trade; for faster 2D performance.

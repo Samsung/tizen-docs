@@ -13,6 +13,7 @@ To improve the performance of an application:
 3. [Measure performance](#measure_app_perf) to compare refactoring gains.
 4. If the performance goal is met, you can stop the process, else go to step 2 and repeat till the goal is met.
 
+<a name="measure_app_perf"></a>
 ## Measuring Application Performance
 
 The Tizen Studio supports various tools which help to measure and increase performance at runtime:
@@ -39,16 +40,19 @@ Some general tips to improve the performance of your application are:
 - Do not run heavy calculations in the same thread as your UI.
 - Use optimization options provided by toolchains.
 
+<a name="dynamic"></a>
 ## Dynamic Analysis
 
 To make your applications powerful, faster, and more stable, you need to analyze their performance to recognize and fix bottlenecks, bugs, and memory and resource leaks.
 
 The following instructions and examples help you to use the Dynamic Analyzer effectively:
 
-- [Running Dynamic Analyzer](#running)  
+<a name="running"></a>
+- [Running Dynamic Analyzer] 
 Describes how to launch the Dynamic Analyzer.
 
-- [Using the Analysis Result](#result)  
+<a name="result"></a>
+- [Using the Analysis Result]
 Describes how to utilize the Dynamic Analyzer for various improvement purposes.
 
 ### Running Dynamic Analyzer
@@ -138,6 +142,7 @@ To analyze performance of the application with the Dynamic Analyzer, use the fol
 
   ![Thread load](./media/optimizingappper_threadload.png)
 
+  <a name="dynamic"></a>
 #### Detecting Leaks
 
 To improve the performance of your application, you can use the Dynamic Analyzer to detect memory leaks. Memory leaks occur when memory capacity that is dynamically allocated during application execution is not returned after the execution stops. Severe or accumulating memory leaks can affect the performance of your application along with other applications and programs. For more information, see [Performing Memory Analysis](../../../tizen-studio/common-tools/da-memory.md).
@@ -146,6 +151,7 @@ To improve the performance of your application, you can use the Dynamic Analyzer
 
 Understanding the thread execution in multi-threaded applications can be challenging. The GDB (GNU Debugger) supports the process of debugging multi-threaded applications, but since it uses synchronization objects, the debugging can be quite difficult. The Dynamic Analyzer, on the other hand, provides effective thread analysis features. For more information, see [Performing Thread Analysis](../../../tizen-studio/common-tools/da-thread.md).
 
+<a name="valgrind_analysis"></a>
 ## Valgrind Analysis
 
 Valgrind helps you to detect memory errors or leaks in your application at runtime.
@@ -158,6 +164,7 @@ Describes how to launch Valgrind with your application.
 - [Viewing Valgrind Result](#valgrind_result)  
 Describes the information provided through Valgrind analysis.
 
+<a name="running_valgrind"></a>
 ### Running Valgrind
 
 To set the Valgrind options for your application:
@@ -228,6 +235,7 @@ Select from 2 types of memory profiling settings:
 
 8. To run Valgrind, click **Profile**.
 
+<a name="valgrind_result"></a>
 ### Viewing Valgrind Result
 
 After the [memory profiling](#running_valgrind) is terminated, you can view the profiling results.

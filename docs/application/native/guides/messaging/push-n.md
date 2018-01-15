@@ -482,7 +482,7 @@ To send a notification:
    "action=LAUNCH"
    ```
 
-   When the push service on the target device receives a notification with this message, it launches your application and delivers the notification through an [application control](../../../../org.tizen.guides/html/native/app_management/app_controls_n.htm). Your application can get the notification using the `push_service_app_control_to_notification()` function. For more information, see how to [receive notifications when the application is not running](#recv_noti_app_not_run).
+   When the push service on the target device receives a notification with this message, it launches your application and delivers the notification through an [application control](../../guides/app_management/app_controls_n.htm). Your application can get the notification using the `push_service_app_control_to_notification()` function. For more information, see how to [receive notifications when the application is not running](#recv_noti_app_not_run).
 
    The message field takes effect only when the application is not running (more precisely, when the application is not connected to the push service). If a notification with the above message field arrives at the device where the application is running, the push service delivers the notification directly to the application. It does not show the "Hi" message in the quick panel or increase the badge count.
 

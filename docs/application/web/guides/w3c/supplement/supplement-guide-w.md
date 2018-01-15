@@ -16,7 +16,7 @@ The main supplementary features are:
 
 - [WebGL - Khronos](./w3c/supplement/webgl-w.md) **in mobile and wearable applications only**	
 
-  Enables you to use the WebGL™ graphics library to create 3D visual elements.
+  Enables you to use the WebGL&trade; graphics library to create 3D visual elements.
 
 - [FullScreen API - Mozilla](./w3c/supplement/fullscreen-w.md) 	
 

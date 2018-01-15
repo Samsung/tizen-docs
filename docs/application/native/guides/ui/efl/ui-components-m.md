@@ -47,7 +47,7 @@ The mobile UI components are designed to allow the user to interact with touch s
 | Assist  views          | [Hoversel](./component-hoversel-mn.md) | The  hoversel component is a button that pops up a list of items. |
 | Transition             | Transit                                  | The  transit component can apply several transition effects to an Evas object,  such as translations and rotations. |
 | Transition             | [Flip](./component-flip-mn.md) | The  flip component can hold 2 Evas objects and let the user flip between these  objects using a variety of predefined animations. |
-| Hardware  acceleration | [GLView](./component-glview-mn.md) | The  GLView component can render OpenGL® in an Elementary object, hiding EvasGL  complexity. |
+| Hardware  acceleration | [GLView](./component-glview-mn.md) | The  GLView component can render OpenGL&reg; in an Elementary object, hiding EvasGL  complexity. |
 | Miscellaneous          | [Map](./component-map-mn.md) | [The map component can  display a geographic map. The default map data is provided by the  OpenStreetMap project.](http://www.openstreetmap.org/) |
 | Miscellaneous          | [Plug](./component-plug-mn.md) | The  plug component allows you to show an Evas object created by another process.  It can be used anywhere like any other Elementary UI component. |
 
