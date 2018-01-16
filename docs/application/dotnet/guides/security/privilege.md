@@ -1,6 +1,5 @@
 # Privilege Information
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 Tizen provides privilege information for user notification.
 
@@ -17,18 +16,18 @@ Since Tizen 3.0, some privileges are categorized as privacy-related. The user ca
 
 To use the methods and properties of the [Tizen.Security.Privilege](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.Privilege.html) class, include the [Tizen.Security](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.html) namespace in your application. If you want to designate a privilege's type, include the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html) namespace too.
 
-``` 
+```
 using Tizen.Security;
 using Tizen.Applications;
 ```
 <a name="get"></a>
-## Getting Privilege Information 
+## Getting Privilege Information
 
 To get various privilege information:
 
 -   Get the privilege display name using the `GetDisplayName()` method of the `Tizen.Security.Privilege` class:
 
-    ``` 
+    ```
     try
     {
         var displayName = Privilege.GetDisplayName("4.0", "http://tizen.org/privilege/internet");
@@ -42,7 +41,7 @@ To get various privilege information:
 
 -   Get the privilege description using the `GetDescription()` method of the `Tizen.Security.Privilege` class:
 
-    ``` 
+    ```
     try
     {
         var description = Privilege.GetDescription("4.0", "http://tizen.org/privilege/internet");
@@ -56,7 +55,7 @@ To get various privilege information:
 
 -   Get the privacy display name using the `GetPrivacyDisplayName()` method of the `Tizen.Security.Privilege` class:
 
-    ``` 
+    ```
     try
     {
         var privacyDisplayName = Privilege.GetPrivacyDisplayName("http://tizen.org/privilege/account.read");
@@ -69,7 +68,7 @@ To get various privilege information:
 
 -   Get the privacy-related privilege's status using the `GetPrivacyPrivilegeStatus()` method of the `Tizen.Security.Privilege` class:
 
-    ``` 
+    ```
     try
     {
         bool isAllowed = Privilege.GetPrivacyPrivilegeStatus("http://tizen.org/privilege/account.read");
@@ -90,3 +89,7 @@ To get various privilege information:
     }
     ```
 
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

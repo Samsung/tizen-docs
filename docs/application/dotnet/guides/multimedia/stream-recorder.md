@@ -1,6 +1,5 @@
 # Media Stream Recording
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 You can record audio and video from a stream, and control the recording process through various settings. With the stream recorder, live audio and video can be kept on your target.
 
@@ -41,7 +40,7 @@ The following figure illustrates general stream recorder state changes. Use the 
 
 To use the methods and properties of the [Tizen.Multimedia.StreamRecorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.StreamRecorder.html) class, include the [Tizen.Multimedia](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html) namespace in your application:
 
-``` 
+```
 using Tizen.Multimedia;
 ```
 
@@ -51,7 +50,7 @@ using Tizen.Multimedia;
 To define recording options for video recording:
 1.  Create an instance of the [Tizen.Multimedia.StreamRecorderOptions](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.StreamRecorderOptions.html) class with the output path and file format for the recorded media stream:
 
-    ``` 
+    ```
     var options = new StreamRecorderOptions(SavePath, RecorderFileFormat.Mp4);
     ```
 
@@ -59,7 +58,7 @@ To define recording options for video recording:
 
 2.  Define the video recording options in the `Video` property of the `Tizen.Multimedia.StreamRecorderOptions` class, using an instance of the [Tizen.Multimedia.StreamRecorderVideoOptions](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.StreamRecorderVideoOptions.html) class:
 
-    ``` 
+    ```
     options.Video = new StreamRecorderVideoOptions(codec: RecorderVideoCodec.H263,
                                                    resolution: new Size(1920, 1080),
                                                    sourceFormat: StreamRecorderVideoFormat.Nv12,
@@ -69,7 +68,7 @@ To define recording options for video recording:
 
     To get a list of video codecs the device supports, use the `GetSupportedVideoCodecs()` method of the [Tizen.Multimedia.StreamRecorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.StreamRecorder.html) class. The following example retrieves the first supported codec found:
 
-    ``` 
+    ```
     var streamRecorder = new StreamRecorder();
 
     var videoCodec = streamRecorder.GetSupportedVideoCodecs().First();
@@ -86,7 +85,7 @@ Similarly, to record an audio stream, define the audio recording options in the 
 
 When the stream recorder is configured, create the media packet using the raw data from the source:
 
-``` 
+```
 byte[] rawbuffer; /// Data to be passed for recording
 
 var videoFormat = new VideoMediaFormat(MediaFormatVideoMimeType.Mpeg4SP, new Size(640, 480));
@@ -98,13 +97,13 @@ mediaPacket.CopyFrom(rawbuffer, 0, rawbuffer.length);
 The media packet must be created for each buffer captured from the source and passed to the `PushBuffer()` method of the [Tizen.Multimedia.StreamRecorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.StreamRecorder.html) class when the stream recorder is prepared to record.
 
 <a name="record_stream"></a>
-## Recording a Stream 
+## Recording a Stream
 
 To record a stream:
 
 1.  Call the `Prepare()` method of the [Tizen.Multimedia.StreamRecorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.StreamRecorder.html) class with a [Tizen.Multimedia.StreamRecorderOptions](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.StreamRecorderOptions.html) instance:
 
-    ``` 
+    ```
     streamRecorder.Prepare(options);
     ```
 
@@ -112,7 +111,7 @@ To record a stream:
 
 2.  Start recording by calling the `Start()` method:
 
-    ``` 
+    ```
     streamRecorder.Start();
     ```
 
@@ -122,14 +121,14 @@ To record a stream:
 
     Push the media packet to record audio or video, using the `PushBuffer()` method:
 
-    ``` 
+    ```
     streamRecorder.PushBuffer(mediaPacket);
     ```
 
 3.  During the recording, you can pause or stop it:
     -   To pause recording, use the `Pause()` method:
 
-        ``` 
+        ```
         streamRecorder.Pause();
         ```
 
@@ -141,7 +140,7 @@ To record a stream:
 
     -   To stop recording and save the result, use the `Commit()` method. The recording result is saved to the file path defined in the `Tizen.Multimedia.StreamRecorderOptions` instance.
 
-        ``` 
+        ```
         streamRecorder.Commit();
         ```
 
@@ -151,15 +150,20 @@ To record a stream:
 
         The only difference between this method and the `Commit()` method is that the recording data is not written to the file.
 
-        ``` 
+        ```
         streamRecorder.Cancel();
         ```
 
 4.  When you have finished recording, use the `Unprepare()` method to reset the stream recorder:
 
-    ``` 
+    ```
     streamRecorder.Unprepare();
     ```
 
     The stream recorder state changes from `Ready` to `Idle`.
 
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

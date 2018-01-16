@@ -1,6 +1,5 @@
 # Widget Application
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 You can create widget applications, which are Tizen .NET applications shown on the home screen. They are launched by the home screen when the user selects them in the **Add Widget** menu.
 
@@ -31,7 +30,7 @@ The main widget application features include:
 
 
 <a name="app_instance"></a>
-## Widget Application and Widget Instance 
+## Widget Application and Widget Instance
 
 The [Tizen.Applications.WidgetApplication](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetApplication.html) class provides the `WidgetApplication(IDictionary< Type, string > typeInfo)` constructor, which allows a widget application to have multiple widget classes. The widget applications with multiple classes can make diverse class instances whenever widget viewer applications, such as the home screen and the lock screen, request for a widget instance.
 
@@ -42,7 +41,7 @@ The widget instance has its own life-cycle similar to the widget application. Ho
 ![Each widget application has 1 or more widget instances](./media/widget_homescreen.png)
 
 <a name="instance"></a>
-## Widget Instance States and Events 
+## Widget Instance States and Events
 
 The following figure illustrates the widget instance states during the instance life-cycle:
 
@@ -71,7 +70,7 @@ The following table lists the [callbacks you can use as the instance state chang
 
 You can declare a widget class by inheriting the [Tizen.Applications.WidgetBase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetBase.html) class. For example:
 
-``` 
+```
 class MyWidget : WidgetBase
 {
     public override void OnCreate(Bundle content, int w, int h) {}
@@ -92,13 +91,13 @@ class MyWidget : WidgetBase
 
 To enable your application to use the widget functionality, include the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html) namespace in your application:
 
-    ``` 
+    ```
     using Tizen.Applications;
     ```
 
 
 <a name="create"></a>
-## Creating the Widget Application 
+## Creating the Widget Application
 
 The widget application starts with the `Main()` function, which creates and initializes the application. The `Run()` method of the [Tizen.Applications.WidgetApplication](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetApplication.html) class is used to start the application event loop.
 
@@ -109,7 +108,7 @@ The `Tizen.Applications.WidgetApplication` class provides 2 kinds of constructor
 
 A widget viewer application can add the widget application by using the widget application ID.
 
-``` 
+```
 class Program
 {
     static void Main(string[] args)
@@ -133,7 +132,7 @@ To manage the widget instance life-cycle:
 
 1.  Define your widget class, which is inherited from the [Tizen.Applications.WidgetBase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetBase.html) class:
 
-    ``` 
+    ```
     class MyWidget : WidgetBase {}
     ```
 
@@ -142,7 +141,7 @@ To manage the widget instance life-cycle:
 
         Initialize resources for this widget instance and [draw the UI](#get_window). If bundle content is not `NULL`, restore the previous status.
 
-        ``` 
+        ```
         public override void OnCreate(Bundle content, int w, int h)
         {
             try
@@ -162,7 +161,7 @@ To manage the widget instance life-cycle:
 
         Release all widget resources. If the `reason` for the termination is not `WidgetBase.WidgetDestroyType.Permanent`, store the current status with the incoming bundle.
 
-        ``` 
+        ```
         public override void OnDestroy(WidgetBase.WidgetDestroyType reason, Bundle content)
         {
             if (reason != WidgetBase.WidgetDestroyType.Permanent)
@@ -174,7 +173,7 @@ To manage the widget instance life-cycle:
 
         Take the necessary actions when the widget instance becomes invisible. The framework can destroy a paused widget instance.
 
-        ``` 
+        ```
         public override void OnPause() {}
         ```
 
@@ -182,7 +181,7 @@ To manage the widget instance life-cycle:
 
         Take the necessary actions when the widget instance becomes visible.
 
-        ``` 
+        ```
         public override void OnResume() {}
         ```
 
@@ -190,7 +189,7 @@ To manage the widget instance life-cycle:
 
         Take the necessary actions to accommodate the new size.
 
-        ``` 
+        ```
         public override void OnResize(int w, int h) {}
         ```
 
@@ -198,16 +197,16 @@ To manage the widget instance life-cycle:
 
         Take the necessary actions for the widget update. If the `isForce` parameter is `true`, the widget can be updated even in the pause state.
 
-        ``` 
+        ```
         public override void OnUpdate(Bundle content, bool isForce) {}
         ```
 
 <a name="get_window"></a>
-## Drawing the Widget UI 
+## Drawing the Widget UI
 
 The widget UI is drawn in the `OnCreate()` callback of your widget class:
 
-``` 
+```
 public override void OnCreate(Bundle content, int w, int h)
 {
     try
@@ -255,7 +254,7 @@ public override void OnCreate(Bundle content, int w, int h)
 ```
 
 <a name="share"></a>
-## Data Sharing Between the Widget Application and Other Applications 
+## Data Sharing Between the Widget Application and Other Applications
 
 You can share data between widget applications and UI (or service) applications. However, you must understand that this kind of data sharing is dependent on the file system. The reason is that the system (home screen) controls the widget application life-cycle, while the UI application life-cycle is mostly explicitly controlled by the user.
 
@@ -264,7 +263,7 @@ For example, consider the differences between a Weather application and a Weathe
 -   The Weather application is launched when the user selects it from the application list.
 -   The widget is launched when the home screen is on screen and is terminated when the home screen is hidden.
 
-Although the widget wants to share some data from the Weather application (such as the user's favorite city), it is ineffective for the widget to launch the Weather application every time to retrieve such data. This inefficiency makes it difficult to use typical IPC mechanisms, such as sockets and [message ports](message_port.htm), for which both the receiver and sender processes must be alive. To overcome this limitation, the widget application must use a communication method that stores data permanently somewhere in the system.
+Although the widget wants to share some data from the Weather application (such as the user's favorite city), it is ineffective for the widget to launch the Weather application every time to retrieve such data. This inefficiency makes it difficult to use typical IPC mechanisms, such as sockets and [message ports](message-port.md), for which both the receiver and sender processes must be alive. To overcome this limitation, the widget application must use a communication method that stores data permanently somewhere in the system.
 
 In the Tizen platform, applications in the same package (including widget applications) can access files in the `data` directory of the package installation path. This means that the UI (or service) application can first write files to the `data` directory, and the widget can later read them, or vice versa.
 
@@ -276,8 +275,13 @@ To manage data through the `data` directory, you can use the methods and propert
 
 If an application requires complex control over a widget, such as Music Player, it must implement a service application in the middle and use a data control with the classes and methods of the [Tizen.Applications.DataControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.html) namespace.
 
-For example, a music-player-service service application is needed to control the audio device, process audio files, and handle play and stop signals. The music-player-ui and music-player-widget applications display the UI controls, title, album art, and other content retrieved from the music-player-service service application. The service application can export its data using the data control to [provide data to the other applications](data_control.htm) (widget and UI) simultaneously. The following figure illustrates the typical data control flows between the set of UI, service, and widget applications.
+For example, a music-player-service service application is needed to control the audio device, process audio files, and handle play and stop signals. The music-player-ui and music-player-widget applications display the UI controls, title, album art, and other content retrieved from the music-player-service service application. The service application can export its data using the data control to [provide data to the other applications](data-control.md) (widget and UI) simultaneously. The following figure illustrates the typical data control flows between the set of UI, service, and widget applications.
 
 **Figure: Sharing through data control**
 
 ![Sharing through data control](./media/widget_data_control_share.png)
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

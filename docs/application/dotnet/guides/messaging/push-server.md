@@ -1,6 +1,5 @@
 # Push Server
-## Dependencies
--   Tizen 4.0 Higher
+
 
 You can push events from an application server to your application on a Tizen device. If the message sending fails for any reason, an error code identifying the failure reason is returned. You can use the [error code](#error_codes) to determine how to handle the failure.
 
@@ -46,7 +45,7 @@ To send push notifications:
 
     -   If you have an urgent message or data for the user, fill the message field with a proper action value:
 
-        ``` 
+        ```
         {
             "messages":
             [{
@@ -60,7 +59,7 @@ To send push notifications:
 
     - If you have data to send to the application but no need to notify the user, use the action field on the same level as the messages field, instead of within the messages field, and do not include the message field itself. In this case, the notification is delivered with the best effort.
 
-        ``` 
+        ```
         {
             "action": "backgroundLaunch",
             "messages":
@@ -87,7 +86,7 @@ To send push notifications:
 
     For example, to show a "Hi" message in the quick panel and increase the badge count by 1 when the notification arrives at the device, the message field of the notification must be the following:
 
-    ``` 
+    ```
     "badgeOption=INCREASE&badgeNumber=1&action=ALERT&alertMessage=Hi"
     ```
 
@@ -138,14 +137,14 @@ To send push notifications:
 
         -   Example header:
 
-            ``` 
+            ```
             appID: 1234567890987654
             appSecret: dYo/o/m11gmWmjs7+5f+2zLNVOc=
             ```
 
         - Example request:
 
-            ``` 
+            ```
             {
                 "encoding": "base64" /* Optional */
                 "regID": "ab123456",
@@ -167,7 +166,7 @@ To send push notifications:
 
             -   The following example shows a response message when the request is successful:
 
-                ``` 
+                ```
                 {
                     "results":
                     [{
@@ -181,7 +180,7 @@ To send push notifications:
 
             - The following example shows a response message when the request fails due to malformation:
 
-                ``` 
+                ```
                 {
                     "results":
                     [{
@@ -195,7 +194,7 @@ To send push notifications:
 
             - The following example shows a response message when the request fails due to abnormal data:
 
-                ``` 
+                ```
                 {
                     "results":
                     [{
@@ -211,7 +210,7 @@ To send push notifications:
 				> In the above example, the 3008 error code means that the `regID` does not exist in the push server. It happens when your application of that particular `regID` was uninstalled or disabled by the user, and consequently the `regID` must be removed from your application server. When the application is reinstalled or enabled, it must repeat the [registration process](push.md#registration) and send a new `regID` to your application server.
 
 	-  Multiple request
-	
+
 		You can construct a multiple request in a Rest API call. Currently, this feature is not supported for the registration IDs starting with 5.
 
         The following list contains the details:
@@ -223,15 +222,15 @@ To send push notifications:
         -   Argument: See the [single request](#single_req)
         -   Note: The total request message body must be less than the system default value, 200 kb. If not, "3035 – error of too long chuned message data" is returned. The system default value can be changed as needed.
         -   Example header:
-    
-            ``` 
+
+            ```
             appID: 1234567890987654
             appSecret: dYo/o/m11gmWmjs7+5f+2zLNVOc=
             ```
-    
+
         -   Example request:
-    
-            ``` 
+
+            ```
             {
                 "messages":
                 [{
@@ -260,11 +259,11 @@ To send push notifications:
                 ]}
             }
             ```
-    
+
         -   Example response:
             -   The following example shows a response message when the request is successful:
-    
-                ``` 
+
+                ```
                 {
                     "results":
                     [{
@@ -281,10 +280,10 @@ To send push notifications:
                     }]
                 }
                 ```
-    
+
             -   The following example shows a response message when the request fails due to malformation:
-    
-                ``` 
+
+                ```
                 {
                     "results":
                     [{
@@ -295,10 +294,10 @@ To send push notifications:
                     }]
                 }
                 ```
-    
+
             -   The following example shows a response message when some parts of the multiple request have failed and the others have not:
-    
-                ``` 
+
+                ```
                 {
                     "results":
                     [{
@@ -315,13 +314,13 @@ To send push notifications:
                     }]
                 }
                 ```
-    
+
     -   Multicast
-    
+
         You can construct a multicast to send a push notification to multiple applications. Currently, this feature is not supported for the registration IDs starting with 5.
-    
+
         The following list contains the details:
-    
+
         -   URI: URI of the RQM server chosen based on the first 2 digits of the registration ID
         -   Method: POST
         -   Data: JSON
@@ -329,15 +328,15 @@ To send push notifications:
         -   Argument: See the [single request](#single_req)
         -   Note: The total request message body must be less than the system default value, 200 kb. If not, "3035 – error of too long chuned message data" is returned. The system default value can be changed as needed.
         -   Example header:
-    
-            ``` 
+
+            ```
             appID: 1234567890987654
             appSecret: dYo/o/m11gmWmjs7+5f+2zLNVOc=
             ```
-    
+
         -   Example request:
-    
-            ``` 
+
+            ```
             {
                 "messages":
                 [{
@@ -353,11 +352,11 @@ To send push notifications:
                 ]}
             }
             ```
-    
+
         -   Example response:
             -   The following example shows a response message when the request is successful:
-    
-                ``` 
+
+                ```
                 {
                     "results":
                     [{
@@ -380,10 +379,10 @@ To send push notifications:
                     }]
                 }
                 ```
-    
+
             -   The following example shows a response message when the request fails due to malformation:
-    
-                ``` 
+
+                ```
                 {
                     "results":
                     [{
@@ -394,10 +393,10 @@ To send push notifications:
                     }]
                 }
                 ```
-    
+
             -   The following example shows a response message when some parts of the multicast request have failed and the others have not:
-    
-                ``` 
+
+                ```
                 {
                     "results":
                     [{
@@ -423,7 +422,7 @@ To send push notifications:
 
 
 <a name="error_codes"></a>				
-## Error Codes 
+## Error Codes
 
 If sending a push notification request fails for some reason, the response message contains an error code.
 
@@ -482,3 +481,8 @@ The following table lists all possible error codes for push notifications, helpi
 | 3044        | Error of not registered application      |
 | 3045        | Error of application authentication failed |
 | 3046        | Error of not allowed to use Push Server  |
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

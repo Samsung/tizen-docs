@@ -1,6 +1,5 @@
 # Network Service Discovery
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 You can use 2 different protocols to perform network service discoveries to announce local services and search for remote services on a network: DNS-SD (DNS Service Discovery) and SSDP (Simple Service Discovery Protocol).
 
@@ -22,7 +21,7 @@ To enable your application to use the network service discovery functionality:
 
 1.  To use the [Tizen.Network.Nsd](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nsd.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <privileges>
        <privilege>http://tizen.org/privilege/internet</privilege>
     </privileges>
@@ -30,25 +29,25 @@ To enable your application to use the network service discovery functionality:
 
 2.  To make your application visible in the Tizen Store only for devices that support the DNS-SD and SSDP protocols, the application must specify the following features in the `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <feature name="http://tizen.org/feature/network.service_discovery.dnssd"/>
     <feature name="http://tizen.org/feature/network.service_discovery.ssdp"/>
     ```
 
 3.  To use the methods and properties of the Tizen.Network.Nsd namespace, include it in your application:
 
-    ``` 
+    ```
     using Tizen.Network.Nsd;
     ```
 
 <a name="registration"></a>
-## Registering Local Services 
+## Registering Local Services
 
 To register and deregister a local DNS-SD service:
 
 1.  Register a service by creating a new instance of the [Tizen.Network.Nsd.DnssdService](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nsd.DnssdService.html) class and using its `RegisterService()` method:
 
-    ``` 
+    ```
     /// Register service
     INsdService service = new DnssdService("_http._tcp");
     DnssdService dnssdService = (DnssdService)service;
@@ -59,20 +58,20 @@ To register and deregister a local DNS-SD service:
 
     When the `Tizen.Network.Nsd.DnssdService` class instance is no longer needed, destroy it with the `Dispose()` method.
 
-    ``` 
+    ```
     /// Deregister service
     dnssdService.DeregisterService();
     dnssdService.Dispose();
     ```
 
 <a name="discovery"></a>
-## Discovering Remote Services 
+## Discovering Remote Services
 
 To discover remote DNS-SD services:
 
 1.  Start discovery by creating a new instance of the [Tizen.Network.Nsd.DnssdBrowser](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nsd.DnssdBrowser.html) class and using its `StartDiscovery()` method:
 
-    ``` 
+    ```
     /// Start discovery
     INsdBrowser browser = new DnssdBrowser("_http._tcp");
     DnssdBrowser dnssdBrowser = (DnssdBrowser)browser;
@@ -83,8 +82,13 @@ To discover remote DNS-SD services:
 
     When the `Tizen.Network.Nsd.DnssdBrowser` class instance is no longer needed, destroy it with the `Dispose()` method.
 
-    ``` 
+    ```
     /// Stop discovery
     dnssdBrowser.StopDiscovery();
     dnssdBrowser.Dispose();
     ```
+
+
+## Related Information
+* Dependencies
+    -   Tizen 4.0 and Higher

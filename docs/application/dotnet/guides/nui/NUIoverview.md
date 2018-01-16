@@ -1,6 +1,4 @@
 # NUI Overview
-## Dependencies
--   Tizen 4.0 and Higher
 
 NUI (Natural User Interface) is a C\# toolkit on top of the DALi (Dynamic Animation Library) graphics library, which is written in C++.
 
@@ -36,7 +34,7 @@ To be able to use NUI in your applications, you must become familiar with the fo
 -   **Layer**: Layers provide a mechanism for overlaying groups of views on top of each other.
 
 <a name="started"></a>
-## Getting Started 
+## Getting Started
 
 To get started with NUI development:
 
@@ -53,3 +51,7 @@ To get started with NUI development:
 
 -   Add [visuals](visuals.md) and [animations](animation.md) to your controls.
 -   [Style your controls](styling-controls-with-JSON.md) based on states and add transitions between states.
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

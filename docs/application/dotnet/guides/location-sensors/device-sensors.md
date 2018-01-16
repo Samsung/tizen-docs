@@ -1,6 +1,4 @@
 # Device Sensors
-## Dependencies
--   Tizen 4.0 and Higher
 
 You can manage the sensors in the device and receive data from them.
 
@@ -32,7 +30,7 @@ To enable your application to use the device sensor functionalities:
 
 1.  To use any health-related sensors, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <privileges>
         <privilege>http://tizen.org/privilege/healthinfo</privilege>
     </privileges>
@@ -40,12 +38,12 @@ To enable your application to use the device sensor functionalities:
 
 2. Include the [Tizen.Sensor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.html) namespace in your application:
 
-    ``` 
+    ```
     using Tizen.Sensor;
     ```
 
 <a name="sensor"></a>
-## Creating a Sensor Instance 
+## Creating a Sensor Instance
 
 If an application wants to observe data from a specific sensor, you must create a sensor instance:
 
@@ -53,7 +51,7 @@ If an application wants to observe data from a specific sensor, you must create 
 
     You can acquire the default sensor (designated by the device vendor) of a given type. The following example shows how to get the default accelerometer of the device by creating a new instance of the [Tizen.Sensor.Accelerometer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.Accelerometer.html) class:
 
-    ``` 
+    ```
     try
     {
         var sensor = new Accelerometer();
@@ -68,7 +66,7 @@ If an application wants to observe data from a specific sensor, you must create 
 
 - If you want to acquire a specific sensor, from multiple ones of the same type, set the `index` parameter of the class constructor accordingly:
 
-    ``` 
+    ```
     try
     {
         /// You can retrieve the total count of accelerometers by using the following property:
@@ -89,7 +87,7 @@ If a sensor instance is created successfully, it is able to observe sensor data 
 
 1.  To listen for sensor events, define a handler and register for the `DataUpdated` event from the sensor:
 
-    ``` 
+    ```
     EventHandler<AccelerometerDataUpdatedEventArgs> handler = null;
     handler = (sender, e) =>
     {
@@ -103,7 +101,7 @@ If a sensor instance is created successfully, it is able to observe sensor data 
 
 2. Start the sensor with the `Start()` method of the appropriate `Tizen.Sensor.XXX` class (inherited from [Tizen.Sensor.Sensor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.Sensor.html)):
 
-    ``` 
+    ```
     sensor.Start();
     ```
 
@@ -114,7 +112,7 @@ If a sensor instance is created successfully, it is able to observe sensor data 
 3. While the sensor is running, you can change the sensor settings:
     -   You can change the sensor update interval by adjusting the `Interval` property of the sensor instance:
 
-        ``` 
+        ```
         sensor.Interval = 200;
         ```
 
@@ -124,7 +122,7 @@ If a sensor instance is created successfully, it is able to observe sensor data 
 
         By default, the sensor automatically stops listening for the sensor data, if the display is switched off, or if the device goes to the power-save mode. You can override such behavior by setting the `PausePolicy` property of the sensor instance, using values of the [Tizen.Sensor.SensorPausePolicy](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.SensorPausePolicy.html) enumeration:
 
-        ``` 
+        ```
         sensor.PausePolicy = SensorPausePolicy.DisplayOff;
         ```
 
@@ -132,14 +130,14 @@ If a sensor instance is created successfully, it is able to observe sensor data 
 
 4. When the sensor data is no longer needed, stop the sensor and deregister the event handler:
 
-    ``` 
+    ```
     sensor.Stop();
     sensor.DataUpdated -= handler;
     ```
 
 5. When a sensor instance is no longer needed, dispose of its resources explicitly:
 
-    ``` 
+    ```
     sensor.Dispose();
     ```
 
@@ -186,7 +184,7 @@ The following table provides information about the accelerometer output for a de
 | Z-polarity     | 0                                        | 0                                        | 0                                        | 0                                        | +                                        | -                                        |
 
  <a name="mag_rotation"></a>
-## Geomagnetic Rotation Vector Sensor 
+## Geomagnetic Rotation Vector Sensor
 
 The geomagnetic rotation vector sensor is the output of a software/hardware-based sensor fusion solution which uses the accelerometer and magnetic sensors to compute the orientation of the device. In this sensor, the computed orientation is free of any drift, but it is inaccurate compared to a sensor fusion solution using the gyroscope sensor. The geomagnetic rotation vector sensor represents the orientation of the device as a combination of an angle and an axis on which the device has rotated through a specific angle around an axis (X, Y, or Z).
 
@@ -204,7 +202,7 @@ The following table lists the measurement data that the geomagnetic rotation vec
 | W           | `float`                  | Min. value = -1<br>Max. value = 1 | -            |
 
 <a name="gravity"></a>
-## Gravity Sensor 
+## Gravity Sensor
 
 The gravity sensor is a virtual sensor derived from the 3-axis acceleration sensor. The 3-axis gravity components provide a measure of the effect of Earth's gravity observed on the device reference axes. The gravity components measured on a device vary based on changes in the device orientation, and hence they provide a measure of the rotation to which the device is subjected.
 
@@ -247,7 +245,7 @@ The following table lists the measurement data that the gyroscope provides.
 
  <a name="gyro_rotation"></a>
 
-## Gyroscope Rotation Vector Sensor 
+## Gyroscope Rotation Vector Sensor
 
 The gyroscope rotation vector sensor is the output of a software/hardware-based sensor fusion solution which uses the accelerometer and gyroscope to compute the orientation of the device. In this sensor, the pitch and roll equivalent representations are free of drift while the azimuth equivalent component is allowed to drift due to the absence of the magnetic sensor. The gyroscope rotation vector sensor represents the orientation of the device as a combination of an angle and an axis on which the device has rotated through a specific angle around an axis (X, Y, or Z).
 
@@ -280,7 +278,7 @@ The following table lists the measurement data that the HRM sensor provides.
 
 <a name="humidity"></a>
 
-## Humidity Sensor 
+## Humidity Sensor
 
 The humidity sensor measures the relative ambient air humidity in percentage.
 
@@ -295,7 +293,7 @@ The following table lists the measurement data that the humidity sensor provides
 
  <a name="light"></a>
 
-## Light Sensor 
+## Light Sensor
 
 The light sensor detects the brightness of ambient light. It can be used to measure the brightness level.
 
@@ -312,7 +310,7 @@ The following table lists the measurement data that the light sensor provides.
 
  <a name="lin_accelerometer"></a>
 
-## Linear Acceleration Sensor 
+## Linear Acceleration Sensor
 
 The linear acceleration sensor is derived from the accelerometer by excluding the gravity value, and it measures the user-driven changes in the velocity. The linear acceleration sensor is used to detect the dynamic movement of the device and analyze the user's motion profile. The 3-axis linear acceleration components provide a measure of the combined linear motion subjected to the device in Euclidean space.
 
@@ -337,7 +335,7 @@ The following table lists the measurement data that the linear acceleration sens
 
  <a name="magnetic"></a>
 
-## Magnetic Sensor 
+## Magnetic Sensor
 
 The magnetic sensor is a 3-axis electronic compass (sometimes referred to as a "magnetometer" or "geomagnetic sensor"). It can also be used in determining the azimuth component of the device orientation provided that the tilt of the device is already computed. The magnetic sensor measures the Earth's magnetic field strength and fluctuations, and splits the measurement into X, Y, and Z components.
 
@@ -365,7 +363,7 @@ The magnetic sensor uses the 3-axis Cartesian space coordinate system, as the fo
 ![Magnetic field vector and axes](./media/sensor_types_magnetic_vector.png)
 
 <a name="orientation"></a>
-## Orientation Sensor 
+## Orientation Sensor
 
 The orientation sensor combines the 3-axis accelerometer, 3-axis magnetic sensor, and 3-axis gyroscope to determine the orientation (rotation angles) of the device. The orientation is the output of a software/hardware-based sensor fusion solution which uses the accelerometer, magnetic sensor, and gyroscope. The orientation sensor output is an alternative representation to the rotation vector sensor output used to determine the rotation of the device, and it is calculated in terms of Euler angles:
 
@@ -433,7 +431,7 @@ The following table lists the measurement data that the pressure sensor provides
 
 <a name="proximity"></a>
 
-## Proximity Sensor 
+## Proximity Sensor
 
 The proximity sensor detects the presence of nearby objects in close proximity to the sensor. It can be used to measure the distance between nearby objects and the device.
 
@@ -470,7 +468,7 @@ The following table lists the measurement data that the rotation vector sensor p
 
  <a name="sleep_monitor"></a>
 
-## Sleep Monitor 
+## Sleep Monitor
 
 The sleep monitor tracks the user's sleep quality. Once per minute, it reports whether the user sleeps. As this sensor usually needs to track the sleep quality over several hours, it must be power-efficient and work in a batch manner. While the system sleeps, or the display is off, the sensor keeps its detected data internally. When the sensor is unable to keep more data (its internal buffer is full), it wakes up the system and flushes all collected data. When flushing, the event handler is invoked repeatedly. The timestamp of each event can be used to figure out when the user was sleeping.
 
@@ -488,7 +486,7 @@ The `SleepState` property is one of the values of the [Tizen.Sensor.SleepMonitor
 Depending on the device you are using, the available raw sensors are different and the sleep detection algorithm can also vary. In addition to the sleep state field, some specific device models can provide further data, as defined by the model manufacturer.
 
 <a name="temperature"></a>
-## Temperature Sensor 
+## Temperature Sensor
 
 The temperature sensor measures the ambient room temperature in the device's surrounding environment.
 
@@ -503,7 +501,7 @@ The following table lists the measurement data that the temperature sensor provi
 
  <a name="ultraviolet"></a>
 
-## Ultraviolet Sensor 
+## Ultraviolet Sensor
 
 The ultraviolet (UV) sensor measures the ultraviolet index. The sensor detects and provides a measure of the UV rays the device is exposed to.
 
@@ -537,7 +535,7 @@ The following table lists the measurement data that the uncalibrated gyroscope p
 | BiasZ | `float`              | Min. value = -573.0<br>Max. value = 573.0 | Degrees/s (&deg;/s) |
 
 <a name="uncal_magnetic"></a>
-## Uncalibrated Magnetic Sensor 
+## Uncalibrated Magnetic Sensor
 
 The uncalibrated magnetic sensor is a 3-axis electronic compass (sometimes referred to as a "magnetometer" or "geomagnetic sensor"). It can also be used in determining the azimuth component of the device orientation provided that the tilt of the device is already computed. It measures the Earth's magnetic field strength and fluctuations, and splits the measurement into X, Y, and Z components. The uncalibrated magnetic sensor is similar in functionality to a magnetic sensor, but does not perform hard iron calibration. Factory calibration and temperature compensation are applied.
 
@@ -561,3 +559,8 @@ The following table lists the measurement data that the uncalibrated magnetic se
 | BiasY | `float`              | &micro;T (microteslas) |
 | BiasZ | `float`              | &micro;T (microteslas) |
 
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

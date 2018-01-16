@@ -1,6 +1,5 @@
 # Geofences
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 A geofence is a virtual perimeter for a real-world geographic area. A geofence is defined by either a geopoint and radius for geopoint geofences, or by a MAC address for Wi-Fi and Bluetooth geofences. The geofence feature alerts the user when the geofence state changes (the user crosses the perimeter).
 
@@ -42,7 +41,7 @@ If the user revokes permission to use the location information, an `Unauthorized
 Asynchronous geofence-related alerts (in or out) and event handling (a fence added or removed) are implemented with event handlers. Geofence alerts are received using the values of the [Tizen.Location.Geofence.GeofenceState](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Geofence.GeofenceState.html) enumeration.
 
 <a name="definition"></a>
-## Geofence Definition 
+## Geofence Definition
 
 Geofence definition refers to defining an instance of the [Tizen.Location.Geofence.Fence](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Geofence.Fence.html) class.
 
@@ -67,7 +66,7 @@ My places controls the adding, removing, and updating of places and fences. **Ho
 
 To use the methods and properties of the [Tizen.Location.Geofence](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Geofence.html) namespace, include it in your application:
 
-``` 
+```
 using Tizen.Location.Geofence;
 ```
 
@@ -78,7 +77,7 @@ To start the geofence service:
 
 1.  Create a [Tizen.Location.Geofence.GeofenceManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Geofence.GeofenceManager.html) object:
 
-    ``` 
+    ```
     GeofenceManager manager = new GeofenceManager();
     ```
 
@@ -86,7 +85,7 @@ To start the geofence service:
 
 2.  Create a place to be used for the geofences:
 
-    ``` 
+    ```
     VirtualPerimeter perimeter = new VirtualPerimeter(manager);
     int placeId = perimeter.AddPlaceName("Place");
     ```
@@ -99,7 +98,7 @@ To start the geofence service:
 3.  Create the geofences you need:
     -   Geopoint geofence:
 
-        ``` 
+        ```
         double latitude = 12.756738;
         double longitude = 77.386474;
         int radius = 100;
@@ -109,7 +108,7 @@ To start the geofence service:
 
     -   Bluetooth geofence:
 
-        ``` 
+        ```
         char* bssid = "82:45:67:7E:4A:3B";
         char* ssid = "Cafeteria";
         Fence fence = Fence.CreateBTFence(place_id, bssid, ssid);
@@ -117,7 +116,7 @@ To start the geofence service:
 
 4.  Add the geofence to the geofence manager:
 
-    ``` 
+    ```
     int geofenceId = perimeter.AddGeofence(fence);
     ```
 
@@ -125,19 +124,19 @@ To start the geofence service:
 
     This call is asynchronous and only initiates the process of starting the service. Once the service is started, the added event handlers are invoked when their corresponding events take place. To know when the service becomes enabled, use the `StateChanged` event of the `Tizen.Location.Geofence.GeofenceManager` class.
 
-    ``` 
+    ```
     manager.Start(geofenceId);
     ```
 
 6.  Using the geofence service for geopoints adds to power consumption, so if the service is not used, stop the status alerts using the `Stop()` method of the `Tizen.Location.Geofence.GeofenceManager` class. Call the `Start()` method again if the alerts are needed.
 
-    ``` 
+    ```
     manager.Stop(geofenceId);
     ```
 
 7.  Destroy all used resources using the `Dispose()` method of the `Tizen.Location.Geofence.GeofenceManager` class:
 
-    ``` 
+    ```
     manager.Dispose();
     manager = NULL;
     ```
@@ -145,19 +144,19 @@ To start the geofence service:
     If you destroy the `Tizen.Location.Geofence.GeofenceManager` instance, there is no need to call the `Stop()` method to stop the service, as the service is automatically stopped.
 
 <a name="status"></a>
-## Monitoring Geofence State Changes 
+## Monitoring Geofence State Changes
 
 To track the state of the geofence, use the `GeofenceEventChanged` event of the [Tizen.Location.Geofence.GeofenceManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Geofence.GeofenceManager.html) class. An event handler is invoked whenever there is a request from the user, such as to add a geofence or to start a geofence service.
 
 1.  Add the event handler for the `GeofenceEventChanged` event:
 
-    ``` 
+    ```
     manager.GeofenceEventChanged += handler;
     ```
 
 2.  Get the success or failure state of the event in the handler:
 
-    ``` 
+    ```
     EventHandler<GeofenceResponseEventArgs> handler = (object sender, GeofenceResponseEventArgs args) =>
     {
         placeId = args.PlaceId;
@@ -167,7 +166,7 @@ To track the state of the geofence, use the `GeofenceEventChanged` event of the 
     };
     ```
 
-    
+
     > **Note**   
 	> The geofence change event handler is used to let the user know whether the request is successful on the server side. This handler is invoked only in the case of an asynchronous method. For a synchronous method, an error is immediately returned.
 
@@ -183,13 +182,13 @@ To get information about whether the user has crossed the boundary of the geofen
 
     1.  Define the event handler:
 
-        ``` 
+        ```
         EventHandler<GeofenceStateEventArgs> handler = (object sender, GeofenceStateEventArgs args) => {};
         ```
 
     2.  Register the handler using the `StateChanged` event of the [Tizen.Location.Geofence.GeofenceManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Geofence.GeofenceManager.html) class.
 
-        ``` 
+        ```
         manager.StateChanged += handler;
         ```
 
@@ -199,13 +198,13 @@ To get information about whether the user has crossed the boundary of the geofen
 
     1.  Create a [Tizen.Location.Geofence.FenceStatus](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Geofence.FenceStatus.html) instance:
 
-        ``` 
+        ```
         FenceStatus status = new FenceStatus(fenceId);
         ```
 
     2.  To get the current state and duration of that state, use the `State` and `Duration` properties of the `Tizen.Location.Geofence.FenceStatus` class:
 
-        ``` 
+        ```
         GeofenceState state = status.State;
         int duration = status.Duration;
         ```
@@ -214,24 +213,24 @@ To get information about whether the user has crossed the boundary of the geofen
 
     3.  When no longer needed, destroy the `Tizen.Location.Geofence.FenceStatus` instance with the `Dispose()` method:
 
-        ``` 
+        ```
         status.Dispose();
         ```
 
 <a name="proximity"></a>
-## Tracking the User for Proximity Alerts 
+## Tracking the User for Proximity Alerts
 
 To get information about the user's proximity to a geofence, use an event handler that receives the user's proximity with each call:
 
 1.  Define the event handler:
 
-    ``` 
+    ```
     EventHandler<ProximityStateEventArgs> handler = (object sender, ProximityStateEventArgs args) => {};
     ```
 
 2.  Register the handler using the `ProximityChanged` event of the [Tizen.Location.Geofence.GeofenceManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Geofence.GeofenceManager.html) class.
 
-    ``` 
+    ```
     manager.ProximityChanged += handler;
     ```
 
@@ -242,14 +241,14 @@ To get information about a geofence:
 
 -   Get common information (such as the type and place) about any type of geofence:
 
-    ``` 
+    ```
     int placeId = fence.PlaceId;
     Fence type = fence.Type;
     ```
 
 -   Get information specific to a geopoint geofence:
 
-    ``` 
+    ```
     double latitude = fence.Latitude;
     double longitude = fence.Longitude;
     int radius = fence.Radius;
@@ -258,7 +257,12 @@ To get information about a geofence:
 
 -   Get information specific to a Wi-Fi or Bluetooth geofence:
 
-    ``` 
+    ```
     string bssid = fence.Bssid;
     string ssid = fence.Ssid;
     ```
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

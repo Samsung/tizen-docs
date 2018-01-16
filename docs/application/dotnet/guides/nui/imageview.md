@@ -1,6 +1,4 @@
 # ImageView
-## Dependencies
--   Tizen 4.0 and Higher
 
 An `ImageView` is a NUI control that displays an image. The following figure shows an image displayed with an ImageView.
 
@@ -15,20 +13,20 @@ To create an `ImageView`:
 
 1.  Create an `ImageView` instance with a file path:
 
-    ``` 
+    ```
     imageView = new ImageView(DirectoryInfo.Resource + "media/gallery-3.jpg");
     ```
 
     You can also create an `ImageView` instance with the `ResourceUrl` property:
 
-    ``` 
+    ```
     imageView = new ImageView();
     imageView.ResourceUrl = DirectoryInfo.Resource + "media/gallery-3.jpg";
     ```
 
 2. To change the image later, use the `SetImage()` method:
 
-    ``` 
+    ```
     imageView.SetImage(DirectoryInfo.Resource + "media/gallery-4.jpg");
     ```
 <a name="properties"></a>
@@ -46,3 +44,8 @@ The following table defines the `ImageView` control properties.
 | `Border`             | `Rectangle` | Border of the image in the order of left, right, bottom, and top. For N-Patch images only. |
 | `BorderOnly`         | `bool`      | Gets/sets whether to draw only the borders. For N-Patch images only. |
 | `SynchronousLoading` | `bool`      | Gets/sets whether the image is synchronous. For N-Patch images only. |
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

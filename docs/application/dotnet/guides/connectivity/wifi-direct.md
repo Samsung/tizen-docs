@@ -1,6 +1,5 @@
 # Wi-Fi Direct®
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 Wi-Fi Direct® is a technology that allows you to find nearby Wi-Fi Direct devices and form a Wi-Fi Direct group to communicate over a peer-to-peer link without wireless access points (base stations) in the infrastructure mode. Wi-Fi Direct is a synonym for Wi-Fi P2P (Peer-to-Peer).
 
@@ -43,7 +42,7 @@ To enable your application to use the Wi-Fi Direct functionality:
 
 1.  To use the [Tizen.Network.WiFiDirect](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFiDirect.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <privileges>
        <privilege>http://tizen.org/privilege/wifidirect</privilege>
     </privileges>
@@ -51,12 +50,12 @@ To enable your application to use the Wi-Fi Direct functionality:
 
 2.  To use the methods and properties of the Tizen.Network.WiFiDirect namespace, include it in your application:
 
-    ``` 
+    ```
     using Tizen.Network.WiFiDirect;
     ```
-	
+
 <a name="managing_events"></a>
-## Managing Events 
+## Managing Events
 
 To manage events related to Wi-Fi Direct operations:
 
@@ -66,7 +65,7 @@ To manage events related to Wi-Fi Direct operations:
     -   `EventHandlerDiscoveryStateChanged()` is triggered when the discovery state changes (for example, when discovery starts or stops, or a peer device is found).
     -   `EventHandlerConnectionStatusChanged()` is triggered when the Wi-Fi Direct connection state changes (for example, the device is disconnected from or connected to peer devices, or a group is created or destroyed).
 
-    ``` 
+    ```
     public static void EventHandlerDeviceStateChanged(object sender, EventArgs e)
     {
         Console.WriteLine("Device state: " + e.DeviceState);
@@ -83,7 +82,7 @@ To manage events related to Wi-Fi Direct operations:
 
 2.  Register the event handlers for the `DeviceStateChanged`, `DiscoveryStateChanged`, and `ConnectionStatusChanged` events of the [Tizen.Network.WiFiDirect.WiFiDirectManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFiDirect.WiFiDirectManager.html) class:
 
-    ``` 
+    ```
     WiFiDirectManager.DeviceStateChanged += EventHandlerDeviceStateChanged;
 
     WiFiDirectManager.DiscoveryStateChanged += EventHandlerDiscoveryStateChanged;
@@ -93,7 +92,7 @@ To manage events related to Wi-Fi Direct operations:
 
 3.  When they are no longer needed, deregister the event handlers:
 
-    ``` 
+    ```
     WiFiDirectManager.DeviceStateChanged -= EventHandlerDeviceStateChanged;
 
     WiFiDirectManager.DiscoveryStateChanged -= EventHandlerDiscoveryStateChanged;
@@ -108,7 +107,7 @@ To activate a Wi-Fi Direct local device and check the device state:
 
 1.  Activate Wi-Fi Direct on the local device using the `Activate()` method of the [Tizen.Network.WiFiDirect.WiFiDirectManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFiDirect.WiFiDirectManager.html) class.
 
-    ``` 
+    ```
     try
     {
         WiFiDirectManager.Activate();
@@ -123,7 +122,7 @@ To activate a Wi-Fi Direct local device and check the device state:
 
     You can check the Wi-Fi Direct local device state using the `State` property of the `Tizen.Network.WiFiDirect.WiFiDirectManager` class. Since Wi-Fi Direct has just been activated on the device, the device state is `Activated`.
 
-    ``` 
+    ```
     try
     {
         if (WiFiDirectManager.State == Activated)
@@ -146,7 +145,7 @@ To discover nearby Wi-Fi Direct peer devices and retrieve their details:
 
     In this example, the event handler displays the name and MAC address of each found peer device. You can also get other information, such as the connection state, device type, Wi-Fi display information, and WPS type.
 
-    ``` 
+    ```
     public static void EventHandlerPeerFound(object sender, EventArgs e)
     {
         Console.WriteLine("Discovery state: " + e.DiscoveryState);
@@ -160,7 +159,7 @@ To discover nearby Wi-Fi Direct peer devices and retrieve their details:
 
 2.  Register the event handler for the `PeerFound` event and start the discovery:
 
-    ``` 
+    ```
     try
     {
         WiFiDirectManager.PeerFound += EventHandlerPeerFound;
@@ -174,18 +173,18 @@ To discover nearby Wi-Fi Direct peer devices and retrieve their details:
 
 3.  When you have found all the peer devices you need, deregister the event handler:
 
-    ``` 
+    ```
     WiFiDirectManager.PeerFound -= EventHandlerPeerFound;
     ```
 
 <a name="connect_specific_peer"></a>
-## Connecting to a Specific Wi-Fi Direct Peer Device 
+## Connecting to a Specific Wi-Fi Direct Peer Device
 
 To connect to a specific device:
 
 1.  Start the discovery and retrieve the peer device you want to connect to:
 
-    ``` 
+    ```
     string peerName = "PeerDeviceName";
     public static void EventHandlerPeerFound(object sender, EventArgs e)
     {
@@ -213,7 +212,7 @@ To connect to a specific device:
 
         In this example, the event handler displays the connection state and MAC address of the connected device:
 
-        ``` 
+        ```
         public static void EventHandlerConnectionStateChanged(object sender, EventArgs e)
         {
             Console.WriteLine("Connection state: " + e.State);
@@ -226,7 +225,7 @@ To connect to a specific device:
 
     2.  Register the event handler for the `ConnectionStateChanged` event of the [Tizen.Network.WiFiDirect.WiFiDirectPeer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFiDirect.WiFiDirectPeer.html) class and connect the peer with the local Wi-Fi Direct device using the `Connect()` method:
 
-        ``` 
+        ```
         try
         {
             peer.ConnectionStateChanged += EventHandlerConnectionStateChanged;
@@ -240,7 +239,7 @@ To connect to a specific device:
 
 3.  When the connection is no longer needed, disconnect the peer from the Wi-Fi Direct device and deregister the event handler:
 
-    ``` 
+    ```
     try
     {
         peer.Disconnect();
@@ -253,7 +252,7 @@ To connect to a specific device:
     ```
 
 <a name="managing_wifi_direct_groups"></a>
-## Managing Wi-Fi Direct Groups 
+## Managing Wi-Fi Direct Groups
 
 To create an autonomous Wi-Fi Direct group and to make your device the autonomous group owner:
 
@@ -262,7 +261,7 @@ To create an autonomous Wi-Fi Direct group and to make your device the autonomou
 
         In this example, the event handler checks whether the group has been successfully created:
 
-        ``` 
+        ```
         public static void EventHandlerConnectionStatusChanged(object sender, EventArgs e)
         {
             Console.WriteLine("Connection state: " + e.State);
@@ -279,7 +278,7 @@ To create an autonomous Wi-Fi Direct group and to make your device the autonomou
 
     2.  Register the event handler for the `ConnectionStatus` event of the `Tizen.Network.WiFiDirect.WiFiDirectManager` class, and create the group using the `CreateGroup()` method:
 
-        ``` 
+        ```
         try
         {
             WiFiDirectManager.ConnectionStatusChanged += EventHandlerConnectionStatusChanged;
@@ -293,7 +292,7 @@ To create an autonomous Wi-Fi Direct group and to make your device the autonomou
 
 2.  When the group is no longer needed, destroy it and deregister the event handler:
 
-    ``` 
+    ```
     try
     {
         WiFiDirectManager.DestroyGroup();
@@ -312,7 +311,7 @@ To deactivate Wi-Fi Direct when it is no longer needed (or the application is ex
 
 1.  Deactivate Wi-Fi Direct on the local device using the `Deactivate()` method of the [Tizen.Network.WiFiDirect.WiFiDirectManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFiDirect.WiFiDirectManager.html) class:
 
-    ``` 
+    ```
     try
     {
         if (WiFiDirectManager.State == Activated)
@@ -328,7 +327,7 @@ To deactivate Wi-Fi Direct when it is no longer needed (or the application is ex
 
 2.  Check the device state using the `State` property of the `Tizen.Network.WiFiDirect.WiFiDirectManager` class:
 
-    ``` 
+    ```
     try
     {
         if (WiFiDirectManager.State == Deactivated)
@@ -341,3 +340,8 @@ To deactivate Wi-Fi Direct when it is no longer needed (or the application is ex
         Console.WriteLine("Exception occurred" + e.ToString());
     }
     ```
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

@@ -1,6 +1,5 @@
 # Wi-Fi
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 You can connect to a Wireless Local Area Network (WLAN) and transfer data over the network. The Wi-Fi Manager enables your application to activate and deactivate a local Wi-Fi device, and to scan for available access points.
 
@@ -46,7 +45,7 @@ To enable your application to use the Wi-Fi functionality:
 
 1.  To use the [Tizen.Network.WiFi](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFi.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <privileges>
        <privilege>http://tizen.org/privilege/network.get</privilege>
        <privilege>http://tizen.org/privilege/network.set</privilege>
@@ -56,12 +55,12 @@ To enable your application to use the Wi-Fi functionality:
 
 2. To use the methods and properties of the Tizen.Network.WiFi namespace, include it in your application:
 
-    ``` 
+    ```
     using Tizen.Network.WiFi;
     ```
 
 <a name="managing_events"></a>
-## Managing Events 
+## Managing Events
 
 To manage events related to Wi-Fi operations, use event handlers registered to the following events of the [Tizen.Network.WiFi.WiFiManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFi.WiFiManager.html) class:
 
@@ -74,7 +73,7 @@ To manage device and connection state events:
 
 1.  Define event handlers:
 
-    ``` 
+    ```
     public static void EventHandlerDeviceStateChanged(object sender, EventArgs e)
     {
         Console.WriteLine("Device state: " + e.State);
@@ -87,7 +86,7 @@ To manage device and connection state events:
 
 2. Register the event handlers for the `DeviceStateChanged` and `ConnectionStateChanged` events of the `Tizen.Network.WiFi.WiFiManager` class:
 
-    ``` 
+    ```
     WiFiManager.DeviceStateChanged += EventHandlerDeviceStateChanged;
 
     WiFiManager.ConnectionStateChanged += EventHandlerConnectionStateChanged;
@@ -95,7 +94,7 @@ To manage device and connection state events:
 
 3. When they are no longer needed, deregister the event handlers:
 
-    ``` 
+    ```
     WiFiManager.DeviceStateChanged -= EventHandlerDeviceStateChanged;
 
     WiFiManager.ConnectionStateChanged -= EventHandlerConnectionStateChanged;
@@ -108,7 +107,7 @@ To activate a Wi-Fi local device and check the connection state:
 
 1.  Activate a Wi-Fi device using the asynchronous `ActivateAsync()` method of the [Tizen.Network.WiFi.WiFiManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFi.WiFiManager.html) class:
 
-    ``` 
+    ```
     try
     {
         await WiFiManager.ActivateAsync();
@@ -116,7 +115,7 @@ To activate a Wi-Fi local device and check the connection state:
 
 2. Check whether the connection has been made by using the `IsActive` property of the `Tizen.Network.WiFi.WiFiManager` class:
 
-    ``` 
+    ```
         if (WiFiManager.IsActive)
         {
             Console.WriteLine("WiFi is activated");
@@ -135,7 +134,7 @@ To scan nearby access points and get their details:
 
 1.  Scan nearby access points using the `ScanAsync()` method of the [Tizen.Network.WiFi.WiFiManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFi.WiFiManager.html) class:
 
-    ``` 
+    ```
     try
     {
         await WiFiManager.ScanAsync();
@@ -145,7 +144,7 @@ To scan nearby access points and get their details:
 
     In this example, the application displays the name and connection state of each access point it finds. You can also get other information, such as the used frequency or the maximum speed the access point supports.
 
-    ``` 
+    ```
         var apList = WiFiManager.GetFoundAPs();
         foreach (var item in apList)
         {
@@ -166,7 +165,7 @@ To make a connection using a specific access point:
 
 1.  Scan nearby access points using the `ScanAsync()` method of the [Tizen.Network.WiFi.WiFiManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFi.WiFiManager.html) class, and select the one you want:
 
-    ``` 
+    ```
     try
     {
         string ap = "APName";
@@ -190,7 +189,7 @@ To make a connection using a specific access point:
 
 2. Establish a connection with the selected access point:
 
-    ``` 
+    ```
     try
     {
         await connectAP.ConnectAsync();
@@ -203,7 +202,7 @@ To make a connection using a specific access point:
 
 3. Check whether the connection has been established successfully:
 
-    ``` 
+    ```
     try
     {
         WiFiAP connect = WiFiManager.GetConnectedAP();
@@ -219,11 +218,11 @@ To make a connection using a specific access point:
     ```
 
 <a name="deactivating_wifi_device"></a>
-## Deactivating a Wi-Fi Device 
+## Deactivating a Wi-Fi Device
 
 To deactivate Wi-Fi when it is no longer needed (or the application is exiting), use the asynchronous `DeactivateAsync()` method of the [Tizen.Network.WiFi.WiFiManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFi.WiFiManager.html) class:
 
-``` 
+```
 try
 {
     await WiFiManager.DeactivateAsync();
@@ -234,3 +233,7 @@ catch (Exception e)
 }
 ```
 
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

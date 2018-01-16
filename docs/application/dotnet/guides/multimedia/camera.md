@@ -1,6 +1,5 @@
 # Camera
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 You can use basic camera features, including preview and capture. You can capture still images with the device's internal camera and keep images on your target device.
 
@@ -72,7 +71,7 @@ To enable your application to use the camera functionality:
 
 1.  Create a camera instance:
 
-    ``` 
+    ```
     try
     {
         Camera camera = new Camera(CameraDevice.Rear);
@@ -87,7 +86,7 @@ To enable your application to use the camera functionality:
 
 2.  Check the current state of the camera using the `State` property of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class:
 
-    ``` 
+    ```
     CameraState state;
 
     /// Check the camera state after creating the camera
@@ -97,7 +96,7 @@ To enable your application to use the camera functionality:
     The returned state is one of the values defined in the [Tizen.Multimedia.CameraState](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraState.html) enumeration. If the state is not `Created`, re-initialize the camera by recreating the instance.
 
 <a name="configuring_callback"></a>
-## Configuring the Camera 
+## Configuring the Camera
 
 After setting up the necessary prerequisites, configure the camera and set the camera preview event handler.
 
@@ -105,7 +104,7 @@ To configure the camera:
 
 1.  Set the image quality using the `ImageQuality` property of the [Tizen.Multimedia.CameraSettings](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraSettings.html) class:
 
-    ``` 
+    ```
     camera.Settings.ImageQuality = 100;
     ```
 
@@ -115,7 +114,7 @@ To configure the camera:
 
     The following examples set the display according to the above display types. The camera state must be `Created`.
 
-    ``` 
+    ```
     /// Overlay display type
     camera.Display = new Display(new Window("CameraWindow"));
 
@@ -129,7 +128,7 @@ To configure the camera:
 
     The following example sets the camera preview resolution to the first found supported resolution:
 
-    ``` 
+    ```
     IList supportedResolutions = _camera.Capabilities.SupportedPreviewResolutions.ToList();
     foreach(Size resolution in supportedResolutions)
     {
@@ -140,16 +139,16 @@ To configure the camera:
 
 4.  Set the capture format using the `CapturePixelFormat` property of the `Tizen.Multimedia.CameraSettings` class:
 
-    ``` 
+    ```
     camera.Settings.CapturePixelFormat = CameraPixelFormat.Jpeg;
     ```
 
     The [Tizen.Multimedia.CameraPixelFormat](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraPixelFormat.html) enumeration defines the available capture formats.
 
 5.  Register event handlers for managing various events of the `Tizen.Multimedia.Camera` class, related to the camera preview, auto-focus, and capturing:
-    -   To handle the camera preview, register an event handler for the `Preview` event. The event handler is invoked once per frame during a preview.
+    -   <a name="callbacks_preview"></a>To handle the camera preview, register an event handler for the `Preview` event. The event handler is invoked once per frame during a preview.
 
-        ``` 
+        ```
         public static void PreviewEventHandler(object sender, PreviewEventArgs e)
         {
             /// Do something
@@ -158,9 +157,9 @@ To configure the camera:
         camera.Preview += PreviewEventHandler;
         ```
 
-    -   To receive notifications about auto-focus state changes, register an event handler for the `FocusStateChanged` event. The event handler is invoked every time the auto-focus state changes.
+    -   <a name="callbacks_focus"></a>To receive notifications about auto-focus state changes, register an event handler for the `FocusStateChanged` event. The event handler is invoked every time the auto-focus state changes.
 
-        ``` 
+        ```
         public static void FocusStateChangedEventHandler(object sender, CameraFocusStateChangedEventArgs e)
         {
             Log.Info("Camera", "Focus state is changed to " + e.State.ToString());
@@ -177,7 +176,7 @@ To configure the camera:
 
         The following event handler example saves the captured frame as a JPEG image:
 
-        ``` 
+        ```
         public static void CapturingEventHandler(object sender, CameraCapturingEventArgs e)
         {
             if (e.MainImage != null)
@@ -197,7 +196,7 @@ To configure the camera:
 
         The following event handler example restarts the camera preview:
 
-        ``` 
+        ```
         public static void CaptureCompletedEventHandler(object sender, EventArgs e)
         {
             camera.StartPreview();
@@ -206,7 +205,7 @@ To configure the camera:
         camera.CaptureCompleted += CaptureCompletedEventHandler;
         ```
 <a name="display"></a>
-## Setting the Display for the Camera Preview 
+## Setting the Display for the Camera Preview
 
 Before displaying the camera preview on the screen, check the camera display settings. You can use the default display settings provided by the Camera framework, or you can customize the display settings to meet your needs.
 
@@ -218,7 +217,7 @@ To customize the display settings:
 
     -   To determine the active camera, check the [Tizen.Multimedia.CameraDevice](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraDevice.html) enumeration value:
 
-        ``` 
+        ```
         public enum CameraDevice
         {
             Rear, /// Rear camera
@@ -230,7 +229,7 @@ To customize the display settings:
 
     -   To determine the current camera angle, use the `LensOrientation` property of the [Tizen.Multimedia.CameraSettings](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraSettings.html) class:
 
-        ``` 
+        ```
         int angle = camera.Settings.LensOrientation;
         ```
 
@@ -244,13 +243,13 @@ To customize the display settings:
 
     The display rotation setting is preset to a default value for each camera. Before changing the display rotation value, retrieve the default value using the `Rotation` property of the [Tizen.Multimedia.CameraDisplaySettings](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraDisplaySettings.html) class:
 
-    ``` 
+    ```
     Rotation rotation = camera.DisplaySettings.Rotation;
     ```
 
     Calculate and set a new display rotation value based on the current camera orientation:
 
-    ``` 
+    ```
     int lengOrientation;
     int displayRotationAngle;
     Rotation displayRotation = Rotation.Rotate0;
@@ -289,13 +288,13 @@ To customize the display settings:
 
     Before changing the display flip value, retrieve the default value using the `Flip` property of the `Tizen.Multimedia.CameraDisplaySettings` class:
 
-    ``` 
+    ```
     Flips displayFlip = camera.DisplaySettings.Flip;
     ```
 
     Calculate and set a new display flip value based on the direction the camera is facing and the current camera orientation:
 
-    ``` 
+    ```
     /// If the camera is facing in the same direction as the display,
     /// apply flip to the front camera because of the mirror effect
 
@@ -328,13 +327,13 @@ To customize the display settings:
 For an Evas surface, the Evas object for the camera display is rotated by the window manager used by the application, not by the `Rotation` property.
 
 <a name="photo"></a>
-## Taking a Photo 
+## Taking a Photo
 
 To take a photo:
 
 1.  [After configuring the camera](#configuring_callback), start the camera preview using the `StartPreview()` method of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class:
 
-    ``` 
+    ```
     camera.StartPreview();
     ```
 
@@ -350,7 +349,7 @@ To take a photo:
 
     To capture an image, use the `StartCapture()` method:
 
-    ``` 
+    ```
     camera.StartCapture();
     ```
 
@@ -365,7 +364,7 @@ To set some attributes:
 
     The camera preview attributes are a group of attributes that you can set before starting the preview. The following example sets the FPS and image quality attributes:
 
-    ``` 
+    ```
     camera.Settings.PreviewFps = CameraFps.Auto;
 
     camera.Settings.ImageQuality = 100;
@@ -375,7 +374,7 @@ To set some attributes:
 
     Retrieve the range of available zoom level values using the `ZoomRange` property, and set the zoom level using the `ZoomLevel` property. The following example retrieves the available zoom level range and sets the zoom level to minimum:
 
-    ``` 
+    ```
     Range zoomRange = camera.Settings.ZoomRange;
 
     camera.Settings.ZoomLevel = zoomRange.Min;
@@ -385,7 +384,7 @@ To set some attributes:
 
     Retrieve the range of available brightness level values using the `BrightnessRange` property, and the current brightness level using the `Brightness` property. The following example retrieves the available brightness level range and sets the brightness level to minimum:
 
-    ``` 
+    ```
     Range brightnessRange = camera.Settings.BrightnessRange;
     int brightness = camera.Settings.Brightness;
 
@@ -394,24 +393,29 @@ To set some attributes:
     ```
 
 <a name="release"></a>
-## Releasing Resources 
+## Releasing Resources
 
 After you have finished working with the camera, stop the camera and clean up the application environment:
 
 1.  If auto-focus is switched on, switch if off using the `StopFocusing()` method of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class:
 
-    ``` 
+    ```
     camera.StopFocusing();
     ```
 
 2.  Stop the camera preview using the `StopPreview()` method:
 
-    ``` 
+    ```
     camera.StopPreview();
     ```
 
 3.  Destroy the camera handle and release all its resources using the `Dispose()` method:
 
-    ``` 
+    ```
     camera.Dispose();
     ```
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

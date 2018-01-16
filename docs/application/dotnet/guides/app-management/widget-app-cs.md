@@ -1,9 +1,7 @@
 Widget Application
 ==================
 
-## Dependencies
 
-- Tizen 4.0 and Higher
 
 You can create widget applications, which are Tizen .NET applications
 shown on the home screen. They are launched by the home screen when the
@@ -50,7 +48,7 @@ The main widget application features include:
 
     ​
 <a name="app_instance"></a>
-## Widget Application and Widget 
+## Widget Application and Widget
 
 The
 [Tizen.Applications.WidgetApplication](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Applications_1_1WidgetApplication.html)
@@ -72,7 +70,7 @@ same widget application process.
 instances](./media/widget_homescreen.png)
 
 <a name="instance"></a>
-## Widget Instance States and Events 
+## Widget Instance States and Events
 
 The following figure illustrates the widget instance states during the
 instance life-cycle:
@@ -106,7 +104,7 @@ You can declare a widget class by inheriting the
 [Tizen.Applications.WidgetBase](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Applications_1_1WidgetBase.html)
 class. For example:
 
-``` 
+```
 class MyWidget : WidgetBase
 {
     public override void OnCreate(Bundle content, int w, int h) {}
@@ -132,18 +130,18 @@ To enable your application to use the widget functionality:
     [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/namespaceTizen_1_1Applications.html)
     namespace, include it in your application:
 
-    ``` 
+    ```
     using Tizen.Applications;
     ```
 
 2. In Visual Studio, open the **tizen-manifest.xml** file with the text
     editor and add the [&lt;widget-application&gt; manifest
-    element](../../../../vstools/tools/manifest_editor.htm#widget_app).
+    element](../../../vstools/tools/manifest-editor.md#widget_app).
 
     The following code example shows how the `<widget-application>`
     element is consequently added to the `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <?xml version="1.0" encoding="utf-8"?>
     <manifest xmlns="http://tizen.org/ns/packages" api-version="3.0" package="@PACKAGE_NAME@" version="@VERSION@">
        <profile name="common" />
@@ -180,7 +178,7 @@ constructors:
 A widget viewer application can add the widget application by using the
 widget application ID.
 
-``` 
+```
 class Program
 {
     static void Main(string[] args)
@@ -206,7 +204,7 @@ To manage the widget instance life-cycle:
     [Tizen.Applications.WidgetBase](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Applications_1_1WidgetBase.html)
     class:
 
-    ``` 
+    ```
     class MyWidget : WidgetBase {}
     ```
 
@@ -218,7 +216,7 @@ To manage the widget instance life-cycle:
         UI](#get_window). If bundle content is not `NULL`, restore the
         previous status.
 
-        ``` 
+        ```
         public override void OnCreate(Bundle content, int w, int h)
         {
             try
@@ -241,7 +239,7 @@ To manage the widget instance life-cycle:
         termination is not `WidgetDestroyType.Permanent`, store the
         current status with the incoming bundle.
 
-        ``` 
+        ```
         public override void OnDestroy(WidgetDestroyType reason, Bundle content)
         {
             if (reason != WidgetDestroyType.Permanent)
@@ -256,7 +254,7 @@ To manage the widget instance life-cycle:
         becomes invisible. The framework can destroy a paused
         widget instance.
 
-        ``` 
+        ```
         public override void OnPause() {}
         ```
 
@@ -266,7 +264,7 @@ To manage the widget instance life-cycle:
         Take the necessary actions when the widget instance
         becomes visible.
 
-        ``` 
+        ```
         public override void OnResume() {}
         ```
 
@@ -275,7 +273,7 @@ To manage the widget instance life-cycle:
 
         Take the necessary actions to accommodate the new size.
 
-        ``` 
+        ```
         public override void OnResize(int w, int h) {}
         ```
 
@@ -286,17 +284,17 @@ To manage the widget instance life-cycle:
         `isForce` parameter is `true`, the widget can be updated even in
         the pause state.
 
-        ``` 
+        ```
         public override void OnUpdate(Bundle content, bool isForce) {}
         ```
 
 <a name="get_window"></a>
-## Drawing the Widget UI 
+## Drawing the Widget UI
 
 The widget UI is drawn in the `OnCreate()` callback of your widget
 class:
 
-``` 
+```
 public override void OnCreate(Bundle content, int w, int h)
 {
     try
@@ -364,7 +362,7 @@ Although the widget wants to share some data from the Weather
 application (such as the user's favorite city), it is ineffective for
 the widget to launch the Weather application every time to retrieve such
 data. This inefficiency makes it difficult to use typical IPC
-mechanisms, such as sockets and [message ports](../message-port-n.md),
+mechanisms, such as sockets and [message ports](message-port.md),
 for which both the receiver and sender processes must be alive. To
 overcome this limitation, the widget application must use a
 communication method that stores data permanently somewhere in the
@@ -398,7 +396,7 @@ signals. The music-player-ui and music-player-widget applications
 display the UI controls, title, album art, and other content retrieved
 from the music-player-service service application. The service
 application can export its data using the data control to [provide data
-to the other applications](../data-control-n.md) (widget and UI)
+to the other applications](data-control.md) (widget and UI)
 simultaneously. The following figure illustrates the typical data
 control flows between the set of UI, service, and widget applications.
 
@@ -408,3 +406,6 @@ control flows between the set of UI, service, and widget applications.
 control](./media/widget_data_control_share.png)
 
 
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

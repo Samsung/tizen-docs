@@ -1,13 +1,11 @@
 # NUI Hello World Tutorial
-## Dependencies
--   Tizen 4.0 and Higher
 
 The tutorial shows how to create and display "Hello World" using a text label.
 
 For an introduction to NUI, see the [NUI Overview](NUIoverview.md).
 
 <a name="tutorial"></a>
-## Tutorial Details 
+## Tutorial Details
 
 The following steps are required to display text:
 
@@ -21,7 +19,7 @@ This tutorial also demonstrates the triggering of the `Touch` window application
 
 The required system and NUI namespaces are imported through the following `using` declarations:
 
-``` 
+```
 using System;
 using System.Runtime.InteropServices;
 using Tizen.NUI;
@@ -38,13 +36,13 @@ The `Main()` method consists of 2 steps:
 
 1.  Create the application through the default constructor:
 
-    ``` 
+    ```
     Example example = new Example();
     ```
 
     The application is derived from the `NUIApplication` class:
 
-    ``` 
+    ```
     class Example : NUIApplication
     ```
 
@@ -54,7 +52,7 @@ The `Main()` method consists of 2 steps:
 
     The main loop must be started to run the application. This ensures that images are displayed, and that events and signals are dispatched and captured.
 
-    ``` 
+    ```
     example.Run(args);
     ```
 
@@ -64,7 +62,7 @@ The `Main()` method consists of 2 steps:
 
 The `OnCreate` method of the Hello World application overrides the NUIApplication `OnCreate` method:
 
-``` 
+```
 protected override void OnCreate()
 {
     base.OnCreate();
@@ -83,31 +81,31 @@ The initialization code contains the following simple steps:
 
 1.  Create the text label member variable:
 
-    ``` 
+    ```
     _text = new TextLabel("Hello World");
     ```
 
 2.  Position the text in the centre of the application window. The `ParentOrigin` property defines a point within the parent view area. If the text label size is not specified, the text label is at least as wide as the screen.
 
-    ``` 
+    ```
     _text.ParentOrigin = ParentOrigin.CenterLeft;
     ```
 
 3.  Align the text horizontally to the center of the available area:
 
-    ``` 
+    ```
     _text.HorizontalAlignment = HorizontalAlignment.Center;
     ```
 
 4.  Set the label background color to illustrate the label width:
 
-    ``` 
+    ```
     _text.BackgroundColor = Color.Red;
     ```
 
 5.  Set the text size (the size of the font is given in points):
 
-    ``` 
+    ```
     _text.PointSize = 32.0f;
     ```
 
@@ -115,14 +113,14 @@ The initialization code contains the following simple steps:
 
 6.  Add the `TouchEvent` event handler to the main application window. This event handler is invoked on any click in the application window.
 
-    ``` 
+    ```
     Window window = Window.Instance;
     window.TouchEvent += WindowTouched;
     ```
 
     Alternatively, you can add the event handler using the lambda expression syntax:
 
-    ``` 
+    ```
     window.TouchEvent += (object src, Window.TouchEventArgs args) =>
     {
         _text.Text = "I have been touched!";
@@ -131,7 +129,7 @@ The initialization code contains the following simple steps:
 
 7.  Add the text label to the root layer:
 
-    ``` 
+    ```
     window.Add(_text);
     ```
 
@@ -141,7 +139,7 @@ The initialization code contains the following simple steps:
 
 The user can click anywhere in the application window to change the text in the label:
 
-``` 
+```
 private void WindowTouched(object sender, Window.TouchEventArgs e)
 {
     _text.Text = "I have been touched!";
@@ -152,7 +150,7 @@ private void WindowTouched(object sender, Window.TouchEventArgs e)
 
 `OnTerminate` is invoked when the application is about to terminate and when the window close button is clicked.
 
-``` 
+```
 protected override void OnTerminate()
 {
     base.OnTerminate();
@@ -170,9 +168,9 @@ To build and run the application, use Visual Studio on a Windows platform, and V
 The [NUI development setup guide](setup-ubuntu.md) describes setting up the NUI development environment on Ubuntu, using this tutorial as an example project.
 
 <a name="fullcode"></a>
-## Full Example Source Code 
+## Full Example Source Code
 
-``` 
+```
 using System;
 using System.Runtime.InteropServices;
 using Tizen.NUI;
@@ -236,3 +234,8 @@ After running the example, the following output should appear:
 
 ![Hello world](media/hello-world.png)
 
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

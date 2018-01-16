@@ -1,6 +1,5 @@
 # Input Method
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 The input method editor (IME) is an input panel (keyboard) that lets the user input text and the platform receive the entered data. The user can select an IME as their default keyboard in the device Settings application.
 
@@ -45,7 +44,7 @@ To enable your application to use the input method functionality:
 
 1.  To use the [Tizen.Uix.InputMethod](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.InputMethod.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <privileges>
        <privilege>http://tizen.org/privilege/ime</privilege>
     </privileges>
@@ -53,18 +52,18 @@ To enable your application to use the input method functionality:
 
 2.  To use the methods and properties of the Tizen.Uix.InputMethod namespace, include it in your application:
 
-    ``` 
+    ```
     using Tizen.Uix.InputMethod;
     ```
 
-<a name="start"></a>	
+<a name="start"></a>
 ## Starting the IME Life-cycle
 
 To start the IME application life-cycle:
 
 1.  Register the mandatory `Create()`, `Terminate()`, `Show()`, and `Hide()` event handlers:
 
-    ``` 
+    ```
     internal static void Create() {}
     internal static void Terminate() {}
     internal static void Show(InputMethodEditor.ContextId id, InputMethodContext id) {}
@@ -73,7 +72,7 @@ To start the IME application life-cycle:
 
 2.  Implement the `Main()` method as the main entry point of the IME application:
 
-    ``` 
+    ```
     static void Main(string[] args)
     {
     ```
@@ -82,8 +81,12 @@ To start the IME application life-cycle:
 
 3.  Inside the `Main()` method, add the required event handlers and call the `Run()` method to start the application:
 
-    ``` 
+    ```
         InputMethodEditor.Run(Create, Terminate, Show, Hide);
     }
     ```
 
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

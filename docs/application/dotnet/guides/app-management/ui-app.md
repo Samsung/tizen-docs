@@ -1,9 +1,5 @@
 # UI Application
 
-## Dependencies
-
-- Tizen 4.0 and Higher
-
 To create a basic UI application, you must:
 
 -   Define the [application fundamentals](#fundamentals), mainly the
@@ -22,7 +18,7 @@ To create a basic UI application, you must:
 
 
 <a name="callback"></a>
-## Event Handling 
+## Event Handling
 
 The following table lists the methods that are triggered when the
 application state changes.
@@ -53,7 +49,7 @@ system events occur. The following table lists the related methods.
 | `OnRegionFormatChanged()`      | This method is responsible for refreshing the display into the new time zone. |
 
 <a name="state_trans"></a>
-## Application States and Transitions 
+## Application States and Transitions
 
 
 The Tizen .NET application can be in one of several application states.
@@ -90,12 +86,12 @@ To use the methods and properties of the
 [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html)
 namespace, include it in your application:
 
-``` 
+```
 using Tizen.Applications;
 ```
 
 <a name="fundamentals"></a>
-## Handling the Application Fundamentals 
+## Handling the Application Fundamentals
 
 The
 [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html)
@@ -116,7 +112,7 @@ To manage the application life-cycle:
     The following code is a minimal application using the
     `Tizen.Applications` namespace. It only builds and runs.
 
-    ``` 
+    ```
     class App : CoreUIApplication
     {
         static void Main(string[] args)
@@ -146,7 +142,7 @@ To manage the application life-cycle:
         switches to a mode which uses less resources.
     -   `OnResume()`: Sets the application window to be visible again.
 
-    ``` 
+    ```
     class App : CoreUIApplication
     {
         protected override void OnCreate()
@@ -220,7 +216,7 @@ To manage the application life-cycle:
 
 
 <a name="allow_bg"></a>
-## Background Categories 
+## Background Categories
 
 An application is not allowed to run in the background except when it is
 explicitly declared to do so. The following table lists the background
@@ -238,12 +234,12 @@ categories that allow an application to run in the background.
 | IoT Communication/Connectivity | Communicating between external devices in the background (such as Wi-Fi and Bluetooth) | [Tizen.Network.WiFi](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFi.html) <br> [Tizen.Network.Bluetooth](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Bluetooth.html) | `iot-communication`                      |
 
 <a name="bg-category"></a>
-### Describing the Background Category 
+### Describing the Background Category
 
 An application with a background running capability must declare the
 background category in its manifest file:
 
-``` 
+```
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns="http://tizen.org/ns/packages" api-version="4" package="org.tizen.example.TestApp" version="1.0.0">
    <profile name="common" />
@@ -257,3 +253,8 @@ background category in its manifest file:
    </ui-application>
 </manifest>
 ```
+
+
+## Related Information
+  * Dependencies
+    -   Tizen 4.0 and Higher

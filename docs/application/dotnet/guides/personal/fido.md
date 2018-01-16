@@ -1,7 +1,6 @@
 
 # FIDO Universal Authentication Framework
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 The FIDO (Fast IDentity Online) Alliance is a organization formed to address the lack of interoperability among strong authentication devices as well as the problems users face with creating and remembering multiple usernames and passwords.
 
@@ -10,7 +9,7 @@ FIDO covers both password-less authentications (through [FIDO UAF components](#f
 FIDO Alliance provides certification for FIDO-compliant products through FIDO Ready™.
 
 <a name="fido_uaf_components"></a>
-## FIDO UAF Components 
+## FIDO UAF Components
 
 UAF (Universal Authentication Framework) authenticators can be connected to a user device using various physical interfaces, such as SPI, USB, and Bluetooth. The UAF Authenticator-Specific Module (ASM) is a software interface on top of UAF authenticators, which gives a standardized way for the FIDO UAF clients to [detect and access the functionality of UAF authenticators](#find_auth), and hides the internal communication complexity from the clients.
 
@@ -87,7 +86,7 @@ To enable your application to use the FIDO UAF functionality:
 
 1.  To use the [Tizen.Account.FidoClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.FidoClient.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <privileges>
        <privilege>http://tizen.org/privilege/fido.client</privilege>
     </privileges>
@@ -95,16 +94,16 @@ To enable your application to use the FIDO UAF functionality:
 
 2.  To use the methods and properties of the Tizen.Account.FidoClient namespace, include it in your application:
 
-    ``` 
+    ```
     using Tizen.Account.FidoClient;
     ```
 
-<a name="find_auth"></a>	
-## Finding the FIDO Authenticator 
+<a name="find_auth"></a>
+## Finding the FIDO Authenticator
 
 To obtain the list of all available authenticators, use the `DiscoverAuthenticatorsAsync()` method of the [Tizen.Account.FidoClient.UafAuthenticatorFinder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.FidoClient.UafAuthenticatorFinder.html) class:
 
-``` 
+```
 IEnumerable authInfos = await UafAuthenticatorFinder.DiscoverAuthenticatorsAsync();
 foreach (AuthenticatorInformation authInfo in authInfos)
 {
@@ -114,11 +113,11 @@ foreach (AuthenticatorInformation authInfo in authInfos)
 ```
 
 <a name="check_uaf_msg_supported"></a>
-## Checking the UAF Message Support 
+## Checking the UAF Message Support
 
 To check whether the given UAF protocol message can be processed by the device, use the `CheckPolicyAsync()` method of the [Tizen.Account.FidoClient.UafClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.FidoClient.UafClient.html) class:
 
-``` 
+```
 UafMessage uafRequest = new UafMessage()
 {
     Operation = UafRequestJson
@@ -127,7 +126,7 @@ var response = await UafClient.CheckPolicyAsync(uafRequest);
 ```
 
 <a name="protocol_conversation"></a>
-## Managing the Protocol Conversation 
+## Managing the Protocol Conversation
 
 The core UAF protocol consists of conceptual conversations between the FIDO UAF client and the FIDO server, which allow the server to prompt the client to register authenticators and authenticate the end user. Deregistration is triggered by the server when it needs to deregister authentication keys.
 
@@ -135,7 +134,7 @@ To receive conversation messages from the server:
 
 -   For an authenticator registration request:
 
-    ``` 
+    ```
     UafMessage UafRegistrationRequest = new UafMessage()
     {
         Operation = UafRegistrationRequestJson
@@ -147,7 +146,7 @@ To receive conversation messages from the server:
 
 -   For an authentication request:
 
-    ``` 
+    ```
     UafMessage UafAuthRequest = new UafMessage()
     {
         Operation = UafAuthRequestJson
@@ -157,8 +156,8 @@ To receive conversation messages from the server:
     Assert.IsInstanceOf<UafResponse>(response, "Expected return type is UafResponse");
     ```
 
-<a name="set_server_result"></a>	
-## Setting the Server Result 
+<a name="set_server_result"></a>
+## Setting the Server Result
 
 The server result is used to indicate the status code resulting from a FIDO UAF message delivered to the remote server.
 
@@ -166,7 +165,7 @@ To set the server result:
 
 -   Set the server result with success:
 
-    ``` 
+    ```
     UafMessage uafRequest = new UafMessage()
     {
         Operation = UafRequestJson
@@ -188,7 +187,7 @@ To set the server result:
 
 -   Set the server result with failure:
 
-    ``` 
+    ```
     UafResponse response = new UafResponse()
     {
         Response = "Response"
@@ -205,3 +204,8 @@ To set the server result:
         Assert.IsTrue(ex is ArgumentException, "ArgumentException is expected");
     }
     ```
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

@@ -1,6 +1,5 @@
 # Text Input and Voice
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 The text input and voice features introduce how you can convert speech to text and back to speech, and provide customized keyboards and voice control.
 
@@ -21,3 +20,8 @@ You can use the following text input and voice features in your .NET application
 -   [Voice Control](voice-control.md)
 
     You can allow the user to control the device through voice commands. You can register voice commands, which trigger a callback when the user speaks them.
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

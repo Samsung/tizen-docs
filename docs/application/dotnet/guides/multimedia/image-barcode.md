@@ -1,6 +1,4 @@
 # Barcode Detection and Generation
-## Dependencies
--   Tizen 4.0 and Higher
 
 
 You can perceive and understand an image or extract information from images in your application.
@@ -47,7 +45,7 @@ To enable your application to use the barcode detection and generation functiona
 1.  Install the NuGet packages for Media Vision and Camera.
 2.  To use the methods and properties of the barcode detection and generation classes and to handle camera preview, include the [Tizen.Multimedia](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html) and [Tizen.Multimedia.Vision](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.html) amespaces in your application:
 
-    ``` 
+    ```
     using Tizen.Multimedia;
     using Tizen.Multimedia.Vision;
     ```
@@ -60,7 +58,7 @@ To initialize the barcode detection and generation engines for use:
 -   For barcode detection:
     1.  Create an instance of the [Tizen.Multimedia.Vision.BarcodeDetectionConfiguration](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.BarcodeDetectionConfiguration.html) class and set the `Target` property as a value of the [Tizen.Multimedia.Vision.BarcodeDetectionTarget](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.BarcodeDetectionTarget.html) enumeration:
 
-        ``` 
+        ```
         static BarcodeDetectionConfiguration configDetection = new BarcodeDetectionConfiguration();
 
         /// To detect all barcode types
@@ -74,7 +72,7 @@ To initialize the barcode detection and generation engines for use:
 
     2.  Create an instance of the [Tizen.Multimedia.Vision.MediaVisionSource](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.MediaVisionSource.html) class with raw image buffer data and its corresponding width, height, and color space:
 
-        ``` 
+        ```
         /// Assume that there is a decoded raw data buffer of the byte[] type, and
         /// it has 640x480 resolution with an RGB888 color space
         MediaVisionSource source = new MediaVisionSource(bytes, width, height, ColorSpace.Rgb888);
@@ -84,7 +82,7 @@ To initialize the barcode detection and generation engines for use:
 
     3.  To provide camera preview images, define a camera preview event handler for the `Preview` event of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class and create an instance of that class:
 
-        ``` 
+        ```
         /// Define a camera preview event handler
         static void PreviewCallback(object sender, PreviewEventArgs e)
         {
@@ -111,7 +109,7 @@ To initialize the barcode detection and generation engines for use:
 
     4.  Set the camera display, register the camera preview event handler, and start the camera preview with the `StartPreview()` method:
 
-        ``` 
+        ```
         /// Set the camera display
         camera.Display = new Display(new Window("Preview"));
 
@@ -131,7 +129,7 @@ To initialize the barcode detection and generation engines for use:
 
 -   For barcode generation, create an instance of the [Tizen.Multimedia.Vision.BarcodeGenerationConfiguration](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.BarcodeGenerationConfiguration.html) class and set its properties:
 
-    ``` 
+    ```
     static BarcodeGenerationConfiguration configGeneration = new BarcodeGenerationConfiguration();
 
     /// To show message on the generated barcode image
@@ -147,13 +145,13 @@ To initialize the barcode detection and generation engines for use:
     ```
 
 <a name="detect"></a>
-## Detecting Barcodes 
+## Detecting Barcodes
 
 To detect barcodes:
 
 1.  To access the camera preview data from which to detect barcodes, create a new instance of the [Tizen.Multimedia.Vision.MediaVisionSource](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.MediaVisionSource.html) class in the camera preview event handler:
 
-    ``` 
+    ```
     static void PreviewCallback(object sender, PreviewEventArgs e)
     {
         PreviewData preview = e.Preview;
@@ -167,7 +165,7 @@ To detect barcodes:
 
 2.  Detect barcodes in the image using the `DetectAsync()` method of the [Tizen.Multimedia.Vision.BarcodeDetector](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.BarcodeDetector.html) class:
 
-    ``` 
+    ```
         Point point = new Point(0,0);
         Size size = new Size((int)source.Width, (int)source.Height);
 
@@ -187,7 +185,7 @@ To detect barcodes:
 
 3.  When barcode detection is no longer needed, deregister the camera preview event handler, stop the camera preview, and destroy the camera instance:
 
-    ``` 
+    ```
     camera.Preview -= PreviewCallback;
 
     camera.StopPreview();
@@ -197,14 +195,14 @@ To detect barcodes:
     For more information, see the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class.
 
 <a name="generate"></a>
-## Generating Barcodes 
+## Generating Barcodes
 
 To generate a barcode:
 
 -   To generate the barcode into memory:
     -   To generate a 1D barcode, create a source instance using the `GenerateSource()` method of the [Tizen.Multimedia.Vision.BarcodeGenerator](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.BarcodeGenerator.html) class with a message and a [barcode type](#barcode):
 
-        ``` 
+        ```
         string message = "0123455";
 
         /// For a Code 128 type barcode
@@ -218,7 +216,7 @@ To generate a barcode:
     -   To generate a QR code:
         1.  To create the QR code configuration, create an instance of the [Tizen.Multimedia.Vision.QrConfiguration](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.QrConfiguration.html) class with the QR code encoding mode as a value of the [Tizen.Multimedia.Vision.QrMode](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.QrMode.html) enumeration, the QR code error correction level as a value of the [Tizen.Multimedia.Vision.ErrorCorrectionLevel](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.ErrorCorrectionLevel.html) enumeration, and the QR code version:
 
-            ``` 
+            ```
             string message = "Tizen QR";
 
             /// For the UTF8 encoding type
@@ -227,7 +225,7 @@ To generate a barcode:
 
         2.  Create a source instance using the `GenerateSource()` method of the `Tizen.Multimedia.Vision.BarcodeGenerator` class with a message and the QR code configuration:
 
-            ``` 
+            ```
             var source = BarcodeGenerator.GenerateSource(message, qrConfig);
 
             /// If you want to change the QR code color, give an instance
@@ -239,7 +237,7 @@ To generate a barcode:
     -   To generate a 1D barcode:
         1.  Create an instance of the [Tizen.Multimedia.Vision.BarcodeImageConfiguration](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.BarcodeImageConfiguration.html) class with the file format as a value of the [Tizen.Multimedia.Vision.BarcodeImageFormat](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.BarcodeImageFormat.html) enumeration, the image file resolution, and a path where the file is to be saved:
 
-            ``` 
+            ```
             int width = 300;
             int height = 100;
             BarcodeImageFormat format = BarcodeImageFormat.Jpeg;
@@ -249,7 +247,7 @@ To generate a barcode:
 
         2.  Generate the barcode using the `GenerateImage()` method of the `Tizen.Multimedia.Vision.BarcodeGenerator` class:
 
-            ``` 
+            ```
             string message = "0123455";
             BarcodeType type = BarcodeType.Code128;
             BarcodeGenerator.GenerateImage(message, type, imageConfig);
@@ -257,7 +255,7 @@ To generate a barcode:
 
     -   To generate a QR code, create instances of the `Tizen.Multimedia.Vision.BarcodeImageConfiguration` and `Tizen.Multimedia.Vision.QrConfiguration` classes as above, and generate the QR code using the `GenerateImage()` method of the `Tizen.Multimedia.Vision.BarcodeGenerator` class:
 
-        ``` 
+        ```
         int width = 300;
         int height = 300;
         BarcodeImageFormat format = BarcodeImageFormat.Jpeg;
@@ -274,7 +272,7 @@ To generate a barcode:
 The following tables provide more information on the barcode generation specifications.
 
 **Table: Supported barcode types**
-
+<a name="barcode"></a>
 | 1D or 2D | Type               | Description                              | Example                                  |
 | -------- | ------------------ | ---------------------------------------- | ---------------------------------------- |
 | 1-D      | UPC-A              | Universal product code with numeric 12-digit | ![UPC-A](./media/mediavision_upc_a.png)  |
@@ -287,7 +285,7 @@ The following tables provide more information on the barcode generation specific
 | 2-D      | QR code            | Quick Response code                      | ![UPC-A](./media/mediavision_qr.png)     |
 
 **Table: Supported QR code specifications**
-
+<a name="qrcode"></a>
 | Specification                     | Support type | Description                              |
 | --------------------------------- | ------------ | ---------------------------------------- |
 | Error Correction Code (ECC) Level | ECC Low      | Recovery up to 7% damage                 |
@@ -298,3 +296,10 @@ The following tables provide more information on the barcode generation specific
 |                                   | Alphanumeric | Alphanumeric characters: numeric (0, 1, ..., 9), characters (A, B, ..., Z), and punctuation (' ', $, %, *, +, -, '.', /, ':') |
 |                                   | Byte 8-bit   | Raw 8-bit bytes                          |
 |                                   | UTF-8        | Universal character set and Transformation Format 8-bit, encoding characters |
+
+
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

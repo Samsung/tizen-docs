@@ -1,6 +1,4 @@
 # Custom View Controls
-## Dependencies
--   Tizen 4.0 and Higher
 
 NUI provides the ability to create custom views.
 
@@ -24,17 +22,17 @@ The following general guidelines apply to creating a custom view:
 - Use of gestures is preferred over analyzing raw touch events.
 
 <a name="existingcustomview"></a>
-## CustomView Class 
+## CustomView Class
 
 The NUI `CustomView` class provides common functionality required by all views. The `CustomView` class is derived from the `ViewWrapper` class:
 
-``` 
+```
 public class CustomView : ViewWrapper
 ```
 
 The `ViewWrapper` class in turn is derived from `View` class:
 
-``` 
+```
 public class ViewWrapper : View
 ```
 
@@ -71,16 +69,16 @@ The following table lists the `CustomView` class methods.
 | `OnStageConnection()`      | Called after the view has been connected to the stage default window. |
 
 <a name="creation"></a>  
-## Creating a Custom View 
+## Creating a Custom View
 A view is created with the `new` operator:
 
-``` 
+```
 contactView = new ContactView();
 ```
 
 Each custom C\# View must have its static constructor called before any JSON file is loaded. Static constructors for a class are only run once (they are run per view, not per instance). The View must register its type inside the static constructor. The `CustomViewRegistry.Instance.Register()` method registers the views and any scriptable properties they have with the Type Registry:
 
-``` 
+```
 static ContactView()
 {
     CustomViewRegistry.Instance.Register(CreateInstance, typeof(ContactView));
@@ -89,7 +87,7 @@ static ContactView()
 
 In addition, the custom view must provide a `CreateInstance()` method, which gets passed to the `CustomViewRegistry.Instance.Register()` method. The `CreateInstance()` method is called if the view is in a JSON file:
 
-``` 
+```
 static CustomView CreateInstance()
 {
     return new ContactView();
@@ -98,7 +96,7 @@ static CustomView CreateInstance()
 
 Override the`OnInitialize()` method if necessary:
 
-``` 
+```
 public override void OnInitialize()
 {
     // Create a container for the star images
@@ -113,7 +111,7 @@ public override void OnInitialize()
 ```
 
 <a name="rendering"></a>
-## Rendering Content 
+## Rendering Content
 
 To render content, the required views can be created and added to the control itself as its children. However, this solution is not fully optimized and means extra views are added, requiring additional processing.
 
@@ -121,7 +119,7 @@ It is recommended to use or reuse visuals to create the required content. For mo
 
 The following example shows the creation and registration of an image visual in `ContactView.cs`:
 
-``` 
+```
 private VisualBase _imageVisual;
 
 [ScriptableProperty()]
@@ -162,7 +160,7 @@ A range of property indices are provided for `ImageVisualPropertyIndex`, 0 by de
 For more information on the property maps that can be used for each visual type, see [Visuals](visuals.md).
 
 <a name="stylable"></a>
-## Styling Custom Views 
+## Styling Custom Views
 
 The NUI property system allows custom views to be easily styled. The JSON syntax is used in the stylesheets:
 
@@ -170,7 +168,7 @@ The NUI property system allows custom views to be easily styled. The JSON syntax
 
 This is an example of the current (as of July 2017) JSON stylesheet format. This example includes a visual.
 
-``` 
+```
 "styles":
 {
   "TextField":
@@ -219,7 +217,7 @@ This is an example of the current (as of July 2017) JSON stylesheet format. This
 
 This is an example of the new stylesheet format, currently under development. This example also includes a visual.
 
-``` 
+```
 "states":
 {
   "NORMAL":
@@ -262,7 +260,7 @@ Styling gives the UI designer the ability to change the look and feel of the Vie
 For more information on building up visuals for the button states using JSON stylesheets and transitioning between the various button states, see [Styling Controls with JSON](styling-controls-with-JSON.md).
 
 <a name="typeregistration"></a>
-## Type Registration 
+## Type Registration
 
 The Type Registry is used to register your custom view. Type registration allows the creation of the view through a JSON file, as well as registering properties, signals, actions, transitions, and animation effects.
 
@@ -278,11 +276,11 @@ For more information on the NUI animation framework, see [Animation](animation.m
 Properties can be accessed through a unique index. The index can be set manually in code (hard-coded), or calculated automatically. `ContactView.cs` contains examples of both indexing methods; fixed for depth index, and automatic for registering visuals. The NUI code base is currently been modified (as of July 2017) to utilize property registration based solely on automatic generation of indices.
 
 <a name="enableproperties"></a>
-## Property Registration 
+## Property Registration
 
 The `ScriptableProperty` class enables a property to be registered with the type registry. Add `ScriptableProperty` to any view-related property that you want to script from JSON.
 
-``` 
+```
 internal class ScriptableProperty : System.Attribute
 ```
 
@@ -307,13 +305,13 @@ Its possible to animate scriptable properties by using the `CreateTransition` AP
 
 The `CreateTransition()` method creates a transition effect on the view. The `transitionData` parameter describes the effect to create, and the return value is a handle to an animation defined with the given effect, or an empty handle if no properties match.
 
-``` 
+```
 protected Animation CreateTransition(TransitionData transitionData)
 ```
 
 The following example code is taken from the `AnimateVisual()` method in `VisualView`, which is a `CustomView`-derived class.
 
-``` 
+```
 _alphaFunction = "EASE_IN_OUT_SINE";
 
 PropertyMap _animator = new PropertyMap();
@@ -354,7 +352,7 @@ return this.CreateTransition(_transitionData);
 
 The following example uses the `CROSSFADE` effect:
 
-``` 
+```
 "transitions":
 [
   {
@@ -373,11 +371,11 @@ The following example uses the `CROSSFADE` effect:
 ```
 
 <a name="viewbehaviour"></a>
-## Setting View Behavior 
+## Setting View Behavior
 
 The `CustomViewBehaviour` enumeration specifies the following behavior:
 
-  
+
 
 | Behavior                            | Description                              |
 | ----------------------------------- | ---------------------------------------- |
@@ -389,7 +387,7 @@ The `CustomViewBehaviour` enumeration specifies the following behavior:
 
 `CustomViewBehaviour` is used during object construction. For example:
 
-``` 
+```
 public VisualView() : base(typeof(VisualView).Name, CustomViewBehaviour.ViewBehaviourDefault)
 {
 }
@@ -427,7 +425,7 @@ Gesture detectors can be specified in the `OnInitialize()` method.
 
 The following example is taken from the `ContactView` custom view:
 
-``` 
+```
 public override void OnInitialize()
 {
    // Enable the Tap gesture on ContactView
@@ -437,14 +435,14 @@ public override void OnInitialize()
 
 The `EnableGestureDetection()` method allows deriving classes to enable any of the gesture detectors that are available. The above code snippet only enables the default gesture detection for each type. If customization of the gesture detection is required, the gesture detector can be retrieved and set up accordingly in the same method:
 
-``` 
+```
 PanGestureDetector panGestureDetector = GetPanGestureDetector();
 panGestureDetector.AddDirection(PanGestureDetector.DIRECTION_VERTICAL);
 ```
 
 Finally, the appropriate method must be overridden:
 
-``` 
+```
 OnPan(PanGesture& pan) // Handle the pan gesture
 OnPinch(PinchGesture& pinch ) // Handle the pinch gesture
 OnTap(TapGesture& tap) // Handle the tap gesture
@@ -453,7 +451,7 @@ OnLongPress(LongPressGesture& longPress) // Handle the long-press gesture
 
 The following example shows the `OnTap()` method from the `ContactView` class:
 
-``` 
+```
 public override void OnTap(TapGesture tap)
 {
     // Change the color visual of ContactView with a random color
@@ -506,7 +504,7 @@ The following table contains the values of the `ResizePolicyType` enumeration.
 
 An example of setting a resize policy for a custom view:
 
-``` 
+```
 contactView = new ContactView();
 contactView.WidthResizePolicy  = ResizePolicyType.FillToParent;
 contactView.HeightResizePolicy = ResizePolicyType.FillToParent;
@@ -523,3 +521,7 @@ The following overridable methods provide customization points for the size nego
 -   `OnSetResizePolicy()` is called when the resize policy is set on a view, and it allows deriving views to respond to changes in resize policy. The method can be overridden to receive notice that the resize policy has changed on the view and action can be taken.
 
 Size negotiation is enabled on views by default. To disable size negotiation, simply pass the `DisableSizeNegotiation` behavior flag into the view constructor. For more information, see [Setting View Behavior](#viewbehaviour).
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

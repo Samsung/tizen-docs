@@ -1,6 +1,5 @@
 # Tizen .NET Guides
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 Tizen .NET provides a rich set of interfaces allowing you to build compelling TV, mobile, and wearable applications which achieve native performance.
 
@@ -13,10 +12,6 @@ Select the feature you are interested in and see what Tizen offers for your appl
 -   [Application Management](app-management/app-management-cover.md)
 
     The application management features cover the various application models available for Tizen .NET applications. They describe the application life-cycle and resources, and the communication methods available for the application.
-
--   [Natural User Interface](nui/NUIoverview.md)
-
-    The Natural User Interface (NUI) features provide various aspects of creating a visual outlook for the user application to ensure the best possible user experience. NUI is a rich GUI library for creating 2D or 3D applications. These applications are run on a range of Tizen devices, such as TVs and wearables. NUI is built on a multi-threaded architecture, enabling realistic smooth animations.
 
 -   [Internationalization](internationalization/internationalization-cover.md)
 
@@ -65,3 +60,8 @@ Select the feature you are interested in and see what Tizen offers for your appl
 -   [Security](security/security-cover.md)
 
     The security features ensure that private information remains private, and that the user knows when they are trying to access privileged information. You can use a repository to manage keys, certificates, and sensitive user data. When the user tries to access privileged information, you can display information about the data.
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

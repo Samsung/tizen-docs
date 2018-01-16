@@ -1,6 +1,4 @@
 # Connectivity and Wireless
-## Dependencies
--   Tizen 4.0 and Higher
 
 The connectivity and wireless features introduce how you can manage wireless connections to other devices and networks. They also describe how you can download content, and send and receive data in your application.
 
@@ -42,3 +40,7 @@ You can use the following connectivity and wireless features in your .NET applic
 
     You can perform network service discoveries to announce local services and search for remote services.
 
+
+## Related Information
+* Dependencies
+    -   Tizen 4.0 and Higher

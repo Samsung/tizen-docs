@@ -1,6 +1,4 @@
 # Visuals
-## Dependencies
--   Tizen 4.0 and Higher
 
 Visuals are the main building block for controls. You can create a reusable rendering logic, which can be used by all controls, using visuals. The content rendering can be controlled using properties. Visuals also respond to view size and color changes, and can perform clipping at the renderer level.
 
@@ -25,7 +23,7 @@ You can use property maps in 2 ways:
 -   Use the `xxxVisual` [visual maps](#visualmap), such as `ColorVisual`.
 
 <a name="visualtype"></a>
-## Visual Type 
+## Visual Type
 
 You must specify the visual type to use/create in the property map. This is required to avoid ambiguity, as multiple visuals can be capable of rendering the same content.
 
@@ -44,7 +42,7 @@ The following visual types are available:
 -   Text
 
 <a name="visualcreation"></a>
-## Creating and Registering Visuals 
+## Creating and Registering Visuals
 
 Visuals are created using factory methods.
 
@@ -52,7 +50,7 @@ Visuals must be registered with a unique property index, used for direct access 
 
 The examples in this topic demonstrate the recommended procedure for visual creation and registration, using explicit calls to the factory and register methods:
 
-``` 
+```
 _colorVisual =  VisualFactory.Instance.CreateVisual( colorVisual );
 
 RegisterVisual( ColorVisualPropertyIndex, _colorVisual );
@@ -62,7 +60,7 @@ _colorVisual.DepthIndex = ColorVisualPropertyIndex;
 
 Where specific visual assignment is possible, factory creation and registration can occur within the API. In the following example, visual factory creation and registration occur within the `Background` property.
 
-``` 
+```
 textView.Background = textVisual;
 ```
 
@@ -71,7 +69,7 @@ The `AddVisual()` method of the `VisualView` class is another example of an API 
 The example visuals in this topic use property registration based on a fixed property index range. The NUI code base has been modified to perform property registration based on automatic index generation. For more information, see [Properties in Custom Views](creating-custom-view-controls.md#properties).
 
 <a name="visualdepthindex"></a>
-## Visual Depth Index 
+## Visual Depth Index
 
 The depth index is the draw order for visuals within a view. Whenever a visual is added, the depth index increases automatically. The last registered visual is always on top.
 
@@ -94,7 +92,7 @@ The following table lists the supported `ColorVisualProperty` properties. The vi
 
 **Usage:**
 
-``` 
+```
 private const int PROPERTY_REGISTRATION_START_INDEX = 10001000;
 private const int ColorVisualPropertyIndex = PROPERTY_REGISTRATION_START_INDEX+1 ;
 private const int PrimitiveVisualPropertyIndex = PROPERTY_REGISTRATION_START_INDEX+2;
@@ -113,7 +111,7 @@ _colorVisual.DepthIndex = ColorVisualPropertyIndex;
 ```
 
 <a name="gradientvisual"></a>
-## Gradient Visual 
+## Gradient Visual
 
 The gradient visual renders a smooth transition of colors to the control's quad. Both linear (left in the following figure) and radial (right in the following figure) gradients are supported.
 
@@ -154,7 +152,7 @@ The following table lists the supported `GradientVisualProperty` properties. The
 
 The following example shows how to add a gradient visual to a `VisualView` instance. `_visualView` is a custom view, and the visual is created using the `AddVisual()` method. For more information, see [VisualView Class](#visualview).
 
-``` 
+```
 // Radial
 _visualView = new VisualView();
 
@@ -202,7 +200,7 @@ The image visual renders an image into the control's quad. There are different r
 The visual type is `Image`.
 
 <a name="normal"></a>
-### Normal (Quad) Image 
+### Normal (Quad) Image
 
 The normal image visual renders a raster image (such as JPG or PNG) into the control's quad.
 
@@ -227,7 +225,7 @@ The visual map for a normal image is `ImageVisual`.
 
 **Usage:**
 
-``` 
+```
 PropertyMap imageVisual = new PropertyMap();
 imageVisual.Add( Visual.Property.Type, new PropertyValue( (int)Visual.Type.Image ))
            .Add( ImageVisualProperty.URL, new PropertyValue( _imageURL ));
@@ -251,7 +249,7 @@ The n-patch image visual renders an n-patch or a 9-patch image. It uses non-quad
 The visual map for an n-patch image is `NPatchVisual`.
 
 <a name="svg"></a>
-### SVG Image 
+### SVG Image
 
 The SVG image visual renders an SVG image into the control's quad. It supports the following features from the [SVG Tiny 1.2 Specification](https://www.w3.org/TR/SVGTiny12):
 
@@ -287,7 +285,7 @@ The animated image visual renders an animated image into the control's quad. Cur
 The visual map for an animated image is `AnimatedImageVisual`.
 
 <a name="bordervisual"></a>
-## Border Visual 
+## Border Visual
 
 The border visual renders a solid color as an internal border to the control's quad.
 
@@ -309,7 +307,7 @@ The following table lists the supported `BorderVisualProperty` properties. The v
 
 The following example shows how to use a `BorderVisual` visual map. The visual is created in the `AddVisual()` method.
 
-``` 
+```
 private BorderVisual borderVisualMap1;
 
 borderVisualMap1 = new BorderVisual();
@@ -362,7 +360,7 @@ The following table lists the supported properties. The visual type is `Mesh` an
 
 The following example shows how to use a `MeshVisual` visual map. The visual is created in the `AddVisual()` method.
 
-``` 
+```
 MeshVisual meshVisualMap1 = new MeshVisual();
 
 meshVisualMap1.ObjectURL = resources + "/models/Dino.obj";
@@ -381,7 +379,7 @@ _visualView.AddVisual("meshVisual1", meshVisualMap1);
 ```
 
 <a name="primitivevisual"></a>
-## Primitive Visual 
+## Primitive Visual
 
 The primitive visual renders a simple 3D shape, such as a cube or sphere. The shape is scaled to fit the control. The shapes are generated with clockwise winding and back-face culling on by default.
 
@@ -426,7 +424,7 @@ The following table lists the supported properties. The visual type is `Primitiv
 
 The following example shows how to create a primitive visual. The shape is set using the `Shape` property.
 
-``` 
+```
 public int Shape
 {
     get
@@ -498,7 +496,7 @@ The wireframe visual renders a wireframe around a control's quad. It is mainly u
 ![WIreframe visual](media/wireframe-visual.png)
 
 <a name="textvisual"></a>
-## Text Visual 
+## Text Visual
 
 The text visual renders text within a control.
 
@@ -524,7 +522,7 @@ The following table lists the supported properties. The visual type is `Text` an
 
 **Usage:**
 
-``` 
+```
 PropertyMap textVisual = new PropertyMap();
 textVisual.Add(Visual.Property.Type, new PropertyValue((int)Visual.Type.Text))
           .Add(TextVisualProperty.Text, new PropertyValue(_name))
@@ -598,7 +596,7 @@ In the following example contact list, each of the contact entries are created u
 All these visuals can be configured using properties: Image URL (Image), Shape (Primitive), Name (Text) and Color. The tap gesture is also enabled on the `ContactView`. Whenever a `ContactView` is tapped, the color visual changes to a random color.
 During initial display, the configuration and size of the visuals are set using visual transforms in the `OnRelayout()` method. The following code shows the transforms for the image visual:
 
-``` 
+```
 OnRelayout(Vector2 viewSize, ...)
 
 // Configure the image visual transform and size
@@ -621,7 +619,7 @@ The `VisualMap` class is the base class for visuals. It encapsulates various vis
 
 The following sample code shows part of the derived `ColorVisual` class:
 
-``` 
+```
    public class ColorVisual : VisualMap
 
    private Color _mixColorForColorVisual = null;
@@ -644,7 +642,7 @@ The `VisualMap` class also contains the output visual map, used for visual creat
 
 To create a visual from the output map:
 
-``` 
+```
 var colorMap = new ColorVisual{Color=Color.White;};
 var _colorVisual = VisualFactory.Instance.CreateVisual(colorMap.OutputVisualMap);
 RegisterVisual(ColorVisualPropertyIndex, _colorVisual);
@@ -652,7 +650,7 @@ RegisterVisual(ColorVisualPropertyIndex, _colorVisual);
 
 To create a visual from the visual map in the `Background` property:
 
-``` 
+```
 ColorVisual colorVisualMap1 = new ColorVisual();
 colorVisualMap1.Color = Color.Green;
 _visualView.Background = colorVisualMap1.OutputVisualMap;
@@ -663,17 +661,17 @@ window.GetDefaultLayer().Add(_visualView);
 Visual maps have a custom `shader` property.
 
 <a name="visualview"></a>
-## VisualView Class 
+## VisualView Class
 
 The `VisualView` class is derived from the `CustomView` class, and enables the addition of any visual:
 
-``` 
+```
 public class VisualView : CustomView
 ```
 
 To set up a `VisualView` instance:
 
-``` 
+```
 _visualView = new VisualView();
 _visualView.ParentOrigin = ParentOrigin.TopLeft;
 _visualView.PivotPoint = PivotPoint.TopLeft;
@@ -681,3 +679,8 @@ _visualView.Size2D = new Size2D(window.Size.Width, window.Size.Height);
 ```
 
 The [Gradient Visual](#gradientvisual) usage example shows how to add a gradient visual to a `VisualView` instance.
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

@@ -1,6 +1,5 @@
 # Messages
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 You can access the device messaging capabilities, including sending SMS and MMS messages.
 
@@ -33,7 +32,7 @@ To enable your application to use the messaging functionality:
 
 1.  To use the [Tizen.Messaging.Messages](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Messages.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <privileges>
        <privilege>http://tizen.org/privilege/message.read</privilege>
        <privilege>http://tizen.org/privilege/message.write</privilege>
@@ -42,18 +41,18 @@ To enable your application to use the messaging functionality:
 
 2.  To use the methods and properties of the Tizen.Messaging.Messages namespace, include it in your application:
 
-    ``` 
+    ```
     using Tizen.Messaging.Messages;
     ```
 
-<a name="managing_events"></a>	
-## Managing Events 
+<a name="managing_events"></a>
+## Managing Events
 
 To manage events related to messages:
 
 1.  Define the `EventHandlerMessageReceived()` event handler, which is triggered when receiving a message:
 
-    ``` 
+    ```
     public static void EventHandlerMessageReceived(object sender, MessageReceivedEventArgs e)
     {
         Console.WriteLine("Text of received message: " + e.ReceivedMessage.Text);
@@ -62,17 +61,17 @@ To manage events related to messages:
 
 2.  Register the event handler for the `MessageReceived` event of the [Tizen.Messaging.Messages.MessagesManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Messages.MessagesManager.html) class:
 
-    ``` 
+    ```
     MessagesManager.MessageReceived += EventHandlerMessageReceived;
     ```
 
 3.  When it is no longer needed, deregister the event handler:
 
-    ``` 
+    ```
     MessagesManager.MessageReceived -= EventHandlerMessageReceived;
     ```
 
-<a name="sending"></a>	
+<a name="sending"></a>
 ## Sending SMS or MMS Messages
 
 You can send SMS (Short Message Service) messages and MMS (Multimedia Message Service) messages with attachments (image or video files).
@@ -83,13 +82,13 @@ To send a message:
 
     The following example creates an MMS message:
 
-    ``` 
+    ```
     var msg = new MmsMessage();
     ```
 
 2.  Define the recipient, as a new instance of the [Tizen.Messaging.Messages.MessagesAddress](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Messages.MessagesAddress.html) class, and add the message body and SIM slot ID into the `Tizen.Messaging.Messages.MmsMessage` instance:
 
-    ``` 
+    ```
     var address = new MessagesAddress("1234567890");
     msg.To.Add(address);
     msg.Text = "Tizen C# test mms message";
@@ -99,30 +98,30 @@ To send a message:
 3.  Set a subject and add an attachment for the MMS message:
     -   Set a message subject:
 
-        ``` 
+        ```
         msg.Subject = "Tizen C# test subject";
         ```
 
     -   Add attachments using their absolute path in the device file system. Before adding an attachment, create it as a new instance of the [Tizen.Messaging.Messages.MessagesAttachment](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Messages.MessagesAttachment.html) class and give it the appropriate attachment type by using values of the [Tizen.Messaging.Messages.MediaType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Messages.MediaType.html) enumeration.
 
-        ``` 
+        ```
         var attachment = new MessagesAttachment(MediaType.Image, "/path/to/image/file");
         msg.Attachments.Add(attachment);
         ```
 
 4.  Send the message with the `SendMessageAsync()` method of the [Tizen.Messaging.Messages.MessagesManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Messages.MessagesManager.html) class:
 
-    ``` 
+    ```
     var result = await MessagesManager.SendMessageAsync(msg, false);
     ```
 
-<a name="fetching"></a>	
+<a name="fetching"></a>
 ## Fetching Messages from a Specified Message Box
 To fetch messages from a message box, use the `SearchMessageAsync()` method of the [Tizen.Messaging.Messages.MessagesManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Messages.MessagesManager.html) class with an appropriate filter:
 
 1.  Create a new filter as an instance of the [Tizen.Messaging.Messages.MessagesSearchFilter](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Messages.MessagesSearchFilter.html) class:
 
-    ``` 
+    ```
     var filter = new MessagesSearchFilter();
     ```
 
@@ -137,7 +136,7 @@ To fetch messages from a message box, use the `SearchMessageAsync()` method of t
 
     The following example shows how to define a filter that limits the search results to SMS messages in the inbox, containing “Tizen” in the text or subject and “1234” in the recipient address:
 
-    ``` 
+    ```
     filter.MessageBoxType = MessageBoxType.Inbox;
     filter.MessageType = MessageType.Sms;
     filter.TextKeyword = "Tizen";
@@ -146,8 +145,11 @@ To fetch messages from a message box, use the `SearchMessageAsync()` method of t
 
 3.  Perform the search:
 
-    ``` 
+    ```
     var resultMessages = await MessagesManager.SearchMessageAsync(filter);
     ```
 
 
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

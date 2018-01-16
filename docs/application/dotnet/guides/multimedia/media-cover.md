@@ -1,6 +1,5 @@
 # Media and Camera
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 The media and camera features introduce how you can use multimedia features in your application.
 
@@ -58,3 +57,7 @@ You can use the following media and camera features in your .NET applications:
 
     You can use the camera to preview and capture images. You can capture still images with the device's internal camera and keep images on your target device.
 
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

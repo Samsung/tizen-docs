@@ -1,7 +1,5 @@
 # Applications
-## Dependencies
 
-- Tizen 4.0 and Higher
 
 A Tizen .NET application is similar to a conventional C\# application,
 with some additional features optimized for Tizen devices. The
@@ -131,3 +129,8 @@ The following figure shows the UI application states.
 Application state changes are managed by the underlying framework. For
 more information on application state transitions, see [Application
 States and Transitions](ui-app.md#state_trans).
+
+
+## Related Information
+  * Dependencies
+    -   Tizen 4.0 and Higher

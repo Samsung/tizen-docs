@@ -1,7 +1,5 @@
 # Connection Management
 
-## Dependencies
--   Tizen 4.0 and Higher
 
 You can create a network connection in your application, and use it to perform various operations. The application can access connection details, such as the IP address, proxy information, gateway information, and connection statistics.
 
@@ -54,9 +52,9 @@ To get information about a network connection, use the [Tizen.Network.Connection
 
     Log.Info(Globals.LogTag, "IpAddress = " + ipAddress.ToString());
     ```
-	
+
 <a name="events"></a>
-## Monitoring Connection Changes 
+## Monitoring Connection Changes
 
 You can monitor changes in the IP address, proxy address, Ethernet cable state, and connection type.
 To monitor for changes in connection information, such as IP address and connection type:
@@ -91,7 +89,7 @@ To monitor for changes in connection information, such as IP address and connect
     ```
 
 <a name="create_profile"></a>
-## Creating a Cellular Profile 
+## Creating a Cellular Profile
 
 To create a cellular profile, use the `CreateCellularProfile()` method of the [Tizen.Network.Connection.ConnectionManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Connection.ConnectionManager.html) class:
 
@@ -102,7 +100,7 @@ rCP = ConnectionManager.CreateCellularProfile(ConnectionProfileType.Cellular, _k
 ```
 
 <a name="use_profile"></a>
-## Managing Connection Profiles 
+## Managing Connection Profiles
 
 To change the active connection profile and access connection details:
 
@@ -155,3 +153,7 @@ To change the active connection profile and access connection details:
 
     You can get and set all the `IAddressInformation` properties: both DNS addresses, gateway and IP addresses, subnet mask, and IP configuration type.
 
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

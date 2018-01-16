@@ -1,6 +1,4 @@
 # TextLabel
-## Dependencies
--   Tizen 4.0 and Higher
 
 `TextLabel` is a NUI control that renders a short text string. Text labels are lightweight, non-editable, and do not respond to user input. They can support multiple languages and scripts, including right-to-left scripts, such as Arabic.
 
@@ -11,7 +9,7 @@ The [Hello World tutorial](hello-world.md) describes how to display text using a
 
 A `TextLabel` must be added to a Window, or to a View which is on the Window. The position of the label on-screen is specified by the `parentOrigin` property.
 
-``` 
+```
 TextLabel label = new TextLabel("Hello World");
 Window window = Window.Instance;
 window.Add(label);
@@ -26,7 +24,7 @@ The following figure shows a text label with `ParentOrigin.TopLeft`.
 To display a `TextLabel` object properly, the `Text` property must be a UTF-8 string. Note that `CR+LF` new line characters are replaced by `LF`.
 
 <a name="font"></a>
-## Selecting Fonts 
+## Selecting Fonts
 
 By default, the `TextLabel` automatically selects a suitable font from the platform. Note that the selected font may not support all characters in your input text. For example, Latin fonts often do not provide Arabic glyphs.
 
@@ -42,11 +40,11 @@ Alternatively, you can request a font using the `FontFamily`, `FontStyle`, and `
 
 - `PointSize` is a float with the font size in points. To calculate the point size from the height in pixels, use the following formula, where `vertical_dpi` is the device's vertical resolution in dots per inch:
 
-    ``` 
+    ```
     point_size = 72 * pixels / vertical_dpi
     ```
 
-``` 
+```
 label.FontFamily = "FreeSerif";
 
 PropertyMap fontStyle = new PropertyMap();
@@ -64,7 +62,7 @@ Setting a font size programmatically is not ideal for applications which support
 
 A more flexible approach is to prepare various JSON stylesheets, and request a different style for each platform. The `NUIApplication` class has constructors which take a stylesheet argument:
 
-``` 
+```
 class Example : NUIApplication
 
 Example example = new Example("example-path/example.json");
@@ -72,7 +70,7 @@ Example example = new Example("example-path/example.json");
 
 To change the font for standard text controls, the following JSON syntax can be used:
 
-``` 
+```
 {
   "styles":
   {
@@ -99,19 +97,19 @@ Mapping the logical size to a physical size, in the stylesheet, can provide furt
 
 Text wrapping can be enabled using the `MultiLine` property:
 
-``` 
+```
 label.MultiLine = true;
 ```
 
 The text can be aligned horizontally to the beginning, center, or end of the available area:
 
-``` 
+```
 label.HorizontalAlignment = HorizontalAlignmentType.Left;
 label.HorizontalAlignment = HorizontalAlignmentType.Center;
 label.HorizontalAlignment = HorizontalAlignmentType.Right;
 ```
 
- 
+
 
 | Alignment | Left-to-right script example             | Right-to-left script example             |
 | --------- | ---------------------------------------- | ---------------------------------------- |
@@ -122,7 +120,7 @@ label.HorizontalAlignment = HorizontalAlignmentType.Right;
 The above examples assume that the label size is greater than the minimum required.
 
 <a name="decorations"></a>
-## Using Decorations 
+## Using Decorations
 
 For text decorations, `TextLabel` provides several properties. All properties are writable and none are animatable.
 
@@ -162,7 +160,7 @@ For text decorations, `TextLabel` provides several properties. All properties ar
 
 To change the color of the text, use the `TextColor` property. Note that unlike the View `Color` property, this does not affect child actors added to the `TextLabel`.
 
-``` 
+```
 label.Text = "Red Text";
 label.TextColor = Color.Red;
 ```
@@ -175,7 +173,7 @@ label.TextColor = Color.Red;
 
 To add a drop-shadow to the text, set the `Shadow` property. Shadow parameters can also be set through a JSON string:
 
-``` 
+```
 window.BackgroundColor( Color.Blue );
 
 label1.Text = "Plain Text";
@@ -215,7 +213,7 @@ label4.Shadow = shadow;
 
 Text underline properties can be set using a property map:
 
-``` 
+```
 label1.Text = "Text with Underline";
 
 PropertyMap textStyle = new PropertyMap();
@@ -225,7 +223,7 @@ label1.Underline = textStyle;
 
 You can set the underline color and height:
 
-``` 
+```
 label2.Text = "Text with Color Underline";
 
 PropertyMap textStyle = new PropertyMap();
@@ -244,7 +242,7 @@ label2.Underline = textStyle;
 
 By default the underline height is derived from the font metrics, however this can be overridden:
 
-``` 
+```
 PropertyMap textStyle = new PropertyMap();
 textStyle.Add("enable", new PropertyValue("true"));
 textStyle.Add("height", new PropertyValue(2.0f)); // 2 pixel height
@@ -254,7 +252,7 @@ label1.Underline = textStyle;
 The underline text figures above have a 1 pixel height.
 
 <a name="scrolling"></a>
-### Auto-scrolling 
+### Auto-scrolling
 
 **Figure: Auto-scrolling text**
 
@@ -268,7 +266,7 @@ The `AutoScrollLoopCount` property sets the number of times the text scrolls. Fo
 
 To enable text scrolling, set the `EnableAutoScroll` property to `true`:
 
-``` 
+```
 label.EnableAutoScroll = true;
 ```
 
@@ -302,7 +300,7 @@ The scroll speed, gap, and loop count can be set in the stylesheet, or through t
 
 You can use markup elements to change the style of the text. By default, the text controls do not process markup strings. To process markup tags, the `EnableMarkup` property must be set to `true`.
 
-``` 
+```
 TextLabel label = new TextLabel("Hello World");
 label.EnableMarkup = true;
 Window window = Window.Instance;
@@ -321,11 +319,11 @@ The following elements are currently supported:
 
     The following examples both create text in red:
 
-    ``` 
+    ```
     label.Text = "<color value='red'>Red Text</color>" ); // Color coded with a text constant
     ```
 
-    ``` 
+    ```
     label.Text = "<color value='0xFFFF0000'>Red Text</color>" ); // Color packed inside an ARGB hexadecimal value
     ```
 
@@ -343,6 +341,10 @@ The following elements are currently supported:
 
     For information on attribute values, see [Selecting Fonts](#font).
 
-    ``` 
+    ```
     label.Text = "<font family='SamsungSans' weight='bold'>Hello world</font>";
     ```
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

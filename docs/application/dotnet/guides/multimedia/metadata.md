@@ -1,6 +1,5 @@
 # Metadata
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 You can access, add, and edit metadata in media files.
 
@@ -28,7 +27,7 @@ To enable your application to use the metadata functionality:
 
 1.  To access media files on the device, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <privileges>
        <!--To access media storage-->
        <privilege>http://tizen.org/privilege/mediastorage</privilege>
@@ -39,23 +38,23 @@ To enable your application to use the metadata functionality:
 
 2. To use the methods and properties of the [Tizen.Multimedia.MetadataEditor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MetadataEditor.html) and [Tizen.Multimedia.MetadataExtractor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MetadataExtractor.html) classes, include the [Tizen.Multimedia](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html) namespace in your application:
 
-    ``` 
+    ```
     using Tizen.Multimedia;
     ```
 
 <a name="editing"></a>
-## Editing Metadata and Artwork 
+## Editing Metadata and Artwork
 To add and edit metadata in an audio file:
 
 1.  Create an instance of the [Tizen.Multimedia.MetadataEditor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MetadataEditor.html) class with the path of the file to be edited. Make sure you have access to the file whose metadata and artwork you want to edit.
 
-    ``` 
+    ```
     var metadataEditor = new MetadataEditor(mediaPath);
     ```
 
 2. Edit the metadata by using various properties of the `Tizen.Multimedia.MetadataEditor` class:
 
-    ``` 
+    ```
     /// Set the title of the audio file
     metadataEditor.Title = "My Song";
 
@@ -68,20 +67,20 @@ To add and edit metadata in an audio file:
 
         The image to be added must be in JPEG or PNG format. The image is added to the first free index position. You can add multiple image files to the same audio file.
 
-        ``` 
+        ```
         metadataEditor.AddPicture(artworkpath);
         ```
 
     2. To remove an image from the file, use the `RemovePicture()` method with the index number of image file to be removed:
 
-        ``` 
+        ```
         int index = 5;
         metadataEditor.RemovePicture(index);
         ```
 
     3. To retrieve the number of images added to the file, use the `PictureCount` property of the `Tizen.Multimedia.MetadataEditor` class and to retrieve a specific image, use the `GetPicture()` method with the index number of the desired image:
 
-        ``` 
+        ```
         /// Get the number of images associated with the file
         int pictureCount = metadataEditor.PictureCount;
 
@@ -91,25 +90,25 @@ To add and edit metadata in an audio file:
 
 4. Apply the metadata and artwork changes to the audio file using the `Commit()` method:
 
-    ``` 
+    ```
     metadataEditor.Commit();
     ```
 
 <a name="metadata_extractor"></a>
-## Retrieving Metadata 
+## Retrieving Metadata
 
 To retrieve metadata from a file:
 
 1.  Create an instance of the [Tizen.Multimedia.MetadataExtractor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MetadataExtractor.html) class and pass the path of the file or buffer whose metadata you want to retrieve as a parameter:
     -   Create a `Tizen.Multimedia.MetadataExtractor` instance with a file path parameter:
 
-        ``` 
+        ```
         var metadataExtractor = new MetadataExtractor(mediaPath);
         ```
 
     - Create a `Tizen.Multimedia.MetadataExtractor` instance with a buffer parameter:
 
-        ``` 
+        ```
         var buffer = File.ReadAllBytes(mediaPath);
         var metadataExtractor = new MetadataExtractor(buffer);
         ```
@@ -119,7 +118,7 @@ To retrieve metadata from a file:
 
         The following example retrieves the artist and title of the media file:
 
-        ``` 
+        ```
         /// Get Artist and Title metadata of the file
         Metadata metadata = metadataExtractor.GetMetadata();
 
@@ -131,7 +130,7 @@ To retrieve metadata from a file:
 
     - For an audio file, retrieve the artwork from the file using the `GetArtwork()` method, which returns a instance of the [Tizen.Multimedia.Artwork](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Artwork.html) class containing the encoded artwork image and the MIME type of the artwork:
 
-        ``` 
+        ```
         var artWork = metadataExtractor.GetArtwork();
         ```
 
@@ -141,7 +140,7 @@ To retrieve metadata from a file:
 
         The following example code retrieves the synchronized lyrics from index number 1 and prints the time information and lyrics:
 
-        ``` 
+        ```
         /// Retrieve the synchronized lyrics of the file
         Metadata metadata = metadataExtractor.GetMetadata();
 
@@ -153,33 +152,33 @@ To retrieve metadata from a file:
     - For a video file, retrieve frames from the file in one of the following ways:
         -   To retrieve a frame without specifying the time when the frame appears, use the `GetVideoThumbnail()` method:
 
-            ``` 
+            ```
             byte[] thumbnail = metadataExtractor.GetVideoThumbnail();
             ```
 
         - To retrieve a frame with a timestamp, use the `GetFrameAt()` method with the timestamp in milliseconds. To capture the exact frame desired, the second parameter must be set to `true`, otherwise the method returns the i-frame nearest to the desired timestamp.
 
-            ``` 
+            ```
             byte[] videoFrame = metadataExtractor.GetFrameAt(100, true);
             ```
 
 <a name="mime_type"></a>
-## Getting the MIME Type for a File Extension 
+## Getting the MIME Type for a File Extension
 
 To retrieve the MIME type for a given file extension, use the `GetMimeType()` method of the [Tizen.Content.MimeType.MimeUtil](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MimeType.MimeUtil.html) class.
 
 If the given file extension is not associated with any specific file format, the MIME type is `application/octet-stream`.
 
-``` 
+```
 string mimeType = MimeUtil.GetMimeType("png");
 ```
 
 <a name="mime_extension"></a>
-## Getting File Extensions for a MIME Type 
+## Getting File Extensions for a MIME Type
 
 To retrieve the file extensions for a given MIME type, use `GetFileExtension()` method of the [Tizen.Content.MimeType.MimeUtil](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MimeType.MimeUtil.html) class:
 
-``` 
+```
 /// Retrieve a list of file extensions for a given MIME type
 IEnumerable<string> ext = MimeUtil.GetFileExtension("video/mpeg");
 foreach(string ex in ext)
@@ -189,7 +188,7 @@ foreach(string ex in ext)
 ```
 
 <a name="attribute"></a>
-## Editable Metadata Attributes 
+## Editable Metadata Attributes
 
 The following table lists the metadata you can edit.
 
@@ -212,7 +211,7 @@ The following table lists the metadata you can edit.
 | Unsync lyrics | Unsync lyrics of the audio content | `UnsyncLyrics`                           |
 
 <a name="attribute2"></a>
-## Extractable Metadata Attributes 
+## Extractable Metadata Attributes
 
 The following table lists the extractable metadata.
 
@@ -256,3 +255,7 @@ The metadata is available with the properties and methods of the [Tizen.Multimed
 | Recorded date        | Description                            | Property or method                       |
 | Duration             | Duration of the content                | `Metadata.Duration`                      |
 
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

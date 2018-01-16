@@ -1,6 +1,4 @@
 # Radio
-## Dependencies
--   Tizen 4.0 and Higher
 
 You can control the radio hardware in a device to provide radio playback in your application.
 
@@ -31,19 +29,19 @@ To enable your application to use the radio functionality:
 
 1.  To use the methods and properties of the [Tizen.Multimedia.Radio](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Radio.html) class, include the [Tizen.Multimedia](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html) namespace in your application:
 
-    ``` 
+    ```
     using Tizen.Multimedia;
     ```
 
 2.  Create an instance of the `Tizen.Multimedia.Radio` class:
 
-    ``` 
+    ```
     Radio radio = new Radio();
     ```
 
 3.  To receive notifications when radio playback is interrupted, register an event handler for the `Interrupted` event of the `Tizen.Multimedia.Radio` class. Radio playback is interrupted, for example, when the radio application moves to the background.
 
-    ``` 
+    ```
     radio.Interrupted += OnRadioInterrupted;
 
     void OnRadioInterrupted(object sender, RadioInterruptedEventArgs args)
@@ -63,14 +61,14 @@ To enable your application to use the radio functionality:
     ```
 
 <a name="scan"></a>
-## Scanning for Radio Frequencies 
+## Scanning for Radio Frequencies
 
 To scan for all available radio frequencies:
 
 1.  Register and define event handlers for the events of the [Tizen.Multimedia.Radio](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Radio.html) class:
     -   To receive a notification each time the scan finds a new frequency, register an event handler for the `ScanUpdated` event. The event provides the kHz value of the found frequency.
 
-        ``` 
+        ```
         radio.ScanCompleted += OnScanCompleted;
 
         void OnScanUpdated(object sender, ScanUpdatedEventArgs args)
@@ -87,7 +85,7 @@ To scan for all available radio frequencies:
 
     -   To receive a notification when the scan is complete, register an event handler for the `ScanCompleted` event:
 
-        ``` 
+        ```
         radio.ScanCompleted += OnScanCompleted;
 
         void OnScanCompleted(object sender, EventArgs args)
@@ -99,7 +97,7 @@ To scan for all available radio frequencies:
 
 2.  Start scanning using the `StartScan()` method of the `Tizen.Multimedia.Radio` class:
 
-    ``` 
+    ```
     radio.StartScan();
     ```
 
@@ -114,13 +112,13 @@ To select and start playing a frequency:
 
 1.  Set the frequency you want to play using the `Frequency` property of the [Tizen.Multimedia.Radio](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Radio.html) class:
 
-    ``` 
+    ```
     radio.Frequency = newFrequncey;
     ```
 
 2.  Start playing the frequency using the `Start()` method of the `Tizen.Multimedia.Radio` class:
 
-    ``` 
+    ```
     radio.Start();
     ```
 
@@ -133,10 +131,13 @@ To search for and tune in to an adjacent channel, use the `SeekUpAsync()` and `S
 
 For example, to seek down, use the `SeekDownAsync()` method:
 
-``` 
+```
 var newFrequncey = await radio.SeekDownAsync();
 
 /// Search is complete, and the radio is tuned in to the new frequency
 /// Application sets the new frequency and updates the user interface
 ```
 
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

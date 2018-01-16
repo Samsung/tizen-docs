@@ -1,6 +1,5 @@
 # Contacts
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 You can help the user manage their contact information, such as address books, groups, persons, and phone logs. Since the contact information is stored in a contacts database, you must use the [Tizen.Pims.Contacts.ContactsManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsManager.html) class to manage the information.
 
@@ -58,7 +57,7 @@ The following figure illustrates the different entities and their relationships 
 ![Contact entities](./media/contacts_contact_entity.png)
 
 <a name="person"></a>
-## Contacts and Persons 
+## Contacts and Persons
 
 Each contact is linked to at least 1 person, which is a kind of virtual contact that can be used to combine the details when multiple contacts from different address books represent the same individual.
 
@@ -88,7 +87,7 @@ You can create records in the database, retrieve individual record details or li
 
     When creating a record, you must specify what type of record you want to create by using its `Uri` property.
 
-    ``` 
+    ```
     /// Create a contact record
     ContactsRecord contact = new ContactsRecord(Contact.Uri);
 
@@ -103,7 +102,7 @@ You can create records in the database, retrieve individual record details or li
 
     An ID is a unique number for identifying records. Therefore, if you know the ID of a record, you can directly handle the record. The ID is a read-only property, which is available after the record has been inserted into the database. The following example gets a contact record using its ID:
 
-    ``` 
+    ```
     int contactId = 0;
     ContactsManager manager = new ContactsManager();
     /// Insert the contact made above to the database
@@ -122,7 +121,7 @@ You can create records in the database, retrieve individual record details or li
 
     The following code example changes the country of addresses which are child records of a contact. Each address can be traversed by using the `GetChildRecord()` function. It is possible to apply the changes by updating the contact which is the parent record:
 
-    ``` 
+    ```
     int contactId = ... /// Acquire ID of the created contact
 
     int i = 0;
@@ -147,7 +146,7 @@ To manage the record, you can use the URI or views:
 
     A record type is identified by a structure called the view, which contains identifiers of its properties. Every class in the [Tizen.Pims.Contacts.ContactsViews](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsViews.html) namespace has a `Uri` field that uniquely identifies the view. In many cases, you must provide the `Uri` value to indicate what type of record you want to create or operate on.
 
-- Views
+- <a name="view"></a>Views
 
     Views are provided to access and handle entities. A data-view is a structure which has property elements. For example, the [Tizen.Pims.Contacts.ContactsViews.Contact](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsViews.Contact.html) class describes the properties of the contact record. Its properties include, for example, name, company, and nickname of the contact. The property elements have their data types and names.
 
@@ -163,7 +162,7 @@ Some record types can be a parent of other records. Effectively, a record can be
 
 The following code example inserts an address record into a contact record. It is not necessary to insert or destroy all records. Only the parent record needs to be inserted into the database to store all the information, and when the parent record is destroyed, the child records are also destroyed automatically.
 
-``` 
+```
 ContactsRecord contact = new ContactsRecord(Contact.Uri);
 
 /// Image and address record can be child records of contact record
@@ -185,7 +184,7 @@ manager.Dispose();
 
 Identifiers can be used to establish a relationship between 2 records. The following code example sets an address record's `ContactId` property to the ID of the contact. The `ContactId` property relates between the address record and the contact which is identified by the `ContactId` property. After the ID is set, the address becomes one of the addresses connected to the contact. The address is now the contact's child record, and the contact is the parent record.
 
-``` 
+```
 int contactId = ... /// Acquire the ID of the created contact
 ContactsRecord address = new ContactsRecord(Address.Uri);
 address.Set(Address.ContactId, contactId);
@@ -198,7 +197,7 @@ manager.Dispose();
 ```
 
 <a name="list"></a>
-## Contact Lists and Batch Operations 
+## Contact Lists and Batch Operations
 
 Use the [Tizen.Pims.Contacts.ContactsList](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsList.html) class to handle lists of records with the same type.
 
@@ -206,7 +205,7 @@ To create a list:
 
 -   Create a list:
 
-    ``` 
+    ```
     ContactsList list = new ContactsList();
 
     /// Use the list
@@ -216,7 +215,7 @@ To create a list:
 
 - Obtain a list by performing a query to the database:
 
-    ``` 
+    ```
     ContactsManager manager = new ContactsManager();
     ContactsList list = manager.Database.GetAll(Person.Uri, 0, 0);
 
@@ -235,7 +234,7 @@ To manage the list:
 
     The following example loops through a list:
 
-    ``` 
+    ```
     ContactsManager manager = new ContactsManager();
     ContactsList list = manager.Database.GetAll(Person.Uri, 0, 0);
 
@@ -256,7 +255,7 @@ To manage the list:
 
     The following example adds records to the list:
 
-    ``` 
+    ```
     ContactsRecord group1 = new ContactsRecord(Group.Uri);
     group1.Set(Group.Name, "group test1");
     ContactsRecord group2 = new ContactsRecord(Group.Uri);
@@ -290,7 +289,7 @@ To filter, sort, and query contact data:
 
     -   To create a composite filter with the `Or` operator:
 
-        ``` 
+        ```
         /// Filtering for contacts whose display name is James or Jake
         ContactsFilter filter = new ContactsFilter(Person.Uri, Person.DisplayName, ContactsFilter.StringMatchType.Contains, "James");
         filter.AddCondition(ContactsFilter.LogicalOperator.Or, Person.DisplayName, ContactsFilter.StringMatchType.Contains, "Jake");
@@ -298,7 +297,7 @@ To filter, sort, and query contact data:
 
     - To create a joined filter with the `And` operator:
 
-        ``` 
+        ```
         /// Filtering for contacts who are both favorites and whose display name is James or Jake
         ContactsFilter filter1 = new ContactsFilter(Person.Uri, Person.DisplayName, ContactsFilter.StringMatchType.Contains, "James");
         filter1.AddCondition(ContactsFilter.LogicalOperator.Or, Person.DisplayName, ContactsFilter.StringMatchType.Contains, "Jake");
@@ -319,7 +318,7 @@ To filter, sort, and query contact data:
 
     The following example creates a filter which accepts addresses with their contact's ID equal to a given ID (integer filter), or their country property equal to "Korea" (string filter). To get the filtered results, create a query and add the filter to it. The results are received in a list.
 
-    ``` 
+    ```
     int contactId = ... /// Acquire the ID of the created contact
 
     ContactsFilter filter = new ContactsFilter(Address.Uri, Address.ContactId, ContactsFilter.IntegerMatchType.Equal, contactId);
@@ -345,7 +344,7 @@ To filter, sort, and query contact data:
 
     The following example sorts the query results by the person ID:
 
-    ``` 
+    ```
     ContactsFilter filter = new ContactsFilter(Person.Uri, Person.DisplayName, ContactsFilter.StringMatchType.Contains, "Joe");
     ContactsQuery query = new ContactsQuery(Person.Uri);
     query.SetFilter(filter);
@@ -366,7 +365,7 @@ To filter, sort, and query contact data:
 
     The following example creates a filter which gets only the person ID, display name, and image thumbnail path from the person records which have "test" (string filter) as the vibration path. Create a query and add the filter to it; the results are received in a list.
 
-    ``` 
+    ```
     ContactsFilter filter = new ContactsFilter(Person.Uri, Person.Vibration, ContactsFilter.StringMatchType.Contains, "test");
     ContactsQuery query = new ContactsQuery(Person.Uri);
     query.SetFilter(filter);
@@ -391,7 +390,7 @@ To filter, sort, and query contact data:
 
     The following example removes duplicates:
 
-    ``` 
+    ```
     ContactsFilter filter = new ContactsFilter(PersonNumber.Uri, PersonNumber.HasPhoneNumber, true);
     ContactsQuery query = new ContactsQuery(PersonNumber.Uri);
     query.SetFilter(filter);
@@ -418,7 +417,7 @@ To enable your application to use the contacts functionality:
 
 1.  To use the [Tizen.Pims.Contacts](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <privileges>
        <privilege>http://tizen.org/privilege/contact.read</privilege>
        <privilege>http://tizen.org/privilege/contact.write</privilege>
@@ -429,13 +428,13 @@ To enable your application to use the contacts functionality:
 
 2. To use the methods and properties of the Tizen.Pims.Contacts and [Tizen.Pims.Contacts.ContactsViews](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsViews.html) namespaces, include them in your application:
 
-    ``` 
+    ```
     using Tizen.Pims.Contacts;
     using Tizen.Pims.Contacts.ContactsViews;
     ```
 
     <a name="create_contact"></a>
-## Creating a Contact 
+## Creating a Contact
 
 Creating a new contact involves setting the contact properties and inserting the contact into the contact database.
 
@@ -447,7 +446,7 @@ To create a new contact:
 
 1.  Create a contact with the `Uri` property of the `Tizen.Pims.Contacts.ContactsViews.Contact` class:
 
-    ``` 
+    ```
     ContactsRecord record = new ContactsRecord(Contact.Uri);
     ```
 
@@ -457,25 +456,25 @@ To create a new contact:
 
         1.  Create a name record with the `Uri` property of the [Tizen.Pims.Contacts.ContactsViews.Name](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsViews.Name.html) class:
 
-            ``` 
+            ```
             ContactsRecord name = new ContactsRecord(Name.Uri);
             ```
 
         2. Set the contact's first name with the `First` property:
 
-            ``` 
+            ```
             name.Set(Name.First, "John");
             ```
 
         3. Set the contact's last name with the `Last` property:
 
-            ``` 
+            ```
             name.Set(Name.Last, "Smith");
             ```
 
         4. Set the name record as a child record of the contact record with the `Name` property of the `Tizen.Pims.Contacts.ContactsViews.Contact` class:
 
-            ``` 
+            ```
             contact.AddChildRecord(Contact.Name, name);
             ```
 
@@ -483,19 +482,19 @@ To create a new contact:
 
         1.  Create an image record with the `Uri` property of the [Tizen.Pims.Contacts.ContactsViews.Image](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsViews.Image.html) class:
 
-            ``` 
+            ```
             ContactsRecord image = new ContactsRecord(Image.Uri);
             ```
 
         2. Define the image, and set the image with the `Path` property:
 
-            ``` 
+            ```
             image.Set(Image.Path, "imagePath/image.jpg");
             ```
 
         3. Set the image record as a child record of the contact record with the `Image` property of the `Tizen.Pims.Contacts.ContactsViews.Contact` class:
 
-            ``` 
+            ```
             contact.AddChildRecord(Contact.Image, image);
             ```
 
@@ -507,13 +506,13 @@ To create a new contact:
 
         1.  Create an event record with the `Uri` property of the `Tizen.Pims.Contacts.ContactsViews.Event` class:
 
-            ``` 
+            ```
             ContactsRecord birthday = new ContactsRecord(Event.Uri);
             ```
 
         2. Set the event date with the `Date` property. The date is an integer.
 
-            ``` 
+            ```
             int year = 1990;
             int month = 5;
             int day = 21;
@@ -524,13 +523,13 @@ To create a new contact:
 
         3. Set the event type to birthday with the `Type` property:
 
-            ``` 
+            ```
             birthday.Set(Event.Type, Event.TypeValue.Birthday);
             ```
 
         4. Set the event record as a child record of the contact record with the `Event` property of the `Tizen.Pims.Contacts.ContactsViews.Contact` class:
 
-            ``` 
+            ```
             contact.AddChildRecord(Contact.Event, birthday);
             ```
 
@@ -538,19 +537,19 @@ To create a new contact:
 
         1.  Create a phone number record with the `Uri` property of the [Tizen.Pims.Contacts.ContactsViews.Number](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsViews.Number.html) class:
 
-            ``` 
+            ```
             ContactsRecord number = new ContactsRecord(Number.Uri);
             ```
 
         2. Set the phone number with the `NumberData` property:
 
-            ``` 
+            ```
             number.Set(Number.NumberData, "+8210-1234-5678");
             ```
 
         3. Set the phone number record as a child record of the contact record with the `Number` property of the `Tizen.Pims.Contacts.ContactsViews.Contact` class:
 
-            ``` 
+            ```
             contact.AddChildRecord(Contact.Number, number);
             ```
 
@@ -560,14 +559,14 @@ To create a new contact:
 
     The system assigns a unique ID to the contact, and the method returns it.
 
-    ``` 
+    ```
     ContactsManager manager = new ContactsManager();
     int ContactId = manager.Database.Insert(contact);
     ```
 
 4. When no longer needed, destroy the contact instance to release all its resources:
 
-    ``` 
+    ```
     contact.Dispose();
     manager.Dispose();
     ```
@@ -575,7 +574,7 @@ To create a new contact:
     All child records of the given record are also destroyed.
 
     <a name="get_contact"></a>
-## Retrieving Persons 
+## Retrieving Persons
 
 You can access contact details through persons.
 
@@ -583,7 +582,7 @@ To retrieve a single person:
 
 1.  Retrieve a person record using the person ID:
 
-    ``` 
+    ```
     int personId = ...; /// Get the person ID
     ContactsManager manager = new ContactsManager();
     ContactsRecord person = manager.Database.Get(Person.Uri, personId);
@@ -591,7 +590,7 @@ To retrieve a single person:
 
 2. When no longer needed, destroy the person instance:
 
-    ``` 
+    ```
     person.Dispose();
     manager.Dispose();
     ```
@@ -602,7 +601,7 @@ To retrieve multiple persons:
 
     -   To retrieve a list of all persons:
 
-        ``` 
+        ```
         ContactsManager manager = new ContactsManager();
         ContactsList persons = manager.Database.GetAll(Person.Uri, 0, 0);
         ```
@@ -613,7 +612,7 @@ To retrieve multiple persons:
 
             The following example adds a string-based filtering condition that retrieves the persons whose display name contains the string "John":
 
-            ``` 
+            ```
             ContactsFilter filter = new ContactsFilter(Person.Uri, Person.DisplayName, ContactsFilter.StringMatchType.Contains, "John");
             ```
 
@@ -623,20 +622,20 @@ To retrieve multiple persons:
 
             The combination of the AND operator and the 2 conditions means that the filter only retrieves the persons whose display name contains the string "John" and who are set as favorites.
 
-            ``` 
+            ```
             filter.AddCondition(ContactsFilter.LogicalOperator.And, Person.IsFavorite, true);
             ```
 
         3. Set the filter to the query:
 
-            ``` 
+            ```
             ContactsQuery query = new ContactsQuery(Person.Uri);
             query.SetFilter(filter);
             ```
 
         4. Retrieve the filtered list of persons:
 
-            ``` 
+            ```
             ContactsManager manager = new ContactsManager();
             ContactsList persons = manager.Database.GetRecordsWithQuery(query, 0, 0);
             ```
@@ -645,7 +644,7 @@ To retrieve multiple persons:
 
         5. When no longer needed, destroy the filter and query instances:
 
-            ``` 
+            ```
             filter.Dispose();
             query.Dispose();
             manager.Dispose();
@@ -655,7 +654,7 @@ To retrieve multiple persons:
 
         The following example shows how to find all person records that contain the keyword "John":
 
-        ``` 
+        ```
         ContactsManager manager = new ContactsManager();
         ContactsList persons = manager.Database.Search(Person.Uri, "John", 0, 0);
         ```
@@ -664,7 +663,7 @@ To retrieve multiple persons:
 
     The following example iterates through the list and retrieves the display name of each person:
 
-    ``` 
+    ```
     do
     {
         ContactsRecord person = persons.GetCurrentRecord();
@@ -678,7 +677,7 @@ To retrieve multiple persons:
 
 To detect the person and group changes in the contacts database, add event handlers using the `AddDBChangedEventHandler()` method of the [Tizen.Pims.Contacts.ContactsDatabase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsDatabase.html) class. To ignore database changes, remove the event handler using the `RemoveDBChangedEventHandler()` method.
 
-``` 
+```
 public static void DBChangedHandler(object sender, DBChangedEventArgs args)
 {
     var viewUri = args.ViewUri;
@@ -691,7 +690,7 @@ manager.Database.AddDBChangedEventHandler(Contact.Uri, DBChangedHandler);
 ```
 
 <a name="vcard"></a>
-## Managing vCards 
+## Managing vCards
 
 The [Tizen.Pims.Contacts.ContactsVcard](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsVcard.html) class provides methods for parsing and making vCards. The vCard functions are based on the [vCard v3.0 specification](http://www.ietf.org/rfc/rfc2426.txt).
 
@@ -699,7 +698,7 @@ The [Tizen.Pims.Contacts.ContactsVcard](https://developer.tizen.org/dev-guide/cs
 
     -   To parse a vCard from a stream and insert it to the database:
 
-        ``` 
+        ```
         /// Make a contact record list from the vCard stream
         ContactsList list = ContactsVcard.Parse(vcardStream);
 
@@ -710,7 +709,7 @@ The [Tizen.Pims.Contacts.ContactsVcard](https://developer.tizen.org/dev-guide/cs
 
     - To parse a vCard from a file and insert it to the database:
 
-        ``` 
+        ```
         ContactsManager manager = new ContactsManager();
 
         /// Get a contact record
@@ -730,7 +729,7 @@ The [Tizen.Pims.Contacts.ContactsVcard](https://developer.tizen.org/dev-guide/cs
 
 - You can export contact information and make a vCard stream from a contact, person, or My profile record. To make a vCard stream using a contact record:
 
-    ``` 
+    ```
     int contactId = ... /// Acquire ID of the created contact
 
     ContactsManager manager = new ContactsManager();
@@ -742,3 +741,8 @@ The [Tizen.Pims.Contacts.ContactsVcard](https://developer.tizen.org/dev-guide/cs
     record.Dispose();
     manager.Dispose();
     ```
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

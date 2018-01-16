@@ -1,6 +1,5 @@
 # Data Storages
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 You can access storage information and manage directories within certain parts of the file system, represented as [virtual root locations](#virtualroots). These virtual roots form a collection of locations that function as a single virtual device file system.
 
@@ -20,18 +19,18 @@ The main features of the `Tizen.System.Storage` class include:
 
 To use the methods and properties of the [Tizen.System.Storage](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Storage.html) and [Tizen.System.StorageManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.StorageManager.html) classes, include the [Tizen.System](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.html) namespace in your application:
 
-``` 
+```
 using Tizen.System;
 ```
 
 <a name="storage"></a>
-## Retrieving Storage Information 
+## Retrieving Storage Information
 
 To retrieve storage information:
 
 1.  Retrieve all storages on a device by using the `Storages` property of the [Tizen.System.StorageManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.StorageManager.html) class, which returns a list of all device storages as instances of the [Tizen.System.Storage](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Storage.html) class:
 
-    ``` 
+    ```
     var storages = StorageManager.Storages;
     var internalStorage = storages.Where(s => s.StorageType == StorageArea.Internal).FirstOrDefault();
     ```
@@ -39,13 +38,13 @@ To retrieve storage information:
 2. Get information about each storage instance:
     -   Get the ID of a specific storage by using the `Id` property:
 
-        ``` 
+        ```
         var result = internalStorage.Id;
         ```
 
     - Get the root directory of a specific storage by using the `RootDirectory` property:
 
-        ``` 
+        ```
         var result = internalStorage.RootDirectory;
         ```
 
@@ -55,7 +54,7 @@ To retrieve storage information:
 
         To get the directories of all storage types:
 
-        ``` 
+        ```
         foreach (DirectoryType directoryType in Enum.GetValues(typeof(DirectoryType)))
         {
             var result = internalStorage.GetAbsolutePath(directoryType);
@@ -64,24 +63,24 @@ To retrieve storage information:
 
     - Get the storage type of a specific storage by using the `StorageType` property, which takes values from the [Tizen.System.StorageArea](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.StorageArea.html) enumeration:
 
-        ``` 
+        ```
         var result = internalStorage.StorageType;
         ```
 
     - Get the mount state of a specific storage by using the `State` property, which takes values from the [Tizen.System.StorageState](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.StorageState.html) enumeration:
 
-        ``` 
+        ```
         var result = internalStorage.State;
         ```
 
 <a name="state"></a>
-## Monitoring Storage State Changes 
+## Monitoring Storage State Changes
 
 To monitor storage state changes:
 
 1.  Define an event handler, which is called when the storage state changes:
 
-    ``` 
+    ```
     EventHandler storageEventHandler = (s, e) =>
     {
         var storage = s as Storage;
@@ -100,7 +99,7 @@ To monitor storage state changes:
 
 2. Register the event handler for the `StorageStateChanged` event of the [Tizen.System.Storage](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Storage.html) class:
 
-    ``` 
+    ```
     foreach (var storage in StorageManager.Storages)
     {
         storage.StorageStateChanged += storageEventHandler;
@@ -109,7 +108,7 @@ To monitor storage state changes:
 
 3. When no longer needed, deregister the event handler:
 
-    ``` 
+    ```
     foreach (var storage in StorageManager.Storages)
     {
         storage.StorageStateChanged -= storageEventHandler;
@@ -125,7 +124,7 @@ To retrieve storage space information:
 
 -   Get the total space of the storage by using the `TotalSpace` property, which returns the total space of the given storage in bytes:
 
-    ``` 
+    ```
     var storages = StorageManager.Storages;
     var internalStorage = storages.Where(s => s.StorageType == StorageArea.Internal).FirstOrDefault();
     var result = internalStorage.TotalSpace;
@@ -133,7 +132,7 @@ To retrieve storage space information:
 
 - Get the available space of the storage by using the `AvailableSpace` property, which returns the available space of the given storage in bytes:
 
-    ``` 
+    ```
     var storages = StorageManager.Storages;
     var internalStorage = storages.Where(s => s.StorageType == StorageArea.Internal).FirstOrDefault();
     var result = internalStorage.AvailableSpace;
@@ -158,3 +157,8 @@ The following table lists the supported virtual roots.
 | `Others`     | Location for storing other files.        |
 | `Ringtones`  | Location for ringtones (read-only location). |
 
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher
