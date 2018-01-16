@@ -14,7 +14,7 @@ the necessary properties for your application project:
     configuration editor in the Tizen Studio. If you create or edit the    `config.xml` file using any other text editor, your application may    not work as expected.
 
 After you have finished setting the project properties, you are ready to
-[design the UI](app-dev-process-w.md#design).
+[design the UI](app-dev-process.md#design).
 
 <a name="set"></a>
 ## Setting Build Properties
@@ -50,7 +50,7 @@ configuration](./media/tizen_project_explorer_w.png)
 
 You can [edit the application properties using the form tabs of the Web
 application configuration
-editor](../../../tizen-studio/web-tools/config-editor-w.md#edit).
+editor](../../../tizen-studio/web-tools/config-editor.md#edit).
 
 <a name="overview"></a>
 ### Defining and Editing General Information in the Overview Tab
@@ -86,7 +86,7 @@ You can perform the following tasks using the **Overview** tab:
     The following table describes the available icon format and size.
 
     **Table: Icon format and size**
-    
+
 
   | Format | Size [Xhigh (HD)]  |  
   |------|-----------------|  
@@ -125,7 +125,7 @@ To enable filtering for your Web application:
 
 1.  In the **Features** tab, click **+**.
 2.  Select the needed features from the [predefined list of features
-    available for filtering](../details/app_filtering_w.htm).
+    available for filtering](../details/app-filtering.md).
 3.  Click **Finish**.
 4.  Upload and publish the application package on the Tizen Store.
 
@@ -154,7 +154,7 @@ To add a privilege:
 1.  In the **Privileges** tab, click **+**.
 2.  In the **Add privilege** window, select an option:
     -   **Internal**: Select the needed privileges from the [predefined
-        list of API privileges](../details/sec-privileges-w.md).
+        list of API privileges](../details/sec-privileges.md).
     -   **Privilege name**: Manually enter the URL containing a
         privilege definition.
     -   **File**: Click **Browse** and select a privilege file (with the
@@ -269,7 +269,7 @@ To add a localized name, description, or license:
 You can localize a Web application to adapt to various languages and
 cultural environments by creating different Web application versions for
 different languages. For more information, see [Localizing Web
-Applications](../../../tizen-studio/web-tools/web-localization-w.md).
+Applications](../../../tizen-studio/web-tools/web-localization.md).
 
 <a name="preferences"></a>
 ### Declaring Name-value Pairs in the Preferences Tab
@@ -438,7 +438,7 @@ can edit.
   <td>
 
   Describes the [application control
-  functionalities](../../../guides/web/app-management/app-controls-w.md)  provided by the application. To define an application control used to  access the functionality of your application, click **+** in the  **Application Control** panel and define the details.
+  functionalities](../../guides/app-management/app-controls.md)  provided by the application. To define an application control used to  access the functionality of your application, click **+** in the  **Application Control** panel and define the details.
   The **operation**, **uri**, and **mime** fields describe the
   functionalities that other applications can request and the **src**
   field describes the application page that handles the request.<br>
@@ -593,7 +593,7 @@ can edit.
   Defines service application-specific settings.
   To define the setting values, click **+** in the **Service** section,
   and define the values. For more information on the values, see [Tizen
-  Service](../../../tizen-studio/web-tools/config-editor-w.md#ww_service).
+  Service](../../../tizen-studio/web-tools/config-editor.md#ww_service).
   </td>
 </tr>
 <tr>
@@ -607,16 +607,17 @@ can edit.
   To edit the setting values, select the row in the **Web Widget** section
   table, click the **Edit** icon (shaped like a pen), and define the
   values. For more information on the values, see [Tizen Web
-  Widget](../../../tizen-studio/web-tools/config-editor-w.md#ww_webwidget).
+  Widget](../../../tizen-studio/web-tools/config-editor.md#ww_webwidget).
   </td>
 </tr>
 </table>
 
-### Editing the config.xml File in the Source Tab <a name="source"></a>
+<a name="source"></a>
+### Editing the config.xml File in the Source Tab
 
 The **Source** tab of the Web application configuration editor shows the
 code of the `config.xml` file. You can [edit the basic syntax of the XML
-document](../../../tizen-studio/web-tools/config-editor-w.md)
+document](../../../tizen-studio/web-tools/config-editor.md)
 and also see how changes made on the other tabs are reflected in the raw XML source content.
 
 > **Note**  

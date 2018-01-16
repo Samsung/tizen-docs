@@ -17,7 +17,7 @@ The first step in creating a Tizen Web application is planning and
 designing it using the design tools of your choice.
 
 For information on planning and designing your applications, see [Tizen
-Web Guides](../../../guides/web/guides-w.md) and
+Web Guides](../../guides/guides.md) and
 [Tizen Web API
 References](../../../../tizen.web.apireference/html/web_api_reference.htm).
 
@@ -28,14 +28,14 @@ create the application project.
 ## Creating the Application Project
 
 After you have planned and designed your application, you are ready to
-[create the application project](creating-app-project-w.md) in the
+[create the application project](creating-app-project.md) in the
 Tizen Studio.
 
 The Tizen Studio provides various project templates that make it easier
 for you to start coding your application. When you create a new project,
 you can select a specific template or sample. Based on the selection,
 the Tizen Web [Project
-Wizard](../../../tizen-studio/web-tools/project-wizard-w.md)
+Wizard](../../../tizen-studio/web-tools/project-wizard.md)
 automatically creates basic functionalities that the application has to
 implement to be able to run. The default project files and folders are
 also created.
@@ -45,7 +45,7 @@ also created.
 
 After creating the application project, you can [configure the
 properties of the project and the Web
-application](setting-properties-w.md) to achieve the required
+application](setting-properties.md) to achieve the required
 functionality and features for your application.
 
 <a name="design"></a>
@@ -58,7 +58,7 @@ Framework](../../../../org.tizen.web.apireference/html/ui_fw_api/ui_fw_api_cover
 <a name="code"></a>
 ## Coding the Application
 
-[Code your application](coding-app-w.md) in the Tizen Studio using the
+[Code your application](coding-app.md) in the Tizen Studio using the
 APIs defined in the Web [API
 References](../../../../org.tizen.web.apireference/html/web_api_reference.htm).
 
@@ -138,19 +138,19 @@ process is executed:
 
 You can run your application in one of the following environments:
 
--   [Emulator](run-debug-app-w.md#emulator)
+-   [Emulator](run-debug-app.md#emulator)
 
     The device emulator, provided with the Tizen Studio, imitates the
     target environment running Tizen Web applications. Using this
     replicated environment, you can test your application before
     deploying it to the real target device.
 
--   [Target device](run-debug-app-w.md#target)
+-   [Target device](run-debug-app.md#target)
 
     Running your application on a target device allows you to debug and
     test your application in a real-time environment.
 
--   [Simulator](run-debug-app-w.md#simulator)
+-   [Simulator](run-debug-app.md#simulator)
 
     The Tizen Web simulator allows you to run application that use the
     Tizen Web APIs.
@@ -158,12 +158,12 @@ You can run your application in one of the following environments:
 You can run the application smartly:
 
 -   You can use the [Rapid Development
-    Support (RDS)](run-debug-app-w.md#rds) mode to run or test faster.
+    Support (RDS)](run-debug-app.md#rds) mode to run or test faster.
 -   You can use the live editing mode to test faster (debug mode does
     not support it).
 
 For more information on the debugging process and tools, see [Debugging
-Web Applications](run-debug-app-w.md#debug).
+Web Applications](run-debug-app.md#debug).
 
 <a name="package"></a>
 ## Packaging the Application
@@ -218,7 +218,7 @@ actual project files.
 ![Viewing the Web application package](./media/view_package_mw.png)
 
 Additionally, you can [localize the Web
-application](setting-properties-w.md#localization) to support different
+application](setting-properties.md#localization) to support different
 languages and environments.
 
 <a name="multi"></a>
@@ -237,7 +237,7 @@ To create and run a hybrid application:
 
 1.  Create a project for a [Web UI
     application](creating-app-project-w.md) and [native service
-    application](../../native/process/app-dev-process-n.md#creating).
+    application](../../../native/tutorials/process/app-dev-process.md#creating).
 2.  To establish a project reference between a UI and service
     application:  
   -   In the Web UI application project context menu, select
@@ -255,7 +255,7 @@ To create and run a hybrid application:
 
     To modify the build configuration of the service application, see
     [Building the
-    Application](../../native/process/app-dev-process-n.md#build).
+    Application](../../../native/tutorials/process/app-dev-process.md#build).
 
 > **Note**  
 > Tizen has limited a multi-project application combination
@@ -326,7 +326,7 @@ and
 applications), [Hybrid Service
 sample](https://developer.tizen.org/development/sample/native/AppFW/Hybrid_Service),
 and [Hybrid Application
-Package](../app-model/application-model-w.md#hap).
+Package](../app-model/application-model.md#hap).
 
 <a name="cert"></a>
 ## Certifying and Publishing the Application
