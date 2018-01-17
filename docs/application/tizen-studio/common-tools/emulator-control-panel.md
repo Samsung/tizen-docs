@@ -340,6 +340,7 @@ In the **Memory** card, you can select a specific memory status using the radio 
 - **Soft Warning (60 MB and under)**
 - **Normal (Sufficient)**
 
+<a name="control"></a>
 ## Controlling the Control Panel from the Command Line
 
 You can control and monitor the Tizen emulator by using the Emulator Control Panel CLI instead of the control panel UI tool. The CLI supports all the functionalities of the UI. The CLI binary is located in:
@@ -348,7 +349,7 @@ You can control and monitor the Tizen emulator by using the Emulator Control Pan
 
   `<TIZEN_STUDIO>/tools/emulator/bin/ecp-cli`
 
-- Windows®:
+- Windows&reg;
 
   `<TIZEN_STUDIO>\tools\emulator\bin\ecp-cli.bat`
 

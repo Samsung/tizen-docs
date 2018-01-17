@@ -36,7 +36,7 @@ In the Emulator Manager, in addition to creating new emulator instances accordin
 <a name="speed"></a>
 ## Increasing the Application Execution Speed
 
-The Tizen x86 emulator exploits [KVM](http://www.linux-kvm.org/page/Main_Page) (Kernel-based Virtual Machine in Linux) or [HAX](../setup/hardware-accelerated-execution-manager.md) (Hardware Accelerated eXecution in Windows® and macOS) with HW virtualization support.
+The Tizen x86 emulator exploits [KVM](http://www.linux-kvm.org/page/Main_Page) (Kernel-based Virtual Machine in Linux) or [HAX](../setup/hardware-accelerated-execution-manager.md) (Hardware Accelerated eXecution in Windows&reg; and macOS) with HW virtualization support.
 
 If the CPU VT is disabled in the **Emulator Configuration** view on the Emulator Manager, check the following prerequisites and install KVM or HAX:
 
@@ -54,7 +54,7 @@ If the CPU VT is disabled in the **Emulator Configuration** view on the Emulator
 
      The HW virtualization feature can also be disabled on the BIOS setting. Check the setting and enable it if you need the feature.
 
-   - In Windows®:
+   - In Windows&reg;
 
      To use HAX, you need an Intel VT-x-supported CPU, and you must enable the NX-related setting in the PC BIOS.
 
@@ -70,7 +70,7 @@ If the CPU VT is disabled in the **Emulator Configuration** view on the Emulator
 
      No installation is required for KVM.
 
-   - In Windows® and macOS:
+   - In Windows&reg; and macOS:
 
      The HAXM driver is installed during the Tizen Studio installation. For more information on installing HAXM, see [Hardware Accelerated Execution Manager](../setup/hardware-accelerated-execution-manager.md).
 
@@ -83,12 +83,12 @@ If the CPU VT is disabled in the **Emulator Configuration** view on the Emulator
 
 To run the emulator with the HW virtualization support in the Emulator Manager, set the **CPU VT** field to **ON**. The field is disabled if your system cannot support HW virtualization.
 
-You can also run the emulator with the HW virtualization support from the command line, by including the `-enable-kvm` (in Ubuntu) or `-enable-hax` (in Windows® and macOS) option in the start-up command.
+You can also run the emulator with the HW virtualization support from the command line, by including the `-enable-kvm` (in Ubuntu) or `-enable-hax` (in Windows&reg; and macOS) option in the start-up command.
 
 <a name="supported"></a>
 ## Supported Features
 
-The emulator provides various virtual HW, media formats, codecs, and [OpenGL® ES acceleration](#opengl). For better performance of the OpenGL® ES support, the Tizen emulator exploits the latest feature of the graphic driver, so always [install the latest vendor-provided graphic driver](../setup/prerequisites.md#emulator). The emulator, however, has some limitations and [differences compared to physical target devices](#target).
+The emulator provides various virtual HW, media formats, codecs, and [OpenGL&reg; ES acceleration](#opengl). For better performance of the OpenGL&reg; ES support, the Tizen emulator exploits the latest feature of the graphic driver, so always [install the latest vendor-provided graphic driver](../setup/prerequisites.md#emulator). The emulator, however, has some limitations and [differences compared to physical target devices](#target).
 
 The following table lists the basic features supported in the emulator.
 
@@ -101,24 +101,24 @@ The following table lists the basic features supported in the emulator.
 | Key                    | HW keys, host keyboard, and SW keypad    | Supported     | The host keyboard is not supported for the wearable emulator. |
 | Rotary                 | 360 levels of clockwise or counter-clockwise rotation | Supported     | -                                        |
 | Display                | VGA card with 100 levels of brightness control | Supported     |                                          |
-| OpenGL® ES             | Compatible with OpenGL® ES 1.1 and 2.0OpenGL® ES API pass-through through PCI | Supported     | The OpenGL® ES 1.1 functionality is not guaranteed on the emulator, unless the graphics hardware of your computer supports OpenGL® 1.5.The OpenGL® ES 2.0 functionality is not guaranteed on the emulator, unless the graphics hardware of your computer supports OpenGL® 2.1.The host machine must support OpenGL® 1.4. |
-| Sound                  | AC97 device                              | Supported     | **Audio in:**Make sure that the input volume of the microphone is enough to record your voice or songs on the host machine.On Windows® 7, inject the microphone into the host machine before starting the emulator.**Audio out:**On Windows® 7, enable at least 1 audio out device before starting the emulator. Make sure that the volume icon in the tray is not disabled.While the emulator is running, do not disable the audio out device, as it can lock the audio system of the guest platform. |
+| OpenGL&reg; ES             | Compatible with OpenGL&reg; ES 1.1 and 2.0OpenGL&reg; ES API pass-through through PCI | Supported     | The OpenGL&reg; ES 1.1 functionality is not guaranteed on the emulator, unless the graphics hardware of your computer supports OpenGL&reg; 1.5.The OpenGL&reg; ES 2.0 functionality is not guaranteed on the emulator, unless the graphics hardware of your computer supports OpenGL&reg; 2.1.The host machine must support OpenGL&reg; 1.4. |
+| Sound                  | AC97 device                              | Supported     | **Audio in:**Make sure that the input volume of the microphone is enough to record your voice or songs on the host machine.On Windows&reg; 7, inject the microphone into the host machine before starting the emulator.**Audio out:**On Windows&reg; 7, enable at least 1 audio out device before starting the emulator. Make sure that the volume icon in the tray is not disabled.While the emulator is running, do not disable the audio out device, as it can lock the audio system of the guest platform. |
 | Network connection     | Virtio                                   | Supported     | Raw socket protocol, such as ICMP, is not supported. |
 | Emulator Control Panel | The Emulator Control Panel (ECP) supports different features depending on the device profile:Mobile:Device Manager: Device Tree, Network, Host Directory SharingEvent Injector: Battery, RSSI, 3-Axis Sensor, Light, Proximity, Pressure, Ultraviolet, Heart Rate Monitor, Motion, Ear Jack, USB, SDCard, Location, TelephonyWearable:Device Manager: Network, Host Directory SharingApp Manager: UninstallerEvent Injector: Battery, 3-Axis Sensor, Light, Proximity, Pedometer, Pressure, Ultraviolet, Heart Rate Monitor, Gesture, USB | Supported     | The ECP is a standalone tool, which replaces the Event Injector. It helps to control and monitor the emulator features, and can be launched from the emulator context menu. |
 | Camera                 | Virtual camera device connecting a host machine's Webcam:Support: preview, capture, and recordImage format: YUYV, I420, and YV12Attributes: brightness and contrastResolution: 160 x 120, 176 x 144, 320 x 240, 352 x 288, and 640 x 480Video resolution: 1280 x 720 for the WVGA, 320 x 240 for the WQVGA, and 640 x 480 for the HVGA devicesSupported video codecs: MPEG-4, H.263, H.264, and VC-1 for both encoding and decoding | Supported     | While recording a video using the emulator, an audio-video synchronization error can occur depending on your computer hardware and performance. |
 | Bluetooth              | -                                        | Not supported | -                                        |
 | Wi-Fi                  | -                                        | Not supported |                                          |
-| Wi-Fi Direct®          | -                                        | Not supported |                                          |
+| Wi-Fi Direct&reg;          | -                                        | Not supported |                                          |
 
-### OpenGL® ES Acceleration Support
+### OpenGL&reg; ES Acceleration Support
 
-For the emulator to support OpenGL® ES acceleration, you need:
+For the emulator to support OpenGL&reg; ES acceleration, you need:
 
-- Graphics chipset driver that supports OpenGL® 1.4 installed on the host machine
-- All chipset vendors and driver versions available to support the OpenGL® 1.4 standard
+- Graphics chipset driver that supports OpenGL&reg; 1.4 installed on the host machine
+- All chipset vendors and driver versions available to support the OpenGL&reg; 1.4 standard
 
 > **Note**  
-> The emulator supports only ES 1.1, ES 2.0, and EGL™ 1.4 versions.
+> The emulator supports only ES 1.1, ES 2.0, and EGL&trade; 1.4 versions.
 
 <a name="target"></a>
 ### Differences Between the Emulator and Target
