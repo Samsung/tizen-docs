@@ -54,18 +54,18 @@ The Tizen 2.3.1 release provides developers with the Tizen kernel, device driver
 **Known Issues**
 
 - Common
-  - Tizen IDE for MAC OS® X has dependencies on Apple JDK. To support legacy java software on MAC OS® X, download and install the Java for Mac OS X 2015-001 from [https://support.apple.com/kb/DL1572](https://support.apple.com/kb/DL1572)
+  - Tizen IDE for MAC OS X has dependencies on Apple JDK. To support legacy java software on MAC OS X, download and install the Java for Mac OS X 2015-001 from [https://support.apple.com/kb/DL1572](https://support.apple.com/kb/DL1572)
 - Emulator
   - To use the Tizen Emulator, you should install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen Emulator from: 
     - [https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk](https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk).
-    - If the host machine is using the Nvidia Optimus™ technology on either Ubuntu™ or Windows®, you must set the Tizen Emulator to run with your Nvidia® graphics card. If you use Ubuntu™, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). If you use Windows®, you should select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia® control panel.
-    - On Ubuntu™, if the graphics driver is outdated, your Ubuntu® desktop session may be occasionally logged out when launching the Emulator Manager. Or the Emulator skin may be drawn improperly. Please check the prerequisites and upgrade the latest graphics driver.
-  - On Ubuntu™ 14.04, the shortcut menu can appear sometimes transparently.
-  - On Windows®, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is covered by another window. If you click the Emulator window, the display surface runs correctly again
-  - On Windows®, if a memory allocation error occurs while executing the Emulator, try the following: 
+    - If the host machine is using the Nvidia Optimus technology on either Ubuntu or Windows, you must set the Tizen Emulator to run with your Nvidia graphics card. If you use Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). If you use Windows, you should select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia control panel.
+    - On Ubuntu, if the graphics driver is outdated, your Ubuntu desktop session may be occasionally logged out when launching the Emulator Manager. Or the Emulator skin may be drawn improperly. Please check the prerequisites and upgrade the latest graphics driver.
+  - On Ubuntu 14.04, the shortcut menu can appear sometimes transparently.
+  - On Windows, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is covered by another window. If you click the Emulator window, the display surface runs correctly again
+  - On Windows, if a memory allocation error occurs while executing the Emulator, try the following: 
     - Close some other programs and try to launch the Emulator again
     - If the RAM size is set as 768 or 1024 MB for the VM in the Emulator Manager, change the RAM size to 512 MB.
-    - Increase the user area of the virtual memory in the system to 3 GB by typing **bcdedit /set increaseuserva 3072** on the console with administrator rights (Windows® 7 only) andreboot.
+    - Increase the user area of the virtual memory in the system to 3 GB by typing **bcdedit /set increaseuserva 3072** on the console with administrator rights (Windows 7 only) andreboot.
   - If you use a MacBook Pro which has both Intel HD and NVidia GPUs, when you execute the Emulator with the **OpenGL ES ver. v1.1 & v2.0** option, the Emulator may be unexpectedly terminated. Please use the **OpenGL ES ver. v2.0 & v3.0 **option.
   - The Dynamic Analyzer may not recognize the Emulator the first time but it will recognize it next time.
 

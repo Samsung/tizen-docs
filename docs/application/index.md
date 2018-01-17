@@ -113,8 +113,8 @@ Both mobile and wearable profiles are supported in native and Web application ty
 ![Applications using the TV profile](media/profile_tv.png)
 
 
-To become familiar with some terms that you encounter throughout this site, see [Glossary](https://developer.tizen.org/development/getting-started/glossary).  
-To see the trademark notice list, see [Trademarks](https://developer.tizen.org/development/training/trademarks).
+To become familiar with some terms that you encounter throughout this site, see [Glossary](../glossary.md).  
+To see the trademark notice list, see [Trademarks](../trademarks.md).
 
 **See the following links for more information:**
 - Source code (GIT/Gerrit): https://review.tizen.org/gerrit

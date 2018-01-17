@@ -329,7 +329,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
 
 - Supported OS
 
-- The Tizen SDK does not support Ubuntu™ 11.10 but supports Ubuntu™ 12.04 and 12.10.
+- The Tizen SDK does not support Ubuntu 11.10 but supports Ubuntu 12.04 and 12.10.
 
 #### Known Issues
 
@@ -345,7 +345,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
     - It only supports the default Tizen IDE "Debug" build configuration
 - Emulator
   - When the disk storage is full, various incorrect operations may occur
-  - The Emulator skin may not be drawn properly on Ubuntu™ if the graphics driver is not installed or an older version is installed. To fix this issue, update the graphics driver version.
+  - The Emulator skin may not be drawn properly on Ubuntu if the graphics driver is not installed or an older version is installed. To fix this issue, update the graphics driver version.
 - Dynamic Analyzer
   - Sometimes a screenshot is not taken if the screen or scene change is implemented using an animation technique
   - The analysis of IME and Service Applications is not supported

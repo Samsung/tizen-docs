@@ -306,7 +306,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
   - The pre-compiled shader list has been optimized for boot time enhancement.
   - Support for the Evas GL capability test has been added.
 - SDL
-  - Support for OpenGL® ES has been added.
+  - Support for OpenGL ES has been added.
   - The support indicator widget has been added.
   - The enhancement window rotation feature has been added.
 
@@ -596,7 +596,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 - WASM version 0x1
   - To switch on WASM, specify the runtime switch.
 - Direct Canvas
-  - Support for accelerated WebGL™ on fullscreen 3D canvas has been added:
+  - Support for accelerated WebGL on fullscreen 3D canvas has been added:
     - The directcanvas attribute is needed on the canvas element.
 
 ### Tizen .NET

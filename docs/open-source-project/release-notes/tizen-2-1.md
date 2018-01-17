@@ -160,7 +160,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
       - Anti-alias mode for 2D drawing in canvas
     - TextElement of EnrichedText are vertically aligned along the baseline with TEXT_ALIGNMENT_BASELINE
   - 3D Graphics
-    - OpenGL® ES
+    - OpenGL ES
       - pbuffer surface is available in the Emulator
       - FBO for OpenGL-ES 1.1 is supported in the Emulator
     - GL utilities
@@ -409,7 +409,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
   - Graphics
     - The Tizen SDK adopts font resources with open source license, therefore, some rarely used glyphs are missing
   - 3D graphics
-    - OpenGL® ES
+    - OpenGL ES
       - To create an egl window surface for Tizen::Ui::Controls, the width of the control has to be an even number
       - When a GL application runs with HW Acceleration enabled in the Emulator, the rendering results are flipped along y-axis
 - Tizen::Io
@@ -570,14 +570,14 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
     - Menu with a link to Tizen Web site added
 - Common Tools
   - Emulator
-    - The following changes have been made in OpenGL® ES:
+    - The following changes have been made in OpenGL ES:
       - Support for the FBO extension for GLES1.1
       - Removal of SW mesa from the Tizen platform
     - systemd has been adopted for the Tizen platform booting
-    - Sleep mode performance on Ubuntu® and Mac OS® X has been enhanced by removing redundant CPU usage
+    - Sleep mode performance on Ubuntu and Mac OS X has been enhanced by removing redundant CPU usage
     - The orientation of the general purpose skin can be done with the skin indicator, which is by default located on the upper left corner and rotated along the skin
   - Emulator Manager
-    - Checking the OpenGL® capability of host has been added to enable and disable GPU acceleration automatically
+    - Checking the OpenGL capability of host has been added to enable and disable GPU acceleration automatically
   - Event Injector
     - The following changes have been made:
       - Support for the user acceleration sensor
@@ -696,7 +696,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
   - Web-hybrid app CLI bug is fixed
   - Including generated signature files into deltaInfoList is fixed
   - Duplicated project location is checked when creating a new project
-  - The "Google Chrome® settings in preferences" problem is fixed
+  - The "Google Chrome settings in preferences" problem is fixed
 
 #### Known Issues
 
@@ -736,24 +736,24 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
 
 - Emulator
 
-  - If you run the Emulator with Oracle Java® 1.7 or higher on Mac® OS, it may result in your host machine getting slower. If you run two or more Emulator VMs, Occasionally booting the Emulator does no work.
+  - If you run the Emulator with Oracle Java 1.7 or higher on Mac OS, it may result in your host machine getting slower. If you run two or more Emulator VMs, Occasionally booting the Emulator does no work.
 
-  - Your Ubuntu® desktop session can be occasionally logged out when launching the Emulator Manager, if you use NVIDIA® graphic card. In that case, install the latest driver directly from the NVIDIA® website.
+  - Your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, if you use NVIDIA graphic card. In that case, install the latest driver directly from the NVIDIA website.
 
-  - OpenGL® ES acceleration can have problems in certain environments:
+  - OpenGL ES acceleration can have problems in certain environments:
 
     - Windows XP/7 with Intel motherboard integrated card
     - Ubuntu 11.10 with Intel CPU/motherboard integrated card
 
     If this occurs, you can launch the Emulator by switching off the HW GL acceleration in the Emulator Manager. However, you cannot use any GL-related applications, such as a Web browser.
 
-  - When you launch the Emulator on Windows®, you can get a "failed to allocate memory" error. In that case, try the following:
+  - When you launch the Emulator on Windows, you can get a "failed to allocate memory" error. In that case, try the following:
 
-    - Increase the user area of the virtual memory in the system to 3 GB by running the "bcdedit /set increaseuserva 3072" command on the console with administrator rights (Windows® 7 only)
+    - Increase the user area of the virtual memory in the system to 3 GB by running the "bcdedit /set increaseuserva 3072" command on the console with administrator rights (Windows 7 only)
     - Close some other programs and try to launch the Emulator again
     - If you have set the RAM size as 768 or 1024 MB for the VM in the Emulator Manager, change the RAM size to 512 MB
 
-  - Using the Emulator with SOCKS (SOCKet Secure) proxy on Mac OS® X can cause unexpected problems
+  - Using the Emulator with SOCKS (SOCKet Secure) proxy on Mac OS X can cause unexpected problems
 
   - You cannot play all video files that are linked in YouTube or other Web pages and require the browsers registered to them
 
@@ -766,5 +766,5 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
 
 - Install Manager
 
-  - A shortcut is not provided in Mac OS® X
+  - A shortcut is not provided in Mac OS X
 
