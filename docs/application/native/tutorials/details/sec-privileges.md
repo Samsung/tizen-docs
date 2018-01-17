@@ -1,7 +1,6 @@
 
 # Security and API Privileges
 
-
 To effectively protect the device system and user private data, the
 Tizen security architecture is based on privileges and application
 signing of the Linux basic security model, which includes process
@@ -14,7 +13,7 @@ Tizen provides API-level access control for security-sensitive
 operations which, if not used correctly, can harm user privacy and
 system stability. Therefore, applications that use such sensitive APIs
 must declare the required privileges in the
-[tizen-manifest.xml](../process/setting-properties-n.md#manifest) file.
+[tizen-manifest.xml](../process/setting-properties.md#setting-the-application-manifest) file.
 Privileges are categorized into public, partner, and platform levels
 according to their hierarchy:
 
@@ -44,14 +43,14 @@ the application does not work as expected.
 >
 >
 Since Tizen 4.0, the status of privacy-related privileges can be
-[resolved at runtime](../../../../org.tizen.guides/html/native/security/requesting_permissions_n.htm) using the Privacy Privilege Manager API (in
+[resolved at runtime](../../guides/security/requesting-permissions.md) using the Privacy Privilege Manager API (in
 [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SECURITY__FRAMEWORK__PRIVACY__PRIVILEGE__MANAGER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SECURITY__FRAMEWORK__PRIVACY__PRIVILEGE__MANAGER__MODULE.html)
 applications).
 
 The Tizen Studio also provides privilege checker tools to check whether
 the Tizen application source code contains any privilege violations. For
 more information, see [Verifying APIs and
-Privileges](../../../tizen-studio/native-tools/api-checker-n.md).
+Privileges](../../../tizen-studio/native-tools/api-checker.md).
 
 <a name="mobile"></a>
 ## Mobile Native API Privileges
