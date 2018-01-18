@@ -29,7 +29,7 @@ The Tizen Studio provides various project templates that make it easier
 for you to start coding your application. When you create a new project,
 you can select a specific template or sample. Based on the selection,
 the Tizen native [Project
-Wizard](../../../tizen-studio/native-tools/project-wizard-n.md)
+Wizard](../../../tizen-studio/native-tools/project-wizard.md)
 automatically creates basic functionalities that the application has to
 implement to be able to run. The default project files and folders are
 also created.
@@ -39,7 +39,7 @@ also created.
 
 After creating the application project, you can [configure the project
 properties and create the application
-manifest](setting-properties-n.md) to achieve the required
+manifest](setting-properties.md) to achieve the required
 functionality and features for your application.
 
 <a name="designing"></a>
@@ -50,7 +50,7 @@ Implementing your application consists of:
 -   **Designing and creating the application UI (User Interface)**
 
     You can [design and create the application UI (user interface) with
-    UI Builder](../feature/ui-builder-app-design-mn.md).
+    UI Builder](../feature/ui-builder-app-design.md).
 
     UI Builder is included in the Tizen Studio, and functions as a
     WYSIWYG (What You See Is What You Get) design environment for
@@ -59,7 +59,7 @@ Implementing your application consists of:
     >    **Note**  
     > You can also design the application UI using the controls
     defined in the [User
-    Interface](../../../guides/native/ui/ui-cover-n.md) guides.
+    Interface](../../guides/ui/ui-cover.md) guides.
 
 
 
@@ -80,11 +80,11 @@ Once you have finished implementing your application, you are ready to
 ## Building the Application
 
 
-You must [build your native application project](building-app-n.md)
+You must [build your native application project](building-app.md)
 before you can [run and debug the application](#debugging).
 
 The build configuration is the [set of
-properties](building-app-n.md#prop) which are used in the build
+properties](building-app.md#prop) which are used in the build
 process. The build configuration includes the following properties:
 
 -   Build (compile and link) options
@@ -96,14 +96,14 @@ process. The build configuration includes the following properties:
 ## Running and Debugging the Application
 
 
-You can [run your application in the emulator](running-app-n.md). The
+You can [run your application in the emulator](running-app.md). The
 device emulator, provided with the Tizen Studio, imitates the target
 environment running Tizen native applications. Using this replicated
 environment, you can test your application before deploying it to the
 real target device.
 
 You can also [debug your application with the
-emulator](debugging-app-n.md#emulator). The emulator represents the
+emulator](debugging-app.md#debugging-applications-on-the-emulator). The emulator represents the
 almost identical functionality of the corresponding device model.
 
 The emulator provides the following debugging capabilities:
@@ -114,15 +114,15 @@ The emulator provides the following debugging capabilities:
 -   Producing console output
 
 You can make running and testing your application faster using the
-[Rapid Development Support (RDS)](running-app-n.md#rapid). For more
+[Rapid Development Support (RDS)](running-app.md#rapid-development-support). For more
 information on the debugging methods and tools you can use, see
-[Debugging Applications](debugging-app-n.md).
+[Debugging Applications](debugging-app.md).
 
-You can also [optimize your application](performance-n.md) to achieve
+You can also [optimize your application](performance.md) to achieve
 the best possible performance.
 
 To debug your application with the emulator or the target device, you
-must first [build the application](building-app-n.md).
+must first [build the application](building-app.md).
 
 <a name="packaging"></a>
 ## Packaging the Application
@@ -134,7 +134,7 @@ certificate](../../../tizen-studio/common-tools/certificate-registration.md)
 before packaging your application.
 
 1.  If you have made changes to the application after testing it,
-    [rebuild the application](building-app-n.md).
+    [rebuild the application](building-app.md).
 
 2.  Select the project in the **Project Explorer** view.
 
@@ -174,9 +174,9 @@ To develop a multi-project native application:
     of the application binary, resource, and data files of the root and    referenced applications. Their `tizen-manifest.xml` files are merged
     into one. [The application ID in the `tizen-manifest.xml` must be
     assigned with the package ID as
-    a prefix.](../app-model/application-model-n.md#packageID)
+    a prefix.](../../index.md#packageID)
 
-4. [Build](building-app-n.md) and [run](running-app-n.md) the
+4. [Build](building-app.md) and [run](running-app.md) the
     UI application.
 
     The service or widget application is built and run automatically

@@ -1,8 +1,8 @@
 # Debugging Applications
 
-Debugging your application enables you to understand its flow of control. With the Tizen Studio, you can use various [application debugging methods](#methods). However, remember that the best way to debug an application is to not make bugs in the first place, so learn how to [prevent bugs by using logs](#logs).
+Debugging your application enables you to understand its flow of control. With the Tizen Studio, you can use various [application debugging methods](#application-debugging-methods). However, remember that the best way to debug an application is to not make bugs in the first place, so learn how to [prevent bugs by using logs](#debugging-with-logs).
 
-The debugging environment uses [GDB](http://www.gnu.org/software/gdb/gdb.html) (GNU Debugger) for debugging with the emulator and a target device. GDB can debug both locally and [remotely](#remote). To ease the debugging process, you can set [break points](#break), step in, step out, and step over break points, and watch variables to track the changes in their values in the **Debug** view.
+The debugging environment uses [GDB](http://www.gnu.org/software/gdb/gdb.html) (GNU Debugger) for debugging with the emulator and a target device. GDB can debug both locally and [remotely](#remote-debugging). To ease the debugging process, you can set [break points](#break-points), step in, step out, and step over break points, and watch variables to track the changes in their values in the **Debug** view.
 
 Debugging native applications with Tizen Studio is same as with Eclipse CDT. For more information, see [Debugging in Eclipse](http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.cdt.doc.user%2Ftasks%2Fcdt_o_debug.htm).
 
@@ -355,7 +355,7 @@ The **Expressions** view can be used in the following ways:
 
 ## Debugging Applications on the Emulator
 
-You can debug Tizen native applications on the [emulator](../../../../org.tizen.studio/html/common_tools/emulator.htm) using the **Project Explorer** view or the Tizen Studio menu.
+You can debug Tizen native applications on the [emulator](../../../tizen-studio/common-tools/emulator.md) using the **Project Explorer** view or the Tizen Studio menu.
 
 To debug your application on the emulator:
 
