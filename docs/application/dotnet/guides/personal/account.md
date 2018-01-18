@@ -1,6 +1,5 @@
 # Account Management
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 An account is a collection of information representing the user of a specific provider. You can manage accounts and their details in your application.
 
@@ -30,7 +29,7 @@ The main features of the Tizen.Account.AccountManager namespace include:
 If the application has defined the account provider information and implements the [appcontrol for the account provider](#appcontrol), the account provider is automatically registered when the application is installed.
 
 <a name="appcontrol"></a>
-## Account Application Control 
+## Account Application Control
 
 The account application control, which allows the user to add and configure accounts, must be implemented in all applications that define an account provider. You are not required to define the application control information in the **Application Control** tab of the manifest editor to add the application on the Account screen.
 
@@ -50,7 +49,7 @@ With the operation, the login page for the specific account provider can be disp
 | `http://tizen.org/appcontrol/operation/account/add` | Account ID of the added account. |
 
   <a name="CONFIG"></a>
-### ACCOUNT OPERATION VIEW Operation 
+### ACCOUNT OPERATION VIEW Operation
 
 The `http://tizen.org/appcontrol/operation/account/configure` operation enables the user to set account information, such as synchronization settings. The delete button must be included for removing accounts.
 
@@ -69,7 +68,7 @@ To enable your application to use the account management functionality:
 
 1.  To use the [Tizen.Account.AccountManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.AccountManager.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <privileges>
        <privilege>http://tizen.org/privilege/account.read</privilege>
        <privilege>http://tizen.org/privilege/account.write</privilege>
@@ -78,24 +77,24 @@ To enable your application to use the account management functionality:
 
 2. To use the methods and properties of the Tizen.Account.AccountManager namespace, include it in your application:
 
-    ``` 
+    ```
     using Tizen.Account.AccountManager;
     ```
 
     <a name="add"></a>
-## Creating and Managing an Account 
+## Creating and Managing an Account
 
 To create an account, set its properties, and add it to the account database:
 
 1.  Create an account using the `CreateAccount()` method of the [Tizen.Account.AccountManager.Account](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.AccountManager.Account.html) class:
 
-    ``` 
+    ```
     Account account = Account.CreateAccount();
     ```
 
 2. When the account is created, you can set account properties, such as name, display name, domain name, and email ID:
 
-    ``` 
+    ```
     string userName = "Marcus";
     string displayName = "Marcus_display";
     string domainName = "Marcus_domain";
@@ -111,14 +110,14 @@ To create an account, set its properties, and add it to the account database:
 
 3. When the account properties are set, use the `AddAccount()` method of the [Tizen.Account.AccountManager.AccountService](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.AccountManager.AccountService.html) class to insert the account into the account database:
 
-    ``` 
+    ```
     int account_id = AccountService.AddAccount(account);
     ```
 
     The method returns the account ID (`account_id`) of the newly inserted account.
 
     <a name="get"></a>
-## Getting Account Information 
+## Getting Account Information
 
 To get account information, such as user name, display name, domain name, and email ID:
 
@@ -126,14 +125,14 @@ To get account information, such as user name, display name, domain name, and em
 
     To get individual records, use the `GetAccountsAsync()` method, which iterates through all the records and invokes an event handler for each account.
 
-    ``` 
+    ```
     int total_count = AccountService.GetAccountsCount();
     IEnumerable<Account> accounts = AccountService.GetAccountsAsync();
     ```
 
 2. To get more details, use the `AccountId`, `UserName`, `DisplayName`, and `IconPath` properties of the [Tizen.Account.AccountManager.Account](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.AccountManager.Account.html) class instance returned in the event handler:
 
-    ``` 
+    ```
     Account account = Account.CreateAccount();
 
     /// Get the account ID
@@ -158,7 +157,7 @@ To get account information, such as user name, display name, domain name, and em
 
 To retrieve accounts by a specific account provider, use the `GetAccountsByPackageName()` method of the [Tizen.Account.AccountManager.AccountService](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.AccountManager.AccountService.html) class with the package name of the account provider:
 
-``` 
+```
 IEnumerable<Account> accounts = null;
 string packageName = "packageName";
 accounts = AccountService.GetAccountsByPackageName(packageName);
@@ -169,7 +168,7 @@ accounts = AccountService.GetAccountsByPackageName(packageName);
 
 To retrieve account providers by a specific capability, use the `GetAccountProvidersByFeature()` method of the [Tizen.Account.AccountManager.AccountService](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.AccountManager.AccountService.html) class:
 
-``` 
+```
 string capability = "http://tizen.org/account/capability/contact";
 IEnumerable<AccountProvider> providers = AccountService.GetAccountProvidersByFeature(capability);
 ```
@@ -183,7 +182,7 @@ To remove an account, use the `DeleteAccount()` method of the [Tizen.Account.Acc
 
 -   Remove an account using an account ID:
 
-    ``` 
+    ```
     Account account = Account.CreateAccount();
     var id = account.AccountId;
     AccountService.DeleteAccount(account);
@@ -191,7 +190,7 @@ To remove an account, use the `DeleteAccount()` method of the [Tizen.Account.Acc
 
 - Remove an account using a user name:
 
-    ``` 
+    ```
     string userName = "user_name";
     string packageName = "packageName";
     AccountService.DeleteAccount(userName, packageName);
@@ -199,7 +198,7 @@ To remove an account, use the `DeleteAccount()` method of the [Tizen.Account.Acc
 
 - Remove an account using a package name:
 
-    ``` 
+    ```
     string packageName = "packageName";
     AccountService.DeleteAccount(packageName);
     ```
@@ -217,7 +216,7 @@ To perform database queries:
 
     1.  The `Create_Account()` method takes a new [Tizen.Account.AccountManager.Account](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.AccountManager.Account.html) instance and gives it some account details (name, display name, domain, email):
 
-        ``` 
+        ```
         void Create_Account(Account account, string userName, string displayName, string domainName, string emailId)
         {
             account.UserName = userName;
@@ -231,7 +230,7 @@ To perform database queries:
 
         After the account is created, it is added to the database.
 
-        ``` 
+        ```
         Account account = Account.CreateAccount();
 
         Create_Account(account, "Person", "DisplayPerson", "Person Domain", "someone1@somewho.com");
@@ -245,7 +244,7 @@ To perform database queries:
 
     2. Add 2 more accounts to the database:
 
-        ``` 
+        ```
         Create_Account(account, "Human", "Humanity", "Everyone", "someone3@somewho.com");
         AccountService.AddAccount(account);
 
@@ -257,14 +256,14 @@ To perform database queries:
 
     Get all accounts to verify the database insertion:
 
-    ``` 
+    ```
     IEnumerable<Account> accounts = AccountService.GetAccountsAsync();
     ```
 
 3. Query the account by various attributes:
     -   Query by the ID:
 
-        ``` 
+        ```
         IEnumerable<Account> accounts = null;
         List<int> values = new List<int>();
         foreach (int i in values)
@@ -277,7 +276,7 @@ To perform database queries:
 
         Querying data by user name requires a valid user name.
 
-        ``` 
+        ```
         IEnumerable<Account> accounts = null;
         string userName = "Human";
         accounts = AccountService.GetAccountsByUserName(userName);
@@ -287,7 +286,7 @@ To perform database queries:
 
         By default, the accounts created in the application context have a package name set to the application name. Change it using the `PackageName` property of the [Tizen.Account.AccountManager.Account](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.AccountManager.Account.html) instance. To list accounts by package name, the user can provide a name by themselves or obtain it through the `PackageName` property.
 
-        ``` 
+        ```
         IEnumerable<Account> accounts = null;
         Account account = Account.CreateAccount();
         string packageName = account.PackageName;
@@ -298,7 +297,7 @@ To perform database queries:
 
         The `GetAccountsByCapabilityType()` method of the [Tizen.Account.AccountManager.AccountService](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.AccountManager.AccountService.html) class allows the user to find all accounts with a specified capability type.
 
-        ``` 
+        ```
         IEnumerable<Account> accounts = null;
         accounts = AccountService.GetAccountsByCapabilityType("Custom");
         ```
@@ -307,24 +306,24 @@ To perform database queries:
 
         The `GetCapabilitiesById()` method is different from the previous methods. It returns all capabilities from an account with a specified ID.
 
-        ``` 
+        ```
         Dictionary<string, CapabilityState> newcapabilities = AccountService.GetCapabilitiesById(account.AccountId);
         ```
 
 4. Destroy all account instances when they are no longer needed:
 
-    ``` 
+    ```
     account.Dispose();
     ```
 
     <a name="secret"></a>
-## Managing Account Secrecy 
+## Managing Account Secrecy
 
 To manage account secrecy:
 
 1.  The secrecy state of an account is set and fetched using the `SecrecyState` property of the [Tizen.Account.AccountManager.Account](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.AccountManager.Account.html) class, which uses values from the [Tizen.Account.AccountManager.AccountSecrecyState](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.AccountManager.AccountSecrecyState.html) enumeration:
 
-    ``` 
+    ```
     int account1_id = 0, account2_id = 0, account3_id = 0;
     Account account = Account.CreateAccount();
 
@@ -348,7 +347,7 @@ To manage account secrecy:
 
     Secrecy is only linked with the visibility on the account settings screen. The account is still visible and can be accessed using a query or a `foreach` method.
 
-    ``` 
+    ```
     /// List_Account() console output
     My ID: 12
     My Name: Security 1
@@ -372,7 +371,7 @@ To update and track account data:
 
     If an event handler is registered and any action takes place on any account, the event handler provides in its parameters the event type as a string and the ID of the account associated with the actual change.
 
-    ``` 
+    ```
     handler = (object sender, AccountSubscriberEventArgs args) =>
     {
         Console.WriteLine("Callback Event Type: {0}, Account ID: {1}", args.EventType, args.accountId);
@@ -381,13 +380,13 @@ To update and track account data:
 
     Register the event handler for the `AccountUpdated` event of the [Tizen.Account.AccountManager.AccountService](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.AccountManager.AccountService.html) class:
 
-    ``` 
+    ```
     AccountService.AccountUpdated += handler;
     ```
 
 2. Create an account:
 
-    ``` 
+    ```
     Account account = Account.CreateAccount();
     Create_Account(account, "Updater", "Updated?", "ToUpdate", "not.up@to.date");
     AccountService.AddAccount(account);
@@ -399,7 +398,7 @@ To update and track account data:
     2.  Make the necessary changes.
     3.  Update the account using the valid ID.
 
-    ``` 
+    ```
     Account account = AccountService.GetAccountById(id);
     account.DisplayName = "Updated!";
     AccountService.UpdateAccount(account);
@@ -407,19 +406,19 @@ To update and track account data:
 
 4. Show the account to verify the updates:
 
-    ``` 
+    ```
     Account account = AccountService.GetAccountById(accountId);
     Show_Account(account);
     ```
 
 5. When it is no longer needed, deregister the event handler:
 
-    ``` 
+    ```
     AccountService.AccountUpdated -= handler;
     ```
 
     <a name="type"></a>
-## Retrieving Account Types 
+## Retrieving Account Types
 
 To retrieve account types:
 
@@ -436,7 +435,7 @@ To retrieve account types:
 
     To get the account types by the application ID, use the `GetAccountProviderByAppId()` method:
 
-    ``` 
+    ```
     string appId = "com.tizen.example"; /// App ID for retrieving account types
     AccountProvider provider = AccountService.GetAccountProviderByAppId(appId);
 
@@ -450,7 +449,7 @@ To retrieve account types:
 
 - List the account types or all the labels from a specified type:
 
-    ``` 
+    ```
     IEnumerable<AccountProvider> accountProviders = AccountService.GetAccountProviders();
     Dictionary<string, string> labels = AccountProvider.GetLabelsByAppId(appId);
     ```
@@ -483,6 +482,7 @@ The following table lists the account properties that can be modified.
 
 The following table lists the properties that can be defined for each account provider.
 
+<a name="provider_prop"></a>
 **Table: Account provider properties**
 
 | Account property          | Data type | Mandatory | Description                              |
@@ -492,3 +492,9 @@ The following table lists the properties that can be defined for each account pr
 | Small icon                | `String`  | Yes       | File path of the account provider icon.    <br>  The icon size is:<br> - 45 x 45 for Xhigh (HD)<br> - 30 x 30 for High (WVGA)<br> Since the small icon is used in other applications, place the icon in a shared directory. |
 | Display name              | `String`  | Yes       | Display name of the account provider.    |
 | Capabilities              | `String`  | No        | Capability of the account provider.   <br>       Capability can be a liaison between an account application and another application. If an account application registers a capability in the manifest file, other applications know that the account application has the capability. And if an account application gives an account a capability, other applications know that the account has the capability. <br> Several service-specific capabilities are defined for the [Tizen.Account.AccountManager.AccountService](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Account_1_1AccountManager_1_1AccountService.html) class: Contact capability:	<br>-    `ContactCapability` or `"http://tizen.org/account/capability/contact"`If you register this capability in the manifest file, the user using the contact application can see a list of accounts with the account of your service in the contact application. <br>-Calendar capability:	    `CalendarCapability` or `"http://tizen.org/account/capability/calendar"`If you register this capability in the manifest file, the user using the calendar application can see a list of accounts with the account of your service in the calendar application.<br>-Email capability:	    `EmailCapability` or `"http://tizen.org/account/capability/email"`<br>-Photo capability:	    `PhotoCapability` or `"http://tizen.org/account/capability/photo"`<br>-Video capability:	    `VideoCapability` or `"http://tizen.org/account/capability/video"`<br>-Music capability:	    `MusicCapability` or `"http://tizen.org/account/capability/music" ` <br>-Document capability:	    `DocumentCapability` or `"http://tizen.org/account/capability/document"` <br>-Message capability:	    `MessageCapability` or `"http://tizen.org/account/capability/message"` <br>-Game capability:	    `GameCapability` or `"http://tizen.org/account/capability/game"` |
+
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

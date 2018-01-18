@@ -1,6 +1,5 @@
 # Messaging
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 The messaging features introduce how you can use email, SMS, and MMS messaging in your application. You can also use the push messaging service to provide push notifications to your application.
 
@@ -18,3 +17,6 @@ You can use the following messaging features in your .NET applications:
 
     The application can receive push notifications from a push server. You can create a push server, register your application and connect to the push messaging service, and send notifications from the server to the application using the push messaging service.
 
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

@@ -1,9 +1,5 @@
-Application Management
-======================
+# Application Management
 
-## Dependencies
-
-- Tizen 4.0 and Higher
 
 The application management features cover the various application models available for Tizen .NET applications. They describe the application life-cycle and resources, and the communication methods available for the application.
 
@@ -34,3 +30,6 @@ You can use the following application management features in your .NET applicati
     You can retrieve information about the packages installed on the device. You can also monitor for changes in the device packages.
 
 
+## Related Information
+  * Dependencies
+    -   Tizen 4.0 and Higher

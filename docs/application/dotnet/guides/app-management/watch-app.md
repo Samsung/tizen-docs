@@ -1,6 +1,5 @@
 # Watch Application
-## Dependencies
--   Tizen 4.0 and Higher
+
 You can create a watch application and manage its life-cycle to [retrieve the current date and time](#current) and display it accurately on the screen.
 
 The main features of the `Tizen.Applications.WatchApplication` class include:
@@ -32,7 +31,7 @@ To enable your application to use the watch functionality:
 
 1.  To use the `OnAmbientTick()` method of the [Tizen.Applications.WatchApplication](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WatchApplication.html) class in the ambient mode, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <privileges>
        <privilege>http://tizen.org/privilege/alarm.set</privilege>
     </privileges>
@@ -40,7 +39,7 @@ To enable your application to use the watch functionality:
 
 2.  To use the method and properties of the `Tizen.Applications.WatchApplication` class, include the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html) namespace in your application:
 
-    ``` 
+    ```
     using Tizen.Applications;
     ```
 <a name="lifecycle"></a>
@@ -53,7 +52,7 @@ To manage the application state changes, override the following methods of the `
 
 -   The `OnCreate()` method is triggered before the application main loop starts. In this method, you can initialize the application resources, such as create windows and data structures:
 
-    ``` 
+    ```
     protected override void OnCreate()
     {
         /// Hook to take necessary actions before the main event loop starts
@@ -65,7 +64,7 @@ To manage the application state changes, override the following methods of the `
 
 -   The `OnAppControlReceived()` method is triggered when another application sends a launch request to the application:
 
-    ``` 
+    ```
     protected override void OnAppControlReceived(AppControlReceivedEventArgs e)
     {
         /// Handle the launch request
@@ -77,7 +76,7 @@ To manage the application state changes, override the following methods of the `
 
 -   The `OnPause()` method is triggered when the application is completely obscured by another application and becomes invisible:
 
-    ``` 
+    ```
     protected override void OnPause()
     {
         /// Take necessary actions when application becomes invisible
@@ -89,7 +88,7 @@ To manage the application state changes, override the following methods of the `
 
 -   The `OnResume()` method is triggered when the application becomes visible:
 
-    ``` 
+    ```
     protected override void OnResume()
     {
         /// Take the necessary actions when application becomes visible
@@ -101,7 +100,7 @@ To manage the application state changes, override the following methods of the `
 
 -   The `OnTerminate()` method is triggered when the application main loop exits:
 
-    ``` 
+    ```
     protected override void OnTerminate()
     {
         /// Release all resources
@@ -112,7 +111,7 @@ To manage the application state changes, override the following methods of the `
 
 -   The `OnTick()` method is triggered at least once per second. The watch application can get the current time from the `time` time handle of the [Tizen.Applications.WatchTime](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WatchTime.html) class to draw a normal watch.
 
-    ``` 
+    ```
     protected override void OnTick(TimeEventArgs time)
     {
         /// Called at least once per second
@@ -131,7 +130,7 @@ To manage events related to system status changes, override the following method
 -   `OnLowMemory()`: Triggered when the system is running low on memory. Use the method to save the current work and release resources; if this is not enough, the platform frees resources automatically and can even kill some applications.
 -   `OnLowBattery()`: Triggered when the system is running low on battery (less than 5%). Use the method to save the current work and avoid battery-draining workloads.
 
-``` 
+```
 protected override void OnLocaleChanged(LocaleChangedEventArgs e)
 {
     /// Take the necessary actions when the language setting changes
@@ -161,13 +160,13 @@ protected override void OnLowMemory(LowMemoryEventArgs e)
 }
 ```
 <a name="timehandle"></a>
-## Drawing the Watch UI 
+## Drawing the Watch UI
 
 To draw an accurate clock in various formats on the screen, use the [Tizen.Applications.WatchApplication](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WatchApplication.html) class getter methods with the [Tizen.Applications.WatchTime](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WatchTime.html) class. You can get the `Tizen.Applications.WatchTime` instance with the `GetCurrentTime()` method.
 
 With the `Tizen.Applications.WatchTime` class, you can draw the UI for your watch application by getting the window object with the [ElmSharp](https://developer.tizen.org/dev-guide/csapi/api/ElmSharp.html) methods:
 
-``` 
+```
 private static Label _time;
 private static Window _win;
 private static Box _mainLayout;
@@ -198,7 +197,7 @@ protected override void OnCreate()
     conformant.SetContent(_mainLayout);
 ```
 
-> **Note** 
+> **Note**
 > To draw the UI, use a single window that is initialized in the `Tizen.Applications.WatchApplication` class. Do not create additional windows. A stack of watch application windows gets corrupted, because the platform handles the watch application window in a special way.
 
 <a name="current"></a>
@@ -206,7 +205,7 @@ protected override void OnCreate()
 
 You can get the current local time in various formats using the `GetCurrentTime()` method of the [Tizen.Applications.WatchApplication](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WatchApplication.html) class and the properties of the [Tizen.Applications.WatchTime](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WatchTime.html) class.
 
-``` 
+```
     WatchTime wt = GetCurrentTime();
     int hour = wt.Hour24;
     int min = wt.Minute;
@@ -231,7 +230,7 @@ Override the ambient mode methods of the [Tizen.Applications.WatchApplication](h
 
 -   The `OnAmbientTick()` method is triggered when the device enters the ambient mode and every minute while the device is in the ambient mode. You can use the method to get the current time from the [Tizen.Applications.WatchTime](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WatchTime.html) class and draw the ambient mode watch. In this method, do not perform time-consuming tasks and always update the UI as quickly as possible. The platform can put the device to sleep shortly after the ambient tick expires.
 
-``` 
+```
 protected override void OnAmbientTick(TimeEventArgs time)
 {
     base.OnAmbientTick(time);
@@ -250,3 +249,7 @@ protected override void OnAmbientChanged(AmbientEventArgs mode)
 }
 ```
 
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

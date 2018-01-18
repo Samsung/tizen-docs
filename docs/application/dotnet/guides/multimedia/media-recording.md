@@ -1,6 +1,5 @@
 # Media Recording
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 You can use basic recorder features, including an audio and video recorder.
 
@@ -31,7 +30,7 @@ To enable your application to use the media recording functionality:
 
 1.  To use the audio and video recorders, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <privileges>
        <!--Needed for audio and video recorder-->
        <privilege>http://tizen.org/privilege/recorder</privilege>
@@ -42,12 +41,12 @@ To enable your application to use the media recording functionality:
 
 2.  To use the methods and properties of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) and [Tizen.Multimedia.Recorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Recorder.html) classes, include the [Tizen.Multimedia](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html) namespace in your application:
 
-    ``` 
+    ```
     using Tizen.Multimedia;
     ```
 
 <a name="prepare_audio"></a>
-## Preparing the Audio Recorder 
+## Preparing the Audio Recorder
 
 1.  Create an instance of the [Tizen.Multimedia.AudioRecorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AudioRecorder.html) class, and pass the audio codec and file format of the recording as parameters.
 
@@ -55,7 +54,7 @@ To enable your application to use the media recording functionality:
 
     Set the correct file format based on the audio codec. For example, if you set the codec to `RecorderAudioCodec.Aac`, set the file format to `RecorderFileFormat.ThreeGp`.
 
-    ``` 
+    ```
     AudioRecorder audioRecorder = new AudioRecorder(RecorderAudioCodec.Aac, RecorderFileFormat.ThreeGp);
     ```
 
@@ -63,7 +62,7 @@ To enable your application to use the media recording functionality:
 
 2.  Set various audio recorder settings, such as the file size limit, encoder bitrate, and audio device and sample rate:
 
-    ``` 
+    ```
     /// Set the maximum file size to 1024 (kB)
     audioRecorder.SizeLimit = 1024;
 
@@ -85,7 +84,7 @@ To enable your application to use the media recording functionality:
 3.  To receive a notification whenever the audio recorder state changes:
     1.  Register an event handler for the `StateChanged` event of the `Tizen.Multimedia.Recorder` class:
 
-        ``` 
+        ```
         audioRecorder.StateChanged += OnStateChanged;
         ```
 
@@ -93,7 +92,7 @@ To enable your application to use the media recording functionality:
 
         The following example prints the previous and current audio recorder states:
 
-        ``` 
+        ```
         void OnStateChanged(object sender, RecorderStateChangedEventArgs e)
         {
             Tizen.Log.Info(LogTag, $"Previous state = {e.PreviousState }, Current State = {e.CurrentState}");
@@ -103,7 +102,7 @@ To enable your application to use the media recording functionality:
 4.  To receive a notification when the audio recorder reaches its recording limit:
     1.  Register an event handler for the `RecordingLimitReached` event of the `Tizen.Multimedia.Recorder` class:
 
-        ``` 
+        ```
         audioRecorder.RecordingLimitReached += OnRecordingLimitReached;
         ```
 
@@ -111,7 +110,7 @@ To enable your application to use the media recording functionality:
 
         The following example prints the type of the reached recording limit:
 
-        ``` 
+        ```
         void OnRecordingLimitReached(object sender, RecordingLimitReachedEventArgs e)
         {
             Tizen.Log.Info(LogTag, $"Limit type = {e.Type}");
@@ -119,13 +118,13 @@ To enable your application to use the media recording functionality:
         ```
 
 <a name="record_audio"></a>
-## Recording Audio 
+## Recording Audio
 
 To record audio:
 
 1.  Prepare the audio recorder by calling the `Prepare()` method of the [Tizen.Multimedia.Recorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Recorder.html) class:
 
-    ``` 
+    ```
     audioRecorder.Prepare();
     ```
 
@@ -133,7 +132,7 @@ To record audio:
 
 2.  Start recording audio by using the `Start()` method. Based on the file format you have set for the recorder, define an applicable file name and pass the full path with the file name as a parameter to the method.
 
-    ``` 
+    ```
     audioRecorder.Start(savePath);
     ```
 
@@ -144,7 +143,7 @@ To record audio:
 3.  To pause and resume recording:
     1.  Pause the recording using the `Pause()` method:
 
-        ``` 
+        ```
         audioRecorder.Pause();
         ```
 
@@ -152,7 +151,7 @@ To record audio:
 
     2.  Resume the recording using the `Resume()` method:
 
-        ``` 
+        ```
         audioRecorder.Resume();
         ```
 
@@ -162,13 +161,13 @@ To record audio:
 
     1.  To stop the recording and save the recorded data, use the `Commit()` method:
 
-        ``` 
+        ```
         audioRecorder.Commit();
         ```
 
     2.  To stop the recording and discard the recorded data, use the `Cancel()` method:
 
-        ``` 
+        ```
         audioRecorder.Cancel();
         ```
 
@@ -176,7 +175,7 @@ To record audio:
 
 5.  After you have finished recording, reset the audio recorder using the `Unprepare()` method and deregister all recorder event handlers:
 
-    ``` 
+    ```
     /// Reset the recorder
     audioRecorder.Unprepare();
     /// Deregister event handlers
@@ -195,7 +194,7 @@ To initialize the video recorder for use:
 
     Create an instance of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class and set the display of the camera to the `NativeView` property of the `Tizen.Xamarin.Forms.Extension.MediaView` instance:
 
-    ``` 
+    ```
     /// Create a MediaView object and set the display of camera
     var formMediaView = new Tizen.Xamarin.Forms.Extension.MediaView();
     var camera = new Camera(CameraDevice.Rear);
@@ -207,7 +206,7 @@ To initialize the video recorder for use:
     -   To check which video codecs the device supports, use the `GetSupportedVideoCodecs()` method of the [Tizen.Multimedia.Recorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Recorder.html) class. The possible video codec values are defined in the [Tizen.Multimedia.RecorderVideoCodec](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.RecorderVideoCodec.html) enumeration.
     -   To check which file formats the device supports, use the `GetSupportedFileFormats()` method of the `Tizen.Multimedia.Recorder` class. The possible file format values are defined in the [Tizen.Multimedia.RecorderFileFormat](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.RecorderFileFormat.html) enumeration.
 
-    ``` 
+    ```
     var videoCodec = VideoRecorder.GetSupportedVideoCodecs().FirstOrDefault();
     var fileFormat = VideoRecorder.GetSupportedFileFormats().FirstOrDefault();
     ```
@@ -216,7 +215,7 @@ To initialize the video recorder for use:
 
     Make sure the file format matches the video codec.
 
-    ``` 
+    ```
     var videoRecorder = new VideoRecorder(camera, videoCodec, fileFormat);
     ```
 
@@ -224,7 +223,7 @@ To initialize the video recorder for use:
 
 4.  Set various video recorder settings, such as the file size limit, video/audio encoder bitrate, video motion rate, audio sample rate, and resolution:
 
-    ``` 
+    ```
     /// Set the maximum file size to 1024 (kB)
     videoRecorder.SizeLimit = 1024;
 
@@ -245,7 +244,7 @@ To initialize the video recorder for use:
 
     1.  Register an event handler for the `RecordingLimitReached` event of the `Tizen.Multimedia.Recorder` class:
 
-        ``` 
+        ```
         videoRecorder.RecordingLimitReached += OnRecordingLimitReached;
         ```
 
@@ -253,7 +252,7 @@ To initialize the video recorder for use:
 
         The following example prints the type of the reached recording limit:
 
-        ``` 
+        ```
         void OnRecordingLimitReached(object sender, RecordingLimitReachedEventArgs e)
         {
             Tizen.Log.Info(LogTag, $"Limit type = {e.Type}");
@@ -269,7 +268,7 @@ To record video:
 
 1.  Prepare the video recorder by calling the `Prepare()` method of the [Tizen.Multimedia.Recorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Recorder.html) class:
 
-    ``` 
+    ```
     videoRecorder.Prepare();
     ```
 
@@ -277,7 +276,7 @@ To record video:
 
 2.  Start recording video by using the `Start()` method. Based on the file format you have set for the recorder, define an applicable file name and pass the full path with the file name as a parameter to the method.
 
-    ``` 
+    ```
     videoRecorder.Start(SavePath);
     ```
 
@@ -288,7 +287,7 @@ To record video:
 3.  To pause and resume recording:
     1.  Pause the recording using the `Pause()` method:
 
-        ``` 
+        ```
         videoRecorder.Pause();
         ```
 
@@ -296,7 +295,7 @@ To record video:
 
     2.  Resume the recording using the `Resume` method:
 
-        ``` 
+        ```
         videoRecorder.Resume();
         ```
 
@@ -306,13 +305,13 @@ To record video:
 
     1.  To stop the recording and save the recorded data, use the `Commit()` method:
 
-        ``` 
+        ```
         videoRecorder.Commit();
         ```
 
     2.  To stop the recording and discard the recorded data, use the `Cancel()` method:
 
-        ``` 
+        ```
         videoRecorder.Cancel();
         ```
 
@@ -320,7 +319,7 @@ To record video:
 
 5.  After you have finished recording, reset the video recorder using `Unprepare()` method and deregister all recorder event handlers:
 
-    ``` 
+    ```
     /// Reset the recorder
     videoRecorder.Unprepare();
     /// Deregister event handler
@@ -328,3 +327,8 @@ To record video:
     ```
 
     The video recorder state changes to `Idle`.
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

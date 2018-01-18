@@ -1,6 +1,5 @@
 # Media Content and Metadata
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 The media content and metadata features introduce how you can handle media content and its metadata in your application. You can manage and search for various media content on the device, such as media files, bookmarks, albums, and playlists. You can also access the MIME type information, and extract and edit the metadata of the media files.
 
@@ -13,3 +12,7 @@ You can use the following media content and metadata features in your .NET appli
 -   [Metadata](metadata.md)
 
     You can manage audio file attributes, extract metadata from media files, and retrieve various information related to the MIME type.
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

@@ -1,6 +1,5 @@
 # Telephony Information
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 Through the telephony service, you can access various telephony features, such as call, SIM, network, and modem information.
 
@@ -46,7 +45,7 @@ To enable your application to use the telephony functionality:
 
 1.  To use the [Tizen.Telephony](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <privileges>
         <privilege>http://tizen.org/privilege/telephony</privilege>
         <privilege>http://tizen.org/privilege/location.coarse</privilege>
@@ -57,7 +56,7 @@ To enable your application to use the telephony functionality:
 
     In a dual-SIM scenario, the method returns a separate handle for each SIM card. The `handle[0]` instance means the primary SIM and `handle[1]` means the secondary SIM. To send call, network, modem, or SIM card requests to a specific subscription (SIM card), use the applicable handle.
 
-    ``` 
+    ```
     IEnumerable<SlotHandle> simList = Manager.Init();
     ICollection<SlotHandle> c = simList as ICollection<SlotHandle>;
     for (int i = 0; i < c.Count; i++)
@@ -68,19 +67,19 @@ To enable your application to use the telephony functionality:
 
 3.  When no longer needed, deinitialize the slot handles:
 
-    ``` 
+    ```
     IEnumerable<SlotHandle> simList = Manager.Deinit();
     ```
 
 <a name="call_use"></a>
-## Retrieving Call Information 
+## Retrieving Call Information
 
 To get information about the current call and monitor when the user makes a voice or video call or hangs up the phone, use the [Tizen.Telephony.Call](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.Call.html) class:
 
 -   Get the current call information:
     1.  To get the current call list, retrieve the current call handle with the `GetCallHandleList()` method:
 
-        ``` 
+        ```
         IEnumerable<SlotHandle> simList = Manager.Init();
         Call _call = new Call(simList.ElementAt(0));
         IEnumerable<CallHandle> _list = _call.GetCallHandleList();
@@ -88,7 +87,7 @@ To get information about the current call and monitor when the user makes a voic
 
     2.  Use the handle to retrieve the call information you need (such as handle ID, number, type, status, direction, and conference status):
 
-        ``` 
+        ```
         foreach (CallHandle CallHandle in _list)
         {
             Log.Info(Globals.LogTag, "handleid = " + CallHandle.HandleId);
@@ -105,7 +104,7 @@ To get information about the current call and monitor when the user makes a voic
 
         You must register the callback separately for each call state, using the applicable `VoiceCallXXX` or `VideoCallXXX` notification value in the `SetNotificationID()` method parameter. The available values are defined in the [Tizen.Telephony.ChangeNotificationEventArgs.Notification](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.ChangeNotificationEventArgs.Notification.html) enumeration.
 
-        ``` 
+        ```
         void RegisterCallbackNotification()
         {
             List<ChangeNotificationEventArgs.Notification> list = new List<ChangeNotificationEventArgs.Notification>();
@@ -122,7 +121,7 @@ To get information about the current call and monitor when the user makes a voic
 
     2.  Define the callback:
 
-        ``` 
+        ```
         private ChangeNotificationEventArgs.Notification _eventType;
 
         private static void ChangeNotificationDelegate(object sender, ChangeNotificationEventArgs args)
@@ -156,7 +155,7 @@ To get information about the current call and monitor when the user makes a voic
 
     3.  When the notifications are no longer needed, deregister the callback for each call state with the `RemoveNotificationId()` method:
 
-        ``` 
+        ```
         simList.ElementAt(0).RemoveNotificationId(list);
         ```
 
@@ -173,7 +172,7 @@ To retrieve information from a SIM card and monitor when the SIM state changes, 
 -   Get SIM card details:
     1.  Retrieve the SIM card state with the `CurrentState` property of the `Tizen.Telephony.Sim` class. It returns the SIM state using the values of the [Tizen.Telephony.Sim.State](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.Sim.State.html) enumeration.
 
-        ``` 
+        ```
         IEnumerable<SlotHandle> simList = Manager.Init();
         Sim _sim = new Sim(simList.ElementAt(0));
         Log.Info(Globals.LogTag, "State = " + _sim.CurrentState);
@@ -181,9 +180,9 @@ To retrieve information from a SIM card and monitor when the SIM state changes, 
 
     2.  Retrieve various SIM card details, such as the ICC-ID, using the `Tizen.Telephony.Sim` instance properties:
 
-        ``` 
+        ```
         Log.Info(Globals.LogTag, "Iccid = " + _sim.IccId);
-   
+
      ```
 
 -   Monitor SIM state changes:
@@ -191,7 +190,7 @@ To retrieve information from a SIM card and monitor when the SIM state changes, 
 
         You must register the callback separately for each SIM state, using the applicable `SimXXX` notification value in the `SetNotificationID()` method parameter. The available values are defined in the [Tizen.Telephony.ChangeNotificationEventArgs.Notification](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.ChangeNotificationEventArgs.Notification.html) enumeration.
 
-        ``` 
+        ```
         void RegisterCallbackNotification()
         {
             List<ChangeNotificationEventArgs.Notification> list = new List<ChangeNotificationEventArgs.Notification>();
@@ -203,7 +202,7 @@ To retrieve information from a SIM card and monitor when the SIM state changes, 
 
     2.  Define the callback:
 
-        ``` 
+        ```
         private static void ChangeNotificationDelegate(object sender, ChangeNotificationEventArgs args)
         {
             Log.Info(Globals.LogTag, "Sim state = " + args.NotificationData);
@@ -212,12 +211,12 @@ To retrieve information from a SIM card and monitor when the SIM state changes, 
 
     3.  When the notifications are no longer needed, deregister the callback with the `RemoveNotificationId()` method:
 
-        ``` 
+        ```
         simList.ElementAt(0).RemoveNotificationId(list);
         ```
 
 <a name="network_use"></a>
-## Retrieving Network Information 
+## Retrieving Network Information
 
 To retrieve current cellular network and telephony service details, and monitor when the network service state changes, use the [Tizen.Telephony.Network](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.Network.html) class.
 
@@ -231,7 +230,7 @@ To retrieve current cellular network and telephony service details, and monitor 
 -   Get network details:
     1.  Retrieve the network state with the `NetworkServiceState` property of the `Tizen.Telephony.Network` class. It returns the network service state using the values of the [Tizen.Telephony.Network.ServiceState](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.Network.ServiceState.html) enumeration.
 
-        ``` 
+        ```
         IEnumerable<SlotHandle> simList = Manager.Init();
         Network _network = new Network(simList.ElementAt(0));
         Log.Info(Globals.LogTag, "State = " + _network.NetworkServiceState);
@@ -239,7 +238,7 @@ To retrieve current cellular network and telephony service details, and monitor 
 
     2.  Retrieve various network details, such as the cell ID and MNC information, using the `Tizen.Telephony.Network` instance properties:
 
-        ``` 
+        ```
         Log.Info(Globals.LogTag, "CellId = " + _network.CellId);
         Log.Info(Globals.LogTag, "Mnc = " + _network.Mnc);
         ```
@@ -249,7 +248,7 @@ To retrieve current cellular network and telephony service details, and monitor 
 
         You must register the callback separately for each service state, using the applicable `NetworkXXX` notification value in the `SetNotificationID()` method parameter. The available values are defined in the [Tizen.Telephony.ChangeNotificationEventArgs.Notification](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.ChangeNotificationEventArgs.Notification.html) enumeration.
 
-        ``` 
+        ```
         void RegisterCallbackNotification()
         {
             List<ChangeNotificationEventArgs.Notification> list = new List<ChangeNotificationEventArgs.Notification>();
@@ -261,7 +260,7 @@ To retrieve current cellular network and telephony service details, and monitor 
 
     2.  Define the callback:
 
-        ``` 
+        ```
         private static void ChangeNotificationDelegate(object sender, ChangeNotificationEventArgs args)
         {
             Log.Info(Globals.LogTag, "Network service state = " + args.NotificationData);
@@ -270,7 +269,7 @@ To retrieve current cellular network and telephony service details, and monitor 
 
     3.  When the notifications are no longer needed, deregister the callback for each service state with the `RemoveNotificationId()` method:
 
-        ``` 
+        ```
         simList.ElementAt(0).RemoveNotificationId(list);
         ```
 
@@ -279,9 +278,13 @@ To retrieve current cellular network and telephony service details, and monitor 
 
 To access information about the modem, such as its IMEI, use the [Tizen.Telephony.Modem](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.Modem.html) class:
 
-``` 
+```
 IEnumerable<SlotHandle> simList = Manager.Init();
 Modem _modem = new Modem(simList.ElementAt(0));
 Log.Info(Globals.LogTag, "Imei = " + _modem.Imei);
 ```
 
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

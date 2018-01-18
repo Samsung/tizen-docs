@@ -1,6 +1,5 @@
 # Attached Devices
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 You can control attached devices and monitor device changes in your application.
 
@@ -44,7 +43,7 @@ To enable your application to use the attached device control functionality:
 
 1.  To use the [Tizen.System.Display](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Display.html), [Tizen.System.Led](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Led.html), and [Tizen.System.Vibrator](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Vibrator.html) classes, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <privileges>
        <!--To use the Display class -->
        <privilege>http://tizen.org/privilege/display</privilege>
@@ -57,11 +56,11 @@ To enable your application to use the attached device control functionality:
 
 2.  To use the methods and properties of the [Tizen.System](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.html) namespace classes, include the namespace in your application:
 
-    ``` 
+    ```
     using Tizen.System;
     ```
 
-## Retrieving Battery Information 
+## Retrieving Battery Information
 
 To retrieve battery information:
 
@@ -69,7 +68,7 @@ To retrieve battery information:
 
     The property contains the current battery charge percentage as an integer value from 0 to 100 that indicates the remaining battery charge as a percentage of the maximum level.
 
-    ``` 
+    ```
     int s_Percent;
     s_Percent = Battery.Percent;
     ```
@@ -78,7 +77,7 @@ To retrieve battery information:
 
     The property contains the device battery charging state as `TRUE` or `FALSE`.
 
-    ``` 
+    ```
     bool charging;
     charging = Battery.IsCharging;
     ```
@@ -87,26 +86,26 @@ To retrieve battery information:
 
     The property contains the device battery level as a value of the [Tizen.System.BatteryLevelStatus](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.BatteryLevelStatus.html) enumeration.
 
-    ``` 
+    ```
     BatteryLevelStatus status;
     status = Battery.Level;
     ```
 
 <a name="display"></a>
-## Controlling the Display 
+## Controlling the Display
 
 To retrieve and set display properties:
 
 -   Get the number of display devices with the `NumberOfDisplays` property of the [Tizen.System.Display](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Display.html) class:
 
-    ``` 
+    ```
     int num;
     num = Display.NumberOfDisplays;
     ```
 
 -   Get the maximum possible brightness with the `MaxBrightness` property:
 
-    ``` 
+    ```
     Display dis = Display.Displays[0];
 
     int maxBrightness = dis.MaxBrightness;
@@ -114,7 +113,7 @@ To retrieve and set display properties:
 
 -   Get and set the display brightness with the `Brightness` property:
 
-    ``` 
+    ```
     Display dis = Display.Displays[0];
 
     int curBrightness = 0;
@@ -126,19 +125,19 @@ To retrieve and set display properties:
 
     The property contains the display state as a value of the [Tizen.System.DisplayState](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.DisplayState.html) enumeration.
 
-    ``` 
+    ```
     DisplayState state;
     state = Display.State;
     ```
 
 <a name="haptic"></a>
-## Controlling Haptic Devices 
+## Controlling Haptic Devices
 
 To control haptic devices:
 
 -   Get the number of haptic devices with the `NumberOfVibrators` property of the [Tizen.System.Vibrator](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Vibrator.html) class:
 
-    ``` 
+    ```
     int num;
     num = Vibrator.NumberOfVibrators;
     ```
@@ -147,7 +146,7 @@ To control haptic devices:
 
     The device vibrates for a specified time with a constant intensity. The effect handle can be 0.
 
-    ``` 
+    ```
     Vibrator vib = Vibrator.Vibrators[0];
     vib.Vibrate(3000, 50);
 
@@ -155,20 +154,20 @@ To control haptic devices:
     ```
 
 <a name="ir"></a>
-## Controlling IR Devices 
+## Controlling IR Devices
 
 To control an IR device:
 
 1.  Determine whether IR is available on the device using the `IsAvailable` property of the [Tizen.System.IR](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.IR.html) class:
 
-    ``` 
+    ```
     bool test;
     test = IR.IsAvailable;
     ```
 
 2.  Transmit an IR pattern with a specific carrier frequency using the `Transmit()` method:
 
-    ``` 
+    ```
     List<int> pattern = new List<int>();
     pattern.Add(10);
     pattern.Add(50);
@@ -176,19 +175,19 @@ To control an IR device:
     ```
 
 <a name="led"></a>
-## Controlling LED Devices 
+## Controlling LED Devices
 To control LEDs on the device:
 
 -   Get the maximum brightness value of a camera flash LED with the `MaxBrightness` property of the [Tizen.System.Led](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Led.html) class:
 
-    ``` 
+    ```
     int test;
     test = Led.MaxBrightness;
     ```
 
 -   Get and set the current brightness value of a camera flash LED with the `Brightness` property:
 
-    ``` 
+    ```
     int test;
     test = Led.Brightness;
 
@@ -197,7 +196,7 @@ To control LEDs on the device:
 
 -   Play and stop a custom effect on the service LED that is located on the front of the device with the `Play()` and `Stop()` methods:
 
-    ``` 
+    ```
     var t = Task.Run(async delegate
     {
         await Task.Delay(1000);
@@ -212,7 +211,7 @@ To control LEDs on the device:
     ```
 
 <a name="power"></a>
-## Controlling the Power State 
+## Controlling the Power State
 
 To lock and unlock the CPU state:
 
@@ -220,13 +219,13 @@ To lock and unlock the CPU state:
 
     The method locks the CPU for a specified time. After the given time (in milliseconds), the lock is unlocked. If the process is destroyed, every lock is removed.
 
-    ``` 
+    ```
     Power.RequestCpuLock(2000);
     ```
 
 -   Unlock the power state with the `ReleaseCpuLock()` method:
 
-    ``` 
+    ```
     Power.ReleaseCpuLock();
     ```
 
@@ -244,7 +243,7 @@ To manage device display status change events:
 
 1.  Define an event handler:
 
-    ``` 
+    ```
     public static void DisplayEventHandler()
     {
         EventHandler<DisplayStateChangedEventArgs> handler = null;
@@ -255,12 +254,17 @@ To manage device display status change events:
 
 2.  Register the event handler for the `StateChanged` event of the `Tizen.System.Display` class:
 
-    ``` 
+    ```
     Display.StateChanged += handler;
     ```
 
 3.  When no longer needed, deregister the event handler:
 
-    ``` 
+    ```
     Display.StateChanged -= handler;
     ```
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

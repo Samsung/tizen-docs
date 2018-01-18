@@ -1,6 +1,5 @@
 # Media Playback
-## Dependencies
-- Tizen 4.0 and Higher
+
 
 You can play different audio formats and video in your application.
 
@@ -33,7 +32,7 @@ The main media playback features are:
 Before you start, [set up the player](#prepare).
 
 <a name="audio"></a>
-## Audio Player 
+## Audio Player
 
 You can [play audio](#play_audio) and control functions for using audio resources. The resources can be media files stored on the device in a file or memory, or they can be streamed from a streaming server (defined with a URI) through the network.
 
@@ -50,7 +49,7 @@ The following figure illustrates the general player state changes.
 The `PlaybackInterrupted` event of the [Tizen.Multimedia.Player](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Player.html) class is triggered when the application is interrupted by another application. The player is paused or moved to the `Idle` state according to the audio session manager (ASM) policy. You must check the state of the current instance and take appropriate action.
 
 <a name="video"></a>
-## Video Player 
+## Video Player
 
 Tizen enables your application to [play video](#play_video), and it uses its own user surface. The surface requires a drawing area, so you have to get an overlay region and set it to the player instance to display the drawing area:
 
@@ -143,7 +142,7 @@ The following table lists the streaming protocol features supported by the playe
 | Real Time Streaming Protocol (RTSP) | RTSP Streaming                 |
 
 <a name="wav"></a>
-## WAV Player 
+## WAV Player
 
 The [Tizen.Multimedia.WavPlayer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.WavPlayer.html) class allows you to play audio resources (media files stored on the device). Use it to [play audio and control playback](#start_wav). You can use the WAV and OGG audio formats.
 
@@ -159,29 +158,29 @@ To play tones, use a DTMF (Dual Tone Multi Frequency) preset frequency. The poss
 You can [start and stop playing a tone](#play_tone), and [play a tone for a specified duration](#duration).
 
 ## Prerequisites
--------------
+
 
 To use the methods and properties of the media playback classes, include the [Tizen.Multimedia](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html) namespace in your application:
 
-``` 
+```
 using Tizen.Multimedia;
 ```
 
 <a name="prepare"></a>
-## Preparing the Player 
+## Preparing the Player
 
 To initialize the player for use:
 
 1.  Create a instance of the [Tizen.Multimedia.Player](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Player.html) class:
 
-    ``` 
+    ```
     var player = new Player();
     ```
 
 2. To receive notifications, add event handlers to the appropriate events of the `Tizen.Multimedia.Player` class:
     -   To receive notifications about playback interruptions, register an event handler for the `PlaybackInterrupted` event:
 
-        ``` 
+        ```
         player.PlaybackInterrupted += (object sender, PlaybackInterruptedEventArgs e)
         {
             Tizen.Log.Info(LogTag, $"Current player state is {player.State}");
@@ -193,7 +192,7 @@ To initialize the player for use:
 
     - To receive a notification when the playback ends, register an event handler for the `PlaybackCompleted` event:
 
-        ``` 
+        ```
         player.PlaybackCompleted += (object sender, EventArgs e)
         {
            Tizen.Log.Info(LogTag, "Playback End");
@@ -202,7 +201,7 @@ To initialize the player for use:
 
     - To receive notifications about player errors during playback, register an event handler for the `ErrorOccurred` event:
 
-        ``` 
+        ```
         player.ErrorOccurred += (object sender, PlayerErrorOccurredEventArgs e)
         {
             Tizen.Log.Error(LogTag, $"Playback failed, error = {e.Error}");
@@ -218,13 +217,13 @@ To play an audio file:
 
 1.  After creating the player, specify the audio file to play by creating an instance of the [Tizen.Multimedia.MediaUriSource](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MediaUriSource.html) class with the path to the audio file, and setting that as the `Source` property of the [Tizen.Multimedia.Player](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Player.html) class instance you want to play the file with:
 
-    ``` 
+    ```
     player.Source = new MediaUriSource(audioPath);
     ```
 
 2. Prepare the player for playback using the `PrepareAsync()` method of the `Tizen.Multimedia.Player` class:
 
-    ``` 
+    ```
     await player.PrepareAsync();
     ```
 
@@ -232,20 +231,20 @@ To play an audio file:
 
 3. Start playing the audio file using the `Start()` method:
 
-    ``` 
+    ```
     player.Start();
     ```
 
     This changes the player state from `Ready` to `Playing`. The audio file plays until you call the `Stop()` or `Pause()` method.
 
 <a name="play_video"></a>
-## Playing a Video File 
+## Playing a Video File
 
 To play a video file:
 
 1.  After creating the player, specify the video file to play by creating an instance of the [Tizen.Multimedia.MediaUriSource](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MediaUriSource.html) class with the path to the audio file, and setting that as the `Source` property of the [Tizen.Multimedia.Player](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Player.html) class instance you want to play the file with:
 
-    ``` 
+    ```
     player.Source = new MediaUriSource(videoPath);
     ```
 
@@ -253,7 +252,7 @@ To play a video file:
 
     For example, to set the display on a Xamarin-based application, first create an instance of the [Tizen.Xamarin.Forms.Extension.MediaView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Xamarin.Forms.Extension.MediaView.html) class, cast it to an instance of the [Tizen.Multimedia.MediaView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MediaView.html) class, and finally set that instance as the `Display` property:
 
-    ``` 
+    ```
     var mediaView = new Tizen.Xamarin.Forms.Extension.MediaView();
 
     mediaView.NativeViewCreated += (s, e) =>
@@ -264,7 +263,7 @@ To play a video file:
 
 3. Prepare the player for playback using the `PrepareAsync()` method of the `Tizen.Multimedia.Player` class:
 
-    ``` 
+    ```
     await player.PrepareAsync();
     ```
 
@@ -272,7 +271,7 @@ To play a video file:
 
 4. Play the video file, using the `Start()` method:
 
-    ``` 
+    ```
     player.Start();
     ```
 
@@ -285,20 +284,20 @@ To stop and reset the player:
 
 1.  Stop the player using the `Stop()` method of the [Tizen.Multimedia.Player](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Player.html) class:
 
-    ``` 
+    ```
     player.Stop();
     ```
 
 2. Reset the player using the `Unprepare()` method:
 
-    ``` 
+    ```
     player.Unprepare();
     ```
 
     After the player is reset, it is in the `Idle` state.
 
 <a name="set_parameters"></a>
-## Configuring the Video Playback Display 
+## Configuring the Video Playback Display
 
 You set the display parameters of a video file with the `DisplaySettings` property of the [Tizen.Multimedia.Player](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Player.html) class, which takes an instance of the [Tizen.Multimedia.PlayerDisplaySettings](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.PlayerDisplaySettings.html) class as its value:
 
@@ -306,13 +305,13 @@ You set the display parameters of a video file with the `DisplaySettings` proper
 2. To make the display visible:
     1.  Check whether the display is already visible using the `IsVisible` property of the `Tizen.Multimedia.PlayerDisplaySettings` class:
 
-        ​``` 
+        ​```
         Tizen.Log.Info(LogTag, $"Display visible = {player.DisplaySettings.IsVisible}");
         ​```
 
     2.  If the display is not visible, make it visible by setting the `IsVisible` property to `true`:
 
-        ​``` 
+        ​```
         if (player.DisplaySettings.IsVisible == false)
         {
             player.DisplaySettings.IsVisible = true;
@@ -321,13 +320,13 @@ You set the display parameters of a video file with the `DisplaySettings` proper
 
 3. Set the display mode using the `Mode` property, which takes the display mode as a value of the [Tizen.Multimedia.PlayerDisplayMode](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.PlayerDisplayMode.html) enumeration:
 
-    ``` 
+    ```
     player.DisplaySettings.Mode = PlayerDisplayMode.FullScreen;
     ```
 
 4. Set the display rotation using the `Rotation` property, which takes the display rotation as a value of the [Tizen.Multimedia.Rotation](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Rotation.html) enumeration:
 
-    ``` 
+    ```
     player.DisplaySettings.Rotation = Rotation.Rotate90;
     ```
 
@@ -347,7 +346,7 @@ To retrieve information about the audio and video streams:
 
         Retrieve the total media running time (in milliseconds) using the `GetDuration()` method of the [Tizen.Multimedia.StreamInfo](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.StreamInfo.html) class:
 
-        ``` 
+        ```
         Tizen.Log.Info(LogTag, $"Duration = {player.StreamInfo.GetDuration()}");
         ```
 
@@ -355,7 +354,7 @@ To retrieve information about the audio and video streams:
 
         Retrieve the audio stream details using the `GetAudioProperties()` method. The method returns an instance of the [Tizen.Multimedia.AudioStreamProperties](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AudioStreamProperties.html) struct containing the audio sample rate (in Hz), number of audio channels (1 for mono or 2 for stereo), and audio bit rate (in Hz).
 
-        ``` 
+        ```
         var audioProperties = player.StreamInfo.GetAudioProperties();
 
         Tizen.Log.Info(LogTag, $"Sample rate = {audioProperties.SampleRate}, Channels = {audioProperties.Channels}, Bit rate = {audioProperties.BitRate}");
@@ -365,7 +364,7 @@ To retrieve information about the audio and video streams:
 
         Retrieve the video stream details using the `GetVideoProperties()` method. The method returns an instance of the [Tizen.Multimedia.VideoStreamProperties](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.VideoStreamProperties.html) struct containing the video size, number of frames per second, and video bit rate (in Hz).
 
-        ``` 
+        ```
         var videoProperties = player.StreamInfo.GetVideoProperties();
 
         Tizen.Log.Info(LogTag, $"Video size = {videoProperties.Size}, Fps = {videoProperties.Fps}, Bit rate = {videoProperties.BitRate}");
@@ -375,7 +374,7 @@ To retrieve information about the audio and video streams:
 
         Retrieve the audio and video codec names using the `GetAudioCodec()` and the `GetVideoCodec()` methods:
 
-        ``` 
+        ```
         Tizen.Log.Info(LogTag, $"Audio codec = {player.StreamInfo.GetAudioCodec()}");
         Tizen.Log.Info(LogTag, $"Video codec = {player.StreamInfo.GetVideoCodec()}");
         ```
@@ -384,7 +383,7 @@ To retrieve information about the audio and video streams:
 
         Retrieve information about the album, artist, author, genre, title, and year using the `GetMetadata()` method. The available metadata attributes are defined in the [Tizen.Multimedia.StreamMetadataKey](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.StreamMetadataKey.html) enumeration.
 
-        ``` 
+        ```
         Tizen.Log.Info(LogTag, $"Album = {player.StreamInfo.GetMetadata(StreamMetadataKey.Alarm)}");
         Tizen.Log.Info(LogTag, $"Artist = {player.StreamInfo.GetMetadata(StreamMetadataKey.Artist)}");
         Tizen.Log.Info(LogTag, $"Author = {player.StreamInfo.GetMetadata(StreamMetadataKey.Author)}");
@@ -397,7 +396,7 @@ To retrieve information about the audio and video streams:
 
         Retrieve the album artwork using the `GetAlbumArt()` method. The method returns the encoded artwork image.
 
-        ``` 
+        ```
         byte[] imageData = player.StreamInfo.GetAlbumArt();
         ```
 
@@ -406,7 +405,7 @@ To retrieve information about the audio and video streams:
 
 To insert subtitles to a video file, set the subtitle path using the `SetSubtitle()` method of the [Tizen.Multimedia.Player](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Player.html) class:
 
-``` 
+```
 player.SetSubtitle(subtitlePath);
 ```
 
@@ -417,7 +416,7 @@ To start and stop the WAV player:
 
 1.  To play a WAV file, use the `StartAsync()` method of the [Tizen.Multimedia.WavPlayer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.WavPlayer.html) class:
 
-    ``` 
+    ```
     await WavPlayer.StartAsync(wavPath, new AudioStreamPolicy(AudioStreamType.Media));
     ```
 
@@ -425,7 +424,7 @@ To start and stop the WAV player:
 
 2. To stop the WAV player, use the `StartAsync()` method with the `cancellationToken` parameter:
 
-    ``` 
+    ```
     var cancellationTokenSource = new CancellationTokenSource();
 
     WavPlayer.StartAsync(wavPath, new AudioStreamPolicy(AudioStreamType.Media), cancellationTokenSource);
@@ -442,13 +441,13 @@ To start and stop playing a tone:
 
     The first parameter defines the tone type as a value of the [Tizen.Multimedia.ToneType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.ToneType.html) enumeration.
 
-    ``` 
+    ```
     await TonePlayer.StartAsync(ToneType.Default, new AudioStreamPolicy(AudioStreamType.Media));
     ```
 
 2. To stop playback, use the `StartAsync()` method with the `cancellationToken` parameter:
 
-    ``` 
+    ```
     var cancellationTokenSource = new CancellationTokenSource();
 
     TonePlayer.StartAsync(ToneType.Default, new AudioStreamPolicy(AudioStreamType.Media), cancellationTokenSource);
@@ -461,6 +460,11 @@ To start and stop playing a tone:
 
 To play a tone for a specified duration, use the `StartAsync()` method of the [Tizen.Multimedia.TonePlayer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.TonePlayer.html) class with the duration parameter (the number of milliseconds you want playback to last). When you set the duration to a specified time, playback stops automatically after that time.
 
-``` 
+```
 await TonePlayer.StartAsync(ToneType.Default, new AudioStreamPolicy(AudioStreamType.Media), duration);
 ```
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

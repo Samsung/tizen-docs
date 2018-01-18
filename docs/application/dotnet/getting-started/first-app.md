@@ -9,7 +9,7 @@ application, which displays some text on the screen with no user
 interaction.
 
 1.  Before you get started with developing Tizen applications, set up
-    the [development environment](../../../vstools/install.htm).
+    the [development environment](../../vstools/install.md).
 
 2. [Create a project](#creating) using Visual Studio.
 
@@ -134,7 +134,7 @@ process performs a validation check and compiles your files. You must
 sign the application package with an author certificate when building
 the application. If you have not yet registered a Tizen certificate in
 Visual Studio, see [Certificate
-Manager](../../../vstools/tools/certificate_manager.htm).
+Manager](../../vstools/tools/certificate-manager.md).
 
 There are 2 different ways to build the application:
 
@@ -145,7 +145,7 @@ There are 2 different ways to build the application:
 Tizen .NET applications are always deployed as installed packages. The
 package files have the `.tpk` file extension, and the package generation
 is controlled by the [manifest
-file](../../../vstools/tools/manifest_editor.htm). The Visual Studio
+file](../../vstools/tools/manifest_editor.md). The Visual Studio
 template generates the manifest file (`tizen-manifest.xml`) to the top
 level of the &lt;projectname&gt;.Tizen project (if you create projects
 with mobile, TV, or wearable profiles, a separate manifest file is
@@ -180,7 +180,7 @@ To deploy and run the application on the emulator:
     **Launch**.
 
     If no applicable emulator instance exists, [create
-    one](../../../vstools/tools/emulator_manager.htm#create).
+    one](../../vstools/tools/emulator-manager.md#create).
 
     ![Tizen Emulator
     Manager](media/cs_first_building_emulator_manager.png)

@@ -1,7 +1,5 @@
 # Animation
-## Dependencies
 
--   Tizen 4.0 and Higher
 
 You can use animation to allow your objects to move around and change their properties for a specified duration.
 
@@ -17,13 +15,13 @@ The following figure shows the NUI class hierarchy. The `Animatable` class conta
 
 To implement a basic animation, create an animation object that takes place over 2 seconds:
 
-``` 
+```
 _animation = new Animation( 2000 );
 ```
 
 alternatively,
 
-``` 
+```
 _animation = new Animation
 {
     Duration = 2000;
@@ -31,7 +29,7 @@ _animation = new Animation
 ```
 
 <a name="animatableproperties"></a>
-## Animatable Properties 
+## Animatable Properties
 
 Some View properties are "animatable", such as `Position`, `Orientation`, `Scale`, and `Color`. For "standard" controls, you can query whether a property is animatable, using `IsPropertyAnimatable()`, but cannot change the animatable state.
 
@@ -40,7 +38,7 @@ You can set a property to "animatable" in the derived classes of custom view con
 For more information, see [Properties in Custom Views](creating-custom-view-controls.md#properties) and [Creating Transitions](creating-custom-view-controls.md#creatingtransitions), which describes the animatable 'Scriptable Properties'.
 
 <a name="animatingproperties"></a>
-## Animating Properties 
+## Animating Properties
 
 To animate the properties within NUI, you can use 2 distinct methods:
 
@@ -49,7 +47,7 @@ To animate the properties within NUI, you can use 2 distinct methods:
 
 In the following example, `view1` and `view2` are at the position 10.0f, 10.0f, 0.0f at the start of the animation.
 
-``` 
+```
 // Animate the position of view1 TO 10.0f, 50.0f, 0.0f
 animation.AnimateTo( view1, "Position", Vector3(10.0f, 50.0f, 0.0f) );  // End position: 10.0f, 50.0f, 0.0f
 
@@ -59,7 +57,7 @@ animation.AnimateBy( view2, "Position", Vector3(10.0f, 50.0f, 0.0f) );  // End p
 
 Another example taken from the working example in this tutorial:
 
-``` 
+```
 _animation.AnimateTo(_text, "Orientation", new Rotation(new Radian(new Degree(180.0f)), PositionAxis.X), 0, 500, new AlphaFunction(AlphaFunction.BuiltinFunctions.EaseInOutSine));
 _animation.AnimateTo(_text, "Orientation", new Rotation(new Radian(new Degree(0.0f)), PositionAxis.X), 500, 1000, new AlphaFunction(AlphaFunction.BuiltinFunctions.EaseInOutSine));
 
@@ -69,52 +67,52 @@ _animation.AnimateBy(_text, "ScaleY", 4.0f, 1500, 2000);
 
 Properties can also be passed to an animation method through the `property` class instantiation:
 
-``` 
+```
 _animation.AnimateTo(new Property(_text, View.Property.ORIENTATION), new Property.Value(new Rotation(new Radian(new Degree(180.0f)), ...
 ```
 
 For a description of the parameters, see [Animation Class Methods](#animationclassmethods).
 
 <a name="control"></a>
-## Controlling Playback 
+## Controlling Playback
 
 After the animation is created, you can play it:
 
 -   To play the animation:
 
-    ``` 
+    ```
     animation.Play();
     ```
 
 - To pause or stop the animation:
 
-    ``` 
+    ```
     animation.Pause();
     animation.Stop();
     ```
 
 - To loop the animation to play multiple times:
 
-    ``` 
+    ```
     animation.Looping = true;
     ```
 
 - By default, when the animation ends, the properties that it was animating are baked (saved). To discard the property changes when the animation ends or is stopped:
 
-    ``` 
+    ```
     animation.EndAction = Animations.EndActions.Discard;
     ```
 
 <a name="notifications"></a>
-## Using Notifications 
+## Using Notifications
 
 The application can be notified when the animation finishes:
 
-``` 
+```
 _animation.Finished += AnimationFinished;
 ```
 
-``` 
+```
 public void AnimationFinished(object sender, EventArgs e)
 {
     Tizen.Log.Debug("NUI", "AnimationFinished()");
@@ -123,20 +121,20 @@ public void AnimationFinished(object sender, EventArgs e)
 
 The application can be notified when the animation has reached a specific percentage progress:
 
-``` 
+```
 _animation.ProgressNotification = 0.5; // Trigger the 'progress reached' event at 50% of animation time
 
 _animation.ProgressReached += progressReached;
 ```
 
 <a name="alphafunctions"></a>
-## Using Alpha Functions 
+## Using Alpha Functions
 
 Alpha functions are used in animations to specify the rate of change of the animation parameter over time. This allows the animation to be, for example, accelerated, decelerated, repeated, or bounced. The built-in supported functions can be viewed in the `AlphaFunction` class.
 
 You can specify a different alpha function for each animator in an Animation object:
 
-``` 
+```
 animation.AnimateTo(view1, "Position", Vector3(10.0f, 50.0f, 0.0f), new AlphaFunction.BuiltinFunctions.Linear);
 ```
 
@@ -144,7 +142,7 @@ The `AnimateTo()` parameters are described in [Animation Class Methods](#animati
 
 The built-in alpha functions are:
 
-``` 
+```
 public enum BuiltinFunction
 {
     Default,
@@ -171,7 +169,7 @@ You can also create your own alpha function in 2 ways:
 
 -   By setting the default alpha function:
 
-    ``` 
+    ```
     float alphafunc(float progress)
     {
         if ( (progress > 0.2f) && (progress < 0.7f) )
@@ -188,7 +186,7 @@ You can also create your own alpha function in 2 ways:
 
 - By using delegates:
 
-    ``` 
+    ```
     private UserAlphaFunctionDelegate _user_alpha_func;
 
     // Declare user alpha function delegate
@@ -201,7 +199,7 @@ You can also create your own alpha function in 2 ways:
     ```
 
 <a name="animationtypes"></a>
-## Animation Types 
+## Animation Types
 
 NUI supports key frame and path animations.
 
@@ -209,7 +207,7 @@ NUI supports key frame and path animations.
 
 NUI supports animating between several different values, or key frames. A key frame takes a progress value between 0.0f and 1.0f (0 and 100%, respectively) and portrays the value of the property when the animation has progressed that much. You can create several key frames:
 
-``` 
+```
 KeyFrames keyFrames = new KeyFrames();
 keyFrames.Add( 0.0f, new Vector3( 10.0f, 10.0f, 10.0f ) );
 keyFrames.Add( 0.7f, new Vector3( 200.0f, 200.0f, 200.0f ) );
@@ -218,7 +216,7 @@ keyFrames.Add( 1.0f, new Vector3( 100.0f, 100.0f, 100.0f ) );
 
 Next, you can add the key frames to your animation.
 
-``` 
+```
 animation.AnimateBetween( view1, "Position", keyFrames );
 ```
 
@@ -228,7 +226,7 @@ The advantage of specifying a key frame at 0% is that regardless of where the `v
 
 The following comprehensive example of key frame use is taken from `FocusEffect.cs`:
 
-``` 
+```
 focusData.ImageItem.Size = new Size(100.0f, 100.0f, 0.0f);
 parentItem.Add(focusData.ImageItem);
 
@@ -262,7 +260,7 @@ The black points in the following figure are points where the DALi logo travels 
 
 The following code presents the black points:
 
-``` 
+```
 Animation animation = new Animation();
 
 Path path = new Path();
@@ -273,7 +271,7 @@ path.AddPoint( new Position( 10.0f, 90.0f, 0.0f ));
 
 The control points can be added manually using `AddControlPoint()`. `Path` can also auto-generate the control points for you:
 
-``` 
+```
 path.GenerateControlPoints(0.25f);
 ```
 
@@ -281,7 +279,7 @@ Here `0.25f` represents the curvature of the required path. The generated contro
 
 To animate `view1` along this path:
 
-``` 
+```
 animation.Animate( view1, path, new Position(0.0f, 0.0f, 0.0f) );
 ```
 
@@ -289,7 +287,7 @@ The third parameter is the forward vector (in a local space coordinate system) t
 
 Another example:
 
-``` 
+```
 // Black points
 Position position0 = new Position(200.0f, 200.0f, 0.0f);
 Position position1 = new Position(300.0f, 300.0f, 0.0f);
@@ -317,7 +315,7 @@ animation.Play();
 > `AnimatePath()` invokes `Animate`.
 
 <a name="multithreading"></a>
-## Animation Multithreading 
+## Animation Multithreading
 
 NUI animations and rendering occur in a dedicated rendering thread. This allows animations to run smoothly, regardless of the time taken to process input events in the application code.
 
@@ -335,7 +333,7 @@ When a property is animatable, it can only be modified in the rendering thread. 
 
 For example, `pos = view.Position` returns the position at which the view was last rendered. Since setting a position with `view.Position = pos` is asynchronous, `pos = view.Position` does not immediately return the same value.
 
-``` 
+```
 // While handling an event
 
 View view = new View();
@@ -354,7 +352,7 @@ Console.WriteLine("Current position: " + current.X + ", " + current.Y + ", " + c
 
 The above code is likely to output:
 
-``` 
+```
 Current position: 0, 0, 0
 ...
 Current position: 10, 10, 10
@@ -384,7 +382,7 @@ Read the instructions in [Building the NUI Source Code](setup-ubuntu.md#buildsrc
 1.  Download the [Animation example source code](NUIsetup/animation-hello-world-tutorial.cs).
 2. Copy this file to your `nuirun` folder (or `../nuirun/tutorials`):
 
-    ``` 
+    ```
     cp animation-hello-world.cs ~/DALiNUI/nuirun/tutorials
     ```
 
@@ -395,7 +393,7 @@ The `Animation` class provides various overloaded methods for property animation
 
 -   `AnimateBy()` animates a property value by a relative amount.
 
-    ``` 
+    ```
     public void AnimateBy(View target, string property, object relativeValue, AlphaFunction alphaFunction = null)
 
     public void AnimateBy(View target, string property, object relativeValue, int startTime, int endTime, AlphaFunction alphaFunction = null)
@@ -416,7 +414,7 @@ The `Animation` class provides various overloaded methods for property animation
 
 - `AnimateTo()` animates a property to a destination value.
 
-    ``` 
+    ```
     public void AnimateTo(View target, string property, object destinationValue, AlphaFunction alphaFunction = null)
 
     public void AnimateTo(View target, string property, object destinationValue, int startTime, int endTime, AlphaFunction alphaFunction = null)
@@ -432,7 +430,7 @@ The `Animation` class provides various overloaded methods for property animation
 
 - `AnimateBetween()` animates a property between [key frames](#animationtypes).
 
-    ``` 
+    ```
     public void AnimateBetween(View target, string property, KeyFrames keyFrames, Interpolation interpolation = Interpolation.Linear, AlphaFunction alphaFunction = null)
 
     public void AnimateBetween(View target, string property, KeyFrames keyFrames)
@@ -449,7 +447,7 @@ The `Animation` class provides various overloaded methods for property animation
 
 - `AnimatePath()` animates a view's position and orientation through a predefined path.
 
-    ``` 
+    ```
     public void AnimatePath(View view, Path path, Vector3 forward, AlphaFunction alphaFunction = null)
     ```
 
@@ -463,7 +461,7 @@ The `Animation` class provides various overloaded methods for property animation
     | `forward` | The vector (in local space coordinate system) oriented with the path's tangent direction. |
 
 <a name="animationclassproperties"></a>
-## Animation Class Properties 
+## Animation Class Properties
 
 The following table lists the `Animation` class properties.
 

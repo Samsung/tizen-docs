@@ -1,6 +1,4 @@
 # Message Port
-## Dependencies
--   Tizen 4.0 and Higher
 
 Tizen applications can communicate with each other using message ports. Applications can send and receive messages through message port communication. The message data type for communication is a map data which consists of a bundle (key and value pair).
 
@@ -25,10 +23,10 @@ The main features of the [Tizen.Applications.Messages.MessagePort](https://devel
 To enable your application to use the message port functionality:
 
 1.  You need 2 applications to communicate with each other through the message port.
-2.  To use trusted message port communication, both applications must have the same certificate. To create and register an author certificate, go to the Visual Studio menu and select **Tools &gt; Tizen &gt; Certificate Manager**. For more information, see [Certificate Manager](../../../../vstools/tools/certificate_manager.htm).
+2.  To use trusted message port communication, both applications must have the same certificate. To create and register an author certificate, go to the Visual Studio menu and select **Tools &gt; Tizen &gt; Certificate Manager**. For more information, see [Certificate Manager](../../../vstools/tools/certificate-manager.md).
 3.  To use the methods and properties of the [Tizen.Applications.Messages.MessagePort](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Messages.MessagePort.html) and [Tizen.Applications.Messages.RemotePort](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Messages.RemotePort.html) classes, include the [Tizen.Applications.Messages](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Messages.html) namespace in your application:
 
-    ``` 
+    ```
     using Tizen.Applications.Messages;
     ```
 
@@ -41,7 +39,7 @@ To send a message from one application (`LocPortApp.Tizen`) to another (`RmtPort
 
     In the sending application (`LocPortApp.Tizen`):
 
-    ``` 
+    ```
     namespace LocPortApp.Tizen
     {
         class App : CoreUIApplication
@@ -69,7 +67,7 @@ To send a message from one application (`LocPortApp.Tizen`) to another (`RmtPort
 
     In the receiving application (`RmtPortApp.Tizen`):
 
-    ``` 
+    ```
     namespace RmtPortApp.Tizen
     {
         class App : CoreUIApplication
@@ -104,7 +102,7 @@ To send a message from one application (`LocPortApp.Tizen`) to another (`RmtPort
 
     To handle the received message, define and register an event handler for the `MessageReceived` event of the `Tizen.Applications.Messages.MessagePort` class.
 
-    ``` 
+    ```
     {
         _myPort.MessageReceived += MessageReceived_Callback;
         _myPort.Listen();
@@ -124,7 +122,7 @@ To send a message from one application (`LocPortApp.Tizen`) to another (`RmtPort
 
 3.  In the sending application, send the message with the `Send()` method of the `Tizen.Applications.Messages.MessagePort` class, providing the message to be sent as an instance of the [Tizen.Applications.Bundle](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Bundle.html) class:
 
-    ``` 
+    ```
     string remoteAppId = "RmtPortApp.Tizen";
     string remotePort = "my_port";
 
@@ -140,7 +138,7 @@ To send a message from one application (`LocPortApp.Tizen`) to another (`RmtPort
 ![Message port communication](./media/message_port_cs.png)
 
 <a name="remote"></a>
-## Managing a Remote Port 
+## Managing a Remote Port
 
 By using [Tizen.Applications.Messages.RemotePort](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Messages.RemotePort.html) class, an application can check whether the message port in another application is running and be notified if the state changes.
 
@@ -148,7 +146,7 @@ To check whether the receiving application (`RmtPortApp.Tizen`) is running and r
 
 1.  Create the remote port instance in the sending application (`LocPortApp.Tizen`):
 
-    ``` 
+    ```
     namespace LocPortApp.Tizen
     {
         class App : CoreUIApplication
@@ -181,7 +179,7 @@ To check whether the receiving application (`RmtPortApp.Tizen`) is running and r
 
 2.  To check whether a remote port is running, use the `IsRunning` property of the `Tizen.Applications.Messages.RemotePort` instance:
 
-    ``` 
+    ```
     bool isRunning = false;
     isRunning = _remotePort.IsRunning();
 
@@ -192,7 +190,7 @@ To check whether the receiving application (`RmtPortApp.Tizen`) is running and r
 
     When the `RmtPortApp.Tizen` application is registered, it triggers the event handler in the `LocPortApp.Tizen` application.
 
-    ``` 
+    ```
     _remotePort.RemotePortStateChanged += RemotePortStateChanged;
 
     static void RemotePortStateChanged(object sender, RemotePortStateChangedEventArgs e)
@@ -214,6 +212,11 @@ To check whether the receiving application (`RmtPortApp.Tizen`) is running and r
     ```
 
 <a name="trusted_use"></a>
-## Using Trusted Communication 
+## Using Trusted Communication
 You can set an instance of the [Tizen.Applications.Messages.MessagePort](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Messages.MessagePort.html) or [Tizen.Applications.Messages.RemotePort](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Messages.RemotePort.html) class as a trusted message port by setting its `Trusted` property as `true`. Communication is only allowed over a trusted message port if both applications are signed with a certificate that is uniquely assigned to its developer.
 
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

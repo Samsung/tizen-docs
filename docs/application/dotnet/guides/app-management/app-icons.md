@@ -1,9 +1,5 @@
-Application Icons
-=================
+# Application Icons
 
-## Dependencies
-
-- Tizen 4.0 and Higher
 
 You can show the application icon as a shortcut on the home screen to allow the user to easily launch the application. In the device application list, you can show a badge with the application icon to provide additional information about the application state or notifications to the user.
 
@@ -40,7 +36,7 @@ To enable your application to use the application icon functionality:
 -   To handle badges:
     1.  To use the [Tizen.Applications.Badge](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Badge.html) class, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-        ``` 
+        ```
         <privileges>
            <privilege>http://tizen.org/privilege/notification</privilege>
         </privileges>
@@ -48,14 +44,14 @@ To enable your application to use the application icon functionality:
 
     2. To use the methods and properties of the Tizen.Applications.Badge class, include it in your application:
 
-        ``` 
+        ```
         using Tizen.Applications.Badge;
         ```
 
 - To handle shortcuts:
     1.  To use the [Tizen.Applications.Shortcut](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Shortcut.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-        ``` 
+        ```
         <privileges>
            <privilege>http://tizen.org/privilege/shortcut</privilege>
         </privileges>
@@ -63,7 +59,7 @@ To enable your application to use the application icon functionality:
 
     2. To use the methods and properties of the Tizen.Applications.Shortcut namespace, include it in your application:
 
-        ``` 
+        ```
         using Tizen.Application.Shortcut;
         ```
 
@@ -74,7 +70,7 @@ To create and remove badges:
 
 -   To create a badge for an application, create an instance of the [Tizen.Applications.Badge](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Badge.html) class. The parameter defines the application for which the badge is added. If the application is adding a badge for itself, the parameter can be null.
 
-    ``` 
+    ```
     Badge badge = new Badge(appId);
     BadgeControl.Add(badge);
     ```
@@ -85,12 +81,12 @@ To create and remove badges:
 
 - To remove the badge from the application, call the `Remove()` method. The only parameter is the ID of the application whose badge is to be removed.
 
-    ``` 
+    ```
     BadgeControl.Remove(TEST_PKG);
     ```
 
 <a name="manage"></a>
-## Managing the Badge 
+## Managing the Badge
 
 To manage the badge:
 
@@ -98,7 +94,7 @@ To manage the badge:
 
     The badge count is displayed in the upper-right corner of the badge and the `count` property value must be an integer. The `visible` property value is of the `Bool` type.
 
-    ``` 
+    ```
     uint count;
     bool visible;
 
@@ -110,7 +106,7 @@ To manage the badge:
 
 - Set the `count` and `visible` properties with the `Update()` method:
 
-    ``` 
+    ```
     Badge badge = new Badge(TEST_PKG);
     BadgeControl.Add(badge);
 
@@ -132,7 +128,7 @@ To add a shortcut to the home screen:
     -   If you set the `Uri` property, clicking the shortcut opens the URI.
     -   If the `Uri` property is not set, clicking the shortcut launches the application that set the shortcut.
 
-    ``` 
+    ```
     HomeShortcutInfo shortcut = new HomeShortcutInfo
     {
         ShortcutName = "Home",
@@ -144,7 +140,7 @@ To add a shortcut to the home screen:
 
 2. Add the shortcut using the `Add()` method of the [Tizen.Applications.Shortcut.ShortcutManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Shortcut.ShortcutManager.html) class:
 
-    ``` 
+    ```
     ShortcutManager.Add(shortcut);
     ```
 
@@ -156,7 +152,7 @@ To add a widget to the home screen:
 1.  Before adding a widget to the home screen, a widget application must be prepared.
 2. Define the widget details (such as its ID, size, and period) with the properties of the [Tizen.Applications.Shortcut.WidgetShortcutInfo](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Shortcut.WidgetShortcutInfo.html) class:
 
-    ``` 
+    ```
     widgetshortcutinfo shortcut = new widgetshortcutinfo
     {
         shortcutname = "samplewidget",
@@ -172,8 +168,12 @@ To add a widget to the home screen:
 
 3. Add the widget using the `Add()` method of the [Tizen.Applications.Shortcut.ShortcutManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Shortcut.ShortcutManager.html) class:
 
-    ``` 
+    ```
     ShortcutManager.Add(shortcut);
     ```
 
 
+
+## Related Information
+  * Dependencies
+    -   Tizen 4.0 and Higher

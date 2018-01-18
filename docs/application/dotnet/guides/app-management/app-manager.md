@@ -1,8 +1,6 @@
 
 # Application Manager
-## Dependencies
 
--   Tizen 4.0 and Higher
 The application manager provides information about installed and running applications. It provides functions for obtaining the application name and absolute path to share files among all applications.
 
 The main features of the `Tizen.Applications.ApplicationManager` class include:
@@ -23,13 +21,13 @@ To enable your application to use the application management functionality:
 
 1.  To use the methods and properties of the [Tizen.Applications.ApplicationManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationManager.html), [Tizen.Applications.ApplicationRunningContext](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationRunningContext.html), and [Tizen.Applications.ApplicationInfo](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationInfo.html) classes, include the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html) namespace in your application:
 
-    ``` 
+    ```
     using Tizen.Applications;
     ```
 
 2.  To use the `Resume()` method of the `Tizen.Applications.ApplicationRunningContext` class, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <privileges>
        <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
     </privileges>
@@ -44,14 +42,14 @@ To get the application running context and its details, and to operate on the co
 
     When an application is not running, it is impossible to get its context.
 
-    ``` 
+    ```
     ApplicationRunningContext appRunningContext = new ApplicationRunningContext(Your App ID);
     ```
 
 2.  Operate on the context:
     -   Get the application ID, package ID, and process ID from the context:
 
-        ``` 
+        ```
         string applicationId = appRunningContext.ApplicationId;
         string packageId = appRunningContext.PackageId;
         int processId = appRunningContext.ProcessId;
@@ -59,7 +57,7 @@ To get the application running context and its details, and to operate on the co
 
     -   Check the state of the application:
 
-        ``` 
+        ```
         if (appRunningContext.State == ApplicationRunningContext.AppState.Foreground)
             /// UI application is running in the foreground
         else if (appRunningContext.State == ApplicationRunningContext.AppState.Background)
@@ -74,30 +72,30 @@ To get the application running context and its details, and to operate on the co
 
     -   Resume the running application:
 
-        ``` 
+        ```
         appRunningContext.Resume();
         ```
 
 <a name="filter"></a>
-## Getting Information on Filtered Applications 
+## Getting Information on Filtered Applications
 
 To get information on filtered applications:
 
 1.  Create the filter as an instance of the [Tizen.Applications.ApplicationInfoFilter](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationInfoFilter.html) class:
 
-    ``` 
+    ```
     ApplicationInfoFilter appInfoFilter = new ApplicationInfoFilter();
     ```
 
 2.  Add filter rules:
 
-    ``` 
+    ```
     appInfoFilter.Filter.Add(ApplicationInfoFilter.Keys.Type, "dotnet");
     ```
 
 3.  Call the `GetInstalledApplicationsAsync()` method of the [Tizen.Applications.ApplicationManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationManager.html) class and retrieve all filtered applications and print their information:
 
-    ``` 
+    ```
     IEnumerable<ApplicationInfo> appInfoList = await ApplicationManager.GetInstalledApplicationsAsync(appinfoFilter);
 
     foreach (ApplicationInfo appInfo in appInfoList)
@@ -114,3 +112,8 @@ To get information on filtered applications:
         Log.Debug("Tag", "sharedResourcePath: " + appInfo.SharedResourcePath);
     }
     ```
+
+
+## Related Information
+  * Dependencies
+    -   Tizen 4.0 and Higher

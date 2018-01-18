@@ -1,6 +1,5 @@
 # Application Usage History Data
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 You can retrieve the user's application usage patterns, such as information about frequently used applications.
 
@@ -21,7 +20,7 @@ To enable your application to use the application usage history data functionali
 
 1.  To use the [Tizen.Context.AppHistory](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Context.AppHistory.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <privileges>
        <privilege>http://tizen.org/privilege/apphistory.read</privilege>
     </privileges>
@@ -29,25 +28,25 @@ To enable your application to use the application usage history data functionali
 
 2.  To use the methods and properties of the Tizen.Context.AppHistory namespace, include it in your application:
 
-    ``` 
+    ```
     using Tizen.Context.AppHistory;
     ```
 
-<a name="retrieve_usage_stats"></a>	
-## Retrieving Application Usage Statistics 
+<a name="retrieve_usage_stats"></a>
+## Retrieving Application Usage Statistics
 
 To retrieve application usage statistics for a given time period, and check detailed statistics information, such as duration, launch count, and last launch time of the used applications:
 
 1.  To retrieve the application launch history, create a usage statistics instance:
     -   To use the default `LaunchCountMost` sort order, create a new instance of the [Tizen.Context.AppHistory.UsageStatistics](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Context.AppHistory.UsageStatistics.html) class without specifying the `sortOrder` parameter:
 
-        ``` 
+        ```
         UsageStatistics frequentlyUsedApp = new UsageStatistics();
         ```
 
     -   To use another sort order for your usage statistics instance, add the `sortOrder` parameter to the `Tizen.Context.AppHistory.UsageStatistics` class constructor, using values of the [Tizen.Context.AppHistory.UsageStatistics.SortOrderType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Context.AppHistory.UsageStatistics.SortOrderType.html) enumeration:
 
-        ``` 
+        ```
         UsageStatistics recentlyUsedApp = new UsageStatistics(UsageStatistics.SortOrderType.LastLaunchTimeNewest);
         ```
 
@@ -56,7 +55,7 @@ To retrieve application usage statistics for a given time period, and check deta
 
         For example, to retrieve a list of the most frequently used applications for the last 2 weeks:
 
-        ``` 
+        ```
         IReadOnlyList<UsageStatisticsData> frequentlyUsedAppList = frequentlyUsedApp.Query(DateTime.Now.AddDays(-14), DateTime.Now);
         ```
 
@@ -64,13 +63,13 @@ To retrieve application usage statistics for a given time period, and check deta
 
         For example, to retrieve a list of 5 most frequently used applications for the last 2 weeks:
 
-        ``` 
+        ```
         IReadOnlyList<UsageStatisticsData> frequentlyUsedAppList = frequentlyUsedApp.Query(DateTime.Now.AddDays(-14), DateTime.Now, 5);
         ```
 
     -   The query returns a sorted list of [Tizen.Context.AppHistory.UsageStatisticsData](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Context.AppHistory.UsageStatisticsData.html) class instances. To enumerate the list:
 
-        ``` 
+        ```
         foreach(var record in frequentlyUsedAppList)
         {
             Log.Info(LOGTAG, "AppId: " + record.AppId);
@@ -81,13 +80,13 @@ To retrieve application usage statistics for a given time period, and check deta
         ```
 
 <a name="retrieve_battery_stats"></a>		
-## Retrieving Battery Usage Statistics 
+## Retrieving Battery Usage Statistics
 
 To retrieve battery usage statistics for a given time period, and check detailed statistics information, such as the battery consumption of the used applications:
 
 1.  To retrieve the battery consumption per application, create an instance of the [Tizen.Context.AppHistory.BatteryStatistics](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Context.AppHistory.BatteryStatistics.html) class:
 
-    ``` 
+    ```
     BatteryStatistics batteryConsumedApp = new BatteryStatistics(BatteryStatistics.SortOrderType.ConsumptionMost);
     ```
 
@@ -95,17 +94,21 @@ To retrieve battery usage statistics for a given time period, and check detailed
 
     For example, to retrieve battery consumption history since the device was last fully charged, use a `DateTime` instance returned by the `GetLastFullyChargedTime()` method as the `startTime` parameter of the `Query()` method:
 
-    ``` 
+    ```
     DateTime time = BatteryStatistics.GetLastFullyChargedTime();
     IReadOnlyList<BatteryStatisticsData> batteryConsumedAppList = batteryConsumedApp.Query(time, DateTime.Now, 5);
     ```
 
 3.  The `Query()` method returns a sorted list of [Tizen.Context.AppHistory.BatteryStatisticsData](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Context.AppHistory.BatteryStatisticsData.html) class instances. To enumerate the list:
 
-    ``` 
+    ```
     foreach(var record in batteryConsumedAppList)
     {
         Log.Info(LOGTAG, "AppId: " + record.AppId);
         Log.Info(LOGTAG, "Consumption: " + record.Consumption);
     }
     ```
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

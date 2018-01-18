@@ -1,6 +1,5 @@
 # Location and Sensors
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 The location and sensor features introduce how you can manage information about the geographical location and surrounding environment of the device, as well as human activity data. You can use a location service to track location information, and various device sensors to track the device environment and user activities.
 
@@ -22,3 +21,6 @@ You can use the following location and sensor features in your .NET applications
 
     You can read and manage data from various sensors on the device. You can access information from various environmental sensors, such as the light and magnetic sensors, and from user-related sensors, such as the heart rate monitor.
 
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

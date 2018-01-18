@@ -1,6 +1,5 @@
 # Visual Detection and Recognition
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 You can perform various visual detection and recognition tasks in your application. You can detect or generate barcodes. In addition, you can track how faces or image objects move as well as detect and recognize faces or objects.
 
@@ -18,3 +17,6 @@ You can use the following visual detection and recognition features in your .NET
 
     You can extract features of an image object and recognize it from specific images. You can also track the image object within the camera preview stream.
 
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

@@ -1,6 +1,5 @@
 # Device Settings and Systems
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 The device settings and systems features introduce how you can set and get information about the system. You can also access information about attached devices.
 
@@ -21,3 +20,8 @@ You can use the following device settings and systems features in your .NET appl
 -   [Sound and Vibration Feedback](feedback.md)
 
     You can play a feedback pattern using sound or vibration. You can use specific patterns, or specific type and pattern. You can also check whether a specific pattern is supported.
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

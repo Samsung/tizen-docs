@@ -1,9 +1,5 @@
-Application Controls
-====================
+# Application Controls
 
-## Dependencies
-
-- Tizen 4.0 and Higher
 
 An application control (app control) is a way of sharing an
 application's functionality with other applications. Using another
@@ -107,7 +103,7 @@ different launch types:
         the proper application.
 
 <a name="request"></a>
-## Launch Requests 
+## Launch Requests
 
 To launch an application with the application control, you must create a
 launch request. You must create an instance of the
@@ -132,7 +128,7 @@ launched. You can add the following information to the instance:
 - `ExtraData`: Key-value pairs to [provide additional information for
     the launch request and launch result](#use).
 
-<a name="explicit"></a>	
+<a name="explicit"></a>
 ### Explicit Launch Request
 
 The following example shows how to create an explicit launch request
@@ -141,7 +137,7 @@ property of the
 [Tizen.Applications.AppControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AppControl.html)
 class instance:
 
-``` 
+```
 AppControl appcontrol = new AppControl();
 
 appcontrol.Operation = AppControlOperations.Default;
@@ -150,7 +146,7 @@ appcontrol.ApplicationId = "org.tizen.TestApp";
 AppControl.SendLauncherRequest(appcontrol);
 ```
 
-<a name="implicit"></a>	
+<a name="implicit"></a>
 ### Implicit Launch Reques
 
 The following examples show how to create an implicit launch request:
@@ -158,7 +154,7 @@ The following examples show how to create an implicit launch request:
 -   To launch a camera application with a specific operation and MIME
     type:
 
-    ``` 
+    ```
     AppControl appcontrol = new AppControl();
 
     appcontrol.Operation = AppControlOperations.CreateContent;
@@ -170,7 +166,7 @@ The following examples show how to create an implicit launch request:
 - To launch a viewer application with a specific operation, URI, and
     MIME type:
 
-    ``` 
+    ```
     AppControl appcontrol = new AppControl();
 
     appcontrol.Operation = AppControlOperations.View;
@@ -320,7 +316,7 @@ resolving the application control:
 
 
 <a name="process"></a>		
-## Launch Process 
+## Launch Process
 
 Regardless of the launch request type, when the application launcher
 framework has received and resolved a launch request, it starts the
@@ -332,7 +328,7 @@ application:
     main task is to hand over control to the application framework by
     calling the `Run()` method:
 
-    ``` 
+    ```
     class App : CoreUIApplication
     {
         protected override void OnCreate()
@@ -412,7 +408,7 @@ application:
     request, the result can be sent with the `ReplyToLaunchRequest()`
     method of the `Tizen.Applications.ReceivedAppControl` class.
 
-    ``` 
+    ```
     protected override void OnAppControlReceived(AppControlReceivedEventArgs e)
     {
         ReceivedAppControl receivedAppControl = e.ReceivedAppControl;
@@ -430,7 +426,7 @@ application:
     ```
 
 <a name="results"></a>
-## Launch Results 
+## Launch Results
 
 After the requested application (callee) has been launched and the
 launched application has performed the requested operation, the results
@@ -441,7 +437,7 @@ The following code example requests the launch of another application
 and sets the `AppControlReplyCallback()` method to get the launch
 result:
 
-``` 
+```
 public void LaunchRequestResultTest()
 {
     string MyAppId = "org.tizen.MyApp";
@@ -467,7 +463,7 @@ The following example shows how you can retrieve the results of the
 launch request and requested operation by implementing the
 `AppControlReplyCallback()` method:
 
-``` 
+```
 /// Method for getting the result
 static void AppControlReplyCallback(Tizen.Applications.AppControl launchRequest, Tizen.Applications.AppControl replyRequest, AppControlReplyResult result)
 {
@@ -484,7 +480,7 @@ static void AppControlReplyCallback(Tizen.Applications.AppControl launchRequest,
 ```
 
 <a name="export_appcontrol"></a>
-Application Control Export 
+Application Control Export
 
 You can allow other applications to launch your application and use your
 application features through application controls by exporting your
@@ -492,7 +488,7 @@ application control functionalities. To allow other applications to
 launch your application implicitly without the application ID, declare
 your application control information in the `tizen-manifest.xml` file:
 
-``` 
+```
 <app-control>
    <mime name="application/xhtml+xml"/>
    <operation name="http://tizen.org/appcontrol/operation/view"/>
@@ -525,7 +521,7 @@ match against given conditions in the application control:
     to include them literally in a pattern.
 
 
-<a name="group"></a>	
+<a name="group"></a>
 ## Application Group Management
 
 You can [define the application launch mode](#mode) and group your
@@ -545,7 +541,7 @@ The main application group features include:
         application who is causing the application to be launched.
 
     You can set the application launch mode [in the manifest
-    file](../../../../vstools/tools/manifest_editor.htm#launch_mode)
+    file](../../../vstools/tools/manifest-editor.md#launch_mode)
     using the `launch_mode` attribute of the `<ui-application>` element.
     If the launch mode is set to `caller`, the application that calls
     the application control can define the launch mode for the called
@@ -584,7 +580,7 @@ To enable your application to use the application control functionality:
     permission by adding the following privilege to the
     `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <privileges>
        <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
     </privileges>
@@ -594,7 +590,7 @@ To enable your application to use the application control functionality:
     [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html)
     namespace, include it in your application:
 
-    ``` 
+    ```
     using Tizen.Applications;
     ```
 
@@ -606,7 +602,7 @@ parameters:
 
 1.  Prepare the application control:
 
-    ``` 
+    ```
     AppControl appControl = new AppControl();
     ```
 
@@ -621,7 +617,7 @@ parameters:
     launch request. If the operation is not specified,
     `AppControlOperations.Default` is used for the launch request.
 
-    ``` 
+    ```
     appControl.Operation = AppControlOperations.View;
     appControl.Mime = "image/jpeg";
     ```
@@ -631,14 +627,14 @@ parameters:
     [Tizen.Applications.AppControl.ExtraDataCollection](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AppControl.ExtraDataCollection.html) class.
     In the following example, a message is added as extra data:
 
-    ``` 
+    ```
     appControl.ExtraData.Add("MyKey", "My Message");
     ```
 
 4. Launch the `Tizen.Applications.AppControl` instance with the
     `SendLaunchRequest()` method:
 
-    ``` 
+    ```
     AppControl.SendLaunchRequest(appControl, AppControlReplyCallback);
     ```
 
@@ -650,7 +646,7 @@ parameters:
     and method can be used in the original application to read the reply
     message, when the application control reply is returned.
 
-    ``` 
+    ```
     /// Callee application
     protected override void OnAppControlReceived(AppControlReceivedEventArgs e)
     {
@@ -673,7 +669,7 @@ parameters:
     }
     ```
 
-    ``` 
+    ```
     /// Caller application
     static void AppControlReplyCallback(Tizen.Applications.AppControl launchRequest, Tizen.Applications.AppControl replyRequest, AppControlReplyResult result)
     {
@@ -686,15 +682,20 @@ parameters:
     ```
 
 <a name="mode"></a>
-## Controlling the Launch Mode 
+## Controlling the Launch Mode
 
 To set the application control in the caller application to launch a sub
 application within the same group:
 
-``` 
+```
 AppControl appControl = new AppControl();
 appControl.ApplicationId = "org.tizen.TestApp";
 appControl.LaunchMode = AppControlLaunchMode.Group;
 
 AppControl.SendLaunchRequest(appControl);
 ```
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

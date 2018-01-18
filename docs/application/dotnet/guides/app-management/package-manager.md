@@ -1,6 +1,5 @@
 # Package Manager
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 The package manager is used to retrieve detailed information on the installed packages on the device. This information includes the package name, label, path to the icon image, version, type, and installed storage.
 
@@ -24,7 +23,7 @@ To enable your application to use the package management functionality:
 
 1.  To use the [Tizen.Applications.PackageManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.PackageManager.html) class, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <privileges>
        <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
     </privileges>
@@ -32,24 +31,24 @@ To enable your application to use the package management functionality:
 
 2. To use the methods and properties of the `Tizen.Applications.PackageManager` class, include the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html) namespace in your application:
 
-    ``` 
+    ```
     using Tizen.Applications;
     ```
 
 <a name="retrieve"></a>
-## Retrieving All Package Information 
+## Retrieving All Package Information
 
 To retrieve all package information for installed packages:
 
 1.  Retrieve all package information with the `GetPackages()` method of the [Tizen.Applications.PackageManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.PackageManager.html) class:
 
-    ``` 
+    ```
     IEnumerable<Package> packageList = PackageManager.GetPackages();
     ```
 
 2. Iterate through the returned list to access information about each [Tizen.Applications.Package](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Package.html) object:
 
-    ``` 
+    ```
     foreach (Package package in packageList)
     {
         Log.Debug(LogTag, "pkgid: " + package.Id);
@@ -65,19 +64,19 @@ To retrieve all package information for installed packages:
     ```
 
 <a name="info"></a>
-## Retrieving Specific Package Information 
+## Retrieving Specific Package Information
 
 To get specific package information:
 
 1.  Retrieve information for a specific package with the `GetPackage()` method of the [Tizen.Applications.PackageManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.PackageManager.html) class:
 
-    ``` 
+    ```
     Package package = PackageManager.GetPackage("org.tizen.helloworld");
     ```
 
 2. Use the [Tizen.Applications.Package](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Package.html) object returned by the `GetPackage()` method to access various package details:
 
-    ``` 
+    ```
     /// Use package information
     Log.Debug(LogTag, "pkgid: " + package.Id);
     Log.Debug(LogTag, "label: " + package.Label);
@@ -91,7 +90,7 @@ To get specific package information:
     ```
 
 <a name="listen"></a>
-## Monitoring Package Events 
+## Monitoring Package Events
 
 To detect package-related events, such as installation, uninstallation, and updates:
 
@@ -99,7 +98,7 @@ To detect package-related events, such as installation, uninstallation, and upda
 
     The following example registers event handlers for package installation, uninstallation, and update events:
 
-    ``` 
+    ```
     PackageManager.InstallProgressChanged += new System.EventHandler<PackageManagerEventArgs>(InstallEventHandler);
     PackageManager.UninstallProgressChanged += new System.EventHandler<PackageManagerEventArgs>(UninstallEventHandler);
     PackageManager.UpdateProgressChanged += new System.EventHandler<PackageManagerEventArgs>(UpdateEventHandler);
@@ -109,7 +108,7 @@ To detect package-related events, such as installation, uninstallation, and upda
 
     The following example implements the installation event handler:
 
-    ``` 
+    ```
     void InstallEventHandler(object sender, PackageManagerEventArgs args)
     {
         Log.Debug(LogTag, "pkgId: " + args.PackageId);
@@ -118,3 +117,7 @@ To detect package-related events, such as installation, uninstallation, and upda
         Log.Debug(LogTag, "eventState:" + args.State);
     }
     ```
+
+## Related Information
+  * Dependencies
+    -   Tizen 4.0 and Higher

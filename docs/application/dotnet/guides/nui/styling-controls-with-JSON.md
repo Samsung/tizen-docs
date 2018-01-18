@@ -1,6 +1,4 @@
 # Styling Controls with JSON
-## Dependencies
--   Tizen 4.0 and Higher
 
 You can style a toolkit control with JSON. This topic uses a PushButton as an example control.
 
@@ -10,7 +8,7 @@ Visuals are the main building block of controls. A control is built from visuals
 
 The following Visual types are available:
 
-  
+
 
 | Type      | Example                                  |
 | --------- | ---------------------------------------- |
@@ -25,13 +23,13 @@ The following Visual types are available:
 For more information on how to create, register, and use visuals, and lists all properties associated with each visual type, see [Visuals](visuals.md).
 
 <a name="newview"></a>
-## Styling a New View 
+## Styling a New View
 
 Styling is inherited, so styling a parent automatically affects its child, unless overridden.
 
 The following table describes the Style properties offered by View and PushButton.
 
- 
+
 
 | Name                 | Type      | Description                              |
 | -------------------- | --------- | ---------------------------------------- |
@@ -45,7 +43,7 @@ The following table describes the Style properties offered by View and PushButto
 > `sizeModeFactor` is only used when `ResizePolicyType` is set to either `ResizePolicyType.SizeRelativeToParent` or `ResizePolicyType.SizeFixedOffsetFromParent`. The view's size is set to the view's size multiplied by or added to this factor, depending on `ResizePolicyType`.
 
 <a name="state"></a>
-## Styling for State 
+## Styling for State
 
 A control has 3 states: `NORMAL`, `FOCUSED`, and `DISABLED`. In addition, a button has 2 substates, `SELECTED` and `UNSELECTED`, applicable for each of the 3 main states. Each state must have the required visuals, either as its own set of visuals or as a visual shared between states.
 
@@ -57,7 +55,7 @@ In the following example:
 -   **"visuals"** means that specific visual types can be put in that section.
 -   **"states"** means that visuals for specific states can be put in that section.
 
-``` 
+```
 "styles":
 {
   "PushButton":
@@ -80,7 +78,7 @@ The following process shows how you can build up a stylesheet, state by state:
 
 1.  The following example defines the states common to all controls:
 
-    ``` 
+    ```
     "states":
     {
       "NORMAL":
@@ -99,7 +97,7 @@ The following process shows how you can build up a stylesheet, state by state:
 
 2. The following example adds the button substates (`UNSELECTED` and `SELECTED`) to the stylesheet, but still provides no visuals.
 
-    ``` 
+    ```
     "states":
     {
       "NORMAL":
@@ -130,7 +128,7 @@ The following process shows how you can build up a stylesheet, state by state:
 
 3. The following example defines a background visual for each substate in the `NORMAL` state. The same can be done for `FOCUSED` and `DISABLED`.
 
-    ``` 
+    ```
     "states":
     {
       "NORMAL":
@@ -174,7 +172,7 @@ To make defining common transitions easier, an effect can be used with a "from" 
 
 The transition can be placed in the state section, such as `NORMAL`. In the following example, the transition cross-fades between unselected and selected visuals:
 
-``` 
+```
 "transitions":
 [
   {
@@ -194,7 +192,7 @@ The transition can be placed in the state section, such as `NORMAL`. In the foll
 
 The following example uses the entry and exit transition for the `UNSELECTED` substate:
 
-``` 
+```
 "states":
   {
     "NORMAL":
@@ -247,7 +245,7 @@ The following example uses the entry and exit transition for the `UNSELECTED` su
 
 The following example shows a button stylesheet covering all states and various transitions:
 
-``` 
+```
 {
   "styles":
   {
@@ -396,3 +394,8 @@ The following example shows a button stylesheet covering all states and various 
   }
 }
 ```
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

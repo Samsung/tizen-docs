@@ -1,6 +1,5 @@
 # Speech-to-text
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 STT (speech-to-text) features enable recognizing sound data recorded by the user and sending the result as text.
 
@@ -20,8 +19,8 @@ The main features of the Tizen.Uix.Stt namespace include:
 
     You can [get information](#info_stt) that includes, for example, language and state.
 
-<a name="basic_stt"></a>	
-## Basic STT Processes 
+<a name="basic_stt"></a>
+## Basic STT Processes
 
 Using STT, you can:
 
@@ -44,7 +43,7 @@ The STT life-cycle is described in the following figure.
 ![STT life-cycle](./media/csapi_stt.png)
 
 <a name="parameter_stt"></a>
-## STT Parameters 
+## STT Parameters
 
 You can set the following parameters about STT:
 
@@ -56,7 +55,7 @@ You can set the following parameters about STT:
 
     The private data is a setting parameter for applying keys provided by the STT engine. Using the `SetPrivateData()` method of the `Tizen.Uix.Stt.SttClient` class, you can set the private data as the corresponding key of the STT engine.
 
-<a name="info_stt"></a>	
+<a name="info_stt"></a>
 ## STT Information Retrieval
 
 You can get the following information about STT:
@@ -76,7 +75,7 @@ To enable your application to use the STT functionality:
 
 1.  To use the methods and properties of the [Tizen.Uix.Stt](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Stt.html) namespace, include it in your application:
 
-    ``` 
+    ```
     using Tizen.Uix.Stt;
     ```
 
@@ -88,7 +87,7 @@ To enable your application to use the STT functionality:
     > **Note**   
 	> STT is not thread-safe and depends on the Ecore main loop. Implement STT within the Ecore main loop and do not use it in a thread.
 
-    ``` 
+    ```
     void CreateSttClient()
     {
         try
@@ -104,7 +103,7 @@ To enable your application to use the STT functionality:
 
 3.  When you no longer need the STT library, destroy the STT client instance with the `Dispose()` method:
 
-    ``` 
+    ```
     void DestroySttClient()
     {
         try
@@ -121,8 +120,8 @@ To enable your application to use the STT functionality:
     > **Note**   
 	> Do not use the `Dispose()` method inside an event handler. Within an event handler, the `Dispose()` method fails and invokes the `OperationFailed` error with the `ErrorOccurred` event of the `Tizen.Uix.Stt.SttClient` class.
 
-<a name="set"></a>	
-## Registering Event Handlers 
+<a name="set"></a>
+## Registering Event Handlers
 
 STT provides event handlers to get various information, such as the recognition result, state changes, language changes, and errors.
 
@@ -134,7 +133,7 @@ Event handlers can be set for the following events of the [Tizen.Uix.Stt.SttClie
 
     To get a notification when the STT stage changes, register an event handler for the `StateChanged` event:
 
-    ``` 
+    ```
     /// Event handler
     void SttStateChanged(object sender, StateChangedEventArgs e)
     {
@@ -162,7 +161,7 @@ Event handlers can be set for the following events of the [Tizen.Uix.Stt.SttClie
 
     The default language of STT is changed either when the system language is changed, or through the STT settings. To get a notification when the language changes, register an event handler for the `DefaultLanguageChanged` event:
 
-    ``` 
+    ```
     /// Event handler
     void SttDefaultLanguageChanged(object sender, DefaultLanguageChangedEventArgs e)
     {
@@ -190,7 +189,7 @@ Event handlers can be set for the following events of the [Tizen.Uix.Stt.SttClie
 
     To get the STT recognition result, register an event handler for the `RecognitionResult` event:
 
-    ``` 
+    ```
     /// Event handler
     void SttRecognitionResult(object sender, RecognitionResultEventArgs e)
     {
@@ -218,7 +217,7 @@ Event handlers can be set for the following events of the [Tizen.Uix.Stt.SttClie
 
     To get a notification when the engine is changed by STT, register an event handler for the `EngineChanged` event:
 
-    ``` 
+    ```
     /// Event handler
     void SttEngineChanged(object sender, EngineChangedEventArgs e)
     {
@@ -246,7 +245,7 @@ Event handlers can be set for the following events of the [Tizen.Uix.Stt.SttClie
 
     To get a notification when an error occurs, register an event handler for the `ErrorOccurred` event:
 
-    ``` 
+    ```
     /// Event handler
     void SttErrorOccurred(object sender, ErrorOccurredEventArgs e)
     {
@@ -270,7 +269,7 @@ Event handlers can be set for the following events of the [Tizen.Uix.Stt.SttClie
     }
     ```
 
-<a name="get"></a>	
+<a name="get"></a>
 ## Getting Information
 
 To obtain the current STT state, the list of supported languages, and the current language:
@@ -279,7 +278,7 @@ To obtain the current STT state, the list of supported languages, and the curren
 
     The STT state is changed by various STT methods, and it is applied as a precondition for each method.
 
-    ``` 
+    ```
     void GetState()
     {
         State current_state;
@@ -289,7 +288,7 @@ To obtain the current STT state, the list of supported languages, and the curren
 
 -   Retrieve a list of languages supported by STT by using the `GetSupportedLanguages()` method:
 
-    ``` 
+    ```
     void GetSupportedLanguage()
     {
         try
@@ -305,7 +304,7 @@ To obtain the current STT state, the list of supported languages, and the curren
 
 -   Retrieve the default language by using the `DefaultLanguage` property of the `Tizen.Uix.Stt.SttClient` class:
 
-    ``` 
+    ```
     void GetDefaultLanguage()
     {
         try
@@ -323,7 +322,7 @@ To obtain the current STT state, the list of supported languages, and the curren
 
 -   Retrieve a list of engines supported by STT by using the `GetSupportedEngines()` method of the `Tizen.Uix.Stt.SttClient` class:
 
-    ``` 
+    ```
     void GetSupportedEngine()
     {
         try
@@ -341,7 +340,7 @@ To obtain the current STT state, the list of supported languages, and the curren
 
     The supported language, silence detection, and supported recognition types depend on the STT engine.
 
-    ``` 
+    ```
     void SetGetCurrentEngine()
     {
         try
@@ -365,7 +364,7 @@ To obtain the current STT state, the list of supported languages, and the curren
 
     The normal recognition type, `Stt.RecognitionType.Free`, means that the whole recognition result is sent at the end of the recognition process. The `Stt.RecognitionType.Partial` recognition type is used to get a partial recognition result.
 
-    ``` 
+    ```
     void CheckSupportedRecognitionType()
     {
         try
@@ -381,7 +380,7 @@ To obtain the current STT state, the list of supported languages, and the curren
     }
     ```
 
-<a name="prepare"></a>	
+<a name="prepare"></a>
 ## Connecting and Disconnecting STT
 
 To operate STT:
@@ -390,7 +389,7 @@ To operate STT:
 
     The method is asynchronous and the STT state changes to `Ready`.
 
-    ``` 
+    ```
     void PrepareSttClient()
     {
         try
@@ -409,7 +408,7 @@ To operate STT:
 
 2.  When the connection is no longer needed, disconnect STT and change the STT state to `Created`, by using the `Unprepare()` method:
 
-    ``` 
+    ```
     void UnprepareSttClient()
     {
         try
@@ -423,7 +422,7 @@ To operate STT:
     }
     ```
 
-<a name="engine"></a>	
+<a name="engine"></a>
 ## Setting and Getting STT Engine Options
 
 To set and get STT engine options:
@@ -432,7 +431,7 @@ To set and get STT engine options:
 
     The credential is a key to verify the authorization for using the STT engine. The necessity of the credential depends on the engine. If the engine requests the credential, you can set it using the `SetCredential()` method of the [Tizen.Uix.Stt.SttClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Stt.SttClient.html) class:
 
-    ``` 
+    ```
     void SetCredential(string credential)
     {
         try
@@ -450,11 +449,11 @@ To set and get STT engine options:
 
     The private data is a setting parameter for applying keys provided by the STT engine. To set the private data and use the corresponding key of the engine, use the `SetPrivateData()` method.
 
-  
+
     > **Note**   
 	> The key and data are determined by the STT engine. To set and get the private data, see the engine instructions.
 
-    ``` 
+    ```
     void SetPrivateData(string key, string data)
     {
         try
@@ -470,7 +469,7 @@ To set and get STT engine options:
 
     To get the private data which corresponds to a specific key from the engine, use the `GetPrivateData()` method:
 
-    ``` 
+    ```
     void GetPrivateData(string key)
     {
         try
@@ -486,7 +485,7 @@ To set and get STT engine options:
     }
     ```
 
-<a name="option"></a>	
+<a name="option"></a>
 ## Setting Options and Controlling Recording
 
 To set the STT options and control recording:
@@ -497,7 +496,7 @@ To set the STT options and control recording:
 
     To set the silence detection state, use the `SetSilenceDetection()` method, using values of the [Tizen.Uix.Stt.SilenceDetection](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Stt.SilenceDetection.html) enumeration as a parameter. If you set the silence detection as `SilenceDetection.Auto`, STT works according to the global STT setting. This option must be set when STT is in the `Ready` state.
 
-    ``` 
+    ```
     void SetSilenceDetection(SilenceDetection type)
     {
         try
@@ -519,7 +518,7 @@ To set the STT options and control recording:
     > **Note**   
 	> The sound file path must be a full path. Only WAV format sound files are supported.
 
-    ``` 
+    ```
     void SetStartSound(string filename)
     {
         try
@@ -535,7 +534,7 @@ To set the STT options and control recording:
 
     To unset the recording start sound, use the `UnsetStartSound()` method:
 
-    ``` 
+    ```
     void UnsetStartSound()
     {
         try
@@ -556,7 +555,7 @@ To set the STT options and control recording:
     > **Note**   
 	> The sound file path must be a full path. Only WAV format sound files are supported.
 
-    ``` 
+    ```
     void SetStopSound(string filename)
     {
         try
@@ -572,7 +571,7 @@ To set the STT options and control recording:
 
     To unset the recording stop sound, use the `UnsetStopSound()` method:
 
-    ``` 
+    ```
     void UnsetStopSound()
     {
         try
@@ -596,7 +595,7 @@ To set the STT options and control recording:
 
         The language and recognition type must be supported by the current STT engine. If you set `NULL` as the language parameter, the STT default language is used based on the `DefaultLanguage` property of the currently-used `Tizen.Uix.Stt.SttClient` class instance.
 
-        ``` 
+        ```
         void Start(string language, RecognitionType type)
         {
             try
@@ -614,7 +613,7 @@ To set the STT options and control recording:
 
         The volume value is retrieved periodically with the short-term recorded sound data as dB (decibels). The STT volume normally has a negative value, and 0 is the maximum value.
 
-        ``` 
+        ```
         void GetVolume()
         {
             try
@@ -634,7 +633,7 @@ To set the STT options and control recording:
 
         The recording stops and the STT state is changed to `Processing`. When the recognition result has been processed, the `RecognitionResult` event triggers, and the state changes back to `Ready`.
 
-        ``` 
+        ```
         void Stop()
         {
             try
@@ -652,7 +651,7 @@ To set the STT options and control recording:
 
         The STT state changes to `Ready`.
 
-        ``` 
+        ```
         void Cancel()
         {
             try
@@ -665,3 +664,8 @@ To set the STT options and control recording:
             }
         }
         ```
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

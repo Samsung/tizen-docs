@@ -1,6 +1,5 @@
 # Text-to-speech
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 TTS (text-to-speech) features include synthesizing text into sound data as utterances and playing them. It is also possible to pause and stop playback.
 
@@ -20,8 +19,8 @@ The main features of the Tizen.Uix.Tts namespace include:
 
     You can [get information](#info_tts) on the supported voices, and the current state and voice.
 
-<a name="basic_tts"></a>	
-## Basic TTS Processes 
+<a name="basic_tts"></a>
+## Basic TTS Processes
 
 Using TTS, you can:
 
@@ -43,7 +42,7 @@ The TTS life-cycle is described in the following figure.
 ![TTS life-cycle](./media/csapi_tts.png)
 
 <a name="parameter_tts"></a>
-## TTS Parameters 
+## TTS Parameters
 
 You can set the following parameters about TTS:
 
@@ -55,8 +54,8 @@ You can set the following parameters about TTS:
 
     The private data is a setting parameter for applying keys provided by the TTS engine. Using the `SetPrivateData()` method of the `Tizen.Uix.Tts.TtsClient` class, you can set the private data as the corresponding key of the TTS engine.
 
-<a name="info_tts"></a>	
-## TTS Information Retrieval 
+<a name="info_tts"></a>
+## TTS Information Retrieval
 
 You can get the following information about TTS:
 
@@ -75,7 +74,7 @@ To enable your application to use the TTS functionality:
 
 1.  To use the methods and properties of the [Tizen.Uix.Tts.TtsClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Tts.TtsClient.html) class, include it in your application:
 
-    ``` 
+    ```
     using Tizen.Uix.Tts.TtsClient;
     ```
 
@@ -87,7 +86,7 @@ To enable your application to use the TTS functionality:
 	> TTS is not thread-safe and depends on the Ecore main loop. Implement TTS within the Ecore main loop and do not use it in a thread.
 
 
-    ``` 
+    ```
     void CreateTtsClient()
     {
         try
@@ -103,7 +102,7 @@ To enable your application to use the TTS functionality:
 
 3.  When you no longer need the TTS library, destroy the TTS handle by using the `Dispose()` method of the `Tizen.Uix.Tts.TtsClient` class:
 
-    ``` 
+    ```
     void DestroyTtsClient()
     {
         try
@@ -120,8 +119,8 @@ To enable your application to use the TTS functionality:
     > **Note**   
 	> Do not use the `Dispose()` method inside an event handler. Within an event handler, the `Dispose()` method fails and invokes the `OperationFailed` error with the `ErrorOccurred` event of the `Tizen.Uix.Tts.TtsClient` class.
 
-<a name="set"></a>	
-## Registering Event Handlers 
+<a name="set"></a>
+## Registering Event Handlers
 
 TTS provides event handlers to get various information, such as state changes and the start or completion of an utterance.
 
@@ -133,7 +132,7 @@ Event handlers can be set for the following events of the [Tizen.Uix.Tts.TtsClie
 
     To get a notification when the TTS stage changes, register an event handler for the `StateChanged` event:
 
-    ``` 
+    ```
     /// Event handler
     void TtsStateChanged(object sender, StateChangedEventArgs e)
     {
@@ -161,7 +160,7 @@ Event handlers can be set for the following events of the [Tizen.Uix.Tts.TtsClie
 
     In the TTS library, the voice includes the language used and the voice type, such as male or female. The default voice of the TTS is changed either when the system language is changed, or through the TTS settings. To get a notification of a voice change, register an event handler for the `DefaultVoiceChanged` event:
 
-    ``` 
+    ```
     /// Event handler
     void TtsDefaultVoiceChanged(object sender, DefaultVoiceChangedEventArgs e)
     {
@@ -189,7 +188,7 @@ Event handlers can be set for the following events of the [Tizen.Uix.Tts.TtsClie
 
     To get a notification when the engine is changed by TTS, register an event handler for the `EngineChanged` event:
 
-    ``` 
+    ```
     /// Event handler
     void TtsEngineChanged(object sender, EngineChangedEventArgs e)
     {
@@ -217,7 +216,7 @@ Event handlers can be set for the following events of the [Tizen.Uix.Tts.TtsClie
 
     If you add text in TTS, that text is handled as an utterance and it obtains its own ID. After you request the TTS process to start, the text is synthesized by an engine and played. To get a notification when an utterance is started or completed, register event handlers for the `UtteranceStarted` and `UtteranceCompleted` events, respectively:
 
-    ``` 
+    ```
     /// Utterance started event handler
     void TtsUtteranceStarted(object sender, UtteranceEventArgs e)
     {
@@ -253,7 +252,7 @@ Event handlers can be set for the following events of the [Tizen.Uix.Tts.TtsClie
 
     To get a notification when an error occurs, register an event handler for the `ErrorOccurred` event:
 
-    ``` 
+    ```
     /// Event handler
     void TtsErrorOccurred(object sender, ErrorOccurredEventArgs e)
     {
@@ -277,8 +276,8 @@ Event handlers can be set for the following events of the [Tizen.Uix.Tts.TtsClie
     }
     ```
 
-<a name="get"></a>	
-## Getting Information 
+<a name="get"></a>
+## Getting Information
 
 To obtain the current state, the supported voice list, and the current voice:
 
@@ -286,7 +285,7 @@ To obtain the current state, the supported voice list, and the current voice:
 
     The TTS state is changed by various TTS methods, and it is applied as a precondition for each method.
 
-    ``` 
+    ```
     void GetState()
     {
         try
@@ -303,7 +302,7 @@ To obtain the current state, the supported voice list, and the current voice:
 
 -   Obtain a list of TTS-supported voices by using the `GetSupportedVoices()` method of the `Tizen.Uix.Tts.TtsClient` class:
 
-    ``` 
+    ```
     void GetSupportedVoice()
     {
         try
@@ -322,7 +321,7 @@ To obtain the current state, the supported voice list, and the current voice:
 
     TTS synthesizes the text using the default voice, if you do not set the language and the voice type as parameters of the `AddText()` method of the `Tizen.Uix.Tts.TtsClient` class.
 
-    ``` 
+    ```
     void GetDefaultVoice()
     {
         try
@@ -338,7 +337,7 @@ To obtain the current state, the supported voice list, and the current voice:
 
     You can get a notification about changes to the default voice by registering an event handler for the `DefaultVoiceChanged` event of the `Tizen.Uix.Tts.TtsClient` class.
 
-<a name="mode"></a>	
+<a name="mode"></a>
 ## Getting and Setting the Mode
 
 There are 3 different TTS modes available. The main difference is audio mixing with other sources. The default mode is `Default`, used for normal applications, such as e-books. If you set this mode and play your text, it can be interrupted when other sounds, such as ringtone or other TTS sounds, are played.
@@ -348,7 +347,7 @@ There are 3 different TTS modes available. The main difference is audio mixing w
 
 Get and set the mode in the `Created` state:
 
-``` 
+```
 void SetMode(Mode mode)
 {
     try
@@ -375,7 +374,7 @@ void GetMode(Mode* mode)
 ```
 
 <a name="prepare"></a>
-## Connecting and Disconnecting TTS 
+## Connecting and Disconnecting TTS
 
 To operate TTS:
 
@@ -383,7 +382,7 @@ To operate TTS:
 
     The daemon synthesizes the text with the engine and plays the resulting sound data. The method is asynchronous and the TTS state changes to `Ready`.
 
-    ``` 
+    ```
     void PrepareTtsClient()
     {
         try
@@ -402,7 +401,7 @@ To operate TTS:
 
 2.  When the connection is no longer needed, use the `Unprepare()` method to disconnect TTS and change the TTS state to `Created`:
 
-    ``` 
+    ```
     void UnprepareTtsClient()
     {
         try
@@ -416,8 +415,8 @@ To operate TTS:
     }
     ```
 
-<a name="engine"></a>	
-## Setting and Getting TTS Engine Options 
+<a name="engine"></a>
+## Setting and Getting TTS Engine Options
 
 To set and get TTS engine options:
 
@@ -425,7 +424,7 @@ To set and get TTS engine options:
 
     The credential is a key to verify the authorization for using the TTS engine. The necessity of the credential depends on the engine. If the engine requests the credential, you can set it using the `SetCredential()` method of the [Tizen.Uix.Tts.TtsClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Tts.TtsClient.html) class:
 
-    ``` 
+    ```
     void SetCredential(string credential)
     {
         try
@@ -446,7 +445,7 @@ To set and get TTS engine options:
     > **Note**   
 	> The key and data are determined by the TTS engine. To set and get the private data, see the engine instructions.
 
-    ``` 
+    ```
     void SetPrivateData(string key, string data)
     {
         try
@@ -462,7 +461,7 @@ To set and get TTS engine options:
 
     To get the private data which corresponds to a specific key from the engine, use the `GetPrivateData()` method:
 
-    ``` 
+    ```
     void GetPrivateData(string key)
     {
         try
@@ -478,8 +477,8 @@ To set and get TTS engine options:
     }
     ```
 
-<a name="text"></a>	
-## Adding Text 
+<a name="text"></a>
+## Adding Text
 
 To add text:
 
@@ -492,7 +491,7 @@ To add text:
 
     You can add text to TTS at any point after the `Prepare()` method changes the TTS state to `Ready`.
 
-    ``` 
+    ```
     void AddText()
     {
         try
@@ -513,7 +512,7 @@ To add text:
 
 -   There is a length limit for added text in the engine. To retrieve the maximum value, use the `MaxTextSize` property of the `Tizen.Uix.Tts.TtsClient` class in the `Ready` state:
 
-    ``` 
+    ```
     void GetMaximumTextSize()
     {
         try
@@ -527,8 +526,8 @@ To add text:
     }
     ```
 
-<a name="control"></a>	
-## Controlling Playback 
+<a name="control"></a>
+## Controlling Playback
 
 To start, pause, and stop the playback:
 
@@ -541,8 +540,8 @@ To start, pause, and stop the playback:
    > **Note**   
    > If the TTS state changed event handler is invoked in the `Playing` state without a TTS method call, prepare the TTS state. The state can change if other applications request TTS play, the audio session requests TTS pause, or the TTS engine changes.
 
-   
-    ``` 
+
+    ```
     void Start()
     {
         try
@@ -560,7 +559,7 @@ To start, pause, and stop the playback:
 
     The TTS state is changed to `Paused`. To resume playback, use the `Play()` method.
 
-    ``` 
+    ```
     void Pause()
     {
         try
@@ -578,7 +577,7 @@ To start, pause, and stop the playback:
 
     All the texts in the queue are removed, and the TTS state is changed to `Ready`.
 
-    ``` 
+    ```
     void Stop()
     {
         try
@@ -592,3 +591,7 @@ To start, pause, and stop the playback:
     }
     ```
 
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

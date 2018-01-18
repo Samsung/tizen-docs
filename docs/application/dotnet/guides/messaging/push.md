@@ -1,6 +1,5 @@
 # Push
-## Dependencies
--   Tizen 4.0 Higher
+
 
 You can push events from an application server to your application on a Tizen device.
 
@@ -68,7 +67,7 @@ To enable your application to use the push functionality:
 
 1.  To use the [Tizen.Messaging.Push](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Push.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <privileges>
        <privilege>http://tizen.org/privilege/push</privilege>
     </privileges>
@@ -95,7 +94,7 @@ To enable your application to use the push functionality:
 
 3. To use the methods and properties of the Tizen.Messaging.Push namespace, include it in your application:
 
-    ``` 
+    ```
     using Tizen.Messaging.Push;
     ```
 
@@ -114,7 +113,7 @@ To manage push service connections:
     -   `EventHandlerStateChanged()` is triggered when the connection state changes.
     -   `EventHandlerNotificationReceived()` is triggered when the push notification is received from the push service.
 
-    ``` 
+    ```
     public static void EventHandlerStateChanged(object sender, PushConnectionStateEventArgs e)
     {
         /// State change events
@@ -128,7 +127,7 @@ To manage push service connections:
 
 2. Register the event handlers for the `StateChanged` and `NotificationReceived` events of the [Tizen.Messaging.Push.PushClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Push.PushClient.html) class and connect to the push service with the `PushServiceConnect()` method:
 
-    ``` 
+    ```
     try
     {
         string pushAppId = "YOUR_PUSH_APP_ID";
@@ -160,7 +159,7 @@ To manage push service connections:
 
     The `PushServiceDisconnect()` method returns all the resources allocated for the connection.
 
-    ``` 
+    ```
     PushClient.PushServiceDisconnect();
     ```
 
@@ -170,6 +169,7 @@ To manage push service connections:
 
     The application can be paused by pressing the **Home** or **Back** key. For a proper push operation, the `PushServiceDisconnect()` method must be called when the application is paused.
 
+<a name="state"></a>
 4. Handle state transitions.
 
     After the connection to the service is made, the application is notified whenever the connection state changes. This notification is conducted through the `EventHandlerStateChanged()` event handler. The following figure illustrates the possible states of the push service.
@@ -184,7 +184,7 @@ To manage push service connections:
 
     When the current state transits, the `EventHandlerStateChanged()` event handler is called and the new state is obtained. Determine the application actions based on the new state:
 
-    ``` 
+    ```
     public static void EventHandlerStateChanged(object sender, PushConnectionStateEventArgs e)
     {
         switch (e.state)
@@ -223,7 +223,7 @@ To register with the push server:
 
     After connecting to the push service, request registration using the `PushServerRegister()` method of the [Tizen.Messaging.Push.PushClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Push.PushClient.html) class.
 
-    ``` 
+    ```
     public static void OnStateUnregistered()
     {
         Task<ServerResponse> tr = PushClient.PushServerRegister();
@@ -257,7 +257,7 @@ To register with the push server:
 
         If the ID is new or updated, you need to send it to your application server. This ID is used as a destination address to the application on a particular device. If the application has already sent the ID, you can skip this step.
 
-    ``` 
+    ```
     public static void OnStateRegistered()
     {
         /// Request unread notifications to the push service
@@ -275,7 +275,7 @@ To register with the push server:
 
     When the application no longer wants to receive push notifications, use the following method to request deregistration:
 
-    ``` 
+    ```
     Task<ServerResponse> tu = PushClient.PushServerUnregister();
     tu.GetAwaiter().OnCompleted(() =>
     {
@@ -289,7 +289,7 @@ To register with the push server:
 
 
 <a name="security"></a>
-## Managing Security 
+## Managing Security
 
 When you send a notification with sensitive information, be aware of the chance that the notification gets hijacked by someone else. It is your responsibility to keep such sensitive information safe from malicious access. The following rules are strongly recommended:
 
@@ -320,14 +320,14 @@ The following example shows a sample push notification:
 - Method: HTTP POST
 - Header:
 
-    ``` 
+    ```
     appID: 1234567890987654
     appSecret: dYo/o/m11gmWmjs7+5f+2zLNVOc=
     ```
 
 - Body:
 
-    ``` 
+    ```
     {
         "regID": "0501a53f4affdcbb98197f188345ff30c04b-5001",
         "requestID": "01231-22EAX-223442",
@@ -358,13 +358,13 @@ To send a notification:
 
     For example, to show a "Hi" message in the quick panel and increase the badge count by 1 when the notification arrives at the device, the message field of the notification must be the following:
 
-    ``` 
+    ```
     "badgeOption=INCREASE&badgeNumber=1&action=ALERT&alertMessage=Hi"
     ```
 
     If you want to deliver the notification directly to your application, the message field must be the following:
 
-    ``` 
+    ```
     "action=LAUNCH"
     ```
 
@@ -377,7 +377,7 @@ To send a notification:
     This use case focuses on how an application developer can construct a notification. For advanced features, see the [Push Server](push-server.md) guide for server developers.
 
 <a name="receive_push"></a>
-## Receiving Push Notifications 
+## Receiving Push Notifications
 
 When a notification arrives at the device, its delivery mechanism depends on whether the application is running.
 
@@ -389,7 +389,7 @@ To handle incoming push notifications:
 
     The following example shows how the application can retrieve the app data (payload), message, and timestamp from the received notification. When the `EventHandlerNotificationReceived()` event handler is called, you can retrieve the app data, message, and time stamp from `e.AppData`, `e.Message`, and `e.ReceivedAt` respectively.
 
-    ``` 
+    ```
     public static void EventHandlerNotificationReceived(object sender, PushMessageEventArgs e)
     {
         Console.WriteLine("Notification Data: " + e.AppData);
@@ -406,7 +406,7 @@ To handle incoming push notifications:
 
     If the notification arrives when the application is not running, it can be handled in 3 ways:
 
-    -   Forcibly launch the application and deliver the notification to it.
+    -   <a name="force_launch"></a>Forcibly launch the application and deliver the notification to it.
 
         You need to set the action to `LAUNCH` in the message field when sending the notification from the application server. When the notification action arrives at the device, the push service forcibly launches the application and delivers the notification.
 
@@ -416,7 +416,7 @@ To handle incoming push notifications:
 
         1.  Get the requested application control:
 
-            ``` 
+            ```
             public static Tizen.Applications.AppControl _appCtrl;
             public static Tizen.Applications.AppControl.ExtraDataCollection _extraDataSet;
 
@@ -426,7 +426,7 @@ To handle incoming push notifications:
 
         2. Determine the reason for the application launch. If the reason for the launch is a notification, retrieve the latest push message.
 
-            ``` 
+            ```
             string GettedValue = "";
             bool isGetted = _extraDataSet.TryGet("http://tizen.org/appcontrol/data/push/launch_type", out GettedValue);
 
@@ -445,7 +445,7 @@ To handle incoming push notifications:
 
         You can request for unread notifications from the push service. The request can be performed after connecting to the push server when the application is launched.
 
-        ``` 
+        ```
         PushClient.GetUnreadNotifications();
         ```
 
@@ -456,3 +456,6 @@ To handle incoming push notifications:
         You need to set the action to `DISCARD` in the message field when sending the notification from the application server. When such a notification arrives at the device, the push service delivers the notification only when the application is up and running. Otherwise, the push service does not store the notification and discards it.
 
 
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

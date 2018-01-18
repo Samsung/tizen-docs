@@ -1,6 +1,5 @@
 # Attach Panel
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 The attach panel allows the device user to attach various content into an application that contains an attach panel. The user can attach images, take pictures, record voice, and select files on the attach panel.
 
@@ -63,7 +62,7 @@ To enable your application to use the attach panel functionality:
 
 1.  To use the [Tizen.Applications.AttachPanel](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AttachPanel.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-    ``` 
+    ```
     <privileges>
        <!--To add the image viewer and camera UI gadget in the attach panel-->
        <privilege>http://tizen.org/privilege/mediastorage</privilege>
@@ -78,7 +77,7 @@ To enable your application to use the attach panel functionality:
 
 2.  To use the methods and properties of the Tizen.Applications.AttachPanel namespace, include it in your application:
 
-    ``` 
+    ```
     using Tizen.Applications.AttachPanel;
     ```
 
@@ -86,7 +85,7 @@ To enable your application to use the attach panel functionality:
     -   [Get the Tizen platform conformant](#getConformant).
     -   Create a conformant, into which you can add the attach panel later:
 
-        ``` 
+        ```
         class App : CoreUIApplication
         {
             Conformant conformant;
@@ -113,7 +112,7 @@ To create an attach panel:
 
     When the attach panel is created, its state is hidden by default. To show the created panel, use the `Show()` method of the `Tizen.Applications.AttachPanel.AttachPanel` class.
 
-    ``` 
+    ```
     AttachPanel attachPanel;
 
     public void CreateAttachPanel(Conformant conformant)
@@ -133,7 +132,7 @@ To create an attach panel:
 
     To deliver more information to the UI gadget or called application, add the data with a bundle.
 
-    ``` 
+    ```
     Bundle bundle = new Bundle();
     bundle.AddItem("http://tizen.org/appcontrol/data/total_count", "3");
 
@@ -164,7 +163,7 @@ To create an attach panel:
 
         The event is triggered when reserved events (defined in the [Tizen.Applications.AttachPanel.EventType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AttachPanel.EventType.html) enumeration) are published from the panel side.
 
-    ``` 
+    ```
     private void AttachPanelResultCallback(object sender, ResultEventArgs e)
     {
         if (e.ResultCode != AppControlReplyResult.Succeeded)
@@ -213,7 +212,7 @@ To create an attach panel:
 
 4.  When no longer needed, you can remove a specific content category by using the `RemoveCategory()` method:
 
-    ``` 
+    ```
     public void RemoveCategory()
     {
         attachPanel.RemoveCategory(ContentCategory.Image);
@@ -221,16 +220,16 @@ To create an attach panel:
     }
     ```
 
-<a name="createInxamarin"></a>	
+<a name="createInxamarin"></a>
 ## Creating an Attach Panel in Xamarin
 
 To create an attach panel in Xamarin, you can use custom renderers:
 
-1.  Get the Tizen platform conformant.
+1.  <a name="getConformant"></a>Get the Tizen platform conformant.
 
     In Tizen, `BaseLayout.Parent` is the conformant of the main window.
 
-    ``` 
+    ```
     public static EvasObject WindowConformant
     {
         set; get;
@@ -248,7 +247,7 @@ To create an attach panel in Xamarin, you can use custom renderers:
 
     The following example creates an `AttachPanelLayout` custom control, which is a custom renderer showing the attach panel in the `ContentView`. The control also has the `IsAttachPanelVisibleProperty` property, which determines whether the attach panel is shown or hidden.
 
-    ``` 
+    ```
     public partial class AttachPanelLayout : ContentView
     {
         public static readonly BindableProperty IsAttachPanelVisibleProperty =
@@ -277,7 +276,7 @@ To create an attach panel in Xamarin, you can use custom renderers:
 
     The following code example shows how the `attachPanelLayout` custom control can be consumed by a C\# page:
 
-    ``` 
+    ```
     private void OpenAttachPanelClicked(object sender, EventArgs e)
     {
         if (attachPanelLayout != null)
@@ -297,7 +296,7 @@ To create an attach panel in Xamarin, you can use custom renderers:
 
 4.  Create the custom renderer on the Tizen platform:
 
-    ``` 
+    ```
     [assembly: ExportRenderer(typeof(AttachPanelLayout), typeof(AttachPanelLayoutRenderer))]
     namespace AttachPanelSample.Tizen.Mobile
     {
@@ -343,7 +342,7 @@ The following extra data is supported:
 -   `http://tizen.org/appcontrol/data/total_count`: Total count of selected items in the Images category
 -   `http://tizen.org/appcontrol/data/total_size`: Total size of selected items in the VideoRecorder category within the **More** tab
 
-``` 
+```
 public void SetTotalCountOfSelectedImages()
 {
     Bundle bundle = new Bundle();
@@ -362,3 +361,6 @@ public void SetTotalSizeOfSelectedItems()
 ```
 
 
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

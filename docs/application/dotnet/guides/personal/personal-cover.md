@@ -1,6 +1,5 @@
 # Personal Data
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 The personal data features introduce how you can manage secure data related to the user. You can also manage authentication and application usage history data.
 
@@ -30,3 +29,7 @@ You can use the following personal data features in your .NET applications:
 
     You can retrieve the user's application usage patterns, such as information about frequently used applications.
 
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

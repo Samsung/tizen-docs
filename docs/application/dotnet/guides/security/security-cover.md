@@ -1,6 +1,5 @@
 # Security
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 The security features introduce how private information remains private, and how the user knows when they are trying to access privileged information. You can use a repository and cryptographic operations to manage keys, certificates, and sensitive user data. When the user tries to access privileged information, you can display information about the data.
 
@@ -22,3 +21,7 @@ You can use the following security features in your .NET applications:
 
     You can create secure communications by executing your application in a trusted execution environment (TEE), and communicating with other applications within that environment.
 
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

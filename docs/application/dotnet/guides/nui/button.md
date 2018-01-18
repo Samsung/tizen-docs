@@ -1,6 +1,4 @@
 # Button
-## Dependencies
--   Tizen 4.0 and Higher
 
 The NUI button controls include various button types:
 
@@ -12,7 +10,7 @@ The NUI button controls include various button types:
 The `Button` class is the base class for the button UI components.
 
 <a name="creation"></a>
-## Creating a Button 
+## Creating a Button
 
 To create a button:
 
@@ -20,7 +18,7 @@ To create a button:
 
     In the following example, the button is added to a Table View UI component:
 
-    ``` 
+    ```
     private TableView _contentContainer;
 
     _window = Window.Instance;
@@ -38,7 +36,7 @@ To create a button:
 
 - Create a checkbox:
 
-    ``` 
+    ```
     CheckBoxButton checkBoxbutton = new CheckBoxButton();
     checkBoxbutton.LabelText = "Yes";
     checkBoxbutton.BackgroundColor = Color.White;
@@ -46,7 +44,7 @@ To create a button:
 
 - Create a group of radio buttons:
 
-    ``` 
+    ```
     View radioGroup = new View();
     radioGroup.SetParentOrigin.Centre;
 
@@ -62,12 +60,12 @@ To create a button:
 
 - Create a toggle button:
 
-    ``` 
+    ```
     ToggleButton toggleButton = new ToggleButton();
     ```
 
     <a name="states"></a>
-## Button States 
+## Button States
 
 Each button can be in the `selectable`, `disabled`, and `togglable` states.
 
@@ -85,7 +83,7 @@ There are 4 events associated with the `Button` class:
 
 For example, to add an event handler to the `Clicked` event of a push button:
 
-``` 
+```
 pushButton.Clicked += (obj, e) =>
 {
     PushButton sender = obj as PushButton;
@@ -112,7 +110,7 @@ For a checkbox, all 4 events are available, though usually only the `StateChange
 For a radio button, use the `StateChanged` event to check when the radio button is selected.
 
 <a name="visuals"></a>
-## Button Visuals 
+## Button Visuals
 
 Visuals provide reusable rendering logic which can be used by all controls. Images and icons are added to buttons using visuals.
 
@@ -124,7 +122,7 @@ When the button is disabled, the background, button, and selected visuals are re
 
 The following example illustrates the toggle button `StateVisuals` property, which has visuals for each state:
 
-``` 
+```
 ToggleButton toggleButton = new ToggleButton();
 
 PropertyArray array = new PropertyArray();
@@ -153,7 +151,7 @@ There are various methods of adding tooltips to a button:
 
 -   Use the `TooltipText` property, which is inherited from the `View` class:
 
-    ``` 
+    ```
     PushButton button = new PushButton();
 
     // Add a simple text-only tooltip
@@ -165,7 +163,7 @@ There are various methods of adding tooltips to a button:
 
     In the following example, an array of property maps is created for a tooltip with 1 icon and 1 text visual:
 
-    ``` 
+    ```
     PushButton button = new PushButton();
 
     // Create a property map for a tooltip with 1 icon and 1 text
@@ -197,7 +195,7 @@ There are various methods of adding tooltips to a button:
     The `Tooltip` property is inherited from the *View* class.
 
 <a name="properties"></a>
-## Button Properties 
+## Button Properties
 
 The `Button` class has the following properties:
 
@@ -235,3 +233,7 @@ The **ToggleButton** class has the following additional properties:
 | `Tooltips`          | `Array` | Array of toggle state tooltip strings. Each tooltip string must match a toggle state |
 | `CurrentStateIndex` | `int`   | Current state                            |
 
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

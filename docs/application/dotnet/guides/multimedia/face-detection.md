@@ -1,6 +1,5 @@
 # Face Detection, Recognition, and Tracking
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 You can detect a face in an image, or track a face in the device camera preview.
 
@@ -26,7 +25,7 @@ To enable your application to use the face detection, recognition, and tracking 
 1.  Install the NuGet packages for Media Vision and Camera.
 2.  To use the methods and properties of the face detection, tracking, and recognition classes and to handle camera preview, include the [Tizen.Multimedia](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html) and [Tizen.Multimedia.Vision](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.html) namespaces in your application:
 
-    ``` 
+    ```
     using Tizen.Multimedia;
     using Tizen.Multimedia.Vision;
     ```
@@ -34,7 +33,7 @@ To enable your application to use the face detection, recognition, and tracking 
 3.  Define the configuration settings:
     -   For face detection, create an instance of the [Tizen.Multimedia.Vision.FaceDetectionConfiguration](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.FaceDetectionConfiguration.html) class and set its properties accordingly:
 
-        ``` 
+        ```
         static FaceDetectionConfiguration configDetection = new FaceDetectionConfiguration();
 
         /// Set a model path if you want to save your own model in a certain place
@@ -50,7 +49,7 @@ To enable your application to use the face detection, recognition, and tracking 
 
     -   For face recognition, create an instance of the [Tizen.Multimedia.Vision.FaceRecognitionConfiguration](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.FaceRecognitionConfiguration.html) class and set its properties accordingly:
 
-        ``` 
+        ```
         static FaceRecognitionConfiguration configRecog = new FaceRecognitionConfiguration();
 
         /// Set the face recognition learning model algorithm to one of the
@@ -61,14 +60,14 @@ To enable your application to use the face detection, recognition, and tracking 
     -   For face tracking, no configuration is needed.
 
 
-<a name="detect"></a>	
-## Detecting Faces 
+<a name="detect"></a>
+## Detecting Faces
 
 To detect faces:
 
 1.  Create an instance of the [Tizen.Multimedia.Vision.MediaVisionSource](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.MediaVisionSource.html) class with raw image buffer data and its corresponding width, height, and color space parameters:
 
-    ``` 
+    ```
     /// Assume that there is a decoded raw data buffer of the byte[] type, and
     /// it has 640x480 resolution with an RGB888 color space
 
@@ -77,7 +76,7 @@ To detect faces:
 
 2.  To detect faces, use the `DetectAsync()` method of the [Tizen.Multimedia.Vision.FaceDetector](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.FaceDetector.html) class:
 
-    ``` 
+    ```
     var faceLists = await FaceDetector.DetectAsync(source);
 
     /// If you want to change the face detection configuration, use an instance
@@ -100,7 +99,7 @@ To recognize faces:
 
     Face examples need to be of the same person but captured at different angles. The example assumes that 10 face samples are used and that the face area in each example covers approximately 95\~100% of the image. The face to be recognized is given the label "1".
 
-    ``` 
+    ```
     static FaceRecognitionModel model = new FaceRecognitionModel();
 
     /// faceExamples contains 10 face examples as instances
@@ -113,13 +112,13 @@ To recognize faces:
 
 2.  Learn the face recognition model based on the provided examples with the `Learn()` method:
 
-    ``` 
+    ```
     model.Learn();
     ```
 
 3.  To recognize a face, use the `RecognizeAsync()` method of the [Tizen.Multimedia.Vision.FaceRecognizer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.FaceRecognizer.html) class:
 
-    ``` 
+    ```
     /// whoFaceSource is an instance of the Tizen.Multimedia.Vision.MediaVisionSource class
     /// that contains the face to be recognized
     /// whoFaceRoi is an instance of the Tizen.Multimedia.Rectangle struct that defines
@@ -134,14 +133,14 @@ To recognize faces:
     }
     ```
 <a name="track"></a>
-## Tracking Faces 
+## Tracking Faces
 
 To track faces:
 
 1.  Prepare the camera:
     1.  Define a camera preview event handler for the `Preview` event of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class and create an instance of that class:
 
-        ``` 
+        ```
         /// Define a camera preview event handler
         static void PreviewCallback(object sender, PreviewEventArgs e)
         {
@@ -168,7 +167,7 @@ To track faces:
 
     2.  Set the camera display, register the camera preview event handler, and start the camera preview with the `StartPreview()` method of the `Tizen.Multimedia.Camera` class:
 
-        ``` 
+        ```
         /// Set the camera display
         camera.Display = new Display(new Window("Preview"));
 
@@ -191,7 +190,7 @@ To track faces:
 
         In the following example, the `DetectAsync()` method of the [Tizen.Multimedia.Vision.FaceDetector](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.FaceDetector.html) class is used to detect a face and provide its initial location:
 
-        ``` 
+        ```
         var faceInitLocation = await FaceDetector.DetectAsync(source);
 
         Point[] initialPoint =
@@ -205,7 +204,7 @@ To track faces:
 
     2.  Create an instance of the [Tizen.Multimedia.Vision.FaceTrackingModel](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.FaceTrackingModel.html) class and prepare the model with the initial location:
 
-        ``` 
+        ```
         Quadrangle faceLocation = new Quadrangle(initialPoint);
 
         static FaceTrackingModel model = new FaceTrackingModel();
@@ -215,7 +214,7 @@ To track faces:
 
     3.  To track the face, use the `TrackAsync()` method of the [Tizen.Multimedia.Vision.FaceTracker](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Vision.FaceTracker.html) class:
 
-        ``` 
+        ```
         var result = await FaceTracker.TrackAsync(source, model, false);
         if (result.Region != null)
         {
@@ -225,10 +224,15 @@ To track faces:
 
     4.  When face tracking is no longer needed, deregister the camera preview event handler, stop the camera preview, and destroy the camera instance:
 
-        ``` 
+        ```
         camera.Preview -= PreviewCallback;
 
         camera.StopPreview();
         camera.Dispose();
         ```
 
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher
