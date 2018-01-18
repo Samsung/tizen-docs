@@ -10,6 +10,7 @@ Before you implement the actual application functionality, define all the necess
 
 After you have finished setting the project properties, you are ready to [design the UI and implement the application code](app-dev-process-n.md#designing).
 
+<a name="api"></a>
 ## Checking API and Privilege Usage
 
 You can [check the source code in your project for any violation of API and privilege usage](../../../tizen-studio/native-tools/api-checker-n.md). To enable the non-default checks (the default checks are always performed):
@@ -27,6 +28,7 @@ You can also perform the usage checks manually after building the application, b
 > **Note**  
 > If the application has conflicting API versions, the build fails and the results are displayed in the **Problems** view.
 
+<a name="manifest"></a>
 ## Setting the Application Manifest
 
 The application manifest consists of application information, such as package, version, features, and privileges, which are available for the application. To configure the application information in the manifest editor, double-click the application `tizen-manifest.xml` file in the **Project Explorer** view.
@@ -70,9 +72,7 @@ You can perform the following tasks using the **Overview** tab:
   You can add a launcher icon to your application by defining it in the **Icon** panel. If your application supports both HD and WVGA, it is best to provide an icon for HD for better image quality in both cases.
 
   The following table describes the available icons.
-
   ​
-
   | Profile  | Mandatory | Format                 | Size              | Size              | Description                        |
   | -------- | --------- | ---------------------- | ----------------- | ----------------- | ---------------------------------- |
   | Profile  | Mandatory | Format                 | Xhigh  (HD)       | High  (WVGA)      | Description                        |
@@ -157,7 +157,7 @@ You can perform the following tasks using the **Advanced** tab:
 
   In the **Meta Data** section, you can add user-defined key-value pairs to the application to be used for filtering in the package manager.
 
-- Export [data control](../../../guides/native/app-management/data-control-n.md) functionality.  
+- Export [data control](../../guides/app-management/data-control-n.md) functionality.  
 A service application can act as a service provider and allow other applications to access specific data.  
 To define the kind of access and data your service application provides to other applications, click **+** in the **Data Control** section, and define the data control details.
 
@@ -179,7 +179,7 @@ To define the kind of access and data your service application provides to other
 
 - Define application controls.
 
-  You can [export the application control functionality](../../../guides/native/app-management/app-controls-n.htm#export_appcontrol) of your application.
+  You can [export the application control functionality](../../guides/app-management/app-controls-n.md#export_appcontrol) of your application.
 
   To define an application control used to access the functionality of your application, click **+** in the **Application Control** section.
 
@@ -206,7 +206,7 @@ To define the kind of access and data your service application provides to other
 
 - Add the background category type (since Tizen 2.4).
 
-  You can [describe the background category](../../../guides/native/app-management/efl-ui-app-n.md#bg-category) of your Tizen native application.
+  You can [describe the background category](../../guides/app-management/efl-ui-app-n.md#bg-category) of your Tizen native application.
 
   To add background category types to allow running in the background, click **+** in the **Background Category** panel, select the category type, and click **OK**.
 

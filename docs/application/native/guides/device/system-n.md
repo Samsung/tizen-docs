@@ -33,7 +33,7 @@ To obtain the information, query a feature or system key.
 | [Battery](#battery)                | [Human activity monitor](#ham) | [Multi-point touch](#multipoint) | [Sip](#sip)                      |
 | [Camera](#camera)                  | [Input](#input)                | [Network](#network)              | [Speech](#speech)                |
 | [Consumer IR](#consumer)           | [IOT](#iot)                    | [OAuth 2.0](#oauth2)             | [System setting](#systemsetting) |
-| [Contextual trigger](#trigger)     | [LED](#led)                    | [OpenGL® ES](#opengl)            | [USB](#usb)                      |
+| [Contextual trigger](#trigger)     | [LED](#led)                    | [OpenGL&reg; ES](#opengl)            | [USB](#usb)                      |
 | [Database](#database)              | [Location](#location)          | [Platform](#platformfeat)        | [Vision](#vision)                |
 | [Download](#download)              | [Maps](#maps)                  | [Profile](#profile_feat)         | [Web](#web)                      |
 | [FIDO](#fido)                      | [Media](#media)                | [Screen](#screen)                | -                                |
@@ -342,7 +342,7 @@ The following table lists the network feature keys.
 | `http://tizen.org/feature/network.tethering.wifi` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/network.tethering` key, if the device supports tethering over Wi-Fi. |
 | `http://tizen.org/feature/network.vpn`   | `bool` | The platform returns `true` for this key, if the device supports the Virtual Private Network feature (VPN). |
 | `http://tizen.org/feature/network.wifi`  | `bool` | The platform returns `true` for this key, if the device supports all APIs which require Wi-Fi. |
-| `http://tizen.org/feature/network.wifi.direct` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/network.wifi` key, if the device supports Wi-Fi Direct®. |
+| `http://tizen.org/feature/network.wifi.direct` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/network.wifi` key, if the device supports Wi-Fi Direct&reg;. |
 | `http://tizen.org/feature/network.wifi.direct.display` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/network.wifi` key, if the device supports Wi-Fi Direct display feature. |
 | `http://tizen.org/feature/network.wifi.direct.service_discovery` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/network.wifi` key, if the device supports Wi-Fi Direct service discovery. |
 | `http://tizen.org/feature/network.wifi.tdls` | `bool` | The platform returns `true` for this key, if the device supports the Wi-Fi Tunneled Direct Link Setup (TDLS). |
@@ -355,25 +355,25 @@ The following table lists the OAuth 2.0 feature keys.
 | --------------------------------- | ------ | ---------------------------------------- |
 | `http://tizen.org/feature/oauth2` | `bool` | The platform returns `true` for this key, if the device supports the OAuth 2.0 API. |
 
-The following table lists the OpenGL® ES feature keys.
+The following table lists the OpenGL&reg; ES feature keys.
 
-**Table: OpenGL® ES feature keys**
+**Table: OpenGL&reg; ES feature keys**
 
 | Key                                      | Type     | Description                              |
 | ---------------------------------------- | -------- | ---------------------------------------- |
-| `http://tizen.org/feature/opengles`      | `bool`   | The platform returns `true` for this key, if the device supports any OpenGL® ES version and any texture format. |
-| `http://tizen.org/feature/opengles.texture_format` | `String` | The platform returns `true` for this key, if the device supports any OpenGL® ES or compressed texture format.If the device supports no formats, the platform returns an empty string for this key. |
-| `http://tizen.org/feature/opengles.texture_format.3dc` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the 3DC texture format for OpenGL® ES. |
-| `http://tizen.org/feature/opengles.texture_format.atc` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the ATC texture format for OpenGL® ES. |
-| `http://tizen.org/feature/opengles.texture_format.etc` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the ETC texture format for OpenGL® ES. |
-| `http://tizen.org/feature/opengles.texture_format.ptc` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the PTC texture format for OpenGL® ES. |
-| `http://tizen.org/feature/opengles.texture_format.pvrtc` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the PVRTC texture format for OpenGL® ES. |
-| `http://tizen.org/feature/opengles.texture_format.utc` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the UTC texture format for OpenGL® ES. |
-| `http://tizen.org/feature/opengles.version.1_1` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the OpenGL® ES version 1.1. |
-| `http://tizen.org/feature/opengles.version.2_0` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the OpenGL® ES version 2.0. |
-| `http://tizen.org/feature/opengles.version.3_0` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the OpenGL® ES version 3.0. |
-| `http://tizen.org/feature/opengles.version.3_1` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the OpenGL® ES version 3.1. |
-| `http://tizen.org/feature/opengles.version.3_2` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the OpenGL® ES version 3.2. |
+| `http://tizen.org/feature/opengles`      | `bool`   | The platform returns `true` for this key, if the device supports any OpenGL&reg; ES version and any texture format. |
+| `http://tizen.org/feature/opengles.texture_format` | `String` | The platform returns `true` for this key, if the device supports any OpenGL&reg; ES or compressed texture format.If the device supports no formats, the platform returns an empty string for this key. |
+| `http://tizen.org/feature/opengles.texture_format.3dc` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the 3DC texture format for OpenGL&reg; ES. |
+| `http://tizen.org/feature/opengles.texture_format.atc` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the ATC texture format for OpenGL&reg; ES. |
+| `http://tizen.org/feature/opengles.texture_format.etc` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the ETC texture format for OpenGL&reg; ES. |
+| `http://tizen.org/feature/opengles.texture_format.ptc` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the PTC texture format for OpenGL&reg; ES. |
+| `http://tizen.org/feature/opengles.texture_format.pvrtc` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the PVRTC texture format for OpenGL&reg; ES. |
+| `http://tizen.org/feature/opengles.texture_format.utc` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the UTC texture format for OpenGL&reg; ES. |
+| `http://tizen.org/feature/opengles.version.1_1` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the OpenGL&reg; ES version 1.1. |
+| `http://tizen.org/feature/opengles.version.2_0` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the OpenGL&reg; ES version 2.0. |
+| `http://tizen.org/feature/opengles.version.3_0` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the OpenGL&reg; ES version 3.0. |
+| `http://tizen.org/feature/opengles.version.3_1` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the OpenGL&reg; ES version 3.1. |
+| `http://tizen.org/feature/opengles.version.3_2` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the OpenGL&reg; ES version 3.2. |
 
 The following table lists the platform feature keys.
 

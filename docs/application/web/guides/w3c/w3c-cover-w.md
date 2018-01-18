@@ -47,7 +47,7 @@ You can use the following W3C, HTML5, and supplementary features in your Web app
 
 - [Supplementary Features](./w3c/supplement/supplement-guide-w.md)
 
-  You can take advantage of supplementary features in creating Tizen Web applications. You can access binary data in JavaScript with typed arrays, create 3D visual elements with the WebGL™ graphics library, display elements on full screen views, and control the device camera.
+  You can take advantage of supplementary features in creating Tizen Web applications. You can access binary data in JavaScript with typed arrays, create 3D visual elements with the WebGL&trade; graphics library, display elements on full screen views, and control the device camera.
 
 - [User Interface](./w3c/ui/ui-guide-w.md)
 

@@ -20,7 +20,7 @@ The user interface features define how to use the UI framework, which is a unive
 The localization features define how you can ensure that your application works around the world in different locales and time zones. You can provide the UI texts in your application in multiple languages, and ensure that the time and date information is given correctly based on the current location of the device.
 
 - [Graphics](graphics/graphics-cover-n.md)
-The graphics features introduce how you can improve the visual look of your application through efficient use of images. You can handle graphics using various graphic libraries and interfaces, such as Cairo and OpenGL® ES. You can also improve the performance of your graphic application with hardware acceleration.
+The graphics features introduce how you can improve the visual look of your application through efficient use of images. You can handle graphics using various graphic libraries and interfaces, such as Cairo and OpenGL&reg; ES. You can also improve the performance of your graphic application with hardware acceleration.
 
 - [Notifications and Content Sharing](notification/notification-cover-n.md)
 The notifications and content sharing features introduce how you can inform the user of important events and allow the user to share content between applications.

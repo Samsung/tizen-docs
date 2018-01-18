@@ -296,8 +296,8 @@ To manage playback:
 
 ### Configuring the Video Playback
 
-During video playback, you can manage the display settings – display
-mode and display orientation – as needed. Before setting the parameters,
+During video playback, you can manage the display settings &ndash; display
+mode and display orientation &ndash; as needed. Before setting the parameters,
 make sure that the player handle has been created, the display set, and
 the player started.
 

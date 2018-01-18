@@ -28,6 +28,10 @@ HTML5, CSS, and JavaScript:
     A wearable widget application is a small application that can be
     shown by specific UI applications (such as the home screen).
 
+-   [TV Web application](tv/first-app-tw.md)
+
+    A TV application is targeted to run on smart TVs, and can be optimized for larger screens and remote control.
+
 The first application examples show a simple application with a basic UI
 and minimal functionality. Get familiar with the example first, and
 afterwards you can use it as a basis to build more complex applications.

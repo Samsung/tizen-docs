@@ -1,11 +1,11 @@
-# SDL Graphics with OpenGL® ES
+# SDL Graphics with OpenGL&reg; ES
 ## Dependencies
 - Tizen 4.0 and Higher for Mobile
 - Tizen 4.0 and Higher for Wearable
 
-OpenGL® ES is a standard specification defining a cross-language, cross-platform API for writing applications that produce 2D and 3D computer graphics. Tizen supports OpenGL® ES versions 1.1, 2.0, 3.0, 3.1, and 3.2. For general information on OpenGL®ES, and the comparative merits of Vulkan® and OpenGL®, see the official Khronos [OpenGL® ES Web site](https://www.khronos.org/opengles/) and [Vulkan® vs. OpenGL®](sdl_n.htm#vulkan_vs_opengles).
+OpenGL&reg; ES is a standard specification defining a cross-language, cross-platform API for writing applications that produce 2D and 3D computer graphics. Tizen supports OpenGL&reg; ES versions 1.1, 2.0, 3.0, 3.1, and 3.2. For general information on OpenGL&reg;ES, and the comparative merits of Vulkan&reg; and OpenGL&reg;, see the official Khronos [OpenGL&reg; ES Web site](https://www.khronos.org/opengles/) and [Vulkan&reg; vs. OpenGL&reg;](sdl_n.htm#vulkan_vs_opengles).
 
-**Figure: OpenGL® ES in Tizen**
+**Figure: OpenGL&reg; ES in Tizen**
 
 ![opengles in Tizen](./media/sdl_opengles.png)
 
@@ -13,25 +13,25 @@ The main OpenGL ES API features include [rendering 3D objects in an SDL applicat
 
 ## Prerequisites
 
-To enable your application to use the OpenGL® ES functionality:
+To enable your application to use the OpenGL&reg; ES functionality:
 
-1. To use OpenGL® ES for 3D rendering, you must create an SDL application, and understand both [OpenGL® ES](https://www.khronos.org/opengles/) and [SDL](https://www.libsdl.org/).
+1. To use OpenGL&reg; ES for 3D rendering, you must create an SDL application, and understand both [OpenGL&reg; ES](https://www.khronos.org/opengles/) and [SDL](https://www.libsdl.org/).
 
-2. Check whether the device supports a specific version of OpenGL® ES.
+2. Check whether the device supports a specific version of OpenGL&reg; ES.
 
-   Check for device support using the `system_info_get_platform_bool()` function, before using the OpenGL ES APIs. If the device can support the specific OpenGL® ES version, the function returns `true` in the second parameter.
+   Check for device support using the `system_info_get_platform_bool()` function, before using the OpenGL ES APIs. If the device can support the specific OpenGL&reg; ES version, the function returns `true` in the second parameter.
 
    ```
    bool opengles_support;
-   /* Check support for the OpenGL® ES 2.0 version */
+   /* Check support for the OpenGL&reg; ES 2.0 version */
    system_info_get_platform_bool("http://tizen.org/feature/opengles.version.2_0", &opengles_support);
    ```
 
-3. To use the functions and data types of the OpenGL ES (in [mobile](../../../../org.tizen.native.mobile.apireference/group__OPENSRC__OPENGLES__FRAMEWORK.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__OPENSRC__OPENGLES__FRAMEWORK.html) applications) and SDL (in [mobile](../../../../org.tizen.native.mobile.apireference/group__OPENSRC__SDL__FRAMEWORK.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__OPENSRC__SDL__FRAMEWORK.html) applications) APIs, include the `<SDL.h>` header file and the appropriate OpenGL® ES version header file in your application:
+3. To use the functions and data types of the OpenGL ES (in [mobile](../../../../org.tizen.native.mobile.apireference/group__OPENSRC__OPENGLES__FRAMEWORK.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__OPENSRC__OPENGLES__FRAMEWORK.html) applications) and SDL (in [mobile](../../../../org.tizen.native.mobile.apireference/group__OPENSRC__SDL__FRAMEWORK.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__OPENSRC__SDL__FRAMEWORK.html) applications) APIs, include the `<SDL.h>` header file and the appropriate OpenGL&reg; ES version header file in your application:
 
     ```
     #include <SDL.h>
-    /* Header file for the OpenGL® ES 2.0 version */
+    /* Header file for the OpenGL&reg; ES 2.0 version */
     #include <GLES2/GLES2.h>
     ```
 
@@ -39,15 +39,15 @@ To enable your application to use the OpenGL® ES functionality:
 
 | Version        | Feature key                              | Header file                              |
 | -------------- | ---------------------------------------- | ---------------------------------------- |
-| OpenGL® ES 1.1 | `http://tizen.org/feature/opengles.version.1_1` | `<GLES/GLES.h>` or `<SDL_opengles.h>`    |
-| OpenGL® ES 2.0 | `http://tizen.org/feature/opengles.version.2_0` | `<GLES2/GLES2.h>` or `<SDL_opengles2.h>` |
-| OpenGL® ES 3.0 | `http://tizen.org/feature/opengles.version.3_0` | `<GLES3/GLES3.h>`                        |
-| OpenGL® ES 3.1 | `http://tizen.org/feature/opengles.version.3_1` | `<GLES3/GLES3.h>`                        |
-| OpenGL® ES 3.2 | `http://tizen.org/feature/opengles.version.3_2` | `<GLES3/GLES3.h>`                        |
+| OpenGL&reg; ES 1.1 | `http://tizen.org/feature/opengles.version.1_1` | `<GLES/GLES.h>` or `<SDL_opengles.h>`    |
+| OpenGL&reg; ES 2.0 | `http://tizen.org/feature/opengles.version.2_0` | `<GLES2/GLES2.h>` or `<SDL_opengles2.h>` |
+| OpenGL&reg; ES 3.0 | `http://tizen.org/feature/opengles.version.3_0` | `<GLES3/GLES3.h>`                        |
+| OpenGL&reg; ES 3.1 | `http://tizen.org/feature/opengles.version.3_1` | `<GLES3/GLES3.h>`                        |
+| OpenGL&reg; ES 3.2 | `http://tizen.org/feature/opengles.version.3_2` | `<GLES3/GLES3.h>`                        |
 
-## Rendering a Cube with OpenGL® ES
+## Rendering a Cube with OpenGL&reg; ES
 
-To render a cube using OpenGL® ES in an SDL application:
+To render a cube using OpenGL&reg; ES in an SDL application:
 
 1. Initialize the SDL library and create the SDL window.
 
@@ -56,7 +56,7 @@ To render a cube using OpenGL® ES in an SDL application:
    After SDL is initialized successfully, create the `SDL_Window` instance using the `SDL_CreateWindow()` function. The parameters define the title of the window, the X and Y position coordinates, width, height, and a set of `SDL_WindowFlags` combined using the "|" pipe operation.
 
    > **Note** 
-   > To use the OpenGL® ES context, use the `SDL_WINDOW_OPENGL` flag when you create a window. Do not use both `SDL_WINDOW_VULKAN` and `SDL_WINDOW_OPENGL` simultaneously.
+   > To use the OpenGL&reg; ES context, use the `SDL_WINDOW_OPENGL` flag when you create a window. Do not use both `SDL_WINDOW_VULKAN` and `SDL_WINDOW_OPENGL` simultaneously.
 
    The `SDL_main()` function is mandatory for the Tizen framework to initialize the SDL application. You must use the `SDL_main()` function instead of the usual `main()` function in your SDL application.
 
@@ -70,7 +70,7 @@ To render a cube using OpenGL® ES in an SDL application:
    }
    ```
 
-2. Initialize the OpenGL® ES context:
+2. Initialize the OpenGL&reg; ES context:
 
    1. Set the context properties using the [available attributes](#attributes):
 
@@ -89,7 +89,7 @@ To render a cube using OpenGL® ES in an SDL application:
    2. Create the context:
 
       ```
-          /* Create context for OpenGL® window */
+          /* Create context for OpenGL&reg; window */
           ad->gl = SDL_GL_CreateContext(ad->window);
           if (ad->gl == NULL) {
               SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[SDL] GL context creation failed!");
@@ -174,7 +174,7 @@ To render a cube using OpenGL® ES in an SDL application:
           
       ```
 
-   3. Update the OpenGL® rendering window:
+   3. Update the OpenGL&reg; rendering window:
 
       ```
           SDL_GL_SwapWindow(ad->window);
@@ -189,11 +189,11 @@ To render a cube using OpenGL® ES in an SDL application:
    SDL_Quit();
    ```
 
-## OpenGL® Context Attributes
+## OpenGL&reg; Context Attributes
 
 The following table lists the attributes whose values can be set using the `SDL_GL_SetAttribute()` function.
 
-**Table: OpenGL® context attributes**
+**Table: OpenGL&reg; context attributes**
 
 | Attribute                           | Description                              | Default value           |
 | ----------------------------------- | ---------------------------------------- | ----------------------- |
@@ -206,8 +206,8 @@ The following table lists the attributes whose values can be set using the `SDL_
 | `SDL_GL_BLUE_SIZE`                  | Minimum number of bits for the color buffer blue channel | 2                       |
 | `SDL_GL_BUFFER_SIZE`                | Minimum number of bits for the frame buffer | 0                       |
 | `SDL_GL_CONTEXT_FLAGS`              | Combination of 0 or more elements of the `SDL_GLcontextFlag` enumeration |           0              |
-| `SDL_GL_CONTEXT_MAJOR_VERSION`      | OpenGL® context major version            | -                       |
-| `SDL_GL_CONTEXT_MINOR_VERSION`      | OpenGL® context minor version            | -                         |
+| `SDL_GL_CONTEXT_MAJOR_VERSION`      | OpenGL&reg; context major version            | -                       |
+| `SDL_GL_CONTEXT_MINOR_VERSION`      | OpenGL&reg; context minor version            | -                         |
 | `SDL_GL_CONTEXT_PRIORITY`           | Allow a GL context to be created with a priority hint |  -                       |
 | `SDL_GL_CONTEXT_PROFILE_MASK`       | Type of GL context (Core, Compatibility, ES) | Depends on the platform |
 | `SDL_GL_CONTEXT_RELEASE_BEHAVIOR`   | Set the context release behavior (since SDL 2.0.4) | 1                       |
@@ -218,6 +218,6 @@ The following table lists the attributes whose values can be set using the `SDL_
 | `SDL_GL_MULTISAMPLEBUFFERS`         | Number of buffers used for multisample anti-aliasing | 0                       |
 | `SDL_GL_MULTISAMPLESAMPLES`         | Number of samples around the current pixel used for multisample anti-aliasing |   0                       |
 | `SDL_GL_RED_SIZE`                   | Minimum number of bits for the color buffer red channel | 3                       |
-| `SDL_GL_SHARE_WITH_CURRENT_CONTEXT` | Whether OpenGL® context sharing is enabled | 0                       |
+| `SDL_GL_SHARE_WITH_CURRENT_CONTEXT` | Whether OpenGL&reg; context sharing is enabled | 0                       |
 | `SDL_GL_STENCIL_SIZE`               | Minimum number of bits for the stencil buffer | 0                         |
 | `SDL_GL_STEREO`                     | Whether stereo 3D output is enabled      | `off`                   |

@@ -23,6 +23,7 @@ You can control debug execution in various ways. After a break point suspends th
 | ![Suspend](./media/debug_view_suspend.png) | -                 | Suspends the selected thread.            |
 | ![Terminate](./media/debug_view_terminate.png) | **Ctrl + F2**     | Terminates the selected debug target.    |
 
+<a name="methods"></a>
 ## Application Debugging Methods
 
 You can apply the normal or attached method for debugging a Tizen application.
@@ -51,6 +52,7 @@ To debug an application that is already running on the emulator or a device:
 
   Note that the source code of the project must be related to the application that is running on the target.
 
+<a name="remote"></a>  
 ## Remote Debugging
 
 The Tizen Studio supports remote debugging. Remote debugging is used to debug the OS Kernel or a system which cannot support local debugging. Remote debugging requires a "GDB client" on the host side and a "GDB server" on the target side. Both sides must be connected by serial or TCP/IP communication.
@@ -58,6 +60,7 @@ The Tizen Studio supports remote debugging. Remote debugging is used to debug th
 **Figure: Remote debugging**
 
 ![Remote debugging](./media/remote_debug.png)
+
 
 ### Remote Debugging Process
 
@@ -69,6 +72,7 @@ The Eclipse CDT based Tizen Studio supports the UI and control of the debugging 
 
 ![Remote debugging control flow](./media/remote_debug_sdk.png)
 
+<a name="logs"></a>
 ## Debugging with Logs
 
 EFL provides a tool (`EINA_LOG`) for logging information. It has the following levels:
@@ -283,7 +287,7 @@ The following examples are common mistakes when writing EDC:
   ```
   ERR<4357>:edje lib/edje/edje_util.c:3069 _edje_object_size_min_restricted_calc() file, group fixed has a non-fixed part 'part1'. Adding 'fixed: 1 1;' to source EDC may help. Continuing discarding faulty part.
   ```
-
+<a name="break"></a>
 ## Break Points
 
 A break point suspends the execution of a program at the location where the break point is set.
@@ -355,7 +359,7 @@ The **Expressions** view can be used in the following ways:
 
 ## Debugging Applications on the Emulator
 
-You can debug Tizen native applications on the [emulator](../../../../org.tizen.studio/html/common_tools/emulator.htm) using the **Project Explorer** view or the Tizen Studio menu.
+You can debug Tizen native applications on the [emulator](../../../tizen-studio/common_tools/emulator.htm) using the **Project Explorer** view or the Tizen Studio menu.
 
 To debug your application on the emulator:
 

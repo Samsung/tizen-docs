@@ -34,7 +34,7 @@ The Tizen Advanced UI (TAU)-based template provides 2 scaling methods: device-wi
 
 - Device-width scaling	
 
-  This scaling mode is suited for most mobile devices, such as Tizen, iPhone, and Android™. In this mode, the viewport width is set to `device-width`, enabling rem scaling using the Rem and Em units. These units calculate the size of a source element automatically based on the container font size (Em) or the base font size (Rem). In Tizen Web applications, a 320 px screen width is assumed.
+  This scaling mode is suited for most mobile devices, such as Tizen, iPhone, and Android&trade;. In this mode, the viewport width is set to `device-width`, enabling rem scaling using the Rem and Em units. These units calculate the size of a source element automatically based on the container font size (Em) or the base font size (Rem). In Tizen Web applications, a 320 px screen width is assumed.
 
   ```
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">

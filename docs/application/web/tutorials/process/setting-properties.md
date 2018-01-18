@@ -125,7 +125,7 @@ To enable filtering for your Web application:
 
 1.  In the **Features** tab, click **+**.
 2.  Select the needed features from the [predefined list of features
-    available for filtering](../details/app_filtering_w.htm).
+    available for filtering](../details/app-filtering-w.md).
 3.  Click **Finish**.
 4.  Upload and publish the application package on the Tizen Store.
 
@@ -193,7 +193,7 @@ The following table lists the policy properties you can edit in the
   **content-security-policy** </td>
   <td>
 
-  Used to define an additional content security policy for a packaged or  hosted application. The policy    string is defined according to   [Content Security Policy Level    2](http://www.w3.org/TR/2015/CR-CSP2-20150721/)                  (in mobile applications) and    [Content Security Policy              1.0](http://www.w3.org/TR/2012/CR-CSP-20121115/)                        (in wearable applications).</td>
+  Used to define an additional content security policy for a packaged or  hosted application. The policy    string is defined according to   [Content Security Policy Level    2](http://www.w3.org/TR/2015/CR-CSP2-20150721/)                  (in mobile and TV applications) and    [Content Security Policy              1.0](http://www.w3.org/TR/2012/CR-CSP-20121115/)                        (in wearable applications).</td>
 </tr>
 <tr>
   <td>
@@ -274,14 +274,8 @@ Applications](../../../tizen-studio/web-tools/web-localization-w.md).
 <a name="preferences"></a>
 ### Declaring Name-value Pairs in the Preferences Tab
 
-You can declare name-value pairs which can be set and retrieved using
-the Widget Interface API (in
-[mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#widget)
-or
-[wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#widget)
-applications) in the **Preferences** tab of the Web application
-configuration editor. These name-value pairs, or preferences, are used
-by the Web application during execution.
+You can declare name-value pairs which can be set and retrieved using the Widget Interface API (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#widget), [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#widget), and [TV](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#widget) applications) in the **Preferences** tab of the Web application configuration editor. These name-value pairs, or preferences, are used by the Web application during execution.
+
 
 To add preferences, click **+**. A new row appears in the table. Enter
 values in the **Name** and **Value** columns. You can set a preference
@@ -438,7 +432,7 @@ can edit.
   <td>
 
   Describes the [application control
-  functionalities](../../../guides/web/app-management/app-controls-w.md)  provided by the application. To define an application control used to  access the functionality of your application, click **+** in the  **Application Control** panel and define the details.
+  functionalities](../../guides/app-management/app-controls-w.md)  provided by the application. To define an application control used to  access the functionality of your application, click **+** in the  **Application Control** panel and define the details.
   The **operation**, **uri**, and **mime** fields describe the
   functionalities that other applications can request and the **src**
   field describes the application page that handles the request.<br>

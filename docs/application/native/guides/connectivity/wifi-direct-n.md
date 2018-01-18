@@ -1,8 +1,8 @@
-# Wi-Fi Direct®
+# Wi-Fi Direct&reg;
 ## Dependencies
 - Tizen 2.4 and Higher for Mobile
 
-Wi-Fi Direct® is a technology that allows you to find nearby Wi-Fi Direct devices and form a Wi-Fi Direct group to communicate over a peer-to-peer link without wireless access points (base stations) in the infrastructure mode. Wi-Fi Direct is a synonym for Wi-Fi P2P (Peer-to-Peer).
+Wi-Fi Direct&reg; is a technology that allows you to find nearby Wi-Fi Direct devices and form a Wi-Fi Direct group to communicate over a peer-to-peer link without wireless access points (base stations) in the infrastructure mode. Wi-Fi Direct is a synonym for Wi-Fi P2P (Peer-to-Peer).
 
 This feature is supported in mobile applications only.
 

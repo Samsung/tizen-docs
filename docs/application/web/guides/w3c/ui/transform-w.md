@@ -51,7 +51,7 @@ You can define various properties to control the elements within the coordinate 
          animation: trans-ani 10s infinite linear;
          backface-visibility: visible;
 
-         /* Google Chrome™ and Safari browsers */
+         /* Google Chrome&trade; and Safari browsers */
          -webkit-transform: rotate(30deg);
          -webkit-transform-origin: 30% 30%;
          -webkit-perspective: 220;
@@ -62,7 +62,7 @@ You can define various properties to control the elements within the coordinate 
          transform-style: preserve-3d;
          perspective-origin: 30% 30%;
 
-         /* Google Chrome™ and Safari browsers */
+         /* Google Chrome&trade; and Safari browsers */
          -webkit-transform-style: preserve-3d;
          -webkit-perspective-origin: 30% 30%;
       }
@@ -414,7 +414,7 @@ To create fade effects:
 
   In step 1, only 2 layers are created, but as the number of layers created increases, the efficiency of page rendering drops. In step 3 as well, the more steps it undergoes, the slower the rendering becomes.
 
-  In certain browsers, even if the style of only 1 layer is changed, the entire document is repainted. As the repainting takes only a moment, any animation effects that are supposed to happen cannot be executed in such a short time. This issue occurs frequently in Android™ with severe fragmentation.
+  In certain browsers, even if the style of only 1 layer is changed, the entire document is repainted. As the repainting takes only a moment, any animation effects that are supposed to happen cannot be executed in such a short time. This issue occurs frequently in Android&trade; with severe fragmentation.
 
 		> **Note**
 		> If a new layer is created in Android 4.0X version, and if the fade effect is used, it only shows the initial value and the result value of the layer style.

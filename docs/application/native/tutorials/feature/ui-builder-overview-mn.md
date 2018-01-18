@@ -121,7 +121,7 @@ still access the layers below it for common tasks, as there is no need
 for Elementary to wrap things that work perfectly well as-is.
 
 To learn more about each library, go to
-[Introduction](../../../guides/native/ui/efl/introduction-n.md).
+[Introduction](../../guides/ui/efl/introduction-n.md).
 This section only briefly describes the hierarchical structure of your
 application on Tizen.
 
@@ -155,7 +155,7 @@ libraries as a basis:
         your content. All graphical objects that you create are
         Evas objects. Evas handles the window state by filling the
         canvas with objects and manipulating their states. In contrast
-        to other canvas libraries, such as Cairo, OpenGL®, and XRender,
+        to other canvas libraries, such as Cairo, OpenGL&reg;, and XRender,
         Evas is not a drawing library but a scene graph library that
         retains the state of all objects. Evas objects are created and
         then manipulated until they are no longer needed, at which point

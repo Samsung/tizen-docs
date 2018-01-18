@@ -5,7 +5,7 @@ You can create a native application project by selecting from a variety of templ
 To create a native application project:
 
 1. In the Tizen Studio, select **File > New > Tizen Project**.  
-![Creating a new project](media/create_project_1_n.png)
+![Creating a new project](media/create_project_1.png)
 
  The Project Wizard opens.
 

@@ -19,7 +19,7 @@ You can use smart card functionalities to access secure elements. You can open a
 - [Wi-Fi](wifi-n.md)
 You can connect to a Wireless Local Area Network (WLAN) and transfer data over the network. You can activate and deactivate a local Wi-Fi device, and to connect to a WLAN network in the infrastructure mode.
 
-- [Wi-Fi Direct®](wifi-direct-n.md) **in mobile applications only**
+- [Wi-Fi Direct&reg;](wifi-direct-n.md) **in mobile applications only**
 You can find nearby Wi-Fi Direct devices and discover their details. You can also form a Wi-Fi Direct group to communicate over a peer-to-peer link without wireless access points (base stations) in the infrastructure mode.
 
 - [Telephony Information](telephony-n.md)
