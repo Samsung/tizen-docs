@@ -5,7 +5,6 @@ Release Date: 09 Feb, 2015
 The Tizen 2.3 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native APIs, necessary to develop future Tizen compliant solutions.
 
 
-
 ## Release Details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 2.3 source codes are under **tizen_2.3** branch.)
@@ -14,11 +13,8 @@ The Tizen 2.3 release provides developers with the Tizen kernel, device drivers,
 
 - [How to flash to a device](https://wiki.tizen.org/wiki/Flash_Tizen_2.3_Image_to_Reference_Device)
 
-  ​
 
 ## SDK Release Notes
-
-
 
 ### Tizen 2.3 Rev3 (Jul. 6, 2015)
 
@@ -471,7 +467,7 @@ The new Tizen Native API includes the following API modules and features:
       - Providing graphics rendering methods and data structures.
       - Providing floating point matrix and vector manipulation functions.
     - 3D graphics
-      - Supporting OpenGL® ES 1.1 and 2.0, which are subsets of the OpenGL® 3D graphics API that has been designed for mobile devices.
+      - Supporting OpenGL ES 1.1 and 2.0, which are subsets of the OpenGL 3D graphics API that has been designed for mobile devices.
       - Supporting OpenGL rendering on drawing canvasses.
   - Tizen buffer management
     - Providing a low-level graphics buffer.
@@ -744,12 +740,12 @@ The wearable profile provides a complete implementation of the Web API optimized
   - The animation does not work properly with N-Screen.
   - The IDE creates a console window when an internal browser has been created in Windows 8.
 - Emulator
-  - On Windows®, depending on your OS theme (such as non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is obscured by another window. If you click the Emulator window, the display surface works correctly again.
-  - The Emulator skin cannot be drawn properly on Ubuntu™, if the graphics driver is not installed or an old version is installed. To fix this issue, upgrade the graphics driver.
+  - On Windows, depending on your OS theme (such as non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is obscured by another window. If you click the Emulator window, the display surface works correctly again.
+  - The Emulator skin cannot be drawn properly on Ubuntu, if the graphics driver is not installed or an old version is installed. To fix this issue, upgrade the graphics driver.
   - When the disk storage is full, various incorrect operations can occur.
   - To use the Tizen Emulator, you need, for example, an Intel VTx supported by the CPU, and the latest vendor-provided version of the graphic card driver. Check the prerequisites for the Tizen Emulator from:
-    - [https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk](https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk)
-    - On Ubuntu, if the host machine is using Nvidia Optimus™ technology, you can set the Tizen Emulator to run with your Nvidia® graphics card through the bumblebee project: [https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)
+    - [https://developer.tizen.org](https://developer.tizen.org)
+    - On Ubuntu, if the host machine is using Nvidia Optimus technology, you can set the Tizen Emulator to run with your Nvidia graphics card through the bumblebee project: [https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)
   - The browser for the map of the location tab does not support HTTPS/SSL certificate on Ubuntu.
   - Sound control does not work properly in wearable settings application.
 - IDE

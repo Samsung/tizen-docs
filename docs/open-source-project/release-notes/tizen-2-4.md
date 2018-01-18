@@ -11,7 +11,6 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 - [How to flash to a device](https://wiki.tizen.org/wiki/Flash_Tizen_2.4_Image_to_Reference_Device)
 
 
-
 ## SDK Release Notes
 
 ### Tizen 2.4 Rev8  (Aug. 2, 2016)
@@ -45,31 +44,31 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 **Known Issues**
 
 - Installer and Update Manager
-  - If the SDK Update Notification appears when you start the Tizen IDE or Emulator on Mac OS® X, a terminal (shell.exec) icon can appear on the dock for a few seconds.
+  - If the SDK Update Notification appears when you start the Tizen IDE or Emulator on Mac OS X, a terminal (shell.exec) icon can appear on the dock for a few seconds.
   - If there is a multibyte character in the Tizen SDK installation path, some development packages cannot find the installed SDK’s location when they are running.
 - Web and Native IDE
   - When you select **IDE > Help > Help Contents**, if JRE 1.8 is installed on your computer, the "HTTP ERROR:500" message can appear in the Help page due to an Eclipse Kepler bug. To see the Help page, see [https://developer.tizen.org/development](https://developer.tizen.org/development) or use JRE 1.7.
-  - On Windows®, if there is a file name in the project containing a non-ASCII character, the project packaging can fail. This issue does not occur on Ubuntu or Mac OS® X.
+  - On Windows, if there is a file name in the project containing a non-ASCII character, the project packaging can fail. This issue does not occur on Ubuntu or Mac OS X.
 - Web IDE
   - The **Preview** tab in the** Web Page Editor** sometimes does not appear properly. Use an alternative feature, named **Web SDK HTML Editor, **which has enhanced features compared to the** Web Page Editor**. Instead of the** Preview **tab in the **Web Page Editor**, use the preview (**Ctrl+4**) feature of the **Web SDK HTML Editor**.
 - Native IDE
-  - On Windows®, when you build a native project containing a PO file, the IDE sometimes stops responding. In this case, create a new workspace and move the project to it. The project may be built successfully there.
+  - On Windows, when you build a native project containing a PO file, the IDE sometimes stops responding. In this case, create a new workspace and move the project to it. The project may be built successfully there.
   - When you import some projects generated in Tizen 2.3 Rev2, the import can take some time.
 - Native UI Builder
-  - When the WYSIWYG editor of the Native UI Builder for Windows® is running, a project deletion does not work properly. To solve the problem, close the editor.
-  - If the WYSIWYG editor of the Native UI Builder for Windows® runs over 12 hours, your computer slows down because of the editor's high memory usage. To solve the problem, restart the Tizen IDE.
+  - When the WYSIWYG editor of the Native UI Builder for Windows is running, a project deletion does not work properly. To solve the problem, close the editor.
+  - If the WYSIWYG editor of the Native UI Builder for Windows runs over 12 hours, your computer slows down because of the editor's high memory usage. To solve the problem, restart the Tizen IDE.
 - Emulator
   - Ubuntu sometimes stops responding for a few seconds after closing the Emulator Manager. This issue is related to an IBus (Intelligent Input Bus) bug. When the issue occurs, restart the ibus-daemon by entering the ibus-daemon –drx command at the command prompt, and use another framework, such as uim and fcitx, for multilingual input.
   - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen Emulator from:
     - [https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk](https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk).
-    - If the host machine is using Nvidia Optimus™ technology on either Ubuntu or Windows®, you must set the Tizen Emulator to run with your Nvidia® graphics card. In case of Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows®, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia® control panel.
+    - If the host machine is using Nvidia Optimus™ technology on either Ubuntu or Windows, you must set the Tizen Emulator to run with your Nvidia graphics card. In case of Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia control panel.
     - On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the Emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
   - On Ubuntu 14.04, a shortcut menu can sometimes appear transparent.
-  - On Windows®, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is covered with another window. If you click the Emulator window, the display surface runs correctly again.
-  - On Windows®, if a ‘failed to allocate memory’ error occurs while executing the Emulator, try the following:
+  - On Windows, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is covered with another window. If you click the Emulator window, the display surface runs correctly again.
+  - On Windows, if a ‘failed to allocate memory’ error occurs while executing the Emulator, try the following:
     - Close some other programs and try to launch the Emulator again.
     - If the RAM size is set to 768 or 1024 MB for the VM in the Emulator Manager, change it to 512 MB.
-    - Increase the user area of the virtual memory in the system to 3 GB by entering the bcdedit /set increaseuserva 3072 command on the console with administrator rights (Windows® 7 only), and reboot.
+    - Increase the user area of the virtual memory in the system to 3 GB by entering the bcdedit /set increaseuserva 3072 command on the console with administrator rights (Windows 7 only), and reboot.
   - If you use a MacBook Pro which has both Intel HD and Nvidia GPUs, when you execute the Emulator with the **OpenGL ES ver. v1.1 & v2.0** option, the Emulator can be unexpectedly terminated. Use the **OpenGL ES ver. v2.0 & v3.0** option.
 - SDB
   - To use the SDB bash completion feature, enter the source .sdb-complete.bash command on the bash shell. The feature runs manually from the official Tizen 2.4 release onwards due to the Installer and Update Manager issue.
@@ -95,47 +94,47 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 - CLI/SDB
   - After building on the CLI is finished, the name of the generated .mo file is automatically set to be the same as the name of the IDE.
 - JavaScript Analyzer
-  - The Stale Object Checker for the Web IDE has been updated to support Windows® 10 (64-bit).
+  - The Stale Object Checker for the Web IDE has been updated to support Windows 10 (64-bit).
 
 **Fixed Bugs**
 
 - Installer and Update Manager
-  - The bug, where the SDK Update Notification did not appear when you ran the dynamic analyzer on Mac OS® X, has been fixed.
+  - The bug, where the SDK Update Notification did not appear when you ran the dynamic analyzer on Mac OS X, has been fixed.
 - Web & Native IDE
   - When you tried to convert a project to an earlier version, an error occurred and the conversion failed. This bug has been fixed. You can convert the project to earlier versions.
 - Native IDE
   - In a native project, the **Restore Defaults** feature in **Properties >** **C/C++ Build** did not work properly. This bug has been fixed.
-  - The project build failure on the Mac OS® X, which occurred due to the missing **msgfmt** binary, has been fixed.
+  - The project build failure on the Mac OS X, which occurred due to the missing **msgfmt** binary, has been fixed.
 - CLI/SDB
   - When you used the package command with the -r option for multi-packaging, a non-signed file was wrongly included in the multi-package. This bug has been fixed.
 
 **Known Issues**
 
 - Installer and Update Manager
-  - If the SDK Update Notification appears when you start the Tizen IDE or Emulator on Mac OS® X, a terminal (shell.exec) icon can appear on the dock for a few seconds.
+  - If the SDK Update Notification appears when you start the Tizen IDE or Emulator on Mac OS X, a terminal (shell.exec) icon can appear on the dock for a few seconds.
 - Web & Native IDE
   - When you select in the IDE menu Help > Help Contents, if JRE 1.8 is installed on your computer, the "HTTP ERROR:500" message may appear in the Help page due to an Eclipse Kepler bug. See [https://developer.tizen.org/development](https://developer.tizen.org/development) or use JRE 1.7.
 - Web IDE
   - The **Preview** tab in the** Web Page Editor** sometimes does not appear properly. Use an alternative feature, named **Web SDK HTML Editor, **which has enhanced features compared to the** Web Page Editor**. Instead of the** Preview **tab in the **Web Page Editor**, use the preview (**Ctrl+4**) feature of the **Web SDK HTML Editor**.
 - Native IDE
   - When you import some projects generated from Tizen 2.3 Rev2, the importing can take some time.
-  - On Windows®, when you build a native project containing a PO file, the IDE sometimes stops responding. In this case, create a new workspace and move the project to it. The project may be built successfully there.
+  - On Windows, when you build a native project containing a PO file, the IDE sometimes stops responding. In this case, create a new workspace and move the project to it. The project may be built successfully there.
 - Native UI Builder
-  - When the WYSIWYG editor of the Native UI Builder for Windows® is running, a project deletion does not work properly. To solve the problem, close the editor.
-  - If the WYSIWYG editor of the Native UI Builder for Windows® runs over 12 hours, your computer slows down because of the editor's high memory usage. To solve the problem, restart the Tizen IDE.
+  - When the WYSIWYG editor of the Native UI Builder for Windows is running, a project deletion does not work properly. To solve the problem, close the editor.
+  - If the WYSIWYG editor of the Native UI Builder for Windows runs over 12 hours, your computer slows down because of the editor's high memory usage. To solve the problem, restart the Tizen IDE.
   - The Tizen Store currently does not accept a wearable circle app which is developed by the Native UI Builder because some blacklist apis are used in the Builder. This issue will be solved at upcoming release.
 - Emulator
   - Ubuntu sometimes stops responding for a few seconds after closing the Emulator Manager. This issue is related to an IBus (Intelligent Input Bus) bug. When the issue occurs, restart the ibus-daemon by entering the ibus-daemon –drx command at the command prompt, and use another framework, such as uim and fcitx, for multilingual input.
   - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen Emulator from:
     - [https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk](https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk).
-    - If the host machine is using Nvidia Optimus™ technology on either Ubuntu or Windows®, you must set the Tizen Emulator to run with your Nvidia® graphics card. In case of Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows®, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia® control panel.
+    - If the host machine is using Nvidia Optimus™ technology on either Ubuntu or Windows, you must set the Tizen Emulator to run with your Nvidia graphics card. In case of Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia control panel.
     - On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the Emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
   - On Ubuntu 14.04, a shortcut menu can sometimes appear transparent.
-  - On Windows®, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is covered with another window. If you click the Emulator window, the display surface runs correctly again
-  - On Windows®, if a ‘failed to allocate memory’ error occurs while executing the Emulator, try the following:
+  - On Windows, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is covered with another window. If you click the Emulator window, the display surface runs correctly again
+  - On Windows, if a ‘failed to allocate memory’ error occurs while executing the Emulator, try the following:
     - Close some other programs and try to launch the Emulator again.
     - If the RAM size is set to 768 or 1024 MB for the VM in the Emulator Manager, change it to 512 MB.
-    - Increase the user area of the virtual memory in the system to 3 GB by entering the bcdedit /set increaseuserva 3072 command on the console with administrator rights (Windows® 7 only), and reboot.
+    - Increase the user area of the virtual memory in the system to 3 GB by entering the bcdedit /set increaseuserva 3072 command on the console with administrator rights (Windows 7 only), and reboot.
   - If you use a MacBook Pro which has both Intel HD and Nvidia GPUs, when you execute the Emulator with the **OpenGL ES ver. v1.1 & v2.0** option, the Emulator can be unexpectedly terminated. Use the **OpenGL ES ver. v2.0 & v3.0** option.
 - SDB
   - To use the SDB bash completion feature, enter the source .sdb-complete.bash command on the bash shell. The feature runs manually from the official Tizen 2.4 release onwards due to the Installer and Update Manager issue.
@@ -162,7 +161,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
   - Since the SDK does not support multi-byte characters, some bugs appeared when you configured an installation directory or folder location in the Installer. This issue has been fixed, and now a function checks the multi-byte characters on the directory and folder path for the Installer.
   - The bug, where the Update Manager sometimes removed meta packages not selected for  removal, has been fixed.
 - Native UI Builder
-  - The bug that caused abnormal layout rendering on Mac OS® has been fixed.
+  - The bug that caused abnormal layout rendering on Mac OS has been fixed.
   - The bug, where you could not control the Toolbar UI component, has been fixed.
   - The bug, where you could not apply the timepicker_layout style of the Datetime UI component, has been fixed.
   - The bug, where you could not set the min and max property of the Spinner UI component, has been fixed.
@@ -170,7 +169,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
   - In the layout.xml editor, the bugs of the bidirectional editing at the source and user interface level have been fixed.
 - Enventor
   - Proper calculation of the indent depth has been fixed after adding a multi-line comment.
-  - Title icon is supported on Windows®.
+  - Title icon is supported on Windows.
   - Compile issue for the empty template code has been fixed. Previously, empty template code was unavailable to build.
   - When adding image template code, the definition part for the defined images has been added to the group template code.
   - Unicode symbols have been fixed to work correctly in redo/undo.
@@ -188,8 +187,8 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 - Installer and Update Manager
 
-  - When you run the dynamic analyzer on Mac OS® X, the SDK Update Notification does not appear though there are available SDK updates.
-  - If the SDK Update Notification appears when you start the Tizen IDE or Emulator on Mac OS® X, a terminal (shell.exec) icon can appear on the dock for a few seconds.
+  - When you run the dynamic analyzer on Mac OS X, the SDK Update Notification does not appear though there are available SDK updates.
+  - If the SDK Update Notification appears when you start the Tizen IDE or Emulator on Mac OS X, a terminal (shell.exec) icon can appear on the dock for a few seconds.
 
 - Native IDE
 
@@ -198,22 +197,22 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 - Native UI Builder
 
-  - When the WYSIWYG editor of the Native UI Builder for Windows® is running, a project deletion does not work properly. To solve the problem, close the editor.
-  - If the WYSIWYG editor of the Native UI Builder for Windows® runs over 12 hours, your computer slows down because of the editor's high memory usage. To solve the problem, restart the Tizen IDE.
+  - When the WYSIWYG editor of the Native UI Builder for Windows is running, a project deletion does not work properly. To solve the problem, close the editor.
+  - If the WYSIWYG editor of the Native UI Builder for Windows runs over 12 hours, your computer slows down because of the editor's high memory usage. To solve the problem, restart the Tizen IDE.
 
 - Emulator
 
   - Ubuntu sometimes stops responding for a few seconds after closing the Emulator Manager. This issue is related to a bug of IBus (Intelligent Input Bus). When the issue occurs, restart the ibus-daemon by entering the ibus-daemon –drx command at the command prompt, and use another framework, such as uim and fcitx, for multilingual input.
   - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver which the vendor provides. Check the prerequisites for the Tizen Emulator from:
     - [https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk](https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk).
-    - If the host machine is using Nvidia Optimus™ technology on either Ubuntu or Windows®, you must set the Tizen Emulator to run with your Nvidia® graphics card. In case of Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows®, select **High Speed NVIDIA Processor** as **Preferred Graphics processor** in the Nvidia® control panel.
+    - If the host machine is using Nvidia Optimus™ technology on either Ubuntu or Windows, you must set the Tizen Emulator to run with your Nvidia graphics card. In case of Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows, select **High Speed NVIDIA Processor** as **Preferred Graphics processor** in the Nvidia control panel.
     - On Ubuntu, if the graphics driver is out-of-date, the Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the Emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
   - On Ubuntu 14.04, a shortcut menu can sometimes appear transparently.
-  - On Windows®, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is covered with another window. If you click the Emulator window, the display surface runs correctly again.
-  - On Windows®, if a ‘failed to allocate memory’ error occurs while executing the Emulator, try the following:
+  - On Windows, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is covered with another window. If you click the Emulator window, the display surface runs correctly again.
+  - On Windows, if a ‘failed to allocate memory’ error occurs while executing the Emulator, try the following:
     - Close some other programs and try to launch the Emulator again.
     - If the RAM size is set to 768 or 1024 MB for the VM in the Emulator Manager, change it to 512 MB.
-    - Increase the user area of the virtual memory in the system to 3 GB by entering the bcdedit /set increaseuserva 3072 command on the console with administrator rights (Windows® 7 only). And reboot.
+    - Increase the user area of the virtual memory in the system to 3 GB by entering the bcdedit /set increaseuserva 3072 command on the console with administrator rights (Windows 7 only). And reboot.
   - If you use a MacBook Pro which has both Intel HD and NVidia GPUs, when you execute the Emulator with the **OpenGL ES ver. v1.1 & v2.0** option, the Emulator can be unexpectedly terminated. Use the **OpenGL ES ver. v2.0 & v3.0** option.
 
 - SDB
@@ -258,7 +257,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 
 - Native UI Builder
-  - Supported operating systems are updated. You can also use the Native UI Builder on the Mac OS® X 10.10 (Yosemite) / 10.9 (Mavericks) / 10.8 (Mountain Lion).
+  - Supported operating systems are updated. You can also use the Native UI Builder on the Mac OS X 10.10 (Yosemite) / 10.9 (Mavericks) / 10.8 (Mountain Lion).
   - The **Source** tab to the layout.xml editor has been added. With the **Design** tab, you can edit the layout.xml file bidirectionally at source and user interface level.The **Source** tab supports the auto-completion and suggestion of element names and attributes.In the **Source** tab, you can edit the layout XML document at source level.The **Preview** tab has been moved to the **Source** tab as an internal pane. The pane shows a read-only preview of the layout.xml file.
   - The app development environment named M-Screen has been added to help you develop an app compatible with supported various screen configurations (resolution, DPI, and orientation).
     - The M-Screen supports UI layoutting for the selected screen configuration.
@@ -275,7 +274,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 
 - Enventor
-  - Supported operating systems are updated. You can also use the Enventor on the Mac OS® X 10.10 (Yosemite) / 10.9 (Mavericks) / 10.8 (Mountain Lion).
+  - Supported operating systems are updated. You can also use the Enventor on the Mac OS X 10.10 (Yosemite) / 10.9 (Mavericks) / 10.8 (Mountain Lion).
   - The Editor supports highlighting of open and closed brackets.
   - The statusbar supports the view inverting function (for simulating device rotation).
   - The statusbar supports the live view zooming function.
@@ -347,7 +346,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 - Installer and Update Manager
   - The SDK update and installation failure from the image file has been fixed.
-  - On Mac OS®, the installer does not work properly if there are several mounted installers. This bug has been fixed by setting the volume name of the installer in the 'RELEASE_NAME' format.
+  - On Mac OS, the installer does not work properly if there are several mounted installers. This bug has been fixed by setting the volume name of the installer in the 'RELEASE_NAME' format.
   - When a user stopped the old installer while installing, the older installer did not delete the installation directory, such as 'tizen-sdk' (default installation directory). This bug has been fixed. The new installer deletes the installation directory if the installation is canceled.
 
 
@@ -370,7 +369,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 - Installer and Update Manager
   - Some errors in the update command of the 2.4 rev1 and rev2 CLI Installer have been found. If you use the 2.4 rev1 or rev2 CLI Installer, you fail to update your Tizen SDK. To solve the problem, CLI installer patch files are released. Download the patch at the *download location *and do the following:Open the terminal or command line, and go to the location where the downloaded patch file exists.Move the patch file to the location where the SDK is installed.At the prompt, type **update-manager-cli_2.4_patch update_{OS}_{bit}.{bin|exe}** to install the patch.
-  - You can also upgrade your CLI Installer to the 2.4 rev3 at the [Tizen SDK Download page](https://developer.tizen.org/development/tools/download).If there is a multibyte character in the Tizen SDK installation path, some development packages have a difficulty in finding the installed SDK’s location when they are working.When you run the dynamic analyzer on Mac OS® X, the SDK Update Notification does not appear even though there are available SDK updates.If the SDK Update Notification appears when you start the Tizen IDE or Emulator on Mac OS® X, a terminal (shell.exec) icon can appear on the dock for a few seconds.
+  - You can also upgrade your CLI Installer to the 2.4 rev3 at the [Tizen SDK Download page](https://developer.tizen.org/development/tools/download).If there is a multibyte character in the Tizen SDK installation path, some development packages have a difficulty in finding the installed SDK’s location when they are working.When you run the dynamic analyzer on Mac OS X, the SDK Update Notification does not appear even though there are available SDK updates.If the SDK Update Notification appears when you start the Tizen IDE or Emulator on Mac OS X, a terminal (shell.exec) icon can appear on the dock for a few seconds.
 
 
 - Native IDE
@@ -379,19 +378,19 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 
 - Native UI Builder
-  - When the WYSIWYG editor of the Native UI Builder for Windows® is running, project deletion does not work properly. To deal with this problem, close the editor.
-  - If the WYSIWYG editor of the Native UI Builder for Windows® runs for more than 12 hours, your computer slows down because of the editor's high memory usage. To free  from this situation, restart the Tizen IDE.
+  - When the WYSIWYG editor of the Native UI Builder for Windows is running, project deletion does not work properly. To deal with this problem, close the editor.
+  - If the WYSIWYG editor of the Native UI Builder for Windows runs for more than 12 hours, your computer slows down because of the editor's high memory usage. To free  from this situation, restart the Tizen IDE.
 
 
 - Emulator
   - Ubuntu sometimes stops responding for a few seconds after closing the Emulator Manager. This issue is related to an IBus (Intelligent Input Bus) bug. When the issue occurs, restart the ibus-daemon by entering the **ibus-daemon –drx** command at the command prompt, and use another framework, such as uim and fcitx, for multilingual input.
-  - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen Emulator from [https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk](https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk).If the host machine is using Nvidia Optimus™ technology on either Ubuntu or Windows®, you must set the Tizen Emulator to run with your Nvidia® graphics card. In case of Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows®, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia® control panel.On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the Emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
+  - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen Emulator from [https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk](https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk).If the host machine is using Nvidia Optimus™ technology on either Ubuntu or Windows, you must set the Tizen Emulator to run with your Nvidia graphics card. In case of Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia control panel.On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the Emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
   - On Ubuntu 14.04, a shortcut menu can sometimes appear transparent.
-  - On Windows®, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is covered with another window. If you click the Emulator window, the display surface runs correctly again
-  - On Windows®, if a ‘failed to allocate memory’ error occurred while executing the Emulator, try the following:
+  - On Windows, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is covered with another window. If you click the Emulator window, the display surface runs correctly again
+  - On Windows, if a ‘failed to allocate memory’ error occurred while executing the Emulator, try the following:
     - Close some other programs and try to launch the Emulator again.
     - If the RAM size is set to 768 or 1024 MB for the VM in the Emulator Manager, change it to 512 MB.
-    - Increase the user area of the virtual memory in the system to 3 GB by entering the **bcdedit /set increaseuserva 3072** command on the console with administrator rights (Windows® 7 only), and reboot.
+    - Increase the user area of the virtual memory in the system to 3 GB by entering the **bcdedit /set increaseuserva 3072** command on the console with administrator rights (Windows 7 only), and reboot.
   - If you use a MacBook Pro which has both Intel HD and NVidia GPUs, when you execute the Emulator with the **OpenGL ES ver. v1.1 & v2.0** option, the Emulator can be unexpectedly terminated. Use the **OpenGL ES ver. v2.0 & v3.0** option.
 
 
@@ -478,8 +477,8 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
     - Move the patch file to the location where the SDK is installed.
     - At the prompt, enter the update-manager-cli_2.4_patch update_{OS}_{bit}.{bin|exe} command to install the patch.
   -  If there is a multibyte character in the Tizen SDK installation path, some development packages have a difficulty in finding the installed SDK’s location when they are working.
-  -  When you run the dynamic analyzer on Mac OS® X, the SDK Update Notification does not appear though there are available SDK updates.
-  -  If the SDK Update Notification appears when you start the Tizen IDE or Emulator on Mac OS® X, a terminal (shell.exec) icon can appear on the dock for a few seconds.
+  -  When you run the dynamic analyzer on Mac OS X, the SDK Update Notification does not appear though there are available SDK updates.
+  -  If the SDK Update Notification appears when you start the Tizen IDE or Emulator on Mac OS X, a terminal (shell.exec) icon can appear on the dock for a few seconds.
 
 
 - Native IDE
@@ -494,14 +493,14 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
   - Ubuntu sometimes stops responding for a few seconds after closing the Emulator Manager. This issue is related to a bug of IBus (Intelligent Input Bus). When the issue occurs, restart the ibus-daemon by entering the ibus-daemon –drx command at the command prompt, and use another framework, such as uim and fcitx, for multilingual input.
   - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver which the vendor provides. Check the prerequisites for the Tizen Emulator from:
     - [https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk](https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk).
-    - If the host machine is using Nvidia Optimus™ technology on either Ubuntu or Windows®, you must set the Tizen Emulator to run with your Nvidia® graphics card. In case of Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows®, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia® control panel.
+    - If the host machine is using Nvidia Optimus™ technology on either Ubuntu or Windows, you must set the Tizen Emulator to run with your Nvidia graphics card. In case of Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia control panel.
     - On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the Emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
   - On Ubuntu 14.04, a shortcut menu can appear transparently sometimes.
-  - On Windows®, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is covered with another window. If you click the Emulator window, the display surface runs correctly again.
-  - On Windows®, if a ‘failed to allocate memory’ error occurred while executing the Emulator, try the following:
+  - On Windows, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is covered with another window. If you click the Emulator window, the display surface runs correctly again.
+  - On Windows, if a ‘failed to allocate memory’ error occurred while executing the Emulator, try the following:
     - Close some other programs and try to launch the Emulator again.
     - If the RAM size is set to 768 or 1024 MB for the VM in the Emulator Manager, change it to 512 MB.
-    - Increase the user area of the virtual memory in the system to 3 GB by entering the bcdedit /set increaseuserva 3072 command on the console with administrator rights (Windows® 7 only). And reboot.
+    - Increase the user area of the virtual memory in the system to 3 GB by entering the bcdedit /set increaseuserva 3072 command on the console with administrator rights (Windows 7 only). And reboot.
   - If you use a MacBook Pro which has both Intel HD and NVidia GPUs, when you execute the Emulator with the **OpenGL ES ver. v1.1 & v2.0** option, the Emulator can be unexpectedly terminated. Use the **OpenGL ES ver. v2.0 & v3.0** option.
 - SDB
   - To use the SDB bash completion feature, enter the source .sdb-complete.bash command on the bash shell. The feature runs manually from Tizen 2.4 official due to the Installer and Update Manager issue.
@@ -560,7 +559,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 
 - Native IDE
-  - Native UI Builder has been enabled for developing 2.3.1 project on the Windows® OS.
+  - Native UI Builder has been enabled for developing 2.3.1 project on the Windows OS.
 
 
 - Installer and Update Manager
@@ -589,7 +588,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 
 - CLI and SDB
-  - The bug, where the SDB failed to connect with Mac OS® X 10.11 El Capitan because of the USB misconfiguration, has been fixed.
+  - The bug, where the SDB failed to connect with Mac OS X 10.11 El Capitan because of the USB misconfiguration, has been fixed.
   - The bug, where the IDE failed to connect with the Tizen TVs 2015, has been fixed.
 
 
@@ -598,12 +597,12 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 - Installer and Update Manager
   - The update command of the 2.4 rev1 and rev2 CLI Update Manager has some errors. If you use the 2.4 rev1 or rev2 CLI Update Manager, the Tizen SDK update fails.  To solve the problem, use the CLI Update Manager patch files. Download the patch at the *download location *and do the following (or upgrade your CLI Update Manager to the 2.4 rev3 at the [Tizen SDK Download page](https://developer.tizen.org/development/tools/download).). For detailed information, see the [CLI Installer Patch Guide](https://developer.tizen.org/community/tip-tech/patch-cli-installer).
-    - Open the terminal or command line (with Administrator privileges on Windows®), and go to the location where you have downloaded the patch file.
+    - Open the terminal or command line (with Administrator privileges on Windows), and go to the location where you have downloaded the patch file.
     - Move the patch file to the location where the SDK is installed.
     - At the prompt, enter the **update-manager-cli_2.4_patch_{OS}{bit}.{bin|exe} **command to install the patch.
   - If there is a multibyte character in the Tizen SDK installation path, some development packages have a difficulty in finding the installed SDK’s location when they are working.
-  - When you run the dynamic analyzer on Mac OS® X, the SDK Update Notification does not appear though there are available SDK updates. 
-  - If the SDK Update Notification appears when you start the Tizen IDE or Emulator on Mac OS® X, a terminal (shell.exec) icon can appear on the dock for a few seconds.
+  - When you run the dynamic analyzer on Mac OS X, the SDK Update Notification does not appear though there are available SDK updates. 
+  - If the SDK Update Notification appears when you start the Tizen IDE or Emulator on Mac OS X, a terminal (shell.exec) icon can appear on the dock for a few seconds.
 
 
 - Native IDE
@@ -616,14 +615,14 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
   - Ubuntu sometimes stops responding for a few seconds after closing the Emulator Manager. This issue is related to a bug of IBus (Intelligent Input Bus). When the issue occurs, restart the ibus-daemon by entering the ibus-daemon –drx command at the command prompt, and use another framework, such as uim and fcitx, for multilingual input.
   - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver which the vendor provides. Check the prerequisites for the Tizen Emulator from:
     - [https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk](https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk).
-    - If the host machine is using Nvidia Optimus™ technology on either Ubuntu or Windows®, you must set the Tizen Emulator to run with your Nvidia® graphics card. In case of Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows®, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia® control panel.
+    - If the host machine is using Nvidia Optimus™ technology on either Ubuntu or Windows, you must set the Tizen Emulator to run with your Nvidia graphics card. In case of Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia control panel.
     - On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the Emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
   - On Ubuntu 14.04, a shortcut menu can appear transparently sometimes.
-  - On Windows®, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is covered with another window. If you click the Emulator window, the display surface runs correctly again.
-  - On Windows®, if a ‘failed to allocate memory’ error occurred while executing the Emulator, try the following:
+  - On Windows, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is covered with another window. If you click the Emulator window, the display surface runs correctly again.
+  - On Windows, if a ‘failed to allocate memory’ error occurred while executing the Emulator, try the following:
     - Close some other programs and try to launch the Emulator again.
     - If the RAM size is set to 768 or 1024 MB for the VM in the Emulator Manager, change it to 512 MB.
-    - Increase the user area of the virtual memory in the system to 3 GB by entering the bcdedit /set increaseuserva 3072 command on the console with administrator rights (Windows® 7 only). And reboot.
+    - Increase the user area of the virtual memory in the system to 3 GB by entering the bcdedit /set increaseuserva 3072 command on the console with administrator rights (Windows 7 only). And reboot.
   - If you use a MacBook Pro which has both Intel HD and NVidia GPUs, when you execute the Emulator with the **OpenGL ES ver. v1.1 & v2.0** option, the Emulator can be unexpectedly terminated. Use the **OpenGL ES ver. v2.0 & v3.0** option.
 - SDB
   - To use the SDB bash completion feature, enter the source .sdb-complete.bash command on the bash shell. The feature runs manually from Tizen 2.4 official due to the Installer and Update Manager issue.
@@ -701,7 +700,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 - Native UIB and Enventor
   - Supports the following host operating systems :
     - Tizen 2.3.1 (Mobile/Wearable): Ubuntu™ 12.04/14.04 32-bit/64-bit
-    - Tizen 2.4 (Mobile): Ubuntu™ 12.04/14.04 32-bit/64-bit, Windows ®7/8 32-bit/64bit
+    - Tizen 2.4 (Mobile): Ubuntu™ 12.04/14.04 32-bit/64-bit, Windows 7/8 32-bit/64bit
 
 **Changed Features**
 
@@ -748,14 +747,14 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
   - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor.
     - Check the prerequisites for the Tizen Emulator from:
       [https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk](https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk).
-    - If the host machine is using the Nvidia Optimus™ technology on either Ubuntu™ or Windows®, you must set the Tizen Emulator to run with your Nvidia® graphics card. If you use Ubuntu™, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). If you use Windows®, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia® control panel.
+    - If the host machine is using the Nvidia Optimus™ technology on either Ubuntu™ or Windows, you must set the Tizen Emulator to run with your Nvidia graphics card. If you use Ubuntu™, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). If you use Windows, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia control panel.
     - On Ubuntu™, if the graphics driver is outdated, your Ubuntu™ desktop session can be occasionally logged out when launching the Emulator Manager, or the Emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
   - On Ubuntu™ 14.04, the shortcut menu can sometimes appear transparently.
-  - On Windows®, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is covered by another window. If you click the Emulator window, the display surface runs correctly again
-  - On Windows®, if a memory allocation error occurs while executing the Emulator, try  the following:
+  - On Windows, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is covered by another window. If you click the Emulator window, the display surface runs correctly again
+  - On Windows, if a memory allocation error occurs while executing the Emulator, try  the following:
     - Close some other programs and try to launch the Emulator again
     - If the RAM size is set as 768 or 1024 MB for the VM in the Emulator Manager, change the RAM size to 512 MB.
-    - Increase the user area of the virtual memory in the system to 3 GB by typing **bcdedit /set increaseuserva 3072** on the console with administrator rights (Windows® 7 only) and reboot.
+    - Increase the user area of the virtual memory in the system to 3 GB by typing **bcdedit /set increaseuserva 3072** on the console with administrator rights (Windows 7 only) and reboot.
   - If you use a MacBook Pro which has both Intel HD and NVidia GPUs, the Emulator may be unexpectedly terminated when you execute with the OpenGL ES ver. v1.1 & v2.0 option. Use the OpenGL ES ver. v2.0 & v3.0 option.
 - SDBTo use the SDB bash completion feature, type the **source .sdb-complete.bash** command on the bash shell. The feature runs manually from the Tizen 2.4 official version due to the Installer and Update Manager issue.
 - Native UIB
@@ -838,7 +837,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
   - The bug, where a wrong hyperlink appears when the log message at the JavaScript console contains a number, has been fixed.
 - Emulator
   - The bug, which appears while installing the Tizen HAX driver on a computer where Android HAX driver is already installed, has been fixed. The Tizen HAX driver overwrites the Android HAX driver.
-  - The bug, where the emulator is terminated abnormally due to the misconfiguration of SOCKS (SOCKet Secure) proxy on Mac OS® X, has been fixed.
+  - The bug, where the emulator is terminated abnormally due to the misconfiguration of SOCKS (SOCKet Secure) proxy on Mac OS X, has been fixed.
 
 **Known Issues**
 
@@ -851,14 +850,14 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 - Emulator
   - To use the Tizen Emulator, you must install an Intel VTx supported by the CPU, and the latest version of the graphic card driver which the vendor provides. Check the prerequisites for the Tizen Emulator from:
     - [https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk](https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk)
-    - If the host machine is using Nvidia Optimus™ technology on either Ubuntu™ or Windows®, set the Tizen Emulator to run with your Nvidia® graphics card. In case of Ubuntu™, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows®, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia® control panel.
-    - On Ubuntu™, if the graphics driver is out-of-date, your Ubuntu® desktop session can be occasionally logged out when launching the Emulator Manager. Or the Emulator skin can be drawn improperly. Check the prerequisites and upgrade the latest graphics driver.
+    - If the host machine is using Nvidia Optimus™ technology on either Ubuntu™ or Windows, set the Tizen Emulator to run with your Nvidia graphics card. In case of Ubuntu™, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia control panel.
+    - On Ubuntu™, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager. Or the Emulator skin can be drawn improperly. Check the prerequisites and upgrade the latest graphics driver.
   - On Ubuntu™ 14.04, the shortcut menu can sometimes appear transparently.
-  - On Windows®, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is covered with another window. If you click the Emulator window, the display surface runs correctly again.
-  - On Windows®, if ‘failed to allocate memory’ error occurs while executing the Emulator, try the following:
+  - On Windows, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is covered with another window. If you click the Emulator window, the display surface runs correctly again.
+  - On Windows, if ‘failed to allocate memory’ error occurs while executing the Emulator, try the following:
     - Close some other programs and try to launch the Emulator again.
     - If the RAM size is set as 768 or 1024 MB for the VM in the Emulator Manager, change the RAM size to 512 MB.
-    - Increase the user area of the virtual memory in the system to 3 GB by typing the bcdedit /set increaseuserva 3072 command on the console with administrator rights (Windows® 7 only) and reboot.
+    - Increase the user area of the virtual memory in the system to 3 GB by typing the bcdedit /set increaseuserva 3072 command on the console with administrator rights (Windows 7 only) and reboot.
   - If you use a MacBook Pro which has both Intel HD and NVidia GPUs, when you execute the Emulator with the OpenGL ES ver. v1.1 & v2.0 option, the Emulator can be unexpectedly terminated. Use the OpenGL ES ver. v2.0 & v3.0 option.
 - SDB
   - To use the SDB bash completion feature, you must type the source .sdb-complete.bash command on the bash shell. The feature runs manually from the Tizen 2.4 due to the Installer and Update Manager issue.

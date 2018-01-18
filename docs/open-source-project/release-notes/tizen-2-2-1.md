@@ -36,7 +36,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
   - In Settings, the **Privacy** menu is added.
 - System framework
   - Applications can be installed in SD cards.
-  - Firmware download supports the USB.org framework test tool and Mac OS® X.
+  - Firmware download supports the USB.org framework test tool and Mac OS X.
 
 #### Web Framework
 
@@ -146,7 +146,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
   - Debugging
     - The GDB (GNU Debugger) pretty-print feature for basic STL library and Tizen string type is supported, enabling users to debug the value of these types in a human-readable format.
   - Unit Test and Code coverage
-    - The code coverage feature in Windows® has been defined by filtering the garbage value of the gcda path.
+    - The code coverage feature in Windows has been defined by filtering the garbage value of the gcda path.
 
 #### Changed Features
 
@@ -160,7 +160,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
 - Common tools
   - The slowness of pushing files in the **Connection Explorer** has been fixed.
   - Smart Development Bridge (SDB)
-    - Device detection and CPU drain problem in Mac OS® X has been fixed.
+    - Device detection and CPU drain problem in Mac OS X has been fixed.
 - Web IDE and tools
   - The issue of live reload not working in the file mode has been fixed.
   - The issue of 2nd launch not running in the RDS mode has been fixed.

@@ -224,11 +224,11 @@ The Tizen native framework is newly supported in this version.
       - Floating point matrix and vector classes
   - 3D graphics
     - This feature provides:
-      - OpenGL® ES 1.1 and 2.0, which are subsets of the OpenGL® 3D graphics API designed for mobile devices.
+      - OpenGL ES 1.1 and 2.0, which are subsets of the OpenGL 3D graphics API designed for mobile devices.
       - GL utilities:
-        - GLPlayer and IGlRenderer provide templates to increase OpenGL® ES usability.
-        - CanvasTexture provides a fast and convenient way to draw 2D primitives onto OpenGL® ES Texture.
-        - VideoTexture provides a fast and convenient way to play a video stream as OpenGL® ES Texture.
+        - GLPlayer and IGlRenderer provide templates to increase OpenGL ES usability.
+        - CanvasTexture provides a fast and convenient way to draw 2D primitives onto OpenGL ES Texture.
+        - VideoTexture provides a fast and convenient way to play a video stream as OpenGL ES Texture.
       - Performance:
         - Provides a hardware acceleration mode, which accelerates applications using graphics hardware. When the HwAcceleration mode is enabled in the manifest.xml file, the GL surface rendering performance is also enhanced.
 - Tizen::Io
@@ -311,10 +311,10 @@ The Tizen native framework is newly supported in this version.
       - HTTPS (TLS1.0 and SSL3.0)
       - HTTP authentication (basic, digest, NTLM, and negotiate)
       - HTTP entity API (multi-part, string, Xml, and url encoded)
-  - Wi-Fi and Wi-Fi Direct®
+  - Wi-Fi and Wi-Fi Direct
     - This feature provides:
       - Functionality for managing the local Wi-Fi device
-      - Functionality for using Wi-Fi Direct® networks
+      - Functionality for using Wi-Fi Direct networks
       - *Note*: Wi-Fi features are only supported on the reference target device, not on the Emulator.
   - Bluetooth
     - This feature provides:
@@ -501,11 +501,11 @@ The Tizen native framework is newly supported in this version.
 - Tizen::Graphics
   - Graphics
     - The Tizen SDK adopts font resources with open source license, therefore, some rarely used glyphs are missing.
-    - When the HwAcceleration flag is turned on in the Emulator, the OpenGL® ES 1.1 functions do not behave properly.
+    - When the HwAcceleration flag is turned on in the Emulator, the OpenGL ES 1.1 functions do not behave properly.
   - 3D graphics
-    - The OpenGL® ES pbuffer surface is not supported in the Emulator.
+    - The OpenGL ES pbuffer surface is not supported in the Emulator.
 - Tizen::Media
-  - Various effects of the Camera feature are not supported in the Emulator in Mac OS® X.
+  - Various effects of the Camera feature are not supported in the Emulator in Mac OS X.
   - The front camera is not working in specific reference targets.
     - The front camera is not working in the specific target device. (Ref.Device-PQ)
     - The camera flash is not working in the specific target device. (Ref.Device-210)
@@ -609,7 +609,7 @@ The Tizen native framework is newly supported in this version.
 
 - General
   - Multiple OS support
-    - The IDE is available for 32-bit and 64-bit Linux (Ubuntu), Windows®, and Mac OS® X.
+    - The IDE is available for 32-bit and 64-bit Linux (Ubuntu), Windows, and Mac OS X.
   - Native (C++) development support
     - The native (C++) SDK provides convenient development tools, such as the IDE, dynamic analyzer, unit test, code coverage, UI builder, effective UI builder, and API checker.
   - Eclipse version upgrade
@@ -636,13 +636,13 @@ The Tizen native framework is newly supported in this version.
       - A refined message text
   - Emulator
     - The following features have been added:
-      - Support for HW VT acceleration on 32/64-bit Linux (Ubuntu), Windows®, and Mac OS® X
-      - OpenGL® ES enhancement:
-        - Support for HW acceleration on 32/64-bit Linux (Ubuntu), Windows®, and Mac OS® X
+      - Support for HW VT acceleration on 32/64-bit Linux (Ubuntu), Windows, and Mac OS X
+      - OpenGL ES enhancement:
+        - Support for HW acceleration on 32/64-bit Linux (Ubuntu), Windows, and Mac OS X
         - Support for HW acceleration with NVIDIA, ATI, and Intel graphic cards
-        - *Note*: This feature requires the driver for OpenGL® ES >= 2.0 and GLSL >= 1.20 for the Intel graphic card on Windows®.
+        - *Note*: This feature requires the driver for OpenGL ES >= 2.0 and GLSL >= 1.20 for the Intel graphic card on Windows.
         - *Note*: This feature requires Ubuntu version 12.04 or higher for the Intel graphic card.
-        - Support for SW mesa in Tizen guest, in case OpenGL® ES is not available in the host
+        - Support for SW mesa in Tizen guest, in case OpenGL ES is not available in the host
         - Support for the pixmap surface and eglImageKHR/glEGLImageTargetTexture2DOES extensions
       - QEMU version upgrade to 1.2.0.
       - Multimedia codec enhancement:
@@ -686,7 +686,7 @@ The Tizen native framework is newly supported in this version.
     - Support for commands for connecting and disconnecting to a device via TCP/IP
     - Support for creating a remote file with a utf-8 character encoding (--with-utf-8)
     - Support for the target name given by the Emulator Manager
-    - Console supporting ANSI color (ansicon.exe) in Windows®
+    - Console supporting ANSI color (ansicon.exe) in Windows
 
 
 - Web IDE
@@ -696,10 +696,10 @@ The Tizen native framework is newly supported in this version.
       - JavaScript Development Tools (JSDT)
         - Validator policies changed to remove unnecessary warnings
       - Support for JavaScript and CSS source code beautifier (Ctrl + 6)
-      - *Note*: The Preview tab in the HTML editor has been deleted. The Google Chrome®-based HTML preview is supported through the preview button in the action bar.
+      - *Note*: The Preview tab in the HTML editor has been deleted. The Google Chrome-based HTML preview is supported through the preview button in the action bar.
     - Views
       - HTML and CSS previews
-        - Container changed from the in-place view to the Google Chrome® browser
+        - Container changed from the in-place view to the Google Chrome browser
         - Instantly displaying changes made to HTML or CSS code (live-reload)
       - Advanced Declaration view for JavaScript
         - Instantly displaying the declaration of the selected code on a separate view
@@ -709,7 +709,7 @@ The Tizen native framework is newly supported in this version.
     - Building, running, and debugging
       - RDS (Rapid Development Support) added to enable faster building, running, and debugging of applications
       - Widget package file created using the Full or Clean Build
-      - The remote inspector container changed from the in-place view to the Google Chrome® browser
+      - The remote inspector container changed from the in-place view to the Google Chrome browser
       - Support for incremental build
       - Support for hybrid application packaging
     - Tools
@@ -908,7 +908,7 @@ The Tizen native framework is newly supported in this version.
     - RDS does not support signing.
   - CLI (Command Line Interface)
     - The project path and Tizen SDK path are fixed when the project is generated. If you change the path, the project cannot be built.
-    - .bat files are not provided for Windows®.
+    - .bat files are not provided for Windows.
   - Unit test
     - The Test Explorer does not work if the project files have not been changed. In this case, edit the code manually, build the project, and run it.
   - Code coverage
@@ -918,20 +918,20 @@ The Tizen native framework is newly supported in this version.
 
 - Emulator
 
-  - OpenGL® ES acceleration can have problems in certain environments:
+  - OpenGL ES acceleration can have problems in certain environments:
 
     - Windows XP/7 with Intel motherboard integrated card
     - Ubuntu 11.10 with Intel CPU/motherboard integrated card
 
     If this occurs, turn off the HW GL acceleration in the Emulator Manager. The HW GL acceleration can be disabled due to host capability, even though you select 'HW GL Acceleration supported' in the Emulator Manager.
 
-  - When you launch the Emulator on Windows®, you can get a "failed to allocate memory" error. In that case, try the following:
+  - When you launch the Emulator on Windows, you can get a "failed to allocate memory" error. In that case, try the following:
 
-    - Increase the user area of the virtual memory in the system to 3 GB by running the "bcdedit /set increaseuserva 3072" command on the console with administrator rights (Windows® 7 only).
+    - Increase the user area of the virtual memory in the system to 3 GB by running the "bcdedit /set increaseuserva 3072" command on the console with administrator rights (Windows 7 only).
     - Close some other programs and try to launch the Emulator again.
     - If you have set the RAM size as 768 or 1024 MB for the VM in the Emulator Manager, change the RAM size to 512 MB.
 
-  - Using the Emulator with SOCKS (SOCKet Secure) proxy on Mac OS® X can cause unexpected problems.
+  - Using the Emulator with SOCKS (SOCKet Secure) proxy on Mac OS X can cause unexpected problems.
 
   - You cannot play some video files linked in YouTube, or other Web pages, using the browser on the Emulator.
 
@@ -939,9 +939,9 @@ The Tizen native framework is newly supported in this version.
 
   - The Emulator screenshot is drawn with a framebuffer of a virtual device. Sometimes the screenshot may not appear correctly.
 
-  - When you use the camera on Mac OS® X, the brightness and contrast settings would not work.
+  - When you use the camera on Mac OS X, the brightness and contrast settings would not work.
 
-  - Some menu items of the top menu bars of the Emulator and the Emulator Manager do not work on Mac OS® X.
+  - Some menu items of the top menu bars of the Emulator and the Emulator Manager do not work on Mac OS X.
 
 - Dynamic analyzer
 
@@ -949,7 +949,7 @@ The Tizen native framework is newly supported in this version.
 
 - Install Manager
 
-  - A shortcut is not provided in Mac OS® X.
+  - A shortcut is not provided in Mac OS X.
   - If a dialog displays that the Install Manager is damaged on Mac OS, please see [http://support.apple.com/kb/HT5290](http://support.apple.com/kb/HT5290).
 
 - # Next Release
