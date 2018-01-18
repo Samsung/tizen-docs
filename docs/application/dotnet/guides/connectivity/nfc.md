@@ -1,6 +1,5 @@
 # Near Field Communication (NFC)
-## Dependencies
--   Tizen 4.0 and Higher
+
 
 Tizen enables you to use Near Field Communication (NFC) functionalities, such as reading and writing tags, and emulating a smartcard. NFC is an international standard (ISO/IEC 18092) that specifies an interface and a protocol for simple wireless interconnection of closely coupled devices. For more information, see the [NFC Forum](http://nfc-forum.org/).
 

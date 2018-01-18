@@ -1,5 +1,4 @@
-Application Controls
-====================
+# Application Controls
 
 
 An application control (app control) is a way of sharing an

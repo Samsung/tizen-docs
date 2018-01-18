@@ -158,7 +158,7 @@ To play tones, use a DTMF (Dual Tone Multi Frequency) preset frequency. The poss
 You can [start and stop playing a tone](#play_tone), and [play a tone for a specified duration](#duration).
 
 ## Prerequisites
--------------
+
 
 To use the methods and properties of the media playback classes, include the [Tizen.Multimedia](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html) namespace in your application:
 

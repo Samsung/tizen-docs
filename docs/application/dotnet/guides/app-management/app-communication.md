@@ -1,5 +1,4 @@
-Application Data Exchange
-=========================
+# Application Data Exchange
 
 
 The application data exchange features cover the various methods you have to communicate with other applications. You can exchange data between applications through message ports and data controls.

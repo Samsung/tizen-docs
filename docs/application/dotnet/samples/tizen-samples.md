@@ -1,5 +1,5 @@
-Wearable Application Samples
-----------------------------
+## Wearable Application Samples
+
 
 <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">![](/sites/default/files/images/w1maps.png){width="360" height="360"}</span>
 
@@ -20,8 +20,7 @@ The Sample Location application demonstrates how user can use the location servi
 
 SecureRepository is simple application that allows you to securely store data, certificates and cryptographic keys using C\# Tizen.Security.SecureRepository API.
 
-TV Application Samples
-----------------------
+## TV Application Samples
 
 <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">![](/sites/default/files/images/tv1musicplayerui.png){width="400" height="225"}</span>
 
@@ -203,8 +202,8 @@ File Downloader is a sample application that demonstrates how to download file u
 
 MediaContent is a sample application that demonstrates how to obtain and filter media content information from internal and external storages using Media Content API.
 
-Mobile Application Samples
---------------------------
+## Mobile Application Samples
+
 
 <div class="table-wrap">
 

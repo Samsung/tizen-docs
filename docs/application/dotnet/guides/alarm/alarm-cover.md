@@ -1,5 +1,4 @@
-Alarms and Scheduling
-=====================
+# Alarms and Scheduling
 
 
 The alarms and scheduling features introduce how you can define and store alarms.

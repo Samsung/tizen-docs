@@ -1,5 +1,4 @@
-Application Management
-======================
+# Application Management
 
 
 The application management features cover the various application models available for Tizen .NET applications. They describe the application life-cycle and resources, and the communication methods available for the application.

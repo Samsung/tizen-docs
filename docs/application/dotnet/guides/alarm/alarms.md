@@ -1,6 +1,5 @@
+# Alarms
 
-Alarms
-======
 
 
 You can use alarms to launch applications or send user notifications at specific times. The mechanism involved in launching the application is the [Tizen.Applications.AppControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AppControl.html) class.
