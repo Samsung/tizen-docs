@@ -121,7 +121,7 @@ still access the layers below it for common tasks, as there is no need
 for Elementary to wrap things that work perfectly well as-is.
 
 To learn more about each library, go to
-[Introduction](../../../guides/native/ui/efl/introduction-n.md).
+[Introduction](../../guides/ui/efl/introduction.md).
 This section only briefly describes the hierarchical structure of your
 application on Tizen.
 
@@ -215,6 +215,7 @@ views](./media/ui_builder_view_hierarchy.png)
 If you want to make a structure for each situation (single and multiple
 views), the following figure illustrates a possible structure.
 
+<a name="UI_figure"></a>
 **Figure: UI hierarchy structure**
 
 ![UI hierarchy structure](./media/ui_builder_ui_hierarchy.png)

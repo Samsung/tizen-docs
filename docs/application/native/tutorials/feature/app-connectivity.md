@@ -12,7 +12,7 @@ resources.
 When creating a connectivity application, you can implement the
 following features:
 
--   [Network operations](app-connectivity-operation-n.md)
+-   [Network operations](app-connectivity-operation.md)
     -   To handle network operations, you must know which networks are
         currently available and in use. You can access the network
         connection state through a connection handle.
@@ -24,7 +24,7 @@ following features:
     -   When you use the data services of various networks, the
         responses are often composed in XML or JSON format. To handle
         the data in the responses, you need to parse XML and JSON.
--   [Network usage](app_connectivity-usage-n.md)
+-   [Network usage](app_connectivity-usage.md)
     -   When the connection changes from one network to another or the
         mobile network service details change, the application must
         receive a notification and take actions to ensure that only
@@ -37,7 +37,7 @@ following features:
         active or inactive.
     -   You can retrieve statistical information about the network
         usage, such as the amount of sent or received data.
--   [P2P connections with Wi-Fi Direct®](app-connectivity-p2p-n.md)
+-   [P2P connections with Wi-Fi Direct®](app-connectivity-p2p.md)
     -   You can find nearby Wi-Fi Direct devices and form a Wi-Fi Direct
         group to communicate with them.
     -   Tizen also supports TDLS, which operates in the background of a

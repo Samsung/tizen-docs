@@ -35,7 +35,7 @@ To create a native UI Builder project:
     template offers a single view. For more information on the Project
     Wizard and templates, see [Creating Tizen Projects with Tizen
     Project
-    Wizard](../../../tizen-studio/native-tools/project-wizard-n.md).
+    Wizard](../../../tizen-studio/native-tools/project-wizard.md).
 
     ![Project templates](./media/ui_builder_templates.png)
 
@@ -78,7 +78,7 @@ To create a UI with the **Design** editor:
 
 1.  Each view must have a root container as a top-level UI component
     (see the [UI hierarchy
-    structure](ui-builder-overview-mn.md#UI_figure) figure). To design
+    structure](ui-builder-overview.md#UI_figure) figure). To design
     a view, first place the top-level UI component, the root container,
     on the canvas.
 
@@ -133,7 +133,7 @@ section describes some of the features that are available in the
 
 For more information on the XML schema of the layout file, see [Managing
 UI Component Attributes in
-layout.xml](../../../tizen-studio/native-tools/component-attributes-n.md).
+layout.xml](../../../tizen-studio/native-tools/component-attributes.md).
 
 To use the XML editor and its helpful features:
 
@@ -395,7 +395,7 @@ provided with the Tizen Studio, imitates the target environment running
 Tizen native applications. Using this replicated environment, you can
 test your application before deploying to a real target device. For more
 information, see [Running Applications on the
-Emulator](../../../../org.tizen.studio/html/common_tools/emulator.htm).
+Emulator](../../../tizen-studio/common-tools/emulator.md).
 
 To run the application:
 

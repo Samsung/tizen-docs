@@ -74,7 +74,7 @@ The application states are described in the following table.
 Application state changes are managed by the underlying framework. For
 more information on application state transitions, see [Application
 States and
-Transitions](../../../guides/native/app-management/efl-ui-app-n.md#state_trans).
+Transitions](../../guides/app-management/efl-ui-app.md#application-states-and-transitions).
 
 ### Location Service Life-cycle
 
@@ -220,7 +220,7 @@ location service when the application is paused or resumed.
 To use the location service, the application must declare the required
 privileges in the `tizen-manifest.xml` file. For more information on the
 Tizen privileges, see [Security and API
-Privileges](../details/sec-privileges-n.md).
+Privileges](../details/sec-privileges.md).
 
 For this example, the application manifest must include the following
 privileges:

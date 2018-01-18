@@ -27,7 +27,7 @@ and
 [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__TELEPHONY__FRAMEWORK.html)
 applications) APIs must declare the required privileges in the
 `tizen-manifest.xml` file. For more information on the Tizen privileges,
-see [Security and API Privileges](../details/sec-privileges-n.md).
+see [Security and API Privileges](../details/sec-privileges.md).
 
 To perform the network operations, the application manifest must include
 the following privileges:
@@ -39,7 +39,7 @@ the following privileges:
 ```
 
 To perform the network operations, the device must support the following
-[features](../details/app-filtering-n.md):
+[features](../details/app-filtering.md):
 
 -   `http://tizen.org/feature/network.wifi`
 -   `http://tizen.org/feature/network.telephony`
@@ -160,7 +160,7 @@ application downloads from the Internet are stored in the device
 storage. The privileges are required to access the resources for
 downloading content and to save them to the media storage. For more
 information on the Tizen privileges, see [Security and API
-Privileges](../details/sec-privileges-n.md).
+Privileges](../details/sec-privileges.md).
 
 To perform the HTTP download operations, the application manifest must
 include the following privileges:
