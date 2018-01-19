@@ -136,7 +136,7 @@ The EDC Editor provides useful tool functions through the tool buttons available
 **Table: Tool buttons**
 
 | Icon                                     | Description                              | Hotkey         |
-| ---------------------------------------- | ---------------------------------------- | -------------- |
+|----------------------------------------|----------------------------------------|--------------|
 | ![Highlight effect](./media/edceditor_highselect.png) | Show a highlight effect on the selected part in the preview. | **Ctrl + H**   |
 | ![Virtual image](./media/edceditor_virt_image.png) | Display virtual images for the swallow and spacer parts. | **Ctrl + U**   |
 | ![Wireframes](./media/edceditor_wireframes.png) | Display wireframes to identify the parts boundaries. | **Ctrl + W**   |

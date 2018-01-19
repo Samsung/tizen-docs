@@ -95,7 +95,7 @@ The following table lists the basic features supported in the emulator.
 **Table: Supported emulator features**
 
 | Feature                | Detail                                   | Status        | Notes                                    |
-| ---------------------- | ---------------------------------------- | ------------- | ---------------------------------------- |
+|----------------------|----------------------------------------|-------------|----------------------------------------|
 | Skin                   | Skins are fitted to the screen resolution:Mobile:WVGA (480 x 800, default)qHD (540 x 960)HD (720 x 1280)Wearable:320 x 320360 x 360 (default)360 x 4804 orientation modes are supported:Portrait (default), landscape, reverse portrait, and reverse landscape | Supported     | 2 skin layout types are supported:Profile-specific skinGeneral purpose skin |
 | Touch                  | Maru touchscreen device                  | Supported     | Multi-touch is supported.                |
 | Key                    | HW keys, host keyboard, and SW keypad    | Supported     | The host keyboard is not supported for the wearable emulator. |
@@ -135,7 +135,7 @@ The following tables describe the differences between a real target device and t
 **Table: Comparison summary**
 
 | Category                | Subject                       | Physical target                          | Emulator                                 |
-| ----------------------- | ----------------------------- | ---------------------------------------- | ---------------------------------------- |
+|-----------------------|-----------------------------|----------------------------------------|----------------------------------------|
 | Development environment | Target                        | Buy a target device or reference board (by model) | Download the Tizen Studio (multi-profile and multi-model support) |
 |                         | Network                       | Need Bluetooth                           | Only the network environment             |
 |                         | Target connection             | USB                                      | IPC (TCP/UDP)                            |
@@ -161,7 +161,7 @@ The following tables describe the differences between a real target device and t
 **Table: Input differences**
 
 | Category                       | Physical target        | Emulator                           |
-| ------------------------------ | ---------------------- | ---------------------------------- |
+|------------------------------|----------------------|----------------------------------|
 | Touch screen panel             | Real device and driver | Virtual (VirtIO) device and driver |
 | Host keyboard and hardware key | Real device and driver | Virtual (VirtIO) device and driver |
 
@@ -171,7 +171,7 @@ The following tables describe the differences between a real target device and t
 **Table: Graphics and display differences**
 
 | Category           | Physical target                     | Emulator                             |
-| ------------------ | ----------------------------------- | ------------------------------------ |
+|------------------|-----------------------------------|------------------------------------|
 | Framebuffer device | Display controller in the processor | Virtual VGA card                     |
 | Backlight control  | LDI (LCD Driver IC) command         | Additional virtual device and driver |
 
@@ -181,7 +181,7 @@ The following tables describe the differences between a real target device and t
 **Table: Virtual sensor differences**
 
 | Category | Physical target    | Emulator                                 |                                          |
-| -------- | ------------------ | ---------------------------------------- | ---------------------------------------- |
+|--------|------------------|----------------------------------------|----------------------------------------|
 | Sensor   | Acceleration       | Receives the actual acceleration value of the device. | Receives the virtual acceleration value through the Emulator Control Panel.When the emulated device is stationary and vertical in portrait orientation, the acceleration values are 0, 1, and 0 g. |
 |          | Gyro               | Receives the actual gyroscope value of the device. | Receives the virtual gyroscope value through the Emulator Control Panel. |
 |          | Geomagnetic        | Receives the actual geomagnetic value of the device. | Receives the virtual geomagnetic value through the Emulator Control Panel.When the emulated device is stationary and vertical in portrait orientation, the Y axis is at true north and the magnetic field strength values are 1, 0, and -10 µT. |
@@ -205,7 +205,7 @@ The following tables describe the differences between a real target device and t
 **Table: Telephony differences**
 
 | Category  | Physical target | Emulator                             |                                          |
-| --------- | --------------- | ------------------------------------ | ---------------------------------------- |
+|---------|---------------|------------------------------------|----------------------------------------|
 | Telephony | Call            | Calls and video calls are supported. | Call waiting, outgoing call barring, and voice calls with the Emulator Control Panel are supported.Video calls, call forwarding, incoming call barring, and emulator-to-emulator calls are not supported. |
 | Telephony | SMS             | SMS messaging is supported.          | SMS messaging with the Emulator Control Panel is supported.Sending emulator-to-emulator SMS messages is not supported. |
 
@@ -215,7 +215,7 @@ The following tables describe the differences between a real target device and t
 **Table: Power management differences**
 
 | Mode           | Physical target                     | Emulator                                 |
-| -------------- | ----------------------------------- | ---------------------------------------- |
+|--------------|-----------------------------------|----------------------------------------|
 | Display on/off | Display controller in the processor | Internal emulation                       |
 | Power off      | Power management in the processor   | ACPI (Advanced Configuration and Power Interface) |
 
@@ -225,7 +225,7 @@ The following tables describe the differences between a real target device and t
 **Table: Media format and codec differences**
 
 | Category |      | Physical target | Emulator      |
-| -------- | ---- | --------------- | ------------- |
+|--------|----|---------------|-------------|
 | Decoder  | FLAC | Supported       | Not supported |
 
 ## Related information

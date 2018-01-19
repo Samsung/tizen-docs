@@ -25,7 +25,7 @@ A specific subdirectory is named with a **configuration-qualifier**. The configu
 **Table: Configuration-qualifiers**
 
 | Configuration-qualifier type | Type value                        | Description                              |
-| ---------------------------- | --------------------------------- | ---------------------------------------- |
+|----------------------------|---------------------------------|----------------------------------------|
 | Language and region code     | For example, `en_US` or `en_UK`   | The type values have the form `ll_CC`, where `ll` stands for an [ISO 639](https://www.gnu.org/software/gettext/manual/html_node/Usual-Language-Codes.html) 2-letter language code, and the optionally followed `CC` stands for an [ISO 3166](https://www.gnu.org/software/gettext/manual/html_node/Country-Codes.html#Country-Codes) 2-upper-letter region code. |
 | DPI (Dot Per Inch) density   |`LDPI`<br/>`MDPI`<br/>`HDPI`<br/>`XHDPI`<br/>`XXHDPI` | `LDPI`: low-dpi from 0 to 240<br/>`MDPI`: medium-dpi from 241 to 300<br/>`HDPI`: high-dpi from 301 to 380<br/>`XHDPI`: extra-high-dpi from 381 to 480<br/>`XXHDPI`: extra-extra-high-dpi from 481 to 600 |
 
@@ -34,7 +34,7 @@ Each application base scale can be applied to each DPI through a relation modifi
 **Table: DPI and profile factor**
 
 | DPI type | Base scale in a small screen mobile(profile factor: 0.7) | Base scale in a large screen mobile(profile factor: 0.8) |
-| -------- | ---------------------------------------- | ---------------------------------------- |
+|--------|----------------------------------------|----------------------------------------|
 | LDPI     | 0 ~ 1.9                                  | 0 ~ 2.1                                  |
 | MDPI     | 1.9 ~ 2.3                                | 2.1 ~ 2.7                                |
 | HDPI     | 2.3 ~ 3.0                                | 2.7 ~ 3.4                                |

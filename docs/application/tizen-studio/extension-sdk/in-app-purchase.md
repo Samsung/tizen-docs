@@ -23,7 +23,7 @@ IAP supports the following item types:
 **Table: Supported item types**
 
 | Table          | Description                              |
-| -------------- | ---------------------------------------- |
+|--------------|----------------------------------------|
 | Consumable     | If you purchase an item of this type and use it, it is consumed. These items can be repurchased.Example: Consumable items, such as bullets in games. |
 | Non-consumable | Once purchased, you can use an item of this type permanently. These items cannot be repurchased.Example: Non-consumable items, including books, that do not need to be repurchased. |
 
@@ -34,7 +34,7 @@ The following table lists the terminology used in the context of IAP.
 **Table: Terms and abbreviations**
 
 | Term               | Description                              |
-| ------------------ | ---------------------------------------- |
+|------------------|----------------------------------------|
 | **IAP**            | In-App Purchase                          |
 | **MCC**            | This code (3 digits) identifies the mobile country code. |
 | **MNC**            | This code (characters or digits) identifies the carrier in the current country. |
@@ -123,7 +123,7 @@ The following table describes the interfaces list.
 **Table: Interfaces list**
 
 | Application ID                           | Operation ID                             | Description                              |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+|----------------------------------------|----------------------------------------|----------------------------------------|
 | `org.tizen.inapppurchase.iapclient`      | `http://tizen.org/appcontrol/operation/iapv2/purchase` | The operation purchases the item. <br/>During this step a purchase screen is displayed, and the user needs to provide details (e-mail, password) to make a purchase.<br/>The output value indicates the result of purchase (success or failure), and is used to verify the purchase. |
 | `org.tizen.inapppurchase.iapservice`     | `http://tizen.org/appcontrol/operation/iapv2/get_item_list` | The operation returns a list of items available for purchase.<br/>The output data values are used to send a list of items available for purchase. |
 | | `http://tizen.org/appcontrol/operation/iapv2/get_purchased_item_list` | The operation returns a list of already purchased items.                                          |
@@ -201,7 +201,7 @@ The IAP Service instance allows you to get a list of items available for purchas
  **Table: Input data for getting a list of items**
 
   | Key              | Value                     | Description                              |
-  | ---------------- | ------------------------- | ---------------------------------------- |
+  |----------------|-------------------------|----------------------------------------|
   | `_mode`          | 0 or 1                    | Mode type:0: Normal (commercial) modeThis mode needs to be used in an application submitted to the Tizen Store.1: Developer modeThis mode can be used for testing purposes while developing the application. Payment always succeeds.The default value is 0.This information is optional. |
   | `_transactionId` | Transaction ID            | Transaction ID, such as 1 or 2.The ID is used to track a transaction between requests.This information is mandatory. |
   | `_startNumber`   | Start number              | Index of the first item in the list.Start downloading items from this index number.This information is mandatory. |
@@ -239,7 +239,7 @@ if (app_control != NULL)    app_control_destroy(app_control);
  **Table: Output data for getting a list of items**
 
   | Key                  | Value                           | Description                              |
-  | -------------------- | ------------------------------- | ---------------------------------------- |
+  |--------------------|-------------------------------|----------------------------------------|
   | `_method`            | `OnItemInformationListReceived` | Method to be called as a purchase request result. |
   | `_result`            | Result code                     | [Result codes are described at the end of this section.](#result_code) |
   | `_resultDescription` | Result code/Function ID         | Result code/Function ID when `_result` value is not 0 (success). [Result codes are described at the end of this section.](#result_code) |
@@ -254,7 +254,7 @@ if (app_control != NULL)    app_control_destroy(app_control);
   **Table: Item keys in the output data**
 
   | Key                                     | Value                                    | Description                              |
-  | --------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+  |---------------------------------------|----------------------------------------|----------------------------------------|
   | `PREFIX_itemId`                         | Item ID                                  | This is the same number as an item ID that is used in the request. |
   | `PREFIX_itemGroupId`                    | Item group ID                            | ID of a collection of items. The collection is linked to your application in Tizen Store Seller Office. |
   | `PREFIX_itemName`                       | Item name                                | Name provided during item registration in Tizen Store Seller Office. |
@@ -378,7 +378,7 @@ get_item_list_cb(app_control_h request, app_control_h reply,
 
   **Table: Input data for getting a list of purchased items**
 | Key              | Value                     | Description                              |
-| ---------------- | ------------------------- | ---------------------------------------- |
+|----------------|-------------------------|----------------------------------------|
 | `_mode`          | 0 or 1                    | Mode type:0: Normal (commercial) modeThis mode needs to be used in an application submitted to the Tizen Store.1: Developer modeThis mode can be used for testing purposes while developing the application. Payment always succeeds.The default value is 0.This information is optional. |
 | `_transactionId` | Transaction ID            | Transaction ID, such as 1 or 2.The ID is used to track a transaction between requests.This information is mandatory. |
 | `_startNumber`   | Start number              | Index of the first item in the list.Start downloading items from this index number.This information is mandatory. |
@@ -417,7 +417,7 @@ if (app_control != NULL)
 The results of the operation are returned in the app control callback.The following table shows the output data for the `http://tizen.org/appcontrol/operation/iapv2/get_purchased_item_list` operation.
  **Table: Output data for getting a list of purchased items**
  | Key                  | Value                                    | Description                              |
-| -------------------- | ---------------------------------------- | ---------------------------------------- |
+|--------------------|----------------------------------------|----------------------------------------|
 | `_method`            | `OnPurchasedItem` or `InformationListReceived` | Method to be called as a purchase request result. |
 | `_result`            | Result code                              | [Result codes are described at the end of this section.](#result_code) |
 | `_resultDescription` | Result code/Function ID                  | Result code/Function ID when `_result` value is not 0 (success). [Result codes are described at the end of this section.](#result_code) |
@@ -431,7 +431,7 @@ The results of the operation are returned in the app control callback.The follow
 
  **Table: Item keys in the output data**
 | Key                                     | Value                                    | Description                              |
-| --------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+|---------------------------------------|----------------------------------------|----------------------------------------|
 | `PREFIX_itemId`                         | Item ID                                  | This is the same number as an Item ID that is used in the request. |
 | `PREFIX_itemGroupId`                    | Item group ID                            | ID of a collection of items. The collection is linked to your application in Tizen Store Seller Office. |
 | `PREFIX_itemName`                       | Item name                                | Name provided during item registration in Tizen Store Seller Office. |
@@ -571,7 +571,7 @@ The following table show the key and value pairs required in the input extra dat
 
  **Table: Input data for getting a list of countries**
 | Key              | Value          | Description                              |
-| ---------------- | -------------- | ---------------------------------------- |
+|----------------|--------------|----------------------------------------|
 | `_transactionId` | Transaction ID | Transaction ID, such as 1 or 2.This information is mandatory.The ID is used to track a transaction between requests. |
 
 - **Example code for get country list**
@@ -595,7 +595,7 @@ The results of the operation are returned in the app control callback.The follow
 
  **Table: Output data for getting a list of countries**
  | Key                  | Value                   | Description                              |
-| -------------------- | ----------------------- | ---------------------------------------- |
+|--------------------|-----------------------|----------------------------------------|
 | `_method`            | `OnCountryListReceived` | Method to be called as a purchase request result. |
 | `_result`            | Result code             | [Result codes are described at the end of this section.](#result_code) |
 | `_resultDescription` | Result code/Function ID | Result code/Function ID when `_result` value is not 0 (success). [Result codes are described at the end of this section.](#result_code) |
@@ -608,7 +608,7 @@ The results of the operation are returned in the app control callback.The follow
 
  **Table: Country keys in the output data**
 | Key                  | Value                     | Description                              |
-| -------------------- | ------------------------- | ---------------------------------------- |
+|--------------------|-------------------------|----------------------------------------|
 | `PREFIX_countryName` | Country name              | Name of a country.                       |
 | `PREFIX_mcc`         | MCC (mobile country code) | MCC (mobile country code) as a string value. |
 
@@ -659,7 +659,7 @@ The following table lists the possible values of the `_result` key for the `org.
 
  **Table: Result code values**
 | Value | String Representation     | Description                              |
-| ----- | ------------------------- | ---------------------------------------- |
+|-----|-------------------------|----------------------------------------|
 | 0     | `Succeed`                 | The status code for success.             |
 | 200   | `NetworkError`            | The status code for network errors.      |
 | 1000  | `ProcessError`            | The status code for process errors.      |
@@ -686,7 +686,7 @@ This operation launches the purchase application and allows purchasing of In-App
 
  **Table: Input data for launching the purchase application**
 | Key              | Value                     | Description                              |
-| ---------------- | ------------------------- | ---------------------------------------- |
+|----------------|-------------------------|----------------------------------------|
 | `_mode`          | 0 or 1                    | Mode type:0: Normal (commercial) modeThis mode needs to be used in an application submitted to the Tizen Store.1: Developer modeThis mode can be used for testing purposes while developing the application. Payment always succeeds.The default value is 0.This information is optional. |
 | `_transactionId` | Transaction ID            | Transaction ID, such as 1 or 2.The ID is used to track a transaction between requests.This information is mandatory. |
 | `_itemId`        | Item ID                   | Item ID, such as 000000003501.An item ID is associated with a specific item in Tizen Store Seller Office.You can retrieve a list of items available for purchase using the `org.tizen.inapppurchase.iapservice` application ID.This information is mandatory. |
@@ -720,7 +720,7 @@ The results of the operation are returned in the app control callback.This data 
 
  **Table: Output data for launching the purchase application**
   | Key                  | Value                                    | Description                              |
-  | -------------------- | ---------------------------------------- | ---------------------------------------- |
+  |--------------------|----------------------------------------|----------------------------------------|
   | `_method`            | `OnPurchaseItemReceived`                 | Method to be called as a purchase request result. |
   | `_result`            | Result code                              | [Result codes are described at the end of this section.](#result_code_2) |
   | `_resultDescription` | Result code/Function ID or HTML tags     | Display the `_resultDescription` value as a pop-up using Web-Control when you receive a `_result` value of 5600.[Result codes are described at the end of this section.](#result_code_2) |
@@ -828,7 +828,7 @@ The results of the operation are returned in the app control callback.This data 
 
  **Table: Result code values**
  | Value | String Representation                 | Description                              |
-| ----- | ------------------------------------- | ---------------------------------------- |
+|-----|-------------------------------------|----------------------------------------|
 | 0     | `Succeed`                             | The status code for success.             |
 | 100   | `Cancel`                              | The status code if the user cancels.     |
 | 200   | `NetworkError`                        | The status code for network errors.      |

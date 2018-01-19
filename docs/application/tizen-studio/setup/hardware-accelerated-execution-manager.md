@@ -22,7 +22,7 @@ Supported Windows® versions: 8.1/8/7 (32/64-bit), Vista (32/64-bit), XP SP2 or 
 **Table: Windows installer package**
 
 | Windows installer                        | File description | File size | MD5 checksum                     |
-| ---------------------------------------- | ---------------- | --------- | -------------------------------- |
+|----------------------------------------|----------------|---------|--------------------------------|
 | [IntelHAXM_6.0.4.exe](http://download.tizen.org/sdk/haxm/6.0.4/win/IntelHAXM_6.0.4.exe) | System driver    | 2.66 MB   | bc05f881d9282ed0914b3e0bf3c96e89 |
 
 To install Intel® HAXM:
@@ -104,7 +104,7 @@ Supported macOS versions: 10.10 Yosemite (64-bit), 10.9 Mavericks (64-bit), 10.8
 **Table: Windows installer package**
 
 | macOS installer                          | File description | File size | MD5 checksum                     |
-| ---------------------------------------- | ---------------- | --------- | -------------------------------- |
+|----------------------------------------|----------------|---------|--------------------------------|
 | [IntelHAXM_6.0.3.dmg](http://download.tizen.org/sdk/haxm/6.0.3/mac/IntelHAXM_6.0.3.dmg) | System driver    | 213 KB    | cbd7e3cbdb8b4a84c91fc9094b2cd134 |
 
 To install Intel® HAXM:

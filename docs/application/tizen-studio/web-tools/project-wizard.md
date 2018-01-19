@@ -85,7 +85,7 @@ The options you can set are listed in the following table.
 **Table: Project properties**
 
 | Property                 | Description                              |
-| ------------------------ | ---------------------------------------- |
+|------------------------|----------------------------------------|
 | **Project name**         | A name for the project to be created.    |
 | **Use default location** | If you check this option, the project is created in the `$<workspace_location>/<project_name>` directory. |
 | **Location**             | Manually select the location of the project.  If you check the **Use default location** checkbox, this option is disabled. |

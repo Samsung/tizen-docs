@@ -119,7 +119,7 @@ When the test cases are executed, the test case states are automatically updated
 **Table: Test case states**
 
 | Icon                                     | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
+|----------------------------------------|----------------------------------------|
 | ![Start icon](./media/unit_test_icon_start.png) Starting state | When you open the view for the first time, all nodes have this status, except the disabled tests. |
 | ![Disabled icon](./media/unit_test_icon_disabled.png) Test is disabled | Disabled nodes are not run.              |
 | ![Success icon](./media/unit_test_icon_success.png) Test has been successfully run | Test suites have this status when all their test cases have been successfully run. |

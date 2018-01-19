@@ -71,7 +71,7 @@ To display visually-edited views (created in the UI Builder) and code-based user
 **Table: Window object components**
 
 | Name       | Type                                     | Description                              |
-| ---------- | ---------------------------------------- | ---------------------------------------- |
+|----------|----------------------------------------|----------------------------------------|
 | window     | Elementary window (in [mobile](../../../org.tizen.native.mobile.apireference/group__Elm__Win.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Elm__Win.html) applications) | Forms the first window of the application. |
 | bg         | Background (in [mobile](../../../org.tizen.native.mobile.apireference/group__Elm__Bg.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Elm__Bg.html) applications) | Sets a background for a window or any container object. |
 | conformant | Conformant (in [mobile](../../../org.tizen.native.mobile.apireference/group__Elm__Conformant.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Elm__Conformant.html) applications) | Provides space for indicators, virtual keypads, and softkey windows. |

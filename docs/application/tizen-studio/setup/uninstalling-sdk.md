@@ -39,7 +39,7 @@ package-manager-cli uninstall [-p <password>] <package name>[,…] | [--all]
 **Table: Uninstall command parameters**
 
 | Parameter                   | Description                              |
-| --------------------------- | ---------------------------------------- |
+|---------------------------|----------------------------------------|
 | `-p, --password <password>` | Administrator (sudo) password for authentication. Ubuntu only. |
 | `--all`                     | Uninstalls the entire Tizen Studio with tools and platforms, including user-created data, emulator images, and settings. |
 | `<package name>[,…]`        | Name of the package you want to uninstall. You can enter multiple package names (such as **NativeIDE** and **Emulator**).To retrieve the names of uninstallable packages, use the following command:`package-manager-cli show-pkgs` |

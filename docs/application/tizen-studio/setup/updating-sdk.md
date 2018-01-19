@@ -106,7 +106,7 @@ package-manager-cli update [--accept-license] [--no-java-check] [--proxy <value>
 **Table: Update command parameters**
 
 | Parameter                   | Description                              |
-| --------------------------- | ---------------------------------------- |
+|---------------------------|----------------------------------------|
 | `--accept-license`          | Accepts the license terms.               |
 | `--no-java-check`           | Skips the Java version check.            |
 | `--proxy <value>`           | Proxy configuration value. Use one of the following values: **direct**, **auto**, or **ip:port**. |
