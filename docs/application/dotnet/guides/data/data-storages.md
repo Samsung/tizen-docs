@@ -146,7 +146,7 @@ The following table lists the supported virtual roots.
 **Table: File system virtual roots**
 
 | Virtual root | Description                              |
-| ------------ | ---------------------------------------- |
+|------------|----------------------------------------|
 | `Images`     | Location for storing images.             |
 | `Sounds`     | Location for storing sound files.        |
 | `Videos`     | Location for storing video files.        |

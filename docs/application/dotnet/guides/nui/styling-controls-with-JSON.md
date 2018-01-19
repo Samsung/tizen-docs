@@ -11,7 +11,7 @@ The following Visual types are available:
 
 
 | Type      | Example                                  |
-| --------- | ---------------------------------------- |
+|---------|----------------------------------------|
 | Border    | ![Border visual](media/border-visual.png) |
 | Color     | ![Color visual](media/color-visual.png)  |
 | Gradient  | ![Gradient visual](media/linear-gradient-visual.png) |
@@ -32,7 +32,7 @@ The following table describes the Style properties offered by View and PushButto
 
 
 | Name                 | Type      | Description                              |
-| -------------------- | --------- | ---------------------------------------- |
+|--------------------|---------|----------------------------------------|
 | `heightResizePolicy` | `string`  | See [Size Negotiation](creating-custom-view-controls.md#sizenegotiation). |
 | `widthResizePolicy`  | `string`  | See [Size Negotiation](creating-custom-view-controls.md#sizenegotiation). |
 | `sizeModeFactor`     | `vector3` | Gets/sets the relative to the parent size factor of the view. |

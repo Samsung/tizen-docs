@@ -60,7 +60,7 @@ The following table lists the [callbacks you can use as the instance state chang
 **Table: Instance state change callbacks**
 
 | Callback      | Description                              |
-| ------------- | ---------------------------------------- |
+|-------------|----------------------------------------|
 | `OnCreate()`  | Called after the widget instance is created. |
 | `OnDestroy()` | Called before the widget instance is destroyed. |
 | `OnPause()`   | Called when the widget is invisible.     |

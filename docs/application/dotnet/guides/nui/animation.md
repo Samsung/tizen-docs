@@ -404,7 +404,7 @@ The `Animation` class provides various overloaded methods for property animation
     **Table: AnimateBy() method parameters**
 
     | Parameter       | Description                              |
-    | --------------- | ---------------------------------------- |
+    |---------------|----------------------------------------|
     | `target`        | The target object to animate.            |
     | `property`      | The target property to animate, which can be an enumerator or string. |
     | `relativeValue` | The amount by which to change the property value. |
@@ -425,7 +425,7 @@ The `Animation` class provides various overloaded methods for property animation
     **Table: AnimateTo() method parameters**
 
     | Parameter          | Description            |
-    | ------------------ | ---------------------- |
+    |------------------|----------------------|
     | `destinationValue` | The destination value. |
 
 - `AnimateBetween()` animates a property between [key frames](#animationtypes).
@@ -441,7 +441,7 @@ The `Animation` class provides various overloaded methods for property animation
     **Table: AnimateBetween() method parameters**
 
     | Parameter       | Description                              |
-    | --------------- | ---------------------------------------- |
+    |---------------|----------------------------------------|
     | `keyFrames`     | The set of time/value pairs between which to animate. |
     | `interpolation` | The method used to interpolate between values. |
 
@@ -456,7 +456,7 @@ The `Animation` class provides various overloaded methods for property animation
     **Table: AnimatePath() method parameters**
 
     | Parameter | Description                              |
-    | --------- | ---------------------------------------- |
+    |---------|----------------------------------------|
     | `path`    | The position and orientation.            |
     | `forward` | The vector (in local space coordinate system) oriented with the path's tangent direction. |
 
@@ -466,7 +466,7 @@ The `Animation` class provides various overloaded methods for property animation
 The following table lists the `Animation` class properties.
 
 | Property               | Type              | Description                              |
-| ---------------------- | ----------------- | ---------------------------------------- |
+|----------------------|-----------------|----------------------------------------|
 | `Duration`             | `int`             | Gets/sets the animation duration in milliseconds. |
 | `DefaultAlphaFunction` | `AlphaFunction`   | Gets/sets the default alpha function for the animation. |
 | `State`                | `States`          | Queries the animation state (`Stopped`, `Playing`, or `Paused`). |

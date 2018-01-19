@@ -26,7 +26,7 @@ application state changes.
 **Table: Application state change methods**
 
 | Method          | Description                              |
-| --------------- | ---------------------------------------- |
+|---------------|----------------------------------------|
 | `OnCreate()`    | Used to take necessary actions before the main event loop starts. Place the UI generation code here to prevent missing any events from your application UI. |
 | `OnPause()`     | Used to take necessary actions when the application becomes invisible. For example, release memory resources so other applications can use them. Do not starve the foreground application that is interacting with the user. |
 | `OnResume()`    | Used to take necessary actions when the application becomes visible. If you relinquish anything in the `OnPause()` method, re-allocate those resources here before the application resumes. |
@@ -41,7 +41,7 @@ system events occur. The following table lists the related methods.
 **Table: System event methods**
 
 | Method                         | Description                              |
-| ------------------------------ | ---------------------------------------- |
+|------------------------------|----------------------------------------|
 | `OnLowMemory()`                | This method is responsible for saving data in the main memory to a persistent memory or storage to avoid data loss in case the Tizen platform Low Memory Killer kills your application to get more free memory. The event handler must also release any cached data in the main memory to secure more free memory. |
 | `OnLowBattery()`               | This method is responsible for saving data in the main memory to a persistent memory or storage to avoid data loss in case the power goes off completely. The method must also stop heavy CPU consumption or power consumption activities to save the remaining power. |
 | `OnDeviceOrientationChanged()` | This method is responsible for changing the display orientation to match the device orientation. |
@@ -65,7 +65,7 @@ appropriately](#fundamentals).
 **Table: Application states**
 
 | State        | Description                              |
-| ------------ | ---------------------------------------- |
+|------------|----------------------------------------|
 | `READY`      | Application is launched.                 |
 | `CREATED`    | Application starts the main loop.        |
 | `RUNNING`    | Application is running and visible to the user. |
@@ -225,7 +225,7 @@ categories that allow an application to run in the background.
 **Table: Allowed background application policy**
 
 | Background category            | Description                              | Related namespaces                       | Manifest file <background-category> element value |
-| ------------------------------ | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+|------------------------------|----------------------------------------|----------------------------------------|----------------------------------------|
 | Media                          | Playing audio, recording, and outputting streaming video in the background | [Tizen.Multimedia](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html) | `media`                                  |
 | Download                       | Downloading data with the classes and methods of the Tizen.Content.Download namespace | [Tizen.Content.Download](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.Download.html) | `download`                               |
 | Background network             | Processing general network operations in the background (such as sync-manager, IM, and VOIP) | [Tizen.Account.SyncManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.SyncManager.html) | `background-network`                     |

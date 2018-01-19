@@ -45,7 +45,7 @@ With the operation, the login page for the specific account provider can be disp
 **Table: ACCOUNT OPERATION SIGNIN operation**
 
 | Operation                                | Description                      |
-| ---------------------------------------- | -------------------------------- |
+|----------------------------------------|--------------------------------|
 | `http://tizen.org/appcontrol/operation/account/add` | Account ID of the added account. |
 
   <a name="CONFIG"></a>
@@ -58,7 +58,7 @@ In **Settings &gt; Accounts**, if the specific account is clicked for setting th
 **Table: ACCOUNT OPERATION VIEW operation**
 
 | Operation                                | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
+|----------------------------------------|----------------------------------------|
 | `http://tizen.org/appcontrol/operation/account/configure` | Account ID for setting account information. |
 
 ## Prerequisites
@@ -462,7 +462,7 @@ The following table lists the account properties that can be modified.
 **Table: Account properties**
 
 | Account property    | Data type                          | Mandatory | Description                              |
-| ------------------- | ---------------------------------- | --------- | ---------------------------------------- |
+|-------------------|----------------------------------|---------|----------------------------------------|
 | User name           | `String`                           | Yes       | Identity of an account.If the display name and email ID are not set for an account, the user name is shown for the account on the Accounts screen in the Setting application. |
 | Display name        | `String`                           | No        | Display name of an account.Display name is shown for the account on the Accounts screen in the Setting application. |
 | Email ID            | `String`                           | No        | Email ID of an account.If the display name is not set for an account, the email ID is shown for the account on the Accounts screen in the Setting application. |
@@ -486,7 +486,7 @@ The following table lists the properties that can be defined for each account pr
 **Table: Account provider properties**
 
 | Account property          | Data type | Mandatory | Description                              |
-| ------------------------- | --------- | --------- | ---------------------------------------- |
+|-------------------------|---------|---------|----------------------------------------|
 | Multiple accounts support | `bool`    | Yes       | Indicates whether multiple accounts are supported. |
 | Icon                      | `String`  | Yes       | File path of the account provider icon.  <br>    The icon size is:<br> - 72 x 72 for Xhigh (HD) <br> - 48 x 48 for High (WVGA) <br> Since the icon is used in **Settings > Accounts**, place the icon in a shared directory. |
 | Small icon                | `String`  | Yes       | File path of the account provider icon.    <br>  The icon size is:<br> - 45 x 45 for Xhigh (HD)<br> - 30 x 30 for High (WVGA)<br> Since the small icon is used in other applications, place the icon in a shared directory. |

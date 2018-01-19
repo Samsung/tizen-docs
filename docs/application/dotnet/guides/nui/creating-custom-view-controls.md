@@ -59,7 +59,7 @@ There are several controls derived from `CustomView` objects already existing in
 The following table lists the `CustomView` class methods.
 
 | Name                       | Description                              |
-| -------------------------- | ---------------------------------------- |
+|--------------------------|----------------------------------------|
 | `OnInitialize()`           | Called after the view has been initialized. |
 | `SetBackground()`          | Sets the background with a property map. |
 | `EnableGestureDetection()` | Allows deriving classes to enable any of the gesture detectors that are available. |
@@ -254,7 +254,7 @@ This is an example of the new stylesheet format, currently under development. Th
 Styling gives the UI designer the ability to change the look and feel of the View without any code changes.
 
 | Normal Style                             | Customized Style                         |
-| ---------------------------------------- | ---------------------------------------- |
+|----------------------------------------|----------------------------------------|
 | ![Popup window, normal style](media/popup-normal.png) | ![Popup window, custom style](media/popup-styled.png) |
 
 For more information on building up visuals for the button states using JSON stylesheets and transitioning between the various button states, see [Styling Controls with JSON](styling-controls-with-JSON.md).
@@ -378,7 +378,7 @@ The `CustomViewBehaviour` enumeration specifies the following behavior:
 
 
 | Behavior                            | Description                              |
-| ----------------------------------- | ---------------------------------------- |
+|-----------------------------------|----------------------------------------|
 | `ViewBehaviourDefault`              | Default behavior (size negotiation is on, style changes are monitored, event callbacks are not called) |
 | `DisableSizeNegotiation`            | View does not need size negotiation and is skipped by the size negotiation algorithm |
 | `DisableStyleChangeSignals`         | View does not need to monitor style change signals, such as theme or font changes |
@@ -485,7 +485,7 @@ The following table contains the values of the `ResizePolicyType` enumeration.
 **Table: Resize policy types**
 
 | Name                        | Description                              |
-| --------------------------- | ---------------------------------------- |
+|---------------------------|----------------------------------------|
 | `Fixed`                     | Size is fixed, set by `SetSize()` (default) |
 | `UseNaturalSize`            | Use the views's natural size, meaning the dimensions of the image, or the size of the text |
 | `FillToParent`              | Fill up to the bounds of the view's parent. Aspect ratio is not maintained. |

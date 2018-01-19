@@ -154,7 +154,7 @@ The runtime feature keys have the `runtimefeature` prefix. The available runtime
 **Table: Runtime feature keys**
 
 | Key                                      | Type   | Description                              |
-| ---------------------------------------- | ------ | ---------------------------------------- |
+|----------------------------------------|------|----------------------------------------|
 | `http://tizen.org/runtimefeature/audiojack.connected` | `bool` | Indicates whether an audio jack is connected. |
 | `http://tizen.org/runtimefeature/audiojack.type` | `int`  | Indicates the audio jack connector type. For available values, see the [Tizen.System.AudioJackConnectionType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.AudioJackConnectionType.html) enumeration. |
 | `http://tizen.org/runtimefeature/autorotation` | `bool` | Indicates whether auto-rotation is enabled. |

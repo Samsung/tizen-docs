@@ -350,7 +350,7 @@ To send a notification:
     **Table: Message field key-value pairs**
 
     | Key            | Value                                    | Description                              |
-    | -------------- | ---------------------------------------- | ---------------------------------------- |
+    |--------------|----------------------------------------|----------------------------------------|
     | `action`       | `ALERT`: Store the message and alert the user.<br>`SILENT`: Store the message without alerting the user.<br>`DISCARD`: Discard the message, if the application is not up and running.<br>`LAUNCH`: Forcibly launch the application and deliver the notification.<br>`BACKGROUNDLAUNCH`: Launch the application in the background and deliver the notification. | Action to be performed if the application is not running. If no action is defined, the default behavior is `SILENT`. |
     | `alertMessage` | Up to 127 bytes                          | Alert message shown to the user in the quick panel. If the action is not set as `ALERT`, this value is meaningless. |
     | `badgeOption`  | `INCREASE`: Increase the badge number by the given value.<br>`DECREASE`: Decrease the badge number by the given value.<br>`SET`: Set badge number to the given value. | Option for updating the icon badge number. If the action is set as `DISCARD`, the `badgeOption` is ignored. If the badge option is not included, the icon badge number remains unchanged. |

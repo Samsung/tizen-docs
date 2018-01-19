@@ -135,7 +135,7 @@ The following table lists the streaming protocol features supported by the playe
 **Table: Supported streaming protocol features**
 
 | Streaming protocol                  | Supported feature              |
-| ----------------------------------- | ------------------------------ |
+|-----------------------------------|------------------------------|
 | Hypertext Transfer Protocol (HTTP)  | HTTP Streaming                 |
 | Hypertext Transfer Protocol (HTTP)  | HTTP Live Streaming            |
 | Hypertext Transfer Protocol (HTTP)  | HTTP Progressive Download Play |
