@@ -17,7 +17,7 @@ Use flat, simple designs to describe the main characteristics of an app. Design 
 Different Tizen platforms require different icon sizes. For example, mobile devices with a WVGA display and those with an HD display require icons in different sizes since Tizen SDK 2.4. Circular type wearable devices also require device-specific icon sizes.
 
 |  Device  |   Resolution  | Icon asset size |
-| ---------| ------------| -----------------|
+|---------|------------|-----------------|
 |  Mobile  |   HD        |   118 x 118|
 |  Mobile  |   WQHD      |   236 x 236|
 |  Mobile   |  WVGA       |  81 x 81|
@@ -53,30 +53,30 @@ Carefully choose the icon background color when designing an icon for your app. 
 Icon always uses circle container. Avoid complicated shape.
 
 | <img src="media/082315_icon_do_dont-48.png" alt="#" width="200px" /> | <img src="media/082315_icon_do_dont-47.png" alt="#" width="200px" /> |
-| :---: | :---: |  
+|:---:|:---:|  
 | *Do* | *Don't* |
 
 Cicle container can not distorted or replaced to different shapes.
 
 | <img src="media/082315_icon_do_dont-50.png" alt="#" width="200px" /> | <img src="media/082315_icon_do_dont-49.png" alt="#" width="200px" /> |
-| :---: | :---: |  
+|:---:|:---:|  
 | *Do* | *Don't* |
 
 Place object on center. Do not place object around edge of container.
 
 | <img src="media/082315_icon_do_dont-52.png" alt="#" width="200px" /> | <img src="media/082315_icon_do_dont-51.png" alt="#" width="200px" /> |
-| :---: | :---: |  
+|:---:|:---:|  
 | *Do* | *Don't* |
 
 Tizen recommends soft gradient on container. Avoid solid color for background or disoriented gradient directions.
 
 | <img src="media/082315_icon_do_dont2-53.png" alt="#" width="200px" /> | <img src="media/082315_icon_do_dont-53.png" alt="#" width="200px" /> |
-| :---: | :---: |  
+|:---:|:---:|  
 | *Do* | *Don't* |
 
 
 | <img src="media/082315_icon_do_dont2-53.png" alt="#" width="200px" /> | <img src="media/082315_icon_do_dont3-53.png" alt="#" width="200px" /> |
-| :---: | :---: |  
+|:---:|:---:|  
 | *Do* | *Don't* |
 
 Lighting starts from top and end at the bottom
@@ -127,11 +127,11 @@ The following are the basic requirements for brand icons:
 -   Style : Use simple pictographic icons that are easy to understand. Do not apply outline strokes or shadows.
 
 | <img src="media/2.2.3_b.png" alt="#" width="200px" /> | <img src="media/2.2.3_a.png" alt="#" width="200px" /> |
- | :---: | :---: |  
+ |:---:|:---:|  
  | *Do* | *Don't* |
 
 -   Color : Design icons with colors that are easily noticeable. Use dark colors over light backgrounds and light colors over dark backgrounds to ensure optimal visibility.
 
 | <img src="media/2.2.3_b.png" alt="#" width="200px" /> | <img src="media/2.2.3_c.png" alt="#" width="200px" /> |
-| :---: | :---: |  
+|:---:|:---:|  
 | *Do* | *Don't* |

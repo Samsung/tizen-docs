@@ -23,7 +23,7 @@ Use a scroll bar with long passages of text that don’t fit on one screen.
     A vertical scroll bar is provided when a page scrolls up and down. It forms an arc of 90 degrees on the right side of the screen.
 
     | Vertical scroll bar | |
-    | -- | -- |
+    |-----|-----|
     |  **Native** | Circle Scroller > vertical |
     | **Web** | -<br>\* Automatically applied unless otherwise defined. |
 
@@ -35,7 +35,7 @@ Use a scroll bar with long passages of text that don’t fit on one screen.
     A horizontal scroll bar is provided when a page scrolls right and left. It forms an arc of 90 degrees at the top of the screen.
 
     | Horizontal scroll bar | |
-    | -- | -- |
+    |-----|-----|
     |  **Native** | Circle Scroller > horizontal |
     |  **Web** | -<br>\* Automatically applied unless otherwise defined. |
 
@@ -47,7 +47,7 @@ Use a scroll bar with long passages of text that don’t fit on one screen.
     A fast scroll index allows users to jump directly to the previous or next [group index](list.html#group_index) in a list.
 
     | Fast scroll index | |
-    | -- | -- |
+    |-----|-----|
     |  **Native** | - |
     | **Web** |  Circular Index Scroll bar |
 

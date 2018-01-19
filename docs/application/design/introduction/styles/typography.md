@@ -46,7 +46,7 @@ Consistently use one font throughout your app. Displaying multiple typefaces in 
 For example, use bold type for the title and regular type for the body text. This allows for text-oriented designs that are consistent and distinctive.
 
 | <img src="media/2.3.2_c.png" alt="#" width="300px" /> | <img src="media/2.3.2_d.png" alt="#" width="300px" /> |
-| :---: | :---: |
+|:---:|:---:|
 | *Do* | *Don't* |
 
 ##### Avoid Drastic Changes in Font Size

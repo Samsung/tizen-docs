@@ -23,7 +23,7 @@ Page indicators are presented at the top of the screen as dots that represent ea
     These indicators curve around the top edge of the screen when the pages are navigated by a rotary action and a swipe. They can form an arc of up to 120 degrees and are center-aligned.
 
 | Circular page indicators | |
-| --- | --- |
+|-----|-----|
 | **Native** | Index > circle |
 | **Web** |  - |
 
@@ -36,7 +36,7 @@ Page indicators are presented at the top of the screen as dots that represent ea
     These indicators form a horizontal line at the top edge of the screen when navigation is through swiping only. This type of indicator is recommended when the rotary action controls other functions and can’t be used for page navigation.
 
 | Linear page indicators | |
-| --- | --- |
+|-----|-----|
 | **Native** |  Index > thumbnail |
 |  **Web** |  Page Indicator<br>(+Section Changer) |
 

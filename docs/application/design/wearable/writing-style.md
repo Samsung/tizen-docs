@@ -62,7 +62,7 @@ Use the following terms when referring to a specific device/state, or indicating
 Abbreviate words when the full version is too long to fit the screen.
 
 | Full | Abbreviated | | Full | Abbreviated |
-| -- | -- | -- | -- | -- |
+|-----|-----|-----|-----|-----|
 | Application | App | | Kilometer, centimeter, mile |  km, cm, mi |
 | SIM card |  SIM | |  Minutes, hours, seconds | min, hr, sec |
 | Days of the week |  Mon, Tue, Wed, Thu, Fri, Sat, Sun | | Currencies |  ISO currency code |

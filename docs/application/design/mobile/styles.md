@@ -58,7 +58,7 @@ Once again, the text colors should be decided based on the color of the backgrou
 
 
  | <img src="media/2.3_g.png" alt="#" width="260px" />| <img src="media/2.3_f.png" alt="#" width="260px" /> |
-| :--: | :--: |
+|:--:|:--:|
 | *Do* | *Don't* |
 
 

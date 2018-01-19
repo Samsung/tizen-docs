@@ -76,7 +76,7 @@ Don’t simply lower the brightness level of an active state to create an always
 
 
 | Active states | Always-on states |
-| :--: | :--: |
+|:--:|:--:|
 | ![](media/watchface_4.2.2_3-600x182_1.png) | ![](media/watchface_4.2.2_3-600x182_2.png) |  
 
 *When adjusting the OPR for always-on states, take visibility into account rather than simply lowering the overall brightness.*
@@ -86,7 +86,7 @@ Don’t simply lower the brightness level of an active state to create an always
     When the Gear uses an always-on state, the watch face regularly moves around the screen by just a few pixels to prevent a burn-in effect from occurring on the OLED display. Be aware that design elements near the edge of a watch face can be pushed out of the display when this happens. Replace bright colors with black for the background, and avoid applying high brightness and high chroma to a large block of pixels. For an analog watch face, leave the center empty or dark.
 
 | Active states | Always-on states |
-  | :--: | :--: |
+  |:--:|:--:|
   | ![](media/watchface_4.2.2_4-600x123_1.png)  | ![](media/watchface_4.2.2_4-600x123_2.png)  |  
 
 *Lower the brightness and chroma of the pivot and other fixed elements to prevent a screen burn-in.*

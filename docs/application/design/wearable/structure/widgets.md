@@ -41,7 +41,7 @@ Three widget types are available for the Gear:
 Choose the right widget type for the content you want to offer.
 
 | Informative widget | Interactive widget | Shorcut widget |
-| :--: | :--: | :--: |
+|:--:|:--:|:--:|
 | ![](media/structure_5.2.2_1_1.png)| ![](media/structure_5.2.2_1_2.png)|![](media/structure_5.2.2_1_3.png)|  
 
 *Three types of widgets are used on the Gear: Informative widgets, interactive widgets, and shortcut widgets.*
@@ -127,7 +127,7 @@ Keep the visual principles for colors, layout, and typography in mind when you�
     Applying the primary color of your app to the main text can communicate a strong visual identity. You can choose any app identity color, but do take readability into consideration.
 
 |![](media/structure_5.2.5_2_1.png)|![](media/structure_5.2.5_2_2.png) |
-| :--: | :--: |
+|:--:|:--:|
 | Widget | App |    
 
 *Widgets for the World Clock app use blue as an identity color.*
