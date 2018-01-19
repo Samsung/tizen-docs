@@ -62,7 +62,7 @@ when using security-sensitive API modules in mobile native applications.
 **Table: Mobile native API privileges**
 
 | Privilege                                | Level    | Privacy      | Since | Description                              |
-| ---------------------------------------- | -------- | ------------ | ----- | ---------------------------------------- |
+|----------------------------------------|-------|------------|-----|----------------------------------------|
 | `http://tizen.org/privilege/account.read` | public   | Account      | 2.3   | The application can read accounts.       |
 | `http://tizen.org/privilege/account.write` | public   | Account      | 2.3   | The application can create, edit, and delete accounts. |
 | `http://tizen.org/privilege/alarm.get`   | public   | -            | 2.3   | The application can read information about the saved alarms. |
@@ -171,7 +171,7 @@ applications.
 **Table: Wearable native API privileges**
 
 | Privilege                                | Level    | Privacy      | Since | Description                              |
-| ---------------------------------------- | -------- | ------------ | ----- | ---------------------------------------- |
+|----------------------------------------|--------|------------|-----|----------------------------------------|
 | `http://tizen.org/privilege/account.read` | public   | Account      | 3.0   | The application can read accounts.       |
 | `http://tizen.org/privilege/account.write` | public   | Account      | 3.0   | The application can create, edit, and delete accounts. |
 | `http://tizen.org/privilege/alarm.get`   | public   | -            | 2.3.1 | The application can read information about the saved alarms. |
@@ -272,7 +272,7 @@ The following table lists the non-API bound privileges.
 **Table: Non-API bound privileges**
 
 | Privilege                                | Level  | Since(mobile/wearable) | Description                              |
-| ---------------------------------------- | ------ | ---------------------- | ---------------------------------------- |
+|----------------------------------------|------|----------------------|----------------------------------------|
 | `http://tizen.org/privilege/internet`    | public | 2.3 / 2.3.1            | Most of the mobile and wearable devices use a cellular network for IP communication. However, the cellular network can cause data costs and an application that sends data through the Internet can be crucial for user privacy. Due to the importance of the functionality, a privilege for controlling application Internet access has been added.<br><br>The new privilege is coupled with IP addresses of the destination and source of the IP packets. If your socket is connecting or listening to any IP address except 127.0.0.1, this privilege is required to communicate properly. If your application does not have this privilege, the connection is blocked in the kernel layer and returns an error in the `connect()` function as the permission is denied. If you are listening to a socket, you never receive any packets from the outside without errors on the socket functions.<br><br>If you are using the `listen()` and `connect()` functions between the local loopback interface (127.0.0.1), you cannot connect to a random application (due to sandboxing) no matter how you add this privilege. However, you can connect between multiple processes of the same application binary. |
 | `http://tizen.org/privilege/mediastorage` | public | 2.3 / 2.3.1            | When you connect the device to a computer (Windows® or macOS) through USB, you can access a dedicated media storage area shown as massive media storage. This region of the storage is called media storage and is usually used for multimedia files, such as photos, videos, and music files. Since this storage area is used for user private data, access to it must be protected with a privilege.<br><br>If your application does not have this privilege, no file operations into the media storage area succeed and you receive a permission denied error. If you have this privilege, you can read and write directories and files, create new files, and delete files in the storage area. |
 | `http://tizen.org/privilege/externalstorage` | public | 2.3 / 2.3.1            | Similar to the media storage, many devices support external storages, such as MicroSD card or USB memory. As with the media storage, the access to an external storage must be protected with a privilege. You can find the absolute path of the external storage with the [Storage](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__STORAGE__MODULE.html) API functions, such as `storage_get_root_directory()`.<br><br>If your application does not have this privilege, all file operations fail with a permission denied error. If you have this privilege, you have full access to the external storage. |

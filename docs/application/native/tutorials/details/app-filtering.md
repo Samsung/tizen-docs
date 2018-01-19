@@ -84,7 +84,7 @@ The following table lists the available screen size features.
 **Table: Available screen size features**
 
 | Feature key                              | Description                              | Since |
-| ---------------------------------------- | ---------------------------------------- | ----- |
+|----------------------------------------|----------------------------------------|-----|
 | `http://tizen.org/feature/screen.size.normal` | Specify this key, if the application supports all possible current and future resolutions on the normal screen size.<br><br>You cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously. If you do, only the most specific resolution key is considered and the less specific resolution keys are ignored. For example, if you specify both `http://tizen.org/feature/screen.size.normal` and `http://tizen.org/feature/screen.size.normal.320.480` keys, only the `http://tizen.org/feature/screen.size.normal.320.480` key is applied.<br><br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.2.1 |
 | `http://tizen.org/feature/screen.size.normal.240.400` | Specify this key, if the application supports the 240 x 400 resolution on the normal screen size.<br><br>You can specify multiple `http://tizen.org/feature/screen.size.normal.*` keys, if your application supports multiple screen resolutions on the normal screen size. However, you cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously.<br><br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.2.1 |
 | `http://tizen.org/feature/screen.size.normal.320.320` | Specify this key, if the application supports the 320 x 320 resolution on the normal screen size.<br><br>You can specify multiple `http://tizen.org/feature/screen.size.normal.*` keys, if your application supports multiple screen resolutions on the normal screen size. However, you cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously.<br><br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.3   |
@@ -149,7 +149,7 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 **Table: Available mobile native requirements**
 
 | Feature key                              | Description                              | Since |
-| ---------------------------------------- | ---------------------------------------- | ----- |
+|----------------------------------------|----------------------------------------|-----|
 | `http://tizen.org/feature/account`       | Specify this key, if the application requires the account management feature. | 4.0   |
 | `http://tizen.org/feature/account.sync`  | Specify this key, if the application requires the synchronization management feature. | 4.0   |
 | `http://tizen.org/feature/app_history`   | Specify this key, if the application requires the application history feature. | 4.0   |
@@ -305,7 +305,7 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 **Table: Available wearable native requirements**
 
 | Feature key                              | Description                              | Since |
-| ---------------------------------------- | ---------------------------------------- | ----- |
+|----------------------------------------|----------------------------------------|-----|
 | `http://tizen.org/feature/account`       | Specify this key, if the application requires the account management feature. | 4.0   |
 | `http://tizen.org/feature/account.sync`  | Specify this key, if the application requires the synchronization management feature. | 4.0   |
 | `http://tizen.org/feature/app_history`   | Specify this key, if the application requires the application history feature. | 4.0   |
@@ -469,7 +469,7 @@ attributes.
 **Table: Tizen profiles and profile name attributes**
 
 | Tizen profile | Profile name attribute |
-| ------------- | ---------------------- |
+|-------------|----------------------|
 | Mobile        | `mobile`               |
 | Wearable      | `wearable`             |
 

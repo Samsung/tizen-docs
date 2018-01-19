@@ -254,7 +254,7 @@ The following table indicates the available notification IDs.
 **Table: Notification IDs**
 
 | Changed state             | Notification ID                          |
-| ------------------------- | ---------------------------------------- |
+|-------------------------|----------------------------------------|
 | Network service state     | `TELEPHONY_NOTI_NETWORK_SERVICE_STATE`   |
 | Cell ID                   | `TELEPHONY_NOTI_NETWORK_CELLID`          |
 | Roaming status            | `TELEPHONY_NOTI_NETWORK_ROAMING_STATUS`  |

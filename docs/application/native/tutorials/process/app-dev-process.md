@@ -200,7 +200,7 @@ the application can be packaged alone as the main application.
 **Table: Combinations**
 
 | Main project | Sub project | Sub project | Sub project | Sub project | Sub project | Sub project |
-| ------------ | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+|------------|-----------|-----------|-----------|----------|-----------|-----------|
 | Main project | STANDALONE  | UI          | SERVICE     | WATCH       | WIDGET      | IME         |
 | UI           | Yes         | No          | M           | No          | M           | No          |
 | SERVICE      | No          | No          | No          | No          | No          | No          |

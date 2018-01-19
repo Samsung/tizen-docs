@@ -74,7 +74,7 @@ You can perform the following tasks using the **Overview** tab:
   ​
 
   | Profile  | Mandatory | Format                 | Size              | Size              | Description                        |
-  | -------- | --------- | ---------------------- | ----------------- | ----------------- | ---------------------------------- |
+  |--------|---------|----------------------|-----------------|-----------------|----------------------------------|
   | Profile  | Mandatory | Format                 | Xhigh  (HD)       | High  (WVGA)      | Description                        |
   | Mobile   | Yes       | 32-bit PNG with  alpha | 117 x 117 pixels  | 78 x 78 pixels    | Image displayed  in the main menu. |
   | Wearable | Yes       | 32-bit  PNG with alpha | 152  x 152 pixels | 152  x 152 pixels | Image  displayed in the main menu. |
@@ -194,7 +194,7 @@ To define the kind of access and data your service application provides to other
   **Table: Account provider properties**
 
   | Acount  property1 | Acount  property2 | Data type | Property type                            |
-  | ----------------- | ----------------- | --------- | ---------------------------------------- |
+  |-----------------|-----------------|--------|----------------------------------------|
   | Multiple account  | Multiple  account | bool      | Indicates  whether multiple accounts are supported. This is a mandatory property. |
   | Provider ID       | Provider  ID      | String    | ID  of the account provider.             |
   | Default label     | Default  label    | String    | Display  name of the account provider. This is a mandatory property. |
@@ -217,7 +217,7 @@ To define the kind of access and data your service application provides to other
   **Table: Shortcut properties**
 
   | Shortcut property | Data type | Property type                            |
-  | ----------------- | --------- | ---------------------------------------- |
+  |-----------------|---------|----------------------------------------|
   | App ID            | `String`  | Application unique ID.                   |
   | Key               | `String`  | Key for user content.                    |
   | Data              | `String`  | Data for user content.                   |

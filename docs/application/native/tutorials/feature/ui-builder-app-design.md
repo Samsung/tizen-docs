@@ -57,7 +57,7 @@ and files.
 **Table: Default project content**
 
 | File or folder                           | Content                                  |
-| ---------------------------------------- | ---------------------------------------- |
+|----------------------------------------|----------------------------------------|
 | ![Folder](./media/ui_builder_folder.png) `inc` | Folder for the default include path      |
 | ![Folder](./media/ui_builder_folder.png) `res` | Resource folder of the Tizen Studio      |
 | ![Folder](./media/ui_builder_folder.png) `shared` | Shared folder                            |
