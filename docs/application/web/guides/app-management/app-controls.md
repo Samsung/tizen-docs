@@ -1,44 +1,38 @@
 # Application Controls
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-- Tizen 3.0 and Higher for TV
-
 You can use various application management features, including application launching, event handling, and information retrieval.
 
 The Application API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The main application management features are:
 
-- Application management 
+- Application management
 
-  You can [manage applications](./app-management/app-controls-w.md#manage) by launching and stopping other applications, and hiding or exiting the current application.
+  You can [manage applications](#managing-applications) by launching and stopping other applications, and hiding or exiting the current application.
 
-- Application information retrieval 
+- Application information retrieval
 
-  You can display a list of applications that are currently installed or running on the device, and [retrieve application information](./app-management/app-controls-w.md#retrieve), such as application name, application ID, and context ID.
+  You can display a list of applications that are currently installed or running on the device, and [retrieve application information](#retrieving-application-information), such as application name, application ID, and context ID.
 
-- Application controls	
+- Application controls
 
   An application control (app control) is a way of sharing an application's functionality. Using another application's features through application controls reduces the time and effort needed to develop your own application.
 
-  You can use in your application operations, such as calling, Web browsing, and playing media items, which are exported by other applications. This mechanism allows you to conveniently launch other applications whose functionalities you need in your application. If you need to use functionality from another application, launching an application control allows you to request the system to launch that application according to your requirements. You can launch applications based on your immediate needs - you do not need to know their identifiers or specifications. You can use application controls by creating an [application control request](./app-management/app-controls-w.md#controls). The request allows you to [launch other applications](./app-management/app-controls-w.md#launch) to use their functionalities.
+  You can use in your application operations, such as calling, Web browsing, and playing media items, which are exported by other applications. This mechanism allows you to conveniently launch other applications whose functionalities you need in your application. If you need to use functionality from another application, launching an application control allows you to request the system to launch that application according to your requirements. You can launch applications based on your immediate needs - you do not need to know their identifiers or specifications. You can use application controls by creating an [application control request](#application-control-request). The request allows you to [launch other applications](#launching-applications-with-the-application-control) to use their functionalities.
 
-  If you want to allow other applications to use your application functionalities, you must [export your application controls](./app-management/app-controls-w.md#exporting) and be prepared to [receive requests and respond to them](./app-management/app-controls-w.md#handle).
+  If you want to allow other applications to use your application functionalities, you must [export your application controls](#application-control-export) and be prepared to [receive requests and respond to them](#receiving-and-replying-to-application-control-requests).
 
-- Event handling	
+- Event handling
 
-  You can [send and receive events](./app-management/app-controls-w.md#broadcast_event) between 2 applications using events. Your application can broadcast its own events, and listen for events broadcast by others.
+  You can [send and receive events](#broadcasting-and-listening-for-events) between 2 applications using events. Your application can broadcast its own events, and listen for events broadcast by others.
 
-- Background execution	
+- Background execution
 
-  Usually, when a Web application moves to the background, it gets suspended. To enable [background execution](./app-management/app-controls-w.md#background_category), you must declare a background category for your application.
+  Usually, when a Web application moves to the background, it gets suspended. To enable [background execution](#background-execution), you must declare a background category for your application.
 
-- Application status monitoring	
+- Application status monitoring
 
-  You can monitor the installed applications and [be notified when their status changes](./app-management/app-controls-w.md#status_listening).
+  You can monitor the installed applications and [be notified when their status changes](#monitoring-the-application-status).
 
 ## Application Control Request
 
@@ -55,7 +49,7 @@ The application control uses the following primary information:
 
 - Application ID
 
-  Used to identify the provider application of the requested application control. Besides the application ID, a [common application control](./app-management/app-controls-w.md#common) has a special alias name for the application ID with the prefix `tizen`. For example, the platform phone application has the alias application ID of `tizen.phone`.
+  Used to identify the provider application of the requested application control. Besides the application ID, a [common application control](#common-application-controls) has a special alias name for the application ID with the prefix `tizen`. For example, the platform phone application has the alias application ID of `tizen.phone`.
 
   Used to identify the provider application of the requested application control.
 
@@ -66,22 +60,22 @@ The application control uses the following primary information:
 
   Describes an action to be performed by the provider application. The operation ID of the platform-provided operation is in the `http://tizen.org/appcontrol/operation/<verb>` format. For example, `http://tizen.org/appcontrol/operation/view`.
 
-  For more information on valid operations, see [Common Application Controls](./app-management/common-appcontrol-w.md). You can also see which operations allow a URI to be specified and which MIME types an operation supports.
+  For more information on valid operations, see [Common Application Controls](./common-appcontrol.md). You can also see which operations allow a URI to be specified and which MIME types an operation supports.
 
-An application can be launched by the user from the Launcher or by another application. Each application has a launch mode, which determines how the application is launched: in a separate instance or in the same group as the calling application. For more information on the launch modes, see [Application Groups](./app-management/app-group-w.md).
+An application can be launched by the user from the Launcher or by another application. Each application has a launch mode, which determines how the application is launched: in a separate instance or in the same group as the calling application. For more information on the launch modes, see [Application Groups](./app-group.md).
 
-There are different types of application control requests for [launching other applications](./app-management/app-controls-w.md#launch):
+There are different types of application control requests for [launching other applications](#launching-applications-with-the-application-control):
 
-- [Explicit launch](./app-management/app-controls-w.md#explicit) You determine which application must be launched by explicitly specifying an application ID. The application ID determines which application is launched and the application performs the operation as specified in the application control request.
-- [Implicit launch](./app-management/app-controls-w.md#implicit) You provide information to describe the request to be performed by the newly launched application without specifying the application ID. The system uses the information to resolve the application control. It does this by trying to find a proper application to perform the application control request and then launching the selected application.
+- [Explicit launch](#explicit-launch) You determine which application must be launched by explicitly specifying an application ID. The application ID determines which application is launched and the application performs the operation as specified in the application control request.
+- [Implicit launch](#implicit-launch) You provide information to describe the request to be performed by the newly launched application without specifying the application ID. The system uses the information to resolve the application control. It does this by trying to find a proper application to perform the application control request and then launching the selected application.
 
-You can take advantage of the Tizen [common application functionalities](./app-management/app-controls-w.md#common) through the application control feature. You can also [export your application functionality](./app-management/app-controls-w.md#exporting) to allow other applications to launch your application.
+You can take advantage of the Tizen [common application functionalities](#common-application-controls) through the application control feature. You can also [export your application functionality](#application-control-export) to allow other applications to launch your application.
 
 ### Explicit Launch
 
 If you specify the exact application ID of the application for the `launchAppControl()` method of the `Application` interface, you can request the application control from a specific application. The application ID determines which application is launched and the application performs the operation as specified in the control request.
 
-> **Note**	
+> **Note**
 > An explicit launch request cannot be completed if the user does not have the specified application on their device. Hence implicit launches can be more effective, because the system can find an available application to complete the request. The implicit launch can also enhance the user experience because it allows the user to select a preferred application to complete the task.
 
 ### Implicit Launch
@@ -92,15 +86,15 @@ The application control consists of an operation ID, URI, MIME type, some additi
 
 The following attributes are used to resolve application control requests:
 
-- Operation 
+- Operation
 
   Mandatory string that defines the action to be performed by the application control. You can define your own operation to describe a specific action of your application.
 
-- URI scheme 
+- URI scheme
 
   Data on which the action is performed. For example, if you want to use the `http://tizen.org/appcontrol/operation/view` operation to view a specific image, the URI must be the URI of the image (which can be obtained using the `toURI()` method after resolving the file path). The same operation can be used to launch a Web page in a browser, except that the URI in that case is the URL of the Web site, such as `https://www.tizen.org/`.
 
-- MIME type 
+- MIME type
 
   Specific type of the URI. For example, if you want to view only JPEG images, you must use the `image/jpeg` MIME type. The MIME type can be important because it ensures that the system finds an application that is capable of supporting a specified MIME type.
 
@@ -139,23 +133,27 @@ The Tizen common application controls specify a standard protocol for sharing ap
 
 The following common application controls are available:
 
-- [Browser](./app-management/common-appcontrol-w.md#browser)
-- [Calendar](./app-management/common-appcontrol-w.md#calendar)
-- [Call](./app-management/common-appcontrol-w.md#call)
-- [Camera](./app-management/common-appcontrol-w.md#camera)
-- [Contact](./app-management/common-appcontrol-w.md#contact)
-- [Email](./app-management/common-appcontrol-w.md#email)
-- [File Storage](./app-management/common-appcontrol-w.md#file)
-- [Input Delegator](./app-management/common-appcontrol-w.md#inputdelegator)
-- [Map](./app-management/common-appcontrol-w.md#map)
-- [Message](./app-management/common-appcontrol-w.md#message)
-- [Multimedia](./app-management/common-appcontrol-w.md#multimedia)
-- [System Settings](./app-management/common-appcontrol-w.md#settings_main)			[Settings for Bluetooth](./app-management/common-appcontrol-w.md#settings_bluetooth)		[Settings for Location](./app-management/common-appcontrol-w.md#settings_location)		[Settings for NFC](./app-management/common-appcontrol-w.md#settings_nfc)		[Settings for Wi-Fi](./app-management/common-appcontrol-w.md#settings_wifi)	
-- [Voice Recorder](./app-management/common-appcontrol-w.md#voice)
+- [Browser](./common-appcontrol.md#browser)
+- [Calendar](./common-appcontrol.md#calendar)
+- [Call](./common-appcontrol.md#call)
+- [Camera](./common-appcontrol.md#camera)
+- [Contact](./common-appcontrol.md#contact)
+- [Email](./common-appcontrol.md#email)
+- [File Storage](./common-appcontrol.md#file-storage)
+- [Input Delegator](./common-appcontrol.md#input-delegator)
+- [Map](./common-appcontrol.md#map)
+- [Message](./common-appcontrol.md#message)
+- [Multimedia](./common-appcontrol.md#multimedia)
+- [System Settings](./common-appcontrol.md#system-settings)			  
+  * [Settings for Bluetooth](./common-appcontrol.md#settings-for-bluetooth)
+  *	[Settings for Location](./common-appcontrol.md#settings-for-location)
+  *	[Settings for NFC](./common-appcontrol.md#settings-for-nfc)
+  *	[Settings for Wi-Fi](./common-appcontrol.md#settings-for-wi-fi)
+- [Voice Recorder](./app-management/common-appcontrol.md#voice-recorder)
 
 ## Application Control Export
 
-Your application can export application control functionality. This means that the application can register itself as a provider application, allowing it to receive application control requests from other applications. You can [handle an incoming application control request](./app-management/app-controls-w.md#handle) using the `getRequestedAppControl()` method of the `Application` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#Application), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#Application), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#Application) applications), and respond to the incoming request using the `RequestedApplicationControl` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#RequestedApplicationControl), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#RequestedApplicationControl), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#RequestedApplicationControl) applications).
+Your application can export application control functionality. This means that the application can register itself as a provider application, allowing it to receive application control requests from other applications. You can [handle an incoming application control request](#receiving-and-replying-to-application-control-requests) using the `getRequestedAppControl()` method of the `Application` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#Application), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#Application), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#Application) applications), and respond to the incoming request using the `RequestedApplicationControl` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#RequestedApplicationControl), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#RequestedApplicationControl), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#RequestedApplicationControl) applications).
 
 The system compares the attributes of the application control request against the service descriptions of installed applications to determine which of the available applications are suitable for the request. The service description of the installed applications contains information about the requests that they can handle. The request is resolved only if all specified information in the request matches with the service description retrieved from an installed application. The application control `data` attribute is not used in resolving the control request.
 
@@ -235,7 +233,7 @@ The following code example demonstrates a service description in the `config.xml
 </tizen:app-control>
 ```
 
-The `reload` attribute is added to the `src` element (in [mobile](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#mw_appcontrol) and [wearable](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#appcontrol) applications), and used to set whether the page must be reloaded when an application control request is received. The `reload` attribute is optional and the default value is `enable`. If the attribute is not set, the page reloads.
+The `reload` attribute is added to the `src` element (in [mobile](../../../tizen-studio/web-tools/config-editor.md#mw_appcontrol) and [wearable](../../../tizen-studio/web-tools/config-editor.md#appcontrol) applications), and used to set whether the page must be reloaded when an application control request is received. The `reload` attribute is optional and the default value is `enable`. If the attribute is not set, the page reloads.
 
 If the currently loaded page is selected by an incoming application control request, and the `reload` attribute of the service description is set to `disable`, an `appcontrol` event is dispatched to that page instead of reloading it. By using an `appcontrol` event listener, the Web application can get the requested information by calling the `getRequestedAppControl()` method of the `Application` interface. An `appcontrol` event is dispatched only if the `reload` attribute of the service description is set to `disable`.
 
@@ -263,14 +261,25 @@ To use the Application API (in [mobile](../../../../org.tizen.web.apireference/h
 
 You can retrieve information about applications in various ways:
 
-- Retrieve information about installed applications with the `getAppInfo()` and `getAppsInfo()` methods of the `ApplicationManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#ApplicationManager) applications).	 These methods can be used to access the `ApplicationInformation` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationInformation), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationInformation), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#ApplicationInformation) applications) to retrieve information about installed applications, such as their name, icon path, and version.
-- Retrieve information about running applications with the `getAppContext()` and `getAppsContext()` methods of the `ApplicationManager` interface.	 These methods can be used to access the `ApplicationContext` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationContext), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationContext), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#ApplicationContext) applications) to retrieve the application ID and context ID of the running application.	 The application ID can be used to retrieve application information, or to launch an application. The context ID is a unique identifier given by the platform to a running application.
+- Retrieve information about installed applications with the `getAppInfo()` and `getAppsInfo()` methods of the `ApplicationManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#ApplicationManager) applications).	 
+
+ These methods can be used to access the `ApplicationInformation` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationInformation), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationInformation), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#ApplicationInformation) applications) to retrieve information about installed applications, such as their name, icon path, and version.
+
+- Retrieve information about running applications with the `getAppContext()` and `getAppsContext()` methods of the `ApplicationManager` interface.	 
+
+   These methods can be used to access the `ApplicationContext` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationContext), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationContext), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#ApplicationContext) applications) to retrieve the application ID and context ID of the running application.
+
+   The application ID can be used to retrieve application information, or to launch an application. The context ID is a unique identifier given by the platform to a running application.
+
 - Retrieve information about battery usage per application with the `getBatteryUsageInfo()` method of the `ApplicationManager` interface **in mobile and wearable applications only**.
+
   You can retrieve battery usage information starting from a specific number of days ago, or since the battery was last fully charged. You can also select the number of applications included in the returned `ApplicationBatteryUsage` data array (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationBatteryUsage) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationBatteryUsage) applications).
+
 - Retrieve information about usage statistics per application with the `getAppsUsageInfo()` method of the `ApplicationManager` interface **in mobile and wearable applications only**.
+
   The statistics include the most frequently or recently used applications. You can retrieve application usage information from a specific time period, or starting from a specific number of days ago. You can also select the number of applications included in the returned `ApplicationUsage` data array (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationUsage) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationUsage) applications).
 
-Learning how to retrieve information about installed and running applications allows you to manage all the device applications from your application: 
+Learning how to retrieve information about installed and running applications allows you to manage all the device applications from your application:
 
 - To retrieve a list of installed applications, use the `getAppsInfo()` method of the `ApplicationManager` interface:
 
@@ -356,7 +365,7 @@ You can manage and retrieve information about the current application with the `
 
 Learning how to launch and stop other applications, and hide or exit applications running on the device, allows you to manage all the device applications from your application:
 
-1. To launch or stop another application, you need the application ID (for launching) or context ID (for stopping) to identify the application. 
+1. To launch or stop another application, you need the application ID (for launching) or context ID (for stopping) to identify the application.
 
    To launch an application, use the `launch()` method of the `ApplicationManager` interface, and to stop an application, use the `kill()` method.
 
@@ -378,7 +387,7 @@ Learning how to launch and stop other applications, and hide or exit application
    tizen.application.getAppsContext(onGetAppsContextSuccess);
    ```
 
-   You can also [launch an application using the application control](./app-management/app-controls-w.md#launch).
+   You can also [launch an application using the application control](#launching-applications-with-the-application-control).
 
 2. To retrieve the current application, use the `getCurrentApplication()` method:
 
@@ -437,9 +446,9 @@ Learning how to handle requests from other applications allows you to create Web
 
 Web applications can provide a service which can be identified by an operation name. Other applications can request and use the provided service of other applications (and optionally pass some data to the service). The provider application receives the request, performs some actions, and sends the result to the caller application in an `ApplicationControlData` array (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationControlData), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationControlData), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#ApplicationControlData) applications).
 
-1. To enable an application to receive application control requests, open the [Web application configuration editor](../../../../org.tizen.training/html/web/process/setting_properties_w.htm#set_widget) in the Tizen Studio and add an operation in the `app-control` section of the **Tizen** tab.
+1. To enable an application to receive application control requests, open the [Web application configuration editor](../../tutorials/process/setting-properties.md#set_widget) in the Tizen Studio and add an operation in the `app-control` section of the **Tizen** tab.
 
-   In this example, the name of the operation is `http://example.tizen.org/operation/get_time`. The `config.xml` file contains a [](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#mw_appcontrol) element:
+   In this example, the name of the operation is `http://example.tizen.org/operation/get_time`. The `config.xml` file contains a [&lt;tizen:app-control&gt;](../../../tizen-studio/web-tools/config-editor.md#mw_appcontrol) element:
 
    ```
    <tizen:app-control>
@@ -448,7 +457,7 @@ Web applications can provide a service which can be identified by an operation n
    </tizen:app-control>
    ```
 
-   For more information, see [Application Control Export](./app-management/app-controls-w.md#exporting).
+   For more information, see [Application Control Export](#application-control-export).
 
 2. To retrieve an object of the `RequestedApplicationControl` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#RequestedApplicationControl), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#RequestedApplicationControl), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#RequestedApplicationControl) applications), use the `getCurrentApplication()` method of  the `ApplicationManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#ApplicationManager) applications) and the `getRequestedAppControl()` method of the `Application` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#Application), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#Application), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#Application) applications):
 
@@ -473,7 +482,7 @@ Web applications can provide a service which can be identified by an operation n
    }
    ```
 
-If the provider application is not already running when the application control request is made, it is automatically launched. If the application control [request arrives from the push service](./messaging/push-w.md#HandlingWhenLaunched), you can use the `appControl` object of the `RequestedApplicationControl` interface in the launched application to recognize the launch reason:
+If the provider application is not already running when the application control request is made, it is automatically launched. If the application control [request arrives from the push service](../messaging/push.md#handling-a-launch-by-the-push-service), you can use the `appControl` object of the `RequestedApplicationControl` interface in the launched application to recognize the launch reason:
 
 - If the application is launched because a push notification with the `LAUNCH` option has arrived, the `http://tizen.org/appcontrol/data/push/launch_type` data key of the `appControl` object is set to `notification`.
 - If the push registration state has changed, the data key is set to `registration_change`.
@@ -545,12 +554,12 @@ Learning how to broadcast and listen for events allows you to create Web applica
 
 ## Background Execution
 
-When a Web application becomes invisible (moves to the background), it is suspended. Before Tizen 2.4, to continue to execute the application in the background, you had to set the `background-support` attribute of the `<tizen:setting>` element to `enable` in the `config.xml` file (in [mobile](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#mw_setting) and [wearable](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#ww_setting) applications).
+When a Web application becomes invisible (moves to the background), it is suspended. Before Tizen 2.4, to continue to execute the application in the background, you had to set the `background-support` attribute of the `<tizen:setting>` element to `enable` in the `config.xml` file (in [mobile](../../../tizen-studio/web-tools/config-editor.md#mw_setting) and [wearable](../../../tizen-studio/web-tools/config-editor.md#ww_setting) applications).
 
-Since Tizen 2.4, the background process management policy has been changed. The system does not allow applications to run in the background except when they are explicitly declared to do so by having a specific background category. For more information on the available background categories, see the [Allowed background application policy](../../../../org.tizen.guides_HTM/html/native/app-management/efl_ui_app_n.htm#allow_bg_table) table.
+Since Tizen 2.4, the background process management policy has been changed. The system does not allow applications to run in the background except when they are explicitly declared to do so by having a specific background category. For more information on the available background categories, see the [Allowed background application policy](../../../native/guides/app-management/efl-ui-app.md#allow_bg_table) table.
 
 > **Note**
-> To guarantee that a Web application runs in the background, at least 1 `background-category` element must be declared in the `config.xml` file (in [mobile](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#mw_bg_category) and [wearable](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#ww_bg_category) applications), and the `background-support` attribute of the `<tizen:setting>` element must be set to `enable`.
+> To guarantee that a Web application runs in the background, at least 1 `background-category` element must be declared in the `config.xml` file (in [mobile](../../../tizen-studio/web-tools/config-editor.md#mw_bg_category) and [wearable](../../../tizen-studio/web-tools/config-editor.md#ww_bg_category) applications), and the `background-support` attribute of the `<tizen:setting>` element must be set to `enable`.
 
 The following `config.xml` file example shows how an application can be configured to run in the background:
 
@@ -600,3 +609,9 @@ Learning how to receive notifications allows you to monitor when the status of a
        console.log('Exception: ' + err.name);
    }
    ```
+
+## Related Information
+* Dependencies
+   - Tizen 2.4 and Higher for Mobile
+   - Tizen 2.3.1 and Higher for Wearable
+   - Tizen 3.0 and Higher for TV

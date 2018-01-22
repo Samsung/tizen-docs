@@ -13,15 +13,15 @@ To develop your applications, use the set of tools provided by the Tizen Studio:
 
 - [Setup](setup/installing-sdk.md) Learn about installing and updating the Tizen Studio. You may need to install additional packages to develop applications for various platforms.
 
-- [Native Tools ](native-tools/cover-native-n.md)Learn about the available native application development tools. Native applications are developed using the C programming language. You can create an application project, edit the code to meet your needs, and run the application on the emulator or a target device.
+- [Native Tools](native-tools/cover-native.md)Learn about the available native application development tools. Native applications are developed using the C programming language. You can create an application project, edit the code to meet your needs, and run the application on the emulator or a target device.
 
-- [Web Tools ](web-tools/cover-web-w.md)Learn about the available Web application development tools. Web applications are developed using the JavaScript, HTML, and CSS languages. You can create an application project, edit the code to meet your needs, and run the application on the emulator, simulator, or a target device.
+- [Web Tools](web-tools/cover-web.md)Learn about the available Web application development tools. Web applications are developed using the JavaScript, HTML, and CSS languages. You can create an application project, edit the code to meet your needs, and run the application on the emulator, simulator, or a target device.
 
 - [Platform Tools](platform-tools/cover-platform.md) Learn about the platform development environment that helps you develop preloaded platform applications, platform libraries, and device drivers in Ubuntu.
 
-- [Tizen Studio for RT](rt_sdk/rt_cover.md) Learn about the Tizen Studio for RT and how you can develop lightweight RTOS-based applications.
+- [Tizen Studio for RT](rt-sdk/rt-cover.md) Learn about the Tizen Studio for RT and how you can develop lightweight RTOS-based applications.
 
-- [Configurable SDK](configurable_sdk/configurable_sdk.md) Learn about using the Tizen Studio to develop applications in a customizable Tizen platform environment.
+- [Configurable SDK](configurable-sdk/configurable-sdk.md) Learn about using the Tizen Studio to develop applications in a customizable Tizen platform environment.
 
 
 
