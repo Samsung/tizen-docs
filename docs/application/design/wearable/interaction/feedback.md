@@ -103,6 +103,7 @@ Visual responses inform users of a current state. Provide visual feedback to inf
   | :--: | :--: |
   |     ![](media/interaction_7.5.1_5-850x174_1.png)    |         ![](media/interaction_7.5.1_5-850x174_2.png)    |
   |  Scale 100% |  Scale 110%  |  
+
        
   *When users touch the screen itself, the screen is scaled down to 90% and then returns to 100%.*
 

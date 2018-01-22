@@ -5,4 +5,5 @@ Overscrolling effects indicate that the user has reached the end of a scrollable
 <video controls>
   <source src="media/9.7.overscroll.mp4" type=video/mp4>
 </video>  
+
 *Overscroll effects let users know they’ve reached the beginning or end of scrollable content.*
