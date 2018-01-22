@@ -9,8 +9,11 @@ You can style DALi UI components with a theme bundle or a folder containing a JS
 You can specify how each application component looks by using a stylesheet with the JSON file format:
 
 - Application-specific resources must be installed into a particular directory, and you can access them in the stylesheet indirectly through the `APPLICATION_RESOURCE_PATH` constant, which has the value returned by the `app_get_resource_path()` function. For more information on the resource directory, see the `app_get_resource_path()` function in the App Common API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__CAPI__APP__COMMON__MODULE.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__CAPI__APP__COMMON__MODULE.html) applications).
+
 - You can style particular controls or sub-groups of controls by specifying their style name programmatically.
+
 - Styles can be inherited and tweaked, so you can create minor updates to existing styles with very little code.
+
 - The platform can change the default system font family and logical size. This is handled by the default stylesheets, but it is possible to override this behavior in your own stylesheets. You can also listen for the style manager's `StyleChangedSignal()` in order to determine when the platform style has changed.
 
 ## Stylesheet Loading
@@ -39,6 +42,7 @@ The stylesheet is usually supplied at the application start-up or through the `D
   ```
 
 When the stylesheet is loaded, it is automatically merged with the default DALi toolkit stylesheet, and applied to each `Control` instance.
+
 
 ## Stylesheet Format
 
@@ -129,7 +133,9 @@ In the following example, the confirmation popup's `backingColor` property value
 The `styles` section is the main section of the stylesheet. Each key in this JSON object is a style name, which is used to match against control instances in your application:
 
 - By default, a `Dali::Toolkit::Control` class's name is also its style name. For finer control, you can programmatically set a style name for a given control using the `Control::SetStyleName()` function. In the following example, the slider control handle text label has been given the style name `SliderHandleTextLabel`. This means that for any instance of the slider, the handle label style can be specified independently of any other label.
+
 - For each entry in the `styles` section, the children of the entry are the property names of the matching control. In the following example, `showPopup` is the name of a property in the slider. For more information on the properties of a specific control, see its API Reference.
+
 - Each control has a `background` property, which can specify a visual. In addition, properties named `visual`, such as those in the following example, specify a visual.
 
 The following example switches on the value label of the handle and the popup tooltip, and changes the visuals of the slider control to use the specified 9-patch images with the given sizes. It changes the property of the slider handle text label to alter the color of the text, and changes the background of the slider to show a gradient fill.

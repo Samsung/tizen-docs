@@ -3,6 +3,15 @@
 - Tizen 2.4 and Higher for Mobile
 - Tizen 3.0 and Higher for Wearable
 
+This tutorial describes the DALi Animation framework.
+In this tutorial, the following subjects are covered:
+
+[Animation events](#1)<br>
+[Setting up an Animation](#2)<br>
+[Animation Notifications](#3)<br>
+
+## Overview
+
 You can use animation to allow your objects to move around and change their properties for a specified duration.
 
 DALi provides a rich and easy to use animation framework which allows you to create visually rich applications. The `Dali::Animation` class can be used to animate the [animatable properties](properties-n.md#attributes) of any number of objects.
@@ -15,71 +24,156 @@ The following figure illustrates the animation components.
 
 ![DALi animation components](./media/animation_components.png)
 
-To implement a basic animation, create an animation object that takes place over 3 seconds:
+For more information on Animation, see [Animation Types](animation-types-n.md) and [Constraints](constraints-n.md).
+
+<a name="1"></a>
+## Animation events
+
+The following table lists the basic signals provided by the `Dali::Animation` class.
+
+**Table: Dali::Animation input signals**
+
+| Input signal         | Description                              |
+| -------------------- | ---------------------------------------- |
+| `FinishedSignal()`   | Emitted when an Animation's animations have finished.  |
+
+
+<a name="2"></a>
+## Setting up an Animation
+
+Below code creates an Animation with a duration of 3 seconds.
 
 ```
 Animation animation = Animation::New( 3.0f );
 ```
+Once created the following properties can be used to set up the animation.
 
-For more information on Animation, see [Animation Types](animation-types-n.md) and [Constraints](constraints-n.md).
+### By, to and between
 
-## Animating Properties
+There are 3 animation functions that determine what should be animated.
 
-To animate the properties within DALi, you can use 2 distinct functions:
+| Function       | Description  |
+| -------------- | ------------ |
+| AnimateTo      | Animates a given property to the given value |
+| AnimateBy      | Animates a given property by a given amount (which means that it animates to a value that is the sum of the starting position and the given value) |
+| AnimateBetween | Animates a given property from a given value to a given value |
 
-- `AnimateTo()`: Property animates TO the value in the given time.
-- `AnimateBy()`: Property animates BY the value in the given time (which means that it animates to a value that is the sum of the starting position and the given value).
-
-In the following example, the `actor1` and `actor2` instances are at the position 10.0f, 10.0f, 0.0f at the start of the animation.
+Below code animates the actor1 position to 10.0f, 50.0f, 0.0f.
 
 ```
 // Animate the actor1 position TO 10.0f, 50.0f, 0.0f
 animation.AnimateTo( Property( actor1, Dali::Actor::Property::POSITION ), Vector3( 10.0f, 50.0f, 0.0f ) );
-// End Position: 10.0f, 50.0f, 0.0f
-
-// Animate the actor2 position BY 10.0f, 50.0f, 0.0f
-animation.AnimateBy( Property( actor2, Dali::Actor::Property::POSITION ), Vector3( 10.0f, 50.0f, 0.0f ) );
-// End Position: 20.0f, 60.0f, 0.0f
 ```
 
-## Controlling Playback
+Multiple functions can be attached to an animation. All with different targets (actors) and properties.
 
-After the animation is created, you can play it:
+### Play and play range
 
-- To play the animation, use the `Play()` function:
-
-    ```
-    animation.Play();
-    ```
-
-	The `Play()` function is not a synchronous function. It returns after sending a message. After the message is processed in a separate thread, the animation starts. Blocking the application thread does not stop the animation from playing.
-
-- To pause or stop the animation:
-
-  ```
-  animation.Pause();
-  animation.Stop();
-  ```
-
-- To loop the animation to play multiple times:
-
-  ```
-  animation.SetLooping( true );
-  ```
-
-- By default, when the animation ends, the properties that it was animating are baked (saved). To discard the property changes when the animation ends or is stopped:
-
-  ```
-  animation.SetEndAction( Animation::Discard );
-  ```
-
-## Using Notifications
-
-Using DALi's signal framework, the application can be notified when the animation finishes. The `Dali::Animation` class supports "fire and forget" behavior, which means that the animation continues to play even if the handle is discarded. In the following example, the finished signal is emitted after 2 seconds:
+Once the animation has been created and set up to Animate then it can be played. To play the animation, use the `Play()` function:
 
 ```
-// This sample code is for the HelloWorldExample class
-// in Creating a DALi Application
+animation.Play();
+```
+
+This will play all functions attached to that animation.
+The animation will play and execution of the event thread is not blocked (user interaction continues).
+
+### Looping
+
+The animation can be set to loop forever. To loop the animation to play multiple times:
+```
+animation.SetLooping( true );
+```
+
+Or set to loop a number of times.
+```
+animation.SetLoopCount( 5 );
+```
+
+Below will loop forever ( as SetLooping(true) )
+```
+animation.SetLoopCount( 0 );
+```
+
+The direction of looping can also be set with the following API:
+`Animation::SetLoopingMode`
+
+| LoopingMode  | Description       |
+| ------------ | ----------------- |
+| RESTART      | When the animation arrives at the end in looping mode, the animation restarts from the beginning. |
+| AUTO_REVERSE | When the animation arrives at the end in looping mode, the animation reverses direction and runs backwards again. |
+
+### End action
+
+The following End Actions are available.
+They determine what the animated Property value should be when the animation ends.
+
+| EndAction | Description          |
+| --------- | -------------------- |
+| Bake      | current value of the animation becomes the property's value, animation may have stopped before completion. |
+| Discard   | change due to the animation is discarded, original property value maintained |
+| BakeFinal | even if the animation does not complete the final target value becomes the property's value |
+
+By default, when the animation ends, the properties that it was animating are baked (saved).
+To discard the property changes when the animation ends or is stopped:
+```
+animation.SetEndAction( Animation::Discard );
+```
+
+### Stop Pause Clear
+
+An animation can be paused and then continued with `Play()`. To pause the animation:
+```
+animation.Pause();
+```
+
+Or animation can be stopped. Once stopped, `Play()` will start it again. To stop the animation:
+```
+animation.Stop();
+```
+
+### Alpha functions
+
+The animations change the target property in a Linear way, to configure this an Alpha function can be supplied.
+
+Alpha functions are used in animations to specify the rate of change of the animation parameter over time.<br>
+This allows the animation to be, for example, accelerated, decelerated, repeated, or bounced.<br>
+The built-in supported functions can be viewed in the `Dali::AlphaFunction::BuiltinFunction` enumeration (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1AlphaFunction.html#aacf7780cdb2077166a3cd20a8a9faf4b) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1AlphaFunction.html#aacf7780cdb2077166a3cd20a8a9faf4b) applications).
+
+An example of setting an Ease In alpha function for all attached functions :
+```
+animation.SetDefaultAlphaFunction( Dali::AlphaFunction::EASE_IN );
+```
+
+You can specify a different alpha function for each animation call within the 'Animation' object :
+```
+animation.AnimateTo( Property( actor1, Dali::Actor::Property::POSITION ),
+                     Vector3( 10.0f, 50.0f, 0.0f ),
+                     Dali::AlphaFunction::EASE_IN );
+```
+
+Custom Alpha functions can be created :
+```
+float MyAlphaFunction( float progress )
+{
+  // Do something cool with progress
+  return progress;
+}
+
+AlphaFunction alphaFunction( &MyAlphaFunction );
+animation.SetDefaultAlphaFunction( alphaFunction );
+```
+
+<a name="3"></a>
+## Animation Notifications
+
+Using DALi's signal framework, the application can be notified when the animation finishes. The `Dali::Animation` class is a "fire and forget" framework, which means that the animation continues to play even if the handle is discarded. ( a handle to the animation does not need to be kept. )
+The `animation.Play()` can be called and the handle can go out of scope.
+
+To track the animation the `FinishedSignal` signal can be used, it will trigger when the animation ends.
+In the following example, the finished signal is emitted after 2 seconds:
+
+```
 void HelloWorldExample::Create( Application& application )
 {
   // Create a button
@@ -97,31 +191,4 @@ void HelloWorldExample::OnFinished( Animation& animation )
 {
   // Do something when the animation is finished
 }
-```
-
-## Using Alpha Functions
-
-Alpha functions are used in animations to specify the rate of change of the animation parameter over time. This allows the animation to be, for example, accelerated, decelerated, repeated, or bounced. The built-in supported functions can be viewed in the `Dali::AlphaFunction::BuiltinFunction` enumeration (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1AlphaFunction.html#aacf7780cdb2077166a3cd20a8a9faf4b) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1AlphaFunction.html#aacf7780cdb2077166a3cd20a8a9faf4b) applications).
-
-```
-animation.SetDefaultAlphaFunction( Dali::AlphaFunction::EASE_IN );
-```
-
-You can also create your own alpha function:
-
-```
-float MyAlphaFunction( float progress )
-{
-  return progress;
-}
-
-AlphaFunction alphaFunction( &MyAlphaFunction );
-animation.SetDefaultAlphaFunction( alphaFunction );
-```
-
-You can specify a different alpha function for each animate call within the `Animation` object:
-
-```
-animation.AnimateTo( Property( actor1, Dali::Actor::Property::POSITION ),
-                     Vector3( 10.0f, 50.0f, 0.0f ), Dali::AlphaFunction::EASE_IN );
 ```
