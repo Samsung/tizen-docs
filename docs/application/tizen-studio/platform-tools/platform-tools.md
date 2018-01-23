@@ -44,7 +44,7 @@ On both tabs:
  - **Remove**: Remove the selected repository from the list.
  - **Move**: Move the selected repository up and down on the list.
 
- 
+
 * **Packages** panel:  
   - **Refresh**: Resynchronize the package index files from the package repositories. If the repositories are changed, the package index is refreshed.
   - **Upgrade**: Perform a distribution upgrade.
@@ -105,7 +105,7 @@ The PO file editor is used to edit `.po` files to generate compiled gettext `.mo
 - To remove a language, in the **Supporting Languages** pane, click the **Remove Language** icon and select the applicable language code item in the **Remove Languages** dialog.
 
 
-## Related information
+## Related Information
 * Dependencies
   - Tizen Studio 1.0.1 and Higher
   - Ubuntu Only

@@ -8,5 +8,5 @@ To develop your applications, use the set of tools provided by the Tizen Studio 
 -   [SmartThings&trade; Extension](smartthings-ext/overview.md)
 
 ## Related Information
-* Dependencies
- - Ubuntu Only
+- Dependencies
+  - Ubuntu Only

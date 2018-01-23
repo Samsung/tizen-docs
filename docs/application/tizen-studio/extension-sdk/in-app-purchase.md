@@ -376,7 +376,8 @@ get_item_list_cb(app_control_h request, app_control_h reply,
 - **GetPurchasedItemList operation**This operation returns a list of already purchased items.
 - **Input data**The following table shows the key and value pairs required in the input extra data for the `http://tizen.org/appcontrol/operation/iapv2/get_purchased_item_list` operation.
 
-  **Table: Input data for getting a list of purchased items**
+  **Table: Input data for getting a list of purchased items**  
+
 | Key              | Value                     | Description                              |
 |----------------|-------------------------|----------------------------------------|
 | `_mode`          | 0 or 1                    | Mode type:0: Normal (commercial) modeThis mode needs to be used in an application submitted to the Tizen Store.1: Developer modeThis mode can be used for testing purposes while developing the application. Payment always succeeds.The default value is 0.This information is optional. |
@@ -415,7 +416,8 @@ if (app_control != NULL)
 
 - **Output Data**
 The results of the operation are returned in the app control callback.The following table shows the output data for the `http://tizen.org/appcontrol/operation/iapv2/get_purchased_item_list` operation.
- **Table: Output data for getting a list of purchased items**
+ **Table: Output data for getting a list of purchased items**  
+
  | Key                  | Value                                    | Description                              |
 |--------------------|----------------------------------------|----------------------------------------|
 | `_method`            | `OnPurchasedItem` or `InformationListReceived` | Method to be called as a purchase request result. |
@@ -429,7 +431,8 @@ The results of the operation are returned in the app control callback.The follow
 
  There is also a `_totalCount` number of items in the output data. Each key consists of a `PREFIX` (list item index value) and a key (such as `12_itemId`).
 
- **Table: Item keys in the output data**
+ **Table: Item keys in the output data**  
+
 | Key                                     | Value                                    | Description                              |
 |---------------------------------------|----------------------------------------|----------------------------------------|
 | `PREFIX_itemId`                         | Item ID                                  | This is the same number as an Item ID that is used in the request. |
@@ -569,7 +572,8 @@ This operation returns a list of countries available for testing in-application 
 - **Input data**
 The following table show the key and value pairs required in the input extra data for the `http://tizen.org/appcontrol/operation/iapv2/get_country_list` operation.
 
- **Table: Input data for getting a list of countries**
+ **Table: Input data for getting a list of countries**  
+
 | Key              | Value          | Description                              |
 |----------------|--------------|----------------------------------------|
 | `_transactionId` | Transaction ID | Transaction ID, such as 1 or 2.This information is mandatory.The ID is used to track a transaction between requests. |
@@ -593,7 +597,8 @@ if (app_control != NULL)
 - **Output Data**
 The results of the operation are returned in the app control callback.The following table shows the output data for the `http://tizen.org/appcontrol/operation/iapv2/get_country_list` operation.
 
- **Table: Output data for getting a list of countries**
+ **Table: Output data for getting a list of countries**  
+
  | Key                  | Value                   | Description                              |
 |--------------------|-----------------------|----------------------------------------|
 | `_method`            | `OnCountryListReceived` | Method to be called as a purchase request result. |
@@ -606,7 +611,8 @@ The results of the operation are returned in the app control callback.The follow
 
  There is also a `_totalCount` number of countries in the output data. Each key consists of a `PREFIX` (list item index value) and a key (such as `1_countryName`).
 
- **Table: Country keys in the output data**
+ **Table: Country keys in the output data**  
+
 | Key                  | Value                     | Description                              |
 |--------------------|-------------------------|----------------------------------------|
 | `PREFIX_countryName` | Country name              | Name of a country.                       |
@@ -657,7 +663,8 @@ The results of the operation are returned in the app control callback.The follow
 - **Result code values**
 The following table lists the possible values of the `_result` key for the `org.tizen.inapppurchase.iapservice` application ID.
 
- **Table: Result code values**
+ **Table: Result code values**  
+
 | Value | String Representation     | Description                              |
 |-----|-------------------------|----------------------------------------|
 | 0     | `Succeed`                 | The status code for success.             |
@@ -684,7 +691,8 @@ This operation launches the purchase application and allows purchasing of In-App
 - **Input data**
 - The following table shows the key and value pairs required in the input extra data for the `http://tizen.org/appcontrol/operation/iapv2/purchase` operation.
 
- **Table: Input data for launching the purchase application**
+ **Table: Input data for launching the purchase application**  
+
 | Key              | Value                     | Description                              |
 |----------------|-------------------------|----------------------------------------|
 | `_mode`          | 0 or 1                    | Mode type:0: Normal (commercial) modeThis mode needs to be used in an application submitted to the Tizen Store.1: Developer modeThis mode can be used for testing purposes while developing the application. Payment always succeeds.The default value is 0.This information is optional. |
@@ -718,7 +726,8 @@ This operation launches the purchase application and allows purchasing of In-App
 - **Output Data**
 The results of the operation are returned in the app control callback.This data can be used to verify the payment with Tizen Store IAP Server.The following table shows the output data for the `http://tizen.org/appcontrol/operation/iapv2/purchase` operation during process of purchase.
 
- **Table: Output data for launching the purchase application**
+ **Table: Output data for launching the purchase application**  
+
   | Key                  | Value                                    | Description                              |
   |--------------------|----------------------------------------|----------------------------------------|
   | `_method`            | `OnPurchaseItemReceived`                 | Method to be called as a purchase request result. |
@@ -826,7 +835,8 @@ The results of the operation are returned in the app control callback.This data 
 - **Result code values**
  The following table lists the possible values of the `_result` key for the `org.tizen.inapppurchase.iapclient` application ID.
 
- **Table: Result code values**
+ **Table: Result code values**  
+ 
  | Value | String Representation                 | Description                              |
 |-----|-------------------------------------|----------------------------------------|
 | 0     | `Succeed`                             | The status code for success.             |
