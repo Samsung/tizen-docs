@@ -226,7 +226,8 @@ The command generates a Tizen certificate for your application. If you want to u
 tizen certificate [options]
 ```
 
-**Options:**
+**Options:**  
+
 | Option                                | Description                              |
 |-------------------------------------|----------------------------------------|
 | `-a`, `--alias <alias name>`          | Specifies an alias name of the certificate. |

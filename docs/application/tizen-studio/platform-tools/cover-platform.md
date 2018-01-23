@@ -45,7 +45,8 @@ To use the Platform Project Wizard:
 
 1. In the Tizen Studio menu, select **File > New > Other > Tizen > Tizen Platform Project**.
 2. In the Tizen Platform Project Wizard, select a sample (for example, **Hello EFL**).If the project option you want does not appear, check that you are using the correct perspective (Tizen Platform). To switch perspectives, go to **Window > Perspective > Open Perspective > Other** and select the perspective you want.
-3. Fill in the project details and click **Finish**.
+3. Fill in the project details and click **Finish**.  
+
    ![File analysis](./media/platform_project_wizard.png)
 
 ### Building the Platform Project
@@ -134,7 +135,7 @@ To debug a coredump archive:
 
    c. Click **Finish**, if it is enabled.
 
-## Related information
-* Dependencies
+## Related Information
+-  Dependencies
    - Tizen Studio 1.0.1 and Higher
    - Ubuntu Only
