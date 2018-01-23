@@ -19,7 +19,7 @@ To use the Device Manager with a specific device, you must connect the device ov
     - Click the Device Manager icon on the desktop or in the **Start** menu.
 
       | Ubuntu                                   | Windows®                                 | macOS                                    |
-      | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+      |----------------------------------------|----------------------------------------|----------------------------------------|
       | **Desktop > Applications > Device Manager:**![Device Manager in Ubuntu](media/device_manager_icon_ubuntu.png) | **Start > All Programs > Tizen Studio > Tools > Device Manager:**![Device Manager in Windows](media/device_manager_icon_windows.png) | **Finder > Applications > Tizen Studio > Device Manager:**![Device Manager in macOS](media/device_manager_icon_macos.png) |
 
     - Run the Device Manager from the command line.
@@ -27,7 +27,7 @@ To use the Device Manager with a specific device, you must connect the device ov
       ​
 
       | Ubuntu                                   | Windows®                                 | macOS                                    |
-      | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+      |----------------------------------------|----------------------------------------|----------------------------------------|
       | `<TIZEN_STUDIO>/tools/device-manager/bin/device-manager` | `<TIZEN_STUDIO>\tools\device-manager\bin\device-manager.exe` | `<TIZEN_STUDIO>/tools/device-manager/bin/device-manager.app/Contents/MacOS/device-manager` |
 
     If the program is executed normally, the Device Manager main screen appears.

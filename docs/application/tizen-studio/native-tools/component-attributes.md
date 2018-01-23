@@ -56,7 +56,7 @@ The `<configuration>` element is placed as a child of the `<mscreen>` element. T
 **Table: Common configuration attributes**
 
 | Attribute     | Value                                    |
-| ------------- | ---------------------------------------- |
+|-------------|----------------------------------------|
 | `id`          | Identification for the configuration     |
 | `name`        | Name of the display                      |
 | `type`        | Whether the configuration is `specific` or `common` |
@@ -80,7 +80,7 @@ The `<variation>` element is placed as a child of the `<UI component>` element. 
 **Table: Variation attributes**
 
 | Attribute                                | Value                                    |
-| ---------------------------------------- | ---------------------------------------- |
+|----------------------------------------|----------------------------------------|
 | `config_ref`                             | Screen configuration ID                  |
 | `visible`                                | `true` or `false`                        |
 | `pack_x, pack_y, pack_w, pack_h`         | Absolute coordinates when the parent container is a grid.0 ~ |
@@ -102,7 +102,7 @@ The following attributes are used for all UI components.
 **Table: Common component attributes**
 
 | Attribute               | Value                          | Function                             |
-| ----------------------- | ------------------------------ | ------------------------------------ |
+|-----------------------|------------------------------|------------------------------------|
 | `align_h`               | `left, right, center, 0 ~ 1.0` | `evas_object_size_hint_align_set()`  |
 | `align_v`               | `top, bottom, center, 0 ~ 1.0` | `evas_object_size_hint_align_set()`  |
 | `weight_h` or `eight_v` | `0 ~ 1.0`                      | `evas_object_size_hint_weight_set()` |
@@ -112,7 +112,7 @@ Some UI component attributes depend on the type of the UI container. For example
 **Table: Specific component attributes**
 
 | UI container | Attribute                                | Function                        |
-| ------------ | ---------------------------------------- | ------------------------------- |
+|------------|----------------------------------------|-------------------------------|
 | Grid         | `pack_x, pack_y, pack_w, pack_h`         | `elm_grid_pack()`               |
 | Table        | `pack_col, pack_row, row_span, col_span` | `elm_table_pack()`              |
 | Panes        | `pack`                                   | `elm_object_part_content_set()` |
@@ -137,7 +137,7 @@ The following attributes are used for all `<event>` elements.
 **Table: Event attributes**
 
 | Attribute            | Value                                    |
-| -------------------- | ---------------------------------------- |
+|--------------------|----------------------------------------|
 | `function_name`      | Name of the function                     |
 | `signal`             | Unique component signal. See the component documentation for details |
 | `source`             | Source of accepted signal. Only used for the custom UI component. |
@@ -157,7 +157,7 @@ The following attributes are used for `<view>` element.
 **Table: View attributes**
 
 | Attribute            | Value                                    |
-| -------------------- | ---------------------------------------- |
+|--------------------|----------------------------------------|
 | `id`                 | Automatically incrementing and editable. Duplicates are not allowed. |
 | `indicator`          | `true` or `false`                        |
 | `screen_orientation` | `no_sensor`, `only_portrait`, `only_landscape`, or `full_sensor` |
@@ -180,7 +180,7 @@ The following attributes are used for the box container.
 **Table: Box attributes**
 
 | Attribute                  | Value                                    | Function                    |
-| -------------------------- | ---------------------------------------- | --------------------------- |
+|--------------------------|----------------------------------------|---------------------------|
 | `id`                       | Automatically incrementing and editable. Duplicates are not allowed. | `elm_box_add()`             |
 | `direction`                | `horizontal` or `vertical`               | `elm_box_horizontal_set()`  |
 | `homogeneous`              | `true` or `false`                        | `elm_box_homogeneous_set()` |
@@ -205,7 +205,7 @@ The child element of the grid container has the `pack_w`, `pack_h`, `pack_x`, an
 **Table: Grid attributes**
 
 | Attribute | Value                                    | Function              |
-| --------- | ---------------------------------------- | --------------------- |
+|---------|----------------------------------------|---------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_grid_add()`      |
 | `vsize_w` | 0 ~                                      | `elm_grid_size_set()` |
 | `vsize_h` | 0 ~                                      | `elm_grid_size_set()` |
@@ -226,7 +226,7 @@ The following attributes are used for the panel container.
 **Table: Panel attributes**
 
 | Attribute | Value                                    | Function                 |
-| --------- | ---------------------------------------- | ------------------------ |
+|---------|----------------------------------------|------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_panel_add()`        |
 | `visible` | `true` or `false`                        | `evas_object_show()`     |
 | `orient`  | `top`, `bottom`, `left`, or `right`      | `elm_panel_orient_set()` |
@@ -253,7 +253,7 @@ The child element of the panes container has the `pack` attribute to indicate th
 **Table: Panes attributes**
 
 | Attribute    | Value                                    | Function                             |
-| ------------ | ---------------------------------------- | ------------------------------------ |
+|------------|----------------------------------------|------------------------------------|
 | `id`         | Automatically incrementing and editable. Duplicates are not allowed. | `elm_panes_add()`                    |
 | `visible`    | `true` or `false`                        | `evas_object_show()`                 |
 | `direction`  | `horizontal` or `vertical`               | `elm_panes_horizontal_set()`         |
@@ -276,7 +276,7 @@ The following attributes are used for the scroller container.
 **Table: Scroller attributes**
 
 | Attribute                          | Value                                    | Function                              |
-| ---------------------------------- | ---------------------------------------- | ------------------------------------- |
+|----------------------------------|----------------------------------------|-------------------------------------|
 | `id`                               | Automatically incrementing and editable. Duplicates are not allowed. | `elm_scroller_add()`                  |
 | `style`                            | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`              |
 | `colors`                           | `#000000 ~ #ffffff`See the [supported properties](#supported_properties) for each profile and version. | `elm_object_color_class_color_set()`  |
@@ -303,7 +303,7 @@ The child element of the table container has the `pack_col`, `pack_row`, `row_sp
 **Table: Table attributes**
 
 | Attribute                  | Value                                    | Function                      |
-| -------------------------- | ---------------------------------------- | ----------------------------- |
+|--------------------------|----------------------------------------|-----------------------------|
 | `id`                       | Automatically incrementing and editable. Duplicates are not allowed. | `elm_table_add()`             |
 | `homogeneous`              | `true` or `false`                        | `elm_table_homogeneous_set()` |
 | `padding_h` or `padding_v` | 0 ~ 50                                   | `elm_table_padding_set()`     |
@@ -327,7 +327,7 @@ The following attributes are used for the background component.
 **Table: Background attributes**
 
 | Attribute | Value                                    | Function              |
-| --------- | ---------------------------------------- | --------------------- |
+|---------|----------------------------------------|---------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_bg_add()`        |
 | `option`  | `center`, `scale`, `stretch`, or `tile`  | `elm_bg_option_set()` |
 | `color`   | `#000000 ~ #ffffff`                      | `elm_bg_color_set()`  |
@@ -349,7 +349,7 @@ The following attributes are used for the button component.
 **Table: Button attributes**
 
 | Attribute | Value                                    | Function                             |
-| --------- | ---------------------------------------- | ------------------------------------ |
+|---------|----------------------------------------|------------------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_button_add()`                   |
 | `disable` | `true` or `false`                        | `elm_object_disabled_set()`          |
 | `visible` | `true` or `false`                        | `evas_object_show()`                 |
@@ -373,7 +373,7 @@ The following attributes are used for the calendar component.
 **Table: Calendar attributes**
 
 | Attribute                | Value                                    | Function                          |
-| ------------------------ | ---------------------------------------- | --------------------------------- |
+|------------------------|----------------------------------------|---------------------------------|
 | `id`                     | Automatically incrementing and editable. Duplicates are not allowed. | `elm_calendar_add()`              |
 | `disable`                | `true` or `false`                        | `elm_object_disabled_set()`       |
 | `visible`                | `true` or `false`                        | `evas_object_show()`              |
@@ -396,7 +396,7 @@ The following attributes are used for the check component.
 **Table: Check attributes**
 
 | Attribute | Value                                    | Function                    |
-| --------- | ---------------------------------------- | --------------------------- |
+|---------|----------------------------------------|---------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_check_add()`           |
 | `state`   | `true` or `false`                        | `elm_check_state_set()`     |
 | `disable` | `true` or `false`                        | `elm_object_disabled_set()` |
@@ -419,7 +419,7 @@ The following attributes are used for the colorselector component.
 **Table: Colorselector attributes**
 
 | Attribute | Value                                    | Function                  |
-| --------- | ---------------------------------------- | ------------------------- |
+|---------|----------------------------------------|-------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_colorselector_add()` |
 | `visible` | `true` or `false`                        | `evas_object_show()`      |
 
@@ -442,7 +442,7 @@ The `<ctxpopup>` element must be placed as a child of the `<view>` element, and 
 **Table: Ctxpopup attributes**
 
 | Attribute   | Value                                    | Function                        |
-| ----------- | ---------------------------------------- | ------------------------------- |
+|-----------|----------------------------------------|-------------------------------|
 | `id`        | Automatically incrementing and editable. Duplicates are not allowed. | `elm_ctxpopup_add()`            |
 | `direction` | `horizontal` or `vertical`               | `elm_ctxpopup_horizontal_set()` |
 | `style`     | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`        |
@@ -456,7 +456,7 @@ A ctxpopup item component can be placed as a child of the ctxpopup component. Ea
 **Table: Ctxpopup item attributes**
 
 | Attribute | Value                                    | Function                     |
-| --------- | ---------------------------------------- | ---------------------------- |
+|---------|----------------------------------------|----------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_ctxpopup_item_append()` |
 | `text`    | `#string`                                | `elm_ctxpopup_item_append()` |
 
@@ -475,7 +475,7 @@ The following attributes are used for the datetime component.
 **Table: Datetime attributes**
 
 | Attribute | Value                                    | Function                             |
-| --------- | ---------------------------------------- | ------------------------------------ |
+|---------|----------------------------------------|------------------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_datetime_add()`                 |
 | `disable` | `true` or `false`                        | `elm_object_disabled_set()`          |
 | `visible` | `true` or `false`                        | `evas_object_show()`                 |
@@ -499,7 +499,7 @@ The following attributes are used for the entry component.
 **Table: Entry attributes**
 
 | Attribute          | Value                                    | Function                                |
-| ------------------ | ---------------------------------------- | --------------------------------------- |
+|------------------|----------------------------------------|---------------------------------------|
 | `id`               | Automatically incrementing and editable. Duplicates are not allowed. | `elm_entry_add()`                       |
 | `scroll`           | `true` or `false`                        | `elm_entry_scrollable_set()`            |
 | `single_line`      | `true` or `false`                        | `elm_entry_single_line_set()`           |
@@ -528,7 +528,7 @@ The following attributes are used for the flipselector component.
 **Table: Flipselector attributes**
 
 | Attribute | Value                                    | Function                    |
-| --------- | ---------------------------------------- | --------------------------- |
+|---------|----------------------------------------|---------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_flipselector_add()`    |
 | `disable` | `true` or `false`                        | `elm_object_disabled_set()` |
 | `visible` | `true` or `false`                        | `evas_object_show()`        |
@@ -540,7 +540,7 @@ A flipselector item component can be placed as a child of the flipselector conta
 **Table: Flipselector item attributes**
 
 | Attribute | Value                                    | Function                         |
-| --------- | ---------------------------------------- | -------------------------------- |
+|---------|----------------------------------------|--------------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_flipselector_item_append()` |
 | `text`    | `#string`                                | `elm_flipselector_item_append()` |
 
@@ -565,7 +565,7 @@ The following attributes are used for the gengrid component.
 **Table: Gengrid attributes**
 
 | Attribute                      | Value                                    | Function                         |
-| ------------------------------ | ---------------------------------------- | -------------------------------- |
+|------------------------------|----------------------------------------|--------------------------------|
 | `id`                           | Automatically incrementing and editable. Duplicates are not allowed. | `elm_gengrid_add()`              |
 | `visible`                      | `true` or `false`                        | `evas_object_show()`             |
 | `disable`                      | `true` or `false`                        | `elm_object_disabled_set()`      |
@@ -583,7 +583,7 @@ A gengrid item component can be placed as a child of the gengrid component. Each
 **Table: Gengrid item attributes**
 
 | Attribute  | Value                                    | Function                                 |
-| ---------- | ---------------------------------------- | ---------------------------------------- |
+|----------|----------------------------------------|----------------------------------------|
 | `id`       | Automatically incrementing and editable. Duplicates are not allowed. | `elm_gengrid_item_append()`              |
 | `style`    | See the [supported properties](#supported_properties) for each profile and version | `elm_gengrid_item_append()`              |
 | `colors`   | `#000000 ~ #ffffff` </br>See the [supported properties](#supported_properties) for each profile and version. | `elm_object_item_color_class_color_set()` |
@@ -614,7 +614,7 @@ The following attributes are used for the genlist component.
 **Table: Genlist attributes**
 
 | Attribute                      | Value                                    | Function                        |
-| ------------------------------ | ---------------------------------------- | ------------------------------- |
+|------------------------------|----------------------------------------|-------------------------------|
 | `id`                           | Automatically incrementing and editable. Duplicates are not allowed. | `elm_genlist_add()`             |
 | `select_mode`                  | `default`, `always`, `none`, or `display_only`See the [supported properties](#supported_properties) for each profile and version. | `elm_genlist_select_mode_set()` |
 | `style`                        | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`        |
@@ -630,7 +630,7 @@ A genlist item component can be placed as a child of the genlist component. Each
 **Table: Genlist item attributes**
 
 | Attribute           | Value                                    | Function                                 |
-| ------------------- | ---------------------------------------- | ---------------------------------------- |
+|-------------------|----------------------------------------|----------------------------------------|
 | `id`                | Automatically incrementing and editable. Duplicates are not allowed. | `elm_genlist_item_append()`              |
 | `end_image_path`    | `#string`                                | `elm_genlist_item_append()`              |
 | `end_standard_icon` | See the [supported properties](#supported_properties) for each profile and version | `elm_genlist_item_append()`              |
@@ -660,7 +660,7 @@ The following attributes are used for the hoversel component.
 **Table: Hoversel attributes**
 
 | Attribute | Value                                    | Function                    |
-| --------- | ---------------------------------------- | --------------------------- |
+|---------|----------------------------------------|---------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_hoversel_add()`        |
 | `text`    | `#string`                                | `elm_object_text_set()`     |
 | `disable` | `true` or `false`                        | `elm_object_disabled_set()` |
@@ -673,7 +673,7 @@ A hoversel item component can be placed as a child of the hoversel component. Ea
 **Table: Hoversel item attributes**
 
 | Attribute | Value                                    | Function                     |
-| --------- | ---------------------------------------- | ---------------------------- |
+|---------|----------------------------------------|----------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_hoversel_item_append()` |
 | `text`    | `#string`                                | `elm_hoversel_item_append()` |
 
@@ -693,7 +693,7 @@ The following attributes are used for the image component.
 **Table: Image attributes**
 
 | Attribute                          | Value                                    | Function                       |
-| ---------------------------------- | ---------------------------------------- | ------------------------------ |
+|----------------------------------|----------------------------------------|------------------------------|
 | `id`                               | Automatically incrementing and editable. Duplicates are not allowed. | `elm_image_add()`              |
 | `src`                              | `#string`                                | `elm_image_file_set()`         |
 | `aspect_fixed`                     | `true` or `false`                        | `elm_image_aspect_fixed_set()` |
@@ -719,7 +719,7 @@ The following attributes are used for the index component.
 **Table: Index attributes**
 
 | Attribute   | Value                                    | Function                             |
-| ----------- | ---------------------------------------- | ------------------------------------ |
+|-----------|----------------------------------------|------------------------------------|
 | `id`        | Automatically incrementing and editable. Duplicates are not allowed. | `elm_index_add()`                    |
 | `autohide`  | `true` or `false`                        | `elm_index_autohide_disabled_set()`  |
 | `indicator` | `true` or `false`                        | `elm_index_indicator_disabled_set()` |
@@ -732,7 +732,7 @@ An index item component can be placed as a child of the index component. Each it
 **Table: Index item attributes**
 
 | Attribute | Value                                    | Function                  |
-| --------- | ---------------------------------------- | ------------------------- |
+|---------|----------------------------------------|-------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_index_item_append()` |
 | `text`    | `#string`                                | `elm_index_item_append()` |
 
@@ -752,7 +752,7 @@ The following attributes are used for the label component.
 **Table: Label attributes**
 
 | Attribute    | Value                                    | Function                     |
-| ------------ | ---------------------------------------- | ---------------------------- |
+|------------|----------------------------------------|----------------------------|
 | `id`         | Automatically incrementing and editable. Duplicates are not allowed. | `elm_label_add()`            |
 | `ellipsis`   | `true` or `false`                        | `elm_label_ellipsis_set()`   |
 | `wrap_width` | 0 ~                                      | `elm_label_wrap_width_set()` |
@@ -775,7 +775,7 @@ The following attributes are used for the layout component.
 **Table: Layout attributes**
 
 | Attribute        | Value                                    | Function                    |
-| ---------------- | ---------------------------------------- | --------------------------- |
+|----------------|----------------------------------------|---------------------------|
 | `id`             | Automatically incrementing and editable. Duplicates are not allowed. | `elm_layout_add()`          |
 | `disable`        | `true` or `false`                        | `elm_object_disabled_set()` |
 | `visible`        | `true` or `false`                        | `evas_object_show()`        |
@@ -799,7 +799,7 @@ The following attributes are used for the list component.
 **Table: List attributes**
 
 | Attribute                      | Value                                    | Function                      |
-| ------------------------------ | ---------------------------------------- | ----------------------------- |
+|------------------------------|----------------------------------------|-----------------------------|
 | `id`                           | Automatically incrementing and editable. Duplicates are not allowed. | `elm_list_add()`              |
 | `direction`                    | `horizontal` or `vertical`               | `elm_list_horizontal_set()`   |
 | `select_mode`                  | `default`, `always`, `none`, or `display_only` | `elm_list_select_mode_set()`  |
@@ -816,7 +816,7 @@ A list item component can be placed as a child of the list component. Each item 
 **Table: List item attributes**
 
 | Attribute  | Value                                    | Function                       |
-| ---------- | ---------------------------------------- | ------------------------------ |
+|----------|----------------------------------------|------------------------------|
 | `id`       | Automatically incrementing and editable. Duplicates are not allowed. | `elm_list_item_append()`       |
 | `text`     | `#string`                                | `elm_list_item_append()`       |
 | `selected` | `true` or `false`                        | `elm_list_item_selected_set()` |
@@ -836,7 +836,7 @@ The following attributes are used for the map component.
 **Table: Map attributes**
 
 | Attribute    | Value                                    | Function                |
-| ------------ | ---------------------------------------- | ----------------------- |
+|------------|----------------------------------------|-----------------------|
 | `id`         | Automatically incrementing and editable. Duplicates are not allowed. | `elm_map_add()`         |
 | `zoom_level` | `integer (0~)`                           | `elm_map_zoom_set()`    |
 | `longitude`  | `double`                                 | `elm_map_region_show()` |
@@ -860,7 +860,7 @@ The following attributes are used for the multibutton entry component.
 **Table: Multibutton entry attributes**
 
 | Attribute  | Value                                    | Function                              |
-| ---------- | ---------------------------------------- | ------------------------------------- |
+|----------|----------------------------------------|-------------------------------------|
 | `id`       | Automatically incrementing and editable. Duplicates are not allowed. | `elm_multibuttonentry_add()`          |
 | `editable` | `true` or `false`                        | `elm_multibuttonentry_editable_set()` |
 | `expanded` | `true` or `false`                        | `elm_multibuttonentry_expanded_set()` |
@@ -874,7 +874,7 @@ A multibutton entry item component can be placed as a child of the multibutton e
 **Table: Multibutton entry item attributes**
 
 | Attribute | Value                                    | Function                             |
-| --------- | ---------------------------------------- | ------------------------------------ |
+|---------|----------------------------------------|------------------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_multibuttonentry_item_append()` |
 | `text`    | `#string`                                | `elm_multibuttonentry_item_append()` |
 
@@ -885,7 +885,7 @@ A popup component (in [mobile](../../native/guides/ui/efl/component-popup-m.md) 
 **Table: Popup attributes**
 
 | Attribute | Value                                    | Function                             |
-| --------- | ---------------------------------------- | ------------------------------------ |
+|---------|----------------------------------------|------------------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_popup_add()`                    |
 | `title`   | `#string`                                | `elm_object_part_text_set()`         |
 | `style`   | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`             |
@@ -911,7 +911,7 @@ The following attributes are used for the progressbar component.
 **Table: Progressbar attributes**
 
 | Attribute      | Value                                    | Function                                 |
-| -------------- | ---------------------------------------- | ---------------------------------------- |
+|--------------|----------------------------------------|----------------------------------------|
 | `id`           | Automatically incrementing and editable. Duplicates are not allowed. | `elm_progressbar_add()`                  |
 | `span_size`    | 0 ~                                      | `elm_progressbar_span_size_set()`        |
 | `value`        | 0 ~ 1                                    | `elm_progressbar_value_set()`            |
@@ -937,7 +937,7 @@ The following attributes are used for the radio component.
 **Table: Radio attributes**
 
 | Attribute     | Value                                    | Function                      |
-| ------------- | ---------------------------------------- | ----------------------------- |
+|-------------|----------------------------------------|-----------------------------|
 | `id`          | Automatically incrementing and editable. Duplicates are not allowed. | `elm_radio_add()`             |
 | `state_value` | `#number`                                | `elm_radio_state_value_set()` |
 | `value`       | `#number`                                | `elm_radio_value_set()`       |
@@ -961,7 +961,7 @@ The following attributes are used for slider component.
 **Table: Slider attributes**
 
 | Attribute          | Value                                    | Function                             |
-| ------------------ | ---------------------------------------- | ------------------------------------ |
+|------------------|----------------------------------------|------------------------------------|
 | `id`               | Automatically incrementing and editable. Duplicates are not allowed. | `elm_slider_add()`                   |
 | `indicator`        | `true` or `false`See the [supported properties](#supported_properties) for each profile and version. | `elm_slider_indicator_show_set()`    |
 | `min`              | 0 ~                                      | `elm_slider_min_max_set()`           |
@@ -992,7 +992,7 @@ The following attributes are used for the spinner component.
 **Table: Spinner attributes**
 
 | Attribute  | Value                                    | Function                             |
-| ---------- | ---------------------------------------- | ------------------------------------ |
+|----------|----------------------------------------|------------------------------------|
 | `id`       | Automatically incrementing and editable. Duplicates are not allowed. | `elm_spinner_add()`                  |
 | `editable` | `true` or `false`                        | `elm_spinner_editable_set()`         |
 | `step`     | 0 ~                                      | `elm_spinner_step_set()`             |
@@ -1025,7 +1025,7 @@ The following attributes are used for the toolbar component.
 **Table: Toolbar attributes**
 
 | Attribute           | Value                                    | Function                                |
-| ------------------- | ---------------------------------------- | --------------------------------------- |
+|-------------------|----------------------------------------|---------------------------------------|
 | `id`                | Automatically incrementing and editable. Duplicates are not allowed. | `elm_toolbar_add()`                     |
 | `homogeneous`       | `true` or `false`                        | `elm_toolbar_homogeneous_set()`         |
 | `select_mode`       | `default`, `always`, `none`, or `display_only` | `elm_toolbar_select_mode_set()`         |
@@ -1042,7 +1042,7 @@ A toolbar item component can be placed as a child of the toolbar component. Each
 **Table: Toolbar item attributes**
 
 | Attribute  | Value                                    | Function                          |
-| ---------- | ---------------------------------------- | --------------------------------- |
+|----------|----------------------------------------|---------------------------------|
 | `id`       | Automatically incrementing and editable. Duplicates are not allowed. | `elm_toolbar_item_append()`       |
 | `disable`  | `true` or `false`                        | `elm_object_item_disabled_set()`  |
 | `text`     | `#string`                                | `elm_toolbar_item_append()`       |
@@ -1056,7 +1056,7 @@ Some properties are supported only in specific profiles. The following table lis
 **Table: Properties supported in specific profiles**
 
 | Component               | Attribute                  | Mobile  2.3/2.3.1 | Mobile 2.4 | Mobile 3.0/4.0 | Wearable square  2.3.1 | Wearable circle  2.3.1/2.3.2 | Wearable circle  3.0/4.0 |
-| ----------------------- | -------------------------- | ----------------- | ---------- | -------------- | ---------------------- | ---------------------------- | ------------------------ |
+|-----------------------|--------------------------|-----------------|----------|--------------|----------------------|----------------------------|------------------------|
 | Panel                   | id                         | Yes               | Yes        | Yes            | No                     | No                           | No                       |
 | Panel                   | visible                    | Yes               | Yes        | Yes            | No                     | No                           | No                       |
 | Panel                   | orient                     | Yes               | Yes        | Yes            | No                     | No                           | No                       |
@@ -1257,7 +1257,7 @@ The following attributes are used for the custom UI component.
 **Table: Custom UI component attributes**
 
 | Attribute        | Value                                    | Function                             |
-| ---------------- | ---------------------------------------- | ------------------------------------ |
+|----------------|----------------------------------------|------------------------------------|
 | `id`             | Automatically incrementing and editable. Duplicates are not allowed. | `edje_object_add()`                  |
 | `name`           | The identifier of the component          | -                                    |
 | `src` or `group` | `#string`                                | `edje_object_file_set()`             |
@@ -1270,4 +1270,3 @@ The following attributes are used for the custom UI component.
 ## Related information
 * Dependencies
   - Tizen Studio 1.0 and Higher
-

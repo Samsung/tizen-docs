@@ -15,7 +15,7 @@ For more information on the relationship between the elements, see the [element 
 **Expected children:**
 
 | Child element | Occurrences          |
-| ------------- | -------------------- |
+|-------------|--------------------|
 | `<operation>` | 1 or more (optional) |
 | `<uri>`       | 1 or more (optional)                     |
 | `<mime>`      | 1 or more (optional)                     |

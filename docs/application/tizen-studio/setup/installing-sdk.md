@@ -59,14 +59,14 @@ To install the Tizen Studio using the CLI installer:
 
    **Table: Install options**
    | Option             | Description                              |
-   | ------------------ | ---------------------------------------- |
+   |------------------|----------------------------------------|
    | `--show-license`   | Displays the Tizen Studio software license agreement.<br/>You must use this option alone. Do not use with other options. |
    | `--accept-license` | Accepts the license terms.               |
    | `--no-java-check`  | Skips the Java version check.            |
 
    **Table: Install command parameters**
    | Parameter        | Description                              |
-   | ---------------- | ---------------------------------------- |
+   |----------------|----------------------------------------|
    | `directory path` | Specifies the installation directory path.</br/>If you do not enter the path, the Tizen Studio is installed in the default directory (`/home/{user}/tizen-studio`). |
 
 3. If you agree to the software license and the license terms, enter **Y(yes)** for the conditions.
@@ -89,7 +89,7 @@ package-manager-cli install [--accept-license] [--no-java-check] [--proxy <value
 **Table: Install command parameters**
 
 | Parameter                   | Description                              |
-| --------------------------- | ---------------------------------------- |
+|---------------------------|----------------------------------------|
 | `--accept-license`          | Accepts the license terms.               |
 | `--no-java-check`           | Skips the Java version check.            |
 | `--proxy <value>`           | Proxy configuration value. Use one of the following values: **direct**, **auto**, or **ip:port**. |

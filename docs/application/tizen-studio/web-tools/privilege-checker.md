@@ -47,7 +47,7 @@ The check results are displayed in the **Problems** view and vertical ruler. To 
 **Table: Privilege check alarm example**
 
 | Alarm type                | Description                              | Message format                           | Required actions                         |
-| ------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+|-------------------------|----------------------------------------|----------------------------------------|----------------------------------------|
 | Undefined privilege alarm | The application uses a method whose privilege is not specified in the configuration file. | **The [tizen:Privilege name] privilege is required.** <br />For example (in a mobile Web application):<br />**[`http://tizen.org/privilege/application.launch`] privilege is required.** | Assign the privilege in the configuration file in the Tizen Studio. Privilege violation is a strong reason for the rejection of an application in the certification process. |
 
 > **Note**  

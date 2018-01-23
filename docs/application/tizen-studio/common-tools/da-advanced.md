@@ -107,7 +107,7 @@ You can trigger some major analysis functions with keyboard shortcuts.
 **Table: Keyboard shortcuts**
 
 | <td colspan=2>Command <td colspan=2> Shortcut        |
-| ----------- | --------------------------- | :-------------- |
+|-----------|---------------------------|:--------------|
 |             <td colspan=2>                             | Windows®        | macOS           |
 | File        <td colspan=2> New                          |  **Ctrl + N**    | **Command + N** |
 |             <td colspan=2>Load                          | **Ctrl + O**    | **Command + O** |

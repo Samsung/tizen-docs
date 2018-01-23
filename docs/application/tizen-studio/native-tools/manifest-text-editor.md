@@ -32,7 +32,7 @@ There are 2 different ways to edit the `tizen-manifest.xml` file:
 The Tizen native application manifest file consists of XML elements organized in a hierarchy. The following tree structure shows the relationship between the elements of the `tizen-manifest.xml` file.
 
 | `<manifest>` |                         |                         |                  |
-| ------------ | ----------------------- | ----------------------- | ---------------- |
+|------------|-----------------------|-----------------------|----------------|
 |              | `<author>`              |                         |                  |
 |              | `<description>`         |                         |                  |
 |              | `<profile>`             |                         |                  |
@@ -92,7 +92,7 @@ For more information on the relationship between the elements, see the [element 
 **Expected children (in the following order):**
 
 | Child element           | Occurrences          |
-| ----------------------- | -------------------- |
+|-----------------------|--------------------|
 | `<author>`              | 1 (optional)         |
 | `<description>`         | 1 or more (optional) |
 | `<profile>`             |                      |
@@ -243,7 +243,7 @@ For more information on the relationship between the elements, see the [element 
 **Expected children (in the following order):**
 
 | Child element           | Occurrences          |
-| ----------------------- | -------------------- |
+|-----------------------|--------------------|
 | `<label>`               | 1 or more (optional) |
 | `<icon>`                |                      |
 | `<app-control>`         |                      |
@@ -311,7 +311,7 @@ For more information on the relationship between the elements, see the [element 
 **Expected children (in the following order):**
 
 | Child element           | Occurrences          |
-| ----------------------- | -------------------- |
+|-----------------------|--------------------|
 | `<label>`               | 1 or more (optional) |
 | `<icon>`                |                      |
 | `<app-control>`         |                      |
@@ -387,7 +387,7 @@ For more information on the relationship between the elements, see the [element 
 **Expected children:**
 
 | Child element | Occurrences |
-| ------------- | ----------- |
+|-------------|-----------|
 | `<label>`     | 1 or more   |
 | `<icon>`      |             |
 
@@ -457,7 +457,7 @@ For more information on the relationship between the elements, see the [element 
 **Expected children:**
 
 | Child element    | Occurrences          |
-| ---------------- | -------------------- |
+|----------------|--------------------|
 | `<label>`        | 1 or more            |
 | `<icon>`         |                      |
 | `<support-size>` | 1                    |
@@ -566,7 +566,7 @@ This element contains the settings for the widget class. After adding this eleme
 **Expected children:**
 
 | Child element    | Occurrences |
-| ---------------- | ----------- |
+|----------------|-----------|
 | `<label>`        | 1 or more   |
 | `<icon>`         |             |
 | `<support-size>` | 1           |
@@ -602,7 +602,7 @@ For more information on the relationship between the elements, see the [element 
 **Expected children:**
 
 | Child element | Occurrences |
-| ------------- | ----------- |
+|-------------|-----------|
 | `<shortcut>`  | 1 or more   |
 
 **For example:**
@@ -624,7 +624,7 @@ This element contains the information that indicates the shortcut for the applic
 **Expected children:**
 
 | Child element | Occurrences |
-| ------------- | ----------- |
+|-------------|-----------|
 | `<icon>`      | 1 or more   |
 | `<label>`     |             |
 
@@ -662,7 +662,7 @@ For more information on the relationship between the elements, see the [element 
 **Expected children:**
 
 | Child element        | Occurrences |
-| -------------------- | ----------- |
+|--------------------|-----------|
 | `<account-provider>` | 1 or more   |
 
 **For example:**
@@ -680,7 +680,7 @@ This element contains specific service provider or user account protocol-related
 **Expected children:**
 
 | Child element  | Occurrences          |
-| -------------- | -------------------- |
+|--------------|--------------------|
 | `<icon>`       | 1 or more            |
 | `<label>`      |                      |
 | `<capability>` | 1 or more (optional) |
@@ -761,7 +761,7 @@ For more information on the relationship between the elements, see the [element 
 **Expected children:**
 
 | Child element             | Occurrences          |
-| ------------------------- | -------------------- |
+|-------------------------|--------------------|
 | [`privilege`](#privilege) | 1 or more (optional) |
 
 **For example:**

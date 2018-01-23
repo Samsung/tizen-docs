@@ -27,7 +27,7 @@ The `project_def.prop` file describes the project properties, such as project ty
 **Table: Project properties**
 
 | Property               | Value                                    |
-| ---------------------- | ---------------------------------------- |
+|----------------------|----------------------------------------|
 | `APPNAME`              | Application name, which must be given in lowercase letters. </br>For example: `APPNAME = test` |
 | `type`                 | Application type, which can be app, sharedLib, or staticLib.</br>For example: `type = app`</br>This is a **readonly** property; do not edit it. |
 | `profile`              | Profile with a version. </br>For example: `profile = mobile-2.3` |
@@ -55,7 +55,7 @@ The `build_def.prop` file describes some build configurations. You can run pre-b
 **Table: Build properties**
 
 | Property            | Description                              |
-| ------------------- | ---------------------------------------- |
+|-------------------|----------------------------------------|
 | `PREBUILD_COMMAND`  | Shell command executed before the project build. |
 | `PREBUILD_DESC`     | Description of `PREBUILD_COMMAND`.       |
 | `POSTBUILD_COMMAND` | Shell command executed after the project build. |
@@ -66,7 +66,7 @@ In addition, you can use some environment variables to describe the pre- and pos
 **Table: Environment variables**
 
 | Variable       | Description                              |
-| -------------- | ---------------------------------------- |
+|--------------|----------------------------------------|
 | `PROJ_PATH`    | Path of the project root directory       |
 | `BUILD_CONFIG` | Build configuration: `Debug` or `Release` |
 | `BUILD_ARCH`   | Architecture type: `x86` or `arm`        |

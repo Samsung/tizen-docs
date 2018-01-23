@@ -29,7 +29,7 @@ There are 2 screen configuration types:
   **Table: Common configuration**
 
   | Qualifier            | Default value        | Description                         |
-  | -------------------- | -------------------- | ----------------------------------- |
+  |--------------------|--------------------|-----------------------------------|
   | Screen resolution    | HD (High Definition) | Screen width and height: 720 x 1280 |
   | Screen density (DPI) | Medium Dots Per Inch | Range: 241~300                      |
   | Screen orientation   | Portrait             | -                                   |
@@ -53,7 +53,7 @@ You can also make a specific configuration for various Tizen devices.
 **Table: Device-specific configurations**
 
 | Screen resolution                  | Orientation         |
-| ---------------------------------- | ------------------- |
+|----------------------------------|-------------------|
 | Mobile HD (720x1280)               | Portrait, Landscape |
 | Mobile WVGA (480x800)              | Portrait, Landscape |
 | Wearable Square (320x320, 360x480) | N/A                 |
@@ -75,7 +75,7 @@ The following table shows the components for multiple screens.
 **Table: Components for multiple screens**
 
 | Category       | Component                          | Description                              |
-| -------------- | ---------------------------------- | ---------------------------------------- |
+|--------------|----------------------------------|----------------------------------------|
 | Tizen Studio   | Resource Manager                   | Provides the features to add, delete, or change the resources for the screen configuration and supports drag and drop for placing the UI layout.Paths of alternative resources used for multiple screens are written in the `res.xml` file, which is referenced at runtime. |
 |                | PO file editor                     | Supports string editing. You can add a localized string in the editor. |
 |                | Multiple UI layout                 | Supports the device-specific UI layout.  |
@@ -139,7 +139,7 @@ To use alternative resources, you must follow the naming configuration rules.
 **Table: Configuration rules for the alternative resources**
 
 | Qualifier | Description                              |
-| --------- | ---------------------------------------- |
+|---------|----------------------------------------|
 | Locale    | Target locale of the resource localization.Language region selected by the user at editing and runtime. |
 | DPI       | Screen density of the device.            |
 

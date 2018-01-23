@@ -29,7 +29,7 @@ The following table lists the supported features on the Dynamic Analyzer. Every 
 **Table: Available features**
 
 | Group           | Feature                                  | Description                              | Page tab where shown |
-| --------------- | ---------------------------------------- | ---------------------------------------- | -------------------- |
+|---------------|----------------------------------------|----------------------------------------|--------------------|
 | CPU             | ![CPU Usage](./media/dynamic_analyzer_cpu_usage.png)CPU Usage | Shows the total CPU usage made by target processes on a system and the CPU usage in percentages. | **Timeline**         |
 |                 | ![Core Usage](./media/dynamic_analyzer_core_usage.png)Core Usage | Shows the usage of each core on a device (or an emulator) in percentages. The number of series on the chart depends on the number of cores. |                      |
 |                 | ![Core Frequency](./media/dynamic_analyzer_core_frequency.png)Core Frequency | Shows the frequency of each core on a device in MHz. This feature is only available on devices, not on emulators. |                      |

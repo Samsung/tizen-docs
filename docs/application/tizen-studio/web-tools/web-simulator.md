@@ -127,7 +127,7 @@ The simulator is started with default parameters, including the ones described i
 **Table: Default parameters**
 
 | Parameters                  | Description                              |
-| --------------------------- | ---------------------------------------- |
+|---------------------------|----------------------------------------|
 | `--allow-access-from-files` | Allows the simulator JavaScript APIs to access files on the disk (such as `config.xml` and the application icon). |
 | `--disable-web-security`    | Allows the simulator to do cross-domain requests (such as access the map location on another server). |
 

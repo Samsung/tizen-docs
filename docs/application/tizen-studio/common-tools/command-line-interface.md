@@ -26,7 +26,7 @@ tizen cli-config [options]
 **Options:**
 
 | Option                 | Description                              |
-| ---------------------- | ---------------------------------------- |
+|----------------------|----------------------------------------|
 | `-g`, `--global`       | Specifies whether the operation must be done for a global scope (for all installed SDKs or for the current Tizen Studio only). |
 | `<key>=<value>`        | Sets a value for the CLI configuration key. |
 | `-l`, `--list`         | Displays the list of all CLI configuration keys and values. |
@@ -61,7 +61,7 @@ tizen list <option>
 **Options:**
 
 | Option           | Description                              |
-| ---------------- | ---------------------------------------- |
+|----------------|----------------------------------------|
 | `native-project` | Displays the list of project templates for Tizen native applications. |
 | `web-project`    | Displays the list of project templates for Tizen Web applications. |
 | `rootstrap`      | Displays the list of available rootstraps. The rootstrap is a set of build configurations, which consists of the profile, platform version, and target architecture. |
@@ -110,7 +110,7 @@ tizen create <sub-command> [options]
 **Sub-commands:**
 
 | Sub-command                              | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
+|---------------------------------------|----------------------------------------|
 | `native-project [options]` or `web-project [options]` | Create the Tizen native or Web project.Options are:`-p`, `--profile`: Specifies the profile name.`-t`, `--template`: Specifies the template name.`-n`, `--name`: Specifies the project name.`--`: Specifies the destination directory where the project is created. |
 
 **Examples:**
@@ -144,7 +144,7 @@ tizen <sub-command> [options]
 **Sub-commands:**
 
 | Sub-command              | Description                              |
-| ------------------------ | ---------------------------------------- |
+|------------------------|----------------------------------------|
 | `build-native [options]` | Build the Tizen native project.Options are:`-a`, `--arch`: Specifies the architecture type: `x86` (default) or `arm``-c`, `--compiler`: Specifies the compiler to build: `llvm` (default) or `gcc``-C`, `--configuration`: Specifies the build configuration: `Debug` (default) or `Release``-j`, `--jobs`: Specifies the number of parallel builds for the native project.`-r`, `--rootstrap`: Specifies the rootstrap name. The rootstrap contains information on the profile name, platform version, and the target architecture type.`--`: Specifies the project directory. |
 | `build-web [options]`    | Build the Tizen Web project.Options are:`-e`, `--exclude`: Specifies a list of exclude files by patterns. By default, the following resources are excluded: `.build/*`, `.build`, `.sign/*`, `.sign`, `webUnitTest/*`, `webUnitTest`, `.externalToolBuilders/*`, `.externalToolBuilders`, `.buildResult/*`, `.buildResult`, `.settings/*`, `.settings`, `.package/*`, `.package`, `.tproject`, `.project`, `.sdk_delta.info`, `.rds_delta`, `*.wgt`, `.tizen-ui-builder-tool.xml``-euf`, `--exclude-uifw`: Specifies whether to exclude the Tizen Web UI framework, and use the Tizen UI framework in the target. This option is only used for applications using the Tizen UI framework.`-out`, `--output`: Sets the output directory name. If you omit this option, the `.buildResult` directory is created under the project directory by default.`-opt`, `--optimize`: Optimizes the application size. The JavaScript and CSS files are minimized and the Tizen Web UI framework source is excluded. The related link address is modified to a platform-dependent location instead.`--`: Specifies the project directory. |
 
@@ -197,7 +197,7 @@ tizen clean [-- <project directory>]
 **Options:**
 
 | Option                   | Description                              |
-| ------------------------ | ---------------------------------------- |
+|------------------------|----------------------------------------|
 | `-- <project directory>` | Specifies the project directory to clean. |
 
 **Examples:**
@@ -228,7 +228,7 @@ tizen certificate [options]
 
 **Options:**
 | Option                                | Description                              |
-| ------------------------------------- | ---------------------------------------- |
+|-------------------------------------|----------------------------------------|
 | `-a`, `--alias <alias name>`          | Specifies an alias name of the certificate. |
 | `-p`, `--password <password>`         | Specifies the password of the certificate. |
 | `-c`, `--country <country code>`      | Specifies the user's country code, which consists of 2 letters. |
@@ -297,7 +297,7 @@ tizen security-profiles <sub-command> [options]
 **Sub-commands:**
 
 | Sub-command        | Description                              |
-| ------------------ | ---------------------------------------- |
+|------------------|----------------------------------------|
 | `add [options]`    | Adds the specified security profile, which can contain several certificates.Options are:`-n`, `--name`: Specifies the name of the security profile to add.`-a`, `--path`: Specifies the directory path where the author certificate file is located. The format of the certificate is PKCS#12, and the file extension is `.p12`.`-p`, `--password`: Specifies the password used to access the author certificate.`-c`, `--ca`: Specifies the directory path where the author CA certificate file is located. The file extension of the CA certificate is `.cer`.`-r`, `--rootca`: Specifies the directory path where the author root CA certificate file is located. The file extension of the root CA certificate is `.cer`.`-d`, `--dist`: Specifies the directory path where the distributor certificate file is located. If you skip this option, the default distributor certificate file embedded in the Tizen Studio is used.`-dp`, `--dist-password`: Specifies the password of the distributor certificate.`-dc`, `--dist-ca`: Specifies the directory path where the distributor CA certificate file is located.`-dr`, `--dist-rootca`: Specifies the directory path where the distributor root CA certificate file is located.`--`: Specifies the directory path where the `profiles.xml` file is located. If you skip this option, the value of the `default.profiles.path` key in the CLI configuration is used to find the `profiles.xml` file, which consists of new security profiles that are generated in the `<TIZEN_STUDIO_DATA>/keystore/` directory. The directory path is added to the CLI configuration. |
 | `list [options]`   | Displays security profiles. If you specify the name of the security profile, details about the specified profile are displayed.Options are:`-n`, `--name`: Specifies the name of the security profile to list. If you skip this option, a set of the security profile names in the `profiles.xml` file is displayed.`--`: Specifies the directory path where the `profiles.xml` file is located. |
 | `remove [options]` | Removes the specified security profile.Options are:`-n`, `--name`: Specifies the name of the security profile to remove.`--`: Specifies the directory path where the `profiles.xml` file is located. |
@@ -429,7 +429,7 @@ tizen package [options]
 **Options:**
 
 | Option                            | Description                              |
-| --------------------------------- | ---------------------------------------- |
+|---------------------------------|----------------------------------------|
 | `-t`, `--type {tpk|wgt}`          | Specifies the package type. You can use `tpk` for a Tizen native package or `wgt` for a Tizen Web package. |
 | `-s`, `--sign <security profile>` | Specifies the security profile name to use for signing. |
 | `-S`, `--strip {on|off}`          | Determines whether to strip the native binary. The default value is off. This option only works when the native binary is based on the `arm` architecture and `Release` build configuration. This option is only for the native package. |
@@ -523,7 +523,7 @@ tizen build-app [options] [args specified with JSON-like format]
 **Options:**
 
 | Option                                  | Description                              |
-| --------------------------------------- | ---------------------------------------- |
+|---------------------------------------|----------------------------------------|
 | `-b`, `--build <args>`                  | Specifies the build description.         |
 | `-d`, `--define <macro info>`           | Specifies the macro.                     |
 | `-h`, `--help`                          | Displays detailed explanation for a given command. |
@@ -538,7 +538,7 @@ tizen build-app [options] [args specified with JSON-like format]
 **Arguments:**
 
 | Type      | JSON-like expression                     |
-| --------- | ---------------------------------------- |
+|---------|----------------------------------------|
 | `build`   | `build: [    {        name: <build alias>,        targets: [<project directories in workspace separated by commas>],        methods: [<build methods separated by commas>],        output: <build output path>,        multitask: <cout of processes>    }]` |
 | `method`  | `method: [    {        name: <method name>,        compiler: <compiler name, such as GCC, LLVM>,        rootstraps: [            {name: <ID of a dependent project>, platform: <platform name>, arch: <architecture>}        ],        predefines: [<predefined build macros separated by commas>],        configs: [<build config>]    }]` |
 | `package` | `package: [    {        name: <package name>,        type: <package type, such as .tpk, .wgt>,        targets: [< build file or project directories in workspace separated by commas>],        output: <package file path>    }]` |
@@ -576,7 +576,7 @@ tizen install [options]
 **Options:**
 
 | Option                             | Description                              |
-| ---------------------------------- | ---------------------------------------- |
+|---------------------------------|----------------------------------------|
 | `-n`, `--name <package file name>` | Specifies the Tizen package file name.   |
 | `-t`, `--target <target name>`     | Specifies the target name to install the package. |
 | `-s`, `--serial <target serial>`   | Specifies the serial to install the package. |
@@ -599,7 +599,7 @@ tizen run [options]
 **Options:**
 
 | Option                           | Description                              |
-| -------------------------------- | ---------------------------------------- |
+|--------------------------------|----------------------------------------|
 | `-p`, `--pkgid <package id>`     | Specifies the Tizen package ID installed on the target. |
 | `-t`, `--target <target name>`   | Specifies the target name to run the package. |
 | `-s`, `--serial <target serial>` | Specifies the serial to run the package. |
@@ -621,7 +621,7 @@ tizen uninstall [options]
 **Options:**
 
 | Option                           | Description                              |
-| -------------------------------- | ---------------------------------------- |
+|--------------------------------|----------------------------------------|
 | `-p`, `--pkgid <package id>`     | Specifies the Tizen package ID installed on the target. |
 | `-t`, `--target <target name>`   | Specifies the target name to uninstall the package. |
 | `-s`, `--serial <target serial>` | Specifies the serial to uninstall the package. |

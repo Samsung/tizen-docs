@@ -154,7 +154,7 @@ Using the console functions provided to JavaScript code, the view shows the log 
 **Table: Supported JavaScript log methods**
 
 | Method          | Example                           |
-| --------------- | --------------------------------- |
+|---------------|---------------------------------|
 | `console.log`   | `console.log("console.log");`     |
 | `console.info`  | `console.info("console.info");`   |
 | `console.warn`  | `console.warn("console.warn");`   |

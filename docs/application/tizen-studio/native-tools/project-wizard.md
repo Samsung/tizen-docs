@@ -93,7 +93,7 @@ The options you can set are listed in the following table.
 **Table: Project properties**
 
 | Property                 | Description                              |
-| ------------------------ | ---------------------------------------- |
+|------------------------|----------------------------------------|
 | **Project name**         | A name for the project to be created.    |
 | **Package ID**           | The ID for the package of the project.   |
 | **Use default location** | If you check this option, the project is created in the `$<workspace_location>/<project_name>` directory. |

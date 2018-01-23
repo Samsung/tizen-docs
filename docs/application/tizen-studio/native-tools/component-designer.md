@@ -84,7 +84,7 @@ To manage primitives:
   **Table: Part types**
 
   | Icon                                     | Type      | Icon                                     | Type    |
-  | ---------------------------------------- | --------- | ---------------------------------------- | ------- |
+  |----------------------------------------|---------|----------------------------------------|-------|
   | ![Rectangle](./media/comp_des_icon_rectangle.png) | Rectangle | ![Text](./media/comp_des_icon_text.png) | Text    |
   | ![Image](./media/comp_des_icon_image.png) | Image     | ![Swallow](./media/comp_des_icon_swallow.png) | Swallow |
   | ![Textblock](./media/comp_des_icon_textblock.png) | Textblock | ![Group](./media/comp_des_icon_group.png) | Group   |
@@ -371,7 +371,7 @@ For any kind of content (UI component, image, or rectangle), you can set up the 
 **Table: Demo block properties**
 
 | Content type | Properties                               |
-| ------------ | ---------------------------------------- |
+|------------|----------------------------------------|
 | Rectangle    | ![Rectangle](./media/comp_des_demo_block_1.png) |
 | Image        | ![Image](./media/comp_des_demo_block_2.png) |
 | UI component | ![UI component](./media/comp_des_demo_block_3.png) |
@@ -430,7 +430,7 @@ The following table lists the shortcut keys available for the Component Designer
 **Table: Shortcuts**
 
 | Key                                      | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
+|----------------------------------------|----------------------------------------|
 | Global                                   |                                          |
 | **F1**                                   | Show the shortcut list                   |
 | **F2**                                   | Normal mode                              |

@@ -39,7 +39,7 @@ To execute operations, such as copying, moving, creating new resources, and comp
 **Table: Project Explorer toolbar**
 
 | Icon                                     | Name                 | Description                              |
-| ---------------------------------------- | -------------------- | ---------------------------------------- |
+|----------------------------------------|--------------------|----------------------------------------|
 | ![Collapse all](./media/proj_explorer_collapse.png) | **Collapse all**     | Collapses the tree expansion state of all resources in the view. |
 | ![Link with editor](./media/proj_explorer_link.png) | **Link with editor** | Toggles whether the view selection is linked to the active editor. When this option is selected, changing the active editor automatically updates the selection to the resource being edited. |
 | ![Menu](./media/proj_explorer_menu.png) | **Menu**             | Click the icon to open a menu of items specific to the view: <br />**Project Presentation**	 <br />Display projects in a flat or hierarchical form.<br />**Top Level Elements**	 <br />Show working sets or projects as top-level elements. <br />Choosing working sets allows easy grouping of projects in large workspaces.<br />**Folder Presentation**	 <br />Display folders in a flat or grouped form.<br />**Select Working Set**	 <br />Open a dialog to select a working set for the view.<br />**Deselect Working Set**	 <br />Deselect the current working set.<br />**Edit Active Working Set**	 <br />Open a dialog to change the current working set.<br />**Customize View**	<br /> Allow customization of view filters and content modules. The filters allow you to suppress the display of certain types of files while the content modules allow entirely new types of content to be shown in the view.<br />**Link Editor**	<br /> See the toolbar item description above. |
@@ -49,7 +49,7 @@ To execute operations, such as copying, moving, creating new resources, and comp
 **Table: Project Explorer context menu**
 
 | Menu                         | Description                              |
-| ---------------------------- | ---------------------------------------- |
+|----------------------------|----------------------------------------|
 | **New**                      | Allows you to create a new resource in the workbench. Select the type of resource to create from the submenu. |
 | **Copy**                     | Copies the selected resource to the clipboard. |
 | **Paste**                    | Pastes resources on the clipboard into the selected project or folder. If a resource is selected, the resources on the clipboard are pasted as siblings of the selected resource. |
