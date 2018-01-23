@@ -87,7 +87,7 @@ The following table lists the supported `ColorVisualProperty` properties. The vi
 **Table: ColorVisualProperty properties**
 
 | Property   | Type    | Required | Description         |
-| ---------- | ------- | -------- | ------------------- |
+|----------|-------|--------|-------------------|
 | `MixColor` | VECTOR4 | Yes      | The color required. |
 
 **Usage:**
@@ -124,7 +124,7 @@ The following table lists the supported `GradientVisualProperty` properties. The
 **Table: GradientVisualProperty properties**
 
 | Property        | Type              | Required        | Description                              |
-| --------------- | ----------------- | --------------- | ---------------------------------------- |
+|---------------|-----------------|---------------|----------------------------------------|
 | `StartPosition` | VECTOR2           | For linear only | The start position of the linear gradient. |
 | `EndPosition`   | VECTOR2           | For linear only | The end position of the linear gradient. |
 | `Center`        | VECTOR2           | For radial only | The center point of the gradient.        |
@@ -143,7 +143,7 @@ The following table lists the supported `GradientVisualProperty` properties. The
     **Table: SpreadMethod values**
 
     | Enumeration value | Description                              |
-    | ----------------- | ---------------------------------------- |
+    |-----------------|----------------------------------------|
     | `Pad`             | Default. Uses the terminal colors of the gradient to fill the remainder of the quad. |
     | `Reflect`         | Reflects the gradient pattern start-to-end, end-to-start, start-to-end, and so on, until the quad is filled. |
     | `Repeat`          | Repeats the gradient pattern start-to-end, start-to-end, start-to-end, and so on, until the quad is filled. |
@@ -213,7 +213,7 @@ The visual map for a normal image is `ImageVisual`.
 **Table: ImageVisualProperty properties**
 
 | Property        | Type              | Required | Description                              |
-| --------------- | ----------------- | -------- | ---------------------------------------- |
+|---------------|-----------------|--------|----------------------------------------|
 | `URL`           | STRING            | Yes      | The URL of the image.                    |
 | `FittingMode`   | INTEGER or STRING | No       | Fitting options, used when resizing images to fit the specified dimensions. |
 | `SamplingMode`  | INTEGER or STRING | No       | Filtering options, used when sampling original pixels to resize images. |
@@ -298,7 +298,7 @@ The following table lists the supported `BorderVisualProperty` properties. The v
 **Table: BorderVisualProperty properties**
 
 | Property       | Type    | Required | Description                              |
-| -------------- | ------- | -------- | ---------------------------------------- |
+|--------------|-------|--------|----------------------------------------|
 | `Color`        | VECTOR4 | Yes      | The border color.                        |
 | `Size`         | FLOAT   | Yes      | The border width, in pixels.             |
 | `AntiAliasing` | BOOLEAN | No       | Whether border anti-aliasing is required. |
@@ -339,7 +339,7 @@ The following table lists the supported properties. The visual type is `Mesh` an
 **Table: MeshVisualProperty properties**
 
 | Property         | Type              | Required          | Description                              |
-| ---------------- | ----------------- | ----------------- | ---------------------------------------- |
+|----------------|-----------------|-----------------|----------------------------------------|
 | `ObjectURL`      | STRING            | Yes               | The location of the `.obj` file.         |
 | `MaterialURL`    | STRING            | No                | The location of the `.mtl` file. Leave blank for a textureless object. |
 | `TexturesPath`   | STRING            | If using material | The path to the directory the textures (including gloss and normal) are stored in. |
@@ -351,7 +351,7 @@ The following table lists the supported properties. The visual type is `Mesh` an
 **Table: Shading mode values**
 
 | Enumeration value                      | Description                              |
-| -------------------------------------- | ---------------------------------------- |
+|--------------------------------------|----------------------------------------|
 | `TexturelessWithDiffuseLighting`       | Simplest. One color that is lit by ambient and diffuse lighting. |
 | `TexturedWithSpecularLighting`         | Uses only the visual image textures provided with specular lighting in addition to ambient and diffuse lighting. |
 | `TexturedWithDetailedSpecularLighting` | Uses all textures provided including a gloss, normal, and texture map along with specular, ambient, and diffuse lighting. |
@@ -392,7 +392,7 @@ The following table lists the supported properties. The visual type is `Primitiv
 **Table: PrimitiveVisualProperty properties**
 
 | Property            | Type              | Description                              |
-| ------------------- | ----------------- | ---------------------------------------- |
+|-------------------|-----------------|----------------------------------------|
 | `Shape`             | INTEGER or STRING | The specific shape to render.            |
 | `MixColor`          | VECTOR4           | The color of the shape.                  |
 | `Slices`            | INTEGER           | The number of slices as you go around the shape. |
@@ -411,7 +411,7 @@ The following table lists the supported properties. The visual type is `Primitiv
     **Table: Shape values**
 
     | Enumeration value | Description                              |
-    | ----------------- | ---------------------------------------- |
+    |-----------------|----------------------------------------|
     | `Sphere`          | Default.                                 |
     | `ConicalFrustrum` | The area bound between 2 circles (basically, a cone with the tip removed). |
     | `Cone`            | Equivalent to a conical frustrum with a top radius of zero. |
@@ -461,7 +461,7 @@ public int Shape
 - **Conics:**
 
     | Frustrum                                | Cone                    | Cylinder                        |
-    | --------------------------------------- | ----------------------- | ------------------------------- |
+    |---------------------------------------|-----------------------|-------------------------------|
     | ![Frustrum](media/conical-frustrum.png) | ![Cone](media/cone.png) | ![Cylinder](media/cylinder.png) |
 
 - **Bevel:**
@@ -469,7 +469,7 @@ public int Shape
     Bevel percentage ranges from 0.0 to 1.0. It affects the ratio of the outer face widths to the width of the overall cube.
 
     | 0.0 (cube)                               | 0.3                                      |
-    | ---------------------------------------- | ---------------------------------------- |
+    |----------------------------------------|----------------------------------------|
     | ![Cube](media/cube.png)                  | ![Low bevel](media/bevelled-cube-low.png) |
     | ![Cube](media/cube.png)                 | ![Low bevel](media/bevelled-cube-low.png) |
     | ![High bevel ](media/bevelled-cube-high.png) | ![Octahedron](media/octahedron.png)      |
@@ -509,7 +509,7 @@ The following table lists the supported properties. The visual type is `Text` an
 **Table: TextVisualProperty properties**
 
 | Property              | Type    | Required | Description                              |
-| --------------------- | ------- | -------- | ---------------------------------------- |
+|---------------------|-------|--------|----------------------------------------|
 | `Text`                | STRING  | Yes      | The text to display in UTF-8 format.     |
 | `FontFamily`          | STRING  | No       | The requested font family to use.        |
 | `FontStyle`           | MAP     | No       | The requested font style to use.         |
@@ -549,7 +549,7 @@ The [VisualMap](#visualmap) class contains properties that control the transform
     The `VisualTransformPropertyType` enumeration specifies all the transform property types.
 
     | Property       | Type              | Required | Description                              |
-    | -------------- | ----------------- | -------- | ---------------------------------------- |
+    |--------------|-----------------|--------|----------------------------------------|
     | `Offset`       | VECTOR2           | No       | The visual offset.                       |
     | `Size`         | VECTOR2           | No       | The visual size.                         |
     | `OffsetPolicy` | VECTOR4           | No       | Whether the offset components are relative or absolute. |
@@ -562,7 +562,7 @@ The [VisualMap](#visualmap) class contains properties that control the transform
     The `VisualTransformPolicyType` enumeration values specify how to calculate the transform's offset or size.
 
     | Value      | Description                              |
-    | ---------- | ---------------------------------------- |
+    |----------|----------------------------------------|
     | `Relative` | Default. The size or offset value represents a ratio of the control's size. |
     | `Absolute` | The size or offset value represents world units (pixels). |
 
@@ -573,7 +573,7 @@ The [VisualMap](#visualmap) class contains properties that control the transform
     The `AlignType` enumeration values specify the visual alignment.
 
     | Value          | Description                              |
-    | -------------- | ---------------------------------------- |
+    |--------------|----------------------------------------|
     | `TopBegin`     | Aligns to the top of the vertical axis and the beginning of the horizontal axis (the left or right edge in left-to-right or right-to-left layouts, respectively). |
     | `TopCenter`    | Aligns to the top of the vertical axis and the center of the horizontal axis. |
     | `TopEnd`       | Aligns to the top of the vertical axis and the end of the horizontal axis (the right or left edge in left-to-right or right-to-left layouts, respectively). |

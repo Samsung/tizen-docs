@@ -648,7 +648,7 @@ The following tables list the available media file information.
 **Table: General information**
 
 | Metadata name    | Description                              |
-| ---------------- | ---------------------------------------- |
+|----------------|----------------------------------------|
 | `Media ID`       | ID of the media content                  |
 | `File path`      | Path of the media content                |
 | `Display name`   | Display name of the media content        |
@@ -671,7 +671,7 @@ The following tables list the available media file information.
 **Table: Audio metadata (only for audio files)**
 
 | Metadata name    | Description                              |
-| ---------------- | ---------------------------------------- |
+|----------------|----------------------------------------|
 | `Album`          | Album information for the audio content  |
 | `Artist`         | Artist of the audio content              |
 | `Album Artist`   | Album artist of the audio contentThe artist and album artist can be the same. |
@@ -690,7 +690,7 @@ The following tables list the available media file information.
 **Table: Image metadata (only for image files)**
 
 | Metadata name   | Description                              |
-| --------------- | ---------------------------------------- |
+|---------------|----------------------------------------|
 | `Width`         | Width of the image                       |
 | `Height`        | Height of the image                      |
 | `Exposure time` | Exposure time of the image               |
@@ -703,7 +703,7 @@ The following tables list the available media file information.
 **Table: Video metadata (only for video files)**
 
 | Metadata name   | Description                             |
-| --------------- | --------------------------------------- |
+|---------------|---------------------------------------|
 | `Album`         | Album information for the video content |
 | `Artist`        | Artist of the video content             |
 | `Album artist`  | Album artist of the video content       |

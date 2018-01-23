@@ -250,7 +250,7 @@ resolving the application control:
     **Table: Scenario when only the operation is provided**
 
     | Filter ID | Operation                                | URI        | MIME   | Result |
-    | --------- | ---------------------------------------- | ---------- | ------ | ------ |
+    |---------|----------------------------------------|----------|------|------|
     | 1         | `http://tizen.org/appcontrol/operation/view` | `NULL`     | `NULL` | Pass   |
     | 2         | `**http://tizen.org/appcontrol/operation/default**` | `NULL`     | `NULL` | Fail   |
     | 3         | `http://tizen.org/appcontrol/operation/view` | `**file**` | `NULL` | Fail   |
@@ -266,7 +266,7 @@ resolving the application control:
     **Table: Scenario when the operation and URI are provided**
 
     | Filter ID | Operation                                | URI                                    | MIME            | Result |
-    | --------- | ---------------------------------------- | -------------------------------------- | --------------- | ------ |
+    |---------|----------------------------------------|--------------------------------------|---------------|------|
     | 1         | `http://tizen.org/appcontrol/operation/view` | `**NULL**`                             | `NULL`          | Fail   |
     | 2         | `http://tizen.org/appcontrol/operation/view` | `file:///usr/share/icons/calendar.png` | `*/*`           | Pass   |
     | 3         | `http://tizen.org/appcontrol/operation/view` | `file:///*`                            | `*/*`           | Pass   |
@@ -286,7 +286,7 @@ resolving the application control:
     **Table: Scenario when the operation and MIME type are provided**
 
     | Filter ID | Operation                                | URI                                    | MIME            | Result |
-    | --------- | ---------------------------------------- | -------------------------------------- | --------------- | ------ |
+    |---------|----------------------------------------|--------------------------------------|---------------|------|
     | 1         | `http://tizen.org/appcontrol/operation/view` | `NULL`                                 | `image/png`     | Pass   |
     | 2         | `http://tizen.org/appcontrol/operation/view` | `NULL`                                 | `image/*`       | Pass   |
     | 3         | `http://tizen.org/appcontrol/operation/view` | `NULL`                                 | `*/*`           | Pass   |
@@ -306,7 +306,7 @@ resolving the application control:
     **Table: Scenario when the operation, URI, and MIME type are provided**
 
     | Filter ID | Operation                                | URI                                  | MIME        | Result |
-    | --------- | ---------------------------------------- | ------------------------------------ | ----------- | ------ |
+    |---------|----------------------------------------|------------------------------------|-----------|------|
     | 1         | `http://tizen.org/appcontrol/operation/view` | `http://www.tizen.org/favorites.png` | `image/png` | Pass   |
     | 2         | `http://tizen.org/appcontrol/operation/view` | `http://www.tizen.org/favorites.png` | `**NULL**`  | Fail   |
     | 3         | `http://tizen.org/appcontrol/operation/view` | `http://www.tizen.org/*`             | `image/png` | Pass   |

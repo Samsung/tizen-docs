@@ -7,7 +7,7 @@ An `ImageView` is a NUI control that displays an image. The following figure sho
 ![ImageView example](media/ImageView.png)
 
 <a name="usage"></a>
-## Creating an ImageView 
+## Creating an ImageView
 
 To create an `ImageView`:
 
@@ -36,7 +36,7 @@ To create an `ImageView`:
 The following table defines the `ImageView` control properties.
 
 | Property             | Type        | Description                              |
-| -------------------- | ----------- | ---------------------------------------- |
+|--------------------|-----------|----------------------------------------|
 | `ResourceUrl`        | `string`    | Path to image file.                      |
 | `ImageMap`           | `Map`       | Map of properties associated with a given image. |
 | `PreMultipliedAlpha` | `bool`      | Opacity-adjusted image.<br>  **Note**   If `PreMultipliedAlpha` equals `true`, the RGB components represent the color of the object or pixel adjusted for its opacity by multiplication. If `false`, the opacity is disregarded. |

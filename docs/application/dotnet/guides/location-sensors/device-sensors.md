@@ -15,7 +15,7 @@ A device can have various physical and virtual sensors. The following table list
 **Table: Supported sensor types**
 
 | Supported sensor types                   |                                          |                                       |
-| ---------------------------------------- | ---------------------------------------- | ------------------------------------- |
+|----------------------------------------|----------------------------------------|-------------------------------------|
 | [Accelerometer](#accelerometer)          | [Heart Rate Monitor Sensor](#hrm)        | [Proximity Sensor](#proximity)        |
 | [Geomagnetic Rotation Vector Sensor](#mag_rotation) | [Humidity Sensor](#humidity)             | [Rotation Vector Sensor](#rotation)   |
 | [Gravity Sensor](#gravity)               | [Light Sensor](#light)                   | [Sleep Monitor](#sleep_monitor)       |
@@ -162,7 +162,7 @@ The following table lists the measurement data that the accelerometer provides.
 **Table: Measurement data detected by the accelerometer**
 
 | Measurement | Type                 | Range                               | Unit         |
-| ----------- | -------------------- | ----------------------------------- | ------------ |
+|-----------|--------------------|-----------------------------------|------------|
 | TimeSpan   | `TimeSpan` | -                                   | Microseconds |
 | X           | `float`              | Min. value = -19.6<br>Max. value = 19.6 | m/s<sup>2</sup>         |
 | Y           | `float`              | Min. value = -19.6<br>Max. value = 19.6 | m/s<sup>2</sup>         |
@@ -173,7 +173,7 @@ The following table provides information about the accelerometer output for a de
 **Table: Accelerometer output for a device at rest**
 
 | Position       | 1                                        | 2                                        | 3                                        | 4                                        | 5                                        | 6                                        |
-| -------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+|--------------|----------------------------------------|----------------------------------------|----------------------------------------|----------------------------------------|----------------------------------------|----------------------------------------|
 | Diagram        | ![Accelerometer output](./media/uix_acceleration_sensor_output_up_top.png) | ![Accelerometer output](./media/uix_acceleration_sensor_output_up_left.png) | ![Accelerometer output](./media/uix_acceleration_sensor_output_up_down.png) | ![Accelerometer output](./media/uix_acceleration_sensor_output_up_right.png) | ![Accelerometer output](./media/uix_acceleration_sensor_output_top_bottom.png) | ![Accelerometer output](./media/uix_acceleration_sensor_output_bottom_top.png) |
 | X              | 0g                                       | 1g                                       | 0g                                       | -1g                                      | 0g                                       | 0g                                       |
 | Y              | 1g                                       | 0g                                       | -1g                                      | 0g                                       | 0g                                       | 0g                                       |
@@ -193,7 +193,7 @@ The following table lists the measurement data that the geomagnetic rotation vec
 **Table: Measurement data detected by the geomagnetic rotation vector sensor**
 
 | Measurement | Type                     | Range                         | Unit         |
-| ----------- | ------------------------ | ----------------------------- | ------------ |
+|-----------|------------------------|-----------------------------|------------|
 | TimeSpan   | `TimeSpan`     | -                             | Microseconds |
 | Accuracy    | `SensorDataAccuracy` | -                             | int          |
 | X           | `float`                  | Min. value = -1<br>Max. value = 1 | -            |
@@ -217,7 +217,7 @@ The following table lists the measurement data that the gravity sensor provides.
 **Table: Measurement data detected by the gravity sensor**
 
 | Measurement | Type                 | Range                             | Unit         |
-| ----------- | -------------------- | --------------------------------- | ------------ |
+|-----------|--------------------|---------------------------------|------------|
 | TimeSpan   | `TimeSpan` | -                                 | Microseconds |
 | X           | `float`              | Min. value = -9.8<br>Max. value = 9.8 | m/s<sup>2</sup>         |
 | Y           | `float`              | Min. value = -9.8<br>Max. value = 9.8 | m/s<sup>2</sup>         |
@@ -237,7 +237,7 @@ The following table lists the measurement data that the gyroscope provides.
 **Table: Measurement data detected by the gyroscope**
 
 | Measurement | Type                 | Range                                 | Unit            |
-| ----------- | -------------------- | ------------------------------------- | --------------- |
+|-----------|--------------------|-------------------------------------|---------------|
 | TimeSpan   | `TimeSpan` | -                                     | Microseconds    |
 | X           | `float`              | Min. value = -573.0<br>Max. value = 573.0 | Degrees/s (&deg;/s) |
 | Y           | `float`              | Min. value = -573.0<br>Max. value = 573.0 | Degrees/s (&deg;/s) |
@@ -254,7 +254,7 @@ The following table lists the measurement data that the gyroscope rotation vecto
 **Table: Measurement data detected by the gyroscope rotation vector sensor**
 
 | Measurement | Type                     | Range                         | Unit         |
-| ----------- | ------------------------ | ----------------------------- | ------------ |
+|-----------|------------------------|-----------------------------|------------|
 | TimeSpan   | `TimeSpan`     | -                             | Microseconds |
 | Accuracy    | `SensorDataAccuracy` | -                             | int          |
 | X           | `float`                  | Min. value = -1<br>Max. value = 1 | -            |
@@ -272,7 +272,7 @@ The following table lists the measurement data that the HRM sensor provides.
 **Table: Measurement data detected by the HRM sensor**
 
 | Measurement | Type                 | Range                          | Unit         |
-| ----------- | -------------------- | ------------------------------ | ------------ |
+|-----------|--------------------|------------------------------|------------|
 | TimeSpan   | `TimeSpan` | -                              | Microseconds |
 | HeartRate   | `int`                | Min. value = 0<br>Max. value = 240 | -            |
 
@@ -287,7 +287,7 @@ The following table lists the measurement data that the humidity sensor provides
 **Table: Measurement data detected by the humidity sensor**
 
 | Measurement | Type                 | Range | Unit         |
-| ----------- | -------------------- | ----- | ------------ |
+|-----------|--------------------|-----|------------|
 | TimeSpan   | `TimeSpan` | -     | Microseconds |
 | Humidity    | `float`              | 100   | %            |
 
@@ -304,7 +304,7 @@ The following table lists the measurement data that the light sensor provides.
 **Table: Measurement data detected by the light sensor**
 
 | Measurement | Type                 | Range                            | Unit         |
-| ----------- | -------------------- | -------------------------------- | ------------ |
+|-----------|--------------------|--------------------------------|------------|
 | TimeSpan   | `TimeSpan` | -                                | Microseconds |
 | Level       | `float`              | Min. value = 0<br>Max. value = 45875 | Lux          |
 
@@ -327,7 +327,7 @@ The following table lists the measurement data that the linear acceleration sens
 **Table: Measurement data detected by the linear acceleration sensor**
 
 | Measurement | Type                 | Range                               | Unit         |
-| ----------- | -------------------- | ----------------------------------- | ------------ |
+|-----------|--------------------|-----------------------------------|------------|
 | TimeSpan   | `TimeSpan` | -                                   | Microseconds |
 | X           | `float`              | Min. value = -19.6<br>Max. value = 19.6 | m/s<sup>2</sup>         |
 | Y           | `float`              | Min. value = -19.6<br>Max. value = 19.6 | m/s<sup>2</sup>         |
@@ -350,7 +350,7 @@ The following table lists the measurement data that the magnetic sensor provides
 **Table: Measurement data detected by the magnetic sensor**
 
 | Measurement | Type                 | Unit             |
-| ----------- | -------------------- | ---------------- |
+|-----------|--------------------|----------------|
 | TimeSpan   | `TimeSpan` | Microseconds     |
 | X           | `float`              | µT (microteslas) |
 | Y           | `float`              | µT (microteslas) |
@@ -376,7 +376,7 @@ The following table lists the measurement data that the orientation sensor provi
 **Table: Measurement data detected by the orientation sensor**
 
 | Measurement | Type                 | Range                             | Unit         |
-| ----------- | -------------------- | --------------------------------- | ------------ |
+|-----------|--------------------|---------------------------------|------------|
 | TimeSpan   | `TimeSpan` | -                                 | Microseconds |
 | Azimuth     | `float`              | Min. value = 0<br>Max. value = 360    | Degrees (&deg;)  |
 | Pitch       | `float`              | Min. value = -180<br>Max. value = 180 | Degrees (&deg;)  |
@@ -401,7 +401,7 @@ The following table lists the measurement data that the pedometer provides.
 **Table: Measurement data detected by the pedometer**
 
 | Measurement           | Range                          | Unit         |
-| --------------------- | ------------------------------ | ------------ |
+|---------------------|------------------------------|------------|
 | TimeSpan             | -                              | Microseconds |
 | StepCount             | Min. value = 0<br>Max. value = 2<sup>24</sup> | Steps        |
 | WalkStepCount         | Min. value = 0<br>Max. value = 2<sup>24</sup> | Steps        |
@@ -425,7 +425,7 @@ The following table lists the measurement data that the pressure sensor provides
 **Table: Measurement data detected by the pressure sensor**
 
 | Measurement | Type                 | Range                             | Unit         |
-| ----------- | -------------------- | --------------------------------- | ------------ |
+|-----------|--------------------|---------------------------------|------------|
 | TimeSpan   | `TimeSpan` | -                                 | Microseconds |
 | Pressure    | `float`              | Min. value = 260<br>Max. value = 1260 | hPa          |
 
@@ -442,7 +442,7 @@ The following table lists the measurement data that the proximity sensor provide
 **Table: Measurement data detected by the proximity sensor**
 
 | Measurement | Type                  | Range | Unit         |
-| ----------- | --------------------- | ----- | ------------ |
+|-----------|---------------------|-----|------------|
 | TimeSpan   | `TimeSpan`  | -     | Microseconds |
 | Proximity   | `ProxmitySensorState` | -     | -            |
 
@@ -458,7 +458,7 @@ The following table lists the measurement data that the rotation vector sensor p
 **Table: Measurement data detected by the rotation vector**
 
 | Measurement | Type                     | Range                         | Unit         |
-| ----------- | ------------------------ | ----------------------------- | ------------ |
+|-----------|------------------------|-----------------------------|------------|
 | TimeSpan   | `TimeSpan`     | -                             | Microseconds |
 | Accuracy    | `SensorDataAccuracy` | -                             | int          |
 | X           | `float`                  | Min. value = -1<br>Max. value = 1 | -            |
@@ -477,7 +477,7 @@ The following table lists the measurement data that the sleep monitor provides.
 **Table: Measurement data detected by the sleep monitor**
 
 | Measurement | Unit         |
-| ----------- | ------------ |
+|-----------|------------|
 | TimeSpan   | Microseconds |
 | SleepState  | -            |
 
@@ -495,7 +495,7 @@ The following table lists the measurement data that the temperature sensor provi
 **Table: Measurement data detected by the temperature sensor**
 
 | Measurement | Type                 | Range                            | Unit         |
-| ----------- | -------------------- | -------------------------------- | ------------ |
+|-----------|--------------------|--------------------------------|------------|
 | TimeSpan   | `TimeSpan` | -                                | Microseconds |
 | Temperature | `float`              | Min. value = -30<br>Max. value = 100 | °C           |
 
@@ -510,7 +510,7 @@ The following table lists the measurement data that the ultraviolet sensor provi
 **Table: Measurement data detected by the ultraviolet sensor**
 
 | Measurement      | Type                 | Range                         | Unit         |
-| ---------------- | -------------------- | ----------------------------- | ------------ |
+|----------------|--------------------|-----------------------------|------------|
 | TimeSpan        | `TimeSpan` | -                             | Microseconds |
 | UltravioletIndex | `float`              | Min. value = 0<br>Max. value = 15 | UV index     |
 
@@ -525,7 +525,7 @@ The following table lists the measurement data that the uncalibrated gyroscope p
 **Table: Measurement data detected by the uncalibrated gyroscope**
 
 | Measurement             | Type                 | Range                                 | Unit            |
-| ----------------------- | -------------------- | ------------------------------------- | --------------- |
+|-----------------------|--------------------|-------------------------------------|---------------|
 | TimeSpan               | `TimeSpan` | -                                     | Microseconds    |
 | X                       | `float`              | Min. value = -573.0<br>Max. value = 573.0 | Degrees/s (&deg;/s) |
 | Y                       | `float`              | Min. value = -573.0<br>Max. value = 573.0 | Degrees/s (&deg;/s) |
@@ -550,7 +550,7 @@ The following table lists the measurement data that the uncalibrated magnetic se
 **Table: Measurement data detected by the uncalibrated magnetic sensor**
 
 | Measurement | Type                 | Unit             |
-| ----------- | -------------------- | ---------------- |
+|-----------|--------------------|----------------|
 | TimeSpan   | `TimeSpan` | Microseconds     |
 | X           | `float`              | &micro;T (microteslas) |
 | Y           | `float`              | &micro;T (microteslas) |

@@ -112,7 +112,7 @@ label.HorizontalAlignment = HorizontalAlignmentType.Right;
 
 
 | Alignment | Left-to-right script example             | Right-to-left script example             |
-| --------- | ---------------------------------------- | ---------------------------------------- |
+|---------|----------------------------------------|----------------------------------------|
 | BEGIN     | ![Latin script aligned to beginning](media/LatinBegin.png) | ![Arabic script aligned to beginning](media/ArabicBegin.png) |
 | CENTER    | ![Latin script aligned to center](media/LatinCenter.png) | ![Arabic script aligned to center](media/ArabicCenter.png) |
 | END       | ![Latin script aligned to end](media/LatinEnd.png) | ![Arabic script aligned to end](media/ArabicEnd.png) |
@@ -127,7 +127,7 @@ For text decorations, `TextLabel` provides several properties. All properties ar
 **Table: TextLabel properties**
 
 | Property              | Type               | Description                              |
-| --------------------- | ------------------ | ---------------------------------------- |
+|---------------------|------------------|----------------------------------------|
 | `Text`                | string             | The text to display in UTF-8 format.     |
 | `FontFamily`          | string             | The requested font family to use.        |
 | `FontStyle`           | Map                | The requested font style to use.         |

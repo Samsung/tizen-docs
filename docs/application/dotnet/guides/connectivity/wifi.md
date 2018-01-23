@@ -22,7 +22,7 @@ The main features of the Tizen.Network.WiFi namespace include:
         - - **Table: Access point EAP information**
 
             | Information         | Description                              |
-            | ------------------- | ---------------------------------------- |
+            |-------------------|----------------------------------------|
             | Authentication type | Wi-Fi EAP phase2 authentication type     |
             | EAP type            | Wi-Fi EAP type                           |
             | CA certificate      | EAP CA certificate (valid only if the EAP type is TLS) |
