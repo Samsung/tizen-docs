@@ -57,10 +57,10 @@ Available animation methods:
   - `animation` is the part moving, such as a transform, CSS, or predefined effect.
 
   - `transform` options:  
-  `translateX`, `translateY`, `translateZ`, `rotateX`, `rotateY`, `rotateZ`, `scaleX`, `scaleY`, `skewX`, `skewY`
+    `translateX`, `translateY`, `translateZ`, `rotateX`, `rotateY`, `rotateZ`, `scaleX`, `scaleY`, `skewX`, `skewY`
 
   - `css` options:  
-  `left`, `top`, `width`, `height`, `background-color`, `color`, `border`, `border-width`, `border-color`, `margin`, `marginTop`, `marginRight`, `marginBottom`, `marginLeft`, `padding`, `paddingTop`, `paddingRight`, `paddingBottom`, `paddingLeft`, `font-size`, `line-height`, `clip-path`, `background-position`, `background-size`, `box-shadow`
+    `left`, `top`, `width`, `height`, `background-color`, `color`, `border`, `border-width`, `border-color`, `margin`, `marginTop`, `marginRight`, `marginBottom`, `marginLeft`, `padding`, `paddingTop`, `paddingRight`, `paddingBottom`, `paddingLeft`, `font-size`, `line-height`, `clip-path`, `background-position`, `background-size`, `box-shadow`
 
   ```xml
   <div id="redBox" style="background-color: 'red'; position:absolute; width:100px; height:100px;"></div>

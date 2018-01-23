@@ -1,6 +1,6 @@
 # Creating Snap Lists
 
-You can create a snap list component with the marquee component using the SnapListview API and the [helper script](./ui/tau/helper-ww.md).
+You can create a snap list component with the marquee component using the SnapListview API and the [helper script](helper.md).
 
 This feature is supported in wearable applications only.
 

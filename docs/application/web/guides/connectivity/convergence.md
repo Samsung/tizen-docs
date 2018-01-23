@@ -306,7 +306,7 @@ To launch an application on a remote device:
 
 ## Sending an Application Control Remotely
 
-The `ApplicationControl` object is used to request applications to perform particular actions. This use case shows how to ask an image viewer to display a picture. For more information on application controls, see [Application Controls](../app-management/app-controls.md).
+The `ApplicationControl` object is used to request applications to perform particular actions. This use case shows how to ask an image viewer to display a picture. For more information on application controls, see [Application Controls](../app-management/appcontrols.md).
 
 1. Use the `startDiscovery()` method to search for and connect to a `RemoteAppControlService`:
 

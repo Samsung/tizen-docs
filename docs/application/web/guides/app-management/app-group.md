@@ -10,7 +10,7 @@ The main application group features include:
 
   Application grouping has an effect on what happens when the user hides or exits an application. When applications [belong to the same group](#group-behavior), they are hidden and exited together.
 
-- Controlling the launch mode    
+- Controlling the launch mode
 
   The launch mode determines how a newly launched application is grouped. You can [control the launch mode](#controlling-the-launch-mode) by:
 

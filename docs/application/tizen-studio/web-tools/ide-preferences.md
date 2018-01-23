@@ -10,7 +10,7 @@ You can customize your Tizen Studio with the Web preferences introduced in the f
 To set Web preferences, go to **Window > Preferences > Tizen Studio > Web** in the Tizen Studio menu.
 
 > **Note**  
-> In Windows® and Linux, **Preferences** is located in the **Window** menu. However, in macOS, it is located in the **Tizen Studio** menu.
+> In Windows&reg; and Linux, **Preferences** is located in the **Window** menu. However, in macOS, it is located in the **Tizen Studio** menu.
 
 **Figure: Tizen Studio preferences**
 

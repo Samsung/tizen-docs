@@ -1,4 +1,3 @@
-
 # Web Application Development Process
 
 Tizen provides the tools required to manage your Web application life-cycle from product conception, through development and release, to end-of-life application retirement.

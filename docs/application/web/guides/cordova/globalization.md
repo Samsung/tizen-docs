@@ -10,7 +10,7 @@ The main features of the Globalization API include:
 
   You can obtain the following locale information:
 
-  - [Get the user's current language](#retrieving-the-current-kanguage) as the BCP 47 identifier (such as en-US).
+  - [Get the user's current language](#retrieving-the-current-language) as the BCP 47 identifier (such as en-US).
   - [Get the user's current locale](#retrieving-the-current-locale) as the BCP 47 identifier (such as en-US).
   - [Get the pattern string to format and parse currency](#retrieving-the-currency-details) and the ISO 4217 currency code.
   - [Get the names of months and names of the days of the week](#retrieving-the-names-of-the-months-and-days-of-the-week).

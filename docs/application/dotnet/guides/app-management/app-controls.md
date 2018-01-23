@@ -315,7 +315,7 @@ resolving the application control:
     | 6         | `http://tizen.org/appcontrol/operation/view` | `*`                                  | `*/*`       | Pass   |
 
 
-<a name="process"></a>		
+<a name="process"></a>
 ## Launch Process
 
 Regardless of the launch request type, when the application launcher
@@ -507,7 +507,7 @@ your application ID (for an explicit launch) or have the same operation
 value and applicable URI and MIME type information (for an implicit
 launch).
 
-> **Note**   
+> **Note**  
 > The URI or MIME type can contain wildcards, such as '\*', to
 match against given conditions in the application control:
 -   In the MIME type, you can use 2 types of wildcards: `image/*` and
