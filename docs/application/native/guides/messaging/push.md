@@ -1,0 +1,666 @@
+# Push
+
+
+You can push events from an application server to your application on a Tizen device.
+
+The Push API is optional for the Tizen wearable profile, which means that it may not be supported on all wearable devices.
+
+Once your application is successfully registered in the push server through the [push service](#service) (daemon) on the device, your application server can send push messages to the application on that particular device.
+
+If a push message arrives when the application is running, the message is automatically delivered to the application. If the application is not running, the push service makes a sound or vibrates and adds a ticker or a badge notification to notify the user. By touching this notification, the user can check the message. If the application server sends a message with a `LAUNCH` option, the push service forcibly launches the application and hands over the message to the application as an [application control](../app-management/app-controls.md).
+
+The main features of the Push API include:
+
+- Connecting to the push service
+
+  You can [establish a socket connection to the push service](#connect).
+
+- Registering with the push server
+
+  You can [obtain a registration ID to receive push notifications](#registration).
+
+- Managing security
+
+  You need to [take care of security issues](#security) when sending notifications containing sensitive information.
+
+- Sending push notifications
+
+  You can [send push notifications](#send) from the application server to an application.
+
+- Receiving push notifications
+
+  You can [receive notifications](#receive_push) in the application at different application states.
+
+**Figure: Push messaging service**
+
+![Push messaging service](./media/ui_push_message.png)
+
+<a name="service"></a>
+## Service Architecture
+
+The following figure illustrates the service architecture of the Tizen push messaging service.
+
+**Figure: Service architecture**
+
+![Service architecture](./media/push_overview.png)
+
+The following steps illustrate a typical scenario for using the push messaging service on a Tizen device:
+
+1. The application on the device registers for the push messaging service.
+
+2. When an application is installed and launched, the device establishes a push session with the Tizen Server by sending a registration request to the Tizen push server through the push service.
+
+   The push session is managed by the Tizen server and device platform, so there is no need to create any code to manage it within the application.
+
+3. If the registration request is approved, the application receives a registration ID through the push service. The registration ID is a unique key used to identify the application installed on that particular device and route the push message.
+
+   The application delivers the registration ID to the application server. This registration ID is used to identify the application installed on that particular device.
+
+4. When the application server needs to send a push message to the application on the particular device, it calls the Tizen server's open API to send the message together with the registration ID. (For more information for server developers on sending push messages, see [Sending Push Notifications](push-server.md#send_server).)A text message of up to 1024 bytes can be sent in a push message. If the application needs to download a large amount of data, the application server sends a link to the data in the push message.
+
+5. When the Tizen push server receives the message and the registration ID, it checks which device has the application with the particular registration ID and then routes the message to that device.
+
+6. When the push service receives the message and the registration ID, it sends the message to the destination application, which receives the push message.
+
+<a name="prerequisites"></a>
+## Prerequisites
+
+To enable your application to use the push functionality:
+
+1. To use the Push API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MESSAGING__PUSH__PUBLIC__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MESSAGING__PUSH__PUBLIC__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+
+   ```
+   <privileges>
+      <privilege>http://tizen.org/privilege/push</privilege>
+   </privileges>
+   ```
+
+2. Make sure the following requirements are fulfilled:
+
+   1. Internet access
+
+      To connect to the Tizen push server and receive notifications from it, the target device or emulator must be able to contact any IP address with the port 5223. If you are in an enterprise network, ensure that the proxy setting in your local network allows outgoing traffic destined for this port number.
+
+   2. Package ID
+
+      When you create a project in the Tizen Studio, you are given the package ID (randomly generated by the Tizen Studio or entered by yourself). The Tizen push server identifies your applications using the package ID.
+
+<a name="permission"></a>
+   3. Permission to Tizen push servers
+
+      To use the push messaging service, the application needs the permission to access the Tizen push server. Request the permission from the Tizen push service team using one of the following online request forms:
+
+      - [Request the permission for a new application](https://developer.tizen.org/webform/request-permission-tizen-push-service)
+      - [Extend the expiration date or change the quota](https://developer.tizen.org/webform/request-extend-expiration-date-or-change-quota) for an application that already has the permission to use the push messaging service
+
+      When the team approves the request, you receive a push app ID corresponding to your package ID.
+
+3. To use the functions and data types of the Push API, include the `<push-service.h>` header file to your application:
+
+   ```
+   #include <push-service.h>
+   ```
+
+> **Note**  
+> Since Tizen 3.0, the push service supports launching an application in the background. Remember that you can deliver application data to your application without an unwanted UI launch.
+
+<a name="connect"></a>
+## Connecting to the Push Service
+
+To request or receive push notifications, establish a socket connection to the push service. All the information regarding this connection must be controlled by a connection handle which can be defined as a global variable:
+
+```
+push_service_connection_h push_conn;
+```
+
+To manage push service connections:
+
+1. Connect to the push service.
+
+   Once the connection handle is defined, use the `push_service_connect()` function to connect to the push service:
+
+   ```
+   #define PUSH_APP_ID "YOUR_PUSH_ID_HERE"
+
+   static bool
+   app_create(void *data)
+   {
+       int ret;
+
+       /* Connect to the push service when the application is launched */
+       ret = push_service_connect(PUSH_APP_ID, _state_cb, _noti_cb, NULL, &push_conn);
+
+       if (ret != PUSH_SERVICE_ERROR_NONE) {
+           dlog_print(DLOG_ERROR, LOG_TAG, "push_service_connect() failed");
+           push_conn = NULL;
+
+           return false;
+       }
+
+       /* UI implementation here */
+
+       return true;
+   }
+   ```
+
+   In the above example, the application establishes a socket connection to the push service:
+
+   - The `YOUR_PUSH_ID_HERE` parameter is the push app ID received from the Tizen push server team when the access to the server was requested. Keep this push app ID confidential, otherwise your push notifications can be hijacked by malicious applications.
+   - The `_state_cb()` and `_noti_cb()` parameters are callback functions called when the [state changes](#state) or [a notification arrives from the server](#receive_push) through the push service.
+   - The `push_conn` parameter is the output of the `push_service_connect()` function. If the connection between the application and the service is successful, the `push_service_connect()` function returns `PUSH_SERVICE_ERROR_NONE` and the `push_conn` connection handle is returned through the last parameter. If the `push_service_connect()` function returns other values, the connection to the service failed. This happens most likely when the [push privilege](#prerequisites) is not added in the Tizen Studio.
+
+   This sample application establishes a connection to the service when it is launched and disconnects from the service when it terminates. Due to this, the `push_service_connect()` function is located in the `app_create()` function, which is called when the application is launched.
+
+   The application can be resumed after being paused. To ensure that push notifications are handled fluently, the `push_service_connect()` function must be located in the `app_resume()` function:
+
+   ```
+   static void
+   app_resume(void *data)
+   {
+       /* Take necessary actions when application becomes visible */
+
+       int ret;
+       if (!push_conn) {
+           ret = push_service_connect(PUSH_APP_ID, _state_cb, _noti_cb, NULL, &push_conn);
+           if (ret != PUSH_SERVICE_ERROR_NONE){
+               dlog_print(DLOG_ERROR, LOG_TAG, "ERROR: push_service_connect() failed.");
+               push_conn = NULL;
+
+               return;
+           }
+       }
+
+       /*
+          If the connection with the push service succeeds,
+          the application must request the unread notification messages
+          which are sent during the disconnected state
+       */
+       ret = push_service_request_unread_notification(push_conn);
+       if (ret != PUSH_SERVICE_ERROR_NONE)
+           dlog_print(DLOG_ERROR, LOG_TAG, "ERROR: push_service_request_unread_notification() failed.");
+   }
+   ```
+
+2. Disconnect from the push service.
+
+   When the application terminates or no longer uses the push service, close the connection using the `push_service_disconnect()` function.
+
+   The `push_service_disconnect()` function closes the existing connection associated with the `push_conn` handle and returns all the resources allocated for the connection.
+
+   ```
+   static void
+   app_terminate(void *data)
+   {
+       /* Release all push messages */
+
+       if (push_conn)
+           push_service_disconnect(push_conn);
+
+       push_conn = NULL;
+   }
+   ```
+
+   The connection is automatically closed when the application terminates. Hence, if the application uses the push service while being launched, it does not need this function.
+
+   The application can also disconnect the service in the middle of the application operation. If you add a toggle switch to the application for switching the push service on and off, call this function when the service is switched off. Do not call this function inside any push callback functions, however, since it can cause the application to crash.
+
+   The application can be paused by pressing the **Home** or **Back** key. For a proper push operation, the `push_service_disconnect()` function must be located in the `app_pause()` function.
+
+   ```
+   static void
+   app_pause(void *data)
+   {
+       if (push_conn)
+           push_service_disconnect(push_conn);
+
+       push_conn = NULL;
+   }
+   ```
+
+<a name="state"></a>
+3. Handle state transitions.
+
+   After the connection to the service is made, the application is notified whenever the connection state changes. This notification is conducted through the `_state_cb()` callback, which is defined in the `push_service_connect()` function. The following figure illustrates the possible states.
+
+   ![State transitions](./media/push_state_transitions.png)
+
+   Once launched, the application is in the `INITIAL` state. When the application establishes a connection to the service using the `push_service_connect()` function, the state becomes either `UNREGISTERED` or `REGISTERED`:
+
+   - If the application is currently registered to the push server, the service forces it to transit from the `INITIAL` state to the `REGISTERED` state. In this case, the application can request deregistration from the push server using the `push_service_deregister()`function. If this request is approved by the push server, the state transits to `UNREGISTERED`.
+   - If the application is not currently registered to the push server, the state transits from the `INITIAL` state to the `UNREGISTERED` state. In this case, the application can request registration to the push server using the `push_service_register()` function. If this request is approved by the push server, the state transits to `REGISTERED`.
+   - When an error occurs, the state transits to `ERROR`.
+
+   When the current state transits, the `_state_cb()` function is called and the new state is obtained from the first parameter. Determine the application actions based on the new state:
+
+   ```
+   static void
+   _state_cb(push_service_state_e state, const char *err, void *user_data)
+   {
+       switch (state) {
+       case PUSH_SERVICE_STATE_UNREGISTERED:
+           dlog_print(DLOG_INFO, LOG_TAG, "Arrived at STATE_UNREGISTERED");
+           _on_state_unregistered(user_data);
+           break;
+       case PUSH_SERVICE_STATE_REGISTERED:
+           dlog_print(DLOG_INFO, LOG_TAG, "Arrived at STATE_REGISTERED");
+           _on_state_registered(user_data);
+           break;
+       case PUSH_SERVICE_STATE_ERROR:
+           dlog_print(DLOG_INFO, LOG_TAG, "Arrived at STATE_ERROR");
+           _on_state_error(err, user_data);
+           break;
+       default:
+           dlog_print(DLOG_INFO, LOG_TAG, "Unknown State");
+           break;
+       }
+   }
+   ```
+
+   In the above example, the `_on_state_registered()`, `_on_state_unregistered()`, and `_on_state_error()` functions contain the actions for the `REGISTERED`, `UNREGISTERED`, and `ERROR` states, respectively. The application does not need to handle the `INITIAL` state, because it is maintained internally, and this callback function is never invoked in that state. The second parameter, `err`, is the error message from the push service when the state becomes `ERROR`. Consequently, only the `_on_state_error()`function takes this parameter.
+
+   The registration state is subject to change. Consequently, make sure that the application connects to the push service whenever it is launched.
+
+<a name="registration"></a>
+## Registering with the Push Server
+
+To receive push notifications, the application must send a registration request to the Tizen push server. When the server receives this request, it assigns a registration ID that is unique to the application on the particular device. When sending a notification from your application server, this registration ID is used as a destination address of the application. If the application no longer needs to receive push notifications, it needs to send a deregistration request to the server.
+
+To register with the push server:
+
+1. Request registration.
+
+   After connecting to the push service, request registration using the `push_service_register()` function.
+
+   The first parameter is the connection handle that was returned from the `push_service_connect()` function, and the second parameter is the callback function that returns the result of the registration request.
+
+   ```
+   #define PUSH_HASH_KEY "existing_push_reg_id"
+
+   static void
+   _on_state_unregistered(void *user_data)
+   {
+       int ret;
+
+       /* Reset the previously-stored registration ID */
+       ret = preference_set_string(PUSH_HASH_KEY, "");
+       if (ret != PREFERENCE_ERROR_NONE)
+           dlog_print(DLOG_ERROR, LOG_TAG, "ERROR: Failed to initialize hash_value [%d : %s]", ret, get_error_message(ret));
+
+       /* Send a registration request to the push service */
+       ret = push_service_register(push_conn, _result_cb, user_data);
+   }
+   ```
+
+   The `_on_state_unregistered()` function containing the `push_service_register()` function is called when the state transits to `UNREGISTERED`. This sample application is designed to send the registration request as soon as it is connected to the push service. If the application requires users to log in to the service, this registration request must be sent after the login process is complete.
+
+   The registration request is non-blocking. If the `push_service_register()` function returns `PUSH_SERVICE_ERROR_NONE`, the request is successfully delivered to the push service. However, it does not necessarily mean that the request is approved by the server. If the push service successfully sends the request to the server and receives an approval, the `_result_cb()` callback is called with `PUSH_SERVICE_RESULT_SUCCESS` as the first parameter:
+
+   ```
+   static void
+   _result_cb(push_service_result_e result, const char *msg, void *user_data)
+   {
+       if (result == PUSH_SERVICE_RESULT_SUCCESS)
+           dlog_print(DLOG_INFO, LOG_TAG, "Registration request is approved.");
+       else
+           dlog_print(DLOG_ERROR, LOG_TAG, "Registration ERROR [%s]", msg);
+
+       return;
+   }
+   ```
+
+   When an error occurs in the middle of the registration process, the reason is returned in the first parameter of the callback. For example, if the push server is not responding, the `push_service_register()` function returns `PUSH_SERVICE_ERROR_NONE` (because delivery to the service is successful), but the `_result_cb()` function is called later with `PUSH_SERVICE_RESULT_TIMEOUT`. In this case, the application does not need to request registration again because the push service keeps the previous request and sends it when the network becomes online. The `msg` parameter is the error message from the push service if the request fails.
+
+<a name="upon"></a>
+2. Handle the transit to the `REGISTERED` state.The application transits to the `REGISTERED` state in one of the following cases:
+	- The registration request sent at the `UNREGISTERED` state is approved.
+	- The already-registered application at the `INITIAL` state is successfully connected to the push service.
+
+ In both cases, the `_state_cb()` callback function is called with the `PUSH_SERVICE_STATE_REGISTERED` state. The application calls the `_on_state_registered()` function immediately, [as shown in the state transitions](#state). When defining the actions inside the function, keep the following points in mind:
+
+ 	- If the application has already been registered, request the push service for any unread notifications that have arrived before the application is launched.Request the unread notifications asynchronously. If there is such a notification, it can be received through the `_noti_cb()` function after the `_on_state_registered()` function returns. Once the request for unread notifications is successfully delivered, `PUSH_SERVICE_ERROR_NONE` is returned.
+
+ 	- If the application is newly registered, send the registration ID issued by the push server to your application server.Retrieve the registration ID from the `push_conn` connection handle. If the ID is new or updated, you need to send it to your application server. This ID is used as a destination address to the application on a particular device. If the application has already sent the ID, you can skip this step. This logic is implemented in the `_send_reg_id_if_necessary()` function.
+
+ ```
+static void
+_on_state_registered(void *user_data)
+{
+    if (!push_conn)
+        return;
+
+    int ret;
+    char *reg_id = NULL;
+    char *app_id = NULL;
+
+    /* Request unread notifications to the push service */
+    /* _noti_cb() is called if there are unread notifications */
+    ret = push_service_request_unread_notification(push_conn);
+    if (ret != PUSH_SERVICE_ERROR_NONE) {
+        dlog_print(DLOG_ERROR, LOG_TAG, "ERROR [%d]: push_service_request_unread_notification()", ret);
+
+        return;
+    }
+
+    /* Get the registration ID */
+    ret = push_service_get_registration_id(push_conn, &reg_id);
+    if (ret != PUSH_SERVICE_ERROR_NONE) {
+        dlog_print(DLOG_ERROR, LOG_TAG, "ERROR [%d]: push_service_get_registration_id()", ret);
+
+        return;
+    }
+
+    /* Send reg_id to your application server if necessary */
+    _send_reg_id_if_necessary(reg_id);
+
+    if (reg_id)
+        free(reg_id);
+}
+ ```
+
+ Compute the hash value of the ID and compare it with the existing hash value in the `_send_reg_id_if_necessary()` function:
+ 	- If they are different, send the current registration ID to your application server and store the new hash value. For security, it is not safe to keep the ID as a string because it can be easily exposed.
+ 	- If they are the same, the application server already has this registration ID. In this case, the application exits this function.
+
+ ```
+static void
+_on_state_registered(void *user_data)
+{
+    if (!push_conn)
+        return;
+
+    int ret;
+    char *reg_id = NULL;
+    char *app_id = NULL;
+
+    /* Request unread notifications to the push service */
+    /* _noti_cb() is called if there are unread notifications */
+    ret = push_service_request_unread_notification(push_conn);
+    if (ret != PUSH_SERVICE_ERROR_NONE) {
+        dlog_print(DLOG_ERROR, LOG_TAG, "ERROR [%d]: push_service_request_unread_notification()", ret);
+
+        return;
+    }
+
+    /* Get the registration ID */
+    ret = push_service_get_registration_id(push_conn, &reg_id);
+    if (ret != PUSH_SERVICE_ERROR_NONE) {
+        dlog_print(DLOG_ERROR, LOG_TAG, "ERROR [%d]: push_service_get_registration_id()", ret);
+
+        return;
+    }
+
+    /* Send reg_id to your application server if necessary */
+    _send_reg_id_if_necessary(reg_id);
+
+    if (reg_id)
+        free(reg_id);
+}
+ ```
+
+3. Request deregistration.
+
+   When the application no longer wants to receive push notifications, use the following function to request deregistration:
+
+   ```
+   push_service_deregister(push_conn, _dereg_result_cb, NULL);
+   ```
+
+   This function is non-blocking. If it returns `PUSH_SERVICE_ERROR_NONE`, the request is successfully received by the push service. The result of this request is returned in the `_dereg_result_cb()` callback function.
+
+   > **Note**  
+   > The `push_service_deregister()` function is not used if the application is intended to receive push notifications continuously while it is installed on the device. When the application is uninstalled, the push service detects the event and deregisters the application automatically.On the other hand, if the application wants to receive push notifications only when a user logs in, the `push_service_deregister()` function must be called whenever the user logs out.
+
+<a name="security"></a>
+## Managing Security
+
+When you send a notification with sensitive information, be aware of the chance that the notification gets hijacked by someone else. It is your responsibility to keep such sensitive information safe from malicious access. The following rules are strongly recommended:
+
+- Keep the push application ID confidential.
+
+  If the application ID is exposed, hackers can try to hijack notifications using a fake application with the exposed ID.
+
+- Do not store the registration ID on the device.
+
+  The registration ID can be considered as the destination address for notifications. Without the ID, hackers cannot send fake notifications to your application.
+
+- Encrypt sensitive information.
+
+  When you send sensitive information, such as personal information and financial transactions, encrypt it and load it to the notification as a payload instead of the message field. When the notification arrives at the device, the application decrypts the payload and retrieves the sensitive information.
+
+- Do not hardcode the AppSecret in the source code.
+
+  The AppSecret is a key to accessing the push server for sending notifications. If notifications are sent from your application server, the application does not need to know the AppSecret at all. Keep the AppSecret in the server and do not load any related information in the application. If you want device-to-device notification delivery without your application server, the application needs the AppSecret to send a notification from a device. In this case, it is your responsibility to keep the AppSecret safe.
+
+<a name="send"></a>
+## Sending Push Notifications
+
+Once the application successfully sends its registration ID to the application server, you are ready to send push notifications from the application server to the application on that particular device. This use case describes how to send a simple push notification to the device. For advanced features, see the [Push Server](push-server.md) guide for server developers.
+
+The following example shows a sample push notification:
+
+- URI: See the [Push RQM (Request Manager) server URLs table](push-server.md#send_server).
+
+- Method: HTTP POST
+
+- Header:
+
+  ```
+  appID: 1234567890987654
+  appSecret: dYo/o/m11gmWmjs7+5f+2zLNVOc=
+  ```
+
+- Body:
+
+  ```
+  {
+      "regID": "0501a53f4affdcbb98197f188345ff30c04b-5001",
+      "requestID": "01231-22EAX-223442",
+      "message": "badgeOption=INCREASE&badgeNumber=1&action=ALERT&alertMessage=Hi",
+      "appData": "{id:asdf&passwd:1234}", /* Optional, if the message field is not empty */
+  }
+  ```
+
+To send a notification:
+
+1. Prepare the `appID`, `appSecret`, `regID`, and `requestID`:The `appID` and `appSecret` values are given in the email message that you received when requesting [permission to use Tizen push servers](#permission).The `regID` value is the one that the application server received from your application installed on a Tizen device. Depending on the `regID` value, the URI of the server to which your application server sends the notification varies.The `requestID` value is used to identify the notification in the push server. When your application server sends notifications using the same `requestID` value, the last notification overwrites all the previous notifications that are not delivered yet.
+
+2. Use the message field to describe how to process the notification.
+
+   The message field contains not only the message to show in the quick panel on the device, but also the behaviors that the device must take when receiving the notification. The message field is a string that consists of key-value pairs. The available pair options are given in the following table.
+
+   **Table: Message field key-value pairs**
+
+   | Key            | Value                                    | Description                              |
+   | -------------- | ---------------------------------------- | ---------------------------------------- |
+   | `action`       | `ALERT`: Store the message and alert the user.`SILENT`: Store the message without alerting the user.`DISCARD`: Discard the message, if the application is not up and running.`LAUNCH`: Forcibly launch the application and deliver the notification.`BACKGROUNDLAUNCH`: Launch the application in the background and deliver the notification (supported since Tizen 3.0). | Action to be performed if the application is not running. If no action is defined, the default behavior is `SILENT`. |
+   | `alertMessage` | Up to 127 bytes                          | Alert message shown to the user in the quick panel. If the action is not set as `ALERT`, this value is meaningless. |
+   | `badgeOption`  | `INCREASE`: Increase the badge number by the given value.`DECREASE`: Decrease the badge number by the given value.`SET`: Set badge number to the given value. | Option for updating the icon badge number. If the action is set as `DISCARD`, the `badgeOption` is ignored. If the badge option is not included, the icon badge number remains unchanged. |
+   | `badgeNumber`  | 0-999                                    | -                                        |
+
+   For example, to show a "Hi" message in the quick panel and increase the badge count by 1 when the notification arrives at the device, the message field of the notification must be the following:
+
+   ```
+   "badgeOption=INCREASE&badgeNumber=1&action=ALERT&alertMessage=Hi"
+   ```
+
+   If you want to deliver the notification directly to your application, the message field must be the following:
+
+   ```
+   "action=LAUNCH"
+   ```
+
+   When the push service on the target device receives a notification with this message, it launches your application and delivers the notification through an [application control](../../../../org.tizen.guides/html/native/app_management/app_controls_n.htm). Your application can get the notification using the `push_service_app_control_to_notification()` function. For more information, see how to [receive notifications when the application is not running](#recv_noti_app_not_run).
+
+   The message field takes effect only when the application is not running (more precisely, when the application is not connected to the push service). If a notification with the above message field arrives at the device where the application is running, the push service delivers the notification directly to the application. It does not show the "Hi" message in the quick panel or increase the badge count.
+
+3. Load your own data to the `appData` field as a string.This use case focuses on how an application developer can construct a notification. For advanced features, see the [Push Server](push-server.md) guide for server developers.
+
+<a name="receive_push"></a>
+## Receiving Push Notifications
+
+When a notification arrives at the device, its delivery mechanism depends on whether the application is running.
+
+To handle incoming push notifications:
+
+- Receive notifications when the application is running.
+
+  When a notification arrives to the application while it is running (more precisely, while the application is connected to the service), the `_noti_cb()` callback is called as defined in the `push_service_connect()` function. You can handle the received notification in the callback.
+
+  The following example shows how the application can retrieve the app data (payload), message, and timestamp from the received notification. When the `_noti_cb()` callback is called, obtain the notification through the first parameter. You can retrieve the app data, message, and time stamp from the handle using the `push_service_get_notification_data()`, `push_service_get_notification_message()`, and `push_service_get_notification_time()` functions respectively. Before exiting the function, free the data, except for the notification itself. The notification is freed automatically right after the callback.
+
+  ```
+  static void
+  _noti_cb(push_service_notification_h noti, void *user_data)
+  {
+      int ret;
+
+      char *data=NULL; /* App data loaded on the notification */
+      char *msg=NULL; /* Noti message */
+      long long int time_stamp; /* Time when the noti is generated */
+      char *sender=NULL; /* Optional sender information */
+      char *session_info=NULL; /* Optional session information */
+      char *request_id=NULL; /* Optional request ID */
+
+      /* Retrieve app data from noti */
+      ret = push_service_get_notification_data(noti, &data);
+      /* Decrypt app data here if it is encrypted */
+
+      /* Retrieve notification message from noti */
+      ret = push_service_get_notification_message(noti, &msg);
+
+      /* Retrieve the time when notification is created from noti */
+      ret = push_service_get_notification_time(noti, &time_stamp);
+
+      /* Retrieve the optional information */
+      ret = push_service_get_notification_sender(noti, &sender);
+      ret = push_service_get_notification_session_info(noti, &session_info);
+      ret = push_service_get_notification_request_id(noti, &request_id);
+
+      /*
+         Use data, msg, time_stamp, sender,
+         session_info, and request_id as needed
+      */
+
+      /* Free all resources */
+      /* Do not free noti in the callback function */
+      if (data)
+          free(data);
+      if (msg)
+          free(msg);
+      if (sender)
+          free(sender);
+      if (session_info)
+          free(session_info);
+      if (request_id)
+          free(request_id);
+  }
+  ```
+
+<a name="recv_noti_app_not_run"></a>
+- Receive notifications when the application is not running.
+
+  If the notification arrives when the application is not running, it can be handled in 3 ways:
+
+<a name="force_launch"></a>
+  - Forcibly launch the application and deliver the notification to it.
+
+    You need to set the action to `LAUNCH` in the message field when sending the notification from the application server. When the notification action arrives at the device, the push service forcibly launches the application and delivers the notification as a bundle.
+
+    When you create a project in the Tizen Studio, the `app_control()` function is created automatically. When the application is launched by another application or process (in this case, by the push service), all related information regarding this launch request is delivered through the `app_control` parameter. From this handle, retrieve the `op` operation using the `app_control_get_operation()` function. With `app_control` and `op`, retrieve the notification data using the `push_service_app_control_to_noti_data()` function.
+
+    If the application is not launched by the push service, this function returns as `NULL`.
+
+    ```
+    static void
+    app_control(app_control_h app_control, void *data)
+    {
+        char *op = NULL;
+        push_service_notification_h noti = NULL;
+        int ret;
+
+        if (app_control_get_operation(app_control, &op) < 0)
+            return;
+
+        /* Retrieve the noti from the bundle */
+        ret = push_service_app_control_to_notification(app_control, op, &noti);
+
+        if (noti) {
+            /* Handle the noti */
+
+            /* Free the noti */
+            push_service_free_notification(noti);
+        } else {
+            /* Case when the application is not launched by the push service */
+        }
+        if (op)
+            free(op);
+    }
+    ```
+
+    Since Tizen 3.0, the push service provides launch types when the application is launched by the service. Use the following code to figure out why the application is launched, as the `app_control()` function is invoked in both cases of receiving notification and changing registration state.
+
+    ```
+    #define EXTRA_DATA_FROM_REGISTRATION_CHANGE "registration_change"
+    #define EXTRA_DATA_FROM_NOTIFICATION "notification"
+
+    static void
+    app_control(app_control_h app_control, void *data)
+    {
+        char *value = NULL;
+        app_control_get_extra_data(app_control, APP_CONTROL_DATA_PUSH_LAUNCH_TYPE, &value);
+        if (value) {
+            if (!strcmp(value, EXTRA_DATA_FROM_NOTIFICATION))
+                /* Add your code here when push messages arrive */
+            else if (!strcmp(value, EXTRA_DATA_FROM_REGISTRATION_CHANGE))
+                /* Add your code here when registration state is changed */
+        }
+    }
+    ```
+
+  - Store the notification at the push service database and request it later when the application is launched.
+
+    You need to set the action to `ALERT` or `SILENT` in the message field when sending the notification from the application server. When such a notification arrives at the device, the push service keeps the notification in the database and waits for the request from the application.
+
+    You can request for unread notifications from the push service. The request can be performed after connecting to the push server when the application is launched.
+
+    ```
+    if (push_conn) {
+        int ret = push_service_request_unread_notification(push_conn);
+        if (ret != PUSH_SERVICE_ERROR_NONE)
+            dlog_print(DLOG_ERROR, LOG_TAG, "ERROR: push_service_request_unread_notification() failed.");
+    }
+    ```
+
+    The difference between the `ALERT` and `SILENT` actions is that the former shows an alert message in the quick panel and changes the badge count, while the latter does not. If the user clicks the alert message in the quick panel, the push service [forcibly launches the application](#force_launch) and delivers the notification through the app control callback function.
+
+  - Discard the notification.
+
+    You need to set the action to `DISCARD` in the message field when sending the notification from the application server. When such a notification arrives at the device, the push service delivers the notification only when the application is up and running. Otherwise, the push service does not store the notification and discards it.
+
+- Request unread notifications.
+
+  If the user does not launch the application from the quick panel, the application requests the unread notifications after start-up using the [asynchronous `push_service_request_unread_notification()` function](#upon).
+
+  The following example shows a synchronous request using the `push_service_get_unread_notification()` function:
+
+  ```
+  push_service_notification_h noti;
+  int ret;
+  do {
+      ret = push_service_get_unread_notification(push_conn, &noti);
+
+      /* Process the unread message noti */
+
+      push_server_free_notification(&noti);
+  } while (1);
+  ```
+
+  Call this function repeatedly until no notification is returned. If there are multiple unread notifications, the notifications are retrieved in their arrival order.
+
+  The `push_service_get_unread_notification()` function blocks the code while it receives a notification from the service. Unless you need this kind of synchronous behavior, use the asynchronous function.
+
+
+## Related Information
+* Dependencies
+  - Tizen 2.3 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

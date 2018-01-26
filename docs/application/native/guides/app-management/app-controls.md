@@ -1,7 +1,5 @@
 # Application Controls
-## Dependencies
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
+
 
 An application control (app control) is a way of sharing an application's functionality with other applications. Using another application's features through application controls reduces the time and effort needed to develop your own application.
 
@@ -33,6 +31,8 @@ The main App Control API features are:
 
 You can take advantage of the Tizen [base application functionalities](#common) through the application control feature.
 
+
+<a name="launch"></a>
 ## Launch Types
 
 You can launch an application with an application control using 2 different launch types:
@@ -58,6 +58,7 @@ You can launch an application with an application control using 2 different laun
 	> **Note**  
 	> Since Tizen 2.4, application controls used to launch service applications outside the current package are not supported. Because of this, the service application is only allowed to be launched explicitly by the application in the same package. All service applications are excluded from matches of implicit launch requests.
 
+<a name="request"></a>
 ## Launch Requests
 
 To launch an application with the application control, you must create a launch request. You must create an `app_control` handle, and add to the handle the conditions for selecting the application to be launched. You can add the following information:
@@ -77,6 +78,7 @@ To launch an application with the application control, you must create a launch 
 
 - Extra data: Key-value pairs to [provide additional information for the launch request and launch result](#use).
 
+<a name="explicit"></a>
 ### Explicit Launch Request
 
 The following example shows how to create an explicit launch request, which launches a calculator application explicitly with the application ID:
@@ -101,6 +103,7 @@ else
 app_control_destroy(app_control);
 ```
 
+<a name="implicit"></a>
 ### Implicit Launch Request
 
 The following examples show how to create an implicit launch request:
@@ -149,6 +152,7 @@ The following examples show how to create an implicit launch request:
   app_control_destroy(app_control);
   ```
 
+<a name="resolution"></a>
 ### Determining the Application for an Implicit Launch Request
 
 In the case of an implicit launch, the platform determines which application to launch by "resolving the application control". This means that the platform considers the given conditions (operation, URI, and MIME type) in the launch request, searches the filters (installed applications with available application controls) on the device, and attempts to find a match.
@@ -191,7 +195,7 @@ The following examples show different scenarios for the results of resolving the
   **Table: Scenario when only the operation is provided**
 
   | Filter ID | Operation                                | URI        | MIME   | Result |
-  | --------- | ---------------------------------------- | ---------- | ------ | ------ |
+  |-----------|------------------------------------------|------------|--------|--------|
   | 1         | `http://tizen.org/appcontrol/operation/view` | `NULL`     | `NULL` | Pass   |
   | 2         | `**http://tizen.org/appcontrol/operation/default**` | `NULL`       |   `NULL`     |  Fail      |
   | 3         | `http://tizen.org/appcontrol/operation/view` | `file` |  `NULL`       |   Fail        |
@@ -207,7 +211,7 @@ The following examples show different scenarios for the results of resolving the
   **Table: Scenario when the operation and URI are provided**
 
  | Filter ID | Operation                                | URI                                  | MIME      | Result |
-| --------- | ---------------------------------------- | ------------------------------------ | --------- | ------ |
+|-----------|--------------------------------------------|---------------------------------------|-----------|--------|
 | 1         | http://tizen.org/appcontrol/operation/view | NULL                                 | NULL      | Fail   |
 | 2         | http://tizen.org/appcontrol/operation/view | file:///usr/share/icons/calendar.png | */*       | Pass   |
 | 3         | http://tizen.org/appcontrol/operation/view | file:///*                            | */*       | Pass   |
@@ -227,7 +231,7 @@ The following examples show different scenarios for the results of resolving the
   **Table: Scenario when the operation and MIME type are provided**
 
 | Filter ID | Operation                                | URI                                  | MIME      | Result |
-| --------- | ---------------------------------------- | ------------------------------------ | --------- | ------ |
+|-----------|------------------------------------------|--------------------------------------|-----------|--------|
 | 1         | http://tizen.org/appcontrol/operation/view | NULL                                 | image/png | Pass   |
 | 2         | http://tizen.org/appcontrol/operation/view | NULL                                 | image/*   | Pass   |
 | 3         | http://tizen.org/appcontrol/operation/view | NULL                                 | */*       | Pass   |
@@ -247,7 +251,7 @@ The following examples show different scenarios for the results of resolving the
   **Table: Scenario when the operation, URI, and MIME type are provided**
 
  | Filter ID | Operation                                | URI                                | MIME      | Result |
-| --------- | ---------------------------------------- | ---------------------------------- | --------- | ------ |
+|-----------|------------------------------------------|------------------------------------|-----------|--------|
 | 1         | http://tizen.org/appcontrol/operation/view | http://www.tizen.org/favorites.png | image/png | Pass   |
 | 2         | http://tizen.org/appcontrol/operation/view | http://www.tizen.org/favorites.png | NULL      | Fail   |
 | 3         | http://tizen.org/appcontrol/operation/view | http://www.tizen.org/*             | image/png | Pass   |
@@ -255,6 +259,7 @@ The following examples show different scenarios for the results of resolving the
 | 5         | http://tizen.org/appcontrol/operation/view | NULL                               | image/png | Fail   |
 | 6         | http://tizen.org/appcontrol/operation/view | *                                  | */*       | Pass   |
 
+<a name="process"></a>
 ## Launch Process
 
 Regardless of the launch request type, when the application launcher framework has received and resolved a launch request, it starts the application by creating a new process and calling the entry point of the application:
@@ -362,6 +367,7 @@ It takes 4 parameters and uses them to initialize the application. The `argc` an
         }
     }
 	```
+<a name="results"></a>
 ## Launch Results
 
 After the requested application (callee) has been launched and the launched application has performed the requested operation, the results of the operation are delivered back to the application that sent the original launch request (caller).
@@ -418,6 +424,7 @@ app_control_result(app_control_h request, app_control_h reply, app_control_resul
 }
 ```
 
+<a name="export_appcontrol"></a>
 ## Application Control Export
 
 You can allow other applications to launch your application and use your application features through application controls by exporting your application control functionalities. To allow other applications to launch your application implicitly without the application ID, declare your application control information in the `tizen-manifest.xml` file:
@@ -441,8 +448,9 @@ The operation, URI, and MIME type information is used when [resolving the applic
 > **Note**  
 > The URI or MIME type can contain wildcards, such as '*', to match against given conditions in the app control:In the MIME type, you can use 2 types of wildcards: `image/*` and `*/*`.In the URI, a more complex pattern of wildcards with similar semantics as the standard `glob()` function is available: '*' matches an arbitrary, possibly empty, string, and '?' matches an arbitrary character. Unlike in the `glob()` function, the '/' character can be matched by the wildcards. There are no [...] character ranges, and the wildcards '*' and '?' cannot be escaped to include them literally in a pattern.
 
-You can specify the application control information for your application in the [application project settings](../../../../org.tizen.training/html/native/process/setting_properties_n.htm#manifest) in the Tizen Studio.
+You can specify the application control information for your application in the [application project settings](../../tutorials/process/setting-properties.md#manifest) in the Tizen Studio.
 
+<a name="group"></a>
 ## Application Group Management
 
 You can [define the application launch mode](#mode) and group your applications into entities that can be managed together.
@@ -456,7 +464,7 @@ The main application group features include:
   - The single launch mode means that the application is launched as a main application (in a new group).
   - The caller launch mode means that the application is launched as a sub application belonging to the same group as the caller application who is causing the application to be launched.
 
-  You can set the application launch mode [in the manifest file](../../../../org.tizen.studio/html/native_tools/manifest_text_editor_n.htm#launch_mode) using the `launch_mode` attribute of the `<ui-application>` element. If the launch mode is set to `caller`, the application that calls the app control can define the launch mode for the called application using the `app_control_set_launch_mode()` function. However, if the called application has set its launch mode in its manifest file to `single`, that setting overrides the caller application's launch mode request.
+  You can set the application launch mode [in the manifest file](../../../tizen-studio/native_tools/manifest-text-editor.md#launch_mode) using the `launch_mode` attribute of the `<ui-application>` element. If the launch mode is set to `caller`, the application that calls the app control can define the launch mode for the called application using the `app_control_set_launch_mode()` function. However, if the called application has set its launch mode in its manifest file to `single`, that setting overrides the caller application's launch mode request.
 
 - Managing the application group
 
@@ -486,6 +494,7 @@ To enable your application to use the application control functionality:
    #include <app_control.h>
    ```
 
+<a name="use"></a>
 ## Launching Applications Using Extra Data
 
 To run a specific application control with some preconfigured parameters:
@@ -635,27 +644,36 @@ create_base_gui(appdata_s *ad)
    }
    ```
 
+<a name="common"></a>
 ## Common Application Controls
 
 The Tizen common application controls specify a standard protocol for sharing application functionalities. You can use the common application controls to perform some basic tasks, such as selecting a file or taking a picture.
 
 The following common application controls are available:
 
-- [Browser](common-appcontrol-n.md#browser)
-- [Calendar](common-appcontrol-n.md#calendar)
-- [Call](common-appcontrol-n.md#call)
-- [Camera](common-appcontrol-n.md#camera)
-- [Contact](common-appcontrol-n.md#contact)
-- [Email](common-appcontrol-n.md#email)
-- [File Storage](common-appcontrol-n.md#file)
-- [Input Delegator](common-appcontrol-n.md#inputdelegator)
-- [Map](common-appcontrol-n.md#map)
-- [Message](common-appcontrol-n.md#message)
-- [Multimedia](common-appcontrol-n.md#multimedia)
-- [System Settings](common-appcontrol-n.md#settings_main)
-	- [Settings for Bluetooth](common-appcontrol-n.md#settings_bluetooth)
-	- [Settings for Location](common-appcontrol-n.md#settings_location)
-	- [Settings for NFC](common-appcontrol-n.md#settings_nfc)
-	- [Settings for Wi-Fi](common-appcontrol-n.md#settings_wifi)
-- [Voice Recorder](common-appcontrol-n.md#voice)
-- [VPN Service](common-appcontrol-n.md#vpnservice)
+- [Browser](common-appcontrol.md#browser)
+- [Calendar](common-appcontrol.md#calendar)
+- [Call](common-appcontrol.md#call)
+- [Camera](common-appcontrol.md#camera)
+- [Contact](common-appcontrol.md#contact)
+- [Email](common-appcontrol.md#email)
+- [File Storage](common-appcontrol.md#file)
+- [Input Delegator](common-appcontrol.md#inputdelegator)
+- [Map](common-appcontrol.md#map)
+- [Message](common-appcontrol.md#message)
+- [Multimedia](common-appcontrol.md#multimedia)
+- [System Settings](common-appcontrol.md#settings_main)
+	- [Settings for Bluetooth](common-appcontrol.md#settings_bluetooth)
+	- [Settings for Location](common-appcontrol.md#settings_location)
+	- [Settings for NFC](common-appcontrol.md#settings_nfc)
+	- [Settings for Wi-Fi](common-appcontrol.md#settings_wifi)
+- [Voice Recorder](common-appcontrol.md#voice)
+- [VPN Service](common-appcontrol.md#vpnservice)  
+
+
+
+
+## Related Information
+* Dependencies
+ - Tizen 2.4 and Higher for Mobile
+ - Tizen 2.3.1 and Higher for Wearable

@@ -1,7 +1,5 @@
 # Common Application Controls
-## Dependencies
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.2 and Higher for Wearable
+
 
 An application control provides functions for launching other applications with a specific operation, URI, MIME type, and extra data. The requesting application can get a result back from the launched application. This topic introduces the common application controls that you can use.
 
@@ -28,7 +26,7 @@ To find what you are looking for on the Web, use the `APP_CONTROL_OPERATION_SEAR
 #### Extra Input
 
 | Key                     | Description                              | Note                   |
-| ----------------------- | ---------------------------------------- | ---------------------- |
+|-------------------------|------------------------------------------|------------------------|
 | `APP_CONTROL_DATA_TEXT` | The text to search for. This key must be passed as a string. | This key is mandatory. |
 
 #### Example Code
@@ -109,7 +107,7 @@ To add a new event to the user's calendar, use the `APP_CONTROL_OPERATION_ADD` o
 #### Extra Input
 
 | Key                                    | Description                              | Note                  |
-| -------------------------------------- | ---------------------------------------- | --------------------- |
+|----------------------------------------|------------------------------------------|-----------------------|
 | `APP_CONTROL_DATA_CALENDAR_ALL_DAY`    | The string to indicate if an event applies to all day. The available values are `true` or `false`. This key must be passed as a string. | This key is optional. |
 | `APP_CONTROL_DATA_CALENDAR_START_TIME` | The start time of the event (format: YYYY-MM-DD HH:MM:SS). This key must be passed as a string. | This key is optional.                       |
 | `APP_CONTROL_DATA_CALENDAR_END_TIME`   | The end time of the event (format: YYYY-MM-DD HH:MM:SS). This key must be passed as a string. | This key is optional.                       |
@@ -119,7 +117,7 @@ To add a new event to the user's calendar, use the `APP_CONTROL_OPERATION_ADD` o
 #### Extra Output
 
 | Key                   | Description                              |
-| --------------------- | ---------------------------------------- |
+|-----------------------|------------------------------------------|
 | `APP_CONTROL_DATA_ID` | The database record ID of the event (ID in the `_calendar_event` view). This key must be passed as a string. |
 
 #### Example Code
@@ -159,18 +157,18 @@ To edit an existing event in the user's calendar, use the `APP_CONTROL_OPERATION
 #### Extra Input
 
 | Key                                    | Description                              | Note                   |
-| -------------------------------------- | ---------------------------------------- | ---------------------- |
+|----------------------------------------|------------------------------------------|------------------------|
 | `APP_CONTROL_DATA_ID`                  | The database record ID of the event (ID in the `_calendar_event` view). This key must be passed as a string. | This key is mandatory. |
 | `APP_CONTROL_DATA_CALENDAR_ALL_DAY`    | The string to indicate if an event applies to all day. The available values are `true` or `false`. This key must be passed as a string. | This key is optional.  |
 | `APP_CONTROL_DATA_CALENDAR_START_TIME` | The start time of event (format: YYYY-MM-DD HH:MM:SS). This key must be passed as a string. |  This key is optional.                       |
 | `APP_CONTROL_DATA_CALENDAR_END_TIME`   | The end time of event (format: YYYY-MM-DD HH:MM:SS). This key must be passed as a string. |  This key is optional.                       |
-| `APP_CONTROL_DATA_TITLE`               | The title of event. This key must be passed as a string. | This key is optional.                       | 
+| `APP_CONTROL_DATA_TITLE`               | The title of event. This key must be passed as a string. | This key is optional.                       |
 | `APP_CONTROL_DATA_TEXT`                | The description of event. This key must be passed as a string. | This key is optional.                        |
 
 #### Extra Output
 
 | Key                   | Description                              |
-| --------------------- | ---------------------------------------- |
+|-----------------------|------------------------------------------|
 | `APP_CONTROL_DATA_ID` | The database record ID of the event (ID in the `_calendar_event` view). This key must be passed as a string. |
 
 #### Example Code
@@ -221,7 +219,7 @@ For example: `file://<media storage path>/file.vcs`
 #### Extra Input
 
 | Key                   | Description                              | Note                                     |
-| --------------------- | ---------------------------------------- | ---------------------------------------- |
+|-----------------------|------------------------------------------|------------------------------------------|
 | `APP_CONTROL_DATA_ID` | The database record ID of the event (ID in the `_calendar_event` view). This key must be passed as a string. | This key is mandatory when the MIME type is set to `application/vnd.tizen.calendar`. |
 
 #### Example Code
@@ -270,7 +268,7 @@ To select a specified event in the user's calendar, use the `APP_CONTROL_OPERATI
 #### Extra Input
 
 | Key                               | Description                              | Note                  |
-| --------------------------------- | ---------------------------------------- | --------------------- |
+|-----------------------------------|------------------------------------------|-----------------------|
 | `APP_CONTROL_DATA_TYPE`           | The type of items to be delivered. The available values are `id` (default) and `vcs`. This key must be passed as a string. | This key is optional. |
 | `APP_CONTROL_DATA_SELECTION_MODE` | The selection mode of the PICK operation. The available values are `single` (default) and `multiple`. This key must be passed as a string. |This key is optional.                       |
 | `APP_CONTROL_DATA_TOTAL_COUNT`    | The total number of events to be returned. This key must be passed as a string. | This key is optional.                      |
@@ -278,7 +276,7 @@ To select a specified event in the user's calendar, use the `APP_CONTROL_OPERATI
 #### Extra Output
 
 | Key                         | Description                              |
-| --------------------------- | ---------------------------------------- |
+|-----------------------------|------------------------------------------|
 | `APP_CONTROL_DATA_TYPE`     | The type of items to be delivered. The available values are `id` and `vcs`. This key must be passed as a string. |
 | `APP_CONTROL_DATA_SELECTED` | The database record ID of the event (ID in the `_calendar_event` view) or the paths of the vcs files. This key must be passed as an array. |
 
@@ -404,13 +402,13 @@ To take a picture or record video, use the `APP_CONTROL_OPERATION_CREATE_CONTENT
 #### Extra Input
 
 | Key                           | Description                              | Note                  |
-| ----------------------------- | ---------------------------------------- | --------------------- |
+|-------------------------------|------------------------------------------|-----------------------|
 | `APP_CONTROL_DATA_TOTAL_SIZE` | The total size of items to be returned in bytes. This key must be passed as a string. | This key is optional. |
 
 #### Extra Output
 
 | Key                         | Description                              |
-| --------------------------- | ---------------------------------------- |
+|-----------------------------|------------------------------------------|
 | `APP_CONTROL_DATA_SELECTED` | The path of the created image or video file. This key must be passed as a string. |
 
 #### Example Code
@@ -444,13 +442,13 @@ To capture a still image, use the `APP_CONTROL_OPERATION_IMAGE_CAPTURE` operatio
 #### Extra Input
 
 | Key                           | Description                              | Note                  |
-| ----------------------------- | ---------------------------------------- | --------------------- |
+|-------------------------------|------------------------------------------|-----------------------|
 | `APP_CONTROL_DATA_TOTAL_SIZE` | The total size of items to be returned in bytes. This key must be passed as a string. | This key is optional. |
 
 #### Extra Output
 
 | Key                         | Description                              |
-| --------------------------- | ---------------------------------------- |
+|-----------------------------|------------------------------------------|
 | `APP_CONTROL_DATA_SELECTED` | The path of the created file. This key must be passed as a string. |
 
 #### Example Code
@@ -483,13 +481,13 @@ To record a video, use the `APP_CONTROL_OPERATION_VIDEO_CAPTURE` operation. To s
 #### Extra Input
 
 | Key                           | Description                              | Note                  |
-| ----------------------------- | ---------------------------------------- | --------------------- |
+|-------------------------------|------------------------------------------|-----------------------|
 | `APP_CONTROL_DATA_TOTAL_SIZE` | The total size of items to be returned in bytes. This key must be passed as a string. | This key is optional. |
 
 #### Extra Output
 
 | Key                         | Description                              |
-| --------------------------- | ---------------------------------------- |
+|-----------------------------|------------------------------------------|
 | `APP_CONTROL_DATA_SELECTED` | The path of the created file. This key must be passed as a string. |
 
 #### Example Code
@@ -530,7 +528,7 @@ To add a new contact, use the `APP_CONTROL_OPERATION_ADD` operation with the `ap
 #### Extra Input
 
 | Key                      | Description                              | Note                  |
-| ------------------------ | ---------------------------------------- | --------------------- |
+|--------------------------|------------------------------------------|-----------------------|
 | `APP_CONTROL_DATA_PHONE` | The phone number. This key must be passed as a string. | This key is optional. |
 | `APP_CONTROL_DATA_EMAIL` | The email address. This key must be passed as a string. |                       |
 | `APP_CONTROL_DATA_URL`   | The homepage URL. This key must be passed as a string. |                       |
@@ -539,7 +537,7 @@ To add a new contact, use the `APP_CONTROL_OPERATION_ADD` operation with the `ap
 #### Extra Output
 
 | Key                   | Description                              |
-| --------------------- | ---------------------------------------- |
+|-----------------------|------------------------------------------|
 | `APP_CONTROL_DATA_ID` | The database record ID of the added person (ID in the `_contacts_person` view). This key must be passed as a string. |
 
 #### Example Code
@@ -581,7 +579,7 @@ To edit a known contact, use the `APP_CONTROL_OPERATION_EDIT` operation with the
 #### Extra Input
 
 | Key                      | Description                              | Note                   |
-| ------------------------ | ---------------------------------------- | ---------------------- |
+|--------------------------|------------------------------------------|------------------------|
 | `APP_CONTROL_DATA_ID`    | The database record ID of the person to be edited (ID in the `_contacts_person` view). This key must be passed as a string. | This key is mandatory. |
 | `APP_CONTROL_DATA_PHONE` | The phone number that is added to the contact. This key must be passed as a string. | This key is optional.  |
 | `APP_CONTROL_DATA_EMAIL` | The email address that is added to the contact. This key must be passed as a string. |                        |
@@ -590,7 +588,7 @@ To edit a known contact, use the `APP_CONTROL_OPERATION_EDIT` operation with the
 #### Extra Output
 
 | Key                   | Description                              |
-| --------------------- | ---------------------------------------- |
+|-----------------------|------------------------------------------|
 | `APP_CONTROL_DATA_ID` | The database record ID of the person to be edited (ID in the `_contacts_person` view). This key must be passed as a string. |
 
 #### Example Code
@@ -641,7 +639,7 @@ To display a specified contact from a vcard file, use the `file:` URI. To displa
 #### Extra Input
 
 | Key                   | Description                              | Note                                     |
-| --------------------- | ---------------------------------------- | ---------------------------------------- |
+|-----------------------|------------------------------------------|------------------------------------------|
 | `APP_CONTROL_DATA_ID` | The database record ID of the edited person (ID in the `_contacts_person` view). This key must be passed as a string. | This key is mandatory when the MIME type is set to `application/vnd.tizen.contact`. |
 
 #### Example Code
@@ -704,7 +702,7 @@ To select a specified contact in the user's contacts, use the `APP_CONTROL_OPERA
 #### Extra Input
 
 | Key                               | Description                              | Note                  |
-| --------------------------------- | ---------------------------------------- | --------------------- |
+|-----------------------------------|------------------------------------------|-----------------------|
 | `APP_CONTROL_DATA_SELECTION_MODE` | The selection mode of the PICK operation. The available values are `single` (default) and `multiple`. This key must be passed as a string. | This key is optional. |
 | `APP_CONTROL_DATA_TYPE`           | The type of items to be delivered. The available values are `id` (default), `phone`, `email`, and `vcf`. This key must be passed as a string. | This key is optional.                      |
 | `APP_CONTROL_DATA_TOTAL_COUNT`    | The total number of events to be returned. This key must be passed as a string. | This key is optional.                      |
@@ -712,7 +710,7 @@ To select a specified contact in the user's contacts, use the `APP_CONTROL_OPERA
 #### Extra Output
 
 | Key                         | Description                              |
-| --------------------------- | ---------------------------------------- |
+|-----------------------------|------------------------------------------|
 | `APP_CONTROL_DATA_TYPE`     | The type of items to be delivered. The available values are `id`, `phone`, `email`, and `vcf`. This key must be passed as a string. |
 | `APP_CONTROL_DATA_SELECTED` | The extra field to get the return information. The content of this key depends on its type:`id`: The database record ID of the selected person (ID in the `_contacts_person` view).`phone`: The database record ID of the number of the selected person (ID in the `_contacts_number` view).`email`: The database record ID of the email of the selected person (ID in the `_contacts_email` view).`vcf`: The path to the vCard file.This key must be passed as an array. |
 
@@ -756,7 +754,7 @@ To share a single contact, use the `APP_CONTROL_OPERATION_SHARE` operation with 
 #### Extra Input
 
 | Key                     | Description                              | Note                   |
-| ----------------------- | ---------------------------------------- | ---------------------- |
+|-------------------------|------------------------------------------|------------------------|
 | `APP_CONTROL_DATA_ID`   | The database record ID of the person (ID in the `_contacts_person` view) when `APP_CONTROL_DATA_TYPE` is set to `person`.The database record ID of my profile (ID in the `_contacts_my_profile` view) when `APP_CONTROL_DATA_TYPE` is set to `my_profile`. This key must be passed as a string. | This key is mandatory. |
 | `APP_CONTROL_DATA_TYPE` | The type of contact. The available values are `my_profile` and `person`. This key must be passed as a string. |                        |
 
@@ -794,7 +792,7 @@ To share a set of contacts, use the `APP_CONTROL_OPERATION_MULTI_SHARE` operatio
 #### Extra Input
 
 | Key                   | Description                              | Note                   |
-| --------------------- | ---------------------------------------- | ---------------------- |
+|-----------------------|------------------------------------------|------------------------|
 | `APP_CONTROL_DATA_ID` | The database record IDs of the person (ID in the `_contacts_person` view). This key must be passed as an array. | This key is mandatory. |
 
 #### Example Code
@@ -842,7 +840,7 @@ If the `mailto:` field is empty, it filters out all but email applications in th
 #### Extra Input
 
 | Key                        | Description                              | Note                  |
-| -------------------------- | ---------------------------------------- | --------------------- |
+|----------------------------|------------------------------------------|-----------------------|
 | `APP_CONTROL_DATA_TO`      | The email address of the main recipients. This key must be passed as an array. | This key is optional. |
 | `APP_CONTROL_DATA_CC`      | The email address of the recipients that must be carbon copied. This key must be passed as an array. |This key is optional.                       |
 | `APP_CONTROL_DATA_BCC`     | The email address of the recipients that must be blind carbon copied. This key must be passed as an array. | This key is optional.                      |
@@ -898,7 +896,7 @@ If sharing a single item through `APP_CONTROL_DATA_PATH` and the URI is specifie
 #### Extra Input
 
 | Key                     | Description                              | Note                                     |
-| ----------------------- | ---------------------------------------- | ---------------------------------------- |
+|-------------------------|------------------------------------------|------------------------------------------|
 | `APP_CONTROL_DATA_PATH` | When the URI is set to `mailto`, a path to a single file to be shared must be provided using this key. Otherwise, the key is ignored. This key must be passed as a string. | This key is mandatory when the URI is set to `mailto:`. |
 
 #### Example Code
@@ -952,7 +950,7 @@ If you try to share a set of files with different MIME types, use `<type>/*` or 
 #### Extra Input
 
 | Key                     | Description                              | Note                   |
-| ----------------------- | ---------------------------------------- | ---------------------- |
+|-------------------------|------------------------------------------|------------------------|
 | `APP_CONTROL_DATA_PATH` | The list of multiple file paths to be shared in an email message. This key must be passed as an array. | This key is mandatory. |
 
 #### Example Code
@@ -1003,7 +1001,7 @@ Only an empty `mailto:` field is allowed. It filters out all but email applicati
 #### Extra Input
 
 | Key                        | Description                              | Note                   |
-| -------------------------- | ---------------------------------------- | ---------------------- |
+|----------------------------|------------------------------------------|-----------------------|
 | `APP_CONTROL_DATA_TEXT`    | The body of the message to be sent. This key must be passed as a string. | This key is mandatory. |
 | `APP_CONTROL_DATA_SUBJECT` | The subject of an email message. This key must be passed as a string. | This key is optional.  |
 | `APP_CONTROL_DATA_PATH`    | The list of multiple file paths to be shared using an email message. This key must be passed as an array. |This key is optional.                        |
@@ -1055,7 +1053,7 @@ To select any kind of file from the storage, use the `APP_CONTROL_OPERATION_PICK
 #### Extra Input
 
 | Key                               | Description                              | Note                  |
-| --------------------------------- | ---------------------------------------- | --------------------- |
+|-----------------------------------|------------------------------------------|-----------------------|
 | `APP_CONTROL_DATA_SELECTION_MODE` | The selection mode of the pick operation. The available values are `single` (default) and `multiple`. This key must be passed as a string. | This key is optional. |
 | `APP_CONTROL_DATA_TOTAL_COUNT`    | The total number of items to be returned. This key must be passed as a string. | This key is optional.                      |
 | `APP_CONTROL_DATA_TOTAL_SIZE`     | The total size of items to be returned in bytes. This key must be passed as a string. |This key is optional.                       |
@@ -1063,7 +1061,7 @@ To select any kind of file from the storage, use the `APP_CONTROL_OPERATION_PICK
 #### Extra Output
 
 | Key                         | Value description                        |
-| --------------------------- | ---------------------------------------- |
+|-----------------------------|------------------------------------------|
 | `APP_CONTROL_DATA_SELECTED` | The list of selected file paths. This key must be passed as an array. |
 
 #### Example Code
@@ -1134,7 +1132,7 @@ To receive a specific type of input from the user, use the `APP_CONTROL_OPERATIO
 #### Extra Input
 
 | Key                                      | Description                              | Note                  |
-| ---------------------------------------- | ---------------------------------------- | --------------------- |
+|------------------------------------------|------------------------------------------|-----------------------|
 | `APP_CONTROL_DATA_INPUT_TYPE`            | The input method type. This key must be passed as a string. The available values are:`input_voice`: Ask for voice input`input_emoticon`: Ask for emoticon input`input_keyboard`: Ask for keyboard input | This key is optional. |
 | `APP_CONTROL_DATA_INPUT_DEFAULT_TEXT`    | The preformatted text to be used as default input, such as "http://" for Web addresses. This key must be passed as a string. |This key is optional.                       |
 | `APP_CONTROL_DATA_INPUT_GUIDE_TEXT`      | The guide text, such as "Input user name". This key must be passed as a string. |This key is optional.                       |
@@ -1143,7 +1141,7 @@ To receive a specific type of input from the user, use the `APP_CONTROL_OPERATIO
 #### Extra Output
 
 | Key                     | Value description                        |
-| ----------------------- | ---------------------------------------- |
+|-------------------------|------------------------------------------|
 | `APP_CONTROL_DATA_TEXT` | The result string from the input delegator. This key must be passed as a string. |
 
 #### Example Code
@@ -1259,13 +1257,13 @@ If only `geo:` is used, it filters out all but map applications in the system, a
 #### Extra Input
 
 | Key                     | Description                              | Note                                     |
-| ----------------------- | ---------------------------------------- | ---------------------------------------- |
+|-------------------------|------------------------------------------|------------------------------------------|
 | `APP_CONTROL_DATA_TYPE` | The type of items to be delivered. The available values are `address` (default), `image`, `poi`, `geocode`, `uri`, or `all`. This key must be passed as a string. | This key is optional. **The poi value is not supported in Tizen 2.4.** **The geocode and uri values are supported since Tizen 3.0.** |
 
 #### Extra Output
 
 | Key                         | Description                              | Note                                     |
-| --------------------------- | ---------------------------------------- | ---------------------------------------- |
+|-----------------------------|------------------------------------------|------------------------------------------|
 | `APP_CONTROL_DATA_SELECTED` | The address of the selected location. This key must be passed as a string. | -                                        |
 | `APP_CONTROL_DATA_NAME`     | The name of the selected location. This key must be passed as a string. | **This key is not supported in Tizen 2.4.** |
 | `APP_CONTROL_DATA_LOCATION` | The geo-coordinates of the selected location. This key must be passed as a string. | **This key is supported since Tizen 3.0.** |
@@ -1360,7 +1358,7 @@ To compose a new message, use the `APP_CONTROL_OPERATION_COMPOSE` operation. To 
 #### Extra Input
 
 | Key                        | Description                              | Note                  |
-| -------------------------- | ---------------------------------------- | --------------------- |
+|----------------------------|------------------------------------------|-----------------------|
 | `APP_CONTROL_DATA_TO`      | The phone numbers of recipients. This key must be passed as an array. | This key is optional. |
 | `APP_CONTROL_DATA_TEXT`    | The body of the message to be sent. This key must be passed as a string. | This key is optional.                      |
 | `APP_CONTROL_DATA_SUBJECT` | The subject of an MMS message. If this value is set for an SMS message, the message is automatically converted to MMS. This key must be passed as a string. | This key is optional.                      |
@@ -1410,7 +1408,7 @@ If sharing a single item through `APP_CONTROL_DATA_PATH` and the URI is specifie
 #### Extra Input
 
 | Key                     | Description                              | Note                                     |
-| ----------------------- | ---------------------------------------- | ---------------------------------------- |
+|-------------------------|------------------------------------------|------------------------------------------|
 | `APP_CONTROL_DATA_PATH` | When the URI is set to `mmsto`, a path to a single file to be shared must be provided using this key. Otherwise, the key is ignored. This key must be passed as a string. | This key is mandatory when the URI is set to `mmsto`. |
 
 #### Example Code
@@ -1456,7 +1454,7 @@ If you try to share a set of files with different MIME types, use `<type>/*` or 
 #### Extra Input
 
 | Key                     | Description                              | Note                   |
-| ----------------------- | ---------------------------------------- | ---------------------- |
+|-------------------------|------------------------------------------|------------------------|
 | `APP_CONTROL_DATA_PATH` | The list of multiple file paths to be shared in a multimedia message. This key must be passed as an array. | This key is mandatory. |
 
 #### Example Code
@@ -1500,7 +1498,7 @@ Only an empty `sms:` or `mmsto:` field is allowed. This can be used to filter ou
 #### Extra Input
 
 | Key                        | Description                              | Note                   |
-| -------------------------- | ---------------------------------------- | ---------------------- |
+|----------------------------|------------------------------------------|------------------------|
 | `APP_CONTROL_DATA_TEXT`    | The body of the message to be sent. This key must be passed as a string. | This key is mandatory. |
 | `APP_CONTROL_DATA_SUBJECT` | The subject of an MMS message. If it is set for an SMS message, the message is automatically converted to MMS. This key must be passed as a string. | This key is optional.  |
 | `APP_CONTROL_DATA_PATH`    | The list of multiple file paths to be shared in a multimedia message. This key must be passed as an array. | This key is optional.                       |
@@ -1672,7 +1670,7 @@ To retrieve a specific type of media file, use the `APP_CONTROL_OPERATION_PICK` 
 #### Extra Input
 
 | Key                               | Description                              | Note                  |
-| --------------------------------- | ---------------------------------------- | --------------------- |
+|-----------------------------------|------------------------------------------|-----------------------|
 | `APP_CONTROL_DATA_SELECTION_MODE` | The selection mode of the pick operation. The available values are `single` (default) and `multiple`. This key must be passed as a string. | This key is optional. |
 | `APP_CONTROL_DATA_TOTAL_COUNT`    | The total number of items to be returned. This key must be passed as a string. |This key is optional.                       |
 | `APP_CONTROL_DATA_TOTAL_SIZE`     | The total size of items to be returned in bytes. This key must be passed as a string. |                       |
@@ -1680,7 +1678,7 @@ To retrieve a specific type of media file, use the `APP_CONTROL_OPERATION_PICK` 
 #### Extra Output
 
 | Key                         | Value description                        |
-| --------------------------- | ---------------------------------------- |
+|-----------------------------|------------------------------------------|
 | `APP_CONTROL_DATA_SELECTED` | The paths of the selected files. This key must be passed as an array. |
 
 #### Example Code
@@ -1954,7 +1952,7 @@ To launch the NFC setting application to allow the user to activate or deactivat
 #### Extra Input
 
 | Key                     | Description                              | Note                                     |
-| ----------------------- | ---------------------------------------- | ---------------------------------------- |
+|-----------------------|----------------------------------------|----------------------------------------|
 | `APP_CONTROL_DATA_TYPE` | The NFC setting menu type to be shown. This key must be passed as a string. The available values are:`nfc` (default): Default setting menu is launched`tap_n_pay`: Tap & pay setting menu is launchedThe support for this value depends on the device NFC settings. | This key is optional, and **it is supported since Tizen 3.0**. |
 
 #### Example Code
@@ -2065,13 +2063,13 @@ Audio MIME type, such as `audio/m4a`, `audio/ogg`, and `audio/*`
 #### Extra Input
 
 | Key                           | Description                              | Note                  |
-| ----------------------------- | ---------------------------------------- | --------------------- |
+|-----------------------------|----------------------------------------|---------------------|
 | `APP_CONTROL_DATA_TOTAL_SIZE` | The total size of items to be returned in bytes. This key must be passed as a string. | This key is optional. |
 
 #### Extra Output
 
 | Key                         | Value description                        |
-| --------------------------- | ---------------------------------------- |
+|-----------------------------|------------------------------------------|
 | `APP_CONTROL_DATA_SELECTED` | The path of the created audio file. This key must be passed as a string. |
 
 #### Example Code
@@ -2109,14 +2107,14 @@ To connect VPN, use the `APP_CONTROL_OPERATION_SETTING_VPN` operation. This oper
 #### Extra Input
 
 | Key                     | Description                              | Note                   |
-| ----------------------- | ---------------------------------------- | ---------------------- |
+|-------------------------|------------------------------------------|------------------------|
 | `APP_CONTROL_DATA_TYPE` | The method type. The available values are `up` (VPN interface up) and `down` (VPN interface down). This key must be passed as a string. | This key is mandatory. |
 | `APP_CONTROL_DATA_NAME` | The VPN interface name. This key must be passed as a string. | This key is mandatory.                       |
 
 #### Extra Output
 
 | Key                     | Description                              |
-| ----------------------- | ---------------------------------------- |
+|-------------------------|------------------------------------------|
 | `APP_CONTROL_DATA_TEXT` | The VPN service result string. This key must be passed as a string. |
 
 #### Example Code
@@ -2160,3 +2158,8 @@ vpn_appcontrol_result_cb(app_control_h request, app_control_h reply, app_control
     app_control_get_extra_data(reply, APP_CONTROL_DATA_TEXT, &result_txt);
     dlog_print(DLOG_INFO, LOG_TAG, "Result: %s", result_txt);
 ```
+
+## Related Information
+* Dependencies
+ - Tizen 2.4 and Higher for Mobile
+ - Tizen 2.3.2 and Higher for Wearable

@@ -1,7 +1,5 @@
 # Applications
-## Dependencies
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
+
 
 A Tizen native application is similar to a conventional Linux application, with some additional features optimized for mobile and wearable devices. The additional features have constraints, such as a relatively small screen size and lack of system resources compared to a larger system. For example, for power management reasons, the application can take actions to reduce usage when it finds out that it has its display window covered over by another application window. State change events are delivered to make it possible to detect these situations.
 
@@ -9,10 +7,10 @@ A Tizen native application is similar to a conventional Linux application, with 
 
 Tizen provides various application models to allow you to create applications targeted for specific tasks:
 
-- [UI Applications](ui-app-n.md)
+- [UI Applications](ui-app.md)
 The UI application has a graphical user interface. You can create diverse applications with a variety of features, and design versatile applications and intriguing user interfaces with text and graphics while taking advantage of many device functionalities, such as sensors and call operations. In addition, you can, for example, manage content and media files, use network and social services, and provide messaging and embedded Web browsing functionality.The UI application is the most common Tizen application model.
 
-- [Service Applications](service-app-n.md)
+- [Service Applications](service-app.md)
 The service application is a Tizen native application without a graphical user interface that runs in the background. They can be very useful in performing activities (such as getting sensor data in the background) that need to run periodically or continuously, but do not require any user intervention.
 
 ## Native Application Life-Cycle
@@ -34,7 +32,7 @@ When the application loses the focus status, the `app_pause_cb()` callback is in
 - A system event (such as an incoming phone call) occurs and causes a resident application with a higher priority to become active and temporarily hide your application.
 - An alarm is triggered for another application, which becomes the topmost window and hides your application.
 
-Since Tizen 2.4, an application in the background goes into a suspended state. In the suspended state, the application process is executed with limited CPU resources. In other words, the platform does not allow the running of the background applications, except for some exceptional applications (such as Media and Download) that necessarily work in the background. In this case, the application can [designate their background category as an allowed category](efl-ui-app-n.md#allow_bg) to avoid going into the suspended state.
+Since Tizen 2.4, an application in the background goes into a suspended state. In the suspended state, the application process is executed with limited CPU resources. In other words, the platform does not allow the running of the background applications, except for some exceptional applications (such as Media and Download) that necessarily work in the background. In this case, the application can [designate their background category as an allowed category](efl-ui-app.md#allow_bg) to avoid going into the suspended state.
 
 When your application becomes visible again, the `app_resume_cb()` callback is invoked. The visibility returns, when:
 
@@ -55,4 +53,9 @@ The following figure shows the UI and service application states.
 
 Because a service application has no UI, neither does it have a pause state. Since Tizen 2.4, a service application can go into the suspended state. Basically, the service application is running in the background by its nature; so the platform does not allow running the service application unless the application has a background category defined in its manifest file. However, when the UI application that is packaged with the service application is running on the foreground, the service application is also regarded as a foreground application and it can be run without a designated background category.
 
-Application state changes are managed by the underlying framework. For more information on application state transitions, see [Application States and Transitions](efl-ui-app-n.md#state_trans).
+Application state changes are managed by the underlying framework. For more information on application state transitions, see [Application States and Transitions](efl-ui-app.md#state_trans).
+
+## Related Information
+* Dependencies
+ - Tizen 2.4 and Higher for Mobile
+ - Tizen 2.3.1 and Higher for Wearable
