@@ -179,6 +179,8 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/location.gps`  | Specify this key, if the application requires the Global Positioning System (GPS) feature. | 2.2.1 |
 | `http://tizen.org/feature/location.wps`  | Specify this key, if the application requires the Wi-Fi-based Positioning System (WPS) feature. | 2.2.1 |
 | `http://tizen.org/feature/maps`          | Specify this key, if the application requires the map service feature. | 2.3.2 |
+| `http://tizen.org/feature/media.audio_recording`    | Specify this key, if the application requires the audio recording feature. | 2.3 |
+| `http://tizen.org/feature/media.video_recording`    | Specify this key, if the application requires the video recording feature. | 2.3 |
 | `http://tizen.org/feature/microphone`    | Specify this key, if the application requires a microphone. | 2.2.1 |
 | `http://tizen.org/feature/minicontrol`   | Specify this key, if the application requires the minicontrol feature. | 4.0   |
 | `http://tizen.org/feature/multimedia.transcoder` | Specify this key, if the application requires the multimedia transcoder feature. | 2.3   |
@@ -334,6 +336,8 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/location.gps`  | Specify this key, if the application requires the Global Positioning System (GPS) feature. | 2.2.1 |
 | `http://tizen.org/feature/location.wps`  | Specify this key, if the application requires the Wi-Fi-based Positioning System (WPS) feature. | 2.2.1 |
 | `http://tizen.org/feature/maps`          | Specify this key, if the application requires the map service feature. | 2.3.2 |
+| `http://tizen.org/feature/media.audio_recording`    | Specify this key, if the application requires the audio recording feature. | 2.3 |
+| `http://tizen.org/feature/media.video_recording`    | Specify this key, if the application requires the video recording feature. | 2.3 |
 | `http://tizen.org/feature/microphone`    | Specify this key, if the application requires a microphone. | 2.2.1 |
 | `http://tizen.org/feature/multimedia.transcoder` | Specify this key, if the application requires the multimedia transcoder feature. | 2.3   |
 | `http://tizen.org/feature/multi_point_touch.pinch_zoom` | Specify this key, if the application requires a pinch-zoom gesture feature. | 2.2.1 |
