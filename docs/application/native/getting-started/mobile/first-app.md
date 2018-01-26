@@ -112,7 +112,7 @@ To create the application project:
 
       ![Defining        properties](media/create_project_wizard_properties.png)
 
-      The Project Wizard sets up the project, creates the application        files using the default content from the template, and closes.        For more information on the Project Wizard and the available        templates, see [Creating Tizen Projects with Tizen Project        Wizard](../../../tizen-studio/native-tools/project-wizard-n.md).
+      The Project Wizard sets up the project, creates the application        files using the default content from the template, and closes.        For more information on the Project Wizard and the available        templates, see [Creating Tizen Projects with Tizen Project        Wizard](../../../tizen-studio/native-tools/project-wizard.md).
 
 You can see the created project in the **Project Explorer** view. The
 most important files and folders include:
@@ -244,7 +244,7 @@ You can have more than one build configuration. To see the current
 active configuration or change it, right-click the project in the
 **Project Explorer** view and select **Build Configurations &gt; Set
 Active**. The default configuration is `Debug`. For more information,
-see [Building Applications](../process/building-app-n.md).
+see [Building Applications](../../tutorials/process/building-app.md).
 
 After you have built the application, run it.
 

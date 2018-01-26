@@ -4,16 +4,18 @@
 
 A wearable native application is created using the C language, and can be run on Tizen wearable devices. The application uses the native API, which provides various interfaces to the device hardware allowing you to take advantage of numerous capabilities tailored to run with limited device resources.
 
-Study the following instructions to help familiarize yourself with the Tizen [native application development process](../process/app-dev-process-n.md) as well as using the Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable native application, which displays some text on the screen with no user interaction:
+Study the following instructions to help familiarize yourself with the Tizen [native application development process](../../tutorials/process/app-dev-process.md) as well as using the Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable native application, which displays some text on the screen with no user interaction:
 
-1. Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/download/download.md). For more information on the installation process, see the [installation guide](../../../tizen-studio/download/installing-sdk.md).
+1. Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/index.md). For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/installing-sdk.md).
 2. [Create a wearable native project](#create) using the Tizen Studio. This step shows how you can use a predesigned project template that creates all the basic files and folders required for your project.
 3. [Build the application](#build). After you have implemented code for the features you want, this step shows how you can build the application to validate and compile the code.
 4. [Run the application](#run). This step shows how you can run the application on the emulator or a real target device.
 5. [Build a UI](#build_ui). This step shows how you can make small alterations to the application UI to improve the usability of your application.
 
-When you are developing a more complex application, you can take advantage of the [native tools included in the Tizen Studio](../../../tizen-studio/native-tools/cover-native-n.md) to ease the tasks of creating functionality and designing the application UI.
+When you are developing a more complex application, you can take advantage of the [native tools included in the Tizen Studio](../../../tizen-studio/native-tools/cover-native.md) to ease the tasks of creating functionality and designing the application UI.
 
+
+<a name="create"></a>
 ## Creating a Project
 
 The following example shows you how to create and configure a basic wearable native application project in the Tizen Studio. An application project contains all the files that make up an application.
@@ -68,7 +70,7 @@ To create the application project:
 
       ![Defining properties](media/create_project_wizard_properties_wn.png)
 
-      The Project Wizard sets up the project, creates the application files using the default content from the template, and closes. For more information on the Project Wizard and the available templates, see [Creating Tizen Projects with Tizen Project Wizard](../../../tizen-studio/native-tools/project-wizard-n.md).
+      The Project Wizard sets up the project, creates the application files using the default content from the template, and closes. For more information on the Project Wizard and the available templates, see [Creating Tizen Projects with Tizen Project Wizard](../../../tizen-studio/native-tools/project-wizard.md).
 
 You can see the created project in the **Project Explorer** view. The most important files and folders include:
 
@@ -115,8 +117,9 @@ To view and modify the application configuration:
 
 3. To save any changes, in the Tizen Studio menu, select **File > Save All**.
 
-For more information on configuring the application, see [Setting the Application Manifest](../process/setting-properties-n.md#manifest).
+For more information on configuring the application, see [Setting the Application Manifest](../../tutorials/process/setting-properties.md#manifest).
 
+<a name="build"></a>
 ## Building Your Application
 
 After you have created the application project, you can implement the required features. In this example, only the default features from the project template are used, and no code changes are required.
@@ -153,14 +156,16 @@ You can build the application in the following ways:
   - In the Tizen Studio menu, select **Project > Build Project**.
   - Press the **F10** key.
 
-You can have more than one build configuration. To see the current active configuration or change it, right-click the project in the **Project Explorer** view and select **Build Configurations > Set Active**. The default configuration is `Debug`. For more information, see [Building Applications](../process/building-app-n.md).
+You can have more than one build configuration. To see the current active configuration or change it, right-click the project in the **Project Explorer** view and select **Build Configurations > Set Active**. The default configuration is `Debug`. For more information, see [Building Applications](../../tutorials/process/building-app.md).
 
 After you have built the application, run it.
 
+<a name="run"></a>
 ## Running Your Application
 
 You can run the application on the emulator or a real target device.
 
+<a name="emulator"></a>
 ### Running on the Emulator
 
 To run the application on the emulator:
