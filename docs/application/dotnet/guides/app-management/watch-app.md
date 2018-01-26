@@ -109,7 +109,7 @@ To manage the application state changes, override the following methods of the `
     }
     ```
 
--   The `OnTick()` method is triggered at least once per second. The watch application can get the current time from the `time` time handle of the [Tizen.Applications.WatchTime](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WatchTime.html) class to draw a normal watch.
+-   The `OnTick()` method is triggered at least once per second. The watch application can get the current time from the `time` time handle of the [Tizen.Applications.WatchTime](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WatchTime.html) class to draw a normal watch. This method can be called by platform even in the background state. So even if your watch app is in the background If this method is called, we need to update the UI.
 
     ```
     protected override void OnTick(TimeEventArgs time)
