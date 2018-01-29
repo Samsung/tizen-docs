@@ -1,9 +1,5 @@
 # Datetime
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 The datetime UI component displays date and time values. For more information, see the [Datetime](../../../../../org.tizen.native.mobile.apireference/group__Elm__Datetime.html) API.
 
 This feature is supported in mobile applications only.
@@ -14,31 +10,31 @@ To use a datetime component in your application:
 
 1. Add a datetime component with the `elm_datetime_add()` function:
 
-   ```
+   ```csharp
    Evas_Object *datetime;
 
    datetime = elm_datetime_add(parent);
    ```
 
-2.  Set a [style](#style) and format. The datetime format is a combination of LIBC standard characters, such as "%d %b %Y %I : %M %M". For more information on the format characters, see the [Datetime](../../../../../org.tizen.native.mobile.apireference/group__Elm__Datetime.html) API.
+2.  Set a [style](#styles) and format. The datetime format is a combination of LIBC standard characters, such as "%d %b %Y %I : %M %M". For more information on the format characters, see the [Datetime](../../../../../org.tizen.native.mobile.apireference/group__Elm__Datetime.html) API.
 
    - Set a style to the datetime component with the `elm_object_style_set()` function. If you use the default style, you can skip this step.
 
-     ```
+     ```csharp
      elm_object_style_set(datetime, "date_layout");
      ```
 
    - Set a format using the `elm_datetime_format_set()` function:
 
-     ```
+     ```csharp
      elm_datetime_format_set(datetime, "%d%b%Y");
      ```
 
-3. Set datetime component [options](#feature).
+3. Set datetime component [options](#options).
 
-4. Register the [callback](#callback) functions.The following example shows how to define and register a callback for the `changed` signal:
+4. Register the [callback](#callbacks) functions.The following example shows how to define and register a callback for the `changed` signal:
 
-   ```
+   ```csharp
    evas_object_smart_callback_add(datetime, "changed", changed_cb, data);
 
    void
@@ -52,11 +48,9 @@ The following example shows a simple use case of the datetime component.
 
 **Example: Datetime use case**
 
-| ![Datetime](./media/datetime.png) |
-| ---------------------------------------- |
-|                                          |
+ ![Datetime](./media/datetime.png)
 
-```
+```csharp
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;
@@ -108,13 +102,13 @@ You can set value ranges for the datetime component:
 
   To set the maximum time for the datetime component:
 
-  ```
+  ```csharp
   elm_datetime_value_max_set(datetime, tm);
   ```
 
   To set the minimum time for the datetime component:
 
-  ```
+  ```csharp
   elm_datetime_value_min_set(datetime, tm);
   ```
 
@@ -131,7 +125,7 @@ You can set value ranges for the datetime component:
 
   To set a value range for a specific field:
 
-  ```
+  ```csharp
   elm_datetime_field_limit_set(datetime, ELM_DATETIME_DATE, 10, 20);
   ```
 
@@ -142,13 +136,21 @@ The following table lists the available component styles.
 **Table: Datetime styles**
 
 | Style                  | Sample                                   |
-| ---------------------- | ---------------------------------------- |
+|----------------------|----------------------------------------|
 | `default``date_layout` | ![elm/datetime/base/default](./media/datetime_date_layout.png) |
 | `time_layout`          | ![elm/datetime/base/time_layout](./media/datetime_time_layout.png) |
 | `time_layout_24hr`     | ![elm/datetime/base/time_layout_24hr](./media/datetime_time_24h.png) |
 
 >  **Note**  
-> Pay attention to the following UX issue since Tizen 2.3:The `time_layout` and `time_layout_24hr` styles need a full-length format that includes the year, month, day, hour, minute, and AM/PM. Each style shows specific fields from the format, limited by the UX concept:`date_layout` (default): Year, month, day`time_layout`: Hour, minute, AM/PM button`time_layout_24hr`: Hour, minuteIf you call the `elm_datetime_field_visible_set()` function for a field that is not supported in the current style, the function does not work.
+> Pay attention to the following UX issue since Tizen 2.3:  
+>
+> The `time_layout` and `time_layout_24hr` styles need a full-length format that includes the year, month, day, hour, minute, and AM/PM. Each style shows specific fields from the format, limited by the UX concept:  
+>
+> - `date_layout` (default): Year, month, day
+> - `time_layout`: Hour, minute, AM/PM button
+> - `time_layout_24hr`: Hour, minute
+>
+> If you call the `elm_datetime_field_visible_set()` function for a field that is not supported in the current style, the function does not work.
 
 ## Callbacks
 
@@ -157,7 +159,7 @@ You can register callback functions connected to the following signals for a dat
 **Table: Datetime callback signals**
 
 | Signal             | Description                       | `event_info` |
-| ------------------ | --------------------------------- | ------------ |
+|------------------|---------------------------------|------------|
 | `changed`          | The datetime field values change. | `NULL`       |
 | `language,changed` | The system locale changes.        | `NULL`       |
 
@@ -166,3 +168,7 @@ You can register callback functions connected to the following signals for a dat
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile

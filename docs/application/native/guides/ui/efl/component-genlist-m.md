@@ -1,9 +1,5 @@
 # Genlist
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 The genlist UI component displays a scrollable list of items. It allows you to manage a lot of items while still being fast and having a low memory footprint, as only visible items are allocated in the memory. For more information, see the [Genlist](../../../../../org.tizen.native.mobile.apireference/group__Elm__Genlist.html) API.
 
 This feature is supported in mobile applications only.
@@ -16,7 +12,7 @@ To use a genlist component in your application:
 
 1. Add a genlist with the `elm_genlist_add()` function:
 
-   ```
+   ```csharp
    Evas_Object *genlist;
 
    genlist = elm_genlist_add(parent);
@@ -24,9 +20,9 @@ To use a genlist component in your application:
 
 2. Define the genlist item class:
 
-   1. Create a genlist item class with the `elm_genlist_item_class_new()` function, set a style to the item class, and register callback functions. The genlist item class must be freed manually with the `elm_genlist_item_class_free()` function after all items are appended.
+   a. Create a genlist item class with the `elm_genlist_item_class_new()` function, set a style to the item class, and register callback functions. The genlist item class must be freed manually with the `elm_genlist_item_class_free()` function after all items are appended.
 
-      ```
+      ```csharp
       Elm_Genlist_Item_Class *itc = elm_genlist_item_class_new();
 
       itc->item_style = "default";
@@ -35,9 +31,11 @@ To use a genlist component in your application:
       itc->func.del = _item_del;
       ```
 
-   2. Define the `text_get` function.When a genlist item becomes realized, the `text_get` function is called repeatedly for all text parts in that item. After the text is set to the part, it is freed automatically. Do not free it manually.
+   b. Define the `text_get` function.  
 
-      ```
+   When a genlist item becomes realized, the `text_get` function is called repeatedly for all text parts in that item. After the text is set to the part, it is freed automatically. Do not free it manually.
+
+      ```csharp
       static char*
       _item_label_get(void *data, Evas_Object *obj, const char *part)
       {
@@ -48,9 +46,11 @@ To use a genlist component in your application:
       }
       ```
 
-   3. Define the `content_get` function.The `content_get` function is called repeatedly for all swallow parts in the item. It must return a valid object handle to be set, or `NULL` when no content is desired. The object is deleted by the genlist on its deletion or when the item is unrealized.
+   c. Define the `content_get` function.  
 
-      ```
+   The `content_get` function is called repeatedly for all swallow parts in the item. It must return a valid object handle to be set, or `NULL` when no content is desired. The object is deleted by the genlist on its deletion or when the item is unrealized.
+
+      ```csharp
       static Evas_Object*
       _item_content_get(void *data, Evas_Object *obj, const char *part)
       {
@@ -65,9 +65,11 @@ To use a genlist component in your application:
       }
       ```
 
-   4. Define the `del` function.This function is called when the genlist item is deleted. It deletes any data that has been allocated at the item's creation.
+   d. Define the `del` function.  
 
-      ```
+   This function is called when the genlist item is deleted. It deletes any data that has been allocated at the item's creation.
+
+      ```csharp
       static void
       _item_del(void *data, Evas_Object *obj)
       {
@@ -77,14 +79,14 @@ To use a genlist component in your application:
 
 3. Append items to the genlist with the `elm_genlist_item_append()` function.
 
-   ```
+   ```csharp
    elm_genlist_item_append(genlist, itc, (void *)i, NULL, ELM_GENLIST_ITEM_NONE,
                            _item_selected_cb, (void *)i);
    ```
 
-4. Register the [callback](#callback) functions for the genlist and its items.The following example shows how to define a callback for when the genlist item is selected:
+4. Register the [callback](#callbacks) functions for the genlist and its items.The following example shows how to define a callback for when the genlist item is selected:
 
-   ```
+   ```csharp
    static void
    _item_selected_cb(void *data, Evas_Object *obj, void *event_info)
    {
@@ -96,11 +98,9 @@ The following example shows a simple use case of the genlist component.
 
 **Example: Genlist use case**
 
-| ![Genlist](./media/genlist1.png) |
-| ---------------------------------------- |
-|                                          |
+ ![Genlist](./media/genlist1.png)
 
-```
+```csharp
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;
@@ -191,11 +191,9 @@ You can use the group items in the group mode or tree mode:
 
   **Example: Genlist group mode use case**
 
-  | ![Genlist group mode](./media/genlist2.png) |
-  ​
-
-
-  ```
+![Genlist group mode](./media/genlist2.png)  
+     ​
+```csharp
   Elm_Genlist_Item_Class *itc;
   Elm_Genlist_Item_Class *gitc;
   Elm_Object_Item *g;
@@ -244,11 +242,9 @@ You can use the group items in the group mode or tree mode:
 
   **Example: Genlist tree mode use case**
 
-  | ![Genlist tree mode](./media/genlist3.png) |
-  | ---------------------------------------- |
-  |                                          |
+   ![Genlist tree mode](./media/genlist3.png)
 
-```
+```csharp
 Elm_Genlist_Item_Class *titc;
 Elm_Object_Item *it;
 int i;
@@ -331,10 +327,17 @@ You can retrieve the parent of an item with the `elm_genlist_item_parent_get()` 
 
 The genlist and item size can be managed through the mode set by the `elm_genlist_mode_set()` function:
 
-- `ELM_LIST_COMPRESS`The genlist respects its container's geometry. Even if there are items exceeding the genlist in the transverse axis, the genlist is not scrollable in that direction.
-- `ELM_LIST_SCROLL`Same as `ELM_LIST_COMPRESS`, but if there are items exceeding the genlist in the transverse axis, the genlist is scrollable in that direction.
-- `ELM_LIST_LIMIT`Sets a minimum size hint on the list object, so that containers can respect it. A minimum size hint is set for its transverse axis, so that the largest item in that direction fits well.
-- `ELM_LIST_EXPAND`Besides setting a minimum size on the transverse axis, like `ELM_LIST_LIMIT`, the list sets a minimum size on the longitudinal axis, trying to reverse space to all its children to be visible at a time.
+- `ELM_LIST_COMPRESS`  
+The genlist respects its container's geometry. Even if there are items exceeding the genlist in the transverse axis, the genlist is not scrollable in that direction.
+
+- `ELM_LIST_SCROLL`  
+Same as `ELM_LIST_COMPRESS`, but if there are items exceeding the genlist in the transverse axis, the genlist is scrollable in that direction.
+
+- `ELM_LIST_LIMIT`  
+Sets a minimum size hint on the list object, so that containers can respect it. A minimum size hint is set for its transverse axis, so that the largest item in that direction fits well.
+
+- `ELM_LIST_EXPAND`  
+Besides setting a minimum size on the transverse axis, like `ELM_LIST_LIMIT`, the list sets a minimum size on the longitudinal axis, trying to reverse space to all its children to be visible at a time.
 
 ### Item Selection
 
@@ -351,7 +354,7 @@ To manage the item selection, use the following functions:
 > **Note**  
 > The item selection comes with a highlight effect. If the user wants to cancel the highlight by touch off, you must cancel the select operation in the `select()` callback:
 
-```
+```csharp
 static void
 select_cb(void *data, Evas_Object *obj, void *event_info)
 {
@@ -368,7 +371,9 @@ Calling this function does not show or hide any child of an item (if it is a par
 You can update the items using the following functions:
 
 - `elm_genlist_item_update()`: Update an item
-- `elm_genlist_item_fields_update()`: Update only specific parts:`ELM_GENLIST_ITEM_FIELD_TEXT``ELM_GENLIST_ITEM_FIELD_CONTENT`
+- `elm_genlist_item_fields_update()`: Update only specific parts:  
+  - `ELM_GENLIST_ITEM_FIELD_TEXT`
+  - `ELM_GENLIST_ITEM_FIELD_CONTENT`
 
 ## Styles
 
@@ -385,15 +390,15 @@ The following table lists the available component styles.
 **Table: Genlist styles**
 
 | Style                            | Sample                                   | Notes                                    |
-| -------------------------------- | ---------------------------------------- | ---------------------------------------- |
+|--------------------------------|----------------------------------------|----------------------------------------|
 | `elm/genlist/base/solid/default` | ![elm/genlist/base/solid/default](./media/styleguide_genlist_def.png) | N/A                                      |
-| `default`                        |                                          | Same as `effect`.                        |
-| `effect`                         |                                          | When the genlist reaches its edge during scrolling, it shows an effect. |
-| `no_effect`                      |                                          | The genlist has no effect when it reaches an edge. |
-| `handler`                        |                                          | Enables a scrollbar that eases scrolling through the whole list. |
-| `solid/effect`                   |                                          | N/A                                      |
-| `solid/no_effect`                |                                          | N/A                                      |
-| `solid/handler`                  |                                          | N/A                                      |
+| `default`                        |                  -                        | Same as `effect`.                        |
+| `effect`                         |              -                            | When the genlist reaches its edge during scrolling, it shows an effect. |
+| `no_effect`                      |              -                            | The genlist has no effect when it reaches an edge. |
+| `handler`                        |              -                            | Enables a scrollbar that eases scrolling through the whole list. |
+| `solid/effect`                   |              -                            | N/A                                      |
+| `solid/no_effect`                |              -                            | N/A                                      |
+| `solid/handler`                  |            -                              | N/A                                      |
 
 ### Item Styles
 
@@ -404,7 +409,7 @@ The following table lists the available item styles.
 **Table: Genlist item styles**
 
 | Style                                    | Sample                                   | Text part                                | Swallow part                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+|----------------------------------------|----------------------------------------|----------------------------------------|----------------------------------------|
 | `elm/genlist/item/type1/default`         | ![elm/genlist/item/type1/default](./media/styleguide_genlist_type1_def.png) | `elm.text`<br>`elm.text.end`<br>`elm.text.sub`<br>`elm.text.sub.end` | `elm.swallow.bg`<br>`elm.swallow.icon`<br>`elm.swallow.icon.0`<br>`elm.swallow.icon.1`<br>`elm.swallow.icon.2`<br>`elm.swallow.end` |
 | `elm/genlist/item/type2/default`         | ![elm/genlist/item/type2/default](./media/styleguide_genlist_type2_def.png) | `elm.text`<br>`elm.text.end`<br>`elm.text.sub`<br>`elm.text.sub.end` | `elm.swallow.bg`<br>`elm.swallow.icon`<br>`elm.swallow.icon.0`<br>`elm.swallow.icon.1`<br>`elm.swallow.end` |
 | `elm/genlist/item/multiline/default`     | ![elm/genlist/item/multiline/default](./media/styleguide_genlist_multiline.png) | `elm.text`<br>`elm.text.multiline`       | `elm.swallow.bg`<br>`elm.swallow.icon`<br>`elm.swallow.icon.0`<br>`elm.swallow.icon.1`<br>`elm.swallow.icon.2`<br>`elm.swallow.end` |
@@ -423,7 +428,7 @@ You can register callback functions connected to the following signals for a gen
 **Table: Genlist callback signals**
 
 | Signal                 | Description                              | `event_info`                             |
-| ---------------------- | ---------------------------------------- | ---------------------------------------- |
+|----------------------|----------------------------------------|----------------------------------------|
 | `activated`            | The item is double-clicked or pressed (enter &#124; return &#124; spacebar). | `Elm_Object_Item`                        |
 | `clicked,double`       | The item is double-clicked.              | `Elm_Object_Item`                        |
 | `selected`             | The item is selected.                    | `Elm_Object_Item`                        |
@@ -470,3 +475,7 @@ You can register callback functions connected to the following signals for a gen
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile

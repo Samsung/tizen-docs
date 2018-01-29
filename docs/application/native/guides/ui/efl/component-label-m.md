@@ -1,9 +1,5 @@
 # Label
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 The label UI component displays texts with a simple HTML-like markup. For more information, see the [Label](../../../../../org.tizen.native.mobile.apireference/group__Elm__Label.html) API.
 
 This feature is supported in mobile applications only.
@@ -14,21 +10,21 @@ To use a label component in your application:
 
 1. Add a label with the `elm_label_add()` function:
 
-   ```
+   ```csharp
    Evas_Object *label;
 
    label = elm_label_add(parent);
    ```
 
-2. Set a text to the label with the `elm_object_text_set()` function. Label is based on [textblock](evas-objects-n.md#block), which means you can use textblock markup in a label text.
+2. Set a text to the label with the `elm_object_text_set()` function. Label is based on [textblock](evas-objects.md#textblock-objects), which means you can use textblock markup in a label text.
 
-   ```
+   ```csharp
    elm_object_text_set(label, "This is a label.");
    ```
 
-3. Register the [callback](#callback) functions.The following example shows how to define and register a callback for the `slide,end` signal:
+3. Register the [callback](#callbacks) functions.The following example shows how to define and register a callback for the `slide,end` signal:
 
-   ```
+   ```csharp
    evas_object_smart_callback_add(label, "slide,end", slide_end_cb, data);
 
    void
@@ -42,11 +38,9 @@ The following example shows a simple use case of the label component.
 
 **Example: Label use case**
 
-| ![Label](./media/label1.png) |
-| ------------------------------------ |
-|                                      |
+ ![Label](./media/label1.png)
 
-```
+```csharp
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;
@@ -72,7 +66,7 @@ elm_box_pack_end(box, label);
 
 If you use a slide-type style, you can adjust the slide mode and animation duration using the following functions:
 
-```
+```csharp
 elm_label_slide_mode_set(label, ELM_LABEL_SLIDE_MODE_ALWAYS);
 elm_label_slide_duration_set(label, 3);
 ```
@@ -82,7 +76,7 @@ The following table lists the available component styles.
 **Table: Label styles**
 
 | Style          | Description                              |
-| -------------- | ---------------------------------------- |
+|--------------|----------------------------------------|
 | `default`      | No animation is used.                    |
 | `marker`       | The text is centered and bolded.         |
 | `slide_long`   | The text appears from the right of the screen and slides until it disappears in the left of the screen (reappearing on the right again). |
@@ -96,7 +90,7 @@ You can register callback functions connected to the following signals for a lab
 **Table: Label callback signals**
 
 | Signal              | Description                          | `event_info`                   |
-| ------------------- | ------------------------------------ | ------------------------------ |
+|-------------------|------------------------------------|------------------------------|
 | `language,changed`  | The program language changes.        | `NULL`                         |
 | `slide,end`         | The slide reaches the end.           | `NULL`                         |
 | `anchor,clicked`    | The anchor is clicked.               | `Elm_Label_Anchor_Info` object |
@@ -108,3 +102,7 @@ You can register callback functions connected to the following signals for a lab
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile

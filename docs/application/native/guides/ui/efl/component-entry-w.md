@@ -1,9 +1,5 @@
 # Entry
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 This feature is supported in wearable applications only.
 
 The entry component is a box where the user can enter text. It supports the following features:
@@ -31,7 +27,7 @@ For more information, see the [Entry](../../../../../org.tizen.native.wearable.a
 
 To create an entry component, use the `elm_entry_add()` function. You can set the text inside it with the `elm_entry_entry_set()` function.
 
-```
+```csharp
 Evas_Object *entry;
 Evas_Object *parent;
 
@@ -83,7 +79,7 @@ To manage the entry component content:
 
 - Retrieve the currently selected text:
 
-  ```
+  ```csharp
   const char *selection;
 
   selection = elm_entry_selection_get(entry);
@@ -109,7 +105,7 @@ To manage the entry component content:
 
   - To limit the size of the entry to 8 characters:
 
-    ```
+    ```csharp
     static Elm_Entry_Filter_Limit_Size
     limit_size =
     {
@@ -126,9 +122,11 @@ To manage the entry component content:
     elm_entry_markup_filter_append(entry, elm_entry_filter_limit_size, &limit_size);
     ```
 
-  - To define a list of accepted or rejected characters, append the filter with the `Elm_Entry_Filter_Accept_Set` structure.The following example shows how to reject the '+', '-', '*', and '/' characters:*
+  - To define a list of accepted or rejected characters, append the filter with the `Elm_Entry_Filter_Accept_Set` structure.  
 
-    ```
+   The following example shows how to reject the '+', '-', '*', and '/' characters:
+
+    ```csharp
     static Elm_Entry_Filter_Accept_Set
     accept_set =
     {
@@ -149,7 +147,7 @@ elm_entry_file_set(entry, "/tmp/test.txt", ELM_TEXT_FORMAT_MARKUP_UTF8);
 
 You can also deactivate the automatic saving feature and explicitly save the content when needed:
 
-```
+```csharp
 /* Disable autosaving */
 elm_entry_autosave_set(entry, EINA_FALSE);
 
@@ -189,13 +187,14 @@ To manage the cursor position:
   elm_entry_cursor_next(entry);
   ```
 
-- Set the cursor at a specific position (15th character, for example):`elm_entry_cursor_pos_set(entry, 15);`
+- Set the cursor at a specific position (15th character, for example):  
+ ```elm_entry_cursor_pos_set(entry, 15);```
 
 - Make a text selection while moving the cursor.
 
   The following example starts a selection at the current cursor position, moves 5 characters right, and ends the selection:
 
-  ```
+  ```csharp
   elm_entry_cursor_selection_begin(entry);
 
   for (i = 0; i < 5; i++)
@@ -265,8 +264,11 @@ You can format the entry text in many ways:
 
 - Add special markups within the entry text:
 
-  - Anchors: `<a href = ..>...</a>`The anchors generate an `anchor,clicked` signal when the user clicks them. The `href` attribute is used to identify the anchor. The anchor also reacts to the `anchor,in` (mouse in), `anchor,out` (mouse out), `anchor,down` (mouse down), and `anchor,up` (mouse up) events.
-  - Items: `<item size = .. vsize = .. href = ..>...</item>`The items provide a way to insert any `Evas_Object` in the text. The `Evas_Object` name must be specified in the `href` attribute.
+  - Anchors: `<a href = ..>...</a>`  
+  The anchors generate an `anchor,clicked` signal when the user clicks them. The `href` attribute is used to identify the anchor. The anchor also reacts to the `anchor,in` (mouse in), `anchor,out` (mouse out), `anchor,down` (mouse down), and `anchor,up` (mouse up) events.
+
+  - Items: `<item size = .. vsize = .. href = ..>...</item>`  
+  The items provide a way to insert any `Evas_Object` in the text. The `Evas_Object` name must be specified in the `href` attribute.
 
 - Override the textblock object style.
 
@@ -276,7 +278,7 @@ You can format the entry text in many ways:
 
   - You can modify 2 content parts of the default theme: `icon` and `end`.The following example shows how to set an icon in the `end` content part:
 
-    ```
+    ```csharp
     Evas_Object *icon;
 
     ic = elm_icon_add(entry);
@@ -296,20 +298,28 @@ To receive notifications about the entry events, listen for the following signal
 
 - `aborted`: The **Escape** key is pressed on a single line entry.
 - `activated`: The **Enter** key is pressed on a single line entry.
-- `anchor,clicked`: An anchor is clicked.The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
-- `anchor,down`: The mouse button is pressed on an anchor.The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
-- `anchor,hover,opened`: The anchor is clicked.The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
-- `anchor,in`: The mouse cursor is moved into an anchor.The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
-- `anchor,out`: The mouse cursor is moved out of an anchor.The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
-- `anchor,up`: The mouse button is released on an anchor.The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
+- `anchor,clicked`: An anchor is clicked.  
+The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
+- `anchor,down`: The mouse button is pressed on an anchor.  
+The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
+- `anchor,hover,opened`: The anchor is clicked.  
+The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
+- `anchor,in`: The mouse cursor is moved into an anchor.  
+The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
+- `anchor,out`: The mouse cursor is moved out of an anchor.  
+The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
+- `anchor,up`: The mouse button is released on an anchor.  
+The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
 - `changed`: The text within the entry is changed.
-- `changed,user`: The text within the entry is changed because of user interaction.The `event_info` callback parameter points to an `Edje_Entry_Change_Info` object.
+- `changed,user`: The text within the entry is changed because of user interaction.  
+The `event_info` callback parameter points to an `Edje_Entry_Change_Info` object.
 - `clicked`: The entry is clicked (mouse press and release).
 - `clicked,double`: The entry is double-clicked.
 - `clicked,triple`: The entry is triple-clicked.
 - `cursor,changed`: The cursor position is changed.
 - `cursor,changed,manual`: The cursor position is changed manually.
-- `focused`: The entry receives focus.The `event_info` callback parameter points to an `Elm_Focus_Info` object.
+- `focused`: The entry receives focus.  
+The `event_info` callback parameter points to an `Elm_Focus_Info` object.
 - `unfocused`: The entry loses focus.
 - `language,changed`: The program language is changed.
 - `longpressed`: The mouse button is pressed and held for a couple of seconds.
@@ -327,13 +337,13 @@ To receive notifications about the entry events, listen for the following signal
 - `theme,changed`: The theme is changed.
 - `undo,request`: The request is undone.
 
-> **Note**
+> **Note**  
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 > If not mentioned separately, the `event_info` callback parameter in all signals is `NULL`.
 
 To register and define a callback for the `focused` signal:
 
-```
+```csharp
 {
     evas_object_smart_callback_add(entry, "focused", focused_cb, data);
 }
@@ -349,3 +359,7 @@ focused_cb(void *data, Evas_Object *obj, void *event_info)
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.3.1 and Higher for Wearable

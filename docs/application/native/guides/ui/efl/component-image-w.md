@@ -1,9 +1,5 @@
 # Image
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 This feature is supported in wearable applications only.
 
 The image component can load and display an image from a disk file or a memory region.
@@ -22,7 +18,7 @@ For more information, see the [Image](../../../../../org.tizen.native.wearable.a
 
 To create an image component, use the `elm_image_add()` function:
 
-```
+```csharp
 Evas_Object *image;
 Evas_Object *parent;
 
@@ -86,15 +82,18 @@ To configure the image component:
 
 To receive notifications about the image events, listen for the following signals:
 
-- `drop`: An image typed object is dropped onto the object in question.The `event_info` callback parameter is the path to that image file.
-- `clicked`: The image is clicked.The `event_info` callback parameter is `NULL`.
+- `drop`: An image typed object is dropped onto the object in question.  
+The `event_info` callback parameter is the path to that image file.
+
+- `clicked`: The image is clicked.  
+The `event_info` callback parameter is `NULL`.
 
 > **Note**    
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 To register and define a callback for the `clicked` signal:
 
-```
+```csharp
 {
     evas_object_smart_callback_add(image, "clicked", clicked_cb, data);
 }
@@ -110,3 +109,7 @@ clicked_cb(void *data, Evas_Object *obj, void *event_info)
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.3.1 and Higher for Wearable

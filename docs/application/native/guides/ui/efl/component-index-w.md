@@ -1,9 +1,5 @@
 # Index
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 This feature is supported in wearable applications only.
 
 The index component gives you an index for quick access to a group of other UI items. The index component is hidden by default, but it appears when the user clicks over its reserved area on the canvas.
@@ -24,7 +20,7 @@ For more information, see the [Index](../../../../../org.tizen.native.wearable.a
 
 To create a new index component, use the `elm_index_add()` function:
 
-```
+```csharp
 Evas_Object *index;
 Evas_Object *parent;
 
@@ -37,7 +33,7 @@ To add index items:
 
 1. Add a list item object at the letter `A`, calling the `it_select_cb()` smart callback when this item is selected:
 
-   ```
+   ```csharp
    Elm_Object_Item *list_item1;
    Elm_Object_Item *list_item2;
    elm_index_item_append(index, "A", it_select_cb, list_item1);
@@ -47,7 +43,7 @@ To add index items:
 
 2. Add item objects, calling the `it_select_cb()` smart callback when the item is selected:
 
-   ```
+   ```csharp
    Elm_Object_Item *it[5];
    for (i = 0; i < 5; ++i)
        it[i] = elm_index_item_append(index, NULL, it_select_cb, (void *)i);
@@ -55,7 +51,7 @@ To add index items:
 
 3. Define the smart callback:
 
-   ```
+   ```csharp
    /* Called when the list_item1 object is selected */
    void
    it_select_cb(void *data, Evas_Object *obj, void *event_info)
@@ -68,18 +64,25 @@ To add index items:
 
 To receive notifications about the index events, listen for the following signals:
 
-- `changed`: The selected index item changes.The `event_info` callback parameter is the selected item's data pointer.
-- `delay,changed`: The selected index item changes, but after a small idling period.The `event_info` callback parameter is the selected item's data pointer.
-- `selected`: The user selects an item by releasing the mouse button.The `event_info` callback parameter is the selected item's data pointer.
+- `changed`: The selected index item changes.  
+The `event_info` callback parameter is the selected item's data pointer.
+
+- `delay,changed`: The selected index item changes, but after a small idling period.  
+The `event_info` callback parameter is the selected item's data pointer.
+
+- `selected`: The user selects an item by releasing the mouse button.  
+The `event_info` callback parameter is the selected item's data pointer.
+
 - `level,up`: The user moves a finger from the first level to the second level.
+
 - `level,down`: The user moves a finger from the second level to the first level.
 
-> **Note**
+> **Note**  
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 Register and define the associated callback to perform appropriate actions. For example, when the `selected` signal occurs, show a given area or child object depending on the selected index item:
 
-```
+```csharp
 static void
 _index_selected_cb(void *data, Evas_Object *obj, void *event_info)
 {
@@ -91,6 +94,9 @@ _index_selected_cb(void *data, Evas_Object *obj, void *event_info)
 evas_object_smart_callback_add(index, "selected", _index_selected_cb, NULL);
 ```
 
-**Note
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+## Related Information
+- Dependencies
+  - Tizen 2.3.1 and Higher for Wearable
