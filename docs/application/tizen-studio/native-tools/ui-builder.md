@@ -67,32 +67,6 @@ You can also create a new EDC script or edit an included EDC script directly fro
 
 ![EDC script](./media/ui_builder_edj.png)
 
-#### Customizing the UI Component Style
-
-You can edit and extend the existing styles of a UI component by using the [Component Designer](component-designer.md) from the UI Builder.
-
-> **Note**  
-> This feature is available since the Tizen 3.0 platform.
-
-To open the dialog for managing styles, click the ![Component Designer](./media/ui_builder_component_designer_btn.png) icon next to the style combo in the **Properties** view.
-
-**Figure: Style management dialog**
-
-![Style management dialog](./media/ui_builder_component_designer.png)
-
-The dialog displays a list of the UI component styles with the following markings:
-
-- **(\*)**: Changed embedded style
-- **[ ]**: New style
-- No mark: Embedded style
-
-Use the buttons in the dialog to manage the styles:
-
-- **Delete**: Remove a user-created style which is enclosed in **[ ]**. Embedded styles cannot be removed.
-- **Modify**: Change the details of the selected style with the Component Designer.
-- **Extend**: Create a new style based on the selected style with the Component Designer.
-- **Reset**: Restore the original embedded style. You can use this button only with styles marked with **(\*)**.
-
 ### Editing the UI Layout in the XML Mode
 
 You can create the UI layout in the native UI Builder by using the XML editor in the **Source** editor to edit the layout file. For more information on the `layout.xml` file format and supported elements, see [Managing UI Component Attributes in layout.xml](component-attributes.md).

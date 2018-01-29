@@ -14,9 +14,6 @@ The UI Builder tool is a WYSIWYG (What You See Is What You Get) design environme
 - [EDC Editor](edc-editor.md) **(Designing UIs with the EDC Editor)**  
 The EDC Editor tool is an EDC (Edje Data Collections) script editor that supports text editing and previewing functions for the EDC source code. You can write simple and complex layout designs using the EDC script with the EDC Editor. The EDC Editor makes it easier to write the EDC script code and faster to finish your work.
 
-- [Component Designer](component-designer.md) **(Designing UIs with the Component Designer)**  
-The Component Designer tool provides a UI for the EDC markup. It simplifies the creation and editing of UI component styles, avoiding the need to learn the EDC syntax. Besides the UI component styles, the Component Designer can also create and edit custom layouts.
-
 ## Related information
 * Dependencies
   - Tizen Studio 1.0 and Higher
