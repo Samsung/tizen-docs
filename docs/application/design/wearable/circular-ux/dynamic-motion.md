@@ -5,4 +5,5 @@ The Gear’s circular screen lends itself to both soft and vibrant expressions o
 <video controls>
   <source src="media/3.dynamic_motion.mp4" type=video/mp4>
 </video>  
+
 *The Gear's circular shape lends itself to diverse animations to make your app more dynamic.*

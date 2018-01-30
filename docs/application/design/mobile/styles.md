@@ -19,12 +19,12 @@ For basic action buttons, such as 'Go' and 'Stop', Tizen 2.4 uses clear and dist
 
 | No.            | Color          | HSB code       | Swatch         | Component      |
 |----------------|----------------|----------------|----------------|----------------|
-| 1              | White          | \#FFFFFF       | <div width="150px" height="25px" background-color="#FFFFFF" border="1px" solid=" #eeeeee"></div>         | Primary text / Primary color|
-| 2              | Gray           | \#666666       |  <div width="150px" height="25px" background-color="#666666" border="1px" solid=" #eeeeee"></div>        | Secondary text |
-| 3              | Black          | \#000000       | <div width="150px" height="25px" background-color="#000000" border="1px" solid=" #eeeeee"></div>         | Primary text / Primary color |
-| 4              | Green          | \#2AB842       | <div width="150px" height="25px" background-color="#2AB842" border="1px" solid=" #eeeeee"></div>        | Start          |
-| 5              | Red            | \#E12222       | <div width="150px" height="25px" background-color="#E12222" border="1px" solid=" #eeeeee"></div>          | Stop           |
-| 6              | Yellow         | \#FFB400       | <div width="150px" height="25px" background-color="#FFB400" border="1px" solid=" #eeeeee"></div>          | Snooze, Favorite(star) |
+| 1              | White          | \#FFFFFF       | ![Swatch White](media/swatch_white.png) | Primary text / Primary color|
+| 2              | Gray           | \#666666       |  ![Swatch Gray](media/swatch_gray.png)     | Secondary text |
+| 3              | Black          | \#000000       | ![Swatch Black](media/swatch_black.png)        | Primary text / Primary color |
+| 4              | Green          | \#2AB842       | ![Swatch Green](media/swatch_green.png)     | Start          |
+| 5              | Red            | \#E12222       | ![Swatch Red](media/swatch_red.png)        | Stop           |
+| 6              | Yellow         | \#FFB400       | ![Swatch Yellow](media/swatch_yellow.png)       | Snooze, Favorite(star) |
 
 
  
@@ -58,7 +58,7 @@ Once again, the text colors should be decided based on the color of the backgrou
 
 
  | <img src="media/2.3_g.png" alt="#" width="260px" />| <img src="media/2.3_f.png" alt="#" width="260px" /> |
-| :--: | :--: |
+|:--:|:--:|
 | *Do* | *Don't* |
 
 

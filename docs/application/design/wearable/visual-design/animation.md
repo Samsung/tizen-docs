@@ -17,8 +17,8 @@ The Gear can show animations where objects glide across the screen as if they we
   </video> </td>
 </tr>
 <tr>
-<td> ![](media/do_bar.png) </td>
-<td> ![](media/dont_bar-296x12.png) </td>
+<td> <img src="media/do_bar.png" /> </td>
+<td> <img src="media/dont_bar-296x12.png" /> </td>
 </tr>
 </table>
 
@@ -43,8 +43,8 @@ When transitioning between screens, use consistent animations to indicate whethe
       </video> </td>
     </tr>
     <tr>
-    <td> ![](media/do_bar.png) </td>
-    <td> ![](media/dont_bar-296x12.png) </td>
+    <td> <img src="media/do_bar.png" /> </td>
+    <td> <img src="media/dont_bar-296x12.png" /> </td>
     </tr>
   </table>
   ------------------------------------ ------------------------------------
@@ -64,8 +64,8 @@ When transitioning between screens, use consistent animations to indicate whethe
           </video> </td>
         </tr>
         <tr>
-        <td> ![](media/do_bar.png) </td>
-        <td> ![](media/dont_bar-296x12.png) </td>
+        <td> <img src="media/do_bar.png" /> </td>
+        <td> <img src="media/dont_bar-296x12.png" /> </td>
         </tr>
       </table>
 
@@ -112,8 +112,8 @@ Animated feedback helps users distinguish outputs from inputs. Feedback should b
       </video> </td>
     </tr>
     <tr>
-    <td> ![](media/do_bar.png) </td>
-    <td> ![](media/dont_bar-296x12.png) </td>
+    <td> <img src="media/do_bar.png" /> </td>
+    <td> <img src="media/dont_bar-296x12.png" /> </td>
     </tr>
   </table>
 
