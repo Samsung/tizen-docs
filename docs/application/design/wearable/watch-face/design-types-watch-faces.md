@@ -4,7 +4,7 @@ Watch faces can take the shape of a traditional watch or have an entirely differ
 
 
 | Analog | Digital | Custom |
-| :---: | :---: | :---: |
+|:---:|:---:|:---:|
 |![](media/watchface_4.1.0-850x174_1.png) |   ![](media/watchface_4.1.0-850x174_2.png) | ![](media/watchface_4.1.0-850x174_3.png) |
- 
+
 *Watch faces can take varying forms, depending on how they display time.*

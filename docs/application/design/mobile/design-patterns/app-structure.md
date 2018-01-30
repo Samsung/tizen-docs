@@ -16,7 +16,7 @@ This section aims to explain basic app structures designed with some of the most
 Apps in general have a structure of more than two layers, and they can contain normal and edit modes while being used.
 
   |                       |  Normal mode           |   Edit mode|
-  |------------------------| ------------------------ |------------------------|
+  |------------------------|------------------------ |------------------------|
   |Top level          |      Main view         |       Main view Edit mode|
   |Lower level         |     Detail view         |     Detail view Edit mode|
 

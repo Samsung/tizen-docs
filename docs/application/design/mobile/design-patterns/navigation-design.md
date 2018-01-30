@@ -138,7 +138,7 @@ You can also offer information about the selected items (for example, the number
 
 
 |                         | Initial state          |  After selection        |
-|  -----------------------| -----------------------| ------------------------|
+|-----------------------|-----------------------|------------------------|
 |  Single select mode     |  Select \_item         |  (Move to the next step)|
 |  Multiselect mode       |  0 selected            |  1 selected             |
 |  Multiselect mode(limited)|      0 / %d selected |      1 / %d selected    |

@@ -76,7 +76,7 @@ In addition to displaying content, widgets provide direct paths to the host appl
 Widget size is important, because it determines the amount of information that can be presented in the widget. In general, widgets are designed in 4x2 and 4x4 grids to ensure enough space for displaying essential information. Tizen 2.4 allows only for fixed-size widgets. Fixed-sized widgets make it easier for users to arrange the widgets on the Home screen in a more consistent and orderly manner.
 
 | <img src="media/4.4.1_h.png" alt="#" height="460px" /> | <img src="media/4.4.1_i.png" alt="#" height="460px" /> |
-| :--: | :--: |
+|:--:|:--:|
 | *Do* | *Don't* |
 
 ##### Configuration
