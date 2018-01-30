@@ -27,7 +27,6 @@
 #### [Combining Screens from Multiple Applications](native-tools/ui-project-migration-combi-n.md)
 #### [Custom UI Component](native-tools/ui-builder-customcomponent.md)
 ### [EDC Editor](native-tools/edc-editor-n.md)
-### [Component Designer](native-tools/component-designer-n.md)
 ## Configuring Your App
 ### [Manifest Text Editor](native-tools/manifest-text-editor-n.md)
 ### [Additional Manifest Elements](native-tools/manifest-elements-n.md)
