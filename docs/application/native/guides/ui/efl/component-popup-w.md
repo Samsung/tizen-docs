@@ -1,9 +1,5 @@
 # Popup
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 This feature is supported in wearable applications only.
 
 The popup component shows a popup area that can contain:
@@ -26,7 +22,7 @@ For more information, see the [Popup](../../../../../org.tizen.native.wearable.a
 
 To create a popup component, use the `elm_popup_add()` function:
 
-```
+```csharp
 Evas_Object *popup;
 Evas_Object *parent;
 
@@ -51,7 +47,7 @@ The popup has a separate style for the layout and items:
 
 To set the style to, for example, `toast`:
 
-```
+```csharp
 elm_object_style_set(popup, "toast");
 ```
 
@@ -64,7 +60,7 @@ To set the popup content for the rectangular screen:
    - Set the icon object using the `title,icon` part name.
    - Set the title text as `Test popup` using the `title,text` part name.
 
-   ```
+   ```csharp
    elm_object_part_text_set(popup, "title,text", "Test popup");
    ```
 
@@ -72,13 +68,13 @@ To set the popup content for the rectangular screen:
 
    - Simple text:
 
-     ```
+     ```csharp
      elm_object_text_set(popup, "simple text");
      ```
 
    - Evas object:
 
-     ```
+     ```csharp
      Evas_Object *content;
 
      elm_object_content_set(popup, content);
@@ -88,7 +84,7 @@ To set the popup content for the rectangular screen:
 
    In the following example, the **OK** and **Cancel** buttons are created:
 
-   ```
+   ```csharp
    Evas_Object *button1;
    Evas_Object *button2;
 
@@ -114,7 +110,7 @@ To set the popup content for the circular screen:
 
 1. Set the circular popup item and layout style:
 
-   ```
+   ```csharp
    /* Set the item style */
    elm_object_style_set(popup, "circle");
 
@@ -127,7 +123,7 @@ To set the popup content for the circular screen:
 
    Set the title text to `Test popup` using the `elm.text.title` part name:
 
-   ```
+   ```csharp
    /* Set the title text */
    elm_object_part_text_set(layout, "elm.text.title", "Text popup");
    ```
@@ -136,13 +132,13 @@ To set the popup content for the circular screen:
 
    - Simple text:
 
-     ```
+     ```csharp
      elm_object_part_text_set(layout, "elm.text", "Test popup");
      ```
 
    - Evas object:
 
-     ```
+     ```csharp
      Evas_Object *content;
 
      elm_object_content_set(layout, content);
@@ -150,7 +146,7 @@ To set the popup content for the circular screen:
 
 4. Set the layout content to the popup:
 
-   ```
+   ```csharp
    elm_object_content_set(popup, layout);
    ```
 
@@ -158,7 +154,7 @@ To set the popup content for the circular screen:
 
    In the following example, 2 icon buttons are created:
 
-   ```
+   ```csharp
    Evas_Object *button1;
    Evas_Object *button2;
    Evas_Object *icon;
@@ -192,7 +188,7 @@ You can hide the popup after a set time with the `elm_popup_timeout_set()` funct
 
 To set the timeout to 5 seconds, after which the popup is hidden:
 
-```
+```csharp
 elm_popup_timeout_set(popup, 5.0);
 ```
 
@@ -201,14 +197,15 @@ elm_popup_timeout_set(popup, 5.0);
 To receive notifications about the popup events, listen for the following signals:
 
 - `timeout`: The popup is closed as a result of the timeout.
-- `block,clicked`: The user clicks on the blocked event area.The blocked event area is the translucent region around the visible popup region.
+- `block,clicked`: The user clicks on the blocked event area.  
+The blocked event area is the translucent region around the visible popup region.
 
 > **Note**  
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 To register and define a callback for the `timeout` signal:
 
-```
+```csharp
 {
     evas_object_smart_callback_add(popup, "timeout", _timeout_cb, data);
 }
@@ -222,3 +219,7 @@ _timeout_cb(void *data, Evas_Object *obj, void *event_info)
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.3.1 and Higher for Wearable

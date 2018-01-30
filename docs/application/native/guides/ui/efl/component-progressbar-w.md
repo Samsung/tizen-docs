@@ -1,9 +1,5 @@
 # Progressbar
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 The progressbar UI component displays the progress status of a given job. For more information, see the [Progressbar](../../../../../org.tizen.native.wearable.apireference/group__Elm__Progressbar.html) API.
 
 This feature is supported in wearable applications only.
@@ -14,15 +10,16 @@ To use a progressbar component in your application:
 
 1. Add a progressbar with the `elm_progressbar_add()` function:
 
-   ```
+   ```csharp
    Evas_Object *progressbar;
 
    progressbar = elm_progressbar_add(parent);
    ```
 
-2. Set a [style](#style) available for a rectangular or circular UI screen.Set a style to the progressbar with the `elm_object_style_set()` function. If you use the default style, you can skip this step.
+2. Set a [style](#styles) available for a rectangular or circular UI screen.  
+Set a style to the progressbar with the `elm_object_style_set()` function. If you use the default style, you can skip this step.
 
-   ```
+   ```csharp
    elm_object_style_set(progressbar, "pending_list");
    ```
 
@@ -30,7 +27,7 @@ To use a progressbar component in your application:
 
    - Set the progressbar pulse mode to activate the progressbar with the `elm_progressbar_pulse_set()` function:
 
-     ```
+     ```csharp
      elm_progressbar_pulse_set(progressbar, EINA_TRUE);
      ```
 
@@ -38,13 +35,15 @@ To use a progressbar component in your application:
 
    - Use the `elm_progressbar_pulse()` function to start the progressbar animation loop:
 
-     ```
+     ```csharp
      elm_progressbar_pulse(progressbar, EINA_TRUE);
      ```
 
-4. Register the [callback](#callback) functions.The following example shows how to define and register a callback for the `changed` signal:
+4. Register the [callback](#callbacks) functions.  
 
-   ```
+ The following example shows how to define and register a callback for the `changed` signal:
+
+   ```csharp
    evas_object_smart_callback_add(progressbar, "changed", changed_cb, data);
 
    void
@@ -58,11 +57,9 @@ The following example shows a simple use case of the progressbar component.
 
 **Example: Progressbar component use case**
 
-| ![Progressbar](./media/progressbar_wn.png) |
-| ---------------------------------------- |
-|                                          |
+ ![Progressbar](./media/progressbar_wn.png)
 
-```
+```csharp
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;
@@ -101,14 +98,14 @@ To configure the progressbar features:
 
   - Change the value with the `elm_progressbar_value_set()` function. The progressbar emits the `changed` signal when the progress value changes. In the following example, the progressbar value is set to 20%.
 
-    ```
+    ```csharp
     /* Supported style: default */
     elm_progressbar_value_set(progressbar, 0.2);
     ```
 
   - Read the current value:
 
-    ```
+    ```csharp
     double value = elm_progressbar_value_get(progressbar);
     ```
 
@@ -116,7 +113,7 @@ To configure the progressbar features:
 
   In the inverted mode the high values are on the left and the low values on the right.
 
-  ```
+  ```csharp
   /* Supported style: default */
   elm_progressbar_inverted_set(progressbar, EINA_TRUE);
   ```
@@ -128,7 +125,7 @@ The following table lists the available component styles according to the UI scr
 **Table: Progressbar styles**
 
 | Style                                    | Sample                                   |                                          |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+|----------------------------------------|----------------------------------------|----------------------------------------|
 | `elm/progressbar/horizontal/default`     | ![elm/progressbar/horizontal/default](./media/progressbar_default_wn.png)(rectangular and circular) |                                          |
 | `elm/progressbar/horizontal/pending_list` | ![elm/progressbar/horizontal/pending](./media/progressbar_pending_wn.png)(rectangular and circular) |                                          |
 | `elm/progressbar/horizontal/process`     | ![elm/progressbar/horizontal/process_large](./media/progressbar_process_wn.png)(rectangular) | ![elm/progressbar/horizontal/default](./media/progressbar_process_o_wn.png)(circular) |
@@ -143,7 +140,7 @@ You can register callback functions connected to the following signals for a pro
 **Table: Progressbar callback signals**
 
 | Signal    | Description                    | `event_info` |
-| --------- | ------------------------------ | ------------ |
+|---------|------------------------------|------------|
 | `changed` | The progressbar value changes. | `NULL`       |
 
 > **Note**  
@@ -151,3 +148,7 @@ You can register callback functions connected to the following signals for a pro
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.3.1 and Higher for Wearable

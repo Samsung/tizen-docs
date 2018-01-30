@@ -1,9 +1,5 @@
 # Radio
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 The radio UI component displays 1 or more options and allows users to select 1 of them. For more information, see the [Radio](../../../../../org.tizen.native.mobile.apireference/group__Elm__Radio.html) API.
 
 This feature is supported in mobile applications only.
@@ -14,23 +10,23 @@ To use a radio component in your application:
 
 1. Add a radio button with the `elm_radio_add()` function:
 
-   ```
+   ```csharp
    Evas_Object *radio;
 
    radio = elm_radio_add(parent);
    ```
 
-2. Set a text or an image, if necessary, according to the [default style](#style):
+2. Set a text or an image, if necessary, according to the [default style](#styles):
 
    - Set a label to the radio button with the `elm_object_text_set()` function, if the style supports a text part:
 
-     ```
+     ```csharp
      elm_object_text_set(radio, "option 1");
      ```
 
    - Set an image object to the button with the `elm_object_part_content_set()` function and pass the part name as a parameter:
 
-     ```
+     ```csharp
      Evas_Object *icon;
 
      elm_object_part_content_set(radio, "icon", icon);
@@ -40,21 +36,23 @@ To use a radio component in your application:
 
    - Assign a unique value to each radio button with the `elm_radio_state_value_set()` function:
 
-     ```
+     ```csharp
      elm_radio_state_value_set(radio, 1);
      ```
 
    - Group the radio buttons with the `elm_radio_group_add()` function. You can set one of the radio buttons as selected with the `elm_radio_value_set()` function.
 
-     ```
+     ```csharp
      elm_radio_group_add(radio, group);
      ```
 
    - Group the radio buttons visually by packing them into a box.
 
-4. Register the [callback](#callback) functions.The following example shows how to define and register a callback for the `changed` signal:
+4. Register the [callback](#callbacks) functions.  
 
-   ```
+ The following example shows how to define and register a callback for the `changed` signal:
+
+   ```csharp
    evas_object_smart_callback_add(radio, "changed", changed_cb, data);
 
    void
@@ -68,11 +66,9 @@ The following example shows a simple use case of the radio component.
 
 **Example: Radio use case**
 
-| ![Radio](./media/radio1.png) |
-| ------------------------------------ |
-|                                      |
+ ![Radio](./media/radio1.png)
 
-```
+```csharp
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;
@@ -126,7 +122,7 @@ The following table lists the available component styles.
 **Table: Radio styles**
 
 | Style     | Sample                                   | Text part  | Swallow part |
-| --------- | ---------------------------------------- | ---------- | ------------ |
+|---------|----------------------------------------|----------|------------|
 | `default` | ![elm/radio/base/default](./media/radio_default.png) | `elm.text` | `icon`       |
 
 ## Callbacks
@@ -136,11 +132,15 @@ You can register callback functions connected to the following signals for a rad
 **Table: Radio callback signals**
 
 | Callback  | Description                   | `event_info` |
-| --------- | ----------------------------- | ------------ |
+|---------|-----------------------------|------------|
 | `changed` | The radio button is selected. | `NULL`       |
- 
+
 > **Note**  
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile

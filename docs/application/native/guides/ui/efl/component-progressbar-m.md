@@ -1,9 +1,5 @@
 # Progressbar
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 The progressbar UI component displays the progress status of a given job. For more information, see the [Progressbar](../../../../../org.tizen.native.mobile.apireference/group__Elm__Progressbar.html) API.
 
 This feature is supported in mobile applications only.
@@ -14,7 +10,7 @@ To use a progressbar component in your application:
 
 1. Add a progressbar with the `elm_progressbar_add()` function:
 
-   ```
+   ```csharp
    Evas_Object *progressbar;
 
    progressbar = elm_progressbar_add(parent);
@@ -24,13 +20,13 @@ To use a progressbar component in your application:
 
    - Set a style to the progressbar with the `elm_object_style_set()` function. If you use the default style, you can skip this step.
 
-     ```
+     ```csharp
      elm_object_style_set(progressbar, "pending");
      ```
 
    - Set a label to the progressbar with the `elm_object_text_set()` or `elm_object_part_text_set()` function:
 
-     ```
+     ```csharp
      /* Default style (elm.text.top.right) */
      elm_object_text_set(progressbar, "text");
 
@@ -41,7 +37,7 @@ To use a progressbar component in your application:
 
    - Set the progressbar pulse mode to activate the progressbar with the `elm_progressbar_pulse_set()` function:
 
-     ```
+     ```csharp
      elm_progressbar_pulse_set(progressbar, EINA_TRUE);
      ```
 
@@ -49,13 +45,15 @@ To use a progressbar component in your application:
 
    - Use the `elm_progressbar_pulse()` function to start the progressbar animation loop:
 
-     ```
+     ```csharp
      elm_progressbar_pulse(progressbar, EINA_TRUE);
      ```
 
-4. Register the [callback](#callback) functions.The following example shows how to define and register a callback for the `changed` signal:
+4. Register the [callback](#callbacks) functions.  
 
-   ```
+ The following example shows how to define and register a callback for the `changed` signal:
+
+   ```csharp
    evas_object_smart_callback_add(progressbar, "changed", changed_cb, data);
 
    void
@@ -69,11 +67,9 @@ The following example shows a simple use case of the progressbar component.
 
 **Example: Progressbar use case**
 
-| ![Progressbar](./media/progressbar.png) |
-| ---------------------------------------- |
-|                                          |
+ ![Progressbar](./media/progressbar.png)
 
-```
+```csharp
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;
@@ -117,28 +113,32 @@ To configure the progressbar features:
 
   - Change the value with the `elm_progressbar_value_set()` function. The progressbar emits the `changed` signal when the progress value changes. In the following example, the progressbar value is set to 20%.
 
-    ```
+    ```csharp
     /* Supported style: default */
     elm_progressbar_value_set(progressbar, 0.2);
     ```
 
   - Read the current value:
 
-    ```
+    ```csharp
     double value = elm_progressbar_value_get(progressbar);
     ```
 
 - Set a text in the progressbar:
 
-  - Set a label to the progressbar with the `elm_object_text_set()` function, if the style supports a text part.`/* Supported styles: default, pending */elm_object_text_set(progressbar, "progressbar");`
+  - Set a label to the progressbar with the `elm_object_text_set()` function, if the style supports a text part.
+  ```csharp
+  /* Supported styles: default, pending */elm_object_text_set(progressbar, "progressbar");
+  ```
 
-  - According to the [style](#style), the `elm_object_part_text_set()` function is used in order to do the setting in the other location.`elm_object_part_text_set(progressbar, "elm.text.bottom.left", "progressbar");`
+  - According to the [style](#styles), the `elm_object_part_text_set()` function is used in order to do the setting in the other location.  
+  `elm_object_part_text_set(progressbar, "elm.text.bottom.left", "progressbar");`
 
   - Set the unit label with the `elm_progressbar_unit_format_set()` function.
 
     To set the unit label to be a float number with 2 decimals:
 
-    ```
+    ```csharp
     elm_progressbar_unit_format_set(progressbar, "%1.2f%%");
     ```
 
@@ -148,7 +148,7 @@ To configure the progressbar features:
 
   In the inverted mode the high values are on the left and the low values on the right.
 
-  ```
+  ```csharp
   /* Supported style: default */
   elm_progressbar_inverted_set(progressbar, EINA_TRUE);
   ```
@@ -160,7 +160,7 @@ The following table lists the available component styles.
 **Table: Progressbar styles**
 
 | Style                                    | Sample                                   | Text part                                |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+|----------------------------------------|----------------------------------------|----------------------------------------|
 | `elm/progressbar/horizontal/default`     | ![elm/progressbar/horizontal/default](./media/progressbar_default.png) | `elm.text.top.right` `(default)``elm.text.bottom.left``elm.text.bottom.right` |
 | `elm/progressbar/horizontal/pending`     | ![elm/progressbar/horizontal/pending](./media/progressbar_pending.png) | `elm.text.top.right` `(default)``elm.text.bottom.left``elm.text.bottom.right` |
 | `elm/progressbar/horizontal/process_large``elm/progressbar/horizontal/process_medium``elm/progressbar/horizontal/process_small` | ![elm/progressbar/horizontal/process_large](./media/progressbar_wheel.png) | N/A                                      |
@@ -172,7 +172,7 @@ You can register callback functions connected to the following signals for a pro
 **Table: Progressbar callback signals**
 
 | Signal    | Description                    | `event_info` |
-| --------- | ------------------------------ | ------------ |
+|---------|------------------------------|------------|
 | `changed` | The progressbar value changes. | `NULL`       |
 
 > **Note**  
@@ -180,3 +180,7 @@ You can register callback functions connected to the following signals for a pro
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
