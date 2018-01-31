@@ -1,13 +1,8 @@
 # Part Block
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 The `part` block is used to represent the most basic design elements of the theme, for example, a part can represent a line in a border or a label on a button.
 
-You can also position parts on the screen. You can define a size and relative position for each part, and add offsets for the relative positioning. For more information, see [Positioning Parts](./learn-edc-positioning-parts-n.md).
+You can also position parts on the screen. You can define a size and relative position for each part, and add offsets for the relative positioning. For more information, see [Positioning Parts](./learn-edc-positioning-parts.md).
 
 **Figure: Part block**
 
@@ -320,16 +315,16 @@ part {
 
 - `inherit [part name]`
 
-  Copies all properties except part name from the referenced part into the current part. All existing properties, except part name, are overwritten.	
+  Copies all properties except part name from the referenced part into the current part. All existing properties, except part name, are overwritten.
 
-  > **Note**	
+  > **Note**  
   > When inheriting any parts, descriptions without state names are not allowed.
 
 - `program_remove [program name] (program name) (program name) ...`
 
   Removes the listed programs from an inherited group. Removing non-existing programs is not allowed.
 
-	> **Note**	
+	> **Note**  
 	> This breaks program sequences if a program in the middle of the sequence is removed.
 
 - `part_remove [part name] (part name) (part name) ...`
@@ -371,7 +366,7 @@ part {
   }
   ```
 
-- `insert_before [another part's name]
+- `insert_before [another part's name]`
 
   Sets the part's name which this part is inserted before. One part cannot have both `insert_before` and `insert_after`. One part cannot refer to more than one part name by `insert_before`.
 
@@ -389,7 +384,9 @@ part {
 
 - `ignore_flags [FLAG] ...`
 
-  Determines whether events with the given flags are ignored, or do not emit signals to the parts. Multiple flags must be separated by spaces, the effect is ignoring all events with one of the flags specified. Possible flags are:`NONE`: Event is handled properly (default value)`ON_HOLD`: Event is not handled or passed in this part
+  Determines whether events with the given flags are ignored, or do not emit signals to the parts. Multiple flags must be separated by spaces, the effect is ignoring all events with one of the flags specified. Possible flags are:
+  - `NONE`: Event is handled properly (default value)
+  - `ON_HOLD`: Event is not handled or passed in this part
 
 - `scale [1 or 0]`
 
@@ -397,7 +394,9 @@ part {
 
 - `pointer_mode [MODE]`
 
-  Sets the mouse pointer behavior for a given part. The default value is `AUTOGRAB`. The available modes are:`AUTOGRAB`: When the part is clicked and the button remains pressed, the part is the source of all future mouse signals emitted, even outside the object, until the button is released`NOGRAB`: Effect is limited to the part's container
+  Sets the mouse pointer behavior for a given part. The default value is `AUTOGRAB`. The available modes are:
+  - `AUTOGRAB`: When the part is clicked and the button remains pressed, the part is the source of all future mouse signals emitted, even outside the object, until the button is released
+  - `NOGRAB`: Effect is limited to the part's container
 
 - `precise_is_inside [1 or 0]`
 
@@ -411,29 +410,41 @@ part {
 
   Renders only the area of the part that coincides with another part's container. Overflowing content is not displayed. Note that the part being clipped to can only be a rectangle part.
 
-- `source [another group's name]
+- `source [another group's name]`
 
-  Swallows the specified group into the part's container if the source is a group. If the source is a textblock, it is used for the group to be loaded and used for selection display under the selected text. `source2` is used on top of the selected text, if `source2` is specified.Only available to group or textblock parts.
+  Swallows the specified group into the part's container if the source is a group. If the source is a textblock, it is used for the group to be loaded and used for selection display under the selected text. `source2` is used on top of the selected text, if `source2` is specified.
+
+  Only available to group or textblock parts.
 
 - `source2 [another group's name]`
 
-  Used for the group to be loaded and used for selection display over the selected text. `source` is used under the selected text, if `source` is specified.Only available to textblock parts.
+  Used for the group to be loaded and used for selection display over the selected text. `source` is used under the selected text, if `source` is specified.
+
+  Only available to textblock parts.
 
 - `source3 [another group's name]`
 
-  Used for the group to be loaded and used for cursor display under the cursor position. `source4` is used over the cursor text, if `source4` is specified.Only available to textblock parts.
+  Used for the group to be loaded and used for cursor display under the cursor position. `source4` is used over the cursor text, if `source4` is specified.
+
+  Only available to textblock parts.
 
 - `source4 [another group's name]`
 
-  Used for the group to be loaded and used for cursor display over the cursor position. `source3` is used under the cursor text, if `source3` is specified.Only available to textblock parts.
+  Used for the group to be loaded and used for cursor display over the cursor position. `source3` is used under the cursor text, if `source3` is specified.
+
+  Only available to textblock parts.
 
 - `source5 [another group's name]`
 
-  Used for the group to be loaded and used for anchors display under the anchor position. `source6` is used over the anchor text, if `source6` is specified.Only available to textblock parts.
+  Used for the group to be loaded and used for anchors display under the anchor position. `source6` is used over the anchor text, if `source6` is specified.
+
+  Only available to textblock parts.
 
 - `source6 [another group's name]`
 
-  Used for the group to be loaded and used for anchor display over the anchor position. `source5` is used under the anchor text, if `source5` is specified.Only available to textblock parts.
+  Used for the group to be loaded and used for anchor display over the anchor position. `source5` is used under the anchor text, if `source5` is specified.
+
+  Only available to textblock parts.
 
 - `effect [effect]` (shadow direction)
 
@@ -441,8 +452,8 @@ part {
 
   **Table: Effects**
 
-  | Effect                | Example                                  |
-  | --------------------- | ---------------------------------------- |
+| Effect                | Example                                  |
+  |---------------------|----------------------------------------|
   | `PLAIN`               | ![PLAIN](./media/PLAIN.png) |
   | `OUTLINE`             | ![OUTLINE](./media/OUTLINE.png) |
   | `SOFT_OUTLINE`        | ![SOFT_OUTLINE](./media/SOFT_OUTLINE.png) |
@@ -454,15 +465,15 @@ part {
   | `FAR_SOFT_SHADOW`     | ![FAR_SOFT_SHADOW](./media/FAR_SOFT_SHADOW.png) |
   | `GLOW`                | ![GLOW](./media/GLOW.png) |
 
-   The available shadow direction definitions are:`BOTTOM_RIGHT` (default)
-
-  - `BOTTOM`
-  - `BOTTOM_LEFT`
-  - `LEFT`
-  - ``TOP_LEFT`
-  - `TOP`
-  - ``TOP_RIGHT``
-  - `RIGHT`
+   The available shadow direction definitions are:  
+    - `BOTTOM_RIGHT` (default)
+    - `BOTTOM`
+    - `BOTTOM_LEFT`
+    - `LEFT`
+    - `TOP_LEFT`
+    - `TOP`
+    - `TOP_RIGHT`
+    - `RIGHT`
 
 - `entry_mode [mode]`
 
@@ -561,7 +572,8 @@ part {
 
       - `type [item type]`
 
-        Sets the type of the object this item holds. The supported type is:		`GROUP` (default)	
+        Sets the type of the object this item holds. The supported type is:		
+        - `GROUP` (default)
 
       - `name [name for the object]`
 
@@ -573,10 +585,10 @@ part {
 
       - `min [width] [height]`
 
-        Sets the minimum size hints for this object. 
+        Sets the minimum size hints for this object.
 
-				> **Note**	
-				> The minimum size hint must be -1 to get the expand behavior.
+		> **Note**  
+		> The minimum size hint must be -1 to get the expand behavior.
 
       - `spread [width] [height]`
 
@@ -679,44 +691,64 @@ part {
     - `HEIGHT`
     - `BOTH`
 
-  - `align [X axis] [Y axis]`When the displayed object's size is smaller or bigger than its container, this property moves it relatively along both axes inside its container. 0.0 means left/top edges of the object touching container's respective ones, and 1.0 stands for right/bottom edges of the object (on horizontal/vertical axis, respectively). The default value is `0.5 0.5`. For more information, see [Size Hints](./ui-layouts-n.md#size_hint).
+  - `align [X axis] [Y axis]`
 
-  - `fixed [width, 0 or 1] [height, 0 or 1]`Sets the minimum size calculation. See the `edje_object_size_min_calc()` and `edje_object_size_min_restricted_calc()` functions of the Edje Object Geometry API (in [mobile](http://org.tizen.native.mobile.apireference/group__Edje__Object__Geometry__Group.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Edje__Object__Geometry__Group.html) applications). The value tells the min size calculation routine where this part does not change size in width or height (1 for it does not, 0 for it does), so the routine does not try to expand or contract the part.
+   When the displayed object's size is smaller or bigger than its container, this property moves it relatively along both axes inside its container. 0.0 means left/top edges of the object touching container's respective ones, and 1.0 stands for right/bottom edges of the object (on horizontal/vertical axis, respectively). The default value is `0.5 0.5`. For more information, see [Size Hints](./ui-layouts.md#size-hints).
 
-  - `min [width] [height] or SOURCE`Sets the minimum size of the state. When the property is set to `SOURCE`, it looks at the original image size and enforces its minimal size to match at least the original one. The part must be an `image` or a `group` part.
+  - `fixed [width, 0 or 1] [height, 0 or 1]`
 
-  - `minmul [width multiplier] [height multiplier]`Sets the multiplier forcibly applied to whatever minimum size is only during minimum size calculation.
+   Sets the minimum size calculation. See the `edje_object_size_min_calc()` and `edje_object_size_min_restricted_calc()` functions of the Edje Object Geometry API (in [mobile](http://org.tizen.native.mobile.apireference/group__Edje__Object__Geometry__Group.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Edje__Object__Geometry__Group.html) applications). The value tells the min size calculation routine where this part does not change size in width or height (1 for it does not, 0 for it does), so the routine does not try to expand or contract the part.
 
-  - `max [width] [height] or SOURCE`Sets the maximum size of the state. A size of -1.0 means that it is ignored in one direction. When the property is set to `SOURCE`, Edje enforces the part to be not more than the original image size. The part must be an `image` part.
+  - `min [width] [height] or SOURCE`
 
-  - `step [width] [height]`Restricts resizing of each dimension to values divisible by its value. This causes the part to jump from value to value while resizing. The default value is `0 0`, which disables stepping.
+   Sets the minimum size of the state. When the property is set to `SOURCE`, it looks at the original image size and enforces its minimal size to match at least the original one. The part must be an `image` or a `group` part.
 
-  - `aspect [min] [max]`Forces the width to height ratio to be kept between the minimum and maximum set. For example, `1.0 1.0` increases the width a pixel for every pixel added to height. The default value is `0.0 0.0`, which disables aspect. For more information, see [Size Hints](./ui-layouts-n.md#size_hint). Normally the width and height can be resized to any values independently.
+  - `minmul [width multiplier] [height multiplier]`
 
-  - `aspect_preference [DIMENSION]`Sets the dimensions to which the `aspect` property applies. The available options are:
+   Sets the multiplier forcibly applied to whatever minimum size is only during minimum size calculation.
+
+  - `max [width] [height] or SOURCE`
+
+   Sets the maximum size of the state. A size of -1.0 means that it is ignored in one direction. When the property is set to `SOURCE`, Edje enforces the part to be not more than the original image size. The part must be an `image` part.
+
+  - `step [width] [height]`
+
+   Restricts resizing of each dimension to values divisible by its value. This causes the part to jump from value to value while resizing. The default value is `0 0`, which disables stepping.
+
+  - `aspect [min] [max]`
+
+   Forces the width to height ratio to be kept between the minimum and maximum set. For example, `1.0 1.0` increases the width a pixel for every pixel added to height. The default value is `0.0 0.0`, which disables aspect. For more information, see [Size Hints](./ui-layouts.md#size-hints). Normally the width and height can be resized to any values independently.
+
+  - `aspect_preference [DIMENSION]`
+
+   Sets the dimensions to which the `aspect` property applies. The available options are:
 
     - `BOTH`
-
     - `VERTICAL`
-
     - `HORIZONTAL`
-
     - `SOURCE`
-
     - `NONE`
 
-      For more information, see [Size Hints](./ui-layouts-n.md#size_hint).
+      For more information, see [Size Hints](./ui-layouts.md#size-hints).
 
-  - `color_class [color class name]`Sets the part to use the color values of the named `color_class`. These values can be overridden by the `color`, `color2`, and `color3` properties.
+  - `color_class [color class name]`
 
-  - `color [red] [green] [blue] [alpha]`Sets the main color to the specified values (between 0 and 255).
+   Sets the part to use the color values of the named `color_class`. These values can be overridden by the `color`, `color2`, and `color3` properties.
 
-		> **Note**	
-		> The textblock part is not affected by the color description. Set the color in the text style.
+  - `color [red] [green] [blue] [alpha]`
 
-  - `color2 [red] [green] [blue] [alpha]`Sets the text shadow color to the specified values (0 to 255).
+   Sets the main color to the specified values (between 0 and 255).
 
-  - `color3 [red] [green] [blue] [alpha]`Sets the text outline color to the specified values (0 to 255).
+	> **Note**  
+	> The textblock part is not affected by the color description. Set the color in the text style.
+
+  - `color2 [red] [green] [blue] [alpha]`
+
+   Sets the text shadow color to the specified values (0 to 255).
+
+  - `color3 [red] [green] [blue] [alpha]`
+
+   Sets the text outline color to the specified values (0 to 255).
 
   - `description.rel1` or `description.rel2` block
 
@@ -735,11 +767,27 @@ part {
 
     The `rel1` and `rel2` blocks are used to define the position of each corner of the part's container. `rel1` refers to the top-left corner and `rel2` to the bottom-right corner.
 
-    - `relative [X axis] [Y axis]`Moves the corner to a relative position inside the container of the relative `to` part. Values from 0.0 (0%, beginning) to 1.0 (100%, end) on each axis.
-    - `offset [X axis] [Y axis]`Affects the corner position a fixed number of pixels along each axis.`to [another part's name]`Positions the corner relative to another part's container. Setting to `""` resets this value for inherited parts.
-    - `to_x [another part's name]`Positions the corner relative to the X axis of another part's container. This affects the first parameter of the `relative` property. Setting to `""` resets this value for inherited parts.
-    - `to_y [another part's name]`Positions the corner relative to the Y axis of another part's container. This affects the second parameter of the `relative` property. Setting to `""` resets this value for inherited parts.
+    - `relative [X axis] [Y axis]`
 
+     Moves the corner to a relative position inside the container of the relative `to` part. Values from 0.0 (0%, beginning) to 1.0 (100%, end) on each axis.
+
+    - `offset [X axis] [Y axis]`
+
+     Affects the corner position a fixed number of pixels along each axis.
+
+    - `to [another part's name]`
+
+     Positions the corner relative to another part's container. Setting to `""` resets this value for inherited parts.
+
+    - `to_x [another part's name]`
+
+      Positions the corner relative to the X axis of another part's container. This affects the first parameter of the `relative` property. Setting to `""` resets this value for inherited parts.
+
+    - `to_y [another part's name]`
+
+      Positions the corner relative to the Y axis of another part's container. This affects the second parameter of the `relative` property. Setting to `""` resets this value for inherited parts.
+
+<a name="description_image"></a>
   - `description.image` block
 
     ```
@@ -757,27 +805,42 @@ part {
 
     The `image` block defines the settings for an image used in a visual element.
 
-    - `normal [image's filename]`Sets the name of the image to be used as previously declared in the `images` block. In an animation, this is the first and last image displayed. The file name is required in all image parts.
+    - `normal [image's filename]`
 
-    - `tween [image's filename]`Sets the name of an image to be used in an animation loop. An `image` block can have none, one, or multiple tween declarations. Images are displayed in the order they are listed, during the transition to the state they are declared in; the `normal` image is the final state.
+      Sets the name of the image to be used as previously declared in the `images` block. In an animation, this is the first and last image displayed. The file name is required in all image parts.
 
-    - `border [left] [right] [top] [bottom]`Sets the width (in pixels) of each side of the image displayed as a fixed size border, from the side inwards, preventing the corners from being changed on a resize.
+    - `tween [image's filename]`
 
-    - `middle [mode]`If a border is set, this value tells Edje whether the rest of the image (not covered by the defined border) is displayed or assumed to be solid (without alpha). The default value is `1/DEFAULT`. The available values are:`0` or `NONE``1` or `DEFAULT``SOLID` (strip alpha from the image over the middle zone)
+      Sets the name of an image to be used in an animation loop. An `image` block can have none, one, or multiple tween declarations. Images are displayed in the order they are listed, during the transition to the state they are declared in; the `normal` image is the final state.
 
-    - `border_scale_by [value]`If border scaling is enabled, normally the output border sizes scale accordingly. For example, if 3 pixels on the left edge are set as a border, then normally at scale 1.0, those 3 columns are always exactly 3 columns of output, or at scale 2.0 they are 6 columns, or 0.33 they merge into a single column. This property multiplies the input scale factor by this multiplier, allowing the creation of supersampled borders to make higher resolution outputs possible by always using the highest resolution artwork and then at runtime scaling it down. The value can be: 0.0 or bigger (0.0 or 1.0 to switch it off)
+    - `border [left] [right] [top] [bottom]`
 
-    - `border_scale [0/1]`Tells Edje whether the border is scaled by the object or global Edje scale factors.
+      Sets the width (in pixels) of each side of the image displayed as a fixed size border, from the side inwards, preventing the corners from being changed on a resize.
 
-    - `scale_hint [mode]`Sets the Evas image scale hint letting the engine more effectively save cached copies of the scaled image, if it makes sense. The valid values are:
+    - `middle [mode]`
 
-      - `0` or `NONE``
+      If a border is set, this value tells Edje whether the rest of the image (not covered by the defined border) is displayed or assumed to be solid (without alpha). The default value is `1/DEFAULT`. The available values are:
+      - `0` or `NONE`
+      - `1` or `DEFAULT`
+      - `SOLID` (strip alpha from the image over the middle zone)
 
-      - ``DYNAMIC`
+    - `border_scale_by [value]`
 
-      - STATIC
+      If border scaling is enabled, normally the output border sizes scale accordingly. For example, if 3 pixels on the left edge are set as a border, then normally at scale 1.0, those 3 columns are always exactly 3 columns of output, or at scale 2.0 they are 6 columns, or 0.33 they merge into a single column. This property multiplies the input scale factor by this multiplier, allowing the creation of supersampled borders to make higher resolution outputs possible by always using the highest resolution artwork and then at runtime scaling it down. The value can be: 0.0 or bigger (0.0 or 1.0 to switch it off)
 
-      - `description.image.fill` block
+    - `border_scale [0/1]`  
+
+      Tells Edje whether the border is scaled by the object or global Edje scale factors.
+
+    - `scale_hint [mode]`
+
+      Sets the Evas image scale hint letting the engine more effectively save cached copies of the scaled image, if it makes sense. The valid values are:
+
+      - `0` or `NONE`
+      - `DYNAMIC`
+      - `STATIC`
+
+    - `description.image.fill` block
 
         ```
         image {
@@ -792,11 +855,15 @@ part {
 
         The `fill` block is an optional block that defines the way an `image` part is going to be displayed inside its container. It can be used for tiling (repeating the image) or displaying only part of an image. For more information, see the `evas_object_image_fill_set()` function of the Image Object Functions API (in [mobile](http://org.tizen.native.mobile.apireference/group__Evas__Object__Image.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Evas__Object__Image.html) applications).
 
-        - `smooth [0 or 1]`Determines whether the image is smoothed on scaling (1). The default value is 1.
+        - `smooth [0 or 1]`
+
+          Determines whether the image is smoothed on scaling (1). The default value is 1.
 
         - `spread`
 
-        - `type [fill type]`Sets the image fill type. The `min` part property must be set, it is the size of the tiled image. If the `max` property is set, the tiled area has the size according to the `max` value. The valid values are:
+        - `type [fill type]`
+
+          Sets the image fill type. The `min` part property must be set, it is the size of the tiled image. If the `max` property is set, the tiled area has the size according to the `max` value. The valid values are:
 
           - `SCALE`: Image is scaled according to the value of the `relative` and `offset` properties from the `origin` and `size` blocks. This is the default value.
           - `TILE`: Image is tiled according to the value of the `relative` and `offset` properties from the `origin` and `size` blocks
@@ -816,8 +883,13 @@ part {
 
           The `origin` block is used to place the starting point inside the displayed element that is used to render the tile. By default, the origin is set at the element's top-left corner.
 
-          - `relative [X axis][Y axis]`Sets the starting point relative to the displayed element's content.
-          - `offset [X axis][Y axis]`Affects the starting point a fixed number of pixels along each axis.
+          - `relative [X axis][Y axis]`
+
+            Sets the starting point relative to the displayed element's content.
+
+          - `offset [X axis][Y axis]`
+
+            Affects the starting point a fixed number of pixels along each axis.
 
         - `image.fill.size` block
 
@@ -834,8 +906,13 @@ part {
 
           The `size` block defines the tile size of the content that is displayed.
 
-          - `relative [width][height]`Takes a pair of decimal values that represent the percentage of the original size of the element. For example, `0.5 0.5` represents half the size, while `2.0 2.0` represents double. The default value is `1.0 1.0`.
-          - `offset [X axis][Y axis]`Affects the size of the tile a fixed number of pixels along each axis.
+          - `relative [width][height]`
+
+            Takes a pair of decimal values that represent the percentage of the original size of the element. For example, `0.5 0.5` represents half the size, while `2.0 2.0` represents double. The default value is `1.0 1.0`.
+
+          - `offset [X axis][Y axis]`
+
+            Affects the size of the tile a fixed number of pixels along each axis.
 
   - `description.text` block
 
@@ -857,19 +934,61 @@ part {
 
     The `text` block defines a text part element.
 
-    - `text [a string of text, or nothing]`Sets the default content of a text part, normally the application is the one changing its value.
-    - `text_class [text class name]`Sets the name used by the application to alter the font family and size at runtime (similar to `color_class`).`font [font alias]`Sets the font family to one of the aliases set up in the 
-    - `fonts` block. This can be overridden by the application settings.
-    - `style [the style name]`Causes the part to use the default style and tags defined in the `style` block with the specified name.
-    - `repch [the replacement character string]`In the password mode, this string is used to replace every character to hide the details of the entry. Normally * is used, but you can use any character you like.
-    - `size [font size in points (pt)]`Sets the default font size for the text part. This can be overridden by the application settings.`size_range [font min size in points (pt)][font max size in points (pt)]`Sets the allowed font size for the text part. Setting min and max to 0 means that sizing is not restricted. This is also the default value.
-    - `fit [horizontal][vertical]`When any of the parameters is set to 1, Edje resizes the text for it to fit in its container. Both are disabled by default.
-    - `min [horizontal][vertical]`When any of the parameters is enabled (1), it forces the minimum size of the container to be equal to the minimum size of the text. The default value is `0 0`.
-    - `max [horizontal][vertical]`When any of the parameters is enabled (1), it forces the maximum size of the container to be equal to the maximum size of the text. The default value is `0 0`.
-    - `align [horizontal][vertical]`Changes the position of the point of balance inside the container. The default value is `0.5 0.5`.
-    - `source [another TEXT part's name]`Causes the part to use the text properties (like font and size) of another part and update them as they change.
-    - `text_source [another TEXT part's name]`Causes the part to display the text content of another part and update them as they change.
-    - `ellipsis [point of balance]`Balances the text in a relative point from 0.0 to 1.0. This point is the last section of the string to be cut out if it is resized to a smaller size than the text itself. The default value is 0.0.
+    - `text [a string of text, or nothing]`
+
+      Sets the default content of a text part, normally the application is the one changing its value.
+
+    - `text_class [text class name]`
+
+      Sets the name used by the application to alter the font family and size at runtime (similar to `color_class`).
+
+    - `font [font alias]`
+
+      Sets the font family to one of the aliases set up in the `fonts` block. This can be overridden by the application settings.
+
+    - `style [the style name]`
+
+      Causes the part to use the default style and tags defined in the `style` block with the specified name.
+
+    - `repch [the replacement character string]`
+
+      In the password mode, this string is used to replace every character to hide the details of the entry. Normally * is used, but you can use any character you like.
+
+    - `size [font size in points (pt)]`
+
+      Sets the default font size for the text part. This can be overridden by the application settings.
+
+    - `size_range [font min size in points (pt)][font max size in points (pt)]`
+
+      Sets the allowed font size for the text part. Setting min and max to 0 means that sizing is not restricted. This is also the default value.
+
+    - `fit [horizontal][vertical]`
+
+      When any of the parameters is set to 1, Edje resizes the text for it to fit in its container. Both are disabled by default.
+
+    - `min [horizontal][vertical]`
+
+      When any of the parameters is enabled (1), it forces the minimum size of the container to be equal to the minimum size of the text. The default value is `0 0`.
+
+    - `max [horizontal][vertical]`
+
+      When any of the parameters is enabled (1), it forces the maximum size of the container to be equal to the maximum size of the text. The default value is `0 0`.
+
+    - `align [horizontal][vertical]`
+
+      Changes the position of the point of balance inside the container. The default value is `0.5 0.5`.
+
+    - `source [another TEXT part's name]`
+
+      Causes the part to use the text properties (like font and size) of another part and update them as they change.
+
+    - `text_source [another TEXT part's name]`
+
+      Causes the part to display the text content of another part and update them as they change.
+
+    - `ellipsis [point of balance]`
+
+      Balances the text in a relative point from 0.0 to 1.0. This point is the last section of the string to be cut out if it is resized to a smaller size than the text itself. The default value is 0.0.
 
   - `description.box` block
 
@@ -884,7 +1003,9 @@ part {
 
     The `box` block can contain other objects and display them in different layouts, any of the predefined set, or a custom one, set by the application.
 
-    - `layout [primary layout] (fallback layout)`Sets the layout for the box:
+    - `layout [primary layout] (fallback layout)`
+
+      Sets the layout for the box:
       - `horizontal` (default)
       - `vertical`
       - `horizontal_homogeneous`
@@ -893,13 +1014,24 @@ part {
       - `vertical_max`
       - `horizontal_flow`
       - `vertical_flow`
-      - ``stack``
-      - some_other_custom_layout_set_by_the_application Set a custom layout as a fallback. For more information, see the `edje_box_layout_register()` function in the Edje Box Part API (in [mobile](http://org.tizen.native.mobile.apireference/group__Edje__Part__Box.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Edje__Part__Box.html) applications). If an unregistered layout is used, it defaults to `horizontal`.`
-    - `align [horizontal][vertical]`Changes the position of the point of balance inside the container. The default value is 0.5 0.5.`
-    - `padding [horizontal][vertical]`Sets the space between cells in pixels. The default value is `0 0`.`
-    - `min [horizontal][vertical]`When any of the parameters is enabled (1), it forces the minimum size of the box to be equal to the minimum size of the items. The default value is `0 0`.`
+      - `stack`
+      - `some_other_custom_layout_set_by_the_application`
 
-  - description.table` block`
+        Set a custom layout as a fallback. For more information, see the `edje_box_layout_register()` function in the Edje Box Part API (in [mobile](http://org.tizen.native.mobile.apireference/group__Edje__Part__Box.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Edje__Part__Box.html) applications). If an unregistered layout is used, it defaults to `horizontal`.
+
+    - `align [horizontal][vertical]`
+
+      Changes the position of the point of balance inside the container. The default value is 0.5 0.5.
+
+    - `padding [horizontal][vertical]`
+
+      Sets the space between cells in pixels. The default value is `0 0`.
+
+    - `min [horizontal][vertical]`
+
+      When any of the parameters is enabled (1), it forces the minimum size of the box to be equal to the minimum size of the items. The default value is `0 0`.
+
+  - `description.table` block
 
     ```
     table {
@@ -910,15 +1042,26 @@ part {
     }
     ```
 
-    The `table` block can contain other objects packed in multiple columns and rows, and each item can span across more than one column or row.`
+    The `table` block can contain other objects packed in multiple columns and rows, and each item can span across more than one column or row.
 
-    - homogeneous [homogeneous mode]`Sets the homogeneous mode for the table:`
+    - `homogeneous [homogeneous mode]`
+
+     Sets the homogeneous mode for the table:`
       - `NONE`: Default
       - `TABLE`: Available space is evenly divided between children (the space overflows onto other children if too little space is available)
       - `ITEM`: Size of each item is the largest minimum size of all the items
-    - `align [horizontal][vertical]`Changes the position of the point of balance inside the container. The default value is `0.5 0.5`.
-    - `padding [horizontal][vertical]`Sets the space between cells in pixels. The default value is `0 0`.
-    - `min [horizontal][vertical]`When any of the parameters is enabled (1), it forces the minimum size of the table to be equal to the minimum size of the items. The default value is `0 0`.
+
+    - `align [horizontal][vertical]`
+
+      Changes the position of the point of balance inside the container. The default value is `0.5 0.5`.
+
+    - `padding [horizontal][vertical]`
+
+      Sets the space between cells in pixels. The default value is `0 0`.
+
+    - `min [horizontal][vertical]`
+
+      When any of the parameters is enabled (1), it forces the minimum size of the table to be equal to the minimum size of the items. The default value is `0 0`.
 
   - `description.map` block
 
@@ -938,21 +1081,37 @@ part {
     }
     ```
 
-    - `perspective [another part's name]`Sets the part that is used as the perspective point for giving a part a 3D look. The perspective point must have a perspective section that provides zplane and focal properties. The center of this part is used as the focal point, thus size, color, and visibility are not relevant; only the center point, zplane, and focal are used. This also implicitly enables perspective transforms.
+    - `perspective [another part's name]`
 
-    - `light [another part's name]`Sets the part that is used as the light for calculating the brightness (based on how directly the part's surface is facing the light source point). Like the perspective point part, the center point is used and zplane is used for the z position (0 being the zero-plane where all 2D objects normally live) and positive values being further away into the distance. The light part `color` property is used as the light color (alpha not used for light color). The `color2` property is used for the ambient lighting when calculating brightness (alpha also not used).
+      Sets the part that is used as the perspective point for giving a part a 3D look. The perspective point must have a perspective section that provides zplane and focal properties. The center of this part is used as the focal point, thus size, color, and visibility are not relevant; only the center point, zplane, and focal are used. This also implicitly enables perspective transforms.
 
-    - `on [1 or 0]`Enables mapping for the part. The default value is 0.
+    - `light [another part's name]`
 
-    - `smooth [1 or 0]`Enables smooth map rendering. This can be linear interpolation, anisotropic filtering, or anything the engine decides is smooth. This is a best-effort hint and it may not produce precisely the same results in all engines and situations. The default value is 1.
+      Sets the part that is used as the light for calculating the brightness (based on how directly the part's surface is facing the light source point). Like the perspective point part, the center point is used and zplane is used for the z position (0 being the zero-plane where all 2D objects normally live) and positive values being further away into the distance. The light part `color` property is used as the light color (alpha not used for light color). The `color2` property is used for the ambient lighting when calculating brightness (alpha also not used).
 
-    - `alpha [1 or 0]`Enables the alpha channel when map rendering. The default value is 1.
+    - `on [1 or 0]`
 
-    - `backface_cull [1 or 0]`Enables backface culling (when the rotated part that normally faces the camera is facing away after being rotated). This means that the object is hidden when the backface is culled.
+      Enables mapping for the part. The default value is 0.
 
-    - `perspective_on [1 or 0]`Enables perspective when rotating even without a perspective point object. This uses a perspective set for the object itself or for the canvas as a whole as the global perspective with the `edje_perspective_set()` and `edje_perspective_global_set()` functions of the Edje Perspective API (in [mobile](http://org.tizen.native.mobile.apireference/group__Edje__Perspective.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Edje__Perspective.html) applications).
+    - `smooth [1 or 0]`
 
-    - `color [point][red] [green][blue] [alpha]`Sets the color of a vertex in the map. The colors are linearly interpolated between vertex points through the map. The default color of a vertex in a map is white solid (255, 255, 255, 255), which means it has no affect on modifying the part pixels. Currently only 4 points are supported:
+      Enables smooth map rendering. This can be linear interpolation, anisotropic filtering, or anything the engine decides is smooth. This is a best-effort hint and it may not produce precisely the same results in all engines and situations. The default value is 1.
+
+    - `alpha [1 or 0]`
+
+      Enables the alpha channel when map rendering. The default value is 1.
+
+    - `backface_cull [1 or 0]`
+
+      Enables backface culling (when the rotated part that normally faces the camera is facing away after being rotated). This means that the object is hidden when the backface is culled.
+
+    - `perspective_on [1 or 0]`
+
+      Enables perspective when rotating even without a perspective point object. This uses a perspective set for the object itself or for the canvas as a whole as the global perspective with the `edje_perspective_set()` and `edje_perspective_global_set()` functions of the Edje Perspective API (in [mobile](http://org.tizen.native.mobile.apireference/group__Edje__Perspective.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Edje__Perspective.html) applications).
+
+    - `color [point][red] [green][blue] [alpha]`
+
+      Sets the color of a vertex in the map. The colors are linearly interpolated between vertex points through the map. The default color of a vertex in a map is white solid (255, 255, 255, 255), which means it has no affect on modifying the part pixels. Currently only 4 points are supported:
 
       - 0: Top-left point of a part
       - 1: Top-right point of a part
@@ -972,10 +1131,21 @@ part {
 
       The `rotation` block rotates the part, optionally with the center on another part.
 
-      - `center [another part's name]`Sets the part that is used as the center of rotation when rotating the part with this description. The part's center point is used as the rotation center when applying rotation around the X, Y and Z axes. If no center is given, the part's original center itself is used for the rotation center.
-      - `x [X degrees]`Sets the rotation around the X axis of the part considering the center set. The value is given in degrees.
-      - `y [Y degrees]`Sets the rotation around the Y axis of the part considering the center set. The value is given in degrees.
-      - `z [Z degrees]`Sets the rotation around the Z axis of the part considering the center set. The value is given in degrees.
+      - `center [another part's name]`
+
+        Sets the part that is used as the center of rotation when rotating the part with this description. The part's center point is used as the rotation center when applying rotation around the X, Y and Z axes. If no center is given, the part's original center itself is used for the rotation center.
+
+      - `x [X degrees]`
+
+        Sets the rotation around the X axis of the part considering the center set. The value is given in degrees.
+
+      - `y [Y degrees]`
+
+        Sets the rotation around the Y axis of the part considering the center set. The value is given in degrees.
+
+      - `z [Z degrees]`
+
+        Sets the rotation around the Z axis of the part considering the center set. The value is given in degrees.
 
     - `map.perspective` block
 
@@ -988,10 +1158,15 @@ part {
 
       The `perspective` block adds focal and plane perspective to the part. Active if the `perspective_on` property is `true`. This must be provided, if the part is being used by another part as its perspective target.
 
-      - `zplane [unscaled Z value]`Sets the Z value that is not scaled. Normally this is 0 as that is the Z distance.
-      - `focal [distance]`Sets the distance from the focal Z plane (zplane) and the camera, for example, equating to focal length of the camera
+      - `zplane [unscaled Z value]`
 
-    - .`map.link` block
+        Sets the Z value that is not scaled. Normally this is 0 as that is the Z distance.
+
+      - `focal [distance]`
+
+        Sets the distance from the focal Z plane (zplane) and the camera, for example, equating to focal length of the camera.
+
+    - `map.link` block
 
       ```
       link {
@@ -1010,11 +1185,14 @@ part {
       source: "edje";
       ```
 
-      ​
-
       - `base [signal][source]`
 
-      Sets the signal and source which triggers the transition to this state. The source parameter is optional, and it is filled with the current group's default value if it is not provided.
+       Sets the signal and source which triggers the transition to this state. The source parameter is optional, and it is filled with the current group's default value if it is not provided.
 
- 	> **Note**
- 	> Except as noted, this Content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+> **Note**  
+> Except as noted, this Content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies  
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

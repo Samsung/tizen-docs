@@ -1,13 +1,10 @@
 # Positioning Parts
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 To set the size and relative position of a part in the EDC file:
 
-- Set the size of a part in pixels using the `min` and `max` properties.The following example sets the minimum and maximum size of the rectangle part to 200 x 200 px:
+- Set the size of a part in pixels using the `min` and `max` properties.  
+
+  The following example sets the minimum and maximum size of the rectangle part to 200 x 200 px:
 
   ```
   part {
@@ -25,7 +22,11 @@ To set the size and relative position of a part in the EDC file:
   }
   ```
 
-- Define the position of the part in the `rel1` and `rel2` blocks, which determine the top-left corner and the bottom-right corner of the part.The position can be defined in relation to another part (with the `relative` property), or as an offset (with the `offset` property). When using relative positioning, the `to`, `to_x` and `to_y` properties are used to define in relation to which part the positioning is done. If nothing else is specified, the positioning is in relation to the parent's part.To demonstrate relative positioning, the following example creates another rectangle part and positions it under the first part created above. The top-left corner of the new part starts at the bottom-left corner of the previous one.
+- Define the position of the part in the `rel1` and `rel2` blocks, which determine the top-left corner and the bottom-right corner of the part.  
+
+  The position can be defined in relation to another part (with the `relative` property), or as an offset (with the `offset` property). When using relative positioning, the `to`, `to_x` and `to_y` properties are used to define in relation to which part the positioning is done. If nothing else is specified, the positioning is in relation to the parent's part.
+
+  To demonstrate relative positioning, the following example creates another rectangle part and positions it under the first part created above. The top-left corner of the new part starts at the bottom-left corner of the previous one.
 
   ```
   part {
@@ -53,8 +54,8 @@ To set the size and relative position of a part in the EDC file:
   }
   ```
 
-> **Note**
-> The `align` property defines how the parts align themselves in the main window if their size is smaller than the main window. If nothing is specified, the parts are aligned in the center of the window.
+  > **Note**  
+  > The `align` property defines how the parts align themselves in the main window if their size is smaller than the main window. If nothing is specified, the parts are aligned in the center of the window.
 
 ## Adding an Offset to Relative Positioning
 
@@ -114,5 +115,10 @@ To refer to the previous pixel (the bottom-right pixel of the blue rectangle), s
 
 Since `-1 -1` is the most common offset wanted for the `rel2` block, it is set as the default value.
 
-> **Note**
+> **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

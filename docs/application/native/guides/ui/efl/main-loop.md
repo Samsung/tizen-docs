@@ -59,7 +59,9 @@ To manage a timer:
 - To get the timer's pending time, use the `ecore_timer_pending_get()` function.
 - To delay the timer's next occurrence, use the `ecore_timer_delay()` function. The function adds the specified time to the current interval. It does not change the future occurrences' interval. You can also reset the current interval to its full value by using the `ecore_timer_reset()` function.
 - To pause the currently-running timer, use the `ecore_timer_freeze()` function. The remaining time is saved and used again when the timer is resumed with the `ecore_timer_thaw()` function.
-- To query the current value of the defined timer infrastructure precision, use the `ecore_timer_precision_get()` function. A higher delay means that more timers can be run together. It diminishes the need to use system wake-ups and thus lowers the power consumption.To set the precision, use the `ecore_timer_precision_set()` function. This sets the precision for all timers. For example, there are 2 timers, one that expires in 2.0 seconds and another that expires in 2.1 seconds. If the precision is set to 0.1 seconds, Ecore requests the next expiration to happen in 2.1 seconds and runs both callbacks at once, instead of one at 2.0 seconds and the other one 0.1 seconds later. However, if there is no timer expiring in 2.1 seconds, the timeout is at the minimum interval, 2 seconds.
+- To query the current value of the defined timer infrastructure precision, use the `ecore_timer_precision_get()` function. A higher delay means that more timers can be run together. It diminishes the need to use system wake-ups and thus lowers the power consumption.
+
+ To set the precision, use the `ecore_timer_precision_set()` function. This sets the precision for all timers. For example, there are 2 timers, one that expires in 2.0 seconds and another that expires in 2.1 seconds. If the precision is set to 0.1 seconds, Ecore requests the next expiration to happen in 2.1 seconds and runs both callbacks at once, instead of one at 2.0 seconds and the other one 0.1 seconds later. However, if there is no timer expiring in 2.1 seconds, the timeout is at the minimum interval, 2 seconds.
 
 ## Animators
 
@@ -72,7 +74,7 @@ To implement animators, Ecore provides the Ecore animator subsystem.
 
 ### Forever-running Animator
 
-To create an animation that runs for an indefinite time: 
+To create an animation that runs for an indefinite time:
 
 ```
 Eina_Bool
@@ -312,3 +314,8 @@ ecore_idler_add(my_idler_cb, my_data);
 
 > **Note**	
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

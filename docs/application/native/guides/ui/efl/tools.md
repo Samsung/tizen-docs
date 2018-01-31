@@ -9,17 +9,23 @@ The Eina library provides a number of tools to help you when coding applications
 - Lazy allocator: Manages item allocation
 - Log: Full-featured logging system
 - Magic: Provides runtime type checking
-- [Memory Pool](./tools-n.md#memory): Abstraction for various memory allocators
+- [Memory Pool](#memory-pool): Abstraction for various memory allocators
 - Module lists: Loads and shares modules using the `Eina_Module` standard
 - Rectangle: Rectangle structure and standard manipulation methods
-- [Safety Checks](./tools-n.md#safety): Extra checks that report unexpected conditions and can be disabled during compilation
-- [String](./tools-n.md#string): Set of functions that manage C strings
+- [Safety Checks](#safety-checks): Extra checks that report unexpected conditions and can be disabled during compilation
+- [String](#string): Set of functions that manage C strings
 
 ## String
 
 When creating applications, you always need to manipulate strings. Use the following Eina functions for manipulating C strings:
 
-- To split a string into an array of strings based on a delimiter that determines where the string is split, use the `eina_str_split()` function.The split is the most common string manipulation method. For example, if you have the `"Rasterman:Bluebugs:Tasn:Illogict:billiob:Puppet_Master"` string, and you want to print it in an easily readable format, you can split it using the ":" character as a delimiter.In the `eina_str_split()` function, the first parameter is the string to split, the second is the delimiter, and the third is the maximum number of strings to split the string into. If you set the third parameter to be smaller than 1, the function splits the string as many times as possible.The function returns a newly-allocated `NULL`-terminated array of strings, or `NULL`, if it fails to allocate the array. When no longer needed, free the memory allocated by the `eina_str_split()` function.
+- To split a string into an array of strings based on a delimiter that determines where the string is split, use the `eina_str_split()` function.
+
+  The split is the most common string manipulation method. For example, if you have the `"Rasterman:Bluebugs:Tasn:Illogict:billiob:Puppet_Master"` string, and you want to print it in an easily readable format, you can split it using the ":" character as a delimiter.
+
+  In the `eina_str_split()` function, the first parameter is the string to split, the second is the delimiter, and the third is the maximum number of strings to split the string into. If you set the third parameter to be smaller than 1, the function splits the string as many times as possible.
+
+  The function returns a newly-allocated `NULL`-terminated array of strings, or `NULL`, if it fails to allocate the array. When no longer needed, free the memory allocated by the `eina_str_split()` function.
 
   ```
   char *nicks = "Rasterman:Bluebugs:Tasn:Illogict:billiob:Puppet_Master";
@@ -71,7 +77,9 @@ When creating applications, you always need to manipulate strings. Use the follo
   free(res);
   ```
 
-- To check whether a string starts or ends with another string, use the `eina_str_has_prefix()` or `eina_str_has_suffix()` function. You can also check whether a string has a particular extension with the `eina_str_has_extension()` function.These functions return `EINA_TRUE` if the string contains the specified prefix, suffix, or extension, and `EINA_FALSE` if it does not.
+- To check whether a string starts or ends with another string, use the `eina_str_has_prefix()` or `eina_str_has_suffix()` function. You can also check whether a string has a particular extension with the `eina_str_has_extension()` function.
+
+  These functions return `EINA_TRUE` if the string contains the specified prefix, suffix, or extension, and `EINA_FALSE` if it does not.
 
   ```
   char *names = "Carsten;Cedric;Tom;Chidambar;Boris;Philippe";
@@ -171,5 +179,10 @@ Eina also provides macros that check whether a given value is `TRUE` or `FALSE`.
 - To call `return` if a given value is `TRUE`, use the `EINA_SAFETY_ON_TRUE_RETURN()` function.
 - To call `goto` in a given function if a given value is `TRUE`, use the `EINA_SAFETY_ON_NULL_GOTO()` function.
 
-> **Note**
+> **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

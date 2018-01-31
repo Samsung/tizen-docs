@@ -1,10 +1,5 @@
 # Building UI Layouts
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 A layout lays out the arrangement of different graphical elements of a user interface. Designing a layout is a fundamental part of building a user interface, unless you want to display only one UI component in your application throughout the running time. In most cases, applications have more than one view changing over time, and a view consists of many graphical elements.
 
 ## UI Containers
@@ -16,16 +11,16 @@ Container UI components do not have their own visual identity. They only have lo
 **Table: UI containers**
 
 | Name                                     | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
-| [Box](./container-box-n.md) | Arrange more than 2 objects linearly.    |
-| [Conformant](./container-conformant-n.md) | Resize and position the content area based on the space taken by, for example, an indicator, a virtual keyboard and a softkey window. |
-| [Grid](./container-grid-n.md) | Place objects at specific positions along a fixed grid. |
-| [Layout](./container-layout-n.md) | Take a standard Edje design file and wrap it very thinly in a UI component. |
-| [Mapbuf](./container-mapbuf-n.md) | Improve the moving and resizing performance of a complex UI component by treating it as a single Evas map image. |
-| [Naviframe](./container-naviframe-n.md) | Manage many views by stacking them and displaying the topmost one. |
-| [Panes](./container-panes-mn.md) **in mobile applications only** | Resize 2 sections of content by adding a draggable bar between them. |
-| [Scroller](./container-scroller-n.md) | Hold and clip a single object and allow users to scroll across it. |
-| [Table](./container-table-n.md) | Arrange multiple objects like for a box, but with 2 dimensions. |
+|----------------------------------------|----------------------------------------|
+| [Box](./container-box.md) | Arrange more than 2 objects linearly.    |
+| [Conformant](./container-conformant.md) | Resize and position the content area based on the space taken by, for example, an indicator, a virtual keyboard and a softkey window. |
+| [Grid](./container-grid.md) | Place objects at specific positions along a fixed grid. |
+| [Layout](./container-layout.md) | Take a standard Edje design file and wrap it very thinly in a UI component. |
+| [Mapbuf](./container-mapbuf.md) | Improve the moving and resizing performance of a complex UI component by treating it as a single Evas map image. |
+| [Naviframe](./container-naviframe.md) | Manage many views by stacking them and displaying the topmost one. |
+| [Panes](./container-panes.md) **in mobile applications only** | Resize 2 sections of content by adding a draggable bar between them. |
+| [Scroller](./container-scroller.md) | Hold and clip a single object and allow users to scroll across it. |
+| [Table](./container-table.md) | Arrange multiple objects like for a box, but with 2 dimensions. |
 
 ## Basic EFL UI Layout
 
@@ -114,5 +109,10 @@ Size hints are a set of functions that can be used on any Evas object. You reque
 - Aspect
 
   To fix the dimensional proportions of the object, use the `evas_object_size_hint_aspect_set()` function. When the aspect size hint is set, Evas tries to fix the dimensional proportions of the object.
-  
-For examples on the use of the alignment, weight, and minimum and maximum size properties, see [Box](container_box_n.htm).
+
+For examples on the use of the alignment, weight, and minimum and maximum size properties, see [Box](container-box.md).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable
