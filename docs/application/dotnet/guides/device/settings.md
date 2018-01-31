@@ -26,7 +26,7 @@ To enable your application to use the system setting functionality:
     </privileges>
     ```
 
-2. To make your application visible in the Tizen Store only for devices that support the system setting features used in your application, add the the following feature key to the `tizen-manifest.xml` file:
+2. To make your application visible in the Tizen Store only for devices that support the system setting features, add the following feature key to the `tizen-manifest.xml` file:
 
     ``` 
     <!--To use the WallpaperHomeScreen property and WallpaperHomeScreenChanged event-->
@@ -38,6 +38,7 @@ To enable your application to use the system setting functionality:
     <feature name="http://tizen.org/feature/systemsetting"/>
     ```
 
+    Tizen Store can filter features based on the feature keys entered in the manifest file, and accordingly display apps to user's device.	
 
     The following table lists the feature keys required by the specific properties and events of the [Tizen.System.SystemSettings](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.SystemSettings.html) class.
 
@@ -53,7 +54,7 @@ To enable your application to use the system setting functionality:
     | `http://tizen.org/feature/systemsetting.lock_screen` | `LockscreenApp`, `WallpaperLockScreen`   | `LockScreenAppChanged`, `WallpaperLockScreenChanged` |
     | `http://tizen.org/feature/systemsetting.notification_email` | `EmailAlertRingtone`                     | `EmailAlertRingtoneChanged`              |
 
-    You can also check whether a device supports a given feature by using the `TryGetValue()` method of the [Tizen.System.Information](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Information.html) class and, accordingly, enabling or disabling the code requiring the feature:
+    You can also check whether a device supports a given feature using the `TryGetValue()` method of the [Tizen.System.Information](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Information.html) class, and accordingly handle the code when a feature is supported and not supported:
 
     ``` 
     const string HOME_SCREEN_FEATURE_KEY = "http://tizen.org/feature/systemsetting.home_screen";
