@@ -138,7 +138,7 @@ To manage the life-cycle callbacks:
         /* Release all resources */
     }
    ```
-   - The `time_tick` event is triggered at least once per second. The watch applications can get the current time from the `watch_time` time handle to draw a normal watch. This event can be called by platform even in the background state. So even if your watch app is in the background If this event is called, we need to update the UI.
+   - The `time_tick` event is triggered at least once per second. The watch applications can get the current time from the `watch_time` time handle to draw a normal watch. Platform can invoke this event even in the background state. So even if your watch app is in the background if this event is invoked, you need to update the UI.
    ```
     void
     app_time_tick(watch_time_h watch_time, void* user_data)
