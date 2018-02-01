@@ -10,7 +10,7 @@ To improve the performance of an application:
 
 1. Identify the bottlenecks which need to be optimized.
 2. Optimize the bottlenecks by code refactoring.
-3. [Measure performance](#measure_app_perf) to compare refactoring gains.
+3. [Measure performance](#measuring-application-performance) to compare refactoring gains.
 4. If the performance goal is met, you can stop the process, else go to step 2 and repeat till the goal is met.
 
 <a name="measure_app_perf"></a>
@@ -19,10 +19,10 @@ To improve the performance of an application:
 The Tizen Studio supports various tools which help to measure and increase performance at runtime:
 
 - [Dynamic Analyzer](../../../tizen-studio/common-tools/da-overview.md)  
-The Dynamic Analyzer helps to identify bottlenecks and improve resource usage patterns in applications. For more information on its usage, see [Dynamic Analysis](#dynamic).
+The Dynamic Analyzer helps to identify bottlenecks and improve resource usage patterns in applications. For more information on its usage, see [Dynamic Analysis](#dynamic-analysis).
 
-- [Valgrind](../../../tizen-studio/native-tools/valgrind-n.md)  
-Valgrind detects memory errors or leaks. This tool helps to improve memory usage patterns in native applications. For more information on its usage, see [Valgrind Analysis](#valgrind_analysis).
+- [Valgrind](../../../tizen-studio/native-tools/valgrind.md)  
+Valgrind detects memory errors or leaks. This tool helps to improve memory usage patterns in native applications. For more information on its usage, see [Valgrind Analysis](#valgrind-analysis).
 
 Measuring performance allows you to identify bottlenecks that take a critical amount of time during the program execution and to compare the code execution time before and after optimization.
 
@@ -47,13 +47,11 @@ To make your applications powerful, faster, and more stable, you need to analyze
 
 The following instructions and examples help you to use the Dynamic Analyzer effectively:
 
-<a name="running"></a>
-- [Running Dynamic Analyzer] 
-Describes how to launch the Dynamic Analyzer.
+- [Running Dynamic Analyzer](#running-dynamic-analyzer)  
+  Describes how to launch the Dynamic Analyzer.
 
-<a name="result"></a>
-- [Using the Analysis Result]
-Describes how to utilize the Dynamic Analyzer for various improvement purposes.
+- [Using the Analysis Result](#using-the-analysis-result)  
+  Describes how to utilize the Dynamic Analyzer for various improvement purposes.
 
 ### Running Dynamic Analyzer
 
@@ -63,7 +61,7 @@ You can launch the Dynamic Analyzer in the Tizen Studio or as a standalone appli
   1. Right-click your project in the Tizen Studio **Project Explorer** view.
   2. Select **Profile As > Profile with Dynamic Analyzer**.  
 
-   The selected project is built, packaged, and installed on the target device. The Dynamic Analyzer is launched and the profiling starts automatically.
+  The selected project is built, packaged, and installed on the target device. The Dynamic Analyzer is launched and the profiling starts automatically.
 
 - To run the Dynamic Analyzer as a standalone from the Tizen Studio submenu:
   1. Launch the Dynamic Analyzer from the Tizen Studio **Tools > Dynamic Analyzer** menu.
@@ -80,7 +78,7 @@ The Dynamic Analyzer provides access to its features through the Command Line In
 - CLI tool can be used in GUI-less environments, and the collected profile data can be transferred into other environment where it can be further analyzed with the Dynamic Analyzer GUI.
 - CLI tool can be used by people who do not like to use graphical user interfaces at all.
 
-For more information on using the Dynamic Analyzer CLI, see [Command Line Interface](../../../tizen-studio/common-tools/da-advanced.md#cli).
+For more information on using the Dynamic Analyzer CLI, see [Command Line Interface](../../../tizen-studio/common-tools/da-advanced.md#command-line-interface).
 
 ### Using the Analysis Result
 
@@ -97,6 +95,7 @@ Describes how to detect memory and resource leaks.
 - [Multi-threaded Application and Synchronization Analysis](#multithread)  
 Describes how to analyze threads and synchronization.
 
+<a name="performance_analysis"></a>
 #### Performance Analysis
 
 You can use the Dynamic Analyzer to analyze application performance and identify bottlenecks. After identifying bottlenecks, you can modify the code to eliminate them. That increases application performance significantly, and extends the battery life of the device running the application.
@@ -110,7 +109,7 @@ To analyze performance of the application with the Dynamic Analyzer, use the fol
   To detect and fix the methods consuming the most time:
 
   - Select the **View > Report > Function Profiling** in the menu to show the Function Profiling table displaying the methods consuming the most time. Click the title of a column to view the sorted results.
-  - To view the execution time of the methods called within a specific time period, use the [range inspection feature](../../../tizen-studio/common-tools/da-advanced.md#range) of the Dynamic Analyzer.
+  - To view the execution time of the methods called within a specific time period, use the [range inspection feature](../../../tizen-studio/common-tools/da-advanced.md#range-inspection) of the Dynamic Analyzer.
 
   **Figure: Function Profiling table**
 
@@ -142,11 +141,12 @@ To analyze performance of the application with the Dynamic Analyzer, use the fol
 
   ![Thread load](./media/optimizingappper_threadload.png)
 
-  <a name="dynamic"></a>
+<a name="detecting"></a>
 #### Detecting Leaks
 
 To improve the performance of your application, you can use the Dynamic Analyzer to detect memory leaks. Memory leaks occur when memory capacity that is dynamically allocated during application execution is not returned after the execution stops. Severe or accumulating memory leaks can affect the performance of your application along with other applications and programs. For more information, see [Performing Memory Analysis](../../../tizen-studio/common-tools/da-memory.md).
 
+<a name="multithread"></a>
 #### Multi-threaded Application and Synchronization Analysis
 
 Understanding the thread execution in multi-threaded applications can be challenging. The GDB (GNU Debugger) supports the process of debugging multi-threaded applications, but since it uses synchronization objects, the debugging can be quite difficult. The Dynamic Analyzer, on the other hand, provides effective thread analysis features. For more information, see [Performing Thread Analysis](../../../tizen-studio/common-tools/da-thread.md).
@@ -158,11 +158,11 @@ Valgrind helps you to detect memory errors or leaks in your application at runti
 
 The following instructions and examples help you to use Valgrind effectively:
 
-- [Running Valgrind](#running_valgrind)  
-Describes how to launch Valgrind with your application.
+- [Running Valgrind](#running-valgrind)  
+  Describes how to launch Valgrind with your application.
 
-- [Viewing Valgrind Result](#valgrind_result)  
-Describes the information provided through Valgrind analysis.
+- [Viewing Valgrind Result](#viewing-valgrind-result)  
+  Describes the information provided through Valgrind analysis.
 
 <a name="running_valgrind"></a>
 ### Running Valgrind
@@ -178,10 +178,10 @@ To set the Valgrind options for your application:
 4. Go to the **Memory Profile Options > Collect data** tab:  
 Select from 2 types of memory profiling settings:  
   - Memory error and memory leak checking  
-  This option uses the **Memcheck** tool to profile your application.
+    This option uses the **Memcheck** tool to profile your application.
 
   - Heap memory profiling  
-  This option uses the **Massif** tool to profile your application.
+    This option uses the **Massif** tool to profile your application.
 
 5. On the **General setting** tab, set the general Valgrind options. These options are used for both **Memcheck** and **Massif** profiling.
 
@@ -192,7 +192,7 @@ Select from 2 types of memory profiling settings:
    **Table: General setting options**
 
    | Option name                     | Description                              |
-   | ------------------------------- | ---------------------------------------- |
+   |-------------------------------|----------------------------------------|
    | **trace children on exec**      | When enabled, Valgrind traces into sub-processes initiated through the exec system call. This is necessary for multi-project applications. Valgrind does trace into the child of a fork (it would be difficult not to, since fork makes an identical copy of a process), so this option is arguably badly named. However, most children of fork calls immediately call exec anyway. |
    | **run __libc_freeres()on exit** | This option is only relevant when running Valgrind on Linux.The GNU C library (`libc.so`), which is used by all applications, can allocate memory for its own uses. Usually it does not free that memory when the application ends, since the Linux kernel reclaims all process resources when a process exits anyway. The glibc authors realized that this behavior causes leak checkers, such as Valgrind, to falsely report leaks in glibc, when a leak check is done at exit. In order to avoid this, they provided a routine called `__libc_freeres()` specifically to make glibc release all memory it has allocated. **Memcheck** therefore tries to run `__libc_freeres()` at exit. Unfortunately, in some very old versions of glibc, `__libc_freeres()` is sufficiently buggy to cause segmentation faults. This was particularly noticeable on Red Hat 7.1. So this option is provided in order to inhibit the run of `__libc_freeres()`. If your application seems to run fine on Valgrind, but segfaults at exit, disabling this option can fix the problem, although at the cost of possibly falsely reporting space leaks in `libc.so`. |
    | **demangle C++ names**          | Automatic demangling (decoding) of C++ names is enabled by default. When enabled, Valgrind attempts to translate encoded C++ names back to something approaching the original. The demangler handles symbols mangled by g++ versions 2.X, 3.X, and 4.X.An important fact about demangling is that method names mentioned in suppressions files must be in their mangled form. Valgrind does not demangle method names when searching for applicable suppressions, because to do otherwise would make suppression file contents dependent on the state of Valgrind's demangling machinery, and also slow down suppression matching. |
@@ -207,7 +207,7 @@ Select from 2 types of memory profiling settings:
    **Table: Tool Advanced setting options for memory error and memory leak profiling**
 
    | Option name                | Description                              |
-   | -------------------------- | ---------------------------------------- |
+   |--------------------------|----------------------------------------|
    | **leak check**             | This option, when enabled, searches for memory leaks when the client application finishes. If set to **summary**, it lists out how many leaks occurred. If set to **full** or **yes**, it also gives details of each individual leak. |
    | **leak resolution**        | When performing leak checks, this option determines how willing **Memcheck** is to consider different backtraces to be the same for the purposes of merging multiple leaks into a single leak report. When set to **low**, only the first 2 entries need match. When set to **med**, 4 entries have to match. When **high**, all entries need to match.For hardcore leak debugging, you probably want to use **--leak-resolution=high** together with **--num-callers=40** or a similar large number. The **--leak-resolution** setting does not affect **Memcheck**'s ability to find leaks. It only changes how the results are presented. |
    | **freelist size (blocks)** | When the client application releases memory using free (in C) or delete (C++), that memory is not immediately made available for re-allocation. Instead, it is marked inaccessible and placed in a queue of freed blocks. The purpose is to defer as long as possible the point at which freed-up memory comes back into circulation. This increases the chance that **Memcheck** is able to detect invalid accesses to blocks for some significant period of time after they have been freed.This option specifies the maximum total size, in bytes, of the blocks in the queue. The default value is 20 million bytes. Increasing this increases the total amount of memory used by **Memcheck**, but can result in the detection of invalid uses of freed blocks which would otherwise go undetected. |
@@ -218,7 +218,7 @@ Select from 2 types of memory profiling settings:
    **Table: Tool Advanced setting options for heap memory profiling**
 
    | Option name                        | Description                              |
-   | ---------------------------------- | ---------------------------------------- |
+   |----------------------------------|----------------------------------------|
    | **profile heap**                   | This option specifies whether heap profiling is done. |
    | **administrative bytes per block** | If heap profiling is enabled, this option gives the number of administrative bytes per block to use. This must be an estimate of the average, since it can vary. For example, the allocator used by glibc on Linux requires somewhere between 4 to 15 bytes per block, depending on various factors. That allocator also requires admin space for freed blocks, but **Massif** cannot account for this. |
    | **profile stack**                  | This option specifies whether stack profiling must be done. This option slows **Massif** down greatly, and so is off by default. **Massif** assumes that the main stack has size zero at start-up. This is not true, but doing otherwise accurately is difficult. Furthermore, starting at zero better indicates the size of the part of the main stack that a user application actually has control over. |
@@ -238,7 +238,7 @@ Select from 2 types of memory profiling settings:
 <a name="valgrind_result"></a>
 ### Viewing Valgrind Result
 
-After the [memory profiling](#running_valgrind) is terminated, you can view the profiling results.
+After the [memory profiling](#running-valgrind) is terminated, you can view the profiling results.
 
 #### Memory Error and Leak Results
 

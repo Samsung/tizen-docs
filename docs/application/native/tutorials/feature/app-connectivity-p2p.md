@@ -32,7 +32,7 @@ devices using Wi-Fi Direct.
 Applications that use Wi-Fi Direct must declare the required privileges
 in the `tizen-manifest.xml` file. For more information on the Tizen
 privileges, see [Security and API
-Privileges](../details/sec-privileges-n.md).
+Privileges](../details/sec-privileges.md).
 
 To perform the Wi-Fi Direct operations, the application manifest must
 include the following privileges:
@@ -53,7 +53,7 @@ uses standard sockets.
 
 
 To perform the Wi-Fi Direct operations, the device must support the
-following [features](../details/app-filtering-n.md):
+following [features](../details/app-filtering.md):
 
 -   `http://tizen.org/feature/network.wifi`
 -   `http://tizen.org/feature/network.wifi.direct`

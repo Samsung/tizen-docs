@@ -2,25 +2,25 @@
 
 Before you implement the actual application functionality, define all the necessary properties for your application project:
 
-- To set the [application project properties for API and privilege checks](#api), right-click the project in the Tizen Studio **Project Explorer** view and select **Properties**. After setting or changing a property, click **OK**.
-- To define the [application manifest settings](#manifest), edit the `tizen-manifest.xml` file.
+- To set the [application project properties for API and privilege checks](#checking-api-and-privilege-usage), right-click the project in the Tizen Studio **Project Explorer** view and select **Properties**. After setting or changing a property, click **OK**.
+- To define the [application manifest settings](#setting-the-application-manifest), edit the `tizen-manifest.xml` file.
 
 > **Note**  
 > Only modify the manifest file by using the manifest editor in the Tizen Studio. If you create or edit the `tizen-manifest.xml` file using any other text editor, your application may not work as expected.
 
-After you have finished setting the project properties, you are ready to [design the UI and implement the application code](app-dev-process-n.md#designing).
+After you have finished setting the project properties, you are ready to [design the UI and implement the application code](app-dev-process.md#designing).
 
 <a name="api"></a>
 ## Checking API and Privilege Usage
 
-You can [check the source code in your project for any violation of API and privilege usage](../../../tizen-studio/native-tools/api-checker-n.md). To enable the non-default checks (the default checks are always performed):
+You can [check the source code in your project for any violation of API and privilege usage](../../../tizen-studio/native-tools/api-checker.md). To enable the non-default checks (the default checks are always performed):
 
 1. In the **Properties** window, select **C/C++ Build > Tizen Settings > API and Privilege Checker Properties**.
 2. Select the required checks in the **Privilege Check** panel.
 
 To perform the usage checks automatically during specific tasks, select the required option in the **Launching** panel:
 
-- During the [build process](app-dev-process-n.md#build), select the **Run API and privilege checks with build** option.
+- During the [build process](app-dev-process.md#build), select the **Run API and privilege checks with build** option.
 - During code editing, select the **Run API and privilege checks while editing** option.
 
 You can also perform the usage checks manually after building the application, by right-clicking the project in the **Project Explorer** view and selecting **Check API and Privilege Violations With Build**. The results are displayed in the **Problems** view.
@@ -37,7 +37,7 @@ The application manifest consists of application information, such as package, v
 
 ![Setting the application manifest](media/tizen_project_explorer.png)
 
-You can [edit the application properties using the form tabs of the manifest editor](../../../tizen-studio/native-tools/manifest-text-editor-n.md#editing).
+You can [edit the application properties using the form tabs of the manifest editor](../../../tizen-studio/native-tools/manifest-text-editor.md#editing-the-manifest-file).
 
 ### Defining and Editing General Information in the Overview Tab
 
@@ -74,7 +74,7 @@ You can perform the following tasks using the **Overview** tab:
   The following table describes the available icons.
   ​
   | Profile  | Mandatory | Format                 | Size              | Size              | Description                        |
-  | -------- | --------- | ---------------------- | ----------------- | ----------------- | ---------------------------------- |
+  |--------|---------|----------------------|-----------------|-----------------|----------------------------------|
   | Profile  | Mandatory | Format                 | Xhigh  (HD)       | High  (WVGA)      | Description                        |
   | Mobile   | Yes       | 32-bit PNG with  alpha | 117 x 117 pixels  | 78 x 78 pixels    | Image displayed  in the main menu. |
   | Wearable | Yes       | 32-bit  PNG with alpha | 152  x 152 pixels | 152  x 152 pixels | Image  displayed in the main menu. |
@@ -95,7 +95,7 @@ To enable filtering for your native application:
 
 1. In the **Features** tab, click **+**.
 
-2. Select a feature from the [predefined list of features available for filtering](../details/app-filtering-n.md).To check which features are necessary for using a specific API, see the related feature in the native [API Reference](../../../../org.tizen.native.mobile.apireference/index.html).
+2. Select a feature from the [predefined list of features available for filtering](../details/app-filtering.md).To check which features are necessary for using a specific API, see the related feature in the native [API Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 
 3. Click **OK**.
 
@@ -116,7 +116,7 @@ You can use features and services provided by privileged APIs, which handle plat
 To add a privilege:
 
 1. In the **Privileges** tab, click **+**.
-2. Select a privilege from the [predefined list of available API privileges](../details/sec-privileges-n.md).
+2. Select a privilege from the [predefined list of available API privileges](../details/sec-privileges.md).
 3. Click **OK**.
 
 After setting the privilege information with the manifest editor, you can see the added code in the **Source** tab:
@@ -145,7 +145,7 @@ The following example shows the setting in the `tizen-manifest.xml` file code:
 <description xml:lang="en-us">This is a sample</description>
 ```
 
-You can localize a native application to adapt to various languages and cultural environments by creating different native application versions for different languages. For more information, see [Localizing Application Resources](../../../tizen-studio/native-tools/po-file-editor-n.md).
+You can localize a native application to adapt to various languages and cultural environments by creating different native application versions for different languages. For more information, see [Localizing Application Resources](../../../tizen-studio/native-tools/po-file-editor.md).
 
 ### Defining Advanced Features in the Advanced Tab
 
@@ -157,7 +157,7 @@ You can perform the following tasks using the **Advanced** tab:
 
   In the **Meta Data** section, you can add user-defined key-value pairs to the application to be used for filtering in the package manager.
 
-- Export [data control](../../guides/app-management/data-control-n.md) functionality.  
+- Export [data control](../../guides/app-management/data-control.md) functionality.  
 A service application can act as a service provider and allow other applications to access specific data.  
 To define the kind of access and data your service application provides to other applications, click **+** in the **Data Control** section, and define the data control details.
 
@@ -179,7 +179,7 @@ To define the kind of access and data your service application provides to other
 
 - Define application controls.
 
-  You can [export the application control functionality](../../guides/app-management/app-controls-n.md#export_appcontrol) of your application.
+  You can [export the application control functionality](../../guides/app-management/app-controls.md#application-control-export) of your application.
 
   To define an application control used to access the functionality of your application, click **+** in the **Application Control** section.
 
@@ -194,7 +194,7 @@ To define the kind of access and data your service application provides to other
   **Table: Account provider properties**
 
   | Acount  property1 | Acount  property2 | Data type | Property type                            |
-  | ----------------- | ----------------- | --------- | ---------------------------------------- |
+  |-----------------|-----------------|--------|----------------------------------------|
   | Multiple account  | Multiple  account | bool      | Indicates  whether multiple accounts are supported. This is a mandatory property. |
   | Provider ID       | Provider  ID      | String    | ID  of the account provider.             |
   | Default label     | Default  label    | String    | Display  name of the account provider. This is a mandatory property. |
@@ -206,7 +206,7 @@ To define the kind of access and data your service application provides to other
 
 - Add the background category type (since Tizen 2.4).
 
-  You can [describe the background category](../../guides/app-management/efl-ui-app-n.md#bg-category) of your Tizen native application.
+  You can [describe the background category](../../guides/app-management/efl-ui-app.md#describing-the-background-category) of your Tizen native application.
 
   To add background category types to allow running in the background, click **+** in the **Background Category** panel, select the category type, and click **OK**.
 
@@ -217,7 +217,7 @@ To define the kind of access and data your service application provides to other
   **Table: Shortcut properties**
 
   | Shortcut property | Data type | Property type                            |
-  | ----------------- | --------- | ---------------------------------------- |
+  |-----------------|---------|----------------------------------------|
   | App ID            | `String`  | Application unique ID.                   |
   | Key               | `String`  | Key for user content.                    |
   | Data              | `String`  | Data for user content.                   |
@@ -227,7 +227,7 @@ To define the kind of access and data your service application provides to other
 
 ### Editing the tizen-manifest.xml File in the Source Tab
 
-  The **Source** tab of the manifest editor shows the code of the `tizen-manifest.xml` file. You can [edit the basic syntax of the XML document](../../../tizen-studio/native-tools/manifest-text-editor-n.md) and also see how changes made on the other tabs are reflected in the raw XML source content.
+  The **Source** tab of the manifest editor shows the code of the `tizen-manifest.xml` file. You can [edit the basic syntax of the XML document](../../../tizen-studio/native-tools/manifest-text-editor.md) and also see how changes made on the other tabs are reflected in the raw XML source content.
 
 >  **Note**    
 >  If you edit application information manually in the `tizen-manifest.xml` file source code, you can introduce errors preventing the application from running normally.

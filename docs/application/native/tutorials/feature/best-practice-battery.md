@@ -64,7 +64,7 @@ The application states are described in the following table.
 **Table: Application states**
 
 | State        | Description                              |
-| ------------ | ---------------------------------------- |
+|------------|----------------------------------------|
 | `READY`      | The application is launched.             |
 | `CREATED`    | The application starts the main loop.    |
 | `RUNNING`    | The application is running and visible to the user. |
@@ -72,9 +72,7 @@ The application states are described in the following table.
 | `TERMINATED` | The application is terminated.           |
 
 Application state changes are managed by the underlying framework. For
-more information on application state transitions, see [Application
-States and
-Transitions](../../guides/app-management/efl-ui-app-n.md#state_trans).
+more information on application state transitions, see [Application States and Transitions](../../guides/app-management/efl-ui-app.md#application-states-and-transitions).
 
 ### Location Service Life-cycle
 
@@ -100,7 +98,7 @@ The location server has several states according to the client requests.
 **Table: Location states**
 
 | State       | Description                              |
-| ----------- | ---------------------------------------- |
+|-----------|----------------------------------------|
 | Idle        | The location service daemon is waiting for requesting location. |
 | Started     | The location service daemon is started to fix the location using GPS or WPS. |
 | Unavailable | The location service temporarily unavailable. |
@@ -143,7 +141,7 @@ application and location service.
 **Table: State synchronization**
 
 | Application state | Location state | Location state description            |
-| ----------------- | -------------- | ------------------------------------- |
+|-----------------|--------------|-------------------------------------|
 | `READY`           | Idle           | Location handle has been initialized. |
 | `CREATED`         | Idle           | Location handle has been created.     |
 | `RUNNING`         | Started        | Location service is started.          |
@@ -179,7 +177,7 @@ location, as illustrated in the following table.
 **Table: Location service methods**
 
 | Method                    | Location source                 | Description                              |
-| ------------------------- | ------------------------------- | ---------------------------------------- |
+|-------------------------|-------------------------------|----------------------------------------|
 | `LOCATIONS_METHOD_HYBRID` | GPS, Wi-Fi AP, cell information | This method allows the device to use all location sources. It provides the best effort with the highest power consumption. |
 | `LOCATIONS_METHOD_GPS`    | GPS                             | This method is used by navigation applications requiring high accuracy. The power consumption is lower than in the hybrid method but higher than in the WPS method. |
 | `LOCATIONS_METHOD_WPS`    | Wi-Fi AP, cell information      | This method receives location information from an external positioning server that computes the approximate location based on the Wi-Fi AP or mobile network cell tower. It provides the lowest power consumption, and the weakest location accuracy. |
@@ -191,7 +189,7 @@ SUPL (Secure User Plane Location) server.
 **Table: GPS power consumption**
 
 | Operation          | Power consumption | Description                              |
-| ------------------ | ----------------- | ---------------------------------------- |
+|-----------------|-----------------|----------------------------------------|
 | Full acquisition   | 32~40 mA          | For the first fix, after 2 or 3 days have passed. |
 | Tracking           | 13~16 mA          | For the first fix, while continuously tracking the location where the satellite signals are very strong. |
 | Low power tracking | 3~5 mA            | GPS chipset supported in a low power mode. |
@@ -220,7 +218,7 @@ location service when the application is paused or resumed.
 To use the location service, the application must declare the required
 privileges in the `tizen-manifest.xml` file. For more information on the
 Tizen privileges, see [Security and API
-Privileges](../details/sec-privileges-n.md).
+Privileges](../details/sec-privileges.md).
 
 For this example, the application manifest must include the following
 privileges:

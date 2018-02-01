@@ -19,8 +19,7 @@ events.
 
 > **Note**  
 > For more information on using Efl Extension for **Menu** key,
-**Back** key, and rotary events, see [Hardware Input
-Handling](../../guides/ui/efl/hw-input-n.md).
+**Back** key, and rotary events, see [Hardware Input Handling](../../guides/ui/efl/hw-input.md).
 
 Follow the guidelines below to ensure predictable and reliable
 navigation in your application.
@@ -87,5 +86,4 @@ applications).
 
 An ambient mode is available on a low-powered wearable device. For more
 information on ambient events in the mobile native profile, see the
-[Watch Application](../../guides/app-management/watch-app-n.md)
-guide.
+[Watch Application](../../guides/app-management/watch-app.md) guide.
