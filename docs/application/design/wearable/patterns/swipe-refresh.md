@@ -4,7 +4,7 @@
 
 This gesture is used when users want to load more content than is currently displayed in an app. It comes in handy when an app’s content is updated in real-time, or when an app provides content to browse through.
 
-At the top of content, users swipe down or rotate the bezel counterclockwise to refresh. Conversely, they swipe up or rotate the bezel clockwise when they’ve reached the bottom of content. Refer to [Swipe](../interaction/touch.mdl#swipe) for more details.
+At the top of content, users swipe down or rotate the bezel counterclockwise to refresh. Conversely, they swipe up or rotate the bezel clockwise when they’ve reached the bottom of content. Refer to [Swipe](../interaction/touch.md#swipe) for more details.
 
 When content is refreshing, provide feedback such as a progress bar to indicate that content is being loading.
 

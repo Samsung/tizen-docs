@@ -42,7 +42,7 @@ Indexes help users quickly find the item they want by dividing a long list into 
 |**Native**|Genlist > <br>Groupindex|
 |**Web**|-|
 
-A group index should fit on a single line and come before the first item of each group. As they’re just used as a visual divider, they can’t be selected. [Fast scroll indexes](scroll-bars.html#fast_scroll_index) can also be used to facilitate quick browsing.
+A group index should fit on a single line and come before the first item of each group. As they’re just used as a visual divider, they can’t be selected. [Fast scroll indexes](scroll-bars.md#fast_scroll_index) can also be used to facilitate quick browsing.
 
 ![](media/ui_components_10.2.2-850x174.png)  
 *Group indexes divide list items into groups.*

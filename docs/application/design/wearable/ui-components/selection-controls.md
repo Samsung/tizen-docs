@@ -34,6 +34,7 @@ Selection controls are used with list items or text content when users need to m
 
 ## Types
 
+<a name="switches"></a>
   **Switches**
 
   Switches toggle a feature on and off and are found next to the main text of a list item. You can design a switch to turn off all sub-items related to one main parent item. Subtext is not recommended, but if necessary, use it to describe the function.
@@ -46,6 +47,7 @@ Selection controls are used with list items or text content when users need to m
   ![](media/ui_components_10.10.2_2-850x257.png)  
     *Subtext for a switch should provide a description, not the on/off status.*
 
+<a name="checkboxes"></a>
   **Checkboxes**
 
   Checkboxes are used to select multiple items from a list, or on pop-ups that ask users to confirm their decision or agreement.
@@ -58,6 +60,7 @@ Selection controls are used with list items or text content when users need to m
   ![](media/ui_components_10.10.3_2-850x174.png)  
   *Checkboxes allow for multiple selections in a list.*
 
+<a name="radio_buttons"></a>
   **Radio buttons**
 
   Radio buttons are used instead of checkboxes when users can only select a single item from a list. When users tap a list item with a radio button, that item is brought into focus in the center of the screen.

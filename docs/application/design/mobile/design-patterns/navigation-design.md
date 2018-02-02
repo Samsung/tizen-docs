@@ -14,7 +14,7 @@ Users navigate from one screen to another by tapping interactive UI elements (fo
 
  
 
-##### Back Key
+#### Back Key
 
 For a device to be compliant with Tizen’s Compliance Specification, it MUST provide a Back key (or a Back button) through dedicated physical (hardware) or software implementation. In general, the Back key is provided at the bottom of the device and is used to return to the previous screen or to cancel a task that is in progress.
 
@@ -26,8 +26,8 @@ For a device to be compliant with Tizen’s Compliance Specification, it MUST pr
 The Back key can also be used to dismiss the virtual keypad, pop-ups, or notifications.
 
  
-
-##### On-Screen Back Button
+<a name="onScreenBackButton"></a>
+#### On-Screen Back Button
 
 In Tizen 2.4, a layout design with a title bar requires the on-screen 'Back' button. An on-screen 'Back' button should be located on the left side of the title bar. The on-screen 'Back' button performs tasks that are nearly identical to the physical Back key.
 
@@ -38,7 +38,7 @@ You cannot provide the on-screen Back button:
 
  
 
-##### Cancel Button
+#### Cancel Button
 
 A 'Cancel' button is used to close a screen for the current task and return to the previous screen. A 'Cancel' button may be used with other action buttons, such as 'Send', 'Done', and 'Delete'.
 
@@ -104,7 +104,7 @@ You can use the basic elements provided with the Tizen 2.4 SDK to design various
 
  
 
-##### Creating Entries
+#### Creating Entries
 
 'Create' is the most commonly used action button to help users manage data. Almost every app requires this action. It is best to adhere to the basic Tizen platform principles by giving users the basic functions they expect, in the places where they expect to find them.
 
@@ -128,7 +128,7 @@ To allow the users to create new items quickly and easily, refer to the followin
 
  
 
-##### Selecting Multiple Items
+#### Selecting Multiple Items
 
 Users often need to manage multiple items simultaneously, such as when they want to delete several items at once. You can support actions like this by offering the multiselect feature in your app.
 
@@ -142,7 +142,8 @@ You can also offer information about the selected items (for example, the number
 |  Single select mode     |  Select \_item         |  (Move to the next step)|
 |  Multiselect mode       |  0 selected            |  1 selected             |
 |  Multiselect mode(limited)|      0 / %d selected |      1 / %d selected    |
-*%d indicates a limited number)*
+
+*(%d indicates a limited number)*
 
 <img src="media/4.7.5_b_.png" margin-right="2px" width="195px" alt="Multi-selection in a list view" /> <img src="media/4.7.5_c_.png" margin-right="2px" width="195px" alt="Multi-selection in a list view" /> <img src="media/4.7.5_d_.png" margin-right="2px" width="195px" alt="Multi-selection in a list view" /> <img src="media/4.7.5_e_.png" margin-right="2px" width="195px" alt="Multi-selection in a list view" />  
 
@@ -165,7 +166,7 @@ The 'Select All' action button scrolls with the list. Tapping the 'Select All' b
 
  
 
-##### Deleting Items
+#### Deleting Items
 
 You can provide a 'Delete' action button on the list view or grid view screen layout. For a detail view, you can provide a 'Delete' action button in the 'More' menu screen.
 
@@ -193,12 +194,12 @@ Provide a confirmation pop-up message to prevent unintended deletions. Do not us
 
  
 
-##### Confirming a Task
+#### Confirming a Task
 
 Your app can provide many actions and some of them may be irreversible. If actions are irreversible, you should ask users to verify if they truly want to proceed with the action.
 
  
-
+<a name="cancelAndDone"></a>
 -   Cancel and Done
 
 In Create or Edit mode, the title bar (refer to [Title Bar](../ui-components/navigation-elements.md#title_) for details) provides 'Cancel' and 'Done' buttons (depending on the situation, a 'Send' or 'Delete' button can be provided instead of a 'Done' button). Users can tap the 'Done' button to finish their task. If users tap the 'Cancel' button, provide a pop-up confirmation window to verify that they want to discard their work. If there is no change in the content, you don’t need to confirm anything.

@@ -19,7 +19,7 @@ The rotary selector arranges multiple items around the circular edge of the scre
 
 -   **Provide more options**
 
-    [More options](../patterns/more-options.html) are revealed with the rotary selector when users tap the visual cue on the right side of the screen. More options appear as a [temporary view](../navigation/screen-views.html#temp_view) over the current screen and provide additional functions available for a list item.
+    [More options](../patterns/more-options.md) are revealed with the rotary selector when users tap the visual cue on the right side of the screen. More options appear as a [temporary view](../navigation/screen-views.md#temp_view) over the current screen and provide additional functions available for a list item.
 
 ## Elements
 

@@ -1,8 +1,7 @@
 # Screen Orientations
 
 
-
-##### Portrait Orientation
+#### Portrait Orientation
 
 The portrait orientation is the default screen orientation for most app designs because it’s the way people naturally hold their devices.
 
@@ -14,7 +13,7 @@ The portrait orientation is the default screen orientation for most app designs 
 
 
 
-##### Landscape Orientation
+#### Landscape Orientation
 
 If your app serves for special purposes where the landscape orientation is more appropriate, you can design your apps to use the landscape mode as the default orientation. Games or cameras are good examples where the landscape mode may be used as the default screen orientation.
 
@@ -41,7 +40,7 @@ Consider using the landscape orientation when:
 
 
 
-##### Transition between Different Screen Orientations
+#### Transition between Different Screen Orientations
 
 Natural transition between portrait and landscape orientations is a standard practice in today's mobile devices. Relative screen layout allows for identical UI component placement in different view modes. However, controls on the screen may have to be adjusted to suit the space allowed in the given orientations. When you design an app that supports both the orientations, ensure that all the features offered in one orientation are also available in the other.
 

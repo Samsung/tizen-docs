@@ -11,13 +11,13 @@ You can also design your own layout if you design an app to serve specific needs
 
  
 
-##### Header
+#### Header
 
 The header is the top portion of a view. The following lists the role of a header on a view:
 
 -   The header carries the title and indicates the current location in an app (refer to [Title Bar](../ui-components/navigation-elements.md#title_) for details).
 -   The header in a Create/Edit view can include Cancel and Confirm buttons (refer to [Cancel and Done](navigation-design.md#cancelAndDone) for details).
--   The header can include an on-screen Back button (refer to [On-screen Back Button](navigation-design.md) for details).
+-   The header can include an on-screen Back button (refer to [On-screen Back Button](navigation-design.md#onScreenBackButton) for details).
 
  
 <img alt="Header" src="media/4.6.1_a.png" height="460px" />    
@@ -31,7 +31,7 @@ The header is the top portion of a view. The following lists the role of a heade
 
 
 
-##### Content Area
+#### Content Area
 
 The content area is where the information and interactive interfaces for your app are located. You can design the main content and place UI elements on it.
 
@@ -51,7 +51,7 @@ The following lists the guidelines for designing the content in a view:
 
 
 
-##### Footer
+#### Footer
 
 The footer contains user interfaces for extended user actions. On this part of the screen, you can place app-specific user interfaces in the form of [Bottom Buttons](../ui-components/user-input-components.md#bottom_) or [Floating Action Buttons](../ui-components/assist-views.md#floating_). Use the footer interfaces to present only the essential user actions in your apps.
 

@@ -1,6 +1,6 @@
 # Styles
 
-##### Theme Colors
+#### Theme Colors
 
 The Tizen offers a single background gradient called “Midday” as the default Home screen background since Tizen SDK 2.4. It captures colors and natural gradients of the sky.
 
@@ -12,7 +12,7 @@ The Tizen offers a single background gradient called “Midday” as the default
 
  
 
-##### Color Swatch
+#### Color Swatch
 
 For basic action buttons, such as 'Go' and 'Stop', Tizen 2.4 uses clear and distinct colors for focus and emphasis. Transparency may be applied to text colors to add subtle nuances.
 
@@ -29,7 +29,7 @@ For basic action buttons, such as 'Go' and 'Stop', Tizen 2.4 uses clear and dist
 
  
 
-##### Font Styles
+#### Font Styles
 
 Different text colors may be used depending on the level of text information and background colors. The following are examples of the primary and secondary text colors in the Tizen Mobile SDK 2.4.
 

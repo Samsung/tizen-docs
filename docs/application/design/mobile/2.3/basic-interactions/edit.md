@@ -41,7 +41,7 @@ The user can move and copy single or multiple items from a list. Moving or copy
 ## Multi-selection
 Users often need to manage multiple items simultaneously, for example, to delete several items at once. You can support this behavior by offering the multi-selection feature in your application.
 
-Multi-selection works when the user taps **Delete, Move, or Copy **in the **More** menu. This creates a checkbox for each list item, thereby facilitating multiple selections.
+Multi-selection works when the user taps **Delete, Move, or Copy** in the **More** menu. This creates a checkbox for each list item, thereby facilitating multiple selections.
 
 You can also offer information about the selected items (for example, the number of items selected) in the header. Both the list and grid views support the multi-selection functionality.
 
@@ -66,6 +66,7 @@ The select all feature scrolls with the list. By tapping **Select all**, the use
 <video controls>
   <source src="media/deleting_items05.mp4" type=video/mp4>
 </video>
- 
+
+
 > **NOTE**  
 > The select all functionality supported in the Native framework.

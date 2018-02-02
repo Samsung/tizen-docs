@@ -42,6 +42,7 @@ Use a scroll bar with long passages of text that don’t fit on one screen.
   ![](media/ui_components_10.13.3_2-850x174.png)  
     *A horizontal scroll bar is provided when a page scrolls horizontally.*
 
+<a name="fast_scroll_index"></a>
     **Fast scroll index**
 
     A fast scroll index allows users to jump directly to the previous or next [group index](list.html#group_index) in a list.

@@ -24,11 +24,11 @@ The following button types are available:
 -   Box button
 -   Bottom button
 
-To learn how to implement a button, see [Button](../../../guides/native/ui/efl/component-button-mn.md).
+To learn how to implement a button, see [Button](../../../native/guides/ui/efl/component-button-m.md).
 
  
 
-## Circle Button
+#### Circle Button
 
 A circle button is a simple icon that the user can easily understand. You can provide text labels under the icons to further enhance user understanding.
 
@@ -41,7 +41,7 @@ Circle buttons
 
  
 
-## Box Button
+#### Box Button
 
 A box button is displayed as a rounded box shape. You can include text, icons, or both in them.
 
@@ -51,7 +51,7 @@ Box buttons
 
 
 <a name="bottom_"></a>
-## Bottom Button
+#### Bottom Button
 
 A bottom button is used for main actions. It is fixed at the bottom section of the screen and does not scroll with the content on the screen.
 
@@ -73,11 +73,11 @@ The following checkbox component types are available:
 
 Use simple and flat pictographic icons when you design checkbox components. Tizen assigns system colors for checkbox and radio buttons. For other icons, colors may be selected according to the significance of the icons.
 
-To learn how to implement a checkbox, see [Check](../../../guides/native/ui/efl/component-check-mn.md).
+To learn how to implement a checkbox, see [Check](../../../native/guides/ui/efl/component-check-m.md).
 
  
 
-## Toggle
+#### Toggle
 
 A toggle is used to allow the user to switch a feature on or off.
 
@@ -88,7 +88,7 @@ Toggles
 
  
 
-## Checkbox
+#### Checkbox
 
 A checkbox is used to allow users to select or clear items, or to confirm tasks.
 
@@ -100,7 +100,7 @@ Checkboxes
 
  
 
-## Favorite
+#### Favorite
 
 Favorites are used to allow users to tag items for future reference.
 
@@ -119,7 +119,7 @@ In the Toggle and Checkbox Icon Pack, you can find the action icon examples crea
 
 A radio button is used to allow the user to select an item from a list of multiple choices.
 
-To learn how to implement a radio button, see [Radio](../../../guides/native/ui/efl/component-radio-mn.md).
+To learn how to implement a radio button, see [Radio](../../../native/guides/ui/efl/component-radio-m.md).
 
 
 
@@ -150,7 +150,7 @@ The following text input component types are available:
 
 The text enveloper provides an extended functionality to text input. It recognizes the delimiters between text input and binds the entries, such as email addresses or keywords, in meaningful or functional chunks, so that the user can individually control or modify them. The enter key input ( ↵ ), comma ( , ), and semi colon ( ; ) are generally used for text delimiters, but you can define your own delimiters to suit the type and purpose of your app.
 
-To learn how to implement a text input component, see [Entry](../../../guides/native/ui/efl/component-entry-mn.md).
+To learn how to implement a text input component, see [Entry](../../../native/guides/ui/efl/component-entry-m.md).
 
 
 
@@ -167,7 +167,7 @@ Text input and text enveloper
 
 A dropdown menu allows the user to select an item from a list of multiple choices. A list of items is displayed when the user taps the dropdown menu.
 
-To learn how to implement a dropdown menu, see [Hoversel](../../../guides/native/ui/efl/component-hoversel-mn.md).
+To learn how to implement a dropdown menu, see [Hoversel](../../../native/guides/ui/efl/component-hoversel.md).
 
 
 
@@ -184,7 +184,7 @@ Dropdown menu
 
 A slider is used to adjust a value within a certain range. You can include a description or an icon that explains the slider’s value range. The user can tap or drag the slider bar to increase or decrease the value. You can also provide numbers on the slider to indicate the value.
 
-To learn how to implement a slider, see [Slider](../../../guides/native/ui/efl/component-slider-mn.md).
+To learn how to implement a slider, see [Slider](../../../native/guides/ui/efl/component-slider-m.md).
 
 
 
@@ -209,11 +209,11 @@ The following picker types are available:
 
  
 
-##### Number Picker
+#### Number Picker
 
 A number picker allows the user to select a specific number.
 
-To learn how to implement a number picker, see [Spinner](../../../guides/native/ui/efl/component-spinner-mn.md) and [Flipselector](../../../guides/native/ui/efl/component-flipselector-mn.md).
+To learn how to implement a number picker, see [Spinner](../../../native/guides/ui/efl/component-spinner.md) and [Flipselector](../../../native/guides/ui/efl/component-flipselector.md).
 
 
 
@@ -224,14 +224,14 @@ Number pickers
 
  
 
-##### Date and Time Picker
+#### Date and Time Picker
 
 A date and time picker allows the user to set the date and time for different user apps using a specific picker type:
 
 -   Time picker
 -   Date picker
 
-To learn how to implement date and time pickers, see [Datetime](../../../guides/native/ui/efl/component-datetime-mn.md).
+To learn how to implement date and time pickers, see [Datetime](../../../native/guides/ui/efl/component-datetime-m.md).
 
  
 
@@ -246,11 +246,11 @@ Date pickers
 
  
 
-##### Color Picker
+#### Color Picker
 
 A color picker allows the user to select a color from a set of colors.
 
-To learn how to implement a color picker, see [Colorselector](../../../guides/native/ui/efl/component-colorselector-mn.md).
+To learn how to implement a color picker, see [Colorselector](../../../native/guides/ui/efl/component-colorselector.md).
 
 
 

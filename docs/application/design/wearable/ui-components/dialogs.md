@@ -24,7 +24,7 @@ A dialog pop-up provides critical and timely information, and asks for the user�
 
 ## Behavior
 
-The title, body content, and image of a dialog pop-up all move together when users scroll the screen. In contrast, buttons remain in a fixed position so users can select them from anywhere in the pop-up. A dialog pop-up will only close when the user selects an option like Confirm or Cancel. The pop-up appears as a [temporary view](../navigation/screen-views.html#temp_view) that interrupts the user’s current workflow.
+The title, body content, and image of a dialog pop-up all move together when users scroll the screen. In contrast, buttons remain in a fixed position so users can select them from anywhere in the pop-up. A dialog pop-up will only close when the user selects an option like Confirm or Cancel. The pop-up appears as a [temporary view](../navigation/screen-views.md#temp_view) that interrupts the user’s current workflow.
 
 ## Types
 

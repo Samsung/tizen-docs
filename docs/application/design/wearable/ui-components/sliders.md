@@ -11,7 +11,7 @@ A slider adjusts values within a given range.
 
 ## Usage
 
-As opposed to [pickers](pickers.html) that set a specific value, sliders adjust the intensity level such as brightness and volume within a present range.
+As opposed to [pickers](pickers.md) that set a specific value, sliders adjust the intensity level such as brightness and volume within a present range.
 
 ## Behavior
 

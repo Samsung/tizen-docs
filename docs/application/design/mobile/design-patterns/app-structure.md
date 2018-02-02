@@ -16,7 +16,7 @@ This section aims to explain basic app structures designed with some of the most
 Apps in general have a structure of more than two layers, and they can contain normal and edit modes while being used.
 
   |                       |  Normal mode           |   Edit mode|
-  |------------------------|------------------------ |------------------------|
+  |------------------------|------------------------|------------------------|
   |Top level          |      Main view         |       Main view Edit mode|
   |Lower level         |     Detail view         |     Detail view Edit mode|
 
@@ -40,7 +40,7 @@ This section provides guidelines for designing the main view of your app. Read t
 
  
 
-##### Start with an Overview
+#### Start with an Overview
 
 The Main view is the first screen on your app. It provides key information to help users recognize your app’s essential features and allows them to understand the app structure. If you need to divide the information into different categories, use tabs in the header.
 
@@ -51,7 +51,7 @@ The Main view is the first screen on your app. It provides key information to he
 
  
 
-##### Enable Easy Content Management
+#### Enable Easy Content Management
 
 Besides consuming information from the given content, users often need to manage content items themselves. Basic actions for content management are as follows:
 
@@ -79,7 +79,7 @@ This section provides guidelines for designing your app’s detail view. Read an
 
  
 
-##### Focus on Content
+#### Focus on Content
 
 In the detail view, display content elements, such as images or text, so that users can recognize the information immediately.
 
@@ -89,7 +89,7 @@ In the detail view, display content elements, such as images or text, so that us
 
  
 
-##### Design Easy Actions
+#### Design Easy Actions
 
 A detail view generally includes various actions that users can run on the page. You can place the action buttons either directly on your app screen or on the 'More' menu screen. Do not display too many action buttons on the screen because they may distract users. Place only the main actions on the screen and add others on the 'More' menu screen.
 
@@ -101,7 +101,7 @@ A detail view generally includes various actions that users can run on the page.
 
  
 
-##### Provide Easy Navigation between Screens
+#### Provide Easy Navigation between Screens
 
 In the detail view, 'Back' key on the device always takes the user to the previous screen. Place a 'Cancel' button on the screen to allow users to quit a current task. A 'Cancel' button may be provided with action buttons that require confirmation, such as 'Save', 'Done', or 'Send'.
 
@@ -120,7 +120,7 @@ This section provides guidelines for designing the main view edit mode of your a
 
  
 
-##### Allow Users to Manage Multiple Items
+#### Allow Users to Manage Multiple Items
 
 You can provide check boxes in the main view edit mode to allow users to manage multiple selected items. Also, allow users to tap the 'Cancel' button or the 'Back' key to cancel a task.
 
@@ -140,13 +140,13 @@ This section provides guidelines for designing the detail view edit mode of your
 
  
 
-##### Allow Users to Create and Edit Content
+#### Allow Users to Create and Edit Content
 
 In the edit mode, users can create, delete, or edit the content in the detail view. Provide a means for users to input and edit text, such as an on-screen keypad, and action buttons for completing or canceling the task.
 
  
 
-##### Provide Setting Options
+#### Provide Setting Options
 
 In the edit mode, provide standard UI components, such as radio buttons, checkboxes, and sliders, to allow users to adjust setting values. Also, provide action buttons for completing or canceling the task after users have adjusted the settings.
 

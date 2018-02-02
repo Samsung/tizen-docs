@@ -19,7 +19,7 @@ The following conditions and restrictions apply for action buttons on the title 
 -   If the app has multiple levels of information, a 'Back' button can be placed on the title bar to allow the user to return to the previous level.
 -   To avoid confusion, place only a 'Back' button (an arrow) or the edit mode text buttons ('Cancel', 'Done', 'Send', and 'Delete') on the title bar.
 
-To learn how to implement a title bar, see [Naviframe](../../../guides/native/ui/efl/container-naviframe-n.md).
+To learn how to implement a title bar, see [Naviframe](../../../native/guides/ui/efl/container-naviframe.md).
 
  
 
@@ -48,7 +48,7 @@ The following guidelines apply when including tabs in the header:
 -   Balance the content to allow each tab to contain equally-important amount of information.
 -   Do not include action buttons in the header, if the tabs are placed at the top of the screen.
 
-To learn how to implement tabs, see [Toolbar](../../../guides/native/ui/efl/component-toolbar-mn.md).
+To learn how to implement tabs, see [Toolbar](../../../native/guides/ui/efl/component-toolbar.md).
 
  
 
@@ -69,7 +69,7 @@ Tabs with a title
 
 A navigation bar can be placed under the title bar to display paths in an app. It helps the user navigate the app and find the information they want by showing the app’s structural information.
 
-To learn how to implement a navigation bar, see [Naviframe](../../../guides/native/ui/efl/container-naviframe-n.md).
+To learn how to implement a navigation bar, see [Naviframe](../../../native/guides/ui/efl/container-naviframe.md).
 
  
 
@@ -95,11 +95,11 @@ The following scroll components are available:
 
  
 <a name="scroll_bar"></a>
-##### Scroll Bar
+#### Scroll Bar
 
 The scroll bar appears when the user scrolls a view that is too long to be displayed on one screen. There are 2 types of scroll bars available for use in your apps: ones with handles and others without. Using a scroll bar with a handle, the user can move directly to the part they want by vertically dragging the handle.
 
-To learn how to implement a scroll bar, see [Scroller](../../../guides/native/ui/efl/container-scroller-n.md).
+To learn how to implement a scroll bar, see [Scroller](../../../native/guides/ui/efl/container-scroller.md).
 
 
 
@@ -110,11 +110,11 @@ Scroll bars
 
  
 <a name="index_scroll"></a>
-##### Index Scroll
+#### Index Scroll
 
 The index scroll allows the user to rapidly scroll up and down a list that includes an index. The index is generally displayed in an alphabetical order, but different types of indexing are available as well, for example, by language, numbers, and symbols.
 
-To learn how to implement an index scroll, see [Index](../../../guides/native/ui/efl/component-index-mn.md).
+To learn how to implement an index scroll, see [Index](../../../native/guides/ui/efl/component-index-m.md).
 
 
 
@@ -125,11 +125,11 @@ Index scroll
 
  
 <a name="page_indicator"></a>
-##### Page Indicator
+#### Page Indicator
 
 The page indicator is used to show how many pages are available in an app and which page is currently displayed.
 
-To learn how to implement a page indicator, see [Index](../../../guides/native/ui/efl/component-index-mn.md).
+To learn how to implement a page indicator, see [Index](../../../native/guides/ui/efl/component-index-m.md).
 
 
 

@@ -10,7 +10,7 @@ Ensure that your app allows users to easily use its major features. You can simp
 
  
 
-##### Identify the Primary Goals and Provide the Components in a Noticeable Way
+#### Identify the Primary Goals and Provide the Components in a Noticeable Way
 
 Display the most frequently used features on the first screen. Floating action buttons are a convenient option that allows users to access the main features quickly and easily. On the other hand, less frequently used features may be placed on the 'More' menu screen. Users can access the 'More' menu by pressing the Menu key.
 
@@ -25,7 +25,7 @@ By focusing on the primary features and presenting them in a consistent way, you
 
  
 
-##### Provide Essential Information First and Give Additional Information upon Request
+#### Provide Essential Information First and Give Additional Information upon Request
 
 Users are only interested in the information they need. Therefore, provide only essential information on the screen. You can provide more detailed information when a user requests it or takes action, but avoid trying to provide everything on one screen.
 
@@ -35,7 +35,7 @@ When you design a screen layout, ensure that you include enough empty space betw
 
  
 
-##### Provide One Simple Way for Users to Achieve their Goals
+#### Provide One Simple Way for Users to Achieve their Goals
 
 Providing multiple ways to access a single feature may confuse users. Tizen aims to keep its design simple and practical because it targets a wide range of users, from beginners to advanced users. Hidden gestures or menus without any visual cues are not recommended when designing Tizen apps.
 
@@ -54,7 +54,7 @@ A good flow in the app design makes it easy for users to make decisions. Users m
 
  
 
-##### Provide Users with an Accessible Structure
+#### Provide Users with an Accessible Structure
 
 Ensure that the access flow of your app does not include any redundant steps. Eliminate unnecessary dialog boxes and confirmation windows that slow down user progress. Users want quick access to information, to complete their tasks in fewer steps.
 
@@ -66,7 +66,7 @@ Help users instantly perform simple actions. For example, quick access to the In
 
  
 
-##### Use Animations and Visual Cues
+#### Use Animations and Visual Cues
 
 Stacked layers create a visual hierarchy, and each layer comes with a clear direction of movement. When layers are assembled well, they create a flow that guides the users. For example, to inform users of new events that require user’s attention, active notifications always slide down from the top, over the current screen users are working on. Refer to [Animations](../introduction/styles/animations.md) for more information.  
  
@@ -79,7 +79,7 @@ Visual cues are another way to guide users. Also, carefully placed pop-up notifi
 
 
 
-##### Provide Consistent Design
+#### Provide Consistent Design
 
 A consistent design allows users to learn how to use new features faster. Consider what common actions are noticed by the average user and design your features to use the same actions. For example, the Back key is generally used for returning to previous pages or canceling current tasks. So, in your app, design the Back key to return to the previous page or cancel tasks, and avoid using it for something else.
 
@@ -94,7 +94,7 @@ A consistent design allows users to learn how to use new features faster. Consid
 When you design screens for your app, ensure that the purpose of each screen is easily understood at a glance. Design the primary information to be clearly visible and easily accessible.
 
 
-##### Present Information in Order of Importance
+#### Present Information in Order of Importance
 
 Ensure that your app screen displays the most important content first. For example, in the detail view, show the essential information on the first screen and allow users to scroll down to see the additional information.
 
@@ -104,7 +104,7 @@ Ensure that your app screen displays the most important content first. For examp
 
 
 
-##### Create Clear Distinctions between the Information on the Screen
+#### Create Clear Distinctions between the Information on the Screen
 
 Use different font sizes, weights, colors, and layouts to separate the information on the screen and allow important information to stand out. For example, the Contacts menu includes tabs, a search field, a contact list, and a floating action button on the same page. However, different styles and colors applied to these elements enable users to clearly separate them.
 
@@ -113,7 +113,7 @@ Use different font sizes, weights, colors, and layouts to separate the informati
 *Clear distinction between different types of information*
 
 
-##### Make the Touchable Elements Look Touchable
+#### Make the Touchable Elements Look Touchable
 
 Apply consistent designs for interactive elements on the screen, and disable or hide the elements that are not available. For example, you can disable the 'Done' button to let users know that a required field is empty.
 
