@@ -18,21 +18,22 @@ To install TS-CLI:
     $ sudo apt-get install -y nodejs
     ```
 
-2. Download TS-CLI from [http://download.tizen.org/sdk/tizenstudio/opensrc/ts-cli_3.0.17_ubuntu-64.zip](http://download.tizen.org/sdk/tizenstudio/opensrc/ts-cli_3.0.17_ubuntu-64.zip).
+2. Download TS-CLI from [http://download.tizen.org/sdk/tizenstudio/tizen_studio_source/binary/ts-cli_3.0.23_ubuntu-64.zip](http://download.tizen.org/sdk/tizenstudio/tizen_studio_source/binary/ts-cli_3.0.23_ubuntu-64.zip).
     > **Note**
     >
     > A newer version can be available.
-    
+
 3. Unzip and install TS-CLI:
     ```bash
     // install TS-CLI
-    $ unzip ts-cli_3.0.17_ubuntu-64.zip
+    $ unzip ts-cli_3.0.23_ubuntu-64.zip
     $ mv ./data/dibs ${TS_CLI_PATH}
 
     //install NPM
     $ cd ${TS_CLI_PATH}
     $ npm install
     ```
+
 ## TS-CLI Manual
 ```
 This tool is command line interface for Tizen Studio develop
@@ -55,7 +56,7 @@ Subcommand usage:
   push                ts-cli push --package <package file path|list> --local-repo <repository path> [--force]
   pull                ts-cli pull --remote-repo <remote repository URL> --local-repo <repository path> [--force] [--os <os name | all>] [--base-snapshot <snapshot name>]
   download            ts-cli download --repository <repository path> --package <package file path|list> [--os <os name | all>] [--base-snapshot <snapshot name>]
- 
+
 Options:
   -h, --help            display help
   -c, --clean           clean build
@@ -77,4 +78,3 @@ Options:
   --rr, --remote-repo   remote repository url
   --lr, --local-repo    local repository path
 ```
-

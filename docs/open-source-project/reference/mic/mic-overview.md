@@ -9,7 +9,8 @@ MIC is an image creator used when creating images for Tizen. With the MIC tool, 
   - Loop images for IVI platforms
   - fs images for chrooting
 - **Chroot** into an image using MIC's enhanced `chroot` command.
-- **Convert an image** to another image format.  
+- **Convert an image** to another image format.
+
 This is a very useful function when handling situations sensitive to image format.
 
 Before going into further MIC details, make sure you have [set up the development environment](../../developing/setting-up.md) and learned how to [install and upgrade tools](../../developing/installing.md).
@@ -23,7 +24,7 @@ Afterwards, become familiar with MIC by reading the following instructions:
 
 ## Source Code
 
-The source code is tracked in the [https://github.com/01org/](https://github.com/01org/gbs) MIC repository.
+The source code is tracked in the [https://github.com/01org/mic](https://github.com/01org/mic) repository.
 
 ## License
 

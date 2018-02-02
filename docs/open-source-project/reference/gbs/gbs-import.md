@@ -66,7 +66,7 @@ You can import from:
 
 The source package import supports some special options:
 
-- `--no-patch-import` disables the automatic patch import, so that GBS does not try to apply patches on top of the master branch. Apply patches manually or mark them as manually maintained (see [Manually Maintained Patches](../../porting/maintenance-models.md#manually-maintained-patches)).
+- `--no-patch-import` disables the automatic patch import, so that GBS does not try to apply patches on top of the master branch. Apply patches manually or mark them as manually maintained (see [Manually Maintained Patches](gbs-maintenance-models.md#manually-maintained-patches)).
 - `--native` specifies the package as a native package, with no separate upstream. No upstream Git branch is created and it is assumed that all content, including packaging files, are found in the source tarball inside the source package.
 - `--allow-same-version` re-imports an already imported version of the package. It does not re-import the upstream sources, but only re-imports the packaging files to the master branch.
 - `--packaging-dir` defines the directory for packaging files (default is `packaging/`). This can be needed if the upstream sources already have a directory named `packaging`. If you use this option, also define this setting in the package-specific `.gbs.conf` file (in all relevant branches) so that the remote repository and all other users get the correct setting, too.

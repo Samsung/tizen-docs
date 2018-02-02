@@ -42,7 +42,7 @@ To build the Tizen kernel for the TM1 board:
    $ lthor FILENAME_YOU_WANT.tar
    ```
 
-For information on how create an image by using MIC, see [MIC Image Creator](../tools/mic/mic-overview.md).
+For information on how create an image by using MIC, see [MIC Image Creator](../reference/mic/mic-overview.md).
 
 
 

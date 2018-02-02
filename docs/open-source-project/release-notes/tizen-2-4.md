@@ -1363,8 +1363,6 @@ New Features
       - [http://tizen.org/privilege/systemmonitor](http://tizen.org/privilege/systemmonitor)
     - Deprecated privileges:
       - [http://tizen.org/privilege/keymanager.admin](http://tizen.org/privilege/keymanager.admin)
-    - Deprecated privileges:
-      - [http://tizen.org/privilege/keymanager.admin](http://tizen.org/privilege/keymanager.admin)
   - Web privileges for the mobile profile
     - New privileges:
       - [http://tizen.org/privilege/bluetooth](http://tizen.org/privilege/bluetooth)
