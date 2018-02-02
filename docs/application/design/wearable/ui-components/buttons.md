@@ -10,7 +10,7 @@ Tapping a button performs an action. They can appear on almost any screen, shoul
 
 -   **Use more options when providing multiple actions**
 
-    If you need multiple buttons on one screen, move less important actions to [More options](../patterns/more-options.html).
+    If you need multiple buttons on one screen, move less important actions to [More options](../patterns/more-options.md).
 
 ## Behavior
 
@@ -24,6 +24,7 @@ Tapping a button performs an action. They can appear on almost any screen, shoul
 
 ## Types
 
+<a name="bottom_button"></a>
 **Bottom buttons**
 
   A bottom button provides one main action. It remains fixed and non-scrollable at the bottom of the screen. Text should be fully capitalized. Only use an icon when you can’t fit a long text in the button field.
@@ -57,6 +58,7 @@ Tapping a button performs an action. They can appear on almost any screen, shoul
   ![](media/ui_components_10.5.3_3-850x174.png)  
     *Users select/deselect all items in the select mode with the select mode action buttons.*
 
+<a name="list_button"></a>
 -  **List buttons**
 
   List buttons present action options for an item in a list through an icon. Display an icon with text when there’s only one list button for one list item, but remove the text when there are 2-3 buttons for a list item.

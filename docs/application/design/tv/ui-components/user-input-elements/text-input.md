@@ -8,7 +8,7 @@ The following guidelines apply to guide text:
 
 -   If the text input field has no label, use a noun form for the guide text.
 -   If the text input field has a label, use the guide text to present example input in the expected format.
--   <span>If it is not possible to provide an input example, do not use guide text.</span>
+-   If it is not possible to provide an input example, do not use guide text.
 -   The guide text disappears when the user enters text into the input field.
 
 

@@ -1,4 +1,3 @@
-﻿
 # Typography
 
 <a name="breeze-sans"></a>
@@ -21,7 +20,7 @@ Recommended font sizes for the mobile app designs
 
 These are the guidelines for choosing and applying the typefaces when you design a Tizen app:
 
-##### Design High Contrast Screens for Better Legibility
+#### Design High Contrast Screens for Better Legibility
 
 Use light text on dark backgrounds and dark text on light backgrounds. If you choose a light color for the background, use bold and strong colored text in the foreground. Do not adjust the text opacity. It will decrease the contrast between the background and the text. On the other hand, use a dark background for light-colored text. Always test the background and text colors to make sure the combination results in good contrast before making a final decision.
 
@@ -31,7 +30,7 @@ Refer to [Colors](colors.md) for detailed information about background and text 
 
 *Combination of text and background colors for high contrast*
 
-##### Keep the Text Colors Consistent
+#### Keep the Text Colors Consistent
 
 Use text colors that stand out for important actions, and apply them consistently throughout the entire system. This will help users intuitively understand what the colors stand for.
 
@@ -39,7 +38,7 @@ Use text colors that stand out for important actions, and apply them consistentl
 
 *Blue action text on Wearable circular type*
 
-##### Avoid Using Multiple Typefaces
+#### Avoid Using Multiple Typefaces
 
 Consistently use one font throughout your app. Displaying multiple typefaces in one system may result in confusion. If you need to design an interesting, yet consistent screen, use fonts with different styles or weights in the same font family instead.
 
@@ -49,7 +48,7 @@ For example, use bold type for the title and regular type for the body text. Thi
 |:---:|:---:|
 | *Do* | *Don't* |
 
-##### Avoid Drastic Changes in Font Size
+#### Avoid Drastic Changes in Font Size
 
 Do not juxtapose text with varying sizes. Create a font size chart and refer to it when choosing the font sizes. Such practice helps you create more consistent and natural layout designs.
 
@@ -57,6 +56,6 @@ Do not juxtapose text with varying sizes. Create a font size chart and refer to 
 
 *Recommended font sizes for the mobile app designs*
 
-##### Consider Providing Accessibility Options for Users with Disabilities
+#### Consider Providing Accessibility Options for Users with Disabilities
 
 Tizen provides accessibility settings to allow users to customize display settings. By allowing users to adjust the font’s color and size options, you can create an app that is universally accessible to all users.

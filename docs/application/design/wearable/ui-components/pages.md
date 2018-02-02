@@ -37,7 +37,7 @@ Pages are where all the content of an app is presented. At any moment, an app sh
 
 -   **Scroll**
 
-    A page scrolls when the text doeesn’t fit on one screen. Generally, a page scrolls vertically to display long text content, and scrolls horizontally to present a set of images one by one.
+    A page scrolls when the text doesn’t fit on one screen. Generally, a page scrolls vertically to display long text content, and scrolls horizontally to present a set of images one by one.
 
 -   **Multiple pages**
 

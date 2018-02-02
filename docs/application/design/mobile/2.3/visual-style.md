@@ -6,5 +6,5 @@ The following components will help you incorporate Tizen's elegant visual style 
 -   [Display](visual-style/display.md)
 -   [Icons](visual-style/icons.md)
 -   [Colors](visual-style/colors.md)
--   [Typography](visual-style/typography-0.md)
+-   [Typography](visual-style/typography.md)
 -   [Touch Feedback](visual-style/touch-feedback.md)
