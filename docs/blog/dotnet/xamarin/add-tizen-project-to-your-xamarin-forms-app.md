@@ -1,10 +1,10 @@
 # Add Tizen Project to Your Xamarin Forms App
 
 ## Background
-It has been some time since the first preview version of Tizen .NET is released and developing Tizen applications has never been so easy thanks to it. Familiar Visual Studio on your computer can be used as an IDE with installing an extension called ‘Visual Studio Tools for Tizen’, and Xamarin Forms is used as the UI framework. This new way of developing Tizen applications is the great opportunity for not only existing Tizen developers but also Xamarin developers.
+It has been a while since the first preview version of Tizen .NET is released, and developing Tizen applications has never been so easy, thanks to it. Using the familiar Visual Studio as the IDE, you can now develop applications by installing the extension called ‘Visual Studio Tools for Tizen’, and use Xamarin Forms as the UI framework. This new way of developing Tizen applications is the great opportunity for not only existing Tizen developers but also for Xamarin developers.
 > For anyone who wants to get to know more about developing Tizen .NET applications, visit [here](https://developer.tizen.org/development/guides/.net-application) for developing guides and [here](https://developer.tizen.org/development/visual-studio-tools-tizen/installing-visual-studio-tools-tizen) for tools.
 
-If you already have your cross platform Xamarin apps or if you are about to create a new one, it is definitely worth adding a Tizen project to your apps. Now your apps can run on many profiles of Tizen devices such as mobile, TV and wearable. Super awesome!
+If you already have your cross own platform Xamarin apps, or if you are about to create a new one, it is definitely worth adding a Tizen project to your apps. Now your apps can run on many profiles of Tizen devices such as mobile, TV, and wearable. Super awesome!
 
 ## Add Tizen Project
 ### On Visual Studio
@@ -15,13 +15,13 @@ As an example, I created a sample cross platform app named ‘SimpleText’ whic
   <img src="media/iOS.png" height="360" />
 </p>
 
-On Android Emulator, you can see the text saying “Welcome to Xamarin.Forms.Android!”.
+On Android Emulator, you can see the text displayed as “Welcome to Xamarin.Forms.Android!”.
 On iOS Simulator, the text is replaced to "Welcome to Xamarin.Forms.iOS!".
 
-Now I want to run it on the Tizen platform.
+To run on the Tizen platform:
 - In Visual Studio, go to "File -> Add -> New Project"
 - Select a Tizen cross platform template "Visual C# -> Tizen -> Blank App (Xamarin.Forms)" and give a project name "SimpleText.Tizen"
-- On Tizen project Wizard,
+- On Tizen project Wizard:
   - Select "Common" as Profile (There are also Mobile, TV, and Wearable profile you can select)
   - Choose "Select Project in Solution" option and select "SimpleText" as the reference
     (The feature of selecting existing reference is added on 1.2.0 version of Visual Studio Tools for Tizen)
@@ -54,15 +54,15 @@ Now I want to run it on the Tizen platform.
   <img src="media/Demo.gif" />
 </p>
 
-Check out the result below and see if the generated Tizen project refers the correct reference as a dependency.
+Check out the result below, and see if the generated Tizen project refers the correct reference as a dependency.
 
 <p align="center">
   <img src="media/SolutionExplorer.png" />
 </p>
 
-Instead of adding a stably released Xamarin.Forms NuGet package, you should use the [nightly build](https://www.myget.org/feed/xamarinforms-ci/package/nuget/Xamarin.Forms) or the Xamarin.Forms.Platform.Tizen package as a reference at this moment. I found 2.5.0.77107 version of Xamarin.Forms.Platform.Tizen works beautifully.
-This would soon be unnecessary because now Tizen renderer code is merged on Xamarin.Forms GitHub and it is ready on nightly builds. When Xamarin.Forms package which includes Tizen is stably released, you would be able to simply add the Xamarin.Forms package just like how you do for other platforms.
-There is another significant package called Tizen.NET. This allows your app to use Tizen platform specific APIs. This package includes all features of Tizen and helps your app to do things what Tizen native applications can do. You can visit [here](https://developer.tizen.org/dev-guide/csapi/index.html) to see what Tizen APIs are provided.
+Instead of adding a stably released Xamarin.Forms NuGet package, you should use the [nightly build](https://www.myget.org/feed/xamarinforms-ci/package/nuget/Xamarin.Forms), or the Xamarin.Forms.Platform.Tizen package as a reference at this moment. I found 2.5.0.77107 version of Xamarin.Forms.Platform.Tizen works beautifully.
+This would soon be unnecessary because now Tizen renderer code is merged on the Xamarin.Forms GitHub and it is ready on nightly builds. When Xamarin.Forms package which includes Tizen is stably released, you would be able to simply add the Xamarin.Forms package just like how you do for other platforms.
+There is another significant package called Tizen.NET. This allows your app to use the Tizen platform specific APIs. This package includes all features of Tizen and helps your app to do things what Tizen native applications can do. You can visit [here](https://developer.tizen.org/dev-guide/csapi/index.html) to see what Tizen APIs are provided.
 > Visit [here](https://github.com/xamarin/xamarin-forms-samples/pull/245) to see how Tizen projects are added to tons of existing Xamarin samples.
 
 ### On Visual Studio for Mac
@@ -100,8 +100,8 @@ Xamarin.Forms.Device class may be familiar to the most Xamarin developers as it 
 </ContentPage>
 ```
 
-Check out how it is implemented on the CS code, too.
-Here you can try using `TargetIdiom.Unsupported` to test code on Tizen wearable emulator. Idiom for the wearable device is not yet defined on Xamarin, but this is expected to be added as soon as it is prepared.
+Check out how it is implemented on the CS code too.
+Here you can try using `TargetIdiom.Unsupported` to test code on the Tizen wearable emulator. Idiom for the wearable device is not yet defined on Xamarin but this is expected to be added as soon as it is prepared.
 ```csharp
 using Xamarin.Forms;
 
@@ -142,7 +142,7 @@ namespace SimpleText
 
 ## Run on Tizen Emulators
 Let’s run the SimpleText app on Tizen emulators. You can start emulators at “Tools -> Tizen -> Tizen Emulator Manager“. Three types of Tizen profiles including wearable are provided like you can see below and Wearable now is the preview version.
-Check out the different text is shown on the different devices.
+Check out how different text is displayed on different devices.
 
 <p align="center">
   <img src="media/TizenMobile.png" height="360" />
