@@ -103,7 +103,7 @@ You can see the created project in the **Project Explorer** view. The most impor
 
 ![Application in the Project Explorer](media/basic_app_project_explorer_mn.png)
 
-> **Note** 
+> **Note**  
 > You can [view and modify the application configuration](#configuration) in the manifest editor. In this example, no configuration changes are required.
 
 Your application project is now ready for further actions. Next, build the application.
@@ -119,7 +119,7 @@ To view and modify the application configuration:
 
     ![Configuring the application](media/basic_app_config_n.png)
 
-    -   **Overview**: Define general information, such as the package, label, and icon of the application.
+    - **Overview**: Define general information, such as the package, label, and icon of the application.
 
     - **Features**: Define required software and hardware features. This information is used for application filtering in the Tizen Store.
 
@@ -131,7 +131,7 @@ To view and modify the application configuration:
 
     - **Source**: View and edit the source code of the `tizen-manifest.xml` file. Changes made and saved on the other tabs are reflected in the source code and vice versa.
 
-        > **Note** 
+        > **Note**  
         > The `tizen-manifest.xml` file must conform to both the XML file format and the Tizen native application specification requirements. Editing the file in the **Source** tab is intended for advanced users only.
 
 3. To save any changes, in the Tizen Studio menu, select **File > Save All**.
@@ -223,7 +223,7 @@ You can build the application in the following ways:
     -   In the Tizen Studio menu, select **Project &gt; Build Project**.
     -   Press the **F10** key.
 
-You can have more than one build configuration. To see the current active configuration or change it, right-click the project in the **Project Explorer** view and select **Build Configurations > Set Active**. The default configuration is `Debug`. For more information, see [Building Applications](../../tutorials/process/building-app.md).
+You can have more than one build configuration. To see the current active configuration or change it, right-click the project in the **Project Explorer** view and select **Build Configurations &gt; Set Active**. The default configuration is `Debug`. For more information, see [Building Applications](../../tutorials/process/building-app.md).
 
 After you have built the application, run it.
 
@@ -274,7 +274,7 @@ To run the application on the emulator:
 
         ![Application running in the emulator](media/emulator_running_mn.png)
 
-        > **Note** 
+        > **Note**  
         > If the emulator display has switched off, you cannot see the application launch. To see the application on the emulator screen:
         > 1.  To switch the display on, in the key window next to the emulator screen, click `Power`.
         > 2.  On the home screen, swipe left.
@@ -284,7 +284,7 @@ To run the application on the emulator:
 For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
 
 <a name="target"></a>
-### Running on a Target Device 
+### Running on a Target Device
 
 To run the application on a target device:
 
@@ -310,7 +310,7 @@ To run the application on a target device:
 
     3. Confirm that the application launches on the target device.
 
-    > **Note** 
+    > **Note**  
     > The application is launched using the default debug run configuration. To create and use another configuration:
     > 1.  In the `Project Explorer` view, right-click the project and select `Run As > Run Configurations`.
     > 2.  In the `Run Configurations` window, click the `New Launch Configuration` icon (![New Launch Configuration icon](media/run_new_config_wn.png)), define the configuration details, and launch the application by clicking `Run`.
