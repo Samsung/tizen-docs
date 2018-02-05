@@ -14,7 +14,7 @@ wirelessly with closely coupled devices using a Near Field Communication
 When creating a content sharing application, you can implement the
 following features:
 
--   [Sending content to other applications](app-contentshare-send-n.md)
+-   [Sending content to other applications](app-contentshare-send.md)
     -   You can send text to other applications. For example, a browser
         application can share the URL of a recently visited site with a
         messenger or email application.
@@ -24,7 +24,7 @@ following features:
         can send an image file to a viewer application to allow the user
         to see it.
 -   [Receiving content from other
-    applications](app-contentshare-receive-n.md)
+    applications](app-contentshare-receive.md)
     -   To allow other applications to find and use your application
         features (such as share various data with you), you must
         advertise your available features by exporting them as
@@ -34,7 +34,7 @@ following features:
         using the application control callback.
     -   If the incoming request contains extra data, you must read it
         and react to it appropriately.
--   [Sharing through NFC](app-contentshare-nfc-n.md)
+-   [Sharing through NFC](app-contentshare-nfc.md)
     -   To share data with other devices, you must first ensure that the
         device supports NFC and then initialize the NFC feature.
     -   You can send and receive simple NDEF messages through the NFC

@@ -72,7 +72,7 @@ signing key) privilege level and the API privilege level.
 **Table: API levels allowed in specific certificate privilege levels**
 
 | Certificate privilege level | Public level API | Partner level API | Platform level API |
-| --------------------------- | ---------------- | ----------------- | ------------------ |
+|--------------------------|----------------|-----------------|------------------|
 | Public level                | Allowed          | Not allowed       | Not allowed        |
 | Partner level               | Allowed          | Allowed           | Not allowed        |
 | Platform level              | Allowed          | Allowed           | Allowed            |

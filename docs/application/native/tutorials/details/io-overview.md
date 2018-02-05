@@ -20,7 +20,7 @@ The following table shows the application directory hierarchy:
 **Table: Application package directory hierarchy**
 
 | Name             | Description                              | Permission                               |
-| ---------------- | ---------------------------------------- | ---------------------------------------- |
+|----------------|----------------------------------------|----------------------------------------|
 | `bin`            | Executable binary path                   | Owner: Read<br>Others: Access denied     |
 | `lib`            | Library path                             | Owner: Read<br>Others: Access denied     |
 | `data`           | Used to store private data of an application.<br>To get the application data directory path, call the `app_get_data_path()` function of the App Common module. | Owner: Read and Write<br>Others: Access denied |
@@ -39,7 +39,7 @@ media directory.
 **Table: Media directory hierarchy**
 
 | Name               | Description                        | Permission     |
-| ------------------ | ---------------------------------- | -------------- |
+|------------------|----------------------------------|--------------|
 | `Images`           | Used for Image data.               | Read and Write |
 | `Sounds`           | Used for Sound data.               | Read and Write |
 | `Videos`           | Used for Video data.               | Read and Write |
@@ -59,7 +59,7 @@ table lists the sub-directories of the external storage directory.
 **Table: External storage directory hierarchy**
 
 | Name        | Description               | Permission     |
-| ----------- | ------------------------- | -------------- |
+|-----------|-------------------------|--------------|
 | `Images`    | Used for Image data.      | Read and Write |
 | `Sounds`    | Used for Sound data.      | Read and Write |
 | `Videos`    | Used for Video data.      | Read and Write |

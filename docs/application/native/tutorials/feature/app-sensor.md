@@ -12,7 +12,7 @@ gestures and motions.
 When creating a sensor application, you can implement the following
 features:
 
--   [Accelerator sensor usage](app-sensor-accelerator-n.md)
+-   [Accelerator sensor usage](app-sensor-accelerator.md)
 
     The accelerator sensor is used to measure changes in force resulting
     from fall, tilt, positioning, shock, and vibration. Smart devices
@@ -26,7 +26,9 @@ features:
         application, where you can process and display them.
     -   You can save the maximum acceleration value of the device
         during testing.
-- [Proximity sensor usage](app-sensor-proximity-n.md)
+
+        
+- [Proximity sensor usage](app-sensor-proximity.md)
 
     The proximity sensor measures the distance of an object from the
     front of the phone. It is commonly used on smart devices to detect

@@ -11,7 +11,7 @@ size while moving.
 
 The following example uses the same **Basic UI** template as the square
 drawing example. For more information on how to create the project with
-the template, see [Squares on the Canvas](app-graphics-square-n.md).
+the template, see [Squares on the Canvas](app-graphics-square.md).
 
 To implement animations in an application:
 

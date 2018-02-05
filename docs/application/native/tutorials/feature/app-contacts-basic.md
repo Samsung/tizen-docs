@@ -58,7 +58,7 @@ different record property types.
 **Table: Functions for specific record property types**
 
 | Property type       | Setter function                | Getter function                |
-| ------------------- | ------------------------------ | ------------------------------ |
+|-------------------|------------------------------|-----------------------------|
 | `string`            | `contacts_record_set_str()`    | `contacts_record_get_str()`    |
 | `integer`           | `contacts_record_set_int()`    | `contacts_record_get_int()`    |
 | `boolean`           | `contacts_record_set_bool()`   | `contacts_record_get_bool()`   |
@@ -73,7 +73,7 @@ part of which is listed in the following table.
 **Table: Some contact record properties**
 
 | Property ID    | Type      | Description                              |
-| -------------- | --------- | ---------------------------------------- |
+|--------------|---------|----------------------------------------|
 | `uri`          | `string`  | Identifier of this contact view          |
 | `id`           | `integer` | Database record ID of the contact        |
 | `display_name` | `string`  | Display name of the contact              |

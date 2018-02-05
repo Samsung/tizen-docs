@@ -18,7 +18,7 @@ control how much data your application uses.
 Applications that access network information and statistics must declare
 the required privileges in the `tizen-manifest.xml` file. For more
 information on the Tizen privileges, see [Security and API
-Privileges](../details/sec-privileges-n.md).
+Privileges](../details/sec-privileges.md).
 
 To perform the network operations, the application manifest must include
 the following privileges:
@@ -30,7 +30,7 @@ the following privileges:
 ```
 
 To perform the network operations, the device must support the following
-[features](../details/app-filtering-n.md):
+[features](../details/app-filtering.md):
 
 -   To use Wi-Fi:
     -   `http://tizen.org/feature/network.wifi`
@@ -254,7 +254,7 @@ The following table indicates the available notification IDs.
 **Table: Notification IDs**
 
 | Changed state             | Notification ID                          |
-| ------------------------- | ---------------------------------------- |
+|-------------------------|----------------------------------------|
 | Network service state     | `TELEPHONY_NOTI_NETWORK_SERVICE_STATE`   |
 | Cell ID                   | `TELEPHONY_NOTI_NETWORK_CELLID`          |
 | Roaming status            | `TELEPHONY_NOTI_NETWORK_ROAMING_STATUS`  |
