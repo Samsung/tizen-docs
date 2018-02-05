@@ -84,7 +84,7 @@ To customize the focus chain:
 
   To customize the application's focus chain:
 
-  ```csharp
+  ```
   Evas_Object *main;
   Evas_Object obj1;
   Evas_Object obj2;

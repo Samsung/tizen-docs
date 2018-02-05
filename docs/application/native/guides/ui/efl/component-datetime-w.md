@@ -38,7 +38,7 @@ The datetime has the following styles:
 
 To set the style to, for example, `datepicker_layout`:
 
-```csharp
+```
 elm_object_style_set(datetime, "datepicker_layout");
 ```
 
@@ -48,7 +48,7 @@ The date and time format can be configured with the `elm_datetime_format_set()` 
 
 To set the format to "HH : MM":
 
-```csharp
+```
 elm_object_style_set(datetime, "timepicker_layout");
 elm_datetime_format_set(datetime, "%d/%b/%Y%I:%M");
 ```
@@ -68,7 +68,7 @@ To receive notifications about the datetime events, listen for the following sig
 
 To register and define a callback for the `changed` signal:
 
-```csharp
+```
 {
     evas_object_smart_callback_add(datetime, "changed", changed_cb, data);
 }

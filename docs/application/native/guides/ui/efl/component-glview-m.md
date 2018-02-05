@@ -20,7 +20,7 @@ To create a GLView component:
 
 1. Add a GLView component using the `elm_glview_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *glview;
    Evas_Object *parent;
 
@@ -31,7 +31,7 @@ To create a GLView component:
 
    To set the size to 200 x 200 pixels:
 
-   ```csharp
+   ```
    elm_glview_size_set(glview, 200, 200);
    ```
 
@@ -74,7 +74,7 @@ To configure the GLView:
   - The resize callback is called during the rendering loop when the GLView component is resized.
   - The render callback is called when the GLView component must be redrawn.
 
-  ```csharp
+  ```
   elm_glview_init_func_set(glview, _init_gl_cb);
   elm_glview_del_func_set(glview, _del_gl_cb);
   elm_glview_resize_func_set(glview, _resize_gl_cb);
@@ -97,7 +97,7 @@ You can register callback functions connected to the following signals for a glv
 
 The following example shows how to define and register a callback for the `focused` signal:
 
-```csharp
+```
 evas_object_smart_callback_add(glview, "focused", focused_cb, data);
 
 /* Callback for the "focused" signal */
@@ -114,6 +114,6 @@ focused_cb(void *data, Evas_Object *obj, void  *event_info)
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
-## Related Information 
+## Related Information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile

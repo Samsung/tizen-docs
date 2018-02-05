@@ -10,7 +10,7 @@ To use a datetime component in your application:
 
 1. Add a datetime component with the `elm_datetime_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *datetime;
 
    datetime = elm_datetime_add(parent);
@@ -20,13 +20,13 @@ To use a datetime component in your application:
 
    - Set a style to the datetime component with the `elm_object_style_set()` function. If you use the default style, you can skip this step.
 
-     ```csharp
+     ```
      elm_object_style_set(datetime, "date_layout");
      ```
 
    - Set a format using the `elm_datetime_format_set()` function:
 
-     ```csharp
+     ```
      elm_datetime_format_set(datetime, "%d%b%Y");
      ```
 
@@ -34,7 +34,7 @@ To use a datetime component in your application:
 
 4. Register the [callback](#callbacks) functions.The following example shows how to define and register a callback for the `changed` signal:
 
-   ```csharp
+   ```
    evas_object_smart_callback_add(datetime, "changed", changed_cb, data);
 
    void
@@ -50,7 +50,7 @@ The following example shows a simple use case of the datetime component.
 
  ![Datetime](./media/datetime.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;
@@ -102,13 +102,13 @@ You can set value ranges for the datetime component:
 
   To set the maximum time for the datetime component:
 
-  ```csharp
+  ```
   elm_datetime_value_max_set(datetime, tm);
   ```
 
   To set the minimum time for the datetime component:
 
-  ```csharp
+  ```
   elm_datetime_value_min_set(datetime, tm);
   ```
 
@@ -125,7 +125,7 @@ You can set value ranges for the datetime component:
 
   To set a value range for a specific field:
 
-  ```csharp
+  ```
   elm_datetime_field_limit_set(datetime, ELM_DATETIME_DATE, 10, 20);
   ```
 

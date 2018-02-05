@@ -12,7 +12,7 @@ When more than one style is defined for a UI component in the current theme, you
 
 The default theme of the mobile profile specifies several [styles for the check UI component](component-check-m.md#styles). The following example shows how to set the `favorite` style to a newly created check object:
 
-```csharp
+```
 Evas_Object *check;
 
 check = elm_check_add(parent);
@@ -23,7 +23,7 @@ A theme is defined in [EDC](learn-edc-intro.md) (`.edc`) files, and they are com
 
 The following example shows some groups in an EDC file (`check.edc`), which correspond to the styles of the check component in mobile profile:
 
-```csharp
+```
 group {
    name: "elm/check/base/default";
    /* Other content */
@@ -54,7 +54,7 @@ To customize a UI component:
 
 2. Create an EDJ file in the `/res/edje/` directory. If you add the `custom.edc` file, the Tizen Studio calls Edje tools automatically to build the final `custom.edj` file when building the project. The EDJ file is installed under the application data path. You can get the full path of where the EDJ file is installed using the `app_get_resource()` function.
 
-   ```csharp
+   ```
    char edj_path[PATH_MAX] = {0,};
 
    app_get_resource("/edje/custom.edj", edj_path, (int)PATH_MAX);
@@ -69,7 +69,7 @@ To customize a UI component:
 
    The following code snippet shows how to add the new theme file as an extension:
 
-   ```csharp
+   ```
    char edj_path[PATH_MAX] = {0,};
 
    /* Get the full path of the EDJ file */
@@ -83,7 +83,7 @@ To customize a UI component:
 
    To use the `custom` style on a new check component:
 
-   ```csharp
+   ```
    Evas_Object *check;
 
    check = elm_check_add(parent);
@@ -104,7 +104,7 @@ To attach an EDJ file to an existing theme, you can use:
 
   Applications can add and delete a theme in the list of extensions with the following calls:
 
-  ```csharp
+  ```
   elm_theme_extension_add(NULL, "./theme_button_style_custom.edj");
   elm_theme_extension_del(NULL, "./theme_button_style_custom.edj");
   ```
@@ -119,7 +119,7 @@ To attach an EDJ file to an existing theme, you can use:
 
   Applications can add and delete a theme in the list of overlays with the following calls:
 
-  ```csharp
+  ```
   elm_theme_overlay_add(NULL, "./theme_button.edj");
   elm_theme_overlay_del(NULL, "./theme_button.edj");
   ```
@@ -161,7 +161,7 @@ To create a customized check component style:
 
 1. Copy the group corresponding to the `default` style to a new file and rename the group to `custom` to create a new `custom` style:
 
-   ```csharp
+   ```
    group {
       name: "elm/check/base/custom";
       /* Copy of the content of "default" style */
@@ -172,7 +172,7 @@ To create a customized check component style:
 
    To modify the background and check images, you must locate the `bg` and `check` parts.
 
-   ```csharp
+   ```
    part {
       name: "bg";
       mouse_events: 0;
@@ -241,7 +241,7 @@ To create a customized check component style:
    > **Note**  
    > This example assumes that the custom images are the same size as the `default` images.
 
-   ```csharp
+   ```
    part {
       name: "bg";
       description {
@@ -270,7 +270,7 @@ To create a customized button component style:
 
 1. Copy the group corresponding to the `default` style to a new file and rename the group to `custom` to create a new `custom` style:
 
-   ```csharp
+   ```
    group {
       name: "elm/button/base/custom";
       /* Copy of the content of "default" style */
@@ -282,7 +282,7 @@ To create a customized button component style:
    > **Note**  
    > In the EDC file, sound effects are played by program actions, such as `RUN_PLUGIN`, `PLAY_SAMPLE`, and `PLAY_TONE`.
 
-   ```csharp
+   ```
    program {
       name: "touch_sound";
       action: RUN_PLUGIN "touch_sound";
@@ -296,7 +296,7 @@ To create a customized button component style:
    > **Note**  
    > In the EDC file, programs are executed by the `after` keyword or the `run_program` script function. For example:`after: "touch_sound";/* OR */run_program(PROGRAM: "touch_sound");`
 
-   ```csharp
+   ```
    program {
       name: "clicked";
       signal: "mouse,clicked,1";

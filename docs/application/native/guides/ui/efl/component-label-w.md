@@ -18,7 +18,7 @@ For more information, see the [Label](../../../../../org.tizen.native.wearable.a
 
 To create a label, use the `elm_label_add()` function. You can set the label text with the `elm_object_text_set()` function.
 
-```csharp
+```
 Evas_Object *label = elm_label_add(win);
 
 elm_object_text_set(label, "Some long text for our label, that is not so long");
@@ -39,13 +39,13 @@ To configure the label:
    - `slide_short`: The text appears in the left of the label and slides to the right to show the overflow. When all of the text has been shown, the position is reset.
    - `slide_bounce`: The text appears in the left of the label and slides to the right to show the overflow. When all of the text has been shown, the animation reverses, moving the text to the left.
 
-   ```csharp
+   ```
    elm_object_style_set(label, "slide_roll");
    ```
 
 2. If you use a slide-type style for the text, you can also set the slide mode and animation duration:
 
-   ```csharp
+   ```
    elm_label_slide_duration_set(label, 3);
    elm_label_slide_mode_set(label, ELM_LABEL_SLIDE_MODE_ALWAYS);
    ```
@@ -68,7 +68,7 @@ The `event_info` callback parameter points to an `Elm_Label_Anchor_Info` object.
 
 To register and define a callback for the `slide,end` signal:
 
-```csharp
+```
 {
     evas_object_smart_callback_add(label, "slide,end", slide_end_cb, data);
 }

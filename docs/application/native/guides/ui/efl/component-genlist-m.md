@@ -12,7 +12,7 @@ To use a genlist component in your application:
 
 1. Add a genlist with the `elm_genlist_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *genlist;
 
    genlist = elm_genlist_add(parent);
@@ -22,7 +22,7 @@ To use a genlist component in your application:
 
    a. Create a genlist item class with the `elm_genlist_item_class_new()` function, set a style to the item class, and register callback functions. The genlist item class must be freed manually with the `elm_genlist_item_class_free()` function after all items are appended.
 
-      ```csharp
+      ```
       Elm_Genlist_Item_Class *itc = elm_genlist_item_class_new();
 
       itc->item_style = "default";
@@ -35,7 +35,7 @@ To use a genlist component in your application:
 
    When a genlist item becomes realized, the `text_get` function is called repeatedly for all text parts in that item. After the text is set to the part, it is freed automatically. Do not free it manually.
 
-      ```csharp
+      ```
       static char*
       _item_label_get(void *data, Evas_Object *obj, const char *part)
       {
@@ -50,7 +50,7 @@ To use a genlist component in your application:
 
    The `content_get` function is called repeatedly for all swallow parts in the item. It must return a valid object handle to be set, or `NULL` when no content is desired. The object is deleted by the genlist on its deletion or when the item is unrealized.
 
-      ```csharp
+      ```
       static Evas_Object*
       _item_content_get(void *data, Evas_Object *obj, const char *part)
       {
@@ -69,7 +69,7 @@ To use a genlist component in your application:
 
    This function is called when the genlist item is deleted. It deletes any data that has been allocated at the item's creation.
 
-      ```csharp
+      ```
       static void
       _item_del(void *data, Evas_Object *obj)
       {
@@ -79,14 +79,14 @@ To use a genlist component in your application:
 
 3. Append items to the genlist with the `elm_genlist_item_append()` function.
 
-   ```csharp
+   ```
    elm_genlist_item_append(genlist, itc, (void *)i, NULL, ELM_GENLIST_ITEM_NONE,
                            _item_selected_cb, (void *)i);
    ```
 
 4. Register the [callback](#callbacks) functions for the genlist and its items.The following example shows how to define a callback for when the genlist item is selected:
 
-   ```csharp
+   ```
    static void
    _item_selected_cb(void *data, Evas_Object *obj, void *event_info)
    {
@@ -100,7 +100,7 @@ The following example shows a simple use case of the genlist component.
 
  ![Genlist](./media/genlist1.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;
@@ -193,7 +193,7 @@ You can use the group items in the group mode or tree mode:
 
 ![Genlist group mode](./media/genlist2.png)  
      ​
-```csharp
+```
   Elm_Genlist_Item_Class *itc;
   Elm_Genlist_Item_Class *gitc;
   Elm_Object_Item *g;
@@ -244,7 +244,7 @@ You can use the group items in the group mode or tree mode:
 
    ![Genlist tree mode](./media/genlist3.png)
 
-```csharp
+```
 Elm_Genlist_Item_Class *titc;
 Elm_Object_Item *it;
 int i;
@@ -354,7 +354,7 @@ To manage the item selection, use the following functions:
 > **Note**  
 > The item selection comes with a highlight effect. If the user wants to cancel the highlight by touch off, you must cancel the select operation in the `select()` callback:
 
-```csharp
+```
 static void
 select_cb(void *data, Evas_Object *obj, void *event_info)
 {

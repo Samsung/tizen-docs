@@ -20,7 +20,7 @@ For more information, see the [Hoversel](../../../../../org.tizen.native.mobile.
 
 To create a hoversel component, use the `elm_hoversel_add()` function:
 
-```csharp
+```
 Evas_Object *hoversel;
 Evas_Object *parent;
 
@@ -46,7 +46,7 @@ To configure the hoversel:
 
   The hoversel creates a hover component and puts a list of items in the hover when it is activated. The hover parent determines the area where the item list can be shown. The hover parent does not need to be the same as the hoversel parent.
 
-  ```csharp
+  ```
   Evas_Object *hoversel;
   Evas_Object *parent;
   Evas_Object *win;
@@ -67,7 +67,7 @@ To configure the hoversel:
 
 - Retrieve the hoversel activation state (as a Boolean value) using the `elm_hoversel_expanded_get()` function:
 
-  ```csharp
+  ```
   Eina_Bool expanded;
   expanded = elm_hoversel_expanded_get(hoversel);
   ```
@@ -80,7 +80,7 @@ To manage items:
 
 1. Add an item using the `elm_hoversel_item_add()` function.To add an item with a "test" label and the `_hoversel_item_cb` clicked callback:  
 
-   ```csharp
+   ```
    Elm_Object_Item *it;
 
    it = elm_hoversel_item_add(hoversel, /* Hoversel object */    
@@ -97,7 +97,7 @@ To manage items:
 
    The function returns a list of `Elm_Object_Item` items.
 
-   ```csharp
+   ```
    Eina_List *items;
    items = elm_hoversel_items_get(hoversel);
    ```
@@ -106,14 +106,14 @@ To manage items:
 
    To change the item label to "New Label":
 
-   ```csharp
+   ```
    Elm_Object_Item *it = elm_hoversel_item_add(hoversel, "test", NULL, ELM_ICON_NONE, NULL, NULL);
    elm_object_item_part_text_set(it, "default", "New label");
    ```
 
 4. Delete all items together with the `elm_hoversel_clear()` function:
 
-   ```csharp
+   ```
    elm_hoversel_clear(hoversel);
    ```
 
@@ -136,7 +136,7 @@ You can register callback functions connected to the following signals for a hov
 
 The following example shows how to define and register a callback for the `dismissed` signal:
 
-```csharp
+```
 evas_object_smart_callback_add(hoversel, "dismissed", dismissed_cb, data);
 
 /* Callback for the "dismissed" signal */

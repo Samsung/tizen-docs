@@ -10,7 +10,7 @@ To use a panel component in your application:
 
 1. Add a panel with the `elm_panel_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *panel;
 
    panel = elm_panel_add(parent);
@@ -18,13 +18,13 @@ To use a panel component in your application:
 
 2. You can set the panel orientation with the `elm_panel_orient_set()` function:
 
-   ```csharp
+   ```
    elm_panel_orient_set(panel, ELM_PANEL_ORIENT_TOP);
    ```
 
 3. Add content to the panel with the `elm_object_part_content_set()` function:
 
-   ```csharp
+   ```
    Evas_Object *button;
 
    elm_object_part_content_set(panel, "default", button);
@@ -32,7 +32,7 @@ To use a panel component in your application:
 
 4. Register the [callback](#callbacks) functions. The following example shows how to define and register a callback for the `scroll` signal:
 
-   ```csharp
+   ```
    evas_object_smart_callback_add(panel, "scroll", panel_scroll_cb, data);
 
    void
@@ -49,7 +49,7 @@ The following example shows a simple use case of the panel component.
 
  ![Panel](./media/panel1.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;

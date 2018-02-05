@@ -18,7 +18,7 @@ For more information, see the [List](../../../../../org.tizen.native.wearable.ap
 
 To add a list component, use the `elm_list_add()` function:
 
-```csharp
+```
 Evas_Object *list;
 Evas_Object *parent;
 
@@ -32,7 +32,7 @@ A list item can contain a piece of text and 2 contents (`start` and `end`). To s
 
 To add an item to the list, use the `elm_list_item_append()` or `elm_list_item_prepend()` function. In the following example, 10 items with text and 1 icon are added. The last 2 parameters of the `elm_list_item_append()` function are the callback function when the created item is selected and the data passed to the callback function.
 
-```csharp
+```
 Evas_Object *list;
 int i;
 
@@ -67,7 +67,7 @@ To modify the list item elements, use the `Elm_Object_Item` functions:
 
  Each content is an `evas_object` instance, and they are defined as the third and the fourth parameters when you append or prepend the item in the list with the `elm_list_item_append()` or `elm_list_item_prepend()` function.
 
-```csharp
+```
 Evas_Object *list;
 Eina_List *l;
 Elm_Object_Item *it;
@@ -96,7 +96,7 @@ To access and select list items:
 
   The list component implements the scrollable interface, which means that the scroller component functions can be used to ease the management of longer lists. To change the bounce property of the scroller or the scrolling policy:
 
-  ```csharp
+  ```
   Evas_Object *list;
 
   /* Change the scroller policy to fix the scroll only vertically */
@@ -109,7 +109,7 @@ To access and select list items:
 
   To enable multiple items to be selected at the same time, enable the multi-selection mode with the `elm_list_multi_select_set()` function. Each time an item is clicked, its state changes to `selected`.
 
-  ```csharp
+  ```
   Evas_Object *list;
 
   /* Enable multi-selection mode */
@@ -130,7 +130,7 @@ To access and select list items:
 
   To retrieve all selected items and set their state to `unselected`:
 
-  ```csharp
+  ```
   Evas_Object *list;
   Eina_List *l;
   Eina_List *selected_items;
@@ -153,7 +153,7 @@ To access and select list items:
 
   To retrieve the currently selected item and unselect it, and then select the next item and bring it to the screen:
 
-  ```csharp
+  ```
   Evas_Object *list;
   Elm_Object_Item *current;
   Elm_Object_Item *next;
@@ -202,7 +202,7 @@ The `event_info` callback parameter points at the unhighlighted item.
 
 To register and define a callback for the `clicked,double` signal:
 
-```csharp
+```
 {
     Evas_Object *list;
 

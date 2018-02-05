@@ -11,7 +11,7 @@ To use a check component in your application:
 
 1. Add a check component with the `elm_check_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *check;
 
    check = elm_check_add(parent);
@@ -21,21 +21,21 @@ To use a check component in your application:
 
    - Set a style to the check component with the `elm_object_style_set()` function. If you use the default style, you can skip this step.
 
-     ```csharp
+     ```
      elm_object_style_set(check, "popup");
      ```
 
 
    - Set a label to the check component with the `elm_object_text_set()` function:
 
-     ```csharp
+     ```
      /* Default style */
      elm_object_text_set(check, "Check");
      ```
 
 3. Register the [callback](#callbacks) functions.The following example shows how to define and register a callback for the `changed` signal:
 
-   ```csharp
+   ```
    evas_object_smart_callback_add(check, "changed", changed_cb, data);
 
    void
@@ -51,7 +51,7 @@ The following example shows a simple use case of the check component.
 
  ![Circle check component](./media/check_wear_sq_default.png) ![Rect check component](./media/check_wear_circle_default.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;

@@ -10,7 +10,7 @@ To use a map component in your application:
 
 1. Add a map with `elm_map_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *map;
    Evas_Object *parent;
 
@@ -19,31 +19,31 @@ To use a map component in your application:
 
 2. Set the zoom mode with the `elm_map_zoom_mode_set()` function:
 
-   ```csharp
+   ```
    elm_map_zoom_mode_set(map, ELM_MAP_ZOOM_MODE_MANUAL);
    ```
 
 3. Set the zoom level with the `elm_map_zoom_set()` function:
 
-   ```csharp
+   ```
    elm_map_zoom_set(map, 12);
    ```
 
 4. Show a specific area on the map based on coordinates using the `elm_map_region_show()` function:
 
-   ```csharp
+   ```
    elm_map_region_show(map, 2.2, 48.8);
    ```
 
    To show a specific area with a bring-in animation, use the `elm_map_region_bring_in()` function:\
 
-   ```csharp
+   ```
    elm_map_region_bring_in(map, 2.2, 48.8);
    ```
 
 5. Register the [callback](#callbacks) functions. The following example shows how to define and register a callback for the `clicked` signal:
 
-   ```csharp
+   ```
    evas_object_smart_callback_add(map, "clicked", clicked_cb, data);
 
    void
@@ -59,7 +59,7 @@ The following example shows a simple use case of the map component.
 
  ![Alignment](./media/map1.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;

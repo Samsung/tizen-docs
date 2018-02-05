@@ -10,7 +10,7 @@ For more information, see the [Efl Extension Circle Object](../../../../../org.t
 
 To create a circle object component, use the `eext_circle_object_add()` function:
 
-```csharp
+```
 Evas_Object *circle_obj;
 
 circle_obj = eext_circle_object_add(parent, surface);
@@ -23,7 +23,7 @@ When creating a circle object, you can select whether the circle object is rende
 
 To create a circle object without a circle surface, and show it in a size of 360 x 360:
 
-```csharp
+```
 Evas_Object *circle_obj;
 
 circle_obj = eext_circle_object_add(parent, NULL);
@@ -41,7 +41,7 @@ To set the value details of the circle object:
 
     In the following example, a circle object with a surface is created and its minimum and maximum values are set to 0.0 and 10.0 degrees:
 
-    ```csharp
+    ```
     Evas_Object *circle_obj;
 
     circle_obj = eext_circle_object_add(parent, surface);
@@ -54,7 +54,7 @@ To set the value details of the circle object:
 
     If the name of the item is passed as `default`, the function works the same way as the `eext_circle_object_value_min_max_set()` function. Similar to the above example, the following example creates a circle object with the minimum and maximum values of 0.0 and 10.0 degrees:
 
-    ```csharp
+    ```
     Evas_Object *circle_obj;
 
     circle_obj = eext_circle_object_add(parent, surface);
@@ -72,7 +72,7 @@ To set the value details of the circle object:
 
     In the following example, a circle object with a surface is created and its value is set to 5.0 degrees:
 
-    ```csharp
+    ```
     Evas_Object *circle_obj;
 
     circle_obj = eext_circle_object_add(parent, surface);
@@ -85,7 +85,7 @@ To set the value details of the circle object:
 
     If the name of the item is passed as `default`, the function works the same way as the `eext_circle_object_value_set()` function. Similar to the above example, the following example creates a circle object with a surface and sets its value to 5.0 degrees:
 
-    ```csharp
+    ```
     Evas_Object *circle_obj;
 
     circle_obj = eext_circle_object_add(parent, surface);
@@ -104,7 +104,7 @@ To set the angle details of the circle object:
 
     In the following example, a circle object with a surface is created and its angle is set to 45.0 degrees:
 
-    ```csharp
+    ```
     Evas_Object *circle_obj;
 
     circle_obj = eext_circle_object_add(parent, surface);
@@ -117,7 +117,7 @@ To set the angle details of the circle object:
 
     If the name of the item is passed as `default`, the function works the same way as the `eext_circle_object_angle_set()` function. Similar to the above example, the following example creates a circle object with a surface and sets its angle to 45.0 degrees:
 
-    ```csharp
+    ```
     Evas_Object *circle_obj;
 
     circle_obj = eext_circle_object_add(parent, surface);
@@ -132,7 +132,7 @@ To set the angle details of the circle object:
 
     In the following example, a circle object with a 45.0 degree angle is created and its angle offset is set to 30.0 degrees. As a result, the circle object has an arch of a 45.0 degree angle line starting from 30.0 degrees to 75.0 degrees.
 
-    ```csharp
+    ```
     Evas_Object *circle_obj;
 
     circle_obj = eext_circle_object_add(parent, surface);
@@ -146,7 +146,7 @@ To set the angle details of the circle object:
 
     If the name of the item is passed as `default`, the function works the same way as the `eext_circle_object_angle_offset_set()` function. The following example works the same way as the above example:
 
-    ```csharp
+    ```
     Evas_Object *circle_obj;
 
     circle_obj = eext_circle_object_add(parent, surface);
@@ -162,7 +162,7 @@ To set the angle details of the circle object:
 
     In the following example, a circle object with a surface is created and its minimum and maximum angles are set to 0.0 and 90.0 degrees:
 
-    ```csharp
+    ```
     Evas_Object *circle_obj;
 
     circle_obj = eext_circle_object_add(parent, surface);
@@ -175,7 +175,7 @@ To set the angle details of the circle object:
 
     If the name of the item is passed as `default`, the function works the same way as the `eext_circle_object_angle_min_max_set()` function. Similar to the above example, the following example creates a circle object with the minimum and maximum angles of 0.0 and 90.0:
 
-    ```csharp
+    ```
     Evas_Object *circle_obj;
 
     circle_obj = eext_circle_object_add(parent, surface);
@@ -194,7 +194,7 @@ To set the line width, color, and radius of the circle object:
 
     In the following example, a circle object with a surface is created and its line width is set to 20:
 
-    ```csharp
+    ```
     Evas_Object *circle_obj;
 
     circle_obj = eext_circle_object_add(parent, surface);
@@ -207,7 +207,7 @@ To set the line width, color, and radius of the circle object:
 
     If the name of the item is passed as `default`, the function works the same way as the `eext_circle_object_line_width_set()` function. Similar to the above example, the following example creates a circle object with a surface and sets its line width to 20:
 
-    ```csharp
+    ```
     Evas_Object *circle_obj;
 
     circle_obj = eext_circle_object_add(parent, surface);
@@ -222,7 +222,7 @@ To set the line width, color, and radius of the circle object:
 
     To set the color, the red, green, blue, and alpha values in a range from 0 to 255 must be passed. In the following example, a circle object with a surface is created and its color is set to red:
 
-    ```csharp
+    ```
     Evas_Object *circle_obj;
 
     circle_obj = eext_circle_object_add(parent, surface);
@@ -235,7 +235,7 @@ To set the line width, color, and radius of the circle object:
 
     If the name of the item is passed as `default`, the function works the same way as the `eext_circle_object_color_set()` function. Similar to the above example, the following example creates a circle object with a surface and sets its color to red:
 
-    ```csharp
+    ```
     Evas_Object *circle_obj;
 
     circle_obj = eext_circle_object_add(parent, surface);
@@ -250,7 +250,7 @@ To set the line width, color, and radius of the circle object:
 
     In the following example, a circle object with a radius of 50.0 is created:
 
-    ```csharp
+    ```
     Evas_Object *circle_obj;
 
     circle_obj = eext_circle_object_add(parent, surface);
@@ -263,7 +263,7 @@ To set the line width, color, and radius of the circle object:
 
     If the name of the item is passed as `default`, the function works the same way as the `eext_circle_object_radius_set()` function. Similar to the above example, the following example creates a circle object with a radius of 50.0:
 
-    ```csharp
+    ```
     Evas_Object *circle_obj;
 
     circle_obj = eext_circle_object_add(parent, surface);
@@ -276,7 +276,7 @@ To set the line width, color, and radius of the circle object:
 
 To disable the circle object, use the `eext_circle_object_disabled_set()` function:
 
-```csharp
+```
 Evas_Object *circle_obj;
 
 circle_obj = eext_circle_object_add(parent, surface);

@@ -20,7 +20,7 @@ For more information, see the [Index](../../../../../org.tizen.native.wearable.a
 
 To create a new index component, use the `elm_index_add()` function:
 
-```csharp
+```
 Evas_Object *index;
 Evas_Object *parent;
 
@@ -33,7 +33,7 @@ To add index items:
 
 1. Add a list item object at the letter `A`, calling the `it_select_cb()` smart callback when this item is selected:
 
-   ```csharp
+   ```
    Elm_Object_Item *list_item1;
    Elm_Object_Item *list_item2;
    elm_index_item_append(index, "A", it_select_cb, list_item1);
@@ -43,7 +43,7 @@ To add index items:
 
 2. Add item objects, calling the `it_select_cb()` smart callback when the item is selected:
 
-   ```csharp
+   ```
    Elm_Object_Item *it[5];
    for (i = 0; i < 5; ++i)
        it[i] = elm_index_item_append(index, NULL, it_select_cb, (void *)i);
@@ -51,7 +51,7 @@ To add index items:
 
 3. Define the smart callback:
 
-   ```csharp
+   ```
    /* Called when the list_item1 object is selected */
    void
    it_select_cb(void *data, Evas_Object *obj, void *event_info)
@@ -82,7 +82,7 @@ The `event_info` callback parameter is the selected item's data pointer.
 
 Register and define the associated callback to perform appropriate actions. For example, when the `selected` signal occurs, show a given area or child object depending on the selected index item:
 
-```csharp
+```
 static void
 _index_selected_cb(void *data, Evas_Object *obj, void *event_info)
 {

@@ -14,7 +14,7 @@ The rotary selector handle can use the `elm_layout` functions, because the rotar
 
 To create a rotary selector, use the `eext_rotary_selector_add()` function:
 
-```csharp
+```
 Evas_Object *rotary_selector;
 Evas_Object *parent;
 
@@ -25,7 +25,7 @@ Rotary_selector = eext_rotary_selector_add(parent);
 
 To activate or deactivate the rotary selector, use the `eext_rotary_object_event_activated_set()` function:
 
-```csharp
+```
 eext_rotary_object_event_activated_set(rotary_selector, EINA_TRUE);
 ```
 
@@ -40,7 +40,7 @@ To add an item:
 
 1. Append the new item with the `eext_rotary_selector_item_append()` function:
 
-   ```csharp
+   ```
    Eext_Object_Item * item;
    Evas_Object *image;
 
@@ -50,7 +50,7 @@ To add an item:
 
 2. Configure the item (for more information, see [Configuring the Selector and Items](#configuring-the-selector-and-items)).In the following example, 2 icons are set for the item and selector:
 
-   ```csharp
+   ```
    /* Set item icon */
    image = elm_image_add(rotary_selector);
    elm_image_file_set(image, "music_controller_btn_play.png", NULL);
@@ -69,7 +69,7 @@ To add an item:
 
    In the following example, the main text is defined for the new item:
 
-   ```csharp
+   ```
    /* Set selector main text */
    eext_rotary_selector_item_part_text_set(item, "selector,main_text", "Options");
    ```
@@ -107,7 +107,7 @@ You can also configure the selector and item appearance based on their current s
 
   For example, to set the selector color for a normal state selector:
 
-  ```csharp
+  ```
   eext_rotary_selector_part_color_set(selector, "selector,bg_image",
                                       EEXT_ROTARY_SELECTOR_SELECTOR_STATE_NORMAL,
                                       100, 100, 100, 255);
@@ -120,7 +120,7 @@ You can also configure the selector and item appearance based on their current s
 
   For example, to set the item color for a normal state item:
 
-  ```csharp
+  ```
   eext_rotary_selector_item_part_color_set(item, "item,icon",
                                            EEXT_ROTARY_SELECTOR_ITEM_STATE_NORMAL,
                                            100, 100, 100, 255);
@@ -140,7 +140,7 @@ In both these signals, the `event_info` callback parameter is `NULL`.
 
 To register and define a callback for the `item,clicked` signal:
 
-```csharp
+```
 {
     evas_object_smart_callback_add(rotary_selector, "item,clicked", item_clicked_cb, data);
 }

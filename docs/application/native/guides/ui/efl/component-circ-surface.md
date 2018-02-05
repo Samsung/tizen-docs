@@ -12,7 +12,7 @@ To create a new circle surface:
 
 - Create a circle surface in the conformant layer using the `eext_circle_surface_conformant_add()` function:
 
-  ```csharp
+  ```
   Eext_Circle_Surface *surface;
   Evas_Object *conformant;
 
@@ -22,7 +22,7 @@ To create a new circle surface:
 
 - Create a circle surface in the layout layer using the `eext_circle_surface_layout_add()` function:
 
-  ```csharp
+  ```
   Eext_Circle_Surface *surface;
   Evas_Object *layout;
 
@@ -32,7 +32,7 @@ To create a new circle surface:
 
 - Create a circle surface in the naviframe layer using the `eext_circle_surface_naviframe_add()` function:
 
-  ```csharp
+  ```
   Eext_Circle_Surface *surface;
   Evas_Object *naviframe;
 
@@ -49,7 +49,7 @@ You can add any circle objects to a circle surface.
 
 To create a circle slider (`eext_slider`) component and add it to a circle surface in the conformant layer:
 
-```csharp
+```
 Eext_Circle_Surface *surface;
 Evas_Object *slider;
 
@@ -63,7 +63,7 @@ Deleting the Evas object (conformant, layout, or naviframe) automatically delete
 
 You can, however, explicitly use the `eext_circle_surface_del()` function to delete a circle surface:
 
-```csharp
+```
 eext_circle_surface_del(surface);
 ```
 

@@ -10,7 +10,7 @@ To use a notify component in your application:
 
 1. Add a notify component with the `elm_notify_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *notify;
 
    notify = elm_notify_add(parent);
@@ -20,19 +20,19 @@ To use a notify component in your application:
 
    - Add an object to fill the layout:
 
-     ```csharp
+     ```
      Evas_Object *label = elm_label_add(parent);
      ```
 
    - Set an object to the notify component with the `elm_object_content_set()` function:
 
-     ```csharp
+     ```
      elm_object_content_set(notify, label);
      ```
 
 3. Register the [callback](#callbacks) functions. The following example shows how to define and register a callback for the `timeout` signal:
 
-   ```csharp
+   ```
    evas_object_smart_callback_add(notify, "timeout", timeout_cb, data);
 
    void
@@ -48,7 +48,7 @@ The following example shows a simple use case of the notify component.
 
  ![Notify](./media/notify1.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *notify;
@@ -83,7 +83,7 @@ You can use the align and timeout features with the notify component:
 
   To align the notify object to the bottom center of the parent object:
 
-  ```csharp
+  ```
   elm_notify_align_set(notify, 0.5, 1.0);
   ```
 
@@ -93,7 +93,7 @@ You can use the align and timeout features with the notify component:
 
   To set the timeout interval to 5 seconds:
 
-  ```csharp
+  ```
   elm_notify_timeout_set(notify, 5.0);
   ```
 

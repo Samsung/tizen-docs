@@ -10,7 +10,7 @@ To use a label component in your application:
 
 1. Add a label with the `elm_label_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *label;
 
    label = elm_label_add(parent);
@@ -18,13 +18,13 @@ To use a label component in your application:
 
 2. Set a text to the label with the `elm_object_text_set()` function. Label is based on [textblock](evas-objects.md#textblock-objects), which means you can use textblock markup in a label text.
 
-   ```csharp
+   ```
    elm_object_text_set(label, "This is a label.");
    ```
 
 3. Register the [callback](#callbacks) functions.The following example shows how to define and register a callback for the `slide,end` signal:
 
-   ```csharp
+   ```
    evas_object_smart_callback_add(label, "slide,end", slide_end_cb, data);
 
    void
@@ -40,7 +40,7 @@ The following example shows a simple use case of the label component.
 
  ![Label](./media/label1.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;
@@ -66,7 +66,7 @@ elm_box_pack_end(box, label);
 
 If you use a slide-type style, you can adjust the slide mode and animation duration using the following functions:
 
-```csharp
+```
 elm_label_slide_mode_set(label, ELM_LABEL_SLIDE_MODE_ALWAYS);
 elm_label_slide_duration_set(label, 3);
 ```

@@ -14,7 +14,7 @@ For more information, see the [Efl Extension Circle Genlist](../../../../../org.
 
 To create a circle genlist component, use the `eext_circle_object_genlist_add()` function. Pass a genlist and [circle surface](component-circ-surface.md) to the function as parameters.
 
-```csharp
+```
 Evas_Object *genlist;
 Evas_Object *circle_genlist;
 Evas_Object *parent;
@@ -33,7 +33,7 @@ To set the circle genlist scroller policy, use the `eext_circle_object_genlist_s
 
 The following example sets the horizontal scrollbar off and the vertical scrollbar always on:
 
-```csharp
+```
 eext_circle_object_genlist_scroller_policy_set(circle_genlist,
                                                ELM_SCROLLER_POLICY_OFF,
                                                ELM_SCROLLER_POLICY_ON);
@@ -43,7 +43,7 @@ eext_circle_object_genlist_scroller_policy_set(circle_genlist,
 
 To activate or deactivate the circle genlist, use the `eext_rotary_object_event_activated_set()` function:
 
-```csharp
+```
 eext_rotary_object_event_activated_set(circle_genlist, EINA_TRUE);
 ```
 

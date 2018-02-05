@@ -16,7 +16,7 @@ For more information, see the [Photocam](../../../../../org.tizen.native.mobile.
 
 To create a photocam component, use the `elm_photocam_add()` function. You can set the image file with the `elm_photocam_file_set()` function.
 
-```csharp
+```
 Evas_Object *photocam;
 
 photocam = elm_photocam_add(win);
@@ -31,7 +31,7 @@ To use the photocam zoom:
 
   To set the zoom mode to manual with a double zoom:
 
-  ```csharp
+  ```
   elm_photocam_zoom_mode_set(photocam, ELM_PHOTOCAM_ZOOM_MODE_MANUAL);
   elm_photocam_zoom_set(photocam, 2.0);
   ```
@@ -40,7 +40,7 @@ To use the photocam zoom:
 
 - Activate the multi-touch zoom by enabling gestures:
 
-  ```csharp
+  ```
   elm_photocam_gesture_enabled_set(photocam, EINA_TRUE);
   ```
 
@@ -48,7 +48,7 @@ To use the photocam zoom:
 
   To zoom in on a region starting at the coordinates (200 x 200) with a width of 400 px and a height of 300 px:
 
-  ```csharp
+  ```
   elm_photocam_image_region_bring_in(photocam, 200, 200, 400, 300);
   ```
 
@@ -80,7 +80,7 @@ In all cases, the `event_info` callback parameter is `NULL`.
 
 To register and define a callback for the `loaded` signal:
 
-```csharp
+```
 void
 message_port_cb(int local_port_id, const char *remote_app_id, bundle *message)
 {

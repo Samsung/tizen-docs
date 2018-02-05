@@ -18,7 +18,7 @@ To create an icon component, use the `elm_icon_add()` function.
 
 To set the icon as the [freedesktop.org](http://freedesktop.org) standard `Home` icon, use the `elm_icon_standard_set()` function.
 
-```csharp
+```
 Evas_Object *icon;
 Evas_Object *parent;
 
@@ -32,19 +32,19 @@ To change the image file:
 
 - You can use an image in the filesystem (for example, `/tmp/Home.png`):
 
-  ```csharp
+  ```
   elm_image_file_set(icon, "/tmp/Home.png", NULL);
   ```
 
   You can also use a group in an Edje file (for example, `/tmp/Home.edj`):
 
-  ```csharp
+  ```
   elm_image_file_set(icon, "/tmp/Home.edj", "elm/icon/Home/default");
   ```
 
 - You can generate and use a thumbnail:
 
-  ```csharp
+  ```
   elm_icon_thumb_set(icon, "/tmp/Home.png", NULL);
   ```
 

@@ -124,7 +124,7 @@ The Elementary library sets the default information (label, traits, state) for t
 
   Use the `elm_object_text_set()` function to define a custom name.
 
-  ```csharp
+  ```
   /* File: src/accessibility/screen_reader/description.c */
 
   btn = elm_button_add(layout);
@@ -137,7 +137,7 @@ The Elementary library sets the default information (label, traits, state) for t
 
   If you define a button with an icon image only, no name or description is provided by default.
 
-  ```csharp
+  ```
   /* File: src/accessibility/screen_reader/description.c */
 
   btn = elm_button_add(layout);
@@ -152,7 +152,7 @@ The Elementary library sets the default information (label, traits, state) for t
 
   Use the `elm_atspi_accessible_description_set()` function to define a description. To make multiple language versions available define the actual description strings in PO files and use the `elm_atspi_accessible_translation_domain_set()` function to bind the translation domain to the component.
 
-  ```csharp
+  ```
   /* File: CMakeLists.txt */
 
   # i18n
@@ -224,7 +224,7 @@ The Elementary library sets the default information (label, traits, state) for t
 
   - Use the `elm_atspi_accessible_name_set()` function to define an accessible name.
 
-    ```csharp
+    ```
     /* File: src/accessibility/screen_reader/description.c */
 
     btn = elm_button_add(layout);
@@ -241,7 +241,7 @@ The Elementary library sets the default information (label, traits, state) for t
 
   - You can also use the `elm_atspi_accessible_name_cb_set()` and `elm_atspi_accessible_description_cb_set()` functions to define callbacks that return an accessible name and description for the button.
 
-    ```csharp
+    ```
     static char*
     _accessible_name_cb(void *data, Evas_Object *obj)
     {
@@ -268,7 +268,7 @@ You can also create a custom reading of multi-style components. Sometimes, it is
 
 The following source code snippet demonstrates how to handle the `favorite` and `on&off` checkbox styles in the application source code:
 
-```csharp
+```
 /* File: src/check.c */
 
 check = elm_check_add(box);
@@ -294,7 +294,7 @@ The following table lists the function you can use to define the reading informa
 
 The following source code snippet demonstrates how to set the reading information types for an accessible object in the application source code:
 
-```csharp
+```
 static char*
 _accessible_name_cb(void *data, Evas_Object *obj)
 {
@@ -337,7 +337,7 @@ The following code illustrates how the customized reading order for the top part
 
 You can have various independent relation-based navigation chains on one screen. Each relation-based navigation chain is resolved locally and has priority over the default navigation order maintained by the screen reader. When one of the ends of a relation-based navigation chain is reached, the highlight frame goes forward along to the actual navigation direction to the closest component in the default navigation order. It omits interim components of the relation-based navigation chains. In this example, when the navigation command "next" is called from the **c** button, the highlight frame goes from the **c** button to the **Default reading order** label.
 
-```csharp
+```
 /* File: src/accessibility/screen_reader/reading_order.c */
 
 Evas_Object *btnA;
@@ -453,7 +453,7 @@ group {
 
 In the `src/accessibility/screen_reader/custom_frame.c` file, assign the style defined above to the button component using the `elm_object_style_set()` function, where the second parameter is the last segment of the `elm/button/base/custom2` group name defined in the EDC file.
 
-```csharp
+```
 static Evas_Object*
 create_custom_frame(Evas_Object *parent)
 {

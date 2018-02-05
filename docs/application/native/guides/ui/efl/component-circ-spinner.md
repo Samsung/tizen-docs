@@ -14,7 +14,7 @@ To create a circle spinner component:
 
 1. Create an `elm_spinner` object:
 
-   ```csharp
+   ```
    Evas_Object *spinner;
    Evas_Object *circle_spinner;
 
@@ -23,13 +23,13 @@ To create a circle spinner component:
 
 2. Set the object style as `circle`:
 
-   ```csharp
+   ```
    elm_object_style_set(spinner, "circle");
    ```
 
 3. Create an `eext_spinner` object using the `eext_circle_object_spinner_add()` function. Pass a [circle surface](component-circ-surface.md) as the second parameter.
 
-   ```csharp
+   ```
    circle_spinner = eext_circle_object_spinner_add(spinner, surface);
    ```
 
@@ -45,13 +45,13 @@ To customize the angle offset of the marker to not to follow the internally-calc
 
 1. Set the custom circle spinner angle value using the `eext_circle_object_spinner_angle_set()` function.In the following example, the circle spinner angle value is set to 2.0:
 
-   ```csharp
+   ```
    eext_circle_object_spinner_angle_set(circle_spinner, 2.0);
    ```
 
 2. After the `eext_circle_object_spinner_angle_set()` function has been executed, the calculation formula for the angle offset is changed:
 
-   ```csharp
+   ```
    /* Formula for calculating the default angle offset */
    (360/ max - min) * step
 
@@ -65,7 +65,7 @@ You can also use the above function to define the angle offset per each rotary c
 
 To activate or deactivate the circle spinner, use the `eext_rotary_object_event_activated_set()` function:
 
-```csharp
+```
 eext_rotary_object_event_activated_set(circle_spinner, EINA_TRUE);
 ```
 

@@ -18,7 +18,7 @@ For more information, see the [Ctxpopup](../../../../../org.tizen.native.wearabl
 
 To create a ctxpopup component, use the `elm_ctxpopup_add()` function:
 
-```csharp
+```
 Evas_Object *ctxpopup;
 Evas_Object *parent;
 
@@ -41,7 +41,7 @@ The ctxpopup has the following styles for the circular screen:
 
 To set the style to, for example, `default`:
 
-```csharp
+```
 elm_object_style_set(ctxpopup, "default");
 ```
 
@@ -53,7 +53,7 @@ To configure the ctxpopup:
 
   In the following example, the orientation is set to horizontal:
 
-  ```csharp
+  ```
   elm_ctxpopup_horizontal_set(ctxpopup, EINA_TRUE);
   ```
 
@@ -61,7 +61,7 @@ To configure the ctxpopup:
 
   The ctxpopup can be hidden automatically when its parent is resized. The auto hide functionality is enabled by default. You can disable auto hiding by calling the `elm_ctxpopup_auto_hide_disabled_set()` function with `EINA_TRUE`:
 
-  ```csharp
+  ```
   elm_ctxpopup_auto_hide_disabled_set(ctxpopup, EINA_TRUE);
   ```
 
@@ -75,7 +75,7 @@ To manage the ctxpopup items:
 
    To append an item with a `test` label, no icon, and the `clicked` callback (`_ctxpopup_item_cb`):
 
-   ```csharp
+   ```
    Elm_Object_Item *it;
 
    it = elm_ctxpopup_item_append(ctxpopup, "test", NULL, _ctxpopup_item_cb, NULL);
@@ -87,7 +87,7 @@ To manage the ctxpopup items:
 
    - To set the icon to the standard `home` icon:
 
-     ```csharp
+     ```
      Evas_Object *home_icon = elm_icon_add(ctxpopup);
      elm_icon_standard_set(home_icon, "home");
 
@@ -96,7 +96,7 @@ To manage the ctxpopup items:
 
 3. Define a callback that is triggered when the item is clicked:
 
-   ```csharp
+   ```
    static void
    _ctxpopup_item_cb(void *data, Evas_Object *obj, void *event_info)
    {
@@ -115,7 +115,7 @@ The `event_info` callback parameter is `NULL`.
 
 To register and define a callback for the `dismissed` signal:
 
-```csharp
+```
 {
     evas_object_smart_callback_add(ctxpopup, "dismissed", dismissed_cb, data);
 }

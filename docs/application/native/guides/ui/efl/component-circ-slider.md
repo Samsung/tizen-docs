@@ -10,7 +10,7 @@ To use a circle slider component in your application:
 
 1. To create a circle slider component, use the `eext_circle_object_slider_add()` function. Pass a circle surface as the second parameter.
 
-   ```csharp
+   ```
    Evas_Object *slider = NULL;
 
    slider = eext_circle_object_slider_add(ad->nf, ad->circle_surface);
@@ -20,7 +20,7 @@ To use a circle slider component in your application:
 
 3. Register the [callback](#callbacks) functions.The following example shows how to define and register a callback for the `value,changed` signal:
 
-   ```csharp
+   ```
    evas_object_smart_callback_add(slider, "value,changed", _value_changed_cb, NULL);
 
    /* Callback for the "value,changed" signal */
@@ -39,7 +39,7 @@ The following example shows a simple use case of the circle slider component.
 
  ![Circle slider](./media/circle_slider3.png)
 
-```csharp
+```
 Evas_Object *circle_surface;
 Evas_Object *nf;
 Evas_Object *slider;
@@ -97,7 +97,7 @@ The following example shows how to manipulate the items.
 
 ![img](./media/circle_slider_practice_1.png)
 
-```csharp
+```
 Evas_Object* slider;
 
 slider = eext_circle_object_slider_add(ad->nf, ad->circle_surface);
@@ -115,7 +115,7 @@ eext_circle_object_radius_set(slider, default_radius * 0.7);
 
 ![img](./media/circle_slider_practice_2.png)
 
-```csharp
+```
 Evas_Object* slider;
 
 slider = eext_circle_object_slider_add(ad->nf, ad->circle_surface);

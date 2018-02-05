@@ -10,7 +10,7 @@ To use a flipselector component in your application:
 
 1. Add a flipselector with the `elm_flipselector_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *flipselector;
 
    flipselector = elm_flipselector_add(parent);
@@ -18,7 +18,7 @@ To use a flipselector component in your application:
 
 2. Add items to the flipselector with the `elm_flipselector_item_append()` function:
 
-   ```csharp
+   ```
    Elm_Object_Item *flip_it;
 
    flip_it = elm_flipselector_item_append(flipselector, "99", it_select_cb, NULL);
@@ -33,7 +33,7 @@ To use a flipselector component in your application:
 
 3. Register the [callback](#callbacks) functions.The following example shows how to define and register a callback for the `selected` signal:
 
-   ```csharp
+   ```
    evas_object_smart_callback_add(flipselector, "selected", _flip_selected_cb, NULL);
 
    static void
@@ -51,7 +51,7 @@ The following example shows a simple use case of the flipselector component.
 
  ![Flipselector](./media/flipselector1.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;

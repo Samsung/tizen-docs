@@ -27,7 +27,7 @@ For more information, see the [Entry](../../../../../org.tizen.native.wearable.a
 
 To create an entry component, use the `elm_entry_add()` function. You can set the text inside it with the `elm_entry_entry_set()` function.
 
-```csharp
+```
 Evas_Object *entry;
 Evas_Object *parent;
 
@@ -79,7 +79,7 @@ To manage the entry component content:
 
 - Retrieve the currently selected text:
 
-  ```csharp
+  ```
   const char *selection;
 
   selection = elm_entry_selection_get(entry);
@@ -105,7 +105,7 @@ To manage the entry component content:
 
   - To limit the size of the entry to 8 characters:
 
-    ```csharp
+    ```
     static Elm_Entry_Filter_Limit_Size
     limit_size =
     {
@@ -126,7 +126,7 @@ To manage the entry component content:
 
    The following example shows how to reject the '+', '-', '*', and '/' characters:
 
-    ```csharp
+    ```
     static Elm_Entry_Filter_Accept_Set
     accept_set =
     {
@@ -147,7 +147,7 @@ elm_entry_file_set(entry, "/tmp/test.txt", ELM_TEXT_FORMAT_MARKUP_UTF8);
 
 You can also deactivate the automatic saving feature and explicitly save the content when needed:
 
-```csharp
+```
 /* Disable autosaving */
 elm_entry_autosave_set(entry, EINA_FALSE);
 
@@ -194,7 +194,7 @@ To manage the cursor position:
 
   The following example starts a selection at the current cursor position, moves 5 characters right, and ends the selection:
 
-  ```csharp
+  ```
   elm_entry_cursor_selection_begin(entry);
 
   for (i = 0; i < 5; i++)
@@ -278,7 +278,7 @@ You can format the entry text in many ways:
 
   - You can modify 2 content parts of the default theme: `icon` and `end`.The following example shows how to set an icon in the `end` content part:
 
-    ```csharp
+    ```
     Evas_Object *icon;
 
     ic = elm_icon_add(entry);
@@ -343,7 +343,7 @@ The `event_info` callback parameter points to an `Elm_Focus_Info` object.
 
 To register and define a callback for the `focused` signal:
 
-```csharp
+```
 {
     evas_object_smart_callback_add(entry, "focused", focused_cb, data);
 }

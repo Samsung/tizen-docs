@@ -14,7 +14,7 @@ To use a flip component in your application:
 
 1. Add a flip with the `elm_flip_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *flip;
 
    flip = elm_flip_add(parent);
@@ -22,7 +22,7 @@ To use a flip component in your application:
 
 2. Add content to the flip using the `elm_object_part_content_set()` function. Use the `front` and `back` part names to define the 2 `Evas_Objects` used as content:
 
-   ```csharp
+   ```
    elm_object_part_content_set(flip, "front", content1);
    elm_object_part_content_set(flip, "back", content2);
    ```
@@ -36,7 +36,7 @@ To use a flip component in your application:
 4. Register the [callback](#callbacks) functions.  
 The following example shows how to define and register a callback for the `animate,begin` signal.
 
-   ```csharp
+   ```
    evas_object_smart_callback_add(entry, "animate,begin", anim_start_cb, data);
 
    void

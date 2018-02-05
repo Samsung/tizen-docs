@@ -10,7 +10,7 @@ To use a circle progressbar component in your application:
 
 1. To create a circle progressbar component, use the `eext_circle_object_progressbar_add()` function. Pass a [circle surface](component-circ-surface.md) as the second parameter to render the progressbar.
 
-   ```csharp
+   ```
    Evas_Object *circle_progressbar;
    Evas_Object *parent;
 
@@ -24,7 +24,7 @@ To use a circle progressbar component in your application:
 
    In the following example, the minimum value is set to 0.0, the maximum value to 100.0, and the current value to 3.0:
 
-   ```csharp
+   ```
    eext_circle_object_value_min_max_set(circle_progressbar, 0.0, 100.0);
    eext_circle_object_value_set(circle_progressbar, 3.0);
    ```
@@ -35,7 +35,7 @@ The following example shows a simple use case of the circle progressbar componen
 
  ![Circle progressbar](./media/progressbar_eext_circ_wn.png)
 
-```csharp
+```
 /* C code */
 
 Evas_Object *win;

@@ -27,7 +27,7 @@ For more information, see the [Entry](../../../../../org.tizen.native.mobile.api
 
 To create an entry component, use the `elm_entry_add()` function. You can set the text inside it with the `elm_entry_entry_set()` function.
 
-```csharp
+```
 Evas_Object *entry;
 Evas_Object *parent;
 
@@ -43,19 +43,19 @@ To manage the entry component content:
 
   - Append text to the end of the existing content:
 
-    ```csharp
+    ```
     elm_entry_entry_append(entry, "END");
     ```
 
   - Insert text at the current cursor position:
 
-    ```csharp
+    ```
     elm_entry_entry_insert(entry, "CURSOR");
     ```
 
 - Check whether the entry is empty:
 
-  ```csharp
+  ```
   Eina_Bool Empty = elm_entry_is_empty(entry);
   ```
 
@@ -65,7 +65,7 @@ To manage the entry component content:
 
   - Select all the content of the entry component:
 
-    ```csharp
+    ```
     elm_entry_select_all(entry);
     ```
 
@@ -73,13 +73,13 @@ To manage the entry component content:
 
   - Clear the current selection:
 
-    ```csharp
+    ```
     elm_entry_select_none(entry);
     ```
 
 - Retrieve the currently selected text:
 
-  ```csharp
+  ```
   const char *selection;
 
   selection = elm_entry_selection_get(entry);
@@ -89,13 +89,13 @@ To manage the entry component content:
 
 - Copy or cut the selection to the clipboard:
 
-  ```csharp
+  ```
   elm_entry_selection_cut(entry);
   ```
 
   Paste the selection in the same or a different entry:
 
-  ```csharp
+  ```
   elm_entry_selection_paste(entry);
   ```
 
@@ -105,7 +105,7 @@ To manage the entry component content:
 
   - To limit the size of the entry to 8 characters:
 
-    ```csharp
+    ```
     static Elm_Entry_Filter_Limit_Size
     limit_size =
     {
@@ -124,7 +124,7 @@ To manage the entry component content:
 
   - To define a list of accepted or rejected characters, append the filter with the `Elm_Entry_Filter_Accept_Set` structure.The following example shows how to reject the '+', '-', '*', and '/' characters:  
 
-  ```csharp
+  ```
   static Elm_Entry_Filter_Accept_Set
   accept_set =
   {    
@@ -137,7 +137,7 @@ To manage the entry component content:
 
 You can define a file (for example, `/tmp/test.txt`) to save the entry content. The content in the file is implicitly loaded and displayed. After the file is set, any content changes in the entry are automatically saved after a short delay.
 
-```csharp
+```
 /* Set the file in which the entry text is saved */
 /* Implicitly load the existing file content */
 elm_entry_file_set(entry, "/tmp/test.txt", ELM_TEXT_FORMAT_MARKUP_UTF8);
@@ -145,7 +145,7 @@ elm_entry_file_set(entry, "/tmp/test.txt", ELM_TEXT_FORMAT_MARKUP_UTF8);
 
 You can also deactivate the automatic saving feature and explicitly save the content when needed:
 
-```csharp
+```
 /* Disable autosaving */
 elm_entry_autosave_set(entry, EINA_FALSE);
 
@@ -191,7 +191,7 @@ To manage the cursor position:
 
   The following example starts a selection at the current cursor position, moves 5 characters right, and ends the selection:
 
-  ```csharp
+  ```
   elm_entry_cursor_selection_begin(entry);
 
   for (i = 0; i < 5; i++)
@@ -271,7 +271,7 @@ You can format the entry text in many ways:
 
    The `elm_entry_item_provider_append()` function appends a custom item provider to the list for that entry. You can also prepend a custom item provider to the list with the `elm_entry_item_provider_prepend()` function. The `elm_entry_item_provider_remove()` function removes a custom item provider from the list.
 
-    ```csharp
+    ```
     static Evas_Object*
     item_provider(void *images EINA_UNUSED, Evas_Object *en, const char *item)
     {
@@ -299,7 +299,7 @@ You can format the entry text in many ways:
 
   To tweak the style of the text within the entry component, you can override parts of the theme style to the textblock object using the `elm_entry_text_style_user_push()` function. The function pushes a new style on top of the user style stack that overrides the current style. Remove the style at the top of the user style stack with the `elm_entry_text_style_user_pop()` function.
 
-  ```csharp
+  ```
   Evas_Object *entry;
 
   Entry = elm_entry_add(layout);
@@ -316,7 +316,7 @@ You can format the entry text in many ways:
 
   - You can modify 2 content parts of the default theme: `icon` and `end`.The following example shows how to set an icon in the `end` content part:
 
-    ```csharp
+    ```
     Evas_Object *icon;
 
     ic = elm_icon_add(entry);
@@ -418,7 +418,7 @@ You can register callback functions connected to the following signals for an en
 
 The following example shows how to define and register a callback for the `focused` signal:
 
-```csharp
+```
 evas_object_smart_callback_add(entry, "focused", focused_cb, data);
 
 /* Callback for the "focused" signal */

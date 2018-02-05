@@ -16,7 +16,7 @@ The selector view can emit events when an item or the selector are clicked, and 
 
 To create a more option component, use the `eext_more_option_add()` function:
 
-```csharp
+```
 Evas_Object *more_option = NULL;
 
 more_option = eext_more_option_add(parent);
@@ -28,7 +28,7 @@ To add an item:
 
 1. Append the new item with the `eext_more_option_item_append()` function:
 
-   ```csharp
+   ```
    {
        Evas_Object *img = NULL;
 
@@ -38,7 +38,7 @@ To add an item:
 
 2. Configure the item (for more information, see [Configuring the More Option and Items](#configure)).In the following example, the main and sub text are set for the item, and an icon is added as the item content:
 
-   ```csharp
+   ```
        /* Set the text in the rotary_selector */
        eext_more_option_item_part_text_set(item, "selector,main_text", "test1");
        eext_more_option_item_part_text_set(item, "selector,sub_text", "test1");
@@ -61,7 +61,7 @@ To configure the more option cue button direction, and the text and content of v
 
  To set the cue button on the right:
 
-  ```csharp
+  ```
   eext_more_option_direction_set(more_option, EEXT_MORE_OPTION_DIRECTION_RIGHT);
   ```
 
@@ -92,7 +92,7 @@ To receive notifications about the more option events, listen for the following 
 
 To register and define a callback for the `more,option,opened` signal:
 
-```csharp
+```
 {
     evas_object_smart_callback_add(more_option, "more,option,opened", _opened_cb, data);
 }

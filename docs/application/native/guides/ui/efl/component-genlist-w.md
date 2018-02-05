@@ -18,7 +18,7 @@ For more information, see the [Genlist](../../../../../org.tizen.native.wearable
 
 To add a genlist component, use the `elm_genlist_add()` function:
 
-```csharp
+```
 Evas_Object *genlist;
 Evas_Object *parent;
 
@@ -69,7 +69,7 @@ You can use the genlist item class for the following purposes:
 - Registering callback functions for item realization
 - Registering a callback function for item deletion
 
-```csharp
+```
 Elm_Genlist_Item_Class *itc = elm_genlist_item_class_new();
 
 itc->item_style = "default";

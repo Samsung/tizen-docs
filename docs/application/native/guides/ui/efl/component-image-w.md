@@ -18,7 +18,7 @@ For more information, see the [Image](../../../../../org.tizen.native.wearable.a
 
 To create an image component, use the `elm_image_add()` function:
 
-```csharp
+```
 Evas_Object *image;
 Evas_Object *parent;
 
@@ -93,7 +93,7 @@ The `event_info` callback parameter is `NULL`.
 
 To register and define a callback for the `clicked` signal:
 
-```csharp
+```
 {
     evas_object_smart_callback_add(image, "clicked", clicked_cb, data);
 }

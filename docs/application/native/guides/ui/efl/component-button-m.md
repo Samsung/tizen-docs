@@ -10,7 +10,7 @@ To use a button component in your application:
 
 1. Add a button with the `elm_button_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *button;
 
    button = elm_button_add(parent);
@@ -20,19 +20,19 @@ To use a button component in your application:
 
    - Set a style to the button with the `elm_object_style_set()` function. If you use the default style, you can skip this step.
 
-     ```csharp
+     ```
      elm_object_style_set(button, "circle");
      ```
 
    - Set a label to the button with the `elm_object_text_set()` function, if the style supports a text part.
 
-     ```csharp
+     ```
      elm_object_text_set(button, "Home");
      ```
 
    - Set an image object to the button with the `elm_object_part_content_set()` function, if the style supports a swallow part.
 
-     ```csharp
+     ```
      Evas_Object *icon;
 
      elm_object_part_content_set(button, "icon", icon);
@@ -40,7 +40,7 @@ To use a button component in your application:
 
 3. Register the [callback](#callbacks) functions.The following example shows how to define and register a callback for the `clicked` signal:
 
-   ```csharp
+   ```
    evas_object_smart_callback_add(button, "clicked", clicked_cb, data);
 
    void
@@ -56,7 +56,7 @@ The following example shows a simple use case of the button component.
 
  ![Button](./media/button1.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;
@@ -94,19 +94,19 @@ You can use the autorepeat feature in your application. Once a button is pressed
 
 - To disable the autorepeat feature:
 
-  ```csharp
+  ```
   elm_button_autorepeat_set(button, EINA_FALSE);
   ```
 
 - To set the initial timeout before the `repeated` signal is emitted:
 
-  ```csharp
+  ```
   elm_button_autorepeat_initial_timeout_set(button, 5.0);
   ```
 
 - To set the interval between 2 `repeated` signals:
 
-  ```csharp
+  ```
   elm_button_autorepeat_gap_timeout_set(button, 0.5);
   ```
 

@@ -17,7 +17,7 @@ To create a circle datetime component, use the `eext_circle_object_datetime_add(
 - The `elm_datetime` handle must be passed as the first parameter.
 - If a [circle surface](component-circ-surface.md) is passed as the second parameter, a circle object connected with a circle surface is created, and it is rendered by the circle surface. If you pass `NULL` instead of a circle surface, the new circle object is managed and rendered by itself.
 
-```csharp
+```
 Evas_Object *datetime;
 Evas_Object *circle_datetime;
 
@@ -31,7 +31,7 @@ The circle datetime component is created with the `default` style.
 
 To activate or deactivate the circle datetime, use the `eext_rotary_object_event_activated_set()` function:
 
-```csharp
+```
 eext_rotary_object_event_activated_set(circle_datetime, EINA_TRUE);
 ```
 

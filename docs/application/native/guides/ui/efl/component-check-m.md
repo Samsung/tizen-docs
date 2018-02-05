@@ -10,7 +10,7 @@ To use a check component in your application:
 
 1. Add a check component with the `elm_check_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *check;
 
    check = elm_check_add(parent);
@@ -20,13 +20,13 @@ To use a check component in your application:
 
    - Set a style to the check component with the `elm_object_style_set()` function. If you use the default style, you can skip this step.
 
-     ```csharp
+     ```
      elm_object_style_set(check, "favorite");
      ```
 
    - Set a label to the check component with the `elm_object_text_set()` or `elm_object_part_text_set()` function:
 
-     ```csharp
+     ```
      /* Default style */
      elm_object_text_set(check, "Check");
 
@@ -37,7 +37,7 @@ To use a check component in your application:
 
    - Set an icon to the button with the `elm_object_part_content_set()` function and pass the `icon` part name as a parameter.
 
-     ```csharp
+     ```
      Evas_Object *icon;
 
      elm_object_part_content_set(check, "icon", icon);
@@ -45,7 +45,7 @@ To use a check component in your application:
 
 3. Register the [callback](#callbacks) functions.The following example shows how to define and register a callback for the `changed` signal:
 
-   ```csharp
+   ```
    evas_object_smart_callback_add(check, "changed", changed_cb, data);
 
    void
@@ -61,7 +61,7 @@ The following example shows a simple use case of the check component.
 
  ![Check component](./media/check1.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;

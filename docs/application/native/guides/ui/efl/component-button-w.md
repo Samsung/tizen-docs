@@ -18,7 +18,7 @@ For more information, see the [Button](../../../../../org.tizen.native.wearable.
 
 To create a button, use the `elm_button_add()` function:
 
-```csharp
+```
 Evas_Object *button;
 Evas_Object *parent;
 
@@ -30,7 +30,7 @@ You can add an icon or text inside the button:
 
 - To add an icon, use the `elm_object_part_content_set()` function with the `icon` part name:
 
-  ```csharp
+  ```
   Evas_Object *ic;
   ic = elm_icon_add(button);
   elm_image_file_set(ic, "icon.png", NULL);
@@ -39,7 +39,7 @@ You can add an icon or text inside the button:
 
 - To add text to the label, use the `elm_object_text_set()` function:
 
-  ```csharp
+  ```
   elm_object_text_set(button, "Click me!");
   ```
 
@@ -57,7 +57,7 @@ You can set a style for the button:
   - `default`
   - `bottom`
 
-```csharp
+```
 /* Rectangular screen button style */
 elm_object_style_set(button, "nextdepth");
 
@@ -81,7 +81,7 @@ In all cases, the `event_info` callback parameter is `NULL`.
 
 To register and define a callback for the `clicked` signal:
 
-```csharp
+```
 {
     evas_object_smart_callback_add(button, "clicked", clicked_cb, data);
 }
@@ -105,7 +105,7 @@ To manage the autorepeat feature:
 
   To disable the feature:
 
-  ```csharp
+  ```
   elm_button_autorepeat_set(button, EINA_FALSE);
   ```
 
@@ -113,7 +113,7 @@ To manage the autorepeat feature:
 
   To set the timeout to 5 seconds:
 
-  ```csharp
+  ```
   elm_button_autorepeat_initial_timeout_set(button, 5.0);
   ```
 
@@ -121,7 +121,7 @@ To manage the autorepeat feature:
 
   To set the interval to 0.5 seconds:
 
-  ```csharp
+  ```
   elm_button_autorepeat_gap_timeout_set(button, 0.5);
   ```
 

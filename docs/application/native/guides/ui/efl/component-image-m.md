@@ -18,7 +18,7 @@ For more information, see the [Image](../../../../../org.tizen.native.mobile.api
 
 To create an image component, use the `elm_image_add()` function:
 
-```csharp
+```
 Evas_Object *image;
 Evas_Object *parent;
 
@@ -31,14 +31,14 @@ To configure the image component:
 
 - Disable Elementary scaling so that the image does not scale but resizes in both directions:
 
-  ```csharp
+  ```
   elm_image_no_scale_set(image, EINA_TRUE);
   elm_image_resizable_set(image, EINA_TRUE, EINA_TRUE);
   ```
 
 - To keep the original aspect ratio when resizing the image, define how the image fits into the object's area:
 
-  ```csharp
+  ```
   /* Tell the image to keep original aspect ratio */
   elm_image_aspect_fixed_set(image, EINA_TRUE);
   /* Then let the image fill the entire object */
@@ -84,7 +84,7 @@ To configure the image component:
   - To define whether the image must animate itself, use the `elm_image_animated_set()` function. To enable the animation, use the `EINA_TRUE` flag.
   - To control the animation, use the `elm_image_animated_play_set()` function. To play the animation, use the `EINA_TRUE` flag, and to stop the animation, use the `EINA_FALSE` flag.
 
-  ```csharp
+  ```
   if (elm_image_animated_available_get(image)) {
       elm_image_animated_set(image, EINA_TRUE);
       elm_image_animated_play_set(image, EINA_TRUE);
@@ -107,7 +107,7 @@ You can register callback functions connected to the following signals for an im
 
 The following example shows how to define and register a callback for the `clicked` signal:
 
-```csharp
+```
 evas_object_smart_callback_add(image, "clicked", clicked_cb, data);
 
 /* Callback for the "clicked" signal */

@@ -10,7 +10,7 @@ To use an index component in your application:
 
 1. Add an index with the `elm_index_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *index;
 
    index = elm_index_add(parent);
@@ -20,7 +20,7 @@ To use an index component in your application:
 
 3. Append items to the index with the `elm_index_item_append()` function. The function takes 5 parameters: the pointer of the toolbar, a file path of an icon, a text, a callback function to call when the item is clicked, and the parameter passed to the callback.
 
-   ```csharp
+   ```
    elm_index_item_append(index, "A", _item_selected_cb, NULL);
    ```
 
@@ -32,7 +32,7 @@ The following example shows a simple use case of the index component.
 
  ![Index](./media/index1.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;
@@ -65,7 +65,7 @@ To connect index items with list items:
 
 2. When appending an index item, pass a pointer to a list item to which you want to connect the index item.
 
-   ```csharp
+   ```
    Elm_Object_Item *it;
 
    it = elm_list_item_append(list, "tizen", NULL, NULL, NULL, NULL);
@@ -74,7 +74,7 @@ To connect index items with list items:
 
 3. Register a callback function to the index for the `changed` signal. Bring in the corresponding list item in the callback function. The `event_info` parameter is the changed index item and the `elm_object_item_data_get()` function retrieves the list item passed to `elm_index_item_append()` function.
 
-   ```csharp
+   ```
    void
    index_changed_cb(void *data, Evas_Object *obj, void *event_info)
    {
@@ -88,7 +88,7 @@ The following example shows an index with a list.
 
  ![Index with list](./media/index2.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;

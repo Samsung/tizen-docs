@@ -20,7 +20,7 @@ To create a GLView component:
 
 1. Add a GLView component using the `elm_glview_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *glview;
    Evas_Object *parent;
 
@@ -31,7 +31,7 @@ To create a GLView component:
 
    To set the size to 200 x 200 pixels:
 
-   ```csharp
+   ```
    elm_glview_size_set(glview, 200, 200);
    ```
 
@@ -95,7 +95,7 @@ The `event_info` callback parameter points at an `Elm_Focus_Info` object.
 
 To register and define a callback for the `focused` signal:
 
-```csharp
+```
 {
     evas_object_smart_callback_add(glview, "focused", focused_cb, data);
 }

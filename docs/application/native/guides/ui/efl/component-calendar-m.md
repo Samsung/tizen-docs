@@ -16,7 +16,7 @@ To use a calendar component in your application:
 
 2. Select the month to display with the `elm_calendar_selected_time_set()` function:
 
-   ```csharp
+   ```
    Evas_Object *calendar;
    Evas_Object *parent;
    time_t the_time;
@@ -33,20 +33,20 @@ To use a calendar component in your application:
 
      To change the first weekday to Monday:
 
-     ```csharp
+     ```
      elm_calendar_first_day_of_week_set(calendar, ELM_DAY_MONDAY);
      ```
 
    - Modify the names of the weekdays using the `elm_calendar_weekdays_names_set()` function:
 
-     ```csharp
+     ```
      const char *weekname[7] = {"A", "B", "C", "D", "E", "F", "G"};
      elm_calendar_weekdays_names_set(calendar, &weekname);
      ```
 
    - Mark holidays with the `elm_calendar_mark_add()` function.The following example shows how to mark a Sunday as holiday:
 
-     ```csharp
+     ```
      struct tm *sunday = gmtime(&the_time);
      sunday->tm_mday -= sunday->tm_wday;
      sunday->tm_wday = 0;
@@ -56,7 +56,7 @@ To use a calendar component in your application:
 
 4. Register the [callback](#callback) functions.The following example shows how to define and register a callback for the `changed` signal:
 
-   ```csharp
+   ```
    evas_object_smart_callback_add(calendar, "changed", changed_cb, data);
 
    void

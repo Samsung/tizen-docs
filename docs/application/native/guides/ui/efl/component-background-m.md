@@ -10,7 +10,7 @@ To use a background component in your application:
 
 1. Add a background with the `elm_bg_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *bg;
 
    bg = elm_bg_add(parent);
@@ -20,13 +20,13 @@ To use a background component in your application:
 
    - Set a color to the background using the `elm_bg_color_set()` function:
 
-     ```csharp
+     ```
      elm_bg_color_set(bg, 64, 127, 256);
      ```
 
    - Set an Edje group as a background using the `elm_bg_file_set()` function:
 
-     ```csharp
+     ```
      elm_bg_file_set(bg, "/path/to/the/edje", "group name");
      ```
 
@@ -47,7 +47,7 @@ The following example shows a simple use case of the background component.
 
  ![Background](./media/bg_image.png)
 
-```csharp
+```
 Evas_Object *bg;
 Evas_Object *box;
 Evas_Object *label;

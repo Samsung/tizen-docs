@@ -16,7 +16,7 @@ For more information, see the [Efl Extension Circle Scroller](../../../../../org
 
 To create a circle scroller component, use the `eext_circle_object_scroller_add()` function. Pass a `elm_scroller` component as the first parameter and a [circle surface](component-circ-surface.md) as the second parameter.
 
-```csharp
+```
 Evas_Object *scroller;
 Evas_Object *circle_scroller;
 
@@ -38,7 +38,7 @@ To set the circle scroller policy, use the `eext_circle_object_scroller_policy_s
 
 The following example sets the horizontal scrollbar on when needed and the vertical scrollbar always off:
 
-```csharp
+```
 eext_circle_object_scroller_policy_set(circle_scroller, ELM_SCROLLER_POLICY_AUTO, ELM_SCROLLER_POLICY_OFF);
 ```
 
@@ -48,7 +48,7 @@ To get the current scroller policy, use the `eext_circle_object_scroller_policy_
 
 To activate or deactivate the circle scroller, use the `eext_rotary_object_event_activated_set()` function:
 
-```csharp
+```
 eext_rotary_object_event_activated_set(circle_scroller, EINA_TRUE);
 ```
 

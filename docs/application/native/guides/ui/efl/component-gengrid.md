@@ -12,7 +12,7 @@ To use a gengrid component in your application:
 
 1. Add a gengrid with the `elm_gengrid_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *gengrid;
 
    gengrid = elm_gengrid_add(parent);
@@ -24,7 +24,7 @@ To use a gengrid component in your application:
 
    The gengrid item class must be freed manually with `elm_gengrid_item_class_free()` function after all items are appended.
 
-      ```csharp
+      ```
       Elm_Gengrid_Item_Class *itc = elm_gengrid_item_class_new();
 
       itc->item_style = "default";
@@ -37,7 +37,7 @@ To use a gengrid component in your application:
 
    When a gengrid item becomes realized, the `text_get` function is called repeatedly for all text parts in that item. After the text is set to the part, it is freed automatically. Do not free it manually.
 
-      ```csharp
+      ```
       static char*
       _item_label_get(void *data, Evas_Object *obj, const char *part)
       {
@@ -52,7 +52,7 @@ To use a gengrid component in your application:
 
    The `content_get` function is called repeatedly for all swallow parts in the item. It must return a valid object handle to be set, or `NULL` when no content is desired. The object is deleted by the gengrid on its deletion or when the item is unrealized.
 
-      ```csharp
+      ```
       static Evas_Object*
       _item_content_get(void *data, Evas_Object *obj, const char *part)
       {
@@ -71,7 +71,7 @@ To use a gengrid component in your application:
 
    This function is called when the gengrid item is deleted. It deletes any data that has been allocated at the item's creation.
 
-      ```csharp
+      ```
       static void
       _item_del(void *data, Evas_Object *obj)
       {
@@ -81,7 +81,7 @@ To use a gengrid component in your application:
 
 3. Append items to the gengrid with the `elm_gengrid_item_append()` function.
 
-   ```csharp
+   ```
    elm_gengrid_item_append(gengrid, /* Gengrid object */
                            itc, /* Gengrid item class */
                            (void *)i, /* Item data */
@@ -91,7 +91,7 @@ To use a gengrid component in your application:
 
 4. Register the [callback](#callbacks) functions for the gengrid and its items.The following example shows how to define a callback for when the gengrid item is selected:
 
-   ```csharp
+   ```
    static void
    _item_selected_cb(void *data, Evas_Object *obj, void *event_info)
    {

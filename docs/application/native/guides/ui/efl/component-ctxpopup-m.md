@@ -10,7 +10,7 @@ To use a ctxpopup component in your application:
 
 1. Add a ctxpopup with the `elm_ctxpopup_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *ctxpopup;
 
    ctxpopup = elm_ctxpopup_add(parent);
@@ -20,7 +20,7 @@ To use a ctxpopup component in your application:
 
 3. Append items to the ctxpopup with the `elm_ctxpopup_item_append()` function. The function takes 5 parameters: the pointer of the ctxpopup, a file path of an icon, a text, a callback function to call when the item is clicked, and the parameter passed to the callback.
 
-   ```csharp
+   ```
    elm_ctxpopup_item_append(ctxpopup, "icon.png", "Call", _item_selected_cb, NULL);
    ```
 
@@ -34,7 +34,7 @@ The following example shows a simple use case of the ctxpopup component.
 
  ![Ctxpopup](./media/ctxpopup1.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;
@@ -83,7 +83,7 @@ To configure the ctxpopup features:
 
   In the following example, the orientation is set to horizontal:
 
-  ```csharp
+  ```
   elm_ctxpopup_horizontal_set(ctxpopup, EINA_TRUE);
   ```
 
@@ -91,20 +91,20 @@ To configure the ctxpopup features:
 
   The ctxpopup can be hidden automatically when its parent is resized. The auto hide functionality is enabled by default. You can disable auto hiding by calling the `elm_ctxpopup_auto_hide_disabled_set()` function with `EINA_TRUE`:
 
-  ```csharp
+  ```
   elm_ctxpopup_auto_hide_disabled_set(ctxpopup, EINA_TRUE);
   ```
 
 - Set the priority of the direction where the ctxpopup appears from with the `elm_ctxpopup_direction_priority_set()` function:
 
-  ```csharp
+  ```
   elm_ctxpopup_direction_priority_set(ctxpopup, ELM_CTXPOPUP_DIRECTION_UP, ELM_CTXPOPUP_DIRECTION_LEFT,
                                       ELM_CTXPOPUP_DIRECTION_DOWN, ELM_CTXPOPUP_DIRECTION_RIGHT);
   ```
 
 - Hide the ctxpopup with an animation by calling the `elm_ctxpopup_dismiss()` function:
 
-  ```csharp
+  ```
   elm_ctxpopup_dismiss(ctxpopup);
   ```
 
@@ -118,7 +118,7 @@ To manage the ctxpopup items:
 
    To append an item with a `test` label, icon, and the `clicked` callback (`_ctxpopup_item_cb`):
 
-   ```csharp
+   ```
    Elm_Object_Item *it;
    Evas_Object *icon;
 
@@ -131,7 +131,7 @@ To manage the ctxpopup items:
 
    - To set the icon to the standard `home` icon:
 
-     ```csharp
+     ```
      Evas_Object *home_icon = elm_icon_add(ctxpopup);
      elm_icon_standard_set(home_icon, "home");
 
@@ -140,7 +140,7 @@ To manage the ctxpopup items:
 
 3. Define a callback that is triggered when the item is clicked:
 
-   ```csharp
+   ```
    static void
    _ctxpopup_item_cb(void *data, Evas_Object *obj, void *event_info)
    {

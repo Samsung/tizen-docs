@@ -10,7 +10,7 @@ To use a colorselector component in your application:
 
 1. Add a colorselector with the `elm_colorselector_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *colorsel;
 
    colorsel = elm_colorselector_add(parent);
@@ -18,7 +18,7 @@ To use a colorselector component in your application:
 
 2. Set a mode to the colorselector with the `elm_colorselector_mode_set()` function. Currently, only the palette mode is available in Tizen.
 
-   ```csharp
+   ```
    elm_colorselector_mode_set(colorsel, ELM_COLORSELECTOR_PALETTE);
    ```
 
@@ -32,7 +32,7 @@ To use a colorselector component in your application:
 
 5. Register the [callback](#callbacks) functions. When a color in the colorselector is clicked, the color set to the colorselector component changes. Retrieve the currently selected color with the `elm_colorselector_color_set()` function. The following example shows how to define and register a callback for the `changed` signal:
 
-   ```csharp
+   ```
    evas_object_smart_callback_add(colorselector, "changed", changed_cb, data);
 
    void
@@ -48,7 +48,7 @@ The following example shows a simple use case of the colorselector component.
 
  ![Colorselector](./media/colorselector1.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;
@@ -71,7 +71,7 @@ The following example shows how to add a new palette called `mypalette`, with 3 
 
  ![Colorselector](./media/colorselector2.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;
