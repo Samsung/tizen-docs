@@ -25,7 +25,7 @@ A condition denotes a contextual state or fact that can be recognized by the dev
 
 - Action
 
-An action is triggered when the rule is satisfied. You can set an application launch request action using an [application control](../app-management/app-controls.md), or you can set a [notification posting](../notification/noti.md) action. For example, every day at 10:00 PM, if the battery level is low, the application can post a notification to remind the user to charge the battery.
+An action is triggered when the rule is satisfied. You can set an application launch request action using an [application control](../app-management/app-controls.md), or you can set a [notification posting](../notification/notifications.md) action. For example, every day at 10:00 PM, if the battery level is low, the application can post a notification to remind the user to charge the battery.
 
 
 

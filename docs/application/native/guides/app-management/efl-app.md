@@ -1,7 +1,7 @@
 # EFL Applications
 
 
-You can use the Enlightenment Foundation Libraries (EFL) to create a 2D-based Tizen native application. However, EFL supports 2.5D and 3D effects and 3D objects as well. For 3D-based Tizen native applications, you can use the [Dynamic Animation Library (DALi) UI toolkit](../ui/dali/dali.md) as well.
+You can use the Enlightenment Foundation Libraries (EFL) to create a 2D-based Tizen native application. However, EFL supports 2.5D and 3D effects and 3D objects as well. For 3D-based Tizen native applications, you can use the [Dynamic Animation Library (DALi) UI toolkit](../ui/dali/dali-overview.md) as well.
 
 EFL is a collection of libraries that are independent or can build on top of each other. It provides useful features that complement an existing OS environment, rather than wrapping or abstracting it. This means that EFL expects you to use other system libraries and APIs in conjunction with EFL libraries to provide a complete working application or library - using EFL as a set of convenient pre-made libraries to accomplish a whole host of complex or tedious tasks.
 
@@ -40,6 +40,6 @@ A watch application provides a watch face with the current time (updated every s
 A widget application (or widget) is a specialized application that provides the user a quick view of specific information from the parent application. In addition, the widget allows the user to access certain features without launching the parent application. Combined with the parent application, your widget can have various features to increase the usability of your application.The widget application is available for both mobile and wearable devices.
 
 ## Related Information
-* Dependencies
+- Dependencies
  - Tizen 2.4 and Higher for Mobile
  - Tizen 2.3.1 and Higher for Wearable

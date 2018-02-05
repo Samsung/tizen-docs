@@ -1,7 +1,4 @@
 # User Interface
-## Dependencies
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
 
 The user interface features introduce how you can create a visual outlook for the UI application to ensure the best possible user experience.
 
@@ -9,8 +6,17 @@ The UI framework is a universal, reusable software environment that provides the
 
 You can use the following user interface features in your native applications:
 
-- [Enlightenment Foundation Libraries (EFL)](efl/efl-n.md)
-You can use the EFL UI toolkit if you are creating a 2D-based Tizen native application. However, EFL supports 2.5D and 3D effects and 3D objects as well. EFL provides streamlined graphic core libraries you need to create powerful applications. EFL needs relatively low memory but provides high performance, and supports a retained mode graphics system and user-centric features, such as themes, 2D/3D effects, and accessibility. In addition, EFL supports various resolutions with the same layout, fast and small file systems, a variety of programming language bindings, and a separate UI and logic.
+- [Enlightenment Foundation Libraries (EFL)](efl/introduction-n.md)
 
-- [Dynamic Animation Library (DALi)](dali/dali-n.md)
-You can use the DALi 3D UI toolkit if you are creating a high-performance rich UI application. DALi is based on OpenGL&reg; ES 2.0 and 3.0; however, it hides the complexity of the OpenGL&reg; ES API from you. DALi requires a GPU (Graphical Processing Unit) on the device.
+  You can use the EFL UI toolkit if you are creating a 2D-based Tizen native application. However, EFL supports 2.5D and 3D effects and 3D objects as well. EFL provides streamlined graphic core libraries you need to create powerful applications. EFL needs relatively low memory but provides high performance, and supports a retained mode graphics system and user-centric features, such as themes, 2D/3D effects, and accessibility. In addition, EFL supports various resolutions with the same layout, fast and small file systems, a variety of programming language bindings, and a separate UI and logic.
+
+- [Dynamic Animation Library (DALi)](dali/dali-overview.md)
+
+  You can use the DALi 3D UI toolkit if you are creating a high-performance rich UI application. DALi is based on OpenGL&reg; ES 2.0 and 3.0; however, it hides the complexity of the OpenGL&reg; ES API from you. DALi requires a GPU (Graphical Processing Unit) on the device.
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable
+
+

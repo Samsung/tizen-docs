@@ -319,7 +319,7 @@ To run the application on a target device:
 <a name="build_ui"></a>
 ## Designing a Simple UI 
 
-The mobile application created with the **Basic UI** template has a simple user interface with a label component showing the **Hello Tizen** text at the top of the screen. The UI is created using [EFL](../../guides/ui/efl/efl.md).
+The mobile application created with the **Basic UI** template has a simple user interface with a label component showing the **Hello Tizen** text at the top of the screen. The UI is created using [EFL](../../guides/ui/efl/introduction-n.md).
 
 **Figure: User interface in the Basic UI template**
 
