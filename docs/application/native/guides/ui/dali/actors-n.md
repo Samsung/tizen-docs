@@ -5,9 +5,9 @@
 
 An actor is the basic component that composes the entire scene. It can have visible (for example, UI components) or invisible (for example, a camera actor or layer) forms.
 
-An actor is also the primary object with which DALi applications interact. Controls and Layers all derive from Actor.
+An actor is also the primary object with which DALi applications interact. All Controls and Layers are derived from Actors.
 
-Multiple types of event signals provided by actors can be handled in an application through user-defined callback functions.
+In an application, multiple types of event signals provided by actors can be handled through user-defined callback functions.
 
 For additional actor usage examples, see [Actor Layout Examples](layout-n.md#example).
 
@@ -26,9 +26,9 @@ An actor has the following concrete types:
 ## Adding an Actor to the Stage
 
 Stage is a top-level object that represents the entire screen.
-It is used for displaying a hierarchy of actors managed by the [scene graph](http://en.wikipedia.org/wiki/Scene_graph) structure, which means an actor inherits a position relative to its parent, and can be moved in relation to this point.
+It is used for displaying a hierarchy of actors managed by the [scene graph](http://en.wikipedia.org/wiki/Scene_graph) structure. This implies that an actor inherits a position relative to its parent position and can be moved to another position with respect to its current position.
 
-The stage instance is a singleton object (the only instance of its class during the lifetime of the program). You can get it using a static function:
+The stage instance is a singleton object (the only instance of its class during the lifetime of the program). You can get a stage function using the following static function:
 
 ```
 static Stage GetCurrent();
