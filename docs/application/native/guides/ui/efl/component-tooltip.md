@@ -13,7 +13,7 @@ To activate a tooltip on a parent object in your application:
 
 1. Set a tooltip text to a button component using the `elm_object_tooltip_text_set()` function:
 
-   ```csharp
+   ```
    Evas_Object *button = elm_button_add(parent);
 
    evas_object_show(button);
@@ -27,7 +27,7 @@ To activate a tooltip on a parent object in your application:
 
  The fourth parameter defines a callback which is triggered when the tooltip disappears. Use the callback to delete the previously allocated
 
-   ```csharp
+   ```
    elm_object_tooltip_content_cb_set(obj, tooltip_content_cb, data, tooltip_content_del_cb);
 
    Evas_Object*
@@ -47,19 +47,19 @@ To activate a tooltip on a parent object in your application:
 
    - Set a style to the tooltip with the `elm_object_tooltip_style_set()` function. If you use the default style, you can skip this step.
 
-     ```csharp
+     ```
      elm_object_tooltip_style_set(obj, "transparent");
      ```
 
    - To get the current style, use the `elm_object_tooltip_style_get()` function:
 
-     ```csharp
+     ```
      char *style = elm_object_tooltip_style_get(obj);
      ```
 
 4. After you have set the tooltip text or content, you can manually hide or show the tooltip:
 
-   ```csharp
+   ```
    /* Hide */
    elm_object_tooltip_hide(obj);
    /* Show */
@@ -68,7 +68,7 @@ To activate a tooltip on a parent object in your application:
 
 5. When no longer needed, remove the tooltip from the object:
 
-   ```csharp
+   ```
    elm_object_tooltip_unset(obj);
    ```
 
@@ -81,7 +81,7 @@ The following example shows a simple use case of the tooltip component on a butt
 
  ![Alignment](./media/tooltip.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;
@@ -118,7 +118,7 @@ You can activate the window mode for the tooltip with the `elm_object_tooltip_wi
 
 The window mode allows the tooltip to expand beyond its parent window canvas. It is limited only by the size of the display.
 
-```csharp
+```
 elm_object_tooltip_window_mode_set(parent, EINA_TRUE);
 elm_object_tooltip_window_mode_get(parent);
 ```

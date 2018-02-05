@@ -12,7 +12,7 @@ To build a layout with a box:
 
 1. Add a box with the `elm_box_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *box;
 
    box = elm_box_add(parent);
@@ -20,13 +20,13 @@ To build a layout with a box:
 
 2. Set the direction of the box with the `elm_box_horizontal_set()` function. A box is vertical by default.
 
-   ```csharp
+   ```
    elm_box_horizontal_set(box, EINA_TRUE);
    ```
 
 3. Add objects and pack them into the box using various functions, depending on where in the box you want to add the objects (for example, `elm_box_pack_end()` and `elm_box_pack_start()`):
 
-   ```csharp
+   ```
    Evas_Object *box;
    Evas_Object btn;
 
@@ -40,7 +40,7 @@ The following example shows a simple use case of the box component, where 5 butt
 
  ![Box](./media/box_example.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;
@@ -94,7 +94,7 @@ In the following example, 2 images are packed into a box. The minimum size hints
 
 ![Box layout](./media/box1.png)
 
-```csharp
+```
 image = elm_image_add(box);
 elm_image_file_set(image, ICON_DIR"/tizen.png", NULL);
 evas_object_size_hint_min_set(image, 200, 200);
@@ -111,7 +111,7 @@ elm_box_pack_end(box, image);
 
 ![Box layout](./media/box2.png)
 
-```csharp
+```
 image = elm_image_add(box);
 elm_image_file_set(image, ICON_DIR"/tizen.png", NULL);
 evas_object_size_hint_min_set(image, 200, 200);
@@ -129,7 +129,7 @@ elm_box_align_set(box, 0.5, 0.0);
 
 ![Box layout](./media/box3.png)
 
-```csharp
+```
 image = elm_image_add(box);
 elm_image_file_set(image, ICON_DIR"/tizen.png", NULL);
 evas_object_size_hint_min_set(image, 200, 200);
@@ -147,7 +147,7 @@ elm_box_align_set(box, 0.5, 1.0);
 
 ![Box layout](./media/box4.png)
 
-```csharp
+```
 image = elm_image_add(box);
 elm_image_file_set(image, ICON_DIR"/tizen.png", NULL);
 evas_object_size_hint_min_set(image, 200, 200);
@@ -167,7 +167,7 @@ evas_object_size_hint_weight_set(image, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
 
 ![Box layout](./media/box5.png)
 
-```csharp
+```
 image = elm_image_add(box);
 elm_image_file_set(image, ICON_DIR"/tizen.png", NULL);
 evas_object_size_hint_min_set(image, 200, 200);
@@ -189,7 +189,7 @@ evas_object_size_hint_align_set(image, 0.0, 0.0);
 
 ![Box layout](./media/box6.png)
 
-```csharp
+```
 image = elm_image_add(box);
 elm_image_file_set(image, ICON_DIR"/tizen.png", NULL);
 evas_object_size_hint_min_set(image, 200, 200);
@@ -211,7 +211,7 @@ evas_object_size_hint_align_set(image, 1.0, 1.0);
 
 ![Box layout](./media/box7.png)
 
-```csharp
+```
 image = elm_image_add(box);
 elm_image_file_set(image, ICON_DIR"/tizen.png", NULL);
 evas_object_size_hint_min_set(image, 200, 200);
@@ -233,7 +233,7 @@ evas_object_size_hint_align_set(image, EVAS_HINT_FILL, EVAS_HINT_FILL);
 
 ![Box layout](./media/box8.png)
 
-```csharp
+```
 image = elm_image_add(box);
 elm_image_file_set(image, ICON_DIR"/tizen.png", NULL);
 evas_object_size_hint_min_set(image, 200, 200);

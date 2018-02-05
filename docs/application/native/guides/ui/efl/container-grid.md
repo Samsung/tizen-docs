@@ -12,7 +12,7 @@ To build a layout with a grid:
 
 1. Add a grid with the `elm_grid_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *grid;
 
    grid = elm_grid_add(parent);
@@ -20,13 +20,13 @@ To build a layout with a grid:
 
 2. Set the size of the grid with the `elm_grid_size_set()` function. The size is 100 x 100 by default.
 
-   ```csharp
+   ```
    grid = elm_grid_size_set(grid, 20, 30);
    ```
 
 3. Add objects and pack them into the grid with the `elm_grid_pack()` function:
 
-   ```csharp
+   ```
    Evas_Object *button;
 
    elm_grid_pack(grid, button, 0, 0, 10, 10);
@@ -38,7 +38,7 @@ The following example shows a simple use case of the grid component.
 
  ![Grid](./media/grid2.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;

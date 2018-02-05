@@ -10,7 +10,7 @@ To use a slider component in your application:
 
 1. Create a new slider with the `elm_slider_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *slider = NULL;
 
    slider = elm_slider_add(parent);
@@ -20,14 +20,14 @@ To use a slider component in your application:
 
    - Set the slider [style](#styles):
 
-     ```csharp
+     ```
      /* Default: "default" */
      elm_object_style_set(slider, "default");
      ```
 
    - Set other [options](#options).
 
-     ```csharp
+     ```
      elm_slider_inverted_set(slider, EINA_FALSE);
      elm_slider_indicator_show_set(slider, EINA_TRUE);
      elm_slider_indicator_format_set(slider, "%.1f");
@@ -37,7 +37,7 @@ To use a slider component in your application:
 
  The following example shows how to define and register a callback for the `changed` signal:
 
-   ```csharp
+   ```
    evas_object_smart_callback_add(slider, "changed", slider_changed_cb, 0);
 
    static void
@@ -54,7 +54,7 @@ The following example shows a simple use case of the slider component.
 
  ![Slider](./media/mobile_slider.png)
 
-```csharp
+```
 Evas_Object *box;
 Evas_Object *slider;
 Evas_Object *nf;
@@ -92,7 +92,7 @@ You can build various sliders by combining styles and options:
   |----------------------------------------|----------------------------------------|
   | ![Slider indicator](./media/mobile_slider_various_1_T.png) | ![Slider indicator](./media/mobile_slider_various_1_F.png) |
 
-  ```csharp
+  ```
   Evas_Object *slider;
   Evas_Object *nf;
   Evas_Object *box;
@@ -125,7 +125,7 @@ You can build various sliders by combining styles and options:
   |----------------------------------------|----------------------------------------|
   | ![Slider orientation](./media/mobile_slider_various_2_T.png) | ![Slider orientation](./media/mobile_slider_various_2_F.png) |
 
-  ```csharp
+  ```
   Evas_Object *slider;
   Evas_Object *nf;
   Evas_Object *box;
@@ -153,7 +153,7 @@ You can build various sliders by combining styles and options:
   |----------------------------------------|----------------------------------------|
   | ![Inverted slider](./media/mobile_slider_various_3_T.png) | ![Inverted slider](./media/mobile_slider_various_3_F.png) |
 
-```csharp
+```
 box = elm_box_add(nf);
 elm_naviframe_item_push(nf, "Slider", NULL, NULL, box, NULL);
 

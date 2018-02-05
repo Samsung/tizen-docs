@@ -10,7 +10,7 @@ To use a progressbar component in your application:
 
 1. Add a progressbar with the `elm_progressbar_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *progressbar;
 
    progressbar = elm_progressbar_add(parent);
@@ -19,7 +19,7 @@ To use a progressbar component in your application:
 2. Set a [style](#styles) available for a rectangular or circular UI screen.  
 Set a style to the progressbar with the `elm_object_style_set()` function. If you use the default style, you can skip this step.
 
-   ```csharp
+   ```
    elm_object_style_set(progressbar, "pending_list");
    ```
 
@@ -27,7 +27,7 @@ Set a style to the progressbar with the `elm_object_style_set()` function. If yo
 
    - Set the progressbar pulse mode to activate the progressbar with the `elm_progressbar_pulse_set()` function:
 
-     ```csharp
+     ```
      elm_progressbar_pulse_set(progressbar, EINA_TRUE);
      ```
 
@@ -35,7 +35,7 @@ Set a style to the progressbar with the `elm_object_style_set()` function. If yo
 
    - Use the `elm_progressbar_pulse()` function to start the progressbar animation loop:
 
-     ```csharp
+     ```
      elm_progressbar_pulse(progressbar, EINA_TRUE);
      ```
 
@@ -43,7 +43,7 @@ Set a style to the progressbar with the `elm_object_style_set()` function. If yo
 
  The following example shows how to define and register a callback for the `changed` signal:
 
-   ```csharp
+   ```
    evas_object_smart_callback_add(progressbar, "changed", changed_cb, data);
 
    void
@@ -59,7 +59,7 @@ The following example shows a simple use case of the progressbar component.
 
  ![Progressbar](./media/progressbar_wn.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;
@@ -98,14 +98,14 @@ To configure the progressbar features:
 
   - Change the value with the `elm_progressbar_value_set()` function. The progressbar emits the `changed` signal when the progress value changes. In the following example, the progressbar value is set to 20%.
 
-    ```csharp
+    ```
     /* Supported style: default */
     elm_progressbar_value_set(progressbar, 0.2);
     ```
 
   - Read the current value:
 
-    ```csharp
+    ```
     double value = elm_progressbar_value_get(progressbar);
     ```
 
@@ -113,7 +113,7 @@ To configure the progressbar features:
 
   In the inverted mode the high values are on the left and the low values on the right.
 
-  ```csharp
+  ```
   /* Supported style: default */
   elm_progressbar_inverted_set(progressbar, EINA_TRUE);
   ```

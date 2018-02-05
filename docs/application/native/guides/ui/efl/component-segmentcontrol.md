@@ -20,7 +20,7 @@ For more information, see the [SegmentControl](../../../../../org.tizen.native.m
 
 To add a segmentcontrol component, use the `elm_segment_control_add()` function:
 
-```csharp
+```
 Evas_Object *segcontrol;
 Evas_Object *parent;
 
@@ -33,7 +33,7 @@ To manage segmentcontrol items:
 
 - Add items to the segmentcontrol component with the `elm_segment_control_item_add()` function. In the following example, 4 items containing only text labels (no icons) are added:
 
-  ```csharp
+  ```
   Elm_Object_Item *it;
   int count;
   int idx;
@@ -46,19 +46,19 @@ To manage segmentcontrol items:
 
   To insert an item at a specific position starting from 0:
 
-  ```csharp
+  ```
   elm_segment_control_item_insert_at(segcontrol, NULL, "item7", 2);
   ```
 
 - Set the state of the item to selected:
 
-  ```csharp
+  ```
   elm_segment_control_item_selected_set(it, EINA_TRUE);
   ```
 
 - Get items:
 
-  ```csharp
+  ```
   /* Get the selected item */
   it = elm_segment_control_item_selected_get(segcontrol);
 
@@ -68,19 +68,19 @@ To manage segmentcontrol items:
 
 - Get the item count from the segmentcontrol:
 
-  ```csharp
+  ```
   count = elm_segment_control_item_count_get(segcontrol);
   ```
 
 - Get the index of an item:
 
-  ```csharp
+  ```
   idx = elm_segment_control_item_index_get(it);
   ```
 
 - Delete an item and disable the entire segmentcontrol:
 
-  ```csharp
+  ```
   elm_segment_control_item_del_at(segcontrol, 2);
 
   elm_object_disabled_set(segcontrol, EINA_TRUE);
@@ -97,7 +97,7 @@ The `event_info` callback parameter is the segment item pointer.
 
 To register and define a callback for the `changed` signal:
 
-```csharp
+```
 {
     evas_object_smart_callback_add(segcontrol, "changed", changed_cb, data);
 }

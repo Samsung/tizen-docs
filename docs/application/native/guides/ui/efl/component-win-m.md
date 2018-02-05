@@ -12,7 +12,7 @@ A window is created automatically when you create a Tizen native UI application 
 
  ![Window](./media/window_mn.png)
 
-```csharp
+```
 static void
 create_base_gui(appdata_s *ad)
 {
@@ -70,7 +70,7 @@ The basic template code includes the following steps:
 
  The `elm_win_util_standard_add()` function is a shortcut of the `elm_win_add()`, `elm_win_title_set()`, and `elm_bg_add()` functions. It creates a basic window with a title and adds a standard background to the window.
 
-   ```csharp
+   ```
    Evas_Object *win;
    Evas_Object *bg;
 
@@ -97,7 +97,7 @@ The basic template code includes the following steps:
 
  In most cases, you want the content of the window to be resized every time the window is resized due to rotation. To match the content size with the window size, make the content expand to fit the container size with the `evas_object_size_hint_weight_set()`function and add it to the window with the `elm_win_resize_object_add()` function.
 
-   ```csharp
+   ```
    Evas_Object *win;
    Evas_Object *obj;
 

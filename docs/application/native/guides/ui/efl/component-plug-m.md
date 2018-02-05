@@ -14,7 +14,7 @@ For more information, see the [Plug](../../../../../org.tizen.native.mobile.apir
 
 To create a plug component, use the `elm_plug_add()` function:
 
-```csharp
+```
 Evas_Object *plug;
 Evas_Object *parent;
 
@@ -29,20 +29,20 @@ To use the plug:
 
    To connect to a service named `plug_test` on the number 0:
 
-   ```csharp
+   ```
    elm_plug_connect(plug, "plug_test", 0, EINA_FALSE);
    ```
 
 2. Retrieve the `Evas_Object` corresponding to the remote image with the `elm_plug_image_object_get()` function:
 
-   ```csharp
+   ```
    Evas_Object *plug_img = elm_plug_image_object_get(plug);
    ```
 
    > **Note**  
    > The socket to connect to must be started with the `elm_win_socket_listen()` function in the other process on the remote window object (`remote_win`):
    >
-   >  ```csharp
+   >  ```
    /* Create a remote window in the other process */
    Elm_Win *remote_win = elm_win_add(NULL, "Window Socket",
                                      ELM_WIN_SOCKET_IMAGE);
@@ -68,7 +68,7 @@ The `event_info` callback parameter is `Evas_Coord_Size` (2 integers).
 
 To register and define a callback for the `clicked` signal:
 
-```csharp
+```
 {
     evas_object_smart_callback_add(plug, "clicked", clicked_cb, data);
 }

@@ -10,7 +10,7 @@ To use a popup component in your application:
 
 1. Add a popup component with the `elm_popup_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *popup;
    Evas_Object *parent;
 
@@ -20,7 +20,7 @@ To use a popup component in your application:
 
 2. Set the title text using the `title,text` part name:
 
-   ```csharp
+   ```
    elm_object_part_text_set(popup, "title,text", "Popup Title");
    ```
 
@@ -28,13 +28,13 @@ To use a popup component in your application:
 
    - Simple text:
 
-     ```csharp
+     ```
      elm_object_text_set(popup, "Popup text");
      ```
 
    - Evas object:
 
-     ```csharp
+     ```
      Evas_Object *content;
 
      elm_object_content_set(popup, content);
@@ -44,7 +44,7 @@ To use a popup component in your application:
 
    In the following example, the **OK** and **Cancel** buttons are created:
 
-   ```csharp
+   ```
    Evas_Object *button1;
    Evas_Object *button2;
 
@@ -64,7 +64,7 @@ To use a popup component in your application:
 
   The following example shows how to define and register a callback for the `dismissed` signal:
 
-   ```csharp
+   ```
    evas_object_smart_callback_add(popup, "dismissed", dismissed_cb, data);
 
    void
@@ -80,7 +80,7 @@ The following example shows a simple use case of the popup component.
 
  ![Alignment](./media/popup.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;
@@ -127,13 +127,13 @@ To configure the popup features:
 
   In the following example, the timeout is set to 5 seconds, after which the popup is hidden:
 
-  ```csharp
+  ```
   elm_popup_timeout_set(popup, 5.0);
   ```
 
 - Dismiss the popup with a hide effect using the `elm_popup_dismiss()` function:
 
-  ```csharp
+  ```
   elm_popup_dismiss(popup);
   ```
 

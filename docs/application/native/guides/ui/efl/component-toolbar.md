@@ -10,7 +10,7 @@ To use a toolbar component in your application:
 
 1. Add a toolbar with the `elm_toolbar_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *toolbar;
 
    toolbar = elm_toolbar_add(parent);
@@ -20,13 +20,13 @@ To use a toolbar component in your application:
 
 3. Append items to the toolbar with `elm_toolbar_item_append()` function. The function takes 5 parameters: the pointer of the toolbar, a file path of an icon, a text, a callback function to call when the item is clicked, and the parameter passed to the callback.
 
-   ```csharp
+   ```
    elm_toolbar_item_append(toolbar, "icon.png", "Tab", _item_selected_cb, NULL);
    ```
 
    The following example shows how to add 2 items and define callbacks for when they are clicked:
 
-   ```csharp
+   ```
    Elm_Object_Item *home_it;
    Elm_Object_Item *help_it;
 
@@ -54,7 +54,7 @@ To use a toolbar component in your application:
 
  The following example shows how to define and register a callback for the `clicked` signal:
 
-   ```csharp
+   ```
    evas_object_smart_callback_add(toolbar, "clicked", clicked_cb, data);
 
    /* Callback for the "clicked" signal */
@@ -74,7 +74,7 @@ The following example shows a simple use case of the toolbar component.
 
  ![Toolbar](./media/toolbar1.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;
@@ -117,7 +117,7 @@ The toolbar offers the following options for shrinking its content:
 
 To set the shrinking mode:
 
-```csharp
+```
 elm_toolbar_shrink_mode_set(toolbar, ELM_TOOLBAR_SHRINK_EXPAND);
 ```
 
@@ -141,7 +141,7 @@ The following select modes are available:
 
 To set a select mode:
 
-```csharp
+```
 elm_toolbar_select_mode_set(toolbar, ELM_OBJECT_SELECT_MODE_ALWAYS);
 ```
 
@@ -151,7 +151,7 @@ A toolbar displays items homogeneously by default, with long label items occupyi
 
 To avoid that, disable the homogeneous mode:
 
-```csharp
+```
 elm_toolbar_homogeneous_set(toolbar, EINA_FALSE);
 ```
 
@@ -161,7 +161,7 @@ You can define 2 or more states for an item. Each state has its own icon, label,
 
 To create 2 states for an item with the same icon but 2 different labels:
 
-```csharp
+```
 Elm_Object_Item *it;
 it = elm_toolbar_item_append(toolbar, NULL, "Tab1", NULL, NULL);
 
@@ -172,7 +172,7 @@ elm_toolbar_item_state_add(it, "icon.png", "State 2", _item_pressed_cb, NULL);
 
 You can cycle through the item states to set the state you want:
 
-```csharp
+```
 elm_toolbar_item_state_set(it, elm_toolbar_item_state_next(it));
 ```
 
@@ -180,7 +180,7 @@ elm_toolbar_item_state_set(it, elm_toolbar_item_state_next(it));
 
 To set the style to `navigationbar`:
 
-```csharp
+```
 elm_object_style_set(toolbar, "navigationbar");
 ```
 

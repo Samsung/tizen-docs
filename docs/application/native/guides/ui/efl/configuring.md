@@ -10,25 +10,25 @@ To manage Elementary profiles:
 
 - List the existing profiles:
 
-  ```csharp
+  ```
   Eina_List *list = elm_config_profile_list_get();
   ```
 
 - Set a particular profile:
 
-  ```csharp
+  ```
   elm_config_profile_set("myprofile");
   ```
 
 - Get the current profile:
 
-  ```csharp
+  ```
   char *profile = elm_config_profile_get();
   ```
 
 - To reload the Elementary configuration saved for the current profile:
 
-  ```csharp
+  ```
   elm_config_reload();
   ```
 
@@ -36,7 +36,7 @@ To manage Elementary profiles:
 
 The following code snippet is a configuration example from the `base.src` configuration file:
 
-```csharp
+```
 group "Elm_Config" struct {
    value "scale" double: 3.0;
    value "finger_size" int: 50;
@@ -68,13 +68,13 @@ You can set the following options in the Elementary configuration:
 
   - Set the global scaling factor (for example, setting it to 2.0 doubles the size of all scalable UI components):
 
-    ```csharp
+    ```
     elm_config_scale_set(2.0);
     ```
 
   - Set the finger size:
 
-    ```csharp
+    ```
     elm_config_finger_size_set(1.5);
     ```
 
@@ -82,21 +82,21 @@ You can set the following options in the Elementary configuration:
 
   - Enable the globally configured cache flush, and set the flush interval (in this example, to 60 seconds):
 
-    ```csharp
+    ```
     elm_config_cache_flush_enabled_set(EINA_TRUE);
     elm_config_cache_flush_interval_set(60);
     ```
 
   - Configure the font and image cache sizes (to 500 and 5 000 000 bytes, respectively):
 
-    ```csharp
+    ```
     elm_config_cache_font_cache_size_set(500);
     elm_config_cache_image_cache_size_set(5000000);
     ```
 
   - Set the Edje collection and Edje file cache sizes:
 
-    ```csharp
+    ```
     elm_config_cache_edje_file_cache_size_set(500);
     elm_config_cache_edje_collection_cache_size_set(500);
     ```
@@ -105,7 +105,7 @@ You can set the following options in the Elementary configuration:
 
   You can set the duration of the long tap and double tap events on the gesture layer objects. The following example sets the duration to 500 ms.
 
-  ```csharp
+  ```
   elm_config_glayer_long_tap_start_timeout_set(0.5);
   elm_config_glayer_double_tap_timeout_set(0.5);
   ```
@@ -114,13 +114,13 @@ You can set the following options in the Elementary configuration:
 
   - Make the scroller bounce when it reaches its viewport's edge during scrolling by using the `elm_config_scroll_bounce_enabled_set()` function:
 
-    ```csharp
+    ```
     elm_config_scroll_bounce_enabled_set(EINA_TRUE);
     ```
 
   - Control the inertia of the bounce animation by using the `elm_config_scroll_bounce_friction_set()` function:
 
-    ```csharp
+    ```
     elm_config_scroll_bounce_friction_set(0.5);
     ```
 
@@ -130,7 +130,7 @@ You can set the following options in the Elementary configuration:
 
   The following example sets the scroller to be draggable, defines that the number of pixels one must travel while dragging the scroller view to actually trigger scrolling is 20 pixels.
 
-    ```csharp
+    ```
     elm_config_scroll_thumbscroll_enabled_set(EINA_TRUE);
     elm_config_scroll_thumbscroll_threshold_set(20);
     ```
@@ -139,7 +139,7 @@ You can set the following options in the Elementary configuration:
 
   Get the current timeout before a long-press event is retrieved, and modify it. The following example increases the timeout by 1 second.
 
-  ```csharp
+  ```
   double lp_timeout = elm_config_longpress_timeout_get();
   elm_config_longpress_timeout_set(lp_timeout + 1.0);
   ```
@@ -148,7 +148,7 @@ You can set the following options in the Elementary configuration:
 
   Set the duration after which a tooltip is shown. The following example sets the delay to 2 seconds.
 
-  ```csharp
+  ```
   elm_config_tooltip_delay_set(2.0);
   ```
 
@@ -158,13 +158,13 @@ You can set the following options in the Elementary configuration:
 
   - Enable the password show last feature:
 
-    ```csharp
+    ```
     elm_config_password_show_last_set(EINA_TRUE);
     ```
 
   - Set the visibility timeout (how many seconds the input is visible):
 
-    ```csharp
+    ```
     elm_config_password_show_last_timeout_set(5.0);
     ```
 
@@ -189,7 +189,7 @@ You can set the following options in the Elementary configuration:
   - "opengl_cocoa"
   - "psl1ght"
 
-  ```csharp
+  ```
   elm_config_engine_set("opengl_x11");
   ```
 
@@ -201,7 +201,7 @@ You can set the following options in the Elementary configuration:
 
   Set the selection mode so that the selection is cleared when the entry component is unfocused:
 
-  ```csharp
+  ```
   elm_config_selection_unfocused_clear_set(EINA_TRUE);
   ```
 
@@ -213,13 +213,13 @@ You can set the following options in the Elementary configuration:
 
     1.  Disable the automatic mirroring:
 
-        ```csharp
+        ```
         elm_config_language_auto_mirrored_set(EINA_FALSE);
         ```
 
     2.  Manually enable or disable UI mirroring by using the `elm_config_mirrored_set()` function:
 
-        ```csharp
+        ```
         elm_config_mirrored_set(EINA_TRUE);
         ```
 
@@ -227,7 +227,7 @@ You can set the following options in the Elementary configuration:
 
   Define the frames per second (FPS) value for the `ecore_animator_frametime` and `edje_frametime` calculations. This example sets the FPS 60.
 
-  ```csharp
+  ```
   elm_config_fps_set(60.0);
   ```
 

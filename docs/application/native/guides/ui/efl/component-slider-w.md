@@ -10,7 +10,7 @@ To use a slider component in your application:
 
 1. Create a new slider with the `elm_slider_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *slider = NULL;
 
    slider = elm_slider_add(parent);
@@ -20,14 +20,14 @@ To use a slider component in your application:
 
    - Set the slider indicator:
 
-     ```csharp
+     ```
      elm_slider_indicator_show_set(slider, EINA_TRUE);
      elm_slider_indicator_format_set(slider, "%.0f");
      ```
 
    - Set the range and value of the slider:
 
-     ```csharp
+     ```
      elm_slider_min_max_set(slider, 0.0, 10.0);
      elm_slider_value_set(slider, 5.0);
      ```
@@ -38,7 +38,7 @@ To use a slider component in your application:
 
  The following example shows how to define and register a callback for the `changed` signal:
 
-   ```csharp
+   ```
    evas_object_smart_callback_add(slider, "changed", slider_changed_cb, NULL);
 
    void
@@ -55,7 +55,7 @@ The following example shows a simple use case of the slider component.
 
  ![Slider](./media/slider_wn2.png) ![Slider](./media/slider_wn3.png)
 
-```csharp
+```
 Evas_Object *box;
 Evas_Object *slider;
 Evas_Object *nf;

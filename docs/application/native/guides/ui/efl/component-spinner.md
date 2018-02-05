@@ -20,7 +20,7 @@ For more information, see the [Spinner](../../../../../org.tizen.native.mobile.a
 
 To create a spinner component, use the `elm_spinner_add()` function:
 
-```csharp
+```
 Evas_Object *spin;
 Evas_Object *parent;
 
@@ -44,13 +44,13 @@ To use the spinner styles:
 
   To set the style to, for example, `vertical`:
 
-  ```csharp
+  ```
   elm_object_style_set(spinner, "vertical");
   ```
 
 - Get the current style with the `elm_object_style_get()` function:
 
-  ```csharp
+  ```
   char *style = elm_object_style_get(spinner);
   ```
 
@@ -60,7 +60,7 @@ To configure the spinner:
 
 - Set the label format:
 
-  ```csharp
+  ```
   elm_spinner_label_format_set(spin, "%1.2f meters");
   ```
 
@@ -68,7 +68,7 @@ To configure the spinner:
 
   In the following example, a click on an arrow increases or decreases the spinner value by 2.0 units:
 
-  ```csharp
+  ```
   elm_spinner_step_set(spin, 2.0);
   ```
 
@@ -76,19 +76,19 @@ To configure the spinner:
 
   In this mode, the spinner wraps when it reaches its minimum or maximum value.
 
-  ```csharp
+  ```
   elm_spinner_wrap_set(spin, EINA_TRUE);
   ```
 
 - Set the minimum and maximum values of the spinner:
 
-  ```csharp
+  ```
   elm_spinner_min_max_set(spin, -25.0, 100.0);
   ```
 
 - Modify the change interval when the user long-presses the arrows to change the value faster:
 
-  ```csharp
+  ```
   elm_spinner_interval_set(spin, 0.1);
   ```
 
@@ -96,7 +96,7 @@ To configure the spinner:
 
   In the following example, the `spin2` component shows 3 numbers written in text characters:
 
-  ```csharp
+  ```
   Evas_Object *spin2 = elm_spinner_add(parent);
 
   elm_spinner_min_max_set(spin2, 1, 3);
@@ -118,7 +118,7 @@ To receive notifications about the spinner events, listen for the following sign
 
 To register and define a callback for the `delay,changed` signal:
 
-```csharp
+```
 {
     evas_object_smart_callback_add(spin, "delay,changed", delay_changed_cb, data);
 }

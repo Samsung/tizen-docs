@@ -10,7 +10,7 @@ To use a radio component in your application:
 
 1. Add a radio button with the `elm_radio_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *radio;
 
    radio = elm_radio_add(parent);
@@ -20,13 +20,13 @@ To use a radio component in your application:
 
    - Assign a unique value to each radio button with the `elm_radio_state_value_set()` function:
 
-     ```csharp
+     ```
      elm_radio_state_value_set(radio, 1);
      ```
 
    - Group the radio buttons with the `elm_radio_group_add()` function. You can set one of the radio buttons as selected with the `elm_radio_value_set()` function.
 
-     ```csharp
+     ```
      elm_radio_group_add(radio, group);
      ```
 
@@ -36,7 +36,7 @@ To use a radio component in your application:
 
  The following example shows how to define and register a callback for the `changed` signal:
 
-   ```csharp
+   ```
    evas_object_smart_callback_add(radio, "changed", changed_cb, data);
 
    void
@@ -50,7 +50,7 @@ To use a radio component in your application:
 
  ![Radio](./media/radio_wn1.png)![Radio](./media/radio_wn2.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;

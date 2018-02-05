@@ -12,7 +12,7 @@ To build a layout with a conformant:
 
 1. Add a conformant with the `elm_conformant_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *conformant;
 
    conformant = elm_conformant_add(parent);
@@ -20,7 +20,7 @@ To build a layout with a conformant:
 
 2. Add an object to the conformant with the `elm_object_content_set()` function:
 
-   ```csharp
+   ```
    Evas_Object *main_view;
 
    elm_object_content_set(conformant, main_view);

@@ -10,7 +10,7 @@ To use a progressbar component in your application:
 
 1. Add a progressbar with the `elm_progressbar_add()` function:
 
-   ```csharp
+   ```
    Evas_Object *progressbar;
 
    progressbar = elm_progressbar_add(parent);
@@ -20,13 +20,13 @@ To use a progressbar component in your application:
 
    - Set a style to the progressbar with the `elm_object_style_set()` function. If you use the default style, you can skip this step.
 
-     ```csharp
+     ```
      elm_object_style_set(progressbar, "pending");
      ```
 
    - Set a label to the progressbar with the `elm_object_text_set()` or `elm_object_part_text_set()` function:
 
-     ```csharp
+     ```
      /* Default style (elm.text.top.right) */
      elm_object_text_set(progressbar, "text");
 
@@ -37,7 +37,7 @@ To use a progressbar component in your application:
 
    - Set the progressbar pulse mode to activate the progressbar with the `elm_progressbar_pulse_set()` function:
 
-     ```csharp
+     ```
      elm_progressbar_pulse_set(progressbar, EINA_TRUE);
      ```
 
@@ -45,7 +45,7 @@ To use a progressbar component in your application:
 
    - Use the `elm_progressbar_pulse()` function to start the progressbar animation loop:
 
-     ```csharp
+     ```
      elm_progressbar_pulse(progressbar, EINA_TRUE);
      ```
 
@@ -53,7 +53,7 @@ To use a progressbar component in your application:
 
  The following example shows how to define and register a callback for the `changed` signal:
 
-   ```csharp
+   ```
    evas_object_smart_callback_add(progressbar, "changed", changed_cb, data);
 
    void
@@ -69,7 +69,7 @@ The following example shows a simple use case of the progressbar component.
 
  ![Progressbar](./media/progressbar.png)
 
-```csharp
+```
 Evas_Object *win;
 Evas_Object *conf;
 Evas_Object *nf;
@@ -113,21 +113,21 @@ To configure the progressbar features:
 
   - Change the value with the `elm_progressbar_value_set()` function. The progressbar emits the `changed` signal when the progress value changes. In the following example, the progressbar value is set to 20%.
 
-    ```csharp
+    ```
     /* Supported style: default */
     elm_progressbar_value_set(progressbar, 0.2);
     ```
 
   - Read the current value:
 
-    ```csharp
+    ```
     double value = elm_progressbar_value_get(progressbar);
     ```
 
 - Set a text in the progressbar:
 
   - Set a label to the progressbar with the `elm_object_text_set()` function, if the style supports a text part.
-  ```csharp
+  ```
   /* Supported styles: default, pending */elm_object_text_set(progressbar, "progressbar");
   ```
 
@@ -138,7 +138,7 @@ To configure the progressbar features:
 
     To set the unit label to be a float number with 2 decimals:
 
-    ```csharp
+    ```
     elm_progressbar_unit_format_set(progressbar, "%1.2f%%");
     ```
 
@@ -148,7 +148,7 @@ To configure the progressbar features:
 
   In the inverted mode the high values are on the left and the low values on the right.
 
-  ```csharp
+  ```
   /* Supported style: default */
   elm_progressbar_inverted_set(progressbar, EINA_TRUE);
   ```
