@@ -2,7 +2,7 @@
 
 The Tizen Studio provides the following set of tools to help you write and edit code in your Web application projects:
 
-- [Web Editor](web-editor.md) **(Writing Your Code)**		 
+- [Web Editor](web-editor.md) **(Writing Your Code)**
 
    The Web Editor tool makes it easy to write or edit HTML, JS, and CSS files. The editor allows you to create and modify source code while supporting basic features, such as syntax highlighting, content assist, and privilege checking.
 
@@ -30,7 +30,7 @@ The Tizen Studio provides the following set of tools to help you write and edit 
 
   The Privilege Checker tool allows you identify potential privilege violation problems in the application code. This check is performed automatically, and you can easily verify the source code in your project.
 
-- [Tizen Studio Web Preferences](IDE-preferences.md) **(Setting Tizen Studio Web Preferences)**
+- [Tizen Studio Web Preferences](ide-preferences.md) **(Setting Tizen Studio Web Preferences)**
 
    The Tizen Studio Preferences tool allows you to set the Web preferences, which are a set of options, such as resources, file colors, version control options, and code styles. The preferences allow you to configure the workspace to optimize your working environment.
 

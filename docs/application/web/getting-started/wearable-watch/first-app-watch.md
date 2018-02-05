@@ -263,6 +263,7 @@ To run the application on the emulator:
         > **Note**  
 		> If the emulator display has switched off, you cannot see the application launch. To switch the display on, click the **Power** key (in the lower-right corner of the emulator).
 
+    <a name="watchface"></a>
     3.  Change the watch face.
 
         To change the device watch face and make the installed watch application visible on the home screen:
@@ -362,7 +363,7 @@ To run the application on a target device:
 
 The wearable watch application created with the **Basic Watch** sample has a simple user interface that consists of 4 images (background image and separate images for the hour, minute, and second hands of the clock). The hand images are rotated on the screen every second to show the current time.
 
-The UI is created using [W3C/HTML](../../guides/w3c/w3c-overview.md) in the `index.html` file. The W3C specifications provide HTML and CSS features for creating a user interface. With HTML, you can define the structure of the application screens, while CSS allows you to define the look and feel of the screens.
+The UI is created using [W3C/HTML](https://www.w3schools.com) in the `index.html` file. The W3C specifications provide HTML and CSS features for creating a user interface. With HTML, you can define the structure of the application screens, while CSS allows you to define the look and feel of the screens.
 
 **Figure: User interface in the Basic Watch sample**
 

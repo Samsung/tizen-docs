@@ -84,6 +84,6 @@ The following table lists the additional requirements to be met before developin
 | Prerequisite packages (glib, curl, sdl, pixel manipulation) for using the emulator | At the terminal prompt, enter the following command for Tizen Studio:<br/>`$ sudo apt-get install acl bridge-utils openvpn libfontconfig1 libglib2.0-0 libjpeg-turbo8 libpixman-1-0 libpng12-0 libsdl1.2debian libsm6 libv4l-0 libx11-xcb1 libxcb-icccm4 libxcb-image0 libxcb-randr0 libxcb-render-util0 libxcb-shape0 libxcb-xfixes0 libxi6` |
 
 
-## Related information
+## Related Information
 * Dependencies
   - Tizen Studio 1.0 and Higher

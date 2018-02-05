@@ -1,28 +1,31 @@
 # Tizen Studio
 
-**Tizen Studio 2.1 is now launched!**
-
+**Tizen Studio 2.2 is now launched!**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Download](media/ic_docs_download.png)  **Download**](https://developer.tizen.org/development/tizen-studio/download)
 
 The Tizen Studio platform is based on a new version of Eclipse, so you can experience a stable, lightweight, and consistent user interface that is unique to the Tizen development environment. With the Tizen Studio, you can select and install only those platforms and profiles you need.
-
 
 In the Tizen Studio, you can perform all the same development activities that were possible with the old Tizen SDK: you can develop, build, debug, profile, and emulate Tizen native and Web applications. The new development environment in the Tizen Studio is simply better. It allows you to develop applications more comfortably and is more focused on Tizen development. There are about 200 online sample applications available to increase your understanding of Tizen applications, and the sample library continues to grow.
 
 
 To develop your applications, use the set of tools provided by the Tizen Studio:
 
-- [Setup](setup/installing-sdk.md) Learn about installing and updating the Tizen Studio. You may need to install additional packages to develop applications for various platforms.
+- [Setup](setup/installing-sdk.md)  
+  Learn about installing and updating the Tizen Studio. You may need to install additional packages to develop applications for various platforms.
 
-- [Native Tools](native-tools/cover-native.md)Learn about the available native application development tools. Native applications are developed using the C programming language. You can create an application project, edit the code to meet your needs, and run the application on the emulator or a target device.
+- [Native Tools](native-tools/overview.md)  
+  Learn about the available native application development tools. Native applications are developed using the C programming language. You can create an application project, edit the code to meet your needs, and run the application on the emulator or a target device.
 
-- [Web Tools](web-tools/cover-web.md)Learn about the available Web application development tools. Web applications are developed using the JavaScript, HTML, and CSS languages. You can create an application project, edit the code to meet your needs, and run the application on the emulator, simulator, or a target device.
+- [Web Tools](web-tools/overview.md)  
+  Learn about the available Web application development tools. Web applications are developed using the JavaScript, HTML, and CSS languages. You can create an application project, edit the code to meet your needs, and run the application on the emulator, simulator, or a target device.
 
-- [Platform Tools](platform-tools/cover-platform.md) Learn about the platform development environment that helps you develop preloaded platform applications, platform libraries, and device drivers in Ubuntu.
+- [Platform Tools](platform-tools/overview.md)  
+  Learn about the platform development environment that helps you develop preloaded platform applications, platform libraries, and device drivers in Ubuntu.
 
-- [Tizen Studio for RT](rt-sdk/rt-cover.md) Learn about the Tizen Studio for RT and how you can develop lightweight RTOS-based applications.
+- [Tizen Studio for RT](rt-ide/rt-overview.md)  
+  Learn about the Tizen Studio for RT and how you can develop lightweight RTOS-based applications.
 
-- [Configurable SDK](configurable-sdk/configurable-sdk.md) Learn about using the Tizen Studio to develop applications in a customizable Tizen platform environment.
-
+- [Configurable SDK](configurable-sdk/configurable-sdk.md)  
+  Learn about using the Tizen Studio to develop applications in a customizable Tizen platform environment.
 
 
 The Tizen Studio contains many tools familiar from the old Tizen SDK, but with some improvements. The following list describes the main changes:
@@ -81,3 +84,6 @@ The Tizen Studio contains many tools familiar from the old Tizen SDK, but with s
   **Figure: Dynamic Analyzer**
 
   ![Dynamic Analyzer](media/overview_da.png)
+
+
+For more information, see [Release Notes](../release-notes/2-2-release-notes.md).

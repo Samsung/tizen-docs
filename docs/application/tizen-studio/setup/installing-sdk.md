@@ -47,11 +47,11 @@ The CLI (command line interface) provides functional tools for running the CLI i
 
 To install the Tizen Studio using the CLI installer:
 
-1. [Download the appropriate CLI installer for your platform](download.md).
+1. [Download the appropriate CLI installer for your platform](https://developer.tizen.org/development/tizen-studio/download).
 
 2. Run the CLI installer:
 
-   - On Microsoft Windows®, the command prompt opens and the installer is automatically executed.
+   - On Microsoft Windows&reg; the command prompt opens and the installer is automatically executed.
    - On Ubuntu and macOS, open the terminal, go to the directory where the installer is downloaded, and enter the `chmod +x` command to apply the execute permission to the installer file. Then, execute the installer by entering the command with the following syntax:
    ```
    web-cli_Tizen_Studio_<version> [options] [<directory path>]

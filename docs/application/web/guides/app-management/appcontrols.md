@@ -60,7 +60,7 @@ The application control uses the following primary information:
 
   Describes an action to be performed by the provider application. The operation ID of the platform-provided operation is in the `http://tizen.org/appcontrol/operation/<verb>` format. For example, `http://tizen.org/appcontrol/operation/view`.
 
-  For more information on valid operations, see [Common Application Controls](./common-appcontrol.md). You can also see which operations allow a URI to be specified and which MIME types an operation supports.
+  For more information on valid operations, see [Common Application Controls](common-appcontrols.md). You can also see which operations allow a URI to be specified and which MIME types an operation supports.
 
 An application can be launched by the user from the Launcher or by another application. Each application has a launch mode, which determines how the application is launched: in a separate instance or in the same group as the calling application. For more information on the launch modes, see [Application Groups](./app-group.md).
 
@@ -133,23 +133,23 @@ The Tizen common application controls specify a standard protocol for sharing ap
 
 The following common application controls are available:
 
-- [Browser](./common-appcontrol.md#browser)
-- [Calendar](./common-appcontrol.md#calendar)
-- [Call](./common-appcontrol.md#call)
-- [Camera](./common-appcontrol.md#camera)
-- [Contact](./common-appcontrol.md#contact)
-- [Email](./common-appcontrol.md#email)
-- [File Storage](./common-appcontrol.md#file-storage)
-- [Input Delegator](./common-appcontrol.md#input-delegator)
-- [Map](./common-appcontrol.md#map)
-- [Message](./common-appcontrol.md#message)
-- [Multimedia](./common-appcontrol.md#multimedia)
-- [System Settings](./common-appcontrol.md#system-settings)			  
-  * [Settings for Bluetooth](./common-appcontrol.md#settings-for-bluetooth)
-  *	[Settings for Location](./common-appcontrol.md#settings-for-location)
-  *	[Settings for NFC](./common-appcontrol.md#settings-for-nfc)
-  *	[Settings for Wi-Fi](./common-appcontrol.md#settings-for-wi-fi)
-- [Voice Recorder](./app-management/common-appcontrol.md#voice-recorder)
+- [Browser](common-appcontrols.md#browser)
+- [Calendar](common-appcontrols.md#calendar)
+- [Call](common-appcontrols.md#call)
+- [Camera](common-appcontrols.md#camera)
+- [Contact](common-appcontrols.md#contact)
+- [Email](common-appcontrols.md#email)
+- [File Storage](common-appcontrols.md#file-storage)
+- [Input Delegator](common-appcontrols.md#input-delegator)
+- [Map](common-appcontrols.md#map)
+- [Message](common-appcontrols.md#message)
+- [Multimedia](common-appcontrols.md#multimedia)
+- [System Settings](common-appcontrols.md#system-settings)
+  * [Settings for Bluetooth](common-appcontrols.md#settings-for-bluetooth)
+  *	[Settings for Location](common-appcontrols.md#settings-for-location)
+  *	[Settings for NFC](common-appcontrols.md#settings-for-nfc)
+  *	[Settings for Wi-Fi](common-appcontrols.md#settings-for-wi-fi)
+- [Voice Recorder](common-appcontrols.md#voice-recorder)
 
 ## Application Control Export
 

@@ -317,7 +317,7 @@ To run the application on a target device:
 
 The TV application created with the **Basic UI** template has a simple user interface with a text component showing the **Basic** text in the middle of the screen.
 
-The UI is created using [W3C/HTML](../../guides/w3c/w3c-overview.md). The W3C specifications provide HTML and CSS features for creating a user interface. With HTML, you can define the structure of the application screens, while CSS allows you to define the look and feel of the screens.
+The UI is created using [W3C/HTML](https://www.w3schools.com). The W3C specifications provide HTML and CSS features for creating a user interface. With HTML, you can define the structure of the application screens, while CSS allows you to define the look and feel of the screens.
 
 **Figure: User interface in the Basic UI template**
 

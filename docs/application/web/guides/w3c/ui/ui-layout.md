@@ -104,7 +104,7 @@ To make the layout correct, define the position property as fixed and set the bo
 .footer {position: fixed; bottom: 0px;}
 ```
 
-The following figure shows the same Web application running on the unexpected device after the footer properties are defined properly. With the correct values, the Web application is usable even on a new target, not planned during the development phase. Note that if a [relative layout](./w3c/ui/ui-layout-ww.md#relative) is also applied to the content area, the result is an even better layout and further improved usability.
+The following figure shows the same Web application running on the unexpected device after the footer properties are defined properly. With the correct values, the Web application is usable even on a new target, not planned during the development phase. Note that if a [relative layout](./w3c/ui/ui-layout.md#relative) is also applied to the content area, the result is an even better layout and further improved usability.
 
 **Figure: Usable layout on 360x480**
 

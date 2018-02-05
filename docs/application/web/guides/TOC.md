@@ -1,21 +1,25 @@
 # Application Management
 ## Applications
+### [Overview](app-management/applications.md)
 ### [Service Application](app-management/service-app.md)
 ### [Watch Application](app-management/watch-app.md)
 ### [Widget Application](app-management/web-widget.md)
-## [Application Groups](app-management/app-group.md)
-## [Application Preferences](app-management/preference.md)
-## [Application Icons](app-management/app-icons.md)
 ## Application Information and Controls
-### [Application Controls](app-management/app-controls.md)
-### [Common Application Controls](app-management/common-appcontrol.md)
-### [Widget Information](app-management/widget-app.md)
+### [Overview](app-management/app-info-control.md)
+### [Application Groups](app-management/app-group.md)
+### [Application Preferences](app-management/preference.md)
+### [Application Icons](app-management/app-icons.md)
+### [Application Controls](app-management/appcontrols.md)
+### [Common Application Controls](app-management/common-appcontrols.md)
+### [Widget Information](app-management/widget-info.md)
+### [Package Information](app-management/packages.md)
 ## Application Data Exchange
+### [Overview](app-management/app-communication.md)
 ### [Message Port](app-management/message-port.md)
-### [Data Control](app-management/data.md)
-## [Package Information](app-management/packages.md)
+### [Data Control](app-management/data-control.md)
 
-# [Cordova](cordova/cordova-cover.md)
+# Cordova
+## [Overview](cordova/cordova.md)
 ## [Common Cordova](cordova/core.md)
 ## [Console Logging](cordova/console.md)
 ## [Device Information](cordova/device.md)
@@ -29,31 +33,31 @@
 ## [Notification Dialogs](cordova/dialogs.md)
 
 # Tizen Advanced UI
-## [Overview](ui/tau/tau.md)
-## [Downloading TAU](ui/tau/download-tau.md)
-## [Hello World](ui/tau/helloworld.md)
-## [Managing Pages](ui/tau/managing-page.md)
-## [Event Handling](ui/tau/event-handling.md)
-## [UI Components](ui/tau/ui-component.md)
-## [Creating a Notepad UI Application](ui/tau/notepad.md)
-## [Applications for Circular UI](ui/tau/circular-ui.md)
-###  [Handling Rotary Events](ui/tau/tau-rotary.md)
-###  [Using the Helper Script](ui/tau/helper.md)
-###  [Creating Snap Lists](ui/tau/list.md)
-###  [Creating Expandable Headers](ui/tau/header.md)
-###  [Creating Circle-shaped Progress Bars](ui/tau/circle-progressbar.md)
-###  [Creating Full Size Processing Components](ui/tau/processing.md)
-###  [Creating Footer Buttons](ui/tau/footerbutton.md)
-###  [Creating Thumbnails](ui/tau/thumbnail.md)
-###  [Creating Popup Buttons](ui/tau/popup.md)
-###  [Creating Index Scroll Bars](ui/tau/indexscrollbar.md)
-###  [Implementing More Options](ui/tau/moreoptions.md)
-## [Accessibility](ui/tau/accessibility.md)
-## [Globalization](ui/tau/globalization.md)
+## [Overview](tau/tau.md)
+## [Downloading TAU](tau/download-tau.md)
+## [Hello World](tau/helloworld.md)
+## [Managing Pages](tau/managing-page.md)
+## [Event Handling](tau/event-handling.md)
+## [UI Components](tau/ui-component.md)
+## [Creating a Notepad UI Application](tau/notepad.md)
+## [Applications for Circular UI](tau/circular-ui.md)
+###  [Handling Rotary Events](tau/tau-rotary.md)
+###  [Using the Helper Script](tau/helper.md)
+###  [Creating Snap Lists](tau/list.md)
+###  [Creating Expandable Headers](tau/header.md)
+###  [Creating Circle-shaped Progress Bars](tau/circle-progressbar.md)
+###  [Creating Full Size Processing Components](tau/processing.md)
+###  [Creating Footer Buttons](tau/footerbutton.md)
+###  [Creating Thumbnails](tau/thumbnail.md)
+###  [Creating Popup Buttons](tau/popup.md)
+###  [Creating Index Scroll Bars](tau/indexscrollbar.md)
+###  [Implementing More Options](tau/moreoptions.md)
+## [Accessibility](tau/accessibility.md)
+## [Globalization](tau/globalization.md)
 ## Animation
-### [Overview](ui/tau/animation.md)
-### [Creating Applications with Animation](ui/tau/creating-animation.md)
-## [2.4 Porting Guide](ui/tau/tau-porting.md)
+### [Overview](tau/animation.md)
+### [Creating Applications with Animation](tau/creating-animation.md)
+## [2.4 Porting Guide](tau/tau-porting.md)
 
 # [Localization](localization/localization.md)
 
@@ -62,6 +66,7 @@
 # [Alarms](alarm/alarms.md)
 
 # Media and Camera
+## [Ovierview](multimedia/media.md)
 ## [JPEG File EXIF Information](multimedia/jpeg-exif.md)
 ## [Audio Management](multimedia/audio.md)
 ## [Audio Latency](multimedia/player-util.md)
@@ -71,6 +76,7 @@
 ## [Camera](multimedia/camera.md)
 
 # Connectivity and Wireless
+## [Overview](connectivity/connectivity.md)
 ## [Bluetooth](connectivity/bluetooth.md)
 ## [IoT Connectivity](connectivity/iotcon.md)
 ## [NFC](connectivity/nfc.md)
@@ -78,18 +84,22 @@
 ## [Content Downloads](connectivity/download.md)
 
 # Messaging
+## [Overview](messaging/messaging.md)
 ## [Messages](messaging/messages.md)
 ## [Push Notification](messaging/push.md)
 
 # Sensors
+## [Overview](sensors/sensors.md)
 ## [Human Activity Monitor](sensors/ham.md)
 ## [Device Sensors](sensors/device-sensors.md)
 
 # Text Input
+## [Overview](text-input/text-input.md)
 ## [IME Application](text-input/input-method.md)
 ## [Input Device](text-input/input-device.md)
 
 # Personal Data
+## [Overview](personal/personal.md)
 ## [Account Management](personal/account.md)
 ## [Bookmarks](personal/bookmarks.md)
 ## [Calendar](personal/calendar.md)
@@ -98,12 +108,14 @@
 ## [Data Synchronization](personal/sync.md)
 
 # Data Storage and Management
+## [Overview](data/data.md)
 ## [Data Filtering and Sorting](data/data-filter.md)
 ## [File System](data/file-system.md)
 ## [Stored Content Management](data/stored-content.md)
 ## [File Archiving](data/file-archiving.md)
 
 # Device Settings and Systems
+## [Overview](device/device.md)
 ## [Power States](device/power.md)
 ## [System Information](device/system-information.md)
 ## [System Settings](device/system-setting.md)
@@ -116,7 +128,10 @@
 
 # [Error Handling](error/error.md)
 
-# [W3C/HTML5/Supplementary Features](w3c/w3c-cover.md)
+
+<!-- W3C docs are updated. -->
+<!--
+# [W3C/HTML5/Supplementary Features](w3c/w3c-overview.md)
 ## Device
 ### [Overview](w3c/device/device-guide.md)
 ### [Battery Status](w3c/device/battery.md)
@@ -156,6 +171,7 @@
 ### [Overview](w3c/perf-opt/performance-guide.md)
 ### [Page Visibility](w3c/perf-opt/page.md)
 ### [Timing control for script-based animations](w3c/perf-opt/timing-control.md)
+### [Performance Improvement](w3c/perf-opt/performance.md)
 ### Web Workers
 #### [Overview](w3c/perf-opt/web-workers.md)
 #### [JavaScript Performance Improvement](w3c/perf-opt/js-performance-improvement.md)
@@ -163,15 +179,13 @@
 #### [jQuery Performance Improvement](w3c/perf-opt/jquery-performance-improvement.md)
 ## Location
 ### [Geolocation API Specification](w3c/location/geolocation.md)
-## Useful Guides for W3C/HTML5 Features
-### [Tizen WebKit Tap Sound Policy](w3c/useful/sound-policy.md)
-### [Performance Improvement](w3c/useful/performance.md)
 ## Supplementary Features
 ### [Overview](w3c/supplement/supplement.md)
 ### [Typed Array - Khronos](w3c/supplement/typedarray.md)
 ### [WebGL - Khronos](w3c/supplement/webgl.md)
 ### [FullScreen API - Mozilla](w3c/supplement/fullscreen.md)
 ### [Camera API (Tizen Extension)](w3c/supplement/camera.md)
+### [Tizen WebKit Tap Sound Policy](w3c/useful/sound-policy.md)
 ## User Interface
 ### [Overview](w3c/ui/ui-guide.md)
 ### [HTML Priorities](w3c/ui/html-priority.md)
@@ -195,3 +209,4 @@
 ### [CSS Basic User Interface Module (Level 3)](w3c/ui/basic-ui.md)
 ### [CSS Fonts Module (Level 3)](w3c/ui/font.md)
 ### [WOFF File Format (1.0 and 2.0)](w3c/ui/woff.md)
+-->

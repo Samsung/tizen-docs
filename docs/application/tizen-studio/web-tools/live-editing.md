@@ -24,14 +24,13 @@ To enable live editing in the Tizen Studio:
 If you are running your application for the first time, you must create a new configuration first.
 
 > **Note**  
-> The live editing feature has the following limitations:     
+> The live editing feature has the following limitations:
+> - The Tizen Device API does not work on the emulator.
+> - Only specific device APIs are supported by the Web simulator.
+> - Live editing does not work in certain environments, such as a proxy network.
 
-- The Tizen Device API does not work on the emulator.
-- Only specific device APIs are supported by the Web simulator.
-- Live editing does not work in certain environments, such as a proxy network.
-
-To define how the live editing works, [set the Tizen Studio Live Editing preferences](IDE-preferences.md#live).
+To define how the live editing works, [set the Tizen Studio Live Editing preferences](ide-preferences.md#live).
 
 ## Related Information
-* Dependencies
+- Dependencies
   - Tizen Studio 1.0 and Higher

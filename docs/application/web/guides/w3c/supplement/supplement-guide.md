@@ -20,6 +20,11 @@ The main supplementary features are:
 
   Enables you to control the camera options, capture images, and record video.
 
+- [Tizen WebKit Tap Sound Policy](./sound-policy.md) **in mobile applications only**
+
+  Allows you to play sounds to provide responsiveness on user interaction.
+
+
 ## Related Information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile

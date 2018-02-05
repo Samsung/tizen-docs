@@ -384,7 +384,7 @@ To run the application on a target device:
 
         Use the IP address you noted before.
 
-        Instead of the terminal, you can also use the [Remote Device Manager](../wearable/first-app-ww.md#remote_device) for the connection.
+        Instead of the terminal, you can also use the [Remote Device Manager](../wearable/first-app.md#remote_device) for the connection.
 
     3.  In the first attempt, the connection fails and the device asks for user confirmation. To allow Gear to read log data, copy files to and from your computer, and install the application manually, click the accept mark.
 
@@ -428,7 +428,7 @@ To run the application on a target device:
 
 The widget application created with the **Widget** template has a simple user interface with a text component showing the **Hello Widget** text on the screen.
 
-The UI is created using [W3C/HTML](../../guides/w3c/w3c-overview.md) in the `index.html` file. The W3C specifications provide HTML and CSS features for creating a user interface. With HTML, you can define the structure of the application screens, while CSS allows you to define the look and feel of the screens.
+The UI is created using [W3C/HTML](https://www.w3schools.com) in the `index.html` file. The W3C specifications provide HTML and CSS features for creating a user interface. With HTML, you can define the structure of the application screens, while CSS allows you to define the look and feel of the screens.
 
 **Figure: User interface in the Widget template**
 

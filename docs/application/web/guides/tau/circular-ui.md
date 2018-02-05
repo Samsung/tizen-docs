@@ -83,17 +83,17 @@ The following components can be used on both rectangular and circular devices.
 
 | Component                                | Description                              |
 | ---------------------------------------- | ---------------------------------------- |
-| [Rotary Events](./ui/tau/tau-rotary-ww.md) | Shows how to support the "rotarydetent" event. |
-| [Helper Script](./ui/tau/helper-ww.md) | Shows how to support some application components. |
-| [Snap List](./ui/tau/list-ww.md) | Shows how to create a snap list component. |
-| [Expandable Header](./ui/tau/header-ww.md) | Shows how to create a header component.  |
-| [Circle-shaped Progress Bar](./ui/tau/circle-progressbar-ww.md) | Shows how to create a circle progress bar component. |
-| [Full Size Processing Component](./ui/tau/processing-ww.md) | Shows how to create a processing component. |
-| [Footer Button](./ui/tau/footerbutton-ww.md) | Shows how to create a footer button component. |
-| [Thumbnail](./ui/tau/thumbnail-ww.md) | Shows how to create a thumbnail component. |
-| [Popup Button](./ui/tau/popup-ww.md) | Shows how to create a popup component.   |
-| [Index Scroll Bar](./ui/tau/indexscrollbar-ww.md) | Shows how to create an index scroll bar component. |
-| [More Options](./ui/tau/moreoptions-ww.md) | Shows how to create a more options button component. |
+| [Rotary Events](tau-rotary.md) | Shows how to support the "rotarydetent" event. |
+| [Helper Script](helper.md) | Shows how to support some application components. |
+| [Snap List](list.md) | Shows how to create a snap list component. |
+| [Expandable Header](header.md) | Shows how to create a header component.  |
+| [Circle-shaped Progress Bar](circle-progressbar.md) | Shows how to create a circle progress bar component. |
+| [Full Size Processing Component](processing.md) | Shows how to create a processing component. |
+| [Footer Button](footerbutton.md) | Shows how to create a footer button component. |
+| [Thumbnail](thumbnail.md) | Shows how to create a thumbnail component. |
+| [Popup Button](popup.md) | Shows how to create a popup component.   |
+| [Index Scroll Bar](indexscrollbar.md) | Shows how to create an index scroll bar component. |
+| [More Options](moreoptions.md) | Shows how to create a more options button component. |
 
 ## Related Information
 * Dependencies
