@@ -35,7 +35,7 @@ To enable your application to use the Cairo functionality:
 1. Before using the Cairo library in Tizen:
    - You must understand the basic concepts of Cairo. For more information, see the [Cairo Tutorial in cairographics.org](http://www.cairographics.org/tutorial/).
    - In the Tizen framework, Cairo can use 2 different backends: image backend and Evas GL backend. You must check which backend is suitable for your work. For more information, see the [Creating a Cairo Surface Linked with an Evas Object](#create).
-   - In creating native UI applications in Tizen, make sure you understand [EFL and its features](../ui/efl/efl.md).
+   - In creating native UI applications in Tizen, make sure you understand [EFL and its features](../ui/efl/introduction-n.md).
 2. To use the functions and data types of the Cairo image and GL backends, include the `<cairo.h>` header file in your application. For the Cairo GL backend, you also need the `<cairo-evas-gl.h>`, and `<Evas_GL.h>` header files.
 
     ```

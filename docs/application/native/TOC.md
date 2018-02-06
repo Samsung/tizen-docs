@@ -1,10 +1,12 @@
 # Getting Started
-## [Creating Your First Tizen Mobile Native Application](getting-started/mobile/first-app-mn.md)
-## [Creating Your First Tizen Wearable Native Application](getting-started/wearable/first-app-wn.md)
-## [Creating Your First Tizen Wearable Native Watch Application](getting-started/wearable-watch/first-app-watch-wn.md)
-## [Creating Your First Tizen Wearable Native Widget Application](getting-started/wearable-widget/first-app-widget-wn.md)
+## [Creating Your First Tizen Mobile Native Application](getting-started/mobile/first-app.md)
+## [Creating Your First Tizen Wearable Native Application](getting-started/wearable/first-app.md)
+## [Creating Your First Tizen Wearable Native Watch Application](getting-started/wearable-watch/first-app-watch.md)
+## [Creating Your First Tizen Wearable Native Widget Application](getting-started/wearable-widget/first-app-widget.md)
 
 # Tutorials
+## [Overview](tutorials/overview.md)
+
 ## Application Development Process
 ### [Overview](tutorials/process/app-dev-process.md)
 ### [Creating the Application Project](tutorials/process/creating-app-project.md)
@@ -24,9 +26,9 @@
 ### [API Versioning and Deprecation Policy of the Tizen Platform](tutorials/details/deprecation-policy.md)
 ### [Application Signing and Certificates](tutorials/details/sign-certificate.md)
 
-## [Overview of Tizen UI Development](tutorials/feature/ui-builder-overview-mn.md)
-
-## [Designing Your Native Application](tutorials/feature/ui-builder-app-design-mn.md)
+## Tizen UI Development
+### [Overview](tutorials/feature/ui-builder-overview.md)
+### [Designing Your Native Application](tutorials/feature/ui-builder-app-design.md)
 
 ## Creating Applications with Connectivity and Network
 ### [Overview](tutorials/feature/app-connectivity.md)
