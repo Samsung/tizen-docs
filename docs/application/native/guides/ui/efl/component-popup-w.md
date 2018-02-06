@@ -1,9 +1,5 @@
 # Popup
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 This feature is supported in wearable applications only.
 
 The popup component shows a popup area that can contain:
@@ -201,7 +197,8 @@ elm_popup_timeout_set(popup, 5.0);
 To receive notifications about the popup events, listen for the following signals:
 
 - `timeout`: The popup is closed as a result of the timeout.
-- `block,clicked`: The user clicks on the blocked event area.The blocked event area is the translucent region around the visible popup region.
+- `block,clicked`: The user clicks on the blocked event area.  
+The blocked event area is the translucent region around the visible popup region.
 
 > **Note**  
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
@@ -222,3 +219,7 @@ _timeout_cb(void *data, Evas_Object *obj, void *event_info)
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.3.1 and Higher for Wearable

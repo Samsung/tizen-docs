@@ -1,9 +1,5 @@
 # Progressbar
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 The progressbar UI component displays the progress status of a given job. For more information, see the [Progressbar](../../../../../org.tizen.native.mobile.apireference/group__Elm__Progressbar.html) API.
 
 This feature is supported in mobile applications only.
@@ -53,7 +49,9 @@ To use a progressbar component in your application:
      elm_progressbar_pulse(progressbar, EINA_TRUE);
      ```
 
-4. Register the [callback](#callback) functions.The following example shows how to define and register a callback for the `changed` signal:
+4. Register the [callback](#callbacks) functions.  
+
+ The following example shows how to define and register a callback for the `changed` signal:
 
    ```
    evas_object_smart_callback_add(progressbar, "changed", changed_cb, data);
@@ -69,9 +67,7 @@ The following example shows a simple use case of the progressbar component.
 
 **Example: Progressbar use case**
 
-| ![Progressbar](./media/progressbar.png) |
-| ---------------------------------------- |
-|                                          |
+ ![Progressbar](./media/progressbar.png)
 
 ```
 Evas_Object *win;
@@ -130,9 +126,13 @@ To configure the progressbar features:
 
 - Set a text in the progressbar:
 
-  - Set a label to the progressbar with the `elm_object_text_set()` function, if the style supports a text part.`/* Supported styles: default, pending */elm_object_text_set(progressbar, "progressbar");`
+  - Set a label to the progressbar with the `elm_object_text_set()` function, if the style supports a text part.
+  ```
+  /* Supported styles: default, pending */elm_object_text_set(progressbar, "progressbar");
+  ```
 
-  - According to the [style](#style), the `elm_object_part_text_set()` function is used in order to do the setting in the other location.`elm_object_part_text_set(progressbar, "elm.text.bottom.left", "progressbar");`
+  - According to the [style](#styles), the `elm_object_part_text_set()` function is used in order to do the setting in the other location.  
+  `elm_object_part_text_set(progressbar, "elm.text.bottom.left", "progressbar");`
 
   - Set the unit label with the `elm_progressbar_unit_format_set()` function.
 
@@ -160,7 +160,7 @@ The following table lists the available component styles.
 **Table: Progressbar styles**
 
 | Style                                    | Sample                                   | Text part                                |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+|----------------------------------------|----------------------------------------|----------------------------------------|
 | `elm/progressbar/horizontal/default`     | ![elm/progressbar/horizontal/default](./media/progressbar_default.png) | `elm.text.top.right` `(default)``elm.text.bottom.left``elm.text.bottom.right` |
 | `elm/progressbar/horizontal/pending`     | ![elm/progressbar/horizontal/pending](./media/progressbar_pending.png) | `elm.text.top.right` `(default)``elm.text.bottom.left``elm.text.bottom.right` |
 | `elm/progressbar/horizontal/process_large``elm/progressbar/horizontal/process_medium``elm/progressbar/horizontal/process_small` | ![elm/progressbar/horizontal/process_large](./media/progressbar_wheel.png) | N/A                                      |
@@ -172,7 +172,7 @@ You can register callback functions connected to the following signals for a pro
 **Table: Progressbar callback signals**
 
 | Signal    | Description                    | `event_info` |
-| --------- | ------------------------------ | ------------ |
+|---------|------------------------------|------------|
 | `changed` | The progressbar value changes. | `NULL`       |
 
 > **Note**  
@@ -180,3 +180,7 @@ You can register callback functions connected to the following signals for a pro
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile

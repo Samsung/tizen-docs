@@ -1,9 +1,5 @@
 # Radio
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 The radio UI component displays 1 or more options and allows users to select 1 of them. For more information, see the [Radio](../../../../../org.tizen.native.wearable.apireference/group__Elm__Radio.html) API.
 
 This feature is supported in wearable applications only.
@@ -36,7 +32,9 @@ To use a radio component in your application:
 
    - Group the radio buttons visually by packing them into a box.
 
-3. Register the [callback](#callback) functions.The following example shows how to define and register a callback for the `changed` signal:
+3. Register the [callback](#callbacks) functions.  
+
+ The following example shows how to define and register a callback for the `changed` signal:
 
    ```
    evas_object_smart_callback_add(radio, "changed", changed_cb, data);
@@ -50,9 +48,7 @@ To use a radio component in your application:
 
 **Example: Radio use case**
 
-| ![Radio](./media/radio_wn1.png)![Radio](./media/radio_wn2.png) |
-| ---------------------------------------- |
-|                                          |
+ ![Radio](./media/radio_wn1.png)![Radio](./media/radio_wn2.png)
 
 ```
 Evas_Object *win;
@@ -105,13 +101,13 @@ The following tables lists the available component styles.
 **Table: Radio styles (rectangular device)**
 
 | Style     | Sample                                   |
-| --------- | ---------------------------------------- |
+|---------|----------------------------------------|
 | `default` | ![elm/radio/base/default](./media/radio_default_wn.png) |
 
 **Table: Radio styles (circular device)**
 
 | Style     | Sample                                   |
-| --------- | ---------------------------------------- |
+|---------|----------------------------------------|
 | `default` | ![elm/radio/base/default](./media/radio_default_cir_wn.png) |
 
 ## Callbacks
@@ -121,7 +117,7 @@ You can register callback functions connected to the following signals for a rad
 **Table: Radio callback signals**
 
 | Callback  | Description                   | `event_info` |
-| --------- | ----------------------------- | ------------ |
+|---------|-----------------------------|------------|
 | `changed` | The radio button is selected. | `NULL`       |
 
 > **Note**  
@@ -129,3 +125,7 @@ You can register callback functions connected to the following signals for a rad
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.3.1 and Higher for Wearable

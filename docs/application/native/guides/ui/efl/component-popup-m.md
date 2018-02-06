@@ -1,9 +1,5 @@
 # Popup
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 The popup UI component is a small window for notifying the user or requesting user input. For more information, see the [Popup](../../../../../org.tizen.native.mobile.apireference/group__Elm__Popup.html) API.
 
 This feature is supported in mobile applications only.
@@ -64,7 +60,9 @@ To use a popup component in your application:
    elm_object_part_content_set(popup, "button2", button2);
    ```
 
-5. Register the [callback](#callback) functions.The following example shows how to define and register a callback for the `dismissed` signal:
+5. Register the [callback](#callbacks) functions.  
+
+  The following example shows how to define and register a callback for the `dismissed` signal:
 
    ```
    evas_object_smart_callback_add(popup, "dismissed", dismissed_cb, data);
@@ -80,9 +78,7 @@ The following example shows a simple use case of the popup component.
 
 **Example: Popup use case**
 
-| ![Alignment](./media/popup.png) |
-| --------------------------------------- |
-|                                         |
+ ![Alignment](./media/popup.png)
 
 ```
 Evas_Object *win;
@@ -148,7 +144,7 @@ The following table lists the available component styles.
 **Table: Popup styles**
 
 | Style      | Sample                                   | Text part                            | Swallow part                             |
-| ---------- | ---------------------------------------- | ------------------------------------ | ---------------------------------------- |
+|----------|----------------------------------------|------------------------------------|----------------------------------------|
 | `default`  | ![elm/button/base/default](./media/popup_default.png) | `default``title,text``subtitle,text` | `elm.swallow.content``button1``button2``button3` |
 | `toast`    | ![elm/button/base/default](./media/popup_toast.png) | `default`                            | `elm.swallow.content`                    |
 | `theme_bg` | ![elm/button/base/default](./media/popup_theme_bg.png) | `default``title,text``subtitle,text` | `elm.swallow.content``button1``button2``button3` |
@@ -162,13 +158,17 @@ You can register callback functions connected to the following signals for a pop
 **Table: Popup callback signals**
 
 | Signal          | Description                              | `event_info` |
-| --------------- | ---------------------------------------- | ------------ |
+|---------------|----------------------------------------|------------|
 | `timeout`       | The popup is closed as a result of the timeout. | `NULL`       |
 | `block,clicked` | The user clicks on the blocked event area. The blocked event area is the translucent region around the visible popup region. | `NULL`       |
 | `dismissed`     | The popup is dismissed with a hide effect. | `NULL`       |
 
 > **Note**  
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-  
+
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile

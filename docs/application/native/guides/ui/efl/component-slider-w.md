@@ -1,9 +1,5 @@
 # Slider
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 The slider UI component is a draggable item used to select a value within a certain range. For more information, see the [Slider](../../../../../org.tizen.native.wearable.apireference/group__Elm__Slider.html) API.
 
 This feature is supported in wearable applications only.
@@ -38,7 +34,9 @@ To use a slider component in your application:
 
    - The slider for wearable devices does not support additional features, such as horizontal or inverted slider.
 
-3. Register the [callback](#callback) functions.The following example shows how to define and register a callback for the `changed` signal:
+3. Register the [callback](#callbacks) functions.  
+
+ The following example shows how to define and register a callback for the `changed` signal:
 
    ```
    evas_object_smart_callback_add(slider, "changed", slider_changed_cb, NULL);
@@ -55,9 +53,7 @@ The following example shows a simple use case of the slider component.
 
 **Example: Slider use case**
 
-| ![Slider](./media/slider_wn2.png) ![Slider](./media/slider_wn3.png) |
-| ---------------------------------------- |
-|                                          |
+ ![Slider](./media/slider_wn2.png) ![Slider](./media/slider_wn3.png)
 
 ```
 Evas_Object *box;
@@ -92,7 +88,7 @@ The following table lists the available component styles.
 **Table: Slider styles**
 
 | Style     | Sample                                   |
-| --------- | ---------------------------------------- |
+|---------|----------------------------------------|
 | `default` | ![elm/slider/horizontal/warning](./media/slider_hor_wn.png) |
 
 ## Callbacks
@@ -102,7 +98,7 @@ You can register callback functions connected to the following signals for a sli
 **Table: Slider callback signals**
 
 | Signal              | Description                              | `event_info` |
-| ------------------- | ---------------------------------------- | ------------ |
+|-------------------|----------------------------------------|------------|
 | `changed`           | The slider value is changed by the user. | `NULL`       |
 | `delay,changed`     | A short time after the value is changed by the user. This is called only when the user stops dragging for a very short period or when they release their finger or mouse, so it avoids possibly expensive reactions to the value change. | `NULL`       |
 | `slider,drag,start` | Dragging the slider indicator around has started. | `NULL`       |
@@ -113,3 +109,7 @@ You can register callback functions connected to the following signals for a sli
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.3.1 and Higher for Wearable

@@ -1,10 +1,5 @@
 # Table
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 The table container acts like a box container, but with 2 dimensions. It provides the same kind of APIs as a box. An item inside a table can span multiple columns and rows, and even overlap with other items. For more information, see the Table API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Elm__Table.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Elm__Table.html) applications).
 
 **Figure: Table component structure**
@@ -37,10 +32,7 @@ The following example shows a simple use case of the table component, where 5 bu
 
 **Example: Table use case**
 
-| ![Table](./media/table1.png) |
-| ---------------------------------------- |
-|                                          |
-
+ ![Table](./media/table1.png)
 ```
 Evas_Object *win;
 Evas_Object *conf;
@@ -119,3 +111,8 @@ To manage the table items:
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

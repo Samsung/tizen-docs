@@ -1,9 +1,5 @@
 # Slider
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 The slider UI component is a draggable item used to select a value within a certain range. For more information, see the [Slider](../../../../../org.tizen.native.mobile.apireference/group__Elm__Slider.html) API.
 
 This feature is supported in mobile applications only.
@@ -22,14 +18,14 @@ To use a slider component in your application:
 
 2. Configure the slider. The following configurations are optional. Unless you set other options, the slider uses the default styles.
 
-   - Set the slider [style](#style):
+   - Set the slider [style](#styles):
 
      ```
      /* Default: "default" */
      elm_object_style_set(slider, "default");
      ```
 
-   - Set other [options](#practices).
+   - Set other [options](#options).
 
      ```
      elm_slider_inverted_set(slider, EINA_FALSE);
@@ -37,7 +33,9 @@ To use a slider component in your application:
      elm_slider_indicator_format_set(slider, "%.1f");
      ```
 
-3. Register the [callback](#callback) functions.The following example shows how to define and register a callback for the `changed` signal:
+3. Register the [callback](#callbacks) functions.  
+
+ The following example shows how to define and register a callback for the `changed` signal:
 
    ```
    evas_object_smart_callback_add(slider, "changed", slider_changed_cb, 0);
@@ -54,9 +52,7 @@ The following example shows a simple use case of the slider component.
 
 **Example: Slider use case**
 
-| ![Slider](./media/mobile_slider.png) |
-| ---------------------------------------- |
-|                                          |
+ ![Slider](./media/mobile_slider.png)
 
 ```
 Evas_Object *box;
@@ -92,10 +88,9 @@ You can build various sliders by combining styles and options:
 
   **Table: Slider indicator**
 
-  | `EINA_TRUE`                              | `EINA_FALSE`                             |
-  | ---------------------------------------- | ---------------------------------------- |
+| `EINA_TRUE`                              | `EINA_FALSE`                             |
+  |----------------------------------------|----------------------------------------|
   | ![Slider indicator](./media/mobile_slider_various_1_T.png) | ![Slider indicator](./media/mobile_slider_various_1_F.png) |
-  |                                          |                                          |
 
   ```
   Evas_Object *slider;
@@ -126,10 +121,9 @@ You can build various sliders by combining styles and options:
 
   **Table: Slider orientation**
 
-  | `EINA_TRUE`                              | `EINA_FALSE`                             |
-  | ---------------------------------------- | ---------------------------------------- |
+| `EINA_TRUE`                              | `EINA_FALSE`                             |
+  |----------------------------------------|----------------------------------------|
   | ![Slider orientation](./media/mobile_slider_various_2_T.png) | ![Slider orientation](./media/mobile_slider_various_2_F.png) |
-  |                                          |                                          |
 
   ```
   Evas_Object *slider;
@@ -155,10 +149,9 @@ You can build various sliders by combining styles and options:
 
   **Table: Inverted slider**
 
-  | `EINA_TRUE`                              | `EINA_FALSE`                             |
-  | ---------------------------------------- | ---------------------------------------- |
+| `EINA_TRUE`                              | `EINA_FALSE`                             |
+  |----------------------------------------|----------------------------------------|
   | ![Inverted slider](./media/mobile_slider_various_3_T.png) | ![Inverted slider](./media/mobile_slider_various_3_F.png) |
-  |                                          |                                          |
 
 ```
 box = elm_box_add(nf);
@@ -182,7 +175,7 @@ The following table lists the available component styles.
 **Table: Slider styles**
 
 | Style          | Horizontal                               | Vertical                                 |
-| -------------- | ---------------------------------------- | ---------------------------------------- |
+|-------------|----------------------------------------|----------------------------------------|
 | `default`      | ![elm/slider/horizontal/default](./media/slider_hor.png) | ![elm/slider/vertical/default](./media/slider_ver.png) |
 | `center_point` | ![elm/slider/horizontal/center_point](./media/slider_hor_center.png) | ![elm/slider/vertical/center_point](./media/slider_ver_center.png) |
 | `warning`      | ![elm/slider/horizontal/warning](./media/slider_hor_warning.png) | ![elm/slider/vertical/warning](./media/slider_ver_warning.png) |
@@ -194,7 +187,7 @@ You can register callback functions connected to the following signals for a sli
 **Table: Slider callback signals**
 
 | Signal              | Description                              | `event_info` |
-| ------------------- | ---------------------------------------- | ------------ |
+|-------------------|----------------------------------------|------------|
 | `changed`           | The slider value is changed by the user. | `NULL`       |
 | `delay,changed`     | A short time after the value is changed by the user. This is called only when the user stops dragging for a very short period or when they release their finger or mouse, so it avoids possibly expensive reactions to the value change. | `NULL`       |
 | `slider,drag,start` | Dragging the slider indicator around has started. | `NULL`       |
@@ -205,3 +198,7 @@ You can register callback functions connected to the following signals for a sli
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile

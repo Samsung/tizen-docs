@@ -1,10 +1,5 @@
 # Grid
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 The grid container places its elements at specific positions along a fixed grid, where the position of each object is given as a percentage of the full width and height of the grid. For more information, see the Grid API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Elm__Grid.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Elm__Grid.html) applications).
 
 **Figure: Grid component structure**
@@ -41,9 +36,7 @@ The following example shows a simple use case of the grid component.
 
 **Example: Grid use case**
 
-| ![Grid](./media/grid2.png) |
-| ---------------------------------- |
-|                                    |
+ ![Grid](./media/grid2.png)
 
 ```
 Evas_Object *win;
@@ -82,3 +75,8 @@ evas_object_show(button);
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable
