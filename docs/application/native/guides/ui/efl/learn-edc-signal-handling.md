@@ -55,7 +55,7 @@ Using signals in the EDC file is simple:
 
 2. Emit signals from the C code:
 
-   a. Create a window with the check UI component. Define a callback for when the check component is selected.
+   1. Create a window with the check UI component. Define a callback for when the check component is selected.
 
       ```
       static void
@@ -107,7 +107,7 @@ Using signals in the EDC file is simple:
 
       ![Signal implemented on the screen](./media/edje_signal1.png)
 
-   b. The following example implements the callback for the `changed` event from the check component. When the `changed`  event is triggered, a signal is emitted from the C code to the EDC file.
+   2. The following example implements the callback for the `changed` event from the check component. When the `changed`  event is triggered, a signal is emitted from the C code to the EDC file.
 
       ```
       static void

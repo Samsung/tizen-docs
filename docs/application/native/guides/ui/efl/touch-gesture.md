@@ -557,9 +557,9 @@ To create a zoom gesture:
 
    The normal zoom gesture detecting logic:
 
-   a. The gesture layer remembers the gap of each touched geometry.  
-   b. When the user moves each touched point, the gesture layer calculates the gap of each touched geometry for each move event.  
-   c. If the values (gap + `zoom_distance_tolerance`, gap – `zoom_distance_tolerance`) are bigger or smaller than the first calculated gap values, the gesture layer calls the `zoom_move()` callback function with the calculated result.
+   1. The gesture layer remembers the gap of each touched geometry.  
+   2. When the user moves each touched point, the gesture layer calculates the gap of each touched geometry for each move event.  
+   3. If the values (gap + `zoom_distance_tolerance`, gap – `zoom_distance_tolerance`) are bigger or smaller than the first calculated gap values, the gesture layer calls the `zoom_move()` callback function with the calculated result.
 
    ```
    static Evas_Event_Flags
