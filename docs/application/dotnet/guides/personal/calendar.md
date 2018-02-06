@@ -76,7 +76,7 @@ To manage the record, you can use the classes of the [Tizen.Pims.Calendar.Calend
     **Table: Calendar views**
 
     | Views                                    | Description                              |
-    | ---------------------------------------- | ---------------------------------------- |
+    |----------------------------------------|----------------------------------------|
     | `Tizen.Pims.Calendar.CalendarViews.Book` | This view holds calendar book properties, such as name, color, and visibility.There are 3 [default calendar books](#book) for the local event, todo, and birthday event types.Calendar books can be created by service providers, such as Google or Yahoo (with an account), or by applications, such as Joyn or Facebook. |
     | `Tizen.Pims.Calendar.CalendarViews.Event` | This view holds event properties, such as a summary, description, and location.Alarms, attendees, and extended views can be inserted as child records for an event.Recurrence properties can be set to make a repeating event, such as a birthday.The recurrence rules follow the [vCalendar2.0 specification](https://www.ietf.org/rfc/rfc2445.txt). |
     | `Tizen.Pims.Calendar.CalendarViews.Todo` | This view holds todo properties, such as a due time. |
@@ -116,7 +116,7 @@ To manage the record, you can use the classes of the [Tizen.Pims.Calendar.Calend
     **Table: Setter and getter methods**
 
     | Type           | Property                                 | Setter                                   | Getter                                   |
-    | -------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+    |--------------|----------------------------------------|----------------------------------------|----------------------------------------|
     | `integer`      | `Tizen.Pims.Calendar.CalendarViews.Event.BookId` | `record.Set<int>(CalendarViews.Event.BookId, 3)` | `record.Get<int>(CalendarViews.Event.BookId)` |
     | `long`         | `Tizen.Pims.Calendar.CalendarViews.Todo.CompletedTime` | `record.Set<long>(CalendarViews.Todo.CompletedTime, 349866000)` | `record.Get<long>(CalendarViews.Todo.CompletedTime)` |
     | `double`       | `Tizen.Pims.Calendar.CalendarViews.Event.Latitude` | `record.Set<double>(CalendarViews.Event.Latitude, 37.566)` | `record.Get<double>(CalendarViews.Event.Latitude)` |
@@ -143,7 +143,7 @@ To manage the record, you can use the classes of the [Tizen.Pims.Calendar.Calend
     **Table: CalendarTime data types**
 
     | Identifier                | Description                              |
-    | ------------------------- | ---------------------------------------- |
+    |-------------------------|----------------------------------------|
     | `CalendarTime.Type.Utc`   | UTC time is used to describe non-all-day events.For non-all-day events, you must convert local time to UTC time. The local time zone identifier must be stored in the record, in the corresponding property.For example, when setting the start time of an event, the local time zone must be stored in the `CalendarViews.Event.StartTzid` property. |
     | `CalendarTime.Type.Local` | Date only (year, month, and day of the month) is used to describe all-day events.For all day events, use `CalendarTime` with parameters (year, month, day, hour, minute, second).Both the start and end time of the event must be set, and they do not have to be equal. If they are not, the event lasts more than 1 day. |
 
@@ -190,7 +190,7 @@ A calendar book is a container for other calendar records. Every event and todo 
 **Table: Calendar books**
 
 | Book                                 | Description         |
-| ------------------------------------ | ------------------- |
+|------------------------------------|-------------------|
 | `CalendarTypes.DefaultBook.Event`    | Local Event book    |
 | `CalendarTypes.DefaultBook.Todo`     | Local Todo book     |
 | `CalendarTypes.DefaultBook.Birthday` | Local Birthday book |
@@ -226,7 +226,7 @@ The following table illustrates an example of a recurring event and its instance
 ****Table: Event and instance example**
 
 | Event with recurrence rule               | Generated instances |
-| ---------------------------------------- | ------------------- |
+|----------------------------------------|-------------------|
 | Recurrence rules: <br>Start date on 2012-10-09 (Tuesday)<br>Frequency set to WEEKLY<br>Interval set to 1<br>Count set to 3 | 2012-10-09 Tuesday  |
 |                                          | 2012-10-16 Tuesday  |
 |                                          | 2012-10-22 Tuesday  |
@@ -236,7 +236,7 @@ The calendar recurrence model is compliant with the [iCalendar specification](ht
 **Table: Recurrence rules**
 
 | Recurrence rule property | Description                              |
-| ------------------------ | ---------------------------------------- |
+|------------------------|----------------------------------------|
 | `Freq`                   | Yearly, monthly, weekly, or daily        |
 | `Count`                  | Until count. If the count is 3, 3 instances are generated. |
 | `Interval`               | Interval is a positive integer representing how often the recurrence rule repeats |
@@ -258,7 +258,7 @@ If 1 instance of a recurring event is modified (such as its summary or date) or 
 **Table: Exception example**
 
 | Event                                    | Instances          | Exceptions         |
-| ---------------------------------------- | ------------------ | ------------------ |
+|----------------------------------------|------------------|------------------|
 | Recurrence rules:<br>Start date on 2012-10-09 (Tuesday)<br>Frequency set to WEEKLY<br>Interval set to 1<br>Count set to 3 | 2012-10-09 Tuesday |                    |
 | Recurrence rules:<br>Start date on 2012-10-09 (Tuesday)<br>Frequency set to WEEKLY<br>Interval set to 1<br>Count set to 3 |                    | 2012-10-17 Tuesday |
 | Recurrence rules:<br>Start date on 2012-10-09 (Tuesday)<br>Frequency set to WEEKLY<br>Interval set to 1<br>Count set to 3 | 2012-10-22 Tuesday |                    |
@@ -304,7 +304,7 @@ To filter calendar data:
     **Table: Filter conditions**
 
     | Condition                                | Result                                   |
-    | ---------------------------------------- | ---------------------------------------- |
+    |----------------------------------------|----------------------------------------|
     | Condition C1<br>OR<br>Condition C2<br>AND<br>Condition C3 | (C1 OR C2) AND C3                        |
     | **Filter F1**:<br>Condition C1<br>OR<br>Condition C2<br><br>**Filter F2**:<br>Condition C3<br>OR<br>Condition C4<br><br>**Filter F3**:<br>Condition C5<br>AND<br>F1<br>AND<br>F2 | (C5 AND F1) AND F2<br>Meaning (C5 AND (C1 OR C2)) AND (C3 OR C4) |
 
@@ -732,7 +732,7 @@ To remove an event instance from a recurring event:
     **Table: Event instances**
 
     | unixtime                                 | Date time                                |
-    | ---------------------------------------- | ---------------------------------------- |
+    |----------------------------------------|----------------------------------------|
     | <br>1349226000 <br>1349312400 <br> 1349398800 <br>1351904400 <br>1351990800<br> 1352077200 <br>1354496400<br> 1354582800 | <br>2012-10-03 01:00:00 <br>2012-10-04 01:00:00 <br>2012-10-05 01:00:00 <br>2012-11-03 01:00:00 <br>2012-11-04 01:00:00 <br>2012-11-05 01:00:00 <br>2012-12-03 01:00:00 <br>2012-12-04 01:00:00 |
 
 2. Create the exception by setting the `Exdate` property.

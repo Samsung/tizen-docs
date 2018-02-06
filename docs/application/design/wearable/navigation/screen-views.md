@@ -9,7 +9,7 @@ You can accommodate more information on the Gear’s small display by choosing a
 -   temporary
 
 | Vertically oriented screens | Horizontally oriented screens | Screens with stacked layers | Screens with large content | Screens with a temporary overlay |
-| :--: | :--: | :--: | :--: | :--: |
+|:--:|:--:|:--:|:--:|:--:|
 | ![](media/navigation_6.2.0-850x147_1.png) |![](media/navigation_6.2.0-850x147_2.png) | ![](media/navigation_6.2.0-850x147_3.png) |![](media/navigation_6.2.0-850x147_4.png) |![](media/navigation_6.2.0-850x147_5.png) |
 | Vertical view | Horizontal view | Anchored view | Freeform view | Temporary view |  
 
@@ -48,7 +48,7 @@ Like vertical views, they scroll by rotating the bezel. A clockwise rotation scr
 
     ![](media/navigation_6.2.2_1-850x174.png)  
     *Images are presented on individual cards.*  
-    
+
     ![](media/navigation_6.2.2_2-850x174.png)  
     *Text information is presented on individual pages.*
 

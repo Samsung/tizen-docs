@@ -9,7 +9,7 @@ The following guidelines apply to scroll bars:
 -   The scroll bar is automatically hidden after 3 seconds.
 -   The scroll direction is the same as the direction from which new content appears.
 -   The handler has a length proportional to the amount of scrollable content.
--   <span>The track length is at most the height or width of the screen.</span>
+-   The track length is at most the height or width of the screen.
 
 
 

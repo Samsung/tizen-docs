@@ -220,7 +220,6 @@ You can use shell commands to install, uninstall, update, and launch application
 ![Tizen Studio interactions](./media/ide_interactions.png)
 
 
-
 ## Native Applications Tutorials
 
 The introduction to native applications documentation provides overall information you need to become familiar with native-specific Tizen programming and the Tizen application model:
@@ -229,15 +228,10 @@ The introduction to native applications documentation provides overall informati
 
     Demonstrates how you can create your first simple native application.
 
-
-- [Overview of Tizen UI Development](feature/ui-builder-overview-mn.md)
+- [Overview of Tizen UI Development](feature/ui-builder-overview.md)
 
     Describes the basic characteristics and components of UI development with EFL.
 
-- [Designing Your Native Application](feature/ui-builder-app-design-mn.md)
+- [Designing Your Native Application](feature/ui-builder-app-design.md)
 
     Teaches you how to develop a native application using the native UI Builder tool.
-
-- [Understanding Tizen Programming](details/details-n.md)
-
-    Introduces the Tizen platform, its architecture, and some useful programming concepts you need to take into account when designing Tizen applications.

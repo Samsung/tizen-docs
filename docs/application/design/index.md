@@ -38,6 +38,5 @@ elements help the user get information easily and enjoy content fully.
 There are three design principles used in Tizen 4.0 TVs:
 
 - [Simplicity](tv/design-principles/simplicity.md)
-- [Natural intuitiveness](tv/design-principles-tizen-tv/natural-intuitiveness.md)
-- [Breathing space](tv/design-principles-tizen-tv/breathing-space.md)
-
+- [Natural intuitiveness](tv/design-principles/natural-intuitiveness.md)
+- [Breathing space](tv/design-principles/breathing-space.md)

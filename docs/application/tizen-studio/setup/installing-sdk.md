@@ -47,11 +47,11 @@ The CLI (command line interface) provides functional tools for running the CLI i
 
 To install the Tizen Studio using the CLI installer:
 
-1. [Download the appropriate CLI installer for your platform](download.md).
+1. [Download the appropriate CLI installer for your platform](https://developer.tizen.org/development/tizen-studio/download).
 
 2. Run the CLI installer:
 
-   - On Microsoft Windows®, the command prompt opens and the installer is automatically executed.
+   - On Microsoft Windows&reg; the command prompt opens and the installer is automatically executed.
    - On Ubuntu and macOS, open the terminal, go to the directory where the installer is downloaded, and enter the `chmod +x` command to apply the execute permission to the installer file. Then, execute the installer by entering the command with the following syntax:
    ```
    web-cli_Tizen_Studio_<version> [options] [<directory path>]
@@ -59,14 +59,14 @@ To install the Tizen Studio using the CLI installer:
 
    **Table: Install options**
    | Option             | Description                              |
-   | ------------------ | ---------------------------------------- |
+   |------------------|----------------------------------------|
    | `--show-license`   | Displays the Tizen Studio software license agreement.<br/>You must use this option alone. Do not use with other options. |
    | `--accept-license` | Accepts the license terms.               |
    | `--no-java-check`  | Skips the Java version check.            |
 
    **Table: Install command parameters**
    | Parameter        | Description                              |
-   | ---------------- | ---------------------------------------- |
+   |----------------|----------------------------------------|
    | `directory path` | Specifies the installation directory path.</br/>If you do not enter the path, the Tizen Studio is installed in the default directory (`/home/{user}/tizen-studio`). |
 
 3. If you agree to the software license and the license terms, enter **Y(yes)** for the conditions.
@@ -89,7 +89,7 @@ package-manager-cli install [--accept-license] [--no-java-check] [--proxy <value
 **Table: Install command parameters**
 
 | Parameter                   | Description                              |
-| --------------------------- | ---------------------------------------- |
+|---------------------------|----------------------------------------|
 | `--accept-license`          | Accepts the license terms.               |
 | `--no-java-check`           | Skips the Java version check.            |
 | `--proxy <value>`           | Proxy configuration value. Use one of the following values: **direct**, **auto**, or **ip:port**. |

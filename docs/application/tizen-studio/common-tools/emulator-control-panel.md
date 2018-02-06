@@ -71,7 +71,7 @@ You can access the context menu by right-clicking on the emulator. In the menu, 
   **Table: VM Info**
 
   | Feature                    | Description                              |
-  | -------------------------- | ---------------------------------------- |
+  |--------------------------|----------------------------------------|
   | **VM Name**                | VM name                                  |
   | **Skin Name**              | Skin name                                |
   | **CPU Arch**               | CPU architecture                         |
@@ -152,7 +152,7 @@ The following table lists the control panel features and their availability on d
 **Table: Control panel features**
 
 | Feature                |                    | Mobile | Wearable | Description                              |
-| ---------------------- | ------------------ | ------ | -------- | ---------------------------------------- |
+|----------------------|------------------|------|--------|----------------------------------------|
 | Network                |                    | Yes    | Yes      | You can control the user network and forward a remote or local port to an inside port of the emulator. |
 | Host Directory Sharing |                    | Yes    | Yes      | You can transfer files through the host directory sharing feature without using the SDB utility. |
 | App Manager            |                    | No     | Yes      | You can see user-installed applications and uninstall them. |
@@ -374,7 +374,7 @@ The following tables list the commands supported by the control panel CLI.
 **Table: CLI common commands**
 
 | Command   | Syntax                                   | Description                              |
-| --------- | ---------------------------------------- | ---------------------------------------- |
+|---------|----------------------------------------|----------------------------------------|
 | `help`    | `help [device]`                          | To get help, type the command as `help`. For a more specific device help, use the device parameter. |
 | `keycode` | keycode <key-code> [period &#124; press &#124; release] | To enter a key code for a mobile device: <br/> `114`: Volume down <br/> `115`: Volume up <br/> `139`: Home <br/> `158`: Back <br/> `169`: Menu |
 | `hmp`     | `hmp <hmp command>`                      | Access the QEMU human monitor protocol commands. For a list of provided commands, enter the `ecp-cli hmp help` command. |
@@ -386,7 +386,7 @@ The following tables list the commands supported by the control panel CLI.
 **Table: CLI profile commands**
 
 | Feature command | Sub-command        | Mobile | Wearable | Syntax                                   |
-| --------------- | ------------------ | ------ | -------- | ---------------------------------------- |
+|---------------|------------------|------|--------|----------------------------------------|
 | `telephony`     | `call dial`        | Yes    | Yes      | `telephony call dial <number>`           |
 |                 | `call hidden-dial` | Yes    | Yes      | `telephony call hidden-dial <number>`    |
 |                 | `call connect`     | Yes    | Yes      | `telephony call connect`                 |

@@ -1,6 +1,6 @@
 # Introduction
-## [Overview](introduction/overview.md)
-## ["Air"](introduction/air.md)
+## [Overview](index.md)
+## [Air](introduction/air.md)
 ## Styles
 ### [Animations](introduction/styles/animations.md)
 ### [Colors](introduction/styles/colors.md)
@@ -64,7 +64,7 @@
 ### [Moment Bar](wearable/structure/moment-bar.md)
 ### [Apps](wearable/structure/apps.md)
 ## Navigation
-### {Overview](wearable/navigation.md)
+### [Overview](wearable/navigation.md)
 ### [Navigation Flow](wearable/navigation/navigation-flow.md)
 ### [Screen Views](wearable/navigation/screen-views.md)
 ## Interaction
@@ -117,7 +117,7 @@
 ### [Remember that the Gear is always on the user's wrist](wearable/best-practice/remember-gear-always-on-users-wrist.md)
 ### [Provide a precise and unique control with the bezel](wearable/best-practice/provide-precise-and-unique-control-bezel.md)
 ### [Help users find their way](wearable/best-practice/help-users-find-their-way.md)
-### [Improve the user experience through the Gear's diverse interactions(wearable/best-practice/improve-user-experience-through-gears-diverse-interactions.md)
+### [Improve the user experience through the Gear's diverse interactions](wearable/best-practice/improve-user-experience-through-gears-diverse-interactions.md)
 ### [Create a lasting impression with your designs](wearable/best-practice/create-lasting-impression-your-designs.md)
 ## [Writing style](wearable/writing-style.md)
 
@@ -132,6 +132,7 @@
 #### [Overview](tv/design-principles/natural-intuitiveness.md)
 #### [Shadow Effect](tv/design-principles/natural-intuitiveness/shadow-effect.md)
 ### Breathing Space
+#### [Overview](tv/design-principles/breathing-space.md)
 #### [Allow Empty Space](tv/design-principles/breathing-space/allow-empty-space.md)
 #### [Prioritize and Balance](tv/design-principles/breathing-space/prioritize-and-balance.md)
 
@@ -218,6 +219,3 @@
 ##### [Function Popup](tv/ui-components/assist-views/popup/function-popup.md)
 #### [Toast](tv/ui-components/assist-views/toast.md)
 #### [Context Popup](tv/ui-components/assist-views/context-popup.md)
-
-
-

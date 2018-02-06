@@ -491,7 +491,7 @@ The following table contains an example data model of a data control provider.
 **Table: Data model example of a data control provider**
 
 | Data control type | Data control provider ID                 | Data control data ID | Data schema              | Data accessibility      | Trusted    | Privileges |                                          |
-| ----------------- | ---------------------------------------- | -------------------- | ------------------------ | ----------------------- | ---------- | ---------- | ---------------------------------------- |
+|-----------------|----------------------------------------|--------------------|------------------------|-----------------------|----------|----------|----------------------------------------|
 | SQL               | `http://<vendor.com>/datacontrol/provider/sample` | `data1`              | `column1`(Type: Integer) | `column2`(Type: String) | Read-Only  | True       | `http://tizen.org/privilege/application.admin` |
 | Map               | `http://<vendor.com>/datacontrol/provider/sample2` | `data2`              | `key1`(Type: String)     | `key2`(Type: String)    | Read-Write | False      | `http://tizen.org/privilege/appmanager.launch` |
 

@@ -112,7 +112,7 @@ The following table lists all the media control metadata properties the client c
 **Table: Media control metadata properties**
 
 | Property       | Description                              |
-| -------------- | ---------------------------------------- |
+|--------------|----------------------------------------|
 | `Title`        | Title of the latest content in the media control server |
 | `Artist`       | Artist of the latest content in the media control server |
 | `Album`        | Album name of the latest content in the media control server |

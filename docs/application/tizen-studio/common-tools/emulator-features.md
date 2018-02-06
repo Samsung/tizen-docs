@@ -101,7 +101,7 @@ The following table lists the host Webcam features.
 **Table: Webcam features**
 
 | Feature              | Detail                                   | Notes                                    |
-| -------------------- | ---------------------------------------- | ---------------------------------------- |
+|--------------------|----------------------------------------|----------------------------------------|
 | FPS                  | 30 fps                                   | -                                        |
 | Preview image format | YUYVI420YV12                             |                                          |
 | Capture image format | YUYVI420YV12JPEG                         |                                          |
@@ -480,7 +480,7 @@ The following table describes the content of the emulator directory, located in 
 **Table: Emulator directory content**
 
 | Folder or file                       | Description                              |
-| ------------------------------------ | ---------------------------------------- |
+|------------------------------------|----------------------------------------|
 | `bin/emulator-manager`               | Emulator Manager GUI                     |
 | `bin/em-cli`                         | Emulator Manager CLI (Command Line Interface) |
 | `bin/em-cli.jar`                     | Emulator Manager CLI executable          |
@@ -498,7 +498,7 @@ The following table describes the platform image directories that are located in
 **Table: Platform image directory content**
 
 | Name                                     | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
+|----------------------------------------|----------------------------------------|
 | `<IMAGE_DIR>`                            | Platform image directory                 |
 | `<IMAGE_DIR>/emulimg-<VERSION>.<ARCHITECTURE>` | Platform image, which represents an emulator root file system for x86 in the guest OS view |
 | `<IMAGE_DIR>/info.ini`                   | File for specifying platform image information |
@@ -508,7 +508,7 @@ The following table describes the platform common directories that are located i
 **Table: Platform common directory content**
 
 | Name                  | Description                              |
-| --------------------- | ---------------------------------------- |
+|---------------------|----------------------------------------|
 | `bin/`                | Binary files                             |
 | `bin/emulator`        | Emulator                                 |
 | `bin/emulator-x86_64` | x86 emulator binary, including QEMU      |
@@ -520,7 +520,7 @@ The following table describes the platform resource directories that are located
 **Table: Platform resource directory content**
 
 | Name                                     | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
+|----------------------------------------|----------------------------------------|
 | `plugins/`                               | Plugins for profile                      |
 | `plugins/ecp-plugin-<PROFILE>-<VERSION>.jar` | Plugin for the ECP                       |
 | `plugins/ecp-plugin-<PROFILE>-<VERSION>.xml` | XML file for the `ecp-plugin-<PROFILE>-<VERSION>.jar` file configuration |
@@ -536,7 +536,7 @@ The following table describes the directory structure of the user-specific files
 **Table: User directory content**
 
 | Name                                     | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
+|----------------------------------------|----------------------------------------|
 | `.em.lock`                               | Lock file used for synchronization between VM operations, such as modify, delete, and launch |
 | `.tizen-em-info`                         | Configuration file for the Emulator Manager |
 | `emulator-manager.log`                   | Emulator Manager log file                |

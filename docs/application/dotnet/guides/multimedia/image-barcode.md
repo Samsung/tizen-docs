@@ -274,7 +274,7 @@ The following tables provide more information on the barcode generation specific
 **Table: Supported barcode types**
 <a name="barcode"></a>
 | 1D or 2D | Type               | Description                              | Example                                  |
-| -------- | ------------------ | ---------------------------------------- | ---------------------------------------- |
+|--------|------------------|----------------------------------------|----------------------------------------|
 | 1-D      | UPC-A              | Universal product code with numeric 12-digit | ![UPC-A](./media/mediavision_upc_a.png)  |
 |          | UPC-E              | Universal product code with numeric 6-digit | ![UPC-E](./media/mediavision_upc_e.png)  |
 |          | EAN-8              | International article number with numeric 8-digit | ![EAN-8](./media/mediavision_ean_8.png)  |
@@ -287,7 +287,7 @@ The following tables provide more information on the barcode generation specific
 **Table: Supported QR code specifications**
 <a name="qrcode"></a>
 | Specification                     | Support type | Description                              |
-| --------------------------------- | ------------ | ---------------------------------------- |
+|---------------------------------|------------|----------------------------------------|
 | Error Correction Code (ECC) Level | ECC Low      | Recovery up to 7% damage                 |
 |                                   | ECC Medium   | Recovery up to 15% damage                |
 |                                   | ECC Quartile | Recovery up 25% damage                   |

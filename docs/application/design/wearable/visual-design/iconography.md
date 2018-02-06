@@ -51,9 +51,9 @@ App icons are displayed in the app list. Your app icon should communicate your b
 Icons are used for various purposes including lists, More options, pop-ups, and buttons. You don’t necessarily have to use the container if it’s not an app icon. Design your icons in an appropriate style according to where they appear and the purpose they will be used. Refer to [UI Components](../ui-components/index.md) for usage by type.
 
 | ![](media/visual_design_8.2.2_1-850x220_1.png) | ![](media/visual_design_8.2.2_1-850x220_2.png) | ![](media/visual_design_8.2.2_1-850x220_3.png) |
-| :--: | :--: | :--: |
+|:--:|:--:|:--:|
 | *List*<br>*(Icon size: 76x76 pixel)* | *Rotary Selector*<br>*(Icon size: 68x68 pixel)* |  *Dialog Pop-up*<br>*(Icon size: 50x50 pixel)* |
 
 | ![](media/8-550x215_1.png) |  ![](media/8-550x215_2.png) |
-| :--: | :--: |
+|:--:|:--:|
 | *Toast Pop-up* <br>*(Icon size: 224x100 pixel)* | *Bottom  button* <br>(Icon size: 50x50 pixel) |

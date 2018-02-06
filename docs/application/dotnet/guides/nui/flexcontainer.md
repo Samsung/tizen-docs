@@ -29,7 +29,7 @@ The `ContentDirection` property specifies the primary direction in which content
 **Table: ContentDirection values**
 
 | LTR (left-to-right)                      | RTL (right-to-left)                      |
-| ---------------------------------------- | ---------------------------------------- |
+|----------------------------------------|----------------------------------------|
 | ![ContentDirection LTR](media/content-direction-ltr.jpg) | ![ContentDirection RTL](media/content-direction-rtl.jpg) |
 
 The possible values for this property are:
@@ -37,7 +37,7 @@ The possible values for this property are:
 The possible values for this property are:
 
 | Property value | Description                            |
-| -------------- | -------------------------------------- |
+|--------------|--------------------------------------|
 | `Inherit`      | Inherits the direction from the parent |
 | `LTR`          | From left to right                     |
 | `RTL`          | From right to left                     |
@@ -61,7 +61,7 @@ The `FlexDirection` property specifies the direction of the main axis which dete
 The possible values for this property are:
 
 | Property value  | Description                              |
-| --------------- | ---------------------------------------- |
+|---------------|----------------------------------------|
 | `Column`        | Flex items are laid out vertically as a column |
 | `ColumnReverse` | Flex items are laid out vertically as a column, but in reverse order |
 | `Row`           | Flex items are laid out horizontally as a row |
@@ -86,7 +86,7 @@ The `FlexWrap` property specifies whether the flex items must wrap if there is n
 The possible values for this property are:
 
 | Property value | Description                              |
-| -------------- | ---------------------------------------- |
+|--------------|----------------------------------------|
 | `NoWrap`       | Flex items are laid out in single line (shrunk to fit the flex container along the main axis) |
 | `Wrap`         | Flex items are laid out in multiple lines if needed |
 
@@ -109,7 +109,7 @@ The `JustifyContent` property specifies the alignment of flex items when they do
 The possible values for this property are:
 
 | Property value        | Description                              |
-| --------------------- | ---------------------------------------- |
+|---------------------|----------------------------------------|
 | `JustifyFlexStart`    | Flex items are positioned at the beginning of the container |
 | `JustifyCenter`       | Flex items are positioned at the center of the container |
 | `JustifyFlexEnd`      | Flex items are positioned at the end of the container |
@@ -135,7 +135,7 @@ The `AlignItems` property specifies the alignment of flex items when they do not
 The possible values for this property are:
 
 | Property value   | Description                              |
-| ---------------- | ---------------------------------------- |
+|----------------|----------------------------------------|
 | `AlignAuto`      | Inherits the alignment from the parent (only valid for the [AlignSelf](#align-self) property) |
 | `AlignFlexStart` | Items are aligned at the beginning of the container |
 | `AlignCenter`    | Items are aligned at the center of the container |
@@ -161,7 +161,7 @@ The `AlignContent` property specifies the alignment of flex lines when they do n
 The possible values for this property are:
 
 | Property value   | Description                              |
-| ---------------- | ---------------------------------------- |
+|----------------|----------------------------------------|
 | `AlignAuto`      | Inherits the alignment from the parent (only valid for the [AlignSelf](#align-self) property) |
 | `AlignFlexStart` | Items are aligned at the beginning of the container |
 | `AlignCenter`    | Items are aligned at the center of the container |

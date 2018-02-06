@@ -133,8 +133,8 @@ You can customize the bezel interactions in your app to create a unique experien
   <td> <video controls>    <source src="media/7.2.6.visual_indicators_dont.mp4" type=video/mp4> </video> </td>  
  </tr>
  <tr>
-  <td> ![](media/do_bar.png) </td>
-  <td> ![](media/dont_bar-296x12.png) </td>
+  <td> <img src="media/do_bar.png" /> </td>
+  <td> <img src="media/dont_bar-296x12.png" /> </td>
  </tr>
 </table>
 

@@ -38,7 +38,7 @@ Haptic responses deliver feedback to users through vibration without requiring t
 -   **Sample vibration Patterns**
 
 | Examples | | Meaning |
-| --- | --- | ---|
+|---|---|---|
 | Single short<br>*(e.g. 100 ms)* | ![](media/interaction_7.5.1_1_1-77x45.png) | Provides simple information |
 | Single long<br>*(e.g. 500 ms)* | ![](media/interaction_7.5.1_1_2-126x45.png) | Signals a clear status<br>*(e.g. completion of a task)* |
 |  2-3 times fast | ![](media/interaction_7.5.1_1_3-211x45.png) | Provides a warning or an alert |
@@ -75,14 +75,14 @@ Visual responses inform users of a current state. Provide visual feedback to inf
     You can adjust the color opacity of a button by 40% to indicate that the button has been pressed.
 
 | Normal | Pressed |
-| :--: | :--: |
+|:---:|:---:|
 |![](media/interaction_7.5.1_2-850x174_1.png)| ![](media/interaction_7.5.1_2-850x174_2.png)  |
 | Opacity 100% | Opacity 40% |  
 
   *The opacity of the entire container is adjusted to 40% when users press a colored icon.*  
 
 | Normal | Pressed |
-| :--: | :--: |
+|:---:|:---:|
 |   ![](media/interaction_7.5.1_3-850x174_1.png)  |   ![](media/interaction_7.5.1_3-850x174_2.png)  |
 | Opacity 100% | Opacity 40% |  
 
@@ -93,16 +93,17 @@ Visual responses inform users of a current state. Provide visual feedback to inf
     You can adjust the size of a button to indicate that the button has been pressed.
 
 | Normal | Pressed |
-| :--: | :--: |
+|:---:|:---:|
 |     ![](media/2-800x166_1.png)  |     ![](media/2-800x166_2.png)  |
 |  Scale 100% |  Scale 110%  |  
 
   *When users press a 2D icon without a container, a circle appears around the button and is scaled up to 110% of its original size*
 
   | Normal | Pressed |
-  | :--: | :--: |
+  |:---:|:---:|
   |     ![](media/interaction_7.5.1_5-850x174_1.png)    |         ![](media/interaction_7.5.1_5-850x174_2.png)    |
   |  Scale 100% |  Scale 110%  |  
+
        
   *When users touch the screen itself, the screen is scaled down to 90% and then returns to 100%.*
 

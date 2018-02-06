@@ -23,7 +23,7 @@ To send push notifications:
     **Table: Push RQM server URLs**
 
     | Prefix of the `regId` | Region                 | URL                                      |
-    | --------------------- | ---------------------- | ---------------------------------------- |
+    |---------------------|----------------------|----------------------------------------|
     | 00                    | US East                | `https://useast.push.samsungosp.com:8090/spp/pns/api/push` |
     | 02                    | Asia Pacific Southeast | `https://apsoutheast.push.samsungosp.com:8090/spp/pns/api/push` |
     | 03                    | EU West                | `https://euwest.push.samsungosp.com:8090/spp/pns/api/push` |
@@ -78,7 +78,7 @@ To send push notifications:
     **Table: Message field key-value pairs**
 
     | Key            | Value                                    | Description                              |
-    | -------------- | ---------------------------------------- | ---------------------------------------- |
+    |--------------|----------------------------------------|----------------------------------------|
     | `action`       | `ALERT`: Store the message and alert the user.<br>`SILENT`: Store the message without alerting the user.<br>`DISCARD`: Discard the message, if the application is not up and running.<br>`LAUNCH`: Forcibly launch the application and deliver the notification.<br>`BACKGROUNDLAUNCH`: Launch the application in the background and deliver the notification. | Action to be performed if the application is not running. If no action is defined, the default behavior is `SILENT`. |
     | `alertMessage` | Up to 127 bytes                          | Alert message shown to the user in the quick panel. If the action is not set as `ALERT`, this value is meaningless. |
     | `badgeOption`  | `INCREASE`: Increase the badge number by the given value.<br>`DECREASE`: Decrease the badge number by the given value.<br>`SET`: Set badge number to the given value. | Option for updating the icon badge number. If the action is set as `DISCARD`, the `badgeOption` is ignored. If the badge option is not included, the icon badge number remains unchanged. |
@@ -120,7 +120,7 @@ To send push notifications:
             ****Table: Arguments**
 
             | Key              | Description                              | Additional information                   |
-            | ---------------- | ---------------------------------------- | ---------------------------------------- |
+            |----------------|----------------------------------------|----------------------------------------|
             | `encoding`       | Encoding defines how the `regId` is encoded.<br>For most cases, the push server issues the `regId` as a hex string by default, but if third-party providers state that they use the base64 encoding for the `regId` at the application registration time, the `regId` is base64-encoded.<br>If the `regId` is base64-encoded, use the `"base64"` value for this field. Otherwise, leave this field blank to allow the push server to handle the `regId` as a hex string. | OptionalType: stringDefault: `NULL`      |
             | `regID`          | Distinguish a recipient from other recipients by assigning a unique registration ID to each recipient.The registration ID is assigned when the application is installed on a device and marked to use an application service.The current registration ID passing policy is as follows (it can change in the future):<br>a. The preloaded push service connects to the push server and registers the application.<br>b. The push server returns the registration ID to the push service.<br>c. The push service passes the ID to the application.<br>d. The push server passes the registration ID to an application server.In other applications, the application passes the registration ID to the application server. | RequiredType: string                     |
             | `requestID`      | An application server needs to assign a request ID to each request. It enables you to distinguish one request from the others. | RequiredType: string                     |
@@ -431,7 +431,7 @@ The following table lists all possible error codes for push notifications, helpi
 **Table: Push notification error codes**
 
 | Status code | Basic status message                     |
-| ----------- | ---------------------------------------- |
+|-----------|----------------------------------------|
 | 1000        | Success                                  |
 | 1001        | Failed                                   |
 | 1002        | Expired                                  |

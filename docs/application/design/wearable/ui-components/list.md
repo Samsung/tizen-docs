@@ -42,7 +42,7 @@ Indexes help users quickly find the item they want by dividing a long list into 
 |**Native**|Genlist > <br>Groupindex|
 |**Web**|-|
 
-A group index should fit on a single line and come before the first item of each group. As they’re just used as a visual divider, they can’t be selected. [Fast scroll indexes](scroll-bars.html#fast_scroll_index) can also be used to facilitate quick browsing.
+A group index should fit on a single line and come before the first item of each group. As they’re just used as a visual divider, they can’t be selected. [Fast scroll indexes](scroll-bars.md#fast_scroll_index) can also be used to facilitate quick browsing.
 
 ![](media/ui_components_10.2.2-850x174.png)  
 *Group indexes divide list items into groups.*
@@ -69,13 +69,13 @@ A group index should fit on a single line and come before the first item of each
 You can design list pages using one of the following formats. The default height for a list item is fixed to 130 px, but you can customize it if your list items have subtext.
 
 
-| ![](media/ui_components_10.2.4_1-850x174_1.png) | ![](media/ui_components_10.2.4_1-850x174_2.png) | ![](media/ui_components_10.2.4_1-850x174_3.png) | 
-| -- | -- | -- |
+| ![](media/ui_components_10.2.4_1-850x174_1.png) | ![](media/ui_components_10.2.4_1-850x174_2.png) | ![](media/ui_components_10.2.4_1-850x174_3.png) |
+|-----|-----|-----|
 | Basic list view |  List view with subtext | List view with multiple subtexts |
 
 
 | ![](media/ui_components_10.2.4_2-850x174_1.png) | ![](media/ui_components_10.2.4_2-850x174_2.png) | ![](media/ui_components_10.2.4_2-850x174_3.png) |
-| -- | -- | -- |
+|-----|-----|-----|
 |  List view with an icon | List view with check boxes | List view with radio buttons |
 
 

@@ -37,7 +37,7 @@ For more information on commands and parameters, see the following table.
 **Table: SDB commands**
 
 | Command                              | Description                              |
-| ------------------------------------ | ---------------------------------------- |
+|------------------------------------|----------------------------------------|
 | `devices`                            | Lists all connected target instances.    |
 | `connect <host>[:<port>]`            | Connects to a target through TCP/IP.     |
 | `disconnect <host>[:<port>]`         | Disconnects from a TCP/IP device.By default, the port 26101 is used if there is no specified port number. If you use this command with no additional arguments, all connected TCP/IP devices are disconnected. |
@@ -169,7 +169,7 @@ The following table shows some options for the `sdb dlog` and `dlogutil` command
 **Table: Log output options**
 
 | Option          | Description                              |
-| --------------- | ---------------------------------------- |
+|---------------|----------------------------------------|
 | `-f <filename>` | Writes the log to the `<filename>` file. The default file is stdout. |
 | `-r <Kbytes>`   | Rotates the log file every `<Kbytes>` of output. The default value is 16. This option also requires the `-f` option. |
 | `-n <count>`    | Sets the maximum number of rotated logs to `<count>`. The default value is 4. This option also requires the `-r` option. |

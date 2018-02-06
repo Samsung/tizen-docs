@@ -22,7 +22,7 @@ The main features of the Tizen.Network.WiFi namespace include:
         - - **Table: Access point EAP information**
 
             | Information         | Description                              |
-            | ------------------- | ---------------------------------------- |
+            |-------------------|----------------------------------------|
             | Authentication type | Wi-Fi EAP phase2 authentication type     |
             | EAP type            | Wi-Fi EAP type                           |
             | CA certificate      | EAP CA certificate (valid only if the EAP type is TLS) |
@@ -35,7 +35,7 @@ The main features of the Tizen.Network.WiFi namespace include:
 The application uses the infrastructure mode to connect to a wireless local area network (WLAN). The infrastructure mode requires a wireless access point. To connect to a WLAN, the application client must be configured to use the same service set identifier (SSID) as the access point.
 
 
-> **Note**   
+> **Note**  
 > You can test the Wi-Fi functionality on a target device only. The emulator does not support this feature.
 
 

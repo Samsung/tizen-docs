@@ -46,7 +46,7 @@ Use pickers to set a number, a date, or time.
 
 -   **Date picker**
 
-    Date pickers set the date, month, and year. Spinning dials present values for each catergory: 12 months, 28/29/30/31 days, and 50 years. One full spin of the year dial is 50 years. Refer to [Date & time](../writing-style.html#date_time) for style guides on displaying the date.
+    Date pickers set the date, month, and year. Spinning dials present values for each catergory: 12 months, 28/29/30/31 days, and 50 years. One full spin of the year dial is 50 years. Refer to [Date & time](../writing-style.md#date_time) for style guides on displaying the date.
 
 |**Date picker**|         |
 |------------|-------------|
@@ -58,7 +58,7 @@ Use pickers to set a number, a date, or time.
 
 -   **Time picker**
 
-    Time pickers can set hours and minutes, and toggle between AM/PM. The AM/PM button is displayed when the picker uses the 12 hour format, and hidden for the 24 hour-format. Refer to [Date & time](../writing-style.html#date_time) for style guides on displaying time.
+    Time pickers can set hours and minutes, and toggle between AM/PM. The AM/PM button is displayed when the picker uses the 12 hour format, and hidden for the 24 hour-format. Refer to [Date & time](../writing-style.md#date_time) for style guides on displaying time.
 
 |**Time picker**|           |
 |--------------|------------|
@@ -71,7 +71,7 @@ Use pickers to set a number, a date, or time.
 
 -   **Color picker**
 
-    A color picker allows users to choose a color. Unlike other pickers, it’s displayed as a [rotary selector](rotary-selectors.html). The picker displays the focused color in the center of the screen. When users pick a color, it returns them to the previous screen. You can customize the colors on a picker.
+    A color picker allows users to choose a color. Unlike other pickers, it’s displayed as a [rotary selector](rotary-selectors.md). The picker displays the focused color in the center of the screen. When users pick a color, it returns them to the previous screen. You can customize the colors on a picker.
 
 |**Color picker**|             |
 |----------------|--------------|

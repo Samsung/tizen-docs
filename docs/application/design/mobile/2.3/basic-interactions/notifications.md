@@ -47,7 +47,7 @@ If an application has more than 2 event notifications, present them in a single 
 **Figure: Example layout for event notifications**  
 <img alt="" height="48" src="media/event_notifications.png" width="490" />
 
-### Pop-up
+## Pop-up
 
 You can use notification and toast pop-ups to notify the user of events or state changes.
 
@@ -73,7 +73,7 @@ Use the toast pop-up to inform the user of a task result or changes in the curre
 **Figure: Toast pop-up**  
 <img alt="" height="400" src="media/notifications_statusbar_02.png" width="240" />
 
-### Badge
+## Badge
 
 Not all events require immediate notification. In such cases, you can use a badge to convey this type of non-urgent information (such as a new event or number of events). You can add a badge on the application icon, or the user can check it when launching an application. Using only badges is suitable for the least important events.
 
@@ -94,7 +94,7 @@ Consider the following when creating badge notifications:
 > You can customize badge notifications in the Web framework.
 
 
-### Full View Notification
+## Full View Notification
 
 Use a full view notification when:
 
@@ -106,7 +106,7 @@ Provide the action the user must take to dismiss this event. Use action buttons 
 **Figure: Full view notification**  
 <img alt="" height="400" src="media/1.1.incoming_call.png" width="240" />
 
-### Instant Notification
+## Instant Notification
 
 The instant notification is displayed on the indicator with an icon and text. When the information takes more than 1 line, the entire message can be displayed using the auto scroll.
 

@@ -201,7 +201,7 @@ There are various methods of adding tooltips to a button:
 The `Button` class has the following properties:
 
 | Property                             | Type      | Description                              |
-| ------------------------------------ | --------- | ---------------------------------------- |
+|------------------------------------|---------|----------------------------------------|
 | `UnselectedVisual`                   | `Map`     | Map describing a visual, changes depending on the button state |
 | `SelectedVisual`                     | `Map`     | Map describing a visual, changes depending on the button state |
 | `DisabledUnselectedVisual`           | `Map`     | Map describing a visual, changes depending on the button state |
@@ -229,7 +229,7 @@ The `Button` class has the following properties:
 The **ToggleButton** class has the following additional properties:
 
 | Property            | Type    | Description                              |
-| ------------------- | ------- | ---------------------------------------- |
+|-------------------|-------|----------------------------------------|
 | `StateVisuals`      | `Array` | Array of property-maps, or a property array of strings. The property maps expect a description of a visual, and the strings represent image URLs. |
 | `Tooltips`          | `Array` | Array of toggle state tooltip strings. Each tooltip string must match a toggle state |
 | `CurrentStateIndex` | `int`   | Current state                            |

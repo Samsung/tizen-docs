@@ -91,7 +91,7 @@ state changes](#life-cycle).
 **Table: Instance state change callbacks**
 
 | Callback      | Description                              |
-| ------------- | ---------------------------------------- |
+|-------------|----------------------------------------|
 | `OnCreate()`  | Called after the widget instance is created. |
 | `OnDestroy()` | Called before the widget instance is destroyed. |
 | `OnPause()`   | Called when the widget is invisible.     |

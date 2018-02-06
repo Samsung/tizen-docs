@@ -92,7 +92,7 @@ The following table lists the keyboard shortcuts available in the viewer.
 **Table: Viewer keyboard shortcuts**
 
 | Keyboard shortcut        | Description                              |
-| ------------------------ | ---------------------------------------- |
+|------------------------|----------------------------------------|
 | **W**                    | Zoom into the trace timeline.            |
 | **S**                    | Zoom out of the trace timeline.          |
 | **A**                    | Pan left on the trace timeline.          |
@@ -112,7 +112,7 @@ The result report allows you to analyze various performance aspects of your appl
 **Table: Tag-specific information**
 
 | Tag                 | Description                              |
-| ------------------- | ---------------------------------------- |
+|-------------------|----------------------------------------|
 | Application manager | Shows how the application life-cycle management works. |
 | Camera              | Shows the workflow of the camera module. |
 | Input               | Shows how to process user input events from, for example, touch and keyboard. |

@@ -116,8 +116,8 @@ In this section, you can modify Google Chrome™ browser-related preferences.
 Enter the full path to the Google Chrome™ browser program. When first started, the Tizen Studio attempts to discover the location. However, it can be necessary to enter or modify this value manually.
 
 - For Linux: `/opt/google/chrome/google-chrome`.
-- For Windows® 64-bit: ` C:\Program Files (x86)\Google\Chrome\Application\chrome.exe`
-- For Windows® 32-bit: ` C:\Program Files\Google\Chrome\Application\chrome.exe`
+- For Windows&reg; 64-bit: ` C:\Program Files (x86)\Google\Chrome\Application\chrome.exe`
+- For Windows&reg; 32-bit: ` C:\Program Files\Google\Chrome\Application\chrome.exe`
 
 <a name="extra"></a>
 #### Extra Parameters
@@ -127,7 +127,7 @@ The simulator is started with default parameters, including the ones described i
 **Table: Default parameters**
 
 | Parameters                  | Description                              |
-| --------------------------- | ---------------------------------------- |
+|---------------------------|----------------------------------------|
 | `--allow-access-from-files` | Allows the simulator JavaScript APIs to access files on the disk (such as `config.xml` and the application icon). |
 | `--disable-web-security`    | Allows the simulator to do cross-domain requests (such as access the map location on another server). |
 
@@ -139,7 +139,7 @@ To add more start-up parameters, enter them in this field.
 Enter the full directory path for the simulator to store user preferences and Web application data.
 
 > **Note**  
-> Linux users must manually define this parameter instead of using the default value, since the total length of the directory path in Linux is very limited for this parameter. Using the default value can prevent you from launching more than 1 application concurrently. There is no such restriction in the Windows® version.
+> Linux users must manually define this parameter instead of using the default value, since the total length of the directory path in Linux is very limited for this parameter. Using the default value can prevent you from launching more than 1 application concurrently. There is no such restriction in the Windows&reg; version.
 
 <a name="simulator"></a>
 ### Simulator Settings

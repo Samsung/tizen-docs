@@ -82,7 +82,7 @@ To use InMobi Tizen Ads in Web applications:
 
 This section describes the InMobi Tizen Ads APIs for Tizen native (EFL) applications. Familiarize yourself with Tizen native application development and EFL UI development before attempting to integrate the Ads SDK.
 
-The InMobi Tizen Ads SDK (inmobi-tizen-adsdk_1.0.3.zip) includes 1 library (Adlib) and 1 header file. To get started, [download the Tizen studio](../setup/download.md). If you are an existing user of Tizen SDK, [migrate from Tizen SDK to Tizen studio](https://developer.tizen.org/development/tizen-studio/download/tizen-studio-migration-guide). For more information on adding extension SDKs, see [Extension SDKs](../setup/advanced-configution.md).
+The InMobi Tizen Ads SDK (inmobi-tizen-adsdk_1.0.3.zip) includes 1 library (Adlib) and 1 header file. To get started, [download the Tizen studio](https://developer.tizen.org/development/tizen-studio/download). For more information on adding extension SDKs, see [Extension SDKs](../setup/advanced-configuration.md).
 
 To create InMobi Tizen ads in native applications:
 

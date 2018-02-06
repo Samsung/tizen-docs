@@ -8,7 +8,6 @@ Visuals are the main building block of controls. A control is built from visuals
 
 The following Visual types are available:
 
-
 | Type           | Example                                  |
 | -------------- | ---------------------------------------- |
 | Border         | ![Border visual](media/border-visual.png) |
@@ -32,7 +31,7 @@ Styling is inherited, so styling a parent automatically affects its child, unles
 The following table describes the Style properties offered by View and PushButton.
 
 | Name                 | Type      | Description                              |
-| -------------------- | --------- | ---------------------------------------- |
+|--------------------|---------|----------------------------------------|
 | `heightResizePolicy` | `string`  | See [Size Negotiation](creating-custom-view-controls.md#sizenegotiation). |
 | `widthResizePolicy`  | `string`  | See [Size Negotiation](creating-custom-view-controls.md#sizenegotiation). |
 | `sizeModeFactor`     | `vector3` | Gets/sets the relative to the parent size factor of the view. |

@@ -38,7 +38,7 @@ The UI control types for settings are as follows:
 
  
 
-##### Secondary Text
+#### Secondary Text
 
 Secondary text is used to show statuses or help text.
 
@@ -51,7 +51,7 @@ Secondary text is used to show statuses or help text.
 
  
 
-##### Toggles
+#### Toggles
 
 These controls help the user enable or disable specific functions.
 
@@ -63,7 +63,7 @@ Refer to [Toggle](../ui-components/user-input-components.md#check_) for more inf
 
  
 
-##### Sliders
+#### Sliders
 
 These controls are useful when adjusting Settings values in multiple or consecutive steps. An optional image that explains the function of the bar can also be included.
 
@@ -75,7 +75,7 @@ Refer to [Slider](../ui-components/user-input-components.md#slider_) for more in
 
 
 
-##### Checkboxes
+#### Checkboxes
 
 This control is useful when showing items selected for a specific function.
 
@@ -90,7 +90,7 @@ Refer to [Checkbox](../ui-components/user-input-components.md#check_) for more i
 
  
 
-##### Radio Buttons
+#### Radio Buttons
 
 This control is used when setting an option when only one choice can be made.
 
@@ -109,7 +109,7 @@ Here are some tips for designing settings.
 
  
 
-##### Dependency
+#### Dependency
 
 If a setting option is dependent on another setting, dim the option when the primary or related setting is off. When dimmed, the setting’s status can be maintained or not, depending on the situation. For example, to use the GPS and Wireless networks options in the Location service setting, users must agree with a legal information pop-up confirmation. So when Location service is turned off, the GPS and Wireless networks options are dimmed and the values are turned off. However, if Mobile data is turned off in the Mobile network setting, Data roaming is dimmed and its value is maintained. So when roaming, users can just turn on/off Mobile data to use mobile networks after enabling Data roaming value just one time.
 
@@ -124,7 +124,7 @@ There are many examples of dependent settings in the UI. In the General settings
 
  
 
-##### Multiple Choice
+#### Multiple Choice
 
 When changing settings where only one option can be selected, you can use a pop-up window with radio buttons. If there are too many options for a pop-up window, you can use full view scrolling window to display all the items in the list.
 
@@ -135,7 +135,7 @@ When changing settings where only one option can be selected, you can use a pop-
  
  
 
-##### Group Indexing
+#### Group Indexing
 
 Use the group index view to easily classify and associate features. It makes settings look neat and well organized.
 
@@ -146,7 +146,7 @@ Use the group index view to easily classify and associate features. It makes set
 
  
 
-##### Default Values
+#### Default Values
 
 When choosing the default values of your settings, you should consider carefully. Most users don’t change settings values too often. Some users may not even know that there is a settings option they can use. If users feel that the default operation of your app is complicated, they will think your app is just difficult.
 

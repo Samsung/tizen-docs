@@ -1,7 +1,5 @@
 # System Logs
-## Dependencies
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
+
 
 To generate and view system logs in Tizen, you can use the dlog logging service. It consists of the dlogutil dlog library, which sends log messages to a log device. The log device is a circular buffer used to collect log messages from various applications and the system.
 
@@ -26,16 +24,17 @@ The following figure illustrates the general architecture of the dlog logging se
 
 ![Architecture](./media/dlog_architecture.png)
 
+<a name="message"></a>
 ## Log Message Content
 
 The log message contains a priority level, tag, and the actual message text:
 
 - The priority level indicates the urgency of the log message.
 
-  **Table: Priority levels**
+  **Table: Priority levels**  
 
   | Priority     | Description                              |
-  | ------------ | ---------------------------------------- |
+  |--------------|------------------------------------------|
   | `DLOG_DEBUG` | Debugging message for an unexpected exception that needs to be checked |
   | `DLOG_INFO`  | Information message describing normal operation |
   | `DLOG_WARN`  | Warning message, which means that an error is likely to occur if no action is taken |
@@ -133,6 +132,7 @@ The priority level for the log message can be defined using macros. The followin
     dlog_print(DLOG_WARN, "MyTag", "warning!");
     ```
 
+<a name="dlogutil"></a>
 ## Logutil Commands
 
 You can [collect, filter, and view the content of the log buffers](#check) with logutil using the following command:
@@ -145,10 +145,10 @@ dlogutil <option> <filter-spec>
 
   The following table lists the available options for the `dlogutil` command.
 
-  **Table: Command options**
+  **Table: Command options**  
 
   | Option          | Description                              |
-  | --------------- | ---------------------------------------- |
+  |-----------------|------------------------------------------|
   | `-b <buffer>`   | Alternates the log buffer. The main buffer is used by the default buffer. |
   | `-c`            | Clears the entire log and exits.         |
   | `-d`            | Dumps the log and exits.                 |
@@ -204,6 +204,7 @@ To enable your application to use the dlog functionality:
    - dlogutil: `dlogutil`dlogutil enables you to view log messages in the log device, and provides filtered message output.
    - linux-2.6.32 kernel
 
+<a name="send"></a>
 ## Sending a Log Message
 
 To send a log message with the `MY_APP` tag with various priorities, use the `dlog_print()` function:
@@ -227,11 +228,12 @@ main(void)
 }
 ```
 
+<a name="check"></a>
 ## Checking the Output Logs
 
 To check the content of the output log, execute dlogutil in the device sdb shell. The following code snippet shows examples of the various available commands and their output.
 
-For information on connecting to the target and using it with SDB, see [Connecting Devices over Smart Development Bridge](../../../../org.tizen.studio/html/common_tools/smart_development_bridge.htm).
+For information on connecting to the target and using it with SDB, see [Connecting Devices over Smart Development Bridge](../../../tizen-studio/common-tools/smart-development-bridge.md).
 
 ```
 Desktop:~$ sdb shell
@@ -319,3 +321,8 @@ W/MY_APP  (11097): warning message
 E/MY_APP  (11097): error message
 I/MY_APP  (11097): test dlog, 21
 ```
+
+## Related Information
+* Dependencies
+ - Tizen 2.4 and Higher for Mobile
+ - Tizen 2.3.1 and Higher for Wearable

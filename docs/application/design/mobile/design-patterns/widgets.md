@@ -38,13 +38,13 @@ While most widgets can be classified into one of the two types listed above, the
 ## Design Guidelines for Widgets
  
 
-##### Content
+#### Content
 
 When you design widgets, what matters most is the quality of the content provided in your widgets. Concise information, provided in a timely manner, adds value to your widgets and apps and convinces users to access your app to obtain more information.
 
  
 
-##### Gestures
+#### Gestures
 
 Because widgets run on the Home screen, they must be designed with limited gestures to avoid conflict with other Home screen gestures. The tap and vertical swipe gestures can be used with widgets.
 
@@ -56,12 +56,13 @@ Because widgets run on the Home screen, they must be designed with limited gestu
 *Taps are used to control widgets.*
 
 <img src="media/4.4.1_f_.png" alt="Vertical swipe" width="100%" />  
+
 *Vertical swipe*
 
 
  
 
-##### Access to Apps
+#### Access to Apps
 
 In addition to displaying content, widgets provide direct paths to the host applications. You can include UI elements in your widgets to provide shortcuts to the apps, or to certain features. Users can tap the shortcuts on the widget to:
 
@@ -71,15 +72,15 @@ In addition to displaying content, widgets provide direct paths to the host appl
 
  
 
-##### Widget Size
+#### Widget Size
 
 Widget size is important, because it determines the amount of information that can be presented in the widget. In general, widgets are designed in 4x2 and 4x4 grids to ensure enough space for displaying essential information. Tizen 2.4 allows only for fixed-size widgets. Fixed-sized widgets make it easier for users to arrange the widgets on the Home screen in a more consistent and orderly manner.
 
 | <img src="media/4.4.1_h.png" alt="#" height="460px" /> | <img src="media/4.4.1_i.png" alt="#" height="460px" /> |
-| :--: | :--: |
+|:--:|:--:|
 | *Do* | *Don't* |
 
-##### Configuration
+#### Configuration
 
 In order to allow users to effectively use a widget, configuration options may be provided. Users may configure the widget before or after adding the widget to the Home screen.
 

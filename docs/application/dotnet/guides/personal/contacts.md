@@ -312,7 +312,7 @@ To filter, sort, and query contact data:
     **Table: Filters**
 
     | Filters                                  | Result                                   |
-    | ---------------------------------------- | ---------------------------------------- |
+    |----------------------------------------|----------------------------------------|
     | Condition C1<br>OR<br>Condition C2<br>AND<br>Condition C3 | (C1 OR C2) AND C3                        |
     | **Filter F1**:<br>Condition C1<br>OR<br>Condition C2<br><br>**Filter F2**:<br>Condition C3<br>OR<br>Condition C4<br><br>**Filter F3**:<br>Condition C5<br>AND<br>F1<br>AND<br>F2 | (C5 AND F1) AND F2, which is<br>(C5 AND (C1 OR C2)) AND (C3 OR C4) |
 

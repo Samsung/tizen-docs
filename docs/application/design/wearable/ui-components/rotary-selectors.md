@@ -19,7 +19,7 @@ The rotary selector arranges multiple items around the circular edge of the scre
 
 -   **Provide more options**
 
-    [More options](../patterns/more-options.html) are revealed with the rotary selector when users tap the visual cue on the right side of the screen. More options appear as a [temporary view](../navigation/screen-views.html#temp_view) over the current screen and provide additional functions available for a list item.
+    [More options](../patterns/more-options.md) are revealed with the rotary selector when users tap the visual cue on the right side of the screen. More options appear as a [temporary view](../navigation/screen-views.md#temp_view) over the current screen and provide additional functions available for a list item.
 
 ## Elements
 
@@ -55,39 +55,39 @@ The rotary selector arranges multiple items around the circular edge of the scre
     ![](media/ui_components_10.6.4_1_1-850x237.png)
 
 | Normal | Selected |
-  | :--: | :--: |
+  |:--:|:--:|
   | ![](media/ui_components_10.6.4_1_2-850x219_1.png) | ![](media/ui_components_10.6.4_1_2-850x219_2.png) |
 
 | 2nd layer icon | 3rd layer icon |
-| :--: | :--: |
+|:--:|:--:|
 |   ![](media/ui_components_10.6.4_1_3-850x148_1.png)  |   ![](media/ui_components_10.6.4_1_3-850x148_2.png) |
 | **The 2nd layer icon rotates 7° from the 1st layer icon.** | **The 3rd layer icon rotates 3° from the 2nd layer icon** |
 
 | ![](media/ui_components_10.6.4_1_4-850x104_1.png) | ![](media/ui_components_10.6.4_1_4-850x104_2.png)
-| :--: | :--: |
+|:--:|:--:|
 | The center of an icon is used as coordinates. | A normal icon is reduced to 56x56 from the selected icon size of 68x68. |
 
 | Normal | Selected |
-| :--: | :--: |
+|:--:|:--:|
 | ![](media/ui_components_10.6.4_1_5-850x260_1.png) | ![](media/ui_components_10.6.4_1_5-850x260_2.png) |
 
 | Touch Area |
-| :--: |
+|:--:|
 |   ![](media/ui_components_10.6.4_1_6-850x258.png) |
 
 | Rotary selector icon color More options icon color |
-| :--: |
+|:--:|
 |  ![](media/ui_components_10.6.4_1_7-850x212.png) |
 
 -   **Title**
 
 | ![](media/ui_components_10.6.4_2_1-850x240_1.png) | ![](media/ui_components_10.6.4_2_1-850x240_2.png) | ![](media/ui_components_10.6.4_2_1-850x240_3.png) |
-| :--: | :--: | :--: |
+|:--:|:--:|:--:|
 | 1 line text | 2 line text | Icon only |
 
 
 | ![](media/ui_components_10.6.4_2_2-850x248_1.png) |  ![](media/ui_components_10.6.4_2_2-850x248_2.png) |  ![](media/ui_components_10.6.4_2_2-850x248_3.png) |
-| :--: | :--: | :--: |
+|:--:|:--:|:--:|
 | Icon + Text |  1 line text + Subtext   |  2 line text + Subtext |
 
 -   **More options**

@@ -42,7 +42,7 @@ A custom component requires an EDJ resource file (`[ComponentName].edj`) and an 
     **Table: XML descriptor file configuration**
 
     | Parent      | Element     | Attribute     | Description                              | Type    | Required | Default Value                        |
-    | ----------- | ----------- | ------------- | ---------------------------------------- | ------- | -------- | ------------------------------------ |
+    |-----------|-----------|-------------|----------------------------------------|-------|--------|------------------------------------|
     | -           | <component> | name          | Component  identifier, shown on the Palette, Outline view, and Properties view. This attribute must be identical to the XML file  name. | String  | Yes      | -                                    |
     | -           | <component> | description   | Description  shown when you mouse over the custom UI component on the Palette | String  | No       | null                                 |
     | -           | <component> | group         | group block defined in the EDC file for the component.      For more information see [Group Block](../../../org.tizen.guides/html/native/ui/efl/learn_edc_group_n.htm). | String  | Yes      | -                                    |
@@ -98,7 +98,7 @@ If you do not include custom icon files with your custom component, the default 
 **Table: Default icon types**
 
 | Normal icon                              | Mouseover icon                           | Select icon                              |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+|----------------------------------------|----------------------------------------|----------------------------------------|
 | ![Normal state default icon](media/pal_custom_nor.png) | ![Mouseover state default icon](media/pal_custom_mv.png) | ![Select state default icon](media/pal_custom_sel.png) |
 | `pal_custom**_nor.png**`                 | `pal_custom**_mv.png**`                  | `pal_custom**_sel.png**`                 |
 
@@ -157,7 +157,7 @@ To create a custom UI component:
 
     3. Enter the following code in the newly-created `Untitled 1` file:
 
-        ``` 
+        ```
         <?xml version="1.0" encoding="UTF-8"?>
         <component name="text" group="main">
            <text name="text" part_name="text" default_value=""/>
@@ -189,7 +189,7 @@ To create a custom UI component:
         The following table lists error messages that can occur when adding a custom UI component.
 
         | Error message                            | Description                              |
-        | ---------------------------------------- | ---------------------------------------- |
+        |----------------------------------------|----------------------------------------|
         | A Custom UI Component already exists with the same name. | You cannot import a custom UI component if a component with the same name already exists in the **Palette**. Check the your custom UI component name. |
         | An EDJ file required for handling the new component is missing. | The EDJ file must be located in the same folder as the XML file. Check the location of your EDJ and XML files. |
         | The descriptor file is missing a required attribute (such as name or group). | The `name` attribute in the `<component>` element in the descriptor file defines the display name for the component in the **Palette**, and the `group` attribute specifies which `group` block to use in the EDJ file. Check the descriptor file to see whether a required attribute is missing. |
@@ -209,7 +209,7 @@ To create a custom UI component:
         ![Added text UI Component](media/uib_added_customcomponent.png)
 
 <a name="make_application_using_custom_ui_component"></a>
-### Adding Custom UI Components to Projects 
+### Adding Custom UI Components to Projects
 
 To add the new custom elements to your project:
 
@@ -227,7 +227,7 @@ To add the new custom elements to your project:
 
     2. Add a second **Label** component in the same way, and modify its **Text** property:
 
-        ``` 
+        ```
         <align=center><font_size=60>WIFI</font></align>
         ```
 
@@ -283,4 +283,3 @@ To remove a custom UI component from the **Palette**:
 6. If you select the UI component labeled **Unknown** in the **Outline** view, the **Properties** view shows an error message.
 
     If you add a new custom UI component with the same name as the deleted one, the component name is restored in the **Outline** view.
-
