@@ -20,7 +20,7 @@ To use a genlist component in your application:
 
 2. Define the genlist item class:
 
-   a. Create a genlist item class with the `elm_genlist_item_class_new()` function, set a style to the item class, and register callback functions. The genlist item class must be freed manually with the `elm_genlist_item_class_free()` function after all items are appended.
+   1. Create a genlist item class with the `elm_genlist_item_class_new()` function, set a style to the item class, and register callback functions. The genlist item class must be freed manually with the `elm_genlist_item_class_free()` function after all items are appended.
 
       ```
       Elm_Genlist_Item_Class *itc = elm_genlist_item_class_new();
@@ -31,7 +31,7 @@ To use a genlist component in your application:
       itc->func.del = _item_del;
       ```
 
-   b. Define the `text_get` function.  
+   2. Define the `text_get` function.  
 
    When a genlist item becomes realized, the `text_get` function is called repeatedly for all text parts in that item. After the text is set to the part, it is freed automatically. Do not free it manually.
 
@@ -46,7 +46,7 @@ To use a genlist component in your application:
       }
       ```
 
-   c. Define the `content_get` function.  
+   3. Define the `content_get` function.  
 
    The `content_get` function is called repeatedly for all swallow parts in the item. It must return a valid object handle to be set, or `NULL` when no content is desired. The object is deleted by the genlist on its deletion or when the item is unrealized.
 
@@ -65,7 +65,7 @@ To use a genlist component in your application:
       }
       ```
 
-   d. Define the `del` function.  
+   4. Define the `del` function.  
 
    This function is called when the genlist item is deleted. It deletes any data that has been allocated at the item's creation.
 
