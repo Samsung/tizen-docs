@@ -479,3 +479,7 @@ The following table lists the `Animation` class properties.
 | `SpeedFactor`          | `float`           | Gets/sets a speed factor for the animation. |
 | `PlayRange`            | `RelativeVector2` | Defines the values between which the animation plays. Both values (`range.x` and `range.y`) must be between 0 and 1. |
 | `ProgressNotification` | `float`           | Gets/sets the progress notification marker that triggers the `ProgressReached` event. The value must be between 0 and 1. |
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

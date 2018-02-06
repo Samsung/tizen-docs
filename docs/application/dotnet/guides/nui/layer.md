@@ -1,0 +1,67 @@
+# Layer
+
+A layer acts like a transparent sheet upon which shapes can be placed, sub-layers within layers to any desired depth are supported. Layers provide a mechanism for overlaying groups of views on top of each other.
+Layers can also clip their contents to exclude any content outside a user defined area.
+
+Layers can be 2D or 3D, defined by their _behavior_ property.
+
+ ![ ](./media/layers.png)
+
+When a layer is added to the Window, it is assigned a unique depth value. By default the stage has a root layer with a depth value of 0.
+
+Layers provide a mechanism for overlaying groups of actors on top of each other. Layers are drawn in an order determined by a layer **depth** value.
+
+
+```
+// C# example of adding an ImageView to the layer
+
+// Gets the default (root) layer
+Window window = Window.Instance;
+Layer layer = window.GetDefaultLayer();
+_layer1 = new Layer();
+window.AddLayer(_layer1);
+
+// Adds a child view to this layer
+ImageView _imageView = new ImageView();
+layer.Add(_imageView);
+```
+
+## Layer Specific Properties
+
+ - `Behavior` : Layer behavior, which can be `LayerUI` (default), or `Layer3D`
+ - `ChildCount` : To get the number of children held by the layer
+ - `Depth` : To query the depth of the layer
+ - `Name` : To set or get the layer's name
+ - `Opacity` : To retrieve and set the layer's opacity
+ - `Viewport` : To set the viewport( in window coordinate )
+ - `Visibility` : To retrieve and set the layer's visibility
+
+### Re-ordering layers
+
+A range of functions are provided to change the draw order of the layers.
+
+### LayerUI
+
+#### Background
+
+ - Graphics are drawn using renderers
+ - Views can have zero or many renderers
+ - Renderers can be shared by views
+ - Renderers have a depth index property
+
+With `LayerUI`, the draw order of the renderers is defined by both:
+ - Renderer depth index.
+ - Position of view in the layer tree
+
+### Layer3D
+
+When setting Layer behavior to `Layer3D`, Opaque renderers are drawn first and written to the depth buffer.
+
+Transparent renderers are drawn in order of distance from the camera ( painter's algorithm ).
+
+ ![ ](./media/transSort.png)
+
+
+## Related Information
+* Dependencies
+  -   Tizen 4.0 and Higher

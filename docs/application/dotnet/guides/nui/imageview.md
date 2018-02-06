@@ -1,13 +1,15 @@
 # ImageView
 
-An `ImageView` is a NUI control that displays an image. The following figure shows an image displayed with an ImageView.
+An `ImageView` is a NUI control that displays an image. It's a common use to show an ImageVisual.
+
+The following figure shows an image displayed with an ImageView.
 
 **Figure: ImageView example**
 
 ![ImageView example](media/ImageView.png)
 
 <a name="usage"></a>
-## Creating an ImageView 
+## Creating an ImageView
 
 To create an `ImageView`:
 

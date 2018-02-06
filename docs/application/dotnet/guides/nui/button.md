@@ -1,11 +1,12 @@
 # Button
 
+A button is a small object on the UI that you press in order to operate it.
 The NUI button controls include various button types:
 
--   `PushButton` changes its appearance when pressed, and returns to its original appearance when released.
--   `Checkbox` can be checked or unchecked.
--   `Radio` button has 2 states, selected and unselected. Usually radio buttons are grouped, and only 1 radio button in a group can be selected at a given time.
--   `Toggle` button allows the user to switch a feature on or off. Toggle buttons also support tooltips.
+- `PushButton` changes its appearance when pressed, and returns to its original appearance when released.
+- `Checkbox` can be checked or unchecked.
+- `Radio` button has 2 states, selected and unselected. Usually radio buttons are grouped, and only 1 radio button in a group can be selected at a given time.
+- `Toggle` button allows the user to switch a feature on or off. Toggle buttons also support tooltips.
 
 The `Button` class is the base class for the button UI components.
 
@@ -64,7 +65,7 @@ To create a button:
     ToggleButton toggleButton = new ToggleButton();
     ```
 
-    <a name="states"></a>
+<a name="states"></a>
 ## Button States
 
 Each button can be in the `selectable`, `disabled`, and `togglable` states.
