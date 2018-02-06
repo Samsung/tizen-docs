@@ -1,9 +1,5 @@
 # Entry
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 This feature is supported in mobile applications only.
 
 The entry component is a box where the user can enter text. It supports the following features:
@@ -126,7 +122,18 @@ To manage the entry component content:
     elm_entry_markup_filter_append(entry, elm_entry_filter_limit_size, &limit_size);
     ```
 
-  - To define a list of accepted or rejected characters, append the filter with the `Elm_Entry_Filter_Accept_Set` structure.The following example shows how to reject the '+', '-', '*', and '/' characters:`static Elm_Entry_Filter_Accept_Setaccept_set ={    .accepted = NULL,    .rejected = "+*-/"};elm_entry_markup_filter_append(entry, elm_entry_filter_accept_set, &accept_set);`
+  - To define a list of accepted or rejected characters, append the filter with the `Elm_Entry_Filter_Accept_Set` structure.The following example shows how to reject the '+', '-', '*', and '/' characters:  
+
+  ```
+  static Elm_Entry_Filter_Accept_Set
+  accept_set =
+  {    
+    .accepted = NULL,    
+    .rejected = "+*-/"
+  };
+
+  elm_entry_markup_filter_append(entry, elm_entry_filter_accept_set, &accept_set);
+  ```
 
 You can define a file (for example, `/tmp/test.txt`) to save the entry content. The content in the file is implicitly loaded and displayed. After the file is set, any content changes in the entry are automatically saved after a short delay.
 
@@ -256,9 +263,13 @@ You can format the entry text in many ways:
 
 - Add special markups within the entry text:
 
-  - Anchors: `<a href = ..>...</a>`The anchors generate an `anchor,clicked` signal when the user clicks them. The `href` attribute is used to identify the anchor. The anchor also reacts to the `anchor,in` (mouse in), `anchor,out` (mouse out), `anchor,down` (mouse down), and `anchor,up` (mouse up) events.
+  - Anchors: `<a href = ..>...</a>`  
+  The anchors generate an `anchor,clicked` signal when the user clicks them. The `href` attribute is used to identify the anchor. The anchor also reacts to the `anchor,in` (mouse in), `anchor,out` (mouse out), `anchor,down` (mouse down), and `anchor,up` (mouse up) events.
 
-  - Items: `<item size = .. vsize = .. href = ..>...</item>`The items provide a way to insert any `Evas_Object` in the text. The `Evas_Object` name must be specified in the `href` attribute.The `elm_entry_item_provider_append()` function appends a custom item provider to the list for that entry. You can also prepend a custom item provider to the list with the `elm_entry_item_provider_prepend()` function. The `elm_entry_item_provider_remove()` function removes a custom item provider from the list.
+  - Items: `<item size = .. vsize = .. href = ..>...</item>`  
+  The items provide a way to insert any `Evas_Object` in the text. The `Evas_Object` name must be specified in the `href` attribute.  
+
+   The `elm_entry_item_provider_append()` function appends a custom item provider to the list for that entry. You can also prepend a custom item provider to the list with the `elm_entry_item_provider_prepend()` function. The `elm_entry_item_provider_remove()` function removes a custom item provider from the list.
 
     ```
     static Evas_Object*
@@ -295,7 +306,7 @@ You can format the entry text in many ways:
   elm_entry_text_style_user_push(entry, "DEFAULT='font=Tizen:style=Light font_size=50 color=#00f align=center'");
   ```
 
-  The `DEFAULT` element sets the style properties to a default style that is applied to the complete text. For more information on style properties, such as font, font size, and color, see [Textblock Objects](evas-objects-n.md#block).
+  The `DEFAULT` element sets the style properties to a default style that is applied to the complete text. For more information on style properties, such as font, font size, and color, see [Textblock Objects](evas-objects.md#textblock-objects).
 
   **Figure: Overriding style**
 
@@ -358,7 +369,7 @@ The following component styles are available.
 **Table: Entry styles**
 
 | Style                    | Sample                                   | Text part                                | Notes                                    |
-| ------------------------ | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+|------------------------|----------------------------------------|----------------------------------------|----------------------------------------|
 | `elm/entry/base/default` | ![elm/entry/base/default](./media/entry_default.png) | `elm.guide`: for the guide text`elm.text`: for the main text | The guide text is automatically erased when the main text is entered. |
 
 ## Callbacks
@@ -368,7 +379,7 @@ You can register callback functions connected to the following signals for an en
 **Table: Entry callback signals**
 
 | Signal                  | Description                              | `event_info`                    |
-| ----------------------- | ---------------------------------------- | ------------------------------- |
+|-----------------------|----------------------------------------|-------------------------------|
 | `aborted`               | The **Escape** key is pressed on a single line entry. | `NULL`                          |
 | `activated`             | The **Enter** key is pressed on a single line entry. | `NULL`                          |
 | `anchor,clicked`        | An anchor is clicked.                    | `Elm_Entry_Anchor_Info` object  |
@@ -421,3 +432,7 @@ focused_cb(void *data, Evas_Object *obj, void *event_info)
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile

@@ -1,12 +1,8 @@
 # List
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 This feature is supported in mobile applications only.
 
-The list is a very simple UI component used to manage a limited number of items. For lists with a lot of items, use the [Genlist](component-genlist-mn.md).
+The list is a very simple UI component used to manage a limited number of items. For lists with a lot of items, use the [Genlist](component-genlist-m.md).
 
 For more information, see the [List](../../../../../org.tizen.native.mobile.apireference/group__Elm__List.html) API.
 
@@ -67,7 +63,9 @@ for (i = 0; i < 10; i++) {
 To modify the list item elements, use the `Elm_Object_Item` functions:
 
 - To modify the item label, use the `elm_object_item_text_set()` function.
-- To modify the 2 contents, use the `elm_object_item_part_content_set()` function, referencing the first object as the `start` object in the theme and the second one as the `end` object.Each content is an `evas_object` instance, and they are defined as the third and the fourth parameters when you append or prepend the item in the list with the `elm_list_item_append()` or `elm_list_item_prepend()` function.
+- To modify the 2 contents, use the `elm_object_item_part_content_set()` function, referencing the first object as the `start` object in the theme and the second one as the `end` object.  
+
+ Each content is an `evas_object` instance, and they are defined as the third and the fourth parameters when you append or prepend the item in the list with the `elm_list_item_append()` or `elm_list_item_prepend()` function.
 
 ```
 Evas_Object *list;
@@ -170,17 +168,34 @@ To access and select list items:
 
 To receive notifications about list events, listen for the following signals:
 
-- `activated`: The item is double-clicked or pressed (enter | return | spacebar).The `event_info` callback parameter points at the activated item.
-- `clicked,double`: The item is double-clicked.The `event_info` callback parameter points at the double-clicked item.
-- `selected`: The item is selected.The `event_info` callback parameter points at the selected item.
-- `unselected`: The item is unselected.The `event_info` callback parameter points at the unselected item.
-- `longpressed`: The item is long-pressed.The `event_info` callback parameter points at the long-pressed item.
+- `activated`: The item is double-clicked or pressed (enter | return | spacebar).  
+The `event_info` callback parameter points at the activated item.
+
+- `clicked,double`: The item is double-clicked.  
+The `event_info` callback parameter points at the double-clicked item.
+
+- `selected`: The item is selected.  
+The `event_info` callback parameter points at the selected item.
+
+- `unselected`: The item is unselected.  
+The `event_info` callback parameter points at the unselected item.
+
+- `longpressed`: The item is long-pressed.  
+The `event_info` callback parameter points at the long-pressed item.
+
 - `edge,top`: The list is scrolled to the top edge.
+
 - `edge,bottom`: The list is scrolled to the bottom edge.
+
 - `edge,left`: The list is scrolled to the left edge.
+
 - `edge,right`: The list is scrolled to the right edge.
-- `highlighted`: An item on the list is highlighted.The `event_info` callback parameter points at the highlighted item.
-- `unhighlighted`: An item in the list is unhighlighted.The `event_info` callback parameter points at the unhighlighted item.
+
+- `highlighted`: An item on the list is highlighted.  
+The `event_info` callback parameter points at the highlighted item.
+
+- `unhighlighted`: An item in the list is unhighlighted.  
+The `event_info` callback parameter points at the unhighlighted item.
 
 > **Note**  
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
@@ -204,6 +219,9 @@ double_clicked_cb(void *data, Evas_Object *obj, void *event_info)
 }
 ```
 
-**Note**
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile

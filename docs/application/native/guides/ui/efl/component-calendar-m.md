@@ -1,9 +1,5 @@
 # Calendar
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 The calendar UI component displays month views. For more information, see the [Calendar](../../../../../org.tizen.native.mobile.apireference/group__Elm__Calendar.html) API.
 
 This feature is supported in mobile applications only.
@@ -77,7 +73,7 @@ The following table lists the available component styles.
 **Table: Calendar styles**
 
 | Style                    | Sample                                   |
-| ------------------------ | ---------------------------------------- |
+|------------------------|----------------------------------------|
 | `elm/check/base/default` | ![elm/check/base/default](./media/calendar_style.png) |
 
 ## Callbacks
@@ -87,7 +83,7 @@ You can register callback functions connected to the following signals for a cal
 **Table: Calendar callback signals**
 
 | Signal    | Description                   | `event_info` |
-| --------- | ----------------------------- | ------------ |
+|---------|-----------------------------|------------|
 | `changed` | The selected date is changed. | `NULL`       |
 
 > **Note**  
@@ -95,3 +91,7 @@ You can register callback functions connected to the following signals for a cal
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
