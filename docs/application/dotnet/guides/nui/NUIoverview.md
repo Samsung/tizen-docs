@@ -17,7 +17,7 @@ NUI offers the following main features:
 -   Image and text creation
 -   Layers to aid in 2D UI layouting
 -   Automatic background loading of resources
--   Easy-to-use [animation framework](animation.md) which hides the complexity of the underlying 3D math
+-   Easy-to-use [animation framework](animation.md) which hides the complexity of the underlying three-dimensional math
 -   Keyboard, touch, and mouse handling
 
 <a name="concepts"></a>
@@ -36,5 +36,5 @@ To be able to use NUI in your applications, you must become familiar with the fo
 To get started with NUI development, [study a "Hello World" sample application](hello-world.md).
 
 ## Related Information
-* Dependencies
+- Dependencies
   -   Tizen 4.0 and Higher

@@ -16,17 +16,27 @@
 
 # Natural User Interface
 ## [Overview](/application/dotnet/guides/nui/NUIoverview.md)
-## [NUI Hello World Tutorial](/application/dotnet/guides/nui/hello-world.md)
-## UI Components
-### [Overview](/application/dotnet/guides/nui/ui-components.md)
+## [Setting Up the NUI Development Environment on Ubuntu](/application/dotnet/guides/nui/setup-ubuntu.md)
+## [Getting Started](/application/dotnet/guides/nui/hello-world.md)
+## [Layer](/application/dotnet/guides/nui/layer.md)
+## [UI Components](/application/dotnet/guides/nui/ui-components.md)
+### [Styling UI Components](/application/dotnet/guides/nui/styling-controls-with-JSON.md)
 ### [Visuals](/application/dotnet/guides/nui/visuals.md)
-### [Button](/application/dotnet/guides/nui/button.md)
+### [View](/application/dotnet/guides/nui/view.md)
+### [CustomView](/application/dotnet/guides/nui/creating-custom-view-controls.md)
+### [Buttons](/application/dotnet/guides/nui/button.md)
 ### [FlexContainer](/application/dotnet/guides/nui/flexcontainer.md)
 ### [ImageView](/application/dotnet/guides/nui/imageview.md)
+### [ScrollView](/application/dotnet/guides/nui/scrollview.md)
+### [Slider](/application/dotnet/guides/nui/slider.md)
+### [TableView](/application/dotnet/guides/nui/tableview.md)
 ### [TextLabel](/application/dotnet/guides/nui/textlabel.md)
-### [CustomView](/application/dotnet/guides/nui/creating-custom-view-controls.md)
-### [Styling Components with JSON](/application/dotnet/guides/nui/styling-controls-with-JSON.md)
+### [TextField](/application/dotnet/guides/nui/textfield.md)
+### [TextEditor](/application/dotnet/guides/nui/texteditor.md)
+### [VideoView](/application/dotnet/guides/nui/videoview.md)
 ## [Animation](/application/dotnet/guides/nui/animation.md)
+### [Animation Types](/application/dotnet/guides/nui/animation-types.md)
+## [Resources](/application/dotnet/guides/nui/resources.md)
 
 # Internationalization
 ## [Phone Number Management](/application/dotnet/guides/internationalization/phonenumber.md)

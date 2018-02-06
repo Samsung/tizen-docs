@@ -48,9 +48,9 @@ To create a text label:
 <a name="font"></a>
 ## Selecting Fonts
 
-You can request a specific font using the `FontFamily`, `FontStyle`, and `PointSize` properties of the [Tizen.NUI.BaseComponents.TextLabel](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.TextLabel.html) class:
+You can request a specific font using the `FontFamily`, the `FontStyle`, and the `PointSize` properties of the [Tizen.NUI.BaseComponents.TextLabel](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.TextLabel.html) class:
 
--   `FontFamily` is a string with the font family name, for example, "FreeSerif".
+-   `FontFamily` is a string with the font family name, for example, `FreeSerif`.
 -   `FontStyle` is a JSON-formatted string with the font style. The following list describes some possible keys and common values for them:
     -   The `width` key defines the spacing between glyphs. Some commonly-used values include `condensed`, `semiCondensed`, `normal`, `semiExpanded`, and `expanded`.
     -   The `weight` key defines the thickness or darkness of the glyphs. Some commonly-used values include `thin`, `light`, `normal`, `regular`, `medium`, and `bold`.
@@ -82,7 +82,7 @@ If no font is specified, styling defaults are used, and a suitable font for disp
 
 Setting a font size programmatically is not ideal for applications which support multiple screen resolutions, and for platforms which support multiple logical font sizes. Also, any changes made to the platform font settings override sizes that have been programmatically set.
 
-A more flexible approach is to prepare various JSON stylesheets, and request a different style for each platform. The [Tizen.NUI.NUIApplication](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.NUIApplication.html) class has constructors which take a stylesheet argument:
+A more flexible approach is to prepare various JSON stylesheets and request a different style for each platform. The [Tizen.NUI.NUIApplication](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.NUIApplication.html) class has constructors which take a stylesheet argument:
 
 ```
 class Example : NUIApplication
@@ -154,31 +154,31 @@ For text decorations, the [Tizen.NUI.BaseComponents.TextLabel](https://developer
 | Property    |    Type |      Description |
 |-------------|---------|------------------|
 | `Text` |  `string` |     Text to display in UTF-8 forma.|
-| `FontFamily` | `string` |        Font family to use |
-|  `FontStyle` |  `Map` |      Font style to use |
-|  `PointSize` |  `float` |     Font size in points |
-|  `MultiLine` |  `bool`  |     Whether to use the multi-line layout option |
-|  `HorizontalAlignment` | `string` | Line horizontal alignment |
-|  `VerticalAlignment` | `string` | Line vertical alignment |
-| `TextColor`  |   `Color` |          Text color |
-|  `ShadowOffset` | `Vector2` |      Text shadow offset |
-|  `ShadowColor` | `Vector4`  |      Text shadow color |
-| `UnderlineEnabled` | `bool` |      Whether to use underline |
-| `UnderlineColor` | `Vector4` |       Underline color |
-| `UnderlineHeight` |  `float` |       Underline height |
-|  `EnableMarkup` |  `bool` |  Whether markup processing is enabled |
-| `EnableAutoScroll` |  `bool` | Whether to enable auto-scrolling |
-| `AutoScrollSpeed` | `int`  | Scrolling speed, in pixels per second |
-| `AutoScrollLoopCount` | `int` |   Number of complete loops to scroll, when scrolling is enabled |
-| `AutoScrollGap` | `float` |   Gap before scrolling wraps |
-| `LineSpacing` |   `float` | Default spacing between lines, in points |
-|  `Underline` |   `Map`  |    Default underline parameters |
-| `Shadow` | `Map` |          Default shadow parameters |
-|  `Emboss` |  `Map`  |         Default emboss parameters |
-| `Outline` |  `Map`  |         Default outline parameters |
-| `PixelSize` |  `float`  |       Font size in pixels |
-| `Ellipsis` |   `bool` |      Whether to enable ellipsis |
-| `AutoScrollLoopDelay` | `float` |   Auto-scroll loop delay |
+| `FontFamily` | `string` |   To use the font family. |
+|  `FontStyle` |  `Map` |      To use the font style. |
+|  `PointSize` |  `float` |     The font size in points. |
+|  `MultiLine` |  `bool`  |     Whether to use the multi line layout option. |
+|  `HorizontalAlignment` | `string` | The horizontal line alignment. |
+|  `VerticalAlignment` | `string` | The vertical line alignment. |
+| `TextColor`  |   `Color` |  The color of the text. |
+|  `ShadowOffset` | `Vector2` |  The shadow offset of the text. |
+|  `ShadowColor` | `Vector4`  |  The shadow color of the text. |
+| `UnderlineEnabled` | `bool` |  Whether to use underline. |
+| `UnderlineColor` | `Vector4` | The Underline color of the text. |
+| `UnderlineHeight` |  `float` |  The height of the Underline height. |
+|  `EnableMarkup` |  `bool` |  Enable the Markup string, to process text within the Markup tags using DALi application.<br>**Note**: By default, the Markup string is disabled. |
+| `EnableAutoScroll` |  `bool` | Enable or disable the auto scrolling. |
+| `AutoScrollSpeed` | `int`  | The scrolling speed is in pixels per second. |
+| `AutoScrollLoopCount` | `int` |   Number of complete loops to scroll, when scrolling is enabled. |
+| `AutoScrollGap` | `float` |   The gap before scrolling wraps. |
+| `LineSpacing` |   `float` | The default spacing between lines in points. |
+|  `Underline` |   `Map`  |    The default underline parameters. |
+| `Shadow` | `Map` |      The default shadow parameters. |
+|  `Emboss` |  `Map`  |         The default emboss parameters. |
+| `Outline` |  `Map`  |         The default outline parameters. |
+| `PixelSize` |  `float`  |       The size of font in pixels. |
+| `Ellipsis` |   `bool` |      Enable or disable ellipsis, if required. |
+| `AutoScrollLoopDelay` | `float` |   Auto scroll loop delay. |
 | `AutoScrollStopMode` | `AutoScrollStopMode` | Auto-scroll stop mode |
 
 To use the decorations, simply set the applicable property:
@@ -194,7 +194,7 @@ To use the decorations, simply set the applicable property:
 
     ![Colored text](media/RedText.png)
 
--   To add a drop-shadow to the text, set the `Shadow` property:
+-   To add a drop shadow to the text, set the `Shadow` property:
 
     ```
     window.BackgroundColor(Color.Blue);
@@ -343,5 +343,5 @@ The following markup elements are currently supported:
     ```
 
 ## Related Information
-* Dependencies
+- Dependencies
   -   Tizen 4.0 and Higher
