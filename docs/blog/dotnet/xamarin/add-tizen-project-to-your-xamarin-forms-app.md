@@ -4,7 +4,7 @@
 It has been a while since the first preview version of Tizen .NET is released, and developing Tizen applications has never been so easy, thanks to it. Using the familiar Visual Studio as the IDE, you can now develop applications by installing the extension called ‘Visual Studio Tools for Tizen’, and use Xamarin Forms as the UI framework. This new way of developing Tizen applications is the great opportunity for not only existing Tizen developers but also for Xamarin developers.
 > For anyone who wants to get to know more about developing Tizen .NET applications, visit [here](https://developer.tizen.org/development/guides/.net-application) for developing guides and [here](https://developer.tizen.org/development/visual-studio-tools-tizen/installing-visual-studio-tools-tizen) for tools.
 
-If you already have your cross own platform Xamarin apps, or if you are about to create a new one, it is definitely worth adding a Tizen project to your apps. Now your apps can run on many profiles of Tizen devices such as mobile, TV, and wearable. Super awesome!
+If you already have your own cross platform Xamarin apps, or if you are about to create a new one, it is definitely worth adding a Tizen project to your apps. Now your apps can run on many profiles of Tizen devices such as mobile, TV, and wearable. Super awesome!
 
 ## Add Tizen Project
 ### On Visual Studio
