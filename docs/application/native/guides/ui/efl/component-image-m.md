@@ -1,9 +1,5 @@
 # Image
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 This feature is supported in mobile applications only.
 
 The image component can load and display an image from a disk file or a memory region.
@@ -102,7 +98,7 @@ You can register callback functions connected to the following signals for an im
 **Table: Image callback signals**
 
 | Signal    | Description                              | `event_info`               |
-| --------- | ---------------------------------------- | -------------------------- |
+|---------|----------------------------------------|--------------------------|
 | `drop`    | An image-type object is dropped onto the object in question. | The path to the image file |
 | `clicked` | The image is clicked.                    | `NULL`                     |
 
@@ -125,3 +121,7 @@ clicked_cb(void *data, Evas_Object *obj, void *event_info)
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile

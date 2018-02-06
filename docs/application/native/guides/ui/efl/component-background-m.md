@@ -1,9 +1,5 @@
 # Background
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 The background UI component is used to set a solid background decoration to a window or a container object. It works like an image, but has some background-specific properties. It can be set to a tiled, centered, scaled, or stretched mode. The background is the most simple UI component in that it emits no signals. For more information, see the [Background](../../../../../org.tizen.native.mobile.apireference/group__Elm__Bg.html) API.
 
 This feature is supported in mobile applications only.
@@ -34,7 +30,7 @@ To use a background component in your application:
      elm_bg_file_set(bg, "/path/to/the/edje", "group name");
      ```
 
-   - Set an image file as a background using the `elm_bg_file_set()` function.For an image background, you can set additional [options](#bg_options).
+   - Set an image file as a background using the `elm_bg_file_set()` function.For an image background, you can set additional [options](#options).
 
      `elm_bg_file_set(bg, "/path/to/the/image", NULL);`
 
@@ -49,9 +45,7 @@ The following example shows a simple use case of the background component.
 
 **Example: Background use case**
 
-| ![Background](./media/bg_image.png) |
-| ---------------------------------------- |
-|                                          |
+ ![Background](./media/bg_image.png)
 
 ```
 Evas_Object *bg;
@@ -94,7 +88,7 @@ The following modes are available:
 **Table: Background options**
 
 | `ELM_BG_OPTION_CENTER`                   | `ELM_BG_OPTION_SCALE`                    |
-| ---------------------------------------- | ---------------------------------------- |
+|----------------------------------------|----------------------------------------|
 | ![Center](./media/bg_option_center.png) | ![Scale](./media/bg_option_scale.png) |
 | `ELM_BG_OPTION_STRETCH`                  | `ELM_BG_OPTION_TILE`                     |
 | ![Stretch](./media/bg_option_stretch.png) | ![Tile](./media/bg_option_tile.png) |
@@ -106,9 +100,13 @@ The following table lists the available component styles.
 **Table: Background styles**
 
 | Style         | Swallow part                           | Description                              |
-| ------------- | -------------------------------------- | ---------------------------------------- |
+|-------------|--------------------------------------|----------------------------------------|
 | `default`     | `elm.swallow.content``(alias:overlay)` | Default background style with an overlay swallow part on the top. |
 | `transparent` | `elm.swallow.content``(alias:overlay)` | `elm.swallow.content``(alias:overlay)`   |
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile

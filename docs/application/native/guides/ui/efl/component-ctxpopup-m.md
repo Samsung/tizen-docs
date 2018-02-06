@@ -1,9 +1,5 @@
 # Ctxpopup
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 The ctxpopup UI component pops up and shows a list of items inside it. For more information, see the [Ctxpopup](../../../../../org.tizen.native.mobile.apireference/group__Elm__Ctxpopup.html) API.
 
 This feature is supported in mobile applications only.
@@ -20,7 +16,7 @@ To use a ctxpopup component in your application:
    ctxpopup = elm_ctxpopup_add(parent);
    ```
 
-2. Configure the ctxpopup [features](#feature).
+2. Configure the ctxpopup [features](#features).
 
 3. Append items to the ctxpopup with the `elm_ctxpopup_item_append()` function. The function takes 5 parameters: the pointer of the ctxpopup, a file path of an icon, a text, a callback function to call when the item is clicked, and the parameter passed to the callback.
 
@@ -28,7 +24,7 @@ To use a ctxpopup component in your application:
    elm_ctxpopup_item_append(ctxpopup, "icon.png", "Call", _item_selected_cb, NULL);
    ```
 
-4. Register the [callback](#callback) functions.
+4. Register the [callback](#callbacks) functions.
 
 When shown, the ctxpopup automatically selects an area inside its parent object's view to optimally fit into it. Set the object view with the `elm_ctxpopup_hover_parent_set()` function.
 
@@ -36,9 +32,7 @@ The following example shows a simple use case of the ctxpopup component.
 
 **Example: Ctxpopup use case**
 
-| ![Ctxpopup](./media/ctxpopup1.png) |
-| ---------------------------------------- |
-|                                          |
+ ![Ctxpopup](./media/ctxpopup1.png)
 
 ```
 Evas_Object *win;
@@ -158,12 +152,12 @@ To manage the ctxpopup items:
 
 The following table lists the available component styles.
 
-In Tizen 2.4, dropdown styles are no longer supported. Use a [hoversel](component-hoversel-mn.md) component for those instead.
+In Tizen 2.4, dropdown styles are no longer supported. Use a [hoversel](component-hoversel.md) component for those instead.
 
 **Table: Ctxpopup styles**
 
 | Style                                    | Sample                                   |
-| ---------------------------------------- | ---------------------------------------- |
+|----------------------------------------|----------------------------------------|
 | `elm/ctxpopup/layout/default`            | ![elm/ctxpopup/layout/default](./media/ctxpopup_default.png) |
 | `elm/ctxpopup/layout/more/default`       | ![elm/ctxpopup/layout/more/default](./media/ctxpopup_more.png) |
 | `elm/ctxpopup/layout/dropdown/list` (Tizen 2.3 only) | ![elm/ctxpopup/layout/dropdown/list](./media/ctxpopup_dropdown.png) |
@@ -176,7 +170,7 @@ You can register callback functions connected to the following signals for a ctx
 **Table: Ctxpopup callback signals**
 
 | Signal      | Description                | `event_info` |
-| ----------- | -------------------------- | ------------ |
+|-----------|--------------------------|------------|
 | `dismissed` | The ctxpopup is dismissed. | `NULL`       |
 
 > **Note**  
@@ -184,3 +178,7 @@ You can register callback functions connected to the following signals for a ctx
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile

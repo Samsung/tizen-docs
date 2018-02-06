@@ -1,9 +1,5 @@
 # Index
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-
 The index UI component gives you an index for quick access to a group of other UI items. The index component is hidden by default, but it appears when the user clicks over its reserved area on the canvas. For more information, see the [Index](../../../../../org.tizen.native.mobile.apireference/group__Elm__Index.html) API.
 
 This feature is supported in mobile applications only.
@@ -20,7 +16,7 @@ To use an index component in your application:
    index = elm_index_add(parent);
    ```
 
-2. Configure the index and set its [style](#style).
+2. Configure the index and set its [style](#styles).
 
 3. Append items to the index with the `elm_index_item_append()` function. The function takes 5 parameters: the pointer of the toolbar, a file path of an icon, a text, a callback function to call when the item is clicked, and the parameter passed to the callback.
 
@@ -28,15 +24,13 @@ To use an index component in your application:
    elm_index_item_append(index, "A", _item_selected_cb, NULL);
    ```
 
-4. Register the [callback](#callback) functions.
+4. Register the [callback](#callbacks) functions.
 
 The following example shows a simple use case of the index component.
 
 **Example: Index use case**
 
-| ![Index](./media/index1.png) |
-| ------------------------------------ |
-|                                      |
+ ![Index](./media/index1.png)
 
 ```
 Evas_Object *win;
@@ -92,9 +86,7 @@ The following example shows an index with a list.
 
 **Example: Index with list**
 
-| ![Index with list](./media/index2.png) |
-| ---------------------------------------- |
-|                                          |
+ ![Index with list](./media/index2.png)
 
 ```
 Evas_Object *win;
@@ -156,11 +148,11 @@ The following table lists the available component styles.
 **Table: Index styles**
 
 | Style                                 | Sample                                   | Notes                                    |
-| ------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+|-------------------------------------|----------------------------------------|----------------------------------------|
 | `elm/index/base/vertical/default`     | ![elm/index/base/vertical/default](./media/index_default.png) | This style has a one-finger-wide area on the right side of the index component's container. Generally, this style is used together with lists, generic lists, or generic grids. |
 | `elm/index/base/vertical/pagecontrol` | ![elm/index/base/vertical/pagecontrol](./media/index_pagecontrol.png) | This style has a one-finger-high area on the bottom side of the index component container. Generally, this style is used together with a layout, and images which are located in a scrollable object. |
 
-> **Note**
+> **Note**  
 > Set the index orientation with the `elm_index_horizontal_set()` function.
 > `elm_index_horizontal_set(index, EINA_TRUE);`
 
@@ -173,7 +165,7 @@ You can register callback functions connected to the following signals for an in
 **Table: Index callback signals**
 
 | Signal          | Description                              | `event_info`                     |
-| --------------- | ---------------------------------------- | -------------------------------- |
+|---------------|----------------------------------------|--------------------------------|
 | `changed`       | The selected index item changes.         | The selected item's data pointer |
 | `delay,changed` | The selected index item changes, but after a small idling period. | The selected item's data pointer |
 | `selected`      | The user selects an item by releasing the mouse button. | The selected item's data pointer |
@@ -185,3 +177,7 @@ You can register callback functions connected to the following signals for an in
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile

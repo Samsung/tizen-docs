@@ -1,9 +1,5 @@
 # Genlist
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 This feature is supported in wearable applications only.
 
 Genlist is a UI component that displays a scrollable list of items. It allows you to manage a lot of items while still being fast and having a low memory footprint, as only the visible items are allocated in the memory.
@@ -61,7 +57,7 @@ The following figures show examples of the item styles.
 
 ![2text.1icon.1 item style](./media/genlist3_wn.png)
 
-For more information on creating a new genlist item style, see [Customizing UI Components](component-custom-n.md).
+For more information on creating a new genlist item style, see [Customizing UI Components](component-custom.md).
 
 ## Defining the Genlist Item Class
 
@@ -89,10 +85,17 @@ The `item_style`, `decorate_item_style`, and `decorate_all_item_style` attribute
 
 The `func` structure contains pointers to functions that are called when an item is going to be realized or deleted. All of them receive a data parameter that points to the same data passed to the `elm_genlist_item_append()` function and related item creation functions, and an `obj` parameter that points to the genlist object itself.
 
-- `text_get()`The `PART` parameter is the name string of one of the existing text parts in the Edje group implementing the item's theme. It has to return a string (duplicated with the `strdup()` function) corresponding to the `PART` parameter. The caller is in charge of freeing the string when done.
-- `content_get()`The `PART` parameter is the name string of one of the existing swallow parts in the Edje group. The function returns a valid object handle, or `NULL` when no content is desired. The object is deleted by the genlist on its deletion or when the item is `unrealized`.
-- `state_get()`The `PART` parameter is the name string of one of the state parts in the Edje group implementing the item's theme. It returns `EINA_FALSE` for false/off or `EINA_TRUE` for true/on. The default is false. When the state is true, the genlist emits a signal to the `PART`parameter's theming Edje object using `elm,state,xxx,active` as the `emission` parameter and `elm` as the `source` parameter. xxx is the name of the (state) part.
-- `del()`This function is called when the genlist item is deleted. It deletes any data that is allocated at the item creation.
+- `text_get()`  
+The `PART` parameter is the name string of one of the existing text parts in the Edje group implementing the item's theme. It has to return a string (duplicated with the `strdup()` function) corresponding to the `PART` parameter. The caller is in charge of freeing the string when done.
+
+- `content_get()`  
+The `PART` parameter is the name string of one of the existing swallow parts in the Edje group. The function returns a valid object handle, or `NULL` when no content is desired. The object is deleted by the genlist on its deletion or when the item is `unrealized`.
+
+- `state_get()`  
+The `PART` parameter is the name string of one of the state parts in the Edje group implementing the item's theme. It returns `EINA_FALSE` for false/off or `EINA_TRUE` for true/on. The default is false. When the state is true, the genlist emits a signal to the `PART`parameter's theming Edje object using `elm,state,xxx,active` as the `emission` parameter and `elm` as the `source` parameter. xxx is the name of the (state) part.
+
+- `del()`  
+This function is called when the genlist item is deleted. It deletes any data that is allocated at the item creation.
 
 ## Managing Genlist Items
 
@@ -121,7 +124,7 @@ To manage items:
 
   To help inspect the list items, move to the item at the top of the list with the `elm_genlist_first_item_get()` function, which returns the item pointer. The `elm_genlist_last_item_get()` function moves to the item at the end of the list. The `elm_genlist_item_next_get()` and `elm_genlist_item_prev_get()` functions move to the next and previous items relative to the indicated item. Using these calls you can go through the entire item list or tree.
 
-  > **Note**
+  > **Note**  
   > As a tree, the items are flattened on the list, so the `elm_genlist_item_parent_get()` function gives you the name of the parent item (even to skip them if needed).
   > The `elm_genlist_item_show()` function scrolls the scroller to show the desired item as visible.
   > The `elm_object_item_data_get()` function returns the data pointer set by the item creation functions.
@@ -143,46 +146,123 @@ To prevent a selection, you can disable an item with the `elm_object_item_disabl
 
 To receive notifications about the genlist events, listen for the following signals:
 
-- `activated`: The item is double-clicked or pressed (enter | return | spacebar).The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the activated item.
-- `clicked,double`: The item is double-clicked.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the double-clicked item.
-- `selected`: The item is selected.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the selected item.
-- `unselected`: The item is unselected.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the unselected item.
-- `expanded`: The item is to be expanded with the `elm_genlist_item_expanded_set()` function. The callback fills in the child items.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the item to be expanded.
-- `contracted`: The item is to be collapsed with the `elm_genlist_item_expanded_set()` function. The callback deletes the child items.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the item to be collapsed.
-- `expand,request`: The user wants to expand a tree branch item. The callback decides whether the item can expand (if it has any children) and calls the `elm_genlist_item_expanded_set()` function to set the state.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the item to be expanded.
-- `contract,request`: The user wants to collapse a tree branch item. The callback decides whether the item can collapse (if it has any children) and calls the `elm_genlist_item_expanded_set()` function to set the state.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the item to be collapsed.
-- `realized`: The item is created as a real Evas object.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the item to be created.
-- `unrealized`: The item is going to be unrealized. Provided content objects are deleted and the item object is deleted or put into a floating cache.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the item to be deleted.
-- `drag,start,up`: The item in the list is dragged (not scrolled) up.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the dragged item.
-- `drag,start,down`: The item in the list is dragged (not scrolled) down.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the dragged item.
-- `drag,start,left`: The item in the list is dragged (not scrolled) left.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the dragged item.
-- `drag,start,right`: The item in the list is dragged (not scrolled) right.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the dragged item.
-- `drag,stop`: The item in the list has stopped being dragged.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the dragged item.
-- `drag`: The item in the list is being dragged.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the dragged item.
-- `longpressed`: The item is pressed for a certain amount of time. The default specified time is 1 second.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the pressed item.
-- `scroll,anim,start`: The scrolling animation is started.The `event_info` callback parameter is `NULL`.
-- `scroll,anim,stop`: The scrolling animation is stopped.The `event_info` callback parameter is `NULL`.
-- `scroll,drag,start`: Dragging the content is started.The `event_info` callback parameter is `NULL`.
-- `scroll,drag,stop`: Dragging the content is stopped.The `event_info` callback parameter is `NULL`.
-- `edge,top`: The genlist is scrolled to the top edge.The `event_info` callback parameter is `NULL`.
-- `edge,bottom`: The genlist is scrolled to the bottom edge.The `event_info` callback parameter is `NULL`.
-- `edge,left`: The genlist is scrolled to the left edge.The `event_info` callback parameter is `NULL`.
-- `edge,right`: The genlist is scrolled to the right edge.The `event_info` callback parameter is `NULL`.
-- `multi,swipe,left`: The genlist is multi-touch-swiped left.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the swiped item.
-- `multi,swipe,right`: The genlist is multi-touch-swiped right.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the swiped item.
-- `multi,swipe,up`: The genlist is multi-touch-swiped up.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the swiped item.
-- `multi,swipe,down`: The genlist is multi-touch-swiped down.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the swiped item.
-- `multi,pinch,out`: The genlist is multi-touch-pinched out.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the pinched item.
-- `multi,pinch,in`: The genlist is multi-touch-pinched in.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the pinched item.
-- `swipe`: The genlist is swiped.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the swiped item.
-- `moved`: The item is moved in the reorder mode.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the moved item.
-- `moved,after`: The item is moved after another item in the reorder mode. To access the relative previous item, use the `elm_genlist_item_prev_get()` function. This signal is called along with the `moved` signal.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the moved item.
-- `moved,before`: The item is moved before another item in the reorder mode. To access the relative next item, use the `elm_genlist_item_next_get()` function. This signal is called along with the `moved` signal.The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the moved item.
-- `language,changed` The program language is changed.The `event_info` callback parameter is `NULL`.
-- `tree,effect,finished`: The genlist tree effect is finished.The `event_info` callback parameter is `NULL`.
+- `activated`: The item is double-clicked or pressed (enter | return | spacebar).  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the activated item.
+
+- `clicked,double`: The item is double-clicked.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the double-clicked item.
+
+- `selected`: The item is selected.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the selected item.
+
+- `unselected`: The item is unselected.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the unselected item.
+
+- `expanded`: The item is to be expanded with the `elm_genlist_item_expanded_set()` function. The callback fills in the child items.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the item to be expanded.
+
+- `contracted`: The item is to be collapsed with the `elm_genlist_item_expanded_set()` function. The callback deletes the child items.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the item to be collapsed.
+
+- `expand,request`: The user wants to expand a tree branch item. The callback decides whether the item can expand (if it has any children) and calls the `elm_genlist_item_expanded_set()` function to set the state.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the item to be expanded.
+
+- `contract,request`: The user wants to collapse a tree branch item. The callback decides whether the item can collapse (if it has any children) and calls the `elm_genlist_item_expanded_set()` function to set the state.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the item to be collapsed.
+
+- `realized`: The item is created as a real Evas object.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the item to be created.
+
+- `unrealized`: The item is going to be unrealized. Provided content objects are deleted and the item object is deleted or put into a floating cache.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the item to be deleted.
+
+- `drag,start,up`: The item in the list is dragged (not scrolled) up.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the dragged item.
+
+- `drag,start,down`: The item in the list is dragged (not scrolled) down.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the dragged item.
+
+- `drag,start,left`: The item in the list is dragged (not scrolled) left.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the dragged item.
+
+- `drag,start,right`: The item in the list is dragged (not scrolled) right.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the dragged item.
+
+- `drag,stop`: The item in the list has stopped being dragged.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the dragged item.
+
+- `drag`: The item in the list is being dragged.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the dragged item.
+
+- `longpressed`: The item is pressed for a certain amount of time. The default specified time is 1 second.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the pressed item.
+
+- `scroll,anim,start`: The scrolling animation is started.  
+The `event_info` callback parameter is `NULL`.
+
+- `scroll,anim,stop`: The scrolling animation is stopped.  
+The `event_info` callback parameter is `NULL`.
+
+- `scroll,drag,start`: Dragging the content is started.  
+The `event_info` callback parameter is `NULL`.
+
+- `scroll,drag,stop`: Dragging the content is stopped.  
+The `event_info` callback parameter is `NULL`.
+
+- `edge,top`: The genlist is scrolled to the top edge.  
+The `event_info` callback parameter is `NULL`.
+
+- `edge,bottom`: The genlist is scrolled to the bottom edge.  
+The `event_info` callback parameter is `NULL`.
+
+- `edge,left`: The genlist is scrolled to the left edge.  
+The `event_info` callback parameter is `NULL`.
+
+- `edge,right`: The genlist is scrolled to the right edge.  
+The `event_info` callback parameter is `NULL`.
+
+- `multi,swipe,left`: The genlist is multi-touch-swiped left.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the swiped item.
+
+- `multi,swipe,right`: The genlist is multi-touch-swiped right.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the swiped item.
+
+- `multi,swipe,up`: The genlist is multi-touch-swiped up.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the swiped item.
+
+- `multi,swipe,down`: The genlist is multi-touch-swiped down.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the swiped item.
+
+- `multi,pinch,out`: The genlist is multi-touch-pinched out.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the pinched item.
+
+- `multi,pinch,in`: The genlist is multi-touch-pinched in.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the pinched item.
+
+- `swipe`: The genlist is swiped.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the swiped item.
+
+- `moved`: The item is moved in the reorder mode.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the moved item.
+
+- `moved,after`: The item is moved after another item in the reorder mode. To access the relative previous item, use the `elm_genlist_item_prev_get()` function. This signal is called along with the `moved` signal.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the moved item.
+
+- `moved,before`: The item is moved before another item in the reorder mode. To access the relative next item, use the `elm_genlist_item_next_get()` function. This signal is called along with the `moved` signal.  
+The `event_info` callback parameter points at an `Elm_Object_Item` object that contains the moved item.
+
+- `language,changed` The program language is changed.  
+The `event_info` callback parameter is `NULL`.
+
+- `tree,effect,finished`: The genlist tree effect is finished.  
+The `event_info` callback parameter is `NULL`.
 
 > **Note**  
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.3.1 and Higher for Wearable

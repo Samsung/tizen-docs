@@ -1,9 +1,5 @@
 # Button
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 This feature is supported in wearable applications only.
 
 The button component is a simple push button, which is composed of a label icon and an icon object. The button supports the autorepeat feature.
@@ -131,3 +127,7 @@ To manage the autorepeat feature:
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.3.1 and Higher for Wearable

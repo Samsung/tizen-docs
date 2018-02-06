@@ -1,9 +1,5 @@
 # Label
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 This feature is supported in wearable applications only.
 
 The label component displays text with a simple HTML-like markup.
@@ -60,9 +56,12 @@ To receive notifications about the label events, listen for the following signal
 
 - `language,changed`: The program language is changed.
 - `slide,end`: The slide reaches the end.
-- `anchor,clicked`: The anchor is clicked.The `event_info` callback parameter points to an `Elm_Label_Anchor_Info` object.
-- `anchor,mouse,down`: The anchor is pressed by mouse down.The `event_info` callback parameter points to an `Elm_Label_Anchor_Info` object.
-- `anchor,mouse,up`: The anchor is released by mouse up.The `event_info` callback parameter points to an `Elm_Label_Anchor_Info` object.
+- `anchor,clicked`: The anchor is clicked.  
+The `event_info` callback parameter points to an `Elm_Label_Anchor_Info` object.
+- `anchor,mouse,down`: The anchor is pressed by mouse down.  
+The `event_info` callback parameter points to an `Elm_Label_Anchor_Info` object.
+- `anchor,mouse,up`: The anchor is released by mouse up.  
+The `event_info` callback parameter points to an `Elm_Label_Anchor_Info` object.
 
 > **Note**  
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
@@ -83,6 +82,9 @@ slide_end_cb(void *data, Evas_Object *obj, void *event_info)
 }
 ```
 
-**Note**
+> **Note**  
+> Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
-Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+## Related Information
+- Dependencies
+  - Tizen 2.3.1 and Higher for Wearable

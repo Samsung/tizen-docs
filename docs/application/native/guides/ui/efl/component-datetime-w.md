@@ -1,9 +1,5 @@
 # Datetime
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 This feature is supported in wearable applications only.
 
 The datetime component displays date and time values.
@@ -23,7 +19,15 @@ For more information, see the [Datetime](../../../../../org.tizen.native.wearabl
 To create a datetime component:
 
 1. Add the datetime component with the `elm_datetime_add()` function.
-2. Select the visible fields with the `elm_datetime_field_visible_set()` function.The visibility of the following fields can be controlled:`ELM_DATETIME_YEAR`: Year field`ELM_DATETIME_MONTH`: Month field`ELM_DATETIME_DATE`: Date field`ELM_DATETIME_HOUR`: Hour field`ELM_DATETIME_MINUTE`: Minute field`ELM_DATETIME_AMPM`: AM/PM field
+2. Select the visible fields with the `elm_datetime_field_visible_set()` function.  
+
+ The visibility of the following fields can be controlled:  
+ - `ELM_DATETIME_YEAR`: Year field
+ - `ELM_DATETIME_MONTH`: Month field
+ - `ELM_DATETIME_DATE`: Date field
+ - `ELM_DATETIME_HOUR`: Hour field
+ - `ELM_DATETIME_MINUTE`: Minute field
+ - `ELM_DATETIME_AMPM`: AM/PM field
 
 ## Using the Datetime Styles
 
@@ -58,7 +62,7 @@ To receive notifications about the datetime events, listen for the following sig
 - `changed`: The datetime field values are changed.
 - `language,changed`: The system locale changes.
 
-> **Note**
+> **Note**  
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 > In both these signals, the `event_info` callback parameter is `NULL`.
 
@@ -78,5 +82,9 @@ changed_cb(void *data, Evas_Object *obj, void *event_info)
 }
 ```
 
-> **Note**
+> **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.3.1 and Higher for Wearable
