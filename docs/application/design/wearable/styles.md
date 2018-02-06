@@ -14,7 +14,7 @@ Icons in the same style are used for different design elements. Although icons i
 
 <span>When you design icons for Tizen wearable apps, ensure that they conform to the following style. Since white icons will be placed against the background, solid colored backgrounds are recommended to maximize visibility and glanceability.</span>
 
-Refer to the iconography section of The Tizen Design Guidelines (Introduction and Styles) for detailed information.
+Refer to the [iconography section](../introduction/styles/iconography.md) of The Tizen Design Guidelines (Introduction and Styles) for detailed information.
 
 |<img src="media/apps-190x190.png" width="190" height="190" /> | <img src="media/2.1_apps_list_s-160x211.png" width="160" height="211" /> | <img src ="media/2.1_manager_b3-160x210.png" width="160" height="210" /> |
 |:---:|:---:|:---:|
@@ -29,7 +29,7 @@ Tizen wearable devices have used elegant black and orange tones as the main them
 
 #### System Theme Colors
 
-You may design your apps based on the default themes to make them consistent with the wearable deviceâ€™s system.
+You may design your apps based on the default themes to make them consistent with the wearable device's system.
 
 The following are examples of the Tizen wearable default color themes.
 
@@ -96,7 +96,7 @@ Try to create the shortest text possible while retaining the text's original mea
 
 Use reduced grammar whenever possible in the wearable UI. Articles and other grammar can be removed if it does not lead to a loss of meaning.
 
-The types of words that can be removed include articles (a, an, the), determiners (this, that, their), and forms of the verb "to be."
+The types of words that can be removed include articles (a, an, the), determiners (this, that, their), and forms of the verb "to be."
 
 > **Full**  
 > A subscription may be required to allow your mobile device to use this feature. This may result in additional charges.
@@ -108,7 +108,7 @@ The types of words that can be removed include articles (a, an, the), determiner
 
 Check the context and ensure you have all the necessary information. For example :
 
--   Stating â€œSwipe leftâ€ or â€œSwipe rightâ€ becomes unimportant if an obvious visual cue appears alongside it.
+-   Stating "Swipe left" or "Swipe right" becomes unimportant if an obvious visual cue appears alongside it.
 -   Can the text appear in more than one place? If so keep it generic or create a slightly different text for each situation.
 -   Does the text appear on a wearable device or on a mobile device? In some instances, it may be important to clarify which device a notification or pop-up is referring to.
 
@@ -130,11 +130,11 @@ Use the active voice whenever possible. It saves space and is easier to understa
 
 #### Please, Sorry and Thanks
 
-Only include "Please" if omitting the word from the text makes it sound rude or demanding.
+Only include "Please" if omitting the word from the text makes it sound rude or demanding.
 
-"Sorry" should not be used on a wearable device. It may only appear as part of the S Voice app or in message templates that the user can send to their contacts.
+"Sorry" should not be used on a wearable device. It may only appear as part of the S Voice app or in message templates that the user can send to their contacts.
 
-"Thanks" should be avoided.
+"Thanks" should be avoided.
 
 #### Contractions
 
@@ -150,7 +150,7 @@ Contractions are recommended.
 
 Refer to the wearable device itself as the model name.
 
-Always use â€œphoneâ€ to refer to the smartphone that your wearable device syncs with and connects to.
+Always use "phone" to refer to the smartphone that your wearable device syncs with and connects to.
 
 #### Enable/Disable
 
