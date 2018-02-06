@@ -9,15 +9,32 @@ The following figure shows example layouts using the `ScrollView`.
 
 ![ScrollView](./media/scrollview.png)
 
+In this tutorial, the following subjects are covered:
+
+[ScrollView events](#1)<br>
+[Creating a ScrollView](#2)<br>
+[Using Ruler, RulerDomain, and Wrap](#3)<br>
+[ScrollView Properties](#4)<br>
+
+<a name="1"></a>
+## ScrollView events
+
+The following table lists the basic signals provided by the `Dali::Toolkit::ScrollView` class.
+
+**Table: Dali::Toolkit::ScrollView input signals**
+
+| Input signal              | Description                                 |
+| ------------------------- | ------------------------------------------- |
+| `SnapStartedSignal()`     | Emitted when the ScrollView has started to snap or flick. |
+
 A scroll view emits a `ScrollView::SnapStartedSignal()` signal when the scroll view has started to snap or flick. The signal informs the target of the scroll position, scale, and rotation.
 
+<a name="2"></a>
 ## Creating a ScrollView
 
 The following example shows how to create a `Dali::Toolkit::ScrollView` object:
 
 ```
-// This sample code is for the HelloWorldExample
-// class in Creating a DALi Application
 void HelloWorldExample::Create( Application& application )
 {
   // Create a ScrollView instance
@@ -63,6 +80,7 @@ void HelloWorldExample::Create( Application& application )
 }
 ```
 
+<a name="3"></a>
 ## Using Ruler, RulerDomain, and Wrap
 
 The `Dali::Toolkit::Ruler` abstract class defines the scroll axes. The `Dali::Toolkit::RulerDomain` class specifies the minimum and maximum values of a ruler.
@@ -89,6 +107,42 @@ The `ScrollView` behavior depends on a combination of the ruler, ruler domain, a
 
 > **Note**  
 > Actors within a `ScrollView` are controlled by constraints. If you apply constraints to these actors externally, undefined behavior can occur. Since applying additional constraints can conflict with the `ScrollView` constraints, place the actors within container actors. The container actors are affected by the constraints.
+
+<a name="4"></a>
+## ScrollView Properties
+
+The following table lists the available ScrollView properties.
+
+**Table: ScrollView properties**
+
+| Property                     | Type       | Description                              |
+| ---------------------------- | ---------- | ---------------------------------------- |
+| `WRAP_ENABLED`               | BOOLEAN    | Whether wrapping is enabled              |
+| `PANNING_ENABLED`            | BOOLEAN    | Whether panning is enabled               |
+| `AXIS_AUTO_LOCK_ENABLED`     | BOOLEAN    | Whether the Axis Auto Lock mode for panning within the ScrollView is enabled |
+| `WHEEL_SCROLL_DISTANCE_STEP` | VECTOR2    | The step of scroll distance in actor coordinates for each wheel event received in free panning mode |
+| `SCROLL_MODE`                | MAP        | The scroll mode                          |
+| `SCROLL_POSITION`            | VECTOR2    | The current scroll position              |
+| `SCROLL_PRE_POSITION`        | VECTOR2    | The position before we set the clamp at scroll boundaries |
+| `SCROLL_PRE_POSITION_X`      | FLOAT      | The X component of SCROLL_PRE_POSITION   |
+| `SCROLL_PRE_POSITION_Y`      | FLOAT      | The Y component of SCROLL_PRE_POSITION   |
+| `SCROLL_PRE_POSITION_MAX`    | VECTOR2    | The maximum value that SCROLL_PRE_POSITION can be |
+| `SCROLL_PRE_POSITION_MAX_X`  | FLOAT      | The X component of SCROLL_PRE_POSITION_MAX |
+| `SCROLL_PRE_POSITION_MAX_Y`  | FLOAT      | The Y component of SCROLL_PRE_POSITION_MAX |
+| `OVERSHOOT_X`                | FLOAT      | The amount that we can scroll beyond the boundary along the X axis |
+| `OVERSHOOT_Y`                | FLOAT      | The amount that we can scroll beyond the boundary along the Y axis |
+| `SCROLL_FINAL`               | VECTOR2    | The position after the overshoot value has been considered in the calculation |
+| `SCROLL_FINAL_X`             | FLOAT      | The X component of SCROLL_FINAL          |
+| `SCROLL_FINAL_Y`             | FLOAT      | The Y component of SCROLL_FINAL          |
+| `WRAP`                       | BOOLEAN    | Whether scrolling wraps                  |
+| `PANNING`                    | BOOLEAN    | Whether we are currently panning         |
+| `SCROLLING`                  | BOOLEAN    | Whether we are currently scrolling       |
+| `SCROLL_DOMAIN_SIZE`         | VECTOR2    | The size of the scrolling domain         |
+| `SCROLL_DOMAIN_SIZE_X`       | FLOAT      | The X component of SCROLL_DOMAIN_SIZE    |
+| `SCROLL_DOMAIN_SIZE_Y`       | FLOAT      | The Y component of SCROLL_DOMAIN_SIZE    |
+| `SCROLL_DOMAIN_OFFSET`       | VECTOR2    | The offset of the scroll domain          |
+| `SCROLL_POSITION_DELTA`      | VECTOR2    | The delta in the position when scrolling |
+| `START_PAGE_POSITION`        | VECTOR3    | The starting page position               |
 
 ## Related Information
 * Dependencies
