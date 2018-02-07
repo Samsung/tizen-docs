@@ -17,11 +17,15 @@ You can use smart card functionalities to access secure elements. You can open a
 - [Wi-Fi](wifi.md)
 You can connect to a Wireless Local Area Network (WLAN) and transfer data over the network. You can activate and deactivate a local Wi-Fi device, and to connect to a WLAN network in the infrastructure mode.
 
-- [Wi-Fi Direct&reg;](wifi-direct-n.md) **in mobile applications only**
-You can find nearby Wi-Fi Direct devices and discover their details. You can also form a Wi-Fi Direct group to communicate over a peer-to-peer link without wireless access points (base stations) in the infrastructure mode.
+- [Wi-Fi Direct&reg;](wifi-direct.md) **in mobile applications only**
+Find Wi-Fi Direct devices, discover their details, and form Wi-Fi Direct group to communicate over a peer-to-peer link without wireless access points (base stations) in the infrastructure mode.
+
+- [STC (Smart Traffic Control)](stc.md)
+Statistics about network data consumption is fetched by system and applications.
 
 - [Telephony Information](telephony.md)
-You can access various information from the Telephony Service. You can access details about the voice and video call states, currently used SIM card, and modem. You can also retrieve general details about the telephony network the device is currently connected to.
+1. Access various information about voice and voice call status that currently uses SIM card and Modem from the Telephony Service.
+2. Retrieve general details about the telephony network from the currently connected device.
 
 - [USB Host](usb-host.md) **in mobile applications only**
 You can connect to other devices using USB. You can gather information about the device and find a suitable interface and configuration.
@@ -36,7 +40,7 @@ You can transfer files between 2 devices. You can manage the Media Transfer Prot
 You can allow the users to initialize the VPN device, and manage routing, DNS, and firewall features.
 
 - [IoT Connectivity](iotcon.md)
-You can use IoTivity features in Tizen. You can use the seamless device-to-device connectivity to address the needs of the Internet of Things (IoT) through the open source reference implementation of the OIC (Open Interconnect Consortium) standard specifications.
+In Tizen use IoT Activity feature and seamless device-to-device connectivity to address the needs of the Internet of Things (IoT) through the open source reference implementation of the OIC (Open Interconnect Consortium) standard specifications.
 
 - [Network Service Discovery](nsd.md)
 You can perform network service discoveries to announce local services and search for remote services.
