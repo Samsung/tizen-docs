@@ -124,16 +124,16 @@ To manage the entry component content:
 
   - To define a list of accepted or rejected characters, append the filter with the `Elm_Entry_Filter_Accept_Set` structure.The following example shows how to reject the '+', '-', '*', and '/' characters:  
 
-  ```
-  static Elm_Entry_Filter_Accept_Set
-  accept_set =
-  {    
-    .accepted = NULL,    
-    .rejected = "+*-/"
-  };
+    ```
+    static Elm_Entry_Filter_Accept_Set
+    accept_set =
+    {
+      .accepted = NULL,
+      .rejected = "+*-/"
+    };
 
-  elm_entry_markup_filter_append(entry, elm_entry_filter_accept_set, &accept_set);
-  ```
+    elm_entry_markup_filter_append(entry, elm_entry_filter_accept_set, &accept_set);
+    ```
 
 You can define a file (for example, `/tmp/test.txt`) to save the entry content. The content in the file is implicitly loaded and displayed. After the file is set, any content changes in the entry are automatically saved after a short delay.
 
@@ -264,12 +264,12 @@ You can format the entry text in many ways:
 - Add special markups within the entry text:
 
   - Anchors: `<a href = ..>...</a>`  
-  The anchors generate an `anchor,clicked` signal when the user clicks them. The `href` attribute is used to identify the anchor. The anchor also reacts to the `anchor,in` (mouse in), `anchor,out` (mouse out), `anchor,down` (mouse down), and `anchor,up` (mouse up) events.
+    The anchors generate an `anchor,clicked` signal when the user clicks them. The `href` attribute is used to identify the anchor. The anchor also reacts to the `anchor,in` (mouse in), `anchor,out` (mouse out), `anchor,down` (mouse down), and `anchor,up` (mouse up) events.
 
   - Items: `<item size = .. vsize = .. href = ..>...</item>`  
-  The items provide a way to insert any `Evas_Object` in the text. The `Evas_Object` name must be specified in the `href` attribute.  
+    The items provide a way to insert any `Evas_Object` in the text. The `Evas_Object` name must be specified in the `href` attribute.
 
-   The `elm_entry_item_provider_append()` function appends a custom item provider to the list for that entry. You can also prepend a custom item provider to the list with the `elm_entry_item_provider_prepend()` function. The `elm_entry_item_provider_remove()` function removes a custom item provider from the list.
+    The `elm_entry_item_provider_append()` function appends a custom item provider to the list for that entry. You can also prepend a custom item provider to the list with the `elm_entry_item_provider_prepend()` function. The `elm_entry_item_provider_remove()` function removes a custom item provider from the list.
 
     ```
     static Evas_Object*

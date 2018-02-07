@@ -48,9 +48,9 @@ To use a radio component in your application:
 
    - Group the radio buttons visually by packing them into a box.
 
-4. Register the [callback](#callbacks) functions.  
+4. Register the [callback](#callbacks) functions.
 
- The following example shows how to define and register a callback for the `changed` signal:
+   The following example shows how to define and register a callback for the `changed` signal:
 
    ```
    evas_object_smart_callback_add(radio, "changed", changed_cb, data);
@@ -66,7 +66,7 @@ The following example shows a simple use case of the radio component.
 
 **Example: Radio use case**
 
- ![Radio](./media/radio1.png)
+![Radio](./media/radio1.png)
 
 ```
 Evas_Object *win;

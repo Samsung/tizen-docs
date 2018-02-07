@@ -78,12 +78,12 @@ The hoversel component can contain items that have a label. Even though paramete
 
 To manage items:
 
-1. Add an item using the `elm_hoversel_item_add()` function.To add an item with a "test" label and the `_hoversel_item_cb` clicked callback:  
+1. Add an item using the `elm_hoversel_item_add()` function. To add an item with a "test" label and the `_hoversel_item_cb` clicked callback:
 
    ```
    Elm_Object_Item *it;
 
-   it = elm_hoversel_item_add(hoversel, /* Hoversel object */    
+   it = elm_hoversel_item_add(hoversel, /* Hoversel object */
                        "test", /* Item label */
                         NULL, /* Icon file */
                         ELM_ICON_NONE, /* Icon type */

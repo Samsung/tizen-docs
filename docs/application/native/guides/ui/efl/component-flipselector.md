@@ -49,7 +49,7 @@ The following example shows a simple use case of the flipselector component.
 
 **Example: Flipselector use case**
 
- ![Flipselector](./media/flipselector1.png)
+![Flipselector](./media/flipselector1.png)
 
 ```
 Evas_Object *win;

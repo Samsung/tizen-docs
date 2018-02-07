@@ -78,7 +78,7 @@ To add an item:
 
    **Table: Item texts**
 
-| Text                 | Setting function                         | View                                     |
+   | Text                 | Setting function                         | View                                     |
    |--------------------|----------------------------------------|----------------------------------------|
    | `selector,main_text` | `eext_rotary_selector_item_part_text_set()``eext_rotary_selector_item_domain_translatable_part_text_set()` | ![main_text](./media/rotary_selector_main_text.png) |
    | `selector,sub_text`  | `eext_rotary_selector_item_part_text_set()``eext_rotary_selector_item_domain_translatable_part_text_set()` | ![sub_text](./media/rotary_selector_sub_text.png) |

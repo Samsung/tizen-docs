@@ -48,7 +48,7 @@ The following example shows a simple use case of the datetime component.
 
 **Example: Datetime use case**
 
- ![Datetime](./media/datetime.png)
+![Datetime](./media/datetime.png)
 
 ```
 Evas_Object *win;
@@ -136,15 +136,15 @@ The following table lists the available component styles.
 **Table: Datetime styles**
 
 | Style                  | Sample                                   |
-|----------------------|----------------------------------------|
+|------------------------|----------------------------------------|
 | `default``date_layout` | ![elm/datetime/base/default](./media/datetime_date_layout.png) |
 | `time_layout`          | ![elm/datetime/base/time_layout](./media/datetime_time_layout.png) |
 | `time_layout_24hr`     | ![elm/datetime/base/time_layout_24hr](./media/datetime_time_24h.png) |
 
 >  **Note**  
-> Pay attention to the following UX issue since Tizen 2.3:  
+> Pay attention to the following UX issue since Tizen 2.3:
 >
-> The `time_layout` and `time_layout_24hr` styles need a full-length format that includes the year, month, day, hour, minute, and AM/PM. Each style shows specific fields from the format, limited by the UX concept:  
+> The `time_layout` and `time_layout_24hr` styles need a full-length format that includes the year, month, day, hour, minute, and AM/PM. Each style shows specific fields from the format, limited by the UX concept:
 >
 > - `date_layout` (default): Year, month, day
 > - `time_layout`: Hour, minute, AM/PM button

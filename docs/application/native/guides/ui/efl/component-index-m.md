@@ -30,7 +30,7 @@ The following example shows a simple use case of the index component.
 
 **Example: Index use case**
 
- ![Index](./media/index1.png)
+![Index](./media/index1.png)
 
 ```
 Evas_Object *win;
@@ -86,7 +86,7 @@ The following example shows an index with a list.
 
 **Example: Index with list**
 
- ![Index with list](./media/index2.png)
+![Index with list](./media/index2.png)
 
 ```
 Evas_Object *win;

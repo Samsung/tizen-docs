@@ -60,7 +60,7 @@ To use a popup component in your application:
    elm_object_part_content_set(popup, "button2", button2);
    ```
 
-5. Register the [callback](#callbacks) functions.  
+5. Register the [callback](#callbacks) functions.
 
   The following example shows how to define and register a callback for the `dismissed` signal:
 

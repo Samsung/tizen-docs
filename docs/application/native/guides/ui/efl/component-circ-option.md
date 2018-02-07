@@ -57,7 +57,7 @@ To configure the more option cue button direction, and the text and content of v
   - `EEXT_MORE_OPTION_DIRECTION_TOP`: Cue button is at the top.
   - `EEXT_MORE_OPTION_DIRECTION_BOTTOM`: Cue button is at the bottom.
   - `EEXT_MORE_OPTION_DIRECTION_LEFT`: Cue button is on the left.
-  - `EEXT_MORE_OPTION_DIRECTION_RIGHT`: Cue button is on the right (default value).  
+  - `EEXT_MORE_OPTION_DIRECTION_RIGHT`: Cue button is on the right (default value).
 
  To set the cue button on the right:
 
@@ -69,9 +69,9 @@ To configure the more option cue button direction, and the text and content of v
 
   The following table shows the configurable more option parts.
 
-  **Table: Configurable more option parts**  
+  **Table: Configurable more option parts**
 
-| Part                 | Setting function                         | View                                     |
+  | Part                 | Setting function                         | View                                     |
   |--------------------|-----------------------|--------------------------------|
   | `selector,main_text` | `eext_more_option_item_part_text_set()``eext_more_option_item_domain_translatable_part_text_set()` | ![main_text](./media/more_option_main.png) |
   | `selector,sub_text`  | `eext_more_option_item_part_text_set()``eext_more_option_item_domain_translatable_part_text_set()` | ![sub_text](./media/more_option_sub.png) |

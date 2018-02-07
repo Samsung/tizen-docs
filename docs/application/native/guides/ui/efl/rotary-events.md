@@ -1,9 +1,5 @@
 # Managing Rotary Events
 
-## Dependencies
-
-- Tizen 2.3.1 and Higher for Wearable
-
 Rotary events are fired from a rotary device and delivered to a suitable target when the device is rotated clockwise or counter-clockwise.
 
 This feature is supported in wearable applications only.
@@ -17,7 +13,7 @@ There are 2 ways to receive the rotary events:
 
 Use the rotary event handler when you do not want to take care of an Evas object, or when the application is not implemented using an Evas object.
 
-The handler is implemented like the [Ecore event](./event-types-n.md#ecore) in EFL:
+The handler is implemented like the [Ecore event](./event-types.md#ecore-events) in EFL:
 
 1. Register the handler with the `eext_rotary_event_handler_add()` function and define the handler function.
 2. When no longer needed, remove the handler with the `eext_rotary_event_handler_del()` function.
@@ -206,7 +202,7 @@ To receive and manage rotary events:
 
      The slider step defines how much a rotary event increases or decreases the slider value.
 
-		> **Note**
+		> **Note**  
 		> Since the EFL Extension API is used to create the slider component, the rotary event callbacks are registered internally and automatically change the slider value based on the slider step. To receive a rotary event for an EFL Extension object, you only need to set the object as activated.
 
      ```
@@ -220,3 +216,7 @@ To receive and manage rotary events:
          evas_object_show(win);
      }
      ```
+
+## Related Information
+- Dependencies     
+  - Tizen 2.3.1 and Higher for Wearable

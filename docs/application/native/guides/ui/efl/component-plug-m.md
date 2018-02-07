@@ -42,26 +42,26 @@ To use the plug:
    > **Note**  
    > The socket to connect to must be started with the `elm_win_socket_listen()` function in the other process on the remote window object (`remote_win`):
    >
-   >  ```
-   /* Create a remote window in the other process */
-   Elm_Win *remote_win = elm_win_add(NULL, "Window Socket",
-                                     ELM_WIN_SOCKET_IMAGE);
-   /* Create a socket named "plug_test" and listen to it */
-   elm_win_socket_listen(remote_win, "plug_test", 0, EINA_FALSE);
-   ```
+   > ```
+   > /* Create a remote window in the other process */
+   > Elm_Win *remote_win = elm_win_add(NULL, "Window Socket",
+   >                                   ELM_WIN_SOCKET_IMAGE);
+   > /* Create a socket named "plug_test" and listen to it */
+   > elm_win_socket_listen(remote_win, "plug_test", 0, EINA_FALSE);
+   > ```
 
 ## Using the Plug Callbacks
 
 To receive notifications about the plug events, listen for the following signals:
 
 - `clicked`: The image is clicked (press/release).  
-The `event_info` callback parameter is `NULL`.
+  The `event_info` callback parameter is `NULL`.
 
 - `image,deleted`: The server side is deleted.  
-The `event_info` callback parameter is `NULL`.
+  The `event_info` callback parameter is `NULL`.
 
 - `image,resized`: The server side is resized.  
-The `event_info` callback parameter is `Evas_Coord_Size` (2 integers).
+  The `event_info` callback parameter is `Evas_Coord_Size` (2 integers).
 
 > **Note**  
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.

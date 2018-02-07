@@ -33,7 +33,7 @@ The following example shows a simple use case of the circle progressbar componen
 
 **Example: Circle progressbar use case**
 
- ![Circle progressbar](./media/progressbar_eext_circ_wn.png)
+![Circle progressbar](./media/progressbar_eext_circ_wn.png)
 
 ```
 /* C code */

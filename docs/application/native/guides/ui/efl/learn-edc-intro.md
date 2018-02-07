@@ -1,20 +1,10 @@
 # Layouting with EDC
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 An EDC (Edje data collection) file is a text file that contains the code describing the position, size, and other parameters of graphical elements that compose the visual aspect of your application. In addition to graphical elements, it can also handle sounds. EDC is a description language where the objects of an interface are described by using a text description.
 
 The EDC file has the `.edc` file extension. The syntax for the EDC files follows a simple structure of blocks that can contain properties and other blocks.
 
 ## Writing a Simple EDC File
-
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
 
 The following example shows the basic structure of an EDC file:
 
@@ -35,15 +25,15 @@ The following chart shows the details of the top-level blocks.
 **Table: EDC blocks**
 
 | Block name                               | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
-| [collections](./learn-edc-collections-n.md) | Used to list the groups that compose the theme. Additional collections blocks do not prevent overriding group names. |
-| [group](./learn-edc-group-n.md) | Contains a list of parts and programs that compose a given Edje object. |
-| [parts](./learn-edc-part-n.md) | Used to represent the most basic design elements of the theme, for example, a part block can represent a line in a border or a label on a button. Parts contain 1 or more part blocks. |
-| [programs](./learn-edc-program-n.md) | Defines how your interface reacts to events. A program block can change the part state or trigger other events. Programs contain 1 or more program blocks. |
-| [images](./learn-edc-images-n.md) | Used to list the image files used in the theme. The used compression methods are also defined here. |
-| [data](./learn-edc-data-n.md) | Used for data that covers the whole theme, such as license information, version, and authors. |
-| [color_classes](./learn-edc-color-classes-n.md) | Contains 1 or more color_class blocks. Each color_class block allows you to name an arbitrary group of colors to be used in the theme. |
-| [styles](./learn-edc-styles-n.md) | Contains 1 or more style blocks. A style block is used to create style `<tags>` for advanced textblock formatting. |
+|----------------------------------------|----------------------------------------|
+| [collections](./learn-edc-collections.md) | Used to list the groups that compose the theme. Additional collections blocks do not prevent overriding group names. |
+| [group](./learn-edc-group.md) | Contains a list of parts and programs that compose a given Edje object. |
+| [parts](./learn-edc-part.md) | Used to represent the most basic design elements of the theme, for example, a part block can represent a line in a border or a label on a button. Parts contain 1 or more part blocks. |
+| [programs](./learn-edc-program.md) | Defines how your interface reacts to events. A program block can change the part state or trigger other events. Programs contain 1 or more program blocks. |
+| [images](./learn-edc-images.md) | Used to list the image files used in the theme. The used compression methods are also defined here. |
+| [data](./learn-edc-data.md) | Used for data that covers the whole theme, such as license information, version, and authors. |
+| [color_classes](./learn-edc-color-classes.md) | Contains 1 or more color_class blocks. Each color_class block allows you to name an arbitrary group of colors to be used in the theme. |
+| [styles](./learn-edc-styles.md) | Contains 1 or more style blocks. A style block is used to create style `<tags>` for advanced textblock formatting. |
 
 The following figure shows the relationships between blocks.
 
@@ -106,10 +96,16 @@ The following Tizen Studio compilation log extract shows that if your EDC file u
 ```
 Building file: ../res/edje/helloworld.edc
 Invoking: EDC Resource Compiler
-edje_cc -sd ../edje/sounds -fd ../edje/fonts -id ../edje/images ../res/edje/helloworld.edc ../res/edje/helloworld.edj
+edje_cc -sd ../edje/sounds -fd ../edje/fonts -id ../edje/images ../res/edje/helloworld.edc
+../res/edje/helloworld.edj
 ```
 
-You need to connect the `.edj` file to the C code. It can be achieved by using a layout, one of containers. If you use the basic Tizen EFL project template, it reduces the time to worry about the connecting process. For more information on using the basic Tizen project template, see [Creating Your First Tizen Mobile Native Application](http://org.tizen.training/html/native/mobile/first_app_mn.htm) or [Creating Your First Tizen Wearable Native Application](http://org.tizen.training/html/native/wearable/first_app_wn.htm). If you want to know the way to use and connect a layout in detail, see [Layout](./container-layout-n.md).
+You need to connect the `.edj` file to the C code. It can be achieved by using a layout, one of containers. If you use the basic Tizen EFL project template, it reduces the time to worry about the connecting process. For more information on using the basic Tizen project template, see [Creating Your First Tizen Mobile Native Application](../../../getting-started/mobile/first-app.md) or [Creating Your First Tizen Wearable Native Application](../../../getting-started/wearable/first-app.md). If you want to know the way to use and connect a layout in detail, see [Layout](./container-layout.md).
 
-> **Note**	
+> **Note**
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

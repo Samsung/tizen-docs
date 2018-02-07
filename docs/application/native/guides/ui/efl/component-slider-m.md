@@ -33,9 +33,9 @@ To use a slider component in your application:
      elm_slider_indicator_format_set(slider, "%.1f");
      ```
 
-3. Register the [callback](#callbacks) functions.  
+3. Register the [callback](#callbacks) functions.
 
- The following example shows how to define and register a callback for the `changed` signal:
+   The following example shows how to define and register a callback for the `changed` signal:
 
    ```
    evas_object_smart_callback_add(slider, "changed", slider_changed_cb, 0);
@@ -52,7 +52,7 @@ The following example shows a simple use case of the slider component.
 
 **Example: Slider use case**
 
- ![Slider](./media/mobile_slider.png)
+![Slider](./media/mobile_slider.png)
 
 ```
 Evas_Object *box;

@@ -197,7 +197,8 @@ elm_popup_timeout_set(popup, 5.0);
 To receive notifications about the popup events, listen for the following signals:
 
 - `timeout`: The popup is closed as a result of the timeout.
-- `block,clicked`: The user clicks on the blocked event area.  
+- `block,clicked`: The user clicks on the blocked event area.
+
 The blocked event area is the translucent region around the visible popup region.
 
 > **Note**  

@@ -38,7 +38,7 @@ The following example shows a simple use case of the label component.
 
 **Example: Label use case**
 
- ![Label](./media/label1.png)
+![Label](./media/label1.png)
 
 ```
 Evas_Object *win;

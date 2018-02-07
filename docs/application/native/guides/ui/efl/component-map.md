@@ -57,7 +57,7 @@ The following example shows a simple use case of the map component.
 
 **Example: Map use case**
 
- ![Alignment](./media/map1.png)
+![Alignment](./media/map1.png)
 
 ```
 Evas_Object *win;

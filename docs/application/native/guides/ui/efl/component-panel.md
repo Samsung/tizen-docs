@@ -47,7 +47,7 @@ The following example shows a simple use case of the panel component.
 
 **Example: Panel use case**
 
- ![Panel](./media/panel1.png)
+![Panel](./media/panel1.png)
 
 ```
 Evas_Object *win;

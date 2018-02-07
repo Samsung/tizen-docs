@@ -46,7 +46,7 @@ The following example shows a simple use case of the notify component.
 
 **Example: Notify use case**
 
- ![Notify](./media/notify1.png)
+![Notify](./media/notify1.png)
 
 ```
 Evas_Object *win;

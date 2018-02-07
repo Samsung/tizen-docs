@@ -69,7 +69,13 @@ To manage the entry component content:
     elm_entry_select_all(entry);
     ```
 
-  - Select a part of the text with the `elm_entry_select_region_set()` function.The following example selects the first 20 characters of the entry content:`elm_entry_select_region_set(entry, 0, 20);`
+  - Select a part of the text with the `elm_entry_select_region_set()` function.
+
+    The following example selects the first 20 characters of the entry content:
+
+    ```
+    elm_entry_select_region_set(entry, 0, 20);
+    ```
 
   - Clear the current selection:
 
@@ -187,8 +193,9 @@ To manage the cursor position:
   elm_entry_cursor_next(entry);
   ```
 
-- Set the cursor at a specific position (15th character, for example):  
- ```elm_entry_cursor_pos_set(entry, 15);```
+- Set the cursor at a specific position (15th character, for example):
+
+  ```elm_entry_cursor_pos_set(entry, 15);```
 
 - Make a text selection while moving the cursor.
 
@@ -299,27 +306,27 @@ To receive notifications about the entry events, listen for the following signal
 - `aborted`: The **Escape** key is pressed on a single line entry.
 - `activated`: The **Enter** key is pressed on a single line entry.
 - `anchor,clicked`: An anchor is clicked.  
-The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
+  The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
 - `anchor,down`: The mouse button is pressed on an anchor.  
-The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
+  The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
 - `anchor,hover,opened`: The anchor is clicked.  
-The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
+  The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
 - `anchor,in`: The mouse cursor is moved into an anchor.  
-The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
+  The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
 - `anchor,out`: The mouse cursor is moved out of an anchor.  
-The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
+  The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
 - `anchor,up`: The mouse button is released on an anchor.  
-The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
+  The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
 - `changed`: The text within the entry is changed.
 - `changed,user`: The text within the entry is changed because of user interaction.  
-The `event_info` callback parameter points to an `Edje_Entry_Change_Info` object.
+  The `event_info` callback parameter points to an `Edje_Entry_Change_Info` object.
 - `clicked`: The entry is clicked (mouse press and release).
 - `clicked,double`: The entry is double-clicked.
 - `clicked,triple`: The entry is triple-clicked.
 - `cursor,changed`: The cursor position is changed.
 - `cursor,changed,manual`: The cursor position is changed manually.
 - `focused`: The entry receives focus.  
-The `event_info` callback parameter points to an `Elm_Focus_Info` object.
+  The `event_info` callback parameter points to an `Elm_Focus_Info` object.
 - `unfocused`: The entry loses focus.
 - `language,changed`: The program language is changed.
 - `longpressed`: The mouse button is pressed and held for a couple of seconds.

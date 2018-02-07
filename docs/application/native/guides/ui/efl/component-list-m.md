@@ -63,7 +63,7 @@ for (i = 0; i < 10; i++) {
 To modify the list item elements, use the `Elm_Object_Item` functions:
 
 - To modify the item label, use the `elm_object_item_text_set()` function.
-- To modify the 2 contents, use the `elm_object_item_part_content_set()` function, referencing the first object as the `start` object in the theme and the second one as the `end` object.  
+- To modify the 2 contents, use the `elm_object_item_part_content_set()` function, referencing the first object as the `start` object in the theme and the second one as the `end` object.
 
  Each content is an `evas_object` instance, and they are defined as the third and the fourth parameters when you append or prepend the item in the list with the `elm_list_item_append()` or `elm_list_item_prepend()` function.
 

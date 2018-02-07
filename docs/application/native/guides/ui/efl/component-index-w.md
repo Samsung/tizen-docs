@@ -65,13 +65,13 @@ To add index items:
 To receive notifications about the index events, listen for the following signals:
 
 - `changed`: The selected index item changes.  
-The `event_info` callback parameter is the selected item's data pointer.
+  The `event_info` callback parameter is the selected item's data pointer.
 
 - `delay,changed`: The selected index item changes, but after a small idling period.  
-The `event_info` callback parameter is the selected item's data pointer.
+  The `event_info` callback parameter is the selected item's data pointer.
 
 - `selected`: The user selects an item by releasing the mouse button.  
-The `event_info` callback parameter is the selected item's data pointer.
+  The `event_info` callback parameter is the selected item's data pointer.
 
 - `level,up`: The user moves a finger from the first level to the second level.
 
