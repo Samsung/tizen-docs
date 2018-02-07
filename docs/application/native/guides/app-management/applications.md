@@ -1,6 +1,5 @@
 # Applications
 
-
 A Tizen native application is similar to a conventional Linux application, with some additional features optimized for mobile and wearable devices. The additional features have constraints, such as a relatively small screen size and lack of system resources compared to a larger system. For example, for power management reasons, the application can take actions to reduce usage when it finds out that it has its display window covered over by another application window. State change events are delivered to make it possible to detect these situations.
 
 ## Native Application Models
@@ -8,9 +7,10 @@ A Tizen native application is similar to a conventional Linux application, with 
 Tizen provides various application models to allow you to create applications targeted for specific tasks:
 
 - [UI Applications](ui-app.md)
-The UI application has a graphical user interface. You can create diverse applications with a variety of features, and design versatile applications and intriguing user interfaces with text and graphics while taking advantage of many device functionalities, such as sensors and call operations. In addition, you can, for example, manage content and media files, use network and social services, and provide messaging and embedded Web browsing functionality.The UI application is the most common Tizen application model.
 
-When creating a native UI application, you can select between EFL and DALi UI frameworks:
+  The UI application has a graphical user interface. You can create diverse applications with a variety of features, and design versatile applications and intriguing user interfaces with text and graphics while taking advantage of many device functionalities, such as sensors and call operations. In addition, you can, for example, manage content and media files, use network and social services, and provide messaging and embedded Web browsing functionality.The UI application is the most common Tizen application model.
+
+  When creating a native UI application, you can select between EFL and DALi UI frameworks:
 
   - [EFL Applications](efl-app.md).
 
@@ -23,7 +23,8 @@ When creating a native UI application, you can select between EFL and DALi UI fr
 
 
 - [Service Applications](service-app.md)
-The service application is a Tizen native application without a graphical user interface that runs in the background. They can be very useful in performing activities (such as getting sensor data in the background) that need to run periodically or continuously, but do not require any user intervention.
+
+  The service application is a Tizen native application without a graphical user interface that runs in the background. They can be very useful in performing activities (such as getting sensor data in the background) that need to run periodically or continuously, but do not require any user intervention.
 
 ## Native Application Life-Cycle
 
@@ -68,6 +69,6 @@ Because a service application has no UI, neither does it have a pause state. Sin
 Application state changes are managed by the underlying framework. For more information on application state transitions, see [Application States and Transitions](efl-ui-app.md#state_trans).
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

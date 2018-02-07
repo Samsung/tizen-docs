@@ -540,7 +540,7 @@ To run the application on a target device:
 <a name="ui"></a>
 ## Designing a Simple UI
 
-The wearable widget application created with the **Widget** template has a simple user interface with a label component showing the **Hello widget** text. The UI is created using [EFL](../../guides/ui/efl/introduction-n.md).
+The wearable widget application created with the **Widget** template has a simple user interface with a label component showing the **Hello widget** text. The UI is created using [EFL](../../guides/ui/efl/introduction.md).
 
 **Figure: User interface in the Widget template**
 
