@@ -3,17 +3,19 @@
 
 The DALi event handling system is composed of 2 major concepts:
 
-- Signal
+- **Signal**
 
   Notifications that contain event information emitted by GUI components.
 
-- Slot
+- **Slot**
 
   Special functions that receive signals. Also known as event handlers, observers, listeners, or callbacks.
 
 DALi emits various types of signals to an application to inform it of user actions and the application can handle them through slots.
 
 The concept of signal and slots were introduced by Qt for communication between objects, and it inspires DALi.
+
+Objects in DALi can provide 'signals' to inform an application of user actions or events, such as Touch data, Key events and Input signals. The application can connect to these signals if it requires notification of these events.
 
 **Figure: Schematic example of signal-slot connections**
 
@@ -137,48 +139,50 @@ DALi provides its own key codes for several special keys, such as `DALI_KEY_ESCA
 
 **Table: DALi key codes**
 
-| Key codes                  |
-| -------------------------- |
-| `DALI_KEY_INVALID`         |
-| `DALI_KEY_ESCAPE`          |
-| `DALI_KEY_BACKSPACE`       |
-| `DALI_KEY_CURSOR_UP`       |
-| `DALI_KEY_CURSOR_LEFT`     |
-| `DALI_KEY_CURSOR_RIGHT`    |
-| `DALI_KEY_CURSOR_DOWN`     |
-| `DALI_KEY_BACK`            |
-| `DALI_KEY_CAMERA`          |
-| `DALI_KEY_CONFIG`          |
-| `DALI_KEY_POWER`           |
-| `DALI_KEY_PAUSE`           |
-| `DALI_KEY_CANCEL`          |
-| `DALI_KEY_PLAY_CD`         |
-| `DALI_KEY_STOP_CD`         |
-| `DALI_KEY_PAUSE_CD`        |
-| `DALI_KEY_NEXT_SONG`       |
-| `DALI_KEY_PREVIOUS_SONG`   |
-| `DALI_KEY_REWIND`          |
-| `DALI_KEY_FASTFORWARD`     |
-| `DALI_KEY_MEDIA`           |
-| `DALI_KEY_PLAY_PAUSE`      |
-| `DALI_KEY_MUTE`            |
-| `DALI_KEY_MENU`            |
-| `DALI_KEY_HOME`            |
-| `DALI_KEY_HOMEPAGE`        |
-| `DALI_KEY_WEBPAGE`         |
-| `DALI_KEY_MAIL`            |
-| `DALI_KEY_SCREENSAVER`     |
-| `DALI_KEY_BRIGHTNESS_UP`   |
-| `DALI_KEY_BRIGHTNESS_DOWN` |
-| `DALI_KEY_SOFT_KBD`        |
-| `DALI_KEY_QUICK_PANEL`     |
-| `DALI_KEY_TASK_SWITCH`     |
-| `DALI_KEY_APPS`            |
-| `DALI_KEY_SEARCH`          |
-| `DALI_KEY_VOICE`           |
-| `DALI_KEY_LANGUAGE`        |
-| `DALI_KEY_VOLUME_UP`       |
-| `DALI_KEY_VOLUME_DOWN`     |
+| Key codes                  | Description              |
+|----------------------------|--------------------------|
+| `DALI_KEY_INVALID`         | Invalid key value        |
+| `DALI_KEY_ESCAPE`          | Escape key               |
+| `DALI_KEY_BACKSPACE`       | Backspace key            |
+| `DALI_KEY_SHIFT_LEFT`      | Left Shift key           |
+| `DALI_KEY_SHIFT_RIGHT`     | Right Shift key          |
+| `DALI_KEY_CURSOR_UP`       | Cursor up key            |
+| `DALI_KEY_CURSOR_LEFT`     | Cursor left key          |
+| `DALI_KEY_CURSOR_RIGHT`    | Cursor right key         |
+| `DALI_KEY_CURSOR_DOWN`     | Cursor down key          |
+| `DALI_KEY_BACK`            | Back key                 |
+| `DALI_KEY_CAMERA`          | Camera key               |
+| `DALI_KEY_CONFIG`          | Config key               |
+| `DALI_KEY_POWER`           | Power key                |
+| `DALI_KEY_PAUSE`           | Pause key                |
+| `DALI_KEY_CANCEL`          | Cancel key               |
+| `DALI_KEY_PLAY_CD`         | Play CD key              |
+| `DALI_KEY_STOP_CD`         | Stop CD key              |
+| `DALI_KEY_PAUSE_CD`        | Pause CD key             |
+| `DALI_KEY_NEXT_SONG`       | Next song key            |
+| `DALI_KEY_PREVIOUS_SONG`   | Previous song key        |
+| `DALI_KEY_REWIND`          | Rewind key               |
+| `DALI_KEY_FASTFORWARD`     | Fastforward key          |
+| `DALI_KEY_MEDIA`           | Media key                |
+| `DALI_KEY_PLAY_PAUSE`      | Play pause key           |
+| `DALI_KEY_MUTE`            | Mute key                 |
+| `DALI_KEY_MENU`            | Menu Key                 |
+| `DALI_KEY_HOME`            | Home key                 |
+| `DALI_KEY_HOMEPAGE`        | Homepage key             |
+| `DALI_KEY_WEBPAGE`         | Webpage key              |
+| `DALI_KEY_MAIL`            | Mail key                 |
+| `DALI_KEY_SCREENSAVER`     | Screensaver key          |
+| `DALI_KEY_BRIGHTNESS_UP`   | Brightness up key        |
+| `DALI_KEY_BRIGHTNESS_DOWN` | Brightness down key      |
+| `DALI_KEY_SOFT_KBD`        | Soft KBD key             |
+| `DALI_KEY_QUICK_PANEL`     | Quick panel key          |
+| `DALI_KEY_TASK_SWITCH`     | Task switch key          |
+| `DALI_KEY_APPS`            | Apps key                 |
+| `DALI_KEY_SEARCH`          | Search key               |
+| `DALI_KEY_VOICE`           | Voice key                |
+| `DALI_KEY_LANGUAGE`        | Language key             |
+| `DALI_KEY_VOLUME_UP`       | Volume up key            |
+| `DALI_KEY_VOLUME_DOWN`     | Volume down key          |
 
 ## Input Signals
 

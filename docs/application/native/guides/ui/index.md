@@ -13,6 +13,15 @@ You can use the following user interface features in your native applications:
 - [Dynamic Animation Library (DALi)](dali/dali-overview.md)
 
   You can use the DALi 3D UI toolkit if you are creating a high-performance rich UI application. DALi is based on OpenGL&reg; ES 2.0 and 3.0; however, it hides the complexity of the OpenGL&reg; ES API from you. DALi requires a GPU (Graphical Processing Unit) on the device.
+  
+  DALi is multithreaded to improve performance and scalability, and enables developers to quickly create Rich UI applications with realistic effects and animations such as:
+
+ + Image & Video galleries
+ + Music players
+ + Games
+ + Maps
+ + Homescreens / launch pads
+ + Advanced watch faces for wearable devices
 
 ## Related Information
 - Dependencies

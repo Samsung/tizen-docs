@@ -8,6 +8,15 @@ The `Dali::Toolkit::TextLabel` class provides a control that renders a short tex
 
 ![TextLabel](./media/textlabel.png)
 
+In this tutorial, the following subjects are covered:
+
+[Creating a TextLabel](#1)<br>
+[Selecting Fonts](#2)<br>
+[Aligning Text](#3)<br>
+[Managing the Layout](#4)<br>
+[TextLabel Properties](#5)<br>
+
+<a name="1"></a>
 ## Creating a TextLabel
 
 The following example shows how to create a `TextLabel` instance:
@@ -18,6 +27,7 @@ label.SetProperty( TextLabel::Property::TEXT, "Hello World" );
 Stage::GetCurrent().Add( label );
 ```
 
+<a name="2"></a>
 ## Selecting Fonts
 
 By default, the `TextLabel` automatically selects a suitable font from the platform. Note that the selected font may not support all characters in your input text. For example, Latin fonts often do not provide Arabic glyphs.
@@ -32,6 +42,7 @@ label.SetProperty( TextLabel::Property::POINT_SIZE, 12.0f );
 
 The `TextLabel` falls back to using the default font if the requested font does not support the required scripts.
 
+<a name="3"></a>
 ## Aligning Text
 
 Wrapping can be enabled using the `MULTI_LINE` property:
@@ -47,6 +58,7 @@ The text can be aligned horizontally to the beginning, end, or center of the ava
 label.SetProperty( TextLabel::Property::HORIZONTAL_ALIGNMENT, "BEGIN" );
 ```
 
+<a name="4"></a>
 ## Managing the Layout
 
 There are several resize policies commonly used with `TextLabels`.The following examples show the actual size by setting a colored background, whilst the black area represents the size of the parent control.
@@ -107,29 +119,46 @@ parent.SetFitHeight( 2 );
 
 In the example, the "Hello World" text label has been given the full width, not the natural width.
 
-## Using Decorations
+<a name="5"></a>
+## TextLabel Properties
+### Using Decorations
 
 For text decorations, `TextLabel` provides several properties. All properties are writable and none are animatable.
 
 **Table: TextLabel properties**
 
-| Property               | Type    |
-|------------------------|---------|
-| `TEXT`                 | String  |
-| `FONT_FAMILY`          | String  |
-| `FONT_STYLE`           | String  |
-| `POINT_SIZE`           | Float   |
-| `MULTI_LINE`           | Boolean |
-| `HORIZONTAL_ALIGNMENT` | String  |
-| `VERTICAL_ALIGNMENT`   | String  |
-| `TEXT_COLOR`           | Vector4 |
-| `SHADOW_OFFSET`        | Vector2 |
-| `SHADOW_COLOR`         | Vector4 |
-| `UNDERLINE_ENABLED`    | Boolean |
-| `UNDERLINE_COLOR`      | Vector4 |
-| `UNDERLINE_HEIGHT`     | Float   |
+| Property                 | Type      | Description                              |
+| ------------------------ | --------- | ---------------------------------------- |
+| `TEXT`                   | STRING    | The text to display in UTF-8 format      |
+| `FONT_FAMILY`            | STRING    | The requested font family                |
+| `FONT_STYLE`             | STRING or MAP | The requested font style             |
+| `POINT_SIZE`             | FLOAT     | The size of font in points               |
+| `MULTI_LINE`             | BOOLEAN   | The single-line or multi-line layout option |
+| `HORIZONTAL_ALIGNMENT`   | STRING    | The line horizontal alignment            |
+| `VERTICAL_ALIGNMENT`     | STRING    | The line vertical alignment              |
+| `ENABLE_MARKUP`          | BOOLEAN   | Whether the mark-up processing is enabled |
+| `ENABLE_AUTO_SCROLL`     | BOOLEAN   | Starts or stops auto scrolling           |
+| `AUTO_SCROLL_SPEED`      | INTEGER   | Sets the speed of scrolling in pixels per second |
+| `AUTO_SCROLL_LOOP_COUNT` | INTEGER   | Number of complete loops when scrolling enabled |
+| `AUTO_SCROLL_GAP`        | INTEGER   | Gap before scrolling wraps               |
+| `LINE_SPACING`           | FLOAT     | The default extra space between lines in points |
+| `UNDERLINE`              | MAP       | The default underline parameters         |
+| `SHADOW`                 | MAP       | The default shadow parameters            |
+| `EMBOSS`                 | MAP       | The default emboss parameters            |
+| `OUTLINE`                | MAP       | The default outline parameters           |
+| `PIXEL_SIZE`             | FLOAT     | The size of font in pixels               |
+| `ELLIPSIS`               | BOOLEAN   | Whether we should show the ellipsis if it is required |
+| `AUTO_SCROLL_LOOP_DELAY` | FLOAT     | The amount of time to delay the starting time of auto scrolling and further loops |
+| `AUTO_SCROLL_STOP_MODE`  | INTEGER or STRING | The auto scrolling stop behavior |
+| `LINE_COUNT`             | INTEGER   | The line count of text                   |
+| `LINE_WRAP_MODE`         | INTEGER or STRING | Line wrap mode when text lines are greater than the layout width |
+| `TEXT_COLOR`             | VECTOR4   | The color of the text                    |
+| `TEXT_COLOR_RED`         | FLOAT     | The red component of the text color      |
+| `TEXT_COLOR_GREEN`       | FLOAT     | The green component of the text color    |
+| `TEXT_COLOR_BLUE`        | FLOAT     | The blue component of the text color     |
+| `TEXT_COLOR_ALPHA`       | FLOAT     | The alpha component of the text color    |
 
-### Color
+#### Color
 
 To change the color of the text, use the `TEXT_COLOR` property. Unlike the `Actor::COLOR` property, this does not affect child actors added to the `TextLabel`.
 
@@ -138,40 +167,49 @@ label.SetProperty( TextLabel::Property::TEXT, "Red Text" );
 label.SetProperty( TextLabel::Property::TEXT_COLOR, Color::RED );
 ```
 
-### Drop Shadow
+#### Drop Shadow
 
-To add a drop shadow to the text, set the `SHADOW_OFFSET` property with a non-zero values. The color can also be selected using the `SHADOW_COLOR` property.
+To add a drop shadow and put a color to the text, set the `SHADOW` property with a non-zero values.
 
 ```
 stage.SetBackgroundColor( Color::BLUE );
 label1.SetProperty( TextLabel::Property::TEXT, "Plain Text" );
 label2.SetProperty( TextLabel::Property::TEXT, "Text with Shadow" );
-label2.SetProperty( TextLabel::Property::SHADOW_OFFSET, Vector2( 1.0f, 1.0f ) );
-label2.SetProperty( TextLabel::Property::SHADOW_COLOR, Color::BLACK );
+Property::Map shadowMap2;
+shadowMap2.Insert( "offset", Vector2( 1.0f, 1.0f ) );
+shadowMap2.Insert( "color", Color::BLACK );
+label2.SetProperty( TextLabel::Property::SHADOW, shadowMap2 );
+
 label3.SetProperty( TextLabel::Property::TEXT, "Text with Bigger Shadow" );
-label3.SetProperty( TextLabel::Property::SHADOW_OFFSET, Vector2( 2.0f, 2.0f ) );
-label3.SetProperty( TextLabel::Property::SHADOW_COLOR, Color::BLACK );
+Property::Map shadowMap3;
+shadowMap3.Insert( "offset", Vector2( 2.0f, 2.0f ) );
+shadowMap3.Insert( "color", Color::BLACK );
+label3.SetProperty( TextLabel::Property::SHADOW, shadowMap3 );
+
 label4.SetProperty( TextLabel::Property::TEXT, "Text with Color Shadow" );
-label4.SetProperty( TextLabel::Property::SHADOW_OFFSET, Vector2( 1.0f, 1.0f ) );
-label4.SetProperty( TextLabel::Property::SHADOW_COLOR, Color::RED );
+Property::Map shadowMap4;
+shadowMap4.Insert( "offset", Vector2( 1.0f, 1.0f ) );
+shadowMap4.Insert( "color", Color::RED );
+shadowMap4.Insert( "blurRadius", 2.0f );
+label4.SetProperty( TextLabel::Property::SHADOW, shadowMap4 );
 ```
 
-### Underlining
+#### Underlining
 
-The text can be underlined by setting the `UNDERLINE_ENABLED` property. The color can also be selected using the `UNDERLINE_COLOR` property.
+The text can be underlined by setting the `UNDERLINE` property. By default, the underline height is based on the font metrics. This can be overridden using 'UNDERLINE' property, too.
 
 ```
 label1.SetProperty( TextLabel::Property::TEXT, "Text with Underline" );
-label1.SetProperty( TextLabel::Property::UNDERLINE_ENABLED, true );
+Property::Map underlineMap;
+underlineMap.Insert( "enable", "true" );
+label1.SetProperty( TextLabel::Property::UNDERLINE, underlineMap );
+
 label2.SetProperty( TextLabel::Property::TEXT, "Text with Color Underline" );
-label2.SetProperty( TextLabel::Property::UNDERLINE_ENABLED, true );
-label2.SetProperty( TextLabel::Property::UNDERLINE_COLOR, Color::GREEN );
-```
-
-By default, the underline height is based on the font metrics. This can be overridden using the `UNDERLINE_HEIGHT` property:
-
-```
-label1.SetProperty( TextLabel::Property::UNDERLINE_HEIGHT, 1.0f );
+Property::Map underlineMap2;
+underlineMap2.Insert( "enable", "true" );
+underlineMap2.Insert( "color", "green" );
+underlineMap2.Insert( "height", "1" );
+label2.SetProperty( TextLabel::Property::UNDERLINE, underlineMap2 );
 ```
 
 ## Related Information

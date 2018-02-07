@@ -7,6 +7,14 @@ The OBJ or `.obj` (object) file is a geometry definition file format and the MTL
 
 The `Model3dView` control automatically scales the loaded geometry to fit within its size boundary.
 
+In this tutorial, the following subjects are covered:
+
+[Creating a Model3dView](#1)<br>
+[Model3dView Properties](#2)<br>
+[Specifying the Illumination Model](#3)<br>
+[ItemView Properties](#4)<br>
+
+<a name="1"></a>
 ## Creating a Model3dView
 
 The following basic example shows how to create a `Dali::Toolkit::Model3dView` object:
@@ -21,7 +29,8 @@ model3dView.SetResizePolicy( ResizePolicy::FILL_TO_PARENT, Dimension::ALL_DIMENS
 Stage::GetCurrent().Add( model3dView );
 ```
 
-## Modifying Model3dView Properties
+<a name="2"></a>
+## Model3dView Properties
 
 You can modify the `Model3dView` appearance and behavior through its properties. To change a property from its default value, use the `SetProperty()` function.
 
@@ -32,19 +41,20 @@ The following table lists the available `Model3dView` properties.
 
 **Table: Model3dView properties**
 
-| Property            | Type      | Descriptions                             |
-|---------------------|-----------|------------------------------------------|
-| `GEOMETRY_URL`      | `String`  | Location of the geometry resource (the OBJ file) |
-| `MATERIAL_URL`      | `String`  | Location of the material resource (the MTL file) to render the object with a material |
-| `IMAGES_URL`        | `String`  | Location of the images directory         |
-| `ILLUMINATION_TYPE` | `Integer` | Type of illumination                     |
-| `TEXTURE0_URL`      | `String`  | Path to the first texture (diffuse texture) |
-| `TEXTURE1_URL`      | `String`  | Path to the second texture (normal map)  |
-| `TEXTURE2_URL`      | `String`  | Path to the third texture (gloss texture) |
-| `LIGHT_POSITION`    | `Vector3` | Coordinates of the light                 |
+| Property            | Type    | Descriptions                             |
+|---------------------|---------|------------------------------------------|
+| `GEOMETRY_URL`      | STRING  | Location of the geometry resource (the OBJ file) |
+| `MATERIAL_URL`      | STRING  | Location of the material resource (the MTL file) to render the object with a material |
+| `IMAGES_URL`        | STRING  | Location of the images directory         |
+| `ILLUMINATION_TYPE` | INTEGER | Type of illumination                     |
+| `TEXTURE0_URL`      | STRING  | Path to the first texture (diffuse texture) |
+| `TEXTURE1_URL`      | STRING  | Path to the second texture (normal map)  |
+| `TEXTURE2_URL`      | STRING  | Path to the third texture (gloss texture) |
+| `LIGHT_POSITION`    | VECTOR3 | Coordinates of the light                 |
 
 The MTL material file references the texture files using a relative path. The `IMAGES_URL` property is used to define the location of the root of this path. The textures are set automatically when the material URL is loaded.
 
+<a name="3"></a>
 ## Specifying the Illumination Model
 
 Illumination models are used to calculate the intensity of light that is reflected at a given point on a surface. The diffuse reflection is the reflection of light from a surface such that an incident ray is reflected at many angles rather than at only one angle, as in specular reflection.
@@ -65,7 +75,9 @@ The following figure illustrates the illumination models: `DIFFUSE` (top left), 
 
 **Figure: Illumination models**
 
-![DIFFUSE model](./media/dali_model1.png) ![DIFFUSE_WITH_TEXTURE model](./media/dali_model2.png)
+![DIFFUSE model](./media/dali_model1.png)
+
+![DIFFUSE_WITH_TEXTURE model](./media/dali_model2.png)
 
 ![DIFFUSE_WITH_NORMAL_MAP model](./media/dali_model3.png)
 

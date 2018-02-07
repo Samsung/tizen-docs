@@ -3,9 +3,15 @@
 
 DALi supports key frame and path animation.
 
+[Key Frame Animation](#1)<br>
+[Path Animation](#2)<br>
+
+<a name="1"></a>
 ## Key Frame Animation
 
-DALi provides support for animating between several different values, or key frames. A key frame takes a progress value between 0.0f and 1.0f (0 and 100% respectively) and portrays the value of the property when the animation has progressed that much. You can create several key frames:
+DALi provides support for animating between several different values, or key frames.
+A key frame takes a progress value between 0.0f and 1.0f (0 and 100% respectively) and portrays the value of the property when the animation has progressed that much.
+You can create several key frames:
 
 ```
 KeyFrames keyFrames = KeyFrames::New();
@@ -24,6 +30,7 @@ When you play the animation, DALi animates the position of `actor1` between the 
 
 The advantage of specifying a key frame at 0% is that regardless of where the `actor1` is, it starts from position (10.0f, 10.0f, 10.0f). If `AnimateTo()` is used, the start position is the `actor1`'s current position.
 
+<a name="2"></a>
 ## Path Animation
 
 The `Dali::Path` class can be used to animate the position and orientation of actors.

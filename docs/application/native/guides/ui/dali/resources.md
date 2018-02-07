@@ -2,121 +2,93 @@
 
 
 DALi provides several ways to handle resource images.
+This tutorial describes the use of Resources in Dali, currently Image resources.
 
-## Loading Image Files
+## Overview
 
-You can load an image file with the `ResourceImage` class by specifying its location:
+Resources in Dali can apply Images or 3D Models.
 
-```
-Dali::ResourceImage image = Dali::ResourceImage::New( "/my-path/my-image.png" );
-```
+The common method to access these resources is through Visuals.
+Controls then use these visuals to display what is required.
 
-The loaded image can be displayed using the [ImageView](imageview.md) component:
+See [ImageView tutorial](imageview.md).
 
-```
-ImageView imageView = ImageView::New( image );
-Stage::GetCurrent().Add( imageView );
-```
+## Loading images
 
-### Supported Resource Types
+Images are defined by an url which can be local or remote (internet).
+The following formats are supported :
 
-The resource location can be a file path or a URL.
+| Supported image formats | extentsion |
+|------------------------ | ---------- |
+| Bitmap                  | `.bmp`     |
+| Gif                     | `.gif`     |
+| Jpeg                    | `.jpeg`    |
+| Khronos Texture         | `.ktx`     |
+| PNG                     | `.png`     |
+| Mircosoft Icons         | `.ico`     |
+| WAP Bitmap              | `.wbmp`    |
 
-The currently supported image types are:
+Controls should process the provided url and internally create the matching Image visual.
+Visual creation will automatically determine if the Image is an N_PATCH, SVG, GIF not regular image from the image data.=
 
-- `png`
-- `jpeg`
-- `gif`
-- `bmp`
-- `wbmp`
-- `ico`
-- `ktx`
+### Image Properties
 
-The currently supported URL schemes are:
+| Property Name         | Description       |
+|-----------------------|-------------------|
+| `ALPHA_MASK_URL`      | url to an image that will mask the main content image |
+| `CROP_TO_MASK`        | Flag to determine if main content image should crop to match mask size |
+| `FITTING_MODE`        | By default the image will shrink to fit the desiredHeight and desiredWidth, other modes available |
+| `SAMPLING_MODE`       | The type of sampling to be used. Default is Box. |
+| `DESIRED_WIDTH`       | The width you would like the Image to be.  Affected by FITTING_MODE        |
+| `DESIRED_HEIGHT`      | The height you would like the Image to be. Affected by FITTING_MOD         |
+| `SYNCHRONOUS_LOADING` | If loading should block the execution thread, disabled by Default.         |
+| `PIXEL_AREA`          | Can be set to display only a portion of the Image           |
+| `WRAP_MODE_U`         | Define how sampling should behave for u coordinate |
+| `WRAP_MODE_V`         | Define how sampling should behave for v coordinate |
+| `ATLASING`            | Whether to use the texture atlas to speed up loading times, enabled by default |
 
-- `http`
-- `https`
+### N-Patch only properties
 
-### Asynchronous Loading
+| Property Name         | Description       |
+|-----------------------|-------------------|
+| `BORDER`              | Specifies border values for N-Patch images |
+| `BORDER_ONLY`         | Specifies if ONLY borders to be shown for N-Patch images |
 
-Resources are loaded in separate threads, which means that when you call the `ResourceImage::New()` function, it returns immediately.
+### Animated GIF only properties
 
-The application can connect to the `Dali::ResourceImage::LoadingFinishedSignal()` signal to get notified when the image has loaded:
+| Property Name | Description       |
+|---------------|-------------------|
+| `BATCH_SIZE`  | Number of Images to decode before animation starts, Default is 1. |
+| `CACHE_SIZE`  | Number of images to keep cached, Can increase or decrease depending on memory available. |
+| `FRAME_DELAY` | Millisecond delay between frames |
 
-```
-class ResourceImageController : public ConnectionTracker
-{
-  public:
-    ResourceImageController( Application& application ) : mApplication( application )
-    {
-      mApplication.InitSignal().Connect( this, &ResourceImageController::Create );
-    }
+Synchronous loading has niche uses, eg. ensuring image has loaded before continuing to execute application code,
+the common use is to connect to the control's `ResourceReadySignal` and perform operations at that point.
 
-    void Create( Application& application )
-    {
-      ResourceImage image = ResourceImage::New( "https://www.tizen.org/sites/default/files/admins/tizen-branding-lockup-on-light.png" );
-      image.LoadingFinishedSignal().Connect( this, &ResourceImageController::OnLoadFinished );
+## Caching
 
-      ImageView imageView = ImageView::New( image );
-      imageView.SetSize( 400, 200 );
-      imageView.SetParentOrigin( ParentOrigin::CENTER );
-      Stage::GetCurrent().Add( imageView );
-    }
+Images are automatically cached, if the `ATLASING` is not disable then may be in an Atlas too.
 
-    void OnLoadFinished( ResourceImage image )
-    {
-      LoadingState state = image.GetLoadingState();
-      if( state == ResourceLoadingSucceeded )
-         cout << "Loading " << image.GetUrl() << " succeeded" << endl;
-      else if( state == ResourceLoadingFailed )
-         cout << "Loading " << image.GetUrl() << " failed" << endl;
-    }
-};
-```
+If an Image (ImageVisual) is added then removed then added to the stage loading times can be reduced by keeping the visual registered with the control.
+This is useful for Control writers and explained further in "Creating Controls with Visuals" tutorial.
 
-For more information on the resource threads, see [Resource Loading with Multi-threading](multi-threaded.md#resource-loading-with-multi-threading).
+## Reducing Image memory footprint
 
-### Load Time Resizing
+An application loading images may want to display them at lower resolution than their native resolution.
 
-An application loading images from an external source often wants to display those images at a lower resolution than their native ones. To support this, DALi can resize an image at load time so that its in-memory copy uses less space and its visual quality benefits from being prefiltered. The `Dali::FittingMode` namespace (in [mobile](../../../../../org.tizen.native.mobile.apireference/namespaceDali_1_1FittingMode.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/namespaceDali_1_1FittingMode.html) applications) provides 4 algorithms, which can be used to fit an image to a desired rectangle, a desired width, or a desired height.
+To support this, DALi can resize an image at load time so that its in-memory copy uses less space and its visual quality benefits from being prefiltered.
+`DESIRED_WIDTH` and `DESIRED_HEIGHT` can be set to the Image visual and then `FITTING_MODE`.
 
-The following code snippet is an example of rescaling:
-
-```
-Dali::Image image = Dali::ResourceImage::New( filename, ImageDimensions( 240, 240 ), FittingMode::SCALE_TO_FILL );
-```
-
-This example sets the size and fitting mode appropriately for a large thumbnail during the `Dali::ResourceImage` object construction. In general, to enable scaling on load, pass a non-zero width or height and one of the 4 fitting modes to the `Dali::ResourceImage`creator function as shown above.
+The `Dali::FittingMode` namespace provides 4 algorithms, which can be used to fit an image to a desired rectangle, a desired width, or a desired height.
 
 The fitting modes and suggested use cases are as follows:
 
-**Table: Fitting mode use cases**
-
-| Fitting mode                       | Suggested use case                       |
-|------------------------------------|------------------------------------------|
-| `Dali::FittingMode::SHRINK_TO_FIT` | Full-screen image display: limit the loaded image resolution to the device resolution, but show all of the image. |
-| `Dali::FittingMode::SCALE_TO_FILL` | Thumbnail gallery grid: limit the loaded image resolution to the screen tile, filling the whole tile but losing a few pixels to match the tile shape. |
-| `Dali::FittingMode::FIT_WIDTH`     | Image columns: limit the loaded image resolution to the column width. |
-| `Dali::FittingMode::FIT_HEIGHT`    | Image rows: limit the loaded image resolution to the row height. |
-
-### Image Size
-
-If the application requires the image dimensions immediately, they can be retrieved synchronously:
-
-```
-Dali::ImageDimensions dimensions = Dali::ResourceImage::GetImageSize( "/my-path/my-image.png" );
-```
-
-This is a disk-read operation, which can be slow and block the event thread. This operation is currently not supported for remote resources, such as HTTP or HTTPS URLs.
-
-## Using a Buffer Image
-
-A `Dali::BufferImage` class (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1BufferImage.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1BufferImage.html) applications) represents an image resource in the form of pixel buffer data. The application can write to this buffer as required and the image is updated on the screen:
-
-```
-// Create a 200 by 200 pixel buffer with a color-depth of 32-bits (with alpha)
-Dali::BufferImage image = Dali::BufferImage::New( 200, 200 );
-```
+| Fitting mode 	| Suggested use case |
+| ------------- | ------------------ |
+| `FittingMode::SHRINK_TO_FIT` |	Fit full image inside desired width & height, potentially not filling one of either the desired image width or height with pixels. |
+| `FittingMode::SCALE_TO_FILL` |	The image is centered in the desired dimensions, exactly touching in one dimension, with image regions outside the other desired dimension cropped. |
+| `FittingMode::FIT_WIDTH`     |	Image fills whole width. Height is scaled proportionately to maintain aspect ratio. |
+| `FittingMode::FIT_HEIGHT`    | Image fills whole height. Width is scaled proportionately to maintain aspect ratio. |
 
 ## Related Information
 * Dependencies
