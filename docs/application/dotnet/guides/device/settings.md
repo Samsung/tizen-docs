@@ -38,8 +38,6 @@ To enable your application to use the system setting functionality:
     <feature name="http://tizen.org/feature/systemsetting"/>
     ```
 
-    Tizen Store can filter features based on the feature keys entered in the manifest file, and accordingly display apps to user's device.	
-
     The following table lists the feature keys required by the specific properties and events of the [Tizen.System.SystemSettings](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.SystemSettings.html) class.
 
     **Table: Feature keys related to system settings**
