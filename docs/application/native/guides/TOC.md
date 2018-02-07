@@ -103,6 +103,7 @@
 ## [Smart Card](connectivity/smartcard.md)
 ## [Wi-Fi](connectivity/wifi.md)
 ## [Wi-Fi Direct&reg;](connectivity/wifi-direct.md)
+## [STC (Smart Traffic Control)](connectivity/stc.md)
 ## [Telephony Information](connectivity/telephony.md)
 ## [USB Host](connectivity/usb-host.md)
 ## Internet and Content Downloads
