@@ -22,6 +22,7 @@
 ### [Application Manager](app-management/app-manager.md)
 ### [Package Manager](app-management/package-manager.md)
 ### [Event Broadcast and Subscription](app-management/event.md)
+### [Job Scheduler](app-management/job-scheduler.md)
 ## Application Data Exchange
 ### [Message Port](app-management/message-port.md)
 ### [Data Control](app-management/data-control.md)

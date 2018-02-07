@@ -1,6 +1,5 @@
 # Common Application Controls
 
-
 An application control provides functions for launching other applications with a specific operation, URI, MIME type, and extra data. The requesting application can get a result back from the launched application. This topic introduces the common application controls that you can use.
 
 > **Note**  
@@ -212,7 +211,8 @@ For example: `file://<media storage path>/file.vcs`
 
 #### MIME Type
 
-- `application/vnd.tizen.calendar`If viewing an event by event ID, the event ID (ID in the `_calendar_event` view) extra data and `application/vnd.tizen.calendar` MIME type must be specified.
+- `application/vnd.tizen.calendar`  
+   If viewing an event by event ID, the event ID (ID in the `_calendar_event` view) extra data and `application/vnd.tizen.calendar` MIME type must be specified.
 - `text/x-vcalendar` (for vcalendar file)
 - `text/vcalendar` (for vcalendar file)
 
@@ -299,7 +299,7 @@ app_control_send_launch_request(service, NULL, NULL);
 
 ## Call
 
-The call application control is supported in mobile applications only.
+The call application control is supported in mobile and wearable applications.
 
 ### Making a Phone Call
 
@@ -506,9 +506,9 @@ app_control_destroy(service);
 
 ## Contact
 
-The contact application control is supported in mobile applications only.
-
 ### Adding a Contact
+
+The contact adding operation is supported in mobile and wearable applications. Wearable applications support the `APP_CONTROL_DATA_PHONE` and `APP_CONTROL_DATA_NAME` keys only as extra input.
 
 To add a new contact, use the `APP_CONTROL_OPERATION_ADD` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
@@ -530,9 +530,9 @@ To add a new contact, use the `APP_CONTROL_OPERATION_ADD` operation with the `ap
 | Key                      | Description                              | Note                  |
 |--------------------------|------------------------------------------|-----------------------|
 | `APP_CONTROL_DATA_PHONE` | The phone number. This key must be passed as a string. | This key is optional. |
-| `APP_CONTROL_DATA_EMAIL` | The email address. This key must be passed as a string. |                       |
-| `APP_CONTROL_DATA_URL`   | The homepage URL. This key must be passed as a string. |                       |
-| `APP_CONTROL_DATA_NAME`  | The contact's name. This key must be passed as a string. |                       |
+| `APP_CONTROL_DATA_EMAIL` | The email address. This key must be passed as a string. |  This key is optional.   |
+| `APP_CONTROL_DATA_URL`   | The homepage URL. This key must be passed as a string. | This key is optional.  |
+| `APP_CONTROL_DATA_NAME`  | The contact's name. This key must be passed as a string. | This key is optional.   |
 
 #### Extra Output
 
@@ -561,6 +561,8 @@ app_control_destroy(request);
 
 ### Editing a Contact
 
+The contact editing operation is supported in mobile applications only.
+
 To edit a known contact, use the `APP_CONTROL_OPERATION_EDIT` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
 **Figure: Editing a contact**
@@ -582,8 +584,9 @@ To edit a known contact, use the `APP_CONTROL_OPERATION_EDIT` operation with the
 |--------------------------|------------------------------------------|------------------------|
 | `APP_CONTROL_DATA_ID`    | The database record ID of the person to be edited (ID in the `_contacts_person` view). This key must be passed as a string. | This key is mandatory. |
 | `APP_CONTROL_DATA_PHONE` | The phone number that is added to the contact. This key must be passed as a string. | This key is optional.  |
-| `APP_CONTROL_DATA_EMAIL` | The email address that is added to the contact. This key must be passed as a string. |                        |
-| `APP_CONTROL_DATA_URL`   | The homepage URL that is added to the contact. This key must be passed as a string. |                        |
+| `APP_CONTROL_DATA_EMAIL` | The email address that is added to the contact. This key must be passed as a string. | This key is optional.                      |
+| `APP_CONTROL_DATA_URL`   | The homepage URL that is added to the contact. This key must be passed as a string. |  This key is optional.                     |
+
 
 #### Extra Output
 
@@ -613,6 +616,8 @@ app_control_destroy(request);
 
 ### Viewing a Contact
 
+The contact viewing operation is supported in mobile and wearable applications. Wearable applications support only the `application/vnd.tizen.contact` MIME type.
+
 To display a specified contact in the contact database, use the `APP_CONTROL_OPERATION_VIEW` operation. To specify various contact details, refer to the extras defined below.
 
 To display a specified contact from a vcard file, use the `file:` URI. To display a specified contact with the person ID, use the `application/vnd.tizen.contact` MIME type with `APP_CONTROL_DATA_ID`.
@@ -632,7 +637,8 @@ To display a specified contact from a vcard file, use the `file:` URI. To displa
 
 #### MIME Type
 
-- `application/vnd.tizen.contact`If viewing a contact by person ID, the person ID (ID in the `_contact_person` view) extra data and `application/vnd.tizen.contact` MIME type must be specified.
+- `application/vnd.tizen.contact`  
+  If viewing a contact by person ID, the person ID (ID in the `_contact_person` view) extra data and `application/vnd.tizen.contact` MIME type must be specified.
 - `text/vcard`
 - `text/x-vcard`
 
@@ -684,6 +690,8 @@ launchViewVcard(const char *uri)
 
 ### Selecting a Contact
 
+The contact selection operation is supported in mobile and wearable applications. Wearable applications support only the `single` value in the `APP_CONTROL_DATA_SELECTION_MODE` key and the `id` and `phone` values in the `APP_CONTROL_DATA_TYPE` key.
+
 To select a specified contact in the user's contacts, use the `APP_CONTROL_OPERATION_PICK` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
 **Figure: Selecting a contact**
@@ -712,7 +720,7 @@ To select a specified contact in the user's contacts, use the `APP_CONTROL_OPERA
 | Key                         | Description                              |
 |-----------------------------|------------------------------------------|
 | `APP_CONTROL_DATA_TYPE`     | The type of items to be delivered. The available values are `id`, `phone`, `email`, and `vcf`. This key must be passed as a string. |
-| `APP_CONTROL_DATA_SELECTED` | The extra field to get the return information. The content of this key depends on its type:`id`: The database record ID of the selected person (ID in the `_contacts_person` view).`phone`: The database record ID of the number of the selected person (ID in the `_contacts_number` view).`email`: The database record ID of the email of the selected person (ID in the `_contacts_email` view).`vcf`: The path to the vCard file.This key must be passed as an array. |
+| `APP_CONTROL_DATA_SELECTED` | The extra field to get the return information. The content of this key depends on its type:<br>- `id`: The database record ID of the selected person (ID in the `_contacts_person` view).<br>- `phone`: The database record ID of the number of the selected person (ID in the `_contacts_number` view).<br>- `email`: The database record ID of the email of the selected person (ID in the `_contacts_email` view).<br>- `vcf`: The path to the vCard file.<br><br>This key must be passed as an array. |
 
 #### Example Code
 
@@ -740,6 +748,8 @@ launchContactPick(const char *selectionMode, const char *resultType,
 
 ### Sharing a Contact
 
+The contact sharing operation is supported in mobile applications only.
+
 To share a single contact, use the `APP_CONTROL_OPERATION_SHARE` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
 #### Operation
@@ -755,8 +765,8 @@ To share a single contact, use the `APP_CONTROL_OPERATION_SHARE` operation with 
 
 | Key                     | Description                              | Note                   |
 |-------------------------|------------------------------------------|------------------------|
-| `APP_CONTROL_DATA_ID`   | The database record ID of the person (ID in the `_contacts_person` view) when `APP_CONTROL_DATA_TYPE` is set to `person`.The database record ID of my profile (ID in the `_contacts_my_profile` view) when `APP_CONTROL_DATA_TYPE` is set to `my_profile`. This key must be passed as a string. | This key is mandatory. |
-| `APP_CONTROL_DATA_TYPE` | The type of contact. The available values are `my_profile` and `person`. This key must be passed as a string. |                        |
+| `APP_CONTROL_DATA_ID`   | The database record ID of the person (ID in the `_contacts_person` view) when `APP_CONTROL_DATA_TYPE` is set to `person`.<br>The database record ID of my profile (ID in the `_contacts_my_profile` view) when `APP_CONTROL_DATA_TYPE` is set to `my_profile`. This key must be passed as a string. | This key is mandatory. |
+| `APP_CONTROL_DATA_TYPE` | The type of contact. The available values are `my_profile` and `person`. This key must be passed as a string. |      This key is mandatory.               |
 
 #### Example Code
 
@@ -777,6 +787,8 @@ app_control_destroy(service);
 ```
 
 ### Sharing Multiple Contacts
+
+The multiple contact sharing operation is supported in mobile applications only.
 
 To share a set of contacts, use the `APP_CONTROL_OPERATION_MULTI_SHARE` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
@@ -885,7 +897,9 @@ To share a single file of any MIME type in an email message, use the `APP_CONTRO
 #### URI (Mandatory)
 
 - `file:<path>`
-- `mailto:`Only an empty `mailto:` field is allowed. This can be used to filter out all but email applications available in the system.
+- `mailto:`  
+
+  Only an empty `mailto:` field is allowed. This can be used to filter out all but email applications available in the system.
 
 #### MIME Type
 
@@ -1110,15 +1124,19 @@ app_control_destroy(app_control);
 
 ## Input Delegator
 
-The input delegator application control is supported since Tizen 2.3.2, in wearable applications only.
+The input delegator application control is supported in wearable applications since Tizen 2.3.2, and in mobile applications since Tizen 4.0. Some of the input types are not supported in mobile applications. And also, some input types may not be supported depending on the device.
 
 ### Receiving User Input
 
-To receive a specific type of input from the user, use the `APP_CONTROL_OPERATION_GET_INPUT` operation. To give an option for the input delegator, refer to the extras defined below.
+To receive a specific type of input from the user, use the `APP_CONTROL_OPERATION_GET_INPUT` operation. This operation will give you various input types. If you want to give an option for the input delegator, refer to the extras defined below. You can execute the desired input type directly using `APP_CONTROL_DATA_INPUT_TYPE` operation. If you do not specify this operation, a default screen is displayed with all possible input types. For example, Figure 1 shows the main screen when the `APP_CONTROL_DATA_INPUT_TYPE` operation is not specified, and Figure 2 shows the screen when the input type of `APP_CONTROL_DATA_INPUT_TYPE` operation is given as `input_voice`.
 
-**Figure: Receiving user input**
+**Figure: Default user input**
 
-![Receiving user input](./media/common_appcontrol_inputdelegator.png) ![Receiving user input](./media/common_appcontrol_inputdelegator_voice.png)
+![Default user input](./media/common_appcontrol_inputdelegator.png)
+
+**Figure: Voice user input**  
+
+![Voice user input](./media/common_appcontrol_inputdelegator_voice.png)
 
 #### Operation
 
@@ -1127,22 +1145,32 @@ To receive a specific type of input from the user, use the `APP_CONTROL_OPERATIO
 
 #### MIME Type (Mandatory)
 
-- `text/plain`
+The input types are grouped into the following MIME types. Therefore, if you specify MIME type through `app_control_set_mime()` function, the input type belonging to the group is displayed on the initial screen.
+
+-   `text/plain` (input\_keyboard, input\_emoticon, input\_voice, input\_reply)
+-   `image/*` (input\_drawing)
+-   `audio/*` (input\_recording)
+-   `*/*` (all input types)
 
 #### Extra Input
 
 | Key                                      | Description                              | Note                  |
 |------------------------------------------|------------------------------------------|-----------------------|
-| `APP_CONTROL_DATA_INPUT_TYPE`            | The input method type. This key must be passed as a string. The available values are:`input_voice`: Ask for voice input`input_emoticon`: Ask for emoticon input`input_keyboard`: Ask for keyboard input | This key is optional. |
-| `APP_CONTROL_DATA_INPUT_DEFAULT_TEXT`    | The preformatted text to be used as default input, such as "http://" for Web addresses. This key must be passed as a string. |This key is optional.                       |
-| `APP_CONTROL_DATA_INPUT_GUIDE_TEXT`      | The guide text, such as "Input user name". This key must be passed as a string. |This key is optional.                       |
-| `APP_CONTROL_DATA_INPUT_PREDICTION_HINT` | The text to receive an answer result from a smart reply. This key must be passed as a string. |This key is optional.                       |
+| `APP_CONTROL_DATA_INPUT_TYPE`            | The input method type. This key must be passed as a string. The available values are:<br>- `input_voice`: Ask for voice input<br>- `input_emoticon`: Ask for emoticon input<br>- `input_keyboard`: Ask for keyboard input<br>- `input_reply`: Ask for reply input<br>- `input_drawing`: Ask for drawing input<br>- `input_recording`: Ask for recording input | This key is optional.<br>The `input_reply`, `input_drawing`, and `input_recording` values are supported in wearable applications only since Tizen 4.0. Also, some input types may not be supported depending on the device.<br><br>The `input_reply` supports the following languages: English, Spanish, French, Italian, Russian, and German. |
+| `APP_CONTROL_DATA_INPUT_DEFAULT_TEXT`    | The preformatted text to be used as default input, such as "http://" for Web addresses. This key must be passed as a string. |This key is optional.<br>This key is only supported for the `input_keyboard` type.      |
+| `APP_CONTROL_DATA_INPUT_GUIDE_TEXT`      | The guide text, such as "Input user name." This key must be passed as a string. |This key is optional.<br>This key is only supported for the `input_keyboard` type.               |
+| `APP_CONTROL_DATA_INPUT_PREDICTION_HINT` | The text to receive an answer result from a smart reply. This key must be passed as a string. |This key is optional.<br>This key is only supported for the `input_reply` type.    |
+| `APP_CONTROL_DATA_INPUT_RETURNKEY_TYPE` | The return key used in the keyboard input type. This key must be passed as a string. The available vlues are:<br>- `Done`: Set key label to **Done**<br>- `Send`: Set key label to **Send**<br>- `Join`: Set key label to **Join**<br>- `Login`: Set key label to **Login**<br>- `Next`: Set key label to **Next**<br>- `Sign-in`: Set key label to **Sign-in**<br>- `Search`: Set key label to **Search**<br>- `Go`: Set key label to **Go** | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |
+| `APP_CONTROL_DATA_INPUT_MAX_TEXT_LENGTH` | The maximum text length allowed in the keyboard input type. This key must be passed as a string. | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |
+| `APP_CONTROL_DATA_INPUT_CURSOR_POSITION_SET` | The position where the cursor is to be set in the keyboard input type. This key must be passed as a string. | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |
+| `APP_CONTROL_DATA_INPUT_REPLY_TYPE` | The reply type. This key must be passed as a string.<br>This key allows caller application to know the user has entered though which input type of Input Delegator.<br><br> You can decide how to use extra output  according to the result  of this key. If the  result is `input_audio`   or `input_image`, you  must get the path of the result value through     `APP_CONTROL_DATA_PATH`.<br><br>The available values    are:     <br>  -   `input_voice`:     Receive the result     as voice <br>     -   `input_emoticon`:  Receive the result   as an emoticon  <br>-   `input_keyboard`:      Receive the result    as keyboard input  <br> -   `input_reply`:          Receive the result    as reply input     <br> -   `input_image`:     Receive the result    as an image  <br> -   `input_audio`:        Receive the result    as audio  | This key is optional and is supported only in wearable applications since Tizen 4.0 |   
 
 #### Extra Output
 
-| Key                     | Value description                        |
-|-------------------------|------------------------------------------|
-| `APP_CONTROL_DATA_TEXT` | The result string from the input delegator. This key must be passed as a string. |
+| Key                     | Value description                        | Note |
+|-------------------------|------------------------------------------|-----|
+| `APP_CONTROL_DATA_TEXT` | The result string from the input delegator. This key must be passed as a string. | - |
+| `APP_CONTROL_DATA_PATH` | The list of multiple file paths from the input delegator.<br>If user selects `input_recording` type or `input_drawing` type to input in Input Delegator, you must check this key to find the file path of result.<br><br>This key must be passed as an array. | This key is supported only in wearable applications since Tizen 4.0 |
 
 #### Example Code
 
@@ -1150,28 +1178,53 @@ To receive a specific type of input from the user, use the `APP_CONTROL_OPERATIO
 #include <app_control.h>
 
 void
-call_control()
+input_selector(void *data, Evas_Object *obj, void *event_info)
 {
-    app_control_h service;
-    app_control_create(&service);
-
-    app_control_set_operation(service, APP_CONTROL_OPERATION_GET_INPUT);
-    app_control_set_mime(service, "text/plain");
-    app_control_add_extra_data(service, APP_CONTROL_DATA_INPUT_TYPE, "input_voice");
-    app_control_set_launch_mode(service, APP_CONTROL_LAUNCH_MODE_GROUP);
-
-    app_control_send_launch_request(service, app_control_result, NULL);
-    app_control_destroy(service);
+    app_control_h app_control;
+    app_control_create(&app_control);
+    app_control_set_operation(app_control, APP_CONTROL_OPERATION_GET_INPUT);
+    app_control_set_mime(app_control, "text/plain");
+    app_control_set_launch_mode(app_control, APP_CONTROL_LAUNCH_MODE_GROUP);
+    /* Extra data for smartreply */
+    app_control_add_extra_data(app_control, APP_CONTROL_DATA_INPUT_PREDICTION_HINT, "How are you");
+    /* Extra data for return key type */
+    app_control_add_extra_data(app_control, APP_CONTROL_DATA_INPUT_RETURNKEY_TYPE, "Done");
+    /* Extra data for setting limit of text length */
+    app_control_add_extra_data(app_control, APP_CONTROL_DATA_INPUT_MAX_TEXT_LENGTH, "10");
+    /* Set cursor position */
+    app_control_add_extra_data(app_control, APP_CONTROL_DATA_INPUT_CURSOR_POSITION_SET, "3");
+    app_control_send_launch_request(app_control, input_selector_result, NULL);
+    app_control_destroy(app_control);
 }
 
 static void
-app_control_result(app_control_h request, app_control_h reply, app_control_result_e result, void *user_data)
+input_selector_result(app_control_h request, app_control_h reply, app_control_result_e result, void *user_data)
 {
     char *value;
+    char *type;
+    char *cursor_position;
     if (result == APP_CONTROL_RESULT_SUCCEEDED) {
         int ret = app_control_get_extra_data(reply, APP_CONTROL_DATA_TEXT, &value);
         if (ret == APP_CONTROL_ERROR_NONE) {
-            /*  Value is the result string */
+            /* Value is the result string */
+        }
+        /* To get input type of result from input delegator */
+        app_control_get_extra_data(reply, APP_CONTROL_DATA_INPUT_REPLY_TYPE, &type);
+        ret = app_control_get_extra_data(reply, APP_CONTROL_DATA_INPUT_CURSOR_POSITION_GET, &cursor_position);
+        if (ret == APP_CONTROL_ERROR_NONE)
+        {
+             dlog_print(DLOG_INFO, LOG_TAG, "[cursor_position_get] Succeeded: cursor_position(%s)", cursor_position);
+             elm_entry_cursor_pos_set(entry, atoi(cursor_position));
+        }
+        char **path_array = NULL;
+        int path_array_len = -1;
+        ret = app_control_get_extra_data_array(reply, APP_CONTROL_DATA_PATH, &path_array, &path_array_len);
+        dlog_print(DLOG_DEBUG, LOG_TAG, "len %d", path_array_len);
+        if (ret == APP_CONTROL_ERROR_NONE && path_array_len != -1) {
+            for (int i = 0; i < path_array_len; ++i) {
+                if (path_array[i])
+                    dlog_print(DLOG_DEBUG, LOG_TAG, "path %s", path_array[i]);
+            }
         }
     }
 }
@@ -1192,8 +1245,16 @@ To open a map to show a location, use the `APP_CONTROL_OPERATION_VIEW` operation
 
 #### URI (Mandatory)
 
-- `geo:latitude,longitude`Show the map with 2 values that represent the latitude and longitude. For example: `geo:50.1,-50.1`
-- `geo:0,0?q=keyword`Show the map at the location of a given keyword (address or POI). For example: `geo:0,0?q=Eiffel%20Tower`All strings passed in the `geo:` URI must be encoded. If only `geo:` is used, it filters out all but map applications in the system, and the location to be shown depends on the application scenario and configuration.
+-   `geo:latitude,longitude`
+
+    Show the map with 2 values that represent the latitude and longitude. For example: `geo:50.1,-50.1`
+
+-   `geo:0,0?q=keyword`
+
+    Show the map at the location of a given keyword (address or POI). For example: `geo:0,0?q=Eiffel%20Tower`
+
+    All strings passed in the `geo:` URI must be encoded. If only `geo:` is used, it filters out all but map applications in the system, and the location to be shown depends on the application scenario and configuration.
+
 
 #### Example Code
 
@@ -1258,16 +1319,16 @@ If only `geo:` is used, it filters out all but map applications in the system, a
 
 | Key                     | Description                              | Note                                     |
 |-------------------------|------------------------------------------|------------------------------------------|
-| `APP_CONTROL_DATA_TYPE` | The type of items to be delivered. The available values are `address` (default), `image`, `poi`, `geocode`, `uri`, or `all`. This key must be passed as a string. | This key is optional. **The poi value is not supported in Tizen 2.4.** **The geocode and uri values are supported since Tizen 3.0.** |
+| `APP_CONTROL_DATA_TYPE` | The type of items to be delivered. The available values are `address` (default), `image`, `poi`, `geocode`, `uri`, or `all`. This key must be passed as a string. | This key is optional. The `poi` value is not supported in Tizen 2.4.The `geocode` and `uri` values are supported since Tizen 3.0. |
 
 #### Extra Output
 
 | Key                         | Description                              | Note                                     |
 |-----------------------------|------------------------------------------|------------------------------------------|
 | `APP_CONTROL_DATA_SELECTED` | The address of the selected location. This key must be passed as a string. | -                                        |
-| `APP_CONTROL_DATA_NAME`     | The name of the selected location. This key must be passed as a string. | **This key is not supported in Tizen 2.4.** |
-| `APP_CONTROL_DATA_LOCATION` | The geo-coordinates of the selected location. This key must be passed as a string. | **This key is supported since Tizen 3.0.** |
-| `APP_CONTROL_DATA_URL`      | The URI of a place that shows the selected location. This key must be passed as a string. | **This key is supported since Tizen 3.0.**                                         |
+| `APP_CONTROL_DATA_NAME`     | The name of the selected location. This key must be passed as a string. | This key is not supported in Tizen 2.4. |
+| `APP_CONTROL_DATA_LOCATION` | The geo-coordinates of the selected location. This key must be passed as a string. | This key is supported since Tizen 3.0. |
+| `APP_CONTROL_DATA_URL`      | The URI of a place that shows the selected location. This key must be passed as a string. | This key is supported since Tizen 3.0.                                         |
 | `APP_CONTROL_DATA_PATH`     | The file path of the image showing the selected location. This key must be passed as a string. | -                                        |
 
 #### Example Code
@@ -1302,8 +1363,7 @@ pick_location_operation(void)
 }
 
 void
-pick_reply_cb(app_control_h request, app_control_h reply, app_control_result_e result,
-              void *user_data)
+pick_reply_cb(app_control_h request, app_control_h reply, app_control_result_e result, void *user_data)
 {
     char *address = NULL;
     char *name = NULL;
@@ -1335,9 +1395,9 @@ pick_reply_cb(app_control_h request, app_control_h reply, app_control_result_e r
 
 ## Message
 
-The message application control is supported in mobile applications only.
-
 ### Composing a Message
+
+The message composition operation is supported in mobile applications only.
 
 To compose a new message, use the `APP_CONTROL_OPERATION_COMPOSE` operation. To specify various message details, refer to the extras defined below.
 
@@ -1352,8 +1412,13 @@ To compose a new message, use the `APP_CONTROL_OPERATION_COMPOSE` operation. To 
 
 #### URI (Mandatory)
 
-- `sms:<phone-number>`For example: `sms:+17913331234`
-- `mmsto:<phone-number>`For example: `mmsto:+17913331234`
+-   `sms:<phone-number>`
+
+    For example: `sms:+17913331234`
+
+-   `mmsto:<phone-number>`
+
+    For example: `mmsto:+17913331234`
 
 #### Extra Input
 
@@ -1383,6 +1448,8 @@ app_control_send_launch_request(service, NULL, NULL);
 
 ### Sharing a Single Item Using a Message
 
+The single item sharing operation is supported in mobile applications only.
+
 To share a single item using an MMS message, use the `APP_CONTROL_OPERATION_SHARE` operation.
 
 **Figure: Sharing a single item**
@@ -1396,8 +1463,13 @@ To share a single item using an MMS message, use the `APP_CONTROL_OPERATION_SHAR
 
 #### URI (Mandatory)
 
-- `mmsto:`Only an empty `mmsto:` field is allowed. This can be used to filter out all but message applications available in the system.
-- `file:<path>`For example: `file://<media storage path>/item.jpg`
+-   `mmsto:`
+
+    Only an empty `mmsto:` field is allowed. This can be used to filter out all but message applications available in the system.
+
+-   `file:<path>`
+
+    For example: `file://<media storage path>/item.jpg`
 
 #### MIME Type
 
@@ -1427,6 +1499,8 @@ app_control_send_launch_request(service, NULL, NULL);
 ```
 
 ### Sharing Multiple Items Using a Message
+
+The multiple item sharing operation is supported in mobile applications only.
 
 To share multiple items using an MMS message, use the `APP_CONTROL_OPERATION_MULTI_SHARE` operation.
 
@@ -1477,6 +1551,8 @@ app_control_send_launch_request(service, NULL, NULL);
 
 ### Sharing Text in a Message
 
+The text sharing operation is supported in mobile and wearable applications.
+
 To share any text with an SMS or MMS message, use the `APP_CONTROL_OPERATION_SHARE_TEXT` operation.
 
 **Figure: Sharing text**
@@ -1522,9 +1598,9 @@ app_control_send_launch_request(service, NULL, NULL);
 
 ## Multimedia
 
-The multimedia application control is supported in mobile applications only.
-
 ### Playing an Audio or Video File
+
+The audio or video file playback operation is supported in mobile and wearable applications.
 
 To play an audio or video file, use the `APP_CONTROL_OPERATION_VIEW` operation with a URI. To specify various details, refer to the extras defined below.
 
@@ -1595,6 +1671,8 @@ play_audio_operation(const char* audio_uri)
 
 ### Viewing an Image File
 
+The image file viewing operation is supported in mobile and wearable applications.
+
 To display an image file, use the `APP_CONTROL_OPERATION_VIEW` operation with a URI. To specify various details, refer to the extras defined below.
 
 #### Operation
@@ -1654,6 +1732,8 @@ view_image_operation(const char* image_uri)
 
 ### Retrieving a Media File
 
+The media file retrieval operation is supported in mobile and wearable applications. Wearable applications support only the `image/*` MIME type.
+
 To retrieve a specific type of media file, use the `APP_CONTROL_OPERATION_PICK` operation. To specify various details, refer to the extras defined below.
 
 #### Operation
@@ -1673,7 +1753,7 @@ To retrieve a specific type of media file, use the `APP_CONTROL_OPERATION_PICK` 
 |-----------------------------------|------------------------------------------|-----------------------|
 | `APP_CONTROL_DATA_SELECTION_MODE` | The selection mode of the pick operation. The available values are `single` (default) and `multiple`. This key must be passed as a string. | This key is optional. |
 | `APP_CONTROL_DATA_TOTAL_COUNT`    | The total number of items to be returned. This key must be passed as a string. |This key is optional.                       |
-| `APP_CONTROL_DATA_TOTAL_SIZE`     | The total size of items to be returned in bytes. This key must be passed as a string. |                       |
+| `APP_CONTROL_DATA_TOTAL_SIZE`     | The total size of items to be returned in bytes. This key must be passed as a string. |    This key is optional.                       |
 
 #### Extra Output
 
@@ -1776,7 +1856,7 @@ launch_setting(void)
 
 ## Settings for Bluetooth
 
-The Bluetooth settings application control is supported in mobile applications only.
+The Bluetooth settings application control is supported in mobile and wearable applications.
 
 ### Showing Bluetooth Settings to Activate Bluetooth
 
@@ -1953,7 +2033,7 @@ To launch the NFC setting application to allow the user to activate or deactivat
 
 | Key                     | Description                              | Note                                     |
 |-----------------------|----------------------------------------|----------------------------------------|
-| `APP_CONTROL_DATA_TYPE` | The NFC setting menu type to be shown. This key must be passed as a string. The available values are:`nfc` (default): Default setting menu is launched`tap_n_pay`: Tap & pay setting menu is launchedThe support for this value depends on the device NFC settings. | This key is optional, and **it is supported since Tizen 3.0**. |
+| `APP_CONTROL_DATA_TYPE` | The NFC setting menu type to be shown. This key must be passed as a string. The available values are:<br>- `nfc` (default): Default setting menu is launched<br>- `tap_n_pay`: Tap & pay setting menu is launched<br>The support for this value depends on the device NFC settings. | This key is optional, and it is supported since Tizen 3.0. |
 
 #### Example Code
 
@@ -2089,7 +2169,7 @@ app_control_send_launch_request(service, NULL, NULL);
 
 ## VPN Service
 
-The VPN service application control is supported since Tizen 3.0, in mobile applications only.
+The VPN service application control is supported only in mobile applications since Tizen 3.0.
 
 ### Connecting and Disconnecting VPN
 
@@ -2157,6 +2237,7 @@ vpn_appcontrol_result_cb(app_control_h request, app_control_h reply, app_control
 
     app_control_get_extra_data(reply, APP_CONTROL_DATA_TEXT, &result_txt);
     dlog_print(DLOG_INFO, LOG_TAG, "Result: %s", result_txt);
+}
 ```
 
 ## Related Information

@@ -69,7 +69,9 @@ The Web widget life-cycle proceeds as follows:
 
 2. The users selects the widget in the **Add Widget** menu (by swiping right on the home screen), and the Tizen framework creates an instance of the Web widget and makes it available in the widget board.
 
-3. When the user launches the widget from the widget board, an `onload` event is generated.A `visibilityChange` event is also generated and the value of the `visibilityState` property is set to `visible`. This means that the widget is in operation and its content is displayed on the screen. Whenever a widget is visible, the user can tap the UI screen to invoke specified tasks, such as launching the widget's parent application.
+3. When the user launches the widget from the widget board, an `onload` event is generated.
+
+   A `visibilityChange` event is also generated and the value of the `visibilityState` property is set to `visible`. This means that the widget is in operation and its content is displayed on the screen. Whenever a widget is visible, the user can tap the UI screen to invoke specified tasks, such as launching the widget's parent application.
 
 4. While the widget is running:
 
@@ -78,7 +80,9 @@ The Web widget life-cycle proceeds as follows:
 
    Other examples of the actions causing widget visibility changes are switching off the screen or switching the viewport to another application.
 
-5. To remove the Web widget from the widget board, the user long-presses the widget and selects its **-** button. The Tizen framework terminates the widget operations and its instance. The widget and its resources remain on the wearable device, but the user must add the widget to the widget board again to use the widget.The parent Web application and its other Web widgets (if present) are not affected.
+5. To remove the Web widget from the widget board, the user long-presses the widget and selects its **-** button. The Tizen framework terminates the widget operations and its instance. The widget and its resources remain on the wearable device, but the user must add the widget to the widget board again to use the widget.
+
+  The parent Web application and its other Web widgets (if present) are not affected.
 
 6. To uninstall the parent Web application and all its widgets, the user long-presses the Web application and selects its **-** button. In this case, the Web application package (including all its widgets and their resources) is deleted from the wearable device. The Tizen framework removes the Web application from the application tray and deletes all its widgets from the widget board.
 
@@ -328,7 +332,12 @@ The following UI layouts with code examples are common use cases in widgets on w
   ![Vertical split layout](./media/webwidget_vertical_split_layout.png)
 
 > **Note**
-> The widget engine only supports the `block`, `inline`, `inline-block`, and `none` values for the `display` property.`#more {   .display: inline-block;}`
+> The widget engine only supports the `block`, `inline`, `inline-block`, and `none` values for the `display` property.
+> ```
+> #more {   
+>    .display: inline-block;
+> }
+> ```
 
   ```
   <head>
@@ -477,7 +486,6 @@ You can set the widget content styles, such as font and border, by changing the 
    font-weight: bold; /* Available values: normal, bold, bolder, lighter, number */
    text-align: center;
 }
-
 #more {
    border-style: solid;
    border-left-color: lightgray;
@@ -695,9 +703,10 @@ The Web widget applications support the following events: `onload`, `onclick`, a
   This event is generated when the user taps on an action button, whose function is specified by an HTML element. The following example code shows how to define the function for the **ADD WATER** button.
 
   **Figure: onclick event**    
-![onclick event](./media/webwidget_onclick_event.png)
 
-  ```
+  ![onclick event](./media/webwidget_onclick_event.png)
+
+    ```
     <!--HTML-->
     <element onclick="click">
     ```
@@ -729,9 +738,12 @@ The Web widget applications support the following events: `onload`, `onclick`, a
   ```
 
 - `visibilityChange`
-  This event is generated when the Web widget content becomes visible or hidden.
 
-  **Figure: visibilityChange event**![visibilityChange event](./media/webwidget_visibilitychange_event.png)
+   This event is generated when the Web widget content becomes visible or hidden.
+
+  **Figure: visibilityChange event**  
+
+  ![visibilityChange event](./media/webwidget_visibilitychange_event.png)
 
   ```
     /* JavaScript */
@@ -758,8 +770,8 @@ Web widgets can communicate with other applications in various ways. As shown in
 
 | Communication type                                                              | Available method |
 |---------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| [Web widget &lt;--&gt; Parent application](#comm_parent) (on a wearable device) | [Preference API](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/wearable/tizen/preference.html) |
-| [Web widget &lt;--&gt; Host application](#comm_host) (on a host device)         | [SAP (Samsung Accessory Protocol)](http://developer.samsung.com/onlinedocs/samsung_webapi_guide_public_2.0/html/wapi_spec/sap.html) |
+| [Web widget &lt;--&gt; Parent application](#comm_parent) (on a wearable device) | Preference API |
+| [Web widget &lt;--&gt; Host application](#comm_host) (on a host device)         | SAP (Samsung Accessory Protocol) |
   [Web widget &lt;--&gt; Web server](#comm_server)                                | XMLHttpRequest |
 
 <a name="comm_parent"></a>
@@ -773,7 +785,7 @@ The following table lists the Preference API methods.
 
 | Method                                                | Description
 |-------------------------------------------------------|---------------------------------------------|
-| `tizen.preference.setValue("key", "value")`           | Stores a key-value pair |
+| `tizen.preference.setValue("key", "value")`           | Stores a key-value pair. |
 | `tizen.preference.getValue("key")`                    | Retrieves a value for the "key" key. |
 | `tizen.preference.exists("key")`                      | Returns `true` if the given key exists. |
 | `tizen.preference.remove("key")`                      | Removes a key-value pair for the "key" key. |
@@ -822,7 +834,7 @@ window.onload = function() {
 };
 ```
 
-### Tizen Application API
+#### Tizen Application API
 
 The [Application](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html) API allows a widget to launch and access installed applications on the same device. For this, you need to set the following privileges:
 
@@ -1138,6 +1150,7 @@ d.toLocaleDateString(); /* '2/1/2013' */
 d.toLocaleTimeString(); /* '7:38:05 AM' */
 ```
 
+<a name="debug"></a>
 ## Debugging
 
 You can debug and validate your Web widget. Currently, there are 2 approaches to debugging a Web widget:
@@ -1147,6 +1160,7 @@ You can debug and validate your Web widget. Currently, there are 2 approaches to
 
 The validation process checks whether a Web widget is compliant with the specifications and whether it contains unsupported HTML elements and CSS properties.
 
+<a name="consolelog"></a>
 ### Debugging with the Console Log
 
 Using the `console.log()` method is a simple and convenient way of debugging a Web widget. The following figure shows how to debug a Web widget using the Tizen Studio.
@@ -1167,6 +1181,7 @@ The following figure shows the `sbd dlog` command in action.
 
 ![Debugging messages in the terminal](./media/webwidget_debug_terminal.png)
 
+<a name="web_debug"></a>
 ### Debugging with the Web Debugger
 
 To make Web widgets lighter, debugging features may not be supported by default. In this case, take the following steps to use a built-in Web application debugger:
@@ -1183,7 +1198,7 @@ The following figure shows how to run the built-in Web debugger.
 
 In addition, you can still use the `console.log()` method as shown in the following figure.
 
-**Figure: The console.log() method**
+**Figure: The `console.log()` method**
 
 ![Web debugger](./media/webwidget_debug_web_consolelog.png)
 
@@ -1199,6 +1214,7 @@ The following figure shows the `sdb dlog` command in action.
 
 ![Debugging messages in the terminal](./media/webwidget_debug_web_terminal.png)
 
+<a name="validate"></a>
 ### Validating a Web Widget
 
 You can validate a Web widget using the following validators:
@@ -1207,7 +1223,7 @@ You can validate a Web widget using the following validators:
 - CSS validator
 - JS validator
 
-You can enable or disable these validators in the application preferences. Go to **Windows > Preferences > Tizen Studio > Web > WebWidget**, and check the applicable boxes.
+You can enable or disable these validators in the application preferences. Go to **Windows &gt; Preferences &gt; Tizen Studio &gt; Web &gt; WebWidget**, and check the applicable boxes.
 
 **Figure: Web widget validation**
 
@@ -1215,7 +1231,7 @@ You can enable or disable these validators in the application preferences. Go to
 
 The validation is performed automatically when the project or the package is built, or when the application is run.
 
-When the validation is complete, its results are shown in the **Problems** view. If the view is not displayed, go to **Window > Show view > Problems**, or use the keyboard shortcut **Shift + Alt + Q + X**.
+When the validation is complete, its results are shown in the **Problems** view. If the view is not displayed, go to **Window &gt; Show view &gt; Problems**, or use the keyboard shortcut **Shift + Alt + Q + X**.
 
 **Figure: Web widget validation result**
 
@@ -1576,9 +1592,6 @@ After removal, no corresponding event is fired because no event is considered ne
 
 For the Web widget file and image size limits, see [Performance Considerations](#performance).
 
-
 ## Related Information
 - Dependencies
   - Tizen 2.3.2 for Wearable
-
-- [Tizen Wearable Web Widget Specification](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/wearable_widget/web_widget.html)

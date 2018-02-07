@@ -1,22 +1,24 @@
 # Button
 
-The NUI button controls include various button types:
+A button is a NUI control that the user can press in order to operate it. You can create push buttons, check box buttons, radio buttons, and toggle buttons. All different buttons are implemented through the `Tizen.NUI.UIComponents.Button` base class.
 
--   `PushButton` changes its appearance when pressed, and returns to its original appearance when released.
--   `Checkbox` can be checked or unchecked.
--   `Radio` button has 2 states, selected and unselected. Usually radio buttons are grouped, and only 1 radio button in a group can be selected at a given time.
--   `Toggle` button allows the user to switch a feature on or off. Toggle buttons also support tooltips.
-
-The `Button` class is the base class for the button UI components.
+A button can be selectable, disabled, and togglable. These states can be set with the `Toggable` and `Selected` properties of the `Tizen.NUI.UIComponents.Button` class and the `Disabled` property of the [Tizen.NUI.BaseComponents.View](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.View.html) class.
 
 <a name="creation"></a>
-## Creating a Button
+## Creating Buttons
 
-To create a button:
+To create various button controls:
 
--   Create a push button.
+-   Push button
 
-    In the following example, the button is added to a Table View UI component:
+    The [Tizen.NUI.UIComponents.PushButton](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.UIComponents.PushButton.html) class allows you to create a button that can be operated by pressing it. A push button changes its appearance when pressed and returns to its original appearance when released.
+
+    **Figure: Push button**
+
+    ![Push button](media/pushbutton.png)
+
+    To create a push button and add it to a `TableView` UI component:
+
 
     ```
     private TableView _contentContainer;
@@ -24,64 +26,89 @@ To create a button:
     _window = Window.Instance;
     _contentContainer = new TableView(6, 5);
 
-    // Other UI components
+    /// Other UI components
 
     PushButton button = new PushButton();
-    button.LabelText = "Process";
+    button.LabelText = "Unselected";
     button.ParentOrigin = ParentOrigin.BottomLeft;
 
-    _contentContainer.AddChild(button, new TableView.CellPosition(....);
+    _contentContainer.AddChild(button, new TableView.CellPosition(...);
     _window.Add(_contentContainer);
     ```
 
-- Create a checkbox:
+-   Check box button
+
+    The [Tizen.NUI.UIComponents.CheckBoxButton](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.UIComponents.CheckBoxButton.html) class allows you to create a check box button, which can be checked or unchecked.
+
+    **Figure: CheckBoxButton**
+
+    ![Check box button](media/checkbutton.png)
+
+    A check box button triggers all 4 [button events](#events), but often you can simply handle the `StateChanged` event to be notified when the button changes its state to selected or unselected.
+
+    To create a check box button:
 
     ```
     CheckBoxButton checkBoxbutton = new CheckBoxButton();
-    checkBoxbutton.LabelText = "Yes";
+    checkBoxbutton.LabelText = "check 1";
     checkBoxbutton.BackgroundColor = Color.White;
     ```
 
-- Create a group of radio buttons:
+-   Radio button
+
+    The [Tizen.NUI.UIComponents.RadioButton](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.UIComponents.RadioButton.html) class allows you to create a radio button with 2 states: selected and unselected.
+
+    **Figure: Radio button**
+
+    ![Radio button](../../images/radiobutton.png)
+
+    Usually, radio buttons are grouped. In each group, only 1 radio button can be selected at a given time. You can use the `StateChanged` event to check when the radio button is selected.
+
+    To create a group of radio buttons:
 
     ```
     View radioGroup = new View();
     radioGroup.SetParentOrigin.Centre;
 
     RadioButton button1 = new RadioButton();
-    button1.LabelText = "Yes";
+    button1.LabelText = "Select enabled";
     button1.Selected = true;
     radioGroup.Add(button1);
 
     RadioButton button2 = new RadioButton();
-    button2.LabelText = "No";
+    button2.LabelText = "Select disabled";
     radioGroup.Add(button2);
     ```
 
-- Create a toggle button:
+-   Toggle button
+
+    The [Tizen.NUI.ToggleButton](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.ToggleButton.html) class allows you to create a button with which the user can switch a feature on or off. Toggle buttons also support tooltips.
+
+    **Figure: Toggle button**
+
+    ![Toggle button](../../images/togglebutton.png)
+
+    To create a toggle button:
 
     ```
     ToggleButton toggleButton = new ToggleButton();
     ```
 
-    <a name="states"></a>
-## Button States
-
-Each button can be in the `selectable`, `disabled`, and `togglable` states.
-
-The `Button` class provides the `Toggable` and `Selected` properties. The `View` class provides the `Disabled` property.
-
 <a name="events"></a>
-## Button Events
+## Handling Button Events
 
-There are 4 events associated with the `Button` class:
+User actions on a button trigger events, which you can react to by defining event handlers. The following table lists the events provided by the [Tizen.NUI.UIComponents.Button](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.UIComponents.Button.html) class.
 
--   `Clicked`: The button is touched, and the touch point does not leave the boundary of the button.
--   `Pressed`: The button is touched.
--   `Released`: The button is touched, and the touch point leaves the boundary of the button.
--   `StateChanged`: The button state is changed.
+**Table: Button events**  
 
-For example, to add an event handler to the `Clicked` event of a push button:
+| Event |  Description |
+|----|----|
+|  `Clicked` |     Button is touched, and the touch point does not leave the boundary of the button |
+| `Pressed` |   Button is touched |
+| `Released` |   Button is touched, and the touch point leaves the boundary of the button |
+| `StateChanged` |  Button state is changed |
+
+For example, to add an event handler for the `Clicked` event on a push button:
 
 ```
 pushButton.Clicked += (obj, e) =>
@@ -93,34 +120,31 @@ pushButton.Clicked += (obj, e) =>
 };
 ```
 
-Events do not trigger if the `Disabled` property of the button is set to `true`.
+Some button properties can modify the event triggering logic:
 
-The `Button` class provides the following properties which modify the triggered events:
-
--   If the `AutoRepeating` property is set to `true`, the `Pressed`, `Released`, and `Clicked` events are fired at regular intervals while the button is touched.
-
-    The interval times can be modified with the `InitialAutoRepeatingDelay` and `NextAutoRepeatingDelay` properties.
-
-    A togglable button cannot be autorepeated. If the `AutoRepeating` property is set to `true`, the `Togglable` property is set to `false` but no event is fired.
-
-- If the `Togglable` property is set to `true`, a `StateChanged` event is fired with the selected state.
-
-For a checkbox, all 4 events are available, though usually only the `StateChanged` event is used to notify when the button changes its state to selected or unselected.
-
-For a radio button, use the `StateChanged` event to check when the radio button is selected.
+-   If a button's `Disabled` property is `true`, its events are not triggered.
+-   While a button is touched, if the button's `AutoRepeating` property is `true`, the `Pressed`, `Released`, and `Clicked` events are fired at regular intervals. You can modify the time interval using the `InitialAutoRepeatingDelay` and `NextAutoRepeatingDelay` properties.
+-   If the `Togglable` property is set to `true`, a `StateChanged` event is fired with the selected state.
+-   The `Togglable` and `AutoRepeating` properties cannot both be `true`. If the `AutoRepeating` property is set to `true`, the `Togglable` property is set to `false` but no event is fired.
 
 <a name="visuals"></a>
-## Button Visuals
+## Defining Button Visuals
 
-Visuals provide reusable rendering logic which can be used by all controls. Images and icons are added to buttons using visuals.
+You can add images or icons to buttons using [visuals](visuals.md). Visuals provide reusable rendering logic which can be used by all controls. If the button has a text label, it is always shown over the visual.
 
-The button's appearance can be modified by setting properties for the various state visuals. A control has 3 states: `NORMAL`, `FOCUSED`, and `DISABLED`. Buttons have substates: `SELECTED` and `UNSELECTED`. Each state and substate needs to have a visual defined for it. A visual can be shared between states.
+To modify a button's appearance, set the visual properties for each state:
 
-When the button pressed, the `unselected` visuals are replaced by the `selected` visuals. The text label is always placed on the top of all images.
+-   A control has 3 states: `NORMAL`, `FOCUSED`, and `DISABLED`.
 
-When the button is disabled, the background, button, and selected visuals are replaced by their `disabled` counterparts.
+    When the button is disabled, the background, button, and selected visuals are replaced by their `DISABLED` counterparts.
 
-The following example illustrates the toggle button `StateVisuals` property, which has visuals for each state:
+-   Button controls also have 2 substates for each state: `SELECTED` and `UNSELECTED`.
+
+    When a button is pressed, the `UNSELECTED` visuals are replaced by the `SELECTED` visuals.
+
+A visual must be defined for each state and substate. You can share the same visual across multiple states.
+
+The following toggle button defines its state visuals as an array in the `StateVisuals` property:
 
 ```
 ToggleButton toggleButton = new ToggleButton();
@@ -137,102 +161,70 @@ tooltips.Add(new PropertyValue("State B"));
 tooltips.Add(new PropertyValue("State C"));
 toggleButton.Tooltips = tooltips;
 
-toggleButton.WidthResizePolicy  = ResizePolicyType.FillToParent;
+toggleButton.WidthResizePolicy = ResizePolicyType.FillToParent;
 toggleButton.HeightResizePolicy = ResizePolicyType.FillToParent;
 ```
 
-For more information on button styling with visuals, see [Styling Controls with JSON](styling-controls-with-JSON.md).
+For more information on styling buttons with visuals using a JSON stylesheet, see [Styling Controls with JSON](styling_controls_with_JSON.htm).
 
+<a name="tooltips"></a>
+## Defining Tooltips
 
-## Tooltips
+To add a tooltip to a button:
 
-
-There are various methods of adding tooltips to a button:
-
--   Use the `TooltipText` property, which is inherited from the `View` class:
+-   Use the `TooltipText` property, which is inherited from the [Tizen.NUI.BaseComponents.View](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.View.html) class:
 
     ```
     PushButton button = new PushButton();
 
-    // Add a simple text-only tooltip
+    /// Add a simple text-only tooltip
     button.TooltipText = "Simple Tooltip";
     ```
 
-- Use a property array, as shown in the example in [Button Visuals](#visuals).
-- Property maps
+-   Use a property array:
 
-    In the following example, an array of property maps is created for a tooltip with 1 icon and 1 text visual:
+    ```
+    ToggleButton toggleButton = new ToggleButton();
+
+    PropertyArray tooltips = new PropertyArray();
+    tooltips.Add(new PropertyValue("State A"));
+    tooltips.Add(new PropertyValue("State B"));
+    tooltips.Add(new PropertyValue("State C"));
+    toggleButton.Tooltips = tooltips;
+    ```
+
+-   Use property maps. The `Tooltip` property is inherited from the `Tizen.NUI.BaseComponents.View` class.
+
+    To define a tooltip with an icon and a text visual, create an array of property maps:  
 
     ```
     PushButton button = new PushButton();
 
-    // Create a property map for a tooltip with 1 icon and 1 text
+    /// Create a property map for a tooltip with 1 icon and 1 text
     PropertyArray iconTooltipContent = new Property.Array();
 
-    // Icon
+    /// Icon
     PropertyMap iconVisual = new PropertyMap();
     iconVisual.Add(Constants.Visual.Property.Type, new PropertyValue((int)Constants.Visual.Type.Image))
               .Add(Constants.ImageVisualProperty.URL, new PropertyValue("./media/star-highlight.png"));
 
     iconTooltipContent.Add(new PropertyValue(iconVisual));
 
-    // Text
+    /// Text
     PropertyMap textVisual = new PropertyMap();
     textVisual.Add(Constants.Visual.Property.Type, new PropertyValue((int)Constants.Visual.Type.Text))
               .Add(Constants.TextVisualProperty.Text, new PropertyValue("Tooltip with Icon"));
 
     iconTooltipContent.Add(new PropertyValue(textVisual));
 
-    // Icon tooltip
+    /// Icon tooltip
     PropertyMap iconTooltip = new PropertyMap();
     iconTooltip.Add(Constants.Tooltip.Property.Content, new Property.Value(iconTooltipContent))
                .Add(Constants.Tooltip.Property.Tail, new PropertyValue(true));
 
-    // Add the tooltip with icon and text to the push button
+    /// Add the tooltip with icon and text to the push button
     button.Tooltip = iconTooltip;
     ```
-
-    The `Tooltip` property is inherited from the *View* class.
-
-<a name="properties"></a>
-## Button Properties
-
-The `Button` class has the following properties:
-
-| Property                             | Type      | Description                              |
-|------------------------------------|---------|----------------------------------------|
-| `UnselectedVisual`                   | `Map`     | Map describing a visual, changes depending on the button state |
-| `SelectedVisual`                     | `Map`     | Map describing a visual, changes depending on the button state |
-| `DisabledUnselectedVisual`           | `Map`     | Map describing a visual, changes depending on the button state |
-| `DisabledSelectedVisual`             | `Map`     | Map describing a visual, changes depending on the button state |
-| `UnselectedBackgroundVisual`         | `Map`     | Map describing a visual, changes depending on the button state |
-| `SelectedBackgroundVisual`           | `Map`     | Map describing a visual, changes depending on the button state |
-| `DisabledUnselectedBackgroundVisual` | `Map`     | Map describing a visual, changes depending on the button state |
-| `DisabledSelectedBackgroundVisual`   | `Map`     | Map describing a visual, changes depending on the button state |
-| `LabelRelativeAlignment`             | `Align`   | Position of the text label in relation to foreground/icon when both are present |
-| `LabelPadding`                       | `Vector4` | Padding area around the label (if present) |
-| `ForegroundVisualPadding`            | `Vector4` | Padding area around the foreground/icon visual (if present) |
-| `AutoRepeating`                      | `bool`    | Toggles the autorepeating state. For more information, see [Button Events](#events). |
-| `InitialAutoRepeatingDelay`          | `float`   | Initial autorepeating delay in seconds (default: 0.15 s) |
-| `NextAutoRepeatingDelay`             | `float`   | Continuous autorepeating delay in seconds (default: 0.05 s) |
-| `Togglable`                          | `bool`    | If the `Togglable` property is set to `true`, the `AutoRepeating` property is set to `false`. |
-| `Selected`                           | `bool`    | Sets a togglable button as either selected or unselected |
-| `UnselectedColor`                    | `Color`   | Gets/sets the unselected color           |
-| `SelectedColor`                      | `Color`   | Gets/sets the selected color             |
-| `Label`                              | `Map`     | Button text label                        |
-| `LabelText`                          | `string`  | Button text label                        |
-
-> **Note**   
-> If the `AutoRepeating` property is set to `true`, the `Togglable` property is set to `false`.
-
-The **ToggleButton** class has the following additional properties:
-
-| Property            | Type    | Description                              |
-|-------------------|-------|----------------------------------------|
-| `StateVisuals`      | `Array` | Array of property-maps, or a property array of strings. The property maps expect a description of a visual, and the strings represent image URLs. |
-| `Tooltips`          | `Array` | Array of toggle state tooltip strings. Each tooltip string must match a toggle state |
-| `CurrentStateIndex` | `int`   | Current state                            |
-
 
 ## Related Information
 * Dependencies
