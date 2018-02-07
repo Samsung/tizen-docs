@@ -1,25 +1,34 @@
 # Scaling
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 Supporting UI scalability in a user interface toolkit means that container components and UI components are scaled properly when the resolution or screen size changes. The Elementary library allows you to manipulate scaling on a per-UI-component basis using a scale factor based on the screen resolution, size, and profile configurations.
 
 Tizen native applications can run on different types of devices, such as wearable, phone, tablet, and TV. Tizen also supports various resolutions (WVGA - XQXGA) with the same layouts and resources. However, remember that you must always polish your work to create an optimal application for each device.
 
 The main scalability features are:
 
-- [Multiple Screen Support](./multiple-screens-n.md) Enables you to design applications for different kinds of screens.
-- [Scalability Support](./scalability-n.md) Enables you to design applications so that their UI can be scaled for diverse devices without problems.
-- [Resource Fallback Support](./resource-fallback-n.md) Enables you to design applications which can use alternative resources for the device display state.
+- [Multiple Screen Support](./multiple-screens.md)
+
+  Enables you to design applications for different kinds of screens.
+
+- [Scalability Support](./scalability.md)
+
+  Enables you to design applications so that their UI can be scaled for diverse devices without problems.
+
+- [Resource Fallback Support](./resource-fallback.md)
+
+  Enables you to design applications which can use alternative resources for the device display state.
 
 ## Scaling UI Components
 
 Through its configuration (Elementary Config API in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Elm__Config.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Elm__Config.html) applications), Elementary provides a way to scale UI components with 2 different parameters:
 
-- The `finger_size` parameter is used when the interactive (clickable or editable) zones of the UI components need to be scaled in order to be comfortably used with a finger.The `finger_size` parameter scales UI components based on the user's finger size. This is useful when using a touch screen with a finger rather than with a stylus. The finger size parameter is in pixels, and determines the minimum size of a square on the screen that is reliably hittable with a finger.The global finger size is set with the `elm_config_finger_size_set()` function. This adjusts the size and hit area of the UI components so that they are easy to hit with a finger. The current value is retrieved with the `elm_config_finger_size_get()` function. The finger size is always in pixels.To increase the current global finger size by 20 px:
+- The `finger_size` parameter is used when the interactive (clickable or editable) zones of the UI components need to be scaled in order to be comfortably used with a finger.
+
+  The `finger_size` parameter scales UI components based on the user's finger size. This is useful when using a touch screen with a finger rather than with a stylus. The finger size parameter is in pixels, and determines the minimum size of a square on the screen that is reliably hittable with a finger.
+
+  The global finger size is set with the `elm_config_finger_size_set()` function. This adjusts the size and hit area of the UI components so that they are easy to hit with a finger. The current value is retrieved with the `elm_config_finger_size_get()` function. The finger size is always in pixels.
+
+  To increase the current global finger size by 20 px:
 
   ```
   Evas_Coord finger_size;
@@ -34,9 +43,13 @@ Through its configuration (Elementary Config API in [mobile](../../../../../org.
   elm_config_finger_size_set(finger_size + 20);
   ```
 
-  - The `scale` parameter is responsible for scaling readable parts of a UI component (such as text or icons), so that it is more visible in the user interface.The `scale` parameter only scales the readable areas of the UI component. Parts that must stay pixel-perfect, such as the highlights, shading, textures, and decorations, stay as they are.The `elm_config_scale_set()` function is used to set the global scaling factor that affects all UI components. It is also possible to use the `elm_object_scale_set()` function to set the scaling factor on a given Elementary UI component and all its children.
+- The `scale` parameter is responsible for scaling readable parts of a UI component (such as text or icons), so that it is more visible in the user interface.
 
-	> **Note**
+  The `scale` parameter only scales the readable areas of the UI component. Parts that must stay pixel-perfect, such as the highlights, shading, textures, and decorations, stay as they are.
+
+    The `elm_config_scale_set()` function is used to set the global scaling factor that affects all UI components. It is also possible to use the `elm_object_scale_set()` function to set the scaling factor on a given Elementary UI component and all its children.
+
+	> **Note**  
 	> The scaling factor is multiplicative: if a child already has a scale size set, it is multiplied by its parent's scale size.
 
     The following example sets the global scaling factor to 2.0 and the scaling factor of an existing Elementary button object to 2.0. As a result, the button appears as if it had a 4.0 scaling factor, while the rest of the application is displayed with a 2.0 scaling factor.
@@ -66,8 +79,8 @@ The following figure shows the visual result of the finger size and scaling fact
 
 ![scalability example](./media/scale_3_finger_50.png)![Scale increased (5.00)](./media/scale_5_finger_50.png)![Finger size increased (150 px)](./media/scale_3_finger_150.png)
 
-> **Note**
-> It is up to the theme (Edje file) to use the `scale` parameter to define which parts are scalable. This is something that needs to be taken into account when developing a new Edje theme. For more information on how to set the scalability in EDC, see [Layouting with EDC](./learn-edc-intro-n.md).
+> **Note**  
+> It is up to the theme (Edje file) to use the `scale` parameter to define which parts are scalable. This is something that needs to be taken into account when developing a new Edje theme. For more information on how to set the scalability in EDC, see [Layouting with EDC](./learn-edc-intro.md).
 
 ### Creating Scalable EDC Objects
 
@@ -170,3 +183,8 @@ When you make an object scalable, you must also consider how any images within t
   **Figure: Image border example**
 
   ![Image border example](./media/border.png)
+
+## Related Information
+- Dependencies  
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

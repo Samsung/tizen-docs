@@ -10,7 +10,7 @@ A window is created automatically when you create a Tizen native UI application 
 
 **Example: Win use case**
 
- ![Window](./media/window_mn.png)
+![Window](./media/window_mn.png)
 
 ```
 static void
@@ -64,11 +64,11 @@ win_back_cb(void *data, Evas_Object *obj, void *event_info)
 
 The basic template code includes the following steps:
 
-1. Add a window with the `elm_win_util_standard_add()` function.  
+1. Add a window with the `elm_win_util_standard_add()` function.
 
- The first parameter is the name of the window used by the window manager for identifying the window uniquely amongst all the windows within the application (and all instances of the application). The second parameter is the title of the window.  
+   The first parameter is the name of the window used by the window manager for identifying the window uniquely amongst all the windows within the application (and all instances of the application). The second parameter is the title of the window.
 
- The `elm_win_util_standard_add()` function is a shortcut of the `elm_win_add()`, `elm_win_title_set()`, and `elm_bg_add()` functions. It creates a basic window with a title and adds a standard background to the window.
+   The `elm_win_util_standard_add()` function is a shortcut of the `elm_win_add()`, `elm_win_title_set()`, and `elm_bg_add()` functions. It creates a basic window with a title and adds a standard background to the window.
 
    ```
    Evas_Object *win;
@@ -85,17 +85,17 @@ The basic template code includes the following steps:
    evas_object_show(bg);
    ```
 
-2. Enable auto deletion with the `elm_win_autodel_set()` function.  
+2. Enable auto deletion with the `elm_win_autodel_set()` function.
 
- When closing the window in any way outside the program control, a `delete,request` signal is emitted to indicate that this event occurred. If you enable auto deletion, the window is automatically destroyed after the signal is emitted. If auto deletion is disabled, the window is not destroyed and the program has to handle it.
+   When closing the window in any way outside the program control, a `delete,request` signal is emitted to indicate that this event occurred. If you enable auto deletion, the window is automatically destroyed after the signal is emitted. If auto deletion is disabled, the window is not destroyed and the program has to handle it.
 
 3. Register a callback function connected to the `delete,request` signal. You can register extra [callback](#callbacks) functions, if necessary.
 
 4. Show or hide an indicator with the `elm_win_indicator_mode_set()` function.
 
-5. Add a conformant to the window with the `elm_win_resize_object_add()` function.  
+5. Add a conformant to the window with the `elm_win_resize_object_add()` function.
 
- In most cases, you want the content of the window to be resized every time the window is resized due to rotation. To match the content size with the window size, make the content expand to fit the container size with the `evas_object_size_hint_weight_set()`function and add it to the window with the `elm_win_resize_object_add()` function.
+   In most cases, you want the content of the window to be resized every time the window is resized due to rotation. To match the content size with the window size, make the content expand to fit the container size with the `evas_object_size_hint_weight_set()`function and add it to the window with the `elm_win_resize_object_add()` function.
 
    ```
    Evas_Object *win;

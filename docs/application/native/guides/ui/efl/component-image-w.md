@@ -83,12 +83,12 @@ To configure the image component:
 To receive notifications about the image events, listen for the following signals:
 
 - `drop`: An image typed object is dropped onto the object in question.  
-The `event_info` callback parameter is the path to that image file.
+  The `event_info` callback parameter is the path to that image file.
 
 - `clicked`: The image is clicked.  
-The `event_info` callback parameter is `NULL`.
+  The `event_info` callback parameter is `NULL`.
 
-> **Note**    
+> **Note**  
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 To register and define a callback for the `clicked` signal:

@@ -1,20 +1,15 @@
 # Multiple Screen Support
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 Tizen is available on various devices, which support different screen sizes and resolutions. When developing Tizen applications, you must take this into account if you want your application to function well on various device models.
 
-Before [implementing multiple screen support](./multiple-screens-n.md#apply), make sure you are familiar with the [key concepts of multiple screen support](./multiple-screens-n.md#key_concepts).
+Before [implementing multiple screen support](#applying-the-base-scale), make sure you are familiar with the [key concepts of multiple screen support](#key-concepts).
 
 ## Key Concepts
 
 Before building a native application for multiple resolutions using Tizen native UI framework, make sure you are familiar with the following concepts:
 
-- [Multi-scale](./multiple-screens-n.md#multi)
-- [Base scale](./multiple-screens-n.md#base)
+- [Multi-scale](#multi-scale-in-the-tizen-native-ui-framework)
+- [Base scale](#base-scale)
 
 ### Multi-scale in the Tizen Native UI Framework
 
@@ -28,17 +23,17 @@ The following figure illustrates a 50 px wide object in a 1280 px wide monitor. 
 
 **Figure: Scaling from desktop to mobile**
 
-![Scaling from desktop to mobile](./media/scaling.png) 
+![Scaling from desktop to mobile](./media/scaling.png)
 
 ### Base Scale
 
-The object is multiplied by the scale specified in the system to show the application in a proper size on other devices. The scaling must be based on the scale 1.0, or the scale that the application is based on, which must then be defined in the [EDC](./multiple-screens-n.md#set_edc) and [C](./multiple-screens-n.md#set_c) files. This predefined scale is called the **base scale**.
+The object is multiplied by the scale specified in the system to show the application in a proper size on other devices. The scaling must be based on the scale 1.0, or the scale that the application is based on, which must then be defined in the [EDC](#setting-the-base-scale-in-the-edc-file) and [C](#setting-the-base-scale-in-the-c-code) files. This predefined scale is called the **base scale**.
 
 The size of the scalable object is multiplied with the device scale value, as illustrated in the following figure. If the scalable object has a size of 10 in the base scale 1.0, it is created with that same size 10 on a device with scale 1.0. On a device with scale 2.0, the object size is 20, and on a device with scale 4.0, the object size is 40.
 
 **Figure: Base scale**
 
-![Base scale](./media/base_scale.png) 
+![Base scale](./media/base_scale.png)
 
 The middle object in the above figure has a base scale 2.0. To calculate the size of the scalable object on a device when the base scale is something other than 1.0, use the following formula:
 
@@ -56,8 +51,8 @@ Basically, if the object size is 20 with base scale 2.0, the object size on a de
 
 To create an application that supports multiple screen sizes, you must learn how to set the base scale in:
 
-- [EDC file](./multiple-screens-n.md#set_edc)
-- [C code](./multiple-screens-n.md#set_c)
+- [EDC file](#setting-the-base-scale-in-the-edc-file)
+- [C code](#setting-the-base-scale-in-the-c-code)
 
 ### Calculating the Base Scale
 
@@ -74,7 +69,7 @@ The following table lists the profile factors for various profiles.
 **Table: Profile factors**
 
 | Profile                                  | Profile factor |
-| ---------------------------------------- | -------------- |
+|----------------------------------------|--------------|
 | Wearable                                 | 0.4            |
 | Mobile - small screen (until 4.4 inch)   | 0.7            |
 | Mobile - normal screen (4.5 inch and upwards) | 0.8            |
@@ -108,7 +103,7 @@ collections {
 }
 ```
 
-> **Note**
+> **Note**  
 > The base scale for the WVGA resolution is 1.8 and for the HD resolution 2.4.
 
 ### Setting the Base Scale in the C Code
@@ -164,8 +159,13 @@ The following table shows some examples of pixel conversions.
 **Table: Pixel conversions**
 
 |                        | Base | Low-density device (such as WVGA, 4 inch) | High-density device (such as HD, 5 inch) |
-| ---------------------- | ---- | ---------------------------------------- | ---------------------------------------- |
+|----------------------|----|----------------------------------------|----------------------------------------|
 | DPI                    | 129  | 233                                      | 294                                      |
 | A pixel before scaling | 100  | 100                                      | 100                                      |
 | Real physical pixel    | 100  | 180                                      | 260                                      |
 | Actual base scale      | 1.0  | 1.8                                      | 2.6                                      |
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

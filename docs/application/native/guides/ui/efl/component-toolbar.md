@@ -50,9 +50,9 @@ To use a toolbar component in your application:
 
 4. Set the toolbar as the content of a container component. A toolbar is usually used to show a menu inside a naviframe.
 
-5. Register the [callback](#callbacks) functions.  
+5. Register the [callback](#callbacks) functions.
 
- The following example shows how to define and register a callback for the `clicked` signal:
+   The following example shows how to define and register a callback for the `clicked` signal:
 
    ```
    evas_object_smart_callback_add(toolbar, "clicked", clicked_cb, data);
@@ -72,7 +72,7 @@ The following example shows a simple use case of the toolbar component.
 
 **Example: Toolbar use case**
 
- ![Toolbar](./media/toolbar1.png)
+![Toolbar](./media/toolbar1.png)
 
 ```
 Evas_Object *win;

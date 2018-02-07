@@ -1,13 +1,8 @@
 # Program Block
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 The `program` block defines how your interface reacts to events. Programs can change the part state or trigger other events.
 
-The events are handled as signals, which can be emitted between the application logic (code) and UI (theme). For more information, see [Signal Handling](./learn-edc-signal-handling-n.md).
+The events are handled as signals, which can be emitted between the application logic (code) and UI (theme). For more information, see [Signal Handling](./learn-edc-signal-handling.md).
 
 **Figure: Program block**
 
@@ -40,9 +35,13 @@ program {
 }
 ```
 
-- `name [program name]`Sets the symbolic name of the program as a unique identifier.
+- `name [program name]`
 
-- `signal [signal name]`Sets the signals that cause the program to run. The signal received must match the specified source to run. There can be several signals, but only one signal keyword per program can be used. Also, there are some predefined signals for touch event handling. The predefined signals are:
+  Sets the symbolic name of the program as a unique identifier.
+
+- `signal [signal name]`
+
+  Sets the signals that cause the program to run. The signal received must match the specified source to run. There can be several signals, but only one signal keyword per program can be used. Also, there are some predefined signals for touch event handling. The predefined signals are:
 
   - `hold,on`: Holding on the mouse event matching the source that starts the program
   - `hold,off`: Holding off the mouse event matching the source that starts the program
@@ -59,13 +58,21 @@ program {
   - `drag,stop`: Stopping a drag of the mouse in the matching source that starts the program. This signal works only in the `draggable` part.
   - `drag`: Dragging the mouse in the matching source that starts the program. This signal works only in the `draggable` part.
 
-- `source [source name]`Sets the source of an accepted signal. There can be several signals, but only one source keyword per program can be used. For example, `source: button-*` means that signals from any part or program named `button-*` are accepted.
+- `source [source name]`
 
-- `filter [part] [state]`Filters the signals to be only accepted if the part is in the `[state]` state. Only 1 filter per program can be used. If the `[state]` parameter is not given, the source of the event is used instead.
+  Sets the source of an accepted signal. There can be several signals, but only one source keyword per program can be used. For example, `source: button-*` means that signals from any part or program named `button-*` are accepted.
 
-- `in [from] [range]`Waits `[from]` seconds before executing the program and add a random number of seconds (from 0 to `[range]`) to the total waiting time.
+- `filter [part] [state]`
 
-- `action [type] (param1) (param2) (param3) (param4)`Sets the action to be performed by the program. The valid actions (only 1 can be specified) are:
+  Filters the signals to be only accepted if the part is in the `[state]` state. Only 1 filter per program can be used. If the `[state]` parameter is not given, the source of the event is used instead.
+
+- `in [from] [range]`
+
+  Waits `[from]` seconds before executing the program and add a random number of seconds (from 0 to `[range]`) to the total waiting time.
+
+- `action [type] (param1) (param2) (param3) (param4)`
+
+  Sets the action to be performed by the program. The valid actions (only 1 can be specified) are:
 
   - `STATE_SET`: Set the `target part` state as `target state`
   - `ACTION_STOP`: Stop the ongoing transition
@@ -84,7 +91,9 @@ program {
   - `PLAY_TONE "tone name" duration_in_seconds (Range 0.1 to 10.0)`: Play a predefined tone of a specific duration
   - `PLAY_VIBRATION "sample name" repeat (repeat count)`
 
-- `transition [type] [length] (interp val 1) (interp val 2) (option)`Determines how transitions occur using the `STATE_SET` action. The `[type]` parameter is the style of the transition and the `[length]` parameter is a double specifying the number of seconds in which to perform the transition. The valid types are:
+- `transition [type] [length] (interp val 1) (interp val 2) (option)`
+
+  Determines how transitions occur using the `STATE_SET` action. The `[type]` parameter is the style of the transition and the `[length]` parameter is a double specifying the number of seconds in which to perform the transition. The valid types are:
 
   - `LIN` or `LINEAR`
   - `SIN` or `SINUSOIDAL`
@@ -107,9 +116,18 @@ program {
   - The valid options are:
     - `CURRENT`: Causes the object to move from its current position. Can be used as the last parameter of any transition type.
 
-- `target [target]`Sets the program or part on which the specified action acts.
+- `target [target]`
 
-- `after [after]`Determines the program that is run after the current program completes. The source and signal parameters of a program run as an `after` are ignored. Multiple `after` statements can be specified per program.
+  Sets the program or part on which the specified action acts.
+
+- `after [after]`
+
+  Determines the program that is run after the current program completes. The source and signal parameters of a program run as an `after` are ignored. Multiple `after` statements can be specified per program.
 
 > **Note**	
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

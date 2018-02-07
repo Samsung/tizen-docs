@@ -53,6 +53,7 @@ You can set a style for the button:
   - `orange`
   - `red`
   - `nextdepth`
+
 - The following styles are available for a circular screen:
   - `default`
   - `bottom`

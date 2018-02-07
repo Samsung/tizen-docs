@@ -32,9 +32,8 @@ When shown, the ctxpopup automatically selects an area inside its parent object'
 
 The ctxpopup has the following styles for the rectangular screen:
 
-- `default`
-
-The ctxpopup has the following styles for the circular screen:
+- `default`  
+  The ctxpopup has the following styles for the circular screen:
 
 - `select_mode`
 - `select_mode/top`, `select_mode/bottom`These 2 styles can be used as a pair.

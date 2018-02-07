@@ -1,11 +1,6 @@
 # Resource Fallback Support
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
-Tizen native applications can run on different types of devices, such as wearable, phone, tablet, and TV. Tizen also supports various resolutions (WVGA ~ XQXGA) and resources. To take advantage of these features, you can handle resources in the [Resource Manager](http://org.tizen.studio/html/native_tools/resource_manager_n.htm) view in the Tizen Studio.
+Tizen native applications can run on different types of devices, such as wearable, phone, tablet, and TV. Tizen also supports various resolutions (WVGA ~ XQXGA) and resources. To take advantage of these features, you can handle resources in the [Resource Manager](../../../../tizen-studio/native-tools/resource-manager.md) view in the Tizen Studio.
 
 In addition to the possibilities provided by the **Resource Manager** view, you can use Edje to provide sets of alternative images in your application.
 
@@ -14,13 +9,11 @@ The image set elements are used to display a specific image on the screen depend
 The image sets can have the following properties:
 
 - `image: image-name`Specifies the name of the image file.
-- `size: minw minh maxw maxh`Specifies the minimum and maximum size that causes a specified image to be selected and shown. 
+- `size: minw minh maxw maxh`Specifies the minimum and maximum size that causes a specified image to be selected and shown.
 
 **Example: Image set implementation**
 
-| ![Image set](./media/fallback_imageset.png) |
-| ---------------------------------------- |
-|                                          |
+ ![Image set](./media/fallback_imageset.png) 
 
 ```
 collections {
@@ -91,3 +84,8 @@ collections {
    }
 }
 ```
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

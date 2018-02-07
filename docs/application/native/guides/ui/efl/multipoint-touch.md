@@ -1,10 +1,5 @@
 # Tracking Multi-point Touch Events
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 This topic demonstrates how you can use Evas objects to paint on a canvas and track touch events.
 
 In the following example, you create a fully functional application that is able to track multiple simultaneous clicks. For every click, a black rectangle is drawn on the screen. This way it is easy to test the multi-point touch operation with the application.
@@ -233,7 +228,7 @@ create_main_view(appdata_s *ad)
 }
 ```
 
-> **Note**
+> **Note**  
 > The event types for a touch event contain the "MOUSE" keyword due to backward compatibility with Tizen 2.3. Before the multi-point touch concept was introduced, there was no difference between a single touch event and a mouse event. As a result, the single touch event used the `EVAS_CALLBACK_MOUSE_DOWN/UP/MOVE` event types.
 
 The following touch event types are supported:
@@ -242,7 +237,7 @@ The following touch event types are supported:
 - `EVAS_CALLBACK_MOUSE_UP`: Object receives the mouse/touch up event.
 - `EVAS_CALLBACK_MOUSE_MOVE`: Object receives the mouse/touch move event.
 - `EVAS_CALLBACK_MULTI_DOWN`: Object has already received the mouse/touch down event and receives the multi-mouse/touch down event.
-- `EVAS_CALLBACK_MULTI_UP`: Object receives the multi-mouse/touch up event. 
+- `EVAS_CALLBACK_MULTI_UP`: Object receives the multi-mouse/touch up event.
 - `EVAS_CALLBACK_MULTI_MOVE`: Object receives the multi-mouse/touch move event.
 
 The following example shows a scenario with an image and an `EVAS_CALLBACK_MOUSE_UP` event callback, where the callback is used to print out the location where a touch up event occurs over the image. The callback uses the `EVAS_EVENT_FLAG_ON_HOLD` event flag to check whether the event is usable: if the `EVAS_EVENT_FLAG_ON_HOLD` event flag is set, the event is on hold and must not be used to perform any actions.
@@ -270,3 +265,8 @@ _add_mouse_up(Evas_Object *window)
     evas_object_show(image);
 }
 ```
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

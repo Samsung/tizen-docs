@@ -1,10 +1,5 @@
 # Handling Touch Gestures
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 You can implement your application to recognize and react to different types of gestures provided by the EFL library.
 
 The Elementary library provides a gesture layer for a wide range of touch gestures, such as tap, double tap, triple tap, long tap, momentum monitoring, line, flick, zoom, and rotate, which can be used by the application to build a dynamic user interface interaction which is simple and intuitive to use.
@@ -242,7 +237,7 @@ To use the various tap gestures:
 
 The momentum gesture is used for detecting any move events on the gesture layer and getting event information to make a meaningful gesture action. The momentum gesture is used for detecting line, zoom, and rotate gestures as well.
 
-The momentum gesture states the same as in the [tap gesture](./touch-gesture-n.md#tap).
+The momentum gesture states the same as in the [tap gesture](#implementing-tap-gestures).
 
 To implement a momentum gesture:
 
@@ -361,7 +356,7 @@ You can configure some properties of the line gestures:
   Eina_Bool elm_gesture_layer_continues_enable_get(const Evas_Object *obj);
   ```
 
-The line gesture states are the same as in the [tap gesture](./touch-gesture-n.md#tap).
+The line gesture states are the same as in the [tap gesture](#implementing-tap-gestures).
 
 To create a line gesture:
 
@@ -455,11 +450,12 @@ The default value is defined in the system policy. In Tizen, it is 250 ms.
 
 ```
 /* Get or set the gesture layer flick time limit (in milliseconds) of an object */
-void elm_gesture_layer_flick_time_limit_ms_set(Evas_Object *obj, unsigned int flick_time_limit_ms);
+void elm_gesture_layer_flick_time_limit_ms_set(Evas_Object *obj,
+   unsigned int flick_time_limit_ms);
 unsigned int elm_gesture_layer_flick_time_limit_ms_get(const Evas_Object *obj);
 ```
 
-The flick gesture states and the gesture info data structures are the same as in the [line gesture](./touch-gesture-n.md#line).
+The flick gesture states and the gesture info data structures are the same as in the [line gesture](#implementing-line-gestures).
 
 To create a flick gesture:
 
@@ -509,7 +505,7 @@ void elm_gesture_layer_zoom_finger_factor_set(Evas_Object *obj, double zoom_fing
 double elm_gesture_layer_zoom_finger_factor_get(const Evas_Object *obj);
 ```
 
-The zoom gesture states are the same as in the [tap gesture](./touch-gesture-n.md#tap).
+The zoom gesture states are the same as in the [tap gesture](#implementing-tap-gestures).
 
 When using zoom gestures, pay attention to the following:
 
@@ -561,8 +557,8 @@ To create a zoom gesture:
 
    The normal zoom gesture detecting logic:
 
-   1. The gesture layer remembers the gap of each touched geometry.
-   2. When the user moves each touched point, the gesture layer calculates the gap of each touched geometry for each move event.
+   1. The gesture layer remembers the gap of each touched geometry.  
+   2. When the user moves each touched point, the gesture layer calculates the gap of each touched geometry for each move event.  
    3. If the values (gap + `zoom_distance_tolerance`, gap – `zoom_distance_tolerance`) are bigger or smaller than the first calculated gap values, the gesture layer calls the `zoom_move()` callback function with the calculated result.
 
    ```
@@ -619,7 +615,7 @@ void elm_gesture_layer_rotate_angular_tolerance_set(Evas_Object *obj, double rot
 double elm_gesture_layer_rotate_angular_tolerance_get(const Evas_Object *obj);
 ```
 
-The rotate gesture states are the same as in the [tap gesture](./touch-gesture-n.md#tap).
+The rotate gesture states are the same as in the [tap gesture](#implementing-tap-gestures).
 
 When using rotate gestures, pay attention to the following:
 
@@ -709,3 +705,8 @@ To create a rotate gesture:
        return EVAS_EVENT_FLAG_ON_HOLD;
    }
    ```
+
+## Related Information
+- Dependencies   
+   - Tizen 2.4 and Higher for Mobile
+   - Tizen 2.3.1 and Higher for Wearable

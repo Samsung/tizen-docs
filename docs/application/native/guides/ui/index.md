@@ -6,7 +6,7 @@ The UI framework is a universal, reusable software environment that provides the
 
 You can use the following user interface features in your native applications:
 
-- [Enlightenment Foundation Libraries (EFL)](efl/introduction-n.md)
+- [Enlightenment Foundation Libraries (EFL)](efl/introduction.md)
 
   You can use the EFL UI toolkit if you are creating a 2D-based Tizen native application. However, EFL supports 2.5D and 3D effects and 3D objects as well. EFL provides streamlined graphic core libraries you need to create powerful applications. EFL needs relatively low memory but provides high performance, and supports a retained mode graphics system and user-centric features, such as themes, 2D/3D effects, and accessibility. In addition, EFL supports various resolutions with the same layout, fast and small file systems, a variety of programming language bindings, and a separate UI and logic.
 
@@ -16,12 +16,12 @@ You can use the following user interface features in your native applications:
   
   DALi is multithreaded to improve performance and scalability, and enables developers to quickly create Rich UI applications with realistic effects and animations such as:
 
- + Image & Video galleries
- + Music players
- + Games
- + Maps
- + Homescreens / launch pads
- + Advanced watch faces for wearable devices
+  - Image & Video galleries
+  - Music players
+  - Games
+  - Maps
+  - Homescreens / launch pads
+  - Advanced watch faces for wearable devices
 
 ## Related Information
 - Dependencies

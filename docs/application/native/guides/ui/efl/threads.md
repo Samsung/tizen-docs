@@ -1,10 +1,5 @@
 # Using Threads
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 Threads are concurrent execution environments that are lighter than full-blown processes because they share some operating system resources. Threads make it possible to do several things at the same time while using less resources and offering simpler synchronization and data exchange compared to processes.
 
 If you move a blocking operation to a separate thread, it cannot block the event loop and keeps the user interface reactive. Blocking the event loop and using long-running callbacks means the application cannot update its graphical user interface.
@@ -23,7 +18,7 @@ These kinds of conflicts are called race-conditions: depending on which thread i
 
 The usual solution for ensuring exclusive access to shared resources is mutual exclusion: only 1 thread can operate on the data at any given time. Mutual exclusion is often implemented through locks. Before attempting to operate on a shared resource, the thread waits until it can lock something called a mutex (stands for mutual exclusion), then operates on the resource, and unlocks the mutex. Operating systems guarantee that only 1 thread can lock a mutex at a given time: this ensures that only 1 thread operates on the shared resource at one time.
 
-For more information on thread safety, see [Low-level Functions](./threads-n.md#low_level).
+For more information on thread safety, see [Low-level Functions](#low-level-functions).
 
 ## Thread Pools
 
@@ -108,7 +103,7 @@ If you are already familiar with threads, see the standard pthreads documentatio
 **Table: Locks (mutual exclusions)**
 
 | pthreads function                        | Eina equivalent        |
-| ---------------------------------------- | ---------------------- |
+|----------------------------------------|----------------------|
 | `pthread_mutex_new()`                    | `eina_lock_new()`      |
 | `pthread_mutex_destroy()`                | `eina_lock_free()`     |
 | `pthread_mutex_lock()`                   | `eina_lock_take()`     |
@@ -119,7 +114,7 @@ If you are already familiar with threads, see the standard pthreads documentatio
 **Table: Conditions (notifications when condition objects change)**
 
 | pthreads function          | Eina equivalent              |
-| -------------------------- | ---------------------------- |
+|--------------------------|----------------------------|
 | `pthread_cond_init()`      | `eina_condition_new()`       |
 | `pthread_cond_destroy()`   | `eina_condition_free()`      |
 | `pthread_cond_wait()`      | `eina_condition_wait()`      |
@@ -130,7 +125,7 @@ If you are already familiar with threads, see the standard pthreads documentatio
 **Table: RWLocks (Read-write locks, for multiple-readers/single-writer scenarios)**
 
 | pthreads function                | Eina equivalent            |
-| -------------------------------- | -------------------------- |
+|--------------------------------|--------------------------|
 | `pthread_rwlock_init()`          | `eina_rwlock_new()`        |
 | `pthread_rwlock_destroy()`       | `eina_rwlock_free()`       |
 | `pthread_rwlock_rwlock_rdlock()` | `eina_rwlock_take_read()`  |
@@ -140,7 +135,7 @@ If you are already familiar with threads, see the standard pthreads documentatio
 **Table: TLS (Thread-Local Storage)**
 
 | pthreads function       | Eina equivalent   |
-| ----------------------- | ----------------- |
+|-----------------------|-----------------|
 | `pthread_key_create()`  | `eina_tls_new()`  |
 | `pthread_key_delete()`  | `eina_tls_free()` |
 | `pthread_getspecific()` | `eina_tls_get()`  |
@@ -149,7 +144,7 @@ If you are already familiar with threads, see the standard pthreads documentatio
 **Table: Semaphores (access restrictions for a set of resources)**
 
 | pthreads function | Eina equivalent            |
-| ----------------- | -------------------------- |
+|-----------------|--------------------------|
 | `sem_init()`      | `eina_semaphore_new()`     |
 | `sem_destroy()`   | `eina_semaphore_free()`    |
 | `sem_wait()`      | `eina_semaphore_lock()`    |
@@ -158,14 +153,14 @@ If you are already familiar with threads, see the standard pthreads documentatio
 **Table: Barriers**
 
 | pthreads function           | Eina equivalent       |
-| --------------------------- | --------------------- |
+|---------------------------|---------------------|
 | `pthread_barrier_init()`    | `eina_barrier_new()`  |
 | `pthread_barrier_destroy()` | `eina_barrier_free()` |
 | `pthread_barrier_wait()`    | `eina_barrier_wait()` |
 
 ## Thread Use Examples
 
-The following examples display a window with a label. An auxiliary thread semi-regularly changes the text of the label. If you want to display a regular animation, use the Ecore animators described in the [Main Loop](./main-loop-n.md) guide.
+The following examples display a window with a label. An auxiliary thread semi-regularly changes the text of the label. If you want to display a regular animation, use the Ecore animators described in the [Main Loop](./main-loop.md) guide.
 
 To use the `ecore_thread_feedback()` function:
 
@@ -271,5 +266,10 @@ To use the `ecore_main_loop_thread_safe_call_sync()` function:
    ecore_thread_run(_long_function_tick_tock, _end_func, NULL, ad);
    ```
 
-> **Note**
+> **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

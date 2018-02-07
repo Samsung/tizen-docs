@@ -19,15 +19,15 @@ For more information, see the [Datetime](../../../../../org.tizen.native.wearabl
 To create a datetime component:
 
 1. Add the datetime component with the `elm_datetime_add()` function.
-2. Select the visible fields with the `elm_datetime_field_visible_set()` function.  
+2. Select the visible fields with the `elm_datetime_field_visible_set()` function.
 
- The visibility of the following fields can be controlled:  
- - `ELM_DATETIME_YEAR`: Year field
- - `ELM_DATETIME_MONTH`: Month field
- - `ELM_DATETIME_DATE`: Date field
- - `ELM_DATETIME_HOUR`: Hour field
- - `ELM_DATETIME_MINUTE`: Minute field
- - `ELM_DATETIME_AMPM`: AM/PM field
+   The visibility of the following fields can be controlled:  
+   - `ELM_DATETIME_YEAR`: Year field
+   - `ELM_DATETIME_MONTH`: Month field
+   - `ELM_DATETIME_DATE`: Date field
+   - `ELM_DATETIME_HOUR`: Hour field
+   - `ELM_DATETIME_MINUTE`: Minute field
+   - `ELM_DATETIME_AMPM`: AM/PM field
 
 ## Using the Datetime Styles
 

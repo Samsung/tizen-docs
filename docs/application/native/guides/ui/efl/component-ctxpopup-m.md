@@ -32,7 +32,7 @@ The following example shows a simple use case of the ctxpopup component.
 
 **Example: Ctxpopup use case**
 
- ![Ctxpopup](./media/ctxpopup1.png)
+![Ctxpopup](./media/ctxpopup1.png)
 
 ```
 Evas_Object *win;

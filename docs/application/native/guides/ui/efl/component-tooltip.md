@@ -21,11 +21,11 @@ To activate a tooltip on a parent object in your application:
    elm_object_tooltip_text_set(button, "The tooltip text");
    ```
 
-2. You can set content to the tooltip using the `elm_object_tooltip_content_cb_set()` function.  
+2. You can set content to the tooltip using the `elm_object_tooltip_content_cb_set()` function.
 
- The second parameter defines a callback which is triggered each time the tooltip is shown. Use the callback to create the content to be shown in the tooltip. The callback returns a pointer to an `Evas_Object`.  
+   The second parameter defines a callback which is triggered each time the tooltip is shown. Use the callback to create the content to be shown in the tooltip. The callback returns a pointer to an `Evas_Object`.
 
- The fourth parameter defines a callback which is triggered when the tooltip disappears. Use the callback to delete the previously allocated
+   The fourth parameter defines a callback which is triggered when the tooltip disappears. Use the callback to delete the previously allocated
 
    ```
    elm_object_tooltip_content_cb_set(obj, tooltip_content_cb, data, tooltip_content_del_cb);
@@ -79,7 +79,7 @@ The following example shows a simple use case of the tooltip component on a butt
 
 **Example: Tooltip use case**
 
- ![Alignment](./media/tooltip.png)
+![Alignment](./media/tooltip.png)
 
 ```
 Evas_Object *win;

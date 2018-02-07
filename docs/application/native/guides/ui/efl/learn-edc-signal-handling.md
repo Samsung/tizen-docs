@@ -1,10 +1,5 @@
 # Signal Handling
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
 Elementary objects have a communication interface between the application logic (code) and UI (theme). You can emit signals from the code to a theme, or create handles for the signals emitted from themes. Signals are identified by strings.
 
 Using signals in the EDC file is simple:
@@ -130,3 +125,8 @@ Using signals in the EDC file is simple:
       The following figure displays the result.
 
       ![Check component status changed](./media/edje_signal2.png)
+
+## Related Information
+- Dependencies      
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

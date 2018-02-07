@@ -37,7 +37,7 @@ The following example shows a simple use case of the circle slider component.
 
 **Example: Circle slider use case**
 
- ![Circle slider](./media/circle_slider3.png)
+![Circle slider](./media/circle_slider3.png)
 
 ```
 Evas_Object *circle_surface;

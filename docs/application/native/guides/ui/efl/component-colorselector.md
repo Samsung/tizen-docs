@@ -46,7 +46,7 @@ The following example shows a simple use case of the colorselector component.
 
 **Example: Colorselector use case**
 
- ![Colorselector](./media/colorselector1.png)
+![Colorselector](./media/colorselector1.png)
 
 ```
 Evas_Object *win;

@@ -67,7 +67,7 @@ The following example shows a simple use case of the progressbar component.
 
 **Example: Progressbar use case**
 
- ![Progressbar](./media/progressbar.png)
+![Progressbar](./media/progressbar.png)
 
 ```
 Evas_Object *win;

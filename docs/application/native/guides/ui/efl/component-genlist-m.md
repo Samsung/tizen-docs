@@ -31,9 +31,9 @@ To use a genlist component in your application:
       itc->func.del = _item_del;
       ```
 
-   2. Define the `text_get` function.  
+   2. Define the `text_get` function.
 
-   When a genlist item becomes realized, the `text_get` function is called repeatedly for all text parts in that item. After the text is set to the part, it is freed automatically. Do not free it manually.
+      When a genlist item becomes realized, the `text_get` function is called repeatedly for all text parts in that item. After the text is set to the part, it is freed automatically. Do not free it manually.
 
       ```
       static char*
@@ -46,9 +46,9 @@ To use a genlist component in your application:
       }
       ```
 
-   3. Define the `content_get` function.  
+   3. Define the `content_get` function.
 
-   The `content_get` function is called repeatedly for all swallow parts in the item. It must return a valid object handle to be set, or `NULL` when no content is desired. The object is deleted by the genlist on its deletion or when the item is unrealized.
+      The `content_get` function is called repeatedly for all swallow parts in the item. It must return a valid object handle to be set, or `NULL` when no content is desired. The object is deleted by the genlist on its deletion or when the item is unrealized.
 
       ```
       static Evas_Object*
@@ -65,9 +65,9 @@ To use a genlist component in your application:
       }
       ```
 
-   4. Define the `del` function.  
+   4. Define the `del` function.
 
-   This function is called when the genlist item is deleted. It deletes any data that has been allocated at the item's creation.
+      This function is called when the genlist item is deleted. It deletes any data that has been allocated at the item's creation.
 
       ```
       static void
@@ -98,7 +98,7 @@ The following example shows a simple use case of the genlist component.
 
 **Example: Genlist use case**
 
- ![Genlist](./media/genlist1.png)
+![Genlist](./media/genlist1.png)
 
 ```
 Evas_Object *win;
@@ -191,9 +191,9 @@ You can use the group items in the group mode or tree mode:
 
   **Example: Genlist group mode use case**
 
-![Genlist group mode](./media/genlist2.png)  
-     ​
-```
+  ![Genlist group mode](./media/genlist2.png)
+
+  ```
   Elm_Genlist_Item_Class *itc;
   Elm_Genlist_Item_Class *gitc;
   Elm_Object_Item *g;
@@ -242,28 +242,28 @@ You can use the group items in the group mode or tree mode:
 
   **Example: Genlist tree mode use case**
 
-   ![Genlist tree mode](./media/genlist3.png)
+  ![Genlist tree mode](./media/genlist3.png)
 
-```
-Elm_Genlist_Item_Class *titc;
-Elm_Object_Item *it;
-int i;
+  ```
+  Elm_Genlist_Item_Class *titc;
+  Elm_Object_Item *it;
+  int i;
 
-/*
-   Register the callback functions to make the genlist
-   "expanded" or "contracted" when "selected"
-*/
-evas_object_smart_callback_add(genlist, "selected", gl_selected_cb, NULL);
-evas_object_smart_callback_add(genlist, "expanded", gl_expanded_cb, NULL);
-evas_object_smart_callback_add(genlist, "contracted", gl_contracted_cb, NULL);
+  /*
+     Register the callback functions to make the genlist
+     "expanded" or "contracted" when "selected"
+  */
+  evas_object_smart_callback_add(genlist, "selected", gl_selected_cb, NULL);
+  evas_object_smart_callback_add(genlist, "expanded", gl_expanded_cb, NULL);
+  evas_object_smart_callback_add(genlist, "contracted", gl_contracted_cb, NULL);
 
-titc = elm_genlist_item_class_new();
-titc->item_style = "group_index/expandable";
-titc->func.text_get = _group_item_label_get;
-titc->func.del = _item_del;
+  titc = elm_genlist_item_class_new();
+  titc->item_style = "group_index/expandable";
+  titc->func.text_get = _group_item_label_get;
+  titc->func.del = _item_del;
 
-for (i = 1; i < 10; i++) {
-    it = elm_genlist_item_append(genlist,
+  for (i = 1; i < 10; i++) {
+	it = elm_genlist_item_append(genlist,
                                  titc,
                                  (void *)i,
                                  NULL,
@@ -273,53 +273,53 @@ for (i = 1; i < 10; i++) {
     /* Expand each item */
     /* This causes the "expanded" callback to be called */
     elm_genlist_item_expanded_set(it, EINA_TRUE);
-}
+  }
 
-static void
-gl_selected_cb(void *data, Evas_Object *obj, void *event_info)
-{
-    Elm_Object_Item *it = event_info;
-    Eina_Bool expanded = EINA_FALSE;
+  static void
+  gl_selected_cb(void *data, Evas_Object *obj, void *event_info)
+  {
+      Elm_Object_Item *it = event_info;
+      Eina_Bool expanded = EINA_FALSE;
 
-    expanded = elm_genlist_item_expanded_get(it);
-    elm_genlist_item_expanded_set(it, !expanded);
-}
+      expanded = elm_genlist_item_expanded_get(it);
+      elm_genlist_item_expanded_set(it, !expanded);
+  }
 
-static void
-gl_expanded_cb(void *data EINA_UNUSED, Evas_Object *obj EINA_UNUSED, void *event_info)
-{
-    Elm_Object_Item *it = event_info;
-    Evas_Object *genlist = elm_object_item_widget_get(it);
-    Elm_Genlist_Item_Class *itc;
-    int i;
+  static void
+  gl_expanded_cb(void *data EINA_UNUSED, Evas_Object *obj EINA_UNUSED, void *event_info)
+  {
+      Elm_Object_Item *it = event_info;
+      Evas_Object *genlist = elm_object_item_widget_get(it);
+      Elm_Genlist_Item_Class *itc;
+      int i;
 
-    itc = elm_genlist_item_class_new();
-    itc->item_style = "default";
-    itc->func.content_get = _item_content_get;
-    itc->func.text_get = _item_label_get;
-    itc->func.del = _item_del;
+      itc = elm_genlist_item_class_new();
+      itc->item_style = "default";
+      itc->func.content_get = _item_content_get;
+      itc->func.text_get = _item_label_get;
+      itc->func.del = _item_del;
 
-    for (i = 1; i < 4; i++) {
-        elm_genlist_item_append(genlist,
-                                itc,
-                                (void *)i,
-                                it, /* Set the selected item as parent */
-                                ELM_GENLIST_ITEM_NONE,
-                                NULL,
-                                NULL);
-    }
-    elm_genlist_item_class_free(itc);
-}
+      for (i = 1; i < 4; i++) {
+          elm_genlist_item_append(genlist,
+                                  itc,
+                                  (void *)i,
+                                  it, /* Set the selected item as parent */
+                                  ELM_GENLIST_ITEM_NONE,
+                                  NULL,
+                                  NULL);
+      }
+      elm_genlist_item_class_free(itc);
+  }
 
-static void
-gl_contracted_cb(void *data EINA_UNUSED, Evas_Object *obj EINA_UNUSED,
-                 void *event_info)
-{
-    Elm_Object_Item *it = event_info;
+  static void
+  gl_contracted_cb(void *data EINA_UNUSED, Evas_Object *obj EINA_UNUSED,
+                   void *event_info)
+  {
+      Elm_Object_Item *it = event_info;
 
-    elm_genlist_item_subitems_clear(it);
-}
-```
+      elm_genlist_item_subitems_clear(it);
+  }
+  ```
 
 You can retrieve the parent of an item with the `elm_genlist_item_parent_get()` function. When the children of an item are no longer needed, you can clear them with the `elm_genlist_item_subitems_clear()` function.
 
@@ -390,7 +390,7 @@ The following table lists the available component styles.
 **Table: Genlist styles**
 
 | Style                            | Sample                                   | Notes                                    |
-|--------------------------------|----------------------------------------|----------------------------------------|
+|------------------------ ---------|------------------------------------------|------------------------------------------|
 | `elm/genlist/base/solid/default` | ![elm/genlist/base/solid/default](./media/styleguide_genlist_def.png) | N/A                                      |
 | `default`                        |                  -                        | Same as `effect`.                        |
 | `effect`                         |              -                            | When the genlist reaches its edge during scrolling, it shows an effect. |

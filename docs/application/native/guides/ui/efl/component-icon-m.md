@@ -62,7 +62,7 @@ The following example shows a simple use case of the icon component.
 
 **Example: Icon use case**
 
- ![Icon](./media/icon1.png)
+![Icon](./media/icon1.png)
 
 ```
 Evas_Object *win;

@@ -33,8 +33,9 @@ To use a flip component in your application:
    elm_flip_go(flip, ELM_FLIP_CUBE_UP);
    ```
 
-4. Register the [callback](#callbacks) functions.  
-The following example shows how to define and register a callback for the `animate,begin` signal.
+4. Register the [callback](#callbacks) functions.
+
+   The following example shows how to define and register a callback for the `animate,begin` signal.
 
    ```
    evas_object_smart_callback_add(entry, "animate,begin", anim_start_cb, data);
