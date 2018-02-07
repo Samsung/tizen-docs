@@ -89,12 +89,15 @@ class MyWidget : WidgetBase
 
 ## Prerequisites
 
-To enable your application to use the widget functionality, include the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html) namespace in your application:
+To enable your application to use the widget functionality:
 
-    ```
+1.  To use the methods and properties of the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html) namespace, include it in your application:
+
+    ``` {.prettyprint}
     using Tizen.Applications;
     ```
 
+2.  Edit the widget application settings in the [manifest](../../../vstools/tools/manifest-editor.md#widget_app) file.
 
 <a name="create"></a>
 ## Creating the Widget Application
