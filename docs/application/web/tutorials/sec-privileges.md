@@ -7,9 +7,7 @@ Tizen provides API-level access control for security-sensitive operations which,
 
 -   The public level is the minimum privilege level, which means that any application developed using the Tizen Studio can use these privileges.
 -   The partner level privileges require at least a partner-signed certificate which is granted to developers who have a business relationship with the vendor.
--   The platform level is the highest privilege level, and an
-    application that needs these privileges requires at least a
-    platform-signed certificate, which is granted to vendor developers.
+-   The platform level is the highest privilege level, and an application that needs these privileges requires at least a  platform-signed certificate, which is granted to vendor developers.
 
 Since Tizen platform 3.0, some privileges are categorized as privacy-related and give an option to the user to switch them on and off. If an application invokes a privacy-related privileged API, the Tizen system checks whether the privilege is **allowed** for the application. For the application to use the API, the privilege must be declared in the `config.xml` file and the user must have switched it on.
 
@@ -78,19 +76,6 @@ The application can manage alarms by retrieving saved alarms and waking the devi
 <tr>
 <td>
 
-`http://tizen.org/privilege/apphistory.read`
-</td>
-<td>public</td>
-<td>-</td>
-<td>4.0</td>
-<td>
-
-The application can read the statistics of application usage, such as which applications have been used frequently or recently.</td>
-</tr>
-
-<tr>
-<td>
-
 `http://tizen.org/privilege/application.info`
 </td>
 <td>public</td>
@@ -138,19 +123,6 @@ The application can retrieve specified application certificates.</td>
 <td>
 
 The application can close other applications.</td>
-</tr>
-
-<tr>
-<td>
-
-`http://tizen.org/privilege/appmanager.launch`
-</td>
-<td>public</td>
-<td>-</td>
-<td>4.0</td>
-<td>
-
-The application can open other applications.</td>
 </tr>
 
 <tr>
@@ -333,19 +305,6 @@ The application can create, update, and delete media content information.</td>
 <td>
 
 The application can read data exported by data control providers.</td>
-</tr>
-
-<tr>
-<td>
-
-`http://tizen.org/privilege/datasharing`
-</td>
-<td>public</td>
-<td>-</td>
-<td>4.0</td>
-<td>
-
-The application can share data with other applications.</td>
 </tr>
 
 <tr>
@@ -650,19 +609,6 @@ The application can receive notifications from the Internet.</td>
 <tr>
 <td>
 
-`http://tizen.org/privilege/recorder`
-</td>
-<td>public</td>
-<td>-</td>
-<td>4.0</td>
-<td>
-
-The application can record video and audio.</td>
-</tr>
-
-<tr>
-<td>
-
 `http://tizen.org/privilege/secureelement`
 </td>
 <td>public</td>
@@ -901,34 +847,8 @@ The following tables list the API privileges, which you must declare when using 
 <th>Since</th>
 <th>Description</th>
 </tr>
+
 <tr>
-
-<td>
-
-`http://tizen.org/privilege/account.read`
-</td>
-<td>public</td>
-<td>Account</td>
-<td>4.0</td>
-<td>
-
-The application can read accounts.</td>
-</tr>
-<tr>
-
-<td>
-
-`http://tizen.org/privilege/account.write`
-</td>
-<td>public</td>
-<td>Account</td>
-<td>4.0</td>
-<td>
-
-The application can create, edit, and delete accounts.</td>
-</tr>
-<tr>
-
 <td>
 
 `http://tizen.org/privilege/alarm`
@@ -940,21 +860,8 @@ The application can create, edit, and delete accounts.</td>
 
 The application can set alarms and wake up the device at scheduled times.</td>
 </tr>
+
 <tr>
-
-<td>
-
-`http://tizen.org/privilege/apphistory.read`
-</td>
-<td>public</td>
-<td>User history</td>
-<td>4.0</td>
-<td>
-
-The application can read the statistics of application usage, such as which applications have been used frequently or recently.</td>
-</tr>
-<tr>
-
 <td>
 
 `http://tizen.org/privilege/application.info`
@@ -1005,21 +912,8 @@ The application can retrieve specified application certificates.</td>
 
 The application can close other applications.</td>
 </tr>
+
 <tr>
-
-<td>
-
-`http://tizen.org/privilege/appmanager.launch`
-</td>
-<td>public</td>
-<td>-</td>
-<td>4.0</td>
-<td>
-
-The application can open other applications.</td>
-</tr>
-<tr>
-
 <td>
 
 `http://tizen.org/privilege/bluetooth`
@@ -1044,32 +938,7 @@ The application can perform unrestricted actions using Bluetooth, such as scanni
 
 The application can change Bluetooth system settings related to privacy and security, such as the visibility mode.</td>
 </tr>
-<tr>
 
-<td>
-
-`http://tizen.org/privilege/calendar.read`
-</td>
-<td>public</td>
-<td>Calendar</td>
-<td>4.0</td>
-<td>
-
-The application can read events and tasks.</td>
-</tr>
-<tr>
-
-<td>
-
-`http://tizen.org/privilege/calendar.write`
-</td>
-<td>public</td>
-<td>Calendar</td>
-<td>4.0</td>
-<td>
-
-The application can create, update, and delete events and tasks.</td>
-</tr>
 <tr>
 
 <td>
@@ -1083,32 +952,7 @@ The application can create, update, and delete events and tasks.</td>
 
 The application can make phone calls to numbers when they are tapped without further confirmation.</td>
 </tr>
-<tr>
 
-<td>
-
-`http://tizen.org/privilege/contact.read`
-</td>
-<td>public</td>
-<td>Contacts</td>
-<td>4.0</td>
-<td>
-
-The application can read your profile, contacts, and contact history. Contact history can include social network activity.</td>
-</tr>
-<tr>
-
-<td>
-
-`http://tizen.org/privilege/contact.write`
-</td>
-<td>public</td>
-<td>Contacts</td>
-<td>4.0</td>
-<td>
-
-The application can create, update, and delete your profile, contacts, and any contact history that is related to this application. Contact history can include social network activity.</td>
-</tr>
 <tr>
 
 <td>
@@ -1148,19 +992,7 @@ The application can create, update, and delete media content information.</td>
 
 The application can read data exported by data control providers.</td>
 </tr>
-<tr>
 
-<td>
-
-`http://tizen.org/privilege/datasharing`
-</td>
-<td>public</td>
-<td>-</td>
-<td>4.0</td>
-<td>
-
-The application can share data with other applications.</td>
-</tr>
 <tr>
 
 <td>
@@ -1408,19 +1240,7 @@ The application can control power-related settings, such as dimming the screen.<
 
 The application can receive notifications from the Internet.</td>
 </tr>
-<tr>
 
-<td>
-
-`http://tizen.org/privilege/recorder`
-</td>
-<td>public</td>
-<td>Microphone</td>
-<td>4.0</td>
-<td>
-
-The application can record video and audio.</td>
-</tr>
 <tr>
 
 <td>
@@ -1664,18 +1484,7 @@ when using security-sensitive API modules in TV Web applications.
 
 The application can retrieve saved alarms and wake up the device at scheduled times.</td>
 </tr>
-<tr>
 
-<td>
-
-`http://tizen.org/privilege/apphistory.read`
-</td>
-<td>public</td>
-<td>4.0</td>
-<td>
-
-The application can read the statistics of application usage, such as which applications have been used frequently or recently.</td>
-</tr>
 <tr>
 
 <td>
@@ -1724,18 +1533,7 @@ The application can retrieve specified application certificates.</td>
 
 The application can close other applications.</td>
 </tr>
-<tr>
 
-<td>
-
-`http://tizen.org/privilege/appmanager.launch`
-</td>
-<td>public</td>
-<td>4.0</td>
-<td>
-
-The application can open other applications.</td>
-</tr>
 <tr>
 
 <td>
@@ -1772,18 +1570,7 @@ The application can change media information. This information can be used by ot
 
 The application can read data exported by data control providers.</td>
 </tr>
-<tr>
 
-<td>
-
-`http://tizen.org/privilege/datasharing`
-</td>
-<td>public</td>
-<td>4.0</td>
-<td>
-
-The application can share data with other applications.</td>
-</tr>
 <tr>
 
 <td>
@@ -1832,17 +1619,17 @@ The application can write to file systems.</td>
 
 The application can use the full screen view.</td>
 </tr>
-<tr>
 
+<tr>
 <td>
 
-`http://tizen.org/privilege/internet`
+`http://tizen.org/privilege/keymanager`
 </td>
 <td>public</td>
 <td>3.0</td>
 <td>
 
-The application can access the Internet. This may result in additional charges depending on your payment plan.</td>
+The application can save keys, certificates, and data to, and retrieve and delete them from, a password-protected storage. Chdking the status of certificates while connected to a mobile network can result in additional charges depending on the user's payment plan.</td>
 </tr>
 <tr>
 
@@ -1855,18 +1642,6 @@ The application can access the Internet. This may result in additional charges d
 <td>
 
 The application can switch LEDs on or off, such as the LED on the front of the device and the camera flash.</td>
-</tr>
-<tr>
-
-<td>
-
-`http://tizen.org/privilege/mediacapture`
-</td>
-<td>public</td>
-<td>3.0</td>
-<td>
-
-The application can capture video and audio data.</td>
 </tr>
 <tr>
 
@@ -1904,18 +1679,7 @@ The application can install or uninstall application packages.</td>
 
 The application can receive notifications from the Internet. This can result in additional charges depending on the user's payment plan.</td>
 </tr>
-<tr>
 
-<td>
-
-`http://tizen.org/privilege/recorder`
-</td>
-<td>public</td>
-<td>4.0</td>
-<td>
-
-The application can record video and audio.</td>
-</tr>
 <tr>
 
 <td>
@@ -1927,6 +1691,19 @@ The application can record video and audio.</td>
 <td>
 
 The application can read system information.</td>
+</tr>
+
+<tr>
+
+<td>
+
+`http://tizen.org/privilege/systemmanager`
+</td>
+<td>partner</td>
+<td>3.0</td>
+<td>
+
+The application can read secure system information.</td>
 </tr>
 <tr>
 
@@ -2024,6 +1801,18 @@ The application can embed the display of a video source, specify the size, and s
 
 The application can adjust the volume for different features, such as notification alerts, ringtones, and media.</td>
 </tr>
+
+<tr>
+<td>
+
+`http://tizen.org/privilege/websetting`
+</td>
+<td>public</td>
+<td>3.0</td>
+<td>
+
+The application can change its Web application settings, including deleting cookies.</td>
+</tr>
 </table>
 
 **Table: TV Web W3C/HTML5 API privileges**
@@ -2048,7 +1837,21 @@ The application can use the storage with unlimited size with the [Indexed Databa
 
 **Privilege behavior:**<br>
 - In the local domain, if this privilege is defined, permission is granted. Otherwise, pop-up user prompt is used.<br>
-- In the remote domain, pop-up user prompt is used. 
+- In the remote domain, pop-up user prompt is used.
 </td>
 </tr>
 </table>
+
+<a name="nonAPI"></a>
+## Non-API Bound Privileges
+
+Tizen application privileges are loosely bound to APIs, so most of the privileges can be identified by the APIs that the application calls. However, there are some privileges that are not coupled with the Tizen APIs. To allow easy identification, those privileges are mapped to corresponding system resources - same as other privileges.
+
+The following table lists the non-API bound privileges.
+
+**Table: Non-API bound privileges**
+
+| Privilege      | Level          | Privacy        | Since          | Description    |
+|---------------|---------------|-----------------|----------------|-----------------|
+| `http://tizen.org/privilege/mediastorage` | public | Storage | 4.0 | When you connect the device to a computer  (Windows&reg; or   macOS) through USB, you can   access a       dedicated     media storage  area shown as  massive media   storage. This   region of the  storage is     called media   storage and is  usually used   for multimedia  files, such as  photos,      videos, and   music files.  Since this    storage area    is used for   user private   data, access to it must be  protected with  a privilege.<br>  If your       application    does not have   this          privilege, no   file         operations      into the media storage area   succeed and     you receive a  permission      denied error. If you have     this           privilege, you  can read and   write         directories   and files,  create new   files, and    delete files   in the storage area.      |
+| `http://tizen.org/privilege/externalstorage` | public | Storage | 4.0 | Similar to the media storage, many devices support external storages, such as MicroSD card or USB memory. As with the media storage, the access to an external storage must be protected with a privilege.<br> If your application does not have this privilege, all file operations fail with a permission denied error. If you have this privilege, you have full access to the external storage. |
