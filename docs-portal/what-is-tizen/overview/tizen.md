@@ -1,6 +1,6 @@
 # Introduction to Tizen
 
-Tizen is an open source operating system based on Linux, hosted by the Linux Foundation, and open to all developers.  It has evolved to connect everything, from smart TVs, smart phones, and wearable devices to IoT (Internet of Things) devices. Devices powered by Tizen can provide seamless connectivity to Tizen developers and device users among various device types.
+Tizen is an open source operating system based on Linux, hosted by the Linux Foundation, and open to all developers.  Tizen has evolved to connect everything, from smart TVs, smart phones, and wearable devices to IoT (Internet of Things) devices. Devices powered by Tizen can provide seamless connectivity to Tizen developers and device users among various device types.
 
 
 ## Connect Everything
