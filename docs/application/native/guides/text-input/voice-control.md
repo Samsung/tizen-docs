@@ -38,7 +38,9 @@ The main features of the Voice control API include:
 
 To use the voice control:
 
-1. Set up the voice control and [register callbacks](#callback).The initialization allows the voice control to distinguish your application from any other applications also using voice control. The registered callbacks allow you to receive notifications about changes in the service state, language, and recognition result, and about any errors.
+1. Set up the voice control and [register callbacks](#callback).
+
+  The initialization allows the voice control to distinguish your application from any other applications also using voice control. The registered callbacks allow you to receive notifications about changes in the service state, language, and recognition result, and about any errors.
 
 2. Prepare the voice control.
 
@@ -85,8 +87,8 @@ When the user speaks a command corresponding to a visible EFL Elementary compone
 
 ![Voice command process](./media/voice_control_elm.png)
 
-**Note**  
-The detailed implementation of the preloaded voice application (how to trigger and recognize the user speaking) can vary depending on the device (mobile, wearable, or TV).
+> **Note**  
+> The detailed implementation of the preloaded voice application (how to trigger and recognize the user speaking) can vary depending on the device (mobile, wearable, or TV).
 
 The main features of the Voice control elementary API include:
 
@@ -145,8 +147,8 @@ To use the voice commands:
 
 3. When no longer needed, destroy the handle and deinitialize the Voice control elementary library.
 
-**Note**  
-Set the commands and hints on visible EFL Elementary UI components only. When the visible components on the screen change, the commands and hints must also change.
+> **Note**  
+> Set the commands and hints on visible EFL Elementary UI components only. When the visible components on the screen change, the commands and hints must also change.
 
 ## Prerequisites
 
@@ -173,8 +175,8 @@ To enable your application to use the voice control functionality:
 
     If the function call is successful, the voice control state changes to `VC_STATE_INITIALIZED`.
 
-	**Note**  
-The voice control feature is not thread-safe and depends on the Ecore main loop. Implement voice control within the Ecore main loop and do not use it in a thread.
+	> **Note**  
+  > The voice control feature is not thread-safe and depends on the Ecore main loop. Implement voice control within the Ecore main loop and do not use it in a thread.
 
 3. Prepare the Voice control service with the `vc_prepare()` function, which connects the background Voice control daemon. The daemon records and recognizes audio data and converts sound to text.
 
@@ -215,8 +217,8 @@ The voice control feature is not thread-safe and depends on the Ecore main loop.
 
    When the `vc_unprepare()` function succeeds, the voice control state changes from `VC_STATE_READY` to `VC_STATE_INITIALIZED`.
 
-   **Note**  
-   Do not call the `vc_deinitialize()` function in a callback. Within a callback, the `vc_deinitialize()` function fails and returns `VC_ERROR_OPERATION_FAILED`.
+   > **Note**  
+   > Do not call the `vc_deinitialize()` function in a callback. Within a callback, the `vc_deinitialize()` function fails and returns `VC_ERROR_OPERATION_FAILED`.
 
 5. To use the functions and data types of the Voice control elementary API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__VOICE__CONTROL__ELEMENTARY__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__VOICE__CONTROL__ELEMENTARY__MODULE.html) applications), include the `<voice_control_elm.h>` header file in your application:
 
@@ -291,8 +293,8 @@ For more information on the callback functions, see the `voice_control_common.h`
 
 To set and unset callbacks to get notifications about recognition results, state changes, and errors:
 
-**Note**  
- Set and unset all callbacks when the voice control state is `VC_STATE_INITIALIZED`.
+> **Note**  
+> Set and unset all callbacks when the voice control state is `VC_STATE_INITIALIZED`.
 
 - Set the state change callback to be invoked when the voice control state changes:
 
@@ -389,8 +391,8 @@ To set and unset callbacks to get notifications about recognition results, state
 
 - Set the recognition result callback to be invoked when a voice command is recognized.
 
-  **Note**  
-  If the recognition result produces a reject event, the Voice control service has rejected the recognized command. Make sure that the command does not conflict with other commands and there are no duplicated commands.
+  > **Note**  
+  > If the recognition result produces a reject event, the Voice control service has rejected the recognized command. Make sure that the command does not conflict with other commands and there are no duplicated commands.
 
   To get the command, use the Voice control APIs with the `vc_cmd_list` parameter, which represents a list of recognized commands. The `result` parameter contains the recognized text.
 
@@ -661,8 +663,8 @@ To create a command list and commands:
 
    - You can use the `vc_cmd_list_get_current()` function to get the current command in an output parameter.
 
-   	**Note**  
-   When you get the command handle with the `vc_cmd_list_get_current()` function, do not release it. To release the command handle, call the `vc_cmd_list_remove()` function before the `vc_cmd_destroy()` function.
+   	> **Note**  
+    > When you get the command handle with the `vc_cmd_list_get_current()` function, do not release it. To release the command handle, call the `vc_cmd_list_remove()` function before the `vc_cmd_destroy()` function.
 
     ```
     void
@@ -1011,6 +1013,6 @@ To set and unset commands and hints, and define the hint direction and offset:
    ```
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

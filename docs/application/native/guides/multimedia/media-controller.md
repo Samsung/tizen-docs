@@ -251,6 +251,6 @@ The following table lists all the server metadata attributes the client can rece
 | `MC_META_MEDIA_PICTURE`     | Album art of the latest content in the media controller server |
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

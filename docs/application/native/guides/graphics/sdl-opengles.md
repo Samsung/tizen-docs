@@ -223,6 +223,6 @@ The following table lists the attributes whose values can be set using the `SDL_
 | `SDL_GL_STEREO`                     | Whether stereo 3D output is enabled      | `off`                   |
 
 ## Related Information
-* Dependencies
- - Tizen 4.0 and Higher for Mobile
- - Tizen 4.0 and Higher for Wearable
+- Dependencies
+  - Tizen 4.0 and Higher for Mobile
+  - Tizen 4.0 and Higher for Wearable

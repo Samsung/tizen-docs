@@ -54,7 +54,8 @@ To enable your application to use the Web view functionality:
     #include <EWebKit.h>
     #include <app.h>
     ```
-The sample browser created in this guide also requires the `<Ecore.h>`, `<Ecore_Evas.h>`, `<Ecore_Getopt.h>`, `<Eet.h>`, `<Eina.h>`, `<Elementary.h>`, `<Evas.h>`, and `<app.h>` header files.
+
+   The sample browser created in this guide also requires the `<Ecore.h>`, `<Ecore_Evas.h>`, `<Ecore_Getopt.h>`, `<Eet.h>`, `<Eina.h>`, `<Elementary.h>`, `<Evas.h>`, and `<app.h>` header files.
 
 3. The sample browser uses several Evas objects to build the browser UI. To easily manage the UI elements, store the browser window data (including the `Evas_Object` instances) in the `Browser_window` data structure:
 
@@ -368,6 +369,6 @@ To close the application correctly:
    ```
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

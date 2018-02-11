@@ -72,5 +72,3 @@
 # [API Reference](https://developer.tizen.org/development/api-references/native-application)
 
 # [Samples](https://developer.tizen.org/development/sample/native)
-
-

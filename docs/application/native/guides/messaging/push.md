@@ -661,6 +661,6 @@ To handle incoming push notifications:
 
 
 ## Related Information
-* Dependencies
+- Dependencies
   - Tizen 2.3 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

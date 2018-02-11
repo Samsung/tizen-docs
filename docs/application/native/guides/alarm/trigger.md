@@ -1046,5 +1046,5 @@ The following table summarizes the corresponding comparison attribute keys, with
 | CONTEXT_TRIGGER_CONDITION_VIDEO_PLAYBACK_FREQUENCY | CONTEXT_TRIGGER_TOTAL_COUNT  | Integer | Non-negative  integer                    |
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile

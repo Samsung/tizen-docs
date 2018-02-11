@@ -163,9 +163,17 @@ To get information about the external output device:
 - You can retrieve information about the external output device details with the following functions:
 
   - `eom_get_output_type()`: Get the connection type of the external output.
-  - `eom_get_output_mode()`: Get the external output mode.The mirror mode is the default mode. If the `eom_set_output_attribute()` function has executed successfully, the external output works in the presentation mode.
+  - `eom_get_output_mode()`: Get the external output mode.
+
+    The mirror mode is the default mode. If the `eom_set_output_attribute()` function has executed successfully, the external output works in the presentation mode.
   - `eom_get_output_attribute()`: Get the presentation mode priority attribute information.
-  - `eom_get_output_attribute_state()`: Get the attribute state information.If the application sets the attribute, the EOM sends the current attribute state to the application:`ACTIVE`: The application can use the external output.`INACTIVE`: The application was disconnected from the external output.`LOST`: The application cannot use the external output because another application has set the attribute. The application cannot receive the attribute state anymore.
+  - `eom_get_output_attribute_state()`: Get the attribute state information.
+
+    If the application sets the attribute, the EOM sends the current attribute state to the application:  
+      - `ACTIVE`: The application can use the external output.  
+      - `INACTIVE`: The application was disconnected from the external output.
+      - `LOST`: The application cannot use the external output because another application has set the attribute. The application cannot receive the attribute state anymore.
+
   - `eom_get_output_resolution()`: Get the best resolution of the external output device.
   - `eom_get_output_physical_size()`: Get the physical size of the external output device.
 
@@ -297,6 +305,6 @@ To get information about the external output device:
 
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

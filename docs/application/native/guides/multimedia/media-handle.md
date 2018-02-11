@@ -250,6 +250,6 @@ The following table describes the reference count design of the `media_format_h`
 | `media_packet_destroy(pkt2);`            | `fmt1`: 1 > finalize`fmt2`: 0 > finalize | If you destroy the `pkt2` handle, the `fmt2` `ref_count` is decreased. If the `ref_count` becomes 0, `fmt2` is freed. |
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

@@ -9,7 +9,9 @@ The main features of the OAuth 2.0 API include:
 
   You can [create a request handle, set and retrieve request parameters, and pass the request to the OAuth 2.0 manager](#request) to request a token.
 
-- Sending the request to the server to ask for a [grant or token](#grant)You can [request the authorization server for the required OAuth 2.0 grant or token](#token) using various methods and grant types.
+- Sending the request to the server to ask for a [grant or token](#grant)
+
+  You can [request the authorization server for the required OAuth 2.0 grant or token](#token) using various methods and grant types.
 
 - Managing the server response
 

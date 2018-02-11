@@ -452,6 +452,6 @@ To get information about the current position, velocity, and distance:
 
 
 ## Related Information
-* Dependencies
+- Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

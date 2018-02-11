@@ -75,9 +75,19 @@ Tizen supports APIs for communicating between application processes. You can use
 
 File sharing is a basic mechanism for interchanging data between application processes. By sharing a data file, the application process can send and receive data:
 
-- The Tizen application process can write a file to the path that is returned by the `app_get_data_path()` function.Because the application data path is created for each application package, the applications in the same package can share files in the data path. This is a totally secure file sharing method, because applications in the same package are trusted applications.
-- Tizen applications can write a file to the path that is returned by the `app_get_shared_data_path()` function, and share the file among all other applications on the device.The files in the shared data path can be read by all other applications on the device. Since you cannot control which applications are able to read the file in the shared data path, do not share private information in this way. Sharing data among applications through the shared data path is insecure, and consequently the shared data path is going to be deprecated in the next Tizen release.As an alternative to the shared data path, Tizen 2.4 introduced a feature of sharing a file in its data path using application controls. When an application requests an application control, it can specify a URI and the `APP_CONTROL_DATA_PATH` extra key. If you pass the file path to the application control as the `APP_CONTROL_DATA_PATH` extra key, the platform grants temporary read permission to the receiving application. This method is much more secure than sharing a file in the shared data path.
-- To share files among applications that you have developed, use the path that is returned by the `app_get_shared_trusted_path()` function.The files in the shared trusted path can be read and written by the applications that are developed by the same developer. This is a secure way of sharing files among your applications.
+- The Tizen application process can write a file to the path that is returned by the `app_get_data_path()` function.
+
+  Because the application data path is created for each application package, the applications in the same package can share files in the data path. This is a totally secure file sharing method, because applications in the same package are trusted applications.
+
+- Tizen applications can write a file to the path that is returned by the `app_get_shared_data_path()` function, and share the file among all other applications on the device.
+
+  The files in the shared data path can be read by all other applications on the device. Since you cannot control which applications are able to read the file in the shared data path, do not share private information in this way. Sharing data among applications through the shared data path is insecure, and consequently the shared data path is going to be deprecated in the next Tizen release.
+
+  As an alternative to the shared data path, Tizen 2.4 introduced a feature of sharing a file in its data path using application controls. When an application requests an application control, it can specify a URI and the `APP_CONTROL_DATA_PATH` extra key. If you pass the file path to the application control as the `APP_CONTROL_DATA_PATH` extra key, the platform grants temporary read permission to the receiving application. This method is much more secure than sharing a file in the shared data path.
+
+- To share files among applications that you have developed, use the path that is returned by the `app_get_shared_trusted_path()` function.
+
+  The files in the shared trusted path can be read and written by the applications that are developed by the same developer. This is a secure way of sharing files among your applications.
 
 **Table: File sharing functions**
 
@@ -101,4 +111,4 @@ The consumer can request data from any provider, as long as the consumer knows t
 
 ## Related Information
 - Dependencies
- - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.4 and Higher for Mobile

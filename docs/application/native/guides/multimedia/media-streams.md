@@ -482,6 +482,6 @@ At this point, the VideoTest Streaming is shown on the client part device.
 ![Media streamer streaming media](./media/media_streamer_playing.png)
 
 ## Related Information
-* Dependencies
- - Tizen 3.0 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 3.0 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

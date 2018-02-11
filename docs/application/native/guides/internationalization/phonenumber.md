@@ -97,7 +97,7 @@ if (PHONE_NUMBER_ERROR_NONE == ret) {
 free(normalized_number);
 ```
 
-##Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

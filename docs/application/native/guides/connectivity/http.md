@@ -280,6 +280,6 @@ if (ret != HTTP_ERROR_NONE)
 ```
 
 ## Related Information
-* Dependencies
- - Tizen 3.0 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 3.0 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

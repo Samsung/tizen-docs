@@ -2160,6 +2160,6 @@ vpn_appcontrol_result_cb(app_control_h request, app_control_h reply, app_control
 ```
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.2 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.2 and Higher for Wearable

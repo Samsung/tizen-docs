@@ -735,4 +735,3 @@ The following table lists the measurement data that the uncalibrated magnetic se
 * Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
-* API Reference

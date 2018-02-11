@@ -209,6 +209,6 @@ The following table lists the available system setting keys.
 | `SYSTEM_SETTINGS_KEY_WALLPAPER_LOCK_SCREEN` | `string` | `GETTER, NOTIFIER`      | File path of the current lock screen wallpaper. |
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

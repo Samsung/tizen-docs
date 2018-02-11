@@ -554,6 +554,6 @@ If the window is rotated and the Direct Rendering flag is set, Client Side Rotat
 ![OpenGL ES and EFL](./media/opengl_es_efl.png)
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable
