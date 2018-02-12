@@ -14,20 +14,20 @@ To create an image view:
 1.  Create an instance of the [Tizen.NUI.BaseComponents.ImageView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.ImageView.html) class and define the image file as a parameter:
 
     ```
-    imageView = new ImageView(DirectoryInfo.Resource + "media/gallery-3.jpg");
+    imageView = new ImageView(DirectoryInfo.Resource + "images/gallery-3.jpg");
     ```
 
     You can also create the `Tizen.NUI.BaseComponents.ImageView` class instance separately and define the file path by setting its `ResourceUrl` property:
 
     ```
     imageView = new ImageView();
-    imageView.ResourceUrl = DirectoryInfo.Resource + "media/gallery-3.jpg";
+    imageView.ResourceUrl = DirectoryInfo.Resource + "images/gallery-3.jpg";
     ```
 
 2.  To change the image path after the instance has been created, use the `SetImage()` method of the `Tizen.NUI.BaseComponents.ImageView` class:
 
     ```
-    imageView.SetImage(DirectoryInfo.Resource + "media/gallery-4.jpg");
+    imageView.SetImage(DirectoryInfo.Resource + "images/gallery-4.jpg");
     ```
 
 <a name="properties"></a>

@@ -414,7 +414,7 @@ To use gesture detectors:
 
 Size negotiation controls the view sizes in a container, based on dependency rules between the views. The [Tizen.NUI.ResizePolicyType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.ResizePolicyType.html) enumeration specifies a range of options for controlling the way views resize. These options enable automatic resizing.
 
-    **Table: Resize policy types**
+**Table: Resize policy types**
 
 | `ResizePolicyType` enumerator |  Description |
 |----|----|

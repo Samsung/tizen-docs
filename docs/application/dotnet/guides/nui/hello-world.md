@@ -2,11 +2,11 @@
 
 The topic shows how to create and display a "Hello World" text using a text label. It also demonstrates how you can react to touch events on the application screen.
 
-To build and run the application, you must use Visual Studio on WindowsA® or Visual Studio Code on Linux.
+To build and run the application, you must use Visual Studio on Windows&reg; or Visual Studio Code on Linux.
 
 **Figure: Hello World**
 
-![Hello World](../../images/hello-world.png)
+![Hello World](media/hello-world.png)
 
 To create an application that displays the "Hello World" text label:
 
@@ -46,7 +46,7 @@ To create an application that displays the "Hello World" text label:
     ```
 
     > **Note**  
-    > To invoke the `Created` event of the [Tizen.Applications.Corea€?Application](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.CoreApplication.html) class, you must call the `base.OnCreate()` method inside the override.
+    > To invoke the `Created` event of the [Tizen.Applications.CoreApplication](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.CoreApplication.html) class, you must call the `base.OnCreate()` method inside the override.
 
 5.  Within the `Initialize()` method, set the text label properties:
 
@@ -116,7 +116,7 @@ To create an application that displays the "Hello World" text label:
     ```
 
     >  **Note**  
-    > To invoke the `Terminated` event of the `Tizen.a€?Applications.Corea€?Application` class, you must call the `base.OnTerminate()` method inside the override.
+    > To invoke the `Terminated` event of the `Tizen.Applications.CoreApplication` class, you must call the `base.OnTerminate()` method inside the override.
 
 9.  Implement the `Main()` method:
     1.  Create the application through the default constructor:

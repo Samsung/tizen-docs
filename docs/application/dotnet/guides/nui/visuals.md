@@ -66,6 +66,7 @@ The examples in this topic demonstrate the recommended procedure for visual crea
 textView.Background = textVisual;
 ```
 
+<a name="addvisual"></a>
 The `AddVisual()` method of the `Tizen.NUI.BaseComponents.VisualView` class is an example of a method that creates a visual inherently. For example, to add a visual to a view, create an instance of the [Tizen.NUI.BaseComponents.VisualView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.VisualView.html) class, which is derived from the [Tizen.NUI.BaseComponents.CustomView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.CustomView.html) class, and use the `AddVisual()` method to [add a gradient visual to it](#gradientusage):
 
 ```
@@ -267,12 +268,13 @@ The following table lists the supported properties. The visual type is `Gradient
 
     **Table: SpreadMethod values**
 
-| Enumeration value | Description                              |
+    | Enumeration value | Description                              |
     |-----------------|----------------------------------------|
     | `Pad`             | Default. Uses the terminal colors of the gradient to fill the remainder of the quad. |
     | `Reflect`         | Reflects the gradient pattern start-to-end, end-to-start, start-to-end, and so on, until the quad is filled. |
     | `Repeat`          | Repeats the gradient pattern start-to-end, start-to-end, start-to-end, and so on, until the quad is filled. |
 
+<a name="gradientusage"></a>
 **Usage:**
 
 The following example shows how to [add a gradient visual](#addvisual) to a [Tizen.NUI.BaseComponents.VisualView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.VisualView.html) class instance. The instance is a custom view, and the visual is created with the `AddVisual()` method.
@@ -394,7 +396,7 @@ The following features are not supported:
 
 **Figure: SVG image visual**
 
-![SVG image visual](media/svg-visual.svg)
+<img src="./media/svg-visual.svg" alt="SVG image visual" width="300">
 
 The visual map for an SVG image is `SVGVisual`.
 
@@ -436,11 +438,11 @@ The following table lists the supported properties. The visual type is `Mesh` an
 
     **Table: `ShadingMode` values**
 
-| Enumeration value                      | Description                              |
-|--------------------------------------|----------------------------------------|
-| `TexturelessWithDiffuseLighting`       | Simplest. One color that is lit by ambient and diffuse lighting. |
-| `TexturedWithSpecularLighting`         | Uses only the visual image textures provided with specular lighting in addition to ambient and diffuse lighting. |
-| `TexturedWithDetailedSpecularLighting` | Uses all textures provided including a gloss, normal, and texture map along with specular, ambient, and diffuse lighting. |
+    | Enumeration value                      | Description                              |
+    |--------------------------------------|----------------------------------------|
+    | `TexturelessWithDiffuseLighting`       | Simplest. One color that is lit by ambient and diffuse lighting. |
+    | `TexturedWithSpecularLighting`         | Uses only the visual image textures provided with specular lighting in addition to ambient and diffuse lighting. |
+    | `TexturedWithDetailedSpecularLighting` | Uses all textures provided including a gloss, normal, and texture map along with specular, ambient, and diffuse lighting. |
 
 **Usage:**
 
@@ -451,7 +453,7 @@ MeshVisual meshVisualMap1 = new MeshVisual();
 
 meshVisualMap1.ObjectURL = resources + "/models/Dino.obj";
 meshVisualMap1.MaterialtURL = resources + "/models/Dino.mtl";
-meshVisualMap1.TexturesPath = resources + "/media/";
+meshVisualMap1.TexturesPath = resources + "/images/";
 meshVisualMap1.ShadingMode = MeshVisualShadingModeValue.TexturedWithSpecularLighting;
 
 meshVisualMap1.Size = new Size2D(400, 400);

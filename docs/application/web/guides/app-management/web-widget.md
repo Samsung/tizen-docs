@@ -82,7 +82,7 @@ The Web widget life-cycle proceeds as follows:
 
 5. To remove the Web widget from the widget board, the user long-presses the widget and selects its **-** button. The Tizen framework terminates the widget operations and its instance. The widget and its resources remain on the wearable device, but the user must add the widget to the widget board again to use the widget.
 
-  The parent Web application and its other Web widgets (if present) are not affected.
+   The parent Web application and its other Web widgets (if present) are not affected.
 
 6. To uninstall the parent Web application and all its widgets, the user long-presses the Web application and selects its **-** button. In this case, the Web application package (including all its widgets and their resources) is deleted from the wearable device. The Tizen framework removes the Web application from the application tray and deletes all its widgets from the widget board.
 
@@ -1371,7 +1371,7 @@ Typically, iframes are used for embedding another document within the current do
 
 The Web widget engine supports the `<img>` element only, and does not support `<audio>` and `<video>` elements.
 
-<a name="ser-content-how-can-i-create-tables"></a>
+<a name="user-content-how-can-i-create-tables"></a>
 ### How can I create tables?
 
 The Web widget engine does not support the `<table>` HTML element. To create a table-like layout, use the `<div>` and `<border>` elements, as shown in the following example:
@@ -1557,7 +1557,7 @@ For the APIs supported by the Web Widget Specification, see [Tizen Wearable Web 
 
 Because Web application and Web widget resources are isolated from each other, Web widgets cannot use the JavaScript or CSS files in their parent Web application. The virtual root paths of the Web application and its Web widgets are not the same. You can copy Web application JavaScript and CSS files to the Web widget's folder. However, the Web Widget Specification places more restrictions on the Web widget files than on the Web application files. Therefore, verify all copied Web application JavaScript and CSS files using the Web widget validator.
 
-<a name="user-content-what-are-the-benefits-of-web-widget-apps-compared-with-native-widget-app"></a>
+<a name="user-content-what-are-the-benefits-of-web-widget-apps-compared-with-native-widget-apps"></a>
 ### What are the benefits of Web widgets compared with native widget applications?
 
 Because Web widgets are implemented through the Web Widget Specification, Web-friendly developers can create Web widgets more easily and quickly than native widget applications.

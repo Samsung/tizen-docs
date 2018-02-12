@@ -60,7 +60,7 @@ To create various button controls:
 
     **Figure: Radio button**
 
-    ![Radio button](../../images/radiobutton.png)
+    ![Radio button](media/radiobutton.png)
 
     Usually, radio buttons are grouped. In each group, only 1 radio button can be selected at a given time. You can use the `StateChanged` event to check when the radio button is selected.
 
@@ -86,7 +86,7 @@ To create various button controls:
 
     **Figure: Toggle button**
 
-    ![Toggle button](../../images/togglebutton.png)
+    ![Toggle button](media/togglebutton.png)
 
     To create a toggle button:
 
@@ -113,8 +113,8 @@ For example, to add an event handler for the `Clicked` event on a push button:
 ```
 pushButton.Clicked += (obj, e) =>
 {
-    PushButton sender = obj as PushButton;
-    sender.LabelText = "Click Me";
+    PushButton sender = obj as PushButton;
+    sender.LabelText = "Click Me";
 
     return true;
 };
@@ -150,9 +150,9 @@ The following toggle button defines its state visuals as an array in the `StateV
 ToggleButton toggleButton = new ToggleButton();
 
 PropertyArray array = new PropertyArray();
-array.Add(new PropertyValue("./media/star-highlight.png"));
-array.Add(new PropertyValue("./media/star-mod.png"));
-array.Add(new PropertyValue("./media/star-dim.png"));
+array.Add(new PropertyValue("./images/star-highlight.png"));
+array.Add(new PropertyValue("./images/star-mod.png"));
+array.Add(new PropertyValue("./images/star-dim.png"));
 toggleButton.StateVisuals = array;
 
 PropertyArray tooltips = new PropertyArray();
@@ -165,7 +165,7 @@ toggleButton.WidthResizePolicy = ResizePolicyType.FillToParent;
 toggleButton.HeightResizePolicy = ResizePolicyType.FillToParent;
 ```
 
-For more information on styling buttons with visuals using a JSON stylesheet, see [Styling Controls with JSON](styling_controls_with_JSON.htm).
+For more information on styling buttons with visuals using a JSON stylesheet, see [Styling Controls with JSON](styling-controls-with-JSON.md).
 
 <a name="tooltips"></a>
 ## Defining Tooltips
@@ -206,7 +206,7 @@ To add a tooltip to a button:
     /// Icon
     PropertyMap iconVisual = new PropertyMap();
     iconVisual.Add(Constants.Visual.Property.Type, new PropertyValue((int)Constants.Visual.Type.Image))
-              .Add(Constants.ImageVisualProperty.URL, new PropertyValue("./media/star-highlight.png"));
+              .Add(Constants.ImageVisualProperty.URL, new PropertyValue("./images/star-highlight.png"));
 
     iconTooltipContent.Add(new PropertyValue(iconVisual));
 

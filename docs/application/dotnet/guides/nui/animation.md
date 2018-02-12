@@ -29,18 +29,9 @@ _animation = new Animation
 <a name="animatableproperties"></a>
 ## Animation Properties
 
-Some View properties are "animatable", such as `Position`, `Orientation`, `Scale`, and `Color`. For "standard" controls, you can query whether a property is animatable, using `IsPropertyAnimatable()`, but cannot change the animatable state.
-
-You can set a property to "animatable" in the derived classes of custom view controls.
-
-For more information, see [Properties in Custom Views](creating-custom-view-controls.md#properties) and [Creating Transitions](creating-custom-view-controls.md#creatingtransitions), which describes the animatable 'Scriptable Properties'.
-
-<a name="animatingproperties"></a>
-## Animating Properties
-
 Some view properties are "animatable", such as `Position`, `Orientation`, `Scale`, and `Color`.
 
-In controls derived from the [Tizen.NUI.BaseComponents.CustomView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.CustomView.html) class, you can set a property to be "animatable." For standard controls, you can query whether a property is animatable (using the `IsPropertyAnimatable()` method of the [Tizen.NUI.Animatable](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.Animatable.html) class), but cannot change the animatable state.
+In controls derived from the [Tizen.NUI.BaseComponents.CustomView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.CustomView.html) class, you can set a property to be "animatable". For standard controls, you can query whether a property is animatable (using the `IsPropertyAnimatable()` method of the [Tizen.NUI.Animatable](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.Animatable.html) class), but cannot change the animatable state.
 
 To animate a property in NUI, you can use 2 distinct methods of the [Tizen.NUI.Animation](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.Animation.html) class:
 

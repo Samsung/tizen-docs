@@ -28,7 +28,7 @@ The main features of the service application include:
 The device main menu does not contain any icons for service applications, because the applications run in the background. The task switcher does not show them either. Service applications can run simultaneously with other service and UI applications.
 
 > **Note**
-> The TV service application requires [partner-level certification](../../../../org.tizen.training/html/web/details/sign_certificate_w.htm) in Tizen 3.0.
+> The TV service application requires [partner-level certification](../../tutorials/sign-certificate.md) in Tizen 3.0.
 
 ## Prerequisites
 
@@ -85,7 +85,7 @@ Learning how to manage service application callbacks is a basic application mana
 
 1. Create the service entry point with the `onStart()` callback.
 
-  The callback is invoked when the service is launched. Within the callback, you can prepare resources and initialize whatever the service application needs during the execution.
+   The callback is invoked when the service is launched. Within the callback, you can prepare resources and initialize whatever the service application needs during the execution.
 
    ```
    module.exports.onStart = function() {
@@ -108,7 +108,7 @@ Learning how to manage service application callbacks is a basic application mana
 
 2. Write the request handler with the `onRequest()` callback.
 
-  The callback is invoked to handle incoming service requests. Within the callback, write code for each request from other applications and the platform. To obtain the request, use the `getRequestedAppControl()` method in the [Application](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html) API.
+    The callback is invoked to handle incoming service requests. Within the callback, write code for each request from other applications and the platform. To obtain the request, use the `getRequestedAppControl()` method in the [Application](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html) API.
 
    ```
    module.exports.onRequest = function() {
@@ -125,7 +125,7 @@ Learning how to manage service application callbacks is a basic application mana
 
 3. Write the termination with the `onExit()` callback.
 
-  The callback is invoked when the service is about to be stopped. All resources can be cleared and backed up within the callback.
+    The callback is invoked when the service is about to be stopped. All resources can be cleared and backed up within the callback.
 
    ```
    module.exports.onExit = function() {

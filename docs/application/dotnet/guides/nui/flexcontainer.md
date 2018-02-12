@@ -8,7 +8,7 @@ The following figure illustrates flex container terminology and alignment axes, 
 
 **Figure: Flex container terminology**
 
-![Flex container terminology](../../images/flex-container.jpg)
+![Flex container terminology](media/flex-container.jpg)
 
 <a name="layoutexample"></a>
 ## Creating a Flexbox Layout
@@ -17,11 +17,11 @@ The following example shows how to create a gallery-like flexbox layout using th
 
 **Figure: Flex container example**
 
-![Flex container example](../../images/flexbox-demo.jpg)
+![Flex container example](media/flexbox-demo.jpg)
 
 1.  Create a flex container as the whole view and set its resize policy to fill its parent (the window):
 
-   ```
+    ```
     /// Create the main flex container
     FlexContainer flexContainer = new FlexContainer();
     flexContainer.ParentOrigin = ParentOrigin.TopLeft;
@@ -166,19 +166,19 @@ You can modify the flex container appearance and behavior through the following 
 
     **Figure: ContentDirection LTR**
 
-    ![ContentDirection LTR](../../images/content-direction-ltr.jpg)
+    ![ContentDirection LTR](media/content-direction-ltr.jpg)
 
     **Figure: ContentDirection RTL**
 
-    ![ContentDirection RTL](../../images/content-direction-rtl.jpg)
+    ![ContentDirection RTL](media/content-direction-rtl.jpg)
 
     **Table: ContentDirection values**
 
-| Property value |  Description|
-|----------------|-------------|
-| `Inherit` |   Inherit the direction from the parent|
-| `LTR`     |    Place content from left to right|
-| `RTL`     |   Place content from right to left |
+    | Property value |  Description|
+    |----------------|-------------|
+    | `Inherit` |   Inherit the direction from the parent|
+    | `LTR`     |    Place content from left to right|
+    | `RTL`     |   Place content from right to left |
 
     **Usage:**
 
@@ -193,16 +193,16 @@ You can modify the flex container appearance and behavior through the following 
 
     **Figure: FlexDirection**
 
-    ![FlexDirection](../../images/flex-direction.jpg)
+    ![FlexDirection](media/flex-direction.jpg)
 
     **Table: FlexDirection values**
 
-| Property value |  Description |
-|----------------|--------------|
-|  `Column`    |    Place items vertically in a column |
-|  `ColumnReverse` |  Place items vertically in a column, but in reverse order |
-|   `Row`    |      Place items horizontally in a row |
-|  `RowReverse`   |   Place items horizontally in a row, but in reverse order |
+    | Property value |  Description |
+    |----------------|--------------|
+    |  `Column`    |    Place items vertically in a column |
+    |  `ColumnReverse` |  Place items vertically in a column, but in reverse order |
+    |   `Row`    |      Place items horizontally in a row |
+    |  `RowReverse`   |   Place items horizontally in a row, but in reverse order |
 
     **Usage:**
 
@@ -217,14 +217,14 @@ You can modify the flex container appearance and behavior through the following 
 
     **Figure: FlexWrap**
 
-    ![FlexWrap](../../images/flex-wrap.jpg)
+    ![FlexWrap](media/flex-wrap.jpg)
 
     **Table: FlexWrap values**
 
-| Property value |  Description |
-|----------------|--------------|
-|  `NoWrap` |    Reduce item sizes to fit them in a single line along the main axis |
-|  `Wrap`   |    Show items over multiple lines, if needed |
+    | Property value |  Description |
+    |----------------|--------------|
+    |  `NoWrap` |    Reduce item sizes to fit them in a single line along the main axis |
+    |  `Wrap`   |    Show items over multiple lines, if needed |
 
     **Usage:**
 
@@ -239,17 +239,17 @@ You can modify the flex container appearance and behavior through the following 
 
     **Figure: JustifyContent**
 
-    ![JustifyContent](../../images/justify-content.jpg)
+    ![JustifyContent](media/justify-content.jpg)
 
     **Table: JustifyContent values**
 
-| Property value  |   Description |
-|-----------------|---------------|
-| `JustifyFlexStart` | Position items at the beginning of the container |
-| `JustifyCenter`  |    Position items at the center of the container |
-|  `JustifyFlexEnd` |     Position items at the end of the container |
-|  `JustifySpaceBetween` |  Position items with equal spacing between them |
-|  `JustifySpaceAround`  |  Position items with equal spacing before, between, and after them |
+    | Property value  |   Description |
+    |-----------------|---------------|
+    | `JustifyFlexStart` | Position items at the beginning of the container |
+    | `JustifyCenter`  |    Position items at the center of the container |
+    |  `JustifyFlexEnd` |     Position items at the end of the container |
+    |  `JustifySpaceBetween` |  Position items with equal spacing between them |
+    |  `JustifySpaceAround`  |  Position items with equal spacing before, between, and after them |
 
     **Usage:**
 
@@ -264,17 +264,17 @@ You can modify the flex container appearance and behavior through the following 
 
     **Figure: AlignItems**
 
-    ![AlignItems](../../images/align-items.jpg)
+    ![AlignItems](media/align-items.jpg)
 
     **Table: AlignItems values**
 
-|  Property value  |   Description |
-|------------------|---------------|
-|  `AlignAuto`    |    Inherit the alignment from the parent (only valid for the [AlignSelf](#align-self) property) |
-|  `AlignFlexStart` |  Align items to the beginning of the container |
-|  `AlignCenter`   |   Align items to the center of the container |
-|  `AlignFlexEnd`  |   Align items to the end of the container |
-|  `AlignStretch`  |   Stretch items to fit the container |
+    |  Property value  |   Description |
+    |------------------|---------------|
+    |  `AlignAuto`    |    Inherit the alignment from the parent (only valid for the [AlignSelf](#align-self) property) |
+    |  `AlignFlexStart` |  Align items to the beginning of the container |
+    |  `AlignCenter`   |   Align items to the center of the container |
+    |  `AlignFlexEnd`  |   Align items to the end of the container |
+    |  `AlignStretch`  |   Stretch items to fit the container |
 
     **Usage:**
 
@@ -289,17 +289,17 @@ You can modify the flex container appearance and behavior through the following 
 
     **Figure: AlignContent**
 
-    ![AlignContent](../../images/align-content.jpg)
+    ![AlignContent](media/align-content.jpg)
 
     **Table: AlignContent values**
 
-| Property value  |   Description |
-|-----------------|---------------|
-|  `AlignAuto`    |  Inherit the alignment from the parent (only valid for the [AlignSelf](#align-self) property) |
-|  `AlignFlexStart` |  Align the lines to the beginning of the container |
-|  `AlignCenter`  |  Align the lines to the center of the container |
-|  `AlignFlexEnd` |    Align the lines to the end of the container |
-|  `AlignStretch`  |   Stretch the lines to fit the container |
+    | Property value  |   Description |
+    |-----------------|---------------|
+    |  `AlignAuto`    |  Inherit the alignment from the parent (only valid for the [AlignSelf](#align-self) property) |
+    |  `AlignFlexStart` |  Align the lines to the beginning of the container |
+    |  `AlignCenter`  |  Align the lines to the center of the container |
+    |  `AlignFlexEnd` |    Align the lines to the end of the container |
+    |  `AlignStretch`  |   Stretch the lines to fit the container |
 
     **Usage:**
 
@@ -321,7 +321,7 @@ You can modify the flex item placement through the following properties:
 
     **Figure: Flex**
 
-    ![Flex](../../images/flex.jpg)
+    ![Flex](media/flex.jpg)
 
     To create a layout with the proportions shown in the above figure:
 
@@ -408,7 +408,7 @@ You can modify the flex item placement through the following properties:
 
     **Figure: FlexMargin**
 
-    ![FlexMargin](../../images/flex-margin.jpg)
+    ![FlexMargin](media/flex-margin.jpg)
 
     To add space around an item:
 

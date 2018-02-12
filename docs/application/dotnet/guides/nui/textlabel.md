@@ -135,7 +135,7 @@ To align the text in a text label:
 
     The following table illustrates the available values of the `Tizen.NUI.HorizontalAlignment` enumeration for both left-to-right (Latin) and right-to-left (Arabic) script.
 
-|  Alignment  | Left-to-right script example    |      Right-to-left script example |
+    |  Alignment  | Left-to-right script example    |      Right-to-left script example |
     |-------------|---------------------------------|-----------------------------------|
     |  `Begin` |   ![Latin script aligned to beginning](media/LatinBegin.png) |  ![Arabic script aligned to beginning](media/ArabicBegin.png) |
     |`Center` |  ![Latin script aligned to center](media/LatinCenter.png) | ![Arabic script aligned to center](media/ArabicCenter.png) |

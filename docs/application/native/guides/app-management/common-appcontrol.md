@@ -7,7 +7,7 @@ An application control provides functions for launching other applications with 
 
 ## Browser
 
-The browser application control is supported in mobile applications only.
+The browser application control is supported only in mobile applications.
 
 ### Performing a Web Search
 
@@ -84,7 +84,7 @@ app_control_destroy(app_control);
 
 ## Calendar
 
-The calendar application control is supported in mobile applications only.
+The calendar application control is supported only in mobile applications.
 
 ### Adding a Calendar Event
 
@@ -379,7 +379,7 @@ launchCall()
 
 ## Camera
 
-The camera application control is supported in mobile applications only.
+The camera application control is supported only in mobile applications.
 
 ### Capturing a Picture or Video
 
@@ -561,7 +561,7 @@ app_control_destroy(request);
 
 ### Editing a Contact
 
-The contact editing operation is supported in mobile applications only.
+The contact editing operation is supported only in mobile applications.
 
 To edit a known contact, use the `APP_CONTROL_OPERATION_EDIT` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
@@ -748,7 +748,7 @@ launchContactPick(const char *selectionMode, const char *resultType,
 
 ### Sharing a Contact
 
-The contact sharing operation is supported in mobile applications only.
+The contact sharing operation is supported only in mobile applications.
 
 To share a single contact, use the `APP_CONTROL_OPERATION_SHARE` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
@@ -788,7 +788,7 @@ app_control_destroy(service);
 
 ### Sharing Multiple Contacts
 
-The multiple contact sharing operation is supported in mobile applications only.
+The multiple contact sharing operation is supported only in mobile applications.
 
 To share a set of contacts, use the `APP_CONTROL_OPERATION_MULTI_SHARE` operation with the `application/vnd.tizen.contact` MIME type. To specify various contact details, refer to the extras defined below.
 
@@ -828,7 +828,7 @@ app_control_destroy(service);
 
 ## Email
 
-The email application control is supported in mobile applications only.
+The email application control is supported only in mobile applications.
 
 ### Composing an Email
 
@@ -1049,7 +1049,7 @@ app_control_destroy(service);
 
 ## File Storage
 
-The file storage application control is supported in mobile applications only.
+The file storage application control is supported only in mobile applications.
 
 ### Retrieving a Specific Type of File
 
@@ -1074,7 +1074,7 @@ To select any kind of file from the storage, use the `APP_CONTROL_OPERATION_PICK
 
 #### Extra Output
 
-| Key                         | Value description                        |
+| Key                         | Value Description                        |
 |-----------------------------|------------------------------------------|
 | `APP_CONTROL_DATA_SELECTED` | The list of selected file paths. This key must be passed as an array. |
 
@@ -1130,11 +1130,11 @@ The input delegator application control is supported in wearable applications si
 
 To receive a specific type of input from the user, use the `APP_CONTROL_OPERATION_GET_INPUT` operation. This operation will give you various input types. If you want to give an option for the input delegator, refer to the extras defined below. You can execute the desired input type directly using `APP_CONTROL_DATA_INPUT_TYPE` operation. If you do not specify this operation, a default screen is displayed with all possible input types. For example, Figure 1 shows the main screen when the `APP_CONTROL_DATA_INPUT_TYPE` operation is not specified, and Figure 2 shows the screen when the input type of `APP_CONTROL_DATA_INPUT_TYPE` operation is given as `input_voice`.
 
-**Figure: Default user input**
+**Figure 1: Default user input**
 
 ![Default user input](./media/common_appcontrol_inputdelegator.png)
 
-**Figure: Voice user input**  
+**Figure 2: Voice user input**  
 
 ![Voice user input](./media/common_appcontrol_inputdelegator_voice.png)
 
@@ -1156,21 +1156,22 @@ The input types are grouped into the following MIME types. Therefore, if you spe
 
 | Key                                      | Description                              | Note                  |
 |------------------------------------------|------------------------------------------|-----------------------|
-| `APP_CONTROL_DATA_INPUT_TYPE`            | The input method type. This key must be passed as a string. The available values are:<br>- `input_voice`: Ask for voice input<br>- `input_emoticon`: Ask for emoticon input<br>- `input_keyboard`: Ask for keyboard input<br>- `input_reply`: Ask for reply input<br>- `input_drawing`: Ask for drawing input<br>- `input_recording`: Ask for recording input | This key is optional.<br>The `input_reply`, `input_drawing`, and `input_recording` values are supported in wearable applications only since Tizen 4.0. Also, some input types may not be supported depending on the device.<br><br>The `input_reply` supports the following languages: English, Spanish, French, Italian, Russian, and German. |
+| `APP_CONTROL_DATA_INPUT_TYPE`            | The input method type. This key must be passed as a string. The available values are:<br>- `input_voice`: Ask for voice input<br>- `input_emoticon`: Ask for emoticon input<br>- `input_keyboard`: Ask for keyboard input<br>- `input_reply`: Ask for reply input<br>- `input_drawing`: Ask for drawing input<br>- `input_recording`: Ask for recording input | This key is optional.<br>The `input_reply`, `input_drawing` and `input_recording` values are supported only in wearable applications since Tizen 4.0. Also, some input types may not be supported depending on the device.<br><br>The `input_reply` supports the following languages: English, Spanish, French, Italian, Russian, German. |
 | `APP_CONTROL_DATA_INPUT_DEFAULT_TEXT`    | The preformatted text to be used as default input, such as "http://" for Web addresses. This key must be passed as a string. |This key is optional.<br>This key is only supported for the `input_keyboard` type.      |
-| `APP_CONTROL_DATA_INPUT_GUIDE_TEXT`      | The guide text, such as "Input user name." This key must be passed as a string. |This key is optional.<br>This key is only supported for the `input_keyboard` type.               |
+| `APP_CONTROL_DATA_INPUT_GUIDE_TEXT`      | The guide text, such as "Input user name". This key must be passed as a string. |This key is optional.<br>This key is only supported for the `input_keyboard` type.               |
 | `APP_CONTROL_DATA_INPUT_PREDICTION_HINT` | The text to receive an answer result from a smart reply. This key must be passed as a string. |This key is optional.<br>This key is only supported for the `input_reply` type.    |
-| `APP_CONTROL_DATA_INPUT_RETURNKEY_TYPE` | The return key used in the keyboard input type. This key must be passed as a string. The available vlues are:<br>- `Done`: Set key label to **Done**<br>- `Send`: Set key label to **Send**<br>- `Join`: Set key label to **Join**<br>- `Login`: Set key label to **Login**<br>- `Next`: Set key label to **Next**<br>- `Sign-in`: Set key label to **Sign-in**<br>- `Search`: Set key label to **Search**<br>- `Go`: Set key label to **Go** | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |
+| `APP_CONTROL_DATA_INPUT_RETURNKEY_TYPE` | The return key used in the keyboard input type. This key must be passed as a string. The available values are:<br>- `Done`: Set key label to **Done**<br>- `Send`: Set key label to **Send**<br>- `Join`: Set key label to **Join**<br>- `Login`: Set key label to **Login**<br>- `Next`: Set key label to **Next**<br>- `Sign-in`: Set key label to **Sign-in**<br>- `Search`: Set key label to **Search**<br>- `Go`: Set key label to **Go** | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |
 | `APP_CONTROL_DATA_INPUT_MAX_TEXT_LENGTH` | The maximum text length allowed in the keyboard input type. This key must be passed as a string. | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |
 | `APP_CONTROL_DATA_INPUT_CURSOR_POSITION_SET` | The position where the cursor is to be set in the keyboard input type. This key must be passed as a string. | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |
-| `APP_CONTROL_DATA_INPUT_REPLY_TYPE` | The reply type. This key must be passed as a string.<br>This key allows caller application to know the user has entered though which input type of Input Delegator.<br><br> You can decide how to use extra output  according to the result  of this key. If the  result is `input_audio`   or `input_image`, you  must get the path of the result value through     `APP_CONTROL_DATA_PATH`.<br><br>The available values    are:     <br>  -   `input_voice`:     Receive the result     as voice <br>     -   `input_emoticon`:  Receive the result   as an emoticon  <br>-   `input_keyboard`:      Receive the result    as keyboard input  <br> -   `input_reply`:          Receive the result    as reply input     <br> -   `input_image`:     Receive the result    as an image  <br> -   `input_audio`:        Receive the result    as audio  | This key is optional and is supported only in wearable applications since Tizen 4.0 |   
+| `APP_CONTROL_DATA_INPUT_CURSOR_POSITION_GET` | The current position of the cursor in the keyboard input type. This key must be passed as a string. | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |   
+| `APP_CONTROL_DATA_INPUT_REPLY_TYPE` | The reply type. This key must be passed as a string.<br>This key allows caller application to know the user has entered though which input type of Input Delegator.<br><br> You can decide how to use extra output  according to the result  of this key. If the  result is `input_audio`   or `input_image`, you  must get the path of the result value through     `APP_CONTROL_DATA_PATH`.<br><br>The available values    are:     <br>  -   `input_voice`:     Receive the result     as voice <br>     -   `input_emoticon`:  Receive the result   as an emoticon  <br>-   `input_keyboard`:      Receive the result    as keyboard input  <br> -   `input_reply`:          Receive the result    as reply input     <br> -   `input_image`:     Receive the result    as an image  <br> -   `input_audio`:        Receive the result    as audio  | This key is optional and is supported only in wearable applications since Tizen 4.0. |   
 
 #### Extra Output
 
-| Key                     | Value description                        | Note |
+| Key                     | Value Description                        | Note |
 |-------------------------|------------------------------------------|-----|
 | `APP_CONTROL_DATA_TEXT` | The result string from the input delegator. This key must be passed as a string. | - |
-| `APP_CONTROL_DATA_PATH` | The list of multiple file paths from the input delegator.<br>If user selects `input_recording` type or `input_drawing` type to input in Input Delegator, you must check this key to find the file path of result.<br><br>This key must be passed as an array. | This key is supported only in wearable applications since Tizen 4.0 |
+| `APP_CONTROL_DATA_PATH` | The list of multiple file paths from the input delegator.<br>If user selects `input_recording` type or `input_drawing` type to input in Input Delegator, you must check this key to find the file path of result.<br><br>This key must be passed as an array. | This key is supported only in wearable applications since Tizen 4.0. |
 
 #### Example Code
 
@@ -1397,7 +1398,7 @@ pick_reply_cb(app_control_h request, app_control_h reply, app_control_result_e r
 
 ### Composing a Message
 
-The message composition operation is supported in mobile applications only.
+The message composition operation is supported only in mobile applications.
 
 To compose a new message, use the `APP_CONTROL_OPERATION_COMPOSE` operation. To specify various message details, refer to the extras defined below.
 
@@ -1448,7 +1449,7 @@ app_control_send_launch_request(service, NULL, NULL);
 
 ### Sharing a Single Item Using a Message
 
-The single item sharing operation is supported in mobile applications only.
+The single item sharing operation is supported only in mobile applications.
 
 To share a single item using an MMS message, use the `APP_CONTROL_OPERATION_SHARE` operation.
 
@@ -1500,7 +1501,7 @@ app_control_send_launch_request(service, NULL, NULL);
 
 ### Sharing Multiple Items Using a Message
 
-The multiple item sharing operation is supported in mobile applications only.
+The multiple item sharing operation is supported only in mobile applications.
 
 To share multiple items using an MMS message, use the `APP_CONTROL_OPERATION_MULTI_SHARE` operation.
 
@@ -1757,7 +1758,7 @@ To retrieve a specific type of media file, use the `APP_CONTROL_OPERATION_PICK` 
 
 #### Extra Output
 
-| Key                         | Value description                        |
+| Key                         | Value Description                        |
 |-----------------------------|------------------------------------------|
 | `APP_CONTROL_DATA_SELECTED` | The paths of the selected files. This key must be passed as an array. |
 
@@ -1804,7 +1805,7 @@ retrieve_media_operation(const char* mime_type)
 
 ## System Settings
 
-The system settings application control is supported in mobile applications only.
+The system settings application control is supported only in mobile applications.
 
 ### Showing System Settings
 
@@ -1960,7 +1961,7 @@ bt_visibility_operation(void)
 
 ## Settings for Location
 
-The location settings application control is supported in mobile applications only.
+The location settings application control is supported only in mobile applications.
 
 ### Showing Location Settings
 
@@ -2014,7 +2015,7 @@ location_setting(void)
 
 ## Settings for NFC
 
-The NFC settings application control is supported in mobile applications only.
+The NFC settings application control is supported only in mobile applications.
 
 ### Showing NFC Settings
 
@@ -2033,7 +2034,7 @@ To launch the NFC setting application to allow the user to activate or deactivat
 
 | Key                     | Description                              | Note                                     |
 |-----------------------|----------------------------------------|----------------------------------------|
-| `APP_CONTROL_DATA_TYPE` | The NFC setting menu type to be shown. This key must be passed as a string. The available values are:<br>- `nfc` (default): Default setting menu is launched<br>- `tap_n_pay`: Tap & pay setting menu is launched<br>The support for this value depends on the device NFC settings. | This key is optional, and it is supported since Tizen 3.0. |
+| `APP_CONTROL_DATA_TYPE` | The NFC setting menu type to be shown. This key must be passed as a string. The available values are:<br>- `nfc` (default): Default setting menu is launched<br>- `tap_n_pay`: Tap & pay setting menu is launched<br>The support for this value depends on the device NFC settings. | This key is optional and is supported since Tizen 3.0. |
 
 #### Example Code
 
@@ -2076,7 +2077,7 @@ nfc_setting(void)
 
 ## Settings for Wi-Fi
 
-The Wi-Fi settings application control is supported in mobile applications only.
+The Wi-Fi settings application control is supported only in mobile applications.
 
 ### Showing Wi-Fi Settings
 
@@ -2125,7 +2126,7 @@ wifi_launch_operation(void)
 
 ## Voice Recorder
 
-The voice recorder application control is supported in mobile applications only.
+The voice recorder application control is supported only in mobile applications.
 
 ### Recording Audio
 
@@ -2148,7 +2149,7 @@ Audio MIME type, such as `audio/m4a`, `audio/ogg`, and `audio/*`
 
 #### Extra Output
 
-| Key                         | Value description                        |
+| Key                         | Value Description                        |
 |-----------------------------|------------------------------------------|
 | `APP_CONTROL_DATA_SELECTED` | The path of the created audio file. This key must be passed as a string. |
 
@@ -2241,6 +2242,6 @@ vpn_appcontrol_result_cb(app_control_h request, app_control_h reply, app_control
 ```
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.2 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.2 and Higher for Wearable
