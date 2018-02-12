@@ -87,29 +87,29 @@ The font styles supported by the EFL are listed in the following table.
 **Table: Supported font styles**
 <table>
 <tr><th>Font feature</th><th>Style attribute</th></tr>
-<tr><td rowspan="3">`font_style` </td><td> `normal`</td></tr>
-<tr><td> `oblique`</td></tr>
-<tr><td> `italic` </td></tr>
-<tr><td rowspan="9"> `font_width`</td><td> `normal`</td></tr>
-<tr><td>`ultracondensed` </td></tr>
-<tr><td>  `extracondensed`</td></tr>
-<tr><td>  `condensed` </td></tr>
-<tr><td>  `semicondensed` </td></tr>
-<tr><td>  `semiexpanded`</td></tr>
-<tr><td>  `expanded`</td></tr>
-<tr><td>  `extraexpanded` </td></tr>
-<tr><td>  `ultraexpanded`</td></tr>
-<tr><td rowspan="11"> `font_weight`</td><td> `normal` </td></tr>
-<tr><td>   `thin`  </td></tr>
-<tr><td>   `ultralight`</td></tr>
-<tr><td> `light`  </td></tr>
-<tr><td>  `book`   </td></tr>
-<tr><td> `medium` </td></tr>
-<tr><td> `semibold`  </td></tr>
-<tr><td>   `bold`   </td></tr>
-<tr><td> `ultrabold`   </td></tr>
-<tr><td> `black`    </td></tr>
-<tr><td> `extrablack` </td></tr>
+<tr><td rowspan="3"><code>font_style</code> </td><td> <code>normal</code></td></tr>
+<tr><td> <code>oblique</code></td></tr>
+<tr><td> <code>italic</code> </td></tr>
+<tr><td rowspan="9"> <code>font_width</code>td><td> <code>normal</code>td></tr>
+<tr><td> <code>ultracondensed</code> </td></tr>
+<tr><td>  <code>extracondensed</code></td></tr>
+<tr><td>  <code>condensed</code> </td></tr>
+<tr><td>  <code>semicondensed</code> </td></tr>
+<tr><td>  <code>semiexpanded</code></td></tr>
+<tr><td>  <code>expanded</code></td></tr>
+<tr><td>  <code>extraexpanded</code> </td></tr>
+<tr><td>  <code>ultraexpanded</code></td></tr>
+<tr><td rowspan="11"> <code>font_weight</code></td><td> <code>normal</code> </td></tr>
+<tr><td>   <code>thin</code>  </td></tr>
+<tr><td>   <code>ultralight</code></td></tr>
+<tr><td> <code>light</code>  </td></tr>
+<tr><td>  <code>book</code>   </td></tr>
+<tr><td> <code>medium</code> </td></tr>
+<tr><td> <code>semibold</code>  </td></tr>
+<tr><td>   <code>bold</code>   </td></tr>
+<tr><td> <code>ultrabold</code>   </td></tr>
+<tr><td> <code>black</code>    </td></tr>
+<tr><td> <code>extrablack</code> </td></tr>
 </table>
 
 The style attributes are not case-sensitive (however, the font feature names are).
@@ -236,7 +236,7 @@ To create a layout with text using the EDC, you can set the font for each text o
 
 You can use the Edje Class: Text API (in [mobile](http://org.tizen.native.mobile.apireference/group__Edje__Object__Text__Class.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Edje__Object__Text__Class.html) applications) to change multiple text occurrences as a batch. If you set a new font or font size to a text class, the change is applied to multiple objects.
 
-> **Note**	
+> **Note**
 > Note that the `text_class` cannot be used in a UI component with markup text or the `elm_entry_text_style_user_push()` function. You must set the `text_class` in EDC.
 
 To set the text class, you can use reserved words or make your own text class:

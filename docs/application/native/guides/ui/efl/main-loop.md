@@ -312,7 +312,7 @@ ecore_idle_exiter_add(my_idle_exiter_cb, my_data);
 ecore_idler_add(my_idler_cb, my_data);
 ```
 
-> **Note**	
+> **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

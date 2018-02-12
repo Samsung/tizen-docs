@@ -83,8 +83,8 @@ Transparent renderers are drawn in order of distance from the camera ( painter's
 - `DrawMode::OVERLAY_2D`
 
  Inside a layer, it is possible to force tree views to be drawn on top of everything else in the layer.
- 
+
 ## Related Information
-* Dependencies
-- Tizen 2.4 and Higher for Mobile
-- Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

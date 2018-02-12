@@ -78,6 +78,6 @@ DALi loads resources in separate threads. If these resource threads are not used
 Currently, DALi creates one thread for loading local resources and another for loading remote resources, as required.
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

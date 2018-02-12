@@ -227,7 +227,11 @@ When no longer needed, the actor's constraints can be removed in several ways:
   actor.RemoveConstraints();
   ```
 
-- To remove all constraints with the tag from an actor (the tag can be set using the `SetTag()` function):`actor.RemoveConstraints( tag );`
+- To remove all constraints with the tag from an actor (the tag can be set using the `SetTag()` function):
+
+  ```
+  actor.RemoveConstraints( tag );
+  ```
 
 ## Constraint Usage Tips
 
@@ -250,6 +254,6 @@ Generally, do not use constraints with the `size` property as constraining the s
 In most general cases, the position and size requirements of a child or parent actor (from its child or parent) can be calculated with size negotiation.
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

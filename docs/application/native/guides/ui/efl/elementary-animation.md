@@ -503,9 +503,9 @@ To manage the transition chain:
   > **Note**  
   > You cannot use transition chaining to make a loop animation, since the transit object is automatically destroyed as soon as the transition completes. Therefore, building on the above example, you cannot loop back from the `t4` transit object to the `t1` transit object, because the `t1` transit object is already deleted at the beginning before the `t2` transit object is run:  
   > ```
-  /* Impossible loop */
-   elm_transit_chain_transit_add(t4, t1);
-   ```
+  > /* Impossible loop */
+  > elm_transit_chain_transit_add(t4, t1);
+  > ```
 
 - You can severe the chain relationship between 2 transit objects using the `elm_transit_chain_transit_del()` function with the transit objects as parameters:
 
