@@ -6,11 +6,11 @@ A dialog pop-up provides critical and timely information, and asks for the user�
 
 -   **Don’t overuse**
 
-    Only use dialog pop-ups when you need a user to confirm something. If an action isn’t critical or can be reversed, provide a [toast](toasts.md) to inform the user that the task was completed.
+    Only use dialog pop-ups when you need a user to confirm something. If an action isn’t critical or can be reversed, provide a [toast](toasts.md) to inform the user that the task completed.
 
 -   **Don’t repeat the same pop-up**
 
-    Only show pop-ups once unless they need to be repeated. Asking users whether to show the same pop-up again should also be avoided.
+    Only show pop-ups once unless they need to be repeated. Avoid asking users whether to show the same pop-up again.
 
 ## Elements
 
@@ -20,7 +20,7 @@ A dialog pop-up provides critical and timely information, and asks for the user�
 
 -   **Body content**
 
-    Body content explains an action that will follow the user’s confirmation. The first line should convey the most important information so users can understand what the pop-up is about by just scanning the text. An image or set of bullet points can make long passages of text easier to read.
+    Body content explains an action that will follow the user’s confirmation. The first line should convey the most important information so users can understand what the pop-up is about by just scanning the text. An image or bullet points can make long passages of text easier to read.
 
 ## Behavior
 
@@ -32,7 +32,7 @@ The title, body content, and image of a dialog pop-up all move together when use
 
     A confirmation pop-up asks the user's intent before performing an irreversible action. It consists of the title and body content in the center, an OK button on the right, and a Cancel button on the left.
 
-|**Confirmation pop-up**| |  
+|**Confirmation pop-up** in developer's guides| |  
 |--------------|-----------|  
 |**Native**|  Pop-up > Buttons2|
 |    **Web**|   Pop-up > side button|
@@ -45,7 +45,7 @@ The title, body content, and image of a dialog pop-up all move together when use
 
     An information pop-up displays important or critical information that needs to be confirmed by the user. It consists of the title, body content, and a bottom button.
 
-|**Information pop-up**| |
+|**Information pop-up** in developer's guides| |
 |---------|----------|
 |  **Native**|    Pop-up > Buttons1|
 |    **Web**|    Pop-up > Bottom button|

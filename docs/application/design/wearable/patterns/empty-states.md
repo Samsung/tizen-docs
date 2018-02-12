@@ -1,17 +1,17 @@
 # Empty States
 
-Empty states are displayed when your app can’t show its regular content. Think of the empty list when no alarms are set, an empty gallery when the user has deleted all photos, or an empty device list when the Gear can’t find any Bluetooth device to connect to. To avoid completely blank screens, provide a simple image and text even when there is no content to show.
+Empty states are displayed when your app can’t show its regular content. An empty list is what a user sees when no alarms are set, a gallery after all photos have been deleted, or an empty device list when the Gear can’t find any Bluetooth device to connect to. To avoid completely blank screens, provide a simple image and text even when there is no content to show.
 
 ## Basic empty states
 
 Basic empty states display a non-interactive image and a tagline.
 
-![](media/pattern_9.4.1-850x174.png)  
+![](media/9.4.1-800x165.png)  
 *Empty states display an image and a tagline that explain the page’s current state.*
 
 -   **Non-interactive images**
 
-    An empty state image should work with the background. Using your app icon or an image that represents your brand identity is recommended.
+    An empty state image should look good against the background. Using your app icon or an image that represents your brand identity is recommended.
 
 -   **Tagline**
 
@@ -23,14 +23,14 @@ Empty states can allow users to add content when there is no content to display.
 
 -   **Interactive image**
 
-    Use a button-type icon so users can add content. Images that can suggest adding content (with a + sign for example) are recommended.
+    Use a button-type icon so users can add content. We recommened using images that can suggest adding content (with a + sign for example).
 
-    ![](media/pattern_9.4.2-850x174.png)  
+    ![](media/9.4.2-800x165.png)  
     *Empty states can include a button-type icon to add more content.*
 
 -   **Tagline**
 
-    Provide short text to inform users on if and how they can add content.
+    Provide short text to inform users if and how they can add content.
 
 > **Tip**    
 > Title bars for empty states are only provided for apps and not for widgets.

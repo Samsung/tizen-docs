@@ -4,7 +4,7 @@ The way you present text greatly affects your app's readability. There is no lim
 
 ## System font
 
-The Gear uses Breeze Sans as a system font. Breeze Sans comes in light, regular, medium, bold, and condensed. The condensed option also comes in thin, light, regular, medium, and bold types. You can download Breeze Sans typeface [here](../../introduction/styles/typography.md).
+The Gear uses Breeze Sans as the system font. Breeze Sans comes in light, regular, medium, bold, and condensed. The condensed option also comes in thin, light, regular, medium, and bold types. You can download Breeze Sans typeface [here](../../introduction/styles/typography.md).
 
  
 
@@ -30,7 +30,7 @@ Your app’s font style should be consistent with its visual identity and presen
 
     A consistent use of one font strengthens your brand identity. To communicate the hierarchy of content, use different styles or weights in the same font family. For example, use a bold weight titles and a regular weight for body text. This allows for text-oriented designs that are consistent and distinctive.
 
-    ![](media/visual_design_8.3.3-850x257.png)  
+    ![](media/8.3.3-800x242.png)  
     *Use of one font family ensures consistency.*
 
 -   **Use the condensed type**

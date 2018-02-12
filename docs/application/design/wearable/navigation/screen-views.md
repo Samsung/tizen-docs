@@ -48,7 +48,7 @@ Like vertical views, they scroll by rotating the bezel. A clockwise rotation scr
 
     ![](media/navigation_6.2.2_1-850x174.png)  
     *Images are presented on individual cards.*  
-    
+
     ![](media/navigation_6.2.2_2-850x174.png)  
     *Text information is presented on individual pages.*
 
@@ -68,8 +68,8 @@ Anchored views display content on screen layers, which users can navigate by rot
 
     Dial screens are well suited for displaying information that can’t be arranged evenly. When users rotate the bezel, the indicator moves around the screen bringing items and information into focus. The index indicator selects and displays specific information in a simple and easy way.
 
-    ![](media/navigation_6.2.3_2-850x206.png)  
-    *The S Health app displays the time of the user’s activities along with detailed records.  
+    ![](media/6.2.3_2-800x194.png)  
+    *The Samsung Health app displays the time of the user’s activities along with detailed records.  
     Since the activities are recorded at irregular time intervals when the user actually moves, using a dial is effective for displaying random periods of time.*
 
 ## Freeform view
@@ -103,11 +103,11 @@ Temporary view windows interrupt the user’s workflow by appearing over the cur
 
     More options provides access to functions that are related to an item in a list.
 
-    ![](media/navigation_6.2.5_3-850x174.png)  
+    ![](media/6.2.5_3-800x165.png)  
     *More options are accessed through the dots on the right side of the screen.*
 
 -   **Pickers**
 
     Pickers allow users to set a value like a number, a date, or time.
 
-    ![](media/navigation_6.2.5_4-850x174.png)  
+    ![](media/6.2.5_4-800x165.png)  

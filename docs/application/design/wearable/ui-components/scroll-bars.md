@@ -4,7 +4,7 @@ A scroll bar indicates the current position on a page as users scroll through wi
 
 ## Usage
 
-Use a scroll bar with long passages of text that don’t fit on one screen.
+Use a scroll bar to handle text that doesn’t fit on one screen.
 
 ## Behavior
 
@@ -20,9 +20,9 @@ Use a scroll bar with long passages of text that don’t fit on one screen.
 
 -   **Vertical scroll bar**
 
-    A vertical scroll bar is provided when a page scrolls up and down. It forms an arc of 90 degrees on the right side of the screen.
+    Use a vertical scroll bar when a page scrolls up and down. It forms an arc of 90 degrees on the right side of the screen.
 
-    | Vertical scroll bar | |
+    | **Vertical scroll bar** in developer's guides | |
     | -- | -- |
     |  **Native** | Circle Scroller > vertical |
     | **Web** | -<br>\* Automatically applied unless otherwise defined. |
@@ -32,9 +32,9 @@ Use a scroll bar with long passages of text that don’t fit on one screen.
 
 -   **Horizontal scroll bar**
 
-    A horizontal scroll bar is provided when a page scrolls right and left. It forms an arc of 90 degrees at the top of the screen.
+    Use a horizontal scroll bar when a page scrolls right and left. It forms an arc of 90 degrees at the top of the screen.
 
-    | Horizontal scroll bar | |
+    | **Horizontal scroll bar** in developer's guides | |
     | -- | -- |
     |  **Native** | Circle Scroller > horizontal |
     |  **Web** | -<br>\* Automatically applied unless otherwise defined. |
@@ -46,7 +46,7 @@ Use a scroll bar with long passages of text that don’t fit on one screen.
 
     A fast scroll index allows users to jump directly to the previous or next [group index](list.html#group_index) in a list.
 
-    | Fast scroll index | |
+    | **Fast scroll index**  in developer's guides | |
     | -- | -- |
     |  **Native** | - |
     | **Web** |  Circular Index Scroll bar |
@@ -59,7 +59,7 @@ Use a scroll bar with long passages of text that don’t fit on one screen.
 
     -   **Rotary action on fast scroll index**
 
-        Once the fast scroll indexes are displayed, users can jump to the previous/next group index by rotating the bezel slowly
+        Once fast scroll indexes are displayed, users can jump to the previous/next group index by rotating the bezel slowly.
 
        ![](media/ui_components_10.13.3_3-850x174.png)  
 *Fast scroll indexes appear when users rotate the bezel quickly in a list presented with indexes.*

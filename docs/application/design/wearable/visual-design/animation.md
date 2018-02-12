@@ -1,6 +1,6 @@
 # Animation
 
-Effective animations help users understand the changes of on-screen elements. Animations express subtle meanings and moods in a way that static designs can't. Animation effects should have a clear purpose to avoid confusing users.
+Effective animations help users understand changes in on-screen elements. Animations can express subtle meanings and moods in a way that static designs can't. Animation effects should have a clear purpose to avoid confusing users.
 
 ## Look and feel
 
@@ -28,7 +28,7 @@ The Gear can show animations where objects glide across the screen as if they we
 
 ## Consistent flow
 
-When transitioning between screens, use consistent animations to indicate whether the transition is at a higher, lower, or the same navigational level. Likewise, use the same animation to express the same meaning when animating components in the screen.
+When transitioning between screens, use consistent animations to indicate whether the transition is at a higher, lower, or equivalent navigational level. Likewise, when animating components in the screen, use the same animation to express the same meaning.
 
 -   **Clearly express visual hierarchy**
 
@@ -49,7 +49,7 @@ When transitioning between screens, use consistent animations to indicate whethe
   </table>
   ------------------------------------ ------------------------------------
 
-    *Animations should show the visual hierarchy between the transitioning screens.*
+    *Animations should show the hierarchy of the transitioning screens.*
 
 -   **Use a uniform style**
 
@@ -75,12 +75,12 @@ When transitioning between screens, use consistent animations to indicate whethe
 
 -   **Maintain a smooth flow.**
 
-    Animations should create a continuous flow. For example, users understand that they’re exploring the same menu if an animation smoothly brings the same element from one screen to the next.
+    Animated feedback helps users distinguish outputs from inputs. Feedback should be provided immediately after user input. A time gap between an input and animation makes it difficult to tell which action the feedback relates to.
 
     <video controls>
       <source src="media/8.4.2.seamlesstransition.mp4" type=video/mp4>
     </video>  
-    *By consistently providing the same element from one screen to the next, animations can give your app a natural flow.*
+    *By consistently showing the same element from one screen to the next, animations can give your app a natural flow.*
 
 <a name="clear_feedback"></a>
 ## Clear feedback
@@ -119,7 +119,7 @@ Animated feedback helps users distinguish outputs from inputs. Feedback should b
 
   ------------------------------------ ------------------------------------
 
-*The fade animation is provided when users release a touch, showing which object they last interacted with. Changing the object size is not recommended.*
+*The fade animation is provided when users release a touch, showing which object they last interacted with. We recommend against changing the object size.*
 
 -   **Bezel feedback**
 
@@ -132,7 +132,7 @@ Animated feedback helps users distinguish outputs from inputs. Feedback should b
 
 ## Intuitive interaction
 
-Animations hint at how to interact with your app, allowing users to easily determine which elements they can select and which pages they can transition to. Through your animations, users should be able to predict the result of interactions.
+Animations hint at how to interact with your app, allowing users to determine which elements they can select and which pages they can transition to. Users should be able to predict the result of interactions through your animations.
 
 <video controls>
   <source src="media/8.4.4.affordance.mp4" type=video/mp4>

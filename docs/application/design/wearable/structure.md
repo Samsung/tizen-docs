@@ -1,8 +1,8 @@
 # Structure
 
-Understanding the Gear’s home structure is the key to designing engaging apps. The Gear’s simple home structure provides easy access to useful features. From the watch face that forms the center of this structure, users can access notifications, widgets, and the moment bar by swiping or rotating the bezel, and bring up the app list by pressing the Home key.
+Understanding the Gear’s home structure is the key to designing engaging apps. The Gear’s simple home structure provides easy access to useful features. From the watch face that forms the center of this structure, users can access notifications, widgets, and the quick panel by swiping or rotating the bezel, and bring up the app list by pressing the Home key.
 
-![](media/structure_5.0.0-850x348.png)
+![](media/5.0.0-1000x409.png)
 
 -   **Watch face**
 
@@ -16,9 +16,10 @@ Understanding the Gear’s home structure is the key to designing engaging apps.
 
     Notifications inform users of your app’s events in a quick and glanceable way. Users can receive notifications to stay updated even when they aren’t directly interacting with the Gear. They access notifications by swiping to the right or rotating the bezel to the left. You can customize elements of notifications to match your app’s content.
 
--   **Moment bar**
+-   **Quick panel**
 
-    The moment bar displays the current status and basic settings icons of Gear. Users access the moment bar by swiping down from the top of the watch face, and adjust the settings by tapping the icons. The settings included in the moment bar are fixed by default.
+    The quick panel displays the current status and basic settings icons of Gear. Users access the quick panel from any screen by swiping down from the top of the screen, and adjust the settings by tapping the icons. The settings included in the quick panel are fixed by default.
+
 
 -   **Apps**
 

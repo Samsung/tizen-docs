@@ -18,7 +18,7 @@ Permission pages should include:
 
 -   **Actions**
 
-    Tapping the tick on the right hand side gives permission and activates the app or the function. Tapping the X closes the app or blocks the function.
+    Tapping the V on the right-hand side gives permission and activates the app or the function. Tapping the X closes the app or blocks the function.
 
 -   **Don't ask again checkbox**
 
