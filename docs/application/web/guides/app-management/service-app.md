@@ -3,7 +3,7 @@
 A service application is a type of Tizen Web application that provides an environment for running JavaScript in the background without a graphical user interface (the application follows the [ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm)). The service application is used to perform tasks that need to run periodically or continuously, but do not require any user interaction. For example, a service application can be used for getting data or listening for platform events in the background. As service applications do not have UI components, they run on top of a more light-weight runtime than UI applications. Therefore, you can expect them to perform better and consume less memory.
 
 > **Note**
-> This feature is supported in wearable applications only. The Web service application is an optional feature, which means that it may not be supported on all wearable devices. You can check the device capability by using the `getCapability()` method of the [SystemInfo](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/systeminfo.html#SystemInfo) interface. For more information, see [Application Filtering](../../tutorials/details/app-filtering.md).
+> This feature is supported in TV applications only. The Web service application is an optional feature, which means that it may not be supported on all TV devices. You can check the device capability by using the `getCapability()` method of the [SystemInfo](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/systeminfo.html#SystemInfo) interface. For more information, see [Application Filtering](../../tutorials/app-filtering.md).
 
 The main features of the service application include:
 
@@ -19,7 +19,7 @@ The main features of the service application include:
 
 - Launching applications
 
-  You can [launch service applications](#launch) through another application by using the `launch()` and `launchAppControl()` methods of the [Application](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html) API by using an explicit application ID. You can also register service applications to be launched automatically at boot time.
+  You can [launch service applications](#launch) through another application by using the `launch()` and `launchAppControl()` methods of the [Application](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html) API by using an explicit application ID. You can also register service applications to be launched automatically at boot time.
 
 - Terminating applications
 
@@ -28,7 +28,7 @@ The main features of the service application include:
 The device main menu does not contain any icons for service applications, because the applications run in the background. The task switcher does not show them either. Service applications can run simultaneously with other service and UI applications.
 
 > **Note**
-> The wearable service application requires [partner-level certification](../../tutorials/details/sec-privileges.md) in Tizen 2.3.
+> The TV service application requires [partner-level certification](../../tutorials/sign-certificate.md) in Tizen 3.0.
 
 ## Prerequisites
 
@@ -55,7 +55,9 @@ To enable your application to use the service application functionality:
    </widget>
    ```
 
-   The `<tizen:service>` element is a child of the `<widget>` element in the `config.xml` file. With the `<tizen:service>` element attributes, you can set the traits of a service application, such as application ID, auto restart, and boot launching capability. With the `<tizen:service>` child elements, you can set the starting script, name, and icon for the service application.The definition of all service elements is listed and explained in the [Extending Configuration Elements](../../../tizen-studio/web-tools/config-editor.md#ww_extend).
+   The `<tizen:service>` element is a child of the `<widget>` element in the `config.xml` file. With the `<tizen:service>` element attributes, you can set the traits of a service application, such as application ID, auto restart, and boot launching capability. With the `<tizen:service>` child elements, you can set the starting script, name, and icon for the service application.  
+
+   The definition of all service elements is listed and explained in the [Extending Configuration Elements](../../../tizen-studio/web-tools/config-editor.md#ww_extend).
 
 3. To use the [Application](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html) API, the application has to request permission by adding the following privilege to the `config.xml` file:
 
@@ -81,7 +83,9 @@ To run a service application, you must export a number of callbacks using the [C
 
 Learning how to manage service application callbacks is a basic application management skill:
 
-1. Create the service entry point with the `onStart()` callback.The callback is invoked when the service is launched. Within the callback, you can prepare resources and initialize whatever the service application needs during the execution.
+1. Create the service entry point with the `onStart()` callback.
+
+   The callback is invoked when the service is launched. Within the callback, you can prepare resources and initialize whatever the service application needs during the execution.
 
    ```
    module.exports.onStart = function() {
@@ -102,7 +106,9 @@ Learning how to manage service application callbacks is a basic application mana
    }
    ```
 
-2. Write the request handler with the `onRequest()` callback.The callback is invoked to handle incoming service requests. Within the callback, write code for each request from other applications and the platform. To obtain the request, use the `getRequestedAppControl()` method in the [Application](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html) API.
+2. Write the request handler with the `onRequest()` callback.
+
+    The callback is invoked to handle incoming service requests. Within the callback, write code for each request from other applications and the platform. To obtain the request, use the `getRequestedAppControl()` method in the [Application](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html) API.
 
    ```
    module.exports.onRequest = function() {
@@ -117,7 +123,9 @@ Learning how to manage service application callbacks is a basic application mana
    }
    ```
 
-3. Write the termination with the `onExit()` callback.The callback is invoked when the service is about to be stopped. All resources can be cleared and backed up within the callback.
+3. Write the termination with the `onExit()` callback.
+
+    The callback is invoked when the service is about to be stopped. All resources can be cleared and backed up within the callback.
 
    ```
    module.exports.onExit = function() {
@@ -138,7 +146,7 @@ To package the service application with a UI application, define the service in 
 <?xml version="1.0" encoding="TF-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets"
         id="http://yourdomain/WebServiceApplication" version="1.0.0" viewmodes="maximized">
-   <tizen:application id="websvcapp0.WebServiceApplication" package="websvcapp0" required_version="2.3"/>
+   <tizen:application id="websvcapp0.WebServiceApplication" package="websvcapp0" required_version="3.0"/>
    <content src="index.html"/>
    <feature name="http://tizen.org/feature/screen.size.all"/>
    <icon src="icon.png"/>
@@ -182,7 +190,7 @@ Learning how to launch a service application is a basic application management s
 
 Learning how to terminate a service application is a basic application management skill:
 
-1. The service application can terminate itself when it receives a particular request. The following example code uses the [Message Port](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/messageport.html) API to send such a request to the service application.
+1. The service application can terminate itself when it receives a particular request. The following example code uses the [Message Port](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/messageport.html) API to send such a request to the service application.
 
    The application sends a message by calling the `sendMessage()` method.
 
@@ -209,22 +217,20 @@ Learning how to terminate a service application is a basic application managemen
 <a name="fund"></a>
 ## Supported APIs for Service Applications
 
-You can use a selection of the following Tizen wearable Web Device APIs to interact with the platform or other service applications. More Device APIs for service applications are supported in the next release.
+You can use a selection of the following Tizen TV Web Device APIs to interact with the platform or other service applications. More Device APIs for service applications are supported in the next release.
 
 **Table: Supported APIs**
 
 | API                                      | Description                              |
 | ---------------------------------------- | ---------------------------------------- |
-| [Tizen](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html) | The base object for accessing the Tizen wearable Web Device APIs. |
-| [Alarm](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/alarm.html) | This API provides methods for setting and unsetting alarms. |
-| [Application](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html) | This API provides information about the currently-running and installed applications and ways to launch other applications.Note that the `getRequestedAppControl()` method is only valid inside the `onRequest()` callback. |
-| [Package](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/package.html) | This API provides methods to install and uninstall Tizen packages and to get information about installed packages. |
-| [Filesystem](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/filesystem.html) | This API provides methods to access the file system of a device and to read, write, copy, move, and delete files. |
-| [Message Port](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/messageport.html) | This API provides methods for an application to communicate with other applications. |
-| [Power](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/power.html) | This API provides interfaces and methods for controlling power resources. Note that the `isScreenOn()`, `restoreScreenBrightness()`, `setScreenBrightness()`, and `getScreenBrightness()` methods are not supported for wearable Web service applications. |
-| [System Information](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/systeminfo.html) | This API provides information about the device's display, network, storage, and other capabilities. |
-
+| [Tizen](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html) | The base object for accessing the Tizen TV Web Device APIs. |
+| [Alarm](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/alarm.html) | This API provides methods for setting and unsetting alarms. |
+| [Application](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html) | This API provides information about the currently-running and installed applications and ways to launch other applications.<br>Note that the `getRequestedAppControl()` method is only valid inside the `onRequest()` callback. |
+| [Package](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/package.html) | This API provides methods to install and uninstall Tizen packages and to get information about installed packages. |
+| [Filesystem](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/filesystem.html) | This API provides methods to access the file system of a device and to read, write, copy, move, and delete files. |
+| [Message Port](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/messageport.html) | This API provides methods for an application to communicate with other applications. |
+| [System Information](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/systeminfo.html) | This API provides information about the device's display, network, storage, and other capabilities. |
 
 ## Related Information
 * Dependencies
-  - Tizen 2.3.2 and Higher for Wearable
+  - Tizen 3.0 and Higher for TV

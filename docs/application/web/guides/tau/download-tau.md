@@ -7,26 +7,30 @@ This feature is supported in mobile and wearable applications only.
 To download and build TAU from Git:
 
 > **Note**  
-> To build the TAU library, make sure that you have both Git and `Node.js` installed.
+> To build a TAU library, ensure that you have both Git and `Node.js` installed.
 
 1. Download the Git repository:
 
-   a. Clone a copy of the master TAU Git repository:
+   a. Clone a copy of the master branch in the TAU Git repository:
 
       ```
-      git clone git://review.tizen.org/platform/framework/web/tau.git
+      git clone git://git.tizen.org/platform/framework/web/tau
       ```
 
-   b. Change to the TAU directory:
+   b. Change to the `tau` directory:
 
       ```
       cd tau
       ```
 
-   c. Check out and build a specific version of TAU:
+   c. Check out the latest version of TAU:
 
       ```
-      git checkout 0.x-stable
+      git checkout master
+      ```
+      Or check out a specific version of TAU
+      ```
+      git checkout tau_x.xx.xx
       ```
 
 2. Build TAU:
@@ -41,6 +45,10 @@ To download and build TAU from Git:
 
       ```
       grunt -V
+      ```
+      If grunt is not installed, then run:
+      ```
+      (sudo) npm install -g grunt-cli
       ```
 
    c. Build TAU by running the following command in the `tau` directory:
