@@ -1,5 +1,6 @@
 # Application Management
 
+
 The application management features cover the various application models available for native applications. They describe the application life-cycle and resources, and the communication methods available for the application.
 
 You can use the following application management features in your native applications:
@@ -47,6 +48,6 @@ You can use the following application management features in your native applica
   You can register a background task for service applications with trigger conditions. It improves the service application's performance and system health such as battery life.
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

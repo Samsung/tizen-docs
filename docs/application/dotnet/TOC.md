@@ -3,7 +3,9 @@
 
 # [Guides](guides/index.md)
 
+<!--
 # [API Reference](api-reference/index.md)
+-->
 
 # Samples
 ## [Tizen Samples](samples/tizen-samples.md)

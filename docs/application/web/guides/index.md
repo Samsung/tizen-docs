@@ -1,4 +1,4 @@
-#  Tizen Web APIs
+# Tizen Web APIs
 
 Using the Tizen Web API modules, you can develop rich Web applications and build great application experiences with well-known Web programming languages: HTML, CSS, and JavaScript. Like every major browser in the market, the Tizen Web API modules support the latest HTML5 capabilities, such as animation, offline, audio, and video. By utilizing the standard HTML5 capabilities, your Web applications are ready to run across various devices and platforms with minimal customization. In addition to the JavaScript-based Tizen Device API, you can also enable advanced device access from your Web applications, such as Bluetooth and NFC.
 
