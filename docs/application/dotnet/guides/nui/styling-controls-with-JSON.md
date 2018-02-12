@@ -8,17 +8,18 @@ Visuals are the main building block of controls. A control is built from visuals
 
 The following Visual types are available:
 
-
-
-| Type      | Example                                  |
-|---------|----------------------------------------|
-| Border    | ![Border visual](media/border-visual.png) |
-| Color     | ![Color visual](media/color-visual.png)  |
-| Gradient  | ![Gradient visual](media/linear-gradient-visual.png) |
-| Image     | ![Image visual](media/image-visual.png)  |
-| Mesh      | ![Mesh visual](media/mesh-visual.png)    |
-| Primitive | ![Primitive visual](media/cube.png)      |
-| Text      | **Hello there**                          |
+| Type           | Example                                  |
+| -------------- | ---------------------------------------- |
+| Border         | ![Border visual](media/border-visual.png) |
+| Color          | ![Color visual](media/color-visual.png)  |
+| Gradient       | ![Gradient visual](media/linear-gradient-visual.png) |
+| Image          | ![Image visual](media/image-visual.png)  |
+| N-Patch        | ![NPatch visual](media/n-patch-visual.png) |
+| SVG            | ![SVG visual](media/svg-visual.svg)      |
+| Animated Image | ![SVG visual](media/animated-image-visual.gif) |
+| Mesh           | ![Mesh visual](media/mesh-visual.png)    |
+| Primitive      | ![Primitive visual](media/cube.png)      |
+| Text           | **Hello there**                          |
 
 For more information on how to create, register, and use visuals, and lists all properties associated with each visual type, see [Visuals](visuals.md).
 
@@ -28,8 +29,6 @@ For more information on how to create, register, and use visuals, and lists all 
 Styling is inherited, so styling a parent automatically affects its child, unless overridden.
 
 The following table describes the Style properties offered by View and PushButton.
-
-
 
 | Name                 | Type      | Description                              |
 |--------------------|---------|----------------------------------------|

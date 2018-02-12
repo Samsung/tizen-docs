@@ -134,19 +134,21 @@ The following table lists the supported `GradientVisualProperty` properties. The
 | `Units`         | INTEGER or STRING | No              | The coordinate system.                   |
 | `SpreadMethod`  | INTEGER or STRING | No              | Indicates what happens if a gradient starts or ends inside bounds. |
 
--   The `Units` are used to define the coordinate system for the attributes:
-    -   Start (x1, y1) and end (x2, y2) points of a line, if using a linear gradient.
-    -   Center point (cx, cy) and radius (r) of a circle, if using a radial gradient.
+### Units
+The `Units` are used to define the coordinate system for the attributes:
+ -  Start (x1, y1) and end (x2, y2) points of a line, if using a linear gradient.
+ -  Center point (cx, cy) and radius (r) of a circle, if using a radial gradient.
 
-- The `SpreadMethod` property indicates what happens if the gradient starts or ends inside the bounds of the target rectangle.
+### SpreadMethod
+The `SpreadMethod` property indicates what happens if the gradient starts or ends inside the bounds of the target rectangle.
 
-    **Table: SpreadMethod values**
+**Table: SpreadMethod values**
 
-    | Enumeration value | Description                              |
-    |-----------------|----------------------------------------|
-    | `Pad`             | Default. Uses the terminal colors of the gradient to fill the remainder of the quad. |
-    | `Reflect`         | Reflects the gradient pattern start-to-end, end-to-start, start-to-end, and so on, until the quad is filled. |
-    | `Repeat`          | Repeats the gradient pattern start-to-end, start-to-end, start-to-end, and so on, until the quad is filled. |
+| Enumeration value | Description                              |
+| ----------------- | ---------------------------------------- |
+| `Pad`             | Default. Uses the terminal colors of the gradient to fill the remainder of the quad. |
+| `Reflect`         | Reflects the gradient pattern start-to-end, end-to-start, start-to-end, and so on, until the quad is filled. |
+| `Repeat`          | Repeats the gradient pattern start-to-end, start-to-end, start-to-end, and so on, until the quad is filled. |
 
 **Usage:**
 
@@ -408,17 +410,18 @@ The following table lists the supported properties. The visual type is `Primitiv
 
 -   You can select from 7 `Shape` values, some of which are simplified specializations of another.
 
-    **Table: Shape values**
+**Table: Shape values**
 
-    | Enumeration value | Description                              |
-    |-----------------|----------------------------------------|
-    | `Sphere`          | Default.                                 |
-    | `ConicalFrustrum` | The area bound between 2 circles (basically, a cone with the tip removed). |
-    | `Cone`            | Equivalent to a conical frustrum with a top radius of zero. |
-    | `Cylinder`        | Equivalent to a conical frustrum with equal radii for the top and bottom circles. |
-    | `Cube`            | Equivalent to a beveled cube with a bevel percentage of 0. |
-    | `Octahedron`      | Equivalent to a beveled cube with a bevel percentage of 1. |
-    | `BevelledCube`    | A cube/cuboid with all edges flattened to some degree. |
+  | Enumeration value | Description                              |
+  | ----------------- | ---------------------------------------- |
+  | `Sphere`          | Default.                                 |
+  | `ConicalFrustrum` | The area bound between 2 circles (basically, a cone with the tip removed). |
+  | `Cone`            | Equivalent to a conical frustrum with a top radius of zero. |
+  | `Cylinder`        | Equivalent to a conical frustrum with equal radii for the top and bottom circles. |
+  | `Cube`            | Equivalent to a beveled cube with a bevel percentage of 0. |
+  | `Octahedron`      | Equivalent to a beveled cube with a bevel percentage of 1. |
+  | `BevelledCube`    | A cube/cuboid with all edges flattened to some degree. |
+
 
 **Usage:**
 
@@ -454,25 +457,25 @@ public int Shape
 
 ### Primitive Visual Examples
 
--   **Sphere:**
+- **Sphere:**
 
     ![Sphere](media/sphere.png)
 
 - **Conics:**
 
-    | Frustrum                                | Cone                    | Cylinder                        |
-    |---------------------------------------|-----------------------|-------------------------------|
-    | ![Frustrum](media/conical-frustrum.png) | ![Cone](media/cone.png) | ![Cylinder](media/cylinder.png) |
+| Frustrum                                | Cone                    | Cylinder                        |
+| --------------------------------------- | ----------------------- | ------------------------------- |
+| ![Frustrum](media/conical-frustrum.png) | ![Cone](media/cone.png) | ![Cylinder](media/cylinder.png) |
 
 - **Bevel:**
 
     Bevel percentage ranges from 0.0 to 1.0. It affects the ratio of the outer face widths to the width of the overall cube.
 
-    | 0.0 (cube)                               | 0.3                                      |
-    |----------------------------------------|----------------------------------------|
-    | ![Cube](media/cube.png)                  | ![Low bevel](media/bevelled-cube-low.png) |
-    | ![Cube](media/cube.png)                 | ![Low bevel](media/bevelled-cube-low.png) |
-    | ![High bevel ](media/bevelled-cube-high.png) | ![Octahedron](media/octahedron.png)      |
+| 0.0 (cube)                               | 0.3                                      |
+| ---------------------------------------- | ---------------------------------------- |
+| ![Cube](media/cube.png)                  | ![Low bevel](media/bevelled-cube-low.png) |
+| ![Cube](media/cube.png)                 | ![Low bevel](media/bevelled-cube-low.png) |
+| ![High bevel ](media/bevelled-cube-high.png) | ![Octahedron](media/octahedron.png)      |
 
 - **Slices:**
 
