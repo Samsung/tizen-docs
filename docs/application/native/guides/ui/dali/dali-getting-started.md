@@ -188,6 +188,6 @@ The following figure illustrates the basic DALi application running on a Tizen e
 ![Basic DALi application](./media/hello_world_dali.png)
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

@@ -50,7 +50,7 @@ The following table lists the available TableView properties.
 **Table: TableView properties**
 
 | Property         | Type             | Description           |
-| ---------------- | ---------------- | --------------------- |
+|----------------|----------------|---------------------|
 | `ROWS`           | UNSIGNED INTEGER | The number of rows    |
 | `COLUMNS`        | UNSIGNED INTEGER | The number of columns |
 | `CELL_PADDING`   | VECTOR2          | The cell padding      |
@@ -63,7 +63,7 @@ The following table lists the available TableView properties.
  **Table: TableView Child properties**
 
 | Property                    | Type     | Description                               |
-| --------------------------- | -------- | ----------------------------------------- |
+|---------------------------|--------|-----------------------------------------|
 | `CELL_INDEX`                | VECTOR2  | The top-left cell this child occupies     |
 | `ROW_SPAN`                  | FLOAT    | The number of rows this child occupies    |
 | `COLUMN_SPAN`               | FLOAT    | The number of columns this child occupies |
@@ -71,6 +71,6 @@ The following table lists the available TableView properties.
 | `CELL_VERTICAL_ALIGNMENT`   | STRING   | The vertical alignment of this child inside the cells |
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

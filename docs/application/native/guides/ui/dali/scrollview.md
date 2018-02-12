@@ -24,7 +24,7 @@ The following table lists the basic signals provided by the `Dali::Toolkit::Scro
 **Table: Dali::Toolkit::ScrollView input signals**
 
 | Input signal              | Description                                 |
-| ------------------------- | ------------------------------------------- |
+|-------------------------|-------------------------------------------|
 | `SnapStartedSignal()`     | Emitted when the ScrollView has started to snap or flick. |
 
 A scroll view emits a `ScrollView::SnapStartedSignal()` signal when the scroll view has started to snap or flick. The signal informs the target of the scroll position, scale, and rotation.
@@ -116,7 +116,7 @@ The following table lists the available ScrollView properties.
 **Table: ScrollView properties**
 
 | Property                     | Type       | Description                              |
-| ---------------------------- | ---------- | ---------------------------------------- |
+|----------------------------|----------|----------------------------------------|
 | `WRAP_ENABLED`               | BOOLEAN    | Whether wrapping is enabled              |
 | `PANNING_ENABLED`            | BOOLEAN    | Whether panning is enabled               |
 | `AXIS_AUTO_LOCK_ENABLED`     | BOOLEAN    | Whether the Axis Auto Lock mode for panning within the ScrollView is enabled |
@@ -145,6 +145,6 @@ The following table lists the available ScrollView properties.
 | `START_PAGE_POSITION`        | VECTOR3    | The starting page position               |
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

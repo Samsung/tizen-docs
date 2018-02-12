@@ -24,7 +24,7 @@ The following table lists the basic signals provided by the `Dali::Toolkit::Text
 **Table: Dali::Toolkit::TextEditor input signals**
 
 | Input signal                 | Description                              |
-| ---------------------------- | ---------------------------------------- |
+|----------------------------|----------------------------------------|
 | `TextChangedSignal()`        | Emitted when the text changes.           |
 | `InputStyleChangedSignal()`  | Emitted when the input style is updated as a consequence of a change in the cursor position. |
 | `ScrollStateChangedSignal()` | Emitted when TextEditor scrolling is started or finished. |
@@ -59,7 +59,7 @@ The following table lists the available `TextEditor` properties.
 **Table: TextEditor properties**
 
 | Property                               | Type      | Description                              |
-| -------------------------------------- | --------- | ---------------------------------------- |
+|--------------------------------------|---------|----------------------------------------|
 | `RENDERING_BACKEND`                    | INTEGER   | The type or rendering e.g. bitmap-based  |
 | `TEXT`                                 | STRING    | The text to display in UTF-8 format      |
 | `TEXT_COLOR`                           | VECTOR4   | The text color                           |
@@ -114,6 +114,6 @@ The following table lists the available `TextEditor` properties.
 | `LINE_WRAP_MODE`                       | INTEGER or STRING | Line wrap mode when text lines are greater than the layout width |
 
 ## Related Information
-* Dependencies
- - Tizen 3.0 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 3.0 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

@@ -107,6 +107,6 @@ slider.SetProperty( Slider::Property::HANDLE_VISUAL, handleVisual );
 ```
 
 ## Related Information
-* Dependencies
- - Tizen 3.0 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 3.0 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

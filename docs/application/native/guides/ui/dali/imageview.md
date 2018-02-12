@@ -65,22 +65,20 @@ ImageView has the following properties:
 | PIXEL_AREA | Vector4 | sub area of image (Animatable). |
 
 > **Note**  
->+ PreMultipliedAlpha
+>- PreMultipliedAlpha
 >
-> : If PreMultipliedAlpha is true, the RGB components represent the color of the object or pixel adjusted for its opacity by multiplication. If false, the opacity is disregarded.
+> If PreMultipliedAlpha is true, the RGB components represent the color of the object or pixel adjusted for its opacity by multiplication. If false, the opacity is disregarded.
 >
+>- PixelArea
 >
->+ PixelArea
+> PixelArea is a relative value, with the whole image area as [0.0, 0.0, 1.0, 1.0]. Vector4 area values are (x, y, width, height).
 >
-> : PixelArea is a relative value, with the whole image area as [0.0, 0.0, 1.0, 1.0]. Vector4 area values are (x, y, width, height).
+> e.g on a 200 x 200 pixel image [0.25, 0.5, 0.5, 0.5] would represent a sub area of that image with the following co-ordinates:
 >
->e.g on a 200 x 200 pixel image [0.25, 0.5, 0.5, 0.5] would represent a sub area
->of that image with the following co-ordinates:
->
->Top left     : 50,100 / Top right    : 150,100 / Bottom left  : 50,200 / Bottom right : 150,200
+> Top left     : 50,100 / Top right    : 150,100 / Bottom left  : 50,200 / Bottom right : 150,200
 
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

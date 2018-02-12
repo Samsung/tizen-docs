@@ -124,7 +124,7 @@ program {
 
   Determines the program that is run after the current program completes. The source and signal parameters of a program run as an `after` are ignored. Multiple `after` statements can be specified per program.
 
-> **Note**	
+> **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

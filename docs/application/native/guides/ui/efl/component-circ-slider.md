@@ -86,9 +86,9 @@ The circle slider consists of 2 parts, introduced in the following table.
 **Table: Circle slider items**
 <table>
 <tr><th>Sample</th><th>Items</th></tr>
-<tr><td rowspan="2"> ![elm/slider/horizontal/warning](./media/circle_slider3.png)</td>
-<td> `default`: Default circle item, which draws a slider bar.<br>This item represents the value of the circle slider, which is a red circular area in the left example.</td></tr>
-<tr><td> `bg`: Background circle item, which is a dark circular area in the left example. </td></tr>
+<tr><td rowspan="2"> <img alt="elm/slider/horizontal/warning" src="./media/circle_slider3.png" /></td>
+<td> <code>default</code>: Default circle item, which draws a slider bar.<br>This item represents the value of the circle slider, which is a red circular area in the left example.</td></tr>
+<tr><td> <code>bg</code>: Background circle item, which is a dark circular area in the left example. </td></tr>
 </table>
 
 The following example shows how to manipulate the items.

@@ -106,12 +106,12 @@ The following table lists the functions you can use to set EFL Elementary UI com
 
 | Function                                 | Description                              |
 |----------------------------------------|----------------------------------------|
-| `void elm_atspi_accessible_name_set(Elm_Interface_Atspi_Accessible *obj, const char *text)` | Set a text of an object.`obj`: Elementary object`text`: New accessible name for the object |
-| `void elm_atspi_accessible_name_cb_set(Elm_Interface_Atspi_Accessible *obj, Elm_Atspi_Reading_Info_Cb name_cb, const void *data)` | Set the accessible name information callback for an object.`obj`: Elementary object`name_cb`: Accessible name information callback for the object`data`: Data passed to the accessible name information callback |
-| `void elm_atspi_accessible_role_set(Elm_Interface_Atspi_Accessible *obj, Elm_Atspi_Role role)` | Set the accessible role.`obj`: Elementary object`role`: New accessible role for the object |
-| `void elm_atspi_accessible_description_set(Elm_Interface_Atspi_Accessible *obj, const char *text)` | Set the accessible description.`obj`: Elementary object`text`: Description text for the object |
-| `void elm_atspi_accessible_description_cb_set(Elm_Interface_Atspi_Accessible *obj, Elm_Atspi_Reading_Info_Cb description_cb, const void *data)` | Set the accessible description information callback for an object.`obj`: Elementary object`description_cb`: Accessible description information callback for the object`data`: Data passed to the accessible description information callback |
-| `void elm_atspi_accessible_translation_domain_set(Elm_Interface_Atspi_Accessible *obj, const char *domain)` | Bind the translation domain to the accessible object.`obj`: Elementary object`domain`: Translation domain (name space for translation keys) |
+| `void elm_atspi_accessible_name_set(Elm_Interface_Atspi_Accessible *obj, const char *text)` | Set a text of an object.<br><br>- `obj`: Elementary object<br>- `text`: New accessible name for the object |
+| `void elm_atspi_accessible_name_cb_set(Elm_Interface_Atspi_Accessible *obj, Elm_Atspi_Reading_Info_Cb name_cb, const void *data)` | Set the accessible name information callback for an object.<br><br>- `obj`: Elementary object<br>- `name_cb`: Accessible name information callback for the object<br>- `data`: Data passed to the accessible name information callback |
+| `void elm_atspi_accessible_role_set(Elm_Interface_Atspi_Accessible *obj, Elm_Atspi_Role role)` | Set the accessible role.<br><br>- `obj`: Elementary object<br>- `role`: New accessible role for the object |
+| `void elm_atspi_accessible_description_set(Elm_Interface_Atspi_Accessible *obj, const char *text)` | Set the accessible description.<br><br>- `obj`: Elementary object<br>- `text`: Description text for the object |
+| `void elm_atspi_accessible_description_cb_set(Elm_Interface_Atspi_Accessible *obj, Elm_Atspi_Reading_Info_Cb description_cb, const void *data)` | Set the accessible description information callback for an object.<br><br>- `obj`: Elementary object<br>- `description_cb`: Accessible description information callback for the object<br>- `data`: Data passed to the accessible description information callback |
+| `void elm_atspi_accessible_translation_domain_set(Elm_Interface_Atspi_Accessible *obj, const char *domain)` | Bind the translation domain to the accessible object.<br><br>- `obj`: Elementary object<br>- `domain`: Translation domain (name space for translation keys) |
 
 
 **Figure: Readable components in the UI Components sample**
@@ -290,7 +290,7 @@ The following table lists the function you can use to define the reading informa
 
 | Function                                 | Description                              |
 |----------------------------------------|----------------------------------------|
-| `void elm_atspi_accessible_reading_info_type_set(Elm_Interface_Atspi_Accessible *obj, Elm_Atspi_Reading_Info_Type_Mask reading_info)` | Set the reading information types for an accessible object.`obj`: Elementary object`reading_info`: Reading information types |
+| `void elm_atspi_accessible_reading_info_type_set(Elm_Interface_Atspi_Accessible *obj, Elm_Atspi_Reading_Info_Type_Mask reading_info)` | Set the reading information types for an accessible object.<br><br>- `obj`: Elementary object<br>- `reading_info`: Reading information types |
 
 The following source code snippet demonstrates how to set the reading information types for an accessible object in the application source code:
 
@@ -324,8 +324,8 @@ The following table lists the functions you can use to customize the order in wh
 
 | Function                                 | Description                              |
 |----------------------------------------|----------------------------------------|
-| `Eina_Bool elm_atspi_accessible_relationship_append(Elm_Interface_Atspi_Accessible *obj, Elm_Atspi_Relation_Type type, const Elm_Interface_Atspi_Accessible *relation_object)` | Append the relation to the relation set of a certain object or component object.				`obj`: Elementary accessible object (relation source)		`type`: Type of the ATSPI relation		`relation_object`: Relation target object |
-| `void elm_atspi_accessible_relationship_remove(Elm_Interface_Atspi_Accessible *obj, Elm_Atspi_Relation_Type type, const Elm_Interface_Atspi_Accessible *relation_object)` | Remove the relation from the relation set of a certain object or component object.				`obj`: Elementary accessible object (relation source)		`type`: Type of the ATSPI relation		`relation_object`: Relation target object |
+| `Eina_Bool elm_atspi_accessible_relationship_append(Elm_Interface_Atspi_Accessible *obj, Elm_Atspi_Relation_Type type, const Elm_Interface_Atspi_Accessible *relation_object)` | Append the relation to the relation set of a certain object or component object.<br><br>-		`obj`: Elementary accessible object (relation source)<br>-	`type`: Type of the ATSPI relation<br>-		`relation_object`: Relation target object |
+| `void elm_atspi_accessible_relationship_remove(Elm_Interface_Atspi_Accessible *obj, Elm_Atspi_Relation_Type type, const Elm_Interface_Atspi_Accessible *relation_object)` | Remove the relation from the relation set of a certain object or component object.<br><br>-			`obj`: Elementary accessible object (relation source)<br>-		`type`: Type of the ATSPI relation<br>-	`relation_object`: Relation target object |
 
 The following figure illustrates the UI reading order example in the UI Components sample application. In the top part of the screen, the components have been ordered explicitly by the developer by setting the ATSPI standard relations between accessible objects corresponding to these components. In the bottom part of the screen, the components have no relation-based navigation set at all. This results in the natural reading order of the UI elements maintained implicitly by the screen reader itself. The natural reading order is a heuristic based on the UI elements' geometrical position on the screen (top to bottom, and left to right reading direction).
 
