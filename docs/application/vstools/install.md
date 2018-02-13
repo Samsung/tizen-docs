@@ -33,7 +33,7 @@ To work with Visual Studio Tools for Tizen, your computer must have:
 
 The Tizen emulator for Visual Studio has the same requirements as the emulator in the Tizen Studio. To check the detailed hardware and software requirements for the Tizen emulator, see [Emulator Requirements](../tizen-studio/setup/prerequisites.md#emulator).
 
-- Intel&reg; Hardware Acceleration Execution Manager (Intel&reg; HAXM) speeds up the Tizen emulation on Intel-VT-enabled systems. The Intel&reg; HAXM installation is started automatically as part of the Visual Studio Tools for Tizen installation. For more information, see [Hardware Accelerated Execution Manager](../tizen-studio/setup/hardware-accelerated-execution-manager.md)
+- Intel&reg; Hardware Acceleration Execution Manager (Intel&reg; HAXM) speeds up the Tizen emulation on Intel-VT-enabled systems. The Intel&reg; HAXM installation is started automatically as part of the Visual Studio Tools for Tizen installation. For more information, see [Hardware Accelerated Execution Manager](../tizen-studio/setup/hardware-accelerated-execution-manager.md).
 
 - Make sure **Hyper-V** is disabled (in Windows&reg; 10 or higher):
   1. In the **Start** menu, select **Programs and Features**.
@@ -70,7 +70,7 @@ The Visual Studio Tools for Tizen extension is registered in the Visual Studio M
 
    The installation starts.
 
-Alternatively, you can download the Visual Studio Tools for Tizen extension from the [Visual Studio Marketplace Web site](https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen)
+Alternatively, you can download the Visual Studio Tools for Tizen extension from the [Visual Studio Marketplace Web site](https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen).
 
 ### Installing the Tizen Baseline SDK
 
