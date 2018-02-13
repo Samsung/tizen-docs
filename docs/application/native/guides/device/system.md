@@ -603,7 +603,7 @@ The following table lists the build system keys.
 | `http://tizen.org/system/build.time`     | `String` | The platform returns the build time. The build time is made when the platform image is created. |
 | `http://tizen.org/system/build.type`     | `String` | The platform returns the build type, such as `"user"` or `"eng"`. The build type is made when the platform image is created. |
 | `http://tizen.org/system/build.variant`  | `String` | The platform returns the variant release information. The variant release information is made when the platform image is created. |
-| `http://tizen.org/system/build.version.release` | `String` | The platform returns the build version information. The build version information is made when the platform image is created. |
+| `http://tizen.org/system/build.release` | `String` | The platform returns the build version information. The build version information is made when the platform image is created. |
 
 The following table lists the manufacturer keys.
 
