@@ -424,6 +424,7 @@ The following table lists the supported properties. The visual type is `Visual::
 There are six shapes that you can choose from `PrimitiveVisual::Property::SHAPE`, some of which are simplified specializations of another.
 
 <a name="shapes"></a>
+
   | Enumeration                              | String             | Description                              | Parameters                               |
   |------------------------------------------|--------------------|------------------------------------------|------------------------------------------|
   | `PrimitiveVisual::Shape::SPHERE`         | `SPHERE`           | Default                                  | `color`, `slices`, `stacks`              |
