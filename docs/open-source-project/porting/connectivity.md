@@ -206,7 +206,7 @@ All other Wi-Fi related functionality is handled by the ConnMan daemon.
 ### References
 
 - Connection Manager (ConnMan) project website: [https://01.org/connman](https://01.org/connman)
-- Linux wireless (IEEE-802.11) subsystem: [http://linuxwireless.org/](http://linuxwireless.org/)
+- Linux wireless (IEEE-802.11) subsystem: [https://wireless.wiki.kernel.org](https://wireless.wiki.kernel.org)
 - Information on Linux WPA/WPA2/IEEE 802.1X Supplicant: [http://hostap.epitest.fi/wpa_supplicant/](http://hostap.epitest.fi/wpa_supplicant/)
 - Latest ConnMan release: [http://git.kernel.org/?p=network/connman/connman.git;a=summary](http://git.kernel.org/?p=network/connman/connman.git;a=summary)
 - WLAN driver plugin Git path: `/adaptation/devices/wlandrv-plugin-tizen-bcm43xx`

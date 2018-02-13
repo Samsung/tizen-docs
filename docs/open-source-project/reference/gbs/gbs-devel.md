@@ -8,7 +8,7 @@ Use the `gbs devel` subcommand to facilitate package maintainers in maintaining 
 - `switch` switches between the packaging branch and the corresponding development branch.
 - `convert` converts a package to the orphan-packaging branch model.
 
-For more information on the 2 maintenance models (orphan-packaging and joint-packaging) and their differences, see [Maintenance Models Supported by GBS](../../porting/maintenance-models.md).
+For more information on the 2 maintenance models (orphan-packaging and joint-packaging) and their differences, see [Maintenance Models Supported by GBS](gbs-maintenance-models.md).
 
 For command usage details, enter:
 

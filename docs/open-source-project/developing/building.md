@@ -20,7 +20,7 @@ To build a package for a specific project:
 
    If a `<Specific_Project>/.gbs.conf` file exists, the configuration in that file is used when building the project with GBS. If not, the default GBS configuration in the `~/.gbs.conf` file is used.
 
-   For more information about the `.gbs.conf` file and the customization of remote repositories, see [GBS Configuration](../tools/gbs/gbs.conf.md) and [Setting up the Development Environment](setting-up.md), respectively.
+   For more information about the `.gbs.conf` file and the customization of remote repositories, see [GBS Configuration](../reference/gbs/gbs.conf.md) and [Setting up the Development Environment](setting-up.md), respectively.
 
 4. Build a package for the project:
 
@@ -35,9 +35,8 @@ The build tips for local builds include:
 
 - How to [exclude specific packages](#excluding-specific-packages).
 - How to [speed up a local build](#speeding-up-a-local-build).
-- How to [perform another build](#perform-another-build).
+- How to [perform another build](#performing-another-build).
 
-<a name="excluding-specific-packages"></a>
 ### Excluding Specific Packages
 
 To exclude specific packages when building locally with GBS, you can either list them in the `--exclude` argument of the `gbs build` command, or list them in the `.gbs.conf` file:
@@ -76,7 +75,7 @@ When the result of the first build is unsatisfactory, perform another build by e
   $ gbs build -A <Arch>
   ```
 
-- Scenario  2:
+- Scenario 2:
   - The URL of the remote repository is the same as in the previous build.
   - New packages to be built are dependent on previously built packages.
   - You do not want previously built packages to participate in the new build.

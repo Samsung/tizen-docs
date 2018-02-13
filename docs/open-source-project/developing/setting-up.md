@@ -515,7 +515,7 @@ Each `profile` entry in the `.gbs.conf` file specifies multiple `repo` entries, 
 > url = http://download.tizen.org/releases/daily/tizen/unified/tizen-unified_20170627.1/repos/standard/packages/
 > ```
 
-For more information on `.gbs.conf`, see [GBS Configuration](../tools/gbs/gbs.conf.md).
+For more information on `.gbs.conf`, see [GBS Configuration](../reference/gbs/gbs.conf.md).
 
 ## Setting Up the Repo Tool
 

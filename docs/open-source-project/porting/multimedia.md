@@ -840,7 +840,7 @@ The `gst-omx` plugin uses a configuration file, such as `gstomx.conf`. This file
 
 **Figure: gstomx.conf elements**
 
-![gstomx.conf elements](./media/gst-openmax.conf.png)
+![gstomx.conf elements](media/gst-openmax.conf.png)
 
 **Figure: gstomx.conf example**
 

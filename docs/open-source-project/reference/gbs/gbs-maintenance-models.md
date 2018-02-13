@@ -110,7 +110,7 @@ In order to use the orphan-packaging model with non-native packages, you need to
 
 Again, additionally, you can have a pristine-tar branch in the Git repository for generating the upstream tarball with the `pristine-tar` tool.
 
-Code development is done on the development branch: edit, commit, and build similarly to the joint-packaging model. However, all packaging changes are done in the packaging branch. And most importantly, submissions (releasing to integration) are done from the packaging branch. Before submitting, the package maintainer creates patches from the new changes in the development branch and commits these to the packaging branch. For more information on how to manage packaging and development branches, see [gbs devel](../tools/gbs/gbs-devel.md).
+Code development is done on the development branch: edit, commit, and build similarly to the joint-packaging model. However, all packaging changes are done in the packaging branch. And most importantly, submissions (releasing to integration) are done from the packaging branch. Before submitting, the package maintainer creates patches from the new changes in the development branch and commits these to the packaging branch. For more information on how to manage packaging and development branches, see [gbs devel](gbs-devel.md).
 
 ## Managing Upstream Sources
 

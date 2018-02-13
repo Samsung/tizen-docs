@@ -42,7 +42,6 @@ In the command:
 
   The kickstart file is a simple text file, containing a list of items about, for example, image partition, setup, Bootloader, and packages to be installed. Each item is identified by a key word.
 
-  In Tizen, the released image has a `.ks` file along with the image. For example, you can download the `.ks` file from: [http://download.tizen.org/releases/daily/trunk/ivi/latest/images/ivi-min...](http://download.tizen.org/releases/daily/trunk/ivi/latest/images/ivi-min-pc/ivi-min-pc-tizen_20120926.2.ks)
 
 - `OPTION` can be used to specify various details:
 

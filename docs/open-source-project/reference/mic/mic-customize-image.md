@@ -6,8 +6,6 @@ You can customize your image by downloading and editing the kickstart file. For 
 
 You can specify which repository must be used to create a package, including a local repository.
 
-For example: [http://download.tizen.org/releases/daily/trunk/ivi/latest/images/ivi-min...](http://download.tizen.org/releases/daily/trunk/ivi/latest/images/ivi-min-pc/ivi-min-pc-tizen_20120926.2.ks)
-
 ```bash
 repo --name=Tizen-main --baseurl=https://download.tizen.org/snapshots/trunk/common/@BUILD_ID@/repos/main/armv7l/packages/ --save  --ssl_verify=no
 
@@ -27,8 +25,6 @@ repo --name=REPO-NAME --baseurl=https://username:passwd@yourrepo.com/ia32/packag
 ## Adding and Removing Packages
 
 You can specify the packages which you plan to install in the `%packages` section of the `.ks` file. Packages can be specified by a group/pattern or by an individual package name. The definition of the group/pattern can be referred to in the `repodata/*comps.xml` or `repodata/pattern.xml` file, which are both released on the download server.
-
-For example: [http://download.tizen.org/snapshots/trunk/common/latest/repos/base/ia32/packages/repodata/](http://download.tizen.org/snapshots/trunk/common/latest/repos/base/ia32/packages/repodata/).
 
 The `%packages` section is required to end with `%end`. Also, multiple `%packages` sections are allowed. Additionally, individual packages can be specified by using globs. For example:
 

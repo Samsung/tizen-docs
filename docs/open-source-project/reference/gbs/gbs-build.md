@@ -423,7 +423,7 @@ $ gbs build -A i586 --icecream=10
 
 ## Fetching the Project Build Conf and Customizing the Build Root (for Advanced Users)
 
-The project build conf describes the build configurations for the project, including all macros, packages, and flags predefined in the build environment. In Tizen releases, the build conf is released together with the released repository. For an example, see [http://download.tizen.org/releases/daily/trunk/ivi/latest/builddata/xxx-build.conf](http://download.tizen.org/releases/daily/trunk/ivi/latest/builddata/xxx-build.conf).
+The project build conf describes the build configurations for the project, including all macros, packages, and flags predefined in the build environment. In Tizen releases, the build conf is released together with the released repository.
 
 - Fetch the build conf automatically with the `gbs build` command
 

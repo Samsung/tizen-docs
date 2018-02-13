@@ -79,7 +79,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
     - [http://tizen.org/feature/screen.size.normal.320.480](http://tizen.org/feature/screen.size.normal.320.480)
     - [http://tizen.org/feature/screen.size.normal.540.960](http://tizen.org/feature/screen.size.normal.540.960)
     - [http://tizen.org/feature/screen.size.normal.600.1024](http://tizen.org/feature/screen.size.normal.600.1024)
-    - [http://tizen.org/feature/screen.size.normal.1080.1980](http://tizen.org/feature/screen.size.normal.1080.1980)
+    - [http://tizen.org/feature/screen.size.normal.1080.1920](http://tizen.org/feature/screen.size.normal.1080.1920)
     - [http://tizen.org/feature/screen.size.all](http://tizen.org/feature/screen.size.all)
 - Tizen::Ui
   - Launching time and FPS performance has been enhanced.
