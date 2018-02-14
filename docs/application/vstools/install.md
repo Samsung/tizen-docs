@@ -29,21 +29,6 @@ To work with Visual Studio Tools for Tizen, your computer must have:
   Download the JDK 8 from the official [Oracle Web site](http://www.oracle.com/technetwork/java/javase/downloads/index.html). Select the appropriate platform for your hardware architecture and Windows&reg; version. Run the downloaded executable file and follow the displayed instructions.
   - JDK 9 will be supported soon.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Emulator Requirements
 
 The Tizen emulator for Visual Studio has the same requirements as the emulator in the Tizen Studio. To check the detailed hardware and software requirements for the Tizen emulator, see [Emulator Requirements](../tizen-studio/setup/prerequisites.md#emulator).
