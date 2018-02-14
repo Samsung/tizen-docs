@@ -63,7 +63,7 @@ To distribute your application, you must create a certificate profile and sign t
 
         ![Author information](media/cert_reg_author_info.png)
 
-    2.  You can use the default Tizen distributor certificate or another distributor certificate if you have one. In general, the default Tizen distributor certificate is used and you do not need to modify the distributor certificates. You can also select the privilege level of the distributor certificate (needed if the same certificate is used for signing [native](../../native/tutorials/details/sec-privileges.md) and [Web](../../web/tutorials/details/sec-privileges.md) applications).
+    2.  You can use the default Tizen distributor certificate or another distributor certificate if you have one. In general, the default Tizen distributor certificate is used and you do not need to modify the distributor certificates. You can also select the privilege level of the distributor certificate (needed if the same certificate is used for signing [native](../../native/tutorials/details/sec-privileges.md) and [Web](../../web/tutorials/sec-privileges.md) applications).
 
         ![Distributor certificate](media/cert_reg_dist_cert2.png)
 
