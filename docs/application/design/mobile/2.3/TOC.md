@@ -1,6 +1,6 @@
 # [New in Tizen 2.3](mobile/2.3/new-tizen-2.3.md)
 # [Design Principles](mobile/2.3/design-principles.md)
-# UI Overview(mobile/2.3/ui-overview.md)
+# [UI Overview](mobile/2.3/ui-overview.md)
 # Basic Interactions
 ## [Application Structure](mobile/2.3/basic-interactions/application-structure.md)
 ## [View Modes](mobile/2.3/basic-interactions/view-modes.md)
@@ -12,7 +12,7 @@
 ## [Header](mobile/2.3/design-library/header.md)
 ## [Body](mobile/2.3/design-library/body.md)
 ## [Scroll](mobile/2.3/design-library/scroll.md)
-## [Button](mobile/2.3/design-library/button.md
+## [Button](mobile/2.3/design-library/button.md)
 ## [Text Field](mobile/2.3/design-library/text-field.md)
 ## [Slider](mobile/2.3/design-library/slider.md)
 ## [Picker](mobile/2.3/design-library/picker.md)

@@ -32,7 +32,6 @@
 ### [Presentation Views](mobile/ui-components/presentation-views.md)
 ### [User Input Components](mobile/ui-components/user-input-components.md)
 ### [Assist Views](mobile/ui-components/assist-views.md)
-
 ## [Mobile 2.3](mobile/2.3/index.md)
 
 # Wearable
@@ -46,10 +45,11 @@
 ### [Overview](wearable/design-wearables.md)
 ### [Intimate and Responsive](wearable/design-wearables/intimate-and-responsive.md)
 ### [Timely and Informative](wearable/design-wearables/timely-and-informative.md)
-### [Circular UX](wearable/circular-ux.md)
-#### [Appealing Shape](wearable/circular-ux/appealing-shape.md)
-#### [Inspiring Metaphors](wearable/circular-ux/inspiring-metaphors.md)
-#### [Dynamic Motion](wearable/circular-ux/dynamic-motion.md)
+## [Circular UX]
+### [Overview](wearable/circular-ux.md)
+### [Appealing Shape](wearable/circular-ux/appealing-shape.md)
+### [Inspiring Metaphors](wearable/circular-ux/inspiring-metaphors.md)
+### [Dynamic Motion](wearable/circular-ux/dynamic-motion.md)
 ## Watch Face
 ### [Overview](wearable/watch-face.md)
 ### [Design Types of Watch Faces](wearable/watch-face/design-types-watch-faces.md)
@@ -184,7 +184,7 @@
 
 ### [Notifications](tv/patterns/notifications.md)
 ### Recommendations
-#### [Show Focus Always](tv/patterns/show-focus-always.md)
+#### [Show Focus Always](tv/patterns/recommendations/show-focus-always.md)
 #### [Define Screen Size Based on Layer](tv/patterns/recommendations/define-screen-size-based-on-layer.md)
 #### [Provide Confirmation](tv/patterns/recommendations/provide-confirmation.md)
 
