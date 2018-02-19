@@ -59,6 +59,6 @@ The `get_error_message()` function takes an error code as an input and returns i
 Every error code in the Tizen native API is represented as an integer value.
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

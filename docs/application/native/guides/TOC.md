@@ -28,7 +28,7 @@
 ## Simple DirectMedia Layer (SDL)
 ### [Overview](graphics/sdl.md)
 ### [SDL Graphics with Vulkan&reg;](graphics/vulkan.md)
-### [SDL Graphics with Vulkan&reg;](graphics/vulkan.md)
+### [SDL Graphics with OpenGL&reg; ES](graphics/sdl-opengles.md)
 
 # Notifications and Content Sharing
 ## [Overview](notification/overview.md)
@@ -58,7 +58,7 @@
 ## [Media Playback](multimedia/media-playback.md)
 ## [Media Recording](multimedia/media-recording.md)
 ## [Raw Audio Playback and Recording](multimedia/raw-audio.md)
-## [Media Controller](multimedia/multimedia-controller.md)
+## [Media Controller](multimedia/media-controller.md)
 ## [Media Conversions](multimedia/media-conversions.md)
 ## [Media Handle Management](multimedia/media-handle.md)
 ## [Media Key Events](multimedia/media-key.md)
@@ -145,6 +145,7 @@
 ## [Overview](security/overview.md)
 ## [Secure Key Management](security/secure-key.md)
 ## [Privilege Information](security/privilege.md)
+## [Privacy-related Permissions](security/privacy-related-permissions.md)
 ## [Cryptographic Operations](security/yaca.md)
 ## [Device Policy Management](security/dpm.md)
 ## [Malware Scanning and Web Protection](security/csr.md)
@@ -156,6 +157,7 @@
 ## [System Logs](error/system-logs.md)
 
 # Performance
+## [Overview](performance/overview.md)
 ## [Tracepoints](performance/tracepoints.md)
 
 # [Migration Guide](migration-guide.md)

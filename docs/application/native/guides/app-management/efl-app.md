@@ -41,5 +41,5 @@ A widget application (or widget) is a specialized application that provides the 
 
 ## Related Information
 - Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

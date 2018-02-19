@@ -408,6 +408,7 @@ To generate a barcode:
 ## Barcode Specifications
 
 The following tables provide more information on the barcode generation specifications.
+
 <a name="barcode"></a>
 **Table: Supported barcode types**
 
@@ -421,6 +422,7 @@ The following tables provide more information on the barcode generation specific
 |   1-D | CODE-39            | Code 39; supports 34 characters consisting of uppercase letters (A to Z), numeric digits (0 to 9), and special characters(-, ., $, /, %, space) | ![CODE-39](./media/mediavision_code_39.png) |                                          |
 |   1-D | INTERLEAVED 2 of 5 | Interleaved 2 of 5 with numeric digits   | ![UPC-A](./media/mediavision_interleaved_2_5.png) |                                          |
 | 2-D                | QR code                                  | Quick Response code                      | ![UPC-A](./media/mediavision_qr.png) |
+
 <a name="qrcode"></a>
 **Table: Supported QR code specifications**
 
@@ -436,6 +438,6 @@ The following tables provide more information on the barcode generation specific
 |Encoding mode | UTF-8                             | Universal character set and Transformation Format 8-bit, encoding characters |                                     
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

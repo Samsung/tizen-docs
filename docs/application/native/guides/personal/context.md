@@ -188,6 +188,6 @@ The history data records retrieved through the contextual history API contain th
 | `CONTEXT_HISTORY_BATTERY_USAGE`<br> `CONTEXT_HISTORY_RECENT_BATTERY_USAGE` |`CONTEXT_HISTORY_TOTAL_AMOUNT`           | Double                        | This attribute denotes the accumulated battery consumption of the application. |                                          
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 4.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 4.0 and Higher for Wearable

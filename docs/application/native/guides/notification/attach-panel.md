@@ -285,5 +285,5 @@ To manage an attach panel:
     ```
 
 ## Related Information
-* Dependencies
+- Dependencies
   - Tizen 2.4 and Higher for Mobile

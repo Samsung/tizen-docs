@@ -1847,6 +1847,6 @@ For metadata of a video file, call `withmedia_info_get_video()` function with th
 | `Height`        | Height of the video content              |
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

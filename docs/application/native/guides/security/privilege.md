@@ -84,6 +84,6 @@ To get various privilege information:
 The above functions return a `privilege_info_error_e` enum value (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SECURITY__FRAMEWORK__PRIVILEGE__INFO__MODULE.html#gae50b814d4efe1b1d7218b6d68cdcadd6) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SECURITY__FRAMEWORK__PRIVILEGE__INFO__MODULE.html#gae50b814d4efe1b1d7218b6d68cdcadd6) applications) that indicates the value retrieval result. They also store the requested privilege display name or description, privacy display, and privacy privilege status in their last parameter.
 
 ## Related Information
-* Dependencies
- - Tizen 2.3 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+- Dependencies
+  - Tizen 2.3 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

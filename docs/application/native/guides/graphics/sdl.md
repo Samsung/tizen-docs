@@ -300,6 +300,6 @@ The following table lists the available status bar opacity values.
 | `bg_transparent` | Makes the status bar background transparent. |
 
 ## Related Information
-* Dependencies
- - Tizen 3.0 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 3.0 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

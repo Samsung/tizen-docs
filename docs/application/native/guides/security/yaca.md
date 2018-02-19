@@ -1432,6 +1432,6 @@ To encrypt and decrypt data with asymmetric keys:
   ```
 
 ## Related Information
-* Dependencies
+- Dependencies
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable

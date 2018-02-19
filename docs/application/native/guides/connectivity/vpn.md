@@ -421,5 +421,5 @@ To read or write data:
   ```
 
 ## Related Information
-* Dependencies
- - Tizen 3.0 and Higher for Mobile
+- Dependencies
+  - Tizen 3.0 and Higher for Mobile

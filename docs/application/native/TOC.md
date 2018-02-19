@@ -17,18 +17,18 @@
 ### [Optimizing Application Performance](tutorials/process/performance.md)
 
 ## Understanding Tizen Programming
-### [Tizen APIs](tutorials/details/tizen-apis.md)
-### [Security and API Privileges](tutorials/details/sec-privileges.md)
+### [Overview](tutorials/details/details.md)
 ### [Application Filtering](tutorials/details/app-filtering.md)
+### [Security and API Privileges](tutorials/details/sec-privileges.md)
 ### [Event Handling](tutorials/details/event-handling.md)
 ### [Error Handling](tutorials/details/error-handling.md)
 ### [File System Directory Hierarchy](tutorials/details/io-overview.md)
-### [API Versioning and Deprecation Policy of the Tizen Platform](tutorials/details/deprecation-policy.md)
 ### [Application Signing and Certificates](tutorials/details/sign-certificate.md)
+### [API Versioning and Deprecation Policy of the Tizen Platform](tutorials/details/deprecation-policy.md)
 
 ## Tizen UI Development
-### [Overview](tutorials/feature/ui-builder-overview.md)
-### [Designing Your Native Application](tutorials/feature/ui-builder-app-design.md)
+### [Overview](tutorials/ui-builder/ui-builder-overview.md)
+### [Designing Your Native Application](tutorials/ui-builder/ui-builder-app-design.md)
 
 ## Creating Applications with Connectivity and Network
 ### [Overview](tutorials/feature/app-connectivity.md)
@@ -72,5 +72,3 @@
 # [API Reference](https://developer.tizen.org/development/api-references/native-application)
 
 # [Samples](https://developer.tizen.org/development/sample/native)
-
-

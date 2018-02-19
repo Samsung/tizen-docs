@@ -307,6 +307,6 @@ To get engine information and enable or disable the engine:
   ```
 
 ## Related Information
-* Dependencies
+- Dependencies
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable

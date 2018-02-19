@@ -291,5 +291,5 @@ To get information about a geofence:
   ```
 
 ## Related Information
-* Dependencies
+- Dependencies
   - Tizen 2.4 and Higher for Mobile

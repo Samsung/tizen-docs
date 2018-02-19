@@ -9,7 +9,9 @@ The main features of the Media Codec and Video Util API include:
 
   You can prepare the [media codecs](#codecs), fill the media packet with data, and run the media codec.
 
-- Video transcoding **in mobile applications only**You can prepare the video utilities, manage and monitor [video transcoding](#video), and set parameters.
+- Video transcoding **in mobile applications only**
+
+  You can prepare the video utilities, manage and monitor [video transcoding](#video), and set parameters.
 
 <a name="codecs"></a>
 ## Media Codecs
@@ -555,6 +557,6 @@ To retrieve progress information about the transcoding process:
    ```
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

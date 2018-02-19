@@ -527,6 +527,6 @@ The following table lists the extractable metadata.
 | `METADATA_ROTATE`             | Orientation of the content           |
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

@@ -600,6 +600,6 @@ To record a video:
       The function changes the video recorder state from `RECORDER_STATE_CREATED` to `RECORDER_STATE_NONE`.
 
 ## Related Information
-* Dependencies
+- Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

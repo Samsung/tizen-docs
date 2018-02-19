@@ -58,6 +58,6 @@ In reality, however, the per-vertex attributes rarely include colors. In general
 ![Interpolated normals](./media/interpolated_normals.png)
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

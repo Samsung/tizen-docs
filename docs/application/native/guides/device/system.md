@@ -656,6 +656,6 @@ The following table lists the TizenID system keys.
 | `http://tizen.org/system/tizenid` | `String` | The platform returns the TizenID. TizenID is a randomly generated value based on the model name. |
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable
