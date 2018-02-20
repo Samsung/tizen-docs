@@ -1,6 +1,6 @@
 # Circle Slider
 
-The circle slider UI component changes corresponding to rotary events. The circle slider not only extends the UI feature of the [slider](component-slider-w.md) component (`elm_slider`), but also replaces the functionalities of the `elm_slider` in the circular design. For more information, see the [Efl Extension Circle Slider](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__EXTENSION__CIRCLE__SLIDER__MODULE.html) API.
+The circle slider UI component changes corresponding to rotary events. The circle slider not only extends the UI feature of the [slider](component-slider.md) component (`elm_slider`), but also replaces the functionalities of the `elm_slider` in the circular design. For more information, see the [Efl Extension Circle Slider](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__EXTENSION__CIRCLE__SLIDER__MODULE.html) API.
 
 This feature is supported in wearable applications only.
 

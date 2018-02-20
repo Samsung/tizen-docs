@@ -80,8 +80,8 @@ To add an item:
 
    | Text                 | Setting function                         | View                                     |
    |--------------------|----------------------------------------|----------------------------------------|
-   | `selector,main_text` | `eext_rotary_selector_item_part_text_set()``eext_rotary_selector_item_domain_translatable_part_text_set()` | ![main_text](./media/rotary_selector_main_text.png) |
-   | `selector,sub_text`  | `eext_rotary_selector_item_part_text_set()``eext_rotary_selector_item_domain_translatable_part_text_set()` | ![sub_text](./media/rotary_selector_sub_text.png) |
+   | `selector,main_text` | `eext_rotary_selector_item_part_text_set()`<br> `eext_rotary_selector_item_domain_translatable_part_text_set()` | ![main_text](./media/rotary_selector_main_text.png) |
+   | `selector,sub_text`  | `eext_rotary_selector_item_part_text_set()`<br> `eext_rotary_selector_item_domain_translatable_part_text_set()` | ![sub_text](./media/rotary_selector_sub_text.png) |
 
 ## Configuring the Selector and Items
 
@@ -95,8 +95,8 @@ The following table shows the configurable rotary selector parts.
 |----------------------------------------|----------------------------------------|----------------------------------------|
 | `selector,main_text`                     | `eext_rotary_selector_item_part_color_set()` | ![main_text](./media/rotary_selector_main.png) |
 | `selector,sub_text`                      | `eext_rotary_selector_item_part_color_set()` | ![sub_text](./media/rotary_selector_sub.png) |
-| `item,icon``item,bg_image`               | `eext_rotary_selector_item_part_content_set()``eext_rotary_selector_item_part_color_set()` | ![Item content](./media/rotary_selector_item.png) |
-| `selector,icon``selector,content``selector,bg_image` | `eext_rotary_selector_part_content_set()``eext_rotary_selector_part_color_set()``eext_rotary_selector_part_content_get()` | ![Selector content](./media/rotary_selector_selector.png) |
+| `item,icon``item,bg_image`               | `eext_rotary_selector_item_part_content_set()`<br> `eext_rotary_selector_item_part_color_set()` | ![Item content](./media/rotary_selector_item.png) |
+| `selector,icon``selector,content``selector,bg_image` | `eext_rotary_selector_part_content_set()`<br> `eext_rotary_selector_part_color_set()`<br> `eext_rotary_selector_part_content_get()` | ![Selector content](./media/rotary_selector_selector.png) |
 
 You can also configure the selector and item appearance based on their current state:
 

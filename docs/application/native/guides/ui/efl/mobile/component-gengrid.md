@@ -1,6 +1,6 @@
 # Gengrid
 
-The gengrid UI component is based on the same idea as [genlist](component-genlist-m.md). It aims to display objects on a grid layout and render only the visible ones. For more information, see the [Gengrid](../../../../../org.tizen.native.mobile.apireference/group__Elm__Gengrid.html) API.
+The gengrid UI component is based on the same idea as [genlist](component-genlist.md). It aims to display objects on a grid layout and render only the visible ones. For more information, see the [Gengrid](../../../../../org.tizen.native.mobile.apireference/group__Elm__Gengrid.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -173,9 +173,9 @@ The following table provides more information on the available gengrid item styl
 
 | Style                                    | Sample                                   | Text part  | Swallow part                        |
 |----------------------------------------|----------------------------------------|----------|-----------------------------------|
-| `elm/gengrid/item/default/default``elm/gengrid/item/type1/default` | ![elm/gengrid/item/default/default](./media/gengrid_default.png) | `elm.text` | `elm.swallow.icon``elm.swallow.end` |
-| `elm/gengrid/item/type2/default`         | ![elm/gengrid/item/type2/default](./media/gengrid_default_type2.png) | `elm.text` | `elm.swallow.icon``elm.swallow.end` |
-| `elm/gengrid/item/default/popup`         | ![elm/gengrid/item/default/popup](./media/gengrid_popup.png) | `elm.text` | `elm.swallow.icon``elm.swallow.end` |
+| `elm/gengrid/item/default/default`<br> `elm/gengrid/item/type1/default` | ![elm/gengrid/item/default/default](./media/gengrid_default.png) | `elm.text` | `elm.swallow.icon`<br>`elm.swallow.end` |
+| `elm/gengrid/item/type2/default`         | ![elm/gengrid/item/type2/default](./media/gengrid_default_type2.png) | `elm.text` | `elm.swallow.icon`<br>`elm.swallow.end` |
+| `elm/gengrid/item/default/popup`         | ![elm/gengrid/item/default/popup](./media/gengrid_popup.png) | `elm.text` | `elm.swallow.icon`<br>`elm.swallow.end` |
 
 ## Callbacks
 

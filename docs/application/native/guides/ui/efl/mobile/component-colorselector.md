@@ -101,7 +101,7 @@ The following table lists the available component styles.
 
 | Style                                    | Sample                                   | Notes                                    |
 |----------------------------------------|----------------------------------------|----------------------------------------|
-| `elm/colorselector/item/color/colorplane` | ![elm/colorselector/item/color/colorplane](./media/color_colorplane.png) | Use the following command: `elm_colorselector_mode_set(colorselector, ELM_COLORSELECTOR_PALETTE);` |
+| `elm/colorselector/item/color/colorplane` | ![elm/colorselector/item/color/colorplane](./media/color_colorplane.png) | Use the following command: <br>`elm_colorselector_mode_set(colorselector, ELM_COLORSELECTOR_PALETTE);` |
 
 ## Callbacks
 

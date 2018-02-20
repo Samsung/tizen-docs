@@ -90,7 +90,7 @@ The font styles supported by the EFL are listed in the following table.
 <tr><td rowspan="3"><code>font_style</code> </td><td> <code>normal</code></td></tr>
 <tr><td> <code>oblique</code></td></tr>
 <tr><td> <code>italic</code> </td></tr>
-<tr><td rowspan="9"> <code>font_width</code>td><td> <code>normal</code>td></tr>
+<tr><td rowspan="9"> <code>font_width</code><td> <code>normal</code></tr>
 <tr><td> <code>ultracondensed</code> </td></tr>
 <tr><td>  <code>extracondensed</code></td></tr>
 <tr><td>  <code>condensed</code> </td></tr>

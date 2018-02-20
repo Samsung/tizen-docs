@@ -27,7 +27,7 @@ To register a callback for the **Menu** or **Back** key, use the `eext_object_ev
 
 To delete a registered event in the EFL Extension, use the `eext_object_event_callback_del()` function.
 
-The EFL Extension also provides other convenient functions to work with the **Menu** and **Back** keys for [popup](./component-popup-m.md), [ctxpopup](./component-ctxpopup-m.md), [naviframe](./container-naviframe.md), and [entry](./component-entry-m.md) components.
+The EFL Extension also provides other convenient functions to work with the **Menu** and **Back** keys for [popup](./mobile/component-popup.md), [ctxpopup](./mobile/component-ctxpopup.md), [naviframe](./container-naviframe.md), and [entry](./mobile/component-entry.md) components.
 
 ## Managing Hardware Key Events
 

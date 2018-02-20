@@ -1,14 +1,14 @@
 # List
 
-This feature is supported in wearable applications only.
+This feature is supported in mobile applications only.
 
-The list is a very simple UI component used to manage a limited number of items. For lists with a lot of items, use the [Genlist](component-genlist-w.md).
+The list is a very simple UI component used to manage a limited number of items. For lists with a lot of items, use the [Genlist](component-genlist.md).
 
-For more information, see the [List](../../../../../org.tizen.native.wearable.apireference/group__Elm__List.html) API.
+For more information, see the [List](../../../../../org.tizen.native.mobile.apireference/group__Elm__List.html) API.
 
 **Figure: List component**
 
-![List component](./media/list_wn.png)
+![List component](./media/list.png)
 
 **Figure: List hierarchy**
 
@@ -65,7 +65,7 @@ To modify the list item elements, use the `Elm_Object_Item` functions:
 - To modify the item label, use the `elm_object_item_text_set()` function.
 - To modify the 2 contents, use the `elm_object_item_part_content_set()` function, referencing the first object as the `start` object in the theme and the second one as the `end` object.
 
-Each content is an `evas_object` instance, and they are defined as the third and the fourth parameters when you append or prepend the item in the list with the `elm_list_item_append()` or `elm_list_item_prepend()` function.
+ Each content is an `evas_object` instance, and they are defined as the third and the fourth parameters when you append or prepend the item in the list with the `elm_list_item_append()` or `elm_list_item_prepend()` function.
 
 ```
 Evas_Object *list;
@@ -101,8 +101,8 @@ To access and select list items:
 
   /* Change the scroller policy to fix the scroll only vertically */
   elm_scroller_policy_set(list, ELM_SCROLLER_POLICY_OFF, ELM_SCROLLER_POLICY_AUTO);
-  /* Enable bounce effect when the list reaches the vertical limits */
-  elm_scroller_bounce_set(list, EINA_FALSE, EINA_TRUE);
+  /* Enable bounce effect when the list reaches the upper and lower limits */
+  elm_scroller_bounce_set(list, EINA_TRUE, EINA_TRUE);
   ```
 
 - Enabling the multi-selection mode:
@@ -169,16 +169,16 @@ To access and select list items:
 To receive notifications about list events, listen for the following signals:
 
 - `activated`: The item is double-clicked or pressed (enter | return | spacebar).  
-  The `event_info` callback parameter points at the activated item.
+The `event_info` callback parameter points at the activated item.
 
 - `clicked,double`: The item is double-clicked.  
-  The `event_info` callback parameter points at the double-clicked item.
+The `event_info` callback parameter points at the double-clicked item.
 
 - `selected`: The item is selected.  
-  The `event_info` callback parameter points at the selected item.
+The `event_info` callback parameter points at the selected item.
 
 - `unselected`: The item is unselected.  
-  The `event_info` callback parameter points at the unselected item.
+The `event_info` callback parameter points at the unselected item.
 
 - `longpressed`: The item is long-pressed.  
 The `event_info` callback parameter points at the long-pressed item.
@@ -192,10 +192,10 @@ The `event_info` callback parameter points at the long-pressed item.
 - `edge,right`: The list is scrolled to the right edge.
 
 - `highlighted`: An item on the list is highlighted.  
-  The `event_info` callback parameter points at the highlighted item.
+The `event_info` callback parameter points at the highlighted item.
 
 - `unhighlighted`: An item in the list is unhighlighted.  
-  The `event_info` callback parameter points at the unhighlighted item.
+The `event_info` callback parameter points at the unhighlighted item.
 
 > **Note**  
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
@@ -224,4 +224,4 @@ double_clicked_cb(void *data, Evas_Object *obj, void *event_info)
 
 ## Related Information
 - Dependencies
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and Higher for Mobile

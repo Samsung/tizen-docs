@@ -8,7 +8,7 @@ This feature is supported in wearable applications only.
 
 To use a circle progressbar component in your application:
 
-1. To create a circle progressbar component, use the `eext_circle_object_progressbar_add()` function. Pass a [circle surface](component-circ-surface.md) as the second parameter to render the progressbar.
+1. To create a circle progressbar component, use the `eext_circle_object_progressbar_add()` function. Pass a [circle surface](component-circle-surface.md) as the second parameter to render the progressbar.
 
    ```
    Evas_Object *circle_progressbar;
@@ -157,7 +157,7 @@ To configure the circle properties of the circle progressbar:
   - `default`: Default circle item that draws the progressbar.
   - `bg`: Progress bar background circle item.
 
-For more information, see [Circle Object](component-circ-object.md) and the [Efl Extension Circle Object](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__EXTENSION__CIRCLE__OBJECT__MODULE.html) API.
+For more information, see [Circle Object](component-circle-object.md) and the [Efl Extension Circle Object](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__EXTENSION__CIRCLE__OBJECT__MODULE.html) API.
 
 ## Related Information
 - Dependencies

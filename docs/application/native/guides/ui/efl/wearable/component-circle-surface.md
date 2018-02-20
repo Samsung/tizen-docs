@@ -2,7 +2,7 @@
 
 This feature is supported in wearable applications only.
 
-The circle surface component manages and renders [circle objects](component-circ-object.md). Multiple circle objects can be connected to 1 circle surface as candidates of an object to be rendered. When 1 circle object is set as visible, the surface renders the circle object and hides the others.
+The circle surface component manages and renders [circle objects](component-circle-object.md). Multiple circle objects can be connected to 1 circle surface as candidates of an object to be rendered. When 1 circle object is set as visible, the surface renders the circle object and hides the others.
 
 For more information, see the [Efl Extension Circle Surface](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__EXTENSION__CIRCLE__SURFACE__MODULE.html) API.
 
