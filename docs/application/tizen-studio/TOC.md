@@ -124,9 +124,9 @@
 ## SmartThings&trade; Extension
 ### [Overview](rt-ide/smartthings-ext/overview.md)
 ### [Creating a SmartThings&trade; Project](rt-ide/smartthings-ext/create-project.md)
+### [Device/Resource Model Manager](rt-ide/smartthings-ext/model-manager.md)
 ### [Building the SmartThings&trade; Project](rt-ide/smartthings-ext/build-project.md)
 ### [Managing SmartThings&trade; Certificates](rt-ide/smartthings-ext/manage-certificate.md)
-### [Device/Resource Model Manager](rt-ide/smartthings-ext/model-manager.md)
 
 # [Configurable SDK](configurable-sdk/configurable-sdk.md)
 
