@@ -20,6 +20,7 @@
 ### [Styling UI Components](nui/styling-controls-with-JSON.md)
 ### [Visuals](nui/visuals.md)
 ### [View](nui/view.md)
+### [CustomView](nui/creating-custom-view-controls.md)
 ### [Buttons](nui/button.md)
 ### [FlexContainer](nui/flexcontainer.md)
 ### [ImageView](nui/imageview.md)
