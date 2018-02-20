@@ -31,6 +31,8 @@ To record a profiling session:
         You can trace CPU utilization.
       - **Trace Memory**  
         You can trace memory allocation for methods.
+      - **Trace Garbage Collection**  
+        You can trace garbage collection.
       - **Trace Source Lines**  
         You can switch on line source mapping.
       - **Stack Track**  
