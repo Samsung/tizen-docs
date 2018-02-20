@@ -18,7 +18,7 @@ You can use smart card functionalities to access secure elements. You can open a
 You can connect to a Wireless Local Area Network (WLAN) and transfer data over the network. You can activate and deactivate a local Wi-Fi device, and to connect to a WLAN network in the infrastructure mode.
 
 - [Wi-Fi Direct&reg;](wifi-direct.md) **in mobile applications only**
-Find Wi-Fi Direct devices, discover their details, and form Wi-Fi Direct group to communicate over a peer-to-peer link without wireless access points (base stations) in the infrastructure mode.
+Find a Wi-Fi Direct device, discover its details, and then form a Wi-Fi Direct group to communicate over a peer-to-peer link without using wireless access points (base stations) in the infrastructure mode.
 
 - [STC (Smart Traffic Control)](stc.md)
 Statistics about network data consumption is fetched by system and applications.
@@ -40,7 +40,7 @@ You can transfer files between 2 devices. You can manage the Media Transfer Prot
 You can allow the users to initialize the VPN device, and manage routing, DNS, and firewall features.
 
 - [IoT Connectivity](iotcon.md)
-In Tizen use IoT Activity feature and seamless device-to-device connectivity to address the needs of the Internet of Things (IoT) through the open source reference implementation of the OIC (Open Interconnect Consortium) standard specifications.
+The IoT feature of Tizen, uses seamless device-to-device connectivity to connect/communicate through the open source reference implementation of the OIC (Open Interconnect Consortium) standard specifications.
 
 - [Network Service Discovery](nsd.md)
 You can perform network service discoveries to announce local services and search for remote services.
