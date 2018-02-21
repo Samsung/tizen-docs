@@ -4,14 +4,13 @@
 
 A slider adjusts values within a given range.
 
-|**Slider**|         |
-|----------|---------|
-|**Native**|Slider   |
-|**Web**   |Slider   |
+**Slider** in developer's guides:
+- **Native**: Slider
+- **Web**: Slider
 
 ## Usage
 
-As opposed to [pickers](pickers.md) that set a specific value, sliders adjust the intensity level such as brightness and volume within a present range.
+Sliders adjust the intensity level of a setting such as brightness or volume within a pre-set range.
 
 ## Behavior
 
@@ -21,7 +20,8 @@ As opposed to [pickers](pickers.md) that set a specific value, sliders adjust th
 
 -   **Minimum and maximum**
 
-    A slider presents a range with a minimum and maximum value.
+    A slider allows for a range within a minimum and maximum value.
 
-    ![](media/ui_components_10.9.2-850x206.png)  
+    ![](media/10.9.2-800x194.png)
+
     *A slider adjusts values as users rotate the bezel.*

@@ -15,9 +15,9 @@ The bezel is a physical controller that rotates around the edge of the Gear’s 
 
     The bezel can rotate to the right and the left. These 2 directions have consistent meanings in all Gear interactions, and you should retain these meanings in your app.
 
-**Turning the bezel to the right** means an increase, a positive response, a move to the content on the right or below.
+**Turning the bezel to the right** means an increase, a positive response, or a move to the content on the right or below.
 
-**Turning the bezel to the left** means a decrease, a negative response, a move to the content on the left or above.
+**Turning the bezel to the left** means a decrease, a negative response, or a move to the content on the left or above.
 
 -   **24 detents**
 
@@ -28,7 +28,7 @@ The bezel is a physical controller that rotates around the edge of the Gear’s 
 
 -   **Hand grip and range of one motion**
 
-    Users can rotate the bezel by up to 4-5 detents in one motion. Design interactions so users can complete actions without readjusting their grip on the bezel.
+    Users can rotate the bezel up to 4-5 detents in one motion. Design interactions such that users can complete actions without readjusting their grip on the bezel.
 
     ![](media/interaction_7.2.1_2-850x240.png)  
 
@@ -45,27 +45,29 @@ The bezel is a physical controller that rotates around the edge of the Gear’s 
 
 ## Navigate
 
-Turning the bezel can navigate between screens or elements on one screen.
+Turning the bezel can navigate between screens or elements.
 
 -   **Content browsing**
 
-    Turn the bezel to browse content across the same hierarchy level. Turning the bezel can scroll a page up and down or left and right. It is not used for navigation between different hierarchies. You should also provide visual feedback on the rotary action with a circular scroll bar or page indicators.
+ Turn the bezel to browse content within one hierarchy level. Turning the bezel can scroll a page up and down or left and right. Do not use bezel turning for navigation among hierarchies. You should also provide visual feedback on the rotary action with a circular scroll bar or with page indicators.
 
-    ![](media/interaction_7.2.2_1-850x240.png)  
-    *A rotary action browses content across the same hierarchy level.*
+
+  ![](media/7.2.2_1-800x225.png)  
+
+  *A rotary action browses content across the same hierarchy level.*
 
 -   **Indicator control**
 
-    Turn the bezel in anchored views to bring the next item into focus. This is re-enforced visually through an indicator.
+    Turn the bezel in anchored views to bring the next item into focus. Visually enforce this action by using an indicator.
 
-    ![](media/interaction_7.2.2_2-850x206.png)  
+    ![](media/7.2.2_2-800x194.png)  
     *A rotary action moves an indicator.*
 
 -   **Selecting more options**
 
-    Turn the bezel to move between items in a More options menu. The title of an option is displayed in the center of the screen when it is highlighted.
+    Turn the bezel to move among items in a More options menu. The title of an option is displayed in the center of the screen when it is highlighted.
 
-    ![](media/interaction_7.2.2_3-850x206.png)  
+    ![](media/7.2.2_3-800x194.png)  
     *A rotary action allows users to move between more option items.*
 
 ## Control
@@ -74,7 +76,7 @@ Bezel interaction can adjust values such as the volume, date, and time.
 
 -   **Assign consistent meanings to each direction**
 
-    Rotating the bezel clockwise means an increase, and rotating it counterclockwise means a decrease.
+    Rotating the bezel clockwise indicates an increase, and rotating it counterclockwise indicates a decrease.
 
 -   **Define the value of one increment considering the whole range of values**
 
@@ -82,7 +84,7 @@ Bezel interaction can adjust values such as the volume, date, and time.
 
 -   **Show the change in values with visual feedback**
 
-    You should indicate the change in values visually on a circular indicator and provide text when users rotate the bezel. You can reinforce changes by using colors on the indicator. For example, you can apply a different color to a recommended volume range.
+    Indicate the change in values visually on a circular indicator and provide text when users rotate the bezel. You can reinforce changes by using colors on the indicator. For example, you can apply a different color to a recommended volume range.
 
 ## Use cases
 
@@ -90,12 +92,12 @@ Bezel interaction can adjust values such as the volume, date, and time.
 
     When there's just one value to control, users can adjust values by tapping +/ - buttons or rotating the bezel.
 
-  ![](media/interaction_7.2.3_1-850x207.png)  
+  ![](media/7.2.3_1-800x195.png)  
     *Rotating the bezel by one detent adjusts values by one increment, and rotating it quickly increases the speed of the value change.*
 
 -   **Multi value control: Date and time**
 
-    Some screens have multiple sets of adjustable values, like in an alarm or a scheduling app. In this case, let users switch between input fields with a tap and adjust values with the bezel to avoid confusion between interactions. Indicate which input field the user is adjusting by highlighting it.
+    In apps such as alarms or scheduling apps, some screens have multiple sets of adjustable values. In this case, allow users to switch between input fields with a tap, and adjust values with the bezel to avoid confusion between interactions. Indicate which input field the user is adjusting by highlighting it.
 
     ![](media/interaction_7.2.3_2-850x206.png)  
     *A tap switches input fields when adjusting multiple sets of values.*
@@ -107,7 +109,7 @@ Bezel interaction can adjust values such as the volume, date, and time.
 
 Use the bezel to accept or reject an alert. When an alert comes in, it shows options on the right and left side of the screen. Rotating the bezel clockwise selects the option on the left and vice versa. Users can hover over the options by rotating the bezel by one detent, and select one of the options by rotating it quickly.
 
-![](media/interaction_7.2.4-850x456.png)  
+![](media/7.2.4-800x429.png)  
 *Rotating the bezel quickly selects an option on either side.*
 
 ## Zoom
@@ -123,7 +125,7 @@ You can customize the bezel interactions in your app to create a unique experien
 
 -   **Use clockwise rotation for an increase in value, and counterclockwise rotation for a decrease in value**
 
-![](media/interaction_7.2.6_1-850x224.png)
+![](media/7.2.6_1-800x211.png)
  
 
 -   **Provide appropriate visual indicators**  
@@ -149,7 +151,7 @@ You can customize the bezel interactions in your app to create a unique experien
 
 -   **Customize where your indicator starts**
 
-    An indicator normally starts from the 12 o’clock position, but you can choose to start from somewhere else if it’s appropriate.
+    An indicator normally starts from the 12 o’clock position, but you can choose to start from somewhere else if it’s better for your app.
 
-    ![](media/interaction_7.2.6_4-850x174.png)  
+    ![](media/5-800x165.png)  
     *An indicator can start from a different position than the default 12 o'clock position.*

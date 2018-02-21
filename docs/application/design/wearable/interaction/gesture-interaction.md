@@ -23,7 +23,7 @@ The wrist up gesture turns on the screen to the active state when users raise th
 
 ## Press the Home key and swipe the screen
 
-To take a screen shot, users can press the Home key and swipe the screen from the left to the right. The captured screen will move upward to indicate that the screenshot has been successfully taken. The screenshot is saved to Gallery.
+To take a screen shot, press the Home key and swipe the screen from left to right. The captured screen will move upward to indicate that you have successfully taken the screenshot. The screenshot is saved to Gallery.
 
 ![](media/interaction_7.3.3-850x284.png)
 

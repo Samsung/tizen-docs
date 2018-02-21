@@ -1,6 +1,6 @@
 # Help users find their way
 
-The Gear's small display can (and should) only display a limited amount of content at once. It should also use a clear information hierarchy so users can understand which information is critical and which is supplementary.
+The Gear's small display can and should display a limited amount of content. It should use a clear information hierarchy so users can understand which information is critical and which is supplementary.
 
 ## Examples
 

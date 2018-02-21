@@ -2,7 +2,7 @@
 
 
 
-You should communicate the identity and purpose of your app by carefully designing visual elements such as colors, icons, and typography. Test your app to see if you can read information easily and find a consistent brand identity. You should also make sure that your app uses consistent animations when transitioning between screens or performing functions. Elements with strong visual impact like the launch screen or icons should be designed to work well with the Gear’s circular display.
+Communicate the identity and purpose of your app by carefully designing visual elements such as colors, icons, and typography. Test your app to see if you can read information easily and find a consistent brand identity. You should also make sure that your app uses consistent animations when transitioning between screens or performing functions. Design elements with strong visual impact, like the launch screen or icons, to work well with the Gear’s circular display.
 
 ## Examples
 

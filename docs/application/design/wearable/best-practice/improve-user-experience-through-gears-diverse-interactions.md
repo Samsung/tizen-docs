@@ -2,7 +2,7 @@
 
 
 
-The range of diverse interactions on the Gear gives you the opportunity to create a smoother user experience by providing feedback on user input and designing predictable interactions.
+The range of diverse interactions on the Gear gives you the opportunity to create a smooth user experience by providing feedback on user input and designing predictable interactions.
 
 ## Examples
 

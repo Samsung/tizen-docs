@@ -59,12 +59,12 @@ All elements of notifications can be customized to deliver information in the mo
        <th> Notificaiton card </th>
      </tr>
      <tr>
-       <td> Full pop-up alert<br><img src="media/structure_5.3.3_1_1_full_pop-up-150x96.png" width="150" height="96" /> </td>
-       <td rowspan="2"> <img alt="" height="94" src="media/structure_5.3.3_1_2notification_panel-150x94.png" width="150" /> </td>
-       <td rowspan="2"> <img alt="" src="media/structure_5.3.3_1_3card-300x158.png" width="300" height="158" /> </td>
+       <td> Full pop-up alert<br><img src="media/5.3.3_1_1_full_pop-up-200x128.png" width="150" height="96" /> </td>
+       <td rowspan="2"> <img alt="" height="94" src="media/5.3.3_1_2notification_panel-200x125.png" width="150" /> </td>
+       <td rowspan="2"> <img alt="" src="media/5.3.3_1_3card-400x221.png" width="300" height="158" /> </td>
      </tr>
      <tr>
-       <td> Small<br><img height="96" src="media/structure_5.3.3_1_1_small_pop-up-150x96.png" width="150" /></td>
+       <td> Small<br><img height="96" src="media/5.3.3_1_1_small_pop-up-200x128.png" width="150" /></td>
      </tr>
     </table>
 
@@ -91,5 +91,5 @@ All elements of notifications can be customized to deliver information in the mo
 
     Action buttons give access to related functions or tasks, like sending a message or opening an app. Provide action buttons below the body text of a notification or in a More options menu.
 
-    ![](media/structure_5.3.3_3.png)  
+    ![](media/5.3.3_3-800x165.png)  
     *Actions can be surfaced in More options menus.*
