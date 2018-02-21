@@ -33,7 +33,7 @@ Evas is designed to work on embedded systems all the way to large and powerful m
 
 Evas is not dependent or aware of main loops, or input and output systems. Input must be polled from various sources and fed to Evas. It does not create windows or report window updates to your system, but draws the pixels and reports to the user the areas that are changed. These operations are ready to be used in Ecore, particularly in the Ecore_Evas wrapper/helper set of functions.
 
-> **Note**	
+> **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

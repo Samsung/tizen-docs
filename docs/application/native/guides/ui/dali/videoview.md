@@ -8,8 +8,8 @@ The `Dali::Toolkit::VideoView` is a control for video playback and display. It p
 
 ![VideoView](./media/dali_videoview.png)
 
- > **Note**
- > The VideoView control does not use any privileges APIs on its own. However, if you use video files in a specific device storage, the application can require privileges to access the storage. For more information, see the Player API Reference (in [mobile](http://org.tizen.native.mobile.apireference/group__CAPI__MEDIA__PLAYER__MODULE.html) and [wearable](http://org.tizen.native.wearable.apireference/group__CAPI__MEDIA__PLAYER__MODULE.html) applications).    
+> **Note**  
+> The VideoView control does not use any privileges APIs on its own. However, if you use video files in a specific device storage, the application can require privileges to access the storage. For more information, see the Player API Reference (in [mobile](http://org.tizen.native.mobile.apireference/group__CAPI__MEDIA__PLAYER__MODULE.html) and [wearable](http://org.tizen.native.wearable.apireference/group__CAPI__MEDIA__PLAYER__MODULE.html) applications).    
 
 In this tutorial, the following subjects are covered:
 
@@ -25,7 +25,7 @@ The following table lists the basic signal provided by the `Dali::Toolkit::Video
 **Table: Dali::Toolkit::VideoView input signals**
 
 | Input signal        | Description                                 |
-| ------------------- | ------------------------------------------- |
+|-------------------|-------------------------------------------|
 | `FinishedSignal()`  | Emitted when a video playback is finished.  |
 
 The `VideoView` class provides the `FinishedSignal()`, which is emitted when the video playback is finished. The related callback can support some basic actions.
@@ -75,8 +75,8 @@ class VideoViewController: public ConnectionTracker
 }
 ```
 
-​  > **Note**  
-  > You can set the video file to be played in the `VideoView::New()` function, or by modifying `VIDEO` property with `SetProperty( VideoView::Property::VIDEO, "videofile2.mp4" )`.
+> **Note**  
+> You can set the video file to be played in the `VideoView::New()` function, or by modifying `VIDEO` property with `SetProperty( VideoView::Property::VIDEO, "videofile2.mp4" )`.
 
 <a name="3"></a>
 ## VideoView Properties
@@ -88,7 +88,7 @@ The following table lists the available `VideoView` properties.
 **Table: VideoView properties**
 
 | Property   | Type          | Description                              |
-| ---------- | ------------- | ---------------------------------------- |
+|----------|-------------|----------------------------------------|
 | `VIDEO`    | STRING or MAP | Video file URL string. This property can also provide additional features, such as a custom shader, by `Property::Map`. |
 | `LOOPING`  | BOOLEAN       | Whether the playback loops               |
 | `MUTED`    | BOOLEAN       | Whether the playback is muted            |
@@ -109,6 +109,6 @@ mView.SetProperty( VideoView::Property::VOLUME, newMap );
 ```
 
 ## Related Information
-* Dependencies
- - Tizen 3.0 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 3.0 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

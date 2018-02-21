@@ -23,7 +23,7 @@ The following table lists the basic signals provided by the `Dali::Toolkit::Text
 **Table: Dali::Toolkit::TextField input signals**
 
 | Input signal                | Description                                 |
-| --------------------------- | ------------------------------------------- |
+|---------------------------|-------------------------------------------|
 | `TextChangedSignal()`       | Emitted when the text changes.              |
 | `MaxLengthReachedSignal()`  | Emitted when inserted text exceeds the maximum character limit. |
 | `InputStyleChangedSignal()` | Emitted when the input style is updated as a consequence of a change in the cursor position. |
@@ -68,7 +68,7 @@ For text decorations, the following `TextField` class properties are available. 
 **Table: TextField properties**
 
 | Property                               | Type      | Description                              |
-| -------------------------------------- | --------- | ---------------------------------------- |
+|--------------------------------------|---------|----------------------------------------|
 | `RENDERING_BACKEND`                    | INTEGER   | The type or rendering e.g. bitmap-based  |
 | `TEXT`                                 | STRING    | The text to display in UTF-8 format      |
 | `PLACEHOLDER_TEXT`                     | STRING    | The text to display when the TextField is empty and inactive |
@@ -129,6 +129,6 @@ field.SetProperty( TextField::Property::PLACEHOLDER_TEXT_COLOR, Color::BLACK );
 ```
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

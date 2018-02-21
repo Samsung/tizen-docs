@@ -236,6 +236,6 @@ To draw a colored cube, you need a slightly more complicated shader and geometry
    ![Cube](./media/dali_rendering_cube.png)
 
 ## Related Information
-* Dependencies
- - Tizen 3.0 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 3.0 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

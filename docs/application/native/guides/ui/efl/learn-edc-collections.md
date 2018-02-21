@@ -67,10 +67,10 @@ collections {
 
   The [group](./learn-edc-group.md) block defines Edje Objects.
 
-> **Note**	
+> **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
-## Related Informationi
+## Related Information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

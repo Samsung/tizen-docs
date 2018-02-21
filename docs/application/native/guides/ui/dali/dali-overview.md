@@ -63,6 +63,6 @@ This module provides UI components and various effects on top of the DALi core.
 ![Layer diagram for DALi modules](./media/dali_modules.png)
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

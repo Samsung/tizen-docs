@@ -137,6 +137,6 @@ The following table lists the type and name attributes of the `Dali::Actor` prop
 For more information on properties, see the API reference of each class. For example, for the `Dali::Actor` class, see the `Dali::Actor::Property` struct (in [mobile](../../../../../org.tizen.native.mobile.apireference/structDali_1_1Actor_1_1Property.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/structDali_1_1Actor_1_1Property.html) applications). For information on the supported property types, see `Dali::Property::Type` (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1Property.html#acb569f557811bc94d2e98b5c880d759c) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1Property.html#acb569f557811bc94d2e98b5c880d759c) applications) and `Dali::PropertyTypes` (in [mobile](../../../../../org.tizen.native.mobile.apireference/namespaceDali_1_1PropertyTypes.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/namespaceDali_1_1PropertyTypes.html) applications).
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

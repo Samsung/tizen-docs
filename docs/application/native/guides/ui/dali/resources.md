@@ -19,7 +19,7 @@ Images are defined by an url which can be local or remote (internet).
 The following formats are supported :
 
 | Supported image formats | extentsion |
-|------------------------ | ---------- |
+|-------------------------|------------|
 | Bitmap                  | `.bmp`     |
 | Gif                     | `.gif`     |
 | Jpeg                    | `.jpeg`    |
@@ -84,13 +84,13 @@ The `Dali::FittingMode` namespace provides 4 algorithms, which can be used to fi
 The fitting modes and suggested use cases are as follows:
 
 | Fitting mode 	| Suggested use case |
-| ------------- | ------------------ |
+|---------------|--------------------|
 | `FittingMode::SHRINK_TO_FIT` |	Fit full image inside desired width & height, potentially not filling one of either the desired image width or height with pixels. |
 | `FittingMode::SCALE_TO_FILL` |	The image is centered in the desired dimensions, exactly touching in one dimension, with image regions outside the other desired dimension cropped. |
 | `FittingMode::FIT_WIDTH`     |	Image fills whole width. Height is scaled proportionately to maintain aspect ratio. |
 | `FittingMode::FIT_HEIGHT`    | Image fills whole height. Width is scaled proportionately to maintain aspect ratio. |
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

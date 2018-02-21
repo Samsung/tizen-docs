@@ -14,7 +14,7 @@ The following table lists the available UI components.
 **Table: DALi UI components**
 
 | Control                               | Description                              | Related classes                          |
-| ------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+|-------------------------------------|----------------------------------------|----------------------------------------|
 | [Buttons](buttons.md)             | A push button that can be pressed, a checkbox button that can be checked/unchecked, and a radio button that only one option can be selected. | `Button`, `PushButton`, `CheckBoxButton`, `RadioButton` |
 | [FlexContainer](flexcontainer.md) | A layout model that allows responsive elements within a container, automatically arranged to different size screens or devices. | `FlexContainer`              |
 | [ImageView](imageview.md)         | An image view that renders an image.     | `ImageView`                              |
@@ -39,6 +39,6 @@ The following figure illustrates the hierarchy of the UI components.
 ![DALi UI component hierarchy](./media/ui_control_hierarchy.png)
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable
