@@ -1,6 +1,6 @@
 # Watch Face States
 
-Watch faces have 2 different display states: “active” and “always-on.” An active watch face is revealed when a user lifts their wrist as if they’re looking at the watch(When Wake-up gesture is on in Gear Setting). An always-on watch face (also known as ambient mode) is always shown on the screen; it never fades away or becomes dormant(When Watch always-on is on in Gear Setting). These two states consume different amounts of battery power, so what each state can display is different. Make sure to consider and respect each state in your design.
+Watch faces have 2 different display states: "active" and "always-on." An active watch face is revealed when a user lifts their wrist as if they're looking at the watch(When Wake-up gesture is on in Gear Setting). An always-on watch face (also known as ambient mode) is always shown on the screen; it never fades away or becomes dormant(When Watch always-on is on in Gear Setting). These two states consume different amounts of battery power, so what each state can display is different. Make sure to consider and respect each state in your design.
 
 ## Active states
 
@@ -9,19 +9,19 @@ Active watch faces can freely express concepts and moods using diverse colors. Y
 ## Always-on states
 
 
-Always-on states should only include key watch face components like the hour and minute hands to minimize battery consumption. Because the display updates once every minute, showing real-time information (e.g. seconds ticking by) in always-on states isn’t recommended.
+Always-on states should only include key watch face components like the hour and minute hands to minimize battery consumption. Because the display updates once every minute, showing real-time information (e.g. seconds ticking by) in always-on states isn't recommended.
 
 -   **Color mode**
 
-    Depending on the capability of the Gear’s display, two different color schemes are available for always-on states: Low-bit color and high color.
+    Depending on the capability of the Gear's display, two different color schemes are available for always-on states: Low-bit color and high color.
 
 -   **Low-bit color mode**
 
-    In low-bit color mode, always-on states only use cyan, magenta, yellow, red, green, blue, and white colors at full brightness, with no grayscale or gradients. Images might be pixelated, as low-bit color mode doesn’t support anti-aliasing.
+    In low-bit color mode, always-on states only use cyan, magenta, yellow, red, green, blue, and white colors at full brightness, with no grayscale or gradients. Images might be pixelated, as low-bit color mode doesn't support anti-aliasing.
 
 -   **High color mode**
 
-    High color mode has no color restrictions and can replicate elaborate designs of active states more closely than low-bit color mode. It’s recommended to design for high color mode to create a visually compelling watch face, but note that high color designs will be displayed in low-bit color if a device doesn’t support high color.
+    High color mode has no color restrictions and can replicate elaborate designs of active states more closely than low-bit color mode. It's recommended to design for high color mode to create a visually compelling watch face, but note that high color designs will be displayed in low-bit color if a device doesn't support high color.
 
 <table align="center">
  <tr>
@@ -61,12 +61,12 @@ Always-on states should only include key watch face components like the hour and
 
 -   **On Pixel Ratio (OPR)**
 
-    As always-on states aim to consume power at a low rate, the OPR (on pixel ratio) is limited to a maximum of 15%. OPR is the ratio of the sum of each on-pixel’s RGB values compared to the value when all pixels on the screen are white. The OPR increases when more pixels are on and when the sum of RGB values is higher. OPR represents the percentage of each pixel’s RGB values. For example, a white pixel has the RGB value of R (255), G (255), and B (255) and an OPR of 100%. A red pixel’s RGB value is R (255), G (0), and B (0) and an OPR of 33.3%. A black pixel has the RGB value of R (0), G (0), and B (0), with an OPR of 0%.
+    As always-on states aim to consume power at a low rate, the OPR (on pixel ratio) is limited to a maximum of 15%. OPR is the ratio of the sum of each on-pixel's RGB values compared to the value when all pixels on the screen are white. The OPR increases when more pixels are on and when the sum of RGB values is higher. OPR represents the percentage of each pixel's RGB values. For example, a white pixel has the RGB value of R (255), G (255), and B (255) and an OPR of 100%. A red pixel's RGB value is R (255), G (0), and B (0) and an OPR of 33.3%. A black pixel has the RGB value of R (0), G (0), and B (0), with an OPR of 0%.
 
 ![](media/watchface_4.2.2_2-650x344.png)  
 *In always-on states, OPR is limited to 15% to save the battery power.*
 
-Don’t simply lower the brightness level of an active state to create an always-on state. This may degrade the visibility and quality of your work.
+Don't simply lower the brightness level of an active state to create an always-on state. This may degrade the visibility and quality of your work.
 
 
 

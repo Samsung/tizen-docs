@@ -1,6 +1,6 @@
 # Timely and Informative
 
-The Gear can provide timely information when users are engaged in an activity and can’t get to their phone or computer. Users can check information at a glance and quickly complete a task.
+The Gear can provide timely information when users are engaged in an activity and can't get to their phone or computer. Users can check information at a glance and quickly complete a task.
 
 
 

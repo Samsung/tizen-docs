@@ -1,6 +1,6 @@
 # Complications
 
-Complications are any additional features on a watch face that don’t show hours and minutes. They allow a watch to do more than just tell time. Complications show key information from an app in an economical way. Users can tap complications to open the corresponding app and see more detailed information. When using complications:
+Complications are any additional features on a watch face that don't show hours and minutes. They allow a watch to do more than just tell time. Complications show key information from an app in an economical way. Users can tap complications to open the corresponding app and see more detailed information. When using complications:
 
 -   **Show data that is relevant to the watch face**
 
@@ -10,7 +10,7 @@ Complications are any additional features on a watch face that don’t show hour
 
 -   **Keep visual balance between complications**
 
-    If you’re providing multiple complications, make sure they are visually balanced on the small circular screen.
+    If you're providing multiple complications, make sure they are visually balanced on the small circular screen.
 
 ### Type
 

@@ -9,7 +9,7 @@ Successful layouts suggest where users should look first and guide them from the
 
 -   **Radial**
 
-    Radial layouts divide the screen into pie-shaped areas. Content is placed along the edge of the circle to guide the viewer’s eye along a circular path. This type of layout is useful when your content has a flow or when your elements are at similar levels in the hierarchy. Since elements are evenly spaced along the edge, you can fully utilize the space of the circular screen while also maintaining the balance of your design.
+    Radial layouts divide the screen into pie-shaped areas. Content is placed along the edge of the circle to guide the viewer's eye along a circular path. This type of layout is useful when your content has a flow or when your elements are at similar levels in the hierarchy. Since elements are evenly spaced along the edge, you can fully utilize the space of the circular screen while also maintaining the balance of your design.
 
     ![](media/visual_design_8.5.1_1-850x201.png)  
     *Radial layouts are useful for displaying content with a flow or with elements at similar hierarchical levels.*
@@ -47,7 +47,7 @@ Centrally-aligned text creates a visual balance on the circular screen. Text ali
 
 ## Touchable area
 
-The touchable area is where users can touch components. A touchable area that is smaller than the component is difficult to select. Ensure that there is enough space between nearby components so the touchable areas don’t overlap.
+The touchable area is where users can touch components. A touchable area that is smaller than the component is difficult to select. Ensure that there is enough space between nearby components so the touchable areas don't overlap.
 
 ![](media/visual_design_8.5.3-850x174.png)  
 *Touchable areas should be large enough between components to ensure each component can be easily selected.*

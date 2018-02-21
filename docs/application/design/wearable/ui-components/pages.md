@@ -17,7 +17,7 @@ Pages are where content is presented. A page consists of a header and body. The 
 
     -   **Text content**
 
-        Text content should have margins on either side. Without these, it’s hard to read the text on a round display. When the text doesn't fit on one screen, the page scrolls vertically so users can see the full text. Refer to [Scroll bar](scroll-bar.md) for more details.
+        Text content should have margins on either side. Without these, it's hard to read the text on a round display. When the text doesn't fit on one screen, the page scrolls vertically so users can see the full text. Refer to [Scroll bar](scroll-bars.md) for more details.
 
         ![](media/ui_components_10.1.1_1-664x200.png)  
         *Text content should have margins on either side.*
@@ -31,13 +31,13 @@ Pages are where content is presented. A page consists of a header and body. The 
 
     -   **Thumbnail**
 
-        Thumbnails can be presented with a title or subtext. Usually you should place the title below each image, but place the title above the image if the page has a [bottom button](buttons.md#bottom_button). Titles that don’t fit slide in and fade out at the right-hand edge of the screen. Access to More options is not available.
+        Thumbnails can be presented with a title or subtext. Usually you should place the title below each image, but place the title above the image if the page has a [bottom button](buttons.md#bottom_button). Titles that don't fit slide in and fade out at the right-hand edge of the screen. Access to More options is not available.
 
 ## Behavior
 
 -   **Scroll**
 
-    Pages scroll when the text doeesn’t fit on one screen. Generally, pages scroll vertically to display long text content, and scroll horizontally to present a set of images one-by-one.
+    Pages scroll when the text doeesn't fit on one screen. Generally, pages scroll vertically to display long text content, and scroll horizontally to present a set of images one-by-one.
 
 -   **Multiple pages**
 

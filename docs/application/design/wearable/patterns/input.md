@@ -1,6 +1,6 @@
 # Input
 
-Users can input text with an input delegator or a keyboard. Input delegators are used for suggestions, voice input, emojis, and handwriting. A keyboard is used when suggestions aren’t available or privacy is needed, like when you need to enter a password.
+Users can input text with an input delegator or a keyboard. Input delegators are used for suggestions, voice input, emojis, and handwriting. A keyboard is used when suggestions aren't available or privacy is needed, like when you need to enter a password.
 
 ![](media/9.9.0-900x184.png)  
 *Input selectors or a keyboard can be provided for optimal wearable experience.*

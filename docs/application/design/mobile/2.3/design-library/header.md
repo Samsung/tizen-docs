@@ -16,16 +16,16 @@ Depending on their format and function, headers fall one of the following catego
 
 The basic header appears as a bar containing a string. When necessary, you can display a basic header within other UI elements, such as icons or buttons. In this case, make sure the header text is centered.
 
- 
+ 
 
 **Figure: Basic header**  
 <img alt="" height="400" src="media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_01.png" width="240" />
 
- 
+ 
 
 **Figure: Header with buttons**  
 <img alt="" height="36" src="media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_02.png" width="240" />
- 
+ 
 
 Keep the following guidelines in mind when including buttons in a basic header:
 
@@ -49,7 +49,7 @@ Keep the following guidelines in mind when using tabs in the header:
 -   Tabs containing icons with labels (up to 4) fit equally to the width of the screen.
 -   Do not use buttons for other functions in the header if you are also displaying a tab at the top of the screen. In this case, find another location for the buttons.
 
- 
+ 
 
 **Figure: Tabs**  
 <img alt="" height="98" src="media/tabs.png" width="240" />
@@ -62,7 +62,7 @@ Keep the following guidelines in mind when using tabs in the header:
 
 To add an additional title for all tab items, you can combine a row of tabs with a title. The tab with a title functions in the same way as the basic tab, meaning you cannot use buttons in the tab.
 
- 
+ 
 
 **Figure: Tab with a title**  
 <img alt="" height="72" src="media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_05.png" width="240" />

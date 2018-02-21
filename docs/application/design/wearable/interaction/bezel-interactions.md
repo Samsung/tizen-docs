@@ -9,7 +9,7 @@ Bezel interactions refer to rotating the bezel to explore the screen. Users can 
 
 ## Basics
 
-The bezel is a physical controller that rotates around the edge of the Gear’s display. Understanding the physical characteristics of the bezel helps you design better interactions.
+The bezel is a physical controller that rotates around the edge of the Gear's display. Understanding the physical characteristics of the bezel helps you design better interactions.
 
 -   **Directional interactions**
 
@@ -34,14 +34,14 @@ The bezel is a physical controller that rotates around the edge of the Gear’s 
 
 -   **Speed-to-angle ratio**
 
-    The Gear’s display is 1.2-1.3”, which is small. You can use bezel interaction to control a moving target on the Gear’s small display. For example, the bezel can control a character in a game. For smoother control, settle on the correct ratio between the speed of the target’s movement and the bezel’s angle and consider how fast the target should move when users move the bezel by one detent.
+    The Gear's display is 1.2-1.3", which is small. You can use bezel interaction to control a moving target on the Gear's small display. For example, the bezel can control a character in a game. For smoother control, settle on the correct ratio between the speed of the target's movement and the bezel's angle and consider how fast the target should move when users move the bezel by one detent.
 
     ![](media/interaction_7.2.1_3-850x174.png)  
     *Assign an appropriate ratio between the speed of the target's movement and the bezel's angle.*
 
 -   **Feedback**
 
-    Users feel a slight vibration and hear a click when they rotate the bezel. You can adapt this to create a user experience that includes haptic and sound feedback together. It’s recommended that you provide enough visual feedback to show how the screen elements change when the bezel is rotated.
+    Users feel a slight vibration and hear a click when they rotate the bezel. You can adapt this to create a user experience that includes haptic and sound feedback together. It's recommended that you provide enough visual feedback to show how the screen elements change when the bezel is rotated.
 
 ## Navigate
 
@@ -103,7 +103,7 @@ Bezel interaction can adjust values such as the volume, date, and time.
     *A tap switches input fields when adjusting multiple sets of values.*
 
 > **Tip**  
-> Each screen should have only one element that’s controlled by the rotary action. If you need more than one element to be controlled by the bezel, let users tap the element to enter a separate screen first, and then control it with the rotary action.
+> Each screen should have only one element that's controlled by the rotary action. If you need more than one element to be controlled by the bezel, let users tap the element to enter a separate screen first, and then control it with the rotary action.
 
 ## Confirm
 
@@ -131,16 +131,15 @@ You can customize the bezel interactions in your app to create a unique experien
 -   **Provide appropriate visual indicators**  
 <table>
  <tr>
-  <td><video controls>    <source src="media/7.2.6.visual_indicators_do.mp4" type=video/mp4> </video> </td>
-  <td> <video controls>    <source src="media/7.2.6.visual_indicators_dont.mp4" type=video/mp4> </video> </td>  
+  <td width="300"><video controls width="300">    <source src="media/7.2.6.visual_indicators_do.mp4" type=video/mp4> </video> </td>
+  <td> <video controls width="300">    <source src="media/7.2.6.visual_indicators_dont.mp4" type=video/mp4> </video> </td>  
  </tr>
  <tr>
-  <td> <img src="media/do_bar.png" /> </td>
+  <td width="300"> <img src="media/do_bar.png" /> </td>
   <td> <img src="media/dont_bar-296x12.png" /> </td>
  </tr>
 </table>
 
------------
 
 -   **Select only one item to control with the bezel**
 
@@ -151,7 +150,7 @@ You can customize the bezel interactions in your app to create a unique experien
 
 -   **Customize where your indicator starts**
 
-    An indicator normally starts from the 12 o’clock position, but you can choose to start from somewhere else if it’s better for your app.
+    An indicator normally starts from the 12 o'clock position, but you can choose to start from somewhere else if it's better for your app.
 
     ![](media/5-800x165.png)  
     *An indicator can start from a different position than the default 12 o'clock position.*

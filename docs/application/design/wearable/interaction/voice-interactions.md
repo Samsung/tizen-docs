@@ -2,7 +2,7 @@
 
 
 
-Voice interactions use the user’s voice as an input. Speech-to-text converts voice into text, and voice commands perform a task. It helps users control their Gears when they’re busy doing something else.
+Voice interactions use the user's voice as an input. Speech-to-text converts voice into text, and voice commands perform a task. It helps users control their Gears when they're busy doing something else.
 
 |Interaction|  |Example|
 |-----------|---|-------|

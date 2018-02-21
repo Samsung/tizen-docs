@@ -8,7 +8,7 @@ An adaptable watch face is one of the greatest advantages of a smartwatch. Users
 
 -   **Design for the circle**
 
-    Watch faces should complement the Gear’s circular screen. For example, you can design a watch face that looks like a classic wristwatch.
+    Watch faces should complement the Gear's circular screen. For example, you can design a watch face that looks like a classic wristwatch.
 
 -   **Be clear in your goal**
 

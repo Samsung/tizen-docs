@@ -33,11 +33,11 @@ Text fields are used to input text.
 
 -   **Field**
 
-    The field receives the user’s text input. When tapped, it displays a cursor and pulls up the keyboard.
+    The field receives the user's text input. When tapped, it displays a cursor and pulls up the keyboard.
 
 -   **Hint text (optional)**
 
-    Hint text explains or shows an example of what users should type in the text input field. You can provide hint text about an empty field before users start typing or after they’ve cleared all text. The hint text automatically disappears when users begin typing.
+    Hint text explains or shows an example of what users should type in the text input field. You can provide hint text about an empty field before users start typing or after they've cleared all text. The hint text automatically disappears when users begin typing.
 
 
 -   **Clear text button (optional)**

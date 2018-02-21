@@ -16,7 +16,7 @@ A list shows multiple items belonging to a single category. Users can select an 
 -   **List items**
     -   **Text only**
 
-        Text that’s longer than one screen slides in and fades out at the right-hand edge. Subtext strings can be added; they need to be center-aligned and limited to 2 lines.
+        Text that's longer than one screen slides in and fades out at the right-hand edge. Subtext strings can be added; they need to be center-aligned and limited to 2 lines.
 
     -   **Icon with text**
 
@@ -39,7 +39,7 @@ Indexes help users quickly find the item they want by dividing a long list into 
 |**Native**|Genlist > <br>Groupindex|
 |**Web**|-|
 
-A group index should fit on a single line and come before the first item of each group. Because they function as a visual divider, they can’t be selected. [Fast scroll indexes](scroll-bars.md#fast_scroll_index) can also be used to facilitate quick browsing.
+A group index should fit on a single line and come before the first item of each group. Because they function as a visual divider, they can't be selected. [Fast scroll indexes](scroll-bars.md#fast_scroll_index) can also be used to facilitate quick browsing.
 
 ![](media/ui_components_10.2.2-850x174.png)  
 *Group indexes divide list items into groups.*
@@ -48,7 +48,7 @@ A group index should fit on a single line and come before the first item of each
 
 -   **Focus**
 
-    An item comes into focus when it’s brought to the center of the screen. Other items above and below the focus are demagnified.
+    An item comes into focus when it's brought to the center of the screen. Other items above and below the focus are demagnified.
 
 -   **Rotary action**
 

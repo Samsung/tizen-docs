@@ -6,7 +6,7 @@ Tizen uses simple icon designs with subtle shadows. The following are guidelines
 
 #### Use Icon Designs That Are Easy to Understand
 
-When you design icons, ensure that they are easily understood without any additional description. Where applicable, use universal designs that are familiar to users. It’s a good idea to perform a usability test on the icons after designing them.
+When you design icons, ensure that they are easily understood without any additional description. Where applicable, use universal designs that are familiar to users. It's a good idea to perform a usability test on the icons after designing them.
 
 #### Do Not Copy Real Life Objects, Iconize them
 
@@ -26,7 +26,7 @@ Different Tizen platforms require different icon sizes. For example, mobile devi
 <a name="app-icons"></a>
 ## App Icons
 
-App icons are important because they visually represent your app on the Home screen. App icons must be attractive enough to draw a user’s attention and they have to deliver meaningful information about your apps.
+App icons are important because they visually represent your app on the Home screen. App icons must be attractive enough to draw a user's attention and they have to deliver meaningful information about your apps.
 
 <img alt="Example of a Tizen app icon" src="media/01.png" width="390px" margin-right="4px" />  
 
@@ -34,7 +34,7 @@ App icons are important because they visually represent your app on the Home scr
 
 #### Shape It in a Circle
 
-Tizen’s system icons are displayed as circles. Although this requirement creates challenges in designing icons, the shape allows for a uniformity that ties different icons together for a consistent look and feel.
+Tizen's system icons are displayed as circles. Although this requirement creates challenges in designing icons, the shape allows for a uniformity that ties different icons together for a consistent look and feel.
 
 <img alt="Original circle concept, initial sketch" src="media/02.png" width="390px" margin-right="4px" />  
 

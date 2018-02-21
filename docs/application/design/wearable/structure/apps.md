@@ -8,12 +8,12 @@ The apps screen contains all the apps installed on the Gear. Users can access, r
 
 ## App screen
 
-The app screen shows the icons and titles of all apps installed on Gear, so take their appearance into consideration when you’re designing your own app icon and refer to [Visual design](../visual-design/colors.md#theme_colors) for more details.
+The app screen shows the icons and titles of all apps installed on Gear, so take their appearance into consideration when you're designing your own app icon and refer to [Visual design](../visual-design/colors.md#theme_colors) for more details.
 
  
 
 ## App management
 
-Apps can be downloaded through the Samsung Gear app on the user's mobile phone or Get more apps in the app list. Apps can be rearranged or uninstalled in the edit mode that opens when users touch and hold an app’s icon or title.
+Apps can be downloaded through the Samsung Gear app on the user's mobile phone or Get more apps in the app list. Apps can be rearranged or uninstalled in the edit mode that opens when users touch and hold an app's icon or title.
 
  

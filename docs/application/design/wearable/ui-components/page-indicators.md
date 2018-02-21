@@ -33,7 +33,7 @@ Page indicators are dots at the top of the screen. There are 2 types of page ind
 
 -   **Linear page indicators**
 
-    Linear page indicators form a horizontal line at the top edge of the screen. Use them when navigation is through swiping only. Choose the linear page indicator when the rotary action controls other functions and can’t be used for page navigation.
+    Linear page indicators form a horizontal line at the top edge of the screen. Use them when navigation is through swiping only. Choose the linear page indicator when the rotary action controls other functions and can't be used for page navigation.
 
 | **Linear page indicators** in developer's guides | |
 | --- | --- |

@@ -1,6 +1,6 @@
 # Intimate and Responsive
 
-The Gear responds to movements from a user’s wrist. It automatically reveals the watch face when the user lifts their wrist, as it interprets this gesture as an intention to check the watch. You can also provide diverse haptic responses as the Gear is always connected to the user's body.
+The Gear responds to movements from a user's wrist. It automatically reveals the watch face when the user lifts their wrist, as it interprets this gesture as an intention to check the watch. You can also provide diverse haptic responses as the Gear is always connected to the user's body.
 
 
 

@@ -1,6 +1,6 @@
 # Touch
 
-Touch is the Gear’s base interaction platform, with taps and swipes widely used to navigate the interface. Ensure components have enough touchable area, and that the space between components is large enough so that touchable areas don’t overlap.
+Touch is the Gear's base interaction platform, with taps and swipes widely used to navigate the interface. Ensure components have enough touchable area, and that the space between components is large enough so that touchable areas don't overlap.
 
 
 
@@ -70,9 +70,9 @@ A double tap is 2 light taps on the screen in rapid succession. Users double tap
 <a name="swipe"></a>    
 ## Swipe and drag
 
-A swipe is the gesture where the user moves a finger across the touch screen. It shifts or scrolls the screen according to the gesture’s velocity. Users can swipe anywhere across the whole screen, with no on-screen target.
+A swipe is the gesture where the user moves a finger across the touch screen. It shifts or scrolls the screen according to the gesture's velocity. Users can swipe anywhere across the whole screen, with no on-screen target.
 
-A drag is a gesture where the finger moves at a constant speed. It moves an on-screen target as much as the user’s finger indicates. A drag is sustained as long as the user maintains contact with the screen and ends when the finger is lifted.
+A drag is a gesture where the finger moves at a constant speed. It moves an on-screen target as much as the user's finger indicates. A drag is sustained as long as the user maintains contact with the screen and ends when the finger is lifted.
 
 A swipe is a less precise movement than a drag. You can customize the swipe gesture and assign it to various functions.
 
@@ -98,7 +98,7 @@ A swipe is a less precise movement than a drag. You can customize the swipe gest
 
 ## Bezel swipe down
 
-Swiping down from the bezel’s top edge returns the user to the quick panel. This gesture is not customizable. As a result, any other swipe down navigation you add to your app may conflict with this gesture, causing users to open the quick panel by mistake.
+Swiping down from the bezel's top edge returns the user to the quick panel. This gesture is not customizable. As a result, any other swipe down navigation you add to your app may conflict with this gesture, causing users to open the quick panel by mistake.
 
 
 ![](media/7.1.4-800x175.png)

@@ -24,7 +24,7 @@ The Gear uses Breeze Sans as the system font. Breeze Sans comes in light, regula
 
 ## Font style
 
-Your app’s font style should be consistent with its visual identity and present text effectively on the small display.
+Your app's font style should be consistent with its visual identity and present text effectively on the small display.
 
 -   **Keep to one font throughout**
 

@@ -1,6 +1,6 @@
 # Colors
 
-Appropriate use of color makes your screens more glanceable. Use colors effectively and consider the Gear’s characteristics as a wearable device and its system colors.
+Appropriate use of color makes your screens more glanceable. Use colors effectively and consider the Gear's characteristics as a wearable device and its system colors.
 
 ## Basic color guidelines
 
@@ -28,7 +28,7 @@ Appropriate use of color makes your screens more glanceable. Use colors effectiv
 <a name="theme_colors"></a>
 ## System theme colors
 
-The Gear’s default theme color is dark blue. The following are examples of how default theme colors are applied.
+The Gear's default theme color is dark blue. The following are examples of how default theme colors are applied.
 
 ![](media/visual_design_8.1.2-850x455.png)  
-*The Gear’s default theme color is dark blue.*
+*The Gear's default theme color is dark blue.*

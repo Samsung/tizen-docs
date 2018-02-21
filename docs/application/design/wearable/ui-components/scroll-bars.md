@@ -4,7 +4,7 @@ A scroll bar indicates the current position on a page as users scroll through wi
 
 ## Usage
 
-Use a scroll bar to handle text that doesn’t fit on one screen.
+Use a scroll bar to handle text that doesn't fit on one screen.
 
 ## Behavior
 

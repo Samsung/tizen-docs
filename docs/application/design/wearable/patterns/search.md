@@ -8,11 +8,11 @@ Search suggestions should appear as the user types. For example, if the user sea
 
 -   **Data-based search suggestions**
 
-    Data-based search suggestions recommend search words based on the user’s app data.
+    Data-based search suggestions recommend search words based on the user's app data.
 
 -   **History-based search suggestions**
 
-    History-based search suggestions recommend search words based on the user’s search history.
+    History-based search suggestions recommend search words based on the user's search history.
 
 ![](media/9.10.1-900x186.png)  
 *Search suggestions recommend search words as the user types.*

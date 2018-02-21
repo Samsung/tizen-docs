@@ -1,13 +1,13 @@
 # Empty States
 
-Empty states are displayed when your app can’t show its regular content. An empty list is what a user sees when no alarms are set, a gallery after all photos have been deleted, or an empty device list when the Gear can’t find any Bluetooth device to connect to. To avoid completely blank screens, provide a simple image and text even when there is no content to show.
+Empty states are displayed when your app can't show its regular content. An empty list is what a user sees when no alarms are set, a gallery after all photos have been deleted, or an empty device list when the Gear can't find any Bluetooth device to connect to. To avoid completely blank screens, provide a simple image and text even when there is no content to show.
 
 ## Basic empty states
 
 Basic empty states display a non-interactive image and a tagline.
 
 ![](media/9.4.1-800x165.png)  
-*Empty states display an image and a tagline that explain the page’s current state.*
+*Empty states display an image and a tagline that explain the page's current state.*
 
 -   **Non-interactive images**
 
@@ -15,7 +15,7 @@ Basic empty states display a non-interactive image and a tagline.
 
 -   **Tagline**
 
-    Empty states should be presented with a short text that describes the current status of a page. It can either explain that the app doesn’t have any content to display, or conversely that the user doesn’t have any content for the app.
+    Empty states should be presented with a short text that describes the current status of a page. It can either explain that the app doesn't have any content to display, or conversely that the user doesn't have any content for the app.
 
 ## Adding items on empty states
 

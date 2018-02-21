@@ -1,6 +1,6 @@
 # Introduction
 ## [Overview](index.md)
-## [Air](introduction/air.md)
+## ["Air"](introduction/air.md)
 ## Styles
 ### [Animations](introduction/styles/animations.md)
 ### [Colors](introduction/styles/colors.md)
@@ -13,11 +13,13 @@
 ## [Design Principles](mobile/design-principles.md)
 ## [Styles](mobile/styles.md)
 ## UX Overview
+### [Overview](mobile/ux-overview.md)
 ### [Home Structure](mobile/ux-overview/home-structure.md)
 ### [Gestures](mobile/ux-overview/gestures.md)
 ### [Hardware Keys](mobile/ux-overview/hardware-keys.md)
 ### [Accessibility](??? Have to Check)
 ## Design Patterns
+### [Overview](mobile/design-patterns.md)
 ### [App Structure](mobile/design-patterns/app-structure.md)
 ### [App Handling](mobile/design-patterns/app-handling.md)
 ### [Notifications](mobile/design-patterns/notifications.md)
@@ -46,10 +48,11 @@
 ### [Overview](wearable/design-wearables.md)
 ### [Intimate and Responsive](wearable/design-wearables/intimate-and-responsive.md)
 ### [Timely and Informative](wearable/design-wearables/timely-and-informative.md)
-### [Circular UX](wearable/circular-ux.md)
-#### [Appealing Shape](wearable/circular-ux/appealing-shape.md)
-#### [Inspiring Metaphors](wearable/circular-ux/inspiring-metaphors.md)
-#### [Dynamic Motion](wearable/circular-ux/dynamic-motion.md)
+## Circular UX
+### [Overview](wearable/circular-ux.md)
+### [Appealing Shape](wearable/circular-ux/appealing-shape.md)
+### [Inspiring Metaphors](wearable/circular-ux/inspiring-metaphors.md)
+### [Dynamic Motion](wearable/circular-ux/dynamic-motion.md)
 ## Watch Face
 ### [Overview](wearable/watch-face.md)
 ### [Design Types of Watch Faces](wearable/watch-face/design-types-watch-faces.md)
@@ -123,20 +126,13 @@
 
 # TV
 ## Design Principles
-### Simplicity
-#### [Overview](tv/design-principles/simplicity.md)
-#### [Circular Icons](tv/design-principles/simplicity/circular-icons.md)
-#### [Hidden Inactive Icons](tv/design-principles/simplicity/hidden-inactive-icons.md)
-#### [No Unnecessary Decorations](tv/design-principles/simplicity/no-unnecessary-decorations.md)
-### Natural Intuitiveness
-#### [Overview](tv/design-principles/natural-intuitiveness.md)
-#### [Shadow Effect](tv/design-principles/natural-intuitiveness/shadow-effect.md)
-### Breathing Space
-#### [Overview](tv/design-principles/breathing-space.md)
-#### [Allow Empty Space](tv/design-principles/breathing-space/allow-empty-space.md)
-#### [Prioritize and Balance](tv/design-principles/breathing-space/prioritize-and-balance.md)
+### [Overview](tv/design-principles.md)
+### [Simplicity](tv/design-principles/simplicity.md)
+### [Natural Intuitiveness](tv/design-principles/natural-intuitiveness.md)
+### [Breathing Space](tv/design-principles/breathing-space.md)
 
-## [Styles](tv/styles.md)
+## Styles
+### [Overview](tv/styles.md)
 ### [Background Color](tv/styles/background-color.md)
 ### [Theme](tv/styles/theme.md)
 ### [Color Swatch](tv/styles/color-swatch.md)
@@ -150,72 +146,63 @@
 #### [Assist View](tv/ux-overview/app-layer/assist-view.md)
 #### [Notification](tv/ux-overview/app-layer/notification.md)
 #### [Toast](tv/ux-overview/app-layer/toast.md)
-### [Controls](tv/ux-overview/controls.md)
-### [Hardware Keys](tv/ux-overview/hardware-keys.md)
+#### [Controls](tv/ux-overview/controls.md)
+#### [Hardware Keys](tv/ux-overview/hardware-keys.md)
 
-## [Patterns](tv/patterns.md)
-
+## Patterns
+### [Overview](tv/patterns.md)
 ### App Structure
 #### [Overview](tv/patterns/app-structure.md)
 #### [Source Screen](tv/patterns/app-structure/source-screen.md)
 #### [Partial Screen](tv/patterns/app-structure/partial-screen.md)
 #### [Full Screen](tv/patterns/app-structure/full-screen.md)
 #### [Detail Screen](tv/patterns/app-structure/detail-screen.md)
-
 ### Screen Layout
 #### [Overview](tv/patterns/screen-layout.md)
 #### [Header Area](tv/patterns/screen-layout/header-area.md)
 #### [Content Area](tv/patterns/screen-layout/content-area.md)
 #### [Footer Area](tv/patterns/screen-layout/footer-area.md)
-
 ### Navigation
 #### [Overview](tv/patterns/navigation.md)
 #### [Back Navigation](tv/patterns/navigation/back-navigation.md)
 #### [Scrolling](tv/patterns/navigation/scrolling.md)
 #### [Focusing](tv/patterns/navigation/focusing.md)
 #### [Back Key Information](tv/patterns/navigation/back-key-information.md)
-
 ### Actions
 #### [Overview](tv/patterns/actions.md)
 #### [Cancel or Confirm](tv/patterns/actions/cancel-or-confirm.md)
 #### [Delete](tv/patterns/actions/delete.md)
 #### [Multi-select](tv/patterns/actions/multi-select.md)
 #### [Pin or Unpin](tv/patterns/actions/pin-or-unpin.md)
-
-### [Notifications](tv/patterns/notifications.md)
+#### [Notifications](tv/patterns/notifications.md)
 ### Recommendations
-#### [Show Focus Always](tv/patterns/show-focus-always.md)
+#### [Show Focus Always](tv/patterns/recommendations/show-focus-always.md)
 #### [Define Screen Size Based on Layer](tv/patterns/recommendations/define-screen-size-based-on-layer.md)
 #### [Provide Confirmation](tv/patterns/recommendations/provide-confirmation.md)
 
 ## UI Components
 ### [Overview](tv/ui-components.md)
-### [Navigation Elements](tv/ui-components/navigation-elements.md)
+### Navigation Elements
+#### [Overview](tv/ui-components/navigation-elements.md)
 #### [Title Bar](tv/ui-components/navigation-elements/title-bar.md)
 #### [Tabs](tv/ui-components/navigation-elements/tabs.md)
 #### [Scroll Bar](tv/ui-components/navigation-elements/scroll-bar.md)
 #### [Index](tv/ui-components/navigation-elements/index.md)
-### [Presentation Views](tv/ui-components/presentation-views.md)
+### Presentation Views
+#### [Overview](tv/ui-components/presentation-views.md)
 #### [Grid View](tv/ui-components/presentation-views/grid-view.md)
 #### [List View](tv/ui-components/presentation-views/list-view.md)
 #### [Progress](tv/ui-components/presentation-views/progress.md)
-##### [Activity Indicator](tv/ui-components/presentation-views/progress/activity-indicator.md)
-##### [Progress Indicator](tv/ui-components/presentation-views/progress/progress-indicator.md)
-### [User Input Elements](tv/ui-components/user-input-elements.md)
+#### [User Input Elements](tv/ui-components/user-input-elements.md)
 #### [Button](tv/ui-components/user-input-elements/button.md)
 #### [Check](tv/ui-components/user-input-elements/check.md)
-##### [Check Box](tv/ui-components/user-input-elements/check/check-box.md)
-##### [Toggle](tv/ui-components/user-input-elements/check/toggle.md)
 #### [Radio Button](tv/ui-components/user-input-elements/radio.md)
 #### [Text Input](tv/ui-components/user-input-elements/text-input.md)
 #### [Drop-down Menu](tv/ui-components/user-input-elements/dropdown-menu.md)
 #### [Slider](tv/ui-components/user-input-elements/slider.md)
 #### [Picker](tv/ui-components/user-input-elements/picker.md)
-##### [Number Picker](tv/ui-components/user-input-elements/picker/number-picker.md)
-##### [Date&Time Picker](tv/ui-components/user-input-elements/picker/datetime-picker.md)
-### [Assist Views](tv/ui-components/assist-views.md)
+### Assist Views
+#### [Overview](tv/ui-components/assist-views.md)
 #### [Popup](tv/ui-components/assist-views/popup.md)
-##### [Action Popup](tv/ui-components/assist-views/popup/action-popup.md)
-##### [Function Popup](tv/ui-components/assist-views/popup/function-popup.md)
 #### [Toast](tv/ui-components/assist-views/toast.md)
 #### [Context Popup](tv/ui-components/assist-views/context-popup.md)

@@ -21,7 +21,7 @@ Use indicators to show the progress of tasks such as data loading.
 
 -   **Progress indicators**
 
-    A progress indicator helps users determine how long they’ll be waiting by displaying how far a task has progressed. You can show progress with either a percentage scale or a fraction indicator. The indicator will disappear when the task is completed.
+    A progress indicator helps users determine how long they'll be waiting by displaying how far a task has progressed. You can show progress with either a percentage scale or a fraction indicator. The indicator will disappear when the task is completed.
 
     | **Progress Indicator** in developer's guides | |
     | -- | -- |

@@ -2,7 +2,7 @@
 
 
 
-Gesture interaction takes the user's gestures as input. Users can make a hand movement or change the position of their arm, and the Gear’s accelerometer and gyro sensor will provide a sensitive and quick response.
+Gesture interaction takes the user's gestures as input. Users can make a hand movement or change the position of their arm, and the Gear's accelerometer and gyro sensor will provide a sensitive and quick response.
 
 ## Smart relay
 
@@ -29,7 +29,7 @@ To take a screen shot, press the Home key and swipe the screen from left to righ
 
 ## Palm touch
 
-Touching your Gear’s display with the palm of your other hand turns off the screen. It can be turned on again by pressing the Home or Back keys. When a call comes in, a palm touch mutes the sound and turns off the screen. It also snoozes and turns off alerts.
+Touching your Gear's display with the palm of your other hand turns off the screen. It can be turned on again by pressing the Home or Back keys. When a call comes in, a palm touch mutes the sound and turns off the screen. It also snoozes and turns off alerts.
 
 ![](media/interaction_7.3.4-850x239.png)  
 *The screen turns off when users place their hand on it.*

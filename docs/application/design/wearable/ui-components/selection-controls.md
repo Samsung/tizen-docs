@@ -1,6 +1,6 @@
 # Selection Controls
 
-Selection controls enables users to choose an item. The appropriate type will depend on how you want to present items for the user’s selection.
+Selection controls enables users to choose an item. The appropriate type will depend on how you want to present items for the user's selection.
 
 ## Usage
 

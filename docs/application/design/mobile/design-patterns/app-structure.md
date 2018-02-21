@@ -42,7 +42,7 @@ This section provides guidelines for designing the main view of your app. Read t
 
 #### Start with an Overview
 
-The Main view is the first screen on your app. It provides key information to help users recognize your app’s essential features and allows them to understand the app structure. If you need to divide the information into different categories, use tabs in the header.
+The Main view is the first screen on your app. It provides key information to help users recognize your app's essential features and allows them to understand the app structure. If you need to divide the information into different categories, use tabs in the header.
 
 <img alt="Main view example of a call app" src="media/4.1.1_a.png" height="460px" />  
 
@@ -75,7 +75,7 @@ For example, you can provide a 'Create' floating action button for a calendar ap
 <a name="detail"></a>
 ## Detail View
 
-This section provides guidelines for designing your app’s detail view. Read and understand the following guidelines before designing your app.
+This section provides guidelines for designing your app's detail view. Read and understand the following guidelines before designing your app.
 
  
 

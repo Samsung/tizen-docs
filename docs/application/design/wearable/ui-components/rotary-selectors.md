@@ -46,7 +46,7 @@ The rotary selector arranges multiple items around the circular edge of the scre
 
 -   **Select**
 
-    An option performs its assigned task when users tap it, regardless of whether or not it’s in focus. A tap on the center of the screen triggers the task of the item in focus. If an item is a toggle button, tapping the item or its option detail switches its state.
+    An option performs its assigned task when users tap it, regardless of whether or not it's in focus. A tap on the center of the screen triggers the task of the item in focus. If an item is a toggle button, tapping the item or its option detail switches its state.
 
 ## Design specs
 

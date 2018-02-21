@@ -1,7 +1,7 @@
 # Widgets
 
 
-Widgets provide easy access to frequently used tasks or content. They’re useful when users are engaged in other activities or unable to precisely control their Gear. Users can access any app’s key features without launching the app.
+Widgets provide easy access to frequently used tasks or content. They're useful when users are engaged in other activities or unable to precisely control their Gear. Users can access any app's key features without launching the app.
 
 Make sure you understand how different types of widgets work, and the widget designs that are best suited to your app. You can also design widgets in web-native languages. Refer to [Native widgets](http://developer.samsung.com/gear/develop/creating-your-first-app/native-widget) for more details on native apps and [Web widgets](http://developer.samsung.com/gear/develop/creating-your-first-app/web-widget) for web apps.
 
@@ -92,7 +92,7 @@ Here are some common use cases that will help you design your widgets.
 
 -   **Filling empty widgets**
 
-    Some widgets need to be filled with content by users. If you’re creating one of these, include an “Add” button, instead of leaving the screen completely empty.
+    Some widgets need to be filled with content by users. If you're creating one of these, include an "Add" button, instead of leaving the screen completely empty.
 
     <img src="media/5.2.4_1-800x165.png" width="601" height="123" />  
 
@@ -112,7 +112,7 @@ Here are some common use cases that will help you design your widgets.
 
 ## Designing widgets
 
-Keep the visual principles for colors, layout, and typography in mind when you’re designing your widgets.
+Keep the visual principles for colors, layout, and typography in mind when you're designing your widgets.
 
 -   **Make your widgets readable with a dark background**
 

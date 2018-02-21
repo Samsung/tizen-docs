@@ -3,7 +3,7 @@
 
 #### Portrait Orientation
 
-The portrait orientation is the default screen orientation for most app designs because it’s the way people naturally hold their devices.
+The portrait orientation is the default screen orientation for most app designs because it's the way people naturally hold their devices.
 
  
 <img alt="Portrait screen layout" src="media/4.5.1_a.png" height="460px" /> <img alt="Portrait screen layout" src="media/4.5.1_b.png" height="460px" margin-left="10px" />  
@@ -23,7 +23,7 @@ If your app serves for special purposes where the landscape orientation is more 
 
 
 
-By designing a screen in landscape orientation, you can take advantage of the wide screen to present specific content to users. However, before using the landscape mode in your app, make sure it serves users’ actual needs. For example, just because your app uses a camera or presents pictures or videos is not a good reason to design your app in landscape orientation, especially if those features are rarely used.
+By designing a screen in landscape orientation, you can take advantage of the wide screen to present specific content to users. However, before using the landscape mode in your app, make sure it serves users' actual needs. For example, just because your app uses a camera or presents pictures or videos is not a good reason to design your app in landscape orientation, especially if those features are rarely used.
 
 Consider using the landscape orientation when:
 

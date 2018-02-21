@@ -17,7 +17,7 @@ Information widgets are designed to present informative, timely content that use
 <a name="interactive-widgets"></a>
 ## Interactive Widgets
 
-Interactive widgets allow users to access the main features of certain apps without launching them. Interactive widgets may allow users to change an app’s settings, and then the changes will be reflected immediately to the app and the widget itself.
+Interactive widgets allow users to access the main features of certain apps without launching them. Interactive widgets may allow users to change an app's settings, and then the changes will be reflected immediately to the app and the widget itself.
 
 <img src="media/4.4.1_c.png" alt="Interactive widget – Contacts" width="260px" />  
 
@@ -27,7 +27,7 @@ Interactive widgets allow users to access the main features of certain apps with
 <a name="hybrid-widgets"></a>
 ## Hybrid Widgets
 
-While most widgets can be classified into one of the two types listed above, there are widgets that utilize a variety of content. Such widgets are called “hybrid widgets.” For example, a music widget may be considered a hybrid widget if it provides playlist information and playback controls at the same time.
+While most widgets can be classified into one of the two types listed above, there are widgets that utilize a variety of content. Such widgets are called "hybrid widgets." For example, a music widget may be considered a hybrid widget if it provides playlist information and playback controls at the same time.
 
 <img src="media/4.4.1_d.png" alt="Example of a hybrid widget – Music widget" width="260px" />  
 
@@ -49,7 +49,7 @@ When you design widgets, what matters most is the quality of the content provide
 Because widgets run on the Home screen, they must be designed with limited gestures to avoid conflict with other Home screen gestures. The tap and vertical swipe gestures can be used with widgets.
 
 -   Tap : Used for controlling widget functions or selecting a specific item in the content
--   Vertical swipe : Used for scrolling through the content or switching between the widget’s screens
+-   Vertical swipe : Used for scrolling through the content or switching between the widget's screens
 
 <img src="media/widget.png" alt="Taps are used to control widgets." width="100%" />  
 

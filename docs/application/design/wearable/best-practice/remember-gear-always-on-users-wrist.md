@@ -9,10 +9,10 @@ The Gear delivers timely information when users need it. Consider the key inform
 
 -   **Samsung Health**
 
-    Samsung Health monitors the user’s fitness and activity using the the Gear's built-in sensors. It sends an alert to move when the user has been inactive for too long.
+    Samsung Health monitors the user's fitness and activity using the the Gear's built-in sensors. It sends an alert to move when the user has been inactive for too long.
 
     ![](media/1-200x200.png) ![](media/2-1-200x200.png) ![](media/3-200x200.png)  
-    *Users can monitor their health with the Gear’s built-in sensors.*
+    *Users can monitor their health with the Gear's built-in sensors.*
 
 -   **Uber**
 
@@ -33,10 +33,10 @@ The Gear delivers timely information when users need it. Consider the key inform
     Reminder sends notifications for tasks in to-do lists before their completion deadline.
 
     ![](media/a-200x200.png) ![](media/b-200x200.png) ![](media/c-200x200.png) ![](media/d-200x200.png)  
-    *With reminders, users can check whether they’ve completed a task on their to-do list.*
+    *With reminders, users can check whether they've completed a task on their to-do list.*
 
 ## Things to check
 
--   Is your app’s function relevant to the user's current state or context?
+-   Is your app's function relevant to the user's current state or context?
 -   How can your app utilize the user's physical states that it monitors?
 -   Can the user process information at a glance? Did you make sure your screens don't provide too much information all at once?

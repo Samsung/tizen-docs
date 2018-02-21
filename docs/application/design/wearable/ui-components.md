@@ -2,7 +2,7 @@
 
 
 
-The Gear’s basic components are optimized for its circular display. Design your interface with appropriate components so users can interact with your app intuitively.
+The Gear's basic components are optimized for its circular display. Design your interface with appropriate components so users can interact with your app intuitively.
 
 ## UI Components
 
