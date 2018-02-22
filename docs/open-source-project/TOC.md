@@ -1,4 +1,4 @@
-# [Overview]
+# Overview
 ## [Development Workflow](/open-source-project/about/work-flow.md)
 ## [Git Repository Structure](/open-source-project/about/git-repo-structure.md)
 ## [Typographic Conventions](/open-source-project/about/conventions.md)

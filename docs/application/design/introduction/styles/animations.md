@@ -38,7 +38,8 @@ Animations on the screen should have a consistent direction. Disorienting animat
 
 When you design animations for different layers on the screen, provide them based on the actual movement of the layer they belong to.
 
-![Design your motions work in harmony](media/2.5_e_.png)  
+<img alt="Design your motions work in harmony" src="media/2.5_e_.png" height="600">
+
 *Design your motions work in harmony*
 
 If necessary, you can design animations with different styles on the same screen. However, if you design a screen with multiple simultaneous animations, they should be consistent and uniform.
