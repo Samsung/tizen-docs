@@ -182,7 +182,7 @@ Dropdown menu
 <a name="slider_"></a>
 ## Slider
 
-A slider is used to adjust a value within a certain range. You can include a description or an icon that explains the slider’s value range. The user can tap or drag the slider bar to increase or decrease the value. You can also provide numbers on the slider to indicate the value.
+A slider is used to adjust a value within a certain range. You can include a description or an icon that explains the slider's value range. The user can tap or drag the slider bar to increase or decrease the value. You can also provide numbers on the slider to indicate the value.
 
 To learn how to implement a slider, see [Slider](../../../native/guides/ui/efl/component-slider-m.md).
 

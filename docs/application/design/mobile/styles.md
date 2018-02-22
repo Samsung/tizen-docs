@@ -2,7 +2,7 @@
 
 #### Theme Colors
 
-The Tizen offers a single background gradient called “Midday” as the default Home screen background since Tizen SDK 2.4. It captures colors and natural gradients of the sky.
+The Tizen offers a single background gradient called "Midday" as the default Home screen background since Tizen SDK 2.4. It captures colors and natural gradients of the sky.
 
 
 ![Midday, the new theme color for the Tizen mobile.](media/2.4_a.png)  
@@ -63,7 +63,7 @@ Once again, the text colors should be decided based on the color of the backgrou
 
 
 
-Text with vivid colors, such as red, yellow, blue, and green is not recommended. Such color choice may cause the usability of your design to suffer, because they may impose excessive stress to a user’s vision and distract them.
+Text with vivid colors, such as red, yellow, blue, and green is not recommended. Such color choice may cause the usability of your design to suffer, because they may impose excessive stress to a user's vision and distract them.
 
 
 ### List Principles

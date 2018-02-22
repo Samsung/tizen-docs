@@ -1,6 +1,6 @@
 # Errors
 
-Errors occur when the Gear fails to complete an intended action. For instance, when data loading fails or user inputs can’t be processed.
+Errors occur when the Gear fails to complete an intended action. For instance, when data loading fails or user inputs can't be processed.
 
 ## Error pages
 
@@ -15,7 +15,7 @@ When errors occur, your app should explain the cause of the error and a solution
 
 -   **Provide an error message and buttons.**
 
-    An error message with buttons directs users to the appropriate follow-up action. For example, if the Gear loses the Bluetooth connection with the user’s mobile phone, use a Retry pop-up. Allow users to exit the page when a task, such as data loading, fails before completion.
+    An error message with buttons directs users to the appropriate follow-up action. For example, if the Gear loses the Bluetooth connection with the user's mobile phone, use a Retry pop-up. Allow users to exit the page when a task, such as data loading, fails before completion.
 
     ![](media/pattern_9.5.1_2-850x174.png)  
     *Buttons on error messages direct users to take follow-up actions.*
@@ -42,4 +42,4 @@ App errors occur within the app regardless of any user input.
 
 -   **Connectivity error**
 
-    When there are problems with mobile or data connectivity, users should still be able to interact with other features that don’t need a connection. You can also provide a Retry button so users can try to connect again.
+    When there are problems with mobile or data connectivity, users should still be able to interact with other features that don't need a connection. You can also provide a Retry button so users can try to connect again.

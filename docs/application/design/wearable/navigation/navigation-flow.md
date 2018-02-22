@@ -1,6 +1,6 @@
 # Navigation Flow
 
-Three types of navigation flow are available to you to use in your app. The most appropriate one will depend on the content you’re presenting. The 3 types are:
+Three types of navigation flow are available to you to use in your app. The most appropriate one will depend on the content you're presenting. The 3 types are:
 
 -   Lateral navigation between screens at the same hierarchy levels
 -   Hierarchical navigation between screens at different levels

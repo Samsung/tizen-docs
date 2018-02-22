@@ -58,4 +58,4 @@ Do not juxtapose text with varying sizes. Create a font size chart and refer to 
 
 #### Consider Providing Accessibility Options for Users with Disabilities
 
-Tizen provides accessibility settings to allow users to customize display settings. By allowing users to adjust the font’s color and size options, you can create an app that is universally accessible to all users.
+Tizen provides accessibility settings to allow users to customize display settings. By allowing users to adjust the font's color and size options, you can create an app that is universally accessible to all users.

@@ -12,7 +12,7 @@ Ask yourself what the purpose of a message is and what information you need to c
 
     ![](media/wearable_2.3.1_1-850x166.png)
 
--   **Don’t state the obvious**.
+-   **Don't state the obvious**.
 
     ![](media/wearable_2.3.1_2-850x190.png)
 
@@ -26,8 +26,8 @@ Ask yourself what the purpose of a message is and what information you need to c
 
 Use the active voice whenever possible to save space and make messages easier to understand. Avoid using negative words or expressions that blame the user. Use positive expressions that promote the Gear as a capable, reliable, and powerful device.
 
--   Only include “Please” when omitting the word from the text makes it sound rude or demanding.
--   Don't use “Sorry”. Avoid using “Thanks”.
+-   Only include "Please" when omitting the word from the text makes it sound rude or demanding.
+-   Don't use "Sorry". Avoid using "Thanks".
 
 ## Capital Letters
 
@@ -47,15 +47,15 @@ Use the following terms when referring to a specific device/state, or indicating
 
 -   **No data search results**
 
-    Default: “No (item’s name) found”
+    Default: "No (item's name) found"
 
-    Device scan: “No devices found”
+    Device scan: "No devices found"
 
-    Network scan: “No networks found”
+    Network scan: "No networks found"
 
-    Text search: “No results found“
+    Text search: "No results found"
 
-    CP related: “Content being prepared”
+    CP related: "Content being prepared"
 
 ## Shortened Words
 
@@ -99,7 +99,7 @@ The styles below are used to display the date and time.
        <td> Year </td>
        <td> 1900 </td>
        <td> 2050 </td>
-       <td> <i>Year: The indicator is reset every 100 years. (It can be stopped according to app’s limitation.)</i> </td>
+       <td> <i>Year: The indicator is reset every 100 years. (It can be stopped according to app's limitation.)</i> </td>
      </tr>
      <tr>
        <td rowspan="4"> Time </td>

@@ -17,4 +17,4 @@ Multi-selection or single selection is available depending on the content.*
 
 ## Delete feedback
 
-Inform users that the item has been deleted with a toast, and provide a progress indicator if the action will take time. Use a pop-up to get the user's confirmation if deleted items can’t be recovered.
+Inform users that the item has been deleted with a toast, and provide a progress indicator if the action will take time. Use a pop-up to get the user's confirmation if deleted items can't be recovered.

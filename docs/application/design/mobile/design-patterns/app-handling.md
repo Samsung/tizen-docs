@@ -5,12 +5,12 @@ This section provides guidelines on how to design an app to launch and close. In
 <a name="starting-and-stopping-an-app"></a>
 ## Starting and Stopping an App
 
-How you design your app to open and close is very important, because users begin to evaluate your app the moment they open it for the first time, and this evaluation process ends only after they have closed the app. The following lists basic guidelines for designing your app’s opening and closing actions:
+How you design your app to open and close is very important, because users begin to evaluate your app the moment they open it for the first time, and this evaluation process ends only after they have closed the app. The following lists basic guidelines for designing your app's opening and closing actions:
  
 
 #### Make Your App to Start Immediately
 
-Avoid providing additional steps or procedures that may annoy users. Once started, your app’s top level view should show the essential functions and the overview of the app structure. Refer to [App Structure](app-structure.md) for details.
+Avoid providing additional steps or procedures that may annoy users. Once started, your app's top level view should show the essential functions and the overview of the app structure. Refer to [App Structure](app-structure.md) for details.
  
 
 #### Indicate the Progress if It Takes Time to Launch
@@ -27,7 +27,7 @@ If you design your app to work in both landscape and portrait modes, design it t
 
 #### Provide a Short and Clear Tutorial if Necessary
 
-It is always the best to design your app to be simple so that users can use it without tutorials. However, if you think users need specific information to use your app properly, provide an interactive tutorial session. When you do this, make your tutorial as interesting as possible to draw users’ attention. Also, for those who already know what to do, design the tutorial with an option to skip it.
+It is always the best to design your app to be simple so that users can use it without tutorials. However, if you think users need specific information to use your app properly, provide an interactive tutorial session. When you do this, make your tutorial as interesting as possible to draw users' attention. Also, for those who already know what to do, design the tutorial with an option to skip it.
 
  
 

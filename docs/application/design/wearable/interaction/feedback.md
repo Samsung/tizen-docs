@@ -1,6 +1,6 @@
 # Feedback
 
-The Gear offers visual, auditory, and haptic feedback. Whichever the type of feedback being used, it should clearly communicate the result of a user’s input. You can combine more than one type of feedback when you need to emphasize user input.
+The Gear offers visual, auditory, and haptic feedback. Whichever the type of feedback being used, it should clearly communicate the result of a user's input. You can combine more than one type of feedback when you need to emphasize user input.
 
 <table>
      <tr>
@@ -29,11 +29,11 @@ The Gear offers visual, auditory, and haptic feedback. Whichever the type of fee
 
 ## Haptic responses
 
-Haptic responses deliver feedback to users through vibration without requiring them to look at the screen. You can vary the duration and number of vibrations to communicate different meanings to users.
+Haptic responses deliver feedback to users using vibration so that they don't have to look at the screen. You can vary the duration and number of vibrations to communicate different meanings.
 
 -   **Designing vibration**
 
-    You can design patterns by using a mix of silence and vibrations of varying durations. Since users might have difficulty differentiating between complicated patterns, try to keep them as simple as possible.
+    You can design haptic patterns by using a mix of silence and vibrations of varying durations. Because users might have difficulty differentiating between complicated patterns, try to keep them as simple as possible.
 
 -   **Sample vibration Patterns**
 
@@ -48,11 +48,11 @@ Haptic responses deliver feedback to users through vibration without requiring t
 
 -   **Duration of vibrations**
 
-    Users often find overly-long vibrations annoying. They also drain battery power, which reduces the battery life.
+    Users often find extended vibrations annoying. In addition, long vibrations drain battery power.
 
 -   **Appropriate feedback**
 
-    Haptic vibration can be created with different intensities. Since the Gear is worn on the wrist, several factors can affect range of vibration that’s detectable, including whether users are moving, whether they are wearing the Gear, or how much they are focusing on the device. Haptic feedback should only be provided in the right place at the right time to avoid tiring out users with unnecessarily frequent feedback.
+    Haptic vibration can be created with different intensities. Since the Gear is worn on the wrist, several factors can affect range of vibration that's detectable, including whether users are moving, whether they are wearing the Gear, or how much they are focusing on the device. Haptic feedback should only be provided selectively to avoid tiring out users with unnecessarily frequent feedback.
 
 -   **Feedback on text input**
 
@@ -110,17 +110,17 @@ Visual responses inform users of a current state. Provide visual feedback to inf
 
 ## Auditory responses
 
-Auditory responses deliver feedback on the user's touch or gestures. Using different stream types, durations, and melodies will help you create sounds that help users take the correct next steps.
+Auditory responses deliver feedback for the user's touches or gestures. Using different stream types, durations, and melodies creates sounds that help users perform the correct next steps.
 
  
 
 -   **Stream type**
 
-    Consider which type of stream type is suitable for each auditory response. It could be a ringtone, a notification (message), or a piece of media.
+    Consider which stream type is suitable for each auditory response. It could be a ringtone, a notification (message), or a snippet of media.
 
 -   **Properties: notes, tones, melodies**
 
-    Consider the meaning of each property when you’re designing your auditory feedback. For instance, touch interaction performs many different actions, so the related sounds typically have a neutral and simple tone. You can use a higher note when values go up, and a lower note one values go down. Likewise, you can use an ascending melody when turning on a function and a descending one when turning it off. These directions should remain consistent throughout your app.
+    Consider the meaning of each property when you're designing your auditory feedback. For instance, touch interaction performs many different actions, so the related sounds typically have a neutral and simple tone. You can use a higher note when values go up, and a lower note one values go down. Likewise, you can use an ascending melody when turning on a function and a descending one when turning it off. Create standards that remain consistent throughout your app.
 
  
 
@@ -144,15 +144,15 @@ The table below shows some examples of the Gear's auditory responses for each ty
 
 -   **Format**
 
-    Using the open source .ogg format is recommended, and the file compression ratio should be at least 128 kbps (mono/stereo).
+    We recommend using the open source .ogg format. The file compression ratio should be at least 128 kbps (mono/stereo).
 
 -   **Duration**
 
-    Make your sound file at least 100 msec. If the sound lasts for less than 100 msec, the system might not be able to play it.
+    Create a sound file of at least 100 msec. If the sound lasts for less than 100 msec, the system might not be able to play it.
 
--   **Volume**
+-   **Pitch and Volume**
 
-    Design your sounds considering the range of volume levels. Did you make sure that your sound is not too low or high to avoid straying from the peak range? Is the volume of your sound appropriate at the Gear’s default volume level? Does your sound play at all volume levels from 1 to 15?
+    Design your sounds considering the range of volume levels. Did you make sure that your sound is not too low or high to avoid straying from the peak range? Is the volume of your sound appropriate at the Gear's default volume level? Does your sound play at all volume levels from 1 to 15?
 
     Refer to the table below for the default volume of each stream type.  
 

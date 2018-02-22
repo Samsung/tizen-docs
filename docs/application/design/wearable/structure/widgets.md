@@ -1,7 +1,7 @@
 # Widgets
 
 
-Widgets provide easy access to frequently used tasks or content. They’re useful when users are engaged in other activities or unable to precisely control their Gear. Users can access any app’s key features without launching the app.
+Widgets provide easy access to frequently used tasks or content. They're useful when users are engaged in other activities or unable to precisely control their Gear. Users can access any app's key features without launching the app.
 
 Make sure you understand how different types of widgets work, and the widget designs that are best suited to your app. You can also design widgets in web-native languages. Refer to [Native widgets](http://developer.samsung.com/gear/develop/creating-your-first-app/native-widget) for more details on native apps and [Web widgets](http://developer.samsung.com/gear/develop/creating-your-first-app/web-widget) for web apps.
 
@@ -23,7 +23,7 @@ Make sure you understand how different types of widgets work, and the widget des
 >**Tip**
 >-   Users can add up to 15 favorite widgets on the Widget Board, located to the right of the watch face.
 >-   Users can manage widgets by touching and holding on any widget screen. They can rearrange the order by dragging widgets to the desired position, and add or remove them by tapping the corresponding buttons.  
->    ![](media/structure_5.2.1-600x123.png)  
+>    ![](media/5.2.1-800x16.png)  
 >    *Users can manage widgets by touching and holding any widget screen.*
 >
 >-   If an app is uninstalled, all related widgets will also be removed.
@@ -50,7 +50,7 @@ Choose the right widget type for the content you want to offer.
 
     Informative widgets provide information in a scannable way. Widgets should display the key information on a single screen without scrolling, and give users a direct route to more detailed information within the related app. Providing an appropriate image can enhance readability.
 
-    <img src="media/structure_5.2.2_2.png" width="601" height="123" />  
+    <img src="media/5.2.2_2-800x165.png" width="601" height="123" />  
 
     *Weather widgets can show the weather for a chosen city and provide a direct route to more detailed info within the app.*
 
@@ -58,21 +58,21 @@ Choose the right widget type for the content you want to offer.
 
     Interactive widgets perform simple tasks that can be completed with one tap. Ensure that your components are designed intuitively so that users notice they are tappable. Widgets should immediately reflect any user input in real-time and make it clear that user input has been recognized.
 
-    <img src="media/structure_5.2.2_3.png" width="601" height="123" />  
+    <img src="media/5.2.2_3-800x165.png" width="601" height="123" />  
 
-    *S Health widgets let users input the number of cups of water/coffee consumed and see the changes immediately.*
+    *Samsung Health widgets let users input the number of cups of water/coffee consumed and see the changes immediately.*
 
 -   **Shortcut widgets**
 
     Shortcut widgets provide quick access to frequently used menus or tasks. Shortcuts should use appropriate icons and text to communicate where they lead. When providing multiple shortcuts on one screen, ensure each one is still visible and has a sufficient touchable area.
 
-    <img src="media/structure_5.2.2_4.png" width="601" height="123" />  
+    <img src="media/5_2_2_4-800x165.png" width="601" height="123" />  
 
     *Widgets for a contact app can provide shortcuts to call or send a message to favorite contacts.*
 
 ## Types of actions
 
-Two actions are available for widgets. Links connect users to an app's menu, and direct actions perform a task on the widget.
+A single tap, the only guesture allowed for widgets, is used for two types of actions: links and direct actions. Links connect users to an app's menu, and direct actions perform a task on the widget.
 
 -   **Link action**
 
@@ -82,7 +82,7 @@ Two actions are available for widgets. Links connect users to an app's menu, and
 
     Direct actions perform simple tasks without opening the app. You can use direct actions for tasks like measuring data or toggling an alarm.
 
-    <img src="media/structure_5.2.3.png" width="601" height="123" />  
+    <img src="media/5.2.3-800x165.png" width="601" height="123" />  
 
     *Tapping an icon on an alarm widget toggles the alarm on/off without opening the app.*
 
@@ -92,9 +92,9 @@ Here are some common use cases that will help you design your widgets.
 
 -   **Filling empty widgets**
 
-    Some widgets need to be filled with content by users. If you’re creating one of these, include an “Add” button, instead of leaving the screen completely empty.
+    Some widgets need to be filled with content by users. If you're creating one of these, include an "Add" button, instead of leaving the screen completely empty.
 
-    <img src="media/structure_5.2.4_1.png" width="601" height="123" />  
+    <img src="media/5.2.4_1-800x165.png" width="601" height="123" />  
 
     *An add button helps users initiate the add flow.*
 
@@ -102,7 +102,7 @@ Here are some common use cases that will help you design your widgets.
 
     Each widget should present just one piece of information on each screen, but this can be broken up across a number of views that you can browse through. In cases like this, dim and turn off the browsing button when there are no more views in a particular direction.
 
-    <img alt="#" src="media/structure_5.2.4_2.png" width="601" height="125" />  
+    <img alt="#" src="media/5.2.4_2-800x164.png" width="601" height="125" />  
 
     *User can browse many views of a widget with the buttons*
 
@@ -112,13 +112,13 @@ Here are some common use cases that will help you design your widgets.
 
 ## Designing widgets
 
-Keep the visual principles for colors, layout, and typography in mind when you’re designing your widgets.
+Keep the visual principles for colors, layout, and typography in mind when you're designing your widgets.
 
 -   **Make your widgets readable with a dark background**
 
     A dark background works best for widgets. It increases screen readability when outdoors and smoothly integrates the widget with the black bezel. Using a transparent background is recommended, but if you are using a colorful image, add a tinted black layer on top (at least 60% opacity) to ensure the text is legible.
 
-    <img src="media/structure_5.2.5_1.png" width="601" height="123" />  
+    <img src="media/5.2.5_1-800x165.png" width="601" height="123" />  
 
     *Dark-colored backgrounds enhance screen readability.*
 

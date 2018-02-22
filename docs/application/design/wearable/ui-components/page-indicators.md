@@ -4,26 +4,26 @@ Page indicators show the number of pages in a series and indicate which page is 
 
 ## Usage
 
-Page indicators are presented at the top of the screen as dots that represent each page. There are 2 types of page indicator available, depending on whether the pages can be navigated with a rotary action or not.
+Page indicators are dots at the top of the screen. There are 2 types of page indicator to choose from, depending on whether the pages can be navigated with a rotary action or not.
 
 ## Behavior
 
 -   **Focus**
 
-    Page indicators are presented as dots. Each dot represents one page in a series. When users rotate the bezel or swipe the screen, the focus shifts to the next or previous dot.
+    Page indicators are shown as dots. Each dot represents one page in a series. When users rotate the bezel or swipe the screen, the focus shifts to the next or previous dot.
 
 -   **Linking multiple pages to the middle dot**
 
-    Page indicators can use up to 20 dots. If you have more than 20 pages in a series, multiple pages will be represented by the 11th dot in the middle, which will stay in focus until all linked pages are scrolled through.
+    Page indicators can use up to 20 dots, representing 20 pages. If you have more than 20 pages in a series, multiple pages will be represented by the 11th dot in the middle, which will stay in focus until all linked pages are scrolled through.
 
 ## Types
 
 -   **Circular page indicators**
 
-    These indicators curve around the top edge of the screen when the pages are navigated by a rotary action and a swipe. They can form an arc of up to 120 degrees and are center-aligned.
+    Circular page indicators curve around the top edge of the screen when the pages can be navigated by rotary action and swiping. They form an center-aligned arc of up to 120 degrees.
 
-| Circular page indicators | |
-|-----|-----|
+| **Circular page indicators** in developer's guides | |
+| --- | --- |
 | **Native** | Index > circle |
 | **Web** |  - |
 
@@ -33,10 +33,10 @@ Page indicators are presented at the top of the screen as dots that represent ea
 
 -   **Linear page indicators**
 
-    These indicators form a horizontal line at the top edge of the screen when navigation is through swiping only. This type of indicator is recommended when the rotary action controls other functions and can’t be used for page navigation.
+    Linear page indicators form a horizontal line at the top edge of the screen. Use them when navigation is through swiping only. Choose the linear page indicator when the rotary action controls other functions and can't be used for page navigation.
 
-| Linear page indicators | |
-|-----|-----|
+| **Linear page indicators** in developer's guides | |
+| --- | --- |
 | **Native** |  Index > thumbnail |
 |  **Web** |  Page Indicator<br>(+Section Changer) |
 

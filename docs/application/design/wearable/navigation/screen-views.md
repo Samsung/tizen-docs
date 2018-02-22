@@ -1,6 +1,6 @@
 # Screen Views
 
-You can accommodate more information on the Gear’s small display by choosing a view that shows the content most effectively. You can choose from 5 view types:
+You can accommodate more information on the Gear's small display by choosing a view that shows the content most effectively. You can choose from 5 view types:
 
 -   vertical
 -   horizontal
@@ -66,10 +66,10 @@ Anchored views display content on screen layers, which users can navigate by rot
 
 -   **Dials**
 
-    Dial screens are well suited for displaying information that can’t be arranged evenly. When users rotate the bezel, the indicator moves around the screen bringing items and information into focus. The index indicator selects and displays specific information in a simple and easy way.
+    Dial screens are well suited for displaying information that can't be arranged evenly. When users rotate the bezel, the indicator moves around the screen bringing items and information into focus. The index indicator selects and displays specific information in a simple and easy way.
 
-    ![](media/navigation_6.2.3_2-850x206.png)  
-    *The S Health app displays the time of the user’s activities along with detailed records.  
+    ![](media/6.2.3_2-800x194.png)  
+    *The Samsung Health app displays the time of the user's activities along with detailed records.  
     Since the activities are recorded at irregular time intervals when the user actually moves, using a dial is effective for displaying random periods of time.*
 
 ## Freeform view
@@ -83,7 +83,7 @@ Freeform displays content that can be panned or zoomed, like a large map. These 
 <a name="temp_view"></a>
 ## Temporary view
 
-Temporary view windows interrupt the user’s workflow by appearing over the current screen, forcing users to close them before they can continue what they were doing. Use temporary views to ask the user to make a decision, get their confirmation, and provide more functionality.
+Temporary view windows interrupt the user's workflow by appearing over the current screen, forcing users to close them before they can continue what they were doing. Use temporary views to ask the user to make a decision, get their confirmation, and provide more functionality.
 
 -   **Pop-up**
 
@@ -103,11 +103,11 @@ Temporary view windows interrupt the user’s workflow by appearing over the cur
 
     More options provides access to functions that are related to an item in a list.
 
-    ![](media/navigation_6.2.5_3-850x174.png)  
+    ![](media/6.2.5_3-800x165.png)  
     *More options are accessed through the dots on the right side of the screen.*
 
 -   **Pickers**
 
     Pickers allow users to set a value like a number, a date, or time.
 
-    ![](media/navigation_6.2.5_4-850x174.png)  
+    ![](media/6.2.5_4-800x165.png)  

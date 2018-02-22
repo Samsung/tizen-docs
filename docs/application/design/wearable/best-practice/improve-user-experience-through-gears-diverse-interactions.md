@@ -2,7 +2,7 @@
 
 
 
-The range of diverse interactions on the Gear gives you the opportunity to create a smoother user experience by providing feedback on user input and designing predictable interactions.
+The range of diverse interactions on the Gear gives you the opportunity to create a smooth user experience by providing feedback on user input and designing predictable interactions.
 
 ## Examples
 
@@ -15,7 +15,7 @@ The range of diverse interactions on the Gear gives you the opportunity to creat
 
 -   **Yelp**
 
-    Yelp helps people find the best local businesses . It suggests nearby stores or restaurants based on the user’s current location. Users can interact with the app in diverse ways through the rotary action, touch, and swiping. Voice input can also be made when they double tap the screen.
+    Yelp helps people find the best local businesses . It suggests nearby stores or restaurants based on the user's current location. Users can interact with the app in diverse ways through the rotary action, touch, and swiping. Voice input can also be made when they double tap the screen.
 
     ![](media/bestpractice_yelp_1-150x150.png) ![](media/bestpractice_yelp_2-150x150.png) ![](media/bestpractice_yelp_3-150x150.png) ![](media/bestpractice_yelp_4-150x150.png)  
     *Users search for restaurants using their voice, and explore menus with the bezel.*

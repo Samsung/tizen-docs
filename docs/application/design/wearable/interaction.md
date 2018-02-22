@@ -14,7 +14,7 @@ The Gear receives user input through touch, rotary actions, gestures, and voice,
 
 -   **Be consistent with basic interactions**
 
-    Your app’s interactions should be consistent with the system interactions. Don’t confuse users by inventing entirely new patterns.
+    Your app's interactions should be consistent with the system interactions. Don't confuse users by inventing entirely new patterns.
 
 
 ![](media/interaction_7.0.3-850x322.png)  

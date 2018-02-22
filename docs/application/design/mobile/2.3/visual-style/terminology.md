@@ -7,17 +7,17 @@ To make the text legible and easy to understand, you must select the shape, size
 > **NOTE**  
 > By default, Tizen displays text from left to right. However, certain languages, such as Arabic, are displayed from right to left.
 
-Using action-related labels consistently in your application keeps the user experience consistent. Use the following terms:
+Using action-related labels consistently in your application keeps the user experience consistent. Use the following terms:
 
 -   **Create**: Use for creating a new item, for example, "Create memo" or "Create alarm".
 -   **Done**: Use for exiting the application.
--   **Send:** Use when sending a message.
+-   **Send:** Use when sending a message.
 
 Use a positive tone of voice for any messaging or labels in your application. Avoid using emphatic words or words with negative connotations.
 
-The language tone should provide users with the impression that they use a capable and powerful phone that is reliable and good to own. Using negative words affects the user’s perception of the phone.
+The language tone should provide users with the impression that they use a capable and powerful phone that is reliable and good to own. Using negative words affects the user's perception of the phone.
 
- 
+ 
 
 **Table: Phrasing for general actions**
 
@@ -32,7 +32,7 @@ The language tone should provide users with the impression that they use a capab
 
 Never use phrasing that blames users or makes them feel at fault. Instead, your language and tone should support the users´ view of the device as an extension of themselves. Do not use language that identifies the user as being separate from the phone. If there is a problem in performing a task, use messaging that downplays the user's role in the situation.
 
- 
+ 
 
 **Table: Phrasing for task-related user actions**
 
