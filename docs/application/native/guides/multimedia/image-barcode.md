@@ -200,7 +200,8 @@ To detect barcodes:
    static void
    _camera_media_packet_preview_cb(media_packet_h pkt, void *user_data)
    {
-       mv_rectangle_s mv_roi = {{0,0}, bardetdata.width, bardetdata.height};
+       mv_point_s mv_point = {0, 0};
+       mv_rectangle_s mv_roi = {mv_point, bardetdata.width, bardetdata.height};
 
        if (pkt == NULL)
            return;
