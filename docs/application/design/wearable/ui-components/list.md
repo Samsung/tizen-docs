@@ -1,25 +1,22 @@
-﻿# List
- 
-
- 
+# List
 
 A list arranges multiple items in a single column.
 
-|List|  |
+|**List** in developer's guides|  |
 |--------|---------|  
 |**Native**|enlist|
 |**Web**|List / Virtual List<br>(+ Snap List view, Marquee)|
 
 ## Usage
 
-A list shows multiple items that belong to the same category. Users can select an item from a list to view more details or perform tasks.
+A list shows multiple items belonging to a single category. Users can select an item from a list to view more details or perform tasks.
 
 ## Elements
 
 -   **List items**
     -   **Text only**
 
-        Text that’s longer than one screen slides in and fades out at the right-hand edge. Subtext strings can be added, which need to be center-aligned and limited to 2 lines.
+        Text that's longer than one screen slides in and fades out at the right-hand edge. Subtext strings can be added; they need to be center-aligned and limited to 2 lines.
 
     -   **Icon with text**
 
@@ -37,12 +34,12 @@ A list shows multiple items that belong to the same category. Users can select a
 
 Indexes help users quickly find the item they want by dividing a long list into groups. Groups can be browsed more easily and can be indexed in alphabetical order, by category, date, or time.
 
-|Group index|              |  
+|**Group index** in developer's guides|              |  
 |---------------|--------------|
 |**Native**|Genlist > <br>Groupindex|
 |**Web**|-|
 
-A group index should fit on a single line and come before the first item of each group. As they’re just used as a visual divider, they can’t be selected. [Fast scroll indexes](scroll-bars.md#fast_scroll_index) can also be used to facilitate quick browsing.
+A group index should fit on a single line and come before the first item of each group. Because they function as a visual divider, they can't be selected. [Fast scroll indexes](scroll-bars.md#fast_scroll_index) can also be used to facilitate quick browsing.
 
 ![](media/ui_components_10.2.2-850x174.png)  
 *Group indexes divide list items into groups.*
@@ -51,7 +48,7 @@ A group index should fit on a single line and come before the first item of each
 
 -   **Focus**
 
-    An item comes into focus when it’s brought to the center of the screen. Other items above and below are demagnified.
+    An item comes into focus when it's brought to the center of the screen. Other items above and below the focus are demagnified.
 
 -   **Rotary action**
 
@@ -70,7 +67,7 @@ You can design list pages using one of the following formats. The default height
 
 
 | ![](media/ui_components_10.2.4_1-850x174_1.png) | ![](media/ui_components_10.2.4_1-850x174_2.png) | ![](media/ui_components_10.2.4_1-850x174_3.png) |
-|-----|-----|-----|
+| -- | -- | -- |
 | Basic list view |  List view with subtext | List view with multiple subtexts |
 
 

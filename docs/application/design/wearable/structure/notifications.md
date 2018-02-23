@@ -8,15 +8,15 @@ Notifications deliver meaningful information from an app and connect users to th
 
 -   **Connect users to the next step smoothly**
 
-    Remember that users should be able to easily continue with any task suggested by a notification. For example, provide a link to the relevant app’s menu or allow user input on the notification itself.
+    Remember that users should be able to easily continue with any task suggested by a notification. For example, provide a link to the relevant app's menu or allow user input on the notification itself.
 
 ## Notification pop-up alerts
 
 
 There are 2 types of alerts:
 
--   Full pop-ups are displayed when a notification arrives when the Gear is turned off. They lead to a corresponding notification card depending on a user’s settings(Auto show details should be turned On in the Gear Manager (mobile) -> Notifications -> Auto show details.). Users can view details or perform a task on the notification card.
--   Small pop-ups appear at the top of the screen when the Gear is turned on. These smaller pop-ups minimize interruptions to the user’s workflow and take them to a corresponding notification card when tapped.
+-   Full pop-ups are displayed when a notification arrives when the Gear is turned off. They lead to a corresponding notification card depending on a user's settings(Auto show details should be turned On in the Gear Manager (mobile) -> Notifications -> Auto show details.). Users can view details or perform a task on the notification card.
+-   Small pop-ups appear at the top of the screen when the Gear is turned on. These smaller pop-ups minimize interruptions to the user's workflow and take them to a corresponding notification card when tapped.
 
 | ![](media/structure_5.3.1-850x174_1.png) | ![](media/structure_5.3.1-850x174_2.png)  |
 |:--:|:--:|
@@ -38,7 +38,7 @@ Notifications received on the Gear appear on the notification board, located to 
 
 -   **Notification panels**
 
-    Notification panels display the title, part of the content, and the total number of notifications received from an app. The panels should provide appropriate information to help users decide whether to view notifications in full or do other things. Customize icons and other design elements of your app’s notification panels. Group notifications from the same app into a single panel, as the total number of notifications will be shown at the bottom of the screen.
+    Notification panels display the title, part of the content, and the total number of notifications received from an app. The panels should provide appropriate information to help users decide whether to view notifications in full or do other things. Customize icons and other design elements of your app's notification panels. Group notifications from the same app into a single panel, as the total number of notifications will be shown at the bottom of the screen.
 
 -   **Notification cards**
 
@@ -59,12 +59,12 @@ All elements of notifications can be customized to deliver information in the mo
        <th> Notificaiton card </th>
      </tr>
      <tr>
-       <td> Full pop-up alert<br><img src="media/structure_5.3.3_1_1_full_pop-up-150x96.png" width="150" height="96" /> </td>
-       <td rowspan="2"> <img alt="" height="94" src="media/structure_5.3.3_1_2notification_panel-150x94.png" width="150" /> </td>
-       <td rowspan="2"> <img alt="" src="media/structure_5.3.3_1_3card-300x158.png" width="300" height="158" /> </td>
+       <td> Full pop-up alert<br><img src="media/5.3.3_1_1_full_pop-up-200x128.png" width="150" height="96" /> </td>
+       <td rowspan="2"> <img alt="" height="94" src="media/5.3.3_1_2notification_panel-200x125.png" width="150" /> </td>
+       <td rowspan="2"> <img alt="" src="media/5.3.3_1_3card-400x221.png" width="300" height="158" /> </td>
      </tr>
      <tr>
-       <td> Small<br><img height="96" src="media/structure_5.3.3_1_1_small_pop-up-150x96.png" width="150" /></td>
+       <td> Small<br><img height="96" src="media/5.3.3_1_1_small_pop-up-200x128.png" width="150" /></td>
      </tr>
     </table>
 
@@ -91,5 +91,5 @@ All elements of notifications can be customized to deliver information in the mo
 
     Action buttons give access to related functions or tasks, like sending a message or opening an app. Provide action buttons below the body text of a notification or in a More options menu.
 
-    ![](media/structure_5.3.3_3.png)  
+    ![](media/5.3.3_3-800x165.png)  
     *Actions can be surfaced in More options menus.*

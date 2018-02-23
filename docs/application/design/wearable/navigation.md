@@ -2,17 +2,17 @@
 
 ![](media/navigation_6.0.0-850x330.png)
 
-You should design navigation flows and views that best present your app’s content and services.
+You should design navigation flows and views that best present your app's content and services.
 
 -   **Highlight key content**
 
-    The primary features of your app should be seen in one simple view. Organize your content so users can immediately access your app’s key features without going deeper into the navigational structure.
+    The primary features of your app should be seen in one simple view. Organize your content so users can immediately access your app's key features without going deeper into the navigational structure.
 
     ![](media/navigation_6.0.1_1-850x174.png)  
       *Important content and tasks should be placed in one view based on the amount and priority of information.*
 
     ![](media/navigation_6.0.1_2-850x224.png)  
-    *For content that doesn’t fit into one screen, less important content is moved to the detailed view.*
+    *For content that doesn't fit into one screen, less important content is moved to the detailed view.*
 
 -   **Keep your navigation flow consistent**
 

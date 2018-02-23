@@ -1,6 +1,6 @@
 # Touch
 
-Touch is the Gear’s base interaction platform, with taps and swipes widely used to navigate the interface. Ensure components have enough touchable area, and that the space between components is large enough so that touchable areas don’t overlap.
+Touch is the Gear's base interaction platform, with taps and swipes widely used to navigate the interface. Ensure components have enough touchable area, and that the space between components is large enough so that touchable areas don't overlap.
 
 
 
@@ -31,7 +31,7 @@ Touch is the Gear’s base interaction platform, with taps and swipes widely use
      <tr>
        <td> Bezel swipe down </td>
        <td> <img height="120" src="media/interaction_7.1.0_4-150x120.png" width="150" /> </td>
-       <td> Go back </td>
+       <td> Open Quick panel </td>
      </tr>
      <tr>
        <td> Touch and hold </td>
@@ -43,7 +43,7 @@ Touch is the Gear’s base interaction platform, with taps and swipes widely use
 
 ## Tap
 
-A tap is a light touch on the screen with a finger. Users tap to move between pages or to interact with a component on the screen. You can also customize the tap gesture in your app to assign it to other functions.
+A tap is a light touch on the screen with a finger. Users tap to move between pages or to interact with a component on the screen. You can customize the tap gesture in your app and assign it to other functions. Use tap to:
 
 -   **Move from one screen to another**
 
@@ -59,28 +59,28 @@ A tap is a light touch on the screen with a finger. Users tap to move between pa
 
 ## Double tap
 
-A double tap is 2 continuous taps on the same target with the same finger. Users double tap to zoom in on the screen. You can also customize the double tap gesture to assign it to other functions.
+A double tap is 2 light taps on the screen in rapid succession. Users double tap to zoom in on the screen. You can also customize the double tap gesture and assign it to other functions.
 
 -   **Zoom**
 
-    Double tap to increase the size of the font or an image temporarily.
+    Double tap to temporarily increase the size of the font or of an image.
 
-    ![](media/interaction_7.1.2-850x174.png)
+    ![](media/7.1.2-800x165.png)
 
 <a name="swipe"></a>    
 ## Swipe and drag
 
-A swipe is the gesture where the user moves a finger across the touch screen. It shifts or scrolls the screen according to the gesture’s velocity. Users can swipe anywhere across the whole screen, with no on-screen target.
+A swipe is the gesture where the user moves a finger across the touch screen. It shifts or scrolls the screen according to the gesture's velocity. Users can swipe anywhere across the whole screen, with no on-screen target.
 
-A drag is a gesture where the finger moves at a constant speed. It moves an on-screen target as much as the user’s finger indicates. A drag is sustained as long as the user maintains contact with the screen and ends when the finger is lifted.
+A drag is a gesture where the finger moves at a constant speed. It moves an on-screen target as much as the user's finger indicates. A drag is sustained as long as the user maintains contact with the screen and ends when the finger is lifted.
 
-A swipe is a less precise movement than a drag. You can also customize the swipe gesture to assign it to other functions.
+A swipe is a less precise movement than a drag. You can customize the swipe gesture and assign it to various functions.
 
 -   **Move from one screen to another**
 
     Swipe to transition between pages or cards. Screens move in the same direction that the user swipes.
 
-    ![](media/interaction_7.1.3-850x375.png)      
+    ![](media/7.1.3_4-800x353.png)      
     *A swipe to the left takes users to the screen on the right, and a swipe to the right takes users to the screen on the left.*
 
 -   **Scroll**
@@ -89,7 +89,7 @@ A swipe is a less precise movement than a drag. You can also customize the swipe
 
 -   **Refresh**
 
-    Swipe down from the top of the screen to refresh content. This interaction is useful if your app deals with content in real-time. A loading indicator at the top of the screen should be shown when a screen is refreshing. Refer to [Update content](../patterns/swipe-refresh.md#update) for more details.
+    Swipe down from the top of the screen to refresh content. This interaction is useful if your app deals with content in real-time. Show a loading indicator at the top of the screen when a screen is refreshing. Refer to Update content for more details.
 
 
 > **Tip**  
@@ -98,10 +98,10 @@ A swipe is a less precise movement than a drag. You can also customize the swipe
 
 ## Bezel swipe down
 
-A swipe down from the bezel’s top edge returns the user to the previous screen. This gesture is not customizable, and bear in mind that any other swipe down navigation you add to your app may conflict with this, causing users to go back to the previous screen by mistake.
+Swiping down from the bezel's top edge returns the user to the quick panel. This gesture is not customizable. As a result, any other swipe down navigation you add to your app may conflict with this gesture, causing users to open the quick panel by mistake.
 
 
-![](media/interaction_7.1.4-850x185.png)
+![](media/7.1.4-800x175.png)
 
 <a name="longpress"></a>
 ## Touch and hold (Long press)

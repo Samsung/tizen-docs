@@ -2,7 +2,7 @@
 
 You can use the notification API to notify users of the new events in your app, such as new messages or updates.
 
-Notifications draw users’ attention and provide information about new events or relevant actions. To take instant actions, users can directly access your app from the notification. They can also stay on the current task flow and take actions later from the notification panel, where the logs for unchecked messages are kept.
+Notifications draw users' attention and provide information about new events or relevant actions. To take instant actions, users can directly access your app from the notification. They can also stay on the current task flow and take actions later from the notification panel, where the logs for unchecked messages are kept.
 
 The Tizen notification UI supports multimodal feedbacks, which are combinations of visual, auditory, and tactile events.
 
@@ -125,7 +125,7 @@ We recommend that you design your app to display an active notification instead 
 
 
 
-\* Although Tizen’s notification API is well suited for designing notifications for time-sensitive events, it has only a limited set of features available. We recommend that you design your own notifications to include unique features and visual effects for notification views. When you design your own notification views, follow the basic design rules to avoid confusion and maintain consistency.
+\* Although Tizen's notification API is well suited for designing notifications for time-sensitive events, it has only a limited set of features available. We recommend that you design your own notifications to include unique features and visual effects for notification views. When you design your own notification views, follow the basic design rules to avoid confusion and maintain consistency.
 
  
 <a name="badges"></a>

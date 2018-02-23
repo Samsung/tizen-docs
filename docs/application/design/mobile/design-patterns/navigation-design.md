@@ -4,7 +4,7 @@
 
 When you design a Tizen app, ensure that the changes in the depth in an app are reflected on the screen. The navigation design should consistently provide information about the depth of the view users are currently accessing.
 
-Navigation design is one biggest factor that decides an app’s usability level. Therefore, plan the navigation structure and consider all related issues as early as possible in your development process.
+Navigation design is one biggest factor that decides an app's usability level. Therefore, plan the navigation structure and consider all related issues as early as possible in your development process.
 
  
 <a name="back-and-cancel"></a>
@@ -16,7 +16,7 @@ Users navigate from one screen to another by tapping interactive UI elements (fo
 
 #### Back Key
 
-For a device to be compliant with Tizen’s Compliance Specification, it MUST provide a Back key (or a Back button) through dedicated physical (hardware) or software implementation. In general, the Back key is provided at the bottom of the device and is used to return to the previous screen or to cancel a task that is in progress.
+For a device to be compliant with Tizen's Compliance Specification, it MUST provide a Back key (or a Back button) through dedicated physical (hardware) or software implementation. In general, the Back key is provided at the bottom of the device and is used to return to the previous screen or to cancel a task that is in progress.
 
 <img src="media/4.7.1_a_.png" margin-right="3px" width="260px" alt="Navigation using the Back key" /> <img src="media/4.7.1_b_.png" margin-right="3px" width="260px" alt="Navigation using the Back key" /> <img src="media/4.7.1_c_.png" width="260px" alt="Navigation using the Back key" />
 
@@ -62,7 +62,7 @@ Also, users can touch and hold the Home key to access the Recent screen and tap 
 Users navigate in an app by selecting information or performing actions. Users can open a new screen to obtain the information they need or carry out a task by tapping an interactive UI component.
 
 
-> Tabs do not actually change screens, but they change views in the same screen. If users press the 'Back' key after tapping a tab, it will not bring them to the previous tab, but it will close the current screen and bring them to the previous step’s screen. Not every change in views is kept in the historical stack. It does not remember the view changes, but it only remembers the actual change of the screen.
+> Tabs do not actually change screens, but they change views in the same screen. If users press the 'Back' key after tapping a tab, it will not bring them to the previous tab, but it will close the current screen and bring them to the previous step's screen. Not every change in views is kept in the historical stack. It does not remember the view changes, but it only remembers the actual change of the screen.
 
 
 
@@ -176,7 +176,7 @@ You can provide a 'Delete' action button on the list view or grid view screen la
 
 In the list view, users can select and delete multiple items using the multiselect mode.
 
-Once the user has deleted the data, provide a visual cue to let users know that the action was successfully completed. You can also display the current status via text, such as “No images,” if necessary. Do not provide a confirmation pop-up to ask for the final confirmation, since users’ intentions have already been fully reflected during the item selection. If it takes a long time to complete the delete action, provide an activity indicator to show the progress (refer to [Progress Components](../ui-components/presentation-views.md#progress_) for details).
+Once the user has deleted the data, provide a visual cue to let users know that the action was successfully completed. You can also display the current status via text, such as "No images," if necessary. Do not provide a confirmation pop-up to ask for the final confirmation, since users' intentions have already been fully reflected during the item selection. If it takes a long time to complete the delete action, provide an activity indicator to show the progress (refer to [Progress Components](../ui-components/presentation-views.md#progress_) for details).
 
 <img src="media/4.7.5_l_.png" margin-right="2px" width="155px" alt="Deleting items in a list view" /> <img src="media/4.7.5_j_.png" margin-right="2px" width="155px" alt="Deleting items in a list view" /> <img src="media/4.7.5_k.png" margin-right="2px" width="155px" alt="Deleting items in a list view" /> <img src="media/4.7.5_m.png" margin-right="2px" width="155px" alt="Deleting items in a list view" /> <img src="media/4.7.5_n.png" margin-right="2px" width="155px" alt="Deleting items in a list view" />  
 
@@ -202,7 +202,7 @@ Your app can provide many actions and some of them may be irreversible. If actio
 <a name="cancelAndDone"></a>
 -   Cancel and Done
 
-In Create or Edit mode, the title bar (refer to [Title Bar](../ui-components/navigation-elements.md#title_) for details) provides 'Cancel' and 'Done' buttons (depending on the situation, a 'Send' or 'Delete' button can be provided instead of a 'Done' button). Users can tap the 'Done' button to finish their task. If users tap the 'Cancel' button, provide a pop-up confirmation window to verify that they want to discard their work. If there is no change in the content, you don’t need to confirm anything.
+In Create or Edit mode, the title bar (refer to [Title Bar](../ui-components/navigation-elements.md#title_) for details) provides 'Cancel' and 'Done' buttons (depending on the situation, a 'Send' or 'Delete' button can be provided instead of a 'Done' button). Users can tap the 'Done' button to finish their task. If users tap the 'Cancel' button, provide a pop-up confirmation window to verify that they want to discard their work. If there is no change in the content, you don't need to confirm anything.
 
  
 <img src="media/4.7.5_r_.png" height="460px" alt="Explicit save" /> <img src="media/4.7.5_s_.png" margin-left="10px" height="460px" alt="Explicit save" />
@@ -211,7 +211,7 @@ In Create or Edit mode, the title bar (refer to [Title Bar](../ui-components/nav
 
 
 
-In the simple Edit mode, like when changing a value in the Settings menu, you don’t have to provide a pop-up message asking users about discarding their work. In these cases, it is recommended that your app save the most recent state when users return to the previous screen. For that reason, there is no 'Cancel' or 'Done' button.
+In the simple Edit mode, like when changing a value in the Settings menu, you don't have to provide a pop-up message asking users about discarding their work. In these cases, it is recommended that your app save the most recent state when users return to the previous screen. For that reason, there is no 'Cancel' or 'Done' button.
 
 <img src="media/6.7.5_v7-01.png" width="260px" alt="Implicit save" /> <img src="media/6.7.5_v7-02.png" margin-left="3px" width="260px" alt="Implicit save" /> <img src="media/6.7.5_v7-03.png" margin-left="3px" width="260px" alt="Implicit save" />  
 

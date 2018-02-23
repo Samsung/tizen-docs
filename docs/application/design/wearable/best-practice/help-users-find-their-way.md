@@ -1,6 +1,6 @@
 # Help users find their way
 
-The Gear's small display can (and should) only display a limited amount of content at once. It should also use a clear information hierarchy so users can understand which information is critical and which is supplementary.
+The Gear's small display can and should display a limited amount of content. It should use a clear information hierarchy so users can understand which information is critical and which is supplementary.
 
 ## Examples
 
@@ -13,7 +13,7 @@ The Gear's small display can (and should) only display a limited amount of conte
 
 -   **Spotify**
 
-    Spotify lists music in a simple structure, allowing users to navigate playlists intuitively. The bottom button on each screen takes the user immediately to the song that’s currently playing.
+    Spotify lists music in a simple structure, allowing users to navigate playlists intuitively. The bottom button on each screen takes the user immediately to the song that's currently playing.
 
     ![](media/bestpractice_spotify_1-150x150.png) ![](media/bestpractice_spotify_2-150x150.png) ![](media/bestpractice_spotify_3-150x150.png) ![](media/bestpractice_spotify_4-150x150.png)  
     *The fixed button at the bottom takes users to the currently playing song.*

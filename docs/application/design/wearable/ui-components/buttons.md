@@ -1,16 +1,16 @@
 # Buttons
 
-Tapping a button performs an action. They can appear on almost any screen, should be easy to tap, and designed according to the purpose of an action.
+Tapping a button performs an action. Buttons can appear on almost any screen, should be easy to tap, and are designed according to the purpose of an action.
 
 ## Usage
 
 -   **Use a bottom button when providing one important action on a screen**
 
-    Using a bottom button is recommended when you only provide one major function on a screen. If you don’t have enough space for a bottom button, use a text button instead.
+    We recommend using a bottom button when you only provide one major function on a screen. If you don't have enough space for a bottom button, use a text button instead.
 
 -   **Use more options when providing multiple actions**
 
-    If you need multiple buttons on one screen, move less important actions to [More options](../patterns/more-options.md).
+    If you need multiple buttons on one screen, move any less important actions to [More options](../patterns/more-options.md).
 
 ## Behavior
 
@@ -18,18 +18,18 @@ Tapping a button performs an action. They can appear on almost any screen, shoul
 
     A button should look tappable so users know intuitively to tap it.
 
--   **Buttons should be disabled if they can’t be tapped**
+-   **Buttons should be disabled if they can't be tapped**
 
-    Disable a button if it’s not in a condition to perform an assigned action. For example, if no item was selected from a list, any Share or Delete buttons should be dimmed to indicate that they’re not active.
+    Disable a button if it's not in a condition to perform an assigned action. For example, if no item was selected from a list, any Share or Delete buttons should be dimmed to indicate that they're not active.
 
 ## Types
 
 <a name="bottom_button"></a>
 **Bottom buttons**
 
-  A bottom button provides one main action. It remains fixed and non-scrollable at the bottom of the screen. Text should be fully capitalized. Only use an icon when you can’t fit a long text in the button field.
+  A bottom button provides one main action. It remains fixed and non-scrollable at the bottom of the screen. Text should be in all capital letters. Only use an icon when you can't fit long text in the button field.
 
-|**Bottom button**|          |
+|**Bottom button** in developer's guides|          |
 |----------------|----------------|
 |  **Native**|    Button|
 |    **Web**|  Bottom Button|
@@ -39,18 +39,18 @@ Tapping a button performs an action. They can appear on almost any screen, shoul
 
 -   **Text buttons**
 
-    Text buttons are used to show major functions when a bottom button isn’t available because of insufficient space or a potential decline in graphic quality. They’re also useful when you have more than one major function to provide on the same screen (although more than 2 isn’t recommended).
+    Text buttons are used to show major functions when a bottom button isn't available due to insufficient space or a decline in graphic quality. They're also useful when you have more than one major function on the same screen. (We recommend against providing more than 2 functions per screen.)
 
     Text buttons can appear anywhere in the body of a page. If the button triggers a screen transition when tapped, include a visual cue (>) next to the text unless the text is too long.
 
     ![](media/ui_components_10.5.3_2-850x174.png)  
-    *A text button is presented with a visual cue (>) next to the text if the button causes a screen transition.*
+    *Present a text button with a visual cue (>) next to the text if the button causes a screen transition.*
 
 -   **Select mode buttons**
 
-    These buttons appear when users select items from a list and you want to define the maximum number of selections. These buttons should be disabled if there’s a limit in the number of items users can select, or no item was selected.
+    These buttons appear when users select items from a list. Disable these buttons if there's a limit in the number of items users can select, or no item was selected.
 
-|**Selection mode action button**||
+|**Selection mode action button** in developer's guides||
 |---------------|--------------------|
 |    **Native** |(Circle) UI Components<br>(+ SDK : Ctxpopup)|
 |    **Web**|    -|
@@ -61,7 +61,7 @@ Tapping a button performs an action. They can appear on almost any screen, shoul
 <a name="list_button"></a>
 -  **List buttons**
 
-  List buttons present action options for an item in a list through an icon. Display an icon with text when there’s only one list button for one list item, but remove the text when there are 2-3 buttons for a list item.
+  List buttons present action options for an item in a list through an icon. Display an icon with text when there's only one list button for one list item, but remove the text when there are 2-3 buttons for a list item.
 
   ![](media/4-800x193.png)  
     *A list button consists of either only icons or of an icon and text, depending on how many buttons there are.*

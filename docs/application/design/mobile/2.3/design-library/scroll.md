@@ -13,7 +13,8 @@ Scrolling body content up and down displays the basic scroll bar, which offers v
 
 However, the basic scroll bar disappears after a certain amount of time, and the users cannot adjust it by touch.
 
-**Figure: Scroll bar**  
+**Figure: Scroll bar**
+
 <img alt="" height="400" src="media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_11.png" width="240" />
 
 <a name="screen_handler"></a>
@@ -22,7 +23,8 @@ You can apply additional handlers if your application requires faster scrolling.
 
 However, use screen handlers only when the scrolling range is relatively long or if there is not enough space for users to tap on the object to scroll up and down.
 
-**Figure: Screen handler**  
+**Figure: Screen handler**
+
 <img alt="" height="400" src="media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_12.png" width="240" />
 
 <a name="fast_scroll"></a>
@@ -36,10 +38,11 @@ Normally, the index is in alphabetical order, but it can also be based on fields
 
 | PRIMARY LANGUAGE                 | INDEX ORDER                      |
 |----------------------------------|----------------------------------|
-|  Latin (including English)           | 1.  Local language <br>  2.  Symbols<br>  3.  Numbers    |
-|  Non-Latin                           | 1.  Local language <br> 2.  English<br> 3. Symbols <br> 4.  Numbers |
+| Latin (including English) | 1.  Local language <br>  2.  Symbols<br>  3.  Numbers    |
+| Non-Latin                 | 1.  Local language <br> 2.  English<br> 3. Symbols <br> 4.  Numbers |
 
 **Video: Interaction with fast scroll (click to play)**
-<video controls>
+
+<video controls height="400">
   <source src="media/designlibrary_01.mp4" type=video/mp4>
 </video>

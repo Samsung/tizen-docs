@@ -28,7 +28,7 @@ Use pickers to set a number, a date, or time.
 
 -   **Multiple pages**
 
-    You can distribute pickers across multiple pages if you need to present different kinds of values together. For example, if users need to set both the time and date, have a time picker on one page, and a date picker on the next. The pages are navigated only by swiping. You can provide linear page indicators to show which page is currently being viewed.
+    istribute pickers across multiple pages if you need to present different kinds of values together. For example, if users need to set both the time and date, have a time picker on one page, and a date picker on the next. The pages are navigated only by swiping. We recommend providing linear page indicators to show which page is currently being viewed.
 
 ## Types
 
@@ -36,7 +36,7 @@ Use pickers to set a number, a date, or time.
 
     A number picker is the most basic type of this component.
 
-|**Number picker**|          |
+|**Number picker** in developer's guides|          |
 |-----------------|------------|
 |  **Native**    |   Spinner   |
 |  **Web**      |    -       |
@@ -46,9 +46,9 @@ Use pickers to set a number, a date, or time.
 
 -   **Date picker**
 
-    Date pickers set the date, month, and year. Spinning dials present values for each catergory: 12 months, 28/29/30/31 days, and 50 years. One full spin of the year dial is 50 years. Refer to [Date & time](../writing-style.md#date_time) for style guides on displaying the date.
+    Date pickers set the day, month, and year. Spinning dials present values for each catergory: 12 months, 28/29/30/31 days, and 50 years. One full spin of the year dial is 50 years. Refer to [Date & time](../writing-style.md#date_time) for style guides on displaying the date.
 
-|**Date picker**|         |
+|**Date picker** in developer's guides|         |
 |------------|-------------|
 |  **Native**|    Datetime |
 |   **Web**  |   -         |
@@ -58,9 +58,9 @@ Use pickers to set a number, a date, or time.
 
 -   **Time picker**
 
-    Time pickers can set hours and minutes, and toggle between AM/PM. The AM/PM button is displayed when the picker uses the 12 hour format, and hidden for the 24 hour-format. Refer to [Date & time](../writing-style.md#date_time) for style guides on displaying time.
+    Time pickers can set hours and minutes, and toggle between AM/PM. The AM/PM button is displayed when the picker uses the 12-hour format, and hidden for the 24-hour format. Refer to [Date & time](../writing-style.md#date_time) for style guides on displaying time.
 
-|**Time picker**|           |
+|**Time picker** in developer's guides|           |
 |--------------|------------|
 |  **Native**   |   Datetime|
 |    **Web**    |   -       |
@@ -71,9 +71,9 @@ Use pickers to set a number, a date, or time.
 
 -   **Color picker**
 
-    A color picker allows users to choose a color. Unlike other pickers, it’s displayed as a [rotary selector](rotary-selectors.md). The picker displays the focused color in the center of the screen. When users pick a color, it returns them to the previous screen. You can customize the colors on a picker.
+    A color picker allows users to choose a color. This picker is displayed as a [rotary selector](rotary-selectors.md) with the focused color in the center of the screen. When users pick a color, it returns them to the previous screen. You can customize the colors on a picker.
 
-|**Color picker**|             |
+|**Color picker** in developer's guides|             |
 |----------------|--------------|
 |   **Native**   |    -         |
 |    **Web**     |    -         |

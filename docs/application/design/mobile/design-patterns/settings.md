@@ -1,11 +1,11 @@
 # Settings
 
-In Settings, users can view and customize various functions. By offering the right settings at the right time, you can enrich your app’s user experience.
+In Settings, users can view and customize various functions. By offering the right settings at the right time, you can enrich your app's user experience.
 
 <a name="designing-settings"></a>
 ## Designing Settings
 
-The Settings menu is provided in the 'More' menu. Since users don’t change their settings that often, emphasizing this menu is not necessary. Put Settings below all other items, except 'About' or 'Help'. If your app provides 'Settings', 'About', and 'Help' menus, the order should be 'Settings' > 'About' > 'Help'.
+The Settings menu is provided in the 'More' menu. Since users don't change their settings that often, emphasizing this menu is not necessary. Put Settings below all other items, except 'About' or 'Help'. If your app provides 'Settings', 'About', and 'Help' menus, the order should be 'Settings' > 'About' > 'Help'.
 
 <img src="media/4.8.1_a.png" alt="Settings in More menu" width="260px" /> <img src="media/4.8.1_b.png" alt="Settings in More menu" width="260px" />  
 
@@ -16,7 +16,7 @@ Settings can be easily complicated if you do not organize the preferences by pur
 
 To keep things simple, keep the following guidelines in mind when designing settings:
 
--   Include a Settings menu only when it’s a user preference.
+-   Include a Settings menu only when it's a user preference.
 -   Include a Settings menu when the user may not want to change the function frequently.
 -   If you expect most users to set the same value and to not change the setting again, you can use fixed behavior without providing a Settings menu.
 
@@ -111,7 +111,7 @@ Here are some tips for designing settings.
 
 #### Dependency
 
-If a setting option is dependent on another setting, dim the option when the primary or related setting is off. When dimmed, the setting’s status can be maintained or not, depending on the situation. For example, to use the GPS and Wireless networks options in the Location service setting, users must agree with a legal information pop-up confirmation. So when Location service is turned off, the GPS and Wireless networks options are dimmed and the values are turned off. However, if Mobile data is turned off in the Mobile network setting, Data roaming is dimmed and its value is maintained. So when roaming, users can just turn on/off Mobile data to use mobile networks after enabling Data roaming value just one time.
+If a setting option is dependent on another setting, dim the option when the primary or related setting is off. When dimmed, the setting's status can be maintained or not, depending on the situation. For example, to use the GPS and Wireless networks options in the Location service setting, users must agree with a legal information pop-up confirmation. So when Location service is turned off, the GPS and Wireless networks options are dimmed and the values are turned off. However, if Mobile data is turned off in the Mobile network setting, Data roaming is dimmed and its value is maintained. So when roaming, users can just turn on/off Mobile data to use mobile networks after enabling Data roaming value just one time.
 
  
 <img src="media/4.8.3_a.png" alt="Dependency" height="460px" /> <img src="media/4.8.3_b.png" alt="Dependency" height="460px" margin-left="10px" /> 
@@ -120,7 +120,7 @@ If a setting option is dependent on another setting, dim the option when the pri
 
 *Dependency*
 
-There are many examples of dependent settings in the UI. In the General settings, when Flight mode is enabled, Wi-Fi is disabled. When the incoming call sound value is reduced to “0,” the device switches to vibrate mode. You need to consider all dependent functions when designing settings.
+There are many examples of dependent settings in the UI. In the General settings, when Flight mode is enabled, Wi-Fi is disabled. When the incoming call sound value is reduced to "0," the device switches to vibrate mode. You need to consider all dependent functions when designing settings.
 
  
 
@@ -148,7 +148,7 @@ Use the group index view to easily classify and associate features. It makes set
 
 #### Default Values
 
-When choosing the default values of your settings, you should consider carefully. Most users don’t change settings values too often. Some users may not even know that there is a settings option they can use. If users feel that the default operation of your app is complicated, they will think your app is just difficult.
+When choosing the default values of your settings, you should consider carefully. Most users don't change settings values too often. Some users may not even know that there is a settings option they can use. If users feel that the default operation of your app is complicated, they will think your app is just difficult.
 
 Keep the following guidelines in mind when choosing default values:
 

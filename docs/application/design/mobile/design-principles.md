@@ -68,7 +68,7 @@ Help users instantly perform simple actions. For example, quick access to the In
 
 #### Use Animations and Visual Cues
 
-Stacked layers create a visual hierarchy, and each layer comes with a clear direction of movement. When layers are assembled well, they create a flow that guides the users. For example, to inform users of new events that require user’s attention, active notifications always slide down from the top, over the current screen users are working on. Refer to [Animations](../introduction/styles/animations.md) for more information.  
+Stacked layers create a visual hierarchy, and each layer comes with a clear direction of movement. When layers are assembled well, they create a flow that guides the users. For example, to inform users of new events that require user's attention, active notifications always slide down from the top, over the current screen users are working on. Refer to [Animations](../introduction/styles/animations.md) for more information.  
  
 <img alt="An active notification." src="media/1.2.2.png" height="460px" />  
 

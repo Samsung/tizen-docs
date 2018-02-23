@@ -67,7 +67,7 @@ Tabs with a title
 <a name="navi_"></a>
 ## Navigation Bar
 
-A navigation bar can be placed under the title bar to display paths in an app. It helps the user navigate the app and find the information they want by showing the app’s structural information.
+A navigation bar can be placed under the title bar to display paths in an app. It helps the user navigate the app and find the information they want by showing the app's structural information.
 
 To learn how to implement a navigation bar, see [Naviframe](../../../native/guides/ui/efl/container-naviframe.md).
 
@@ -85,7 +85,7 @@ Navigation bar
 <a name="scroll_"></a>
 ## Scroll Components
 
-Scroll components are used to indicate the user’s current position. Scroll components allow the user to jump directly to the information they are looking for.
+Scroll components are used to indicate the user's current position. Scroll components allow the user to jump directly to the information they are looking for.
 
 The following scroll components are available:
 

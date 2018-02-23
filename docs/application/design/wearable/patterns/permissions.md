@@ -18,11 +18,11 @@ Permission pages should include:
 
 -   **Actions**
 
-    Tapping the tick on the right hand side gives permission and activates the app or the function. Tapping the X closes the app or blocks the function.
+    Tapping the V on the right-hand side gives permission and activates the app or the function. Tapping the X closes the app or blocks the function.
 
 -   **Don't ask again checkbox**
 
-    You can ask users if their permission should apply every time they open the app. If users select the *Don’t ask again* checkbox, the page won’t appear again.
+    You can ask users if their permission should apply every time they open the app. If users select the *Don't ask again* checkbox, the page won't appear again.
 
 > **Tip**  
 > If you need to ask permission for a number of functions, show the permissions in sequence.

@@ -3,17 +3,17 @@
 
 STC means Smart Traffic Control. It provides extensible packet-level control services, including per-app data usage, total data quota, and background app's data saving. STC Library provides APIs fulfilling below mentioned features for application development.
 
-This feature is supported in mobile and werable profile.
+This feature is supported in mobile, tv and wearable profile.
 
 The main features of the STC API include:
 
-- Fetch Data Usage For System
+- Retrieve Data Usage For System
 
-  You can [fetch network data consumed by system](#fetch_data_usage_system).
+  You can [retrieve network data consumed by system](#retrieve-data-usage-for-system).
 
-- Fetch Data Usage For Applications
+- Retrieve Data Usage For Applications
 
-  You can [fetch network data consumed by applications](#fetch_data_usage_applications).
+  You can [retrieve network data consumed by applications](#retrieve-data-usage-for-applications).
 
 
 > **Note**  
@@ -49,9 +49,9 @@ To enable your application to use the STC API:
    stc_deinitialize();
    ```
 
-## Fetch Data Usage For System
+## Retrieve Data Usage For System
 
-To fetch statistics about total network data consumed by system:
+To retrieve statistics about total network data consumed by system:
 
 1. Define a callback function for processing data usage results
 
@@ -71,7 +71,7 @@ To fetch statistics about total network data consumed by system:
    }
    ```
 
-2. Create rule for fetching data usage:
+2. Create rule for retrieveing data usage:
 
    This rule will be passed as a function parameter in `stc_get_total_stats()` API call.
 
@@ -118,7 +118,7 @@ To fetch statistics about total network data consumed by system:
          return ret;
      }
 
-     /* fetch total stats */
+     /* retrieve total stats */
      ret = stc_get_total_stats(stc, stats_rule, __process_total_stats_cb, NULL);
      if (ret == STC_ERROR_NONE)
          printf("Success to request stats total info\n");
@@ -137,9 +137,9 @@ To fetch statistics about total network data consumed by system:
    }
    ```
 
-## Fetch Data Usage For Applications
+## Retrieve Data Usage For Applications
 
-To fetch statistics about total network data consumed by applications:
+To retrieve statistics about total network data consumed by applications:
 
 1. Define a callback function for processing foreach data usage results:
 
@@ -159,7 +159,7 @@ To fetch statistics about total network data consumed by applications:
    }
    ```
 
-2. Create rule for fetching data usage for applications:
+2. Create rule for retrieveing data usage for applications:
 
    This rule will be passed as a function parameter in `stc_foreach_stats()` API call.
 
@@ -206,7 +206,7 @@ To fetch statistics about total network data consumed by applications:
          return ret;
       }
 
-     /* fetch foreach stats */
+     /* retrieve foreach stats */
      ret = stc_foreach_stats(stc, stats_rule, __process_total_stats_cb, NULL);
      if (ret == STC_ERROR_NONE)
          printf("Success to request stats total info\n");

@@ -16,7 +16,7 @@ You can use the following list types:
 -   Stacked list to display text-oriented content items
 -   Grid list to display image-oriented content items.
 
- 
+ 
 
 **Figure: List items**  
 <img alt="" height="164" src="media/list_items.png" width="240" />
@@ -30,7 +30,7 @@ Use an index list if you can group your list items according to consistent, orde
 -   Category
 -   Time or date
 
- 
+ 
 
 **Figure: Index list**  
 <img alt="" height="400" src="media/index_list.png" width="490" />
@@ -48,7 +48,7 @@ Use an index list if you can group your list items according to consistent, orde
 
 Use a grid list to display multiple thumbnail images. Even though the grid list uses horizontal scrolling, vertical scrolling is also possible. If necessary, place labels for each thumbnail at the bottom of each grid cell.
 
- 
+ 
 
 **Figure: Grid list**  
 <img alt="" height="400" src="media/17_01_gallery.png" width="240" />

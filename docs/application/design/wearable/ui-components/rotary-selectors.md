@@ -2,7 +2,7 @@
 
 The rotary selector arranges multiple items around the circular edge of the screen, and switches the focus between items as users rotate the bezel.
 
-|Rotary selector|                 |
+|**Rotary selector** in developer's guides|                 |
 |---------------|-----------------|
 |**Native**     |Rotary selector  |
 |**Web**        |Selector         |
@@ -15,7 +15,7 @@ The rotary selector arranges multiple items around the circular edge of the scre
 
 -   **Present multiptle items to be selected**
 
-    The rotary selector can be used on any screen that includes multiple items for users to choose from. The title of an item is only displayed when the item is in focus.
+    The rotary selector can be used on any screen that includes multiple items. The title of an item is only displayed when the item is in focus.
 
 -   **Provide more options**
 
@@ -25,7 +25,7 @@ The rotary selector arranges multiple items around the circular edge of the scre
 
 -   **Option icon**
 
-    The rotary selector can present up to 11 option icons on a page including Previous/Next icons to switch pages. Option icons are ordered clockwise from the top.
+    The rotary selector can present up to 11 option icons on a page. Option icons are ordered clockwise from the top.
 
 -   **Option detail**
 
@@ -33,7 +33,7 @@ The rotary selector arranges multiple items around the circular edge of the scre
 
 -   **Previous/Next icon**
 
-    Previous/Next icons are shown when the rotary selector has more than 11 option items to display. Moving in a clockwise direction from the top, the first button is the Previous icon and the last is the Next icon.
+    Previous/next icons are shown when the rotary selector has more than 11 option items to display. Moving in a clockwise direction from the top, the previous icon is placed at the left of the first button and the next icon is placed at the right of the last.
 
 ## Behavior
 
@@ -46,7 +46,7 @@ The rotary selector arranges multiple items around the circular edge of the scre
 
 -   **Select**
 
-    An option performs its assigned task when users tap it, regardless of whether it’s in focus or not. A tap on the center of the screen also triggers the task of the item in focus. If an item is a toggle button, tapping the item or its option detail will switch its state.
+    An option performs its assigned task when users tap it, regardless of whether or not it's in focus. A tap on the center of the screen triggers the task of the item in focus. If an item is a toggle button, tapping the item or its option detail switches its state.
 
 ## Design specs
 
