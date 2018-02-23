@@ -915,6 +915,6 @@ tone_player_start(TONE_TYPE_SUP_CONGESTION, SOUND_TYPE_CALL, 1000, &tone_player_
 When you set the duration to a specified time, playback stops automatically after that time. You can also stop playback manually using the `tone_player_stop()` function.
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

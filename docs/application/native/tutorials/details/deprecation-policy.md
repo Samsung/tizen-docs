@@ -42,14 +42,14 @@ adopted in Tizen:
 - The functionality of the deprecated API is available for 2 releases,
     as indicated in the following table.
 
-    **Table: Deprecation schedule**
+  **Table: Deprecation schedule**
 
-|      | **V1 (Tizen 2.4/2.3.1/2.3.2)<br>Deprecation notice** | **V2 (Tizen 3.0)<br>Deprecated since V1** | **V3 (Tizen 3.x)<br>Deprecated since V1** |
-    |--------------------------------------|----------------------------------------|---------------------------------|---------------------------------|
-    | **API functionality**  | Available | Available  | **Not available**     |
-    | **API symbol** | Available   |Available                        | **Not available**   |
-    | **API Reference<br>API Guides<br>Samples** |Available  |Available      | **Not available**       |
-    | **TCT**  | Available   | Available    | **Not available**  |
+|      | V1 (Tizen 2.4/2.3.1/2.3.2)<br>Deprecation notice | V2 (Tizen 3.0)<br>Deprecated since V1 | V3 (Tizen 3.x)<br>Deprecated since V1 |
+|---------------------|----------------------------------------|---------------------------------|---------------------------------|
+| **API functionality**  | Available | Available  | **Not available**     |
+| **API symbol** | Available   |Available                        | **Not available**   |
+| **API Reference<br>API Guides<br>Samples** |Available  |Available      | **Not available**       |
+| **TCT**  | Available   | Available    | **Not available**  |
 
 - Deprecated APIs are removed after 2 version releases (including the
     notice version).

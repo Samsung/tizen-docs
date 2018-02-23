@@ -643,6 +643,6 @@ If sending a push notification request fails for some reason, the response messa
 | 3046        | Error of not allowed to use Push Server  |
 
 ## Related Information
-* Dependencies
- - Tizen 2.3 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+- Dependencies
+  - Tizen 2.3 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

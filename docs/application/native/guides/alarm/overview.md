@@ -14,6 +14,6 @@ You can use the following alarms and scheduling features in your native applicat
   You can create rules (contextual triggers consisting of an event, conditions, and an action) to monitor the device status or user activities. When the rule is enabled, the system starts to monitor the device status or user activities. When a specific event with certain conditions occurs, a defined action is triggered.
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

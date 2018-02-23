@@ -129,6 +129,6 @@ To check whether an application has permission to use a privilege, and to reques
 > Since the privileges are grouped, the user's decision regarding one privilege applies to the whole group of related privileges. For example, if the user has granted permission to use the `http://tizen.org/privilege/account.read` privilege, permission is automatically granted to the `http://tizen.org/privilege/account.write` privilege also. Be aware that both privileges need to be declared in the application manifest file. If you declare only one of them, the above rule does not apply.
 
 ## Related Information
-* Dependencies
- - Tizen 2.3 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+- Dependencies
+  - Tizen 2.3 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

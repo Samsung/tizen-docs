@@ -786,6 +786,6 @@ To create a template from an existing notification, and reuse that template late
   ```
 
 ## Related Information
-* Dependencies
+- Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable

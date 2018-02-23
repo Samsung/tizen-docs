@@ -836,7 +836,7 @@ when the device battery is low:
 static void
 service_app_low_battery(app_event_info_h event_info, void *user_data)
 {
-    / *APP_EVENT_LOW_BATTERY */
+    /* APP_EVENT_LOW_BATTERY */
     appdata_s *ad = (appdata_s *) user_data;
 
     if (ad->location)

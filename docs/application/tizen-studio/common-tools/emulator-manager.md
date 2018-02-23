@@ -22,7 +22,7 @@ There are 2 different ways to access the Emulator Manager:
 
   **Table: Starting the Emulator Manager**
 
-  | Ubuntu                                   | Windows®                                 | macOS                                    |
+  | Ubuntu                                   | Windows&reg;                                 | macOS                                    |
   |----------------------------------------|----------------------------------------|----------------------------------------|
   | **Desktop > Applications > Emulator Manager:**![Shortcut Ubuntu](./media/emulator_manager_linux_shortcut.png) | **Start > All Programs > Tizen Studio > Emulator Manager:**![Shortcut Windows](./media/emulator_manager_win_shortcut.png) | **Finder > Applications > Tizen Studio > Emulator Manager:**![Shortcut macOS](./media/emulator_manager_mac_shortcut.png) |
 

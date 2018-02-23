@@ -66,7 +66,9 @@ To launch an application with the application control, you must create a launch 
 - Operation: Action to be performed by the launched application.
 
   > **Note**  
-  > The operation name format is `http://tizen.org/appcontrol/operation/<verb>`. You can also use the related macro name, `APP_CONTROL_OPERATION_<VERB>`.The macro name can only be used in the `.c` files, not in the [application manifest file for the application control export](#export_appcontrol).
+  > The operation name format is `http://tizen.org/appcontrol/operation/<verb>`. You can also use the related macro name, `APP_CONTROL_OPERATION_<VERB>`.
+  >  
+  > The macro name can only be used in the `.c` files, not in the [application manifest file for the application control export](#export_appcontrol).
 
   The operation is mandatory information for sending the launch request.
 
@@ -197,7 +199,7 @@ The following examples show different scenarios for the results of resolving the
   | Filter ID | Operation                                | URI        | MIME   | Result |
   |-----------|------------------------------------------|------------|--------|--------|
   | 1         | `http://tizen.org/appcontrol/operation/view` | `NULL`     | `NULL` | Pass   |
-  | 2         | `**http://tizen.org/appcontrol/operation/default**` | `NULL`       |   `NULL`     |  Fail      |
+  | 2         | `http://tizen.org/appcontrol/operation/default` | `NULL`       |   `NULL`     |  Fail      |
   | 3         | `http://tizen.org/appcontrol/operation/view` | `file` |  `NULL`       |   Fail        |
 
 - Operation and URI provided:
@@ -212,13 +214,13 @@ The following examples show different scenarios for the results of resolving the
 
  | Filter ID | Operation                                | URI                                  | MIME      | Result |
 |-----------|--------------------------------------------|---------------------------------------|-----------|--------|
-| 1         | http://tizen.org/appcontrol/operation/view | NULL                                 | NULL      | Fail   |
-| 2         | http://tizen.org/appcontrol/operation/view | file:///usr/share/icons/calendar.png | */*       | Pass   |
-| 3         | http://tizen.org/appcontrol/operation/view | file:///*                            | */*       | Pass   |
-| 4         | http://tizen.org/appcontrol/operation/view | file                                 | */*       | Pass   |
-| 5         | http://tizen.org/appcontrol/operation/view | http                                 | */*       | Fail   |
-| 6         | http://tizen.org/appcontrol/operation/view | NULL                                 | image/png | Pass   |
-| 7         | http://tizen.org/appcontrol/operation/view | NULL                                 | image/jpg | Fail   |
+| 1         | `http://tizen.org/appcontrol/operation/view` | `NULL`                                 | `NULL`      | Fail   |
+| 2         | `http://tizen.org/appcontrol/operation/view` | `file:///usr/share/icons/calendar.png` | `*/*`       | Pass   |
+| 3         | `http://tizen.org/appcontrol/operation/view` | `file:///*`                            | `*/*`       | Pass   |
+| 4         | `http://tizen.org/appcontrol/operation/view` | `file`                                 | `*/*`       | Pass   |
+| 5         | `http://tizen.org/appcontrol/operation/view` | `http`                                 | `*/*`       | Fail   |
+| 6         | `http://tizen.org/appcontrol/operation/view` | `NULL`                                 | `image/png` | Pass   |
+| 7         | `http://tizen.org/appcontrol/operation/view` | `NULL`                                 | `image/jpg` | Fail   |
 
 - Operation and MIME type provided:
 
@@ -232,13 +234,13 @@ The following examples show different scenarios for the results of resolving the
 
 | Filter ID | Operation                                | URI                                  | MIME      | Result |
 |-----------|------------------------------------------|--------------------------------------|-----------|--------|
-| 1         | http://tizen.org/appcontrol/operation/view | NULL                                 | image/png | Pass   |
-| 2         | http://tizen.org/appcontrol/operation/view | NULL                                 | image/*   | Pass   |
-| 3         | http://tizen.org/appcontrol/operation/view | NULL                                 | */*       | Pass   |
-| 4         | http://tizen.org/appcontrol/operation/view | file:///usr/share/icons/calendar.png | NULL      | Fail   |
-| 5         | http://tizen.org/appcontrol/operation/view | NULL                                 | image/jpg | Fail   |
-| 6         | http://tizen.org/appcontrol/operation/view | NULL                                 | video/*   | Fail   |
-| 7         | http://tizen.org/appcontrol/operation/view | http://tizen.org/favorites.png       | image/png | Fail   |
+| 1         | `http://tizen.org/appcontrol/operation/view` | `NULL`                                 | `image/png` | Pass   |
+| 2         | `http://tizen.org/appcontrol/operation/view` | `NULL`                                 | `image/*`   | Pass   |
+| 3         | `http://tizen.org/appcontrol/operation/view` | `NULL`                                 | `*/*`       | Pass   |
+| 4         | `http://tizen.org/appcontrol/operation/view` | `file:///usr/share/icons/calendar.png` | `NULL`      | Fail   |
+| 5         | `http://tizen.org/appcontrol/operation/view` | `NULL`                                 | `image/jpg` | Fail   |
+| 6         | `http://tizen.org/appcontrol/operation/view` | `NULL`                                 | `video/*`   | Fail   |
+| 7         | `http://tizen.org/appcontrol/operation/view` | `http://tizen.org/favorites.png`       | `image/png` | Fail   |
 
 - Operation, URI, and MIME type provided:
 
@@ -252,12 +254,12 @@ The following examples show different scenarios for the results of resolving the
 
  | Filter ID | Operation                                | URI                                | MIME      | Result |
 |-----------|------------------------------------------|------------------------------------|-----------|--------|
-| 1         | http://tizen.org/appcontrol/operation/view | http://www.tizen.org/favorites.png | image/png | Pass   |
-| 2         | http://tizen.org/appcontrol/operation/view | http://www.tizen.org/favorites.png | NULL      | Fail   |
-| 3         | http://tizen.org/appcontrol/operation/view | http://www.tizen.org/*             | image/png | Pass   |
-| 4         | http://tizen.org/appcontrol/operation/view | http                               | image/png | Pass   |
-| 5         | http://tizen.org/appcontrol/operation/view | NULL                               | image/png | Fail   |
-| 6         | http://tizen.org/appcontrol/operation/view | *                                  | */*       | Pass   |
+| 1         | `http://tizen.org/appcontrol/operation/view` | `http://www.tizen.org/favorites.png` | `image/png` | Pass   |
+| 2         | `http://tizen.org/appcontrol/operation/view` | `http://www.tizen.org/favorites.png` | `NULL`      | Fail   |
+| 3         | `http://tizen.org/appcontrol/operation/view` | `http://www.tizen.org/*`             | `image/png` | Pass   |
+| 4         | `http://tizen.org/appcontrol/operation/view` | `http`                               | `image/png` | Pass   |
+| 5         | `http://tizen.org/appcontrol/operation/view` | `NULL`                               | `image/png` | Fail   |
+| 6         | `http://tizen.org/appcontrol/operation/view` | `*`                                  | `*/*`       | Pass   |
 
 <a name="process"></a>
 ## Launch Process
@@ -367,6 +369,7 @@ It takes 4 parameters and uses them to initialize the application. The `argc` an
         }
     }
 	```
+
 <a name="results"></a>
 ## Launch Results
 
@@ -446,7 +449,10 @@ You can allow other applications to launch your application and use your applica
 The operation, URI, and MIME type information is used when [resolving the application control](#resolution). The operation information is mandatory, while the URI or MIME type information is optional. Any application requesting a launch of your application must either specify your application ID (for an explicit launch) or have the same operation value and applicable URI and MIME type information (for an implicit launch).
 
 > **Note**  
-> The URI or MIME type can contain wildcards, such as '*', to match against given conditions in the app control:In the MIME type, you can use 2 types of wildcards: `image/*` and `*/*`.In the URI, a more complex pattern of wildcards with similar semantics as the standard `glob()` function is available: '*' matches an arbitrary, possibly empty, string, and '?' matches an arbitrary character. Unlike in the `glob()` function, the '/' character can be matched by the wildcards. There are no [...] character ranges, and the wildcards '*' and '?' cannot be escaped to include them literally in a pattern.
+> The URI or MIME type can contain wildcards, such as '\*', to match against given conditions in the app control:
+>
+> - In the MIME type, you can use 2 types of wildcards: `image/*` and `*/*`.
+> - In the URI, a more complex pattern of wildcards with similar semantics as the standard `glob()` function is available: '\*' matches an arbitrary, possibly empty, string, and '?' matches an arbitrary character. Unlike in the `glob()` function, the '/' character can be matched by the wildcards. There are no [...] character ranges, and the wildcards '\*' and '?' cannot be escaped to include them literally in a pattern.
 
 You can specify the application control information for your application in the [application project settings](../../tutorials/process/setting-properties.md#manifest) in the Tizen Studio.
 
@@ -669,9 +675,6 @@ The following common application controls are available:
 	- [Settings for Wi-Fi](common-appcontrol.md#settings_wifi)
 - [Voice Recorder](common-appcontrol.md#voice)
 - [VPN Service](common-appcontrol.md#vpnservice)  
-
-
-
 
 ## Related Information
 - Dependencies

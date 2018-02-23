@@ -83,6 +83,6 @@ ret = feedback_is_supported_pattern(type, pattern, &status);
 The return value defines whether retrieving the feedback information was successful.
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

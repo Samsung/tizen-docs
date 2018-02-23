@@ -308,6 +308,6 @@ To record a stream:
     After this, the stream recorder is changed to the `STREAMRECORDER_STATE_NONE` state.
 
 ## Related Information
-* Dependencies
+- Dependencies
   - Tizen 3.0 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable

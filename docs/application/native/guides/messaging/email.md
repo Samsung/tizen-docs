@@ -150,6 +150,6 @@ To create and send email messages:
    ```
 
 ## Related Information
-*  Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+-  Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

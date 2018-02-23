@@ -480,6 +480,6 @@ The following table shows the effect on the image quality and file sizes when us
 | ![Lowest quality image](./media/quality_lowest.png) | Lowest quality            |              |                   |                                          |
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

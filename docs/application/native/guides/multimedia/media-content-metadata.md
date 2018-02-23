@@ -14,6 +14,6 @@ You can use the following media content and metadata features in your native app
 	You can manage audio file attributes, extract metadata from media files, and retrieve various information related to the MIME type.
 
 ## Related Information
-* Dependencies
+- Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

@@ -10,7 +10,7 @@ The main features of the Resource Manager API include:
   You can [set resources](#set) for your application in the **Resource Manager** view in the Tizen Studio. By setting specific resources for specific languages and screen resolutions, you ensure that the application works flawlessly on multiple devices.
 
   > **Note**  
-  > The Resource Manager tool is supported since Tizen 2.4.If you cannot access the `Resource Manager` view in the Tizen Studio, check the version and API version attributes in the `<manifest>` element of the application manifest file.For more information on the Resource Manager tool, see [Providing Resources for Multiple Device Types](../../../tizen-studio/native_tools/resource-manager.md).
+  > The Resource Manager tool is supported since Tizen 2.4.If you cannot access the `Resource Manager` view in the Tizen Studio, check the version and API version attributes in the `<manifest>` element of the application manifest file.For more information on the Resource Manager tool, see [Providing Resources for Multiple Device Types](../../../tizen-studio/native-tools/resource-manager.md).
 
 - Using the resources
 
@@ -43,7 +43,11 @@ To set the resources:
 
 2. To open the **Resource Configuration Dialog** window, click the ![Resource Manager configuration icon](./media/resource_manager_config_icon.png) icon in the **Resource Manager** view toolbar menu.
 
-3. To add resource directories for the required languages and screen resolutions, select them in the **Language** and **DPI** drop-down menus, and click **Add**.The resource directory hierarchy is created.![Resource configuration dialog](./media/resource_manager_config.png)
+3. To add resource directories for the required languages and screen resolutions, select them in the **Language** and **DPI** drop-down menus, and click **Add**.
+
+  The resource directory hierarchy is created.
+
+  ![Resource configuration dialog](./media/resource_manager_config.png)
 
 4. To add images in the created resource directory, copy them directly to the resource directories.
 
@@ -54,7 +58,9 @@ To set the resources:
 
    ​
 
-5. To view the resource directories, use the `res.xml` file.The Tizen Studio creates the `res.xml` file automatically when you build the application package.![res.xml file](./media/resource_manager_res_xml.png)
+5. To view the resource directories, use the `res.xml` file.The Tizen Studio creates the `res.xml` file automatically when you build the application package.
+
+  ![res.xml file](./media/resource_manager_res_xml.png)
 
 <a name="get_path"></a>
 ## Getting the Resource File Path
@@ -107,22 +113,51 @@ app_terminate(void *data)
 <a name="check_resource"></a>
 ## Checking Resources with the Emulator Manager
 
-To check how the resources are shown on different device configurations, create emulator instances with different resolutions with the [Emulator Manager](../../../tizen-studio/common_tools/emulator-manager.md) and run the application on the instances using different language settings:
+To check how the resources are shown on different device configurations, create emulator instances with different resolutions with the [Emulator Manager](../../../tizen-studio/common-tools/emulator-manager.md) and run the application on the instances using different language settings:
 
-1. Open the Emulator Manager by selecting **Tools &gt; Emulator Manager** in the Tizen Studio menu. ![Emulator Manager](./media/resource_manager_conn_explorer.png)
+1. Open the Emulator Manager by selecting **Tools &gt; Emulator Manager** in the Tizen Studio menu.
 
-2. In the **Emulator Manager** window, the HD Mobile emulator has already been created.Next, create an emulator instance with a WVGA resolution by clicking **Create**.![Create a new emulator](./media/resource_manager_emulator_new.png)Select mobile, and the **WVGA Mobile** template. Click **Finish**. If the HD Mobile emulator has not been created, create it as well. For more information on creating an emulator instance, see [Creating Emulator Instances](../../../tizen-studio/common_tools/emulator-manager.md#create).
+  ![Emulator Manager](./media/resource_manager_conn_explorer.png)
+
+2. In the **Emulator Manager** window, the HD Mobile emulator has already been created.Next, create an emulator instance with a WVGA resolution by clicking **Create**.
+
+  ![Create a new emulator](./media/resource_manager_emulator_new.png)
+
+  Select mobile, and the **WVGA Mobile** template. Click **Finish**. If the HD Mobile emulator has not been created, create it as well. For more information on creating an emulator instance, see [Creating Emulator Instances](../../../tizen-studio/common-tools/emulator-manager.md#create).
 
 3. Run the application on the WVGA Mobile device emulator:
 
-   1. In the **Emulator Manager** window, select the **WVGA Mobile** emulator and click **Launch**.The WVGA Mobile device emulator starts.![Start the emulator](./media/resource_manager_emulator_run.png)![Emulator running](./media/resource_manager_emulator_running.png)
-   2. In the **Project Explorer** view in the Tizen Studio, right-click the application and select **Run As > Tizen Native Application**.The application launches on the emulator.![Application running on the emulator](./media/resource_manager_emulator_run_us_en.png)
+   1. In the **Emulator Manager** window, select the **WVGA Mobile** emulator and click **Launch**.
+
+      The WVGA Mobile device emulator starts.
+
+      ![Start the emulator](./media/resource_manager_emulator_run.png)
+
+      ![Emulator running](./media/resource_manager_emulator_running.png)
+
+   2. In the **Project Explorer** view in the Tizen Studio, right-click the application and select **Run As > Tizen Native Application**.
+
+      The application launches on the emulator.
+
+      ![Application running on the emulator](./media/resource_manager_emulator_run_us_en.png)
+
    3. To close the emulator, right-click it and select **Close**.
 
 4. Run the application on the HD Mobile device emulator:
 
-   1. In the **Emulator Manager** window, select the **HD Mobile** emulator and click **Launch**.The HD Mobile device emulator starts.![Start the emulator](./media/resource_manager_emulator_run_hd.png)![Emulator running](./media/resource_manager_emulator_running_hd.png)
-   2. In the **Project Explorer** view in the Tizen Studio, right-click the application and select **Run As > Tizen Native Application**.The application launches on the emulator, and you can see that a different image is displayed depending on the device display resolution.![Application running on the emulator](./media/resource_manager_emulator_run_hd_us_en.png)
+   1. In the **Emulator Manager** window, select the **HD Mobile** emulator and click **Launch**.
+
+      The HD Mobile device emulator starts.
+
+      ![Start the emulator](./media/resource_manager_emulator_run_hd.png)
+
+      ![Emulator running](./media/resource_manager_emulator_running_hd.png)
+
+   2. In the **Project Explorer** view in the Tizen Studio, right-click the application and select **Run As > Tizen Native Application**.
+
+      The application launches on the emulator, and you can see that a different image is displayed depending on the device display resolution.
+
+      ![Application running on the emulator](./media/resource_manager_emulator_run_hd_us_en.png)
 
 5. If you change the emulator language settings and run the application again, you can also see that a different image is displayed depending on the device language (in this case, US English and Korean).
 

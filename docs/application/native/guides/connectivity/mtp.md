@@ -406,5 +406,5 @@ application_test_event_callback(void)
 ```
 
 ## Related Information
-* Dependencies
- - Tizen 3.0 and Higher for Mobile
+- Dependencies
+  - Tizen 3.0 and Higher for Mobile

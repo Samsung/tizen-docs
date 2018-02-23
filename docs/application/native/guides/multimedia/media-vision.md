@@ -15,6 +15,6 @@ You can detect a face from an image, and recognize a face with a set of examples
 You can extract features of an image object and recognize it from specific images. You can also track the image object within the camera preview stream.
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

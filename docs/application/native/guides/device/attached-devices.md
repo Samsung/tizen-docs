@@ -226,7 +226,7 @@ To control a LED device:
     int error;
     int max;
     error = device_flash_get_max_brightness(&max);
-```
+    ```
 
 - Get and set the current brightness value of a torch LED with the `device_flash_get_brightness()` and `device_flash_set_brightness()` functions:
 
@@ -238,7 +238,9 @@ To control a LED device:
     error = device_flash_set_brightness(1);
     ```
 
-- Play and stop a custom effect on the service LED with the `device_led_play_custom()` and `device_led_stop_custom()` functions.The `led_custom_flags` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__DEVICE__LED__MODULE.html#ga2065bc82e5ecf7e2acba8629c0d75e3b) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__DEVICE__LED__MODULE.html#ga2065bc82e5ecf7e2acba8629c0d75e3b) applications) defines the available custom effects.The custom effect plays on the service LED that is located on the front of the device.
+- Play and stop a custom effect on the service LED with the `device_led_play_custom()` and `device_led_stop_custom()` functions.
+
+  The `led_custom_flags` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__DEVICE__LED__MODULE.html#ga2065bc82e5ecf7e2acba8629c0d75e3b) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__DEVICE__LED__MODULE.html#ga2065bc82e5ecf7e2acba8629c0d75e3b) applications) defines the available custom effects.The custom effect plays on the service LED that is located on the front of the device.
 
     ```
     int error;
@@ -252,14 +254,20 @@ To control a LED device:
 
 To lock and unlock the power state:
 
-- Lock the power state with the `device_power_request_lock()` function.The function locks the specific lock type for a specified time. After the given timeout, the lock type is unlocked automatically. If the process is destroyed, every lock is removed.The `power_lock_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__DEVICE__POWER__MODULE.html#gabc47c58cfcfdaaba177f6004d6395af2) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__DEVICE__POWER__MODULE.html#gabc47c58cfcfdaaba177f6004d6395af2) applications) defines the available lock types.
+- Lock the power state with the `device_power_request_lock()` function.
+
+  The function locks the specific lock type for a specified time. After the given timeout, the lock type is unlocked automatically. If the process is destroyed, every lock is removed.
+
+  The `power_lock_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__DEVICE__POWER__MODULE.html#gabc47c58cfcfdaaba177f6004d6395af2) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__DEVICE__POWER__MODULE.html#gabc47c58cfcfdaaba177f6004d6395af2) applications) defines the available lock types.
 
     ```
     int error;
     error = device_power_request_lock(POWER_LOCK_CPU, 0);
     ```
 
-- Unlock the power state with the `device_power_release_lock()` function.The function releases the specific lock type locked before.
+- Unlock the power state with the `device_power_release_lock()` function.
+
+  The function releases the specific lock type locked before.
 
     ```
     int error;
@@ -304,6 +312,6 @@ To monitor device changes in, for example, the device display state:
    ```
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

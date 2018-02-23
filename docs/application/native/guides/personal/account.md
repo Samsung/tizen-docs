@@ -24,7 +24,11 @@ The main features of the Account Manager API include:
   The `account.h` header file handles account-related information. You can [query the account details](#queries) with database queries, [retrieve the account type](#type), and [update the account information](#update). For a list of modifiable account properties, see [Account and Account Provider Properties](#acc_property).
 
 > **Note**  
-> Account providers, such as Google and Facebook, represent specific service provider-related information or protocol that provides the user accounts. To add, update, or remove an accounts, you must register a specific account provider for all your applications belonging to the same package.To register an account provider, define the [account provider information](#accprovider_property) in the `Account` tab of the manifest editor, and implement the [account application control](#appcontrol).If the application has defined the account provider information and implements the appcontrol for the account provider, the account provider is automatically registered when the application is installed.
+> Account providers, such as Google and Facebook, represent specific service provider-related information or protocol that provides the user accounts. To add, update, or remove an accounts, you must register a specific account provider for all your applications belonging to the same package.
+>
+> To register an account provider, define the [account provider information](#accprovider_property) in the `Account` tab of the manifest editor, and implement the [account application control](#appcontrol).
+>
+> If the application has defined the account provider information and implements the appcontrol for the account provider, the account provider is automatically registered when the application is installed.
 
 <a name="appcontrol"></a>
 ## Account Application Control
@@ -843,9 +847,9 @@ The following table lists the account properties that can be modified.
 <a name="provider"></a>
 The following table lists the properties that can be defined for each account provider.
 
+<a name="accprovider_property"></a>
 **Table: Account provider properties**
 
-<a name="accprovider_property"></a>
 | Account  property          | Data type | Mandatory | Description                              |
 |----------------------------|-----------|-----------|------------------------------------------|
 | Multiple  accounts support | bool      | Yes       | Indicates  whether multiple accounts are supported. |
@@ -855,6 +859,6 @@ The following table lists the properties that can be defined for each account pr
 | Capabilities               | String    | No        | Capability  of the account provider. <br>   Capability can be a liaison between an account application and another  application. If an account application registers a capability in the manifest  file, other applications know that the account application has the  capability. And if an account application gives an account a capability,  other applications know that the account has the capability.<br> <br>       Several service-specific capabilities are defined for the Account Manager  in Tizen:        <br>Contact capability:    ACCOUNT_SUPPORTS_CAPABILITY_CONTACT or  "http://tizen.org/account/capability/contact"   <br> <br>If you register this capability in the manifest file, the user using the  contact application can see a list of accounts with the account of your  service in the contact application.<br><br>    Calendar capability:    ACCOUNT_SUPPORTS_CAPABILITY_CALENDAR or  "http://tizen.org/account/capability/calendar"    If you register this capability in the manifest file, the user using the  calendar application can see a list of accounts with the account of your  service in the calendar application.<br><br>    Email capability:    ACCOUNT_SUPPORTS_CAPABILITY_EMAIL or  "http://tizen.org/account/capability/email" <br><br>   Photo capability:    ACCOUNT_SUPPORTS_CAPABILITY_PHOTO or  "http://tizen.org/account/capability/photo" <br><br>   Video capability:    ACCOUNT_SUPPORTS_CAPABILITY_VIDEO or  "http://tizen.org/account/capability/video" <br><br>    Music capability:    ACCOUNT_SUPPORTS_CAPABILITY_MUSIC or  "http://tizen.org/account/capability/music" <br><br>    Document capability:    ACCOUNT_SUPPORTS_CAPABILITY_DOCUMENT or  "http://tizen.org/account/capability/document" <br><br>   Message capability:    ACCOUNT_SUPPORTS_CAPABILITY_MESSAGE or  "http://tizen.org/account/capability/message" <br><br>   Game capability:    ACCOUNT_SUPPORTS_CAPABILITY_GAME or  "http://tizen.org/account/capability/game" |
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

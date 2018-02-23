@@ -19,7 +19,10 @@ The main features of the Message Port API include:
 
 You can communicate using 2 types of message ports:
 
-- **Local port** is used to register your message port and prepare to receive messages from another application.To receive messages from the another application, set the callback from the local message port.
+- **Local port** is used to register your message port and prepare to receive messages from another application.
+
+  To receive messages from the another application, set the callback from the local message port.
+
 - **Remote port** is used to send messages to other applications. The local message port information can be sent to the other application for bi-directional communication.
 
 ## Prerequisites
@@ -216,6 +219,6 @@ Trusted communication works similarly as normal message port communication. The 
 | `message_port_register_local_port()` | `message_port_register_trusted_local_port()` |
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 2.3.1 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

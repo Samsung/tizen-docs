@@ -236,5 +236,5 @@ dlog_print(DLOG_INFO, LOG_TAG, "%d bytes of response received: %s", bytes_transf
 ```
 
 ## Related Information
-* Dependencies
- - Tizen 3.0 and Higher for Mobile
+- Dependencies
+  - Tizen 3.0 and Higher for Mobile
