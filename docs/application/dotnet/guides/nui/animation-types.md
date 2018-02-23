@@ -8,8 +8,8 @@ NUI supports key frame and path animation.
 <a name="1"></a>
 ## Key Frame Animation
 
-NUI provides support for animating between several different values, or key frames.
-A key frame takes a progress value between 0.0f and 1.0f (0 and 100% respectively) and portrays the value of the property when the animation has progressed that much.
+NUI provides support for animating between several different values or key frames.
+Key frame takes the progress value between 0.0f and 1.0f (0 and 100%) from the `keyFrames.Add` property and portrays the value of the property when the animation reaches to the progress value.
 You can create several key frames:
 
 ```
@@ -24,17 +24,17 @@ keyFrames.Add( 0.7f, Vector3( 200.0f, 200.0f, 200.0f ) );
 keyFrames.Add( 1.0f, Vector3( 100.0f, 100.0f, 100.0f ) );
 ```
 
-Next, you can add the key frames to your animation.
+Next, you can add the key frames to your animation:
 
 ```
 _animation.AnimateBetween(_imageView, "Size", _keyFrames, 4000, 6000, Animation.Interpolation.Linear);
 ```
 
-When you play the animation, NUI animates the position of `view1` between the specified key frames. The `view1` animates from (10.0f, 10.0f, 10.0f) to (200.0f, 200.0f, 200.0f) for 70% of the animation time, and spends the remaining time animating back to (100.0f, 100.0f, 100.0f).
+When you play the animation, NUI animates the position of `view1` between the specified key frames. `view1` animates from (10.0f, 10.0f, 10.0f) to (200.0f, 200.0f, 200.0f) for 70% of the animation time, and spends the remaining time animating back to (100.0f, 100.0f, 100.0f).
 
-The advantage of specifying a key frame at 0% is that regardless of where the `view1` is, it starts from position (10.0f, 10.0f, 10.0f). If `AnimateTo()` is used, then the start position is the `view1`'s current position.
+The advantage of specifying a key frame at 0% is that regardless of the position of `view1`, it starts from (10.0f, 10.0f, 10.0f). If `AnimateTo()` is used, then the start position is the current position of `view1`.
 
-The following comprehensive example of key frame use is taken from `FocusEffect.cs`:
+The following comprehensive example of using key frame is taken from `FocusEffect.cs`:
 
 ```
 focusData.ImageItem.Size = new Size(100.0f, 100.0f, 0.0f);
@@ -78,7 +78,7 @@ path.AddPoint(new Vector3( 90.0f, 50.0f, 0.0f ));
 path.AddPoint(new Vector3( 10.0f, 90.0f, 0.0f ));
 ```
 
-The control points can be added manually using `AddControlPoint`. The `Path` class can also auto-generate the control points for you.
+The control points can be added manually using `AddControlPoint`. The `Path` class can also auto-generate the control points.
 
 ```
 path.GenerateControlPoints( 0.25f );

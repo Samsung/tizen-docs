@@ -8,7 +8,7 @@ UI components are interactive components for layouting and scrolling the user in
 ![UI components](./media/ui_controls.png)
 
 
-The following table lists the available UI components.
+The following table lists the available UI components:
 
 **Table: UI components**
 

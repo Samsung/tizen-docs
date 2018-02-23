@@ -1,6 +1,7 @@
 # Layer
 
-A layer acts like a transparent sheet upon which shapes can be placed, sub-layers within layers to any desired depth are supported. Layers provide a mechanism for overlaying groups of views on top of each other.
+A layer is a transparent sheet upon which shapes can be placed. It supports sub-layers within layers to any desired depth.
+Layers provide a mechanism for overlaying groups of views on top of each other.
 Layers can also clip their contents to exclude any content outside a user defined area.
 
 Layers can be 2D or 3D, defined by their _behavior_ property.
@@ -28,13 +29,13 @@ layer.Add(_imageView);
 
 ## Layer Specific Properties
 
- - `Behavior` : Layer behavior, which can be `LayerUI` (default), or `Layer3D`
- - `ChildCount` : To get the number of children held by the layer
- - `Depth` : To query the depth of the layer
- - `Name` : To set or get the layer's name
- - `Opacity` : To retrieve and set the layer's opacity
- - `Viewport` : To set the viewport( in window coordinate )
- - `Visibility` : To retrieve and set the layer's visibility
+ - `Behavior` : Specifies the behavior of the layer. The value can be `LayerUI` (default), or `Layer3D`.
+ - `ChildCount` : To get the number of children the layer holds.
+ - `Depth` : To query the depth of the layer.
+ - `Name` : To set or get the name of the layer.
+ - `Opacity` : To retrieve and set the opacity of the layer.
+ - `Viewport` : To set the viewport( in window coordinate ) of the layer.
+ - `Visibility` : To retrieve and set the visibility of the layer.
 
 ### Re-ordering layers
 
@@ -50,12 +51,12 @@ A range of functions are provided to change the draw order of the layers.
  - Renderers have a depth index property
 
 With `LayerUI`, the draw order of the renderers is defined by both:
- - Renderer depth index.
+ - Renderer depth index
  - Position of view in the layer tree
 
 ### Layer3D
 
-When setting Layer behavior to `Layer3D`, Opaque renderers are drawn first and written to the depth buffer.
+When you set the behavior of the layer to `Layer3D`, the opaque renderers are drawn first and written to the depth buffer.
 
 Transparent renderers are drawn in order of distance from the camera ( painter's algorithm ).
 

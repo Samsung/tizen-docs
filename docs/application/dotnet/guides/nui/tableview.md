@@ -1,7 +1,7 @@
 # TableView
 
 The `TableView` class is a layout container for aligning child actors in a grid like layout.
-`TableView` constraints the x and y position and width and height of the child actors.
+`TableView` constraints the x and y position, width, and height of the child actors.
 The Z position and depth are left intact so that the 3D model actors can also be laid out in a grid without loosing their depth scaling.
 
 In this tutorial, the following subjects are covered:
@@ -37,7 +37,7 @@ window.Add(tableView);
 <a name="2"></a>
 ## TableView Properties
 
-The following table lists the available TableView properties.
+The following table lists the available `TableView` properties:
 
 **Table: TableView properties**
 

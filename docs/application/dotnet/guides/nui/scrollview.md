@@ -25,7 +25,7 @@ The following table lists the basic signal provided by the `ScrollView` class.
 | --------------- | --------------------------------------------------------- |
 | `SnapStarted`   | Emitted when the ScrollView has started to snap or flick. |
 
-A scroll view emits a `SnapStarted` when the scroll view has started to snap or flick. The signal informs the target of the scroll position, scale, and rotation.
+A scroll view emits `SnapStarted` when it starts to snap or flick. The signal informs the target of the scroll position, scale, and rotation.
 
 <a name="2"></a>
 ## Creating a ScrollView

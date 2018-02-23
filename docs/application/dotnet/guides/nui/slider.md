@@ -22,7 +22,7 @@ The slider has 2 important elements:
 
 - The track is the bar along which the handle moves.
 
-  The slider draws the track using 2 distinct images. The region between the start of the track and the handle is the progress region, and you can draw it using the `ProgressVisual` property. The region between the handle and the end of the track is drawn using the `TrackVisual` property.
+  The slider draws the track using two distinct images. The region between the start of the track and the handle is the progress region. You can draw the region using the `ProgressVisual` property. The region between the handle and the end of the track is drawn using the `TrackVisual` property.
 
 <a name="1"></a>
 ## Slider events
@@ -56,7 +56,7 @@ window.Add(slider);
 <a name="3"></a>
 ## Customizing the Slider Appearance
 
-The slider provides a set of default images, which are used automatically if you do not specify anything else.
+The slider provides a set of default images, which are used automatically, if nothing else is specified by you.
 
 If you want to customize the slider appearance, you can assign your own images using the `PropertyMap` class. You can set the size and image of the track, handle, progress region, popup, and popup arrow.
 

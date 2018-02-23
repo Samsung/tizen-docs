@@ -1,14 +1,14 @@
 # Resources
 
 NUI provides several ways to handle resource images.
-This tutorial describes the use of Resources in NUI, currently Image resources.
+This tutorial describes the use of Image resources in NUI.
 
 ## Overview
 
 Resources in NUI can apply Images or 3D Models.
 
 The common method to access these resources is through Visuals.
-Controls then use these visuals to display what is required.
+Controls use these visuals to display what is required.
 
 See [ImageView tutorial](imageview.md).
 
@@ -27,31 +27,31 @@ The following formats are supported :
 | Mircosoft Icons         | `.ico`     |
 | WAP Bitmap              | `.wbmp`    |
 
-Controls should process the provided url and internally create the matching Image visual.
-Visual creation will automatically determine if the Image is an N_PATCH, SVG, GIF not regular image from the image data.=
+Controls should process the provided URL and internally create the matching Image Visual.
+Visual creation automatically determines whether the image is N_PATCH, SVG, or GIF, which is not a regular image from the image data.
 
 ### Image Properties
 
 | Property Name        | Description       |
 |----------------------|-------------------|
-| `AlphaMaskURL`       | url to an image that will mask the main content image |
-| `CropToMask`         | Flag to determine if main content image should crop to match mask size |
-| `FittingMode`        | By default the image will shrink to fit the DesiredHeight and DesiredWidth, other modes available |
+| `AlphaMaskURL`       | url to an image that will mask the main content image. |
+| `CropToMask`         | Flag to determine if main content image should crop to match mask size. |
+| `FittingMode`        | By default the image will shrink to fit the DesiredHeight and DesiredWidth, other modes available. |
 | `SamplingMode`       | The type of sampling to be used. Default is Box. |
-| `DesiredWidth`       | The width you would like the Image to be.  Affected by FittingMode        |
-| `DesiredHeight`      | The height you would like the Image to be. Affected by FittingMode        |
+| `DesiredWidth`       | The width you would like the Image to be.  Affected by FittingMode.       |
+| `DesiredHeight`      | The height you would like the Image to be. Affected by FittingMode.       |
 | `SynchronousLoading` | If loading should block the execution thread, disabled by Default.        |
-| `PixelArea`          | Can be set to display only a portion of the Image           |
-| `WrapModeU`          | Define how sampling should behave for u coordinate |
-| `WrapModeV`          | Define how sampling should behave for v coordinate |
+| `PixelArea`          | Can be set to display only a portion of the Image.           |
+| `WrapModeU`          | Define how sampling should behave for u coordinate. |
+| `WrapModeV`          | Define how sampling should behave for v coordinate. |
 
 
 ### N-Patch only properties
 
 | Property Name        | Description       |
 |----------------------|-------------------|
-| `Border`             | Specifies border values for N-Patch images |
-| `BorderOnly`         | Specifies if ONLY borders to be shown for N-Patch images |
+| `Border`             | Specifies border values for N-Patch images. |
+| `BorderOnly`         | Specifies if ONLY borders to be shown for N-Patch images. |
 
 ### Animated GIF only properties
 
@@ -59,14 +59,14 @@ Visual creation will automatically determine if the Image is an N_PATCH, SVG, GI
 |---------------|-------------------|
 | `BatchSize`   | Number of Images to decode before animation starts, Default is 1. |
 | `CacheSize`   | Number of images to keep cached, Can increase or decrease depending on memory available. |
-| `FrameDelay`  | Millisecond delay between frames |
+| `FrameDelay`  | Millisecond delay between frames. |
 
 Synchronous loading has niche uses, eg. ensuring image has loaded before continuing to execute application code,
 the common use is to connect to the control's `ResourceReady` and perform operations at that point.
 
 ## Reducing Image memory footprint
 
-An application loading images may want to display them at lower resolution than their native resolution.
+An application that loads images can also display images at a lower resolution than their native resolution.
 
 To support this, DALi can resize an image at load time so that its in-memory copy uses less space and its visual quality benefits from being prefiltered.
 `DesiredWidth` and `DesiredHeight` can be set to the Image visual and then `FittingMode`.

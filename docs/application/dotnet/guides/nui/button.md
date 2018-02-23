@@ -1,6 +1,6 @@
 # Button
 
-A button is a small object on the UI that you press in order to operate it.
+A button is a NUI control that you can press in order to operate it.
 The NUI button controls include various button types:
 
 - `PushButton` changes its appearance when pressed, and returns to its original appearance when released.

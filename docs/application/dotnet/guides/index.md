@@ -15,7 +15,7 @@ Select the feature you are interested in and see what Tizen offers for your appl
 
 -   [Natural User Interface](nui/NUIoverview.md)
 
-    The Natural User Interface (NUI) features provide various aspects of creating a visual outlook for the user application to ensure the best possible user experience. NUI is a rich GUI library for creating 2D or 3D applications. These applications are run on a range of Tizen devices, such as TVs and wearables. NUI is built on a multi-threaded architecture, enabling realistic smooth animations.
+    The Natural User Interface (NUI) features provide various aspects of creating a visual outlook for the user application to ensure the best user experience. NUI is a rich GUI library for creating a 2-dimensional or a 3-dimensional applications. These applications run on a range of Tizen devices, such as TVs and wearables. NUI is built on a multi-threaded architecture by enabling realistic smooth animations.
 
 -   [Internationalization](internationalization/internationalization-cover.md)
 
