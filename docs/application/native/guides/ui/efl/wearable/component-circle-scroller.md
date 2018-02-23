@@ -14,7 +14,7 @@ For more information, see the [Efl Extension Circle Scroller](../../../../../org
 
 ## Adding a Circle Scroller Component
 
-To create a circle scroller component, use the `eext_circle_object_scroller_add()` function. Pass a `elm_scroller` component as the first parameter and a [circle surface](component-circ-surface.md) as the second parameter.
+To create a circle scroller component, use the `eext_circle_object_scroller_add()` function. Pass a `elm_scroller` component as the first parameter and a [circle surface](component-circle-surface.md) as the second parameter.
 
 ```
 Evas_Object *scroller;
@@ -78,7 +78,7 @@ To configure the circle properties of the circle scroller:
   - `horizontal,scroll,bar`: Horizontal scroller circle item.
   - `horizontal,scroll,bg`: Horizontal scroller background circle item.
 
-For more information, see [Circle Object](component-circ-object.md) and the [Efl Extension Circle Object](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__EXTENSION__CIRCLE__OBJECT__MODULE.html) API.
+For more information, see [Circle Object](component-circle-object.md) and the [Efl Extension Circle Object](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__EXTENSION__CIRCLE__OBJECT__MODULE.html) API.
 
 ## Related Information
 - Dependencies

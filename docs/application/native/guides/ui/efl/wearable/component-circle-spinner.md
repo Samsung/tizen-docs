@@ -27,7 +27,7 @@ To create a circle spinner component:
    elm_object_style_set(spinner, "circle");
    ```
 
-3. Create an `eext_spinner` object using the `eext_circle_object_spinner_add()` function. Pass a [circle surface](component-circ-surface.md) as the second parameter.
+3. Create an `eext_spinner` object using the `eext_circle_object_spinner_add()` function. Pass a [circle surface](component-circle-surface.md) as the second parameter.
 
    ```
    circle_spinner = eext_circle_object_spinner_add(spinner, surface);
@@ -86,7 +86,7 @@ To configure the circle properties of the circle spinner:
 
   To change the item properties, use the `eext_circle_object_item_XXX()` functions.
 
-For more information, see [Circle Object](component-circ-object.md) and the [Efl Extension Circle Object](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__EXTENSION__CIRCLE__OBJECT__MODULE.html) API.
+For more information, see [Circle Object](component-circle-object.md) and the [Efl Extension Circle Object](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__EXTENSION__CIRCLE__OBJECT__MODULE.html) API.
 
 ## Related Information
 - Dependencies

@@ -2,7 +2,7 @@
 
 This feature is supported in wearable applications only.
 
-The circle genlist component is used to visualize and utilize the scroll effect for the [genlist](component-genlist-w.md) component (`elm_genlist`). While the `elm_genlist` component provides a scrollbar with straight horizontal and vertical movement, the circle genlist provides a scrollbar with circular movement. It is also operated with rotary events to move to the next or previous item.
+The circle genlist component is used to visualize and utilize the scroll effect for the [genlist](component-genlist.md) component (`elm_genlist`). While the `elm_genlist` component provides a scrollbar with straight horizontal and vertical movement, the circle genlist provides a scrollbar with circular movement. It is also operated with rotary events to move to the next or previous item.
 
 For more information, see the [Efl Extension Circle Genlist](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__EXTENSION__CIRCLE__GENLIST__MODULE.html) API.
 
@@ -12,7 +12,7 @@ For more information, see the [Efl Extension Circle Genlist](../../../../../org.
 
 ## Adding a Circle Genlist Component
 
-To create a circle genlist component, use the `eext_circle_object_genlist_add()` function. Pass a genlist and [circle surface](component-circ-surface.md) to the function as parameters.
+To create a circle genlist component, use the `eext_circle_object_genlist_add()` function. Pass a genlist and [circle surface](component-circle-surface.md) to the function as parameters.
 
 ```
 Evas_Object *genlist;
@@ -71,7 +71,7 @@ To configure the circle properties of the circle genlist:
   - `default`: Default circle item that draws a vertical scroll bar.
   - `vertical,scroll,bg`: Vertical scroll background circle item.
 
-For more information, see [Circle Object](component-circ-object.md) and the [Efl Extension Circle Object](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__EXTENSION__CIRCLE__OBJECT__MODULE.html) API.
+For more information, see [Circle Object](component-circle-object.md) and the [Efl Extension Circle Object](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__EXTENSION__CIRCLE__OBJECT__MODULE.html) API.
 
 ## Related Information
 - Dependencies

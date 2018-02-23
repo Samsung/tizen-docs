@@ -10,7 +10,7 @@ The style of a UI component refers to its graphical appearance determined by the
 
 When more than one style is defined for a UI component in the current theme, you can set a different style than the default one using the `elm_object_style_set()` function. It is also possible to access the current style with the `elm_object_style_get()` function.
 
-The default theme of the mobile profile specifies several [styles for the check UI component](component-check-m.md#styles). The following example shows how to set the `favorite` style to a newly created check object:
+The default theme of the mobile profile specifies several [styles for the check UI component](mobile/component-check.md#styles). The following example shows how to set the `favorite` style to a newly created check object:
 
 ```
 Evas_Object *check;

@@ -16,7 +16,7 @@ Evas_Object *circle_obj;
 circle_obj = eext_circle_object_add(parent, surface);
 ```
 
-When creating a circle object, you can select whether the circle object is rendered by itself or by the [circle surface](component-circ-surface.md):
+When creating a circle object, you can select whether the circle object is rendered by itself or by the [circle surface](component-circle-surface.md):
 
 - If the circle surface is passed as the second parameter, a circle object connected with a circle surface is created, and it is rendered by the circle surface.
 - If `NULL` is passed as the second parameter, the new circle object is managed and rendered by itself.

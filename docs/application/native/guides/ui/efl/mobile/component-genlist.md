@@ -390,7 +390,7 @@ The following table lists the available component styles.
 **Table: Genlist styles**
 
 | Style                            | Sample                                   | Notes                                    |
-|------------------------ ---------|------------------------------------------|------------------------------------------|
+|---------------------------------|------------------------------------------|------------------------------------------|
 | `elm/genlist/base/solid/default` | ![elm/genlist/base/solid/default](./media/styleguide_genlist_def.png) | N/A                                      |
 | `default`                        |                  -                        | Same as `effect`.                        |
 | `effect`                         |              -                            | When the genlist reaches its edge during scrolling, it shows an effect. |

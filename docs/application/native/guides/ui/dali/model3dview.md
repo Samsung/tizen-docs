@@ -35,7 +35,7 @@ Stage::GetCurrent().Add( model3dView );
 You can modify the `Model3dView` appearance and behavior through its properties. To change a property from its default value, use the `SetProperty()` function.
 
 > **Note**  
-T> he resource properties require absolute references as their paths. However, the root resource path for your application can be obtained through the `app_get_resource_path()` function of the App Common API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__CAPI__APP__COMMON__MODULE.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__CAPI__APP__COMMON__MODULE.html) applications), and relative paths can be appended to that root path. If you want to use relative paths, you must specify them in your build files.
+> The resource properties require absolute references as their paths. However, the root resource path for your application can be obtained through the `app_get_resource_path()` function of the App Common API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__CAPI__APP__COMMON__MODULE.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__CAPI__APP__COMMON__MODULE.html) applications), and relative paths can be appended to that root path. If you want to use relative paths, you must specify them in your build files.
 
 The following table lists the available `Model3dView` properties.
 
@@ -82,6 +82,6 @@ The following figure illustrates the illumination models: `DIFFUSE` (top left), 
 ![DIFFUSE_WITH_NORMAL_MAP model](./media/dali_model3.png)
 
 ## Related Information
-* Dependencies
- - Tizen 3.0 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 3.0 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

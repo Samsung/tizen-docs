@@ -1,6 +1,6 @@
 # Circle Slider
 
-The circle slider UI component changes corresponding to rotary events. The circle slider not only extends the UI feature of the [slider](component-slider-w.md) component (`elm_slider`), but also replaces the functionalities of the `elm_slider` in the circular design. For more information, see the [Efl Extension Circle Slider](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__EXTENSION__CIRCLE__SLIDER__MODULE.html) API.
+The circle slider UI component changes corresponding to rotary events. The circle slider not only extends the UI feature of the [slider](component-slider.md) component (`elm_slider`), but also replaces the functionalities of the `elm_slider` in the circular design. For more information, see the [Efl Extension Circle Slider](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__EXTENSION__CIRCLE__SLIDER__MODULE.html) API.
 
 This feature is supported in wearable applications only.
 
@@ -86,9 +86,9 @@ The circle slider consists of 2 parts, introduced in the following table.
 **Table: Circle slider items**
 <table>
 <tr><th>Sample</th><th>Items</th></tr>
-<tr><td rowspan="2"> ![elm/slider/horizontal/warning](./media/circle_slider3.png)</td>
-<td> `default`: Default circle item, which draws a slider bar.<br>This item represents the value of the circle slider, which is a red circular area in the left example.</td></tr>
-<tr><td> `bg`: Background circle item, which is a dark circular area in the left example. </td></tr>
+<tr><td rowspan="2"> <img alt="elm/slider/horizontal/warning" src="./media/circle_slider3.png" /></td>
+<td> <code>default</code>: Default circle item, which draws a slider bar.<br>This item represents the value of the circle slider, which is a red circular area in the left example.</td></tr>
+<tr><td> <code>bg</code>: Background circle item, which is a dark circular area in the left example. </td></tr>
 </table>
 
 The following example shows how to manipulate the items.

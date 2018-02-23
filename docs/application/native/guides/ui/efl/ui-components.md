@@ -1,6 +1,6 @@
 # UI Components
 
-Elementary library provides a set of pre-built UI components that allow you to build a rich graphical user interface for your applications. Each profile provides a different set of UI components, as you can see in [Mobile UI Components](./ui-components-m.md) and [Wearable UI Components](./ui-components-w.md).
+Elementary library provides a set of pre-built UI components that allow you to build a rich graphical user interface for your applications. Each profile provides a different set of UI components, as you can see in [Mobile UI Components](mobile/ui-components.md) and [Wearable UI Components](wearable/ui-components.md).
 
 The preconditions of using Elementary UI components are covered in [Getting Started with EFL UI Programming](./getting-started.md). Elementary UI components share the same APIs for general features. For more information, see the General API (in [mobile](http://org.tizen.native.mobile.apireference/group__Elm__General.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Elm__General.html) applications).
 
@@ -13,7 +13,7 @@ The preconditions of using Elementary UI components are covered in [Getting Star
 You can use all UI components as follows:
 
 1. Add an object with the `elm_<UI_component>_add()` function.
-2. Set a style to the object with the `elm_object_style_set()` function and fill the layout of the style with a text or an image, if necessary.    You can skip this step and use the default style.   
+2. Set a style to the object with the `elm_object_style_set()` function and fill the layout of the style with a text or an image, if necessary.    You can skip this step and use the default style.
 3. Arrange the object in the [UI layout](./ui-layouts.md) you have built.
 4. Register callback functions with the `evas_object_smart_callback_call()` function.
 

@@ -101,8 +101,8 @@ The following table lists the available component styles.
 
 | Style         | Swallow part                           | Description                              |
 |-------------|--------------------------------------|----------------------------------------|
-| `default`     | `elm.swallow.content``(alias:overlay)` | Default background style with an overlay swallow part on the top. |
-| `transparent` | `elm.swallow.content``(alias:overlay)` | `elm.swallow.content``(alias:overlay)`   |
+| `default`     | `elm.swallow.content`<br>`(alias:overlay)` | Default background style with an overlay swallow part on the top. |
+| `transparent` | `elm.swallow.content`<br>`(alias:overlay)` | Transparent background style with overlay swallow part on the top. |
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).

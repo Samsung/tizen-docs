@@ -338,6 +338,6 @@ DALi provides the automatic connection management mechanism to prevent this kind
 Due to this mechanism, all the DALi sample codes start with a controller class derived from the `Dali::ConnectionTracker` class. This is a safe and typical way of making a DALi application. You can, of course, create other structures using the `Dali::ConnectionTracker` class.
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

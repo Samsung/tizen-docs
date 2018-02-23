@@ -128,7 +128,7 @@ For text decorations, `TextLabel` provides several properties. All properties ar
 **Table: TextLabel properties**
 
 | Property                 | Type      | Description                              |
-| ------------------------ | --------- | ---------------------------------------- |
+|------------------------|---------|----------------------------------------|
 | `TEXT`                   | STRING    | The text to display in UTF-8 format      |
 | `FONT_FAMILY`            | STRING    | The requested font family                |
 | `FONT_STYLE`             | STRING or MAP | The requested font style             |
@@ -213,6 +213,6 @@ label2.SetProperty( TextLabel::Property::UNDERLINE, underlineMap2 );
 ```
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

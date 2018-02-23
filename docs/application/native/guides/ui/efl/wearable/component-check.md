@@ -1,8 +1,9 @@
 # Check
 
-The check UI component accepts user input by the method of toggling. It is similar to the [radio](component-radio-mn.md) component, except that it does not work as a group. For more information, see the [Check](../../../../../org.tizen.native.mobile.apireference/group__Elm__Check.html) API.
+The check UI component accepts user input by the method of toggling. It is similar to the [radio](component-radio.md) component, except that it does not work as a group. For more information, see the [Check](../../../../../org.tizen.native.wearable.apireference/group__Elm__Check.html) API.
 
-This feature is supported in mobile applications only.
+
+This feature is supported in wearable applications only.
 
 ## Basic Usage
 
@@ -21,26 +22,15 @@ To use a check component in your application:
    - Set a style to the check component with the `elm_object_style_set()` function. If you use the default style, you can skip this step.
 
      ```
-     elm_object_style_set(check, "favorite");
+     elm_object_style_set(check, "popup");
      ```
 
-   - Set a label to the check component with the `elm_object_text_set()` or `elm_object_part_text_set()` function:
+
+   - Set a label to the check component with the `elm_object_text_set()` function:
 
      ```
      /* Default style */
      elm_object_text_set(check, "Check");
-
-     /* on&off style */
-     elm_object_part_text_set(check, "on", "True");
-     elm_object_part_text_set(check, "off", "False");
-     ```
-
-   - Set an icon to the button with the `elm_object_part_content_set()` function and pass the `icon` part name as a parameter.
-
-     ```
-     Evas_Object *icon;
-
-     elm_object_part_content_set(check, "icon", icon);
      ```
 
 3. Register the [callback](#callbacks) functions.The following example shows how to define and register a callback for the `changed` signal:
@@ -59,7 +49,7 @@ The following example shows a simple use case of the check component.
 
 **Example: Check use case**
 
- ![Check component](./media/check1.png)
+ ![Circle check component](./media/check_wear_sq_default.png) ![Rect check component](./media/check_wear_circle_default.png)
 
 ```
 Evas_Object *win;
@@ -73,11 +63,17 @@ Evas_Object *check;
 
 /* Add a box to pack a check */
 box = elm_box_add(nf);
-elm_object_content_set(nf, box);
 evas_object_show(box);
 elm_naviframe_item_push(nf, "Check", NULL, NULL, box, NULL);
 
 check = elm_check_add(box);
+
+elm_object_style_set(check, "default");
+evas_object_show(check);
+elm_box_pack_end(box, check);
+
+check = elm_check_add(box);
+elm_object_style_set(check, "on&off");
 evas_object_show(check);
 elm_box_pack_end(box, check);
 ```
@@ -86,13 +82,21 @@ elm_box_pack_end(box, check);
 
 The following table lists the available component styles.
 
-**Table: Check styles**
+**Table: Check styles for rectangular devices**
 
-| Style      | Sample                                   | Text part  | Swallow part |
-|----------|----------------------------------------|----------|------------|
-| `default`  | ![elm/check/base/default](./media/check_default.png) | `default`  | `icon`       |
-| `favorite` | ![elm/check/base/favorite](./media/check_favorite.png) | N/A        | N/A          |
-| `on&off`   | ![elm/check/base/on&off](./media/check_on_off.png) | `on` `off` | N/A          |
+| Style     | Sample                                   | Text part |
+|---------|:----------------------------------------:|---------|
+| `default` | ![elm/check/base/default](./media/rect_default_popup.png) | N/A       |
+| `on&off`  | ![elm/check/base/on&off](./media/rect_onoff.png) | N/A       |
+| `popup`   | ![elm/check/base/popup](./media/rect_default_popup.png) | `default` |
+
+**Table: Check styles for circular devices**
+
+| Style         | Sample                                   | Text part |
+|-------------|----------------------------------------|---------|
+| `default`     | ![elm/check/base/default](./media/circle_default.png) | N/A       |
+| `on&off`      | ![elm/check/base/on&off](./media/circle_onoff.png) | N/A       |
+| `small popup` | ![elm/check/base/popup](./media/circle_small_popup.png) | `default` |
 
 ## Callbacks
 
@@ -112,4 +116,4 @@ You can register callback functions connected to the following signals for a che
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

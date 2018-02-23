@@ -1,6 +1,6 @@
 # Notify
 
-The notify UI component displays a container in a particular region of the parent object. It can receive some content, and become automatically hidden after a certain amount of time. The [popup](component-popup-m.md) component is very similar to the notify component, but supports many common layouts. For more information, see the [Notify](../../../../../org.tizen.native.mobile.apireference/group__Elm__Notify.html) API.
+The notify UI component displays a container in a particular region of the parent object. It can receive some content, and become automatically hidden after a certain amount of time. The [popup](component-popup.md) component is very similar to the notify component, but supports many common layouts. For more information, see the [Notify](../../../../../org.tizen.native.mobile.apireference/group__Elm__Notify.html) API.
 
 This feature is supported in mobile applications only.
 

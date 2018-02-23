@@ -52,6 +52,6 @@ There are certain restrictions when writing stereoscopic applications using DALi
 > DALi stereoscopic viewing mode is still under development, and may not be mature enough for commercialized applications at the moment. For example, distortion correction is not supported yet. Tizen continues to improve the stereoscopic mode to give you a chance to provide a more exciting and immersive user experience to your customers.
 
 ## Related Information
-* Dependencies
- - Tizen 2.4 and Higher for Mobile
- - Tizen 3.0 and Higher for Wearable
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

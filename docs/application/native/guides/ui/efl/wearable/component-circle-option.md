@@ -73,8 +73,8 @@ To configure the more option cue button direction, and the text and content of v
 
   | Part                 | Setting function                         | View                                     |
   |--------------------|-----------------------|--------------------------------|
-  | `selector,main_text` | `eext_more_option_item_part_text_set()``eext_more_option_item_domain_translatable_part_text_set()` | ![main_text](./media/more_option_main.png) |
-  | `selector,sub_text`  | `eext_more_option_item_part_text_set()``eext_more_option_item_domain_translatable_part_text_set()` | ![sub_text](./media/more_option_sub.png) |
+  | `selector,main_text` | `eext_more_option_item_part_text_set()`<br> `eext_more_option_item_domain_translatable_part_text_set()` | ![main_text](./media/more_option_main.png) |
+  | `selector,sub_text`  | `eext_more_option_item_part_text_set()`<br> `eext_more_option_item_domain_translatable_part_text_set()` | ![sub_text](./media/more_option_sub.png) |
   | `item,icon`          | `eext_more_option_item_part_content_set()` | ![Item content](./media/more_option_item.png) |
 
 ## Using the More Option Callbacks

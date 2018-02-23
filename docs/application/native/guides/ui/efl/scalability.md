@@ -596,20 +596,20 @@ For example, the following table illustrates what happens to the parts marked wi
 <tr><th>720x384 (15:8)</th><th>720x640 (9:8)</th></tr>
 <tr>
   <td> HORIZONTAL<br>Resizing based on the container width while keeping the image aspect ratio.Extra height goes outside the image area and is clipped. </td>
-  <td> ![Scaling effect](./media/scale_effect_1.png) </td>
-  <td> ![Scaling effect](./media/scale_effect_2.png) </td></tr>
+  <td> <img alt="Scaling effect" src="./media/scale_effect_1.png" /> </td>
+  <td> <img alt="Scaling effect" src="./media/scale_effect_2.png" /> </td></tr>
 <tr>
   <td>  VERTICAL<br>Resizing based on the container height while keeping the image aspect ratio.Extra width goes outside the image area and is clipped. </td>
-  <td> ![Scaling effect](./media/scale_effect_3.png) </td>
-  <td> ![Scaling effect](./media/scale_effect_4.png) </td></tr>
+  <td> <img alt="Scaling effect" src="./media/scale_effect_3.png" /> </td>
+  <td> <img alt="Scaling effect" src="./media/scale_effect_4.png" /> </td></tr>
 <tr>
   <td> BOTH<br>Resizing based on the container area while keeping the image aspect ratio.No extra width or height goes outside the image area, so the entire image is always shown.</td>
-  <td> ![Scaling effect](./media/scale_effect_5.png) </td>
-  <td> ![Scaling effect](./media/scale_effect_6.png) </td></tr>
+  <td> <img alt="Scaling effect" src="./media/scale_effect_5.png" /> </td>
+  <td> <img alt="Scaling effect" src="./media/scale_effect_6.png" /> </td></tr>
 <tr>
   <td> NONE<br>Resizing to fill the available area while keeping the image aspect ratio.Extra width or height goes outside the image area and is clipped. </td>
-  <td> ![Scaling effect](./media/scale_effect_7.png) </td>
-  <td>  ![Scaling effect](./media/scale_effect_8.png) </td></tr>
+  <td> <img alt="Scaling effect" src="./media/scale_effect_7.png" /> </td>
+  <td> <img alt="Scaling effect" src="./media/scale_effect_8.png" /> </td></tr>
 </table>
 
 ### Setting the Image Aspect Ratio
@@ -631,8 +631,8 @@ You can set the aspect ratio of an image object with additional functions:
 <tr><th colspan="2">Container area</th></tr>
 <tr><th>720x384 (15:8)</th><th> 720x640 (9:8)</th></tr>
 <tr>
-  <td> ![Scaling effect](./media/scale_effect_9.png)</td>
-  <td>  ![Scaling effect](./media/scale_effect_10.png)</td></tr>
+  <td> <img alt="Scaling effect" src="./media/scale_effect_9.png" /></td>
+  <td> <img alt="Scaling effect" src="./media/scale_effect_10.png" /></td></tr>
 </table>
 
 ## Related Information

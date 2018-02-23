@@ -193,8 +193,8 @@ The following table lists the available component styles.
 | `elm/toolbar/base/default`               | ![elm/toolbar/base/default](./media/toolbar_default.png) | N/A        | N/A                | N/A                                      |
 | `elm/toolbar/base/navigationbar`         | ![elm/toolbar/base/navigationbar](./media/toolbar_navigation.png) | N/A        | N/A                | N/A                                      |
 | `elm/toolbar/base/tabbar_with_title`     | ![elm/toolbar/base/tabbar_with_title](./media/toolbar_tabbar.png) | N/A        | N/A                | N/A                                      |
-| `elm/toolbar/item/tabbar``elm/toolbar/item/default` |                                          | `elm.text` | `elm.swallow.icon` | This style is for the toolbar's item. Use the `elm_toolbar_item_append()` function to set the text and the icon. |
-| `elm/toolbar/item/navigationbar`         |                                          | `elm.text` | N/A                | This style is for the toolbar's item. Use the `elm_toolbar_item_append()` function to set the text and the icon. |
+| `elm/toolbar/item/tabbar``elm/toolbar/item/default` |                                          | `elm.text` | `elm.swallow.icon` | This style is for the toolbar's item.<br> Use the `elm_toolbar_item_append()` function to set the text and the icon. |
+| `elm/toolbar/item/navigationbar`         |                                          | `elm.text` | N/A                | This style is for the toolbar's item.<br> Use the `elm_toolbar_item_append()` function to set the text and the icon. |
 
 ## Callbacks
 

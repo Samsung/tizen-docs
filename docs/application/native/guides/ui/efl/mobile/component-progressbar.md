@@ -161,9 +161,9 @@ The following table lists the available component styles.
 
 | Style                                    | Sample                                   | Text part                                |
 |----------------------------------------|----------------------------------------|----------------------------------------|
-| `elm/progressbar/horizontal/default`     | ![elm/progressbar/horizontal/default](./media/progressbar_default.png) | `elm.text.top.right` `(default)``elm.text.bottom.left``elm.text.bottom.right` |
-| `elm/progressbar/horizontal/pending`     | ![elm/progressbar/horizontal/pending](./media/progressbar_pending.png) | `elm.text.top.right` `(default)``elm.text.bottom.left``elm.text.bottom.right` |
-| `elm/progressbar/horizontal/process_large``elm/progressbar/horizontal/process_medium``elm/progressbar/horizontal/process_small` | ![elm/progressbar/horizontal/process_large](./media/progressbar_wheel.png) | N/A                                      |
+| `elm/progressbar/horizontal/default`     | ![elm/progressbar/horizontal/default](./media/progressbar_default.png) | `elm.text.top.right`<br>`(default)`<br>`elm.text.bottom.left`<br>`elm.text.bottom.right` |
+| `elm/progressbar/horizontal/pending`     | ![elm/progressbar/horizontal/pending](./media/progressbar_pending.png) | `elm.text.top.right`<br> `(default)`<br>`elm.text.bottom.left`<br>`elm.text.bottom.right` |
+| `elm/progressbar/horizontal/process_large`<br>`elm/progressbar/horizontal/process_medium`<br>`elm/progressbar/horizontal/process_small` | ![elm/progressbar/horizontal/process_large](./media/progressbar_wheel.png) | N/A                                      |
 
 ## Callbacks
 

@@ -124,14 +124,14 @@ The following table lists the available component styles according to the UI scr
 
 **Table: Progressbar styles**
 
-| Style                                    | Sample                                   |                                          |
-|----------------------------------------|----------------------------------------|----------------------------------------|
-| `elm/progressbar/horizontal/default`     | ![elm/progressbar/horizontal/default](./media/progressbar_default_wn.png)(rectangular and circular) |                                          |
-| `elm/progressbar/horizontal/pending_list` | ![elm/progressbar/horizontal/pending](./media/progressbar_pending_wn.png)(rectangular and circular) |                                          |
-| `elm/progressbar/horizontal/process`     | ![elm/progressbar/horizontal/process_large](./media/progressbar_process_wn.png)(rectangular) | ![elm/progressbar/horizontal/default](./media/progressbar_process_o_wn.png)(circular) |
-| `elm/progressbar/horizontal/process/groupindex` | ![elm/progressbar/horizontal/process_large](./media/progressbar_small_o_wn.png)(rectangular) |                                          |
-| `elm/progressbar/horizontal/process/small` | ![elm/progressbar/horizontal/pending](./media/progressbar_process_small_wn.png)(circular) |                                          |
-| `elm/progressbar/horizontal/process/popup/small` | ![elm/progressbar/horizontal/pending](./media/progressbar_process_small_wn.png)(circular) |                                          |
+| Style                                    | Sample                                   |
+|----------------------------------------|----------------------------------------|
+| `elm/progressbar/horizontal/default`     | ![elm/progressbar/horizontal/default](./media/progressbar_default_wn.png)<br> (rectangular and circular) |
+| `elm/progressbar/horizontal/pending_list` | ![elm/progressbar/horizontal/pending](./media/progressbar_pending_wn.png)<br> (rectangular and circular) |
+| `elm/progressbar/horizontal/process`     | ![elm/progressbar/horizontal/process_large](./media/progressbar_process_wn.png)<br>(rectangular)<br> ![elm/progressbar/horizontal/default](./media/progressbar_process_o_wn.png)<br> (circular) |
+| `elm/progressbar/horizontal/process/groupindex` | ![elm/progressbar/horizontal/process_large](./media/progressbar_small_o_wn.png)<br> (rectangular) |
+| `elm/progressbar/horizontal/process/small` | ![elm/progressbar/horizontal/pending](./media/progressbar_process_small_wn.png)<br> (circular) |
+| `elm/progressbar/horizontal/process/popup/small` | ![elm/progressbar/horizontal/pending](./media/progressbar_process_small_wn.png)<br> (circular) |
 
 ## Callbacks
 

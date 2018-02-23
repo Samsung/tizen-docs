@@ -68,7 +68,7 @@ images {
 
       If border scaling is enabled, normally the output border sizes scale accordingly. For example, if 3 pixels on the left edge are set as a border, then normally at scale 1.0, those 3 columns are always the exact 3 columns of output, or at scale 2.0 they are 6 columns, or 0.33 they merge into a single column. This property multiplies the input scale factor by this multiplier, allowing the creation of supersampled borders to enable higher resolution outputs by always using the highest resolution artwork and then at runtime scaling it down. Valid values are: 0.0 or bigger (0.0 or 1.0 to switch it off).
 
-> **Note**
+> **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

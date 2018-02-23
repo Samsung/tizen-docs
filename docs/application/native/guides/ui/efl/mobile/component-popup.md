@@ -145,9 +145,9 @@ The following table lists the available component styles.
 
 | Style      | Sample                                   | Text part                            | Swallow part                             |
 |----------|----------------------------------------|------------------------------------|----------------------------------------|
-| `default`  | ![elm/button/base/default](./media/popup_default.png) | `default``title,text``subtitle,text` | `elm.swallow.content``button1``button2``button3` |
+| `default`  | ![elm/button/base/default](./media/popup_default.png) | `default`<br>`title,text`<br>`subtitle,text` | `elm.swallow.content`<br>`button1`<br>`button2`<br>`button3` |
 | `toast`    | ![elm/button/base/default](./media/popup_toast.png) | `default`                            | `elm.swallow.content`                    |
-| `theme_bg` | ![elm/button/base/default](./media/popup_theme_bg.png) | `default``title,text``subtitle,text` | `elm.swallow.content``button1``button2``button3` |
+| `theme_bg` | ![elm/button/base/default](./media/popup_theme_bg.png) | `default`<br>`title,text`<br>`subtitle,text` | `elm.swallow.content`<br>`button1`<br>`button2`<br>`button3` |
 
 The `theme_bg` style is a unique style for supporting the genlist component's banded effect.
 
