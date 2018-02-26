@@ -31,7 +31,7 @@ To create a provider, you must [export its provider functionalities](#export) in
 
 ## Prerequisites
 
-The data control use cases run 2 applications. Each application plays a different role: one as the consumer, the other as the provider.
+The data control use cases run two applications. Each application plays a different role: one as the consumer, the other as the provider.
 
 To enable your application to use the data control functionality:
 
@@ -46,11 +46,13 @@ To enable your application to use the data control functionality:
 
 2. For the provider, in the Tizen Studio, double-click **tizen-manifest.xml**, and in the manifest editor, go to **Advanced > Data Control**, and click **+** to add the provider details. Add the **Read** and **Write** access rights to both **SQL** and **Map** types.
 
-   The following code example shows how the `<datacontrol>` element is consequently added to the `tizen-manifest.xml` file:
+    You can set the data access to trusted, to allow other applications that are signed with the same certificate to access the data. Additionally, you can also define privileges to restrict access for applications having certain defined privileges.
+
+    The following sample code explains, how the `<datacontrol>` elements are consequently added to the `tizen-manifest.xml` file:
 
    ```
    <?xml version="1.0" encoding="utf-8"?>
-   <manifest xmlns="http://tizen.org/ns/packages" api-version="2.4"
+    <manifest xmlns="http://tizen.org/ns/packages" api-version="4.0"
              package="@PACKAGE_NAME@" version="@VERSION@" install-location="internal-only">
       <label>datacontrolprovider</label>
       <author email="PUT YOUR EMAIL" href="www.tizen.org">PUT YOUR NAME</author>
@@ -59,16 +61,17 @@ To enable your application to use the data control functionality:
                       exec="datacontrolprovider"
                       nodisplay="true" multiple="false" type="capp" taskmanage="true"
                       auto-restart="false" on-boot="false">
-         <datacontrol providerid = "Your Provider ID"
-                      access="ReadWrite" type="Sql"/>
-         <datacontrol providerid = "Your Provider ID"
-                      access="ReadWrite" type="Map"/>
-      </service-application>
-      <privileges>
-         <privilege>http://tizen.org/privilege/datasharing</privilege>
-      </privileges>
-   </manifest>
-   ```
+          <datacontrol providerid = "Your Provider ID" access="ReadWrite" type="Sql" trusted="True">
+             <privilege>http://tizen.org/privilege/contact.read</privilege>
+             <privilege>http://tizen.org/privilege/email</privilege>
+          </datacontrol>
+          <datacontrol providerid = "Your Provider ID" access="ReadWrite" type="Map" trusted="False"/>
+       </service-application>
+       <privileges>
+          <privilege>http://tizen.org/privilege/datasharing</privilege>
+       </privileges>
+    </manifest>
+    ```
 
 3. To use the functions and data types of the Data Control API, include the `<data_control.h>` header file in your application:
 
@@ -1023,14 +1026,19 @@ The data model must be opened to the public to help other applications to use th
 
 - Data accessibility
 
-  Tizen native applications can control read and write access from other applications by defining data control accessibility.
+  - Tizen native applications can control read and write access from other applications by defining data control accessibility.
+- Trusted
+  - You can allow access from other applications signed with the same certificate by setting the trusted status for the data control.
+- Privileges
+  - Your provider application can restrict access to applications having certain defined privileges.
+
 
 **Table: Data model example of a data control provider**
 
-| Data control type | Data control provider ID                 | Data control data ID | Data schema              | Data schema      | Data accessibility           |
-|-------------------|------------------------------------------|----------------------| ------------------------ | ----------------------- | ---------- |
-| SQL               | `http://<vendor.com>/datacontrol/provider/sample` | `data1`              | `column1`(Type: Integer) | `column2`(Type: String) | Read-Only  |
-| Map               | `http://<vendor.com>/datacontrol/provider/sample2` | `data2`              | `key1`(Type: String)     | `key2`(Type: String)    | Read-Write |
+| Data control type | Data control provider ID                 | Data control data ID | Data schema              | Data accessibility      | Trusted    | Privileges |                                          |
+|-----------------|----------------------------------------|--------------------|------------------------|-----------------------|----------|----------|----------------------------------------|
+| SQL               | `http://<vendor.com>/datacontrol/provider/sample` | `data1`              | `column1`(Type: Integer) | `column2`(Type: String) | Read-Only  | True       | `http://tizen.org/privilege/application.admin` |
+| Map               | `http://<vendor.com>/datacontrol/provider/sample2` | `data2`              | `key1`(Type: String)     | `key2`(Type: String)    | Read-Write | False      | `http://tizen.org/privilege/appmanager.launch` |
 
 
 ## Related Information
