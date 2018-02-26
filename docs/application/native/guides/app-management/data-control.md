@@ -31,7 +31,7 @@ To create a provider, you must [export its provider functionalities](#export) in
 
 ## Prerequisites
 
-The data control use cases run 2 applications. Each application plays a different role: one as the consumer, the other as the provider.
+The data control use cases run two applications. Each application plays a different role: one as the consumer, the other as the provider.
 
 To enable your application to use the data control functionality:
 
@@ -46,7 +46,7 @@ To enable your application to use the data control functionality:
 
 2. For the provider, in the Tizen Studio, double-click **tizen-manifest.xml**, and in the manifest editor, go to **Advanced > Data Control**, and click **+** to add the provider details. Add the **Read** and **Write** access rights to both **SQL** and **Map** types.
 
-    You can set the data access to trusted, to allow other applications that are signed with the same certificate to access the data. Additionally, you can also define privileges to restrict access for applications having certain defined privileges.
+    You can set the data access to trusted, to allow other applications that are signed with the same certificate to access the data. Additionally, you can also define privileges to restrict access for applications having certain defined privileges.
 
     The following sample code explains, how the `<datacontrol>` elements are consequently added to the `tizen-manifest.xml` file:
 
