@@ -261,15 +261,15 @@ To use the Application API (in [mobile](../../../../org.tizen.web.apireference/h
 
 You can retrieve information about applications in various ways:
 
-- Retrieve information about installed applications with the `getAppInfo()` and `getAppsInfo()` methods of the `ApplicationManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#ApplicationManager) applications).	 
+- Retrieve information about installed applications with the `getAppInfo()` and `getAppsInfo()` methods of the `ApplicationManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#ApplicationManager) applications).
 
- These methods can be used to access the `ApplicationInformation` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationInformation), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationInformation), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#ApplicationInformation) applications) to retrieve information about installed applications, such as their name, icon path, and version.
+  These methods can be used to access the `ApplicationInformation` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationInformation), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationInformation), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#ApplicationInformation) applications) to retrieve information about installed applications, such as their name, icon path, and version.
 
-- Retrieve information about running applications with the `getAppContext()` and `getAppsContext()` methods of the `ApplicationManager` interface.	 
+- Retrieve information about running applications with the `getAppContext()` and `getAppsContext()` methods of the `ApplicationManager` interface.
 
-   These methods can be used to access the `ApplicationContext` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationContext), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationContext), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#ApplicationContext) applications) to retrieve the application ID and context ID of the running application.
+  These methods can be used to access the `ApplicationContext` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationContext), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationContext), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html#ApplicationContext) applications) to retrieve the application ID and context ID of the running application.
 
-   The application ID can be used to retrieve application information, or to launch an application. The context ID is a unique identifier given by the platform to a running application.
+  The application ID can be used to retrieve application information, or to launch an application. The context ID is a unique identifier given by the platform to a running application.
 
 - Retrieve information about battery usage per application with the `getBatteryUsageInfo()` method of the `ApplicationManager` interface **in mobile and wearable applications only**.
 
