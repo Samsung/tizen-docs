@@ -370,7 +370,7 @@ The following table describes the schema extension properties that you can edit.
   **Application Control**</td>
   <td>
 
-  Describes the [application control functionalities](../../guides/app-management/appcontrols.md) provided by the application. To define an application control used to  access the functionality of your application, click **+** in the  **Application Control** panel and define the details.
+  Describes the [application control functionalities](../../guides/app-management/app-controls.md) provided by the application. To define an application control used to  access the functionality of your application, click **+** in the  **Application Control** panel and define the details.
 
   The **operation**, **uri**, and **mime** fields describe the functionalities that other applications can request and the **src** field describes the application page that handles the request.<br>
 

@@ -15,7 +15,7 @@ Since Tizen platform 3.0, some privileges are categorized as privacy-related and
 > **Note**  
 > In applications with the platform version 3.0 or higher, if you use privacy-related privileged APIs, make sure that the user has switched the privilege on before making the function call. Otherwise, the application does not work as expected.
 >
-> Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../guides/security/ppm.md) using the Privacy Privilege API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/ppm.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/ppm.html) applications).
+> Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../guides/security/privacy-related-permissions.md) using the Privacy Privilege API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/ppm.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/ppm.html) applications).
 
 The Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying Privilege Usage](../../tizen-studio/web-tools/privilege-checker.md).
 

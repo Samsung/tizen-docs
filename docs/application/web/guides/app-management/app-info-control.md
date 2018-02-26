@@ -20,11 +20,11 @@ You can use the following application information and control features in your W
 
     You can set up application badges. In the device application list, you can show a badge with the application icon to provide additional information about the application state or notifications to the user.
 
-  - [Application Controls](./appcontrols.md)
+  - [Application Controls](app-controls.md)
 
     The application controls allow you to share an application's functionality. Using another application's features through application controls reduces the time and effort needed to develop your own application. You can also allow other applications to share your functionality by exporting your application control functionalities.
 
-  - [Widget Information](./widget-info.md) **in mobile and wearable applications only**
+  - [Widget Information](widget-info.md) **in mobile and wearable applications only**
 
     You can manage installed widgets and widget instances in various ways, such as retrieving information about widgets, or getting the widget instances and receiving notifications when the state of the widget changes.
 
