@@ -46,7 +46,7 @@ To enable your application to use the data control functionality:
 
 2. For the provider, in the Tizen Studio, double-click **tizen-manifest.xml**, and in the manifest editor, go to **Advanced > Data Control**, and click **+** to add the provider details. Add the **Read** and **Write** access rights to both **SQL** and **Map** types.
 
-    You can set the data access to trusted, to allow other applications that are signed with the same certificate to access the data. Additionally, you can also define privileges to restrict access for applications having certain predefined privileges.
+    You can set the data access to trusted, to allow other applications that are signed with the same certificate to access the data. Additionally, you can also define privileges to restrict access for applications having certain defined privileges.
 
     The following sample code explains, how the `<datacontrol>` elements are consequently added to the `tizen-manifest.xml` file:
 
@@ -1030,7 +1030,7 @@ The data model must be opened to the public to help other applications to use th
 - Trusted
   - You can allow access from other applications signed with the same certificate by setting the trusted status for the data control.
 - Privileges
-  - Your provider application can restrict access to applications having certain predefined privileges.
+  - Your provider application can restrict access to applications having certain defined privileges.
 
 
 **Table: Data model example of a data control provider**
