@@ -2,7 +2,7 @@
 
 ## VMAX Tizen SDK Integration Guide
 
-VMAX™ is the one-stop solution that gives you complete control over your app monetization. It is a publisher-centric mediation SSP platform which sources ads from various sources and optimizes to maximize yield rate and fill rate.
+VMAX&trade; is the one-stop solution that gives you complete control over your app monetization. It is a publisher-centric mediation SSP platform which sources ads from various sources and optimizes to maximize yield rate and fill rate.
 
 VMAX provides support for Ads in Tizen Native, Unity and Web applications.
 1. **Native SDK**: It is for the Application developers who want to build Tizen Native App, utilizing EFL (Enlightenment Foundation Libraries) for the UI. Among the other SDK’s available, Native SDK allows building Native feature-rich app.
@@ -26,7 +26,7 @@ VMAX support wide range of ad formats to provide better user ad experience on Ti
 
 The VMAX Tizen SDK is designed to help you integrate Ads and fast track your way to monetizing your Tizen applications. It provides you with various mechanisms to request for Ads in your application.
 
-It is  very lightweight, modular & feature-rich SDK. The VMAX™ SDK delivers highest yield ads for app publishers from Ad mediation partner, Programmatic, direct deals & Agencies.
+It is  very lightweight, modular & feature-rich SDK. The VMAX&trade; SDK delivers highest yield ads for app publishers from Ad mediation partner, Programmatic, direct deals & Agencies.
 
 The SDK has simple & fully-managed Ad request methods.Our SDK lets you quickly and easily integrate with multiple ad partners.
 

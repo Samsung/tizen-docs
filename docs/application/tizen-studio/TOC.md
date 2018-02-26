@@ -18,14 +18,14 @@
 ### [Content Assist](native-tools/content-assist.md)
 ### [API and Privilege Checker](native-tools/api-checker.md)
 ### UI Builder
-#### [Overview](native-tools/ui-builder.md)
-#### [Storyboard](native-tools/storyboard.md)
-#### [Component Attributes](native-tools/component-attributes.md)
-#### [Multiple Screen Support](native-tools/multiple-screen.md)
-#### [Databinding](native-tools/ui-builder-databind.md)
-#### [EFL to UI Builder Project Conversion](native-tools/ui-builder-conversion.md)
-#### [Combining Screens from Multiple Applications](native-tools/ui-project-migration-combi.md)
-#### [Custom UI Component](native-tools/ui-builder-customcomponent.md)
+#### [Overview](native-tools/ui-builder/ui-builder.md)
+#### [Storyboard](native-tools/ui-builder/storyboard.md)
+#### [Component Attributes](native-tools/ui-builder/component-attributes.md)
+#### [Custom UI Component](native-tools/ui-builder/custom-ui-component.md)
+#### [Databinding](native-tools/ui-builder/databind.md)
+#### [Multiple Screen Support](native-tools/ui-builder/multiple-screens.md)
+#### [Converting Projects for UI Builder](native-tools/ui-builder/convert-projects.md)
+#### [Combining Screens from Multiple Applications](native-tools/ui-builder/combine-screens.md)
 ### [EDC Editor](native-tools/edc-editor.md)
 ### [Component Designer](native-tools/component-designer.md)
 ## Configuring Your App
@@ -36,15 +36,15 @@
 ## Debugging Your App
 ### [Log View](common-tools/log-view.md)
 ### Dynamic Analyzer
-#### [Overview](common-tools/da-overview.md)
-#### [Common Tasks](common-tools/da-common.md)
-#### [Advanced Tasks](common-tools/da-advanced.md)
-#### [Memory Analysis](common-tools/da-memory.md)
-#### [Thread Analysis](common-tools/da-thread.md)
-#### [File Analysis](common-tools/da-file.md)
-#### [Network Analysis](common-tools/da-network.md)
-#### [OpenGL Analysis](common-tools/da-opengl.md)
-#### [UI Hierarchy Analysis](common-tools/da-ui-hierarchy.md)
+#### [Overview](common-tools/dynamic-analyzer/overview.md)
+#### [Common Tasks](common-tools/dynamic-analyzer/common-tasks.md)
+#### [Advanced Tasks](common-tools/dynamic-analyzer/advanced-tasks.md)
+#### [Memory Analysis](common-tools/dynamic-analyzer/memory-analysis.md)
+#### [Thread Analysis](common-tools/dynamic-analyzer/thread-analysis.md)
+#### [File Analysis](common-tools/dynamic-analyzer/file-analysis.md)
+#### [Network Analysis](common-tools/dynamic-analyzer/network-analysis.md)
+#### [OpenGL Analysis](common-tools/dynamic-analyzer/opengl-analysis.md)
+#### [UI Hierarchy Analysis](common-tools/dynamic-analyzer/ui-hierarchy-analysis.md)
 ### [Call Stack View](native-tools/call-stack-view.md)
 ### [Static Analyzer](native-tools/static-analyzer.md)
 ### [Valgrind](native-tools/valgrind.md)
@@ -86,16 +86,15 @@
 ## Debugging Your App
 ### [Log View](common-tools/log-view.md)
 ### Dynamic Analyzer
-#### [Overview](common-tools/da-overview.md)
-#### [Common Tasks](common-tools/da-common.md)
-#### [Advanced Tasks](common-tools/da-advanced.md)
-#### [Memory Analysis](common-tools/da-memory.md)
-#### [Thread Analysis](common-tools/da-thread.md)
-#### [File Analysis](common-tools/da-file.md)
-#### [Network Analysis](common-tools/da-network.md)
-#### [OpenGL Analysis](common-tools/da-opengl.md)
-### [Web Inspector](web-tools/web-inspector.md)
-### [JavaScript Analyzer](web-tools/js-analyzer.md)
+#### [Overview](common-tools/dynamic-analyzer/overview.md)
+#### [Common Tasks](common-tools/dynamic-analyzer/common-tasks.md)
+#### [Advanced Tasks](common-tools/dynamic-analyzer/advanced-tasks.md)
+#### [Memory Analysis](common-tools/dynamic-analyzer/memory-analysis.md)
+#### [Thread Analysis](common-tools/dynamic-analyzer/thread-analysis.md)
+#### [File Analysis](common-tools/dynamic-analyzer/file-analysis.md)
+#### [Network Analysis](common-tools/dynamic-analyzer/network-analysis.md)
+#### [OpenGL Analysis](common-tools/dynamic-analyzer/opengl-analysis.md)
+#### [UI Hierarchy Analysis](common-tools/dynamic-analyzer/ui-hierarchy-analysis.md)
 ## Running and Testing Your App
 ### [SDB](common-tools/smart-development-bridge.md)
 ### Emulator
@@ -113,7 +112,16 @@
 ## [Overview](platform-tools/overview.md)
 ## [Platform Development Tools](platform-tools/platform-tools.md)
 
+# [Configurable SDK](configurable-sdk/configurable-sdk.md)
+
+# Extension SDK
+## [Overview](extension-sdk/overview.md)
+## [In-App Purchase Programing Guide](extension-sdk/in-app-purchase.md)
+## [InMobi Tizen Ad SDK Programing Guide](extension-sdk/inmovi.md)
+## [VMAX Tizen Ad SDK Integration Guide](extension-sdk/vmax.md)
+
 # RT IDE
+## [Overview](rt-ide/overview.md)
 ## Getting Started
 ### [Overview](rt-ide/getting-started/overview.md)
 ### [Installing Tizen Studio for RT](rt-ide/getting-started/install.md)
@@ -123,12 +131,10 @@
 ### [Debugging the Project](rt-ide/getting-started/debug.md)
 ## SmartThings&trade; Extension
 ### [Overview](rt-ide/smartthings-ext/overview.md)
-### [Creating a SmartThings&trade; Project](rt-ide/smartthings-ext/create-project.md)
-### [Building the SmartThings&trade; Project](rt-ide/smartthings-ext/build-project.md)
-### [Managing SmartThings&trade; Certificates](rt-ide/smartthings-ext/manage-certificate.md)
+### [Creating a SmartThings&trade; Project](rt-ide/smartthings-ext/create-smartthings.md)
+### [Building the SmartThings&trade; Project](rt-ide/smartthings-ext/build-smartthings.md)
+### [Managing SmartThings&trade; Certificates](rt-ide/smartthings-ext/certificate-smartthings.md)
 ### [Device/Resource Model Manager](rt-ide/smartthings-ext/model-manager.md)
-
-# [Configurable SDK](configurable-sdk/configurable-sdk.md)
 
 # Release Notes
 ## [2.2 (Jan 30, 2018)](release-notes/2-2-release-notes.md)

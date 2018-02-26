@@ -39,7 +39,7 @@ The following example illustrates the content and structure of the `layout.xml` 
 
 ## Attributes for Multiple Screens
 
-The multiple screen feature is intended for creating an application that works in various screen sizes and densities. For more information, see [Supporting Multiple Screens](multiple-screen.md).
+The multiple screen feature is intended for creating an application that works in various screen sizes and densities. For more information, see [Supporting Multiple Screens](multiple-screens.md).
 
 ### Configuration
 
@@ -56,11 +56,11 @@ The `<configuration>` element is placed as a child of the `<mscreen>` element. T
 **Table: Common configuration attributes**
 
 | Attribute     | Value                                    |
-|-------------|----------------------------------------|
+|---------------|------------------------------------------|
 | `id`          | Identification for the configuration     |
 | `name`        | Name of the display                      |
 | `type`        | Whether the configuration is `specific` or `common` |
-| `device`      | Supported device:</br> - Mobile: `HD`, `WVGA`</br> - Wearable square: `SQUARE_320x320`</br> - Wearable circle: `CIRCLE_360x360` |
+| `device`      | Supported device:<br> - Mobile: `HD`, `WVGA`<br> - Wearable square: `SQUARE_320x320`<br> - Wearable circle: `CIRCLE_360x360` |
 | `orientation` | `portrait` or `landscape`                |
 
 ### Variation
@@ -80,7 +80,7 @@ The `<variation>` element is placed as a child of the `<UI component>` element. 
 **Table: Variation attributes**
 
 | Attribute                                | Value                                    |
-|----------------------------------------|----------------------------------------|
+|------------------------------------------|------------------------------------------|
 | `config_ref`                             | Screen configuration ID                  |
 | `visible`                                | `true` or `false`                        |
 | `pack_x, pack_y, pack_w, pack_h`         | Absolute coordinates when the parent container is a grid.0 ~ |
@@ -89,7 +89,7 @@ The `<variation>` element is placed as a child of the `<UI component>` element. 
 
 ## Palette of the Native UI Builder
 
-By using various UI containers and components in the **Palette** of the native UI Builder, you can create your application UI layout. Each component can be set in various styles. For a detailed list of component styles, see the related guides ([mobile](../../native/guides/ui/efl/ui-components-m.md) and [wearable](../../native/guides/ui/efl/ui-components-w.md)).
+By using various UI containers and components in the **Palette** of the native UI Builder, you can create your application UI layout. Each component can be set in various styles. For a detailed list of component styles, see the related guides ([mobile](../../../native/guides/ui/efl/ui-components.md) and [wearable](../../../native/guides/ui/efl/ui-components.md)).
 
 **Figure: Native UI Builder Palette**
 
@@ -102,7 +102,7 @@ The following attributes are used for all UI components.
 **Table: Common component attributes**
 
 | Attribute               | Value                          | Function                             |
-|-----------------------|------------------------------|------------------------------------|
+|-------------------------|--------------------------------|--------------------------------------|
 | `align_h`               | `left, right, center, 0 ~ 1.0` | `evas_object_size_hint_align_set()`  |
 | `align_v`               | `top, bottom, center, 0 ~ 1.0` | `evas_object_size_hint_align_set()`  |
 | `weight_h` or `eight_v` | `0 ~ 1.0`                      | `evas_object_size_hint_weight_set()` |
@@ -112,7 +112,7 @@ Some UI component attributes depend on the type of the UI container. For example
 **Table: Specific component attributes**
 
 | UI container | Attribute                                | Function                        |
-|------------|----------------------------------------|-------------------------------|
+|--------------|------------------------------------------|---------------------------------|
 | Grid         | `pack_x, pack_y, pack_w, pack_h`         | `elm_grid_pack()`               |
 | Table        | `pack_col, pack_row, row_span, col_span` | `elm_table_pack()`              |
 | Panes        | `pack`                                   | `elm_object_part_content_set()` |
@@ -137,16 +137,16 @@ The following attributes are used for all `<event>` elements.
 **Table: Event attributes**
 
 | Attribute            | Value                                    |
-|--------------------|----------------------------------------|
+|----------------------|------------------------------------------|
 | `function_name`      | Name of the function                     |
 | `signal`             | Unique component signal. See the component documentation for details |
 | `source`             | Source of accepted signal. Only used for the custom UI component. |
 | `connection_wrapper` | Connection wrapper function&apos;s name       |
 | `target`             | Target view ID to transform              |
 
-## Component Attributes – UI Container
+## Component Attributes - UI Container
 
-The [&lt;UI container&gt;](../../../org.tizen.guides/html/native/ui/efl/ui_layouts_n.htm#ui_container) is an element that has the `<UI component>` elements as children. In the `layout.xml` file, containers, such as View, Box, Grid, Panel, Panes, Scroller, and Table, are supported.
+The [\<UI container\>](../../../native/guides/ui/efl/ui-layouts.md#ui-containters) is an element that has the `<UI component>` elements as children. In the `layout.xml` file, containers, such as View, Box, Grid, Panel, Panes, Scroller, and Table, are supported.
 
 ### View
 
@@ -157,7 +157,7 @@ The following attributes are used for `<view>` element.
 **Table: View attributes**
 
 | Attribute            | Value                                    |
-|--------------------|----------------------------------------|
+|----------------------|------------------------------------------|
 | `id`                 | Automatically incrementing and editable. Duplicates are not allowed. |
 | `indicator`          | `true` or `false`                        |
 | `screen_orientation` | `no_sensor`, `only_portrait`, `only_landscape`, or `full_sensor` |
@@ -167,7 +167,7 @@ The following attributes are used for `<view>` element.
 
 ### Box (![Box](./media/component_attributes_box_icon.png))
 
-A [box](../../native/guides/ui/efl/container-box.md) is a basic and simple EFL container.
+A [box](../../../native/guides/ui/efl/container-box.md) is a basic and simple EFL container.
 
 ```
 <box homogeneous="false" align_h="fill" align_v="fill" visible="true" weight_v="1" padding_v="0"
@@ -180,7 +180,7 @@ The following attributes are used for the box container.
 **Table: Box attributes**
 
 | Attribute                  | Value                                    | Function                    |
-|--------------------------|----------------------------------------|---------------------------|
+|----------------------------|------------------------------------------|-----------------------------|
 | `id`                       | Automatically incrementing and editable. Duplicates are not allowed. | `elm_box_add()`             |
 | `direction`                | `horizontal` or `vertical`               | `elm_box_horizontal_set()`  |
 | `homogeneous`              | `true` or `false`                        | `elm_box_homogeneous_set()` |
@@ -189,7 +189,7 @@ The following attributes are used for the box container.
 
 ### Grid (![Grid](./media/component_attributes_grid_icon.png))
 
-In a [grid](../../native/guides/ui/efl/container-grid.md) container, objects are placed at specific positions along a fixed grid.
+In a [grid](../../../native/guides/ui/efl/container-grid.md) container, objects are placed at specific positions along a fixed grid.
 
 ```
 <grid align_h="fill" vsize_w="1000" align_v="fill" visible="true" weight_v="1"
@@ -205,7 +205,7 @@ The child element of the grid container has the `pack_w`, `pack_h`, `pack_x`, an
 **Table: Grid attributes**
 
 | Attribute | Value                                    | Function              |
-|---------|----------------------------------------|---------------------|
+|-----------|------------------------------------------|-----------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_grid_add()`      |
 | `vsize_w` | 0 ~                                      | `elm_grid_size_set()` |
 | `vsize_h` | 0 ~                                      | `elm_grid_size_set()` |
@@ -213,7 +213,7 @@ The child element of the grid container has the `pack_w`, `pack_h`, `pack_x`, an
 
 ### Panel (![Panel](./media/component_attributes_panel_icon.png)) in Mobile Applications
 
-A [panel](../../native/guides/ui/efl/component-panel-m.md) container is an animated object that contains child objects. It can be expanded or collapsed by clicking the button on its edge.
+A [panel](../../../native/guides/ui/efl/mobile/component-panel.md) container is an animated object that contains child objects. It can be expanded or collapsed by clicking the button on its edge.
 
 ```
 <panel align_h="fill" align_v="fill" visible="true" orient="top" hidden="false" weight_v="1"
@@ -226,7 +226,7 @@ The following attributes are used for the panel container.
 **Table: Panel attributes**
 
 | Attribute | Value                                    | Function                 |
-|---------|----------------------------------------|------------------------|
+|-----------|------------------------------------------|--------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_panel_add()`        |
 | `visible` | `true` or `false`                        | `evas_object_show()`     |
 | `orient`  | `top`, `bottom`, `left`, or `right`      | `elm_panel_orient_set()` |
@@ -234,7 +234,7 @@ The following attributes are used for the panel container.
 
 ### Panes (![Panes](./media/component_attributes_panes_icon.png)) in Mobile Applications
 
-A [panes](../../native/guides/ui/efl/container-panes-m.md) container adds a draggable bar between 2 sections of content. The sections are resized when the bar is dragged.
+A [panes](../../../native/guides/ui/efl/container-panes.md) container adds a draggable bar between 2 sections of content. The sections are resized when the bar is dragged.
 
 ```
 <panes align_h="fill" align_v="fill" visible="true" weight_v="1" fixed="false" id="panes1"
@@ -253,7 +253,7 @@ The child element of the panes container has the `pack` attribute to indicate th
 **Table: Panes attributes**
 
 | Attribute    | Value                                    | Function                             |
-|------------|----------------------------------------|------------------------------------|
+|--------------|------------------------------------------|--------------------------------------|
 | `id`         | Automatically incrementing and editable. Duplicates are not allowed. | `elm_panes_add()`                    |
 | `visible`    | `true` or `false`                        | `evas_object_show()`                 |
 | `direction`  | `horizontal` or `vertical`               | `elm_panes_horizontal_set()`         |
@@ -262,7 +262,7 @@ The child element of the panes container has the `pack` attribute to indicate th
 
 ### Scroller (![Scroller](./media/component_attributes_scroller_icon.png))
 
-A [scroller](../../native/guides/ui/efl/container-scroller.md) container holds (and clips) a single object and allows you to scroll across it.
+A [scroller](../../../native/guides/ui/efl/container-scroller.md) container holds (and clips) a single object and allows you to scroll across it.
 
 ```
 <scroller scrollbar_v="auto" align_v="fill" visible="true" weight_v="1" pack_h="123"
@@ -276,10 +276,10 @@ The following attributes are used for the scroller container.
 **Table: Scroller attributes**
 
 | Attribute                          | Value                                    | Function                              |
-|----------------------------------|----------------------------------------|-------------------------------------|
+|------------------------------------|------------------------------------------|---------------------------------------|
 | `id`                               | Automatically incrementing and editable. Duplicates are not allowed. | `elm_scroller_add()`                  |
-| `style`                            | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`              |
-| `colors`                           | `#000000 ~ #ffffff`See the [supported properties](#supported_properties) for each profile and version. | `elm_object_color_class_color_set()`  |
+| `style`                            | See the [supported properties](#properties-supported-for-each-component) for each profile and version | `elm_object_style_set()`              |
+| `colors`                           | `#000000 ~ #ffffff`See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_object_color_class_color_set()`  |
 | `content_min_w` or `content_min_h` | `true` or `false`                        | `elm_scroller_content_min_limit()`    |
 | `propagate_events`                 | `true` or `false`                        | `elm_scroller_propagate_events_set()` |
 | `visible`                          | `true` or `false`                        | `evas_object_show()`                  |
@@ -287,7 +287,7 @@ The following attributes are used for the scroller container.
 
 ### Table (![Table](./media/component_attributes_table_icon.png))
 
-A [table](../../native/guides/ui/efl/container-table.md) container is like the box but with 2 dimensions.
+A [table](../../../native/guides/ui/efl/container-table.md) container is like the box but with 2 dimensions.
 
 ```
 <table align_v="fill" visible="true" weight_v="1" pack_h="244" padding_h="0" weight_h="1" rows="2"
@@ -303,18 +303,18 @@ The child element of the table container has the `pack_col`, `pack_row`, `row_sp
 **Table: Table attributes**
 
 | Attribute                  | Value                                    | Function                      |
-|--------------------------|----------------------------------------|-----------------------------|
+|----------------------------|------------------------------------------|-------------------------------|
 | `id`                       | Automatically incrementing and editable. Duplicates are not allowed. | `elm_table_add()`             |
 | `homogeneous`              | `true` or `false`                        | `elm_table_homogeneous_set()` |
 | `padding_h` or `padding_v` | 0 ~ 50                                   | `elm_table_padding_set()`     |
 | `visible`                  | `true` or `false`                        | `evas_object_show()`          |
 | `cols` or `rows`           | 1 ~ 10                                   | `elm_table_pack()`            |
 
-## Component Attributes – UI Component
+## Component Attributes - UI Component
 
 ### Background (![Background](./media/component_attributes_background_icon.png))
 
-A background component (in [mobile](../../native/guides/ui/efl/component-background-m.md) and [wearable](../../native/guides/ui/efl/component-background-w.md) applications) is used to set a solid background decoration to a window or a container object. It works like an image, but has some background-specific properties, such as setting it to a tiled, centered, scaled, or stretched mode.
+A background component (in [mobile](../../../native/guides/ui/efl/mobile/component-background.md) and [wearable](../../../native/guides/ui/efl/wearable/component-background.md) applications) is used to set a solid background decoration to a window or a container object. It works like an image, but has some background-specific properties, such as setting it to a tiled, centered, scaled, or stretched mode.
 
 ```
 <bg align_v="fill" visible="true" color="" src="" weight_v="1" pack_h="162" weight_h="1" align_h="fill"
@@ -327,7 +327,7 @@ The following attributes are used for the background component.
 **Table: Background attributes**
 
 | Attribute | Value                                    | Function              |
-|---------|----------------------------------------|---------------------|
+|-----------|------------------------------------------|-----------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_bg_add()`        |
 | `option`  | `center`, `scale`, `stretch`, or `tile`  | `elm_bg_option_set()` |
 | `color`   | `#000000 ~ #ffffff`                      | `elm_bg_color_set()`  |
@@ -336,7 +336,7 @@ The following attributes are used for the background component.
 
 ### Button (![Button](./media/component_attributes_button_icon.png))
 
-A button component (in [mobile](../../native/guides/ui/efl/component-button-m.md) and [wearable](../../native/guides/ui/efl/component-button-w.md) applications) is a simple push button. It is composed of a label icon and an icon object, and has an auto-repeat feature.
+A button component (in [mobile](../../../native/guides/ui/efl/mobile/component-button.md) and [wearable](../../../native/guides/ui/efl/wearable/component-button.md) applications) is a simple push button. It is composed of a label icon and an icon object, and has an auto-repeat feature.
 
 ```
 <button align_v="fill" visible="true" weight_v="1" pack_h="49" weight_h="1" align_h="fill" pack_w="210"
@@ -349,17 +349,17 @@ The following attributes are used for the button component.
 **Table: Button attributes**
 
 | Attribute | Value                                    | Function                             |
-|---------|----------------------------------------|------------------------------------|
+|-----------|------------------------------------------|--------------------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_button_add()`                   |
 | `disable` | `true` or `false`                        | `elm_object_disabled_set()`          |
 | `visible` | `true` or `false`                        | `evas_object_show()`                 |
 | `text`    | `#string`                                | `elm_object_text_set()`              |
-| `style`   | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`             |
-| `colors`  | `#000000 ~ #ffffff` </br>See the [supported properties](#supported_properties) for each profile and version. | `elm_object_color_class_color_set()` |
+| `style`   | See the [supported properties](#properties-supported-for-each-component) for each profile and version | `elm_object_style_set()`             |
+| `colors`  | `#000000 ~ #ffffff` <br>See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_object_color_class_color_set()` |
 
 ### Calendar (![Calendar](./media/component_attributes_calendar_icon.png))
 
-A [calendar](../../native/guides/ui/efl/component-calendar-m.md) component displays and manipulates month views. **(Since 2.4, this component is supported in mobile applications only.)**
+A [calendar](../../../native/guides/ui/efl/mobile/component-calendar.md) component displays and manipulates month views. **(Since 2.4, this component is supported in mobile applications only.)**
 
 ```
 <calendar align_v="fill" visible="true" weight_v="1" pack_h="365" weight_h="1" max_year="-1"
@@ -373,7 +373,7 @@ The following attributes are used for the calendar component.
 **Table: Calendar attributes**
 
 | Attribute                | Value                                    | Function                          |
-|------------------------|----------------------------------------|---------------------------------|
+|--------------------------|------------------------------------------|-----------------------------------|
 | `id`                     | Automatically incrementing and editable. Duplicates are not allowed. | `elm_calendar_add()`              |
 | `disable`                | `true` or `false`                        | `elm_object_disabled_set()`       |
 | `visible`                | `true` or `false`                        | `evas_object_show()`              |
@@ -383,7 +383,7 @@ The following attributes are used for the calendar component.
 
 ### Check (![Check](./media/component_attributes_check_icon.png))
 
-A check component (in [mobile](../../native/guides/ui/efl/component-check-m.md) and [wearable](../../native/guides/ui/efl/component-check-w.md) applications) toggles the Boolean value between `true` and `false`.
+A check component (in [mobile](../../../native/guides/ui/efl/mobile/component-check.md) and [wearable](../../../native/guides/ui/efl/wearable/component-check.md) applications) toggles the Boolean value between `true` and `false`.
 
 ```
 <check align_v="fill" visible="true" weight_v="1" pack_h="48" weight_h="1" align_h="fill" pack_w="208"
@@ -396,17 +396,17 @@ The following attributes are used for the check component.
 **Table: Check attributes**
 
 | Attribute | Value                                    | Function                    |
-|---------|----------------------------------------|---------------------------|
+|-----------|------------------------------------------|-----------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_check_add()`           |
 | `state`   | `true` or `false`                        | `elm_check_state_set()`     |
 | `disable` | `true` or `false`                        | `elm_object_disabled_set()` |
 | `visible` | `true` or `false`                        | `evas_object_show()`        |
-| `text`    | `#string` </br>See the [supported properties](#supported_properties) for each profile and version. | `elm_object_text_set()`     |
-| `style`   | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`    |
+| `text`    | `#string` <br>See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_object_text_set()`     |
+| `style`   | See the [supported properties](#properties-supported-for-each-component) for each profile and version | `elm_object_style_set()`    |
 
 ### Colorselector (![Colorselector](./media/component_attributes_colorselector_icon.png)) in Mobile Applications
 
-A [colorselector](../../native/guides/ui/efl/component-colorselector-m.md) component provides a color selection solution to the user. It has different modes, each of them showing a different configuration of selectable colors.
+A [colorselector](../../../native/guides/ui/efl/mobile/component-colorselector.md) component provides a color selection solution to the user. It has different modes, each of them showing a different configuration of selectable colors.
 
 ```
 <colorselector align_h="fill" align_v="fill" visible="true" weight_v="1" pack_w="667" pack_x="386"
@@ -419,13 +419,13 @@ The following attributes are used for the colorselector component.
 **Table: Colorselector attributes**
 
 | Attribute | Value                                    | Function                  |
-|---------|----------------------------------------|-------------------------|
+|-----------|------------------------------------------|---------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_colorselector_add()` |
 | `visible` | `true` or `false`                        | `evas_object_show()`      |
 
 ### Ctxpopup
 
-A ctxpopup component (in [mobile](../../native/guides/ui/efl/component-ctxpopup-m.md) and [wearable](../../native/guides/ui/efl/component-ctxpopup-w.md) applications) is a contextual popup that shows a small list of items.
+A ctxpopup component (in [mobile](../../../native/guides/ui/efl/mobile/component-ctxpopup.md) and [wearable](../../../native/guides/ui/efl/wearable/component-ctxpopup.md) applications) is a contextual popup that shows a small list of items.
 
 ```
 <view indicator="true" screen_orientation="full_sensor" id="view2" type="popup">
@@ -442,10 +442,10 @@ The `<ctxpopup>` element must be placed as a child of the `<view>` element, and 
 **Table: Ctxpopup attributes**
 
 | Attribute   | Value                                    | Function                        |
-|-----------|----------------------------------------|-------------------------------|
+|-------------|------------------------------------------|---------------------------------|
 | `id`        | Automatically incrementing and editable. Duplicates are not allowed. | `elm_ctxpopup_add()`            |
 | `direction` | `horizontal` or `vertical`               | `elm_ctxpopup_horizontal_set()` |
-| `style`     | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`        |
+| `style`     | See the [supported properties](#properties-supported-for-each-component) for each profile and version | `elm_object_style_set()`        |
 | `disable`   | `true` or `false`                        | `elm_object_disabled_set()`     |
 | `visible`   | `true` or `false`                        | `evas_object_show()`            |
 
@@ -456,13 +456,13 @@ A ctxpopup item component can be placed as a child of the ctxpopup component. Ea
 **Table: Ctxpopup item attributes**
 
 | Attribute | Value                                    | Function                     |
-|---------|----------------------------------------|----------------------------|
+|-----------|------------------------------------------|------------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_ctxpopup_item_append()` |
 | `text`    | `#string`                                | `elm_ctxpopup_item_append()` |
 
 ### Datetime (![Datetime](./media/component_attributes_datetime_icon.png))
 
-A datetime component (in [mobile](../../native/guides/ui/efl/component-datetime-m.md) and [wearable](../../native/guides/ui/efl/component-datetime-w.md) applications) can display and accept input for date and time values.
+A datetime component (in [mobile](../../../native/guides/ui/efl/mobile/component-datetime.md) and [wearable](../../../native/guides/ui/efl/wearable/component-datetime.md) applications) can display and accept input for date and time values.
 
 ```
 <datetime align_h="fill" align_v="fill" visible="true" weight_v="1" pack_w="528" disable="false" pack_x="232"
@@ -475,16 +475,16 @@ The following attributes are used for the datetime component.
 **Table: Datetime attributes**
 
 | Attribute | Value                                    | Function                             |
-|---------|----------------------------------------|------------------------------------|
+|-----------|------------------------------------------|--------------------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_datetime_add()`                 |
 | `disable` | `true` or `false`                        | `elm_object_disabled_set()`          |
 | `visible` | `true` or `false`                        | `evas_object_show()`                 |
-| `style`   | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`             |
-| `colors`  | `#000000 ~ #ffffff`See the [supported properties](#supported_properties) for each profile and version. | `elm_object_color_class_color_set()` |
+| `style`   | See the [supported properties](#properties-supported-for-each-component) for each profile and version | `elm_object_style_set()`             |
+| `colors`  | `#000000 ~ #ffffff`See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_object_color_class_color_set()` |
 
 ### Entry (![Entry](./media/component_attributes_entry_icon.png))
 
-An entry component (in [mobile](../../native/guides/ui/efl/component-entry-m.md) and [wearable](../../native/guides/ui/efl/component-entry-w.md) applications) is a box to which the user can enter text.
+An entry component (in [mobile](../../../native/guides/ui/efl/mobile/component-entry.md) and [wearable](../../../native/guides/ui/efl/wearable/component-entry.md) applications) is a box to which the user can enter text.
 
 ```
 <entry context_menu="true" align_v="fill" visible="true" src="" weight_v="1" editable="true" pack_h="82"
@@ -499,7 +499,7 @@ The following attributes are used for the entry component.
 **Table: Entry attributes**
 
 | Attribute          | Value                                    | Function                                |
-|------------------|----------------------------------------|---------------------------------------|
+|--------------------|------------------------------------------|-----------------------------------------|
 | `id`               | Automatically incrementing and editable. Duplicates are not allowed. | `elm_entry_add()`                       |
 | `scroll`           | `true` or `false`                        | `elm_entry_scrollable_set()`            |
 | `single_line`      | `true` or `false`                        | `elm_entry_single_line_set()`           |
@@ -514,7 +514,7 @@ The following attributes are used for the entry component.
 
 ### Flipselector (![Flipselector](./media/component_attributes_flipselector_icon.png))
 
-A [flipselector](../../native/ui/efl/component-flipselector-m.md) component shows a set of text items one at a time. The user can flip the selector up or down to change the text on it. It can contain a small number of items. **(Since 2.4, this component is supported in mobile applications only.)**
+A [flipselector](../../../native/guides/ui/efl/mobile/component-flipselector.md) component shows a set of text items one at a time. The user can flip the selector up or down to change the text on it. It can contain a small number of items. **(Since 2.4, this component is supported in mobile applications only.)**
 
 ```
 <flipselector align_h="fill" align_v="fill" visible="true" weight_v="1" pack_w="196" disable="false" pack_x="210"
@@ -528,7 +528,7 @@ The following attributes are used for the flipselector component.
 **Table: Flipselector attributes**
 
 | Attribute | Value                                    | Function                    |
-|---------|----------------------------------------|---------------------------|
+|-----------|------------------------------------------|-----------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_flipselector_add()`    |
 | `disable` | `true` or `false`                        | `elm_object_disabled_set()` |
 | `visible` | `true` or `false`                        | `evas_object_show()`        |
@@ -540,13 +540,13 @@ A flipselector item component can be placed as a child of the flipselector conta
 **Table: Flipselector item attributes**
 
 | Attribute | Value                                    | Function                         |
-|---------|----------------------------------------|--------------------------------|
+|-----------|------------------------------------------|----------------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_flipselector_item_append()` |
 | `text`    | `#string`                                | `elm_flipselector_item_append()` |
 
 ### Gengrid (![Gengrid](./media/component_attributes_gengrid_icon.png)) in Mobile Applications
 
-A [gengrid](../../native/guides/ui/efl/component-gengrid-m.md) component displays objects on a grid layout and renders only the visible objects. The gengrid can contain a small number of items.
+A [gengrid](../../../native/guides/ui/efl/mobile/component-gengrid.md) component displays objects on a grid layout and renders only the visible objects. The gengrid can contain a small number of items.
 
 ```
 <gengrid scrollbar_v="auto" align_v="fill" visible="true" weight_v="1" pack_h="324" item_size_w="200"
@@ -565,11 +565,11 @@ The following attributes are used for the gengrid component.
 **Table: Gengrid attributes**
 
 | Attribute                      | Value                                    | Function                         |
-|------------------------------|----------------------------------------|--------------------------------|
+|--------------------------------|------------------------------------------|----------------------------------|
 | `id`                           | Automatically incrementing and editable. Duplicates are not allowed. | `elm_gengrid_add()`              |
 | `visible`                      | `true` or `false`                        | `evas_object_show()`             |
 | `disable`                      | `true` or `false`                        | `elm_object_disabled_set()`      |
-| `style`                        | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`         |
+| `style`                        | See the [supported properties](#properties-supported-for-each-component) for each profile and version | `elm_object_style_set()`         |
 | `select_mode`                  | `default`, `always`, `none`, or `display_only` | `elm_gengrid_select_mode_set()`  |
 | `direction`                    | `horizontal` or `vertical`               | `elm_gengrid_horizontal_set()`   |
 | `item_size_w` or `item_size_h` | `integer`                                | `elm_gengrid_item_size_set()`    |
@@ -583,10 +583,10 @@ A gengrid item component can be placed as a child of the gengrid component. Each
 **Table: Gengrid item attributes**
 
 | Attribute  | Value                                    | Function                                 |
-|----------|----------------------------------------|----------------------------------------|
+|------------|------------------------------------------|------------------------------------------|
 | `id`       | Automatically incrementing and editable. Duplicates are not allowed. | `elm_gengrid_item_append()`              |
-| `style`    | See the [supported properties](#supported_properties) for each profile and version | `elm_gengrid_item_append()`              |
-| `colors`   | `#000000 ~ #ffffff` </br>See the [supported properties](#supported_properties) for each profile and version. | `elm_object_item_color_class_color_set()` |
+| `style`    | See the [supported properties](#properties-supported-for-each-component) for each profile and version | `elm_gengrid_item_append()`              |
+| `colors`   | `#000000 ~ #ffffff` <br>See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_object_item_color_class_color_set()` |
 | `text`     | `#string`                                | `elm_gengrid_item_append()`              |
 | `src`      | `#string`                                | `elm_gengrid_item_append()`              |
 | `selected` | `true` or `false`                        | `elm_gengrid_item_selected_set()`        |
@@ -594,7 +594,7 @@ A gengrid item component can be placed as a child of the gengrid component. Each
 
 ### Genlist (![Genlist](./media/component_attributes_genlist_icon.png))
 
-A genlist component (in [mobile](../../native/guides/ui/efl/component-genlist-m.md) and [wearable](../../native/guides/ui/efl/component-genlist-w.md) applications) displays a scrollable list of items.
+A genlist component (in [mobile](../../../native/guides/ui/efl/mobile/component-genlist.md) and [wearable](../../../native/guides/ui/efl/wearable/component-genlist.md) applications) displays a scrollable list of items.
 
 ```
 <genlist scrollbar_v="auto" align_v="fill" visible="true" weight_v="1" pack_h="244" weight_h="1"
@@ -614,13 +614,13 @@ The following attributes are used for the genlist component.
 **Table: Genlist attributes**
 
 | Attribute                      | Value                                    | Function                        |
-|------------------------------|----------------------------------------|-------------------------------|
+|--------------------------------|------------------------------------------|---------------------------------|
 | `id`                           | Automatically incrementing and editable. Duplicates are not allowed. | `elm_genlist_add()`             |
-| `select_mode`                  | `default`, `always`, `none`, or `display_only`See the [supported properties](#supported_properties) for each profile and version. | `elm_genlist_select_mode_set()` |
-| `style`                        | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`        |
+| `select_mode`                  | `default`, `always`, `none`, or `display_only`See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_genlist_select_mode_set()` |
+| `style`                        | See the [supported properties](#properties-supported-for-each-component) for each profile and version | `elm_object_style_set()`        |
 | `disable`                      | `true` or `false`                        | `elm_object_disabled_set()`     |
 | `visible`                      | `true` or `false`                        | `evas_object_show()`            |
-| `homogeneous`                  | `true` or `false` </br>See the [supported properties](#supported_properties) for each profile and version. | `elm_genlist_homogeneous_set()` |
+| `homogeneous`                  | `true` or `false` <br>See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_genlist_homogeneous_set()` |
 | `scrollbar_h` or `scrollbar_v` | `auto`, `true`, or `false`               | `elm_scroller_policy_set()`     |
 
 ### Genlistitem
@@ -630,21 +630,21 @@ A genlist item component can be placed as a child of the genlist component. Each
 **Table: Genlist item attributes**
 
 | Attribute           | Value                                    | Function                                 |
-|-------------------|----------------------------------------|----------------------------------------|
+|---------------------|------------------------------------------|------------------------------------------|
 | `id`                | Automatically incrementing and editable. Duplicates are not allowed. | `elm_genlist_item_append()`              |
 | `end_image_path`    | `#string`                                | `elm_genlist_item_append()`              |
-| `end_standard_icon` | See the [supported properties](#supported_properties) for each profile and version | `elm_genlist_item_append()`              |
+| `end_standard_icon` | See the [supported properties](#properties-supported-for-each-component) for each profile and version | `elm_genlist_item_append()`              |
 | `image_path`        | `#string`                                | `elm_genlist_item_append()`              |
-| `style`             | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`                 |
-| `colors`            | `#000000 ~ #ffffff` </br>See the [supported properties](#supported_properties) for each profile and version. | `elm_object_item_color_class_color_set()` |
+| `style`             | See the [supported properties](#properties-supported-for-each-component) for each profile and version | `elm_object_style_set()`                 |
+| `colors`            | `#000000 ~ #ffffff` <br>See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_object_item_color_class_color_set()` |
 | `text`              | `#string`                                | `elm_genlist_item_append()`              |
-| `selected`          | `true` or `false` </br> See the [supported properties](#supported_properties) for each profile and version. | `elm_genlist_item_selected_set()`        |
-| `standard_icon`     | See the [supported properties](#supported_properties) for each profile and version | `elm_genlist_item_append()`              |
+| `selected`          | `true` or `false` <br> See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_genlist_item_selected_set()`        |
+| `standard_icon`     | See the [supported properties](#properties-supported-for-each-component) for each profile and version | `elm_genlist_item_append()`              |
 | `sub_text`          | `#string`                                | `elm_genlist_item_append()`              |
 
 ### Hoversel (![Image](./media/component_attributes_hoversel_icon.png)) in Mobile Applications
 
-A [hoversel](../../native/guides/ui/efl/component-hoversel-m.md) component is a button that pops up a list of items.
+A [hoversel](../../../native/guides/ui/efl/mobile/component-hoversel.md) component is a button that pops up a list of items.
 
 ```
 <hoversel align_h="fill" align_v="fill" visible="true" disable="false" weight_v="1"
@@ -660,7 +660,7 @@ The following attributes are used for the hoversel component.
 **Table: Hoversel attributes**
 
 | Attribute | Value                                    | Function                    |
-|---------|----------------------------------------|---------------------------|
+|-----------|------------------------------------------|-----------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_hoversel_add()`        |
 | `text`    | `#string`                                | `elm_object_text_set()`     |
 | `disable` | `true` or `false`                        | `elm_object_disabled_set()` |
@@ -673,13 +673,13 @@ A hoversel item component can be placed as a child of the hoversel component. Ea
 **Table: Hoversel item attributes**
 
 | Attribute | Value                                    | Function                     |
-|---------|----------------------------------------|----------------------------|
+|-----------|------------------------------------------|------------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_hoversel_item_append()` |
 | `text`    | `#string`                                | `elm_hoversel_item_append()` |
 
 ### Image (![Image](./media/component_attributes_image_icon.png))
 
-An image component (in [mobile](../../native/guides/ui/efl/component-image-m.md) and [wearable](../../native/guides/ui/efl/component-image-w.md) applications) loads and displays an image from a file or memory.
+An image component (in [mobile](../../../native/guides/ui/efl/mobile/component-image.md) and [wearable](../../../native/guides/ui/efl/wearable/component-image.md) applications) loads and displays an image from a file or memory.
 
 ```
 <image resizable_up="true" resizable_down="true" align_v="fill" visible="true" src="" weight_v="1"
@@ -693,7 +693,7 @@ The following attributes are used for the image component.
 **Table: Image attributes**
 
 | Attribute                          | Value                                    | Function                       |
-|----------------------------------|----------------------------------------|------------------------------|
+|------------------------------------|------------------------------------------|--------------------------------|
 | `id`                               | Automatically incrementing and editable. Duplicates are not allowed. | `elm_image_add()`              |
 | `src`                              | `#string`                                | `elm_image_file_set()`         |
 | `aspect_fixed`                     | `true` or `false`                        | `elm_image_aspect_fixed_set()` |
@@ -704,7 +704,7 @@ The following attributes are used for the image component.
 
 ### Index (![Index](./media/component_attributes_index_icon.png))
 
-An index component (in [mobile](../../native/guides/ui/efl/component-index-m.md) and [wearable](../../native/guides/ui/efl/component-index-w.md) applications) provides an index for quick access to another group of UI items. The index can contain a small number of items.
+An index component (in [mobile](../../../native/guides/ui/efl/mobile/component-index.md) and [wearable](../../../native/guides/ui/efl/wearable/component-index.md) applications) provides an index for quick access to another group of UI items. The index can contain a small number of items.
 
 ```
 <index indicator="true" align_v="fill" visible="true" weight_v="1" pack_h="122" weight_h="1" align_h="fill"
@@ -719,7 +719,7 @@ The following attributes are used for the index component.
 **Table: Index attributes**
 
 | Attribute   | Value                                    | Function                             |
-|-----------|----------------------------------------|------------------------------------|
+|-------------|------------------------------------------|--------------------------------------|
 | `id`        | Automatically incrementing and editable. Duplicates are not allowed. | `elm_index_add()`                    |
 | `autohide`  | `true` or `false`                        | `elm_index_autohide_disabled_set()`  |
 | `indicator` | `true` or `false`                        | `elm_index_indicator_disabled_set()` |
@@ -732,13 +732,13 @@ An index item component can be placed as a child of the index component. Each it
 **Table: Index item attributes**
 
 | Attribute | Value                                    | Function                  |
-|---------|----------------------------------------|-------------------------|
+|-----------|------------------------------------------|---------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_index_item_append()` |
 | `text`    | `#string`                                | `elm_index_item_append()` |
 
 ### Label (![Label](./media/component_attributes_label_icon.png))
 
-A label component (in [mobile](../../native/guides/ui/efl/component-label-m.md) and [wearable](../../native/guides/ui/efl/component-label-w.md) applications) displays text with a simple HTML-like markup.
+A label component (in [mobile](../../../native/guides/ui/efl/mobile/component-label.md) and [wearable](../../../native/guides/ui/efl/wearable/component-label.md) applications) displays text with a simple HTML-like markup.
 
 ```
 <label align_v="fill" visible="true" weight_v="1" line_wrap="none" pack_h="24" weight_h="1"
@@ -752,7 +752,7 @@ The following attributes are used for the label component.
 **Table: Label attributes**
 
 | Attribute    | Value                                    | Function                     |
-|------------|----------------------------------------|----------------------------|
+|--------------|------------------------------------------|------------------------------|
 | `id`         | Automatically incrementing and editable. Duplicates are not allowed. | `elm_label_add()`            |
 | `ellipsis`   | `true` or `false`                        | `elm_label_ellipsis_set()`   |
 | `wrap_width` | 0 ~                                      | `elm_label_wrap_width_set()` |
@@ -762,7 +762,7 @@ The following attributes are used for the label component.
 
 ### Layout (![Layout](./media/component_attributes_layout_icon.png))
 
-A [layout](../../native/guides/ui/efl/container-layout.md) is a container component that takes a standard Edje design file and wraps it very thinly in a UI component.
+A [layout](../../../native/guides/ui/efl/container-layout.md) is a container component that takes a standard Edje design file and wraps it very thinly in a UI component.
 
 ```
 <layout align_v="fill" visible="true" src="edc.edj" weight_v="1" pack_h="122" weight_h="1" align_h="fill"
@@ -775,7 +775,7 @@ The following attributes are used for the layout component.
 **Table: Layout attributes**
 
 | Attribute        | Value                                    | Function                    |
-|----------------|----------------------------------------|---------------------------|
+|------------------|------------------------------------------|-----------------------------|
 | `id`             | Automatically incrementing and editable. Duplicates are not allowed. | `elm_layout_add()`          |
 | `disable`        | `true` or `false`                        | `elm_object_disabled_set()` |
 | `visible`        | `true` or `false`                        | `evas_object_show()`        |
@@ -783,7 +783,7 @@ The following attributes are used for the layout component.
 
 ### List (![List](./media/component_attributes_list_icon.png))
 
-A list component (in [mobile](../../native/guides/ui/efl/component-list-m.md) and [wearable](../../native/guides/ui/efl/component-list-w.md) applications) is a very simple list for managing a small number of items. If you need to manage a lot of items, use the genlist component instead.
+A list component (in [mobile](../../../native/guides/ui/efl/mobile/component-list.md) and [wearable](../../../native/guides/ui/efl/wearable/component-list.md) applications) is a very simple list for managing a small number of items. If you need to manage a lot of items, use the genlist component instead.
 
 ```
 <list scrollbar_v="auto" align_v="fill" visible="true" weight_v="1" pack_h="244" weight_h="1" mode="scroll"
@@ -799,7 +799,7 @@ The following attributes are used for the list component.
 **Table: List attributes**
 
 | Attribute                      | Value                                    | Function                      |
-|------------------------------|----------------------------------------|-----------------------------|
+|--------------------------------|------------------------------------------|-------------------------------|
 | `id`                           | Automatically incrementing and editable. Duplicates are not allowed. | `elm_list_add()`              |
 | `direction`                    | `horizontal` or `vertical`               | `elm_list_horizontal_set()`   |
 | `select_mode`                  | `default`, `always`, `none`, or `display_only` | `elm_list_select_mode_set()`  |
@@ -816,7 +816,7 @@ A list item component can be placed as a child of the list component. Each item 
 **Table: List item attributes**
 
 | Attribute  | Value                                    | Function                       |
-|----------|----------------------------------------|------------------------------|
+|------------|------------------------------------------|--------------------------------|
 | `id`       | Automatically incrementing and editable. Duplicates are not allowed. | `elm_list_item_append()`       |
 | `text`     | `#string`                                | `elm_list_item_append()`       |
 | `selected` | `true` or `false`                        | `elm_list_item_selected_set()` |
@@ -836,7 +836,7 @@ The following attributes are used for the map component.
 **Table: Map attributes**
 
 | Attribute    | Value                                    | Function                |
-|------------|----------------------------------------|-----------------------|
+|--------------|------------------------------------------|-------------------------|
 | `id`         | Automatically incrementing and editable. Duplicates are not allowed. | `elm_map_add()`         |
 | `zoom_level` | `integer (0~)`                           | `elm_map_zoom_set()`    |
 | `longitude`  | `double`                                 | `elm_map_region_show()` |
@@ -860,7 +860,7 @@ The following attributes are used for the multibutton entry component.
 **Table: Multibutton entry attributes**
 
 | Attribute  | Value                                    | Function                              |
-|----------|----------------------------------------|-------------------------------------|
+|------------|------------------------------------------|---------------------------------------|
 | `id`       | Automatically incrementing and editable. Duplicates are not allowed. | `elm_multibuttonentry_add()`          |
 | `editable` | `true` or `false`                        | `elm_multibuttonentry_editable_set()` |
 | `expanded` | `true` or `false`                        | `elm_multibuttonentry_expanded_set()` |
@@ -874,13 +874,13 @@ A multibutton entry item component can be placed as a child of the multibutton e
 **Table: Multibutton entry item attributes**
 
 | Attribute | Value                                    | Function                             |
-|---------|----------------------------------------|------------------------------------|
+|-----------|------------------------------------------|--------------------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_multibuttonentry_item_append()` |
 | `text`    | `#string`                                | `elm_multibuttonentry_item_append()` |
 
 ### Popup
 
-A popup component (in [mobile](../../native/guides/ui/efl/component-popup-m.md) and [wearable](../../native/guides/ui/efl/component-popup-w.md) applications) shows a pop-up area that contains a title, content, and action area. The following attributes are used for the popup component.
+A popup component (in [mobile](../../../native/guides/ui/efl/mobile/component-popup.md) and [wearable](../../../native/guides/ui/efl/wearable/component-popup.md) applications) shows a pop-up area that contains a title, content, and action area. The following attributes are used for the popup component.
 
 **Table: Popup attributes**
 
@@ -888,8 +888,8 @@ A popup component (in [mobile](../../native/guides/ui/efl/component-popup-m.md) 
 |---------|----------------------------------------|------------------------------------|
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_popup_add()`                    |
 | `title`   | `#string`                                | `elm_object_part_text_set()`         |
-| `style`   | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`             |
-| `colors`  | `#000000 ~ #ffffff`</br>See the [supported properties](#supported_properties) for each profile and version. | `elm_object_color_class_color_set()` |
+| `style`   | See the [supported properties](#properties-supported-for-each-component) for each profile and version | `elm_object_style_set()`             |
+| `colors`  | `#000000 ~ #ffffff`<br>See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_object_color_class_color_set()` |
 | `height`  | `integer`                                | `evas_object_size_hint_min_set()`    |
 | `timeout` | `double`                                 | `elm_popup_timeout_set()`            |
 | `disable` | `true` or `false`                        | `elm_object_disabled_set()`          |
@@ -897,7 +897,7 @@ A popup component (in [mobile](../../native/guides/ui/efl/component-popup-m.md) 
 
 ### Progressbar (![Progressbar](./media/component_attributes_progressbar_icon.png))
 
-A progressbar component (in [mobile](../../native/guides/ui/efl/component-progressbar-m.md) and [wearable](../../native/guides/ui/efl/component-progressbar-w.md) applications) is used to display the progress status of a given job.
+A progressbar component (in [mobile](../../../native/guides/ui/efl/mobile/component-progressbar.md) and [wearable](../../../native/guides/ui/efl/wearable/component-progressbar.md) applications) is used to display the progress status of a given job.
 
 ```
 <progressbar align_v="fill" visible="true" weight_v="1" pack_h="24" weight_h="1" align_h="fill" span_size="0"
@@ -911,20 +911,20 @@ The following attributes are used for the progressbar component.
 **Table: Progressbar attributes**
 
 | Attribute      | Value                                    | Function                                 |
-|--------------|----------------------------------------|----------------------------------------|
+|----------------|------------------------------------------|------------------------------------------|
 | `id`           | Automatically incrementing and editable. Duplicates are not allowed. | `elm_progressbar_add()`                  |
 | `span_size`    | 0 ~                                      | `elm_progressbar_span_size_set()`        |
 | `value`        | 0 ~ 1                                    | `elm_progressbar_value_set()`            |
 | `inverted`     | `true` or `false`                        | `elm_progressbar_inverted_set()`         |
 | `disable`      | `true` or `false`                        | `elm_object_disabled_set()`              |
 | `visible`      | `true` or `false`                        | `evas_object_show()`                     |
-| `style`        | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`                 |
-| `colors`       | `#000000 ~ #ffffff`</br>See the [supported properties](#supported_properties) for each profile and version. | `elm_object_color_class_color_set()`     |
-| `min` or `max` | See the [supported properties](#supported_properties) for each profile and version | `eext_circle_object_value_min_max_set()` |
+| `style`        | See the [supported properties](#properties-supported-for-each-component) for each profile and version | `elm_object_style_set()`                 |
+| `colors`       | `#000000 ~ #ffffff`<br>See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_object_color_class_color_set()`     |
+| `min` or `max` | See the [supported properties](#properties-supported-for-each-component) for each profile and version | `eext_circle_object_value_min_max_set()` |
 
 ### Radio (![Radio](./media/component_attributes_radio_icon.png))
 
-A radio component (in [mobile](../../native/guides/ui/efl/component-radio-m.md) and [wearable](../../native/guides/ui/efl/component-radio-w.md) applications) can display 1 or more options, while the user can only select one of them. The UI component is composed of an indicator (selected or unselected), an optional icon, and an optional label. Even though it is usually grouped with 2 or more other radio components, it can also be used alone.
+A radio component (in [mobile](../../../native/guides/ui/efl/mobile/component-radio.md) and [wearable](../../../native/guides/ui/efl/wearable/component-radio.md) applications) can display 1 or more options, while the user can only select one of them. The UI component is composed of an indicator (selected or unselected), an optional icon, and an optional label. Even though it is usually grouped with 2 or more other radio components, it can also be used alone.
 
 ```
 <radio align_v="fill" visible="true" weight_v="1" pack_h="49" weight_h="1" align_h="fill" pack_w="208"
@@ -937,17 +937,17 @@ The following attributes are used for the radio component.
 **Table: Radio attributes**
 
 | Attribute     | Value                                    | Function                      |
-|-------------|----------------------------------------|-----------------------------|
+|---------------|------------------------------------------|-------------------------------|
 | `id`          | Automatically incrementing and editable. Duplicates are not allowed. | `elm_radio_add()`             |
 | `state_value` | `#number`                                | `elm_radio_state_value_set()` |
 | `value`       | `#number`                                | `elm_radio_value_set()`       |
-| `text`        | `#string`</br>See the [supported properties](#supported_properties) for each profile and version. | `elm_object_text_set()`       |
+| `text`        | `#string`<br>See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_object_text_set()`       |
 | `disable`     | `true` or `false`                        | `elm_object_disabled_set()`   |
 | `visible`     | `true` or `false`                        | `evas_object_show()`          |
 
 ### Slider (![Slider](./media/component_attributes_slider_icon.png))
 
-A slider component (in [mobile](../../native/guides/ui/efl/component-slider-m.md) and [wearable](../../native/guides/ui/efl/component-slider-w.md) applications) is a draggable bar that is used to select a value from a range of values.
+A slider component (in [mobile](../../../native/guides/ui/efl/mobile/component-slider.md) and [wearable](../../../native/guides/ui/efl/wearable/component-slider.md) applications) is a draggable bar that is used to select a value from a range of values.
 
 ```
 <slider indicator="false" align_v="fill" visible="true" max="1.0" weight_v="1" pack_h="25" indicator_format=""
@@ -961,24 +961,24 @@ The following attributes are used for slider component.
 **Table: Slider attributes**
 
 | Attribute          | Value                                    | Function                             |
-|------------------|----------------------------------------|------------------------------------|
+|--------------------|------------------------------------------|--------------------------------------|
 | `id`               | Automatically incrementing and editable. Duplicates are not allowed. | `elm_slider_add()`                   |
-| `indicator`        | `true` or `false`See the [supported properties](#supported_properties) for each profile and version. | `elm_slider_indicator_show_set()`    |
+| `indicator`        | `true` or `false`See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_slider_indicator_show_set()`    |
 | `min`              | 0 ~                                      | `elm_slider_min_max_set()`           |
 | `step`             | 0 ~                                      | `elm_slider_step_set()`              |
 | `max`              | 0 ~                                      | `elm_slider_min_max_set()`           |
 | `value`            | 0 ~                                      | `elm_slider_value_set()`             |
-| `inverted`         | `true` or `false` </br>See the [supported properties](#supported_properties) for each profile and version. | `elm_slider_inverted_set()`          |
-| `indicator_format` | `#string` </br>See the [supported properties](#supported_properties) for each profile and version. | `elm_slider_indicator_format_set()`  |
-| `direction`        | `horizontal` or `vertical`See the [supported properties](#supported_properties) for each profile and version. | `elm_slider_horizontal_set()`        |
+| `inverted`         | `true` or `false` <br>See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_slider_inverted_set()`          |
+| `indicator_format` | `#string` <br>See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_slider_indicator_format_set()`  |
+| `direction`        | `horizontal` or `vertical`See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_slider_horizontal_set()`        |
 | `disable`          | `true` or `false`                        | `elm_object_disabled_set()`          |
 | `visible`          | `true` or `false`                        | `evas_object_show()`                 |
-| `style`            | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`             |
-| `colors`           | `#000000 ~ #ffffff`See the [supported properties](#supported_properties) for each profile and version. | `elm_object_color_class_color_set()` |
+| `style`            | See the [supported properties](#properties-supported-for-each-component) for each profile and version | `elm_object_style_set()`             |
+| `colors`           | `#000000 ~ #ffffff`See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_object_color_class_color_set()` |
 
 ### Spinner (![Spinner](./media/component_attributes_spinner_icon.png))
 
-A [spinner](../../native/guides/ui/efl/component-spinner-m.md) component enables the user to increase or decrease a numeric value by using arrow buttons. **(This component is not supported in wearable circle applications.)**
+A [spinner](../../../native/guides/ui/efl/mobile/component-spinner.md) component enables the user to increase or decrease a numeric value by using arrow buttons. **(This component is not supported in wearable circle applications.)**
 
 ```
 <spinner align_v="fill" visible="true" max="100" weight_v="1" editable="true" pack_h="123" weight_h="1"
@@ -992,7 +992,7 @@ The following attributes are used for the spinner component.
 **Table: Spinner attributes**
 
 | Attribute  | Value                                    | Function                             |
-|----------|----------------------------------------|------------------------------------|
+|------------|------------------------------------------|--------------------------------------|
 | `id`       | Automatically incrementing and editable. Duplicates are not allowed. | `elm_spinner_add()`                  |
 | `editable` | `true` or `false`                        | `elm_spinner_editable_set()`         |
 | `step`     | 0 ~                                      | `elm_spinner_step_set()`             |
@@ -1000,12 +1000,12 @@ The following attributes are used for the spinner component.
 | `max`      | 0 ~                                      | `elm_spinner_min_max_set()`          |
 | `disable`  | `true` or `false`                        | `elm_object_disabled_set()`          |
 | `visible`  | `true` or `false`                        | `evas_object_show()`                 |
-| `style`    | See the [supported properties](#supported_properties) for each profile and version | `elm_object_style_set()`             |
-| `colors`   | `#000000 ~ #ffffff`</br>See the [supported properties](#supported_properties) for each profile and version. | `elm_object_color_class_color_set()` |
+| `style`    | See the [supported properties](#properties-supported-for-each-component) for each profile and version | `elm_object_style_set()`             |
+| `colors`   | `#000000 ~ #ffffff`<br>See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_object_color_class_color_set()` |
 
 ### Toolbar (![Toolbar](./media/component_attributes_toolbar_icon.png)) in Mobile Applications
 
-A [toolbar](../../native/guides/ui/efl/component-toolbar-m.md) component is a small scrollable list of items. It can also show a menu when an item is selected. Only one item can be selected at a time.
+A [toolbar](../../../native/guides/ui/efl/mobile/component-toolbar.md) component is a small scrollable list of items. It can also show a menu when an item is selected. Only one item can be selected at a time.
 
 ```
 <toolbar shrink_mode="none" align_v="fill" visible="true" weight_v="0"
@@ -1236,13 +1236,13 @@ Some properties are supported only in specific profiles. The following table lis
 | Toolbar  item           | src                        | Yes               | Yes        | Yes            | No                     | No                           | No                       |
 | Toolbar item            | selected                   | Yes               | Yes        | Yes            | No                     | No                           | No                       |
 
-## Component Attributes – Custom UI Component
+## Component Attributes - Custom UI Component
 
-The `&lt;customcomponent&gt;` is a customized element.
+The `<customcomponent>` is a customized element.
 
-### Custom UI Component (![Custom UI Component](file:///D:/git/online-doc/org.tizen.studio/html/new/images/component_attributes_custom_icon.png))
+### Custom UI Component (![Custom UI Component](media/component_attributes_custom_icon.png))
 
-A [custom UI component](ui-builder-customcomponent.md) is a component you can create through EDC.
+A [custom UI component](custom-ui-component.md) is a component you can create through EDC.
 
 ```
 <customcomponent visible="true" resize_mode="none"

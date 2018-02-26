@@ -14,15 +14,15 @@ To use the Storyboard, you must create a Tizen native project using a UI Builder
 
 1. In the Project Wizard, select the application profile and version.
 
-   ![Create a Storyboard application](./media/storyboard_create.png)
+   ![Create a Storyboard application](media/storyboard_create.png)
 
 2. Select the native application type.
 
-   ![Select application type](./media/storyboard_type.png)
+   ![Select application type](media/storyboard_type.png)
 
 3. Select one of the UI Builder templates.
 
-   ![Select template](./media/storyboard_template.png)
+   ![Select template](media/storyboard_template.png)
 
 ## Adding Views
 
@@ -30,7 +30,7 @@ When you select the **Design** editor in the top toolbar area of the **Layout** 
 
 **Figure: Views shown in the Design editor**
 
-![Views shown in the Storyboard tab](./media/storyboard_all_views.png)
+![Views shown in the Storyboard tab](media/storyboard_all_views.png)
 
 The **Layout** editor offers 3 ways to add a new view:
 
@@ -38,17 +38,17 @@ The **Layout** editor offers 3 ways to add a new view:
 
 **Figure: Adding a new view**
 
-![Adding a new view](./media/storyboard_new_view.png)
+![Adding a new view](media/storyboard_new_view.png)
 
 -   In the **Outline** view, click the **Empty View** icon in the toolbar (marked by a red circle in the following figure), or right-click the **Outline** view area and select **Add View** and the applicable view.
 
-    ![Empty view](./media/storyboard_new_view_outline.png)
+    ![Empty view](media/storyboard_new_view_outline.png)
 
 - Drag and drop a view from the **Palette** to the canvas.
 
     The **Ctxpopup** view and **Popup** view are available in mobile applications only.
 
-    ![Empty view](./media/ui_builder_view_drag_and_drop.png)
+    ![Empty view](media/ui_builder_view_drag_and_drop.png)
 
 If you select a title bar area containing the view name and drag the view to a new location, you can see that direct manipulation changes the view position on the canvas in real time. In addition, you can use the real-time Pan and Scan function by dragging the empty space of the **Design** editor by holding down with the mouse wheel button.
 
@@ -58,7 +58,7 @@ If you select a title bar area containing the view name and drag the view to a n
 
 If it is difficult to understand the flow between multiple views, use the **Storyboard**'s **Auto Layout** function. It relocates your views to an easily-readable position.
 
-![Auto Layout](./media/storyboard_autolayout.png)
+![Auto Layout](media/storyboard_autolayout.png)
 
 ## Creating Connections
 
@@ -68,21 +68,33 @@ To create a connection between 2 views:
 
 2. Drag the component to the page where the transition is supposed to lead.
 
-   ![Add connection](./media/storyboard_conn_add.png)
+   ![Add connection](media/storyboard_conn_add.png)
 
 3. When the dragging is finished, a context menu opens listing the corresponding events of the object. If a connection already exists for some event of the UI component, that event is shown as disabled.
 
    Select an appropriate event from the menu.
 
-   ![Select event](./media/storyboard_conn_event.png)
+   ![Select event](media/storyboard_conn_event.png)
 
    After you select the event, the new connection is displayed and code is generated in the `layout.xml` file. The event handler code is also generated in the C file.
 
-   ![Connection](./media/storyboard_conn_connection.png)
+   ![Connection](media/storyboard_conn_connection.png)
 
 4. To edit the event code, click the connection, and select the event function in the **Properties** view.
 
-   To delete the connection, right-click the connection and select **Delete**.![Edit or delete the connection](./media/storyboard_conn_edit.png)
+   To delete the connection, right-click the connection and select **Delete**.
+
+   ![Edit or delete the connection](media/storyboard_conn_edit.png)
+
+5. In the source code, 2 functions are generated:
+
+   - `view1_button1_onclicked()` is called before the transition is performed to the target view.
+   - `view1_button1_onclicked_post()` is called after the transition has been performed.
+
+   Write whatever operation you want to perform during the pre and post transition.
+
+   ![Source code](media/storyboard_conn_code.png)
+
 
 ## Changing Component and Connection Properties
 
@@ -90,11 +102,11 @@ When you select a component or connection in the **Design** editor, the editable
 
 **Figure: Component properties**
 
-![Component properties](./media/storyboard_comp_properties.png)
+![Component properties](media/storyboard_comp_properties.png)
 
 **Figure: Connection properties**
 
-![Connection properties](./media/storyboard_conn_properties.png)
+![Connection properties](media/storyboard_conn_properties.png)
 
 ## Maximizing and Normalizing Views
 
@@ -106,8 +118,8 @@ The startup view can be identified by a **house** symbol in the title bar of the
 
 **Figure: Maximizing and normalizing views**
 
-![Maximizing and minimizing views](./media/storyboard_max_min.png)
+![Maximizing and minimizing views](media/storyboard_max_min.png)
 
 ## Related Information
-* Dependencies
+- Dependencies
   - Tizen Studio 1.0 and Higher

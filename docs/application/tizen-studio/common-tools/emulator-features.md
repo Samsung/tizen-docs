@@ -299,7 +299,7 @@ EventCast provides the following features:
 
 ### Prerequisites
 
-When connecting through USB, ADB is required to make a connection. If you have already installed the Android™ SDK on the computer, ADB is located in the `<installed Android SDK>/sdk/platform-tools` folder. Otherwise, you can download only ADB or install the Android SDK.
+When connecting through USB, ADB is required to make a connection. If you have already installed the Android&trade; SDK on the computer, ADB is located in the `<installed Android SDK>/sdk/platform-tools` folder. Otherwise, you can download only ADB or install the Android SDK.
 
 To install ADB:
 
@@ -307,7 +307,7 @@ To install ADB:
 
    For more information, see [ADB Fastboot Install](http://code.google.com/p/adb-fastboot-install/).
 
-2. Windows®: Download ADB and install it in the `C:\ADB` folder.
+2. Windows&reg;: Download ADB and install it in the `C:\ADB` folder.
 
    For more information, see [ADB Fastboot for Windows](http://rubenalamina.mx/custom-installers/android-adb-fastboot/).
 

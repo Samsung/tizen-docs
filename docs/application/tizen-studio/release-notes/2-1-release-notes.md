@@ -11,9 +11,9 @@
     -   Support for macOS 10.13 has been added.
     -   The DALi template has been added for the Tizen 4.0 platform.
 -   Installer, Package Manager, and Uninstaller
-    -   The Installer and Package Manager Launcher (NSIS) have been upgraded to the latest version to prevent DLL hijacking on 64-bit versions of Windows®.
+    -   The Installer and Package Manager Launcher (NSIS) have been upgraded to the latest version to prevent DLL hijacking on 64-bit versions of Windows&reg;.
 -   Certificate Manager
-    -   Usability has been improved by eliminating unnecessary user actions on Windows® when setting the proxy.
+    -   Usability has been improved by eliminating unnecessary user actions on Windows&reg; when setting the proxy.
     -   Security has been enhanced by supporting the HTTPS protocol when connecting to online sample server.
 -   Device Manager
     -   The **Permit to install** option has been added to the context menu in the connected target view. The TV emulator does not allow shell commands and does not show the tree view of the device file system in the Device Manager. Consequently, the **Permit to install** option has been added to support application installation on TV emulators.
@@ -25,13 +25,13 @@
         -   The descriptor describes the abstracted attribute for the UI component implemented by the EDC.
         -   Specialized components can be used as well as the basic components provided by the UI Builder.
         -   UI components can be reused, improving development productivity.
--   SmartThings™ SDK
-    -   Support has been added for SmartThings™ application projects:
+-   SmartThings&trade; SDK
+    -   Support has been added for SmartThings&trade; application projects:
         -   Online Model Server
-        -   SmartThings™ device templates
+        -   SmartThings&trade; device templates
         -   Device Model Manager (importing, exporting, and creating device models)
         -   Automatic code generation
-        -   SmartThings™ Certificate Management (creating, importing, and setting certificates as active)
+        -   SmartThings&trade; Certificate Management (creating, importing, and setting certificates as active)
 
 ### Changed Features
 
@@ -46,7 +46,7 @@
 ### Fixed Bugs
 
 -   Installer, Package Manager, and Uninstaller
-    -   Fixed a bug on Windows® computers that prevented the Package Manager and Uninstaller from creating or deleting shortcuts to a user account directory whose name contains multi-byte characters or spaces.
+    -   Fixed a bug on Windows&reg; computers that prevented the Package Manager and Uninstaller from creating or deleting shortcuts to a user account directory whose name contains multi-byte characters or spaces.
 -   Web and Native IDE
     -   Fixed a bug that caused the touch bar to turn black in macOS versions 10.12 and 10.13.
     -   Fixed a bug that prevented the log viewer from working properly with Gear S3 and Gear Sport devices.
@@ -79,23 +79,23 @@
     -   If the `expanded` attribute in a multibutton entry component is set to `false`, **+** is displayed.
 - Native Component Designer
     -   The vector-type part is not supported. You cannot see the vector image and change the SVG file.
-    -   Playing sound is not supported on Windows® or macOS.
+    -   Playing sound is not supported on Windows&reg; or macOS.
     -   The Component Designer crashes if an alias is selected as an added item's source group.
 - Emulator
     -   To use the Tizen emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen emulator from [Prerequisites for the Tizen Studio](https://developer.tizen.org/development/tizen-studio/download/installing-tizen-studio/prerequisites#emulator).
-        -   If the host machine is using NVIDIA® Optimus® technology on either Ubuntu or Windows®, you must set the Tizen emulator to run with your NVIDIA graphics card. For Ubuntu, check the bumblebee project (<https://wiki.ubuntu.com/Bumblebee>). For Windows®, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the NVIDIA control panel.
+        -   If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows&reg;, you must set the Tizen emulator to run with your NVIDIA graphics card. For Ubuntu, check the bumblebee project (<https://wiki.ubuntu.com/Bumblebee>). For Windows&reg;, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the NVIDIA control panel.
         -   On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
     -   On Ubuntu 14.04, a shortcut menu can sometimes appear transparent.
-    -   On Windows®, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the emulator window is covered with another window. If you click the emulator window, the display surface runs correctly again.
-    -   On Windows®, if a "failed to allocate memory" error occurs while executing the emulator, try the following:
+    -   On Windows&reg;, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the emulator window is covered with another window. If you click the emulator window, the display surface runs correctly again.
+    -   On Windows&reg;, if a "failed to allocate memory" error occurs while executing the emulator, try the following:
         -   Close some other programs and try to launch the emulator again.
         -   If the RAM size is set to 768 or 1024 MB for the VM in the Emulator Manager, change it to 512 MB.
-        -   Increase the user area of the virtual memory in the system to 3 GB by entering the `bcdedit /set increaseuserva 3072` command on the console with administrator rights (Windows® 7 only), and reboot.
-    -   If you use a MacBook Pro which has both Intel HD and NVIDIA® GPUs, the emulator can be unexpectedly terminated when you execute the emulator with **OpenGL ES Ver** set to **v1.1 & v2.0**. Check the emulator configuration in the Emulator Manager, and on the **General** tab in the **Emulator Configuration** window, set **OpenGL ES Ver** to **v2.0 & v3.0**.
+        -   Increase the user area of the virtual memory in the system to 3 GB by entering the `bcdedit /set increaseuserva 3072` command on the console with administrator rights (Windows&reg; 7 only), and reboot.
+    -   If you use a MacBook Pro which has both Intel HD and NVIDIA&reg; GPUs, the emulator can be unexpectedly terminated when you execute the emulator with **OpenGL ES Ver** set to **v1.1 & v2.0**. Check the emulator configuration in the Emulator Manager, and on the **General** tab in the **Emulator Configuration** window, set **OpenGL ES Ver** to **v2.0 & v3.0**.
     -   When you launch the Emulator Manager in the Tizen IDE, the Emulator Manager shortcut image is not exposed properly.
     -   Basic Web applications do not install on SD cards.
 - CLI and SDB
-    -   The Tizen Studio does not support the SDB bash auto-completion on Windows® (it is available on Ubuntu and macOS).
+    -   The Tizen Studio does not support the SDB bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
 - Dynamic Analyzer
     -   When analyzing applications on commercial devices running Tizen 3.0, both newly-released or after a firmware update, the following problems exist:
         -   The **Core Frequency** information is not shown.
@@ -106,6 +106,6 @@
     -   The Dynamic Analyzer cannot show life-cycle information for Web applications.
     -   Widget applications cannot be profiled with the Dynamic Analyzer. They are hidden in the application list on the toolbar for all Tizen platforms, except Tizen 2.3.2.
 - Web Inspector
-    -   If your Google Chrome™ browser version is higher than 54, the Web Inspector console and some other functions do not work properly due to Web core compatibility issues.
+    -   If your Google Chrome&trade; browser version is higher than 54, the Web Inspector console and some other functions do not work properly due to Web core compatibility issues.
 
 

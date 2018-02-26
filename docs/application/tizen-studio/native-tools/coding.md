@@ -8,7 +8,7 @@ The Content Assist tool provides the API assist and hover features to ease code 
 - [API and Privilege Checker](api-checker.md) **(Verifying APIs and Privileges)**  
 The API Checker tool checks for API and privilege usage violations in the application code. It helps you to identify and fix potential problems in the application code related to the API and privilege versions.
 
-- [UI Builder](ui-builder.md) **(Building UIs with Components)**  
+- [UI Builder](ui-builder/ui-builder.md) **(Building UIs with Components)**  
 The UI Builder tool is a WYSIWYG (What You See Is What You Get) design environment editor used to create user interfaces. It simplifies the creation of Tizen native application UIs by allowing you to arrange UI components using drag-and-drop operations. The UI Builder is a UI layout code generating tool, which also supports an easy-to-use programming model.
 
 - [EDC Editor](edc-editor.md) **(Designing UIs with the EDC Editor)**  

@@ -46,7 +46,7 @@ Set the target buffer size. You can select a predefined value of 1024, 2048, 409
 When you run the T-trace, the tracing process gathers traces during a specified time period. After tracing is finished, the T-trace processes the traces and creates a trace report in HTML format.
 
 > **Note**  
-> To operate the T-trace, you must first install Python (2.7.x) and the Google Chrome™ browser on your computer.
+> To operate the T-trace, you must first install Python (2.7.x) and the Google Chrome&trade; browser on your computer.
 
 You can run the T-trace in the Tizen Studio or from the command line:
 
@@ -81,7 +81,7 @@ You can run the T-trace in the Tizen Studio or from the command line:
 
 The results are stored in the `<TIZEN_STUDIO>/tools/ttrace/trace` directory. Both a `.text` binary-format trace file and a `.html` result report file are generated. The files are named with a timestamp (YYYYMMDDHHMMSS).
 
-You can view the results using the Google Chrome™ browser as a viewer. The viewer is launched with the result report when you click **Show result** in the T-trace dialog. If you run the T-trace from the command line, open the result report manually in the viewer.
+You can view the results using the Google Chrome&trade; browser as a viewer. The viewer is launched with the result report when you click **Show result** in the T-trace dialog. If you run the T-trace from the command line, open the result report manually in the viewer.
 
 **Figure: T-trace viewer**
 

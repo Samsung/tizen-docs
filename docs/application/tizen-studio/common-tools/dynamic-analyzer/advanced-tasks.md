@@ -105,28 +105,109 @@ The preference dialog contains the following settings:
 You can trigger some major analysis functions with keyboard shortcuts.
 
 **Table: Keyboard shortcuts**
-
-| <td colspan=2>Command <td colspan=2> Shortcut        |
-|-----------|---------------------------|:--------------|
-|             <td colspan=2>                             | Windows®        | macOS           |
-| File        <td colspan=2> New                          |  **Ctrl + N**    | **Command + N** |
-|             <td colspan=2>Load                          | **Ctrl + O**    | **Command + O** |
-| <td colspan=2> Save      | **Ctrl + S**             | **Command + S** |
-| <td colspan=2> Exit      | **Ctrl + Q**             | **Command + Q** |
-| Analyze     <td colspan=2>Start or stop trace       |**F5**          | **Fn + F5**     |
-| <td colspan=2>Search     | **Ctrl + F**                | **Command + F** |
-| <td colspan=2>Target     | **Ctrl + T**                | **Command + T** |
-| <td colspan=2>Screenshot | **F9**                      | **Fn + F9**    |
-| <td colspan=2>Preferences| **F10**                     | **Fn + F10**    |
-| <td colspan=2>Detail     | **Ctrl + H**                | **Command + H** |
-| |Navigate    | Zoom in                     | **W**           | **W**           |
-| | | Zoom out    | **S**                       | **S**           |
-| | | Move left   | **A**                       | **A**           |
-| | | Move right  | **D**                       | **D**           |
-| | | Move first  | **Q**                       | **Q**           |
-| | | Move end    | **E**                       | **E**           |
-| Help        <td colspan=2> How to use Dynamic Analyzer | **F1**          | **Fn + F1**     |
-
+<table>
+	<thead>
+		<tr>
+			<th colspan="3" rowspan="2">Command</th>
+			<th colspan="2">Shortcut</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>Windows&reg;</th>
+			<th>macOS</th>
+		</tr>
+		<tr>
+			<td rowspan="4">File</td>
+			<td colspan="2">New</td>
+			<td><strong>Ctrl + N</strong></td>
+			<td><strong>Command + N</strong></td>
+		</tr>
+		<tr>
+			<td colspan="2">Load</td>
+			<td><strong>Ctrl + O</strong></td>
+			<td><strong>Command + O</strong></td>
+		</tr>
+		<tr>
+			<td colspan="2">Save</td>
+			<td><strong>Ctrl + S</strong></td>
+			<td><strong>Command + S</strong></td>
+		</tr>
+		<tr>
+			<td colspan="2">Exit</td>
+			<td><strong>Ctrl + Q</strong></td>
+			<td><strong>Command + Q</strong></td>
+		</tr>
+		<tr>
+			<td rowspan="12">Analyze</td>
+			<td colspan="2">Start or stop trace</td>
+			<td><strong>F5</strong></td>
+			<td><strong>Fn + F5</strong></td>
+		</tr>
+		<tr>
+			<td colspan="2">Search</td>
+			<td><strong>Ctrl + F</strong></td>
+			<td><strong>Command + F</strong></td>
+		</tr>
+		<tr>
+			<td colspan="2">Target</td>
+			<td><strong>Ctrl + T</strong></td>
+			<td><strong>Command + T</strong></td>
+		</tr>
+		<tr>
+			<td colspan="2">Screenshot</td>
+			<td><strong>F9</strong></td>
+			<td><strong>Fn + F9</strong></td>
+		</tr>
+		<tr>
+			<td colspan="2">Preferences</td>
+			<td><strong>F10</strong></td>
+			<td><strong>Fn + F10</strong></td>
+		</tr>
+		<tr>
+			<td colspan="2">Detail</td>
+			<td><strong>Ctrl + H</strong></td>
+			<td><strong>Command + H</strong></td>
+		</tr>
+		<tr>
+			<td rowspan="6">Navigate</td>
+			<td>Zoom in</td>
+			<td><strong>W</strong></td>
+			<td><strong>W</strong></td>
+		</tr>
+		<tr>
+			<td>Zoom out</td>
+			<td><strong>S</strong></td>
+			<td><strong>S</strong></td>
+		</tr>
+		<tr>
+			<td>Move left</td>
+			<td><strong>A</strong></td>
+			<td><strong>A</strong></td>
+		</tr>
+		<tr>
+			<td>Move right</td>
+			<td><strong>D</strong></td>
+			<td><strong>D</strong></td>
+		</tr>
+		<tr>
+			<td>Move first</td>
+			<td><strong>Q</strong></td>
+			<td><strong>Q</strong></td>
+		</tr>
+		<tr>
+			<td>Move end</td>
+			<td><strong>E</strong></td>
+			<td><strong>E</strong></td>
+		</tr>
+		<tr>
+			<td>Help</td>
+			<td colspan="2">How to use Dynamic Analyzer</td>
+			<td><strong>F1</strong></td>
+			<td><strong>Fn + F1</strong></td>
+		</tr>
+	</tbody>
+</table>
 
 ## Table Data Copying and Export
 

@@ -12,7 +12,9 @@ Tizen runs on a variety of mobile, wearable, and TV devices that offer different
 > Screen density is usually referred to as DPI (dots per inch), which means the number of individual dots that can be placed in a line within the span of 1 inch (2.54 cm).
 >
 > **Resource**  
-> Resources are, for example, images, strings, application binary, and references of external places (such as files and networks). They are used only on runtime in Tizen.When you support multiple screens, you must use the resources with the application binary:File types – images, EDJ, text, video, and audioStrings for localization
+> Resources are, for example, images, strings, application binary, and references of external places (such as files and networks). They are used only on runtime in Tizen.When you support multiple screens, you must use the resources with the application binary:
+> - File types – images, EDJ, text, video, and audio
+> - Strings for localization
 >
 > **Internationalization and localization**  
 > Tizen provides localized resources to make your application usable for different countries. The Tizen Studio supports the **Resource Manager**
@@ -68,7 +70,9 @@ The screen configuration consists of resources and UI layouts. The resources con
 > The total number of physical pixels on a screen.
 >
 > **Screen orientation**  
-> The way in which a rectangular screen is oriented for normal viewing:Landscape: the width of the display area is greater than the height.Portrait: the height of the display area is greater than the width.
+> The way in which a rectangular screen is oriented for normal viewing:
+> - Landscape: the width of the display area is greater than the height.
+> - Portrait: the height of the display area is greater than the width.
 
 The following table shows the components for multiple screens.
 
@@ -79,10 +83,10 @@ The following table shows the components for multiple screens.
 | Tizen Studio   | Resource Manager                   | Provides the features to add, delete, or change the resources for the screen configuration and supports drag and drop for placing the UI layout.Paths of alternative resources used for multiple screens are written in the `res.xml` file, which is referenced at runtime. |
 |                | PO file editor                     | Supports string editing. You can add a localized string in the editor. |
 |                | Multiple UI layout                 | Supports the device-specific UI layout.  |
-| Tizen platform | Application module                 | Manages the application life-cycle. Using a callback function, it notifies you about application state change events. When the screen orientation or locale changes, this event must be sent to the module which handles multiple screens. For more information, see the [Applications](../../native/guides/app-management/applications.md) guide. |
+| Tizen platform | Application module                 | Manages the application life-cycle. Using a callback function, it notifies you about application state change events. When the screen orientation or locale changes, this event must be sent to the module which handles multiple screens. For more information, see the [Applications](../../../native/guides/app-management/applications.md) guide. |
 |                | Resource Management module         | Displays the appropriate resource file on the screen by using a resource key. |
 |                | Internationalization module (i18n) | Provides the localized string at runtime. |
-|                | EFL library                        | Is a graphics engine responsible for the UI representation in the UI component that makes up the application screen. This supports the [automatic scaling](../../native/guides/ui/efl/multiple-screens.md) function to express the natural screen without distortion on a variety of devices. |
+|                | EFL library                        | Is a graphics engine responsible for the UI representation in the UI component that makes up the application screen. This supports the [automatic scaling](../../../native/guides/ui/efl/multiple-screens.md) function to express the natural screen without distortion on a variety of devices. |
 
 ## Designing Applications with Multiple Screens
 
@@ -98,7 +102,7 @@ If you develop an application for a locale, you must register the localized stri
 
 ![PO file editor](./media/multiple_screen_po_file.png)
 
-For more information, see [Localizing Applications](po-file-editor.md).
+For more information, see [Localizing Applications](../po-file-editor.md).
 
 The naming convention for string resources in the **Properties** view is `@resource/<Resource ID>`, where `@resource` is an annotation symbol as an alternative resource definition to replace the resource file, and the `<Resource ID>` is the resource key.
 
@@ -139,21 +143,27 @@ To use alternative resources, you must follow the naming configuration rules.
 **Table: Configuration rules for the alternative resources**
 
 | Qualifier | Description                              |
-|---------|----------------------------------------|
-| Locale    | Target locale of the resource localization.Language region selected by the user at editing and runtime. |
+|-----------|------------------------------------------|
+| Locale    | Target locale of the resource localization.<br> Language region selected by the user at editing and runtime. |
 | DPI       | Screen density of the device.            |
 
 For example, the resource naming for the English locale and medium density is defined as `en_US-MDPI`.
 
 > **Note**  
-> If there is no alternative resource corresponding to a specific locale, the default resource is displayed on the screen.If there is no default resource, a blank is displayed on the screen. To avoid blanks, set a default resource.
+> If there is no alternative resource corresponding to a specific locale, the default resource is displayed on the screen.
+>
+> If there is no default resource, a blank is displayed on the screen. To avoid blanks, set a default resource.
 
 By using the **Resource Manager** view, you can set specific resources for the locale and screen density:
 
 1. Select English (US) in the **Language** box.
+
 2. Select MDPI in the **DPI** box.
+
 3. Click **Add**.
-4. Click **OK**.  
+
+4. Click **OK**.
+
  ![Configuration](./media/multiple_screen_config.png)
 
 The alternative resource files located in each directory are visible in the UI Builder **Layout Editor** view during application development. During runtime, the resource files are displayed based on the screen configuration of the device.
@@ -169,8 +179,11 @@ The following figure shows how to use an alternative resource image from the **R
 To use alternative resources:
 
 1. Add a Grid UI component by dragging and dropping a grid from the **Palette** to the view.
+
 2. Add a Background UI component by dragging and dropping a background from the **Palette** to the grid.
+
 3. Add an Image UI component by dragging and dropping an image from the **Palette** to the grid.
+
 4. Add the image resource for the image component by dragging and dropping the applicable image file from the **Resource Manager** view to the image.The resource is set on the current configuration of screen.
 
 You must also specify the selected alternative resource in the **Properties** view.
@@ -187,22 +200,28 @@ When you enter '@' at the **Image path** in the **Properties** view, the auto-co
 
 To use multiple UI layouts for each screen configuration:
 
-1. In the **Screen Configurator**, configure the specific screen.Open the **Screen Configurator** window by clicking the applicable icon on the **Layout Editor** toolbar.  
-![Configuring an alternative layout](./media/multiple_screen_alternative_layout.png)  
+1. In the **Screen Configurator**, configure the specific screen.
 
- To add layouts:  
-  a. Click **Add** to add a specific configuration.  
-  b. Edit the qualifiers for the configuration.  
+   Open the **Screen Configurator** window by clicking the applicable icon on the **Layout Editor** toolbar.
 
-   To set the qualifiers:  
-  -  Use as short a name as possible in the **Name** property.
-  - Use only English lowercase letters, numbers, and underscore characters. The name cannot start with a number.
-  - Select the resolution and density of the device screen.
-  - Set the screen orientation to portrait or landscape.
+   ![Configuring an alternative layout](./media/multiple_screen_alternative_layout.png)  
 
-  c. If needed, click the trash icon to delete the configuration.  
-  d. Apply your modifications to the configuration list and close the **Screen Configurator** by clicking **Finish**.  
-  e. If you do not want to save the modifications, click **Cancel** to close the **Screen Configurator** without saving.
+   To add layouts:  
+   1. Click **Add** to add a specific configuration.  
+
+   2. Edit the qualifiers for the configuration.  
+
+      To set the qualifiers:  
+      -  Use as short a name as possible in the **Name** property.
+      - Use only English lowercase letters, numbers, and underscore characters. The name cannot start with a number.
+      - Select the resolution and density of the device screen.
+      - Set the screen orientation to portrait or landscape.
+
+   3. If needed, click the trash icon to delete the configuration.  
+
+   4. Apply your modifications to the configuration list and close the **Screen Configurator** by clicking **Finish**.  
+
+   5. If you do not want to save the modifications, click **Cancel** to close the **Screen Configurator** without saving.
 
 2. Map a specific configuration to your application.
 
@@ -216,7 +235,9 @@ To use multiple UI layouts for each screen configuration:
 
       If you change the properties in the common configuration, the changes are applied to all other specific configurations.
 
-   2. Edit the **Variation** property of the UI component.When the size of the UI component in a specific configuration is modified, the default screen configuration is separated and mapped to the new screen configuration. The **Variation** property of the UI component is created and set only for the modified specific configuration.
+   2. Edit the **Variation** property of the UI component.
+
+      When the size of the UI component in a specific configuration is modified, the default screen configuration is separated and mapped to the new screen configuration. The **Variation** property of the UI component is created and set only for the modified specific configuration.
 
    3. Add a UI component to the specific configuration.
 
@@ -225,5 +246,5 @@ To use multiple UI layouts for each screen configuration:
 In the Tizen Studio, UI components are in the same memory space. If you delete a UI component in one configuration, the **Variation** properties of the component are removed from all other screen configurations too. Therefore, to design a UI for each screen configuration, the **Variation** properties of the UI components must be set differently for visibility.
 
 ## Related information
-* Dependencies
+- Dependencies
   - Tizen Studio 1.0 and Higher

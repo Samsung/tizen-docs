@@ -1,6 +1,5 @@
 # Tizen Native APIs
 
-
 You can develop native applications using the native API modules. You can create diverse applications with a variety of features, and design versatile applications and intriguing user interfaces with text and graphics while taking advantage of many device functionalities, such as sensors and call operations. In addition, you can, for example, manage content and media files, use network and social services, and provide messaging and embedded Web browsing functionality.
 
 The Tizen platform also provides a special kind of native application model, which consists of 1 UI native application and 1 or more native service applications.
