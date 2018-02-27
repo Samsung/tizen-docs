@@ -24,6 +24,7 @@ The following table lists the available UI components.
 | [ImageView](./imageview-n.md)         | An image view that renders an image.     | `ImageView`                              |
 | [ItemView](./itemview-n.md)           | An item view that renders item sets in a scrollable layout. | `ItemView`, `ItemFactory`, `ItemLayout`, `Scrollable` |
 | [Model3dView](./model3dview-n.md)     | A model view that displays static 3D content. | `Model3dView`                            |
+| [ProgressBar](./progressbar-n.md)     | A control to give the user an indication of the progress of an operation. | `ProgressBar`                              |
 | [ScrollView](./scrollview-n.md)       | A scroll view to provide scrollable view. | `ScrollView`, `Scrollable`, `ScrollViewEffect`, `ScrollViewPagePathEffect` |
 | [Slider](./slider-n.md)               | A control that indicates a modifiable value within a specific range. | `Slider`                                 |
 | [TableView](./tableview-n.md)         | A table view that can align child actors in a grid like layout. | `TableView`                              |

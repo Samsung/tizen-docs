@@ -18,6 +18,7 @@
 ### [ImageView](native-app/guides/ui/dali/imageview.md)
 ### [ItemView](native-app/guides/ui/dali/itemview.md)
 ### [Model3dView](native-app/guides/ui/dali/model3dview.md)
+### [ProgressBar](native-app/guides/ui/dali/progressbar.md)
 ### [ScrollView](native-app/guides/ui/dali/scrollview.md)
 ### [Slider](native-app/guides/ui/dali/slider.md)
 ### [TableView](native-app/guides/ui/dali/tableview.md)
