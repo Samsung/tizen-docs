@@ -1,5 +1,4 @@
-Privacy-related Permissions
-===========================
+# Privacy-related Permissions
 
 You can check current permissions for privacy-related privileges and request user permission to use specified privileges.
 
@@ -17,7 +16,7 @@ The main features of the Privacy Privilege API include:
 
     If a required permission is missing, you can [request the user to grant it](#requesting) to be able to use privileged features.
 
-For a list of privacy-related privileges, see [Security and API Privileges](../../tutorials/details/sec-privileges.md).
+For a list of privacy-related privileges, see [Security and API Privileges](../../tutorials/sec-privileges.md).
 
 
 <a name="requesting"></a>
@@ -35,33 +34,33 @@ To check whether an application has permission to use a privilege, and to reques
     The result of the call is returned as a value of the `PermissionType` enumeration (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/ppm.html#PermissionType) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/ppm.html#PermissionType) applications).
 
 2. React to the permission check appropriately:
-    -   If the result value is `PPM_ALLOW`, the application is allowed to perform operations related to the privilege. For example, the application can enable additional UI elements or functionalities.
+    - If the result value is `PPM_ALLOW`, the application is allowed to perform operations related to the privilege. For example, the application can enable additional UI elements or functionalities.
 
-        ```
-        switch (result) {
-            case "PPM_ALLOW":
-                /* Update UI and start accessing protected functionality */
-                break;
-        ```
+      ```
+      switch (result) {
+	      case "PPM_ALLOW":
+		      /* Update UI and start accessing protected functionality */
+		      break;
+      ```
 
     - If the result value is `PPM_DENY`, the application is not allowed to perform operations related to the privilege. Any attempt to use such functionality without the user's consent fails. Usually, this means that invoking any API method that involves the privilege results in an error.
 
-        ```
-            case "PPM_DENY":
-                /* Show a message and terminate the application */
-                break;
-        ```
+      ```
+	      case "PPM_DENY":
+		      /* Show a message and terminate the application */
+		      break;
+      ```
 
     - If the result value is `PPM_ASK`, the application must request permission from the user with the `requestPermission()` method, which displays a dialog box. When the user makes a decision, a callback defined as the second parameter is invoked.
 
-        The dialog box asking for user permission is shown only if the `requestPermission()` method does not throw an exception.
+      The dialog box asking for user permission is shown only if the `requestPermission()` method does not throw an exception.
 
-        ```
-            case "PPM_ASK":
-                /* Request permission */
-                break;
-        }
-        ```
+      ```
+	      case "PPM_ASK":
+		      /* Request permission */
+		      break;
+      }
+      ```
 
 3. If you need to request user permission, handle the user decision within the `PermissionSuccessCallback` callback used in the `requestPermission()` method.
 
@@ -84,8 +83,8 @@ To check whether an application has permission to use a privilege, and to reques
     tizen.ppm.requestPermission(cameraPrivilege, permissionSuccess, errorCallback);
     ```
 
-    -   If the user decision is `PPM_ALLOW_FOREVER` or `PPM_DENY_FOREVER`, the decision is definitive and the application can react appropriately. It can finish its execution (if denied permission) or start to use protected APIs (if granted permission).
-    -   If the user decision is `PPM_DENY_ONCE`, the decision is not definitive. In this case, access to protected functionality is still prohibited. This decision can be interpreted as a cancel action on behalf of the user, indicating that the user is not sure what the purpose of the request is. Therefore, consider providing some additional information to explain why the permission is required.
+    - If the user decision is `PPM_ALLOW_FOREVER` or `PPM_DENY_FOREVER`, the decision is definitive and the application can react appropriately. It can finish its execution (if denied permission) or start to use protected APIs (if granted permission).
+    - If the user decision is `PPM_DENY_ONCE`, the decision is not definitive. In this case, access to protected functionality is still prohibited. This decision can be interpreted as a cancel action on behalf of the user, indicating that the user is not sure what the purpose of the request is. Therefore, consider providing some additional information to explain why the permission is required.
 
     If the decision is definitive, any subsequent `requestPermission()` calls result in an immediate response with an appropriate result: `PPM_ALLOW_FOREVER` or `PPM_DENY_FOREVER`. However, the user can change the status of privacy-related privileges later by modifying the privacy settings on the device. For this reason, the application must always check the status of privacy-related privileges before using protected functionality.
 
@@ -93,6 +92,6 @@ To check whether an application has permission to use a privilege, and to reques
 > Since the privileges are grouped, the user's decision regarding 1 privilege applies to the whole group of related privileges. For example, if the user has granted permission to use the `http://tizen.org/privilege/account.read` privilege, permission is automatically granted to the `http://tizen.org/privilege/account.write` privilege also. Be aware that both privileges need to be declared in the application manifest file. If you declare only 1 of them, the above rule does not apply.
 
 ## Related Information
-* Dependencies
+- Dependencies
   - Tizen 4.0 and Higher for Mobile
   - Tizen 4.0 and Higher for Wearable

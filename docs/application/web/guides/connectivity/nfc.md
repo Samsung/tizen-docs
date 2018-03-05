@@ -487,7 +487,7 @@ When an application no longer needs to receive card emulation events, change the
 
 ## NFC Application Control Operations
 
-You can launch NFC applications based on the NDEF message content using the [application control](./app-management/appcontrols.md) functionalities:
+You can launch NFC applications based on the NDEF message content using the [application control](../app-management/app-controls.md) functionalities:
 
 - NFC application can be launched by the receipt of an NDEF message or by the reading of an NFC tag.
 
