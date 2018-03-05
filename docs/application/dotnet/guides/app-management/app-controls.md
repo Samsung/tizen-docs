@@ -485,19 +485,12 @@ Application Control Export
 You can allow other applications to launch your application and use your
 application features through application controls by exporting your
 application control functionalities. To allow other applications to
-launch your application implicitly without the application ID, declare
-your application control information in the `tizen-manifest.xml` file:
+launch your application implicitly without the application ID, specify
+your application control information in Visual Studio.
 
-```
-<app-control>
-   <mime name="application/xhtml+xml"/>
-   <operation name="http://tizen.org/appcontrol/operation/view"/>
-   <uri name="http://test.com"/>
-</app-control>
-<app-control>
-   <operation name="http://tizen.org/appcontrol/operation/call"/>
-</app-control>
-```
+**Figure: Exporting app control**
+
+![Exporting app control](./media/exporting_appcontrol.png)
 
 The operation, URI, and MIME type information is used when [resolving
 the application control](#resolution). The operation information is
@@ -506,8 +499,9 @@ application requesting a launch of your application must either specify
 your application ID (for an explicit launch) or have the same operation
 value and applicable URI and MIME type information (for an implicit
 launch).
+You can define privileges to restrict launching for applications having certain defined privileges.
 
-> **Note**  
+> **Note**
 > The URI or MIME type can contain wildcards, such as '\*', to
 match against given conditions in the application control:
 -   In the MIME type, you can use 2 types of wildcards: `image/*` and
