@@ -4,10 +4,12 @@ Thank you for your interest in contributing to the Tizen documentation!
 
 The document covers the process for contributing to the articles and code samples that are hosted on the [Tizen documentation site](https://docs.tizen.org/). Contributions may be as simple as typo corrections or as complex as new articles.
 
-* [Process for contributing](#process-for-contributing) 
+* [Process for contributing](#process-for-contributing)
 * [DOs and DON'Ts](#dos-and-donts)
-* [Building the docs](#building-the-docs)
+* [Content Licenset](#content-license)
 * [Contributor License Agreement](#contributor-license-agreement)
+* [Reference](#reference)
+
 
 ## Process for contributing
 
@@ -35,7 +37,6 @@ Navigate to the folder that corresponds to the TOC location determined for your 
 That folder contains the Markdown files for all articles in that section.
 If necessary, create a new folder to place the files for your content. The main article for that section is called *index.md*.
 For images and other static resources, create a subfolder called **media** inside the folder that contains your article, if it doesn't already exist. Inside the **media** folder, create a subfolder with the article name (except for the index file).
-Include larger samples in the *samples* folder under the root of the repo.
 
 Be sure to follow the proper Markdown syntax. For more information, see the [style guide](./styleguide/template-markdown.md).
 
@@ -77,30 +78,31 @@ On a certain cadence, we push all commits from master branch into the live branc
 
 ### How to PR
 1. Fork form the original repository, http://github.com/Samsung/tizen-docs.
+   (Ref. https://help.github.com/articles/fork-a-repo/)
 
-2. Clone the forked repository.
-   ```
-   $ git clone <forked repository URL>
+2. Type `git clone`, and then paste the URL you copied in 1. It will look like this, with your GitHub username instead of `YOUR-USERNAME`:
+   ```bash
+   $ git clone https://github.com/YOUR-USERNAME/tizen-docs.git
    ```
 3. Set to synchronize the original repository and the forked repository.
-   ```
+   ```bash
    $ git remote -v
    $ git remote add upstream http://github.com/Samsung/tizen-docs.git
    $ git remote -v
    ```
 4. Create a new branch on the forked repository or the local repository,
    and switch to the new branch.
-   ```
+   ```bash
    $ git checkout -b <new branch name>
    ```
 5. Create a local commit.
-   ```
+   ```bash
    $ git status
    $ git add
    $ git commit -a
    ```
 6. Push the branch
-   ```
+   ```bash
    $ git push origin <new branch name>
    ```
 7. Open a pull requst on http://github.com/Samsung/tizen-docs.git.
@@ -121,9 +123,15 @@ The following list shows some guiding rules that you should keep in mind when yo
 > you might notice that some of the topics are not currently following all the guidelines specified here and on the [style guide](./styleguide/template-markdown.md) as well. We're working towards achieving consistency throughout the site. Check the list of [open issues](https://github.com/Samsung/tizen-docs/issues?q=is%3Aissue+is%3Aopen+label%3Aguidelines-adherence) we're currently tracking for that specific goal.
 
 
+## Content License
+
+The contents in this project are under the [Creative Commons Attribution 3.0](http://creativecommons.org/licenses/by/3.0/) License or the [BSD-3-Clause License](https://www.tizen.org/bsd-3-clause-license).
+For more information, see the [Content License](content-license.md).
+
+
 ## Contributor License Agreement
 
-You can read more about Contribution License Agreements (CLA) on Wikipedia.
+You can read more about [Contribution License Agreements (CLA)](https://en.wikipedia.org/wiki/Contributor_License_Agreement) on Wikipedia.
 
 
 ## Reference
