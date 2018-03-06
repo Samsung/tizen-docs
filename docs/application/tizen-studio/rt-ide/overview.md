@@ -8,12 +8,12 @@ Tizen RT is an RTOS-based lightweight platform. The following are the hardware a
 
 * Development environment:
 	- Tizen RT Studio for SmartThings:
-	Tizen RT Studio versionn 2.0 (or later) is used as an IDE for developing IoT applications with the Tizen IoT Platform and ARTIK 053(s).
+	Tizen RT Studio version 2.0 (or later) is used as an IDE for developing IoT applications with the Tizen IoT Platform and ARTIK 053(s).
 
 	- IoT Setup Wizard:
 	The Tizen RT Setup Wizard is a computer application for easily setting up Tizen IoT on hardware targets. In the Tizen OS version 4.0, flashing a platform image into ARTIK 053(s) is only supported with the IoT Setup Wizard in a Linux computer environment.
 
-To get start developing your Tizen IoT applications:
+To start developing your Tizen IoT applications:
 1. [Install the Tizen Studio for RT](rt-install.md)
 2. [Manage the project](rt-create-project.md)
 3. [Managing SmartThings&trade; Certificates](rt-ide/smartthings-ext/manage-certificate.md)
