@@ -17,7 +17,7 @@ You can use the following security features in your .NET applications:
 
     You can check current permissions for privacy-related privileges and request user permission to use specific privileges.
 
--   [TEE Communication](libteec.md)
+-   [TEE Communication](tee-client.md)
 
     You can create secure communications by executing your application in a trusted execution environment (TEE), and communicating with other applications within that environment.
 
