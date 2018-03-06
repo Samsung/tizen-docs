@@ -44,9 +44,13 @@ The Emulator Manager can help you to select the recommended platform and templat
 To create a new emulator instance:
 
 1. In the Emulator Manager, click **Create**.
+
 2. Select the platform (system image), and click **Next**.
+
 3. Select the template (device definition), and click **Next**.
+
 4. Modify the properties as needed, and click **Finish**.The emulator instance appears in the Emulator Manager.To view the emulator instance details, right-click the instance and select **Detail**.
+
   > **Note**  
   > To run the application faster, switch on CPU VT and GPU. If CPU VT is disabled, check [Increasing the Application Execution Speed](emulator.md#speed) for more information. If GPU is disabled, [install the latest vendor-provided graphic driver](../setup/prerequisites.md#emulator).
 
@@ -61,6 +65,7 @@ To create an emulator, you must first select the platform. You can create, modif
 To create a custom platform:
 
 1. In the Emulator Manager, click **Create**.
+
 2. Click **+**.
 3. In the **Platform Configuration** dialog, select a base platform and platform image file.You can create a custom platform using a qcow2 or raw format image. Qcow2 is a platform image format that is released with the Tizen Studio. You can also create a qcow2 image by [exporting an emulator](#export). A platform image in the development stage is in raw format. If you launch an emulator with a raw image, you can see the current state of the image. This can be useful for platform developers.
 4. Click **OK** to save your configuration.The new platform is added to the list.
@@ -85,12 +90,16 @@ The Emulator Manager provides several device template types. A device template d
 You can create a custom template in 2 ways:
 
 1. In the Emulator Manager, click **Create**.
+
 2. Select a platform and click **Next**.
+
 3. To create a new template:
+
    - To create a new template from the beginning:
      1. Click **+**.
      2. Define the features for the template.
      3. Click **OK**.The new template is added to the list with a settings icon.
+
    - To create a new template based on an existing one:
      1. Select the template you want to clone.
      2. Click **clone template** (![Clone icon](./media/emulator_manager_clone.png)).
@@ -112,12 +121,15 @@ To manage the created templates:
 In the Emulator Manager, you can launch, edit, delete, reset, and export emulator instances:
 
 1. Launch the Emulator Manager.
+
 2. Select an emulator instance from the list.
+
 3. Manage the instance:
    - To launch the emulator, click **Launch**.
    - To edit an emulator, click **Edit**, make the desired changes, and click **Confirm**.
    - To delete an emulator, click **Delete**.
    - To reset an emulator, right-click it and select **Reset**.
+     <a name="export"></a>
    - To export an emulator, right-click it and select **Export as**. Specify the new image file location.When you export the emulator instance, the state of the platform image is replicated.
 
 <a name="control"></a>
@@ -129,7 +141,7 @@ You can create, modify, delete, and list your VMs through the command line inter
 
   `<TIZEN_STUDIO>/tools/emulator/bin/em-cli`
 
-- Windows®:
+- Windows&reg;:
 
   `<TIZEN_STUDIO>\tools\emulator\bin\em-cli.bat`
 

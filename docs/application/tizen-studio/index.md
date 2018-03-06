@@ -21,7 +21,7 @@ To develop your applications, use the set of tools provided by the Tizen Studio:
 - [Platform Tools](platform-tools/overview.md)  
   Learn about the platform development environment that helps you develop preloaded platform applications, platform libraries, and device drivers in Ubuntu.
 
-- [Tizen Studio for RT](rt-ide/rt-overview.md)  
+- [Tizen Studio for RT](rt-ide/overview.md)  
   Learn about the Tizen Studio for RT and how you can develop lightweight RTOS-based applications.
 
 - [Configurable SDK](configurable-sdk/configurable-sdk.md)  
@@ -86,4 +86,4 @@ The Tizen Studio contains many tools familiar from the old Tizen SDK, but with s
   ![Dynamic Analyzer](media/overview_da.png)
 
 
-For more information, see [Release Notes](../release-notes/2-2-release-notes.md).
+For more information, see [Release Notes](release-notes/release-notes.md).

@@ -1,6 +1,6 @@
 # Verifying Privilege Usage
 
-The Tizen Studio provides a checker to identify potential [privilege](../../web/tutorials/details/sec-privileges.md) violation problems in the application code. This check is performed automatically, and you can easily verify the source code in your project.
+The Tizen Studio provides a checker to identify potential [privilege](../../web/tutorials/sec-privileges.md) violation problems in the application code. This check is performed automatically, and you can easily verify the source code in your project.
 
 <a name="use"></a>
 ## Using the Privilege Checker

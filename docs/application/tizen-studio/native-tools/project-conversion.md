@@ -19,7 +19,7 @@ The Tizen Studio and CLI differ in how they describe the project properties and 
 
 The `project_def.prop` file describes the project properties, such as project type and list of source files. When you edit the properties in the `project_def.prop` file to manipulate the build or packaging process, use the following characters:
 
-- "/" is a path separator character (in Windows®, Ubuntu, and macOS).
+- "/" is a path separator character (in Windows&reg;, Ubuntu, and macOS).
 - "\" is a multi-line character, which is used at the end of each line.
 - "\ " (backslash + space) is a space character, used in a path name that contains a space.
 - "#" is a comment character.

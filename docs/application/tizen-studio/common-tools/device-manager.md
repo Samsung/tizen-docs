@@ -18,15 +18,13 @@ To use the Device Manager with a specific device, you must connect the device ov
 
     - Click the Device Manager icon on the desktop or in the **Start** menu.
 
-      | Ubuntu                                   | Windows®                                 | macOS                                    |
+      | Ubuntu                                   | Windows&reg;                                 | macOS                                    |
       |----------------------------------------|----------------------------------------|----------------------------------------|
       | **Desktop > Applications > Device Manager:**![Device Manager in Ubuntu](media/device_manager_icon_ubuntu.png) | **Start > All Programs > Tizen Studio > Tools > Device Manager:**![Device Manager in Windows](media/device_manager_icon_windows.png) | **Finder > Applications > Tizen Studio > Device Manager:**![Device Manager in macOS](media/device_manager_icon_macos.png) |
 
     - Run the Device Manager from the command line.
 
-      ​
-
-      | Ubuntu                                   | Windows®                                 | macOS                                    |
+      | Ubuntu                                   | Windows&reg;                                 | macOS                                    |
       |----------------------------------------|----------------------------------------|----------------------------------------|
       | `<TIZEN_STUDIO>/tools/device-manager/bin/device-manager` | `<TIZEN_STUDIO>\tools\device-manager\bin\device-manager.exe` | `<TIZEN_STUDIO>/tools/device-manager/bin/device-manager.app/Contents/MacOS/device-manager` |
 
@@ -155,12 +153,8 @@ You can perform a variety of actions in the **Log** view:
     -   To delete a single tab, click the **X** next to the name of the log tab.
     -   To delete all tabs for a device, right-click it in the Device Manager and select **Delete log tabs**. Confirm the deletion by clicking **OK**.
 
-    ​
-
     > **Note**  
 	> Any filters created for a log tab are deleted when the tab is removed.
-
-    ​
 
 - Filtering log messages
 
@@ -176,8 +170,6 @@ You can perform a variety of actions in the **Log** view:
 - Exporting logs
 
     To export logs to a file, click the **Export Logs** button (![Export Logs](./media/device_manager_export_logs_icon.png)), select the file storage location and file name for the exported log, and click **OK**.
-
-    ​
 
     *Note** If you have filters applied to a log tab, only messages that match those filters are exported. If you want to export the complete log, remove all filters before exporting.
 
@@ -199,11 +191,9 @@ You can set the following settings for the Device Manager:
 - File transfer timeout
 
     This is the maximum wait time for push and pull operations in the **File Explorer** view. To set the timeout value, select the **Device** tab, change the value, and click **OK**.
-    ​
 
     > **Note**  
     > Only values between 30 000 and 600 000 (milliseconds) are allowed.
-    ​
 
 - Log buffer size
 

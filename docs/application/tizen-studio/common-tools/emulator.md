@@ -110,6 +110,7 @@ The following table lists the basic features supported in the emulator.
 | Wi-Fi                  | -                                        | Not supported |                                          |
 | Wi-Fi Direct&reg;          | -                                        | Not supported |                                          |
 
+<a name="opengl"></a>
 ### OpenGL&reg; ES Acceleration Support
 
 For the emulator to support OpenGL&reg; ES acceleration, you need:

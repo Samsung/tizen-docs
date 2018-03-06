@@ -13,7 +13,7 @@ You can launch the Dynamic Analyzer in the **Project Explorer** view or from the
 - **In the Project Explorer view:**
   - Right-click the project in the **Project Explorer** view and select **Profile As > Profile with Dynamic Analyzer**
 - **From Tizen Studio sub-menu:**
-  - Windows®: **Startup > Tizen Studio > Tools > Dynamic Analyzer**
+  - Windows&reg;: **Startup > Tizen Studio > Tools > Dynamic Analyzer**
   - Ubuntu: **Applications > Dynamic Analyzer**
   - macOS: **Launchpad > Dynamic Analyzer**
 

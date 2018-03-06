@@ -1,12 +1,12 @@
 # Performing OpenGL Analysis
 
-The **OpenGL ES** (Open Graphics Library) tab of the Dynamic Analyzer displays information about OpenGL® 2.0 and EvasGL.
+The **OpenGL ES** (Open Graphics Library) tab of the Dynamic Analyzer displays information about OpenGL&reg; 2.0 and EvasGL.
 
 The tab consists of the following views:
 
 - [OpenGL chart](#chart) shows the elapsed time of the frame.
-- [Statistics](#statistics) table displays statistics of APIs related to EvasGL and OpenGL®.
-- [API List](#api_list) table shows the OpenGL® APIs that are associated with the values selected in the OpenGL chart.
+- [Statistics](#statistics) table displays statistics of APIs related to EvasGL and OpenGL&reg;.
+- [API List](#api_list) table shows the OpenGL&reg; APIs that are associated with the values selected in the OpenGL chart.
 - [Redundant](#redundant) table displays the APIs that are called repeatedly with the same parameters.
 - [Context](#context) table displays the render state of the API context selected in the API List table.
 - [Program](#program) table shows the shader program information.
@@ -36,7 +36,7 @@ The OpenGL chart displays the elapsed frame time with 2 charts:
 <a name="statistics"></a>
 ## Statistics
 
-The Statistics table displays the API statistics related to EvasGL and OpenGL® 2.0.
+The Statistics table displays the API statistics related to EvasGL and OpenGL&reg; 2.0.
 
 **Figure: Statistics table**
 

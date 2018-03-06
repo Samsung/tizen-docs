@@ -11,7 +11,7 @@ By using the Tizen Studio for Ubuntu, you can, for example:
 - Debug the platform modules with the correct rootstrap.
 - Update the rootstrap automatically.
 
-To use the Tizen Studio, download it from [https://developer.tizen.org/development/tizen-studio/download](../setup/download.md). For more information on the development tools, see [Platform Development Tools](platform-tools.md).
+To use the Tizen Studio, download it from [https://developer.tizen.org/development/tizen-studio/download](https://developer.tizen.org/development/tizen-studio/download). For more information on the development tools, see [Platform Development Tools](platform-tools.md).
 
 ## Prerequisites for Using the Platform IDE
 

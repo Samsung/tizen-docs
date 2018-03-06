@@ -10,7 +10,7 @@ Before starting the Package Manager, close all Tizen Studio programs.
 
 To run the Package Manager:
 
-- On Windows®, select **Start > All Programs > Tizen Studio > Tools > Package Manager**.
+- On Windows&reg;, select **Start > All Programs > Tizen Studio > Tools > Package Manager**.
 - On macOS, select **Launchpad > Package Manager**.
 - On Ubuntu, select **Dashboard Home > Package Manager**.
 

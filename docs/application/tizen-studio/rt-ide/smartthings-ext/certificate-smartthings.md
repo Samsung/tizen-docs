@@ -1,8 +1,6 @@
 
 # Managing SmartThings&trade; Certificates
 
-## Dependencies
--   Ubuntu Only
 
 SmartThings&trade; uses OpenSSL for security. To ensure that only trusted developers and manufactures can develop devices that communicate with the SmartThings Cloud, you must get certificates for devices to use the SmartThings&trade; service.
 
@@ -68,3 +66,8 @@ To activate a certificate:
 
 1.  In the SmartThings Certificate Manager, select the certificate you want to activate.
 2.  Click **Set Active**.
+
+
+## Related Information
+- Dependencies
+  - Ubuntu Only

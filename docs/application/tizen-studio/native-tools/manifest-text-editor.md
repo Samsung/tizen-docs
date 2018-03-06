@@ -1,6 +1,6 @@
 # Configuring the Application Manifest
 
-A Tizen native application package contains a manifest file, called `tizen-manifest.xml`, which is used to describe the application information. The manifest file is composed of XML elements, which include the root [&lt;manifest&gt;](#manifest) element and child elements representing application information, such as `<version>`, and `<privileges>`. The [child elements are organized into a specific hierarchy](#hierarchy). The elements can have attributes associated with them, providing more information on the element.
+A Tizen native application package contains a manifest file, called `tizen-manifest.xml`, which is used to describe the application information. The manifest file is composed of XML elements, which include the root [\<manifest\>](#manifest) element and child elements representing application information, such as `<version>`, and `<privileges>`. The [child elements are organized into a specific hierarchy](#hierarchy). The elements can have attributes associated with them, providing more information on the element.
 
 ## Editing the Manifest File
 
@@ -79,7 +79,7 @@ The Tizen native application manifest file consists of XML elements organized in
 
 The following sections summarize the elements used in the `tizen-manifest.xml` file of a native application.
 
-### &lt;manifest&gt; Element
+### \<manifest\> Element
 
 This element contains the manifest information for a Tizen native application. The `<manifest>` element is an easily readable description of the Tizen package and serves as a container for the other elements of the configuration document.
 
@@ -154,7 +154,7 @@ For more information on the relationship between the elements, see the [element 
 </manifest>
 ```
 
-### &lt;author&gt; Element
+### \<author\> Element
 
 This element represents the creator of the Tizen package.
 
@@ -184,7 +184,7 @@ For more information on the relationship between the elements, see the [element 
 <author email="email@email.com" href="http://test.com">author</author>
 ```
 
-### &lt;description&gt; Element
+### \<description\> Element
 
 This element contains an easily readable description of the Tizen package.
 
@@ -197,7 +197,7 @@ For more information on the relationship between the elements, see the [element 
 **Attributes:**
 
 - `xml:lang`  
-Language and country code (available value: "&lt;2-letter lowercase language code (ISO 639-1)&gt;-&lt;2-letter lowercase country code (ISO 3166-1 alpha-2)&gt;")
+Language and country code (available value: "\<2-letter lowercase language code (ISO 639-1)\>-\<2-letter lowercase country code (ISO 3166-1 alpha-2)\>")
 
 **Expected value:**
 
@@ -209,7 +209,7 @@ Language and country code (available value: "&lt;2-letter lowercase language cod
 <description xml:lang="en-us">This is a sample</description>
 ```
 
-### &lt;profile&gt; Element
+### \<profile\> Element
 
 This element contains the targeted requirements for specific device categories, which layer on top of the Tizen Common Platform, including additional components for devices, APIs, and hardware requirements. The platform must conform to the Tizen common requirements as well as at least 1 profile.
 
@@ -230,7 +230,7 @@ Profile name (available values: `mobile`, `wearable`)
 <profile name="mobile"/>
 ```
 
-### &lt;ui-application&gt; Element
+### \<ui-application\> Element
 
 This element contains the manifest information for a Tizen native UI application with a graphical user interface (GUI).
 
@@ -296,7 +296,7 @@ Indicates whether the application can be launched as a multiple (available value
 </ui-application>
 ```
 
-### &lt;service-application&gt; Element
+### \<service-application\> Element
 
 This element contains the manifest information for a Tizen native service application without a graphical user interface (GUI).
 
@@ -374,7 +374,7 @@ Tizen application type (available values: `capp`, `c++app`, `webapp`)
 </service-application>
 ```
 
-### &lt;watch-application&gt; Element
+### \<watch-application\> Element
 
 This element contains the settings for a watch application.
 
@@ -410,7 +410,7 @@ Watch application executable file path (string)
 </watch-application>
 ```
 
-#### &lt;label&gt; Element
+#### \<label\> Element
 
 This element contains the watch application text.
 
@@ -428,7 +428,7 @@ This element contains the watch application text.
 <label>watchsample</label>
 ```
 
-#### &lt;icon&gt; Element
+#### \<icon\> Element
 
 This element contains the watch application icon image.
 
@@ -444,7 +444,7 @@ This element contains the watch application icon image.
 <icon>watchsample.png</icon>
 ```
 
-### &lt;widget-application&gt; Element
+### \<widget-application\> Element
 
 This element contains the settings for a widget application.
 
@@ -491,7 +491,7 @@ Indicates the maximum number of widget instances that can be created in the widg
 </widget-application>
 ```
 
-#### &lt;label&gt; Element
+#### \<label\> Element
 
 This element contains the widget application text.
 
@@ -509,7 +509,7 @@ This element contains the widget application text.
 <label>test</label>
 ```
 
-#### &lt;icon&gt; Element
+#### \<icon\> Element
 
 This element contains the widget application icon image.
 
@@ -527,7 +527,7 @@ This element contains the widget application icon image.
 <icon>icon.png</icon>
 ```
 
-#### &lt;support-size&gt; Element
+#### \<support-size\> Element
 
 This element contains the size supported by the widget application.
 
@@ -555,7 +555,7 @@ The image is shown on the home screen when the user tries to select the widget.
 <support-size preview="preview.png">2x2</support-size>
 ```
 
-#### &lt;widget-class&gt; Element
+#### \<widget-class\> Element
 
 This element contains the settings for the widget class. After adding this element, you can use the `widget_app_class_add()` function to create widget instances in the widget application (maximum number of instances is defined in the `max-instance` attribute of the `<widget-application>` element).
 
@@ -589,7 +589,7 @@ Indicates the update period in seconds (available values: time in seconds)Multip
 </widget-class>
 ```
 
-### &lt;shortcut-list&gt; Element
+### \<shortcut-list\> Element
 
 This element contains the shortcut template list used for adding a shortcut to the home screen.
 
@@ -613,7 +613,7 @@ For more information on the relationship between the elements, see the [element 
 </shortcut-list>
 ```
 
-#### &lt;shortcut&gt; Element
+#### \<shortcut\> Element
 
 This element contains the information that indicates the shortcut for the application on the home screen.
 
@@ -649,7 +649,7 @@ Key for user content (string)Shortcut element property in the manifest file
 </shortcut>
 ```
 
-### &lt;account&gt; Element
+### \<account\> Element
 
 This element contains a set of user accounts and account provider-related information for a Tizen application.
 
@@ -673,7 +673,7 @@ For more information on the relationship between the elements, see the [element 
 </account>
 ```
 
-#### &lt;account-provider&gt; Element
+#### \<account-provider\> Element
 
 This element contains specific service provider or user account protocol-related information.
 
@@ -706,7 +706,7 @@ ID of the account provider (string)
 </account-provider>
 ```
 
-#### &lt;icon&gt; Element
+#### \<icon\> Element
 
 This element contains the account provider icon image. Since the icons are used on the device under **Settings > Accounts**, place them in a shared directory.
 
@@ -726,7 +726,7 @@ Usage information for the icon image (available values: `account` (image size: 7
 <icon section="account-small">uiapp.png</icon>
 ```
 
-#### &lt;capability&gt; Element
+#### \<capability\> Element
 
 This element contains the account provider capability. The capabilities are defined as `http://<VENDOR_INFORMATION>/account/capability/<NAME>`.
 
@@ -740,7 +740,7 @@ This element contains the account provider capability. The capabilities are defi
 <capability>http://tizen.org/account/capability/calendar</capability>
 ```
 
-### &lt;privileges&gt; Element
+### \<privileges\> Element
 
 This element contains the set of required privileges for a Tizen application.
 
@@ -772,7 +772,7 @@ For more information on the relationship between the elements, see the [element 
 </privileges>
 ```
 
-#### &lt;privilege&gt; Element
+#### \<privilege\> Element
 
 This element contains a required privilege for a Tizen application.
 
@@ -800,7 +800,7 @@ For more information on the expected values, see [Security and API Privileges](.
 <privilege>http://tizen.org/privilege/account.read</privilege>
 ```
 
-### &lt;feature&gt; Element
+### \<feature\> Element
 
 This element contains a list of required features for feature-based filtering in the Tizen Store.
 

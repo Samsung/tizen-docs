@@ -1,15 +1,15 @@
 # Building UIs with Components
 
-The Tizen native UI Builder is a graphical user interface builder tool that simplifies the creation of Tizen native application UIs by allowing you to arrange UI components using drag-and-drop operations. You can also create [customized UI components](ui-builder-customcomponent.md) for application-specific purposes.
+The Tizen native UI Builder is a graphical user interface builder tool that simplifies the creation of Tizen native application UIs by allowing you to arrange UI components using drag-and-drop operations. You can also create [customized UI components](custom-ui-component.md) for application-specific purposes.
 
-The native UI Builder is not only a UI layout code generating tool. It also supports an easy-to-use programming model, allows you to [support multiple screens](multiple-screen.md) within a single application, and makes it possible to [manage various data sources through databinding](ui-builder-databind.md). If you have an existing EFL UI project, you can [convert it to a UI Builder project](ui-builder-conversion.md) to ease the task of expanding the application and optimizing it to new devices.
+The native UI Builder is not only a UI layout code generating tool. It also supports an easy-to-use programming model, allows you to [support multiple screens](multiple-screens.md) within a single application, and makes it possible to [manage various data sources through databinding](databind.md). If you have an existing EFL UI project, you can [convert it to a UI Builder project](convert-projects.md) to ease the task of expanding the application and optimizing it to new devices.
 
 ## Designing a User Interface
 
 The native UI Builder offers 2 ways to develop a native application UI with the UI editor toggle button in the top toolbar area:
 
--   You can use WYSIWYG editing in the **Design** editor.
--   You can use XML element editing in the **Source** editor.
+- You can use WYSIWYG editing in the **Design** editor.
+- You can use XML element editing in the **Source** editor.
 
 The **Design** and **Source** editors are visible in the **Layout Editor** view. You can switch between the editors as needed.
 
@@ -25,23 +25,20 @@ To create a UI layout:
 
    ![Empty view](./media/ui_builder_empty_view.png) ![Empty view](./media/ui_builder_empty_view2.png)
 
--    With the **Palette**:
+   - With the **Palette**:
 
-   ​     You can add a view from the **Palette**. The **Ctxpopup** view and **Popup** view are available for mobile applications only.
+     You can add a view from the **Palette**. The **Ctxpopup** view and **Popup** view are available for mobile applications only.
 
-   ​     To add a new view from the **Palette**, drag and drop the view from the **Palette** to the canvas.
+     To add a new view from the **Palette**, drag and drop the view from the **Palette** to the canvas.
 
-   ![Empty view](./media/ui_builder_view_drag_and_drop.png)
+     ![Empty view](./media/ui_builder_view_drag_and_drop.png)
 
-   ​
 
 2. Add a UI container to the view.
 
    Each view must have a root container as the topmost UI component on the canvas. To place the root container, use the components in the **UI containers** category of the **Palette** view. You can drag and drop the component from the **Palette** to the canvas.
 
    The following figure shows the **Outline** view after adding a grid root container from the **Palette** to the empty view.
-
-   ​
 
    ![Palette](./media/ui_builder_palette.png)
 
@@ -59,7 +56,7 @@ To create a UI layout:
 
 #### Using EDJ for UI Design
 
-In addition to the UI Builder, you can create a UI layout using the EDC script. If the built-in UI components are not enough, design the UI layout using the [EDC Editor](edc-editor.md). To include the EDC script (an EDJ file) in your application, add a layout UI component to the view, and set the EDJ file path and group name properly in the **Properties** view.
+In addition to the UI Builder, you can create a UI layout using the EDC script. If the built-in UI components are not enough, design the UI layout using the [EDC Editor](../edc-editor.md). To include the EDC script (an EDJ file) in your application, add a layout UI component to the view, and set the EDJ file path and group name properly in the **Properties** view.
 
 You can also create a new EDC script or edit an included EDC script directly from the WYSIWYG editor: Double-click the ![EDC Editor](./media/ui_builder_link_to_edc.png) icon in the layout component, and the selected EDJ opens for editing in the EDC Editor.
 

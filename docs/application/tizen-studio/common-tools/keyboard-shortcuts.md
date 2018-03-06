@@ -6,7 +6,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Connection Explorer shortcuts**
 
-| Command  | Ubuntu          | Windows®        | macOS           |
+| Command  | Ubuntu          | Windows&reg;        | macOS           |
 |--------|---------------|---------------|---------------|
 | Delete   | **Delete**      | **Delete**      | **Delete**      |
 | Rename   | **F2**          | **F2**          | **F2**          |
@@ -17,7 +17,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Build and run shortcuts**
 
-| Command             | Ubuntu         | Windows®       | macOS             |
+| Command             | Ubuntu         | Windows&reg;       | macOS             |
 |-------------------|--------------|--------------|-----------------|
 | Build all           | **Ctrl + B**   | **Ctrl + B**   | **Command + B**   |
 | Make target build   | **Shift + F9** | **Shift + F9** | **Shift + F9**    |
@@ -29,7 +29,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Debug shortcuts**
 
-| Command           | Ubuntu               | Windows®             | macOS                   |
+| Command           | Ubuntu               | Windows&reg;             | macOS                   |
 |-----------------|--------------------|--------------------|-----------------------|
 | Step into         | **F5**               | **F5**               | **F5**                  |
 | Step over         | **F6**               | **F6**               | **F6**                  |
@@ -42,7 +42,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Content assist shortcuts**
 
-| Command        | Ubuntu           | Windows®         | macOS               |
+| Command        | Ubuntu           | Windows&reg;         | macOS               |
 |--------------|----------------|----------------|-------------------|
 | Content assist | **Ctrl + Space** | **Ctrl + Space** | **Command + Space** |
 
@@ -50,7 +50,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Project management shortcuts**
 
-| Command                               | Ubuntu               | Windows®             | macOS                    |
+| Command                               | Ubuntu               | Windows&reg;             | macOS                    |
 |-------------------------------------|--------------------|--------------------|------------------------|
 | New project and file using the Wizard | **Ctrl + N**         | **Ctrl + N**         | **Command + N**          |
 | New project and file                  | **Ctrl + Alt + N**   | **Ctrl + Alt + N**   | **Command + Option + N** |
@@ -67,7 +67,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Editor shortcuts**
 
-| Command                  | Ubuntu               | Windows®             | macOS                   |
+| Command                  | Ubuntu               | Windows&reg;             | macOS                   |
 |------------------------|--------------------|--------------------|-----------------------|
 | Find and replace         | **Ctrl + F**         | **Ctrl + F**         | **Command + F**         |
 | Quick fix                | **Ctrl + 1**         | **Ctrl + 1**         | **Command + 1**         |
@@ -93,7 +93,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Refactor shortcuts**
 
-| Command                 | Ubuntu              | Windows®            | macOS                    |
+| Command                 | Ubuntu              | Windows&reg;            | macOS                    |
 |-----------------------|-------------------|-------------------|------------------------|
 | Rename-refactoring      | **Alt + Shift + R** | **Alt + Shift + R** | **Command + Option + R** |
 | Move-refactoring        | **Alt + Shift + V** | **Alt + Shift + V** | **Command + Option + V** |
@@ -105,7 +105,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Native IDE shortcuts**
 
-| Command                  | Ubuntu                | Windows®              | macOS                      |
+| Command                  | Ubuntu                | Windows&reg;              | macOS                      |
 |------------------------|---------------------|---------------------|--------------------------|
 | Insert snippet           | **Ctrl + Shift + I**  | **Ctrl + Shift + I**  | **Command + Shift + I**    |
 | New launch configuration | **Alt + Shift + F12** | **Alt + Shift + F12** | **Command + Option + F12** |
@@ -116,7 +116,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Web IDE shortcuts**
 
-| Command                       |                    | Ubuntu                 | Windows®               | macOS                     |
+| Command                       |                    | Ubuntu                 | Windows&reg;               | macOS                     |
 |-----------------------------|------------------|----------------------|----------------------|-------------------------|
 | HTML editor                   | Vertical layout    | **Ctrl + Shift + F9**  | **Ctrl + Shift + F9**  | **Command + Shift + F9**  |
 |                               | Graphical designer | **Ctrl + Shift + F10** | **Ctrl + Shift + F10** | **Command + Shift + F10** |
@@ -132,7 +132,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Dynamic analyzer shortcuts**
 
-| Command                                  | Ubuntu       | Windows®     | macOS           |
+| Command                                  | Ubuntu       | Windows&reg;     | macOS           |
 |----------------------------------------|------------|------------|---------------|
 | About the analyzer                       | **F1**       | **F1**       | **F1**          |
 | Configuration                            | **F2**       | **F2**       | **F2**          |
@@ -155,7 +155,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Emulator Manager shortcuts**
 
-| Command                | Ubuntu        | Windows®      | macOS           |
+| Command                | Ubuntu        | Windows&reg;      | macOS           |
 |----------------------|-------------|-------------|---------------|
 | Delete virtual machine | **Delete**    | **Delete**    | **Fn + Delete** |
 | Launch virtual machine | **Enter**     | **Enter**     | **Enter**       |
@@ -166,7 +166,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Emulator shortcuts**
 
-| Command       | Ubuntu                   | Windows®                 | macOS                       |
+| Command       | Ubuntu                   | Windows&reg;                 | macOS                       |
 |-------------|------------------------|------------------------|---------------------------|
 | Detailed info | **Ctrl + Shift + F1**    | **Ctrl + Shift + F1**    | **Command + Shift + F1**    |
 | Always on top | **Ctrl + Shift + T**     | **Ctrl + Shift + T**     | **Command + Shift + T**     |
@@ -191,8 +191,8 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: ECP shortcuts**
 
-| Command  | Ubuntu                                   | Windows®        | macOS           |                 |
-|--------|----------------------------------------|---------------|---------------|---------------|
+| Command  |                                          | Ubuntu          | Windows&reg;    | macOS           |
+|----------|------------------------------------------|-----------------|-----------------|-----------------|
 | Common   | Move focus to upper card                 | **Up**          | **Up**          | **Up**          |
 |          | Move focus to card underneath            | **Down**        | **Down**        | **Down**        |
 |          | Move focus to left card (including page movement) | **Left**        | **Left**        | **Left**        |
@@ -240,7 +240,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: EDC Editor shortcuts**
 
-| Command                                  | Ubuntu                      | Windows®                    | macOS                          |
+| Command                                  | Ubuntu                      | Windows&reg;                    | macOS                          |
 |----------------------------------------|---------------------------|---------------------------|------------------------------|
 | Close the menu                           | **Esc**                     | **Esc**                     | **Esc**                        |
 | Show shortcut keys                       | **F1**                      | **F1**                      | **F1**                         |

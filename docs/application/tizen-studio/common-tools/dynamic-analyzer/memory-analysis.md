@@ -88,7 +88,7 @@ Markers and intervals are numbered starting from zero. The **Range Analysis** ta
 
 ![Range Analysis table](./media/da_memory_range.png)
 
-For more information on using ranges with time markers, see [Range Inspection with Markers](da-advanced.md#marker).
+For more information on using ranges with time markers, see [Range Inspection with Markers](advanced-tasks.md#marker).
 
 <a name="statistics"></a>
 ## Statistics

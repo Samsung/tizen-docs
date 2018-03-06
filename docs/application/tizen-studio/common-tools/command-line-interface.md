@@ -36,7 +36,7 @@ tizen cli-config [options]
 
 - Display a list of all configurations for which values are set.
 
-  Windows®, Ubuntu, and macOS:
+  Windows&reg;, Ubuntu, and macOS:
 
   ```
   > tizen cli-config -l
@@ -46,7 +46,7 @@ tizen cli-config [options]
   default.sdb.timeout=60000
   ```
 
-- Set a `profiles.xml` path globally.Windows®:`> tizen cli-config –g "default.profiles.path=C:\Users\workspace\.metadata\.plugins\org.tizen.common.sign\profiles.xml"`Ubuntu and macOS:`$ tizen cli-config –g default.profiles.path=~/workspace/.metadata/.plugins/org.tizen.common.sign/profiles.xml`
+- Set a `profiles.xml` path globally.Windows&reg;:`> tizen cli-config –g "default.profiles.path=C:\Users\workspace\.metadata\.plugins\org.tizen.common.sign\profiles.xml"`Ubuntu and macOS:`$ tizen cli-config –g default.profiles.path=~/workspace/.metadata/.plugins/org.tizen.common.sign/profiles.xml`
 
 ## Displaying Profile Templates
 
@@ -70,7 +70,7 @@ tizen list <option>
 
 - List all native application templates.
 
-  Windows®, Ubuntu, and macOS:
+  Windows&reg;, Ubuntu, and macOS:
 
   ```
   > tizen list native-project
@@ -86,7 +86,7 @@ tizen list <option>
 
 - List rootstraps.
 
-  Windows®, Ubuntu, and macOS:
+  Windows&reg;, Ubuntu, and macOS:
 
   ```
   > tizen list rootstrap
@@ -117,7 +117,7 @@ tizen create <sub-command> [options]
 
 - Create a template project based on the basic Tizen mobile UI project.
 
-  Windows®:
+  Windows&reg;:
 
   ```
   > tizen create native-project -p mobile-2.4 -t basic-ui -n basic -- C:\Users\workspace
@@ -143,18 +143,55 @@ tizen <sub-command> [options]
 
 **Sub-commands:**
 
-| Sub-command              | Description                              |
-|------------------------|----------------------------------------|
-| `build-native [options]` | Build the Tizen native project.Options are:`-a`, `--arch`: Specifies the architecture type: `x86` (default) or `arm``-c`, `--compiler`: Specifies the compiler to build: `llvm` (default) or `gcc``-C`, `--configuration`: Specifies the build configuration: `Debug` (default) or `Release``-j`, `--jobs`: Specifies the number of parallel builds for the native project.`-r`, `--rootstrap`: Specifies the rootstrap name. The rootstrap contains information on the profile name, platform version, and the target architecture type.`--`: Specifies the project directory. |
-| `build-web [options]`    | Build the Tizen Web project.Options are:`-e`, `--exclude`: Specifies a list of exclude files by patterns. By default, the following resources are excluded: `.build/*`, `.build`, `.sign/*`, `.sign`, `webUnitTest/*`, `webUnitTest`, `.externalToolBuilders/*`, `.externalToolBuilders`, `.buildResult/*`, `.buildResult`, `.settings/*`, `.settings`, `.package/*`, `.package`, `.tproject`, `.project`, `.sdk_delta.info`, `.rds_delta`, `*.wgt`, `.tizen-ui-builder-tool.xml``-euf`, `--exclude-uifw`: Specifies whether to exclude the Tizen Web UI framework, and use the Tizen UI framework in the target. This option is only used for applications using the Tizen UI framework.`-out`, `--output`: Sets the output directory name. If you omit this option, the `.buildResult` directory is created under the project directory by default.`-opt`, `--optimize`: Optimizes the application size. The JavaScript and CSS files are minimized and the Tizen Web UI framework source is excluded. The related link address is modified to a platform-dependent location instead.`--`: Specifies the project directory. |
+<table>
+	<thead>
+		<tr>
+			<th>Sub-command</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>build-native [options]</code></td>
+			<td>Build the Tizen native project.<br />
+			<br />
+			Options are:
+			<ul>
+				<li><code>-a</code>, <code>--arch</code>: Specifies the architecture type: <code>x86</code> (default) or <code>arm</code></li>
+				<li><code>-c</code>, <code>--compiler</code>: Specifies the compiler to build: <code>llvm</code> (default) or <code>gcc</code></li>
+				<li><code>-C</code>, <code>--configuration</code>: Specifies the build configuration: <code>Debug</code> (default) or <code>Release</code></li>
+				<li><code>-j</code>, <code>--jobs</code>: Specifies the number of parallel builds for the native project.</li>
+				<li><code>-r</code>, <code>--rootstrap</code>: Specifies the rootstrap name. The rootstrap contains information on the profile name, platform version, and the target architecture type.</li>
+				<li><code>-f</code>, <code>--framework</code>: Specifies the add-on framework name. If you installed an add-on framework, you can use this option to add the additional build environments (headers and libraries for add-on framework API).</li>
+				<li><code>--</code>: Specifies the project directory.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td><code>build-web [options]</code></td>
+			<td>Build the Tizen Web project.<br />
+			<br />
+			Options are:
+			<ul>
+				<li><code>-e</code>, <code>--exclude</code>: Specifies a list of exclude files by patterns. By default, the following resources are excluded: <code>.build/*</code>, <code>.build</code>, <code>.sign/*</code>, <code>.sign</code>, <code>webUnitTest/*</code>, <code>webUnitTest</code>, <code>.externalToolBuilders/*</code>, <code>.externalToolBuilders</code>, <code>.buildResult/*</code>, <code>.buildResult</code>, <code>.settings/*</code>, <code>.settings</code>, <code>.package/*</code>, <code>.package</code>, <code>.tproject</code>, <code>.project</code>, <code>.sdk_delta.info</code>, <code>.rds_delta</code>, <code>*.wgt</code>, <code>.tizen-ui-builder-tool.xml</code></li>
+				<li><code>-euf</code>, <code>--exclude-uifw</code>: Specifies whether to exclude the Tizen Web UI framework, and use the Tizen UI framework in the target. This option is only used for applications using the Tizen UI framework.</li>
+				<li><code>-out</code>, <code>--output</code>: Sets the output directory name. If you omit this option, the <code>.buildResult</code> directory is created under the project directory by default.</li>
+				<li><code>-opt</code>, <code>--optimize</code>: Optimizes the application size. The JavaScript and CSS files are minimized and the Tizen Web UI framework source is excluded. The related link address is modified to a platform-dependent location instead.</li>
+				<li><code>--</code>: Specifies the project directory.</li>
+			</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
 
 **Examples:**
 
-- Build the native project with the `x86`, `llvm`, and `Debug` options.Windows®:`> tizen build-native -a x86 -c llvm -C Debug -- C:\Users\workspace\basic> dir C:\Users\workspace\basic\Debug`Ubuntu and macOS:`$ tizen build-native -a x86 -c llvm -C Debug -- ~/workspace/basic$ ls ~/workspace/basic/Debug`
+- Build the native project with the `x86`, `llvm`, and `Debug` options.Windows&reg;:`> tizen build-native -a x86 -c llvm -C Debug -- C:\Users\workspace\basic> dir C:\Users\workspace\basic\Debug`Ubuntu and macOS:`$ tizen build-native -a x86 -c llvm -C Debug -- ~/workspace/basic$ ls ~/workspace/basic/Debug`
 
 - Build the native project with a rootstrap.
 
-  Windows®:
+  Windows&reg;:
 
   ```
   > tizen build-native -r mobile-2.4-device.core -C Release -- C:\Users\workspace\basic
@@ -170,7 +207,7 @@ tizen <sub-command> [options]
 
 - Build the Web project with default options.
 
-  Windows®:
+  Windows&reg;:
 
   ```
   $ tizen build-web -- C:\Users\workspace\basicWeb
@@ -204,7 +241,7 @@ tizen clean [-- <project directory>]
 
 - Clean the project.
 
-  Windows®:
+  Windows&reg;:
 
   ```
   > tizen clean -- C:\Users\workspace\basic
@@ -227,8 +264,9 @@ tizen certificate [options]
 ```
 
 **Options:**
+
 | Option                                | Description                              |
-|-------------------------------------|----------------------------------------|
+|---------------------------------------|------------------------------------------|
 | `-a`, `--alias <alias name>`          | Specifies an alias name of the certificate. |
 | `-p`, `--password <password>`         | Specifies the password of the certificate. |
 | `-c`, `--country <country code>`      | Specifies the user's country code, which consists of 2 letters. |
@@ -245,7 +283,7 @@ tizen certificate [options]
 
 - Generate a certificate.
 
-  Windows®:
+  Windows&reg;:
 
   ```
   > tizen certificate -a MyTizen -p 1234 -c KR -s Seoul -ct Gangnamgu -o Tizen –u Development -n "Gildong Hong" -e gildonghong@example.org -f mycert
@@ -306,7 +344,7 @@ tizen security-profiles <sub-command> [options]
 
 - Add a new security profile.
 
-  Windows®:
+  Windows&reg;:
 
   ```
   > tizen security-profiles add -n MyProfile -a C:\tizen-sdk- data\keystore\author\mycert.p12 -p 1234
@@ -342,7 +380,7 @@ tizen security-profiles <sub-command> [options]
 
 - Display the security profile list.
 
-  Windows®:
+  Windows&reg;:
 
   ```
   > tizen security-profiles list
@@ -366,7 +404,7 @@ tizen security-profiles <sub-command> [options]
 
 - Display the details for a security profile.
 
-  Windows®:
+  Windows&reg;:
 
   ```
   > tizen security-profiles list –n MyProfile
@@ -398,7 +436,7 @@ tizen security-profiles <sub-command> [options]
 
 - Remove the security profile.
 
-  Windows®:
+  Windows&reg;:
 
   ```
   > tizen security-profiles remove
@@ -439,7 +477,7 @@ tizen package [options]
 
 - Package the project.
 
-  Windows®:
+  Windows&reg;:
 
   ```
   > tizen package -t tpk -s MyProfile -- C:\Users\workspace\basic\Debug
@@ -492,7 +530,7 @@ tizen package [options]
 
 - Re-sign the package.
 
-  Windows®:
+  Windows&reg;:
 
   ```
   > tizen package -t tpk -s MyProfile -- C:\Users\workspace\basic\Debug\org.tizen.basic-1.0.0-i386.tpk
@@ -537,17 +575,72 @@ tizen build-app [options] [args specified with JSON-like format]
 
 **Arguments:**
 
-| Type      | JSON-like expression                     |
-|---------|----------------------------------------|
-| `build`   | `build: [    {        name: <build alias>,        targets: [<project directories in workspace separated by commas>],        methods: [<build methods separated by commas>],        output: <build output path>,        multitask: <cout of processes>    }]` |
-| `method`  | `method: [    {        name: <method name>,        compiler: <compiler name, such as GCC, LLVM>,        rootstraps: [            {name: <ID of a dependent project>, platform: <platform name>, arch: <architecture>}        ],        predefines: [<predefined build macros separated by commas>],        configs: [<build config>]    }]` |
-| `package` | `package: [    {        name: <package name>,        type: <package type, such as .tpk, .wgt>,        targets: [< build file or project directories in workspace separated by commas>],        output: <package file path>    }]` |
+<table>
+	<thead>
+		<tr>
+			<th>Type</th>
+			<th>JSON-like expression</th>
+		</tr>
+	</tead>
+	<tbody>
+		<tr>
+			<td><code>build</code></td>
+			<td>
+			<pre><code>
+build: [
+    {
+        name: &lt;build alias&gt;,
+        targets: [&lt;project directories in workspace separated by commas&gt;],
+        methods: [&lt;build methods separated by commas&gt;],
+        output: &lt;build output path&gt;,
+        multitask: &lt;cout of processes&gt;
+    }
+]
+			</code></pre>
+			</td>
+		</tr>
+		<tr>
+			<td><code>method</code></td>
+			<td>
+			<pre><code>
+method: [
+    {
+        name: &lt;method name&gt;,
+        compiler: &lt;compiler name, such as GCC, LLVM&gt;,
+        rootstraps: [
+            {name: &lt;ID of a dependent project&gt;, platform: &lt;platform name&gt;, arch: &lt;architecture&gt;}
+        ],
+        predefines: [&lt;predefined build macros separated by commas&gt;],
+        configs: [&lt;build config&gt;]
+    }
+]
+			</code></pre>
+			</td>
+		</tr>
+		<tr>
+			<td><code>package</code></td>
+			<td>
+			<pre><code>
+package: [
+    {
+        name: &lt;package name&gt;,
+        type: &lt;package type, such as .tpk, .wgt&gt;,
+        targets: [&lt; build file or project directories in workspace separated by commas&gt;],
+        output: &lt;package file path&gt;
+    }
+]
+			</code></pre>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
 
 **Examples:**
 
 - Package the Web multi application.
 
-  Windows®, Ubuntu, and macOS:
+  Windows&reg;, Ubuntu, and macOS:
 
   ```
   > tizen build-app -p "name:webp1,targets:[webbasic,webwidget]"
@@ -556,7 +649,7 @@ tizen build-app [options] [args specified with JSON-like format]
 
 - Package the native multi package with the debug and release build configurations.
 
-  Windows®, Ubuntu, and macOS:
+  Windows&reg;, Ubuntu, and macOS:
 
   ```
   > tizen build-app -m "name:m1,configs:[Debug,Release]" -b "name:b1,targets:[basic,service],methods:[m1]" -p "name:nativep1,targets:[b1]" -s MyProfile
@@ -584,7 +677,7 @@ tizen install [options]
 
 **Examples:**
 
-- Install the basic application, whose package name is `org.tizen.basic-1.0.0-i386.tpk`, on the emulator-26101.Windows®:`> tizen install -n org.tizen.basic-1.0.0-i386.tpk -s emulator-26101 -- C:\Users\workspace\basic\Debug`Ubuntu and macOS:`$ tizen install -n org.tizen.basic-1.0.0-i386.tpk -s emulator-26101 -- ~/workspace/basic/Debug`
+- Install the basic application, whose package name is `org.tizen.basic-1.0.0-i386.tpk`, on the emulator-26101.Windows&reg;:`> tizen install -n org.tizen.basic-1.0.0-i386.tpk -s emulator-26101 -- C:\Users\workspace\basic\Debug`Ubuntu and macOS:`$ tizen install -n org.tizen.basic-1.0.0-i386.tpk -s emulator-26101 -- ~/workspace/basic/Debug`
 
 ## Running the Application on a Target
 
@@ -606,7 +699,7 @@ tizen run [options]
 
 **Examples:**
 
-- Run the basic application, whose package ID is `org.tizen.basic`, on the emulator-26101.Windows®, Ubuntu, and macOS:`> $ tizen run -p org.tizen.basic -s emulator-26101`
+- Run the basic application, whose package ID is `org.tizen.basic`, on the emulator-26101.Windows&reg;, Ubuntu, and macOS:`> $ tizen run -p org.tizen.basic -s emulator-26101`
 
 ## Uninstalling the Application on a Target
 
@@ -628,7 +721,7 @@ tizen uninstall [options]
 
 **Examples:**
 
-- Uninstall the basic application, whose package ID is `org.tizen.basic`, from the emulator-26101.Windows®, Ubuntu, and macOS:`> tizen uninstall -p org.tizen.basic -s emulator-26101`
+- Uninstall the basic application, whose package ID is `org.tizen.basic`, from the emulator-26101.Windows&reg;, Ubuntu, and macOS:`> tizen uninstall -p org.tizen.basic -s emulator-26101`
 
 ## Displaying the Command Manual
 
@@ -650,7 +743,7 @@ cli-config, list, create, build-native, build-web, clean, certificate, security-
 
 - Display the manual for the create command.
 
-  Windows®, Ubuntu, and macOS:
+  Windows&reg;, Ubuntu, and macOS:
 
   ```
   > tizen manual create
@@ -674,10 +767,10 @@ cli-config, list, create, build-native, build-web, clean, certificate, security-
 
   Examples:
       Creates a template project based on the basic Tizen mobile UI project:
-          Windows®:
+          Windows:
               > tizen.bat create native-project -p mobile-2.4 -t basic-ui -n basic --
                   C:\Users\workspace
-                  >cd C:\Users\workspace\basic
+                  > cd C:\Users\workspace\basic
           Ubuntu and macOS:
                   $ tizen create native-project -p mobile-2.4 -t basic-ui -n basic -- /ho
                   me/workspace
@@ -698,7 +791,7 @@ tizen version
 
 - Display the CLI version number.
 
-  Windows®, Ubuntu, and macOS:
+  Windows&reg;, Ubuntu, and macOS:
 
   ```
   > tizen version

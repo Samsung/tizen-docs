@@ -30,11 +30,11 @@ The value is automatically used in all widget IDs when you create a new Web appl
 ![Widget ID](./media/ide_pref_widget_id.png)
 
 <a name="chrome"></a>
-## Google Chrome™ Browser Path
+## Google Chrome&trade; Browser Path
 
 Go to **Tizen Studio > Web > Chrome**.
 
-The Google Chrome™ browser location is automatically set if the browser is installed on your system.
+The Google Chrome&trade; browser location is automatically set if the browser is installed on your system.
 
 If you have installed the browser in a custom location, the Tizen Studio cannot automatically detect the path and you must set the location manually.
 
