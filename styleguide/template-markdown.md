@@ -232,7 +232,7 @@ Currently, you can embed YouTube videos with the following syntax:
 To get the video's correct URL, select the **Embed** tab below the video frame, and copy the URL from the `<iframe>` element. For example:
 
 ```markdown
-> ![VIDEO](https://channel9.msdn.com/Blogs/dotnet/NET-Core-20-Released/player)
+![VIDEO](https://channel9.msdn.com/Blogs/dotnet/NET-Core-20-Released/player)
 ```
 
 ### YouTube
@@ -240,13 +240,14 @@ To get the video's correct URL, select the **Embed** tab below the video frame, 
 To get the video's correct URL, right-click on the video, select **Copy Embed Code**, and copy the URL from the `<iframe>` element.
 
 ```markdown
-> ![VIDEO](<youtube_video_link>)
+![VIDEO](<youtube_video_link>)
 ```
 
 For example:
 
 ```markdown
-> [!VIDEO https://www.youtube.com/embed/H52DdXBZh4Q]
+[!VIDEO https://www.youtube.com/embed/H52DdXBZh4Q]
+```
 
 ### Inline HTML
 To change width or height of videos, you must use inline HTML.
