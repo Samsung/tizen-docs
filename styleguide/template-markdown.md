@@ -13,12 +13,12 @@ Markdown uses special characters such as \*, \`, and \# for formatting. If you w
 ## File name
 
 File names use the following rules:
-* Contain only lowercase letters, numbers, and hyphens.
-* No spaces or punctuation characters. Use the hyphens to separate words and numbers in the file name.
-* Use action verbs that are specific, such as develop, buy, build, troubleshoot. No -ing words.
-* No small words - don't include a, and, the, in, or, etc.
-* Must be in Markdown and use the .md file extension.
-* Keep file names reasonably short. They are part of the URL for your articles.  
+- Contain only lowercase letters, numbers, and hyphens.
+- No spaces or punctuation characters. Use the hyphens to separate words and numbers in the file name.
+- Use action verbs that are specific, such as develop, buy, build, troubleshoot. No -ing words.
+- No small words - don't include a, and, the, in, or, etc.
+- Must be in Markdown and use the .md file extension.
+- Keep file names reasonably short. They are part of the URL for your articles.  
 
 
 ## Headings
@@ -62,8 +62,7 @@ The id is auto-generated based on the header text. So, for example, given a uniq
 
 To link to a Markdown file in the same repo, use [relative links](https://www.w3.org/TR/WD-html40-970917/htmlweb.html#h-5.1.2), including the ".md" at the end of the filename.
 
-- Example: [Readme file](../readme.md)
-- Example: [Welcome to .NET](../docs/welcome.md)
+- Example: [Readme file](../README.md)
 
 To link to a header in a Markdown file in the same repo, use relative linking + hashtag linking.
 
@@ -228,8 +227,7 @@ function fancyAlert(arg) {
 
 ## Videos
 
-Currently, you can embed both Channel 9 and YouTube videos with the following syntax:
-
+Currently, you can embed YouTube videos with the following syntax:
 
 To get the video's correct URL, select the **Embed** tab below the video frame, and copy the URL from the `<iframe>` element. For example:
 
@@ -249,3 +247,14 @@ For example:
 
 ```markdown
 > [!VIDEO https://www.youtube.com/embed/H52DdXBZh4Q]
+
+### Inline HTML
+To change width or height of videos, you must use inline HTML.
+
+For example:
+```
+<video controls height="400" width="400">
+  <source src="/application/design/introduction/media/animations_doencoded.webm" type=video/webm>
+</video>  
+```
+
