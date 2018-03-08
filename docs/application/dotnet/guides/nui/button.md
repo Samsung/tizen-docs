@@ -1,11 +1,11 @@
 # Button
 
-A button is a NUI control that the user can press in order to operate it. You can create push buttons, check box buttons, radio buttons, and toggle buttons. All different buttons are implemented through the `Tizen.NUI.UIComponents.Button` base class.
+A button is a NUI control that you can press in order to operate it. You can create push buttons, check box buttons, radio buttons, and toggle buttons. All different buttons are implemented through the [Tizen.NUI.UIComponents.Button](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.UIComponents.Button.html) base class.
 
 A button can be selectable, disabled, and togglable. These states can be set with the `Toggable` and `Selected` properties of the `Tizen.NUI.UIComponents.Button` class and the `Disabled` property of the [Tizen.NUI.BaseComponents.View](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.View.html) class.
 
 <a name="creation"></a>
-## Creating Buttons
+## Creating buttons
 
 To create various button controls:
 
@@ -38,13 +38,13 @@ To create various button controls:
 
 -   Check box button
 
-    The [Tizen.NUI.UIComponents.CheckBoxButton](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.UIComponents.CheckBoxButton.html) class allows you to create a check box button, which can be checked or unchecked.
+    The [Tizen.NUI.UIComponents.CheckBoxButton](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.UIComponents.CheckBoxButton.html) class allows you to create a check box button, which can be selected or cleared.
 
-    **Figure: CheckBoxButton**
+    **Figure: Check box button**
 
     ![Check box button](media/checkbutton.png)
 
-    A check box button triggers all 4 [button events](#events), but often you can simply handle the `StateChanged` event to be notified when the button changes its state to selected or unselected.
+    A check box button triggers all four [button events](#events), but often you can simply handle the `StateChanged` event to be notified when the button changes its state to selected or unselected.
 
     To create a check box button:
 
@@ -227,5 +227,5 @@ To add a tooltip to a button:
     ```
 
 ## Related Information
-* Dependencies
+- Dependencies
   -   Tizen 4.0 and Higher

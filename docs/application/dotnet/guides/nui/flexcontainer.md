@@ -4,7 +4,7 @@ A flex container is a NUI container control that contains items, such as buttons
 
 The flex container can alter the width and height of the flex items within it, so that they optimally fill the available space on any display size. It expands items to fill available free space, or reduces their size to prevent overflow.
 
-The following figure illustrates flex container terminology and alignment axes, based on a flex container where the "flex direction" is defined as "row".
+The following figure illustrates flex container terminology and alignment axes, based on a flex container where the "flex direction" is defined as *row*.
 
 **Figure: Flex container terminology**
 
@@ -427,5 +427,5 @@ You can modify the flex item placement through the following properties:
     ```
 
 ## Related Information
-* Dependencies
+- Dependencies
   -   Tizen 4.0 and Higher
