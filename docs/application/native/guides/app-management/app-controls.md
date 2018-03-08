@@ -430,28 +430,22 @@ app_control_result(app_control_h request, app_control_h reply, app_control_resul
 <a name="export_appcontrol"></a>
 ## Application Control Export
 
-You can allow other applications to launch your application and use your application features through application controls by exporting your application control functionalities. To allow other applications to launch your application implicitly without the application ID, declare your application control information in the `tizen-manifest.xml` file:
+You can allow other applications to launch your application and use your application features through application controls by exporting your application control functionalities. To allow other applications to launch your application implicitly without the application ID, specify your application control information in the Tizen Studio.
 
-```
-<app-control>
-   <mime name="application/xhtml+xml"/>
-   <operation name="http://tizen.org/appcontrol/operation/view"/>
-   <uri name="http://test.com"/>
-</app-control>
-<app-control>
-   <operation name="http://tizen.org/appcontrol/operation/call"/>
-</app-control>
-```
+**Figure: Exporting app control**
 
-	> **Note**  
-	> In the application manifest file, the valid operation name format is `http://tizen.org/appcontrol/operation/<verb>`. You cannot use the related macro name, `APP_CONTROL_OPERATION_<VERB>`.
+![Exporting app control](./media/exporting_appcontrol.png)
+
+> **Note**
+> In the application manifest file, the valid operation name format is `http://tizen.org/appcontrol/operation/<verb>`. You cannot use the related macro name, `APP_CONTROL_OPERATION_<VERB>`.
 
 The operation, URI, and MIME type information is used when [resolving the application control](#resolution). The operation information is mandatory, while the URI or MIME type information is optional. Any application requesting a launch of your application must either specify your application ID (for an explicit launch) or have the same operation value and applicable URI and MIME type information (for an implicit launch).
+You can define privileges to restrict your application from launching. To launch your application, the caller application must request for launch permission by defining privileges in the 'tizen-manifest.xml' file.
 
-> **Note**  
+> **Note**
 > The URI or MIME type can contain wildcards, such as '\*', to match against given conditions in the app control:
 >
-> - In the MIME type, you can use 2 types of wildcards: `image/*` and `*/*`.
+> - In the MIME type, you can use two types of wildcards: `image/*` and `*/*`.
 > - In the URI, a more complex pattern of wildcards with similar semantics as the standard `glob()` function is available: '\*' matches an arbitrary, possibly empty, string, and '?' matches an arbitrary character. Unlike in the `glob()` function, the '/' character can be matched by the wildcards. There are no [...] character ranges, and the wildcards '\*' and '?' cannot be escaped to include them literally in a pattern.
 
 You can specify the application control information for your application in the [application project settings](../../tutorials/process/setting-properties.md#manifest) in the Tizen Studio.
