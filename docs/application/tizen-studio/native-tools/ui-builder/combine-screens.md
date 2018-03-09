@@ -121,7 +121,9 @@ To implement view transitions to and from the ported view:
 
      ![Include uib_util.h file](./media/prjm_combi_inc_uib_util_h.png)
 
-  2. Modify the `_close_cb()` function by replacing the `ui_app_exit()` function with the `uib_util_push_view()` function.The `uib_util_push_view()` function is a view transition function provided by the UI Builder view system.
+  2. Modify the `_close_cb()` function by replacing the `ui_app_exit()` function with the `uib_util_push_view()` function.
+
+     The `uib_util_push_view()` function is a view transition function provided by the UI Builder view system.
 
      ![Modifing close_cb function](./media/prjm_combi_modify_close_cb.png)
 

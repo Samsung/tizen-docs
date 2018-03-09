@@ -41,35 +41,35 @@ A custom component requires an EDJ resource file (`[ComponentName].edj`) and an 
 
     | Parent      | Element     | Attribute     | Description                              | Type    | Required | Default Value                        |
     |-------------|-------------|---------------|------------------------------------------|---------|----------|--------------------------------------|
-    | -         | \<component\> | name          | Component identifier, shown on the Palette, Outline view, and Properties view. This attribute must be identical to the XML file  name. | String  | Yes      | -                                  |
-    | -         | \<component\> | description   | Description  shown when you mouse over the custom UI component on the Palette | String  | No       | null                                 |
-    | -         | \<component\> | group         | group block defined in the EDC file for the component. For more information see [Group Block]( ../../../native/guides/ui/efl/learn-edc-group.md ). | String  | Yes      | -                                  |
-    | -         | \<component\> | resize_mode   | Which  directions the component can be resized in. The possible values are both, horizontal, vertical, and none. | String  | No       | both                                 |
-    | -         | \<component\> | min_width     | Minimum component width in the Design editor | Integer | No       | 1                                    |
-    | -         | \<component\> | min_height    | Minimum component height in the Design editor | Integer | No       | 1                                    |
-    | \<component\> | \<state\>     | name          | State property identifier               | String  | Yes      | -                                  |
-    | \<component\> | \<state\>     | display_name  | Name shown on the state property label in the Properties view | String  | No       | name attribute in the <\<state\> element |
-    | \<component\> | \<state\>     | description   | State property description              | String  | No       | null                                 |
-    | \<component\> | \<state\>     | default_value | State property default value. The default value must be a name attribute defined in the value element attributes. | String  | Yes      | -                                  |
-    | \<state\>     | \<value\>     | name          | Value  property identifier               | String  | Yes      | -                                  |
-    | \<state\>     | \<value\>     | display_name  | Name shown on the value property label in the Properties view | String  | No       | name attribute in the \<value\> element |
-    | \<state\>     | \<value\>     | signal        | EDC signal used to change the UI state at runtime. For information on using signals, see [Program Block](../../../native/guides/ui/efl/learn-edc-program.md). | String  | Yes      | -                                  |
-    | \<state\>     | \<value\>     | source        | User-defined parameter sent when the EDC signal is triggered | String  | No       | null                                 |
-    | \<component\> | \<text\>      | name          | Text property identifier                | String  | Yes      | -                                  |
-    | \<component\> | \<text\>      | display_name  | Name shown on the text property label in the Properties view | String  | No       | name attribute in the \<text\> element  |
-    | \<component\> | \<text\>      | description   | Text property description               | String  | No       | null                                 |
-    | \<component\> | \<text\>      | part_name     | part block to change when the text property is modified. For more information, see [Part Block](../../../native/guides/ui/efl/learn-edc-part.md). | String  | Yes      | -                                  |
-    | \<component\> | \<text\>      | default_value | Text property  default value             | String  | No       | null                                 |
-    | \<component\> | \<color\>     | name          | Color property identifier               | String  | Yes      | -                                  |
-    | \<component\> | \<color\>     | display_name  | Name shown on the color property label in the Properties view | String  | No       | name attribute in the \<color\> element |
-    | \<component\> | \<color\>     | description   | Color property description              | String  | No       | null                                 |
-    | \<component\> | \<color\>     | class_name    | EDC color class name. For more information, see [Color Classes Block](../../../native/guides/ui/efl/learn-edc-color-classes.md). | String  | Yes      | -                                  |
-    | \<component\> | \<color\>     | default_value | Color property  default value            | String  | No       | null                                 |
-    | \<component\> | \<event\>     | name          | Event  property identifier               | String  | Yes      | -                                  |
-    | \<component\> | \<event\>     | display_name  | Name  shown on the event property label in the Properties view | String  | No       | name attribute in the \<event\> element |
-    | \<component\> | \<event\>     | description   | Event  property description              | String  | No       | null                                 |
-    | \<component\> | \<event\>     | signal        | EDC  signal used to change the UI state at runtime | String  | Yes      | -                                  |
-    | \<component\> | \<event\>     | source        | String  or message emitted when the event is triggered | String  | No       | null                                 |
+    | -         | \<component\> | `name`         | Component identifier, shown on the **Palette**, **Outline** view, and **Properties** view. <br>This attribute must be identical to the XML file  name. | String  | Yes      | -                                  |
+    | -         | \<component\> | `description`   | Description  shown when you mouse over the custom UI component on the **Palette** | String  | No       | `null`                                 |
+    | -         | \<component\> | `group`         | `group` block defined in the EDC file for the component. <br>For more information see [Group Block]( ../../../native/guides/ui/efl/learn-edc-group.md ). | String  | Yes      | -                                  |
+    | -         | \<component\> | `resize_mode`   | Which  directions the component can be resized in. The possible values are `both`, `horizontal`, `vertical`, and `none`. | String  | No       | `both`                                 |
+    | -         | \<component\> | `min_width`     | Minimum component width in the **Design** editor | Integer | No       | 1                                    |
+    | -         | \<component\> | `min_height`    | Minimum component height in the **Design** editor | Integer | No       | 1                                    |
+    | \<component\> | \<state\>     | `name`          | State property identifier               | String  | Yes      | -                                  |
+    | \<component\> | \<state\>     | `display_name`  | Name shown on the state property label in the **Properties** view | String  | No       | `name` attribute in the `<state>` element |
+    | \<component\> | \<state\>     | `description`   | State property description              | String  | No       | `null`                                 |
+    | \<component\> | \<state\>     | `default_value` | State property default value. The default value must be a `name` attribute defined in the \<value\> element attributes. | String  | Yes      | -                                  |
+    | \<state\>     | \<value\>     | `name`          | Value  property identifier               | String  | Yes      | -                                  |
+    | \<state\>     | \<value\>     | `display_name`  | Name shown on the value property label in the **Properties** view | String  | No       | `name` attribute in the `<value>` element |
+    | \<state\>     | \<value\>     | `signal`        | EDC signal used to change the UI state at runtime. <br>For information on using signals, see [Program Block](../../../native/guides/ui/efl/learn-edc-program.md). | String  | Yes      | -                                  |
+    | \<state\>     | \<value\>     | `source`        | User-defined parameter sent when the EDC signal is triggered | String  | No       | `null`                                 |
+    | \<component\> | \<text\>      | `name`          | Text property identifier                | String  | Yes      | -                                  |
+    | \<component\> | \<text\>      | `display_name`  | Name shown on the text property label in the **Properties** view | String  | No       | `name` attribute in the `<text>` element  |
+    | \<component\> | \<text\>      | `description`   | Text property description               | String  | No       | `null`                                 |
+    | \<component\> | \<text\>      | `part_name`     | `part block` to change when the text property is modified. <br>For more information, see [Part Block](../../../native/guides/ui/efl/learn-edc-part.md). | String  | Yes      | -                                  |
+    | \<component\> | \<text\>      | `default_value` | Text property  default value             | String  | No       | `null`                                 |
+    | \<component\> | \<color\>     | `name`          | Color property identifier               | String  | Yes      | -                                  |
+    | \<component\> | \<color\>     | `display_name`  | Name shown on the color property label in the **Properties** view | String  | No       | `name` attribute in the `<color>` element |
+    | \<component\> | \<color\>     | `description`   | Color property description              | String  | No       | `null`                                 |
+    | \<component\> | \<color\>     | `class_name`    | EDC color class name. For more information, see [Color Classes Block](../../../native/guides/ui/efl/learn-edc-color-classes.md). | String  | Yes      | -                                  |
+    | \<component\> | \<color\>     | `default_value` | Color property  default value            | String  | No       | `null`                                 |
+    | \<component\> | \<event\>     | `name`          | Event  property identifier               | String  | Yes      | -                                  |
+    | \<component\> | \<event\>     | `display_name`  | Name  shown on the event property label in the **Properties** view | String  | No       | `name` attribute in the `<event>` element |
+    | \<component\> | \<event\>     | `description`   | Event  property description              | String  | No       | `null`                                 |
+    | \<component\> | \<event\>     | `signal`        | EDC  signal used to change the UI state at runtime | String  | Yes      | -                                  |
+    | \<component\> | \<event\>     | `source`        | String  or message emitted when the event is triggered | String  | No       | `null`                                 |
 
 The following figures show corresponding elements between the XML and EDC files.
 
@@ -96,7 +96,7 @@ If you do not include custom icon files with your custom component, the default 
 **Table: Default icon types**
 
 | Normal icon                              | Mouseover icon                           | Select icon                              |
-|----------------------------------------|----------------------------------------|----------------------------------------|
+|------------------------------------------|------------------------------------------|------------------------------------------|
 | ![Normal state default icon](media/pal_custom_nor.png) | ![Mouseover state default icon](media/pal_custom_mv.png) | ![Select state default icon](media/pal_custom_sel.png) |
 | `pal_custom**_nor.png**`                 | `pal_custom**_mv.png**`                  | `pal_custom**_sel.png**`                 |
 

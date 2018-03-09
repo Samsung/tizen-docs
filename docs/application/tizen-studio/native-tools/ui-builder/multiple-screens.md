@@ -12,8 +12,10 @@ Tizen runs on a variety of mobile, wearable, and TV devices that offer different
 > Screen density is usually referred to as DPI (dots per inch), which means the number of individual dots that can be placed in a line within the span of 1 inch (2.54 cm).
 >
 > **Resource**  
-> Resources are, for example, images, strings, application binary, and references of external places (such as files and networks). They are used only on runtime in Tizen.When you support multiple screens, you must use the resources with the application binary:
-> - File types – images, EDJ, text, video, and audio
+> Resources are, for example, images, strings, application binary, and references of external places (such as files and networks). They are used only on runtime in Tizen.
+>
+> When you support multiple screens, you must use the resources with the application binary:
+> - File types - images, EDJ, text, video, and audio
 > - Strings for localization
 >
 > **Internationalization and localization**  
@@ -80,7 +82,7 @@ The following table shows the components for multiple screens.
 
 | Category       | Component                          | Description                              |
 |--------------|----------------------------------|----------------------------------------|
-| Tizen Studio   | Resource Manager                   | Provides the features to add, delete, or change the resources for the screen configuration and supports drag and drop for placing the UI layout.Paths of alternative resources used for multiple screens are written in the `res.xml` file, which is referenced at runtime. |
+| Tizen Studio   | Resource Manager                   | Provides the features to add, delete, or change the resources for the screen configuration and supports drag and drop for placing the UI layout. <br>Paths of alternative resources used for multiple screens are written in the `res.xml` file, which is referenced at runtime. |
 |                | PO file editor                     | Supports string editing. You can add a localized string in the editor. |
 |                | Multiple UI layout                 | Supports the device-specific UI layout.  |
 | Tizen platform | Application module                 | Manages the application life-cycle. Using a callback function, it notifies you about application state change events. When the screen orientation or locale changes, this event must be sent to the module which handles multiple screens. For more information, see the [Applications](../../../native/guides/app-management/applications.md) guide. |
@@ -184,7 +186,7 @@ To use alternative resources:
 
 3. Add an Image UI component by dragging and dropping an image from the **Palette** to the grid.
 
-4. Add the image resource for the image component by dragging and dropping the applicable image file from the **Resource Manager** view to the image.The resource is set on the current configuration of screen.
+4. Add the image resource for the image component by dragging and dropping the applicable image file from the **Resource Manager** view to the image. <br>The resource is set on the current configuration of screen.
 
 You must also specify the selected alternative resource in the **Properties** view.
 

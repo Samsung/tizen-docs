@@ -4,13 +4,17 @@ The JavaScript Analyzer (JSA) is an analysis tool, which helps to find problems 
 
 JSA supports 2 analyzer types:
 
-- **Static Analyzer** (Coding Rule Checker)         
+- **Static Analyzer** (Coding Rule Checker)
 
-  Contains checkers for a set of predefined coding rules. It supports 27 rules, including coding rules and Web API usage rules.The Coding Rule Checker is a static analysis tool that evaluates an application by examining the JavaScript code without its execution. This checker examines all possible execution paths and variable values.
+  Contains checkers for a set of predefined coding rules. It supports 27 rules, including coding rules and Web API usage rules.
 
-- **Dynamic Analyzer** (Stale Object Checker)         
+  The Coding Rule Checker is a static analysis tool that evaluates an application by examining the JavaScript code without its execution. This checker examines all possible execution paths and variable values.
 
-  Contains a checker for stale objects that cause possible memory leaks.The Stale Object Checker is a dynamic analysis tool that requires executing the application in a runtime environment. This checker examines all the JavaScript objects created during its execution and points out relatively critical staled objects.
+- **Dynamic Analyzer** (Stale Object Checker)
+
+  Contains a checker for stale objects that cause possible memory leaks.
+
+  The Stale Object Checker is a dynamic analysis tool that requires executing the application in a runtime environment. This checker examines all the JavaScript objects created during its execution and points out relatively critical staled objects.
 
 <a name="use"></a>
 ## Using the JavaScript Analyzer
