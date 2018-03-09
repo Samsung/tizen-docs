@@ -19,7 +19,7 @@ The main features of Evas graphical rendering are:
 
   Evas allows you to draw on the canvas various non-container objects with a visual appearance.  
 
-  Evas is not a UI component set or a UI component toolkit, but it is their base. For a toolkit based on Evas, Edje, Ecore, and other Enlightenment technologies, see the Elementary API (in [mobile](http://org.tizen.native.mobile.apireference/group__Elementary.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Elementary.html) applications).
+  Evas is not a UI component set or a UI component toolkit, but it is their base. For a toolkit based on Evas, Edje, Ecore, and other Enlightenment technologies, see the Elementary API (in [mobile](../../../api/mobile/latest/group__Elementary.html) and [wearable](../../../api/wearable/latest/group__Elementary.html) applications).
 
 - [Evas rendering concept and method](./evas-rendering.md)  
 

@@ -116,7 +116,7 @@ When the widget launch is requested for the first time, the widget application i
 
 To enable your application to use the widget functionality:
 
-1. To use the functions and data types of the Widget Application API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__WIDGET__APP__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__WIDGET__APP__MODULE.html) applications), include the `<widget_app.h>` and `<widget_app_efl.h>` header files in your application:
+1. To use the functions and data types of the Widget Application API (in [mobile](../../api/mobile/latest/group__CAPI__WIDGET__APP__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__WIDGET__APP__MODULE.html) applications), include the `<widget_app.h>` and `<widget_app_efl.h>` header files in your application:
 ```
 #include <widget_app.h>
 #include <widget_app_efl.h>
@@ -483,13 +483,13 @@ In the Tizen platform, applications in the same package (including widget applic
 
 To manage data through the `data` directory:
 
-- You can set and get data in the `data` directory using the Preference API functions (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__PREFERENCE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__PREFERENCE__MODULE.html) applications). You can use the functions to [store and retrieve key-value data](app_preferences_n.htm) in the `data` directory.
+- You can set and get data in the `data` directory using the Preference API functions (in [mobile](../../api/mobile/latest/group__CAPI__PREFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__PREFERENCE__MODULE.html) applications). You can use the functions to [store and retrieve key-value data](app_preferences_n.htm) in the `data` directory.
 
 - You can share the `data` directory content with SQLite, by creating an SQLite database file in the `data` directory.
 
   The SQLite database has an advantage to the direct use of a file in error handling, such as journaling. Consequently, if the application must handle complex data rather than primitive values, [use SQLite to store and retrieve the data](../data/sql.htm).
 
-If an application requires complex control over a widget, such as Music Player, it must implement a service application in the middle and use the Data Control API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__DATA__CONTROL__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__DATA__CONTROL__MODULE.html) applications).
+If an application requires complex control over a widget, such as Music Player, it must implement a service application in the middle and use the Data Control API (in [mobile](../../api/mobile/latest/group__CAPI__DATA__CONTROL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__DATA__CONTROL__MODULE.html) applications).
 
 For example, a music-player-service service application is needed to control the audio device, process audio files, and handle play and stop signals. The music-player-ui and music-player-widget applications display the UI controls, title, album art, and other content retrieved from the music-player-service service application. The service application can export its data using the Data Control to [provide data to the other applications](data_control.md) (widget and UI) simultaneously. The following figure illustrates the typical data control flows between the set of UI, service, and widget applications.
 

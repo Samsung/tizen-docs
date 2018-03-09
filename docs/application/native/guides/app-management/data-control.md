@@ -21,7 +21,7 @@ The main features of the Data Control API include:
 
 - Monitoring data changes
 
-  You can [monitor data changes and provide notifications about them](#map3). The available notification types are listed in the `data_control_data_change_type_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__DATA__CONTROL__MODULE.html#ga09ee00edc0c08676b2fa241f30fab378) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__DATA__CONTROL__MODULE.html#ga09ee00edc0c08676b2fa241f30fab378) applications).
+  You can [monitor data changes and provide notifications about them](#map3). The available notification types are listed in the `data_control_data_change_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__DATA__CONTROL__MODULE.html#ga09ee00edc0c08676b2fa241f30fab378) and [wearable](../../api/wearable/latest/group__CAPI__DATA__CONTROL__MODULE.html#ga09ee00edc0c08676b2fa241f30fab378) applications).
 
 To create a provider, you must [export its provider functionalities](#export) in the application project settings in the IDE. For the consumer to access shared data, it must know the provider ID and data ID.
 
@@ -35,7 +35,7 @@ The data control use cases run two applications. Each application plays a differ
 
 To enable your application to use the data control functionality:
 
-1. To use the Data Control API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__DATA__CONTROL__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__DATA__CONTROL__MODULE.html) applications), the consumer has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the Data Control API (in [mobile](../../api/mobile/latest/group__CAPI__DATA__CONTROL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__DATA__CONTROL__MODULE.html) applications), the consumer has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -91,7 +91,7 @@ To enable your application to use the data control functionality:
 
 In the consumer, you must first get the unique map-type `datacontrol_h` instance using the `data_control_map_create()`, `data_control_map_set_provider_id()`, or `data_control_map_set_data_id()` function. Afterwards, you can send requests to the provider using the `data_control_map_get()`, `data_control_map_set()`, `data_control_map_add()`, and `data_control_map_remove()` functions.
 
-The provider returns a response to the consumer. The consumer can handle the response in a callback of the `data_control_map_response_cb` struct (in [mobile](../../../../org.tizen.native.mobile.apireference/structdata__control__map__response__cb.html) and [wearable](../../../../org.tizen.native.wearable.apireference/structdata__control__map__response__cb.html) applications), which is triggered when the provider finishes the requested operation.
+The provider returns a response to the consumer. The consumer can handle the response in a callback of the `data_control_map_response_cb` struct (in [mobile](../../api/mobile/latest/structdata__control__map__response__cb.html) and [wearable](../../api/wearable/latest/structdata__control__map__response__cb.html) applications), which is triggered when the provider finishes the requested operation.
 
 > **Note**  
 > Since Tizen 4.0, you can use the `data_control_map_bind_response_cb()` function, which binds a callback to a provider handle. This allows you to register multiple callbacks for a given provider ID.
@@ -418,7 +418,7 @@ To get, set, add, and remove map-type data:
 
 In the consumer, you must first get the unique SQL-type `datacontrol_h` instance using the `data_control_sql_create()`, `data_control_sql_set_provider_id()`, or `data_control_sql_set_data_id()` function. Afterwards, you can send requests to the provider using the `datacontrol_sql_select()`, `data_control_sql_insert()`, `data_control_sql_update()`, and `data_control_sql_delete()` functions.
 
-The provider returns a response to the consumer. The consumer can handle the response in a callback of the `data_control_sql_response_cb` struct (in [mobile](../../../../org.tizen.native.mobile.apireference/structdata__control__sql__response__cb.html) and [wearable](../../../../org.tizen.native.wearable.apireference/structdata__control__sql__response__cb.html) applications), which is triggered when the provider finishes the requested operation.
+The provider returns a response to the consumer. The consumer can handle the response in a callback of the `data_control_sql_response_cb` struct (in [mobile](../../api/mobile/latest/structdata__control__sql__response__cb.html) and [wearable](../../api/wearable/latest/structdata__control__sql__response__cb.html) applications), which is triggered when the provider finishes the requested operation.
 
 > **Note**  
 > Since Tizen 4.0, you can use the `data_control_sql_bind_response_cb()` function, which binds a callback to a provider handle. This allows you to register multiple callbacks for a given provider ID.

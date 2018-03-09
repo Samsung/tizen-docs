@@ -23,7 +23,7 @@ The main features of the STC API include:
 
 To enable your application to use the STC API:
 
-1. To use the [STC](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__STC__MODULE.html) API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the [STC](../../api/mobile/latest/group__CAPI__NETWORK__STC__MODULE.html) API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```
    <privileges>

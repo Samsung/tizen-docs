@@ -7,25 +7,25 @@ The main Telephony Information API features are:
 
 - Call information
 
-  You can [retrieve information about the current call](#call_use) by using the Call API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__TELEPHONY__INFORMATION__CALL.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__TELEPHONY__INFORMATION__CALL.html) applications) to retrieve a list of current call handles. You can also access voice and video call states, and use the state information in call-related actions.
+  You can [retrieve information about the current call](#call_use) by using the Call API (in [mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__INFORMATION__CALL.html) and [wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__INFORMATION__CALL.html) applications) to retrieve a list of current call handles. You can also access voice and video call states, and use the state information in call-related actions.
 
   You can access the number, type, and status of the call. You can also determine the call direction (mobile-originated or mobile-terminated) and whether the call is a conference call.
 
 - SIM information
 
-  You can [extract information stored on a SIM card](#sim_use) using the SIM API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__TELEPHONY__INFORMATION__SIM.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__TELEPHONY__INFORMATION__SIM.html) applications). You can get, for example, the ICC-ID (Integrated Circuit Card Identification), operator, and SPN (Service Provider Name) information.
+  You can [extract information stored on a SIM card](#sim_use) using the SIM API (in [mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__INFORMATION__SIM.html) and [wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__INFORMATION__SIM.html) applications). You can get, for example, the ICC-ID (Integrated Circuit Card Identification), operator, and SPN (Service Provider Name) information.
 
 - Network information
 
-  You can [retrieve information about the current cellular network and telephony service](#network_use) using the Network API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__TELEPHONY__INFORMATION__NETWORK.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__TELEPHONY__INFORMATION__NETWORK.html) applications). You can get, for example, the cell ID, LAC (Location Area Code), network type, and network name of the current cellular network and telephony service.
+  You can [retrieve information about the current cellular network and telephony service](#network_use) using the Network API (in [mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__INFORMATION__NETWORK.html) and [wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__INFORMATION__NETWORK.html) applications). You can get, for example, the cell ID, LAC (Location Area Code), network type, and network name of the current cellular network and telephony service.
 
 - Modem information
 
-  You can [access information about the modem](#modem_use) using the Modem API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__TELEPHONY__INFORMATION__MODEM.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__TELEPHONY__INFORMATION__MODEM.html) applications). You can get the IMEI (International Mobile Station Equipment Identity), MEID (Mobile Equipment Identifier), and power status of the modem.
+  You can [access information about the modem](#modem_use) using the Modem API (in [mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__INFORMATION__MODEM.html) and [wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__INFORMATION__MODEM.html) applications). You can get the IMEI (International Mobile Station Equipment Identity), MEID (Mobile Equipment Identifier), and power status of the modem.
 
 - State changes
 
-  You can receive notifications for various information change events related to call, SIM card, and network information. To monitor state change events, register state change callbacks with the `telephony_set_noti_cb()` function, by specifying the notification ID. The available notification IDs are defined in the `telephony_noti_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__TELEPHONY__INFORMATION.html#ga3f9d407deee8c7c7f1f7ed946bc60b4d) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__TELEPHONY__INFORMATION.html#ga3f9d407deee8c7c7f1f7ed946bc60b4d) applications).
+  You can receive notifications for various information change events related to call, SIM card, and network information. To monitor state change events, register state change callbacks with the `telephony_set_noti_cb()` function, by specifying the notification ID. The available notification IDs are defined in the `telephony_noti_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__INFORMATION.html#ga3f9d407deee8c7c7f1f7ed946bc60b4d) and [wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__INFORMATION.html#ga3f9d407deee8c7c7f1f7ed946bc60b4d) applications).
 
 The following figure illustrates the telephony service and APIs.
 
@@ -37,7 +37,7 @@ The following figure illustrates the telephony service and APIs.
 
 To enable your application to use the telephony information functionality:
 
-1. To use the Telephony Information API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__TELEPHONY__INFORMATION.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__TELEPHONY__INFORMATION.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the Telephony Information API (in [mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__INFORMATION.html) and [wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__INFORMATION.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -103,7 +103,7 @@ To enable your application to use the telephony information functionality:
 <a name="call_use"></a>
 ## Retrieving Call Information
 
-To get the voice and video call state and be notified when the user makes a voice or video call or hangs up the phone, use the Call API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__TELEPHONY__INFORMATION__CALL.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__TELEPHONY__INFORMATION__CALL.html) applications).
+To get the voice and video call state and be notified when the user makes a voice or video call or hangs up the phone, use the Call API (in [mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__INFORMATION__CALL.html) and [wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__INFORMATION__CALL.html) applications).
 
 Getting call information involves:
 
@@ -189,7 +189,7 @@ To get the current call list:
 
 To receive notifications of call state changes asynchronously, register a callback with the `telephony_set_noti_cb()` function.
 
-You have to register the callback separately for each call state, using the applicable `TELEPHONY_NOTI_VOICE_CALL_XXX` or `TELEPHONY_NOTI_VIDEO_CALL_XXX` notification value in the second parameter of the `telephony_set_noti_cb()` function. The available values are defined in the `telephony_noti_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__TELEPHONY__INFORMATION.html#ga3f9d407deee8c7c7f1f7ed946bc60b4d) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__TELEPHONY__INFORMATION.html#ga3f9d407deee8c7c7f1f7ed946bc60b4d) applications).
+You have to register the callback separately for each call state, using the applicable `TELEPHONY_NOTI_VOICE_CALL_XXX` or `TELEPHONY_NOTI_VIDEO_CALL_XXX` notification value in the second parameter of the `telephony_set_noti_cb()` function. The available values are defined in the `telephony_noti_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__INFORMATION.html#ga3f9d407deee8c7c7f1f7ed946bc60b4d) and [wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__INFORMATION.html#ga3f9d407deee8c7c7f1f7ed946bc60b4d) applications).
 
 When the notifications are no longer needed, deregister the callback for each call state with the `telephony_unset_noti_cb()` function.
 
@@ -295,7 +295,7 @@ tutorial_telephony_set_noti_cb_voice()
 <a name="sim_use"></a>
 ## Retrieving SIM Card Information
 
-To extract information stored on a SIM card, use the SIM API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__TELEPHONY__INFORMATION__SIM.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__TELEPHONY__INFORMATION__SIM.html) applications).
+To extract information stored on a SIM card, use the SIM API (in [mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__INFORMATION__SIM.html) and [wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__INFORMATION__SIM.html) applications).
 
 Getting SIM information involves:
 
@@ -309,7 +309,7 @@ Getting SIM information involves:
 <a name="sim_state"></a>
 ### Getting the SIM Card State
 
-To get the state, call the `telephony_sim_get_state()` function. It returns the SIM card state in its second parameter, using the values of the `telephony_sim_state_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__TELEPHONY__INFORMATION__SIM.html#ga08448f4cfaf7c59cd585008d3bf32b70) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__TELEPHONY__INFORMATION__SIM.html#ga08448f4cfaf7c59cd585008d3bf32b70) applications).
+To get the state, call the `telephony_sim_get_state()` function. It returns the SIM card state in its second parameter, using the values of the `telephony_sim_state_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__INFORMATION__SIM.html#ga08448f4cfaf7c59cd585008d3bf32b70) and [wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__INFORMATION__SIM.html#ga08448f4cfaf7c59cd585008d3bf32b70) applications).
 
 ```
 void
@@ -382,7 +382,7 @@ tutorial_telephony_sim_get_icc_id()
 <a name="network_use"></a>
 ## Retrieving Network Information
 
-To access information about the current cellular network and telephony service, use the Network API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__TELEPHONY__INFORMATION__NETWORK.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__TELEPHONY__INFORMATION__NETWORK.html) applications).
+To access information about the current cellular network and telephony service, use the Network API (in [mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__INFORMATION__NETWORK.html) and [wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__INFORMATION__NETWORK.html) applications).
 
 Getting network information involves:
 
@@ -396,7 +396,7 @@ Getting network information involves:
 <a name="network_state"></a>
 ### Getting the Network Service State
 
-To get the state, call the `telephony_network_get_service_state()` function. It returns the network service state in its second parameter, using the values of the `telephony_network_service_state_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__TELEPHONY__INFORMATION__NETWORK.html#gae9f3b6e54a1086b8734f4acc71fd001b) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__TELEPHONY__INFORMATION__NETWORK.html#gae9f3b6e54a1086b8734f4acc71fd001b) applications).
+To get the state, call the `telephony_network_get_service_state()` function. It returns the network service state in its second parameter, using the values of the `telephony_network_service_state_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__INFORMATION__NETWORK.html#gae9f3b6e54a1086b8734f4acc71fd001b) and [wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__INFORMATION__NETWORK.html#gae9f3b6e54a1086b8734f4acc71fd001b) applications).
 
 ```
 void
@@ -421,7 +421,7 @@ tutorial_telephony_network_get_service_state()
 
 To receive notifications of network service state changes asynchronously, register a callback with the `telephony_set_noti_cb()` function. The callback returns the service state in its third parameter.
 
-You have to register the callback separately for each service state (for example, Cell ID, RSSI level, network name, PS type, default data subscription, default subscription, or roaming state), using the applicable `TELEPHONY_NOTI_NETWORK_XXX` notification value in the second parameter of the `telephony_set_noti_cb()` function. The available values are defined in the `telephony_noti_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__TELEPHONY__INFORMATION.html#ga3f9d407deee8c7c7f1f7ed946bc60b4d) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__TELEPHONY__INFORMATION.html#ga3f9d407deee8c7c7f1f7ed946bc60b4d) applications).
+You have to register the callback separately for each service state (for example, Cell ID, RSSI level, network name, PS type, default data subscription, default subscription, or roaming state), using the applicable `TELEPHONY_NOTI_NETWORK_XXX` notification value in the second parameter of the `telephony_set_noti_cb()` function. The available values are defined in the `telephony_noti_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__INFORMATION.html#ga3f9d407deee8c7c7f1f7ed946bc60b4d) and [wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__INFORMATION.html#ga3f9d407deee8c7c7f1f7ed946bc60b4d) applications).
 
 When the notifications are no longer needed, deregister the callback for each service state with the `telephony_unset_noti_cb()` function by passing the notification ID as a parameter.
 
@@ -489,7 +489,7 @@ tutorial_telephony_network_get_mnc()
 <a name="modem_use"></a>
 ## Retrieving Modem Information
 
-To access information about the modem, use the Modem API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__TELEPHONY__INFORMATION__MODEM.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__TELEPHONY__INFORMATION__MODEM.html) applications).
+To access information about the modem, use the Modem API (in [mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__INFORMATION__MODEM.html) and [wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__INFORMATION__MODEM.html) applications).
 
 You can call various `telephony_modem_get_XXX()` functions to retrieve the modem details: IMEI and power status.
 

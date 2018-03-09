@@ -6,7 +6,7 @@ The index component gives you an index for quick access to a group of other UI i
 
 In the default theme, the index component is a one-finger-wide area on the right side of the index component's container. Generally, it is used together with lists, generic lists, or generic grids.
 
-For more information, see the [Index](../../../../../org.tizen.native.wearable.apireference/group__Elm__Index.html) API.
+For more information, see the [Index](../../../../api/wearable/latest/group__Elm__Index.html) API.
 
 **Figure: Index component**
 

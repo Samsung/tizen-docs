@@ -1,6 +1,6 @@
 # Datetime
 
-The datetime UI component displays date and time values. For more information, see the [Datetime](../../../../../org.tizen.native.mobile.apireference/group__Elm__Datetime.html) API.
+The datetime UI component displays date and time values. For more information, see the [Datetime](../../../../api/mobile/latest/group__Elm__Datetime.html) API.
 
 This feature is supported in mobile applications only.
 
@@ -16,7 +16,7 @@ To use a datetime component in your application:
    datetime = elm_datetime_add(parent);
    ```
 
-2.  Set a [style](#styles) and format. The datetime format is a combination of LIBC standard characters, such as "%d %b %Y %I : %M %M". For more information on the format characters, see the [Datetime](../../../../../org.tizen.native.mobile.apireference/group__Elm__Datetime.html) API.
+2.  Set a [style](#styles) and format. The datetime format is a combination of LIBC standard characters, such as "%d %b %Y %I : %M %M". For more information on the format characters, see the [Datetime](../../../../api/mobile/latest/group__Elm__Datetime.html) API.
 
    - Set a style to the datetime component with the `elm_object_style_set()` function. If you use the default style, you can skip this step.
 

@@ -2,7 +2,7 @@
 
 
 
-You can create a reusable rendering logic, which can be used by all controls, by using DALi visuals. Visuals are the main building block for controls. The `Dali::Toolkit::Visual` instance (in [mobile](http://org.tizen.native.mobile.apireference/namespaceDali_1_1Toolkit_1_1Visual.html) and [wearable](http://org.tizen.native.wearable.apireference/namespaceDali_1_1Toolkit_1_1Visual.html) applications) is used to display renderer content.
+You can create a reusable rendering logic, which can be used by all controls, by using DALi visuals. Visuals are the main building block for controls. The `Dali::Toolkit::Visual` instance (in [mobile](../../../api/mobile/latest/namespaceDali_1_1Toolkit_1_1Visual.html) and [wearable](../../../api/wearable/latest/namespaceDali_1_1Toolkit_1_1Visual.html) applications) is used to display renderer content.
 
 ## Overview
 DALi provides the following visuals:

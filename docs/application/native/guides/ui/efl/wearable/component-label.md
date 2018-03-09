@@ -4,7 +4,7 @@ This feature is supported in wearable applications only.
 
 The label component displays text with a simple HTML-like markup.
 
-For more information, see the [Label](../../../../../org.tizen.native.wearable.apireference/group__Elm__Label.html) API.
+For more information, see the [Label](../../../../api/wearable/latest/group__Elm__Label.html) API.
 
 **Figure: Label component**
 

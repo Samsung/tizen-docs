@@ -18,13 +18,13 @@ information, gateway information, and connection statistics.
 ### Required Privileges and Features
 
 Applications that use the Network (in
-[mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__FRAMEWORK.html)
+[mobile](../../api/mobile/latest/group__CAPI__NETWORK__FRAMEWORK.html)
 and
-[wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__NETWORK__FRAMEWORK.html)
+[wearable](../../api/wearable/latest/group__CAPI__NETWORK__FRAMEWORK.html)
 applications) and Telephony (in
-[mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__TELEPHONY__FRAMEWORK.html)
+[mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__FRAMEWORK.html)
 and
-[wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__TELEPHONY__FRAMEWORK.html)
+[wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__FRAMEWORK.html)
 applications) APIs must declare the required privileges in the
 `tizen-manifest.xml` file. For more information on the Tizen privileges,
 see [Security and API Privileges](../details/sec-privileges.md).
@@ -56,9 +56,9 @@ network and whether mobile data is switched on.
 ### Checking the Network Connection
 
 The Connection Manager API (in
-[mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html)
+[mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html)
 and
-[wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html)
+[wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html)
 applications) provides functions for managing data connections. It
 allows you to get a state of the connection interface, such as
 Bluetooth, mobile network, and Wi-Fi. It also contains functions for
@@ -149,7 +149,7 @@ content:
 -   With [libcurl](http://curl.haxx.se/libcurl/), which is an open
     source library.
 -   With the
-    [Download](../../../../org.tizen.native.mobile.apireference/group__CAPI__WEB__DOWNLOAD__MODULE.html)
+    [Download](../../api/mobile/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html)
     API, which is one of the Tizen Framework APIs.
 
 ### Required Privileges
@@ -175,9 +175,9 @@ include the following privileges:
 ### Downloading HTTP Content with libcurl
 
 The Curl API (in
-[mobile](../../../../org.tizen.native.mobile.apireference/group__OPENSRC__CURL__FRAMEWORK.html)
+[mobile](../../api/mobile/latest/group__OPENSRC__CURL__FRAMEWORK.html)
 and
-[wearable](../../../../org.tizen.native.wearable.apireference/group__OPENSRC__CURL__FRAMEWORK.html)
+[wearable](../../api/wearable/latest/group__OPENSRC__CURL__FRAMEWORK.html)
 applications) is a client-side URL transfer library supporting various
 protocols, such as HTTP, HTTPS, FTP, and file URIs. It allows
 applications to perform URL-related activities without having to involve
@@ -361,7 +361,7 @@ download_thread_cancel_cb(void *data, Ecore_Thread *thread)
 
 You can download content asynchronously from a given URL into the device
 storage. The
-[Download](../../../../org.tizen.native.mobile.apireference/group__CAPI__WEB__DOWNLOAD__MODULE.html)
+[Download](../../api/mobile/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html)
 API provides functions to create and manage 1 or more download requests.
 
 This feature is supported in mobile applications only.

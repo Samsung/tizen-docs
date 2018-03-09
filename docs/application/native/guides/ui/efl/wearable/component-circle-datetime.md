@@ -4,7 +4,7 @@ This feature is supported in wearable applications only.
 
 The circle datetime component extends the [datetime](component-datetime.md) component (`elm_datetime`) by visualizing the selected field. If a rotary event is activated by the `eext_rotary_object_event_activated_set()`function, the circle datetime increases or decreases the value of the selected field in the `elm_datetime` component through the clockwise or counter-clockwise rotary event.
 
-For more information, see the [Efl Extension Circle Datetime](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__EXTENSION__CIRCLE__DATETIME__MODULE.html) API.
+For more information, see the [Efl Extension Circle Datetime](../../../../api/wearable/latest/group__CAPI__EFL__EXTENSION__CIRCLE__DATETIME__MODULE.html) API.
 
 **Figure: Circle datetime component**
 
@@ -56,7 +56,7 @@ To configure the circle properties of the circle datetime:
 
   To change the item properties, use the `eext_circle_object_item_XXX()` functions.
 
-For more information, see [Circle Object](component-circle-object.md) and the [Efl Extension Circle Object](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__EXTENSION__CIRCLE__OBJECT__MODULE.html) API.
+For more information, see [Circle Object](component-circle-object.md) and the [Efl Extension Circle Object](../../../../api/wearable/latest/group__CAPI__EFL__EXTENSION__CIRCLE__OBJECT__MODULE.html) API.
 
 ## Related Information
 - Dependencies

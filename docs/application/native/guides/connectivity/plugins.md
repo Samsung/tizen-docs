@@ -133,7 +133,7 @@ _plugin_iterator_cb(char *plugin_uri, int service_mask, void *user_data)
 
 To enable your application to use the Service Adaptor functionality:
 
-1. To use the functions and data types of the [Service Adaptor](../../../../org.tizen.native.mobile.apireference/group__SERVICE__ADAPTOR__MODULE.html) API, include the `<service_adaptor_client.h>` header file in your application:
+1. To use the functions and data types of the [Service Adaptor](../../api/mobile/latest/group__SERVICE__ADAPTOR__MODULE.html) API, include the `<service_adaptor_client.h>` header file in your application:
 
    ```
    #include <service_adaptor_client.h>

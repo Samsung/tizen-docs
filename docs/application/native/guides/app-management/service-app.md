@@ -109,7 +109,7 @@ The following table defines the behaviors resulting from the attribute combinati
 
 ## Prerequisites
 
-To use the functions and data types of the Service Application API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SERVICE__APP__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SERVICE__APP__MODULE.html) applications), include the `<service_app.h>` header file in your application:
+To use the functions and data types of the Service Application API (in [mobile](../../api/mobile/latest/group__CAPI__SERVICE__APP__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SERVICE__APP__MODULE.html) applications), include the `<service_app.h>` header file in your application:
 
 ```
 #include <service_app.h>

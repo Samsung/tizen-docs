@@ -95,7 +95,7 @@ The following gesture events are supported on Tizen devices:
 
 ## Prerequisites
 
-To use the functions and data types of the Gesture Recognition API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__CONTEXT__GESTURE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__CONTEXT__GESTURE__MODULE.html) applications), include the `<gesture_recognition.h>` header file in your application:
+To use the functions and data types of the Gesture Recognition API (in [mobile](../../api/mobile/latest/group__CAPI__CONTEXT__GESTURE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__CONTEXT__GESTURE__MODULE.html) applications), include the `<gesture_recognition.h>` header file in your application:
 
 ```
 #include <gesture_recognition.h>
@@ -121,9 +121,9 @@ To set and unset callback functions for user gestures:
    gesture_start_recognition(handle, GESTURE_PICK_UP, GESTURE_OPTION_DEFAULT, gesture_cb, NULL);
    ```
 
-   The above example starts gesture detection to receive notifications when the `GESTURE_PICK_UP` gesture is detected. The application can use any of the `gesture_type_e` enumerators (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__CONTEXT__GESTURE__MODULE.html#ga260f6752298cdd6c8235fd2922c147bf) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__CONTEXT__GESTURE__MODULE.html#ga260f6752298cdd6c8235fd2922c147bf) applications) in place of the `GESTURE_PICK_UP` value. Note that not all gestures are supported by all devices. In such cases, the function returns the `GESTURE_ERROR_NOT_SUPPORTED` value.
+   The above example starts gesture detection to receive notifications when the `GESTURE_PICK_UP` gesture is detected. The application can use any of the `gesture_type_e` enumerators (in [mobile](../../api/mobile/latest/group__CAPI__CONTEXT__GESTURE__MODULE.html#ga260f6752298cdd6c8235fd2922c147bf) and [wearable](../../api/wearable/latest/group__CAPI__CONTEXT__GESTURE__MODULE.html#ga260f6752298cdd6c8235fd2922c147bf) applications) in place of the `GESTURE_PICK_UP` value. Note that not all gestures are supported by all devices. In such cases, the function returns the `GESTURE_ERROR_NOT_SUPPORTED` value.
 
-   If the default gesture option is designated, the system tries to reduce power consumption to detect the gesture. For example, the gesture is not necessarily detected while the display is switched off. Using the `GESTURE_OPTION_ALWAYS_ON` option prevents such power-saving behaviors. For more information on the gesture options, see the `gesture_option_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__CONTEXT__GESTURE__MODULE.html#gaf3733ffc829005b3162df4aceecca228) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__CONTEXT__GESTURE__MODULE.html#gaf3733ffc829005b3162df4aceecca228) applications).
+   If the default gesture option is designated, the system tries to reduce power consumption to detect the gesture. For example, the gesture is not necessarily detected while the display is switched off. Using the `GESTURE_OPTION_ALWAYS_ON` option prevents such power-saving behaviors. For more information on the gesture options, see the `gesture_option_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__CONTEXT__GESTURE__MODULE.html#gaf3733ffc829005b3162df4aceecca228) and [wearable](../../api/wearable/latest/group__CAPI__CONTEXT__GESTURE__MODULE.html#gaf3733ffc829005b3162df4aceecca228) applications).
 
 3. When the registered callback function is invoked, you can retrieve the event data using the `gesture_get_event()` function:
 

@@ -1,6 +1,6 @@
 # Button
 
-The button UI component works as a clickable input element to trigger events. For more information, see the [Button](../../../../../org.tizen.native.mobile.apireference/group__Elm__Button.html) API.
+The button UI component works as a clickable input element to trigger events. For more information, see the [Button](../../../../api/mobile/latest/group__Elm__Button.html) API.
 
 This feature is supported in mobile applications only.
 

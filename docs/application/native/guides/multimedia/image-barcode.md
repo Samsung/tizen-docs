@@ -41,7 +41,7 @@ The main features of Media Vision BarCode API include:
 
 To enable your application to use the media vision barcode functionality:
 
-1. To use the functions and data types of the Media Vision BarCode API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html) applications), include the `<mv_barcode.h>` header file in your application:
+1. To use the functions and data types of the Media Vision BarCode API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html) applications), include the `<mv_barcode.h>` header file in your application:
 
    ```
    #include <mv_barcode.h>
@@ -107,7 +107,7 @@ To initialize the barcode detection and generation engines for use:
           dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
       ```
 
-      For example, to define the detection target, use the `mv_engine_config_set_int_attribute()` function with the `MV_BARCODE_DETECT_ATTR_TARGET` attribute. The possible values are defined in the `mv_barcode_detect_attr_target_e`enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#ga47aaef5d40653352c5bee73b227062a6) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#ga47aaef5d40653352c5bee73b227062a6) applications). The default value is `MV_BARCODE_DETECT_ATTR_TARGET_ALL`.
+      For example, to define the detection target, use the `mv_engine_config_set_int_attribute()` function with the `MV_BARCODE_DETECT_ATTR_TARGET` attribute. The possible values are defined in the `mv_barcode_detect_attr_target_e`enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#ga47aaef5d40653352c5bee73b227062a6) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#ga47aaef5d40653352c5bee73b227062a6) applications). The default value is `MV_BARCODE_DETECT_ATTR_TARGET_ALL`.
 
    4. To provide camera preview images, create the camera handle, set the camera display and the camera preview callback, and start the camera preview:
 
@@ -181,7 +181,7 @@ To initialize the barcode detection and generation engines for use:
           dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
       ```
 
-      For example, to define whether the barcode is generated with text, use the `mv_engine_config_set_int_attribute()` function with the `MV_BARCODE_GENERATE_ATTR_TEXT` attribute. The possible values for the attribute are defined in the `mv_barcode_generate_attr_text_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#gaff049431f2259d00cfd0fdc7ee721858) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#gaff049431f2259d00cfd0fdc7ee721858) applications). The default value is `MV_BARCODE_GENERATE_ATTR_TEXT_INVISIBLE`.
+      For example, to define whether the barcode is generated with text, use the `mv_engine_config_set_int_attribute()` function with the `MV_BARCODE_GENERATE_ATTR_TEXT` attribute. The possible values for the attribute are defined in the `mv_barcode_generate_attr_text_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#gaff049431f2259d00cfd0fdc7ee721858) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#gaff049431f2259d00cfd0fdc7ee721858) applications). The default value is `MV_BARCODE_GENERATE_ATTR_TEXT_INVISIBLE`.
 
 <a name="detect"></a>
 ## Detecting Barcodes

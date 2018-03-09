@@ -154,7 +154,7 @@ To use the voice commands:
 
 To enable your application to use the voice control functionality:
 
-1. To use the functions and data types of the Voice control API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__UIX__VOICE__CONTROL__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__UIX__VOICE__CONTROL__MODULE.html) applications), include the `<voice_control.h>` header file in your application:
+1. To use the functions and data types of the Voice control API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__VOICE__CONTROL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__VOICE__CONTROL__MODULE.html) applications), include the `<voice_control.h>` header file in your application:
 
    ```
    #include <voice_control.h>
@@ -220,7 +220,7 @@ To enable your application to use the voice control functionality:
    > **Note**  
    > Do not call the `vc_deinitialize()` function in a callback. Within a callback, the `vc_deinitialize()` function fails and returns `VC_ERROR_OPERATION_FAILED`.
 
-5. To use the functions and data types of the Voice control elementary API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__VOICE__CONTROL__ELEMENTARY__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__VOICE__CONTROL__ELEMENTARY__MODULE.html) applications), include the `<voice_control_elm.h>` header file in your application:
+5. To use the functions and data types of the Voice control elementary API (in [mobile](../../api/mobile/latest/group__VOICE__CONTROL__ELEMENTARY__MODULE.html) and [wearable](../../api/wearable/latest/group__VOICE__CONTROL__ELEMENTARY__MODULE.html) applications), include the `<voice_control_elm.h>` header file in your application:
 
    ```
    #include <voice_control_elm.h>

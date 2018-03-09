@@ -4,7 +4,7 @@ This feature is supported in wearable applications only.
 
 The context popup (ctxpopup) component is a contextual popup that can show a list of items inside it.
 
-For more information, see the [Ctxpopup](../../../../../org.tizen.native.wearable.apireference/group__Elm__Ctxpopup.html) API.
+For more information, see the [Ctxpopup](../../../../api/wearable/latest/group__Elm__Ctxpopup.html) API.
 
 **Figure: Ctxpopup component**
 

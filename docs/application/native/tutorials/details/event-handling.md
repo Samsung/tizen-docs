@@ -11,9 +11,9 @@ hardware keys, and the circular wearable devices provide rotary
 components for emitting rotary events. Both mobile and wearable devices
 support the media key events. You can use the Efl Extension Event API
 (in
-[mobile](../../../../org.tizen.native.mobile.apireference/group__EFL__EXTENSION__EVENTS__GROUP.html)
+[mobile](../../api/mobile/latest/group__EFL__EXTENSION__EVENTS__GROUP.html)
 and
-[wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__EXTENSION__EVENT__MODULE.html)
+[wearable](../../api/wearable/latest/group__CAPI__EFL__EXTENSION__EVENT__MODULE.html)
 applications) to handle the **Menu** key, **Back** key, and rotary
 events.
 
@@ -75,9 +75,9 @@ pause events, from media devices (such as Bluetooth remote controller
 and earjack).
 
 To handle the **Media** key events, use the Media key API (in
-[mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__MEDIA__KEY__MODULE.html)
+[mobile](../../api/mobile/latest/group__CAPI__SYSTEM__MEDIA__KEY__MODULE.html)
 and
-[wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__MEDIA__KEY__MODULE.html)
+[wearable](../../api/wearable/latest/group__CAPI__SYSTEM__MEDIA__KEY__MODULE.html)
 applications).
 
 <a name="ambient"></a>

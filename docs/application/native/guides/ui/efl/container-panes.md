@@ -1,6 +1,6 @@
 # Panes
 
-The panes container adds a draggable bar between 2 sections of content. The sections are resized when the bar is dragged. For more information, see the [Panes](../../../../../org.tizen.native.mobile.apireference/group__Elm__Panes.html) API.
+The panes container adds a draggable bar between 2 sections of content. The sections are resized when the bar is dragged. For more information, see the [Panes](../../../api/mobile/latest/group__Elm__Panes.html) API.
 
 This feature is supported in mobile applications only.
 

@@ -1,6 +1,6 @@
 # Box
 
-The box container arranges UI components in a linear order, horizontally or vertically. It is a non-graphical object: it adds no graphics to or around the objects it holds. For more information, see the Box API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Elm__Box.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Elm__Box.html) applications).
+The box container arranges UI components in a linear order, horizontally or vertically. It is a non-graphical object: it adds no graphics to or around the objects it holds. For more information, see the Box API (in [mobile](../../../api/mobile/latest/group__Elm__Box.html) and [wearable](../../../api/wearable/latest/group__Elm__Box.html) applications).
 
 **Figure: Box component structure**
 

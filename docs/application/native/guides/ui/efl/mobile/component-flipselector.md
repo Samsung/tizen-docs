@@ -1,6 +1,6 @@
 # Flipselector
 
-The flipselector UI component has a set of text items and a selector that flips up or down to change the text on it. For more information, see the [Flipselector](../../../../../org.tizen.native.mobile.apireference/group__Elm__Flipselector.html) API.
+The flipselector UI component has a set of text items and a selector that flips up or down to change the text on it. For more information, see the [Flipselector](../../../../api/mobile/latest/group__Elm__Flipselector.html) API.
 
 This feature is supported in mobile applications only.
 

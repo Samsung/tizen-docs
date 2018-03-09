@@ -33,7 +33,7 @@ The following figure illustrates the general recorder state changes.
 
 ## Prerequisites
 
-To use the functions and data types of the Recorder (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html) applications) and Camera (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__CAMERA__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__CAMERA__MODULE.html) applications) APIs, include the `<camera.h>` and `<recorder.h>` header files in your application:
+To use the functions and data types of the Recorder (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__MODULE.html) applications) and Camera (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CAMERA__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CAMERA__MODULE.html) applications) APIs, include the `<camera.h>` and `<recorder.h>` header files in your application:
 
 ```
 #include <recorder.h>
@@ -103,7 +103,7 @@ To initialize the audio recorder for use:
      error_code = recorder_attr_set_audio_samplerate(rec_data.recorder, 44100);
      ```
 
-     The possible audio codec values are defined in the `recorder_audio_codec_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html#ga431bd585d929f13a71ecefd58ed17d46) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html#ga431bd585d929f13a71ecefd58ed17d46) applications).
+     The possible audio codec values are defined in the `recorder_audio_codec_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga431bd585d929f13a71ecefd58ed17d46) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga431bd585d929f13a71ecefd58ed17d46) applications).
 
      > **Note**  
      > In the emulator, set the sample rate to 44100 and use a stereo channel with the AAC codec, and set the sample rate below 8000 and use a mono channel with the AMR codec.
@@ -115,7 +115,7 @@ To initialize the audio recorder for use:
      error_code = recorder_set_file_format(g_recorder, RECORDER_FILE_FORMAT_3GP);
      ```
 
-     The possible file format values are defined in the `recorder_file_format_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html#ga7d3dbf7b0b3ef68101562b89e81ecf1e) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html#ga7d3dbf7b0b3ef68101562b89e81ecf1e) applications).
+     The possible file format values are defined in the `recorder_file_format_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga7d3dbf7b0b3ef68101562b89e81ecf1e) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga7d3dbf7b0b3ef68101562b89e81ecf1e) applications).
 
    - Based on the file format, define the correct file name, and set it using the `recorder_set_filename()` function. The function takes as a parameter the full path and name of the file to which the recorded audio data is to be stored.
 
@@ -151,9 +151,9 @@ To initialize the audio recorder for use:
      error_code = recorder_attr_set_audio_samplerate(g_recorder, 44100);
      ```
 
-     The possible audio device values are defined in the `recorder_audio_device_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html#ga0e73accfbca1b992c29a2128acebbbf3) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html#ga0e73accfbca1b992c29a2128acebbbf3) applications).
+     The possible audio device values are defined in the `recorder_audio_device_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga0e73accfbca1b992c29a2128acebbbf3) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga0e73accfbca1b992c29a2128acebbbf3) applications).
 
-   For more information on available attributes, see the Attributes API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__RECORDER__ATTRIBUTES__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__RECORDER__ATTRIBUTES__MODULE.html) applications).
+   For more information on available attributes, see the Attributes API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__ATTRIBUTES__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__ATTRIBUTES__MODULE.html) applications).
 
 4. To receive a notification when the audio recorder reaches the recording limit:
 
@@ -455,7 +455,7 @@ To configure the video recorder:
         error_code = recorder_foreach_supported_video_encoder(rec_data.recorder, _video_encoder_cb, &supported_codec);
         ```
 
-        The possible video codec values are defined in the `recorder_video_codec_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html#gaaf3f0deeb1717f568e2b93bb9a375b63) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html#gaaf3f0deeb1717f568e2b93bb9a375b63) applications).
+        The possible video codec values are defined in the `recorder_video_codec_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#gaaf3f0deeb1717f568e2b93bb9a375b63) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#gaaf3f0deeb1717f568e2b93bb9a375b63) applications).
 
      2. Set the video codec using the `recorder_set_video_encoder()` function:
 
@@ -484,7 +484,7 @@ To configure the video recorder:
         error_code = recorder_set_file_format(rec_data.recorder, RECORDER_FILE_FORMAT_MP4);
         ```
 
-        The possible file format values are defined in the `recorder_file_format_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html#ga7d3dbf7b0b3ef68101562b89e81ecf1e) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html#ga7d3dbf7b0b3ef68101562b89e81ecf1e) applications).
+        The possible file format values are defined in the `recorder_file_format_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga7d3dbf7b0b3ef68101562b89e81ecf1e) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga7d3dbf7b0b3ef68101562b89e81ecf1e) applications).
 
    - To set the file name, use the `recorder_set_filename()` function. The function takes as a parameter the full path and name of the file to which the recorded video data is to be stored. Make sure the file extension matches the file format.
 
@@ -509,7 +509,7 @@ To configure the video recorder:
 
    - To set the audio encoder, audio encoder bitrate, and audio sample rate, use the `recorder_set_audio_encoder()`, `recorder_attr_set_audio_encoder_bitrate()`, and `recorder_attr_set_audio_samplerate()` functions, [as with the audio encoder](#init_audio_att).
 
-   For more information on available attributes, see the Attributes API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__RECORDER__ATTRIBUTES__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__RECORDER__ATTRIBUTES__MODULE.html) applications).
+   For more information on available attributes, see the Attributes API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__ATTRIBUTES__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__ATTRIBUTES__MODULE.html) applications).
 
 <a name="record_video"></a>
 ## Recording a Video

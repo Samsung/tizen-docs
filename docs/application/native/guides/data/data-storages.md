@@ -17,7 +17,7 @@ The main features of the Storage API include:
 
 ## Prerequisites
 
-To use the functions and data types of the Storage API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__STORAGE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__STORAGE__MODULE.html) applications), include the `<storage.h>` header file in your application:
+To use the functions and data types of the Storage API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html) applications), include the `<storage.h>` header file in your application:
 
 ```
 #include <storage.h>
@@ -104,7 +104,7 @@ To retrieve storage information:
 
   The function retrieves the absolute path to the directory.
 
-  The second parameter defines the directory type based on the `storage_directory_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__STORAGE__MODULE.html#gaacf2209a06b947c1cee4ba223679383a) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__STORAGE__MODULE.html#gaacf2209a06b947c1cee4ba223679383a) applications).
+  The second parameter defines the directory type based on the `storage_directory_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html#gaacf2209a06b947c1cee4ba223679383a) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html#gaacf2209a06b947c1cee4ba223679383a) applications).
 
   To get the media directory:
 
@@ -118,7 +118,7 @@ To retrieve storage information:
 
 - Get the storage type of a specific storage by using the `storage_get_type()` function.
 
-  The `storage_type_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__STORAGE__MODULE.html#gabdf32571260b6c253da5bfcdecaa2f1f) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__STORAGE__MODULE.html#gabdf32571260b6c253da5bfcdecaa2f1f) applications) defines the available storage types.
+  The `storage_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html#gabdf32571260b6c253da5bfcdecaa2f1f) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html#gabdf32571260b6c253da5bfcdecaa2f1f) applications) defines the available storage types.
 
     ```
     int error;
@@ -128,7 +128,7 @@ To retrieve storage information:
 
 - Get the mount state of a specific storage by using the `storage_get_state()` function.
 
-  The `storage_state_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__STORAGE__MODULE.html#gac72d0e57e790d888dfd7bd57d52fbfee) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__STORAGE__MODULE.html#gac72d0e57e790d888dfd7bd57d52fbfee) applications) defines the available storage states.
+  The `storage_state_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html#gac72d0e57e790d888dfd7bd57d52fbfee) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html#gac72d0e57e790d888dfd7bd57d52fbfee) applications) defines the available storage states.
 
     ```
     int error;

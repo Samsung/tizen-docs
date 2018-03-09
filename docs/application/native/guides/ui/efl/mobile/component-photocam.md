@@ -6,7 +6,7 @@ The photocam component displays high resolution photos taken from digital camera
 
 The photocam component implements the scroller interface, which means that scroller functions can be used with the photocam component.
 
-For more information, see the [Photocam](../../../../../org.tizen.native.mobile.apireference/group__Elm__Photocam.html) API.
+For more information, see the [Photocam](../../../../api/mobile/latest/group__Elm__Photocam.html) API.
 
 **Figure: Photocam hierarchy**
 

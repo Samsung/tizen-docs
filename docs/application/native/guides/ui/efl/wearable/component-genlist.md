@@ -4,7 +4,7 @@ This feature is supported in wearable applications only.
 
 Genlist is a UI component that displays a scrollable list of items. It allows you to manage a lot of items while still being fast and having a low memory footprint, as only the visible items are allocated in the memory.
 
-For more information, see the [Genlist](../../../../../org.tizen.native.wearable.apireference/group__Elm__Genlist.html) API.
+For more information, see the [Genlist](../../../../api/wearable/latest/group__Elm__Genlist.html) API.
 
 **Figure: Genlist component**
 

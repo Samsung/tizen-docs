@@ -24,7 +24,7 @@ You can [manage the anti-malware engines](#managing_engine) by enabling and disa
 
 To enable your application to use the CSR framework functionality:
 
-1. To use the CSR API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__CSR__FRAMEWORK__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__CSR__FRAMEWORK__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the CSR API (in [mobile](../../api/mobile/latest/group__CAPI__CSR__FRAMEWORK__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__CSR__FRAMEWORK__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```
     <privileges>

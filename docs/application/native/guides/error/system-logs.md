@@ -63,7 +63,7 @@ if (result != LOCATIONS_ERROR_NONE) {
 }
 ```
 
-To [create and send a log message](#send), use the `dlog_print()` and `dlog_vprint()` functions. The first parameter defines the priority level, and the second parameter defines the tag. Both functions return a value from the `dlog_error_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__DLOG.html#ga75b37fc3103da74bb4122d98968d8c17) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__DLOG.html#ga75b37fc3103da74bb4122d98968d8c17)applications).
+To [create and send a log message](#send), use the `dlog_print()` and `dlog_vprint()` functions. The first parameter defines the priority level, and the second parameter defines the tag. Both functions return a value from the `dlog_error_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DLOG.html#ga75b37fc3103da74bb4122d98968d8c17) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DLOG.html#ga75b37fc3103da74bb4122d98968d8c17)applications).
 
 ```
 /* dlog_print */
@@ -192,7 +192,7 @@ dlogutil <option> <filter-spec>
 
 To enable your application to use the dlog functionality:
 
-1. To use the functions and data types of the dlog API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__DLOG.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__DLOG.html) applications), include the `<dlog.h>` header file in your application:
+1. To use the functions and data types of the dlog API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DLOG.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DLOG.html) applications), include the `<dlog.h>` header file in your application:
 
    ```
    #include <dlog.h>

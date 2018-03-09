@@ -24,7 +24,7 @@ The FIDO UAF consists of the following basic components:
 
 - **FIDO UAF client**
 
-  The FIDO UAF client implements the client side of the FIDO UAF protocols, and is responsible for interacting with specific FIDO UAF authenticators using the FIDO UAF authenticator abstraction layer through the FIDO UAF Authenticator API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__FIDO__AUTHENTICATOR__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__FIDO__AUTHENTICATOR__MODULE.html)applications). Before you use the authenticators, [check whether the device can process the UAF protocol messages](#check_uaf_msg_supported).
+  The FIDO UAF client implements the client side of the FIDO UAF protocols, and is responsible for interacting with specific FIDO UAF authenticators using the FIDO UAF authenticator abstraction layer through the FIDO UAF Authenticator API (in [mobile](../../api/mobile/latest/group__CAPI__FIDO__AUTHENTICATOR__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__FIDO__AUTHENTICATOR__MODULE.html)applications). Before you use the authenticators, [check whether the device can process the UAF protocol messages](#check_uaf_msg_supported).
 
 - **FIDO UAF server**
 
@@ -77,7 +77,7 @@ The FIDO UAF consists of the following basic components:
 
 ## Prerequisites
 
-To use the FIDO Client API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__FIDO__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__FIDO__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+To use the FIDO Client API (in [mobile](../../api/mobile/latest/group__CAPI__FIDO__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__FIDO__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
 ```
 <privileges>

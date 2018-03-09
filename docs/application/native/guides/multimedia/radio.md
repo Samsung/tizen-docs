@@ -33,7 +33,7 @@ The following figure illustrates the general radio state changes.
 
 To enable your application to use the radio functionality:
 
-1. To use the functions and data types of the Radio API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__RADIO__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__RADIO__MODULE.html) applications), include the `<radio.h>` header file in your application:
+1. To use the functions and data types of the Radio API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__RADIO__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__RADIO__MODULE.html) applications), include the `<radio.h>` header file in your application:
 
    ```
    #include <radio.h>

@@ -140,7 +140,7 @@ void HelloWorldExample::OnPan( Actor actor, const PanGesture& gesture )
 }
 ```
 
-For more information, see the `New()` function in the `Dali::Constraint` class (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1Constraint.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1Constraint.html) applications).
+For more information, see the `New()` function in the `Dali::Constraint` class (in [mobile](../../../api/mobile/latest/classDali_1_1Constraint.html) and [wearable](../../../api/wearable/latest/classDali_1_1Constraint.html) applications).
 
 ### Using Functors as Constraint Functions
 
@@ -245,8 +245,8 @@ Generally, do not use constraints with the `size` property as constraining the s
 |------------------------------------------|------------------------------------------|
 | Need a child to be 50% the size of its parent. | Use size negotiation.For more information, see [Layout Management](layout.md). |
 | Need to zoom an actor in to the screen using its scale property. | Use an animation.For more information, see [Animation](animation.md). |
-| Need an actor to appear centered around the bottom-right corner of its parent. | Use the `Dali::ParentOrigin` (in [mobile](../../../../../org.tizen.native.mobile.apireference/namespaceDali_1_1ParentOrigin.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/namespaceDali_1_1ParentOrigin.html) applications) and `Dali::AnchorPoint` (in [mobile](../../../../../org.tizen.native.mobile.apireference/namespaceDali_1_1AnchorPoint.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/namespaceDali_1_1AnchorPoint.html)applications) namespaces.For more information, see [Positioning Actors](actors.md#positioning-actors). |
-| Need to lay out a series of controls with various alignment requirements. | Use either `ParentOrigin` and `AnchorPoint` settings, or the `Dali::Toolkit::TableView` class (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1Toolkit_1_1TableView.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1Toolkit_1_1TableView.html)applications). |
+| Need an actor to appear centered around the bottom-right corner of its parent. | Use the `Dali::ParentOrigin` (in [mobile](../../../api/mobile/latest/namespaceDali_1_1ParentOrigin.html) and [wearable](../../../api/wearable/latest/namespaceDali_1_1ParentOrigin.html) applications) and `Dali::AnchorPoint` (in [mobile](../../../api/mobile/latest/namespaceDali_1_1AnchorPoint.html) and [wearable](../../../api/wearable/latest/namespaceDali_1_1AnchorPoint.html)applications) namespaces.For more information, see [Positioning Actors](actors.md#positioning-actors). |
+| Need to lay out a series of controls with various alignment requirements. | Use either `ParentOrigin` and `AnchorPoint` settings, or the `Dali::Toolkit::TableView` class (in [mobile](../../../api/mobile/latest/classDali_1_1Toolkit_1_1TableView.html) and [wearable](../../../api/wearable/latest/classDali_1_1Toolkit_1_1TableView.html)applications). |
 | Need to automatically modify the position property of one actor based on the position property of another actor that is neither a parent nor a child. | Use a constraint.                        |
 | Need to position an actor relative to its parent actor in a NON-UNIFORM way, or a non-linear calculation needs to be performed that requires a functor. | Use a constraint.                        |
 | Need to modify an actor's property in real time based on some calculations that require additional data to be stored in-between frames. | Use a constraint.The constraint functor can hold any variables within it that need to be preserved frame-to-frame. |

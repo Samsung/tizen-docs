@@ -4,19 +4,19 @@ You can take advantage of various EFL utilities in your application:
 
 - Managing notification windows
 
-  A window that belongs to the [notification layer](#window-layers-and-notification-levels) within the Tizen window layer hierarchy is called a "notification window". You can [create notification windows](#managing-notification-windows) and access their current notification levels (as long as they are of the EFL window type) using the EFL UTIL API (for [mobile](../../../../../org.tizen.native.mobile.apireference/group__CAPI__EFL__UTIL__MODULE.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__UTIL__MODULE.html) applications).
+  A window that belongs to the [notification layer](#window-layers-and-notification-levels) within the Tizen window layer hierarchy is called a "notification window". You can [create notification windows](#managing-notification-windows) and access their current notification levels (as long as they are of the EFL window type) using the EFL UTIL API (for [mobile](../../../api/mobile/latest/group__CAPI__EFL__UTIL__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__EFL__UTIL__MODULE.html) applications).
 
 - Taking screenshots
 
-  You can [capture screenshots](#taking-screenshots) and store the screenshot data as a TBM surface, using the EFL UTIL SCREENSHOT API (for [mobile](../../../../../org.tizen.native.mobile.apireference/group__CAPI__EFL__UTIL__SCREENSHOT__MODULE.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__UTIL__SCREENSHOT__MODULE.html) applications).
+  You can [capture screenshots](#taking-screenshots) and store the screenshot data as a TBM surface, using the EFL UTIL SCREENSHOT API (for [mobile](../../../api/mobile/latest/group__CAPI__EFL__UTIL__SCREENSHOT__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__EFL__UTIL__SCREENSHOT__MODULE.html) applications).
 
 - Using the input generator
 
-  You can generate input events using the EFL UTIL INPUT API (for [mobile](../../../../../org.tizen.native.mobile.apireference/group__CAPI__EFL__UTIL__INPUT__MODULE.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__UTIL__INPUT__MODULE.html) applications). You can generate [key input events](#generating-key-input-events) that emulate various hardware key presses and [touch input events](#generating-touch-input-events) that emulate screen touches.
+  You can generate input events using the EFL UTIL INPUT API (for [mobile](../../../api/mobile/latest/group__CAPI__EFL__UTIL__INPUT__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__EFL__UTIL__INPUT__MODULE.html) applications). You can generate [key input events](#generating-key-input-events) that emulate various hardware key presses and [touch input events](#generating-touch-input-events) that emulate screen touches.
 
 - Handling global gestures
 
-  You can handle [global gestures](#global-gestures) using the EFL UTIL GESTURE API (for [mobile](../../../../../org.tizen.native.mobile.apireference/group__CAPI__EFL__UTIL__GESTURE__MODULE.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__UTIL__GESTURE__MODULE.html) applications). You can [grab](#grabbing-gestures) and [deactivate](#deactivating-gestures) global gestures, and [select](#selecting-gestures) and [deactivate](#deactivating-gestures-in-a-window) them in a window.
+  You can handle [global gestures](#global-gestures) using the EFL UTIL GESTURE API (for [mobile](../../../api/mobile/latest/group__CAPI__EFL__UTIL__GESTURE__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__EFL__UTIL__GESTURE__MODULE.html) applications). You can [grab](#grabbing-gestures) and [deactivate](#deactivating-gestures) global gestures, and [select](#selecting-gestures) and [deactivate](#deactivating-gestures-in-a-window) them in a window.
 
 ## Window Layers and Notification Levels
 
@@ -109,7 +109,7 @@ You can implement the following gesture types:
 
 ## Prerequisites
 
-To use the functions and data types of the EFL UTIL API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__CAPI__EFL__UTIL__MODULE.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__UTIL__MODULE.html) applications), include the `<efl_util.h>` header file in your application:
+To use the functions and data types of the EFL UTIL API (in [mobile](../../../api/mobile/latest/group__CAPI__EFL__UTIL__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__EFL__UTIL__MODULE.html) applications), include the `<efl_util.h>` header file in your application:
 
 ```
 #include <efl_util.h>

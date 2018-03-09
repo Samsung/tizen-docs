@@ -37,7 +37,7 @@ The following figures illustrates the state and function call diagrams of the sc
 
 To enable your application to use the screen mirroring functionality:
 
-1. To use the functions and data types of the [Screen Mirroring](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SCREEN__MIRRORING__MODULE.html) API, include the `<scmirroring_type.h>` and `<scmirroring_sink.h>` header files in your application:
+1. To use the functions and data types of the [Screen Mirroring](../../api/mobile/latest/group__CAPI__MEDIA__SCREEN__MIRRORING__MODULE.html) API, include the `<scmirroring_type.h>` and `<scmirroring_sink.h>` header files in your application:
 
    ```
    #include <scmirroring_type.h>
@@ -155,7 +155,7 @@ To prepare the screen mirroring sink:
    }
    ```
 
-3. Create the display object based on the applicable [scmirroring_display_type_e](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SCREEN__MIRRORING__MODULE.html#ga2c7d012d260b35e0e550618c2546f751) enumerator value:
+3. Create the display object based on the applicable [scmirroring_display_type_e](../../api/mobile/latest/group__CAPI__MEDIA__SCREEN__MIRRORING__MODULE.html#ga2c7d012d260b35e0e550618c2546f751) enumerator value:
 
    ```
    #define PACKAGE_NAME "SCREEN_MIRRORING_SINK_APP"

@@ -28,7 +28,7 @@ The following table lists the available UI components.
 | [TextEditor](texteditor.md)       | A text field that provides a multi-line editable text. | `TextEditor`                             |
 | [VideoView](videoview.md)         | A video view that controls and displays video playback. | `VideoView`                              |
 
-The base class for the components is `Dali::Toolkit::Control` (in [mobile](http://org.tizen.native.mobile.apireference/classDali_1_1Toolkit_1_1Control.html) and [wearable](http://org.tizen.native.wearable.apireference/classDali_1_1Toolkit_1_1Control.html) applications). This class can also be used to create your own custom UI components. For tips for the control class, see [Control](control-base.md). In this UI Components guide, both the terms **control** and **component** are used to refer to a UI component.
+The base class for the components is `Dali::Toolkit::Control` (in [mobile](../../../api/mobile/latest/classDali_1_1Toolkit_1_1Control.html) and [wearable](../../../api/wearable/latest/classDali_1_1Toolkit_1_1Control.html) applications). This class can also be used to create your own custom UI components. For tips for the control class, see [Control](control-base.md). In this UI Components guide, both the terms **control** and **component** are used to refer to a UI component.
 
 You can [customize the look of the UI components with stylesheets](styling.md). For a reusable rendering logic that can be used by all UI components, take advantage of [DALi visuals](visuals.md).
 

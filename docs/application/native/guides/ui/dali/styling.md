@@ -6,7 +6,7 @@ You can style DALi UI components with a theme bundle or a folder containing a JS
 
 You can specify how each application component looks by using a stylesheet with the JSON file format:
 
-- Application-specific resources must be installed into a particular directory, and you can access them in the stylesheet indirectly through the `APPLICATION_RESOURCE_PATH` constant, which has the value returned by the `app_get_resource_path()` function. For more information on the resource directory, see the `app_get_resource_path()` function in the App Common API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__CAPI__APP__COMMON__MODULE.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__CAPI__APP__COMMON__MODULE.html) applications).
+- Application-specific resources must be installed into a particular directory, and you can access them in the stylesheet indirectly through the `APPLICATION_RESOURCE_PATH` constant, which has the value returned by the `app_get_resource_path()` function. For more information on the resource directory, see the `app_get_resource_path()` function in the App Common API (in [mobile](../../../api/mobile/latest/group__CAPI__APP__COMMON__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__APP__COMMON__MODULE.html) applications).
 
 - You can style particular controls or sub-groups of controls by specifying their style name programmatically.
 

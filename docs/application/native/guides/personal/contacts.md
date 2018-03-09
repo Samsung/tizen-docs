@@ -154,7 +154,7 @@ To manage the record using the handle, you can use the URI, views, or basic type
 
   A record type is identified by a structure called the view, which contains identifiers of its properties. Every view has a special `_uri` field that uniquely identifies the view. In many cases, you must provide the `_uri` value as a parameter to indicate what type of record you want to create or operate on.
 
-  For a list of functions that need the `_uri` postfix, see the list of functions in the Contacts API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_MODULE_RECORDS_URI) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_MODULE_RECORDS_URI) applications).
+  For a list of functions that need the `_uri` postfix, see the list of functions in the Contacts API (in [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CONTACTS__SVC__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_MODULE_RECORDS_URI) and [wearable](../../api/wearable/latest/group__CAPI__SOCIAL__CONTACTS__SVC__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_MODULE_RECORDS_URI) applications).
 
 <a name="view"></a>
 - Views
@@ -169,7 +169,7 @@ To manage the record using the handle, you can use the URI, views, or basic type
 
   ![Properties](./media/contact_property.png)
 
-  For more information, see the View/Property API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html) applications).
+  For more information, see the View/Property API (in [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html) applications).
 
 - Basic types
 
@@ -397,7 +397,7 @@ To filter, sort, and query contact data:
 
 - Filtering
 
-  The Filter API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__FILTER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__FILTER__MODULE.html) applications) provides the set of definitions and interfaces that enable you to make filters to set queries.
+  The Filter API (in [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CONTACTS__SVC__FILTER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SOCIAL__CONTACTS__SVC__FILTER__MODULE.html) applications) provides the set of definitions and interfaces that enable you to make filters to set queries.
 
   When creating a filter, use the `contacts_filter_create()` function, and specify the filter type you want to create using the `_uri` property. A filter handle must be destroyed after use with the `contacts_filter_destroy()` function.
 
@@ -546,7 +546,7 @@ To filter, sort, and query contact data:
 <a name="db"></a>
 ## Database Change Notifications
 
-To detect the [person](#monitor_contact) and [group](#monitor) changes in the contacts database, use the Database API functions (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__DATABASE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__DATABASE__MODULE.html) applications). Register a callback with the `contacts_db_add_changed_cb()` function. To deregister the callback and ignore database changes, use the `contacts_db_remove_changed_cb()` function.
+To detect the [person](#monitor_contact) and [group](#monitor) changes in the contacts database, use the Database API functions (in [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CONTACTS__SVC__DATABASE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SOCIAL__CONTACTS__SVC__DATABASE__MODULE.html) applications). Register a callback with the `contacts_db_add_changed_cb()` function. To deregister the callback and ignore database changes, use the `contacts_db_remove_changed_cb()` function.
 
 Clients wait for contact change notifications on the client side. If the contact is changed by another module, the server publishes a notification. The notification module broadcasts to the subscribed modules and a user callback function is called with the user data. The following example registers a person change notification callback:
 
@@ -622,7 +622,7 @@ The contact service provides functions for [parsing](#parse) and [making](#make)
 
 To enable your application to use the contact functionality:
 
-1. To use the Contacts API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the Contacts API (in [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CONTACTS__SVC__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SOCIAL__CONTACTS__SVC__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -658,7 +658,7 @@ To enable your application to use the contact functionality:
 
 Creating a new contact involves creating a contact handle, setting the contact properties, and inserting the contact into the contact database.
 
-Some contact properties are defined as child records that are associated with the parent record. For a detailed list of the contact properties, see the `_contacts_contact` view description in the Contacts API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_contact) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_contact) applications). If the property type is `record`, the property is defined as a child record. The property description defines whether a single or multiple child records are allowed for a specific property.
+Some contact properties are defined as child records that are associated with the parent record. For a detailed list of the contact properties, see the `_contacts_contact` view description in the Contacts API (in [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_contact) and [wearable](../../api/wearable/latest/group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_contact) applications). If the property type is `record`, the property is defined as a child record. The property description defines whether a single or multiple child records are allowed for a specific property.
 
 When you create a new contact, the system automatically creates a new person associated with that contact. A person is an aggregation of 1 or more contacts associated with the same individual. A contact is always associated with a person.
 
@@ -736,7 +736,7 @@ To create a new contact:
 
    - To set an event for the contact:
 
-     An event consists of an event type, date, and other properties. You can set various types of events for the contact, as defined in the `contacts_event_type_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__RECORD__MODULE.html#ga434cc4b7cec62ccab70fa4825ce0801d) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__RECORD__MODULE.html#ga434cc4b7cec62ccab70fa4825ce0801d) applications). If the event type is `CONTACTS_EVENT_TYPE_CUSTOM`, you can set a custom label for the event using the `contacts_record_set_str()` function with the `_contacts_event.label` property as the second parameter.
+     An event consists of an event type, date, and other properties. You can set various types of events for the contact, as defined in the `contacts_event_type_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CONTACTS__SVC__RECORD__MODULE.html#ga434cc4b7cec62ccab70fa4825ce0801d) and [wearable](../../api/wearable/latest/group__CAPI__SOCIAL__CONTACTS__SVC__RECORD__MODULE.html#ga434cc4b7cec62ccab70fa4825ce0801d) applications). If the event type is `CONTACTS_EVENT_TYPE_CUSTOM`, you can set a custom label for the event using the `contacts_record_set_str()` function with the `_contacts_event.label` property as the second parameter.
 
      To set a birthday event:
 
@@ -2301,7 +2301,7 @@ To create a new log entry:
 
 2. Set the log properties:
 
-   - To set the log type, use the `contacts_record_set_int()` function with the `_contacts_phone_log.log_type` property as the second parameter. The third parameter defines the log type using the values of the `contacts_phone_log_type_e`enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__RECORD__MODULE.html#gaafc3f61866231c01314c1d3f7da6038b) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__RECORD__MODULE.html#gaafc3f61866231c01314c1d3f7da6038b) applications).
+   - To set the log type, use the `contacts_record_set_int()` function with the `_contacts_phone_log.log_type` property as the second parameter. The third parameter defines the log type using the values of the `contacts_phone_log_type_e`enumeration (in [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CONTACTS__SVC__RECORD__MODULE.html#gaafc3f61866231c01314c1d3f7da6038b) and [wearable](../../api/wearable/latest/group__CAPI__SOCIAL__CONTACTS__SVC__RECORD__MODULE.html#gaafc3f61866231c01314c1d3f7da6038b) applications).
 
      ```
      error_code = contacts_record_set_int(log, _contacts_phone_log.log_type,
@@ -2795,7 +2795,7 @@ To retrieve the record details:
      - If the data is stored directly in the contact record, access the correct property using the appropriate `contacts_record_get_XXX()` function.
      - If the data is stored in a child record, retrieve the child record responsible for the data type using the `contacts_record_get_child_record_at_p()` function, and then access the correct property in the child record using the appropriate `contacts_record_get_XXX()` function.
 
-     For a list of properties by view, see View/Property (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html) applications).
+     For a list of properties by view, see View/Property (in [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html) applications).
 
      > **Note**  
      > Do not pass any data returned by a function with the `_p` suffix to the `free()` function.
@@ -2818,7 +2818,7 @@ To retrieve the record details:
        }
        ```
 
-     - To retrieve the contact's phone number, first check whether the contact has at least 1 phone number using the `contacts_record_get_bool()` function on the contact record with the `_contacts_contact.has_phonenumber` property. If the contact has 1 or more phone numbers, retrieve the numbers using the various Query (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__QUERY__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__QUERY__MODULE.html) applications) and Filter (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__FILTER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__FILTER__MODULE.html) applications) functions from the Contacts API. The numbers are stored in the number child records (the `_contacts_number` view). After you are done, free any data returned by a function not containing the `_p` suffix.
+     - To retrieve the contact's phone number, first check whether the contact has at least 1 phone number using the `contacts_record_get_bool()` function on the contact record with the `_contacts_contact.has_phonenumber` property. If the contact has 1 or more phone numbers, retrieve the numbers using the various Query (in [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CONTACTS__SVC__QUERY__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SOCIAL__CONTACTS__SVC__QUERY__MODULE.html) applications) and Filter (in [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CONTACTS__SVC__FILTER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SOCIAL__CONTACTS__SVC__FILTER__MODULE.html) applications) functions from the Contacts API. The numbers are stored in the number child records (the `_contacts_number` view). After you are done, free any data returned by a function not containing the `_p` suffix.
 
        The following example checks whether the contact has any phone numbers. Then, it queries all phone numbers and filters the search so that only the numbers that are default numbers and belong to the specific contact are included in the search result.
 
@@ -2995,7 +2995,7 @@ To retrieve multiple records at the same time using a list:
         contacts_filter_create(_contacts_name._uri, &filter);
         ```
 
-        The first parameter defines in which view to place the filter. To filter contacts by first and last name, use the `_contacts_name` view. The first parameter must be the same as the first parameter of the `contacts_query_create()` function, that is, the query and its filter must both use the same view. For more information on views, see View/Property (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html) applications).
+        The first parameter defines in which view to place the filter. To filter contacts by first and last name, use the `_contacts_name` view. The first parameter must be the same as the first parameter of the `contacts_query_create()` function, that is, the query and its filter must both use the same view. For more information on views, see View/Property (in [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html) applications).
 
      3. Add a filtering condition using a `contacts_filter_add_XXX()` function.
 
@@ -3005,7 +3005,7 @@ To retrieve multiple records at the same time using a list:
         contacts_filter_add_str(filter, _contacts_name.last_name, CONTACTS_MATCH_STARTSWITH, "Za");
         ```
 
-        The available matching options (third parameter) for string-based filtering conditions are defined in the `contacts_match_str_flag_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__FILTER__MODULE.html#ga5a4ee5c71ae14d0fbf7520597514f0c2) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__FILTER__MODULE.html#ga5a4ee5c71ae14d0fbf7520597514f0c2) applications).
+        The available matching options (third parameter) for string-based filtering conditions are defined in the `contacts_match_str_flag_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CONTACTS__SVC__FILTER__MODULE.html#ga5a4ee5c71ae14d0fbf7520597514f0c2) and [wearable](../../api/wearable/latest/group__CAPI__SOCIAL__CONTACTS__SVC__FILTER__MODULE.html#ga5a4ee5c71ae14d0fbf7520597514f0c2) applications).
 
      4. To add more conditions, add a logical operator before each new condition using the `contacts_filter_add_operator()` function. The conditions and operators together define the filtering logic as a whole.
 
@@ -3234,7 +3234,7 @@ To link 2 persons and manage the linked person:
 
 - Set the default properties for the linked person.
 
-  Set the default properties from one of the associated contacts using the `contacts_person_set_default_property()` function. The first parameter uses the values of the `contacts_person_property_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__PERSON__MODULE.html#ga641465951ce76daa56bb430b37cc8d90) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__PERSON__MODULE.html#ga641465951ce76daa56bb430b37cc8d90) applications), which defines the available default properties for a person.
+  Set the default properties from one of the associated contacts using the `contacts_person_set_default_property()` function. The first parameter uses the values of the `contacts_person_property_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CONTACTS__SVC__PERSON__MODULE.html#ga641465951ce76daa56bb430b37cc8d90) and [wearable](../../api/wearable/latest/group__CAPI__SOCIAL__CONTACTS__SVC__PERSON__MODULE.html#ga641465951ce76daa56bb430b37cc8d90) applications), which defines the available default properties for a person.
 
   For example, to set the person's default phone number based on the number of one of the associated contacts:
 
@@ -3328,7 +3328,7 @@ To manage the display and sorting order settings for contacts:
            "CONTACTS_NAME_SORTING_ORDER_FIRSTLAST" : "CONTACTS_NAME_SORTING_ORDER_LASTFIRST");
    ```
 
-3. Change the display and sorting orders using the `contacts_setting_set_name_display_order()` and `contacts_setting_set_name_sorting_order()` functions. Both functions use as a parameter a value of an enumeration: `contacts_name_display_order_e` (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__SETTING__MODULE.html#ga0b52839d82e7ca998436b174e1f807d8) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__SETTING__MODULE.html#ga0b52839d82e7ca998436b174e1f807d8) applications) and `contacts_name_sorting_order_e` (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__SETTING__MODULE.html#ga28fdacd75efe1b14b33a3215fc5c3854) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SOCIAL__CONTACTS__SVC__SETTING__MODULE.html#ga28fdacd75efe1b14b33a3215fc5c3854) applications) that define the available display and sorting orders.
+3. Change the display and sorting orders using the `contacts_setting_set_name_display_order()` and `contacts_setting_set_name_sorting_order()` functions. Both functions use as a parameter a value of an enumeration: `contacts_name_display_order_e` (in [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CONTACTS__SVC__SETTING__MODULE.html#ga0b52839d82e7ca998436b174e1f807d8) and [wearable](../../api/wearable/latest/group__CAPI__SOCIAL__CONTACTS__SVC__SETTING__MODULE.html#ga0b52839d82e7ca998436b174e1f807d8) applications) and `contacts_name_sorting_order_e` (in [mobile](../../api/mobile/latest/group__CAPI__SOCIAL__CONTACTS__SVC__SETTING__MODULE.html#ga28fdacd75efe1b14b33a3215fc5c3854) and [wearable](../../api/wearable/latest/group__CAPI__SOCIAL__CONTACTS__SVC__SETTING__MODULE.html#ga28fdacd75efe1b14b33a3215fc5c3854) applications) that define the available display and sorting orders.
 
    ```
    contacts_setting_set_name_display_order(CONTACTS_NAME_DISPLAY_ORDER_FIRSTLAST);

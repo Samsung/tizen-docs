@@ -25,7 +25,7 @@ To enable your application to use the OpenGL&reg; ES functionality:
    system_info_get_platform_bool("http://tizen.org/feature/opengles.version.2_0", &opengles_support);
    ```
 
-3. To use the functions and data types of the OpenGL ES (in [mobile](../../../../org.tizen.native.mobile.apireference/group__OPENSRC__OPENGLES__FRAMEWORK.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__OPENSRC__OPENGLES__FRAMEWORK.html) applications) and SDL (in [mobile](../../../../org.tizen.native.mobile.apireference/group__OPENSRC__SDL__FRAMEWORK.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__OPENSRC__SDL__FRAMEWORK.html) applications) APIs, include the `<SDL.h>` header file and the appropriate OpenGL&reg; ES version header file in your application:
+3. To use the functions and data types of the OpenGL ES (in [mobile](../../api/mobile/latest/group__OPENSRC__OPENGLES__FRAMEWORK.html) and [wearable](../../api/wearable/latest/group__OPENSRC__OPENGLES__FRAMEWORK.html) applications) and SDL (in [mobile](../../api/mobile/latest/group__OPENSRC__SDL__FRAMEWORK.html) and [wearable](../../api/wearable/latest/group__OPENSRC__SDL__FRAMEWORK.html) applications) APIs, include the `<SDL.h>` header file and the appropriate OpenGL&reg; ES version header file in your application:
 
     ```
     #include <SDL.h>
