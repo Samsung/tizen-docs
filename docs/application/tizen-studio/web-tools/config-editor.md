@@ -665,10 +665,10 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 					<p>Mandatory; page handling the requests</p>
 					</li>
 					<li><code>reload</code>
-					<p>Optional; sets whether the page is reloaded when it is already loaded (available values: <code>enable</code> (default), <code>disable</code><p>
+					<p>Optional; sets whether the page is reloaded when it is already loaded (available values: <code>enable</code> (default), <code>disable</code>)<p>
 					<p><strong>Since: 2.4</strong></p>
-					<p><strong>Note</strong><br>
-                    The <code>reload</code> attribute is supported since Tizen 2.4. If the <code>required_version</code> in the application's <code>config.xml</code> file is set to a version older than Tizen 2.4, and the <code>reload</code> attribute is used, the application installation fails</p>
+					<blockquote><p><strong>Note</strong><br>
+                    The <code>reload</code> attribute is supported since Tizen 2.4. If the <code>required_version</code> in the application's <code>config.xml</code> file is set to a version older than Tizen 2.4, and the <code>reload</code> attribute is used, the application installation fails</p></blockquote>
 					</li>
 				</ul>
 				</li>
@@ -768,8 +768,8 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 					<li><code>caller</code>: caller application defines the launch mode with the <code>app_control_set_launch_mode()</code> method</li>
 				</ul>
 				<p><strong>Since: 2.4</strong></p>
-				<p><strong>Note</strong><br>
-                The <code>launch_mode</code> attribute is supported since Tizen 2.4. If the <code>required_version</code> in the application's <code>config.xml</code> file is set to a version older than Tizen 2.4, and the <code>launch_mode</code> attribute is used, the application installation fails.</p>
+				<blockquote><p><strong>Note</strong><br>
+                The <code>launch_mode</code> attribute is supported since Tizen 2.4. If the <code>required_version</code> in the application's <code>config.xml</code> file is set to a version older than Tizen 2.4, and the <code>launch_mode</code> attribute is used, the application installation fails.</p></blockquote>
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
@@ -796,8 +796,8 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 		<tbody>
 		<tr>
 			<td>Used to represent the category of an application that is allowed to run in the background.
-			<p><strong>Note</strong><br>
-            In addition to declaring the &lt;background-category&gt; element, you must <a href="#mw_setting">set the &lt;tizen:setting background-support&gt; attribute to <code>enable</code></a> to run Web applications in the background.</p>
+			<blockquote><p><strong>Note</strong><br>
+            In addition to declaring the <code>&lt;background-category&gt;</code> element, you must <a href="#mw_setting">set the <code>&lt;tizen:setting background-support&gt;</code> attribute to <code>enable</code></a> to run Web applications in the background.</p></blockquote>
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -829,11 +829,11 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 		<tbody>
 		<tr>
 			<td>Used to point to a document which is hosted on an external server and acts as the Web application start page. The Tizen WRT allows the start page to be hosted on an external server.
-			<p>If the start page is contained in the widget package, it is defined with the <a href="#content_element">&lt;content&gt; W3C element</a>. If both &lt;content&gt; and &lt;tizen:content/&gt; elements are defined, the &lt;tizen:content/&gt; element is used.</p>
+			<p>If the start page is contained in the widget package, it is defined with the <a href="#content_element">&lt;content&gt; W3C element</a>. If both <code>&lt;content&gt;</code> and <code>&lt;tizen:content/&gt;</code> elements are defined, the <code>&lt;tizen:content/&gt;</code> element is used.</p>
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more
-				<p>If more than 1 &lt;tizen:content/&gt; element is specified, the first instance of the element is used.</p>
+				<p>If more than 1 <code>&lt;tizen:content/&gt;</code> element is specified, the first instance of the element is used.</p>
 				</li>
 			</ul>
 			<p><strong>Attributes:</strong></p>
@@ -919,8 +919,8 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 		<tbody>
 		<tr>
 			<td>Used to define hardware and software components for a Tizen application. This attribute is only used in the Tizen Store for filtering purposes. It is ignored by the Web Runtime installation procedure.
-			<p><strong>Note</strong><br>
-            Even though the &lt;feature/&gt; element is defined in the Widget Packaging and XML Configuration guidelines, an extended version is used in Tizen.</p>
+			<blockquote><p><strong>Note</strong><br>
+            Even though the <code>&lt;feature/&gt;</code> element is defined in the Widget Packaging and XML Configuration guidelines, an extended version is used in Tizen.</p></blockquote>
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -1100,8 +1100,8 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 				<li><code>background-support</code>
 				<p>Optional; application execution continues when it is moved to the background (available values: <code>enable</code> (execution continues in the background), <code>disable</code> (default; application is suspended))</p>
-				<p><strong>Note</strong><br>
-                Since Tizen 2.4, the system manages background processes more tightly. Even if the <code>background-support</code> attribute is set to <code>enable</code>, a Web application process can be suspended in the background. To guarantee that the application runs in the background, <a href="#mw_bg_category">add at least one background category</a> for the application with the &lt;tizen:background-category&gt; element. Only the background categories declared in the system can be used.</p>
+				<blockquote><p><strong>Note</strong><br>
+                Since Tizen 2.4, the system manages background processes more tightly. Even if the <code>background-support</code> attribute is set to <code>enable</code>, a Web application process can be suspended in the background. To guarantee that the application runs in the background, <a href="#mw_bg_category">add at least one background category</a> for the application with the <code>&lt;tizen:background-category&gt;</code> element. Only the background categories declared in the system can be used.</p></blockquote>
 				</li>
 				<li><code>encryption</code>
 				<p>Optional; Web application resources (HTML, JavaScript, and CSS files) are stored encrypted (available values: <code>enable</code>, <code>disable</code> (default))</p>
@@ -1115,7 +1115,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</ul>
 				</li>
 				<li><code>hwkey-event</code>
-				<p>Optional; a hardware key event is sent to the Web application when the user presses the hardware key (available values: <code>enable</code> (default), <code>disable</code><p>
+				<p>Optional; a hardware key event is sent to the Web application when the user presses the hardware key (available values: <code>enable</code> (default), <code>disable</code>)<p>
 				<p>If this option is enabled, the <code>tizenhwkey</code> custom event is sent to the Web application. The <code>tizenhwkey</code> event object has a <code>keyName</code> attribute (available values: <code>menu</code> and <code>back</code>).</p>
 				</li>
 			</ul>
@@ -1278,8 +1278,8 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 					<li><code>reload</code>
 					<p>Optional; sets whether the page is reloaded when it is already loaded (available values: <code>enable</code> (default), <code>disable</code>)</p>
 					<p><strong>Since: 2.4</strong></p>
-					<p><strong>Note</strong><br>
-                    The <code>reload</code> attribute is supported since Tizen 2.4. If the <code>required_version</code> in the application's <code>config.xml</code> file is set to a version older than Tizen 2.4, and the <code>reload</code> attribute is used, the application installation fails.</p>
+					<blockquote><p><strong>Note</strong><br>
+                    The <code>reload</code> attribute is supported since Tizen 2.4. If the <code>required_version</code> in the application's <code>config.xml</code> file is set to a version older than Tizen 2.4, and the <code>reload</code> attribute is used, the application installation fails.</p></blockquote>
 					</li>
 				</ul>
 				</li>
@@ -1527,10 +1527,10 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				<p>Optional; sets whether the Web application supports the ambient mode (available values: <code>enable</code>, <code>disable</code> (default))</p>
 				<p>If this option is enabled, the application can be shown in the ambient mode.</p>
 				<strong>Since: 2.3.1</strong>
-				<p><strong>Note</strong><br>
+				<blockquote><p><strong>Note</strong><br>
                 The <code>ambient_support</code> option is only used for watch applications, and ignored in all non-watch applications.<br>
                <br>
-				The <code>ambient_support</code> attribute is supported since Tizen 2.3.1. If the <code>required_version</code> in the application's <code>config.xml</code> file is set to a version older than Tizen 2.3.1, and the <code>ambient_support</code> attribute is used, the application installation fails.</p>
+				The <code>ambient_support</code> attribute is supported since Tizen 2.3.1. If the <code>required_version</code> in the application's <code>config.xml</code> file is set to a version older than Tizen 2.3.1, and the <code>ambient_support</code> attribute is used, the application installation fails.</p><blockquote>
 				</li>
 				<li><code>launch_mode</code>
 				<p>Optional; sets which launch mode is supported (available values: <code>single</code> (default), <code>group</code>, <code>caller</code>)</p>
@@ -1612,9 +1612,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<code><pre>
-&lt;tizen:category name="http://tizen.org/category/wearable_clock" /&gt;
-            </code></pre>
+			<pre><code>&lt;tizen:category name="http://tizen.org/category/wearable_clock" /&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1722,7 +1720,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 		<tr>
 			<td>Used to define the hardware and software components for a Tizen wearable Web application. This attribute is only used in the Samsung Apps for filtering purposes. It is ignored by the Web Runtime installation procedure.
 			<p><strong>Note</strong><br>
-            Even though the &lt;feature/&gt; element is defined in the Widget Packaging and XML Configuration guidelines, an extended version is used in Tizen.</p>
+            Even though the <code>&lt;feature/&gt;</code> element is defined in the Widget Packaging and XML Configuration guidelines, an extended version is used in Tizen.</p>
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -1755,7 +1753,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 		<tr>
 			<td>Used to define the properties of an IME (Input Method Editor) type application, which is used when you want to create your own keyboard module for the Tizen platform.
 			<p><strong>Note</strong><br>
-            &lt;tizen:category name="http://tizen.org/category/ime" /&gt; must be defined to activate &lt;tizen:ime&gt;.</p>
+            <code>&lt;tizen:category name="http://tizen.org/category/ime" /&gt;</code> must be defined to activate &lt;tizen:ime&gt;.</p>
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or 1</li>
@@ -1768,7 +1766,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				<li><code>languages</code>
 				<p>Mandatory; list of input languages that the current IME supports</p>
 				<p><strong>Note</strong><br>
-                &lt;tizen:language/&gt; elements are provided as the child elements of this element.</p>
+                <code>&lt;tizen:language/&gt;</code> elements are provided as the child elements of this element.</p>
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>

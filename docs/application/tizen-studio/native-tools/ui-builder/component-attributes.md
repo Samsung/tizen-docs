@@ -84,8 +84,8 @@ The `<variation>` element is placed as a child of the `<UI component>` element. 
 | `config_ref`                             | Screen configuration ID                  |
 | `visible`                                | `true` or `false`                        |
 | `pack_x, pack_y, pack_w, pack_h`         | Absolute coordinates when the parent container is a grid.0 ~ |
-| `pack_col, pack_row, row_span, col_span` | Position when the parent container is a table.`pack_col/pack_row`: 0 ~`row_span/col_span`: 1 ~ |
-| `pack`                                   | Position when the parent container is a panes.`left` or `right` |
+| `pack_col, pack_row, row_span, col_span` | Position when the parent container is a table.<br> `pack_col/pack_row`: 0 ~<br> `row_span/col_span`: 1 ~ |
+| `pack`                                   | Position when the parent container is a pane.<br> `left` or `right` |
 
 ## Palette of the Native UI Builder
 
@@ -279,7 +279,7 @@ The following attributes are used for the scroller container.
 |------------------------------------|------------------------------------------|---------------------------------------|
 | `id`                               | Automatically incrementing and editable. Duplicates are not allowed. | `elm_scroller_add()`                  |
 | `style`                            | See the [supported properties](#properties-supported-for-each-component) for each profile and version | `elm_object_style_set()`              |
-| `colors`                           | `#000000 ~ #ffffff`See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_object_color_class_color_set()`  |
+| `colors`                           | `#000000 ~ #ffffff`<br> See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_object_color_class_color_set()`  |
 | `content_min_w` or `content_min_h` | `true` or `false`                        | `elm_scroller_content_min_limit()`    |
 | `propagate_events`                 | `true` or `false`                        | `elm_scroller_propagate_events_set()` |
 | `visible`                          | `true` or `false`                        | `evas_object_show()`                  |
@@ -480,7 +480,7 @@ The following attributes are used for the datetime component.
 | `disable` | `true` or `false`                        | `elm_object_disabled_set()`          |
 | `visible` | `true` or `false`                        | `evas_object_show()`                 |
 | `style`   | See the [supported properties](#properties-supported-for-each-component) for each profile and version | `elm_object_style_set()`             |
-| `colors`  | `#000000 ~ #ffffff`See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_object_color_class_color_set()` |
+| `colors`  | `#000000 ~ #ffffff`<br> See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_object_color_class_color_set()` |
 
 ### Entry (![Entry](./media/component_attributes_entry_icon.png))
 
@@ -616,7 +616,7 @@ The following attributes are used for the genlist component.
 | Attribute                      | Value                                    | Function                        |
 |--------------------------------|------------------------------------------|---------------------------------|
 | `id`                           | Automatically incrementing and editable. Duplicates are not allowed. | `elm_genlist_add()`             |
-| `select_mode`                  | `default`, `always`, `none`, or `display_only`See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_genlist_select_mode_set()` |
+| `select_mode`                  | `default`, `always`, `none`, or `display_only`<br> See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_genlist_select_mode_set()` |
 | `style`                        | See the [supported properties](#properties-supported-for-each-component) for each profile and version | `elm_object_style_set()`        |
 | `disable`                      | `true` or `false`                        | `elm_object_disabled_set()`     |
 | `visible`                      | `true` or `false`                        | `evas_object_show()`            |
@@ -963,18 +963,18 @@ The following attributes are used for slider component.
 | Attribute          | Value                                    | Function                             |
 |--------------------|------------------------------------------|--------------------------------------|
 | `id`               | Automatically incrementing and editable. Duplicates are not allowed. | `elm_slider_add()`                   |
-| `indicator`        | `true` or `false`See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_slider_indicator_show_set()`    |
+| `indicator`        | `true` or `false`<br>See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_slider_indicator_show_set()`    |
 | `min`              | 0 ~                                      | `elm_slider_min_max_set()`           |
 | `step`             | 0 ~                                      | `elm_slider_step_set()`              |
 | `max`              | 0 ~                                      | `elm_slider_min_max_set()`           |
 | `value`            | 0 ~                                      | `elm_slider_value_set()`             |
 | `inverted`         | `true` or `false` <br>See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_slider_inverted_set()`          |
 | `indicator_format` | `#string` <br>See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_slider_indicator_format_set()`  |
-| `direction`        | `horizontal` or `vertical`See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_slider_horizontal_set()`        |
+| `direction`        | `horizontal` or `vertical` <br>See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_slider_horizontal_set()`        |
 | `disable`          | `true` or `false`                        | `elm_object_disabled_set()`          |
 | `visible`          | `true` or `false`                        | `evas_object_show()`                 |
 | `style`            | See the [supported properties](#properties-supported-for-each-component) for each profile and version | `elm_object_style_set()`             |
-| `colors`           | `#000000 ~ #ffffff`See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_object_color_class_color_set()` |
+| `colors`           | `#000000 ~ #ffffff` <br>See the [supported properties](#properties-supported-for-each-component) for each profile and version. | `elm_object_color_class_color_set()` |
 
 ### Spinner (![Spinner](./media/component_attributes_spinner_icon.png))
 

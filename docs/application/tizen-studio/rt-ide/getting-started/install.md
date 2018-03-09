@@ -26,7 +26,7 @@ To install the Tizen Studio for RT:
 
    If you want to install additional platforms and tools, launch the Package Manager by checking the **Launch the Package Manager** check box before clicking **Finish**.
 
-   Through the Tizen Studio Package Manager, you can both install and update additional tools. For more information on the Package Manager, see [Updating Tizen Studio](../setup/updating-sdk.md) and [Configuring the Package Manager](../setup/advanced-configuration.md).
+   Through the Tizen Studio Package Manager, you can both install and update additional tools. For more information on the Package Manager, see [Updating Tizen Studio](../../setup/update-sdk.md) and [Configuring the Package Manager](../../setup/advanced-configuration.md).
 
    ![Package Manager](./media/rt_install_package.png)
 

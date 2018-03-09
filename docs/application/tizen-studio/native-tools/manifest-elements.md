@@ -207,6 +207,71 @@ Value of metadata (string)
 <metadata key="testkey" value="testvalue"/>
 ```
 
+## \<splash-screens\> Element
+
+This element represents Tizen splash-screen configuration information.
+
+For more information on the relationship between the elements, see the [element hierarchy](manifest-text-editor.md#hierarchy).
+
+**Occurrences:**
+
+- 1 or more (optional)
+
+**Expected children:**
+
+| Child element     | Occurrences |
+|-------------------|-------------|
+| `<splash-screen>` | 1 or more   |
+
+**For example:**
+
+```
+<splash-screens>
+   <splash-screen src="test1.jpg" type="img" dpi="hdpi" orientation="portrait" indicator-display="true"\>
+   <splash-screen src="test2.edj" type="edj" dpi="hdpi" orientation="landscape" indicator-display="false"\>
+</splash-screens>
+```
+
+### \<splash-screen\> Element
+
+This element represents a splash-screen of the application. The splash-screen is an image that covers the entire screen. It is displayed when the application is launched, and disappears after the application main screen is loaded.
+
+**Attributes:**
+
+- `src`
+
+  Source of the splash-screen (string)
+
+- `type`
+
+  Type of the splash-screen (available values: `img`, `edj`)
+
+- `dpi`
+
+  Resolution of the splash-screen (available values: `ldpi`, `mdpi`, `hdpi`, `xhdpi`, `xxhdpi`)
+
+- `orientation`
+
+  Orientation of the splash-screen (available values: `portrait`, `landscape`)
+
+- `indicator-display`
+
+  Indicates whether the indicator area is visible on the splash-screen (available values: `true`, `false`)
+
+- `app-control-operation`
+
+  Application control operation of the splash-screen (string)
+
+  If this value is defined, the splash-screen image is shown when the application is launched by the application control operation.
+
+**For example:**
+
+```
+<splash-screen src="test1.jpg" type="img" dpi="hdpi" orientation="portrait" indicator-display="true"
+               app-control-operation="http://tizen.org/appcontrol/operation/default"\>
+```
+
+
 ## Related information
 * Dependencies
   - Tizen Studio 1.0 and Higher
