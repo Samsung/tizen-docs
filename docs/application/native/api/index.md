@@ -1,25 +1,26 @@
 # Native API Reference
 
-- Mobile
-  - [4.0](mobile/4.0/index.html)
-  - [3.0](mobile/3.0/index.html)
-  - [2.4](mobile/2.4/index.html)
-  - [2.3.1](mobile/2.3.1/index.html)
-<!--
-  - [2.3](mobile/2.3/index.html)
--->
+Tizen Native API is carefully selected and tightly managed APIs from the Tizen native subsystems. The Native API is divided into dozens of API modules; each module represents a logically similar set of submodule APIs, which can be grouped into the same category.
 
-- Wearable
-  - [4.0](wearable/4.0/index.html)
-  - [3.0](wearable/3.0/index.html)
-  - [2.3.2](wearable/2.3.2/index.html)
-  - [2.3.1](wearable/2.3.1/index.html)
-<!--
-  - [2.3](wearable/2.3/index.html)
--->
+<ul>
+<li>Mobile
+  <ul>
+    <li><a href="launch.html?profile=mobile&version=4.0" target="api">4.0</a></li>
+    <li><a href="launch.html?profile=mobile&version=3.0" target="api">3.0</a></li>
+    <li><a href="launch.html?profile=mobile&version=2.4" target="api">2.4</a></li>
+    <li><a href="https://developer.tizen.org/development/api-references/native-application?redirect=https://developer.tizen.org/dev-guide/2.3.1/org.tizen.native.mobile.apireference/index.html" target="api">2.3.1</a>&nbsp;&nbsp;&nbsp;<strong>You can see 2.3.1 on Tizen Developer Site(https://developer.tizen.org)</strong></li>
+    <li><a href="https://developer.tizen.org/development/api-references/native-application?redirect=https://developer.tizen.org/dev-guide/2.3/org.tizen.native.mobile.apireference/index.html" target="api">2.3</a>&nbsp;&nbsp;&nbsp;<strong>You can see 2.3 on Tizen Developer Site(https://developer.tizen.org)</strong></li>
+  </ul>
+</li>
 
-<!--
-- TV
-  - [4.0](tv/4.0/index.html)
-  - [3.0](tv/3.0/index.html)
--->
+<li>Wearable
+  <ul>
+    <li><a href="launch.html?profile=wearable&version=4.0" target="api">4.0</a></li>
+    <li><a href="launch.html?profile=wearable&version=3.0" target="api">3.0</a></li>
+    <li><a href="launch.html?profile=wearable&version=2.3.2" target="api">2.3.2</a></li>
+    <li><a href="https://developer.tizen.org/development/api-references/native-application?redirect=https://developer.tizen.org/dev-guide/2.3.1/org.tizen.native.wearable.apireference/index.html" target="api">2.3.1</a>&nbsp;&nbsp;&nbsp;<strong>You can see 2.3.1 on Tizen developer site(https://developer.tizen.org).</strong></li>
+    <li><a href="https://developer.tizen.org/development/api-references/native-application?redirect=https://developer.tizen.org/dev-guide/2.3/org.tizen.native.wearable.apireference/index.html" target="api">2.3</a><strong>  You can see 2.3 on Tizen developer site(https://developer.tizen.org).</strong></li>
+  </ul>
+</li>
+
+</ul>
