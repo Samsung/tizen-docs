@@ -13,22 +13,25 @@ The following table lists the available UI components.
 
 **Table: DALi UI components**
 
-| Control                               | Description                              | Related classes                          |
-|-------------------------------------|----------------------------------------|----------------------------------------|
-| [Buttons](buttons.md)             | A push button that can be pressed, a checkbox button that can be checked/unchecked, and a radio button that only one option can be selected. | `Button`, `PushButton`, `CheckBoxButton`, `RadioButton` |
-| [FlexContainer](flexcontainer.md) | A layout model that allows responsive elements within a container, automatically arranged to different size screens or devices. | `FlexContainer`              |
-| [ImageView](imageview.md)         | An image view that renders an image.     | `ImageView`                              |
-| [ItemView](itemview.md)           | An item view that renders item sets in a scrollable layout. | `ItemView`, `ItemFactory`, `ItemLayout`, `Scrollable` |
-| [Model3dView](model3dview.md)     | A model view that displays static 3D content. | `Model3dView`                            |
-| [ScrollView](scrollview.md)       | A scroll view to provide scrollable view. | `ScrollView`, `Scrollable`, `ScrollViewEffect`, `ScrollViewPagePathEffect` |
-| [Slider](slider.md)               | A control that indicates a modifiable value within a specific range. | `Slider`                                 |
-| [TableView](tableview.md)         | A table view that can align child actors in a grid like layout. | `TableView`                              |
-| [TextLabel](textlabel.md)         | A text label that renders a short text string. | `TextLabel`                              |
-| [TextField](textfield.md)         | A text field that provides a single-line editable text. | `TextField`                              |
-| [TextEditor](texteditor.md)       | A text field that provides a multi-line editable text. | `TextEditor`                             |
-| [VideoView](videoview.md)         | A video view that controls and displays video playback. | `VideoView`                              |
+| Control                           | Description                              | Related classes                          |
+|-----------------------------------|----------------------------------------|----------------------------------------|
+| [Buttons](buttons.md)             | A **push button** that can be pressed. A **check box button** that can be checked or unchecked. A **radio button** that only one option can be selected. | `Button`, `PushButton`, `CheckBoxButton`, `RadioButton` |
+| [FlexContainer](flexcontainer.md) | A layout model that allows responsive elements within a container, to automatically arrange the elements to different screen sizes or devices. | `FlexContainer`              |
+| [ImageView](imageview.md)         | An image view to render an image.      | `ImageView`                              |
+| [ItemView](itemview.md)           | An item view to enable render item sets in a scrollable layout. | `ItemView`, `ItemFactory`, `ItemLayout`, `Scrollable` |
+| [Model3dView](model3dview.md)     | A model view to enable static 3D content display capability. | `Model3dView`                            |
+| [ProgressBar](progressbar.md)     | A progress bar to give the user a recursive update on the progress of an ongoing operation. | `ProgressBar`                             |
+| [ScrollView](scrollview.md)       | A scroll view to enable the scrollable function in the UI. | `ScrollView`, `Scrollable`, `ScrollViewEffect`, `ScrollViewPagePathEffect` |
+| [Slider](slider.md)               | A slider to select a value within a predefined range. | `Slider`                                 |
+| [TableView](tableview.md)         | A table view to enable align child actors in a grid like layout. | `TableView`                              |
+| [TextLabel](textlabel.md)         | A text label to enable render a short text string. | `TextLabel`                              |
+| [TextField](textfield.md)         | A text field to enable a field for a single-line of editable text. | `TextField`                              |
+| [TextEditor](texteditor.md)       | A text field to enable a field for multiple lines of editable text. | `TextEditor`                             |
+| [VideoView](videoview.md)         | A video view to enable control and display video playback. | `VideoView`                              |
 
-The base class for the components is `Dali::Toolkit::Control` (in [mobile](http://org.tizen.native.mobile.apireference/classDali_1_1Toolkit_1_1Control.html) and [wearable](http://org.tizen.native.wearable.apireference/classDali_1_1Toolkit_1_1Control.html) applications). This class can also be used to create your own custom UI components. For tips for the control class, see [Control](control-base.md). In this UI Components guide, both the terms **control** and **component** are used to refer to a UI component.
+The base class for the components is `Dali::Toolkit::Control` (in [mobile](http://org.tizen.native.mobile.apireference/classDali_1_1Toolkit_1_1Control.html) and [wearable](http://org.tizen.native.wearable.apireference/classDali_1_1Toolkit_1_1Control.html) applications). It can also be used to create your own custom UI components.
+
+For more information of control class, see [Control](control-base.md). In this UI Components guide, both the terms **control** and **component** are used to refer to a UI component.
 
 You can [customize the look of the UI components with stylesheets](styling.md). For a reusable rendering logic that can be used by all UI components, take advantage of [DALi visuals](visuals.md).
 

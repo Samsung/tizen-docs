@@ -11,15 +11,15 @@ In this tutorial, the following subjects are covered:
 
 ## Overview
 
-The ProgressBar has two modes to represent the progress. The default mode is Determinate mode.
+The ProgressBar has two modes to represent the progress.
 
-- **Determinate mode** is to show a specific quantity of progress occurred. If you want to set the amount of progress, then set `PROGRESS_VALUE` property. If not supplied, the default value is 0.
+- **Determinate mode** shows a specific quantity of progress occurred. Use `PROGRESS_VALUE` property to set a specific percentage (number). This is the default mode. If the value is not user-specified, the default is taken as 0.
 
  *Figure: Determinate progress bar*
  ![Determinate mode](./media/determinated_progress.png)
 
 
-- **Indeterminate mode** is to show the progress without a specific amount of progress indicated. If you want to indicate an indeterminate progress bar, then set `INDETERMINATE` enabled. You can also show an animation using `INDETERMINATE_VISUAL_ANIMATION` property.
+- **Indeterminate mode** shows the progress without any specific percentage of progress indicated. If you want to indicate an indeterminate progress bar, then set `INDETERMINATE` mode to enabled. You can also show an animation using the `INDETERMINATE_VISUAL_ANIMATION` property.
 
  *Figure: Indeterminate progress bar*
  ![Indeterminate mode](./media/indeterminated_progress.png)
@@ -84,22 +84,22 @@ The following table lists the available progress bar properties.
 
 | Property                   | Type    | Description                                   |
 | -------------------------- | ------- | --------------------------------------------- |
-| `PROGRESS_VALUE`           | FLOAT   | The progress value of progress bar. Runs from 0 to 1. |
-| `SECONDARY_PROGRESS_VALUE` | FLOAT   | The secondary progress value of progress bar. Runs from 0 to 1. |
-| `INDETERMINATE`            | BOOLEAN | Sets the progress bar as indeterminate state. |
-| `TRACK_VISUAL`             | MAP     | The Track Visual value of progress bar. It is a full progress area and shown behind PROGRESS_VISUAL. |
-| `PROGRESS_VISUAL`          | MAP     | The Progress Visual value of progress bar. The size of the progress visual is changed based on PROGRESS_VALUE. |
-| `SECONDARY_PROGRESS_VISUAL` | MAP     | The Secondary Progress Visual of progress bar. The size of the secondary progress visual is changed based on SECONDARY_PROGRESS_VALUE. |
-| `INDETERMINATE_VISUAL`     | MAP     | The indeterminate visual of progress bar.     |
-| `INDETERMINATE_VISUAL_ANIMATION` | MAP or ARRAY | The transition data for indeterminate visual animation. |
-| `LABEL_VISUAL`             | MAP     | The Label visual of progress bar.             |
+| `PROGRESS_VALUE`           | FLOAT   | Stores the progress value of progress bar. It ranges between 0 and 1. |
+| `SECONDARY_PROGRESS_VALUE` | FLOAT   | Stores the secondary progress value of progress bar. It ranges between 0 and 1. |
+| `INDETERMINATE`            | BOOLEAN | Sets the progress bar in indeterminate state. |
+| `TRACK_VISUAL`             | MAP     | Appearance of the track of progress bar. It is a full progress area which appears behind PROGRESS_VISUAL. |
+| `PROGRESS_VISUAL`          | MAP     | Appearance of the progress region of progress bar. The size of the progress visual is changed based on PROGRESS_VALUE. |
+| `SECONDARY_PROGRESS_VISUAL` | MAP     | Appearance of the secondary progress region of progress bar. The size of the secondary progress visual is changed based on SECONDARY_PROGRESS_VALUE. |
+| `INDETERMINATE_VISUAL`     | MAP     | Appearance of the indeterminate visual of progress bar. |
+| `INDETERMINATE_VISUAL_ANIMATION` | MAP or ARRAY | Stores the transition data for indeterminate visual animation. |
+| `LABEL_VISUAL`             | MAP     | Stores the label visual of progress bar.      |
 
 <a name="4"></a>
 ## Customizing the ProgressBar Appearance
 
-The progress bar provides a set of default images, which are used automatically if you do not specify anything else.
+The progress bar control has a set of in-built images. These are used as default if you do not specify anything else specifically.
 
-If you want to customize the progress bar appearance, you can assign your own images using the `Property::Map` class. You can set the size and image of the track, progress region, secondary progress region, and indeterminate visual.
+To customize the appearance of the progress bar, you can assign external images using the `Property::Map` class. This also requires you to set the size of the track, a progress region, a secondary progress region, and an indeterminate visual.
 
 The following example shows how to customize the progress bar:
 
