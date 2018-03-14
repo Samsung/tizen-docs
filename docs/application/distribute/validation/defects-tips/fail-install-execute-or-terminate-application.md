@@ -38,6 +38,4 @@ Not in compliance with the following Validation guidelines.
 >
 > - Developer can use the Samsung RTL (Remote Test Lab) to test and tune the application before submission.
 > - Check if your target device is whether ARM based or Intel 80386 based because your native application is failed to execute if the file type of .exe file is not suitable for your target device.
-> - If your application is a multi-thread application, please make sure that UI handling is done only in the main thread since the Tizen UI framework is not thread safe. If not, your application may cause execution or termination failure unexpectedly depending upon the race condition among the threads. Please refer to [this link](https://developer.tizen.org/dev-guide/2.2.0/org.tizen.native.appprogramming/html/guide/ui/multithread_ui_framework.htm) for more details on multithreading with the UI framework.
-
- 
+> - If your application is a multi-thread application, please make sure that UI handling is done only in the main thread since the Tizen UI framework is not thread safe. If not, your application may cause execution or termination failure unexpectedly depending upon the race condition among the threads. Please refer to [this link](../../../native/guides/ui/efl/threads.md) for more details on multithreading with the UI framework.
