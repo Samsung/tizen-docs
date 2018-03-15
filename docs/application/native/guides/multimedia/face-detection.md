@@ -21,7 +21,7 @@ The main features of Media Vision Face API include:
 
 To enable your application to use the media vision face functionality:
 
-1. To use the functions and data types of the Media Vision Face API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__VISION__FACE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__VISION__FACE__MODULE.html) applications), include the `<mv_face.h>` header file in your application.
+1. To use the functions and data types of the Media Vision Face API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__FACE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__FACE__MODULE.html) applications), include the `<mv_face.h>` header file in your application.
 
    In addition, you must include the `<image_util.h>` header file to handle the image decoding tasks, or the `<camera.h>` header file to provide preview images.
 
@@ -132,7 +132,7 @@ To detect faces:
         dlog_print(DLOG_ERROR, LOG_TAG, "error code= %d", error_code);
     ```
 
-	Face detection details can be configured by setting attributes to the engine configuration handle. In this use case, the `MV_FACE_DETECTION_MODEL_FILE_PATH` attribute is configured. For more information on the attributes, see the Media Vision API reference (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__VISION__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__VISION__MODULE.html) applications).
+	Face detection details can be configured by setting attributes to the engine configuration handle. In this use case, the `MV_FACE_DETECTION_MODEL_FILE_PATH` attribute is configured. For more information on the attributes, see the Media Vision API reference (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__MODULE.html) applications).
 
     ```
     error_code = mv_engine_config_set_string_attribute(facedata.g_engine_config,

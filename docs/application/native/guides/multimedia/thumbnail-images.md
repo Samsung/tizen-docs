@@ -19,7 +19,7 @@ The requested thumbnail is provided as a raw data type with the BGRA color space
 
 To enable your application to use the thumbnail util functionality:
 
-1. To use the functions and data types of the Thumbnail Util API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__THUMBNAIL__UTIL__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__THUMBNAIL__UTIL__MODULE.html) applications), include the `<thumbnail_util.h>` header file in your application:
+1. To use the functions and data types of the Thumbnail Util API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__THUMBNAIL__UTIL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__THUMBNAIL__UTIL__MODULE.html) applications), include the `<thumbnail_util.h>` header file in your application:
 
    ```
    #include <thumbnail_util.h>

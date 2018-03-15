@@ -1,6 +1,6 @@
 # Ctxpopup
 
-The ctxpopup UI component pops up and shows a list of items inside it. For more information, see the [Ctxpopup](../../../../../org.tizen.native.mobile.apireference/group__Elm__Ctxpopup.html) API.
+The ctxpopup UI component pops up and shows a list of items inside it. For more information, see the [Ctxpopup](../../../../api/mobile/latest/group__Elm__Ctxpopup.html) API.
 
 This feature is supported in mobile applications only.
 

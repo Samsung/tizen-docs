@@ -31,7 +31,7 @@ When a watch application is successfully installed on a device, its UI is visibl
 
 To enable your application to use the watch functionality:
 
-1. To use the [Watch Application](../../../../org.tizen.native.wearable.apireference/group__CAPI__WATCH__APP__MODULE.html) API's `watch_app_ambient_tick_cb()` callback in the ambient mode, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the [Watch Application](../../api/wearable/latest/group__CAPI__WATCH__APP__MODULE.html) API's `watch_app_ambient_tick_cb()` callback in the ambient mode, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```
    <privileges>

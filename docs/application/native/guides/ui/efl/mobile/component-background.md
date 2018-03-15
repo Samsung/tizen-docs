@@ -1,6 +1,6 @@
 # Background
 
-The background UI component is used to set a solid background decoration to a window or a container object. It works like an image, but has some background-specific properties. It can be set to a tiled, centered, scaled, or stretched mode. The background is the most simple UI component in that it emits no signals. For more information, see the [Background](../../../../../org.tizen.native.mobile.apireference/group__Elm__Bg.html) API.
+The background UI component is used to set a solid background decoration to a window or a container object. It works like an image, but has some background-specific properties. It can be set to a tiled, centered, scaled, or stretched mode. The background is the most simple UI component in that it emits no signals. For more information, see the [Background](../../../../api/mobile/latest/group__Elm__Bg.html) API.
 
 This feature is supported in mobile applications only.
 

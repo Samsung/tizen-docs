@@ -74,7 +74,7 @@ To request an access token for the implicit, resource owner password credentials
 
 To enable your application to use the OAuth 2.0 functionality:
 
-1. To use the OAuth 2.0 API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__OAUTH2__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__OAUTH2__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the OAuth 2.0 API (in [mobile](../../api/mobile/latest/group__CAPI__OAUTH2__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__OAUTH2__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```
    <privileges>

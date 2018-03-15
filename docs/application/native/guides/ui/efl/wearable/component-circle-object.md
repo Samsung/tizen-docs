@@ -4,7 +4,7 @@ This feature is supported in wearable applications only.
 
 The circle object component extends Elementary components in a form of the circular design. Sometimes, the circle object merely provides additional UI features to an Elementary component, and sometimes it works as an independent component with its own UI and functionalities.
 
-For more information, see the [Efl Extension Circle Object](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__EXTENSION__CIRCLE__OBJECT__MODULE.html) API.
+For more information, see the [Efl Extension Circle Object](../../../../api/wearable/latest/group__CAPI__EFL__EXTENSION__CIRCLE__OBJECT__MODULE.html) API.
 
 ## Adding a Circle Object Component
 

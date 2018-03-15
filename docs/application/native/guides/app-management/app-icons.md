@@ -29,7 +29,7 @@ To enable your application to use the application icon functionality:
 
 - To handle badges:
 
-  1. To use the Badge API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__BADGE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__BADGE__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+  1. To use the Badge API (in [mobile](../../api/mobile/latest/group__BADGE__MODULE.html) and [wearable](../../api/wearable/latest/group__BADGE__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
      ```
      <privileges>
@@ -59,7 +59,7 @@ To enable your application to use the application icon functionality:
 
 - To handle shortcuts:
 
-  1. To use the [Shortcut](../../../../org.tizen.native.mobile.apireference/group__SHORTCUT__MODULE.html) API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+  1. To use the [Shortcut](../../api/mobile/latest/group__SHORTCUT__MODULE.html) API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
   ```
   <privileges>   <privilege>http://tizen.org/privilege/shortcut</privilege></privileges>
   ```

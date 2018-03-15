@@ -23,7 +23,7 @@ The sent status of the SMS and MMS messages can be checked asynchronously. You r
 
 To enable your application to use the messaging functionality:
 
-1. To use the Messages API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MESSAGING__MESSAGES__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MESSAGING__MESSAGES__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the Messages API (in [mobile](../../api/mobile/latest/group__CAPI__MESSAGING__MESSAGES__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MESSAGING__MESSAGES__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>

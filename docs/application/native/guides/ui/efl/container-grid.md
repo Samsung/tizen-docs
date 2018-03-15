@@ -1,6 +1,6 @@
 # Grid
 
-The grid container places its elements at specific positions along a fixed grid, where the position of each object is given as a percentage of the full width and height of the grid. For more information, see the Grid API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Elm__Grid.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Elm__Grid.html) applications).
+The grid container places its elements at specific positions along a fixed grid, where the position of each object is given as a percentage of the full width and height of the grid. For more information, see the Grid API (in [mobile](../../../api/mobile/latest/group__Elm__Grid.html) and [wearable](../../../api/wearable/latest/group__Elm__Grid.html) applications).
 
 **Figure: Grid component structure**
 

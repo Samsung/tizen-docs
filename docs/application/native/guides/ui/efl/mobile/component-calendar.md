@@ -1,6 +1,6 @@
 # Calendar
 
-The calendar UI component displays month views. For more information, see the [Calendar](../../../../../org.tizen.native.mobile.apireference/group__Elm__Calendar.html) API.
+The calendar UI component displays month views. For more information, see the [Calendar](../../../../api/mobile/latest/group__Elm__Calendar.html) API.
 
 This feature is supported in mobile applications only.
 

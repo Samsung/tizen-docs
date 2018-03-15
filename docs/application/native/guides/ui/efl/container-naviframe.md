@@ -1,6 +1,6 @@
 # Naviframe
 
-The naviframe container manages many views by stacking them and displaying the topmost one. For more information, see the Naviframe API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Elm__Naviframe.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Elm__Naviframe.html) applications).
+The naviframe container manages many views by stacking them and displaying the topmost one. For more information, see the Naviframe API (in [mobile](../../../api/mobile/latest/group__Elm__Naviframe.html) and [wearable](../../../api/wearable/latest/group__Elm__Naviframe.html) applications).
 
 ## Basic Usage
 

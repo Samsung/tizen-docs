@@ -1,6 +1,6 @@
 # Colorselector
 
-The colorselector UI component allows users to select a color. For more information, see the [Colorselector](../../../../../org.tizen.native.mobile.apireference/group__Elm__Colorselector.html) API.
+The colorselector UI component allows users to select a color. For more information, see the [Colorselector](../../../../api/mobile/latest/group__Elm__Colorselector.html) API.
 
 This feature is supported in mobile applications only.
 

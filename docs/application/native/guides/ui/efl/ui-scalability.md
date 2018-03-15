@@ -20,7 +20,7 @@ The main scalability features are:
 
 ## Scaling UI Components
 
-Through its configuration (Elementary Config API in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Elm__Config.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Elm__Config.html) applications), Elementary provides a way to scale UI components with 2 different parameters:
+Through its configuration (Elementary Config API in [mobile](../../../api/mobile/latest/group__Elm__Config.html) and [wearable](../../../api/wearable/latest/group__Elm__Config.html) applications), Elementary provides a way to scale UI components with 2 different parameters:
 
 - The `finger_size` parameter is used when the interactive (clickable or editable) zones of the UI components need to be scaled in order to be comfortably used with a finger.
 

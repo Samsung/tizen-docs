@@ -20,15 +20,15 @@ The main features of the IoTCon API include:
   - Resource interfaces: List of the interfaces supported by the resource
   - Resource properties: Whether the resource is observable and discoverable
 
-  You can manage the IoT resources with the server, which can [create resources](#register) and later destroy them using the `iotcon_resource_create()` and `iotcon_resource_destroy()` functions of the Resource API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__IOT__CONNECTIVITY__SERVER__RESOURCE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__IOT__CONNECTIVITY__SERVER__RESOURCE__MODULE.html) applications). After creating a resource, the server can bind the resource types and resource interfaces using the `iotcon_resource_bind_type()` and `iotcon_resource_bind_interface()` functions. After a resource is destroyed, the client cannot access the resource anymore.
+  You can manage the IoT resources with the server, which can [create resources](#register) and later destroy them using the `iotcon_resource_create()` and `iotcon_resource_destroy()` functions of the Resource API (in [mobile](../../api/mobile/latest/group__CAPI__IOT__CONNECTIVITY__SERVER__RESOURCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__IOT__CONNECTIVITY__SERVER__RESOURCE__MODULE.html) applications). After creating a resource, the server can bind the resource types and resource interfaces using the `iotcon_resource_bind_type()` and `iotcon_resource_bind_interface()` functions. After a resource is destroyed, the client cannot access the resource anymore.
 
   If the resource is discoverable, the client can find the resource. Otherwise, only the clients that already know the resource information can access it. If the resource is observable, the client can observe it.
 
 - Remote resource management
 
-  If the resource created by the server is discoverable, the client that knows the resource type can [find the resource](#find) using the `iotcon_find_resource()` function of the Client API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__IOT__CONNECTIVITY__CLIENT__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__IOT__CONNECTIVITY__CLIENT__MODULE.html) applications). If the `host_address` is `NULL`, the find request is sent as multicast. The client can filter the desired resources with a query.
+  If the resource created by the server is discoverable, the client that knows the resource type can [find the resource](#find) using the `iotcon_find_resource()` function of the Client API (in [mobile](../../api/mobile/latest/group__CAPI__IOT__CONNECTIVITY__CLIENT__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__IOT__CONNECTIVITY__CLIENT__MODULE.html) applications). If the `host_address` is `NULL`, the find request is sent as multicast. The client can filter the desired resources with a query.
 
-  If the client wants to access a resource whose information it already knows, it can make a proxy using the `iotcon_remote_resource_create()` function of the Remote Resource API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html) applications) and access the resource through that proxy.
+  If the client wants to access a resource whose information it already knows, it can make a proxy using the `iotcon_remote_resource_create()` function of the Remote Resource API (in [mobile](../../api/mobile/latest/group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html) applications) and access the resource through that proxy.
 
   You can use the client to get various information about the resource through the `iotcon_remote_resource_h` handle and the `iotcon_remote_resource_get_XXX()` functions. You can retrieve, for example, the resource URI path, host address, type, and interfaces. You can also retrieve the device ID, which defines the device to which the resource belongs. Different resources on the same device have the same device ID.
 
@@ -41,7 +41,7 @@ The main features of the IoTCon API include:
   - POST request: Use the `iotcon_remote_resource_post()` function to ask the server to create a new resource.
   - DELETE request: Use the `iotcon_remote_resource_delete()` function to ask the server to delete a resource.
 
-  The server receives the request, processes it using the `iotcon_request_handler_cb()` callback, and sends a response to the client using the `iotcon_response_send()` function of the Response API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__IOT__CONNECTIVITY__COMMON__RESPONSE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__IOT__CONNECTIVITY__COMMON__RESPONSE__MODULE.html) applications).
+  The server receives the request, processes it using the `iotcon_request_handler_cb()` callback, and sends a response to the client using the `iotcon_response_send()` function of the Response API (in [mobile](../../api/mobile/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__RESPONSE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__RESPONSE__MODULE.html) applications).
 
   The client can check the result and the response in the `iotcon_remote_resource_response_cb()` callback. If the result of the request differs from `IOTCON_ERROR_NONE`, the response information is not reliable.
 
@@ -61,7 +61,7 @@ The main features of the IoTCon API include:
 
   Resource representation is a snapshot of a resource at a particular time, representing the resource information exchanged in the request and response interactions between the server and client. The resource representation contains resource properties and the state of the resource.
 
-  To manage the representation, use the Representation API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__IOT__CONNECTIVITY__COMMON__REPRESENTATION__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__IOT__CONNECTIVITY__COMMON__REPRESENTATION__MODULE.html) applications):
+  To manage the representation, use the Representation API (in [mobile](../../api/mobile/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__REPRESENTATION__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__REPRESENTATION__MODULE.html) applications):
 
   - Create a resource representation and attributes with the `iotcon_representation_create()` and `iotcon_attributes_create()` functions.
   - Set the properties on the created attributes with the `iotcon_attributes_add_XXX()` functions.
@@ -71,7 +71,7 @@ The main features of the IoTCon API include:
 
 To enable your application to use the IoT functionality:
 
-1. To use the IoTCon API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__IOT__CONNECTIVITY__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__IOT__CONNECTIVITY__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the IoTCon API (in [mobile](../../api/mobile/latest/group__CAPI__IOT__CONNECTIVITY__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__IOT__CONNECTIVITY__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -123,7 +123,7 @@ To create and register resources:
         /* Error handling */
     ```
 
-2. Register the resource by calling the `iotcon_resource_create()` function.In the function, set the URI path, resource types, interfaces (`iotcon_resource_interfaces_h` resource interface handle in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga10fbc5191f6d83eaedbcbdeb3e1211a8) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga10fbc5191f6d83eaedbcbdeb3e1211a8) applications), policies (1 or more `iotcon_resource_policy_e` enumeration values in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga66063156ce698fa862cb9704be86494f) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga66063156ce698fa862cb9704be86494f)applications), and the request handler callback function called when a request arrives from a client.The URI path must be unique. The `iotcon_resource_create()` function fails, if you use an existing URI to register another resource.
+2. Register the resource by calling the `iotcon_resource_create()` function.In the function, set the URI path, resource types, interfaces (`iotcon_resource_interfaces_h` resource interface handle in [mobile](../../api/mobile/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga10fbc5191f6d83eaedbcbdeb3e1211a8) and [wearable](../../api/wearable/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga10fbc5191f6d83eaedbcbdeb3e1211a8) applications), policies (1 or more `iotcon_resource_policy_e` enumeration values in [mobile](../../api/mobile/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga66063156ce698fa862cb9704be86494f) and [wearable](../../api/wearable/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga66063156ce698fa862cb9704be86494f)applications), and the request handler callback function called when a request arrives from a client.The URI path must be unique. The `iotcon_resource_create()` function fails, if you use an existing URI to register another resource.
 
     ```
     int res_interfaces = IOTCON_INTERFACE_DEFAULT;
@@ -148,7 +148,7 @@ To create and register resources:
 
 To find resources:
 
-1. To find a resource, call the `iotcon_find_resource()` function.In the function, set the host address, connectivity type (an `iotcon_connectivity_type_e` enumeration value in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#gad35385ec940df271d516337a17185453) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#gad35385ec940df271d516337a17185453) applications), query, secure flag, and the found callback function called whenever the resource is found during the timeout.The host address can be `IOTCON_MULTICAST_ADDRESS` for multicast.
+1. To find a resource, call the `iotcon_find_resource()` function.In the function, set the host address, connectivity type (an `iotcon_connectivity_type_e` enumeration value in [mobile](../../api/mobile/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#gad35385ec940df271d516337a17185453) and [wearable](../../api/wearable/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#gad35385ec940df271d516337a17185453) applications), query, secure flag, and the found callback function called whenever the resource is found during the timeout.The host address can be `IOTCON_MULTICAST_ADDRESS` for multicast.
 
     ```
     int ret;
@@ -197,7 +197,7 @@ To find resources:
  > **Note**  
  > The callback parameters are valid only within the callback function. Use the clone handle, if you want to use a parameter after the callback function.
 
-3. To set the timeout interval (in seconds) for the asynchronous functions of the Client (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__IOT__CONNECTIVITY__CLIENT__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__IOT__CONNECTIVITY__CLIENT__MODULE.html) applications) and Remote Resource (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html) applications) APIs, use the `iotcon_set_timeout()` function:
+3. To set the timeout interval (in seconds) for the asynchronous functions of the Client (in [mobile](../../api/mobile/latest/group__CAPI__IOT__CONNECTIVITY__CLIENT__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__IOT__CONNECTIVITY__CLIENT__MODULE.html) applications) and Remote Resource (in [mobile](../../api/mobile/latest/group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__IOT__CONNECTIVITY__CLIENT__REMOTE__RESOURCE__MODULE.html) applications) APIs, use the `iotcon_set_timeout()` function:
 
     ```
     `int ret;ret = iotcon_set_timeout(10);if (IOTCON_ERROR_NONE != ret)    /* Error handling */`

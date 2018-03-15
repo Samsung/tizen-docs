@@ -21,7 +21,7 @@ The main features of the Package Manager API include:
 
 To enable your application to use the package manager functionality:
 
-1. To use the Package Manager API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__PACKAGE__MANAGER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__PACKAGE__MANAGER__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the Package Manager API (in [mobile](../../api/mobile/latest/group__CAPI__PACKAGE__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__PACKAGE__MANAGER__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -146,7 +146,7 @@ To detect package events, such as installation, uninstallation, and updates:
    package_manager_create(package_manager_h *manager);
    ```
 
-2. Set the package event to monitor by calling the `package_manager_set_event_status()` function.The second parameter defines the package status that you want to monitor. The possible values are listed in the `package_manager_status_type_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__PACKAGE__MANAGER__MODULE.html#ga405444ebd6254b9cfbaedec829558882) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__PACKAGE__MANAGER__MODULE.html#ga405444ebd6254b9cfbaedec829558882) applications).
+2. Set the package event to monitor by calling the `package_manager_set_event_status()` function.The second parameter defines the package status that you want to monitor. The possible values are listed in the `package_manager_status_type_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__PACKAGE__MANAGER__MODULE.html#ga405444ebd6254b9cfbaedec829558882) and [wearable](../../api/wearable/latest/group__CAPI__PACKAGE__MANAGER__MODULE.html#ga405444ebd6254b9cfbaedec829558882) applications).
     ```
     package_manager_set_event_status(manager, PACKAGE_MANAGER_STATUS_TYPE_ALL);
     ```

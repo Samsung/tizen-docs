@@ -27,7 +27,7 @@ The main features of the Sound Manager API include:
 
 ## Prerequisites
 
-To use the functions and data types of the Sound Manager API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) applications), include the `<sound_manager.h>` header file in your application:
+To use the functions and data types of the Sound Manager API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) applications), include the `<sound_manager.h>` header file in your application:
 
 ```
 #include <sound_manager.h>
@@ -36,7 +36,7 @@ To use the functions and data types of the Sound Manager API (in [mobile](../../
 <a name="manage"></a>
 ## Controlling the Volume
 
-You can manage the volume level of a particular sound type. With the Sound Manager API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) applications), you can set and get a volume level and a maximum volume level of a particular sound type.
+You can manage the volume level of a particular sound type. With the Sound Manager API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) applications), you can set and get a volume level and a maximum volume level of a particular sound type.
 
 Normally, if there is an active output stream, the `sound_manager_get_current_sound_type()` function returns the sound type of that stream, and if not, it returns an error message.
 
@@ -111,7 +111,7 @@ To query sound device information:
 
 1. To access the sound device information:
 
-   1. Use the `sound_device_mask_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SOUND__MANAGER__DEVICE__MODULE.html#ga5938ab712f44677173b74ec226aa25b3) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__SOUND__MANAGER__DEVICE__MODULE.html#ga5938ab712f44677173b74ec226aa25b3) applications) to specify the sound devices that you want. With a combination of the masks, you can to narrow down the sound devices to those you actually need when getting a sound device list or setting callbacks.
+   1. Use the `sound_device_mask_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__SOUND__MANAGER__DEVICE__MODULE.html#ga5938ab712f44677173b74ec226aa25b3) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__SOUND__MANAGER__DEVICE__MODULE.html#ga5938ab712f44677173b74ec226aa25b3) applications) to specify the sound devices that you want. With a combination of the masks, you can to narrow down the sound devices to those you actually need when getting a sound device list or setting callbacks.
 
       To only access the sound devices whose information you need, define a combination of masks:
 
@@ -217,11 +217,11 @@ To query sound device information:
 <a name="stream_policy"></a>
 ## Creating a Sound Stream Handle
 
-You can manage sound streams with sound stream information handles. Once a handle created, it is used in the stream playback and recording APIs, such as Player (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__PLAYER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__PLAYER__MODULE.html) applications), WAV Player (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__WAV__PLAYER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__WAV__PLAYER__MODULE.html) applications), and Audio I/O (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__AUDIO__IO__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__AUDIO_IO__MODULE.html) applications), to manage your sound streams. An application can have multiple stream information handles and each handle can have multiple sound streams.
+You can manage sound streams with sound stream information handles. Once a handle created, it is used in the stream playback and recording APIs, such as Player (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__MODULE.html) applications), WAV Player (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__WAV__PLAYER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__WAV__PLAYER__MODULE.html) applications), and Audio I/O (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__AUDIO__IO__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__AUDIO_IO__MODULE.html) applications), to manage your sound streams. An application can have multiple stream information handles and each handle can have multiple sound streams.
 
 When you create the handle, you also set the sound stream type and [register a callback for sound stream focus changes](#stream_focus).
 
-The available sound stream types are defined in the `sound_stream_type_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SOUND__MANAGER__STREAM__POLICY__MODULE.html#gac33f64ee1b28af0529e2d0904c41e51f) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__SOUND__MANAGER__STREAM__POLICY__MODULE.html#gac33f64ee1b28af0529e2d0904c41e51f) applications). Fundamentally, the `SYSTEM`, `ALARM`, `NOTIFICATION`, `EMERGENCY`, `VOICE_INFORMATION`, and `RINGTONE_VOIP` types are treated as playback streams, and the `VOICE_RECOGNITION` type as a recording stream. The `MEDIA` type can be both a playback and a recording stream depending on how it is used, and the `VOIP` type has the characteristics of both playback and recording streams. The routing path and sound type of the sound stream are determined internally through the system based on the stream type.
+The available sound stream types are defined in the `sound_stream_type_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__SOUND__MANAGER__STREAM__POLICY__MODULE.html#gac33f64ee1b28af0529e2d0904c41e51f) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__SOUND__MANAGER__STREAM__POLICY__MODULE.html#gac33f64ee1b28af0529e2d0904c41e51f) applications). Fundamentally, the `SYSTEM`, `ALARM`, `NOTIFICATION`, `EMERGENCY`, `VOICE_INFORMATION`, and `RINGTONE_VOIP` types are treated as playback streams, and the `VOICE_RECOGNITION` type as a recording stream. The `MEDIA` type can be both a playback and a recording stream depending on how it is used, and the `VOIP` type has the characteristics of both playback and recording streams. The routing path and sound type of the sound stream are determined internally through the system based on the stream type.
 
 As shown in the following table, the playback stream types are matched to sound types, which are used for volume control.
 
@@ -261,7 +261,7 @@ To manage stream focus:
 
   Acquire stream focus for your sound stream using the `sound_manager_acquire_focus()` function. Pass the stream information handle you have created to specify for which sound stream you want to acquire the focus. Once the focus has been acquired, you can activate your sound stream.
 
-  To set the stream focus type, use the values of the `sound_stream_focus_mask_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SOUND__MANAGER__STREAM__POLICY__MODULE.html#ga7087e13ccf2fe610dd1a93b2226f2e72) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__SOUND__MANAGER__STREAM__POLICY__MODULE.html#ga7087e13ccf2fe610dd1a93b2226f2e72) applications).
+  To set the stream focus type, use the values of the `sound_stream_focus_mask_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__SOUND__MANAGER__STREAM__POLICY__MODULE.html#ga7087e13ccf2fe610dd1a93b2226f2e72) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__SOUND__MANAGER__STREAM__POLICY__MODULE.html#ga7087e13ccf2fe610dd1a93b2226f2e72) applications).
 
   ```
   int error_code;

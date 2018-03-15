@@ -46,7 +46,7 @@ The main features of the Input Method API include:
 <a name="manager"></a>
 ## Input Method Manager
 
-The Input Method Manager (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__UIX__INPUTMETHOD__MANAGER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__UIX__INPUTMETHOD__MANAGER__MODULE.html) applications) is a module used to manage the installed IMEs. You can use it to open the installed IME list or selector menu after your IME application is installed, and guide the user to select the installed IME:
+The Input Method Manager (in [mobile](../../api/mobile/latest/group__CAPI__UIX__INPUTMETHOD__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__INPUTMETHOD__MANAGER__MODULE.html) applications) is a module used to manage the installed IMEs. You can use it to open the installed IME list or selector menu after your IME application is installed, and guide the user to select the installed IME:
 
 - Showing the IME list
 
@@ -72,7 +72,7 @@ The Input Method Manager (in [mobile](../../../../org.tizen.native.mobile.apiref
 
 To enable your application to use the input method functionality:
 
-1. To use the Input Method Manager API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__UIX__INPUTMETHOD__MANAGER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__UIX__INPUTMETHOD__MANAGER__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the Input Method Manager API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__INPUTMETHOD__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__INPUTMETHOD__MANAGER__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -80,7 +80,7 @@ To enable your application to use the input method functionality:
    </privileges>
    ```
 
-2. To use the functions and data types of the Input Method API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__UIX__INPUTMETHOD__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__UIX__INPUTMETHOD__MODULE.html) applications), include the `<inputmethod.h>` header file in your application:
+2. To use the functions and data types of the Input Method API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__INPUTMETHOD__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__INPUTMETHOD__MODULE.html) applications), include the `<inputmethod.h>` header file in your application:
 
     ```
     #include <inputmethod.h>
@@ -121,7 +121,7 @@ To register and define event callbacks for the IME application:
 
    1. You must register the `create()`, `terminate()`, `show()`, and `hide()` callbacks.
 
-      Add the callbacks to the `ime_callback_s` structure (in [mobile](../../../../org.tizen.native.mobile.apireference/structime__callback__s.html) and [wearable](../../../../org.tizen.native.wearable.apireference/structime__callback__s.html) applications), and pass the structure as a parameter to the `ime_run()` function:
+      Add the callbacks to the `ime_callback_s` structure (in [mobile](../../api/mobile/latest/structime__callback__s.html) and [wearable](../../api/wearable/latest/structime__callback__s.html) applications), and pass the structure as a parameter to the `ime_run()` function:
 
       ```
       static void create(void *user_data);

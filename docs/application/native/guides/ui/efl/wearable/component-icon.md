@@ -6,7 +6,7 @@ The icon component is used to display standard icon images, such as "delete", "h
 
 The icon component inherits from the image component, which means that image functions can be used on the icon component.
 
-For more information, see the [Icon](../../../../../org.tizen.native.wearable.apireference/group__Elm__Icon.html) API.
+For more information, see the [Icon](../../../../api/wearable/latest/group__Elm__Icon.html) API.
 
 **Figure: Icon hierarchy**
 

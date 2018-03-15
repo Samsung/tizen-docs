@@ -1,6 +1,6 @@
 # Map
 
-The map UI component displays a geographic map. The default map data is provided by the [OpenStreetMap project](http://www.openstreetmap.org/). For more information, see the [Map](../../../../../org.tizen.native.mobile.apireference/group__Elm__Map.html) API.
+The map UI component displays a geographic map. The default map data is provided by the [OpenStreetMap project](http://www.openstreetmap.org/). For more information, see the [Map](../../../../api/mobile/latest/group__Elm__Map.html) API.
 
 This feature is supported in mobile applications only.
 

@@ -12,7 +12,7 @@ The media files are updated using an application (by calling the Content API) or
 - SD card insertion and removal: Media files are updated only in the SD card.
 - Rebooting the device: Media files are updated in the internal memory and SD card on the device.
 
-You can only use the Media Content API to manage files located in specific paths. You can get the paths by using the `storage_get_directory()` function. For more information, see the Storage API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__STORAGE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__STORAGE__MODULE.html) applications).
+You can only use the Media Content API to manage files located in specific paths. You can get the paths by using the `storage_get_directory()` function. For more information, see the Storage API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html) applications).
 
 **Note**  
 To obtain information from the media database, you must first [connect to it](#prerequisites). When the connection is no longer needed, remember to disconnect from the media database.
@@ -64,7 +64,7 @@ The main media content features include:
 
 To enable your application to use the media content functionality:
 
-1. To use the Media Content API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__CONTENT__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__CONTENT__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the Media Content API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CONTENT__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CONTENT__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -669,7 +669,7 @@ To use a filter to find media items that satisfy certain criteria or to modify t
 
    - Condition string used for filtering the search results
 
-     Queries made with the Content API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__CONTENT__FRAMEWORK.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__CONTENT__FRAMEWORK.html) applications) are passed to a SQL database. A part of each query is a `WHERE` clause that determines which properties correspond to certain conditions. The condition string defines the `WHERE` clause and must match the following pattern:
+     Queries made with the Content API (in [mobile](../../api/mobile/latest/group__CAPI__CONTENT__FRAMEWORK.html) and [wearable](../../api/wearable/latest/group__CAPI__CONTENT__FRAMEWORK.html) applications) are passed to a SQL database. A part of each query is a `WHERE` clause that determines which properties correspond to certain conditions. The condition string defines the `WHERE` clause and must match the following pattern:
 
      ```
      /* Basic pattern */
@@ -691,7 +691,7 @@ To use a filter to find media items that satisfy certain criteria or to modify t
 
    - Collation type determining how the strings are compared
 
-     The `media_content_collation_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__CONTENT__MODULE.html#ga31a20f732fe262e81f112416bfefe13c) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__CONTENT__MODULE.html#ga31a20f732fe262e81f112416bfefe13c) applications) defines the available collation types.
+     The `media_content_collation_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#ga31a20f732fe262e81f112416bfefe13c) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#ga31a20f732fe262e81f112416bfefe13c) applications) defines the available collation types.
 
    To read the condition of an existing filter, use the `media_filter_get_condition()` function:
 
@@ -711,7 +711,7 @@ To use a filter to find media items that satisfy certain criteria or to modify t
                           MEDIA_CONTENT_COLLATE_DEFAULT);
    ```
 
-   The second and fourth parameters determine the order and collation types, and the available types are defined in the enumerators `media_content_order_e` (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__CONTENT__MODULE.html#gaa4e5eece5a509c7414afb96e7a2c3fa2) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__CONTENT__MODULE.html#gaa4e5eece5a509c7414afb96e7a2c3fa2) applications) and `media_content_collation_e` (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__CONTENT__MODULE.html#ga31a20f732fe262e81f112416bfefe13c) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__CONTENT__MODULE.html#ga31a20f732fe262e81f112416bfefe13c)applications).
+   The second and fourth parameters determine the order and collation types, and the available types are defined in the enumerators `media_content_order_e` (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#gaa4e5eece5a509c7414afb96e7a2c3fa2) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#gaa4e5eece5a509c7414afb96e7a2c3fa2) applications) and `media_content_collation_e` (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#ga31a20f732fe262e81f112416bfefe13c) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#ga31a20f732fe262e81f112416bfefe13c)applications).
 
    To read the order settings of an existing filter, use the `media_filter_get_order()` function:
 
@@ -1634,7 +1634,7 @@ To access information about the storages:
 <a name="find_groups"></a>
 ## Finding Media Item Groups
 
-A group is a collection of media items which have the same value of a given property. For example, if the property is the artist, there are as many groups as there are artists, and each group consists of items by the same artist. The possible groups are determined by the `media_group_e` enumerator values (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__CONTENT__MODULE.html#gae17fa4b89b29bafd9b8a123138039655) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__CONTENT__MODULE.html#gae17fa4b89b29bafd9b8a123138039655) applications), such as `MEDIA_CONTENT_GROUP_ARTIST` and `MEDIA_CONTENT_GROUP_MIME_TYPE`.
+A group is a collection of media items which have the same value of a given property. For example, if the property is the artist, there are as many groups as there are artists, and each group consists of items by the same artist. The possible groups are determined by the `media_group_e` enumerator values (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#gae17fa4b89b29bafd9b8a123138039655) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#gae17fa4b89b29bafd9b8a123138039655) applications), such as `MEDIA_CONTENT_GROUP_ARTIST` and `MEDIA_CONTENT_GROUP_MIME_TYPE`.
 
 To find media item groups and filter the results:
 

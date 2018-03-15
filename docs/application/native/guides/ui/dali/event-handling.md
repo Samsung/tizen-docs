@@ -34,7 +34,7 @@ The signal and slot system has following advantages:
 
 ## Touch Events
 
-The `Dali::Actor` class (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1Actor.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1Actor.html) applications) provides the `TouchSignal()` function to inform the application that a user touches the actor. It is defined as follows:
+The `Dali::Actor` class (in [mobile](../../../api/mobile/latest/classDali_1_1Actor.html) and [wearable](../../../api/wearable/latest/classDali_1_1Actor.html) applications) provides the `TouchSignal()` function to inform the application that a user touches the actor. It is defined as follows:
 
 ```
 typedef Signal<bool ( Actor, const TouchData& )> TouchDataSignalType;
@@ -51,7 +51,7 @@ The return value `true` indicates that the touch event must be consumed. Otherwi
 
 Each point on the screen being or having been touched is represented by the `Dali::TouchPoint` object. This object stores information about the state of the touch point (such as down, up, or motion.) and the coordinates of the touch.
 
-A collection of touch points at a specific moment in time is collated into the `Dali::TouchData` object (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1TouchData.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1TouchData.html) applications). When a multi-touch event occurs, each touch point represents the points that are currently being touched or the points where touch has stopped.
+A collection of touch points at a specific moment in time is collated into the `Dali::TouchData` object (in [mobile](../../../api/mobile/latest/classDali_1_1TouchData.html) and [wearable](../../../api/wearable/latest/classDali_1_1TouchData.html) applications). When a multi-touch event occurs, each touch point represents the points that are currently being touched or the points where touch has stopped.
 
 The following example shows how a connection to a touch event signal can be established:
 
@@ -211,7 +211,7 @@ These signals are provided by the following classes:
 
   The actor receiving events is passed to the callbacks.
 
-- `Dali::Stage` (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1Stage.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1Stage.html) applications)
+- `Dali::Stage` (in [mobile](../../../api/mobile/latest/classDali_1_1Stage.html) and [wearable](../../../api/wearable/latest/classDali_1_1Stage.html) applications)
 
   **Table: Dali::Stage input signals**
 
@@ -223,7 +223,7 @@ These signals are provided by the following classes:
 
   Only events are passed to the callbacks since only a single stage instance can exist in DALi application. The callback return types are `void` because the stage has no parent to pass events to, even though it does not consume the events.
 
-- `Dali::Toolkit::Control` (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1Toolkit_1_1Control.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1Toolkit_1_1Control.html) applications)
+- `Dali::Toolkit::Control` (in [mobile](../../../api/mobile/latest/classDali_1_1Toolkit_1_1Control.html) and [wearable](../../../api/wearable/latest/classDali_1_1Toolkit_1_1Control.html) applications)
 
   **Table: Dali::Toolkit::Control input signals**
 
@@ -238,7 +238,7 @@ These signals are provided by the following classes:
 
   The `Dali::Toolkit::Control` class can also receive touch, hover, and wheel events as it inherits from the `Dali::Actor` class.
 
-- `Dali::Toolkit::KeyboardFocusManager` (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1Toolkit_1_1KeyboardFocusManager.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1Toolkit_1_1KeyboardFocusManager.html) applications)
+- `Dali::Toolkit::KeyboardFocusManager` (in [mobile](../../../api/mobile/latest/classDali_1_1Toolkit_1_1KeyboardFocusManager.html) and [wearable](../../../api/wearable/latest/classDali_1_1Toolkit_1_1KeyboardFocusManager.html) applications)
 
   **Table: Dali::Toolkit::KeyboardFocusManager input signals**
 
@@ -279,11 +279,11 @@ The following DALi classes provide signals:
 - `Dali::Toolkit::AccessibilityFocusManager`
 - `Dali::Toolkit::KeyboardFocusManager`
 
-For the signals of each class and their usage, see the DALi API Reference (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__dali.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__dali.html) applications).
+For the signals of each class and their usage, see the DALi API Reference (in [mobile](../../../api/mobile/latest/group__dali.html) and [wearable](../../../api/wearable/latest/group__dali.html) applications).
 
 ## Gestures
 
-Gesture is a user-friendly high-level event produced from a stream of touch events. The `Dali::GestureDetector` class (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1GestureDetector.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1GestureDetector.html) applications) analyzes a stream of touch events and attempts to determine the intention of the user.
+Gesture is a user-friendly high-level event produced from a stream of touch events. The `Dali::GestureDetector` class (in [mobile](../../../api/mobile/latest/classDali_1_1GestureDetector.html) and [wearable](../../../api/wearable/latest/classDali_1_1GestureDetector.html) applications) analyzes a stream of touch events and attempts to determine the intention of the user.
 
 If an actor is attached to a gesture detector and the detector recognizes a user intention (detects a predefined pattern in a stream of touch events), the actor emits a detected gesture signal to the application.
 
@@ -292,10 +292,10 @@ If an actor is attached to a gesture detector and the detector recognizes a user
 
 DALi currently supports following gesture detectors:
 
-- `Dali::LongPressGestureDetector` (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1LongPressGestureDetector.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1LongPressGestureDetector.html) applications) detects when the user does a long-press action.
-- `Dali::TapGestureDetector` (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1TapGestureDetector.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1TapGestureDetector.html) applications) detects when the user does a tap action.
-- `Dali::PinchGestureDetector` (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1PinchGestureDetector.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1PinchGestureDetector.html) applications) detects when the user moves 2 fingers towards or away from each other.
-- `Dali::PanGestureDetector` (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1PanGestureDetector.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1PanGestureDetector.html) applications) detects when the user moves 1 or more fingers in the same direction.
+- `Dali::LongPressGestureDetector` (in [mobile](../../../api/mobile/latest/classDali_1_1LongPressGestureDetector.html) and [wearable](../../../api/wearable/latest/classDali_1_1LongPressGestureDetector.html) applications) detects when the user does a long-press action.
+- `Dali::TapGestureDetector` (in [mobile](../../../api/mobile/latest/classDali_1_1TapGestureDetector.html) and [wearable](../../../api/wearable/latest/classDali_1_1TapGestureDetector.html) applications) detects when the user does a tap action.
+- `Dali::PinchGestureDetector` (in [mobile](../../../api/mobile/latest/classDali_1_1PinchGestureDetector.html) and [wearable](../../../api/wearable/latest/classDali_1_1PinchGestureDetector.html) applications) detects when the user moves 2 fingers towards or away from each other.
+- `Dali::PanGestureDetector` (in [mobile](../../../api/mobile/latest/classDali_1_1PanGestureDetector.html) and [wearable](../../../api/wearable/latest/classDali_1_1PanGestureDetector.html) applications) detects when the user moves 1 or more fingers in the same direction.
 
 The following example shows how an application can be notified of a pan gesture:
 
@@ -333,7 +333,7 @@ void HelloWorldExample::OnPan( Actor actor, const PanGesture& gesture )
 
 If you have a pair made up of a connected signal (for example, a button clicked signal) and a slot (for example, a toolbar object having the callback for the signal), and one of them (the button or the toolbar) is deleted without any notification, the application crashes when the signal is emitted or the slot tries to disconnect the signal.
 
-DALi provides the automatic connection management mechanism to prevent this kind of situation. The key is the `Dali::ConnectionTracker` class (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1ConnectionTracker.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1ConnectionTracker.html) applications). It tracks connections between signals and slots, and performs an automatic disconnection when either the signal or slot is deleted.
+DALi provides the automatic connection management mechanism to prevent this kind of situation. The key is the `Dali::ConnectionTracker` class (in [mobile](../../../api/mobile/latest/classDali_1_1ConnectionTracker.html) and [wearable](../../../api/wearable/latest/classDali_1_1ConnectionTracker.html) applications). It tracks connections between signals and slots, and performs an automatic disconnection when either the signal or slot is deleted.
 
 Due to this mechanism, all the DALi sample codes start with a controller class derived from the `Dali::ConnectionTracker` class. This is a safe and typical way of making a DALi application. You can, of course, create other structures using the `Dali::ConnectionTracker` class.
 

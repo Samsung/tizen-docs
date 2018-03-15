@@ -480,7 +480,7 @@ The main application group features include:
 
 To enable your application to use the application control functionality:
 
-1. To use the App Control API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__APP__CONTROL__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__APP__CONTROL__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the App Control API (in [mobile](../../api/mobile/latest/group__CAPI__APP__CONTROL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__APP__CONTROL__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -620,7 +620,7 @@ create_base_gui(appdata_s *ad)
 
 2. When the button is clicked, use an application control to launch the sub application.
 
-   Define the launch mode for the application to be called using the `app_control_set_launch_mode()` function. The second parameter defines the launch mode with the `app_control_launch_mode_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__APP__CONTROL__MODULE.html#gadf26b03f2f6b18acba4a946e7eb7b31c) applications).
+   Define the launch mode for the application to be called using the `app_control_set_launch_mode()` function. The second parameter defines the launch mode with the `app_control_launch_mode_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__APP__CONTROL__MODULE.html#gadf26b03f2f6b18acba4a946e7eb7b31c) applications).
 
    ```
    static void

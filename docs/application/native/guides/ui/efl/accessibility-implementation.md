@@ -71,7 +71,7 @@ In the Tizen 2.4 release, the screen reader is available only inside the UI Comp
 ![UI Components sample application](./media/ui-controls.png) ![UI Components sample application](./media/ui-controls-accessibility.png) ![Screen reader](./media/ui-controls-accessibility-screen-reader.png)
 
 > **Note**  
-> If reading of any arbitrary text directly from the application needs to be synchronized with the screen reader voice output, you must use the Tizen platform TTS API (in [mobile](http://org.tizen.native.mobile.apireference/group__CAPI__UIX__TTS__MODULE.html) and [wearable](http://org.tizen.native.wearable.apireference/group__CAPI__UIX__TTS__MODULE.html) applications), which is also used by the screen reader.
+> If reading of any arbitrary text directly from the application needs to be synchronized with the screen reader voice output, you must use the Tizen platform TTS API (in [mobile](../../../api/mobile/latest/group__CAPI__UIX__TTS__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__UIX__TTS__MODULE.html) applications), which is also used by the screen reader.
 
 ### Making UI Components Readable
 

@@ -57,7 +57,7 @@ In a mandatory access control system, an application that accesses sensitive res
 
 - Tizen provides API-level access control for security-sensitive operations that can harm user privacy and system stability, if not used properly. If the application uses such sensitive APIs, it must declare the required privileges in the manifest file.
 
-  To determine whether an API requires privileges to be used, see the [API Reference](../../../../org.tizen.native.mobile.apireference/index.html).
+  To determine whether an API requires privileges to be used, see the [API Reference](../../api/mobile/latest/index.html).
 
 In Tizen 3.0, the platform uses core privileges for access control, but the concept of the application privilege declaration is not changed. As in Tizen 2.X, the application can declare required privileges in the manifest file according to their own application type.
 

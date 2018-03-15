@@ -1967,7 +1967,7 @@ The location settings application control is supported only in mobile applicatio
 
 To launch the location setting application to allow the user to configure the source of the location information, use the `APP_CONTROL_OPERATION_SETTING_LOCATION` operation.
 
-If the location service is not active when an application tries to use the [Location Manager](../../../../org.tizen.native.mobile.apireference/group__CAPI__LOCATION__MANAGER__MODULE.html) or Geolocation APIs, an error occurs. To solve the problem, the application can try to launch the location setting application to let the user enable the location service. The user can activate the GPS, network positioning using the Wi-Fi Positioning System (WPS) and cellular network, or both.
+If the location service is not active when an application tries to use the [Location Manager](../../api/mobile/latest/group__CAPI__LOCATION__MANAGER__MODULE.html) or Geolocation APIs, an error occurs. To solve the problem, the application can try to launch the location setting application to let the user enable the location service. The user can activate the GPS, network positioning using the Wi-Fi Positioning System (WPS) and cellular network, or both.
 
 **Figure: Showing location settings**
 

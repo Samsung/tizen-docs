@@ -13,9 +13,9 @@ WAV, and AMR. The available formats depend on the target device.
 ## Playing Audio
 
 To play audio files stored on the device, use the Player API (in
-[mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__PLAYER__MODULE.html)
+[mobile](../../../../org.tizen.native.mobile./group__CAPI__MEDIA__PLAYER__MODULE.html)
 and
-[wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__PLAYER__MODULE.html)
+[wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__MODULE.html)
 applications). The Player API also provides interfaces for getting
 content information and controlling operations, such as playback, pause,
 resume, and stop.
@@ -38,9 +38,9 @@ To prepare the player for playback, and to define the necessary
 callbacks to handle playback events:
 
 1.  To use the data types and functions of the Player API (in
-    [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__PLAYER__MODULE.html)
+    [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__MODULE.html)
     and
-    [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__PLAYER__MODULE.html)
+    [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__MODULE.html)
     applications), include the `<player.h>` header file in your
     application:
 
@@ -295,9 +295,9 @@ if (error_code != PLAYER_ERROR_NONE)
 ## Recording Audio
 
 To record audio, use the Recorder API (in
-[mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html)
+[mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__MODULE.html)
 and
-[wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html)
+[wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__MODULE.html)
 applications). The main features of the Recorder API include:
 
 -   Basic recording functionalities: record, stop, pause, cancel, and
@@ -319,9 +319,9 @@ To prepare the recorder for the recording session, and to define the
 necessary callbacks to handle recording events:
 
 1.  To use the data types and functions of the Recorder API (in
-    [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html)
+    [mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__MODULE.html)
     and
-    [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html)
+    [wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__MODULE.html)
     applications), include the `<recorder.h>` header file in your
     application:
 
@@ -380,9 +380,9 @@ necessary callbacks to handle recording events:
         `recorder_set_audio_encoder()` function. The possible audio
         codec values are defined in the `recorder_audio_codec_e`
         enumeration (in
-        [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html#ga431bd585d929f13a71ecefd58ed17d46)
+        [mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga431bd585d929f13a71ecefd58ed17d46)
         and
-        [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html#ga431bd585d929f13a71ecefd58ed17d46) applications).
+        [wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga431bd585d929f13a71ecefd58ed17d46) applications).
 
         ```c++
         #define FILENAME_PREFIX "AUDIO"
@@ -400,9 +400,9 @@ necessary callbacks to handle recording events:
         the codec to AAC, set the file format to 3GP. The possible file
         format values are defined in the `recorder_file_format_e`
         enumeration (in
-        [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html#ga7d3dbf7b0b3ef68101562b89e81ecf1e)
+        [mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga7d3dbf7b0b3ef68101562b89e81ecf1e)
         and
-        [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html#ga7d3dbf7b0b3ef68101562b89e81ecf1e) applications).
+        [wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga7d3dbf7b0b3ef68101562b89e81ecf1e) applications).
 
         ```c++
         /* Set the file format according to the audio encoder */
@@ -433,9 +433,9 @@ necessary callbacks to handle recording events:
     - Set the file size limit, encoder bitrate, audio device, and
         sample rate. The possible audio device values are defined in the
         `recorder_audio_device_e` enumeration (in
-        [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html#ga0e73accfbca1b992c29a2128acebbbf3)
+        [mobile](../../api/mobile/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga0e73accfbca1b992c29a2128acebbbf3)
         and
-        [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__RECORDER__MODULE.html#ga0e73accfbca1b992c29a2128acebbbf3) applications).
+        [wearable](../../api/wearable/latest/group__CAPI__MEDIA__RECORDER__MODULE.html#ga0e73accfbca1b992c29a2128acebbbf3) applications).
 
         ```c++
         /* Set the maximum file size to 1024 (kB) */

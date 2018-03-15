@@ -19,7 +19,7 @@ The following T-trace function types are provided for application-level tracepoi
 
 To enable your application to use the T-trace functionality:
 
-1. To use the functions and data types of the T-trace API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__TRACE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__TRACE__MODULE.html) applications), include the `<trace.h>` header file in your application:
+1. To use the functions and data types of the T-trace API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__TRACE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__TRACE__MODULE.html) applications), include the `<trace.h>` header file in your application:
 
     ```
     #include <trace.h>

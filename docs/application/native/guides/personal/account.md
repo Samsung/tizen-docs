@@ -75,7 +75,7 @@ The following table shows the `ACCOUNT_OPERATION_VIEW` (`http://tizen.org/appcon
 
 To enable your application to use the account management functionality:
 
-1. To use the Account Manager API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__ACCOUNT__MANAGER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__ACCOUNT__MANAGER__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the Account Manager API (in [mobile](../../api/mobile/latest/group__CAPI__ACCOUNT__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__ACCOUNT__MANAGER__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -547,7 +547,7 @@ To perform database queries:
 
 To manage account secrecy:
 
-1. Select the secrecy level using the `account_secrecy_state_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__ACCOUNT__MANAGER__MODULE.html#ga41a7e7e7cfb072d0b0ba37087a0535b6) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__ACCOUNT__MANAGER__MODULE.html#ga41a7e7e7cfb072d0b0ba37087a0535b6) applications):
+1. Select the secrecy level using the `account_secrecy_state_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__ACCOUNT__MANAGER__MODULE.html#ga41a7e7e7cfb072d0b0ba37087a0535b6) and [wearable](../../api/wearable/latest/group__CAPI__ACCOUNT__MANAGER__MODULE.html#ga41a7e7e7cfb072d0b0ba37087a0535b6) applications):
 
     ```
     static

@@ -105,13 +105,13 @@ The following table lists the supported audio and video codecs (encoder).
 
 To enable your application to use the media conversion functionalities:
 
-1. To use the functions and data types of the Media Codec API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__CODEC__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__CODEC__MODULE.html) applications), include the `<media_codec.h>` header file in your application:
+1. To use the functions and data types of the Media Codec API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CODEC__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CODEC__MODULE.html) applications), include the `<media_codec.h>` header file in your application:
 
    ```
    #include <media_codec.h>
    ```
 
-2. To use the functions and data types of the [Video Util](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html) API, include the `<video_util.h>` header file in your application:
+2. To use the functions and data types of the [Video Util](../../api/mobile/latest/group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html) API, include the `<video_util.h>` header file in your application:
 
    ```
    #include <video_util.h>
@@ -136,7 +136,7 @@ To prepare the media codecs:
    ret = mediacodec_set_codec(mediacodec, (mediacodec_codec_type_e)codecid, flag);
    ```
 
-   The `mediacodec_codec_type_e` (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__CODEC__MODULE.html#ga2e7775fb3609e4349c742b1d9eb5febc) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__CODEC__MODULE.html#ga2e7775fb3609e4349c742b1d9eb5febc) applications) and `mediacodec_support_type_e` (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__CODEC__MODULE.html#gab01ad3dbb4989537108a5c9f2062447a) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__CODEC__MODULE.html#gab01ad3dbb4989537108a5c9f2062447a) applications) enumerations define the media codec type and support type (second and third parameters).
+   The `mediacodec_codec_type_e` (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CODEC__MODULE.html#ga2e7775fb3609e4349c742b1d9eb5febc) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CODEC__MODULE.html#ga2e7775fb3609e4349c742b1d9eb5febc) applications) and `mediacodec_support_type_e` (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CODEC__MODULE.html#gab01ad3dbb4989537108a5c9f2062447a) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CODEC__MODULE.html#gab01ad3dbb4989537108a5c9f2062447a) applications) enumerations define the media codec type and support type (second and third parameters).
 
 3. To configure the video and audio encoder and decoder:
 
@@ -333,7 +333,7 @@ To initialize the video utilities for use:
    ret = video_util_set_file_format(video_h, VIDEO_UTIL_FILE_FORMAT_3GP);
    ```
 
-   The [video_util_file_format_e](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#gad9c070cbb59f3107cefd280ec06e2966) enumeration defines the available file formats.
+   The [video_util_file_format_e](../../api/mobile/latest/group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#gad9c070cbb59f3107cefd280ec06e2966) enumeration defines the available file formats.
 
 4. Set the audio codec using the `video_util_set_audio_codec()` function:
 
@@ -341,7 +341,7 @@ To initialize the video utilities for use:
    ret = video_util_set_audio_codec(video_h, VIDEO_UTIL_AUDIO_CODEC_AAC);
    ```
 
-   The [video_util_audio_codec_e](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#ga48da7f77144a99f5733a90d62805c435) enumeration defines the available audio codecs.
+   The [video_util_audio_codec_e](../../api/mobile/latest/group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#ga48da7f77144a99f5733a90d62805c435) enumeration defines the available audio codecs.
 
 5. Set the video codec using the `video_util_set_video_codec()` function:
 
@@ -349,7 +349,7 @@ To initialize the video utilities for use:
    ret = video_util_set_video_codec(video_h, VIDEO_UTIL_VIDEO_CODEC_MPEG4);
    ```
 
-   The [video_util_video_codec_e](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#gabadbb5a64155f42fe180bedac40f289e) enumeration defines the available video codecs.
+   The [video_util_video_codec_e](../../api/mobile/latest/group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#gabadbb5a64155f42fe180bedac40f289e) enumeration defines the available video codecs.
 
 6. Enable or disable the accurate seek mode using the `video_util_set_accurate_mode()` function.
 
@@ -448,7 +448,7 @@ To set parameters for the video utilities (for other parameters, see [Preparing 
          }
          ```
 
-         The [video_util_file_format_e](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#gad9c070cbb59f3107cefd280ec06e2966) enumeration defines the available file formats.
+         The [video_util_file_format_e](../../api/mobile/latest/group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#gad9c070cbb59f3107cefd280ec06e2966) enumeration defines the available file formats.
 
    2. Set the file format using the `video_util_set_file_format()` function:
 
@@ -497,7 +497,7 @@ To set parameters for the video utilities (for other parameters, see [Preparing 
          }
          ```
 
-         The [video_util_audio_codec_e](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#ga48da7f77144a99f5733a90d62805c435) and [video_util_video_codec_e](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#gabadbb5a64155f42fe180bedac40f289e) enumerations define the available audio and video codecs.
+         The [video_util_audio_codec_e](../../api/mobile/latest/group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#ga48da7f77144a99f5733a90d62805c435) and [video_util_video_codec_e](../../api/mobile/latest/group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#gabadbb5a64155f42fe180bedac40f289e) enumerations define the available audio and video codecs.
 
       To check the support for a specified codec, such as `VIDEO_UTIL_VIDEO_CODEC_MPEG4`:
 
