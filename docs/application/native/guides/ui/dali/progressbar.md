@@ -13,7 +13,7 @@ In this tutorial, the following subjects are covered:
 
 The ProgressBar has two modes to represent the progress.
 
-- **Determinate mode** shows a specific quantity of progress occurred. Use `PROGRESS_VALUE` property to set a specific percentage (number). This is the default mode. If the value is not user-specified, the default is taken as 0.
+- **Determinate mode** shows a specific quantity of progress occurred. Use `PROGRESS_VALUE` property to set a specific percentage (number). This is the default mode. If the user has not specified a value, the default is taken as 0.
 
  *Figure: Determinate progress bar*
  ![Determinate mode](./media/determinated_progress.png)
@@ -87,10 +87,10 @@ The following table lists the available progress bar properties.
 | `PROGRESS_VALUE`           | FLOAT   | Stores the progress value of progress bar. It ranges between 0 and 1. |
 | `SECONDARY_PROGRESS_VALUE` | FLOAT   | Stores the secondary progress value of progress bar. It ranges between 0 and 1. |
 | `INDETERMINATE`            | BOOLEAN | Sets the progress bar in indeterminate state. |
-| `TRACK_VISUAL`             | MAP     | Appearance of the track of progress bar. It is a full progress area which appears behind PROGRESS_VISUAL. |
-| `PROGRESS_VISUAL`          | MAP     | Appearance of the progress region of progress bar. The size of the progress visual is changed based on PROGRESS_VALUE. |
-| `SECONDARY_PROGRESS_VISUAL` | MAP     | Appearance of the secondary progress region of progress bar. The size of the secondary progress visual is changed based on SECONDARY_PROGRESS_VALUE. |
-| `INDETERMINATE_VISUAL`     | MAP     | Appearance of the indeterminate visual of progress bar. |
+| `TRACK_VISUAL`             | MAP     | Sets the appearance of the track of progress bar. It is a full progress area which appears behind PROGRESS_VISUAL. |
+| `PROGRESS_VISUAL`          | MAP     | Sets the appearance of the progress region of progress bar. The size of the progress visual is changed based on PROGRESS_VALUE. |
+| `SECONDARY_PROGRESS_VISUAL` | MAP     | Sets the appearance of the secondary progress region of progress bar. The size of the secondary progress visual is changed based on SECONDARY_PROGRESS_VALUE. |
+| `INDETERMINATE_VISUAL`     | MAP     | Sets the appearance of the indeterminate visual of progress bar. |
 | `INDETERMINATE_VISUAL_ANIMATION` | MAP or ARRAY | Stores the transition data for indeterminate visual animation. |
 | `LABEL_VISUAL`             | MAP     | Stores the label visual of progress bar.      |
 

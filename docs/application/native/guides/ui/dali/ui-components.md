@@ -15,7 +15,7 @@ The following table lists the available UI components.
 
 | Control                           | Description                              | Related classes                          |
 |-----------------------------------|----------------------------------------|----------------------------------------|
-| [Buttons](buttons.md)             | A **push button** that can be pressed. A **check box button** that can be checked or unchecked. A **radio button** that only one option can be selected. | `Button`, `PushButton`, `CheckBoxButton`, `RadioButton` |
+| [Buttons](buttons.md)             | A **push button** that can be pressed. A **check box button** that can be selected or cleared. A **radio button** that only one option can be selected. | `Button`, `PushButton`, `CheckBoxButton`, `RadioButton` |
 | [FlexContainer](flexcontainer.md) | A layout model that allows responsive elements within a container, to automatically arrange the elements to different screen sizes or devices. | `FlexContainer`              |
 | [ImageView](imageview.md)         | An image view to render an image.      | `ImageView`                              |
 | [ItemView](itemview.md)           | An item view to enable render item sets in a scrollable layout. | `ItemView`, `ItemFactory`, `ItemLayout`, `Scrollable` |
