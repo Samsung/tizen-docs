@@ -2,6 +2,47 @@
 
 Tizen Native API is carefully selected and tightly managed APIs from the Tizen native subsystems. The Native API is divided into dozens of API modules; each module represents a logically similar set of submodule APIs, which can be grouped into the same category.
 
+
+## Required Header
+
+To be able to use an API, you need to include a header in which API is defined. You can find required headers in API reference as illustrated below:
+
+Figure:Required Header
+
+![Required Header](media/required_header.png)
+
+
+## Related Feature
+
+Some of the Tizen native APIs require features to prevent your application from being shown in the application list on the Tizen store. If related Feature is included in API reference as shown below and your application uses that feature, then you need to declare the feature in the tizen-manifest.xml file. For more information, see Application Filtering.
+
+Figure:Related Feature
+
+![Related Feature](media/related_feature.png)
+
+
+## Structure of Function Descriptions
+
+In the function documentation for each module, the functions are described using a unified structure, illustrated in the below example.
+
+Figure:Reference Structure
+
+![Reference Structure](media/function_structure.png)
+
+
+## Privilege
+
+The privilege is essential part to get access grant for privacy related data or sensitive system resources. For more information, see Privileges.
+Some of Tizen Native API functions require adding appropriate privileges (defined in each API's Privilege section in the specification) to the tizen-manifest.xml file. If required privileges are not included in the tizen-manifest.xml file, then the function will return TIZEN_ERROR_PERMISSION_DENIED error.
+
+For example, see the "Privilege:" section in the following picture:
+
+Figure:Privilege
+
+![Privilege](media/native_privilege.png)
+
+
+## Versions
 <ul>
 <li>Mobile
   <ul>
