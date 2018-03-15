@@ -1,6 +1,6 @@
 # Tooltip
 
-The tooltip component is a smart object that shows content in a frame when the mouse hovers over the parent object. It provides tips or information about the parent object. A tooltip component is not a UI component as such, so it does not emit signals. For more information, see the [Tooltip](../../../../../org.tizen.native.mobile.apireference/group__Elm__Tooltips.html) API.
+The tooltip component is a smart object that shows content in a frame when the mouse hovers over the parent object. It provides tips or information about the parent object. A tooltip component is not a UI component as such, so it does not emit signals. For more information, see the [Tooltip](../../../../api/mobile/latest/group__Elm__Tooltips.html) API.
 
 This feature is supported in mobile applications only.
 

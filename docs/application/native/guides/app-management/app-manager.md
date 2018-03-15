@@ -9,19 +9,19 @@ The main features of the Application Manager API include:
 
   You can retrieve the application context and operate on it. The `app_context_h` handle is related to the running applications and can be used to [manage the application context](#manage_context).
 
-  For more information on the functions that use the `app_context_h` handle, see the Application Context API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__APP__CONTEXT__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__APP__CONTEXT__MODULE.html) applications).
+  For more information on the functions that use the `app_context_h` handle, see the Application Context API (in [mobile](../../api/mobile/latest/group__CAPI__APP__CONTEXT__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__APP__CONTEXT__MODULE.html) applications).
 
 - Getting information on filtered applications
 
   The `app_info_h` handle is related to the available applications (installed, but not necessarily running). To [retrieve information on applications through a filter](#filter), you can also use the `app_info_filter_h` handle.
 
-  For more information on the functions that use the `app_info_h` and `app_info_filter_h` handles, see the Application Information API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__APP__INFO__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__APP__INFO__MODULE.html) applications).
+  For more information on the functions that use the `app_info_h` and `app_info_filter_h` handles, see the Application Information API (in [mobile](../../api/mobile/latest/group__CAPI__APP__INFO__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__APP__INFO__MODULE.html) applications).
 
 Iterator functions are used to travel through a list of applications. The `app_manager_foreach_app_context()` function is used in running applications and the `app_manager_foreach_app_info()` function is used in available applications. Each function calls a callback function (`app_manager_app_context_cb()` or `app_manager_app_info_cb()`), passing the handle for each application.
 
 ## Prerequisites
 
-To use the functions and data types of the Application Manager API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__APPLICATION__MANAGER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__APPLICATION__MANAGER__MODULE.html) applications), include the `<app_manager.h>` header file in your application:
+To use the functions and data types of the Application Manager API (in [mobile](../../api/mobile/latest/group__CAPI__APPLICATION__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__APPLICATION__MANAGER__MODULE.html) applications), include the `<app_manager.h>` header file in your application:
 
 ```
 #include <app_manager.h>

@@ -39,7 +39,7 @@ The rotary event is delivered to a specific object called **activated object**. 
 
 If the activated object has registered callbacks that all return `EINA_TRUE`, the rotary event is also delivered to the upper parents of the activated object, until a callback returns `EINA_FALSE` or the top parent object is reached.
 
-When an object is activated or deactivated, a `rotary,activated` or `rotary,deactivated` signal is sent. You can [register callbacks for the signals](http://org.tizen.native.wearable.apireference/group__Evas__Smart__Object__Group.html) with the `evas_object_smart_callback_add()` function.
+When an object is activated or deactivated, a `rotary,activated` or `rotary,deactivated` signal is sent. You can [register callbacks for the signals](../../../api/wearable/latest/group__Evas__Smart__Object__Group.html) with the `evas_object_smart_callback_add()` function.
 
 ## Managing Rotary Events
 

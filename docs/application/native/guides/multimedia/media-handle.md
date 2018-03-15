@@ -21,7 +21,7 @@ The `media_format_h` handle has a specific design for increasing and decreasing 
 
 To enable your application to use the media tool functionality:
 
-- To use the media format handle of the Media Tool API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__TOOL__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__TOOL__MODULE.html) applications), include the `<media_format.h>` header file in your application:
+- To use the media format handle of the Media Tool API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__TOOL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__TOOL__MODULE.html) applications), include the `<media_format.h>` header file in your application:
 
   ```
   #include <media_format.h>

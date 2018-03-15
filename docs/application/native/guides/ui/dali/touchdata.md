@@ -11,7 +11,7 @@ The `Dali::TouchData` class replaces the old deprecated `Dali::TouchEvent` struc
 >
 > As the `Dali::TouchData` class is a handle to an internal object, it must not be copied (or used in a container) as all that happens is that the handle is copied to the same object, and the internal object can change unexpectedly. If the data must be stored in the application, save only the required data (retrieved using the class functions).
 
-The first point that the user touches is the primary point and the one that is used for hit-testing. Hit-testing is the process of determining whether a user-controlled cursor (such as a mouse cursor or touch-point) intersects a given graphical object drawn on the screen. There are many different algorithms that can be used for hit-testing, with different performance or accuracy outcomes. For more information on DALi hit-testing, see the Detailed Description for the `Dali::Actor` class (in [mobile](http://org.tizen.native.mobile.apireference/classDali_1_1Actor.html#details) and [wearable](http://org.tizen.native.wearable.apireference/classDali_1_1Actor.html#details) applications).
+The first point that the user touches is the primary point and the one that is used for hit-testing. Hit-testing is the process of determining whether a user-controlled cursor (such as a mouse cursor or touch-point) intersects a given graphical object drawn on the screen. There are many different algorithms that can be used for hit-testing, with different performance or accuracy outcomes. For more information on DALi hit-testing, see the Detailed Description for the `Dali::Actor` class (in [mobile](../../../api/mobile/latest/classDali_1_1Actor.html#details) and [wearable](../../../api/mobile/latest/classDali_1_1Actor.html#details) applications).
 
 ## Detecting Touches on Actors
 
@@ -30,7 +30,7 @@ To establish a connection to a touch data signal:
 
    2. Connect to the required actor's touch signal (this is normally done when the init signal is received).
 
-      Ensure that your `MyApplication` class is set up to connect to signals, and that it inherits from the `ConnectionTracker` class (in [mobile](http://org.tizen.native.mobile.apireference/classDali_1_1ConnectionTracker.html) and [wearable](http://org.tizen.native.wearable.apireference/classDali_1_1ConnectionTracker.html) applications). The `ConnectionTracker` provides a way of automatically disconnecting from the connected signals when the application dies. This is more useful for application objects that exist only temporarily.
+      Ensure that your `MyApplication` class is set up to connect to signals, and that it inherits from the `ConnectionTracker` class (in [mobile](../../../api/mobile/latest/classDali_1_1ConnectionTracker.html) and [wearable](../../../api/wearable/latest/classDali_1_1ConnectionTracker.html) applications). The `ConnectionTracker` provides a way of automatically disconnecting from the connected signals when the application dies. This is more useful for application objects that exist only temporarily.
 
       ```
       Actor actor = Actor::New();

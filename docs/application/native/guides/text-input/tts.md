@@ -72,7 +72,7 @@ You can get the following information about the TTS:
 
 To enable your application to use the TTS functionality:
 
-1. To use the functions and data types of the TTS (text-to-speech) API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__UIX__TTS__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__UIX__TTS__MODULE.html) applications), include the `<tts.h>` header file in your application:`#include <tts.h>`
+1. To use the functions and data types of the TTS (text-to-speech) API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__TTS__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__TTS__MODULE.html) applications), include the `<tts.h>` header file in your application:`#include <tts.h>`
 
 2. To use the TTS library, create a TTS handle.
 

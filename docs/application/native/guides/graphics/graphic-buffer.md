@@ -13,15 +13,15 @@ The TBM surface provides the following main features:
 
 - Getting surface and plane information
 
-  Get the details using the `tbm_surface_map()` or the `tbm_surface_get_info()` function. The surface information is assigned to the `tbm_surface_info_s` struct (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__UI__TBM__SURFACE__MODULE.html#ga8d954dfd180e96cafbcfc7b92684b971) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__UI__TBM__SURFACE__MODULE.html#ga8d954dfd180e96cafbcfc7b92684b971) applications).
+  Get the details using the `tbm_surface_map()` or the `tbm_surface_get_info()` function. The surface information is assigned to the `tbm_surface_info_s` struct (in [mobile](../../api/mobile/latest/group__CAPI__UI__TBM__SURFACE__MODULE.html#ga8d954dfd180e96cafbcfc7b92684b971) and [wearable](../../api/wearable/latest/group__CAPI__UI__TBM__SURFACE__MODULE.html#ga8d954dfd180e96cafbcfc7b92684b971) applications).
 
-  The surface information contains the surface width, height, BPP, size, and the number of planes, while the plane information includes the plane size, offset, stride, and pointer. For more information on the surface and plane details, see `_tbm_surface_info` struct (in [mobile](../../../../org.tizen.native.mobile.apireference/struct__tbm__surface__info.html) and [wearable](../../../../org.tizen.native.wearable.apireference/struct__tbm__surface__info.html) applications) and `_tbm_surface_plane `struct (in [mobile](../../../../org.tizen.native.mobile.apireference/struct__tbm__surface__plane.html) and [wearable](../../../../org.tizen.native.wearable.apireference/struct__tbm__surface__plane.html) applications).
+  The surface information contains the surface width, height, BPP, size, and the number of planes, while the plane information includes the plane size, offset, stride, and pointer. For more information on the surface and plane details, see `_tbm_surface_info` struct (in [mobile](../../api/mobile/latest/struct__tbm__surface__info.html) and [wearable](../../api/wearable/latest/struct__tbm__surface__info.html) applications) and `_tbm_surface_plane `struct (in [mobile](../../api/mobile/latest/struct__tbm__surface__plane.html) and [wearable](../../api/wearable/latest/struct__tbm__surface__plane.html) applications).
 
 To store data in the low-level graphic buffer, get a plane pointer in the surface and use the pointer of each plane.
 
 ## Prerequisites
 
-To use the functions and data types of the TBM Surface API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__UI__TBM__SURFACE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__UI__TBM__SURFACE__MODULE.html) applications, include the `<tbm_surface.h>` header file in your application:
+To use the functions and data types of the TBM Surface API (in [mobile](../../api/mobile/latest/group__CAPI__UI__TBM__SURFACE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UI__TBM__SURFACE__MODULE.html) applications, include the `<tbm_surface.h>` header file in your application:
 
 ```
 #include <tbm_surface.h>

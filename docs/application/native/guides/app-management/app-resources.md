@@ -28,7 +28,7 @@ The main features of the Resource Manager API include:
 
 ## Prerequisites
 
-To use the functions and resource types of the Resource Manager API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__RESOURCE__MANAGER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__RESOURCE__MANAGER__MODULE.html) applications), include the `<app_resource_manager.h>` header file in your application:
+To use the functions and resource types of the Resource Manager API (in [mobile](../../api/mobile/latest/group__CAPI__RESOURCE__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__RESOURCE__MANAGER__MODULE.html) applications), include the `<app_resource_manager.h>` header file in your application:
 
 ```
 #include <app_resource_manager.h>
@@ -78,7 +78,7 @@ If the function returns `APP_RESOURCE_ERROR_NONE`, the resource manager has been
 	The resource ID is an identifier for a specific resource. It consists of subdirectories and filenames including its extension. The same resources are located in different locations with the same filename for supporting multiple devices.
 
     - Resource type
-    The resource type defines whether the resource is an image, layout, sound, or some other file type. There are 4 resource types, which are defined in the `app_resource_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__RESOURCE__MANAGER__MODULE.html#ga83dadea23a885e1eb257ad1f115513e9) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__RESOURCE__MANAGER__MODULE.html#ga83dadea23a885e1eb257ad1f115513e9) applications).Resources with the same resource type are grouped as a folder. The folder name is irrelevant to the actual resource type within it.
+    The resource type defines whether the resource is an image, layout, sound, or some other file type. There are 4 resource types, which are defined in the `app_resource_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__RESOURCE__MANAGER__MODULE.html#ga83dadea23a885e1eb257ad1f115513e9) and [wearable](../../api/wearable/latest/group__CAPI__RESOURCE__MANAGER__MODULE.html#ga83dadea23a885e1eb257ad1f115513e9) applications).Resources with the same resource type are grouped as a folder. The folder name is irrelevant to the actual resource type within it.
 
     ```
     Evas_Object *img

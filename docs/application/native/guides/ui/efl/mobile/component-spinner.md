@@ -6,7 +6,7 @@ The spinner component increases or decreases a numeric value with the arrow butt
 
 The spinner component inherits from the layout component, which means that layout functions can be used on the spinner component.
 
-For more information, see the [Spinner](../../../../../org.tizen.native.mobile.apireference/group__Elm__Spinner.html) API.
+For more information, see the [Spinner](../../../../api/mobile/latest/group__Elm__Spinner.html) API.
 
 **Figure: Spinner component**
 

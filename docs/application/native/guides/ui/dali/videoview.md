@@ -9,7 +9,7 @@ The `Dali::Toolkit::VideoView` is a control for video playback and display. It p
 ![VideoView](./media/dali_videoview.png)
 
 > **Note**  
-> The VideoView control does not use any privileges APIs on its own. However, if you use video files in a specific device storage, the application can require privileges to access the storage. For more information, see the Player API Reference (in [mobile](http://org.tizen.native.mobile.apireference/group__CAPI__MEDIA__PLAYER__MODULE.html) and [wearable](http://org.tizen.native.wearable.apireference/group__CAPI__MEDIA__PLAYER__MODULE.html) applications).    
+> The VideoView control does not use any privileges APIs on its own. However, if you use video files in a specific device storage, the application can require privileges to access the storage. For more information, see the Player API Reference (in [mobile](../../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__MODULE.html) applications).    
 
 In this tutorial, the following subjects are covered:
 

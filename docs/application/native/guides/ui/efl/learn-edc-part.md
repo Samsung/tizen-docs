@@ -697,7 +697,7 @@ part {
 
   - `fixed [width, 0 or 1] [height, 0 or 1]`
 
-   Sets the minimum size calculation. See the `edje_object_size_min_calc()` and `edje_object_size_min_restricted_calc()` functions of the Edje Object Geometry API (in [mobile](http://org.tizen.native.mobile.apireference/group__Edje__Object__Geometry__Group.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Edje__Object__Geometry__Group.html) applications). The value tells the min size calculation routine where this part does not change size in width or height (1 for it does not, 0 for it does), so the routine does not try to expand or contract the part.
+   Sets the minimum size calculation. See the `edje_object_size_min_calc()` and `edje_object_size_min_restricted_calc()` functions of the Edje Object Geometry API (in [mobile](../../../api/mobile/latest/group__Edje__Object__Geometry__Group.html) and [wearable](../../../api/wearable/latest/group__Edje__Object__Geometry__Group.html) applications). The value tells the min size calculation routine where this part does not change size in width or height (1 for it does not, 0 for it does), so the routine does not try to expand or contract the part.
 
   - `min [width] [height] or SOURCE`
 
@@ -853,7 +853,7 @@ part {
         }
         ```
 
-        The `fill` block is an optional block that defines the way an `image` part is going to be displayed inside its container. It can be used for tiling (repeating the image) or displaying only part of an image. For more information, see the `evas_object_image_fill_set()` function of the Image Object Functions API (in [mobile](http://org.tizen.native.mobile.apireference/group__Evas__Object__Image.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Evas__Object__Image.html) applications).
+        The `fill` block is an optional block that defines the way an `image` part is going to be displayed inside its container. It can be used for tiling (repeating the image) or displaying only part of an image. For more information, see the `evas_object_image_fill_set()` function of the Image Object Functions API (in [mobile](../../../api/mobile/latest/group__Evas__Object__Image.html) and [wearable](../../../api/wearable/latest/group__Evas__Object__Image.html) applications).
 
         - `smooth [0 or 1]`
 
@@ -1017,7 +1017,7 @@ part {
       - `stack`
       - `some_other_custom_layout_set_by_the_application`
 
-        Set a custom layout as a fallback. For more information, see the `edje_box_layout_register()` function in the Edje Box Part API (in [mobile](http://org.tizen.native.mobile.apireference/group__Edje__Part__Box.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Edje__Part__Box.html) applications). If an unregistered layout is used, it defaults to `horizontal`.
+        Set a custom layout as a fallback. For more information, see the `edje_box_layout_register()` function in the Edje Box Part API (in [mobile](../../../api/mobile/latest/group__Edje__Part__Box.html) and [wearable](../../../api/wearable/latest/group__Edje__Part__Box.html) applications). If an unregistered layout is used, it defaults to `horizontal`.
 
     - `align [horizontal][vertical]`
 
@@ -1107,7 +1107,7 @@ part {
 
     - `perspective_on [1 or 0]`
 
-      Enables perspective when rotating even without a perspective point object. This uses a perspective set for the object itself or for the canvas as a whole as the global perspective with the `edje_perspective_set()` and `edje_perspective_global_set()` functions of the Edje Perspective API (in [mobile](http://org.tizen.native.mobile.apireference/group__Edje__Perspective.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Edje__Perspective.html) applications).
+      Enables perspective when rotating even without a perspective point object. This uses a perspective set for the object itself or for the canvas as a whole as the global perspective with the `edje_perspective_set()` and `edje_perspective_global_set()` functions of the Edje Perspective API (in [mobile](../../../api/mobile/latest/group__Edje__Perspective.html) and [wearable](../../../api/wearable/latest/group__Edje__Perspective.html) applications).
 
     - `color [point][red] [green][blue] [alpha]`
 

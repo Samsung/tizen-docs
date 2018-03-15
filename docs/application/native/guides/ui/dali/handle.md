@@ -3,7 +3,7 @@
 
 DALi widely adopts the handle/body pattern (also known as the pimpl pattern), which separates the implementation details (body class) from its interface (handle class).
 
-The `Dali::BaseHandle` class (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1BaseHandle.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1BaseHandle.html) applications) is a base class for handle classes in DALi. It additionally provides smart-pointer semantics, which manage internal objects with reference counts. Most of the classes in the DALi public API are handle classes, which means they inherit from the `Dali::BaseHandle` class.
+The `Dali::BaseHandle` class (in [mobile](../../../api/mobile/latest/classDali_1_1BaseHandle.html) and [wearable](../../../api/wearable/latest/classDali_1_1BaseHandle.html) applications) is a base class for handle classes in DALi. It additionally provides smart-pointer semantics, which manage internal objects with reference counts. Most of the classes in the DALi public API are handle classes, which means they inherit from the `Dali::BaseHandle` class.
 
 The handle/body pattern structure is beneficial for both DALi users and developers:
 

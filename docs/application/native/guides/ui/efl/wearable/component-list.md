@@ -4,7 +4,7 @@ This feature is supported in wearable applications only.
 
 The list is a very simple UI component used to manage a limited number of items. For lists with a lot of items, use the [Genlist](component-genlist.md).
 
-For more information, see the [List](../../../../../org.tizen.native.wearable.apireference/group__Elm__List.html) API.
+For more information, see the [List](../../../../api/wearable/latest/group__Elm__List.html) API.
 
 **Figure: List component**
 

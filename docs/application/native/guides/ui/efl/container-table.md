@@ -1,6 +1,6 @@
 # Table
 
-The table container acts like a box container, but with 2 dimensions. It provides the same kind of APIs as a box. An item inside a table can span multiple columns and rows, and even overlap with other items. For more information, see the Table API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Elm__Table.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Elm__Table.html) applications).
+The table container acts like a box container, but with 2 dimensions. It provides the same kind of APIs as a box. An item inside a table can span multiple columns and rows, and even overlap with other items. For more information, see the Table API (in [mobile](../../../api/mobile/latest/group__Elm__Table.html) and [wearable](../../../api/wearable/latest/group__Elm__Table.html) applications).
 
 **Figure: Table component structure**
 

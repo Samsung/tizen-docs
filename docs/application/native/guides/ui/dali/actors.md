@@ -18,8 +18,8 @@ For additional actor usage examples, see [Actor Layout Examples](layout.md#examp
 An actor has the following concrete types:
 
 - **UI Components** are used to organize the application appearance. For more information, see [UI Components](ui-components.md).
-- **Camera actor** determines which view of the whole virtual 3D world is rendered on the screen. By default, it is best suited for 2D applications, so you do not need to care about it in this case. For more information, see the `Dali::CameraActor` class (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1CameraActor.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1CameraActor.html) applications).
-- **Layer** provides a mechanism for overlaying groups of actors on top of each other. For more information, see the `Dali::Layer` class (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1Layer.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1Layer.html) applications).
+- **Camera actor** determines which view of the whole virtual 3D world is rendered on the screen. By default, it is best suited for 2D applications, so you do not need to care about it in this case. For more information, see the `Dali::CameraActor` class (in [mobile](../../../api/mobile/latest/classDali_1_1CameraActor.html) and [wearable](../../../api/wearable/latest/classDali_1_1CameraActor.html) applications).
+- **Layer** provides a mechanism for overlaying groups of actors on top of each other. For more information, see the `Dali::Layer` class (in [mobile](../../../api/mobile/latest/classDali_1_1Layer.html) and [wearable](../../../api/wearable/latest/classDali_1_1Layer.html) applications).
 
 ## Adding an Actor to the Stage
 

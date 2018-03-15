@@ -40,7 +40,7 @@ Implementing your application consists of:
 
 - **Coding applications**
 
-  Code your application in the Tizen Studio using the namespaces defined in the Native API Reference (in [mobile](../../../../org.tizen.native.mobile.apireference/modules.html) and [wearable](../../../../org.tizen.native.wearable.apireference/modules.html) applications).
+  Code your application in the Tizen Studio using the namespaces defined in the Native API Reference (in [mobile](../../api/mobile/latest/modules.html) and [wearable](../../api/wearable/latest/modules.html) applications).
 
 If needed, update the privileges of the application.
 

@@ -1,6 +1,6 @@
 # Progressbar
 
-The progressbar UI component displays the progress status of a given job. For more information, see the [Progressbar](../../../../../org.tizen.native.mobile.apireference/group__Elm__Progressbar.html) API.
+The progressbar UI component displays the progress status of a given job. For more information, see the [Progressbar](../../../../api/mobile/latest/group__Elm__Progressbar.html) API.
 
 This feature is supported in mobile applications only.
 

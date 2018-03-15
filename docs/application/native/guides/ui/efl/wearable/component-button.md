@@ -4,7 +4,7 @@ This feature is supported in wearable applications only.
 
 The button component is a simple push button, which is composed of a label icon and an icon object. The button supports the autorepeat feature.
 
-For more information, see the [Button](../../../../../org.tizen.native.wearable.apireference/group__Elm__Button.html) API.
+For more information, see the [Button](../../../../api/wearable/latest/group__Elm__Button.html) API.
 
 **Figure: Button component**
 

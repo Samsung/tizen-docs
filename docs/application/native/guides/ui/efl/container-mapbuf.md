@@ -6,7 +6,7 @@ The content object is treated as a single image by the Evas map. If you have a c
 
 The mapbuf component inherits from the container component, which means that container functions can be used on the mapbuf component. The mapbuf component emits no signals.
 
-For more information, see the Mapbuf API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Elm__Mapbuf.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Elm__Mapbuf.html) applications).
+For more information, see the Mapbuf API (in [mobile](../../../api/mobile/latest/group__Elm__Mapbuf.html) and [wearable](../../../api/wearable/latest/group__Elm__Mapbuf.html) applications).
 
 **Figure: Mapbuf hierarchy**
 

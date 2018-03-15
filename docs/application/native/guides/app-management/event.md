@@ -26,7 +26,7 @@ The application can be suspended while in the background, causing a pause in eve
 
 To enable your application to use the event functionality:
 
-1. To use the functions and data types of the Event API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__EVENT__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__EVENT__MODULE.html) applications), include the `<app_event.h>` header file in your application:
+1. To use the functions and data types of the Event API (in [mobile](../../api/mobile/latest/group__CAPI__EVENT__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__EVENT__MODULE.html) applications), include the `<app_event.h>` header file in your application:
 
    ```
    #include <app_event.h>

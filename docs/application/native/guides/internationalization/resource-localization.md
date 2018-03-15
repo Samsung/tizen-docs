@@ -1,7 +1,7 @@
 # Resource Localization
 
 
-Tizen provides localized resources to make your application usable for different countries. The localization is based on the Internationalization API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__I18N__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__I18N__MODULE.html) applications), which makes strings translatable and places them in `.po` (portable object) files.
+Tizen provides localized resources to make your application usable for different countries. The localization is based on the Internationalization API (in [mobile](../../api/mobile/latest/group__CAPI__I18N__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__I18N__MODULE.html) applications), which makes strings translatable and places them in `.po` (portable object) files.
 
 > **Note**  
 > The `.po` files must be placed in the `res/po` directory of the application. The files can be edited using the [PO file editor](../../../tizen-studio/native-tools/po-file-editor.md) provided by the Tizen Studio.The `.po` file is compiled into a `.mo` file, and the `.mo` file name is defined using the project name that you define when you create the project in the Tizen Studio. The application ID is made based on the project name, and the framework finds the application `.mo` file based on the application ID.Be careful if you change the application ID in the Tizen manifest editor later, because the `.mo` file name is not automatically changed, and problems can occur when getting the string resources.

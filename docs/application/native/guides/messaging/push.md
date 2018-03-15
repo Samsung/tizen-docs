@@ -67,7 +67,7 @@ The following steps illustrate a typical scenario for using the push messaging s
 
 To enable your application to use the push functionality:
 
-1. To use the Push API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MESSAGING__PUSH__PUBLIC__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MESSAGING__PUSH__PUBLIC__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the Push API (in [mobile](../../api/mobile/latest/group__CAPI__MESSAGING__PUSH__PUBLIC__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MESSAGING__PUSH__PUBLIC__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```
    <privileges>

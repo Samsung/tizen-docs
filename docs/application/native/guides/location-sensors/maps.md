@@ -130,7 +130,7 @@ Each event contains various data, and you can access the data with various `maps
 
 To enable your application to use the map service functionality:
 
-1. To use the Maps Service API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MAPS__SERVICE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MAPS__SERVICE__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the Maps Service API (in [mobile](../../api/mobile/latest/group__CAPI__MAPS__SERVICE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MAPS__SERVICE__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -146,7 +146,7 @@ To enable your application to use the map service functionality:
    #include <maps_service.h>
    ```
 
-3. To use the functions and data types of the View API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MAPS__VIEW__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MAPS__VIEW__MODULE.html) applications), include the `<maps_view.h>` header file in your application:
+3. To use the functions and data types of the View API (in [mobile](../../api/mobile/latest/group__CAPI__MAPS__VIEW__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MAPS__VIEW__MODULE.html) applications), include the `<maps_view.h>` header file in your application:
 
    ```
    #include <maps_view.h>
@@ -208,7 +208,7 @@ To start using the map service:
     const bool is_routing_waypoints_supported = (error == MAPS_ERROR_NONE) ? supported : false;
     ```
 
-	To check for the availability of other services, follow the same approach using the keys from the `maps_service_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MAPS__SERVICE__AND__PREFERENCE__MODULE.html#ga8afd98ceb094d4c3edaf603051a69f8e) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MAPS__SERVICE__AND__PREFERENCE__MODULE.html#ga8afd98ceb094d4c3edaf603051a69f8e) applications).
+	To check for the availability of other services, follow the same approach using the keys from the `maps_service_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__MAPS__SERVICE__AND__PREFERENCE__MODULE.html#ga8afd98ceb094d4c3edaf603051a69f8e) and [wearable](../../api/wearable/latest/group__CAPI__MAPS__SERVICE__AND__PREFERENCE__MODULE.html#ga8afd98ceb094d4c3edaf603051a69f8e) applications).
 
 5. Optionally, check which data features are available for the desired services using the `maps_service_provider_is_data_supported()` function:
 
@@ -232,7 +232,7 @@ To start using the map service:
         /* Use segment maneuvers */
     ```
 
-	To check the availability of other data features, follow the same approach using the keys from the `maps_service_data_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MAPS__SERVICE__AND__PREFERENCE__MODULE.html#ga8f22bd07fe9300b3f3f1c74e83f1e272) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MAPS__SERVICE__AND__PREFERENCE__MODULE.html#ga8f22bd07fe9300b3f3f1c74e83f1e272) applications).
+	To check the availability of other data features, follow the same approach using the keys from the `maps_service_data_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__MAPS__SERVICE__AND__PREFERENCE__MODULE.html#ga8f22bd07fe9300b3f3f1c74e83f1e272) and [wearable](../../api/wearable/latest/group__CAPI__MAPS__SERVICE__AND__PREFERENCE__MODULE.html#ga8f22bd07fe9300b3f3f1c74e83f1e272) applications).
 
 6. Set general preferences, such as language and distance units, using the `maps_service_set_preference()` function:
 
@@ -978,7 +978,7 @@ If your map provider requires any specific preferences, use the `maps_preference
 
 To use the map view:
 
-1. Before you use the View API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MAPS__VIEW__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MAPS__VIEW__MODULE.html) applications), create a map view instance using the `maps_view_create()` function:
+1. Before you use the View API (in [mobile](../../api/mobile/latest/group__CAPI__MAPS__VIEW__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MAPS__VIEW__MODULE.html) applications), create a map view instance using the `maps_view_create()` function:
 
     ```
     maps_view_h maps_view = NULL;
@@ -992,7 +992,7 @@ To use the map view:
 
 2. Set the map view properties:
 
-   - Set the map view type with the `maps_view_set_type()` function.For other available types, see the `_maps_view_type_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MAPS__VIEW__MODULE.html#ga379898d515d81cf500a814571524f106) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MAPS__VIEW__MODULE.html#ga379898d515d81cf500a814571524f106) applications).
+   - Set the map view type with the `maps_view_set_type()` function.For other available types, see the `_maps_view_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__MAPS__VIEW__MODULE.html#ga379898d515d81cf500a814571524f106) and [wearable](../../api/wearable/latest/group__CAPI__MAPS__VIEW__MODULE.html#ga379898d515d81cf500a814571524f106) applications).
 
     ```
     error = maps_view_set_type(maps_view, MAPS_VIEW_TYPE_NORMAL);
@@ -1095,7 +1095,7 @@ To use the map view:
 You can create polyline, polygon, and marker objects for the map view.
 
 > **Note**  
-> Before you use the View Object API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MAPS__VIEW__OBJECT__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MAPS__VIEW__OBJECT__MODULE.html) applications), create a map view object instance.
+> Before you use the View Object API (in [mobile](../../api/mobile/latest/group__CAPI__MAPS__VIEW__OBJECT__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MAPS__VIEW__OBJECT__MODULE.html) applications), create a map view object instance.
 
 To create a map view object:
 
@@ -1194,7 +1194,7 @@ To handle map view events:
 
 
 
-2. Within the callback, access the event data with various `maps_view_event_data_get_XXX()` functions of the View Event Data API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MAPS__VIEW__EVENT__DATA__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MAPS__VIEW__EVENT__DATA__MODULE.html) applications).
+2. Within the callback, access the event data with various `maps_view_event_data_get_XXX()` functions of the View Event Data API (in [mobile](../../api/mobile/latest/group__CAPI__MAPS__VIEW__EVENT__DATA__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MAPS__VIEW__EVENT__DATA__MODULE.html) applications).
 3. When no longer needed, unset the callback with the `maps_view_unset_event_cb()` function:
 
     ```

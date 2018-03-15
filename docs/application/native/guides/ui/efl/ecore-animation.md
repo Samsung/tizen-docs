@@ -186,7 +186,7 @@ Position mappings allow you to create various non-linear changes in your animati
 When you use the animation callback function with the `ecore_animator_timeline_add()` function, the animator passes to the callback a timeline position parameter with a value between 0.0 (start) and 1.0 (end) to indicate where along the timeline the animator is running. To create a non-linear animation, you can map the position value to one of several curves and mappings using the `ecore_animator_pos_map()` function:
 
 - The first parameter is the current position value, which ranges from 0.0 to 1.0.
-- The second parameter is the position mapping you want to apply, defined with the `_Ecore_Pos_Map` enumerator (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Ecore__Animator__Group.html#ga2db0d0f0f3973829c7f700e5af3e041c) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Ecore__Animator__Group.html#ga2db0d0f0f3973829c7f700e5af3e041c) applications).
+- The second parameter is the position mapping you want to apply, defined with the `_Ecore_Pos_Map` enumerator (in [mobile](../../../api/mobile/latest/group__Ecore__Animator__Group.html#ga2db0d0f0f3973829c7f700e5af3e041c) and [wearable](../../../api/wearable/latest/group__Ecore__Animator__Group.html#ga2db0d0f0f3973829c7f700e5af3e041c) applications).
 - The third (`v1`) and fourth (`v2`) parameters are specific to the chosen position mapping, and provide additional configuration for it.
 
 The following table lists the supported position mappings, and describes how the third (`v1`) and fourth (`v2`) parameters of the `ecore_animator_pos_map()` function are used with each mapping.

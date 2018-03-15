@@ -44,7 +44,7 @@ To obtain the information, query a feature or system key.
 
 ## Prerequisites
 
-To use the functions and data types of the System Information API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html) applications), include the `<system_info.h>` header file in your application:
+To use the functions and data types of the System Information API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html) applications), include the `<system_info.h>` header file in your application:
 
 ```
 #include <system_info.h>

@@ -33,7 +33,7 @@ The main features of the Wi-Fi Direct API include:
 
 To enable your application to use the Wi-Fi Direct functionality:
 
-1. To use the [Wi-Fi Direct](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__WIFI__DIRECT__MODULE.html) API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the [Wi-Fi Direct](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__DIRECT__MODULE.html) API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```
    <privileges>

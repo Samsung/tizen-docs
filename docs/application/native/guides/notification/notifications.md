@@ -113,7 +113,7 @@ The following notification layouts are provided:
 
 To enable your application to use the notification functionality:
 
-1. To use the Notification API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__NOTIFICATION__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__NOTIFICATION__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the Notification API (in [mobile](../../api/mobile/latest/group__NOTIFICATION__MODULE.html) and [wearable](../../api/wearable/latest/group__NOTIFICATION__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -144,7 +144,7 @@ To enable your application to use the notification functionality:
 
 Initialize a notification handle by calling the `notification_create()` function.
 
-The parameter is the notification type, whose possible values are listed in the `_notification_type` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__NOTIFICATION__MODULE.html#ga0809cf2728f6e60d54ba8ddf9aa7db20) and [wearable](../../../../org.tizen.native.wearable.apireference/group__NOTIFICATION__MODULE.html#ga0809cf2728f6e60d54ba8ddf9aa7db20) applications).
+The parameter is the notification type, whose possible values are listed in the `_notification_type` enumeration (in [mobile](../../api/mobile/latest/group__NOTIFICATION__MODULE.html#ga0809cf2728f6e60d54ba8ddf9aa7db20) and [wearable](../../api/wearable/latest/group__NOTIFICATION__MODULE.html#ga0809cf2728f6e60d54ba8ddf9aa7db20) applications).
 
 ```
 notification = notification_create(NOTIFICATION_TYPE_NOTI);
@@ -161,7 +161,7 @@ You can set the following attributes for a notification:
 
   To set the text (title and content string) to display in the notification view, use the `notification_set_text()` function.
 
-  The second parameter defines the notification type, whose possible values are listed in the `_notification_text_type` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__NOTIFICATION__MODULE.html#ga1b932c18e0430b4cd3a09da98d1fb41b) and [wearable](../../../../org.tizen.native.wearable.apireference/group__NOTIFICATION__MODULE.html#ga1b932c18e0430b4cd3a09da98d1fb41b) applications).
+  The second parameter defines the notification type, whose possible values are listed in the `_notification_text_type` enumeration (in [mobile](../../api/mobile/latest/group__NOTIFICATION__MODULE.html#ga1b932c18e0430b4cd3a09da98d1fb41b) and [wearable](../../api/wearable/latest/group__NOTIFICATION__MODULE.html#ga1b932c18e0430b4cd3a09da98d1fb41b) applications).
 
   ```
   int ret =0;
@@ -190,7 +190,7 @@ You can set the following attributes for a notification:
 
   To set the image to display in the notification view, use the `notification_set_image()` function.
 
-  The second parameter defines the notification image type, whose possible values are listed in the `_notification_image_type` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__NOTIFICATION__MODULE.html#gaa285a3f74abc58d1cb0b78f0bfd09ed5) and [wearable](../../../../org.tizen.native.wearable.apireference/group__NOTIFICATION__MODULE.html#gaa285a3f74abc58d1cb0b78f0bfd09ed5) applications).
+  The second parameter defines the notification image type, whose possible values are listed in the `_notification_image_type` enumeration (in [mobile](../../api/mobile/latest/group__NOTIFICATION__MODULE.html#gaa285a3f74abc58d1cb0b78f0bfd09ed5) and [wearable](../../api/wearable/latest/group__NOTIFICATION__MODULE.html#gaa285a3f74abc58d1cb0b78f0bfd09ed5) applications).
 
   ```
   ret = notification_set_image(notification, NOTIFICATION_IMAGE_TYPE_ICON, image_path);
@@ -202,7 +202,7 @@ You can set the following attributes for a notification:
 
   To set how applications display the notification, use the `notification_set_display_applist()` function.
 
-  The second parameter defines the notification display option, whose possible values are listed in the `_notification_display_applist` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__NOTIFICATION__MODULE.html#ga12754b4babd618f4870d9fb2904e19ae) and [wearable](../../../../org.tizen.native.wearable.apireference/group__NOTIFICATION__MODULE.html#ga12754b4babd618f4870d9fb2904e19ae) applications). You can set multiple options with the "|" pipe operation.
+  The second parameter defines the notification display option, whose possible values are listed in the `_notification_display_applist` enumeration (in [mobile](../../api/mobile/latest/group__NOTIFICATION__MODULE.html#ga12754b4babd618f4870d9fb2904e19ae) and [wearable](../../api/wearable/latest/group__NOTIFICATION__MODULE.html#ga12754b4babd618f4870d9fb2904e19ae) applications). You can set multiple options with the "|" pipe operation.
 
   ```
   ret = notification_set_display_applist(notification,
@@ -215,7 +215,7 @@ You can set the following attributes for a notification:
 
   To set the LED options for a notification, use the `notification_set_led()` and `notification_set_led_time_period()` functions:
 
-  - The `notification_set_led()` function sets the LED operation. The second parameter defines the LED notification, whose values are listed in the `_notification_led_op` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__NOTIFICATION__MODULE.html#gaa96099d9bff211107f6b200eeb92e1d9) and [wearable](../../../../org.tizen.native.wearable.apireference/group__NOTIFICATION__MODULE.html#gaa96099d9bff211107f6b200eeb92e1d9) applications).
+  - The `notification_set_led()` function sets the LED operation. The second parameter defines the LED notification, whose values are listed in the `_notification_led_op` enumeration (in [mobile](../../api/mobile/latest/group__NOTIFICATION__MODULE.html#gaa96099d9bff211107f6b200eeb92e1d9) and [wearable](../../api/wearable/latest/group__NOTIFICATION__MODULE.html#gaa96099d9bff211107f6b200eeb92e1d9) applications).
   - The `notification_set_led_time_period()` function sets the time period when the LED is switched on and off (second and third parameters).
 
   ```
@@ -232,7 +232,7 @@ You can set the following attributes for a notification:
 
   To set a notification property, use the `notification_set_property()` function.
 
-  The second parameter defines the notification property, whose possible values are listed in the `_notification_property` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__NOTIFICATION__MODULE.html#ga70f1e4c6f3d36e09d0a9bdff7d6807c3) and [wearable](../../../../org.tizen.native.wearable.apireference/group__NOTIFICATION__MODULE.html#ga70f1e4c6f3d36e09d0a9bdff7d6807c3) applications). You can set multiple properties with the "|" pipe operation.
+  The second parameter defines the notification property, whose possible values are listed in the `_notification_property` enumeration (in [mobile](../../api/mobile/latest/group__NOTIFICATION__MODULE.html#ga70f1e4c6f3d36e09d0a9bdff7d6807c3) and [wearable](../../api/wearable/latest/group__NOTIFICATION__MODULE.html#ga70f1e4c6f3d36e09d0a9bdff7d6807c3) applications). You can set multiple properties with the "|" pipe operation.
 
   ```
   ret = notification_set_property(notification, NOTIFICATION_PROP_DISABLE_APP_LAUNCH);
@@ -244,9 +244,9 @@ You can set the following attributes for a notification:
 
   To add a button on the active notification, use the `notification_add_button()` and `notification_set_event_handler()` functions:
 
-  - The `notification_add_button()` adds the button. The second parameter defines the button index, whose possible values are listed in the `_notification_button_index` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__NOTIFICATION__MODULE.html#ga2b8eaa47c666ec055def59c32eab419b) and [wearable](../../../../org.tizen.native.wearable.apireference/group__NOTIFICATION__MODULE.html#ga2b8eaa47c666ec055def59c32eab419b) applications).
+  - The `notification_add_button()` adds the button. The second parameter defines the button index, whose possible values are listed in the `_notification_button_index` enumeration (in [mobile](../../api/mobile/latest/group__NOTIFICATION__MODULE.html#ga2b8eaa47c666ec055def59c32eab419b) and [wearable](../../api/wearable/latest/group__NOTIFICATION__MODULE.html#ga2b8eaa47c666ec055def59c32eab419b) applications).
 
-  - The `notification_set_event_handler()` function defines the application control that launches the application at the button click. The third parameter defines the app control handle, whose possible values are listed in the `_notification_event_type`enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__NOTIFICATION__MODULE.html#ga38d5cdc16c56dbe88d821995f82b0799) and [wearable](../../../../org.tizen.native.wearable.apireference/group__NOTIFICATION__MODULE.html#ga38d5cdc16c56dbe88d821995f82b0799) applications).
+  - The `notification_set_event_handler()` function defines the application control that launches the application at the button click. The third parameter defines the app control handle, whose possible values are listed in the `_notification_event_type`enumeration (in [mobile](../../api/mobile/latest/group__NOTIFICATION__MODULE.html#ga38d5cdc16c56dbe88d821995f82b0799) and [wearable](../../api/wearable/latest/group__NOTIFICATION__MODULE.html#ga38d5cdc16c56dbe88d821995f82b0799) applications).
 
     ```
     noti_err = notification_add_button(noti, NOTIFICATION_BUTTON_1);

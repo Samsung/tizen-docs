@@ -22,7 +22,7 @@ The main features of the YACA API include:
 
 To enable your application to use the YACA functionality:
 
-1. To use the functions and data types of the YACA API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__YACA__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__YACA__MODULE.html) applications), include the `<yaca_crypto.h>`, `<yaca_error.h>`, `<yaca_key.h>`, `<yaca_digest.h>`, `<yaca_encrypt.h>`, `<yaca_seal.h>`, `<yaca_sign.h>`, and `<yaca_simple.h>` header files in your application:
+1. To use the functions and data types of the YACA API (in [mobile](../../api/mobile/latest/group__CAPI__YACA__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__YACA__MODULE.html) applications), include the `<yaca_crypto.h>`, `<yaca_error.h>`, `<yaca_key.h>`, `<yaca_digest.h>`, `<yaca_encrypt.h>`, `<yaca_seal.h>`, `<yaca_sign.h>`, and `<yaca_simple.h>` header files in your application:
 
    ```
    /* Needed for general operations */

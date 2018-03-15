@@ -22,19 +22,19 @@ The main features of the StreamRecorder API include:
     - Video: `mp4` and `3gp`
     - Audio: `amr` and `aac`
 
-    The supported file formats are defined in the `streamrecorder_file_format_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gadb3d70e90207c780e1473785a712d90d) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gadb3d70e90207c780e1473785a712d90d) applications).
+    The supported file formats are defined in the `streamrecorder_file_format_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gadb3d70e90207c780e1473785a712d90d) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gadb3d70e90207c780e1473785a712d90d) applications).
 
   - Video codec for encoding a video stream
 
     To set the video codec for encoding a video stream, use the `streamrecorder_set_video_encoder()` function.
 
-    The available video codecs are defined in the `streamrecorder_video_codec_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gae2912d9eceeac43640efa52f96556473) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gae2912d9eceeac43640efa52f96556473) applications).
+    The available video codecs are defined in the `streamrecorder_video_codec_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gae2912d9eceeac43640efa52f96556473) and [wearable](../../.api/wearable/latest/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gae2912d9eceeac43640efa52f96556473) applications).
 
   - Audio codec for encoding an audio stream
 
     To set the audio codec for encoding an audio stream, use the `streamrecorder_set_audio_encoder()` function.
 
-    The available audio codecs are defined in the `streamrecorder_audio_codec_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga46f244622314395be47eddb8d84fabd2) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga46f244622314395be47eddb8d84fabd2) applications).
+    The available audio codecs are defined in the `streamrecorder_audio_codec_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga46f244622314395be47eddb8d84fabd2) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga46f244622314395be47eddb8d84fabd2) applications).
 
 - Managing recording details
 
@@ -65,7 +65,7 @@ The stream recorder functions serve as the interface with the software. Input is
 
 To enable your application to use the stream recorder functionality:
 
-1. To use the functions and data types of the StreamRecorder API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html) applications), include the `<streamrecorder.h>` header file in your application:
+1. To use the functions and data types of the StreamRecorder API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html) applications), include the `<streamrecorder.h>` header file in your application:
 
    ```
    #include <streamrecorder.h>
@@ -96,7 +96,7 @@ To enable your application to use the stream recorder functionality:
 
    You can get the stream recorder state using the `streamrecorder_get_state()` function after the handle is created.
 
-4. To enable video recording using a live buffer as a source, you have to call the `streamrecorder_enable_source_buffer()` function. Additionally, you can enable other types of sources with the `streamrecorder_source_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga1d4c1835d2b7357850bdf706dd58b97e) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga1d4c1835d2b7357850bdf706dd58b97e)applications).
+4. To enable video recording using a live buffer as a source, you have to call the `streamrecorder_enable_source_buffer()` function. Additionally, you can enable other types of sources with the `streamrecorder_source_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga1d4c1835d2b7357850bdf706dd58b97e) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga1d4c1835d2b7357850bdf706dd58b97e)applications).
 
     ```
     /* Set the video source as live buffer to be used for recording */
@@ -193,7 +193,7 @@ To get and set information about video and audio encoding:
 <a name="packet"></a>
 ## Creating a Media Packet
 
-When the stream recorder is configured, create the media packet using the raw data from the source with the Media Tool API functions (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__TOOL__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__TOOL__MODULE.html) applications).
+When the stream recorder is configured, create the media packet using the raw data from the source with the Media Tool API functions (in [mobile](../../api/wearable/latest/group__CAPI__MEDIA__TOOL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__TOOL__MODULE.html) applications).
 
 ```
 /* Create media packet to be passed to the push stream buffer API */

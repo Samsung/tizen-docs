@@ -137,7 +137,7 @@ The animations change the target property in a Linear way, to configure this an 
 
 Alpha functions are used in animations to specify the rate of change of the animation parameter over time.<br>
 This allows the animation to be, for example, accelerated, decelerated, repeated, or bounced.<br>
-The built-in supported functions can be viewed in the `Dali::AlphaFunction::BuiltinFunction` enumeration (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1AlphaFunction.html#aacf7780cdb2077166a3cd20a8a9faf4b) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1AlphaFunction.html#aacf7780cdb2077166a3cd20a8a9faf4b) applications).
+The built-in supported functions can be viewed in the `Dali::AlphaFunction::BuiltinFunction` enumeration (in [mobile](../../../api/mobile/latest/classDali_1_1AlphaFunction.html#aacf7780cdb2077166a3cd20a8a9faf4b) and [wearable](../../../api/wearable/latest/classDali_1_1AlphaFunction.html#aacf7780cdb2077166a3cd20a8a9faf4b) applications).
 
 An example of setting an Ease In alpha function for all attached functions :
 ```

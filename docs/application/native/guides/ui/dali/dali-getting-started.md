@@ -108,7 +108,7 @@ To create a 'Hello World' application with Dali:
 
      Other code samples in the Tizen DALi documentation assume they already have those directives.
 
-   - The `Dali::Application` class (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1Application.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1Application.html) applications) initializes and sets up DALi.
+   - The `Dali::Application` class (in [mobile](../../../api/mobile/latest/classDali_1_1Application.html) and [wearable](../../../api/wearable/latest/classDali_1_1Application.html) applications) initializes and sets up DALi.
 
      Create a `Dali::Application` instance:
 
@@ -118,7 +118,7 @@ To create a 'Hello World' application with Dali:
 
    - Several signals can be connected to keep you informed when certain platform-related activities occur, and ensure that, upon system events, DALi is called in a thread-safe manner.
 
-     To manage signal connection safely, DALi provides the `Dali::ConnectionTracker` class (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1ConnectionTracker.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1ConnectionTracker.html) applications). A typical way for starting a DALi application is to create a class derived from the `Dali::ConnectionTracker` class and use its member functions as callback functions for DALi signals (for more information, see [Automatic Connection Management](event-handling.md#automatic)). The `HelloWorldExample` class is used in other code samples in the Tizen DALi documentation.
+     To manage signal connection safely, DALi provides the `Dali::ConnectionTracker` class (in [mobile](../../../api/mobile/latest/classDali_1_1ConnectionTracker.html) and [wearable](../../../api/wearable/latest/classDali_1_1ConnectionTracker.html) applications). A typical way for starting a DALi application is to create a class derived from the `Dali::ConnectionTracker` class and use its member functions as callback functions for DALi signals (for more information, see [Automatic Connection Management](event-handling.md#automatic)). The `HelloWorldExample` class is used in other code samples in the Tizen DALi documentation.
 
      After getting the initialized signal from the `Dali::Application` instance, you can use the DALi APIs for building the scene graph. Connect the `HelloWorldExample::Create()` callback to the `DALi::Application::InitSignal()` function:
 
@@ -128,7 +128,7 @@ To create a 'Hello World' application with Dali:
 
 3. Create an actor and add it to the stage:
 
-   The `Dali::Toolkit::TextLabel` UI component (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1Toolkit_1_1TextLabel.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1Toolkit_1_1TextLabel.html) applications) renders a short text string. To display the `TextLabel` component, add it to a stage. The `stage` instance is a singleton object (the only instance of its class during the lifetime of the program), so you can get it using a static function.
+   The `Dali::Toolkit::TextLabel` UI component (in [mobile](../../../api/mobile/latest/classDali_1_1Toolkit_1_1TextLabel.html) and [wearable](../../../api/wearable/latest/classDali_1_1Toolkit_1_1TextLabel.html) applications) renders a short text string. To display the `TextLabel` component, add it to a stage. The `stage` instance is a singleton object (the only instance of its class during the lifetime of the program), so you can get it using a static function.
 
    ```
    Stage stage = Stage::GetCurrent();
@@ -155,7 +155,7 @@ To create a 'Hello World' application with Dali:
 
    Any key inputs and touches on the stage are handled by 2 callback functions, `HelloWorldExample::OnKeyEvent` and `HelloWorldExample::OnTouch`.
 
-   Note that the first parameter of the `HelloWorldExample::OnTouch` callback (`actor`) is passed by a value, not by a reference or a pointer. You can simply pass instances of most DALi classes by value, when the class inherits from the `Dali::BaseHandle` class (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1BaseHandle.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1BaseHandle.html) applications). This is due to the [handle/body pattern](handle.md) widely used in DALi.
+   Note that the first parameter of the `HelloWorldExample::OnTouch` callback (`actor`) is passed by a value, not by a reference or a pointer. You can simply pass instances of most DALi classes by value, when the class inherits from the `Dali::BaseHandle` class (in [mobile](../../../api/mobile/latest/classDali_1_1BaseHandle.html) and [wearable](../../../api/wearable/latest/classDali_1_1BaseHandle.html) applications). This is due to the [handle/body pattern](handle.md) widely used in DALi.
 
    ```
    bool OnTouch( Actor actor, const TouchData& touch )
