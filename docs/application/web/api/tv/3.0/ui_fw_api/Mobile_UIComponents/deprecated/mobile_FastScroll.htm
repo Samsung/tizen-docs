@@ -1,0 +1,505 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Fast Scroll</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+<h1>Fast Scroll</h1>
+
+<p>The fast scroll component shows a shortcut list that is bound to its parent scroll bar and list view.</p>
+
+<p>The fast scroll component jumps the scroll view to the selected list divider. If you move the mouse over the shortcut column, the scroll view is moved to the list divider matching the text currently under the mouse cursor. A pop-up containing the text is also displayed.</p>
+
+<table class="note deprecated">
+        <tbody>
+                <tr>
+                        <th class="note deprecated">Note</th>
+                </tr>
+                <tr>
+                        <td class="note deprecated">This component has been <span class="deprecated">DEPRECATED since <b>Tizen 2.4</b></span> and will be <i>deleted in Tizen 3.0.</i><br>
+To support Backward compatibility, please import tau.support-2.3.js.</td>
+                </tr>
+                <tr>
+                        <td class="note deprecated">Since 2.4, to use FastScroll component, please refer <a href="../mobile_IndexScrollBar.htm">IndexScrollbar</a> Component.
+                </tr>
+        </tbody>
+</table>
+
+<p>To use the fast scroll component, add the <code>data-fastscroll="true"</code> attribute to a list view.</p>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+		<li><a href="#default-selectors0.7051363934297115">Default Selectors</a></li>
+
+        <li><a href="#html-examples">Manual Constructor</a></li>
+
+		<li><a href="#options0.5842249826528132">Options</a></li>
+
+		<li><a href="#events-list">Events</a></li>
+
+        <li><a href="#methods0.6541752116754651">Methods</a></li>
+
+</ol>
+
+<h2><a id="default-selectors0.7051363934297115"></a>Default Selectors</h2>
+
+<p>By default, all list view elements (<code>data-role="listview"</code>) with the <code>data-fastscroll="true"</code> attribute are displayed as fast scroll components.</p>
+
+<h2><a id="html-examples"></a>Manual Constructor</h2>
+
+<p>To manually create a fast scroll component, use the component constructor from the <code>tau</code> namespace (<strong>RECOMMENDED</strong>):</p>
+
+<pre class="prettyprint">&lt;div data-role="page" id="main"&gt;
+   &lt;div data-role="content"&gt;
+      &lt;ul id="list" data-role="listview" data-fastscroll="true"&gt;
+         &lt;li data-role="list-divider"&gt;A&lt;/li&gt;
+         &lt;li&gt;Anton&lt;/li&gt;
+         &lt;li&gt;Arabella&lt;/li&gt;
+         &lt;li data-role="list-divider"&gt;B&lt;/li&gt;
+         &lt;li&gt;Barry&lt;/li&gt;
+         &lt;li&gt;Bily&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var fastscroll = tau.widget.FastScroll(document.getElementById("list"));
+&lt;/script&gt;
+</pre>
+
+<p>If the jQuery library is loaded, you can use its method (<strong>support for backward compatibility</strong>):</p>
+
+<pre class="prettyprint">&lt;div data-role="page" id="main"&gt;
+   &lt;div data-role="content"&gt;
+      &lt;ul id="list" data-role="listview" data-fastscroll="true"&gt;
+         &lt;li data-role="list-divider"&gt;A&lt;/li&gt;
+         &lt;li&gt;Anton&lt;/li&gt;
+         &lt;li&gt;Arabella&lt;/li&gt;
+         &lt;li data-role="list-divider"&gt;B&lt;/li&gt;
+         &lt;li&gt;Barry&lt;/li&gt;
+         &lt;li&gt;Bily&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var fastscroll = $("#list").fastscroll();
+&lt;/script&gt;
+</pre>
+
+
+
+<h2><a id="options0.5842249826528132"></a>Options</h2>
+
+    <p>The following table lists the options for the fast scroll component.</p>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-fastscroll</span></td>
+				<td class="option">boolean</td>
+				<td class="option">false</td>
+				<td class="option">Sets whether the component is enabled.</td>
+			</tr>
+		
+		</tbody>
+	</table>
+
+	<h2><a id="events-list"></a>Events</h2>
+
+    <p>The following table lists the events related to the fast scroll component.</p>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Event</th>
+			<th>Description</th>
+		</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">destroyed</span></td>
+				<td><p>Triggered after the <code>destroy()</code> method is called.</p></td>
+			</tr>
+		
+		</tbody>
+	</table>
+
+<h2><a id="methods0.6541752116754651"></a>Methods</h2>
+
+<p>To call a method on the component, use the TAU API:</p>
+
+<pre class="prettyprint">&lt;div data-role="page" id="main"&gt;
+   &lt;div data-role="content"&gt;
+      &lt;ul id="contacts" data-role="listview" data-fastscroll="true"&gt;
+         &lt;li data-role="list-divider"&gt;A&lt;/li&gt;
+         &lt;li&gt;Anton&lt;/li&gt;
+         &lt;li&gt;Arabella&lt;/li&gt;
+         &lt;li data-role="list-divider"&gt;B&lt;/li&gt;
+         &lt;li&gt;Barry&lt;/li&gt;
+         &lt;li&gt;Bily&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var element = document.getElementById("contacts"),
+       contacts = tau.widget.FastScroll(element, {fastscroll: true});
+   contacts.methodName(methodArgument1, methodArgument2, ...);
+&lt;/script&gt;
+</pre>
+
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-destroy">destroy</a>() </pre>
+					</td>
+					<td><p>Destroys the component.</p></td>
+				</tr>
+			
+
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">string <a href="#method-indexString">indexString</a>(string? indexAlphabet) </pre>
+					</td>
+					<td><p>Gets or sets an index string.</p></td>
+				</tr>
+
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-refresh">refresh</a>() </pre>
+					</td>
+					<td><p>Refreshes the component.</p></td>
+				</tr>
+		</tbody>
+	</table>
+	<dl>
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-destroy">destroy</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Destroys the component.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">destroy()</pre>
+					</div>
+
+						<p><span class="version">Since: </span>
+							2.0
+						</p>
+					
+					<div class="description">
+						<p>
+							<p>This method destroys the current fast scroll component.</p>
+
+
+						</p>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div data-role="page" id="main"&gt;
+   &lt;div data-role="content"&gt;
+      &lt;ul id="list" data-role="listview" data-fastscroll="true"&gt;
+         &lt;li data-role="list-divider"&gt;A&lt;/li&gt;
+         &lt;li&gt;Anton&lt;/li&gt;
+         &lt;li&gt;Arabella&lt;/li&gt;
+         &lt;li data-role="list-divider"&gt;B&lt;/li&gt;
+         &lt;li&gt;Barry&lt;/li&gt;
+         &lt;li&gt;Bily&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var element = document.getElementById("list"),
+       fastscroll = tau.widget.FastScroll(element);
+   fastscroll.destroy();
+&lt;/script&gt;
+</pre>
+						</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div data-role="page" id="main"&gt;
+   &lt;div data-role="content"&gt;
+      &lt;ul data-role="listview" data-fastscroll="true" id="fastscroll"&gt;
+         &lt;li data-role="list-divider"&gt;A&lt;/li&gt;
+         &lt;li&gt;Anton&lt;/li&gt;
+         &lt;li&gt;Arabella&lt;/li&gt;
+         &lt;li data-role="list-divider"&gt;B&lt;/li&gt;
+         &lt;li&gt;Barry&lt;/li&gt;
+         &lt;li&gt;Bily&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   $("#list").fastscroll("destroy");
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-indexString">indexString</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Gets or sets an index string.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">?string indexString(string? indexAlphabet) </pre>
+					</div>
+					
+						<p><span class="version">Since: </span>
+							2.1
+						</p>
+					
+					<div class="description">
+						<p>
+							<p>This method manages the values to be used in the shortcut items.</p>
+
+
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">indexAlphabet</span></td>
+						<td>string</td>
+						<td>Optional</td>
+						<td></td>
+						<td>Values to be used in the shortcut items.</td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>?string</td>
+									<td>Primary and secondary languages.</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div data-role="page" id="main"&gt;
+   &lt;div data-role="content"&gt;
+      &lt;ul id="fastscroll" data-role="listview" data-fastscroll="true"&gt;
+         &lt;li data-role="list-divider"&gt;A&lt;/li&gt;
+         &lt;li&gt;Anton&lt;/li&gt;
+         &lt;li&gt;Arabella&lt;/li&gt;
+         &lt;li data-role="list-divider"&gt;B&lt;/li&gt;
+         &lt;li&gt;Barry&lt;/li&gt;
+         &lt;li&gt;Bily&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   /* Get index string */
+   var element = document.getElementById("fastscroll"),
+       fastscroll = tau.widget.FastScroll(element, {fastscroll: true});
+   fastscroll.indexString();
+
+   /* Set index string */
+   fastscroll.indexString("A,D,J,P,W,Z");
+&lt;/script&gt;
+</pre>
+						</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div data-role="page" id="main"&gt;
+   &lt;div data-role="content"&gt;
+      &lt;ul data-role="listview" data-fastscroll="true" id="fastscroll"&gt;
+         &lt;li data-role="list-divider"&gt;A&lt;/li&gt;
+         &lt;li&gt;Anton&lt;/li&gt;
+         &lt;li&gt;Arabella&lt;/li&gt;
+         &lt;li data-role="list-divider"&gt;B&lt;/li&gt;
+         &lt;li&gt;Barry&lt;/li&gt;
+         &lt;li&gt;Bily&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   $("#fastscroll").fastscroll("indexString", "A,D,J,P,W,Z");
+&lt;/script&gt;
+</pre>
+						</div>
+
+				</dd>
+
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-refresh">refresh</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Refreshes the component.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">refresh() </pre>
+					</div>
+					
+						<p><span class="version">Since: </span>
+							2.0
+						</p>
+					
+					<div class="description">
+						<p>
+							<p>The method updates and redraws the current fast scroll component.</p>
+
+						</p>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div data-role="page" id="main"&gt;
+   &lt;div data-role="content"&gt;
+      &lt;ul id="list" data-role="listview" data-fastscroll="true"&gt;
+         &lt;li data-role="list-divider"&gt;A&lt;/li&gt;
+         &lt;li&gt;Anton&lt;/li&gt;
+         &lt;li&gt;Arabella&lt;/li&gt;
+         &lt;li data-role="list-divider"&gt;B&lt;/li&gt;
+         &lt;li&gt;Barry&lt;/li&gt;
+         &lt;li&gt;Bily&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var element = document.getElementById("list"),
+       fastscroll = tau.widget.FastScroll(element);
+
+   element.insertAdjacentHTML("beforeend", "&lt;li&gt;Bruce&lt;/li&gt;");
+   fastscroll.refresh();
+&lt;/script&gt;
+</pre>
+						</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div data-role="page" id="main"&gt;
+   &lt;div data-role="content"&gt;
+      &lt;ul data-role="listview" data-fastscroll="true" id="fastscroll"&gt;
+         &lt;li data-role="list-divider"&gt;A&lt;/li&gt;
+         &lt;li&gt;Anton&lt;/li&gt;
+         &lt;li&gt;Arabella&lt;/li&gt;
+         &lt;li data-role="list-divider"&gt;B&lt;/li&gt;
+         &lt;li&gt;Barry&lt;/li&gt;
+         &lt;li&gt;Bily&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   $("#fastscroll").append("&lt;li&gt;Bruno&lt;/li&gt;");
+   $("#fastscroll").fastscroll("refresh");
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+
+			
+		
+	</dl>
+
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

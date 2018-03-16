@@ -1,0 +1,291 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Grid View</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>Grid View</h1>
+
+<p>Grid View components provides a list of grid-type items and presents contents that are easily identified as images.</p>
+<p>You can adjust the number of columns of grid using a pinch gesture. In reorder mode, you can move each item.</p>
+<p>Grid view can have labels and you set the type of the labels.</p>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+	<li><a href="#default-selector">Default selectors</a></li>
+
+	<li><a href="#manual-constructor">Manual constructor</a>
+	</li>
+
+	<li><a href="#options-list">Options</a>
+	</li>
+
+	<li><a href="#methods">Methods</a></li>
+</ol>
+
+<h2><a id='default-selector'></a>Default Selector</h2>
+
+<p>By default, all UI elements with the <code>class=&quot;ui-gridview&quot;</code> or <code>data-role=&quot;gridview&quot;</code> attribute are displayed as grid view components.</p>
+
+<h2><a id="manual-constructor"></a>Manual Constructor</h2>
+<p>To manually create a grid view component, use the component constructor from the <code>tau</code> namespace:</p>
+<p>The constructor requires an <code>HTMLElement</code> parameter to create the component, and you can get it with the <code>document.getElementById()</code> method. The constructor can also take a second parameter, which is an object defining the configuration options for the component.</p>
+<pre class="prettyprint">
+&lt;ul id=&quot;gridview&quot; class=&quot;ui-gridview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-gridview-item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img class=&quot;ui-gridview-image&quot; src=&quot;images/1.jpg&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-gridview-handler&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-gridview-item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img class=&quot;ui-gridview-image&quot; src=&quot;images/2.jpg&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-gridview-handler&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-gridview-item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img class=&quot;ui-gridview-image&quot; src=&quot;images/3.jpg&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-gridview-handler&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-gridview-item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img class=&quot;ui-gridview-image&quot; src=&quot;images/4.jpg&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-gridview-handler&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var elGridView = document.getElementById(&quot;gridview&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gridView = tau.widget.GridView(elGridView);
+&lt;/script&gt;
+</pre>
+
+<h2><a id="options-list"></a>Options</h2>
+
+<table>
+	<tbody>
+	<tr>
+		<th>Option</th>
+		<th>Input type</th>
+		<th>Default value</th>
+		<th>Description</th>
+	</tr>
+
+	<tr>
+		<td class="option"><span style="font-family: Courier New,Courier,monospace">data-cols</span></td>
+		<td class="option">number</td>
+		<td class="option">4</td>
+		<td class="option">The number of columns to be displayed.</td>
+	</tr>
+
+	<tr>
+		<td class="option"><span style="font-family: Courier New,Courier,monospace">data-reorder</span></td>
+		<td class="option">boolean</td>
+		<td class="option">false</td>
+		<td class="option">Represents whether grid view is reorder mode.</td>
+	</tr>
+
+	<tr>
+		<td class="option"><span style="font-family: Courier New,Courier,monospace">data-label</span></td>
+		<td class="option">string</td>
+		<td class="option">"none"</td>
+		<td class="option">The type of label to be attached to grid item ("none", "in", "out").</td>
+	</tr>
+
+	<tr>
+		<td class="option"><span style="font-family: Courier New,Courier,monospace">data-min-width</span></td>
+		<td class="option">number, string</td>
+		<td class="option">null</td>
+		<td class="option">Minimum width px of grid item (number or "auto").</td>
+	</tr>
+
+	<tr>
+		<td class="option"><span style="font-family: Courier New,Courier,monospace">data-min-cols</span></td>
+		<td class="option">number</td>
+		<td class="option">1</td>
+		<td class="option">The minimum number of columns.</td>
+	</tr>
+
+	<tr>
+		<td class="option"><span style="font-family: Courier New,Courier,monospace">data-max-cols</span></td>
+		<td class="option">number</td>
+		<td class="option">5</td>
+		<td class="option">The maximum number of columns.</td>
+	</tr>
+
+	</tbody>
+</table>
+
+<h2><a id='methods'></a>Methods</h2>
+
+<p>To call method on GridView, see the following code:</p>
+
+<pre class="prettyprint">
+var elGridView = document.getElementById("gridview"),
+    gridView = tau.widget.GridView(elGridView), item;
+
+gridView.methodName(methodArgument1, methodArgument2, ...);
+</pre>
+
+<h3>Summary</h3>
+<table class="informaltable">
+	<thead>
+	<tr>
+		<th>Method</th>
+		<th>Description</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>
+			<pre class="intable prettyprint"><a href="#method-add">addItem</a> (  ) </pre>
+		</td>
+		<td><p>Adds an item to grid view.</p></td>
+	</tr>
+
+
+
+	<tr>
+		<td>
+			<pre class="intable prettyprint"><a href="#method-remove">removeItem</a> (  ) </pre>
+		</td>
+		<td><p>Removes an item from grid view.</p></td>
+	</tr>
+
+	</tbody>
+</table>
+<dl>
+
+
+
+	<dt class="method"><code><b><span class="methodName"
+	                                  id="method-add">addItem</span></b></code></dt>
+	<dd>
+		<div class="brief">
+			<p>Adds an item to grid view.</p>
+		</div>
+		<div class="synopsis">
+			<pre class="signature prettyprint">addItem (HTMLElement item) </pre>
+		</div>
+
+		<div class="parameters">
+			<p><span class="param">Parameters:</span></p>
+			<table>
+				<tbody>
+				<tr>
+					<th>Parameter</th>
+					<th>Type</th>
+					<th>Required / optional</th>
+					<th>Description</th>
+				</tr>
+
+
+				<tr>
+					<td><span style="font-family: Courier New,Courier,monospace">item</span></td>
+					<td>HTMLElement</td>
+					<td>Required</td>
+					<td>The element to be added.</td>
+				</tr>
+
+
+				</tbody>
+			</table>
+		</div>
+
+		<div class="returntype">
+			<p><span class="return">Return value:</span></p>
+
+
+			No return value
+
+		</div>
+
+		<div class="example">
+                            <span class="example"><p>Code
+	                            example:</p><p></p></span>
+                            <pre name="code" class="examplecode
+                            prettyprint">
+&lt;script&gt;
+var elGridView = document.getElementById("gridview"),
+    gridView = tau.widget.GridView(elGridView),
+    item;
+
+gridView.addItem(item);
+&lt;/script&gt;
+</pre>
+		</div>
+	</dd>
+
+
+	<dt class="method"><code><b><span class="methodName"
+	                                  id="method-remove">removeItem</span></b></code></dt>
+	<dd>
+		<div class="brief">
+			<p>Removes an item from grid view.</p>
+		</div>
+		<div class="synopsis">
+			<pre class="signature prettyprint">removeItem (HTMLElement item) </pre>
+		</div>
+
+		<div class="parameters">
+			<p><span class="param">Parameters:</span></p>
+			<table>
+				<tbody>
+				<tr>
+					<th>Parameter</th>
+					<th>Type</th>
+					<th>Required / optional</th>
+					<th>Description</th>
+				</tr>
+
+
+				<tr>
+					<td><span style="font-family: Courier New,Courier,monospace">item</span></td>
+					<td>HTMLElement</td>
+					<td>Required</td>
+					<td>The element to be removed.</td>
+				</tr>
+
+
+				</tbody>
+			</table>
+		</div>
+
+		<div class="returntype">
+			<p><span class="return">Return value:</span></p>
+
+
+			No Return Value
+
+		</div>
+
+		<div class="example">
+                            <span class="example"><p>Code
+	                            example:</p><p></p></span>
+                            <pre name="code" class="examplecode
+                            prettyprint">
+&lt;script&gt;
+var elGridView = document.getElementById("gridview"),
+    gridView = tau.widget.GridView(elGridView),
+    item;
+
+gridView.removeItem(item);
+&lt;/script&gt;
+</pre>
+		</div>
+	</dd>
+
+
+
+</dl>
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

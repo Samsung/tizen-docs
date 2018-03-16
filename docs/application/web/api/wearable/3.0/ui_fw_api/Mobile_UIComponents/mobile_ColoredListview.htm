@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Colored List View</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>Colored List View</h1>
+
+<p>Colored list view provides the list has gradient background color.</p>
+<p>You should check if your brower support WebGL since colored list view uses the WebGL technology.</p>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+	<li><a href="#default-selector">Default selectors</a></li>
+
+	<li><a href="#manual-constructor">Manual constructor</a>
+	</li>
+
+	<li><a href="#options-list">Options</a>
+	</li>
+</ol>
+
+<h2><a id='default-selector'></a>Default selector</h2>
+
+<p>By default, all &lt;ul&gt; and &lt;ol&gt; elements with the <code>class="ui-colored-list"</code> or <code>data-role="coloredlistview"</code> attribute are displayed as colored list view components.</p>
+
+<h2><a id="manual-constructor"></a>Manual Constructor</h2>
+<p>To manually create a colored list view component, use the component constructor from the <code>tau</code> namespace:</p>
+<p>The constructor requires an <code>HTMLElement</code> parameter to create the component, and you can get it with the <code>document.getElementById()</code> method. The constructor can also take a second parameter, which is an object defining the configuration options for the component.</p>
+<pre class="prettyprint">
+&lt;ul class="ui-colored-list" id="coloredlist"&gt;
+   &lt;li class="ui-li-static"&gt;Item&lt;/li&gt;
+   &lt;li class="ui-li-static"&gt;Item&lt;/li&gt;
+   &lt;li class="ui-li-static"&gt;Item&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script&gt;
+   var elColoredList = document.getElementById("coloredlist"),
+       coloredList = tau.widget.ColoredListview(elColoredList);
+&lt;/script&gt;
+</pre>
+
+<h2><a id="options-list"></a>Options</h2>
+
+<table>
+	<tbody>
+	<tr>
+		<th>Option</th>
+		<th>Input type</th>
+		<th>Default value</th>
+		<th>Description</th>
+	</tr>
+
+	<tr>
+		<td class="option"><span style="font-family: Courier New,Courier,monospace">data-colored-listview-number</span></td>
+		<td class="option">number</td>
+		<td class="option">15</td>
+		<td class="option">the number of list items to be applied colored list view</td>
+	</tr>
+
+	</tbody>
+</table>
+
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

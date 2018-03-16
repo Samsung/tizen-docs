@@ -1,0 +1,3105 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>Time API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Time">
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="title"><h1>Time API</h1></div>
+<div class="brief">
+  The Time API provides information regarding date/time and time zones.
+        </div>
+<div class="description">
+        <p>
+The JavaScript Date object does not have full timezone support.
+Date objects allow only simple representations to denote a particular location's
+offset from Universal Coordinated Time (UTC). This is typically provided as a +/-
+offset from UTC-0 (also known as Greenwich Mean Time, or GMT) for example, +05:30 denotes
+that a location is 5 hours and 30 minutes ahead of UTC +00:00.
+The issue with this method is not getting the correct
+local time for a given date. The existing methods are sufficient for this purpose.
+The issue is correctly converting to and from local time and UTC for all points in
+time - in any of the past, present, and future - based on an initial time provided.
+This is important for defining relative dates, where a time in a given location may
+observe different UTC offsets, according to any Daylight Savings Rules (DST) in effect
+or any other changes that may occur to a location's time zone over time.
+Without the communication of the explicit time zone rules governing a given date and
+time, the ability to effectively calculate the offset of the local time to UTC or to
+any other time zone at any point in the past or future is lost.
+        </p>
+        <p>
+This API can be used to get TZDate objects with full time zone support, convert them
+between timezones, retrieve available timezones.
+        </p>
+        <p>
+For more information on the Time features, see <a href="https://developer.tizen.org/development/guides/web-application/device-settings-and-systems/time-and-date-management">Time Guide</a>.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>
+                    1.1. <a href="#TimeDurationUnit">TimeDurationUnit</a>
+</li></ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#TimeManagerObject">TimeManagerObject</a>
+</li>
+<li>2.2. <a href="#TimeUtil">TimeUtil</a>
+</li>
+<li>2.3. <a href="#TZDate">TZDate</a>
+</li>
+<li>2.4. <a href="#TimeDuration">TimeDuration</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#TimeManagerObject">TimeManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#TimeUtil">TimeUtil</a></td>
+<td>
+<div>
+<a href="#TZDate">TZDate</a> <a href="#TimeUtil::getCurrentDateTime">getCurrentDateTime</a> ()</div>
+<div>DOMString <a href="#TimeUtil::getLocalTimezone">getLocalTimezone</a> ()</div>
+<div>DOMString[] <a href="#TimeUtil::getAvailableTimezones">getAvailableTimezones</a> ()</div>
+<div>DOMString <a href="#TimeUtil::getDateFormat">getDateFormat</a> (optional boolean? shortformat)</div>
+<div>DOMString <a href="#TimeUtil::getTimeFormat">getTimeFormat</a> ()</div>
+<div>boolean <a href="#TimeUtil::isLeapYear">isLeapYear</a> (long year)</div>
+<div>void <a href="#TimeUtil::setDateTimeChangeListener">setDateTimeChangeListener</a> (<a href="tizen.html#SuccessCallback">SuccessCallback</a> changeCallback)</div>
+<div>void <a href="#TimeUtil::unsetDateTimeChangeListener">unsetDateTimeChangeListener</a> ()</div>
+<div>void <a href="#TimeUtil::setTimezoneChangeListener">setTimezoneChangeListener</a> (<a href="tizen.html#SuccessCallback">SuccessCallback</a> changeCallback)</div>
+<div>void <a href="#TimeUtil::unsetTimezoneChangeListener">unsetTimezoneChangeListener</a> ()</div>
+</td>
+</tr>
+<tr>
+<td><a href="#TZDate">TZDate</a></td>
+<td>
+<div>long <a href="#TZDate::getDate">getDate</a> ()</div>
+<div>void <a href="#TZDate::setDate">setDate</a> (long date)</div>
+<div>long <a href="#TZDate::getDay">getDay</a> ()</div>
+<div>long <a href="#TZDate::getFullYear">getFullYear</a> ()</div>
+<div>void <a href="#TZDate::setFullYear">setFullYear</a> (long year)</div>
+<div>long <a href="#TZDate::getHours">getHours</a> ()</div>
+<div>void <a href="#TZDate::setHours">setHours</a> (long hours)</div>
+<div>long <a href="#TZDate::getMilliseconds">getMilliseconds</a> ()</div>
+<div>void <a href="#TZDate::setMilliseconds">setMilliseconds</a> (long ms)</div>
+<div>long <a href="#TZDate::getMinutes">getMinutes</a> ()</div>
+<div>void <a href="#TZDate::setMinutes">setMinutes</a> (long minutes)</div>
+<div>long <a href="#TZDate::getMonth">getMonth</a> ()</div>
+<div>void <a href="#TZDate::setMonth">setMonth</a> (long month)</div>
+<div>long <a href="#TZDate::getSeconds">getSeconds</a> ()</div>
+<div>void <a href="#TZDate::setSeconds">setSeconds</a> (long seconds)</div>
+<div>long <a href="#TZDate::getUTCDate">getUTCDate</a> ()</div>
+<div>void <a href="#TZDate::setUTCDate">setUTCDate</a> (long date)</div>
+<div>long <a href="#TZDate::getUTCDay">getUTCDay</a> ()</div>
+<div>long <a href="#TZDate::getUTCFullYear">getUTCFullYear</a> ()</div>
+<div>void <a href="#TZDate::setUTCFullYear">setUTCFullYear</a> (long year)</div>
+<div>long <a href="#TZDate::getUTCHours">getUTCHours</a> ()</div>
+<div>void <a href="#TZDate::setUTCHours">setUTCHours</a> (long hours)</div>
+<div>long <a href="#TZDate::getUTCMilliseconds">getUTCMilliseconds</a> ()</div>
+<div>void <a href="#TZDate::setUTCMilliseconds">setUTCMilliseconds</a> (long ms)</div>
+<div>long <a href="#TZDate::getUTCMinutes">getUTCMinutes</a> ()</div>
+<div>void <a href="#TZDate::setUTCMinutes">setUTCMinutes</a> (long minutes)</div>
+<div>long <a href="#TZDate::getUTCMonth">getUTCMonth</a> ()</div>
+<div>void <a href="#TZDate::setUTCMonth">setUTCMonth</a> (long month)</div>
+<div>long <a href="#TZDate::getUTCSeconds">getUTCSeconds</a> ()</div>
+<div>void <a href="#TZDate::setUTCSeconds">setUTCSeconds</a> (long seconds)</div>
+<div>DOMString <a href="#TZDate::getTimezone">getTimezone</a> ()</div>
+<div>
+<a href="#TZDate">TZDate</a> <a href="#TZDate::toTimezone">toTimezone</a> (DOMString tzid)</div>
+<div>
+<a href="#TZDate">TZDate</a> <a href="#TZDate::toLocalTimezone">toLocalTimezone</a> ()</div>
+<div>
+<a href="#TZDate">TZDate</a> <a href="#TZDate::toUTC">toUTC</a> ()</div>
+<div>
+<a href="#TimeDuration">TimeDuration</a> <a href="#TZDate::difference">difference</a> (<a href="#TZDate">TZDate</a> other)</div>
+<div>boolean <a href="#TZDate::equalsTo">equalsTo</a> (<a href="#TZDate">TZDate</a> other)</div>
+<div>boolean <a href="#TZDate::earlierThan">earlierThan</a> (<a href="#TZDate">TZDate</a> other)</div>
+<div>boolean <a href="#TZDate::laterThan">laterThan</a> (<a href="#TZDate">TZDate</a> other)</div>
+<div>
+<a href="#TZDate">TZDate</a> <a href="#TZDate::addDuration">addDuration</a> (<a href="#TimeDuration">TimeDuration</a> duration)</div>
+<div>DOMString <a href="#TZDate::toLocaleDateString">toLocaleDateString</a> ()</div>
+<div>DOMString <a href="#TZDate::toLocaleTimeString">toLocaleTimeString</a> ()</div>
+<div>DOMString <a href="#TZDate::toLocaleString">toLocaleString</a> ()</div>
+<div>DOMString <a href="#TZDate::toDateString">toDateString</a> ()</div>
+<div>DOMString <a href="#TZDate::toTimeString">toTimeString</a> ()</div>
+<div>DOMString <a href="#TZDate::toString">toString</a> ()</div>
+<div>long <a href="#TZDate::secondsFromUTC">secondsFromUTC</a> ()</div>
+<div>boolean <a href="#TZDate::isDST">isDST</a> ()</div>
+<div>
+<a href="#TZDate">TZDate</a>? <a href="#TZDate::getPreviousDSTTransition">getPreviousDSTTransition</a> ()</div>
+<div>
+<a href="#TZDate">TZDate</a>? <a href="#TZDate::getNextDSTTransition">getNextDSTTransition</a> ()</div>
+</td>
+</tr>
+<tr>
+<td><a href="#TimeDuration">TimeDuration</a></td>
+<td>
+<div>
+<a href="#TimeDuration">TimeDuration</a> <a href="#TimeDuration::difference">difference</a> (<a href="#TimeDuration">TimeDuration</a> other)</div>
+<div>boolean <a href="#TimeDuration::equalsTo">equalsTo</a> (<a href="#TimeDuration">TimeDuration</a> other)</div>
+<div>boolean <a href="#TimeDuration::lessThan">lessThan</a> (<a href="#TimeDuration">TimeDuration</a> other)</div>
+<div>boolean <a href="#TimeDuration::greaterThan">greaterThan</a> (<a href="#TimeDuration">TimeDuration</a> other)</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="enum" id="TimeDurationUnit">
+<a class="backward-compatibility-anchor" name="::Time::TimeDurationUnit"></a><h3>1.1. TimeDurationUnit</h3>
+<div class="brief">
+ Specifies the TimeDuration unit (milliseconds, seconds, minutes, hours or days).
+          </div>
+<pre class="webidl prettyprint">  enum TimeDurationUnit { "MSECS", "SECS", "MINS", "HOURS", "DAYS" };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+At least the following values must be supported:
+          </p>
+          <ul>
+            <li>
+MSECS - Indicates a duration in milliseconds            </li>
+            <li>
+SECS - Indicates a duration in seconds             </li>
+            <li>
+MINS - Indicates a duration in minutes             </li>
+            <li>
+HOURS - Indicates a duration in hours             </li>
+            <li>
+DAYS - Indicates a duration in days            </li>
+          </ul>
+         </div>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="TimeManagerObject">
+<a class="backward-compatibility-anchor" name="::Time::TimeManagerObject"></a><h3>2.1. TimeManagerObject</h3>
+<div class="brief">
+ The TimeManagerObject interface defines what is instantiated in the tizen object by the Tizen Platform.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface TimeManagerObject {
+    readonly attribute <a href="#TimeUtil">TimeUtil</a> time;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TimeManagerObject">TimeManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+There will be a <em>tizen.time</em> object that allows accessing the
+functionality of the Time API.
+          </p>
+         </div>
+</div>
+<div class="interface" id="TimeUtil">
+<a class="backward-compatibility-anchor" name="::Time::TimeUtil"></a><h3>2.2. TimeUtil</h3>
+<div class="brief">
+ The TimeUtil interface that provides access to the time API.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface TimeUtil {
+    <a href="#TZDate">TZDate</a> getCurrentDateTime() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    DOMString getLocalTimezone() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    DOMString[] getAvailableTimezones() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    DOMString getDateFormat(optional boolean? shortformat) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    DOMString getTimeFormat() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean isLeapYear(long year) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void setDateTimeChangeListener(<a href="tizen.html#SuccessCallback">SuccessCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void unsetDateTimeChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void setTimezoneChangeListener(<a href="tizen.html#SuccessCallback">SuccessCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void unsetTimezoneChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+This interface offers methods to manage date/time as well as timezones such as:
+          </p>
+          <ul>
+            <li>
+Get the current date/time using getCurrentDateTime().            </li>
+            <li>
+Get timezones using getLocalTimezone() and getAvailableTimezones().            </li>
+          </ul>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="TimeUtil::getCurrentDateTime">
+<a class="backward-compatibility-anchor" name="::Time::TimeUtil::getCurrentDateTime"></a><code><b><span class="methodName">getCurrentDateTime</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the current date/time.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#TZDate">TZDate</a> getCurrentDateTime();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ TZDate The current TZDate object
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var current_dt = tizen.time.getCurrentDateTime();
+console.log("current date/time is " + current_dt.toLocaleString());
+</pre>
+</div>
+</dd>
+<dt class="method" id="TimeUtil::getLocalTimezone">
+<a class="backward-compatibility-anchor" name="::Time::TimeUtil::getLocalTimezone"></a><code><b><span class="methodName">getLocalTimezone</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the identifier of the local system timezone.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString getLocalTimezone();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ Timezone The local timezone
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+console.log("The local time zone is " + tizen.time.getLocalTimezone());
+</pre>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Note that it is possible to get the time zone description in other formats, e.g. by calling */
+now = new tizen.TZDate(new Date(), "Asia/Manila");
+console.log(now.toString());
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> Wednesday, January 27, 2016, 8:46:00 PM GMT+0800 Philippines Time
+ </pre>
+</div>
+</dd>
+<dt class="method" id="TimeUtil::getAvailableTimezones">
+<a class="backward-compatibility-anchor" name="::Time::TimeUtil::getAvailableTimezones"></a><code><b><span class="methodName">getAvailableTimezones</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets synchronously the identifiers of the timezones supported by the device.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString[] getAvailableTimezones();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+Zero or more slashes separate different components of a timezone identifier,
+with the most general descriptor first and the most specific one last. For example,
+'Europe/Berlin', 'America/Argentina/Buenos_Aires'.
+            </p>
+           </div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ The array of time zone identifiers
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var tzids = tizen.time.getAvailableTimezones();
+console.log("The device supports " + tzids.length + " time zones.");
+</pre>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var tzids = tizen.time.getAvailableTimezones();
+var currentLocation = "Europe/Berlin";
+
+/* Checks whether an entry "Europe/Berlin" exists in the array */
+if (tzids.indexOf(currentLocation) &gt; -1)
+{
+&nbsp;&nbsp;console.log("The device supports " + currentLocation + " timezone.");
+}
+else
+{
+&nbsp;&nbsp;console.log("The device does not support " + currentLocation + " timezone.");
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="TimeUtil::getDateFormat">
+<a class="backward-compatibility-anchor" name="::Time::TimeUtil::getDateFormat"></a><code><b><span class="methodName">getDateFormat</span></b></code>
+</dt>
+<dd>
+<div class="synopsis"><pre class="signature prettyprint">DOMString getDateFormat(optional boolean? shortformat);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+Gets the date format according to the system's locale settings.
+            </p>
+            <p>
+These expressions may be used in the returned string:
+            </p>
+            <ul>
+              <li>
+"d" = day number (1 to 31)              </li>
+              <li>
+"D" = day name              </li>
+              <li>
+"m" = month number (1 to 12)              </li>
+              <li>
+"M" = month name              </li>
+              <li>
+"y" = year              </li>
+            </ul>
+            <p>
+Examples of string formats include: "d/m/y", "y-d-m", "D, M d y".
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">shortformat</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The flag indicating whether the user is interested in the short
+date format (23/10/2011) instead of a long date format ("Monday, October 23 2011") <br>By default, this attribute is set to false.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ DOMString The date format according to the system's locale settings
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Gets the long date format, e.g. "D, M d y" */
+var dateFormat = tizen.time.getDateFormat();
+
+/* Gets the short date format, e.g. "d/m/y" */
+var shortDateFormat = tizen.time.getDateFormat(true);
+
+console.log("Long date format: " + dateFormat);
+</pre>
+</div>
+</dd>
+<dt class="method" id="TimeUtil::getTimeFormat">
+<a class="backward-compatibility-anchor" name="::Time::TimeUtil::getTimeFormat"></a><code><b><span class="methodName">getTimeFormat</span></b></code>
+</dt>
+<dd>
+<div class="synopsis"><pre class="signature prettyprint">DOMString getTimeFormat();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+Gets the time format according to the system's locale settings.
+            </p>
+            <p>
+These expressions may be used in the returned string:
+            </p>
+            <ul>
+              <li>
+"h" = hours (0 to 23 or 1 to 12 if AM/PM display)              </li>
+              <li>
+"m" = minutes (0 to 59)              </li>
+              <li>
+"s" = seconds (0 to 59)              </li>
+              <li>
+"ap" = AM/PM display              </li>
+            </ul>
+            <p>
+Examples of string formats include: "h:m:s ap", "h:m:s".
+            </p>
+           </div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ DOMString The time format according to the system's locale settings
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Gets the time format, e.g. "h:m:s ap" */
+var timeFormat = tizen.time.getTimeFormat();
+
+console.log(timeFormat);
+</pre>
+</div>
+</dd>
+<dt class="method" id="TimeUtil::isLeapYear">
+<a class="backward-compatibility-anchor" name="::Time::TimeUtil::isLeapYear"></a><code><b><span class="methodName">isLeapYear</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Checks whether the given year is a leap year.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">boolean isLeapYear(long year);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">year</span>:
+ The year to check
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ boolean <em>true</em>, if the year is a leap year
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input
+parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var current_dt = tizen.time.getCurrentDateTime();
+var is_leap = tizen.time.isLeapYear(current_dt.getFullYear());
+if (is_leap)
+{
+&nbsp;&nbsp;console.log("This year is a leap year.");
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="TimeUtil::setDateTimeChangeListener">
+<a class="backward-compatibility-anchor" name="::Time::TimeUtil::setDateTimeChangeListener"></a><code><b><span class="methodName">setDateTimeChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets a listener to receive notification of changes to the time/date on a device.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setDateTimeChangeListener(<a href="tizen.html#SuccessCallback">SuccessCallback</a> changeCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+Listener set with <em>setTimezoneChangeListener()</em> method is called when device time was set by the user. <br>            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">changeCallback</span>:
+ Callback method to be invoked when device time was set <br>It is not invoked when time passes naturally.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var changedCallback = function()
+{
+&nbsp;&nbsp;try
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;var current_dt = tizen.time.getCurrentDateTime();
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("current date/time is " + current_dt.toLocaleString());
+
+&nbsp;&nbsp;}
+&nbsp;&nbsp;catch (err)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(err.name + ": " + err.message);
+&nbsp;&nbsp;}
+};
+
+tizen.time.setDateTimeChangeListener(changedCallback);
+</pre>
+</div>
+</dd>
+<dt class="method" id="TimeUtil::unsetDateTimeChangeListener">
+<a class="backward-compatibility-anchor" name="::Time::TimeUtil::unsetDateTimeChangeListener"></a><code><b><span class="methodName">unsetDateTimeChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unsets the listener to stop receiving notification of changes to the time/date on a device.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unsetDateTimeChangeListener();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var changedCallback = function()
+{
+&nbsp;&nbsp;try
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;var current_dt = tizen.time.getCurrentDateTime();
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("current date/time is " + current_dt.toLocaleString());
+&nbsp;&nbsp;&nbsp;&nbsp;tizen.time.unsetDateTimeChangeListener();
+&nbsp;&nbsp;}
+&nbsp;&nbsp;catch (err)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(err.name + ": " + err.message);
+&nbsp;&nbsp;}
+};
+
+tizen.time.setDateTimeChangeListener(changedCallback);
+</pre>
+</div>
+</dd>
+<dt class="method" id="TimeUtil::setTimezoneChangeListener">
+<a class="backward-compatibility-anchor" name="::Time::TimeUtil::setTimezoneChangeListener"></a><code><b><span class="methodName">setTimezoneChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets a listener to receive notification of changes to the time zone on a device.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setTimezoneChangeListener(<a href="tizen.html#SuccessCallback">SuccessCallback</a> changeCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+Listener set with <em>setTimezoneChangeListener()</em> method is called when device time zone has changed.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">changeCallback</span>:
+ Callback method that is invoked when the time zone has changed
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var changedCallback = function()
+{
+&nbsp;&nbsp;try
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;/* New time zone can be retrieved through tizen.time.getLocalTimezone() */
+&nbsp;&nbsp;&nbsp;&nbsp;var zone = tizen.time.getLocalTimezone();
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("current time zone is " + zone);
+&nbsp;&nbsp;}
+&nbsp;&nbsp;catch (err)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(err.name + ": " + err.message);
+&nbsp;&nbsp;}
+};
+
+tizen.time.setTimezoneChangeListener(changedCallback);
+</pre>
+</div>
+</dd>
+<dt class="method" id="TimeUtil::unsetTimezoneChangeListener">
+<a class="backward-compatibility-anchor" name="::Time::TimeUtil::unsetTimezoneChangeListener"></a><code><b><span class="methodName">unsetTimezoneChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unsets the listener to stop receiving notification of changes to the time zone on a device.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unsetTimezoneChangeListener();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var changedCallback = function()
+{
+&nbsp;&nbsp;try
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;var zone = tizen.time.getLocalTimezone();
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("current time zone is " + zone);
+&nbsp;&nbsp;&nbsp;&nbsp;tizen.time.unsetTimezoneChangeListener();
+&nbsp;&nbsp;}
+&nbsp;&nbsp;catch (err)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(err.name + ": " + err.message);
+&nbsp;&nbsp;}
+};
+
+tizen.time.setTimezoneChangeListener(changedCallback);
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="TZDate">
+<a class="backward-compatibility-anchor" name="::Time::TZDate"></a><h3>2.3. TZDate</h3>
+<div class="brief">
+ The TZDate interface represents information regarding a given
+date/time in a predefined timezone.
+If its date/time exceeds the platform limit, TZDate will be invalid.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(optional Date? datetime, optional DOMString? timezone),
+   Constructor(long year, long month, long day, optional long? hours, optional long? minutes, optional long? seconds, optional long? milliseconds, optional DOMString? timezone)]
+
+  interface TZDate {
+    long getDate();
+
+    void setDate(long date);
+
+    long getDay();
+
+    long getFullYear();
+
+    void setFullYear(long year);
+
+    long getHours();
+
+    void setHours(long hours);
+
+    long getMilliseconds();
+
+    void setMilliseconds(long ms);
+
+    long getMinutes();
+
+    void setMinutes(long minutes);
+
+    long getMonth();
+
+    void setMonth(long month);
+
+    long getSeconds();
+
+    void setSeconds(long seconds);
+
+    long getUTCDate();
+
+    void setUTCDate(long date);
+
+    long getUTCDay();
+
+    long getUTCFullYear();
+
+    void setUTCFullYear(long year);
+
+    long getUTCHours();
+
+    void setUTCHours(long hours);
+
+    long getUTCMilliseconds();
+
+    void setUTCMilliseconds(long ms);
+
+    long getUTCMinutes();
+
+    void setUTCMinutes(long minutes);
+
+    long getUTCMonth();
+
+    void setUTCMonth(long month);
+
+    long getUTCSeconds();
+
+    void setUTCSeconds(long seconds);
+
+    DOMString getTimezone();
+
+    <a href="#TZDate">TZDate</a> toTimezone(DOMString tzid) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#TZDate">TZDate</a> toLocalTimezone() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#TZDate">TZDate</a> toUTC() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#TimeDuration">TimeDuration</a> difference(<a href="#TZDate">TZDate</a> other) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean equalsTo(<a href="#TZDate">TZDate</a> other) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean earlierThan(<a href="#TZDate">TZDate</a> other) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean laterThan(<a href="#TZDate">TZDate</a> other) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#TZDate">TZDate</a> addDuration(<a href="#TimeDuration">TimeDuration</a> duration) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    DOMString toLocaleDateString();
+
+    DOMString toLocaleTimeString();
+
+    DOMString toLocaleString();
+
+    DOMString toDateString();
+
+    DOMString toTimeString();
+
+    DOMString toString();
+
+    long secondsFromUTC() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean isDST() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#TZDate">TZDate</a>? getPreviousDSTTransition() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#TZDate">TZDate</a>? getNextDSTTransition() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="constructors">
+<h4 id="TZDate::constructor">Constructors</h4>
+<dl>
+<pre class="webidl prettyprint">TZDate(optional Date? datetime, optional DOMString? timezone);</pre>
+<pre class="webidl prettyprint">TZDate(long year, long month, long day, optional long? hours, optional long? minutes, optional long? seconds, optional long? milliseconds, optional DOMString? timezone);</pre>
+<div class="description">
+              <ul>
+                <li>
+<b>year</b> : The year of TZDate. If it is between 0 and 99, 1900 will be added to it like Javascript Date object.                </li>
+              </ul>
+             </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Creates a new TZDate object with current date/time and timezone */
+var now = new tizen.TZDate();
+
+/* Creates a new TZDate object with date set to 1st of January 2016 in time zone for Germany */
+var newYear = new tizen.TZDate(new Date("2016-01-01"), "Europe/Berlin");
+
+/* Creates a new TZDate object with values set explicitly */
+var myDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/Berlin");
+</pre>
+</div>
+</dl>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="TZDate::getDate">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::getDate"></a><code><b><span class="methodName">getDate</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the day of the month (from 1-31).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long getDate();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long The day of the month.
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+console.log(someDate.getDate()); /* Outputs 31 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::setDate">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::setDate"></a><code><b><span class="methodName">setDate</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the day of the month (from 1-31).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setDate(long date);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+If the value passed as a parameter is greater than the last day of current month or smaller than 1, the TZDate will be automatically recalculated to reflect this.
+For example, if TZDate's month is May and parameter is 32, it will be set to June 1.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">date</span>:
+ Date to set
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+someDate.setDate(1); /* Changes the day of month to 1 */
+console.log(someDate.getDate()); /* Outputs 1 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::getDay">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::getDay"></a><code><b><span class="methodName">getDay</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the day of the week (from 0-6). 0 denotes Sunday, 1 denotes Monday and so on.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long getDay();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long The day of the week
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+console.log(someDate.getDay()); /* Outputs "5", because 31st of December 1999 was Friday */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::getFullYear">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::getFullYear"></a><code><b><span class="methodName">getFullYear</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the year.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long getFullYear();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+Positive values indicate AD(Anno Domini) years. 0 and negative values indicate BC(Before Christ) years.
+For example, 1 = AD 1, 0 = BC 1, -1 = BC 2.
+            </p>
+           </div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long The year
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+console.log(someDate.getFullYear()); /* Outputs 1999 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::setFullYear">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::setFullYear"></a><code><b><span class="methodName">setFullYear</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the year.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setFullYear(long year);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">year</span>:
+ Year to set
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+someDate.setFullYear(2099); /* Changes the year to 2099 */
+console.log(someDate.getFullYear()); /* Outputs 2099 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::getHours">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::getHours"></a><code><b><span class="methodName">getHours</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the hour (0-23).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long getHours();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long The hour
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+console.log(someDate.getHours()); /* Outputs 23 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::setHours">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::setHours"></a><code><b><span class="methodName">setHours</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the hour (0-23).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setHours(long hours);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+If the value passed as a parameter is greater than 23 or smaller than 0, the TZDate will be automatically recalculated to reflect this.
+For example, calling setHours(24) results in setting hour to 00:00 and date to the next day.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">hours</span>:
+ Hours to set
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+someDate.setHours(15); /* Sets the hour to 3 PM */
+console.log(someDate.getHours()); /* Outputs 15 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::getMilliseconds">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::getMilliseconds"></a><code><b><span class="methodName">getMilliseconds</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the milliseconds (from 0-999).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long getMilliseconds();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long The milliseconds
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+console.log(someDate.getMilliseconds()); /* Outputs 999 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::setMilliseconds">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::setMilliseconds"></a><code><b><span class="methodName">setMilliseconds</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the milliseconds (from 0-999).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setMilliseconds(long ms);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+If the value passed as a parameter is greater than 999 or smaller than 0, the TZDate will be automatically recalculated to reflect this.
+For example, calling setMilliseconds(1000) results in setting milliseconds to 0 and adding one second.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">ms</span>:
+ Milliseconds to set
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+someDate.setMilliseconds(42);
+console.log(someDate.getMilliseconds()); /* Outputs 42 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::getMinutes">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::getMinutes"></a><code><b><span class="methodName">getMinutes</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the minutes (from 0-59).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long getMinutes();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long The minutes
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+console.log(someDate.getMinutes()); /* Outputs 59 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::setMinutes">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::setMinutes"></a><code><b><span class="methodName">setMinutes</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the minutes.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setMinutes(long minutes);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+If the value passed as a parameter is greater than 59 or smaller than 0, the TZDate will be automatically recalculated to reflect this.
+For example, calling setMinutes(60) results in setting minutes to 0 and adding one hour.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">minutes</span>:
+ Minutes to set
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+someDate.setMinutes(58);
+console.log(someDate.getMinutes()); /* Outputs 58 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::getMonth">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::getMonth"></a><code><b><span class="methodName">getMonth</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the month (from 0-11). <br>Note: January is denoted as 0, February as 1, and so on till December, which is denoted as 11.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long getMonth();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long The month
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+console.log(someDate.getMonth()); /* Outputs 11 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::setMonth">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::setMonth"></a><code><b><span class="methodName">setMonth</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the month (from 0-11).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setMonth(long month);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+If the value passed as a parameter is greater than 11 or smaller than 0, the TZDate will be automatically recalculated to reflect this.
+For example, calling setMonth(12) results in setting month to 0 and adding one year.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">month</span>:
+ Month to set
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+someDate.setMonth(2); /* Changes the month to March */
+console.log(someDate.getMonth()); /* Outputs 2 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::getSeconds">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::getSeconds"></a><code><b><span class="methodName">getSeconds</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the seconds (from 0-59).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long getSeconds();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long The seconds
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+console.log(someDate.getSeconds()); /* Outputs 59 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::setSeconds">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::setSeconds"></a><code><b><span class="methodName">setSeconds</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the seconds (from 0-59).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setSeconds(long seconds);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+If the value passed as a parameter is greater than 59 or smaller than 0, the TZDate will be automatically recalculated to reflect this.
+For example, calling setSeconds(60) results in setting seconds to 0 and adding one minute.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">seconds</span>:
+ Seconds to set
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+someDate.setSeconds(23);
+console.log(someDate.getSeconds()); /* Outputs 23 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::getUTCDate">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::getUTCDate"></a><code><b><span class="methodName">getUTCDate</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the day of the month, according to universal time (from 1-31).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long getUTCDate();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long The day of the month, according to universal time
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+console.log(someDate.getUTCDate()); /* Outputs 31 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::setUTCDate">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::setUTCDate"></a><code><b><span class="methodName">setUTCDate</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the day of the month, according to universal time (from 1-31).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setUTCDate(long date);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+If the value passed as a parameter is greater than the last day of current month or smaller than 0, the TZDate will be automatically recalculated to reflect this.
+For example, calling setUTCDate(32) when TZDate's month is May results in setting it to June 1.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">date</span>:
+ Date to set
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+someDate.setUTCDate(5) /* Change the day of month to 5th */
+console.log(someDate.getUTCDate()); /* Outputs 5 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::getUTCDay">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::getUTCDay"></a><code><b><span class="methodName">getUTCDay</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the day of the week, according to universal time (from 0-6).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long getUTCDay();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long The day of the week, according to universal time
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+console.log(someDate.getUTCDay()); /* Outputs 5, since 31st of December 1999 was Friday */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::getUTCFullYear">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::getUTCFullYear"></a><code><b><span class="methodName">getUTCFullYear</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the year, according to universal time.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long getUTCFullYear();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+Positive values indicate AD(Anno Domini) years. 0 and negative values indicate BC(Before Christ) years.
+For example, 1 = AD 1, 0 = BC 1, -1 = BC 2.
+            </p>
+           </div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long The year, according to universal time
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+console.log(someDate.getUTCFullYear()); /* Outputs 1999 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::setUTCFullYear">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::setUTCFullYear"></a><code><b><span class="methodName">setUTCFullYear</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the year, according to universal time.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setUTCFullYear(long year);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">year</span>:
+ Year to set
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+someDate.setUTCFullYear(2099); /* Change the year to 2099, universal time */
+console.log(someDate.getUTCFullYear()); /* Outputs 2099 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::getUTCHours">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::getUTCHours"></a><code><b><span class="methodName">getUTCHours</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the hour, according to universal time (0-23).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long getUTCHours();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long The hour, according to universal time
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+console.log(someDate.getUTCHours()); /* Outputs 23 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::setUTCHours">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::setUTCHours"></a><code><b><span class="methodName">setUTCHours</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the hour, according to universal time (0-23).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setUTCHours(long hours);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+If the value passed as a parameter is greater than 23 or smaller than 0, the TZDate will be automatically recalculated to reflect this.
+For example, calling setUTCHours(24) results in setting hour to 0 and adding one day.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">hours</span>:
+ Hours to set
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+someDate.setUTCHours(15);
+console.log(someDate.getUTCHours()); /* Outputs 15 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::getUTCMilliseconds">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::getUTCMilliseconds"></a><code><b><span class="methodName">getUTCMilliseconds</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the milliseconds, according to universal time (from 0-999).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long getUTCMilliseconds();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long The milliseconds, according to universal time
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+console.log(someDate.getUTCMilliseconds()); /* Outputs 999 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::setUTCMilliseconds">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::setUTCMilliseconds"></a><code><b><span class="methodName">setUTCMilliseconds</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the milliseconds, according to universal time (from 0-999).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setUTCMilliseconds(long ms);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+If the value passed as a parameter is greater than 999 or smaller than 0, the TZDate will be automatically recalculated to reflect this.
+For example, calling setUTCMilliseconds(1000) results in setting milliseconds to 0 and adding one second.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">ms</span>:
+ Milliseconds to set
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+someDate.setUTCMillisecond(42);
+console.log(someDate.getUTCMilliseconds()); /* Outputs 42 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::getUTCMinutes">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::getUTCMinutes"></a><code><b><span class="methodName">getUTCMinutes</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the minutes, according to universal time (from 0-59).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long getUTCMinutes();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long The minutes, according to universal time
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+console.log(someDate.getUTCMinutes()); /* Outputs 59 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::setUTCMinutes">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::setUTCMinutes"></a><code><b><span class="methodName">setUTCMinutes</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the minutes, according to universal time (from 0-59).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setUTCMinutes(long minutes);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+If the value passed as a parameter is greater than 59 or smaller than 0, the TZDate will be automatically recalculated to reflect this.
+For example, calling setUTCMinutes(60) results in setting minutes to 0 and adding one hour.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">minutes</span>:
+ Minutes to set
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+someDate.setUTCMinutes(58);
+console.log(someDate.getUTCMinutes()); /* Outputs 58 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::getUTCMonth">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::getUTCMonth"></a><code><b><span class="methodName">getUTCMonth</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the month, according to universal time (from 0-11). <br>Note: January is denoted as 0, February as 1 and so on till December, which is denoted as 11.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long getUTCMonth();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long The month, according to universal time
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+console.log(someDate.getUTCMonth()); /* Outputs 11 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::setUTCMonth">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::setUTCMonth"></a><code><b><span class="methodName">setUTCMonth</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the month, according to universal time (from 0-11).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setUTCMonth(long month);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+If the value passed as a parameter is greater than 11 or smaller than 0, the TZDate will be automatically recalculated to reflect this.
+For example, calling setUTCMonth(12) results in setting month to 0 and adding one year.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">month</span>:
+ Month to set
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+someDate.setUTCMonth(2); /* Sets the month to March, according to the universal time */
+console.log(someDate.getUTCMonth()); /* Outputs 2 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::getUTCSeconds">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::getUTCSeconds"></a><code><b><span class="methodName">getUTCSeconds</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the seconds, according to universal time (from 0-59).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long getUTCSeconds();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long The seconds, according to universal time
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+console.log(someDate.getUTCSeconds()); /* Outputs 59 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::setUTCSeconds">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::setUTCSeconds"></a><code><b><span class="methodName">setUTCSeconds</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the seconds, according to universal time (from 0-59).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setUTCSeconds(long seconds);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+If the value passed as a parameter is greater than 59 or smaller than 0, the TZDate will be automatically recalculated to reflect this.
+For example, calling setUTCSeconds(60) results in setting seconds to 0 and adding one minute.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">seconds</span>:
+ Seconds to set
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+someDate.setUTCSeconds(23);
+console.log(someDate.getUTCSeconds()); /* Outputs 23 */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::getTimezone">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::getTimezone"></a><code><b><span class="methodName">getTimezone</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the timezone identifier.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString getTimezone();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+Zero or more slashes separate different components, with the most general
+descriptor first and the most specific one last. For example,
+'Europe/Berlin', 'America/Argentina/Buenos_Aires'.
+            </p>
+            <p>
+This attribute uniquely identifies the timezone.
+            </p>
+           </div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ DOMString The string timezone identifier <br>If TZDate is invalid, it will return 'Invalid Date'.
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+console.log(someDate.getTimezone());
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> Europe/London
+ </pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::toTimezone">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::toTimezone"></a><code><b><span class="methodName">toTimezone</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets a copy of the TZDate converted to a given time zone.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#TZDate">TZDate</a> toTimezone(DOMString tzid);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">tzid</span>:
+ Timezone identifier to set
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ TZDate The new TZDate in given Timezone
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the provided TZID
+is not recognized as a valid timezone identifier.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+var koreanDate = someDate.toTimezone("Asia/Seoul");
+console.log(someDate.toString());
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> Saturday, January 1, 2000, 8:59:59 AM GMT+0900 South Korea Time
+ </pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::toLocalTimezone">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::toLocalTimezone"></a><code><b><span class="methodName">toLocalTimezone</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets a copy of the TZDate converted to the local time zone.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#TZDate">TZDate</a> toLocalTimezone();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ TZDate The new TZDate in local Timezone
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* This example assumes that the device's local time zone is set to Asia/Seoul. */
+/* You may get different results depending on your local time zone settings */
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+var localDate = someDate.toLocalTimezone();
+console.log(localDate.toString());
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> Saturday, January 1, 2000, 8:59:59 AM GMT+0900 South Korea Time
+ </pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::toUTC">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::toUTC"></a><code><b><span class="methodName">toUTC</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets a copy of the TZDate converted to Coordinated Universal Time (UTC).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#TZDate">TZDate</a> toUTC();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ TZDate The Date/Time in UTC
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Asia/Seoul");
+var utcDate = someDate.toUTC();
+console.log(utcDate.toString());
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> Friday, December 31, 1999, 2:59:59 PM GMT+0000 GMT
+ </pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::difference">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::difference"></a><code><b><span class="methodName">difference</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Calculates the difference with another TZDate object.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#TimeDuration">TimeDuration</a> difference(<a href="#TZDate">TZDate</a> other);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+Calculates the difference in time between <em>this</em> and the other object.
+This comparison method takes timezones into consideration for the comparison.
+            </p>
+            <p>
+The TimeDuration that is returned is effectively <em>this</em> - other.
+The return value is a duration in milliseconds both TZDate objects have a time component, in days, otherwise.
+The result value will be:
+            </p>
+            <ul>
+              <li>
+Negative, if other is in the future              </li>
+              <li>
+0 if the two date/times are equal              </li>
+              <li>
+Positive, if other is in the past              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">other</span>:
+ The other Date/Time to compare to
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ TimeDuration The duration in milliseconds between the two date/time objects
+(or in days for comparison between dates with no time component)
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Prepares two TZDates pointing at new year eves in 2011 and 2012, respectively */
+var newYearEve2011 = new tizen.TZDate(2011, 0, 0, 0, 0, 0, 0, "Europe/London");
+var newYearEve2012 = new tizen.TZDate(2012, 0, 0, 0, 0, 0, 0, "Europe/London");
+
+/* Calculates how much is the difference between those two dates */
+var difference = newYearEve2012.difference(newYearEve2011);
+console.log("The difference is " + difference.length + " " + difference.unit);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example (since none of those dates have time component):</p></span><pre> The difference is 365 DAYS
+ </pre>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Prepares two TZDates pointing at 6:00 PM and 8:00 PM on the same day */
+var joggingStart = new tizen.TZDate(2015, 6, 6, 18, 0, 0, 0, "Europe/London");
+var joggingEnd = new tizen.TZDate(2015, 6, 6, 20, 0, 0, 0, "Europe/London");
+
+/* Calculates how much is the difference between those two dates */
+var difference = joggingEnd.difference(joggingStart);
+console.log("The difference is " + difference.length + " " + difference.unit);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example (since both of those dates do have time component):</p></span><pre> The difference is 7200000 MSECS
+ </pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::equalsTo">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::equalsTo"></a><code><b><span class="methodName">equalsTo</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Checks whether the TZDate is equal to another.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">boolean equalsTo(<a href="#TZDate">TZDate</a> other);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+This method takes the timezones into consideration and will return <em>true</em> if
+the two TZDate objects represent the same instant in different timezones.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">other</span>:
+ Other Date/Time to compare to
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ boolean <em>true</em> if the 2 date/times are the same
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var noonInEngland = new tizen.TZDate(2016, 0, 27, 12, 0, 0, 0, "Europe/London");
+var sameTimeInKorea = noonInEngland.toTimezone("Asia/Seoul");
+var isTheSame = noonInEngland.equalsTo(sameTimeInKorea);
+
+/* Those are the same dates (in different time zones), so the output should be "Those dates are equal." */
+if (isTheSame)
+{
+&nbsp;&nbsp;console.log("Those dates are equal.");
+}
+else
+{
+&nbsp;&nbsp;console.log("Those dates are not equal.");
+}
+</pre>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var noonInEngland = new tizen.TZDate(2016, 0, 27, 12, 0, 0, 0, "Europe/London");
+var noonInKorea = new tizen.TZDate(2016, 0, 27, 12, 0, 0, 0, "Asia/Seoul");
+var isTheSame = noonInEngland.equalsTo(noonInKorea);
+
+/* Those are not the same dates (obviously, noon in London is not noon in Seoul), */
+/* so the output should be "Those dates are not equal." */
+if (isTheSame)
+{
+&nbsp;&nbsp;console.log("Those dates are equal.");
+}
+else
+{
+&nbsp;&nbsp;console.log("Those dates are not equal.");
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::earlierThan">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::earlierThan"></a><code><b><span class="methodName">earlierThan</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Checks whether the TZDate is earlier than another.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">boolean earlierThan(<a href="#TZDate">TZDate</a> other);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+This method takes the timezones into consideration.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">other</span>:
+ The other Date/Time to compare to
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ boolean <em>true</em>, if the Date/Time is earlier than the one passed in argument
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Create a new TZDate object pointing to noon in London */
+var tzd1 = new tizen.TZDate(2016, 0, 1, 12, 0, 0, 0, "Europe/London");
+
+/* Create a new TZDate object pointing to 6 PM in Seoul on the same day */
+var tzd2 = new tizen.TZDate(2016, 0, 1, 18, 0, 0, 0, "Asia/Seoul");
+
+/* Is 12:00 local time in London earlier than 18:00 local time in Seoul? */
+var isEarlier = tzd1.earlierThan(tzd2);
+
+/* Outputs "false", since local time in Seoul is GMT (London) + 9 hours. */
+console.log(isEarlier);
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::laterThan">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::laterThan"></a><code><b><span class="methodName">laterThan</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Checks whether the TZDate is later than another.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">boolean laterThan(<a href="#TZDate">TZDate</a> other);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+This method takes the timezones into consideration.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">other</span>:
+ The other Date/Time to compare to
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ boolean <em>true</em>, if the Date/Time is later than the one passed in argument
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Create a new TZDate object pointing to noon in London */
+var tzd1 = new tizen.TZDate(2016, 0, 1, 12, 0, 0, 0, "Europe/London");
+
+/* Create a new TZDate object pointing to 6 PM in Seoul on the same day */
+var tzd2 = new tizen.TZDate(2016, 0, 1, 18, 0, 0, 0, "Asia/Seoul");
+
+/* Is 12:00 local time in London earlier than 18:00 local time in Seoul? */
+var isLater = tzd1.laterThan(tzd2);
+
+/* Outputs "true", since local time in Seoul is GMT (London) + 9 hours. */
+console.log(isLater);
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::addDuration">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::addDuration"></a><code><b><span class="methodName">addDuration</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets a new date by adding a duration to the current TZDate object.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#TZDate">TZDate</a> addDuration(<a href="#TimeDuration">TimeDuration</a> duration);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+If the length of duration is negative, the new date/time will be
+earlier than it used to.
+            </p>
+            <p>
+Note that calling this method does not alter the current object.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">duration</span>:
+ TimeDuration to add
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ TZDate The new TZDate by adding a duration
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var now = tizen.time.getCurrentDateTime();
+var in_one_week = now.addDuration(new tizen.TimeDuration(7, "DAYS"));
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::toLocaleDateString">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::toLocaleDateString"></a><code><b><span class="methodName">toLocaleDateString</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the date portion of a TZDate object as a string, using locale conventions.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString toLocaleDateString();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ DOMString The date portion of the TZDate object as a string, using locale conventions <br>If TZDate is invalid, it will return 'Invalid Date'.
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+console.log(someDate.toLocaleDateString());
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example (depending on locale settings):</p></span><pre> Friday, December 31, 1999
+ </pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::toLocaleTimeString">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::toLocaleTimeString"></a><code><b><span class="methodName">toLocaleTimeString</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the time portion of a TZDate object as a string, using locale conventions.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString toLocaleTimeString();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ DOMString The time portion of the TZDate object as a string, using locale conventions <br>If TZDate is invalid, it will return 'Invalid Date'.
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+console.log(someDate.toLocaleTimeString());
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example (depending on locale settings):</p></span><pre> 11:59:59 PM
+ </pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::toLocaleString">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::toLocaleString"></a><code><b><span class="methodName">toLocaleString</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Converts a TZDate object to a string, using locale conventions.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString toLocaleString();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ DOMString The string representation of the TZDate object, using locale conventions <br>If TZDate is invalid, it will return 'Invalid Date'.
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+console.log(someDate.toLocaleString());
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example (depending on locale settings):</p></span><pre> Friday, December 31, 1999, 11:59:59 PM
+ </pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::toDateString">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::toDateString"></a><code><b><span class="methodName">toDateString</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the date portion of a TZDate object as a string.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString toDateString();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ DOMString The date portion of the TZDate object as a string <br>If TZDate is invalid, it will return 'Invalid Date'.
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+
+/* Output: "Friday, December 31, 1999" */
+console.log(someDate.toDateString());
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::toTimeString">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::toTimeString"></a><code><b><span class="methodName">toTimeString</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the time portion of a TZDate object as a string.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString toTimeString();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ DOMString The time portion of the TZDate object as a string <br>If TZDate is invalid, it will return 'Invalid Date'.
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+
+/* Output: "11:59:59 PM GMT+0000 United Kingdom Time" */
+console.log(someDate.toTimeString());
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::toString">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::toString"></a><code><b><span class="methodName">toString</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Converts a TZDate object to a string.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString toString();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ DOMString The string representation of the TZDate object <br>If TZDate is invalid, it will return 'Invalid Date'.
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var someDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/London");
+
+ /* Output: "Friday, December 31, 1999, 11:59:59 PM GMT+0000 United Kingdom Time" */
+ console.log(someDate.toString());
+ </pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::secondsFromUTC">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::secondsFromUTC"></a><code><b><span class="methodName">secondsFromUTC</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the number of seconds from Coordinated Universal Time (UTC) offset for the timezone.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long secondsFromUTC();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+Returns the offset (in seconds) from UTC of the timezone, accounting for daylight
+savings if it is in the timezone. For example, if time zone is GMT+8, it will return -32,400.
+            </p>
+           </div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long The offset from UTC in seconds
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var offset = tizen.time.getCurrentDateTime().secondsFromUTC();
+var myDate = new Date();
+var exp_offset = myDate.getTimezoneOffset() * 60;
+/* offset is equals to exp_offset. */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::isDST">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::isDST"></a><code><b><span class="methodName">isDST</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Checks whether Daylight Saving Time(DST) is active for this TZDate.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">boolean isDST();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+Indicates if daylight savings are in effect for the time zone and instant
+identified by the TZDate object.
+            </p>
+           </div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ boolean The flag indicating whether the daylight saving are in effect
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var summertime = new tizen.TZDate(2015, 6, 1, 10, 0, 0, 0, "Europe/London");
+var wintertime = new tizen.TZDate(2015, 0, 1, 10, 0, 0, 0, "Europe/London");
+
+var isDstActiveInSummer = summertime.isDST(); /* true */
+var isDstActiveInWinter = wintertime.isDST(); /* false */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::getPreviousDSTTransition">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::getPreviousDSTTransition"></a><code><b><span class="methodName">getPreviousDSTTransition</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the date of the previous daylight saving time transition for the timezone.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#TZDate">TZDate</a>? getPreviousDSTTransition();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ TZDate The date of the previous daylight saving transition (before the instant identified by the TZDate)
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Creates the TZDate object pointing to January 2016 */
+var winter16 = new tizen.TZDate(2016, 0, 1, 10, 0, 0, 0, "Europe/London");
+
+/* Gets the date of previous DST transition */
+var previousDstTransition = winter16.getPreviousDSTTransition();
+
+/* Output: "Sunday, October 25, 2015, 1:00:00 AM GMT+0000 United Kingdom Time" */
+console.log(previousDstTransition.toString());
+</pre>
+</div>
+</dd>
+<dt class="method" id="TZDate::getNextDSTTransition">
+<a class="backward-compatibility-anchor" name="::Time::TZDate::getNextDSTTransition"></a><code><b><span class="methodName">getNextDSTTransition</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the date of the next daylight saving time transition for the timezone.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#TZDate">TZDate</a>? getNextDSTTransition();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ TZDate The date of the next daylight saving transition (after the instant identified by the TZDate)
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Creates the TZDate object pointing to January 2016 */
+var winter16 = new tizen.TZDate(2016, 0, 1, 10, 0, 0, 0, "Europe/London");
+
+/* Gets the date of next DST transition */
+var nextDstTransition = winter16.getNextDSTTransition();
+
+/* Output: "Sunday, March 27, 2016, 2:00:00 AM GMT+0100 United Kingdom Time" */
+console.log(nextDstTransition.toString());
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="TimeDuration">
+<a class="backward-compatibility-anchor" name="::Time::TimeDuration"></a><h3>2.4. TimeDuration</h3>
+<div class="brief">
+ The TimeDuration interface that contains the length and its associated time unit.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(long long length, optional <a href="#TimeDurationUnit">TimeDurationUnit</a>? unit)]
+  interface TimeDuration
+  {
+    attribute long long length;
+
+    attribute <a href="#TimeDurationUnit">TimeDurationUnit</a> unit;
+
+
+    <a href="#TimeDuration">TimeDuration</a> difference(<a href="#TimeDuration">TimeDuration</a> other) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean equalsTo(<a href="#TimeDuration">TimeDuration</a> other) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean lessThan(<a href="#TimeDuration">TimeDuration</a> other) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean greaterThan(<a href="#TimeDuration">TimeDuration</a> other) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="constructors">
+<h4 id="TimeDuration::constructor">Constructors</h4>
+<dl>
+<div class="brief">
+ The TimeDuration interface that contains the length and its associated time unit.
+              </div>
+<pre class="webidl prettyprint">TimeDuration(long long length, optional <a href="#TimeDurationUnit">TimeDurationUnit</a>? unit);</pre>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var now = tizen.time.getCurrentDateTime();
+var tomorrow = now.addDuration(new tizen.TimeDuration(1, "DAYS")); /* Becomes tomorrow, same time */
+</pre>
+</div>
+</dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="TimeDuration::length">
+<span class="attrName"><span class="type">long long </span><span class="name">length</span></span><div class="brief">
+ The duration length.
+            </div>
+<div class="description">
+            <p>
+The unit of the duration length (milliseconds, seconds, minutes, hours, or days)
+is determined by the duration unit attribute.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="TimeDuration::unit">
+<span class="attrName"><span class="type">TimeDurationUnit </span><span class="name">unit</span></span><div class="brief">
+ The duration unit (milliseconds, seconds, minutes, hours, or days).
+            </div>
+<div class="description">
+            <p>
+The default value is "MSECS" (milliseconds unit).
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+
+/* Changing both length and unit of existing TimeDuration objects is possible */
+
+var now = tizen.time.getCurrentDateTime();
+var threeHours = new tizen.TimeDuration();
+threeHours.length = 3;
+threeHours.unit = "HOURS";
+var later = now.addDuration(threeHours); /* later points to a time three hours from now */
+</pre>
+</div>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="TimeDuration::difference">
+<a class="backward-compatibility-anchor" name="::Time::TimeDuration::difference"></a><code><b><span class="methodName">difference</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Calculates the difference between two TimeDuration objects.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#TimeDuration">TimeDuration</a> difference(<a href="#TimeDuration">TimeDuration</a> other);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+Calculates the difference in time between <em>this</em> and <em>other</em>.
+The TimeDuration that is returned is effectively <em>first</em> - <em>other</em> (that is: positive if the first parameter is larger).
+            </p>
+            <p>
+The returned TimeDuration is the biggest possible unit without losing the precision.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">other</span>:
+ Other TimeDuration object to compare to
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ The new TimeDuration object corresponding to the result of <em>this</em> - <em>other</em>.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Assume that event1 and event2 are tizen.CalendarEvent objects */
+/* Computes event1.duration - event2.duration */
+var diff = event1.duration.difference(event2.duration);
+if (diff.length &gt; 0)
+&nbsp;&nbsp;console.log("The event1 is longer than event2.");
+else if (diff.length == 0)
+&nbsp;&nbsp;console.log("The duration of two events is same.");
+else
+&nbsp;&nbsp;console.log("The event1 is shorter than the event2.");
+</pre>
+</div>
+</dd>
+<dt class="method" id="TimeDuration::equalsTo">
+<a class="backward-compatibility-anchor" name="::Time::TimeDuration::equalsTo"></a><code><b><span class="methodName">equalsTo</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Checks whether the TimeDuration is equal to another.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">boolean equalsTo(<a href="#TimeDuration">TimeDuration</a> other);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+This method takes the units into consideration and will return true
+if the two TimeDuration objects represent the same duration in different units.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">other</span>:
+ Other TimeDuration object to compare to
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ boolean <em>true</em> if the two TimeDuration object represent the same duration
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var d1 = new tizen.TimeDuration(60, "MINS"); /* 60 minutes */
+var d2 = new tizen.TimeDuration(1, "HOURS"); /* 1 hour */
+var ret = d1.equalsTo(d2); /* Returns true */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TimeDuration::lessThan">
+<a class="backward-compatibility-anchor" name="::Time::TimeDuration::lessThan"></a><code><b><span class="methodName">lessThan</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Checks whether the TimeDuration is lower than another.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">boolean lessThan(<a href="#TimeDuration">TimeDuration</a> other);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+This method takes the units into consideration when doing the comparison.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">other</span>:
+ Other TimeDuration object to compare to
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ boolean <em>true</em> if the TimeDuration is less than <em>other</em>              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var d1 = new tizen.TimeDuration(1, "HOURS"); /* 1 hour */
+var d2 = new tizen.TimeDuration(120, "MINS"); /* 120 minutes */
+var ret = d1.lessThan(d2); /* Returns true */
+</pre>
+</div>
+</dd>
+<dt class="method" id="TimeDuration::greaterThan">
+<a class="backward-compatibility-anchor" name="::Time::TimeDuration::greaterThan"></a><code><b><span class="methodName">greaterThan</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Checks whether the TimeDuration is greater than another.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">boolean greaterThan(<a href="#TimeDuration">TimeDuration</a> other);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+This method takes the units into consideration when doing the comparison.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">other</span>:
+ Other TimeDuration object to compare to
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ boolean <em>true</em> if the TimeDuration is greater than <em>other</em>              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the call failed due to an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var d1 = new tizen.TimeDuration(120, "MINS"); /* 120 minutes */
+var d2 = new tizen.TimeDuration(1, "HOURS"); /* 1 hour */
+var ret = d1.greaterThan(d2); /* Returns true */
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">3. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Time {
+
+  enum TimeDurationUnit { "MSECS", "SECS", "MINS", "HOURS", "DAYS" };
+
+  [NoInterfaceObject] interface TimeManagerObject {
+    readonly attribute <a href="#TimeUtil">TimeUtil</a> time;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TimeManagerObject">TimeManagerObject</a>;
+
+  [NoInterfaceObject] interface TimeUtil {
+    <a href="#TZDate">TZDate</a> getCurrentDateTime() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    DOMString getLocalTimezone() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    DOMString[] getAvailableTimezones() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    DOMString getDateFormat(optional boolean? shortformat) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    DOMString getTimeFormat() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean isLeapYear(long year) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void setDateTimeChangeListener(<a href="tizen.html#SuccessCallback">SuccessCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void unsetDateTimeChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void setTimezoneChangeListener(<a href="tizen.html#SuccessCallback">SuccessCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void unsetTimezoneChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+  };
+
+  [Constructor(optional Date? datetime, optional DOMString? timezone),
+   Constructor(long year, long month, long day, optional long? hours, optional long? minutes, optional long? seconds, optional long? milliseconds, optional DOMString? timezone)]
+
+  interface TZDate {
+    long getDate();
+
+    void setDate(long date);
+
+    long getDay();
+
+    long getFullYear();
+
+    void setFullYear(long year);
+
+    long getHours();
+
+    void setHours(long hours);
+
+    long getMilliseconds();
+
+    void setMilliseconds(long ms);
+
+    long getMinutes();
+
+    void setMinutes(long minutes);
+
+    long getMonth();
+
+    void setMonth(long month);
+
+    long getSeconds();
+
+    void setSeconds(long seconds);
+
+    long getUTCDate();
+
+    void setUTCDate(long date);
+
+    long getUTCDay();
+
+    long getUTCFullYear();
+
+    void setUTCFullYear(long year);
+
+    long getUTCHours();
+
+    void setUTCHours(long hours);
+
+    long getUTCMilliseconds();
+
+    void setUTCMilliseconds(long ms);
+
+    long getUTCMinutes();
+
+    void setUTCMinutes(long minutes);
+
+    long getUTCMonth();
+
+    void setUTCMonth(long month);
+
+    long getUTCSeconds();
+
+    void setUTCSeconds(long seconds);
+
+    DOMString getTimezone();
+
+    <a href="#TZDate">TZDate</a> toTimezone(DOMString tzid) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#TZDate">TZDate</a> toLocalTimezone() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#TZDate">TZDate</a> toUTC() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#TimeDuration">TimeDuration</a> difference(<a href="#TZDate">TZDate</a> other) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean equalsTo(<a href="#TZDate">TZDate</a> other) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean earlierThan(<a href="#TZDate">TZDate</a> other) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean laterThan(<a href="#TZDate">TZDate</a> other) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#TZDate">TZDate</a> addDuration(<a href="#TimeDuration">TimeDuration</a> duration) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    DOMString toLocaleDateString();
+
+    DOMString toLocaleTimeString();
+
+    DOMString toLocaleString();
+
+    DOMString toDateString();
+
+    DOMString toTimeString();
+
+    DOMString toString();
+
+    long secondsFromUTC() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean isDST() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#TZDate">TZDate</a>? getPreviousDSTTransition() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#TZDate">TZDate</a>? getNextDSTTransition() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+
+  [Constructor(long long length, optional <a href="#TimeDurationUnit">TimeDurationUnit</a>? unit)]
+  interface TimeDuration
+  {
+    attribute long long length;
+
+    attribute <a href="#TimeDurationUnit">TimeDurationUnit</a> unit;
+
+
+    <a href="#TimeDuration">TimeDuration</a> difference(<a href="#TimeDuration">TimeDuration</a> other) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean equalsTo(<a href="#TimeDuration">TimeDuration</a> other) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean lessThan(<a href="#TimeDuration">TimeDuration</a> other) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean greaterThan(<a href="#TimeDuration">TimeDuration</a> other) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

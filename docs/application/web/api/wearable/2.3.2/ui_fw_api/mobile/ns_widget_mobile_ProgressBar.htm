@@ -1,0 +1,392 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Progress Bar</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+
+<h1>Progress Bar</h1>
+
+<p>The progress bar component shows a control that indicates the progress percentage of an on-going operation.</p>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	
+		<li><a href="#default-selectors0.25044789374805987">Default Selectors</a>
+			
+		
+		</li>
+	
+		<li><a href="#manual-constructor0.7840281431563199">Manual Constructor</a>
+			
+		</li>
+		<li><a href="#html-examples0.9146406608633697">HTML Examples</a>
+						</li>	
+		<li><a href="#options-for widget0.958138655172661">Options</a>
+			
+		</li>
+
+	
+		<li><a href="#events-list">Events</a>
+			
+		</li>
+	
+		<li><a href="#methods0.09717508149333298">Methods</a>
+			
+		</li>
+	
+</ol>
+
+<h2><a id="default-selectors0.25044789374805987"></a>Default Selectors</h2>
+
+<p>By default, all elements with the <code>data-role=&quot;progressbar&quot;</code> attribute are displayed as progress bars.
+
+
+
+<h2><a id="manual-constructor0.7840281431563199"></a>Manual Constructor</h2>
+
+<p>To manually create a progress bar component, use the component constructor from the <code>tau</code> namespace:</p>
+
+<pre class="prettyprint">&lt;div id=&quot;progress-bar&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var element = document.getElementById(&quot;progress-bar&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;progressBar = tau.widget.ProgressBar(element);
+&lt;/script&gt;
+</pre>
+
+
+<p>The constructor requires an <code>HTMLElement</code> parameter to create the component, and you can get it with the <code>document.getElementById()</code> method. The constructor can also take a second parameter, which is an object defining the configuration options for the component.</p>
+
+<p>If the jQuery library is loaded, you can use its method:</p>
+
+<pre class="prettyprint">&lt;div id=&quot;progress-bar&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;$(&quot;#progress-bar&quot;).progressbar();
+&lt;/script&gt;
+</pre>
+
+<p>The jQuery constructor takes one optional parameter, which is an object defining the configuration options for the component.</p>
+
+<h2><a id="html-examples0.9146406608633697"></a>HTML Examples</h2>
+
+<p>To create a simple progress bar:</p>
+
+<pre class="prettyprint">&lt;div id=&quot;progress-bar&quot; data-role=&quot;progressbar&quot;&gt;&lt;/div&gt;
+</pre>
+
+<h2><a id="options-for widget0.958138655172661"></a>Options</h2>
+
+<p>The options for a component can be defined as <code>data-...</code> attributes or passed as parameters to the constructor.</p>
+
+<p>You can change an option for the component using the <code>option</code> method.</p>
+
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+		
+
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-max</span></td>
+				<td class="option">number</td>
+				<td class="option">100</td>
+				<td class="option">Maximum value of the progress bar.</td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-min</span></td>
+				<td class="option">number</td>
+				<td class="option">0</td>
+				<td class="option">Minimum value of the progress bar.</td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-value</span></td>
+				<td class="option">number</td>
+				<td class="option">0</td>
+				<td class="option">Current progress value.</td>
+			</tr>
+		
+		</tbody>
+	</table>
+
+
+	<h2><a id="events-list"></a>Events</h2>
+<p>The following table lists the events related to the progress bar component.</p>
+	<table>
+		<tbody>
+		<tr>
+			<th>Event</th>
+			<th>Description</th>
+		</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">change</span></td>
+				<td><p>Triggered when the value of component changes.</p></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">complete</span></td>
+				<td><p>Triggered when the value of component reaches the maximum value.</p></td>
+			</tr>
+		
+		</tbody>
+	</table>
+
+<h2><a id="methods0.09717508149333298"></a>Methods</h2>
+
+<p>To call a method on the component, use one of the existing APIs:</p>
+
+<ul><li><p>TAU API (<strong>RECOMMENDED</strong>):</p>
+
+<pre class="prettyprint">&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var element = document.getElementById(&quot;progress-bar&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;progressBar = tau.widget.ProgressBar(element);
+
+&nbsp;&nbsp;&nbsp;progressBar.methodName(argument1, argument2, ...);
+&lt;/script&gt;
+</pre>
+
+</li>
+
+<li><p>jQuery API (<strong>support for backward compatibility</strong>):</p>
+
+<pre class="prettyprint">$(&quot;.selector&quot;).progressbar(&quot;methodName&quot;, argument1, argument2, ...);
+</pre></li></ul>
+
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		
+			
+
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">ProgressBar <a href="#method-refresh">refresh</a> (  ) </pre>
+					</td>
+					<td><p>Refreshes a progress bar.</p></td>
+				</tr>
+			
+
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">number <a href="#method-value">value</a> ( number? value ) </pre>
+					</td>
+					<td><p>Gets or sets a value.</p></td>
+				</tr>
+			
+		
+		</tbody>
+	</table>
+	<dl>
+	
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-refresh">refresh</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Refreshes a progress bar.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">ProgressBar refresh ( ) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+<p>The method rebuilds the DOM structure of the progress bar component. It must be called after you manually change the HTML attributes of the component&#39;s DOM structure.</p>
+
+<p>The method is called automatically after any component option is changed.</p>
+
+						</p>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>ProgressBar</td>
+									<td>Returns this.</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id=&quot;progress-bar&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var element = document.getElementById(&quot;progress-bar&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;progressBarWidget = tau.widget.ProgressBar(element);
+
+&nbsp;&nbsp;&nbsp;progressBarWidget.refresh();
+&lt;/script&gt;
+</pre>
+						</div>					
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id=&quot;progress-bar&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;$(&quot;#progress-bar&quot;).progressbar();
+&nbsp;&nbsp;&nbsp;$(&quot;#progress-bar&quot;).progressbar(&quot;refresh&quot;);
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+		
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-value">value</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Gets or sets a value.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">number value ( number? value) </pre>
+					</div>
+					
+						<p><span class="version">Since: </span>
+							2.3
+						</p>
+					
+					<div class="description">
+						<p>
+							<p>Returns the progress bar value or sets the value.</p>
+
+
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">value</span></td>
+						<td>number</td>
+						<td>Optional</td>
+						<td></td>
+						<td>New progress bar value.</td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>number</td>
+									<td>In the get mode, returns the current progress value.</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id=&quot;progress-bar&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var element = document.getElementById(&quot;progress-bar&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;progressBarWidget = tau.widget.ProgressBar(element),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Returns current value
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value = progressBarWidget.value();
+
+&nbsp;&nbsp;&nbsp;progressBarWidget.value(30); // Sets new value to 30
+&lt;/script&gt;
+</pre>
+						</div>					
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id=&quot;progress-bar&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;$(&quot;#progress-bar&quot;).progressbar();
+&nbsp;&nbsp;&nbsp;// Returns current value
+&nbsp;&nbsp;&nbsp;$(&quot;#progress-bar&quot;).progressbar(&quot;value&quot;);
+
+&nbsp;&nbsp;&nbsp;// Sets new value to 30
+&nbsp;&nbsp;&nbsp;$(&quot;#progress-bar&quot;).progressbar(&quot;value&quot;, 30);
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+		
+	</dl>
+
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

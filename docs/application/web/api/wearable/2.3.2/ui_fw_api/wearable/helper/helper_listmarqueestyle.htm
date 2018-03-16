@@ -1,0 +1,294 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../../snippet.css" rel="StyleSheet" type="text/css">
+	<title>SnapListMarqueeStyle</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>SnapListMarqueeStyle</h1>
+
+SnapListMarqueeStyle helper provides helper script to support some creating usable components for list style.
+<br>It supports making listview  more effective using <a href="../widgets/widget_snaplistview.htm">SnapListview</a> and <a href="../widgets/widget_marquee.htm">Marquee</a> component.
+
+<table class="note">
+        <tbody>
+        <tr>
+                <th class="note">Note</th>
+        </tr>
+        <tr>
+                <td class="note">This helper script is supported since <strong>2.3</strong>.</td>
+        </tr>
+        </tbody>
+</table>
+
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	
+		<li><a href="#default-selectors0.06779201747849584">How to create SnapListMarqueeStyle</a>
+			
+		</li>
+
+		<li><a href="#options-list">Options</a></li>
+		<li><a href="#methods-list">Methods</a></li>
+	
+</ol>
+
+<h2><a id='default-selectors0.06779201747849584'></a>How to create SnapListMarqueeStyle</h2>
+
+<p>You can make your own style listview with SnapListMarqueeStyle as the following.</p>
+In this example, text of list item scrolls horizontally and the sub text appears if the list item is placed in the middle of the screen.
+
+<h3>HTML Example</h3>
+
+<p>You can add a multiline style listview as follows:</p>
+
+<pre class="prettyprint">
+&lt;div class=&quot;ui-page ui-page-active&quot; id=&quot;snaplistTest&quot;&gt;
+	&lt;header class=&quot;ui-header&quot;&gt;
+		&lt;h2 class=&quot;ui-title&quot;&gt;Bottom Button&lt;/h2&gt;
+	&lt;/header&gt;
+	&lt;div class=&quot;ui-content&quot;&gt;
+		&lt;ul class=&quot;ui-listview ui-snap-listview expand-list&quot; id=&quot;snapList&quot;&gt;
+			&lt;li class=&quot;li-has-2line&quot;&gt;
+				&lt;div class=&quot;ui-marquee ui-marquee-gradient&quot;&gt;1.SnapListview with Marquee SnapListview with Marquee&lt;/div&gt;
+				&lt;div class=&quot;li-text-sub ui-li-sub-text&quot;&gt;sub-text&lt;/div&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;li-has-2line&quot;&gt;
+				&lt;div class=&quot;ui-marquee ui-marquee-gradient&quot;&gt;2.SnapListview with Marquee SnapListview with Marquee&lt;/div&gt;
+				&lt;div class=&quot;li-text-sub ui-li-sub-text&quot;&gt;sub-text&lt;/div&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;li-has-2line&quot;&gt;
+				&lt;div class=&quot;ui-marquee ui-marquee-gradient&quot;&gt;3.SnapListview with Marquee SnapListview with Marquee&lt;/div&gt;
+				&lt;div class=&quot;li-text-sub ui-li-sub-text&quot;&gt;sub-text&lt;/div&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;li-has-2line&quot;&gt;
+				&lt;div class=&quot;ui-marquee ui-marquee-gradient&quot;&gt;4.SnapListview with Marquee SnapListview with Marquee&lt;/div&gt;
+				&lt;div class=&quot;li-text-sub ui-li-sub-text&quot;&gt;sub-text&lt;/div&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h3>CSS Style Example</h3>
+
+<p>In CSS code, you can make your list animation style as follows:</p>
+<pre class="prettyprint">.ui-listview.expand-list li.li-has-2line .ui-marquee{
+	-webkit-transform: translate3d(0, 16px, 0);
+	-webkit-transition: all ease .5s;
+}
+.ui-listview.expand-list li.li-has-2line.ui-snap-listview-selected .ui-marquee{
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-transition: all ease 1s;
+}
+
+.ui-listview.expand-list li.li-has-2line .ui-li-sub-text{
+	-webkit-transform: translate3d(0, -20px, 0);
+	opacity: 0;
+	-webkit-transition: all ease .5s;
+}
+.ui-listview.expand-list li.li-has-2line.ui-snap-listview-selected .ui-li-sub-text{
+	-webkit-transform: translate3d(0, 0, 0);
+	opacity: 1;
+	-webkit-transition: all ease 1s;
+}
+</pre>
+
+<h3>Javascript Example</h3>
+
+<p>In javascript code, you can make your list as SnapListview component as follows:</p>
+<pre class="prettyprint">&lt;script&gt;
+var page = document.getElementById("snaplistTest"),
+    list = document.getElementById("snapList"),
+    listHelper;
+
+page.addEventListener( "pageshow", function() {
+    listHelper = tau.helper.SnapListMarqueeStyle.create(list, {marqueeDelay: 1000});
+});
+
+page.addEventListener( "pagehide", function() {
+    listHelper.destroy();
+});
+&lt;/script&gt;
+</pre>
+
+
+	<h2><a id="options-list"></a>Options</h2>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">marqueeDelay</span></td>
+				<td class="option">number</td>
+				<td class="option">0</td>
+				<td class="option">Sets the delay time for marquee component. The unit of time is millisecond.</td>
+			</tr>
+		
+		</tbody>
+	</table>
+
+<h2><a id="methods-list"></a>Methods</h2>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-value">create</a> (  ) </pre>
+					</td>
+					<td><p>Create related components for SnapListMarqueeStyle.</p></td>
+				</tr>
+			
+		
+		</tbody>
+	</table>
+	<dl>
+		
+			
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-value">create</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Create related components for SnapListMarqueeStyle.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">tau.helper.SnapListMarqueeStyle.create( HTMLElement, options ) </pre>
+					</div>
+					
+						<p><span class="version">Since: </span>
+							2.3
+						</p>
+					
+					<div class="description">
+						<p>
+							<p>SnapListMarqueeStyle Object.</p>
+
+
+						</p>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>object</td>
+									<td>SnapListMarqueeStyle</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">&lt;ul class="ui-listview ui-snap-listview" id="snapList"&gt;
+ &lt;li&gt;some element or text&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script&gt;
+    var list = document.getElementById("snapList"),
+	listHelper;
+    
+    // create helper
+    listHelper = tau.helper.SnapListMarqueeStyle.create(list, {marqueeDelay: 1000});
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+<dt class="method"><code><b><span class="methodName"
+																   id="method-value">destroy</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Destroy related components for SnapListMarqueeStyle.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">destroy ( ) </pre>
+					</div>
+					
+						<p><span class="version">Since: </span>
+							2.3
+						</p>
+					
+					<div class="description">
+						<p>
+							<p>No return value</p>
+
+
+						</p>
+					</div>
+										
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">&lt;ul class="ui-listview ui-snap-listview" id="snapList"&gt;
+ &lt;li&gt;some element or text&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script&gt;
+    var list = document.getElementById("snapList"),
+	listHelper;
+    
+    // create helper
+    listHelper = tau.helper.SnapListMarqueeStyle.create(list, {marqueeDelay: 1000});
+ 
+    // destroy helper
+    listHelper.destroy();
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+		
+		</dl>
+
+
+
+
+<h2>Where to Go Next</h2>
+<ul>
+	<li><a href="./helper.htm">Helper Scripts</a></li>
+	
+</ul>
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Navigation</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>Navigation</h1>
+
+
+<p>The navigation component is used inside the header to navigate back and forth according to the navigational history array, which is created by the application. By clicking a horizontally-listed element on the navigation, you can move to the target page.</p>
+
+<table class="note">
+	<tbody>
+		<tr>
+			<th class="note">Note</th>
+		</tr>
+		<tr>
+			<td class="note">This component is supported since Tizen 2.3.</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	
+		<li><a href="#default-selector">Default Selector</a>
+			
+		<li><a href="#html-examples">HTML Examples</a>
+		</li>
+			
+		</li>
+
+		<li><a href="#methods-list">Methods</a>
+			
+		</li>
+	
+</ol>
+
+<h2><a id="default-selector"></a>Default Selector</h2>
+
+<p>Make the navigation component with the <code>class=&quot;ui-navigation&quot;</code> or <code>data-role=&quot;navigation&quot;</code> attribute. For semantic understanding, use the <code>nav</code> element.</p>
+
+<pre class="prettyprint">&lt;div class=&quot;ui-page&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-header&quot; data-position=&quot;fixed&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;title&lt;/h1&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nav class=&quot;ui-navigation&quot; id=&quot;navigation&quot;&gt;&lt;/nav&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-content&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h2><a id="html-examples"></a>HTML Examples</h2>
+<table class="note">
+    <tbody>
+    <tr>
+        <th class="note">Note</th>
+    </tr>
+    <tr>
+        <td class="note">To get more efficient experience, we recommend to use Navigation component with <a href="mobile_PanelChanger.htm">PanelChanger</a>.</td>
+    </tr>
+    </tbody>
+</table>
+<h4>HTML Example with PanelChanger</h4>
+<pre class="prettyprint">&lt;div&nbsp;id=&quot;panelPage&quot;&nbsp;class=&quot;ui-page&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-header&quot;&nbsp;data-position=&quot;fixed&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Navigation&lt;/h1&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nav&nbsp;id=&quot;navigation&quot;&nbsp;class=&quot;ui-navigation&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=&quot;panelChanger&quot;&nbsp;class=&quot;ui-panel-changer&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=&quot;mainpanel&quot;&nbsp;class=&quot;ui-panel&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#panel2&quot;&gt;Go&nbsp;Panel&nbsp;2&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;./panel.js&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;
+
+&lt;!--&nbsp;in&nbsp;panel.html&nbsp;--&gt;
+&lt;div&nbsp;id=&quot;panel2&quot;&nbsp;class=&quot;ui-panel&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;ui-listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;ui-li-anchor&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#panel3&quot;&gt;Go&nbsp;Panel&nbsp;3&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&nbsp;id=&quot;panel3&quot;&nbsp;class=&quot;ui-panel&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;ui-listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;ui-li-anchor&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&gt;Panel3&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<h4>JS Example with PanelChanger</h4>
+<pre class="prettyprint">&lt;!--&nbsp;in&nbsp;panel.js&nbsp;--&gt;
+(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;var&nbsp;page&nbsp;=&nbsp;document.querySelector(&quot;#panelPage&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;panelChanger&nbsp;=&nbsp;page.querySelector(&quot;#panelChanger&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;panelChangerComponent,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navigation&nbsp;=&nbsp;page.querySelector(&quot;#navigation&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navigationComponent,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navigated&nbsp;=&nbsp;false;
+
+&nbsp;&nbsp;&nbsp;page.addEventListener(&quot;pagebeforeshow&quot;,&nbsp;function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;activePanel&nbsp;=&nbsp;page.querySelector(&quot;.ui-panel-active&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;panelChangerComponent&nbsp;=&nbsp;tau.widget.PanelChanger(panelChanger);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navigationComponent&nbsp;=&nbsp;tau.widget.Navigation(navigation);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navigationComponent.push(activePanel.id);
+&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;panelChanger.addEventListener(&quot;panelchange&quot;,&nbsp;function(event)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;toPanel&nbsp;=&nbsp;event.detail.toPanel,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;direction&nbsp;=&nbsp;event.detail.direction,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id&nbsp;=&nbsp;toPanel.id;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(id)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(direction&nbsp;===&nbsp;&quot;forward&quot;)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navigationComponent.push(id);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(navigated&nbsp;===&nbsp;false)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navigationComponent.pop();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navigated&nbsp;=&nbsp;false;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.warn(&quot;You&nbsp;should&nbsp;insert&nbsp;id&nbsp;value&nbsp;in&nbsp;the&nbsp;each&nbsp;panels&quot;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;navigation.addEventListener(&quot;navigate&quot;,&nbsp;function(event)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;id&nbsp;=&nbsp;event.detail.id;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navigated&nbsp;=&nbsp;true;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;panelChangerComponent.changePanel(&quot;#&quot;&nbsp;+&nbsp;id,&nbsp;&quot;slide-reverse&quot;,&nbsp;&quot;back&quot;);
+&nbsp;&nbsp;&nbsp;});
+})();
+    </pre>
+
+
+
+
+
+	<h2><a id="methods-list"></a>Methods</h2>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-create">create</a> ( ) </pre>
+					</td>
+					<td><p>Initiates the making of the navigation.</p></td>
+				</tr>
+                <tr>
+                    <td>
+                        <pre class="intable prettyprint"><a href="#method-push">push</a> ( String targetId ) </pre>
+                    </td>
+                    <td><p>Adds the given navigation item.</p></td>
+                </tr>
+                <tr>
+                    <td>
+                        <pre class="intable prettyprint"><a href="#method-pop">pop</a> ( ) </pre>
+                    </td>
+                    <td><p>Pops the last child of the navigation.</p></td>
+                </tr>
+			
+		
+		</tbody>
+	</table>
+	<dl>
+		
+			
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-create">create</span><i><span style="color:red"> :DEPRECATED since 2.4</span></i></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Initiates the making of the navigation.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">create ( ) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+
+					
+				</dd>
+			
+		
+		</dl>
+
+    <dl>
+
+
+        <dt class="method"><code><b><span class="methodName"
+                                          id="method-push">push</span></b></code></dt>
+        <dd>
+            <div class="brief">
+                <p>Adds the given navigation item.</p>
+            </div>
+            <div class="synopsis">
+                <pre class="signature prettyprint">push ( String targetId ) </pre>
+            </div>
+
+            <div class="parameters">
+                <p><span class="param">Parameters:</span></p>
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Type</th>
+                        <th>Required / optional</th>
+                        <th>Description</th>
+                    </tr>
+
+
+                    <tr>
+                        <td><span style="font-family: Courier New,Courier,monospace">targetId</span></td>
+                        <td>String</td>
+                        <td>Required</td>
+                        <td>Element ID to be added</td>
+                    </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="example">
+                            <span class="example"><p>Code
+                                example:</p><p></p></span>
+                            <pre name="code" class="examplecode
+                                prettyprint">&lt;div&nbsp;class=&quot;ui-header&quot;&nbsp;data-position=&quot;fixed&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;h1&gt;Navigation&lt;/h1&gt;
+&nbsp;&nbsp;&nbsp;&lt;nav&nbsp;id=&quot;navigation&quot;&nbsp;class=&quot;ui-navigation&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;/nav&gt;
+&lt;/div&gt;
+&lt;div&nbsp;class=&quot;ui-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=&quot;panelChanger&quot;&nbsp;class=&quot;ui-panel-changer&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=&quot;mainpanel&quot;&nbsp;class=&quot;ui-panel&quot;&nbsp;style=&quot;background-color:#ffff4f&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;./panel.html#panel2&quot;&gt;Go&nbsp;Panel&nbsp;2&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var&nbsp;navigation&nbsp;=&nbsp;page.querySelector(&quot;#navigation&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;activePanel&nbsp;=&nbsp;page.querySelector(&quot;.ui-panel-active&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navigationComponent&nbsp;=&nbsp;tau.widget.Navigation(navigation);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navigationComponent.push(activePanel.id);
+&lt;/script&gt;</pre>
+            </div>
+
+
+        </dd>
+
+
+    </dl>
+    <dl>
+
+
+        <dt class="method"><code><b><span class="methodName"
+                                          id="method-push">pop</span></b></code></dt>
+        <dd>
+            <div class="brief">
+                <p>Pops the last child of the navigation.</p>
+            </div>
+            <div class="synopsis">
+                <pre class="signature prettyprint">pop ( ) </pre>
+            </div>
+
+
+            <div class="example">
+                                <span class="example"><p>Code
+                                    example:</p><p></p></span>
+<pre name="code" class="examplecode prettyprint">&lt;div&nbsp;class=&quot;ui-header&quot;&nbsp;data-position=&quot;fixed&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;h1&gt;Navigation&lt;/h1&gt;
+&nbsp;&nbsp;&nbsp;&lt;nav&nbsp;id=&quot;navigation&quot;&nbsp;class=&quot;ui-navigation&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;/nav&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var&nbsp;navigation&nbsp;=&nbsp;page.querySelector(&quot;#navigation&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navigationComponent&nbsp;=&nbsp;tau.widget.Navigation(navigation);
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;navigationComponent.pop();
+&lt;/script&gt;
+</pre>
+            </div>
+
+
+        </dd>
+
+
+    </dl>
+	
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

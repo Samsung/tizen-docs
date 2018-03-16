@@ -1,0 +1,552 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>TVDisplayControl API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::TVDisplayControl">
+<div class="supported-platforms"><img title="Optional" src="../../../images/tv_s_w_optional.png"></div>
+<div class="title"><h1>TVDisplayControl API</h1></div>
+<div class="brief">
+        </div>
+<div class="description">
+        <p>
+This API provides interfaces for managing stereoscopic 3D effects
+for television signals.
+        </p>
+        <p>
+Modern TVs and projectors can display two images, a left image and a right image,
+which are displayed to the left and right eyes respectively. This technique creates
+an illusion of depth, which is perceived by users as a 3D image.
+        </p>
+        <p>
+For more information about stereoscopy, see this
+<a href="http://en.wikipedia.org/wiki/Stereoscopy">Wikipedia article</a>.
+        </p>
+        <p>
+There are several formats of input images supported by the stereoscopy
+plugin:
+        </p>
+        <ul>
+          <li>
+Side-by-side: Left and right images are merged into one
+picture. The left image is at the left side and the right image is at the right
+side. Both images are scaled to fit in the original
+image ratio.          </li>
+          <li>
+Top-bottom: Left and right images are merged into one
+picture. The left image is at the top and the right image is at the bottom.
+Both images are scaled to fit in the original image ratio.          </li>
+          <li>
+Line-by-line: Left and right images are interlaced by row.
+The first row belongs to the left image and the second row
+belongs to the right image, and so on.          </li>
+          <li>
+Vertical-strip: Left and right images are interlaced by column.
+The first column belongs to the left image and the second column
+belongs to the right image, and so on.          </li>
+          <li>
+Frame-sequence: Left and right images are interlaced by frames.          </li>
+        </ul>
+        <p>
+Advanced devices are able to computationally generate depth
+data by processing non-stereoscopic images. Depth data is used
+to render left and right stereoscopic images from a source image which lacks
+this information. The quality of such stereoscopic images depends
+on the computational power used for processing, the algorithms used and the properties
+of the source data. For more information see this
+<a href="http://en.wikipedia.org/wiki/2D_to_3D_conversion">Wikipedia article.</a>        </p>
+        <p>
+There will be a <em>tizen.tvdisplaycontrol</em> object that allows accessing the
+functionality of the display control API.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li>
+                    1.1. <a href="#Display3DEffectMode">Display3DEffectMode</a>
+</li>
+<li>
+                    1.2. <a href="#Display3DModeState">Display3DModeState</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#DisplayControlManagerObject">DisplayControlManagerObject</a>
+</li>
+<li>2.2. <a href="#DisplayControlManager">DisplayControlManager</a>
+</li>
+<li>2.3. <a href="#Mode3DEffectListSupportCallback">Mode3DEffectListSupportCallback</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#api-features">Related Feature</a>
+</li>
+<li>4. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#DisplayControlManagerObject">DisplayControlManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#DisplayControlManager">DisplayControlManager</a></td>
+<td>
+<div>
+<a href="#Display3DEffectMode">Display3DEffectMode</a> <a href="#DisplayControlManager::get3DEffectMode">get3DEffectMode</a> ()</div>
+<div>
+<a href="#Display3DModeState">Display3DModeState</a> <a href="#DisplayControlManager::is3DModeEnabled">is3DModeEnabled</a> ()</div>
+<div>void <a href="#DisplayControlManager::getSupported3DEffectModeList">getSupported3DEffectModeList</a> (<a href="#Mode3DEffectListSupportCallback">Mode3DEffectListSupportCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#Mode3DEffectListSupportCallback">Mode3DEffectListSupportCallback</a></td>
+<td><div>void <a href="#Mode3DEffectListSupportCallback::onsuccess">onsuccess</a> (<a href="#Display3DEffectMode">Display3DEffectMode</a>[] mode3DEffects)</div></td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="enum" id="Display3DEffectMode">
+<a class="backward-compatibility-anchor" name="::TVDisplayControl::Display3DEffectMode"></a><h3>1.1. Display3DEffectMode</h3>
+<div class="brief">
+ An enumerator to indicate 3D effect mode.
+          </div>
+<pre class="webidl prettyprint">    enum Display3DEffectMode {
+        "OFF",
+        "TOP_BOTTOM",
+        "SIDE_BY_SIDE",
+        "LINE_BY_LINE",
+        "VERTICAL_STRIPE",
+        "FRAME_SEQUENCE",
+        "CHECKER_BD",
+        "FROM_2D_TO_3D"
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="description">
+          <ul>
+            <li>
+OFF - identifier for 3DEffect mode off             </li>
+            <li>
+TOP_BOTTOM - Left image at the top, right image at the bottom             </li>
+            <li>
+SIDE_BY_SIDE - Left image at the left side, right image at the right
+side             </li>
+            <li>
+LINE_BY_LINE - Left and right image interlaced
+by row             </li>
+            <li>
+VERTICAL_STRIP - Left and right image interlaced
+by column             </li>
+            <li>
+FRAME_SEQUENCE -  Left and right image interlaced by frame             </li>
+            <li>
+CHECKER_BD - Checkerboard (only for PC or game console sources)             </li>
+            <li>
+FROM_2D_TO_3D - Left and right image computed from
+non-stereoscopic image             </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="Display3DModeState">
+<a class="backward-compatibility-anchor" name="::TVDisplayControl::Display3DModeState"></a><h3>1.2. Display3DModeState</h3>
+<div class="brief">
+ An enumerator to indicate 3D mode state.
+          </div>
+<pre class="webidl prettyprint">    enum Display3DModeState {
+        "NOT_CONNECTED",
+        "NOT_SUPPORTED",
+        "READY"
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="description">
+          <ul>
+            <li>
+ NOT_CONNECTED - The device (e.g. Blu-ray player) supports 3D mode but a 3D display is not connected.            </li>
+            <li>
+ NOT_SUPPORTED - The device does not support 3D mode.            </li>
+            <li>
+ READY - The device supports 3D mode and it can display 3D mode.            </li>
+          </ul>
+         </div>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="DisplayControlManagerObject">
+<a class="backward-compatibility-anchor" name="::TVDisplayControl::DisplayControlManagerObject"></a><h3>2.1. DisplayControlManagerObject</h3>
+<div class="brief">
+ This interface defines what is instantiated by the <em>tizen</em> object.
+There will be a <em>tizen.tvdisplaycontrol </em>object that allows the access to the Display Control API.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface DisplayControlManagerObject {
+        readonly attribute <a href="#DisplayControlManager">DisplayControlManager</a> tvdisplaycontrol;
+    };</pre>
+<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DisplayControlManagerObject">DisplayControlManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="description">
+          <p>
+For example, Display Control API provides whether your device supports 3D.
+          </p>
+         </div>
+</div>
+<div class="interface" id="DisplayControlManager">
+<a class="backward-compatibility-anchor" name="::TVDisplayControl::DisplayControlManager"></a><h3>2.2. DisplayControlManager</h3>
+<div class="brief">
+ This interface provides access to the Display Control API functionalities through the <em>tizen.tvdisplaycontrol</em> interface.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface DisplayControlManager {
+
+        <a href="#Display3DEffectMode">Display3DEffectMode</a> get3DEffectMode() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        <a href="#Display3DModeState">Display3DModeState</a> is3DModeEnabled() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void getSupported3DEffectModeList(<a href="#Mode3DEffectListSupportCallback">Mode3DEffectListSupportCallback</a> successCallback,
+                                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="DisplayControlManager::get3DEffectMode">
+<a class="backward-compatibility-anchor" name="::TVDisplayControl::DisplayControlManager::get3DEffectMode"></a><code><b><span class="methodName">get3DEffectMode</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the current 3D effect mode.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Display3DEffectMode">Display3DEffectMode</a> get3DEffectMode();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/tv.display
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ Display3DEffectMode The current mode of 3D effect
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+   var current3Dmode = tizen.tvdisplaycontrol.get3DEffectMode()
+   console.log("The current 3D mode is " + current3Dmode + ".");
+}
+catch (error)
+{
+   console.log(error.name);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="DisplayControlManager::is3DModeEnabled">
+<a class="backward-compatibility-anchor" name="::TVDisplayControl::DisplayControlManager::is3DModeEnabled"></a><code><b><span class="methodName">is3DModeEnabled</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Checks whether playing 3D mode is available or not.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Display3DModeState">Display3DModeState</a> is3DModeEnabled();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/tv.display
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ Display3DModeState The current state to display 3D contents
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+   if (tizen.tvdisplaycontrol.is3DModeEnabled() === "NOT_SUPPORTED")
+   {
+      console.log("The current device does not support 3D mode.");
+   }
+   else if (tizen.tvdisplaycontrol.is3DModeEnabled() === "READY")
+   {
+      console.log("The current device supports 3D mode and can display 3D contents. Maybe it is a 3D TV device or is connected with 3D display device.");
+   }
+   else
+   {
+      console.log("The current device supports 3D mode but cannot display 3D contents. It may be a 3D Blu-ray player device which is not connected with 3D display device.");
+   }
+}
+catch (error)
+{
+   console.log(error.name);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="DisplayControlManager::getSupported3DEffectModeList">
+<a class="backward-compatibility-anchor" name="::TVDisplayControl::DisplayControlManager::getSupported3DEffectModeList"></a><code><b><span class="methodName">getSupported3DEffectModeList</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the supported 3D effects.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getSupported3DEffectModeList(<a href="#Mode3DEffectListSupportCallback">Mode3DEffectListSupportCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/tv.display
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ The method to invoke when a list of supported 3D modes is retrieved successfully.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to invoke when an error occurs.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function successCB(effects)
+{
+   for (var i = 0; i &lt; effects.length; ++i)
+   {
+      console.log(effects[i] + ": this mode is supported on a device.");
+   }
+}
+
+function errorCB(error)
+{
+   console.log("An error occurs when getSupported3DEffectModeList() is invoked. Error(name: "
+               + error.name + " , message: " + error.message + ")");
+}
+
+try
+{
+   tizen.tvdisplaycontrol.getSupported3DEffectModeList(successCB, errorCB);
+}
+catch (error)
+{
+   console.log(error.name);
+}
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="Mode3DEffectListSupportCallback">
+<a class="backward-compatibility-anchor" name="::TVDisplayControl::Mode3DEffectListSupportCallback"></a><h3>2.3. Mode3DEffectListSupportCallback</h3>
+<div class="brief">
+ This interface defines a callback when a list of supported 3D modes is retrieved successfully.
+          </div>
+<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface Mode3DEffectListSupportCallback {
+        void onsuccess(<a href="#Display3DEffectMode">Display3DEffectMode</a>[] mode3DEffects);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="Mode3DEffectListSupportCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::TVDisplayControl::Mode3DEffectListSupportCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Method invoked when the list of 3D modes is retrieved successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Display3DEffectMode">Display3DEffectMode</a>[] mode3DEffects);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">mode3DEffects</span>:
+ A list of supported 3D effect modes
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="api-features">3. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee the running of this application on a device with a TV display control support, define the following requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/tv.display</li>
+</div>
+<p></p>
+                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+</div>
+<h2 id="full-webidl">4. Full WebIDL</h2>
+<pre class="webidl prettyprint">module TVDisplayControl {
+
+    enum Display3DEffectMode {
+        "OFF",
+        "TOP_BOTTOM",
+        "SIDE_BY_SIDE",
+        "LINE_BY_LINE",
+        "VERTICAL_STRIPE",
+        "FRAME_SEQUENCE",
+        "CHECKER_BD",
+        "FROM_2D_TO_3D"
+    };
+
+    enum Display3DModeState {
+        "NOT_CONNECTED",
+        "NOT_SUPPORTED",
+        "READY"
+    };
+
+    [NoInterfaceObject] interface DisplayControlManagerObject {
+        readonly attribute <a href="#DisplayControlManager">DisplayControlManager</a> tvdisplaycontrol;
+    };
+    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DisplayControlManagerObject">DisplayControlManagerObject</a>;
+
+    [NoInterfaceObject] interface DisplayControlManager {
+
+        <a href="#Display3DEffectMode">Display3DEffectMode</a> get3DEffectMode() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        <a href="#Display3DModeState">Display3DModeState</a> is3DModeEnabled() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void getSupported3DEffectModeList(<a href="#Mode3DEffectListSupportCallback">Mode3DEffectListSupportCallback</a> successCallback,
+                                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };
+
+    [Callback=FunctionOnly, NoInterfaceObject] interface Mode3DEffectListSupportCallback {
+        void onsuccess(<a href="#Display3DEffectMode">Display3DEffectMode</a>[] mode3DEffects);
+    };
+
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

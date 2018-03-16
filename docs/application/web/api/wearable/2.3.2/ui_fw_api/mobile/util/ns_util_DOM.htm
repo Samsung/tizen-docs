@@ -1,0 +1,1535 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../../snippet.css" rel="StyleSheet" type="text/css">
+	<title>DOM Utility</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+
+<h1>DOM Utility</h1>
+
+<p>The DOM utility is a utility object that provides DOM manipulation, and support for CSS properties and DOM attributes.</p>
+
+<h2>Table of Contents</h2>
+
+<ol class="toc">
+	<li><a href="#replace">Replacing jQuery Methods with TAU Methods</a>
+	<ol class="toc">
+	
+		<li><a href="#append">append vs. appendNodes</a>
+			
+		</li>
+	
+		<li><a href="#replacewith">replaceWith vs. replaceWithNodes</a>
+			
+		</li>
+	
+		<li><a href="#before">before vs. insertNodesBefore</a>
+			
+		</li>
+	
+		<li><a href="#wrapinner">wrapInner vs. wrapInHTML</a>
+			
+		</li></ol></li>
+	
+		<li><a href="#methods-list">DOM Utility Methods</a>
+			
+	
+			
+		</li>
+	
+</ol>
+
+<h1><a id="replace"></a>Replacing jQuery Methods with TAU Methods</h1>
+
+<p>Some useful DOM utility methods are supported by the Web UI framework, so you can use TAU-based DOM methods (pure JavaScript) instead of jQuery methods.</p>
+
+<h2><a id="append"></a>append vs. appendNodes</h2>
+
+<p>HTML code before manipulation:</p>
+
+<pre class="prettyprint">&lt;div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;first&quot;&gt;Hello&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;second&quot;&gt;And&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;third&quot;&gt;Goodbye&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<p>To append an element to the end of a specific node value, manipulate with:</p>
+<ul><li><a id='jquery-manipulation0.3280518683604896'></a>jQuery
+
+<pre class="prettyprint">$(&quot;#second&quot;).append(&quot;&lt;span&gt;Test&lt;/span&gt;&quot;);
+</pre></li>
+
+<li><a id='ns-manipulation0.15247147739864886'></a><strong>TAU</strong>
+
+<pre class="prettyprint">var context = document.getElementById(&quot;second&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;element = document.createElement(&quot;span&quot;);
+element.innerHTML = &quot;Test&quot;;
+tau.util.DOM.appendNodes(context, element);
+</pre></li></ul>
+
+<p>HTML code after manipulation:</p>
+
+<pre class="prettyprint">&lt;div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;first&quot;&gt;Hello&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;second&quot;&gt;And
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;Test&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;third&quot;&gt;Goodbye&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h2><a id="replacewith"></a>replaceWith vs. replaceWithNodes</h2>
+
+<p>HTML code before manipulation:</p>
+
+<pre class="prettyprint">&lt;div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;first&quot;&gt;Hello&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;second&quot;&gt;And&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;third&quot;&gt;Goodbye&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<p>To replace a node, manipulate with:</p>
+<ul><li><a id='jquery-manipulation0.4654183858074248'></a>jQuery
+
+<pre class="prettyprint">$(&#39;#second&#39;).replaceWith(&quot;&lt;span&gt;Test&lt;/span&gt;&quot;);
+</pre></li>
+
+<li><a id='ns-manipulation0.5650245239958167'></a><strong>TAU</strong>
+
+<pre class="prettyprint">var context = document.getElementById(&quot;second&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;element = document.createElement(&quot;span&quot;);
+element.innerHTML = &quot;Test&quot;;
+tau.util.DOM.replaceWithNodes(context, element);
+</pre></li></ul>
+
+<p>HTML code after manipulation:</p>
+
+<pre class="prettyprint">&lt;div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;first&quot;&gt;Hello&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;span&gt;Test&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;third&quot;&gt;Goodbye&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h2><a id="before"></a>before vs. insertNodesBefore</h2>
+
+<p>HTML code before manipulation:</p>
+
+<pre class="prettyprint">&lt;div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;first&quot;&gt;Hello&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;second&quot;&gt;And&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;third&quot;&gt;Goodbye&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<p>To add an element before a specific node, manipulate with:</p>
+<ul><li><a id='jquery-manipulation0.6407823746558279'></a>jQuery
+
+<pre class="prettyprint">$(&quot;#second&quot;).before(&quot;&lt;span&gt;Test&lt;/span&gt;&quot;);
+</pre></li>
+
+<li><a id='ns-manipulation0.1485148286446929'></a><strong>TAU</strong>
+
+<pre class="prettyprint">var context = document.getElementById(&quot;second&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;element = document.createElement(&quot;span&quot;);
+element.innerHTML = &quot;Test&quot;;
+tau.util.DOM.insertNodesBefore(context, element);
+</pre></li></ul>
+
+<p>HTML code after manipulation:</p>
+
+<pre class="prettyprint">&lt;div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;first&quot;&gt;Hello&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;span&gt;Test&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;second&quot;&gt;And&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;third&quot;&gt;Goodbye&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h2><a id="wrapinner"></a>wrapInner vs. wrapInHTML</h2>
+
+<p>HTML code before manipulation:</p>
+
+<pre class="prettyprint">&lt;div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;first&quot;&gt;Hello&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;second&quot;&gt;And&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;third&quot;&gt;Goodbye&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<p>To wrap a specific node value inside an element, manipulate with:</p>
+<ul><li><a id='jquery-manipulation0.7609627170022577'></a>jQuery
+
+<pre class="prettyprint">$(&quot;#second&quot;).wrapInner(&quot;&lt;span class=&quot;new&quot;&gt;&lt;/span&gt;&quot;);
+</pre></li>
+
+<li><a id='ns-manipulation0.7331366401631385'></a><strong>TAU</strong>
+
+<pre class="prettyprint">var element = document.getElementById(&quot;second&quot;);
+tau.util.DOM.wrapInHTML(element, &quot;&lt;span class=&quot;new&quot;&gt;&lt;/span&gt;&quot;);
+</pre></li></ul>
+
+<p>HTML code after manipulation:</p>
+
+<pre class="prettyprint">&lt;div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;first&quot;&gt;Hello&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;span class=&quot;new&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id=&quot;second&quot;&gt;And&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;third&quot;&gt;Goodbye&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+
+
+
+
+	<h2><a id="methods-list"></a>DOM Utility Methods</h2>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">HTMLElement,Array <a href="#method-appendNodes">appendNodes</a> (HTMLElement context, HTMLElement | HTMLCollection | NodeList | Array elements) </pre>
+					</td>
+					<td><p>Appends a node or array-like node list array to the context.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">string,number,null <a href="#method-getCSSProperty">getCSSProperty</a> (HTMLElement element, string property, null, &quot;integer&quot; | &quot;float&quot; | null) </pre>
+					</td>
+					<td><p>Returns the CSS property for an element.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">Object <a href="#method-getData">getData</a> (HTMLElement element) </pre>
+					</td>
+					<td><p>Returns an object with all the data-* attributes of an element.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">number <a href="#method-getElementHeight">getElementHeight</a> (HTMLElement element, &quot;outer&quot; | null? type = null, boolean? includeOffset = false, boolean? includeMargin = false, string? pseudoSelector = null, boolean? force = false) </pre>
+					</td>
+					<td><p>Returns the element height from the computed style.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">Object <a href="#method-getElementOffset">getElementOffset</a> (HTMLElement element) </pre>
+					</td>
+					<td><p>Returns the element offset.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">number <a href="#method-getElementWidth">getElementWidth</a> (HTMLElement element, &quot;outer&quot; | null?, boolean? includeOffset = false, boolean? includeMargin = false, string? pseudoSelector = null, boolean? force = false) </pre>
+					</td>
+					<td><p>Returns the element width from the computed style.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">?string,boolean <a href="#method-getNSData">getNSData</a> (HTMLElement element, string name) </pre>
+					</td>
+					<td><p>Returns the value of the data-{namespace}-{name} attribute for an element.<br />If the namespace is empty, the attribute data-{name} is used.<br />The method can return a boolean if the attribute value is a &#39;true&#39; or &#39;false&#39; string.</p></td>
+				</tr>
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">HTMLElement <a href="#method-insertNodeAfter">insertNodeAfter</a> (HTMLElement context, HTMLElement element) </pre>
+					</td>
+					<td><p>Inserts a node after the context.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">HTMLElement,Array,null <a href="#method-insertNodesBefore">insertNodesBefore</a> (HTMLElement context, HTMLElement | HTMLCollection | NodeList | Array elements) </pre>
+					</td>
+					<td><p>Inserts a node or array-like node list before the context.</p></td>
+				</tr>
+			
+		
+			
+				
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-removeAllChildren">removeAllChildren</a> (HTMLElement context) </pre>
+					</td>
+					<td><p>Removes all children.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-removeAttribute">removeAttribute</a> (HTMLElement element, string name) </pre>
+					</td>
+					<td><p>Removes an attribute and property at the same time.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-removeNSData">removeNSData</a> (HTMLElement element, string name) </pre>
+					</td>
+					<td><p>Removes the data-{namespace}-{name} attribute from an element.<br />If the namespace is empty, the data-{name} attribute is used.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">HTMLElement,Array,null <a href="#method-replaceWithNodes">replaceWithNodes</a> (HTMLElement context, HTMLElement | HTMLCollection | NodeList | Array elements) </pre>
+					</td>
+					<td><p>Replaces the context with a node or array-like node list.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-setAttribute">setAttribute</a> (HTMLElement element, string name, Mixed value) </pre>
+					</td>
+					<td><p>Sets an attribute and property at the same time.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-setNSData">setNSData</a> (HTMLElement element, string name, string | number | boolean value) </pre>
+					</td>
+					<td><p>Sets the value of the data-{namespace}-{name} attribute for an element.<br />If the namespace is empty, the data-{name} attribute is used.</p></td>
+				</tr>
+			
+		
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">HTMLElement,NodeList,Array <a href="#method-wrapInHTML">wrapInHTML</a> (HTMLElement | NodeList | HTMLCollection | Array elements, string html) </pre>
+					</td>
+					<td><p>Wraps an element or array-like node list in the html markup.</p></td>
+				</tr>
+			
+		
+		</tbody>
+	</table>
+	<dl>
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-appendNodes">appendNodes</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Appends a node or array-like node list array to the context.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">HTMLElement,Array,null appendNodes (context, elements) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">context</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">elements</span></td>
+						<td>HTMLElement | HTMLCollection | NodeList | Array</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>HTMLElement,Array,null</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+				
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-getCSSProperty">getCSSProperty</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Returns the CSS property for an element.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">string,number,null getCSSProperty (element, property, def, type) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">element</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">property</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">def</span></td>
+						<td>string | number | null</td>
+						<td>Optional</td>
+						<td>null</td>
+						<td>Default returned value.</td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">type</span></td>
+						<td>&quot;integer&quot; | &quot;float&quot; | null</td>
+						<td>Optional</td>
+						<td>null</td>
+						<td>Auto type casting.</td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>string,number,null</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-getData">getData</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Returns an object with all the data-* attributes of an element.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">Object getData (element) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">element</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td>Base element.</td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>Object</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-getElementHeight">getElementHeight</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Returns the element height from the computed style.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">number getElementHeight (element, type, includeOffset, includeMargin, pseudoSelector, force) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">element</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">type</span></td>
+						<td>&quot;outer&quot; | null</td>
+						<td>Optional</td>
+						<td>null</td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">includeOffset</span></td>
+						<td>boolean</td>
+						<td>Optional</td>
+						<td>false</td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">includeMargin</span></td>
+						<td>boolean</td>
+						<td>Optional</td>
+						<td>false</td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">pseudoSelector</span></td>
+						<td>string</td>
+						<td>Optional</td>
+						<td>null</td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">force</span></td>
+						<td>boolean</td>
+						<td>Optional</td>
+						<td>false</td>
+						<td>Checks whether the element is hidden.</td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>number</td>
+									<td>height of the element</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-getElementOffset">getElementOffset</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Returns the element offset.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">Object getElementOffset (element) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">element</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>Object</td>
+									<td>Offset object of the element</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-getElementWidth">getElementWidth</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Returns the element width from the computed style.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">number getElementWidth (element, type, includeOffset, includeMargin, pseudoSelector, force) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">element</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">type</span></td>
+						<td>&quot;outer&quot; | null</td>
+						<td>Optional</td>
+						<td>null</td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">includeOffset</span></td>
+						<td>boolean</td>
+						<td>Optional</td>
+						<td>false</td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">includeMargin</span></td>
+						<td>boolean</td>
+						<td>Optional</td>
+						<td>false</td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">pseudoSelector</span></td>
+						<td>string</td>
+						<td>Optional</td>
+						<td>null</td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">force</span></td>
+						<td>boolean</td>
+						<td>Optional</td>
+						<td>false</td>
+						<td>Checks whether the element is hidden.</td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>number</td>
+									<td>width of the element</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-getNSData">getNSData</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Returns the value of the data-{namespace}-{name} attribute for an element.<br />If the namespace is empty, the data-{name} attribute is used.<br />The method can return a boolean if the attribute value is a &#39;true&#39; or &#39;false&#39; string.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">?string, boolean getNSData (element, name) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">element</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td>Base element.</td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">name</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td>Name of the attribute.</td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>?string,boolean</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-insertNodeAfter">insertNodeAfter</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Inserts a node after the context.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">HTMLElement insertNodeAfter (context, element) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">context</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">element</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>HTMLElement</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-insertNodesBefore">insertNodesBefore</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Inserts a node or array-like node list before the context.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">HTMLElement,Array,null insertNodesBefore (context, elements) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">context</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">elements</span></td>
+						<td>HTMLElement | HTMLCollection | NodeList | Array</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>HTMLElement,Array,null</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+	
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-removeAllChildren">removeAllChildren</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Removes all children.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">removeAllChildren (context) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">context</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-removeAttribute">removeAttribute</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Removes an attribute and property at the same time.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">removeAttribute (element, name) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">element</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">name</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-removeNSData">removeNSData</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Removes the data-{namespace}-{name} attribute from an element.<br />If the namespace is empty, the data-{name} attribute is used.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">removeNSData (element, name) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">element</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td>Base element.</td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">name</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td>Name of the attribute.</td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-replaceWithNodes">replaceWithNodes</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Replaces the context with a node or array-like node list.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">HTMLElement,Array,null replaceWithNodes (context, elements) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">context</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">elements</span></td>
+						<td>HTMLElement | HTMLCollection | NodeList | Array</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-setAttribute">setAttribute</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Sets an attribute and property at the same time.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">setAttribute (element, name, value) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">element</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">name</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">value</span></td>
+						<td>Mixed</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-setNSData">setNSData</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Sets the value of the data-{namespace}-{name} attribute for an element.<br />If the namespace is empty, the data-{name} attribute is used.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">setNSData (element, name, value) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">element</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td>Base element.</td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">name</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td>Name of the attribute.</td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">value</span></td>
+						<td>string | number | boolean</td>
+						<td>Required</td>
+						<td></td>
+						<td>New value.</td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-wrapInHTML">wrapInHTML</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Wraps an element or array-like node list in the html markup.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">HTMLElement,NodeList,Array wrapInHTML (elements, html) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">elements</span></td>
+						<td>HTMLElement | NodeList | HTMLCollection | Array</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">html</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>HTMLElement,NodeList,Array</td>
+									<td>Wrapped element.</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+	</dl>
+
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

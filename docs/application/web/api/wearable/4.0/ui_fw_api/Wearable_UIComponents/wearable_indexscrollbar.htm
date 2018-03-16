@@ -1,0 +1,357 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head><script type="text/javascript" src="../snippet.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="../styles.css" rel="StyleSheet" type="text/css">
+<link href="../snippet.css" rel="StyleSheet" type="text/css">
+  <title>Index Scroll Bar</title>
+</head>
+
+<body onload="prettyPrint()" id="content">
+
+
+<h1>Index Scroll Bar</h1>
+
+<p>The index scroll bar component shows on the screen a scroll bar with indices, and fires a <span style="font-family: Courier New,Courier,monospace">select</span> event when the index characters are clicked. The following table describes the supported index scroll bar APIs.</p>
+
+<table class="note">
+	<tbody>
+	<tr>
+		<th class="note">Note</th>
+	</tr>
+	<tr>
+		<td class="note">This component is released for <strong>2.3 rectangular UI</strong>. When you create this component in circular screen, layout can be shown broken because screen hide index scroll bar. In that case, we recommend to use <a href="wearable_circularindexscrollbar.htm">Circular Index Scroll Bar</a>.</td>
+	</tr>
+	</tbody>
+</table>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+		<li><a href="#manual-constructor0.6990520032122731">How to create index scroll bar</a>
+
+		</li>
+
+		<li><a href="#options-list">Options</a>
+
+		</li>
+
+		<li><a href="#events-list">Events</a>
+
+		</li>
+
+</ol>
+
+
+<h2><a id='manual-constructor0.6990520032122731'></a>How to create index scroll bar</h2>
+
+<p>For manual creation of Index Scroll Bar, you can use constructor from <strong>tau</strong> namespace:</p>
+<pre class="prettyprint">
+var indexElement = document.getElementById('indexscrollbar'),
+    indexscrollbar = tau.widget.IndexScrollbar(indexElement);
+</pre>
+<p>To add an index scroll bar component to the application, use the following code:</p>
+<pre class="prettyprint">
+&lt;div id=&quot;foo&quot; class=&quot;ui-indexscrollbar&quot;
+     data-index=&quot;A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+   (function()
+   {
+      var elem = document.getElementById(&quot;foo&quot;);
+      tau.IndexScrollbar(elem);
+      elem.addEventListener(&quot;select&quot;, function(ev)
+      {
+         var index=ev.detail.index;
+         console.log(index);
+      });
+   }());
+&lt;/script&gt;
+</pre>
+
+<p>You can retrieve the index value using the <span style="font-family: Courier New,Courier,monospace">event.detail.index</span> property.</p>
+
+<p>In the following example, the list scrolls to the position of the list item defined using the <span style="font-family: Courier New,Courier,monospace">li-divider</span> class, selected by the index scroll bar:</p>
+<pre class="prettyprint">
+&lt;div id=&quot;pageIndexScrollbar&quot; class=&quot;ui-page&quot;&gt;
+   &lt;header class=&quot;ui-header&quot;&gt;
+      &lt;h2 class=&quot;ui-title&quot;&gt;IndexScrollbar&lt;/h2&gt;
+   &lt;/header&gt;
+   &lt;section class=&quot;ui-content&quot;&gt;
+      &lt;div style=&quot;overflow-y:scroll;&quot;&gt;
+         &lt;div id=&quot;indexscrollbar1&quot;
+              class=&quot;ui-indexscrollbar&quot;
+              data-index=&quot;A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z&quot;&gt;
+         &lt;/div&gt;
+         &lt;ul class=&quot;ui-listview&quot; id=&quot;list1&quot;&gt;
+            &lt;li class=&quot;li-divider&quot;&gt;A&lt;/li&gt;
+            &lt;li&gt;Anton&lt;/li&gt;
+            &lt;li&gt;Arabella&lt;/li&gt;
+            &lt;li&gt;Art&lt;/li&gt;
+            &lt;li class=&quot;li-divider&quot;&gt;B&lt;/li&gt;
+            &lt;li&gt;Barry&lt;/li&gt;
+            &lt;li&gt;Bibi&lt;/li&gt;
+            &lt;li&gt;Billy&lt;/li&gt;
+            &lt;li&gt;Bob&lt;/li&gt;
+            &lt;li class=&quot;li-divider&quot;&gt;D&lt;/li&gt;
+            &lt;li&gt;Daisy&lt;/li&gt;
+            &lt;li&gt;Derek&lt;/li&gt;
+            &lt;li&gt;Desmond&lt;/li&gt;
+         &lt;/ul&gt;
+      &lt;/div&gt;
+   &lt;/section&gt;
+   &lt;script&gt;
+      (function()
+      {
+         var page = document.getElementById(&quot;pageIndexScrollbar&quot;),
+             isb;
+         page.addEventListener(&quot;pagecreate&quot;, function(ev)
+         {
+            var elem = document.getElementById(&quot;indexscrollbar1&quot;), /* Index scroll bar element */
+                elList = document.getElementById(&quot;list1&quot;), /* List element */
+                elDividers = elList.getElementsByClassName(&quot;li-divider&quot;), /* List items (dividers) */
+                elScroller = elList.parentElement, /* List&#39;s parent item (overflow-y:scroll) */
+                dividers = {}, /* Collection of list dividers */
+                indices = [], /* List of index */
+                elDivider,
+                i, idx;
+
+            /* For all list dividers */
+            for (i = 0; i &lt; elDividers.length; i++)
+            {
+               /* Add the list divider elements to the collection */
+               elDivider = elDividers[i]; /* li element having the li-divider class */
+               idx = elDivider.innerText; /* Get a text (index value) */
+               dividers[idx] = elDivider; /* Remember the element */
+
+               /* Add the index to the index list */
+               indices.push(idx);
+            }
+
+            /*
+               Change the data-index attribute to the index scroll bar element
+               before initializing index scroll bar component
+            */
+            elem.setAttribute(&quot;data-index&quot;, indices.join(&quot;,&quot;));
+
+            /* Create index scroll bar */
+            isb = tau.IndexScrollbar(elem);
+
+            /* Bind the select callback */
+            elem.addEventListener(&quot;select&quot;, function(ev)
+            {
+               var elDivider,
+                   idx = ev.detail.index;
+               elDivider = dividers[idx];
+               if (elDivider)
+               {
+                  /* Scroll to the li-divider element */
+                  elScroller.scrollTop = elDivider.offsetTop - elScroller.offsetTop;
+               }
+            });
+         });
+         /* Destroy index scroll bar when page is hidden */
+         page.addEventListener(&quot;pagehide&quot;, function(ev)
+         {
+            isb.destroy();
+         });
+      }());
+   &lt;/script&gt;
+&lt;/div&gt;
+</pre>
+
+<p>The following example uses the <span style="font-family: Courier New,Courier,monospace">supplementScroll</span> argument, which shows a level 2 index scroll bar. The application code must contain a level 2 index array for each level 1 index character. The example shows a way to analyze list items and create a dictionary (<span style="font-family: Courier New,Courier,monospace">secondIndex</span>) for level 1 indices for the index scroll bar, and a dictionary (<span style="font-family: Courier New,Courier,monospace">keyItem</span>) for moving list items at runtime:</p>
+
+<pre class="prettyprint">
+&lt;div id=&quot;indexscrollbar2&quot; class=&quot;ui-indexscrollbar&quot;
+     data-index=&quot;A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z&quot;&gt;
+&lt;/div&gt;
+&lt;ul class=&quot;ui-listview&quot; id=&quot;ibar2_list2;&gt;
+   &lt;li&gt;Anton&lt;/li&gt;&lt;li&gt;Arabella&lt;/li&gt;&lt;li&gt;Art&lt;/li&gt;
+   &lt;li&gt;Barry&lt;/li&gt;&lt;li&gt;Bibi&lt;/li&gt;&lt;li&gt;Billy&lt;/li&gt;&lt;li&gt;Bob&lt;/li&gt;
+   &lt;li&gt;Carry&lt;/li&gt;&lt;li&gt;Cibi&lt;/li&gt;
+   &lt;li&gt;Daisy&lt;/li&gt;&lt;li&gt;Derek&lt;/li&gt;&lt;li&gt;Desmond&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script&gt;
+   (function()
+   {
+      var page = document.getElementById(&quot;pageIndexScrollbar2&quot;);
+          isb,
+          index = [],
+          supIndex = {},
+          elIndex = {};
+      page.addEventListener(&quot;pageshow&quot;, function(ev)
+      {
+         var elisb = document.getElementById(&quot;indexscrollbar2&quot;),
+             elList = document.getElementById(&quot;ibar2_list2&quot;), /* List element */
+             elItems = elList.children,
+             elScroller = elList.parentElement, /* Scroller (overflow-y:hidden) */
+             indexData = getIndexData(
+             {
+                array: elItems,
+                getTextValue: function(array, i) {return array[i].innerText;}
+             });
+
+         function getIndexData(options)
+         {
+            var array = options.array,
+                getTextValue = options.getTextValue,
+                item,
+                text,
+                firstIndex = [],
+                secondIndex = {},
+                keyItem = {},
+                c1 = null, c2 = null,
+                i;
+
+            for (i = 0; i &lt; array.length; i++)
+            {
+               item = array[i];
+               text = getTextValue(array, i);
+               if (text.length &gt; 0)
+               {
+                  if (!c1 || c1 !== text[0])
+                  {
+                     /* New c1 */
+                     c1 = text[0];
+                     firstIndex.push(c1);
+                     keyItem[c1] = item;
+                     secondIndex[c1] = [];
+                     c2 = text[1];
+                     if (c2)
+                     {
+                        secondIndex[c1].push(c2);
+                     }
+                     else
+                     {
+                        c2 = &#39;&#39;;
+                     }
+                     keyItem[c1+c2] = item;
+                  }
+                  else
+                  {
+                     /* Existing c1 */
+                     if (c2 !== text[1])
+                     {
+                        c2 = text[1];
+                        secondIndex[c1].push(c2);
+                        keyItem[c1+c2] = item;
+                     }
+                  }
+               }
+            }
+            return
+            {
+               firstIndex: firstIndex,
+               secondIndex: secondIndex,
+               keyItem: keyItem
+            };
+         }
+         /* Update the data-index attribute to the index scroll bar element, with the index list above */
+         elisb.setAttribute(&quot;data-index&quot;, indexData.firstIndex);
+         /* Create index scroll bar */
+         isb = new tau.IndexScrollbar(elisb,
+         {
+            index: indexData.firstIndex, supplementaryIndex: function(firstIndex)
+            {
+               return indexData.secondIndex[firstIndex];
+            }
+         });
+         /* Bind the select callback */
+         elisb.addEventListener(&quot;select&quot;, function(ev)
+         {
+            var el,
+                index = ev.detail.index;
+                el = indexData.keyItem[index];
+            if (el)
+            {
+               /* Scroll to the li-divider element */
+               elScroller.scrollTop = el.offsetTop - elScroller.offsetTop;
+            }
+         });
+      });
+      /* Destroy index scroll bar when page is hidden */
+      page.addEventListener(&quot;pagehide&quot;, function(ev)
+      {
+         isb.destroy();
+         index.length = 0;
+         supIndex = {};
+         elIndex = {};
+      });
+   }());
+&lt;/script&gt;
+</pre>
+
+<h2><a id="options-list"></a>Options</h2>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">moreChar</span></td>
+				<td class="option">string</td>
+				<td class="option">&quot;*&quot;</td>
+				<td class="option">more character in index scroll bar</td>
+			</tr>
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">delimiter</span></td>
+				<td class="option">string</td>
+				<td class="option">&quot;,&quot;</td>
+				<td class="option">delimiter in index</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">index</span></td>
+				<td class="option">string | Array</td>
+				<td class="option">&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;E&quot;,(...),&quot;V&quot;,&quot;W&quot;,&quot;X&quot;,&quot;Y&quot;,&quot;Z&quot;,&quot;1&quot;</td>
+				<td class="option">list of letters separated by delimiter or array of letters</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">supplementaryIndex</span></td>
+				<td class="option">function</td>
+				<td class="option">null</td>
+				<td class="option">set 2depth index</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+
+	<h2><a id="events-list"></a>Events</h2>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+		</tr>
+
+			<tr>
+				<td class="event"><span style="font-family: Courier New,Courier,monospace">select</span></td>
+				<td><p>Event triggered after select index by user<p>This event has "detail" object and there is "index" property in the "detail"<p>
+					detail.index provides information for selected index.</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+
+
+
+
+
+
+ <div id="footer">
+   <hr size="1" />
+   <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+  </div>
+
+</body>
+</html>

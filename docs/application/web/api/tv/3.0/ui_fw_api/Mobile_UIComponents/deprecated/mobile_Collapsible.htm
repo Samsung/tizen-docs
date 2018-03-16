@@ -1,0 +1,544 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <script type="text/javascript" src="../../snippet.js"></script>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="../../styles.css" rel="StyleSheet" type="text/css">
+    <link href="../../snippet.css" rel="StyleSheet" type="text/css">
+    <title>Collapsible</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+
+<h1>Collapsible</h1>
+
+<p>The collapsible component allows you to expand and collapse content when tapped.</p>
+
+<table class="note deprecated">
+        <tbody>
+                <tr>
+                        <th class="note deprecated">Note</th>
+                </tr>
+                <tr>
+                        <td class="note deprecated">This component has been <span class="deprecated">DEPRECATED since <b>Tizen 2.4</b></span>.</i><br>
+To support Backward compatibility, please import tau.support-2.3.js.</td>
+                </tr>
+                <tr>
+                        <td class="note deprecated">Since 2.4, to use Collapsible component, please use a <a href="../mobile_Expandable.htm">Expandable</a> Component.
+                </tr>
+        </tbody>
+</table>
+
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+        <li><a href="#default-selectors0.23378119827248156">Default Selectors</a></li>
+
+        <li><a href="#manual-constructor0.9637914793565869">Manual Constructor</a></li>
+
+        <li><a href="#html-examples0.4407083713449538">HTML Examples</a></li>
+
+        <li><a href="#options-for collapsible widget0.23674097401089966">Options</a></li>
+
+        <li><a href="#methods0.9661261877045035">Methods</a></li>
+
+</ol>
+
+<h2><a id="default-selectors0.23378119827248156"></a>Default Selectors</h2>
+
+<p>By default, all elements with the <code>data-role="collapsible"</code> attribute are displayed as collapsible components.</p>
+
+<h2><a id="manual-constructor0.9637914793565869"></a>Manual Constructor</h2>
+
+<p>To manually create a collapsible component, use the component constructor from the <code>tau</code> namespace:</p>
+
+<pre class="prettyprint">&lt;script&gt;
+   var collapsibleElement = document.getElementById("collapsible"),
+       collapsible = tau.widget.Collapsible(collapsibleElement);
+&lt;/script&gt;
+</pre>
+
+<p>The constructor requires an <code>HTMLElement</code> parameter to create the component, and you can get it with the <code>document.getElementById()</code> method. The constructor can also take a second parameter, which is an object defining the configuration options for the component.</p>
+
+<p>If the jQuery library is loaded, you can use its method:</p>
+
+<pre class="prettyprint">&lt;script&gt;
+   var collapsible = $("#collapsible").collapsible();
+&lt;/script&gt;
+</pre>
+
+<p>The jQuery constructor takes one optional parameter, which is an object defining the configuration options for the component.</p>
+
+<h2><a id="html-examples0.4407083713449538"></a>HTML Examples</h2>
+
+<ul><li>
+<p>To create a collapsible <code>div</code> element using the <code>data-role</code> attribute:</p>
+
+<pre class="prettyprint">&lt;div id="collapsible" data-role="collapsible" data-inset="false"&gt;
+   &lt;h1&gt;Collapsible head&lt;/h1&gt;
+   &lt;div&gt;Content&lt;/div&gt;
+&lt;/div&gt;
+</pre></li>
+<li>
+<p>To create a collapsible list using the <code>data-role</code> attribute:</p>
+<pre class="prettyprint">
+&lt;ul data-role="listview"&gt;
+   &lt;li data-role="collapsible" data-inset="false"&gt;
+      &lt;h2&gt;Collapsible head&lt;/h2&gt;
+      &lt;!--Sub list in collapsible li--&gt;
+      &lt;ul data-role="listview"&gt;
+         &lt;li&gt;sub list item1&lt;/li&gt;
+         &lt;li&gt;sub list item2&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/li&gt;
+   &lt;!--List item in 1st depth--&gt;
+   &lt;li&gt;other list item&lt;/li&gt;
+   &lt;li&gt;other list item&lt;/li&gt;
+&lt;/ul&gt;
+</pre></li></ul>
+
+
+
+<h2><a id="options-for collapsible widget0.23674097401089966"></a>Options</h2>
+
+<p>The options for a component can be defined as <code>data-...</code> attributes or passed as parameters to the constructor.</p>
+
+<p>You can change an option for the component using the <code>option</code> method.</p>
+
+    <h3>Summary</h3>
+
+    <table>
+        <tbody>
+        <tr>
+            <th>Option</th>
+            <th>Input type</th>
+            <th>Default value</th>
+            <th>Description</th>
+        </tr>
+
+
+            <tr>
+                <td class="option"><span style="font-family: Courier New,Courier,monospace">data-collapse-cue-text</span></td>
+                <td class="option">string</td>
+                <td class="option">""</td>
+                <td class="option">Cue text for closing the expandable list; used to provide audible feedback.</td>
+            </tr>
+
+            <tr>
+                <td class="option"><span style="font-family: Courier New,Courier,monospace">data-collapsed</span></td>
+                <td class="option">boolean</td>
+                <td class="option">true</td>
+                <td class="option">Sets whether the content must be collapsed on load.</td>
+            </tr>
+
+            <tr>
+                <td class="option"><span style="font-family: Courier New,Courier,monospace">data-collapsed-icon</span></td>
+                <td class="option">string | null</td>
+                <td class="option">null</td>
+                <td class="option">Icon class for a collapsed component.</td>
+            </tr>
+
+            <tr>
+                <td class="option"><span style="font-family: Courier New,Courier,monospace">data-expand-cue-text</span></td>
+                <td class="option">string</td>
+                <td class="option">""</td>
+                <td class="option">Cue text for opening the expandable list; used to provide audible feedback.</td>
+            </tr>
+
+            <tr>
+                <td class="option"><span style="font-family: Courier New,Courier,monospace">data-expanded-icon</span></td>
+                <td class="option">string | null</td>
+                <td class="option">null</td>
+                <td class="option">Icon class for an expanded component.</td>
+            </tr>
+
+            <tr>
+                <td class="option"><span style="font-family: Courier New,Courier,monospace">data-heading</span></td>
+                <td class="option">string</td>
+                <td class="option">"h1,h2,h3,h4,h5,h6,legend,li"</td>
+                <td class="option">Within the collapsible container, the first immediate child element.</td>
+            </tr>
+
+            <tr>
+                <td class="option"><span style="font-family: Courier New,Courier,monospace">data-iconpos</span></td>
+                <td class="option">string | null</td>
+                <td class="option">null</td>
+                <td class="option">Icon position (the default is right).</td>
+            </tr>
+
+            <tr>
+                <td class="option"><span style="font-family: Courier New,Courier,monospace">data-inset</span></td>
+                <td class="option">boolean</td>
+                <td class="option">true</td>
+                <td class="option">Sets whether the component must be shown as an inset.</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+<h2><a id="methods0.9661261877045035"></a>Methods</h2>
+
+<p>To call a method on the component, use one of the existing APIs:</p>
+
+<ul>
+
+<li>
+
+<p>TAU API (<strong>RECOMMENDED</strong>):</p>
+
+<pre class="prettyprint">var collapsibleElement = document.getElementById("collapsible"),
+    collapsible = tau.widget.Collapsible(collapsibleElement);
+
+collapsible.methodName(methodArgument1, methodArgument2, ...);
+</pre>
+
+</li>
+
+<li>
+
+<p>jQuery API (<strong>support for backward compatibility</strong>):</p>
+
+<pre class="prettyprint">$(".selector").collapsible("methodName", methodArgument1, ...);</pre>
+
+</li>
+
+</ul>
+
+    <h3>Summary</h3>
+    <table class="informaltable">
+        <thead>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <tr>
+                    <td>
+                        <pre class="intable prettyprint"><a href="#method-disable">disable</a>() </pre>
+                    </td>
+                    <td><p>Disables the collapsible component.</p></td>
+                </tr>
+
+
+
+                <tr>
+                    <td>
+                        <pre class="intable prettyprint"><a href="#method-enable">enable</a>() </pre>
+                    </td>
+                    <td><p>Enables the collapsible component.</p></td>
+                </tr>
+
+
+
+                <tr>
+                    <td>
+                        <pre class="intable prettyprint"><a href="#method-refresh">refresh</a>() </pre>
+                    </td>
+                    <td><p>Refreshes the collapsible component.</p></td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <dt class="method" id="addidp28072"><code><b><span class="methodName"
+                                                                   id="method-disable">disable</span></b></code></dt>
+                <dd>
+                    <div class="brief">
+                        <p>Disables the collapsible component.</p>
+                    </div>
+                    <div class="synopsis">
+                        <pre class="signature prettyprint">Collapsible disable() </pre>
+                    </div>
+
+                    <div class="description">
+                        <p>
+                            <p>The method sets the disabled attribute for the collapsible component and adds classes related to the disabled state.</p>
+
+
+
+                        </p>
+                    </div>
+
+
+
+                    <div class="returntype">
+                        <p><span class="return">Return value:</span></p>
+
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>Collapsible</td>
+                                    <td>Returns this.</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+
+                    </div>
+
+                        <div class="example">
+                            <span class="example"><p>Code
+                                example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+                            <pre name="code" class="examplecode
+                            prettyprint">
+&lt;div id="collapsible" data-role="collapsible" data-inset="false"&gt;
+   &lt;h6&gt;Collapsible head&lt;/h6&gt;
+   &lt;div&gt;Content&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var collapsibleWidget = tau.widget.Collapsible(document.getElementById("collapsible"));
+   collapsibleWidget.disable();
+&lt;/script&gt;
+</pre>
+                        </div>
+
+                        <div class="example">
+                            <span class="example"><p>Code
+                                example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+                            <pre name="code" class="examplecode
+                            prettyprint">
+&lt;div id="collapsible" data-role="collapsible" data-inset="false"&gt;
+   &lt;h6&gt;Collapsible head&lt;/h6&gt;
+   &lt;div&gt;Content&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   $("#collapsible").collapsible("disable");
+&lt;/script&gt;
+</pre>
+                        </div>
+
+                </dd>
+
+
+
+                <dt class="method" id="addidp28072"><code><b><span class="methodName"
+                                                                   id="method-enable">enable</span></b></code></dt>
+                <dd>
+                    <div class="brief">
+                        <p>Enables the collapsible component.</p>
+                    </div>
+                    <div class="synopsis">
+                        <pre class="signature prettyprint">Collapsible enable() </pre>
+                    </div>
+
+                    <div class="description">
+                        <p>
+                            <p>The method removes the disabled attribute from the collapsible component and adds classes related to the enabled state.</p>
+
+
+                        </p>
+                    </div>
+
+
+
+                    <div class="returntype">
+                        <p><span class="return">Return value:</span></p>
+
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>Collapsible</td>
+                                    <td>Returns this.</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+
+                    </div>
+
+                        <div class="example">
+                            <span class="example"><p>Code
+                                example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+                            <pre name="code" class="examplecode
+                            prettyprint">
+&lt;div id="collapsible" data-role="collapsible" data-inset="false"&gt;
+   &lt;h6&gt;Collapsible head&lt;/h6&gt;
+   &lt;div&gt;Content&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var collapsibleWidget = tau.widget.Collapsible(document.getElementById("collapsible"));
+   collapsibleWidget.enable();
+&lt;/script&gt;
+</pre>
+                        </div>
+
+                        <div class="example">
+                            <span class="example"><p>Code
+                                example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+                            <pre name="code" class="examplecode
+                            prettyprint">
+&lt;div id="collapsible" data-role="collapsible" data-inset="false"&gt;
+   &lt;h6&gt;Collapsible head&lt;/h6&gt;
+   &lt;div&gt;Content&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   $("#collapsible").collapsible("enable");
+&lt;/script&gt;
+</pre>
+                        </div>
+
+                </dd>
+
+                <dt class="method" id="addidp28072"><code><b><span class="methodName"
+                                                                   id="method-refresh">refresh</span></b></code></dt>
+                <dd>
+                    <div class="brief">
+                        <p>Refreshes the collapsible component.</p>
+                    </div>
+                    <div class="synopsis">
+                        <pre class="signature prettyprint">Collapsible refresh() </pre>
+                    </div>
+
+                    <div class="description">
+                        <p>
+
+
+                        </p>
+                    </div>
+
+
+
+                    <div class="returntype">
+                        <p><span class="return">Return value:</span></p>
+
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>Collapsible</td>
+                                    <td>Returns this.</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+
+                    </div>
+
+                        <div class="example">
+                            <span class="example"><p>Code
+                                example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+                            <pre name="code" class="examplecode
+                            prettyprint">
+&lt;div id="collapsible" data-role="collapsible" data-inset="false"&gt;
+   &lt;h6&gt;Collapsible head&lt;/h6&gt;
+   &lt;div&gt;Content&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var collapsibleWidget = tau.widget.Collapsible(document.getElementById("collapsible"));
+   collapsibleWidget.refresh();
+&lt;/script&gt;
+</pre>
+                        </div>
+
+                        <div class="example">
+                            <span class="example"><p>Code
+                                example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+                            <pre name="code" class="examplecode
+                            prettyprint">
+&lt;div id="collapsible" data-role="collapsible" data-inset="false"&gt;
+   &lt;h6&gt;Collapsible head&lt;/h6&gt;
+   &lt;div&gt;Content&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   $("#collapsible").collapsible("refresh");
+&lt;/script&gt;
+</pre>
+                        </div>
+
+                </dd>
+
+
+
+
+
+    </dl>
+
+<div id="footer">
+    <hr size="1">
+    <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+            href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+        3.0</a> and all of the Code Examples contained herein are licensed under <a
+            href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+        <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Floating Actions</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>Floating Actions</h1>
+
+<p>Floating actions component creates a floating button at the bottom of the screen.</p>
+<p>You can move the floating button from left end to right end.</p>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+	<li><a href="#default-selector">Default selectors</a></li>
+
+	<li><a href="#manual-constructor">Manual constructor</a>
+	</li>
+
+	<li><a href="#options-list">Options</a>
+	</li>
+</ol>
+
+<h2><a id='default-selector'></a>Default Selector</h2>
+
+<p>By default, all elements with the <code>class=&quot;ui-floatingactions&quot;</code> or <code>data-role=&quot;floatingactions&quot;</code> attribute are displayed as floating actions components.</p>
+
+<h2><a id="manual-constructor"></a>Manual Constructor</h2>
+<p>To manually create a floating actions component, use the component constructor from the <code>tau</code> namespace:</p>
+<p>The constructor requires an <code>HTMLElement</code> parameter to create the component, and you can get it with the <code>document.getElementById()</code> method. The constructor can also take a second parameter, which is an object defining the configuration options for the component.</p>
+<pre class="prettyprint">
+&lt;div class=&quot;ui-floatingactions&quot; id=&quot;floating&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;button class=&quot;ui-floatingactions-item&quot; data-icon=&quot;floating-add&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&lt;button class=&quot;ui-floatingactions-item&quot; data-icon=&quot;floating-search&quot;/&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var elFloatingActions = document.getElementById(&quot;floating&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flaotingActions = tau.widget.FloatingActions(elFloatingActions);
+&lt;/script&gt;
+</pre>
+
+<h2><a id="options-list"></a>Options</h2>
+
+<table>
+	<tbody>
+	<tr>
+		<th>Option</th>
+		<th>Input type</th>
+		<th>Default value</th>
+		<th>Description</th>
+	</tr>
+
+	<tr>
+		<td class="option"><span style="font-family: Courier New,Courier,monospace">data-from-rgba</span></td>
+		<td class="option">string</td>
+		<td class="option">"rgba(66, 162, 207, 1)"</td>
+		<td class="option">Color when the floating button is positioned at the left end</td>
+	</tr>
+
+	<tr>
+		<td class="option"><span style="font-family: Courier New,Courier,monospace">data-to-rgba</span></td>
+		<td class="option">string</td>
+		<td class="option">"rgba(54, 132, 168, 1)"</td>
+		<td class="option">Color when the floating button is positioned at the right end</td>
+	</tr>
+
+	<tr>
+		<td class="option"><span style="font-family: Courier New,Courier,monospace">data-opacity</span></td>
+		<td class="option">number</td>
+		<td class="option">0.9</td>
+		<td class="option">Opacity when the floating button is clicked</td>
+	</tr>
+
+	<tr>
+		<td class="option"><span style="font-family: Courier New,Courier,monospace">data-duration</span></td>
+		<td class="option">number</td>
+		<td class="option">300</td>
+		<td class="option">Animation duration for color and opacity (unit of time : millisecond)</td>
+	</tr>
+
+	</tbody>
+</table>
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

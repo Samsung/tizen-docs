@@ -1,0 +1,1043 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>Sound API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Sound">
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="title"><h1>Sound API</h1></div>
+<div class="brief">
+ The Sound API provides functions to control the volume level for several sound types and to check whether a specified sound device type is connected.
+        </div>
+<div class="description">
+        <p>
+You can get the maximum volume level for system, notifications, alarm, media and so on.
+Also, you can change or get the current volume level.
+        </p>
+        <p>
+For more information on the Sound features, see <a href="https://developer.tizen.org/development/guides/web-application/tizen-features/multimedia/sound">Sound Guide</a>.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li>1.1. <a href="#SoundType">SoundType</a>
+</li>
+<li>1.2. <a href="#SoundModeType">SoundModeType</a>
+</li>
+<li>1.3. <a href="#SoundDeviceType">SoundDeviceType</a>
+</li>
+<li>1.4. <a href="#SoundIOType">SoundIOType</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#SoundManagerObject">SoundManagerObject</a>
+</li>
+<li>2.2. <a href="#SoundManager">SoundManager</a>
+</li>
+<li>2.3. <a href="#SoundDeviceInfo">SoundDeviceInfo</a>
+</li>
+<li>2.4. <a href="#SoundModeChangeCallback">SoundModeChangeCallback</a>
+</li>
+<li>2.5. <a href="#SoundVolumeChangeCallback">SoundVolumeChangeCallback</a>
+</li>
+<li>2.6. <a href="#SoundDeviceStateChangeCallback">SoundDeviceStateChangeCallback</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#SoundManagerObject">SoundManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SoundManager">SoundManager</a></td>
+<td>
+<a href="#SoundModeType">SoundModeType</a> <a href="#SoundManager::getSoundMode">getSoundMode</a> ()<br>
+    void <a href="#SoundManager::setVolume">setVolume</a> (<a href="#SoundType">SoundType</a> type, double volume)<br>
+    double <a href="#SoundManager::getVolume">getVolume</a> (<a href="#SoundType">SoundType</a> type)<br>
+    void <a href="#SoundManager::setSoundModeChangeListener">setSoundModeChangeListener</a> (<a href="#SoundModeChangeCallback">SoundModeChangeCallback</a> callback)<br>
+    void <a href="#SoundManager::unsetSoundModeChangeListener">unsetSoundModeChangeListener</a> ()<br>
+    void <a href="#SoundManager::setVolumeChangeListener">setVolumeChangeListener</a> (<a href="#SoundVolumeChangeCallback">SoundVolumeChangeCallback</a> callback)<br>
+    void <a href="#SoundManager::unsetVolumeChangeListener">unsetVolumeChangeListener</a> ()<br>
+    <a href="#SoundDeviceInfo">SoundDeviceInfo</a>[] <a href="#SoundManager::getConnectedDeviceList">getConnectedDeviceList</a> ()<br>
+    <a href="#SoundDeviceInfo">SoundDeviceInfo</a>[] <a href="#SoundManager::getActivatedDeviceList">getActivatedDeviceList</a> ()<br>
+    long <a href="#SoundManager::addDeviceStateChangeListener">addDeviceStateChangeListener</a> (<a href="#SoundDeviceStateChangeCallback">SoundDeviceStateChangeCallback</a> callback)<br>
+    void <a href="#SoundManager::removeDeviceStateChangeListener">removeDeviceStateChangeListener</a> (long id)</td>
+</tr>
+<tr>
+<td><a href="#SoundDeviceInfo">SoundDeviceInfo</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SoundModeChangeCallback">SoundModeChangeCallback</a></td>
+<td>void <a href="#SoundModeChangeCallback::onsuccess">onsuccess</a> (<a href="#SoundModeType">SoundModeType</a> mode)</td>
+</tr>
+<tr>
+<td><a href="#SoundVolumeChangeCallback">SoundVolumeChangeCallback</a></td>
+<td>void <a href="#SoundVolumeChangeCallback::onsuccess">onsuccess</a> (<a href="#SoundType">SoundType</a> type, double volume)</td>
+</tr>
+<tr>
+<td><a href="#SoundDeviceStateChangeCallback">SoundDeviceStateChangeCallback</a></td>
+<td>void <a href="#SoundDeviceStateChangeCallback::onchanged">onchanged</a> (<a href="#SoundDeviceInfo">SoundDeviceInfo</a> info)</td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="enum" id="SoundType">
+<a class="backward-compatibility-anchor" name="::Sound::SoundType"></a><h3>1.1. SoundType</h3>
+<div class="brief">
+ Sound type to control
+          </div>
+<pre class="webidl prettyprint">    enum SoundType {
+        "SYSTEM",
+        "NOTIFICATION",
+        "ALARM",
+        "MEDIA",
+        "VOICE",
+        "RINGTONE"
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="description">
+          <ul>
+            <li>
+ SYSTEM - for system sounds            </li>
+            <li>
+ NOTIFICATION - for notifications            </li>
+            <li>
+ ALARM - for alarm            </li>
+            <li>
+ MEDIA - for media playback            </li>
+            <li>
+ VOICE - for voice            </li>
+            <li>
+ RINGTONE - for the phone ring            </li>
+          </ul>
+         </div>
+<p><span class="remark"> Remark : </span>
+ <em>VOICE</em> type might not be supported on a device which does not support voice recognition.
+          </p>
+</div>
+<div class="enum" id="SoundModeType">
+<a class="backward-compatibility-anchor" name="::Sound::SoundModeType"></a><h3>1.2. SoundModeType</h3>
+<div class="brief">
+ Sound mode type
+          </div>
+<pre class="webidl prettyprint">    enum SoundModeType {
+        "SOUND",
+        "VIBRATE",
+        "MUTE"
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="description">
+          <ul>
+            <li>
+ SOUND - the sound mode            </li>
+            <li>
+ VIBRATE - the vibrate mode            </li>
+            <li>
+ MUTE - the mute mode            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="SoundDeviceType">
+<a class="backward-compatibility-anchor" name="::Sound::SoundDeviceType"></a><h3>1.3. SoundDeviceType</h3>
+<div class="brief">
+ Sound device type
+          </div>
+<pre class="webidl prettyprint">    enum SoundDeviceType {
+        "SPEAKER",
+        "RECEIVER",
+        "AUDIO_JACK",
+        "BLUETOOTH",
+        "HDMI",
+        "MIRRORING",
+        "USB_AUDIO",
+        "MIC"
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+          </p>
+<div class="description">
+          <p>
+The possible types are:
+          </p>
+          <ul>
+            <li>
+ SPEAKER - For sound output using the built-in device speaker            </li>
+            <li>
+ RECEIVER - For sound output using the built-in device receiver            </li>
+            <li>
+ AUDIO_JACK - For sound input and/or output using the device audio jack which can be connected to a wired accessory such as a headset or headphone            </li>
+            <li>
+ BLUETOOTH - For sound input and/or output through a device that is connected by Bluetooth            </li>
+            <li>
+ HDMI - For sound output through a device that is connected by HDMI            </li>
+            <li>
+ MIRRORING - For sound output through a device that is connected by mirroring            </li>
+            <li>
+ USB_AUDIO - For sound output through a device that is connected by USB            </li>
+            <li>
+ MICROPHONE - For sound input using the built-in device mic            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="SoundIOType">
+<a class="backward-compatibility-anchor" name="::Sound::SoundIOType"></a><h3>1.4. SoundIOType</h3>
+<div class="brief">
+ Sound device I/O type
+          </div>
+<pre class="webidl prettyprint">    enum SoundIOType {
+        "IN",
+        "OUT",
+        "BOTH"
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+          </p>
+<div class="description">
+          <p>
+The possible types are:
+          </p>
+          <ul>
+            <li>
+ IN - For sound device type which <em>only support input</em>            </li>
+            <li>
+ OUT - For sound device type which <em>only support output</em>            </li>
+            <li>
+ BOTH - For sound device type which <em>supports both input and output</em>            </li>
+          </ul>
+         </div>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="SoundManagerObject">
+<a class="backward-compatibility-anchor" name="::Sound::SoundManagerObject"></a><h3>2.1. SoundManagerObject</h3>
+<div class="brief">
+ The SoundManagerObject interface defines what is instantiated in the tizen object.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface SoundManagerObject {
+         readonly attribute <a href="#SoundManager">SoundManager</a> sound;
+    };</pre>
+<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SoundManagerObject">SoundManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="description">
+          <p>
+There is a tizen.sound object that allows accessing the functionality of the Sound API.
+          </p>
+         </div>
+</div>
+<div class="interface" id="SoundManager">
+<a class="backward-compatibility-anchor" name="::Sound::SoundManager"></a><h3>2.2. SoundManager</h3>
+<div class="brief">
+ The SoundManager interface provides the functionalities to control the volume level.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface SoundManager {
+
+        <a href="#SoundModeType">SoundModeType</a> getSoundMode() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void setVolume(<a href="#SoundType">SoundType</a> type, double volume) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        double getVolume(<a href="#SoundType">SoundType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void setSoundModeChangeListener(<a href="#SoundModeChangeCallback">SoundModeChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void unsetSoundModeChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void setVolumeChangeListener(<a href="#SoundVolumeChangeCallback">SoundVolumeChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void unsetVolumeChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        <a href="#SoundDeviceInfo">SoundDeviceInfo</a>[] getConnectedDeviceList() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        <a href="#SoundDeviceInfo">SoundDeviceInfo</a>[] getActivatedDeviceList() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        long addDeviceStateChangeListener(<a href="#SoundDeviceStateChangeCallback">SoundDeviceStateChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void removeDeviceStateChangeListener(long id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="SoundManager::getSoundMode">
+<a class="backward-compatibility-anchor" name="::Sound::SoundManager::getSoundMode"></a><code><b><span class="methodName">getSoundMode</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the current sound mode.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#SoundModeType">SoundModeType</a> getSoundMode();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ SoundModeType The current sound mode
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError in any error case.
+                </p></li></ul>
+</li></ul>
+        </div>
+</dd>
+<dt class="method" id="SoundManager::setVolume">
+<a class="backward-compatibility-anchor" name="::Sound::SoundManager::setVolume"></a><code><b><span class="methodName">setVolume</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the volume level for a specified sound type.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setVolume(<a href="#SoundType">SoundType</a> type, double volume);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/volume.set
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>: 
+ The sound type
+                </li>
+          <li class="param">
+<span class="name">volume</span>: 
+ The volume level to set <br>The level ranges from 0 to 1.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotSupportedError, if the given <var>type</var> is not supported. (e.g. when <em>VOICE</em> type is given on a Tizen wearable device).
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+</dd>
+<dt class="method" id="SoundManager::getVolume">
+<a class="backward-compatibility-anchor" name="::Sound::SoundManager::getVolume"></a><code><b><span class="methodName">getVolume</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the current volume level for a specified sound type.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">double getVolume(<a href="#SoundType">SoundType</a> type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>: 
+ The sound type
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ double The current volume level
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotSupportedError, if the given <var>type</var> is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+</dd>
+<dt class="method" id="SoundManager::setSoundModeChangeListener">
+<a class="backward-compatibility-anchor" name="::Sound::SoundManager::setSoundModeChangeListener"></a><code><b><span class="methodName">setSoundModeChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers a listener to be called when the sound mode is changed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setSoundModeChangeListener(<a href="#SoundModeChangeCallback">SoundModeChangeCallback</a> callback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">callback</span>: 
+ Callback method to be invoked when the sound mode is changed
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+</dd>
+<dt class="method" id="SoundManager::unsetSoundModeChangeListener">
+<a class="backward-compatibility-anchor" name="::Sound::SoundManager::unsetSoundModeChangeListener"></a><code><b><span class="methodName">unsetSoundModeChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unsubscribes from receiving notification about the sound mode change.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unsetSoundModeChangeListener();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError in any error case.
+                </p></li></ul>
+</li></ul>
+        </div>
+</dd>
+<dt class="method" id="SoundManager::setVolumeChangeListener">
+<a class="backward-compatibility-anchor" name="::Sound::SoundManager::setVolumeChangeListener"></a><code><b><span class="methodName">setVolumeChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers a listener to be called when the volume level is changed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setVolumeChangeListener(<a href="#SoundVolumeChangeCallback">SoundVolumeChangeCallback</a> callback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">callback</span>: 
+ Callback method to be invoked when the volume level is changed
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+</dd>
+<dt class="method" id="SoundManager::unsetVolumeChangeListener">
+<a class="backward-compatibility-anchor" name="::Sound::SoundManager::unsetVolumeChangeListener"></a><code><b><span class="methodName">unsetVolumeChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unsubscribes from receiving notification when the volume level is changed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unsetVolumeChangeListener();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError in any error case.
+                </p></li></ul>
+</li></ul>
+        </div>
+</dd>
+<dt class="method" id="SoundManager::getConnectedDeviceList">
+<a class="backward-compatibility-anchor" name="::Sound::SoundManager::getConnectedDeviceList"></a><code><b><span class="methodName">getConnectedDeviceList</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets a list of connected sound devices.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#SoundDeviceInfo">SoundDeviceInfo</a>[] getConnectedDeviceList();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ The list of connected sound devices
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError in any error case.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var infoArr = tizen.sound.getConnectedDeviceList();
+
+ for (var i = 0; i &lt; infoArr.length; i++) {
+     console.log( infoArr[i].device );
+ }
+ </pre>
+</div>
+</dd>
+<dt class="method" id="SoundManager::getActivatedDeviceList">
+<a class="backward-compatibility-anchor" name="::Sound::SoundManager::getActivatedDeviceList"></a><code><b><span class="methodName">getActivatedDeviceList</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets a list of activated sound devices.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#SoundDeviceInfo">SoundDeviceInfo</a>[] getActivatedDeviceList();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ The list of activated sound devices
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError in any error case.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var infoArr = tizen.sound.getActivatedDeviceList();
+
+ for (var i = 0; i &lt; infoArr.length; i++) {
+     console.log( infoArr[i].device );
+ }
+ </pre>
+</div>
+</dd>
+<dt class="method" id="SoundManager::addDeviceStateChangeListener">
+<a class="backward-compatibility-anchor" name="::Sound::SoundManager::addDeviceStateChangeListener"></a><code><b><span class="methodName">addDeviceStateChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers a listener that is to be called when the sound device state is changed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addDeviceStateChangeListener(<a href="#SoundDeviceStateChangeCallback">SoundDeviceStateChangeCallback</a> callback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<div class="description">
+            <p>
+There are two types of device state changes:
+            </p>
+            <ul>
+              <li>
+Connectivity: When a device changes from being connected to being disconnected or from being disconnected to being connected.              </li>
+              <li>
+Activation: When a device chages from being activated to being deactivated or from being deactivated to being activated.              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">callback</span>:
+ Callback method to be invoked when the sound device state is changed
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long ID of the listener that can be used to remove the listener later.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // A callback
+ var onChanged = function(info) {
+     // Some code to execute when a sound device state is changed
+     if (info.isConnected) {
+         // Some code to execute if the device is connected.
+         console.log( info.device + " is connected" );
+     } else {
+         // Some code to execute if the device is not connected.
+         console.log( info.device + " is not connected" );
+     }
+
+     if (info.isActivated) {
+         // Some code to execute if the device is activated.
+         console.log( info.device + " is activated" );
+     } else {
+         // Some code to execute if the device is not activated.
+         console.log( info.device + " is not activated" );
+     }
+ }
+
+ var id = tizen.sound.addDeviceStateChangeListener(onChanged);
+ </pre>
+</div>
+</dd>
+<dt class="method" id="SoundManager::removeDeviceStateChangeListener">
+<a class="backward-compatibility-anchor" name="::Sound::SoundManager::removeDeviceStateChangeListener"></a><code><b><span class="methodName">removeDeviceStateChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unsubscribes from receiving notifications when the sound device state is changed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeDeviceStateChangeListener(long id);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">id</span>:
+ An ID that identifies the listener
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError in any error case.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // If a listener to be called was registered previously.
+ tizen.sound.removeDeviceStateChangeListener(id);
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="SoundDeviceInfo">
+<a class="backward-compatibility-anchor" name="::Sound::SoundDeviceInfo"></a><h3>2.3. SoundDeviceInfo</h3>
+<div class="brief">
+ The SoundDeviceInfo interface specifies the information about a sound device.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface SoundDeviceInfo {
+
+        readonly attribute long id;
+
+        readonly attribute DOMString name;
+
+        readonly attribute <a href="#SoundDeviceType">SoundDeviceType</a> device;
+
+        readonly attribute <a href="#SoundIOType">SoundIOType</a> direction;
+
+        readonly attribute boolean isConnected;
+
+        readonly attribute boolean isActivated;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="SoundDeviceInfo::id">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">id</span></span><div class="brief">
+ The sound device ID
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+</li>
+<li class="attribute" id="SoundDeviceInfo::name">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
+ The sound device name
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+</li>
+<li class="attribute" id="SoundDeviceInfo::device">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">SoundDeviceType </span><span class="name">device</span></span><div class="brief">
+ The sound device type
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+</li>
+<li class="attribute" id="SoundDeviceInfo::direction">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">SoundIOType </span><span class="name">direction</span></span><div class="brief">
+ The sound device I/O type
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+</li>
+<li class="attribute" id="SoundDeviceInfo::isConnected">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">isConnected</span></span><div class="brief">
+ True if the sound device state is connected
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+</li>
+<li class="attribute" id="SoundDeviceInfo::isActivated">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">isActivated</span></span><div class="brief">
+ True if the sound device state is activated
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="SoundModeChangeCallback">
+<a class="backward-compatibility-anchor" name="::Sound::SoundModeChangeCallback"></a><h3>2.4. SoundModeChangeCallback</h3>
+<div class="brief">
+ The SoundModeChangeCallback interface specifies a mode change callback for getting notified about the sound mode changes.
+          </div>
+<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface SoundModeChangeCallback {
+
+        void onsuccess(<a href="#SoundModeType">SoundModeType</a> mode);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="SoundModeChangeCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Sound::SoundModeChangeCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the sound mode has changed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#SoundModeType">SoundModeType</a> mode);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">mode</span>: 
+ Sound mode
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="SoundVolumeChangeCallback">
+<a class="backward-compatibility-anchor" name="::Sound::SoundVolumeChangeCallback"></a><h3>2.5. SoundVolumeChangeCallback</h3>
+<div class="brief">
+ The SoundVolumeChangeCallback interface specifies a volume change callback for getting notified about the volume changes.
+          </div>
+<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface SoundVolumeChangeCallback {
+
+        void onsuccess(<a href="#SoundType">SoundType</a> type, double volume);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="SoundVolumeChangeCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Sound::SoundVolumeChangeCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the volume level has changed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#SoundType">SoundType</a> type, double volume);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>: 
+ Sound type
+                </li>
+          <li class="param">
+<span class="name">volume</span>: 
+ New volume level
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="SoundDeviceStateChangeCallback">
+<a class="backward-compatibility-anchor" name="::Sound::SoundDeviceStateChangeCallback"></a><h3>2.6. SoundDeviceStateChangeCallback</h3>
+<div class="brief">
+ The SoundDeviceStateChangeCallback interface specifies a sound device type change callback for getting notified when the sound device state changes.
+          </div>
+<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface SoundDeviceStateChangeCallback {
+
+        void onchanged(<a href="#SoundDeviceInfo">SoundDeviceInfo</a> info);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="SoundDeviceStateChangeCallback::onchanged">
+<a class="backward-compatibility-anchor" name="::Sound::SoundDeviceStateChangeCallback::onchanged"></a><code><b><span class="methodName">onchanged</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Method invoked when the sound device state changes.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onchanged(<a href="#SoundDeviceInfo">SoundDeviceInfo</a> info);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">info</span>:
+ The info to have changed
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">3. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Sound {
+
+    enum SoundType {
+        "SYSTEM",
+        "NOTIFICATION",
+        "ALARM",
+        "MEDIA",
+        "VOICE",
+        "RINGTONE"
+    };
+
+    enum SoundModeType {
+        "SOUND",
+        "VIBRATE",
+        "MUTE"
+    };
+
+    enum SoundDeviceType {
+        "SPEAKER",
+        "RECEIVER",
+        "AUDIO_JACK",
+        "BLUETOOTH",
+        "HDMI",
+        "MIRRORING",
+        "USB_AUDIO",
+        "MIC"
+    };
+
+    enum SoundIOType {
+        "IN",
+        "OUT",
+        "BOTH"
+    };
+
+    [NoInterfaceObject] interface SoundManagerObject {
+         readonly attribute <a href="#SoundManager">SoundManager</a> sound;
+    };
+    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SoundManagerObject">SoundManagerObject</a>;
+
+    [NoInterfaceObject] interface SoundManager {
+
+        <a href="#SoundModeType">SoundModeType</a> getSoundMode() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void setVolume(<a href="#SoundType">SoundType</a> type, double volume) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        double getVolume(<a href="#SoundType">SoundType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void setSoundModeChangeListener(<a href="#SoundModeChangeCallback">SoundModeChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void unsetSoundModeChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void setVolumeChangeListener(<a href="#SoundVolumeChangeCallback">SoundVolumeChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void unsetVolumeChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        <a href="#SoundDeviceInfo">SoundDeviceInfo</a>[] getConnectedDeviceList() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        <a href="#SoundDeviceInfo">SoundDeviceInfo</a>[] getActivatedDeviceList() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        long addDeviceStateChangeListener(<a href="#SoundDeviceStateChangeCallback">SoundDeviceStateChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void removeDeviceStateChangeListener(long id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };
+
+    [NoInterfaceObject] interface SoundDeviceInfo {
+
+        readonly attribute long id;
+
+        readonly attribute DOMString name;
+
+        readonly attribute <a href="#SoundDeviceType">SoundDeviceType</a> device;
+
+        readonly attribute <a href="#SoundIOType">SoundIOType</a> direction;
+
+        readonly attribute boolean isConnected;
+
+        readonly attribute boolean isActivated;
+    };
+
+    [Callback=FunctionOnly, NoInterfaceObject] interface SoundModeChangeCallback {
+
+        void onsuccess(<a href="#SoundModeType">SoundModeType</a> mode);
+    };
+
+    [Callback=FunctionOnly, NoInterfaceObject] interface SoundVolumeChangeCallback {
+
+        void onsuccess(<a href="#SoundType">SoundType</a> type, double volume);
+    };
+
+    [Callback=FunctionOnly, NoInterfaceObject] interface SoundDeviceStateChangeCallback {
+
+        void onchanged(<a href="#SoundDeviceInfo">SoundDeviceInfo</a> info);
+    };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>List View</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+<h1>List View</h1>
+
+<p>The list view component is used to display, for example, navigation data, results, and data entries, in a list format.</p>
+
+    <table class="note">
+		<tbody>
+		<tr>
+			<th class="note">Note</th>
+		</tr>
+		<tr>
+			<td class="note">
+             <p>If you implement the list view component differently from what is described in the following examples, you must customize the element positioning for your application.</p>
+            </td>
+		</tr>
+		</tbody>
+	</table>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+		<li><a href="#default-selectors0.8381957695819438">Default Selectors</a></li>
+
+        <li><a href="#manual-constructor">Manual Constructor</a></li>
+
+		<li><a href="#html-example code0.796579651767388">HTML Examples</a></li>
+
+        <li><a href="#group">Group Index in Listview</a></li>
+
+</ol>
+
+<h2><a id="default-selectors0.8381957695819438"></a>Default Selectors</h2>
+
+<p>By default, all <code>&lt;ol&gt;</code> and <code>&lt;ul&gt;</code> elements with the <code>class="ui-listview"</code> and <code>data-role="listview"</code> attribute are displayed as list views.</p>
+
+<h2><a id="manual-constructor"></a>Manual Constructor</h2>
+
+<p>To manually create a list view component, use the component constructor from the <code>tau</code> namespace:</p>
+
+<pre class="prettyprint">&lt;ul id="list"&gt;
+   &lt;li&gt;Anton&lt;/li&gt;
+   &lt;li&gt;Arabella&lt;/li&gt;
+   &lt;li&gt;Barry&lt;/li&gt;
+   &lt;li&gt;Bill&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script&gt;
+   tau.widget.Listview(document.getElementById("list"));
+&lt;/script&gt;
+</pre>
+<h2><a id="html-example code0.796579651767388"></a>HTML Examples</h2>
+
+<ul>
+
+<li>
+
+<p>To create a list items without an anchor, use class=<code>"ui-li-static"</code>:</p>
+
+<pre class="prettyprint">&lt;ul class="ui-listview"&gt;
+   &lt;li class="ui-li-static"&gt;list item1&lt;/li&gt;
+   &lt;li class="ui-li-static"&gt;list item2&lt;/li&gt;
+   &lt;li class="ui-li-static"&gt;list item3&lt;/li&gt;
+   &lt;li class="ui-li-static"&gt;list item4&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+</li>
+
+    <li>
+
+        <p>To create a list items with an anchor, use class=<code>"ui-li-anchor"</code>:</p>
+
+<pre class="prettyprint">&lt;ul class="ui-listview"&gt;
+   &lt;li class="ui-li-anchor"&gt;&lt;a href="page1.html"&gt;Page1&lt;/a&gt;&lt;/li&gt;
+   &lt;li class="ui-li-anchor"&gt;&lt;a href="page2.html"&gt;Page2&lt;/a&gt;&lt;/li&gt;
+   &lt;li class="ui-li-anchor"&gt;&lt;a href="page3.html"&gt;Page3&lt;/a&gt;&lt;/li&gt;
+   &lt;li class="ui-li-anchor"&gt;&lt;a href="page4.html"&gt;Page4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+    </li>
+
+</ul>
+
+
+<h2><a id="group"></a>Group Index in Listview</h2>
+<p>To add Group Index (it was <i>ListDivider</i> in tizen2.3 TAU), just add a class=<code>"ui-group-index"</code>.</p>
+<pre class="prettyprint">&lt;ul class="ui-listview"&gt;
+   &lt;li class="ui-group-index"&gt;group 1&lt;/li&gt;
+   &lt;li class="ui-li-static"&gt;list item1&lt;/li&gt;
+   &lt;li class="ui-li-static"&gt;list item2&lt;/li&gt;
+   &lt;li class="ui-group-index"&gt;group 2&lt;/li&gt;
+   &lt;li class="ui-li-static"&gt;list item1&lt;/li&gt;
+   &lt;li class="ui-li-static"&gt;list item2&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+
+
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>
