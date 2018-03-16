@@ -22,3 +22,6 @@
 
 # [Guides](/application/web/guides/index.md)
 
+# [API Reference](/application/web/api/index.md)
+
+# [Samples](https://developer.tizen.org/development/sample/web)

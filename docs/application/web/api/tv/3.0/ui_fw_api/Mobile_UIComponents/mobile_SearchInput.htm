@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Search Input</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+<h1>Search Input</h1>
+
+<p>The SearchInput component is used to search for page content. It can be placed within the page content.</p>
+
+<table class="note">
+	<tbody>
+	<tr>
+		<th class="note">Note</th>
+	</tr>
+	<tr>
+		<td class="note">This component is supported since <strong>Tizen 2.4.</strong></td>
+	</tr>
+	<tr>
+		<td class="note">It was renamed from <i>SearchBar</i> component of Tizen 2.3.</td>
+	</tr>
+	</tbody>
+</table>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	
+		<li><a href="#default-selectors0.5337990545667708">Default Selectors</a>
+			
+		</li>
+	
+		<li><a href="#manual-constructor0.7136435771826655">Manual Constructor</a>
+			
+		</li>
+
+		<li><a href="#methods0.952881425851956">Methods</a>
+			
+		</li>
+	
+</ol>
+
+
+
+<h2><a id="default-selectors0.5337990545667708"></a>Default Selectors</h2>
+
+<p>By default, all <code>&lt;input&gt;</code> elements with the <code>type="search"</code> or <code>class="ui-search-input"</code> attribute are displayed as search input.</p>
+
+<h2><a id="manual-constructor0.7136435771826655"></a>Manual Constructor</h2>
+
+<p>To manually create a SearchInput component, use the component constructor from the <code>tau</code> namespace.</p>
+
+<pre class="prettyprint">
+&lt;input type="search" id="search-test"/&gt;
+&lt;script&gt;
+var searchEl = document.getElementById("search-test"),
+    searchWidget = tau.widget.SearchInput(searchEl);
+&lt;/script&gt;
+</pre>
+
+<h2><a id="methods0.952881425851956"></a>Methods</h2>
+
+<p>To call a method on the component, please refer the following:</p>
+
+<pre class="prettyprint">&lt;script&gt;
+   var searchInputElement = document.getElementById('search-test'),
+       searchInput = tau.widget.SearcnInput(searchInputElement);
+
+   searchInput.methodName(methodArgument1, methodArgument2, ...);
+&lt;/script&gt;
+</pre>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-disable">disable</a>() </pre>
+					</td>
+					<td><p>Disable the SearchInput.</p></td>
+				</tr>
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-enable">enable</a>() </pre>
+					</td>
+					<td><p>Enable the SearchInput.</p></td>
+				</tr>
+
+		</tbody>
+	</table>
+	<dl>
+
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-disable">disable</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Disable the SearchInput.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">disable() </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							<p>The method sets the disabled attribute for the search input and changes the look of the search input to the disabled state.</p>
+
+
+						</p>
+					</div>
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>SearchInput</td>
+									<td>Returns SearchInput.</td>
+								</tr>
+								</tbody>
+							</table>
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;script&gt;
+   var element = document.getElementById("searchinput"),
+       searchInputWidget = tau.widget.SearchInput(element);
+
+   searchInputWidget.disable();
+&lt;/script&gt;
+</pre>
+						</div>
+				</dd>
+
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-enable">enable</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Enable the SearchInput.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">enable() </pre>
+					</div>
+
+					<div class="description">
+						<p>
+							<p>The method removes the disabled attribute from the search input and changes the look of the search input to the enabled state.</p>
+
+
+						</p>
+					</div>
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>SearchInput</td>
+									<td>Returns SearchInput.</td>
+								</tr>
+								</tbody>
+							</table>
+					</div>
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;script&gt;
+   var element = document.getElementById("searchinput"),
+       searchInputWidget = tau.widget.SearchInput(element);
+
+   searchInputWidget.enable();
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+		
+	</dl>
+
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

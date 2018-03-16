@@ -1,0 +1,551 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>Bookmark API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Bookmark">
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+<div class="title"><h1>Bookmark API</h1></div>
+<div class="brief">
+ The Bookmark API provides interfaces and methods for accessing Bookmark.
+This API provides functionality to get, add, and remove bookmarks.
+        </div>
+<div class="description">
+        <p>
+For more information on the Bookmark features, see <a href="https://developer.tizen.org/development/guides/web-application/personal-data/bookmarks">Bookmark Guide</a>.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>1.1. <a href="#Bookmark">Bookmark</a>
+</li></ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#BookmarkManagerObject">BookmarkManagerObject</a>
+</li>
+<li>2.2. <a href="#BookmarkManager">BookmarkManager</a>
+</li>
+<li>2.3. <a href="#BookmarkItem">BookmarkItem</a>
+</li>
+<li>2.4. <a href="#BookmarkFolder">BookmarkFolder</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#BookmarkManagerObject">BookmarkManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#BookmarkManager">BookmarkManager</a></td>
+<td>
+<a href="#Bookmark">Bookmark</a>[] <a href="#BookmarkManager::get">get</a> (optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder, optional boolean? recursive)<br>
+    void <a href="#BookmarkManager::add">add</a> (<a href="#Bookmark">Bookmark</a> bookmark, optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder)<br>
+    void <a href="#BookmarkManager::remove">remove</a> (optional <a href="#Bookmark">Bookmark</a>? bookmark)</td>
+</tr>
+<tr>
+<td><a href="#BookmarkItem">BookmarkItem</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#BookmarkFolder">BookmarkFolder</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="typedef" id="Bookmark">
+<a class="backward-compatibility-anchor" name="::Bookmark::Bookmark"></a><h3>1.1. Bookmark</h3>
+<div class="brief">
+ A bookmark, which could be either a <em>BookmarkItem </em>or a <em>BookmarkFolder</em>.
+          </div>
+<pre class="webidl prettyprint">  typedef (<a href="#BookmarkItem">BookmarkItem</a> or <a href="#BookmarkFolder">BookmarkFolder</a>) Bookmark;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.1
+          </p>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="BookmarkManagerObject">
+<a class="backward-compatibility-anchor" name="::Bookmark::BookmarkManagerObject"></a><h3>2.1. BookmarkManagerObject</h3>
+<div class="brief">
+ The BookmarkManagerObject interface defines what is instantiated by the Tizen object from the Tizen Platform.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface BookmarkManagerObject {
+    readonly attribute <a href="#BookmarkManager">BookmarkManager</a> bookmark;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BookmarkManagerObject">BookmarkManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.1
+          </p>
+<div class="description">
+          <p>
+There will be a <em>tizen.bookmark </em>object that allows to access the functionality of the Bookmark API.
+          </p>
+         </div>
+</div>
+<div class="interface" id="BookmarkManager">
+<a class="backward-compatibility-anchor" name="::Bookmark::BookmarkManager"></a><h3>2.2. BookmarkManager</h3>
+<div class="brief">
+ The BookmarkManager interface provides access to the bookmark folder and bookmark item.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface BookmarkManager {
+    <a href="#Bookmark">Bookmark</a>[] get(optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder, optional boolean? recursive) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void add(<a href="#Bookmark">Bookmark</a> bookmark, optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void remove(optional <a href="#Bookmark">Bookmark</a>? bookmark) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.1
+          </p>
+<div class="description">
+          <p>
+It provides access to the API functionalities through the <em>tizen.bookmark </em>interface.
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="BookmarkManager::get">
+<a class="backward-compatibility-anchor" name="::Bookmark::BookmarkManager::get"></a><code><b><span class="methodName">get</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets all bookmark items and bookmark folders.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Bookmark">Bookmark</a>[] get(optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder, optional boolean? recursive);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+<div class="description">
+            <p>
+If no parentFolder is passed, or the parentFolder contains <var>null</var>, it is considered as the default bookmark folder (The root bookmark folder).
+In this case, the return will contain bookmarks under the root bookmark folder.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ platform
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/bookmark.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">parentFolder</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Parent bookmark folder to retrieve the result bookmarks
+                </li>
+          <li class="param">
+<span class="name">recursive</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+    Flag indicating whether sub-bookmarks are also retrieved recursively<br>(The default value is <em>false</em>).
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ Bookmark[]  Array of Bookmarks
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the parentFolder parameter isn't found in bookmark database.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if an input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+   /* Retrieves bookmarks from the root bookmark folder recursively */
+   var allBookmarks = tizen.bookmark.get(null, true);
+}
+catch (err)
+{
+   console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="BookmarkManager::add">
+<a class="backward-compatibility-anchor" name="::Bookmark::BookmarkManager::add"></a><code><b><span class="methodName">add</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Adds a bookmark item or a bookmark folder.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void add(<a href="#Bookmark">Bookmark</a> bookmark, optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+<div class="description">
+            <p>
+If no parentFolder is passed, or the parentFolder contains <var>null</var>, it is considered as the default bookmark folder(The root bookmark folder).
+In this case, the bookmark is added under the root bookmark folder.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ platform
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/bookmark.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">bookmark</span>:
+     Bookmark to be added
+                </li>
+          <li class="param">
+<span class="name">parentFolder</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Parent folder of a bookmark to be added
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if a parentFolder parameter isn't found in bookmark database.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value, or a bookmark parameter is either a bookmark item whose url has already existed in bookmark database or a bookmark folder whose title has already existed under the same parent folder.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if an input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+   /* Adds a bookmark item to root bookmark folder */
+   tizen.bookmark.add(new tizen.BookmarkItem("tizen", "https://www.tizen.org"));
+}
+catch (err)
+{
+   console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="BookmarkManager::remove">
+<a class="backward-compatibility-anchor" name="::Bookmark::BookmarkManager::remove"></a><code><b><span class="methodName">remove</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes a bookmark item or a bookmark folder.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void remove(optional <a href="#Bookmark">Bookmark</a>? bookmark);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+<div class="description">
+            <p>
+If the bookmark is a BookmarkFolder type, all the bookmark items and bookmark folders under the specified bookmark folder are going to be removed.<br>If no bookmark is passed, or the bookmark contains <var>null</var>, it is considered as the default bookmark folder(The root bookmark folder).
+In this case, all the bookmarks will be removed.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ platform
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/bookmark.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">bookmark</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Bookmark to be removed
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+   /* Removes all the bookmark folders and items */
+   tizen.bookmark.remove();
+}
+catch (err)
+{
+   console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="BookmarkItem">
+<a class="backward-compatibility-anchor" name="::Bookmark::BookmarkItem"></a><h3>2.3. BookmarkItem</h3>
+<div class="brief">
+ The BookmarkItem interface implements the <em>BookmarkItem </em>object.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(DOMString title, DOMString url)]
+  interface BookmarkItem {
+    readonly attribute <a href="#BookmarkFolder">BookmarkFolder</a>? parent;
+    readonly attribute DOMString title;
+    readonly attribute DOMString url;
+
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.1
+          </p>
+<div class="constructors">
+<h4 id="BookmarkItem::constructor">Constructors</h4>
+<dl>
+<pre class="webidl prettyprint">BookmarkItem(DOMString title, DOMString url);</pre>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+   /* Creates a bookmark item */
+   var tizen = new tizen.BookmarkItem("tizen", "https://www.tizen.org");
+}
+catch (err)
+{
+   console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="BookmarkItem::parent">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">BookmarkFolder </span><span class="name">parent</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The parent bookmark folder.
+            </div>
+<div class="description">
+            <p>
+This attribute is meaningful when this object is successfully added or retrieved.
+If this BookmarkItem is not added yet, its value is set to undefined.
+            </p>
+            <p>
+If the parent bookmark folder indicates the root bookmark folder, the value will be <var>null</var>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="BookmarkItem::title">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">title</span></span><div class="brief">
+ The title of the bookmark.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="BookmarkItem::url">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">url</span></span><div class="brief">
+ The URL of the bookmark.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="BookmarkFolder">
+<a class="backward-compatibility-anchor" name="::Bookmark::BookmarkFolder"></a><h3>2.4. BookmarkFolder</h3>
+<div class="brief">
+ The BookmarkFolder interface implements the <em>BookmarkFolder </em>object.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(DOMString title)]
+  interface BookmarkFolder {
+    readonly attribute <a href="#BookmarkFolder">BookmarkFolder</a>? parent;
+    readonly attribute DOMString title;
+
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.1
+          </p>
+<div class="constructors">
+<h4 id="BookmarkFolder::constructor">Constructors</h4>
+<dl>
+<pre class="webidl prettyprint">BookmarkFolder(DOMString title);</pre>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+   /* Creates a bookmark folder */
+   var folder = new tizen.BookmarkFolder("folder");
+}
+catch (err)
+{
+   console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="BookmarkFolder::parent">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">BookmarkFolder </span><span class="name">parent</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The parent bookmark folder.
+            </div>
+<div class="description">
+            <p>
+This attribute is meaningful when this object is successfully added or retrieved.
+If this BookmarkFolder is not added yet, its value is set to undefined.
+            </p>
+            <p>
+If the parent bookmark folder indicates the root bookmark folder, the value will be <var>null</var>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="BookmarkFolder::title">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">title</span></span><div class="brief">
+ The title of the bookmark folder.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">3. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Bookmark {
+  typedef (<a href="#BookmarkItem">BookmarkItem</a> or <a href="#BookmarkFolder">BookmarkFolder</a>) Bookmark;
+
+  [NoInterfaceObject] interface BookmarkManagerObject {
+    readonly attribute <a href="#BookmarkManager">BookmarkManager</a> bookmark;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BookmarkManagerObject">BookmarkManagerObject</a>;
+
+  [NoInterfaceObject] interface BookmarkManager {
+    <a href="#Bookmark">Bookmark</a>[] get(optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder, optional boolean? recursive) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void add(<a href="#Bookmark">Bookmark</a> bookmark, optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void remove(optional <a href="#Bookmark">Bookmark</a>? bookmark) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+  };
+
+  [Constructor(DOMString title, DOMString url)]
+  interface BookmarkItem {
+    readonly attribute <a href="#BookmarkFolder">BookmarkFolder</a>? parent;
+    readonly attribute DOMString title;
+    readonly attribute DOMString url;
+
+  };
+  [Constructor(DOMString title)]
+  interface BookmarkFolder {
+    readonly attribute <a href="#BookmarkFolder">BookmarkFolder</a>? parent;
+    readonly attribute DOMString title;
+
+  };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

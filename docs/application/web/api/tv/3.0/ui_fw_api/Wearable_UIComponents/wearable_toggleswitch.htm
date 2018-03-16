@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head>
+     <script type="text/javascript" src="../snippet.js"></script>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+     <link href="../styles.css" rel="StyleSheet" type="text/css" />
+     <link href="../snippet.css" rel="StyleSheet" type="text/css" />
+     <title>Toggle Switch</title>
+ </head> 
+ <body onload="prettyPrint()" id="content"> 
+
+<h1>Toggle Switch</h1>
+
+<p>The toggle switch component shows on the screen a 2-state switch.</p>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	
+
+		<li><a href="#html-example">HTML Example</a>
+		</li>
+
+</ol>
+
+<h2 id="html-example">HTML Example</h2>
+<h3>Normal size Toggle Switch</h3>
+
+<p>
+To add a toggle switch, you must add the <span style="font-family: Courier New,Courier,monospace">ui-switch</span> class in the <span style="font-family: Courier New,Courier,monospace">&lt;div&gt;</span> element. Because toggle switch is dependent on the checkbox component, you must implement the <span style="font-family: Courier New,Courier,monospace">ui-switch-input</span> class in a checkbox <span style="font-family: Courier New,Courier,monospace">input</span> element.</p> 
+<p>To add a toggle switch component to the application, use the following code:</p>
+<pre class="prettyprint">
+&lt;div class="ui-switch"&gt;
+   &lt;div class="ui-switch-text"&gt;
+      Toggle Switch
+   &lt;/div&gt;
+   &lt;label class="ui-toggleswitch"&gt;
+      &lt;input type="checkbox" class="ui-switch-input"/&gt;
+      &lt;div class="ui-switch-activation"&gt;
+         &lt;div class="ui-switch-inneroffset"&gt;
+            &lt;div class="ui-switch-handler"&gt;&lt;/div&gt;
+         &lt;/div&gt;
+      &lt;/div&gt;
+   &lt;/label&gt;
+&lt;/div&gt;</pre>
+
+
+<h3>Toggle Switch in Listview</h3>
+<p>You can use toggle switch component in list as checkbox/radio. Please refer following code:</p>
+<pre class="prettyprint">
+&lt;ul class="ui-listview"&gt;
+   &lt;li class="li-has-toggle"&gt;
+      &lt;label&gt;
+         Toggle 1
+         &lt;div class="ui-toggleswitch"&gt;
+            &lt;input type="checkbox" class="ui-switch-input"/&gt;
+         &lt;div class="ui-switch-button"&gt;&lt;/div&gt;
+         &lt;/div&gt;
+      &lt;/label&gt;
+   &lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+ <div id="footer"> 
+   <hr size="1" /> 
+   <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font> 
+  </div> 
+   
+  <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25976949-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script> 
+    
+ </body>
+</html>

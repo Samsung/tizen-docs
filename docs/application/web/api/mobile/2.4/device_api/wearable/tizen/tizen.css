@@ -1,0 +1,934 @@
+.attribute
+{
+    padding-bottom:15px;
+}
+pre
+{
+    /*text-align: left;            -webkit-border-radius: 8px;     -khtml-border-radius: 8px;     -moz-border-radius: 8px;     border-radius: 8px;     border: 1px solid rgba(255, 255, 255, 0.2);     display:block;     color:#2c3123;     margin:15px 0px 15px -8px;     padding:12px 20px 12px 35px;     font-size: 14px;     /*overflow:hidden;*/ /*word-wrap:break-word;*/ /*white-space: normal;*/
+    background: white;
+    color: #1C1C1C;
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 10pt;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+}
+pre code
+{
+    font-size: 1em;
+    margin: 0px;
+    padding: 2px;
+    border: 1px solid #888;
+}
+
+pre webidl
+{
+    font-size: 1em;
+    margin: 0px;
+    padding: 2px;
+    border: 1px solid #888;
+}
+
+.prettyprint
+{
+}
+
+
+.signature
+{
+    background-color: #FCE6B9;
+    word-wrap:break-word;
+}
+
+.examplecode
+{
+    background-color: #D5F1FD;
+    word-wrap:break-word;
+}
+
+.webidl
+{
+    background-color: #D9F0C4;
+    word-wrap:break-word;
+}
+
+.prettyprint b
+{
+    font-weight: normal;
+    color: #c61800; /*letter-spacing: -1px;*/
+}
+
+
+pre select
+{
+    border: 1px solid #c61800;
+}
+
+input
+{
+    font-size: 16px;
+    margin-right: 10px;
+    font-family: Helvetica;
+    padding: 3px;
+}
+input[type="range"]
+{
+    width: 100%;
+}
+
+button
+{
+    margin: 20px 10px 0 0;
+    font-family: Verdana;
+}
+
+button.large
+{
+    font-size: 32px;
+}
+
+pre b
+{
+    font-weight: normal;
+    color: #c61800; /*letter-spacing: -1px;*/
+}
+pre em
+{
+    font-weight: normal;
+    font-style: normal;
+    color: #18a600;
+}
+pre input[type="range"]
+{
+    height: 6px;
+    cursor: pointer;
+    width: auto;
+}
+
+
+
+
+.product, .product-ua, .product-cc
+{
+}
+
+dfn.external
+{
+    font-weight: normal;
+    font-style: italic;
+}
+
+pre.idl
+{
+    border: solid thin;
+    background: #eee;
+    color: #000;
+    padding: 0.5em;
+}
+
+pre.idl :link, pre.idl :visited
+{
+    color: inherit;
+    background: transparent;
+}
+
+dfn
+{
+    font-style: normal;
+    font-weight: bolder;
+}
+em.ct, em.ct-samp
+{
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.issue
+{
+    padding: 1em;
+    border: 1px solid #f00;
+    background: #ffc;
+}
+
+.issue::before
+{
+    content: "Issue";
+    display: block;
+    width: 150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight: bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding: 3px 1em;
+}
+
+.comment
+{
+    padding: 1em;
+    border: 1px solid #f00;
+    background: #fff;
+}
+
+.comment::before
+{
+    content: "Comment";
+    display: block;
+    width: 150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight: bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding: 3px 1em;
+}
+
+.ws3
+{
+    padding: 1em;
+    border: 1px solid #f00;
+    background: lightblue;
+}
+
+.ws3::before
+{
+    content: "For WS3 Review";
+    display: block;
+    width: 150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight: bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding: 3px 1em;
+}
+
+.ws4
+{
+    padding: 1em;
+    border: 1px solid #f00;
+    background: lightblue;
+}
+
+.ws4::before
+{
+    content: "Under discussion";
+    display: block;
+    width: 150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight: bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding: 3px 1em;
+}
+
+.note
+{
+    margin-left: 2em;
+    border: 2px solid #CFF6D9;
+    padding: .5em;
+    padding-top: 0px;
+    padding-bottom: 1em;
+    color: #444;
+    background-color: #E2FFF0;
+    font-size: 0.8em;
+}
+
+dd > dl
+{
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 15px;
+}
+
+code
+{
+    font-size: 1.1em;
+    text-decoration: none;
+    color: #002108;
+}
+
+
+.dir_listing li
+{
+    list-style-type: none;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
+
+span span
+{
+    /*background-color: yellow;*/
+}
+
+li.folder
+{
+    list-style-image: url(images/expanded_folder.png);
+}
+
+.authorguide
+{
+    border: 1px solid #67BBB5;
+    background: #E8EBFC;
+    padding: 1em;
+    font-size: .9em;
+    color: #003;
+}
+
+.authorguide strong
+{
+    padding: .2em;
+    color: #003;
+    border: none;
+    position: relative;
+    display: block;
+    width: 200px;
+    left: -1.5em;
+    top: -1.5em;
+    background: #C6D8E6;
+    text-align: center;
+}
+
+span.notetitle
+{
+    padding: .2em;
+    color: #066;
+    border: none;
+    position: relative;
+    display: block;
+    width: 40px;
+    left: -1.5em;
+    top: -.7em;
+    background: #F2FFF1;
+    padding-left: .2em;
+    text-align: center;
+}
+
+var
+{
+    font-family: "Lucida Console" , Monaco, monospace;
+}
+
+li.folder li
+{
+    list-style-image: none;
+}
+
+.dir_listing .comment
+{
+    border: none;
+    font-family: "Courier New" , Courier, monospace;
+    color: #669933;
+}
+
+.dir_listing img
+{
+    vertical-align: middle;
+}
+
+.redNote
+{
+    color: red;
+}
+
+dl.procedure dt
+{
+    font-weight: normal;
+}
+
+.editorialNote
+{
+    padding: 5px;
+    background-color: #F3B9B7;
+    border: 3px dashed #FFEEB8;
+    color: #444;
+    font-size: 0.8em;
+}
+
+li > ol
+{
+    list-style-type: upper-alpha;
+}
+
+p[id]:after
+{
+    font-size: .8em;
+}
+
+table.wac
+{
+    border-width: 1px;
+    border-spacing: 2px;
+    border-style: outset;
+    border-color: #808080;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+table.wac th
+{
+    border-width: 1px;
+    padding: 1px;
+    border-style: inset;
+    border-color: #808080;
+    background-color: #ffffff;
+}
+
+table.wac td
+{
+    vertical-align: top;
+    border-width: 1px;
+    padding: 1px;
+    border-style: inset;
+    border-color: #808080;
+    background-color: #ffffff;
+}
+
+.wacreqid
+{
+    font-weight: bold;
+}
+
+.wacreqid_ext
+{
+    font-weight: bold;
+}
+
+wacreqtext
+{
+    font-style: normal;
+}
+
+/* Table styles */
+table
+{
+    border-spacing: 0;
+    border-collapse: collapse;
+    border-bottom: 3px solid #005a9c;
+    margin-bottom: 1em;
+}
+
+th
+{
+    border-top: 2px solid #719cc7;
+    border-right: 1px solid #c6d9f1;
+    border-left: 1px solid #c6d9f1;
+    background-color: #3D9EC9;
+    padding: 4px;
+    color: White;
+    font-size: 9pt;
+    font-weight: bold;
+}
+
+th[scope="row"]
+{
+    background: inherit;
+    color: inherit;
+    border-top: 1px solid #ddd;
+}
+
+td
+{
+    padding: 3px 10px;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+/*
+th:last-of-type, td:last-of-type
+{
+    border-right: none;
+}
+
+tr:nth-child(even)
+{
+    background: #f0f6ff;
+}
+*/
+.attrName
+{
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.methodName
+{
+    font-size: 13pt;
+    font-weight: bold;
+}
+
+body
+{
+    background: white;
+    color: #1C1C1C;
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 10pt;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:link
+{
+    text-decoration: underline;
+    color: #719CC7;
+    font-weight: bold;
+}
+:visited
+{
+    text-decoration: underline;
+    color: #719CC7;
+    font-weight: bold;
+}
+a:active
+{
+    color: #C00;
+    background: transparent;
+}
+
+a:link img, a:visited img
+{
+    border-style: none;
+}
+/* no border on img links */
+
+a img
+{
+    color: white;
+}
+/* trick to hide the border in Netscape 4 */
+@media all
+{
+    /* hide the next rule from Netscape 4 */
+    a img
+    {
+        color: inherit;
+    }
+    /* undo the color change above */
+}
+
+th, td
+{
+    /* ns 4 */ /*font-family: sans-serif;*/
+    font-size: 10pt;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    text-align: left;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+}
+/* background should be transparent, but WebTV has a bug */
+h1, h2, h3, h4
+{
+    color: #005A9C;
+    background: white;
+    padding-top: 0.2em;
+}
+h1
+{
+    font-size: 24pt;
+    color: #0E437D;
+}
+h2
+{
+    font-size: 18pt;
+    color: #0E437D;
+}
+h3
+{
+    font-size: 14pt;
+    color: #1C1C1C;
+}
+h4
+{
+    font-size: 12pt;
+    color: #1C1C1C;
+    font-weight: bold;
+}
+h5
+{
+    font-size: 10pt;
+    color: #1C1C1C;
+    font-style: italic;
+    font-weight: bold;
+}
+h6
+{
+    font-size: 10pt;
+    color: #1C1C1C;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+
+.hide
+{
+    display: none;
+}
+
+div.head
+{
+    margin-bottom: 1em;
+}
+div.head h1
+{
+    margin-top: 2em;
+    clear: both;
+}
+div.head table
+{
+    margin-left: 2em;
+    margin-top: 2em;
+}
+
+p.copyright
+{
+    font-size: small;
+}
+p.copyright small
+{
+    font-size: small;
+}
+
+
+a[href] img:hover
+{
+    background: white;
+}
+
+@media screen
+{
+    /* hide from IE3 */
+    a[href]:hover
+    {
+        background: #ffa;
+    }
+}
+
+pre
+{
+    margin-left: 2em;
+}
+/*
+    p {
+      margin-top: 0.6em;
+      margin-bottom: 0.6em;
+    }
+    */
+
+/* opera 3.50 */
+dt, dd
+{
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+pre, code
+{
+    font-family: monospace;
+}
+/* navigator 4 requires this */
+
+ul.toc, ol.toc
+{
+    list-style: disc; /* Mac NS has problem with 'none' */
+    list-style: none;
+}
+
+ul.xmlconfig
+{
+    display: inline-block;
+    padding-right: 3%;
+    border-style: dotted;
+    border-width: 1px;
+}
+
+@media aural
+{
+    h1, h2, h3
+    {
+        stress: 20;
+        richness: 90;
+    }
+    .hide
+    {
+        speak: none;
+    }
+    p.copyright
+    {
+        volume: x-soft;
+        speech-rate: x-fast;
+    }
+    dt
+    {
+        pause-before: 20%;
+    }
+    pre
+    {
+        speak-punctuation: code;
+    }
+}
+
+.toc
+{
+    list-style-type: none;
+}
+
+div.exampleInner pre
+{
+    margin-left: 1em;
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+div.exampleOuter
+{
+    border: 4px double gray;
+    margin: 0em;
+    padding: 0em;
+}
+div.exampleInner
+{
+    background-color: #d5dee3;
+    border-top-width: 4px;
+    border-top-style: double;
+    border-top-color: #d3d3d3;
+    border-bottom-width: 4px;
+    border-bottom-style: double;
+    border-bottom-color: #d3d3d3;
+    padding: 4px;
+    margin: 0em;
+}
+div.exampleWrapper
+{
+    margin: 4px;
+}
+div.exampleHeader
+{
+    font-weight: bold;
+    margin: 4px;
+}
+
+
+
+.def-api-feature dt, dt .def-device-cap, dt.const code
+{
+    font: bold 100% sans-serif;
+}
+dt.attribute code, dt.method code
+{
+    font: italic 100% sans-serif;
+}
+
+.def-device-caps dd
+{
+    margin-bottom: 2em;
+}
+
+dt.method
+{
+    margin-top: 2em;
+}
+
+.summary td
+{
+    text-align: left;
+    background-color: white;
+    color: inherit;
+    font-family: monospace;
+    white-space: pre;
+    padding: .3em 1em .3em 1em;
+}
+/* Pretty printing styles. Used with prettify.js. */
+
+.str
+{
+    color: #080;
+}
+.kwd
+{
+    color: #008;
+}
+.com
+{
+    color: #800;
+}
+.typ
+{
+    color: #606;
+}
+.lit
+{
+    color: #066;
+}
+.pun
+{
+    color: #660;
+}
+.pln
+{
+    color: #000;
+}
+.tag
+{
+    color: #008;
+}
+.atn
+{
+    color: #606;
+}
+.atv
+{
+    color: #080;
+}
+.dec
+{
+    color: #606;
+}
+.readonly
+{
+    color: red;
+}
+.type
+{
+    color: #F0ACF0;
+}
+.optional
+{
+    font-style: italic;
+}
+
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums
+{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* IE indents via margin-left */
+li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8
+{
+    list-style-type: none;
+}
+/* Alternate shading for lines */
+li.L1, li.L3, li.L5, li.L7, li.L9
+{
+    background: #eee;
+}
+/*@media print {*/
+.str
+{
+    color: #060;
+}
+.kwd
+{
+    color: #006;
+    font-weight: bold;
+}
+.com
+{
+    color: #600;
+    font-style: italic;
+}
+.typ
+{
+    color: #404;
+    font-weight: bold;
+}
+.lit
+{
+    color: #044;
+}
+.pun
+{
+    color: #440;
+}
+.pln
+{
+    color: #000;
+}
+.tag
+{
+    color: #006;
+    font-weight: bold;
+}
+.atn
+{
+    color: #404;
+}
+.atv
+{
+    color: #060;
+}
+/*}*/
+
+/* div.status Styles */
+a[href].status:link{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a[href].status:visited{
+    color: #ffffff;
+}
+
+a[href].status:hover{
+    color: #3D9EC9;
+}
+
+/* Footer Styles */
+#footer
+{
+    background-color: #DDDDDD;
+    margin-top: 20px;
+    font-size: .8em;
+    padding: 20px;
+    color: #666;
+}
+
+#footer .sponsor
+{
+    padding: 0 10px 10px 10px;
+    margin-top: 10px;
+    text-align: right;
+    float: right;
+}
+
+#footer .trademark
+{
+    padding: 0 10px 10px 10px;
+    margin-top: 10px;
+    text-align: right;
+    clear: both;
+}
+
+
+#footer ul
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#footer li
+{
+    margin-bottom: 2px;
+}
+.version, span.param, .except, .example, .return, .privilege, .remark, .privilegelevel, .output > .title
+{
+    font-weight: bold;
+}
+span.name
+{
+    font-weight: bold;
+}
+
+li.feature
+{
+    margin-left:30px;
+    font-weight: bold;
+}
+
+div.api > div.supported-platforms {
+    float: right;
+}
+
+div.output > pre {
+    background-color: #eee;
+    padding-left: 0.5em;
+}

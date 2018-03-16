@@ -1,0 +1,3918 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>Application API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Application">
+<div class="supported-platforms"><img title="Mandatory" src="../../../images/tv_s_w.png"></div>
+<div class="title"><h1>Application API</h1></div>
+<div class="brief">
+ This API provides a way to launch other applications and access
+application management.
+        </div>
+<div class="description">
+        <p>
+The <em>ApplicationManager</em> interface also provides methods to launch other applications
+explicitly and implicitly through the <em>ApplicationControl</em> interface.
+The <em>ApplicationControl</em> interface consists of an operation, URI, and MIME type
+and also describes an action to be performed by other
+applications and can carry the result from the subsequent application.
+The <em>ApplicationManager</em> interface also provides methods to handle the application
+lifecycle, to access the installed applications on the device, and to let
+an application be notified of a change in the application list.
+        </p>
+        <p>
+The <em>Application</em> interface defines the current application's information and
+the basic operations for the current application such as exit or hide.
+        </p>
+        <p>
+Since Tizen 2.4 the <em>Application</em> interface provides application event broadcasting and listening features. An application can broadcast user events to other listening applications and listen to broadcasted user events from other applications. In a future Tizen release, applications will also be able to receive pre-defined system events from the platform.
+        </p>
+        <p>
+For more information on the Application features, see <a href="https://developer.tizen.org/development/guides/web-application/application-management/applications">Application Guide</a>, <a href="https://developer.tizen.org/development/guides/web-application/application-management/application-groups">Application Group Guide</a> or <a href="https://developer.tizen.org/development/guides/web-application/application-management/application-information-and-controls/application-controls">Application Control Guide</a>.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li>
+                    1.1. <a href="#ApplicationId">ApplicationId</a>
+</li>
+<li>
+                    1.2. <a href="#ApplicationContextId">ApplicationContextId</a>
+</li>
+<li>
+                    1.3. <a href="#UserEventData">UserEventData</a>
+</li>
+<li>
+                    1.4. <a href="#EventData">EventData</a>
+</li>
+<li>
+                    1.5. <a href="#ApplicationControlLaunchMode">ApplicationControlLaunchMode</a>
+</li>
+<li>
+                    1.6. <a href="#ApplicationUsageMode">ApplicationUsageMode</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#ApplicationManagerObject">ApplicationManagerObject</a>
+</li>
+<li>2.2. <a href="#ApplicationManager">ApplicationManager</a>
+</li>
+<li>2.3. <a href="#ApplicationUsageFilter">ApplicationUsageFilter</a>
+</li>
+<li>2.4. <a href="#Application">Application</a>
+</li>
+<li>2.5. <a href="#ApplicationInformation">ApplicationInformation</a>
+</li>
+<li>2.6. <a href="#ApplicationContext">ApplicationContext</a>
+</li>
+<li>2.7. <a href="#ApplicationBatteryUsage">ApplicationBatteryUsage</a>
+</li>
+<li>2.8. <a href="#ApplicationUsage">ApplicationUsage</a>
+</li>
+<li>2.9. <a href="#ApplicationControlData">ApplicationControlData</a>
+</li>
+<li>2.10. <a href="#ApplicationControl">ApplicationControl</a>
+</li>
+<li>2.11. <a href="#RequestedApplicationControl">RequestedApplicationControl</a>
+</li>
+<li>2.12. <a href="#ApplicationCertificate">ApplicationCertificate</a>
+</li>
+<li>2.13. <a href="#ApplicationMetaData">ApplicationMetaData</a>
+</li>
+<li>2.14. <a href="#BatteryUsageInfoArraySuccessCallback">BatteryUsageInfoArraySuccessCallback</a>
+</li>
+<li>2.15. <a href="#AppsUsageInfoArraySuccessCallback">AppsUsageInfoArraySuccessCallback</a>
+</li>
+<li>2.16. <a href="#ApplicationInformationArraySuccessCallback">ApplicationInformationArraySuccessCallback</a>
+</li>
+<li>2.17. <a href="#FindAppControlSuccessCallback">FindAppControlSuccessCallback</a>
+</li>
+<li>2.18. <a href="#ApplicationContextArraySuccessCallback">ApplicationContextArraySuccessCallback</a>
+</li>
+<li>2.19. <a href="#ApplicationControlDataArrayReplyCallback">ApplicationControlDataArrayReplyCallback</a>
+</li>
+<li>2.20. <a href="#SystemEventData">SystemEventData</a>
+</li>
+<li>2.21. <a href="#EventCallback">EventCallback</a>
+</li>
+<li>2.22. <a href="#StatusEventCallback">StatusEventCallback</a>
+</li>
+<li>2.23. <a href="#EventInfo">EventInfo</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#api-features">Related Feature</a>
+</li>
+<li>4. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#ApplicationManagerObject">ApplicationManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#ApplicationManager">ApplicationManager</a></td>
+<td>
+<div>
+<a href="#Application">Application</a> <a href="#ApplicationManager::getCurrentApplication">getCurrentApplication</a> ()</div>
+<div>void <a href="#ApplicationManager::kill">kill</a> (<a href="#ApplicationContextId">ApplicationContextId</a> contextId, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#ApplicationManager::launch">launch</a> (<a href="#ApplicationId">ApplicationId</a> id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#ApplicationManager::launchAppControl">launchAppControl</a> (<a href="#ApplicationControl">ApplicationControl</a> appControl, optional <a href="#ApplicationId">ApplicationId</a>? id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#ApplicationControlDataArrayReplyCallback">ApplicationControlDataArrayReplyCallback</a>? replyCallback)</div>
+<div>void <a href="#ApplicationManager::findAppControl">findAppControl</a> (<a href="#ApplicationControl">ApplicationControl</a> appControl, <a href="#FindAppControlSuccessCallback">FindAppControlSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#ApplicationManager::getAppsContext">getAppsContext</a> (<a href="#ApplicationContextArraySuccessCallback">ApplicationContextArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>
+<a href="#ApplicationContext">ApplicationContext</a> <a href="#ApplicationManager::getAppContext">getAppContext</a> (optional <a href="#ApplicationContextId">ApplicationContextId</a>? contextId)</div>
+<div>void <a href="#ApplicationManager::getAppsInfo">getAppsInfo</a> (<a href="#ApplicationInformationArraySuccessCallback">ApplicationInformationArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>
+<a href="#ApplicationInformation">ApplicationInformation</a> <a href="#ApplicationManager::getAppInfo">getAppInfo</a> (optional <a href="#ApplicationId">ApplicationId</a>? id)</div>
+<div>
+<a href="#ApplicationCertificate">ApplicationCertificate</a>[] <a href="#ApplicationManager::getAppCerts">getAppCerts</a> (optional <a href="#ApplicationId">ApplicationId</a>? id)</div>
+<div>DOMString <a href="#ApplicationManager::getAppSharedURI">getAppSharedURI</a> (optional <a href="#ApplicationId">ApplicationId</a>? id)</div>
+<div>
+<a href="#ApplicationMetaData">ApplicationMetaData</a>[] <a href="#ApplicationManager::getAppMetaData">getAppMetaData</a> (optional <a href="#ApplicationId">ApplicationId</a>? id)</div>
+<div>void <a href="#ApplicationManager::getBatteryUsageInfo">getBatteryUsageInfo</a> (<a href="#BatteryUsageInfoArraySuccessCallback">BatteryUsageInfoArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? days, optional long? limit)</div>
+<div>void <a href="#ApplicationManager::getAppsUsageInfo">getAppsUsageInfo</a> (<a href="#AppsUsageInfoArraySuccessCallback">AppsUsageInfoArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#ApplicationUsageMode">ApplicationUsageMode</a>? mode, optional <a href="#ApplicationUsageFilter">ApplicationUsageFilter</a>? filter, optional long? limit)</div>
+<div>long <a href="#ApplicationManager::addAppStatusChangeListener">addAppStatusChangeListener</a> (<a href="#StatusEventCallback">StatusEventCallback</a> eventCallback, optional <a href="#ApplicationId">ApplicationId</a>? appId)</div>
+<div>void <a href="#ApplicationManager::removeAppStatusChangeListener">removeAppStatusChangeListener</a> (long watchId)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#ApplicationUsageFilter">ApplicationUsageFilter</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#Application">Application</a></td>
+<td>
+<div>void <a href="#Application::exit">exit</a> ()</div>
+<div>void <a href="#Application::hide">hide</a> ()</div>
+<div>
+<a href="#RequestedApplicationControl">RequestedApplicationControl</a> <a href="#Application::getRequestedAppControl">getRequestedAppControl</a> ()</div>
+<div>long <a href="#Application::addEventListener">addEventListener</a> (<a href="#EventInfo">EventInfo</a> event, <a href="#EventCallback">EventCallback</a> callback)</div>
+<div>void <a href="#Application::removeEventListener">removeEventListener</a> (long watchId)</div>
+<div>void <a href="#Application::broadcastEvent">broadcastEvent</a> (<a href="#EventInfo">EventInfo</a> event, <a href="#UserEventData">UserEventData</a> data)</div>
+<div>void <a href="#Application::broadcastTrustedEvent">broadcastTrustedEvent</a> (<a href="#EventInfo">EventInfo</a> event, <a href="#UserEventData">UserEventData</a> data)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#ApplicationInformation">ApplicationInformation</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#ApplicationContext">ApplicationContext</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#ApplicationBatteryUsage">ApplicationBatteryUsage</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#ApplicationUsage">ApplicationUsage</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#ApplicationControlData">ApplicationControlData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#ApplicationControl">ApplicationControl</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#RequestedApplicationControl">RequestedApplicationControl</a></td>
+<td>
+<div>void <a href="#RequestedApplicationControl::replyResult">replyResult</a> (optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data)</div>
+<div>void <a href="#RequestedApplicationControl::replyFailure">replyFailure</a> ()</div>
+</td>
+</tr>
+<tr>
+<td><a href="#ApplicationCertificate">ApplicationCertificate</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#ApplicationMetaData">ApplicationMetaData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#BatteryUsageInfoArraySuccessCallback">BatteryUsageInfoArraySuccessCallback</a></td>
+<td><div>void <a href="#BatteryUsageInfoArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#ApplicationBatteryUsage">ApplicationBatteryUsage</a>[] batteryInfoArray)</div></td>
+</tr>
+<tr>
+<td><a href="#AppsUsageInfoArraySuccessCallback">AppsUsageInfoArraySuccessCallback</a></td>
+<td><div>void <a href="#AppsUsageInfoArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#ApplicationUsage">ApplicationUsage</a>[] appsInfoArray)</div></td>
+</tr>
+<tr>
+<td><a href="#ApplicationInformationArraySuccessCallback">ApplicationInformationArraySuccessCallback</a></td>
+<td><div>void <a href="#ApplicationInformationArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#ApplicationInformation">ApplicationInformation</a>[] informationArray)</div></td>
+</tr>
+<tr>
+<td><a href="#FindAppControlSuccessCallback">FindAppControlSuccessCallback</a></td>
+<td><div>void <a href="#FindAppControlSuccessCallback::onsuccess">onsuccess</a> (<a href="#ApplicationInformation">ApplicationInformation</a>[] informationArray, <a href="#ApplicationControl">ApplicationControl</a> appControl)</div></td>
+</tr>
+<tr>
+<td><a href="#ApplicationContextArraySuccessCallback">ApplicationContextArraySuccessCallback</a></td>
+<td><div>void <a href="#ApplicationContextArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#ApplicationContext">ApplicationContext</a>[] contexts)</div></td>
+</tr>
+<tr>
+<td><a href="#ApplicationControlDataArrayReplyCallback">ApplicationControlDataArrayReplyCallback</a></td>
+<td>
+<div>void <a href="#ApplicationControlDataArrayReplyCallback::onsuccess">onsuccess</a> (optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data)</div>
+<div>void <a href="#ApplicationControlDataArrayReplyCallback::onfailure">onfailure</a> ()</div>
+</td>
+</tr>
+<tr>
+<td><a href="#ApplicationInformationEventCallback">ApplicationInformationEventCallback</a></td>
+<td>
+<div>void <a href="#ApplicationInformationEventCallback::oninstalled">oninstalled</a> (<a href="#ApplicationInformation">ApplicationInformation</a> info)</div>
+<div>void <a href="#ApplicationInformationEventCallback::onupdated">onupdated</a> (<a href="#ApplicationInformation">ApplicationInformation</a> info)</div>
+<div>void <a href="#ApplicationInformationEventCallback::onuninstalled">onuninstalled</a> (<a href="#ApplicationId">ApplicationId</a> id)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#SystemEventData">SystemEventData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#EventCallback">EventCallback</a></td>
+<td><div>void <a href="#EventCallback::onevent">onevent</a> (<a href="#EventInfo">EventInfo</a> event, <a href="#EventData">EventData</a> data)</div></td>
+</tr>
+<tr>
+<td><a href="#StatusEventCallback">StatusEventCallback</a></td>
+<td><div>void <a href="#StatusEventCallback::onchange">onchange</a> (<a href="#ApplicationId">ApplicationId</a> appId, boolean isActive)</div></td>
+</tr>
+<tr>
+<td><a href="#EventInfo">EventInfo</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="typedef" id="ApplicationId">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationId"></a><h3>1.1. ApplicationId</h3>
+<div class="brief">
+ The unique ID for an installed application.
+          </div>
+<pre class="webidl prettyprint">  typedef DOMString ApplicationId;</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+</div>
+<div class="typedef" id="ApplicationContextId">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationContextId"></a><h3>1.2. ApplicationContextId</h3>
+<div class="brief">
+ The unique ID for a running application.
+          </div>
+<pre class="webidl prettyprint">  typedef DOMString ApplicationContextId;</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+</div>
+<div class="typedef" id="UserEventData">
+<a class="backward-compatibility-anchor" name="::Application::UserEventData"></a><h3>1.3. UserEventData</h3>
+<div class="brief">
+ Specifies the user event data.
+          </div>
+<pre class="webidl prettyprint">  typedef object UserEventData;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+</div>
+<div class="typedef" id="EventData">
+<a class="backward-compatibility-anchor" name="::Application::EventData"></a><h3>1.4. EventData</h3>
+<div class="brief">
+ Specifies the user or system defined event data.
+          </div>
+<pre class="webidl prettyprint">  typedef (<a href="#SystemEventData">SystemEventData</a> or <a href="#UserEventData">UserEventData</a>) EventData;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+</div>
+<div class="enum" id="ApplicationControlLaunchMode">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationControlLaunchMode"></a><h3>1.5. ApplicationControlLaunchMode</h3>
+<div class="brief">
+ Specifies the application launch mode when it is launched by <em>launchAppControl()</em>. This value may be overriden if application launched by <em>launchAppControl()</em> has value <em>SINGLE</em> configured in application manifest.
+          </div>
+<pre class="webidl prettyprint">  enum ApplicationControlLaunchMode { "SINGLE", "GROUP" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="description">
+          <p>
+The launch modes defined by this enumerator are:
+          </p>
+          <ul>
+            <li>
+SINGLE - Launch application as standalone instance            </li>
+            <li>
+GROUP - Launch application in subgroup            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="ApplicationUsageMode">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationUsageMode"></a><h3>1.6. ApplicationUsageMode</h3>
+<div class="brief">
+ Specifies the possible modes of getting statistics of application usage.
+          </div>
+<pre class="webidl prettyprint">  enum ApplicationUsageMode { "RECENTLY", "FREQUENTLY" };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="description">
+          <p>
+Possible types are:
+          </p>
+          <ul>
+            <li>
+RECENTLY - indicates most recently used applications, in a descending order of the application use counts            </li>
+            <li>
+FREQUENTLY - indicates most frequently used applications, in a descending order of the application use counts            </li>
+          </ul>
+         </div>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="ApplicationManagerObject">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationManagerObject"></a><h3>2.1. ApplicationManagerObject</h3>
+<div class="brief">
+ This interface defines what is instantiated by the <em>Tizen </em>object on the Tizen Platform.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface ApplicationManagerObject {
+    readonly attribute <a href="#ApplicationManager">ApplicationManager</a> application;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ApplicationManagerObject">ApplicationManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="description">
+          <p>
+The <em>tizen.application </em>object allows access to the Application API's functionality.
+          </p>
+         </div>
+</div>
+<div class="interface" id="ApplicationManager">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationManager"></a><h3>2.2. ApplicationManager</h3>
+<div class="brief">
+ The ApplicationManager interface provides methods to retrieve application information, launch, install application, etc.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface ApplicationManager {
+
+    <a href="#Application">Application</a> getCurrentApplication() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void kill(<a href="#ApplicationContextId">ApplicationContextId</a> contextId,
+              optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void launch(<a href="#ApplicationId">ApplicationId</a> id,
+                optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void launchAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl,
+                          optional <a href="#ApplicationId">ApplicationId</a>? id,
+                          optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                          optional <a href="#ApplicationControlDataArrayReplyCallback">ApplicationControlDataArrayReplyCallback</a>? replyCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void findAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl,
+                        <a href="#FindAppControlSuccessCallback">FindAppControlSuccessCallback</a> successCallback,
+                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void getAppsContext(<a href="#ApplicationContextArraySuccessCallback">ApplicationContextArraySuccessCallback</a> successCallback,
+                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#ApplicationContext">ApplicationContext</a> getAppContext(optional <a href="#ApplicationContextId">ApplicationContextId</a>? contextId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void getAppsInfo(<a href="#ApplicationInformationArraySuccessCallback">ApplicationInformationArraySuccessCallback</a> successCallback,
+                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#ApplicationInformation">ApplicationInformation</a> getAppInfo(optional <a href="#ApplicationId">ApplicationId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#ApplicationCertificate">ApplicationCertificate</a>[] getAppCerts(optional <a href="#ApplicationId">ApplicationId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    DOMString getAppSharedURI(optional <a href="#ApplicationId">ApplicationId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#ApplicationMetaData">ApplicationMetaData</a>[] getAppMetaData(optional <a href="#ApplicationId">ApplicationId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void getBatteryUsageInfo(<a href="#BatteryUsageInfoArraySuccessCallback">BatteryUsageInfoArraySuccessCallback</a> successCallback,
+                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                             optional long? days,
+                             optional long? limit) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void getAppsUsageInfo(<a href="#AppsUsageInfoArraySuccessCallback">AppsUsageInfoArraySuccessCallback</a> successCallback,
+                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                          optional <a href="#ApplicationUsageMode">ApplicationUsageMode</a>? mode,
+                          optional <a href="#ApplicationUsageFilter">ApplicationUsageFilter</a>? filter,
+                          optional long? limit) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long addAppStatusChangeListener(<a href="#StatusEventCallback">StatusEventCallback</a> eventCallback, optional <a href="#ApplicationId">ApplicationId</a>? appId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeAppStatusChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="ApplicationManager::getCurrentApplication">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationManager::getCurrentApplication"></a><code><b><span class="methodName">getCurrentApplication</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the <em>Application </em>object defining the current application.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Application">Application</a> getCurrentApplication();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<p><span class="remark"> Remark : </span>
+ This method is not supported by Web Widget.
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ Application The data structure that defines the current application.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if the application cannot be retrieved because of an unknown error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var app = tizen.application.getCurrentApplication();
+console.log("Current application's app id is " + app.appInfo.id);
+</pre>
+</div>
+</dd>
+<dt class="method" id="ApplicationManager::kill">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationManager::kill"></a><code><b><span class="methodName">kill</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Kills an application with the specified application context ID.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void kill(<a href="#ApplicationContextId">ApplicationContextId</a> contextId, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="description">
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+NotFoundError - If the context is not found with the specified context ID.              </li>
+              <li>
+InvalidValuesError - If any of the input parameters contain an invalid value
+or if the specified context ID matches the context ID of the calling application.              </li>
+              <li>
+UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ partner
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/appmanager.kill
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">contextId</span>:
+ The identifier of the application to kill
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to invoke when an application is killed successfully
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to invoke when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function onKillSuccess()
+{
+&nbsp;&nbsp;console.log("Application terminated successfully");
+}
+
+function onRunningAppsContext(contexts)
+{
+&nbsp;&nbsp;/* Let's assume that the application "targetApp0.main" has been installed */
+&nbsp;&nbsp;var targetId = "targetApp0.main";
+
+&nbsp;&nbsp;for (var i = 0; i &lt; contexts.length; i++)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;if (contexts[i].appId == targetId)
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tizen.application.kill(contexts[i].id, onKillSuccess);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;}
+}
+
+tizen.application.getAppsContext(onRunningAppsContext);
+</pre>
+</div>
+</dd>
+<dt class="method" id="ApplicationManager::launch">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationManager::launch"></a><code><b><span class="methodName">launch</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Launches an application with the given application ID.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void launch(<a href="#ApplicationId">ApplicationId</a> id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="description">
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+NotFoundError - If the application is not found with the specified ID.              </li>
+              <li>
+UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/application.launch
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">id</span>:
+ A unique string representing the application ID
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to call when the invocation ends successfully
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to call when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function onsuccess()
+{
+&nbsp;&nbsp;console.log("The application has launched successfully");
+}
+
+/* Let's assume that application "targetApp0.main" has been installed */
+tizen.application.launch("targetApp0.main", onsuccess);
+</pre>
+</div>
+</dd>
+<dt class="method" id="ApplicationManager::launchAppControl">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationManager::launchAppControl"></a><code><b><span class="methodName">launchAppControl</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Launches an application with the specified application control.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void launchAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl, optional <a href="#ApplicationId">ApplicationId</a>? id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#ApplicationControlDataArrayReplyCallback">ApplicationControlDataArrayReplyCallback</a>? replyCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="description">
+            <p>
+An application can launch other applications with the application control,
+and get back the results from the launched applications.
+            </p>
+            <p>
+The application control consists of an operation, URI, and MIME type, and describes
+the request to be performed by the newly launched application. The
+application control is passed to the <em>launchAppControl()</em> method to launch an
+application. The system tries to find the proper application
+to perform the requested application control, then launches the selected application.
+            </p>
+            <p>
+The application control request is passed to the newly launched application
+and it can be accessed by the <em>getRequestedAppControl() </em>method. The passed
+application control contains the reason the application has been launched and
+information about what the application is doing. The launched application
+can send a result to the caller application with the <em>replyResult() </em>method of the
+<em>RequestedApplicationControl</em> interface.
+            </p>
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+NotFoundError - If the system cannot find the application that matches the specified application control.              </li>
+              <li>
+SecurityError - If the application does not have the privilege to call the specified application control operation.              </li>
+              <li>
+UnknownError: If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/application.launch
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">appControl</span>:
+ The data structure describing application control details
+                </li>
+          <li class="param">
+<span class="name">id</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ An identifier of the application to be launched. If the ID is <var>null </var>or not specified, then the system tries to find the application to be launched for the requested application control
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to call when the invocation ends successfully
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to invoke when an error occurs
+                </li>
+          <li class="param">
+<span class="name">replyCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to invoke when the application gets back results from the launched application
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var appControl = new tizen.ApplicationControl("http://tizen.org/appcontrol/operation/pick",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null, "image/jpeg", null);
+
+var appControlReplyCallback =
+{
+&nbsp;&nbsp;/* Callee sent a reply */
+&nbsp;&nbsp;onsuccess: function(data)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; data.length; i++)
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (data[i].key == "http://tizen.org/appcontrol/data/selected")
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Selected image is " + data[i].value[0]);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;},
+&nbsp;&nbsp;/* Callee returned failure */
+&nbsp;&nbsp;onfailure: function()
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("The launch application control failed");
+&nbsp;&nbsp;}
+}
+
+tizen.application.launchAppControl(appControl, null,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function() {console.log("launch application control succeed");},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function(e) {console.log("launch application control failed. reason: " + e.message);},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appControlReplyCallback);
+</pre>
+</div>
+</dd>
+<dt class="method" id="ApplicationManager::findAppControl">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationManager::findAppControl"></a><code><b><span class="methodName">findAppControl</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Finds which applications can be launched with the given application control.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void findAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl, <a href="#FindAppControlSuccessCallback">FindAppControlSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="description">
+            <p>
+An application can get a list of other applications that can be launched with the application control.
+            </p>
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+NotFoundError - If the application is not found with the given Appcontrol.              </li>
+              <li>
+UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">appControl</span>:
+ A data structure describing application control details
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ The method to call that returns a list of application information
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to call when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var appControl = new tizen.ApplicationControl("http://tizen.org/appcontrol/operation/pick",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null, "image/jpeg", null);
+
+function successCB(appInfos, appControl)
+{
+&nbsp;&nbsp;/* appControl is same object with the value passed as first parameter to findAppControl() */
+&nbsp;&nbsp;var appControlReplyCallback =
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;/* Callee sent a reply */
+&nbsp;&nbsp;&nbsp;&nbsp;onsuccess: function(data)
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; data.length; i++)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (data[i].key == "http://tizen.org/appcontrol/data/selected")
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Selected image is " + data[i].value[0]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;/* Callee returned failure */
+&nbsp;&nbsp;&nbsp;&nbsp;onfailure: function()
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("The launch application control failed");
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;var appId = appInfos[0].id; /* Select first app's id */
+
+&nbsp;&nbsp;tizen.application.launchAppControl(appControl, appId,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function() {console.log("launch application control succeed"); },
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function(e) {console.log("launch application control failed. reason: " + e.message); },
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appControlReplyCallback);
+}
+
+tizen.application.findAppControl(appControl, successCB);
+</pre>
+</div>
+</dd>
+<dt class="method" id="ApplicationManager::getAppsContext">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationManager::getAppsContext"></a><code><b><span class="methodName">getAppsContext</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets a list of application contexts for applications that are currently running on a device.
+The information contained for each application corresponds to the application state at the time when the list had been generated.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getAppsContext(<a href="#ApplicationContextArraySuccessCallback">ApplicationContextArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="description">
+            <p>
+The <em>ErrorCallback</em> method is launched with this error type:
+            </p>
+            <ul>
+              <li>
+UnknownError - If an unknown error occurs.              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ The method to call when the invocation ends successfully
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to call when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function onRunningAppsContext(contexts)
+{
+&nbsp;&nbsp;for (var i = 0; i &lt; contexts.length; i++)
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("ID: " + contexts[i].id);
+}
+
+tizen.application.getAppsContext(onRunningAppsContext);
+</pre>
+</div>
+</dd>
+<dt class="method" id="ApplicationManager::getAppContext">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationManager::getAppContext"></a><code><b><span class="methodName">getAppContext</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the application context for the specified application context ID.
+If the ID is set to<var> null</var> or is not set at all, the method returns the application context of the current application.
+The list of running applications and their application IDs is obtained with <em>getAppsContext()</em>.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#ApplicationContext">ApplicationContext</a> getAppContext(optional <a href="#ApplicationContextId">ApplicationContextId</a>? contextId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">contextId</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ A string representing an application context ID<br>If the ID is not provided, the application context of the calling application is returned.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ ApplicationContext A data structure that lists running application details.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the application context is not found with the specified ID.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the application context cannot be retrieved because of an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var appContext = tizen.application.getAppContext(null);
+console.log("Application context retrieved for app " + appContext.appId);
+</pre>
+</div>
+</dd>
+<dt class="method" id="ApplicationManager::getAppsInfo">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationManager::getAppsInfo"></a><code><b><span class="methodName">getAppsInfo</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the list of installed applications' information on a device.
+The information contained on each application corresponds to the application state at the time when the list had been generated.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getAppsInfo(<a href="#ApplicationInformationArraySuccessCallback">ApplicationInformationArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="description">
+            <p>
+The <em>ErrorCallback</em> method is launched with this error type:
+            </p>
+            <ul>
+              <li>
+UnknownError - If an unknown error occurs.              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ The method to call when the invocation ends successfully
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to call when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function onListInstalledApps(applications)
+{
+&nbsp;&nbsp;for (var i = 0; i &lt; applications.length; i++)
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("ID: " + applications[i].id);
+}
+
+tizen.application.getAppsInfo(onListInstalledApps);
+</pre>
+</div>
+</dd>
+<dt class="method" id="ApplicationManager::getAppInfo">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationManager::getAppInfo"></a><code><b><span class="methodName">getAppInfo</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets application information for a specified application ID.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#ApplicationInformation">ApplicationInformation</a> getAppInfo(optional <a href="#ApplicationId">ApplicationId</a>? id);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="description">
+            <p>
+If the ID is set to <var>null</var> or not set at all, it returns application information for the current application.
+The list of installed applications and their application IDs is obtained with <em>getAppsInfo()</em>.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">id</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ A string representing an application ID<br>If the ID is not provided, the application information of the calling application is returned.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ ApplicationInformation The information of an application.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the application is not found with the specified ID.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the application cannot be retrieved because of an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var appInfo = tizen.application.getAppInfo(null);
+console.log("Current application name: " + appInfo.name);
+</pre>
+</div>
+</dd>
+<dt class="method" id="ApplicationManager::getAppCerts">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationManager::getAppCerts"></a><code><b><span class="methodName">getAppCerts</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets application certificates for a specified application ID.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#ApplicationCertificate">ApplicationCertificate</a>[] getAppCerts(optional <a href="#ApplicationId">ApplicationId</a>? id);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="description">
+            <p>
+If the ID is set to <var>null</var> or not set at all, it returns application certificates for the current application.
+            </p>
+            <p>
+The certificate types are listed below:
+            </p>
+            <ul>
+              <li>
+ AUTHOR_ROOT - Author Root Certificate               </li>
+              <li>
+ AUTHOR_INTERMEDIATE - Author Intermediate Certificate               </li>
+              <li>
+ AUTHOR_SIGNER - Author Signer Certificate               </li>
+              <li>
+ DISTRIBUTOR_ROOT - Distributor Root Certificate               </li>
+              <li>
+ DISTRIBUTOR_INTERMEDIATE - Distributor Intermediate Certificate               </li>
+              <li>
+ DISTRIBUTOR_SIGNER - Distributor Signer Certificate               </li>
+              <li>
+ DISTRIBUTOR2_ROOT - Distributor2 Root Certificate               </li>
+              <li>
+ DISTRIBUTOR2_INTERMEDIATE - Distributor2 Intermediate Certificate               </li>
+              <li>
+ DISTRIBUTOR2_SIGNER - Distributor2 Signer Certificate               </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ partner
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/appmanager.certificate
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">id</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ A string representing an application ID. If the ID is not provided, the application certificate of the calling application is returned.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ ApplicationCertificate[] Array of certificate information of a specified application
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if the application is not found with the specified ID.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the application cannot be retrieved because of an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var appCerts = tizen.application.getAppCerts(null);
+
+for (var i = 0; i &lt; appCerts.length; i++)
+{
+&nbsp;&nbsp;console.log("#" + i + " type:" + appCerts[i].type);
+&nbsp;&nbsp;console.log("#" + i + " value:" + appCerts[i].value);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="ApplicationManager::getAppSharedURI">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationManager::getAppSharedURI"></a><code><b><span class="methodName">getAppSharedURI</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the URI of the read-only shared directory of an application for a specified application ID.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString getAppSharedURI(optional <a href="#ApplicationId">ApplicationId</a>? id);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+<div class="description">
+            <p>
+The shared directory is used to export data to other applications.
+If the ID is set to <var>null</var> or not set at all, it returns the shared directory URI for the current application.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">id</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ A string representing an application ID. If the ID is not provided, the shared directory URI of the calling application is returned.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ DOMString The shared directory URI of an application
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the application is not found with the specified ID.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the application cannot be retrieved because of an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var sharedDir = tizen.application.getAppSharedURI(null);
+console.log("shared directory: " + sharedDir);
+</pre>
+</div>
+</dd>
+<dt class="method" id="ApplicationManager::getAppMetaData">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationManager::getAppMetaData"></a><code><b><span class="methodName">getAppMetaData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the application meta data array for a specified application ID.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#ApplicationMetaData">ApplicationMetaData</a>[] getAppMetaData(optional <a href="#ApplicationId">ApplicationId</a>? id);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<div class="description">
+            <p>
+If the ID is set to <var>null</var> or not set at all, it returns the application meta data array for the current application.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/application.info
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">id</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ A string representing an application ID. If the ID is not provided, the application metadata array of the calling application is returned.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ ApplicationMetaData[] Array of meta data of a specified application. If there are no meta data for a specified application,
+an empty array is returned
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if the application is not found with the specified ID.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the application cannot be retrieved because of an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var metaDataArray = tizen.application.getAppMetaData(null);
+console.log("size of metadata: " + metaDataArray.length);
+</pre>
+</div>
+</dd>
+<dt class="method" id="ApplicationManager::getBatteryUsageInfo">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationManager::getBatteryUsageInfo"></a><code><b><span class="methodName">getBatteryUsageInfo</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets information about battery usage per application.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getBatteryUsageInfo(<a href="#BatteryUsageInfoArraySuccessCallback">BatteryUsageInfoArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? days, optional long? limit);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="description">
+            <p>
+This method provides information about battery usage collected in last <var>days</var> days, through callback <em>successCallback</em>.
+Maximum number of retrieved objects can be set in <em>limit</em> parameter.
+            </p>
+            <p>
+If the <em>days</em> is not given, this method retrieves information about battery usage since the time the device was unplugged, after reaching full charge.
+            </p>
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+AbortError - if any system error occurred.              </li>
+              <li>
+InvalidValuesError - if any of the input parameters contains an invalid value.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/apphistory.read
+            </p>
+<p><span class="remark"> Remark : </span>
+ This method is available only on mobile devices. An attempt to call this method on other profile will result in throwing <em>NotSupportedError</em> exception.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ The method to call when the invocation ends successfully.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to call when an error occurs.
+                </li>
+          <li class="param">
+<span class="name">days</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Number of days. If parameter was not given, method will behave as described above.
+                </li>
+          <li class="param">
+<span class="name">limit</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ This parameter defines maximum number of <em>ApplicationBatteryUsage</em> objects in an array in <em>successCallback</em> callback.
+By default, it is set to <var>30</var>.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var successCallback = function(batteryUsageInfoArray)
+ {
+   batteryUsageInfoArray.forEach(function(abuInfo)
+   {
+     console.log("ApplicationID: " + abuInfo.appId + ", usage: " + abuInfo.batteryUsage);
+   });
+ };
+
+ tizen.application.getBatteryUsageInfo(successCallback);
+ </pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> ApplicationID: 3gWRkEPXz5.BasicUI3, usage: 51.78
+ ApplicationID: org.tizen.homescreen-efl, usage: 28.72
+ ApplicationID: org.tizen.lockscreen, usage: 6.05
+ ApplicationID: org.tizen.quickpanel, usage: 4.83
+ ApplicationID: org.tizen.indicator, usage: 3.69
+ ApplicationID: org.tizen.calendar.widget, usage: 1.79
+ ApplicationID: org.tizen.volume, usage: 1.34
+ ApplicationID: org.tizen.powerkey-syspopup, usage: 0.98
+ ApplicationID: org.tizen.task-mgr, usage: 0.46
+ ApplicationID: org.tizen.msg-manager, usage: 0.36
+ </pre>
+</div>
+</dd>
+<dt class="method" id="ApplicationManager::getAppsUsageInfo">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationManager::getAppsUsageInfo"></a><code><b><span class="methodName">getAppsUsageInfo</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the usage statistics of applications.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getAppsUsageInfo(<a href="#AppsUsageInfoArraySuccessCallback">AppsUsageInfoArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#ApplicationUsageMode">ApplicationUsageMode</a>? mode, optional <a href="#ApplicationUsageFilter">ApplicationUsageFilter</a>? filter, optional long? limit);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="description">
+            <p>
+The method gets the most frequently or recently used applications statistics, depending on parameter <em>mode</em>,
+which meet conditions in <em>filter</em> object.
+Maximum number of retrieved objects can be set in <em>limit</em> parameter.
+            </p>
+            <p>
+Applications which have not been used will not be included in results.
+            </p>
+            <p>
+If an attribute <em>endTime</em> from <em>filter</em> object is less than or equal to <em>startTime</em> date, an empty array will be returned.
+            </p>
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+AbortError - if any system error occurred.              </li>
+              <li>
+InvalidValuesError - if any of the input parameters contains an invalid value.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/apphistory.read
+            </p>
+<p><span class="remark"> Remark : </span>
+ This method is available only on mobile devices.
+An attempt to call this method on other profile will result in throwing <em>NotSupportedError</em> exception.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ The method to call when the invocation ends successfully.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to call when an error occurs.
+                </li>
+          <li class="param">
+<span class="name">mode</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The parameter defines a type of application usage to acquire. By default, it is set to <var>FREQUENTLY</var>.
+                </li>
+          <li class="param">
+<span class="name">filter</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The filter for selecting period of time, from which data is accumulated.
+By default, this parameter has attribute <em>timeSpan</em> set to <var>30</var> days.
+                </li>
+          <li class="param">
+<span class="name">limit</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ This parameter defines maximum count of objects <em>ApplicationUsage</em> in returned array.
+By default, it is set to <var>10</var>.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var successCallback = function(appsUsageInfo)
+ {
+   appsUsageInfo.forEach(function(auInfo)
+   {
+     console.log("ApplicationID: " + auInfo.appId + ", count: " + auInfo.totalCount +
+     ", duration: " + auInfo.totalDuration + ", last used at: " + auInfo.lastTime);
+   });
+ };
+
+ tizen.application.getAppsUsageInfo(successCallback, null, "FREQUENTLY", {timeSpan: 7}, 5);
+ </pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> ApplicationID: w5ucNMnbVi.BasicUI, count: 17, duration: 3471, last used at: Tue Aug 01 2017 12:13:06 GMT+0200 (CEST)
+ ApplicationID: org.tizen.message, count: 16, duration: 2964, last used at: Wed Aug 02 2017 08:22:14 GMT+0200 (CEST)
+ ApplicationID: api1getcap.sysinfo, count: 16, duration: 1957, last used at: Tue Aug 01 2017 12:13:03 GMT+0200 (CEST)
+ ApplicationID: org.tizen.email, count: 10, duration: 1209, last used at: Fri Jul 21 2017 10:15:09 GMT+0200 (CEST)
+ ApplicationID: org.tizen.setting, count: 5, duration: 519, last used at: Wed Aug 02 2017 06:52:51 GMT+0200 (CEST)
+ </pre>
+</div>
+</dd>
+<dt class="deprecated method" id="ApplicationManager::addAppInfoEventListener">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationManager::addAppInfoEventListener"></a><code><b><span class="methodName">addAppInfoEventListener</span></b></code>
+</dt>
+<dd class="deprecated">
+<div class="brief">
+ Adds a listener for receiving any notification for changes in the list of installed applications
+on a device.
+            </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since 2.4. Instead, <a href="./package.html#PackageManager::setPackageInfoEventListener">tizen.package.setPackageInfoEventListener()</a> allows the app developers to set a listener for getting notified for the changes(add/remove/update) of applications on a device.
+            </p>
+<div class="synopsis"><pre class="signature prettyprint">long addAppInfoEventListener(<a href="#ApplicationInformationEventCallback">ApplicationInformationEventCallback</a> eventCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="description">
+            <p>
+It installs a callback that is triggered every time a change occurs on
+the list of installed applications on a device. This change may
+occur due to a new installation, uninstallation, or update of an application.
+            </p>
+            <p>
+When executed, the implementation must immediately return a listener
+ID that identifies the listener. After returning the ID, the change
+detection operation is started asynchronously.
+            </p>
+            <p>
+The <em>ApplicationInformationEventCallback </em>must be invoked every time a new
+application is installed, removed, or updated.
+            </p>
+            <p>
+The change detection must continue until the <em>removeAppInfoEventListener()</em> method is called
+with the corresponding listener identifier.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">eventCallback</span>:
+ The method to call when a change on the installed applications is made
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long ID of the listener that can be used to remove the listener later.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if it fails to add a listener because of an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var appEventCallback =
+{
+&nbsp;&nbsp;oninstalled: function(appInfo)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("The application " + appInfo.name + " is installed");
+&nbsp;&nbsp;},
+&nbsp;&nbsp;onupdated: function(appInfo)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("The application " + appInfo.name + " is updated");
+&nbsp;&nbsp;},
+&nbsp;&nbsp;onuninstalled: function(appid)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("The application " + appid + " is uninstalled");
+&nbsp;&nbsp;}
+};
+var watchId = tizen.application.addAppInfoEventListener(appEventCallback);
+</pre>
+</div>
+</dd>
+<dt class="deprecated method" id="ApplicationManager::removeAppInfoEventListener">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationManager::removeAppInfoEventListener"></a><code><b><span class="methodName">removeAppInfoEventListener</span></b></code>
+</dt>
+<dd class="deprecated">
+<div class="brief">
+ Removes the listener to stop receiving notifications for changes on the list of installed
+applications on a device.
+            </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since 2.4. Instead, use <a href="./package.html#PackageManager::unsetPackageInfoEventListener">tizen.package.unsetPackageInfoEventListener()</a>.
+            </p>
+<div class="synopsis"><pre class="signature prettyprint">void removeAppInfoEventListener(long watchId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">watchId</span>:
+ An ID that identifies the listener
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the listener is not found with the specified ID.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if it fails to remove a listener because of an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var appEventCallback =
+{
+&nbsp;&nbsp;oninstalled: function(appInfo)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("The application " + appInfo.name + " is installed");
+&nbsp;&nbsp;},
+&nbsp;&nbsp;onupdated: function(appInfo)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("The application " + appInfo.name + " is updated");
+&nbsp;&nbsp;},
+&nbsp;&nbsp;onuninstalled: function(appid)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("The application " + appid + " is uninstalled");
+&nbsp;&nbsp;}
+};
+var watchId = tizen.application.addAppInfoEventListener(appEventCallback);
+tizen.application.removeAppInfoEventListener(watchId);
+</pre>
+</div>
+</dd>
+<dt class="method" id="ApplicationManager::addAppStatusChangeListener">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationManager::addAppStatusChangeListener"></a><code><b><span class="methodName">addAppStatusChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Adds a listener for receiving any notification for status changes of the installed applications on a device.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addAppStatusChangeListener(<a href="#StatusEventCallback">StatusEventCallback</a> eventCallback, optional <a href="#ApplicationId">ApplicationId</a>? appId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">eventCallback</span>:
+ The method to call when status of the installed applications is changed.
+                </li>
+          <li class="param">
+<span class="name">appId</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The id of the application which status changes should be monitored. If the application id is ommitted or it is equal to <em>null</em>, all applications status changes will be monitored.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long Listener id that can be used to remove the listener later.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the application id parameter is an empty string.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if it fails to add a listener.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function appStatusEventCallback(appId, isActive)
+{
+&nbsp;&nbsp;console.log("The application " + appId + " has been " + (isActive ? "activated" : "deactivated"));
+}
+
+var watchId = tizen.application.addAppStatusChangeListener(appStatusEventCallback);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> The application testAppId has been activated
+ </pre>
+</div>
+</dd>
+<dt class="method" id="ApplicationManager::removeAppStatusChangeListener">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationManager::removeAppStatusChangeListener"></a><code><b><span class="methodName">removeAppStatusChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes the listener to stop receiving notifications for status changes of the installed applications on a device.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeAppStatusChangeListener(long watchId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">watchId</span>:
+ An ID that identifies the listener.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type AbortError, if it fails to remove listener.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function appStatusEventCallback(appId, isActive)
+{
+&nbsp;&nbsp;console.log("The application " + appId + " has been " + (isActive ? "activated" : "deactivated"));
+}
+
+try
+{
+&nbsp;&nbsp;var watchId = tizen.application.addAppStatusChangeListener(appStatusEventCallback);
+&nbsp;&nbsp;tizen.application.removeAppStatusChangeListener(watchId);
+&nbsp;&nbsp;console.log("Listener with id " + watchId + " has been removed");
+}
+catch (err)
+{
+&nbsp;&nbsp;console.log("Exception: " + err.name);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> Listener with id 1 has been removed
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="dictionary" id="ApplicationUsageFilter">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationUsageFilter"></a><h3>2.3. ApplicationUsageFilter</h3>
+<div class="brief">
+ This interface represents filter for defining period of time, which will be used as a condition in <em>getAppsUsageInfo</em> method.
+          </div>
+<pre class="webidl prettyprint">  dictionary ApplicationUsageFilter {
+    long? timeSpan;
+    Date? startTime;
+    Date? endTime;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="description">
+          <p>
+The maximum retention period is 90 days.
+          </p>
+         </div>
+<div class="attributes">
+<h4>Dictionary members</h4>
+<dl>
+<dt class="member" id="ApplicationUsageFilter::timeSpan"><span class="attrName">long? timeSpan</span></dt>
+<dd>
+<div class="brief">
+ The attribute to store period of time, from which data is accumulated, in days.
+The  period of time begins <em>timeSpan</em> days ago and ends with current date.
+            </div>
+<div class="description">
+            <p>
+If the attribute is given, the attributes <em>startTime</em> and <em>endTime</em> of this interface are not taken into an account.
+If <em>timeSpan</em> is greater than <var>90</var>, <var>90</var> will be used instead.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</dd>
+<dt class="member" id="ApplicationUsageFilter::startTime"><span class="attrName">Date? startTime</span></dt>
+<dd>
+<div class="brief">
+ The attribute to store the date, which is used as a lower bound for selecting data.
+            </div>
+<div class="description">
+            <p>
+If only <em>startTime</em> attribute is given, by default <em>endTime</em> is equal to the current date.
+If <em>startTime</em> date predates the 90 days from the current time, data will be accumulated from last 90 days.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</dd>
+<dt class="member" id="ApplicationUsageFilter::endTime"><span class="attrName">Date? endTime</span></dt>
+<dd>
+<div class="brief">
+ The attribute to store the date, which is used as an upper bound for selecting data.
+            </div>
+<div class="description">
+            <p>
+If only <em>endTime</em> attribute is given, data will be accumulated from 90 days ago to <em>endTime</em> date.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="Application">
+<a class="backward-compatibility-anchor" name="::Application::Application"></a><h3>2.4. Application</h3>
+<div class="brief">
+ This interface defines the current application's information and
+the basic operations (such as exit or hide) for the current application.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface Application {
+
+    readonly attribute <a href="#ApplicationInformation">ApplicationInformation</a> appInfo;
+
+    readonly attribute <a href="#ApplicationContextId">ApplicationContextId</a> contextId;
+
+    void exit() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void hide() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#RequestedApplicationControl">RequestedApplicationControl</a> getRequestedAppControl() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long addEventListener(<a href="#EventInfo">EventInfo</a> event, <a href="#EventCallback">EventCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeEventListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void broadcastEvent(<a href="#EventInfo">EventInfo</a> event, <a href="#UserEventData">UserEventData</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void broadcastTrustedEvent(<a href="#EventInfo">EventInfo</a> event, <a href="#UserEventData">UserEventData</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="Application::appInfo">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">ApplicationInformation </span><span class="name">appInfo</span></span><div class="brief">
+ An attribute to store the application information for the current application.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="Application::contextId">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">ApplicationContextId </span><span class="name">contextId</span></span><div class="brief">
+ An attribute to store the ID of a running application.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="Application::exit">
+<a class="backward-compatibility-anchor" name="::Application::Application::exit"></a><code><b><span class="methodName">exit</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Exits the current application.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void exit();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<p><span class="remark"> Remark : </span>
+ This method is not supported by Web Widget.
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var app = tizen.application.getCurrentApplication();
+
+app.exit();
+</pre>
+</div>
+</dd>
+<dt class="method" id="Application::hide">
+<a class="backward-compatibility-anchor" name="::Application::Application::hide"></a><code><b><span class="methodName">hide</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Hides the current application.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void hide();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<p><span class="remark"> Remark : </span>
+ This method is not supported by Web Widget.
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var app = tizen.application.getCurrentApplication();
+
+app.hide();
+</pre>
+</div>
+</dd>
+<dt class="method" id="Application::getRequestedAppControl">
+<a class="backward-compatibility-anchor" name="::Application::Application::getRequestedAppControl"></a><code><b><span class="methodName">getRequestedAppControl</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the requested application control passed to the current application.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#RequestedApplicationControl">RequestedApplicationControl</a> getRequestedAppControl();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="description">
+            <p>
+Gets the requested application control that contains the application control
+passed by the <em>launchAppControl()</em> method from the calling application.
+The requested application control contains the reason the application
+is launched and what it has to perform. For example, an application
+might be launched to display an image on a page by another
+application's request. In all of these cases, the application is
+responsible for checking the contents of the application control and responding
+appropriately when it is launched.
+            </p>
+           </div>
+<p><span class="remark"> Remark : </span>
+ This method is not supported by Web Widget.
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ RequestedApplicationControl The details of a requested application control
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if the application control cannot be retrieved because of an unknown error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var reqAppControl = tizen.application.getCurrentApplication().getRequestedAppControl();
+
+if (reqAppControl)
+{
+&nbsp;&nbsp;console.log("Requester AppID: " + reqAppControl.callerAppId);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="Application::addEventListener">
+<a class="backward-compatibility-anchor" name="::Application::Application::addEventListener"></a><code><b><span class="methodName">addEventListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Adds a listener which will invoke a callback function when an event occurs.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addEventListener(<a href="#EventInfo">EventInfo</a> event, <a href="#EventCallback">EventCallback</a> callback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+<div class="description">
+            <p>
+System events do not require an application identifier to be specified. Therefore, the <var>appId</var> attribute of the <a href="#EventInfo">EventInfo</a> dictionary should not be specified when listening for system events. If it is specified, the event to listen for will be interpreted as an user event.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">event</span>:
+ Event which will invoke the callback
+                </li>
+          <li class="param">
+<span class="name">callback</span>:
+ Callback function to be invoked when the event occurs
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long Listener identifier
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var app = tizen.application.getCurrentApplication();
+
+/* For user events: sender's application ID and event name must be provided by using a dictionary */
+/* Let's assume that at least two applications are installed */
+function onListInstalledApps(appsInfo)
+{
+&nbsp;&nbsp;var appId = null;
+
+&nbsp;&nbsp;if (appsInfo.length &gt; 0 &amp;&amp; app.appInfo.id != appsInfo[0].id)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;appId = appsInfo[0].id;
+&nbsp;&nbsp;}
+&nbsp;&nbsp;else if (appsInfo.length &gt; 1)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;appId = appsInfo[1].id;
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;if (appId)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;var watchId = app.addEventListener({"appId": appId, "name": "custom_user_event"}, function(event, data)
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Data: " + JSON.stringify(data));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* Do something */
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;}
+}
+tizen.application.getAppsInfo(onListInstalledApps);
+</pre>
+</div>
+</dd>
+<dt class="method" id="Application::removeEventListener">
+<a class="backward-compatibility-anchor" name="::Application::Application::removeEventListener"></a><code><b><span class="methodName">removeEventListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes an event listener with a specified listener identifier.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeEventListener(long watchId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">watchId</span>:
+ Listener identifier
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError in any other error case.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var app = tizen.application.getCurrentApplication();
+
+/* For user events: sender's application ID and event name must be provided by using a dictionary */
+/* Let's assume that at least two applications are installed */
+function onListInstalledApps(appsInfo)
+{
+&nbsp;&nbsp;var appId = null;
+&nbsp;&nbsp;var watchId = null;
+
+&nbsp;&nbsp;if (appsInfo.length &gt; 0 &amp;&amp; app.appInfo.id != appsInfo[0].id)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;appId = appsInfo[0].id;
+&nbsp;&nbsp;}
+&nbsp;&nbsp;else if (appsInfo.length &gt; 1)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;appId = appsInfo[1].id;
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;if (appId)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;watchId = app.addEventListener({"appId": appId, "name": "custom_user_event"}, function(event, data)
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (watchId)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app.removeEventListener(watchId);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;watchId = null;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;}
+}
+tizen.application.getAppsInfo(onListInstalledApps);
+</pre>
+</div>
+</dd>
+<dt class="method" id="Application::broadcastEvent">
+<a class="backward-compatibility-anchor" name="::Application::Application::broadcastEvent"></a><code><b><span class="methodName">broadcastEvent</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Broadcasts a user defined event to all the listeners which are listening for this event.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void broadcastEvent(<a href="#EventInfo">EventInfo</a> event, <a href="#UserEventData">UserEventData</a> data);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+<div class="description">
+            <p>
+An application can listen to events from other applications. However, it can only broadcast its own events. Therefore, the <var>appId</var> attribute of the <a href="#EventInfo">EventInfo</a> dictionary must be the identifier of the application which calls this method.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">event</span>:
+ Event to broadcast
+                </li>
+          <li class="param">
+<span class="name">data</span>:
+ User defined event data to broadcast
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var myCustomData =
+{
+&nbsp;&nbsp;foo: 'bar'
+};
+
+var app = tizen.application.getCurrentApplication();
+
+app.broadcastEvent({"name": "custom_user_event"}, myCustomData);
+</pre>
+</div>
+</dd>
+<dt class="method" id="Application::broadcastTrustedEvent">
+<a class="backward-compatibility-anchor" name="::Application::Application::broadcastTrustedEvent"></a><code><b><span class="methodName">broadcastTrustedEvent</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Broadcasts a user defined event to all the trusted listeners which are listening for this event. Applications which have the same certificate as the sending application can receive the event.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void broadcastTrustedEvent(<a href="#EventInfo">EventInfo</a> event, <a href="#UserEventData">UserEventData</a> data);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+<div class="description">
+            <p>
+An application can listen to events from other applications. However, it can only broadcast its own events. Therefore, the <var>appId</var> attribute of the <a href="#EventInfo">EventInfo</a> dictionary must be the identifier of the application which calls this method.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">event</span>:
+ Trusted event to broadcast
+                </li>
+          <li class="param">
+<span class="name">data</span>:
+ User defined trusted event data to broadcast
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var myTrustedCustomData =
+{
+&nbsp;&nbsp;foo: 'bar'
+};
+
+var app = tizen.application.getCurrentApplication();
+
+app.broadcastTrustedEvent({"name": "custom_user_event"}, myTrustedCustomData);
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="ApplicationInformation">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationInformation"></a><h3>2.5. ApplicationInformation</h3>
+<div class="brief">
+ This interface defines the general information available to an installed application.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface ApplicationInformation {
+
+    readonly attribute <a href="#ApplicationId">ApplicationId</a> id;
+
+    readonly attribute DOMString name;
+
+    readonly attribute DOMString iconPath;
+
+    readonly attribute DOMString version;
+
+    readonly attribute boolean show;
+
+    readonly attribute DOMString[] categories;
+
+    readonly attribute Date installDate;
+
+    readonly attribute long size raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    readonly attribute <a href="package.html#PackageId">PackageId</a> packageId;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="ApplicationInformation::id">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">ApplicationId </span><span class="name">id</span></span><div class="brief">
+ An attribute to store the identifier of an application for application management.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="ApplicationInformation::name">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
+ An attribute to store the name of an application.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="ApplicationInformation::iconPath">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">iconPath</span></span><div class="brief">
+ An attribute to store the icon path of an application.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="ApplicationInformation::version">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">version</span></span><div class="brief">
+ An attribute to store the version of an application.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="ApplicationInformation::show">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">show</span></span><div class="brief">
+ An attribute that determines whether the application information should
+be shown (such as in menus).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="ApplicationInformation::categories">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString[]
+                      </span><span class="name">categories</span></span><div class="brief">
+ An array of attributes to store the categories that the app belongs to.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="ApplicationInformation::installDate">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">Date </span><span class="name">installDate</span></span><div class="brief">
+ An attribute to store the application install/update time.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="ApplicationInformation::size">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">size</span></span><div class="brief">
+ An attribute to store the application size (installed space).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/application.info
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type SecurityError, if this attribute is not allowed.
+                </p></li></ul>
+</li></ul>
+        </div>
+</li>
+<li class="attribute" id="ApplicationInformation::packageId">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">PackageId </span><span class="name">packageId</span></span><div class="brief">
+ An attribute to store the package ID of an application.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="ApplicationContext">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationContext"></a><h3>2.6. ApplicationContext</h3>
+<div class="brief">
+ This interface defines the information available about a running
+application.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface ApplicationContext {
+
+    readonly attribute <a href="#ApplicationContextId">ApplicationContextId</a> id;
+
+    readonly attribute <a href="#ApplicationId">ApplicationId</a> appId;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="ApplicationContext::id">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">ApplicationContextId </span><span class="name">id</span></span><div class="brief">
+ An attribute to store the ID of a running application.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="ApplicationContext::appId">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">ApplicationId </span><span class="name">appId</span></span><div class="brief">
+ An attribute to store the ID of an installed application.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="ApplicationBatteryUsage">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationBatteryUsage"></a><h3>2.7. ApplicationBatteryUsage</h3>
+<div class="brief">
+ This interface defines information about battery usage of application.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface ApplicationBatteryUsage {
+
+    readonly attribute <a href="#ApplicationId">ApplicationId</a> appId;
+
+    readonly attribute double batteryUsage;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="ApplicationBatteryUsage::appId">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">ApplicationId </span><span class="name">appId</span></span><div class="brief">
+ An attribute storing ID of an application.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="ApplicationBatteryUsage::batteryUsage">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">batteryUsage</span></span><div class="brief">
+ An attribute which stores information about battery usage of an application with ApplicationId <em>appId</em>.
+Battery usage is a ratio of battery consumption of the application with ApplicationId <em>appId</em> to the total battery consumption of all applications.
+The attribute value scales from <var>0</var> to <var>1</var>, the higher value, the more battery is consumed.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="ApplicationUsage">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationUsage"></a><h3>2.8. ApplicationUsage</h3>
+<div class="brief">
+ This interface defines information about usage of application.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface ApplicationUsage {
+
+    readonly attribute <a href="#ApplicationId">ApplicationId</a> appId;
+
+    readonly attribute unsigned long totalCount;
+
+    readonly attribute unsigned long totalDuration;
+
+    readonly attribute Date lastTime;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="ApplicationUsage::appId">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">ApplicationId </span><span class="name">appId</span></span><div class="brief">
+ An attribute to store the ID of an application.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="ApplicationUsage::totalCount">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long </span><span class="name">totalCount</span></span><div class="brief">
+ An attribute to store the total number of times the application was in the foreground.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="ApplicationUsage::totalDuration">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long </span><span class="name">totalDuration</span></span><div class="brief">
+ An attribute to store the total time of application usage in seconds.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="ApplicationUsage::lastTime">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">Date </span><span class="name">lastTime</span></span><div class="brief">
+ An attribute to store the last time when the application was used.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="ApplicationControlData">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationControlData"></a><h3>2.9. ApplicationControlData</h3>
+<div class="brief">
+ This interface defines a key/value pair used to pass data
+between applications through the <em>ApplicationControl </em>interface.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(DOMString key, DOMString[] value)]
+  interface ApplicationControlData {
+
+    attribute DOMString key;
+
+    attribute DOMString[] value;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var appControlData = new tizen.ApplicationControlData("image", [imagedata1]);
+ </pre>
+</div>
+<div class="constructors">
+<h4 id="ApplicationControlData::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">ApplicationControlData(DOMString key, DOMString[] value);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="ApplicationControlData::key">
+<span class="attrName"><span class="type">DOMString </span><span class="name">key</span></span><div class="brief">
+ An attribute to store the name of a key.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="ApplicationControlData::value">
+<span class="attrName"><span class="type">DOMString[]
+                      </span><span class="name">value</span></span><div class="brief">
+ An attribute to store the value associated with a key.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="ApplicationControl">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationControl"></a><h3>2.10. ApplicationControl</h3>
+<div class="brief">
+ This interface consists of an operation, URI, MIME type,
+and data. It describes an action to be performed by other applications
+and is passed to launch other applications.
+If the system gets the application control request, it finds
+the corresponding application to be launched with the delivered application control
+and launches the selected application.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(DOMString operation, optional DOMString? uri,
+               optional DOMString? mime, optional DOMString? category,
+               optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data, optional <a href="#ApplicationControlLaunchMode">ApplicationControlLaunchMode</a>? launchMode)]
+  interface ApplicationControl {
+
+    attribute DOMString operation;
+
+    attribute DOMString? uri;
+
+    attribute DOMString? mime;
+
+    attribute DOMString? category;
+
+    attribute <a href="#ApplicationControlData">ApplicationControlData</a>[] data;
+
+    attribute <a href="#ApplicationControlLaunchMode">ApplicationControlLaunchMode</a> launchMode;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var appControl = new tizen.ApplicationControl("http://tizen.org/appcontrol/operation/view",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null, "image/jpeg", null,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[new tizen.ApplicationControlData("images", [imagedata1, imagedata2])]);
+</pre>
+</div>
+<div class="constructors">
+<h4 id="ApplicationControl::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">ApplicationControl(DOMString operation, optional DOMString? uri, optional DOMString? mime, optional DOMString? category, optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data, optional <a href="#ApplicationControlLaunchMode">ApplicationControlLaunchMode</a>? launchMode);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="ApplicationControl::operation">
+<span class="attrName"><span class="type">DOMString </span><span class="name">operation</span></span><div class="brief">
+ An attribute to store the string that defines the action to be
+performed by an application control.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="ApplicationControl::uri">
+<span class="attrName"><span class="type">DOMString </span><span class="name">uri</span><span class="optional"> [nullable]</span></span><div class="brief">
+ An attribute to store the URI needed by an application control.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="ApplicationControl::mime">
+<span class="attrName"><span class="type">DOMString </span><span class="name">mime</span><span class="optional"> [nullable]</span></span><div class="brief">
+ An attribute to store the MIME type of content.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="ApplicationControl::category">
+<span class="attrName"><span class="type">DOMString </span><span class="name">category</span><span class="optional"> [nullable]</span></span><div class="brief">
+ An attribute to store the category of the application to be launched.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="ApplicationControl::data">
+<span class="attrName"><span class="type">ApplicationControlData[]
+                      </span><span class="name">data</span></span><div class="brief">
+ An array of attributes to store the data needed for an application control.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="ApplicationControl::launchMode">
+<span class="attrName"><span class="type">ApplicationControlLaunchMode </span><span class="name">launchMode</span></span><div class="brief">
+ An attribute to specify launch mode. Default application launch mode is <em>SINGLE</em>.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="RequestedApplicationControl">
+<a class="backward-compatibility-anchor" name="::Application::RequestedApplicationControl"></a><h3>2.11. RequestedApplicationControl</h3>
+<div class="brief">
+ This interface has an application control information requested and passed
+from another application and is passed to launch other applications. The newly
+launched application can get the requested application control through the <em>getRequestedAppControl()</em> method, and send the results
+to the calling application through the <em>replyResult()</em> method after performing the
+required action requested by the calling application.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface RequestedApplicationControl {
+
+    readonly attribute <a href="#ApplicationControl">ApplicationControl</a> appControl;
+
+    readonly attribute <a href="#ApplicationId">ApplicationId</a> callerAppId;
+
+    void replyResult(optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void replyFailure() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="RequestedApplicationControl::appControl">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">ApplicationControl </span><span class="name">appControl</span></span><div class="brief">
+ An attribute to store the application control object that describes the caller application's request.
+It contains the information that the calling application passed to <em>launchAppControl</em>.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="RequestedApplicationControl::callerAppId">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">ApplicationId </span><span class="name">callerAppId</span></span><div class="brief">
+ An attribute to store the caller application's ID.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="RequestedApplicationControl::replyResult">
+<a class="backward-compatibility-anchor" name="::Application::RequestedApplicationControl::replyResult"></a><code><b><span class="methodName">replyResult</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sends the results to the caller application.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void replyResult(optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">data</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ An array of ApplicationControlData objects
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if the caller app is not alive or there is no response from the caller app.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the reply request fails because of an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var reqAppControl = tizen.application.getCurrentApplication().getRequestedAppControl();
+if (reqAppControl)
+{
+&nbsp;&nbsp;console.log("Requester AppID: " + reqAppControl.callerAppId);
+
+&nbsp;&nbsp;var appControl = reqAppControl.appControl;
+&nbsp;&nbsp;if (appControl.operation == "http://tizen.org/appcontrol/operation/pick")
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;var data = new tizen.ApplicationControlData("http://tizen.org/appcontrol/data/selected", ["Image1.jpg"]);
+&nbsp;&nbsp;&nbsp;&nbsp;reqAppControl.replyResult([data]);
+&nbsp;&nbsp;}
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="RequestedApplicationControl::replyFailure">
+<a class="backward-compatibility-anchor" name="::Application::RequestedApplicationControl::replyFailure"></a><code><b><span class="methodName">replyFailure</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Notifies the calling application that the application failed
+to perform the requested action.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void replyFailure();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the caller app is not alive or there is no response from the caller app.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the reply request fails because of an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var reqAppControl = tizen.application.getCurrentApplication().getRequestedAppControl();
+if (reqAppControl)
+{
+&nbsp;&nbsp;console.log("Requester AppID: " + reqAppControl.callerAppId);
+
+&nbsp;&nbsp;var appControl = reqAppControl.appControl;
+&nbsp;&nbsp;if (appControl.operation == "http://tizen.org/appcontrol/operation/pick")
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;reqAppControl.replyFailure();
+&nbsp;&nbsp;}
+}
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="ApplicationCertificate">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationCertificate"></a><h3>2.12. ApplicationCertificate</h3>
+<div class="brief">
+ This interface defines the certificate information of an installed application.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface ApplicationCertificate {
+
+    readonly attribute DOMString type;
+
+    readonly attribute DOMString value;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="ApplicationCertificate::type">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">type</span></span><div class="brief">
+ An attribute to store the type of the application certificate
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="ApplicationCertificate::value">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">value</span></span><div class="brief">
+ An attribute to store the value of the application certificate
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="ApplicationMetaData">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationMetaData"></a><h3>2.13. ApplicationMetaData</h3>
+<div class="brief">
+ This interface defines the meta data of an installed application
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface ApplicationMetaData {
+
+    readonly attribute DOMString key;
+
+    readonly attribute DOMString value;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.2
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="ApplicationMetaData::key">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">key</span></span><div class="brief">
+ An attribute to store the key of the application meta data
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</li>
+<li class="attribute" id="ApplicationMetaData::value">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">value</span></span><div class="brief">
+ An attribute to store the value of the application meta data
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="BatteryUsageInfoArraySuccessCallback">
+<a class="backward-compatibility-anchor" name="::Application::BatteryUsageInfoArraySuccessCallback"></a><h3>2.14. BatteryUsageInfoArraySuccessCallback</h3>
+<div class="brief">
+ This callback interface specifies a success callback that is invoked when the battery usage per application array is retrieved.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface BatteryUsageInfoArraySuccessCallback {
+    void onsuccess(<a href="#ApplicationBatteryUsage">ApplicationBatteryUsage</a>[] batteryInfoArray);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="description">
+          <p>
+This callback interface specifies a success method with an array of
+<em>ApplicationBatteryUsage</em> objects as an input parameter. It is used in <em>ApplicationManager.getBatteryUsageInfo()</em> method.
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="BatteryUsageInfoArraySuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Application::BatteryUsageInfoArraySuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the asynchronous call completes successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ApplicationBatteryUsage">ApplicationBatteryUsage</a>[] batteryInfoArray);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<p><span class="remark"> Remark : </span>
+ Example of usage can be find at <a href="#ApplicationManager::getBatteryUsageInfo">getBatteryUsageInfo</a> code example.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">batteryInfoArray</span>:
+ An array of data containing information about battery usage per application.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="AppsUsageInfoArraySuccessCallback">
+<a class="backward-compatibility-anchor" name="::Application::AppsUsageInfoArraySuccessCallback"></a><h3>2.15. AppsUsageInfoArraySuccessCallback</h3>
+<div class="brief">
+ This callback interface specifies a success callback that is invoked when the application usage statistics array is retrieved.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface AppsUsageInfoArraySuccessCallback {
+    void onsuccess(<a href="#ApplicationUsage">ApplicationUsage</a>[] appsInfoArray);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="description">
+          <p>
+This callback interface specifies a success method with an array of
+<em>ApplicationUsage</em> objects as an input parameter. It is used in <em>ApplicationManager.getAppsUsageInfo()</em> method.
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="AppsUsageInfoArraySuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Application::AppsUsageInfoArraySuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the asynchronous call completes successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ApplicationUsage">ApplicationUsage</a>[] appsInfoArray);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<p><span class="remark"> Remark : </span>
+ An example of usage can be find at <a href="#ApplicationManager::getAppsUsageInfo">getAppsUsageInfo</a> code example.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">appsInfoArray</span>:
+ An array of data containing information about usage per application.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="ApplicationInformationArraySuccessCallback">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationInformationArraySuccessCallback"></a><h3>2.16. ApplicationInformationArraySuccessCallback</h3>
+<div class="brief">
+ This callback interface specifies a success callback that is invoked when the installed application list is retrieved.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ApplicationInformationArraySuccessCallback {
+    void onsuccess(<a href="#ApplicationInformation">ApplicationInformation</a>[] informationArray);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+This callback interface specifies a success method with an array of
+<em>ApplicationInformation </em>objects as an input parameter. It is used in <em>ApplicationManager.getAppsInfo()</em>.
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="ApplicationInformationArraySuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationInformationArraySuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the asynchronous call completes successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ApplicationInformation">ApplicationInformation</a>[] informationArray);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">informationArray</span>:
+ A list of installed applications
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function onListInstalledApps(applications)
+{
+&nbsp;&nbsp;for (var i = 0; i &lt; applications.length; i++)
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("ID: " + applications[i].id);
+}
+
+tizen.application.getAppsInfo(onListInstalledApps);
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="FindAppControlSuccessCallback">
+<a class="backward-compatibility-anchor" name="::Application::FindAppControlSuccessCallback"></a><h3>2.17. FindAppControlSuccessCallback</h3>
+<div class="brief">
+ This callback interface specifies a success callback that is invoked when the system has finished searching applications that match a specific application control .
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FindAppControlSuccessCallback {
+    void onsuccess(<a href="#ApplicationInformation">ApplicationInformation</a>[] informationArray, <a href="#ApplicationControl">ApplicationControl</a> appControl);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="description">
+          <p>
+This callback interface specifies a success method with an array of
+<em>ApplicationInformation </em>objects and application control as an input parameter.
+It is used in <em>ApplicationManager.findAppControl()</em>.
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="FindAppControlSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Application::FindAppControlSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the asynchronous call completes successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ApplicationInformation">ApplicationInformation</a>[] informationArray, <a href="#ApplicationControl">ApplicationControl</a> appControl);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">informationArray</span>:
+ A list of installed applications
+                </li>
+          <li class="param">
+<span class="name">appControl</span>:
+ The application control that is passed to <em>ApplicationManager.findAppControl()</em>                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var appControl = new tizen.ApplicationControl("http://tizen.org/appcontrol/operation/pick",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null, "image/jpeg", null);
+
+/* FindAppControlSuccessCallback instance */
+function successCB(appInfos, appControl)
+{
+&nbsp;&nbsp;/* appControl is same object with the value passed as first parameter to findAppControl() */
+&nbsp;&nbsp;var appControlReplyCallback =
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;/* Callee sent a reply */
+&nbsp;&nbsp;&nbsp;&nbsp;onsuccess: function(data)
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; data.length; i++)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (data[i].key == "http://tizen.org/appcontrol/data/selected")
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Selected image is " + data[i].value[0]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;/* Callee returned failure */
+&nbsp;&nbsp;&nbsp;&nbsp;onfailure: function()
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("The launch application control failed");
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;var appId = appInfos[0].id; /* Select first app's id */
+
+&nbsp;&nbsp;tizen.application.launchAppControl(appControl, appId,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function() {console.log("launch application control succeed"); },
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function(e) {console.log("launch application control failed. reason: " + e.message); },
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appControlReplyCallback);
+}
+
+tizen.application.findAppControl(appControl, successCB);
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="ApplicationContextArraySuccessCallback">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationContextArraySuccessCallback"></a><h3>2.18. ApplicationContextArraySuccessCallback</h3>
+<div class="brief">
+ This callback interface specifies a success callback that is invoked when the list of running applications is retrieved.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ApplicationContextArraySuccessCallback {
+    void onsuccess(<a href="#ApplicationContext">ApplicationContext</a>[] contexts);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+This callback interface specifies a success method with
+an array of <em>ApplicationContext </em>objects as an input parameter. It is used in <em>ApplicationManager.getAppsContext()</em>.
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="ApplicationContextArraySuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationContextArraySuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when <em>ApplicationManager.getAppsContext() </em>completes successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ApplicationContext">ApplicationContext</a>[] contexts);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">contexts</span>:
+ A list of running applications
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="ApplicationControlDataArrayReplyCallback">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationControlDataArrayReplyCallback"></a><h3>2.19. ApplicationControlDataArrayReplyCallback</h3>
+<div class="brief">
+ The ApplicationControlDataArrayReplyCallback callback specifies success callbacks that are invoked as a reply from the requested application control within the application control requester.
+          </div>
+<pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface ApplicationControlDataArrayReplyCallback {
+    void onsuccess(optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data);
+
+    void onfailure();
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="description">
+          <p>
+This callback interface specifies two methods:
+          </p>
+          <ul>
+            <li>
+ <em>onsuccess()</em> - Invoked if the callee application calls <em>RequestedApplicationControl.replyResult()</em>.            </li>
+            <li>
+ <em>onfailure()</em> - Invoked if the callee application calls <em>RequestedApplicationControl.replyFailure()</em>.            </li>
+          </ul>
+         </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var appControl = new tizen.ApplicationControl("http://tizen.org/appcontrol/operation/pick",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null, "image/jpeg", null);
+
+/* ApplicationControlDataArrayReplyCallback instance */
+var appControlReplyCallback =
+{
+&nbsp;&nbsp;/* Callee sent a reply */
+&nbsp;&nbsp;onsuccess: function(data)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; data.length; i++)
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (data[i].key == "http://tizen.org/appcontrol/data/selected")
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Selected image is " + data[i].value[0]);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;},
+&nbsp;&nbsp;/* Callee returned failure */
+&nbsp;&nbsp;onfailure: function()
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("The launch application control failed");
+&nbsp;&nbsp;}
+}
+
+tizen.application.launchAppControl(appControl, null,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function() {console.log("launch application control succeed");},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function(e) {console.log("launch application control failed. reason: " + e.message);},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appControlReplyCallback);
+</pre>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="ApplicationControlDataArrayReplyCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationControlDataArrayReplyCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the callee application calls <em>RequestedApplicationControl.replyResult()</em>.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">data</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ An array of <em>ApplicationControlData</em> objects
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="ApplicationControlDataArrayReplyCallback::onfailure">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationControlDataArrayReplyCallback::onfailure"></a><code><b><span class="methodName">onfailure</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the callee application calls <em>RequestedApplicationControl.replyFailure()</em>.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onfailure();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="ApplicationInformationEventCallback">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationInformationEventCallback"></a><h3>2.16. ApplicationInformationEventCallback</h3>
+<div class="brief">
+ The ApplicationInformationEventCallback specifies listener for subscribing for notifications of changes in the list of installed
+applications on a device.
+          </div>
+<pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface ApplicationInformationEventCallback {
+    void oninstalled(<a href="#ApplicationInformation">ApplicationInformation</a> info);
+
+    void onupdated(<a href="#ApplicationInformation">ApplicationInformation</a> info);
+
+    void onuninstalled(<a href="#ApplicationId">ApplicationId</a> id);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+This callback interface specifies methods that are invoked when
+an application is installed, updated, or uninstalled.
+          </p>
+         </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var appEventCallback =
+{
+&nbsp;&nbsp;oninstalled: function(appInfo)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("The application " + appInfo.name + " is installed");
+&nbsp;&nbsp;},
+&nbsp;&nbsp;onupdated: function(appInfo)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("The application " + appInfo.name + " is updated");
+&nbsp;&nbsp;},
+&nbsp;&nbsp;onuninstalled: function(appid)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("The application " + appid + " is uninstalled");
+&nbsp;&nbsp;}
+};
+var watchId = tizen.application.addAppInfoEventListener(appEventCallback);
+</pre>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="ApplicationInformationEventCallback::oninstalled">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationInformationEventCallback::oninstalled"></a><code><b><span class="methodName">oninstalled</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when an application is installed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void oninstalled(<a href="#ApplicationInformation">ApplicationInformation</a> info);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">info</span>:
+ The application information of the installed application
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="ApplicationInformationEventCallback::onupdated">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationInformationEventCallback::onupdated"></a><code><b><span class="methodName">onupdated</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when an application is updated.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onupdated(<a href="#ApplicationInformation">ApplicationInformation</a> info);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">info</span>:
+ The application information of the updated application
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="ApplicationInformationEventCallback::onuninstalled">
+<a class="backward-compatibility-anchor" name="::Application::ApplicationInformationEventCallback::onuninstalled"></a><code><b><span class="methodName">onuninstalled</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when an application is uninstalled.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onuninstalled(<a href="#ApplicationId">ApplicationId</a> id);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">id</span>:
+ The ID of the uninstalled application
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="SystemEventData">
+<a class="backward-compatibility-anchor" name="::Application::SystemEventData"></a><h3>2.20. SystemEventData</h3>
+<div class="brief">
+ The SystemEventData interface defines what is retrieved from the event listener.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemEventData {
+    attribute DOMString value;
+    attribute DOMString type;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="description">
+          <p>
+Platform modules will be able to broadcast system events in a future Tizen release.
+          </p>
+         </div>
+</div>
+<div class="interface" id="EventCallback">
+<a class="backward-compatibility-anchor" name="::Application::EventCallback"></a><h3>2.21. EventCallback</h3>
+<div class="brief">
+ The EventCallback interface specifies a callback for getting notified when a specified event occurs.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface EventCallback {
+    void onevent(<a href="#EventInfo">EventInfo</a> event, <a href="#EventData">EventData</a> data);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="EventCallback::onevent">
+<a class="backward-compatibility-anchor" name="::Application::EventCallback::onevent"></a><code><b><span class="methodName">onevent</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the event occurs.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onevent(<a href="#EventInfo">EventInfo</a> event, <a href="#EventData">EventData</a> data);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">event</span>:
+ Broadcasted event which invokes this callback
+                </li>
+          <li class="param">
+<span class="name">data</span>:
+ Broadcasted event data
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var app = tizen.application.getCurrentApplication();
+
+/* For user events: sender's application ID and event name must be provided by using a dictionary */
+/* Let's assume that at least two applications are installed */
+function onListInstalledApps(appsInfo)
+{
+&nbsp;&nbsp;var appId = null;
+
+&nbsp;&nbsp;if (appsInfo.length &gt; 0 &amp;&amp; app.appInfo.id != appsInfo[0].id)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;appId = appsInfo[0].id;
+&nbsp;&nbsp;}
+&nbsp;&nbsp;else if (appsInfo.length &gt; 1)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;appId = appsInfo[1].id;
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;var eventCB = function(event, data)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("Data: " + JSON.stringify(data));
+&nbsp;&nbsp;&nbsp;&nbsp;/* Do something */
+&nbsp;&nbsp;};
+
+&nbsp;&nbsp;if (appId)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;var watchId = app.addEventListener({"appId": appId, "name": "custom_user_event"}, eventCB);
+&nbsp;&nbsp;}
+}
+tizen.application.getAppsInfo(onListInstalledApps);
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="StatusEventCallback">
+<a class="backward-compatibility-anchor" name="::Application::StatusEventCallback"></a><h3>2.22. StatusEventCallback</h3>
+<div class="brief">
+ The StatusEventCallback interface specifies a callback for getting notified when status of the installed application has been changed.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface StatusEventCallback {
+    void onchange(<a href="#ApplicationId">ApplicationId</a> appId, boolean isActive);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="StatusEventCallback::onchange">
+<a class="backward-compatibility-anchor" name="::Application::StatusEventCallback::onchange"></a><code><b><span class="methodName">onchange</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the status event occurs.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onchange(<a href="#ApplicationId">ApplicationId</a> appId, boolean isActive);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="description">
+            <p>
+Example of using can be find at <a href="application.html#ApplicationManager::addAppStatusChangeListener">addAppStatusChangeListener</a> code example.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">appId</span>:
+ Id of the application that status has been changed.
+                </li>
+          <li class="param">
+<span class="name">isActive</span>:
+ The new status of the application.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="dictionary" id="EventInfo">
+<a class="backward-compatibility-anchor" name="::Application::EventInfo"></a><h3>2.23. EventInfo</h3>
+<div class="brief">
+ The EventInfo dictionary identifies an event with information such as event name. If it is an user event, the broadasting application's identifier is also specified.
+          </div>
+<pre class="webidl prettyprint">  dictionary EventInfo {
+    <a href="#ApplicationId">ApplicationId</a> appId;
+
+    DOMString name;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="description">
+          <p>
+System events do not require an application identifier to be specified. If one is specified, the event will be interpreted as an user event.
+          </p>
+         </div>
+<div class="attributes">
+<h4>Dictionary members</h4>
+<dl>
+<dt class="member" id="EventInfo::appId"><span class="attrName"><a href="#ApplicationId">ApplicationId</a> appId</span></dt>
+<dd>
+<div class="brief">
+ The unique identifier of the application which is broadcasting an event.
+            </div>
+<div class="description">
+            <p>
+An application can listen to events from other applications. However, it can only broadcast its own events. Therefore, when broadcasting an event, this dictionary member must be the identifier of the application which is broadcasting the event.
+            </p>
+            <p>
+System events do not require an application identifier to be specified. If one is specified, the event will be interpreted as an user event.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+</dd>
+<dt class="member" id="EventInfo::name"><span class="attrName">DOMString name</span></dt>
+<dd>
+<div class="brief">
+ Name which describes the event.
+            </div>
+<div class="description">
+            <p>
+Must only contain the ASCII characters "[A-Z][a-z][0-9]_" and may not begin with a digit.
+Must be at least 1 byte in length and not exceed the maximum name length of 127 bytes.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="api-features">3. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee the running of the application on a device which has battery, declare the following feature requirement in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/battery</li>
+</div>
+<p></p>
+                    For more information, see <a href="https://developer.tizen.org/development/getting-started/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+</div>
+<h2 id="full-webidl">4. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Application {
+
+  typedef DOMString ApplicationId;
+
+  typedef DOMString ApplicationContextId;
+
+  typedef object UserEventData;
+
+  typedef (<a href="#SystemEventData">SystemEventData</a> or <a href="#UserEventData">UserEventData</a>) EventData;
+
+  enum ApplicationControlLaunchMode { "SINGLE", "GROUP" };
+
+  enum ApplicationUsageMode { "RECENTLY", "FREQUENTLY" };
+
+  [NoInterfaceObject] interface ApplicationManagerObject {
+    readonly attribute <a href="#ApplicationManager">ApplicationManager</a> application;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ApplicationManagerObject">ApplicationManagerObject</a>;
+
+  [NoInterfaceObject] interface ApplicationManager {
+
+    <a href="#Application">Application</a> getCurrentApplication() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void kill(<a href="#ApplicationContextId">ApplicationContextId</a> contextId,
+              optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void launch(<a href="#ApplicationId">ApplicationId</a> id,
+                optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void launchAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl,
+                          optional <a href="#ApplicationId">ApplicationId</a>? id,
+                          optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                          optional <a href="#ApplicationControlDataArrayReplyCallback">ApplicationControlDataArrayReplyCallback</a>? replyCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void findAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl,
+                        <a href="#FindAppControlSuccessCallback">FindAppControlSuccessCallback</a> successCallback,
+                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void getAppsContext(<a href="#ApplicationContextArraySuccessCallback">ApplicationContextArraySuccessCallback</a> successCallback,
+                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#ApplicationContext">ApplicationContext</a> getAppContext(optional <a href="#ApplicationContextId">ApplicationContextId</a>? contextId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void getAppsInfo(<a href="#ApplicationInformationArraySuccessCallback">ApplicationInformationArraySuccessCallback</a> successCallback,
+                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#ApplicationInformation">ApplicationInformation</a> getAppInfo(optional <a href="#ApplicationId">ApplicationId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#ApplicationCertificate">ApplicationCertificate</a>[] getAppCerts(optional <a href="#ApplicationId">ApplicationId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    DOMString getAppSharedURI(optional <a href="#ApplicationId">ApplicationId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#ApplicationMetaData">ApplicationMetaData</a>[] getAppMetaData(optional <a href="#ApplicationId">ApplicationId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void getBatteryUsageInfo(<a href="#BatteryUsageInfoArraySuccessCallback">BatteryUsageInfoArraySuccessCallback</a> successCallback,
+                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                             optional long? days,
+                             optional long? limit) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void getAppsUsageInfo(<a href="#AppsUsageInfoArraySuccessCallback">AppsUsageInfoArraySuccessCallback</a> successCallback,
+                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                          optional <a href="#ApplicationUsageMode">ApplicationUsageMode</a>? mode,
+                          optional <a href="#ApplicationUsageFilter">ApplicationUsageFilter</a>? filter,
+                          optional long? limit) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long addAppStatusChangeListener(<a href="#StatusEventCallback">StatusEventCallback</a> eventCallback, optional <a href="#ApplicationId">ApplicationId</a>? appId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeAppStatusChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+
+  dictionary ApplicationUsageFilter {
+    long? timeSpan;
+    Date? startTime;
+    Date? endTime;
+  };
+
+  [NoInterfaceObject] interface Application {
+
+    readonly attribute <a href="#ApplicationInformation">ApplicationInformation</a> appInfo;
+
+    readonly attribute <a href="#ApplicationContextId">ApplicationContextId</a> contextId;
+
+    void exit() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void hide() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#RequestedApplicationControl">RequestedApplicationControl</a> getRequestedAppControl() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long addEventListener(<a href="#EventInfo">EventInfo</a> event, <a href="#EventCallback">EventCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeEventListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void broadcastEvent(<a href="#EventInfo">EventInfo</a> event, <a href="#UserEventData">UserEventData</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void broadcastTrustedEvent(<a href="#EventInfo">EventInfo</a> event, <a href="#UserEventData">UserEventData</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+
+  [NoInterfaceObject] interface ApplicationInformation {
+
+    readonly attribute <a href="#ApplicationId">ApplicationId</a> id;
+
+    readonly attribute DOMString name;
+
+    readonly attribute DOMString iconPath;
+
+    readonly attribute DOMString version;
+
+    readonly attribute boolean show;
+
+    readonly attribute DOMString[] categories;
+
+    readonly attribute Date installDate;
+
+    readonly attribute long size raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    readonly attribute <a href="package.html#PackageId">PackageId</a> packageId;
+  };
+
+  [NoInterfaceObject] interface ApplicationContext {
+
+    readonly attribute <a href="#ApplicationContextId">ApplicationContextId</a> id;
+
+    readonly attribute <a href="#ApplicationId">ApplicationId</a> appId;
+  };
+
+  [NoInterfaceObject] interface ApplicationBatteryUsage {
+
+    readonly attribute <a href="#ApplicationId">ApplicationId</a> appId;
+
+    readonly attribute double batteryUsage;
+  };
+
+  [NoInterfaceObject] interface ApplicationUsage {
+
+    readonly attribute <a href="#ApplicationId">ApplicationId</a> appId;
+
+    readonly attribute unsigned long totalCount;
+
+    readonly attribute unsigned long totalDuration;
+
+    readonly attribute Date lastTime;
+  };
+
+  [Constructor(DOMString key, DOMString[] value)]
+  interface ApplicationControlData {
+
+    attribute DOMString key;
+
+    attribute DOMString[] value;
+  };
+
+  [Constructor(DOMString operation, optional DOMString? uri,
+               optional DOMString? mime, optional DOMString? category,
+               optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data, optional <a href="#ApplicationControlLaunchMode">ApplicationControlLaunchMode</a>? launchMode)]
+  interface ApplicationControl {
+
+    attribute DOMString operation;
+
+    attribute DOMString? uri;
+
+    attribute DOMString? mime;
+
+    attribute DOMString? category;
+
+    attribute <a href="#ApplicationControlData">ApplicationControlData</a>[] data;
+
+    attribute <a href="#ApplicationControlLaunchMode">ApplicationControlLaunchMode</a> launchMode;
+  };
+
+  [NoInterfaceObject] interface RequestedApplicationControl {
+
+    readonly attribute <a href="#ApplicationControl">ApplicationControl</a> appControl;
+
+    readonly attribute <a href="#ApplicationId">ApplicationId</a> callerAppId;
+
+    void replyResult(optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void replyFailure() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+
+  [NoInterfaceObject] interface ApplicationCertificate {
+
+    readonly attribute DOMString type;
+
+    readonly attribute DOMString value;
+  };
+
+  [NoInterfaceObject] interface ApplicationMetaData {
+
+    readonly attribute DOMString key;
+
+    readonly attribute DOMString value;
+  };
+
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface BatteryUsageInfoArraySuccessCallback {
+    void onsuccess(<a href="#ApplicationBatteryUsage">ApplicationBatteryUsage</a>[] batteryInfoArray);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface AppsUsageInfoArraySuccessCallback {
+    void onsuccess(<a href="#ApplicationUsage">ApplicationUsage</a>[] appsInfoArray);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface ApplicationInformationArraySuccessCallback {
+    void onsuccess(<a href="#ApplicationInformation">ApplicationInformation</a>[] informationArray);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface FindAppControlSuccessCallback {
+    void onsuccess(<a href="#ApplicationInformation">ApplicationInformation</a>[] informationArray, <a href="#ApplicationControl">ApplicationControl</a> appControl);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface ApplicationContextArraySuccessCallback {
+    void onsuccess(<a href="#ApplicationContext">ApplicationContext</a>[] contexts);
+  };
+
+  [Callback, NoInterfaceObject] interface ApplicationControlDataArrayReplyCallback {
+    void onsuccess(optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data);
+
+    void onfailure();
+  };
+
+  [Callback, NoInterfaceObject] interface ApplicationInformationEventCallback {
+    void oninstalled(<a href="#ApplicationInformation">ApplicationInformation</a> info);
+
+    void onupdated(<a href="#ApplicationInformation">ApplicationInformation</a> info);
+
+    void onuninstalled(<a href="#ApplicationId">ApplicationId</a> id);
+  };
+
+  [NoInterfaceObject] interface SystemEventData {
+    attribute DOMString value;
+    attribute DOMString type;
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface EventCallback {
+    void onevent(<a href="#EventInfo">EventInfo</a> event, <a href="#EventData">EventData</a> data);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface StatusEventCallback {
+    void onchange(<a href="#ApplicationId">ApplicationId</a> appId, boolean isActive);
+  };
+
+  dictionary EventInfo {
+    <a href="#ApplicationId">ApplicationId</a> appId;
+
+    DOMString name;
+  };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

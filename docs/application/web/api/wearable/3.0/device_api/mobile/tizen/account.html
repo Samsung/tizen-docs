@@ -1,0 +1,1618 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>Account API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Account">
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+<div class="title"><h1>Account API</h1></div>
+<div class="brief">
+  The Account API provides functionality for using existing configured
+online accounts and providers, and for creating accounts of known types.
+        </div>
+<div class="description">
+        <p>
+The basic concepts are:
+        </p>
+        <ul>
+          <li>
+<b>Provider</b> is an online service provider entity, such as
+Google, Vodafone or Facebook. A service provider is identified by its applicationId.
+Account provider will be registered while the application is installed.
+The information will be used in the "Add account" screen in Settings.          </li>
+          <li>
+<b>Account</b> collects all the data (user name, credential, settings)
+needed for connecting to services. An account is always bound to a single provider,
+and has a list of service instances bound to the account. The services can be
+individually enabled and disabled on the given account. For instance,
+account1@gmail.com can identify a Google account, giving access to services such as
+gmail, gtalk, Picasa, and Youtube with each service having a separate service
+instance bound to the account.          </li>
+        </ul>
+        <p>
+To use <em>add(), remove(), and update()</em> methods of AccountManager can be invoked only
+by account provider application. A web application is an account provider when its <em>config.xml </em>contains <a href="https://developer.tizen.org/development/tizen-studio/web-tools/configuring-your-app/configuration-editor#mw_account">Account provider section</a>. For example:<br>&lt;tizen:account multiple-account-support="true"&gt;<br>      &lt;tizen:icon section="Account"&gt;icon.png&lt;/tizen:icon&gt;<br>      &lt;tizen:icon section="AccountSmall"&gt;icon.png&lt;/tizen:icon&gt;<br>      &lt;tizen:display-name xml:lang="en-gb"&gt;Test&lt;/tizen:display-name&gt;<br>      &lt;tizen:capability&gt;http://tizen.org/account/capability/contact&lt;/tizen:capability&gt;<br>&lt;/tizen:account&gt;
+        </p>
+        <p>
+For more information about how to use Account API, see <a href="https://developer.tizen.org/development/guides/web-application/personal-data/account-management">Account Management Guide</a>.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>1.1. <a href="#AccountId">AccountId</a>
+</li></ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#AccountManagerObject">AccountManagerObject</a>
+</li>
+<li>2.2. <a href="#AccountProvider">AccountProvider</a>
+</li>
+<li>2.3. <a href="#AccountInit">AccountInit</a>
+</li>
+<li>2.4. <a href="#Account">Account</a>
+</li>
+<li>2.5. <a href="#AccountManager">AccountManager</a>
+</li>
+<li>2.6. <a href="#AccountExtendedData">AccountExtendedData</a>
+</li>
+<li>2.7. <a href="#AccountArraySuccessCallback">AccountArraySuccessCallback</a>
+</li>
+<li>2.8. <a href="#AccountExtendedDataArraySuccessCallback">AccountExtendedDataArraySuccessCallback</a>
+</li>
+<li>2.9. <a href="#AccountProviderArraySuccessCallback">AccountProviderArraySuccessCallback</a>
+</li>
+<li>2.10. <a href="#AccountChangeCallback">AccountChangeCallback</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#AccountManagerObject">AccountManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#AccountProvider">AccountProvider</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#AccountInit">AccountInit</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#Account">Account</a></td>
+<td>void <a href="#Account::setExtendedData">setExtendedData</a> (DOMString key, DOMString value)<br>
+    DOMString <a href="#Account::getExtendedData">getExtendedData</a> (DOMString key)<br>
+    void <a href="#Account::getExtendedData-2">getExtendedData</a> (<a href="#AccountExtendedDataArraySuccessCallback">AccountExtendedDataArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</td>
+</tr>
+<tr>
+<td><a href="#AccountManager">AccountManager</a></td>
+<td>void <a href="#AccountManager::add">add</a> (<a href="#Account">Account</a> account)<br>
+    void <a href="#AccountManager::remove">remove</a> (<a href="#AccountId">AccountId</a> accountId)<br>
+    void <a href="#AccountManager::update">update</a> (<a href="#Account">Account</a> account)<br>
+    <a href="#Account">Account</a>? <a href="#AccountManager::getAccount">getAccount</a> (<a href="#AccountId">AccountId</a> accountId)<br>
+    void <a href="#AccountManager::getAccounts">getAccounts</a> (<a href="#AccountArraySuccessCallback">AccountArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional DOMString? applicationId)<br>
+    <a href="#AccountProvider">AccountProvider</a>? <a href="#AccountManager::getProvider">getProvider</a> (<a href="application.html#ApplicationId">ApplicationId</a> applicationId)<br>
+    void <a href="#AccountManager::getProviders">getProviders</a> (<a href="#AccountProviderArraySuccessCallback">AccountProviderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional DOMString? capability)<br>
+    long <a href="#AccountManager::addAccountListener">addAccountListener</a> (<a href="#AccountChangeCallback">AccountChangeCallback</a> callback)<br>
+    void <a href="#AccountManager::removeAccountListener">removeAccountListener</a> (long accountListenerId)</td>
+</tr>
+<tr>
+<td><a href="#AccountExtendedData">AccountExtendedData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#AccountArraySuccessCallback">AccountArraySuccessCallback</a></td>
+<td>void <a href="#AccountArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#Account">Account</a>[] accounts)</td>
+</tr>
+<tr>
+<td><a href="#AccountExtendedDataArraySuccessCallback">AccountExtendedDataArraySuccessCallback</a></td>
+<td>void <a href="#AccountExtendedDataArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#AccountExtendedData">AccountExtendedData</a>[] extendedDataArray)</td>
+</tr>
+<tr>
+<td><a href="#AccountProviderArraySuccessCallback">AccountProviderArraySuccessCallback</a></td>
+<td>void <a href="#AccountProviderArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#AccountProvider">AccountProvider</a>[] providers)</td>
+</tr>
+<tr>
+<td><a href="#AccountChangeCallback">AccountChangeCallback</a></td>
+<td>void <a href="#AccountChangeCallback::onadded">onadded</a> (<a href="#Account">Account</a> account)<br>
+    void <a href="#AccountChangeCallback::onremoved">onremoved</a> (<a href="#AccountId">AccountId</a> accountId)<br>
+    void <a href="#AccountChangeCallback::onupdated">onupdated</a> (<a href="#Account">Account</a> account)</td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="typedef" id="AccountId">
+<a class="backward-compatibility-anchor" name="::Account::AccountId"></a><h3>1.1. AccountId</h3>
+<div class="brief">
+ Account identifier.
+          </div>
+<pre class="webidl prettyprint">    typedef unsigned long AccountId;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="AccountManagerObject">
+<a class="backward-compatibility-anchor" name="::Account::AccountManagerObject"></a><h3>2.1. AccountManagerObject</h3>
+<div class="brief">
+ The AccountManagerObject interface defines what is instantiated in the tizen object.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface AccountManagerObject {
+        readonly attribute <a href="#AccountManager">AccountManager</a> account;
+    };</pre>
+<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AccountManagerObject">AccountManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="description">
+          <p>
+The tizen.account object allows accessing the functionality of the Account API.
+There is one account manager in one web runtime.
+The Accounts back-end may support multiple account managers.
+          </p>
+         </div>
+</div>
+<div class="interface" id="AccountProvider">
+<a class="backward-compatibility-anchor" name="::Account::AccountProvider"></a><h3>2.2. AccountProvider</h3>
+<div class="brief">
+ The AccountProvider interface represents a service provider, such as Google, Yahoo or Vodafone.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface AccountProvider {
+        readonly attribute <a href="application.html#ApplicationId">ApplicationId</a> applicationId;
+
+        readonly attribute DOMString displayName;
+
+        readonly attribute DOMString iconUri;
+
+        readonly attribute DOMString smallIconUri;
+
+        readonly attribute DOMString[] capabilities;
+
+        readonly attribute boolean isMultipleAccountSupported;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="AccountProvider::applicationId">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">ApplicationId </span><span class="name">applicationId</span></span><div class="brief">
+ Identifier of the account provider application.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="AccountProvider::displayName">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">displayName</span></span><div class="brief">
+ Logical (translatable) display name.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="AccountProvider::iconUri">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">iconUri</span></span><div class="brief">
+ Path to the icon representing the account provider.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="AccountProvider::smallIconUri">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">smallIconUri</span></span><div class="brief">
+ Path to the small icon representing the account provider.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="AccountProvider::capabilities">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString[]
+                      </span><span class="name">capabilities</span></span><div class="brief">
+ Capabilities of the account provider defined in IRI format.
+            </div>
+<div class="description">
+            <p>
+The following predefined capabilities can be used.
+            </p>
+            <ul>
+              <li>
+http://tizen.org/account/capability/contact - Used when the account is related to contacts              </li>
+              <li>
+http://tizen.org/account/capability/calendar - Used when the account is related to calendar              </li>
+            </ul>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="AccountProvider::isMultipleAccountSupported">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">isMultipleAccountSupported</span></span><div class="brief">
+ Boolean value that indicates whether multiple accounts are supported.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="dictionary" id="AccountInit">
+<a class="backward-compatibility-anchor" name="::Account::AccountInit"></a><h3>2.3. AccountInit</h3>
+<div class="brief">
+ The AccountInit dictionary represents options for creating accounts.
+Attributes are not mandatory, and can be added and modified by accessing the
+properties of account after the account is created.
+          </div>
+<pre class="webidl prettyprint">    dictionary AccountInit {
+        DOMString userName;
+        DOMString iconUri;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+</div>
+<div class="interface" id="Account">
+<a class="backward-compatibility-anchor" name="::Account::Account"></a><h3>2.4. Account</h3>
+<div class="brief">
+ The Account interface is the interface for a single account.
+The implementation should manage authentication, storing eventual user
+credentials, presenting password dialogs, and so on.
+          </div>
+<pre class="webidl prettyprint">    [Constructor(<a href="#AccountProvider">AccountProvider</a> provider, optional <a href="#AccountInit">AccountInit</a>? accountInitDict)]
+    interface Account {
+        readonly attribute <a href="#AccountId">AccountId</a>? id;
+
+        attribute DOMString? userName;
+
+        attribute DOMString? iconUri;
+
+        readonly attribute <a href="#AccountProvider">AccountProvider</a> provider;
+
+        void setExtendedData(DOMString key, DOMString value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        DOMString getExtendedData(DOMString key) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void getExtendedData(
+            <a href="#AccountExtendedDataArraySuccessCallback">AccountExtendedDataArraySuccessCallback</a> successCallback,
+            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback
+        ) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="description">
+          <p>
+The information is hidden from web applications.
+          </p>
+         </div>
+<div class="constructors">
+<h4 id="Account::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">Account(<a href="#AccountProvider">AccountProvider</a> provider, optional <a href="#AccountInit">AccountInit</a>? accountInitDict);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="Account::id">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">AccountId </span><span class="name">id</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Identifier for the account.
+By default, this attribute is set to null.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="Account::userName">
+<span class="attrName"><span class="type">DOMString </span><span class="name">userName</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Account user name.
+By default, this attribute is set to null.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="Account::iconUri">
+<span class="attrName"><span class="type">DOMString </span><span class="name">iconUri</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Name, identifier or URI of the icon.
+By default, this attribute is set to null.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="Account::provider">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">AccountProvider </span><span class="name">provider</span></span><div class="brief">
+ Reference to the provider.
+There is one provider for each account.
+A given provider can be referenced from many accounts.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="Account::setExtendedData">
+<a class="backward-compatibility-anchor" name="::Account::Account::setExtendedData"></a><code><b><span class="methodName">setExtendedData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Adds the specified key and value to the extended data.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setExtendedData(DOMString key, DOMString value);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+If the specified key already exists, the corresponding value is overwritten with the specified value.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/account.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">key</span>:
+ Key of the extended data
+                </li>
+          <li class="param">
+<span class="name">value</span>:
+ Value of the extended data
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if account ID is null.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var appId = tizen.application.getCurrentApplication().appInfo.id;
+tizen.account.getAccounts(function(accounts)
+{
+   var account = accounts[0];
+   if (account)
+   {
+      var key = 'nickname';
+      var value = 'nickname of anonymous user';
+      account.setExtendedData(key, value);
+      console.log(account.getExtendedData(key)); /* 'Nickname of anonymous user' */
+
+      account.setExtendedData(key, 'nickname updated');
+      console.log(account.getExtendedData(key)); /* 'Nickname updated' */
+   }
+}, function(e)
+{
+   console.log('Error: ' + e.message);
+}, appId);
+</pre>
+</div>
+</dd>
+<dt class="method" id="Account::getExtendedData">
+<a class="backward-compatibility-anchor" name="::Account::Account::getExtendedData"></a><code><b><span class="methodName">getExtendedData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the value for the given key from the extended data.
+Returns null if the given key is not found.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString getExtendedData(DOMString key);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/account.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">key</span>:
+ Key of the extended data
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ value Value of the extended data
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if account ID is null.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var appId = tizen.application.getCurrentApplication().appInfo.id;
+tizen.account.getAccounts(function(accounts)
+{
+   var account = accounts[0];
+   if (account)
+   {
+      var key = 'accessToken';
+      var value = account.getExtendedData(key);
+      console.log(account.userName + "'s accessToken is " + value);
+   }
+}, function(e)
+{
+   console.log('Error: ' + e.message);
+}, appId);
+</pre>
+</div>
+</dd>
+<dt class="method" id="Account::getExtendedData-2">
+<a class="backward-compatibility-anchor" name="::Account::Account::getExtendedData"></a><code><b><span class="methodName">getExtendedData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the extended data for the account as an array, asynchronously.
+Returns an empty array if there is no extended data.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getExtendedData(<a href="#AccountExtendedDataArraySuccessCallback">AccountExtendedDataArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/account.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback method that is invoked when an asynchronous call completes successfully
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method that is invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any of the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if account ID is null.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var appId = tizen.application.getCurrentApplication().appInfo.id;
+tizen.account.getAccounts(function(accounts)
+{
+   var account = accounts[0];
+   if (account)
+   {
+      account.getExtendedData(function(extendedData)
+      {
+         for (var i = 0; i &lt; extendedData.length; i++)
+         {
+            var key = extendedData.key;
+            var value = extendedData.value;
+            console.log(key + ": " + value);
+         }
+      }, function(e)
+      {
+         console.log("Error: " + e.message);
+      });
+   }
+}, function(e)
+{
+   console.log('Error: ' + e.message);
+}, appId);
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="AccountManager">
+<a class="backward-compatibility-anchor" name="::Account::AccountManager"></a><h3>2.5. AccountManager</h3>
+<div class="brief">
+ The AccountManager interface provides configuration functionality for
+providers and accounts.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface AccountManager {
+        void add(<a href="#Account">Account</a> account) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void remove(<a href="#AccountId">AccountId</a> accountId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void update(<a href="#Account">Account</a> account) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        <a href="#Account">Account</a>? getAccount(<a href="#AccountId">AccountId</a> accountId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+
+        void getAccounts(
+            <a href="#AccountArraySuccessCallback">AccountArraySuccessCallback</a> successCallback,
+            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+            optional DOMString? applicationId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        <a href="#AccountProvider">AccountProvider</a>? getProvider(<a href="application.html#ApplicationId">ApplicationId</a> applicationId)
+            raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void getProviders(
+            <a href="#AccountProviderArraySuccessCallback">AccountProviderArraySuccessCallback</a> successCallback,
+            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+            optional DOMString? capability) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        long addAccountListener(<a href="#AccountChangeCallback">AccountChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void removeAccountListener(long accountListenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="AccountManager::add">
+<a class="backward-compatibility-anchor" name="::Account::AccountManager::add"></a><code><b><span class="methodName">add</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Adds an account to the account database.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void add(<a href="#Account">Account</a> account);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+If the account is added successfully, an accountId and provider are newly assigned when the function returns.
+            </p>
+            <p>
+This method can be used only by an account provider application.<br>If the application is registered as provider, it will be launched to authenticate the account.
+You should implement the appcontrol for the account provider.<br>For more details, see
+<a href="https://developer.tizen.org/development/guides/native-application/personal-data/account-management#provider">Account Provider</a>            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/account.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">account</span>:
+ Account object to be added
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any of the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var appId = tizen.application.getCurrentApplication().appInfo.id;
+var provider = tizen.account.getProvider(appId);
+var account = new tizen.Account(provider, {userName: 'admin', iconUri: 'path/to/icon.jpg'});
+
+tizen.account.add(account);
+</pre>
+</div>
+</dd>
+<dt class="method" id="AccountManager::remove">
+<a class="backward-compatibility-anchor" name="::Account::AccountManager::remove"></a><code><b><span class="methodName">remove</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes an account from the account database.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void remove(<a href="#AccountId">AccountId</a> accountId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+Removes the account in the database that corresponds to the specified identifier.
+The function will throw an exception if it failed to remove the specified account.
+            </p>
+            <p>
+This method can be used by an account provider application.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/account.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">accountId</span>:
+ identifier of the account to remove
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var appId = tizen.application.getCurrentApplication().appInfo.id;
+tizen.account.getAccounts(function(accounts)
+{
+   var account = accounts[0];
+   if (account)
+   {
+      tizen.account.remove(account.id);
+   }
+}, function(e)
+{
+   console.log('Error: ' + e.message);
+}, appId);
+</pre>
+</div>
+</dd>
+<dt class="method" id="AccountManager::update">
+<a class="backward-compatibility-anchor" name="::Account::AccountManager::update"></a><code><b><span class="methodName">update</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Updates an account.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void update(<a href="#Account">Account</a> account);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+This method can be used only an account provider application.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/account.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">account</span>:
+ Account object to update
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any of the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var appId = tizen.application.getCurrentApplication().appInfo.id;
+tizen.account.getAccounts(function(accounts)
+{
+   var account = accounts[0];
+   if (account)
+   {
+      account.userName = 'abc';
+      tizen.account.update(account);
+   }
+}, function(e)
+{
+   console.log('Error: ' + e.message);
+}, appId);
+</pre>
+</div>
+</dd>
+<dt class="method" id="AccountManager::getAccount">
+<a class="backward-compatibility-anchor" name="::Account::AccountManager::getAccount"></a><code><b><span class="methodName">getAccount</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the Account object with the given identifier.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Account">Account</a>? getAccount(<a href="#AccountId">AccountId</a> accountId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/account.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">accountId</span>:
+ Account identifier
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ Account object with the given identifier, or null
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var account = tizen.account.getAccount(1);
+</pre>
+</div>
+</dd>
+<dt class="method" id="AccountManager::getAccounts">
+<a class="backward-compatibility-anchor" name="::Account::AccountManager::getAccounts"></a><code><b><span class="methodName">getAccounts</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the accounts associated with the provider that has a specified applicationId, asynchronously.
+If you want to get all accounts, omit the applicationId argument.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getAccounts(<a href="#AccountArraySuccessCallback">AccountArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional DOMString? applicationId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/account.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback method that is invoked when an asynchronous call completes successfully
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method that is invoked when an error occurs
+                </li>
+          <li class="param">
+<span class="name">applicationId</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ applicationId of the provider application
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any of the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+tizen.account.getAccounts(function(accounts)
+{
+   /* accounts is an array whose members are all registered accounts in this device */
+}, function(e)
+{
+   console.log("Error: " + e.message);
+});
+</pre>
+</div>
+</dd>
+<dt class="method" id="AccountManager::getProvider">
+<a class="backward-compatibility-anchor" name="::Account::AccountManager::getProvider"></a><code><b><span class="methodName">getProvider</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the account provider with the given application identifier.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#AccountProvider">AccountProvider</a>? getProvider(<a href="application.html#ApplicationId">ApplicationId</a> applicationId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+You can register your application as an account provider by writing account related information in <var>config.xml</var>.<br>For more details, see
+<a href="https://developer.tizen.org/development/guides/native-application/personal-data/account-management#provider">Account Provider</a>            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/account.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">applicationId</span>:
+ Identifier of the account provider application
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ Provider object with the given applicationId, or null
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var appId = tizen.application.getCurrentApplication().appInfo.id;
+var provider = tizen.account.getProvider(appId);
+if (!provider)
+{
+   console.log('current application is not account provider.');
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="AccountManager::getProviders">
+<a class="backward-compatibility-anchor" name="::Account::AccountManager::getProviders"></a><code><b><span class="methodName">getProviders</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the providers with the given capabilities, asynchronously.
+If you want to get all the providers, omit the capability argument.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getProviders(<a href="#AccountProviderArraySuccessCallback">AccountProviderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional DOMString? capability);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/account.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback method that is invoked when an asynchronous call completes successfully
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method that is invoked when an error occurs
+                </li>
+          <li class="param">
+<span class="name">capability</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Predefined capability or the vendor-specific capability in IRI format
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any of the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+tizen.account.getProviders(function(providers)
+{
+   /*
+      providers is an array whose members are account providers
+      which have contact capability
+   */
+}, function(e)
+{
+   console.log('Error: ' + e.message);
+}, "http://tizen.org/account/capability/contact");
+</pre>
+</div>
+</dd>
+<dt class="method" id="AccountManager::addAccountListener">
+<a class="backward-compatibility-anchor" name="::Account::AccountManager::addAccountListener"></a><code><b><span class="methodName">addAccountListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Adds an account listener for watching changes to accounts.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addAccountListener(<a href="#AccountChangeCallback">AccountChangeCallback</a> callback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/account.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">callback</span>:
+ Callback method that is invoked for the events about accounts such as adding or removing an account
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long Identifier to clear the watch subscription for account changes
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any of the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+tizen.account.addAccountListener(
+{
+   onadded: function(account)
+   {
+      /* Callback function which will be called when account is added */
+   },
+   onremoved: function(accountId)
+   {
+      /* Callback function which will be called when account is removed */
+   },
+   onupdated: function(account)
+   {
+      /* Callback function which will be called when account is updated */
+   }
+});
+</pre>
+</div>
+</dd>
+<dt class="method" id="AccountManager::removeAccountListener">
+<a class="backward-compatibility-anchor" name="::Account::AccountManager::removeAccountListener"></a><code><b><span class="methodName">removeAccountListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes the previously registered listener.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeAccountListener(long accountListenerId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/account.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">accountListenerId</span>:
+ Identifier of the listener for the account changes
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var watchId = tizen.account.addAccountListener(
+{
+   onadded: function(account)
+   {
+      /* Callback function which will be called when account is added */
+   },
+   onremoved: function(accountId)
+   {
+      /* Callback function which will be called when account is removed */
+   },
+   onupdated: function(account)
+   {
+      /* Callback function which will be called when account is updated */
+   }
+});
+tizen.account.removeAccountListener(watchId);
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="AccountExtendedData">
+<a class="backward-compatibility-anchor" name="::Account::AccountExtendedData"></a><h3>2.6. AccountExtendedData</h3>
+<div class="brief">
+ The AccountExtendedData interface defines the extended data of an account.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface AccountExtendedData {
+
+        readonly attribute DOMString key;
+
+        readonly attribute DOMString value;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="AccountExtendedData::key">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">key</span></span><div class="brief">
+ Name (key) of the account extended data item.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="AccountExtendedData::value">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">value</span></span><div class="brief">
+ Value of the account extended data item.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="AccountArraySuccessCallback">
+<a class="backward-compatibility-anchor" name="::Account::AccountArraySuccessCallback"></a><h3>2.7. AccountArraySuccessCallback</h3>
+<div class="brief">
+ The AccountArraySuccessCallback interface provides the success method for <em>AccountManager.getAccounts</em>.
+          </div>
+<pre class="webidl prettyprint">    [Callback, NoInterfaceObject] interface AccountArraySuccessCallback {
+        void onsuccess(<a href="#Account">Account</a>[] accounts);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="AccountArraySuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Account::AccountArraySuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when information of accounts is ready.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Account">Account</a>[] accounts);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">accounts</span>:
+ Received accounts
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="AccountExtendedDataArraySuccessCallback">
+<a class="backward-compatibility-anchor" name="::Account::AccountExtendedDataArraySuccessCallback"></a><h3>2.8. AccountExtendedDataArraySuccessCallback</h3>
+<div class="brief">
+ The AccountExtendedDataArraySuccessCallback provides the success method for <em>Account.getExtendedData</em>.
+          </div>
+<pre class="webidl prettyprint">    [Callback, NoInterfaceObject] interface AccountExtendedDataArraySuccessCallback {
+        void onsuccess(<a href="#AccountExtendedData">AccountExtendedData</a>[] extendedDataArray);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="AccountExtendedDataArraySuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Account::AccountExtendedDataArraySuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when information of extended data is ready.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#AccountExtendedData">AccountExtendedData</a>[] extendedDataArray);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">extendedDataArray</span>:
+ Array of extended data
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="AccountProviderArraySuccessCallback">
+<a class="backward-compatibility-anchor" name="::Account::AccountProviderArraySuccessCallback"></a><h3>2.9. AccountProviderArraySuccessCallback</h3>
+<div class="brief">
+ The AccountProviderArraySuccessCallback interface provides the success method for <em>AccountManager.getProviders</em>.
+          </div>
+<pre class="webidl prettyprint">    [Callback, NoInterfaceObject] interface AccountProviderArraySuccessCallback {
+        void onsuccess(<a href="#AccountProvider">AccountProvider</a>[] providers);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="AccountProviderArraySuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Account::AccountProviderArraySuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when information of providers are ready.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#AccountProvider">AccountProvider</a>[] providers);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">providers</span>:
+ Received providers
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="AccountChangeCallback">
+<a class="backward-compatibility-anchor" name="::Account::AccountChangeCallback"></a><h3>2.10. AccountChangeCallback</h3>
+<div class="brief">
+ The AccountChangeCallback interface defines callbacks for getting notified about account changes.
+          </div>
+<pre class="webidl prettyprint">    [Callback, NoInterfaceObject] interface AccountChangeCallback {
+
+        void onadded(<a href="#Account">Account</a> account);
+
+        void onremoved(<a href="#AccountId">AccountId</a> accountId);
+
+        void onupdated(<a href="#Account">Account</a> account);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="AccountChangeCallback::onadded">
+<a class="backward-compatibility-anchor" name="::Account::AccountChangeCallback::onadded"></a><code><b><span class="methodName">onadded</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when an account is added.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onadded(<a href="#Account">Account</a> account);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">account</span>:
+ Added account information
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="AccountChangeCallback::onremoved">
+<a class="backward-compatibility-anchor" name="::Account::AccountChangeCallback::onremoved"></a><code><b><span class="methodName">onremoved</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when an account is removed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onremoved(<a href="#AccountId">AccountId</a> accountId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">accountId</span>:
+ ID of the removed account
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="AccountChangeCallback::onupdated">
+<a class="backward-compatibility-anchor" name="::Account::AccountChangeCallback::onupdated"></a><code><b><span class="methodName">onupdated</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when an account is updated.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onupdated(<a href="#Account">Account</a> account);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">account</span>:
+ Updated account information
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">3. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Account {
+
+    [NoInterfaceObject] interface AccountManagerObject {
+        readonly attribute <a href="#AccountManager">AccountManager</a> account;
+    };
+    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AccountManagerObject">AccountManagerObject</a>;
+
+    typedef unsigned long AccountId;
+
+    [NoInterfaceObject] interface AccountProvider {
+        readonly attribute <a href="application.html#ApplicationId">ApplicationId</a> applicationId;
+
+        readonly attribute DOMString displayName;
+
+        readonly attribute DOMString iconUri;
+
+        readonly attribute DOMString smallIconUri;
+
+        readonly attribute DOMString[] capabilities;
+
+        readonly attribute boolean isMultipleAccountSupported;
+    };
+
+    dictionary AccountInit {
+        DOMString userName;
+        DOMString iconUri;
+    };
+
+    [Constructor(<a href="#AccountProvider">AccountProvider</a> provider, optional <a href="#AccountInit">AccountInit</a>? accountInitDict)]
+    interface Account {
+        readonly attribute <a href="#AccountId">AccountId</a>? id;
+
+        attribute DOMString? userName;
+
+        attribute DOMString? iconUri;
+
+        readonly attribute <a href="#AccountProvider">AccountProvider</a> provider;
+
+        void setExtendedData(DOMString key, DOMString value) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        DOMString getExtendedData(DOMString key) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void getExtendedData(
+            <a href="#AccountExtendedDataArraySuccessCallback">AccountExtendedDataArraySuccessCallback</a> successCallback,
+            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback
+        ) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };
+
+    [NoInterfaceObject] interface AccountManager {
+        void add(<a href="#Account">Account</a> account) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void remove(<a href="#AccountId">AccountId</a> accountId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void update(<a href="#Account">Account</a> account) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        <a href="#Account">Account</a>? getAccount(<a href="#AccountId">AccountId</a> accountId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+
+        void getAccounts(
+            <a href="#AccountArraySuccessCallback">AccountArraySuccessCallback</a> successCallback,
+            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+            optional DOMString? applicationId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        <a href="#AccountProvider">AccountProvider</a>? getProvider(<a href="application.html#ApplicationId">ApplicationId</a> applicationId)
+            raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void getProviders(
+            <a href="#AccountProviderArraySuccessCallback">AccountProviderArraySuccessCallback</a> successCallback,
+            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+            optional DOMString? capability) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        long addAccountListener(<a href="#AccountChangeCallback">AccountChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void removeAccountListener(long accountListenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };
+
+    [NoInterfaceObject] interface AccountExtendedData {
+
+        readonly attribute DOMString key;
+
+        readonly attribute DOMString value;
+    };
+
+    [Callback, NoInterfaceObject] interface AccountArraySuccessCallback {
+        void onsuccess(<a href="#Account">Account</a>[] accounts);
+    };
+
+    [Callback, NoInterfaceObject] interface AccountExtendedDataArraySuccessCallback {
+        void onsuccess(<a href="#AccountExtendedData">AccountExtendedData</a>[] extendedDataArray);
+    };
+
+    [Callback, NoInterfaceObject] interface AccountProviderArraySuccessCallback {
+        void onsuccess(<a href="#AccountProvider">AccountProvider</a>[] providers);
+    };
+
+
+    [Callback, NoInterfaceObject] interface AccountChangeCallback {
+
+        void onadded(<a href="#Account">Account</a> account);
+
+        void onremoved(<a href="#AccountId">AccountId</a> accountId);
+
+        void onupdated(<a href="#Account">Account</a> account);
+    };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

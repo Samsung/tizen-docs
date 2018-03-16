@@ -1,0 +1,976 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Privilege Level for Tizen Web Device APIs</title>
+ <style type="text/css">
+ <!--
+body, table, div, p, dl {
+	font-family: Lucida Grande, Verdana, Geneva, Arial, sans-serif;
+	font-size: 12px;
+}
+a {
+	color: #3D578C;
+	font-weight: normal;
+	text-decoration: none;
+}
+.contents a:visited {
+	color: #4665A2;
+}
+a:hover {
+	text-decoration: underline;
+}
+a.el {
+	font-weight: bold;
+}
+.title {
+	font-size: 150%;
+	font-weight: bold;
+	margin: 10px 2px;
+}
+h2 {
+	font-size: 120%;
+}
+h3 {
+	font-size: 100%;
+}
+.memitem {
+	padding: 0;
+	margin-bottom: 10px;
+	margin-right: 5px;
+}
+
+.memname {
+        white-space: nowrap;
+        font-weight: bold;
+        margin-left: 6px;
+}
+
+.memproto {
+        border-top: 1px solid #A8B8D9;
+        border-left: 1px solid #A8B8D9;
+        border-right: 1px solid #A8B8D9;
+        padding: 6px 0px 6px 0px;
+        color: #253555;
+        font-weight: bold;
+        text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.9);
+        /* opera specific markup */
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        /* firefox specific markup */
+        -moz-box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 5px;
+        -moz-border-radius-topright: 8px;
+        -moz-border-radius-topleft: 8px;
+        /* webkit specific markup */
+        -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+        -webkit-border-top-right-radius: 8px;
+        -webkit-border-top-left-radius: 8px;
+        background-image:url('nav_f.png');
+        background-repeat:repeat-x;
+        background-color: #E2E8F2;
+
+}
+
+.memdoc {
+        border-bottom: 1px solid #A8B8D9;
+        border-left: 1px solid #A8B8D9;
+        border-right: 1px solid #A8B8D9;
+        padding: 2px 5px;
+        background-color: #FBFCFD;
+        border-top-width: 0;
+        /* opera specific markup */
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+        /* firefox specific markup */
+        -moz-border-radius-bottomleft: 8px;
+        -moz-border-radius-bottomright: 8px;
+        -moz-box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 5px;
+        background-image: -moz-linear-gradient(center top, #FFFFFF 0%, #FFFFFF 60%, #F7F8FB 95%, #EEF1F7);
+        /* webkit specific markup */
+        -webkit-border-bottom-left-radius: 8px;
+        -webkit-border-bottom-right-radius: 8px;
+        -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+        background-image: -webkit-gradient(linear,center top,center bottom,from(#FFFFFF), color-stop(0.6,#FFFFFF), color-stop(0.60,#FFFFFF), color-stop(0.95,#F7F8FB), to(#EEF1F7));
+}
+//-->
+ </style>
+
+</head>
+<body>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Privilege Level for Tizen Web Device APIs </div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="_privilege000002"></a> </p>
+<script type="text/javascript">
+//<![CDATA[
+   function divshow(id) {
+       var eicon = document.getElementById("icon_" + id);
+       var ediv = document.getElementById("div_" + id);
+       if(eicon.innerHTML == "-") {
+           ediv.style.display = "none";
+           eicon.innerHTML = "+";
+       } else {
+           ediv.style.display = "";
+           eicon.innerHTML = "-";
+       }
+   }
+   function divallshow(istrue) {
+       var ediv = document.getElementsByTagName("div");
+       if(istrue == true) {
+           for(var cnt = 0; cnt < ediv.length; cnt++) {
+               if(ediv[cnt].id.substr(0,4) == "div_") {
+                   var eicon = document.getElementById("icon_" + ediv[cnt].id.substr(4));
+                   eicon.innerHTML = "-";
+                   ediv[cnt].style.display = "";
+               }
+           }
+       } else {
+           for(var cnt = 0; cnt < ediv.length; cnt++) {
+               if(ediv[cnt].id.substr(0,4) == "div_") {
+                   var eicon = document.getElementById("icon_" + ediv[cnt].id.substr(4));
+                   eicon.innerHTML = "+";
+                   ediv[cnt].style.display = "none";
+               }
+           }
+       }
+   }
+//]]>
+</script>
+<div class="memitem">
+<div class="memproto" style="border-bottom: 1px solid #A8B8D9; height: 15px;">
+<div class="memname" style="float: right;">
+<a href="javascript:divallshow(true)" class="el">All Expand</a>
+<a href="javascript:divallshow(false)" class="el">All Collapse</a>
+</div>
+</div>
+</div>
+<h2><a href="javascript:divshow('0000000001')" id="icon_0000000001" class="el">+</a>
+<span>public</span></h2>
+<div style="display: none;" id="div_0000000001">
+<div class="memitem">
+<div class="memproto" style="background-color: #FFFFFF; background-image: none;">
+<span class="memname"></span>
+</div>
+<div class="memdoc">
+<h2 style="margin-top:-5px;_margin-top:-10px;"><a href="javascript:divshow('0000000045')" id="icon_0000000045" class="el">+</a>
+<span>Alarm</span></h2>
+<div style="display: none;" id="div_0000000045">
+<div class="memitem">
+<div class="memproto" style="background-color: #FFFFFF; background-image: none;">
+<span class="memname"></span>
+</div>
+<div class="memdoc" style="margin-top:-5px;_margin-top:-10px;">
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="alarm.html#AlarmManager">AlarmManager</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>void <a href="alarm.html#AlarmManager::add">add</a>(Alarm alarm, ApplicationId applicationId, optional ApplicationControl? appControl);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="alarm.html#AlarmManager::remove">remove</a>(AlarmId id);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="alarm.html#AlarmManager::removeAll">removeAll</a>();</dt>
+	</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2><a href="javascript:divshow('0000000046')" id="icon_0000000046" class="el">+</a>
+<span>Application</span></h2>
+<div style="display: none;" id="div_0000000046">
+<div class="memitem">
+<div class="memproto" style="background-color: #FFFFFF; background-image: none;">
+<span class="memname"></span>
+</div>
+<div class="memdoc" style="margin-top:-5px;_margin-top:-10px;">
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="application.html#ApplicationInformation">ApplicationInformation</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>readonly attribute long <a href="application.html#ApplicationInformation::size">size</a>;</dt>
+	</dl>
+</div>
+</div>
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="application.html#ApplicationManager">ApplicationManager</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>ApplicationMetaData[] <a href="application.html#ApplicationManager::getAppMetaData">getAppMetaData</a>(optional ApplicationId? id);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="application.html#ApplicationManager::launch">launch</a>(ApplicationId id, optional SuccessCallback? successCallback, optional ErrorCallback? errorCallback);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="application.html#ApplicationManager::launchAppControl">launchAppControl</a>(ApplicationControl appControl, optional ApplicationId? id, optional SuccessCallback? successCallback, optional ErrorCallback? errorCallback, optional ApplicationControlDataArrayReplyCallback? replyCallback);</dt>
+	</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2><a href="javascript:divshow('0000000047')" id="icon_0000000047" class="el">+</a>
+<span>Archive</span></h2>
+<div style="display: none;" id="div_0000000047">
+<div class="memitem">
+<div class="memproto" style="background-color: #FFFFFF; background-image: none;">
+<span class="memname"></span>
+</div>
+<div class="memdoc" style="margin-top:-5px;_margin-top:-10px;">
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="archive.html#ArchiveFile">ArchiveFile</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>long <a href="archive.html#ArchiveFile::add">add</a>(FileReference sourceFile, optional SuccessCallback? onsuccess, optional ErrorCallback? onerror, optional ArchiveFileProgressCallback? onprogress, optional ArchiveFileEntryOptions? options);</dt>
+	</dl>
+	<dl>
+		<dt>long <a href="archive.html#ArchiveFile::extractAll">extractAll</a>(FileReference destinationDirectory, optional SuccessCallback? onsuccess, optional ErrorCallback? onerror, optional ArchiveFileProgressCallback? onprogress, optional boolean? overwrite);</dt>
+	</dl>
+	<dl>
+		<dt>long <a href="archive.html#ArchiveFile::getEntries">getEntries</a>(ArchiveFileEntryArraySuccessCallback onsuccess, optional ErrorCallback? onerror);</dt>
+	</dl>
+	<dl>
+		<dt>long <a href="archive.html#ArchiveFile::getEntryByName">getEntryByName</a>(DOMString name, ArchiveFileEntrySuccessCallback onsuccess, optional ErrorCallback? onerror);</dt>
+	</dl>
+</div>
+</div>
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="archive.html#ArchiveFileEntry">ArchiveFileEntry</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>long <a href="archive.html#ArchiveFileEntry::extract">extract</a>(FileReference destinationDirectory, optional SuccessCallback? onsuccess, optional ErrorCallback? onerror, optional ArchiveFileProgressCallback? onprogress, optional boolean? stripName, optional boolean? overwrite);</dt>
+	</dl>
+</div>
+</div>
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="archive.html#ArchiveManager">ArchiveManager</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>long <a href="archive.html#ArchiveManager::open">open</a>(FileReference file, FileMode mode, ArchiveFileSuccessCallback onsuccess, optional ErrorCallback? onerror, optional ArchiveFileOptions? options);</dt>
+	</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2><a href="javascript:divshow('0000000048')" id="icon_0000000048" class="el">+</a>
+<span>Content</span></h2>
+<div style="display: none;" id="div_0000000048">
+<div class="memitem">
+<div class="memproto" style="background-color: #FFFFFF; background-image: none;">
+<span class="memname"></span>
+</div>
+<div class="memdoc" style="margin-top:-5px;_margin-top:-10px;">
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="content.html#ContentManager">ContentManager</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>void <a href="content.html#ContentManager::cancelScanDirectory">cancelScanDirectory</a>(DOMString contentDirURI);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="content.html#ContentManager::createPlaylist">createPlaylist</a>(DOMString name, PlaylistSuccessCallback successCallback, optional ErrorCallback? errorCallback, optional Playlist? sourcePlaylist);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="content.html#ContentManager::find">find</a>(ContentArraySuccessCallback successCallback, optional ErrorCallback? errorCallback, optional ContentDirectoryId? directoryId, optional AbstractFilter? filter, optional SortMode? sortMode, optional unsigned long? count, optional unsigned long? offset);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="content.html#ContentManager::getPlaylists">getPlaylists</a>(PlaylistArraySuccessCallback successCallback, optional ErrorCallback? errorCallback);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="content.html#ContentManager::removePlaylist">removePlaylist</a>(PlaylistId id, optional SuccessCallback? successCallback, optional ErrorCallback? errorCallback);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="content.html#ContentManager::scanDirectory">scanDirectory</a>(DOMString contentDirURI, boolean recursive, optional ContentScanSuccessCallback? successCallback, optional ErrorCallback? errorCallback);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="content.html#ContentManager::scanFile">scanFile</a>(DOMString contentURI, optional ContentScanSuccessCallback? successCallback, optional ErrorCallback? errorCallback);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="content.html#ContentManager::setChangeListener">setChangeListener</a>(ContentChangeCallback changeCallback);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="content.html#ContentManager::unsetChangeListener">unsetChangeListener</a>();</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="content.html#ContentManager::update">update</a>(Content content);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="content.html#ContentManager::updateBatch">updateBatch</a>(Content[] contents, optional SuccessCallback? successCallback, optional ErrorCallback? errorCallback);</dt>
+	</dl>
+</div>
+</div>
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="content.html#Playlist">Playlist</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>void <a href="content.html#Playlist::add">add</a>(Content item);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="content.html#Playlist::addBatch">addBatch</a>(Content[] items, optional SuccessCallback? successCallback, optional ErrorCallback? errorCallback);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="content.html#Playlist::get">get</a>(PlaylistItemArraySuccessCallback successCallback, optional ErrorCallback? errorCallback, optional long? count, optional long? offset);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="content.html#Playlist::move">move</a>(PlaylistItem item, long delta, optional SuccessCallback? successCallback, optional ErrorCallback? errorCallback);</dt>
+	</dl>
+	<dl>
+		<dt>attribute DOMString <a href="content.html#Playlist::name">name</a>;</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="content.html#Playlist::remove">remove</a>(PlaylistItem item);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="content.html#Playlist::removeBatch">removeBatch</a>(PlaylistItem[] items, optional SuccessCallback? successCallback, optional ErrorCallback? errorCallback);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="content.html#Playlist::setOrder">setOrder</a>(PlaylistItem[] items, optional SuccessCallback? successCallback, optional ErrorCallback? errorCallback);</dt>
+	</dl>
+	<dl>
+		<dt>attribute DOMString? <a href="content.html#Playlist::thumbnailURI">thumbnailURI</a>;</dt>
+	</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2><a href="javascript:divshow('0000000049')" id="icon_0000000049" class="el">+</a>
+<span>DataControl</span></h2>
+<div style="display: none;" id="div_0000000049">
+<div class="memitem">
+<div class="memproto" style="background-color: #FFFFFF; background-image: none;">
+<span class="memname"></span>
+</div>
+<div class="memdoc" style="margin-top:-5px;_margin-top:-10px;">
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="datacontrol.html#DataControlManager">DataControlManager</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>DataControlConsumerObject <a href="datacontrol.html#DataControlManager::getDataControlConsumer">getDataControlConsumer</a>(DOMString providerId, DOMString dataId, DataType type);</dt>
+	</dl>
+</div>
+</div>
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="datacontrol.html#MappedDataControlConsumer">MappedDataControlConsumer</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>void <a href="datacontrol.html#MappedDataControlConsumer::addValue">addValue</a>(unsigned long reqId, DOMString key, DOMString value, optional DataControlSuccessCallback? successCallback, optional DataControlErrorCallback? errorCallback);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="datacontrol.html#MappedDataControlConsumer::getValue">getValue</a>(unsigned long reqId, DOMString key, DataControlGetValueSuccessCallback successCallback, optional DataControlErrorCallback? errorCallback);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="datacontrol.html#MappedDataControlConsumer::removeValue">removeValue</a>(unsigned long reqId, DOMString key, DOMString value, DataControlSuccessCallback successCallback, optional DataControlErrorCallback? errorCallback);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="datacontrol.html#MappedDataControlConsumer::updateValue">updateValue</a>(unsigned long reqId, DOMString key, DOMString oldValue, DOMString newValue, DataControlSuccessCallback successCallback, optional DataControlErrorCallback? errorCallback);</dt>
+	</dl>
+</div>
+</div>
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="datacontrol.html#SQLDataControlConsumer">SQLDataControlConsumer</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>void <a href="datacontrol.html#SQLDataControlConsumer::insert">insert</a>(unsigned long reqId, RowData insertionData, optional DataControlInsertSuccessCallback? successCallback, optional DataControlErrorCallback? errorCallback);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="datacontrol.html#SQLDataControlConsumer::remove">remove</a>(unsigned long reqId, DOMString where, optional DataControlSuccessCallback? successCallback, optional DataControlErrorCallback? errorCallback);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="datacontrol.html#SQLDataControlConsumer::select">select</a>(unsigned long reqId, DOMString[] columns, DOMString where, DataControlSelectSuccessCallback successCallback, optional DataControlErrorCallback? errorCallback, optional unsigned long? page, optional unsigned long? maxNumberPerPage, optional DOMString? order);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="datacontrol.html#SQLDataControlConsumer::update">update</a>(unsigned long reqId, RowData updateData, DOMString where, optional DataControlSuccessCallback? successCallback, optional DataControlErrorCallback? errorCallback);</dt>
+	</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2><a href="javascript:divshow('0000000050')" id="icon_0000000050" class="el">+</a>
+<span>Download</span></h2>
+<div style="display: none;" id="div_0000000050">
+<div class="memitem">
+<div class="memproto" style="background-color: #FFFFFF; background-image: none;">
+<span class="memname"></span>
+</div>
+<div class="memdoc" style="margin-top:-5px;_margin-top:-10px;">
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="download.html#DownloadManager">DownloadManager</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>long <a href="download.html#DownloadManager::start">start</a>(DownloadRequest downloadRequest, optional DownloadCallback? downloadCallback);</dt>
+	</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2><a href="javascript:divshow('0000000051')" id="icon_0000000051" class="el">+</a>
+<span>Filesystem</span></h2>
+<div style="display: none;" id="div_0000000051">
+<div class="memitem">
+<div class="memproto" style="background-color: #FFFFFF; background-image: none;">
+<span class="memname"></span>
+</div>
+<div class="memdoc" style="margin-top:-5px;_margin-top:-10px;">
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="filesystem.html#File">File</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>void <a href="filesystem.html#File::copyTo">copyTo</a>(DOMString originFilePath, DOMString destinationFilePath, boolean overwrite, optional SuccessCallback? onsuccess, optional ErrorCallback? onerror);</dt>
+	</dl>
+	<dl>
+		<dt>File <a href="filesystem.html#File::createDirectory">createDirectory</a>(DOMString dirPath);</dt>
+	</dl>
+	<dl>
+		<dt>File <a href="filesystem.html#File::createFile">createFile</a>(DOMString relativeFilePath);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="filesystem.html#File::deleteDirectory">deleteDirectory</a>(DOMString directoryPath, boolean recursive, optional SuccessCallback? onsuccess, optional ErrorCallback? onerror);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="filesystem.html#File::deleteFile">deleteFile</a>(DOMString filePath, optional SuccessCallback? onsuccess, optional ErrorCallback? onerror);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="filesystem.html#File::listFiles">listFiles</a>(FileArraySuccessCallback onsuccess, optional ErrorCallback? onerror, optional FileFilter? filter);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="filesystem.html#File::moveTo">moveTo</a>(DOMString originFilePath, DOMString destinationFilePath, boolean overwrite, optional SuccessCallback? onsuccess, optional ErrorCallback? onerror);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="filesystem.html#File::openStream">openStream</a>(FileMode mode, FileStreamSuccessCallback onsuccess, optional ErrorCallback? onerror, optional DOMString? encoding);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="filesystem.html#File::readAsText">readAsText</a>(FileStringSuccessCallback onsuccess, optional ErrorCallback? onerror, optional DOMString? encoding);</dt>
+	</dl>
+	<dl>
+		<dt>File <a href="filesystem.html#File::resolve">resolve</a>(DOMString filePath);</dt>
+	</dl>
+	<dl>
+		<dt>DOMString <a href="filesystem.html#File::toURI">toURI</a>();</dt>
+	</dl>
+</div>
+</div>
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="filesystem.html#FileStream">FileStream</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>void <a href="filesystem.html#FileStream::close">close</a>();</dt>
+	</dl>
+	<dl>
+		<dt>DOMString <a href="filesystem.html#FileStream::read">read</a>(long charCount);</dt>
+	</dl>
+	<dl>
+		<dt>DOMString <a href="filesystem.html#FileStream::readBase64">readBase64</a>(long byteCount);</dt>
+	</dl>
+	<dl>
+		<dt>octet[] <a href="filesystem.html#FileStream::readBytes">readBytes</a>(long byteCount);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="filesystem.html#FileStream::write">write</a>(DOMString stringData);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="filesystem.html#FileStream::writeBase64">writeBase64</a>(DOMString base64Data);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="filesystem.html#FileStream::writeBytes">writeBytes</a>(octet[] byteData);</dt>
+	</dl>
+</div>
+</div>
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="filesystem.html#FileSystemManager">FileSystemManager</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>long <a href="filesystem.html#FileSystemManager::addStorageStateChangeListener">addStorageStateChangeListener</a>(FileSystemStorageSuccessCallback onsuccess, optional ErrorCallback? onerror);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="filesystem.html#FileSystemManager::getStorage">getStorage</a>(DOMString label, FileSystemStorageSuccessCallback onsuccess, optional ErrorCallback? onerror);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="filesystem.html#FileSystemManager::listStorages">listStorages</a>(FileSystemStorageArraySuccessCallback onsuccess, optional ErrorCallback? onerror);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="filesystem.html#FileSystemManager::removeStorageStateChangeListener">removeStorageStateChangeListener</a>(long watchId);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="filesystem.html#FileSystemManager::resolve">resolve</a>(DOMString location, FileSuccessCallback onsuccess, optional ErrorCallback? onerror, optional FileMode? mode);</dt>
+	</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2><a href="javascript:divshow('0000000052')" id="icon_0000000052" class="el">+</a>
+<span>Package</span></h2>
+<div style="display: none;" id="div_0000000052">
+<div class="memitem">
+<div class="memproto" style="background-color: #FFFFFF; background-image: none;">
+<span class="memname"></span>
+</div>
+<div class="memdoc" style="margin-top:-5px;_margin-top:-10px;">
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="package.html#PackageManager">PackageManager</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>PackageInformation <a href="package.html#PackageManager::getPackageInfo">getPackageInfo</a>(optional PackageId? id);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="package.html#PackageManager::getPackagesInfo">getPackagesInfo</a>(PackageInformationArraySuccessCallback successCallback, optional ErrorCallback? errorCallback);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="package.html#PackageManager::setPackageInfoEventListener">setPackageInfoEventListener</a>(PackageInformationEventCallback eventCallback);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="package.html#PackageManager::unsetPackageInfoEventListener">unsetPackageInfoEventListener</a>();</dt>
+	</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2><a href="javascript:divshow('0000000053')" id="icon_0000000053" class="el">+</a>
+<span>SystemInfo</span></h2>
+<div style="display: none;" id="div_0000000053">
+<div class="memitem">
+<div class="memproto" style="background-color: #FFFFFF; background-image: none;">
+<span class="memname"></span>
+</div>
+<div class="memdoc" style="margin-top:-5px;_margin-top:-10px;">
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="systeminfo.html#SystemInfoCameraFlash">SystemInfoCameraFlash</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>readonly attribute double <a href="systeminfo.html#SystemInfoCameraFlash::brightness">brightness</a>;</dt>
+	</dl>
+	<dl>
+		<dt>readonly attribute long <a href="systeminfo.html#SystemInfoCameraFlash::levels">levels</a>;</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="systeminfo.html#SystemInfoCameraFlash::setBrightness">setBrightness</a>(double brightness);</dt>
+	</dl>
+</div>
+</div>
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="systeminfo.html#SystemInfoCellularNetwork">SystemInfoCellularNetwork</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>readonly attribute DOMString <a href="systeminfo.html#SystemInfoCellularNetwork::imei">imei</a>;</dt>
+	</dl>
+</div>
+</div>
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="systeminfo.html#SystemInfoDeviceCapability">SystemInfoDeviceCapability</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>readonly attribute DOMString <a href="systeminfo.html#SystemInfoDeviceCapability::nativeApiVersion">nativeApiVersion</a>;</dt>
+	</dl>
+	<dl>
+		<dt>readonly attribute DOMString <a href="systeminfo.html#SystemInfoDeviceCapability::platformVersion">platformVersion</a>;</dt>
+	</dl>
+	<dl>
+		<dt>readonly attribute DOMString <a href="systeminfo.html#SystemInfoDeviceCapability::webApiVersion">webApiVersion</a>;</dt>
+	</dl>
+</div>
+</div>
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="systeminfo.html#SystemInfoSIM">SystemInfoSIM</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>readonly attribute DOMString <a href="systeminfo.html#SystemInfoSIM::iccid">iccid</a>;</dt>
+	</dl>
+	<dl>
+		<dt>readonly attribute unsigned short <a href="systeminfo.html#SystemInfoSIM::mcc">mcc</a>;</dt>
+	</dl>
+	<dl>
+		<dt>readonly attribute unsigned short <a href="systeminfo.html#SystemInfoSIM::mnc">mnc</a>;</dt>
+	</dl>
+	<dl>
+		<dt>readonly attribute DOMString <a href="systeminfo.html#SystemInfoSIM::msin">msin</a>;</dt>
+	</dl>
+	<dl>
+		<dt>readonly attribute DOMString <a href="systeminfo.html#SystemInfoSIM::msisdn">msisdn</a>;</dt>
+	</dl>
+	<dl>
+		<dt>readonly attribute DOMString <a href="systeminfo.html#SystemInfoSIM::operatorName">operatorName</a>;</dt>
+	</dl>
+	<dl>
+		<dt>readonly attribute DOMString <a href="systeminfo.html#SystemInfoSIM::spn">spn</a>;</dt>
+	</dl>
+	<dl>
+		<dt>readonly attribute SystemInfoSimState <a href="systeminfo.html#SystemInfoSIM::state">state</a>;</dt>
+	</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2><a href="javascript:divshow('0000000054')" id="icon_0000000054" class="el">+</a>
+<span>TVAudioControl</span></h2>
+<div style="display: none;" id="div_0000000054">
+<div class="memitem">
+<div class="memproto" style="background-color: #FFFFFF; background-image: none;">
+<span class="memname"></span>
+</div>
+<div class="memdoc" style="margin-top:-5px;_margin-top:-10px;">
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="tvaudiocontrol.html#AudioControlManager">AudioControlManager</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>AudioOutputMode <a href="tvaudiocontrol.html#AudioControlManager::getOutputMode">getOutputMode</a>();</dt>
+	</dl>
+	<dl>
+		<dt>unsigned short <a href="tvaudiocontrol.html#AudioControlManager::getVolume">getVolume</a>();</dt>
+	</dl>
+	<dl>
+		<dt>boolean <a href="tvaudiocontrol.html#AudioControlManager::isMute">isMute</a>();</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvaudiocontrol.html#AudioControlManager::playSound">playSound</a>(AudioBeepType type);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvaudiocontrol.html#AudioControlManager::setMute">setMute</a>(boolean mute);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvaudiocontrol.html#AudioControlManager::setVolume">setVolume</a>(unsigned short volume);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvaudiocontrol.html#AudioControlManager::setVolumeChangeListener">setVolumeChangeListener</a>(VolumeChangeCallback callback);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvaudiocontrol.html#AudioControlManager::setVolumeDown">setVolumeDown</a>();</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvaudiocontrol.html#AudioControlManager::setVolumeUp">setVolumeUp</a>();</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvaudiocontrol.html#AudioControlManager::unsetVolumeChangeListener">unsetVolumeChangeListener</a>();</dt>
+	</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2><a href="javascript:divshow('0000000055')" id="icon_0000000055" class="el">+</a>
+<span>TVChannel</span></h2>
+<div style="display: none;" id="div_0000000055">
+<div class="memitem">
+<div class="memproto" style="background-color: #FFFFFF; background-image: none;">
+<span class="memname"></span>
+</div>
+<div class="memdoc" style="margin-top:-5px;_margin-top:-10px;">
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="tvchannel.html#ChannelManager">ChannelManager</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>long <a href="tvchannel.html#ChannelManager::addChannelChangeListener">addChannelChangeListener</a>(ChannelChangeCallback callback, optional WindowType? type);</dt>
+	</dl>
+	<dl>
+		<dt>long <a href="tvchannel.html#ChannelManager::addSignalStateChangeListener">addSignalStateChangeListener</a>(SignalStateChangeCallback callback);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvchannel.html#ChannelManager::findChannel">findChannel</a>(long major, long minor, FindChannelSuccessCallback successCallback, optional ErrorCallback? errorCallback);</dt>
+	</dl>
+	<dl>
+		<dt>BroadcastStandard <a href="tvchannel.html#ChannelManager::getBroadcastStandard">getBroadcastStandard</a>(optional WindowType? type);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvchannel.html#ChannelManager::getChannelList">getChannelList</a>(FindChannelSuccessCallback successCallback, optional ErrorCallback? errorCallback, optional TuneMode? mode, optional long? nStart, optional long? number);</dt>
+	</dl>
+	<dl>
+		<dt>ChannelInfo <a href="tvchannel.html#ChannelManager::getCurrentChannel">getCurrentChannel</a>(optional WindowType? type);</dt>
+	</dl>
+	<dl>
+		<dt>ProgramInfo? <a href="tvchannel.html#ChannelManager::getCurrentProgram">getCurrentProgram</a>(optional WindowType? type);</dt>
+	</dl>
+	<dl>
+		<dt>FavoriteList[] <a href="tvchannel.html#ChannelManager::getFavorites">getFavorites</a>();</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvchannel.html#ChannelManager::getProgramList">getProgramList</a>(ChannelInfo channelInfo, TZDate startTime, ProgramListSuccessCallback successCallback, optional ErrorCallback? errorCallback, optional unsigned long? duration);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvchannel.html#ChannelManager::removeChannelChangeListener">removeChannelChangeListener</a>(long channelListenerId);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvchannel.html#ChannelManager::removeSignalStateChangeListener">removeSignalStateChangeListener</a>(long signalListenerId);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvchannel.html#ChannelManager::tune">tune</a>(TuneOption tuneOption, TuneCallback successCallback, optional ErrorCallback? errorCallback, optional WindowType? type);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvchannel.html#ChannelManager::tuneDown">tuneDown</a>(TuneCallback successCallback, optional ErrorCallback? errorCallback, optional TuneMode? tuneMode, optional WindowType? type);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvchannel.html#ChannelManager::tuneUp">tuneUp</a>(TuneCallback successCallback, optional ErrorCallback? errorCallback, optional TuneMode? tuneMode, optional WindowType? type);</dt>
+	</dl>
+</div>
+</div>
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="tvchannel.html#FavoriteList">FavoriteList</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>void <a href="tvchannel.html#FavoriteList::addChannel">addChannel</a>(ChannelInfo channel, SuccessCallback successCallback, optional ErrorCallback? errorCallback);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvchannel.html#FavoriteList::getChannels">getChannels</a>(FindChannelSuccessCallback successCallback, optional ErrorCallback? errorCallback, optional long? nStart, optional long? number);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvchannel.html#FavoriteList::removeChannel">removeChannel</a>(ChannelInfo channel, SuccessCallback successCallback, optional ErrorCallback? errorCallback);</dt>
+	</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2><a href="javascript:divshow('0000000056')" id="icon_0000000056" class="el">+</a>
+<span>TVDisplayControl</span></h2>
+<div style="display: none;" id="div_0000000056">
+<div class="memitem">
+<div class="memproto" style="background-color: #FFFFFF; background-image: none;">
+<span class="memname"></span>
+</div>
+<div class="memdoc" style="margin-top:-5px;_margin-top:-10px;">
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="tvdisplaycontrol.html#DisplayControlManager">DisplayControlManager</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>Display3DEffectMode <a href="tvdisplaycontrol.html#DisplayControlManager::get3DEffectMode">get3DEffectMode</a>();</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvdisplaycontrol.html#DisplayControlManager::getSupported3DEffectModeList">getSupported3DEffectModeList</a>(Mode3DEffectListSupportCallback successCallback, optional ErrorCallback? errorCallback);</dt>
+	</dl>
+	<dl>
+		<dt>Display3DModeState <a href="tvdisplaycontrol.html#DisplayControlManager::is3DModeEnabled">is3DModeEnabled</a>();</dt>
+	</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2><a href="javascript:divshow('0000000057')" id="icon_0000000057" class="el">+</a>
+<span>TVInputDevice</span></h2>
+<div style="display: none;" id="div_0000000057">
+<div class="memitem">
+<div class="memproto" style="background-color: #FFFFFF; background-image: none;">
+<span class="memname"></span>
+</div>
+<div class="memdoc" style="margin-top:-5px;_margin-top:-10px;">
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="tvinputdevice.html#TVInputDeviceManager">TVInputDeviceManager</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>InputDeviceKey? <a href="tvinputdevice.html#TVInputDeviceManager::getKey">getKey</a>(InputDeviceKeyName keyName);</dt>
+	</dl>
+	<dl>
+		<dt>InputDeviceKey[] <a href="tvinputdevice.html#TVInputDeviceManager::getSupportedKeys">getSupportedKeys</a>();</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvinputdevice.html#TVInputDeviceManager::registerKey">registerKey</a>(InputDeviceKeyName keyName);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvinputdevice.html#TVInputDeviceManager::registerKeyBatch">registerKeyBatch</a>(InputDeviceKeyName[] keyNames, optional SuccessCallback? successCallback, optional ErrorCallback? errorCallback);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvinputdevice.html#TVInputDeviceManager::unregisterKey">unregisterKey</a>(InputDeviceKeyName keyName);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvinputdevice.html#TVInputDeviceManager::unregisterKeyBatch">unregisterKeyBatch</a>(InputDeviceKeyName[] keyNames, optional SuccessCallback? successCallback, optional ErrorCallback? errorCallback);</dt>
+	</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2><a href="javascript:divshow('0000000058')" id="icon_0000000058" class="el">+</a>
+<span>TVWindow</span></h2>
+<div style="display: none;" id="div_0000000058">
+<div class="memitem">
+<div class="memproto" style="background-color: #FFFFFF; background-image: none;">
+<span class="memname"></span>
+</div>
+<div class="memdoc" style="margin-top:-5px;_margin-top:-10px;">
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="tvwindow.html#TVWindowManager">TVWindowManager</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>long <a href="tvwindow.html#TVWindowManager::addVideoResolutionChangeListener">addVideoResolutionChangeListener</a>(VideoResolutionChangeCallback callback, optional WindowType? type);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvwindow.html#TVWindowManager::getAvailableWindows">getAvailableWindows</a>(AvailableWindowListCallback successCallback, optional ErrorCallback? errorCallback);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvwindow.html#TVWindowManager::getRect">getRect</a>(WindowRectangleSuccessCallback successCallback, optional ErrorCallback? errorCallback, optional MeasurementUnit? unit, optional WindowType? type);</dt>
+	</dl>
+	<dl>
+		<dt>SystemInfoVideoSourceInfo <a href="tvwindow.html#TVWindowManager::getSource">getSource</a>(optional WindowType? type);</dt>
+	</dl>
+	<dl>
+		<dt>VideoResolution <a href="tvwindow.html#TVWindowManager::getVideoResolution">getVideoResolution</a>(optional WindowType? type);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvwindow.html#TVWindowManager::hide">hide</a>(SuccessCallback successCallback, optional ErrorCallback? errorCallback, optional WindowType? type);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvwindow.html#TVWindowManager::removeVideoResolutionChangeListener">removeVideoResolutionChangeListener</a>(long listenerId);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvwindow.html#TVWindowManager::setSource">setSource</a>(SystemInfoVideoSourceInfo videoSource, SourceChangedSuccessCallback successCallback, optional ErrorCallback? errorCallback, optional WindowType? type);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="tvwindow.html#TVWindowManager::show">show</a>(WindowRectangleSuccessCallback successCallback, optional ErrorCallback? errorCallback, optional DOMString[]? rectangle, optional WindowType? type, optional ZPosition? zPosition);</dt>
+	</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2><a href="javascript:divshow('0000000002')" id="icon_0000000002" class="el">+</a>
+<span>partner</span></h2>
+<div style="display: none;" id="div_0000000002">
+<div class="memitem">
+<div class="memproto" style="background-color: #FFFFFF; background-image: none;">
+<span class="memname"></span>
+</div>
+<div class="memdoc">
+<h2 style="margin-top:-5px;_margin-top:-10px;"><a href="javascript:divshow('0000000059')" id="icon_0000000059" class="el">+</a>
+<span>Application</span></h2>
+<div style="display: none;" id="div_0000000059">
+<div class="memitem">
+<div class="memproto" style="background-color: #FFFFFF; background-image: none;">
+<span class="memname"></span>
+</div>
+<div class="memdoc" style="margin-top:-5px;_margin-top:-10px;">
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="application.html#ApplicationManager">ApplicationManager</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>ApplicationCertificate[] <a href="application.html#ApplicationManager::getAppCerts">getAppCerts</a>(optional ApplicationId? id);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="application.html#ApplicationManager::kill">kill</a>(ApplicationContextId contextId, optional SuccessCallback? successCallback, optional ErrorCallback? errorCallback);</dt>
+	</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2><a href="javascript:divshow('0000000003')" id="icon_0000000003" class="el">+</a>
+<span>platform</span></h2>
+<div style="display: none;" id="div_0000000003">
+<div class="memitem">
+<div class="memproto" style="background-color: #FFFFFF; background-image: none;">
+<span class="memname"></span>
+</div>
+<div class="memdoc">
+<h2 style="margin-top:-5px;_margin-top:-10px;"><a href="javascript:divshow('0000000060')" id="icon_0000000060" class="el">+</a>
+<span>Package</span></h2>
+<div style="display: none;" id="div_0000000060">
+<div class="memitem">
+<div class="memproto" style="background-color: #FFFFFF; background-image: none;">
+<span class="memname"></span>
+</div>
+<div class="memdoc" style="margin-top:-5px;_margin-top:-10px;">
+<div class="memitem">
+<div class="memproto">
+<span class="memname"><a href="package.html#PackageManager">PackageManager</a></span>
+</div>
+<div class="memdoc">
+	<dl>
+		<dt>void <a href="package.html#PackageManager::install">install</a>(DOMString packageFileURI, PackageProgressCallback progressCallback, optional ErrorCallback? errorCallback);</dt>
+	</dl>
+	<dl>
+		<dt>void <a href="package.html#PackageManager::uninstall">uninstall</a>(PackageId id, PackageProgressCallback progressCallback, optional ErrorCallback? errorCallback);</dt>
+	</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr size="1">
+<center>
+<small>Except as noted, this content - excluding the Code Examples - is licensed under <a
+    href="http://creativecommons.org/licenses/by/3.0/legalcode">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a
+    href="https://www.tizen.org/bsd-3-clause-license">BSD-3-Clause</a>. For details, see the <a href="https://www.tizen.org/content-license">Content License</a>. </small>
+</center>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25976949-3']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+</body>
+</html>

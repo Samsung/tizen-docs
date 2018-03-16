@@ -1,0 +1,651 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="../styles.css" rel="StyleSheet" type="text/css" />
+	<link href="../snippet.css" rel="StyleSheet" type="text/css" />
+	<title>Drawer</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>Drawer</h1>
+
+<P>
+Wearable Drawer component provides drawer UX in wearable device.<br>
+The drawer component is a panel that the application's sub layout on the left or right edge of the screen. <br>
+This component is hidden most of the time, but user can be opened as swipe gesture from the edge of the screen or click the element that is added event handler, handler has drawer.open() method.</P>
+
+<table class="note">
+	<tbody>
+	<tr>
+		<th class="note">Note</th>
+	</tr>
+	<tr>
+		<td class="note">This component is supported since <strong>2.3</strong>.</td>
+	</tr>
+	<tr>
+		<td class="note">We recommend you to make a handler element. Because if you don't set the handler, handler is set to page element automatically.
+		<br>Nevertheless, if you really want to make the page element as handler, you should be careful of data-drag-edge or dragEdge option value.
+		<br>Because default value of data-drag-edge or dragEdge option is set to '1' - which means that the whole area of page element becomes drawable handler. </td>
+	</tr>
+	</tbody>
+</table>
+
+
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+		<li><a href="#html-examples0.5723640653304756">How to create Drawer</a>
+
+		</li>
+
+		<li><a href="#options-list">Options</a></li>
+
+		<li><a href="#options-example">HTML Example with Options</a></li>
+
+		<li><a href="#drawer-state0.013524989364668727">Drawer state</a>
+
+		</li>
+
+
+		<li><a href="#methods-list">Methods</a>
+
+				<ol class="toc">
+
+						<li><a href="#method-setDragHandler">setDragHandler</a>
+						</li>
+
+						<li><a href="#method-transition">transition</a>
+						</li>
+
+						<li><a href="#method-open">open</a>
+						</li>
+
+						<li><a href="#method-close">close</a>
+						</li>
+
+						<li><a href="#method-getState">getState</a>
+						</li>
+
+				</ol>
+
+		</li>
+
+</ol>
+
+<h2><a id='html-examples0.5723640653304756'></a>How to create Drawer</h2>
+<p>To use Drawer component in your app, you need to declare &quot;Drawer Handler(such as button)&quot; and &quot;Drawer Body(component)&quot;.<br>
+Please refer following example.</p>
+
+<table class="note">
+	<tbody>
+	<tr>
+		<th class="note">Note</th>
+	</tr>
+	<tr>
+		<td class="note">
+If you used the drawer handler, you must implement style code of handler. We don't provide default handler style as framework level, but we provide custom style example in 'style.css'.
+		</td>
+	</tr>
+	</tbody>
+</table>
+
+<h3>HTML</h3>
+<pre class="prettyprint">
+&lt;div id="moreoptionsPage" class="ui-page"&gt;
+   &lt;header class="ui-header ui-has-more"&gt;
+      &lt;h2 class="ui-title"&gt;Drawer&lt;/h2&gt;
+      &lt;button class="ui-more ui-icon-overflow"&gt;Drawer&lt;/button&gt;
+   &lt;/header&gt;
+   &lt;div class="ui-content content-padding"&gt;
+      Drawer
+   &lt;/div&gt;
+
+   &lt;!--Circle Profile--&gt;
+   &lt;div id="moreoptionsDrawer" class="ui-drawer" data-drawer-target="#moretionsPage" data-position="right"
+        data-enable="true" data-drag-edge="1"&gt;
+      &lt;div id="moreoptionsSectionChanger" class="ui-section-changer"&gt;
+         &lt;div&gt;
+            &lt;seciont&gt;
+               &lt;button class="option-button"&gt;1&lt;/button&gt;
+            &lt;/seciont&gt;
+            &lt;seciont&gt;
+               &lt;button class="option-button"&gt;2&lt;/button&gt;
+            &lt;/seciont&gt;
+            &lt;seciont&gt;
+               &lt;button class="option-button"&gt;3&lt;/button&gt;
+            &lt;/seciont&gt;
+         &lt;/div&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h3>JavaScript</h3>
+<pre class="prettyprint">
+(function()
+{
+   var page = document.querySelector("#moreoptionsPage"),
+       popup = page.querySelector("#moreoptionsPopup"),
+       drawer = page.querySelector("#moreoptionsDrawer"),
+       handler = page.querySelector(".ui-more");
+
+   page.addEventListener("pagebeforeshow", function()
+   {
+      var popupWidget;
+
+      tau.helper.DrawerMoreStyle.create(drawer, {handler: ".ui-more",});
+   });
+})();</pre>
+
+<h3>CSS</h3>
+<pre class="prettyprint">
+#moreoptionsDrawer
+{
+   display: none;
+}
+@media all and (-tizen-geometric-shape: circle)
+{
+   #moreoptionsDrawer
+   {
+      display: block;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 100%;
+   }
+   #moreoptionsPopup
+   {
+      display: none;
+   }
+   .sections,
+   .options
+   {
+      text-align: center;
+   }
+   .option-button
+   {
+      width: 158px;
+      height: 158px;
+      background-color: #a4a4a4;
+      position: relative;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      top: 50%;
+      border-radius: 50%;
+      border: none;
+      text-align: center;
+      line-height: 158px;
+      -webkit-appearance: none;
+   }
+}
+</pre>
+
+<h2><a id="options-list"></a>Options</h2>
+
+<table>
+	<tbody>
+	<tr>
+		<th>Option</th>
+		<th>Input type</th>
+		<th>Default value</th>
+		<th>Description</th>
+	</tr>
+
+	<tr>
+		<td class="option"><span style="font-family: Courier New,Courier,monospace">drawerTarget</span></td>
+		<td class="option">string</td>
+		<td class="option">&quot;.ui-page&quot;</td>
+		<td class="option">Drawer appended target. Value type is CSS selector type.</td>
+	</tr>
+
+	<tr>
+		<td class="option"><span style="font-family: Courier New,Courier,monospace">position</span></td>
+		<td class="option">&quot;left&quot; | &quot;right&quot;</td>
+		<td class="option">&quot;left&quot;</td>
+		<td class="option">Set the drawer position.<br>
+		If you set the value is "left", drawer appear from left side.<br>
+		If you set the value is "right", drawer appear from right side.</td>
+	</tr>
+
+	<tr>
+		<td class="option"><span style="font-family: Courier New,Courier,monospace">enable</span></td>
+		<td class="option">boolean</td>
+		<td class="option">true</td>
+		<td class="option">Enable drawer component.</td>
+	</tr>
+
+	<tr>
+		<td class="option"><span style="font-family: Courier New,Courier,monospace">dragEdge</span></td>
+		<td class="option">number</td>
+		<td class="option">1</td>
+		<td class="option">
+		 Set the area on TARGET element to activate the drawer component.<br>
+		 The value is based on ratio, so you should set the value between 0.0 and 1.0.<br>
+		 This area has dependency on the position value such as 'right' or 'left'.<br>
+		 For example, if you set the value to '0.5' and position was set to 'left', the area to activate the drawer component
+		 is set to the left half side of the TARGET element.<br>
+		 If you don't set the handler, TARGET element is set to the element which is selected as Target option value.<br>
+		 However, if you set the handler, this option value is set to '1'.
+		</td>
+	</tr>
+
+	</tbody>
+</table>
+
+<h2><a href="#options-example"></a>HTML Example with Options</h2>
+<h3>Drawer positioning</h3>
+You can declare to 'position' option as below method.
+
+<pre class="prettyprint">&lt;div class="ui-drawer" data-position="left" id="leftdrawer"&gt;
+</pre>
+
+<h3>Drawer targeting</h3>
+You can declare to 'drawerTarget' option as below method.
+
+<pre class="prettyprint">&lt;div class="ui-drawer" data-drawer-target="#drawerPage"&gt;
+</pre>
+
+<h3>Drawer enable</h3>
+
+You can declare to 'enable' option as below method.
+
+<pre class="prettyprint">&lt;div class="ui-drawer" data-enable="true"&gt;
+</pre>
+
+<h3>Drawer drag gesture starting area</h3>
+
+You can declare to 'enable' option as below method.
+
+<pre class="prettyprint">&lt;div class="ui-drawer" data-drag-edge="1"&gt;
+</pre>
+
+
+
+
+
+<h2><a id='drawer-state0.013524989364668727'></a>Drawer state</h2>
+<p>Drawer has four state type. </p>
+
+<ul>
+	<li>"closed" - Drawer closed state.</li>
+	<li>"opened" - Drawer opened state.</li>
+	<li>"sliding" - Drawer is sliding state. This state does not mean that will operate open or close.</li>
+	<li>"settling" - drawer is settling state. 'Settle' means open or close status. So, this state means that drawer is animating for opened or closed state.</p>
+	</li>
+</ul>
+
+<p>You can get those states from getState() method.</p>
+
+	<h2><a id="methods-list"></a>Methods</h2>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-setDragHandler">setDragHandler</a>(Element element) </pre>
+					</td>
+					<td><p>Set Drawer drag handler.<br />If developer use handler, drag event is bound at handler only.</p></td>
+				</tr>
+
+
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-transition">transition</a>(Integer position) </pre>
+					</td>
+					<td><p>Transition Drawer.<br />This method use only positive integer number.</p></td>
+				</tr>
+
+
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-open">open</a>() </pre>
+					</td>
+					<td><p>Open Drawer.</p></td>
+				</tr>
+
+
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-close">close</a>() </pre>
+					</td>
+					<td><p>Close Drawer.</p></td>
+				</tr>
+
+
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint">String <a href="#method-getState">getState</a>() </pre>
+					</td>
+					<td><p>Get state of Drawer.</p></td>
+				</tr>
+
+
+		</tbody>
+	</table>
+	<dl>
+
+
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-setDragHandler">setDragHandler</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Set Drawer drag handler.<br />If developer use handler, drag event is bound at handler only.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">setDragHandler(Element element) </pre>
+					</div>
+
+					<div class="description">
+						<p>
+							<h5>Running example in pure JavaScript:</h5>
+						</p>
+						<pre class="prettyprint">
+&lt;!--Drawer handlers--&gt;
+&lt;a id=&quot;leftDrawerHandler&quot; href=&quot;#leftDrawer&quot; class=&quot;drawer-handler&quot;&gt;Left Handler&lt;/a&gt;
+&lt;div id=&quot;leftDrawer&quot; class=&quot;ui-drawer&quot; data-drawer-target=&quot;#drawerSinglePage&quot; data-position=&quot;left&quot;
+     data-enable=&quot;true&quot; data-drag-edge=&quot;1&quot;&gt;
+   &lt;header class=&quot;ui-header&quot;&gt;
+      &lt;h2 class=&quot;ui-title&quot;&gt;Left Drawer&lt;/h2&gt;
+   &lt;/header&gt;
+   &lt;div id=&quot;leftClose&quot; class=&quot;ui-content&quot;&gt;
+      &lt;p&gt;Click Close&lt;/p&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var handler = document.getElementById(&quot;leftDrawerHandler&quot;),
+       drawer = tau.widget.Drawer(document.querySelector(handler.getAttribute(&quot;href&quot;));
+
+   drawer.setDragHandler(handler);
+&lt;/script&gt;</pre>
+					</div>
+
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required / optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+
+
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">element</span></td>
+						<td>Element</td>
+						<td>required</td>
+						<td></td>
+						<td></td>
+					</tr>
+
+
+					</tbody>
+					</table>
+					</div>
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+
+							No Return Value
+
+					</div>
+
+				</dd>
+
+
+
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-transition">transition</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Transition Drawer.<br />This method use only positive integer number.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">transition(Integer position) </pre>
+					</div>
+
+					<div class="description">
+						<p>
+							<h5>Running example in pure JavaScript:</h5>
+							<pre class="prettyprint">
+&lt;a id=&quot;leftDrawerHandler&quot; href=&quot;#leftDrawer&quot; class=&quot;drawer-handler&quot;&gt;Left Handler&lt;/a&gt;
+&lt;div id=&quot;leftDrawer&quot; class=&quot;ui-drawer&quot; data-drawer-target=&quot;#drawerSinglePage&quot; data-position=&quot;left&quot;
+     data-enable=&quot;true&quot; data-drag-edge=&quot;1&quot;&gt;
+   &lt;header class=&quot;ui-header&quot;&gt;
+      &lt;h2 class=&quot;ui-title&quot;&gt;Left Drawer&lt;/h2&gt;
+   &lt;/header&gt;
+   &lt;div id=&quot;leftClose&quot; class=&quot;ui-content&quot;&gt;
+      &lt;p&gt;Click Close&lt;/p&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var handler = document.getElementById(&quot;leftDrawerHandler&quot;),
+       drawer = tau.widget.Drawer(document.querySelector(handler.getAttribute(&quot;href&quot;));
+   drawer.Transition(60);
+&lt;/script&gt;</pre>
+
+						</p>
+					</div>
+
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required / optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+
+
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">position</span></td>
+						<td>Integer</td>
+						<td>required</td>
+						<td></td>
+						<td></td>
+					</tr>
+
+
+					</tbody>
+					</table>
+					</div>
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+
+							No Return Value
+
+					</div>
+
+				</dd>
+
+
+
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-open">open</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Open Drawer.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">open() </pre>
+					</div>
+
+					<div class="description">
+						<p>
+							<h5>Running example in pure JavaScript:</h5>
+						<pre class="prettyprint">
+&lt;!--Drawer handlers--&gt;
+&lt;div id=&quot;leftDrawer&quot; class=&quot;ui-drawer&quot; data-drawer-target=&quot;#drawerSinglePage&quot; data-position=&quot;left&quot;
+     data-enable=&quot;true&quot; data-drag-edge=&quot;1&quot;&gt;
+   &lt;header class=&quot;ui-header&quot;&gt;
+      &lt;h2 class=&quot;ui-title&quot;&gt;Left Drawer&lt;/h2&gt;
+   &lt;/header&gt;
+   &lt;div id=&quot;leftClose&quot; class=&quot;ui-content&quot;&gt;
+      &lt;p&gt;Click Close&lt;/p&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var handler = document.getElementById(&quot;leftDrawerHandler&quot;),
+       drawer = tau.widget.Drawer(document.querySelector(handler.getAttribute(&quot;href&quot;));
+
+   drawer.open();
+&lt;/script&gt;</pre>
+
+						</p>
+					</div>
+
+
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+
+							No Return Value
+
+					</div>
+
+				</dd>
+
+
+
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-close">close</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Close Drawer.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">close() </pre>
+					</div>
+
+					<div class="description">
+						<p>
+						<h5>Running example in pure JavaScript:</h5>
+						<pre class="prettyprint">
+&lt;!--Drawer handlers--&gt;
+&lt;div id=&quot;leftDrawer&quot; class=&quot;ui-drawer&quot; data-drawer-target=&quot;#drawerSinglePage&quot; data-position=&quot;left&quot;
+     data-enable=&quot;true&quot; data-drag-edge=&quot;1&quot;&gt;
+   &lt;header class=&quot;ui-header&quot;&gt;
+      &lt;h2 class=&quot;ui-title&quot;&gt;Left Drawer&lt;/h2&gt;
+   &lt;/header&gt;
+   &lt;div id=&quot;leftClose&quot; class=&quot;ui-content&quot;&gt;
+      &lt;p&gt;Click Close&lt;/p&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var handler = document.getElementById(&quot;leftDrawerHandler&quot;),
+       drawer = tau.widget.Drawer(document.querySelector(handler.getAttribute(&quot;href&quot;));
+
+   drawer.close();
+&lt;/script&gt;</pre>
+
+						</p>
+					</div>
+
+
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+
+							No Return Value
+
+					</div>
+
+				</dd>
+
+
+
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-getState">getState</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Get state of Drawer.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">String getState() </pre>
+					</div>
+
+					<div class="description">
+						<p>
+						<h5>Running example in pure JavaScript:</h5>
+						<pre class="prettyprint">
+&lt;!--Drawer handlers--&gt;
+&lt;div id=&quot;leftDrawer&quot; class=&quot;ui-drawer&quot; data-drawer-target=&quot;#drawerSinglePage&quot; data-position=&quot;left&quot;
+     data-enable=&quot;true&quot; data-drag-edge=&quot;1&quot;&gt;
+   &lt;header class=&quot;ui-header&quot;&gt;
+      &lt;h2 class=&quot;ui-title&quot;&gt;Left Drawer&lt;/h2&gt;
+   &lt;/header&gt;
+   &lt;div id=&quot;leftClose&quot; class=&quot;ui-content&quot;&gt;
+      &lt;p&gt;Click Close&lt;/p&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var handler = document.getElementById(&quot;leftDrawerHandler&quot;),
+       drawer = tau.widget.Drawer(document.querySelector(handler.getAttribute(&quot;href&quot;)),
+       state;
+
+   state = drawer.getState();
+&lt;/script&gt;</pre>
+
+						</p>
+					</div>
+
+
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>String</td>
+									<td>Drawer state {"closed"|"opened"|"sliding"|"settling"}</td>
+								</tr>
+								</tbody>
+							</table>
+
+
+					</div>
+
+				</dd>
+
+
+		</dl>
+
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

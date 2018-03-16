@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head>
+  <script type="text/javascript" src="../../snippet.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="../../styles.css" rel="StyleSheet" type="text/css" />
+  <link href="../../snippet.css" rel="StyleSheet" type="text/css" />
+  <title>Application Page Layout</title>
+ </head>
+ <body onload="prettyPrint()" id="content">
+
+<h1>Support for Circular UI</h1>
+<p>Tizen Wearable Web UI Framework supports different types of devices(rectangle and circle) with the same application.
+<br><br>To support Circular UI along with Rectangular UI, media query is required.</p>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	<li><a href="#apply">How to apply Circular UI</a></li>
+	<li><a href="#inCss">How to override css style for Circular UI using media query</a></li>
+	<li><a href="#inJs">How to write code selectively for Circular UI in JS</a></li>
+	<li><a href="#components">Support guide for UI components</a></li>
+</ol>
+
+<h2><a id="apply"></a>How to apply Circular UI</h2>
+<p>In order to support the Circular UI, you need to do the following.<br>
+<br>&nbsp;&nbsp;1. Include the link tag for the latest "tau.css" file into &lt;head&gt; part in HTML.
+<br>&nbsp;&nbsp;&nbsp; ( <b>Note</b> : For the compatibility with Rectangular UI, you must use the latest version of TAU library. )<br>
+<br>&nbsp;&nbsp;2. Include the link tag for the latest "tau.circle.css" file with media query feature "-tizen-geometric-shape: circle" next to the link tag for the "tau.css".
+<br>&nbsp;&nbsp;&nbsp; ( <b>Note</b> : Adding the "tau.circle.css" file following the general "tau.css" file will cover the additional Circular UI. )<br>
+<br>&nbsp;&nbsp;3. Include the link tag for the latest "tau.js" script file at the end of &lt;body&gt; part of HTML.<br>
+<br>&nbsp;&nbsp;4. For writing separate code for Circular UI in JS, you can use "tau.support.shape.circle" property.<br>
+
+<pre class="prettyprint">
+&lt;head name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Support for Circular UI&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel=&quot;stylesheet&quot; href=&quot;tau.css&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- CSS media query on a link element --&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel=&quot;stylesheet&quot; media=&quot;all and (-tizen-geometric-shape: circle)&quot; href=&quot;tau.circle.css&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel=&quot;stylesheet&quot; href=&quot;css/stlye.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;script type=&quot;text/javascript&quot; src=&quot;tau.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (tau.support.shape.circle) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* implement your codes for Circular UI here */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* implement your codes for Rectangular UI here */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;
+&lt;/body&gt;
+</pre>
+
+<p>The following figure shows an example of how media query("-tizen-geometric-shape: circle") would work in different devices.</p>
+<p class="figure"> Figure: apply to rectangular device and circular device with media query</p>
+	<p style="text-align:center;">
+	<img src="../../../images/circular_support.png" />
+</p><br>
+
+<h2><a id="inCss"></a>How to override css style for Circular UI using media query</h2>
+<p>In order for some styles to be applied selectively, you can use media query feature "-tizen-geometric-shape" with "rectangle" or "circle" value.<p>
+
+<h3>Media query feature for Tizen devices</h3>
+
+<p>Media query in Tizen Wearable Web UI Framework utilizes "-tizen-geometric-shape" feature with "rectangle" or "circle" value to distinguish type difference.</p>
+&nbsp;&nbsp;( <b>Note</b> : "-tizen-geometric-shape" feature is only available in Tizen devices. )
+
+<table>
+	<caption>Table: Description for "-tizen-geometric-shape" feature.</caption>
+<tbody>
+	<tr>
+		<th colspan="2">-tizen-geometric-shape</th>
+	</tr>
+		<td>Value</td>
+		<td>rectangle | circle</td>
+	</tr>
+	<tr>
+		<td>Applied to</td>
+		<td>Visual media types</td>
+	</tr>
+	<tr>
+		<td>Accept min/max prefixes</td>
+		<td>No</td>
+	</tr>
+</tbody>
+</table><br>
+
+<pre class="prettyprint">
+.className {
+	/* implement basic css style for Rectangular UI here */
+}
+
+@media screen and (-tizen-geometric-shape: circle) {
+	.className	{
+		/* implement css style to be overridden for Circular UI here */
+	}
+}
+</pre><br>
+
+<h2><a id="inJs"></a>How to write code selectively for Circular UI in JS</h2>
+<p>Tizen Wearable Web UI FW provides the property "tau.support.shape.circle" that checks whether the type is circle or not. If you want implement code selectively for Circular UI and Rectangular UI, you can use the property with boolean value.</p>
+&nbsp;&nbsp;( <b>Note</b> : For developing in a browser environment, this property is always set true when "tau.circle.css" is loaded. )<p>
+
+<pre class="prettyprint">
+if (tau.support.shape.circle) {
+	/* implement your codes for Circular UI here */
+} else {
+	/* implement your codes for Rectangular UI here */
+}
+</pre><br>
+
+<h2><a id="components"></a>Support guide for UI components</h2>
+<p>The following is how to use both Rectangular UI components and Circular UI components.<br>
+
+<h3>Index of UI Components</h3>
+<ol class="toc">
+	<li><a href="./components/scrollbar.htm">Circular Scroll Bar</a></li>
+	<p>How to support circle-shaped scroll bar<p>
+	<li><a href="./components/rotaryevent.htm">Rotary Event Handling</a></li>
+	<p>How to handle rotary event in application<p>
+	<li><a href="./components/snaplist.htm">List</a></li>
+	<p>How to support list<p>
+	<li><a href="./components/progress.htm">Circle Progress Bar</a></li>
+	<p>How to support circle progress bar<p>
+	<li><a href="./components/indexscroll.htm">Index Scroll Bar</a></li>
+	<p>How to support index scroll bar<p>
+	<li><a href="./components/processing.htm">Processing</a></li>
+	<p>How to support processing<p>
+	<li><a href="./components/moreoptions.htm">More Options</a></li>
+	<p>How to support more options button<p>
+	<li><a href="./components/footerbutton.htm">Footer Button</a></li>
+	<p>How to support footer buttons<p>
+	<li><a href="./components/thumbnail.htm">Thumbnail</a></li>
+	<p>How to support thumbnail<p>
+	<li><a href="./components/popup.htm">Popup</a></li>
+	<p>How to support popup<p>
+</ol>
+
+<h2>Where to Go Next</h2>
+<ul>
+<li><a href="../index.htm">Tizen Wearable Web UI Framework Reference</a></li></ul>
+
+ <div id="footer">
+   <hr size="1" />
+   <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font> 
+  </div>
+
+  <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25976949-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+ </body>
+</html>

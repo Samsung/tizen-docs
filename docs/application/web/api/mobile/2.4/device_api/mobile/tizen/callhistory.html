@@ -1,0 +1,1095 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>Callhistory API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Callhistory">
+<div class="supported-platforms"><img class="mobile-optional" title="Optional, Not supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
+<div class="title"><h1>Callhistory API</h1></div>
+<div class="brief">
+ This API provides interfaces and methods for retrieving information from the call history.
+        </div>
+<div class="description">
+        <p>
+For more information on the Callhistory features, see <a href="https://developer.tizen.org/development/guides/web-application/personal-data/call-history">Call History Guide</a>.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>1.1. <a href="#CallHistoryObject">CallHistoryObject</a>
+</li>
+<li>1.2. <a href="#RemoteParty">RemoteParty</a>
+</li>
+<li>1.3. <a href="#CallHistoryEntry">CallHistoryEntry</a>
+</li>
+<li>1.4. <a href="#CallHistory">CallHistory</a>
+</li>
+<li>1.5. <a href="#CallHistoryEntryArraySuccessCallback">CallHistoryEntryArraySuccessCallback</a>
+</li>
+<li>1.6. <a href="#CallHistoryChangeCallback">CallHistoryChangeCallback</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#api-features">Related Feature</a>
+</li>
+<li>3. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#CallHistoryObject">CallHistoryObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#RemoteParty">RemoteParty</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#CallHistoryEntry">CallHistoryEntry</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#CallHistory">CallHistory</a></td>
+<td>void <a href="#CallHistory::find">find</a> (<a href="#CallHistoryEntryArraySuccessCallback">CallHistoryEntryArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, optional <a href="tizen.html#SortMode">SortMode</a>? sortMode, optional unsigned long? limit, optional unsigned long? offset)<br>
+    void <a href="#CallHistory::remove">remove</a> (<a href="#CallHistoryEntry">CallHistoryEntry</a> entry)<br>
+    void <a href="#CallHistory::removeBatch">removeBatch</a> (<a href="#CallHistoryEntry">CallHistoryEntry</a>[] entries, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
+    void <a href="#CallHistory::removeAll">removeAll</a> (optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
+    long <a href="#CallHistory::addChangeListener">addChangeListener</a> (<a href="#CallHistoryChangeCallback">CallHistoryChangeCallback</a> observer)<br>
+    void <a href="#CallHistory::removeChangeListener">removeChangeListener</a> (long handle)</td>
+</tr>
+<tr>
+<td><a href="#CallHistoryEntryArraySuccessCallback">CallHistoryEntryArraySuccessCallback</a></td>
+<td>void <a href="#CallHistoryEntryArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#CallHistoryEntry">CallHistoryEntry</a>[] entries)</td>
+</tr>
+<tr>
+<td><a href="#CallHistoryChangeCallback">CallHistoryChangeCallback</a></td>
+<td>void <a href="#CallHistoryChangeCallback::onadded">onadded</a> (<a href="#CallHistoryEntry">CallHistoryEntry</a>[] newItems)<br>
+    void <a href="#CallHistoryChangeCallback::onchanged">onchanged</a> (<a href="#CallHistoryEntry">CallHistoryEntry</a>[] changedItems)<br>
+    void <a href="#CallHistoryChangeCallback::onremoved">onremoved</a> (DOMString[] removedItems)</td>
+</tr>
+</tbody>
+</table>
+<div class="interfaces" id="interfaces-section">
+<h2>1. Interfaces</h2>
+<div class="interface" id="CallHistoryObject">
+<a class="backward-compatibility-anchor" name="::Callhistory::CallHistoryObject"></a><h3>1.1. CallHistoryObject</h3>
+<div class="brief">
+ This interface defines what is instantiated by the <em>Tizen </em>object from the Tizen Platform.
+The <em>tizen.callhistory</em> object allows access to the CallHistory API.
+</em></em>          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface CallHistoryObject {
+        readonly attribute <a href="#CallHistory">CallHistory</a> callhistory;
+    };</pre>
+<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#CallHistoryObject">CallHistoryObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+</div>
+<div class="interface" id="RemoteParty">
+<a class="backward-compatibility-anchor" name="::Callhistory::RemoteParty"></a><h3>1.2. RemoteParty</h3>
+<div class="brief">
+ This interface represents remote parties.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface RemoteParty {
+        readonly attribute DOMString? remoteParty;
+
+        readonly attribute <a href="contact.html#PersonId">PersonId</a>? personId;
+
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="RemoteParty::remoteParty">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">remoteParty</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The remote party identifier (RPID).
+The RPID is a unique identifier used by a service with call capability. It also includes phone numbers.
+Contacts are also defined per service, so an RPID can be resolved to a Contact.
+A <var>null </var>value means that the remote is hidden (private number).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="RemoteParty::personId">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">PersonId </span><span class="name">personId</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The identifier of the person to whom the raw contact belongs.
+            </div>
+<div class="description">
+            <p>
+If the contact cannot be resolved, the value is <var>null</var>.
+See <a href="contact.html">Contact API</a> for more information.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="CallHistoryEntry">
+<a class="backward-compatibility-anchor" name="::Callhistory::CallHistoryEntry"></a><h3>1.3. CallHistoryEntry</h3>
+<div class="brief">
+ This interface represents the subset of properties of calls, which become a call record in the call history after the call ends.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface CallHistoryEntry {
+
+        readonly attribute DOMString uid;
+
+        readonly attribute DOMString type;
+
+        readonly attribute DOMString[]? features;
+
+        readonly attribute <a href="#RemoteParty">RemoteParty</a>[] remoteParties;
+
+        readonly attribute Date startTime;
+
+        readonly attribute unsigned long duration;
+
+        attribute DOMString direction;
+
+        readonly attribute DOMString? callingParty;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="CallHistoryEntry::uid">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">uid</span></span><div class="brief">
+ The unique identifier of a call record.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="CallHistoryEntry::type">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">type</span></span><div class="brief">
+ The service type of the call saved to call history.
+            </div>
+<div class="description">
+            <p>
+The following values are supported:
+            </p>
+            <ul>
+              <li>
+TEL - for all protocols with phone number addressing (PSTN, GSM, CDMA, LTE, etc.)               </li>
+              <li>
+XMPP -  for generic XMPP calls              </li>
+              <li>
+SIP - for generic SIP calls              </li>
+            </ul>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="CallHistoryEntry::features">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString[]
+                      </span><span class="name">features</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The features associated with the call service saved to call history.
+The following values are supported:
+            </div>
+<div class="description">
+            <ul>
+              <li>
+CALL - for all call types              </li>
+              <li>
+VOICECALL - for voice-only calls               </li>
+              <li>
+VIDEOCALL - for audio and video channel support in a call              </li>
+              <li>
+EMERGENCYCALL - to denote an emergency call              </li>
+            </ul>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="CallHistoryEntry::remoteParties">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">RemoteParty[]
+                      </span><span class="name">remoteParties</span></span><div class="brief">
+ The remote parties participating in the call.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="CallHistoryEntry::startTime">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">Date </span><span class="name">startTime</span></span><div class="brief">
+ The start time of the call.
+This attribute is the moment when media channels come up. The exact meaning is defined by the back-end.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="CallHistoryEntry::duration">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long </span><span class="name">duration</span></span><div class="brief">
+ The duration of the call in seconds.
+This attribute is the duration from media channels coming up to the moment when media channels tear down on the same call service.
+If the call is migrated to another service, another call history entry is used.
+The exact meaning is defined by the back-end.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="CallHistoryEntry::direction">
+<span class="attrName"><span class="type">DOMString </span><span class="name">direction</span></span><div class="brief">
+ Indicates whether the call had been dialed, received, missed, blocked, or rejected.
+The following values are supported:
+            </div>
+<div class="description">
+            <ul>
+              <li>
+DIALED - for dialed calls              </li>
+              <li>
+RECEIVED - for received calls              </li>
+              <li>
+MISSEDNEW - for missed calls not seen yet              </li>
+              <li>
+MISSED - for missed calls              </li>
+              <li>
+BLOCKED - for blocked calls              </li>
+              <li>
+REJECTED - for rejected calls              </li>
+            </ul>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="CallHistoryEntry::callingParty">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">callingParty</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Indicates the phone number of SIM card used for the call.
+            </div>
+<div class="description">
+            <p>
+It is the device's local phone number - the number assigned to the SIM card (see <a href="systeminfo.html#SystemInfoSIM::msisdn">SystemInfoSIM</a>).
+If there is more than one SIM card in the device, this attribute can be used to recognize which SIM card was used to make/receive the call.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="remark"> Remark : </span>
+ A <var>null </var>value means that the phone number of the device cannot be retrieved because the device user might not allow this functionality.
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="CallHistory">
+<a class="backward-compatibility-anchor" name="::Callhistory::CallHistory"></a><h3>1.4. CallHistory</h3>
+<div class="brief">
+ This interface manages call history.
+Apps can read or delete call history (depending on permission).
+Modifying call history is allowed for certain attributes, like direction.
+Adding call history is owned by the back-end. Filtering is supported for all fields of <em>CallHistoryEntry</em>.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface CallHistory {
+
+        void find(<a href="#CallHistoryEntryArraySuccessCallback">CallHistoryEntryArraySuccessCallback</a> successCallback,
+                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                  optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter,
+                  optional <a href="tizen.html#SortMode">SortMode</a>? sortMode,
+                  optional unsigned long? limit,
+                  optional unsigned long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void remove(<a href="#CallHistoryEntry">CallHistoryEntry</a> entry) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void removeBatch(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] entries,
+                         optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void removeAll(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        long addChangeListener(<a href="#CallHistoryChangeCallback">CallHistoryChangeCallback</a> observer) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void removeChangeListener(long handle) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="CallHistory::find">
+<a class="backward-compatibility-anchor" name="::Callhistory::CallHistory::find"></a><code><b><span class="methodName">find</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Finds and returns call history.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#CallHistoryEntryArraySuccessCallback">CallHistoryEntryArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, optional <a href="tizen.html#SortMode">SortMode</a>? sortMode, optional unsigned long? limit, optional unsigned long? offset);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="description">
+            <p>
+The <em>errorCallback()</em> is launched with these error types:
+            </p>
+            <ul>
+              <li>
+InvalidValuesError - If any of the input parameters contain an invalid value.              </li>
+              <li>
+UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/callhistory.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>: 
+ A handler for a query result set.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ The method to call when an error occurs.
+                </li>
+          <li class="param">
+<span class="name">filter</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ A filter defined on <em>CallHistoryEntry </em>attributes. It can be a composite filter.
+                </li>
+          <li class="param">
+<span class="name">sortMode</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ The sort order in which call history is returned.
+                </li>
+          <li class="param">
+<span class="name">limit</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ The maximum limit of a query result (It has the same meaning as SQL LIMIT).
+If the limit is 0, the query result has no limit.
+                </li>
+          <li class="param">
+<span class="name">offset</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ The offset in the result set, from where the results are listed (It has the same semantics as SQL OFFSET).<br>The maximum number of results listed is the value of the specified <em>limit</em> parameter. Default value is <var> 0</var>, meaning no offset.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if this functionality is not allowed.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Defines success callback
+ function onSuccess(results) {
+     console.log(results.length + " call history item(s) found!");
+     for (var i=0; i&lt;results.length; i++) {
+         console.log(i + ". " + results[i].toString()); // process the CallHistoryEntry
+     }
+ }
+
+ // Defines error callback
+ function onError(error) {
+     console.log("Query failed" + error.name);
+ }
+
+ // Defines filter: list CS calls, most recent first
+ var filter = new tizen.AttributeFilter("type", "EXACTLY", "TEL");
+
+ // Defines sort mode: descending on call start time.
+ var sortMode = new tizen.SortMode("startTime", "DESC");
+
+ // Makes the query and wires up the callbacks
+ tizen.callhistory.find(onSuccess,
+                         onError,
+                         filter,
+                         sortMode);
+
+ var numberfilter = new tizen.AttributeFilter(
+                                 "remoteParties.remoteParty",
+                                 "EXACTLY",
+                                 "123456789");
+
+ // Creates a composite filter for time constraints
+ var y2009Filter = new tizen.AttributeRangeFilter(
+                                "startTime",
+                                new Date(2009, 0, 1),
+                                new Date(2010, 0, 1));
+
+ var y2011Filter = new tizen.AttributeRangeFilter(
+                                "startTime",
+                                new Date(2011, 0, 1),
+                                new Date(2012, 0, 1));
+
+ var datefilter = new tizen.CompositeFilter("UNION", [y2009Filter, y2011Filter]);
+
+ // Creates a filter to find all video calls (including cellular, skype, etc)
+ // The filter matches any features from the "features" array exactly
+ var tfilter = new tizen.AttributeFilter("features", "EXACTLY", "VIDEOCALL");
+
+ // Creates a composite filter
+ var ifilter = new tizen.CompositeFilter("INTERSECTION",
+                                         [numberFilter, dateFilter, tfilter]);
+
+ // Makes the query and wires up the callbacks; reuse sortMode
+ tizen.callhistory.find(onSuccess,
+                         onError,
+                         ifilter,
+                         sortMode);
+
+ </pre>
+</div>
+</dd>
+<dt class="method" id="CallHistory::remove">
+<a class="backward-compatibility-anchor" name="::Callhistory::CallHistory::remove"></a><code><b><span class="methodName">remove</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes call history synchronously.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void remove(<a href="#CallHistoryEntry">CallHistoryEntry</a> entry);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/callhistory.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">entry</span>: 
+ Call history entry to be deleted.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any input parameter contains invalid values.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Defines success callback
+ function onSuccess(results) {
+     if (results.length &gt; 0)
+         tizen.callhistory.remove(results[0]);
+ }
+
+ // Defines error callback
+ function onError(error) {
+     console.log("Query failed" + error.name);
+ }
+
+ // Makes the query and wires up the callbacks
+ tizen.callhistory.find(onSuccess, onError);
+
+ </pre>
+</div>
+</dd>
+<dt class="method" id="CallHistory::removeBatch">
+<a class="backward-compatibility-anchor" name="::Callhistory::CallHistory::removeBatch"></a><code><b><span class="methodName">removeBatch</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes a call history list asynchronously.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeBatch(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] entries, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="description">
+            <p>
+The <em>errorCallback()</em> is launched with these error types:
+            </p>
+            <ul>
+              <li>
+InvalidValuesError - If any of the input parameters contain an invalid value.              </li>
+              <li>
+UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/callhistory.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">entries</span>: 
+ A list of call history entries to delete.
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ A generic success handler.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ An error handler.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Defines success callback
+ function onSuccess(results) {
+     tizen.callhistory.removeBatch(results);
+ }
+
+ // Defines error callback
+ function onError(error) {
+     console.log("Query failed" + error.name);
+ }
+
+ // Makes the query and wires up the callbacks
+ tizen.callhistory.find(onSuccess, onError);
+
+ </pre>
+</div>
+</dd>
+<dt class="method" id="CallHistory::removeAll">
+<a class="backward-compatibility-anchor" name="::Callhistory::CallHistory::removeAll"></a><code><b><span class="methodName">removeAll</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes call history asynchronously.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeAll(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="description">
+            <p>
+The <em>errorCallback()</em> is launched with these error types:
+            </p>
+            <ul>
+              <li>
+InvalidValuesError - If any of the input parameters contain an invalid value.              </li>
+              <li>
+UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/callhistory.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ A generic success handler.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ An error handler.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if this functionality is not allowed.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+</dd>
+<dt class="method" id="CallHistory::addChangeListener">
+<a class="backward-compatibility-anchor" name="::Callhistory::CallHistory::addChangeListener"></a><code><b><span class="methodName">addChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Adds a listener to register for callback to observe call history changes.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addChangeListener(<a href="#CallHistoryChangeCallback">CallHistoryChangeCallback</a> observer);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/callhistory.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">observer</span>: 
+ A callback for handling the list of new or changed or <em>CallHistoryEntry </em>objects in the call history.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long A handle which can be used for unregistering.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any input parameter contains invalid values.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var onListenerCB = {
+     onadded: function(newItems) {
+         console.log("New Item added");
+         for (var i in newItems) {
+             console.log("Item " + i + " startTime: " + newItems[i].startTime);
+         }
+     },
+     onchanged: function(changedItems) {
+         console.log("Items changed");
+         for (var i in changedItems) {
+             console.log("Item " + i + " direction: " + changedItems[i].direction);
+         }
+     },
+     onremoved: function(removedItems) {
+         console.log("Items removed");
+         for(var i in removedItems)  {
+            console.log("Item " + i + " : " + removedItems[i]);
+         }
+     }};
+
+ try {
+     // Registers a call history callback
+     var handle = tizen.callhistory.addChangeListener(onListenerCB);
+
+     // Unregisters a previously registered listener
+     tizen.callhistory.removeChangeListener(handle);
+ } catch (error) {
+     console.log("Exception - code: " + error.name + " message: " + error.message);
+ }
+
+ </pre>
+</div>
+</dd>
+<dt class="method" id="CallHistory::removeChangeListener">
+<a class="backward-compatibility-anchor" name="::Callhistory::CallHistory::removeChangeListener"></a><code><b><span class="methodName">removeChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes a listener to unregister a previously registered listener.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeChangeListener(long handle);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/callhistory.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">handle</span>: 
+ The previously obtained listener handle.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any input parameter contains invalid values.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="CallHistoryEntryArraySuccessCallback">
+<a class="backward-compatibility-anchor" name="::Callhistory::CallHistoryEntryArraySuccessCallback"></a><h3>1.5. CallHistoryEntryArraySuccessCallback</h3>
+<div class="brief">
+ This is a callback interface of <em>CallHistory </em>operations.
+For example code, see <em>CallHistory </em>interface.
+          </div>
+<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface CallHistoryEntryArraySuccessCallback {
+        void onsuccess(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] entries);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="CallHistoryEntryArraySuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Callhistory::CallHistoryEntryArraySuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the queries on call history have been successfully completed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] entries);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">entries</span>: 
+ An array of <em>CallHistoryEntry </em>objects, representing the result set of the query over the call history.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="CallHistoryChangeCallback">
+<a class="backward-compatibility-anchor" name="::Callhistory::CallHistoryChangeCallback"></a><h3>1.6. CallHistoryChangeCallback</h3>
+<div class="brief">
+ This is a callback interface of <em> CallHistory </em>operations.
+For example code, see <em>CallHistory </em>interface.
+          </div>
+<pre class="webidl prettyprint">    [Callback, NoInterfaceObject]
+    interface CallHistoryChangeCallback {
+        void onadded(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] newItems);
+
+        void onchanged(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] changedItems);
+
+        void onremoved(DOMString[] removedItems);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="CallHistoryChangeCallback::onadded">
+<a class="backward-compatibility-anchor" name="::Callhistory::CallHistoryChangeCallback::onadded"></a><code><b><span class="methodName">onadded</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a new call history item is added.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onadded(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] newItems);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">newItems</span>: 
+ An array of <em>CallHistoryEntry </em>objects, representing the new items added to call history.
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="CallHistoryChangeCallback::onchanged">
+<a class="backward-compatibility-anchor" name="::Callhistory::CallHistoryChangeCallback::onchanged"></a><code><b><span class="methodName">onchanged</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the call history has been changed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onchanged(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] changedItems);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">changedItems</span>: 
+ An array of <em>CallHistoryEntry </em>objects, representing the changed items in call history.
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="CallHistoryChangeCallback::onremoved">
+<a class="backward-compatibility-anchor" name="::Callhistory::CallHistoryChangeCallback::onremoved"></a><code><b><span class="methodName">onremoved</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the call history has been removed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onremoved(DOMString[] removedItems);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">removedItems</span>: 
+ An array of a UID of <em>CallHistoryEntry </em>objects, representing the removed items in call history.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="api-features">2. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the call log application runs on a device with the telephony feature, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/network.telephony</li>
+</div>
+<p></p>
+                    For more information, see <a href="https://developer.tizen.org/development/getting-started/web-application/understanding-tizen-programming/application-filtering">Application Filtering</a>.
+</div>
+<h2 id="full-webidl">3. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Callhistory {
+    [NoInterfaceObject] interface CallHistoryObject {
+        readonly attribute <a href="#CallHistory">CallHistory</a> callhistory;
+    };
+
+    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#CallHistoryObject">CallHistoryObject</a>;
+
+    [NoInterfaceObject] interface RemoteParty {
+        readonly attribute DOMString? remoteParty;
+
+        readonly attribute <a href="contact.html#PersonId">PersonId</a>? personId;
+
+    };
+
+    [NoInterfaceObject] interface CallHistoryEntry {
+
+        readonly attribute DOMString uid;
+
+        readonly attribute DOMString type;
+
+        readonly attribute DOMString[]? features;
+
+        readonly attribute <a href="#RemoteParty">RemoteParty</a>[] remoteParties;
+
+        readonly attribute Date startTime;
+
+        readonly attribute unsigned long duration;
+
+        attribute DOMString direction;
+
+        readonly attribute DOMString? callingParty;
+    };
+
+    [NoInterfaceObject] interface CallHistory {
+
+        void find(<a href="#CallHistoryEntryArraySuccessCallback">CallHistoryEntryArraySuccessCallback</a> successCallback,
+                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                  optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter,
+                  optional <a href="tizen.html#SortMode">SortMode</a>? sortMode,
+                  optional unsigned long? limit,
+                  optional unsigned long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void remove(<a href="#CallHistoryEntry">CallHistoryEntry</a> entry) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void removeBatch(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] entries,
+                         optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void removeAll(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        long addChangeListener(<a href="#CallHistoryChangeCallback">CallHistoryChangeCallback</a> observer) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void removeChangeListener(long handle) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };
+
+    [Callback=FunctionOnly, NoInterfaceObject] interface CallHistoryEntryArraySuccessCallback {
+        void onsuccess(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] entries);
+    };
+
+    [Callback, NoInterfaceObject]
+    interface CallHistoryChangeCallback {
+        void onadded(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] newItems);
+
+        void onchanged(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] changedItems);
+
+        void onremoved(DOMString[] removedItems);
+    };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

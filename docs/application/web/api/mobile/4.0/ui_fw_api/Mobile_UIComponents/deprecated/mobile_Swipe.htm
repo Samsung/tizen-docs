@@ -1,0 +1,427 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<script type="text/javascript" src="../../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Swipe</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+<h1>Swipe</h1>
+
+<p>The swipe component shows a list view on the screen where the list items can be swiped vertically to show a menu.</p>
+
+<table class="note deprecated">
+        <tbody>
+                <tr>
+                        <th class="note deprecated">Note</th>
+                </tr>
+                <tr>
+                        <td class="note deprecated">This component has been <span class="deprecated">DEPRECATED since <b>Tizen 2.4</b></span> and will be <i>deleted in Tizen 3.0.</i><br>
+To support Backward compatibility, please import tau.support-2.3.js.</td>
+                </tr>
+        </tbody>
+</table>
+
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+		<li><a href="#default-selectors0.22067294060252607">Default Selectors</a>
+
+		</li>
+		<li><a href="#menu-examples0.3870438882149756">Manual Constructor</a></li>
+		<li><a href="#html-examples0.3870438882149756">HTML Examples</a>
+						</li>
+		<li><a href="#method-examples">Methods</a></li>
+		<li><a href="#opening-examples">Opening the Swipe component</a></li>
+
+
+</ol>
+
+<h2><a id="default-selectors0.22067294060252607"></a>Default Selectors</h2>
+
+<p>By default, all HTML elements with the <code>data-role=&quot;swipe&quot;</code> attribute are displayed as swipes.</p>
+
+
+
+<h2><a id="menu-examples0.3870438882149756"></a>Manual Constructor</h2>
+<p>To manually create a swipe component, use the component constructor from the <code>tau</code> namespace (<strong>RECOMMENDED</strong>):</p>
+<pre class="prettyprint">
+&lt;div id=&quot;swipe&quot;&gt;
+   &lt;div data-role=&quot;swipe-item-cover&quot;&gt;
+      Cover - swipe to open
+   &lt;/div&gt;
+   &lt;div data-role=&quot;swipe-item&quot;&gt;
+      &lt;div data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;First item&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var swipeElement = document.getElementById(&quot;swipe&quot;),
+       swipe = tau.widget.Swipe(swipeElement);
+&lt;/script&gt;
+</pre>
+
+<p>If the jQuery library is loaded, you can use its method (<strong>support for backward compatibility</strong>):</p>
+
+<pre class="prettyprint">
+&lt;div id=&quot;swipe&quot;&gt;
+   &lt;div data-role=&quot;swipe-item-cover&quot;&gt;
+      Cover - swipe to open
+   &lt;/div&gt;
+   &lt;div data-role=&quot;swipe-item&quot;&gt;
+      &lt;div data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;First item&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var swipe = $(&quot;#swipe&quot;).swipe();
+&lt;/script&gt;
+</pre>
+
+<h2><a id="html-examples0.3870438882149756"></a>HTML Examples</h2>
+
+<p>To create a swipe component using the <code>data-role</code> attribute with one covered item:</p>
+
+<pre class="prettyprint">
+&lt;div id=&quot;swipe&quot; data-role=&quot;swipe&quot;&gt;
+   &lt;div data-role=&quot;swipe-item-cover&quot;&gt;
+      Cover - swipe to open
+   &lt;/div&gt;
+   &lt;div data-role=&quot;swipe-item&quot;&gt;
+      &lt;div data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;First item&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+
+<h2><a id="method-examples"></a>Methods</h2>
+<p>To call a method on the component, use one of the existing APIs:</p>
+
+
+<ul><li><p>TAU API (<strong>RECOMMENDED</strong>):</p>
+
+<pre class="prettyprint">
+var swipeElement = document.getElementById(&quot;swipe&quot;),
+    swipe = tau.widget.Swipe(swipeElement);
+swipe.methodName(methodArgument1, methodArgument2, ...);
+</pre></li>
+
+<li><p>jQuery API (<strong>support for backward compatibility</strong>):</p>
+
+<pre class="prettyprint">
+$(&quot;.selector&quot;).swipe(&quot;methodName&quot;, methodArgument1, methodArgument2, ...);
+</pre></li></ul>
+
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-open">open</a>() </pre>
+					</td>
+					<td><p>Runs opening animations.</p></td>
+				</tr>
+
+
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint">boolean <a href="#method-opened">opened</a>() </pre>
+					</td>
+					<td><p>Checks whether a swipe element is opened.</p></td>
+				</tr>
+
+
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-close">close</a>() </pre>
+					</td>
+					<td><p>Runs closing animations.</p></td>
+				</tr>
+
+
+
+		</tbody>
+	</table>
+	<dl>
+
+
+
+
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-open">open</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Runs opening animations.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">open() </pre>
+					</div>
+
+
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+
+							No return value
+
+					</div>
+
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id=&quot;swipe&quot; data-role=&quot;swipe&quot;&gt;
+   &lt;div data-role=&quot;swipe-item-cover&quot;&gt;
+      Swipe
+   &lt;/div&gt;
+   &lt;div data-role=&quot;swipe-item&quot;&gt;
+      &lt;div data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;First item&lt;/div&gt;
+      &lt;div data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;Second item&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var swipeWidget = tau.widget.Swipe(document.getElementById(&quot;swipe&quot;));
+   swipeWidget.open();
+&lt;script&gt;
+</pre>
+						</div>
+
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id=&quot;swipe&quot; data-role=&quot;swipe&quot;&gt;
+   &lt;div data-role=&quot;swipe-item-cover&quot;&gt;
+      Swipe
+   &lt;/div&gt;
+   &lt;div data-role=&quot;swipe-item&quot;&gt;
+      &lt;div data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;First item&lt;/div&gt;
+      &lt;div data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;Second item&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   $(&quot;#swipe&quot;).swipe(&quot;open&quot;);
+&lt;/script&gt;
+</pre>
+						</div>
+
+				</dd>
+
+
+
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-opened">opened</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Checks whether a swipe element is opened.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">boolean opened() </pre>
+					</div>
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>boolean</td>
+									<td>True, if the swipe element is opened.</td>
+								</tr>
+								</tbody>
+							</table>
+
+
+					</div>
+
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id=&quot;swipe&quot; data-role=&quot;swipe&quot;&gt;
+   &lt;div data-role=&quot;swipe-item-cover&quot;&gt;
+      Swipe
+   &lt;/div&gt;
+   &lt;div data-role=&quot;swipe-item&quot;&gt;
+      &lt;div data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;First item&lt;/div&gt;
+      &lt;div data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;Second item&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var swipeWidget = tau.widget.Swipe(document.getElementById(&quot;swipe&quot;));
+   isOpened = swipeWidget.opened();
+&lt;script&gt;
+</pre>
+						</div>
+
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id=&quot;swipe&quot; data-role=&quot;swipe&quot;&gt;
+   &lt;div data-role=&quot;swipe-item-cover&quot;&gt;
+      Swipe
+   &lt;/div&gt;
+   &lt;div data-role=&quot;swipe-item&quot;&gt;
+      &lt;div data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;First item&lt;/div&gt;
+      &lt;div data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;Second item&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var isOpened = $(&quot;#swipe&quot;).swipe(&quot;opened&quot;);
+&lt;/script&gt;
+</pre>
+						</div>
+
+				</dd>
+
+
+
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-close">close</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Runs closing animations.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">close() </pre>
+					</div>
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+
+							No return value
+
+					</div>
+
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id=&quot;swipe&quot; data-role=&quot;swipe&quot;&gt;
+   &lt;div data-role=&quot;swipe-item-cover&quot;&gt;
+      Swipe
+   &lt;/div&gt;
+   &lt;div data-role=&quot;swipe-item&quot;&gt;
+      &lt;div data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;First item&lt;/div&gt;
+      &lt;div data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;Second item&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var swipeWidget = tau.widget.Swipe(document.getElementById(&quot;swipe&quot;));
+   swipeWidget.close();
+&lt;script&gt;
+</pre>
+						</div>
+
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id=&quot;swipe&quot; data-role=&quot;swipe&quot;&gt;
+   &lt;div data-role=&quot;swipe-item-cover&quot;&gt;
+      Swipe
+   &lt;/div&gt;
+   &lt;div data-role=&quot;swipe-item&quot;&gt;
+      &lt;div data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;First item&lt;/div&gt;
+      &lt;div data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;Second item&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   $(&quot;#swipe&quot;).swipe(&quot;close&quot;);
+&lt;/script&gt;
+</pre>
+						</div>
+
+				</dd>
+
+
+
+
+
+		</dl>
+
+
+<h2><a id="opening-examples"></a>Opening the Swipe component</h2>
+<p>There are 3 ways to open swipe component (uncover the items of the component):</p>
+<ul><li>Open by swiping over an element:
+<pre class="prettyprint">
+&lt;div id=&quot;swipe&quot; data-role=&quot;swipe&quot;&gt;
+   &lt;div data-role=&quot;swipe-item-cover&quot;&gt;
+      Cover - swipe to open
+   &lt;/div&gt;
+   &lt;div data-role=&quot;swipe-item&quot;&gt;
+      &lt;div data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;First item&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</pre></li>
+
+
+<li>Open manually by using the <code>open</code> method with the TAU API (<strong>RECOMMENDED</strong>):
+<pre class="prettyprint">
+&lt;div id=&quot;swipe&quot; data-role=&quot;swipe&quot;&gt;
+   &lt;div data-role=&quot;swipe-item-cover&quot;&gt;
+      Cover - swipe to open
+   &lt;/div&gt;
+   &lt;div data-role=&quot;swipe-item&quot;&gt;
+      &lt;div data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;First item&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var swipeWidget = tau.widget.Swipe(document.getElementById(&quot;swipe&quot;));
+   swipeWidget.open();
+&lt;script&gt;
+</pre></li>
+
+<li>Open manually by using the jQuery API (<strong>support for backward compatibility</strong>):
+<pre class="prettyprint">
+&lt;div id=&quot;swipe&quot; data-role=&quot;swipe&quot;&gt;
+   &lt;div data-role=&quot;swipe-item-cover&quot;&gt;
+      Cover - swipe to open
+   &lt;/div&gt;
+   &lt;div data-role=&quot;swipe-item&quot;&gt;
+      &lt;div data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;First item&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   $(&quot;#swipe&quot;).swipe(&quot;open&quot;);
+&lt;script&gt;
+</pre></li></ul>
+
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

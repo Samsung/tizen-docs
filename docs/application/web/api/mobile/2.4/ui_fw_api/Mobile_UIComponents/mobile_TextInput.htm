@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>TextInput</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>TextInput</h1>
+
+
+TextInput component is decorator for input elements.
+
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	
+		<li><a href="#default-selectors0.465151343960315">Default selectors</a></li>
+
+		<li><a href="#html-examples0.4583768437150866">HTML Examples</a></li>
+	
+		<li><a href="#options-list">Options</a></li>
+	
+		<li><a href="#methods-list">Methods</a></li>
+</ol>
+
+<h2><a id='default-selectors0.465151343960315'></a>Default Selectors</h2>
+
+<p>By default, all elements having the following types are TextInput:</p>
+
+<ul>
+<li>INPUT with type "text" or "number" or "password" or "email" or "url" or "tel"</li>
+<li>TEXTAREA</li>
+<li>INPUT elements with class <em>ui-text-input</em></li>
+</ul>
+
+<h2><a id='html-examples0.4583768437150866'></a>HTML Examples</h2>
+
+<h4><a id='create-simple text input on input element0.7723784036934376'></a>Create simple text input on INPUT element with clear button</h4>
+
+<pre class="prettyprint">&lt;label&nbsp;for=&quot;texttype&quot;&gt;Text&nbsp;Input:&lt;/label&gt;
+&lt;input&nbsp;type=&quot;text&quot;&nbsp;name=&quot;texttype&quot;&nbsp;id=&quot;texttype&quot;&nbsp;placeholder=&quot;Input&nbsp;text&nbsp;here&quot;&nbsp;data-clear-btn=&quot;true&quot;/&gt;
+</pre>
+
+<h4><a id='create-simple text input on textarea element0.9774331215303391'></a>Create simple text input on TEXTAREA element</h4>
+
+<pre class="prettyprint">&lt;label&nbsp;for=&quot;textarea&quot;&gt;Text&nbsp;Area:&lt;/label&gt;
+&lt;textarea&nbsp;type=&quot;text&quot;&nbsp;name=&quot;textarea&quot;&nbsp;id=&quot;textarea&quot;&nbsp;placeholder=&quot;Input&nbsp;text&nbsp;here&quot;&gt;&lt;/textarea&gt;
+</pre>
+
+
+	<h2><a id="options-list"></a>Options</h2>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-clear-btn</span></td>
+				<td class="option">boolean</td>
+				<td class="option">false</td>
+				<td class="option">Indicates whether the clear button will be shown.</td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-text-line</span></td>
+				<td class="option">boolean</td>
+				<td class="option">true</td>
+				<td class="option">Indicates whether the text underline will be shown.</td>
+			</tr>
+		
+		</tbody>
+	</table>
+
+
+
+	<h2><a id="methods-list"></a>Methods</h2>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">TextInput <a href="#method-enable">enable</a> (  ) </pre>
+					</td>
+					<td><p>Enables the TextInput component.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">TextInput <a href="#method-disable">disable</a> (  ) </pre>
+					</td>
+					<td><p>Disables the TextInput component.</p></td>
+				</tr>
+			
+		
+		</tbody>
+	</table>
+	<dl>
+		
+			
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-enable">enable</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Enables the TextInput component.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">TextInput enable ( ) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							<p>This method removes the disabled attribute on input and changes the look of input to enabled state.</p>
+
+
+						</p>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>TextInput</td>
+									<td>The enabled TextInput</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">&lt;input&nbsp;type=&quot;text&quot;&nbsp;name=&quot;texttype&quot;&nbsp;id=&quot;texttype&quot;&nbsp;/&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var&nbsp;inputElement&nbsp;=&nbsp;document.getElementById(&quot;texttype&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textInputWidget&nbsp;=&nbsp;tau.widget.TextInput();
+
+&nbsp;&nbsp;&nbsp;textInputWidget.enable();
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-disable">disable</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Disables the TextInput component.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">TextInput disable ( ) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							<p>This method adds the disabled attribute on input and changes the look of input to disable state.</p>
+
+
+						</p>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>TextInput</td>
+									<td>The disabled TextInput</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">&lt;input&nbsp;type=&quot;text&quot;&nbsp;name=&quot;texttype&quot;&nbsp;id=&quot;texttype&quot;&nbsp;/&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var&nbsp;inputElement&nbsp;=&nbsp;document.getElementById(&quot;texttype&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textInputWidget&nbsp;=&nbsp;tau.widget.TextInput();
+
+&nbsp;&nbsp;&nbsp;textInputWidget.disable();
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+		
+		</dl>
+	
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>
