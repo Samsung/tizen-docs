@@ -137,6 +137,7 @@
 ### [Device/Resource Model Manager](rt-ide/smartthings-ext/model-manager.md)
 
 # Release Notes
+## [2.3 (March 30, 2018)](release-notes/2-3-release-notes.md)
 ## [2.2 (Jan 30, 2018)](release-notes/2-2-release-notes.md)
 ## [2.1 (Jan 3, 2018)](release-notes/2-1-release-notes.md)
 ## [2.0 (Nov 1, 2017)](release-notes/2-0-release-notes.md)
