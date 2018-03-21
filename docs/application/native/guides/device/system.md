@@ -653,7 +653,7 @@ The following table lists the TizenID system keys.
 
 | Key                               | Type     | Description                              |
 |-----------------------------------|----------|------------------------------------------|
-| `http://tizen.org/system/tizenid` | `String` | The platform returns the TizenID. TizenID is a generated value based on the pseudo-random generator. |
+| `http://tizen.org/system/tizenid` | `String` | The platform returns TizenID. TizenID is a value that is generated based on the pseudo-random generator. |
 
 ## Related Information
 - Dependencies
