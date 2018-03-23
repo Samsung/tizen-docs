@@ -3,6 +3,8 @@
 
 The attach panel allows the device user to attach various content into an application that contains an attach panel. The user can attach images, take pictures, record voice, and select files on the attach panel.
 
+This API is supported on Tizen mobile devices that support attach panel feature(http://tizen.org/feature/attach_panel).
+
 The main features of the Tizen.Applications.AttachPanel namespace include:
 
 -   Creating an attach panel
