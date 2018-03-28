@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head>
+	 <script type="text/javascript" src="../snippet.js"></script>
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	 <link href="../styles.css" rel="StyleSheet" type="text/css" />
+	 <link href="../snippet.css" rel="StyleSheet" type="text/css" />
+	 <title>Popup</title>
+ </head> 
+ <body onload="prettyPrint()" id="content"> 
+
+<h1>Popup</h1>
+
+<p>The popup component shows in the middle of the screen a list of items in a pop-up window. It automatically optimizes the pop-up window size within the screen.  The following table describes the supported popup classes.</p>
+<table>
+<caption>Table: Popup classes</caption>
+<tbody>
+	<tr>
+		<th>Class</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><p><span style="font-family: Courier New,Courier,monospace">ui-popup</span></p></td>
+		<td><p>Defines the element as a popup component.</p></td>
+	</tr>
+	<tr>
+		<td><p><span style="font-family: Courier New,Courier,monospace">ui-popup-toast</span></p></td>
+		<td><p>Defines the element as a toast popup (small popup).</p></td>
+	</tr>	
+</tbody>
+</table>
+
+<p>The pop-up window can contain a header, content, and footer area like the page element.</p>
+
+<p>To open a pop-up window from a link, use the <span style="font-family: Courier New,Courier,monospace">data-rel</span> attribute in HTML markup as in the following code:
+</p>
+<pre class="prettyprint">&lt;a href="#popup" class="ui-btn" data-rel="popup"&gt;Open popup when clicking this element.&lt;/a&gt;</pre>
+<p>And also, popup is opened by link with ID as mentioned. So the id in the link and the the id the of popup page listed below should have the same id to be opened.</p>
+<p>The following table shows examples of various types of popups. If you want to implement the examples with above 'opening' code, be sure to meet the same id.</p>
+
+<table>
+<caption>Table: Popup type examples</caption>
+<tbody>
+	<tr>
+		<th>Type</th>
+		<th>Code example</th>
+	</tr>
+	<tr>
+		<td>Basic popup with header, content, and footer</td>
+		<td><pre class="prettyprint">
+&lt;div id="popup" class="ui-popup"&gt;
+   &lt;div class="ui-popup-header"&gt;Power saving mode&lt;/div&gt;
+   &lt;div class="ui-popup-content"&gt;
+      Turning on Power
+      saving mode will
+      limit the maximum
+      power
+   &lt;/div&gt;
+   &lt;div class="ui-popup-footer"&gt;
+      &lt;button id="cancel" class="ui-btn"&gt;Cancel&lt;/button&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</pre></td>
+	</tr>
+		<tr>
+		<td>Popup with 2 buttons in the footer</td>
+		<td><pre class="prettyprint">
+&lt;div id="2btnPopup" class="ui-popup"&gt;
+   &lt;div class="ui-popup-header"&gt;Delete&lt;/div&gt;
+   &lt;div class="ui-popup-content"&gt;
+      Delete the image?
+   &lt;/div&gt;
+   &lt;div class="ui-popup-footer ui-grid-col-2"&gt;
+      &lt;button id="2btnPopup-cancel" class="ui-btn"&gt;Cancel&lt;/button&gt;
+      &lt;button id="2btnPopup-ok" class="ui-btn"&gt;OK&lt;/button&gt;
+   &lt;/div&gt;
+&lt;/div&gt;</pre></td>
+	</tr>
+		<tr>
+		<td>Popup with checkbox and radio button lists</td>
+		<td><pre class="prettyprint">
+&lt;div id="listBoxPopup" class="ui-popup"&gt;
+   &lt;div class="ui-popup-header"&gt;When?&lt;/div&gt;
+   &lt;div class="ui-popup-content" style="height:243px; overflow-y:scroll"&gt;
+      &lt;ul class="ui-listview"&gt;
+         &lt;li&gt;
+            &lt;label for="check-1" class="ui-popup-checkbox-label"&gt;Yesterday&lt;/label&gt;
+            &lt;input type="checkbox" name="checkset" id="check-1"/&gt;
+         &lt;/li&gt;
+         &lt;li&gt;
+            &lt;label for="check-2" class="ui-popup-checkbox-label"&gt;Today&lt;/label&gt;
+            &lt;input type="checkbox" name="checkset" id="check-2"/&gt;
+         &lt;/li&gt;
+         &lt;li&gt;
+            &lt;label for="check-3" class="ui-popup-checkbox-label"&gt;Tomorrow&lt;/label&gt;
+            &lt;input type="checkbox" name="checkset" id="check-3"/&gt;
+         &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;ul class="ui-listview"&gt;
+         &lt;li&gt;
+            &lt;label for="radio-1" class="ui-popup-radio-label"&gt;Mandatory&lt;/label&gt;
+            &lt;input type="radio" name="radioset" id="radio-1"/&gt;
+         &lt;/li&gt;
+         &lt;li&gt;
+            &lt;label for="radio-2" class="ui-popup-radio-label"&gt;Optional&lt;/label&gt;
+            &lt;input type="radio" name="radioset" id="radio-2"/&gt;
+         &lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/div&gt;
+   &lt;div class="ui-popup-footer"&gt;
+      &lt;button id="listBoxPopup-close" class="ui-btn"&gt;Close&lt;/button&gt;
+   &lt;/div&gt;
+&lt;/div&gt;</pre></td>
+	</tr>
+		<tr>
+		<td>Popup with no header and footer</td>
+		<td><pre class="prettyprint">
+&lt;div id="listNoTitleNoBtnPopup" class="ui-popup"&gt;
+   &lt;div class="ui-popup-content" style="height:294px; overflow-y:scroll"&gt;
+      &lt;ul class="ui-listview"&gt;
+            &lt;li&gt;&lt;a href=""&gt;Ringtones 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=""&gt;Ringtones 2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=""&gt;Ringtones 3&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/div&gt;
+&lt;/div&gt;</pre></td>
+	</tr>
+		<tr>
+		<td>Toast popup</td>
+		<td><pre class="prettyprint">
+&lt;div id="PopupToast" class="ui-popup ui-popup-toast"&gt;
+   &lt;div class="ui-popup-content"&gt;Saving contacts to the SIM card&lt;/div&gt;
+&lt;/div&gt;
+</pre></td>
+	</tr>
+</tbody>
+</table>
+
+<h2>Popup Methods</h2>
+<p>To open or close the popup component programmatically, use the methods listed in the following table.</p>
+<table>
+<caption>Table: Popup methods</caption>
+<tbody>
+	<tr>
+		<th>Method</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">tau.openPopup(to)</span></td>
+		<td>Opens a popup by calling the <span style="font-family: Courier New,Courier,monospace">openPopup()</span> method. The <span style="font-family: Courier New,Courier,monospace">to</span> argument is a pop-up container object or string.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">tau.closePopup()</span></td>
+		<td>Closes a popup by calling the <span style="font-family: Courier New,Courier,monospace">closePopup()</span> method.</td>
+	</tr>
+</tbody>
+</table>
+
+<p>To find the currently active popup, use the <span style="font-family: Courier New,Courier,monospace">ui-popup-active</span> class.</p>
+
+<p>To bind the popup to a button, use the following code:</p>
+
+<pre class="prettyprint"><pre class="prettyprint lang-html" style="border:0px; margin:0px">
+&lt;!--HTML code--&gt;
+&lt;div id="1btnPopup" class="ui-popup"&gt;
+   &lt;div class="ui-popup-header"&gt;Power saving mode&lt;/div&gt;
+   &lt;div class="ui-popup-content"&gt;&lt;/div&gt;
+   &lt;div class="ui-popup-footer"&gt;
+      &lt;button id="1btnPopup-cancel" class="ui-btn"&gt;Cancel&lt;/button&gt;
+   &lt;/div&gt;
+&lt;/div&gt;</pre><pre class="prettyprint lang-js" style="border:0px; margin:0px">/* JavaScript code */
+&lt;script&gt;
+   /* Popup opens with button click */
+   button.addEventListener("click", function(ev) 
+   {
+      tau.openPopup("#1btnPopup");
+   });
+
+   /* Popup closes with Cancel button click */
+   document.getElementById('1btnPopup-cancel').addEventListener('click', function(ev)
+   {
+      tau.closePopup();
+   });
+&lt;/script&gt;
+</pre></pre>
+
+<h2>Popup Events</h2>
+<p>The following table lists the events related to pop-ups.</p>
+<table>
+<caption>Table: Popup events</caption>
+<tbody>
+	<tr>
+		<th>Event</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">popupbeforecreate</span></td>
+		<td>Triggered when the pop-up is initialized, before most plugin auto-initialization occurs.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">popupcreate</span></td>
+		<td>Triggered when the pop-up has been created in the DOM (for example, through Ajax) but before all UI Components have had an opportunity to enhance the contained markup.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">popupbeforehide</span></td>
+		<td>Triggered on the pop-up we are transitioning away from, before the actual transition animation is kicked off.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">popuphide</span></td>
+		<td>Triggered on the pop-up we are transitioning away from, after the transition animation has completed.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">popupbeforeshow</span></td>
+		<td>Triggered on the pop-up we are transitioning to, before the actual transition animation is kicked off.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">popupshow</span></td>
+		<td>Triggered on the pop-up we are transitioning to, after the transition animation has completed.</td>
+	</tr>
+</tbody>
+</table>
+<p>To use popup events, use the following code:</p>
+
+<pre class="prettyprint"><pre class="prettyprint lang-html" style="border:0px; margin:0px">
+&lt;!--Popup HTML code--&gt;
+&lt;div id="popup" class="ui-popup"&gt;
+   &lt;div class="ui-popup-header"&gt;&lt;/div&gt;
+   &lt;div class="ui-popup-content"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre><pre class="prettyprint lang-js" style="border:0px; margin:0px">/* JavaScript code */
+&lt;script&gt;
+   /* Use popup events */
+   var popup = document.getElementById("popup");
+   popup.addEventListener("popupbeforecreate", function(ev) 
+   {
+      /* Implement code for popupbeforecreate event */
+   });
+&lt;/script&gt;
+</pre></pre>
+
+<p>Because popup works in asynchronos way due to animation, the features of popup need to work under event like below code:<br>
+If popup is opened or closed by only openPopup() or closePopup() method,
+it might occur exceptional errors or bugs.<br>
+So it is highly recommended to handle the feature by using event.</p>
+
+<pre class="prettyprint"><pre class="prettyprint lang-html" style="border:0px; margin:0px">
+&lt;!--Popup HTML code--&gt;
+&lt;div id="popup" class="ui-popup"&gt;
+   &lt;div class="ui-popup-content"&gt;&lt;/div&gt;
+   &lt;div class="ui-popup-footer"&gt;
+      &lt;div class="ui-btn" id="cancel-btn"&gt;&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;</pre><pre class="prettyprint lang-js" style="border:0px; margin:0px">/* JavaScript code */
+&lt;script&gt;
+   /* Use popup events */
+   var popup = document.getElementById("popup"),
+       cancel = document.getElementById("cancel-btn");
+
+   openButton.addEventListener("click", function()
+   {
+      tau.openPopup("#popup");
+   });
+   popup.addEventListener("popupshow", function()
+   {
+      console.log("Implement code after popup show completely");
+   });
+
+   cancel.addEventListener("click", function()
+   {
+      tau.closePopup();
+      console.log(window.getComputedStyle(popup).display); /* Block - not closed yet */
+   });
+   popup.addEventListener("popuphide", function()
+   {
+      console.log(window.getComputedStyle(popup).display); /* None - closed completely */
+   });
+&lt;/script&gt;
+</pre></pre>
+<h2>Popup Transitions</h2>
+<p>Tizen Wearable Web UI framework does not apply transitions by default. To set a custom transition effect for a specific popup component, add the <span style="font-family: Courier New,Courier,monospace">data-transition</span> attribute to a link:</p>
+<pre class="prettyprint">
+&lt;a href="index.html" data-rel="popup" data-transition="slideup"&gt;I'll slide up&lt;/a&gt;
+</pre>
+
+<p>To set a default custom transition effect for all pop-up windows, use the <span style="font-family: Courier New,Courier,monospace">popupTransition</span> property:
+</p>
+<pre class="prettyprint">/* JavaScript code */
+tau.defaults.popupTransition = "slideup";
+</pre>
+
+<p>The following table lists the popup transition properties.</p>
+<table>
+<caption>Table: Popup transition properties</caption>
+<tbody>
+	<tr>
+		<th>Property</th>
+		<th>Value</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td rowspan="2"><span style="font-family: Courier New,Courier,monospace">popupTransition</span></td>
+		<td><span style="font-family: Courier New,Courier,monospace">none</span></td>
+		<td>Default value, no transition.</td>
+	</tr>
+		<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">slideup</span></td>
+		<td>Makes the content of the pop-up slide up.</td>
+	</tr>
+</tbody>
+</table>
+
+
+
+ <div id="footer"> 
+   <hr size="1" /> 
+   <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font> 
+  </div>  
+   
+  <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25976949-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script> 
+    
+ </body>
+</html>

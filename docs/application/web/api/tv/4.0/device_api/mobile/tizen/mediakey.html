@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>MediaKey API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::MediaKey">
+<div class="supported-platforms"><img class="mobile-optional" title="Optional, Not supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
+<div class="title"><h1>MediaKey API</h1></div>
+<div class="brief">
+ The MediaKey API provides functions to get notified when a media key has been pressed or released.
+        </div>
+<div class="description">
+        <p>
+Media keys are the keys of a Bluetooth headset which control multimedia playback.
+        </p>
+        <p>
+For more information on the MediaKey features, see <a href="https://developer.tizen.org/development/guides/web-application/media-and-camera/media-key-events">MediaKey Guide</a>.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>1.1. <a href="#MediaKeyType">MediaKeyType</a>
+</li></ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#MediaKeyManagerObject">MediaKeyManagerObject</a>
+</li>
+<li>2.2. <a href="#MediaKeyManager">MediaKeyManager</a>
+</li>
+<li>2.3. <a href="#MediaKeyEventCallback">MediaKeyEventCallback</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#api-features">Related Feature</a>
+</li>
+<li>4. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#MediaKeyManagerObject">MediaKeyManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#MediaKeyManager">MediaKeyManager</a></td>
+<td>void <a href="#MediaKeyManager::setMediaKeyEventListener">setMediaKeyEventListener</a> (<a href="#MediaKeyEventCallback">MediaKeyEventCallback</a> callback)<br>
+    void <a href="#MediaKeyManager::unsetMediaKeyEventListener">unsetMediaKeyEventListener</a> ()</td>
+</tr>
+<tr>
+<td><a href="#MediaKeyEventCallback">MediaKeyEventCallback</a></td>
+<td>void <a href="#MediaKeyEventCallback::onpressed">onpressed</a> (<a href="#MediaKeyType">MediaKeyType</a> type)<br>
+    void <a href="#MediaKeyEventCallback::onreleased">onreleased</a> (<a href="#MediaKeyType">MediaKeyType</a> type)</td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="enum" id="MediaKeyType">
+<a class="backward-compatibility-anchor" name="::MediaKey::MediaKeyType"></a><h3>1.1. MediaKeyType</h3>
+<div class="brief">
+ The available media keys
+          </div>
+<pre class="webidl prettyprint">    enum MediaKeyType {
+        "MEDIA_PLAY",
+        "MEDIA_STOP",
+        "MEDIA_PAUSE",
+        "MEDIA_PREVIOUS",
+        "MEDIA_NEXT",
+        "MEDIA_FAST_FORWARD",
+        "MEDIA_REWIND",
+        "MEDIA_PLAY_PAUSE"
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="description">
+          <ul>
+            <li>
+ MEDIA_PLAY - the Play media key             </li>
+            <li>
+ MEDIA_STOP - the Stop media key            </li>
+            <li>
+ MEDIA_PAUSE - the Pause media key            </li>
+            <li>
+ MEDIA_PREVIOUS - the Previous media key            </li>
+            <li>
+ MEDIA_NEXT - the Next media key            </li>
+            <li>
+ MEDIA_FAST_FORWARD - the Fast Forward media key            </li>
+            <li>
+ MEDIA_REWIND - the Rewind media key            </li>
+            <li>
+ MEDIA_PLAY_PAUSE - the Play/Pause media key            </li>
+          </ul>
+         </div>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="MediaKeyManagerObject">
+<a class="backward-compatibility-anchor" name="::MediaKey::MediaKeyManagerObject"></a><h3>2.1. MediaKeyManagerObject</h3>
+<div class="brief">
+ The MediaKeyManagerObject interface defines what is instantiated in the tizen object.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface MediaKeyManagerObject {
+         readonly attribute <a href="#MediaKeyManager">MediaKeyManager</a> mediakey;
+    };</pre>
+<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MediaKeyManagerObject">MediaKeyManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="description">
+          <p>
+There is a tizen.mediakey object that allows accessing the functionality of the MediaKey API.
+          </p>
+         </div>
+</div>
+<div class="interface" id="MediaKeyManager">
+<a class="backward-compatibility-anchor" name="::MediaKey::MediaKeyManager"></a><h3>2.2. MediaKeyManager</h3>
+<div class="brief">
+ The MediaKeyManager interface provides the functionalities to get information about media key events.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface MediaKeyManager {
+
+        void setMediaKeyEventListener(<a href="#MediaKeyEventCallback">MediaKeyEventCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void unsetMediaKeyEventListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MediaKeyManager::setMediaKeyEventListener">
+<a class="backward-compatibility-anchor" name="::MediaKey::MediaKeyManager::setMediaKeyEventListener"></a><code><b><span class="methodName">setMediaKeyEventListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers a listener to be called when a media key is pressed or released.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setMediaKeyEventListener(<a href="#MediaKeyEventCallback">MediaKeyEventCallback</a> callback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">callback</span>:
+ Callback method to be invoked when a media key has been pressed or released.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+tizen.mediakey.setMediaKeyEventListener(
+{
+   onpressed: function(key)
+   {
+      console.log("Pressed key: " + key);
+   },
+   onreleased: function(key)
+   {
+      console.log("Released key: " + key);
+   }
+});
+</pre>
+</div>
+</dd>
+<dt class="method" id="MediaKeyManager::unsetMediaKeyEventListener">
+<a class="backward-compatibility-anchor" name="::MediaKey::MediaKeyManager::unsetMediaKeyEventListener"></a><code><b><span class="methodName">unsetMediaKeyEventListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unsubscribes from receiving notification for detecting the media key event.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unsetMediaKeyEventListener();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError in any other error case.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+tizen.mediakey.unsetMediaKeyEventListener();
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="MediaKeyEventCallback">
+<a class="backward-compatibility-anchor" name="::MediaKey::MediaKeyEventCallback"></a><h3>2.3. MediaKeyEventCallback</h3>
+<div class="brief">
+ The MediaKeyEventCallback interface specifies a media key event callback for getting notified information about the media key events.
+          </div>
+<pre class="webidl prettyprint">    [Callback, NoInterfaceObject] interface MediaKeyEventCallback {
+        void onpressed(<a href="#MediaKeyType">MediaKeyType</a> type);
+
+        void onreleased(<a href="#MediaKeyType">MediaKeyType</a> type);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MediaKeyEventCallback::onpressed">
+<a class="backward-compatibility-anchor" name="::MediaKey::MediaKeyEventCallback::onpressed"></a><code><b><span class="methodName">onpressed</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a media key has been pressed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onpressed(<a href="#MediaKeyType">MediaKeyType</a> type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ The pressed media key
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="MediaKeyEventCallback::onreleased">
+<a class="backward-compatibility-anchor" name="::MediaKey::MediaKeyEventCallback::onreleased"></a><code><b><span class="methodName">onreleased</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a media key has been released.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onreleased(<a href="#MediaKeyType">MediaKeyType</a> type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ The released media key
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="api-features">3. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the MediaKey application runs on a device with Bluetooth feature, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/network.bluetooth.audio.media</li>
+</div>
+<p></p>
+                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+</div>
+<h2 id="full-webidl">4. Full WebIDL</h2>
+<pre class="webidl prettyprint">module MediaKey {
+    enum MediaKeyType {
+        "MEDIA_PLAY",
+        "MEDIA_STOP",
+        "MEDIA_PAUSE",
+        "MEDIA_PREVIOUS",
+        "MEDIA_NEXT",
+        "MEDIA_FAST_FORWARD",
+        "MEDIA_REWIND",
+        "MEDIA_PLAY_PAUSE"
+    };
+
+    [NoInterfaceObject] interface MediaKeyManagerObject {
+         readonly attribute <a href="#MediaKeyManager">MediaKeyManager</a> mediakey;
+    };
+    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MediaKeyManagerObject">MediaKeyManagerObject</a>;
+
+    [NoInterfaceObject] interface MediaKeyManager {
+
+        void setMediaKeyEventListener(<a href="#MediaKeyEventCallback">MediaKeyEventCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void unsetMediaKeyEventListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };
+
+    [Callback, NoInterfaceObject] interface MediaKeyEventCallback {
+        void onpressed(<a href="#MediaKeyType">MediaKeyType</a> type);
+
+        void onreleased(<a href="#MediaKeyType">MediaKeyType</a> type);
+    };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

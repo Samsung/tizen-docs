@@ -1,0 +1,524 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>Feedback API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Feedback">
+<div class="title"><h1>Feedback API</h1></div>
+<div class="brief">
+ The Feedback API provides functions to play sound or vibration associated with action.
+        </div>
+<div class="description">
+        <p>
+It's responsible for playing simple sound and vibration
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li>
+                    1.1. <a href="#FeedbackType">FeedbackType</a>
+</li>
+<li>
+                    1.2. <a href="#FeedbackPattern">FeedbackPattern</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#FeedbackManagerObject">FeedbackManagerObject</a>
+</li>
+<li>2.2. <a href="#FeedbackManager">FeedbackManager</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#FeedbackManagerObject">FeedbackManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#FeedbackManager">FeedbackManager</a></td>
+<td>
+<div>void <a href="#FeedbackManager::play">play</a> (<a href="#FeedbackPattern">FeedbackPattern</a> pattern, optional <a href="#FeedbackType">FeedbackType</a>? type)</div>
+<div>void <a href="#FeedbackManager::stop">stop</a> ()</div>
+<div>boolean <a href="#FeedbackManager::isPatternSupported">isPatternSupported</a> (<a href="#FeedbackPattern">FeedbackPattern</a> pattern, <a href="#FeedbackType">FeedbackType</a> type)</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="enum" id="FeedbackType">
+<a class="backward-compatibility-anchor" name="::Feedback::FeedbackType"></a><h3>1.1. FeedbackType</h3>
+<div class="brief">
+ Enumerations of the type for feedback interface.
+          </div>
+<pre class="webidl prettyprint">    enum FeedbackType {
+        "TYPE_SOUND",
+        "TYPE_VIBRATION"
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+The states defined by this enumerator are:
+          </p>
+          <ul>
+            <li>
+TYPE_SOUND - Feedback type for sound            </li>
+            <li>
+TYPE_VIBRATION - Feedback type for vibration            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="FeedbackPattern">
+<a class="backward-compatibility-anchor" name="::Feedback::FeedbackPattern"></a><h3>1.2. FeedbackPattern</h3>
+<div class="brief">
+ Enumerations of the system pre-defined media or vibration patterns for feedback interface.
+          </div>
+<pre class="webidl prettyprint">    enum FeedbackPattern {
+        "TAP",
+        "SIP",
+        "KEY0",
+        "KEY1",
+        "KEY2",
+        "KEY3",
+        "KEY4",
+        "KEY5",
+        "KEY6",
+        "KEY7",
+        "KEY8",
+        "KEY9",
+        "KEY_STAR",
+        "KEY_SHARP",
+        "KEY_BACK",
+        "HOLD",
+        "HW_TAP",
+        "HW_HOLD",
+        "MESSAGE",
+        "EMAIL",
+        "WAKEUP",
+        "SCHEDULE",
+        "TIMER",
+        "GENERAL",
+        "POWERON",
+        "POWEROFF",
+        "CHARGERCONN",
+        "CHARGING_ERROR",
+        "FULLCHARGED",
+        "LOWBATT",
+        "LOCK",
+        "UNLOCK",
+        "VIBRATION_ON",
+        "SILENT_OFF",
+        "BT_CONNECTED",
+        "BT_DISCONNECTED",
+        "LIST_REORDER",
+        "LIST_SLIDER",
+        "VOLUME_KEY"
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+Each feedback pattern can have a separate media file for each feedback types. However, depending on vendor design, a pattern may not have any media file.
+          </p>
+          <p>
+The following values are supported:
+          </p>
+          <ul>
+            <li>
+TAP                  - general touch            </li>
+            <li>
+SIP                      - touch text key            </li>
+            <li>
+KEY0                 - touch numeric 0 key            </li>
+            <li>
+KEY1                 - touch numeric 1 key            </li>
+            <li>
+KEY2                 - touch numeric 2 key            </li>
+            <li>
+KEY3                 - touch numeric 3 key            </li>
+            <li>
+KEY4                 - touch numeric 4 key            </li>
+            <li>
+KEY5                 - touch numeric 5 key            </li>
+            <li>
+KEY6                 - touch numeric 6 key            </li>
+            <li>
+KEY7                 - touch numeric 7 key            </li>
+            <li>
+KEY8                 - touch numeric 8 key            </li>
+            <li>
+KEY9                 - touch numeric 9 key            </li>
+            <li>
+KEY_STAR             - touch star key            </li>
+            <li>
+KEY_SHARP            - touch sharp key            </li>
+            <li>
+KEY_BACK             - touch backspace key            </li>
+            <li>
+HOLD                 - touch hold            </li>
+            <li>
+HW_TAP               - press hardware key            </li>
+            <li>
+HW_HOLD              - holding press hardware key            </li>
+            <li>
+MESSAGE              - incoming a message            </li>
+            <li>
+EMAIL                - incoming a email            </li>
+            <li>
+WAKEUP               - alert wake up call            </li>
+            <li>
+SCHEDULE             - alert schedule alarm            </li>
+            <li>
+TIMER                - alert timer            </li>
+            <li>
+GENERAL              - alert general event            </li>
+            <li>
+POWERON              - power on            </li>
+            <li>
+POWEROFF             - power off            </li>
+            <li>
+CHARGERCONN          - connecting charger            </li>
+            <li>
+CHARGING_ERROR       - occuring charging error            </li>
+            <li>
+FULLCHARGED          - full charged            </li>
+            <li>
+LOWBATT              - low battery            </li>
+            <li>
+LOCK                 - lock            </li>
+            <li>
+UNLOCK               - unlock            </li>
+            <li>
+VIBRATION_ON         - turn on vibration mode            </li>
+            <li>
+SILENT_OFF           - turn off silent mode            </li>
+            <li>
+BT_CONNECTED         - connecting with bluetooth            </li>
+            <li>
+BT_DISCONNECTED      - disconnecting with bluetooth            </li>
+            <li>
+LIST_REORDER         - list reorder            </li>
+            <li>
+LIST_SLIDER          - list slider sweep            </li>
+            <li>
+VOLUME_KEY           - pressed volume key            </li>
+          </ul>
+         </div>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="FeedbackManagerObject">
+<a class="backward-compatibility-anchor" name="::Feedback::FeedbackManagerObject"></a><h3>2.1. FeedbackManagerObject</h3>
+<div class="brief">
+ This interface defines what is instantiated by the <em>Tizen</em> object from the Tizen platform.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface FeedbackManagerObject {
+        readonly attribute <a href="#FeedbackManager">FeedbackManager</a> feedback;
+    };</pre>
+<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#FeedbackManagerObject">FeedbackManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+There is a <em>tizen.feedback</em> object that allows access to the Feedback API.
+          </p>
+         </div>
+</div>
+<div class="interface" id="FeedbackManager">
+<a class="backward-compatibility-anchor" name="::Feedback::FeedbackManager"></a><h3>2.2. FeedbackManager</h3>
+<div class="brief">
+ This interface provides access to the <em>FeedbackManager</em> object.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface FeedbackManager {
+        void play(<a href="#FeedbackPattern">FeedbackPattern</a> pattern, optional <a href="#FeedbackType">FeedbackType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void stop() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        boolean isPatternSupported(<a href="#FeedbackPattern">FeedbackPattern</a> pattern, <a href="#FeedbackType">FeedbackType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="FeedbackManager::play">
+<a class="backward-compatibility-anchor" name="::Feedback::FeedbackManager::play"></a><code><b><span class="methodName">play</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Plays various types of reactions that are pre-defined.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void play(<a href="#FeedbackPattern">FeedbackPattern</a> pattern, optional <a href="#FeedbackType">FeedbackType</a>? type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+This functon can be used to react to pre-defined actions. It play various types of system pre-defined media or vibration patterns.
+Currently, there are two types of reactions: sound and vibration. Depending on the settings, some types cannot operate.
+For example, when set to silent mode, the device does not produce any sound.
+If this method is called without the <em>type</em> value, <em>patterns</em> are played specific feedback type depend on the device settings.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">pattern</span>:
+ The pre-defined pattern
+                </li>
+          <li class="param">
+<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The pattern type
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotSupportedError, if feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if the system operation was aborted
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+   tizen.feedback.play("CHARGERCONN", "TYPE_SOUND");
+}
+catch (err)
+{
+   console.log(err.name + ': ' + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="FeedbackManager::stop">
+<a class="backward-compatibility-anchor" name="::Feedback::FeedbackManager::stop"></a><code><b><span class="methodName">stop</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Stop various of vibration patterns.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void stop();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+This function can be used to stop various types of vibration reactions that are pre-defined.
+            </p>
+           </div>
+<p><span class="remark"> Remark : </span>
+ This function does not support stopping media sound actions. If an attempt to stop a media sound action is made, stop operation is ignored.
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type AbortError, if the system operation was aborted
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+   tizen.feedback.play("BT_CONNECTED", "TYPE_VIBRATION");
+   tizen.feedback.stop();
+}
+catch (err)
+{
+   console.log(err.name + ': ' + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="FeedbackManager::isPatternSupported">
+<a class="backward-compatibility-anchor" name="::Feedback::FeedbackManager::isPatternSupported"></a><code><b><span class="methodName">isPatternSupported</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Checks if a pattern is supported.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">boolean isPatternSupported(<a href="#FeedbackPattern">FeedbackPattern</a> pattern, <a href="#FeedbackType">FeedbackType</a> type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">pattern</span>:
+ The pre-defined pattern
+                </li>
+          <li class="param">
+<span class="name">type</span>:
+ The pattern type
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ boolean true if the pattern is supported, false otherwise.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var pattern = "BT_CONNECTED", type = "TYPE_SOUND";
+var isPatternSupported = tizen.feedback.isPatternSupported(pattern, type);
+var isSupported = "";
+if (!isPatternSupported)
+{
+   isSupported = " not";
+}
+console.log("pattern " + pattern + " is" + isSupported + " supported");
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> pattern BT_CONNECTED is supported
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">3. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Feedback {
+
+    enum FeedbackType {
+        "TYPE_SOUND",
+        "TYPE_VIBRATION"
+    };
+
+    enum FeedbackPattern {
+        "TAP",
+        "SIP",
+        "KEY0",
+        "KEY1",
+        "KEY2",
+        "KEY3",
+        "KEY4",
+        "KEY5",
+        "KEY6",
+        "KEY7",
+        "KEY8",
+        "KEY9",
+        "KEY_STAR",
+        "KEY_SHARP",
+        "KEY_BACK",
+        "HOLD",
+        "HW_TAP",
+        "HW_HOLD",
+        "MESSAGE",
+        "EMAIL",
+        "WAKEUP",
+        "SCHEDULE",
+        "TIMER",
+        "GENERAL",
+        "POWERON",
+        "POWEROFF",
+        "CHARGERCONN",
+        "CHARGING_ERROR",
+        "FULLCHARGED",
+        "LOWBATT",
+        "LOCK",
+        "UNLOCK",
+        "VIBRATION_ON",
+        "SILENT_OFF",
+        "BT_CONNECTED",
+        "BT_DISCONNECTED",
+        "LIST_REORDER",
+        "LIST_SLIDER",
+        "VOLUME_KEY"
+    };
+
+    [NoInterfaceObject] interface FeedbackManagerObject {
+        readonly attribute <a href="#FeedbackManager">FeedbackManager</a> feedback;
+    };
+    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#FeedbackManagerObject">FeedbackManagerObject</a>;
+
+    [NoInterfaceObject] interface FeedbackManager {
+        void play(<a href="#FeedbackPattern">FeedbackPattern</a> pattern, optional <a href="#FeedbackType">FeedbackType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void stop() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        boolean isPatternSupported(<a href="#FeedbackPattern">FeedbackPattern</a> pattern, <a href="#FeedbackType">FeedbackType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

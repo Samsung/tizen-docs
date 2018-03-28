@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head> 
+  <script type="text/javascript" src="../snippet.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <link href="../styles.css" rel="StyleSheet" type="text/css" />
+  <link href="../snippet.css" rel="StyleSheet" type="text/css" />
+  <title>Swipe Event</title> 
+ </head> 
+ <body onload="prettyPrint()" id="content"> 
+
+<h1>Swipe Event</h1>
+<p>Swipe event is triggered when the user swipes on a gesture-enabled element. The following table defines the triggered event.
+</p>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+		<li><a href="#swipeevent">Swipe Event</a></li>
+
+		<li><a href="#swipeevent-option">Options</a></li>
+
+		<li><a href="#example">Example</a></li>
+</ol>
+
+<h2><a id='swipeevent'></a>Swipe Event</h2><p>
+
+<table>
+<tbody>
+	<tr>
+		<th>Event</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">swipe</span></td>
+		<td>Triggered when the user swipes the target element.</td>
+	</tr>
+</tbody>
+</table>
+
+<h2><a id='swipeevent-option'></a>Options</h2><p>
+<table>
+<tbody>
+	<tr>
+		<th>Option</th>
+		<th>Type</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">velocity</span></td>
+		<td>Integer</td>
+		<td>Minimum required velocity before the swipe event is triggered.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">orientation</span></td>
+		<td>String</td>
+		<td>Swipe orientation. 
+		<p>The possible values are <span style="font-family: Courier New,Courier,monospace">vertical</span> and <span style="font-family: Courier New,Courier,monospace">horizontal</span>.</p></td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">timeThreshold</span></td>
+		<td>Integer</td>
+		<td>Time threshold for detecting a swipe event.</td>
+	</tr>
+</tbody>
+</table>
+
+
+<h2><a id='example'></a>Example</h2><p>
+<p>The following shows how to use swipe events.</p>
+<h3>HTML</h3>
+
+<pre class="prettyprint">
+&lt;div class="ui-page ui-page-active" id="pageSwipe"&gt;
+   &lt;header class="ui-header"&gt;
+      &lt;h2 class="ui-title"&gt;Swipe Event&lt;/h2&gt;
+   &lt;/header&gt;
+   &lt;div id="content" class="ui-content content-padding"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h3>Javascript</h3>
+
+<pre class="prettyprint">
+(function()
+{
+   var page = document.getElementById("pageSwipe");
+   page.addEventListener("pagebeforeshow", function()
+   {
+      var content = document.getElementById("content");
+      tau.event.enableGesture(content, new tau.event.gesture.Swipe(
+      {
+         orientation: "horizontal"
+      }));
+
+      content.addEventListener("swipe", function(e)
+      {
+         console.log("swipe direction = " + e.detail.direction);
+      });
+   });
+}());
+</pre>
+
+ <div id="footer"> 
+   <hr size="1" /> 
+   <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font> 
+  </div> 
+   
+  <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25976949-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script> 
+    
+ </body>
+</html>

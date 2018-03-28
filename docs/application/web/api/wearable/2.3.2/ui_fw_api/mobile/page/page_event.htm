@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head> 
+  <script type="text/javascript" src="../../snippet.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <link href="../../styles.css" rel="StyleSheet" type="text/css" />
+  <link href="../../snippet.css" rel="StyleSheet" type="text/css" />
+  <title>Page Events and Methods</title> 
+ </head> 
+ <body onload="prettyPrint()" id="content"> 
+
+<h1>Page Events and Methods</h1>
+<p>The Web UI Framework supports the &quot;page&quot; as a component. This means that a created page has several events and methods. This section introduces the events and methods in the Web UI Framework Page component.</p>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	
+		<li><a href="#events-list">Events</a>
+			
+		</li>
+		<li><a href="#events-back">Binding the Hardware Back Key Event</a>
+			
+		</li>
+		<li><a href="#methods-list">Methods</a>
+			
+		</li>
+	
+</ol>
+
+
+	<h2><a id="events-list"></a>Events</h2>
+<p>The following table lists the events related to pages.</p>
+	<table>
+		<tbody>
+		<tr>
+			<th>Event</th>
+			<th>Description</th>
+		</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">pagebeforechange</span></td>
+				<td><p>Triggered before switching from the current page.</p></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">pagebeforecreate</span></td>
+				<td><p>Triggered before the new page component is created and initialized.</p></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">pagebeforehide</span></td>
+				<td><p>Triggered before the current page is about to be closed.</p></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">pagebeforeload</span></td>
+				<td><p>Triggered before an external page is loaded.</p></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">pagebeforeshow</span></td>
+				<td><p>Triggered before the new page is displayed.</p></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">pagechange</span></td>
+				<td><p>Triggered after switching from the current page to the new page.</p></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">pagechangefailed</span></td>
+				<td><p>Triggered when the page switching fails.</p></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">pagecreate</span></td>
+				<td><p>Triggered after the new page component creation.</p></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">pagehide</span></td>
+				<td><p>Triggered after the current page is hidden.</p></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">pageinit</span></td>
+				<td><p>Triggered after the page component initialization occurs.</p></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">pageload</span></td>
+				<td><p>Triggered after an external page is loaded.</p></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">pageremove</span></td>
+				<td><p>Triggered after an external page is removed from the DOM.</p></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">pageshow</span></td>
+				<td><p>Triggered after the new page is displayed.</p></td>
+			</tr>
+		
+		</tbody>
+	</table>
+
+<h2><a id="events-back"></a>Binding the Hardware Back Key Event</h2>
+
+
+<p>To bind an event callback on the <strong>Back</strong> key, use the following code:</p>
+
+<pre class="prettyprint">
+window.addEventListener(&#39;tizenhwkey&#39;, function(ev) 
+{
+&nbsp;&nbsp;&nbsp;if (ev.originalEvent.keyName == &quot;back&quot;) 
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Call window.history.back() to go to previous browser window 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Call tizen.application.getCurrentApplication().exit() to exit application 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Add script to add another behavior 
+&nbsp;&nbsp;&nbsp;}
+});
+</pre>
+
+<h2><a id="methods-list"></a>Methods</h2>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-addBackBtn">addBackBtn</a> (  ) </pre> - <i style="color:red">deprecated</i>
+					</td>
+					<td><p>Adds the <strong>Back</strong> button.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-blur">blur</a> (  ) </pre>
+					</td>
+					<td><p>Removes the focus from the page and all descendants.</p></td>
+				</tr>
+			
+
+
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-focus">focus</a> (  ) </pre>
+					</td>
+					<td><p>Sets the focus to the page.</p></td>
+				</tr>
+			
+
+					
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-updatePageLayout">updatePageLayout</a> (  ) </pre>
+					</td>
+					<td><p>Calculates and updates the content height.</p></td>
+				</tr>
+			
+		
+
+		
+		</tbody>
+	</table>
+	<dl>
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-addBackBtn">addBackBtn: <strong style="color:red">deprecated</strong></span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Adds the Back button.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">addBackBtn ( ) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					
+					
+					<div class="description">
+												<table class="note">
+		<tbody>
+		<tr>
+			<th class="note">Note</th>
+		</tr>
+		<tr>
+			<td class="note">This method is <strong>deprecated</strong> since 2.3 because you can use the hardware <strong>Back</strong> key.</td>
+		</tr>
+		</tbody>
+</table>
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-blur">blur</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Removes the focus from the page and all descendants.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">blur ( ) </pre>
+					</div>
+					
+					<div class="description">
+						<table class="note">
+		<tbody>
+		<tr>
+			<th class="note">Note</th>
+		</tr>
+		<tr>
+			<td class="note">This method is only available through the TAU API.</td>
+		</tr>
+		</tbody>
+</table>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id=&quot;myPage&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+&nbsp;&nbsp;&nbsp;var page = tau.widget.Page(document.getElementById(&quot;myPage&quot;));
+&nbsp;&nbsp;&nbsp;page.blur();
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+		
+			
+
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-focus">focus</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Sets the focus to the page. For example, when the page has an input element (the autofocus attribute), it focuses this element automatically.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">focus ( ) </pre>
+					</div>
+					
+					<div class="description">
+						<table class="note">
+		<tbody>
+		<tr>
+			<th class="note">Note</th>
+		</tr>
+		<tr>
+			<td class="note">This method is only available through the TAU API.</td>
+		</tr>
+		</tbody>
+</table>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id=&quot;myPage&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+&nbsp;&nbsp;&nbsp;var page = tau.widget.Page(document.getElementById(&quot;myPage&quot;));
+&nbsp;&nbsp;&nbsp;page.focus();
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+		
+	
+
+
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-updatePageLayout">updatePageLayout</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Calculates and updates the content height.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">updatePageLayout ( ) </pre>
+					</div>
+					
+					<div class="description">
+						<table class="note">
+		<tbody>
+		<tr>
+			<th class="note">Note</th>
+		</tr>
+		<tr>
+			<td class="note">This method is only available through the TAU API.</td>
+		</tr>
+		</tbody>
+</table>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id=&quot;myPage&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+&nbsp;&nbsp;&nbsp;var page = tau.widget.Page(document.getElementById(&quot;myPage&quot;));
+&nbsp;&nbsp;&nbsp;page.updatePageLayout();
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+
+		
+	</dl>
+
+
+ <div id="footer"> 
+   <hr size="1" /> 
+   <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font> 
+  </div> 
+   
+  <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25976949-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script> 
+    
+ </body>
+</html>

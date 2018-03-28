@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="../styles.css" rel="StyleSheet" type="text/css" />
+	<link href="../snippet.css" rel="StyleSheet" type="text/css" />
+	<title>Virtual List</title>
+</head>
+
+<body onload="prettyPrint()" id="content">
+
+<h1>Virtual List</h1>
+
+<p>In the Web environment, it is challenging to display a large amount of data in a list, such as displaying a contact list of over 1000 list items. It takes time to display the entire list in HTML and the DOM manipulation is complex.</p>
+
+<p>The virtual list component is used to display a list of unlimited data elements. The component provides easy access to databases to retrieve and display data. The virtual list component is based on a result set which has a fixed size defined by the developer using the <span style="font-family: Courier New,Courier,monospace">data-row</span>  attribute. A result set must be at least 3 times bigger than size of a clip (number of visible elements).</p>
+
+<ol class="toc">
+
+		<li><a href="#manual-constructor">How to Create Virtual List</a>
+
+		</li>
+
+		<li><a href="#options-list">Options</a>
+
+		</li>
+
+		<li><a href="#methods-list">Methods</a>
+
+		</li>
+</ol>
+
+<h2 id="manual-constructor">How to Create Virtual List</h2>
+<p>To add a virtual list component to the application:</p>
+<ol>
+<li>Create a component container, which is a list element:
+<pre class="prettyprint">
+&lt;ul id=&quot;vlist&quot; class=&quot;ui-listview ui-virtuallistview&quot;&gt;&lt;/ul&gt;
+</pre></li>
+ 
+<li>Insert a virtual list HTML and JSON (<span style="font-family: Courier New,Courier,monospace">virtuallist-db-demo.js</span>) code:
+<pre class="prettyprint"><pre class="prettyprint lang-html" style="border:0px; margin:0px">&lt;script type=&quot;text/javascript&quot; src=&quot;virtuallist-db-demo.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;app.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../../lib/tau/js/virtuallist.js&quot;&gt;&lt;/script&gt;</pre><pre class="prettyprint lang-js" style="border:0px; margin:0px">/* JSON DATA example in virtuallist-db-demo.js */
+var JSON_DATA = 
+[
+&nbsp;&nbsp;&nbsp;{NAME:&quot;Abdelnaby, Alaa&quot;},
+&nbsp;&nbsp;&nbsp;{NAME:&quot;Abdul-Aziz, Zaid&quot;},
+&nbsp;&nbsp;&nbsp;{NAME:&quot;Abdul-Jabbar, Kareem&quot;},
+&nbsp;&nbsp;&nbsp;{NAME:&quot;Abdul-Rauf, Mahmoud&quot;},
+&nbsp;&nbsp;&nbsp;{NAME:&quot;Abdul-Wahad, Tariq&quot;}
+&nbsp;&nbsp;&nbsp;/* Other list items */
+]
+</pre></pre>
+</li>
+
+<li>Initialize the component and the list item updater function in the <span style="font-family: Courier New,Courier,monospace">app.js</span> file:
+<pre class="prettyprint">
+/* Get HTML element reference */
+var elList = document.getElementById(&quot;vlist&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;/* All config options can be found in virtual list reference */
+&nbsp;&nbsp;&nbsp;&nbsp;vlist = tau.widget.VirtualListview(elList, {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataLength: JSON_DATA.length,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bufferSize: 40
+&nbsp;&nbsp;&nbsp;&nbsp;});
+/* Update list items */
+vlist.setListItemUpdater(function(elListItem, newIndex) {
+&nbsp;&nbsp;&nbsp;var data = JSON_DATA[newIndex];
+&nbsp;&nbsp;&nbsp;elListItem.innerHTML = &#39;&lt;span class=&quot;ui-li-text-main&quot;>&#39; + data.NAME + &#39;&lt;/span&gt;&#39;;
+});
+</pre>
+
+<p>The <span style="font-family: Courier New,Courier,monospace">listItemUpdater</span> attribute defines how the list element is updated depending on the data row index. If you do not define the attribute in the configuration, you can set the update feature with the <span style="font-family: Courier New,Courier,monospace">setListItemUpdater()</span> method.</p>
+
+<table class="note"> 
+     <tbody> 
+      <tr> 
+       <th class="note">Note</th> 
+      </tr> 
+      <tr> 
+       <td class="note"><p>The virtual list manipulates DOM elements to be more efficient. It does not remove or create list elements before calling the list item update method. It means that the order of the <span style="font-family: Courier New,Courier,monospace">&lt;li&gt;</span> elements is volatile, and you must keep the list element clean from custom classes and attributes.</p></td> 
+      </tr> 
+     </tbody> 
+    </table>
+</li>
+
+<li>When all configuration options are set, use the <span style="font-family: Courier New,Courier,monospace">draw()</span> method to draw the child elements and implement the virtual list:</p>
+<pre class="prettyprint">
+vlist.draw();
+</pre></li>
+
+<li>When you no longer need the component, destroy it using the <span style="font-family: Courier New,Courier,monospace">destroy()</span> method:</p>
+<pre class="prettyprint">
+page.addEventListener(&quot;pagehide&quot;, function() {
+&nbsp;&nbsp;&nbsp;vlist.destroy();
+});
+</pre></li>
+</ol>
+
+
+<h2 id="options-list">Options</h2>
+
+<p>The following table describes the virtual list configuration options.</p>
+
+<table>
+<tbody>
+	<tr>
+		<th>Option</th>
+		<th>Type</th>
+		<th>Mandatory</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+      <td><span style="font-family: Courier New,Courier,monospace">dataLength</span></td>
+	  <td>Number</td>
+	  <td>Yes</td>
+	  <td>Defines the number of all data rows.</td>
+	</tr>
+	<tr>
+      <td><span style="font-family: Courier New,Courier,monospace">bufferSize</span></td>
+	  <td>Number</td>
+	  <td>No</td>
+	  <td>Defines the number of virtual list child elements in the result set.
+	  <p>The minimum value is 20 and default value is 100. As the value gets higher, the loading time increases while the system performance improves. Pick a value that provides the best performance without excessive loading time and is at least 3 times bigger than the number of displayed items on the device screen.</p></td>
+	</tr>
+	<tr>
+      <td><span style="font-family: Courier New,Courier,monospace">Orientation</span></td>
+	  <td>String</td>
+	  <td>No</td>
+	  <td>Defines the scrolling orientation. The default value is <span style="font-family: Courier New,Courier,monospace">VERTICAL</span>.</p></td>
+	</tr>	
+	<tr>
+      <td><span style="font-family: Courier New,Courier,monospace">listItemUpdater</span></td>
+	  <td>Method reference</td>
+	  <td>Yes</td>
+	  <td>Defines the method which is called to draw a single list item.
+	  <p>The method takes the following parameters:
+	  <ul>
+      <li><span style="font-family: Courier New,Courier,monospace">elListItem</span>:  HTML <span style="font-family: Courier New,Courier,monospace">&lt;li&gt;</span> element to be parsed</li>
+      <li><span style="font-family: Courier New,Courier,monospace">newIndex</span> (Integer): Row index from the data set</li></ul></p></td>
+	</tr>
+</tbody>
+</table>
+
+<h2 id="methods-list">Methods</h2>
+
+<table>
+<tbody>
+	<tr>
+		<th style="width:40%;">Method</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">draw()</span></td>
+		<td>When all configuration options are set, draws the child elements and implements the virtual list.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">scrollTo(position)</span></td>
+		<td>Scrolls the list to a defined position in pixels.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">scrollToIndex(index)</span></td>
+		<td>Scrolls the list to a defined index.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">setListItemUpdater(function)</span></td>
+		<td>Sets the list item updater function.</td>
+	</tr>	
+</tbody>
+</table>
+
+
+ <div id="footer"> 
+   <hr size="1" /> 
+   <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font> 
+  </div> 
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25976949-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../../../snippet.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="../../../styles.css" rel="StyleSheet" type="text/css" />
+	<link href="../../../snippet.css" rel="StyleSheet" type="text/css" />
+	<title>How to support List</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>How to support List</h1>
+
+Circular UI has snap list component. You can implement the snap list with marquee component using the helper.<p>
+More informations for <a href="../../helper/helper.htm">SnapListMarqueeStyle helper script</a> are here.<p>
+The following explains how to implement list which can support both Rectangular UI and Circular UI.<p>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	<li><a href="#layout">Layout</a></li>
+	<li><a href="#htmlCode">HTML code</a></li>
+	<li><a href="#cssCode">CSS code</a></li>
+	<li><a href="#jsCode">Javascript code</a></li>
+</ol>
+
+<h2><a id='layout'></a>Layout</h2>
+
+<table id='circularsupport'>
+	<tbody>
+		<tr>
+			<td><img src="../../../../images/rectangular_snap.png" /></td>
+			<td><img src="../../../../images/round_snap.png" /></td>
+		</tr>
+		<tr>
+			<td align="center">in Rectangular UI</td>
+			<td align="center">in Circular UI</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2><a id='htmlCode'></a>HTML code</h2>
+
+<pre class="prettyprint">
+&lt;div class=&quot;ui-page ui-page-active&quot; id=&quot;snapListPage&quot; &gt;
+	&lt;header class=&quot;ui-header&quot;&gt;
+		&lt;h2 class=&quot;ui-title&quot;&gt;Snap List&lt;/h2&gt;
+	&lt;/header&gt;
+	&lt;div class=&quot;ui-content&quot;&gt;
+		&lt;ul class=&quot;ui-listview ui-snap-listview expand-list&quot; id=&quot;snapList&quot;&gt;
+			&lt;li class=&quot;li-has-3line&quot;&gt;
+				&lt;div class=&quot;ui-marquee ui-marquee-gradient&quot;&gt;1.3line SnapListview with Marquee SnapListview with Marquee&lt;/div&gt;
+				&lt;div class=&quot;li-text-sub ui-li-sub-text&quot;&gt;sub-text&lt;/div&gt;
+				&lt;div class=&quot;li-text-sub ui-li-sub-text&quot;&gt;sub-text&lt;/div&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;li-has-3line&quot;&gt;
+				&lt;div class=&quot;ui-marquee ui-marquee-gradient&quot;&gt;2.3line SnapListview with Marquee SnapListview with Marquee&lt;/div&gt;
+				&lt;div class=&quot;li-text-sub ui-li-sub-text&quot;&gt;sub-text&lt;/div&gt;
+				&lt;div class=&quot;li-text-sub ui-li-sub-text&quot;&gt;sub-text&lt;/div&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;li-has-3line&quot;&gt;
+				&lt;div class=&quot;ui-marquee ui-marquee-gradient&quot;&gt;3.3line SnapListview with Marquee SnapListview with Marquee&lt;/div&gt;
+				&lt;div class=&quot;li-text-sub ui-li-sub-text&quot;&gt;sub-text&lt;/div&gt;
+				&lt;div class=&quot;li-text-sub ui-li-sub-text&quot;&gt;sub-text&lt;/div&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;li-has-3line&quot;&gt;
+				&lt;div class=&quot;ui-marquee ui-marquee-gradient&quot;&gt;4.3line SnapListview with Marquee SnapListview with Marquee&lt;/div&gt;
+				&lt;div class=&quot;li-text-sub ui-li-sub-text&quot;&gt;sub-text&lt;/div&gt;
+				&lt;div class=&quot;li-text-sub ui-li-sub-text&quot;&gt;sub-text&lt;/div&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;li-has-3line&quot;&gt;
+				&lt;div class=&quot;ui-marquee ui-marquee-gradient&quot;&gt;5.3line SnapListview with Marquee SnapListview with Marquee&lt;/div&gt;
+				&lt;div class=&quot;li-text-sub ui-li-sub-text&quot;&gt;sub-text&lt;/div&gt;
+				&lt;div class=&quot;li-text-sub ui-li-sub-text&quot;&gt;sub-text&lt;/div&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h2><a id='cssCode'></a>CSS code</h2>
+
+<pre class="prettyprint">
+.ui-listview li .li-text-sub {
+	display: block;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	line-height: 32px;
+	color: rgb(51, 51, 51);
+}
+
+.ui-listview li.li-has-3line {
+	padding-top: 0;
+	padding-bottom: 0;
+	height: 115px;
+}
+
+.ui-listview.expand-list li.li-has-3line .ui-marquee{
+	-webkit-transform: translate3d(0, 30px, 0);
+}
+
+.ui-listview.expand-list li.li-has-3line.ui-snap-listview-selected .ui-marquee{
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-transition: all ease 1s;
+}
+
+.ui-listview.expand-list li.li-has-3line .ui-li-sub-text:nth-child(2){
+	-webkit-transform: translate3d(0, -10px, 0);
+	opacity: 0;
+}
+
+.ui-listview.expand-list li.li-has-3line.ui-snap-listview-selected .ui-li-sub-text:nth-child(2){
+	-webkit-transform: translate3d(0, 0, 0);
+	opacity: 1;
+	-webkit-transition: all ease 1s;
+}
+
+.ui-listview.expand-list li.li-has-3line .ui-li-sub-text:last-child{
+	-webkit-transform: translate3d(0, -42px, 0);
+	opacity: 0;
+}
+
+.ui-listview.expand-list li.li-has-3line.ui-snap-listview-selected .ui-li-sub-text:last-child{
+	-webkit-transform: translate3d(0, 0, 0);
+	opacity: 1;
+	-webkit-transition: all ease 1s;
+}
+</pre>
+
+<h2><a id='jsCode'></a>Javascript code</h2>
+
+<pre class="prettyprint">
+var page = document.querySelector(&quot;#snapListPage&quot;);
+
+page.addEventListener( &quot;pagebeforeshow&quot;, function() {
+	var list = document.getElementById(&quot;snapList&quot;),
+		listHelper;
+
+	if(tau.support.shape.circle) {
+		listHelper = tau.helper.SnapListMarqueeStyle.create(list, {marqueeDelay: 1000});
+	}
+});
+</pre>
+
+<h2>Where to Go Next</h2>
+<ul>
+	<li><a href="../circular_support.htm">Support for Circular UI</a></li>
+
+</ul>
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

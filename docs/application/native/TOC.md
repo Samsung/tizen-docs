@@ -71,4 +71,4 @@
 
 # [API Reference](/application/native/api/index.md)
 
-# [Samples](/application/native/https://developer.tizen.org/development/sample/native)
+# [Samples](https://developer.tizen.org/development/sample/native)

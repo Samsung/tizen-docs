@@ -1,0 +1,338 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Progress</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+
+<h1>Progress</h1>
+
+<p>The progress component shows that an operation is in progress.</p>
+
+<table class="note">
+	<tbody>
+	<tr>
+		<th class="note">Note</th>
+	</tr>
+	<tr>
+		<td class="note">This component is supported since Tizen 2.4.</td>
+	</tr>
+	<tr>
+		<td class="note"><i>deprecated</i> Progress and ProgressBar component has been merged and renamed to <i>new</i> <strong>Progress.</strong></td>
+	</tr>
+	</tbody>
+</table>
+
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+		<li><a href="#default-selectors0.9354383451864123">Default Selectors</a>
+
+		</li>
+		<li><a href="#html-examples0.866303835529834">HTML Examples</a>
+
+		</li>
+		<li><a href="#manual-constructor0.3267326701898128">Manual Constructor</a>
+
+		</li>
+		<li><a href="#options-for widget0.13800429017283022">Options</a>
+
+		</li>
+		<li><a href="#methods0.7043644052464515">Methods</a>
+
+		</li>
+</ol>
+
+<h2><a id="default-selectors0.9354383451864123"></a>Default Selectors</h2>
+
+<p>By default, all elements with the <code>class="ui-progress"</code> or <code>data-role="progress"</code> attribute are displayed as progress components.</p>
+
+
+<h2><a id="html-examples0.866303835529834"></a>HTML Examples</h2>
+
+<h4>bar type</h4>
+
+<pre class="prettyprint">
+&lt;div class="ui-progress" data-type="bar"&gt;&lt;/div&gt;
+</pre>
+
+<h4>activitybar type</h4>
+
+<pre class="prettyprint">
+&lt;div class="ui-progress" data-type="activitybar"&gt;&lt;/div&gt;
+</pre>
+
+<h4>circle type</h4>
+
+<pre class="prettyprint">
+&lt;div class="ui-progress" data-type="circle"&gt;&lt;/div&gt;
+</pre>
+
+<h4>activitycircle type</h4>
+
+<pre class="prettyprint">
+&lt;div class="ui-progress" data-type="activitycircle"&gt;&lt;/div&gt;
+</pre>
+
+
+
+<h2><a id="manual-constructor0.3267326701898128"></a>Manual Constructor</h2>
+
+<p>To manually create a progress component, use the component constructor from the <code>tau</code> namespace:</p>
+
+<pre class="prettyprint">&lt;div id="progress"&gt;&lt;/div&gt;
+&lt;script&gt;
+   var element = document.getElementById("progress"),
+       progress = tau.widget.Progress(element, {type : "progressbar"});
+&lt;/script&gt;
+</pre>
+
+
+<h2><a id="options-for widget0.13800429017283022"></a>Options</h2>
+
+<p>The options for a component can be defined as <code>data</code> attributes or passed as parameters to the constructor.</p>
+
+<p>You can change an option for the component using the <code>option</code> method.</p>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-type</span></td>
+				<td class="option">"bar" | "circle" |<br>
+					"activitybar" | "activitycircle"</td>
+				<td class="option">"progressbar"</td>
+				<td class="option">Sets type of progress component.</td>
+			</tr>
+            <tr>
+                <td class="option"><span style="font-family: Courier New,Courier,monospace">data-size</span></td>
+                <td class="option">"small" | "medium" |<br>
+                    "large" | "full"</td>
+                <td class="option">"medium"</td>
+                <td class="option">Sets size of progress component.<br>
+                    (It used only with "circle" and "activitycircle" type)</td>
+            </tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-value</span></td>
+				<td class="option">Number</td>
+				<td class="option">100</td>
+				<td class="option">Sets default value of progress component.</td>
+			</tr>
+            <tr>
+                <td class="option"><span style="font-family: Courier New,Courier,monospace">data-max</span></td>
+                <td class="option">Number</td>
+                <td class="option">100</td>
+                <td class="option">Sets default max value of progress component.</td>
+            </tr>
+
+            <tr>
+                <td class="option"><span style="font-family: Courier New,Courier,monospace">data-min</span></td>
+                <td class="option">Number</td>
+                <td class="option">0</td>
+                <td class="option">Sets default min value of progress component.</td>
+            </tr>
+
+
+        </tbody>
+	</table>
+
+<h2><a id="methods0.7043644052464515"></a>Methods</h2>
+
+<p>To call a method on the component, please refer the following example:</p>
+
+<pre class="prettyprint">&lt;div id="progress"&gt;&lt;/div&gt;
+&lt;script&gt;
+   var element = document.getElementById("progress"),
+       progress = tau.widget.Progress(element);
+
+   /*
+      progress.methodName(argument1, argument2, ...);
+      For example:
+   */
+   progress.refresh();
+&lt;/script&gt;
+</pre>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-value">value</a>() </pre>
+					</td>
+					<td><p>Sets or gets value of Progress component.</p></td>
+				</tr>
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-option">option</a>() </pre>
+					</td>
+					<td><p>Sets or gets options of Progress component.</p></td>
+				</tr>
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-refresh">refresh</a>() </pre>
+					</td>
+					<td><p>Refreshes the Progress DOM.</p></td>
+				</tr>
+			
+
+		</tbody>
+	</table>
+
+
+		<dt class="method" id="addidp28072"><code><b><span class="methodName"
+														   id="method-value">value</span></b></code></dt>
+		<dd>
+			<div class="brief">
+				<p>Sets or gets value of Progress component.</p>
+			</div>
+			<div class="synopsis">
+				<pre class="signature prettyprint">value(Number value) </pre>
+			</div>
+			<div class="description">
+				<br>
+					When this method has no parameter, it returns Progress value.<br>
+				If you call value with new number, you don't need to call refresh() method because it calls automatically.
+				</p>
+			</div>
+
+			<div class="returntype">
+				<p><span class="return">Return value:</span></p>
+
+				<table>
+					<tbody>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>Number</td>
+						<td>Returns value of Progress.</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">&lt;script&gt;
+   var element = document.getElementById("progress"),
+       progress = tau.widget.Progress(element),
+       originValue;
+
+   /* Get the origin value of progress */
+   originValue = progress.value();
+   console.log(originValue);
+
+   /* Set the value of progress to 70 */
+   progress.value(70);
+&lt;/script&gt;
+</pre>
+			</div>
+
+		</dd>
+
+		<dt class="method" id="addidp28072"><code><b><span class="methodName"
+														   id="method-option">option</span></b></code></dt>
+		<dd>
+			<div class="brief">
+				<p>Sets or gets options of Progress component.</p>
+			</div>
+			<div class="synopsis">
+				<pre class="signature prettyprint">option() </pre>
+			</div>
+			<div class="description">
+				<p>
+					When changing value option of progress, we recommend to use value() method.
+				</p>
+			</div>
+
+			<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">&lt;script&gt;
+   var element = document.getElementById("progress"),
+       progress = tau.widget.Progress(element),
+       type;
+
+   progress.option("value", 50);
+   /* After change option, call refresh method */
+   progress.refresh();
+
+   /* Get type option value */
+   type = progress.option("type");
+   console.log(type);
+&lt;/script&gt;
+</pre>
+			</div>
+
+		</dd>
+
+		<dt class="method" id="addidp28072"><code><b><span class="methodName"
+														   id="method-refresh">refresh</span></b></code></dt>
+		<dd>
+			<div class="brief">
+				<p>Refresh Progress DOM.</p>
+			</div>
+			<div class="synopsis">
+				<pre class="signature prettyprint">refresh() </pre>
+			</div>
+			<div class="description">
+				<p>
+				</p>
+			</div>
+
+			<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">&lt;script&gt;
+   var element = document.getElementById("progress"),
+       progress = tau.widget.Progress(element);
+
+   /* Change DOM dynamically or change option */
+   progress.refresh();
+&lt;/script&gt;
+</pre>
+			</div>
+
+		</dd>
+
+
+	</dl>
+
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

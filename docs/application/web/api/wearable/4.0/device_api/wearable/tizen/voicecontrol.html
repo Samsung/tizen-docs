@@ -1,0 +1,965 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>VoiceControl API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::VoiceControl">
+<div class="title"><h1>VoiceControl API</h1></div>
+<div class="brief">
+ The Voice Control API provides interfaces and methods for recognizing voice command.
+        </div>
+<div class="description">
+        <p>
+Voice control API offers functionality to recognize the voice and to send the result as predefined command.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li>
+                    1.1. <a href="#VoiceControlResultEvent">VoiceControlResultEvent</a>
+</li>
+<li>
+                    1.2. <a href="#VoiceControlCommandType">VoiceControlCommandType</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#VoiceControlClientManagerObject">VoiceControlClientManagerObject</a>
+</li>
+<li>2.2. <a href="#VoiceControlClientManager">VoiceControlClientManager</a>
+</li>
+<li>2.3. <a href="#VoiceControlClient">VoiceControlClient</a>
+</li>
+<li>2.4. <a href="#VoiceControlCommand">VoiceControlCommand</a>
+</li>
+<li>2.5. <a href="#VoiceControlLanguageChangeCallback">VoiceControlLanguageChangeCallback</a>
+</li>
+<li>2.6. <a href="#VoiceControlResultCallback">VoiceControlResultCallback</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#api-features">Related Feature</a>
+</li>
+<li>4. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#VoiceControlClientManagerObject">VoiceControlClientManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#VoiceControlClientManager">VoiceControlClientManager</a></td>
+<td><div>
+<a href="#VoiceControlClient">VoiceControlClient</a> <a href="#VoiceControlClientManager::getVoiceControlClient">getVoiceControlClient</a> ()</div></td>
+</tr>
+<tr>
+<td><a href="#VoiceControlClient">VoiceControlClient</a></td>
+<td>
+<div>DOMString <a href="#VoiceControlClient::getCurrentLanguage">getCurrentLanguage</a> ()</div>
+<div>void <a href="#VoiceControlClient::setCommandList">setCommandList</a> (<a href="#VoiceControlCommand">VoiceControlCommand</a>[] list, optional <a href="#VoiceControlCommandType">VoiceControlCommandType</a>? type)</div>
+<div>void <a href="#VoiceControlClient::unsetCommandList">unsetCommandList</a> (optional <a href="#VoiceControlCommandType">VoiceControlCommandType</a>? type)</div>
+<div>long <a href="#VoiceControlClient::addResultListener">addResultListener</a> (<a href="#VoiceControlResultCallback">VoiceControlResultCallback</a> listener)</div>
+<div>void <a href="#VoiceControlClient::removeResultListener">removeResultListener</a> (long id)</div>
+<div>long <a href="#VoiceControlClient::addLanguageChangeListener">addLanguageChangeListener</a> (<a href="#VoiceControlLanguageChangeCallback">VoiceControlLanguageChangeCallback</a> listener)</div>
+<div>void <a href="#VoiceControlClient::removeLanguageChangeListener">removeLanguageChangeListener</a> (long id)</div>
+<div>void <a href="#VoiceControlClient::release">release</a> ()</div>
+</td>
+</tr>
+<tr>
+<td><a href="#VoiceControlCommand">VoiceControlCommand</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#VoiceControlLanguageChangeCallback">VoiceControlLanguageChangeCallback</a></td>
+<td><div>void <a href="#VoiceControlLanguageChangeCallback::onlanguagechanged">onlanguagechanged</a> (DOMString previous, DOMString current)</div></td>
+</tr>
+<tr>
+<td><a href="#VoiceControlResultCallback">VoiceControlResultCallback</a></td>
+<td><div>void <a href="#VoiceControlResultCallback::onresult">onresult</a> (<a href="#VoiceControlResultEvent">VoiceControlResultEvent</a> event, <a href="#VoiceControlCommand">VoiceControlCommand</a>[] list, DOMString results)</div></td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="enum" id="VoiceControlResultEvent">
+<a class="backward-compatibility-anchor" name="::VoiceControl::VoiceControlResultEvent"></a><h3>1.1. VoiceControlResultEvent</h3>
+<div class="brief">
+ Specifies the result event.
+          </div>
+<pre class="webidl prettyprint">    enum VoiceControlResultEvent {"SUCCESS", "FAILURE"};</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="description">
+          <p>
+The result events defined by this enumeration are:
+          </p>
+          <ul>
+            <li>
+ SUCCESS - Successful result            </li>
+            <li>
+ FAILURE - Rejected result by voice control service            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="VoiceControlCommandType">
+<a class="backward-compatibility-anchor" name="::VoiceControl::VoiceControlCommandType"></a><h3>1.2. VoiceControlCommandType</h3>
+<div class="brief">
+ Specifies command type.
+          </div>
+<pre class="webidl prettyprint">    enum VoiceControlCommandType {"FOREGROUND"};</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="description">
+          <p>
+The command type defined by this enumeration is:
+          </p>
+          <ul>
+            <li>
+ FOREGROUND - command type used when application is foreground            </li>
+          </ul>
+         </div>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="VoiceControlClientManagerObject">
+<a class="backward-compatibility-anchor" name="::VoiceControl::VoiceControlClientManagerObject"></a><h3>2.1. VoiceControlClientManagerObject</h3>
+<div class="brief">
+ The VoiceControlClientManagerObject interface defines what is instantiated in the <em>Tizen</em> object.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface VoiceControlClientManagerObject {
+       readonly attribute <a href="#VoiceControlClientManager">VoiceControlClientManager</a> voicecontrol;
+    };</pre>
+<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#VoiceControlClientManagerObject">VoiceControlClientManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="description">
+          <p>
+The <em>tizen.voicecontrol</em> object provides access to the functionality of the voice control API.
+          </p>
+         </div>
+</div>
+<div class="interface" id="VoiceControlClientManager">
+<a class="backward-compatibility-anchor" name="::VoiceControl::VoiceControlClientManager"></a><h3>2.2. VoiceControlClientManager</h3>
+<div class="brief">
+ Voice Control Client Manager
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface VoiceControlClientManager {
+       <a href="#VoiceControlClient">VoiceControlClient</a> getVoiceControlClient() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="VoiceControlClientManager::getVoiceControlClient">
+<a class="backward-compatibility-anchor" name="::VoiceControl::VoiceControlClientManager::getVoiceControlClient"></a><code><b><span class="methodName">getVoiceControlClient</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Requests voice control Client instance.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#VoiceControlClient">VoiceControlClient</a> getVoiceControlClient();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/recorder
+            </p>
+<p><span class="remark"> Remark : </span>
+ This method always returns the static voice control client object. That is, if you call a method
+using one of voice control client objects, it affects other objects.
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ VoiceControlClient The object to manage voice control
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if the operation cannot be finished properly.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> /* client1 and client2 refer the same object */
+ var client1 = tizen.voicecontrol.getVoiceControlClient();
+ var client2 = tizen.voicecontrol.getVoiceControlClient();
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="VoiceControlClient">
+<a class="backward-compatibility-anchor" name="::VoiceControl::VoiceControlClient"></a><h3>2.3. VoiceControlClient</h3>
+<div class="brief">
+ Voice Control Client
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface VoiceControlClient {
+
+       DOMString getCurrentLanguage() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       void setCommandList(<a href="#VoiceControlCommand">VoiceControlCommand</a>[] list, optional <a href="#VoiceControlCommandType">VoiceControlCommandType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       void unsetCommandList(optional <a href="#VoiceControlCommandType">VoiceControlCommandType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       long addResultListener(<a href="#VoiceControlResultCallback">VoiceControlResultCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       void removeResultListener(long id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       long addLanguageChangeListener(<a href="#VoiceControlLanguageChangeCallback">VoiceControlLanguageChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       void removeLanguageChangeListener(long id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       void release() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="VoiceControlClient::getCurrentLanguage">
+<a class="backward-compatibility-anchor" name="::VoiceControl::VoiceControlClient::getCurrentLanguage"></a><code><b><span class="methodName">getCurrentLanguage</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets current language.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString getCurrentLanguage();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="description">
+            <p>
+A language is specified as an ISO 3166 alpha-2 two letter country-code followed by ISO 639-1 for the two-letter language code.
+For example, "ko_KR" for Korean, "en_US" for American English.
+            </p>
+           </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if the operation cannot be finished properly.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var client = tizen.voicecontrol.getVoiceControlClient();
+ var currentLanguage = client.getCurrentLanguage();
+
+ console.log("Current language is: " + currentLanguage);
+ </pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> Current language is: en_US
+ </pre>
+</div>
+</dd>
+<dt class="method" id="VoiceControlClient::setCommandList">
+<a class="backward-compatibility-anchor" name="::VoiceControl::VoiceControlClient::setCommandList"></a><code><b><span class="methodName">setCommandList</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets command list.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setCommandList(<a href="#VoiceControlCommand">VoiceControlCommand</a>[] list, optional <a href="#VoiceControlCommandType">VoiceControlCommandType</a>? type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/recorder
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">list</span>:
+ Command list handle
+                </li>
+          <li class="param">
+<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Type of registered commands. The default value is <var>"FOREGROUND"</var>                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not
+compatible with the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input
+parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if the operation cannot be finished properly.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var client = tizen.voicecontrol.getVoiceControlClient();
+
+ var commands = [
+            new tizen.VoiceControlCommand("alpha"),
+            new tizen.VoiceControlCommand("bravo"),
+            new tizen.VoiceControlCommand("charlie")];
+ client.setCommandList(commands, "FOREGROUND");
+ </pre>
+</div>
+</dd>
+<dt class="method" id="VoiceControlClient::unsetCommandList">
+<a class="backward-compatibility-anchor" name="::VoiceControl::VoiceControlClient::unsetCommandList"></a><code><b><span class="methodName">unsetCommandList</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unsets command list.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unsetCommandList(optional <a href="#VoiceControlCommandType">VoiceControlCommandType</a>? type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/recorder
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Type of commands that should be unset. The default value is <var>"FOREGROUND"</var>                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not
+compatible with the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if the operation cannot be finished properly.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var client = tizen.voicecontrol.getVoiceControlClient();
+
+ var commands = [
+            new tizen.VoiceControlCommand("alpha"),
+            new tizen.VoiceControlCommand("bravo"),
+            new tizen.VoiceControlCommand("charlie")];
+ client.setCommandList(commands, "FOREGROUND");
+
+ client.unsetCommandList("FOREGROUND");
+ </pre>
+</div>
+</dd>
+<dt class="method" id="VoiceControlClient::addResultListener">
+<a class="backward-compatibility-anchor" name="::VoiceControl::VoiceControlClient::addResultListener"></a><code><b><span class="methodName">addResultListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers a listener for getting recognition result.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addResultListener(<a href="#VoiceControlResultCallback">VoiceControlResultCallback</a> listener);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">listener</span>:
+ Callback function to register
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long Identifier used to clear the watch subscription.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not
+compatible with the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if the operation cannot be finished properly.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var client = tizen.voicecontrol.getVoiceControlClient();
+
+ var commands = [
+            new tizen.VoiceControlCommand("alpha"),
+            new tizen.VoiceControlCommand("bravo"),
+            new tizen.VoiceControlCommand("charlie")];
+ client.setCommandList(commands, "FOREGROUND");
+
+ var resultListenerCallback = function(event, list, result)
+ {
+   console.log("Result callback - event: " + event + ", result: " + result);
+ }
+
+ var id = client.addResultListener(resultListenerCallback);
+ console.log("Result listener[" + id + "] is created");
+ </pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> Result listener[1] is created
+ </pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> /* (When a user says "alpha") */
+ Result callback - event: SUCCESS, result: alpha
+ </pre>
+</div>
+</dd>
+<dt class="method" id="VoiceControlClient::removeResultListener">
+<a class="backward-compatibility-anchor" name="::VoiceControl::VoiceControlClient::removeResultListener"></a><code><b><span class="methodName">removeResultListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unregisters the listener.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeResultListener(long id);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">id</span>:
+ Identifier used to clear the watch subscription
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if the operation cannot be finished properly.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var client = tizen.voicecontrol.getVoiceControlClient();
+
+ var commands = [
+            new tizen.VoiceControlCommand("alpha"),
+            new tizen.VoiceControlCommand("bravo"),
+            new tizen.VoiceControlCommand("charlie")];
+ client.setCommandList(commands, "FOREGROUND");
+
+ var resultListenerCallback = function(event, list, result)
+ {
+   console.log("Result callback - event: " + event + ", result: " + result);
+ }
+
+ var id = client.addResultListener(resultListenerCallback);
+
+ client.removeResultListener(id);
+ </pre>
+</div>
+</dd>
+<dt class="method" id="VoiceControlClient::addLanguageChangeListener">
+<a class="backward-compatibility-anchor" name="::VoiceControl::VoiceControlClient::addLanguageChangeListener"></a><code><b><span class="methodName">addLanguageChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers a callback function to be called when current language is changed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addLanguageChangeListener(<a href="#VoiceControlLanguageChangeCallback">VoiceControlLanguageChangeCallback</a> listener);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">listener</span>:
+ Callback function to register
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long Identifier used to clear the watch subscription.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not
+compatible with the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if the operation cannot be finished properly.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var client = tizen.voicecontrol.getVoiceControlClient();
+
+ var languageChangeListenerCallback = function(previous, current)
+ {
+   console.log("Language change callback " + previous + "-&gt;" + current);
+ }
+
+ var id = client.addLanguageChangeListener(languageChangeListenerCallback);
+ console.log("Language change listener[" + id + "] is created");
+ </pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> Language change listener[1] is created
+ </pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> /* (When language is changed) */
+ Language change callback en_US-&gt;ko_KR
+ </pre>
+</div>
+</dd>
+<dt class="method" id="VoiceControlClient::removeLanguageChangeListener">
+<a class="backward-compatibility-anchor" name="::VoiceControl::VoiceControlClient::removeLanguageChangeListener"></a><code><b><span class="methodName">removeLanguageChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unregisters the callback function.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeLanguageChangeListener(long id);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">id</span>:
+ Identifier used to clear the watch subscription
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if the operation cannot be finished properly.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var client = tizen.voicecontrol.getVoiceControlClient();
+
+ var languageChangeListenerCallback = function(previous, current)
+ {
+   console.log("Language change callback " + previous + "-&gt;" + current);;
+ }
+
+ var id = client.addLanguageChangeListener(languageChangeListenerCallback);
+
+ client.removeLanguageChangeListener(id);
+ </pre>
+</div>
+</dd>
+<dt class="method" id="VoiceControlClient::release">
+<a class="backward-compatibility-anchor" name="::VoiceControl::VoiceControlClient::release"></a><code><b><span class="methodName">release</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Releases all resources.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void release();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="description">
+            <p>
+Releases listeners and disconnects voice control service.
+You should call this method when you do not want to use voice control client instance any more.
+It is necessary to create new voice control client instance, if you want to use more after release.
+            </p>
+           </div>
+<p><span class="remark"> Remark : </span>
+ If you call this method, all other VoiceControlClient objects are also released.
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type AbortError, if the operation cannot be finished properly.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> /* Initialize the voice control client */
+ var client = tizen.voicecontrol.getVoiceControlClient();
+
+ var commands = [
+            new tizen.VoiceControlCommand("alpha"),
+            new tizen.VoiceControlCommand("bravo"),
+            new tizen.VoiceControlCommand("charlie")];
+ client.setCommandList(commands, "FOREGROUND");
+
+ var resultListenerCallback = function(event, list, result)
+ {
+   console.log("Result callback - event: " + event + ", result: " + result);
+ }
+
+ var id = client.addResultListener(resultListenerCallback);
+
+ /* Deinitialize the voice control client */
+ client.removeResultListener(id);
+ client.unsetCommandList("FOREGROUND");
+
+ /* After release() voice control does not work */
+ /* If you want to use voice control after release(), you should initialize the client again */
+ client.release();
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="VoiceControlCommand">
+<a class="backward-compatibility-anchor" name="::VoiceControl::VoiceControlCommand"></a><h3>2.4. VoiceControlCommand</h3>
+<div class="brief">
+ The VoiceControlCommand defines interface used to create command you want to be recognized.
+          </div>
+<pre class="webidl prettyprint">    [Constructor(DOMString command, optional <a href="#VoiceControlCommandType">VoiceControlCommandType</a>? type)]
+    interface VoiceControlCommand {
+
+       attribute DOMString command;
+
+       attribute <a href="#VoiceControlCommandType">VoiceControlCommandType</a> type;
+    };</pre>
+<div class="constructors">
+<h4 id="VoiceControlCommand::constructor">Constructors</h4>
+<dl>
+<div class="brief">
+ Command constructor
+              </div>
+<pre class="webidl prettyprint">VoiceControlCommand(DOMString command, optional <a href="#VoiceControlCommandType">VoiceControlCommandType</a>? type);</pre>
+</dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="VoiceControlCommand::command">
+<span class="attrName"><span class="type">DOMString </span><span class="name">command</span></span><div class="brief">
+ The command text
+            </div>
+<div class="description">
+            <p>
+The command should be set as text you want to be recognized.
+            </p>
+           </div>
+</li>
+<li class="attribute" id="VoiceControlCommand::type">
+<span class="attrName"><span class="type">VoiceControlCommandType </span><span class="name">type</span></span><div class="brief">
+ The type of the command processing
+            </div>
+<div class="description">
+            <p>
+The default value is <var>"FOREGROUND"</var>            </p>
+           </div>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="VoiceControlLanguageChangeCallback">
+<a class="backward-compatibility-anchor" name="::VoiceControl::VoiceControlLanguageChangeCallback"></a><h3>2.5. VoiceControlLanguageChangeCallback</h3>
+<div class="brief">
+ Called when default language is changed.
+          </div>
+<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface VoiceControlLanguageChangeCallback {
+       void onlanguagechanged (DOMString previous, DOMString current);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="VoiceControlLanguageChangeCallback::onlanguagechanged">
+<a class="backward-compatibility-anchor" name="::VoiceControl::VoiceControlLanguageChangeCallback::onlanguagechanged"></a><code><b><span class="methodName">onlanguagechanged</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when default language is changed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onlanguagechanged(DOMString previous, DOMString current);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">previous</span>:
+ Previous language
+                </li>
+          <li class="param">
+<span class="name">current</span>:
+ Current language
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="VoiceControlResultCallback">
+<a class="backward-compatibility-anchor" name="::VoiceControl::VoiceControlResultCallback"></a><h3>2.6. VoiceControlResultCallback</h3>
+<div class="brief">
+ Called when client gets the recognition result.
+          </div>
+<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface VoiceControlResultCallback {
+       void onresult(<a href="#VoiceControlResultEvent">VoiceControlResultEvent</a> event, <a href="#VoiceControlCommand">VoiceControlCommand</a>[] list, DOMString results);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="VoiceControlResultCallback::onresult">
+<a class="backward-compatibility-anchor" name="::VoiceControl::VoiceControlResultCallback::onresult"></a><code><b><span class="methodName">onresult</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when client gets the recognition result.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onresult(<a href="#VoiceControlResultEvent">VoiceControlResultEvent</a> event, <a href="#VoiceControlCommand">VoiceControlCommand</a>[] list, DOMString results);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">event</span>:
+ The result event
+                </li>
+          <li class="param">
+<span class="name">list</span>:
+ The recognized command list
+                </li>
+          <li class="param">
+<span class="name">results</span>:
+ The spoken text (e.g. registered command text like "play", "stop", etc.)
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="api-features">3. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the voice control application runs on a device with speech control feature, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/speech.control</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the voice control application runs on a device with microphone feature, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/microphone</li>
+</div>
+<p></p>
+                    For more information, see <a href="https://developer.tizen.org/development/getting-started/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+</div>
+<h2 id="full-webidl">4. Full WebIDL</h2>
+<pre class="webidl prettyprint">module VoiceControl {
+    enum VoiceControlResultEvent {"SUCCESS", "FAILURE"};
+
+    enum VoiceControlCommandType {"FOREGROUND"};
+
+    [NoInterfaceObject] interface VoiceControlClientManagerObject {
+       readonly attribute <a href="#VoiceControlClientManager">VoiceControlClientManager</a> voicecontrol;
+    };
+
+    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#VoiceControlClientManagerObject">VoiceControlClientManagerObject</a>;
+
+    [NoInterfaceObject] interface VoiceControlClientManager {
+       <a href="#VoiceControlClient">VoiceControlClient</a> getVoiceControlClient() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };
+
+    [NoInterfaceObject] interface VoiceControlClient {
+
+       DOMString getCurrentLanguage() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       void setCommandList(<a href="#VoiceControlCommand">VoiceControlCommand</a>[] list, optional <a href="#VoiceControlCommandType">VoiceControlCommandType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       void unsetCommandList(optional <a href="#VoiceControlCommandType">VoiceControlCommandType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       long addResultListener(<a href="#VoiceControlResultCallback">VoiceControlResultCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       void removeResultListener(long id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       long addLanguageChangeListener(<a href="#VoiceControlLanguageChangeCallback">VoiceControlLanguageChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       void removeLanguageChangeListener(long id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       void release() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };
+
+    [Constructor(DOMString command, optional <a href="#VoiceControlCommandType">VoiceControlCommandType</a>? type)]
+    interface VoiceControlCommand {
+
+       attribute DOMString command;
+
+       attribute <a href="#VoiceControlCommandType">VoiceControlCommandType</a> type;
+    };
+
+    [Callback=FunctionOnly, NoInterfaceObject] interface VoiceControlLanguageChangeCallback {
+       void onlanguagechanged (DOMString previous, DOMString current);
+    };
+
+    [Callback=FunctionOnly, NoInterfaceObject] interface VoiceControlResultCallback {
+       void onresult(<a href="#VoiceControlResultEvent">VoiceControlResultEvent</a> event, <a href="#VoiceControlCommand">VoiceControlCommand</a>[] list, DOMString results);
+    };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

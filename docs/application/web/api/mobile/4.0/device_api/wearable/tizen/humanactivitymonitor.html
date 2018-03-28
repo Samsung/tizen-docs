@@ -1,0 +1,3173 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>HumanActivityMonitor API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::HumanActivityMonitor">
+<div class="supported-platforms"><img class="wearable-optional emulator-partial" title="Optional, Supported by Tizen Wearable emulator - Emulator supports only HRM" src="wearable_s_w_optional.png"></div>
+<div class="title"><h1>HumanActivityMonitor API</h1></div>
+<div class="brief">
+ The HumanActivityMonitor API defines interfaces and methods to manage human activity data from various sensors on the device.
+        </div>
+<div class="description">
+        <p>
+The following human activity monitor functionality is provided:
+        </p>
+        <ul>
+          <li>
+Set up callbacks for data change notification          </li>
+          <li>
+Get current human activity monitor data          </li>
+          <li>
+Record and read human activity data          </li>
+          <li>
+Recognize activities and gestures          </li>
+        </ul>
+        <p>
+The gesture recognition API allows applications to be notified and react when the user performs different types of gestures, for example,  when the device was tapped, shaken up, picked up or moved along axis.
+        </p>
+        <p>
+The activity recognition API allows applications to be notified and react when a user activity is recognized, for example, the user starts to run, walk or is in moving vehicle.
+        </p>
+        <p>
+For more information about how to use Human Activity Monitor API, see <a href="https://developer.tizen.org/development/guides/web-application/tizen-features/system/human-activity-monitor">Human Activity Monitor Guide</a>.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li class="deprecated">
+                    1.1. <a href="#HumanActivityType">HumanActivityType</a>
+</li>
+<li>
+                    1.2. <a href="#HumanActivityRecorderType">HumanActivityRecorderType</a>
+</li>
+<li>
+                    1.3. <a href="#PedometerStepStatus">PedometerStepStatus</a>
+</li>
+<li>
+                    1.4. <a href="#ActivityRecognitionType">ActivityRecognitionType</a>
+</li>
+<li>
+                    1.5. <a href="#ActivityAccuracy">ActivityAccuracy</a>
+</li>
+<li>
+                    1.6. <a href="#SleepStatus">SleepStatus</a>
+</li>
+<li>
+                    1.7. <a href="#GestureType">GestureType</a>
+</li>
+<li>
+                    1.8. <a href="#GestureEvent">GestureEvent</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#HumanActivityMonitorManagerObject">HumanActivityMonitorManagerObject</a>
+</li>
+<li>2.2. <a href="#HumanActivityMonitorManager">HumanActivityMonitorManager</a>
+</li>
+<li>2.3. <a href="#StepDifference">StepDifference</a>
+</li>
+<li>2.4. <a href="#HumanActivityRecorderOption">HumanActivityRecorderOption</a>
+</li>
+<li>2.5. <a href="#HumanActivityRecorderQuery">HumanActivityRecorderQuery</a>
+</li>
+<li>2.6. <a href="#HumanActivityData">HumanActivityData</a>
+</li>
+<li>2.7. <a href="#HumanActivityPedometerData">HumanActivityPedometerData</a>
+</li>
+<li>2.8. <a href="#HumanActivityAccumulativePedometerData">HumanActivityAccumulativePedometerData</a>
+</li>
+<li>2.9. <a href="#HumanActivityHRMData">HumanActivityHRMData</a>
+</li>
+<li>2.10. <a href="#HumanActivityGPSInfo">HumanActivityGPSInfo</a>
+</li>
+<li>2.11. <a href="#HumanActivityGPSInfoArray">HumanActivityGPSInfoArray</a>
+</li>
+<li>2.12. <a href="#HumanActivitySleepMonitorData">HumanActivitySleepMonitorData</a>
+</li>
+<li>2.13. <a href="#HumanActivityMonitorOption">HumanActivityMonitorOption</a>
+</li>
+<li>2.14. <a href="#HumanActivityRecognitionData">HumanActivityRecognitionData</a>
+</li>
+<li>2.15. <a href="#HumanActivityRecorderData">HumanActivityRecorderData</a>
+</li>
+<li>2.16. <a href="#HumanActivityRecorderPedometerData">HumanActivityRecorderPedometerData</a>
+</li>
+<li>2.17. <a href="#HumanActivityRecorderHRMData">HumanActivityRecorderHRMData</a>
+</li>
+<li>2.18. <a href="#HumanActivityRecorderSleepMonitorData">HumanActivityRecorderSleepMonitorData</a>
+</li>
+<li>2.19. <a href="#HumanActivityRecorderPressureData">HumanActivityRecorderPressureData</a>
+</li>
+<li>2.20. <a href="#GestureData">GestureData</a>
+</li>
+<li>2.21. <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a>
+</li>
+<li>2.22. <a href="#HumanActivityReadRecorderSuccessCallback">HumanActivityReadRecorderSuccessCallback</a>
+</li>
+<li>2.23. <a href="#GestureRecognitionCallback">GestureRecognitionCallback</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#api-features">Related Feature</a>
+</li>
+<li>4. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#HumanActivityMonitorManagerObject">HumanActivityMonitorManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#HumanActivityMonitorManager">HumanActivityMonitorManager</a></td>
+<td>
+<div>void <a href="#HumanActivityMonitorManager::getHumanActivityData">getHumanActivityData</a> (<a href="#HumanActivityType">HumanActivityType</a> type, <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#HumanActivityMonitorManager::start">start</a> (<a href="#HumanActivityType">HumanActivityType</a> type, optional <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a>? changedCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#HumanActivityMonitorOption">HumanActivityMonitorOption</a>? option)</div>
+<div>void <a href="#HumanActivityMonitorManager::stop">stop</a> (<a href="#HumanActivityType">HumanActivityType</a> type)</div>
+<div>void <a href="#HumanActivityMonitorManager::setAccumulativePedometerListener">setAccumulativePedometerListener</a> (<a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> changeCallback)</div>
+<div>void <a href="#HumanActivityMonitorManager::unsetAccumulativePedometerListener">unsetAccumulativePedometerListener</a> ()</div>
+<div>long <a href="#HumanActivityMonitorManager::addActivityRecognitionListener">addActivityRecognitionListener</a> (<a href="#ActivityRecognitionType">ActivityRecognitionType</a> type, <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> listener, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#HumanActivityMonitorManager::removeActivityRecognitionListener">removeActivityRecognitionListener</a> (long listenerId, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#HumanActivityMonitorManager::startRecorder">startRecorder</a> (<a href="#HumanActivityRecorderType">HumanActivityRecorderType</a> type, optional <a href="#HumanActivityRecorderOption">HumanActivityRecorderOption</a> option)</div>
+<div>void <a href="#HumanActivityMonitorManager::stopRecorder">stopRecorder</a> (<a href="#HumanActivityRecorderType">HumanActivityRecorderType</a> type)</div>
+<div>void <a href="#HumanActivityMonitorManager::readRecorderData">readRecorderData</a> (<a href="#HumanActivityRecorderType">HumanActivityRecorderType</a> type, <a href="#HumanActivityRecorderQuery">HumanActivityRecorderQuery</a>? query, <a href="#HumanActivityReadRecorderSuccessCallback">HumanActivityReadRecorderSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>boolean <a href="#HumanActivityMonitorManager::isGestureSupported">isGestureSupported</a> (<a href="#GestureType ">GestureType </a> type)</div>
+<div>long <a href="#HumanActivityMonitorManager::addGestureRecognitionListener">addGestureRecognitionListener</a> (<a href="#GestureType ">GestureType </a> type, <a href="#GestureRecognitionCallback">GestureRecognitionCallback</a> listener, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional boolean? alwaysOn)</div>
+<div>void <a href="#HumanActivityMonitorManager::removeGestureRecognitionListener">removeGestureRecognitionListener</a> (long watchId)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#StepDifference">StepDifference</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#HumanActivityRecorderOption">HumanActivityRecorderOption</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#HumanActivityRecorderQuery">HumanActivityRecorderQuery</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#HumanActivityData">HumanActivityData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#HumanActivityPedometerData">HumanActivityPedometerData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#HumanActivityAccumulativePedometerData">HumanActivityAccumulativePedometerData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#HumanActivityHRMData">HumanActivityHRMData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#HumanActivityGPSInfo">HumanActivityGPSInfo</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#HumanActivityGPSInfoArray">HumanActivityGPSInfoArray</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#HumanActivitySleepMonitorData">HumanActivitySleepMonitorData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#HumanActivityMonitorOption">HumanActivityMonitorOption</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#HumanActivityRecognitionData">HumanActivityRecognitionData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#HumanActivityRecorderData">HumanActivityRecorderData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#HumanActivityRecorderPedometerData">HumanActivityRecorderPedometerData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#HumanActivityRecorderHRMData">HumanActivityRecorderHRMData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#HumanActivityRecorderSleepMonitorData">HumanActivityRecorderSleepMonitorData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#HumanActivityRecorderPressureData">HumanActivityRecorderPressureData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#GestureData">GestureData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a></td>
+<td><div>void <a href="#HumanActivityMonitorSuccessCallback::onsuccess">onsuccess</a> (optional <a href="#HumanActivityData">HumanActivityData</a>? humanactivitydata)</div></td>
+</tr>
+<tr>
+<td><a href="#HumanActivityReadRecorderSuccessCallback">HumanActivityReadRecorderSuccessCallback</a></td>
+<td><div>void <a href="#HumanActivityReadRecorderSuccessCallback::onsuccess">onsuccess</a> (<a href="#HumanActivityRecorderData">HumanActivityRecorderData</a>[] humanactivitydata)</div></td>
+</tr>
+<tr>
+<td><a href="#GestureRecognitionCallback">GestureRecognitionCallback</a></td>
+<td><div>void <a href="#GestureRecognitionCallback::onsuccess">onsuccess</a> (<a href="#GestureData">GestureData</a> data)</div></td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="enum" id="HumanActivityType">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityType"></a><h3>1.1. HumanActivityType</h3>
+<div class="brief">
+ Specifies the supported human activity monitor types.
+          </div>
+<pre class="webidl prettyprint">    enum HumanActivityType { "PEDOMETER", "WRIST_UP", "HRM", "GPS", "SLEEP_MONITOR" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="description">
+          <p>
+The human activity monitor types defined by this enumerator are:
+          </p>
+          <ul>
+            <li>
+PEDOMETER - Pedometer data            </li>
+            <li>
+WRIST_UP - Wrist up gesture            </li>
+            <li>
+HRM - Heart rate monitor (Heart rate and RR interval)            </li>
+            <li>
+GPS - GPS information (latitude, longitude and speed)            </li>
+            <li>
+SLEEP_MONITOR - Sleep monitor (sleep state)            </li>
+          </ul>
+         </div>
+<p><span class="remark"> Remark : </span>
+ <em>SLEEP_MONITOR</em> is supported since Tizen 2.3.2
+          </p>
+</div>
+<div class="enum" id="HumanActivityRecorderType">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecorderType"></a><h3>1.2. HumanActivityRecorderType</h3>
+<div class="brief">
+ Specifies the human activity recorder types.
+          </div>
+<pre class="webidl prettyprint">    enum HumanActivityRecorderType { "PEDOMETER", "HRM", "SLEEP_MONITOR", "PRESSURE" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+<div class="description">
+          <p>
+The human activity recorder types defined by this enumerator are:
+          </p>
+          <ul>
+            <li>
+PEDOMETER - Pedometer recorder type            </li>
+            <li>
+HRM - Heart rate monitor (Heart rate)            </li>
+            <li>
+SLEEP_MONITOR - Sleep monitor (sleep state)            </li>
+            <li>
+PRESSURE - Pressure sensor            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="PedometerStepStatus">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::PedometerStepStatus"></a><h3>1.3. PedometerStepStatus</h3>
+<div class="brief">
+ Specifies the pedometer user's current movement type.
+          </div>
+<pre class="webidl prettyprint">    enum PedometerStepStatus { "NOT_MOVING", "WALKING", "RUNNING", "UNKNOWN" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="description">
+          <ul>
+            <li>
+NOT_MOVING - The user remains stationary            </li>
+            <li>
+WALKING - The user is walking            </li>
+            <li>
+RUNNING - The user is running            </li>
+            <li>
+UNKNOWN - The user's movement type is uncertain            </li>
+          </ul>
+         </div>
+<p><span class="remark"> Remark : </span>
+ <em>UNKNOWN</em> is supported since Tizen 2.3.2
+          </p>
+</div>
+<div class="enum" id="ActivityRecognitionType">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::ActivityRecognitionType"></a><h3>1.4. ActivityRecognitionType</h3>
+<div class="brief">
+ Specifies the supported activity recognition types.
+          </div>
+<pre class="webidl prettyprint">    enum ActivityRecognitionType { "STATIONARY", "WALKING", "RUNNING", "IN_VEHICLE" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+<div class="description">
+          <p>
+The activity recognition types defined by this enumerator are:
+          </p>
+          <ul>
+            <li>
+STATIONARY - The stationary activity recognition type            </li>
+            <li>
+WALKING - The walking activity recognition type            </li>
+            <li>
+RUNNING - The running activity recognition type            </li>
+            <li>
+IN_VEHICLE - The in-vehicle activity recognition type            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="ActivityAccuracy">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::ActivityAccuracy"></a><h3>1.5. ActivityAccuracy</h3>
+<div class="brief">
+ Specified the degree of the accuracy.
+          </div>
+<pre class="webidl prettyprint">    enum ActivityAccuracy { "LOW", "MEDIUM", "HIGH" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+<div class="description">
+          <p>
+The activity accuracy defined by this enumerator are:
+          </p>
+          <ul>
+            <li>
+LOW - Low accuracy             </li>
+            <li>
+MEDIUM - Medium accuracy            </li>
+            <li>
+HIGH - High accuracy            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="SleepStatus">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::SleepStatus"></a><h3>1.6. SleepStatus</h3>
+<div class="brief">
+ Specifies the sleep monitor user's sleep status.
+          </div>
+<pre class="webidl prettyprint">    enum SleepStatus { "ASLEEP", "AWAKE", "UNKNOWN" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+<div class="description">
+          <ul>
+            <li>
+ASLEEP - The user is asleep            </li>
+            <li>
+AWAKE - The user is awake            </li>
+            <li>
+UNKNOWN - Sleep status could not be determined            </li>
+          </ul>
+         </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function onchangedCB(sleepInfo)
+{
+  console.log("Sleep status: " + sleepInfo.status);
+  console.log("Timestamp: " + sleepInfo.timestamp);
+}
+
+tizen.humanactivitymonitor.start("SLEEP_MONITOR", onchangedCB);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> Sleep status: ASLEEP
+ Timestamp: 1456735296123
+ </pre>
+</div>
+</div>
+<div class="enum" id="GestureType">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::GestureType"></a><h3>1.7. GestureType</h3>
+<div class="brief">
+ Specifies the gesture types.
+          </div>
+<pre class="webidl prettyprint">    enum GestureType { "GESTURE_DOUBLE_TAP", "GESTURE_MOVE_TO_EAR", "GESTURE_NO_MOVE", "GESTURE_PICK_UP",
+                       "GESTURE_SHAKE", "GESTURE_SNAP", "GESTURE_TILT", "GESTURE_TURN_FACE_DOWN", "GESTURE_WRIST_UP" };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="description">
+          <ul>
+            <li>
+GESTURE_DOUBLE_TAP - The display of the mobile device is tapped twice            </li>
+            <li>
+GESTURE_MOVE_TO_EAR - The mobile device is moved near to an ear            </li>
+            <li>
+GESTURE_NO_MOVE - The mobile device is being stopped for a while            </li>
+            <li>
+GESTURE_PICK_UP - The mobile device is picked up            </li>
+            <li>
+GESTURE_SHAKE - The mobile device is quickly moved back and forth            </li>
+            <li>
+GESTURE_SNAP - The mobile device is moved along an axis and back            </li>
+            <li>
+GESTURE_TILT - The mobile device is tilted            </li>
+            <li>
+GESTURE_TURN_FACE_DOWN - The mobile device is flipped from face to back            </li>
+            <li>
+GESTURE_WRIST_UP - The wearable device is moved and faced up            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="GestureEvent">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::GestureEvent"></a><h3>1.8. GestureEvent</h3>
+<div class="brief">
+ Specifies the gesture events.
+          </div>
+<pre class="webidl prettyprint">    enum GestureEvent { "GESTURE_EVENT_DETECTED", "GESTURE_SHAKE_DETECTED", "GESTURE_SHAKE_FINISHED", "GESTURE_SNAP_X_NEGATIVE",
+                        "GESTURE_SNAP_X_POSITIVE", "GESTURE_SNAP_Y_NEGATIVE", "GESTURE_SNAP_Y_POSITIVE", "GESTURE_SNAP_Z_NEGATIVE", "GESTURE_SNAP_Z_POSITIVE" };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="description">
+          <ul>
+            <li>
+GESTURE_EVENT_DETECTED - The gesture is detected            </li>
+            <li>
+GESTURE_SHAKE_DETECTED - Shake gesture is detected            </li>
+            <li>
+GESTURE_SHAKE_FINISHED - Shake gesture is finished            </li>
+            <li>
+GESTURE_SNAP_X_NEGATIVE - [-X] snap is detected            </li>
+            <li>
+GESTURE_SNAP_X_POSITIVE - [+X] snap is detected            </li>
+            <li>
+GESTURE_SNAP_Y_NEGATIVE - [-Y] snap is detected            </li>
+            <li>
+GESTURE_SNAP_Y_POSITIVE - [+Y] snap is detected            </li>
+            <li>
+GESTURE_SNAP_Z_NEGATIVE - [-Z] snap is detected            </li>
+            <li>
+GESTURE_SNAP_Z_POSITIVE - [+Z] snap is detected            </li>
+          </ul>
+         </div>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="HumanActivityMonitorManagerObject">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManagerObject"></a><h3>2.1. HumanActivityMonitorManagerObject</h3>
+<div class="brief">
+ The HumanActivityMonitorManagerObject interface defines what is instantiated by the <em>Tizen</em> object.
+The <em>tizen.humanactivitymonitor</em> object allows access to the human activity data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface HumanActivityMonitorManagerObject {
+        readonly attribute <a href="#HumanActivityMonitorManager">HumanActivityMonitorManager</a> humanactivitymonitor;
+    };</pre>
+<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#HumanActivityMonitorManagerObject">HumanActivityMonitorManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+</div>
+<div class="interface" id="HumanActivityMonitorManager">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager"></a><h3>2.2. HumanActivityMonitorManager</h3>
+<div class="brief">
+ The HumanActivityMonitorManager interface provides methods to access human activity data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface HumanActivityMonitorManager {
+
+        void getHumanActivityData(<a href="#HumanActivityType">HumanActivityType</a> type, <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> successCallback,
+                                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void start(HumanActivityType type, optional HumanActivityMonitorSuccessCallback? changedCallback, optional ErrorCallback? errorCallback, optional HumanActivityMonitorOption? option) raises(WebAPIException);
+
+        void stop(HumanActivityType type) raises(WebAPIException);
+
+        void setAccumulativePedometerListener(HumanActivityMonitorSuccessCallback changeCallback) raises(WebAPIException);
+
+        void unsetAccumulativePedometerListener() raises(WebAPIException);
+
+        long addActivityRecognitionListener(ActivityRecognitionType type, HumanActivityMonitorSuccessCallback listener, optional ErrorCallback? errorCallback) raises(WebAPIException);
+
+        void removeActivityRecognitionListener(long listenerId, optional ErrorCallback? errorCallback);
+
+        void startRecorder(HumanActivityRecorderType type, optional HumanActivityRecorderOption option) raises(WebAPIException);
+
+        void stopRecorder(HumanActivityRecorderType type) raises(WebAPIException);
+
+        void readRecorderData(HumanActivityRecorderType type,
+                              HumanActivityRecorderQuery? query,
+                              HumanActivityReadRecorderSuccessCallback successCallback,
+                              optional ErrorCallback? errorCallback) raises(WebAPIException);
+
+        boolean isGestureSupported(GestureType type) raises(WebAPIException);
+
+        long addGestureRecognitionListener(GestureType type, GestureRecognitionCallback listener, optional ErrorCallback? errorCallback, optional boolean? alwaysOn) raises(WebAPIException);
+
+        void removeGestureRecognitionListener(long watchId) raises(WebAPIException);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="HumanActivityMonitorManager::getHumanActivityData">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::getHumanActivityData"></a><code><b><span class="methodName">getHumanActivityData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the current human activity data for certain human activity types.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getHumanActivityData(<a href="#HumanActivityType">HumanActivityType</a> type, <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+The <em>start()</em> method should be called to turn on the sensor before calling the <em>getHumanActivityData()</em> method. If not, <var>ServiceNotAvailableError</var> occurs.
+            </p>
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ ServiceNotAvailableError : If the <em>getHumanActivityData()</em> method is called without previously calling the <em>start()</em> method              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/healthinfo
+            </p>
+<p><span class="remark"> Remark : </span>
+ getHumanActivityData() method can only be used with the HRM and PEDOMETER types.
+            </p>
+<p><span class="remark"> Remark : </span>
+ This function may fail if it is called before the sensor is ready. In case of interval-driven sensors, it is recommended to call the function after at least one sensor event is delivered. Otherwise, applications can retry to call this function to be sure that the sensor is ready.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ Human activity data type to read (HRM or PEDOMETER)
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback method to be invoked when the human activity data has been read
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if registering the success callback fails because of an unknown error.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the given <var>type</var> is not supported on a device or by this method.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to use this function.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function onsuccessCB(pedometerInfo)
+{
+  console.log("Step status: " + pedometerInfo.stepStatus);
+  console.log("Cumulative total step count: " + pedometerInfo.cumulativeTotalStepCount);
+}
+
+function onerrorCB(error)
+{
+  console.log("Error occurs. name:" + error.name + ", message: " + error.message);
+}
+
+function onchangedCB(pedometerdata)
+{
+  console.log("From now on, you will be notified when the pedometer data changes.");
+  /* To get the current data information */
+  tizen.humanactivitymonitor.getHumanActivityData("PEDOMETER", onsuccessCB, onerrorCB);
+}
+
+tizen.humanactivitymonitor.start("PEDOMETER", onchangedCB);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> From now on, you will be notified when the pedometer data changes.
+ Step status: WALKING
+ Cumulative total step count: 100
+ </pre>
+</div>
+</dd>
+<dt class="method" id="HumanActivityMonitorManager::start">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::start"></a><code><b><span class="methodName">start</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Starts a sensor and registers a change listener to be called when new human activity data for a given human activity type is available.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void start(<a href="#HumanActivityType">HumanActivityType</a> type, optional <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a>? changedCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#HumanActivityMonitorOption">HumanActivityMonitorOption</a>? option);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ ServiceNotAvailableError - If the human activity service is not available. For the GPS type, if the GPS function is disabled by the user in the location settings, it is not possible to receive notifications when the GPS value changes.              </li>
+            </ul>
+           </div>
+<div class="description">
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/healthinfo
+            </p>
+<p><span class="remark"> Remark : </span>
+ When the CPU is in the power saving mode, the WRIST_UP event might not occur even though &lt;tizen:setting background-support="enable" /&gt; is declared in the config.xml file.
+            </p>
+<p><span class="remark"> Remark : </span>
+ The <b>'http://tizen.org/privilege/location'</b> privilege is required for only the <a href="#HumanActivityType">GPS</a> type.
+That means that both <b>'http://tizen.org/privilege/healthinfo'</b> and <b>'http://tizen.org/privilege/location'</b> should be declared in config.xml file for the GPS type.
+For other types, only <b>'http://tizen.org/privilege/healthinfo'</b> should be declared.
+            </p>
+<p><span class="remark"> Remark : </span>
+ <em>errorCallback</em> and <em>option</em> are supported since Tizen 2.3.2.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ Human activity type to register a listener for
+                <ul>
+<b>Conditional privilege: </b>For using <a href="#HumanActivityType">GPS</a> value, privilege <b>
+              http://tizen.org/privilege/location
+             (public level)</b> is needed since Tizen 2.3.</ul>
+</li>
+          <li class="param">
+<span class="name">changedCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when new human activity data is available<br>Note that the listener is not called for the successful start of a human activity sensor.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when an error occurs
+                </li>
+          <li class="param">
+<span class="name">option</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The option to set the period and the interval for several human activity types<br>By default, this parameter is set to null.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if registering the listener fails because of an unknown error.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the given <var>type</var> is not supported on a device.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to use this function.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function onchangedCB(pedometerInfo)
+{
+  console.log("Step status: " + pedometerInfo.stepStatus);
+  console.log("Cumulative total step count: " + pedometerInfo.cumulativeTotalStepCount);
+}
+
+tizen.humanactivitymonitor.start("PEDOMETER", onchangedCB);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> Step status: WALKING
+ Cumulative total step count: 100
+ </pre>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function onchangedCB(info)
+{
+  var gpsInfo = info.gpsInfo;
+  for (var index = 0; index &lt; gpsInfo.length; index++)
+  {
+    console.log("latitude: " + gpsInfo[index].latitude);
+    console.log("longitude: " + gpsInfo[index].longitude);
+  }
+}
+
+function onerrorCB(error)
+{
+  console.log("Error occurred. Name:" + error.name + ", message: " + error.message);
+}
+
+try
+{
+  tizen.humanactivitymonitor.start("GPS", onchangedCB, onerrorCB,
+                                   {callbackInterval: 150000, sampleInterval: 1000});
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="HumanActivityMonitorManager::stop">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::stop"></a><code><b><span class="methodName">stop</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Stops the sensor and unregisters a previously registered listener for available human activity data.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void stop(<a href="#HumanActivityType">HumanActivityType</a> type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/healthinfo
+            </p>
+<p><span class="remark"> Remark : </span>
+ The <b>'http://tizen.org/privilege/location'</b> privilege is required for only the <a href="#HumanActivityType">GPS</a> type.
+That means that both <b>'http://tizen.org/privilege/healthinfo'</b> and <b>'http://tizen.org/privilege/location'</b> should be declared in config.xml file for the GPS type.
+For other types, only <b>'http://tizen.org/privilege/healthinfo'</b> should be declared.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ Human activity type to unregister the listener for
+                <ul>
+<b>Conditional privilege: </b>For using <a href="#HumanActivityType">GPS</a> value, privilege <b>
+              http://tizen.org/privilege/location
+             (public level)</b> is needed since Tizen 2.3.</ul>
+</li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if unregistering the listener fails because of an unknown error.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the given <var>type</var> is not supported on a device.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to use this function.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+tizen.humanactivitymonitor.stop("PEDOMETER");
+</pre>
+</div>
+</dd>
+<dt class="method" id="HumanActivityMonitorManager::setAccumulativePedometerListener">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::setAccumulativePedometerListener"></a><code><b><span class="methodName">setAccumulativePedometerListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Starts the sensor and registers a listener to be called when new accumulative pedometer data is available.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setAccumulativePedometerListener(<a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> changeCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+Note that the setAccumulativePedometerListener() method does not need to call the sensor's start() method.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/healthinfo
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">changeCallback</span>:
+ Callback method to be invoked when new accumulative pedometer data is available<br>Callback is invoked with HumanActivityAccumulativePedometerData as an argument.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if registering the listener fails because of an unknown error.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the pedometer sensor is not supported on a device.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function onchangedCB(pedometerInfo)
+{
+  console.log("Step status: " + pedometerInfo.stepStatus);
+  console.log("Accumulative total step count: " + pedometerInfo.accumulativeTotalStepCount);
+}
+
+tizen.humanactivitymonitor.setAccumulativePedometerListener(onchangedCB);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> Step status: WALKING
+ Accumulative total step count: 100
+ </pre>
+</div>
+</dd>
+<dt class="method" id="HumanActivityMonitorManager::unsetAccumulativePedometerListener">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::unsetAccumulativePedometerListener"></a><code><b><span class="methodName">unsetAccumulativePedometerListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Stops the sensor and unregisters a previously registered listener for the accumulative pedometer data.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unsetAccumulativePedometerListener();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/healthinfo
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type UnknownError, if unregistering the listener fails because of an unknown error.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.humanactivitymonitor.unsetAccumulativePedometerListener();
+</pre>
+</div>
+</dd>
+<dt class="method" id="HumanActivityMonitorManager::addActivityRecognitionListener">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::addActivityRecognitionListener"></a><code><b><span class="methodName">addActivityRecognitionListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers a listener that is to be called when the activity is recognized.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addActivityRecognitionListener(<a href="#ActivityRecognitionType">ActivityRecognitionType</a> type, <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> listener, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<div class="description">
+            <p>
+The <em>ErrorCallback</em> method is launched with this error type:
+            </p>
+            <ul>
+              <li>
+ AbortError : If the system operation was aborted.              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ Human activity recognition type to recognize
+                </li>
+          <li class="param">
+<span class="name">listener</span>:
+ Callback method to be invoked when new human activity data is recognized
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long ID of the listener that can be used to remove the listener later.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the activity type for recognition is not supported on a device.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function errorCallback(error)
+{
+  console.log(error.name + ": " + error.message);
+}
+
+function listener(info)
+{
+  console.log("type: "      + info.type);
+  console.log("timestamp: " + info.timestamp);
+  console.log("accuracy: "  + info.accuracy);
+}
+
+try
+{
+  var listenerId = tizen.humanactivitymonitor.addActivityRecognitionListener("WALKING", listener, errorCallback);
+}
+catch (error)
+{
+  console.log(error.name + ": " + error.message);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> type: WALKING
+ timestamp: 1456735296123
+ accuracy: MEDIUM
+ </pre>
+</div>
+</dd>
+<dt class="method" id="HumanActivityMonitorManager::removeActivityRecognitionListener">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::removeActivityRecognitionListener"></a><code><b><span class="methodName">removeActivityRecognitionListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unsubscribes from receiving notifications when the activity is recognized.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeActivityRecognitionListener(long listenerId, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<div class="description">
+            <p>
+The <em>ErrorCallback</em> method is launched with this error type:
+            </p>
+            <ul>
+              <li>
+ AbortError : If the system operation was aborted.              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">listenerId</span>:
+ An ID that identifies the listener
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var listenerId;
+
+function errorCallback(error)
+{
+  console.log(error.name + ": " + error.message);
+}
+
+function listener(info)
+{
+  console.log("type: "      + info.type);
+  console.log("timestamp: " + info.timestamp);
+  console.log("accuracy: "  + info.accuracy);
+
+  tizen.humanactivitymonitor.removeActivityRecognitionListener(listenerId, errorCallback);
+}
+
+try
+{
+  listenerId = tizen.humanactivitymonitor.addActivityRecognitionListener("WALKING", listener, errorCallback);
+}
+catch (error)
+{
+  console.log(error.name + ": " + error.message);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> type: WALKING
+ timestamp: 1456735296123
+ accuracy: MEDIUM
+ </pre>
+</div>
+</dd>
+<dt class="method" id="HumanActivityMonitorManager::startRecorder">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::startRecorder"></a><code><b><span class="methodName">startRecorder</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Starts recording human activity data for a given human activity type.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void startRecorder(<a href="#HumanActivityRecorderType">HumanActivityRecorderType</a> type, optional <a href="#HumanActivityRecorderOption">HumanActivityRecorderOption</a> option);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/healthinfo
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ Human activity type to record
+                </li>
+          <li class="param">
+<span class="name">option</span><span class="optional"> [optional]</span>:
+ The option to set an interval and a period for retention
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to use this function.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the human activity recorder type is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if the system operation was aborted.
+                </p></li>
+<li class="list"><p>
+ with error type ServiceNotAvailableError, if the human activity recorder type is already started by any application of a package.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var type = "PRESSURE";
+var options =
+{
+  retentionPeriod: 1 /* 1 hour */
+};
+
+try
+{
+  tizen.humanactivitymonitor.startRecorder(type, options);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="HumanActivityMonitorManager::stopRecorder">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::stopRecorder"></a><code><b><span class="methodName">stopRecorder</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Stops recording human activity data for a given human activity type.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void stopRecorder(<a href="#HumanActivityRecorderType">HumanActivityRecorderType</a> type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ Human activity type to stop recording
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the human activity recorder type is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if the system operation was aborted.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var type = "PRESSURE";
+try
+{
+  tizen.humanactivitymonitor.startRecorder(type);
+  /* Do something */
+
+  tizen.humanactivitymonitor.stopRecorder(type);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="HumanActivityMonitorManager::readRecorderData">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::readRecorderData"></a><code><b><span class="methodName">readRecorderData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Reads the recorded human activity data with some query.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void readRecorderData(<a href="#HumanActivityRecorderType">HumanActivityRecorderType</a> type, <a href="#HumanActivityRecorderQuery">HumanActivityRecorderQuery</a>? query, <a href="#HumanActivityReadRecorderSuccessCallback">HumanActivityReadRecorderSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<div class="description">
+            <p>
+If another application has recorded data for a particular human activity type, your application can read that data.
+Therefore, you can use this method to read without calling <em>startRecorder()</em>.
+            </p>
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+AbortError: If the system operation was aborted while reading data asynchronously.              </li>
+              <li>
+NotFoundError: If no recorder data is available.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/healthinfo
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ Human activity type to record
+                </li>
+          <li class="param">
+<span class="name">query</span><span class="optional"> [nullable]</span>:
+ The query to use
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback method to be invoked when recorded human activity data is successfully read
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to use this function.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the human activity recorder type is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if the system operation was aborted when it is requested to read data.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function onerror(error)
+{
+  console.log(error.name + ": " + error.message);
+}
+
+function onread(data)
+{
+  for (var idx = 0; idx &lt; data.length; ++idx)
+  {
+    console.log("startTime: " + data[idx].startTime);
+    console.log("endTime: " + data[idx].endTime);
+    console.log("calories: " + data[idx].calorie);
+  }
+}
+
+var type = "PEDOMETER";
+var query = {};
+try
+{
+  tizen.humanactivitymonitor.readRecorderData(type, query, onread, onerror);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> startTime: 1420311755
+ endTime: 1420313238
+ calories: 24.83
+ </pre>
+</div>
+</dd>
+<dt class="method" id="HumanActivityMonitorManager::isGestureSupported">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::isGestureSupported"></a><code><b><span class="methodName">isGestureSupported</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Checks if gesture type is supported on a device.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">boolean isGestureSupported(<a href="#GestureType">GestureType</a> type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="description">
+            <p>
+This function allows to check whether a gesture type is supported on the current device. Some gestures may not be supported on some devices because of lack necessary sensors.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ Gesture type to check if it is supported on a device.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ boolean <em>true</em> if the given gesture type is supported.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if input parameter is not compatible with the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var isSupported = tizen.humanactivitymonitor.isGestureSupported("GESTURE_PICK_UP");
+  console.log("GESTURE_PICK_UP is " + (isSupported ? "supported" : "not supported"));
+}
+catch (error)
+{
+  console.log("Error " + error.name + ": " + error.message);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> GESTURE_PICK_UP is supported.
+ </pre>
+</div>
+</dd>
+<dt class="method" id="HumanActivityMonitorManager::addGestureRecognitionListener">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::addGestureRecognitionListener"></a><code><b><span class="methodName">addGestureRecognitionListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Adds a listener to be invoked when given gesture type is detected.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addGestureRecognitionListener(<a href="#GestureType">GestureType</a> type, <a href="#GestureRecognitionCallback">GestureRecognitionCallback</a> listener, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional boolean? alwaysOn);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="description">
+            <p>
+The <em>ErrorCallback</em> method is launched with this error type:
+            </p>
+            <ul>
+              <li>
+ AbortError : If the system operation was aborted.              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ The gesture type to be monitored.
+                </li>
+          <li class="param">
+<span class="name">listener</span>:
+ Listener to be called when gesture is detected or an error occurred.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when an error occurs.
+                </li>
+          <li class="param">
+<span class="name">alwaysOn</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The option of the monitored gesture mode. If it is set to <em>false</em> system may try to reduce power consumption, for example by stoping detecting gestures when display is turned off.<br>If it is set to <em>true</em> power-saving functionality is off. Default value is <em>false</em>.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long The watch ID used to remove the listener.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the gesture recognition is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type IOError, if adding listener failed.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function listener(data)
+{
+  console.log("Received " + data.event + " event on " + new Date(data.timestamp * 1000) + " for " + data.type + " type");
+}
+
+function errorCallback(error)
+{
+  console.log(error.name + ": " + error.message);
+}
+
+try
+{
+  var listenerId = tizen.humanactivitymonitor.addGestureRecognitionListener("GESTURE_SHAKE", listener, errorCallback, true);
+  console.log("Listener with id " + listenerId + " has been added");
+}
+catch (error)
+{
+  console.log("Error " + error.name + ": " + error.message);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> Listener with id 1 has been added
+ Received GESTURE_SHAKE_DETECTED event on Thu Sep 01 2016 14:33:56 GMT+0200 (CEST) for GESTURE_SHAKE type
+ </pre>
+</div>
+</dd>
+<dt class="method" id="HumanActivityMonitorManager::removeGestureRecognitionListener">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::removeGestureRecognitionListener"></a><code><b><span class="methodName">removeGestureRecognitionListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes listener with the given id.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeGestureRecognitionListener(long watchId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">watchId</span>:
+ The ID of the registered listener.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type AbortError, if system error occurs while removing listener.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function listener(data)
+{
+  console.log("Received " + data.event + " event on " + new Date(data.timestamp * 1000) + " for " + data.type + " type");
+}
+
+function errorCallback(error)
+{
+  console.log(error.name + ": " + error.message);
+}
+
+try
+{
+  var listenerId = tizen.humanactivitymonitor.addGestureRecognitionListener("GESTURE_SHAKE", listener, errorCallback);
+  tizen.humanactivitymonitor.removeGestureRecognitionListener(listenerId);
+  console.log("Listener with id " + listenerId + " has been removed");
+}
+catch (error)
+{
+  console.log("Error " + error.name + ": " + error.message);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> Listener with id 1 has been removed
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="StepDifference">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::StepDifference"></a><h3>2.3. StepDifference</h3>
+<div class="brief">
+ The StepDifference interface represents the count difference between steps and timestamp.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface StepDifference {
+
+        readonly attribute long stepCountDifference;
+
+        readonly attribute long timestamp;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="StepDifference::stepCountDifference">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">stepCountDifference</span></span><div class="brief">
+ Count difference between the steps.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="StepDifference::timestamp">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">timestamp</span></span><div class="brief">
+ Timestamp in seconds.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="dictionary" id="HumanActivityRecorderOption">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecorderOption"></a><h3>2.4. HumanActivityRecorderOption</h3>
+<div class="brief">
+ The HumanActivityRecorderOption dictionary contains options, such as the <em>interval</em>, to use with startRecorder().
+          </div>
+<pre class="webidl prettyprint">    dictionary HumanActivityRecorderOption {
+
+        long interval;
+
+        long retentionPeriod;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var option =
+{
+  interval: 10,
+  retentionPeriod: 1
+}
+</pre>
+</div>
+<div class="attributes">
+<h4>Dictionary members</h4>
+<dl>
+<dt class="member" id="HumanActivityRecorderOption::interval"><span class="attrName">long interval</span></dt>
+<dd>
+<div class="brief">
+ Interval in minutes at which human activity recorder data will be recorded.
+            </div>
+<div class="description">
+            <p>
+For the HRM type, the <em>interval</em> can be between 10 and 1440 (1 day) inclusive.<br>If <em>interval</em> is not specified, it is set to the default value of 1440 minutes (1 day).<br>For other human activity recorder types, <em>interval</em> will be ignored.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<p><span class="remark"> Remark : </span>
+ The specified interval is only a suggested interval between sensor measurements.
+You will get at least one sensor measurement within the interval you specify, but the actual interval between sensor measurements can be affected by other applications and the system.
+To reduce the system overhead, it is recommended to set the longest interval that you can, because the system usually chooses the shortest interval among all intervals specified.
+            </p>
+</dd>
+<dt class="member" id="HumanActivityRecorderOption::retentionPeriod"><span class="attrName">long retentionPeriod</span></dt>
+<dd>
+<div class="brief">
+ Retention period in hours for which human activity recorder data should be retained.
+            </div>
+<div class="description">
+            <p>
+The <em>retentionPeriod</em> can be between 1 and 744 (31 days) inclusive.<br>If <em>retentionPeriod</em> is not specified, it is set to the default value of 1 hour.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="dictionary" id="HumanActivityRecorderQuery">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecorderQuery"></a><h3>2.5. HumanActivityRecorderQuery</h3>
+<div class="brief">
+ The HumanActivityRecorderQuery dictionary contains query, such as the <em>startTime</em>, the <em>endTime</em>, the <em>anchorTime</em> and the <em>interval</em>, to use with readRecorderData().
+          </div>
+<pre class="webidl prettyprint">    dictionary HumanActivityRecorderQuery {
+
+        long startTime;
+
+        long endTime;
+
+        long anchorTime;
+
+        long interval;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+<div class="attributes">
+<h4>Dictionary members</h4>
+<dl>
+<dt class="member" id="HumanActivityRecorderQuery::startTime"><span class="attrName">long startTime</span></dt>
+<dd>
+<div class="brief">
+ The start time of the data to be queried. Epoch time in seconds.
+            </div>
+<div class="description">
+            <p>
+The <em>startTime</em> should be greater than or equal to zero.<br>If <em>startTime</em> is not specified, it is set to the default value of 1 day ago.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</dd>
+<dt class="member" id="HumanActivityRecorderQuery::endTime"><span class="attrName">long endTime</span></dt>
+<dd>
+<div class="brief">
+ The end time of the date to be queried. Epoch time in seconds.
+            </div>
+<div class="description">
+            <p>
+The <em>endTime</em> should be greater than <em>startTime</em>.<br>If <em>endTime</em> in not specified, it is set to the current time.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</dd>
+<dt class="member" id="HumanActivityRecorderQuery::anchorTime"><span class="attrName">long anchorTime</span></dt>
+<dd>
+<div class="brief">
+ The anchor point to slice the read data. Epoch time in seconds.
+            </div>
+<div class="description">
+            <p>
+For the PEDOMETER and PRESSURE type, the <em>anchorTime</em> can only be used.<br>The <em>anchorTime</em> should be greater than or equal to zero.<br>If <em>anchorTime</em> is not specified, it will be set to the <em>endTime</em>.
+            </p>
+            <p>
+The <em>interval</em> will extend away from the <em>anchorTime</em> in both directions.
+The exact date does not matter for the <em>anchorTime</em>.
+This is because the <em>anchorTime</em> is used in combination with the interval.
+For example, the <em>anchorTime</em> can be 1:00 am, January 1, 2000 or 1:00 am, August 15, 2010 with a 1 day interval. In both cases, the <em>anchorTime</em> will be 1:00 am internally.
+            </p>
+            <p>
+<img src="./human-activity-recorder-query.png" alt="query example">            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function onerror(error)
+{
+  console.log(error.name + ": " + error.message);
+}
+
+function onread(data)
+{
+  for (var idx = 0; idx &lt; data.length; ++idx)
+  {
+    console.log("*** " + idx);
+    console.log("max pressure: " + data[idx].max);
+    console.log("min pressure: " + data[idx].min);
+    console.log("average: " + data[idx].average);
+  }
+}
+
+var type = "PRESSURE";
+var now = new Date();
+var startTime = now.setDate(now.getDate() - 4);
+var anchorTime = (new Date(2000, 1, 2, 6)).getTime();
+var query =
+{
+  startTime: startTime / 1000,
+  anchorTime: anchorTime / 1000,
+  interval: 1440 /* 1 day */
+};
+
+try
+{
+  tizen.humanactivitymonitor.readRecorderData(type, query, onread, onerror);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> *** 0
+ max pressure: 1013.00
+ min pressure: 930.00
+ average: 980.00
+ *** 1
+ max pressure: 1012.00
+ min pressure: 954.00
+ average: 986.00
+ *** 2
+ max pressure: 950.00
+ min pressure: 904.00
+ average: 932.00
+ *** 3
+ max pressure: 1012.00
+ min pressure: 920.00
+ average: 942.00
+ *** 4
+ max pressure: 1012.00
+ min pressure: 1005.00
+ average: 1008.00
+ </pre>
+</div>
+</dd>
+<dt class="member" id="HumanActivityRecorderQuery::interval"><span class="attrName">long interval</span></dt>
+<dd>
+<div class="brief">
+ Interval in minutes at which human activity recorder data will be read.
+            </div>
+<div class="description">
+            <p>
+The <em>interval</em> should be greater than or equal to zero.<br>For the PEDOMETER and PRESSURE type, if <em>interval</em> is not specified, it is set to the difference between <em>endTime</em> and <em>startTime</em>.<br>For the PRESSURE type, if it is set to zero, all raw data recorded from <em>startTime</em> to <em>endTime</em> will be returned.<br>For other recorder types, <em>interval</em> will be ignored.<br>            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="HumanActivityData">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityData"></a><h3>2.6. HumanActivityData</h3>
+<div class="brief">
+ The HumanActivityData interface is a common abstract interface used by the different types of human activity data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface HumanActivityData {
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+</div>
+<div class="interface" id="HumanActivityPedometerData">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityPedometerData"></a><h3>2.7. HumanActivityPedometerData</h3>
+<div class="brief">
+ The HumanActivityPedometerData interface represents pedometer data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface HumanActivityPedometerData : <a href="#HumanActivityData">HumanActivityData</a> {
+
+        readonly attribute <a href="#PedometerStepStatus">PedometerStepStatus</a> stepStatus;
+
+        readonly attribute double speed;
+
+        readonly attribute double walkingFrequency;
+
+        readonly attribute double cumulativeDistance;
+
+        readonly attribute double cumulativeCalorie;
+
+        readonly attribute double cumulativeTotalStepCount;
+
+        readonly attribute double cumulativeWalkStepCount;
+
+        readonly attribute double cumulativeRunStepCount;
+
+        readonly attribute <a href="#StepDifference">StepDifference</a>[] stepCountDifferences;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="HumanActivityPedometerData::stepStatus">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">PedometerStepStatus </span><span class="name">stepStatus</span></span><div class="brief">
+ The current movement type.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityPedometerData::speed">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">speed</span></span><div class="brief">
+ Current speed in km/h.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityPedometerData::walkingFrequency">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">walkingFrequency</span></span><div class="brief">
+ Step count per second.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityPedometerData::cumulativeDistance">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">cumulativeDistance</span></span><div class="brief">
+ Cumulative distance traveled since the last start() method call in meters.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityPedometerData::cumulativeCalorie">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">cumulativeCalorie</span></span><div class="brief">
+ Cumulative calories burned since the last start() method call in kcal.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityPedometerData::cumulativeTotalStepCount">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">cumulativeTotalStepCount</span></span><div class="brief">
+ Cumulative walking and running step count since the last start() method call.
+            </div>
+<div class="description">
+            <p>
+The value is the sum of <em>cumulativeWalkStepCount</em> and <em>cumulativeRunStepCount</em>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityPedometerData::cumulativeWalkStepCount">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">cumulativeWalkStepCount</span></span><div class="brief">
+ Cumulative walking step count since the last start() method call.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityPedometerData::cumulativeRunStepCount">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">cumulativeRunStepCount</span></span><div class="brief">
+ Cumulative running step count since the last start() method call.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityPedometerData::stepCountDifferences">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">StepDifference[]
+                      </span><span class="name">stepCountDifferences</span></span><div class="brief">
+ Array of the StepDifference.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="HumanActivityAccumulativePedometerData">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityAccumulativePedometerData"></a><h3>2.8. HumanActivityAccumulativePedometerData</h3>
+<div class="brief">
+ The HumanActivityAccumulativePedometerData interface represents pedometer motion data since the device is booted.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface HumanActivityAccumulativePedometerData : <a href="#HumanActivityData">HumanActivityData</a> {
+
+        readonly attribute <a href="#PedometerStepStatus">PedometerStepStatus</a> stepStatus;
+
+        readonly attribute double speed;
+
+        readonly attribute double walkingFrequency;
+
+        readonly attribute double accumulativeDistance;
+
+        readonly attribute double accumulativeCalorie;
+
+        readonly attribute double accumulativeTotalStepCount;
+
+        readonly attribute double accumulativeWalkStepCount;
+
+        readonly attribute double accumulativeRunStepCount;
+
+        readonly attribute <a href="#StepDifference">StepDifference</a>[] stepCountDifferences;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="HumanActivityAccumulativePedometerData::stepStatus">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">PedometerStepStatus </span><span class="name">stepStatus</span></span><div class="brief">
+ Current movement type.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityAccumulativePedometerData::speed">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">speed</span></span><div class="brief">
+ Current speed in km/h.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityAccumulativePedometerData::walkingFrequency">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">walkingFrequency</span></span><div class="brief">
+ Step count per second.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityAccumulativePedometerData::accumulativeDistance">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">accumulativeDistance</span></span><div class="brief">
+ Accumulative distance traveled since the device is booted in meters.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityAccumulativePedometerData::accumulativeCalorie">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">accumulativeCalorie</span></span><div class="brief">
+ Accumulative calories burnt since the device is booted in kcal.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityAccumulativePedometerData::accumulativeTotalStepCount">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">accumulativeTotalStepCount</span></span><div class="brief">
+ Accumulative walking and running step count since the device is booted.
+            </div>
+<div class="description">
+            <p>
+The value is the sum of <em>accumulativeWalkStepCount</em> and <em>accumulativeRunStepCount</em>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityAccumulativePedometerData::accumulativeWalkStepCount">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">accumulativeWalkStepCount</span></span><div class="brief">
+ Accumulative walking step count since the device is booted.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityAccumulativePedometerData::accumulativeRunStepCount">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">accumulativeRunStepCount</span></span><div class="brief">
+ Accumulative running step count since the device is booted.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityAccumulativePedometerData::stepCountDifferences">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">StepDifference[]
+                      </span><span class="name">stepCountDifferences</span></span><div class="brief">
+ Array of the StepDifference.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="HumanActivityHRMData">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityHRMData"></a><h3>2.9. HumanActivityHRMData</h3>
+<div class="brief">
+ The HumanActivityHRMData interface represents Heart Rate Monitor(HRM) data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface HumanActivityHRMData : <a href="#HumanActivityData">HumanActivityData</a> {
+
+        readonly attribute long heartRate;
+
+        readonly attribute long rRInterval;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="HumanActivityHRMData::heartRate">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">heartRate</span></span><div class="brief">
+ Heart rate in beats per minute.
+When a user takes off the watch device, the heartRate is set to -3. When a user shakes the watch, the heartRate is set to -2.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityHRMData::rRInterval">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">rRInterval</span></span><div class="brief">
+ Peak-to-peak interval in millisecond(s).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="HumanActivityGPSInfo">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityGPSInfo"></a><h3>2.10. HumanActivityGPSInfo</h3>
+<div class="brief">
+ The HumanActivityGPSInfo interface represents GPS information.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface HumanActivityGPSInfo {
+
+        readonly attribute double latitude;
+
+        readonly attribute double longitude;
+
+        readonly attribute double altitude;
+
+        readonly attribute double speed;
+
+        readonly attribute long errorRange;
+
+        readonly attribute long timestamp;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="HumanActivityGPSInfo::latitude">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">latitude</span></span><div class="brief">
+ An attribute to indicate the user's latitude in degrees.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityGPSInfo::longitude">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">longitude</span></span><div class="brief">
+ An attribute to indicate the user's longitude in degrees.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityGPSInfo::altitude">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">altitude</span></span><div class="brief">
+ An attribute to indicate the user's altitude in meters.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityGPSInfo::speed">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">speed</span></span><div class="brief">
+ An attribute to indicate the speed in km/h.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityGPSInfo::errorRange">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">errorRange</span></span><div class="brief">
+ An attribute to indicate the error range of the user's position in meters.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="HumanActivityGPSInfo::timestamp">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">timestamp</span></span><div class="brief">
+ An attribute to indicate timestamp in seconds.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="HumanActivityGPSInfoArray">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityGPSInfoArray"></a><h3>2.11. HumanActivityGPSInfoArray</h3>
+<div class="brief">
+ The HumanActivityGPSInfoArray interface represents GPS information array.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface HumanActivityGPSInfoArray : <a href="#HumanActivityData">HumanActivityData</a> {
+
+        readonly attribute <a href="#HumanActivityGPSInfo">HumanActivityGPSInfo</a>[] gpsInfo;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="HumanActivityGPSInfoArray::gpsInfo">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">HumanActivityGPSInfo[]
+                      </span><span class="name">gpsInfo</span></span><div class="brief">
+ An attribute to indicate the array of GPS information.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li></ul>
+</div>
+</div>
+<div class="interface" id="HumanActivitySleepMonitorData">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivitySleepMonitorData"></a><h3>2.12. HumanActivitySleepMonitorData</h3>
+<div class="brief">
+ The HumanActivitySleepMonitorData interface represents sleep monitor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface HumanActivitySleepMonitorData : <a href="#HumanActivityData">HumanActivityData</a> {
+
+        readonly attribute <a href="#SleepStatus">SleepStatus</a> status;
+
+        readonly attribute long timestamp;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+<p><span class="remark"> Remark : </span>
+ If the device's display is off, multiple callbacks consisting of sleep monitor data are all invoked at once at a device specific interval. There is a callback for each minute in the interval. For example, if the device's interval is 20 minutes, 20 callbacks will be invoked every 20 minutes. When the display is turned on, all callbacks which have not been invoked are invoked and the callback is invoked every one minute from then on. Therefore, if the display is turned on at 25 minutes, five callbacks will be invoked.
+          </p>
+
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="HumanActivitySleepMonitorData::status">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">SleepStatus </span><span class="name">status</span></span><div class="brief">
+ The sleep status.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="HumanActivitySleepMonitorData::timestamp">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">timestamp</span></span><div class="brief">
+ The time when the sleep status is recognized. Epoch time in milliseconds.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="dictionary" id="HumanActivityMonitorOption">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorOption"></a><h3>2.13. HumanActivityMonitorOption</h3>
+<div class="brief">
+ The HumanActivityMonitorOption dictionary contains options, such as the <em>callbackInterval</em> and the <em>sampleInterval</em>, to use with start().
+          </div>
+<pre class="webidl prettyprint">    dictionary HumanActivityMonitorOption {
+
+        long callbackInterval;
+
+        long sampleInterval;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+<div class="attributes">
+<h4>Dictionary members</h4>
+<dl>
+<dt class="member" id="HumanActivityMonitorOption::callbackInterval"><span class="attrName">long callbackInterval</span></dt>
+<dd>
+<div class="brief">
+ The interval in milliseconds (ms) at which human activity data will be sent to the Web Application.<br>For the GPS type, <em>callbackInterval</em> should be greater than or equal to the <em>sampleInterval</em>. The maximum permissible value for <em>callbackInterval</em> is device specific. If <em>callbackInterval</em> is not specified or zero, it is set to the default value of 150000ms. The <em>callbackInterval</em> will be ignored when the display is on. Instead, The <em>callbackInterval</em> will be set to the <em>sampleInterval</em>.<br>For the HRM type, <em>callbackInterval</em> can be between 10ms and 1000ms inclusive, however, if it not specified or zero, it is set by the default value of 100ms.<br>For other activity types, <em>callbackInterval</em> will be ignored.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<p><span class="remark"> Remark : </span>
+ The specified interval is only a suggested interval between sensor measurements. You will get at least one sensor measurement within the interval you specify, but the actual interval between sensor measurements can be affected by other applications and the system. To reduce the system overhead, it is recommended to set the longest interval that you can, because the system usually chooses the shortest interval among all intervals specified.
+            </p>
+</dd>
+<dt class="member" id="HumanActivityMonitorOption::sampleInterval"><span class="attrName">long sampleInterval</span></dt>
+<dd>
+<div class="brief">
+ GPS infomation sampling interval in milliseconds (ms)<br>For the GPS type, <em>sampleInterval</em> should be greater than or equal to 1000ms. The maximum permissible value for <em>sampleInterval</em> is device specific. If <em>sampleInterval</em> is not specified or zero, it is set to the the default value of 1000ms.<br>For other activity types, <em>sampleInterval</em> will be ignored.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="HumanActivityRecognitionData">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecognitionData"></a><h3>2.14. HumanActivityRecognitionData</h3>
+<div class="brief">
+ The HumanActivityRecognitionData interface represents a activity recognition data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface HumanActivityRecognitionData : <a href="#HumanActivityData">HumanActivityData</a> {
+
+        readonly attribute <a href="#ActivityRecognitionType">ActivityRecognitionType</a> type;
+
+        readonly attribute long timestamp;
+
+        readonly attribute <a href="#ActivityAccuracy">ActivityAccuracy</a> accuracy;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="HumanActivityRecognitionData::type">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">ActivityRecognitionType </span><span class="name">type</span></span><div class="brief">
+ The type of activity.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="HumanActivityRecognitionData::timestamp">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">timestamp</span></span><div class="brief">
+ The time when the activity is recognized. Epoch time in seconds.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="HumanActivityRecognitionData::accuracy">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">ActivityAccuracy </span><span class="name">accuracy</span></span><div class="brief">
+ The degree of accuracy.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="HumanActivityRecorderData">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecorderData"></a><h3>2.15. HumanActivityRecorderData</h3>
+<div class="brief">
+ The HumanActivityRecorderData interface is a common abstract interface used for the different types of human activity recorder data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface HumanActivityRecorderData {
+
+        readonly attribute long startTime;
+
+        readonly attribute long endTime;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="HumanActivityRecorderData::startTime">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">startTime</span></span><div class="brief">
+ Recording start time of the data in this HumanActivityRecorderData object. Epoch time in seconds.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="HumanActivityRecorderData::endTime">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">endTime</span></span><div class="brief">
+ Recording end time of the data in this HumanActivityRecorderData object. Epoch time in seconds.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="HumanActivityRecorderPedometerData">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecorderPedometerData"></a><h3>2.16. HumanActivityRecorderPedometerData</h3>
+<div class="brief">
+ The HumanActivityRecorderPedometerData interface represents recorded PEDOMETER data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface HumanActivityRecorderPedometerData : <a href="#HumanActivityRecorderData">HumanActivityRecorderData</a> {
+
+        readonly attribute double distance;
+
+        readonly attribute double calorie;
+
+        readonly attribute double totalStepCount;
+
+        readonly attribute double walkStepCount;
+
+        readonly attribute double runStepCount;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="HumanActivityRecorderPedometerData::distance">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">distance</span></span><div class="brief">
+ Distance traveled from <em>startTime</em> to <em>endTime</em> in meters.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="HumanActivityRecorderPedometerData::calorie">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">calorie</span></span><div class="brief">
+ Calories burned from <em>startTime</em> to <em>endTime</em> in kCal.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="HumanActivityRecorderPedometerData::totalStepCount">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">totalStepCount</span></span><div class="brief">
+ Walking and running step count from <em>startTime</em> to <em>endTime</em>. The value is the sum of <em>walkingStepCount</em> and <em>runningStepCount</em>.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="HumanActivityRecorderPedometerData::walkStepCount">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">walkStepCount</span></span><div class="brief">
+ Walking step count from <em>startTime</em> to <em>endTime</em>.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="HumanActivityRecorderPedometerData::runStepCount">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">runStepCount</span></span><div class="brief">
+ Running step count from <em>startTime</em> to <em>endTime</em>.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="HumanActivityRecorderHRMData">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecorderHRMData"></a><h3>2.17. HumanActivityRecorderHRMData</h3>
+<div class="brief">
+ The HumanActivityRecorderHRMData interface represents a recorded HRM data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface HumanActivityRecorderHRMData : <a href="#HumanActivityRecorderData">HumanActivityRecorderData</a> {
+
+        readonly attribute long heartRate;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="HumanActivityRecorderHRMData::heartRate">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">heartRate</span></span><div class="brief">
+ Heart rate in beats per minute.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li></ul>
+</div>
+</div>
+<div class="interface" id="HumanActivityRecorderSleepMonitorData">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecorderSleepMonitorData"></a><h3>2.18. HumanActivityRecorderSleepMonitorData</h3>
+<div class="brief">
+ The HumanActivityRecorderSleepMonitorData interface represents a recorded SLEEP_MONITOR data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface HumanActivityRecorderSleepMonitorData : <a href="#HumanActivityRecorderData">HumanActivityRecorderData</a> {
+
+        readonly attribute <a href="#SleepStatus">SleepStatus</a> status;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="HumanActivityRecorderSleepMonitorData::status">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">SleepStatus </span><span class="name">status</span></span><div class="brief">
+ The sleep status.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li></ul>
+</div>
+</div>
+<div class="interface" id="HumanActivityRecorderPressureData">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecorderPressureData"></a><h3>2.19. HumanActivityRecorderPressureData</h3>
+<div class="brief">
+ The HumanActivityRecorderPressureData interface represents a recorded PRESSURE data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface HumanActivityRecorderPressureData : <a href="#HumanActivityRecorderData">HumanActivityRecorderData</a> {
+
+        readonly attribute double? max;
+
+        readonly attribute double? min;
+
+        readonly attribute double? average;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="HumanActivityRecorderPressureData::max">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">max</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Max pressure in hectopascal (hPa).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="HumanActivityRecorderPressureData::min">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">min</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Min pressure in hectopascal (hPa).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="HumanActivityRecorderPressureData::average">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">average</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Average pressure in hectopascal (hPa).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="GestureData">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::GestureData"></a><h3>2.20. GestureData</h3>
+<div class="brief">
+ The GestureData interface represents detected gesture information.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface GestureData {
+        readonly attribute <a href="#GestureType">GestureType</a> type;
+        readonly attribute <a href="#GestureEvent">GestureEvent</a> event;
+        readonly attribute long timestamp;
+        readonly attribute double? x;
+        readonly attribute double? y;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="GestureData::type">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">GestureType </span><span class="name">type</span></span><div class="brief">
+ Identifier of gesture type.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="GestureData::event">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">GestureEvent </span><span class="name">event</span></span><div class="brief">
+ Event type related to the detected gesture.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="GestureData::timestamp">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">timestamp</span></span><div class="brief">
+ Time when gesture was detected. Epoch time in seconds.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="GestureData::x">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">x</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Tilt degree on X-axis. It is used only for <em>GESTURE_TILT</em> type. For other gesture types it is set to null.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="GestureData::y">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">y</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Tilt degree on Y-axis. It is used only for <em>GESTURE_TILT</em> type. For other gesture types it is set to null.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="HumanActivityMonitorSuccessCallback">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorSuccessCallback"></a><h3>2.21. HumanActivityMonitorSuccessCallback</h3>
+<div class="brief">
+ The HumanActivityMonitorSuccessCallback interface is a callback interface that is invoked when new human activity data is available.
+          </div>
+<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface HumanActivityMonitorSuccessCallback {
+
+        void onsuccess(optional <a href="#HumanActivityData">HumanActivityData</a>? humanactivitydata);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="HumanActivityMonitorSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when there is new human activity data available.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(optional <a href="#HumanActivityData">HumanActivityData</a>? humanactivitydata);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">humanactivitydata</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ New human activity data<br>Note that <var>null</var> is passed for the WRIST_UP type.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="HumanActivityReadRecorderSuccessCallback">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityReadRecorderSuccessCallback"></a><h3>2.22. HumanActivityReadRecorderSuccessCallback</h3>
+<div class="brief">
+ The HumanActivityReadRecorderSuccessCallback interface is a callback interface that is invoked when recorded human activity data is successfully read.
+          </div>
+<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface HumanActivityReadRecorderSuccessCallback {
+
+        void onsuccess(<a href="#HumanActivityRecorderData">HumanActivityRecorderData</a>[] humanactivitydata);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="HumanActivityReadRecorderSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityReadRecorderSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when recorded human activity data is successfully read.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#HumanActivityRecorderData">HumanActivityRecorderData</a>[] humanactivitydata);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">humanactivitydata</span>:
+ Recorded human activity data.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="GestureRecognitionCallback">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::GestureRecognitionCallback"></a><h3>2.23. GestureRecognitionCallback</h3>
+<div class="brief">
+ The GestureRecognitionCallback describes a callback for the addGestureRecognitionListener() method.
+          </div>
+<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface GestureRecognitionCallback {
+      void onsuccess(<a href="#GestureData">GestureData</a> data);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="GestureRecognitionCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::GestureRecognitionCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a gesture is detected.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#GestureData">GestureData</a> data);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">data</span>:
+ GestureData which contains information about detected gesture.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="api-features">3. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the Human Activity Monitor application runs on a device which supports this API, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/humanactivitymonitor</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the pedometer application runs on a device with pedometer, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/sensor.pedometer</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the wrist-up gesture recognition application runs on a device with wrist up, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/sensor.wrist_up</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the gesture recognition application runs on a device with gesture recognition feature, declare the following feature requirement in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/sensor.gesture_recognition</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the Heart Rate Monitor application runs on a device with heart rate monitor, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/sensor.heart_rate_monitor</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the GPS batch information tracking application runs on a device with GPS batch feature, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/location.batch</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the activity information tracking application runs on a device with activity recognition feature, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/sensor.activity_recognition</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the human sleep state tracking application runs on a device with sleep monitor feature, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/sensor.sleep_monitor</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the barometer(pressure) sensor application runs on a device with a barometric (pressure) sensor, declare the following feature requirement in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/sensor.barometer</li>
+</div>
+<p></p>
+                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering</a>.
+</div>
+<h2 id="full-webidl">4. Full WebIDL</h2>
+<pre class="webidl prettyprint">module HumanActivityMonitor {
+
+    enum HumanActivityType { "PEDOMETER", "WRIST_UP", "HRM", "GPS", "SLEEP_MONITOR" };
+
+    enum HumanActivityRecorderType { "PEDOMETER", "HRM", "SLEEP_MONITOR", "PRESSURE" };
+
+    enum PedometerStepStatus { "NOT_MOVING", "WALKING", "RUNNING", "UNKNOWN" };
+
+    enum ActivityRecognitionType { "STATIONARY", "WALKING", "RUNNING", "IN_VEHICLE" };
+
+    enum ActivityAccuracy { "LOW", "MEDIUM", "HIGH" };
+
+    enum SleepStatus { "ASLEEP", "AWAKE", "UNKNOWN" };
+
+    enum GestureType { "GESTURE_DOUBLE_TAP", "GESTURE_MOVE_TO_EAR", "GESTURE_NO_MOVE", "GESTURE_PICK_UP",
+                       "GESTURE_SHAKE", "GESTURE_SNAP", "GESTURE_TILT", "GESTURE_TURN_FACE_DOWN", "GESTURE_WRIST_UP" };
+    enum GestureEvent { "GESTURE_EVENT_DETECTED", "GESTURE_SHAKE_DETECTED", "GESTURE_SHAKE_FINISHED", "GESTURE_SNAP_X_NEGATIVE",
+                        "GESTURE_SNAP_X_POSITIVE", "GESTURE_SNAP_Y_NEGATIVE", "GESTURE_SNAP_Y_POSITIVE", "GESTURE_SNAP_Z_NEGATIVE", "GESTURE_SNAP_Z_POSITIVE" };
+
+
+    [NoInterfaceObject] interface HumanActivityMonitorManagerObject {
+        readonly attribute <a href="#HumanActivityMonitorManager">HumanActivityMonitorManager</a> humanactivitymonitor;
+    };
+    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#HumanActivityMonitorManagerObject">HumanActivityMonitorManagerObject</a>;
+
+    [NoInterfaceObject] interface HumanActivityMonitorManager {
+
+        void getHumanActivityData(<a href="#HumanActivityType">HumanActivityType</a> type, <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> successCallback,
+                                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void start(HumanActivityType type, optional HumanActivityMonitorSuccessCallback? changedCallback, optional ErrorCallback? errorCallback, optional HumanActivityMonitorOption? option) raises(WebAPIException);
+
+        void stop(HumanActivityType type) raises(WebAPIException);
+
+        void setAccumulativePedometerListener(HumanActivityMonitorSuccessCallback changeCallback) raises(WebAPIException);
+
+        void unsetAccumulativePedometerListener() raises(WebAPIException);
+
+        long addActivityRecognitionListener(ActivityRecognitionType type, HumanActivityMonitorSuccessCallback listener, optional ErrorCallback? errorCallback) raises(WebAPIException);
+
+        void removeActivityRecognitionListener(long listenerId, optional ErrorCallback? errorCallback);
+
+        void startRecorder(HumanActivityRecorderType type, optional HumanActivityRecorderOption option) raises(WebAPIException);
+
+        void stopRecorder(HumanActivityRecorderType type) raises(WebAPIException);
+
+        void readRecorderData(HumanActivityRecorderType type,
+                              HumanActivityRecorderQuery? query,
+                              HumanActivityReadRecorderSuccessCallback successCallback,
+                              optional ErrorCallback? errorCallback) raises(WebAPIException);
+
+        boolean isGestureSupported(GestureType type) raises(WebAPIException);
+
+        long addGestureRecognitionListener(GestureType type, GestureRecognitionCallback listener, optional ErrorCallback? errorCallback, optional boolean? alwaysOn) raises(WebAPIException);
+
+        void removeGestureRecognitionListener(long watchId) raises(WebAPIException);
+    };
+
+    [NoInterfaceObject] interface StepDifference {
+
+        readonly attribute long stepCountDifference;
+
+        readonly attribute long timestamp;
+    };
+
+    dictionary HumanActivityRecorderOption {
+        long interval;
+
+        long retentionPeriod;
+    };
+
+    dictionary HumanActivityRecorderQuery {
+        long startTime;
+
+        long endTime;
+
+        long anchorTime;
+
+        long interval;
+    };
+
+    [NoInterfaceObject] interface HumanActivityData {
+    };
+
+    [NoInterfaceObject] interface HumanActivityPedometerData : HumanActivityData {
+
+        readonly attribute PedometerStepStatus stepStatus;
+
+        readonly attribute double speed;
+
+        readonly attribute double walkingFrequency;
+
+        readonly attribute double cumulativeDistance;
+
+        readonly attribute double cumulativeCalorie;
+
+        readonly attribute double cumulativeTotalStepCount;
+
+        readonly attribute double cumulativeWalkStepCount;
+
+        readonly attribute double cumulativeRunStepCount;
+
+        readonly attribute StepDifference[] stepCountDifferences;
+    };
+
+    [NoInterfaceObject] interface HumanActivityAccumulativePedometerData : HumanActivityData {
+
+        readonly attribute PedometerStepStatus stepStatus;
+
+        readonly attribute double speed;
+
+        readonly attribute double walkingFrequency;
+
+        readonly attribute double accumulativeDistance;
+
+        readonly attribute double accumulativeCalorie;
+
+        readonly attribute double accumulativeTotalStepCount;
+
+        readonly attribute double accumulativeWalkStepCount;
+
+        readonly attribute double accumulativeRunStepCount;
+
+        readonly attribute StepDifference[] stepCountDifferences;
+    };
+
+    [NoInterfaceObject] interface HumanActivityHRMData : HumanActivityData {
+
+        readonly attribute long heartRate;
+
+        readonly attribute long rRInterval;
+    };
+
+    [NoInterfaceObject] interface HumanActivityGPSInfo {
+
+        readonly attribute double latitude;
+
+        readonly attribute double longitude;
+
+        readonly attribute double altitude;
+
+        readonly attribute double speed;
+
+        readonly attribute long errorRange;
+
+        readonly attribute long timestamp;
+    };
+
+    [NoInterfaceObject] interface HumanActivityGPSInfoArray : HumanActivityData {
+
+        readonly attribute HumanActivityGPSInfo[] gpsInfo;
+    };
+
+    [NoInterfaceObject] interface HumanActivitySleepMonitorData : HumanActivityData {
+
+        readonly attribute SleepStatus status;
+
+        readonly attribute long timestamp;
+    };
+
+    dictionary HumanActivityMonitorOption {
+
+        long callbackInterval;
+
+        long sampleInterval;
+    };
+
+    [NoInterfaceObject] interface HumanActivityRecognitionData : HumanActivityData {
+
+        readonly attribute ActivityRecognitionType type;
+
+        readonly attribute long timestamp;
+
+        readonly attribute ActivityAccuracy accuracy;
+    };
+
+    [NoInterfaceObject] interface HumanActivityRecorderData {
+
+        readonly attribute long startTime;
+
+        readonly attribute long endTime;
+    };
+
+    [NoInterfaceObject] interface HumanActivityRecorderPedometerData : HumanActivityRecorderData {
+
+        readonly attribute double distance;
+
+        readonly attribute double calorie;
+
+        readonly attribute double totalStepCount;
+
+        readonly attribute double walkStepCount;
+
+        readonly attribute double runStepCount;
+    };
+
+    [NoInterfaceObject] interface HumanActivityRecorderHRMData : HumanActivityRecorderData {
+
+        readonly attribute long heartRate;
+    };
+
+    [NoInterfaceObject] interface HumanActivityRecorderSleepMonitorData : HumanActivityRecorderData {
+
+        readonly attribute SleepStatus status;
+    };
+
+    [NoInterfaceObject] interface HumanActivityRecorderPressureData : HumanActivityRecorderData {
+
+        readonly attribute double? max;
+
+        readonly attribute double? min;
+
+        readonly attribute double? average;
+    };
+
+    [NoInterfaceObject] interface GestureData {
+        readonly attribute GestureType type;
+        readonly attribute GestureEvent event;
+        readonly attribute long timestamp;
+        readonly attribute double? x;
+        readonly attribute double? y;
+    };
+
+    [Callback=FunctionOnly, NoInterfaceObject] interface HumanActivityMonitorSuccessCallback {
+
+        void onsuccess(optional HumanActivityData? humanactivitydata);
+    };
+
+    [Callback=FunctionOnly, NoInterfaceObject] interface HumanActivityReadRecorderSuccessCallback {
+
+        void onsuccess(HumanActivityRecorderData[] humanactivitydata);
+    };
+
+    [Callback=FunctionOnly, NoInterfaceObject] interface GestureRecognitionCallback {
+      void onsuccess(GestureData data);
+    };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>
