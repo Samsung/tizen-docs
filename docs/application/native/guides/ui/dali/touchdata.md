@@ -73,11 +73,12 @@ To establish a connection to a touch data signal:
      }
      ```
 
-   - To retrieve the time the touch occurred, use the `GetTime()` function.You can also get the ID of the device that a particular touch originated from. It is useful when multiple touch points are pressed or released.
+   - To retrieve the time the touch occurred, use the `GetTime()` function.  
+   You can also get the ID of the device that a particular touch originated from. It is useful when multiple touch points are pressed or released.
 
      ```
      unsigned long touchTime = touchData.GetTime();
-     int32_t touchDeviceId = touchData.GetDeviceId( 0 );`unsigned long touchTime = touchData.GetTime();int32_t touchDeviceId = touchData.GetDeviceId( 0 );`
+     int32_t touchDeviceId = touchData.GetDeviceId( 0 );
      ```
 
    - To retrieve the hit actor (the actor that was underneath a specific point), use the `GetHitActor()` function. The hit actor can be useful, as it can be a child of the actor that has been given as a parameter.
@@ -91,7 +92,8 @@ To establish a connection to a touch data signal:
      const Vector2& local = touchData.GetLocalPosition( 0 );
      ```
 
-   - To retrieve the pressure with which the user touched the screen, use the `GetPressure()` function.The pressure range starts at 0.0f and normal pressure is defined as 1.0f. A value between 0.0f and 1.0f means light pressure has been applied, whereas a value greater than 1.0f means that more pressure than normal has been applied.
+   - To retrieve the pressure with which the user touched the screen, use the `GetPressure()` function.  
+   The pressure range starts at 0.0f and normal pressure is defined as 1.0f. A value between 0.0f and 1.0f means light pressure has been applied, whereas a value greater than 1.0f means that more pressure than normal has been applied.
 
      `float touchPressure = touchData.GetPressure( 0 );`
 

@@ -4,9 +4,11 @@ Tizen has commercialized in smart TV, smartphone, wearable devices (Gear S, Gear
 
 Tizen RT is an RTOS-based lightweight platform. The following are the hardware and environmental requirements:
 
-* Hardware targets: Cortex-M/R processors with MPU, less than 2 MB RAM, and less than 16 MB Flash.
+- Hardware targets: 
 
-* Development environment:
+  Cortex-M/R processors with MPU, less than 2 MB RAM, and less than 16 MB Flash.
+
+- Development environment:
 	- Tizen RT Studio for SmartThings:
 	Tizen RT Studio version 2.0 (or later) is used as an IDE for developing IoT applications with the Tizen IoT Platform and ARTIK 053(s).
 

@@ -1,7 +1,7 @@
 # TableView
 
-
 The `Dali::Toolkit::TableView` class is a layout container for aligning child actors in a grid like layout.
+
 `TableView` constraints the x and y position and width and height of the child actors.
 
 **Figure: TableView**
@@ -58,7 +58,7 @@ The following table lists the available TableView properties.
 | `LAYOUT_COLUMNS` | MAP              | The columns layout    |
 
 
-- The following table lists the available TableView's child properties.
+The following table lists the available TableView's child properties.
 
  **Table: TableView Child properties**
 
