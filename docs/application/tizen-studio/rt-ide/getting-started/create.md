@@ -84,13 +84,18 @@ To import a project from an existing repository:
 2. Add local repositories by clicking **Add**.  
   ![Select local repository](media/rt_local_repository.png)
 
-3. Search for local Git repositories on the file system by clicking **Browse** to set the directory and clicking **Search**.After the search, select the repositories and click **Finish**.  
+3. Search for local Git repositories on the file system by clicking **Browse** to set the directory and clicking **Search**.
+
+   After the search, select the repositories and click **Finish**.  
+
   ![Search for a repository](media/rt_local_search.png)
 
 4. Select the repository to clone and click **Next**.  
   ![Select for cloning](media/rt_local_clone.png)
 
-5. Select the specific directory under the Working Tree to use for importing the project, and click **Next**.If you want to import the overall Working Tree as a new project, select the root (`Working Tree`) directory.  
+5. Select the specific directory under the Working Tree to use for importing the project, and click **Next**.  
+   If you want to import the overall Working Tree as a new project, select the root (`Working Tree`) directory.  
+
   ![Select directory](media/rt_local_directory.png)
 
 6. Set the project name and click **Finish**.  

@@ -1,6 +1,6 @@
 # Configuring the Package Manager
 
-The Package Manager configuration allows you to manage the packages of the Tizen Studio. With the Package Manager configuration, you can change the options for the package repository for the main and extension SDK, as well as the proxy settings to access the package repository. If you want to configure the Package Manager in the command line interface, see [Updating with the CLI Package Manager](updating-sdk.md#updating-with-the-cli-package-manager).
+The Package Manager configuration allows you to manage the packages of the Tizen Studio. With the Package Manager configuration, you can change the options for the package repository for the main and extension SDK, as well as the proxy settings to access the package repository. If you want to configure the Package Manager in the command line interface, see [Updating with the CLI Package Manager](update-sdk.md#updating-with-the-cli-package-manager).
 
 ## Configuring the Main SDK Repository
 

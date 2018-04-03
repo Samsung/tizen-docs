@@ -32,7 +32,7 @@ There are 2 different ways to edit the `tizen-manifest.xml` file:
 The Tizen native application manifest file consists of XML elements organized in a hierarchy. The following tree structure shows the relationship between the elements of the `tizen-manifest.xml` file.
 
 | `<manifest>` |                         |                         |                  |
-|------------|-----------------------|-----------------------|----------------|
+|--------------|-------------------------|-------------------------|------------------|
 |              | `<author>`              |                         |                  |
 |              | `<description>`         |                         |                  |
 |              | `<profile>`             |                         |                  |
@@ -196,8 +196,9 @@ For more information on the relationship between the elements, see the [element 
 
 **Attributes:**
 
-- `xml:lang`  
-Language and country code (available value: "\<2-letter lowercase language code (ISO 639-1)\>-\<2-letter lowercase country code (ISO 3166-1 alpha-2)\>")
+- `xml:lang`
+
+  Language and country code (available value: "\<2-letter lowercase language code (ISO 639-1)\>-\<2-letter lowercase country code (ISO 3166-1 alpha-2)\>")
 
 **Expected value:**
 
@@ -221,8 +222,9 @@ The `<profile>` element determines on which kind of device the Tizen package ope
 
 **Attributes:**
 
-- `name`  
-Profile name (available values: `mobile`, `wearable`)
+- `name`
+
+  Profile name (available values: `mobile`, `wearable`)
 
 **For example:**
 
@@ -253,22 +255,33 @@ For more information on the relationship between the elements, see the [element 
 
 **Attributes:**
 
-- `appid`  
-Application unique ID (string)  
-This can be used for launching or terminating the application explicitly.
+- `appid`
 
-- `exec`  
-Application executable file path (string)
+  Application unique ID (string)
 
-- `hw-acceleration`  
-Indicates the application hardware acceleration status (available values: not defined (depends on the system setting), `on` (use hardware acceleration), `off` (do not use hardware acceleration))By default, this value is not defined.
+  This can be used for launching or terminating the application explicitly.
 
-- `launch_mode`  
-Application launch mode (available values: `single` (launched as a main application), `group` (launched as a sub application), `caller` (caller application [defines the launch mode](../../native/guides/app-management/app-controls.md#mode) with the `app_control_set_launch_mode()` function))  
-By default, this value is set to `single`.
+  You can use the a~z, A~Z, 0~9, ".", "-", and "_" characters, and the value must be shorter than 50 characters.
 
-- `multiple`  
-Indicates whether the application can be launched as a multiple (available values: `true`, `false`)  
+- `exec`
+
+  Application executable file path (string)
+
+- `hw-acceleration`
+
+  Indicates the application hardware acceleration status (available values: not defined (depends on the system setting), `on` (use hardware acceleration), `off` (do not use hardware acceleration))
+
+  By default, this value is not defined.
+
+- `launch_mode`
+
+  Application launch mode (available values: `single` (launched as a main application), `group` (launched as a sub application), `caller` (caller application [defines the launch mode](../../native/guides/app-management/app-controls.md#mode) with the `app_control_set_launch_mode()` function))
+
+  By default, this value is set to `single`.
+
+- `multiple`
+
+  Indicates whether the application can be launched as a multiple (available values: `true`, `false`)
 
   > **Note**  
   > This attribute is read-only. Do not attempt to modify it.
@@ -311,47 +324,58 @@ For more information on the relationship between the elements, see the [element 
 **Expected children (in the following order):**
 
 | Child element           | Occurrences          |
-|-----------------------|--------------------|
+|-------------------------|----------------------|
 | `<label>`               | 1 or more (optional) |
-| `<icon>`                |                      |
-| `<app-control>`         |                      |
-| `<metadata>`            |                      |
-| `<datacontrol>`         |                      |
-| `<background-category>` |                      |
+| `<icon>`                | 1 or more (optional) |
+| `<app-control>`         | 1 or more (optional) |
+| `<metadata>`            | 1 or more (optional) |
+| `<datacontrol>`         | 1 or more (optional) |
+| `<background-category>` | 1 or more (optional) |
 
 **Attributes:**
 
-- `appid`  
-Application unique ID (string)  
-This can be used for launching or terminating the application explicitly.
+- `appid`
 
-- `auto-restart`  
-Indicates whether the application is relaunched automatically if it is terminated abnormally (available values: `true`, `false`)  
-If the value is not defined, `false` is used.  
+  Application unique ID (string)
+
+  This can be used for launching or terminating the application explicitly.
+
+- `auto-restart`
+
+  Indicates whether the application is relaunched automatically if it is terminated abnormally (available values: `true`, `false`)
+
+  If the value is not defined, `false` is used.
 
  > **Note**  
  > This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.
 
-- `exec`  
-Application executable file path (string)
+- `exec`
 
-- `multiple`  
-Indicates whether the application can be launched as a multiple (available values: `true`, `false`)
+  Application executable file path (string)
+
+- `multiple`
+
+  Indicates whether the application can be launched as a multiple (available values: `true`, `false`)
+
   > **Note**  
   > This attribute is read-only. Do not attempt to modify it.
 
-- `on-boot`  
-Indicates whether the application is launched automatically on device boot or application installation (available values: `true`, `false`)  
-If the value is not defined, `false` is used.  
+- `on-boot`
 
- > **Note**  
- > This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.
+  Indicates whether the application is launched automatically on device boot or application installation (available values: `true`, `false`)
 
-- `taskmanage`  
-Indicates whether the application is shown in the task manager (available values: `true`, `false`)
+  If the value is not defined, `false` is used.
 
-- `type`  
-Tizen application type (available values: `capp`, `c++app`, `webapp`)
+  > **Note**  
+  > This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.
+
+- `taskmanage`
+
+  Indicates whether the application is shown in the task manager (available values: `true`, `false`)
+
+- `type`
+
+  Tizen application type (available values: `capp`, `c++app`, `webapp`)
 
   > **Note**  
   > This attribute is read-only. Do not attempt to modify it.
@@ -387,21 +411,25 @@ For more information on the relationship between the elements, see the [element 
 **Expected children:**
 
 | Child element | Occurrences |
-|-------------|-----------|
+|---------------|-------------|
 | `<label>`     | 1 or more   |
-| `<icon>`      |             |
+| `<icon>`      | 1 or more   |
 
 **Attributes:**
 
-- `ambient-support`  
-Indicates whether the application draws the ambient mode UI itself (available values: `true`, `false`)  
-If the value is `false`, the system default ambient mode UI is shown when the device enters the ambient mode.
+- `ambient-support`
 
-- `appid`  
-Watch application unique ID (string)
+  Indicates whether the application draws the ambient mode UI itself (available values: `true`, `false`)
 
-- `exec`  
-Watch application executable file path (string)
+  If the value is `false`, the system default ambient mode UI is shown when the device enters the ambient mode.
+
+- `appid`
+
+  Watch application unique ID (string)
+
+- `exec
+
+  Watch application executable file path (string)
 
 ```xml
 <watch-application ambient-support="true" appid="org.tizen.watchsample" exec="watchsample">
@@ -457,28 +485,35 @@ For more information on the relationship between the elements, see the [element 
 **Expected children:**
 
 | Child element    | Occurrences          |
-|----------------|--------------------|
+|------------------|----------------------|
 | `<label>`        | 1 or more            |
-| `<icon>`         |                      |
+| `<icon>`         | 1 or more            |
 | `<support-size>` | 1                    |
 | `<widget-class>` | 1 or more (optional) |
 
 **Attributes:**
 
-- `appid`  
-Widget application unique ID (string)
+- `appid`
 
-- `exec`  
-Widget application executable file name (string)
+  Widget application unique ID (string)
 
-- `main`  
-Indicates which widget application is the main application (available values: `true`, `false`)
+- `exec`
 
-- `update-period`  
-Indicates the update period in seconds (available values: time in seconds)Multiples of 1800 only allowed
+  Widget application executable file name (string)
 
-- `max-instance`  
-Indicates the maximum number of widget instances that can be created in the widget application
+- `main`
+
+  Indicates which widget application is the main application (available values: `true`, `false`)
+
+- `update-period`
+
+  Indicates the update period in seconds (available values: time in seconds)
+
+  Multiples of 1800 only allowed
+
+- `max-instance`
+
+  Indicates the maximum number of widget instances that can be created in the widget application
 
 **For example:**
 
@@ -537,9 +572,11 @@ This element contains the size supported by the widget application.
 
 **Attributes:**
 
-- `preview`  
-Relative path to the preview image (available values: file name)  
-The image is shown on the home screen when the user tries to select the widget.
+- `preview`
+
+  Relative path to the preview image (available values: file name)
+
+  The image is shown on the home screen when the user tries to select the widget.
 
 **Expected value:**
 
@@ -566,18 +603,20 @@ This element contains the settings for the widget class. After adding this eleme
 **Expected children:**
 
 | Child element    | Occurrences |
-|----------------|-----------|
+|------------------|---------------|
 | `<label>`        | 1 or more   |
-| `<icon>`         |             |
+| `<icon>`         | 1 or more   |
 | `<support-size>` | 1           |
 
 **Attributes:**
 
-- `classid`  
-Widget application class unique ID (string)
+- `classid`
 
-- `update-period`  
-Indicates the update period in seconds (available values: time in seconds)Multiples of 1800 only allowed
+  Widget application class unique ID (string)
+
+- `update-period`
+
+  Indicates the update period in seconds (available values: time in seconds)Multiples of 1800 only allowed
 
 **For example:**
 
@@ -602,7 +641,7 @@ For more information on the relationship between the elements, see the [element 
 **Expected children:**
 
 | Child element | Occurrences |
-|-------------|-----------|
+|---------------|-------------|
 | `<shortcut>`  | 1 or more   |
 
 **For example:**
@@ -624,20 +663,29 @@ This element contains the information that indicates the shortcut for the applic
 **Expected children:**
 
 | Child element | Occurrences |
-|-------------|-----------|
+|---------------|-------------|
 | `<icon>`      | 1 or more   |
-| `<label>`     |             |
+| `<label>`     | 1 or more   |
 
 **Attributes:**
 
-- `appid`  
-Application unique ID (string)This can be used for launching or terminating the application explicitly.
+- `appid`
 
-- `extra_data`  
-Data for user content (string)Shortcut element property in the manifest file
+  Application unique ID (string)
 
-- `extra_key`  
-Key for user content (string)Shortcut element property in the manifest file
+  This can be used for launching or terminating the application explicitly.
+
+- `extra_data`
+
+  Data for user content (string)
+
+  Shortcut element property in the manifest file
+
+- `extra_key`
+
+  Key for user content (string)
+
+  Shortcut element property in the manifest file
 
 **For example:**
 
@@ -662,7 +710,7 @@ For more information on the relationship between the elements, see the [element 
 **Expected children:**
 
 | Child element        | Occurrences |
-|--------------------|-----------|
+|----------------------|-------------|
 | `<account-provider>` | 1 or more   |
 
 **For example:**
@@ -680,21 +728,26 @@ This element contains specific service provider or user account protocol-related
 **Expected children:**
 
 | Child element  | Occurrences          |
-|--------------|--------------------|
+|----------------|----------------------|
 | `<icon>`       | 1 or more            |
-| `<label>`      |                      |
+| `<label>`      | 1 or more            |
 | `<capability>` | 1 or more (optional) |
 
 **Attributes:**
 
-- `appid`  
-Application unique ID (string)This can be used for launching or terminating the application explicitly.
+- `appid`
 
-- `multiple-accounts-support`  
-Indicates whether multiple accounts are supported (available values: `true`, `false`)
+  Application unique ID (string)
 
-- `providerid`  
-ID of the account provider (string)
+  This can be used for launching or terminating the application explicitly.
+
+- `multiple-accounts-support`
+
+  Indicates whether multiple accounts are supported (available values: `true`, `false`)
+
+- `providerid`
+
+  ID of the account provider (string)
 
 **For example:**
 
@@ -712,8 +765,9 @@ This element contains the account provider icon image. Since the icons are used 
 
 **Attributes:**
 
-- `section`  
-Usage information for the icon image (available values: `account` (image size: 72 x 72 for density xhigh and 48 x 48 for density high), `account-small` (image size: 45 x 45 for density xhigh and 30 x 30 for density high))
+- `section`
+
+  Usage information for the icon image (available values: `account` (image size: 72 x 72 for density xhigh and 48 x 48 for density high), `account-small` (image size: 45 x 45 for density xhigh and 30 x 30 for density high))
 
 **Expected value:**
 
@@ -761,8 +815,8 @@ For more information on the relationship between the elements, see the [element 
 **Expected children:**
 
 | Child element             | Occurrences          |
-|-------------------------|--------------------|
-| [`privilege`](#privilege) | 1 or more (optional) |
+|---------------------------|----------------------|
+| `privilege`               | 1 or more (optional) |
 
 **For example:**
 
@@ -818,8 +872,9 @@ For more information on the relationship between the elements, see the [element 
 
 **Attributes:**
 
-- `name` (mandatory, a feature key URI)  
-Item name used in feature-based filtering in the Tizen Store, for example, `"http://tizen.org/feature/camera"` or `"http://tizen.org/feature/fmradio"`  
+- `name` (mandatory, a feature key URI)
+
+  Item name used in feature-based filtering in the Tizen Store, for example, `"http://tizen.org/feature/camera"` or `"http://tizen.org/feature/fmradio"`
 
   For more information on the expected values and the application filtering mechanism, see [Application Filtering](../../native/tutorials/details/app-filtering.md).
 

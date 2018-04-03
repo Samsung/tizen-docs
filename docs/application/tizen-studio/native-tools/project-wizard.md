@@ -97,7 +97,7 @@ The options you can set are listed in the following table.
 | **Project name**         | A name for the project to be created.    |
 | **Package ID**           | The ID for the package of the project.   |
 | **Use default location** | If you check this option, the project is created in the `$<workspace_location>/<project_name>` directory. |
-| **Location**             | Manually select the location of the project.If you check the **Use default location** checkbox, this option is disabled. |
+| **Location**             | Manually select the location of the project.<br> If you check the **Use default location** checkbox, this option is disabled. |
 | **Working sets**         | If you want to include the project to a specific working set, select the **Add project to working sets** checkbox. For more information, see the [Working sets help page](http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Fconcepts%2Fcworkset.htm). |
 
 After specifying the options, click **Finish** to create the new project.

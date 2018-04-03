@@ -34,7 +34,7 @@ To install the Tizen Studio:
 
    If you want to install additional platforms and tools, launch the Package Manager by checking the **Launch the Package Manager** check box before clicking **Finish**.
 
-   Through the Tizen Studio Package Manager, you can both install and update additional tools. For more information on the Package Manager, see [Updating Tizen Studio](./updating-sdk.md).
+   Through the Tizen Studio Package Manager, you can both install and update additional tools. For more information on the Package Manager, see [Updating Tizen Studio](./update-sdk.md).
 
 
    > **Note**  

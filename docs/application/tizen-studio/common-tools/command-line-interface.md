@@ -15,6 +15,7 @@ The command displays, sets, replaces, and removes CLI configuration options. The
 - `default.build.architecture=<x86|arm>`: Sets the default executable architecture type.
 - `default.build.compiler=<llvm|gcc>`: Sets the default compiler.
 - `default.build.configuration=<Debug|Release>`: Sets the default build configuration.
+- `default.profiles.path=<profiles.xml file path>`: Sets the default path of security profile file.
 - `default.sdb.timeout=<timeout value>`: Sets the default connection timeout value. The default is 60000 milliseconds.
 
 **Syntax:**
@@ -26,7 +27,7 @@ tizen cli-config [options]
 **Options:**
 
 | Option                 | Description                              |
-|----------------------|----------------------------------------|
+|------------------------|------------------------------------------|
 | `-g`, `--global`       | Specifies whether the operation must be done for a global scope (for all installed SDKs or for the current Tizen Studio only). |
 | `<key>=<value>`        | Sets a value for the CLI configuration key. |
 | `-l`, `--list`         | Displays the list of all CLI configuration keys and values. |
@@ -46,7 +47,16 @@ tizen cli-config [options]
   default.sdb.timeout=60000
   ```
 
-- Set a `profiles.xml` path globally.Windows&reg;:`> tizen cli-config –g "default.profiles.path=C:\Users\workspace\.metadata\.plugins\org.tizen.common.sign\profiles.xml"`Ubuntu and macOS:`$ tizen cli-config –g default.profiles.path=~/workspace/.metadata/.plugins/org.tizen.common.sign/profiles.xml`
+- Set a `profiles.xml` path globally.
+
+  Windows&reg;:
+  ```
+  > tizen cli-config -g "default.profiles.path=C:\Users\workspace\.metadata\.plugins\org.tizen.common.sign\profiles.xml"
+  ```
+  Ubuntu and macOS:
+  ```
+  $ tizen cli-config -g default.profiles.path=~/workspace/.metadata/.plugins/org.tizen.common.sign/profiles.xml
+  ```
 
 ## Displaying Profile Templates
 
@@ -95,6 +105,13 @@ tizen list <option>
   mobile-2.3-emulator.core	Mobile 2.3, i386
   mobile-2.4-device.core		Mobile 2.4, armel
   mobile-2.4-emulator.core	Mobile 2.4, i386
+  wearable-3.0-device.core	Wearable 3.0, armel
+
+  > tizen list rootstrap wearable-3.0-device.core
+  rootstrap : wearable-3.0-device.core
+  [FRAMEWORK NAME]        [TYPE]      [DESCRIPTION]
+  Native_API              base        Native_API Libraries
+  bixby                   add-on
   ```
 
 ## Creating a Tizen Project
@@ -102,7 +119,6 @@ tizen list <option>
 The command creates a Tizen native or Web project from a template.
 
 **Syntax:**
-
 ```
 tizen create <sub-command> [options]
 ```
@@ -110,7 +126,7 @@ tizen create <sub-command> [options]
 **Sub-commands:**
 
 | Sub-command                              | Description                              |
-|---------------------------------------|----------------------------------------|
+|------------------------------------------|------------------------------------------|
 | `native-project [options]` or `web-project [options]` | Create the Tizen native or Web project.Options are:`-p`, `--profile`: Specifies the profile name.`-t`, `--template`: Specifies the template name.`-n`, `--name`: Specifies the project name.`--`: Specifies the destination directory where the project is created. |
 
 **Examples:**
@@ -142,7 +158,6 @@ tizen <sub-command> [options]
 ```
 
 **Sub-commands:**
-
 <table>
 	<thead>
 		<tr>
@@ -153,8 +168,8 @@ tizen <sub-command> [options]
 	<tbody>
 		<tr>
 			<td><code>build-native [options]</code></td>
-			<td>Build the Tizen native project.<br />
-			<br />
+			<td>Build the Tizen native project.<br>
+			<br>
 			Options are:
 			<ul>
 				<li><code>-a</code>, <code>--arch</code>: Specifies the architecture type: <code>x86</code> (default) or <code>arm</code></li>
@@ -169,8 +184,8 @@ tizen <sub-command> [options]
 		</tr>
 		<tr>
 			<td><code>build-web [options]</code></td>
-			<td>Build the Tizen Web project.<br />
-			<br />
+			<td>Build the Tizen Web project.<br>
+			<br>
 			Options are:
 			<ul>
 				<li><code>-e</code>, <code>--exclude</code>: Specifies a list of exclude files by patterns. By default, the following resources are excluded: <code>.build/*</code>, <code>.build</code>, <code>.sign/*</code>, <code>.sign</code>, <code>webUnitTest/*</code>, <code>webUnitTest</code>, <code>.externalToolBuilders/*</code>, <code>.externalToolBuilders</code>, <code>.buildResult/*</code>, <code>.buildResult</code>, <code>.settings/*</code>, <code>.settings</code>, <code>.package/*</code>, <code>.package</code>, <code>.tproject</code>, <code>.project</code>, <code>.sdk_delta.info</code>, <code>.rds_delta</code>, <code>*.wgt</code>, <code>.tizen-ui-builder-tool.xml</code></li>
@@ -187,7 +202,17 @@ tizen <sub-command> [options]
 
 **Examples:**
 
-- Build the native project with the `x86`, `llvm`, and `Debug` options.Windows&reg;:`> tizen build-native -a x86 -c llvm -C Debug -- C:\Users\workspace\basic> dir C:\Users\workspace\basic\Debug`Ubuntu and macOS:`$ tizen build-native -a x86 -c llvm -C Debug -- ~/workspace/basic$ ls ~/workspace/basic/Debug`
+- Build the native project with the `x86`, `llvm`, and `Debug` options.
+
+  Windows&reg;:
+  ```
+  > tizen build-native -a x86 -c llvm -C Debug -- C:\Users\workspace\basic> dir C:\Users\workspace\basic\Debug
+  ```
+
+  Ubuntu and macOS:
+  ```
+  $ tizen build-native -a x86 -c llvm -C Debug -- ~/workspace/basic$ ls ~/workspace/basic/Debug
+  ```
 
 - Build the native project with a rootstrap.
 
@@ -210,8 +235,8 @@ tizen <sub-command> [options]
   Windows&reg;:
 
   ```
-  $ tizen build-web -- C:\Users\workspace\basicWeb
-  $ dir C:\Users\workspace\basicWeb\.buildResult
+  > tizen build-web -- C:\Users\workspace\basicWeb
+  > dir C:\Users\workspace\basicWeb\.buildResult
   ```
 
   Ubuntu and macOS:
@@ -234,7 +259,7 @@ tizen clean [-- <project directory>]
 **Options:**
 
 | Option                   | Description                              |
-|------------------------|----------------------------------------|
+|--------------------------|------------------------------------------|
 | `-- <project directory>` | Specifies the project directory to clean. |
 
 **Examples:**
@@ -258,7 +283,6 @@ tizen clean [-- <project directory>]
 The command generates a Tizen certificate for your application. If you want to upload your application to the Tizen Store or install the application to a Tizen device, you must generate a Tizen certificate.
 
 **Syntax:**
-
 ```
 tizen certificate [options]
 ```
@@ -276,8 +300,8 @@ tizen certificate [options]
 | `-u`, `--unit <unit>`                 | Specifies the user's organization unit.  |
 | `-n`, `--name <name>`                 | Specifies the user name.                 |
 | `-e`, `--email <email>`               | Specifies the user email.                |
-| `-f`, `--filename <filename>`         | Specifies the file name without a file extension. A certificate file is created with the file name.If you skip this option, the default file name, `author`, is used on creating the certificate file. |
-| `-- <certificate output path>`        | Specifies the output directory path to create the certificate.If you skip this option, the default output directory path, `<TIZEN_STUDIO_DATA>/keystore/author/`, is used on saving the certificate file. |
+| `-f`, `--filename <filename>`         | Specifies the file name without a file extension. A certificate file is created with the file name.<br> If you skip this option, the default file name, `author`, is used on creating the certificate file. |
+| `-- <certificate output path>`        | Specifies the output directory path to create the certificate.<br> If you skip this option, the default output directory path, `<TIZEN_STUDIO_DATA>/keystore/author/`, is used on saving the certificate file. |
 
 **Examples:**
 
@@ -333,12 +357,57 @@ tizen security-profiles <sub-command> [options]
 ```
 
 **Sub-commands:**
-
-| Sub-command        | Description                              |
-|------------------|----------------------------------------|
-| `add [options]`    | Adds the specified security profile, which can contain several certificates.Options are:`-n`, `--name`: Specifies the name of the security profile to add.`-a`, `--path`: Specifies the directory path where the author certificate file is located. The format of the certificate is PKCS#12, and the file extension is `.p12`.`-p`, `--password`: Specifies the password used to access the author certificate.`-c`, `--ca`: Specifies the directory path where the author CA certificate file is located. The file extension of the CA certificate is `.cer`.`-r`, `--rootca`: Specifies the directory path where the author root CA certificate file is located. The file extension of the root CA certificate is `.cer`.`-d`, `--dist`: Specifies the directory path where the distributor certificate file is located. If you skip this option, the default distributor certificate file embedded in the Tizen Studio is used.`-dp`, `--dist-password`: Specifies the password of the distributor certificate.`-dc`, `--dist-ca`: Specifies the directory path where the distributor CA certificate file is located.`-dr`, `--dist-rootca`: Specifies the directory path where the distributor root CA certificate file is located.`--`: Specifies the directory path where the `profiles.xml` file is located. If you skip this option, the value of the `default.profiles.path` key in the CLI configuration is used to find the `profiles.xml` file, which consists of new security profiles that are generated in the `<TIZEN_STUDIO_DATA>/keystore/` directory. The directory path is added to the CLI configuration. |
-| `list [options]`   | Displays security profiles. If you specify the name of the security profile, details about the specified profile are displayed.Options are:`-n`, `--name`: Specifies the name of the security profile to list. If you skip this option, a set of the security profile names in the `profiles.xml` file is displayed.`--`: Specifies the directory path where the `profiles.xml` file is located. |
-| `remove [options]` | Removes the specified security profile.Options are:`-n`, `--name`: Specifies the name of the security profile to remove.`--`: Specifies the directory path where the `profiles.xml` file is located. |
+<table>
+	<thead>
+		<tr>
+			<th>Sub-command</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>add [options]</code></td>
+			<td>Adds the specified security profile, which can contain several certificates.<br />
+			<br />
+			Options are:
+			<ul>
+				<li><code>-n</code>, <code>--name</code>: Specifies the name of the security profile to add.</li>
+				<li><code>-a</code>, <code>--path</code>: Specifies the directory path where the author certificate file is located. The format of the certificate is PKCS#12, and the file extension is <code>.p12</code>.</li>
+				<li><code>-p</code>, <code>--password</code>: Specifies the password used to access the author certificate.</li>
+				<li><code>-c</code>, <code>--ca</code>: Specifies the directory path where the author CA certificate file is located. The file extension of the CA certificate is <code>.cer</code>.</li>
+				<li><code>-r</code>, <code>--rootca</code>: Specifies the directory path where the author root CA certificate file is located. The file extension of the root CA certificate is <code>.cer</code>.</li>
+				<li><code>-d</code>, <code>--dist</code>: Specifies the directory path where the distributor certificate file is located. If you skip this option, the default distributor certificate file embedded in the Tizen Studio is used.</li>
+				<li><code>-dp</code>, <code>--dist-password</code>: Specifies the password of the distributor certificate.</li>
+				<li><code>-dc</code>, <code>--dist-ca</code>: Specifies the directory path where the distributor CA certificate file is located.</li>
+				<li><code>-dr</code>, <code>--dist-rootca</code>: Specifies the directory path where the distributor root CA certificate file is located.</li>
+				<li><code>--</code>: Specifies the directory path where the <code>profiles.xml</code> file is located. If you skip this option, the value of the <code>default.profiles.path</code> key in the CLI configuration is used to find the <code>profiles.xml</code> file, which consists of new security profiles that are generated in the <code>&lt;TIZEN_STUDIO_DATA&gt;/keystore/</code> directory. The directory path is added to the CLI configuration.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td><code>list [options]</code></td>
+			<td>Displays security profiles. If you specify the name of the security profile, details about the specified profile are displayed.<br />
+			<br />
+			Options are:
+			<ul>
+				<li><code>-n</code>, <code>--name</code>: Specifies the name of the security profile to list. If you skip this option, a set of the security profile names in the <code>profiles.xml</code> file is displayed.</li>
+				<li><code>--</code>: Specifies the directory path where the <code>profiles.xml</code> file is located.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td><code>remove [options]</code></td>
+			<td>Removes the specified security profile.<br />
+			<br />
+			Options are:
+			<ul>
+				<li><code>-n</code>, <code>--name</code>: Specifies the name of the security profile to remove.</li>
+				<li><code>--</code>: Specifies the directory path where the <code>profiles.xml</code> file is located.</li>
+			</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
 **Examples:**
 
@@ -454,6 +523,104 @@ tizen security-profiles <sub-command> [options]
   Succeed to remove 'MyProfile' profile
   ```
 
+## Using Your Own Certificates
+
+The command is used to assign your own SSL root certificates for HTTPS communication.
+
+**Syntax:**
+```
+tizen trust-anchor <sub-command> [options]
+```
+
+**Sub-commands:**
+<table>
+	<thead>
+		<tr>
+			<th>Sub-command</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>set [options]</code></td>
+			<td>Sets a new user certificate for a project.<br />
+			<br />
+			Options are:
+			<ul>
+				<li><code>-c</code>, <code>--user-certificate-path &lt;certificate path&gt;</code>: Specifies the file path for the user certificate to be set. If you want to set multiple certificates, separate them with a comma.</li>
+				<li><code>-s</code>, <code>--use-system-certs {true|false}</code>: Determines whether to use the system root certificates.</li>
+				<li><code>-- &lt;project path&gt;</code>: Specifies the project directory to set the new certificate for.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td><code>info</code></td>
+			<td>Displays the trust anchor configuration for a project.<br />
+			<br />
+			Options are:
+			<ul>
+				<li><code>-- &lt;project path&gt;</code>: Specifies the project directory to show the trust-anchor configuration of.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td><code>delete [options]</code></td>
+			<td>Deletes the specified user certificate.<br />
+			<br />
+			Options are:
+			<ul>
+				<li><code>-c</code>, <code>--user-certificate-path &lt;certificate name&gt;</code>: Specifies the user certificate file name to be deleted. If you want to delete multiple certificates, separate them with a comma.</li>
+				<li><code>-- &lt;project path&gt;</code>: Specifies the project directory to delete the certificate from.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td><code>unset</code></td>
+			<td>Disables the trust anchor.<br />
+			<br />
+			Options are:
+			<ul>
+				<li><code>-- &lt;project path&gt;</code>: Specifies the project directory to disable the trust anchor for.</li>
+			</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+Examples:
+
+- Set a new user certificate, check the trust anchor configuration, set additional certificates, delete certificates, and unset the trust anchor.
+
+  Windows&reg;:
+  ```
+   > tizen trust-anchor info -- project1
+   Trust-Anchor is disabled for the project project1.
+   
+   > tizen trust-anchor set -c C:\workspace\user1.pem -s true -- project1
+   Succeed to set the trust-anchor.
+   
+   > tizen trust-anchor info -- project1
+   use-system-certs: true
+   user certificates: user1.pem
+   
+   > tizen trust-anchor set -c "C:\workspace\user2.pem,C:\workspace\user3.pem,C:\workspace\certdirs" -- project1
+   Succeed to add the certificates user2.pem, user3.pem.
+   
+   > tizen trust-anchor info -- project1
+   use-system-certs: true
+   user certificates: user1.pem, user2.pem, user3.pem, certdirs1.pem, certdirs2.pem
+   
+   > tizen trust-anchor delete -c "user2.pem,certdirs1.pem" -- project1
+   Succeed to delete the certificates user2.pem, certdirs1.pem.
+   
+   > tizen trust-anchor unset -- project1
+   Succeed to disable the trust-anchor.
+   
+   > tizen trust-anchor info -- project1
+   Trust-Anchor is disabled for this project.
+   ```
+
 ## Packaging a Tizen Application with Signing
 
 The command packages the Tizen application with signing. If there is a package file in the options, the package is re-signed. The Tizen application is signed with a certified profile in the `profiles.xml` file. You can create the default profile from the Tizen Studio, which generates the file in a hidden directory in your workspace (`<Your workspace directory>/.metadata/.plugins/org.tizen.common.sign/profiles.xml`). Set the path of the `profiles.xml` file before packaging the Tizen application (by using the tizen `cli-config` command).
@@ -467,7 +634,7 @@ tizen package [options]
 **Options:**
 
 | Option                            | Description                              |
-|---------------------------------|----------------------------------------|
+|-----------------------------------|------------------------------------------|
 | `-t`, `--type {tpk|wgt}`          | Specifies the package type. You can use `tpk` for a Tizen native package or `wgt` for a Tizen Web package. |
 | `-s`, `--sign <security profile>` | Specifies the security profile name to use for signing. |
 | `-S`, `--strip {on|off}`          | Determines whether to strip the native binary. The default value is off. This option only works when the native binary is based on the `arm` architecture and `Release` build configuration. This option is only for the native package. |
@@ -669,7 +836,7 @@ tizen install [options]
 **Options:**
 
 | Option                             | Description                              |
-|---------------------------------|----------------------------------------|
+|------------------------------------|------------------------------------------|
 | `-n`, `--name <package file name>` | Specifies the Tizen package file name.   |
 | `-t`, `--target <target name>`     | Specifies the target name to install the package. |
 | `-s`, `--serial <target serial>`   | Specifies the serial to install the package. |
@@ -677,7 +844,17 @@ tizen install [options]
 
 **Examples:**
 
-- Install the basic application, whose package name is `org.tizen.basic-1.0.0-i386.tpk`, on the emulator-26101.Windows&reg;:`> tizen install -n org.tizen.basic-1.0.0-i386.tpk -s emulator-26101 -- C:\Users\workspace\basic\Debug`Ubuntu and macOS:`$ tizen install -n org.tizen.basic-1.0.0-i386.tpk -s emulator-26101 -- ~/workspace/basic/Debug`
+- Install the basic application, whose package name is `org.tizen.basic-1.0.0-i386.tpk`, on the emulator-26101.
+
+  Windows&reg;:
+  ```
+  > tizen install -n org.tizen.basic-1.0.0-i386.tpk -s emulator-26101 -- C:\Users\workspace\basic\Debug
+  ```
+
+  Ubuntu and macOS:
+  ```
+  $ tizen install -n org.tizen.basic-1.0.0-i386.tpk -s emulator-26101 -- ~/workspace/basic/Debug
+  ```
 
 ## Running the Application on a Target
 
@@ -692,14 +869,19 @@ tizen run [options]
 **Options:**
 
 | Option                           | Description                              |
-|--------------------------------|----------------------------------------|
+|----------------------------------|------------------------------------------|
 | `-p`, `--pkgid <package id>`     | Specifies the Tizen package ID installed on the target. |
 | `-t`, `--target <target name>`   | Specifies the target name to run the package. |
 | `-s`, `--serial <target serial>` | Specifies the serial to run the package. |
 
 **Examples:**
 
-- Run the basic application, whose package ID is `org.tizen.basic`, on the emulator-26101.Windows&reg;, Ubuntu, and macOS:`> $ tizen run -p org.tizen.basic -s emulator-26101`
+- Run the basic application, whose package ID is `org.tizen.basic`, on the emulator-26101.
+
+  Windows&reg;, Ubuntu, and macOS:
+  ```
+  > $ tizen run -p org.tizen.basic -s emulator-26101
+  ```
 
 ## Uninstalling the Application on a Target
 
@@ -714,14 +896,19 @@ tizen uninstall [options]
 **Options:**
 
 | Option                           | Description                              |
-|--------------------------------|----------------------------------------|
+|----------------------------------|------------------------------------------|
 | `-p`, `--pkgid <package id>`     | Specifies the Tizen package ID installed on the target. |
 | `-t`, `--target <target name>`   | Specifies the target name to uninstall the package. |
 | `-s`, `--serial <target serial>` | Specifies the serial to uninstall the package. |
 
 **Examples:**
 
-- Uninstall the basic application, whose package ID is `org.tizen.basic`, from the emulator-26101.Windows&reg;, Ubuntu, and macOS:`> tizen uninstall -p org.tizen.basic -s emulator-26101`
+- Uninstall the basic application, whose package ID is `org.tizen.basic`, from the emulator-26101.
+
+  Windows&reg;, Ubuntu, and macOS:
+  ```
+  > tizen uninstall -p org.tizen.basic -s emulator-26101
+  ```
 
 ## Displaying the Command Manual
 

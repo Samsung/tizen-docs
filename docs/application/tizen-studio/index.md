@@ -9,7 +9,7 @@ In the Tizen Studio, you can perform all the same development activities that we
 
 To develop your applications, use the set of tools provided by the Tizen Studio:
 
-- [Setup](setup/installing-sdk.md)  
+- [Setup](setup/install-sdk.md)  
   Learn about installing and updating the Tizen Studio. You may need to install additional packages to develop applications for various platforms.
 
 - [Native Tools](native-tools/overview.md)  
