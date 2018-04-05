@@ -1,0 +1,638 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>TVInfo API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::TVInfo">
+<div class="supported-platforms"><img title="Optional" src="../../../images/tv_s_w_optional.png"></div>
+<div class="title"><h1>TVInfo API</h1></div>
+<div class="brief">
+ The TVInfo API provides functions to get settings values that are provided by the Tizen TV.
+        </div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li>
+                    1.1. <a href="#CaptionInfoKey">CaptionInfoKey</a>
+</li>
+<li>
+                    1.2. <a href="#CaptionState">CaptionState</a>
+</li>
+<li>
+                    1.3. <a href="#CaptionMode">CaptionMode</a>
+</li>
+<li>
+                    1.4. <a href="#CaptionFontSize">CaptionFontSize</a>
+</li>
+<li>
+                    1.5. <a href="#CaptionFontStyle">CaptionFontStyle</a>
+</li>
+<li>
+                    1.6. <a href="#CaptionColor">CaptionColor</a>
+</li>
+<li>
+                    1.7. <a href="#CaptionOpacity">CaptionOpacity</a>
+</li>
+<li>
+                    1.8. <a href="#CaptionEdge">CaptionEdge</a>
+</li>
+<li>
+                    1.9. <a href="#CaptionValue">CaptionValue</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#TVInfoManagerObject">TVInfoManagerObject</a>
+</li>
+<li>2.2. <a href="#TVInfoManager">TVInfoManager</a>
+</li>
+<li>2.3. <a href="#CaptionValueChangeCallback">CaptionValueChangeCallback</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#TVInfoManagerObject">TVInfoManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#TVInfoManager">TVInfoManager</a></td>
+<td>
+<div>
+<a href="#CaptionValue">CaptionValue</a> <a href="#TVInfoManager::getCaptionValue">getCaptionValue</a> (<a href="#CaptionInfoKey">CaptionInfoKey</a> key)</div>
+<div>long <a href="#TVInfoManager::addCaptionValueChangeListener">addCaptionValueChangeListener</a> (<a href="#CaptionInfoKey">CaptionInfoKey</a> key, <a href="#CaptionValueChangeCallback">CaptionValueChangeCallback</a> callback)</div>
+<div>void <a href="#TVInfoManager::removeCaptionValueChangeListener">removeCaptionValueChangeListener</a> (long watchId)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#CaptionValueChangeCallback">CaptionValueChangeCallback</a></td>
+<td><div>void <a href="#CaptionValueChangeCallback::onchanged">onchanged</a> (<a href="#CaptionInfoKey">CaptionInfoKey</a> key, <a href="#CaptionValue">CaptionValue</a> value)</div></td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="enum" id="CaptionInfoKey">
+<a class="backward-compatibility-anchor" name="::TVInfo::CaptionInfoKey"></a><h3>1.1. CaptionInfoKey</h3>
+<div class="brief">
+ Available keys for the caption menu.
+          </div>
+<pre class="webidl prettyprint">    enum CaptionInfoKey { "CAPTION_ONOFF_KEY", "CAPTION_MODE_KEY", "CAPTION_FONT_SIZE_KEY", "CAPTION_FONT_STYLE_KEY",
+        "CAPTION_FONT_COLOR_KEY", "CAPTION_FONT_OPACITY_KEY", "CAPTION_BG_COLOR_KEY", "CAPTION_BG_OPACITY_KEY",
+        "CAPTION_EDGE_TYPE_KEY", "CAPTION_EDGE_COLOR_KEY", "CAPTION_WINDOW_COLOR_KEY", "CAPTION_WINDOW_OPACITY_KEY" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="description">
+          <ul>
+            <li>
+CAPTION_ONOFF_KEY - caption state            </li>
+            <li>
+CAPTION_MODE_KEY - caption mode            </li>
+            <li>
+CAPTION_FONT_SIZE_KEY - caption font size            </li>
+            <li>
+CAPTION_FONT_STYLE_KEY - caption font style            </li>
+            <li>
+CAPTION_FONT_COLOR_KEY - caption font color            </li>
+            <li>
+CAPTION_FONT_OPACITY_KEY - caption font opacity mode            </li>
+            <li>
+CAPTION_BG_COLOR_KEY - caption background color            </li>
+            <li>
+CAPTION_BG_OPACITY_KEY - caption background opacity mode            </li>
+            <li>
+CAPTION_EDGE_TYPE_KEY - caption text edge type            </li>
+            <li>
+CAPTION_EDGE_COLOR_KEY - caption edge color            </li>
+            <li>
+CAPTION_WINDOW_COLOR_KEY - caption window color (only US)            </li>
+            <li>
+CAPTION_WINDOW_OPACITY_KEY - caption window opacity mode (only US)            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="CaptionState">
+<a class="backward-compatibility-anchor" name="::TVInfo::CaptionState"></a><h3>1.2. CaptionState</h3>
+<div class="brief">
+ Available values for the caption state.
+          </div>
+<pre class="webidl prettyprint">    enum CaptionState { "CAPTION_OFF", "CAPTION_ON" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="description">
+          <p>
+These values may be returned for key CAPTION_ONOFF_KEY.
+          </p>
+          <ul>
+            <li>
+CAPTION_OFF - caption menu is turned off            </li>
+            <li>
+CAPTION_ON - caption menu is turned on            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="CaptionMode">
+<a class="backward-compatibility-anchor" name="::TVInfo::CaptionMode"></a><h3>1.3. CaptionMode</h3>
+<div class="brief">
+ Available values for the caption menu mode.
+          </div>
+<pre class="webidl prettyprint">    enum CaptionMode { "CAPTION_MODE_DEFAULT", "CAPTION_MODE_SERVICE1", "CAPTION_MODE_SERVICE2", "CAPTION_MODE_SERVICE3",
+        "CAPTION_MODE_SERVICE4", "CAPTION_MODE_SERVICE5", "CAPTION_MODE_SERVICE6", "CAPTION_MODE_CC1", "CAPTION_MODE_CC2",
+        "CAPTION_MODE_CC3", "CAPTION_MODE_CC4", "CAPTION_MODE_TEXT1", "CAPTION_MODE_TEXT2", "CAPTION_MODE_TEXT3",
+        "CAPTION_MODE_TEXT4" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="description">
+          <p>
+These values may be returned for key CAPTION_MODE_KEY.
+          </p>
+          <ul>
+            <li>
+CAPTION_MODE_DEFAULT - default mode            </li>
+            <li>
+CAPTION_MODE_SERVICE1 - standard service 1 (Primary Caption Service)            </li>
+            <li>
+CAPTION_MODE_SERVICE2 - standard service 2 (Secondary Language Service)            </li>
+            <li>
+CAPTION_MODE_SERVICE3 - standard service 3            </li>
+            <li>
+CAPTION_MODE_SERVICE4 - standard service 4            </li>
+            <li>
+CAPTION_MODE_SERVICE5 - standard service 5            </li>
+            <li>
+CAPTION_MODE_SERVICE6 - standard service 6            </li>
+            <li>
+CAPTION_MODE_CC1 - Primary Synchronous Caption Service            </li>
+            <li>
+CAPTION_MODE_CC2 - Special Non-Synchronous Service            </li>
+            <li>
+CAPTION_MODE_CC3 - Secondary Synchronous Caption Service            </li>
+            <li>
+CAPTION_MODE_CC4 - Special Non-Synchronous Service            </li>
+            <li>
+CAPTION_MODE_TEXT1 - Text Service 1            </li>
+            <li>
+CAPTION_MODE_TEXT2 - Text Service 2            </li>
+            <li>
+CAPTION_MODE_TEXT3 - Text Service 3            </li>
+            <li>
+CAPTION_MODE_TEXT4 - Text Service 4            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="CaptionFontSize">
+<a class="backward-compatibility-anchor" name="::TVInfo::CaptionFontSize"></a><h3>1.4. CaptionFontSize</h3>
+<div class="brief">
+ Available values for the caption menu font size.
+          </div>
+<pre class="webidl prettyprint">    enum CaptionFontSize { "CAPTION_SIZE_DEFAULT", "CAPTION_SIZE_SMALL", "CAPTION_SIZE_STANDARD", "CAPTION_SIZE_LARGE",
+        "CAPTION_SIZE_EXTRA_LARGE" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="description">
+          <p>
+These values may be returned for key CAPTION_FONT_SIZE_KEY.
+          </p>
+          <ul>
+            <li>
+CAPTION_SIZE_DEFAULT - default font size            </li>
+            <li>
+CAPTION_SIZE_SMALL - small font size            </li>
+            <li>
+CAPTION_SIZE_STANDARD - standard font size            </li>
+            <li>
+CAPTION_SIZE_LARGE - large font size            </li>
+            <li>
+CAPTION_SIZE_EXTRA_LARGE - extra large font size            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="CaptionFontStyle">
+<a class="backward-compatibility-anchor" name="::TVInfo::CaptionFontStyle"></a><h3>1.5. CaptionFontStyle</h3>
+<div class="brief">
+ Available values for the caption menu font style.
+          </div>
+<pre class="webidl prettyprint">    enum CaptionFontStyle { "CAPTION_FONT_DEFAULT", "CAPTION_FONT_STYLE0", "CAPTION_FONT_STYLE1", "CAPTION_FONT_STYLE2",
+        "CAPTION_FONT_STYLE3", "CAPTION_FONT_STYLE4", "CAPTION_FONT_STYLE5", "CAPTION_FONT_STYLE6", "CAPTION_FONT_STYLE7" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="description">
+          <p>
+These values may be returned for key CAPTION_FONT_STYLE_KEY.
+          </p>
+          <ul>
+            <li>
+CAPTION_FONT_DEFAULT - default font style            </li>
+            <li>
+CAPTION_FONT_STYLE1 - Monospaced with serifs (similar to Courier)            </li>
+            <li>
+CAPTION_FONT_STYLE2 - Proportionally spaced with serifs (similar to Times New Roman)            </li>
+            <li>
+CAPTION_FONT_STYLE3 - Monospaced without serifs (similar to Helvetica Monospaced)            </li>
+            <li>
+CAPTION_FONT_STYLE4 - Proportionally spaced without serifs (similar to Arial and Swiss)            </li>
+            <li>
+CAPTION_FONT_STYLE5 - Casual font type (similar to Dom and Impress)            </li>
+            <li>
+CAPTION_FONT_STYLE6 - Cursive font type (similar to Coronet and Marigold)            </li>
+            <li>
+CAPTION_FONT_STYLE7 - Small capitals (similar to Engravers Gothic)            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="CaptionColor">
+<a class="backward-compatibility-anchor" name="::TVInfo::CaptionColor"></a><h3>1.6. CaptionColor</h3>
+<div class="brief">
+ Available values for the caption menu color.
+          </div>
+<pre class="webidl prettyprint">    enum CaptionColor { "CAPTION_COLOR_DEFAULT", "CAPTION_COLOR_WHITE", "CAPTION_COLOR_BLACK", "CAPTION_COLOR_RED",
+        "CAPTION_COLOR_GREEN", "CAPTION_COLOR_BLUE", "CAPTION_COLOR_YELLOW", "CAPTION_COLOR_MAGENTA", "CAPTION_COLOR_CYAN" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="description">
+          <p>
+These values may be returned for keys CAPTION_FONT_COLOR_KEY, CAPTION_BG_COLOR_KEY, CAPTION_EDGE_COLOR_KEY and CAPTION_WINDOW_COLOR_KEY.
+          </p>
+         </div>
+</div>
+<div class="enum" id="CaptionOpacity">
+<a class="backward-compatibility-anchor" name="::TVInfo::CaptionOpacity"></a><h3>1.7. CaptionOpacity</h3>
+<div class="brief">
+ Available values for the caption menu opacity.
+          </div>
+<pre class="webidl prettyprint">    enum CaptionOpacity { "CAPTION_OPACITY_SOLID", "CAPTION_OPACITY_FLASHING", "CAPTION_OPACITY_TRANSLUCENT",
+        "CAPTION_OPACITY_TRANSPARENT", "CAPTION_OPACITY_DEFAULT" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="description">
+          <p>
+These values may be returned for keys CAPTION_FONT_OPACITY_KEY, CAPTION_BG_OPACITY_KEY and CAPTION_WINDOW_OPACITY_KEY.
+          </p>
+         </div>
+</div>
+<div class="enum" id="CaptionEdge">
+<a class="backward-compatibility-anchor" name="::TVInfo::CaptionEdge"></a><h3>1.8. CaptionEdge</h3>
+<div class="brief">
+ Available values for the caption menu edge type.
+          </div>
+<pre class="webidl prettyprint">    enum CaptionEdge { "CAPTION_EDGE_NONE", "CAPTION_EDGE_RAISED", "CAPTION_EDGE_DEPRESSED", "CAPTION_EDGE_UNIFORM",
+        "CAPTION_EDGE_DROP_SHADOWED" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="description">
+          <p>
+These values may be returned for key CAPTION_EDGE_TYPE_KEY.
+          </p>
+          <ul>
+            <li>
+CAPTION_EDGE_NONE - no edge            </li>
+            <li>
+CAPTION_EDGE_RAISED - raised edge            </li>
+            <li>
+CAPTION_EDGE_DEPRESSED - depressed edge            </li>
+            <li>
+CAPTION_EDGE_UNIFORM - uniform edge            </li>
+            <li>
+CAPTION_EDGE_DROP_SHADOWED - drop shadowed edge            </li>
+          </ul>
+         </div>
+</div>
+<div class="typedef" id="CaptionValue">
+<a class="backward-compatibility-anchor" name="::TVInfo::CaptionValue"></a><h3>1.9. CaptionValue</h3>
+<div class="brief">
+ All available values for the caption menu.
+          </div>
+<pre class="webidl prettyprint">    typedef (<a href="#CaptionState">CaptionState</a> or <a href="#CaptionMode">CaptionMode</a> or <a href="#CaptionFontSize">CaptionFontSize</a> or <a href="#CaptionFontStyle">CaptionFontStyle</a> or <a href="#CaptionColor">CaptionColor</a> or
+        <a href="#CaptionOpacity">CaptionOpacity</a> or <a href="#CaptionEdge">CaptionEdge</a>) CaptionValue;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="TVInfoManagerObject">
+<a class="backward-compatibility-anchor" name="::TVInfo::TVInfoManagerObject"></a><h3>2.1. TVInfoManagerObject</h3>
+<div class="brief">
+ The TVInfoManagerObject interface defines what is instantiated in the tizen object.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface TVInfoManagerObject {
+         readonly attribute <a href="#TVInfoManager">TVInfoManager</a> tvinfo;
+    };</pre>
+<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVInfoManagerObject">TVInfoManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="description">
+          <p>
+There is a tizen.tvinfo object that allows accessing the functionality of the TVInfo API.
+          </p>
+         </div>
+</div>
+<div class="interface" id="TVInfoManager">
+<a class="backward-compatibility-anchor" name="::TVInfo::TVInfoManager"></a><h3>2.2. TVInfoManager</h3>
+<div class="brief">
+ The TVInfoManager interface provides the functionalities to get setting values provided by Tizen TV.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface TVInfoManager {
+
+        <a href="#CaptionValue">CaptionValue</a> getCaptionValue(<a href="#CaptionInfoKey">CaptionInfoKey</a> key) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        long addCaptionValueChangeListener(<a href="#CaptionInfoKey">CaptionInfoKey</a> key, <a href="#CaptionValueChangeCallback">CaptionValueChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void removeCaptionValueChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="TVInfoManager::getCaptionValue">
+<a class="backward-compatibility-anchor" name="::TVInfo::TVInfoManager::getCaptionValue"></a><code><b><span class="methodName">getCaptionValue</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Method returns the value for corresponding caption menu key.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#CaptionValue">CaptionValue</a> getCaptionValue(<a href="#CaptionInfoKey">CaptionInfoKey</a> key);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param"><span class="name">key</span></li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ CaptionValue value for given caption menu key
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+console.log("Caption menu turned on: " + (tizen.tvinfo.getCaptionValue("CAPTION_ONOFF_KEY") === "CAPTION_ON"));
+</pre>
+</div>
+</dd>
+<dt class="method" id="TVInfoManager::addCaptionValueChangeListener">
+<a class="backward-compatibility-anchor" name="::TVInfo::TVInfoManager::addCaptionValueChangeListener"></a><code><b><span class="methodName">addCaptionValueChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Adds a listener to be called when given caption menu key value changes.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addCaptionValueChangeListener(<a href="#CaptionInfoKey">CaptionInfoKey</a> key, <a href="#CaptionValueChangeCallback">CaptionValueChangeCallback</a> callback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">key</span>:
+ Caption menu key which changes will be observed by this listener
+                </li>
+          <li class="param">
+<span class="name">callback</span>:
+ Callback method to be invoked when the value changes
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long Subscription identifier
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var id = tizen.tvinfo.addCaptionValueChangeListener("CAPTION_ONOFF_KEY", function(value)
+{
+   console.log("Caption menu state changed: " + value);
+});
+</pre>
+</div>
+</dd>
+<dt class="method" id="TVInfoManager::removeCaptionValueChangeListener">
+<a class="backward-compatibility-anchor" name="::TVInfo::TVInfoManager::removeCaptionValueChangeListener"></a><code><b><span class="methodName">removeCaptionValueChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes a listener.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeCaptionValueChangeListener(long watchId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">watchId</span>:
+ Identifier of the subscription returned by addCaptionValueChangeListener()
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var id = tizen.tvinfo.addCaptionValueChangeListener("CAPTION_ONOFF_KEY", function() {});
+tizen.tvinfo.removeCaptionValueChangeListener(id);
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="CaptionValueChangeCallback">
+<a class="backward-compatibility-anchor" name="::TVInfo::CaptionValueChangeCallback"></a><h3>2.3. CaptionValueChangeCallback</h3>
+<div class="brief">
+ The CaptionValueChangeCallback interface specifies event callback for getting notified when event occurs.
+          </div>
+<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface CaptionValueChangeCallback {
+        void onchanged(<a href="#CaptionInfoKey">CaptionInfoKey</a> key, <a href="#CaptionValue">CaptionValue</a> value);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="CaptionValueChangeCallback::onchanged">
+<a class="backward-compatibility-anchor" name="::TVInfo::CaptionValueChangeCallback::onchanged"></a><code><b><span class="methodName">onchanged</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the caption menu value changes.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onchanged(<a href="#CaptionInfoKey">CaptionInfoKey</a> key, <a href="#CaptionValue">CaptionValue</a> value);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">key</span>:
+ Watched key.
+                </li>
+          <li class="param">
+<span class="name">value</span>:
+ New value of watched key.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">3. Full WebIDL</h2>
+<pre class="webidl prettyprint">module TVInfo {
+
+    enum CaptionInfoKey { "CAPTION_ONOFF_KEY", "CAPTION_MODE_KEY", "CAPTION_FONT_SIZE_KEY", "CAPTION_FONT_STYLE_KEY",
+        "CAPTION_FONT_COLOR_KEY", "CAPTION_FONT_OPACITY_KEY", "CAPTION_BG_COLOR_KEY", "CAPTION_BG_OPACITY_KEY",
+        "CAPTION_EDGE_TYPE_KEY", "CAPTION_EDGE_COLOR_KEY", "CAPTION_WINDOW_COLOR_KEY", "CAPTION_WINDOW_OPACITY_KEY" };
+
+    enum CaptionState { "CAPTION_OFF", "CAPTION_ON" };
+
+    enum CaptionMode { "CAPTION_MODE_DEFAULT", "CAPTION_MODE_SERVICE1", "CAPTION_MODE_SERVICE2", "CAPTION_MODE_SERVICE3",
+        "CAPTION_MODE_SERVICE4", "CAPTION_MODE_SERVICE5", "CAPTION_MODE_SERVICE6", "CAPTION_MODE_CC1", "CAPTION_MODE_CC2",
+        "CAPTION_MODE_CC3", "CAPTION_MODE_CC4", "CAPTION_MODE_TEXT1", "CAPTION_MODE_TEXT2", "CAPTION_MODE_TEXT3",
+        "CAPTION_MODE_TEXT4" };
+
+    enum CaptionFontSize { "CAPTION_SIZE_DEFAULT", "CAPTION_SIZE_SMALL", "CAPTION_SIZE_STANDARD", "CAPTION_SIZE_LARGE",
+        "CAPTION_SIZE_EXTRA_LARGE" };
+
+    enum CaptionFontStyle { "CAPTION_FONT_DEFAULT", "CAPTION_FONT_STYLE0", "CAPTION_FONT_STYLE1", "CAPTION_FONT_STYLE2",
+        "CAPTION_FONT_STYLE3", "CAPTION_FONT_STYLE4", "CAPTION_FONT_STYLE5", "CAPTION_FONT_STYLE6", "CAPTION_FONT_STYLE7" };
+
+    enum CaptionColor { "CAPTION_COLOR_DEFAULT", "CAPTION_COLOR_WHITE", "CAPTION_COLOR_BLACK", "CAPTION_COLOR_RED",
+        "CAPTION_COLOR_GREEN", "CAPTION_COLOR_BLUE", "CAPTION_COLOR_YELLOW", "CAPTION_COLOR_MAGENTA", "CAPTION_COLOR_CYAN" };
+
+    enum CaptionOpacity { "CAPTION_OPACITY_SOLID", "CAPTION_OPACITY_FLASHING", "CAPTION_OPACITY_TRANSLUCENT",
+        "CAPTION_OPACITY_TRANSPARENT", "CAPTION_OPACITY_DEFAULT" };
+
+    enum CaptionEdge { "CAPTION_EDGE_NONE", "CAPTION_EDGE_RAISED", "CAPTION_EDGE_DEPRESSED", "CAPTION_EDGE_UNIFORM",
+        "CAPTION_EDGE_DROP_SHADOWED" };
+
+    typedef (<a href="#CaptionState">CaptionState</a> or <a href="#CaptionMode">CaptionMode</a> or <a href="#CaptionFontSize">CaptionFontSize</a> or <a href="#CaptionFontStyle">CaptionFontStyle</a> or <a href="#CaptionColor">CaptionColor</a> or
+        <a href="#CaptionOpacity">CaptionOpacity</a> or <a href="#CaptionEdge">CaptionEdge</a>) CaptionValue;
+
+    [NoInterfaceObject] interface TVInfoManagerObject {
+         readonly attribute <a href="#TVInfoManager">TVInfoManager</a> tvinfo;
+    };
+    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVInfoManagerObject">TVInfoManagerObject</a>;
+
+    [NoInterfaceObject] interface TVInfoManager {
+
+        <a href="#CaptionValue">CaptionValue</a> getCaptionValue(<a href="#CaptionInfoKey">CaptionInfoKey</a> key) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        long addCaptionValueChangeListener(<a href="#CaptionInfoKey">CaptionInfoKey</a> key, <a href="#CaptionValueChangeCallback">CaptionValueChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void removeCaptionValueChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };
+
+    [Callback=FunctionOnly, NoInterfaceObject] interface CaptionValueChangeCallback {
+        void onchanged(<a href="#CaptionInfoKey">CaptionInfoKey</a> key, <a href="#CaptionValue">CaptionValue</a> value);
+    };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>
