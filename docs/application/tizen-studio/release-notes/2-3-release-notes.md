@@ -26,8 +26,8 @@
 -	Certificate Manager
 	-   ST (Smart Things) certification is simplified by enabling auto certificate generation using Samsung Account sign-in.
 
-###	Note
-	- 	From Tizen Studio 2.4 onwards, support for 32 bit host for Windows and Ubuntu will be removed.
+ > **Note**  
+ > From Tizen Studio 2.4 onwards, support for 32 bit host for Windows and Ubuntu will be removed.
 
 ### Fixed Bugs
 -	Emulators

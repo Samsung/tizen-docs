@@ -15,9 +15,9 @@ Check the following prerequisites before installing the Tizen Studio for RT:
 
 - Java Development Kit (JDK) requirements
 
-  You must install a JDK 8 to use the Tizen Studio. Do not install OpenJDK.
+  You must install a JDK 8 or 9 to use the Tizen Studio. Do not install OpenJDK.
 
-  To install the appropriate JDK version for your Ubuntu system, go to the Ubuntu Web site and follow the detailed instructions for installing the OracleA&reg; JDK version 8.
+  To install the appropriate JDK version for your Ubuntu system, go to the Ubuntu Web site and follow the detailed instructions for installing the OracleA&reg; JDK version 8 or 9.
 
 
 - Operating system and hardware requirements

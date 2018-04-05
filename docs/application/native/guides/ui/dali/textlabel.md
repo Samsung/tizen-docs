@@ -61,7 +61,7 @@ label.SetProperty( TextLabel::Property::HORIZONTAL_ALIGNMENT, "BEGIN" );
 <a name="4"></a>
 ## Managing the Layout
 
-There are several resize policies commonly used with `TextLabels`.The following examples show the actual size by setting a colored background, whilst the black area represents the size of the parent control.
+There are several resize policies commonly used with `TextLabels`. The following examples show the actual size by setting a colored background, whilst the black area represents the size of the parent control.
 
 ### Natural Size Policy
 
