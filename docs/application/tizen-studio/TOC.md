@@ -53,7 +53,7 @@
 ## Run and Test Your App
 ### [SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
 ### Emulator
-### [Overview](/application/tizen-studio/common-tools/emulator.md)
+#### [Overview](/application/tizen-studio/common-tools/emulator.md)
 #### [Emulator Manager](/application/tizen-studio/common-tools/emulator-manager.md)
 #### [Emulator Control Panel](/application/tizen-studio/common-tools/emulator-control-panel.md)
 #### [Extended Emulator Features](/application/tizen-studio/common-tools/emulator-features.md)
