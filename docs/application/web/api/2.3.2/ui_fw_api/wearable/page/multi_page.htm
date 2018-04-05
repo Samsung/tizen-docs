@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head> 
+  <script type="text/javascript" src="../../snippet.js"></script> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <link href="../../styles.css" rel="StyleSheet" type="text/css" /> 
+  <link href="../../snippet.css" rel="StyleSheet" type="text/css" /> 
+  <title>Multi-page Layout</title> 
+ </head> 
+ <body onload="prettyPrint()" id="content"> 
+
+
+<h1>Multi-page Layout</h1>
+<p>You can implement a template containing multiple <span style="font-family: Courier New,Courier,monospace">page</span> containers in  the application <span style="font-family: Courier New,Courier,monospace">index.html</span> file.</p>
+<p>In the multi-page layout, the main page is defined with the <span style="font-family: Courier New,Courier,monospace">ui-page-active</span> class. If no page has the <span style="font-family: Courier New,Courier,monospace">ui-page-active</span> class, the framework automatically sets up the first page in the source order as the main page. You can improve the launch performance by explicitly defining the main page to be displayed first. If the application has to wait for the framework to set up the main page, the page is displayed with some delay only after the framework is fully loaded.</p>
+<p>
+You can link to internal pages by referring to the ID of the page. For example, to link to the page with an ID of <span style="font-family: Courier New,Courier,monospace">two</span>, the link element needs the <span style="font-family: Courier New,Courier,monospace">href=&quot;#two&quot;</span> attribute in the code, as in the following example.</p>
+
+<pre class="prettyprint">
+&lt;!--Main page--&gt;
+&lt;div id=&quot;one&quot; class=&quot;ui-page ui-page-active&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;header class=&quot;ui-header&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2 class=&quot;ui-title&quot;&gt;First Page&lt;/h2&gt;
+&nbsp;&nbsp;&nbsp;&lt;/header&gt;
+&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-content&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;footer class=&quot;ui-footer&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;#two&quot; class=&quot;ui-btn&quot;&gt;to second page&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;/footer&gt;
+&lt;/div&gt;
+
+&lt;!--Secondary page--&gt;
+&lt;div id=&quot;two&quot; class=&quot;ui-page ui-page-active&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;header class=&quot;ui-header&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2 class=&quot;ui-title&quot;&gt;Second Page&lt;/h2&gt;
+&nbsp;&nbsp;&nbsp;&lt;/header&gt;
+&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-content&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;footer class=&quot;ui-footer&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;#one&quot; class=&quot;ui-btn&quot;&gt;to first page&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;/footer&gt;
+&lt;/div&gt;
+</pre>
+
+<p>
+To find the currently active page, use the <span style="font-family: Courier New,Courier,monospace">ui-page-active</span> class.</p>
+
+
+
+
+<h2>Where to Go Next</h2>
+<ul>
+<li><a href="app_page_layout.htm">Application Page Layout</a></li></ul>
+
+ <div id="footer"> 
+   <hr size="1" /> 
+   <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font> 
+  </div> 
+   
+  <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25976949-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script> 
+    
+ </body>
+</html>

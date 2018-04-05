@@ -96,7 +96,9 @@ If there is no native EFL UI project in the **Project Explorer** view, create a 
 
    ![Select the sample](./media/uib_convert_sample.png)
 
-4. Click **Finish**.The sample project is created.
+4. Click **Finish**.
+
+   The sample project is created.
 
    ![Created sample project](./media/uib_convert_sample_created.png)
 
@@ -104,11 +106,13 @@ If there is no native EFL UI project in the **Project Explorer** view, create a 
 
 To convert the project:
 
-1. Open the **Convert to UI Builder Project** wizard.Right-click the **SettingsUI** project in the **Project Explorer** view, and select **Convert to UI Builder Project**.  
+1. Open the **Convert to UI Builder Project** wizard.
+
+   Right-click the **SettingsUI** project in the **Project Explorer** view, and select **Convert to UI Builder Project**.
 
    ![Convert the sample project](./media/uib_convert_conversion.png)
 
-2. Confirm the conversion by clicking **Next**.  
+2. Confirm the conversion by clicking **Next**.
 
    ![Confirm the conversion](./media/uib_convert_confirm.png)
 
@@ -169,7 +173,9 @@ To edit view1:
 
 1. Add a **Grid** UI component by dragging and dropping a grid from the **Palette** to the view.
 
-2. Add a **Label** UI component by dragging and dropping a label from the **Palette** to the grid.Enter **view1** in the **Text** attribute of the label.
+2. Add a **Label** UI component by dragging and dropping a label from the **Palette** to the grid.
+
+   Enter **view1** in the **Text** attribute of the label.
 
 3. Add a **Layout** UI component by dragging and dropping a layout from the **Palette** to the grid:
    1. Double-click the layout UI component to open the **New EDC File** dialog.
@@ -239,7 +245,9 @@ To design the **settingsui** view:
    - The `vc` is a specific view context corresponding to the **settingsui** view.
    - The `vc->parent` is the naviframe of the window object allocated from the view system when the view context is created.
 
-2. Assign the generated genlist to a `root_container` member variable of the view context.The `root_container` is a top-level UI component of the screen, which is referenced when the UI Builder view system displays the first screen of the **settingsui** view.
+2. Assign the generated genlist to a `root_container` member variable of the view context.
+
+   The `root_container` is a top-level UI component of the screen, which is referenced when the UI Builder view system displays the first screen of the **settingsui** view.
 
 3. Add the declaration for calling the `create_genlist()` function.
 

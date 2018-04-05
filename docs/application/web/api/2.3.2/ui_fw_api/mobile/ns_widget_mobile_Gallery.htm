@@ -1,0 +1,688 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Gallery</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+
+<h1>Gallery</h1>
+
+<p>The gallery component shows images in a gallery on the screen.</p>
+
+<table class="note">
+	<tbody>
+		<tr>
+			<th class="note">Note</th>
+		</tr>
+		<tr>
+			<td class="note">This component is supported since Tizen 2.0.</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+		<li><a href="#default">Default Selectors</a></li>
+					
+		<li><a href="#html">HTML Examples</a></li>
+
+		<li><a href="#options">Options</a></li>
+	
+		<li><a href="#methods">Methods</a></li>
+	
+</ol>
+
+
+<h2><a id="default"></a>Default Selectors</h2>
+
+<p>By default, all <code>&lt;div&gt;</code> elements with the <code>data-role=&quot;gallery&quot;</code> attribute are displayed as gallery components.</p>
+
+<h2><a id="html"></a>HTML Examples</h2>
+
+<p>To create and configure a gallery component, use the <code>&lt;div&gt;</code> element with the <code>data-role</code> attribute:</p>
+
+<pre class="prettyprint">
+&lt;div data-role=&quot;content&quot; data-scroll=&quot;none&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div data-role=&quot;gallery&quot; id=&quot;gallery&quot; data-vertical-align=&quot;middle&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt; &lt;!--Content--&gt;
+&lt;div data-role=&quot;footer&quot; data-position =&quot;fixed&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div data-role=&quot;controlgroup&quot; data-type=&quot;horizontal&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;#&quot; data-role=&quot;button&quot; id=&quot;gallery-add&quot;&gt;ADD&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;#&quot; data-role=&quot;button&quot; id=&quot;gallery-del&quot;&gt;DELETE&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt; &lt;!--Navbar--&gt;
+&lt;/div&gt;
+</pre>
+
+<h2><a id="options"></a>Options</h2>
+<p>The following table lists the options for the gallery component.</p>
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-duration</span></td>
+				<td class="option">number</td>
+				<td class="option">500</td>
+				<td class="option">The duration each gallery image is shown.</td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-flicking</span></td>
+				<td class="option">boolean</td>
+				<td class="option">false</td>
+				<td class="option">Sets whether flicking is enabled.</td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-index</span></td>
+				<td class="option">number</td>
+				<td class="option">0</td>
+				<td class="option">Index of the gallery image to be shown.</td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-vertical-align</span></td>
+				<td class="option">&quot;top&quot; | &quot;middle&quot; | &quot;bottom&quot;</td>
+				<td class="option">&quot;top&quot;</td>
+				<td class="option"><p>Object with default options.</p></td>
+			</tr>
+		
+		</tbody>
+	</table>
+	<h2><a id="methods"></a>Methods</h2>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>		
+			<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-add">add</a> ( string file ) </pre>
+					</td>
+					<td><p>Adds an image to the gallery.</p></td>
+				</tr>
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-empty">empty</a> (  ) </pre>
+					</td>
+					<td><p>Removes all images from the gallery.</p></td>
+				</tr>
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-hide">hide</a> (  ) </pre>
+					</td>
+					<td><p>Hides the gallery.</p></td>
+				</tr>
+			<tr>
+					<td>
+						<pre class="intable prettyprint">number <a href="#method-length">length</a> (  ) </pre>
+					</td>
+					<td><p>Gets the number of images.</p></td>
+				</tr>
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint">?number <a href="#method-refresh">refresh</a> ( number? startIndex ) </pre>
+					</td>
+					<td><p>Refreshes the gallery.</p></td>
+				</tr>
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-remove">remove</a> ( number? index ) </pre>
+					</td>
+					<td><p>Deletes a specific image from the gallery.<br />If no parameter is defined, the current image is deleted.</p></td>
+				</tr>
+		
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-show">show</a> (  ) </pre>
+					</td>
+					<td><p>Displays the gallery.</p></td>
+				</tr>
+			<tr>
+					<td>
+						<pre class="intable prettyprint">?number <a href="#method-value">value</a> ( number index ) </pre>
+					</td>
+					<td><p>Gets or sets the current index of the gallery.</p></td>
+				</tr>
+	
+		</tbody>
+	</table>
+	<dl>
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-add">add</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Adds an image to the gallery.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">add ( string file) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+						<p>The file URL of the image must be passed as a parameter.</p>
+							<p>The <code>refresh</code> method must be called after adding. Otherwise, the file is only added, but not displayed.</p>
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+			
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">file</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td>Image file URL.</td>
+					</tr>
+				
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+var galleryWidget = tau.widget.Gallery(document.getElementById(&quot;gallery&quot;));
+
+galleryWidget.add(&quot;./images/01.jpg&quot;); // Image with attribute src=&quot;./images/01.jpg&quot; is added
+galleryWidget.refresh();
+</pre>
+						</div>					
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+$(&quot;#gallery&quot;).gallery(&quot;add&quot;, &quot;./images/01.jpg&quot;);
+$(&quot;#gallery&quot;).gallery(&quot;add&quot;, &quot;./images/02.jpg&quot;);
+$(&quot;#gallery&quot;).gallery(&quot;refresh&quot;); // To see changes, &quot;refresh&quot; method must be called
+</pre>
+						</div>
+					
+				</dd>
+
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-empty">empty</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>
+Removes all images from the gallery.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">empty ( ) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+
+						</p>
+					</div>
+		
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+			
+							No return value
+						
+					</div>
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+var galleryWidget = tau.widget.Gallery(document.getElementById(&quot;gallery&quot;));
+
+galleryWidget.empty(); // All images are deleted
+</pre>
+						</div>					
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+$(&quot;#gallery&quot;).gallery(&quot;empty&quot;);
+</pre>
+						</div>
+					
+				</dd>
+
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-hide">hide</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Hides the gallery.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">hide ( ) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+						<p>The method makes all images invisible and unbinds all touch events.</p>	
+						</p>
+					</div>
+	
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+var galleryWidget = tau.widget.Gallery(document.getElementById(&quot;gallery&quot;));
+
+galleryWidget.hide(); // Gallery is hidden
+</pre>
+						</div>					
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+$(&quot;#gallery&quot;).gallery(&quot;hide&quot;);
+</pre>
+						</div>
+					
+				</dd>
+
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-length">length</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Gets the number of images.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">number length ( ) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+		
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>number</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+		
+					</div>
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+var galleryWidget = tau.widget.Gallery(document.getElementById(&quot;gallery&quot;)),
+&nbsp;&nbsp;&nbsp;&nbsp;imagesItems;
+
+imagesLength = galleryWidget.length(); // Number of images
+</pre>
+						</div>					
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+imagesLength = $(&quot;#gallery&quot;).gallery(&quot;length&quot;);
+</pre>
+						</div>
+					
+				</dd>
+
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-refresh">refresh</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Refreshes the gallery.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">?number refresh ( number? startIndex) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							<p>The method must be called after adding images to the gallery. It is called automatically after changing any component options and calling the <code>value</code> method with a non-empty parameter.</p>
+
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">startIndex</span></td>
+						<td>number</td>
+						<td>Optional</td>
+						<td></td>
+						<td>Index of the first image.</td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>?number</td>
+									<td>Index of the first image to be displayed.</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+var galleryWidget = tau.widget.Gallery(document.getElementById(&quot;gallery&quot;));
+galleryWidget.refresh();
+
+// Called automatically during option changing (option method) or value setting (value method)
+
+galleryWidget.option(&quot;flicking&quot;, true);
+galleryWidget.value(0);
+</pre>
+						</div>					
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+$(&quot;#gallery&quot;).gallery(&quot;refresh&quot;);
+
+// Called automatically during option changing (option method) or value setting (value method)
+
+galleryWidget.option(&quot;flicking&quot;, true);
+galleryWidget.value(0);
+</pre>
+						</div>
+					
+				</dd>
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-remove">remove</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Deletes a specific image from the gallery.<br />If no parameter is defined, the current image is deleted.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">remove ( number? index) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+	
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">index</span></td>
+						<td>number</td>
+						<td>Optional</td>
+						<td></td>
+						<td>Index of the image to be deleted.</td>
+					</tr>
+		
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+var galleryWidget = tau.widget.Gallery(document.getElementById(&quot;gallery&quot;));
+
+galleryWidget.remove(0); // First image is removed
+</pre>
+						</div>					
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+$(&quot;#gallery&quot;).gallery(&quot;remove&quot;, 0);
+</pre>
+						</div>
+					
+				</dd>
+
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-show">show</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Displays the gallery.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">show ( ) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+						<p>The method is called on <code>pageshow</code> event and during refreshing.</p>	
+						</p>
+					</div>
+		
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+var galleryWidget = tau.widget.Gallery(document.getElementById(&quot;gallery&quot;));
+
+galleryWidget.show();
+</pre>
+						</div>					
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+$(&quot;#gallery&quot;).gallery(&quot;show&quot;);
+</pre>
+						</div>
+					
+				</dd>
+
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-value">value</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Gets or sets the current index of the gallery.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">?number value ( number index) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+						<p>If the parameter is not defined, the current index is returned. Otherwise, the index of the image is set and the proper image is displayed.</p>
+<p>The image index is counted from 0. If a new index is less than 0 or greater than or equal to the length of the images, the index is not changed.</p>	
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">index</span></td>
+						<td>number</td>
+						<td>Required</td>
+						<td></td>
+						<td>Index of the image to be displayed</td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>?number</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+var galleryWidget = tau.widget.Gallery(document.getElementById(&quot;gallery&quot;)),
+&nbsp;&nbsp;&nbsp;&nbsp;value = galleryWidget.value(); // Value contains the index of the current image
+
+galleryWidget.value(0); // First image is displayed
+</pre>
+						</div>					
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+value = $(&quot;#gallery&quot;).gallery(&quot;value&quot;); // Value contains the index of the current image
+
+$(&quot;#gallery&quot;).gallery(&quot;value&quot;,  0); // First image is displayed
+</pre>
+						</div>
+					
+				</dd>
+	
+		
+	</dl>
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

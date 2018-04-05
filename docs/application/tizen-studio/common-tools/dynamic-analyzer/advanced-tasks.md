@@ -12,7 +12,10 @@ You can analyze specific ranges using markers or drag and drop operations.
 You can create markers at specific times and analyze the time between the markers:
 
 1. Create the markers by double-clicking a chart or detail table view that has a timestamp.
-2. Right-click between the markers, and select **Select range**.The table data is updated based on the range inspection results.
+
+2. Right-click between the markers, and select **Select range**.
+
+   The table data is updated based on the range inspection results.
 
 **Figure: Range inspection with markers**
 
@@ -111,12 +114,12 @@ You can trigger some major analysis functions with keyboard shortcuts.
 			<th colspan="3" rowspan="2">Command</th>
 			<th colspan="2">Shortcut</th>
 		</tr>
-	</thead>
-	<tbody>
 		<tr>
 			<th>Windows&reg;</th>
 			<th>macOS</th>
 		</tr>
+	</thead>
+	<tbody>
 		<tr>
 			<td rowspan="4">File</td>
 			<td colspan="2">New</td>
@@ -214,9 +217,13 @@ You can trigger some major analysis functions with keyboard shortcuts.
 To copy or export data in TSV (Tab Separated Values) format from a table in the Dynamic Analyzer:
 
 1. Select the data you want to copy or export.
+
 2. Right-click the selection and select:
-   - **Copy** to copy the selected data to the clipboard.You can also copy using the **Ctrl + C** or **Ctrl + Insert** keyboard shortcuts.
-   - **Export to file** to export the selected data to a TSV file.You can define a file location for the exported data.
+   - **Copy** to copy the selected data to the clipboard.  
+     You can also copy using the **Ctrl + C** or **Ctrl + Insert** keyboard shortcuts.
+
+   - **Export to file** to export the selected data to a TSV file.  
+     You can define a file location for the exported data.
 
 ## Command Line Interface
 
@@ -227,7 +234,7 @@ To launch tracing, you must know the target device name (or IP address) and your
 To view the CLI help, run the `./dacli.jar -h` command:
 
 ```
-Usage: dacli.jar <command> [options ...]
+Usage: dacli.jar <command> [options...]
 List of commands:
     devices : show list of connected devices and emulators
         -u                           show list of devices where tracing is running
@@ -279,92 +286,121 @@ export PATH=$PATH:<path-to-tizen-studio>/tools/dynamic-analyzer/
 ```
 
 > **Note**  
-> If you have trouble with the execution, you can try one of the following:Grant execution permissions to the `dacli.jar` file:`chmod +x dacli.jar`Use the following command to launch the Dynamic Analyzer CLI tool:`java -jar dacli.jar`
+> If you have trouble with the execution, you can try one of the following:
+>
+> - Grant execution permissions to the `dacli.jar` file:
+>
+>   `chmod +x dacli.jar`
+>
+> - Use the following command to launch the Dynamic Analyzer CLI tool:
+>
+>   `java -jar dacli.jar`
 
 ### Useful Commands
 
 The following commands are the most useful when controlling the Dynamic Analyzer with the CLI:
 
 - `devices`
-The command shows a list of connected devices. If you specify the `-u` option, only the devices where tracing is already launched through the CLI are listed.Command syntax:
-```
-devices [-u]
-```
-`For example:
-```
-$ ./dacli.jar devices
-List of connected devices:    
-	<Device Name> <Serial Number>    
-    m-0818-1      emulator-26101
-```
-`Take note of the device serial number. It is used to specify the device in other Dynamic Analyzer CLI commands.
+
+  The command shows a list of connected devices. If you specify the `-u` option, only the devices where tracing is already launched through the CLI are listed.
+
+  Command syntax:
+  ```
+  devices [-u]
+  ```
+
+  For example:
+  ```
+  $ ./dacli.jar devices
+  List of connected devices:
+	  <Device Name> <Serial Number>
+      m-0818-1      emulator-26101
+  ```
+
+  Take note of the device serial number. It is used to specify the device in other Dynamic Analyzer CLI commands.
+
 - `apps`
-The command shows a list of installed applications on a specified device.
-Command syntax:
-```
-apps <ip:port|serial>
-```
-For example:
-```
-$ ./dacli.jar apps emulator-26101
-List of installed applications:  
-	<Application ID>               : <Package ID>             : <Application Name>  
-    org.tizen.camera-app           : org.tizen.camera-app     : Camera  
-    org.tizen.calendar             : org.tizen.calendar       : Calendar  
-    org.tizen.contacts             : org.tizen.contacts       : Contacts  
-    org.tizen.gallery              : org.tizen.gallery        : Gallery  
-    org.tizen.browser              : org.tizen.browser        : Internet
-```
-Take note of your application identifier. It is used to specify the application in other Dynamic Analyzer CLI commands. If you cannot find your application, make sure it has been installed (for example, from the Tizen Studio). The application ID can differ from the package ID.
+
+  The command shows a list of installed applications on a specified device.
+
+  Command syntax:
+  ```
+  apps <ip:port|serial>
+  ```
+  For example:
+  ```
+  $ ./dacli.jar apps emulator-26101
+  List of installed applications:  
+	  <Application ID>               : <Package ID>             : <Application Name>  
+      org.tizen.camera-app           : org.tizen.camera-app     : Camera  
+      org.tizen.calendar             : org.tizen.calendar       : Calendar  
+      org.tizen.contacts             : org.tizen.contacts       : Contacts  
+      org.tizen.gallery              : org.tizen.gallery        : Gallery  
+      org.tizen.browser              : org.tizen.browser        : Internet
+  ```
+  Take note of your application identifier. It is used to specify the application in other Dynamic Analyzer CLI commands. If you cannot find your application, make sure it has been installed (for example, from the Tizen Studio). The application ID can differ from the package ID.
+
 - `start`
-The command starts tracing your application on the specified device. In addition, you must specify at least 1 profiling feature to be enabled.Command syntax:
-```
-start <ip:port|serial> -a <application identifier> <features> [options…]
-```
-For example, you can specify the `-C` option to enable all CPU profiling features. You can see a list of all available features in the command help message.The following command starts the Camera application on the emulator-26101 device with the CPU profiling features enabled:
-```
-$ ./dacli.jar start emulator-26101 -a org.tizen.camera-app -C
-DA tracing started.
-Run "dacli stop emulator-26101" to finish it.
-```
-You can specify the `-o` option to customize the tracing result location.
+
+  The command starts tracing your application on the specified device. In addition, you must specify at least 1 profiling feature to be enabled.
+
+  Command syntax:
+  ```
+  start <ip:port|serial> -a <application identifier> <features> [options...]
+  ```
+  For example, you can specify the `-C` option to enable all CPU profiling features. You can see a list of all available features in the command help message.
+
+  The following command starts the Camera application on the emulator-26101 device with the CPU profiling features enabled:
+  ```
+  $ ./dacli.jar start emulator-26101 -a org.tizen.camera-app -C
+  DA tracing started.
+  Run "dacli stop emulator-26101" to finish it.
+  ```
+  You can specify the `-o` option to customize the tracing result location.
+
 - `stop`
-The command stops the active tracing process on a specified device.
-Command syntax:
-```
-stop <ip:port|serial>
-```
-For example:
-```
-$ ./dacli.jar stop emulator-26101
-DA tracing finished.
-Total time:   1m 37.777s
-Tracing time: 1m 29.362s
-Output:       /home/eclipse/tizen-sdk-data/dynamic-analyzer/save/org.tizen.camera-app_2016-08-18-16-51-53.zip
-```
-In the command output:
+
+  The command stops the active tracing process on a specified device.
+
+  Command syntax:
+  ```
+  stop <ip:port|serial>
+  ```
+  For example:
+  ```
+  $ ./dacli.jar stop emulator-26101
+  DA tracing finished.
+  Total time:   1m 37.777s
+  Tracing time: 1m 29.362s
+  Output:       /home/eclipse/tizen-sdk-data/dynamic-analyzer/save/org.tizen.camera-app_2016-08-18-16-51-53.zip
+  ```
+  In the command output:
   - **Total time** is the time required to perform all the tracing activities: connection, command communication, data interchange, and activity finalization.
   - **Tracing time** is the pure tracing time: from the beginning to the end of your program.
   - **Output** is the location where the tracing result is stored: it can be opened for further analysis in the Dynamic Analyzer GUI.
+
 - `version`
-The command displays information about the Dynamic Analyzer, including its version, build time, and useful links.
-Command syntax:
-```
-version
-```
-For example:
-```
-$ ./dacli.jar versionDA Version      2.4.4
-Build Time      20161213-0258
-Tizen Site      http://www.tizen.org
-Release Note    https://developer.tizen.org/development/tizen-studio/download/release-notes
-```
-In the command output:
+
+  The command displays information about the Dynamic Analyzer, including its version, build time, and useful links.
+
+  Command syntax:
+  ```
+  version
+  ```
+  For example:
+  ```
+  $ ./dacli.jar version
+  DA Version      2.4.4
+  Build Time      20161213-0258
+  Tizen Site      http://www.tizen.org
+  Release Note    https://developer.tizen.org/development/tizen-studio/download/release-notes
+  ```
+  In the command output:
   - **DA Version** is the version of the Dynamic Analyzer.
   - **Build Time** is the build timestamp.
   - **Tizen Site** is the link to the Tizen Web site.
   - **Release Note** is the link to the Tizen Studio Release Notes.
-
+  
 
 ## Related Information
 * Dependencies

@@ -12,7 +12,6 @@ In this tutorial, the following subjects are covered:
 [Creating a Model3dView](#1)<br>
 [Model3dView Properties](#2)<br>
 [Specifying the Illumination Model](#3)<br>
-[ItemView Properties](#4)<br>
 
 <a name="1"></a>
 ## Creating a Model3dView

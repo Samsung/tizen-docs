@@ -121,13 +121,41 @@ Note that the IAP allows 2 modes of operation (key name `"_mode"`):
 The following table describes the interfaces list.
 
 **Table: Interfaces list**
+<table>
+	<thead>
+		<tr>
+			<th>Application ID</th>
+			<th>Operation ID</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>org.tizen.inapppurchase.iapclient</code></td>
+			<td><code>http://tizen.org/appcontrol/operation/iapv2/purchase</code></td>
+			<td>The operation purchases the item.
+			<p>During this step a purchase screen is displayed, and the user needs to provide details (e-mail, password) to make a purchase.</p>
+			<p>The output value indicates the result of purchase (success or failure), and is used to verify the purchase.</p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="3"><code>org.tizen.inapppurchase.iapservice</code></td>
+			<td><code>http://tizen.org/appcontrol/operation/iapv2/get_item_list</code></td>
+			<td>The operation returns a list of items available for purchase.
+			<p>The output data values are used to send a list of items available for purchase.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><code>http://tizen.org/appcontrol/operation/iapv2/get_purchased_item_list</code></td>
+			<td>The operation returns a list of already purchased items.</td>
+		</tr>
+		<tr>
+			<td><code>http://tizen.org/appcontrol/operation/iapv2/get_country_list</code></td>
+			<td>The operation returns a list of countries' MCC and MNC codes to be used in developer mode during testing in-app purchases.</td>
+		</tr>
+	</tbody>
+</table>
 
-| Application ID                           | Operation ID                             | Description                              |
-|----------------------------------------|----------------------------------------|----------------------------------------|
-| `org.tizen.inapppurchase.iapclient`      | `http://tizen.org/appcontrol/operation/iapv2/purchase` | The operation purchases the item. <br/>During this step a purchase screen is displayed, and the user needs to provide details (e-mail, password) to make a purchase.<br/>The output value indicates the result of purchase (success or failure), and is used to verify the purchase. |
-| `org.tizen.inapppurchase.iapservice`     | `http://tizen.org/appcontrol/operation/iapv2/get_item_list` | The operation returns a list of items available for purchase.<br/>The output data values are used to send a list of items available for purchase. |
-| | `http://tizen.org/appcontrol/operation/iapv2/get_purchased_item_list` | The operation returns a list of already purchased items.                                          |
-| | `http://tizen.org/appcontrol/operation/iapv2/get_country_list` | The operation returns a list of countries' MCC and MNC codes to be used in developer mode during testing in-app purchases.                                          |
 
 ### Purchasing Items
 
@@ -206,19 +234,130 @@ The IAP Service instance allows you to get a list of items available for purchas
   The following table shows the key-value pairs required in the input extra data for the `http://tizen.org/appcontrol/operation/iapv2/get_item_list` operation.
 
 **Table: Input data for getting a list of items**
-
-  | Key              | Value                     | Description                              |
-  |------------------|---------------------------|------------------------------------------|
-  | `_mode`          | 0 or 1                    | Mode type:0: Normal (commercial) modeThis mode needs to be used in an application submitted to the Tizen Store.1: Developer modeThis mode can be used for testing purposes while developing the application. Payment always succeeds.The default value is 0.This information is optional. |
-  | `_transactionId` | Transaction ID            | Transaction ID, such as 1 or 2.The ID is used to track a transaction between requests.This information is mandatory. |
-  | `_startNumber`   | Start number              | Index of the first item in the list.Start downloading items from this index number.This information is mandatory. |
-  | `_endNumber`     | End number                | Index of the last item in the list.Stop downloading items after this index number.This information is mandatory. |
-  | `_itemGroupId`   | Group ID                  | Group ID, such as 100000001455.A group ID is associated with a specific collection of items in Tizen Store Seller Office. You need to register your group ID in Tizen Store Seller Office first.This information is mandatory. |
-  | `_languageCd`    | Language code             | Language code, such as `eng` or `rus`.The language code conforms to ISO 639-2, which uses 3-character codes.The language code is associated with the display language of the item details in Tizen Store Seller Office.The output parameters (`itemName, itemDescription, reserved1, reserved2`) are changed according to the language code.This information is optional. |
-  | `_itemTypeCd`    | 00, 01, 02, or 10         | Item type code:00: Non-consumable01: Consumable10: AllThis information is optional. |
-  | `_mcc` (deprecated)          | Mobile country code (MCC) | Mobile country code, such as 250.MMCs can only be used in developer mode. You can retrieve a list of available MCCs using the get country list operation.This information is optional.This parameter has been deprecated. |
-  | `_mnc` (deprecated)          | Mobile network code (MNC) | Mobile network code, such as 01.MNCs can only be used in developer mode.This information is optional.This parameter has been deprecated. |
-
+<table>
+		<thead>
+			<tr>
+				<th>Key</th>
+				<th>Value</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><code>_mode</code></td>
+				<td>0 or 1</td>
+				<td>
+				<p>Mode type:</p>
+				<ul>
+					<li>
+					<p>0: Normal (commercial) mode</p>
+					<p>This mode needs to be used in an application submitted to the Tizen Store.</p>
+					</li>
+					<li>
+					<p>1: Developer mode</p>
+					<p>This mode can be used for testing purposes while developing the application. Payment always succeeds.</p>
+					</li>
+				</ul>
+				<p>The default value is 0.</p>
+				<p>This information is optional.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_transactionId</code></td>
+				<td>Transaction ID</td>
+				<td>
+				<p>Transaction ID, such as 1 or 2.</p>
+				<p>The ID is used to track a transaction between requests.</p>
+				<p>This information is mandatory.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_startNumber</code></td>
+				<td>Start number</td>
+				<td>
+				<p>Index of the first item in the list.</p>
+				<p>Start downloading items from this index number.</p>
+				<p>This information is mandatory.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_endNumber</code></td>
+				<td>End number</td>
+				<td>
+				<p>Index of the last item in the list.</p>
+				<p>Stop downloading items after this index number.</p>
+				<p>This information is mandatory.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_itemGroupId</code></td>
+				<td>Group ID</td>
+				<td>
+				<p>Group ID, such as 100000001455.</p>
+				<p>A group ID is associated with a specific collection of items in Tizen Store Seller Office. You need to register your group ID in Tizen Store Seller Office first.</p>
+				<p>This information is mandatory.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_languageCd</code></td>
+				<td>Language code</td>
+				<td>
+				<p>Language code, such as <code>eng</code> or <code>rus</code>.</p>
+				<p>The language code conforms to ISO 639-2, which uses 3-character codes.</p>
+				<p>The language code is associated with the display language of the item details in Tizen Store Seller Office.</p>
+				<p>The output parameters (<code>itemName, itemDescription, reserved1, reserved2</code>) are changed according to the language code.</p>
+				<p>This information is optional.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_itemTypeCd</code></td>
+				<td>00, 01, 02, or 10</td>
+				<td>
+				<p>Item type code:</p>
+				<ul>
+					<li>
+					<p>00: Non-consumable</p>
+					</li>
+					<li>
+					<p>01: Consumable</p>
+					</li>
+					<li>
+					<p>10: All</p>
+					</li>
+				</ul>
+				<p>This information is optional.</p>
+				<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<p>&nbsp;</p>
+				<p><code>_mcc</code></p>
+				<p>(deprecated)</p>
+				</td>
+				<td>Mobile country code (MCC)</td>
+				<td>
+				<p><span>Mobile country code, such as 250.</span></p>
+				<p>MMCs can only be used in developer mode. You can retrieve a list of available MCCs using the get country list operation.</p>
+				<p>This information is optional.</p>
+				<p><span>(18th Oct. by Tizen Store Dev. - </span>deprecated parameter)</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<p><code>_mnc</code></p>
+				<p>(deprecated)</p>
+				</td>
+				<td>Mobile network code (MNC)</td>
+				<td>
+				<p>Mobile network code, such as 01.</p>
+				<p>MNCs can only be used in developer mode.</p>
+				<p>This information is optional.</p>
+				<p><span>(18th Oct. by Tizen Store Dev. - </span><span>deprecated parameter)</span></p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 
 - **Example code for get item list**
   ```
@@ -238,12 +377,14 @@ The IAP Service instance allows you to get a list of items available for purchas
 
       rt = app_control_send_launch_request(app_control, get_item_list_cb, NULL);
   }
-  if (app_control != NULL)   app_control_destroy(app_control);
+  if (app_control != NULL)
+      app_control_destroy(app_control);
   ```
 - **Output Data**
 
-  The results of the operation are returned in the app control callback.The following table shows the output data for the `http://tizen.org/appcontrol/operation/iapv2/get_item_list` operation.
+  The results of the operation are returned in the app control callback.
 
+  The following table shows the output data for the `http://tizen.org/appcontrol/operation/iapv2/get_item_list` operation.
 
   **Table: Output data for getting a list of items**
 
@@ -269,16 +410,16 @@ The IAP Service instance allows you to get a list of items available for purchas
   | `PREFIX_itemName`                       | Item name                                | Name provided during item registration in Tizen Store Seller Office. |
   | `PREFIX_currencyUnit`                   | Currency unit                            | Device user's currency unit, such as $, Won, or Pound. |
   | `PREFIX_unitPrecedes`                   | 0 or 1                                   | Currency unit position:<br/> - 0: Tail (2.99 TL)<br/> - 1: Front ($ 2.99) |
-  | `PREFIX_hasPenny`                       | 0 or 1  | Information whether the currency unit has penny representation:<br/> - 0: No<br/> - 1: Yes                                           |
+  | `PREFIX_hasPenny`                       | 0 or 1  | Information whether the currency unit has penny representation:<br/> - 0: No<br/> - 1: Yes  |
   | `PREFIX_itemPrice`                      | Item price                               | Price of the item in the local currency. |
   | `PREFIX_itemDownloadUrl`                | Item download URL                        | URL provided during item registration in the Tizen Store Seller Office. |
-  | `PREFIX_itemImageUrl`                   | Item image URL                           |                                          |
+  | `PREFIX_itemImageUrl`                   | Item image URL                           | URL provided during item registration in Tizen Store Seller Office. |
   | `PREFIX_itemDescription`                | Item description                         | A description provided during item registration. |
   | `PREFIX_reserved1`                      | Reserved field 1                         | Reserved field 1                         |
   | `PREFIX_reserved2`                      | Reserved field 2                         | Reserved field 2                         |
   | `PREFIX_itemTypeCd`                     | 00, 01, or 02                            | Item type code:00: Non-consumable01: Consumable02: Subscription (non-renewing - to be developed) |
   | `PREFIX_itemSubsBillDurationCd`         | 00, 01, 02, or 03                        | To be developed (reserved field)         |
-  | `PREFIX_subscriptionDurationMultiplier` | Subscription duration multiplier         |                                          |
+  | `PREFIX_subscriptionDurationMultiplier` | Subscription duration multiplier         | To be developed (reserved field)         |
   | `PREFIX_timeStamp`                      | Time stamp                               | Based on GMT +0, server time.(yyyyMMddHHmmss) |
 
 - **Example code for retrieving a list of items**
@@ -375,7 +516,8 @@ The IAP Service instance allows you to get a list of items available for purchas
 		      rt = app_control_get_extra_data(reply, keyId, &rt_itemSubsBillDurationCd);
 		      snprintf(key_id, sizeof(keyId), "%d%s", start,"_subscriptionDurationMultiplier");
     
-		      rt = app_control_get_extra_data(reply, keyId, &rt_subscriptionDurationMultiplier);                                 snprintf(key_id, sizeof(keyId), "%d%s", start, "_timeStamp");
+		      rt = app_control_get_extra_data(reply, keyId, &rt_subscriptionDurationMultiplier);
+ 		      snprintf(key_id, sizeof(keyId), "%d%s", start, "_timeStamp");
 		      rt = app_control_get_extra_data(reply, keyId, &rt_timeStamp);
 	       }
 	    }
@@ -383,7 +525,7 @@ The IAP Service instance allows you to get a list of items available for purchas
   }
   ```
   
-- **GetPurchasedItemList operation**
+- **`GetPurchasedItemList` operation**
 
   This operation returns a list of already purchased items.
 
@@ -393,19 +535,126 @@ The IAP Service instance allows you to get a list of items available for purchas
 
   **Table: Input data for getting a list of purchased items**
 
-  | Key              | Value                     | Description                              |
-  |----------------|-------------------------|----------------------------------------|
-  | `_mode`          | 0 or 1                    | Mode type:0: Normal (commercial) modeThis mode needs to be used in an application submitted to the Tizen Store.1: Developer modeThis mode can be used for testing purposes while developing the application. Payment always succeeds.The default value is 0.This information is optional. |
-  | `_transactionId` | Transaction ID            | Transaction ID, such as 1 or 2.The ID is used to track a transaction between requests.This information is mandatory. |
-  | `_startNumber`   | Start number              | Index of the first item in the list.Start downloading items from this index number.This information is mandatory. |
-  | `_endNumber`     | End number                | Index of the last item in the list.Stop downloading items after this index number.This information is mandatory. |
-  | `_startDate`     | Start date                | The start date of the requested inbox list, such as 20131031.This information is optional. |
-  | `_endDate`       | End date                  | The end date of the requested inbox list, such as 20131031.This information is optional. |
-  | `_itemGroupId`   | Group ID                  | Group ID, such as 100000002501.A group ID is associated with a specific collection of items in Tizen Store Seller Office. You need to register your group ID in Tizen Store Seller Office first.This information is mandatory. |
-  | `_languageCd`    | Language code             | Language code, such as `eng` or `rus`.The language code conforms to ISO 639-2, which uses 3-character codes.The language code is associated with the display language of the item details in Tizen Store Seller Office.The output parameters (`itemName, itemDescription, reserved1, reserved2`) are changed according to the language code.This information is optional. |
-  | `_mcc`           | Mobile country code (MCC) | Mobile country code, such as 250.MMCs can only be used in developer mode. You can retrieve a list of available MCCs using the get country list operation.This information is optional.This parameter has been deprecated. |
-  | `_mnc`           | Mobile network code (MNC) | Mobile network code, such as 01.MNCs can only be used in developer mode.This information is optional.This parameter has been deprecated. |
-  
+	<table>
+		<thead>
+			<tr>
+				<th>Key</th>
+				<th>Value</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><code>_mode</code></td>
+				<td>0 or 1</td>
+				<td>
+				<p>Mode type:</p>
+				<ul>
+					<li>
+					<p>0: Normal (commercial) mode</p>
+					<p>This mode needs to be used in an application submitted to the Tizen Store.</p>
+					</li>
+					<li>
+					<p>1: Developer mode</p>
+					<p>This mode can be used for testing purposes while developing the application. Payment always succeeds.</p>
+					</li>
+				</ul>
+				<p>The default value is 0.</p>
+				<p>This information is optional.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_transactionId</code></td>
+				<td>Transaction ID</td>
+				<td>
+				<p>Transaction ID, such as 1 or 2.</p>
+				<p>The ID is used to track a transaction between requests.</p>
+				<p>This information is mandatory.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_startNumber</code></td>
+				<td>Start number</td>
+				<td>
+				<p>Index of the first item in the list.</p>
+				<p>Start downloading items from this index number.</p>
+				<p>This information is mandatory.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_endNumber</code></td>
+				<td>End number</td>
+				<td>
+				<p>Index of the last item in the list.</p>
+				<p>Stop downloading items after this index number.</p>
+				<p>This information is mandatory.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_startDate</code></td>
+				<td>Start date</td>
+				<td>
+				<p>The start date of the requested inbox list, such as 20131031.</p>
+				<p>This information is optional.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_endDate</code></td>
+				<td>End date</td>
+				<td>
+				<p>The end date of the requested inbox list, such as 20131031.</p>
+				<p>This information is optional.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_itemGroupId</code></td>
+				<td>Group ID</td>
+				<td>
+				<p>Group ID, such as 100000002501.</p>
+				<p>A group ID is associated with a specific collection of items in Tizen Store Seller Office. You need to register your group ID in Tizen Store Seller Office first.</p>
+				<p>This information is mandatory.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_languageCd</code></td>
+				<td>Language code</td>
+				<td>
+				<p>Language code, such as <code>eng</code> or <code>rus</code>.</p>
+				<p>The language code conforms to ISO 639-2, which uses 3-character codes.</p>
+				<p>The language code is associated with the display language of the item details in Tizen Store Seller Office.</p>
+				<p>The output parameters (<code>itemName, itemDescription, reserved1, reserved2</code>) are changed according to the language code.</p>
+				<p>This information is optional.</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<p><code>_mcc</code></p>
+				<p><code>(deprecated)</code></p>
+				</td>
+				<td>Mobile country code (MCC)</td>
+				<td>
+				<p>Mobile country code, such as 250.</p>
+				<p>MMCs can only be used in developer mode. You can retrieve a list of available MCCs using the get country list operation.</p>
+				<p>This information is optional.</p>
+				<p><span>(18th Oct. by Tizen Store Dev. - </span><span>deprecated parameter)</span></p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<p><code>_mnc</code></p>
+				<p><font face="monospace, serif"><span>(deprecated)</span></font></p>
+				</td>
+				<td>Mobile network code (MNC)</td>
+				<td>
+				<p>Mobile network code, such as 01.</p>
+				<p>MNCs can only be used in developer mode.</p>
+				<p>This information is optional.</p>
+				<p><span>(18th Oct. by Tizen Store Dev. - </span><span>deprecated parameter)</span></p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
 - **Example code for retrieving a list of purchased items**
   ```
   app_control_h app_control;
@@ -431,7 +680,9 @@ The IAP Service instance allows you to get a list of items available for purchas
 
 - **Output Data**
 
-  The results of the operation are returned in the app control callback.The following table shows the output data for the `http://tizen.org/appcontrol/operation/iapv2/get_purchased_item_list` operation.
+  The results of the operation are returned in the app control callback.
+
+  The following table shows the output data for the `http://tizen.org/appcontrol/operation/iapv2/get_purchased_item_list` operation.
 
   **Table: Output data for getting a list of purchased items**
 
@@ -449,27 +700,134 @@ The IAP Service instance allows you to get a list of items available for purchas
   There is also a `_totalCount` number of items in the output data. Each key consists of a `PREFIX` (list item index value) and a key (such as `12_itemId`).
 
   **Table: Item keys in the output data**
-
-  | Key                                     | Value                                    | Description                              |
-  |---------------------------------------|----------------------------------------|----------------------------------------|
-  | `PREFIX_itemId`                         | Item ID                                  | This is the same number as an Item ID that is used in the request. |
-  | `PREFIX_itemGroupId`                    | Item group ID                            | ID of a collection of items. The collection is linked to your application in Tizen Store Seller Office. |
-  | `PREFIX_itemName`                       | Item name                                | Name provided during item registration in Tizen Store Seller Office. |
-  | `PREFIX_currencyUnit`                   | Currency unit                            | Device user's currency unit, such as $, Won, or Pound. |
-  | `PREFIX_unitPrecedes`                   | 0 or 1                                   | Currency unit position:<br/> - 0: Tail (2.99 TL)<br/> - 1: Front ($ 2.99) |
-  | `PREFIX_hasPenny`                       |0 or 1  | Information whether the currency unit has penny representation:<br/> - 0: No<br/> - 1: Yes                                           |
-  | `PREFIX_itemPrice`                      | Item price                               | Price of the item in the local currency. |
-  | `PREFIX_itemDownloadUrl`                | Item download URL                        | URL provided during item registration in Tizen Store Seller Office. |
-  | `PREFIX_itemImageUrl`                   | Item image URL                           | URL provided during item registration in Tizen Store Seller Office.                                         |
-  | `PREFIX_itemDescription`                | Item description                         | A description provided during item registration. |
-  | `PREFIX_reserved1`                      | Reserved field 1                         | Reserved field 1                         |
-  | `PREFIX_reserved2`                      | Reserved field 2                         | Reserved field 2                         |
-  | `PREFIX_paymentId`                      | Payment ID                               | Payment ID                               |
-  | `PREFIX_purchaseDate`                   | Date of purchase                         | Date of purchase                         |
-  | `PREFIX_itemTypeCd`                     | 00, 01, or 02                            | Item type code:<br/> - 00: Non-consumable<br/> - 01: Consumable<br/> - 02: Subscription (non-renewing) |
-  | `PREFIX_itemSubsBillDurationCd`         | 00, 01, 02, or 03                        | Item subs bill duration code:<br/> - 00: Year<br/> - 01: Month<br/> - 02: Week<br/> - 03: DayThe `_itemTypeCd` value is 02.<br/> If the product type is subscription, the available 4 units for the validity period of the product are YEAR, MONTH, WEEK, and DAY. The units must be typed in capitals. |
-  | `PREFIX_subscriptionDurationMultiplier` | Subscription duration multiplier         | If the `_itemTypeCd` is subscription (02), this is the item duration. Combined with `PREFIX_itemSubsBillDurationCd`, it means 1 month. |
-  | `PREFIX_timeStamp`                      | Time stamp                               | Based on GMT +0, server time.<br/> (yyyyMMddHHmmss) |
+  <table>
+		<thead>
+			<tr>
+				<th>Key</th>
+				<th>Value</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><code>PREFIX_itemId</code></td>
+				<td>Item ID</td>
+				<td>This is the same number as an Item ID that is used in the request.</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_itemGroupId</code></td>
+				<td>Item group ID</td>
+				<td>ID of a collection of items. The collection is linked to your application in Tizen Store Seller Office.</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_itemName</code></td>
+				<td>Item name</td>
+				<td>Name provided during item registration in Tizen Store Seller Office.</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_currencyUnit</code></td>
+				<td>Currency unit</td>
+				<td>Device user's currency unit, such as $, Won, or Pound.</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_unitPrecedes</code></td>
+				<td>0 or 1</td>
+				<td>Currency unit position:
+				<ul>
+					<li>0: Tail (2.99 TL)</li>
+					<li>1: Front ($ 2.99)</li>
+				</ul>
+				</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_hasPenny</code></td>
+				<td>0 or 1</td>
+				<td>Information whether the currency unit has penny representation:
+				<ul>
+					<li>0: No</li>
+					<li>1: Yes</li>
+				</ul>
+				</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_itemPrice</code></td>
+				<td>Item price</td>
+				<td>Price of the item in the local currency.</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_itemDownloadUrl</code></td>
+				<td>Item download URL</td>
+				<td>URL provided during item registration in Tizen Store Seller Office.</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_itemImageUrl</code></td>
+				<td>Item image URL</td>
+				<td>URL provided during item registration in Tizen Store Seller Office.</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_itemDescription</code></td>
+				<td>Item description</td>
+				<td>A description provided during item registration.</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_reserved1</code></td>
+				<td>Reserved field 1</td>
+				<td>Reserved field 1</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_reserved2</code></td>
+				<td>Reserved field 2</td>
+				<td>Reserved field 2</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_paymentId</code></td>
+				<td>Payment ID</td>
+				<td>Payment ID</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_purchaseDate</code></td>
+				<td>Date of purchase</td>
+				<td>Date of purchase</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_itemTypeCd</code></td>
+				<td>00, 01, or 02</td>
+				<td>Item type code:
+				<ul>
+					<li>00: Non-consumable</li>
+					<li>01: Consumable</li>
+					<li>02: Subscription (non-renewing)</li>
+				</ul>
+				</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_itemSubsBillDurationCd</code></td>
+				<td>00, 01, 02, or 03</td>
+				<td>Item subs bill duration code:
+				<ul>
+					<li>00: Year</li>
+					<li>01: Month</li>
+					<li>02: Week</li>
+					<li>03: Day</li>
+				</ul>
+				<p>The <code>_itemTypeCd</code> value is 02.</p>
+				<p>If the product type is subscription, the available 4 units for the validity period of the product are YEAR, MONTH, WEEK, and DAY. The units must be typed in capitals.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_subscriptionDurationMultiplier</code></td>
+				<td>Subscription duration multiplier</td>
+				<td>If the <code>_itemTypeCd</code> is subscription (02), this is the item duration. Combined with <code>PREFIX_itemSubsBillDurationCd</code>, it means 1 month.</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_timeStamp</code></td>
+				<td>Time stamp</td>
+				<td>Based on GMT +0, server time.
+				<p>(yyyyMMddHHmmss)</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 
 - **Example code for retrieving a list of purchased items**
   ```
@@ -612,12 +970,14 @@ The IAP Service instance allows you to get a list of items available for purchas
 
 - **Output Data**
 
-  The results of the operation are returned in the app control callback.The following table shows the output data for the `http://tizen.org/appcontrol/operation/iapv2/get_country_list` operation.
+  The results of the operation are returned in the app control callback.
+
+  The following table shows the output data for the `http://tizen.org/appcontrol/operation/iapv2/get_country_list` operation.
 
    **Table: Output data for getting a list of countries**
 
    | Key                  | Value                   | Description                              |
-   |--------------------|-----------------------|----------------------------------------|
+   |----------------------|--- ---------------------|------------------------------------------|
    | `_method`            | `OnCountryListReceived` | Method to be called as a purchase request result. |
    | `_result`            | Result code             | [Result codes are described at the end of this section.](#result_code) |
    | `_resultDescription` | Result code/Function ID | Result code/Function ID when `_result` value is not 0 (success). [Result codes are described at the end of this section.](#result_code) |
@@ -713,17 +1073,110 @@ The IAP Client instance allows you to initialize a purchase of item and to compl
   The following table shows the key and value pairs required in the input extra data for the `http://tizen.org/appcontrol/operation/iapv2/purchase` operation.
 
   **Table: Input data for launching the purchase application**
-
-  | Key              | Value                     | Description                              |
-  |----------------|-------------------------|----------------------------------------|
-  | `_mode`          | 0 or 1                    | Mode type:0: Normal (commercial) modeThis mode needs to be used in an application submitted to the Tizen Store.1: Developer modeThis mode can be used for testing purposes while developing the application. Payment always succeeds.The default value is 0.This information is optional. |
-  | `_transactionId` | Transaction ID            | Transaction ID, such as 1 or 2.The ID is used to track a transaction between requests.This information is mandatory. |
-  | `_itemId`        | Item ID                   | Item ID, such as 000000003501.An item ID is associated with a specific item in Tizen Store Seller Office.You can retrieve a list of items available for purchase using the `org.tizen.inapppurchase.iapservice` application ID.This information is mandatory. |
-  | `_itemGroupId`   | Group ID                  | Group ID, such as 100000001455.A group ID is associated with a specific collection of items in Tizen Store Seller Office. You need to register your group ID in Tizen Store Seller Office first.This information is mandatory. |
-  | `_languageCd`    | Language code             | Language code, such as `eng` or `rus`.The language code conforms to ISO 639-2, which uses 3-character codes.The language code is associated with the display language of the item details in Tizen Store Seller Office.This information is optional.<br> **Note**<br> `_itemName` is higher priority than `_languageCd`. |
-  | `_itemName`      | Item name                 | Item name, such as "Sword" or "칼".Specify your item name with this key, or leave the key empty to use the default name on the seller site's purchase page.This information is optional. |
-  | `_mcc`           | Mobile country code (MCC) | Mobile country code, such as 250.MMCs can only be used in developer mode. You can retrieve a list of available MCCs using the get country list operation.This information is optional.This parameter has been deprecated. |
-  | `_mnc`           | Mobile network code (MNC) | Mobile network code, such as 01.MNCs can only be used in developer mode.This information is optional.This parameter has been deprecated. |
+	<table>
+		<thead>
+			<tr>
+				<th>Key</th>
+				<th>Value</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><code>_mode</code></td>
+				<td>0 or 1</td>
+				<td>
+				<p>Mode type:</p>
+				<ul>
+					<li>
+					<p>0: Normal (commercial) mode</p>
+					<p>This mode needs to be used in an application submitted to the Tizen Store.</p>
+					</li>
+					<li>
+					<p>1: Developer mode</p>
+					<p>This mode can be used for testing purposes while developing the application. Payment always succeeds.</p>
+					</li>
+				</ul>
+				<p>The default value is 0.</p>
+				<p>This information is optional.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_transactionId</code></td>
+				<td>Transaction ID</td>
+				<td>
+				<p>Transaction ID, such as 1 or 2.</p>
+				<p>The ID is used to track a transaction between requests.</p>
+				<p>This information is mandatory.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_itemId</code></td>
+				<td>Item ID</td>
+				<td>
+				<p>Item ID, such as 000000003501.</p>
+				<p>An item ID is associated with a specific item in Tizen Store Seller Office.</p>
+				<p>You can retrieve a list of items available for purchase using the <code>org.tizen.inapppurchase.iapservice</code> application ID.</p>
+				<p>This information is mandatory.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_itemGroupId</code></td>
+				<td>Group ID</td>
+				<td>
+				<p>Group ID, such as 100000001455.</p>
+				<p>A group ID is associated with a specific collection of items in Tizen Store Seller Office. You need to register your group ID in Tizen Store Seller Office first.</p>
+				<p>This information is mandatory.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_languageCd</code></td>
+				<td>Language code</td>
+				<td>
+				<p>Language code, such as <code>eng</code> or <code>rus</code>.</p>
+				<p>The language code conforms to ISO 639-2, which uses 3-character codes.</p>
+				<p>The language code is associated with the display language of the item details in Tizen Store Seller Office.</p>
+				<p>This information is optional.</p>
+				<blockquote><strong>Note</strong><br><code>_itemName</code> is higher priority than <code>_languageCd</code>.</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_itemName</code></td>
+				<td>Item name</td>
+				<td>
+				<p>Item name, such as "Sword" or "칼".</p>
+				<p>Specify your item name with this key, or leave the key empty to use the default name on the seller site's purchase page.</p>
+				<p>This information is optional.</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<p><code>_mcc</code></p>
+				<p><code>(deprecated)</code></p>
+				</td>
+				<td>Mobile country code (MCC)</td>
+				<td>
+				<p>Mobile country code, such as 250.</p>
+				<p>MMCs can only be used in developer mode. You can retrieve a list of available MCCs using the get country list operation.</p>
+				<p>This information is optional.</p>
+				<p><span>(18th Oct. by Tizen Store Dev. - </span><span>deprecated parameter)</span></p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<p><code>_mnc</code></p>
+				<p><code>(deprecated)</code></p>
+				</td>
+				<td>Mobile network code (MNC)</td>
+				<td>
+				<p>Mobile network code, such as 01.</p>
+				<p>MNCs can only be used in developer mode.</p>
+				<p>This information is optional.</p>
+				<p><span>(18th Oct. by Tizen Store Dev. - </span><span>deprecated parameter)</span></p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 
 - **Example code for Purchase**
   ```
@@ -746,7 +1199,11 @@ The IAP Client instance allows you to initialize a purchase of item and to compl
 
 - **Output Data**
 
-  The results of the operation are returned in the app control callback.This data can be used to verify the payment with Tizen Store IAP Server.The following table shows the output data for the `http://tizen.org/appcontrol/operation/iapv2/purchase` operation during process of purchase.
+  The results of the operation are returned in the app control callback.
+
+  This data can be used to verify the payment with Tizen Store IAP Server.
+
+  The following table shows the output data for the `http://tizen.org/appcontrol/operation/iapv2/purchase` operation during process of purchase.
 
   **Table: Output data for launching the purchase application**
 
@@ -764,7 +1221,7 @@ The IAP Client instance allows you to initialize a purchase of item and to compl
   | `_hasPenny`          | 0 or 1  | Information whether the currency unit has penny representation:<br/> - 0: No<br/> - 1: Yes                                           |
   | `_itemPrice`         | Item price                               | Price of the item in the local currency. |
   | `_itemDownloadUrl`   | Item download URL                        | URL provided during item registration in Tizen Store Seller Office. |
-  | `_itemImageUrl`      | Item image URL                           | URL provided during item registration in Tizen Store Seller Office.                                         |
+  | `_itemImageUrl`      | Item image URL                           | URL provided during item registration in Tizen Store Seller Office. |
   | `_itemDescription`   | Item description                         | A description provided during item registration. |
   | `_reserved1`         | Reserved field 1                         | Reserved field 1                         |
   | `_reserved2`         | Reserved field 2                         | Reserved field 2                         |

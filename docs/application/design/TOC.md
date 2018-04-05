@@ -116,7 +116,7 @@
 ### [Progress and Activity Indicators](/application/design/wearable/ui-components/progress-and-activity-indicators.md)
 ### [Page Indicators](/application/design/wearable/ui-components/page-indicators.md)
 ### [Scroll Bars](/application/design/wearable/ui-components/scroll-bars.md)
-## [Best Practice](/application/design/wearable/best-practice.md)
+## Best Practice
 ### [Remember that the Gear is always on the user's wrist](/application/design/wearable/best-practice/remember-gear-always-on-users-wrist.md)
 ### [Provide a precise and unique control with the bezel](/application/design/wearable/best-practice/provide-precise-and-unique-control-bezel.md)
 ### [Help users find their way](/application/design/wearable/best-practice/help-users-find-their-way.md)

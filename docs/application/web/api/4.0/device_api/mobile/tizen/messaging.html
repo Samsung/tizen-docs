@@ -1,0 +1,4375 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>Messaging API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Messaging">
+<div class="supported-platforms"><img class="mobile-optional emulator-partial" title="Optional, Supported by Tizen Mobile emulator - Emulator supports only e-mail" src="mobile_s_w_optional.png"></div>
+<div class="title"><h1>Messaging API</h1></div>
+<div class="brief">
+ The Messaging API provides interfaces and methods for managing SMS, MMS, and email messages.
+        </div>
+<div class="description">
+        <p>
+The Messaging API provides access to these capabilities:
+        </p>
+        <ul>
+          <li>
+Sending messages through different technologies: SMS, MMS, and email messages          </li>
+          <li>
+Retrieving available message services          </li>
+          <li>
+Searching for messages          </li>
+          <li>
+Managing messages: update, delete, and add          </li>
+          <li>
+Subscribing to receive notifications of message storage modifications          </li>
+          <li>
+Fetching conversations and subscribing to conversation updates          </li>
+        </ul>
+        <p>
+For more information on the Messaging features, see <a href="https://developer.tizen.org/development/guides/web-application/messaging/messages">Messaging Guide</a>.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li>1.1. <a href="#MessageServiceTag">MessageServiceTag</a>
+</li>
+<li>1.2. <a href="#MessageId">MessageId</a>
+</li>
+<li>1.3. <a href="#MessageAttachmentId">MessageAttachmentId</a>
+</li>
+<li>1.4. <a href="#MessageConvId">MessageConvId</a>
+</li>
+<li>1.5. <a href="#MessageFolderId">MessageFolderId</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#MessageManagerObject">MessageManagerObject</a>
+</li>
+<li>2.2. <a href="#Message">Message</a>
+</li>
+<li>2.3. <a href="#MessageInit">MessageInit</a>
+</li>
+<li>2.4. <a href="#MessageBody">MessageBody</a>
+</li>
+<li>2.5. <a href="#MessageAttachment">MessageAttachment</a>
+</li>
+<li>2.6. <a href="#Messaging">Messaging</a>
+</li>
+<li>2.7. <a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a>
+</li>
+<li>2.8. <a href="#MessageService">MessageService</a>
+</li>
+<li>2.9. <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>
+</li>
+<li>2.10. <a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a>
+</li>
+<li>2.11. <a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a>
+</li>
+<li>2.12. <a href="#MessageStorage">MessageStorage</a>
+</li>
+<li>2.13. <a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a>
+</li>
+<li>2.14. <a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a>
+</li>
+<li>2.15. <a href="#MessageFolderArraySuccessCallback">MessageFolderArraySuccessCallback</a>
+</li>
+<li>2.16. <a href="#MessagesChangeCallback">MessagesChangeCallback</a>
+</li>
+<li>2.17. <a href="#MessageConversationsChangeCallback">MessageConversationsChangeCallback</a>
+</li>
+<li>2.18. <a href="#MessageFoldersChangeCallback">MessageFoldersChangeCallback</a>
+</li>
+<li>2.19. <a href="#MessageConversation">MessageConversation</a>
+</li>
+<li>2.20. <a href="#MessageFolder">MessageFolder</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#api-features">Related Feature</a>
+</li>
+<li>4. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#MessageManagerObject">MessageManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#Message">Message</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#MessageInit">MessageInit</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#MessageBody">MessageBody</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#MessageAttachment">MessageAttachment</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#Messaging">Messaging</a></td>
+<td>void <a href="#Messaging::getMessageServices">getMessageServices</a> (<a href="#MessageServiceTag">MessageServiceTag</a> messageServiceType, <a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</td>
+</tr>
+<tr>
+<td><a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a></td>
+<td>void <a href="#MessageServiceArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#MessageService">MessageService</a>[] services)</td>
+</tr>
+<tr>
+<td><a href="#MessageService">MessageService</a></td>
+<td>void <a href="#MessageService::sendMessage">sendMessage</a> (<a href="#Message">Message</a> message, optional <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? simIndex)<br>
+    void <a href="#MessageService::loadMessageBody">loadMessageBody</a> (<a href="#Message">Message</a> message, <a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
+    void <a href="#MessageService::loadMessageAttachment">loadMessageAttachment</a> (<a href="#MessageAttachment">MessageAttachment</a> attachment, <a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
+    long <a href="#MessageService::sync">sync</a> (optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional unsigned long? limit)<br>
+    long <a href="#MessageService::syncFolder">syncFolder</a> (<a href="#MessageFolder">MessageFolder</a> folder, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional unsigned long? limit)<br>
+    void <a href="#MessageService::stopSync">stopSync</a> (long opId)</td>
+</tr>
+<tr>
+<td><a href="#MessageRecipientsCallback">MessageRecipientsCallback</a></td>
+<td>void <a href="#MessageRecipientsCallback::onsuccess">onsuccess</a> (DOMString[] recipients)</td>
+</tr>
+<tr>
+<td><a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a></td>
+<td>void <a href="#MessageBodySuccessCallback::onsuccess">onsuccess</a> (<a href="#Message">Message</a> message)</td>
+</tr>
+<tr>
+<td><a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a></td>
+<td>void <a href="#MessageAttachmentSuccessCallback::onsuccess">onsuccess</a> (<a href="#MessageAttachment">MessageAttachment</a> attachment)</td>
+</tr>
+<tr>
+<td><a href="#MessageStorage">MessageStorage</a></td>
+<td>void <a href="#MessageStorage::addDraftMessage">addDraftMessage</a> (<a href="#Message">Message</a> message, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
+    void <a href="#MessageStorage::findMessages">findMessages</a> (<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit, optional unsigned long? offset)<br>
+    void <a href="#MessageStorage::removeMessages">removeMessages</a> (<a href="#Message">Message</a>[] messages, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
+    void <a href="#MessageStorage::updateMessages">updateMessages</a> (<a href="#Message">Message</a>[] messages, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
+    void <a href="#MessageStorage::findConversations">findConversations</a> (<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit, optional unsigned long? offset)<br>
+    void <a href="#MessageStorage::removeConversations">removeConversations</a> (<a href="#MessageConversation">MessageConversation</a>[] conversations, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
+    void <a href="#MessageStorage::findFolders">findFolders</a> (<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageFolderArraySuccessCallback">MessageFolderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
+    long <a href="#MessageStorage::addMessagesChangeListener">addMessagesChangeListener</a> (<a href="#MessagesChangeCallback">MessagesChangeCallback</a> messagesChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter)<br>
+    long <a href="#MessageStorage::addConversationsChangeListener">addConversationsChangeListener</a> (<a href="#MessageConversationsChangeCallback">MessageConversationsChangeCallback</a> conversationsChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter)<br>
+    long <a href="#MessageStorage::addFoldersChangeListener">addFoldersChangeListener</a> (<a href="#MessageFoldersChangeCallback">MessageFoldersChangeCallback</a> foldersChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter)<br>
+    void <a href="#MessageStorage::removeChangeListener">removeChangeListener</a> (long watchId)</td>
+</tr>
+<tr>
+<td><a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a></td>
+<td>void <a href="#MessageArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#Message">Message</a>[] messages)</td>
+</tr>
+<tr>
+<td><a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a></td>
+<td>void <a href="#MessageConversationArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#MessageConversation">MessageConversation</a>[] conversations)</td>
+</tr>
+<tr>
+<td><a href="#MessageFolderArraySuccessCallback">MessageFolderArraySuccessCallback</a></td>
+<td>void <a href="#MessageFolderArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#MessageFolder">MessageFolder</a>[] folders)</td>
+</tr>
+<tr>
+<td><a href="#MessagesChangeCallback">MessagesChangeCallback</a></td>
+<td>void <a href="#MessagesChangeCallback::messagesadded">messagesadded</a> (<a href="#Message">Message</a>[] addedMessages)<br>
+    void <a href="#MessagesChangeCallback::messagesupdated">messagesupdated</a> (<a href="#Message">Message</a>[] updatedMessages)<br>
+    void <a href="#MessagesChangeCallback::messagesremoved">messagesremoved</a> (<a href="#Message">Message</a>[] removedMessages)</td>
+</tr>
+<tr>
+<td><a href="#MessageConversationsChangeCallback">MessageConversationsChangeCallback</a></td>
+<td>void <a href="#MessageConversationsChangeCallback::conversationsadded">conversationsadded</a> (<a href="#MessageConversation">MessageConversation</a>[] addedConversations)<br>
+    void <a href="#MessageConversationsChangeCallback::conversationsupdated">conversationsupdated</a> (<a href="#MessageConversation">MessageConversation</a>[] updatedConversations)<br>
+    void <a href="#MessageConversationsChangeCallback::conversationsremoved">conversationsremoved</a> (<a href="#MessageConversation">MessageConversation</a>[] removedConversations)</td>
+</tr>
+<tr>
+<td><a href="#MessageFoldersChangeCallback">MessageFoldersChangeCallback</a></td>
+<td>void <a href="#MessageFoldersChangeCallback::foldersadded">foldersadded</a> (<a href="#MessageFolder">MessageFolder</a>[] addedFolders)<br>
+    void <a href="#MessageFoldersChangeCallback::foldersupdated">foldersupdated</a> (<a href="#MessageFolder">MessageFolder</a>[] updatedFolders)<br>
+    void <a href="#MessageFoldersChangeCallback::foldersremoved">foldersremoved</a> (<a href="#MessageFolder">MessageFolder</a>[] removedFolders)</td>
+</tr>
+<tr>
+<td><a href="#MessageConversation">MessageConversation</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#MessageFolder">MessageFolder</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="enum" id="MessageServiceTag">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageServiceTag"></a><h3>1.1. MessageServiceTag</h3>
+<div class="brief">
+ Specifies the Messaging service tags.
+The following values are supported in this release:
+          </div>
+<pre class="webidl prettyprint">  enum MessageServiceTag {"messaging.sms", "messaging.mms", "messaging.email" };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <ul>
+            <li>
+messaging.sms, for SMS services            </li>
+            <li>
+messaging.mms, for MMS services            </li>
+            <li>
+messaging.email, for email services            </li>
+          </ul>
+         </div>
+</div>
+<div class="typedef" id="MessageId">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageId"></a><h3>1.2. MessageId</h3>
+<div class="brief">
+ The Message identifier.
+          </div>
+<pre class="webidl prettyprint">  typedef DOMString MessageId;</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+</div>
+<div class="typedef" id="MessageAttachmentId">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageAttachmentId"></a><h3>1.3. MessageAttachmentId</h3>
+<div class="brief">
+ The MessageAttachment identifier within a message.
+          </div>
+<pre class="webidl prettyprint">  typedef DOMString MessageAttachmentId;</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+</div>
+<div class="typedef" id="MessageConvId">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageConvId"></a><h3>1.4. MessageConvId</h3>
+<div class="brief">
+ The MessageConversation identifier.
+          </div>
+<pre class="webidl prettyprint">  typedef DOMString MessageConvId;</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+</div>
+<div class="typedef" id="MessageFolderId">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageFolderId"></a><h3>1.5. MessageFolderId</h3>
+<div class="brief">
+ The identifier of an email folder.
+          </div>
+<pre class="webidl prettyprint">  typedef DOMString MessageFolderId;</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="MessageManagerObject">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageManagerObject"></a><h3>2.1. MessageManagerObject</h3>
+<div class="brief">
+ The MessageManagerObject interface defines what is instantiated by the Tizen object.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MessageManagerObject {
+    readonly attribute <a href="#Messaging">Messaging</a> messaging;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MessageManagerObject">MessageManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+There is a <em>tizen.messaging </em>object that allows access to the Messaging API.
+          </p>
+         </div>
+</div>
+<div class="interface" id="Message">
+<a class="backward-compatibility-anchor" name="::Messaging::Message"></a><h3>2.2. Message</h3>
+<div class="brief">
+ The Message interface defines the content and attributes of a message.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(<a href="#MessageServiceTag">MessageServiceTag</a> type, optional <a href="#MessageInit">MessageInit</a>? messageInitDict)]
+  interface Message {
+
+    readonly attribute <a href="#MessageId">MessageId</a>? id;
+
+    readonly attribute <a href="#MessageConvId">MessageConvId</a>? conversationId;
+
+    readonly attribute <a href="#MessageFolderId">MessageFolderId</a>? folderId;
+
+    readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> type;
+
+    readonly attribute Date? timestamp;
+
+    readonly attribute DOMString? from;
+
+    attribute DOMString[] to setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    attribute DOMString[] cc setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    attribute DOMString[] bcc setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    attribute <a href="#MessageBody">MessageBody</a> body setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    attribute boolean isRead setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    readonly attribute boolean hasAttachment;
+
+    attribute boolean isHighPriority setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    attribute DOMString subject setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    readonly attribute <a href="#MessageId">MessageId</a>? inResponseTo setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    readonly attribute DOMString messageStatus;
+
+    attribute <a href="#MessageAttachment">MessageAttachment</a>[] attachments setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+This interface allows a web application to define the set of properties
+linked to a message.
+          </p>
+          <p>
+It also allows an application to retrieve the content of a
+message through <em>MessageStorage </em>methods. In these
+cases, the implementation can return, in some situations, only the meta-information
+of a message without the loaded body. In such situations, the method <em>MessageService.loadMessageBody() </em>should be used.
+          </p>
+         </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Defines the success callback */
+var messageSentCallback = function(recipients)
+{
+   console.log("Message sent successfully to " + recipients.length + " recipients.");
+}
+
+/* Defines the error callback */
+function errorCallback(err)
+{
+   console.log(err.name + " error: " + err.message);
+}
+
+function serviceListCB(services)
+{
+   if (services.length &gt; 0)
+   {
+      var msg = new tizen.Message("messaging.sms", {plainBody: "Tizen first SMS message."});
+      services[0].sendMessage(msg, messageSentCallback, errorCallback);
+   }
+}
+
+tizen.messaging.getMessageServices("messaging.sms", serviceListCB, errorCallback);
+</pre>
+</div>
+<div class="constructors">
+<h4 id="Message::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">Message(<a href="#MessageServiceTag">MessageServiceTag</a> type, optional <a href="#MessageInit">MessageInit</a>? messageInitDict);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="Message::id">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MessageId </span><span class="name">id</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The message identifier.
+            </div>
+<div class="description">
+            <p>
+The ID is locally unique and persistent property, assigned by the device or the Web runtime (WRT).
+For new messages created using the Message constructor, the ID is assigned on the first occasion when a message is processed by the underlying platform, such as a call to MessageService.send(). Before the ID is assigned, it is set to <var>null</var>.
+            </p>
+            <p>
+By default, this attribute is set to <var>null</var>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="Message::conversationId">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MessageConvId </span><span class="name">conversationId</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The identifier of the conversation to which the message belongs.
+            </div>
+<div class="description">
+            <p>
+By default, this attribute is set to <var>null</var>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="Message::folderId">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MessageFolderId </span><span class="name">folderId</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The identifier of the folder to which the message belongs.
+            </div>
+<div class="description">
+            <p>
+By default, this attribute is set to null.
+            </p>
+            <p>
+For SMS and MMS, <em>folderId </em>can be one of these values:
+            </p>
+            <ul>
+              <li>
+INBOX = 1,              </li>
+              <li>
+OUTBOX = 2,              </li>
+              <li>
+DRAFTS = 3,              </li>
+              <li>
+SENTBOX = 4              </li>
+            </ul>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="Message::type">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MessageServiceTag </span><span class="name">type</span></span><div class="brief">
+ The type of a given message.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="Message::timestamp">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">Date </span><span class="name">timestamp</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The timestamp of a message.
+            </div>
+<div class="description">
+            <p>
+For a received message, the timestamps indicates the time at which a message is received.
+For a sent message, the timestamp indicates the time at which a message is sent.
+For a draft message, the timestamp indicates the time at which a message is added.
+By default, this attribute is set to <var>null</var>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="Message::from">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">from</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The source address (or source phone number) of a message.
+            </div>
+<div class="description">
+            <p>
+This property is set up by the device or the web runtime environment.
+By default, this attribute is set to null.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="Message::to">
+<span class="attrName"><span class="type">DOMString[]
+                      </span><span class="name">to</span></span><div class="brief">
+ The destination of a message.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="Message::cc">
+<span class="attrName"><span class="type">DOMString[]
+                      </span><span class="name">cc</span></span><div class="brief">
+ The carbon copy address of a message.
+            </div>
+<div class="description">
+            <p>
+This property is used only for email messages.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="Message::bcc">
+<span class="attrName"><span class="type">DOMString[]
+                      </span><span class="name">bcc</span></span><div class="brief">
+ The blind carbon copy (bcc) address of a message.
+            </div>
+<div class="description">
+            <p>
+This property is used only with email messages.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="Message::body">
+<span class="attrName"><span class="type">MessageBody </span><span class="name">body</span></span><div class="brief">
+ The body of a message.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="Message::isRead">
+<span class="attrName"><span class="type">boolean </span><span class="name">isRead</span></span><div class="brief">
+ The flag indicating the read state for a message.
+            </div>
+<div class="description">
+            <p>
+This property is set to <var>true</var> if the message has been read. Else it is set to <var>false</var>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="Message::hasAttachment">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">hasAttachment</span></span><div class="brief">
+ The flag indicating whether an attachment(s) exists.
+            </div>
+<div class="description">
+            <p>
+It is set to <var>true</var> if a message has one or more attachments.
+            </p>
+            <p>
+This property is used only with email and MMS messages.(It is valid when body is loaded)
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="Message::isHighPriority">
+<span class="attrName"><span class="type">boolean </span><span class="name">isHighPriority</span></span><div class="brief">
+ The flag indicating the priority of a message.
+            </div>
+<div class="description">
+            <p>
+It is set to <var>true</var> if the message has a high priority. Else it is set to <var>false</var>, if the message has a normal or low priority.
+            </p>
+            <p>
+This property is used only with email messages.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="Message::subject">
+<span class="attrName"><span class="type">DOMString </span><span class="name">subject</span></span><div class="brief">
+ The subject of a message.
+            </div>
+<div class="description">
+            <p>
+This property is used only with email and MMS messages.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="Message::inResponseTo">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MessageId </span><span class="name">inResponseTo</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The original message.
+            </div>
+<div class="description">
+            <p>
+If the message was replied to or forwarded, this property contains the ID of the original message, otherwise it is set to <var>null</var>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="Message::messageStatus">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">messageStatus</span></span><div class="brief">
+ The status of a given message.
+            </div>
+<div class="description">
+            <p>
+It can be one of these values:
+            </p>
+            <ul>
+              <li>
+SENT              </li>
+              <li>
+SENDING              </li>
+              <li>
+FAILED              </li>
+              <li>
+DRAFT              </li>
+            </ul>
+            <p>
+If the status of the current message does not correspond to any item from
+the list, an empty value is returned.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="Message::attachments">
+<span class="attrName"><span class="type">MessageAttachment[]
+                      </span><span class="name">attachments</span></span><div class="brief">
+ The list of the message attachments.
+            </div>
+<div class="description">
+            <p>
+This array is empty if the message does not have attachments or the message body is not loaded and the attachment info is inaccessible (in this case, the <em>hasAttachment</em> attribute is checked after loading message body).
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Define the success callback */
+function serviceListCB(services)
+{
+   if (services.length &gt; 0)
+   {
+      var msg = new tizen.Message("messaging.email");
+      msg.attachments = [new tizen.MessageAttachment("images/myimage.png", "image/png"),
+                         new tizen.MessageAttachment("documents/mydoc.pdf", "text/pdf")];
+   }
+}
+
+tizen.messaging.getMessageServices("messaging.email", serviceListCB);
+</pre>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="dictionary" id="MessageInit">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageInit"></a><h3>2.3. MessageInit</h3>
+<div class="brief">
+ The dictionary providing specific message attributes for message creation.
+          </div>
+<pre class="webidl prettyprint">  dictionary MessageInit
+  {
+
+    DOMString subject;
+
+    DOMString[] to;
+
+    DOMString[] cc;
+
+    DOMString[] bcc;
+
+    DOMString plainBody;
+
+    DOMString htmlBody;
+
+    boolean isHighPriority;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+This dictionary is used to input parameters when messages are created using
+the Message constructor.
+          </p>
+          <p>
+All the attributes are optional and are <var>undefined </var>by default, unless otherwise stated in the parameter description.
+          </p>
+         </div>
+<div class="attributes">
+<h4>Dictionary members</h4>
+<dl>
+<dt class="member" id="MessageInit::subject"><span class="attrName">DOMString subject</span></dt>
+<dd>
+<div class="brief">
+ The subject of a message.
+            </div>
+<div class="description">
+            <p>
+This property is used only with email and MMS messages.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</dd>
+<dt class="member" id="MessageInit::to"><span class="attrName">DOMString[] to</span></dt>
+<dd>
+<div class="brief">
+ The destination addresses (or phone numbers) of a message.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</dd>
+<dt class="member" id="MessageInit::cc"><span class="attrName">DOMString[] cc</span></dt>
+<dd>
+<div class="brief">
+ The carbon copy addresses of a message.
+            </div>
+<div class="description">
+            <p>
+This property is used only with email messages.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</dd>
+<dt class="member" id="MessageInit::bcc"><span class="attrName">DOMString[] bcc</span></dt>
+<dd>
+<div class="brief">
+ The blind carbon copy addresses of a message.
+            </div>
+<div class="description">
+            <p>
+This property is used only with email messages.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</dd>
+<dt class="member" id="MessageInit::plainBody"><span class="attrName">DOMString plainBody</span></dt>
+<dd>
+<div class="brief">
+ The plain text representation of a message body.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</dd>
+<dt class="member" id="MessageInit::htmlBody"><span class="attrName">DOMString htmlBody</span></dt>
+<dd>
+<div class="brief">
+ The HTML representation of a message body.
+            </div>
+<div class="description">
+            <p>
+This property is used only with email messages.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</dd>
+<dt class="member" id="MessageInit::isHighPriority"><span class="attrName">boolean isHighPriority</span></dt>
+<dd>
+<div class="brief">
+ The priority of a message.
+            </div>
+<div class="description">
+            <p>
+This property is set to <var>true</var> if the message has a high priority. Else it is set to <var>false</var> if the message has a normal or low priority.
+            </p>
+            <p>
+This property is used only with email messages.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="MessageBody">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageBody"></a><h3>2.4. MessageBody</h3>
+<div class="brief">
+ The MessageBody interface describes a message body.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MessageBody {
+
+    readonly attribute <a href="#MessageId">MessageId</a> messageId;
+
+    readonly attribute boolean loaded;
+
+    attribute DOMString plainBody setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    attribute DOMString htmlBody setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    attribute <a href="#MessageAttachment">MessageAttachment</a>[] inlineAttachments setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+Message body is comprised of a plain text, an HTML, and inline attachments.
+          </p>
+         </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="MessageBody::messageId">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MessageId </span><span class="name">messageId</span></span><div class="brief">
+ The ID of a parent message.
+            </div>
+<div class="description">
+            <p>
+It holds the ID of the message containing this body.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageBody::loaded">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">loaded</span></span><div class="brief">
+ The flag indicating whether the message body has been loaded.
+            </div>
+<div class="description">
+            <p>
+It is set to <var>true </var>if the message body is loaded, else it is set to<var> false </var>if the object is not loaded.
+The default value is <var>false</var>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageBody::plainBody">
+<span class="attrName"><span class="type">DOMString </span><span class="name">plainBody</span></span><div class="brief">
+ The plain text representation of a message body.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageBody::htmlBody">
+<span class="attrName"><span class="type">DOMString </span><span class="name">htmlBody</span></span><div class="brief">
+ The HTML representation of a message body.
+            </div>
+<div class="description">
+            <p>
+This attribute holds an empty string if the message does not have any HTML body content.
+This property is used only with email messages.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageBody::inlineAttachments">
+<span class="attrName"><span class="type">MessageAttachment[]
+                      </span><span class="name">inlineAttachments</span></span><div class="brief">
+ The list of the inline attachments.
+            </div>
+<div class="description">
+            <p>
+This array is empty, if the message does not have inline attachment or the message body is not loaded and attachments info is inaccessible (in this case the <em>loaded</em> attribute is checked).
+            </p>
+            <p>
+To indicate where to show an inline attachment within the HTML body, a link of the following format should be provided:
+"&lt;img src="The file name of a inline attachment"&gt;"
+This property is used only with email messages.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Defines the success callback */
+function serviceListCB(services)
+{
+   if (services.length &gt; 0)
+   {
+      var msg = new tizen.Message("messaging.email");
+      msg.body.htmlBody = "&lt;html&gt;&lt;body&gt;&lt;img src='myimage.png'&gt;&lt;/body&gt;&lt;/html&gt;";
+      msg.body.inlineAttachments = [new tizen.MessageAttachment("images/myimage.png")];
+   }
+}
+
+tizen.messaging.getMessageServices("messaging.email", serviceListCB);
+</pre>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="MessageAttachment">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageAttachment"></a><h3>2.5. MessageAttachment</h3>
+<div class="brief">
+ The MessageAttachment interface defines the content and attributes of a message attachment.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(DOMString filePath, optional DOMString? mimeType)]
+  interface MessageAttachment {
+
+    readonly attribute <a href="#MessageAttachmentId">MessageAttachmentId</a>? id;
+
+    readonly attribute <a href="#MessageId">MessageId</a>? messageId;
+
+    readonly attribute DOMString? mimeType;
+
+    readonly attribute DOMString? filePath;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="constructors">
+<h4 id="MessageAttachment::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">MessageAttachment(DOMString filePath, optional DOMString? mimeType);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="MessageAttachment::id">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MessageAttachmentId </span><span class="name">id</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The ID of an attachment.
+            </div>
+<div class="description">
+            <p>
+It holds the identifier of the attachment within its parent message.
+            </p>
+            <p>
+By default, this attribute is set to <var>null</var>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageAttachment::messageId">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MessageId </span><span class="name">messageId</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The ID of a parent message.
+            </div>
+<div class="description">
+            <p>
+By default, this attribute is set to <var>null</var>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageAttachment::mimeType">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">mimeType</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The attachment MIME type.
+            </div>
+<div class="description">
+            <p>
+It describes the MIME type of an attachment, for example; "text/html".
+            </p>
+            <p>
+By default, this attribute is set to <var>null</var>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageAttachment::filePath">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">filePath</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The location path to a loaded attachment file.
+            </div>
+<div class="description">
+            <p>
+It holds the location path to a loaded attachment file, appropriate for the Filesystem API. It is set to <var>null</var> if the attachment is not loaded from the remote server.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="Messaging">
+<a class="backward-compatibility-anchor" name="::Messaging::Messaging"></a><h3>2.6. Messaging</h3>
+<div class="brief">
+ The Messaging interface retrieves messaging services.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface Messaging {
+
+    void getMessageServices(<a href="#MessageServiceTag">MessageServiceTag</a> messageServiceType,
+                            <a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a> successCallback,
+                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+This interface fetches all existing messaging services by type or a messaging service of a given type
+for concrete account.
+          </p>
+         </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Defines the success callback */
+function serviceListCB(services)
+{
+   if (services.length &gt; 0)
+   {
+      var msg = new tizen.Message("messaging.sms");
+   }
+}
+
+/* Defines the error callback */
+function errorCallback(error)
+{
+   console.log("Cannot get messaging service " + error.message);
+}
+
+tizen.messaging.getMessageServices("messaging.sms", serviceListCB,
+                                   errorCallback);
+</pre>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="Messaging::getMessageServices">
+<a class="backward-compatibility-anchor" name="::Messaging::Messaging::getMessageServices"></a><code><b><span class="methodName">getMessageServices</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the messaging service of a given type for a given account, or all existing services supporting the given type, if <em>serviceId </em>is not given.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getMessageServices(<a href="#MessageServiceTag">MessageServiceTag</a> messageServiceType, <a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+The errorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+InvalidValuesError - If any of the input parameters contain an invalid value, the encoding is not valid or onsuccess is null.
+Please note that to allow developers to ignore errors, errorCallback accepts null as a valid value.              </li>
+              <li>
+UnknownError - In any other error case.              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">messageServiceType</span>:
+ Type of the services to be retrieved
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>:
+    Callback function that is called when the services are successfully retrieved
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+      Callback function that is called when an error occurs.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Defines the error callback */
+function errorCallback(error)
+{
+   console.log("Cannot get messaging service " + error.message);
+}
+
+/* Defines the success callback */
+function serviceListCB(services)
+{
+   console.log("Found " + services.length + "email services");
+}
+
+tizen.messaging.getMessageServices("messaging.email", serviceListCB,
+                                   errorCallback);
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="MessageServiceArraySuccessCallback">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageServiceArraySuccessCallback"></a><h3>2.7. MessageServiceArraySuccessCallback</h3>
+<div class="brief">
+ The MessageServiceArraySuccessCallback interface defines callback(s) for retrieving message services.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageServiceArraySuccessCallback {
+
+    void onsuccess(<a href="#MessageService">MessageService</a>[] services);
+
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MessageServiceArraySuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageServiceArraySuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when finding message services is successful.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#MessageService">MessageService</a>[] services);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">services</span>:
+ Array of available <em>MessageService</em> objects on the device
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="MessageService">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageService"></a><h3>2.8. MessageService</h3>
+<div class="brief">
+ The MessageService interface allows a web application to manipulate and send messages and supports the message creating, sending, and fetching capabilities.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MessageService {
+
+    readonly attribute DOMString id;
+
+    readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> type;
+
+    readonly attribute DOMString name;
+
+    void sendMessage(<a href="#Message">Message</a> message,
+                     optional <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>? successCallback,
+                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                     optional long? simIndex) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void loadMessageBody(<a href="#Message">Message</a> message,
+                         <a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a> successCallback,
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void loadMessageAttachment(<a href="#MessageAttachment">MessageAttachment</a> attachment,
+                               <a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a> successCallback,
+                               optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long sync(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+              optional unsigned long? limit) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long syncFolder(<a href="#MessageFolder">MessageFolder</a> folder,
+                    optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                    optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                    optional unsigned long? limit) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void stopSync(long opId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    readonly attribute <a href="#MessageStorage">MessageStorage</a> messageStorage getraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+Messages created through this API are not persistent in device memory until the implementation attempts to send the message using the sendMessage() method.
+On performing the sendMessage() method, the message is available in the relevant folder (such as sent and drafts), depending on the result of the operation.
+          </p>
+          <p>
+The interface allows fetching of messages for all folders belonging to one account, with synchronizable flag set, using the sync() method, or for a given folder using the syncFolder() method.
+          </p>
+          <p>
+The interface allows fetching of the message body for a given message using loadMessageBody() method.
+          </p>
+         </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Defines the success callback */
+function messageSent(recipients)
+{
+   console.log("The SMS has been sent");
+}
+
+/* Defines the error callback */
+function messageFailed(error)
+{
+   console.log("The SMS could not be sent " + error.message);
+}
+
+/* Defines the service error callback */
+function serviceErrorCB(error)
+{
+   console.log("Cannot get messaging service " + error.message);
+}
+
+/* Defines the success callback */
+function serviceListCB(services)
+{
+   if (services.length &gt; 0)
+   {
+      /* SMS sending example */
+      var msg = new tizen.Message("messaging.sms", {plainBody:"I will arrive in 10 minutes.",
+                                  to:["+34666666666"]});
+      /* Sends request */
+      services[0].sendMessage(msg, messageSent, messageFailed);
+   }
+}
+
+tizen.messaging.getMessageServices("messaging.sms", serviceListCB, serviceErrorCB);
+</pre>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="MessageService::id">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">id</span></span><div class="brief">
+ The unique identifier of this Messaging service.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0.
+            </p>
+</li>
+<li class="attribute" id="MessageService::type">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MessageServiceTag </span><span class="name">type</span></span><div class="brief">
+ The tag supported by this messaging service.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageService::name">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
+ The messaging service name taken from the messaging service.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0.
+            </p>
+</li>
+<li class="attribute" id="MessageService::messageStorage">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MessageStorage </span><span class="name">messageStorage</span></span><div class="brief">
+ The <em>MessageStorage </em>for this messaging service.
+            </div>
+<div class="description">
+            <p>
+If the backend does not support <em>MessageStorage </em>for this messaging service, a WebAPIException is raised with error type NotSupportedError.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MessageService::sendMessage">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageService::sendMessage"></a><code><b><span class="methodName">sendMessage</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sends a specified message.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void sendMessage(<a href="#Message">Message</a> message, optional <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? simIndex);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+For messaging technologies in which the message is sent individually to every recipient(such as SMS), individual notification must be supported as follows:
+            </p>
+            <p>
+For every individual recipient in the destination list, if the message cannot be sent to that recipient, the onerror() method of the errorCallback argument must be invoked with the corresponding error type as input parameter.
+These error types may be passed, depending on the error conditions:
+            </p>
+            <ul>
+              <li>
+ NetworkError - If the network connection is not accessible.              </li>
+              <li>
+ InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+              <li>
+ UnknownError - If any other error occurs.              </li>
+            </ul>
+            <p>
+The error message contains the name of the recipient who has failed to receive the sent message.
+            </p>
+            <p>
+When the operation is fully completed (that is, the implementation has the
+result of the send operation for all recipients), the onsuccess()
+method of the successCallback will be invoked with an array of recipients who received
+the sent message, as input parameter.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/messaging.write
+            </p>
+<p><span class="remark"> Remark : </span>
+ <var>simIndex</var> is added for sending the SMS message through the specified SIM since Tizen 2.3.
+            </p>
+<p><span class="remark"> Remark : </span>
+ Regarding the <var>simIndex</var>, you can find more information (e.g. operator name, phone number) about SIM card through <em>tizen.systeminfo.getPropertyValueArray("SIM",..)</em>. <br>The feasible use case would be showing all available SIM information and then the user selects the SIM to send a message.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">message</span>:
+         Message to be sent
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when the message is successfully sent
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called when the sending request has failed
+                </li>
+          <li class="param">
+<span class="name">simIndex</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The index of SIM card used to send an SMS message.
+<em>simIndex</em> value of the first SIM card is <var>1</var>.<br>If the given <em>message</em> is not SMS message type, the <em>simIndex</em> is ignored.
+If <var>simIndex</var> is not set, the SMS message is sent through the currently enabled SIM.
+The possible <var>simIndex</var> values should be retrieved through the SystemInfo API. <br>If <var>simIndex</var> value is not valid, <em>InvalidValuesError</em> will be returned through <em>ErrorCallback</em>.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Defines the success callback */
+function messageSent(recipients)
+{
+   for (var i = 0; i &lt; recipients.length; i++)
+   {
+      console.log("The SMS has been sent to " + recipients[i]);
+   }
+}
+
+/* Defines the error callback */
+function messageFailed(error)
+{
+   console.log("The SMS could not be sent " + error.message);
+}
+
+/* Defines the success callback */
+function serviceListCB(services)
+{
+   if (services.length &gt; 0)
+   {
+      /* SMS sending example */
+      var msg = new tizen.Message("messaging.sms", {plainBody: "I will arrive in 10 minutes.",
+                                  to: ["+34666666666", "+34888888888"]});
+      /* Sends request */
+      services[0].sendMessage(msg, messageSent, messageFailed);
+   }
+}
+tizen.messaging.getMessageServices("messaging.sms", serviceListCB);
+</pre>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+ // **********************************************************************************
+ // *  This sample code works on a device which supports Tizen 2.3 Web Device API.   *
+ // **********************************************************************************
+
+/* To get how many SIM cards are available in a device */
+var count = tizen.systeminfo.getCount("SIM");
+console.log("There is(are) " + count + " SIM card(s) available.");
+
+/* To send a message via the last SIM */
+services[0].sendMessage(msg, messageSent, messageFailed, count);
+</pre>
+</div>
+</dd>
+<dt class="method" id="MessageService::loadMessageBody">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageService::loadMessageBody"></a><code><b><span class="methodName">loadMessageBody</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Loads the body for a specified message.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void loadMessageBody(<a href="#Message">Message</a> message, <a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+It is the back end's responsibility to detect which MIME parts of the message are related to the message body and should be loaded.
+If the message body is already loaded, the onsuccess() method of the successCallback will be invoked immediately.
+            </p>
+            <p>
+The errorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+              <li>
+ UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/messaging.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">message</span>:
+         Message with the body to be loaded
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback function that is called when the message body is successfully loaded
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called when the loading request fails
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Assumes messaging service is initialized */
+var service;
+/* Defines the success body loaded callback */
+function successCallback(message)
+{
+   console.log("body for message: " + message.subject + "from: " + message.from + "loaded.");
+}
+/* Defines the error callback */
+function errorCallback(error)
+{
+   console.log("Cannot load message body" + error.message);
+}
+
+function messageQueryCallback(messages)
+{
+   for (var i = 0; i &lt; messages.length; i++)
+   {
+      var message = messages[i];
+      if (!message.body.loaded)
+      {
+         service.loadMessageBody(message, successCallback, errorCallback);
+      }
+   }
+}
+
+service.messageStorage.findMessages(new tizen.AttributeFilter("type", "EXACTLY", "messaging.email"), messageQueryCallback);
+</pre>
+</div>
+</dd>
+<dt class="method" id="MessageService::loadMessageAttachment">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageService::loadMessageAttachment"></a><code><b><span class="methodName">loadMessageAttachment</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Loads a specified message attachment.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void loadMessageAttachment(<a href="#MessageAttachment">MessageAttachment</a> attachment, <a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+This method is used only for email services. If the message attachment is already loaded, the onsuccess() method of the successCallback is invoked immediately.
+            </p>
+            <p>
+The errorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+              <li>
+ UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/messaging.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">attachment</span>:
+      Message attachment to be loaded
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback function that is called when the message attachment is successfully loaded
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called when the loading request fails
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Assumes messaging service is initialized */
+var service;
+/* Defines the success body loaded callback */
+function successCallback(attachment)
+{
+   console.log("attachment" + attachment.id + "is loaded to:" + attachment.filePath);
+}
+/* Defines the error callback */
+function errorCallback(error)
+{
+   console.log("Cannot load message attachment" + error.message);
+}
+
+function messagesFoundCB(messages)
+{
+   for (var i = 0; i &lt; messages.length; i++)
+   {
+      var message = messages[i];
+      if (!message.attachments[0].loaded)
+      {
+         service.loadMessageAttachment(message.attachments[0], successCallback, errorCallback);
+      }
+   }
+}
+
+service.messageStorage.findMessages(new tizen.AttributeFilter("hasAttachment", "EXACTLY", true), messagesFoundCB);
+</pre>
+</div>
+</dd>
+<dt class="method" id="MessageService::sync">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageService::sync"></a><code><b><span class="methodName">sync</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Synchronizes the service content with an external mail server.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long sync(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional unsigned long? limit);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+This method is used only for email services. This method performs the same actions as syncFolder for every folder with Synchronizable flag set within the current Messaging service.
+            </p>
+            <p>
+The errorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+              <li>
+ AbortError - If the operation has been stopped.              </li>
+              <li>
+ UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/messaging.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when the operation is completed successfully
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called when the request fails
+                </li>
+          <li class="param">
+<span class="name">limit</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+           Maximum amount of messages retrieved within each folder
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long Identifier which can be used to stop initiated sync operation
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Defines the success callback */
+function serviceSynced()
+{
+   console.log("New messages are fetched!");
+}
+
+/* Defines the success callback */
+function servicesListSuccessCB(services)
+{
+   services[0].sync(serviceSynced, null, 30);
+   /* Subscribes to MessageStorage notification */
+}
+tizen.messaging.getMessageServices("messaging.email", servicesListSuccessCB);
+</pre>
+</div>
+</dd>
+<dt class="method" id="MessageService::syncFolder">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageService::syncFolder"></a><code><b><span class="methodName">syncFolder</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Synchronizes the folder content with an external mail server.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long syncFolder(<a href="#MessageFolder">MessageFolder</a> folder, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional unsigned long? limit);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+This method is used only for email services. This method performs the following actions:
+            </p>
+            <ul>
+              <li>
+Exports local changes within a given folder from device to server.              </li>
+              <li>
+Retrieves the list of available messages from within the given folder.              </li>
+            </ul>
+            <p>
+Messages that are retrieved from a given folder, even if synchronizable flag for this folder is not set.
+The backend is responsible in deciding which data is retrieved for every message. It can be:
+            </p>
+            <ul>
+              <li>
+Message header details              </li>
+              <li>
+Whole message body              </li>
+            </ul>
+            <p>
+The limit of latest messages for the given folder must be retrieved and put into <em>MessageStorage</em>. If the limit is not set, the entire folder must be retrieved.
+            </p>
+            <p>
+The errorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+              <li>
+ AbortError - If the operation is stopped.              </li>
+              <li>
+ UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/messaging.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">folder</span>:
+          Folder to be synchronized
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when the operation is completed successfully
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called when the request fails
+                </li>
+          <li class="param">
+<span class="name">limit</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+           The maximum amount of messages retrieved within a given folder
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long Identifier which can be used to stop initiated sync operation
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var emailService; /* Assumes email service is initialized */
+/* Defines the error callback */
+function errorCallback(err)
+{
+   console.log(err.name + " error: " + err.message);
+}
+function serviceCallback(services)
+{
+   emailService = services[0];
+   var filter = new tizen.AttributeFilter("serviceId", "EXACTLY", emailService.id);
+
+   emailService.messageStorage.findFolders(filter, folderQueryCallback);
+}
+
+/* Defines the success callback */
+function folderSynced()
+{
+   console.log("New messages are fetched!");
+}
+function folderQueryCallback(folders)
+{
+   console.log(folders.length + " folders(s) found!");
+   for (var i = 0; i &lt; folders.length; i++)
+   {
+      emailService.syncFolder (folders[i], folderSynced, null, 30);
+   }
+}
+
+tizen.messaging.getMessageServices("messaging.email", serviceCallback, errorCallback);
+</pre>
+</div>
+</dd>
+<dt class="method" id="MessageService::stopSync">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageService::stopSync"></a><code><b><span class="methodName">stopSync</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Stops sync() and syncFoler() operation.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void stopSync(long opId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+If the <em>operationId </em>argument is valid and corresponds to a service operation already in progress, the operation must be stopped and its error callback must be invoked with error type AbortError.
+            </p>
+            <p>
+If the <em>operationId </em>argument is not valid or does not correspond to a valid service operation, the method will return without any further action.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">opId</span>:
+  Service operation identifier
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if the method cannot be completed because of an unknown error.
+                </p></li></ul>
+</li></ul>
+        </div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="MessageRecipientsCallback">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageRecipientsCallback"></a><h3>2.9. MessageRecipientsCallback</h3>
+<div class="brief">
+ The MessageRecipientsCallback interface specifies the methods to be called for the sendMessage() operation.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageRecipientsCallback {
+
+    void onsuccess(DOMString[] recipients);
+
+   };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MessageRecipientsCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageRecipientsCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the message sending is finished.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(DOMString[] recipients);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">recipients</span>:
+ Recipients of the message
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="MessageBodySuccessCallback">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageBodySuccessCallback"></a><h3>2.10. MessageBodySuccessCallback</h3>
+<div class="brief">
+ The MessageBodySuccessCallback interface specifies a success callback function that takes a message as the input argument.
+It is used in the loadMessageBody() asynchronous operation.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageBodySuccessCallback {
+
+     void onsuccess(<a href="#Message">Message</a> message);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MessageBodySuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageBodySuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the asynchronous query completes successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Message">Message</a> message);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">message</span>:
+ Message containing the loaded body
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="MessageAttachmentSuccessCallback">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageAttachmentSuccessCallback"></a><h3>2.11. MessageAttachmentSuccessCallback</h3>
+<div class="brief">
+ The MessageAttachmentSuccessCallback callback interface specifies a success callback function that takes the loaded attachment as the input argument.
+It is used in the loadMessageAttachment() asynchronous operation.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageAttachmentSuccessCallback {
+
+     void onsuccess(<a href="#MessageAttachment">MessageAttachment</a> attachment);
+   };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MessageAttachmentSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageAttachmentSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the asynchronous query completes successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#MessageAttachment">MessageAttachment</a> attachment);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">attachment</span>:
+ Loaded attachment
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="MessageStorage">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageStorage"></a><h3>2.12. MessageStorage</h3>
+<div class="brief">
+ The MessageStorage interface allows management capabilities using a web application to query, update, and delete messages, and subscribe to <em>MessageStorage </em>changes.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MessageStorage {
+
+    void addDraftMessage(<a href="#Message">Message</a> message,
+                         optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void findMessages(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter,
+                      <a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a> successCallback,
+                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                      optional <a href="tizen.html#SortMode">SortMode</a>? sort,
+                      optional unsigned long? limit,
+                      optional unsigned long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeMessages(<a href="#Message">Message</a>[] messages,
+                        optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void updateMessages(<a href="#Message">Message</a>[] messages,
+                        optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void findConversations(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter,
+                           <a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a> successCallback,
+                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                           optional <a href="tizen.html#SortMode">SortMode</a>? sort,
+                           optional unsigned long? limit,
+                           optional unsigned long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeConversations(<a href="#MessageConversation">MessageConversation</a>[] conversations,
+                             optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+
+    void findFolders(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter,
+                     <a href="#MessageFolderArraySuccessCallback">MessageFolderArraySuccessCallback</a> successCallback,
+                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long addMessagesChangeListener(<a href="#MessagesChangeCallback">MessagesChangeCallback</a> messagesChangeCallback,
+                                   optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long addConversationsChangeListener(<a href="#MessageConversationsChangeCallback">MessageConversationsChangeCallback</a> conversationsChangeCallback,
+                                        optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long addFoldersChangeListener(<a href="#MessageFoldersChangeCallback">MessageFoldersChangeCallback</a> foldersChangeCallback,
+                                  optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+In addition to simple message queries, the <em>MessageStorage </em>interface provides functionality to find conversations and folders.
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MessageStorage::addDraftMessage">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageStorage::addDraftMessage"></a><code><b><span class="methodName">addDraftMessage</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Adds a draft message to <em>MessageStorage</em> and these messages are stored in the Drafts folder.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void addDraftMessage(<a href="#Message">Message</a> message, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+The errorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidValuesError - If any of the input parameters contain an invalid value.              </li>
+              <li>
+ UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/messaging.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">message</span>:
+         Draft message to add to the storage
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when draft messages are successfully added
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter
+is not compatible with the expected type for that parameter or if the method is invoked for a received message.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Defines the success callback */
+function successCallback()
+{
+   console.log("Draft message added");
+}
+
+/* Defines the error callback */
+function errorCallback(error)
+{
+   console.log("Cannot add draft message " + error.message);
+}
+
+/* Defines the service query success callback */
+function serviceListCB(services)
+{
+   if (services.length &gt; 0)
+   {
+      var msg = new tizen.Message("messaging.sms", {plainBody: "Tizen draft SMS message."});
+      services[0].messageStorage.addDraftMessage(msg, successCallback,
+                                                 errorCallback);
+   }
+}
+tizen.messaging.getMessageServices("messaging.sms", serviceListCB);
+</pre>
+</div>
+</dd>
+<dt class="method" id="MessageStorage::findMessages">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageStorage::findMessages"></a><code><b><span class="methodName">findMessages</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Finds messages from <em>MessageStorage</em>.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void findMessages(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit, optional unsigned long? offset);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+The errorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+              <li>
+ UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/messaging.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">filter</span>:
+          Criteria to be used when filtering
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback function that is called when the invocation ends successfully
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called when an error occurs
+                </li>
+          <li class="param">
+<span class="name">sort</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+            Sorting mode for the query
+                </li>
+          <li class="param">
+<span class="name">limit</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+           The maximum number of messages to retrieve (It has the same meaning as SQL LIMIT)<br>Defaults to <var>0</var>, meaning that there is no limit
+                </li>
+          <li class="param">
+<span class="name">offset</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+          Offset in the result set, from where the results are listed (It is the same semantics as SQL OFFSET)<br>Defaults to <var>0</var>, meaning no offset.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var service; /* Assumes messaging service is initialized */
+var messageStorage = service.messageStorage;
+function messageArrayCB(messages)
+{
+   console.log(messages.length + " message(s) fetched!");
+   for (var i = 0; i &lt; messages.length; i++)
+   {
+      console.log(i + ". message from " + messages[i].from);
+   }
+}
+
+/* Defines the error callback */
+function errorCallback(error)
+{
+   console.log("Cannot query messages" + error.message);
+}
+
+var filter = new tizen.AttributeFilter("from", "CONTAINS", "2593");
+messageStorage.findMessages(filter, messageArrayCB, errorCallback);
+</pre>
+</div>
+</dd>
+<dt class="method" id="MessageStorage::removeMessages">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageStorage::removeMessages"></a><code><b><span class="methodName">removeMessages</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes messages from <em>MessageStorage</em>.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeMessages(<a href="#Message">Message</a>[] messages, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+The errorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+InvalidValuesError - If any of the input parameters contain an invalid value.              </li>
+              <li>
+ UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/messaging.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">messages</span>:
+        Array of messages to delete
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when messages are successfully deleted
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Defines the success callback */
+var service; /* Assumes messaging service is initialized */
+var messageStorage = service.messageStorage;
+function successCallback()
+{
+   console.log("Messages were deleted");
+}
+
+/* Defines the error callback */
+function errorCallback(error)
+{
+   console.log("Cannot delete messages " + error.message);
+}
+
+function messageArrayCB(messages)
+{
+   if (messages.length &gt; 0)
+   {
+      messageStorage.removeMessages(messages, successCallback, errorCallback);
+   }
+   else
+   {
+      console.log("No messages found");
+   }
+}
+
+var filter = new tizen.AttributeFilter("from", "CONTAINS", "2593");
+messageStorage.findMessages(filter, messageArrayCB);
+</pre>
+</div>
+</dd>
+<dt class="method" id="MessageStorage::updateMessages">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageStorage::updateMessages"></a><code><b><span class="methodName">updateMessages</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Updates messages in <em>MessageStorage</em>.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void updateMessages(<a href="#Message">Message</a>[] messages, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+The backend must check whether the required updates can be applied and invoke the errorCallback, if they cannot be checked.
+Depending on the backend synchronization settings, the local changes in <em>MessageStorage</em> can be rewritten as a result of invoking the sync() or syncFolder() methods of the related message service.
+            </p>
+            <p>
+The errorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+              <li>
+ UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/messaging.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">messages</span>:
+        Array listing messages to update
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when messages are successfully updated
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var service; /* Assumes messaging service is initialized */
+var messageStorage = service.messageStorage;
+
+/* Defines the success callback */
+function successCallback()
+{
+   console.log("Messages were updated");
+}
+
+/* Defines the error callback */
+function errorCallback(error)
+{
+   console.log("Cannot update messages " + error.message);
+}
+
+function messageArrayCB(messages)
+{
+   if (messages.length &gt; 0)
+   {
+      messages[0].isRead = true;
+      messageStorage.updateMessages([messages[0]], successCallback, errorCallback);
+   }
+   else
+   {
+      console.log("No messages found");
+   }
+}
+
+var filter = new tizen.AttributeFilter('isRead', 'EXACTLY', false);
+messageStorage.findMessages(filter, messageArrayCB);
+</pre>
+</div>
+</dd>
+<dt class="method" id="MessageStorage::findConversations">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageStorage::findConversations"></a><code><b><span class="methodName">findConversations</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Finds conversations from <em>MessageStorage</em>.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void findConversations(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit, optional unsigned long? offset);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+The errorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+              <li>
+ UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/messaging.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">filter</span>:
+          Criteria to be used when filtering
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback function that is called when the invocation ends successfully
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called when an error occurs
+                </li>
+          <li class="param">
+<span class="name">sort</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+            Sorting mode for the query
+                </li>
+          <li class="param">
+<span class="name">limit</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+           The maximum number of messages to retrieve (It has the same meaning as SQL LIMIT)<br>If set to <var>0</var> or omitted, then the number of records is not limited.
+                </li>
+          <li class="param">
+<span class="name">offset</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+          Offset in the result set, from where the results are listed (It is the same semantics as SQL OFFSET) <br>Defaults to<var> 0</var>, meaning no offset.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var service; /* Assumes messaging service is initialized */
+var messageStorage = service.messageStorage;
+function conversationsArrayCB(conversations)
+{
+   console.log(conversations.length + " conversation(s) found!");
+   for (var i = 0; i &lt; conversations.length; i++)
+   {
+      console.log(i + ". conversation preview " + conversations[i].preview);
+   }
+}
+
+/* Defines the error callback */
+function errorCallback(error)
+{
+   console.log("Cannot query conversations" + error.message);
+}
+
+var filter = new tizen.AttributeFilter('from', 'CONTAINS', '2593');
+messageStorage.findConversations(filter, conversationsArrayCB, errorCallback);
+</pre>
+</div>
+</dd>
+<dt class="method" id="MessageStorage::removeConversations">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageStorage::removeConversations"></a><code><b><span class="methodName">removeConversations</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes conversations from <em>MessageStorage</em>.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeConversations(<a href="#MessageConversation">MessageConversation</a>[] conversations, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+The errorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+              <li>
+ UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/messaging.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">conversations</span>:
+   Array of conversations to delete
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when conversations are successfully deleted
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var service; /* Assumes messaging service is initialized */
+var messageStorage = service.messageStorage;
+/* Defines the success callback */
+function successCallback()
+{
+   console.log("Conversations deleted");
+}
+
+/* Defines the error callback */
+function errorCallback(error)
+{
+   console.log("Cannot delete conversations " + error.message);
+}
+
+function conversationsArrayCB(conversations)
+{
+   if (conversations.length &gt; 0)
+   {
+      messageStorage.removeConversations(conversations, successCallback,
+                                         errorCallback);
+   }
+   else
+   {
+      console.log("No conversations found");
+   }
+   console.log("Deleted " + conversations.length + " conversation(s)");
+}
+
+/* Defines the error callback */
+function queryErrorCB(error)
+{
+   console.log("Cannot query conversations" + error.message);
+}
+
+var filter = new tizen.AttributeFilter('from', 'CONTAINS', '2593');
+messageStorage.findConversations(filter, conversationsArrayCB, queryErrorCB);
+</pre>
+</div>
+</dd>
+<dt class="method" id="MessageStorage::findFolders">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageStorage::findFolders"></a><code><b><span class="methodName">findFolders</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Queries folders from MessageStorage.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void findFolders(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageFolderArraySuccessCallback">MessageFolderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+The errorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidValuesError: If any of the input parameters contains an invalid value.              </li>
+              <li>
+ UnknownError: In any other error case.               </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/messaging.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">filter</span>:
+          Criteria used when filtering
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback function that is called when the invocation ends successfully
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var service; /* Assumes messaging service is initialized */
+var messageStorage = service.messageStorage;
+function folderArrayCB(folders)
+{
+   console.log(folders.length + " folders(s) found!");
+   for (var i = 0; i &lt; folders.length; i++)
+   {
+      console.log(i + ", folder: " + folders[i].name);
+   }
+}
+var filter = new tizen.AttributeFilter("serviceId", "EXACTLY", service.id);
+messageStorage.findFolders(filter, folderArrayCB);
+</pre>
+</div>
+</dd>
+<dt class="method" id="MessageStorage::addMessagesChangeListener">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageStorage::addMessagesChangeListener"></a><code><b><span class="methodName">addMessagesChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Adds a listener to subscribe to notification for MessageStorage changes.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addMessagesChangeListener(<a href="#MessagesChangeCallback">MessagesChangeCallback</a> messagesChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+The errorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+              <li>
+ UnknownError - If any other error occurs.               </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/messaging.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">messagesChangeCallback</span>:
+ Callback function that is called when the MessageStorage is changed
+                </li>
+          <li class="param">
+<span class="name">filter</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+                 Criteria to be used when filtering (Message filter)
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long Subscription identifier
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var service; /* Assumes messaging service is initialized */
+var messageStorage = service.messageStorage;
+var messageChangeCallback =
+{
+   messagesupdated: function(messages)
+   {
+      console.log(messages.length + " message(s) updated");
+   },
+   messagesadded: function(messages)
+   {
+      console.log(messages.length + " message(s) added");
+   },
+   messagesremoved: function(messages)
+   {
+      console.log(messages.length + " message(s) removed");
+   }
+};
+
+messageStorage.addMessagesChangeListener(messageChangeCallback);
+</pre>
+</div>
+</dd>
+<dt class="method" id="MessageStorage::addConversationsChangeListener">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageStorage::addConversationsChangeListener"></a><code><b><span class="methodName">addConversationsChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Adds a listener to subscribe to notifications for MessageConversation changes.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addConversationsChangeListener(<a href="#MessageConversationsChangeCallback">MessageConversationsChangeCallback</a> conversationsChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+The errorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+              <li>
+ UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/messaging.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">conversationsChangeCallback</span>:
+ Callback function that is called when the MessageConversation is changed
+                </li>
+          <li class="param">
+<span class="name">filter</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+                      Criteria to be used when filtering (MessageConversation filter)
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long Subscription identifier
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var service; /* Assumes messaging service is initialized */
+var messageStorage = service.messageStorage;
+var conversationChangeCB =
+{
+   conversationsupdated: function(conversations)
+   {
+      console.log(conversations.length + " conversations(s) updated");
+   },
+   conversationsadded: function(conversations)
+   {
+      console.log(conversations.length + " conversations(s) added");
+   },
+   conversationsremoved: function(conversations)
+   {
+      console.log(conversations.length + " conversations(s) removed");
+   }
+};
+
+messageStorage.addConversationsChangeListener(conversationChangeCB);
+</pre>
+</div>
+</dd>
+<dt class="method" id="MessageStorage::addFoldersChangeListener">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageStorage::addFoldersChangeListener"></a><code><b><span class="methodName">addFoldersChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Adds a listener to subscribe to notifications for MessageFolder changes.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addFoldersChangeListener(<a href="#MessageFoldersChangeCallback">MessageFoldersChangeCallback</a> foldersChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+The errorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+              <li>
+ UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/messaging.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">foldersChangeCallback</span>:
+ Callback function that is called when the MessageFolder is changed
+                </li>
+          <li class="param">
+<span class="name">filter</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+                Criteria to be used when filtering (MessageFolder filter)
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long Subscription identifier
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var service; /* Assumes messaging service is initialized */
+var messageStorage = service.messageStorage;
+var folderChangeCB =
+{
+   foldersupdated: function(folders)
+   {
+      console.log(folders.length + " folders(s) updated");
+   },
+   foldersadded: function(folders)
+   {
+      console.log(folders.length + " folders(s) added");
+   },
+   foldersremoved: function(folders)
+   {
+      console.log(folders.length + " folders(s) removed");
+   }
+};
+
+messageStorage.addFoldersChangeListener(folderChangeCB);
+</pre>
+</div>
+</dd>
+<dt class="method" id="MessageStorage::removeChangeListener">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageStorage::removeChangeListener"></a><code><b><span class="methodName">removeChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes a listener to unsubscribe from receiving message notifications.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeChangeListener(long watchId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+The errorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
+              <li>
+ UnknownError - If any other error occurs.              </li>
+            </ul>
+            <p>
+If the <em>subscriptionId </em>argument is valid and corresponds to a subscription already in place, the subscription process must stop immediately and further <em>MessagingStorage </em>change notifications must not be invoked.
+If the <em>subscriptionId argument does not correspond to a valid subscription, the method will return without any further action.
+</em>            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/messaging.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">watchId</span>:
+ Identifier of the subscription returned by addMessagesChangeListener(), addConversationsChangeListener() or
+addFoldersChangeListener() methods
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var watchId;
+var service; /* Assumes messaging service is initialized */
+var messageStorage = service.messageStorage;
+var folderChangeCB =
+{
+   foldersupdated: function(folders)
+   {
+      console.log(folders.length + " folders(s) updated. Cancel watching.");
+      messageStorage.removeChangeListener(watchId);
+   },
+   foldersadded: function(folders)
+   {
+      console.log(folders.length + " folders(s) added. Cancel watching.");
+      messageStorage.removeChangeListener(watchId);
+   },
+   foldersremoved: function(folders)
+   {
+      console.log(folders.length + " folders(s) removed. Cancel watching.");
+      messageStorage.removeChangeListener(watchId)
+   }
+};
+
+watchId = messageStorage.addFoldersChangeListener(folderChangeCB);
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="MessageArraySuccessCallback">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageArraySuccessCallback"></a><h3>2.13. MessageArraySuccessCallback</h3>
+<div class="brief">
+ The MessageArraySuccessCallback defines findMessages specific success callback.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageArraySuccessCallback {
+
+    void onsuccess(<a href="#Message">Message</a>[] messages);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+This callback interface specifies a success callback function,
+taking a list of messages that satisfy the filtering criteria as the input argument.
+It is used in the findMessages asynchronous operation.
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MessageArraySuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageArraySuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when an asynchronous query completes successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Message">Message</a>[] messages);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">messages</span>:
+ Array of messages that satisfy the query
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="MessageConversationArraySuccessCallback">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageConversationArraySuccessCallback"></a><h3>2.14. MessageConversationArraySuccessCallback</h3>
+<div class="brief">
+ The MessageConversationArraySuccessCallback interface defines findConversations specific success callback.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageConversationArraySuccessCallback {
+
+    void onsuccess(<a href="#MessageConversation">MessageConversation</a>[] conversations);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+This callback interface specifies a success callback function,
+taking a list of conversations that satisfy the filtering criteria as the input argument.
+It is used in the findConversations asynchronous operation.
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MessageConversationArraySuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageConversationArraySuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when an asynchronous query completes successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#MessageConversation">MessageConversation</a>[] conversations);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">conversations</span>:
+ Array of conversations that satisfy the query
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="MessageFolderArraySuccessCallback">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageFolderArraySuccessCallback"></a><h3>2.15. MessageFolderArraySuccessCallback</h3>
+<div class="brief">
+ The MessageFolderArraySuccessCallback interface defines findFolders specific success callback.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageFolderArraySuccessCallback {
+
+    void onsuccess(<a href="#MessageFolder">MessageFolder</a>[] folders);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+This callback interface specifies a success callback function,
+taking a list of folders that satisfy the filtering criteria as the input argument.
+It is used in the findFolders asynchronous operation.
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MessageFolderArraySuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageFolderArraySuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when an asynchronous query completes successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#MessageFolder">MessageFolder</a>[] folders);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">folders</span>:
+ Array of folders that satisfy the query
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="MessagesChangeCallback">
+<a class="backward-compatibility-anchor" name="::Messaging::MessagesChangeCallback"></a><h3>2.16. MessagesChangeCallback</h3>
+<div class="brief">
+ The MessagesChangeCallback defines addMessagesChangeListener callback.
+          </div>
+<pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface MessagesChangeCallback {
+
+    void messagesadded(<a href="#Message">Message</a>[] addedMessages);
+
+    void messagesupdated(<a href="#Message">Message</a>[] updatedMessages);
+
+    void messagesremoved(<a href="#Message">Message</a>[] removedMessages);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+This callback interface specifies a callback as a set of functions that will be
+invoked when messages from MessageStorage change. Each function takes a list of messages as the input argument.
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MessagesChangeCallback::messagesadded">
+<a class="backward-compatibility-anchor" name="::Messaging::MessagesChangeCallback::messagesadded"></a><code><b><span class="methodName">messagesadded</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when messages are added to the MessageStorage.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void messagesadded(<a href="#Message">Message</a>[] addedMessages);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">addedMessages</span>:
+ Array of added messages
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="MessagesChangeCallback::messagesupdated">
+<a class="backward-compatibility-anchor" name="::Messaging::MessagesChangeCallback::messagesupdated"></a><code><b><span class="methodName">messagesupdated</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when messages are updated in MessageStorage.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void messagesupdated(<a href="#Message">Message</a>[] updatedMessages);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">updatedMessages</span>:
+ Array of updated messages
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="MessagesChangeCallback::messagesremoved">
+<a class="backward-compatibility-anchor" name="::Messaging::MessagesChangeCallback::messagesremoved"></a><code><b><span class="methodName">messagesremoved</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when messages are removed from MessageStorage.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void messagesremoved(<a href="#Message">Message</a>[] removedMessages);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">removedMessages</span>:
+ Array of removed messages
+It contains only MessageId attribute.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="MessageConversationsChangeCallback">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageConversationsChangeCallback"></a><h3>2.17. MessageConversationsChangeCallback</h3>
+<div class="brief">
+ The MessageConversationsChangeCallback interface defines addConversationsChangeListener callback.
+          </div>
+<pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface MessageConversationsChangeCallback {
+
+    void conversationsadded(<a href="#MessageConversation">MessageConversation</a>[] addedConversations);
+
+    void conversationsupdated(<a href="#MessageConversation">MessageConversation</a>[] updatedConversations);
+
+    void conversationsremoved(<a href="#MessageConversation">MessageConversation</a>[] removedConversations);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+This callback interface specifies a callback as a set of functions that will be
+invoked when conversations from MessageStorage change. Each function takes a list of conversations as the input argument.
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MessageConversationsChangeCallback::conversationsadded">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageConversationsChangeCallback::conversationsadded"></a><code><b><span class="methodName">conversationsadded</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when conversations are added to MessageStorage.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void conversationsadded(<a href="#MessageConversation">MessageConversation</a>[] addedConversations);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">addedConversations</span>:
+ Array of added conversations
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="MessageConversationsChangeCallback::conversationsupdated">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageConversationsChangeCallback::conversationsupdated"></a><code><b><span class="methodName">conversationsupdated</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when conversations are updated in MessageStorage.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void conversationsupdated(<a href="#MessageConversation">MessageConversation</a>[] updatedConversations);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">updatedConversations</span>:
+ Array of updated conversations
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="MessageConversationsChangeCallback::conversationsremoved">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageConversationsChangeCallback::conversationsremoved"></a><code><b><span class="methodName">conversationsremoved</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when conversations are removed from MessageStorage.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void conversationsremoved(<a href="#MessageConversation">MessageConversation</a>[] removedConversations);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">removedConversations</span>:
+ Array of removed conversations.
+Every element contains only MessageConvId attribute.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="MessageFoldersChangeCallback">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageFoldersChangeCallback"></a><h3>2.18. MessageFoldersChangeCallback</h3>
+<div class="brief">
+ The MessageFoldersChangeCallback callback interface specifies a callback as a set of functions that are invoked when message folders from <em>MessageStorage </em>change.
+Each function takes a list of folders as the input argument.
+          </div>
+<pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface MessageFoldersChangeCallback {
+
+    void foldersadded(<a href="#MessageFolder">MessageFolder</a>[] addedFolders);
+
+    void foldersupdated(<a href="#MessageFolder">MessageFolder</a>[] updatedFolders);
+
+    void foldersremoved(<a href="#MessageFolder">MessageFolder</a>[] removedFolders);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MessageFoldersChangeCallback::foldersadded">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageFoldersChangeCallback::foldersadded"></a><code><b><span class="methodName">foldersadded</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when folders are added to <em>MessageStorage</em>.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void foldersadded(<a href="#MessageFolder">MessageFolder</a>[] addedFolders);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">addedFolders</span>:
+ Array of added folders
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="MessageFoldersChangeCallback::foldersupdated">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageFoldersChangeCallback::foldersupdated"></a><code><b><span class="methodName">foldersupdated</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when folders are updated in <em>MessageStorage</em>.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void foldersupdated(<a href="#MessageFolder">MessageFolder</a>[] updatedFolders);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">updatedFolders</span>:
+ Array of updated folders
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="MessageFoldersChangeCallback::foldersremoved">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageFoldersChangeCallback::foldersremoved"></a><code><b><span class="methodName">foldersremoved</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when folders are removed from <em>MessageStorage</em>.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void foldersremoved(<a href="#MessageFolder">MessageFolder</a>[] removedFolders);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">removedFolders</span>:
+ Array of removed folders
+Each element contains only MessageFolderId attribute.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="MessageConversation">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageConversation"></a><h3>2.19. MessageConversation</h3>
+<div class="brief">
+ The MessageConversation interface defines the message conversation (also known as the thread of messages).
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MessageConversation {
+
+    readonly attribute <a href="#MessageConvId">MessageConvId</a> id;
+
+    readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> type;
+
+    readonly attribute Date timestamp;
+
+    readonly attribute unsigned long messageCount;
+
+    readonly attribute unsigned long unreadMessages;
+
+    readonly attribute DOMString preview;
+
+    readonly attribute DOMString subject;
+
+    readonly attribute boolean isRead;
+
+    readonly attribute DOMString from;
+
+    readonly attribute DOMString[] to;
+
+    readonly attribute DOMString[] cc;
+
+    readonly attribute DOMString[] bcc;
+
+    readonly attribute <a href="#MessageId">MessageId</a> lastMessageId;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+This interface allows a web application to get the set of properties linked to a conversation.
+This interface provides only read-only attributes.
+          </p>
+          <p>
+The conversation object represents a group of messages combined by the set of message fields. Email conversations are grouped by subject, while chat messages are grouped by sender and recipient fields.
+          </p>
+         </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="MessageConversation::id">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MessageConvId </span><span class="name">id</span></span><div class="brief">
+ The conversation identifier.
+            </div>
+<div class="description">
+            <p>
+The ID is locally unique and persistent property, assigned by the device or the Web runtime (WRT).
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageConversation::type">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MessageServiceTag </span><span class="name">type</span></span><div class="brief">
+ The type of a given conversation.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageConversation::timestamp">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">Date </span><span class="name">timestamp</span></span><div class="brief">
+ The timestamp of the latest message in a conversation.
+            </div>
+<div class="description">
+            <p>
+This property is set up by the device or the Web runtime environment.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageConversation::messageCount">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long </span><span class="name">messageCount</span></span><div class="brief">
+ The count of messages in a conversation.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageConversation::unreadMessages">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long </span><span class="name">unreadMessages</span></span><div class="brief">
+ The count of unread messages in a conversation.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageConversation::preview">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">preview</span></span><div class="brief">
+ A preview of the latest message in a conversation.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageConversation::subject">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">subject</span></span><div class="brief">
+ The subject of a conversation (applicable for group chats, MMS, email).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageConversation::isRead">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">isRead</span></span><div class="brief">
+ The flag indicating whether the latest message in a conversation has been read.
+            </div>
+<div class="description">
+            <p>
+This property is set to <var>true</var> if the message has been read, else it is set to <var>false</var>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageConversation::from">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">from</span></span><div class="brief">
+ The source address (or source phone number) of the latest message in the conversation.
+            </div>
+<div class="description">
+            <p>
+This property is set up by the device or the Web runtime environment.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageConversation::to">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString[]
+                      </span><span class="name">to</span></span><div class="brief">
+ The destination of the latest message in a conversation.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageConversation::cc">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString[]
+                      </span><span class="name">cc</span></span><div class="brief">
+ The carbon copy (cc) address of the latest message in a conversation.
+            </div>
+<div class="description">
+            <p>
+This property is used only for email.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageConversation::bcc">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString[]
+                      </span><span class="name">bcc</span></span><div class="brief">
+ The blind carbon copy (bcc) address of the latest message in a conversation.
+            </div>
+<div class="description">
+            <p>
+This property is used only for email.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageConversation::lastMessageId">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MessageId </span><span class="name">lastMessageId</span></span><div class="brief">
+ The identifier of a latest message in a conversation.
+            </div>
+<div class="description">
+            <p>
+This property is set up by the device or the Web runtime environment.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="MessageFolder">
+<a class="backward-compatibility-anchor" name="::Messaging::MessageFolder"></a><h3>2.20. MessageFolder</h3>
+<div class="brief">
+ The MessageFolder interface defines the email folder.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MessageFolder {
+
+    readonly attribute <a href="#MessageFolderId">MessageFolderId</a> id;
+
+    readonly attribute <a href="#MessageFolderId">MessageFolderId</a> parentId;
+
+    readonly attribute DOMString serviceId;
+
+    readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> contentType;
+
+    attribute DOMString name setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    readonly attribute DOMString path;
+
+    readonly attribute DOMString type;
+
+    attribute boolean synchronizable setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+This interface allows a web application to get the set of properties that are linked to an email folder.
+          </p>
+          <p>
+The concept of folders is present in several email protocols, such as IMAP, Mail For Exchange.
+          </p>
+          <p>
+If the Messaging service does not represent email or an email protocol supporting the concept of folders on a server, this service has one folder which is the standard INBOX folder.
+          </p>
+         </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="MessageFolder::id">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MessageFolderId </span><span class="name">id</span></span><div class="brief">
+ The folder identifier.
+The ID is locally unique and persistent property, assigned by the device or the Web runtime (WRT).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageFolder::parentId">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MessageFolderId </span><span class="name">parentId</span></span><div class="brief">
+ The identifier for the parent folder of  a specified folder.
+            </div>
+<div class="description">
+            <p>
+If this folder is a root folder, the parent folder ID is <var>null</var>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageFolder::serviceId">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">serviceId</span></span><div class="brief">
+ The identifier of the service to which a specified folder belongs.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0.
+            </p>
+</li>
+<li class="attribute" id="MessageFolder::contentType">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MessageServiceTag </span><span class="name">contentType</span></span><div class="brief">
+ The type of the messages contained within a folder.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageFolder::name">
+<span class="attrName"><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
+ The visible name of a folder.
+            </div>
+<div class="description">
+            <p>
+Can be modified. By default, it contains the folder name from the server.
+            </p>
+            <p>
+In case the current Messaging service does not support remote folders on the server (and this folder is the only one that the current service has), this attribute contains the service name, by default.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageFolder::path">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">path</span></span><div class="brief">
+ The whole path of a remote folder on the server.
+            </div>
+<div class="description">
+            <p>
+If the current Messaging service does not support remote folders on the server,
+this attribute will be empty.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageFolder::type">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">type</span></span><div class="brief">
+ The standard type of a folder.
+            </div>
+<div class="description">
+            <p>
+It can be one of the following values:
+            </p>
+            <ul>
+              <li>
+INBOX              </li>
+              <li>
+OUTBOX              </li>
+              <li>
+DRAFTS              </li>
+              <li>
+SENTBOX              </li>
+            </ul>
+            <p>
+If this folder is not a standard folder, an empty value must be returned.
+            </p>
+            <p>
+This property is unique for each type within one Messaging service.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="MessageFolder::synchronizable">
+<span class="attrName"><span class="type">boolean </span><span class="name">synchronizable</span></span><div class="brief">
+ The flag indicating whether this folder should be synchronized.
+            </div>
+<div class="description">
+            <p>
+This attribute affects the behavior of the MessageService.sync() method.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<h2 id="api-features">3. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the sms application runs on a device with telephony(SMS) feature, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/network.telephony</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the mms application runs on a device with MMS feature, define below in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/network.telephony.mms</li>
+</div>
+<p></p>
+                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering</a>.
+</div>
+<h2 id="full-webidl">4. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Messaging {
+
+  [NoInterfaceObject] interface MessageManagerObject {
+    readonly attribute <a href="#Messaging">Messaging</a> messaging;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MessageManagerObject">MessageManagerObject</a>;
+
+  enum MessageServiceTag {"messaging.sms", "messaging.mms", "messaging.email" };
+
+  typedef DOMString MessageId;
+
+  typedef DOMString MessageAttachmentId;
+
+  typedef DOMString MessageConvId;
+
+  typedef DOMString MessageFolderId;
+
+  [Constructor(<a href="#MessageServiceTag">MessageServiceTag</a> type, optional <a href="#MessageInit">MessageInit</a>? messageInitDict)]
+  interface Message {
+
+    readonly attribute <a href="#MessageId">MessageId</a>? id;
+
+    readonly attribute <a href="#MessageConvId">MessageConvId</a>? conversationId;
+
+    readonly attribute <a href="#MessageFolderId">MessageFolderId</a>? folderId;
+
+    readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> type;
+
+    readonly attribute Date? timestamp;
+
+    readonly attribute DOMString? from;
+
+    attribute DOMString[] to setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    attribute DOMString[] cc setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    attribute DOMString[] bcc setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    attribute <a href="#MessageBody">MessageBody</a> body setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    attribute boolean isRead setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    readonly attribute boolean hasAttachment;
+
+    attribute boolean isHighPriority setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    attribute DOMString subject setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    readonly attribute <a href="#MessageId">MessageId</a>? inResponseTo setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    readonly attribute DOMString messageStatus;
+
+    attribute <a href="#MessageAttachment">MessageAttachment</a>[] attachments setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  dictionary MessageInit
+  {
+
+    DOMString subject;
+
+    DOMString[] to;
+
+    DOMString[] cc;
+
+    DOMString[] bcc;
+
+    DOMString plainBody;
+
+    DOMString htmlBody;
+
+    boolean isHighPriority;
+  };
+
+  [NoInterfaceObject] interface MessageBody {
+
+    readonly attribute <a href="#MessageId">MessageId</a> messageId;
+
+    readonly attribute boolean loaded;
+
+    attribute DOMString plainBody setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    attribute DOMString htmlBody setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    attribute <a href="#MessageAttachment">MessageAttachment</a>[] inlineAttachments setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+
+  [Constructor(DOMString filePath, optional DOMString? mimeType)]
+  interface MessageAttachment {
+
+    readonly attribute <a href="#MessageAttachmentId">MessageAttachmentId</a>? id;
+
+    readonly attribute <a href="#MessageId">MessageId</a>? messageId;
+
+    readonly attribute DOMString? mimeType;
+
+    readonly attribute DOMString? filePath;
+  };
+
+  [NoInterfaceObject] interface Messaging {
+
+    void getMessageServices(<a href="#MessageServiceTag">MessageServiceTag</a> messageServiceType,
+                            <a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a> successCallback,
+                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface MessageServiceArraySuccessCallback {
+
+    void onsuccess(<a href="#MessageService">MessageService</a>[] services);
+
+  };
+
+
+  [NoInterfaceObject] interface MessageService {
+
+    readonly attribute DOMString id;
+
+    readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> type;
+
+    readonly attribute DOMString name;
+
+    void sendMessage(<a href="#Message">Message</a> message,
+                     optional <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>? successCallback,
+                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                     optional long? simIndex) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void loadMessageBody(<a href="#Message">Message</a> message,
+                         <a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a> successCallback,
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void loadMessageAttachment(<a href="#MessageAttachment">MessageAttachment</a> attachment,
+                               <a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a> successCallback,
+                               optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long sync(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+              optional unsigned long? limit) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long syncFolder(<a href="#MessageFolder">MessageFolder</a> folder,
+                    optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                    optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                    optional unsigned long? limit) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void stopSync(long opId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    readonly attribute <a href="#MessageStorage">MessageStorage</a> messageStorage getraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface MessageRecipientsCallback {
+
+    void onsuccess(DOMString[] recipients);
+
+   };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface MessageBodySuccessCallback {
+
+     void onsuccess(<a href="#Message">Message</a> message);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface MessageAttachmentSuccessCallback {
+
+     void onsuccess(<a href="#MessageAttachment">MessageAttachment</a> attachment);
+   };
+
+  [NoInterfaceObject] interface MessageStorage {
+
+    void addDraftMessage(<a href="#Message">Message</a> message,
+                         optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void findMessages(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter,
+                      <a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a> successCallback,
+                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                      optional <a href="tizen.html#SortMode">SortMode</a>? sort,
+                      optional unsigned long? limit,
+                      optional unsigned long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeMessages(<a href="#Message">Message</a>[] messages,
+                        optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void updateMessages(<a href="#Message">Message</a>[] messages,
+                        optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void findConversations(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter,
+                           <a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a> successCallback,
+                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                           optional <a href="tizen.html#SortMode">SortMode</a>? sort,
+                           optional unsigned long? limit,
+                           optional unsigned long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeConversations(<a href="#MessageConversation">MessageConversation</a>[] conversations,
+                             optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+
+    void findFolders(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter,
+                     <a href="#MessageFolderArraySuccessCallback">MessageFolderArraySuccessCallback</a> successCallback,
+                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long addMessagesChangeListener(<a href="#MessagesChangeCallback">MessagesChangeCallback</a> messagesChangeCallback,
+                                   optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long addConversationsChangeListener(<a href="#MessageConversationsChangeCallback">MessageConversationsChangeCallback</a> conversationsChangeCallback,
+                                        optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long addFoldersChangeListener(<a href="#MessageFoldersChangeCallback">MessageFoldersChangeCallback</a> foldersChangeCallback,
+                                  optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface MessageArraySuccessCallback {
+
+    void onsuccess(<a href="#Message">Message</a>[] messages);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface MessageConversationArraySuccessCallback {
+
+    void onsuccess(<a href="#MessageConversation">MessageConversation</a>[] conversations);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface MessageFolderArraySuccessCallback {
+
+    void onsuccess(<a href="#MessageFolder">MessageFolder</a>[] folders);
+  };
+
+  [Callback, NoInterfaceObject] interface MessagesChangeCallback {
+
+    void messagesadded(<a href="#Message">Message</a>[] addedMessages);
+
+    void messagesupdated(<a href="#Message">Message</a>[] updatedMessages);
+
+    void messagesremoved(<a href="#Message">Message</a>[] removedMessages);
+  };
+
+  [Callback, NoInterfaceObject] interface MessageConversationsChangeCallback {
+
+    void conversationsadded(<a href="#MessageConversation">MessageConversation</a>[] addedConversations);
+
+    void conversationsupdated(<a href="#MessageConversation">MessageConversation</a>[] updatedConversations);
+
+    void conversationsremoved(<a href="#MessageConversation">MessageConversation</a>[] removedConversations);
+  };
+
+  [Callback, NoInterfaceObject] interface MessageFoldersChangeCallback {
+
+    void foldersadded(<a href="#MessageFolder">MessageFolder</a>[] addedFolders);
+
+    void foldersupdated(<a href="#MessageFolder">MessageFolder</a>[] updatedFolders);
+
+    void foldersremoved(<a href="#MessageFolder">MessageFolder</a>[] removedFolders);
+  };
+
+  [NoInterfaceObject] interface MessageConversation {
+
+    readonly attribute <a href="#MessageConvId">MessageConvId</a> id;
+
+    readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> type;
+
+    readonly attribute Date timestamp;
+
+    readonly attribute unsigned long messageCount;
+
+    readonly attribute unsigned long unreadMessages;
+
+    readonly attribute DOMString preview;
+
+    readonly attribute DOMString subject;
+
+    readonly attribute boolean isRead;
+
+    readonly attribute DOMString from;
+
+    readonly attribute DOMString[] to;
+
+    readonly attribute DOMString[] cc;
+
+    readonly attribute DOMString[] bcc;
+
+    readonly attribute <a href="#MessageId">MessageId</a> lastMessageId;
+  };
+
+  [NoInterfaceObject] interface MessageFolder {
+
+    readonly attribute <a href="#MessageFolderId">MessageFolderId</a> id;
+
+    readonly attribute <a href="#MessageFolderId">MessageFolderId</a> parentId;
+
+    readonly attribute DOMString serviceId;
+
+    readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> contentType;
+
+    attribute DOMString name setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    readonly attribute DOMString path;
+
+    readonly attribute DOMString type;
+
+    attribute boolean synchronizable setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

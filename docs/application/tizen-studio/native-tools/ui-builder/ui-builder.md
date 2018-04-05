@@ -19,11 +19,13 @@ To create a UI layout:
 
 1. Create a view.
 
-    A Tizen native application is composed of multiple views through which the user navigates. The view is an editing unit in the native UI Builder.
+   - With the **Outline** view:
 
-   To add a new view in the **Outline** view, click the **Empty View** icon in the toolbar (marked by a red circle in the following figure), or right-click the **Outline** view area and select **Add** and the applicable view.
+     A Tizen native application is composed of multiple views through which the user navigates. The view is an editing unit in the native UI Builder.
 
-   ![Empty view](./media/ui_builder_empty_view.png) ![Empty view](./media/ui_builder_empty_view2.png)
+     To add a new view in the **Outline** view, click the **Empty View** icon in the toolbar (marked by a red circle in the following figure), or right-click the **Outline** view area and select **Add** and the applicable view.
+
+     ![Empty view](./media/ui_builder_empty_view.png) ![Empty view](./media/ui_builder_empty_view2.png)
 
    - With the **Palette**:
 
@@ -41,6 +43,8 @@ To create a UI layout:
    The following figure shows the **Outline** view after adding a grid root container from the **Palette** to the empty view.
 
    ![Palette](./media/ui_builder_palette.png)
+
+   You can also use the **Palette** search function to search for and place items that match a part of an input string.
 
    ![Palette](./media/ui_builder_palette2.png)
 

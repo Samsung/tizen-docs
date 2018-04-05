@@ -1,0 +1,805 @@
+    <!DOCTYPE html> <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <link media="screen" href="./tizen/tizen.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-25976949-1']);
+        _gaq.push(['_setDomainName', 'tizen.org']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+        </script>
+        <title>Tizen Mobile Web W3C/HTML5 and Supplementaries API Reference</title>
+        </head>
+        <body id="content">
+            <div id="title" class="api">
+                <h1>Tizen Mobile Web W3C/HTML5 and Supplementaries API Reference</h3>
+            </div>
+                <p>The APIs listed in this category are all part of the W3C specifications. Some of the APIs are stable while others are draft specifications. The draft APIs are subject to change as the W3C specification evolves.</p>
+                <p>The W3C APIs are categorized based on the functionality to make it easier to locate specific APIs.
+                 To learn the Tizen features provided by the W3C/HTML5 and  some supplementary APIs, see <a href="https://developer.tizen.org/development/guides/web-application/w3chtml5supplementary-features/">Guide to W3C/HTML5 and Some Supplementary Features</a>.</p>
+            <div><h4 id="dom">DOM, Forms and Styles</h4>
+                <table width="90%">
+                    <thead>
+                        <tr><th style="width:20%">Specification</th><th>Description</th><th style="width:10%"><a class="status" href="#status">Status *</a></th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="forms" name="forms"><a href="http://www.w3.org/TR/2011/WD-html5-20110525/forms.html#forms">HTML5 Forms (Partial)</a></td>
+                            <td>HTML5 form features. The content attribute currently not supported is:
+                                <ul>
+                                    <li><code>formnovalidate</code> of <code>form</code> element</li>
+                                </ul>
+                            </td>
+                            <td align="center">LCWD</td>
+                        </tr>
+                        <tr>
+                            <td id="selectors1" name="selectors1"><a href="http://www.w3.org/TR/2012/WD-selectors-api-20120628/">Selectors API Level 1</a></td>
+                            <td>Retrieves Element nodes from the DOM by matching against a group of selectors.</td>
+                            <td align="center">LCWD</td>
+                        </tr>
+                        <tr>
+                            <td id="selectors2" name="selectors2"><a href="http://www.w3.org/TR/2010/WD-selectors-api2-20100119/">Selectors API Level 2 (Partial)</a></td>
+                            <td>Retrieves Element nodes from the DOM by matching against a group of selectors, and for testing if a given element matches a particular selector. The methods currently not supported are:
+                            <ul>
+                                <li><code>queryScopedSelector, queryScopedSelectorAll</code> of <code>NodeSelector</code> interface</li>
+                                <li><code>matchesSelector</code> of <code>Element</code> interface</li>
+                            </ul>
+                            </td>
+                            <td align="center">WD</td>
+                        </tr>
+                        <tr>
+                            <td id="mediaquery" name="mediaquery"><a href="http://www.w3.org/TR/2012/REC-css3-mediaqueries-20120619">Media Queries (Partial)</a></td>
+                            <td>Offers a mechanism that allows adapting the layout and behavior of a Web page based on some of the characteristics of the device, including the screen width/height. The query currently not supported is:
+                            <ul>
+                                <li><code>color-index, min-color-index, max-color-index, resolution, scan, print, 3d-glasses, grid</code></li>
+                            </ul>
+                            </td>
+                            <td align="center">REC</td>
+                        </tr>
+                        <tr>
+                            <td id="transforms" name="transforms"><a href="http://www.w3.org/TR/2012/WD-css3-transforms-20120911/">CSS Transforms</a></td>
+                            <td>CSS transforms allows elements styled with CSS to be transformed in two-dimensional or three-dimensional space.</td>
+                            <td align="center">WD</td>
+                        </tr>
+                        <tr>
+                            <td id="animations" name="animations"><a href="http://www.w3.org/TR/2012/WD-css3-animations-20120403/">CSS Animations Module Level 3</a></td>
+                            <td>CSS Animations allow an author to modify CSS property values over time.</td>
+                            <td align="center">WD</td>
+                        </tr>
+                        <tr>
+                            <td id="transitions" name="transitions"><a href="http://www.w3.org/TR/2012/WD-css3-transitions-20120403/">CSS Transitions Module Level 3 (Partial)</a></td>
+                            <td>CSS Transitions allow property changes in CSS values to occur smoothly over a specified duration. The method and attribute currently not supported are:
+                                <ul>
+                                    <li><code>initTransitionEvent</code> of <code>TransitionEvent</code> interface</li>
+                                    <li><code>pseudoElement</code> of <code>TransitionEvent</code> interface</li>
+                                </ul>
+                            </td>
+                            <td align="center">WD</td>
+                        </tr>
+                        <tr>
+                            <td id="color" name="color"><a href="http://www.w3.org/TR/2011/REC-css3-color-20110607">CSS Color Module Level 3</a></td>
+                            <td>CSS3 color enhancements related to color values and properties for foreground color and group opacity.</td>
+                            <td align="center">REC</td>
+                        </tr>
+                        <tr>
+                            <td id="border" name="border"><a href="http://www.w3.org/TR/2012/CR-css3-background-20120724/">CSS Backgrounds and Borders Module Level 3</a></td>
+                            <td>Rounded corners, complex background images, shadow effects.</td>
+                            <td align="center">CR</td>
+                        </tr>
+                        <tr>
+                            <td id="flexi" name="flexi"><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120612/">CSS Flexible Box Layout Module</a></td>
+                            <td>CSS box model optimized for user interface design.</td>
+                            <td align="center">LCWD</td>
+                        </tr>
+                        <tr>
+                            <td id="multicolumn" name="multicolumn"><a href="http://www.w3.org/TR/2011/CR-css3-multicol-20110412">CSS Multi-column Layout Module (Partial)</a></td>
+                            <td>Creates multiple columns for laying out text. The property currently not supported is:
+                                <ul>
+                                    <li><code>column-fill</code></li>
+                                </ul>
+                                The values currently not supported are:
+                                <ul>
+                                    <li><code>column</code>, <code>avoid-page</code> and <code>avoid-column</code> of properties <code>break-before</code> and <code>break-after</code></li>
+                                    <li><code>avoid-page</code> and <code>avoid-column</code> of property <code>break-inside</code> </li>
+                                </ul>
+                            </td>
+                            <td align="center">CR</td>
+                        </tr>
+                        <tr>
+                            <td id="text" name="text"><a href="http://www.w3.org/TR/2012/WD-css3-text-20121113">CSS Text Module Level 3 (Partial)</a></td>
+                            <td>CSS properties for text manipulation and specifies their processing model. The properties currently not supported are:
+                                <ul>
+                                    <li><code>text-justify, text-decoration-color, text-decoration-line, text-decoration-style, text-decoration-skip, hanging-punctuation</code></li>
+                                </ul>
+                            </td>
+                            <td align="center">WD</td>
+                        </tr>
+                        <tr>
+                            <td id="basicui" name="basicui"><a href="http://www.w3.org/TR/2012/WD-css3-ui-20120117/">CSS Basic User Interface Module Level 3 (CSS3 UI)</a></td>
+                            <td>User interface related CSS enhancements.</td>
+                            <td align="center">LCWD</td>
+                        </tr>
+                        <tr>
+                            <td id="font" name="font"><a href="http://www.w3.org/TR/2012/WD-css3-fonts-20120823">CSS Fonts Module Level 3 (Partial)</a></td>
+                            <td>@font-face rule with downloadable font src URL. The features currently not supported are:
+                                <ul>
+                                    <li><code>font-feature-settings, font-language-override, font-synthesis, font-variant-alternates, font-variant-caps, font-variant-east-asian, font-variant-numeric, font-variant-position, font-size-adjust, font-stretch</code></li>
+                                </ul>
+                            </td>
+                            <td align="center">WD</td>
+                        </tr>
+                        <tr>
+                            <td id="woff" name="woff"><a href="http://www.w3.org/TR/2012/PR-WOFF-20121011/">WOFF File Format 1.0</a></td>
+                            <td>Web Open Font Format: File Format 1.0.</td>
+                            <td align="center">PR</td>
+                        </tr>
+                        <tr>
+                            <td id="dom" name="dom"><a href="http://www.w3.org/TR/2011/WD-html5-20110525/">DOM/JavaScript related HTML5 Enhancements</a></td>
+                            <td>Handy DOM/JavaScript related enhancements in HTML5.</td>
+                            <td align="center">LCWD</td>
+                        </tr>
+                        <tr>
+                            <td id="history" name="history"><a href="http://www.w3.org/TR/2011/WD-html5-20110525/history.html#history">HTML5 The session history of browsing contexts (Partial)</a></td>
+                            <td>Navigating the sequence of documents in a browsing context. The methods currently not supported are:
+                                <ul>
+                                    <li><code>resolveURL</code> of <code>Location</code> interface</li>
+                                    <li><code>initPopStateEvent</code> of <code>PopStateEvent</code> interface</li>
+                                    <li><code>initPageTransitionEvent</code> of <code>PageTransitionEvent</code> interface</li>
+                                </ul>
+                            </td>
+                            <td align="center">LCWD</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="device"><h4>Device </h4>
+                    <table width="90%">
+                        <thead>
+                              <tr><th style="width:20%">Specification</th><th>Description</th><th style="width:10%"><a class="status" href="#status">Status *</a></th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="touch" name="touch"><a href="http://www.w3.org/TR/2013/WD-touch-events-20130124/">Touch Events version 1 (Partial)</a></td>
+                                <td>W3C touch event specification for touch devices. The method currently not supported is:
+                                    <ul>
+                                        <li><code>identifiedTouch</code> of <code>TouchList</code> interface</li>
+                                    </ul>
+                                </td>
+                                <td align="center">WD</td>
+                            </tr>
+                            <tr>
+                                <td id="orientation" name="orientation">
+                                <a href="http://www.w3.org/TR/2011/WD-orientation-event-20111201">DeviceOrientation Event Specification (Partial)</a></td>
+                                <td>Provides access to orientation and acceleration data. The method and event currently not supported are:
+                                    <ul>
+                                        <li><code>initAccelerometerEvent</code> of <code>DeviceMotionEvent</code> interface</li>
+                                        <li><code>compassneedscalibration</code> event</li>
+                                    </ul>
+                                    <ul class="xmlconfig">
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                            <ul>
+                                                <li><code>http://tizen.org/feature/sensor.accelerometer</code></li>
+                                                <li><code>http://tizen.org/feature/sensor.gyroscope</code></li>
+                                                <li><code>http://tizen.org/feature/sensor.magnetometer</code></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td align="center">LCWD</td>
+                            </tr>
+                            <tr>
+                                <td id="battery" name="battery"><a href="http://www.w3.org/TR/2012/CR-battery-status-20120508">Battery Status API </a></td>
+                                <td>W3C Battery API defines new DOM event types that provide information about the battery status of the hosting device. </td>
+                                <td align="center">CR</td>
+                            </tr>
+                            <tr>
+                                <td id="vibration" name="vibration"><a href="http://www.w3.org/TR/2012/WD-vibration-20120202/">Vibration API </a></td>
+                                <td>Haptic feedback API from W3C.</td>
+                                <td align="center">LCWD</td>
+                            </tr>
+                            <tr>
+                                <td id="browserstate" name="browserstate"><a href="http://www.w3.org/TR/2012/WD-html5-20120329/offline.html?path=5_4_5#event-online">HTML5 Browser state</a></td>
+                                <td>Signals when network connectivity is available to the Web environment.</td>
+                                <td align="center">LCWD</td>
+                            </tr>
+                            <tr>
+                                <td id="sceenori" name="screenori"><a href="http://www.w3.org/TR/2012/WD-screen-orientation-20120522">The Screen Orientation API </a></td>
+                                <td>Provides an interface for web applications to read 
+                                    the screen orientation state, to be informed when this state changes 
+                                    and to lock the screen orientation to a specific state.</br>
+                                    <ul class="xmlconfig">
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                            <ul>
+                                                <li><code>http://tizen.org/feature/sensor.magnetometer</code></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td align="center">WD</td>
+                            </tr>
+                           <!-- <tr>
+                                <td id="networkinfo" name="networkinfo"><a href="http://www.w3.org/TR/2012/WD-netinfo-api-20121129/">The Network Information API </a></td>
+                                <td>W3C Network Information API provides an interface for the Web Applications to access the underlying network information (connection info) of the device.</td>
+                                <td align="center">WD</td>
+                            </tr>-->
+                            <!--
+                            <tr>
+                                <td id="sensor" name="sensor"><a href="http://dev.w3.org/2009/dap/system-info/Sensors.html">Sensors</a></td>
+                                <td>W3C Sensors API provides scripted access to the sensors information associated with the hosting device.<br/>Note: Tizen implements the Sensor API under 'tizen' namespace in the version.</td>
+                            </tr>
+                            -->
+                        </tbody>
+                    </table>
+            </div>
+
+            <h4  id="graphics">Graphics</h4>
+                    <table width="90%">
+                        <thead>
+                            <tr><th style="width:20%">Specification</th><th>Description</th><th style="width:10%"><a class="status" href="#status">Status *</a></th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="canvas" name="canvas"><a href="http://www.w3.org/TR/2012/WD-html5-20120329/the-canvas-element.html#the-canvas-element">HTML5 The <code>canvas</code> element (Partial)</a></td>
+                                <td>HTML5 canvas element including 2D context and text. The method currently not supported is:
+                                    <ul>
+                                        <li><code>toBlob</code> of <code>HTMLCanvasElement</code> interface</li>
+                                    </ul>
+                                </td>
+                                <td align="center">LCWD</td>
+                            </tr>
+                            <tr>
+                                <td id="canvas2d" name="canvas2d"><a href="http://www.w3.org/TR/2012/WD-2dcontext-20120329/">HTML Canvas 2D Context (Partial)</a></td>
+                                <td>2D Context for the HTML canvas element. The methods currently not supported are:
+                                    <ul>
+                                        <li><code>drawSystemFocusRing, drawCustomFocusRing, scrollPathIntoView</code> of <code>CanvasRenderingContext2D</code> interface</li>
+                                    </ul>
+                                </td>
+                                <td align="center">WD</td>
+                            </tr>
+                            <tr>
+                                <td id="svg" name="svg"><a href="http://www.w3.org/TR/2011/WD-html5-20110525/the-map-element.html#svg-0">HTML5 SVG</a></td>
+                                <td>Inline SVG (1.1) support in HTML5</td>
+                                <td align="center">LCWD</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+            <h4 id="media">Media</h4>
+                    <table width="90%">
+                        <thead>
+                            <tr><th style="width:20%">Specification</th><th>Description</th><th style="width:10%"><a class="status" href="#status">Status *</a></th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="video" name="video"><a href="http://www.w3.org/TR/2011/WD-html5-20110525/the-iframe-element.html#the-video-element">HTML5 The <code>video</code> element (Partial)</a></td>
+                                <td>HTML5 video element. The attributes currently not supported are:
+                                    <ul>
+                                        <li><code>startOffsetTime</code> and <code>videoTracks</code> of <code>HTMLMediaElement</code> interface</li>
+                                    </ul>
+                                </td>
+                                <td align="center">LCWD</td>
+                            </tr>
+                            <tr>
+                                <td id="audio" name="audio"><a href="http://www.w3.org/TR/2011/WD-html5-20110525/the-iframe-element.html#the-audio-element">HTML5 The <code>audio</code> element (Partial)</a></td>
+                                <td>HTML5 audio element. The attributes currently not supported are:
+                                    <ul>
+                                        <li><code>startOffsetTime</code> and <code>audioTracks</code> of <code>HTMLMediaElement</code> interface</li>
+                                    </ul>
+                                </td>
+                                <td align="center">LCWD</td>
+                            </tr>
+                            <tr>
+                                <td id="getusermedia" name="getusermedia"><a href="http://dev.w3.org/2011/webrtc/editor/getusermedia-20111130.html"><code>getUserMedia</code> (Partial)</a>
+                                </td>
+                                <td>Directly manipulates streams from cameras and microphones. The dictionary member currently not supported is:
+                                    <ul>
+                                        <li><code>audio</code> of <code>MediaStreamOptions</code> dictionary</li>
+                                    </ul>
+                                    <ul class="xmlconfig">
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/mediacapture</code></li>
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                            <ul>
+                                                <li><code>http://tizen.org/feature/camera</code></li>
+                                                <li><code>http://tizen.org/feature/microphone</code></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    </br>
+                                    <b>*Note: Only the front-facing camera is available in this version (Tizen 2.3 Mobile Profile).</b>
+                                    
+                                </td>
+                                <td align="center">ED</td>
+                            </tr>
+                            <tr>
+                                <td id="webaudio" name="webaudio"><a href="https://www.w3.org/TR/2012/WD-webaudio-20121213/">Web Audio API (Partial)</a></td>
+                                <td>W3C Web Audio API describes a high-level JavaScript API for processing and synthesizing audio in Web Applications. The interfaces and attribute currently not supported are:
+                                    <ul>
+                                        <li><code>MediaElementAudioSourceNode</code> and <code>MediaStreamAudioSourceNode</code> interfaces
+                                        <li><code>computedValue</code> of <code>AudioParam</code> interface</li>
+                                    </ul>
+                                    The enum string constant value currently not supported for <code>panningModel</code> attribute is:
+                                    <ul>
+                                        <li><code>SOUNDFIELD</code> of <code>PanningModelType</code> enum</li>
+                                    </ul>
+                                </td>
+                                <td align="center">WD</td>
+                            </tr>
+                            <tr>
+                                <td id="webspeech" name="webspeech"><a href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html">Web Speech (Partial)</a></td>
+                                <td>W3C Web Speech API defines a JavaScript API to enable web developers to incorporate speech recognition and synthesis into their web pages. The attributes and events currently not supported are:
+                                    <!--
+                                    <ul>
+                                        <li><code>continuous, interimResults, grammars, maxAlternatives, serviceURI</code> of <code>SpeechRecognition</code> interface</li>
+                                        <li><code>onsoundstart, onsoundend, onspeechstart, onspeechend</code> of <code>SpeechRecognition</code> interface</li>
+                                        <li><code>no-speech, aborted, not-allowed, service-not-supported, bad-grammar</code> of <code>SpeechRecognition</code> interface</li>
+                                    </ul>
+                                    -->
+                                    <ul>
+                                        <li><code>rate, pitch, volume, voiceURI</code> of <code>SpeechSynthesis</code> interface</li>
+                                        <li><code>onmark, onboundary</code> of <code>SpeechSynthesis</code> interface</li>
+                                    </ul>
+                                    The interfaces currently not supported are:
+                                    <ul>
+                                        <li><code>SpeechRecognition</code> interface</li>
+                                        <li><code>SpeechSynthesisVoiceList</code> interface</li>
+                                    </ul>
+                                    </br>
+                                    <!--
+                                    <div>SpeechRecognition</div>
+                                    <ul class="xmlconfig">
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/internet</code></li>
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                            <ul>
+                                                <li><code>http://tizen.org/feature/speech.recognition</code></li>
+                                                <li><code>http://tizen.org/feature/network.internet</code></li>
+                                                <li><code>http://tizen.org/feature/microphone</code></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    -->
+                                    <div>SpeechSynthesis</div>
+                                    <ul class="xmlconfig">
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                            <ul>
+                                                <li><code>http://tizen.org/feature/speech.synthesis</code></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td align="center">Note</td>
+                            </tr>
+                            <tr>
+                                <td id="mediacapture" name="mediacapture"><a href="http://www.w3.org/TR/2012/WD-html-media-capture-20120712/">HTML Media Capture </a></td>
+                                <td>Capture and record multimedia content with input tag.</br>
+                                    <ul class="xmlconfig">
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                            <ul>
+                                                <li><code>http://tizen.org/feature/camera</code></li>
+                                                <li><code>http://tizen.org/feature/microphone</code></li>
+                                            </ul>
+                                        </li>
+                                    </ul>   
+                                </td>
+                                <td align="center">LCWD</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+            <div id="communication"><h4>Communication</h4>
+                    <table width="90%">
+                        <thead>
+                              <tr><th style="width:20%">Specification</th><th>Description</th><th style="width:10%"><a class="status" href="#status">Status *</a></th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="websocket" name="websocket"><a href="http://www.w3.org/TR/2012/CR-websockets-20120920">The WebSocket API</a></td>
+                                <td>Offers bi-directional network connectivity.</br>
+                                    <ul class="xmlconfig">
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/internet</code></li>
+                                        <!--
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                            <ul>
+                                                <li><code>http://tizen.org/feature/network.internet</code></li>
+                                            </ul>
+                                        </li>
+                                        -->
+                                    </ul>
+                                </td>
+                                <td align="center">CR</td>
+                            </tr>
+                            <tr>
+                                <td id="httpreq" name="httpreq"><a href="http://www.w3.org/TR/2012/WD-XMLHttpRequest-20120117/">XMLHttpRequest Level 2</a></td>
+                                <td>Enhancements on XHR, including binary file uploading, formdata submission, transfer progress, etc.</br>
+                                    <ul class="xmlconfig">
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/internet</code></li>
+                                        <!--
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                            <ul>
+                                                <li><code>http://tizen.org/feature/network.internet</code></li>
+                                            </ul>
+                                        </li>
+                                        -->
+                                    </ul>
+                                </td>
+                                <td align="center">WD</td>
+                            </tr>
+                            <tr>
+                                <td id="serversent" name="serversent"><a href="http://www.w3.org/TR/2011/WD-eventsource-20111020">Server-Sent Events</a></td>
+                                <td>Triggers DOM events based on push notifications (via HTTP and other protocols).</br>
+                                    <ul class="xmlconfig">
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/internet</code></li>
+                                        <!--
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                            <ul>
+                                                <li><code>http://tizen.org/feature/network.internet</code></li>
+                                            </ul>
+                                        </li>
+                                        -->
+                                    </ul>
+                                </td>
+                                <td align="center">WD</td>
+                            </tr>
+                            <tr>
+                                <td id="messaging" name="messaging"><a href="http://www.w3.org/TR/2012/CR-webmessaging-20120501">HTML5 Web Messaging</a></td>
+                                <td>HTML5 Web Messaging. The postMessage API allows for Web Applications to communicate between each other.
+                                </td>
+                                <td align="center">CR</td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+            <div id="storage"><h4>Storage</h4>
+                    <table width="90%">
+                        <thead>
+                              <tr><th style="width:20%">Specification</th><th>Description</th><th style="width:10%"><a class="status" href="#status">Status *</a></th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="webstorage" name="webstorage"><a href="http://www.w3.org/TR/2011/CR-webstorage-20111208/">Web Storage</a></td>
+                                <td>W3C storage specification including session and local storage.
+                                </td>
+                                <td align="center">CR</td>
+                            </tr>
+                            <tr>
+                                <td id="file" name="file"><a href="http://www.w3.org/TR/2011/WD-FileAPI-20111020/">File API</a></td>
+                                <td>Reads files from local device file system.</td>
+                                <td align="center">WD</td>
+                            </tr>
+                            <tr>
+                                <td id="directory" name="directory"><a href="http://www.w3.org/TR/2011/WD-file-system-api-20110419">File API: Directories and System</a></td>
+                                <td>Accesses the device file system.</br>
+                                    <ul class="xmlconfig">
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/unlimitedstorage</code></li>
+                                    </ul>
+                            </td>
+                                <td align="center">WD</td>
+                            </tr>
+                            <tr>
+                                <td id="writer" name="writer"><a href="http://www.w3.org/TR/2011/WD-file-writer-api-20110419/">File API: Writer (Partial)</a></td>
+                                <td>Saves or modifies files in local device file system. The interface and method currently not supported are:
+                                    <ul>
+                                        <li><code>FileSaver</code> interface</li>
+                                        <li><code>saveAs</code> of <code>Window</code> interface</li>
+                                    </ul>
+                                    <ul class="xmlconfig">
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/unlimitedstorage</code></li>
+                                    </ul>
+                                </td>
+                                <td align="center">WD</td>
+                            </tr>
+                            <tr>
+                                <td id="cache" name="cache"><a href="http://www.w3.org/TR/2012/WD-html5-20120329/offline.html#appcache">HTML5 Application caches</a></td>
+                                <td>HTML5 application cache and custom handlers.</br>
+                                    <ul class="xmlconfig">
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/internet</code></li>
+                                        <!--
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                            <ul>
+                                                <li><code>http://tizen.org/feature/network.internet</code></li>
+                                            </ul>
+                                        </li>
+                                        -->
+                                    </ul>
+                                </td>
+                                <td align="center">LCWD</td>
+                            </tr>
+                            <tr>
+                                <td id="database" name="database"><a href="http://www.w3.org/TR/2011/WD-IndexedDB-20111206/">Indexed Database API (Partial)</a></td>
+                                <td>A database of values and hierarchical objects that integrates naturally with JavaScript, and can be queried and updated very efficiently. The attributes and method currently not supported are:
+                                    <ul>
+                                        <li><code>oldVersion, newVersion</code> of <code>IDBVersionChangeEvent</code> interface</li>
+                                        <li><code>initIDBVersionChangeEvent</code> of <code>IDBVersionChangeEvent</code> interface</li>
+                                    </ul>
+                                    </br>
+                                    <ul class="xmlconfig">
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/unlimitedstorage</code></li>
+                                    </ul>
+                                </td>
+                                <td align="center">WD</td>
+                            </tr>
+                            <tr>
+                                <td id="sql" name="sql"><a href="http://www.w3.org/TR/2010/NOTE-webdatabase-20101118/">Web SQL Database</a></td>
+                                <td>Stores data in databases that can be queried using a variant of SQL.</br>
+                                    <ul class="xmlconfig">
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br>                              </li>
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/unlimitedstorage</code></li>
+                                    </ul>
+                                </td>
+                                <td align="center">Note</td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+            <h4  id="security">Security</h4>
+                    <table width="90%">
+                        <thead>
+                            <tr><th style="width:20%">Specification</th><th>Description</th><th style="width:10%"><a class="status" href="#status">Status *</a></th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="cross" name="cross"><a href="http://www.w3.org/TR/2012/WD-cors-20120403">Cross-Origin Resource Sharing</a></td>
+                                <td>Sharing of resources across different domains.</br>
+                                    <ul class="xmlconfig">
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/internet</code></li>
+                                        <!--
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                            <ul>
+                                                <li><code>http://tizen.org/feature/network.internet</code></li>
+                                            </ul>
+                                        </li>
+                                        -->
+                                    </ul>
+                                </td>
+                                <td align="center">LCWD</td>
+                            </tr>
+                            <tr>
+                                <td id="iframe" name="iframe"><a href="http://www.w3.org/TR/2011/WD-html5-20110525/the-iframe-element.html?path=5_2_8#the-iframe-element">HTML5 The <code>iframe</code> element</a></td>
+                                <td>Access restriction (sandboxing) for iframe content. The available values of sandbox attribute are:
+                                    <ul>
+                                        <li><code>allow-same-origin, allow-scripts, allow-forms, allow-top-navigation</code></li>
+                                    </ul>
+                                </td>
+                                <td align="center">LCWD</td>
+                            </tr>
+                            <tr>
+                                <td id="contentsec" name="contentsec"><a href="http://www.w3.org/TR/2012/CR-CSP-20121115">Content Security Policy 1.0 (Partial)</a></td>
+                                <td>Defines a policy language used to declare a set of content restrictions for a web resource, and a mechanism for transmitting the policy from a server to a client where the policy is enforced. The directive currently not supported is:
+                                    <ul>
+                                        <li><code>object-src</code></li>
+                                    </ul>
+                                </td>
+                                <td align="center">CR</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+            <h4  id="ui">UI</h4>
+                    <table width="90%">
+                        <thead>
+                            <tr><th style="width:20%">Specification</th><th>Description</th><th style="width:10%"><a class="status" href="#status">Status *</a></th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="clipboard" name="clipboard"><a href="http://www.w3.org/TR/2012/WD-clipboard-apis-20120223/">Clipboard API and events (Partial)</a></td>
+                                <td>To describe APIs for clipboard operations such as copy, cut and paste in web applications.
+                                    <ul>
+                                        <li>The constructor of <code>ClipboardEvent</code> interface is not supported.</li>
+                                    </ul>
+                                </td>
+                                <td align="center">WD</td>
+                            </tr>
+                            <tr>
+                                <td id="dnd" name="dnd"><a href="http://www.w3.org/TR/2012/WD-html5-20120329/dnd.html">HTML5 Drag and drop (Partial)</a></td>
+                                <td>To define an event-based drag-and-drop mechanism. The method currently not supported is:
+                                    <ul>
+                                        <li><code>addElement</code> of <code>DataTransfer</code> interface</li>
+                                    </ul></td>
+                                <td align="center">
+                                    <strong>Deprecated Since 2.4</strong>
+				</td>
+                            </tr>
+                            <tr>
+                                <td id="webnoti" name="webnoti"><a href="http://www.w3.org/TR/2012/WD-notifications-20120614">Web Notifications (Partial)</a></td>
+                                <td>To define an API for displaying simple notifications to the user. The dictionary members currently not supported are:
+                                    <ul>
+                                        <li><code>titleDir, bodyDir</code> of <code>NotificationOptions</code> dictionary</li>
+                                    </ul>
+                                    <ul class="xmlconfig">
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/notification</code></li>
+                                    </ul>
+                                </td>
+                                <td align="center">WD</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+            <div id="performance"><h4>Performance and Optimization</h4>
+                    <table width="90%">
+                        <thead>
+                              <tr><th style="width:20%">Specification</th><th>Description</th><th style="width:10%"><a class="status" href="#status">Status *</a></th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="web_workers" name="web_workers"><a href="http://www.w3.org/TR/2012/CR-workers-20120501">Web Workers (Partial)</a></td>
+                                <td>Allows Web application authors to spawn background workers running scripts in parallel to their main page. The event handlers, interfaces and attributes currently not supported are:
+                                    <ul>
+                                        <li><code>ononline, onoffline</code> of <code>WorkerGlobalScope</code> interface</li>
+                                        <li><code>SharedWorkerGlobalScope</code> and <code>SharedWorker</code> interfaces</li>
+                                        <li><code>lineno, filename</code> of <code>ErrorEvent</code> interface</li>
+                                    </ul>
+                                </td>
+                                <td align="center">CR</td>
+                            </tr>
+                            <tr>
+                                <td id="visibility" name="visibility"><a href="http://www.w3.org/TR/2012/CR-page-visibility-20120726/">Page Visibility </a></td>
+                                <td>Defines a means for developers to programmatically determine the current visibility state of the page in order to develop power and CPU efficient Web applications.</td>
+                                <td align="center">CR</td>
+                            </tr>
+                            <tr>
+                                <td id="timing" name="timing"><a href="http://www.w3.org/TR/2012/WD-animation-timing-20120221/">Timing control for script-based animations </a></td>
+                                <td>Resource effective animation timing control by user agent.</td>
+                                <td align="center">LCWD</td>
+                            </tr>
+                            <!--
+                            <tr>
+                                <td><a href="http://www.w3.org/TR/navigation-timing/">Navigation Timing </a></td>
+                                <td>Tools to Web developers for optimizing their Web applications.<br>(<i>Note: this API is not supported by the beta release of SDK.</i>)</td>
+                                </tr>
+                            -->
+                            <tr>
+                                <td id="navtiming" name="navtiming"><a href="http://www.w3.org/TR/2012/REC-navigation-timing-20121217/">Navigation Timing</a></td>
+                                <td>Defines an interface for web applications to access timing information related to navigation and elements.</td>
+                                <td align="center">REC</td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+
+        <div id="location"><h4>Location</h4>
+                    <table width="90%">
+                        <thead>
+                              <tr><th style="width:20%">Specification</th><th>Description</th><th style="width:10%"><a class="status" href="#status">Status *</a></th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="geo"><a href="http://www.w3.org/TR/2012/PR-geolocation-API-20120510">Geolocation API Specification</a></td>
+                                <td>Provides scripted access to geographical location information associated with the hosting device.
+                                    <ul class="xmlconfig">
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/location</code></li>
+                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>: <code>http://tizen.org/feature/location.gps</code></li>
+                                    </ul>
+                                </td>
+                                <td align="center">PR</td>
+                            </tr>
+                        </tbody>
+                    </table>
+        </div>
+        <h4 id="widget">Widget</h4>
+                    <table width="90%">
+                        <thead>
+                            <tr><th style="width:20%">Specification</th><th>Description</th><th style="width:10%"><a class="status" href="#status">Status *</a></th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="packaging" name="packaging"><a href="http://www.w3.org/TR/2011/REC-widgets-20110927/">Widget Packaging and XML Configuration</a></td>
+                                <td>A packaging format and metadata for a class of software known as <code>widgets.</code>
+                                </td>
+                                <td align="center">REC</td>
+                            </tr>
+                            <tr>
+                                <td id="widget" name="widget"><a href="http://www.w3.org/TR/2011/WD-widgets-apis-20110607/">Widget Interface</a></td>
+                                <td>API for widgets that provides, amongst other things, functionality for accessing a widget's metadata and persistently storing data.
+                                </td>
+                                <td align="center">LCWD</td>
+                            </tr>
+                            <tr>
+                                <td id="signature" name="signature"><a href="http://www.w3.org/TR/2011/PR-widgets-digsig-20110811/">XML Digital Signatures for Widgets</a></td>
+                                <td>A profile of the XML Signature Syntax and Processing 1.1 specification to allow a widget package to be digitally signed.
+                                </td>
+                                <td align="center">PR</td>
+                            </tr>
+                            <tr>
+                                <td id="accreq" name="accreq"><a href="http://www.w3.org/TR/2012/REC-widgets-access-20120207/">Widget Access Request Policy</a></td>
+                                <td>The security model controlling network access from within a widget, as well as a method for authors to request that the user agent grant access to certain network resources or sets thereof.
+                                </td>
+                                <td align="center">REC</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+<!-- YHM -->
+
+ 	<h4 id="Supplementary">Supplementary</h4>
+                     <table width="90%">
+                        <thead>
+                              <tr><th  style="width:20%">Specification</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="typed_array" name="typed_array"><a href="https://www.khronos.org/registry/typedarray/specs/1.0/">Typed Array - Khronos</a></td>
+                                <td>Provides an API for interoperability with native binary data.</td>
+                                </tr>
+                            <tr>
+                                <td id="webgl" name="webgl"><a href="https://www.khronos.org/registry/webgl/specs/1.0/">WebGL - Khronos (Partial)</a></td>
+                                <td> Describes an additional rendering context and support objects for the HTML 5 canvas element. This context allows rendering using an API that conforms closely to the OpenGL ES 2.0 API. The method and attribute currently not supported are:
+                                    <li><code>initWebGLContextEvent</code> of <code>WebGLContextEvent</code> interface</li>
+                                    <li><code>NUM_COMPRESSED_TEXTURE_FORMATS</code> of <code>WebGLRenderingContext</code> interface</li>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="fullscreen" name="fullscreen"><a href="https://wiki.mozilla.org/index.php?title=Gecko:FullScreenAPI">FullScreen API - Mozilla (Partial)</a></td>
+                                <td>Provides a way for an element to be displayed in full screen mode programmatically. The method and attribute currently not supported are:
+                                    <li><code>requestFullScreenWithKeys</code> of element</li>
+                                    <li><code>allowFullScreen</code> of <code>iframe</code> element</li>
+                                <p><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege Level</a>: Public</br>
+                                <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/fullscreen</code>  </p>
+                                </td>
+                                </tr>
+                            <tr>
+                                <td><code>viewport</code> Meta Tag - Apple</td>
+                                <td><p>Allows Web developers to control the viewport's size and scale. </br>
+                                	     <code>https://developer.apple.com/library/safari/documentation/Appleapplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html#//apple_ref/doc/uid/TP40006509-SW26</code>
+                                	  </p>
+                                	</td>
+                                </tr>
+                            <!--  <tr>
+                                <td><a href="http://www.json.org/">JSON parsing/stringfy (JSON.org Spec)</a></td>
+                                <td>Native JSON parsing and stringfy method support. Currently supported attributes are:
+                                    <li><code>http, mailto, https</code></li>
+                                </td>
+                                </tr>
+                            <tr>
+                                <td><a href="http://www.openmobilealliance.org/Technical/release_program/docs/URI_Schemes/V1_0-20080626-A/OMA-TS-URI_Schemes-V1_0-20080626-A.pdf">URI scheme (tel:, sms:, mmsto:, mailto:) (OMA Spec)</a></td>
+                                <td>Launches native scheme handlers.</td>
+                                </tr> -->
+                        </tbody>
+                    </table>
+		</div> 
+
+
+
+<!--END YHM-->
+
+                <div id="status">
+                    <strong><em>* W3C Specification Status</em></strong>
+                    <ul>
+                        <li>ED = Editor’s Draft</li>
+                        <li>WD = Working Draft</li>
+                        <li>LCWD = Last Call Working Draft</li>
+                        <li>CR = Candidate Recommendation</li>
+                        <li>PR = Proposed Recommendation</li>
+                        <li>REC = Recommendation</li>
+                        <div>
+                            <a href="http://www.w3.org/2005/10/Process-20051014/tr#maturity-levels">(see W3C Technical Report Development Process)</a>
+                        </div>
+                    </ul>
+                    <strong><em>Note: The APIs in ED, WD, LC status are considered to be in preliminary state. Such APIs do not carry a version compatibility promise. They may change in future versions of Tizen if the specifications change.</em></strong>
+                </div>
+                <div id="footer">
+                   <div class="copyright" align="center">
+		 Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.  <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>. 
+                   </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

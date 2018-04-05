@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Index Scrollbar</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+<h1>Index Scrollbar</h1>
+
+<p>The index scrollbar component shows a shortcut list that is bound to its parent scroll bar and list view.</p>
+
+<p>If you move the mouse over the shortcut column, then a pop-up containing the text is also displayed. The scroll view can be moved to the list divider matching the text currently under the mouse cursor.</p>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+		<li><a href="#default-selectors0.7051363934297115">Default Selectors</a></li>
+
+        <li><a href="#html-examples">Manual Constructor</a></li>
+
+</ol>
+
+<h2><a id="default-selectors0.7051363934297115"></a>Default Selectors</h2>
+
+<p>By default, all elements with the class="ui-indexscrollbar" or data-role="indexscrollbar" attribute are displayed as Index scrollbar components.</p>
+
+<h2><a id="html-examples"></a>Manual Constructor</h2>
+
+<p>To manually create a index scrollbar component, use the component constructor from the <code>tau</code> namespace.</p>
+<p>The index scrollbar component makes index indicator using elements that has "ui-group-index" class.
+
+<pre class="prettyprint">
+&lt;div data-role=&quot;page&quot; id=&quot;indexscrollbarPage&quot;&gt;
+   &lt;div data-role=&quot;indexscrollbar&quot; id=&quot;indexscrollbar&quot;&gt;&lt;/div&gt;
+   &lt;div data-role=&quot;content&quot;&gt;
+      &lt;ul data-role=&quot;listview&quot; class=&quot;ui-listview&quot; id=&quot;isbList&quot;&gt;
+         &lt;li class=&quot;ui-group-index&quot;&gt;A&lt;/li&gt;
+         &lt;li class=&quot;ui-li-static&quot;&gt;Anton&lt;/li&gt;
+         &lt;li class=&quot;ui-li-static&quot;&gt;Arabella&lt;/li&gt;
+         &lt;li class=&quot;ui-group-index&quot;&gt;B&lt;/li&gt;
+         &lt;li class=&quot;ui-li-static&quot;&gt;Barry&lt;/li&gt;
+         &lt;li class=&quot;ui-li-static&quot;&gt;Bibi&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var isb = tau.widget.IndexScrollbar(document.getElementById(&quot;indexscrollbar&quot;));
+&lt;/script&gt;
+</pre>
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

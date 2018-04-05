@@ -29,24 +29,24 @@ The following table lists the supported features on the Dynamic Analyzer. Every 
 **Table: Available features**
 
 | Group           | Feature                                  | Description                              | Page tab where shown |
-|---------------|----------------------------------------|----------------------------------------|--------------------|
-| CPU             | ![CPU Usage](./media/dynamic_analyzer_cpu_usage.png)CPU Usage | Shows the total CPU usage made by target processes on a system and the CPU usage in percentages. | **Timeline**         |
-|                 | ![Core Usage](./media/dynamic_analyzer_core_usage.png)Core Usage | Shows the usage of each core on a device (or an emulator) in percentages. The number of series on the chart depends on the number of cores. |                      |
-|                 | ![Core Frequency](./media/dynamic_analyzer_core_frequency.png)Core Frequency | Shows the frequency of each core on a device in MHz. This feature is only available on devices, not on emulators. |                      |
-| Memory          | ![System Memory](./media/dynamic_analyzer_system_memory.png)System Memory | Monitors the maximum and used memory of the system, and the memory used by a process, in KB. |                      |
-|                 | ![Process Memory](./media/dynamic_analyzer_process_memory.png)Process Memory | Monitors a partition of the PSS, 3D, and GEM memory of a process in KB. |                      |
-|                 | ![Heap Allocation](./media/dynamic_analyzer_heap_allocation.png)Heap Allocation | Records all memory allocations and frees the requested allocations from the executable and shared libraries. This feature shows un-freed allocations (leak candidates). | **Memory**           |
-| File System     | ![Disk IO](./media/dynamic_analyzer_disk_io.png)Disk IO | Shows the system I/O events, such as the occurrence of the read/write operations and the number of bytes in them. | **Timeline**         |
-|                 | ![File Analysis](./media/dynamic_analyzer_file_analysis.png)File Analysis | Analyzes file activities, such as open, close, and lock operations, in a separate analysis view. | **File**             |
-| Graphics        | ![OpenGL ES Analysis](./media/dynamic_analyzer_opengl.png)OpenGL ES Analysis | Analyzes OpenGL&reg; (Open Graphics Library) 2.0 and EvasGL information used on a process. It shows detailed OpenGL&reg; API lists, and context, program, and texture information at a particular point in time. | **OpenGL ES**        |
-| Network         | ![Network IO](./media/dynamic_analyzer_network_io.png)Network IO | Shows the number of bytes that the system sends and receives through the network. | **Timeline**         |
-|                 | ![Network Analysis](./media/dynamic_analyzer_network_analysis.png)Network Analysis | Analyzes network activities, such as recv, send, bind, and accept operations, in a separate analysis view. | **Network**          |
-| UI              | ![UI Event](./media/dynamic_analyzer_UI_event.png)UI Event | Shows the touch (press, move, release), gesture (distance, movement, angle), and orientation change events. | **Timeline**         |
-|                 | ![Screenshot](./media/dynamic_analyzer_screenshot.png)Screenshot | Shows a series of screenshot events taken by a user. It can be set to capture a screenshot during each screen transition or at specific time intervals. |                      |
-|                 | ![UI Hierarchy Analysis](./media/dynamic_analyzer_UI_hierarchy.png)UI Hierarchy Analysis | Analyzes the hierarchy and details of an EFL-based application using EFL UI objects (Evas, Elementary, and Edje). | **UI Hierarchy**     |
-| Synchronization | ![Thread Analysis](./media/dynamic_analyzer_thread_analysis.png)Thread Analysis | Analyzes the internal threads of a process and its synchronization operation. | **Thread**           |
-| Energy          | ![Peripheral Status](./media/dynamic_analyzer_peripheral_status.png)Peripheral Status | Shows the on/off state of the Wi-Fi, Bluetooth, GPS, data network, and camera peripherals. | **Timeline**         |
-|                 | ![Power Estimation](./media/dynamic_analyzer_power_estimation.png)Power Estimation | Calculates the power consumption of the CPU, flash, LCD, Wi-Fi, and Bluetooth with an accurate estimation model. |                      |
+|-----------------|------------------------------------------|------------------------------------------|----------------------|
+| CPU             | ![CPU Usage](./media/dynamic_analyzer_cpu_usage.png) <br>CPU Usage | Shows the total CPU usage made by target processes on a system and the CPU usage in percentages. | **Timeline** |
+| CPU             | ![Core Usage](./media/dynamic_analyzer_core_usage.png) <br>Core Usage | Shows the usage of each core on a device (or an emulator) in percentages. The number of series on the chart depends on the number of cores--. | **Timeline** |
+| CPU             | ![Core Frequency](./media/dynamic_analyzer_core_frequency.png) <br>Core Frequency | Shows the frequency of each core on a device in MHz. This feature is only available on devices, not on emulators. |                      |
+| Memory          | ![System Memory](./media/dynamic_analyzer_system_memory.png) <br>System Memory | Monitors the maximum and used memory of the system, and the memory used by a process, in KB. | **Timeline** |
+| Memory          | ![Process Memory](./media/dynamic_analyzer_process_memory.png) <br>Process Memory | Monitors a partition of the PSS, 3D, and GEM memory of a process in KB. | **Timeline** |
+| Memory          | ![Heap Allocation](./media/dynamic_analyzer_heap_allocation.png) <br>Heap Allocation | Records all memory allocations and frees the requested allocations from the executable and shared libraries. This feature shows un-freed allocations (leak candidates). | **Memory** |
+| File System     | ![Disk IO](./media/dynamic_analyzer_disk_io.png) <br>Disk IO | Shows the system I/O events, such as the occurrence of the read/write operations and the number of bytes in them. | **Timeline** |
+| File System     | ![File Analysis](./media/dynamic_analyzer_file_analysis.png) <br>File Analysis | Analyzes file activities, such as open, close, and lock operations, in a separate analysis view. | **File** |
+| Graphics        | ![OpenGL ES Analysis](./media/dynamic_analyzer_opengl.png) <br>OpenGL ES Analysis | Analyzes OpenGL&reg; (Open Graphics Library) 2.0 and EvasGL information used on a process. It shows detailed OpenGL&reg; API lists, and context, program, and texture information at a particular point in time. | **OpenGL ES** |
+| Network         | ![Network IO](./media/dynamic_analyzer_network_io.png) <br>Network IO | Shows the number of bytes that the system sends and receives through the network. | **Timeline** |
+| Network         | ![Network Analysis](./media/dynamic_analyzer_network_analysis.png) <br>Network Analysis | Analyzes network activities, such as recv, send, bind, and accept operations, in a separate analysis view. | **Network** |
+| UI              | ![UI Event](./media/dynamic_analyzer_UI_event.png) <br>UI Event | Shows the touch (press, move, release), gesture (distance, movement, angle), and orientation change events. | **Timeline** |
+| UI              | ![Screenshot](./media/dynamic_analyzer_screenshot.png) <br>Screenshot | Shows a series of screenshot events taken by a user. It can be set to capture a screenshot during each screen transition or at specific time intervals. | **Timeline** |
+| UI                | ![UI Hierarchy Analysis](./media/dynamic_analyzer_UI_hierarchy.png) <br>UI Hierarchy Analysis | Analyzes the hierarchy and details of an EFL-based application using EFL UI objects (Evas, Elementary, and Edje). | **UI Hierarchy** |
+| Synchronization | ![Thread Analysis](./media/dynamic_analyzer_thread_analysis.png) <br>Thread Analysis | Analyzes the internal threads of a process and its synchronization operation. | **Thread** |
+| Energy          | ![Peripheral Status](./media/dynamic_analyzer_peripheral_status.png) <br>Peripheral Status | Shows the on/off state of the Wi-Fi, Bluetooth, GPS, data network, and camera peripherals. | **Timeline** |
+| Energy          | ![Power Estimation](./media/dynamic_analyzer_power_estimation.png) <br>Power Estimation | Calculates the power consumption of the CPU, flash, LCD, Wi-Fi, and Bluetooth with an accurate estimation model. | **Timeline** |
 
 ## Related information
 * Dependencies

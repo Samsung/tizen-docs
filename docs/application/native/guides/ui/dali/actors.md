@@ -56,7 +56,7 @@ The default is top left (`Dali::ParentOrigin::TOP_LEFT`), which can be visualize
 For more information, see the `Dali::Actor::SetParentOrigin()` function.
 
 Below the same ImageView (Apple) is parented to the large green rectangle.
-The first example it has `Dali::ParentOrigin::CENTER` and the second is `Dali::ParentOrigin::TOP_LEFT`
+The first example it has `Dali::ParentOrigin::CENTER` and the second is `Dali::ParentOrigin::TOP_LEFT`.
 The red dot indicates the parent origin.
 The AnchorPoint in both is `Dali::AnchorPoint::TOP_LEFT`.
 
@@ -74,7 +74,7 @@ The default is center (`Dali::AnchorPoint::CENTER`), which can be visualized in 
 For more information, see the `Dali::Actor::SetAnchorPoint()` function.
 
 Below the same ImageView (Apple) is parented to the large green rectangle.
-The first example it has `Dali::AnchorPoint::CENTER` and the second is `Dali::AnchorPoint::TOP_LEFT`
+The first example it has `Dali::AnchorPoint::CENTER` and the second is `Dali::AnchorPoint::TOP_LEFT`.
 The red dot indicates the anchor point.  The ParentOrigin in both is `Dali::ParentOrigin::TOP_LEFT`.
 
 | AnchorPoint::CENTER | AnchorPoint::TOP_LEFT |
@@ -88,8 +88,8 @@ The Actor can have its Position set.
 Positions are Vectors and displace from the ParentOrigin. ( ParentOrigin to AnchorPoint ).
 
 Therefore by default, an actor's position indicates the vector to its center from the top-left corner of its parent. For example (with the default camera):
-- An actor added directly to the stage with position (X = stageWidth*0.5, Y = stageHeight*0.5) appears in the center of the screen.
-- An actor with the position (X = actorWidth*0.5, Y = actorWidth*0.5) appears at the top-left corner of the screen.
+- An actor added directly to the stage with position (X = stageWidth\*0.5, Y = stageHeight\*0.5) appears in the center of the screen.
+- An actor with the position (X = actorWidth\*0.5, Y = actorWidth\*0.5) appears at the top-left corner of the screen.
 
 For more information, see the `Dali::Actor::SetPosition()` function.
 

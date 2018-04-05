@@ -23,13 +23,21 @@ For more information, see the [System Logs](../../native/guides/error/system-log
 Each device has at least 1 default log tab associated with it. If a device is connected, the default log tab is not editable or removable. However, you can add a new log tab with more filtering options. The added log tabs are editable and removable.
 
 - Adding a log tab:
+
   1. Click the **Add LogTab** button (![Add LogTab icon](./media/log_view_icon.png)).
+
   2. Enter the tab name in the **Name** field and select a device in the **Device** list.
+
   3. Enter the search keywords in the **Tag**, **Pid**, and **Message** fields.
+
   4. Click **OK**.
+
      ![Adding a log tab](./media/log_view_add_tab.png)
+
 - Removing a log tab:
+
   1. Click the log tab to be removed.
+
   2. Click the **Remove LogTab** button (![Remove LogTab icon](./media/log_view_icon_remove_tab.png)).
 
 ## Understanding and Filtering Logs

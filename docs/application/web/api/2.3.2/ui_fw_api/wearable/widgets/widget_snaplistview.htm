@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../../snippet.css" rel="StyleSheet" type="text/css">
+	<title>SnapListview</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>SnapListview</h1>
+
+
+<p>Shows a snap list view. It detects center-positioned list item when scroll end.</p>
+<p>When scroll event started, SnapListview triggers &quot;scrollstart&quot; event, and scroll event ended, triggers &quot;scrollend&quot; event.<br>
+When scroll ended, it triggers &quot;selected&quot; event and attach class to detected(center-positioned) item.</p>
+
+<table class="note">
+        <tbody>
+        <tr>
+                <th class="note">Note</th>
+        </tr>
+        <tr>
+                <td class="note">This component is supported since <strong>2.3</strong>.</td>
+        </tr>
+        </tbody>
+</table>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	
+		<li><a href="#default-selectors0.06779201747849584">How to create SnapListview</a>
+			
+		</li>
+
+		<li><a href="#default-using0.06779201747849584">Usage of SnapListview</a>
+			
+		</li>
+	
+		<li><a href="#events-list">Events</a>
+			
+		</li>
+	
+</ol>
+
+<h2><a id='default-selectors0.06779201747849584'></a>How to create SnapListview</h2>
+
+<p>Selector for snap listview widget is class <em>ui-snap-listview</em>.</p>
+
+<p>To add a list widget to the application, use the following code:</p>
+
+<h3><a id='list-with basic items0.7933700433932245'></a>List with basic items</h3>
+
+<p>You can add a basic listview as follows:</p>
+
+<pre class="prettyprint">&lt;ul class="ui-listview ui-snap-listview" id="snapList"&gt;
+    &lt;li&gt;1line&lt;/li&gt;
+    &lt;li&gt;2line&lt;/li&gt;
+    &lt;li&gt;3line&lt;/li&gt;
+    &lt;li&gt;4line&lt;/li&gt;
+    &lt;li&gt;5line&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+<p>In javascript code, you can make your list as SnapListview component as follows:</p>
+<pre class="prettyprint">&lt;script&gt;
+var snapList = document.getElementById("snapList"),
+    snapListComponent = tau.widget.SnapListview(snapList);
+&lt;/script&gt;
+</pre>
+
+<h2><a id='default-using0.06779201747849584'></a>Usage of SnapListview</h2>
+
+<p>You can make your app more effectively with this SnapListview Component and <a href="widget_marquee.htm">Marquee Component</a>.</p>
+
+<p>When &quot;selected&quot; event triggered, center-positioned list item can be expand with sub text. Also, we can make main text move with Marquee.<br><br>
+
+TAU supported helper script named <a href="../helper/helper_listmarqueestyle.htm">SnapListMarqueeStyle</a>. You can use tau.helper.SnapListMarqueeStyle to make your application more nice.</p> 
+
+
+	<h2><a id="events-list"></a>Events</h2>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+		</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">scrollstart</span></td>
+				<td><p>Triggered when snaplist scoll started.</p></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">scrollend</span></td>
+				<td><p>Triggered when snaplist scoll ended.</p></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">selected</span></td>
+				<td><p>Triggered when snaplist detects center-positioned list item.</p></td>
+			</tr>
+		
+		</tbody>
+	</table>
+
+
+
+
+<h2>Where to Go Next</h2>
+<ul>
+	<li><a href="./widget_reference.htm">UI Component Reference</a></li>
+	
+</ul>
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

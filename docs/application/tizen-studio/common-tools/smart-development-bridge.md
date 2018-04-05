@@ -37,10 +37,10 @@ For more information on commands and parameters, see the following table.
 **Table: SDB commands**
 
 | Command                              | Description                              |
-|------------------------------------|----------------------------------------|
+|--------------------------------------|------------------------------------------|
 | `devices`                            | Lists all connected target instances.    |
 | `connect <host>[:<port>]`            | Connects to a target through TCP/IP.     |
-| `disconnect <host>[:<port>]`         | Disconnects from a TCP/IP device.By default, the port 26101 is used if there is no specified port number. If you use this command with no additional arguments, all connected TCP/IP devices are disconnected. |
+| `disconnect <host>[:<port>]`         | Disconnects from a TCP/IP device. <br>By default, the port 26101 is used if there is no specified port number. If you use this command with no additional arguments, all connected TCP/IP devices are disconnected. |
 | `push <local> <remote> [-with-utf8]` | Copies a file or directory recursively from the host computer to the target. |
 | `pull <remote> [<local>]`            | Copies a file or directory recursively from the target to the host computer. |
 | `shell [<command>]`                  | Launches the shell on the target instance if the `<command>` is not specified. If the `<command>` is specified, runs the `<command>` without entering the SDB remote shell on the target instance. |
@@ -48,7 +48,7 @@ For more information on commands and parameters, see the following table.
 | `uninstall <pkg-id>`                 | Uninstalls the application from the device by using its `pkg-id`. |
 | `forward <local> <remote>`           | Sets up requests' arbitrary port forwarding from the host's local port to the target's remote port. |
 | `dlog [option] [<filter>]`           | Monitors the content of the device log buffers. |
-| `start-server [--only-detect-tizen]` | Starts the server.If `[--only-detect-tizen]` is specified, the SDB detects only Tizen devices. |
+| `start-server [--only-detect-tizen]` | Starts the server. <br>If `[--only-detect-tizen]` is specified, the SDB detects only Tizen devices. |
 | `kill-server`                        | Stops the running server.                |
 | `get-state`                          | Prints the connection status with the target device: `device` or `offline`. |
 | `get-serialno`                       | Prints the serial number for connecting the target device. |
@@ -124,14 +124,15 @@ ls, rm, mv, cd, cp, mkdir, touch, echo, tar, grep, cat, chmod, rpm, find, uname,
 
 You can use the SDB to install and uninstall the Tizen package file on the target instance:
 
-- The `install` command option pushes the package file to the target and installs it. The `<path_to_tpk>` parameter defines the path to the TPK file. The following command shows an example:`
+- The `install` command option pushes the package file to the target and installs it. The `<path_to_tpk>` parameter defines the path to the TPK file. The following command shows an example:
 ```
 > sdb install /home/tizen/ko983dw33q-1.0.0-i386.tpk
 ```
-- The `uninstall` command option kills the application, if running, and removes the package from the target. The `<pkg-id>` is a unique 10-digit identifier for the application. The following command shows an example:`
+- The `uninstall` command option kills the application, if running, and removes the package from the target. The `<pkg-id>` is a unique 10-digit identifier for the application. The following command shows an example:
 ```
 > sdb uninstall ko983dw33q
 ```
+
 ## Forwarding Ports
 
 You can set up arbitrary port forwarding of requests from a specific host port to a specific remote port on a target instance.
@@ -168,12 +169,43 @@ The following table shows some options for the `sdb dlog` and `dlogutil` command
 
 **Table: Log output options**
 
-| Option          | Description                              |
-|---------------|----------------------------------------|
-| `-f <filename>` | Writes the log to the `<filename>` file. The default file is stdout. |
-| `-r <Kbytes>`   | Rotates the log file every `<Kbytes>` of output. The default value is 16. This option also requires the `-f` option. |
-| `-n <count>`    | Sets the maximum number of rotated logs to `<count>`. The default value is 4. This option also requires the `-r` option. |
-| `-v <format>`   | Sets the output format for log messages.You can define which metadata fields are included in log messages by setting one of the following output formats:`brief` (default): Displays the priority/tag and PID of the originating process.`process`: Displays the PID only.`tag`: Displays the priority/tag only.`thread`: Displays the `process:thread` and priority/tag only.`raw`: Displays the raw log message, with no other metadata fields.`time`: Displays the date, invocation time, priority/tag, and PID of the originating process.`long`: Displays all metadata fields and separate messages with a blank line. |
+<table>
+	<thead>
+		<tr>
+			<th>Option</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>-f &lt;filename&gt;</code></td>
+			<td>Writes the log to the <code>&lt;filename&gt;</code> file. The default file is stdout.</td>
+		</tr>
+		<tr>
+			<td><code>-r &lt;Kbytes&gt;</code></td>
+			<td>Rotates the log file every <code>&lt;Kbytes&gt;</code> of output. The default value is 16. This option also requires the <code>-f</code> option.</td>
+		</tr>
+		<tr>
+			<td><code>-n &lt;count&gt;</code></td>
+			<td>Sets the maximum number of rotated logs to <code>&lt;count&gt;</code>. The default value is 4. This option also requires the <code>-r</code> option.</td>
+		</tr>
+		<tr>
+			<td><code>-v &lt;format&gt;</code></td>
+			<td>Sets the output format for log messages.
+			<p>You can define which metadata fields are included in log messages by setting one of the following output formats:</p>
+			<ul>
+				<li><code>brief</code> (default): Displays the priority/tag and PID of the originating process.</li>
+				<li><code>process</code>: Displays the PID only.</li>
+				<li><code>tag</code>: Displays the priority/tag only.</li>
+				<li><code>thread</code>: Displays the <code>process:thread</code> and priority/tag only.</li>
+				<li><code>raw</code>: Displays the raw log message, with no other metadata fields.</li>
+				<li><code>time</code>: Displays the date, invocation time, priority/tag, and PID of the originating process.</li>
+				<li><code>long</code>: Displays all metadata fields and separate messages with a blank line.</li>
+			</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
 The `[<filter>]` parameter defines the tag of interest (the system component from which the message originates) and the minimum level of priority to report for that tag. The format is `<tag>:<priority>`, and multiple filters must be separated with a space. The available priorities (from lowest to highest) are **V** (Verbose), **D** (Debug), **I** (Info), **W** (Warning), **E** (Error), and **F** (Fatal).
 

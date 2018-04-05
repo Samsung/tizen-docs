@@ -29,7 +29,7 @@ The following formats are supported :
 | WAP Bitmap              | `.wbmp`    |
 
 Controls should process the provided url and internally create the matching Image visual.
-Visual creation will automatically determine if the Image is an N_PATCH, SVG, GIF not regular image from the image data.=
+Visual creation will automatically determine if the Image is an N_PATCH, SVG, GIF not regular image from the image data.
 
 ### Image Properties
 

@@ -65,22 +65,30 @@ Fill in the necessary details:
 
 - **Service**
 
-  *Title** (required): Short plain text description of the element being documented
+  **Title** (required): Short plain text description of the element being documented
 
 - **Base URI**
+
   **Base URI** (required): Base URI for each child resource identifier
+
   **Alias** (optional)
 
 - **Path**
+
   **Path** (required): Relative URI template for the resource identifier
+
   **Content Type** (default): Media type for the query component of the resource URI
 
 - **API**
+
   **Id** (required): Method identifier
+
   **Method** (default): Used HTTP method
+
   **Description** (optional)
 
 - **Parameters**
+
   Describe the input to the method as a collection of parameters:
   - **Parent**: Name of component to manage the parameters
   - **Name**: Parameter name
