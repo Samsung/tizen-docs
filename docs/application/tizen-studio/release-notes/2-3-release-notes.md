@@ -85,4 +85,4 @@
 	-   The Dynamic Analyzer cannot show life-cycle information for Web applications.
 	-   Widget applications cannot be profiled with the Dynamic Analyzer. They are hidden in the application list on the toolbar for all Tizen platforms, except Tizen 2.3.2.
 -	Web Inspector
-	-   If your Google Chrome™ browser version is higher than 54, the Web Inspector console and some other functions does not work properly due to Web core compatibility issues.
+	-   If your Google Chrome&trade; browser version is higher than 54, the Web Inspector console and some other functions does not work properly due to Web core compatibility issues.
