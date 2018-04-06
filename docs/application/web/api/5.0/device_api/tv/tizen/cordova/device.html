@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../tizen.css" media="screen">
+<script type="text/javascript" src="../snippet.js"></script><title>Device API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Device">
+<div class="supported-platforms"><img title="Mandatory" src="../../../../images/tv_s_w.png"></div>
+<div class="title"><h1>Device API</h1></div>
+<div class="brief">
+ This plugin defines a global device object, which describes the device's hardware and software.
+Although the object is in the global scope, it is not available until the deviceready event.
+        </div>
+<div class="description">
+        <p>
+Original documentation: <a href="https://cordova.apache.org/docs/en/3.0.0/cordova/device/device.html">Cordova Device</a>.
+        </p>
+        <p>
+<b>Remark:</b> Usage of cordova API needs <em>http://tizen.org/privilege/filesystem.read</em> privilege.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>1.1. <a href="#DeviceManagerObject">DeviceManagerObject</a>
+</li>
+<li>1.2. <a href="#Device">Device</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#DeviceManagerObject">DeviceManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#Device">Device</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="interfaces" id="interfaces-section">
+<h2>1. Interfaces</h2>
+<div class="interface" id="DeviceManagerObject">
+<a class="backward-compatibility-anchor" name="::Device::DeviceManagerObject"></a><h3>1.1. DeviceManagerObject</h3>
+<div class="brief">
+ The <em>window.device </em>object allows access to the functionality of the Device API.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface DeviceManagerObject {
+        readonly attribute <a href="#Device">Device</a> device;
+    };</pre>
+<pre class="webidl prettyprint">    Window implements <a href="#DeviceManagerObject">DeviceManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+</div>
+<div class="interface" id="Device">
+<a class="backward-compatibility-anchor" name="::Device::Device"></a><h3>1.2. Device</h3>
+<div class="brief">
+ The device object describes the device's hardware and software.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface Device {
+        readonly attribute DOMString cordova;
+
+        readonly attribute DOMString model;
+
+        readonly attribute DOMString platform;
+
+        readonly attribute DOMString uuid;
+
+        readonly attribute DOMString version;
+
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="Device::cordova">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">cordova</span></span><div class="brief">
+ Returns the version of Cordova running on the device.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+
+function onDeviceReady()
+{
+  console.log('Device Cordova: ' + device.cordova);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Device Cordova: 5.1.1
+</pre>
+</div>
+</li>
+<li class="attribute" id="Device::model">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">model</span></span><div class="brief">
+ Get the the name of the device's model or product. The value is set by the device manufacturer and may be different across versions of the same product.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+
+function onDeviceReady()
+{
+  console.log('Device Model: ' + device.model);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Device Model: tm1
+</pre>
+</div>
+</li>
+<li class="attribute" id="Device::platform">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">platform</span></span><div class="brief">
+ Get the device's operating system name.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+
+function onDeviceReady()
+{
+  console.log('Device Platform: ' + device.platform);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Device Platform: Tizen
+</pre>
+</div>
+</li>
+<li class="attribute" id="Device::uuid">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">uuid</span></span><div class="brief">
+ Get the device's Universally Unique Identifier (UUID). The details of how a UUID is generated are determined by the device manufacturer and are specific to the device's platform or model.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+
+function onDeviceReady()
+{
+  console.log('Device UUID: ' + device.uuid);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Device UUID: 2LR1b3MXfEUSFvH04m4e1EXYvQA=
+</pre>
+</div>
+</li>
+<li class="attribute" id="Device::version">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">version</span></span><div class="brief">
+ Get the operating system version.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+
+function onDeviceReady()
+{
+  console.log('Device Version: ' + device.version);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Device Version: 3.0
+</pre>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">2. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Device {
+    [NoInterfaceObject] interface DeviceManagerObject {
+        readonly attribute <a href="#Device">Device</a> device;
+    };
+    Window implements <a href="#DeviceManagerObject">DeviceManagerObject</a>;
+    [NoInterfaceObject] interface Device {
+        readonly attribute DOMString cordova;
+
+        readonly attribute DOMString model;
+
+        readonly attribute DOMString platform;
+
+        readonly attribute DOMString uuid;
+
+        readonly attribute DOMString version;
+
+    };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

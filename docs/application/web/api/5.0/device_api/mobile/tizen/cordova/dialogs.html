@@ -1,0 +1,558 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../tizen.css" media="screen">
+<script type="text/javascript" src="../snippet.js"></script><title>Dialogs API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Dialogs">
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="../mobile_s_w.png"></div>
+<div class="title"><h1>Dialogs API</h1></div>
+<div class="brief">
+ This plugin provides the ability to make different types of notifications to the user.
+        </div>
+<div class="description">
+        <p>
+Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-dialogs">Cordova Dialogs</a>.
+        </p>
+        <p>
+<b>Remark:</b> Usage of cordova API needs <em>http://tizen.org/privilege/filesystem.read</em> privilege.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>1.1. <a href="#DialogsManagerObject">DialogsManagerObject</a>
+</li>
+<li>1.2. <a href="#DialogsManager">DialogsManager</a>
+</li>
+<li>1.3. <a href="#PromptData">PromptData</a>
+</li>
+<li>1.4. <a href="#ConfirmCallback">ConfirmCallback</a>
+</li>
+<li>1.5. <a href="#PromptCallback">PromptCallback</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#DialogsManagerObject">DialogsManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#DialogsManager">DialogsManager</a></td>
+<td>
+<div>void <a href="#DialogsManager::alert">alert</a> (DOMString message, <a href="cordova.html#SuccessCallback">SuccessCallback</a> alertCallback, optional DOMString? title, optional DOMString? buttonName)</div>
+<div>void <a href="#DialogsManager::confirm">confirm</a> (DOMString message, <a href="#ConfirmCallback">ConfirmCallback</a> confirmCallback, optional DOMString? title, optional DOMString[]? buttonNames)</div>
+<div>void <a href="#DialogsManager::prompt">prompt</a> (DOMString message, <a href="#PromptCallback">PromptCallback</a> promptCallback, optional DOMString? title, optional DOMString[]? buttonNames, optional DOMString? defaultText)</div>
+<div>void <a href="#DialogsManager::beep">beep</a> (long times)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#PromptData">PromptData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#ConfirmCallback">ConfirmCallback</a></td>
+<td><div>void <a href="#ConfirmCallback::onsuccess">onsuccess</a> (long buttonIndex)</div></td>
+</tr>
+<tr>
+<td><a href="#PromptCallback">PromptCallback</a></td>
+<td><div>void <a href="#PromptCallback::onsuccess">onsuccess</a> (<a href="#PromptData">PromptData</a> data)</div></td>
+</tr>
+</tbody>
+</table>
+<div class="interfaces" id="interfaces-section">
+<h2>1. Interfaces</h2>
+<div class="interface" id="DialogsManagerObject">
+<a class="backward-compatibility-anchor" name="::Dialogs::DialogsManagerObject"></a><h3>1.1. DialogsManagerObject</h3>
+<div class="brief">
+ The <em>DialogsManagerObject</em> interface defines what is instantiated in the <em>Navigator</em> object.
+          </div>
+<pre class="webidl prettyprint">   [NoInterfaceObject] interface DialogsManagerObject {
+       readonly attribute <a href="#DialogsManager">DialogsManager</a> notification;
+   };</pre>
+<pre class="webidl prettyprint">    implements <a href="#DialogsManagerObject">DialogsManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+The <em>navigator.notification</em> object allows access to the Dialogs API.
+          </p>
+         </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+</div>
+<div class="interface" id="DialogsManager">
+<a class="backward-compatibility-anchor" name="::Dialogs::DialogsManager"></a><h3>1.2. DialogsManager</h3>
+<div class="brief">
+ The <em>DialogsManager</em> interface provides methods for global operations related to notifications to the user.
+          </div>
+<pre class="webidl prettyprint">   [NoInterfaceObject] interface DialogsManager {
+       void alert(DOMString message, <a href="cordova.html#SuccessCallback">SuccessCallback</a> alertCallback, optional DOMString? title, optional DOMString? buttonName);
+
+       void confirm(DOMString message, <a href="#ConfirmCallback">ConfirmCallback</a> confirmCallback, optional DOMString? title, optional DOMString[]? buttonNames);
+
+       void prompt(DOMString message, <a href="#PromptCallback">PromptCallback</a> promptCallback,
+                   optional DOMString? title, optional DOMString[]? buttonNames, optional DOMString? defaultText);
+
+       void beep(long times);
+   };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="DialogsManager::alert">
+<a class="backward-compatibility-anchor" name="::Dialogs::DialogsManager::alert"></a><code><b><span class="methodName">alert</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Shows a custom alert with one button.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void alert(DOMString message, <a href="cordova.html#SuccessCallback">SuccessCallback</a> alertCallback, optional DOMString? title, optional DOMString? buttonName);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">message</span>:
+ The message to be shown to the user by dialog dialog.
+                </li>
+          <li class="param">
+<span class="name">alertCallback</span>:
+ The callback to be invoked when alert dialog would be dismissed.
+                </li>
+          <li class="param">
+<span class="name">title</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The title of dialog box. Default value is 'Dialog'.
+                </li>
+          <li class="param">
+<span class="name">buttonName</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Button name to be shown on dialog box. Default value is 'OK'.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var alertDismissed = function()
+{
+   console.log('Alert was dismissed');
+}
+
+navigator.notification.alert('Please click OK button', alertDismissed,
+                             'OK click alert', 'OK');
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Alert was dismissed
+</pre>
+</div>
+</dd>
+<dt class="method" id="DialogsManager::confirm">
+<a class="backward-compatibility-anchor" name="::Dialogs::DialogsManager::confirm"></a><code><b><span class="methodName">confirm</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Shows a custom confirm box with set of buttons.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void confirm(DOMString message, <a href="#ConfirmCallback">ConfirmCallback</a> confirmCallback, optional DOMString? title, optional DOMString[]? buttonNames);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">message</span>:
+ The message to be shown to the user by dialog box.
+                </li>
+          <li class="param">
+<span class="name">confirmCallback</span>:
+ The callback to be invoked when user perform an action on dialog box.
+Callback provides index of button pressed (1,2,3 etc.) or 0, if dialog was dismissed without button press.
+                </li>
+          <li class="param">
+<span class="name">title</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The title of dialog box. Default value is 'Confirm'.
+                </li>
+          <li class="param">
+<span class="name">buttonNames</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Button names to be shown on dialog box. Default values are ['OK', 'Cancel'].
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var confirmCallback = function(buttonIndex)
+{
+   console.log('Selected option was ' + buttonIndex);
+}
+
+navigator.notification.confirm('Choose one option', confirmCallback,
+                               'Options', ['Option1', 'Option2']);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Selected option was 1
+</pre>
+</div>
+</dd>
+<dt class="method" id="DialogsManager::prompt">
+<a class="backward-compatibility-anchor" name="::Dialogs::DialogsManager::prompt"></a><code><b><span class="methodName">prompt</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Shows a custom confirm box with set of buttons.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void prompt(DOMString message, <a href="#PromptCallback">PromptCallback</a> promptCallback, optional DOMString? title, optional DOMString[]? buttonNames, optional DOMString? defaultText);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">message</span>:
+ The message to be shown to the user by dialog box.
+                </li>
+          <li class="param">
+<span class="name">promptCallback</span>:
+ The callback to be invoked when user perform an action on dialog box.
+Callback provides <em>PromptData</em> object, which holds all data provided by user.
+                </li>
+          <li class="param">
+<span class="name">title</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The title of dialog box. Default value is 'Prompt'.
+                </li>
+          <li class="param">
+<span class="name">buttonNames</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Button names to be shown on dialog box. Default values are ['OK', 'Cancel'].
+                </li>
+          <li class="param">
+<span class="name">defaultText</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Default text to be shown in textbox of dialog box. Default value is an empty string ('').
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var promptCallback = function(results)
+{
+   console.log('Hello ' + results.input1 + ', you selected option ' + results.buttonIndex);
+}
+
+navigator.notification.prompt('Please enter your name', promptCallback,
+                             'Registration Box', ['Ok', 'Exit'], 'e.g. Jane Doe');
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Hello Jane Doe, you selected option 1
+</pre>
+</div>
+</dd>
+<dt class="method" id="DialogsManager::beep">
+<a class="backward-compatibility-anchor" name="::Dialogs::DialogsManager::beep"></a><code><b><span class="methodName">beep</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Method allows to make custom number of beeps by device.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void beep(long times);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">times</span>:
+ The number of times to repeat the beep.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var times = 2;
+console.log('Device would beep ' + times + ' times');
+navigator.notification.beep(times);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Device would beep 2 times
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="PromptData">
+<a class="backward-compatibility-anchor" name="::Dialogs::PromptData"></a><h3>1.3. PromptData</h3>
+<div class="brief">
+ The object returned from prompt dialog.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface PromptData {
+      readonly attribute long buttonIndex;
+
+      readonly attribute DOMString input1;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<p><span class="remark"> Remark : </span>
+ Example usage is described on method <a href="#DialogsManager::prompt">prompt</a>.
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="PromptData::buttonIndex">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">buttonIndex</span></span><div class="brief">
+ The index of button, which was pressed by user.
+the index uses one-based indexing, so the values could be 1, 2, 3, etc.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="PromptData::input1">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">input1</span></span><div class="brief">
+ The text entered by user in the prompt of dialog box.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="ConfirmCallback">
+<a class="backward-compatibility-anchor" name="::Dialogs::ConfirmCallback"></a><h3>1.4. ConfirmCallback</h3>
+<div class="brief">
+ The callback function used to return index of pressed button of confirm dialog.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ConfirmCallback {
+       void onsuccess(long buttonIndex);
+  };</pre>
+<p><span class="remark"> Remark : </span>
+ Example usage is described on method <a href="#DialogsManager::confirm">confirm</a>.
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="ConfirmCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Dialogs::ConfirmCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the user perform action on confirm dialog.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(long buttonIndex);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">buttonIndex</span>:
+ The index of button, which was pressed by user.
+the index uses one-based indexing, so the values could be 1, 2, 3, etc.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="PromptCallback">
+<a class="backward-compatibility-anchor" name="::Dialogs::PromptCallback"></a><h3>1.5. PromptCallback</h3>
+<div class="brief">
+ The callback function used to return data from prompt dialog.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PromptCallback {
+       void onsuccess(<a href="#PromptData">PromptData</a> data);
+  };</pre>
+<p><span class="remark"> Remark : </span>
+ Example usage is described on method <a href="#DialogsManager::prompt">prompt</a>.
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="PromptCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Dialogs::PromptCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the user perform action on prompt dialog.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#PromptData">PromptData</a> data);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">data</span>:
+ The data input into dialog box.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">2. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Dialogs {
+   [NoInterfaceObject] interface DialogsManagerObject {
+       readonly attribute <a href="#DialogsManager">DialogsManager</a> notification;
+   };
+
+    implements <a href="#DialogsManagerObject">DialogsManagerObject</a>;
+
+   [NoInterfaceObject] interface DialogsManager {
+       void alert(DOMString message, <a href="cordova.html#SuccessCallback">SuccessCallback</a> alertCallback, optional DOMString? title, optional DOMString? buttonName);
+
+       void confirm(DOMString message, <a href="#ConfirmCallback">ConfirmCallback</a> confirmCallback, optional DOMString? title, optional DOMString[]? buttonNames);
+
+       void prompt(DOMString message, <a href="#PromptCallback">PromptCallback</a> promptCallback,
+                   optional DOMString? title, optional DOMString[]? buttonNames, optional DOMString? defaultText);
+
+       void beep(long times);
+   };
+
+  [NoInterfaceObject] interface PromptData {
+      readonly attribute long buttonIndex;
+
+      readonly attribute DOMString input1;
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface ConfirmCallback {
+       void onsuccess(long buttonIndex);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface PromptCallback {
+       void onsuccess(<a href="#PromptData">PromptData</a> data);
+  };
+
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

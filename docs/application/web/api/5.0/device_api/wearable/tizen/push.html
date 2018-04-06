@@ -1,0 +1,1463 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>Push API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Push">
+<div class="supported-platforms"><img class="wearable-optional emulator" title="Optional, Supported by Tizen Wearable emulator" src="wearable_s_w_optional.png"></div>
+<div class="title"><h1>Push API</h1></div>
+<div class="brief">
+ The Push API provides functionality for receiving push notifications
+from the Tizen push server.
+The push service is a client daemon that maintains a permanent connection
+between your device and the Tizen push server. Connection with push service is used to deliver push notifications
+to the application, and process the registration and deregistration requests.
+        </div>
+<div class="description">
+        <p>
+To receive push notifications, follow the steps below:
+        </p>
+        <ul>
+          <li>
+Connecting to the push service          </li>
+          <li>
+Registering your application, if the application has not been registered yet          </li>
+          <li>
+Getting notification data          </li>
+        </ul>
+        <p>
+For more information on the Push features, see <a href="https://developer.tizen.org/development/tutorials/web-application/tizen-features/messaging/push#Registering">Push Guide</a>.
+        </p>
+        <p>
+To use Push features the application needs the permission to access the Tizen Push servers.
+        </p>
+        <p>
+<b>Service Limitation:</b>        </p>
+        <ul>
+          <li>
+Size of a push message is limited: <em>alertMessage</em> up to 127 bytes, and <em>appData</em> (payload data) less than 1 KB.          </li>
+          <li>
+Push service does not guarantee delivery and order of push messages.          </li>
+        </ul>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li>
+                    1.1. <a href="#PushRegistrationId">PushRegistrationId</a>
+</li>
+<li>
+                    1.2. <a href="#PushRegistrationState">PushRegistrationState</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#PushManagerObject">PushManagerObject</a>
+</li>
+<li>2.2. <a href="#PushManager">PushManager</a>
+</li>
+<li>2.3. <a href="#PushMessage">PushMessage</a>
+</li>
+<li>2.4. <a href="#PushRegisterSuccessCallback">PushRegisterSuccessCallback</a>
+</li>
+<li>2.5. <a href="#PushRegistrationStateChangeCallback">PushRegistrationStateChangeCallback</a>
+</li>
+<li>2.6. <a href="#PushNotificationCallback">PushNotificationCallback</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#api-features">Related Feature</a>
+</li>
+<li>4. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#PushManagerObject">PushManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#PushManager">PushManager</a></td>
+<td>
+<div>void <a href="#PushManager::register">register</a> (<a href="#PushRegisterSuccessCallback">PushRegisterSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#PushManager::unregister">unregister</a> (optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#PushManager::connect">connect</a> (<a href="#PushRegistrationStateChangeCallback">PushRegistrationStateChangeCallback</a> stateChangeCallback, <a href="#PushNotificationCallback">PushNotificationCallback</a> notificationCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#PushManager::disconnect">disconnect</a> ()</div>
+<div>
+<a href="#PushRegistrationId">PushRegistrationId</a> <a href="#PushManager::getRegistrationId">getRegistrationId</a> ()</div>
+<div>void <a href="#PushManager::getUnreadNotifications">getUnreadNotifications</a> ()</div>
+<div>
+<a href="#PushMessage">PushMessage</a>? <a href="#PushManager::getPushMessage">getPushMessage</a> ()</div>
+</td>
+</tr>
+<tr>
+<td><a href="#PushMessage">PushMessage</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#PushRegisterSuccessCallback">PushRegisterSuccessCallback</a></td>
+<td><div>void <a href="#PushRegisterSuccessCallback::onsuccess">onsuccess</a> (<a href="#PushRegistrationId">PushRegistrationId</a> id)</div></td>
+</tr>
+<tr>
+<td><a href="#PushRegistrationStateChangeCallback">PushRegistrationStateChangeCallback</a></td>
+<td><div>void <a href="#PushRegistrationStateChangeCallback::onsuccess">onsuccess</a> (<a href="#PushRegistrationState">PushRegistrationState</a> state)</div></td>
+</tr>
+<tr>
+<td><a href="#PushNotificationCallback">PushNotificationCallback</a></td>
+<td><div>void <a href="#PushNotificationCallback::onsuccess">onsuccess</a> (<a href="#PushMessage">PushMessage</a> message)</div></td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="typedef" id="PushRegistrationId">
+<a class="backward-compatibility-anchor" name="::Push::PushRegistrationId"></a><h3>1.1. PushRegistrationId</h3>
+<div class="brief">
+ A push service registration identifier.
+          </div>
+<pre class="webidl prettyprint">    typedef DOMString PushRegistrationId;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+          </p>
+</div>
+<div class="enum" id="PushRegistrationState">
+<a class="backward-compatibility-anchor" name="::Push::PushRegistrationState"></a><h3>1.2. PushRegistrationState</h3>
+<div class="brief">
+ A push registration state.
+          </div>
+<pre class="webidl prettyprint">    enum PushRegistrationState {"REGISTERED", "UNREGISTERED"};</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <ul>
+            <li>
+REGISTERED - The application is registered to the push server.            </li>
+            <li>
+UNREGISTERED - The application is not registered to the push server.            </li>
+          </ul>
+         </div>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="PushManagerObject">
+<a class="backward-compatibility-anchor" name="::Push::PushManagerObject"></a><h3>2.1. PushManagerObject</h3>
+<div class="brief">
+ The PushManagerObject interface defines what is instantiated by the <em>Tizen </em>object from the Tizen Platform.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface PushManagerObject {
+        readonly attribute <a href="#PushManager">PushManager</a> push;
+    };</pre>
+<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PushManagerObject">PushManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+          </p>
+<div class="description">
+          <p>
+The <em>tizen.push </em>object allows access to the functionality of the Push API.
+          </p>
+         </div>
+</div>
+<div class="interface" id="PushManager">
+<a class="backward-compatibility-anchor" name="::Push::PushManager"></a><h3>2.2. PushManager</h3>
+<div class="brief">
+ The PushManager interface provides methods to manage push registration and notification.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface PushManager {
+      void register(<a href="#PushRegisterSuccessCallback">PushRegisterSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+      void unregister(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+      void connect(<a href="#PushRegistrationStateChangeCallback">PushRegistrationStateChangeCallback</a> stateChangeCallback,
+                   <a href="#PushNotificationCallback">PushNotificationCallback</a> notificationCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+      void disconnect() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+      <a href="#PushRegistrationId">PushRegistrationId</a> getRegistrationId() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+      void getUnreadNotifications() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+      <a href="#PushMessage">PushMessage</a>? getPushMessage() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="deprecated method" id="PushManager::registerService">
+<a class="backward-compatibility-anchor" name="::Push::PushManager::registerService"></a><code><b><span class="methodName">registerService</span></b></code>
+</dt>
+<dd class="deprecated">
+<div class="brief">
+ Registers an application to the Tizen push server.
+            </div>
+<p class="deprecated"><b>Deprecated.</b>
+ This function has been deprecated since 3.0. Use the <a href="push.html#PushManager::register">register()</a> function instead.
+            </p>
+<div class="synopsis"><pre class="signature prettyprint">void registerService(<a href="application.html#ApplicationControl">ApplicationControl</a> appControl, <a href="#PushRegisterSuccessCallback">PushRegisterSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<div class="description">
+            <p>
+The <em>ErrorCallback()</em> is launched with these error types:
+            </p>
+            <ul>
+              <li>
+InvalidValuesError - If any of the input parameters contain an invalid value.              </li>
+              <li>
+UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/push
+            </p>
+<p><span class="remark"> Remark : </span>
+ In order to use the push messaging service, see <a href="https://developer.tizen.org/development/guides/native-application/messaging/push">Push Guide</a>.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">appControl</span>:
+ The data to deliver via notification service when the process is not running.<br> For more information, see <a href="application.html">Application API</a>.
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ The method to be called when the registration request succeeds.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to be called when the registration request fails.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any input parameters
+do not contain a valid value.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Defines the data to be used when this process is launched by notification service */
+var service = new tizen.ApplicationControl("http://tizen.org/appcontrol/operation/push_test");
+
+/* Defines the error callback */
+function errorCallback(response)
+{
+&nbsp;&nbsp;console.log("The following error occurred: " + response.name);
+}
+
+/* Defines the registration success callback */
+function registerSuccessCallback(id)
+{
+&nbsp;&nbsp;console.log("Registration succeeded with id: " + id);
+}
+
+/* Requests registration */
+tizen.push.registerService(service, registerSuccessCallback, errorCallback);
+</pre>
+</div>
+</dd>
+<dt class="method" id="PushManager::register">
+<a class="backward-compatibility-anchor" name="::Push::PushManager::register"></a><code><b><span class="methodName">register</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers an application to the Tizen push server.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void register(<a href="#PushRegisterSuccessCallback">PushRegisterSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+The <em>ErrorCallback()</em> is launched with these error types:
+            </p>
+            <ul>
+              <li>
+TimeoutError - If the operation timed out.              </li>
+              <li>
+AbortError - If the operation cannot be finished properly.              </li>
+            </ul>
+           </div>
+<div class="description">
+            <p>
+The <em>connect()</em> method must be called before calling the <em>register()</em> method.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/push
+            </p>
+<p><span class="remark"> Remark : </span>
+ In order to use the push messaging service, see <a href="https://developer.tizen.org/development/guides/native-application/messaging/push">Push Guide</a>.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ The callback to be called when the registration request succeeds.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The callback to be called when the registration request fails.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidStateError, if the application is not connected to the push service.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if the operation cannot be finished properly.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Defines the error callback */
+function errorCallback(response)
+{
+&nbsp;&nbsp;console.log("The following error occurred: " + response.name);
+}
+
+/* Defines the registration success callback */
+function registerSuccessCallback(id)
+{
+&nbsp;&nbsp;console.log("Registration succeeded with id: " + id);
+}
+
+/* Defines the state change callback */
+function stateChangeCallback(state)
+{
+&nbsp;&nbsp;console.log("The state is changed to: " + state);
+
+&nbsp;&nbsp;if (state == "UNREGISTERED")
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;/* Requests application registration */
+&nbsp;&nbsp;&nbsp;&nbsp;tizen.push.register(registerSuccessCallback, errorCallback);
+&nbsp;&nbsp;}
+}
+
+/* Defines the notification callback */
+function notificationCallback(notification)
+{
+&nbsp;&nbsp;console.log("A notification arrives.");
+}
+
+/* Connects to push service */
+tizen.push.connect(stateChangeCallback, notificationCallback, errorCallback);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> The state is changed to: UNREGISTERED
+ Registration succeeded with id: 04a150867a50f48cb79695ac732cbe550b4a6782fffd23cbc14ba8dd5c5ab0025dad29a3e4ef5de8849b95b726bea7a6395c
+ The state is changed to: REGISTERED
+ </pre>
+</div>
+</dd>
+<dt class="deprecated method" id="PushManager::unregisterService">
+<a class="backward-compatibility-anchor" name="::Push::PushManager::unregisterService"></a><code><b><span class="methodName">unregisterService</span></b></code>
+</dt>
+<dd class="deprecated">
+<div class="brief">
+ Unregisters an application from the Tizen push server.
+            </div>
+<p class="deprecated"><b>Deprecated.</b>
+ This function has been deprecated since 3.0. Use the <a href="push.html#PushManager::unregister">unregister()</a> function instead.
+            </p>
+<div class="synopsis"><pre class="signature prettyprint">void unregisterService(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<div class="description">
+            <p>
+The <em>ErrorCallback()</em> is launched with these error types:
+            </p>
+            <ul>
+              <li>
+UnknownError - If an unknown error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/push
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to be called when the request is successfully unregistered.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to be called when the unregistration request fails.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any input parameters do not contain a valid value.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Defines the error callback */
+function errorCallback(response)
+{
+&nbsp;&nbsp;console.log("The following error occurred: " + response.name);
+}
+
+/* Defines the unregistration success callback */
+function unregisterSuccessCallback()
+{
+&nbsp;&nbsp;console.log("Unregistration succeeded.");
+}
+
+/* Requests unregistration */
+tizen.push.unregisterService(unregisterSuccessCallback, errorCallback);
+</pre>
+</div>
+</dd>
+<dt class="method" id="PushManager::unregister">
+<a class="backward-compatibility-anchor" name="::Push::PushManager::unregister"></a><code><b><span class="methodName">unregister</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unregisters an application from the Tizen push server.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unregister(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+The <em>ErrorCallback()</em> is launched with these error types:
+            </p>
+            <ul>
+              <li>
+TimeoutError - If the operation timed out.              </li>
+              <li>
+AbortError - If the operation cannot be finished properly.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/push
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The callback to be called when the unregistration request succeeds.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The callback to be called when the unregistration request fails.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidStateError, if the application is not connected to the push service.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if the operation cannot be finished properly.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Connection to push service should be established (with connect()) and application should be registered (with register()) before calling the code below */
+
+/* Defines the error callback */
+function errorCallback(response)
+{
+&nbsp;&nbsp;console.log("The following error occurred: " + response.name);
+}
+
+/* Defines the unregistration success callback */
+function unregisterSuccessCallback()
+{
+&nbsp;&nbsp;console.log("Unregistration succeeded.");
+}
+
+/* Requests unregistration */
+tizen.push.unregister(unregisterSuccessCallback, errorCallback);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> Unregistration succeeded.
+ </pre>
+</div>
+</dd>
+<dt class="deprecated method" id="PushManager::connectService">
+<a class="backward-compatibility-anchor" name="::Push::PushManager::connectService"></a><code><b><span class="methodName">connectService</span></b></code>
+</dt>
+<dd class="deprecated">
+<div class="brief">
+ Connects to the push service and receives push notifications.
+            </div>
+<p class="deprecated"><b>Deprecated.</b>
+ This function has been deprecated since 3.0. Use the <a href="push.html#PushManager::connect">connect()</a> function instead.
+            </p>
+<div class="synopsis"><pre class="signature prettyprint">void connectService(<a href="#PushNotificationCallback">PushNotificationCallback</a> notificationCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/push
+            </p>
+<p><span class="remark"> Remark : </span>
+ If the application calling the <em>connectService()</em> method has not been registered to the Tizen push server,
+the <em>registerService()</em> method must be called before calling the <em>connectService()</em> method.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">notificationCallback</span>:
+ The method to be called when the notification message arrives.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any input parameters do not contain a valid value.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Defines the connect success callback */
+function notificationCallback(noti)
+{
+&nbsp;&nbsp;console.log("Notification received with alert message: " + noti.alertMessage);
+}
+
+/* Defines the data to be used when this process is launched by notification service */
+var service = new tizen.ApplicationControl("http://tizen.org/appcontrol/operation/push_test");
+
+/* Defines the error callback */
+function errorCallback(response)
+{
+&nbsp;&nbsp;console.log("The following error occurred: " + response.name);
+}
+
+/* Defines the registration success callback */
+function registerSuccessCallback(id)
+{
+&nbsp;&nbsp;console.log("Registration succeeded with id: " + id);
+
+&nbsp;&nbsp;/* Requests for push service connection */
+&nbsp;&nbsp;tizen.push.connectService(notificationCallback);
+}
+
+/* Requests registration */
+tizen.push.registerService(service, registerSuccessCallback, errorCallback);
+</pre>
+</div>
+</dd>
+<dt class="method" id="PushManager::connect">
+<a class="backward-compatibility-anchor" name="::Push::PushManager::connect"></a><code><b><span class="methodName">connect</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Connects to the push service and gets state change events and push notifications.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void connect(<a href="#PushRegistrationStateChangeCallback">PushRegistrationStateChangeCallback</a> stateChangeCallback, <a href="#PushNotificationCallback">PushNotificationCallback</a> notificationCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+The <em>ErrorCallback()</em> is launched with these error types:
+            </p>
+            <ul>
+              <li>
+AbortError - If the operation cannot be finished properly.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/push
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">stateChangeCallback</span>:
+ The callback to be called when the state of registration is changed. The callback would be called at least once,
+just after connection is established.
+                </li>
+          <li class="param">
+<span class="name">notificationCallback</span>:
+ The callback to be called when the notification message arrives.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The callback to be called when the connect request fails.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if the operation cannot be finished properly.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Defines the state change callback */
+function stateChangeCallback(state)
+{
+&nbsp;&nbsp;console.log("The state is changed to: " + state);
+}
+
+/* Defines the notification callback */
+function notificationCallback(notification)
+{
+&nbsp;&nbsp;console.log("A notification arrives.");
+}
+
+/* Defines the error callback */
+function errorCallback(error)
+{
+&nbsp;&nbsp;console.log("The following error occurred: " + error.name);
+}
+
+/* Requests for push service connection */
+tizen.push.connect(stateChangeCallback, notificationCallback, errorCallback);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> The state is changed to: UNREGISTERED
+ </pre>
+</div>
+</dd>
+<dt class="deprecated method" id="PushManager::disconnectService">
+<a class="backward-compatibility-anchor" name="::Push::PushManager::disconnectService"></a><code><b><span class="methodName">disconnectService</span></b></code>
+</dt>
+<dd class="deprecated">
+<div class="brief">
+ Disconnects the push service and stops receiving push notifications.
+            </div>
+<p class="deprecated"><b>Deprecated.</b>
+ This function has been deprecated since 3.0. Use the <a href="push.html#PushManager::disconnect">disconnect()</a> function instead.
+            </p>
+<div class="synopsis"><pre class="signature prettyprint">void disconnectService();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/push
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if the operation cannot be finished properly.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Requests disconnection */
+tizen.push.disconnectService();
+</pre>
+</div>
+</dd>
+<dt class="method" id="PushManager::disconnect">
+<a class="backward-compatibility-anchor" name="::Push::PushManager::disconnect"></a><code><b><span class="methodName">disconnect</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Disconnects the push service and stops receiving push notifications.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void disconnect();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/push
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Requests disconnection */
+tizen.push.disconnect();
+</pre>
+</div>
+</dd>
+<dt class="method" id="PushManager::getRegistrationId">
+<a class="backward-compatibility-anchor" name="::Push::PushManager::getRegistrationId"></a><code><b><span class="methodName">getRegistrationId</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the push service registration ID for this application if the registration process is successful. <var>null </var>is returned if the application has not been registered yet.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#PushRegistrationId">PushRegistrationId</a> getRegistrationId();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/push
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ PushRegistrationId ID assigned by push service.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var registrationId = tizen.push.getRegistrationId();
+if (registrationId != null)
+{
+&nbsp;&nbsp;console.log("The registration id: " + registrationId);
+}
+</pre>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Defines the state change callback */
+function stateChangeCallback(state)
+{
+&nbsp;&nbsp;console.log("The state is changed to: " + state);
+
+&nbsp;&nbsp;var id = tizen.push.getRegisterationId();
+&nbsp;&nbsp;console.log("The registration ID: " + id);
+}
+
+/* Defines the notification callback */
+function notificationCallback(notification)
+{
+&nbsp;&nbsp;console.log("A notification arrives.");
+}
+
+/* Requests for push service connection */
+tizen.push.connect(stateChangeCallback, notificationCallback);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> The state is changed to: UNREGISTERED
+ The registration ID: 04a150867a50f48cb79695ac732cbe550b4a6782fffd23cbc14ba8dd5c5ab0025dad29a3e4ef5de8849b95b726bea7a6395c
+ </pre>
+</div>
+</dd>
+<dt class="method" id="PushManager::getUnreadNotifications">
+<a class="backward-compatibility-anchor" name="::Push::PushManager::getUnreadNotifications"></a><code><b><span class="methodName">getUnreadNotifications</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Requests to get unread push notifications. As a consequence, the PushNotificationCallback which was set using the connectService() method will be invoked to retrieve the notifications..
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getUnreadNotifications();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<div class="description">
+            <p>
+The connectService() method must be called to connect to Tizen push server and receive push notifications before calling the getUnreadNotifications() method.
+If connectService is not called, <var>ServiceNotAvailableError</var> occurs.<br>If any unread message exists, you will get unread push notification message through <var>PushNotificationCallback</var> of connectService().
+For instance, if there are 10 unread messages, the <var>PushNotificationCallback</var> will be invoked 10 times.<br><br>If an application receives unread messages, the messages are removed from the system.
+            </p>
+            <p>
+When an application registers with the push server to receive push notifications,
+the push server stores messages for the application until they are delivered.
+While the application is not running, messages cannot be delivered.
+This method allows retrieving such missed push messages.
+Once a missed push notification is retrieved the server deletes it from its database.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/push
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type ServiceNotAvailableError, if the network is unreachable for some reason(e.g disconnected to the Tizen push server)
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Defines the connect success callback */
+function notificationCallback(message)
+{
+&nbsp;&nbsp;console.log("New push message: " + message.alertMessage + ", date: " + message.date + ", data: " + message.appData);
+}
+
+/* Requests for push service connection */
+tizen.push.connectService(notificationCallback);
+tizen.push.getUnreadNotifications();
+</pre>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Defines the state change callback */
+function stateChangeCallback(state)
+{
+&nbsp;&nbsp;console.log("The state is changed to: " + state);
+
+&nbsp;&nbsp;if (state === "REGISTERED")
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;/* Gets unread push notifications */
+&nbsp;&nbsp;&nbsp;&nbsp;tizen.push.getUnreadNotifications();
+&nbsp;&nbsp;}
+}
+
+/* Defines the notification callback */
+function notificationCallback(notification)
+{
+&nbsp;&nbsp;console.log("A notification arrives.");
+}
+
+/* Requests for push service connection */
+tizen.push.connect(stateChangeCallback, notificationCallback);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> The state is changed to: REGISTERED
+ </pre>
+</div>
+</dd>
+<dt class="method" id="PushManager::getPushMessage">
+<a class="backward-compatibility-anchor" name="::Push::PushManager::getPushMessage"></a><code><b><span class="methodName">getPushMessage</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets push messages when the application is launched by the push service.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#PushMessage">PushMessage</a>? getPushMessage();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+If the application is launched by the push service, the push service is connected when the application is launched.
+Therefore, you can get push messages without calling the <a href="push.html#Push%20Manager::connect">connect()</a> function.
+            </p>
+            <p>
+If the application was not launched by the push service, this method returns <em>null</em>.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/push
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ PushMessage The last message delivered from the push service or null.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if the operation cannot be finished properly.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+&nbsp;&nbsp;var message = tizen.push.getPushMessage();
+&nbsp;&nbsp;console.log("Message received from: " + message.sender);
+}
+catch (err)
+{
+&nbsp;&nbsp;console.log("Exception - code: " + err.name + " message: " + err.message);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> Message received from: xyz.AnotherApp
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="PushMessage">
+<a class="backward-compatibility-anchor" name="::Push::PushMessage"></a><h3>2.3. PushMessage</h3>
+<div class="brief">
+ The PushMessage interface specifies the push message that is delivered from the push service.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface PushMessage {
+        readonly attribute DOMString appData;
+
+        readonly attribute DOMString alertMessage;
+
+        readonly attribute DOMString message;
+
+        readonly attribute Date date;
+
+        readonly attribute DOMString sender;
+
+        readonly attribute DOMString sessionInfo;
+
+        readonly attribute DOMString requestId;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="PushMessage::appData">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">appData</span></span><div class="brief">
+ An attribute to store the push notification data.
+            </div>
+<div class="description">
+            <p>
+This data is the message that the sender wants to send and its length must be less than 1 KB.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+</li>
+<li class="attribute" id="PushMessage::alertMessage">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">alertMessage</span></span><div class="brief">
+ An attribute to store the push notification message that may include an alert message to the user.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+</li>
+<li class="attribute" id="PushMessage::message">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">message</span></span><div class="brief">
+ An attribute to store the full push notification message.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</li>
+<li class="attribute" id="PushMessage::date">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">Date </span><span class="name">date</span></span><div class="brief">
+ An attribute to store the date/time when a push notification message is received.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+</li>
+<li class="attribute" id="PushMessage::sender">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">sender</span></span><div class="brief">
+ The name of the sender of the notification.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</li>
+<li class="attribute" id="PushMessage::sessionInfo">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">sessionInfo</span></span><div class="brief">
+ The session information of the notification.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</li>
+<li class="attribute" id="PushMessage::requestId">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">requestId</span></span><div class="brief">
+ The request ID assigned by the sender.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Defines the state change callback */
+function stateChangeCallback(state)
+{
+&nbsp;&nbsp;console.log("The state is changed to: " + state);
+}
+
+/* Defines the connect success callback */
+function notificationCallback(noti)
+{
+&nbsp;&nbsp;console.log("notification received on " + noti.date + " from: " + noti.sender);
+&nbsp;&nbsp;console.log("Details:");
+&nbsp;&nbsp;console.log(" - data: " + noti.appData);
+&nbsp;&nbsp;console.log(" - alert message: " + noti.alertMessage);
+&nbsp;&nbsp;console.log(" - message: " + noti.message);
+&nbsp;&nbsp;console.log(" - session: " + noti.sessionInfo);
+&nbsp;&nbsp;console.log(" - request ID: " + noti.requestId);
+}
+
+/* Requests for push service connection */
+tizen.push.connect(stateChangeCallback, notificationCallback);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> The state is changed to: REGISTERED
+ notification received on Thu Jan 01 2015 from: xyz.AnotherApp
+ Details:
+  - data: {id:asdf}
+  - alert message: Hi
+  - message: alertMessage=Hi
+  - session: 002002
+  - request ID: 23
+ </pre>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="PushRegisterSuccessCallback">
+<a class="backward-compatibility-anchor" name="::Push::PushRegisterSuccessCallback"></a><h3>2.4. PushRegisterSuccessCallback</h3>
+<div class="brief">
+ The PushRegisterSuccessCallback interface specifies the success callback for a push service registration request.
+          </div>
+<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject]
+    interface PushRegisterSuccessCallback {
+        void onsuccess(<a href="#PushRegistrationId">PushRegistrationId</a> id);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+          </p>
+<div class="description">
+          <p>
+This success callback is invoked when a push service registration request is successful.
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="PushRegisterSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Push::PushRegisterSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a push service registration request is successful.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#PushRegistrationId">PushRegistrationId</a> id);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">id</span>:
+ The registration ID.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="PushRegistrationStateChangeCallback">
+<a class="backward-compatibility-anchor" name="::Push::PushRegistrationStateChangeCallback"></a><h3>2.5. PushRegistrationStateChangeCallback</h3>
+<div class="brief">
+ The PushRegistrationStateChangeCallback interface specifies the state change callback for the state change event.
+          </div>
+<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject]
+    interface PushRegistrationStateChangeCallback {
+        void onsuccess(<a href="#PushRegistrationState">PushRegistrationState</a> state);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+This state change callback is invoked when the state of registration is changed.
+Moreover PushRegistrationStateChangeCallback would be called at least once, just after connection is established.
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="PushRegistrationStateChangeCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Push::PushRegistrationStateChangeCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the state of push registration is changed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#PushRegistrationState">PushRegistrationState</a> state);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">state</span>:
+ The state of push registration.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="PushNotificationCallback">
+<a class="backward-compatibility-anchor" name="::Push::PushNotificationCallback"></a><h3>2.6. PushNotificationCallback</h3>
+<div class="brief">
+ The PushNotificationCallback interface specifies the notification callback for the received push notification message.
+          </div>
+<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject]
+    interface PushNotificationCallback {
+        void onsuccess(<a href="#PushMessage">PushMessage</a> message);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+          </p>
+<div class="description">
+          <p>
+This notification callback is invoked when the push notification message arrives.
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="PushNotificationCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Push::PushNotificationCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the push notification message arrives.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#PushMessage">PushMessage</a> message);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">message</span>:
+ The received push notification message.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="api-features">3. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the push application runs on a device with the push feature, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/network.push</li>
+</div>
+<p></p>
+                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering</a>.
+</div>
+<h2 id="full-webidl">4. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Push {
+
+    typedef DOMString PushRegistrationId;
+
+    enum PushRegistrationState {"REGISTERED", "UNREGISTERED"};
+
+    [NoInterfaceObject] interface PushManagerObject {
+        readonly attribute <a href="#PushManager">PushManager</a> push;
+    };
+    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PushManagerObject">PushManagerObject</a>;
+
+    [NoInterfaceObject] interface PushManager {
+      void register(<a href="#PushRegisterSuccessCallback">PushRegisterSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+      void unregister(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+      void connect(<a href="#PushRegistrationStateChangeCallback">PushRegistrationStateChangeCallback</a> stateChangeCallback,
+                   <a href="#PushNotificationCallback">PushNotificationCallback</a> notificationCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+      void disconnect() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+      <a href="#PushRegistrationId">PushRegistrationId</a> getRegistrationId() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+      void getUnreadNotifications() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+      <a href="#PushMessage">PushMessage</a>? getPushMessage() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };
+
+    [NoInterfaceObject] interface PushMessage {
+        readonly attribute DOMString appData;
+
+        readonly attribute DOMString alertMessage;
+
+        readonly attribute DOMString message;
+
+        readonly attribute Date date;
+
+        readonly attribute DOMString sender;
+
+        readonly attribute DOMString sessionInfo;
+
+        readonly attribute DOMString requestId;
+    };
+
+    [Callback=FunctionOnly, NoInterfaceObject]
+    interface PushRegisterSuccessCallback {
+        void onsuccess(<a href="#PushRegistrationId">PushRegistrationId</a> id);
+    };
+
+    [Callback=FunctionOnly, NoInterfaceObject]
+    interface PushRegistrationStateChangeCallback {
+        void onsuccess(<a href="#PushRegistrationState">PushRegistrationState</a> state);
+    };
+
+    [Callback=FunctionOnly, NoInterfaceObject]
+    interface PushNotificationCallback {
+        void onsuccess(<a href="#PushMessage">PushMessage</a> message);
+    };
+
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

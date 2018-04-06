@@ -1,0 +1,655 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>KeyManager API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::KeyManager">
+<div class="title"><h1>KeyManager API</h1></div>
+<div class="brief">
+ The KeyManager API provides a secure repository for storing, retrieving and removing the sensitive data of users and their applications. Users can protect the data with passwords.
+        </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li>
+                    1.1. <a href="#RawData">RawData</a>
+</li>
+<li>
+                    1.2. <a href="#PermissionType">PermissionType</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#KeyManagerObject">KeyManagerObject</a>
+</li>
+<li>2.2. <a href="#KeyManager">KeyManager</a>
+</li>
+<li>2.3. <a href="#KeyManagerAlias">KeyManagerAlias</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#KeyManagerObject">KeyManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#KeyManager">KeyManager</a></td>
+<td>
+<div>void <a href="#KeyManager::saveData">saveData</a> (DOMString name, <a href="#RawData">RawData</a> rawData, optional DOMString? password, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#KeyManager::removeData">removeData</a> (<a href="#KeyManagerAlias">KeyManagerAlias</a> dataAlias)</div>
+<div>
+<a href="#RawData">RawData</a> <a href="#KeyManager::getData">getData</a> (<a href="#KeyManagerAlias">KeyManagerAlias</a> dataAlias, optional DOMString? password)</div>
+<div>
+<a href="#KeyManagerAlias">KeyManagerAlias</a>[] <a href="#KeyManager::getDataAliasList">getDataAliasList</a> ()</div>
+<div>void <a href="#KeyManager::setPermission">setPermission</a> (<a href="#KeyManagerAlias">KeyManagerAlias</a> dataAlias, <a href="package.html#PackageId">PackageId</a> packageId, <a href="#PermissionType">PermissionType</a> permissionType, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#KeyManagerAlias">KeyManagerAlias</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="typedef" id="RawData">
+<a class="backward-compatibility-anchor" name="::KeyManager::RawData"></a><h3>1.1. RawData</h3>
+<div class="brief">
+ Data to be stored or retrieved.
+          </div>
+<pre class="webidl prettyprint">  typedef DOMString RawData;</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+</div>
+<div class="enum" id="PermissionType">
+<a class="backward-compatibility-anchor" name="::KeyManager::PermissionType"></a><h3>1.2. PermissionType</h3>
+<div class="brief">
+ An enumerator to indicate permissions.
+          </div>
+<pre class="webidl prettyprint">  enum PermissionType{
+      "NONE",
+      "READ",
+      "REMOVE",
+      "READ_REMOVE"
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <ul>
+            <li>
+ NONE - Clears or removes permissions             </li>
+            <li>
+ READ - Permission to read data             </li>
+            <li>
+ REMOVE - Permission to remove data             </li>
+            <li>
+ READ_REMOVE - Permission to read and remove data             </li>
+          </ul>
+         </div>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="KeyManagerObject">
+<a class="backward-compatibility-anchor" name="::KeyManager::KeyManagerObject"></a><h3>2.1. KeyManagerObject</h3>
+<div class="brief">
+ The KeyManagerObject interface defines what is instantiated by the <em>Tizen </em>object from the Tizen Platform.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface KeyManagerObject {
+      readonly attribute <a href="#KeyManager">KeyManager</a> keymanager;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#KeyManagerObject">KeyManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+The <em>tizen.keymanager </em>object allows access to the functionality of the KeyManager API.
+          </p>
+         </div>
+</div>
+<div class="interface" id="KeyManager">
+<a class="backward-compatibility-anchor" name="::KeyManager::KeyManager"></a><h3>2.2. KeyManager</h3>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface KeyManager {
+
+    void saveData(DOMString name,
+                  <a href="#RawData">RawData</a> rawData,
+                  optional DOMString? password,
+                  optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeData(<a href="#KeyManagerAlias">KeyManagerAlias</a> dataAlias) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#RawData">RawData</a> getData(<a href="#KeyManagerAlias">KeyManagerAlias</a> dataAlias, optional DOMString? password) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#KeyManagerAlias">KeyManagerAlias</a>[] getDataAliasList() raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void setPermission(<a href="#KeyManagerAlias">KeyManagerAlias</a> dataAlias,
+                       <a href="package.html#PackageId">PackageId</a> packageId,
+                       <a href="#PermissionType">PermissionType</a> permissionType,
+                       optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="KeyManager::saveData">
+<a class="backward-compatibility-anchor" name="::KeyManager::KeyManager::saveData"></a><code><b><span class="methodName">saveData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Saves and stores data as a <a href="#KeyManagerAlias">KeyManagerAlias</a> inside the KeyManager.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void saveData(DOMString name, <a href="#RawData">RawData</a> rawData, optional DOMString? password, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+On success, this method will add a <a href="#KeyManagerAlias">KeyManagerAlias</a> into the KeyManager. The <em>name</em> attribute of that KeyManagerAlias will be set to be the value of the <em>name</em> parameter which is used in this method call. The <em>packageId</em> attribute of that KeyManagerAlias will automatically be set to be the package ID of the application which calls this method.
+            </p>
+            <p>
+The <em>ErrorCallback</em> is launched with these error types:
+            </p>
+            <ul>
+              <li>
+UnknownError - If the method cannot be completed because of an unknown error.              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">name</span>:
+ Name to identify the data - this will be the <em>name</em> attribute of the <a href="#KeyManagerAlias">KeyManagerAlias</a> which this method adds, on success, into the KeyManager
+                </li>
+          <li class="param">
+<span class="name">rawData</span>:
+ Raw data to be stored
+                </li>
+          <li class="param">
+<span class="name">password</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Password to use for encrypting the data
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when data is successfully saved
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var data_name = "data1", raw_data = "my data";
+
+function onSave()
+{
+   console.log("Successfully saved data");
+}
+
+tizen.keymanager.saveData(data_name, raw_data, null, onSave);
+</pre>
+</div>
+</dd>
+<dt class="method" id="KeyManager::removeData">
+<a class="backward-compatibility-anchor" name="::KeyManager::KeyManager::removeData"></a><code><b><span class="methodName">removeData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes data from the KeyManager.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeData(<a href="#KeyManagerAlias">KeyManagerAlias</a> dataAlias);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+To remove data, an application must have permission to remove that data. By default, an application which saved data into the KeyManager has permission to remove the data. An application can also use the <a href="#KeyManager::setPermission">setPermission</a> method to allow another application to remove its data.
+            </p>
+            <p>
+If an application calls this method to remove data which it saved into the KeyManager, the <em>dataAlias</em> parameter does not require the <em>packageId</em> attribute.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">dataAlias</span>:
+ Alias of the data to remove
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the dataAlias cannot be found.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the method cannot be completed because of an unknown error
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var data_name = "data1", raw_data = "my data";
+
+function onSave()
+{
+   /* Do something */
+
+   /*
+      Dictionary does not require package ID because the
+      application which is calling removeData() saved "data1"
+   */
+   tizen.keymanager.removeData({"name": data_name});
+}
+
+tizen.keymanager.saveData(data_name, raw_data, null, onSave);
+</pre>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var aliases = tizen.keymanager.getDataAliasList();
+
+if (aliases.length != 0)
+{
+   /*
+      Assuming the application calling removeData() has permission
+      to remove aliases[0]
+   */
+   var app_data = tizen.keymanager.removeData(aliases[0]);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="KeyManager::getData">
+<a class="backward-compatibility-anchor" name="::KeyManager::KeyManager::getData"></a><code><b><span class="methodName">getData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets raw data from the KeyManager.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#RawData">RawData</a> getData(<a href="#KeyManagerAlias">KeyManagerAlias</a> dataAlias, optional DOMString? password);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+To get raw data, an application must have permission to get that raw data. By default, an application which saved raw data into the KeyManager has permission to get that raw data. An application can also use the <a href="#KeyManager::setPermission">setPermission</a> method to allow another application to get and read its raw data.
+            </p>
+            <p>
+If an application calls this method to retrieve raw data which it saved into the KeyManager, the <em>dataAlias</em> parameter does not require the <em>packageId</em> attribute.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">dataAlias</span>:
+ Alias of the data to get
+                </li>
+          <li class="param">
+<span class="name">password</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Password which was used to encrypt the data
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ RawData Data.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the dataAlias cannot be found.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type VerificationError, if the method cannot be completed because an incorrect password is used.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the method cannot be completed because of a database access failure or any other unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var data_name = "data1", raw_data = "my data";
+
+function onSave()
+{
+   /*
+      Dictionary does not require package ID because the
+      application which is calling getData() saved "data1"
+   */
+   var app_data = tizen.keymanager.getData({"name": data_name});
+   console.log("App data: " + app_data + " was retrieved");
+}
+
+tizen.keymanager.saveData(data_name, raw_data, null, onSave);
+</pre>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var aliases = tizen.keymanager.getDataAliasList();
+
+if (aliases.length != 0)
+{
+   /*
+      Assuming the application calling getData() has permission to read
+      aliases[0]
+   */
+   var app_data = tizen.keymanager.getData(aliases[0]);
+   console.log("App data: " + app_data + " was retrieved");
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="KeyManager::getDataAliasList">
+<a class="backward-compatibility-anchor" name="::KeyManager::KeyManager::getDataAliasList"></a><code><b><span class="methodName">getDataAliasList</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets all the aliases which an application can access.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#KeyManagerAlias">KeyManagerAlias</a>[] getDataAliasList();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ KeyManagerAlias[] Array of aliases.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if the method cannot be completed because of an unknown error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var aliases = tizen.keymanager.getDataAliasList();
+
+console.log("aliases: ");
+for (var i = 0; i &lt; aliases.length; i++)
+{
+   console.log("Package ID: " + aliases[i].packageId + ", Name: "
+               + aliases[i].name);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="KeyManager::setPermission">
+<a class="backward-compatibility-anchor" name="::KeyManager::KeyManager::setPermission"></a><code><b><span class="methodName">setPermission</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets permissions that another application has for accessing an application's data.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setPermission(<a href="#KeyManagerAlias">KeyManagerAlias</a> dataAlias, <a href="package.html#PackageId">PackageId</a> packageId, <a href="#PermissionType">PermissionType</a> permissionType, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+An application can only set permissions for data which it saved into the KeyManager. Therefore, the <em>dataAlias</em> parameter does not require the <em>packageId</em> attribute.
+            </p>
+            <p>
+The <em>ErrorCallback</em> is launched with these error types:
+            </p>
+            <ul>
+              <li>
+NotFoundError - If the dataAlias cannot be found.              </li>
+              <li>
+UnknownError - If the method cannot be completed because of an unknown error.              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">dataAlias</span>:
+ Alias the data for which permission will be set
+                </li>
+          <li class="param">
+<span class="name">packageId</span>:
+ Package ID of the accessor application
+                </li>
+          <li class="param">
+<span class="name">permissionType</span>:
+ Permission to grant to the accessor application
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when permission is successfully set
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var data_name = "data1", raw_data = "my data";
+
+function onPermissionSet()
+{
+   console.log("Successfully set permission");
+}
+
+function onSave()
+{
+   /*
+      Dictionary does not require package ID because an
+      application can only set permission for data which it saved
+   */
+   tizen.keymanager.setPermission({"name": data_name}, "9PdoiICQ4c", "READ_REMOVE",
+                                  onPermissionSet);
+}
+
+tizen.keymanager.saveData(data_name, raw_data, null, onSave);
+</pre>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var aliases = tizen.keymanager.getDataAliasList();
+
+function onPermissionSet()
+{
+   console.log("Successfully set permssion");
+}
+
+if (aliases.length != 0)
+{
+   /*
+      Check that the application calling setPermission() saved aliases[0] into
+      the KeyManager
+   */
+   if (aliases[0].packageId === tizen.package.getPackageInfo().id)
+   {
+      tizen.keymanager.setPermission(aliases[0], "9PdoiICQ4c", "READ_REMOVE",
+                                     onPermissionSet);
+   }
+   else
+   {
+      console.log("This application did not save aliases[0] into the KeyManager");
+   }
+}
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="dictionary" id="KeyManagerAlias">
+<a class="backward-compatibility-anchor" name="::KeyManager::KeyManagerAlias"></a><h3>2.3. KeyManagerAlias</h3>
+<div class="brief">
+ The KeyManagerAlias dictionary identifies items in the KeyManager.
+          </div>
+<pre class="webidl prettyprint">  dictionary KeyManagerAlias {
+    <a href="package.html#PackageId">PackageId</a> packageId;
+
+    DOMString name;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="attributes">
+<h4>Dictionary members</h4>
+<dl>
+<dt class="member" id="KeyManagerAlias::packageId"><span class="attrName"><a href="package.html#PackageId">PackageId</a> packageId</span></dt>
+<dd>
+<div class="brief">
+ Package ID of the application which saved the item into the KeyManager.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="KeyManagerAlias::name"><span class="attrName">DOMString name</span></dt>
+<dd>
+<div class="brief">
+ Name which describes the item.
+            </div>
+<div class="description">
+            <p>
+If this attribute contains any spaces, the spaces will be removed. Characters which are separated by spaces will be concatenated.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">3. Full WebIDL</h2>
+<pre class="webidl prettyprint">module KeyManager {
+  typedef DOMString RawData;
+
+  enum PermissionType{
+      "NONE",
+      "READ",
+      "REMOVE",
+      "READ_REMOVE"
+  };
+
+  [NoInterfaceObject] interface KeyManagerObject {
+      readonly attribute <a href="#KeyManager">KeyManager</a> keymanager;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#KeyManagerObject">KeyManagerObject</a>;
+
+  [NoInterfaceObject] interface KeyManager {
+
+    void saveData(DOMString name,
+                  <a href="#RawData">RawData</a> rawData,
+                  optional DOMString? password,
+                  optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeData(<a href="#KeyManagerAlias">KeyManagerAlias</a> dataAlias) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#RawData">RawData</a> getData(<a href="#KeyManagerAlias">KeyManagerAlias</a> dataAlias, optional DOMString? password) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#KeyManagerAlias">KeyManagerAlias</a>[] getDataAliasList() raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void setPermission(<a href="#KeyManagerAlias">KeyManagerAlias</a> dataAlias,
+                       <a href="package.html#PackageId">PackageId</a> packageId,
+                       <a href="#PermissionType">PermissionType</a> permissionType,
+                       optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+
+  dictionary KeyManagerAlias {
+    <a href="package.html#PackageId">PackageId</a> packageId;
+
+    DOMString name;
+  };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,4618 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>NFC API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::NFC">
+<div class="supported-platforms"><img class="mobile-optional" title="Optional, Not supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
+<div class="title"><h1>NFC API</h1></div>
+<div class="brief">
+  The NFC API provides a protocol for simple wireless interconnection of
+closely coupled devices operating at 13.56 MHz using Near Field Communication (NFC),
+which is an international standard (ISO/IEC 18092).
+To know more, see <a href="http://www.nfc-forum.org/specs/spec_list/">Technical Specifications</a>.
+        </div>
+<div class="description">
+        <p>
+There are three groups of application scenarios for NFC:
+        </p>
+        <ul>
+          <li>
+Exchanging some digital information or data by holding a device close to a wireless tag.          </li>
+          <li>
+Exchanging some information or data between two devices by holding them close to each other.          </li>
+          <li>
+Making payments by holding mobile phones close to point of sales terminals instead of swiping smart cards.          </li>
+        </ul>
+        <p>
+For more information on the NFC features, see <a href="https://developer.tizen.org/development/guides/web-application/connectivity-and-wireless/nfc">NFC Guide</a>.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li>
+                    1.1. <a href="#NDEFRecordTextEncoding">NDEFRecordTextEncoding</a>
+</li>
+<li>
+                    1.2. <a href="#NFCTagType">NFCTagType</a>
+</li>
+<li>
+                    1.3. <a href="#CardEmulationMode">CardEmulationMode</a>
+</li>
+<li>
+                    1.4. <a href="#SecureElementType">SecureElementType</a>
+</li>
+<li>
+                    1.5. <a href="#CardEmulationCategoryType">CardEmulationCategoryType</a>
+</li>
+<li>
+                    1.6. <a href="#HCEEventType">HCEEventType</a>
+</li>
+<li>
+                    1.7. <a href="#AID">AID</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#NFCManagerObject">NFCManagerObject</a>
+</li>
+<li>2.2. <a href="#NFCManager">NFCManager</a>
+</li>
+<li>2.3. <a href="#NFCAdapter">NFCAdapter</a>
+</li>
+<li>2.4. <a href="#NFCTag">NFCTag</a>
+</li>
+<li>2.5. <a href="#NFCPeer">NFCPeer</a>
+</li>
+<li>2.6. <a href="#NDEFMessage">NDEFMessage</a>
+</li>
+<li>2.7. <a href="#NDEFRecord">NDEFRecord</a>
+</li>
+<li>2.8. <a href="#NDEFRecordText">NDEFRecordText</a>
+</li>
+<li>2.9. <a href="#NDEFRecordURI">NDEFRecordURI</a>
+</li>
+<li>2.10. <a href="#NDEFRecordMedia">NDEFRecordMedia</a>
+</li>
+<li>2.11. <a href="#HCEEventData">HCEEventData</a>
+</li>
+<li>2.12. <a href="#AIDData">AIDData</a>
+</li>
+<li>2.13. <a href="#NFCTagDetectCallback">NFCTagDetectCallback</a>
+</li>
+<li>2.14. <a href="#NFCPeerDetectCallback">NFCPeerDetectCallback</a>
+</li>
+<li>2.15. <a href="#NDEFMessageReadCallback">NDEFMessageReadCallback</a>
+</li>
+<li>2.16. <a href="#ByteArraySuccessCallback">ByteArraySuccessCallback</a>
+</li>
+<li>2.17. <a href="#CardEmulationModeChangeCallback">CardEmulationModeChangeCallback</a>
+</li>
+<li>2.18. <a href="#TransactionEventCallback">TransactionEventCallback</a>
+</li>
+<li>2.19. <a href="#ActiveSecureElementChangeCallback">ActiveSecureElementChangeCallback</a>
+</li>
+<li>2.20. <a href="#HCEEventReceiveCallback">HCEEventReceiveCallback</a>
+</li>
+<li>2.21. <a href="#AIDArraySuccessCallback">AIDArraySuccessCallback</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#api-features">Related Feature</a>
+</li>
+<li>4. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#NFCManagerObject">NFCManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#NFCManager">NFCManager</a></td>
+<td>
+<div>
+<a href="#NFCAdapter">NFCAdapter</a> <a href="#NFCManager::getDefaultAdapter">getDefaultAdapter</a> ()</div>
+<div>void <a href="#NFCManager::setExclusiveMode">setExclusiveMode</a> (boolean mode)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#NFCAdapter">NFCAdapter</a></td>
+<td>
+<div>void <a href="#NFCAdapter::setTagListener">setTagListener</a> (<a href="#NFCTagDetectCallback">NFCTagDetectCallback</a> detectCallback, optional <a href="#NFCTagType">NFCTagType</a>[]? tagFilter)</div>
+<div>void <a href="#NFCAdapter::setPeerListener">setPeerListener</a> (<a href="#NFCPeerDetectCallback">NFCPeerDetectCallback</a> detectCallback)</div>
+<div>void <a href="#NFCAdapter::unsetTagListener">unsetTagListener</a> ()</div>
+<div>void <a href="#NFCAdapter::unsetPeerListener">unsetPeerListener</a> ()</div>
+<div>long <a href="#NFCAdapter::addCardEmulationModeChangeListener">addCardEmulationModeChangeListener</a> (<a href="#CardEmulationModeChangeCallback">CardEmulationModeChangeCallback</a> changeCallback)</div>
+<div>void <a href="#NFCAdapter::removeCardEmulationModeChangeListener">removeCardEmulationModeChangeListener</a> (long watchId)</div>
+<div>long <a href="#NFCAdapter::addTransactionEventListener">addTransactionEventListener</a> (<a href="#SecureElementType">SecureElementType</a> type, <a href="#TransactionEventCallback">TransactionEventCallback</a> eventCallback)</div>
+<div>void <a href="#NFCAdapter::removeTransactionEventListener">removeTransactionEventListener</a> (long watchId)</div>
+<div>long <a href="#NFCAdapter::addActiveSecureElementChangeListener">addActiveSecureElementChangeListener</a> (<a href="#ActiveSecureElementChangeCallback">ActiveSecureElementChangeCallback</a> changeCallback)</div>
+<div>void <a href="#NFCAdapter::removeActiveSecureElementChangeListener">removeActiveSecureElementChangeListener</a> (long watchId)</div>
+<div>
+<a href="#NDEFMessage">NDEFMessage</a>? <a href="#NFCAdapter::getCachedMessage">getCachedMessage</a> ()</div>
+<div>void <a href="#NFCAdapter::setExclusiveModeForTransaction">setExclusiveModeForTransaction</a> (boolean mode)</div>
+<div>long <a href="#NFCAdapter::addHCEEventListener">addHCEEventListener</a> (<a href="#HCEEventReceiveCallback">HCEEventReceiveCallback</a> eventCallback)</div>
+<div>void <a href="#NFCAdapter::removeHCEEventListener">removeHCEEventListener</a> (long watchId)</div>
+<div>void <a href="#NFCAdapter::sendHostAPDUResponse">sendHostAPDUResponse</a> (byte[] apdu, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>boolean <a href="#NFCAdapter::isActivatedHandlerForAID">isActivatedHandlerForAID</a> (<a href="#SecureElementType">SecureElementType</a> type, <a href="#AID">AID</a> aid)</div>
+<div>boolean <a href="#NFCAdapter::isActivatedHandlerForCategory">isActivatedHandlerForCategory</a> (<a href="#SecureElementType">SecureElementType</a> type, <a href="#CardEmulationCategoryType">CardEmulationCategoryType</a> category)</div>
+<div>void <a href="#NFCAdapter::registerAID">registerAID</a> (<a href="#SecureElementType">SecureElementType</a> type, <a href="#AID">AID</a> aid, <a href="#CardEmulationCategoryType">CardEmulationCategoryType</a> category)</div>
+<div>void <a href="#NFCAdapter::unregisterAID">unregisterAID</a> (<a href="#SecureElementType">SecureElementType</a> type, <a href="#AID">AID</a> aid, <a href="#CardEmulationCategoryType">CardEmulationCategoryType</a> category)</div>
+<div>void <a href="#NFCAdapter::getAIDsForCategory">getAIDsForCategory</a> (<a href="#SecureElementType">SecureElementType</a> type, <a href="#CardEmulationCategoryType">CardEmulationCategoryType</a> category, <a href="#AIDArraySuccessCallback">AIDArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#NFCAdapter::setPreferredApp">setPreferredApp</a> ()</div>
+<div>void <a href="#NFCAdapter::unsetPreferredApp">unsetPreferredApp</a> ()</div>
+</td>
+</tr>
+<tr>
+<td><a href="#NFCTag">NFCTag</a></td>
+<td>
+<div>void <a href="#NFCTag::readNDEF">readNDEF</a> (<a href="#NDEFMessageReadCallback">NDEFMessageReadCallback</a> readCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#NFCTag::writeNDEF">writeNDEF</a> (<a href="#NDEFMessage">NDEFMessage</a> ndefMessage, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#NFCTag::transceive">transceive</a> (byte[] data, <a href="#ByteArraySuccessCallback">ByteArraySuccessCallback</a> dataCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#NFCPeer">NFCPeer</a></td>
+<td>
+<div>void <a href="#NFCPeer::setReceiveNDEFListener">setReceiveNDEFListener</a> (<a href="#NDEFMessageReadCallback">NDEFMessageReadCallback</a> successCallback)</div>
+<div>void <a href="#NFCPeer::unsetReceiveNDEFListener">unsetReceiveNDEFListener</a> ()</div>
+<div>void <a href="#NFCPeer::sendNDEF">sendNDEF</a> (<a href="#NDEFMessage">NDEFMessage</a> ndefMessage, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#NDEFMessage">NDEFMessage</a></td>
+<td><div>byte[] <a href="#NDEFMessage::toByte">toByte</a> ()</div></td>
+</tr>
+<tr>
+<td><a href="#NDEFRecord">NDEFRecord</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#NDEFRecordText">NDEFRecordText</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#NDEFRecordURI">NDEFRecordURI</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#NDEFRecordMedia">NDEFRecordMedia</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#HCEEventData">HCEEventData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#AIDData">AIDData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#NFCTagDetectCallback">NFCTagDetectCallback</a></td>
+<td>
+<div>void <a href="#NFCTagDetectCallback::onattach">onattach</a> (<a href="#NFCTag">NFCTag</a> nfcTag)</div>
+<div>void <a href="#NFCTagDetectCallback::ondetach">ondetach</a> ()</div>
+</td>
+</tr>
+<tr>
+<td><a href="#NFCPeerDetectCallback">NFCPeerDetectCallback</a></td>
+<td>
+<div>void <a href="#NFCPeerDetectCallback::onattach">onattach</a> (<a href="#NFCPeer">NFCPeer</a> nfcPeer)</div>
+<div>void <a href="#NFCPeerDetectCallback::ondetach">ondetach</a> ()</div>
+</td>
+</tr>
+<tr>
+<td><a href="#NDEFMessageReadCallback">NDEFMessageReadCallback</a></td>
+<td><div>void <a href="#NDEFMessageReadCallback::onsuccess">onsuccess</a> (<a href="#NDEFMessage">NDEFMessage</a> ndefMessage)</div></td>
+</tr>
+<tr>
+<td><a href="#ByteArraySuccessCallback">ByteArraySuccessCallback</a></td>
+<td><div>void <a href="#ByteArraySuccessCallback::onsuccess">onsuccess</a> (byte[] data)</div></td>
+</tr>
+<tr>
+<td><a href="#CardEmulationModeChangeCallback">CardEmulationModeChangeCallback</a></td>
+<td><div>void <a href="#CardEmulationModeChangeCallback::onchanged">onchanged</a> (<a href="#CardEmulationMode">CardEmulationMode</a> mode)</div></td>
+</tr>
+<tr>
+<td><a href="#TransactionEventCallback">TransactionEventCallback</a></td>
+<td><div>void <a href="#TransactionEventCallback::ondetected">ondetected</a> (octet[] appletId, octet[] data)</div></td>
+</tr>
+<tr>
+<td><a href="#ActiveSecureElementChangeCallback">ActiveSecureElementChangeCallback</a></td>
+<td><div>void <a href="#ActiveSecureElementChangeCallback::onchanged">onchanged</a> (<a href="#SecureElementType">SecureElementType</a> type)</div></td>
+</tr>
+<tr>
+<td><a href="#HCEEventReceiveCallback">HCEEventReceiveCallback</a></td>
+<td><div>void <a href="#HCEEventReceiveCallback::ondetected">ondetected</a> (<a href="#HCEEventData">HCEEventData</a> data)</div></td>
+</tr>
+<tr>
+<td><a href="#AIDArraySuccessCallback">AIDArraySuccessCallback</a></td>
+<td><div>void <a href="#AIDArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#AIDData">AIDData</a>[] aids)</div></td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="enum" id="NDEFRecordTextEncoding">
+<a class="backward-compatibility-anchor" name="::NFC::NDEFRecordTextEncoding"></a><h3>1.1. NDEFRecordTextEncoding</h3>
+<div class="brief">
+ Specifies the encoding format for NDEF record text.
+          </div>
+<pre class="webidl prettyprint">  enum NDEFRecordTextEncoding { "UTF8", "UTF16" };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+</div>
+<div class="enum" id="NFCTagType">
+<a class="backward-compatibility-anchor" name="::NFC::NFCTagType"></a><h3>1.2. NFCTagType</h3>
+<div class="brief">
+ Specifies the type of an NFC tag.
+          </div>
+<pre class="webidl prettyprint">  enum NFCTagType { "GENERIC_TARGET", "ISO14443_A", "ISO14443_4A", "ISO14443_3A",
+  "MIFARE_MINI", "MIFARE_1K", "MIFARE_4K", "MIFARE_ULTRA", "MIFARE_DESFIRE",
+  "ISO14443_B", "ISO14443_4B", "ISO14443_BPRIME", "FELICA", "JEWEL", "ISO15693",
+  "UNKNOWN_TARGET" };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+The following values are supported:
+          </p>
+          <ul>
+            <li>
+GENERIC_TARGET            </li>
+            <li>
+ISO14443_A            </li>
+            <li>
+ISO14443_4A            </li>
+            <li>
+ISO14443_3A            </li>
+            <li>
+MIFARE_MINI            </li>
+            <li>
+MIFARE_1K            </li>
+            <li>
+MIFARE_4K            </li>
+            <li>
+MIFARE_ULTRA            </li>
+            <li>
+MIFARE_DESFIRE            </li>
+            <li>
+ISO14443_B            </li>
+            <li>
+ISO14443_4B            </li>
+            <li>
+ISO14443_BPRIME            </li>
+            <li>
+FELICA            </li>
+            <li>
+JEWEL            </li>
+            <li>
+ISO15693            </li>
+            <li>
+UNKNOWN_TARGET            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="CardEmulationMode">
+<a class="backward-compatibility-anchor" name="::NFC::CardEmulationMode"></a><h3>1.3. CardEmulationMode</h3>
+<div class="brief">
+ Specifies the card emulation mode.
+          </div>
+<pre class="webidl prettyprint">  enum CardEmulationMode { "ALWAYS_ON", "OFF" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="description">
+          <p>
+The following values are supported:
+          </p>
+          <ul>
+            <li>
+ALWAYS_ON - Card emulation mode on            </li>
+            <li>
+OFF - Card emulation mode off            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="SecureElementType">
+<a class="backward-compatibility-anchor" name="::NFC::SecureElementType"></a><h3>1.4. SecureElementType</h3>
+<div class="brief">
+ Specifies the secure element types.
+          </div>
+<pre class="webidl prettyprint">  enum SecureElementType { "ESE", "UICC",  "HCE" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="description">
+          <p>
+The following values are supported:
+          </p>
+          <ul>
+            <li>
+ESE - The eSE (Embedded Secure Element) secure element type             </li>
+            <li>
+UICC - The UICC (Universal Integrated Circuit Card) secure element type             </li>
+            <li>
+HCE - The HCE (Host Card Emulation) type. This allows a card to be emulated without secure element             </li>
+          </ul>
+         </div>
+<p><span class="remark"> Remark : </span>
+ <em>HCE</em>  is supported since Tizen 2.3.1
+          </p>
+</div>
+<div class="enum" id="CardEmulationCategoryType">
+<a class="backward-compatibility-anchor" name="::NFC::CardEmulationCategoryType"></a><h3>1.5. CardEmulationCategoryType</h3>
+<div class="brief">
+ Specifies the card emulation category types.
+          </div>
+<pre class="webidl prettyprint">  enum CardEmulationCategoryType { "PAYMENT", "OTHER" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+          </p>
+<div class="description">
+          <p>
+The following values are supported:
+          </p>
+          <ul>
+            <li>
+PAYMENT - Category used for NFC payment services              </li>
+            <li>
+OTHER - Category that can be used for all other cards             </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="HCEEventType">
+<a class="backward-compatibility-anchor" name="::NFC::HCEEventType"></a><h3>1.6. HCEEventType</h3>
+<div class="brief">
+ Specifies the HCE event types.
+          </div>
+<pre class="webidl prettyprint">  enum HCEEventType { "DEACTIVATED", "ACTIVATED", "APDU_RECEIVED" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+          </p>
+<div class="description">
+          <p>
+The following values are supported:
+          </p>
+          <ul>
+            <li>
+DEACTIVATED - HCE deactivated              </li>
+            <li>
+ACTIVATED - HCE activated             </li>
+            <li>
+APDU_RECEIVED - APDU (Application Protocol Data Unit) received             </li>
+          </ul>
+         </div>
+</div>
+<div class="typedef" id="AID">
+<a class="backward-compatibility-anchor" name="::NFC::AID"></a><h3>1.7. AID</h3>
+<div class="brief">
+ AID (Application ID) as specified in ISO/IEC 7816-4.
+          </div>
+<pre class="webidl prettyprint">  typedef DOMString AID;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+          </p>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="NFCManagerObject">
+<a class="backward-compatibility-anchor" name="::NFC::NFCManagerObject"></a><h3>2.1. NFCManagerObject</h3>
+<div class="brief">
+ The NFCManagerObject interface defines what is instantiated by the <em>Tizen</em> object from the Tizen Platform.
+The <em>tizen.nfc </em>object allows access to the functionality of the NFC API.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface NFCManagerObject {
+    readonly attribute <a href="#NFCManager">NFCManager</a> nfc;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NFCManagerObject">NFCManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+</div>
+<div class="interface" id="NFCManager">
+<a class="backward-compatibility-anchor" name="::NFC::NFCManager"></a><h3>2.2. NFCManager</h3>
+<div class="brief">
+ The NFCManager interface provides access to the NFC tag/target.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface NFCManager {
+    const short NFC_RECORD_TNF_EMPTY = 0;
+    const short NFC_RECORD_TNF_WELL_KNOWN = 1;
+    const short NFC_RECORD_TNF_MIME_MEDIA = 2;
+    const short NFC_RECORD_TNF_URI = 3;
+    const short NFC_RECORD_TNF_EXTERNAL_RTD = 4;
+    const short NFC_RECORD_TNF_UNKNOWN = 5;
+    const short NFC_RECORD_TNF_UNCHANGED = 6;
+
+    <a href="#NFCAdapter">NFCAdapter</a> getDefaultAdapter() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void setExclusiveMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+It provides access to the API functionalities through the tizen.nfc interface.
+          </p>
+         </div>
+<div class="consts">
+<h4>Constants</h4>
+<dl>
+<li class="const" id="NFCManager::NFC_RECORD_TNF_EMPTY">
+<a class="backward-compatibility-anchor" name="::NFC::NFCManager::NFC_RECORD_TNF_EMPTY"></a><span class="name">NFC_RECORD_TNF_EMPTY</span><div class="brief">
+ A constant to indicate the empty format of an NDEF record's type field.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="NFCManager::NFC_RECORD_TNF_WELL_KNOWN">
+<a class="backward-compatibility-anchor" name="::NFC::NFCManager::NFC_RECORD_TNF_WELL_KNOWN"></a><span class="name">NFC_RECORD_TNF_WELL_KNOWN</span><div class="brief">
+ A constant to indicate the Record Type Definition (RTD) format of an NDEF record's type field.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="NFCManager::NFC_RECORD_TNF_MIME_MEDIA">
+<a class="backward-compatibility-anchor" name="::NFC::NFCManager::NFC_RECORD_TNF_MIME_MEDIA"></a><span class="name">NFC_RECORD_TNF_MIME_MEDIA</span><div class="brief">
+ A constant to indicate the MIME media types format in RFC 2046 [RFC 2046] of an NDEF record's type field.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="NFCManager::NFC_RECORD_TNF_URI">
+<a class="backward-compatibility-anchor" name="::NFC::NFCManager::NFC_RECORD_TNF_URI"></a><span class="name">NFC_RECORD_TNF_URI</span><div class="brief">
+ A constant to indicate the absolute URI, as defined in the RFC 3986 [RFC 3986] format in RFC 2046 [RFC 2046] of an NDEF record's type field.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="NFCManager::NFC_RECORD_TNF_EXTERNAL_RTD">
+<a class="backward-compatibility-anchor" name="::NFC::NFCManager::NFC_RECORD_TNF_EXTERNAL_RTD"></a><span class="name">NFC_RECORD_TNF_EXTERNAL_RTD</span><div class="brief">
+ A constant to indicate the NFC forum external type [NFC RTD] format in RFC 2046 [RFC 2046] of an NDEF record's type field.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="NFCManager::NFC_RECORD_TNF_UNKNOWN">
+<a class="backward-compatibility-anchor" name="::NFC::NFCManager::NFC_RECORD_TNF_UNKNOWN"></a><span class="name">NFC_RECORD_TNF_UNKNOWN</span><div class="brief">
+ A constant to indicate the unknown type format in RFC 2046 [RFC 2046] of an NDEF record's type field.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="NFCManager::NFC_RECORD_TNF_UNCHANGED">
+<a class="backward-compatibility-anchor" name="::NFC::NFCManager::NFC_RECORD_TNF_UNCHANGED"></a><span class="name">NFC_RECORD_TNF_UNCHANGED</span><div class="brief">
+ A constant to indicate whether the payload is an intermediate or final chunk of a chunked NDEF record.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<br><br>
+</li>
+</dl>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="NFCManager::getDefaultAdapter">
+<a class="backward-compatibility-anchor" name="::NFC::NFCManager::getDefaultAdapter"></a><code><b><span class="methodName">getDefaultAdapter</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the default NFC adapter of the device.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#NFCAdapter">NFCAdapter</a> getDefaultAdapter();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.common
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ NFCAdapter The default NFCAdapter object.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var adapter = tizen.nfc.getDefaultAdapter();
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCManager::setExclusiveMode">
+<a class="backward-compatibility-anchor" name="::NFC::NFCManager::setExclusiveMode"></a><code><b><span class="methodName">setExclusiveMode</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gives priority to the current application for NFC operations.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setExclusiveMode(boolean mode);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+<div class="description">
+            <p>
+If the current application has priority, and is in the foreground, the system will not generate
+application control requests to pick an application to handle NFC requests.
+Such a request is usually generated, for example, when detecting an NFC tag or receiving an NDEF message
+from a connected NFC peer-to-peer target.
+            </p>
+            <p>
+When the current application moves to the background, it loses the priority.
+            </p>
+            <p>
+The exclusive mode can only be set when NFC is on. If NFC is off, the mode is ignored.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.common
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">mode</span>:
+ The value of the exclusive mode.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  tizen.nfc.setExclusiveMode(true);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="NFCAdapter">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter"></a><h3>2.3. NFCAdapter</h3>
+<div class="brief">
+ The NFCAdapter interface provides access to control the adapter by offering methods to control local NFC behaviors, such as turning on/off an adapter.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface NFCAdapter {
+    readonly attribute boolean powered;
+
+    attribute <a href="#CardEmulationMode">CardEmulationMode</a> cardEmulationMode raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    attribute <a href="#SecureElementType">SecureElementType</a>? activeSecureElement raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void setTagListener(<a href="#NFCTagDetectCallback">NFCTagDetectCallback</a> detectCallback,
+                        optional <a href="#NFCTagType">NFCTagType</a>[]? tagFilter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void setPeerListener(<a href="#NFCPeerDetectCallback">NFCPeerDetectCallback</a> detectCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void unsetTagListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void unsetPeerListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long addCardEmulationModeChangeListener(<a href="#CardEmulationModeChangeCallback">CardEmulationModeChangeCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeCardEmulationModeChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long addTransactionEventListener(<a href="#SecureElementType">SecureElementType</a> type,
+                                     <a href="#TransactionEventCallback">TransactionEventCallback</a> eventCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeTransactionEventListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long addActiveSecureElementChangeListener(<a href="#ActiveSecureElementChangeCallback">ActiveSecureElementChangeCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeActiveSecureElementChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#NDEFMessage">NDEFMessage</a>? getCachedMessage() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void setExclusiveModeForTransaction(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long addHCEEventListener(<a href="#HCEEventReceiveCallback">HCEEventReceiveCallback</a> eventCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeHCEEventListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void sendHostAPDUResponse(byte[] apdu, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean isActivatedHandlerForAID(<a href="#SecureElementType">SecureElementType</a> type, <a href="#AID">AID</a> aid) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean isActivatedHandlerForCategory(<a href="#SecureElementType">SecureElementType</a> type, <a href="#CardEmulationCategoryType">CardEmulationCategoryType</a> category) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void registerAID(<a href="#SecureElementType">SecureElementType</a> type, <a href="#AID">AID</a> aid, <a href="#CardEmulationCategoryType">CardEmulationCategoryType</a> category) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void unregisterAID(<a href="#SecureElementType">SecureElementType</a> type, <a href="#AID">AID</a> aid, <a href="#CardEmulationCategoryType">CardEmulationCategoryType</a> category) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void getAIDsForCategory(<a href="#SecureElementType">SecureElementType</a> type, <a href="#CardEmulationCategoryType">CardEmulationCategoryType</a> category, <a href="#AIDArraySuccessCallback">AIDArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void setPreferredApp() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void unsetPreferredApp() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="NFCAdapter::powered">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">powered</span></span><div class="brief">
+ The state of the NFC adapter.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="NFCAdapter::cardEmulationMode">
+<span class="attrName"><span class="type">CardEmulationMode </span><span class="name">cardEmulationMode</span></span><div class="brief">
+ Card emulation mode of the NFC adapter.
+            </div>
+<div class="description">
+            <p>
+To be allowed to change <var>cardEmulationMode</var>, the following privilege must be declared in the application's <em>config.xml</em> file.
+            </p>
+            <ul>
+              <li>
+<b>ALWAYS_ON</b> - NFC card emulation feature is enabled. NFC card emulation related methods are available for use.              </li>
+              <li>
+<b>OFF</b> - NFC card emulation related methods cannot be used              </li>
+            </ul>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.cardemulation
+            </p>
+<p><span class="remark"> Remark : </span>
+ To check if NFC card emulation is supported on this device, use <var>tizen.systeminfo.getCapability("http://tizen.org/feature/network.nfc.card_emulation")</var>.
+<br>If it is not supported, <var>NotSupportedError</var> is thrown.
+<br><br>Security level can be determined by the manufacturer usage.
+<br>If a security issue is occurred, contact with the manufacturer of the product.
+<br>If you want to know about security level in detail, See <a href="http://www.gsma.com/digitalcommerce/wp-content/uploads/2013/12/GSMA-NFC05-NFC-Handset-APIs-Requirement-Specification-version-4-1.pdf">the GSMA specification</a>.
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege or a valid certificate to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type ServiceNotAvailableError, if the NFC service is not available.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if NFC card emulation is not supported in a device.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+</li>
+<li class="attribute" id="NFCAdapter::activeSecureElement">
+<span class="attrName"><span class="type">SecureElementType </span><span class="name">activeSecureElement</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Active secure element type.
+            </div>
+<div class="description">
+            <p>
+To be allowed to change <var>activeSecureElement</var>, the following privilege must be declared in the application's <em>config.xml</em> file.
+            </p>
+            <p>
+If the NFC service is not available, it returns <var>null</var>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.cardemulation
+            </p>
+<p><span class="remark"> Remark : </span>
+ To check if NFC card emulation is supported on this device, use <var>tizen.systeminfo.getCapability("http://tizen.org/feature/network.nfc.card_emulation")</var>.
+<br>If it is not supported, <var>NotSupportedError</var> is thrown.
+<br><br>Security level can be determined by the manufacturer usage.
+<br>If a security issue is occurred, contact with the manufacturer of the product.
+<br>If you want to know about security level in detail, See <a href="http://www.gsma.com/digitalcommerce/wp-content/uploads/2013/12/GSMA-NFC05-NFC-Handset-APIs-Requirement-Specification-version-4-1.pdf">the GSMA specification</a>.
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege or a valid certificate to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type ServiceNotAvailableError, if the NFC service is not available.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if NFC card emulation is not supported in a device.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="NFCAdapter::setTagListener">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::setTagListener"></a><code><b><span class="methodName">setTagListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers a callback function to invoke when an NFC tag is detected.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setTagListener(<a href="#NFCTagDetectCallback">NFCTagDetectCallback</a> detectCallback, optional <a href="#NFCTagType">NFCTagType</a>[]? tagFilter);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+If the registration completes successfully, detectCallback must be
+invoked when the NFC tag is detected.
+            </p>
+            <p>
+If no tagFilter is passed, it shall consider the default tagFilter, that is to set all tag types.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.tag
+            </p>
+<p><span class="remark"> Remark : </span>
+ http://tizen.org/feature/network.nfc.tag is added since Tizen 2.3.1. to check if NFC tag is supported on this device, use <var>tizen.systeminfo.getCapability("http://tizen.org/feature/network.nfc.tag")</var>.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">detectCallback</span>:
+ Callback method to be invoked when an NFC tag is successfully detected.
+                </li>
+          <li class="param">
+<span class="name">tagFilter</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ A filter to be used when a specific NFC tag is detected.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type ServiceNotAvailableError, if the NFC service is not available.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if NFC tag is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var adapter = tizen.nfc.getDefaultAdapter();
+var onSuccessCB =
+{
+  onattach: function(nfcTag)
+  {
+    console.log("NFC Tag's type is " + nfcTag.type);
+  },
+  ondetach: function()
+  {
+    console.log("NFC Tag is detached");
+  }
+};
+adapter.setTagListener(onSuccessCB);
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCAdapter::setPeerListener">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::setPeerListener"></a><code><b><span class="methodName">setPeerListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers a callback function to be invoked when an NFC peer-to-peer target is detected.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setPeerListener(<a href="#NFCPeerDetectCallback">NFCPeerDetectCallback</a> detectCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+If the registration completes successfully, the detectCallback must be
+invoked when an NFC peer-to-peer target is detected.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.p2p
+            </p>
+<p><span class="remark"> Remark : </span>
+ http://tizen.org/feature/network.nfc.p2p is added since Tizen 2.3.1. to check if NFC p2p is supported on this device, use <var>tizen.systeminfo.getCapability("http://tizen.org/feature/network.nfc.p2p")</var>.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">detectCallback</span>:
+ Callback method to be invoked when an NFC peer-to-peer target is successfully detected.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type ServiceNotAvailableError, if the NFC service is not available.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if NFC p2p is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var adapter = tizen.nfc.getDefaultAdapter();
+var onSuccessCB =
+{
+  onattach: function(nfcPeer)
+  {
+    console.log("NFC Target is detected");
+  },
+  ondetach: function()
+  {
+    console.log("NFC Target is detached");
+  }
+};
+adapter.setPeerListener(onSuccessCB);
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCAdapter::unsetTagListener">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::unsetTagListener"></a><code><b><span class="methodName">unsetTagListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unregisters the listener for detecting an NFC tag.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unsetTagListener();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.tag
+            </p>
+<p><span class="remark"> Remark : </span>
+ http://tizen.org/feature/network.nfc.tag is added since Tizen 2.3.1. to check if NFC tag is supported on this device, use <var>tizen.systeminfo.getCapability("http://tizen.org/feature/network.nfc.tag")</var>.
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type ServiceNotAvailableError, if the NFC service is not available.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if NFC tag is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var adapter = tizen.nfc.getDefaultAdapter();
+
+/* Receives NFCTag */
+var onSuccessCB =
+{
+  onattach: function(nfcTag)
+  {
+    console.log("The attached NFC tag's type is " + nfcTag.type);
+  },
+  ondetach: function()
+  {
+    console.log("NFC tag is detached.");
+
+    /* Unregister the listener when the NFC tag is detached */
+    adapter.unsetTagListener();
+  }
+};
+
+/* Registers to be notified when NFC tag is detected */
+adapter.setTagListener(onSuccessCB);
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCAdapter::unsetPeerListener">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::unsetPeerListener"></a><code><b><span class="methodName">unsetPeerListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unregisters the listener for detecting an NFC peer-to-peer target.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unsetPeerListener();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.p2p
+            </p>
+<p><span class="remark"> Remark : </span>
+ http://tizen.org/feature/network.nfc.p2p is added since Tizen 2.3.1. to check if NFC p2p is supported on this device, use <var>tizen.systeminfo.getCapability("http://tizen.org/feature/network.nfc.p2p")</var>.
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type ServiceNotAvailableError, if the NFC service is not available.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if NFC p2p is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var adapter = tizen.nfc.getDefaultAdapter();
+
+/* Receives an NFC peer */
+var onSuccessCB =
+{
+  onattach: function(nfcPeer)
+  {
+    console.log("NFC peer target is attached.");
+  },
+  ondetach: function()
+  {
+    console.log("NFC peer target is detached.");
+
+    /* Unregisters the listener when NFC peer target is detached */
+    adapter.unsetPeerListener();
+  }
+};
+
+/* Registers to be notified when NFC peer target is detected */
+adapter.setPeerListener(onSuccessCB);
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCAdapter::addCardEmulationModeChangeListener">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::addCardEmulationModeChangeListener"></a><code><b><span class="methodName">addCardEmulationModeChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers a callback function to invoke when the card emulation mode is changed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addCardEmulationModeChangeListener(<a href="#CardEmulationModeChangeCallback">CardEmulationModeChangeCallback</a> changeCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.cardemulation
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">changeCallback</span>:
+ Callback method to be invoked when the card emulation mode is changed
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long Subscription identifier
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if NFC card emulation is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var onSuccessCB = function(mode)
+  {
+    console.log("The card emulation mode is " + mode);
+  };
+  var listenerId = adapter.addCardEmulationModeChangeListener(onSuccessCB);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCAdapter::removeCardEmulationModeChangeListener">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::removeCardEmulationModeChangeListener"></a><code><b><span class="methodName">removeCardEmulationModeChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unsubscribes from receiving notification of card emulation mode changes.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeCardEmulationModeChangeListener(long watchId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.cardemulation
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">watchId</span>:
+ Subscription identifier to remove
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if NFC card emulation is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  adapter.removeCardEmulationModeChangeListener(listenerId);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCAdapter::addTransactionEventListener">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::addTransactionEventListener"></a><code><b><span class="methodName">addTransactionEventListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers a callback function to invoke when an external reader tries to access a secure element.
+Such an event may indicate initiating a financial transaction using the device.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addTransactionEventListener(<a href="#SecureElementType">SecureElementType</a> type, <a href="#TransactionEventCallback">TransactionEventCallback</a> eventCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.cardemulation
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ Secure element type to listen
+                </li>
+          <li class="param">
+<span class="name">eventCallback</span>:
+ Callback method to be invoked when an external reader tries to access a secure element
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long Subscription identifier
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if NFC card emulation is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var listenerId = adapter.addTransactionEventListener("UICC", function(aid, data) {console.log("transaction event occurs");});
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCAdapter::removeTransactionEventListener">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::removeTransactionEventListener"></a><code><b><span class="methodName">removeTransactionEventListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unsubscribes from receiving notification of transaction events.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeTransactionEventListener(long watchId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.cardemulation
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">watchId</span>:
+ Subscription identifier to remove
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if NFC card emulation is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  adapter.removeTransactionEventListener(listenerId);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCAdapter::addActiveSecureElementChangeListener">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::addActiveSecureElementChangeListener"></a><code><b><span class="methodName">addActiveSecureElementChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers a callback function to invoke when an active secure element is changed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addActiveSecureElementChangeListener(<a href="#ActiveSecureElementChangeCallback">ActiveSecureElementChangeCallback</a> changeCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.cardemulation
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">changeCallback</span>:
+ Callback method to be invoked when an active secure element is changed
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long Subscription identifier
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if NFC card emulation is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var onSuccessCB = function(seType)
+  {
+    console.log("Active secure element is " + seType);
+  };
+  var listenerId = adapter.addActiveSecureElementChangeListener(onSuccessCB);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCAdapter::removeActiveSecureElementChangeListener">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::removeActiveSecureElementChangeListener"></a><code><b><span class="methodName">removeActiveSecureElementChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unsubscribes from receiving notification of active secure element changes.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeActiveSecureElementChangeListener(long watchId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.cardemulation
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">watchId</span>:
+ Subscription identifier to remove
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if NFC card emulation is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  adapter.removeActiveSecureElementChangeListener(listenerId);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCAdapter::getCachedMessage">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::getCachedMessage"></a><code><b><span class="methodName">getCachedMessage</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the NDEF message cached when the tag is detected.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#NDEFMessage">NDEFMessage</a>? getCachedMessage();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+If the operation completes successfully, the NDEF Message that is last read
+should be returned.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.common
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ NDEFMessage The NDEF Message that was last read.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Gets the cached message */
+var cachedMessage = tizen.nfc.getDefaultAdapter().getCachedMessage();
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCAdapter::setExclusiveModeForTransaction">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::setExclusiveModeForTransaction"></a><code><b><span class="methodName">setExclusiveModeForTransaction</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gives priority to the current application for NFC transaction events.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setExclusiveModeForTransaction(boolean mode);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+If the current application has priority, and is in the foreground, the system will not generate
+application control requests to pick an application to handle a transaction event request.
+            </p>
+            <p>
+When the current application moves to the background, it loses priority.
+            </p>
+            <p>
+An application is allowed to get priority only when it is in the foreground.
+Losing priority is always allowed regardless of an application's status.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.cardemulation
+            </p>
+<p><span class="remark"> Remark : </span>
+ Security level can be determined by the manufacturer usage.
+<br>If a security issue is occurred, contact with the manufacturer of the product.
+<br>If you want to know about security level in detail, See <a href="http://www.gsma.com/digitalcommerce/wp-content/uploads/2013/12/GSMA-NFC05-NFC-Handset-APIs-Requirement-Specification-version-4-1.pdf">the GSMA specification</a>.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">mode</span>:
+ Value of the exclusive mode
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method or a valid certificate to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type ServiceNotAvailableError, if the application is not in the foreground and is trying to get priority.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if NFC card emulation is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  adapter.setExclusiveModeForTransaction(true);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCAdapter::addHCEEventListener">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::addHCEEventListener"></a><code><b><span class="methodName">addHCEEventListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers a callback function for receiving HCE event.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addHCEEventListener(<a href="#HCEEventReceiveCallback">HCEEventReceiveCallback</a> eventCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.cardemulation
+            </p>
+<p><span class="remark"> Remark : </span>
+ To check if NFC HCE is supported on this device, use <var>tizen.systeminfo.getCapability("http://tizen.org/feature/network.nfc.card_emulation.hce")</var>.
+<br>If it is not supported, <var>NotSupportedError</var> is thrown.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">eventCallback</span>:
+ Callback method to be invoked when host device receives an APDU that is defined in the ISO/IEC 7816-4 specification
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long Subscription identifier
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if NFC HCE feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var onDetectedCB = function(event_data)
+  {
+    console.log("HCE event type  is " + event_data.eventType);
+    console.log("APDU is " + event_data.apdu);
+  };
+  var listenerId = adapter.addHCEEventListener(onDetectedCB);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCAdapter::removeHCEEventListener">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::removeHCEEventListener"></a><code><b><span class="methodName">removeHCEEventListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unsubscribes from receiving notification of a HCE event.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeHCEEventListener(long watchId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.cardemulation
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">watchId</span>:
+ Subscription identifier to remove
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if NFC HCE feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  adapter.removeHCEEventListener(listenerId);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCAdapter::sendHostAPDUResponse">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::sendHostAPDUResponse"></a><code><b><span class="methodName">sendHostAPDUResponse</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ send host APDU response to CLF (Contactless Front-end).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void sendHostAPDUResponse(byte[] apdu, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<div class="description">
+            <p>
+The ErrorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ ServiceNotAvailableError - If the NFC service is not available.              </li>
+              <li>
+ UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.cardemulation
+            </p>
+<p><span class="remark"> Remark : </span>
+ To check if NFC HCE is supported on this device, use <var>tizen.systeminfo.getCapability("http://tizen.org/feature/network.nfc.card_emulation.hce")</var>.
+<br>If it is not supported, <var>NotSupportedError</var> is thrown.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">apdu</span>:
+ The APDU data to send. APDU is defined in the ISO/IEC 7816-4 specification.
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Invoked when an APDU is successfully sent to the NFC reader.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Invoked in case any error occurs while sending.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if NFC HCE feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var successCB = function()
+  {
+    console.log("Sending APDU response was successful.");
+  };
+
+  var errorCB = function()
+  {
+    console.log("Sending APDU response failed.");
+  };
+
+  var classOfInstruction = 0x00; /* No SM or no SM indication */
+  var instructionCode = 0xA4; /* Select File */
+  var firstParam = 0x04; /* Direct selection by DF name */
+  var secondParam = 0x00; /* First record */
+  var dataFieldLength = 0x03; /* Variable length 1 or 3 bytes */
+  var bytes =  [ 0x20, 0x21, 0x22]; /* Variable length equal to dataFieldLength */
+  var maxBytesExpected = 0x02; /* Maximum bytes in answer */
+
+  var apdu_response = [classOfInstruction, instructionCode, firstParam, secondParam] + bytes + [maxBytesExpected]; /* Set apdu response */
+  adapter.sendHostAPDUResponse(apdu_response, successCB, errorCB);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCAdapter::isActivatedHandlerForAID">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::isActivatedHandlerForAID"></a><code><b><span class="methodName">isActivatedHandlerForAID</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+  Allows an application to query whether an application is currently the activated handler for a specific AID and secure element type.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">boolean isActivatedHandlerForAID(<a href="#SecureElementType">SecureElementType</a> type, <a href="#AID">AID</a> aid);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.cardemulation
+            </p>
+<p><span class="remark"> Remark : </span>
+ To check if NFC HCE is supported on this device, use <var>tizen.systeminfo.getCapability("http://tizen.org/feature/network.nfc.card_emulation.hce")</var>.
+<br>If it is not supported, <var>NotSupportedError</var> is thrown.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+  The secure element type
+                </li>
+          <li class="param">
+<span class="name">aid</span>:
+ Application ID, specified in ISO/IEC 7816-4
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ boolean <em>true</em> if current application is activated handler for the AID
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if NFC HCE feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var aid = "ABC0012345";
+  var isActiveHandler = adapter.isActivatedHandlerForAID("HCE", aid);
+  if (isActiveHandler)
+  {
+    console.log("current application is activated handler for the AID");
+  }
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCAdapter::isActivatedHandlerForCategory">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::isActivatedHandlerForCategory"></a><code><b><span class="methodName">isActivatedHandlerForCategory</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Allows an application to query whether an application is currently the activated handler for a specific card emulation category and secure element type.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">boolean isActivatedHandlerForCategory(<a href="#SecureElementType">SecureElementType</a> type, <a href="#CardEmulationCategoryType">CardEmulationCategoryType</a> category);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.cardemulation
+            </p>
+<p><span class="remark"> Remark : </span>
+ To check if NFC HCE is supported on this device, use <var>tizen.systeminfo.getCapability("http://tizen.org/feature/network.nfc.card_emulation.hce")</var>.
+<br>If it is not supported, <var>NotSupportedError</var> is thrown.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ The secure element type
+                </li>
+          <li class="param">
+<span class="name">category</span>:
+ The card emulation category type
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ boolean <em>true</em> if current application is activated handler for the category
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if NFC HCE feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var isActiveHandler = adapter.isActivatedHandlerForCategory("ESE", "PAYMENT");
+  if (isActiveHandler)
+  {
+    console.log("current application is activated handler for the category");
+  }
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCAdapter::registerAID">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::registerAID"></a><code><b><span class="methodName">registerAID</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+  Registers an AID for a specific category and secure element type.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void registerAID(<a href="#SecureElementType">SecureElementType</a> type, <a href="#AID">AID</a> aid, <a href="#CardEmulationCategoryType">CardEmulationCategoryType</a> category);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.cardemulation
+            </p>
+<p><span class="remark"> Remark : </span>
+ To check if NFC HCE is supported on this device, use <var>tizen.systeminfo.getCapability("http://tizen.org/feature/network.nfc.card_emulation.hce")</var>.
+<br>If it is not supported, <var>NotSupportedError</var> is thrown.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ The secure element type
+                </li>
+          <li class="param">
+<span class="name">aid</span>:
+ Application Id, specified in ISO/IEC 7816-4
+                </li>
+          <li class="param">
+<span class="name">category</span>:
+  The card emulation category type
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if NFC HCE feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var aid = "ABC0012345";
+  adapter.registerAID("HCE", aid, "PAYMENT");
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCAdapter::unregisterAID">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::unregisterAID"></a><code><b><span class="methodName">unregisterAID</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unregisters an AID that was previously registered for a specific card emulation category and secure element type. An application can only remove the AIDs which it registered.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unregisterAID(<a href="#SecureElementType">SecureElementType</a> type, <a href="#AID">AID</a> aid, <a href="#CardEmulationCategoryType">CardEmulationCategoryType</a> category);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.cardemulation
+            </p>
+<p><span class="remark"> Remark : </span>
+ To check if NFC HCE is supported on this device, use <var>tizen.systeminfo.getCapability("http://tizen.org/feature/network.nfc.card_emulation.hce")</var>.
+<br>If it is not supported, <var>NotSupportedError</var> is thrown.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ The secure element type
+                </li>
+          <li class="param">
+<span class="name">aid</span>:
+ Application Id, specified in ISO/IEC 7816-4
+                </li>
+          <li class="param">
+<span class="name">category</span>:
+  The card emulation category type
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if NFC HCE feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var aid = "ABC0012345";
+  adapter.unregisterAID("HCE", aid, "PAYMENT");
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCAdapter::getAIDsForCategory">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::getAIDsForCategory"></a><code><b><span class="methodName">getAIDsForCategory</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Retrieves AIDs that were previously registered for a specific card emulation category and secure element type. An application can only retrieve the AIDs which it registered.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getAIDsForCategory(<a href="#SecureElementType">SecureElementType</a> type, <a href="#CardEmulationCategoryType">CardEmulationCategoryType</a> category, <a href="#AIDArraySuccessCallback">AIDArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<div class="description">
+            <p>
+The ErrorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ ServiceNotAvailableError - If the NFC service is not available.              </li>
+              <li>
+ UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.cardemulation
+            </p>
+<p><span class="remark"> Remark : </span>
+ To check if NFC HCE is supported on this device, use <var>tizen.systeminfo.getCapability("http://tizen.org/feature/network.nfc.card_emulation.hce")</var>.
+<br>If it is not supported, <var>NotSupportedError</var> is thrown.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ The secure element type
+                </li>
+          <li class="param">
+<span class="name">category</span>:
+  The card emulation category type
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Invoked when the  AIDs are retrieved successfully.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Invoked in case any error occurs while retrieving.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if NFC HCE feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var successCB = function(aids)
+  {
+    var arrayLength = aids.length;
+    for (var i = 0; i &lt; arrayLength; i++)
+    {
+      console.log("Get AID category was successful.");
+      console.log("AID type is " + aids[i].type);
+      console.log("AID is " + aids[i].aid);
+      console.log("AID isReadOnly is " + aids[i].readOnly);
+    }
+  };
+
+  var errorCB = function()
+  {
+    console.log("Get AID category failed.");
+  };
+
+  adapter.getAIDsForCategory("HCE", "PAYMENT", successCB, errorCB);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCAdapter::setPreferredApp">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::setPreferredApp"></a><code><b><span class="methodName">setPreferredApp</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets current application as preferred application for NFC card emulation events as long as it is in foreground.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setPreferredApp();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="description">
+            <p>
+Calling the method allows to change routing priority of NFC card emulation without affecting NFC Settings (the <em>Tap and pay</em> option).
+As long as the application is in foreground, it will be set as the receiver of card emulation events instead of the application chosen in NFC Settings.
+            </p>
+            <p>
+When the application leaves the foreground, receiving NFC card events is stopped for this application. The default application from settings will be used instead.
+            </p>
+            <p>
+When the application comes back from background, receiving events is turned back on.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.cardemulation
+            </p>
+<p class="warning"><b>Warning:</b>
+ The application must follow the <a href="https://developer.tizen.org/development/guides/web-application/connectivity-and-wireless/nfc#Using_NFC_Host_Based_Card_Emulation">Using NFC Host-based Card Emulation</a> to ensure proper behaviour.
+If the application does not respect above requirement, <em>WebAPIException</em> with error type AbortError will be thrown.
+            </p>
+<p><span class="remark"> Remark : </span>
+ To check if NFC card emulation is supported on this device, use <var>tizen.systeminfo.getCapability("http://tizen.org/feature/network.nfc.card_emulation")</var>.
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type AbortError, if any system error occured.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type ServiceNotAvailableError, if the NFC service is not available.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> try
+ {
+   var adapter = tizen.nfc.getDefaultAdapter();
+   adapter.setPreferredApp();
+ }
+ catch (err)
+ {
+   console.log(err.name + ": " + err.message);
+ }
+ </pre>
+</div>
+</dd>
+<dt class="method" id="NFCAdapter::unsetPreferredApp">
+<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::unsetPreferredApp"></a><code><b><span class="methodName">unsetPreferredApp</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unsets currently running application as preferred application for NFC card emulation events.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unsetPreferredApp();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="description">
+            <p>
+This method restores application chosen in NFC Settings (the <em>Tap and pay</em> option) as preferred for NFC card emulation events.
+            </p>
+            <p>
+To set application as preferred again, use <a href="#NFCAdapter::setPreferredApp">setPreferredApp()</a>.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.cardemulation
+            </p>
+<p><span class="remark"> Remark : </span>
+ To check if NFC card emulation is supported on this device, use <var>tizen.systeminfo.getCapability("http://tizen.org/feature/network.nfc.card_emulation")</var>.
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type AbortError, if any system error occured.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if this feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type ServiceNotAvailableError, if the NFC service is not available.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> try
+ {
+   var adapter = tizen.nfc.getDefaultAdapter();
+   adapter.setPreferredApp();
+   /* Perform some actions */
+   adapter.unsetPreferredApp();
+ }
+ catch (err)
+ {
+   console.log(err.name + ": " + err.message);
+ }
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="NFCTag">
+<a class="backward-compatibility-anchor" name="::NFC::NFCTag"></a><h3>2.4. NFCTag</h3>
+<div class="brief">
+ The NFCTag interface provides access to the NFC tag.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface NFCTag {
+    readonly attribute <a href="#NFCTagType">NFCTagType</a> type;
+
+    readonly attribute boolean isSupportedNDEF;
+
+    readonly attribute long ndefSize;
+
+    readonly attribute object properties;
+
+    readonly attribute boolean isConnected;
+
+
+     void readNDEF(<a href="#NDEFMessageReadCallback">NDEFMessageReadCallback</a> readCallback,
+                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void writeNDEF(<a href="#NDEFMessage">NDEFMessage</a> ndefMessage,
+                   optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                   optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void transceive(byte[] data,
+                    <a href="#ByteArraySuccessCallback">ByteArraySuccessCallback</a> dataCallback,
+                    optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="NFCTag::type">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">NFCTagType </span><span class="name">type</span></span><div class="brief">
+ The type of the NFC tag.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="NFCTag::isSupportedNDEF">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">isSupportedNDEF</span></span><div class="brief">
+ An attribute to check if the NFC Tag supports the NDEF format.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="NFCTag::ndefSize">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">ndefSize</span></span><div class="brief">
+ The size of an NDEF message stored in the tag.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="NFCTag::properties">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">object </span><span class="name">properties</span></span><div class="brief">
+ The value is all tag information.
+            </div>
+<div class="description">
+            <p>
+It is pairs of key and value.
+The array's index is the pair's key and value is its value.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var adapter = tizen.nfc.getDefaultAdapter();
+var onSuccessCB =
+{
+  onattach: function(nfcTag)
+  {
+    console.log("NFC Tag's type is " + nfcTag.type);
+    for (var i in nfcTag.properties)
+    {
+      console.log("key:" + i + " value:" + nfcTag.properties[i]);
+    }
+  },
+  ondetach: function()
+  {
+    console.log("NFC Tag is detached");
+  }
+};
+adapter.setTagListener(onSuccessCB);
+</pre>
+</div>
+</li>
+<li class="attribute" id="NFCTag::isConnected">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">isConnected</span></span><div class="brief">
+ The value is necessary to check if this tag is connected.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="NFCTag::readNDEF">
+<a class="backward-compatibility-anchor" name="::NFC::NFCTag::readNDEF"></a><code><b><span class="methodName">readNDEF</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Reads the NDEF data from the NFC tag.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void readNDEF(<a href="#NDEFMessageReadCallback">NDEFMessageReadCallback</a> readCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+The ErrorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ ServiceNotAvailableError - If the NFC service is not available.              </li>
+              <li>
+ InvalidValuesError - If the current Tag doesn't support the NDEF standard.              </li>
+              <li>
+ UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.tag
+            </p>
+<p><span class="remark"> Remark : </span>
+ If an NFC tag does not support the NDEF standard, <var>InvalidValuesError</var> would be returned instead of <var>NotSupportedError</var> since <em>Tizen 2.3</em>.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">readCallback</span>:
+ Callback method to be invoked in case reading the NDEF Data is completed successfully.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked in case any error occurs while reading the NDEF Data.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var successCB = function(ndefMessage)
+  {
+    console.log("Message read was successful.");
+    for (var i = 0; i &lt; ndefMessage.recordCount; ++i)
+    {
+      console.log("Message record " + i + "tnf: " + ndefMessage.records[i].tnf);
+      console.log("Message record " + i + "tnf: " + ndefMessage.records[i].tnf);
+      console.log("Message record type " + ndefMessage.records[i].type.toString());
+    }
+  };
+
+  var errorCB = function()
+  {
+    console.log("Message read failed.");
+  };
+
+  nfcTag.readNDEF(successCB, errorCB);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCTag::writeNDEF">
+<a class="backward-compatibility-anchor" name="::NFC::NFCTag::writeNDEF"></a><code><b><span class="methodName">writeNDEF</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Writes the NDEF data to the NFC tag.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void writeNDEF(<a href="#NDEFMessage">NDEFMessage</a> ndefMessage, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+The ErrorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidValuesError: If any of the input parameters contain an invalid value or the current Tag does not support the NDEF standard.              </li>
+              <li>
+ ServiceNotAvailableError: If the NFC service is not available.               </li>
+              <li>
+ UnknownError: In any other error case.               </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.tag
+            </p>
+<p><span class="remark"> Remark : </span>
+ If an NFC tag does not support the NDEF standard, <var>InvalidValuesError</var> would be returned instead of <var>NotSupportedError</var> since <em>Tizen 2.3</em>.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">ndefMessage</span>:
+ The NDEF message to write to an NFC tag.
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked in case writing the NDEF Data is completed successfully.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked in case any error occurs while writing the NDEF Data.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var successCB = function()
+  {
+    console.log("Message write was successful.");
+  };
+
+  var errorCB = function()
+  {
+    console.log("Message write failed.");
+  };
+
+  var record = new tizen.NDEFRecordText("Hi!", "en-GB");
+  var message = new tizen.NDEFMessage([record]);
+
+  nfcTag.writeNDEF(message, successCB, errorCB);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCTag::transceive">
+<a class="backward-compatibility-anchor" name="::NFC::NFCTag::transceive"></a><code><b><span class="methodName">transceive</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Accesses the raw format card. The transceive function is the only way to access the raw format card (not formatted).
+Each tag type requires its own command to access tags.
+This API provides low level access of the tag operation. (Note that you must know each tag technology.)
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void transceive(byte[] data, <a href="#ByteArraySuccessCallback">ByteArraySuccessCallback</a> dataCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+The ErrorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidValuesError - If any of the input parameters contain an invalid value.              </li>
+              <li>
+ ServiceNotAvailableError - If the NFC service is not available.              </li>
+              <li>
+ UnknownError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.tag
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">data</span>:
+ The raw data to transceive with the NFC tag.
+                </li>
+          <li class="param">
+<span class="name">dataCallback</span>:
+ Invoked in case transceiving the raw data is completed successfully.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Invoked in case any error occurs while transceiving the NDEF Data.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var successCB = function(data)
+  {
+    console.log("Message write was successful.");
+    console.log("Response is " + data.toString());
+  };
+
+  var errorCB = function()
+  {
+    console.log("Message write failed.");
+  };
+
+  var message = [0x30, 0x00, 0x02, 0xa8]; /* READ command for MIFARE tags */
+
+  nfcTag.transceive(message, successCB, errorCB);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="NFCPeer">
+<a class="backward-compatibility-anchor" name="::NFC::NFCPeer"></a><h3>2.5. NFCPeer</h3>
+<div class="brief">
+ The NFCPeer interface provides access to the NFC peer-to-peer target.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface NFCPeer {
+    readonly attribute boolean isConnected;
+
+    void setReceiveNDEFListener(<a href="#NDEFMessageReadCallback">NDEFMessageReadCallback</a> successCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void unsetReceiveNDEFListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void sendNDEF(<a href="#NDEFMessage">NDEFMessage</a> ndefMessage,
+                  optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="NFCPeer::isConnected">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">isConnected</span></span><div class="brief">
+ The value is necessary to check if this NFC peer-to-peer target is connected.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li></ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="NFCPeer::setReceiveNDEFListener">
+<a class="backward-compatibility-anchor" name="::NFC::NFCPeer::setReceiveNDEFListener"></a><code><b><span class="methodName">setReceiveNDEFListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers a callback function to be invoked when an NDEF message is received from the connected NFC peer-to-peer target.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setReceiveNDEFListener(<a href="#NDEFMessageReadCallback">NDEFMessageReadCallback</a> successCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.p2p
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Invoked in case receiving the message is completed successfully.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type ServiceNotAvailableError, if the NFC service is not available.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var adapter = tizen.nfc.getDefaultAdapter();
+
+/* Receives NFCPeer */
+var onSuccessCB =
+{
+  onattach: function(nfcPeer)
+  {
+    console.log("NFC Target is detected");
+    nfcPeer.setReceiveNDEFListener(function(message)
+    {
+      console.log("Receive message");
+    });
+  },
+  ondetach: function()
+  {
+    console.log("NFC Target is detached");
+  }
+};
+
+adapter.setPeerListener(onSuccessCB);
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCPeer::unsetReceiveNDEFListener">
+<a class="backward-compatibility-anchor" name="::NFC::NFCPeer::unsetReceiveNDEFListener"></a><code><b><span class="methodName">unsetReceiveNDEFListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unregisters the listener for receiving NDEF messages from the NFC peer-to-peer target connected.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unsetReceiveNDEFListener();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.p2p
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type ServiceNotAvailableError, if the NFC service is not available.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var adapter = tizen.nfc.getDefaultAdapter();
+var onSuccessCB =
+{
+  onattach: function(nfcPeer)
+  {
+    console.log("NFC Target is detected");
+    nfcPeer.setReceiveNDEFListener(function(message)
+    {
+      console.log("Receive message");
+      nfcPeer.unsetReceiveNDEFListener();
+    });
+  },
+  ondetach: function()
+  {
+    console.log("NFC Target is detached");
+  }
+};
+
+adapter.setPeerListener(onSuccessCB);
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCPeer::sendNDEF">
+<a class="backward-compatibility-anchor" name="::NFC::NFCPeer::sendNDEF"></a><code><b><span class="methodName">sendNDEF</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sends data to the NFC peer-to-peer target.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void sendNDEF(<a href="#NDEFMessage">NDEFMessage</a> ndefMessage, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+The ErrorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidValuesError: If any of the input parameters contain an invalid value.              </li>
+              <li>
+ ServiceNotAvailableError: If the NFC service is not available.               </li>
+              <li>
+ UnknownError: In any other error case.               </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/nfc.p2p
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">ndefMessage</span>:
+ The NDEF message to send to the NFC peer-to-peer target.
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Invoked in case sending data to the NFC peer-to-peer target is completed successfully.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Invoked in case any error occurs while sending.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  peerListener =
+  {
+    onattach: function(peer)
+    {
+      var record = new tizen.NDEFRecordText("sendNDEF-test", "en-US");
+      var message = new tizen.NDEFMessage([record]);
+      returned = peer.sendNDEF(ndefMessage);
+    },
+    ondetach: function()
+    {
+      adapter.unsetPeerListener();
+    }
+  };
+
+  adapter.setPeerListener(peerListener);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="NDEFMessage">
+<a class="backward-compatibility-anchor" name="::NFC::NDEFMessage"></a><h3>2.6. NDEFMessage</h3>
+<div class="brief">
+ The NDEFMessage interface. An NDEFmessage is composed of multiple NDEFRecords.
+The NDEFMessage must have at least one NDEFRecord.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(),
+   Constructor(<a href="#NDEFRecord">NDEFRecord</a>[] ndefRecords),
+   Constructor(byte[] rawData)]
+  interface NDEFMessage {
+    readonly attribute long recordCount;
+
+    attribute <a href="#NDEFRecord">NDEFRecord</a>[] records;
+
+    byte[] toByte() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var record = new tizen.NDEFRecordText("Hi!", "en-GB");
+  var tempMessage = new tizen.NDEFMessage([record]);
+  var rawData = tempMessage.toByte();
+
+  var message = new tizen.NDEFMessage(rawData);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+<div class="constructors">
+<h4 id="NDEFMessage::constructor">Constructors</h4>
+<dl>
+<pre class="webidl prettyprint">NDEFMessage();</pre>
+<pre class="webidl prettyprint">NDEFMessage(<a href="#NDEFRecord">NDEFRecord</a>[] ndefRecords);</pre>
+<pre class="webidl prettyprint">NDEFMessage(byte[] rawData);</pre>
+</dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="NDEFMessage::recordCount">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">recordCount</span></span><div class="brief">
+ The number of records in the NDEFMessage.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="NDEFMessage::records">
+<span class="attrName"><span class="type">NDEFRecord[]
+                      </span><span class="name">records</span></span><div class="brief">
+ The array of NDEFRecord objects in the NDEFMessage.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  /* Prepare two NDEFRecords */
+  var myRecordURI = new tizen.NDEFRecordURI("https://www.tizen.org/");
+  var myRecordTextPlain = new tizen.NDEFRecordMedia("text/plain", [116, 105, 122, 101, 110]);
+
+  /* Create a NDEFMessage composed of two NDEFRecords */
+  var myMessage = new NDEFMessage([myRecordURI, myRecordTextPlain]);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="NDEFMessage::toByte">
+<a class="backward-compatibility-anchor" name="::NFC::NDEFMessage::toByte"></a><code><b><span class="methodName">toByte</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the serial byte array of the NDEF message.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">byte[] toByte();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="description">
+            <p>
+If the operation completes successfully, it returns the serial byte array of the NDEF message.
+            </p>
+           </div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ byte[] The raw data in the NDEFMessage.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the records whose type is not NDEFRecord are included in the NDEFMessage.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Gets the cached message */
+var cachedMessage = tizen.nfc.getDefaultAdapter().getCachedMessage();
+var raw = cachedMessage.toByte();
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="NDEFRecord">
+<a class="backward-compatibility-anchor" name="::NFC::NDEFRecord"></a><h3>2.7. NDEFRecord</h3>
+<div class="brief">
+ The NDEFRecord interface.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(short tnf, byte[] type, byte[] payload, optional byte[]? id),
+   Constructor(byte[] raw_data)]
+  interface NDEFRecord {
+    readonly attribute short tnf;
+
+    readonly attribute byte[] type;
+
+    readonly attribute byte[] id;
+
+    readonly attribute byte[] payload;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var recordBytes = [217, 1, 2, 3, 202, 219, 218, 217, 240, 241];
+  var record = new tizen.NDEFRecord(recordBytes);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var type = new Array(255),
+  var payload = new Array(256),
+  var recordId = [155, 150],
+  var newRecord = new tizen.NDEFRecord(tizen.nfc.NFC_RECORD_TNF_UNKNOWN, type, payload, recordId);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+<div class="constructors">
+<h4 id="NDEFRecord::constructor">Constructors</h4>
+<dl>
+<pre class="webidl prettyprint">NDEFRecord(short tnf, byte[] type, byte[] payload, optional byte[]? id);</pre>
+<pre class="webidl prettyprint">NDEFRecord(byte[] raw_data);</pre>
+</dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="NDEFRecord::tnf">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">short </span><span class="name">tnf</span></span><div class="brief">
+ The value of the record type (TNF value).
+            </div>
+<div class="description">
+            <p>
+At least the following values must be supported:
+            </p>
+            <ul>
+              <li>
+NFC_RECORD_TNF_EMPTY - The record type is empty              </li>
+              <li>
+NFC_RECORD_TNF_WELL_KNOWN - Record Type Definition (RTD) format [NFC RTD]              </li>
+              <li>
+NFC_RECORD_TNF_MIME_MEDIA - MIME media types in RFC 2046 [RFC 2046]              </li>
+              <li>
+NFC_RECORD_TNF_URI - Absolute URI as defined in RFC 3986 [RFC 3986]              </li>
+              <li>
+NFC_RECORD_TNF_EXTERNAL_RTD - NFC forum external type [NFC RTD]              </li>
+              <li>
+NFC_RECORD_TNF_UNKNOWN - The payload type is unknown              </li>
+              <li>
+NFC_RECORD_TNF_UNCHANGED - It means the payload is an intermediate or final chunk of a chunked NDEF record              </li>
+            </ul>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="NDEFRecord::type">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">byte[]
+                      </span><span class="name">type</span></span><div class="brief">
+ The specified type in byte array.
+            </div>
+<div class="description">
+            <p>
+The byte array contains <var>0</var> to <var>255</var> bytes.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="NDEFRecord::id">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">byte[]
+                      </span><span class="name">id</span></span><div class="brief">
+ The record ID.
+            </div>
+<div class="description">
+            <p>
+The byte array contains <var>0</var> to <var>255</var> bytes.
+            </p>
+            <p>
+By default, this attribute is set to an empty array.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="NDEFRecord::payload">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">byte[]
+                      </span><span class="name">payload</span></span><div class="brief">
+ The record payload.
+            </div>
+<div class="description">
+            <p>
+The byte array contains <var>0</var> to <var>(2 ** 32 - 1)</var> bytes.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Creates a new NDEF record */
+var newRecord = new tizen.NDEFRecordURI("https://www.tizen.org/");
+var payload = newRecord.payload;
+</pre>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="NDEFRecordText">
+<a class="backward-compatibility-anchor" name="::NFC::NDEFRecordText"></a><h3>2.8. NDEFRecordText</h3>
+<div class="brief">
+ The NDEFRecord that has text type payload.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(DOMString text, DOMString languageCode, optional DOMString? encoding)]
+  interface NDEFRecordText : <a href="#NDEFRecord">NDEFRecord</a> {
+    readonly attribute DOMString text;
+
+    readonly attribute DOMString languageCode;
+
+    readonly attribute <a href="#NDEFRecordTextEncoding">NDEFRecordTextEncoding</a> encoding;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+
+      <div class="constructors">
+<h4 id="NDEFRecordText::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">NDEFRecordText(DOMString text, DOMString languageCode, optional DOMString? encoding);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="NDEFRecordText::text">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">text</span></span><div class="brief">
+ The encoded text.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="NDEFRecordText::languageCode">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">languageCode</span></span><div class="brief">
+ The language code string value, followed by IANA[RFC 3066] (for example, en-US, ko-KR).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="NDEFRecordText::encoding">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">NDEFRecordTextEncoding </span><span class="name">encoding</span></span><div class="brief">
+ The encoding type. By default, this attribute is set to UTF8.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var newRecord = new tizen.NDEFRecordText("Tizen", "en-US", "UTF8");
+</pre>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="NDEFRecordURI">
+<a class="backward-compatibility-anchor" name="::NFC::NDEFRecordURI"></a><h3>2.9. NDEFRecordURI</h3>
+<div class="brief">
+ The NDEFRecord that has URI type payload.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(DOMString uri)]
+  interface NDEFRecordURI : <a href="#NDEFRecord">NDEFRecord</a> {
+    readonly attribute DOMString uri;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+
+      <div class="constructors">
+<h4 id="NDEFRecordURI::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">NDEFRecordURI(DOMString uri);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="NDEFRecordURI::uri">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">uri</span></span><div class="brief">
+ The URI string that is stored in the payload.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Creates a new NDEF record */
+var newRecord = new tizen.NDEFRecordURI("https://www.tizen.org/");
+var payload = newRecord.payload;
+</pre>
+</div>
+</li></ul>
+</div>
+</div>
+<div class="interface" id="NDEFRecordMedia">
+<a class="backward-compatibility-anchor" name="::NFC::NDEFRecordMedia"></a><h3>2.10. NDEFRecordMedia</h3>
+<div class="brief">
+ The NDEFRecord that has mime type payload.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(DOMString mimeType, byte[] data)]
+  interface NDEFRecordMedia : <a href="#NDEFRecord">NDEFRecord</a> {
+    readonly attribute DOMString mimeType;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+
+      <div class="constructors">
+<h4 id="NDEFRecordMedia::constructor">Constructors</h4>
+<dl>
+<pre class="webidl prettyprint">NDEFRecordMedia(DOMString mimeType, byte[] data);</pre>
+<div class="description">
+              <ul>
+                <li>
+<b>data</b> : Mime type payload. The byte array contains <var>0</var> to <var>(2 ** 32 - 1)</var> bytes.                </li>
+              </ul>
+             </div>
+</dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="NDEFRecordMedia::mimeType">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">mimeType</span></span><div class="brief">
+ The mime type [RFC 2046] (for example, text/plain, image/jpeg ).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var myData = [116, 105, 122, 101, 110];
+var newRecord = new tizen.NDEFRecordMedia("text/plain", myData);
+</pre>
+</div>
+</li></ul>
+</div>
+</div>
+<div class="interface" id="HCEEventData">
+<a class="backward-compatibility-anchor" name="::NFC::HCEEventData"></a><h3>2.11. HCEEventData</h3>
+<div class="brief">
+ The HCEEventData interface represents HCE event data.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface  HCEEventData {
+   readonly attribute <a href="#HCEEventType">HCEEventType</a> eventType;
+
+   readonly attribute byte[] apdu;
+
+   readonly attribute long length;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+          </p>
+<p><span class="remark"> Remark : </span>
+ Example of using can be find at <a href="nfc.html#HCEEventReceiveCallback">setListener</a> code example.
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="HCEEventData::eventType">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">HCEEventType </span><span class="name">eventType</span></span><div class="brief">
+ HCE event type.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+</li>
+<li class="attribute" id="HCEEventData::apdu">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">byte[]
+                      </span><span class="name">apdu</span></span><div class="brief">
+ The bytes array of APDU
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+</li>
+<li class="attribute" id="HCEEventData::length">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">length</span></span><div class="brief">
+ The length of APDU
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="AIDData">
+<a class="backward-compatibility-anchor" name="::NFC::AIDData"></a><h3>2.12. AIDData</h3>
+<div class="brief">
+ The AID data interface represents registerd AID data
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface  AIDData{
+   readonly attribute <a href="#SecureElementType">SecureElementType</a> type;
+
+   readonly attribute <a href="#AID">AID</a> aid;
+
+   readonly attribute boolean  readOnly;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+          </p>
+<p><span class="remark"> Remark : </span>
+ Example of using can be find at <a href="nfc.html#NFCAdapter::getAIDsForCategory">setListener</a> code example.
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="AIDData::type">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">SecureElementType </span><span class="name">type</span></span><div class="brief">
+ Secure Element type.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+</li>
+<li class="attribute" id="AIDData::aid">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">AID </span><span class="name">aid</span></span><div class="brief">
+ The AID (Application ID) data, specified in ISO/IEC 7816-4
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+</li>
+<li class="attribute" id="AIDData::readOnly">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">readOnly</span></span><div class="brief">
+ An attribute to indicate whether the registered AID is read-only or not
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="NFCTagDetectCallback">
+<a class="backward-compatibility-anchor" name="::NFC::NFCTagDetectCallback"></a><h3>2.13. NFCTagDetectCallback</h3>
+<div class="brief">
+ The NFCTagDetectCallback interface specifies a success callback to be invoked when an NFC tag is detected or lost.
+          </div>
+<pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface NFCTagDetectCallback {
+    void onattach(<a href="#NFCTag">NFCTag</a> nfcTag);
+    void ondetach();
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+This callback interface specifies two methods:
+          </p>
+          <ul>
+            <li>
+ onattach: Invoked when an NFC tag is detected            </li>
+            <li>
+ ondetach: Invoked when an NFC tag is lost            </li>
+          </ul>
+          <p>
+It is used in NFCAdapter.setTagListener().
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="NFCTagDetectCallback::onattach">
+<a class="backward-compatibility-anchor" name="::NFC::NFCTagDetectCallback::onattach"></a><code><b><span class="methodName">onattach</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ The method invoked when a tag is attached.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onattach(<a href="#NFCTag">NFCTag</a> nfcTag);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">nfcTag</span>:
+ The attached NFC tag.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var onSuccessCB =
+  {
+    onattach: function(nfcTag)
+    {
+      console.log("Successfully detected nfcTag type:" + nfcTag.type);
+    }
+  }
+
+  var adapter = tizen.nfc.getDefaultAdapter();
+  adapter.setTagListener(onSuccessCB);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCTagDetectCallback::ondetach">
+<a class="backward-compatibility-anchor" name="::NFC::NFCTagDetectCallback::ondetach"></a><code><b><span class="methodName">ondetach</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ The method invoked when the connected tag is detached.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void ondetach();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var adapter;
+  var onSuccessCB =
+  {
+    onattach: function(nfcTag)
+    {
+      console.log("Successfully detected nfcTag type:" + nfcTag.type);
+    },
+    ondetach: function()
+    {
+      adapter.unsetTagListener();
+    }
+  }
+
+  adapter = tizen.nfc.getDefaultAdapter();
+  adapter.setTagListener(onSuccessCB);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="NFCPeerDetectCallback">
+<a class="backward-compatibility-anchor" name="::NFC::NFCPeerDetectCallback"></a><h3>2.14. NFCPeerDetectCallback</h3>
+<div class="brief">
+ The NFCPeerDetectCallback interface specifies a success callback to be invoked when an NFC peer-to-peer target is detected or lost.
+          </div>
+<pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface NFCPeerDetectCallback {
+    void onattach(<a href="#NFCPeer">NFCPeer</a> nfcPeer);
+    void ondetach();
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+This callback interface specifies two methods:
+          </p>
+          <ul>
+            <li>
+ onattach: Invoked when an NFC peer-to-peer target is detected            </li>
+            <li>
+ ondetach: Invoked when an NFC peer-to-peer target is lost            </li>
+          </ul>
+          <p>
+It is used in NFCAdapter.setPeerListener().
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="NFCPeerDetectCallback::onattach">
+<a class="backward-compatibility-anchor" name="::NFC::NFCPeerDetectCallback::onattach"></a><code><b><span class="methodName">onattach</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ The method invoked when the NFC peer-to-peer target is attached.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onattach(<a href="#NFCPeer">NFCPeer</a> nfcPeer);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">nfcPeer</span>:
+ The attached NFC peer-to-peer target.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var adapter;
+  var onSuccessCB =
+  {
+    onattach: function(nfcPeer)
+    {
+      console.log("Successfully detected nfcPeer:" + nfcPeer.isConnected);
+    }
+  }
+
+  adapter = tizen.nfc.getDefaultAdapter();
+  adapter.setPeerListener(onSuccessCB);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="NFCPeerDetectCallback::ondetach">
+<a class="backward-compatibility-anchor" name="::NFC::NFCPeerDetectCallback::ondetach"></a><code><b><span class="methodName">ondetach</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ The method invoked when the connected NFC peer-to-peer target is detached.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void ondetach();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var adapter;
+  var onSuccessCB =
+  {
+    onattach: function(nfcPeer)
+    {
+      console.log("Successfully detected nfcPeer:" + nfcPeer.isConnected);
+    },
+    ondetach: function()
+    {
+      adapter.unsetPeerListener();
+    }
+  }
+
+  adapter = tizen.nfc.getDefaultAdapter();
+  adapter.setPeerListener(onSuccessCB);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="NDEFMessageReadCallback">
+<a class="backward-compatibility-anchor" name="::NFC::NDEFMessageReadCallback"></a><h3>2.15. NDEFMessageReadCallback</h3>
+<div class="brief">
+ The NDEFMessageReadCallback interface specifies a success callback to be invoked when data has been read successfully from the NFC tag or target.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface NDEFMessageReadCallback {
+    void onsuccess(<a href="#NDEFMessage">NDEFMessage</a> ndefMessage);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+This callback interface specifies a success method with
+an NDEF message as an input parameter.
+It is used in asynchronous
+operations, such as NFCTag.readNDEF() or NFCPeer.setReceiveNDEFListener().
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="NDEFMessageReadCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::NFC::NDEFMessageReadCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ The method invoked when the asynchronous call completes successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#NDEFMessage">NDEFMessage</a> ndefMessage);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">ndefMessage</span>:
+ NDEF message that is read from the NFC tag or target.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var adapter;
+
+  var readCallback = function(ndefMessage)
+  {
+    console.log("NDEFMessageReadCallback called successfully");
+  }
+
+  var tagListener =
+  {
+    onattach: function(nfcTag)
+    {
+      var result = nfcTag.readNDEF(readCallback);
+    }
+  }
+
+  adapter = tizen.nfc.getDefaultAdapter();
+  adapter.setTagListener(tagListener);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="ByteArraySuccessCallback">
+<a class="backward-compatibility-anchor" name="::NFC::ByteArraySuccessCallback"></a><h3>2.16. ByteArraySuccessCallback</h3>
+<div class="brief">
+ The ByteArraySuccessCallback interface specifies a success callback to be invoked when NFCTag.transceive() completes successfully.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ByteArraySuccessCallback {
+    void onsuccess(byte[] data);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+This callback interface specifies a success method, with
+raw data as an input parameter. It is used in NFCTag.transceive().
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="ByteArraySuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::NFC::ByteArraySuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ The method invoked when the asynchronous call completes successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(byte[] data);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">data</span>:
+ The raw data that is read from the NFC tag or response of a transceive operation.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var successCB = function(data)
+  {
+    console.log("ByteArraySuccessCallback called successfully.");
+  };
+
+  var message = [0x30, 0x00, 0x02, 0xa8]; /* READ command for MIFARE tags */
+
+  nfcTag.transceive(message, successCB);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="CardEmulationModeChangeCallback">
+<a class="backward-compatibility-anchor" name="::NFC::CardEmulationModeChangeCallback"></a><h3>2.17. CardEmulationModeChangeCallback</h3>
+<div class="brief">
+ The CardEmulationModeChangeCallback interface specifies a success callback to be invoked when the card emulation mode is changed.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface CardEmulationModeChangeCallback {
+    void onchanged(<a href="#CardEmulationMode">CardEmulationMode</a> mode);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="CardEmulationModeChangeCallback::onchanged">
+<a class="backward-compatibility-anchor" name="::NFC::CardEmulationModeChangeCallback::onchanged"></a><code><b><span class="methodName">onchanged</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the card emulation mode is changed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onchanged(<a href="#CardEmulationMode">CardEmulationMode</a> mode);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">mode</span>:
+ Changed card emulation mode
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var onSuccessCB = function(mode)
+  {
+    console.log("CardEmulationModeChangeCallback called successfully");
+  };
+
+  var listenerId = adapter.addCardEmulationModeChangeListener(onSuccessCB);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="TransactionEventCallback">
+<a class="backward-compatibility-anchor" name="::NFC::TransactionEventCallback"></a><h3>2.18. TransactionEventCallback</h3>
+<div class="brief">
+ The TransactionEventCallback interface specifies a success callback to be invoked when an external reader tries to access a secure element.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface TransactionEventCallback {
+    void ondetected(octet[] appletId, octet[] data);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="TransactionEventCallback::ondetected">
+<a class="backward-compatibility-anchor" name="::NFC::TransactionEventCallback::ondetected"></a><code><b><span class="methodName">ondetected</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the asynchronous call completes successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void ondetected(octet[] appletId, octet[] data);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">appletId</span>:
+ ID of the applet in which the transaction has happened
+                </li>
+          <li class="param">
+<span class="name">data</span>:
+ Transaction data
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var onSuccessCB = function(aid, data)
+  {
+    console.log("TransactionEventCallback called successfully");
+  };
+
+  var listenerId = adapter.addTransactionEventListener("UICC", onSuccessCB);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="ActiveSecureElementChangeCallback">
+<a class="backward-compatibility-anchor" name="::NFC::ActiveSecureElementChangeCallback"></a><h3>2.19. ActiveSecureElementChangeCallback</h3>
+<div class="brief">
+ The ActiveSecureElementChangeCallback interface specifies a success callback to be invoked when an active secure element is changed.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ActiveSecureElementChangeCallback {
+    void onchanged(<a href="#SecureElementType">SecureElementType</a> type);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="ActiveSecureElementChangeCallback::onchanged">
+<a class="backward-compatibility-anchor" name="::NFC::ActiveSecureElementChangeCallback::onchanged"></a><code><b><span class="methodName">onchanged</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the type of an active secure element is changed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onchanged(<a href="#SecureElementType">SecureElementType</a> type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ Type of a newly changed active secure element
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var onSuccessCB = function(seType)
+  {
+    console.log("ActiveSecureElementChangeCallback called successfully");
+  };
+
+  var listenerId = adapter.addActiveSecureElementChangeListener(onSuccessCB);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="HCEEventReceiveCallback">
+<a class="backward-compatibility-anchor" name="::NFC::HCEEventReceiveCallback"></a><h3>2.20. HCEEventReceiveCallback</h3>
+<div class="brief">
+ The HCEEventReceiveCallback interface specifies a success callback to be invoked when an HCE event is detected.
+          </div>
+<pre class="webidl prettyprint">[Callback=FunctionOnly, NoInterfaceObject] interface HCEEventReceiveCallback {
+  void ondetected(<a href="#HCEEventData">HCEEventData</a> data);
+};</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="HCEEventReceiveCallback::ondetected">
+<a class="backward-compatibility-anchor" name="::NFC::HCEEventReceiveCallback::ondetected"></a><code><b><span class="methodName">ondetected</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when HCE event is detected.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void ondetected(<a href="#HCEEventData">HCEEventData</a> data);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">data</span>:
+ HCE event data
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var onDetectedCB = function(event_data)
+  {
+    console.log("HCEEventReceiveCallback called successfully");
+  };
+
+  var listenerId = adapter.addHCEEventListener(onDetectedCB);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="AIDArraySuccessCallback">
+<a class="backward-compatibility-anchor" name="::NFC::AIDArraySuccessCallback"></a><h3>2.21. AIDArraySuccessCallback</h3>
+<div class="brief">
+ The AIDArraySuccessCallback interface specifies a success callback to be invoked when an NFCAdaptor.getAIDsForCategory() completes successfully.
+          </div>
+<pre class="webidl prettyprint">[Callback=FunctionOnly, NoInterfaceObject] interface AIDArraySuccessCallback {
+  void onsuccess(<a href="#AIDData">AIDData</a>[] aids);
+};</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="AIDArraySuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::NFC::AIDArraySuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ The method invoked when the asynchronous call completes successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#AIDData">AIDData</a>[] aids);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">aids</span>:
+ The list of AIDs
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+  var successCB = function(aids)
+  {
+    console.log("AIDArraySuccessCallback called successfully");
+  };
+
+  adapter.getAIDsForCategory("HCE", "PAYMENT", successCB);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="api-features">3. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the NFC application runs on a device with the NFC feature, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/network.nfc</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the NFC application runs on a device with the NFC tag feature, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/network.nfc.tag</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the NFC application runs on a device with the NFC p2p feature, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/network.nfc.p2p</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the NFC card emulation application runs on a device with the NFC card emulation feature, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/network.nfc.card_emulation</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the NFC host-based card emulation application runs on a device with the NFC host-based card emulation feature, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/network.nfc.card_emulation.hce</li>
+</div>
+<p></p>
+                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+</div>
+<h2 id="full-webidl">4. Full WebIDL</h2>
+<pre class="webidl prettyprint">module NFC {
+  enum NDEFRecordTextEncoding { "UTF8", "UTF16" };
+
+  enum NFCTagType { "GENERIC_TARGET", "ISO14443_A", "ISO14443_4A", "ISO14443_3A",
+  "MIFARE_MINI", "MIFARE_1K", "MIFARE_4K", "MIFARE_ULTRA", "MIFARE_DESFIRE",
+  "ISO14443_B", "ISO14443_4B", "ISO14443_BPRIME", "FELICA", "JEWEL", "ISO15693",
+  "UNKNOWN_TARGET" };
+
+  enum CardEmulationMode { "ALWAYS_ON", "OFF" };
+
+  enum SecureElementType { "ESE", "UICC",  "HCE" };
+
+  enum CardEmulationCategoryType { "PAYMENT", "OTHER" };
+
+  enum HCEEventType { "DEACTIVATED", "ACTIVATED", "APDU_RECEIVED" };
+
+  typedef DOMString AID;
+
+  [NoInterfaceObject] interface NFCManagerObject {
+    readonly attribute <a href="#NFCManager">NFCManager</a> nfc;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NFCManagerObject">NFCManagerObject</a>;
+
+  [NoInterfaceObject] interface NFCManager {
+    const short NFC_RECORD_TNF_EMPTY = 0;
+    const short NFC_RECORD_TNF_WELL_KNOWN = 1;
+    const short NFC_RECORD_TNF_MIME_MEDIA = 2;
+    const short NFC_RECORD_TNF_URI = 3;
+    const short NFC_RECORD_TNF_EXTERNAL_RTD = 4;
+    const short NFC_RECORD_TNF_UNKNOWN = 5;
+    const short NFC_RECORD_TNF_UNCHANGED = 6;
+
+    <a href="#NFCAdapter">NFCAdapter</a> getDefaultAdapter() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void setExclusiveMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+
+
+  [NoInterfaceObject] interface NFCAdapter {
+    readonly attribute boolean powered;
+
+    attribute <a href="#CardEmulationMode">CardEmulationMode</a> cardEmulationMode raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    attribute <a href="#SecureElementType">SecureElementType</a>? activeSecureElement raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void setTagListener(<a href="#NFCTagDetectCallback">NFCTagDetectCallback</a> detectCallback,
+                        optional <a href="#NFCTagType">NFCTagType</a>[]? tagFilter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void setPeerListener(<a href="#NFCPeerDetectCallback">NFCPeerDetectCallback</a> detectCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void unsetTagListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void unsetPeerListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long addCardEmulationModeChangeListener(<a href="#CardEmulationModeChangeCallback">CardEmulationModeChangeCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeCardEmulationModeChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long addTransactionEventListener(<a href="#SecureElementType">SecureElementType</a> type,
+                                     <a href="#TransactionEventCallback">TransactionEventCallback</a> eventCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeTransactionEventListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long addActiveSecureElementChangeListener(<a href="#ActiveSecureElementChangeCallback">ActiveSecureElementChangeCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeActiveSecureElementChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#NDEFMessage">NDEFMessage</a>? getCachedMessage() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void setExclusiveModeForTransaction(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long addHCEEventListener(<a href="#HCEEventReceiveCallback">HCEEventReceiveCallback</a> eventCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeHCEEventListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void sendHostAPDUResponse(byte[] apdu, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean isActivatedHandlerForAID(<a href="#SecureElementType">SecureElementType</a> type, <a href="#AID">AID</a> aid) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean isActivatedHandlerForCategory(<a href="#SecureElementType">SecureElementType</a> type, <a href="#CardEmulationCategoryType">CardEmulationCategoryType</a> category) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void registerAID(<a href="#SecureElementType">SecureElementType</a> type, <a href="#AID">AID</a> aid, <a href="#CardEmulationCategoryType">CardEmulationCategoryType</a> category) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void unregisterAID(<a href="#SecureElementType">SecureElementType</a> type, <a href="#AID">AID</a> aid, <a href="#CardEmulationCategoryType">CardEmulationCategoryType</a> category) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void getAIDsForCategory(<a href="#SecureElementType">SecureElementType</a> type, <a href="#CardEmulationCategoryType">CardEmulationCategoryType</a> category, <a href="#AIDArraySuccessCallback">AIDArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void setPreferredApp() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void unsetPreferredApp() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+  };
+
+
+  [NoInterfaceObject] interface NFCTag {
+    readonly attribute <a href="#NFCTagType">NFCTagType</a> type;
+
+    readonly attribute boolean isSupportedNDEF;
+
+    readonly attribute long ndefSize;
+
+    readonly attribute object properties;
+
+    readonly attribute boolean isConnected;
+
+
+     void readNDEF(<a href="#NDEFMessageReadCallback">NDEFMessageReadCallback</a> readCallback,
+                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void writeNDEF(<a href="#NDEFMessage">NDEFMessage</a> ndefMessage,
+                   optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                   optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void transceive(byte[] data,
+                    <a href="#ByteArraySuccessCallback">ByteArraySuccessCallback</a> dataCallback,
+                    optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+
+
+  [NoInterfaceObject] interface NFCPeer {
+    readonly attribute boolean isConnected;
+
+    void setReceiveNDEFListener(<a href="#NDEFMessageReadCallback">NDEFMessageReadCallback</a> successCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void unsetReceiveNDEFListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void sendNDEF(<a href="#NDEFMessage">NDEFMessage</a> ndefMessage,
+                  optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+  };
+
+  [Constructor(),
+   Constructor(<a href="#NDEFRecord">NDEFRecord</a>[] ndefRecords),
+   Constructor(byte[] rawData)]
+  interface NDEFMessage {
+    readonly attribute long recordCount;
+
+    attribute <a href="#NDEFRecord">NDEFRecord</a>[] records;
+
+    byte[] toByte() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+
+  [Constructor(short tnf, byte[] type, byte[] payload, optional byte[]? id),
+   Constructor(byte[] raw_data)]
+  interface NDEFRecord {
+    readonly attribute short tnf;
+
+    readonly attribute byte[] type;
+
+    readonly attribute byte[] id;
+
+    readonly attribute byte[] payload;
+  };
+
+  [Constructor(DOMString text, DOMString languageCode, optional DOMString? encoding)]
+  interface NDEFRecordText : <a href="#NDEFRecord">NDEFRecord</a> {
+    readonly attribute DOMString text;
+
+    readonly attribute DOMString languageCode;
+
+    readonly attribute <a href="#NDEFRecordTextEncoding">NDEFRecordTextEncoding</a> encoding;
+  };
+
+  [Constructor(DOMString uri)]
+  interface NDEFRecordURI : <a href="#NDEFRecord">NDEFRecord</a> {
+    readonly attribute DOMString uri;
+  };
+  [Constructor(DOMString mimeType, byte[] data)]
+  interface NDEFRecordMedia : <a href="#NDEFRecord">NDEFRecord</a> {
+    readonly attribute DOMString mimeType;
+  };
+
+  [NoInterfaceObject] interface  HCEEventData {
+   readonly attribute <a href="#HCEEventType">HCEEventType</a> eventType;
+
+   readonly attribute byte[] apdu;
+
+   readonly attribute long length;
+  };
+
+  [NoInterfaceObject] interface  AIDData{
+   readonly attribute <a href="#SecureElementType">SecureElementType</a> type;
+
+   readonly attribute <a href="#AID">AID</a> aid;
+
+   readonly attribute boolean  readOnly;
+  };
+
+  [Callback, NoInterfaceObject] interface NFCTagDetectCallback {
+    void onattach(<a href="#NFCTag">NFCTag</a> nfcTag);
+    void ondetach();
+  };
+
+  [Callback, NoInterfaceObject] interface NFCPeerDetectCallback {
+    void onattach(<a href="#NFCPeer">NFCPeer</a> nfcPeer);
+    void ondetach();
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface NDEFMessageReadCallback {
+    void onsuccess(<a href="#NDEFMessage">NDEFMessage</a> ndefMessage);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface ByteArraySuccessCallback {
+    void onsuccess(byte[] data);
+  };
+
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface CardEmulationModeChangeCallback {
+    void onchanged(<a href="#CardEmulationMode">CardEmulationMode</a> mode);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface TransactionEventCallback {
+    void ondetected(octet[] appletId, octet[] data);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface ActiveSecureElementChangeCallback {
+    void onchanged(<a href="#SecureElementType">SecureElementType</a> type);
+  };
+
+[Callback=FunctionOnly, NoInterfaceObject] interface HCEEventReceiveCallback {
+  void ondetected(<a href="#HCEEventData">HCEEventData</a> data);
+};
+
+[Callback=FunctionOnly, NoInterfaceObject] interface AIDArraySuccessCallback {
+  void onsuccess(<a href="#AIDData">AIDData</a>[] aids);
+};
+
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

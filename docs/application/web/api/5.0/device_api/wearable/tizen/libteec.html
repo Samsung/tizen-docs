@@ -1,0 +1,1514 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>LibTeec API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::LibTeec">
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="title"><h1>LibTeec API</h1></div>
+<div class="brief">
+ The LibTeec API provides functionality to communicate with application executed in trusted environment.
+        </div>
+<div class="description">
+        <p>
+Libteec can be understood as a universal API for communication with trusted execution environment (TEE).
+This API follows GlobalPlatform (GP) specification.<br>The original documentation (TEE_Client_API_Specification-xxx.pdf)
+is available to download from <a href="https://www.globalplatform.org">GlobalPlatform.org</a> under <em>Device</em> section.
+        </p>
+        <p>
+The Libteec provides a set of functions for executing application in TrustZone and communicating with it.
+This way we have, so called, two worlds: rich world (like Linux) with Client Application (CA) and
+secure world with Trusted Application (TA).
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li>
+                    1.1. <a href="#TeecLoginMethod">TeecLoginMethod</a>
+</li>
+<li>
+                    1.2. <a href="#TeecValueType">TeecValueType</a>
+</li>
+<li>
+                    1.3. <a href="#TeecTempMemoryType">TeecTempMemoryType</a>
+</li>
+<li>
+                    1.4. <a href="#TeecRegisteredMemoryType">TeecRegisteredMemoryType</a>
+</li>
+<li>
+                    1.5. <a href="#TeecSharedMemoryFlags">TeecSharedMemoryFlags</a>
+</li>
+<li>
+                    1.6. <a href="#TeecUuid">TeecUuid</a>
+</li>
+<li>
+                    1.7. <a href="#TeecTaskId">TeecTaskId</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#LibTeecManagerObject">LibTeecManagerObject</a>
+</li>
+<li>2.2. <a href="#LibTeecManager">LibTeecManager</a>
+</li>
+<li>2.3. <a href="#TeecContext">TeecContext</a>
+</li>
+<li>2.4. <a href="#TeecSession">TeecSession</a>
+</li>
+<li>2.5. <a href="#TeecSharedMemory">TeecSharedMemory</a>
+</li>
+<li>2.6. <a href="#TeecParameter">TeecParameter</a>
+</li>
+<li>2.7. <a href="#TeecRegisteredMemory">TeecRegisteredMemory</a>
+</li>
+<li>2.8. <a href="#TeecTempMemory">TeecTempMemory</a>
+</li>
+<li>2.9. <a href="#TeecValue">TeecValue</a>
+</li>
+<li>2.10. <a href="#TeecOpenSuccessCallback">TeecOpenSuccessCallback</a>
+</li>
+<li>2.11. <a href="#TeecCommandSuccessCallback">TeecCommandSuccessCallback</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#api-features">Related Feature</a>
+</li>
+<li>4. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#LibTeecManagerObject">LibTeecManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#LibTeecManager">LibTeecManager</a></td>
+<td><div>
+<a href="#TeecContext">TeecContext</a> <a href="#LibTeecManager::getContext">getContext</a> (optional DOMString? name)</div></td>
+</tr>
+<tr>
+<td><a href="#TeecContext">TeecContext</a></td>
+<td>
+<div>
+<a href="#TeecTaskId">TeecTaskId</a> <a href="#TeecContext::openSession">openSession</a> (<a href="#TeecUuid">TeecUuid</a> taUUID, <a href="#TeecLoginMethod">TeecLoginMethod</a> loginMethod, unsigned long? connectionData, <a href="#TeecParameter">TeecParameter</a>[] params, <a href="#TeecOpenSuccessCallback">TeecOpenSuccessCallback</a> successCallback, optional ? errorCallback)</div>
+<div>void <a href="#TeecContext::revokeCommand">revokeCommand</a> (<a href="#TeecTaskId">TeecTaskId</a> id)</div>
+<div>
+<a href="#TeecSharedMemory">TeecSharedMemory</a> <a href="#TeecContext::allocateSharedMemory">allocateSharedMemory</a> (unsigned long size, <a href="#TeecSharedMemoryFlags">TeecSharedMemoryFlags</a> flags)</div>
+<div>
+<a href="#TeecSharedMemory">TeecSharedMemory</a> <a href="#TeecContext::registerSharedMemory">registerSharedMemory</a> (unsigned long long addr, unsigned long size, <a href="#TeecSharedMemoryFlags">TeecSharedMemoryFlags</a> flags)</div>
+<div>void <a href="#TeecContext::releaseSharedMemory">releaseSharedMemory</a> (<a href="#TeecSharedMemory">TeecSharedMemory</a> shm)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#TeecSession">TeecSession</a></td>
+<td>
+<div>void <a href="#TeecSession::close">close</a> ()</div>
+<div>
+<a href="#TeecTaskId">TeecTaskId</a> <a href="#TeecSession::invokeCommand">invokeCommand</a> (long cmd, <a href="#TeecParameter">TeecParameter</a>[] params, <a href="#TeecCommandSuccessCallback">TeecCommandSuccessCallback</a> successCallback, optional ? errorCallback)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#TeecSharedMemory">TeecSharedMemory</a></td>
+<td>
+<div>void <a href="#TeecSharedMemory::setData">setData</a> (byte[] data, unsigned long long offset)</div>
+<div>void <a href="#TeecSharedMemory::getData">getData</a> (byte[] data, unsigned long long offset)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#TeecParameter">TeecParameter</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#TeecRegisteredMemory">TeecRegisteredMemory</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#TeecTempMemory">TeecTempMemory</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#TeecValue">TeecValue</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#TeecOpenSuccessCallback">TeecOpenSuccessCallback</a></td>
+<td><div>void <a href="#TeecOpenSuccessCallback::onsuccess">onsuccess</a> (<a href="#TeecSession">TeecSession</a> session)</div></td>
+</tr>
+<tr>
+<td><a href="#TeecCommandSuccessCallback">TeecCommandSuccessCallback</a></td>
+<td><div>void <a href="#TeecCommandSuccessCallback::onsuccess">onsuccess</a> (long cmd, <a href="#TeecParameter">TeecParameter</a>[] params)</div></td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="enum" id="TeecLoginMethod">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecLoginMethod"></a><h3>1.1. TeecLoginMethod</h3>
+<div class="brief">
+ This type denotes Session Login Method used in OpenSession.
+          </div>
+<pre class="webidl prettyprint">  enum TeecLoginMethod {
+    "PUBLIC",
+    "USER",
+    "GROUP",
+    "APPLICATION"
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="description">
+          <p>
+The following methods are supported:
+          </p>
+          <ul>
+            <li>
+PUBLIC - No login data is provided.            </li>
+            <li>
+USER - Login data about the user running the Client Application process is provided.            </li>
+            <li>
+GROUP - Login data about the group running the Client Application process is provided.            </li>
+            <li>
+APPLICATION - Login data about the running Client Application itself is provided.            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="TeecValueType">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecValueType"></a><h3>1.2. TeecValueType</h3>
+<div class="brief">
+ This type denotes Value parameter.
+          </div>
+<pre class="webidl prettyprint">  enum TeecValueType {
+    "INPUT",
+    "OUTPUT",
+    "INOUT"
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="description">
+          <ul>
+            <li>
+INPUT - The Parameter is a <a href="#TeecValue">TeecValue</a> tagged as input.            </li>
+            <li>
+OUTPUT - The Parameter is a <a href="#TeecValue">TeecValue</a> tagged as output.            </li>
+            <li>
+INOUT - The Parameter is a <a href="#TeecValue">TeecValue</a> tagged as both input and output.            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="TeecTempMemoryType">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecTempMemoryType"></a><h3>1.3. TeecTempMemoryType</h3>
+<div class="brief">
+ This type denotes TempMemory parameter.
+          </div>
+<pre class="webidl prettyprint">  enum TeecTempMemoryType {
+    "INPUT",
+    "OUTPUT",
+    "INOUT"
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="description">
+          <ul>
+            <li>
+INPUT - The Parameter is a <a href="#TeecTempMemory">TeecTempMemory</a> tagged as input.            </li>
+            <li>
+OUTPUT - The Parameter is a <a href="#TeecTempMemory">TeecTempMemory</a> tagged as output.            </li>
+            <li>
+INOUT - The Parameter is a <a href="#TeecTempMemory">TeecTempMemory</a> tagged as both input and output.            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="TeecRegisteredMemoryType">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecRegisteredMemoryType"></a><h3>1.4. TeecRegisteredMemoryType</h3>
+<div class="brief">
+ This type denotes RegisteredMemory parameter.
+          </div>
+<pre class="webidl prettyprint">  enum TeecRegisteredMemoryType {
+    "WHOLE",
+    "PARTIAL_INPUT",
+    "PARTIAL_OUTPUT",
+    "PARTIAL_INOUT"
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="description">
+          <ul>
+            <li>
+WHOLE - The Parameter is a <a href="#TeecRegisteredMemory">TeecRegisteredMemory</a> that refers to the entire Shared Memory block.            </li>
+            <li>
+PARTIAL_INPUT - The Parameter is a <a href="#TeecRegisteredMemory">TeecRegisteredMemory</a> that refers to a part of SharedMemory and is tagged as input.            </li>
+            <li>
+PARTIAL_OUTPUT - The Parameter is a <a href="#TeecRegisteredMemory">TeecRegisteredMemory</a> that refers to a part of SharedMemory and is tagged as output.            </li>
+            <li>
+PARTIAL_INOUT - The Parameter is a <a href="#TeecRegisteredMemory">TeecRegisteredMemory</a> that refers to a part of SharedMemory and is tagged as both input and output.            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="TeecSharedMemoryFlags">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecSharedMemoryFlags"></a><h3>1.5. TeecSharedMemoryFlags</h3>
+<div class="brief">
+ This type denotes SharedMemory access direction.
+          </div>
+<pre class="webidl prettyprint">  enum TeecSharedMemoryFlags {
+    "INPUT",
+    "OUTPUT",
+    "INOUT"
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="description">
+          <ul>
+            <li>
+INPUT - A flag indicates <a href="#TeecSharedMemory">TeecSharedMemory</a> can be read.            </li>
+            <li>
+OUTPUT - A flag indicates <a href="#TeecSharedMemory">TeecSharedMemory</a> can be written.            </li>
+            <li>
+INOUT - A flag indicates <a href="#TeecSharedMemory">TeecSharedMemory</a> can be read and written.            </li>
+          </ul>
+         </div>
+</div>
+<div class="typedef" id="TeecUuid">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecUuid"></a><h3>1.6. TeecUuid</h3>
+<div class="brief">
+ This type contains a Universally Unique Resource Identifier (UUID) type as defined in RFC 4122.
+These UUID values are used to identify Trusted Applications.
+Example UUID strig representation: f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+          </div>
+<pre class="webidl prettyprint">  typedef DOMString TeecUuid;</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+</div>
+<div class="typedef" id="TeecTaskId">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecTaskId"></a><h3>1.7. TeecTaskId</h3>
+<div class="brief">
+ Background process id.
+          </div>
+<pre class="webidl prettyprint">  typedef unsigned long TeecTaskId;</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="LibTeecManagerObject">
+<a class="backward-compatibility-anchor" name="::LibTeec::LibTeecManagerObject"></a><h3>2.1. LibTeecManagerObject</h3>
+<div class="brief">
+ The LibTeecObject interface gives access to the LibTeec API from the <em>tizen.teec</em> object.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface LibTeecManagerObject {
+    readonly attribute <a href="#LibTeecManager">LibTeecManager</a> teec;
+  };</pre>
+<pre class="webidl prettyprint">   implements <a href="#LibTeecManagerObject">LibTeecManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+</div>
+<div class="interface" id="LibTeecManager">
+<a class="backward-compatibility-anchor" name="::LibTeec::LibTeecManager"></a><h3>2.2. LibTeecManager</h3>
+<div class="brief">
+ The LibTeecManager interface provides methods to access Context and Session for GlobalPlatform libteec.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface LibTeecManager {
+
+    <a href="#TeecContext">TeecContext</a> getContext(optional DOMString? name) raises ();
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="description">
+          <p>
+Once a context object is obtained, it is possible to open a session to Trusted Application (TA) .
+          </p>
+         </div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="LibTeecManager::getContext">
+<a class="backward-compatibility-anchor" name="::LibTeec::LibTeecManager::getContext"></a><code><b><span class="methodName">getContext</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Get TEE context by name.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#TeecContext">TeecContext</a> getContext(optional DOMString? name);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ partner
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/tee.client
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">name</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ describes the TEE to connect to, when not given (or null) connects to default TEE.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ Context The created <em>TeecContext</em>              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if application does not have privilege to access this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if required feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> try
+ {
+   var ctx = tizen.teec.getContext(); /* Get default TEE context */
+ }
+ catch (err)
+ {
+   console.log(err.name + ": " + err.message);
+ }
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="TeecContext">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecContext"></a><h3>2.3. TeecContext</h3>
+<div class="brief">
+ This type denotes a TEE Context, the main logical container linking a Client Application with a particular TEE.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface TeecContext {
+    <a href="#TeecTaskId">TeecTaskId</a> openSession(<a href="#TeecUuid">TeecUuid</a> taUUID,
+                           <a href="#TeecLoginMethod">TeecLoginMethod</a> loginMethod,
+                           unsigned long? connectionData,
+                           <a href="#TeecParameter">TeecParameter</a>[] params,
+                           <a href="#TeecOpenSuccessCallback">TeecOpenSuccessCallback</a> successCallback,
+                           optional ? errorCallback) raises ();
+
+    void revokeCommand(<a href="#TeecTaskId">TeecTaskId</a> id) raises ();
+
+    <a href="#TeecSharedMemory">TeecSharedMemory</a> allocateSharedMemory(unsigned long size, <a href="#TeecSharedMemoryFlags">TeecSharedMemoryFlags</a> flags) raises ();
+
+    <a href="#TeecSharedMemory">TeecSharedMemory</a> registerSharedMemory(unsigned long long addr, unsigned long size, <a href="#TeecSharedMemoryFlags">TeecSharedMemoryFlags</a> flags) raises ();
+
+    void releaseSharedMemory(<a href="#TeecSharedMemory">TeecSharedMemory</a> shm) raises ();
+  };</pre>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="TeecContext::openSession">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecContext::openSession"></a><code><b><span class="methodName">openSession</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Open session with TA.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#TeecTaskId">TeecTaskId</a> openSession(<a href="#TeecUuid">TeecUuid</a> taUUID, <a href="#TeecLoginMethod">TeecLoginMethod</a> loginMethod, unsigned long? connectionData, <a href="#TeecParameter">TeecParameter</a>[] params, <a href="#TeecOpenSuccessCallback">TeecOpenSuccessCallback</a> successCallback, optional ? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="description">
+            <p>
+The <em>ErrorCallback()</em> is launched with these error types:
+            </p>
+            <ul>
+              <li>
+InvalidValuesError - If any of the input parameters contain an invalid value as decided by TA.              </li>
+              <li>
+OperationCanceledError - If it fails due to request cancellation              </li>
+              <li>
+AbortError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ partner
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/tee.client
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">taUUID</span>:
+ the UUID of destination TA.
+                </li>
+          <li class="param">
+<span class="name">loginMethod</span>:
+ the authentication algorithm see <a href="#TeecLoginMethod">TeecLoginMethod</a>.
+                </li>
+          <li class="param">
+<span class="name">connectionData</span><span class="optional"> [nullable]</span>:
+ the value required for login method or null.
+                </li>
+          <li class="param">
+<span class="name">params</span>:
+ the array of parameters (note. max is 4 items).
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ callback function triggered when sucessfully done.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ callback function triggered when error occured.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ TeecTaskId The id of scheduled task which can be used to revoke (see revokeCommand).
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if application does not have privilege to access this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if required feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of input arguments is invalid.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> try
+ {
+   function sessionSuccess(session)
+   {
+     /* Session opened, now can communicate with TA */
+     console.log("session opened");
+     /* ... */
+     session.close();
+   }
+   function sessionError(err)
+   {
+     console.log("openSession: " + err.name + ":" + err.message);
+   }
+   var ta = "123e4567-e89b-12d3-a456-426655440000";
+   var ctx = tizen.teec.getContext();
+   ctx.openSession(ta, TeecLoginMethod.PUBLIC, null, null, sessionSuccess, sessionError);
+ }
+ catch (err)
+ {
+   console.log(err.name + ": " + err.message);
+ }
+ </pre>
+</div>
+</dd>
+<dt class="method" id="TeecContext::revokeCommand">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecContext::revokeCommand"></a><code><b><span class="methodName">revokeCommand</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Revoke last operation identified by id.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void revokeCommand(<a href="#TeecTaskId">TeecTaskId</a> id);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ partner
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/tee.client
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">id</span>:
+ the identifier of scheduled task see openSession, invokeCommand
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if application does not have privilege to access this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if required feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> try
+ {
+   var ctx = tizen.teec.getContext();
+   function commandSuccess(cmd, params)
+   {
+     console.log("command " + cmd + ": ", params);
+   }
+   function sessionSuccess(session)
+   {
+     /* Session opened, now can communicate with TA */
+     var data = [1,2,3,4,45,6,7,7,7];
+     var p1 = new TeecValue(10, 100);    /* Command parameter 1 */
+     var p2 = new TeecTempMemory(data);  /* Command parameter 2 */
+     var id = session.invokeCommand(1, [p1, p2], commandSuccess);
+     ctx.revokeCommand(id); /* Cancel above command */
+     session.close();
+   }
+   function sessionError(err)
+   {
+     console.log("openSession: " + err.name + ":" + err.message);
+   }
+   var ta = "123e4567-e89b-12d3-a456-426655440000";
+   var cid = ctx.openSession(ta, TeecLoginMethod.PUBLIC, null, null, sessionSuccess, sessionError);
+   /* The cid can be used to revoke openSession request */
+ }
+ catch (err)
+ {
+   console.log(err.name + ": " + err.message);
+ }
+ </pre>
+</div>
+</dd>
+<dt class="method" id="TeecContext::allocateSharedMemory">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecContext::allocateSharedMemory"></a><code><b><span class="methodName">allocateSharedMemory</span></b></code>
+</dt>
+<dd>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#TeecSharedMemory">TeecSharedMemory</a> allocateSharedMemory(unsigned long size, <a href="#TeecSharedMemoryFlags">TeecSharedMemoryFlags</a> flags);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="description">
+            <p>
+Allocate shared memory.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ partner
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/tee.client
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">size</span>:
+ the size of memory block to be allocated
+                </li>
+          <li class="param">
+<span class="name">flags</span>:
+ the access flags see SharedMemoryFlags
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if application does not have privilege to access this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if required feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of input arguments is invalid.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> try
+ {
+   var ctx = tizen.teec.getContext();
+   var shm = ctx.allocateSharedMemory(1024*1024, TeecSharedMemoryFlags.INOUT);
+   ctx.releaseSharedMemory(shm);
+ }
+ catch (err)
+ {
+   console.log(err.name + ": " + err.message);
+ }
+ </pre>
+</div>
+</dd>
+<dt class="method" id="TeecContext::registerSharedMemory">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecContext::registerSharedMemory"></a><code><b><span class="methodName">registerSharedMemory</span></b></code>
+</dt>
+<dd>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#TeecSharedMemory">TeecSharedMemory</a> registerSharedMemory(unsigned long long addr, unsigned long size, <a href="#TeecSharedMemoryFlags">TeecSharedMemoryFlags</a> flags);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="description">
+            <p>
+Register shared memory.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ partner
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/tee.client
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">addr</span>:
+ the address of memory block to share
+                </li>
+          <li class="param">
+<span class="name">size</span>:
+ the size of memory block to be allocated
+                </li>
+          <li class="param">
+<span class="name">flags</span>:
+ the access flags see SharedMemoryFlags
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if application does not have privilege to access this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if required feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of input arguments is invalid.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> try
+ {
+   var ctx = tizen.teec.getContext();
+   var shm = ctx.registerSharedMemory(0x1234567, 1024*1024, TeecSharedMemoryFlags.INOUT);
+   ctx.releaseSharedMemory(shm);
+ }
+ catch (err)
+ {
+   console.log(err.name + ": " + err.message);
+ }
+ </pre>
+</div>
+</dd>
+<dt class="method" id="TeecContext::releaseSharedMemory">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecContext::releaseSharedMemory"></a><code><b><span class="methodName">releaseSharedMemory</span></b></code>
+</dt>
+<dd>
+<div class="synopsis"><pre class="signature prettyprint">void releaseSharedMemory(<a href="#TeecSharedMemory">TeecSharedMemory</a> shm);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="description">
+            <p>
+Release shared memory, previously allocated or registered.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ partner
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/tee.client
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">shm</span>:
+ the shared memory description object
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if application does not have privilege to access this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if required feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of input arguments is invalid.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> try
+ {
+   var ctx = tizen.teec.getContext();
+   var shm = ctx.allocateSharedMemory(1024*1024, TeecSharedMemoryFlags.INOUT);
+   ctx.releaseSharedMemory(shm);
+ }
+ catch (err)
+ {
+   console.log(err.name + ": " + err.message);
+ }
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="TeecSession">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecSession"></a><h3>2.4. TeecSession</h3>
+<div class="brief">
+ This type denotes a TEE Session, the logical link between Client Application and a particular Trusted Application.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface TeecSession {
+    void close() raises ();
+
+    <a href="#TeecTaskId">TeecTaskId</a> invokeCommand(long cmd,
+                             <a href="#TeecParameter">TeecParameter</a>[] params,
+                             <a href="#TeecCommandSuccessCallback">TeecCommandSuccessCallback</a> successCallback,
+                             optional ? errorCallback) raises ();
+  };</pre>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="TeecSession::close">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecSession::close"></a><code><b><span class="methodName">close</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Close session with TA.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void close();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ partner
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/tee.client
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if application does not have privilege to access this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if required feature is not supported.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> try
+ {
+   function sessionSuccess(session)
+   {
+     /* Session opened, now can communicate with TA */
+     session.close();
+   }
+   function sessionError(err)
+   {
+     console.log("openSession: " + err.name + ":" + err.message);
+   }
+   var ta = "123e4567-e89b-12d3-a456-426655440000";
+   var ctx = tizen.teec.getContext();
+   val cid = ctx.openSession(ta, TeecLoginMethod.PUBLIC, null, null, sessionSuccess, sessionError);
+   /* Call to openSession can be revoked also */
+ }
+ catch (err)
+ {
+   console.log(err.name + ": " + err.message);
+ }
+ </pre>
+</div>
+</dd>
+<dt class="method" id="TeecSession::invokeCommand">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecSession::invokeCommand"></a><code><b><span class="methodName">invokeCommand</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Send command to TA.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#TeecTaskId">TeecTaskId</a> invokeCommand(long cmd, <a href="#TeecParameter">TeecParameter</a>[] params, <a href="#TeecCommandSuccessCallback">TeecCommandSuccessCallback</a> successCallback, optional ? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="description">
+            <p>
+The <em>ErrorCallback()</em> is launched with these error types:
+            </p>
+            <ul>
+              <li>
+NotSupportedError - If the requested operation is not supported              </li>
+              <li>
+InvalidValuesError - If any of the input parameters contain an invalid value as decided by TA.              </li>
+              <li>
+OperationCanceledError - If it fails due to request cancellation              </li>
+              <li>
+AbortError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ partner
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/tee.client
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">cmd</span>:
+ the command.
+                </li>
+          <li class="param">
+<span class="name">params</span>:
+ the array of parameters (max 4 items).
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ callback function triggered when sucessfully done.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ callback function triggered when error occured.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ TeecTaskId The id of scheduled task which can be used to revoke (see revokeCommand).
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if application does not have privilege to access this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if required feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of input arguments is invalid, like
+<em>params</em> contains more then 4 elements.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter
+is not compatible with the expected type for that parameter.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> try
+ {
+   var gSession;
+   function commandError(err)
+   {
+     gSession.close();
+   }
+   function commandSuccess(cmd, params)
+   {
+     console.log("command " + cmd + ": ", params);
+     gSession.close();
+   }
+   function sessionSuccess(session)
+   {
+     /* Session opened, now can communicate with TA */
+     gSession = session;
+     var data = [1,2,3,4,45,6,7,7,7];
+     var p1 = new TeecValue(10, 100);    /* Command parameter 1 */
+     var p2 = new TeecTempMemory(data);  /* Command parameter 2 */
+     session.invokeCommand(1, [p1, p2], commandSuccess, commandError);
+   }
+   function sessionError(err)
+   {
+     console.log("openSession: " + err.name + ":" + err.message);
+   }
+   var ta = "123e4567-e89b-12d3-a456-426655440000";
+   var ctx = tizen.teec.getContext();
+   val cid = ctx.openSession(ta, TeecLoginMethod.PUBLIC, null, null, sessionSuccess, sessionError);
+ }
+ catch (err)
+ {
+   console.log(err.name + ": " + err.message);
+ }
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="TeecSharedMemory">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecSharedMemory"></a><h3>2.5. TeecSharedMemory</h3>
+<div class="brief">
+ Shared memory reference object.
+Instance of this object can be obtained from <em>TeecSession</em> with one of methods:
+<em>allocateSharedMemory</em> or <em>registerSharedMemory</em>          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface TeecSharedMemory {
+    readonly attribute unsigned long long size;
+
+    void setData(byte[] data, unsigned long long offset) raises ();
+
+    void getData(byte[] data, unsigned long long offset) raises ();
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="TeecSharedMemory::size">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long long </span><span class="name">size</span></span><div class="brief">
+ Size of this shared memory block.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li></ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="TeecSharedMemory::setData">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecSharedMemory::setData"></a><code><b><span class="methodName">setData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Convenient method to set some bytes in shared memory.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setData(byte[] data, unsigned long long offset);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">data</span>:
+ sequence of bytes (buffer size is data.length)
+                </li>
+          <li class="param">
+<span class="name">offset</span>:
+ offset in shared memory to start writing
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if a parameter has incorrect type.
+                </p></li></ul>
+</li></ul>
+        </div>
+</dd>
+<dt class="method" id="TeecSharedMemory::getData">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecSharedMemory::getData"></a><code><b><span class="methodName">getData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Convenient method to get some bytes from shared memory.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getData(byte[] data, unsigned long long offset);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">data</span>:
+ buffer for bytes (buffer size is data.length)
+                </li>
+          <li class="param">
+<span class="name">offset</span>:
+ offset in shared memory to start reading
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if a parameter has incorrect type.
+                </p></li></ul>
+</li></ul>
+        </div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="TeecParameter">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecParameter"></a><h3>2.6. TeecParameter</h3>
+<div class="brief">
+ Abstract parameter type.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface TeecParameter {
+    attribute DOMString type;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="TeecParameter::type">
+<span class="attrName"><span class="type">DOMString </span><span class="name">type</span></span><div class="brief">
+ The type of parameter - abstract class for all parameteres.
+This can be one of TeecValueType, TeecTempMemoryType, TeecRegisteredMemoryType
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li></ul>
+</div>
+</div>
+<div class="interface" id="TeecRegisteredMemory">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecRegisteredMemory"></a><h3>2.7. TeecRegisteredMemory</h3>
+<div class="brief">
+ Registered memory parameter.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(<a href="#TeecSharedMemory">TeecSharedMemory</a> memory, unsigned long long offset, unsigned long long size)]
+  interface TeecRegisteredMemory : <a href="#TeecParameter">TeecParameter</a> {
+    attribute <a href="#TeecSharedMemory">TeecSharedMemory</a> shm;
+
+    attribute unsigned long long offset;
+
+    attribute unsigned long long size;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+        
+      <div class="constructors">
+<h4 id="TeecRegisteredMemory::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">TeecRegisteredMemory(<a href="#TeecSharedMemory">TeecSharedMemory</a> memory, unsigned long long offset, unsigned long long size);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="TeecRegisteredMemory::shm">
+<span class="attrName"><span class="type">TeecSharedMemory </span><span class="name">shm</span></span><div class="brief">
+ Referred shared memory.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="TeecRegisteredMemory::offset">
+<span class="attrName"><span class="type">unsigned long long </span><span class="name">offset</span></span><div class="brief">
+ Offset in shared memory (start of accessed block).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="TeecRegisteredMemory::size">
+<span class="attrName"><span class="type">unsigned long long </span><span class="name">size</span></span><div class="brief">
+ Size of block in shared memory (length of the block).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="TeecTempMemory">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecTempMemory"></a><h3>2.8. TeecTempMemory</h3>
+<div class="brief">
+ Temporary memory parameter.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(byte[] mem)]
+  interface TeecTempMemory : <a href="#TeecParameter">TeecParameter</a> {
+    attribute byte[] mem;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+        
+      <div class="constructors">
+<h4 id="TeecTempMemory::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">TeecTempMemory(byte[] mem);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="TeecTempMemory::mem">
+<span class="attrName"><span class="type">byte[]
+                      </span><span class="name">mem</span></span><div class="brief">
+ Local memory block.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li></ul>
+</div>
+</div>
+<div class="interface" id="TeecValue">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecValue"></a><h3>2.9. TeecValue</h3>
+<div class="brief">
+ Value parameter.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(long a, long b)]
+  interface TeecValue : <a href="#TeecParameter">TeecParameter</a> {
+    attribute long a;
+    attribute long b;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+        
+      <div class="constructors">
+<h4 id="TeecValue::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">TeecValue(long a, long b);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="TeecValue::a">
+<span class="attrName"><span class="type">long </span><span class="name">a</span></span><div class="brief">
+ Integer number to be delivered.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="TeecValue::b">
+<span class="attrName"><span class="type">long </span><span class="name">b</span></span><div class="brief">
+ Integer number to be delivered.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="TeecOpenSuccessCallback">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecOpenSuccessCallback"></a><h3>2.10. TeecOpenSuccessCallback</h3>
+<div class="brief">
+ The success callback to be invoked when session was opened.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject]
+  interface TeecOpenSuccessCallback {
+    void onsuccess(<a href="#TeecSession">TeecSession</a> session);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="TeecOpenSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecOpenSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the session is opened successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#TeecSession">TeecSession</a> session);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">session</span>:
+ <em>TeecSession</em> object
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="TeecCommandSuccessCallback">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecCommandSuccessCallback"></a><h3>2.11. TeecCommandSuccessCallback</h3>
+<div class="brief">
+ The success callback to be invoked when command performed on TA is finished.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject]
+  interface TeecCommandSuccessCallback {
+    void onsuccess(long cmd, <a href="#TeecParameter">TeecParameter</a>[] params);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="TeecCommandSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::LibTeec::TeecCommandSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the command is done successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(long cmd, <a href="#TeecParameter">TeecParameter</a>[] params);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param"><span class="name">cmd</span></li>
+          <li class="param">
+<span class="name">params</span>:
+ array of <em>TeecParam</em> objects
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="api-features">3. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the CA is running on a device with TrustZone support, declare following feature in the config.
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/security.tee</li>
+</div>
+<p></p>
+                    For more information, see <a href="https://developer.tizen.org/development/getting-started/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+</div>
+<h2 id="full-webidl">4. Full WebIDL</h2>
+<pre class="webidl prettyprint">module LibTeec {
+
+
+  enum TeecLoginMethod {
+    "PUBLIC",
+    "USER",
+    "GROUP",
+    "APPLICATION"
+  };
+
+  enum TeecValueType {
+    "INPUT",
+    "OUTPUT",
+    "INOUT"
+  };
+
+  enum TeecTempMemoryType {
+    "INPUT",
+    "OUTPUT",
+    "INOUT"
+  };
+
+  enum TeecRegisteredMemoryType {
+    "WHOLE",
+    "PARTIAL_INPUT",
+    "PARTIAL_OUTPUT",
+    "PARTIAL_INOUT"
+  };
+
+  enum TeecSharedMemoryFlags {
+    "INPUT",
+    "OUTPUT",
+    "INOUT"
+  };
+
+  typedef DOMString TeecUuid;
+
+  typedef unsigned long TeecTaskId;
+
+  [NoInterfaceObject] interface LibTeecManagerObject {
+    readonly attribute <a href="#LibTeecManager">LibTeecManager</a> teec;
+  };
+   implements <a href="#LibTeecManagerObject">LibTeecManagerObject</a>;
+
+  [NoInterfaceObject] interface LibTeecManager {
+
+    <a href="#TeecContext">TeecContext</a> getContext(optional DOMString? name) raises ();
+  };
+
+  [NoInterfaceObject] interface TeecContext {
+    <a href="#TeecTaskId">TeecTaskId</a> openSession(<a href="#TeecUuid">TeecUuid</a> taUUID,
+                           <a href="#TeecLoginMethod">TeecLoginMethod</a> loginMethod,
+                           unsigned long? connectionData,
+                           <a href="#TeecParameter">TeecParameter</a>[] params,
+                           <a href="#TeecOpenSuccessCallback">TeecOpenSuccessCallback</a> successCallback,
+                           optional ? errorCallback) raises ();
+
+    void revokeCommand(<a href="#TeecTaskId">TeecTaskId</a> id) raises ();
+
+    <a href="#TeecSharedMemory">TeecSharedMemory</a> allocateSharedMemory(unsigned long size, <a href="#TeecSharedMemoryFlags">TeecSharedMemoryFlags</a> flags) raises ();
+
+    <a href="#TeecSharedMemory">TeecSharedMemory</a> registerSharedMemory(unsigned long long addr, unsigned long size, <a href="#TeecSharedMemoryFlags">TeecSharedMemoryFlags</a> flags) raises ();
+
+    void releaseSharedMemory(<a href="#TeecSharedMemory">TeecSharedMemory</a> shm) raises ();
+  };
+
+  [NoInterfaceObject] interface TeecSession {
+    void close() raises ();
+
+    <a href="#TeecTaskId">TeecTaskId</a> invokeCommand(long cmd,
+                             <a href="#TeecParameter">TeecParameter</a>[] params,
+                             <a href="#TeecCommandSuccessCallback">TeecCommandSuccessCallback</a> successCallback,
+                             optional ? errorCallback) raises ();
+  };
+
+  [NoInterfaceObject] interface TeecSharedMemory {
+    readonly attribute unsigned long long size;
+
+    void setData(byte[] data, unsigned long long offset) raises ();
+
+    void getData(byte[] data, unsigned long long offset) raises ();
+  };
+
+  [NoInterfaceObject] interface TeecParameter {
+    attribute DOMString type;
+  };
+
+  [Constructor(<a href="#TeecSharedMemory">TeecSharedMemory</a> memory, unsigned long long offset, unsigned long long size)]
+  interface TeecRegisteredMemory : <a href="#TeecParameter">TeecParameter</a> {
+    attribute <a href="#TeecSharedMemory">TeecSharedMemory</a> shm;
+
+    attribute unsigned long long offset;
+
+    attribute unsigned long long size;
+  };
+
+  [Constructor(byte[] mem)]
+  interface TeecTempMemory : <a href="#TeecParameter">TeecParameter</a> {
+    attribute byte[] mem;
+  };
+
+  [Constructor(long a, long b)]
+  interface TeecValue : <a href="#TeecParameter">TeecParameter</a> {
+    attribute long a;
+    attribute long b;
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject]
+  interface TeecOpenSuccessCallback {
+    void onsuccess(<a href="#TeecSession">TeecSession</a> session);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject]
+  interface TeecCommandSuccessCallback {
+    void onsuccess(long cmd, <a href="#TeecParameter">TeecParameter</a>[] params);
+  };
+
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>
