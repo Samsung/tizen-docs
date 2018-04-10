@@ -11,7 +11,7 @@ Tizen provides the tools required to manage your Web application life-cycle from
 
 The first step in creating a Tizen Web application is planning and designing it using the design tools of your choice.
 
-For information on planning and designing your applications, see [Tizen Web Guides](../../guides/index.md) and [Tizen Web API References](../../../../tizen.web.apireference/html/web_api_reference.htm).
+For information on planning and designing your applications, see [Tizen Web Guides](../../guides/index.md) and [Tizen Web API References](../../api/latest/device_api/mobile/index.html).
 
 Once you have finished the application plan and design, you are ready to create the application project.
 
@@ -36,7 +36,7 @@ You can design the application UI using the UI components defined in the [Tizen 
 <a name="code"></a>
 ## Coding the Application
 
-[Code your application](coding-app.md) in the Tizen Studio using the APIs defined in the Web [API References](../../../../org.tizen.web.apireference/html/web_api_reference.htm).
+[Code your application](coding-app.md) in the Tizen Studio using the APIs defined in the Web [API References](../../api/latest/device_api/mobile/index.html).
 
 Once you have finished coding your application, you are ready to build your application.
 

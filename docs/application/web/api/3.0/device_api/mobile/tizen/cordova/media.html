@@ -144,8 +144,8 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-me
  http://tizen.org/privilege/filesystem.read
           </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var myMedia = new Media(src, successCallback, errorCallback, statusCallback);</pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var myMedia = new Media(src, successCallback, errorCallback, statusCallback);
+</pre>
 </div>
 <div class="constructors">
 <h4 id="Media::constructor">Constructors</h4>
@@ -278,8 +278,7 @@ var myMedia = new Media(src, successCallback, errorCallback, statusCallback);</p
 <div class="brief">
  Returns the current position within an audio file in seconds.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getCurrentPosition(<a href="#PositionSuccessCallback">PositionSuccessCallback</a> positionSuccessCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a> errorCallback);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void getCurrentPosition(<a href="#PositionSuccessCallback">PositionSuccessCallback</a> positionSuccessCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a> errorCallback);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -306,20 +305,19 @@ var myMedia = new Media(src, successCallback, errorCallback, statusCallback);</p
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-successCallback = function()
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
 {
-   console.log('Audio file has been played back.');
+  console.log('Audio file has been played back');
 }
 
 errorCallback = function(err)
 {
-   console.log('Error occurred ' + err.message);
+  console.log('Error occurred ' + err.message);
 }
 
 positionSuccessCallback = function(position)
 {
-   console.log('Current position is ' + position);
+  console.log('Current position is ' + position);
 }
 
 var src = 'file:///home/app/content/Documents/play.mp3';
@@ -329,12 +327,12 @@ myMedia.play();
 
 setTimeout(function()
 {
-   myMedia.getCurrentPosition(positionSuccessCallback);
+  myMedia.getCurrentPosition(positionSuccessCallback);
 }, 2000);
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>Audio file has been played back.
+<span class="title"><p>Output example:</p></span><pre>Audio file has been played back
 Current position is 2.000
 </pre>
 </div>
@@ -346,8 +344,7 @@ Current position is 2.000
 <div class="brief">
  Returns the duration of an audio file in seconds. If the duration is unknown, it returns a value of -1.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">double getDuration();
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">double getDuration();</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -361,15 +358,14 @@ Current position is 2.000
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-successCallback = function()
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
 {
-   console.log('Audio file has been played back.');
+  console.log('Audio file has been played back');
 }
 
 errorCallback = function(err)
 {
-   console.log('Error occurred ' + err.message);
+  console.log('Error occurred ' + err.message);
 }
 
 var src = 'file:///home/app/content/Documents/play.mp3';
@@ -391,8 +387,7 @@ console.log('Audio duration is ' + duration);
 <div class="brief">
  Pauses playing an audio file.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void pause();
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void pause();</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -406,23 +401,22 @@ console.log('Audio duration is ' + duration);
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-successCallback = function()
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
 {
-   console.log('Audio file has been played back.');
+  console.log('Audio file has been played back');
 }
 
 errorCallback = function(err)
 {
-   console.log('Error occurred ' + err.message);
+  console.log('Error occurred ' + err.message);
 }
 
 statusCallback = function(status)
 {
-   if (status == Media.MEDIA_PAUSED)
-   {
-      console.log('Audio file has been paused');
-   }
+  if (status == Media.MEDIA_PAUSED)
+  {
+    console.log('Audio file has been paused');
+  }
 }
 
 var src = 'file:///home/app/content/Documents/play.mp3';
@@ -433,12 +427,12 @@ myMedia.play();
 /* Pause after 2 seconds */
 setTimeout(function()
 {
-   myMedia.pause();
+  myMedia.pause();
 }, 2000);
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>Audio file has been paused.
+<span class="title"><p>Output example:</p></span><pre>Audio file has been paused
 </pre>
 </div>
 </dd>
@@ -449,8 +443,7 @@ setTimeout(function()
 <div class="brief">
  Starts or resumes playing an audio file.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void play();
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void play();</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -464,15 +457,14 @@ setTimeout(function()
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-successCallback = function()
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
 {
-   console.log('Audio file has been played back.');
+  console.log('Audio file has been played back');
 }
 
 errorCallback = function(err)
 {
-   console.log('Error occurred ' + err.message);
+  console.log('Error occurred ' + err.message);
 }
 
 var src = 'file:///home/app/content/Documents/play.mp3';
@@ -482,7 +474,7 @@ myMedia.play();
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>Audio file has been played back.
+<span class="title"><p>Output example:</p></span><pre>Audio file has been played back
 </pre>
 </div>
 </dd>
@@ -494,8 +486,7 @@ myMedia.play();
  Releases the underlying operating system's audio resources.
 Applications should call the release function for any Media resource that is no longer needed.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void release();
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void release();</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -509,15 +500,14 @@ Applications should call the release function for any Media resource that is no 
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-successCallback = function()
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
 {
-   console.log('Audio file has been stopped or released.');
+  console.log('Audio file has been stopped or released');
 }
 
 errorCallback = function(err)
 {
-   console.log('An error occurred: ' + err.message);
+  console.log('An error occurred: ' + err.message);
 }
 
 var src = 'file://home/app/content/Documents/play.mp3';
@@ -529,8 +519,8 @@ myMedia.release();
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>Audio file has been stopped or released.
-Audio file has been stopped or released.
+<span class="title"><p>Output example:</p></span><pre>Audio file has been stopped or released
+Audio file has been stopped or released
 </pre>
 </div>
 </dd>
@@ -541,8 +531,7 @@ Audio file has been stopped or released.
 <div class="brief">
  Sets the current position within an audio file.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void seekTo(double position);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void seekTo(double position);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -565,15 +554,14 @@ Audio file has been stopped or released.
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-successCallback = function()
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
 {
-   console.log('Audio file has been played back.');
+  console.log('Audio file has been played back');
 }
 
 errorCallback = function(err)
 {
-   console.log('An error occurred: ' + err.message);
+  console.log('An error occurred: ' + err.message);
 }
 
 var src = 'file://home/app/content/Documents/play.mp3';
@@ -584,14 +572,14 @@ myMedia.play();
 /* SeekTo to 10 seconds after 5 seconds */
 setTimeout(function()
 {
-   myMedia.seekTo(10000);
-   console.log('Playback position has been set to 10 seconds.');
+  myMedia.seekTo(10000);
+  console.log('Playback position has been set to 10 seconds');
 }, 5000);
- </pre>
+</pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>Playback position has been set to 10 seconds.
-Audio file has been played back.
+<span class="title"><p>Output example:</p></span><pre>Playback position has been set to 10 seconds
+Audio file has been played back
 </pre>
 </div>
 </dd>
@@ -602,8 +590,7 @@ Audio file has been played back.
 <div class="brief">
  Set the volume for an audio file.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void setVolume(double volume);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void setVolume(double volume);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -630,15 +617,14 @@ Audio file has been played back.
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-successCallback = function()
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
 {
-   console.log('Audio file has been played back.');
+  console.log('Audio file has been played back');
 }
 
 errorCallback = function(err)
 {
-   console.log('Error occurred ' + err.message);
+  console.log('Error occurred ' + err.message);
 }
 
 var src = 'file://home/app/content/Documents/play.mp3';
@@ -649,22 +635,22 @@ myMedia.play();
 /* Mute volume after 2 seconds */
 setTimeout(function()
 {
-   myMedia.setVolume(0.0);
-   console.log('Playback volume has been muted.');
+  myMedia.setVolume(0.0);
+  console.log('Playback volume has been muted');
 }, 2000);
 
 /* Set volume to 1.0 after 5 seconds */
 setTimeout(function()
 {
-   myMedia.setVolume(1.0);
-   console.log('Playback volume has been set to 1.0.');
+  myMedia.setVolume(1.0);
+  console.log('Playback volume has been set to 1.0');
 }, 5000);
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>Playback volume has been muted.
-Playback volume has been set to 1.0.
-Audio file has been played back.
+<span class="title"><p>Output example:</p></span><pre>Playback volume has been muted
+Playback volume has been set to 1.0
+Audio file has been played back
 </pre>
 </div>
 </dd>
@@ -675,8 +661,7 @@ Audio file has been played back.
 <div class="brief">
  Starts recording an audio file.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void startRecord();
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void startRecord();</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -694,15 +679,14 @@ Audio file has been played back.
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-successCallback = function()
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
 {
-   console.log('Started recording an audio file.');
+  console.log('Started recording an audio file');
 }
 
 errorCallback = function(err)
 {
-   console.log('Error occurred ' + err.message);
+  console.log('Error occurred ' + err.message);
 }
 
 var src = 'recordAudio.mp3';
@@ -712,7 +696,7 @@ myRecMedia.startRecord();
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>Started recording an audio file.
+<span class="title"><p>Output example:</p></span><pre>Started recording an audio file
 </pre>
 </div>
 </dd>
@@ -723,8 +707,7 @@ myRecMedia.startRecord();
 <div class="brief">
  Stops recording an audio file.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void stopRecord();
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void stopRecord();</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -742,15 +725,14 @@ myRecMedia.startRecord();
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-successCallback = function()
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
 {
-   console.log('Started recording an audio file.');
+  console.log('Started recording an audio file');
 }
 
 errorCallback = function(err)
 {
-   console.log('Error occurred ' + err.message);
+  console.log('Error occurred ' + err.message);
 }
 
 var src = 'recordAudio.mp3';
@@ -761,14 +743,14 @@ myRecMedia.startRecord();
 /* Stop recording after 10 seconds */
 setTimeout(function()
 {
-   myRecMedia.stopRecord();
-   console.log('Stopped recording an audio file.');
+  myRecMedia.stopRecord();
+  console.log('Stopped recording an audio file');
 }, 10000);
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>Started recording an audio file.
-Stopped recording an audio file.
+<span class="title"><p>Output example:</p></span><pre>Started recording an audio file
+Stopped recording an audio file
 </pre>
 </div>
 </dd>
@@ -779,8 +761,7 @@ Stopped recording an audio file.
 <div class="brief">
  Stops playing an audio file.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void stop();
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void stop();</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -794,15 +775,14 @@ Stopped recording an audio file.
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-successCallback = function()
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
 {
-   console.log('Audio file has been stopped.');
+  console.log('Audio file has been stopped');
 }
 
 errorCallback = function(err)
 {
-   console.log('Error occurred ' + err.message);
+  console.log('Error occurred ' + err.message);
 }
 
 var src = 'file://home/app/content/Documents/play.mp3';
@@ -813,12 +793,12 @@ myMedia.play();
 /* Stop after 10 seconds */
 setTimeout(function()
 {
-   myMedia.stop();
+  myMedia.stop();
 }, 10000);
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>Audio playback has been stopped.
+<span class="title"><p>Output example:</p></span><pre>Audio playback has been stopped
 </pre>
 </div>
 </dd>
@@ -870,8 +850,7 @@ setTimeout(function()
 <div class="brief">
  Success
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onerror(<a href="#MediaError">MediaError</a> error);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void onerror(<a href="#MediaError">MediaError</a> error);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -907,8 +886,7 @@ setTimeout(function()
 <div class="brief">
  Called when the status of the <em>Media</em> object has been changed.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onchanged(short status);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void onchanged(short status);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -944,8 +922,7 @@ setTimeout(function()
 <div class="brief">
  Called when getting current position of the media file is retrieved successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(double position);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(double position);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
