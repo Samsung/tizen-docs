@@ -153,6 +153,7 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/account`       | Specify this key, if the application requires the account management feature. | 4.0   |
 | `http://tizen.org/feature/account.sync`  | Specify this key, if the application requires the synchronization management feature. | 4.0   |
 | `http://tizen.org/feature/app_history`   | Specify this key, if the application requires the application history feature. | 4.0   |
+| `http://tizen.org/feature/attach_panel`   | Specify this key, if the application requires the application attach panel feature. | 5.0   |
 | `http://tizen.org/feature/badge`         | Specify this key, if the application requires the badge feature. | 4.0   |
 | `http://tizen.org/feature/calendar`      | Specify this key, if the application requires the calendar service. | 4.0   |
 | `http://tizen.org/feature/camera`        | Specify this key, if the application requires any kind of a camera. | 2.2.1 |
