@@ -139,21 +139,20 @@ The <em>navigator.connection</em> object allows access to the NetworkInformation
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function checkConnection()
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function checkConnection()
 {
-   var networkState = navigator.connection.type;
+  var networkState = navigator.connection.type;
 
-   var states = {};
-   states[Connection.UNKNOWN] = 'Unknown connection';
-   states[Connection.ETHERNET] = 'Ethernet connection';
-   states[Connection.WIFI] = 'WiFi connection';
-   states[Connection.CELL_2G] = 'Cell 2G connection';
-   states[Connection.CELL_3G] = 'Cell 3G connection';
-   states[Connection.CELL_4G] = 'Cell 4G connection';
-   states[Connection.CELL] = 'Cell generic connection';
-   states[Connection.NONE] = 'No network connection';
-   alert('Connection type: ' + states[networkState]);
+  var states = {};
+  states[Connection.UNKNOWN] = 'Unknown connection';
+  states[Connection.ETHERNET] = 'Ethernet connection';
+  states[Connection.WIFI] = 'WiFi connection';
+  states[Connection.CELL_2G] = 'Cell 2G connection';
+  states[Connection.CELL_3G] = 'Cell 3G connection';
+  states[Connection.CELL_4G] = 'Cell 4G connection';
+  states[Connection.CELL] = 'Cell generic connection';
+  states[Connection.NONE] = 'No network connection';
+  alert('Connection type: ' + states[networkState]);
 }
 
 checkConnection();
@@ -214,7 +213,8 @@ checkConnection();
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.UNKNOWN);</pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.UNKNOWN);
+</pre>
 </div>
 <div class="output">
 <span class="title"><p>Output example:</p></span><pre>unknown
@@ -239,7 +239,8 @@ checkConnection();
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.ETHERNET);</pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.ETHERNET);
+</pre>
 </div>
 <div class="output">
 <span class="title"><p>Output example:</p></span><pre>ethernet
@@ -264,7 +265,8 @@ checkConnection();
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.WIFI);</pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.WIFI);
+</pre>
 </div>
 <div class="output">
 <span class="title"><p>Output example:</p></span><pre>wifi
@@ -289,7 +291,8 @@ checkConnection();
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.CELL_2G);</pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.CELL_2G);
+</pre>
 </div>
 <div class="output">
 <span class="title"><p>Output example:</p></span><pre>2g
@@ -314,7 +317,8 @@ checkConnection();
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.CELL_3G);</pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.CELL_3G);
+</pre>
 </div>
 <div class="output">
 <span class="title"><p>Output example:</p></span><pre>3g
@@ -339,7 +343,8 @@ checkConnection();
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.CELL_4G);</pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.CELL_4G);
+</pre>
 </div>
 <div class="output">
 <span class="title"><p>Output example:</p></span><pre>4g
@@ -364,7 +369,8 @@ checkConnection();
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.CELL);</pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.CELL);
+</pre>
 </div>
 <div class="output">
 <span class="title"><p>Output example:</p></span><pre>cellular
@@ -389,7 +395,8 @@ checkConnection();
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.NONE);</pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.NONE);
+</pre>
 </div>
 <div class="output">
 <span class="title"><p>Output example:</p></span><pre>none
@@ -423,17 +430,16 @@ Applications typically should use document.addEventListener() to attach an event
 Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-network-information#online">Cordova online event</a>          </p>
          </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-document.addEventListener('deviceready', onDeviceReady, false);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady()
 {
-   document.addEventListener('online', onOnline, false);
+  document.addEventListener('online', onOnline, false);
 }
 
 function onOnline()
 {
-   /* Handle the online event */
+  /* Handle the online event */
 }
 </pre>
 </div>
@@ -462,17 +468,16 @@ Applications typically should use document.addEventListener() to attach an event
 Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-network-information#offline">Cordova offline event</a>          </p>
          </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-document.addEventListener('deviceready', onDeviceReady, false);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady()
 {
-   document.addEventListener('offline', onOffline, false);
+  document.addEventListener('offline', onOffline, false);
 }
 
 function onOffline()
 {
-   /* Handle the offline event */
+  /* Handle the offline event */
 }
 </pre>
 </div>
