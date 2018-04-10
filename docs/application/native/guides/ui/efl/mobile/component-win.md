@@ -1,6 +1,6 @@
 # Win
 
-Win stands for window, and the win component is a graphical control element containing the graphical user interface of a program. The window component is the bottommost UI component in an EFL application. In most cases, when an application is launched, a window that fits into the device screen is created and shown. For more information, see the [Win](../../../../../org.tizen.native.mobile.apireference/group__Elm__Win.html) API.
+Win stands for window, and the win component is a graphical control element containing the graphical user interface of a program. The window component is the bottommost UI component in an EFL application. In most cases, when an application is launched, a window that fits into the device screen is created and shown. For more information, see the [Win](../../../../api/mobile/latest/group__Elm__Win.html) API.
 
 This feature is supported in mobile applications only.
 

@@ -1,0 +1,1598 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>DataSynchronization API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::DataSynchronization">
+<div class="supported-platforms"><img class="mobile-optional" title="Optional, Not supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
+<div class="title"><h1>DataSynchronization API</h1></div>
+<div class="brief">
+ This API provides methods to synchronize contact and event data to the server using the OMA DS 1.2 protocol.
+To know the details of this specification, visit <a href="http://openmobilealliance.org" target="_blank">OMA web page</a>. And for more information on the DataSync features, see <a href="https://developer.tizen.org/development/guides/web-application/personal-data/data-synchronization">Data Synchronization Guide</a>.
+        </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li>1.1. <a href="#SyncProfileId">SyncProfileId</a>
+</li>
+<li>1.2. <a href="#SyncMode">SyncMode</a>
+</li>
+<li>1.3. <a href="#SyncType">SyncType</a>
+</li>
+<li>1.4. <a href="#SyncInterval">SyncInterval</a>
+</li>
+<li>1.5. <a href="#SyncServiceType">SyncServiceType</a>
+</li>
+<li>1.6. <a href="#SyncStatus">SyncStatus</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#DataSynchronizationManagerObject">DataSynchronizationManagerObject</a>
+</li>
+<li>2.2. <a href="#SyncInfo">SyncInfo</a>
+</li>
+<li>2.3. <a href="#SyncServiceInfo">SyncServiceInfo</a>
+</li>
+<li>2.4. <a href="#SyncProfileInfo">SyncProfileInfo</a>
+</li>
+<li>2.5. <a href="#SyncStatistics">SyncStatistics</a>
+</li>
+<li>2.6. <a href="#DataSynchronizationManager">DataSynchronizationManager</a>
+</li>
+<li>2.7. <a href="#SyncProgressCallback">SyncProgressCallback</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#api-features">Related Feature</a>
+</li>
+<li>4. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#DataSynchronizationManagerObject">DataSynchronizationManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SyncInfo">SyncInfo</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SyncServiceInfo">SyncServiceInfo</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SyncProfileInfo">SyncProfileInfo</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SyncStatistics">SyncStatistics</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#DataSynchronizationManager">DataSynchronizationManager</a></td>
+<td>void <a href="#DataSynchronizationManager::add">add</a> (<a href="#SyncProfileInfo">SyncProfileInfo</a> profile)<br>
+    void <a href="#DataSynchronizationManager::update">update</a> (<a href="#SyncProfileInfo">SyncProfileInfo</a> profile)<br>
+    void <a href="#DataSynchronizationManager::remove">remove</a> (<a href="#SyncProfileId">SyncProfileId</a> profileId)<br>
+    long <a href="#DataSynchronizationManager::getMaxProfilesNum">getMaxProfilesNum</a> ()<br>
+    unsigned long <a href="#DataSynchronizationManager::getProfilesNum">getProfilesNum</a> ()<br>
+    <a href="#SyncProfileInfo">SyncProfileInfo</a> <a href="#DataSynchronizationManager::get">get</a> (<a href="#SyncProfileId">SyncProfileId</a> profileId)<br>
+    <a href="#SyncProfileInfo">SyncProfileInfo</a>[] <a href="#DataSynchronizationManager::getAll">getAll</a> ()<br>
+    void <a href="#DataSynchronizationManager::startSync">startSync</a> (<a href="#SyncProfileId">SyncProfileId</a> profileId, optional <a href="#SyncProgressCallback">SyncProgressCallback</a>? progressCallback)<br>
+    void <a href="#DataSynchronizationManager::stopSync">stopSync</a> (<a href="#SyncProfileId">SyncProfileId</a> profileId)<br>
+    <a href="#SyncStatistics">SyncStatistics</a>[] <a href="#DataSynchronizationManager::getLastSyncStatistics">getLastSyncStatistics</a> (<a href="#SyncProfileId">SyncProfileId</a> profileId)</td>
+</tr>
+<tr>
+<td><a href="#SyncProgressCallback">SyncProgressCallback</a></td>
+<td>void <a href="#SyncProgressCallback::onprogress">onprogress</a> (<a href="#SyncProfileId">SyncProfileId</a> profileId, <a href="#SyncServiceType">SyncServiceType</a> serviceType, boolean isFromServer, unsigned long totalPerService, unsigned long syncedPerService)<br>
+    void <a href="#SyncProgressCallback::oncompleted">oncompleted</a> (<a href="#SyncProfileId">SyncProfileId</a> profileId)<br>
+    void <a href="#SyncProgressCallback::onstopped">onstopped</a> (<a href="#SyncProfileId">SyncProfileId</a> profileId)<br>
+    void <a href="#SyncProgressCallback::onfailed">onfailed</a> (<a href="#SyncProfileId">SyncProfileId</a> profileId, <a href="tizen.html#WebAPIError">WebAPIError</a> error)</td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="typedef" id="SyncProfileId">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::SyncProfileId"></a><h3>1.1. SyncProfileId</h3>
+<div class="brief">
+ Unique identifier for a sync profile.
+          </div>
+<pre class="webidl prettyprint">  typedef DOMString SyncProfileId;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.1
+          </p>
+</div>
+<div class="enum" id="SyncMode">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::SyncMode"></a><h3>1.2. SyncMode</h3>
+<div class="brief">
+ An enumerator that indicates the supported synchronization modes.
+          </div>
+<pre class="webidl prettyprint">  enum SyncMode { "MANUAL", "PERIODIC", "PUSH" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.1
+          </p>
+<div class="description">
+          <p>
+The following values are supported:
+          </p>
+          <ul>
+            <li>
+MANUAL - Indicates that the synchronization starts by manual trigger. The sync type should be specified. The default value is <em>TWO_WAY</em>.            </li>
+            <li>
+PERIODIC - Indicates that the synchronization starts automatically by a preset period. The sync interval should be provided.            </li>
+            <li>
+PUSH - Indicates that the synchronization starts automatically when changes are made. The sync type is set to <em>TWO_WAY</em>. The synchronization can be triggered by the server based on the standard SAN (Server Alerted Notification) sync type.            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="SyncType">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::SyncType"></a><h3>1.3. SyncType</h3>
+<div class="brief">
+ An enumerator that indicates the supported synchronization types.
+          </div>
+<pre class="webidl prettyprint">  enum SyncType { "TWO_WAY", "SLOW", "ONE_WAY_FROM_CLIENT", "REFRESH_FROM_CLIENT", "ONE_WAY_FROM_SERVER", "REFRESH_FROM_SERVER" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.1
+          </p>
+<div class="description">
+          <p>
+The following values are supported:
+          </p>
+          <ul>
+            <li>
+TWO_WAY - Indicates a normal sync type in which the client and the server exchange information about modified data in these devices.            </li>
+            <li>
+SLOW - Indicates a form of two-way sync in which the client and the server exchange all the data from their database. This type of sync is used for the first sync, or after a synchronization failure.            </li>
+            <li>
+ONE_WAY_FROM_CLIENT - Indicates a sync type in which the client sends its modifications to the server but the server does not send its modifications back to the client.            </li>
+            <li>
+REFRESH_FROM_CLIENT - Indicates a sync type in which the client sends all its data from a database to the server (backup). The server is then expected to replace all data in the target database with the data received from the client.            </li>
+            <li>
+ONE_WAY_FROM_SERVER - Indicates a sync type in which the client gets all modifications from the server but the client does not send its modifications to the server.            </li>
+            <li>
+REFRESH_FROM_SERVER - Indicates a sync type in which the server sends all its data from a database to the client (restore). The client is then expected to replace all data in the target database with the data received from the server.            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="SyncInterval">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::SyncInterval"></a><h3>1.4. SyncInterval</h3>
+<div class="brief">
+ An enumerator that indicates the supported synchronization intervals.
+          </div>
+<pre class="webidl prettyprint">  enum SyncInterval { "5_MINUTES", "15_MINUTES", "1_HOUR", "4_HOURS", "12_HOURS", "1_DAY", "1_WEEK", "1_MONTH" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.1
+          </p>
+<div class="description">
+          <p>
+The following values are supported:
+          </p>
+          <ul>
+            <li>
+5_MINUTES - Indicates a time period of 5 minutes.            </li>
+            <li>
+15_MINUTES - Indicates a time period of 15 minutes.            </li>
+            <li>
+1_HOUR - Indicates a time period of 1 hour.            </li>
+            <li>
+4_HOURS - Indicates a time period of 4 hours.            </li>
+            <li>
+12_HOURS - Indicates a time period of 12 hours.            </li>
+            <li>
+1_DAY - Indicates a time period of 1 day.            </li>
+            <li>
+1_WEEK - Indicates a time period of 1 week.            </li>
+            <li>
+1_MONTH - Indicates a time period of 1 month.            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="SyncServiceType">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::SyncServiceType"></a><h3>1.5. SyncServiceType</h3>
+<div class="brief">
+ An enumerator that indicates the supported synchronization service type of the device.
+          </div>
+<pre class="webidl prettyprint">  enum SyncServiceType { "CONTACT", "EVENT" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.1
+          </p>
+<div class="description">
+          <p>
+The following values are supported:
+          </p>
+          <ul>
+            <li>
+CONTACT - Indicates the device contact records.            </li>
+            <li>
+EVENT - Indicates the device calendar event records.            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="SyncStatus">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::SyncStatus"></a><h3>1.6. SyncStatus</h3>
+<div class="brief">
+ An enumerator that indicates the last sync status.
+          </div>
+<pre class="webidl prettyprint">  enum SyncStatus { "SUCCESS", "FAIL", "STOP", "NONE" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.1
+          </p>
+<div class="description">
+          <p>
+The following values are supported:
+          </p>
+          <ul>
+            <li>
+SUCCESS - Indicates the sync is successful.            </li>
+            <li>
+FAIL - Indicates the sync has failed.            </li>
+            <li>
+STOP - Indicates the sync has been stopped by the user's action.            </li>
+            <li>
+NONE - Indicates the sync had never been performed.            </li>
+          </ul>
+         </div>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="DataSynchronizationManagerObject">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::DataSynchronizationManagerObject"></a><h3>2.1. DataSynchronizationManagerObject</h3>
+<div class="brief">
+ This interface defines the default data synchronization manager that is instantiated by the <em>Tizen </em>object.
+The <em>tizen.datasync</em> object allows access to the functionality of the DataSynchronization API.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface DataSynchronizationManagerObject {
+    readonly attribute <a href="#DataSynchronizationManager">DataSynchronizationManager</a> datasync;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DataSynchronizationManagerObject">DataSynchronizationManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.1
+          </p>
+</div>
+<div class="interface" id="SyncInfo">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::SyncInfo"></a><h3>2.2. SyncInfo</h3>
+<div class="brief">
+ The SyncInfo interface defines the sync information.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode),
+  Constructor(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode, <a href="#SyncType">SyncType</a> type),
+  Constructor(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode, <a href="#SyncInterval">SyncInterval</a> interval)]
+  interface SyncInfo {
+    attribute DOMString url;
+
+    attribute DOMString id;
+
+    attribute DOMString password;
+
+    attribute <a href="#SyncMode">SyncMode</a> mode;
+
+    attribute <a href="#SyncType">SyncType</a>? type;
+
+    attribute <a href="#SyncInterval">SyncInterval</a>? interval;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.1
+          </p>
+<p><span class="remark"> Remark : </span>
+ The <em>MANUAL</em> sync mode accepts the sync type and the <em>PERIODIC</em> mode accepts the sync interval, whereas the <em>PUSH</em> mode does not accept any additional parameters.
+          </p>
+<div class="constructors">
+<h4 id="SyncInfo::constructor">Constructors</h4>
+<dl>
+<pre class="webidl prettyprint">SyncInfo(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode);</pre>
+<pre class="webidl prettyprint">SyncInfo(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode, <a href="#SyncType">SyncType</a> type);</pre>
+<pre class="webidl prettyprint">SyncInfo(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode, <a href="#SyncInterval">SyncInterval</a> interval);</pre>
+</dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="SyncInfo::url">
+<span class="attrName"><span class="type">DOMString </span><span class="name">url</span></span><div class="brief">
+ The URL of the sync server.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncInfo::id">
+<span class="attrName"><span class="type">DOMString </span><span class="name">id</span></span><div class="brief">
+ The login ID for the sync server.
+            </div>
+<div class="description">
+            <p>
+When an attempt to retrieve the saved value is made, it returns <var>null</var> to prevent any compromise on the privacy of the login ID.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncInfo::password">
+<span class="attrName"><span class="type">DOMString </span><span class="name">password</span></span><div class="brief">
+ The login password to the sync server.
+            </div>
+<div class="description">
+            <p>
+When an attempt to retrieve the saved value is made, it returns <var>null</var> to prevent any compromise on the privacy of the login password.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncInfo::mode">
+<span class="attrName"><span class="type">SyncMode </span><span class="name">mode</span></span><div class="brief">
+ The sync mode.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncInfo::type">
+<span class="attrName"><span class="type">SyncType </span><span class="name">type</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The sync type.
+            </div>
+<div class="description">
+            <p>
+This attribute is used when the sync mode is set to the <em>MANUAL</em> option.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncInfo::interval">
+<span class="attrName"><span class="type">SyncInterval </span><span class="name">interval</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The sync interval.
+            </div>
+<div class="description">
+            <p>
+This attribute is used when the sync mode is set to the <em>PERIODIC</em> option.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="SyncServiceInfo">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::SyncServiceInfo"></a><h3>2.3. SyncServiceInfo</h3>
+<div class="brief">
+ The SyncServiceInfo interface defines the sync service information.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(boolean enable, <a href="#SyncServiceType">SyncServiceType</a> serviceType, DOMString serverDatabaseUri, optional DOMString? id, optional DOMString? password)]
+  interface SyncServiceInfo {
+    attribute boolean enable;
+
+    attribute <a href="#SyncServiceType">SyncServiceType</a> serviceType;
+
+    attribute DOMString serverDatabaseUri;
+
+    attribute DOMString? id;
+
+    attribute DOMString? password;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.1
+          </p>
+<div class="constructors">
+<h4 id="SyncServiceInfo::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">SyncServiceInfo(boolean enable, <a href="#SyncServiceType">SyncServiceType</a> serviceType, DOMString serverDatabaseUri, optional DOMString? id, optional DOMString? password);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="SyncServiceInfo::enable">
+<span class="attrName"><span class="type">boolean </span><span class="name">enable</span></span><div class="brief">
+ Enables or disables a service category for sync.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncServiceInfo::serviceType">
+<span class="attrName"><span class="type">SyncServiceType </span><span class="name">serviceType</span></span><div class="brief">
+ The sync service type.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncServiceInfo::serverDatabaseUri">
+<span class="attrName"><span class="type">DOMString </span><span class="name">serverDatabaseUri</span></span><div class="brief">
+ The sync service DB URI of the server.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncServiceInfo::id">
+<span class="attrName"><span class="type">DOMString </span><span class="name">id</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The sync service DB access ID to the server.
+            </div>
+<div class="description">
+            <p>
+This is used only when the server requires a separate access right to each DB.
+When an attempt to retrieve the saved value is made, it returns <var>null</var> to prevent any compromise on the privacy of the ID.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncServiceInfo::password">
+<span class="attrName"><span class="type">DOMString </span><span class="name">password</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The sync service DB access password to the server.
+            </div>
+<div class="description">
+            <p>
+This is used only when the server requires a separate access right to each DB.
+When an attempt to retrieve the saved value is made, it returns <var>null</var> to prevent any compromise on the privacy of the password.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="SyncProfileInfo">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::SyncProfileInfo"></a><h3>2.4. SyncProfileInfo</h3>
+<div class="brief">
+ The SyncProfileInfo interface defines the sync profile information, based on which synchronization is performed.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(DOMString profileName, <a href="#SyncInfo">SyncInfo</a> syncInfo, optional <a href="#SyncServiceInfo">SyncServiceInfo</a>[]? serviceInfo)]
+  interface SyncProfileInfo {
+    readonly attribute <a href="#SyncProfileId">SyncProfileId</a> profileId;
+
+    attribute DOMString profileName;
+
+    attribute <a href="#SyncInfo">SyncInfo</a> syncInfo;
+
+    attribute <a href="#SyncServiceInfo">SyncServiceInfo</a>[]? serviceInfo;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.1
+          </p>
+<div class="constructors">
+<h4 id="SyncProfileInfo::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">SyncProfileInfo(DOMString profileName, <a href="#SyncInfo">SyncInfo</a> syncInfo, optional <a href="#SyncServiceInfo">SyncServiceInfo</a>[]? serviceInfo);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="SyncProfileInfo::profileId">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">SyncProfileId </span><span class="name">profileId</span></span><div class="brief">
+ The unique identifier provided by the platform for a profile that has been successfully added.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncProfileInfo::profileName">
+<span class="attrName"><span class="type">DOMString </span><span class="name">profileName</span></span><div class="brief">
+ The profile name.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncProfileInfo::syncInfo">
+<span class="attrName"><span class="type">SyncInfo </span><span class="name">syncInfo</span></span><div class="brief">
+ Sync info.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncProfileInfo::serviceInfo">
+<span class="attrName"><span class="type">SyncServiceInfo[]
+                      </span><span class="name">serviceInfo</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Service info.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="SyncStatistics">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::SyncStatistics"></a><h3>2.5. SyncStatistics</h3>
+<div class="brief">
+ The SyncStatistics interface defines the sync statistics for a profile service.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface SyncStatistics {
+    readonly attribute <a href="#SyncStatus">SyncStatus</a> syncStatus;
+
+    readonly attribute <a href="#SyncServiceType">SyncServiceType</a> serviceType;
+
+    readonly attribute Date lastSyncTime;
+
+    readonly attribute unsigned long serverToClientTotal;
+
+    readonly attribute unsigned long serverToClientAdded;
+
+    readonly attribute unsigned long serverToClientUpdated;
+
+    readonly attribute unsigned long serverToClientRemoved;
+
+    readonly attribute unsigned long clientToServerTotal;
+
+    readonly attribute unsigned long clientToServerAdded;
+
+    readonly attribute unsigned long clientToServerUpdated;
+
+    readonly attribute unsigned long clientToServerRemoved;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.1
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="SyncStatistics::syncStatus">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">SyncStatus </span><span class="name">syncStatus</span></span><div class="brief">
+ The last sync status for a corresponding service category.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncStatistics::serviceType">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">SyncServiceType </span><span class="name">serviceType</span></span><div class="brief">
+ The sync service type.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncStatistics::lastSyncTime">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">Date </span><span class="name">lastSyncTime</span></span><div class="brief">
+ The last sync time.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncStatistics::serverToClientTotal">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long </span><span class="name">serverToClientTotal</span></span><div class="brief">
+ The total number of items sent from the server to the client.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncStatistics::serverToClientAdded">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long </span><span class="name">serverToClientAdded</span></span><div class="brief">
+ The number of added items from the server to the client.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncStatistics::serverToClientUpdated">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long </span><span class="name">serverToClientUpdated</span></span><div class="brief">
+ The number of updated items from the server to the client.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncStatistics::serverToClientRemoved">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long </span><span class="name">serverToClientRemoved</span></span><div class="brief">
+ The number of removed items from the server to the client.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncStatistics::clientToServerTotal">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long </span><span class="name">clientToServerTotal</span></span><div class="brief">
+ The total number of items from the client to the server.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncStatistics::clientToServerAdded">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long </span><span class="name">clientToServerAdded</span></span><div class="brief">
+ The number of added items from the client to the server.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncStatistics::clientToServerUpdated">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long </span><span class="name">clientToServerUpdated</span></span><div class="brief">
+ The number of updated items from the client to the server.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="SyncStatistics::clientToServerRemoved">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long </span><span class="name">clientToServerRemoved</span></span><div class="brief">
+ The number of removed items from the client to the server.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="DataSynchronizationManager">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::DataSynchronizationManager"></a><h3>2.6. DataSynchronizationManager</h3>
+<div class="brief">
+ The DataSynchronizationManager interface allows managing profiles and synchronizing data between the server and the client device based on stored profile information.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface DataSynchronizationManager {
+    void add(<a href="#SyncProfileInfo">SyncProfileInfo</a> profile) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void update(<a href="#SyncProfileInfo">SyncProfileInfo</a> profile) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void remove(<a href="#SyncProfileId">SyncProfileId</a> profileId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long getMaxProfilesNum() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    unsigned long getProfilesNum() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#SyncProfileInfo">SyncProfileInfo</a> get(<a href="#SyncProfileId">SyncProfileId</a> profileId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#SyncProfileInfo">SyncProfileInfo</a>[] getAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void startSync(<a href="#SyncProfileId">SyncProfileId</a> profileId, optional <a href="#SyncProgressCallback">SyncProgressCallback</a>? progressCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void stopSync(<a href="#SyncProfileId">SyncProfileId</a> profileId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#SyncStatistics">SyncStatistics</a>[] getLastSyncStatistics(<a href="#SyncProfileId">SyncProfileId</a> profileId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.1
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="DataSynchronizationManager::add">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::DataSynchronizationManager::add"></a><code><b><span class="methodName">add</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Adds a sync profile.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void add(<a href="#SyncProfileInfo">SyncProfileInfo</a> profile);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+<div class="description">
+            <p>
+The profile ID is provided when the profile is successfully added.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/datasync
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">profile</span>: 
+ The sync profile information to add.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type QuotaExceededError, if the platform has already reached the maximum number of profiles.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Creates a sync info
+ var syncInfo = new tizen.SyncInfo("http://example.com/sync", "myId", "myPassword", "MANUAL", "TWO_WAY");
+
+ // Syncs both contacts and events
+ var contactInfo = new tizen.SyncServiceInfo(true, "CONTACT", "serverContact");
+ var eventInfo = new tizen.SyncServiceInfo(true, "EVENT", "serverEvent");
+ var serviceInfo = [contactInfo, eventInfo];
+
+ // Adds a profile to sync
+ var profile = new tizen.SyncProfileInfo("MyProfile", syncInfo, serviceInfo);
+ tizen.datasync.add(profile);
+ </pre>
+</div>
+</dd>
+<dt class="method" id="DataSynchronizationManager::update">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::DataSynchronizationManager::update"></a><code><b><span class="methodName">update</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Updates an existing sync profile.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void update(<a href="#SyncProfileInfo">SyncProfileInfo</a> profile);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/datasync
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">profile</span>: 
+ The sync profile information to update.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Retrieves and updates a profile
+ var profile = tizen.datasync.get(profileId);
+
+ profile.profileName = "newProfileName";
+
+ tizen.datasync.update(profile);
+ </pre>
+</div>
+</dd>
+<dt class="method" id="DataSynchronizationManager::remove">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::DataSynchronizationManager::remove"></a><code><b><span class="methodName">remove</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes an existing sync profile.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void remove(<a href="#SyncProfileId">SyncProfileId</a> profileId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/datasync
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">profileId</span>: 
+ The sync profile ID to remove.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the identifier does not match any saved profile.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Removes a profile
+ tizen.datasync.remove(profileId);
+ </pre>
+</div>
+</dd>
+<dt class="method" id="DataSynchronizationManager::getMaxProfilesNum">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::DataSynchronizationManager::getMaxProfilesNum"></a><code><b><span class="methodName">getMaxProfilesNum</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the maximum number of supported sync profiles on a platform.
+Normally the platform sets a limitation on the number of supported profiles. It returns <var>0</var> or a negative value if no limitation is set.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long getMaxProfilesNum();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/datasync
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long The number of supported profiles on a platform.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Gets the maximum number of supported profiles on the platform
+ var numMaxProfiles = tizen.datasync.getMaxProfilesNum();
+ </pre>
+</div>
+</dd>
+<dt class="method" id="DataSynchronizationManager::getProfilesNum">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::DataSynchronizationManager::getProfilesNum"></a><code><b><span class="methodName">getProfilesNum</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the current number of sync profiles on a device.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">unsigned long getProfilesNum();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/datasync
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ unsigned long The current number of profiles on a device.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Gets the present number of profiles on the device
+ var numProfiles = tizen.datasync.getProfilesNum();
+ </pre>
+</div>
+</dd>
+<dt class="method" id="DataSynchronizationManager::get">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::DataSynchronizationManager::get"></a><code><b><span class="methodName">get</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the <em>SyncProfileInfo</em> object from a given profile ID.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#SyncProfileInfo">SyncProfileInfo</a> get(<a href="#SyncProfileId">SyncProfileId</a> profileId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+<div class="description">
+            <p>
+The attempt to retrieve <em>SyncProfileInfo</em> doesn't get any confidential information such as the <em>password</em> of <em>SyncInfo</em> or <em>SyncServiceInfo</em> but instead it returns <var>null</var>.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/datasync
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">profileId</span>: 
+ The ID used to get profile information.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ SyncProfileInfo The profile information of the given ID.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the identifier does not match any saved profile.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Gets the profile information with the given ID
+ var profile = tizen.datasync.get(profileId);
+ </pre>
+</div>
+</dd>
+<dt class="method" id="DataSynchronizationManager::getAll">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::DataSynchronizationManager::getAll"></a><code><b><span class="methodName">getAll</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the information of all sync profiles saved in a device.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#SyncProfileInfo">SyncProfileInfo</a>[] getAll();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+<div class="description">
+            <p>
+An attempt to retrieve <em>SyncProfileInfo</em> doesn't get any confidential information such as the <em>password</em> of <em>SyncInfo</em> or <em>SyncServiceInfo</em> but instead it returns <var>null</var>.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/datasync
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ SyncProfileInfo[] The profile information array.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Gets all the profile information
+ var profiles = tizen.datasync.getAll();
+ </pre>
+</div>
+</dd>
+<dt class="method" id="DataSynchronizationManager::startSync">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::DataSynchronizationManager::startSync"></a><code><b><span class="methodName">startSync</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Starts a sync operation with a given profile ID.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void startSync(<a href="#SyncProfileId">SyncProfileId</a> profileId, optional <a href="#SyncProgressCallback">SyncProgressCallback</a>? progressCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+<div class="description">
+            <p>
+If the sync mode is set to <em>MANUAL</em>, the synchronization does not start automatically until this method is called. This method works even in the <em>PUSH</em> or <em>PERIODIC</em> mode.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/datasync
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">profileId</span>: 
+ The profile ID with which to initiate the sync operation.
+                </li>
+          <li class="param">
+<span class="name">progressCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ The method to invoke when the sync operation progresses or an error occurs.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the identifier does not match any saved profile.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var profileId; //profileId obtained from SyncProfileInfo
+ var syncCallback = {
+   onprogress: function(profileId, serviceType, isFromServer, totalPerType, syncedPerType) {
+     console.log('Total: ' + totalPerType + ', synced: ' + syncedPerType + ' for the sync type: ' + serviceType);
+   },
+   onfailed: function(profileId, error) {
+      console.log('Failed with id: ' + profileId + ', error name: ' + error.name);
+   }
+ };
+
+ // Starts the sync operation with the corresponding callbacks
+ tizen.datasync.startSync(profileId, syncCallback);
+ </pre>
+</div>
+</dd>
+<dt class="method" id="DataSynchronizationManager::stopSync">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::DataSynchronizationManager::stopSync"></a><code><b><span class="methodName">stopSync</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Stops an ongoing sync operation that is specified by the <em>profileId</em> parameter.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void stopSync(<a href="#SyncProfileId">SyncProfileId</a> profileId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/datasync
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">profileId</span>: 
+ The ID of the ongoing sync operation to stop.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the identifier does not match any saved profile.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var profileId; //profileId obtained from SyncProfileInfo
+ // Stops the ongoing sync operation
+ tizen.datasync.stopSync(profileId);
+ </pre>
+</div>
+</dd>
+<dt class="method" id="DataSynchronizationManager::getLastSyncStatistics">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::DataSynchronizationManager::getLastSyncStatistics"></a><code><b><span class="methodName">getLastSyncStatistics</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the sync statistics of a given profile ID.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#SyncStatistics">SyncStatistics</a>[] getLastSyncStatistics(<a href="#SyncProfileId">SyncProfileId</a> profileId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/datasync
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">profileId</span>: 
+ The ID used to get the sync statistics.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ SyncStatictics[] The sync statistics information of a given ID.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the identifier does not match any saved profile.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var profileId; //profileId obtained from SyncProfileInfo
+ // Gets the sync statistics information with the given ID
+ var statistics = tizen.datasync.getLastSyncStatistics(profileId);
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="SyncProgressCallback">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::SyncProgressCallback"></a><h3>2.7. SyncProgressCallback</h3>
+<div class="brief">
+ The SyncProgressCallback defines progress notification callbacks for the ongoing sync operation.
+          </div>
+<pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface SyncProgressCallback {
+    void onprogress(<a href="#SyncProfileId">SyncProfileId</a> profileId, <a href="#SyncServiceType">SyncServiceType</a> serviceType, boolean isFromServer, unsigned long totalPerService, unsigned long syncedPerService);
+
+    void oncompleted(<a href="#SyncProfileId">SyncProfileId</a> profileId);
+
+    void onstopped(<a href="#SyncProfileId">SyncProfileId</a> profileId);
+
+    void onfailed(<a href="#SyncProfileId">SyncProfileId</a> profileId, <a href="tizen.html#WebAPIError">WebAPIError</a> error);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.1
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="SyncProgressCallback::onprogress">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::SyncProgressCallback::onprogress"></a><code><b><span class="methodName">onprogress</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a synchronization operation is started and progress is made.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onprogress(<a href="#SyncProfileId">SyncProfileId</a> profileId, <a href="#SyncServiceType">SyncServiceType</a> serviceType, boolean isFromServer, unsigned long totalPerService, unsigned long syncedPerService);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+<div class="description">
+            <p>
+The frequency of this callback invocation is dependent on the platform implementation.
+Normally the packet size from a server affects it, that is, if the server sends a bigger packet containing many records in it, the platform processes it at once and invokes this callback less frequently.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">profileId</span>: 
+ The ID of the corresponding sync operation.
+                </li>
+          <li class="param">
+<span class="name">serviceType</span>: 
+ The sync service category type.
+                </li>
+          <li class="param">
+<span class="name">isFromServer</span>: 
+ The direction of the operation.<br> If the direction of the operation is from the server to the client, then the value is<var> true</var>.
+                </li>
+          <li class="param">
+<span class="name">totalPerService</span>: 
+ The total number of records to synchronize for the current sync service type aggregating all operations.
+                </li>
+          <li class="param">
+<span class="name">syncedPerService</span>: 
+ The number of synchronized records for the current sync service type aggregating all operations.
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="SyncProgressCallback::oncompleted">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::SyncProgressCallback::oncompleted"></a><code><b><span class="methodName">oncompleted</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the sync operation has completed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void oncompleted(<a href="#SyncProfileId">SyncProfileId</a> profileId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">profileId</span>: 
+ The ID of the corresponding sync operation.
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="SyncProgressCallback::onstopped">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::SyncProgressCallback::onstopped"></a><code><b><span class="methodName">onstopped</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the sync operation is stopped by the user.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onstopped(<a href="#SyncProfileId">SyncProfileId</a> profileId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">profileId</span>: 
+ The ID of the corresponding sync operation.
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="SyncProgressCallback::onfailed">
+<a class="backward-compatibility-anchor" name="::DataSynchronization::SyncProgressCallback::onfailed"></a><code><b><span class="methodName">onfailed</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the sync operation fails.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onfailed(<a href="#SyncProfileId">SyncProfileId</a> profileId, <a href="tizen.html#WebAPIError">WebAPIError</a> error);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">profileId</span>: 
+ The ID of the corresponding sync operation.
+                </li>
+          <li class="param">
+<span class="name">error</span>: 
+ The reason for sync failure.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="api-features">3. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that data sync application runs on a device, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/datasync</li>
+</div>
+<p></p>
+                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering</a>.
+</div>
+<h2 id="full-webidl">4. Full WebIDL</h2>
+<pre class="webidl prettyprint">module DataSynchronization {
+
+  typedef DOMString SyncProfileId;
+
+  enum SyncMode { "MANUAL", "PERIODIC", "PUSH" };
+
+  enum SyncType { "TWO_WAY", "SLOW", "ONE_WAY_FROM_CLIENT", "REFRESH_FROM_CLIENT", "ONE_WAY_FROM_SERVER", "REFRESH_FROM_SERVER" };
+
+  enum SyncInterval { "5_MINUTES", "15_MINUTES", "1_HOUR", "4_HOURS", "12_HOURS", "1_DAY", "1_WEEK", "1_MONTH" };
+
+  enum SyncServiceType { "CONTACT", "EVENT" };
+
+  enum SyncStatus { "SUCCESS", "FAIL", "STOP", "NONE" };
+
+  [NoInterfaceObject] interface DataSynchronizationManagerObject {
+    readonly attribute <a href="#DataSynchronizationManager">DataSynchronizationManager</a> datasync;
+  };
+
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DataSynchronizationManagerObject">DataSynchronizationManagerObject</a>;
+
+  [Constructor(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode),
+  Constructor(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode, <a href="#SyncType">SyncType</a> type),
+  Constructor(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode, <a href="#SyncInterval">SyncInterval</a> interval)]
+  interface SyncInfo {
+    attribute DOMString url;
+
+    attribute DOMString id;
+
+    attribute DOMString password;
+
+    attribute <a href="#SyncMode">SyncMode</a> mode;
+
+    attribute <a href="#SyncType">SyncType</a>? type;
+
+    attribute <a href="#SyncInterval">SyncInterval</a>? interval;
+  };
+
+  [Constructor(boolean enable, <a href="#SyncServiceType">SyncServiceType</a> serviceType, DOMString serverDatabaseUri, optional DOMString? id, optional DOMString? password)]
+  interface SyncServiceInfo {
+    attribute boolean enable;
+
+    attribute <a href="#SyncServiceType">SyncServiceType</a> serviceType;
+
+    attribute DOMString serverDatabaseUri;
+
+    attribute DOMString? id;
+
+    attribute DOMString? password;
+  };
+
+  [Constructor(DOMString profileName, <a href="#SyncInfo">SyncInfo</a> syncInfo, optional <a href="#SyncServiceInfo">SyncServiceInfo</a>[]? serviceInfo)]
+  interface SyncProfileInfo {
+    readonly attribute <a href="#SyncProfileId">SyncProfileId</a> profileId;
+
+    attribute DOMString profileName;
+
+    attribute <a href="#SyncInfo">SyncInfo</a> syncInfo;
+
+    attribute <a href="#SyncServiceInfo">SyncServiceInfo</a>[]? serviceInfo;
+  };
+
+  [NoInterfaceObject] interface SyncStatistics {
+    readonly attribute <a href="#SyncStatus">SyncStatus</a> syncStatus;
+
+    readonly attribute <a href="#SyncServiceType">SyncServiceType</a> serviceType;
+
+    readonly attribute Date lastSyncTime;
+
+    readonly attribute unsigned long serverToClientTotal;
+
+    readonly attribute unsigned long serverToClientAdded;
+
+    readonly attribute unsigned long serverToClientUpdated;
+
+    readonly attribute unsigned long serverToClientRemoved;
+
+    readonly attribute unsigned long clientToServerTotal;
+
+    readonly attribute unsigned long clientToServerAdded;
+
+    readonly attribute unsigned long clientToServerUpdated;
+
+    readonly attribute unsigned long clientToServerRemoved;
+  };
+
+  [NoInterfaceObject] interface DataSynchronizationManager {
+    void add(<a href="#SyncProfileInfo">SyncProfileInfo</a> profile) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void update(<a href="#SyncProfileInfo">SyncProfileInfo</a> profile) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void remove(<a href="#SyncProfileId">SyncProfileId</a> profileId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    long getMaxProfilesNum() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    unsigned long getProfilesNum() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#SyncProfileInfo">SyncProfileInfo</a> get(<a href="#SyncProfileId">SyncProfileId</a> profileId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#SyncProfileInfo">SyncProfileInfo</a>[] getAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void startSync(<a href="#SyncProfileId">SyncProfileId</a> profileId, optional <a href="#SyncProgressCallback">SyncProgressCallback</a>? progressCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void stopSync(<a href="#SyncProfileId">SyncProfileId</a> profileId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#SyncStatistics">SyncStatistics</a>[] getLastSyncStatistics(<a href="#SyncProfileId">SyncProfileId</a> profileId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+
+  [Callback, NoInterfaceObject] interface SyncProgressCallback {
+    void onprogress(<a href="#SyncProfileId">SyncProfileId</a> profileId, <a href="#SyncServiceType">SyncServiceType</a> serviceType, boolean isFromServer, unsigned long totalPerService, unsigned long syncedPerService);
+
+    void oncompleted(<a href="#SyncProfileId">SyncProfileId</a> profileId);
+
+    void onstopped(<a href="#SyncProfileId">SyncProfileId</a> profileId);
+
+    void onfailed(<a href="#SyncProfileId">SyncProfileId</a> profileId, <a href="tizen.html#WebAPIError">WebAPIError</a> error);
+  };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

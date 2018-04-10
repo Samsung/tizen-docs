@@ -17,14 +17,14 @@ The following table describes the style properties of the [Tizen.NUI.BaseCompone
 |----------------|--------------------|----------------|
 | `HeightResizePolicy`     | `string`                 | See [Size Negotiation](creating-custom-view-controls.md#sizenegotiation) |
 | `WidthResizePolicy`      | `string`                 | See [Size Negotiation](creating-custom-view-controls.md#sizenegotiation) |
-| `SizeModeFactor`         | `vector3`                | Factor used to calculate the view size<br><br> **Note**<br> This property is used only when `ResizePolicyType` is set to `ResizePolicyType.SizeRe lativeToParent` or `ResizePolicyType.SizeFixedOffsetFromParent`.<br> The view's size is accordingly set by  multiplying the view size by this factor, or by adding the factor to the view size.           |
-| `MinimumSize`            | `Size2D`                 | Minimum size a view can  be assigned in size  negotiation  |
-| `MaximumSize`            | `Size2D`                 | Maximum size a view can  be assigned in size   negotiation              |
+| `SizeModeFactor`         | `vector3`                | Factor used to calculate the view size<br><br> **Note**<br> This property is used only when `ResizePolicyType` is set to `ResizePolicyType.SizeRelativeToParent` or `ResizePolicyType.SizeFixedOffsetFromParent`.<br> The view's size is accordingly set by  multiplying the view size by this factor, or by adding the factor to the view size.           |
+| `MinimumSize`            | `Size2D`                 | Minimum size a view can  be assigned in size negotiation  |
+| `MaximumSize`            | `Size2D`                 | Maximum size a view can  be assigned in size negotiation              |
 
 <a name="state"></a>
 ## Styling for States
 
-Every control has 3 states: `NORMAL`, `FOCUSED`, and `DISABLED`. In addition, buttons have 2 substates for each state: `SELECTED` and `UNSELECTED`.
+Every control has three states: `NORMAL`, `FOCUSED`, and `DISABLED`. In addition, buttons have two substates for each state: `SELECTED` and `UNSELECTED`.
 
 You can provide a different style for each state using visuals. When using visuals, you must define a visual for each state and substate (although you can share the same visual across multiple states). The control's current state and substate determines which visuals are shown.
 
@@ -154,9 +154,9 @@ Controls change states based on user interaction. As a control moves between sta
 
 In addition to animations, you can use a predefined effect during the transition. Currently, only a `CROSSFADE` effect is available, animating the opacity of visuals fading in and out. In time, further effects can be provided.
 
-You can implement transitions in 2 ways:
+You can implement transitions in two ways:
 
--   You can define a transition between 2 specific states, by using the `from` and `to` properties.
+-   You can define a transition between two specific states, by using the `from` and `to` properties.
 
     The following example defines a transition from the `UNSELECTED` state to the `SELECTED` state, cross-fading all visuals with the `CROSSFADE` effect:
 
@@ -385,5 +385,5 @@ The following example shows a push button stylesheet covering all states and var
 ```
 
 ## Related Information
-* Dependencies
+- Dependencies
   -   Tizen 4.0 and Higher

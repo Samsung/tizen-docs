@@ -6,7 +6,7 @@ To receive special hardware key events in the application, use the `eext_win_key
 
 To grab hardware key events:
 
-1. To use the functions and data types of the EFL Extension API (in [mobile](http://org.tizen.native.mobile.apireference/group__CAPI__EFL__EXTENSION__MODULE.html) and [wearable](http://org.tizen.native.wearable.apireference/group__CAPI__EFL__EXTENSION__MODULE.html) applications), include the `<efl_extension.h>` header file in your application:
+1. To use the functions and data types of the EFL Extension API (in [mobile](../../../api/mobile/latest/group__CAPI__EFL__EXTENSION__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__EFL__EXTENSION__MODULE.html) applications), include the `<efl_extension.h>` header file in your application:
 
    ```
    #include <efl_extension.h>

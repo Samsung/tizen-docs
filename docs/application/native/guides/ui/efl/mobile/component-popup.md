@@ -1,6 +1,6 @@
 # Popup
 
-The popup UI component is a small window for notifying the user or requesting user input. For more information, see the [Popup](../../../../../org.tizen.native.mobile.apireference/group__Elm__Popup.html) API.
+The popup UI component is a small window for notifying the user or requesting user input. For more information, see the [Popup](../../../../api/mobile/latest/group__Elm__Popup.html) API.
 
 This feature is supported in mobile applications only.
 

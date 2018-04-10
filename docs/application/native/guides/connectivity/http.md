@@ -27,7 +27,7 @@ The main features of the HTTP API include:
 
 To enable your application to use the HTTP functionality:
 
-1. To use the functions and data types of the HTTP API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__HTTP__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__NETWORK__HTTP__MODULE.html) applications), include the `<http.h>` header file in your application:
+1. To use the functions and data types of the HTTP API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__HTTP__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__HTTP__MODULE.html) applications), include the `<http.h>` header file in your application:
 
    ```
    #include <http.h>
@@ -102,7 +102,7 @@ To manage HTTP sessions:
 
 To manage HTTP transactions:
 
-1. Create an HTTP transaction handle with the `http_session_open_transaction()` function and the session handle.The function requires the HTTP method defined by the `http_method_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__HTTP__MODULE.html#ga43d17339ae0c54fb1b72ec6bb73285ec) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__NETWORK__HTTP__MODULE.html#ga43d17339ae0c54fb1b72ec6bb73285ec) applications) as its first parameter. The main methods are:
+1. Create an HTTP transaction handle with the `http_session_open_transaction()` function and the session handle.The function requires the HTTP method defined by the `http_method_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__HTTP__MODULE.html#ga43d17339ae0c54fb1b72ec6bb73285ec) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__HTTP__MODULE.html#ga43d17339ae0c54fb1b72ec6bb73285ec) applications) as its first parameter. The main methods are:
   - GET: The application can retrieve a resource from a remote Web server.
   - POST: The application can send data to a Web server.
   - PUT: The application can replace all current representations of the Web server resource with the uploaded content.

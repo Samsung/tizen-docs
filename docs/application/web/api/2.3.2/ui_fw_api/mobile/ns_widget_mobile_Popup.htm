@@ -1,0 +1,968 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Popup</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+
+<h1>Popup</h1>
+
+<p>The popup component handles creating and managing pop-up windows.</p>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	
+		<li><a href="#default-selectors0.8939050626941025">Default Selectors</a>
+			
+		</li>
+	
+
+	
+		<li><a href="#manual-constructor0.5366392943542451">Manual Constructor</a>
+			
+		</li>
+	
+		<li><a href="#html-examples0.8655443852767348">HTML Examples</a>
+	
+		</li>
+		
+		<li><a href="#context-popup with arrow0.9959437232464552">Context Popup with Arrow</a>
+			
+		</li>
+	
+		<li><a href="#options-list">Options</a>
+			
+		</li>
+	
+		<li><a href="#events-list">Events</a>
+			
+		</li>
+	
+		<li><a href="#methods-list">Methods</a>
+			
+		</li>
+		
+
+		<li><a href="#opening-popup0.4268628491554409">Opening a Popup</a>
+		
+		</li>
+	
+		<li><a href="#closing-popup0.4531055218540132">Closing a Popup</a>
+		
+		</li>		
+	
+</ol>
+
+<h2><a id="default-selectors0.8939050626941025"></a>Default Selectors</h2>
+
+<p>By default, all elements with the <code>data-role=&quot;popup&quot;</code> attribute are displayed as Tizen Web UI popups.</p>
+
+
+<h2><a id="manual-constructor0.5366392943542451"></a>Manual Constructor</h2>
+
+<p>To manually create a button component, use the component constructor from the <code>tau</code> namespace (<strong>RECOMMENDED</strong>):</p>
+
+<pre class="prettyprint">&lt;div id=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var popupElement = document.getElementById(&quot;popup&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;popup = tau.widget.Popup(popupElement);
+&nbsp;&nbsp;&nbsp;popup.open();
+&lt;/script&gt;
+</pre>
+
+<p>If the jQuery library is loaded, you can use its method (<strong>support for backward compatibility</strong>):</p>
+
+<pre class="prettyprint">&lt;div id=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var popup = $(&quot;#popup&quot;).popup();
+&nbsp;&nbsp;&nbsp;popup.popup(&quot;open&quot;);
+&lt;/script&gt;
+</pre>
+
+
+<h2><a id="html-examples0.8655443852767348"></a>HTML Examples</h2>
+
+<p>If the link has the <span style="font-family: Courier New,Courier,monospace">data-position-to=&quot;window&quot;</span> option in the popup, the popup is opened to a new window after clicking.</p>
+<ul>
+
+<li>To create a simple popup positioned to a window.
+
+<pre class="prettyprint">&lt;!--Definition of the link, which opens the popup and sets its position--&gt;
+&lt;a href=&quot;#center_info&quot; data-position-to=&quot;window&quot;&gt;Click to open popup&lt;/a&gt;
+&lt;!--Definition of the popup, which inherits property position from link--&gt;
+&lt;div id=&quot;center_info&quot; data-role=&quot;popup&quot; class=&quot;center_info&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-popup-text&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Pop-up dialog box, a child window that blocks user interaction to the parent windows&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+</pre></li>
+
+<li>To create a popup with a title and button:
+
+<pre class="prettyprint">&lt;a href=&quot;#center_title_1btn&quot; data-position-to=&quot;window&quot;&gt;Click to open popup&lt;/a&gt;
+&lt;!--Definition of popup with a title and button--&gt;
+&lt;div id=&quot;center_title_1btn&quot; data-role=&quot;popup&quot; class=&quot;center_title_1btn&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-popup-title&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Popup title&lt;/h1&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-popup-text&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pop-up dialog box, a child window that blocks user interaction to the parent windows
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-popup-button-bg&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a data-role=&quot;button&quot; data-rel=&quot;back&quot; data-inline=&quot;true&quot;&gt;Button&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+</pre></li>
+
+<li>To create a popup with a menu.
+
+<p>A menu can be created by placing a <a href="ns_widget_mobile_Listview.htm">list view component</a> inside a popup.</p>
+
+<pre class="prettyprint">&lt;a href=&quot;#center_liststyle_1btn&quot; data-position-to=&quot;window&quot;&gt;Click to open popup&lt;/a&gt;
+&lt;div id=&quot;center_liststyle_1btn&quot; data-role=&quot;popup&quot; class=&quot;center_liststyle_1btn&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-popup-title&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Popup title&lt;/h1&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-popup-scroller-bg&quot; data-scroll=&quot;y&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul data-role=&quot;listview&quot; data-icon=&quot;1line-textonly&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;List item 1&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;List item 2&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-popup-button-bg&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a data-role=&quot;button&quot; data-rel=&quot;back&quot; data-inline=&quot;true&quot;&gt;Cancel&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+</pre></li>
+
+</ul>
+
+
+<h2><a id="context-popup with arrow0.9959437232464552"></a>Context Popup with Arrow</h2>
+
+<p>If the <code>id</code> property is set in the link and the <code>data-position-to=&quot;origin&quot;</code> option in the popup, the context popup is opened after clicking.</p>
+
+<pre class="prettyprint">&lt;!--Definition of the link, which opens a popup with popup id in context style with an arrow--&gt;
+&lt;a href=&quot;#popup&quot; id=&quot;linkId&quot; data-position-to=&quot;origin&quot; data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;Click to open context popup&lt;/a&gt;
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic context popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+
+<p>The <code>positionTo</code> option has the <code>&quot;origin&quot;</code> value in the popup by default. However, the <code>positionTo</code> property is inherited from the related link and the inherited value has a higher priority during the opening process and overwrites the previous value. So, if you do not change it in the popup and do not set the <code>data-position-to</code> value to other than <code>&quot;origin&quot;</code> in the link, the popup connected with the link is always opened in the context style.</p>
+
+<p>To make sure that the popup is opened in the context style with an arrow, set the <code>data-position-to=&quot;origin&quot;</code> property as well as <code>id</code> as in the example above.</p>
+
+<p>The same result can be achieved by setting the <code>id</code> property only and not setting the <code>positionTo</code> option in the link. This is because the popup has the <code>&quot;origin&quot;</code> value for the <code>positionTo</code> option by default.</p>
+
+<pre class="prettyprint">&lt;!--In link, id is set--&gt;
+&lt;a href=&quot;#popup&quot; id=&quot;linkId&quot; data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;Click to open context popup&lt;/a&gt;
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+
+<p>After building the popup, the value of the <code>positionTo</code> option can be changed by using the <code>option</code> method:</p>
+
+<ul><li>With the TAU API (<strong>RECOMMENDED</strong>):
+<pre class="prettyprint">&lt;a href=&quot;#popup&quot; id=&quot;linkId&quot; data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;Click to open context popup&lt;/a&gt;
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;// Change value of positionTo option by option method
+&nbsp;&nbsp;&nbsp;var popupWidget = tau.widget.Popup(document.getElementById(&quot;popup&quot;));
+&nbsp;&nbsp;&nbsp;popupWidget.option(&quot;positionTo&quot;, &quot;origin&quot;);
+&lt;/script&gt;
+</pre></li>
+<li>With the jQuery API (<strong>support for backward compatibility</strong>):
+
+<pre class="prettyprint">&lt;a href=&quot;#popup&quot; id=&quot;linkId&quot; data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;Click to open context popup&lt;/a&gt;
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;// Change value of positionTo option by option method
+&nbsp;&nbsp;&nbsp;$(&quot;#popup&quot;).popup(&quot;option&quot;, &quot;positionTo&quot;, &quot;origin&quot;);
+&lt;/script&gt;
+</pre></li></ul>
+
+<p>The context popup can also be created manually for elements other than a link by pushing the options, such as <code>positionTo</code> and <code>link</code> to the <code>_open</code> method:</p>
+
+<ul><li>With the TAU API (<strong>RECOMMENDED</strong>):
+<pre class="prettyprint">&lt;!--Element with no properties - popup is opened next to it in context style manually--&gt;
+&lt;div id=&quot;linkId&quot;&gt;Click to open context popup&lt;/div&gt;
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;// Set opening popup on click event
+&nbsp;&nbsp;&nbsp;document.getElementById(&quot;linkId&quot;).addEventListener(&quot;click&quot;, function () 
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Open context popup
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var popupWidget = tau.widget.Popup(document.getElementById(&quot;popup&quot;));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Open with options
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;popupWidget.open({link: &quot;linkId&quot;, positionTo: &quot;origin&quot;});
+&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;
+</pre>
+
+</li>
+<li>With the jQuery API (<strong>support for backward compatibility</strong>):
+
+<pre class="prettyprint">&lt;!--Element with no properties - popup is opened next to it in context style manually--&gt;
+&lt;div id=&quot;linkId&quot;&gt;Click to open context popup&lt;/div&gt;
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;// Set opening popup on click event
+&nbsp;&nbsp;&nbsp;$(&quot;#linkId&quot;).on(&quot;click&quot;, function () 
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Open with options
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#popup&quot;).popup(&quot;open&quot;, {link: &quot;linkId&quot;, positionTo: &quot;origin&quot;});
+&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;
+</pre></li></ul>
+
+<p>These options can be also set globally, and then the <code>open</code> method can be called without options:</p>
+<ul><li>This solution can be used only for the TAU API (<strong>RECOMMENDED</strong>):
+
+<pre class="prettyprint">&lt;!--Element with no properties - popup is opened next to it in context style manually--&gt;
+&lt;div id=&quot;linkId&quot;&gt;Link for popup&lt;/div&gt;
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;// Set options
+&nbsp;&nbsp;&nbsp;var popupWidget = tau.widget.Popup(document.getElementById(&quot;popup&quot;));
+&nbsp;&nbsp;&nbsp;popupWidget.option({positionTo: &quot;origin&quot;, link: &quot;linkId&quot;}); // here we set positionTo and id of link, which sets placement of popup
+
+&nbsp;&nbsp;&nbsp;// Set opening popup on click event
+&nbsp;&nbsp;&nbsp;document.getElementById(&quot;linkId&quot;).addEventListener(&quot;click&quot;, function () 
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// If options are set, call open method without options
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;popupWidget.open();
+&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;
+</pre></li>
+<li>For the jQuery API, the link ID must be always added as an option (<strong>support for backward compatibility</strong>):
+
+<pre class="prettyprint">&lt;!--Element with no properties - popup is opened next to it in context style manually--&gt;
+&lt;div id=&quot;linkId&quot;&gt;Link for popup&lt;/div&gt;
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;// Set positionTo option
+&nbsp;&nbsp;&nbsp;$(&quot;#popup&quot;).popup(&quot;option&quot;, &quot;positionTo&quot;, &quot;origin&quot;);
+
+&nbsp;&nbsp;&nbsp;// Set opening popup on click event
+&nbsp;&nbsp;&nbsp;$(&quot;#linkId&quot;).on(&quot;click&quot;, function () 
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// For jQuery API, link has to be added as an option
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#popup&quot;).popup(&quot;open&quot;, {link: &quot;linkId&quot;});
+&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;
+</pre></li></ul>
+
+	<h2><a id="options-list"></a>Options</h2>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-close-link-selector</span></td>
+				<td class="option">string</td>
+				<td class="option">&#39;a[data-rel=&quot;back&quot;]&#39;</td>
+				<td class="option">Selector for the buttons in the popup.</td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-direction-priority</span></td>
+				<td class="option">Array</td>
+				<td class="option">&quot;bottom&quot;,&quot;top&quot;, &quot;right&quot;, &quot;left&quot;</td>
+				<td class="option">Directions of the popup placement by priority. First one has the highest priority, last one the lowest.</td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-history</span></td>
+				<td class="option">boolean</td>
+				<td class="option">false</td>
+				<td class="option">Sets whether the URL is altered when the popup is open to support the back button.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-position-to</span></td>
+				<td class="option">string</td>
+				<td class="option">&quot;origin&quot;</td>
+				<td class="option">Element relative to which the popup is centered.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-shadow</span></td>
+				<td class="option">boolean</td>
+				<td class="option">true</td>
+				<td class="option">Sets whether a shadow is drawn around the popup.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-tolerance</span></td>
+				<td class="option">Object</td>
+				<td class="option">{t: 10, r: 10, b: 10, l: 10}</td>
+				<td class="option">Minimum distance from the edge of the window for the corresponding edge of the popup.</td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-transition</span></td>
+				<td class="option">string</td>
+				<td class="option">&quot;pop&quot;</td>
+				<td class="option">Default transition for the popup.</td>
+			</tr>
+		
+		</tbody>
+	</table>
+
+
+	<h2><a id="events-list"></a>Events</h2>
+
+<p>To handle popup events, use the following code:</p>
+
+<pre class="prettyprint">&lt;!--Popup HTML code--&gt;
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;// Use popup events
+&nbsp;&nbsp;&nbsp;var popup = document.getElementById(&quot;popup&quot;);
+&nbsp;&nbsp;&nbsp;popup.addEventListener(&quot;popupafteropen&quot;, function() 
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Implement code for popupafteropen event
+&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;
+</pre>
+
+	<h3>Summary</h3>
+	
+	<table>
+		<tbody>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+		</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">popupafteropen</span></td>
+				<td><p>Triggered when process of opening a popup is completed.<br />The event is triggered when the popup has completely appeared on the screen and all associated animations have completed.</p></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">beforeposition</span></td>
+				<td><p>Triggered before a popup computes the coordinates where it appears.<br />The event is triggered before the popup starts the opening animations and calculates the coordinates. Handling this event gives an opportunity to modify the content of the popup before it appears on the screen.</p></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">popupafterclose</span></td>
+				<td><p>Triggered when the process of closing a popup is completed.<br />The event is triggered when the popup has completely disappeared from the screen and all associated animations have completed.</p></td>
+			</tr>
+		
+		</tbody>
+	</table>
+
+
+
+	<h2><a id="methods-list"></a>Methods</h2>
+
+	<p>To call a method on the component, use one of the existing APIs:</p>
+
+<ul><li><p>TAU API (<strong>RECOMMENDED</strong>):</p>
+
+<pre class="prettyprint">var popupElement = document.getElementById(&quot;popup&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;popup = tau.widget.Popup(popupElement);
+
+popup.methodName(methodArgument1, methodArgument2, ...);
+</pre>
+
+</li>
+
+<li><p>jQuery API (<strong>support for backward compatibility</strong>):</p>
+
+<pre class="prettyprint">$(&quot;.selector&quot;).popup(&quot;methodName&quot;, methodArgument1, methodArgument2, ...);
+</pre></li></ul>
+	
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+				
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint">* <a href="#method-option">option</a> ( string | Object? name, * value ) </pre>
+					</td>
+					<td><p>Gets and sets component options.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">Popup <a href="#method-refresh">refresh</a> ( Object? options, number? options.positionX, number? options.positionY ) </pre>
+					</td>
+					<td><p>Refreshes the position of the opened popup.</p></td>
+				</tr>
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#opening-popup0.4268628491554409">Open</a> ( Object? options ) </pre>
+					</td>
+					<td><p>Opens the popup.</p></td>
+				</tr>
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#closing-popup0.4531055218540132">Close</a> ( Boolean immediate ) </pre>
+					</td>
+					<td><p>Closes the popup.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-setPositionCB">setPositionCB</a> ( Function callback ) </pre> - <i style="color:red">deprecated</i>
+					</td>
+					<td><p>Sets a callback, which is called on the <code>resize</code> event. This callback  is used to return the desired position of the popup after resizing.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-setPositionCallback">setPositionCallback</a> ( Function callback )</pre>
+					</td>
+					<td><p>Sets a callback, which is called on the <code>resize</code> event. This callback  is used to return the desired position of the popup after resizing.</p></td>
+				</tr>
+			
+		
+			
+		
+		</tbody>
+	</table>
+	<dl>
+
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-option">option</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Gets and sets component options.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">* option ( string | Object? name, * value) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							<p>The method can work in many contexts:</p>
+	<ul><li>If first argument is of the object type, the method sets values for the options given in the object. The object keys are the names of the options and the values from the object are the values to set.</li>
+
+    <li>If you give only 1 string argument, the method returns the value for the given option.</li>
+
+    <li>If you give 2 arguments, and the first argument is a string, the second argument is interpreted as the value to set.</li></ul>
+
+
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">name</span></td>
+						<td>string | Object</td>
+						<td>Optional</td>
+						<td></td>
+						<td>Name of the option.</td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">value</span></td>
+						<td>*</td>
+						<td>Required</td>
+						<td></td>
+						<td>Value to set.</td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>*</td>
+									<td>Return value of the option or undefined if method is used to set a value.</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var popupWidget = tau.widget.Popup(document.getElementById(&quot;popup&quot;)),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;optionValue;
+
+&nbsp;&nbsp;&nbsp;optionValue = popupWidget.option(&quot;positionTo&quot;); // Read positionTo value
+&nbsp;&nbsp;&nbsp;popupWidget.option(&quot;positionTo&quot;, &quot;window&quot;) // Set value
+&lt;/script&gt;
+</pre>
+						</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;optionValue = $(&quot;#popup&quot;).popup(&quot;option&quot;, &quot;positionTo&quot;);
+&nbsp;&nbsp;&nbsp;$(&quot;#popup&quot;).popup(&quot;option&quot;, &quot;positionTo&quot;, &quot;window&quot;);
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-refresh">refresh</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>
+Refreshes the position of the opened popup.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">Popup refresh ( Object? options) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							<p>In case of the context popup, the position of the arrow is not changed after calling this method. If the new position of the popup content causes disconnection from the arrow, the popup position is corrected automatically. Popup content is always set so that the arrow is placed between the left and right side of the popup container with a proper margin set in the <code>data-tolerance</code> option.</p>
+
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">options</span></td>
+						<td>Object</td>
+						<td>Optional</td>
+						<td></td>
+						<td>Options.</td>
+					</tr>
+					</tbody>
+					</table>
+
+					<div class="parameters">
+						<p>The <span style="font-family: Courier New,Courier,monospace">options</span> object contains the following values:</p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Name</th>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">options.positionX</span></td>
+						<td>number</td>
+						<td>Desired horizontal coordinate of the center point in the popup in pixels (it only works if both coordinates are set - top and left).</td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">options.positionY</span></td>
+						<td>number</td>
+						<td>Desired vertical coordinate of the center point in the popup in pixels (it only works if both coordinates are set - top and left).</td>
+					</tr>
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>Popup</td>
+									<td>Returns this.</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var popupWidget = tau.widget.Popup(document.getElementById(&quot;popup&quot;));
+
+&nbsp;&nbsp;&nbsp;popupWidget.refresh(); // Only refresh original position
+&lt;/script&gt;
+</pre>
+						</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;$(&quot;#popup&quot;).popup(&quot;refresh&quot;, {top: 10, left: 10}); // Set new position for the center point of popup
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-setPositionCB">setPositionCB: <strong style="color:red">deprecated</strong></span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Sets a callback, which is called on the resize event. This callback is used to return the desired position of the popup after resizing.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">setPositionCB ( Function callback) </pre> 
+					</div>
+					
+					<div class="description">
+						<p>
+							<p>This method is deprecated, and the <code>setPositionCallback</code> method must be used to set the callback.</p>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-setPositionCallback">setPositionCallback</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Sets a callback, which is called on the resize event. This callback is used to return the desired position of the popup after resizing.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">setPositionCallback ( Function callback) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							<p>Use this method instead of the deprecated <code>setPositionCB</code>.</p>
+
+
+
+
+
+
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">callback</span></td>
+						<td>Function</td>
+						<td>Required</td>
+						<td></td>
+						<td>Method called on resizing. It is used to return the desired position of the popup as an object with the &quot;x&quot; and &quot;y&quot; properties.</td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var popupWidget = tau.widget.Popup(document.getElementById(&quot;popup&quot;));
+
+&nbsp;&nbsp;&nbsp;popupWidget.setPositionCallback(function() 
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return {x: 10, y: 20};
+&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;
+</pre>
+						</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;$(&quot;#popup&quot;).popup(&quot;setPositionCallback&quot;, function() 
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return {x: 10, y: 20};
+&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+
+			
+		
+	</dl>
+
+<h2><a id="opening-popup0.4268628491554409"></a>Opening a Popup</h2>
+
+<p>There are 2 ways to open a popup:</p>
+
+<ul><li>Open by clicking on a link:
+
+<ul><li><p>If the link has the <code>id</code> of the popup set as the value of the <code>href</code> property, the popup is opened after clicking on the link.</p>
+
+<pre class="prettyprint">&lt;!--Definition of link, which opens popup with popup id--&gt;
+&lt;a href=&quot;#popup&quot;&gt;Click to open popup&lt;/a&gt;
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+</pre></li>
+
+<li><p>Be aware that a context popup with an arrow is opened if the link has the <code>id</code> property and <code>data-position-to=&quot;origin&quot;</code> set as in this example:</p>
+
+<pre class="prettyprint">&lt;!--Definition of link, which opens context popup with popup id--&gt;
+&lt;a href=&quot;#popup&quot; id=&quot;linkId&quot; data-position-to=&quot;origin&quot; data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;Click to open context popup&lt;/a&gt;
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+</pre></li>
+
+<li><p>To open a window popup, the <code>data-position-to=&quot;window&quot;</code> property must be set in the link or popup.</p>
+
+<pre class="prettyprint">&lt;!--Definition of link, which opens window popup with popup id--&gt;
+&lt;a href=&quot;#popup&quot; id=&quot;linkId&quot; data-position-to=&quot;window&quot;&gt;Click to open popup&lt;/a&gt;
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+</pre></li></ul></li>
+
+<li>Open manually:
+<ul><li><p>To open a popup with the &quot;popup&quot; <code>id</code> property, the <code>tau</code> namespace can be used (<strong>RECOMMENDED</strong>):</p>
+
+<pre class="prettyprint">&lt;div id=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var popupElement = document.getElementById(&quot;popup&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;popup = tau.widget.Popup(popupElement);
+&nbsp;&nbsp;&nbsp;popup.open();
+&lt;/script&gt;
+</pre></li>
+
+<li><p>If the jQuery library is loaded, this method can be used (<strong>support for backward compatibility</strong>):</p>
+
+<pre class="prettyprint">&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var popup = $(&quot;#popup&quot;).popup();
+&nbsp;&nbsp;&nbsp;popup.popup(&quot;open&quot;);
+&lt;/script&gt;
+</pre></li>
+
+<li><p>With the TAU API, you can open a popup anywhere (<strong>RECOMMENDED</strong>):</p>
+
+<pre class="prettyprint">&lt;div id=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;tau.openPopup(&quot;#popup&quot;);
+&lt;/script&gt;
+</pre></li></ul></li></ul>
+
+<h2><a id="closing-popup0.4531055218540132"></a>Closing a Popup</h2>
+
+<p>There are 2 ways to close a popup:</p>
+
+<ul><li>Close by clicking on a button inside:
+
+<p>If the link inside the popup has the <code>data-rel=&quot;back&quot;</code> property, the popup is closed after clicking on it:</p>
+
+<pre class="prettyprint">&lt;a href=&quot;#center_title_1btn&quot; data-position-to=&quot;window&quot;&gt;Click to open popup&lt;/a&gt;
+&lt;!--Definition of popup with a title and button--&gt;
+&lt;div id=&quot;center_title_1btn&quot; data-role=&quot;popup&quot; class=&quot;center_title_1btn&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-popup-title&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Popup title&lt;/h1&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-popup-text&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pop-up dialog box, a child window that blocks user interaction to the parent windows
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-popup-button-bg&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a data-role=&quot;button&quot; data-rel=&quot;back&quot; data-inline=&quot;true&quot;&gt;Button&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<p>The selector, which causes closing on click, can be changed by setting the <code>closeLinkSelector</code> option in the popup.</p></li>
+
+<li>Close manually:
+<ul><li><p>To close a popup with the &quot;popup&quot; <code>id</code> property, the <code>tau</code> namespace can be used (<strong>RECOMMENDED</strong>):</p>
+
+<pre class="prettyprint">&lt;a href=&quot;#popup&quot; data-position-to=&quot;window&quot;&gt;Click to open popup&lt;/a&gt;
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var popupElement = document.getElementById(&quot;popup&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;popup = tau.widget.Popup(popupElement);
+&nbsp;&nbsp;&nbsp;// Close popup after opening
+&nbsp;&nbsp;&nbsp;popupElement.addEventListener(&quot;popupafteropen&quot;, function () 
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;popup.close();
+&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;
+</pre></li>
+
+<li><p>If jQuery library is loaded, this method can be used (<strong>support for backward compatibility</strong>):</p>
+
+<pre class="prettyprint">&lt;a href=&quot;#popup&quot; data-position-to=&quot;window&quot;&gt;Click to open popup&lt;/a&gt;
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;$(&quot;#popup&quot;).on(&quot;popupafteropen&quot;, function () 
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#popup&quot;).popup(&quot;close&quot;);
+&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;
+</pre></li>
+
+<li><p>With the TAU API, you can close a popup anywhere (<strong>RECOMMENDED</strong>):</p>
+
+<pre class="prettyprint">&lt;div id=&quot;popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;tau.closePopup(&quot;#popup&quot;);
+&lt;/script&gt;
+</pre>	</li></ul></li></ul>
+	
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

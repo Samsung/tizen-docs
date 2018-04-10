@@ -3,7 +3,7 @@
 
 The Web view features include accessing Web pages and Web content in your application.
 
-The WebView API implements the EFL WebKit (EWK), which covers various features for Web browsing, such as loading and displaying Web pages and navigating through the browsing history. The EFL APIs (in [mobile](../../../../org.tizen.native.mobile.apireference/group__EFL.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__EFL.html) applications), such as `evas_*`, `elm_*`, and `eina_*`, are used to build up a complete application supporting Web browsing.
+The WebView API implements the EFL WebKit (EWK), which covers various features for Web browsing, such as loading and displaying Web pages and navigating through the browsing history. The EFL APIs (in [mobile](../../api/mobile/latest/group__EFL.html) and [wearable](../../api/wearable/latest/group__EFL.html) applications), such as `evas_*`, `elm_*`, and `eina_*`, are used to build up a complete application supporting Web browsing.
 
 Use the Web features to create a simple Web browser:
 
@@ -16,7 +16,7 @@ Later, you can use various helper functions to [find the created window](#helper
 
 To enable your application to use the Web view functionality:
 
-1. To use the Web API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__WEB__FRAMEWORK.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__WEB__FRAMEWORK.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the Web API (in [mobile](../../api/mobile/latest/group__CAPI__WEB__FRAMEWORK.html) and [wearable](../../api/Wearable/latest/group__CAPI__WEB__FRAMEWORK.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -41,7 +41,7 @@ To enable your application to use the Web view functionality:
    </privileges>
    ```
 
-2. To use the functions and data types of the WebView API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__WEBVIEW.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__WEBVIEW.html) applications), include the `<EWebKit.h>` header file in your application:
+2. To use the functions and data types of the WebView API (in [mobile](../../api/mobile/latest/group__WEBVIEW.html) and [wearable](../../api/wearable/latest/group__WEBVIEW.html) applications), include the `<EWebKit.h>` header file in your application:
 
     ```
     #include <Ecore.h>

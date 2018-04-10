@@ -67,12 +67,20 @@ The advanced content assist supports code completion of the attribute values for
 
 The advanced content assist has the following features:
 
-- Proposes code completion of the `href` attribute value of the `<a>` element:	 List of HTML files included in the projectList of `id` values that are assigned to the elements of the edited file
-- Proposes code completion of the `href` attribute value of the `<link>` element: List of CSS files included in the project
-- Proposes code completion of the `src` attribute value of the `<script>` element: List of JavaScript files included in the project
-- Proposes code completion of the `src` attribute value of the `<iframe>` element: List of HTML files included in the project
-- Proposes code completion of the `src` attribute value of the `<img>` element: List of image files included in the project
-- Proposes code completion of `id` or `class` attribute values of all elements: `id`: List of ID selectors of linked CSS files`class`: List of class selectors of linked CSS files
+- Proposes code completion of the `href` attribute value of the `<a>` element:
+  - List of HTML files included in the project
+  - List of `id` values that are assigned to the elements of the edited file
+- Proposes code completion of the `href` attribute value of the `<link>` element:
+  - List of CSS files included in the project
+- Proposes code completion of the `src` attribute value of the `<script>` element:
+  - List of JavaScript files included in the project
+- Proposes code completion of the `src` attribute value of the `<iframe>` element:
+  - List of HTML files included in the project
+- Proposes code completion of the `src` attribute value of the `<img>` element:
+  - List of image files included in the project
+- Proposes code completion of `id` or `class` attribute values of all elements: `id`:
+  - List of ID selectors of linked CSS files
+  - `class`: List of class selectors of linked CSS files
 
 **Figure: Content assist with the <img> element**
 

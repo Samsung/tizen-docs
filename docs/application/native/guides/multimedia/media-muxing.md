@@ -87,13 +87,13 @@ The following figure illustrates the general media demuxer state changes.
 
 To enable your application to use the media muxing functionality:
 
-- To use the functions and data types of the Media Muxer API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIAMUXER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIAMUXER__MODULE.html) applications), include the `<mediamuxer.h>` header file in your application:
+- To use the functions and data types of the Media Muxer API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIAMUXER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIAMUXER__MODULE.html) applications), include the `<mediamuxer.h>` header file in your application:
 
   ```
   #include <mediamuxer.h>
   ```
 
-- To use the functions and data types of the Media Demuxer API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIADEMUXER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIADEMUXER__MODULE.html) applications), include the `<mediademuxer.h>` header file in your application:
+- To use the functions and data types of the Media Demuxer API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIADEMUXER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIADEMUXER__MODULE.html) applications), include the `<mediademuxer.h>` header file in your application:
 
   ```
   #include <mediademuxer.h>

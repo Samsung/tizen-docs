@@ -147,7 +147,7 @@ AppControl.SendLauncherRequest(appcontrol);
 ```
 
 <a name="implicit"></a>
-### Implicit Launch Reques
+### Implicit Launch Request
 
 The following examples show how to create an implicit launch request:
 
@@ -252,8 +252,8 @@ resolving the application control:
     | Filter ID | Operation                                | URI        | MIME   | Result |
     |---------|----------------------------------------|----------|------|------|
     | 1         | `http://tizen.org/appcontrol/operation/view` | `NULL`     | `NULL` | Pass   |
-    | 2         | `**http://tizen.org/appcontrol/operation/default**` | `NULL`     | `NULL` | Fail   |
-    | 3         | `http://tizen.org/appcontrol/operation/view` | `**file**` | `NULL` | Fail   |
+    | 2         | **`http://tizen.org/appcontrol/operation/default`** | `NULL`     | `NULL` | Fail   |
+    | 3         | `http://tizen.org/appcontrol/operation/view` | **`file`** | `NULL` | Fail   |
 
 - Operation and URI provided:
 
@@ -267,13 +267,13 @@ resolving the application control:
 
     | Filter ID | Operation                                | URI                                    | MIME            | Result |
     |---------|----------------------------------------|--------------------------------------|---------------|------|
-    | 1         | `http://tizen.org/appcontrol/operation/view` | `**NULL**`                             | `NULL`          | Fail   |
+    | 1         | `http://tizen.org/appcontrol/operation/view` | **`NULL`**                             | `NULL`          | Fail   |
     | 2         | `http://tizen.org/appcontrol/operation/view` | `file:///usr/share/icons/calendar.png` | `*/*`           | Pass   |
     | 3         | `http://tizen.org/appcontrol/operation/view` | `file:///*`                            | `*/*`           | Pass   |
     | 4         | `http://tizen.org/appcontrol/operation/view` | `file`                                 | `*/*`           | Pass   |
-    | 5         | `http://tizen.org/appcontrol/operation/view` | `**http**`                             | `*/*`           | Fail   |
+    | 5         | `http://tizen.org/appcontrol/operation/view` | **`http`**                             | `*/*`           | Fail   |
     | 6         | `http://tizen.org/appcontrol/operation/view` | `NULL`                                 | `image/png`     | Pass   |
-    | 7         | `http://tizen.org/appcontrol/operation/view` | `NULL`                                 | `**image/jpg**` | Fail   |
+    | 7         | `http://tizen.org/appcontrol/operation/view` | `NULL`                                 | **`image/jpg`** | Fail   |
 
 - Operation and MIME type provided:
 
@@ -290,10 +290,10 @@ resolving the application control:
     | 1         | `http://tizen.org/appcontrol/operation/view` | `NULL`                                 | `image/png`     | Pass   |
     | 2         | `http://tizen.org/appcontrol/operation/view` | `NULL`                                 | `image/*`       | Pass   |
     | 3         | `http://tizen.org/appcontrol/operation/view` | `NULL`                                 | `*/*`           | Pass   |
-    | 4         | `http://tizen.org/appcontrol/operation/view` | `file:///usr/share/icons/calendar.png` | `**NULL**`      | Fail   |
-    | 5         | `http://tizen.org/appcontrol/operation/view` | `NULL`                                 | `**image/jpg**` | Fail   |
-    | 6         | `http://tizen.org/appcontrol/operation/view` | `NULL`                                 | `**video/\***`  | Fail   |
-    | 7         | `http://tizen.org/appcontrol/operation/view` | `**http://tizen.org/favorites.png**`   | `image/png`     | Fail   |
+    | 4         | `http://tizen.org/appcontrol/operation/view` | `file:///usr/share/icons/calendar.png` | **`NULL`**      | Fail   |
+    | 5         | `http://tizen.org/appcontrol/operation/view` | `NULL`                                 | **`image/jpg`** | Fail   |
+    | 6         | `http://tizen.org/appcontrol/operation/view` | `NULL`                                 | **`video/*`**  | Fail   |
+    | 7         | `http://tizen.org/appcontrol/operation/view` | **`http://tizen.org/favorites.png`**   | `image/png`     | Fail   |
 
 - Operation, URI, and MIME type provided:
 
@@ -308,10 +308,10 @@ resolving the application control:
     | Filter ID | Operation                                | URI                                  | MIME        | Result |
     |---------|----------------------------------------|------------------------------------|-----------|------|
     | 1         | `http://tizen.org/appcontrol/operation/view` | `http://www.tizen.org/favorites.png` | `image/png` | Pass   |
-    | 2         | `http://tizen.org/appcontrol/operation/view` | `http://www.tizen.org/favorites.png` | `**NULL**`  | Fail   |
+    | 2         | `http://tizen.org/appcontrol/operation/view` | `http://www.tizen.org/favorites.png` | **`NULL`**  | Fail   |
     | 3         | `http://tizen.org/appcontrol/operation/view` | `http://www.tizen.org/*`             | `image/png` | Pass   |
     | 4         | `http://tizen.org/appcontrol/operation/view` | `http`                               | `image/png` | Pass   |
-    | 5         | `http://tizen.org/appcontrol/operation/view` | `**NULL**`                           | `image/png` | Fail   |
+    | 5         | `http://tizen.org/appcontrol/operation/view` | **`NULL`**                           | `image/png` | Fail   |
     | 6         | `http://tizen.org/appcontrol/operation/view` | `*`                                  | `*/*`       | Pass   |
 
 
@@ -480,24 +480,17 @@ static void AppControlReplyCallback(Tizen.Applications.AppControl launchRequest,
 ```
 
 <a name="export_appcontrol"></a>
-Application Control Export
+## Application Control Export
 
 You can allow other applications to launch your application and use your
 application features through application controls by exporting your
 application control functionalities. To allow other applications to
-launch your application implicitly without the application ID, declare
-your application control information in the `tizen-manifest.xml` file:
+launch your application implicitly without the application ID, specify
+your application control information in Visual Studio.
 
-```
-<app-control>
-   <mime name="application/xhtml+xml"/>
-   <operation name="http://tizen.org/appcontrol/operation/view"/>
-   <uri name="http://test.com"/>
-</app-control>
-<app-control>
-   <operation name="http://tizen.org/appcontrol/operation/call"/>
-</app-control>
-```
+**Figure: Exporting app control**
+
+![Exporting app control](./media/exporting_appcontrol.png)
 
 The operation, URI, and MIME type information is used when [resolving
 the application control](#resolution). The operation information is
@@ -506,13 +499,16 @@ application requesting a launch of your application must either specify
 your application ID (for an explicit launch) or have the same operation
 value and applicable URI and MIME type information (for an implicit
 launch).
+You can define privileges to restrict your application from launching. To launch
+your application, the caller application must request for launch permission
+by defining privileges in the `tizen-manifest.xml` file.
 
 > **Note**  
 > The URI or MIME type can contain wildcards, such as '\*', to
 match against given conditions in the application control:
--   In the MIME type, you can use 2 types of wildcards: `image/*` and
+> -   In the MIME type, you can use two types of wildcards: `image/*` and
     `*/*`.
--   In the URI, a more complex pattern of wildcards with similar
+> -   In the URI, a more complex pattern of wildcards with similar
     semantics as the standard `glob()` function is available: '\*'
     matches an arbitrary, possibly empty, string, and '?' matches an
     arbitrary character. Unlike in the `glob()` function, the '/'

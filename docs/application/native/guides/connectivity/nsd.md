@@ -35,7 +35,7 @@ To enable your application to use the network service discovery functionality:
 
 - To use the DNS-SD protocol:
 
-  1. To use the functions and data types of the DNSSD API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__DNSSD__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__NETWORK__DNSSD__MODULE.html) applications), include the `<dnssd.h>` header file in your application:
+  1. To use the functions and data types of the DNSSD API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__DNSSD__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__DNSSD__MODULE.html) applications), include the `<dnssd.h>` header file in your application:
 
      ```
      #include <dnssd.h>
@@ -59,7 +59,7 @@ To enable your application to use the network service discovery functionality:
 
 - To use the SSDP protocol:
 
-  1. To use the functions and data types of the SSDP API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__SSDP__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__NETWORK__SSDP__MODULE.html) applications), include the `<ssdp.h>` header file in your application:
+  1. To use the functions and data types of the SSDP API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__SSDP__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__SSDP__MODULE.html) applications), include the `<ssdp.h>` header file in your application:
 
      ```
      #include <ssdp.h>

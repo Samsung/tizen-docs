@@ -1,0 +1,1511 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen/tizen.css" media="screen">
+<script type="text/javascript" src="tizen/snippet.js"></script><title>Camera API</title>
+</head>
+<body id="content" onload="prettyPrint()">
+<div class="api" id="::Camera">
+<div class="title"><h1>Camera API (Tizen Extension)</h1></div>
+<div class="brief">
+ This API module provides interfaces for configuring camera options, recording video/audio, and capturing images.
+The API is designed to work together with <em>navigator.getUserMedia()</em> API to access media stream object
+and with <em>video</em> element to provide camera preview.
+        </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#interfaces">Interfaces</a><ul class="toc">
+<li>1.1. <a href="#::Camera::NavigatorTizenCamera">NavigatorTizenCamera</a>
+</li>
+<li>1.2. <a href="#::Camera::TizenCamera">TizenCamera</a>
+</li>
+<li>1.3. <a href="#::Camera::CreateCameraSuccessCallback">CreateCameraSuccessCallback</a>
+</li>
+<li>1.4. <a href="#::Camera::CameraErrorCallback">CameraErrorCallback</a>
+</li>
+<li>1.5. <a href="#::Camera::CameraControl">CameraControl</a>
+</li>
+<li>1.6. <a href="#::Camera::CameraControlSettings">CameraControlSettings</a>
+</li>
+<li>1.7. <a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a>
+</li>
+<li>1.8. <a href="#::Camera::CameraSettingErrorCallback">CameraSettingErrorCallback</a>
+</li>
+<li>1.9. <a href="#::Camera::CameraMediaRecorder">CameraMediaRecorder</a>
+</li>
+<li>1.10. <a href="#::Camera::CameraImageCapture">CameraImageCapture</a>
+</li>
+<li>1.11. <a href="#::Camera::CameraCapabilities">CameraCapabilities</a>
+</li>
+<li>1.12. <a href="#::Camera::CameraSize">CameraSize</a>
+</li>
+<li>1.13. <a href="#::Camera::CameraArea">CameraArea</a>
+</li>
+<li>1.14. <a href="#::Camera::CameraPictureSettings">CameraPictureSettings</a>
+</li>
+<li>1.15. <a href="#::Camera::CameraRecorderSettings">CameraRecorderSettings</a>
+</li>
+<li>1.16. <a href="#::Camera::CameraError">CameraError</a>
+</li>
+<li>1.17. <a href="#::Camera::CameraSettingErrors">CameraSettingErrors</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#api-features">Related Feature</a>
+</li>
+<li>3. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#::Camera::NavigatorTizenCamera">NavigatorTizenCamera</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#::Camera::TizenCamera">TizenCamera</a></td>
+<td>void <a href="#createCameraControlidp93720">createCameraControl</a> (<a href="w3c_dependencies.html#::W3C_API_Modules::MediaStream">MediaStream</a> stream, <a href="#::Camera::CreateCameraSuccessCallback">CreateCameraSuccessCallback</a> successCallback, <a href="#::Camera::CameraErrorCallback">CameraErrorCallback</a> errorCallback)</td>
+</tr>
+<tr>
+<td><a href="#::Camera::CreateCameraSuccessCallback">CreateCameraSuccessCallback</a></td>
+<td>void <a href="#handleEventidp103952">handleEvent</a> (<a href="#::Camera::CameraControl">CameraControl</a> cameraControl)</td>
+</tr>
+<tr>
+<td><a href="#::Camera::CameraErrorCallback">CameraErrorCallback</a></td>
+<td>void <a href="#handleEventidp108776">handleEvent</a> (<a href="#::Camera::CameraError">CameraError</a> error)</td>
+</tr>
+<tr>
+<td><a href="#::Camera::CameraControl">CameraControl</a></td>
+<td>void <a href="#applySettingsidp122160">applySettings</a> (<a href="#::Camera::CameraControlSettings">CameraControlSettings</a> settings, <a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraSettingErrorCallback">CameraSettingErrorCallback</a> onerror)<br>boolean <a href="#autoFocusidp128136">autoFocus</a> ()<br>void <a href="#releaseidp129904">release</a> ()</td>
+</tr>
+<tr>
+<td><a href="#::Camera::CameraControlSettings">CameraControlSettings</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a></td>
+<td>void <a href="#handleEventidp136864">handleEvent</a> ()</td>
+</tr>
+<tr>
+<td><a href="#::Camera::CameraSettingErrorCallback">CameraSettingErrorCallback</a></td>
+<td>void <a href="#handleEventidp140712">handleEvent</a> (<a href="#::Camera::CameraSettingErrors">CameraSettingErrors</a> errors)</td>
+</tr>
+<tr>
+<td><a href="#::Camera::CameraMediaRecorder">CameraMediaRecorder</a></td>
+<td>void <a href="#applySettingsidp150280">applySettings</a> (<a href="#::Camera::CameraRecorderSettings">CameraRecorderSettings</a> settings, <a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraSettingErrorCallback">CameraSettingErrorCallback</a> onerror)<br>void <a href="#startidp156256">start</a> (<a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraErrorCallback">CameraErrorCallback</a> onerror)<br>void <a href="#stopidp160832">stop</a> (<a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraErrorCallback">CameraErrorCallback</a> onerror)</td>
+</tr>
+<tr>
+<td><a href="#::Camera::CameraImageCapture">CameraImageCapture</a></td>
+<td>void <a href="#applySettingsidp171128">applySettings</a> (<a href="#::Camera::CameraPictureSettings">CameraPictureSettings</a> settings, <a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraSettingErrorCallback">CameraSettingErrorCallback</a> onerror)<br>void <a href="#takePictureidp177080">takePicture</a> (<a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraErrorCallback">CameraErrorCallback</a> onerror)</td>
+</tr>
+<tr>
+<td><a href="#::Camera::CameraCapabilities">CameraCapabilities</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#::Camera::CameraSize">CameraSize</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#::Camera::CameraArea">CameraArea</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#::Camera::CameraPictureSettings">CameraPictureSettings</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#::Camera::CameraRecorderSettings">CameraRecorderSettings</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#::Camera::CameraError">CameraError</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#::Camera::CameraSettingErrors">CameraSettingErrors</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="interfaces" id="interfaces">
+<h2>1. Interfaces</h2>
+<div class="interface" id="::Camera::NavigatorTizenCamera">
+<h3>1.1. NavigatorTizenCamera</h3>
+<div class="brief">
+ This interface defines a global object (under <em>navigator</em>) that exposes a single interface for creating a
+<em>CameraControl</em> object.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface NavigatorTizenCamera {
+
+        readonly attribute <a href="#::Camera::TizenCamera">TizenCamera</a> tizCamera;
+    };</pre>
+<pre class="webidl prettyprint">    <a href="w3c_dependencies.html#::W3C_API_Modules::Navigator">Navigator</a> implements <a href="#::Camera::NavigatorTizenCamera">NavigatorTizenCamera</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.2
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="tizCamera">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">TizenCamera </span><span class="name">tizCamera</span></span><div class="brief">
+ An attribute to store tizen camera object.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</li></ul>
+</div>
+</div>
+<div class="interface" id="::Camera::TizenCamera">
+<h3>1.2. TizenCamera</h3>
+<div class="brief">
+ This interface defines a factory method to create <em>CameraControl</em> object given the <em>MediaStream</em> object as input.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface TizenCamera {
+
+        void createCameraControl(<a href="w3c_dependencies.html#::W3C_API_Modules::MediaStream">MediaStream</a> stream, <a href="#::Camera::CreateCameraSuccessCallback">CreateCameraSuccessCallback</a> successCallback, <a href="#::Camera::CameraErrorCallback">CameraErrorCallback</a> errorCallback);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.2
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="createCameraControlidp93720"><code><b><span class="methodName">createCameraControl</span></b></code></dt>
+<dd>
+<div class="brief">
+ Asynchronously create CameraControl object using input stream.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void createCameraControl(<a href="w3c_dependencies.html#::W3C_API_Modules::MediaStream">MediaStream</a> stream, <a href="#::Camera::CreateCameraSuccessCallback">CreateCameraSuccessCallback</a> successCallback, <a href="#::Camera::CameraErrorCallback">CameraErrorCallback</a> errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/camera
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/audiorecorder
+            </p>
+<p><span class="remark"> Remark : </span>
+ For video recording and image capture, use <em>http://tizen.org/privilege/camera</em> privilege.
+For audio recording, use <em>http://tizen.org/privilege/audiorecorder</em> privilege.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">stream</span>:
+ Stream object obtained from getUserMedia. "audio" of MediaStreamOptions dictionary is supported
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ The method to invoke when CameraControl object is created successfully.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span>:
+ The method to invoke when an error occurs.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+navigator.webkitGetUserMedia({video:true,audio:true}, gotStream, noStream);
+
+/*
+   For audio recording, use the API as following:
+   navigator.webkitGetUserMedia({video:false,audio:true}, gotStream, noStream);
+
+   WARNING :
+   Audio recording is not supported in initial target platform version 2.2.1
+   Include the following check and guideline for the end user:
+   if (tizen.systeminfo.getCapabilities().platformVersion === "2.2.1")
+   {
+      &lt;Inform the user to upgrade his/her system OS to properly use this application&gt;
+   }
+*/
+
+function gotStream(stream)
+{
+   navigator.tizCamera.createCameraControl(stream, gotCamera, noCamera);
+}
+
+function noStream() {}
+
+function gotCamera(cam)
+{
+   /* CameraControl */
+   camera = cam;
+}
+
+function noCamera() {}
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="::Camera::CreateCameraSuccessCallback">
+<h3>1.3. CreateCameraSuccessCallback</h3>
+<div class="brief">
+ The success callback for TizenCamera.createCameraControl().
+          </div>
+<pre class="webidl prettyprint">    callback interface CreateCameraSuccessCallback {
+
+        void handleEvent(<a href="#::Camera::CameraControl">CameraControl</a> cameraControl);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.2
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="handleEventidp103952"><code><b><span class="methodName">handleEvent</span></b></code></dt>
+<dd>
+<div class="brief">
+ Called on successful creation of Camera Control object.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void handleEvent(<a href="#::Camera::CameraControl">CameraControl</a> cameraControl);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">cameraControl</span>:
+ Created camera control.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="::Camera::CameraErrorCallback">
+<h3>1.4. CameraErrorCallback</h3>
+<div class="brief">
+ The error callback for any camera error.
+          </div>
+<pre class="webidl prettyprint">    callback interface CameraErrorCallback {
+
+        void handleEvent(<a href="#::Camera::CameraError">CameraError</a> error);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.2
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="handleEventidp108776"><code><b><span class="methodName">handleEvent</span></b></code></dt>
+<dd>
+<div class="brief">
+ Called upon Camera API call errors.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void handleEvent(<a href="#::Camera::CameraError">CameraError</a> error);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">error</span>:
+ Error that occurred.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="::Camera::CameraControl">
+<h3>1.5. CameraControl</h3>
+<div class="brief">
+ This interface defines attributes and methods to configure camera options, record audio/video, and capture image.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface CameraControl {
+
+        readonly attribute <a href="#::Camera::CameraCapabilities">CameraCapabilities</a>   capabilities;
+
+        readonly attribute <a href="#::Camera::CameraMediaRecorder">CameraMediaRecorder</a>  recorder;
+
+        readonly attribute <a href="#::Camera::CameraImageCapture">CameraImageCapture</a>   image;
+
+
+        void applySettings(<a href="#::Camera::CameraControlSettings">CameraControlSettings</a> settings, <a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraSettingErrorCallback">CameraSettingErrorCallback</a> onerror);
+
+        boolean autoFocus();
+
+        void release();
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.2
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="capabilities">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">CameraCapabilities </span><span class="name">capabilities</span></span><div class="brief">
+ Represents a collection of camera capabilities that camera device provides.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</li>
+<li class="attribute" id="recorder">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">CameraMediaRecorder </span><span class="name">recorder</span></span><div class="brief">
+ Represents an object defines media recording related methods.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</li>
+<li class="attribute" id="image">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">CameraImageCapture </span><span class="name">image</span></span><div class="brief">
+ Represents an object defines image capture related methods.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="applySettingsidp122160"><code><b><span class="methodName">applySettings</span></b></code></dt>
+<dd>
+<div class="brief">
+ Method to apply new settings to CameraControl object.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void applySettings(<a href="#::Camera::CameraControlSettings">CameraControlSettings</a> settings, <a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraSettingErrorCallback">CameraSettingErrorCallback</a> onerror);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">settings</span>:
+ Settings for camera.
+                </li>
+          <li class="param">
+<span class="name">onsuccess</span>:
+ The method to invoke when a new setting is applied successfully.
+                </li>
+          <li class="param">
+<span class="name">onerror</span>:
+ The method to invoke when setting related error occurs.
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="autoFocusidp128136"><code><b><span class="methodName">autoFocus</span></b></code></dt>
+<dd>
+<div class="brief">
+ Method responsible for autofocus.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">boolean autoFocus();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</dd>
+<dt class="method" id="releaseidp129904"><code><b><span class="methodName">release</span></b></code></dt>
+<dd>
+<div class="brief">
+ Method to release the camera resource when an application exits the use of camera.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void release();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="dictionary" id="::Camera::CameraControlSettings">
+<h3>1.6. CameraControlSettings</h3>
+<div class="brief">
+ The CameraControlSettings object is used as setting parameter in applySettings method.
+          </div>
+<pre class="webidl prettyprint">    dictionary CameraControlSettings {
+
+        <a href="#::Camera::CameraArea">CameraArea</a> focusArea;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.2
+          </p>
+<div class="attributes">
+<h4>Dictionary members</h4>
+<dl>
+<dt class="member" id="focusArea"><span class="attrName"><a href="#::Camera::CameraArea">CameraArea</a> focusArea</span></dt>
+<dd>
+<div class="brief">
+ Specifies focus area bounds.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="::Camera::CameraSuccessCallback">
+<h3>1.7. CameraSuccessCallback</h3>
+<div class="brief">
+ Success callback interface for camera methods.
+          </div>
+<pre class="webidl prettyprint">    callback interface CameraSuccessCallback {
+
+        void handleEvent();
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.2
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="handleEventidp136864"><code><b><span class="methodName">handleEvent</span></b></code></dt>
+<dd>
+<div class="brief">
+ Called on success.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void handleEvent();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="::Camera::CameraSettingErrorCallback">
+<h3>1.8. CameraSettingErrorCallback</h3>
+<div class="brief">
+ Error callback interface for <em>applySettings</em> method.
+          </div>
+<pre class="webidl prettyprint">        callback interface CameraSettingErrorCallback {
+
+            void handleEvent(<a href="#::Camera::CameraSettingErrors">CameraSettingErrors</a> errors);
+        };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.2
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="handleEventidp140712"><code><b><span class="methodName">handleEvent</span></b></code></dt>
+<dd>
+<div class="brief">
+ Called on error.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void handleEvent(<a href="#::Camera::CameraSettingErrors">CameraSettingErrors</a> errors);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">errors</span>:
+ Containing error codes.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="::Camera::CameraMediaRecorder">
+<h3>1.9. CameraMediaRecorder</h3>
+<div class="brief">
+ This interface defines media recording related methods.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface CameraMediaRecorder {
+
+        attribute   onrecordingstatechange;
+
+
+        void applySettings(<a href="#::Camera::CameraRecorderSettings">CameraRecorderSettings</a> settings, <a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraSettingErrorCallback">CameraSettingErrorCallback</a> onerror);
+
+
+        void start(<a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraErrorCallback">CameraErrorCallback</a> onerror);
+
+
+        void stop(<a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraErrorCallback">CameraErrorCallback</a> onerror);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.2
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="onrecordingstatechange">
+<span class="attrName"><span class="type">EventHandler </span><span class="name">onrecordingstatechange</span></span><div class="brief">
+ Recording state change event handler.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</li></ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="applySettingsidp150280"><code><b><span class="methodName">applySettings</span></b></code></dt>
+<dd>
+<div class="brief">
+ Set new settings for camera recording.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void applySettings(<a href="#::Camera::CameraRecorderSettings">CameraRecorderSettings</a> settings, <a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraSettingErrorCallback">CameraSettingErrorCallback</a> onerror);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">settings</span>:
+ New settings for camera recording.
+                </li>
+          <li class="param">
+<span class="name">onsuccess</span>:
+ The method to invoke when new settings is applied successfully.
+                </li>
+          <li class="param">
+<span class="name">onerror</span>:
+ The method to invoke when some error occurs.
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="startidp156256"><code><b><span class="methodName">start</span></b></code></dt>
+<dd>
+<div class="brief">
+ Start recording video using camera device.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void start(<a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraErrorCallback">CameraErrorCallback</a> onerror);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">onsuccess</span>:
+ The method to invoke when recording is started successfully.
+                </li>
+          <li class="param">
+<span class="name">onerror</span>:
+ The method to invoke when some error occurs.
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="stopidp160832"><code><b><span class="methodName">stop</span></b></code></dt>
+<dd>
+<div class="brief">
+ Stop recording video using camera device.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void stop(<a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraErrorCallback">CameraErrorCallback</a> onerror);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">onsuccess</span>:
+ The method to invoke when recording is started successfully.
+                </li>
+          <li class="param">
+<span class="name">onerror</span>:
+ The method to invoke when en error occurs.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="::Camera::CameraImageCapture">
+<h3>1.10. CameraImageCapture</h3>
+<div class="brief">
+ This interface defines image capture related methods.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface CameraImageCapture {
+
+        attribute  onshutter;
+
+        void applySettings(<a href="#::Camera::CameraPictureSettings">CameraPictureSettings</a> settings, <a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraSettingErrorCallback">CameraSettingErrorCallback</a> onerror);
+
+        void takePicture(<a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraErrorCallback">CameraErrorCallback</a> onerror);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.2
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="onshutter">
+<span class="attrName"><span class="type">EventHandler </span><span class="name">onshutter</span></span><div class="brief">
+ Shutter event handler.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</li></ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="applySettingsidp171128"><code><b><span class="methodName">applySettings</span></b></code></dt>
+<dd>
+<div class="brief">
+ Set new settings for camera image capture.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void applySettings(<a href="#::Camera::CameraPictureSettings">CameraPictureSettings</a> settings, <a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraSettingErrorCallback">CameraSettingErrorCallback</a> onerror);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">settings</span>:
+ New settings for photo.
+                </li>
+          <li class="param">
+<span class="name">onsuccess</span>:
+ The method to invoke when new settings is applied successfully.
+                </li>
+          <li class="param">
+<span class="name">onerror</span>:
+ The method to invoke when en error occurs.
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="takePictureidp177080"><code><b><span class="methodName">takePicture</span></b></code></dt>
+<dd>
+<div class="brief">
+ Take picture using camera.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void takePicture(<a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraErrorCallback">CameraErrorCallback</a> onerror);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param"><span class="name">onsuccess</span></li>
+          <li class="param"><span class="name">onerror</span></li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="::Camera::CameraCapabilities">
+<h3>1.11. CameraCapabilities</h3>
+<div class="brief">
+ This interface defines a collection of camera capabilities that the camera device provides.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface CameraCapabilities {
+
+        readonly attribute <a href="#::Camera::CameraSize">CameraSize</a>[] pictureSizes;
+
+        readonly attribute DOMString[]  pictureFormats;
+
+        readonly attribute DOMString[]  recordingFormats;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.2
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="pictureSizes">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">CameraSize[]
+					</span><span class="name">pictureSizes</span></span><div class="brief">
+ Array containing available picture sizes.
+            </div>
+<div class="description">
+            <p>
+The following values must be supported:
+            </p>
+            <p>
+Device            </p>
+            <ul>
+              <li>
+[320, 240]              </li>
+              <li>
+[320, 320]              </li>
+              <li>
+[640, 480]              </li>
+              <li>
+[640, 640]              </li>
+              <li>
+[1280, 720]              </li>
+              <li>
+[1280, 960]              </li>
+            </ul>
+            <p>
+Emulator            </p>
+            <ul>
+              <li>
+[320, 240]              </li>
+              <li>
+[640, 480]              </li>
+            </ul>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</li>
+<li class="attribute" id="pictureFormats">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString[]
+					</span><span class="name">pictureFormats</span></span><div class="brief">
+ Array containing available picture formats.
+            </div>
+<div class="description">
+            <p>
+The following formats must be supported:
+            </p>
+            <ul>
+              <li>
+"jpeg"              </li>
+              <li>
+"png"              </li>
+            </ul>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</li>
+<li class="attribute" id="recordingFormats">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString[]
+					</span><span class="name">recordingFormats</span></span><div class="brief">
+ Array containing available picture formats.
+            </div>
+<div class="description">
+            <p>
+The following formats must be supported:
+            </p>
+            <ul>
+              <li>
+"3gp"              </li>
+              <li>
+"amr"              </li>
+            </ul>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="dictionary" id="::Camera::CameraSize">
+<h3>1.12. CameraSize</h3>
+<div class="brief">
+ Camera size dictionary.
+          </div>
+<pre class="webidl prettyprint">    dictionary CameraSize {
+
+        long width;
+
+        long height;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.2
+          </p>
+<div class="attributes">
+<h4>Dictionary members</h4>
+<dl>
+<dt class="member" id="width"><span class="attrName">long width</span></dt>
+<dd>
+<div class="brief">
+ Width of photo/video.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</dd>
+<dt class="member" id="height"><span class="attrName">long height</span></dt>
+<dd>
+<div class="brief">
+ Height of photo/video.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="dictionary" id="::Camera::CameraArea">
+<h3>1.13. CameraArea</h3>
+<div class="brief">
+ Camera area is used to choose specific metric and focus area for the camera, and it contains position of bounds of the area.
+          </div>
+<pre class="webidl prettyprint">    dictionary CameraArea {
+
+        long top;
+
+        long left;
+
+        long bottom;
+
+        long right;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.2
+          </p>
+<div class="attributes">
+<h4>Dictionary members</h4>
+<dl>
+<dt class="member" id="top"><span class="attrName">long top</span></dt>
+<dd>
+<div class="brief">
+ Top position of selected area.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</dd>
+<dt class="member" id="left"><span class="attrName">long left</span></dt>
+<dd>
+<div class="brief">
+ Left position of selected area.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</dd>
+<dt class="member" id="bottom"><span class="attrName">long bottom</span></dt>
+<dd>
+<div class="brief">
+ Bottom position of selected area.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</dd>
+<dt class="member" id="right"><span class="attrName">long right</span></dt>
+<dd>
+<div class="brief">
+ Right position of selected area.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="dictionary" id="::Camera::CameraPictureSettings">
+<h3>1.14. CameraPictureSettings</h3>
+<div class="brief">
+ Camera picture settings is used to set the size, the format, and the file name of pictures.
+          </div>
+<pre class="webidl prettyprint">    dictionary CameraPictureSettings {
+
+        <a href="#::Camera::CameraSize">CameraSize</a> pictureSize;
+
+        DOMString pictureFormat;
+
+        DOMString fileName;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.2
+          </p>
+<div class="attributes">
+<h4>Dictionary members</h4>
+<dl>
+<dt class="member" id="pictureSize"><span class="attrName"><a href="#::Camera::CameraSize">CameraSize</a> pictureSize</span></dt>
+<dd>
+<div class="brief">
+ Contains size of picture. Only sizes in CameraCapabilities are allowed.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</dd>
+<dt class="member" id="pictureFormat"><span class="attrName">DOMString pictureFormat</span></dt>
+<dd>
+<div class="brief">
+ Picture format. Available formats described in CameraCapabilities.pictureFormats.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</dd>
+<dt class="member" id="fileName"><span class="attrName">DOMString fileName</span></dt>
+<dd>
+<div class="brief">
+ File name (without directory) of the picture taken. Files are stored in "/opt/usr/media/Images".
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="dictionary" id="::Camera::CameraRecorderSettings">
+<h3>1.15. CameraRecorderSettings</h3>
+<div class="brief">
+ Camera recorder settings is used to set the maximum file size, the recording format, and the file name of recording video.
+          </div>
+<pre class="webidl prettyprint">    dictionary CameraRecorderSettings {
+
+
+        long maxFileSizeBytes;
+
+        DOMString recordingFormat;
+
+        DOMString fileName;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.2
+          </p>
+<div class="attributes">
+<h4>Dictionary members</h4>
+<dl>
+<dt class="member" id="maxFileSizeBytes"><span class="attrName">long maxFileSizeBytes</span></dt>
+<dd>
+<div class="brief">
+ Max size of file in bytes. Maximum file size is 10MB (10485760 bytes).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</dd>
+<dt class="member" id="recordingFormat"><span class="attrName">DOMString recordingFormat</span></dt>
+<dd>
+<div class="brief">
+ Format of recording video. Available formats are listed in CameraCapabilities.recordingFormats.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</dd>
+<dt class="member" id="fileName"><span class="attrName">DOMString fileName</span></dt>
+<dd>
+<div class="brief">
+ File name (without directory) of the recorded video. Files are stored in "/opt/usr/media/Videos".
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="::Camera::CameraError">
+<h3>1.16. CameraError</h3>
+<div class="brief">
+ This interface defines attributes of object passed as error to CameraErrorCallback.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface CameraError {
+
+        readonly attribute unsigned short code;
+
+        const unsigned short CREATION_FAILED = 0;
+
+        const unsigned short PERMISSION_DENIED = 1;
+
+        const unsigned short NO_CAMERA = 2;
+
+        const unsigned short PIPELINE_ERR = 3;
+
+    const unsigned short FILE_WRITE_ERR = 4;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.2
+          </p>
+<div class="consts">
+<h4>Constants</h4>
+<dl>
+<li class="const" id="::Camera::CameraError::CREATION_FAILED">
+<span class="name">CREATION_FAILED</span><div class="brief">
+ Code for error occurred during object creation.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<br><br>
+</li>
+<li class="const" id="::Camera::CameraError::PERMISSION_DENIED">
+<span class="name">PERMISSION_DENIED</span><div class="brief">
+ Code for error occurred on permission denied exception.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<br><br>
+</li>
+<li class="const" id="::Camera::CameraError::NO_CAMERA">
+<span class="name">NO_CAMERA</span><div class="brief">
+ Code for error occurred when device has no available camera.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<br><br>
+</li>
+<li class="const" id="::Camera::CameraError::PIPELINE_ERR">
+<span class="name">PIPELINE_ERR</span><div class="brief">
+ Code for error occurred on pipeline error.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<br><br>
+</li>
+<li class="const" id="::Camera::CameraError::FILE_WRITE_ERR">
+<span class="name">FILE_WRITE_ERR</span><div class="brief">
+ Code for error occurred during write to file.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<br><br>
+</li>
+</dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="code">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned short </span><span class="name">code</span></span><div class="brief">
+ Error code.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</li></ul>
+</div>
+</div>
+<div class="interface" id="::Camera::CameraSettingErrors">
+<h3>1.17. CameraSettingErrors</h3>
+<div class="brief">
+ Error This interface defines attributes of object passed as error to CameraSettingErrorCallback.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface CameraSettingErrors {
+
+        readonly attribute unsigned short[] codes;
+
+        const unsigned short FOCUS_AREA_ERR = 0;
+
+        const unsigned short PICTURE_SIZE_ERR = 1;
+
+        const unsigned short PICTURE_FORMAT_ERR = 2;
+
+        const unsigned short RECORDING_FORMAT_ERR = 3;
+
+        const unsigned short FILENAME_ERR = 4;
+
+        const unsigned short MAX_FILE_SIZE_BYTES_ERR = 5;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.2
+          </p>
+<div class="consts">
+<h4>Constants</h4>
+<dl>
+<li class="const" id="::Camera::CameraSettingErrors::FOCUS_AREA_ERR">
+<span class="name">FOCUS_AREA_ERR</span><div class="brief">
+ Code for invalid focus area.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<br><br>
+</li>
+<li class="const" id="::Camera::CameraSettingErrors::PICTURE_SIZE_ERR">
+<span class="name">PICTURE_SIZE_ERR</span><div class="brief">
+ Code for invalid picture size.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<br><br>
+</li>
+<li class="const" id="::Camera::CameraSettingErrors::PICTURE_FORMAT_ERR">
+<span class="name">PICTURE_FORMAT_ERR</span><div class="brief">
+ Code for invalid picture format.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<br><br>
+</li>
+<li class="const" id="::Camera::CameraSettingErrors::RECORDING_FORMAT_ERR">
+<span class="name">RECORDING_FORMAT_ERR</span><div class="brief">
+ Code for invalid recording format.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<br><br>
+</li>
+<li class="const" id="::Camera::CameraSettingErrors::FILENAME_ERR">
+<span class="name">FILENAME_ERR</span><div class="brief">
+ Code for invalid file name.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<br><br>
+</li>
+<li class="const" id="::Camera::CameraSettingErrors::MAX_FILE_SIZE_BYTES_ERR">
+<span class="name">MAX_FILE_SIZE_BYTES_ERR</span><div class="brief">
+ Code for invalid max file size.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+<br><br>
+</li>
+</dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="codes">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned short[]
+					</span><span class="name">codes</span></span><div class="brief">
+ Error code.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.2
+            </p>
+</li></ul>
+</div>
+</div>
+</div>
+<h2 id="api-features">2. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+                    It is recommended to design feature related code in a modular way. You can check if this API is supported with <em>tizen.systeminfo.getCapabilities()</em> and decide enable/disable codes that need this API.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee the running of this application on a device with audio recording, define the following requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/media.audio_recording</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee the running of this application on a device with image capture, define the following requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/media.image_capture</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee the running of this application on a device with video recording, define the following requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/media.video_recording</li>
+</div>
+<p></p>
+
+</div>
+<h2 id="full-webidl">3. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Camera {
+
+    [NoInterfaceObject] interface NavigatorTizenCamera {
+
+        readonly attribute <a href="#::Camera::TizenCamera">TizenCamera</a> tizCamera;
+    };
+    <a href="w3c_dependencies.html#::W3C_API_Modules::Navigator">Navigator</a> implements <a href="#::Camera::NavigatorTizenCamera">NavigatorTizenCamera</a>;
+
+
+    [NoInterfaceObject] interface TizenCamera {
+
+        void createCameraControl(<a href="w3c_dependencies.html#::W3C_API_Modules::MediaStream">MediaStream</a> stream, <a href="#::Camera::CreateCameraSuccessCallback">CreateCameraSuccessCallback</a> successCallback, <a href="#::Camera::CameraErrorCallback">CameraErrorCallback</a> errorCallback);
+    };
+
+
+    callback interface CreateCameraSuccessCallback {
+
+        void handleEvent(<a href="#::Camera::CameraControl">CameraControl</a> cameraControl);
+    };
+
+
+    callback interface CameraErrorCallback {
+
+        void handleEvent(<a href="#::Camera::CameraError">CameraError</a> error);
+    };
+
+
+    [NoInterfaceObject] interface CameraControl {
+
+        readonly attribute <a href="#::Camera::CameraCapabilities">CameraCapabilities</a>   capabilities;
+
+        readonly attribute <a href="#::Camera::CameraMediaRecorder">CameraMediaRecorder</a>  recorder;
+
+        readonly attribute <a href="#::Camera::CameraImageCapture">CameraImageCapture</a>   image;
+
+
+        void applySettings(<a href="#::Camera::CameraControlSettings">CameraControlSettings</a> settings, <a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraSettingErrorCallback">CameraSettingErrorCallback</a> onerror);
+
+        boolean autoFocus();
+
+        void release();
+    };
+
+
+    dictionary CameraControlSettings {
+
+        <a href="#::Camera::CameraArea">CameraArea</a> focusArea;
+    };
+
+
+    callback interface CameraSuccessCallback {
+
+        void handleEvent();
+    };
+
+
+        callback interface CameraSettingErrorCallback {
+
+            void handleEvent(<a href="#::Camera::CameraSettingErrors">CameraSettingErrors</a> errors);
+        };
+
+
+    [NoInterfaceObject] interface CameraMediaRecorder {
+
+        attribute   onrecordingstatechange;
+
+
+        void applySettings(<a href="#::Camera::CameraRecorderSettings">CameraRecorderSettings</a> settings, <a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraSettingErrorCallback">CameraSettingErrorCallback</a> onerror);
+
+
+        void start(<a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraErrorCallback">CameraErrorCallback</a> onerror);
+
+
+        void stop(<a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraErrorCallback">CameraErrorCallback</a> onerror);
+    };
+
+
+    [NoInterfaceObject] interface CameraImageCapture {
+
+        attribute  onshutter;
+
+        void applySettings(<a href="#::Camera::CameraPictureSettings">CameraPictureSettings</a> settings, <a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraSettingErrorCallback">CameraSettingErrorCallback</a> onerror);
+
+        void takePicture(<a href="#::Camera::CameraSuccessCallback">CameraSuccessCallback</a> onsuccess, <a href="#::Camera::CameraErrorCallback">CameraErrorCallback</a> onerror);
+    };
+
+
+    [NoInterfaceObject] interface CameraCapabilities {
+
+        readonly attribute <a href="#::Camera::CameraSize">CameraSize</a>[] pictureSizes;
+
+        readonly attribute DOMString[]  pictureFormats;
+
+        readonly attribute DOMString[]  recordingFormats;
+    };
+
+
+    dictionary CameraSize {
+
+        long width;
+
+        long height;
+    };
+
+
+    dictionary CameraArea {
+
+        long top;
+
+        long left;
+
+        long bottom;
+
+        long right;
+    };
+
+
+    dictionary CameraPictureSettings {
+
+        <a href="#::Camera::CameraSize">CameraSize</a> pictureSize;
+
+        DOMString pictureFormat;
+
+        DOMString fileName;
+    };
+
+
+    dictionary CameraRecorderSettings {
+
+
+        long maxFileSizeBytes;
+
+        DOMString recordingFormat;
+
+        DOMString fileName;
+    };
+
+
+    [NoInterfaceObject] interface CameraError {
+
+        readonly attribute unsigned short code;
+
+        const unsigned short CREATION_FAILED = 0;
+
+        const unsigned short PERMISSION_DENIED = 1;
+
+        const unsigned short NO_CAMERA = 2;
+
+        const unsigned short PIPELINE_ERR = 3;
+
+    const unsigned short FILE_WRITE_ERR = 4;
+    };
+
+
+    [NoInterfaceObject] interface CameraSettingErrors {
+
+        readonly attribute unsigned short[] codes;
+
+        const unsigned short FOCUS_AREA_ERR = 0;
+
+        const unsigned short PICTURE_SIZE_ERR = 1;
+
+        const unsigned short PICTURE_FORMAT_ERR = 2;
+
+        const unsigned short RECORDING_FORMAT_ERR = 3;
+
+        const unsigned short FILENAME_ERR = 4;
+
+        const unsigned short MAX_FILE_SIZE_BYTES_ERR = 5;
+    };
+};</pre>
+</div>
+<div id="footer">
+<div class="copyright" align="center">
+ 		 Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+ 		 	</div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

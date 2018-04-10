@@ -25,7 +25,7 @@ The main features of the Bundle API include:
 
 To enable your application to use the bundle functionality:
 
-1. To use the functions and data types of the Bundle API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CORE__LIB__BUNDLE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CORE__LIB__BUNDLE__MODULE.html) applications), include the `<bundle.h>` header file in your application:
+1. To use the functions and data types of the Bundle API (in [mobile](../../api/mobile/latest/group__CORE__LIB__BUNDLE__MODULE.html) and [wearable](../../api/wearable/latest/group__CORE__LIB__BUNDLE__MODULE.html) applications), include the `<bundle.h>` header file in your application:
 
    ```
    #include <bundle.h>

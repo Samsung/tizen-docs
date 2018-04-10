@@ -49,7 +49,7 @@ The main features of the External Output Manager API include:
 
 To enable your application to use the EOM functionality:
 
-1. To use the functions and data types of the External Output Manager API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__UI__EOM__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__UI__EOM__MODULE.html) applications), include the `<eom.h>` header file in your application:
+1. To use the functions and data types of the External Output Manager API (in [mobile](../../api/mobile/latest/group__CAPI__UI__EOM__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UI__EOM__MODULE.html) applications), include the `<eom.h>` header file in your application:
 
     ```
     #include <eom.h>

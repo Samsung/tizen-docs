@@ -17,9 +17,9 @@ coupled devices.
 To initialize NFC:
 
 1.  To use the functions and data types of the NFC API (in
-    [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__NFC__MODULE.html)
+    [mobile](../../api/mobile/latest/group__CAPI__NETWORK__NFC__MODULE.html)
     and
-    [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__NETWORK__NFC__MODULE.html)
+    [wearable](../../api/wearable/latest/group__CAPI__NETWORK__NFC__MODULE.html)
     applications), include the `<nfc.h>` header file in your
     application:
 

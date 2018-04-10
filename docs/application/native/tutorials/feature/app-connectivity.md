@@ -19,7 +19,7 @@ following features:
     -   You can download HTTP content from the Internet through a
         network connection. You can use an open source
         [libcurl](http://curl.haxx.se/libcurl/) library, or a Tizen
-        [Download](../../../../org.tizen.native.mobile.apireference/group__CAPI__WEB__DOWNLOAD__MODULE.html)
+        [Download](../../api/mobile/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html)
         API for the download tasks.
     -   When you use the data services of various networks, the
         responses are often composed in XML or JSON format. To handle

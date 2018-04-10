@@ -2,7 +2,7 @@
 
 In the Tizen Studio, you can perform all the development activities from the application project creation to testing and packaging.
 
-> **Note**	 
+> **Note**  
 > This section covers the tool details supported in mobile and wearable Web application development. Although most of the features are also supported in TV Web application development, no TV-specific details are included within the topics in this section. For more information on TV application development tools, see the [Samsung Developers Smart TV site](http://developer.samsung.com/tv/develop).
 
 The Tizen Studio provides various tools to help you with the different Web application development process phases:
@@ -13,7 +13,9 @@ The Tizen Studio provides various tools to help you with the different Web appli
 
 - [Writing and Editing Code](coding.md)
 
-  You can edit HTML, JS, and CSS files in specific editors, and preview how the changing code affects the application screen. You can also use the live editing feature to modify the application while it is running.You can use the content assist, privilege checker, and code cleaning tools to speed up the code writing and verification tasks. With the REST Viewer tool, you can emulate interaction with a Web service. In addition, you can modify various Tizen Studio preferences to ensure that the code editing environment suits your needs.
+  You can edit HTML, JS, and CSS files in specific editors, and preview how the changing code affects the application screen. You can also use the live editing feature to modify the application while it is running.
+
+  You can use the content assist, privilege checker, and code cleaning tools to speed up the code writing and verification tasks. With the REST Viewer tool, you can emulate interaction with a Web service. In addition, you can modify various Tizen Studio preferences to ensure that the code editing environment suits your needs.
 
 - [Configuring Your Application](configuring.md)
 

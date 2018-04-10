@@ -1,6 +1,6 @@
 # Label
 
-The label UI component displays texts with a simple HTML-like markup. For more information, see the [Label](../../../../../org.tizen.native.mobile.apireference/group__Elm__Label.html) API.
+The label UI component displays texts with a simple HTML-like markup. For more information, see the [Label](../../../../api/mobile/latest/group__Elm__Label.html) API.
 
 This feature is supported in mobile applications only.
 

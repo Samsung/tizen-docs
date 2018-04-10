@@ -39,15 +39,15 @@ The following table defines the [Tizen.NUI.BaseComponents.ImageView](https://dev
 
 | Property             | Type        | Description                              |
 |--------------------|-----------|----------------------------------------|
-| `ResourceUrl`        | `string`    | Image file path                      |
-| `ImageMap`           | `Map`       | Property map associated with a given image |
+| `ResourceUrl`        | `string`    | The file path of the Image.        |
+| `ImageMap`           | `Map`       | Property map associated with a given image. |
 | `PreMultipliedAlpha` | `bool`      | Whether the image is opacity-adjusted<br>If `PreMultipliedAlpha` is `true`, the RGB  components represent the color of the object or pixel, adjusted for its opacity by multiplication. If `false`, the opacity is ignored.  |
 | `PixelArea`          | `Vector4`   | Image subarea defined with relative area  values: x coordinate for the top-left corner, y coordinate for the top-left corner, width, and height. To set the subarea as the whole image area, use `[0.0, 0.0, 1.0, 1.0]`.<br>For example, on a 200 x 200 pixel image, the  value `[0.25, 0.5, 0.5, 0.5]` represents a subarea of   that image with the  following coordinates:<br><br>-   Top left: 50, 100<br>-   Top right: 150, 100<br>-   Bottom left: 50, 200<br>-   Bottom right: 150, 200        |
 | `Border`             | `Rectangle` | Image border, specified  in the following order:  left, right, bottom, and  top. For N-Patch images only.         |
 | `BorderOnly`         | `bool`      | Whether to draw only the borders. For N-Patch  images only.  |
-| `SynchronousLoading` | `bool`      | Whether the image is   synchronous. For N-Patch images only.     |
+| `SynchronousLoading` | `bool`      | Whether the image is synchronous. For N-Patch images only.     |
 
 
 ## Related Information
-* Dependencies
+- Dependencies
   -   Tizen 4.0 and Higher

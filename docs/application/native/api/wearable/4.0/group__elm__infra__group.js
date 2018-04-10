@@ -1,0 +1,28 @@
+var group__elm__infra__group =
+[
+    [ "AT-SPI2 Accessibility", "group__ATSPI.html", null ],
+    [ "Accessibility", "group__elm__accessibility__group.html", "group__elm__accessibility__group" ],
+    [ "App", "group__Elm__App.html", null ],
+    [ "Caches", "group__Elm__Caches.html", null ],
+    [ "CopyPaste", "group__CopyPaste.html", null ],
+    [ "Cursors", "group__Elm__Cursors.html", null ],
+    [ "Debug", "group__Elm__Debug.html", null ],
+    [ "Elementary Config", "group__Elm__Config.html", null ],
+    [ "Elementary Engine", "group__Elm__Engine.html", "group__Elm__Engine" ],
+    [ "Elementary Fonts", "group__Elm__Fonts.html", null ],
+    [ "Elementary Gen Item", "group__elm__gen__group.html", null ],
+    [ "Elementary Profile", "group__Elm__Profile.html", null ],
+    [ "Elementary Scrolling", "group__Elm__Scrolling.html", null ],
+    [ "Fingers", "group__Elm__Fingers.html", null ],
+    [ "Focus", "group__Elm__Focus.html", null ],
+    [ "General", "group__Elm__General.html", null ],
+    [ "Gesture Layer", "group__Elm__Gesture__Layer.html", null ],
+    [ "Mirroring", "group__Elm__Mirroring.html", null ],
+    [ "Password show last", "group__Elm__Password__last__show.html", null ],
+    [ "Scrollhints", "group__Elm__Scrollhints.html", null ],
+    [ "Styles", "group__Elm__Styles.html", null ],
+    [ "Theme", "group__Elm__Theme.html", null ],
+    [ "Transit", "group__Elm__Transit.html", null ],
+    [ "Widget Scaling", "group__Elm__Scaling.html", null ],
+    [ "Widget Tree Navigation", "group__Elm__WidgetNavigation.html", null ]
+];

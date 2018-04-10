@@ -25,9 +25,9 @@ application is using, do one of the following:
     For example, if an application wants to use location information, it
     can check the device capability by using the `system_info_get_XXX()`
     function of the System Information API (in
-    [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html)
+    [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html)
     and
-    [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html) applications).
+    [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html) applications).
     If the device supports GPS, the application uses GPS information,
     and if the device supports WPS only, the application uses WPS
     information instead of GPS.

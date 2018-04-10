@@ -1,0 +1,239 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Navigation Bar</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>Navigation Bar</h1>
+
+
+<p>The navigation bar component is used inside the header to navigate back and forth according to the navigational history array, which is created by the application. By clicking a horizontally-listed element on the navigation bar, you can move to the target page.</p>
+
+<table class="note">
+	<tbody>
+		<tr>
+			<th class="note">Note</th>
+		</tr>
+		<tr>
+			<td class="note">This component is supported since Tizen 2.3.</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	
+		<li><a href="#default-selector">Default Selector</a>
+			
+		<li><a href="#html-examples">HTML Examples</a>
+		</li>
+			
+		</li>
+
+		<li><a href="#methods-list">Methods</a>
+			
+		</li>
+	
+</ol>
+
+<h2><a id="default-selector"></a>Default Selector</h2>
+
+<p>Make the navigation component with the <code>data-role=&quot;navigation&quot;</code> attribute. For semantic understanding, use the <code>nav</code> element.</p>
+
+<pre class="prettyprint">&lt;div data-role=&quot;page&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div data-role=&quot;header&quot; data-position=&quot;fixed&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;title&lt;/h1&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nav data-role=&quot;navigation&quot; id=&quot;navigation&quot;&gt;&lt;/nav&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div data-role=&quot;content&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h2><a id="html-examples"></a>HTML Examples</h2>
+
+<p>To create a navigation bar, an array containing the navigation history is required. Each value of the array must have an identifiable value, such as a name. In the following example, the array is named as &quot;historyArraytoUse&quot;.</p>
+<p>The navigation bar component only provides the creation of the visual navigation bar, no functional navigation. You must separately implement the navigational function in the application using other methods, such as <code>history.go()</code>.</p>
+
+<ul><li><p>Declare the navigation in the HTML code using the <code>data-role</code> attribute:</p></li>
+<pre class="prettyprint">&lt;div data-role=&quot;page&quot; id=&quot;navigation-bar&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;!--Declare navigation in header--&gt;
+&nbsp;&nbsp;&nbsp;&lt;div data-role=&quot;header&quot; data-position=&quot;fixed&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Navigation bar&lt;/h1&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nav data-role=&quot;navigation&quot; id=&quot;navigation&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;!--You can include several pages where to move--&gt;
+&nbsp;&nbsp;&nbsp;&lt;div data-role=&quot;content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul data-role=&quot;listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=&quot;navigation1.html&quot;&gt;Move to Navigation1&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=&quot;navigation2.html&quot;&gt;Move to Navigation2&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+</pre></li>
+
+<li><p>Make a history array and create the navigation bar in the JavaScript code:</p></li>
+<pre class="prettyprint">
+var historyMaker = function(event) 
+{
+&nbsp;&nbsp;&nbsp;// Store the browsing history in navigationHistory array
+&nbsp;&nbsp;&nbsp;var iteration = window.navigationHistory.length,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i = 0,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;targetId = event.target.id;
+
+&nbsp;&nbsp;&nbsp;if (!iteration) 
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navigationHistory.push({pageId : targetId});
+&nbsp;&nbsp;&nbsp;} 
+&nbsp;&nbsp;&nbsp;else 
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (i = 0; i &lt; iteration; i++)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (targetId === navigationHistory[i].pageId) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navigationHistory.splice(i + 1, iteration - i - 1);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (i &gt;= iteration) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navigationHistory.push({pageId : targetId});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;}
+},
+
+historyDrawer = function(event) 
+{
+&nbsp;&nbsp;&nbsp;var navi = document.getElementById(&quot;navigation&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;naviWidget = tau.widget.Navigation(navi);
+&nbsp;&nbsp;&nbsp;if (document.getElementsByClassName(&quot;ui-navigation-ul&quot;)[0].childElementCount) 
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tau.warn(&quot;Create method should be called only once in a page&quot;);
+&nbsp;&nbsp;&nbsp;} 
+&nbsp;&nbsp;&nbsp;else 
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Create navigation component with navigationHistory
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;naviWidget.create(navigationHistory);
+&nbsp;&nbsp;&nbsp;}
+},
+
+historyMove = function(event) 
+{
+&nbsp;&nbsp;&nbsp;var selectedIndex = event.originalEvent.detail,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;barLength = navigationHistory.length;
+&nbsp;&nbsp;&nbsp;// Clear unnecessary array of history out
+&nbsp;&nbsp;&nbsp;navigationHistory.splice(selectedIndex + 1, barLength - selectedIndex );
+&nbsp;&nbsp;&nbsp;history.go(- (barLength - selectedIndex) + 1);
+};
+
+window.navigationHistory = window.navigationHistory || [];
+
+// When page is created and shown, following this event handler need to bind only once
+$(document).one(&quot;pagebeforeshow&quot;, historyMaker);
+$(document).one(&quot;pageshow&quot;, historyDrawer);
+$(&quot;nav&quot;).one(&quot;navigate&quot;, historyMove);
+</pre>
+
+</ul>
+
+
+
+
+
+	<h2><a id="methods-list"></a>Methods</h2>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-create">create</a> ( Array navigationHistory ) </pre>
+					</td>
+					<td><p>Initiates the making of the navigation bar.</p></td>
+				</tr>
+			
+		
+		</tbody>
+	</table>
+	<dl>
+		
+			
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-create">create</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Initiates the making of the navigation bar.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">create ( Array navigationHistory) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">navigationHistory</span></td>
+						<td>Array</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					
+				</dd>
+			
+		
+		</dl>
+	
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

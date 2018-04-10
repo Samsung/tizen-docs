@@ -16,7 +16,7 @@ The main uncompressed audio management features are:
 <a name="play_pcm"></a>
 ## Audio Output
 
-The Audio Output API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__AUDIO__OUT__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__AUDIO__OUT__MODULE.html) applications) enables your application to play such data using output devices. You can [play audio synchronously](#simple_playback), or [do it asynchronously](#async_playback).
+The Audio Output API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__AUDIO__OUT__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__AUDIO__OUT__MODULE.html) applications) enables your application to play such data using output devices. You can [play audio synchronously](#simple_playback), or [do it asynchronously](#async_playback).
 
 To play the audio PCM data, the application must call the `audio_out_create()` function to initialize the audio output handle.
 
@@ -65,7 +65,7 @@ For supporting various low-end Tizen devices, the application must follow certai
 <a name="record_pcm"></a>
 ## Audio Input
 
-The Audio Input API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__AUDIO__IN__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__AUDIO__IN__MODULE.html) applications) enables your application to record such data from a microphone type input device. You can [record audio synchronously](#simple_recording), or [do it asynchronously](#async_recording).
+The Audio Input API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__AUDIO__IN__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__AUDIO__IN__MODULE.html) applications) enables your application to record such data from a microphone type input device. You can [record audio synchronously](#simple_recording), or [do it asynchronously](#async_recording).
 
 Audio data is captured periodically, so to receive the audio PCM data from the input device, you must implement the audio input interface to notify the application of audio data events, such as the end of filling audio data.
 
@@ -98,7 +98,7 @@ The following figures illustrate the general audio input states, and how the sta
 
 To enable your application to use the uncompressed audio functionality:
 
-1. To use the functions and data types of the Audio I/O (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__AUDIO__IO__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__AUDIO__IO__MODULE.html) applications) and Sound Manager (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) applications) APIs, include the `<audio_io.h>` and `<sound_manager.h>` header files in your application:
+1. To use the functions and data types of the Audio I/O (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__AUDIO__IO__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__AUDIO__IO__MODULE.html) applications) and Sound Manager (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) applications) APIs, include the `<audio_io.h>` and `<sound_manager.h>` header files in your application:
 
    ```
    #include <audio_io.h>
@@ -125,9 +125,9 @@ To enable your application to use the uncompressed audio functionality:
    error_code = audio_out_create(SAMPLE_RATE, AUDIO_CHANNEL_MONO, AUDIO_SAMPLE_TYPE_S16_LE, SOUND_TYPE_SYSTEM, &output);
    ```
 
-   The audio input and output devices support the channel types defined in the `audio_channel_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__AUDIO__IO__MODULE.html#ga4e07ead99d581a0a049e8ee632b858b4) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__AUDIO__IO__MODULE.html#ga4e07ead99d581a0a049e8ee632b858b4) applications), and the sample types defined in the `audio_sample_type_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__AUDIO__IO__MODULE.html#ga1e66f976b2890f5fc2e9e6ec71af7536) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__AUDIO__IO__MODULE.html#ga1e66f976b2890f5fc2e9e6ec71af7536) applications). For playing the recorded audio, use the same channel and sample type on both audio devices.
+   The audio input and output devices support the channel types defined in the `audio_channel_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__AUDIO__IO__MODULE.html#ga4e07ead99d581a0a049e8ee632b858b4) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__AUDIO__IO__MODULE.html#ga4e07ead99d581a0a049e8ee632b858b4) applications), and the sample types defined in the `audio_sample_type_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__AUDIO__IO__MODULE.html#ga1e66f976b2890f5fc2e9e6ec71af7536) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__AUDIO__IO__MODULE.html#ga1e66f976b2890f5fc2e9e6ec71af7536) applications). For playing the recorded audio, use the same channel and sample type on both audio devices.
 
-   The sound types are defined in the `sound_type_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__MEDIA__SOUND__MANAGER__VOLUME__MODULE.html#gab0b52eeab59765b94c7a751097738a0b) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__MEDIA__SOUND__MANAGER__VOLUME__MODULE.html#gab0b52eeab59765b94c7a751097738a0b) applications). You can select the sound type according to the audio sample type.
+   The sound types are defined in the `sound_type_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__SOUND__MANAGER__VOLUME__MODULE.html#gab0b52eeab59765b94c7a751097738a0b) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__SOUND__MANAGER__VOLUME__MODULE.html#gab0b52eeab59765b94c7a751097738a0b) applications). You can select the sound type according to the audio sample type.
 
 <a name="simple_playback"></a>
 ## Managing Synchronous Playback
@@ -534,7 +534,7 @@ To start recording audio:
        dlog_print(DLOG_ERROR, LOG_TAG, "fopen() function failed while opening %s file!", io_stream_w_path);
    ```
 
-   The `storage_get_directory()` function of the Storage API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__STORAGE__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__STORAGE__MODULE.html) applications) retrieves the storage path based on the storage ID. To retrieve the storage ID, use the `storage_foreach_device_supported()` function of the Storage API.
+   The `storage_get_directory()` function of the Storage API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html) applications) retrieves the storage path based on the storage ID. To retrieve the storage ID, use the `storage_foreach_device_supported()` function of the Storage API.
 
 3. Prepare the audio input device and start the recording process using the `audio_in_prepare()` function:
 

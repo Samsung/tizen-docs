@@ -356,7 +356,7 @@ To paint with image files:
 
 1. Get the image resource.
 
-   The following code snippet shows how to prepare image data for your application. To get an application's resource image data, use the `app_get_resource_path()` function. This gets a stored PNG image file path to use as a resource. For more information on the `app_get_resource_path()` function, see the App Common API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__APP__COMMON__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__APP__COMMON__MODULE.html) applications.
+   The following code snippet shows how to prepare image data for your application. To get an application's resource image data, use the `app_get_resource_path()` function. This gets a stored PNG image file path to use as a resource. For more information on the `app_get_resource_path()` function, see the App Common API (in [mobile](../../api/mobile/latest/group__CAPI__APP__COMMON__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__APP__COMMON__MODULE.html) applications.
 
    ```
    char image_filepath[256];

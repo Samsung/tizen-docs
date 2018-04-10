@@ -29,7 +29,7 @@ The main features of the Key Manager API include:
 
 ![Key manager process](./media/key_manager.png)
 
-The key manager provides 2 types of APIs (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__KEY__MANAGER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__KEY__MANAGER__MODULE.html) applications):
+The key manager provides 2 types of APIs (in [mobile](../../api/mobile/latest/group__CAPI__KEY__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__KEY__MANAGER__MODULE.html) applications):
 
 - Secure repository APIs
 
@@ -53,7 +53,7 @@ The key manager provides 2 types of APIs (in [mobile](../../../../org.tizen.nati
 
 To enable your application to use the key manager functionality:
 
-1. To use the Key Manager API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__KEY__MANAGER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__KEY__MANAGER__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the Key Manager API (in [mobile](../../api/mobile/latest/group__CAPI__KEY__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__KEY__MANAGER__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```
    <privileges>

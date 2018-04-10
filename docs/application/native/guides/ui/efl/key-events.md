@@ -38,7 +38,7 @@ The following example application has a window with a naviframe, and registers t
 
 To manage hardware key events:
 
-1. To use the functions and data types of the [Efl Extension](http://org.tizen.native.mobile.apireference/group__CAPI__EFL__EXTENSION__MODULE.html) API, include the `<efl_extension.h>` header file in your application:
+1. To use the functions and data types of the [Efl Extension](../../../api/mobile/latest/group__CAPI__EFL__EXTENSION__MODULE.html) API, include the `<efl_extension.h>` header file in your application:
 
    ```
    #include <efl_extension.h>

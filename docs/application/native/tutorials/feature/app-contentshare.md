@@ -42,9 +42,9 @@ following features:
 
 To share content through application controls, you must use the App
 Control API (in
-[mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__APP__CONTROL__MODULE.html)
+[mobile](../../api/mobile/latest/group__CAPI__APP__CONTROL__MODULE.html)
 and
-[wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__APP__CONTROL__MODULE.html)
+[wearable](../../api/wearable/latest/group__CAPI__APP__CONTROL__MODULE.html)
 applications). Application controls are a way of sharing an
 application's functionality in Tizen. The App Control API provides
 functions for launching other applications with a specific operation,

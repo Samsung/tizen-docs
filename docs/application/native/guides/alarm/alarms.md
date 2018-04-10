@@ -1,7 +1,7 @@
 # Alarms
 
 
-You can launch an application at a specific time using alarms. The mechanism involved in launching the application is the App Control API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__APP__CONTROL__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__APP__CONTROL__MODULE.html) applications).
+You can launch an application at a specific time using alarms. The mechanism involved in launching the application is the App Control API (in [mobile](../../api/mobile/latest/group__CAPI__APP__CONTROL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__APP__CONTROL__MODULE.html) applications).
 
 The AppControl API allows [launching an application](../app-management/app-controls.md) explicitly, giving its package name, or providing certain criteria that the application must meet. For example, the criteria can include the type of data on which the application must be able to operate. The structure containing the criteria is called an application control.
 
@@ -27,7 +27,7 @@ The main features of the Alarm API include:
 
 To enable your application to use the alarm functionality:
 
-1. To use the Alarm API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__ALARM__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__ALARM__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the Alarm API (in [mobile](../../api/mobile/latest/group__CAPI__ALARM__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__ALARM__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 ```
 <privileges>  
 	<privilege>http://tizen.org/privilege/alarm.get</privilege>   
@@ -124,7 +124,7 @@ ret = alarm_schedule_at_date(app, &date, 0, &alarm_id);
 
 To schedule an alarm on a specific time of the day with a recurrence, use the `alarm_schedule_with_recurrence_week_flag()` function.
 
-The third parameter defines the day of the week on which the alarm recurs. The value is defined with the `enum alarm_week_flag_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__ALARM__MODULE.html#gaa2b3960fe55c63cb3f6739758bd172ee) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__ALARM__MODULE.html#gaa2b3960fe55c63cb3f6739758bd172ee) applications), and can be a combination of days, for example `ALARM_WEEK_FLAG_TUESDAY | ALARM_WEEK_FLAG_FRIDAY`. The value can also be a binary, such as `1<<3 | 1<<6`.
+The third parameter defines the day of the week on which the alarm recurs. The value is defined with the `enum alarm_week_flag_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__ALARM__MODULE.html#gaa2b3960fe55c63cb3f6739758bd172ee) and [wearable](../../api/wearable/latest/group__CAPI__ALARM__MODULE.html#gaa2b3960fe55c63cb3f6739758bd172ee) applications), and can be a combination of days, for example `ALARM_WEEK_FLAG_TUESDAY | ALARM_WEEK_FLAG_FRIDAY`. The value can also be a binary, such as `1<<3 | 1<<6`.
 
 The following code schedules an application control to invoke on TUESDAY and FRIDAY:
 

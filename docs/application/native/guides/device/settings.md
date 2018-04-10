@@ -35,7 +35,7 @@ system_settings_unset_changed_cb(SYSTEM_SETTINGS_KEY_WALLPAPER_HOME_SCREEN);
 
 ## Prerequisites
 
-To use the functions and data types of the System Settings API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__SYSTEM__SETTINGS__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__SYSTEM__SETTINGS__MODULE.html) applications), include the `<system_settings.h>` header file in your application:
+To use the functions and data types of the System Settings API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__SYSTEM__SETTINGS__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__SYSTEM__SETTINGS__MODULE.html) applications), include the `<system_settings.h>` header file in your application:
 
 ```
 #include <system_settings.h>
@@ -100,7 +100,7 @@ To manage system settings, which provide access to system variables:
 
 2. Obtain the setting data.
 
-   The available settings are defined in the `system_settings_key_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__SYSTEM__SETTINGS__MODULE.html#ga56c8fa435516884c5648efecdd871eaa) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__SYSTEM__SETTINGS__MODULE.html#ga56c8fa435516884c5648efecdd871eaa) applications).
+   The available settings are defined in the `system_settings_key_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__SYSTEM__SETTINGS__MODULE.html#ga56c8fa435516884c5648efecdd871eaa) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__SYSTEM__SETTINGS__MODULE.html#ga56c8fa435516884c5648efecdd871eaa) applications).
 
    Read the data using the following functions, according to the data type of the value you want to read:
 
@@ -166,7 +166,7 @@ To manage system settings, which provide access to system variables:
 <a name="details"></a>
 ## System Setting Keys
 
-The `system_settings_key_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__SYSTEM__SETTINGS__MODULE.html#ga56c8fa435516884c5648efecdd871eaa) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__SYSTEM__SETTINGS__MODULE.html#ga56c8fa435516884c5648efecdd871eaa) applications) defines all enumerations that work as parameters for the System Settings API.
+The `system_settings_key_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__SYSTEM__SETTINGS__MODULE.html#ga56c8fa435516884c5648efecdd871eaa) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__SYSTEM__SETTINGS__MODULE.html#ga56c8fa435516884c5648efecdd871eaa) applications) defines all enumerations that work as parameters for the System Settings API.
 
 The following table lists the available system setting keys.
 
@@ -201,7 +201,7 @@ The following table lists the available system setting keys.
 | `SYSTEM_SETTINGS_KEY_SOUND_SILENT_MODE`  | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the device is in the silent mode. |
 | `SYSTEM_SETTINGS_KEY_SOUND_TOUCH`        | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the screen touch sound is enabled on the device. |
 | `SYSTEM_SETTINGS_KEY_TIME_CHANGED`       | `int`    | `NOTIFIER`              | Event that occurs when the system changes time to notify you about the time change. |
-| `SYSTEM_SETTINGS_KEY_ULTRA_DATA_SAVE`    | `int`    | `GETTER, NOTIFIER`      | Ultra Data Save status, which can be one of the `system_settings_uds_state_e` enumeration values (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__SYSTEM__SETTINGS__MODULE.html#ga59ffa706c8964ee1f6c6ab03b4efdac1) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__SYSTEM__SETTINGS__MODULE.html#ga59ffa706c8964ee1f6c6ab03b4efdac1)applications). |
+| `SYSTEM_SETTINGS_KEY_ULTRA_DATA_SAVE`    | `int`    | `GETTER, NOTIFIER`      | Ultra Data Save status, which can be one of the `system_settings_uds_state_e` enumeration values (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__SYSTEM__SETTINGS__MODULE.html#ga59ffa706c8964ee1f6c6ab03b4efdac1) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__SYSTEM__SETTINGS__MODULE.html#ga59ffa706c8964ee1f6c6ab03b4efdac1)applications). |
 | `SYSTEM_SETTINGS_KEY_ULTRA_DATA_SAVE_PKG_LIST` | `string` | `NOTIFIER`              | Ultra Data Save Package List, which is a string containing whitelisted package names separated with semicolons (;). |
 | `SYSTEM_SETTINGS_KEY_USB_DEBUGGING_ENABLED` | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the USB debugging is enabled. |
 | `SYSTEM_SETTINGS_KEY_VIBRATION`          | `bool`   | `GETTER, NOTIFIER`      | Indicates whether vibration is enabled on the device. |

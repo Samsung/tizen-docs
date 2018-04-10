@@ -448,5 +448,5 @@ The following overridable methods of the `Tizen.NUI.BaseComponents.CustomView` c
 Size negotiation is enabled on views by default. To [disable size negotiation](#viewbehaviour), pass the `DisableSizeNegotiation` behavior flag into the view constructor.
 
 ## Related Information
-* Dependencies
+- Dependencies
   -   Tizen 4.0 and Higher

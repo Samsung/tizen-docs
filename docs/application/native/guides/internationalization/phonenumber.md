@@ -21,7 +21,7 @@ The main features of the Phonenumber utils API include:
 
 To enable your application to use the phonenumber utils functionality:
 
-1. To use the functions and data types of the Phonenumber utils API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__TELEPHONY__PHONE__NUMBER__UTILS__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__TELEPHONY__PHONE__NUMBER__UTILS__MODULE.html) applications), include the `<phone_number.h>` header file in your application:
+1. To use the functions and data types of the Phonenumber utils API (in [mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__PHONE__NUMBER__UTILS__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__PHONE__NUMBER__UTILS__MODULE.html) applications), include the `<phone_number.h>` header file in your application:
 
    ```
    #include <phone_number.h>

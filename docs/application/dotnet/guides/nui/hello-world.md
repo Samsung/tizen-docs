@@ -195,5 +195,5 @@ namespace HelloTest
 ```
 
 ## Related Information
-* Dependencies
+- Dependencies
   -   Tizen 4.0 and Higher

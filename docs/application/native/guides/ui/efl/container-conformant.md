@@ -1,6 +1,6 @@
 # Conformant
 
-The conformant container accounts for the space taken by the indicator, virtual keyboard, and softkey windows. The content area of the conformant is resized and positioned based on the space available. For more information, see the Conformant API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Elm__Conformant.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Elm__Conformant.html) applications).
+The conformant container accounts for the space taken by the indicator, virtual keyboard, and softkey windows. The content area of the conformant is resized and positioned based on the space available. For more information, see the Conformant API (in [mobile](../../../api/mobile/latest/group__Elm__Conformant.html) and [wearable](../../../api/wearable/latest/group__Elm__Conformant.html) applications).
 
 **Figure: Conformant component structure**
 

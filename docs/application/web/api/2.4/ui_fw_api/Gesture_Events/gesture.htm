@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head> 
+  <script type="text/javascript" src="../snippet.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <link href="../styles.css" rel="StyleSheet" type="text/css" />
+  <link href="../snippet.css" rel="StyleSheet" type="text/css" />
+  <title>Gesture Events</title> 
+ </head> 
+ <body onload="prettyPrint()" id="content"> 
+
+<h1>Gesture Events</h1>
+<p>The Tizen Advanced UI (TAU) framework provides gesture events optimized for the Tizen Web application.<p>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+		<li><a href="#event">Gesture Events</a></li>
+
+		<li><a href="#method">Methods</a></li>
+
+		<li><a href="#detail">Event Detail Data</a></li>
+</ol>
+
+<h2><a id='event'></a>Gesture Events</h2><p>
+
+<table>
+<tbody>
+	<tr>
+		<th style="width:10%;">Gesture</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><a href="drag.htm">Drag</a></td>
+		<td>Triggered when the user drags on a gesture-enabled element.</td>
+	</tr>
+	<tr>
+		<td><a href="swipe.htm">Swipe</a></td>
+		<td>Triggered when the user swipes on a gesture-enabled element.</td>
+	</tr>	
+</tbody>
+</table>
+
+<table class="note"> 
+     <tbody> 
+      <tr> 
+       <th class="note">Note</th> 
+      </tr> 
+      <tr> 
+       <td class="note"><p>The drag and swipe gestures differ in their speed. A swipe is quick drag, which animates, for example, a block translation. A drag, on the other hand, connects elements with a finger position, and waits for the end event to do something during or at the end of dragging. 
+</p></td> 
+      </tr> 
+     </tbody> 
+    </table>
+
+<h2><a id='method'></a>Methods</h2><p>
+
+<p>The following table describes custom gesture event-related methods.</p>
+
+<table>
+<tbody>
+	<tr>
+		<th>Method</th>
+		<th>Parameter</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">enableGesture()</span></td>
+		<td><span style="font-family: Courier New,Courier,monospace">Element</span>: element
+		<p><span style="font-family: Courier New,Courier,monospace">Object</span>: gesture object</p></td>
+		<td><p>Creates a gesture event listener for the element. The first parameter must be an inserted element.</p>
+		</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">disableGesture()</span></td>
+		<td><span style="font-family: Courier New,Courier,monospace">Element</span>: element
+		<p><span style="font-family: Courier New,Courier,monospace">Object</span>: gesture object</p></td>
+		<td><p>Removes the gesture event listener from the element. The first parameter must be an inserted element.</p></td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>To use a custom event, use the following code:</p>
+<pre class="prettyprint">
+/* element is your event target element */
+tau.event.enableGesture(element, new tau.event.gesture.Drag(), new tau.event.gesture.Swipe());
+element.addEventListener(&quot;drag&quot;, function(e) {
+	console.log(&quot;drag event fired&quot;);
+});
+element.addEventListener(&quot;swipe&quot;, function(e) {
+	console.log(&quot;swipe event fired&quot;);
+});
+</pre>
+
+
+<h2><a id='detail'></a>Event Detail Data</h2><p>
+<p>TAU gesture events have "detail" object. The "detail" object contains information for the events.</p>
+
+<table>
+<tbody>
+	<tr>
+		<th>Property</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">timeStamp</span></td>
+		<td>Time when the event occurs.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">pointer</span></td>
+		<td>Position of the first touch. Contains pageX and pageY.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">pointers</span></td>
+		<td>Touches (fingers or mouse) on the screen.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">deltaTime</span></td>
+		<td>Total time of the touches on the screen.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">deltaX</span></td>
+		<td>Delta of the touch move on the x axis.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">deltaY</span></td>
+		<td>Delta of the touch move on the y axis.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">velocityX</span></td>
+		<td>Velocity on the x axis.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">velocityY</span></td>
+		<td>Velocity on the y axis.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">angle</span></td>
+		<td>Angle at which the touch moves from the start point.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">direction</span></td>
+		<td>Move direction from the start point. The value matches <span style="font-family: Courier New,Courier,monospace">&quot;UP&quot;|&quot;DOWN&quot;|&quot;LEFT&quot;|&quot;RIGHT&quot;</span>.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">distance</span></td>
+		<td>Moved distance.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">scale</span></td>
+		<td>Scaling of the touches (requires 2 touches).</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">rotation</span></td>
+		<td>Rotation of the touches (requires 2 touches).</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">eventType</span></td>
+		<td>Event type. The value matches <span style="font-family: Courier New,Courier,monospace">&quot;START&quot;|&quot;MOVE&quot;|&quot;END&quot;|&quot;CANCEL&quot;</span>.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">srcEvent</span></td>
+		<td>Source event, such as <span style="font-family: Courier New,Courier,monospace">TouchStart</span> or <span style="font-family: Courier New,Courier,monospace">MouseDown</span>.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">startEvent</span></td>
+		<td>Same properties as above, but calculated from the first touch. The value is used to calculate, for example, distances, deltaTime, and scaling.</td>
+	</tr>	
+</tbody>
+</table>
+
+
+ <div id="footer"> 
+   <hr size="1" /> 
+   <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font> 
+  </div> 
+   
+  <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25976949-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script> 
+    
+ </body>
+</html>

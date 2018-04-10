@@ -95,7 +95,7 @@ To enable filtering for your native application:
 
 1. In the **Features** tab, click **+**.
 
-2. Select a feature from the [predefined list of features available for filtering](../details/app-filtering.md).To check which features are necessary for using a specific API, see the related feature in the native [API Reference](../../../../org.tizen.native.mobile.apireference/index.html).
+2. Select a feature from the [predefined list of features available for filtering](../details/app-filtering.md).To check which features are necessary for using a specific API, see the related feature in the native [API Reference](../../api/mobile/latest/index.html).
 
 3. Click **OK**.
 

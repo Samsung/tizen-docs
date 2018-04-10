@@ -13,7 +13,7 @@ The main features of the VPN Service API include:
 
   You can also [set various details](#set_param), such as the MTU for the tunnel interface, and the session name.
 
-  The `vpnsvc_tun_s` structure contains detailed information about the tunnel interface, such as the ID, name, and MTU. The possible errors are defined with the [vpnsvc_error_e](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__VPN__SERVICE__MODULE.html#ga8d8e9c964218d7aad622115bb51491e8) enumerator.
+  The `vpnsvc_tun_s` structure contains detailed information about the tunnel interface, such as the ID, name, and MTU. The possible errors are defined with the [vpnsvc_error_e](../../api/mobile/latest/group__CAPI__NETWORK__VPN__SERVICE__MODULE.html#ga8d8e9c964218d7aad622115bb51491e8) enumerator.
 
   **Table: Common macros**
 
@@ -25,7 +25,7 @@ The main features of the VPN Service API include:
 
 - VPN profile
 
-  You can map the VPN profile and get details about the VPN service by using the [vpnsvc_h](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__VPN__SERVICE__MODULE.html#gaef3a3f46336ee7e8c43dd16144b22ac5) handle.
+  You can map the VPN profile and get details about the VPN service by using the [vpnsvc_h](../../api/mobile/latest/group__CAPI__NETWORK__VPN__SERVICE__MODULE.html#gaef3a3f46336ee7e8c43dd16144b22ac5) handle.
 
   The VPN profile provides different functions for routing management, DNS management, and firewall management:
 
@@ -87,7 +87,7 @@ A VPN connection includes the following components:
 
 To enable your application to use the VPN service functionality:
 
-1. To use the [VPN Service](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__VPN__SERVICE__MODULE.html) API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the [VPN Service](../../api/mobile/latest/group__CAPI__NETWORK__VPN__SERVICE__MODULE.html) API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -101,7 +101,7 @@ To enable your application to use the VPN service functionality:
     #include <vpn_service.h>
     ```
 
-3. To be able to use all VPN functions, you must create a handle that contains information about the VPN. At the beginning, create a [vpnsvc_h](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__VPN__SERVICE__MODULE.html#gaef3a3f46336ee7e8c43dd16144b22ac5) type variable, which is a `void*` that stores the VPN handle.
+3. To be able to use all VPN functions, you must create a handle that contains information about the VPN. At the beginning, create a [vpnsvc_h](../../api/mobile/latest/group__CAPI__NETWORK__VPN__SERVICE__MODULE.html#gaef3a3f46336ee7e8c43dd16144b22ac5) type variable, which is a `void*` that stores the VPN handle.
 
     ```
     vpnsvc_h handle = NULL;
@@ -302,7 +302,7 @@ To configure the interface and connect to the VPN service through an application
        printf("vpnsvc_set_remote_ip_address succeeded!\n");
    ```
 
-4. Update the [vpnsvc_h](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__VPN__SERVICE__MODULE.html#gaef3a3f46336ee7e8c43dd16144b22ac5) handle with the connection information by calling the `vpnsvc_update_settings()` function:
+4. Update the [vpnsvc_h](../../api/mobile/latest/group__CAPI__NETWORK__VPN__SERVICE__MODULE.html#gaef3a3f46336ee7e8c43dd16144b22ac5) handle with the connection information by calling the `vpnsvc_update_settings()` function:
 
     ```
     ret = vpnsvc_update_settings(handle);

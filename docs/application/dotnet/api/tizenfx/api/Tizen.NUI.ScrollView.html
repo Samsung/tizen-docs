@@ -1,0 +1,2911 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ScrollView
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ScrollView
+   ">
+    <meta name="generator" content="docfx 2.23.1.0">
+    
+    <link rel="shortcut icon" href="../tizen_favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../tizen_logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Tizen.NUI.ScrollView">
+  
+  
+  <h1 id="Tizen_NUI_ScrollView" data-uid="Tizen.NUI.ScrollView" class="text-break">Class ScrollView
+  </h1>
+  <div class="markdown level0 summary"><p>ScrollView contains views that can be scrolled manually (via touch).</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="Tizen.NUI.BaseHandle.html">BaseHandle</a></div>
+    <div class="level2"><a class="xref" href="Tizen.NUI.Animatable.html">Animatable</a></div>
+    <div class="level3"><a class="xref" href="Tizen.NUI.Container.html">Container</a></div>
+    <div class="level4"><a class="xref" href="Tizen.NUI.BaseComponents.View.html">View</a></div>
+    <div class="level5"><a class="xref" href="Tizen.NUI.BaseComponents.Scrollable.html">Scrollable</a></div>
+    <div class="level6"><span class="xref">ScrollView</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.Scrollable.html#Tizen_NUI_BaseComponents_Scrollable_ScrollStarted">Scrollable.ScrollStarted</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.Scrollable.html#Tizen_NUI_BaseComponents_Scrollable_ScrollUpdated">Scrollable.ScrollUpdated</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.Scrollable.html#Tizen_NUI_BaseComponents_Scrollable_ScrollCompleted">Scrollable.ScrollCompleted</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.Scrollable.html#Tizen_NUI_BaseComponents_Scrollable_OvershootEffectColor">Scrollable.OvershootEffectColor</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.Scrollable.html#Tizen_NUI_BaseComponents_Scrollable_OvershootAnimationSpeed">Scrollable.OvershootAnimationSpeed</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.Scrollable.html#Tizen_NUI_BaseComponents_Scrollable_OvershootEnabled">Scrollable.OvershootEnabled</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.Scrollable.html#Tizen_NUI_BaseComponents_Scrollable_OvershootSize">Scrollable.OvershootSize</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.Scrollable.html#Tizen_NUI_BaseComponents_Scrollable_ScrollToAlphaFunction">Scrollable.ScrollToAlphaFunction</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.Scrollable.html#Tizen_NUI_BaseComponents_Scrollable_ScrollRelativePosition">Scrollable.ScrollRelativePosition</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.Scrollable.html#Tizen_NUI_BaseComponents_Scrollable_ScrollPositionMin">Scrollable.ScrollPositionMin</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.Scrollable.html#Tizen_NUI_BaseComponents_Scrollable_ScrollPositionMax">Scrollable.ScrollPositionMax</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.Scrollable.html#Tizen_NUI_BaseComponents_Scrollable_CanScrollVertical">Scrollable.CanScrollVertical</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.Scrollable.html#Tizen_NUI_BaseComponents_Scrollable_CanScrollHorizontal">Scrollable.CanScrollHorizontal</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_Add_Tizen_NUI_BaseComponents_View_">View.Add(View)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_Remove_Tizen_NUI_BaseComponents_View_">View.Remove(View)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_GetChildAt_System_UInt32_">View.GetChildAt(UInt32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_GetChildCount">View.GetChildCount()</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_GetParent">View.GetParent()</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_FocusGained">View.FocusGained</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_FocusLost">View.FocusLost</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_KeyEvent">View.KeyEvent</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_Relayout">View.Relayout</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_TouchEvent">View.TouchEvent</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_HoverEvent">View.HoverEvent</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_WheelEvent">View.WheelEvent</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_AddedToWindow">View.AddedToWindow</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_RemovedFromWindow">View.RemovedFromWindow</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_VisibilityChanged">View.VisibilityChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_LayoutDirectionChanged">View.LayoutDirectionChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_ResourcesLoaded">View.ResourcesLoaded</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_HasFocus">View.HasFocus()</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_SetStyleName_System_String_">View.SetStyleName(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_GetStyleName">View.GetStyleName()</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_ClearBackground">View.ClearBackground()</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_StyleName">View.StyleName</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_BackgroundColor">View.BackgroundColor</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_AnimateBackgroundColor_System_Object_System_Int32_System_Int32_System_Nullable_Tizen_NUI_AlphaFunction_BuiltinFunctions__System_Object_">View.AnimateBackgroundColor(Object, Int32, Int32, Nullable&lt;AlphaFunction.BuiltinFunctions&gt;, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_AnimateColor_System_String_System_Object_System_Int32_System_Int32_System_Nullable_Tizen_NUI_AlphaFunction_BuiltinFunctions__System_Object_">View.AnimateColor(String, Object, Int32, Int32, Nullable&lt;AlphaFunction.BuiltinFunctions&gt;, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_BackgroundImage">View.BackgroundImage</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_Background">View.Background</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_State">View.State</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_SubState">View.SubState</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_Tooltip">View.Tooltip</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_TooltipText">View.TooltipText</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_Flex">View.Flex</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_AlignSelf">View.AlignSelf</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_FlexMargin">View.FlexMargin</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_CellIndex">View.CellIndex</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_RowSpan">View.RowSpan</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_ColumnSpan">View.ColumnSpan</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_CellHorizontalAlignment">View.CellHorizontalAlignment</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_CellVerticalAlignment">View.CellVerticalAlignment</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_LeftFocusableView">View.LeftFocusableView</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_RightFocusableView">View.RightFocusableView</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_UpFocusableView">View.UpFocusableView</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_DownFocusableView">View.DownFocusableView</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_Focusable">View.Focusable</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_CurrentPosition">View.CurrentPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_Size2D">View.Size2D</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_CurrentSize">View.CurrentSize</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_Opacity">View.Opacity</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_Position2D">View.Position2D</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_ScreenPosition">View.ScreenPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_PositionUsesPivotPoint">View.PositionUsesPivotPoint</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_IsOnWindow">View.IsOnWindow</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_HierarchyDepth">View.HierarchyDepth</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_SiblingOrder">View.SiblingOrder</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_NaturalSize2D">View.NaturalSize2D</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_Show">View.Show()</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_Hide">View.Hide()</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_RaiseToTop">View.RaiseToTop()</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_LowerToBottom">View.LowerToBottom()</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_IsResourceReady">View.IsResourceReady()</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_Unparent">View.Unparent()</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_FindChildByName_System_String_">View.FindChildByName(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_ScreenToLocal_System_Single__System_Single__System_Single_System_Single_">View.ScreenToLocal(Single, Single, Single, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_SetSizeModeFactor_Tizen_NUI_Vector3_">View.SetSizeModeFactor(Vector3)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_GetHeightForWidth_System_Single_">View.GetHeightForWidth(Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_GetWidthForHeight_System_Single_">View.GetWidthForHeight(Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_GetRelayoutSize_Tizen_NUI_DimensionType_">View.GetRelayoutSize(DimensionType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_SetPadding_Tizen_NUI_PaddingType_">View.SetPadding(PaddingType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_GetPadding_Tizen_NUI_PaddingType_">View.GetPadding(PaddingType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_AddRenderer_Tizen_NUI_Renderer_">View.AddRenderer(Renderer)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_GetRendererAt_System_UInt32_">View.GetRendererAt(UInt32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_RemoveRenderer_Tizen_NUI_Renderer_">View.RemoveRenderer(Renderer)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_RemoveRenderer_System_UInt32_">View.RemoveRenderer(UInt32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_ParentOrigin">View.ParentOrigin</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_PivotPoint">View.PivotPoint</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_SizeWidth">View.SizeWidth</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_SizeHeight">View.SizeHeight</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_Position">View.Position</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_PositionX">View.PositionX</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_PositionY">View.PositionY</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_PositionZ">View.PositionZ</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_WorldPosition">View.WorldPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_Orientation">View.Orientation</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_WorldOrientation">View.WorldOrientation</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_Scale">View.Scale</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_ScaleX">View.ScaleX</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_ScaleY">View.ScaleY</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_ScaleZ">View.ScaleZ</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_WorldScale">View.WorldScale</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_Visibility">View.Visibility</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_WorldColor">View.WorldColor</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_Name">View.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_ChildCount">View.ChildCount</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_ID">View.ID</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_Sensitive">View.Sensitive</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_LeaveRequired">View.LeaveRequired</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_InheritOrientation">View.InheritOrientation</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_InheritScale">View.InheritScale</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_DrawMode">View.DrawMode</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_SizeModeFactor">View.SizeModeFactor</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_WidthResizePolicy">View.WidthResizePolicy</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_HeightResizePolicy">View.HeightResizePolicy</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_SizeScalePolicy">View.SizeScalePolicy</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_WidthForHeight">View.WidthForHeight</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_HeightForWidth">View.HeightForWidth</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_Padding">View.Padding</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_MinimumSize">View.MinimumSize</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_MaximumSize">View.MaximumSize</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_InheritPosition">View.InheritPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_ClippingMode">View.ClippingMode</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_RendererCount">View.RendererCount</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_InheritLayoutDirection">View.InheritLayoutDirection</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_LayoutDirection">View.LayoutDirection</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_Margin">View.Margin</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.Container.html#Tizen_NUI_Container_Children">Container.Children</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.Container.html#Tizen_NUI_Container_Parent">Container.Parent</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.Animatable.html#Tizen_NUI_Animatable_GetPropertyName_System_Int32_">Animatable.GetPropertyName(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.Animatable.html#Tizen_NUI_Animatable_GetPropertyIndex_System_String_">Animatable.GetPropertyIndex(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.Animatable.html#Tizen_NUI_Animatable_IsPropertyWritable_System_Int32_">Animatable.IsPropertyWritable(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.Animatable.html#Tizen_NUI_Animatable_IsPropertyAnimatable_System_Int32_">Animatable.IsPropertyAnimatable(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.Animatable.html#Tizen_NUI_Animatable_GetPropertyType_System_Int32_">Animatable.GetPropertyType(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.Animatable.html#Tizen_NUI_Animatable_SetProperty_System_Int32_Tizen_NUI_PropertyValue_">Animatable.SetProperty(Int32, PropertyValue)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.Animatable.html#Tizen_NUI_Animatable_RegisterProperty_System_String_Tizen_NUI_PropertyValue_">Animatable.RegisterProperty(String, PropertyValue)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.Animatable.html#Tizen_NUI_Animatable_RegisterProperty_System_String_Tizen_NUI_PropertyValue_Tizen_NUI_PropertyAccessMode_">Animatable.RegisterProperty(String, PropertyValue, PropertyAccessMode)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.Animatable.html#Tizen_NUI_Animatable_GetProperty_System_Int32_">Animatable.GetProperty(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.Animatable.html#Tizen_NUI_Animatable_AddPropertyNotification_System_String_Tizen_NUI_PropertyCondition_">Animatable.AddPropertyNotification(String, PropertyCondition)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.Animatable.html#Tizen_NUI_Animatable_RemovePropertyNotification_Tizen_NUI_PropertyNotification_">Animatable.RemovePropertyNotification(PropertyNotification)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.Animatable.html#Tizen_NUI_Animatable_RemovePropertyNotifications">Animatable.RemovePropertyNotifications()</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseHandle.html#Tizen_NUI_BaseHandle_swigCMemOwn">BaseHandle.swigCMemOwn</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseHandle.html#Tizen_NUI_BaseHandle_disposed">BaseHandle.disposed</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseHandle.html#Tizen_NUI_BaseHandle_Dispose">BaseHandle.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseHandle.html#Tizen_NUI_BaseHandle_DoAction_System_String_Tizen_NUI_PropertyMap_">BaseHandle.DoAction(String, PropertyMap)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseHandle.html#Tizen_NUI_BaseHandle_GetTypeName">BaseHandle.GetTypeName()</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseHandle.html#Tizen_NUI_BaseHandle_GetTypeInfo_Tizen_NUI_TypeInfo_">BaseHandle.GetTypeInfo(TypeInfo)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseHandle.html#Tizen_NUI_BaseHandle_Reset">BaseHandle.Reset()</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseHandle.html#Tizen_NUI_BaseHandle_EqualTo_Tizen_NUI_BaseHandle_">BaseHandle.EqualTo(BaseHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseHandle.html#Tizen_NUI_BaseHandle_NotEqualTo_Tizen_NUI_BaseHandle_">BaseHandle.NotEqualTo(BaseHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseHandle.html#Tizen_NUI_BaseHandle_HasBody">BaseHandle.HasBody()</a>
+    </div>
+    <div>
+      <a class="xref" href="Tizen.NUI.BaseHandle.html#Tizen_NUI_BaseHandle_IsEqual_Tizen_NUI_BaseHandle_">BaseHandle.IsEqual(BaseHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Tizen.NUI.html">Tizen.NUI</a></h6>
+  <h6><strong>Assembly</strong>: Tizen.NUI.dll</h6>
+  <h5 id="Tizen_NUI_ScrollView_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ScrollView : Scrollable, IDisposable</code></pre>
+  </div>
+  
+  
+  <h3 id="constructors">Constructors
+  </h3>
+  <a id="Tizen_NUI_ScrollView__ctor_" data-uid="Tizen.NUI.ScrollView.#ctor*"></a>
+  <h4 id="Tizen_NUI_ScrollView__ctor" data-uid="Tizen.NUI.ScrollView.#ctor">ScrollView()</h4>
+  <div class="markdown level1 summary"><p>Create an instance of ScrollView.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ScrollView()</code></pre>
+  </div>
+  
+  <h5 id="Tizen_NUI_ScrollView__ctor_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <h3 id="properties">Properties
+  </h3>
+  <a id="Tizen_NUI_ScrollView_AxisAutoLockEnabled_" data-uid="Tizen.NUI.ScrollView.AxisAutoLockEnabled*"></a>
+  <h4 id="Tizen_NUI_ScrollView_AxisAutoLockEnabled" data-uid="Tizen.NUI.ScrollView.AxisAutoLockEnabled">AxisAutoLockEnabled</h4>
+  <div class="markdown level1 summary"><p>Sets and Gets AxisAutoLockEnabled property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AxisAutoLockEnabled { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_AxisAutoLockEnabled_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_OvershootX_" data-uid="Tizen.NUI.ScrollView.OvershootX*"></a>
+  <h4 id="Tizen_NUI_ScrollView_OvershootX" data-uid="Tizen.NUI.ScrollView.OvershootX">OvershootX</h4>
+  <div class="markdown level1 summary"><p>Sets and Gets OvershootX property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float OvershootX { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_OvershootX_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_OvershootY_" data-uid="Tizen.NUI.ScrollView.OvershootY*"></a>
+  <h4 id="Tizen_NUI_ScrollView_OvershootY" data-uid="Tizen.NUI.ScrollView.OvershootY">OvershootY</h4>
+  <div class="markdown level1 summary"><p>Sets and Gets OvershootY property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float OvershootY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_OvershootY_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_Panning_" data-uid="Tizen.NUI.ScrollView.Panning*"></a>
+  <h4 id="Tizen_NUI_ScrollView_Panning" data-uid="Tizen.NUI.ScrollView.Panning">Panning</h4>
+  <div class="markdown level1 summary"><p>Sets and Gets Panning property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Panning { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_Panning_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_PanningEnabled_" data-uid="Tizen.NUI.ScrollView.PanningEnabled*"></a>
+  <h4 id="Tizen_NUI_ScrollView_PanningEnabled" data-uid="Tizen.NUI.ScrollView.PanningEnabled">PanningEnabled</h4>
+  <div class="markdown level1 summary"><p>Sets and Gets PanningEnabled property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool PanningEnabled { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_PanningEnabled_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_ScrollDomainOffset_" data-uid="Tizen.NUI.ScrollView.ScrollDomainOffset*"></a>
+  <h4 id="Tizen_NUI_ScrollView_ScrollDomainOffset" data-uid="Tizen.NUI.ScrollView.ScrollDomainOffset">ScrollDomainOffset</h4>
+  <div class="markdown level1 summary"><p>Sets and Gets ScrollDomainOffset property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 ScrollDomainOffset { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Vector2.html">Vector2</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_ScrollDomainOffset_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_ScrollDomainSize_" data-uid="Tizen.NUI.ScrollView.ScrollDomainSize*"></a>
+  <h4 id="Tizen_NUI_ScrollView_ScrollDomainSize" data-uid="Tizen.NUI.ScrollView.ScrollDomainSize">ScrollDomainSize</h4>
+  <div class="markdown level1 summary"><p>Sets and Gets ScrollDomainSize property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 ScrollDomainSize { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Vector2.html">Vector2</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_ScrollDomainSize_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_ScrollFinal_" data-uid="Tizen.NUI.ScrollView.ScrollFinal*"></a>
+  <h4 id="Tizen_NUI_ScrollView_ScrollFinal" data-uid="Tizen.NUI.ScrollView.ScrollFinal">ScrollFinal</h4>
+  <div class="markdown level1 summary"><p>Sets and Gets ScrollFinal property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 ScrollFinal { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Vector2.html">Vector2</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_ScrollFinal_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_Scrolling_" data-uid="Tizen.NUI.ScrollView.Scrolling*"></a>
+  <h4 id="Tizen_NUI_ScrollView_Scrolling" data-uid="Tizen.NUI.ScrollView.Scrolling">Scrolling</h4>
+  <div class="markdown level1 summary"><p>Sets and Gets Scrolling property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Scrolling { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_Scrolling_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_ScrollMode_" data-uid="Tizen.NUI.ScrollView.ScrollMode*"></a>
+  <h4 id="Tizen_NUI_ScrollView_ScrollMode" data-uid="Tizen.NUI.ScrollView.ScrollMode">ScrollMode</h4>
+  <div class="markdown level1 summary"><p>Sets and Gets ScrollMode property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PropertyMap ScrollMode { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.PropertyMap.html">PropertyMap</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_ScrollMode_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_ScrollPosition_" data-uid="Tizen.NUI.ScrollView.ScrollPosition*"></a>
+  <h4 id="Tizen_NUI_ScrollView_ScrollPosition" data-uid="Tizen.NUI.ScrollView.ScrollPosition">ScrollPosition</h4>
+  <div class="markdown level1 summary"><p>Sets and Gets ScrollPosition property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 ScrollPosition { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Vector2.html">Vector2</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_ScrollPosition_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_ScrollPositionDelta_" data-uid="Tizen.NUI.ScrollView.ScrollPositionDelta*"></a>
+  <h4 id="Tizen_NUI_ScrollView_ScrollPositionDelta" data-uid="Tizen.NUI.ScrollView.ScrollPositionDelta">ScrollPositionDelta</h4>
+  <div class="markdown level1 summary"><p>Sets and Gets ScrollPositionDelta property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 ScrollPositionDelta { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Vector2.html">Vector2</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_ScrollPositionDelta_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_ScrollPrePosition_" data-uid="Tizen.NUI.ScrollView.ScrollPrePosition*"></a>
+  <h4 id="Tizen_NUI_ScrollView_ScrollPrePosition" data-uid="Tizen.NUI.ScrollView.ScrollPrePosition">ScrollPrePosition</h4>
+  <div class="markdown level1 summary"><p>Sets and Gets ScrollPrePosition property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 ScrollPrePosition { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Vector2.html">Vector2</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_ScrollPrePosition_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_ScrollPrePositionMax_" data-uid="Tizen.NUI.ScrollView.ScrollPrePositionMax*"></a>
+  <h4 id="Tizen_NUI_ScrollView_ScrollPrePositionMax" data-uid="Tizen.NUI.ScrollView.ScrollPrePositionMax">ScrollPrePositionMax</h4>
+  <div class="markdown level1 summary"><p>Sets and Gets ScrollPrePositionMax property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 ScrollPrePositionMax { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Vector2.html">Vector2</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_ScrollPrePositionMax_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_StartPagePosition_" data-uid="Tizen.NUI.ScrollView.StartPagePosition*"></a>
+  <h4 id="Tizen_NUI_ScrollView_StartPagePosition" data-uid="Tizen.NUI.ScrollView.StartPagePosition">StartPagePosition</h4>
+  <div class="markdown level1 summary"><p>Sets and Gets StartPagePosition property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 StartPagePosition { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Vector3.html">Vector3</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_StartPagePosition_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_WheelScrollDistanceStep_" data-uid="Tizen.NUI.ScrollView.WheelScrollDistanceStep*"></a>
+  <h4 id="Tizen_NUI_ScrollView_WheelScrollDistanceStep" data-uid="Tizen.NUI.ScrollView.WheelScrollDistanceStep">WheelScrollDistanceStep</h4>
+  <div class="markdown level1 summary"><p>Sets and Gets WheelScrollDistanceStep property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 WheelScrollDistanceStep { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Vector2.html">Vector2</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_WheelScrollDistanceStep_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_Wrap_" data-uid="Tizen.NUI.ScrollView.Wrap*"></a>
+  <h4 id="Tizen_NUI_ScrollView_Wrap" data-uid="Tizen.NUI.ScrollView.Wrap">Wrap</h4>
+  <div class="markdown level1 summary"><p>Sets and Gets Wrap property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Wrap { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_Wrap_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_WrapEnabled_" data-uid="Tizen.NUI.ScrollView.WrapEnabled*"></a>
+  <h4 id="Tizen_NUI_ScrollView_WrapEnabled" data-uid="Tizen.NUI.ScrollView.WrapEnabled">WrapEnabled</h4>
+  <div class="markdown level1 summary"><p>Sets and Gets WrapEnabled property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool WrapEnabled { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_WrapEnabled_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <h3 id="methods">Methods
+  </h3>
+  <a id="Tizen_NUI_ScrollView_ApplyEffect_" data-uid="Tizen.NUI.ScrollView.ApplyEffect*"></a>
+  <h4 id="Tizen_NUI_ScrollView_ApplyEffect_Tizen_NUI_ScrollViewEffect_" data-uid="Tizen.NUI.ScrollView.ApplyEffect(Tizen.NUI.ScrollViewEffect)">ApplyEffect(ScrollViewEffect)</h4>
+  <div class="markdown level1 summary"><p>Applies Effect to ScrollView.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ApplyEffect(ScrollViewEffect effect)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.ScrollViewEffect.html">ScrollViewEffect</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td><p>The effect to apply to scroll view.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_ApplyEffect_Tizen_NUI_ScrollViewEffect__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_BindView_" data-uid="Tizen.NUI.ScrollView.BindView*"></a>
+  <h4 id="Tizen_NUI_ScrollView_BindView_Tizen_NUI_BaseComponents_View_" data-uid="Tizen.NUI.ScrollView.BindView(Tizen.NUI.BaseComponents.View)">BindView(View)</h4>
+  <div class="markdown level1 summary"><p>Binds view to this ScrollView.
+Once an actor is bound to a ScrollView, it will be subject to that ScrollView&apos;s properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void BindView(View child)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.BaseComponents.View.html">View</a></td>
+        <td><span class="parametername">child</span></td>
+        <td><p>The view to add to this ScrollView.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_BindView_Tizen_NUI_BaseComponents_View__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_Dispose_" data-uid="Tizen.NUI.ScrollView.Dispose*"></a>
+  <h4 id="Tizen_NUI_ScrollView_Dispose_Tizen_NUI_DisposeTypes_" data-uid="Tizen.NUI.ScrollView.Dispose(Tizen.NUI.DisposeTypes)">Dispose(DisposeTypes)</h4>
+  <div class="markdown level1 summary"><p>Dispose</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Dispose(DisposeTypes type)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.DisposeTypes.html">DisposeTypes</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>the dispose type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Tizen.NUI.BaseComponents.Scrollable.html#Tizen_NUI_BaseComponents_Scrollable_Dispose_Tizen_NUI_DisposeTypes_">Scrollable.Dispose(DisposeTypes)</a></div>
+  
+  <h5 id="Tizen_NUI_ScrollView_Dispose_Tizen_NUI_DisposeTypes__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_GetAxisAutoLock_" data-uid="Tizen.NUI.ScrollView.GetAxisAutoLock*"></a>
+  <h4 id="Tizen_NUI_ScrollView_GetAxisAutoLock" data-uid="Tizen.NUI.ScrollView.GetAxisAutoLock">GetAxisAutoLock()</h4>
+  <div class="markdown level1 summary"><p>Returns state of Axis Auto Lock mode.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool GetAxisAutoLock()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>Whether Axis Auto Lock mode has been enabled or not.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_GetAxisAutoLock_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_GetAxisAutoLockGradient_" data-uid="Tizen.NUI.ScrollView.GetAxisAutoLockGradient*"></a>
+  <h4 id="Tizen_NUI_ScrollView_GetAxisAutoLockGradient" data-uid="Tizen.NUI.ScrollView.GetAxisAutoLockGradient">GetAxisAutoLockGradient()</h4>
+  <div class="markdown level1 summary"><p>Gets the gradient threshold at which a panning gesture should be locked to the Horizontal or Vertical axis.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetAxisAutoLockGradient()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><p>The gradient, a value between 0.0 and 1.0f.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_GetAxisAutoLockGradient_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_GetCurrentPage_" data-uid="Tizen.NUI.ScrollView.GetCurrentPage*"></a>
+  <h4 id="Tizen_NUI_ScrollView_GetCurrentPage" data-uid="Tizen.NUI.ScrollView.GetCurrentPage">GetCurrentPage()</h4>
+  <div class="markdown level1 summary"><p>Retrieves current scroll page based on ScrollView dimensions being the size of one page, and all pages laid out in<br>
+a grid fashion, increasing from left to right until the end of the X-domain.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint GetCurrentPage()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td><p>The current scroll position.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_GetCurrentPage_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_GetCurrentScrollPosition_" data-uid="Tizen.NUI.ScrollView.GetCurrentScrollPosition*"></a>
+  <h4 id="Tizen_NUI_ScrollView_GetCurrentScrollPosition" data-uid="Tizen.NUI.ScrollView.GetCurrentScrollPosition">GetCurrentScrollPosition()</h4>
+  <div class="markdown level1 summary"><p>Retrieves current scroll position.<br></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 GetCurrentScrollPosition()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Vector2.html">Vector2</a></td>
+        <td><p>The current scroll position.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_GetCurrentScrollPosition_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_GetFlickSpeedCoefficient_" data-uid="Tizen.NUI.ScrollView.GetFlickSpeedCoefficient*"></a>
+  <h4 id="Tizen_NUI_ScrollView_GetFlickSpeedCoefficient" data-uid="Tizen.NUI.ScrollView.GetFlickSpeedCoefficient">GetFlickSpeedCoefficient()</h4>
+  <div class="markdown level1 summary"><p>Gets the flick speed coefficient for ScrollView when flicking in free panning mode.<br>
+This is a constant which multiplies the input touch flick velocity to determine the actual velocity at which to move the scrolling area.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetFlickSpeedCoefficient()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><p>The flick speed coefficient is returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_GetFlickSpeedCoefficient_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_GetFrictionCoefficient_" data-uid="Tizen.NUI.ScrollView.GetFrictionCoefficient*"></a>
+  <h4 id="Tizen_NUI_ScrollView_GetFrictionCoefficient" data-uid="Tizen.NUI.ScrollView.GetFrictionCoefficient">GetFrictionCoefficient()</h4>
+  <div class="markdown level1 summary"><p>Gets the friction coefficient setting for ScrollView when flicking in free panning mode.
+This is a value in stage-diagonals per second^2, stage-diagonal = Length( stage.width, stage.height )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetFrictionCoefficient()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><p>Friction coefficient is returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_GetFrictionCoefficient_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_GetMaxFlickSpeed_" data-uid="Tizen.NUI.ScrollView.GetMaxFlickSpeed*"></a>
+  <h4 id="Tizen_NUI_ScrollView_GetMaxFlickSpeed" data-uid="Tizen.NUI.ScrollView.GetMaxFlickSpeed">GetMaxFlickSpeed()</h4>
+  <div class="markdown level1 summary"><p>Gets the maximum flick speed setting for ScrollView when flicking in free panning mode.<br>
+This is a value in stage-diagonals per second.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetMaxFlickSpeed()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><p>Maximum flick speed is returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_GetMaxFlickSpeed_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_GetMinimumDistanceForFlick_" data-uid="Tizen.NUI.ScrollView.GetMinimumDistanceForFlick*"></a>
+  <h4 id="Tizen_NUI_ScrollView_GetMinimumDistanceForFlick" data-uid="Tizen.NUI.ScrollView.GetMinimumDistanceForFlick">GetMinimumDistanceForFlick()</h4>
+  <div class="markdown level1 summary"><p>Gets the minimum pan distance required for a flick gesture in pixels.<br></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 GetMinimumDistanceForFlick()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Vector2.html">Vector2</a></td>
+        <td><p>Minimum pan distance vector with separate x and y distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_GetMinimumDistanceForFlick_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_GetMinimumSpeedForFlick_" data-uid="Tizen.NUI.ScrollView.GetMinimumSpeedForFlick*"></a>
+  <h4 id="Tizen_NUI_ScrollView_GetMinimumSpeedForFlick" data-uid="Tizen.NUI.ScrollView.GetMinimumSpeedForFlick">GetMinimumSpeedForFlick()</h4>
+  <div class="markdown level1 summary"><p>Returns the minimum pan speed required for a flick gesture in pixels per second.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetMinimumSpeedForFlick()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><p>Minimum pan speed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_GetMinimumSpeedForFlick_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_GetScrollFlickAlphaFunction_" data-uid="Tizen.NUI.ScrollView.GetScrollFlickAlphaFunction*"></a>
+  <h4 id="Tizen_NUI_ScrollView_GetScrollFlickAlphaFunction" data-uid="Tizen.NUI.ScrollView.GetScrollFlickAlphaFunction">GetScrollFlickAlphaFunction()</h4>
+  <div class="markdown level1 summary"><p>Gets flick-animation&apos;s AlphaFunction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AlphaFunction GetScrollFlickAlphaFunction()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.AlphaFunction.html">AlphaFunction</a></td>
+        <td><p>Current easing alpha function of the flick animation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_GetScrollFlickAlphaFunction_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_GetScrollFlickDuration_" data-uid="Tizen.NUI.ScrollView.GetScrollFlickDuration*"></a>
+  <h4 id="Tizen_NUI_ScrollView_GetScrollFlickDuration" data-uid="Tizen.NUI.ScrollView.GetScrollFlickDuration">GetScrollFlickDuration()</h4>
+  <div class="markdown level1 summary"><p>Gets the time for the scroll flick-animation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetScrollFlickDuration()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><p>The time in seconds for the animation to take.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_GetScrollFlickDuration_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_GetScrollSnapAlphaFunction_" data-uid="Tizen.NUI.ScrollView.GetScrollSnapAlphaFunction*"></a>
+  <h4 id="Tizen_NUI_ScrollView_GetScrollSnapAlphaFunction" data-uid="Tizen.NUI.ScrollView.GetScrollSnapAlphaFunction">GetScrollSnapAlphaFunction()</h4>
+  <div class="markdown level1 summary"><p>Gets snap-animation&apos;s AlphaFunction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AlphaFunction GetScrollSnapAlphaFunction()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.AlphaFunction.html">AlphaFunction</a></td>
+        <td><p>Current easing alpha function of the snap animation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_GetScrollSnapAlphaFunction_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_GetScrollSnapDuration_" data-uid="Tizen.NUI.ScrollView.GetScrollSnapDuration*"></a>
+  <h4 id="Tizen_NUI_ScrollView_GetScrollSnapDuration" data-uid="Tizen.NUI.ScrollView.GetScrollSnapDuration">GetScrollSnapDuration()</h4>
+  <div class="markdown level1 summary"><p>Gets the time for the scroll snap-animation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetScrollSnapDuration()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><p>The time in seconds for the animation to take.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_GetScrollSnapDuration_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_GetScrollUpdateDistance_" data-uid="Tizen.NUI.ScrollView.GetScrollUpdateDistance*"></a>
+  <h4 id="Tizen_NUI_ScrollView_GetScrollUpdateDistance" data-uid="Tizen.NUI.ScrollView.GetScrollUpdateDistance">GetScrollUpdateDistance()</h4>
+  <div class="markdown level1 summary"><p>Gets the current distance needed to scroll for ScrollUpdatedSignal to be emitted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetScrollUpdateDistance()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><p>Current scroll update distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_GetScrollUpdateDistance_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_GetWheelScrollDistanceStep_" data-uid="Tizen.NUI.ScrollView.GetWheelScrollDistanceStep*"></a>
+  <h4 id="Tizen_NUI_ScrollView_GetWheelScrollDistanceStep" data-uid="Tizen.NUI.ScrollView.GetWheelScrollDistanceStep">GetWheelScrollDistanceStep()</h4>
+  <div class="markdown level1 summary"><p>Gets the step of scroll distance in actor coordinates for each wheel event received in free panning mode.<br></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 GetWheelScrollDistanceStep()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Vector2.html">Vector2</a></td>
+        <td><p>The step of scroll distance(pixel) in X and Y axes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_GetWheelScrollDistanceStep_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_RemoveAllEffects_" data-uid="Tizen.NUI.ScrollView.RemoveAllEffects*"></a>
+  <h4 id="Tizen_NUI_ScrollView_RemoveAllEffects" data-uid="Tizen.NUI.ScrollView.RemoveAllEffects">RemoveAllEffects()</h4>
+  <div class="markdown level1 summary"><p>Remove All Effects from ScrollView.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveAllEffects()</code></pre>
+  </div>
+  
+  <h5 id="Tizen_NUI_ScrollView_RemoveAllEffects_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_RemoveEffect_" data-uid="Tizen.NUI.ScrollView.RemoveEffect*"></a>
+  <h4 id="Tizen_NUI_ScrollView_RemoveEffect_Tizen_NUI_ScrollViewEffect_" data-uid="Tizen.NUI.ScrollView.RemoveEffect(Tizen.NUI.ScrollViewEffect)">RemoveEffect(ScrollViewEffect)</h4>
+  <div class="markdown level1 summary"><p>Removes Effect from ScrollView.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveEffect(ScrollViewEffect effect)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.ScrollViewEffect.html">ScrollViewEffect</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td><p>The effect to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_RemoveEffect_Tizen_NUI_ScrollViewEffect__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_RemoveScrollingDirection_" data-uid="Tizen.NUI.ScrollView.RemoveScrollingDirection*"></a>
+  <h4 id="Tizen_NUI_ScrollView_RemoveScrollingDirection_Tizen_NUI_Radian_" data-uid="Tizen.NUI.ScrollView.RemoveScrollingDirection(Tizen.NUI.Radian)">RemoveScrollingDirection(Radian)</h4>
+  <div class="markdown level1 summary"><p>Removes a direction constraint from the scroll view.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveScrollingDirection(Radian direction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Radian.html">Radian</a></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The axis to constrain the scroll-view to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_RemoveScrollingDirection_Tizen_NUI_Radian__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_ScrollTo_" data-uid="Tizen.NUI.ScrollView.ScrollTo*"></a>
+  <h4 id="Tizen_NUI_ScrollView_ScrollTo_System_UInt32_" data-uid="Tizen.NUI.ScrollView.ScrollTo(System.UInt32)">ScrollTo(UInt32)</h4>
+  <div class="markdown level1 summary"><p>Scrolls View to position specified (contents will scroll to this position).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ScrollTo(uint page)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td><span class="parametername">page</span></td>
+        <td><p>The page to scroll to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_ScrollTo_System_UInt32__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_ScrollTo_" data-uid="Tizen.NUI.ScrollView.ScrollTo*"></a>
+  <h4 id="Tizen_NUI_ScrollView_ScrollTo_System_UInt32_System_Single_" data-uid="Tizen.NUI.ScrollView.ScrollTo(System.UInt32,System.Single)">ScrollTo(UInt32, Single)</h4>
+  <div class="markdown level1 summary"><p>Scrolls View to position specified (contents will scroll to this position).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ScrollTo(uint page, float duration)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td><span class="parametername">page</span></td>
+        <td><p>The page to scroll to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">duration</span></td>
+        <td><p>The duration of the animation in seconds.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_ScrollTo_System_UInt32_System_Single__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_ScrollTo_" data-uid="Tizen.NUI.ScrollView.ScrollTo*"></a>
+  <h4 id="Tizen_NUI_ScrollView_ScrollTo_System_UInt32_System_Single_Tizen_NUI_DirectionBias_" data-uid="Tizen.NUI.ScrollView.ScrollTo(System.UInt32,System.Single,Tizen.NUI.DirectionBias)">ScrollTo(UInt32, Single, DirectionBias)</h4>
+  <div class="markdown level1 summary"><p>Scrolls View to position specified (contents will scroll to this position).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ScrollTo(uint page, float duration, DirectionBias bias)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td><span class="parametername">page</span></td>
+        <td><p>The page to scroll to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">duration</span></td>
+        <td><p>The duration of the animation in seconds.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.DirectionBias.html">DirectionBias</a></td>
+        <td><span class="parametername">bias</span></td>
+        <td><p>Whether to bias scrolling to left or right.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_ScrollTo_System_UInt32_System_Single_Tizen_NUI_DirectionBias__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_ScrollTo_" data-uid="Tizen.NUI.ScrollView.ScrollTo*"></a>
+  <h4 id="Tizen_NUI_ScrollView_ScrollTo_Tizen_NUI_BaseComponents_View_" data-uid="Tizen.NUI.ScrollView.ScrollTo(Tizen.NUI.BaseComponents.View)">ScrollTo(View)</h4>
+  <div class="markdown level1 summary"><p>Scrolls View to position specified (contents will scroll to this position).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ScrollTo(View view)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.BaseComponents.View.html">View</a></td>
+        <td><span class="parametername">view</span></td>
+        <td><p>The view to center in on (via Scrolling).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_ScrollTo_Tizen_NUI_BaseComponents_View__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_ScrollTo_" data-uid="Tizen.NUI.ScrollView.ScrollTo*"></a>
+  <h4 id="Tizen_NUI_ScrollView_ScrollTo_Tizen_NUI_BaseComponents_View_System_Single_" data-uid="Tizen.NUI.ScrollView.ScrollTo(Tizen.NUI.BaseComponents.View,System.Single)">ScrollTo(View, Single)</h4>
+  <div class="markdown level1 summary"><p>Scrolls View to position specified (contents will scroll to this position).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ScrollTo(View view, float duration)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.BaseComponents.View.html">View</a></td>
+        <td><span class="parametername">view</span></td>
+        <td><p>The view to center in on (via Scrolling).</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">duration</span></td>
+        <td><p>The duration of the animation in seconds.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_ScrollTo_Tizen_NUI_BaseComponents_View_System_Single__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_ScrollTo_" data-uid="Tizen.NUI.ScrollView.ScrollTo*"></a>
+  <h4 id="Tizen_NUI_ScrollView_ScrollTo_Tizen_NUI_Vector2_" data-uid="Tizen.NUI.ScrollView.ScrollTo(Tizen.NUI.Vector2)">ScrollTo(Vector2)</h4>
+  <div class="markdown level1 summary"><p>Scrolls View to position specified (contents will scroll to this position).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ScrollTo(Vector2 position)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Vector2.html">Vector2</a></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to scroll to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_ScrollTo_Tizen_NUI_Vector2__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_ScrollTo_" data-uid="Tizen.NUI.ScrollView.ScrollTo*"></a>
+  <h4 id="Tizen_NUI_ScrollView_ScrollTo_Tizen_NUI_Vector2_System_Single_" data-uid="Tizen.NUI.ScrollView.ScrollTo(Tizen.NUI.Vector2,System.Single)">ScrollTo(Vector2, Single)</h4>
+  <div class="markdown level1 summary"><p>Scrolls View to position specified (contents will scroll to this position).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ScrollTo(Vector2 position, float duration)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Vector2.html">Vector2</a></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to scroll to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">duration</span></td>
+        <td><p>The duration of the animation in seconds.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_ScrollTo_Tizen_NUI_Vector2_System_Single__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_ScrollTo_" data-uid="Tizen.NUI.ScrollView.ScrollTo*"></a>
+  <h4 id="Tizen_NUI_ScrollView_ScrollTo_Tizen_NUI_Vector2_System_Single_Tizen_NUI_AlphaFunction_" data-uid="Tizen.NUI.ScrollView.ScrollTo(Tizen.NUI.Vector2,System.Single,Tizen.NUI.AlphaFunction)">ScrollTo(Vector2, Single, AlphaFunction)</h4>
+  <div class="markdown level1 summary"><p>Scrolls View to position specified (contents will scroll to this position).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ScrollTo(Vector2 position, float duration, AlphaFunction alpha)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Vector2.html">Vector2</a></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to scroll to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">duration</span></td>
+        <td><p>The duration of the animation in seconds.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.AlphaFunction.html">AlphaFunction</a></td>
+        <td><span class="parametername">alpha</span></td>
+        <td><p>The alpha function to use.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_ScrollTo_Tizen_NUI_Vector2_System_Single_Tizen_NUI_AlphaFunction__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_ScrollTo_" data-uid="Tizen.NUI.ScrollView.ScrollTo*"></a>
+  <h4 id="Tizen_NUI_ScrollView_ScrollTo_Tizen_NUI_Vector2_System_Single_Tizen_NUI_AlphaFunction_Tizen_NUI_DirectionBias_Tizen_NUI_DirectionBias_" data-uid="Tizen.NUI.ScrollView.ScrollTo(Tizen.NUI.Vector2,System.Single,Tizen.NUI.AlphaFunction,Tizen.NUI.DirectionBias,Tizen.NUI.DirectionBias)">ScrollTo(Vector2, Single, AlphaFunction, DirectionBias, DirectionBias)</h4>
+  <div class="markdown level1 summary"><p>Scrolls View to position specified (contents will scroll to this position).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ScrollTo(Vector2 position, float duration, AlphaFunction alpha, DirectionBias horizontalBias, DirectionBias verticalBias)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Vector2.html">Vector2</a></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to scroll to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">duration</span></td>
+        <td><p>The duration of the animation in seconds.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.AlphaFunction.html">AlphaFunction</a></td>
+        <td><span class="parametername">alpha</span></td>
+        <td><p>Alpha function to use.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.DirectionBias.html">DirectionBias</a></td>
+        <td><span class="parametername">horizontalBias</span></td>
+        <td><p>Whether to bias scrolling to left or right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.DirectionBias.html">DirectionBias</a></td>
+        <td><span class="parametername">verticalBias</span></td>
+        <td><p>Whether to bias scrolling to top or bottom.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_ScrollTo_Tizen_NUI_Vector2_System_Single_Tizen_NUI_AlphaFunction_Tizen_NUI_DirectionBias_Tizen_NUI_DirectionBias__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_ScrollTo_" data-uid="Tizen.NUI.ScrollView.ScrollTo*"></a>
+  <h4 id="Tizen_NUI_ScrollView_ScrollTo_Tizen_NUI_Vector2_System_Single_Tizen_NUI_DirectionBias_Tizen_NUI_DirectionBias_" data-uid="Tizen.NUI.ScrollView.ScrollTo(Tizen.NUI.Vector2,System.Single,Tizen.NUI.DirectionBias,Tizen.NUI.DirectionBias)">ScrollTo(Vector2, Single, DirectionBias, DirectionBias)</h4>
+  <div class="markdown level1 summary"><p>Scrolls View to position specified (contents will scroll to this position).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ScrollTo(Vector2 position, float duration, DirectionBias horizontalBias, DirectionBias verticalBias)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Vector2.html">Vector2</a></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to scroll to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">duration</span></td>
+        <td><p>The duration of the animation in seconds.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.DirectionBias.html">DirectionBias</a></td>
+        <td><span class="parametername">horizontalBias</span></td>
+        <td><p>Whether to bias scrolling to left or right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.DirectionBias.html">DirectionBias</a></td>
+        <td><span class="parametername">verticalBias</span></td>
+        <td><p>Whether to bias scrolling to top or bottom.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_ScrollTo_Tizen_NUI_Vector2_System_Single_Tizen_NUI_DirectionBias_Tizen_NUI_DirectionBias__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_ScrollToSnapPoint_" data-uid="Tizen.NUI.ScrollView.ScrollToSnapPoint*"></a>
+  <h4 id="Tizen_NUI_ScrollView_ScrollToSnapPoint" data-uid="Tizen.NUI.ScrollView.ScrollToSnapPoint">ScrollToSnapPoint()</h4>
+  <div class="markdown level1 summary"><p>Scrolls View to the nearest snap points as specified by the Rulers.<br>
+If already at snap points, then will return false, and not scroll.<br></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ScrollToSnapPoint()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>True if Snapping necessary.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_ScrollToSnapPoint_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_SetAxisAutoLock_" data-uid="Tizen.NUI.ScrollView.SetAxisAutoLock*"></a>
+  <h4 id="Tizen_NUI_ScrollView_SetAxisAutoLock_System_Boolean_" data-uid="Tizen.NUI.ScrollView.SetAxisAutoLock(System.Boolean)">SetAxisAutoLock(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Enables or Disables Axis Auto Lock mode for panning within the ScrollView.<br>
+When enabled, any pan gesture that appears mostly horizontal or mostly
+vertical, will be automatically restricted to horizontal only or vertical
+only panning, until the pan gesture has completed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetAxisAutoLock(bool enable)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">enable</span></td>
+        <td><p>Enables (true), or disables (false) AxisAutoLock mode.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SetAxisAutoLock_System_Boolean__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_SetAxisAutoLockGradient_" data-uid="Tizen.NUI.ScrollView.SetAxisAutoLockGradient*"></a>
+  <h4 id="Tizen_NUI_ScrollView_SetAxisAutoLockGradient_System_Single_" data-uid="Tizen.NUI.ScrollView.SetAxisAutoLockGradient(System.Single)">SetAxisAutoLockGradient(Single)</h4>
+  <div class="markdown level1 summary"><p>Sets the gradient threshold at which a panning gesture should be locked to the Horizontal or Vertical axis.<br>
+By default, this is 0.36 (0.36:1) which means angles less than 20 degrees to an axis will lock to that axis.<br></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetAxisAutoLockGradient(float gradient)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">gradient</span></td>
+        <td><p>gradient A value between 0.0 and 1.0 (auto-lock for all angles).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SetAxisAutoLockGradient_System_Single__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_SetFlickSpeedCoefficient_" data-uid="Tizen.NUI.ScrollView.SetFlickSpeedCoefficient*"></a>
+  <h4 id="Tizen_NUI_ScrollView_SetFlickSpeedCoefficient_System_Single_" data-uid="Tizen.NUI.ScrollView.SetFlickSpeedCoefficient(System.Single)">SetFlickSpeedCoefficient(Single)</h4>
+  <div class="markdown level1 summary"><p>Sets the flick speed coefficient for ScrollView when flicking in free panning mode.<br>
+This is a constant which multiplies the input touch flick velocity to determine the actual velocity at
+which to move the scrolling area.<br></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetFlickSpeedCoefficient(float speed)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">speed</span></td>
+        <td><p>The flick speed coefficient (default = 1.0).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SetFlickSpeedCoefficient_System_Single__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_SetFrictionCoefficient_" data-uid="Tizen.NUI.ScrollView.SetFrictionCoefficient*"></a>
+  <h4 id="Tizen_NUI_ScrollView_SetFrictionCoefficient_System_Single_" data-uid="Tizen.NUI.ScrollView.SetFrictionCoefficient(System.Single)">SetFrictionCoefficient(Single)</h4>
+  <div class="markdown level1 summary"><p>Sets the friction coefficient for ScrollView when flicking.<br></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetFrictionCoefficient(float friction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">friction</span></td>
+        <td><p>Friction coefficient must be greater than 0.0 (default = 1.0).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SetFrictionCoefficient_System_Single__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_SetMaxFlickSpeed_" data-uid="Tizen.NUI.ScrollView.SetMaxFlickSpeed*"></a>
+  <h4 id="Tizen_NUI_ScrollView_SetMaxFlickSpeed_System_Single_" data-uid="Tizen.NUI.ScrollView.SetMaxFlickSpeed(System.Single)">SetMaxFlickSpeed(Single)</h4>
+  <div class="markdown level1 summary"><p>Sets the maximum flick speed for the ScrollView when flicking in free panning mode.<br>
+This is a value in stage-diagonals per second. stage-diagonal = Length( stage.width, stage.height ).<br></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetMaxFlickSpeed(float speed)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">speed</span></td>
+        <td><p>Maximum flick speed (default = 3.0).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SetMaxFlickSpeed_System_Single__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_SetMaxOvershoot_" data-uid="Tizen.NUI.ScrollView.SetMaxOvershoot*"></a>
+  <h4 id="Tizen_NUI_ScrollView_SetMaxOvershoot_System_Single_System_Single_" data-uid="Tizen.NUI.ScrollView.SetMaxOvershoot(System.Single,System.Single)">SetMaxOvershoot(Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Sets maximum overshoot amount.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetMaxOvershoot(float overshootX, float overshootY)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">overshootX</span></td>
+        <td><p>The maximum number of horizontally scrolled pixels before overshoot X reaches 1.0f.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">overshootY</span></td>
+        <td><p>The maximum number of vertically scrolled pixels before overshoot X reaches 1.0f.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SetMaxOvershoot_System_Single_System_Single__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_SetMinimumDistanceForFlick_" data-uid="Tizen.NUI.ScrollView.SetMinimumDistanceForFlick*"></a>
+  <h4 id="Tizen_NUI_ScrollView_SetMinimumDistanceForFlick_Tizen_NUI_Vector2_" data-uid="Tizen.NUI.ScrollView.SetMinimumDistanceForFlick(Tizen.NUI.Vector2)">SetMinimumDistanceForFlick(Vector2)</h4>
+  <div class="markdown level1 summary"><p>Sets the minimum pan distance required for a flick in pixels.<br>
+Takes a Vector2 containing separate x and y values. As long as the pan distance exceeds one of these axes, a flick will be allowed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetMinimumDistanceForFlick(Vector2 distance)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Vector2.html">Vector2</a></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The flick speed coefficient (default = 1.0).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SetMinimumDistanceForFlick_Tizen_NUI_Vector2__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_SetMinimumSpeedForFlick_" data-uid="Tizen.NUI.ScrollView.SetMinimumSpeedForFlick*"></a>
+  <h4 id="Tizen_NUI_ScrollView_SetMinimumSpeedForFlick_System_Single_" data-uid="Tizen.NUI.ScrollView.SetMinimumSpeedForFlick(System.Single)">SetMinimumSpeedForFlick(Single)</h4>
+  <div class="markdown level1 summary"><p>Sets the minimum pan speed required for a flick in pixels per second.<br></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetMinimumSpeedForFlick(float speed)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">speed</span></td>
+        <td><p>The minimum pan speed for a flick.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SetMinimumSpeedForFlick_System_Single__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_SetScrollFlickAlphaFunction_" data-uid="Tizen.NUI.ScrollView.SetScrollFlickAlphaFunction*"></a>
+  <h4 id="Tizen_NUI_ScrollView_SetScrollFlickAlphaFunction_Tizen_NUI_AlphaFunction_" data-uid="Tizen.NUI.ScrollView.SetScrollFlickAlphaFunction(Tizen.NUI.AlphaFunction)">SetScrollFlickAlphaFunction(AlphaFunction)</h4>
+  <div class="markdown level1 summary"><p>Sets flick-animation&apos;s AlphaFunction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetScrollFlickAlphaFunction(AlphaFunction alpha)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.AlphaFunction.html">AlphaFunction</a></td>
+        <td><span class="parametername">alpha</span></td>
+        <td><p>Easing alpha function of the flick animation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SetScrollFlickAlphaFunction_Tizen_NUI_AlphaFunction__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_SetScrollFlickDuration_" data-uid="Tizen.NUI.ScrollView.SetScrollFlickDuration*"></a>
+  <h4 id="Tizen_NUI_ScrollView_SetScrollFlickDuration_System_Single_" data-uid="Tizen.NUI.ScrollView.SetScrollFlickDuration(System.Single)">SetScrollFlickDuration(Single)</h4>
+  <div class="markdown level1 summary"><p>Sets the time for the scroll snap-animation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetScrollFlickDuration(float time)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">time</span></td>
+        <td><p>The time in seconds for the animation to take.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SetScrollFlickDuration_System_Single__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_SetScrollingDirection_" data-uid="Tizen.NUI.ScrollView.SetScrollingDirection*"></a>
+  <h4 id="Tizen_NUI_ScrollView_SetScrollingDirection_Tizen_NUI_Radian_" data-uid="Tizen.NUI.ScrollView.SetScrollingDirection(Tizen.NUI.Radian)">SetScrollingDirection(Radian)</h4>
+  <div class="markdown level1 summary"><p>Allows the user to constrain the scroll view in a particular direction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetScrollingDirection(Radian direction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Radian.html">Radian</a></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The axis to constrain the scroll-view to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SetScrollingDirection_Tizen_NUI_Radian__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_SetScrollingDirection_" data-uid="Tizen.NUI.ScrollView.SetScrollingDirection*"></a>
+  <h4 id="Tizen_NUI_ScrollView_SetScrollingDirection_Tizen_NUI_Radian_Tizen_NUI_Radian_" data-uid="Tizen.NUI.ScrollView.SetScrollingDirection(Tizen.NUI.Radian,Tizen.NUI.Radian)">SetScrollingDirection(Radian, Radian)</h4>
+  <div class="markdown level1 summary"><p>Allows the user to constrain the scroll view in a particular direction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetScrollingDirection(Radian direction, Radian threshold)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Radian.html">Radian</a></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The axis to constrain the scroll-view to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Radian.html">Radian</a></td>
+        <td><span class="parametername">threshold</span></td>
+        <td><p>The threshold to apply around the axis.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SetScrollingDirection_Tizen_NUI_Radian_Tizen_NUI_Radian__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_SetScrollSensitive_" data-uid="Tizen.NUI.ScrollView.SetScrollSensitive*"></a>
+  <h4 id="Tizen_NUI_ScrollView_SetScrollSensitive_System_Boolean_" data-uid="Tizen.NUI.ScrollView.SetScrollSensitive(System.Boolean)">SetScrollSensitive(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sets scroll sensibility of pan gesture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetScrollSensitive(bool sensitive)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">sensitive</span></td>
+        <td><p>True to enable scroll, false to disable scrolling.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SetScrollSensitive_System_Boolean__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_SetScrollSnapAlphaFunction_" data-uid="Tizen.NUI.ScrollView.SetScrollSnapAlphaFunction*"></a>
+  <h4 id="Tizen_NUI_ScrollView_SetScrollSnapAlphaFunction_Tizen_NUI_AlphaFunction_" data-uid="Tizen.NUI.ScrollView.SetScrollSnapAlphaFunction(Tizen.NUI.AlphaFunction)">SetScrollSnapAlphaFunction(AlphaFunction)</h4>
+  <div class="markdown level1 summary"><p>Sets snap-animation&apos;s AlphaFunction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetScrollSnapAlphaFunction(AlphaFunction alpha)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.AlphaFunction.html">AlphaFunction</a></td>
+        <td><span class="parametername">alpha</span></td>
+        <td><p>Easing alpha function of the snap animation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SetScrollSnapAlphaFunction_Tizen_NUI_AlphaFunction__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_SetScrollSnapDuration_" data-uid="Tizen.NUI.ScrollView.SetScrollSnapDuration*"></a>
+  <h4 id="Tizen_NUI_ScrollView_SetScrollSnapDuration_System_Single_" data-uid="Tizen.NUI.ScrollView.SetScrollSnapDuration(System.Single)">SetScrollSnapDuration(Single)</h4>
+  <div class="markdown level1 summary"><p>Sets the time for the scroll snap-animation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetScrollSnapDuration(float time)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">time</span></td>
+        <td><p>The time in seconds for the animation to take.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SetScrollSnapDuration_System_Single__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_SetScrollUpdateDistance_" data-uid="Tizen.NUI.ScrollView.SetScrollUpdateDistance*"></a>
+  <h4 id="Tizen_NUI_ScrollView_SetScrollUpdateDistance_System_Int32_" data-uid="Tizen.NUI.ScrollView.SetScrollUpdateDistance(System.Int32)">SetScrollUpdateDistance(Int32)</h4>
+  <div class="markdown level1 summary"><p>Sets the distance needed to scroll for ScrollUpdatedSignal to be emitted.<br>
+The scroll update distance tells ScrollView how far to move before ScrollUpdatedSignal the informs application.<br>
+Each time the ScrollView crosses this distance the signal will be emitted.<br></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetScrollUpdateDistance(int distance)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for ScrollView to move before emitting update signal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SetScrollUpdateDistance_System_Int32__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_SetSnapOvershootAlphaFunction_" data-uid="Tizen.NUI.ScrollView.SetSnapOvershootAlphaFunction*"></a>
+  <h4 id="Tizen_NUI_ScrollView_SetSnapOvershootAlphaFunction_Tizen_NUI_AlphaFunction_" data-uid="Tizen.NUI.ScrollView.SetSnapOvershootAlphaFunction(Tizen.NUI.AlphaFunction)">SetSnapOvershootAlphaFunction(AlphaFunction)</h4>
+  <div class="markdown level1 summary"><p>Sets Snap Overshoot animation&apos;s AlphaFunction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetSnapOvershootAlphaFunction(AlphaFunction alpha)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.AlphaFunction.html">AlphaFunction</a></td>
+        <td><span class="parametername">alpha</span></td>
+        <td><p>Easing alpha function of the overshoot snap animation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SetSnapOvershootAlphaFunction_Tizen_NUI_AlphaFunction__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_SetSnapOvershootDuration_" data-uid="Tizen.NUI.ScrollView.SetSnapOvershootDuration*"></a>
+  <h4 id="Tizen_NUI_ScrollView_SetSnapOvershootDuration_System_Single_" data-uid="Tizen.NUI.ScrollView.SetSnapOvershootDuration(System.Single)">SetSnapOvershootDuration(Single)</h4>
+  <div class="markdown level1 summary"><p>Sets Snap Overshoot animation&apos;s Duration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetSnapOvershootDuration(float duration)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">duration</span></td>
+        <td><p>duration The duration of the overshoot snap animation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SetSnapOvershootDuration_System_Single__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_SetViewAutoSnap_" data-uid="Tizen.NUI.ScrollView.SetViewAutoSnap*"></a>
+  <h4 id="Tizen_NUI_ScrollView_SetViewAutoSnap_System_Boolean_" data-uid="Tizen.NUI.ScrollView.SetViewAutoSnap(System.Boolean)">SetViewAutoSnap(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Enables or Disables Actor Auto-Snap mode.<br>
+When Actor Auto-Snap mode has been enabled, ScrollView will automatically,
+snap to the closest actor (The closest actor will appear in the center of the ScrollView).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetViewAutoSnap(bool enable)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">enable</span></td>
+        <td><p>Enables (true), or disables (false) Actor AutoSnap.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SetViewAutoSnap_System_Boolean__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_SetWheelScrollDistanceStep_" data-uid="Tizen.NUI.ScrollView.SetWheelScrollDistanceStep*"></a>
+  <h4 id="Tizen_NUI_ScrollView_SetWheelScrollDistanceStep_Tizen_NUI_Vector2_" data-uid="Tizen.NUI.ScrollView.SetWheelScrollDistanceStep(Tizen.NUI.Vector2)">SetWheelScrollDistanceStep(Vector2)</h4>
+  <div class="markdown level1 summary"><p>Sets the step of scroll distance in actor coordinates for each wheel event received in free panning mode.<br></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetWheelScrollDistanceStep(Vector2 step)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.Vector2.html">Vector2</a></td>
+        <td><span class="parametername">step</span></td>
+        <td><p>step The step of scroll distance(pixel) in X and Y axes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SetWheelScrollDistanceStep_Tizen_NUI_Vector2__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_SetWrapMode_" data-uid="Tizen.NUI.ScrollView.SetWrapMode*"></a>
+  <h4 id="Tizen_NUI_ScrollView_SetWrapMode_System_Boolean_" data-uid="Tizen.NUI.ScrollView.SetWrapMode(System.Boolean)">SetWrapMode(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Enables or Disables Wrap mode for ScrollView contents.<br>
+When enabled, the ScrollView contents are wrapped over the X/Y Domain.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetWrapMode(bool enable)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">enable</span></td>
+        <td><p>Enables (true), or disables (false) Wrap Mode.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SetWrapMode_System_Boolean__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_NUI_ScrollView_UnbindView_" data-uid="Tizen.NUI.ScrollView.UnbindView*"></a>
+  <h4 id="Tizen_NUI_ScrollView_UnbindView_Tizen_NUI_BaseComponents_View_" data-uid="Tizen.NUI.ScrollView.UnbindView(Tizen.NUI.BaseComponents.View)">UnbindView(View)</h4>
+  <div class="markdown level1 summary"><p>Unbinds view to this ScrollView.
+Once an actor is bound to a ScrollView, it will be subject to that ScrollView&apos;s properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UnbindView(View child)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.BaseComponents.View.html">View</a></td>
+        <td><span class="parametername">child</span></td>
+        <td><p>The view to remove to this ScrollView.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_UnbindView_Tizen_NUI_BaseComponents_View__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <h3 id="events">Events
+  </h3>
+  <h4 id="Tizen_NUI_ScrollView_SnapStarted" data-uid="Tizen.NUI.ScrollView.SnapStarted">SnapStarted</h4>
+  <div class="markdown level1 summary"><p>SnapStarted can be used to subscribe or unsubscribe the event handler
+The SnapStarted signal is emitted when the ScrollView has started to snap or flick (it tells the target
+position, scale, rotation for the snap or flick).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event DaliEventHandler&lt;object, ScrollView.SnapStartedEventArgs&gt; SnapStarted</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.NUI.DaliEventHandler-2.html">DaliEventHandler</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a>, <a class="xref" href="Tizen.NUI.ScrollView.SnapStartedEventArgs.html">ScrollView.SnapStartedEventArgs</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_NUI_ScrollView_SnapStarted_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright &copy; 2016-2017 Samsung <br> Generated by <strong>DocFX</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

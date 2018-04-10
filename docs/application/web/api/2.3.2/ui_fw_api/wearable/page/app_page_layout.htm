@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head> 
+  <script type="text/javascript" src="../../snippet.js"></script> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <link href="../../styles.css" rel="StyleSheet" type="text/css" /> 
+  <link href="../../snippet.css" rel="StyleSheet" type="text/css" /> 
+  <title>Application Page Layout</title> 
+ </head> 
+ <body onload="prettyPrint()" id="content"> 
+
+<h1>Application Page Layout</h1>
+<p>In the Tizen wearable Web UI framework, the application page structure is based on a header and content elements:</p>
+<ul><li>
+<p>The header is placed at the top, and displays the page title.</p></li>
+<li><p> The content is the section below the header, showing the main content of the page.</p></li></ul>
+
+<h2>Basic Layout</h2>
+
+<p>The following table describes the specific information for each section.</p>
+
+<table>
+	<caption>Table: Page sections</caption>
+<tbody>
+	<tr>
+		<th style="width:10%;">Section</th>
+		<th>Class</th>
+		<th>Mandatory</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td rowspan="2">Page</td>
+		<td><span style="font-family: Courier New,Courier,monospace">ui-page</span></td>
+		<td>Yes</td>
+		<td><p>Defines the element as a page.</p>
+		<p>The page component is used to manage a single item in a page-based architecture.</p>
+		<p>A page is composed of header (optional), content (mandatory), and footer (optional) elements.</p></td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">ui-page-active</span></td>
+		<td>No</td>
+		<td>If an application has a static start page, insert the <span style="font-family: Courier New,Courier,monospace">ui-page-active</span> class in the page element to speed up the application launch. The start page with the <span style="font-family: Courier New,Courier,monospace">ui-page-active</span> class can be displayed before the framework is fully loaded.
+<p>If this class is not used, the framework inserts the class automatically to the first page of the application. However, this has a slowing effect on the application launch, because the page is displayed only after the framework is fully loaded.</p></td>
+	</tr>
+	<tr>
+		<td>Header</td>
+		<td><span style="font-family: Courier New,Courier,monospace">ui-header</span></td>
+		<td>No</td>
+		<td><p>Defines the element as a header.</p>
+		<p>As the Tizen wearable device screen size is small, avoid using the header element.</p></td>
+	</tr>
+	<tr>
+		<td>Content</td>
+		<td><span style="font-family: Courier New,Courier,monospace">ui-content</span></td>
+		<td>Yes</td>
+		<td><p>Defines the element as content.</p></td>
+	</tr>
+	<tr>
+		<td>Footer</td>
+		<td><span style="font-family: Courier New,Courier,monospace">ui-footer</span></td>
+		<td>No</td>
+		<td><p>Defines the element as a footer.</p>
+		<p>The footer section is mostly used to include option buttons.</p></td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>To add a page to the application, use the following code:</p>
+<pre class="prettyprint">
+&lt;!--Page layout--&gt;
+&lt;div class=&quot;ui-page ui-page-active&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;header class=&quot;ui-header&quot;&gt;&lt;/header&gt;
+&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-content&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;footer class=&quot;ui-footer&quot;&gt;&lt;/footer&gt;
+&lt;/div&gt;
+
+&lt;!--Page layout with more button in header--&gt;
+&lt;div class=&quot;ui-page ui-page-active&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;header class=&quot;ui-header ui-has-more&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2 class=&quot;ui-title&quot;&gt;Call menu&lt;/h2&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type=&quot;button&quot; class=&quot;ui-more ui-icon-overflow&quot;&gt;More Options&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&lt;/header&gt;
+&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-content&quot;&gt;Content message&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;footer class=&quot;ui-footer&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type=&quot;button&quot; class=&quot;ui-btn&quot;&gt;Footer Button&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&lt;/footer&gt;
+&lt;/div&gt;
+</pre>
+
+<h2>Options</h2>
+
+<table>
+	<tbody>
+	<tr>
+		<th>Option</th>
+		<th>Input type</th>
+		<th>Default value</th>
+		<th>Description</th>
+	</tr>
+
+	<tr>
+		<td class="option"><span style="font-family: Courier New,Courier,monospace">enablePageScroll</span></td>
+		<td class="option">boolean</td>
+		<td class="option">false (in rectangular UI)<br>true (in circular UI)</td>
+		<td class="option">When it is set to true, scroll area is page.</td>
+	</tr>
+
+	</tbody>
+</table>
+
+<table class="note">
+	<tbody>
+	<tr>
+		<th class="note">Note</th>
+	</tr>
+	<tr>
+		<td class="note">Only the content becomes scrollable when enablePageScroll is set "false". But if you set it to "true", the page(which may include header, content and footer) becomes scrollable.</td>
+	</tr>
+	</tbody>
+</table>
+
+<h2>Related Document pages</h2>
+<p>In your application, you can:</p>
+<ul>
+<li><a href="multi_page.htm">Create multi-page layouts</a></li>
+<li><a href="page_change.htm">Change the active page</a></li>
+<li><a href="page_event.htm">Handle page events</a></li>
+</ul>
+
+<h2>Where to Go Next</h2>
+<ul>
+<li><a href="../index.htm">Tizen Wearable Web UI Framework Reference</a></li></ul>
+
+ <div id="footer"> 
+   <hr size="1" /> 
+   <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font> 
+  </div> 
+   
+  <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25976949-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script> 
+    
+ </body>
+</html>

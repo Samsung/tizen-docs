@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../../../snippet.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="../../../styles.css" rel="StyleSheet" type="text/css" />
+	<link href="../../../snippet.css" rel="StyleSheet" type="text/css" />
+	<title>How to support More options</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>How to support More options</h1>
+
+In rectangular UI, you can implement more options using button and popup components.<p>
+Circular UI provides <a href="../../widgets/widget_selector.htm">Selector </a> for more options button.<p>
+The following explains how to make the more options for Circular UI.<p>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	<li><a href="#layout">Layout</a></li>
+	<li><a href="#htmlCode">HTML code</a></li>
+	<li><a href="#cssCode">CSS code</a></li>
+	<li><a href="#jsCode">Javascript code</a></li>
+</ol>
+
+<h2><a id='layout'></a>Layout</h2>
+
+<table id='circularsupport'>
+	<tbody>
+		<tr>
+			<td><img src="../../../../images/rectangular_moreoption.png" /></td>
+			<td><img src="../../../../images/round_moreoption.png" /></td>
+		</tr>
+		<tr>
+			<td align="center">in Rectangular UI</td>
+			<td align="center">in Circular UI</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2><a id='htmlCode'></a>HTML code</h2>
+
+<pre class="prettyprint">
+&lt;div id=&quot;moreoptionsPage&quot; class=&quot;ui-page&quot;&gt;
+        &lt;link rel=&quot;stylesheet&quot;  href=&quot;./moreoptions.css&quot;&gt;
+        &lt;header class=&quot;ui-header ui-has-more&quot;&gt;
+                &lt;h2 class=&quot;ui-title&quot;&gt;More Options&lt;/h2&gt;
+                &lt;button type=&quot;button&quot; class=&quot;ui-more ui-icon-overflow&quot;&gt;More Options&lt;/button&gt;
+        &lt;/header&gt;
+        &lt;div class=&quot;ui-content content-padding&quot;&gt;
+                It was a real pleasure for me to finally get to meet you. My colleagues join me in sending you our holiday greetings.
+        &lt;/div&gt;
+
+        &lt;!-- Rectangular Profile --&gt;
+        &lt;div id=&quot;moreoptionsPopup&quot; class=&quot;ui-popup&quot; data-transition=&quot;slideup&quot;&gt;
+                &lt;div class=&quot;ui-popup-header&quot;&gt;Options&lt;/div&gt;
+                &lt;div class=&quot;ui-popup-content&quot;&gt;
+                        &lt;ul class=&quot;ui-listview&quot;&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                &lt;/div&gt;
+        &lt;/div&gt;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Circle&nbsp;Profile&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=&quot;moreoptionsPopupCircle&quot;&nbsp;class=&quot;ui-popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=&quot;selector&quot;&nbsp;class=&quot;ui-selector&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;show-icon&quot;&nbsp;data-title=&quot;Show&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;human-icon&quot;&nbsp;data-title=&quot;Human&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;delete-icon&quot;&nbsp;data-title=&quot;Delete&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;show-icon&quot;&nbsp;data-title=&quot;Show&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;human-icon&quot;&nbsp;data-title=&quot;Human&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;delete-icon&quot;&nbsp;data-title=&quot;Delete&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;x-icon&quot;&nbsp;data-title=&quot;X&nbsp;Icon&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;fail-icon&quot;&nbsp;data-title=&quot;Fail&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;show-icon&quot;&nbsp;data-title=&quot;Show&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;human-icon&quot;&nbsp;data-title=&quot;Human&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;delete-icon&quot;&nbsp;data-title=&quot;Delete&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;show-icon&quot;&nbsp;data-title=&quot;Show&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;human-icon&quot;&nbsp;data-title=&quot;Human&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;delete-icon&quot;&nbsp;data-title=&quot;Delete&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;x-icon&quot;&nbsp;data-title=&quot;X&nbsp;Icon&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;fail-icon&quot;&nbsp;data-title=&quot;Fail&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;show-icon&quot;&nbsp;data-title=&quot;Show&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;human-icon&quot;&nbsp;data-title=&quot;Human&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;delete-icon&quot;&nbsp;data-title=&quot;Delete&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;show-icon&quot;&nbsp;data-title=&quot;Show&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;human-icon&quot;&nbsp;data-title=&quot;Human&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;delete-icon&quot;&nbsp;data-title=&quot;Delete&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;x-icon&quot;&nbsp;data-title=&quot;X&nbsp;Icon&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;fail-icon&quot;&nbsp;data-title=&quot;Fail&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;show-icon&quot;&nbsp;data-title=&quot;Show&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;human-icon&quot;&nbsp;data-title=&quot;Human&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;delete-icon&quot;&nbsp;data-title=&quot;Delete&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;show-icon&quot;&nbsp;data-title=&quot;Show&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;human-icon&quot;&nbsp;data-title=&quot;Human&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;delete-icon&quot;&nbsp;data-title=&quot;Delete&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;x-icon&quot;&nbsp;data-title=&quot;X&nbsp;Icon&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-item&nbsp;fail-icon&quot;&nbsp;data-title=&quot;Fail&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+
+</pre>
+
+<h2><a id='jsCode'></a>Javascript code</h2>
+
+<pre class="prettyprint">
+(function(){
+        var page = document.querySelector("#moreoptionsPage"),
+                popup = page.querySelector("#moreoptionsPopup"),
+                handler = page.querySelector(".ui-more"),
+                popupCircle = page.querySelector("#moreoptionsPopupCircle"),
+                elSelector = page.querySelector("#selector"),
+                selector,
+                clickHandlerBound;
+
+        function clickHandler(event) {
+                if (tau.support.shape.circle) {
+                        tau.openPopup(popupCircle);
+                } else {
+                        tau.openPopup(popup);
+                }
+        }
+
+        page.addEventListener( "pagebeforeshow", function() {
+                var radius = window.innerHeight / 2 * 0.8;
+
+                clickHandlerBound = clickHandler.bind(null);
+                handler.addEventListener("click", clickHandlerBound);
+                if (tau.support.shape.circle) {
+                        selector = tau.widget.Selector(elSelector, {itemRadius: radius});
+                }
+        });
+
+        page.addEventListener( "pagebeforehide", function() {
+                handler.removeEventListener("click", clickHandlerBound);
+                if (tau.support.shape.circle) {
+                        selector.destroy();
+                }
+        });
+
+        elSelector.addEventListener("click", function(event) {
+                var target = event.target;
+
+                if (tau.support.shape.circle) {
+                        // 'ui-selector-indicator' is default indicator class name of Selector component
+                        if (target.classList.contains("ui-selector-indicator")) {
+                                tau.closePopup(popupCircle);
+                        }
+                }
+        });
+}());
+</pre>
+
+<h2>Where to Go Next</h2>
+<ul>
+	<li><a href="../circular_support.htm">Support for Circular UI</a></li>
+
+</ul>
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

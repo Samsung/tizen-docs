@@ -25,7 +25,9 @@ To use the test project:
 
 1. In the **Project Explorer** view, open the `<TEST_PROJECT_HOME>/src/<TEST_PROJECT_NAME>TestCase.cpp` file.
 
-2. Add a `TEST_F()` test case.Each `TEST_F()` test case is independent. If the `TEST_F()` test case is associated with a fixture class name, the test case runs based on that fixture class.
+2. Add a `TEST_F()` test case.
+
+   Each `TEST_F()` test case is independent. If the `TEST_F()` test case is associated with a fixture class name, the test case runs based on that fixture class.
 
 3. Add assertions.
 

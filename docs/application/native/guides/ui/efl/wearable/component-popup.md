@@ -8,7 +8,7 @@ The popup component shows a popup area that can contain:
 - Content area
 - Action area with up to 3 buttons (optional)
 
-For more information, see the [Popup](../../../../../org.tizen.native.wearable.apireference/group__Elm__Popup.html) API.
+For more information, see the [Popup](../../../../api/wearable/latest/group__Elm__Popup.html) API.
 
 **Figure: Popup component**
 

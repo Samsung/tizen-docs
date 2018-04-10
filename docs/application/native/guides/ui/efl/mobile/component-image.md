@@ -4,7 +4,7 @@ This feature is supported in mobile applications only.
 
 The image component can load and display an image from a disk file or a memory region.
 
-For more information, see the [Image](../../../../../org.tizen.native.mobile.apireference/group__Elm__Image.html) API.
+For more information, see the [Image](../../../../api/mobile/latest/group__Elm__Image.html) API.
 
 **Figure: Image component**
 

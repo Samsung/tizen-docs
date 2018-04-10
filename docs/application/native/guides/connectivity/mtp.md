@@ -23,19 +23,19 @@ The main features of the MTP API include:
 
 - Managing MTP
 
-  With the [MTP Manager](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__MTP__MANAGER__MODULE.html) API you can initialize and deinitialize the MTP, [set callbacks for MTP events](#events), and get various information, such as the [device list](#device_list), [storage list](#storages), [object handle](#object_handle), [object, and thumbnail](#object_and_thumbnail).
+  With the [MTP Manager](../../api/mobile/latest/group__CAPI__NETWORK__MTP__MANAGER__MODULE.html) API you can initialize and deinitialize the MTP, [set callbacks for MTP events](#events), and get various information, such as the [device list](#device_list), [storage list](#storages), [object handle](#object_handle), [object, and thumbnail](#object_and_thumbnail).
 
 - Retrieving device information
 
-  The [MTP Device Information](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__MTP__DEVICEINFO__MODULE.html) API allows you to [obtain various device details](#device_info), such as the device manufacturer name, model name, serial number, and version.
+  The [MTP Device Information](../../api/mobile/latest/group__CAPI__NETWORK__MTP__DEVICEINFO__MODULE.html) API allows you to [obtain various device details](#device_info), such as the device manufacturer name, model name, serial number, and version.
 
 - Retrieving storage information
 
-  The [MTP Storage Information](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__MTP__STORAGEINFO__MODULE.html) API allows you to [obtain various storage details](#storage_info), such as the storage free space, description, and type.
+  The [MTP Storage Information](../../api/mobile/latest/group__CAPI__NETWORK__MTP__STORAGEINFO__MODULE.html) API allows you to [obtain various storage details](#storage_info), such as the storage free space, description, and type.
 
 - Retrieving object information
 
-  The [MTP Object Information](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__MTP__OBJECTINFO__MODULE.html) API allows you to [obtain various object details](#object_info), such as the object format, name, and size.
+  The [MTP Object Information](../../api/mobile/latest/group__CAPI__NETWORK__MTP__OBJECTINFO__MODULE.html) API allows you to [obtain various object details](#object_info), such as the object format, name, and size.
 
 The MTP API can be used in other profiles, but it is most popular in the TV profile.
 
@@ -48,7 +48,7 @@ The internal implementation of the MTP references the [MTP specification](http:/
 
 To enable your application to use the MTP functionality:
 
-1. To use the [MTP](../../../../org.tizen.native.mobile.apireference/group__CAPI__NETWORK__MTP__MODULE.html) API, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the [MTP](../../api/mobile/latest/group__CAPI__NETWORK__MTP__MODULE.html) API, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>

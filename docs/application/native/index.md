@@ -1,7 +1,7 @@
 # Tizen Native Application
 
-The Tizen native application model handles application life-cycle and system events. Tizen native application life-cycle is handled by the Application API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__APPLICATION__MODULE.html)
-and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__APPLICATION__MODULE.html)
+The Tizen native application model handles application life-cycle and system events. Tizen native application life-cycle is handled by the Application API (in [mobile](api/mobile/latest/group__CAPI__APPLICATION__MODULE.html)
+and [wearable](api/wearable/latest/group__CAPI__APPLICATION__MODULE.html)
 applications). It provides functions to manage the main event loop, the application state change events, and basic system events.
 
 Tizen supports both UI applications (which have a graphical user interface) and service applications (which have no graphical user
@@ -28,7 +28,7 @@ A Tizen native application can be in one of several different states.
 Typically, the application is launched by the user from the Launcher, or by another application. When the application is starting, the `app_create_cb()` function is executed and the main event loop starts.  The application normally at the top window, with focus.
 
 When the application loses the focus status, the `app_pause_cb()` callback is invoked. The application can go into the pause state, which means that your application is not terminated but continues to run in
-the background, when: 
+the background, when:
 -   A new application is launched by the request of your application.
 -   The user requests to go to the home screen.
 -   A system event (such as an incoming phone call) occurs and causes a resident application with a higher priority to become active and temporarily hide your application.

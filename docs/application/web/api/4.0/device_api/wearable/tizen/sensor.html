@@ -1,0 +1,3570 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>Sensor API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Sensor">
+<div class="supported-platforms"><img class="wearable-optional emulator" title="Optional, Supported by Tizen Wearable emulator" src="wearable_s_w_optional.png"></div>
+<div class="title"><h1>Sensor API</h1></div>
+<div class="brief">
+ The Sensor API defines interfaces and methods to manage sensor data from various sensors on the device.
+        </div>
+<div class="description">
+        <p>
+The following sensor functionality is provided:
+        </p>
+        <ul>
+          <li>
+Start and stop sensor          </li>
+          <li>
+Set and unset notification of the sensor data change          </li>
+          <li>
+Get current sensor data          </li>
+        </ul>
+        <p>
+For more information about how to use Sensor API, see <a href="https://developer.tizen.org/development/guides/web-application/sensors/device-sensors">Device Sensors Guide</a>.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li>
+                    1.1. <a href="#MagneticSensorAccuracy">MagneticSensorAccuracy</a>
+</li>
+<li>
+                    1.2. <a href="#ProximityState">ProximityState</a>
+</li>
+<li>
+                    1.3. <a href="#SensorType">SensorType</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#SensorServiceManagerObject">SensorServiceManagerObject</a>
+</li>
+<li>2.2. <a href="#SensorService">SensorService</a>
+</li>
+<li>2.3. <a href="#Sensor">Sensor</a>
+</li>
+<li>2.4. <a href="#AccelerationSensor">AccelerationSensor</a>
+</li>
+<li>2.5. <a href="#GravitySensor">GravitySensor</a>
+</li>
+<li>2.6. <a href="#GyroscopeSensor">GyroscopeSensor</a>
+</li>
+<li>2.7. <a href="#GyroscopeRotationVectorSensor">GyroscopeRotationVectorSensor</a>
+</li>
+<li>2.8. <a href="#GyroscopeUncalibratedSensor">GyroscopeUncalibratedSensor</a>
+</li>
+<li>2.9. <a href="#HRMRawSensor">HRMRawSensor</a>
+</li>
+<li>2.10. <a href="#LightSensor">LightSensor</a>
+</li>
+<li>2.11. <a href="#LinearAccelerationSensor">LinearAccelerationSensor</a>
+</li>
+<li>2.12. <a href="#MagneticSensor">MagneticSensor</a>
+</li>
+<li>2.13. <a href="#MagneticUncalibratedSensor">MagneticUncalibratedSensor</a>
+</li>
+<li>2.14. <a href="#PressureSensor">PressureSensor</a>
+</li>
+<li>2.15. <a href="#ProximitySensor">ProximitySensor</a>
+</li>
+<li>2.16. <a href="#UltravioletSensor">UltravioletSensor</a>
+</li>
+<li>2.17. <a href="#SensorData">SensorData</a>
+</li>
+<li>2.18. <a href="#SensorAccelerationData">SensorAccelerationData</a>
+</li>
+<li>2.19. <a href="#SensorGravityData">SensorGravityData</a>
+</li>
+<li>2.20. <a href="#SensorGyroscopeData">SensorGyroscopeData</a>
+</li>
+<li>2.21. <a href="#SensorGyroscopeRotationVectorData">SensorGyroscopeRotationVectorData</a>
+</li>
+<li>2.22. <a href="#SensorGyroscopeUncalibratedData">SensorGyroscopeUncalibratedData</a>
+</li>
+<li>2.23. <a href="#SensorHRMRawData">SensorHRMRawData</a>
+</li>
+<li>2.24. <a href="#SensorLightData">SensorLightData</a>
+</li>
+<li>2.25. <a href="#SensorLinearAccelerationData">SensorLinearAccelerationData</a>
+</li>
+<li>2.26. <a href="#SensorMagneticData">SensorMagneticData</a>
+</li>
+<li>2.27. <a href="#SensorMagneticUncalibratedData">SensorMagneticUncalibratedData</a>
+</li>
+<li>2.28. <a href="#SensorPressureData">SensorPressureData</a>
+</li>
+<li>2.29. <a href="#SensorProximityData">SensorProximityData</a>
+</li>
+<li>2.30. <a href="#SensorUltravioletData">SensorUltravioletData</a>
+</li>
+<li>2.31. <a href="#SensorHardwareInfo">SensorHardwareInfo</a>
+</li>
+<li>2.32. <a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a>
+</li>
+<li>2.33. <a href="#SensorHardwareInfoSuccessCallback">SensorHardwareInfoSuccessCallback</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#api-features">Related Feature</a>
+</li>
+<li>4. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#SensorServiceManagerObject">SensorServiceManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SensorService">SensorService</a></td>
+<td>
+<div>
+<a href="#Sensor">Sensor</a> <a href="#SensorService::getDefaultSensor">getDefaultSensor</a> (<a href="#SensorType">SensorType</a> type)</div>
+<div>
+<a href="#SensorType">SensorType</a>[] <a href="#SensorService::getAvailableSensors">getAvailableSensors</a> ()</div>
+</td>
+</tr>
+<tr>
+<td><a href="#Sensor">Sensor</a></td>
+<td>
+<div>void <a href="#Sensor::start">start</a> (<a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#Sensor::stop">stop</a> ()</div>
+<div>void <a href="#Sensor::setChangeListener">setChangeListener</a> (<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional long? interval, optional long batchLatency)</div>
+<div>void <a href="#Sensor::unsetChangeListener">unsetChangeListener</a> ()</div>
+<div>void <a href="#Sensor::getSensorHardwareInfo">getSensorHardwareInfo</a> (<a href="#SensorHardwareInfoSuccessCallback">SensorHardwareInfoSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#AccelerationSensor">AccelerationSensor</a></td>
+<td><div>void <a href="#AccelerationSensor::getAccelerationSensorData">getAccelerationSensorData</a> (<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div></td>
+</tr>
+<tr>
+<td><a href="#GravitySensor">GravitySensor</a></td>
+<td><div>void <a href="#GravitySensor::getGravitySensorData">getGravitySensorData</a> (<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div></td>
+</tr>
+<tr>
+<td><a href="#GyroscopeSensor">GyroscopeSensor</a></td>
+<td><div>void <a href="#GyroscopeSensor::getGyroscopeSensorData">getGyroscopeSensorData</a> (<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div></td>
+</tr>
+<tr>
+<td><a href="#GyroscopeRotationVectorSensor">GyroscopeRotationVectorSensor</a></td>
+<td><div>void <a href="#GyroscopeRotationVectorSensor::getGyroscopeRotationVectorSensorData">getGyroscopeRotationVectorSensorData</a> (<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div></td>
+</tr>
+<tr>
+<td><a href="#GyroscopeUncalibratedSensor">GyroscopeUncalibratedSensor</a></td>
+<td><div>void <a href="#GyroscopeUncalibratedSensor::getGyroscopeUncalibratedSensorData">getGyroscopeUncalibratedSensorData</a> (<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div></td>
+</tr>
+<tr>
+<td><a href="#HRMRawSensor">HRMRawSensor</a></td>
+<td><div>void <a href="#HRMRawSensor::getHRMRawSensorData">getHRMRawSensorData</a> (<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div></td>
+</tr>
+<tr>
+<td><a href="#LightSensor">LightSensor</a></td>
+<td><div>void <a href="#LightSensor::getLightSensorData">getLightSensorData</a> (<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div></td>
+</tr>
+<tr>
+<td><a href="#LinearAccelerationSensor">LinearAccelerationSensor</a></td>
+<td><div>void <a href="#LinearAccelerationSensor::getLinearAccelerationSensorData">getLinearAccelerationSensorData</a> (<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div></td>
+</tr>
+<tr>
+<td><a href="#MagneticSensor">MagneticSensor</a></td>
+<td><div>void <a href="#MagneticSensor::getMagneticSensorData">getMagneticSensorData</a> (<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div></td>
+</tr>
+<tr>
+<td><a href="#MagneticUncalibratedSensor">MagneticUncalibratedSensor</a></td>
+<td><div>void <a href="#MagneticUncalibratedSensor::getMagneticUncalibratedSensorData">getMagneticUncalibratedSensorData</a> (<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div></td>
+</tr>
+<tr>
+<td><a href="#PressureSensor">PressureSensor</a></td>
+<td><div>void <a href="#PressureSensor::getPressureSensorData">getPressureSensorData</a> (<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div></td>
+</tr>
+<tr>
+<td><a href="#ProximitySensor">ProximitySensor</a></td>
+<td><div>void <a href="#ProximitySensor::getProximitySensorData">getProximitySensorData</a> (<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div></td>
+</tr>
+<tr>
+<td><a href="#UltravioletSensor">UltravioletSensor</a></td>
+<td><div>void <a href="#UltravioletSensor::getUltravioletSensorData">getUltravioletSensorData</a> (<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div></td>
+</tr>
+<tr>
+<td><a href="#SensorData">SensorData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SensorAccelerationData">SensorAccelerationData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SensorGravityData">SensorGravityData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SensorGyroscopeData">SensorGyroscopeData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SensorGyroscopeRotationVectorData">SensorGyroscopeRotationVectorData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SensorGyroscopeUncalibratedData">SensorGyroscopeUncalibratedData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SensorHRMRawData">SensorHRMRawData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SensorLightData">SensorLightData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SensorLinearAccelerationData">SensorLinearAccelerationData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SensorMagneticData">SensorMagneticData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SensorMagneticUncalibratedData">SensorMagneticUncalibratedData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SensorPressureData">SensorPressureData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SensorProximityData">SensorProximityData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SensorUltravioletData">SensorUltravioletData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SensorHardwareInfo">SensorHardwareInfo</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a></td>
+<td><div>void <a href="#SensorDataSuccessCallback::onsuccess">onsuccess</a> (optional <a href="#SensorData">SensorData</a>? sensorData)</div></td>
+</tr>
+<tr>
+<td><a href="#SensorHardwareInfoSuccessCallback">SensorHardwareInfoSuccessCallback</a></td>
+<td><div>void <a href="#SensorHardwareInfoSuccessCallback::onsuccess">onsuccess</a> (<a href="#SensorHardwareInfo">SensorHardwareInfo</a> hardwareInfo)</div></td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="enum" id="MagneticSensorAccuracy">
+<a class="backward-compatibility-anchor" name="::Sensor::MagneticSensorAccuracy"></a><h3>1.1. MagneticSensorAccuracy</h3>
+<div class="brief">
+ Specifies the accuracy of magnetic sensor data.
+          </div>
+<pre class="webidl prettyprint">    enum MagneticSensorAccuracy { "ACCURACY_UNDEFINED", "ACCURACY_BAD", "ACCURACY_NORMAL", "ACCURACY_GOOD", "ACCURACY_VERYGOOD" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+</div>
+<div class="enum" id="ProximityState">
+<a class="backward-compatibility-anchor" name="::Sensor::ProximityState"></a><h3>1.2. ProximityState</h3>
+<div class="brief">
+ Specifies the proximity state.
+          </div>
+<pre class="webidl prettyprint">    enum ProximityState { "FAR", "NEAR" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+</div>
+<div class="enum" id="SensorType">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorType"></a><h3>1.3. SensorType</h3>
+<div class="brief">
+ Specifies the sensor type available to the API.
+          </div>
+<pre class="webidl prettyprint">    enum SensorType { "ACCELERATION", "GRAVITY", "GYROSCOPE", "GYROSCOPE_ROTATION_VECTOR", "GYROSCOPE_UNCALIBRATED", "HRM_RAW", "LIGHT", "LINEAR_ACCELERATION", "MAGNETIC",
+                      "MAGNETIC_UNCALIBRATED", "PRESSURE", "PROXIMITY", "ULTRAVIOLET" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="description">
+          <p>
+The sensor types defined by this enumerator are:
+          </p>
+          <ul>
+            <li>
+ACCELERATION - Acceleration sensor            </li>
+            <li>
+GRAVITY - Gravity sensor            </li>
+            <li>
+GYROSCOPE - Gyroscope sensor            </li>
+            <li>
+GYROSCOPE_ROTATION_VECTOR - Gyroscope rotation vector sensor            </li>
+            <li>
+GYROSCOPE_UNCALIBRATED - Uncalibrated gyroscope sensor            </li>
+            <li>
+HRM_RAW - HRM sensor            </li>
+            <li>
+LIGHT - Light sensor            </li>
+            <li>
+LINEAR_ACCELERATION - Linear acceleration sensor            </li>
+            <li>
+MAGNETIC - Magnetic sensor            </li>
+            <li>
+MAGNETIC_UNCALIBRATED - Uncalibrated magnetic sensor            </li>
+            <li>
+PRESSURE - Pressure sensor            </li>
+            <li>
+PROXIMITY - Proximity sensor            </li>
+            <li>
+ULTRAVIOLET - Ultraviolet sensor            </li>
+          </ul>
+         </div>
+<p><span class="remark"> Remark : </span>
+ <em>HRM_RAW</em> is supported since Tizen 2.3.1
+          </p>
+<p><span class="remark"> Remark : </span>
+ <em>GRAVITY</em>, <em>GYROSCOPE</em>, <em>GYROSCOPE_ROTATION_VECTOR</em> and <em>LINEAR ACCELERATION</em> are supported since Tizen 3.0
+          </p>
+<p><span class="remark"> Remark : </span>
+ <em>ACCELERATION</em>, <em>GYROSCOPE_UNCALIBRATED</em> and <em>MAGNETIC_UNCALIBRATED</em> are supported since Tizen 4.0
+          </p>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="SensorServiceManagerObject">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorServiceManagerObject"></a><h3>2.1. SensorServiceManagerObject</h3>
+<div class="brief">
+ The SensorServiceManagerObject interface defines what is instantiated by the <em>Tizen</em> object.
+The <em>tizen.sensorservice</em> object allows access to various sensors of the Tizen device.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface SensorServiceManagerObject {
+        readonly attribute <a href="#SensorService">SensorService</a> sensorservice;
+    };</pre>
+<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SensorServiceManagerObject">SensorServiceManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+</div>
+<div class="interface" id="SensorService">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorService"></a><h3>2.2. SensorService</h3>
+<div class="brief">
+ The SensorService interface provides methods to access the sensor.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface SensorService {
+
+        <a href="#Sensor">Sensor</a> getDefaultSensor(SensorType type) raises(WebAPIException);
+
+        SensorType[] getAvailableSensors() raises(WebAPIException);
+
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="SensorService::getDefaultSensor">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorService::getDefaultSensor"></a><code><b><span class="methodName">getDefaultSensor</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the default sensor of the device for the given sensor type.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Sensor">Sensor</a> getDefaultSensor(<a href="#SensorType">SensorType</a> type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+The supported sensor types are hardware-dependent. <br><br>To check if the given <var>type</var> is supported or not, SystemInfo API can be used.
+            </p>
+            <ul>
+              <li>
+ ACCELERATION - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.accelerometer"</em>)               </li>
+              <li>
+ GRAVITY     - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.gravity"</em>)               </li>
+              <li>
+ GYROSCOPE   - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.gyroscope"</em>)               </li>
+              <li>
+ GYROSCOPE_ROTATION_VECTOR - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.gyroscope_rotation_vector"</em>)               </li>
+              <li>
+ GYROSCOPE_UNCALIBRATED - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.gyroscope.uncalibrated"</em>)               </li>
+              <li>
+ HRM_RAW     -  HRM_RAW is supported, if at least one HRM LED sensor type is supported:
+ <br>tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.heart_rate_monitor.led_green"</em>),
+ <br>tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.heart_rate_monitor.led_ir"</em>),
+ <br>tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.heart_rate_monitor.led_red"</em>)</li>
+              <li>
+ LIGHT       - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.photometer"</em>)               </li>
+              <li>
+ LINEAR_ACCELERATION - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.linear_acceleration"</em>)               </li>
+              <li>
+ MAGNETIC    - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.magnetometer"</em>)               </li>
+              <li>
+ MAGNETIC_UNCALIBRATED - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.magnetometer.uncalibrated"</em>)               </li>
+              <li>
+ PRESSURE    - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.barometer"</em>)               </li>
+              <li>
+ PROXIMITY   - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.proximity"</em>)               </li>
+              <li>
+ ULTRAVIOLET - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.ultraviolet"</em>)               </li>
+            </ul>
+           </div>
+<div class="description">
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ Sensor type to access
+                <ul>
+<b>Conditional privilege: </b>For using <a href="#SensorType">HRM_RAW</a> value, privilege <b>
+              http://tizen.org/privilege/healthinfo
+             (public level)</b> is needed since Tizen 2.3.1.</ul>
+</li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ Sensor Default sensor object
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if accessing a given sensor type fails because of an unknown error.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the given <var>type</var> is not supported on the device.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, this error is only thrown for <em> HRM_RAW </em> sensor type when an application does not have http://tizen.org/privilege/healthinfo privilege in config.xml.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var proximityCapability = tizen.systeminfo.getCapability("http://tizen.org/feature/sensor.proximity");
+
+ if (proximityCapability === true)
+ {
+     /* the device supports proximity sensor and you can get proximity sensor's data */
+     var proximitySensor = tizen.sensorservice.getDefaultSensor("PROXIMITY");
+ } else {
+     /* If tizen.sensorservice.getDefaultSensor("PROXIMITY") is used, NotSupportedError would be thrown. */
+     console.log("Proximity sensor is not supported on this device.");
+ }
+ </pre>
+</div>
+</dd>
+<dt class="method" id="SensorService::getAvailableSensors">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorService::getAvailableSensors"></a><code><b><span class="methodName">getAvailableSensors</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the available sensor types.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#SensorType">SensorType</a>[] getAvailableSensors();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ SensorType[] All available sensor types
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if getting available sensor type fails because of an unknown error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var sensorCapabilities = tizen.sensorservice.getAvailableSensors();
+
+console.log("capable sensor: " + sensorCapabilities[0]);
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="Sensor">
+<a class="backward-compatibility-anchor" name="::Sensor::Sensor"></a><h3>2.3. Sensor</h3>
+<div class="brief">
+ The Sensor interface is a base interface for specific sensor interfaces. It provides methods common to all sensor types.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface Sensor {
+
+        readonly attribute <a href="#SensorType">SensorType</a> sensorType;
+
+        void start(<a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback,
+                                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void stop() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void setChangeListener(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional long? interval, optional long batchLatency) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void unsetChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+         void getSensorHardwareInfo(<a href="#SensorHardwareInfoSuccessCallback">SensorHardwareInfoSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="Sensor::sensorType">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">SensorType </span><span class="name">sensorType</span></span><div class="brief">
+ Sensor type to monitor the changes.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li></ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="Sensor::start">
+<a class="backward-compatibility-anchor" name="::Sensor::Sensor::start"></a><code><b><span class="methodName">start</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Starts the sensor.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void start(<a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+The <em>SuccessCallback</em> will be invoked when the first event from the sensor is fired.
+            </p>
+           </div>
+<div class="description">
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+NotSupportedError - if the sensor is not supported on the device.              </li>
+              <li>
+UnknownError - if starting the sensor fails because of an unknown error.              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback method to be invoked when sensor has been successfully started
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if starting the sensor fails because of an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var proximitySensor = tizen.sensorservice.getDefaultSensor("PROXIMITY");
+
+function onsuccessCB()
+{
+   console.log("The proximity sensor started successfully.");
+}
+
+proximitySensor.start(onsuccessCB);
+</pre>
+</div>
+</dd>
+<dt class="method" id="Sensor::stop">
+<a class="backward-compatibility-anchor" name="::Sensor::Sensor::stop"></a><code><b><span class="methodName">stop</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Stops the sensor.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void stop();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if stopping the sensor fails because of an unknown error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var proximitySensor = tizen.sensorservice.getDefaultSensor("PROXIMITY");
+
+function onsuccessCB()
+{
+   console.log("proximity sensor start");
+   proximitySensor.stop();
+}
+
+proximitySensor.start(onsuccessCB);
+</pre>
+</div>
+</dd>
+<dt class="method" id="Sensor::setChangeListener">
+<a class="backward-compatibility-anchor" name="::Sensor::Sensor::setChangeListener"></a><code><b><span class="methodName">setChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers a listener to retrieve sensor data periodically.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setChangeListener(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional long? interval, optional long batchLatency);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+Note that the setChangeListener() method only registers the listener.
+The start() method must be called to turn on the sensor, or the sensor data will not change.
+            </p>
+           </div>
+<p><span class="remark"> Remark : </span>
+ <em>interval</em>, <em>batchLatency</em> are supported since Tizen 2.3.2
+            </p>
+<p><span class="remark"> Remark : </span>
+ The specified interval is only a suggested interval between sensor measurements. You will get at least one sensor measurement within the interval you specify, but the actual interval between sensor measurements can be affected by other applications and the system. To reduce the system overhead, it is recommended to set the longest interval that you can, because the system usually chooses the shortest interval among all intervals specified.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback method to be invoked periodically.
+                </li>
+          <li class="param">
+<span class="name">interval</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The interval in milliseconds (ms) at which sensor data will be sent to the Web Application which calls this method since Tizen 2.3.2<br><em>interval</em> can be between 10ms and 1000ms inclusive, however, if it is null or zero, it is set to the default value of 100ms.<br>For the <a href="#SensorType">PROXIMITY</a> sensor type, <em>interval</em> will be ignored.
+                </li>
+          <li class="param">
+<span class="name">batchLatency</span><span class="optional"> [optional]</span>:
+ The batch latency time in milliseconds (ms) at which sensor events are stored or delivered when processor stay on sleep or suspend status since Tizen 2.3.2<br><em>batchLatency</em> has hardware dependency. You can calculate maximum batchLatency value using  <a href="#SensorHardwareInfo">maxBatchCount</a> (e.g. interval x maxBatchCount) . If maxBatchCount is zero, device doesn't support batch latency time.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if registering the listener fails because of an unknown error.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the batchLatency is not supported on the sensor hardware.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var lightSensor = tizen.sensorservice.getDefaultSensor("LIGHT");
+
+function onsuccessCB()
+{
+     console.log("light sensor start");
+}
+
+function onchangedCB(sensorData)
+{
+     console.log("light level: " + sensorData.lightLevel);
+}
+
+/* interval and batchLatency can be omitted */
+lightSensor.setChangeListener(onchangedCB, 200, 2000);
+
+lightSensor.start(onsuccessCB);
+</pre>
+</div>
+</dd>
+<dt class="method" id="Sensor::unsetChangeListener">
+<a class="backward-compatibility-anchor" name="::Sensor::Sensor::unsetChangeListener"></a><code><b><span class="methodName">unsetChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unregisters the sensor data change listener.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unsetChangeListener();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if unregistering the listener fails because of an unknown error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var proximitySensor = tizen.sensorservice.getDefaultSensor("PROXIMITY");
+
+function onchangedCB(sensorData)
+{
+   console.log("proximity distance: " + sensorData.proximityState);
+}
+
+proximitySensor.setChangeListener(onchangedCB);
+
+proximitySensor.unsetChangeListener();
+</pre>
+</div>
+</dd>
+<dt class="method" id="Sensor::getSensorHardwareInfo">
+<a class="backward-compatibility-anchor" name="::Sensor::Sensor::getSensorHardwareInfo"></a><code><b><span class="methodName">getSensorHardwareInfo</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets hardware information of the sensor.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getSensorHardwareInfo(<a href="#SensorHardwareInfoSuccessCallback">SensorHardwareInfoSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<div class="description">
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+AbortError - If operation failed.              </li>
+              <li>
+IOError - If the platform fails to internally prepare a socket for IPC communication.              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback method to be invoked when sensor has been successfully gotten hardware information.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when an error occurs.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var gravitySensor = tizen.sensorservice.getDefaultSensor("GRAVITY");
+gravitySensor.getSensorHardwareInfo(onsuccessCB);
+
+function onsuccessCB(hardwareInfo)
+{
+   console.log("name: " + hardwareInfo.name);
+   console.log("type: " + hardwareInfo.type);
+   console.log("vendor: " + hardwareInfo.vendor);
+   console.log("minValue: " + hardwareInfo.minValue);
+   console.log("maxValue: " + hardwareInfo.maxValue);
+   console.log("resolution: " + hardwareInfo.resolution);
+   console.log("minInterval: " + hardwareInfo.minInterval);
+   console.log("maxBatchCount: " + hardwareInfo.maxBatchCount);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>  name: Gravity Sensor
+  type: GRAVITY
+  vendor: Samsung Electronics
+  minValue: -19.6
+  maxValue: 19.6
+  resolution: 0.01
+  minInterval: 1
+  maxBatchCount: 0
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="AccelerationSensor">
+<a class="backward-compatibility-anchor" name="::Sensor::AccelerationSensor"></a><h3>2.4. AccelerationSensor</h3>
+<div class="brief">
+ The AccelerationSensor interface provides methods to access accelerometer data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface AccelerationSensor : <a href="#Sensor">Sensor</a> {
+
+        void getAccelerationSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback,
+                                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+
+      <div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="AccelerationSensor::getAccelerationSensorData">
+<a class="backward-compatibility-anchor" name="::Sensor::AccelerationSensor::getAccelerationSensorData"></a><code><b><span class="methodName">getAccelerationSensorData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the current acceleration sensor data. You can refer to <a href="sensor.html#SensorAccelerationData">SensorAccelerationData</a> interface.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getAccelerationSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="description">
+            <p>
+Note that before calling the getAccelerationSensorData() method, the start() method should be called to turn the sensor on.
+            </p>
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ ServiceNotAvailableError : If the <em>getAccelerationSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+              <li>
+ AbortError : If the system operation was aborted              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback method to be invoked when the sensor data has been read
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var accelerationSensor = tizen.sensorservice.getDefaultSensor("ACCELERATION");
+
+ function onGetSuccessCB(sensorData)
+ {
+     console.log("######## Get acceleration sensor data ########");
+     console.log("x: " + sensorData.x);
+     console.log("y: " + sensorData.y);
+     console.log("z: " + sensorData.z);
+ }
+
+ function onerrorCB(error)
+ {
+     console.log("error occurred: " + error.message);
+ }
+
+ function onsuccessCB()
+ {
+     console.log("acceleration sensor start");
+     accelerationSensor.getAccelerationSensorData(onGetSuccessCB, onerrorCB);
+ }
+
+ accelerationSensor.start(onsuccessCB);
+ </pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> acceleration sensor start
+ ######## Get acceleration sensor data ########
+ x: -4.311866283416748
+ y: 8.6243314743042
+ z: 2.841476917266846
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="GravitySensor">
+<a class="backward-compatibility-anchor" name="::Sensor::GravitySensor"></a><h3>2.5. GravitySensor</h3>
+<div class="brief">
+ The GravitySensor interface provides methods to access gravity sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface GravitySensor : <a href="#Sensor">Sensor</a> {
+
+        void getGravitySensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback,
+                                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+
+      <div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="GravitySensor::getGravitySensorData">
+<a class="backward-compatibility-anchor" name="::Sensor::GravitySensor::getGravitySensorData"></a><code><b><span class="methodName">getGravitySensorData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the current gravity sensor data. You can refer to the <a href="sensor.html#SensorGravityData">SensorGravityData</a> interface.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getGravitySensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<div class="description">
+            <p>
+Note that before calling the getGravitySensorData() method, the start() method should be called to turn on the sensor.
+            </p>
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ ServiceNotAvailableError : If the <em>getGravitySensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+              <li>
+ AbortError : If the system operation was aborted              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback method to be invoked when the sensor data has been read
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var lightSensor = tizen.sensorservice.getDefaultSensor("LIGHT");
+
+ function onGetSuccessCB(sensorData)
+ {
+     console.log("######## Get the gravity sensor data ########");
+     console.log("x: " + sensorData.x);
+     console.log("y: " + sensorData.y);
+     console.log("z: " + sensorData.z);
+ }
+
+function onerrorCB(error)
+{
+   console.log("error occurred");
+}
+
+ function onsuccessCB()
+ {
+     console.log("sensor start");
+     gravitySensor.getGravitySensorData(onGetSuccessCB, onerrorCB);
+ }
+
+ gravitySensor.start(onsuccessCB);
+ </pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> sensor start
+ ######## Get the gravity sensor data ########
+ x: -0.477486
+ y: -0.132515
+ z: -9.794124
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="GyroscopeSensor">
+<a class="backward-compatibility-anchor" name="::Sensor::GyroscopeSensor"></a><h3>2.6. GyroscopeSensor</h3>
+<div class="brief">
+ The GyroscopeSensor interface provides methods to access gyroscope sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface GyroscopeSensor : <a href="#Sensor">Sensor</a> {
+
+        void getGyroscopeSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback,
+                                    optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+
+      <div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="GyroscopeSensor::getGyroscopeSensorData">
+<a class="backward-compatibility-anchor" name="::Sensor::GyroscopeSensor::getGyroscopeSensorData"></a><code><b><span class="methodName">getGyroscopeSensorData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the current gyroscope sensor data. You can refer to the <a href="sensor.html#SensorGyroscopeData">SensorGyroscopeData</a> interface.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getGyroscopeSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<div class="description">
+            <p>
+Note that before calling the getGyroscopeSensorData() method, the start() method should be called to turn on the sensor.
+            </p>
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ ServiceNotAvailableError : If the <em>getGyroscopeSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+              <li>
+ AbortError : If the system operation was aborted              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback method to be invoked when the sensor data has been read
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var gyroscopeSensor = tizen.sensorservice.getDefaultSensor("GYROSCOPE");
+
+ function onGetSuccessCB(sensorData)
+ {
+     console.log("######## Get the gyroscope sensor date ########");
+     console.log("x: " + sensorData.x);
+     console.log("y: " + sensorData.y);
+     console.log("z: " + sensorData.z);
+ }
+
+function onerrorCB(error)
+{
+   console.log("error occurred");
+}
+
+ function onsuccessCB()
+ {
+     console.log("sensor start");
+     gyroscopeSensor.getGyroscopeSensorData(onGetSuccessCB, onerrorCB);
+ }
+
+ gyroscopeSensor.start(onsuccessCB);
+ </pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> sensor start
+ ######## Get the gyroscope sensor data ########
+ x: 186
+ y: -296
+ z: -113
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="GyroscopeRotationVectorSensor">
+<a class="backward-compatibility-anchor" name="::Sensor::GyroscopeRotationVectorSensor"></a><h3>2.7. GyroscopeRotationVectorSensor</h3>
+<div class="brief">
+ The GyroscopeRotationVectorSensor interface provides methods to access gyroscope rotation vector sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface GyroscopeRotationVectorSensor : <a href="#Sensor">Sensor</a> {
+
+        void getGyroscopeRotationVectorSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback,
+                                                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+
+      <div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="GyroscopeRotationVectorSensor::getGyroscopeRotationVectorSensorData">
+<a class="backward-compatibility-anchor" name="::Sensor::GyroscopeRotationVectorSensor::getGyroscopeRotationVectorSensorData"></a><code><b><span class="methodName">getGyroscopeRotationVectorSensorData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the current gyroscope rotation vector sensor data. You can refer to the <a href="sensor.html#SensorGyroscopeRotationVectorData">SensorGyroscopeRotationVectorData</a> interface.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getGyroscopeRotationVectorSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<div class="description">
+            <p>
+Note that before calling the getGyroscopeRotationVectorSensorData() method, the start() method should be called to turn on the sensor.
+            </p>
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ ServiceNotAvailableError : If the <em>getGyroscopeRotationVectorSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+              <li>
+ AbortError : If the system operation was aborted              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback method to be invoked when the sensor data has been read
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var gyroscopeRotationVectorSensor = tizen.sensorservice.getDefaultSensor("GYROSCOPE_ROTATION_VECTOR");
+
+ function onGetSuccessCB(sensorData)
+ {
+     console.log("######## Get the gyroscope rotation vector sensor data ########");
+     console.log("x: " + sensorData.x);
+     console.log("y: " + sensorData.y);
+     console.log("z: " + sensorData.z);
+     console.log("w: " + sensorData.w);
+ }
+
+function onerrorCB(error)
+{
+   console.log("error occurred");
+}
+
+ function onsuccessCB()
+ {
+     console.log("sensor start");
+     gyroscopeRotationVectorSensor.getGyroscopeRotationVectorSensorData(onGetSuccessCB, onerrorCB);
+ }
+
+ gyroscopeRotationVectorSensor.start(onsuccessCB);
+ </pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> sensor start
+ ######## Get the gyroscope rotation vector sensor data ########
+ x: 0
+ y: 0
+ z: 0
+ w: 0
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="GyroscopeUncalibratedSensor">
+<a class="backward-compatibility-anchor" name="::Sensor::GyroscopeUncalibratedSensor"></a><h3>2.8. GyroscopeUncalibratedSensor</h3>
+<div class="brief">
+ The GyroscopeUncalibratedSensor interface provides methods to access uncalibrated gyroscope sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface GyroscopeUncalibratedSensor : <a href="#Sensor">Sensor</a> {
+
+        void getGyroscopeUncalibratedSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback,
+                                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+
+      <div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="GyroscopeUncalibratedSensor::getGyroscopeUncalibratedSensorData">
+<a class="backward-compatibility-anchor" name="::Sensor::GyroscopeUncalibratedSensor::getGyroscopeUncalibratedSensorData"></a><code><b><span class="methodName">getGyroscopeUncalibratedSensorData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the current sensor data.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getGyroscopeUncalibratedSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="description">
+            <p>
+Note that before calling the getGyroscopeUncalibratedSensorData() method, the start() method should be called to turn on the sensor.
+            </p>
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ ServiceNotAvailableError : If the <em>getGyroscopeUncalibratedSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+              <li>
+ AbortError : If the system operation was aborted              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback method to be invoked when the sensor data has been read
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var gyroscopeUncalibratedSensor = tizen.sensorservice.getDefaultSensor("GYROSCOPE_UNCALIBRATED");
+
+ function onGetSuccessCB(sensorData)
+ {
+     console.log("######## Get uncalibrated gyroscope sensor data ########");
+     console.log("x: " + sensorData.x);
+     console.log("y: " + sensorData.y);
+     console.log("z: " + sensorData.z);
+     console.log("x drift: " + sensorData.xAxisDrift);
+     console.log("y drift: " + sensorData.yAxisDrift);
+     console.log("z drift: " + sensorData.zAxisDrift);
+ }
+
+function onerrorCB(error)
+{
+   console.log("error occurred");
+}
+
+ function onsuccessCB()
+ {
+     console.log("gyroscope uncalibrated sensor start");
+     gyroscopeUncalibratedSensor.getGyroscopeUncalibratedSensorData(onGetSuccessCB, onerrorCB);
+ }
+
+ gyroscopeUncalibratedSensor.start(onsuccessCB);
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="HRMRawSensor">
+<a class="backward-compatibility-anchor" name="::Sensor::HRMRawSensor"></a><h3>2.9. HRMRawSensor</h3>
+<div class="brief">
+ The HRMRawSensor interface provides methods to access HRM sensor raw data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface HRMRawSensor : <a href="#Sensor">Sensor</a> {
+
+        void getHRMRawSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback,
+                                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+          </p>
+
+      <div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="HRMRawSensor::getHRMRawSensorData">
+<a class="backward-compatibility-anchor" name="::Sensor::HRMRawSensor::getHRMRawSensorData"></a><code><b><span class="methodName">getHRMRawSensorData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the current sensor data.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getHRMRawSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+<div class="description">
+            <p>
+Note that before calling the getHRMRawSensorData() method, the start() method should be called to turn on the sensor.
+            </p>
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ ServiceNotAvailableError : If the getHRMRawSensorData method is called without calling the start method.              </li>
+              <li>
+ UnknownError  : An unknown error has occurred.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/healthinfo
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback method to be invoked when the sensor data has been read
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if retrieving the sensor data fails because of an unknown error.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to use this function.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var HRMrawsensor = tizen.sensorservice.getDefaultSensor("HRM_RAW");
+
+ function onGetSuccessCB(sensorData)
+ {
+     console.log("HRMRaw light intensity : " + sensorData.lightIntensity);
+ }
+
+function onerrorCB(error)
+{
+   console.log("error occurred");
+}
+
+ function onsuccessCB()
+ {
+     console.log("HRMRaw sensor start");
+     HRMrawsensor.getHRMRawSensorData(onGetSuccessCB, onerrorCB);
+ }
+
+ HRMrawsensor.start(onsuccessCB);
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="LightSensor">
+<a class="backward-compatibility-anchor" name="::Sensor::LightSensor"></a><h3>2.10. LightSensor</h3>
+<div class="brief">
+ The LightSensor interface provides methods to access light sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface LightSensor : <a href="#Sensor">Sensor</a> {
+
+        void getLightSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback,
+                                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+
+      <div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="LightSensor::getLightSensorData">
+<a class="backward-compatibility-anchor" name="::Sensor::LightSensor::getLightSensorData"></a><code><b><span class="methodName">getLightSensorData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the current sensor data.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getLightSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+Note that before calling the getLightSensorData() method, the start() method should be called to turn on the sensor.
+            </p>
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ ServiceNotAvailableError : If the <em>getLightSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+              <li>
+ UnknownError  : An unknown error has occurred              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback method to be invoked when the sensor data has been read
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var lightSensor = tizen.sensorservice.getDefaultSensor("LIGHT");
+
+ function onGetSuccessCB(sensorData)
+ {
+     console.log("light level : " + sensorData.lightLevel);
+ }
+
+function onerrorCB(error)
+{
+   console.log("error occurred");
+}
+
+ function onsuccessCB()
+ {
+     console.log("sensor start");
+     lightSensor.getLightSensorData(onGetSuccessCB, onerrorCB);
+ }
+
+ lightSensor.start(onsuccessCB);
+
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="LinearAccelerationSensor">
+<a class="backward-compatibility-anchor" name="::Sensor::LinearAccelerationSensor"></a><h3>2.11. LinearAccelerationSensor</h3>
+<div class="brief">
+ The LinearAccelerationSensor interface provides methods to access linear acceleration sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface LinearAccelerationSensor : <a href="#Sensor">Sensor</a> {
+
+        void getLinearAccelerationSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback,
+                                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+
+      <div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="LinearAccelerationSensor::getLinearAccelerationSensorData">
+<a class="backward-compatibility-anchor" name="::Sensor::LinearAccelerationSensor::getLinearAccelerationSensorData"></a><code><b><span class="methodName">getLinearAccelerationSensorData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the current sensor data.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getLinearAccelerationSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+Note that before calling the getLinearAccelerationSensorData() method, the start() method should be called to turn on the sensor.
+            </p>
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ ServiceNotAvailableError : If the <em>getLinearAccelerationSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+              <li>
+ AbortError : If the system operation was aborted              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback method to be invoked when the sensor data has been read
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var linearAccelerationSensor = tizen.sensorservice.getDefaultSensor("LINEAR_ACCELERATION");
+
+ function onGetSuccessCB(sensorData)
+ {
+     console.log("######## Get the linear acceleration sensor data ########");
+     console.log("x: " + sensorData.x);
+     console.log("y: " + sensorData.y);
+     console.log("z: " + sensorData.z);
+ }
+
+function onerrorCB(error)
+{
+   console.log("error occurred");
+}
+
+ function onsuccessCB()
+ {
+     console.log("linear acceleration sensor start");
+     linearAccelerationSensor.getLinearAccelerationSensorData(onGetSuccessCB, onerrorCB);
+ }
+
+ linearAccelerationSensor.start(onsuccessCB);
+ </pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> linear acceleration sensor start
+ ######## Get the linear acceleration sensor data ########
+ x: 7.639427
+ y: -2.909304
+ z: -3.379018
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="MagneticSensor">
+<a class="backward-compatibility-anchor" name="::Sensor::MagneticSensor"></a><h3>2.12. MagneticSensor</h3>
+<div class="brief">
+ The MagneticSensor interface provides methods to access magnetic sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface MagneticSensor : <a href="#Sensor">Sensor</a> {
+
+        void getMagneticSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback,
+                                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+
+      <div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MagneticSensor::getMagneticSensorData">
+<a class="backward-compatibility-anchor" name="::Sensor::MagneticSensor::getMagneticSensorData"></a><code><b><span class="methodName">getMagneticSensorData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the current sensor data.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getMagneticSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+Note that before calling the getMagneticSensorData() method, the start() method should be called to turn on the sensor.
+            </p>
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ ServiceNotAvailableError : If the <em>getMagneticSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+              <li>
+ UnknownError  : An unknown error has occurred              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback method to be invoked when the sensor data has been read
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var magneticSensor = tizen.sensorservice.getDefaultSensor("MAGNETIC");
+
+ function onGetSuccessCB(sensorData)
+ {
+     console.log("magnetic field of the X axis : " + sensorData.x);
+     console.log("magnetic field of the Y axis : " + sensorData.y);
+     console.log("magnetic field of the Z axis : " + sensorData.z);
+ }
+
+function onerrorCB(error)
+{
+   console.log("error occurred");
+}
+
+ function onsuccessCB()
+ {
+     console.log("sensor start");
+     magneticSensor.getMagneticSensorData(onGetSuccessCB, onerrorCB);
+ }
+
+ magneticSensor.start(onsuccessCB);
+
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="MagneticUncalibratedSensor">
+<a class="backward-compatibility-anchor" name="::Sensor::MagneticUncalibratedSensor"></a><h3>2.13. MagneticUncalibratedSensor</h3>
+<div class="brief">
+ The MagneticUncalibratedSensor interface provides methods to access uncalibrated magnetic sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface MagneticUncalibratedSensor : <a href="#Sensor">Sensor</a> {
+
+        void getMagneticUncalibratedSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback,
+                                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+
+      <div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MagneticUncalibratedSensor::getMagneticUncalibratedSensorData">
+<a class="backward-compatibility-anchor" name="::Sensor::MagneticUncalibratedSensor::getMagneticUncalibratedSensorData"></a><code><b><span class="methodName">getMagneticUncalibratedSensorData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the current sensor data.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getMagneticUncalibratedSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+<div class="description">
+            <p>
+Note that before calling the getMagneticUncalibratedSensorData() method, the start() method should be called to turn on the sensor.
+            </p>
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ ServiceNotAvailableError : If the <em>getMagneticUncalibratedSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+              <li>
+ AbortError : If the system operation was aborted              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback method to be invoked when the sensor data has been read
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var magneticUncalibratedSensor = tizen.sensorservice.getDefaultSensor("MAGNETIC_UNCALIBRATED");
+
+ function onGetSuccessCB(sensorData)
+ {
+     console.log("######## Get uncalibrated magnetic sensor data ########");
+     console.log("x: " + sensorData.x);
+     console.log("y: " + sensorData.y);
+     console.log("z: " + sensorData.z);
+     console.log("x bias: " + sensorData.xAxisBias);
+     console.log("y bias: " + sensorData.yAxisBias);
+     console.log("z bias: " + sensorData.zAxisBias);
+ }
+
+function onerrorCB(error)
+{
+   console.log("error occurred");
+}
+
+ function onsuccessCB() {
+     console.log("magnetic uncalibrated sensor start");
+     magneticUncalibratedSensor.getMagneticUncalibratedSensorData(onGetSuccessCB, onerrorCB);
+ }
+
+ magneticUncalibratedSensor.start(onsuccessCB);
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="PressureSensor">
+<a class="backward-compatibility-anchor" name="::Sensor::PressureSensor"></a><h3>2.14. PressureSensor</h3>
+<div class="brief">
+ The PressureSensor interface provides methods to access pressure sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface PressureSensor : <a href="#Sensor">Sensor</a> {
+
+        void getPressureSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback,
+                                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+
+      <div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="PressureSensor::getPressureSensorData">
+<a class="backward-compatibility-anchor" name="::Sensor::PressureSensor::getPressureSensorData"></a><code><b><span class="methodName">getPressureSensorData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the current sensor data.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getPressureSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+Note that the start() method should be called before calling the getPressureSensorData() method to turn on the sensor.
+            </p>
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ ServiceNotAvailableError : If the <em>getPressureSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+              <li>
+ UnknownError  : An unknown error has occurred              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback method to be invoked when the sensor data has been read
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var pressureSensor = tizen.sensorservice.getDefaultSensor("PRESSURE");
+
+ function onGetSuccessCB(sensorData)
+ {
+     console.log("pressure : " + sensorData.pressure);
+ }
+
+function onerrorCB(error)
+{
+   console.log("error occurred");
+}
+
+ function onsuccessCB()
+ {
+     console.log("sensor start");
+     pressureSensor.getPressureSensorData(onGetSuccessCB, onerrorCB);
+ }
+
+ pressureSensor.start(onsuccessCB);
+
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="ProximitySensor">
+<a class="backward-compatibility-anchor" name="::Sensor::ProximitySensor"></a><h3>2.15. ProximitySensor</h3>
+<div class="brief">
+ The ProximitySensor interface provides methods to access proximity sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface ProximitySensor : <a href="#Sensor">Sensor</a> {
+
+        void getProximitySensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback,
+                                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+
+      <div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="ProximitySensor::getProximitySensorData">
+<a class="backward-compatibility-anchor" name="::Sensor::ProximitySensor::getProximitySensorData"></a><code><b><span class="methodName">getProximitySensorData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the current sensor data.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getProximitySensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+Note that before calling the getProximitySensorData() method, the start() method should be called to turn on the sensor.
+            </p>
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ ServiceNotAvailableError : If the <em>getProximitySensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+              <li>
+ UnknownError  : An unknown error has occurred              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback method to be invoked when the sensor data has been read
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var proximitySensor = tizen.sensorservice.getDefaultSensor("PROXIMITY");
+
+ function onGetSuccessCB(sensorData)
+ {
+     console.log("proximity state : " + sensorData.proximityState);
+ }
+
+ function onerrorCB(error)
+ {
+     console.log("error occured");
+ }
+
+ function onsuccessCB()
+ {
+     console.log("proximity sensor start");
+     proximitySensor.getProximitySensorData(onGetSuccessCB, onerrorCB);
+ }
+
+ proximitySensor.start(onsuccessCB);
+
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="UltravioletSensor">
+<a class="backward-compatibility-anchor" name="::Sensor::UltravioletSensor"></a><h3>2.16. UltravioletSensor</h3>
+<div class="brief">
+ The UltravioletSensor interface provides methods to access ultraviolet sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface UltravioletSensor : <a href="#Sensor">Sensor</a> {
+
+        void getUltravioletSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback,
+                                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+
+      <div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="UltravioletSensor::getUltravioletSensorData">
+<a class="backward-compatibility-anchor" name="::Sensor::UltravioletSensor::getUltravioletSensorData"></a><code><b><span class="methodName">getUltravioletSensorData</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the current sensor data.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getUltravioletSensorData(<a href="#SensorDataSuccessCallback">SensorDataSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+Note that before calling the getUltravioletSensorData() method, the start() method should be called to turn on the sensor.
+            </p>
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ ServiceNotAvailableError : If the <em>getUltravioletSensorData()</em> method is called without first calling the <em>start()</em> method              </li>
+              <li>
+ UnknownError  : An unknown error has occurred              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback method to be invoked when the sensor data has been read
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var ultravioletSensor = tizen.sensorservice.getDefaultSensor("ULTRAVIOLET");
+
+ function onGetSuccessCB(sensorData)
+ {
+     console.log("ultraviolet level : " + sensorData.ultravioletLevel);
+ }
+
+ function onerrorCB(error)
+ {
+     console.log("error occured");
+ }
+
+ function onsuccessCB()
+ {
+     console.log("ultraviolet sensor start");
+     ultravioletSensor.getUltravioletSensorData(onGetSuccessCB, onerrorCB);
+ }
+
+ ultravioletSensor.start(onsuccessCB);
+
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="SensorData">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorData"></a><h3>2.17. SensorData</h3>
+<div class="brief">
+ The SensorData interface is a common abstract interface used by different types of sensor data objects.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface SensorData {
+     };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+</div>
+<div class="interface" id="SensorAccelerationData">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorAccelerationData"></a><h3>2.18. SensorAccelerationData</h3>
+<div class="brief">
+ The SensorAccelerationData interface represents acceleration sensor data. You can refer to <a href="https://developer.tizen.org/development/guides/native-application/system/sensor#accelerometer">this guide</a> to learn more about acceleration sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface SensorAccelerationData : <a href="#SensorData">SensorData</a> {
+
+        readonly attribute double x;
+
+        readonly attribute double y;
+
+        readonly attribute double z;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="description">
+          <p>
+The acceleration sensor data represents the sum of acceleration of the device and an acceleration component representing forces opposing the gravity.
+          </p>
+         </div>
+<p><span class="remark"> Remark : </span>
+ An example of how to access and use this interface can be found in the <a href="sensor.html#AccelerationSensor::getAccelerationSensorData">getAccelerationSensorData()</a> code example.
+          </p>
+
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="SensorAccelerationData::x">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">x</span></span><div class="brief">
+ The result of acceleration sensor measurement in the device's X axis in m/s².<br>The value can be between -19.6 and 19.6 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="SensorAccelerationData::y">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">y</span></span><div class="brief">
+ The result of acceleration sensor measurement in the device's Y axis in m/s².<br>The value can be between -19.6 and 19.6 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="SensorAccelerationData::z">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">z</span></span><div class="brief">
+ The result of acceleration sensor measurement in the device's Z axis in m/s².<br>The value can be between -19.6 and 19.6 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="SensorGravityData">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorGravityData"></a><h3>2.19. SensorGravityData</h3>
+<div class="brief">
+ The SensorGravityData interface represents gravity sensor data. You can refer to <a href="https://developer.tizen.org/development/guides/native-application/system/sensor#gravity">this guide</a> to learn more about gravity sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface SensorGravityData : <a href="#SensorData">SensorData</a> {
+
+        readonly attribute double x;
+
+        readonly attribute double y;
+
+        readonly attribute double z;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+<p><span class="remark"> Remark : </span>
+ An example of how to access and use this interface can be found in the <a href="sensor.html#GravitySensor::getGravitySensorData">getGravitySensorData()</a> code example.
+          </p>
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="SensorGravityData::x">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">x</span></span><div class="brief">
+ Value of the Earth's gravity in the device's X axis in m/s².<br>The value can be between -9.8 and 9.8 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="SensorGravityData::y">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">y</span></span><div class="brief">
+ Value of the Earth's gravity in the device's Y axis in m/s².<br>The value can be between -9.8 and 9.8 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="SensorGravityData::z">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">z</span></span><div class="brief">
+ Value of the Earth's gravity in the device's Z axis in m/s².<br>The value can be between -9.8 and 9.8 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="SensorGyroscopeData">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorGyroscopeData"></a><h3>2.20. SensorGyroscopeData</h3>
+<div class="brief">
+ The SensorGyroscopeData interface represents gyroscope sensor data. You can refer to <a href="https://developer.tizen.org/development/guides/native-application/system/sensor#gyro">this guide</a> to learn more about gyroscope sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface SensorGyroscopeData : <a href="#SensorData">SensorData</a> {
+
+        readonly attribute double x;
+
+        readonly attribute double y;
+
+        readonly attribute double z;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+<p><span class="remark"> Remark : </span>
+ An example of how to access and use this interface can be found in the <a href="sensor.html#GyroscopeSensor::getGyroscopeSensorData">getGyroscopeSensorData()</a> code example.
+          </p>
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="SensorGyroscopeData::x">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">x</span></span><div class="brief">
+ The angular velocity about the device's X axis in °/s.<br>The value can be between -573.0 and 573.0 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="SensorGyroscopeData::y">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">y</span></span><div class="brief">
+ The angular velocity about the device's Y axis in °/s.<br>The value can be between -573.0 and 573.0 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="SensorGyroscopeData::z">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">z</span></span><div class="brief">
+ The angular velocity about the device's Z axis in °/s.<br>The value can be between -573.0 and 573.0 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="SensorGyroscopeRotationVectorData">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorGyroscopeRotationVectorData"></a><h3>2.21. SensorGyroscopeRotationVectorData</h3>
+<div class="brief">
+ The SensorGyroscopeRotationVectorData interface represents gyroscope rotation vector sensor data. You can refer to <a href="https://developer.tizen.org/development/guides/native-application/system/sensor#gyro_rotation">this guide</a> to learn more about gyroscope sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface SensorGyroscopeRotationVectorData : <a href="#SensorData">SensorData</a> {
+
+        readonly attribute double x;
+
+        readonly attribute double y;
+
+        readonly attribute double z;
+
+        readonly attribute double w;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+<div class="description">
+          <p>
+A gyroscope rotation vector sensor data represents the orientation of the device as a combination of an angle and an axis when the device has rotated through an angle about an axis (X, Y, or Z).
+It is equal to the components of a unit quaternion (cos(θ/2), x * sin(θ/2), y * sin(θ/2), z * sin(θ/2)).
+          </p>
+         </div>
+<p><span class="remark"> Remark : </span>
+ An example of how to access and use this interface can be found in the <a href="sensor.html#GyroscopeRotationVectorSensor::getGyroscopeRotationVectorSensorData">getGyroscopeRotationVectorSensorData()</a> code example.
+          </p>
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="SensorGyroscopeRotationVectorData::x">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">x</span></span><div class="brief">
+ The X direction component of the rotation vector (x * sin(θ/2)).<br>The value can be between -1 and 1 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="SensorGyroscopeRotationVectorData::y">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">y</span></span><div class="brief">
+ The Y direction component of the rotation vector (y * sin(θ/2)).<br>The value can be between -1 and 1 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="SensorGyroscopeRotationVectorData::z">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">z</span></span><div class="brief">
+ The Z direction component of the rotation vector (z * sin(θ/2)).<br>The value can be between -1 and 1 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="SensorGyroscopeRotationVectorData::w">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">w</span></span><div class="brief">
+ The scalar component of the rotation vector (cos(θ/2)).<br>The value can be between -1 and 1 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="SensorGyroscopeUncalibratedData">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorGyroscopeUncalibratedData"></a><h3>2.22. SensorGyroscopeUncalibratedData</h3>
+<div class="brief">
+ The SensorGyroscopeUncalibratedData interface represents uncalibrated gyroscope sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface SensorGyroscopeUncalibratedData : <a href="#SensorData">SensorData</a> {
+
+        readonly attribute double x;
+
+        readonly attribute double y;
+
+        readonly attribute double z;
+
+        readonly attribute double xAxisDrift;
+
+        readonly attribute double yAxisDrift;
+
+        readonly attribute double zAxisDrift;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="description">
+          <p>
+The uncalibrated gyroscope sensor data represents the angular velocity of the device measured by the sensor and the stated measurement drift values.
+          </p>
+          <p>
+Stated drift values are attached to the data, but the drift compensation of measurement results is not performed.
+          </p>
+         </div>
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="SensorGyroscopeUncalibratedData::x">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">x</span></span><div class="brief">
+ The result of measurement of angular velocity around the device's X axis, without measurement drift compensation, in °/s.<br>The value can be between -573.0 and 573.0 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="SensorGyroscopeUncalibratedData::y">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">y</span></span><div class="brief">
+ The result of measurement of angular velocity around the device's Y axis, without measurement drift compensation, in °/s.<br>The value can be between -573.0 and 573.0 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="SensorGyroscopeUncalibratedData::z">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">z</span></span><div class="brief">
+ The result of measurement of angular velocity around the device's Z axis, without measurement drift compensation, in °/s.<br>The value can be between -573.0 and 573.0 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="SensorGyroscopeUncalibratedData::xAxisDrift">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">xAxisDrift</span></span><div class="brief">
+ Stated drift of angular velocity measurement result around the device's X axis, in °/s.<br>The value can be between -573.0 and 573.0 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="SensorGyroscopeUncalibratedData::yAxisDrift">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">yAxisDrift</span></span><div class="brief">
+ Stated drift of angular velocity measurement result around the device's Y axis, in °/s.<br>The value can be between -573.0 and 573.0 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="SensorGyroscopeUncalibratedData::zAxisDrift">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">zAxisDrift</span></span><div class="brief">
+ Stated drift of angular velocity measurement result around the device's Z axis, in °/s.<br>The value can be between -573.0 and 573.0 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="SensorHRMRawData">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorHRMRawData"></a><h3>2.23. SensorHRMRawData</h3>
+<div class="brief">
+ The SensorHRMRawData interface represents HRM sensor raw data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface SensorHRMRawData : <a href="#SensorData">SensorData</a> {
+
+        readonly attribute DOMString lightType;
+
+        readonly attribute unsigned long lightIntensity;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+          </p>
+
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="SensorHRMRawData::lightType">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">lightType</span></span><div class="brief">
+ HRM sensor light type.
+            </div>
+<div class="description">
+            <p>
+The following values are supported:
+            </p>
+            <ul>
+              <li>
+LED_IR - The infrared spectrum              </li>
+              <li>
+LED_RED - The red light spectrum              </li>
+              <li>
+LED_GREEN - The green light spectrum              </li>
+            </ul>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+</li>
+<li class="attribute" id="SensorHRMRawData::lightIntensity">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long </span><span class="name">lightIntensity</span></span><div class="brief">
+ HRM sensor light intensity measures the light intensity that is reflected from a blood vessel. The changes in the reported value represent blood volume changes in the microvascular bed of the tissue, and can be used to estimate heart rate.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.1
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="SensorLightData">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorLightData"></a><h3>2.24. SensorLightData</h3>
+<div class="brief">
+ The SensorLightData interface represents light sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface SensorLightData : <a href="#SensorData">SensorData</a> {
+
+        readonly attribute double lightLevel;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="SensorLightData::lightLevel">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">lightLevel</span></span><div class="brief">
+ Ambient light level in lux.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li></ul>
+</div>
+</div>
+<div class="interface" id="SensorLinearAccelerationData">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorLinearAccelerationData"></a><h3>2.25. SensorLinearAccelerationData</h3>
+<div class="brief">
+ The SensorLinearAccelerationData interface represents linear acceleration sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface SensorLinearAccelerationData : <a href="#SensorData">SensorData</a> {
+
+        readonly attribute double x;
+
+        readonly attribute double y;
+
+        readonly attribute double z;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="SensorLinearAccelerationData::x">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">x</span></span><div class="brief">
+ Value of the linear acceleration in the device's X axis in m/s².<br>The value can be between -19.6 and 19.6 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</li>
+<li class="attribute" id="SensorLinearAccelerationData::y">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">y</span></span><div class="brief">
+ Value of the linear acceleration in the device's Y axis in m/s².<br>The value can be between -19.6 and 19.6 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</li>
+<li class="attribute" id="SensorLinearAccelerationData::z">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">z</span></span><div class="brief">
+ Value of the linear acceleration in the device's Z axis in m/s².<br>The value can be between -19.6 and 19.6 inclusive.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="SensorMagneticData">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorMagneticData"></a><h3>2.26. SensorMagneticData</h3>
+<div class="brief">
+ The SensorMagneticData interface represents magnetic sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface SensorMagneticData : <a href="#SensorData">SensorData</a> {
+
+        readonly attribute double x;
+
+        readonly attribute double y;
+
+        readonly attribute double z;
+
+        readonly attribute <a href="#MagneticSensorAccuracy">MagneticSensorAccuracy</a> accuracy;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="SensorMagneticData::x">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">x</span></span><div class="brief">
+ Ambient magnetic field of the X axis in microtesla (µT).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="SensorMagneticData::y">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">y</span></span><div class="brief">
+ Ambient magnetic field of the Y axis in microtesla (µT).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="SensorMagneticData::z">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">z</span></span><div class="brief">
+ Ambient magnetic field of the Z axis in microtesla (µT).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="SensorMagneticData::accuracy">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MagneticSensorAccuracy </span><span class="name">accuracy</span></span><div class="brief">
+ Accuracy of magnetic sensor data.
+            </div>
+<div class="description">
+            <p>
+For increasing the accuracy, wave the device around in the air in figure-eight patterns.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="SensorMagneticUncalibratedData">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorMagneticUncalibratedData"></a><h3>2.27. SensorMagneticUncalibratedData</h3>
+<div class="brief">
+ The SensorMagneticUncalibratedData interface represents uncalibrated magnetic sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface SensorMagneticUncalibratedData : <a href="#SensorData">SensorData</a> {
+
+        readonly attribute double x;
+
+        readonly attribute double y;
+
+        readonly attribute double z;
+
+        readonly attribute double xAxisBias;
+
+        readonly attribute double yAxisBias;
+
+        readonly attribute double zAxisBias;
+
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 4.0
+          </p>
+<div class="description">
+          <p>
+The uncalibrated magnetic sensor data represents the magnetic field measured by the sensor and the stated measurement bias.
+          </p>
+          <p>
+Factory calibration and temperature compensation are applied to the measurement results. Stated measurement bias added by other factors is attached to the data, but the bias compensation of measurement results is not performed.
+          </p>
+         </div>
+
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="SensorMagneticUncalibratedData::x">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">x</span></span><div class="brief">
+ The result of measurement of magnetic field strength of the X axis, without measurement bias compensation, in microtesla (µT).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="SensorMagneticUncalibratedData::y">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">y</span></span><div class="brief">
+ The result of measurement of magnetic field strength of the Y axis, without measurement bias compensation, in microtesla (µT).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="SensorMagneticUncalibratedData::z">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">z</span></span><div class="brief">
+ The result of measurement of magnetic field strength of the Z axis, without measurement bias compensation, in microtesla (µT).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="SensorMagneticUncalibratedData::xAxisBias">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">xAxisBias</span></span><div class="brief">
+ Stated measurement bias of the value of magnetic field strength of the X axis in microtesla (µT).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="SensorMagneticUncalibratedData::yAxisBias">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">yAxisBias</span></span><div class="brief">
+ Stated measurement bias of the value of magnetic field strength of the Y axis in microtesla (µT).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+<li class="attribute" id="SensorMagneticUncalibratedData::zAxisBias">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">zAxisBias</span></span><div class="brief">
+ Stated measurement bias of the value of magnetic field strength of the Z axis in microtesla (µT).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 4.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="SensorPressureData">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorPressureData"></a><h3>2.28. SensorPressureData</h3>
+<div class="brief">
+ The SensorPressureData interface represents pressure sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface SensorPressureData : <a href="#SensorData">SensorData</a> {
+
+        readonly attribute double pressure;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="SensorPressureData::pressure">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">pressure</span></span><div class="brief">
+ Pressure in hectopascal (hPa).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li></ul>
+</div>
+</div>
+<div class="interface" id="SensorProximityData">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorProximityData"></a><h3>2.29. SensorProximityData</h3>
+<div class="brief">
+ The SensorProximityData interface represents proximity sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface SensorProximityData : <a href="#SensorData">SensorData</a> {
+
+        readonly attribute <a href="#ProximityState">ProximityState</a> proximityState;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="SensorProximityData::proximityState">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">ProximityState </span><span class="name">proximityState</span></span><div class="brief">
+ Proximity state.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li></ul>
+</div>
+</div>
+<div class="interface" id="SensorUltravioletData">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorUltravioletData"></a><h3>2.30. SensorUltravioletData</h3>
+<div class="brief">
+ The SensorUltravioletData interface represents ultraviolet sensor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface SensorUltravioletData : <a href="#SensorData">SensorData</a> {
+
+        readonly attribute long ultravioletLevel;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="SensorUltravioletData::ultravioletLevel">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">ultravioletLevel</span></span><div class="brief">
+ Ultraviolet index.
+            </div>
+<div class="description">
+            <p>
+The ultraviolet index is an international standard measurement of the strength of ultraviolet radiation from the sun. The <em>ultravioletLevel</em> ranges from 0 to 15.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li></ul>
+</div>
+</div>
+<div class="interface" id="SensorHardwareInfo">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorHardwareInfo"></a><h3>2.31. SensorHardwareInfo</h3>
+<div class="brief">
+ The SensorHardwareInfo interface represents information about the sensor requested by the <a href="sensor.html#Sensor::getSensorHardwareInfo">getSensorHardwareInfo</a> method
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface SensorHardwareInfo {
+
+        readonly attribute DOMString name;
+
+        readonly attribute <a href="#SensorType">SensorType</a> type;
+
+        readonly attribute DOMString vendor;
+
+        readonly attribute double minValue;
+
+        readonly attribute double maxValue;
+
+        readonly attribute double resolution;
+
+        readonly attribute long minInterval;
+
+        readonly attribute long maxBatchCount;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+<p><span class="remark"> Remark : </span>
+ This interface returns hardware information provided by the sensor manufacture.
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="SensorHardwareInfo::name">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
+ Name of the sensor.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="SensorHardwareInfo::type">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">SensorType </span><span class="name">type</span></span><div class="brief">
+ <a href="sensor.html#SensorType">Type of the sensor</a>.<br>            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="SensorHardwareInfo::vendor">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">vendor</span></span><div class="brief">
+ Vendor of the sensor.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="SensorHardwareInfo::minValue">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">minValue</span></span><div class="brief">
+ Minimum reading value that can be received from the sensor.<br><br>The units for the minimum value depends on the sensor type:<br>            </div>
+<div class="description">
+            <ul>
+              <li>
+ACCELERATION - m/s<sup>2</sup> (meters per second squared)              </li>
+              <li>
+GRAVITY - m/s<sup>2</sup> (meters per second squared)              </li>
+              <li>
+GYROSCOPE - °/s (Degrees/s)              </li>
+              <li>
+GYROSCOPE_ROTATION_VECTOR - None              </li>
+              <li>
+GYROSCOPE_UNCALIBRATED - °/s (Degrees/s)              </li>
+              <li>
+HRM_RAW - None              </li>
+              <li>
+LIGHT - lux              </li>
+              <li>
+LINEAR_ACCELERATION -  m/s<sup>2</sup> (meters per second squared)              </li>
+              <li>
+MAGNETIC - μT (microtesla)              </li>
+              <li>
+MAGNETIC_UNCALIBRATED - μT (microtesla)              </li>
+              <li>
+PRESSURE - hPa (hectopascal)              </li>
+              <li>
+PROXIMITY - None              </li>
+              <li>
+ULTRAVIOLET - UV index (ultraviolet index)              </li>
+            </ul>
+            <p>
+For more information about sensor, see <a href="https://developer.tizen.org/development/guides/native-application/location-and-sensors/device-sensors">Device Sensor Guide</a>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="SensorHardwareInfo::maxValue">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">maxValue</span></span><div class="brief">
+ Maximum reading value that can be received from the sensor.<br><br>The units for the maximum value depends on the sensor type:<br>            </div>
+<div class="description">
+            <ul>
+              <li>
+ACCELERATION - m/s<sup>2</sup> (meters per second squared)              </li>
+              <li>
+GRAVITY - m/s<sup>2</sup> (meters per second squared)              </li>
+              <li>
+GYROSCOPE - °/s (Degrees/s)              </li>
+              <li>
+GYROSCOPE_ROTATION_VECTOR - None              </li>
+              <li>
+GYROSCOPE_UNCALIBRATED - °/s (Degrees/s)              </li>
+              <li>
+HRM_RAW - None              </li>
+              <li>
+LIGHT - lux              </li>
+              <li>
+LINEAR_ACCELERATION -  m/s<sup>2</sup> (meters per second squared)              </li>
+              <li>
+MAGNETIC - μT (microtesla)              </li>
+              <li>
+MAGNETIC_UNCALIBRATED - μT (microtesla)              </li>
+              <li>
+PRESSURE - hPa (hectopascal)              </li>
+              <li>
+PROXIMITY - None              </li>
+              <li>
+ULTRAVIOLET - UV index (ultraviolet index)              </li>
+            </ul>
+            <p>
+For more information about sensor, see <a href="https://developer.tizen.org/development/guides/native-application/location-and-sensors/device-sensors">Device Sensor Guide</a>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="SensorHardwareInfo::resolution">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">resolution</span></span><div class="brief">
+ The smallest change which the sensor can detect.<br><br>The units of the resolution depends on the sensor type:<br>            </div>
+<div class="description">
+            <ul>
+              <li>
+ACCELERATION - m/s<sup>2</sup> (meters per second squared)              </li>
+              <li>
+GRAVITY - m/s<sup>2</sup> (meters per second squared)              </li>
+              <li>
+GYROSCOPE - °/s (Degrees/s)              </li>
+              <li>
+GYROSCOPE_ROTATION_VECTOR - None              </li>
+              <li>
+GYROSCOPE_UNCALIBRATED - °/s (Degrees/s)              </li>
+              <li>
+HRM_RAW - None              </li>
+              <li>
+LIGHT - lux              </li>
+              <li>
+LINEAR_ACCELERATION -  m/s<sup>2</sup> (meters per second squared)              </li>
+              <li>
+MAGNETIC - μT (microtesla)              </li>
+              <li>
+MAGNETIC_UNCALIBRATED - μT (microtesla)              </li>
+              <li>
+PRESSURE - hPa (hectopascal)              </li>
+              <li>
+PROXIMITY - None              </li>
+              <li>
+ULTRAVIOLET - UV index (ultraviolet index)              </li>
+            </ul>
+            <p>
+For more information about sensor, see <a href="https://developer.tizen.org/development/guides/web-application/sensors/device-sensors">Sensor Guide</a>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="SensorHardwareInfo::minInterval">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">minInterval</span></span><div class="brief">
+ Minimum interval of the sensor which means a period between two events.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="SensorHardwareInfo::maxBatchCount">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">maxBatchCount</span></span><div class="brief">
+ Maximum batch count of sensor, batch means storing a sensors event in a hardware FIFO register when processor stay on sleep or suspend status.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="SensorDataSuccessCallback">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorDataSuccessCallback"></a><h3>2.32. SensorDataSuccessCallback</h3>
+<div class="brief">
+ The SensorDataSuccessCallback interface is a callback interface that is invoked periodically. For example, see the Sensor interface.
+          </div>
+<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface SensorDataSuccessCallback {
+        void onsuccess(optional <a href="#SensorData">SensorData</a>? sensorData);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="SensorDataSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorDataSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called periodically.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(optional <a href="#SensorData">SensorData</a>? sensorData);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">sensorData</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Current sensor data
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="SensorHardwareInfoSuccessCallback">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorHardwareInfoSuccessCallback"></a><h3>2.33. SensorHardwareInfoSuccessCallback</h3>
+<div class="brief">
+ The SensorHardwareInfoSuccessCallback callback interface specifies a success callback with SensorHardwareInfo object as an input argument.
+          </div>
+<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface SensorHardwareInfoSuccessCallback{
+        void onsuccess(<a href="#SensorHardwareInfo">SensorHardwareInfo</a> hardwareInfo);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="SensorHardwareInfoSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Sensor::SensorHardwareInfoSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when sensor hardware infomation is successfully retrieved.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#SensorHardwareInfo">SensorHardwareInfo</a> hardwareInfo);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">hardwareInfo</span>:
+ Current sensor Hardware Info
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="api-features">3. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the acceleration sensor application runs on a device with an acceleration sensor, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/sensor.accelerometer</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the gravity sensor application runs on a device with a gravity sensor, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/sensor.gravity</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the uncalibrated gyroscope sensor application runs on a device with a gyroscope sensor, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/sensor.gyroscope</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the gyroscope sensor application runs on a device with a gyroscope sensor, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/sensor.gyroscope_rotation_vector</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the gyroscope rotation vector sensor application runs on a device with a gyroscope rotation vector sensor, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/sensor.gyroscope.uncalibrated</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the Heart Rate Monitor application runs on a device with a heart rate monitor, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/sensor.heart_rate_monitor</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the light sensor application runs on a device with a photometer (light) sensor, declare the following feature requirement in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/sensor.photometer</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the linear acceleration sensor application runs on a device with a linear acceleration sensor, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/sensor.linear_acceleration</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the magnetic sensor application runs on a device with a magnetic sensor, declare the following feature requirement in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/sensor.magnetometer</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the uncalibrated magnetic sensor application runs on a device with a magnetic sensor, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/sensor.magnetometer.uncalibrated</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the barometer(pressure) sensor application runs on a device with a barometric (pressure) sensor, declare the following feature requirement in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/sensor.barometer</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the proximity sensor application runs on a device with a proximity sensor, declare the following feature requirement in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/sensor.proximity</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the UV sensor application runs on a device with a UV sensor, declare the following feature requirement in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/sensor.ultraviolet</li>
+</div>
+<p></p>
+                    For more information, see <a href="https://developer.tizen.org/development/getting-started/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+</div>
+<h2 id="full-webidl">4. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Sensor {
+
+    enum MagneticSensorAccuracy { "ACCURACY_UNDEFINED", "ACCURACY_BAD", "ACCURACY_NORMAL", "ACCURACY_GOOD", "ACCURACY_VERYGOOD" };
+
+    enum ProximityState { "FAR", "NEAR" };
+
+    enum SensorType { "ACCELERATION", "GRAVITY", "GYROSCOPE", "GYROSCOPE_ROTATION_VECTOR", "GYROSCOPE_UNCALIBRATED", "HRM_RAW", "LIGHT", "LINEAR_ACCELERATION", "MAGNETIC",
+                      "MAGNETIC_UNCALIBRATED", "PRESSURE", "PROXIMITY", "ULTRAVIOLET" };
+
+    [NoInterfaceObject] interface SensorServiceManagerObject {
+        readonly attribute <a href="#SensorService">SensorService</a> sensorservice;
+    };
+    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SensorServiceManagerObject">SensorServiceManagerObject</a>;
+
+    [NoInterfaceObject] interface SensorService {
+
+        <a href="#Sensor">Sensor</a> getDefaultSensor(SensorType type) raises(WebAPIException);
+
+        SensorType[] getAvailableSensors() raises(WebAPIException);
+
+    };
+
+    [NoInterfaceObject] interface Sensor {
+
+        readonly attribute SensorType sensorType;
+
+        void start(SuccessCallback successCallback,
+                                optional ErrorCallback? errorCallback) raises(WebAPIException);
+
+        void stop() raises(WebAPIException);
+
+        void setChangeListener(SensorDataSuccessCallback successCallback, optional long? interval, optional long batchLatency) raises(WebAPIException);
+
+        void unsetChangeListener() raises(WebAPIException);
+
+         void getSensorHardwareInfo(SensorHardwareInfoSuccessCallback successCallback, optional ErrorCallback? errorCallback) raises(WebAPIException);
+    };
+
+    [NoInterfaceObject] interface AccelerationSensor : Sensor {
+
+        void getAccelerationSensorData(SensorDataSuccessCallback successCallback,
+                                optional ErrorCallback? errorCallback) raises(WebAPIException);
+    };
+
+    [NoInterfaceObject] interface GravitySensor : Sensor {
+
+        void getGravitySensorData(SensorDataSuccessCallback successCallback,
+                                  optional ErrorCallback? errorCallback) raises(WebAPIException);
+    };
+
+    [NoInterfaceObject] interface GyroscopeSensor : Sensor {
+
+        void getGyroscopeSensorData(SensorDataSuccessCallback successCallback,
+                                    optional ErrorCallback? errorCallback) raises(WebAPIException);
+    };
+
+    [NoInterfaceObject] interface GyroscopeRotationVectorSensor : Sensor {
+
+        void getGyroscopeRotationVectorSensorData(SensorDataSuccessCallback successCallback,
+                                                  optional ErrorCallback? errorCallback) raises(WebAPIException);
+    };
+
+    [NoInterfaceObject] interface GyroscopeUncalibratedSensor : Sensor {
+
+        void getGyroscopeUncalibratedSensorData(SensorDataSuccessCallback successCallback,
+                                optional ErrorCallback? errorCallback) raises(WebAPIException);
+    };
+
+    [NoInterfaceObject] interface HRMRawSensor : Sensor {
+
+        void getHRMRawSensorData(SensorDataSuccessCallback successCallback,
+                                optional ErrorCallback? errorCallback) raises(WebAPIException);
+    };
+
+    [NoInterfaceObject] interface LightSensor : Sensor {
+
+        void getLightSensorData(SensorDataSuccessCallback successCallback,
+                                optional ErrorCallback? errorCallback) raises(WebAPIException);
+    };
+
+    [NoInterfaceObject] interface LinearAccelerationSensor : Sensor {
+
+        void getLinearAccelerationSensorData(SensorDataSuccessCallback successCallback,
+                                optional ErrorCallback? errorCallback) raises(WebAPIException);
+    };
+
+    [NoInterfaceObject] interface MagneticSensor : Sensor {
+
+        void getMagneticSensorData(SensorDataSuccessCallback successCallback,
+                                optional ErrorCallback? errorCallback) raises(WebAPIException);
+    };
+
+    [NoInterfaceObject] interface MagneticUncalibratedSensor : Sensor {
+
+        void getMagneticUncalibratedSensorData(SensorDataSuccessCallback successCallback,
+                                optional ErrorCallback? errorCallback) raises(WebAPIException);
+    };
+
+    [NoInterfaceObject] interface PressureSensor : Sensor {
+
+        void getPressureSensorData(SensorDataSuccessCallback successCallback,
+                                optional ErrorCallback? errorCallback) raises(WebAPIException);
+    };
+
+    [NoInterfaceObject] interface ProximitySensor : Sensor {
+
+        void getProximitySensorData(SensorDataSuccessCallback successCallback,
+                                optional ErrorCallback? errorCallback) raises(WebAPIException);
+    };
+
+    [NoInterfaceObject] interface UltravioletSensor : Sensor {
+
+        void getUltravioletSensorData(SensorDataSuccessCallback successCallback,
+                                optional ErrorCallback? errorCallback) raises(WebAPIException);
+    };
+
+    [NoInterfaceObject] interface SensorData {
+     };
+
+    [NoInterfaceObject] interface SensorAccelerationData : SensorData {
+
+        readonly attribute double x;
+
+        readonly attribute double y;
+
+        readonly attribute double z;
+    };
+
+    [NoInterfaceObject] interface SensorGravityData : SensorData {
+
+        readonly attribute double x;
+
+        readonly attribute double y;
+
+        readonly attribute double z;
+    };
+
+    [NoInterfaceObject] interface SensorGyroscopeData : SensorData {
+
+        readonly attribute double x;
+
+        readonly attribute double y;
+
+        readonly attribute double z;
+    };
+
+    [NoInterfaceObject] interface SensorGyroscopeRotationVectorData : SensorData {
+
+        readonly attribute double x;
+
+        readonly attribute double y;
+
+        readonly attribute double z;
+
+        readonly attribute double w;
+    };
+
+    [NoInterfaceObject] interface SensorGyroscopeUncalibratedData : SensorData {
+
+        readonly attribute double x;
+
+        readonly attribute double y;
+
+        readonly attribute double z;
+
+        readonly attribute double xAxisDrift;
+
+        readonly attribute double yAxisDrift;
+
+        readonly attribute double zAxisDrift;
+    };
+
+    [NoInterfaceObject] interface SensorHRMRawData : SensorData {
+
+        readonly attribute DOMString lightType;
+
+        readonly attribute unsigned long lightIntensity;
+    };
+
+    [NoInterfaceObject] interface SensorLightData : SensorData {
+
+        readonly attribute double lightLevel;
+    };
+
+    [NoInterfaceObject] interface SensorLinearAccelerationData : SensorData {
+
+        readonly attribute double x;
+
+        readonly attribute double y;
+
+        readonly attribute double z;
+    };
+
+    [NoInterfaceObject] interface SensorMagneticData : SensorData {
+
+        readonly attribute double x;
+
+        readonly attribute double y;
+
+        readonly attribute double z;
+
+        readonly attribute MagneticSensorAccuracy accuracy;
+    };
+
+    [NoInterfaceObject] interface SensorMagneticUncalibratedData : SensorData {
+
+        readonly attribute double x;
+
+        readonly attribute double y;
+
+        readonly attribute double z;
+
+        readonly attribute double xAxisBias;
+
+        readonly attribute double yAxisBias;
+
+        readonly attribute double zAxisBias;
+
+    };
+
+    [NoInterfaceObject] interface SensorPressureData : SensorData {
+
+        readonly attribute double pressure;
+    };
+
+    [NoInterfaceObject] interface SensorProximityData : SensorData {
+
+        readonly attribute ProximityState proximityState;
+    };
+
+    [NoInterfaceObject] interface SensorUltravioletData : SensorData {
+
+        readonly attribute long ultravioletLevel;
+    };
+
+    [NoInterfaceObject] interface SensorHardwareInfo {
+
+        readonly attribute DOMString name;
+
+        readonly attribute SensorType type;
+
+        readonly attribute DOMString vendor;
+
+        readonly attribute double minValue;
+
+        readonly attribute double maxValue;
+
+        readonly attribute double resolution;
+
+        readonly attribute long minInterval;
+
+        readonly attribute long maxBatchCount;
+    };
+
+    [Callback=FunctionOnly, NoInterfaceObject] interface SensorDataSuccessCallback {
+        void onsuccess(optional SensorData? sensorData);
+    };
+
+    [Callback=FunctionOnly, NoInterfaceObject] interface SensorHardwareInfoSuccessCallback{
+        void onsuccess(SensorHardwareInfo hardwareInfo);
+    };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

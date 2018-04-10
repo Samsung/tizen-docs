@@ -19,7 +19,7 @@ The main features of the Location Manager API include:
 <a name="service"></a>
 ## Location Service
 
-The Location Manager API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__LOCATION__MANAGER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__LOCATION__MANAGER__MODULE.html) applications) provides the current location using the location sources specified in the [location method](#method). You can [use the location service](#start) to manage location information in various ways.
+The Location Manager API (in [mobile](../../api/mobile/latest/group__CAPI__LOCATION__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__LOCATION__MANAGER__MODULE.html) applications) provides the current location using the location sources specified in the [location method](#method). You can [use the location service](#start) to manage location information in various ways.
 
 With the location manager, you can:
 
@@ -46,7 +46,7 @@ You can use the location state and updates as follows:
 
 The location method is used to specify the desired quality of service of the location manager. For example, a location-based weather forecast application can require location-related information only to distinguish a city or a neighborhood, while a GPS navigation application can require the highest quality level to pinpoint a map location. Selecting the appropriate quality level not only helps the location manager to run the system efficiently, but also leads to a good user experience.
 
-Using the `location_method_e` structure (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__LOCATION__MANAGER__MODULE.html#gaec8a29c8b701753a7c9d91f4f8acfac5) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__LOCATION__MANAGER__MODULE.html#gaec8a29c8b701753a7c9d91f4f8acfac5) applications) allows your application to specify the following methods of location positioning system:
+Using the `location_method_e` structure (in [mobile](../../api/mobile/latest/group__CAPI__LOCATION__MANAGER__MODULE.html#gaec8a29c8b701753a7c9d91f4f8acfac5) and [wearable](../../api/wearable/latest/group__CAPI__LOCATION__MANAGER__MODULE.html#gaec8a29c8b701753a7c9d91f4f8acfac5) applications) allows your application to specify the following methods of location positioning system:
 
 - GPS, which uses the global positioning system
 - WPS, which uses the Wi-Fi positioning system
@@ -80,7 +80,7 @@ The applications whose location setting is enabled can get the current and last 
 
 ## Prerequisites
 
-To use the functions and data types of the Location Manager API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__LOCATION__MANAGER__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__LOCATION__MANAGER__MODULE.html) applications), include the `<locations.h>` header file in your application:
+To use the functions and data types of the Location Manager API (in [mobile](../../api/mobile/latest/group__CAPI__LOCATION__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__LOCATION__MANAGER__MODULE.html) applications), include the `<locations.h>` header file in your application:
 
 ```
 #include <locations.h>
@@ -93,7 +93,7 @@ To start the location service:
 
 1. Create a location manager handle using the `location_manager_create()` function before you use the location service.
 
-       In this example, GPS is used as the source of the position data, so the first parameter is `LOCATIONS_METHOD_GPS`. You can use other values of the `location_method_e` enumeration (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__LOCATION__MANAGER__MODULE.html#gaec8a29c8b701753a7c9d91f4f8acfac5) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__LOCATION__MANAGER__MODULE.html#gaec8a29c8b701753a7c9d91f4f8acfac5) applications), such as `LOCATIONS_METHOD_HYBRID`, `LOCATIONS_METHOD_WPS`, `LOCATIONS_METHOD_PASSIVE`, or `LOCATIONS_METHOD_FUSED`. `LOCATIONS_METHOD_HYBRID` uses both `LOCATIONS_METHOD_GPS` and `LOCATIONS_METHOD_WPS`, but the latter is less accurate.
+       In this example, GPS is used as the source of the position data, so the first parameter is `LOCATIONS_METHOD_GPS`. You can use other values of the `location_method_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__LOCATION__MANAGER__MODULE.html#gaec8a29c8b701753a7c9d91f4f8acfac5) and [wearable](../../api/wearable/latest/group__CAPI__LOCATION__MANAGER__MODULE.html#gaec8a29c8b701753a7c9d91f4f8acfac5) applications), such as `LOCATIONS_METHOD_HYBRID`, `LOCATIONS_METHOD_WPS`, `LOCATIONS_METHOD_PASSIVE`, or `LOCATIONS_METHOD_FUSED`. `LOCATIONS_METHOD_HYBRID` uses both `LOCATIONS_METHOD_GPS` and `LOCATIONS_METHOD_WPS`, but the latter is less accurate.
 
 
    ```
@@ -412,7 +412,7 @@ To get information about the current position, velocity, and distance:
      location_manager_get_velocity(manager, &climb, &direction, &speed, &timestamp);
      ```
 
-   - To get information about the current accuracy level (see the `location_accuracy_level_e` enumeration in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__LOCATION__MANAGER__MODULE.html#ga4878b9a0afa5990dd2bb500850c1828b) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__LOCATION__MANAGER__MODULE.html#ga4878b9a0afa5990dd2bb500850c1828b) applications), and horizontal and vertical accuracy, use the `location_manager_get_accuracy()` function:
+   - To get information about the current accuracy level (see the `location_accuracy_level_e` enumeration in [mobile](../../api/mobile/latest/group__CAPI__LOCATION__MANAGER__MODULE.html#ga4878b9a0afa5990dd2bb500850c1828b) and [wearable](../../api/wearable/latest/group__CAPI__LOCATION__MANAGER__MODULE.html#ga4878b9a0afa5990dd2bb500850c1828b) applications), and horizontal and vertical accuracy, use the `location_manager_get_accuracy()` function:
 
      ```
      location_accuracy_level_e level;

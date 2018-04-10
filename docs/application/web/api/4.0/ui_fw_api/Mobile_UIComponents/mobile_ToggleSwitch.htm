@@ -1,0 +1,334 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Toggle Switch</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+
+<h1>Toggle Switch</h1>
+
+<p>The ToggleSwitch component is used as 2-state switch for on/off or true/false data input.</p>
+
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+		<li><a href="#default-selectors">Default Selectors</a>
+
+		</li>
+
+		<li><a href="#html-examples">HTML Example</a>
+
+		</li>
+
+		<li><a href="#manual-constructor">Manual Constructor</a>
+
+		</li>
+
+		<li><a href="#methods-list">Methods</a>
+
+		</li>
+
+</ol>
+
+
+
+<h2><a id="default-selectors"></a>Default Selectors</h2>
+
+<p>By default, all <code>input</code> elements with the <code>class=&quot;ui-toggleswitch&quot;</code> or <code>data-role=&quot;toggleswitch&quot;</code> are displayed as toggle switches.
+<br>Additionally, <code>select</code> elements with the <code>class=&quot;ui-toggleswitch&quot;</code> or <code>data-role=&quot;toggleswitch&quot;</code> are also displayed as toggle switches.</br>
+
+<p>We recommend to use <code>input</code> selectors for toggle switch.</p>
+
+<table class="note deprecated">
+	<tbody>
+	<tr>
+		<th class="note deprecated">Note</th>
+	</tr>
+	<tr>
+		<td class="note deprecated">selector with <span style="font-family: Courier New,Courier,monospace">select[data-role=&quot;slider&quot;]</span> has been <span class="deprecated">DEPRECATED since <b>Tizen 2.4</b></span>.</i><br>
+			To support Backward compatibility, please import tau.support-2.3.js.</td>
+	</tr>
+	</tbody>
+</table>
+
+<h2><a id="html-examples"></a>HTML Examples</h2>
+<p>Following example shows how to create toggle switch in multiple way:</p>
+<h4>ToggleSwitch with input tag</h4>
+<pre class="prettyprint">
+&lt;input type=&quot;checkbox&quot; name=&quot;toggle-1&quot; id=&quot;toggle-1&quot; class=&quot;ui-toggleswitch&quot;/&gt;
+
+&lt;!--Disabled toggle switch--&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;toggle-2&quot; id=&quot;toggle-2&quot; class=&quot;ui-toggleswitch&quot; disabled /&gt;
+</pre>
+<h4>ToggleSwitch with select tag</h4>
+<pre class="prettyprint">
+&lt;select name=&quot;flip-1&quot; id=&quot;flip-1&quot; class=&quot;ui-toggleswitch&quot;&gt;
+   &lt;option value=&quot;off&quot;&gt;&lt;/option&gt;
+   &lt;option value=&quot;on&quot;&gt;&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+
+
+<h2><a id="manual-constructor"></a>Manual Constructor</h2>
+
+<p>To manually create a toggle switch component, use the component constructor from the <strong>tau</strong> namespace:</p>
+
+<pre class="prettyprint">
+&lt;input type=&quot;checkbox&quot; name=&quot;toggle-1&quot; id=&quot;toggle-1&quot; class=&quot;ui-toggleswitch&quot;/&gt;
+
+&lt;script&gt;
+   var toggleComponent = tau.widget.ToggleSwitch(document.getElementById(&quot;toggle-1&quot;));
+&lt;/script&gt;
+</pre>
+
+	<h2><a id="methods-list"></a>Methods</h2>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-disable">disable</a>() </pre>
+					</td>
+					<td><p>Disables the toggle switch.</p></td>
+				</tr>
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-enable">enable</a>() </pre>
+					</td>
+					<td><p>Enables the toggle switch.</p></td>
+				</tr>
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-value">value</a>() </pre>
+					</td>
+					<td><p>Gets toggleswitch state value.</p></td>
+				</tr>
+
+		</tbody>
+	</table>
+	<dl>
+
+
+
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-disable">disable</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Disables the toggle switch.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">ToggleSwitch disable() </pre>
+					</div>
+
+					<div class="description">
+						<p>
+							<p>The method sets disabled attribute on for the toggle switch and changes the look of the toggle switch to the disabled state.</p>
+
+
+
+
+						</p>
+					</div>
+
+
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>ToggleSwitch</td>
+									<td>Return this.</td>
+								</tr>
+								</tbody>
+							</table>
+
+
+					</div>
+
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;select name=&quot;flip-1&quot; id=&quot;flip-1&quot; class=&quot;ui-toggleswitch&quot;&gt;
+   &lt;option value=&quot;off&quot;&gt;&lt;/option&gt;
+   &lt;option value=&quot;on&quot;&gt;&lt;/option&gt;
+&lt;/select&gt;
+&lt;script&gt;
+   var toggle = document.getElementById(&quot;flip-11&quot;),
+       toggleWidget = tau.widget.ToggleSwitch(toggle);
+   toggleWidget.disable();
+&lt;/script&gt;
+</pre>
+						</div>
+
+
+
+				</dd>
+
+
+
+
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-enable">enable</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Enables the toggle switch.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">ToggleSwitch enable() </pre>
+					</div>
+
+					<div class="description">
+						<p>
+							<p>The method removes the disabled attribute from the toggle switch and changes the look of the toggle switch to the enabled state.</p>
+
+
+
+
+						</p>
+					</div>
+
+
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>ToggleSwitch</td>
+									<td>Return this.</td>
+								</tr>
+								</tbody>
+							</table>
+
+
+					</div>
+
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;select name=&quot;flip-1&quot; id=&quot;flip-1&quot; class=&quot;ui-toggleswitch&quot;&gt;
+   &lt;option value=&quot;off&quot;&gt;&lt;/option&gt;
+   &lt;option value=&quot;on&quot;&gt;&lt;/option&gt;
+&lt;/select&gt;
+&lt;script&gt;
+   var toggle = document.getElementById(&quot;flip-11&quot;),
+       toggleWidget = tau.widget.ToggleSwitch(toggle);
+   toggleWidget.enable();
+&lt;/script&gt;
+</pre>
+						</div>
+
+				</dd>
+
+
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-value">value</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Gets a value of toggle switch.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">Number value() </pre>
+					</div>
+
+						<p><span class="version">Since: </span>
+							2.3
+						</p>
+
+					<div class="description">
+						<p>
+							<p>This method returns the element value. For ToggleSwitch, when toggle switch has 'on' state, it returns 1. Otherwise, it returns 0.</p>
+
+
+
+
+						</p>
+					</div>
+
+
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>Number</td>
+									<td>Returns the value (0 or 1) of element.</td>
+								</tr>
+								</tbody>
+							</table>
+
+
+					</div>
+
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;select name=&quot;flip-1&quot; id=&quot;flip-1&quot; class=&quot;ui-toggleswitch&quot;&gt;
+   &lt;option value=&quot;off&quot;&gt;&lt;/option&gt;
+   &lt;option value=&quot;on&quot;&gt;&lt;/option&gt;
+&lt;/select&gt;
+&lt;script&gt;
+   var toggle = document.getElementById(&quot;flip-11&quot;),
+       toggleWidget = tau.widget.ToggleSwitch(toggle),
+       toggleState = toggleWidget.value();
+   console.log(toggleState);
+&lt;/script&gt;
+</pre>
+						</div>
+
+				</dd>
+
+
+		</dl>
+
+
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

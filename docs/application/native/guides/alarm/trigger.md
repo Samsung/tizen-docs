@@ -491,7 +491,7 @@ To use the conjunctions and disjunctions:
 
 
 
-To use the functions and data types of the [Contextual Trigger](../../../../org.tizen.native.mobile.apireference/group__CAPI__CONTEXT__TRIGGER__MODULE.html) API, include the `<context_trigger.h>` header file in your application:
+To use the functions and data types of the [Contextual Trigger](../../api/mobile/latest/group__CAPI__CONTEXT__TRIGGER__MODULE.html) API, include the `<context_trigger.h>` header file in your application:
 
 
 
@@ -773,7 +773,7 @@ To set an action:
 
 
 
-  The application launch request is manipulated with an application control handle. For more information, see the [App Control](../../../../org.tizen.native.mobile.apireference/group__CAPI__APP__CONTROL__MODULE.html) API. You can utilize the application control functionalities by developing an application with the corresponding application controls to execute a series of tasks when a rule is satisfied.
+  The application launch request is manipulated with an application control handle. For more information, see the [App Control](../../api/mobile/latest/group__CAPI__APP__CONTROL__MODULE.html) API. You can utilize the application control functionalities by developing an application with the corresponding application controls to execute a series of tasks when a rule is satisfied.
 
 
 
@@ -1007,7 +1007,7 @@ The following comparison operators are allowed for specific attribute data types
 
 
 
-The following table summarizes the corresponding comparison attribute keys, with respect to the event and condition items, and the valid right operands for each attribute key. For information on the necessary privileges for each item, see the [Contextual Trigger](../../../../org.tizen.native.mobile.apireference/group__CAPI__CONTEXT__TRIGGER__MODULE.html) API.
+The following table summarizes the corresponding comparison attribute keys, with respect to the event and condition items, and the valid right operands for each attribute key. For information on the necessary privileges for each item, see the [Contextual Trigger](../../api/mobile/latest/group__CAPI__CONTEXT__TRIGGER__MODULE.html) API.
 
 
 

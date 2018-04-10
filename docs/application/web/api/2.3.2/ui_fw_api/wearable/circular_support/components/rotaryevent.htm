@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<script type="text/javascript" src="../../../snippet.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="../../../styles.css" rel="StyleSheet" type="text/css" />
+	<link href="../../../snippet.css" rel="StyleSheet" type="text/css" />
+	<title>Using Rotary Event with TAU</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+<div id="container"><div id="contents"><div class="content">
+<h1>Using Rotary Event with TAU</h1>
+<p>The Tizen platform supports rotary events for user interaction on a wearable rotary device or sensor.<br>
+Some UI Components can be interactive with this event. For Example, <a href="../../page/page_event.htm">Application Page</a>, <a href="../../widgets/widget_circleprogressbar.htm">CircleProgressBar</a>
+and <a href="../../widgets/widget_section_changer.htm">SectionChanger</a>, etc can be controlled with Rotary Event.<br>
+You can implement some rotary dependent behaviors with following example code.</p>
+
+<p>This feature is supported in wearable applications only.</p>
+
+<h2 id="rotary">Rotary Event</h2>
+<p>Rotary events are used to deliver the rotary device or sensor data to the application. The following table describes the rotary events.</p>
+
+<table>
+	<caption> Table: Rotary events</caption>
+	<tbody>
+	<tr>
+		<th>Type</th>
+		<th>Description</th>
+		<th>Attribute</th>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">rotarydetent</span></td>
+		<td>Event is triggered when a device detects the detent point.</td>
+		<td><span style="font-family: Courier New,Courier,monospace">detail.direction</span>: rotation direction
+			<ul><li><span style="font-family: Courier New,Courier,monospace;">CW</span> for clockwise rotation direction</li>
+				<li><span style="font-family: Courier New,Courier,monospace;">CCW</span> for counter-clockwise rotation direction</li></ul></td>
+	</tr>
+	</tbody>
+</table>
+
+<h2 id="pagescroll">Page/Popup Scrolling with Rotary Event</h2>
+<p>Contents area in Page or Popup can be scrolled with Rotary Event. To attach rotary event, just query scrollable DOM.</p>
+<p>To implement this, refer following example:</p>
+
+<pre class="prettyprint">
+&lt;!--&nbsp;HTML&nbsp;--&gt;
+&lt;div&nbsp;class=&quot;ui-page&nbsp;ui-page-active&quot;&nbsp;id=&quot;main&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;header&nbsp;class=&quot;ui-header&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&nbsp;class=&quot;ui-title&quot;&gt;TAU&nbsp;Basic&lt;/h2&gt;
+&nbsp;&nbsp;&nbsp;&lt;/header&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#popup&quot;&nbsp;data-rel=&quot;popup&quot;&gt;Open&nbsp;Popup&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Fill&nbsp;contents&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;popoup&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=&quot;popup&quot;&nbsp;class=&quot;ui-popup&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-popup-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Fill&nbsp;contents&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-popup-footer&nbsp;ui-bottom-button&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;id=&quot;1btnPopup-cancel&quot;&nbsp;href=&quot;#&quot;&nbsp;class=&quot;ui-btn&quot;&nbsp;data-rel=&quot;back&quot;&gt;Check&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!--&nbsp;Script&nbsp;--&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var SCROLL_STEP&nbsp;=&nbsp;50,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;distance&nbsp;of&nbsp;moving&nbsp;scroll&nbsp;for&nbsp;each&nbsp;rotary&nbsp;event
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;page&nbsp;=&nbsp;document.getElementById(&quot;main&quot;);&nbsp;&nbsp;&nbsp;// query with page id
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;page.addEventListener(&quot;popupshow&quot;,&nbsp;function&nbsp;popupOpenHandler(e)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;popup&nbsp;=&nbsp;e.target,&nbsp;&nbsp;&nbsp;//&nbsp;popup&nbsp;element
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scroller&nbsp;=&nbsp;popup.querySelector(&quot;.ui-popup-wrapper&quot;),&nbsp;&nbsp;&nbsp;//&nbsp;element&nbsp;that&nbsp;has&nbsp;scroll
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;rotary&nbsp;event&nbsp;handler
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rotaryEventHandler&nbsp;=&nbsp;function(e)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(e.detail.direction&nbsp;===&nbsp;&quot;CW&quot;)&nbsp;{&nbsp;//&nbsp;Right&nbsp;direction
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scroller.scrollTop&nbsp;+=&nbsp;SCROLL_STEP;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if&nbsp;(e.detail.direction&nbsp;===&nbsp;&quot;CCW&quot;)&nbsp;{&nbsp;//&nbsp;Left&nbsp;direction
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scroller.scrollTop&nbsp;-=&nbsp;SCROLL_STEP;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;register&nbsp;rotary&nbsp;event
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.addEventListener(&quot;rotarydetent&quot;,&nbsp;rotaryEventHandler,&nbsp;false);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;unregister&nbsp;rotary&nbsp;event
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;popup.addEventListener(&quot;popuphide&quot;,&nbsp;function&nbsp;popupHideHandler()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;popup.removeEventListener(&quot;popuphide&quot;,&nbsp;popupHideHandler,&nbsp;false);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.removeEventListener(&quot;rotarydetent&quot;,&nbsp;rotaryEventHandler,&nbsp;false);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;false);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;false);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;page.addEventListener(&quot;pagebeforeshow&quot;,&nbsp;function&nbsp;pageScrollHandler(e)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;page&nbsp;=&nbsp;e.target;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elScroller&nbsp;=&nbsp;page.querySelector(&quot;.ui-scroller&quot;);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;rotary&nbsp;event&nbsp;handler
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rotaryEventHandler&nbsp;=&nbsp;function(e)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(e.detail.direction&nbsp;===&nbsp;&quot;CW&quot;)&nbsp;{&nbsp;//&nbsp;Right&nbsp;direction
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elScroller.scrollTop&nbsp;+=&nbsp;SCROLL_STEP;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if&nbsp;(e.detail.direction&nbsp;===&nbsp;&quot;CCW&quot;)&nbsp;{&nbsp;//&nbsp;Left&nbsp;direction
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elScroller.scrollTop&nbsp;-=&nbsp;SCROLL_STEP;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;register&nbsp;rotary&nbsp;event
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.addEventListener(&quot;rotarydetent&quot;,&nbsp;rotaryEventHandler,&nbsp;false);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;unregister&nbsp;rotary&nbsp;event
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;page.addEventListener(&quot;pagebeforehide&quot;,&nbsp;function&nbsp;pageHideHanlder()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;page.removeEventListener(&quot;pagebeforehide&quot;,&nbsp;pageHideHanlder,&nbsp;false);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.removeEventListener(&quot;rotarydetent&quot;,&nbsp;rotaryEventHandler,&nbsp;false);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;false);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;false);
+&nbsp;&nbsp;&nbsp;}());
+&lt;/script&gt;
+</pre>
+<h2 id="snaplist">Controlling SnapListView with Rotary Event</h2>
+<p>SnapListView component can be also scrolled with Rotary Event.</p>
+<p>To implement this, refer following example:</p>
+<pre class="prettyprint">
+&lt;!--&nbsp;HTML&nbsp;--&gt;
+&lt;div&nbsp;class=&quot;ui-page&nbsp;ui-page-active&quot;&nbsp;id=&quot;main&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;ui-listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;SnapListview&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;SnapListview&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;SnapListview&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;SnapListview&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;SnapListview&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;SnapListview&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;SnapListview&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;SnapListview&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;SnapListview&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;SnapListview&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!--&nbsp;Script&nbsp;--&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;(function(tau)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;list,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;snapListviewWidget,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rotarydetentHandler&nbsp;=&nbsp;function(e)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;selectedIndex&nbsp;=&nbsp;snapListviewWidget.getSelectedIndex(),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;direction&nbsp;=&nbsp;e.detail.direction;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(direction&nbsp;===&nbsp;&quot;CW&quot;&nbsp;&&&nbsp;selectedIndex&nbsp;!==&nbsp;null)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;snapListviewWidget.scrollToPosition(++selectedIndex);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if&nbsp;(direction&nbsp;===&nbsp;&quot;CCW&quot;&nbsp;&&&nbsp;selectedIndex&nbsp;!==&nbsp;null)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;snapListviewWidget.scrollToPosition(--selectedIndex);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(tau.support.shape.circle)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.addEventListener(&quot;pagebeforeshow&quot;,&nbsp;function&nbsp;()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;=&nbsp;document.getElementById(&quot;snapList&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;snapListviewWidget&nbsp;=&nbsp;tau.widget.SnapListview(list);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window.addEventListener(&quot;rotarydetent&quot;,&nbsp;rotarydetentHandler);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.addEventListener(&quot;pagebeforehide&quot;,&nbsp;function&nbsp;(e)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(list)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;snapListviewWidget.destroy();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window.removeEventListener(&quot;rotarydetent&quot;,&nbsp;rotarydetentHandler);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;}(tau));
+&lt;/script&gt;
+</pre>
+<h2 id="sectionchanger">Changing index of SectionChanger with Rotary Event</h2>
+<p>Sections of SectionChanger component can be changed with Rotary Event.</p>
+<p>To implement this, refer following example:</p>
+<pre class="prettyprint">
+&lt;!--&nbsp;HTML&nbsp;--&gt;
+&lt;div&nbsp;id=&quot;main&quot;&nbsp;class=&quot;ui-page&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;header&nbsp;class=&quot;ui-header&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&nbsp;class=&quot;ui-title&quot;&gt;SectionChanger&lt;/h2&gt;
+&nbsp;&nbsp;&nbsp;&lt;/header&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=&quot;hsectionchanger&quot;&nbsp;class=&quot;ui-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;section&nbsp;changer&nbsp;has&nbsp;only&nbsp;one&nbsp;child.&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;section&nbsp;class=&quot;section&quot;&nbsp;style=&quot;text-align:center&quot;&nbsp;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;&nbsp;LEFT2&nbsp;PAGE&nbsp;&lt;/h3&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/section&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;section&nbsp;class=&quot;section&quot;&nbsp;style=&quot;text-align:center&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;&nbsp;LEFT1&nbsp;PAGE&nbsp;&lt;/h3&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/section&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;section&nbsp;class=&quot;section&quot;&nbsp;class=&quot;ui-section-active&quot;&nbsp;style=&quot;text-align:center&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;&nbsp;MAIN&nbsp;PAGE&nbsp;&lt;/h3&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/section&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;section&nbsp;class=&quot;section&quot;&nbsp;style=&quot;text-align:center&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;&nbsp;RIGHT1&nbsp;PAGE&nbsp;&lt;/h3&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/section&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;section&nbsp;class=&quot;section&quot;&nbsp;style=&quot;text-align:center&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;&nbsp;RIGHT2&nbsp;PAGE&nbsp;&lt;/h3&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/section&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!--&nbsp;Script&nbsp;--&gt;
+&lt;script&gt;
+(function(tau)&nbsp;{
+&nbsp;&nbsp;&nbsp;var&nbsp;changer,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sectionChangerWidget,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sections,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sectionsLength;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rotarydetentHandler&nbsp;=&nbsp;function(event)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;direction&nbsp;=&nbsp;event.detail.direction,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;activeSection;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;activeSection&nbsp;=&nbsp;sectionChangerWidget.getActiveSectionIndex();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(direction&nbsp;===&nbsp;&quot;CW&quot;)&nbsp;{&nbsp;//&nbsp;right&nbsp;direction
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(activeSection&nbsp;&lt;&nbsp;sectionsLength-1)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sectionChangerWidget.setActiveSection(activeSection&nbsp;+&nbsp;1,&nbsp;30);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if&nbsp;(direction&nbsp;===&nbsp;&quot;CCW&quot;)&nbsp;{&nbsp;//&nbsp;left&nbsp;direction
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(activeSection&nbsp;&gt;&nbsp;0)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sectionChangerWidget.setActiveSection(activeSection&nbsp;-&nbsp;1,&nbsp;30);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;if&nbsp;(tau.support.shape.circle)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.addEventListener(&quot;pagebeforeshow&quot;,&nbsp;function&nbsp;()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;changer&nbsp;=&nbsp;document.getElementById(&quot;hsectionchanger&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sectionChangerWidget&nbsp;=&nbsp;tau.widget.SectionChanger(changer,&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;circular:&nbsp;false,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orientation:&nbsp;&quot;horizontal&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;useBouncingEffect:&nbsp;false
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sections&nbsp;=&nbsp;changer.querySelectorAll(&quot;.section&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sectionsLength&nbsp;=&nbsp;sections.length;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.addEventListener(&quot;rotarydetent&quot;,&nbsp;rotarydetentHandler);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.addEventListener(&quot;pagebeforehide&quot;,&nbsp;function&nbsp;(e)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sectionChangerWidget.destroy();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.removeEventListener(&quot;rotarydetent&quot;,&nbsp;rotarydetentHandler);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;}
+}(tau));
+&lt;/script&gt;
+</pre>
+<h2 id="progress">Changing value of CircleProgressBar with Rotary Event</h2>
+<p>Value of CircleProgressBar component can be changed with Rotary Event.</p>
+<p>To implement this, refer following example:</p>
+<pre class="prettyprint">
+&lt;!--&nbsp;HTML&nbsp;--&gt;
+&lt;div&nbsp;class=&quot;ui-page&quot;&nbsp;id=&quot;pageRotaryEvent&quot;&nbsp;data-enable-page-scroll=&quot;false&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;header&nbsp;class=&quot;ui-header&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&nbsp;class=&quot;ui-title&quot;&gt;Rotary&nbsp;Event&lt;/h2&gt;
+&nbsp;&nbsp;&nbsp;&lt;/header&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ui-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=&quot;result&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;progress&nbsp;class=&quot;ui-circle-progress&quot;&nbsp;id=&quot;circleprogress&quot;&nbsp;max=&quot;100&quot;&nbsp;value=&quot;20&quot;&gt;&lt;/progress&gt;
+&lt;/div&gt;
+
+&lt;!--&nbsp;Script&nbsp;--&gt;
+&lt;script&gt;
+(function(){
+&nbsp;&nbsp;&nbsp;var&nbsp;progressBar,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;progressBarWidget,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resultDiv,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;direction,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rotaryDetentHandler&nbsp;=&nbsp;function(e)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Get&nbsp;rotary&nbsp;direction
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;direction&nbsp;=&nbsp;e.detail.direction;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(direction&nbsp;===&nbsp;&quot;CW&quot;)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Right&nbsp;direction
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(parseInt(progressBarWidget.value(),&nbsp;10)&nbsp;&lt;&nbsp;100)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;=&nbsp;parseInt(progressBarWidget.value(),&nbsp;10)&nbsp;+&nbsp;1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;=&nbsp;100;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if&nbsp;(direction&nbsp;===&nbsp;&quot;CCW&quot;)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Left&nbsp;direction
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(parseInt(progressBarWidget.value(),&nbsp;10)&nbsp;&gt;&nbsp;0)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;=&nbsp;parseInt(progressBarWidget.value(),&nbsp;10)&nbsp;-&nbsp;1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;=&nbsp;0;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resultDiv.innerText&nbsp;=&nbsp;value&nbsp;+&nbsp;&quot;%&quot;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;progressBarWidget.value(value);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
+
+&nbsp;&nbsp;&nbsp;document.addEventListener(&quot;pagebeforeshow&quot;,&nbsp;function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resultDiv&nbsp;=&nbsp;document.getElementById(&quot;result&quot;);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;progressBar&nbsp;=&nbsp;document.getElementById(&quot;circleprogress&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;progressBarWidget&nbsp;=&nbsp;new&nbsp;tau.widget.CircleProgressBar(progressBar,&nbsp;{size:&nbsp;&quot;large&quot;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resultDiv.innerText&nbsp;=&nbsp;progressBarWidget.value()&nbsp;+&nbsp;&quot;%&quot;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Add&nbsp;rotarydetent&nbsp;handler&nbsp;to&nbsp;document
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.addEventListener(&quot;rotarydetent&quot;,&nbsp;rotaryDetentHandler);
+&nbsp;&nbsp;&nbsp;});
+
+&nbsp;&nbsp;&nbsp;document.addEventListener(&quot;pagehide&quot;,&nbsp;function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;progressBarWidget.destroy();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.removeEventListener(&quot;rotarydetent&quot;,&nbsp;rotaryDetentHandler);
+&nbsp;&nbsp;&nbsp;});
+}());
+&lt;/script&gt;
+</pre>
+
+<h2>Where to Go Next</h2>
+<ul>
+	<li><a href="../circular_support.htm">Support for Circular UI</a></li>
+
+</ul>
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

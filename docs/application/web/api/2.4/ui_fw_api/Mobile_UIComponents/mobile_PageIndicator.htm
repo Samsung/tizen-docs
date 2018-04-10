@@ -1,0 +1,254 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>PageIndicator</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>PageIndicator</h1>
+
+<p>The PageIndicator component displays as a dot-typed indicator.<br>
+The highlighted dots represent the corresponding active pages.</p>
+<p>According to option, the maximum number of dots and the number of pages to be linked can be set.
+<br>If the number of linked pages is more than dots which can be displayed, a central dot is assigned to multiple pages.</p>
+
+<table class="note">
+	<tbody>
+	<tr>
+		<th class="note">Note</th>
+	</tr>
+	<tr>
+		<td class="note">This component is supported since <strong>Tizen 2.4</strong>.</td>
+	</tr>
+	</tbody>
+</table>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+		<li><a href="#default-selectors">Default Selectors</a></li>
+
+		<li><a href="#manual-constructor">Manual Constructor</a></li>
+
+		<li><a href="#html-examples">HTML Examples</a></li>
+
+		<li><a href="#options-list">Options</a></li>
+
+		<li><a href="#methods-list">Methods</a>
+		</li>
+
+</ol>
+
+<h2><a id="default-selectors"></a>Default Selectors</h2>
+
+<p>By default, all elements with the <code>class="ui-pageindicator"</code> or <code>data-role="page-indicator"</code> attribute are displayed as page indicator components.</p>
+
+<h2><a id='manual-constructor'></a>Manual Constructor</h2>
+
+<p>For manual creation of PageIndicator, you can use constructor from <strong>tau</strong> namespace:</p>
+
+<pre class="prettyprint">
+var elPageIndicator = document.getElementById(&quot;pageIndicator&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;pageIndicator = tau.widget.PageIndicator(elPageIndicator, {numberOfPages: 5});
+</pre>
+
+<p>Constructor has two required parameter <strong>element</strong> - base <strong>HTMLElement</strong> and <strong>options</strong> to create the component. We recommend that you get the base <strong>HTMLElement</strong> using the method <em>document.getElementById()</em>.</p>
+<p>The second parameter, <strong>options</strong>, is an object with options for the component. The <code>numberOfPages</code> option means the number of pages to be linked and it is <strong>mandatory</strong>.</p>
+
+<h2><a id="html-examples"></a>HTML Examples</h2>
+
+<ul><li>
+<p>To create page indicator:</p>
+<pre class="prettyprint">
+&lt;div id=&quot;pageIndicator&quot; class=&quot;ui-page-indicator&quot; data-number-of-pages=&quot;5&quot;&gt;&lt;/div&gt;
+</pre>
+
+<p>The <code>data-number-of-page</code> attribute is same as the <code>numberOfPages</code> option in manual constructor description.</p>
+</li>
+<br>
+<li>
+<p>To use page indicator with section changer component:</p>
+<pre class="prettyprint">
+&lt;div class=&quot;ui-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-page-indicator&quot; id=&quot;pageIndicator&quot; data-number-of-pages=&quot;4&quot; style=&quot;bottom: 0;&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div id=&quot;hsectionchanger&quot; class=&quot;ui-section-changer&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- section changer has only one child. --&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;section class=&quot;ui-section-active&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class=&quot;ui-listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-li-static&quot;&gt;List&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/section&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;section&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class=&quot;ui-listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-li-static&quot;&gt;List&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/section&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;section&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class=&quot;ui-listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-li-static&quot;&gt;List&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/section&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;section&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class=&quot;ui-listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-li-static&quot;&gt;List&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/section&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var sectionChanger = document.getElementById(&quot;hsectionchanger&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elPageIndicator = document.getElementById(&quot;pageIndicator&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pageIndicator;
+&nbsp;&nbsp;&nbsp;pageIndicator = tau.widget.PageIndicator(elPageIndicator);
+&nbsp;&nbsp;&nbsp;sectionChanger.addEventListener(&quot;sectionchange&quot;, function(e) { pageIndicator.setActive(e.detail.active); }, false);
+&lt;/script&gt;
+</pre>
+</li></ul>
+
+	<h2><a id="options-list"></a>Options</h2>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">maxPage</span></td>
+				<td class="option">number</td>
+				<td class="option">5</td>
+				<td class="option"><p>The maximum number of pages (dots) which can be displayed on screen.</p></td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">numberOfPages</span></td>
+				<td class="option">number</td>
+				<td class="option">null</td>
+				<td class="option">The number of pages to be linked <strong>(mandatory)</strong>.</td>
+			</tr>
+
+		</tbody>
+	</table>
+<br>
+<p>
+Take an example: The situation that the value of <code>data-number-of-pages</code> is "5" (5 pages in all), and the value of <code>data-max-page</code> is "3" (3 dots).<br>
+<pre class="prettyprint">
+&lt;div id=&quot;pageIndicator&quot; class=&quot;ui-page-indicator&quot; data-number-of-pages=&quot;5&quot; data-max-page=&quot;3&quot;&gt;&lt;/div&gt;
+</pre>
+<br>
+When you scroll the page (or section) horizontally,  the number of exceeding pages (in this case, it is 2 pages, which is the result of 5 - 3 )
+would be indicated by the central dot, from middle of the pages.<br>
+<br>
+So, the first dot is for the first page, and the last dot is for the fifth (the last) page.<br>
+And the middle dot is shared by 2nd, 3rd and 4th page while scrolling pages.<br>
+<br>
+In the case of even value of <code>data-max-page</code> (the number of dots on the screen), the next order of half of the <code>data-max-page</code> value would work as middle dot.<br>
+For example, in the situation that the value of <code>data-number-of-pages</code> is "6", and the value of <code>data-max-page</code> is "4", the 3rd dot (the result of 4 / 2 + 1) would indicate 3rd, 4th and 5th pages as middle dot.<br>
+<br>
+Of course, the value of <code>data-number-of-pages</code> should meet the number of the pages you have added to HTML.<br>
+<br>
+And if the the value of <code>data-max-page</code> (dots) exceeds the value of <code>data-number-of-pages</code>, indicator dots will be displayed as the value of <code>data-number-of-pages</code>.<br>
+For example, in the situation that the value of numberOfPages is "6", and the value of maxPage is "100", there would be still 6 dots on the screen.
+</P>
+
+
+	<h2><a id="methods-list"></a>Methods</h2>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-setActive">setActive</a> ( number index ) </pre>
+					</td>
+					<td><p>Sets a dot to active state.</p></td>
+				</tr>
+
+
+		</tbody>
+	</table>
+	<dl>
+
+
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-setActive">setActive</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Sets a dot to active state.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">setActive ( number index) </pre>
+					</div>
+
+					<div class="description">
+						<p>
+
+						</p>
+					</div>
+
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required / optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+
+
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">index</span></td>
+						<td>number</td>
+						<td>required</td>
+						<td></td>
+						<td>Index of the dot which is set to active state.</td>
+					</tr>
+
+
+					</tbody>
+					</table>
+					</div>
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+
+							No return value
+
+					</div>
+
+				</dd>
+
+
+		</dl>
+
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

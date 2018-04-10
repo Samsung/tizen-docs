@@ -1,6 +1,6 @@
 # Gengrid
 
-The gengrid UI component is based on the same idea as [genlist](component-genlist.md). It aims to display objects on a grid layout and render only the visible ones. For more information, see the [Gengrid](../../../../../org.tizen.native.mobile.apireference/group__Elm__Gengrid.html) API.
+The gengrid UI component is based on the same idea as [genlist](component-genlist.md). It aims to display objects on a grid layout and render only the visible ones. For more information, see the [Gengrid](../../../../api/mobile/latest/group__Elm__Gengrid.html) API.
 
 This feature is supported in mobile applications only.
 

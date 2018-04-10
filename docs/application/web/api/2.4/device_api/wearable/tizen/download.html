@@ -1,0 +1,1076 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>Download API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Download">
+<div class="supported-platforms"><img class="wearable-optional emulator" title="Optional, Supported by Tizen Wearable emulator" src="wearable_s_w_optional.png"></div>
+<div class="title"><h1>Download API</h1></div>
+<div class="brief">
+ This API provides methods to asynchronously download the contents of a URL to a storage.
+        </div>
+<div class="description">
+        <p>
+For more information on the Download features, see <a href="https://developer.tizen.org/development/guides/web-application/tizen-features/content/download">Download Guide</a>.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li>1.1. <a href="#DownloadHTTPHeaderFields">DownloadHTTPHeaderFields</a>
+</li>
+<li>1.2. <a href="#DownloadState">DownloadState</a>
+</li>
+<li>1.3. <a href="#DownloadNetworkType">DownloadNetworkType</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#DownloadManagerObject">DownloadManagerObject</a>
+</li>
+<li>2.2. <a href="#DownloadRequest">DownloadRequest</a>
+</li>
+<li>2.3. <a href="#DownloadManager">DownloadManager</a>
+</li>
+<li>2.4. <a href="#DownloadCallback">DownloadCallback</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#api-features">Related Feature</a>
+</li>
+<li>4. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#DownloadManagerObject">DownloadManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#DownloadRequest">DownloadRequest</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#DownloadManager">DownloadManager</a></td>
+<td>long <a href="#DownloadManager::start">start</a> (<a href="#DownloadRequest">DownloadRequest</a> downloadRequest, optional <a href="#DownloadCallback">DownloadCallback</a>? downloadCallback)<br>
+    void <a href="#DownloadManager::cancel">cancel</a> (long downloadId)<br>
+    void <a href="#DownloadManager::pause">pause</a> (long downloadId)<br>
+    void <a href="#DownloadManager::resume">resume</a> (long downloadId)<br>
+    <a href="#DownloadState">DownloadState</a> <a href="#DownloadManager::getState">getState</a> (long downloadId)<br>
+    <a href="#DownloadRequest">DownloadRequest</a> <a href="#DownloadManager::getDownloadRequest">getDownloadRequest</a> (long downloadId)<br>
+    DOMString <a href="#DownloadManager::getMIMEType">getMIMEType</a> (long downloadId)<br>
+    void <a href="#DownloadManager::setListener">setListener</a> (long downloadId, <a href="#DownloadCallback">DownloadCallback</a> downloadCallback)</td>
+</tr>
+<tr>
+<td><a href="#DownloadCallback">DownloadCallback</a></td>
+<td>void <a href="#DownloadCallback::onprogress">onprogress</a> (long downloadId, unsigned long long receivedSize, unsigned long long totalSize)<br>
+    void <a href="#DownloadCallback::onpaused">onpaused</a> (long downloadId)<br>
+    void <a href="#DownloadCallback::oncanceled">oncanceled</a> (long downloadId)<br>
+    void <a href="#DownloadCallback::oncompleted">oncompleted</a> (long downloadId, DOMString path)<br>
+    void <a href="#DownloadCallback::onfailed">onfailed</a> (long downloadId, <a href="tizen.html#WebAPIError">WebAPIError</a> error)</td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="typedef" id="DownloadHTTPHeaderFields">
+<a class="backward-compatibility-anchor" name="::Download::DownloadHTTPHeaderFields"></a><h3>1.1. DownloadHTTPHeaderFields</h3>
+<div class="brief">
+ A set of HTTP header fields.
+          </div>
+<pre class="webidl prettyprint">    typedef object DownloadHTTPHeaderFields;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.1
+          </p>
+<div class="description">
+          <p>
+The key / value type of each HTTP header field should be DOMString.
+          </p>
+         </div>
+</div>
+<div class="enum" id="DownloadState">
+<a class="backward-compatibility-anchor" name="::Download::DownloadState"></a><h3>1.2. DownloadState</h3>
+<div class="brief">
+ An enumerator to indicate the state of a download operation.
+          </div>
+<pre class="webidl prettyprint">    enum DownloadState { "QUEUED", "DOWNLOADING", "PAUSED", "CANCELED", "COMPLETED", "FAILED" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="description">
+          <p>
+The following values are supported:
+          </p>
+          <ul>
+            <li>
+QUEUED - Indicates that the download operation is listed in a queue.            </li>
+            <li>
+DOWNLOADING - Indicates that the download operation is in progress.            </li>
+            <li>
+PAUSED - Indicates that the download operation is in a paused state by user request.            </li>
+            <li>
+CANCELED - Indicates that the download operation is canceled by user request.            </li>
+            <li>
+COMPLETED - Indicates that the download operation is in a completed state.            </li>
+            <li>
+FAILED - Indicates that the download operation has failed due to some reasons.            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="DownloadNetworkType">
+<a class="backward-compatibility-anchor" name="::Download::DownloadNetworkType"></a><h3>1.3. DownloadNetworkType</h3>
+<div class="brief">
+ An enumerator to indicate the network type.
+          </div>
+<pre class="webidl prettyprint">    enum DownloadNetworkType { "CELLULAR", "WIFI", "ALL" };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.1
+          </p>
+<div class="description">
+          <p>
+The following values are supported:
+          </p>
+          <ul>
+            <li>
+CELLULAR - Indicates that the download operation is allowed in the cellular network only.            </li>
+            <li>
+WIFI - Indicates that the download operation is allowed in the Wi-Fi network only.            </li>
+            <li>
+ALL - Indicates that the download operation is allowed in all network types.            </li>
+          </ul>
+         </div>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="DownloadManagerObject">
+<a class="backward-compatibility-anchor" name="::Download::DownloadManagerObject"></a><h3>2.1. DownloadManagerObject</h3>
+<div class="brief">
+ This interface defines the default download manager that is instantiated by the <em>Tizen </em>object.
+The <em>tizen.download </em>object allows access to the functionality of the Download API.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface DownloadManagerObject {
+        readonly attribute <a href="#DownloadManager">DownloadManager</a> download;
+    };</pre>
+<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DownloadManagerObject">DownloadManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+</div>
+<div class="interface" id="DownloadRequest">
+<a class="backward-compatibility-anchor" name="::Download::DownloadRequest"></a><h3>2.2. DownloadRequest</h3>
+<div class="brief">
+ The DownloadRequest interface defines the download request object.
+          </div>
+<pre class="webidl prettyprint">    [Constructor(DOMString url, optional DOMString? destination, optional DOMString? fileName, optional <a href="#DownloadNetworkType">DownloadNetworkType</a>? networkType, optional <a href="#DownloadHTTPHeaderFields">DownloadHTTPHeaderFields</a>? httpHeader)]
+    interface DownloadRequest {
+        attribute DOMString url;
+
+        attribute DOMString? destination;
+
+        attribute DOMString? fileName;
+
+        attribute <a href="#DownloadNetworkType">DownloadNetworkType</a>? networkType;
+
+        attribute <a href="#DownloadHTTPHeaderFields">DownloadHTTPHeaderFields</a>? httpHeader;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="constructors">
+<h4 id="DownloadRequest::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">DownloadRequest(DOMString url, optional DOMString? destination, optional DOMString? fileName, optional <a href="#DownloadNetworkType">DownloadNetworkType</a>? networkType, optional <a href="#DownloadHTTPHeaderFields">DownloadHTTPHeaderFields</a>? httpHeader);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="DownloadRequest::url">
+<span class="attrName"><span class="type">DOMString </span><span class="name">url</span></span><div class="brief">
+ The URL of the object to download.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="DownloadRequest::destination">
+<span class="attrName"><span class="type">DOMString </span><span class="name">destination</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The folder path of the destination folder to which a requested file object will be downloaded.
+            </div>
+<div class="description">
+            <p>
+If the destination is not specified or is an empty string, the file will be downloaded to the default storage: "Downloads". For more information, see <a href="filesystem.html">Filesystem API</a>.
+            </p>
+            <p>
+The default value is an empty string.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="DownloadRequest::fileName">
+<span class="attrName"><span class="type">DOMString </span><span class="name">fileName</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The file name for the specified URL.
+            </div>
+<div class="description">
+            <p>
+If the file name is not given or is an empty string, the original file name from the URL is used.
+            </p>
+            <p>
+The default value is an empty string.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="DownloadRequest::networkType">
+<span class="attrName"><span class="type">DownloadNetworkType </span><span class="name">networkType</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The allowed network type.
+            </div>
+<div class="description">
+            <p>
+If the network type is not given, all network types are allowed.
+            </p>
+            <p>
+The default value is <var>ALL</var>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+</li>
+<li class="attribute" id="DownloadRequest::httpHeader">
+<span class="attrName"><span class="type">DownloadHTTPHeaderFields </span><span class="name">httpHeader</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The extra HTTP header fields.
+            </div>
+<div class="description">
+            <p>
+For more information about HTTP header fields, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec4.html#sec4.2">RFC-2616</a>            </p>
+            <p>
+The default value is an empty object.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.1
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var req = new tizen.DownloadRequest("http://download.tizen.org/tools/README.txt");
+ req.httpHeader["Pragma"] = "no-cache";
+ req.httpHeader["Cookie"] = "version=1; Skin=new";
+ req.httpHeader["X-Agent"] = "Tizen Sample App";
+ </pre>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="DownloadManager">
+<a class="backward-compatibility-anchor" name="::Download::DownloadManager"></a><h3>2.3. DownloadManager</h3>
+<div class="brief">
+ The DownloadManager interface handles requests for downloading. Each step of a download operation is informed through callbacks.
+          </div>
+<pre class="webidl prettyprint">   [NoInterfaceObject] interface DownloadManager {
+       long start(<a href="#DownloadRequest">DownloadRequest</a> downloadRequest,
+                    optional <a href="#DownloadCallback">DownloadCallback</a>? downloadCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       void cancel(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       void pause(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       void resume(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       <a href="#DownloadState">DownloadState</a> getState(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       <a href="#DownloadRequest">DownloadRequest</a> getDownloadRequest(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       DOMString getMIMEType(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       void setListener(long downloadId, <a href="#DownloadCallback">DownloadCallback</a> downloadCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+   };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="DownloadManager::start">
+<a class="backward-compatibility-anchor" name="::Download::DownloadManager::start"></a><code><b><span class="methodName">start</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Starts a download operation with the specified URL information.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long start(<a href="#DownloadRequest">DownloadRequest</a> downloadRequest, optional <a href="#DownloadCallback">DownloadCallback</a>? downloadCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/download
+            </p>
+<p><span class="remark"> Remark : </span>
+ To check if <var>CELLULAR</var> type is supported, use <var>tizen.systeminfo.getCapability("http://tizen.org/feature/network.telephony")</var>            </p>
+<p><span class="remark"> Remark : </span>
+ To check if <var>WIFI</var> type is supported, use <var>tizen.systeminfo.getCapability("http://tizen.org/feature/network.wifi")</var>            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">downloadRequest</span>: 
+ The URL and destination information of the object to download.
+                </li>
+          <li class="param">
+<span class="name">downloadCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ Callback method to invoke when the download state changes or an error occurs.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long An identifier for each download operation.
+If the network is not available for downloading, the return value is -1 since Tizen 2.3.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the <em>networkType</em> of the given <var>DownloadRequest</var> is not supported on a device.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Check if Download API is supported not on a device.
+ var download_api_capability = tizen.systeminfo.getCapability("http://tizen.org/feature/download");
+ if (download_api_capability === false) {
+     console.log("Download API is not supported on this device.");
+     return;
+ }
+
+ var listener = {
+   onprogress: function(id, receivedSize, totalSize) {
+     console.log('Received with id: ' + id + ', ' + receivedSize + '/' + totalSize);
+   },
+   onpaused: function(id) {
+     console.log('Paused with id: ' + id);
+   },
+   oncanceled: function(id) {
+     console.log('Canceled with id: ' + id);
+   },
+   oncompleted: function(id, path) {
+     console.log('Completed with id: ' + id + ', path: ' + path);
+   },
+   onfailed: function(id, error) {
+     console.log('Failed with id: ' + id + ', error name: ' + error.name);
+   }
+ };
+
+ // Starts downloading the file from the Web with the corresponding callbacks.
+ var downloadRequest = new tizen.DownloadRequest("http://download.tizen.org/tools/README.txt", "documents");
+ var downloadId = tizen.download.start(downloadRequest, listener);
+
+ // If you want to download a large file through Wi-Fi,
+ var wifi_capability = tizen.systeminfo.getCapability("http://tizen.org/feature/network.wifi");
+ var wifiDownloadRequest = new tizen.DownloadRequest("http://download.tizen.org/tools/archive/14.02.2/Ubuntu_12.04/qemu_1.6.0rc3.orig.tar.gz", "downloads", null, "WIFI");
+
+ if (wifi_capability === true) {
+     var downlodId_wifi = tizen.download.start(wifiDownloadRequest, listener);
+ } else {
+     // If you call tizen.download.start(), NotSupportedError will be thrown.
+     console.log("This device doesn't support Download API through Wi-Fi.");
+ }
+
+ </pre>
+</div>
+</dd>
+<dt class="method" id="DownloadManager::cancel">
+<a class="backward-compatibility-anchor" name="::Download::DownloadManager::cancel"></a><code><b><span class="methodName">cancel</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Cancels an ongoing download operation that is specified by the <em>downloadId</em> parameter.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void cancel(long downloadId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">downloadId</span>: 
+ The ID of the ongoing download operation to stop.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the identifier does not match any download operation in progress.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Cancels the ongoing download operation with the specified ID.
+ tizen.download.cancel(downloadId);
+ </pre>
+</div>
+</dd>
+<dt class="method" id="DownloadManager::pause">
+<a class="backward-compatibility-anchor" name="::Download::DownloadManager::pause"></a><code><b><span class="methodName">pause</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Pauses an ongoing download operation that is specified by the <em>downloadId</em> parameter.
+The paused download operation can be resumed later by the <em>resume()</em> method.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void pause(long downloadId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">downloadId</span>: 
+ The ID of the ongoing download operation to pause.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the identifier does not match any download operation in progress.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Pauses the ongoing download operation with the specified ID.
+ tizen.download.pause(downloadId);
+ </pre>
+</div>
+</dd>
+<dt class="method" id="DownloadManager::resume">
+<a class="backward-compatibility-anchor" name="::Download::DownloadManager::resume"></a><code><b><span class="methodName">resume</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Resumes a paused download operation that is specified by the <em>downloadId</em> parameter.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void resume(long downloadId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">downloadId</span>: 
+ The ID of the paused download operation to resume.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the identifier does not match any download operation in progress.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Resumes the paused download operation with the specified ID.
+ tizen.download.resume(downloadId);
+ </pre>
+</div>
+</dd>
+<dt class="method" id="DownloadManager::getState">
+<a class="backward-compatibility-anchor" name="::Download::DownloadManager::getState"></a><code><b><span class="methodName">getState</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the download state of an operation synchronously with the specified ID.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#DownloadState">DownloadState</a> getState(long downloadId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">downloadId</span>: 
+ The ID to get the current state of the download operation.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ DownloadState The current download state of the specified ID.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the identifier does not match any download operation in progress.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Gets the state of the download operation with the given ID.
+ var state = tizen.download.getState(downloadId);
+ </pre>
+</div>
+</dd>
+<dt class="method" id="DownloadManager::getDownloadRequest">
+<a class="backward-compatibility-anchor" name="::Download::DownloadManager::getDownloadRequest"></a><code><b><span class="methodName">getDownloadRequest</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the DownloadRequest object from a given ID.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#DownloadRequest">DownloadRequest</a> getDownloadRequest(long downloadId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">downloadId</span>: 
+ The ID to get the download request information.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ DownloadRequest The download request information of the given ID.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the identifier does not match
+any download operation in progress.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not
+compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input
+parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Gets the download request information with the given ID.
+ var downloadRequest = tizen.download.getDownloadRequest(downloadId);
+ </pre>
+</div>
+</dd>
+<dt class="method" id="DownloadManager::getMIMEType">
+<a class="backward-compatibility-anchor" name="::Download::DownloadManager::getMIMEType"></a><code><b><span class="methodName">getMIMEType</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the MIME type of the downloaded file.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString getMIMEType(long downloadId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<p><span class="remark"> Remark : </span>
+ This function returns a valid MIME type when the download operation has been started
+and successfully retrieves the file header.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">downloadId</span>: 
+ The ID to get the MIME type information.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ DOMString The MIME type of the downloaded file.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the identifier does not match
+any download operation in progress.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not
+compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input
+parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Get the MIME type of the download operation with the given ID.
+ var MIMEtype = tizen.download.getMIMEType(downloadId);
+ </pre>
+</div>
+</dd>
+<dt class="method" id="DownloadManager::setListener">
+<a class="backward-compatibility-anchor" name="::Download::DownloadManager::setListener"></a><code><b><span class="methodName">setListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the download callback to the download operation of the given ID.
+It's possible to change or register the listener of the download operation using the saved ID.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setListener(long downloadId, <a href="#DownloadCallback">DownloadCallback</a> downloadCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">downloadId</span>: 
+ The ID to set the download callback.
+                </li>
+          <li class="param">
+<span class="name">downloadCallback</span>: 
+ Callback method to invoke when the download state changes or an error occurs.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the identifier does not match
+any download operation in progress.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not
+compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input
+parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var listener = {
+   onprogress: function(id, receivedSize, totalSize) {
+     console.log('Received with id: ' + id + ', ' + receivedSize + '/' + totalSize);
+   },
+   onpaused: function(id) {
+     console.log('Paused with id: ' + id);
+   },
+   oncanceled: function(id) {
+     console.log('Canceled with id: ' + id);
+   },
+   oncompleted: function(id, fileName) {
+     console.log('Completed with id: ' + id + ', file name: ' + fileName);
+   },
+   onfailed: function(id, error) {
+     console.log('Failed with id: ' + id + ', error name: ' + error.name);
+   }
+ };
+
+ // Start downloading the html file on the web with the corresponding callbacks.
+ var downloadRequest = new tizen.DownloadRequest("http://download.tizen.org/tools/README.txt", "documents");
+ downloadId = tizen.download.start(downloadRequest);
+
+ // Add the listener.
+ tizen.download.setListener(downloadId, listener);
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="DownloadCallback">
+<a class="backward-compatibility-anchor" name="::Download::DownloadCallback"></a><h3>2.4. DownloadCallback</h3>
+<div class="brief">
+ The DownloadCallback defines notification callbacks for a download state change or progress.
+          </div>
+<pre class="webidl prettyprint">   [Callback, NoInterfaceObject] interface DownloadCallback {
+       void onprogress(long downloadId, unsigned long long receivedSize, unsigned long long totalSize);
+
+       void onpaused(long downloadId);
+
+       void oncanceled(long downloadId);
+
+       void oncompleted(long downloadId, DOMString path);
+
+       void onfailed(long downloadId, <a href="tizen.html#WebAPIError">WebAPIError</a> error);
+   };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="DownloadCallback::onprogress">
+<a class="backward-compatibility-anchor" name="::Download::DownloadCallback::onprogress"></a><code><b><span class="methodName">onprogress</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a download is successful and it is called multiple times as the download progresses.
+The interval between the <em>onprogress()</em> callback is platform-dependent. When the download is started, the <em>receivedSize </em>can be <var>0</var>.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onprogress(long downloadId, unsigned long long receivedSize, unsigned long long totalSize);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">downloadId</span>: 
+ The ID of the corresponding download operation.
+                </li>
+          <li class="param">
+<span class="name">receivedSize</span>: 
+ The size of data received in bytes.
+                </li>
+          <li class="param">
+<span class="name">totalSize</span>: 
+ The total size of data to receive in bytes.
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="DownloadCallback::onpaused">
+<a class="backward-compatibility-anchor" name="::Download::DownloadCallback::onpaused"></a><code><b><span class="methodName">onpaused</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the download operation is paused by the <em>pause() </em>method.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onpaused(long downloadId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">downloadId</span>: 
+ The ID of the corresponding download operation.
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="DownloadCallback::oncanceled">
+<a class="backward-compatibility-anchor" name="::Download::DownloadCallback::oncanceled"></a><code><b><span class="methodName">oncanceled</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the download operation is canceled by the <em>cancel() </em>method.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void oncanceled(long downloadId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">downloadId</span>: 
+ The ID of the corresponding download operation.
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="DownloadCallback::oncompleted">
+<a class="backward-compatibility-anchor" name="::Download::DownloadCallback::oncompleted"></a><code><b><span class="methodName">oncompleted</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the download operation is completed with the final full path or virtual path.
+If the same file name already exists in the destination, it is changed according to the platform policy and delivered in this callback.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void oncompleted(long downloadId, DOMString path);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">downloadId</span>: 
+ The ID of the corresponding download operation.
+                </li>
+          <li class="param">
+<span class="name">path</span>:
+ The final full path or virtual path for the downloaded file.
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="DownloadCallback::onfailed">
+<a class="backward-compatibility-anchor" name="::Download::DownloadCallback::onfailed"></a><code><b><span class="methodName">onfailed</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the download operation fails.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onfailed(long downloadId, <a href="tizen.html#WebAPIError">WebAPIError</a> error);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">downloadId</span>: 
+ The ID of the corresponding download operation.
+                </li>
+          <li class="param">
+<span class="name">error</span>: 
+ The reason for download failure.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="api-features">3. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the download application runs on a device with the capability of accessing the Internet, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/download</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+DownloadNetworkType <em>'WIFI'</em> can be available on a Wi-Fi enabled device. To guarantee that the download application runs on a device with the Wi-Fi feature, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/network.wifi</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+DownloadNetworkType <em>'CELLULAR'</em> can be available on a cellular-enabled device. To guarantee that the download application runs on a device with the cellular feature, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/network.telephony</li>
+</div>
+<p></p>
+                    For more information, see <a href="https://developer.tizen.org/development/getting-started/web-application/understanding-tizen-programming/application-filtering">Application Filtering</a>.
+</div>
+<h2 id="full-webidl">4. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Download {
+    typedef object DownloadHTTPHeaderFields;
+
+    enum DownloadState { "QUEUED", "DOWNLOADING", "PAUSED", "CANCELED", "COMPLETED", "FAILED" };
+
+    enum DownloadNetworkType { "CELLULAR", "WIFI", "ALL" };
+
+    [NoInterfaceObject] interface DownloadManagerObject {
+        readonly attribute <a href="#DownloadManager">DownloadManager</a> download;
+    };
+    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DownloadManagerObject">DownloadManagerObject</a>;
+
+    [Constructor(DOMString url, optional DOMString? destination, optional DOMString? fileName, optional <a href="#DownloadNetworkType">DownloadNetworkType</a>? networkType, optional <a href="#DownloadHTTPHeaderFields">DownloadHTTPHeaderFields</a>? httpHeader)]
+    interface DownloadRequest {
+        attribute DOMString url;
+
+        attribute DOMString? destination;
+
+        attribute DOMString? fileName;
+
+        attribute <a href="#DownloadNetworkType">DownloadNetworkType</a>? networkType;
+
+        attribute <a href="#DownloadHTTPHeaderFields">DownloadHTTPHeaderFields</a>? httpHeader;
+    };
+
+   [NoInterfaceObject] interface DownloadManager {
+       long start(<a href="#DownloadRequest">DownloadRequest</a> downloadRequest,
+                    optional <a href="#DownloadCallback">DownloadCallback</a>? downloadCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       void cancel(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       void pause(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       void resume(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       <a href="#DownloadState">DownloadState</a> getState(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       <a href="#DownloadRequest">DownloadRequest</a> getDownloadRequest(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       DOMString getMIMEType(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+       void setListener(long downloadId, <a href="#DownloadCallback">DownloadCallback</a> downloadCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+   };
+
+   [Callback, NoInterfaceObject] interface DownloadCallback {
+       void onprogress(long downloadId, unsigned long long receivedSize, unsigned long long totalSize);
+
+       void onpaused(long downloadId);
+
+       void oncanceled(long downloadId);
+
+       void oncompleted(long downloadId, DOMString path);
+
+       void onfailed(long downloadId, <a href="tizen.html#WebAPIError">WebAPIError</a> error);
+   };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

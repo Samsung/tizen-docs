@@ -63,7 +63,7 @@ For additional OpenAL code samples, see [Example Code](http://kcat.strangesoft.n
 
 To enable your application to use the OpenAL functionality:
 
-1. To use the functions and data types of the OpenAL API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__OPENSRC__OPENAL__FRAMEWORK.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__OPENSRC__OPENAL__FRAMEWORK.html) applications), include the `<AL/al.h>` and `<AL/alc.h>` header files in your application:
+1. To use the functions and data types of the OpenAL API (in [mobile](../../api/mobile/latest/group__OPENSRC__OPENAL__FRAMEWORK.html) and [wearable](../../api/wearable/latest/group__OPENSRC__OPENAL__FRAMEWORK.html) applications), include the `<AL/al.h>` and `<AL/alc.h>` header files in your application:
 
    ```
    #include <AL/al.h>

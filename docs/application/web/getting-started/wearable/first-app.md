@@ -8,7 +8,7 @@ Study the following instructions to help familiarize yourself with the Tizen [We
 
 1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/setup/download.md).
 
-    For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/installing-sdk.md).
+    For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
 
 2.  [Create a wearable Web project](#create) using the Tizen Studio.
 

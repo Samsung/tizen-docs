@@ -56,7 +56,7 @@ The control points can be added manually using `Path::AddControlPoint`. The `Dal
 path.GenerateControlPoints( 0.25f );
 ```
 
-Here 0.25f represents the curvature of the path you require. For more information, see the `GenerateControlPoints()` function in the `Dali::Path` class (in [mobile](../../../../../org.tizen.native.mobile.apireference/classDali_1_1Path.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/classDali_1_1Path.html) applications).
+Here 0.25f represents the curvature of the path you require. For more information, see the `GenerateControlPoints()` function in the `Dali::Path` class (in [mobile](../../../api/mobile/latest/classDali_1_1Path.html) and [wearable](../../../api/wearable/latest/classDali_1_1Path.html) applications).
 
 To animate `actor1` along this path, use the following function:
 

@@ -125,7 +125,7 @@ To delete a device model:
 
     The selected model is deleted..
 
-<a name="stub-code"></a>	
+<a name="stub-code"></a>
 ## Generating Stub Code
 
 When you click **Finish** in the Model Manager, the code for processing the resource is automatically created for the selected device.

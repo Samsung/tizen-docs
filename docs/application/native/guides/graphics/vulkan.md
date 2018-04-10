@@ -43,7 +43,7 @@ To enable your application to use the Vulkan&reg; functionality:
    system_info_get_platform_bool("http://tizen.org/feature/vulkan.version.1_0", &vulkan_support);
    ```
 
-3. To use the functions and data types of the Vulkan (in [mobile](../../../../org.tizen.native.mobile.apireference/group__OPENSRC__VULKAN__FRAMEWORK.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__OPENSRC__VULKAN__FRAMEWORK.html) applications) and SDL (in [mobile](../../../../org.tizen.native.mobile.apireference/group__OPENSRC__SDL__FRAMEWORK.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__OPENSRC__SDL__FRAMEWORK.html) applications) APIs, include the `<SDL.h>` and `<vulkan/vulkan.h>` header files in your application:
+3. To use the functions and data types of the Vulkan (in [mobile](../../api/mobile/latest/group__OPENSRC__VULKAN__FRAMEWORK.html) and [wearable](../../api/wearable/latest/group__OPENSRC__VULKAN__FRAMEWORK.html) applications) and SDL (in [mobile](../../api/mobile/latest/group__OPENSRC__SDL__FRAMEWORK.html) and [wearable](../../api/wearable/latest/group__OPENSRC__SDL__FRAMEWORK.html) applications) APIs, include the `<SDL.h>` and `<vulkan/vulkan.h>` header files in your application:
 
     ```
     #include <SDL.h>

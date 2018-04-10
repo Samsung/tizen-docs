@@ -7,7 +7,7 @@ The activity recognizer can monitor user activities. You can [detect walking and
 
 ## Prerequisites
 
-To use the functions and data types of the Activity Recognition API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__CONTEXT__ACTIVITY__MODULE.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__CONTEXT__ACTIVITY__MODULE.html) applications), include the `<activity_recognition.h>` header file in your application:
+To use the functions and data types of the Activity Recognition API (in [mobile](../../api/mobile/latest/group__CAPI__CONTEXT__ACTIVITY__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__CONTEXT__ACTIVITY__MODULE.html) applications), include the `<activity_recognition.h>` header file in your application:
 
 ```
 #include <activity_recognition.h>
@@ -25,7 +25,7 @@ To set and unset callback functions for the activity monitor and retrieve detail
     activity_create(&handle);
     ```
 
-2. To subscribe to notifications about specific activity state changes, invoke the `activity_start_recognition()` function to register a callback function.When specific activity data is received, the registered callback is invoked.The following example starts the activity monitor to receive notifications when the `ACTIVITY_WALK` activity is detected. Any of the `activity_type_e` enumerators (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__CONTEXT__ACTIVITY__MODULE.html#gae17e97a1a51a9d5d5d8330f29f4a895d) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__CONTEXT__ACTIVITY__MODULE.html#gae17e97a1a51a9d5d5d8330f29f4a895d) applications) can be used in place of the `ACTIVITY_WALK` value.
+2. To subscribe to notifications about specific activity state changes, invoke the `activity_start_recognition()` function to register a callback function.When specific activity data is received, the registered callback is invoked.The following example starts the activity monitor to receive notifications when the `ACTIVITY_WALK` activity is detected. Any of the `activity_type_e` enumerators (in [mobile](../../api/mobile/latest/group__CAPI__CONTEXT__ACTIVITY__MODULE.html#gae17e97a1a51a9d5d5d8330f29f4a895d) and [wearable](../../api/wearable/latest/group__CAPI__CONTEXT__ACTIVITY__MODULE.html#gae17e97a1a51a9d5d5d8330f29f4a895d) applications) can be used in place of the `ACTIVITY_WALK` value.
 
     ```
     activity_start_recognition(handle, ACTIVITY_WALK, example_activity_callback, NULL);

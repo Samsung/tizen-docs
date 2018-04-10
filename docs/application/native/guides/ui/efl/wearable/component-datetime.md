@@ -4,7 +4,7 @@ This feature is supported in wearable applications only.
 
 The datetime component displays date and time values.
 
-For more information, see the [Datetime](../../../../../org.tizen.native.wearable.apireference/group__Elm__Datetime.html) API.
+For more information, see the [Datetime](../../../../api/wearable/latest/group__Elm__Datetime.html) API.
 
 **Figure: Datetime component**
 
@@ -53,7 +53,7 @@ elm_object_style_set(datetime, "timepicker_layout");
 elm_datetime_format_set(datetime, "%d/%b/%Y%I:%M");
 ```
 
-For a complete list of available specifiers, see the [Datetime](../../../../../org.tizen.native.wearable.apireference/group__Elm__Datetime.html) API.
+For a complete list of available specifiers, see the [Datetime](../../../../api/wearable/latest/group__Elm__Datetime.html) API.
 
 ## Using the Datetime Callbacks
 

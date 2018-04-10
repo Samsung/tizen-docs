@@ -1,6 +1,6 @@
 # Circle Progressbar
 
-The circle progressbar UI component shows the progress status of a given task with the circular design. It visualizes the progress status within a range. For more information, see the [Circle Progressbar](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__EXTENSION__CIRCLE__PROGRESSBAR__MODULE.html) API.
+The circle progressbar UI component shows the progress status of a given task with the circular design. It visualizes the progress status within a range. For more information, see the [Circle Progressbar](../../../../api/wearable/latest/group__CAPI__EFL__EXTENSION__CIRCLE__PROGRESSBAR__MODULE.html) API.
 
 This feature is supported in wearable applications only.
 
@@ -157,7 +157,7 @@ To configure the circle properties of the circle progressbar:
   - `default`: Default circle item that draws the progressbar.
   - `bg`: Progress bar background circle item.
 
-For more information, see [Circle Object](component-circle-object.md) and the [Efl Extension Circle Object](../../../../../org.tizen.native.wearable.apireference/group__CAPI__EFL__EXTENSION__CIRCLE__OBJECT__MODULE.html) API.
+For more information, see [Circle Object](component-circle-object.md) and the [Efl Extension Circle Object](../../../../api/wearable/latest/group__CAPI__EFL__EXTENSION__CIRCLE__OBJECT__MODULE.html) API.
 
 ## Related Information
 - Dependencies
