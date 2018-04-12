@@ -137,8 +137,7 @@ Original documentation: <a href="https://cordova.apache.org/docs/en/3.0.0/cordov
 <div class="brief">
  Gets the current acceleration along the x, y, and z axes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getCurrentAcceleration(<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void getCurrentAcceleration(<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -172,18 +171,17 @@ Original documentation: <a href="https://cordova.apache.org/docs/en/3.0.0/cordov
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function onSuccess(acceleration)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function onSuccess(acceleration)
 {
-   console.log('Acceleration X: ' + acceleration.x + '\n' +
-               'Acceleration Y: ' + acceleration.y + '\n' +
-               'Acceleration Z: ' + acceleration.z + '\n' +
-               'Timestamp: ' + acceleration.timestamp);
+  console.log('Acceleration X: ' + acceleration.x + '\n' +
+              'Acceleration Y: ' + acceleration.y + '\n' +
+              'Acceleration Z: ' + acceleration.z + '\n' +
+              'Timestamp: ' + acceleration.timestamp);
 };
 
 function onError()
 {
-   console.log('onError!');
+  console.log('onError!');
 };
 
 navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
@@ -204,8 +202,7 @@ Timestamp: 1456480118000
 <div class="brief">
  Gets the acceleration along the x, y, and z axes at a regular interval.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">DOMString watchAcceleration(<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#AccelerationOptions">AccelerationOptions</a>? options);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString watchAcceleration(<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#AccelerationOptions">AccelerationOptions</a>? options);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -247,19 +244,18 @@ Timestamp: 1456480118000
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function onSuccess(acceleration)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function onSuccess(acceleration)
 {
-   console.log('Acceleration X: ' + acceleration.x + '\n' +
-               'Acceleration Y: ' + acceleration.y + '\n' +
-               'Acceleration Z: ' + acceleration.z + '\n' +
-               'Timestamp: ' + acceleration.timestamp);
-   console.log('Please wait 3 seconds for the next measurement...');
+  console.log('Acceleration X: ' + acceleration.x + '\n' +
+              'Acceleration Y: ' + acceleration.y + '\n' +
+              'Acceleration Z: ' + acceleration.z + '\n' +
+              'Timestamp: ' + acceleration.timestamp);
+  console.log('Please wait 3 seconds for the next measurement...');
 };
 
 function onError()
 {
-   console.log('onError!');
+  console.log('onError!');
 };
 
 var options = {frequency: 3000}; /* Update every 3 seconds */
@@ -289,8 +285,7 @@ Please wait 3 seconds for the next measurement...
 <div class="brief">
  Stop watching the Acceleration referenced by the watchID parameter.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void clearWatch(DOMString watchID);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void clearWatch(DOMString watchID);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -320,24 +315,22 @@ Please wait 3 seconds for the next measurement...
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var counter = 0, watchID;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var counter = 0, watchID;
 
 function onSuccess(acceleration)
 {
-   console.log('Acceleration X: ' + acceleration.x + '\n' +
-               'Acceleration Y: ' + acceleration.y + '\n' +
-               'Acceleration Z: ' + acceleration.z + '\n' +
-               'Timestamp: ' + acceleration.timestamp);
-   if (3 == ++counter)
-   {
-      navigator.accelerometer.clearWatch(watchID);
-   }
+  console.log('Acceleration X: ' + acceleration.x + '\n' +
+              'Acceleration Y: ' + acceleration.y + '\n' +
+              'Acceleration Z: ' + acceleration.z + '\n' +
+              'Timestamp: ' + acceleration.timestamp);
+  if (3 == ++counter) {
+    navigator.accelerometer.clearWatch(watchID);
+  }
 };
 
 function onError()
 {
-   console.log('onError!');
+  console.log('onError!');
 };
 
 var options = {frequency: 30}; /* Update every 0.03 seconds */
@@ -505,8 +498,7 @@ Acceleration values include the effect of gravity (9.81 m/s^2), so that when a d
 <a class="backward-compatibility-anchor" name="::DeviceMotion::AccelerometerSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
 </dt>
 <dd>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Acceleration">Acceleration</a> acceleration);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Acceleration">Acceleration</a> acceleration);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0

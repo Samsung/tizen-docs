@@ -143,8 +143,7 @@ The <em>navigator.notification</em> object allows access to the Dialogs API.
 <div class="brief">
  Shows a custom alert with one button.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void alert(DOMString message, <a href="cordova.html#SuccessCallback">SuccessCallback</a> alertCallback, optional DOMString? title, optional DOMString? buttonName);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void alert(DOMString message, <a href="cordova.html#SuccessCallback">SuccessCallback</a> alertCallback, optional DOMString? title, optional DOMString? buttonName);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -179,8 +178,7 @@ The <em>navigator.notification</em> object allows access to the Dialogs API.
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var alertDismissed = function()
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var alertDismissed = function()
 {
    console.log('Alert was dismissed');
 }
@@ -201,8 +199,7 @@ navigator.notification.alert('Please click OK button', alertDismissed,
 <div class="brief">
  Shows a custom confirm box with set of buttons.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void confirm(DOMString message, <a href="#ConfirmCallback">ConfirmCallback</a> confirmCallback, optional DOMString? title, optional DOMString[]? buttonNames);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void confirm(DOMString message, <a href="#ConfirmCallback">ConfirmCallback</a> confirmCallback, optional DOMString? title, optional DOMString[]? buttonNames);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -238,8 +235,7 @@ Callback provides index of button pressed (1,2,3 etc.) or 0, if dialog was dismi
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var confirmCallback = function(buttonIndex)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var confirmCallback = function(buttonIndex)
 {
    console.log('Selected option was ' + buttonIndex);
 }
@@ -260,8 +256,7 @@ navigator.notification.confirm('Choose one option', confirmCallback,
 <div class="brief">
  Shows a custom confirm box with set of buttons.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void prompt(DOMString message, <a href="#PromptCallback">PromptCallback</a> promptCallback, optional DOMString? title, optional DOMString[]? buttonNames, optional DOMString? defaultText);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void prompt(DOMString message, <a href="#PromptCallback">PromptCallback</a> promptCallback, optional DOMString? title, optional DOMString[]? buttonNames, optional DOMString? defaultText);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -301,14 +296,13 @@ Callback provides <em>PromptData</em> object, which holds all data provided by u
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var promptCallback = function(results)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var promptCallback = function(results)
 {
    console.log('Hello ' + results.input1 + ', you selected option ' + results.buttonIndex);
 }
 
 navigator.notification.prompt('Please enter your name', promptCallback,
-                              'Registration Box', ['Ok', 'Exit'], 'e.g. Jane Doe');
+                             'Registration Box', ['Ok', 'Exit'], 'e.g. Jane Doe');
 </pre>
 </div>
 <div class="output">
@@ -323,8 +317,7 @@ navigator.notification.prompt('Please enter your name', promptCallback,
 <div class="brief">
  Method allows to make custom number of beeps by device.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void beep(long times);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void beep(long times);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -347,8 +340,7 @@ navigator.notification.prompt('Please enter your name', promptCallback,
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var times = 2;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var times = 2;
 console.log('Device would beep ' + times + ' times');
 navigator.notification.beep(times);
 </pre>
@@ -450,8 +442,7 @@ the index uses one-based indexing, so the values could be 1, 2, 3, etc.
 <div class="brief">
  Called when the user perform action on confirm dialog.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(long buttonIndex);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(long buttonIndex);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -491,8 +482,7 @@ the index uses one-based indexing, so the values could be 1, 2, 3, etc.
 <div class="brief">
  Called when the user perform action on prompt dialog.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#PromptData">PromptData</a> data);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#PromptData">PromptData</a> data);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0

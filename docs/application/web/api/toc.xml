@@ -6,7 +6,7 @@
 	<!-- 4.0 -->
 	<tizen-api version="4.0">
 		<tizen-api profile="mobile">
-			<topic label="4.0 Web Application" href="html/web_api_reference.htm" invisible-node="true">
+			<topic label="4.0 Web Application" href="html/device_api/mobile/index.html" invisible-node="true">
 				<!-- 4.0 mobile web -->
 				<topic label="Tizen Web Device API Reference" href="html/device_api/mobile/index.html">
 					<topic label="Mobile Web" href="html/device_api/mobile/index.html" invisible-node="true">
@@ -646,7 +646,7 @@
 							<topic label="Metadata Extractor" href="group__CAPI__METADATA__EXTRACTOR__MODULE.html">
 							</topic>
 							<topic label="OpenAL" href="group__OPENSRC__OPENAL__FRAMEWORK.html">
-								<topic label="OPENAL Tizen" href="group__OPENSRC____OPENAL____FRAMEWORK.html">
+								<topic label="OpenAL Tizen" href="group__OPENSRC____OPENAL____FRAMEWORK.html">
 								</topic>
 							</topic>
 							<topic label="Player" href="group__CAPI__MEDIA__PLAYER__MODULE.html">
@@ -737,8 +737,6 @@
 									</topic>
 									<topic label="Bluetooth OPP Server" href="group__CAPI__NETWORK__BLUETOOTH__OPP__SERVER__MODULE.html">
 									</topic>
-								</topic>
-								<topic label="Bluetooth PBAP" href="group__CAPI__NETWORK__BLUETOOTH__PBAP__MODULE.html">
 								</topic>
 								<topic label="Bluetooth Socket" href="group__CAPI__NETWORK__BLUETOOTH__SOCKET__MODULE.html">
 								</topic>
@@ -839,8 +837,6 @@
 							</topic>
 							<topic label="Smart Traffic Control" href="group__CAPI__NETWORK__STC__MODULE.html">
 								<topic label="STC Manager" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html">
-								</topic>
-								<topic label="STC Restriction" href="group__CAPI__NETWORK__STC__RESTRICTION__MODULE.html">
 								</topic>
 								<topic label="STC Statistics" href="group__CAPI__NETWORK__STC__STATISTICS__MODULE.html">
 								</topic>
@@ -1119,6 +1115,8 @@
 										<topic label="Gaussian Blur View" href="group__dali__toolkit__controls__gaussian__blur__view.html">
 										</topic>
 										<topic label="Image View" href="group__dali__toolkit__controls__image__view.html">
+										</topic>
+										<topic label="Model3dView" href="group__dali__toolkit__controls__model3d__view.html">
 										</topic>
 										<topic label="Progress Bar" href="group__dali__toolkit__controls__progress__bar.html">
 										</topic>
@@ -1758,6 +1756,8 @@
 								<topic label="Efl Extension Common UI" href="group__CAPI__EFL__EXTENSION__COMMON__UI__MODULE.html">
 									<topic label="Efl Extension More Option" href="group__CAPI__EFL__EXTENSION__MORE__OPTION__MODULE.html">
 									</topic>
+									<topic label="Efl Extension Panel" href="group__CAPI__EFL__EXTENSION__PANEL__MODULE.html">
+									</topic>
 									<topic label="Efl Extension Rotary Selector" href="group__CAPI__EFL__EXTENSION__ROTARY__SELECTOR__MODULE.html">
 									</topic>
 								</topic>
@@ -1845,7 +1845,7 @@
 		</tizen-api>
 
 		<tizen-api profile="wearable">
-			<topic label="4.0 Web Application" href="html/web_api_reference.htm" invisible-node="true">
+			<topic label="4.0 Web Application" href="html/device_api/wearable/index.html" invisible-node="true">
 				<!-- 4.0 wearable web -->
 				<topic label="Tizen Web Device API Reference" href="html/device_api/wearable/index.html">
 					<topic label="Wearable Web" href="html/device_api/wearable/index.html" invisible-node="true">
@@ -1961,10 +1961,10 @@
 					<topic href="html/ui_fw_api/Animation/animation.htm" label="Animation"></topic>
 				</topic>
 
-                <topic label="Tizen Wearable Web Widget Specification" href="html/wearable_widget/web_widget.html">
-                    <topic label="Tizen Wearable Web Widget Specification" href="html/wearable_widget/web_widget.html" invisible-node="true">
-                    </topic>
-                </topic>
+				<topic label="Tizen Wearable Web Widget Specification" href="html/wearable_widget/web_widget.html">
+					<topic label="Tizen Wearable Web Widget Specification" href="html/wearable_widget/web_widget.html" invisible-node="true">
+					</topic>
+				</topic>
 
 				<topic label="W3C/HTML5 and Supplementaries API Reference" href="html/w3c_api/w3c_api_w.html">
 					<topic label="Wearable Web" href="html/w3c_api/w3c_api_w.html" invisible-node="true">
@@ -2426,7 +2426,7 @@
 							<topic label="Metadata Extractor" href="group__CAPI__METADATA__EXTRACTOR__MODULE.html">
 							</topic>
 							<topic label="OpenAL" href="group__OPENSRC__OPENAL__FRAMEWORK.html">
-								<topic label="OPENAL Tizen" href="group__OPENSRC____OPENAL____FRAMEWORK.html">
+								<topic label="OpenAL Tizen" href="group__OPENSRC____OPENAL____FRAMEWORK.html">
 								</topic>
 							</topic>
 							<topic label="Player" href="group__CAPI__MEDIA__PLAYER__MODULE.html">
@@ -2609,8 +2609,6 @@
 							</topic>
 							<topic label="Smart Traffic Control" href="group__CAPI__NETWORK__STC__MODULE.html">
 								<topic label="STC Manager" href="group__CAPI__NETWORK__STC__MANAGER__MODULE.html">
-								</topic>
-								<topic label="STC Restriction" href="group__CAPI__NETWORK__STC__RESTRICTION__MODULE.html">
 								</topic>
 								<topic label="STC Statistics" href="group__CAPI__NETWORK__STC__STATISTICS__MODULE.html">
 								</topic>
@@ -2863,6 +2861,8 @@
 										<topic label="Gaussian Blur View" href="group__dali__toolkit__controls__gaussian__blur__view.html">
 										</topic>
 										<topic label="Image View" href="group__dali__toolkit__controls__image__view.html">
+										</topic>
+										<topic label="Model3dView" href="group__dali__toolkit__controls__model3d__view.html">
 										</topic>
 										<topic label="Progress Bar" href="group__dali__toolkit__controls__progress__bar.html">
 										</topic>
@@ -3502,6 +3502,8 @@
 								<topic label="Efl Extension Common UI" href="group__CAPI__EFL__EXTENSION__COMMON__UI__MODULE.html">
 									<topic label="Efl Extension More Option" href="group__CAPI__EFL__EXTENSION__MORE__OPTION__MODULE.html">
 									</topic>
+									<topic label="Efl Extension Panel" href="group__CAPI__EFL__EXTENSION__PANEL__MODULE.html">
+									</topic>
 									<topic label="Efl Extension Rotary Selector" href="group__CAPI__EFL__EXTENSION__ROTARY__SELECTOR__MODULE.html">
 									</topic>
 								</topic>
@@ -3569,7 +3571,7 @@
 		</tizen-api>
 
 		<tizen-api profile="tv">
-			<topic label="4.0 Web Application" href="html/web_api_reference.htm" invisible-node="true">
+			<topic label="4.0 Web Application" href="html/device_api/tv/index.html" invisible-node="true">
 				<!-- 4.0 tv web -->
 				<topic label="Tizen Web Device API Reference" href="html/device_api/tv/index.html">
 					<topic label="TV Web" href="html/device_api/tv/index.html" invisible-node="true">
@@ -3598,7 +3600,6 @@
 						</topic>
 						<topic href="html/device_api/tv/index.html#Security" label="Security">
 							<topic href="html/device_api/tv/tizen/keymanager.html" label="Keymanager" ></topic>
-							<topic href="html/device_api/tv/tizen/libteec.html" label="LibTeec" ></topic>
 						</topic>
 						<topic href="html/device_api/tv/index.html#System" label="System">
 							<topic href="html/device_api/tv/tizen/systeminfo.html" label="System Information" ></topic>
@@ -3725,7 +3726,7 @@
 	<!-- 3.0 -->
 	<tizen-api version="3.0">
 		<tizen-api profile="mobile">
-			<topic label="3.0 Web Application" href="html/web_api_reference.htm" invisible-node="true">
+			<topic label="3.0 Web Application" href="html/device_api/mobile/index.html" invisible-node="true">
 				<!-- 3.0 mobile web -->
 				<topic label="Tizen Web Device API Reference" href="html/device_api/mobile/index.html">
 					<topic label="Mobile Web" href="html/device_api/mobile/index.html" invisible-node="true">
@@ -4337,7 +4338,7 @@
 							<topic label="Metadata Extractor" href="group__CAPI__METADATA__EXTRACTOR__MODULE.html">
 							</topic>
 							<topic label="OpenAL" href="group__OPENSRC__OPENAL__FRAMEWORK.html">
-								<topic label="OPENAL Tizen" href="group__OPENSRC____OPENAL____FRAMEWORK.html">
+								<topic label="OpenAL Tizen" href="group__OPENSRC____OPENAL____FRAMEWORK.html">
 								</topic>
 							</topic>
 							<topic label="Player" href="group__CAPI__MEDIA__PLAYER__MODULE.html">
@@ -5468,7 +5469,7 @@
 		</tizen-api>
 
 		<tizen-api profile="wearable">
-			<topic label="3.0 Web Application" href="html/web_api_reference.htm" invisible-node="true">
+			<topic label="3.0 Web Application" href="html/device_api/wearable/index.html" invisible-node="true">
 				<!-- 3.0 wearable web -->
 				<topic label="Tizen Web Device API Reference" href="html/device_api/wearable/index.html">
 					<topic label="Wearable Web" href="html/device_api/wearable/index.html" invisible-node="true">
@@ -5995,7 +5996,7 @@
 							<topic label="Metadata Extractor" href="group__CAPI__METADATA__EXTRACTOR__MODULE.html">
 							</topic>
 							<topic label="OpenAL" href="group__OPENSRC__OPENAL__FRAMEWORK.html">
-								<topic label="OPENAL Tizen" href="group__OPENSRC____OPENAL____FRAMEWORK.html">
+								<topic label="OpenAL Tizen" href="group__OPENSRC____OPENAL____FRAMEWORK.html">
 								</topic>
 							</topic>
 							<topic label="Player" href="group__CAPI__MEDIA__PLAYER__MODULE.html">
@@ -7105,7 +7106,7 @@
 
 		<!-- 3.0 TV -->
 		<tizen-api profile="tv">
-			<topic label="3.0 Web Application" href="html/web_api_reference.htm" invisible-node="true">
+			<topic label="3.0 Web Application" href="html/device_api/tv/index.html" invisible-node="true">
 				<!-- 3.0 tv web -->
 				<topic label="Tizen Web Device API Reference" href="html/device_api/tv/index.html">
 					<topic label="TV Web" href="html/device_api/tv/index.html" invisible-node="true">
@@ -7259,7 +7260,7 @@
 	<!-- 2.4 -->
 	<tizen-api version="2.4">
 		<tizen-api profile="mobile">
-			<topic label="2.4 Web Application" href="html/web_api_reference.htm" invisible-node="true">
+			<topic label="2.4 Web Application" href="html/device_api/mobile/index.html" invisible-node="true">
 				<topic label="Tizen Web Device API Reference" href="html/device_api/mobile/index.html">
 					<topic label="Mobile Web" href="html/device_api/mobile/index.html" invisible-node="true">
 						<topic href="html/device_api/mobile/index.html#Base" label="Base">
@@ -8522,7 +8523,7 @@
 	<!-- 2.3.2 -->
 	<tizen-api version="2.3.2" invisible-node="true">
 		<tizen-api profile="wearable">
-			<topic label="2.3.2 Web Application" href="html/web_api_reference.htm" invisible-node="true">
+			<topic label="2.3.2 Web Application" href="html/device_api/wearable/index.html" invisible-node="true">
 				<!-- 2.3.2 wearable web -->
 				<topic label="Tizen Web Device API Reference" href="html/device_api/wearable/index.html">
 
@@ -12646,7 +12647,7 @@
 					</topic>
 				</topic>
     	</tizen-api>
-	        <tizen-api profile="wearable">
+		<tizen-api profile="wearable">
     		<topic label="2.3 Wearable Web API References" href="wearable_api_reference.htm" invisible-node="true">
 					<!--
 					<topic label="Related Pages" href="org.tizen.wearable.web.apireference.relatedpage/html/cover_page.html">
@@ -12881,4 +12882,6 @@
 				</topic>
     	</tizen-api>
     </tizen-api>
+<!--
 </toc>
+-->
