@@ -134,7 +134,7 @@ This section explains, how you can enable your application to use the attach pan
     s_info.attach_panel = attach_panel;
     ```
 
-2. Select the type of content for the attach panel. Add content categories using the `attach_panel_add_content_category()` function. The available content categories are defined in the [attach_panel_content_category](../../api/mobile/latest/group__CAPI__PANEL__ATTACH__MODULE.html#gada3a2db6ac8e7d42b7dff7c3cc48720b) enumerator. The content categories in the **More** tab are shown in the frequency of recently used and alphabetical sequence. To deliver more information to the UI gadget or called application, add the data within a bundle.
+2. Select the type of content for the attach panel. Add content categories using the `attach_panel_add_content_category()` function. The available content categories are defined in the [attach_panel_content_category](../../api/mobile/latest/group__CAPI__PANEL__ATTACH__MODULE.html#gada3a2db6ac8e7d42b7dff7c3cc48720b) enumeration. The content categories in the **More** tab are shown in the frequency of recently used and alphabetical sequence. To deliver more information to the UI gadget or called application, add the data within a bundle.
 
     ```
     bundle *extra_data = NULL;
@@ -161,7 +161,7 @@ This section explains, how you can enable your application to use the attach pan
 3. Register and define callbacks:
 
    - To get the data that you select in the called application, register a callback using the `attach_panel_set_result_cb()` function. Select and confirm the content category for the caller application to trigger the event. When you use this callback, you must use the `app_control_get_extra_data_array()` function to get the received data.
-   - To get the published events from the panel side, register a callback using the `attach_panel_set_event_cb()` function. Publish the reserved events (defined in the [attach_panel_event](../../api/mobile/latest/group__CAPI__PANEL__ATTACH__MODULE.html#ga722a6d81e76fc1c4567a1bf920b4da3e) enumerator) from the panel side to trigger the event.
+   - To get the published events from the panel side, register a callback using the `attach_panel_set_event_cb()` function. Publish the reserved events (defined in the [attach_panel_event](../../api/mobile/latest/group__CAPI__PANEL__ATTACH__MODULE.html#ga722a6d81e76fc1c4567a1bf920b4da3e) enumeration) from the panel side to trigger the event.
 
    ```
    static void
