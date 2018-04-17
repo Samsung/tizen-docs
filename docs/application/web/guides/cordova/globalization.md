@@ -23,7 +23,7 @@ The main features of the Globalization API include:
 
   You can [convert strings, numbers, and dates](#performing-conversions) according to the user locale.
 
-All Globalization functions are accessible by the `navigator.globalization` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/globalization.html#GlobalizationManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/globalization.html#GlobalizationManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/globalization.html#GlobalizationManager) applications).
+All Globalization functions are accessible by the `navigator.globalization` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/globalization.html#GlobalizationManager), [wearable](../../api/latest/device_api/wearable/tizen/cordova/globalization.html#GlobalizationManager), and [TV](../../api/latest/device_api/tv/tizen/cordova/globalization.html#GlobalizationManager) applications).
 
 ## Prerequisites
 

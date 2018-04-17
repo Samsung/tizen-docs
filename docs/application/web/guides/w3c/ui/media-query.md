@@ -189,7 +189,7 @@ You can use media queries to determine the styles to be used in a Web document. 
    </div>
    ```
 
-2. Define basic styles for the page, using a flexible box (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#flexi), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#flexi), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#flexi) applications) and multi-column (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#multicolumn) and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#multicolumn) applications only) layout with 2 columns. (The following figure applies to mobile applications only.)
+2. Define basic styles for the page, using a flexible box (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#flexi), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#flexi), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#flexi) applications) and multi-column (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#multicolumn) and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#multicolumn) applications only) layout with 2 columns. (The following figure applies to mobile applications only.)
 
    ```
    .container {

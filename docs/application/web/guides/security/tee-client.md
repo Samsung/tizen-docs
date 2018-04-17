@@ -57,9 +57,9 @@ To send a command, use the `invokeCommand()` method, with the first parameter id
 
 You can use 3 types of objects in the parameters array:
 
--   `TeecValue` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/libteec.html#TeecValue), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/libteec.html#TeecValue), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/libteec.html#TeecValue) applications), which contains 1 or 2 simple integers.
--   `TeecTempMemory` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/libteec.html#TeecTempMemory), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/libteec.html#TeecTempMemory), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/libteec.html#TeecTempMemory) applications), which contains a local memory reference.
--   `TeecRegisteredMemory` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/libteec.html#TeecRegisteredMemory), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/libteec.html#TeecRegisteredMemory), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/libteec.html#TeecRegisteredMemory) applications), which contains a registered shared memory reference.
+-   `TeecValue` object (in [mobile](../../api/latest/device_api/mobile/tizen/libteec.html#TeecValue), [wearable](../../api/latest/device_api/wearable/tizen/libteec.html#TeecValue), and [TV](../../api/latest/device_api/tv/tizen/libteec.html#TeecValue) applications), which contains 1 or 2 simple integers.
+-   `TeecTempMemory` object (in [mobile](../../api/latest/device_api/mobile/tizen/libteec.html#TeecTempMemory), [wearable](../../api/latest/device_api/wearable/tizen/libteec.html#TeecTempMemory), and [TV](../../api/latest/device_api/tv/tizen/libteec.html#TeecTempMemory) applications), which contains a local memory reference.
+-   `TeecRegisteredMemory` object (in [mobile](../../api/latest/device_api/mobile/tizen/libteec.html#TeecRegisteredMemory), [wearable](../../api/latest/device_api/wearable/tizen/libteec.html#TeecRegisteredMemory), and [TV](../../api/latest/device_api/tv/tizen/libteec.html#TeecRegisteredMemory) applications), which contains a registered shared memory reference.
 
 ```
 try {
@@ -148,7 +148,7 @@ To share a memory block between a client application and a trusted application:
                 var p1 = new TeecRegisteredMemory(gShm, 0, gShm.size);  /* Shared memory reference parameter */
     ```
 
-3. Pass the shared memory reference to the trusted application as a `TeecRegisteredMemory` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/libteec.html#TeecRegisteredMemory), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/libteec.html#TeecRegisteredMemory), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/libteec.html#TeecRegisteredMemory) applications) in the parameter array of the `invokeCommand()` method:
+3. Pass the shared memory reference to the trusted application as a `TeecRegisteredMemory` object (in [mobile](../../api/latest/device_api/mobile/tizen/libteec.html#TeecRegisteredMemory), [wearable](../../api/latest/device_api/wearable/tizen/libteec.html#TeecRegisteredMemory), and [TV](../../api/latest/device_api/tv/tizen/libteec.html#TeecRegisteredMemory) applications) in the parameter array of the `invokeCommand()` method:
 
     ```
                 session.invokeCommand(1, [p1], commandSuccess, commandError);

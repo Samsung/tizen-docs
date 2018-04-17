@@ -8,7 +8,7 @@ The main features of the Bookmark API include:
 
 - Creating bookmarks
 
-  You can [create bookmark folders and items](#creating-bookmark-folders-and-items) using the [BookmarkManager](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bookmark.html#BookmarkManager) interface.
+  You can [create bookmark folders and items](#creating-bookmark-folders-and-items) using the [BookmarkManager](../../api/latest/device_api/mobile/tizen/bookmark.html#BookmarkManager) interface.
 
 - Deleting bookmarks
 
@@ -20,7 +20,7 @@ The main features of the Bookmark API include:
 
 ## Prerequisites
 
-To use the [Bookmark](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bookmark.html) API, the application has to request permission by adding the following privileges to the `config.xml` file:
+To use the [Bookmark](../../api/latest/device_api/mobile/tizen/bookmark.html) API, the application has to request permission by adding the following privileges to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/bookmark.read"/>
@@ -33,19 +33,19 @@ To create engaging applications with bookmark-related features, you must learn h
 
 - To add a folder and a bookmark to the root bookmark folder:    
 
-  1. Create an instance of the [BookmarkFolder](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bookmark.html#BookmarkFolder) interface by specifying the bookmark folder name:
+  1. Create an instance of the [BookmarkFolder](../../api/latest/device_api/mobile/tizen/bookmark.html#BookmarkFolder) interface by specifying the bookmark folder name:
 
      ```
      var folder1 = new tizen.BookmarkFolder('folder1');
      ```
 
-  2. Create an instance of the [BookmarkItem](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bookmark.html#BookmarkItem) interface by specifying the bookmark item name and URL:
+  2. Create an instance of the [BookmarkItem](../../api/latest/device_api/mobile/tizen/bookmark.html#BookmarkItem) interface by specifying the bookmark item name and URL:
 
      ```
      var tizen = new tizen.BookmarkItem('tizen', 'https://www.tizen.org');
      ```
 
-  3. Use the `add()` method of the [BookmarkManager](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bookmark.html#BookmarkManager) interface to add both a bookmark folder and a bookmark to the root bookmark folder:
+  3. Use the `add()` method of the [BookmarkManager](../../api/latest/device_api/mobile/tizen/bookmark.html#BookmarkManager) interface to add both a bookmark folder and a bookmark to the root bookmark folder:
 
      ```
      tizen.bookmark.add(folder1);
@@ -74,7 +74,7 @@ To create engaging applications with bookmark-related features, you must learn h
 
 To create engaging applications with bookmark-related features, you must learn how to delete bookmarks:
 
-- To remove a bookmark item, use the `remove()` method of the [BookmarkManager](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bookmark.html#BookmarkManager) interface and specify the bookmark item:
+- To remove a bookmark item, use the `remove()` method of the [BookmarkManager](../../api/latest/device_api/mobile/tizen/bookmark.html#BookmarkManager) interface and specify the bookmark item:
 
   ```
   tizen.bookmark.remove(tizen);
@@ -96,7 +96,7 @@ To create engaging applications with bookmark-related features, you must learn h
 
 To create engaging applications with bookmark-related features, you must learn how to retrieve the bookmarks:
 
-- To retrieve bookmarks only from the root bookmark folder, use the `get()` method of the [BookmarkManager](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/bookmark.html#BookmarkManager) interface without specifying any parameter:
+- To retrieve bookmarks only from the root bookmark folder, use the `get()` method of the [BookmarkManager](../../api/latest/device_api/mobile/tizen/bookmark.html#BookmarkManager) interface without specifying any parameter:
 
   ```
   tizen.bookmark.get();

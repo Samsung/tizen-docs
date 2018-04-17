@@ -312,7 +312,7 @@ The following example shows how JavaScript animation can be implemented:
 </script>
 ```
 
-You can use the `requestAnimationFrame()` method of the [Timing control for script-based animations](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#timing) API to prevent animation freezes that occur occasionally:
+You can use the `requestAnimationFrame()` method of the [Timing control for script-based animations](../../../api/latest/w3c_api/w3c_api_m.html#timing) API to prevent animation freezes that occur occasionally:
 
 ```
 <script>

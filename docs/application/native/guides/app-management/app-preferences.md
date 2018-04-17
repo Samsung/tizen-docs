@@ -5,7 +5,7 @@ You can manage application preferences by setting and getting them. You can also
 
 ## Prerequisites
 
-To use the functions and data types of the Preference API (in [mobile](../../api/Mobile/latest/group__CAPI__PREFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__PREFERENCE__MODULE.html) applications), include the `<app_preference.h>` header file in your application:
+To use the functions and data types of the Preference API (in [mobile](../../api/mobile/latest/group__CAPI__PREFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__PREFERENCE__MODULE.html) applications), include the `<app_preference.h>` header file in your application:
 
 ```
 #include <app_preference.h>

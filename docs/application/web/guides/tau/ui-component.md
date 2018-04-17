@@ -40,7 +40,7 @@ You can define UI components in 2 different ways using selectors:
 
 ## Setting UI Component Options
 
-TAU supports several ways of setting options for a UI component. For more information, see [Mobile UI Components](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm) and [Wearable UI Components](../../../../org.tizen.web.apireference/html/ui_fw_api/Wearable_UIComponents/wearable_component_list.htm).
+TAU supports several ways of setting options for a UI component. For more information, see [Mobile UI Components](../../api/mobile/latest/html/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm) and [Wearable UI Components](../../api/wearable/latest/html/ui_fw_api/Wearable_UIComponents/wearable_component_list.htm).
 
 To set the options:
 

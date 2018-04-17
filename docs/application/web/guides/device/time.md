@@ -26,7 +26,7 @@ The main features of the Time API include:
 
 ## Retrieving Date and Time
 
-With the `TimeUtil` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/time.html#TimeUtil), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/time.html#TimeUtil), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/time.html#TimeUtil) applications), you can retrieve the current date, time, and time zone, and the number of available time zones, and determine whether a year is a leap year.
+With the `TimeUtil` interface (in [mobile](../../api/latest/device_api/mobile/tizen/time.html#TimeUtil), [wearable](../../api/latest/device_api/wearable/tizen/time.html#TimeUtil), and [TV](../../api/latest/device_api/tv/tizen/time.html#TimeUtil) applications), you can retrieve the current date, time, and time zone, and the number of available time zones, and determine whether a year is a leap year.
 
 You can also perform other date-and time-related tasks, such as getting the date of the next and previous daylight saving time transition, converting current time to UTC standard time, and getting the time zone abbreviation.
 
@@ -94,7 +94,7 @@ To handle date and time formats in your application:
 
 ## Calculating Date and Time Information
 
-Calculate and compare time and date information using the applicable methods of the `TimeDuration` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/time.html#TimeDuration), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/time.html#TimeDuration), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/time.html#TimeDuration) applications):
+Calculate and compare time and date information using the applicable methods of the `TimeDuration` interface (in [mobile](../../api/latest/device_api/mobile/tizen/time.html#TimeDuration), [wearable](../../api/latest/device_api/wearable/tizen/time.html#TimeDuration), and [TV](../../api/latest/device_api/tv/tizen/time.html#TimeDuration) applications):
 
 1. To calculate the duration difference between 2 date or time events, use the `difference()` method of the `TimeDuration` object:
 
@@ -183,7 +183,7 @@ Getting notifications when the user changes the time or time zone allows you to 
 
 2. When the event handlers are defined, register them as listeners:
 
-   - Register the time change listener using the `setDateTimeChangeListener()` method of the `TimeUtil` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/time.html#TimeUtil), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/time.html#TimeUtil), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/time.html#TimeUtil) applications):
+   - Register the time change listener using the `setDateTimeChangeListener()` method of the `TimeUtil` interface (in [mobile](../../api/latest/device_api/mobile/tizen/time.html#TimeUtil), [wearable](../../api/latest/device_api/wearable/tizen/time.html#TimeUtil), and [TV](../../api/latest/device_api/tv/tizen/time.html#TimeUtil) applications):
 
      ```
      tizen.time.setDateTimeChangeListener(timeChangedCallback);

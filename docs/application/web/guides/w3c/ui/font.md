@@ -136,7 +136,7 @@ The following figure shows examples of manipulating the text font properties.
 ![Font properties (in mobile applications only)](./media/font_properties.png)
 
 > **Note**  
-> For a complete list of CSS Fonts Module Level 3 font properties (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#font), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#font), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#font) applications) and their possible values, see the [Property index](http://www.w3.org/TR/2013/CR-css-fonts-3-20131003/#property-index).
+> For a complete list of CSS Fonts Module Level 3 font properties (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#font), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#font), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#font) applications) and their possible values, see the [Property index](http://www.w3.org/TR/2013/CR-css-fonts-3-20131003/#property-index).
 
 ## Related Information
 * Dependencies

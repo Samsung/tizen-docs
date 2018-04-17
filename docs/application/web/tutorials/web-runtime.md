@@ -125,10 +125,10 @@ The main functionality of the Web Runtime is to provide the following
 Tizen Web APIs to Web applications:
 
 -   [W3C/HTML5
-    APIs](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_cover.html)
+    APIs](../api/latest/w3c_api/w3c_api_cover.html)
 
 -   [Tizen Device
-    API](../../../../org.tizen.web.apireference/html/device_api/device_api_cover.html)
+    API](../api/latest/device_api/device_api_cover.html)
 
 It also supports multiple browsing context creation within a single Web
 application using, for example, the `window.open()` method, or hyperlink
@@ -326,7 +326,7 @@ individual user cannot elevate the permissions set by the
 platform-defined security policy. The mapping between each Tizen Device
 API and the corresponding privilege is defined in the API definitions in
 the [Tizen Device API
-Reference](../../../../org.tizen.web.apireference/html/device_api/device_api_cover.html).
+Reference](../api/latest/device_api/device_api_cover.html).
 
 The following table summarizes distributor signature type to API
 privilege level behavior mapping:

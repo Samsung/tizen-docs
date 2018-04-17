@@ -1586,7 +1586,7 @@ The location settings application control is supported in mobile applications on
 
 To launch the location setting application to allow the user to configure the source of the location information, use the `http://tizen.org/appcontrol/operation/setting/location` operation.
 
-If the location service is not active when an application tries to use the `HumanActivityMonitorManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/humanactivitymonitor.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/humanactivitymonitor.html) applications), an error occurs. To solve the problem, the application can try to launch the location setting application to let the user enable the location service. The user can activate the GPS, network positioning using the Wi-Fi Positioning System (WPS) and cellular network, or both.
+If the location service is not active when an application tries to use the `HumanActivityMonitorManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/humanactivitymonitor.html) and [wearable](../../api/latest/device_api/wearable/tizen/humanactivitymonitor.html) applications), an error occurs. To solve the problem, the application can try to launch the location setting application to let the user enable the location service. The user can activate the GPS, network positioning using the Wi-Fi Positioning System (WPS) and cellular network, or both.
 
 **Figure: Showing location settings**
 

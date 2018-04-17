@@ -41,7 +41,7 @@ To use pseudo-class selectors:
  > **Note**  
  > In the versions prior to CSS3, pseudo-classes, such as `:hover`, `:active`, and `:focus`, were used, and required an attribute selector. Since the `:enabled` and `:disabled` classes are not influenced by the `display` and `visibility` attributes, they improve the accessibility.
 
-2. To control the state of the HTML5 Web Forms (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#forms), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#forms), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#forms) applications), use the `:in-range` and `:out-of-range` pseudo-classes.
+2. To control the state of the HTML5 Web Forms (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#forms), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#forms), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#forms) applications), use the `:in-range` and `:out-of-range` pseudo-classes.
 
    ```
    <!--HTML-->

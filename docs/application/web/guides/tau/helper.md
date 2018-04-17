@@ -12,7 +12,7 @@ You can use the helper script as follows:
 </script>
 ```
 
-The SnapListMarqueeStyle helper provides a helper script to support creating some usable components for the list style. It supports making the list view more effective using the [SnapListview](../../../../org.tizen.web.apireference/html/ui_fw_api/Wearable_UIComponents/wearable_snaplistview.htm) and [Marquee](../../../../org.tizen.web.apireference/html/ui_fw_api/Wearable_UIComponents/wearable_marquee.htm) components.
+The SnapListMarqueeStyle helper provides a helper script to support creating some usable components for the list style. It supports making the list view more effective using the [SnapListview](../../api/latest/ui_fw_api/Wearable_UIComponents/wearable_snaplistview.htm) and [Marquee](../../api/latest/ui_fw_api/Wearable_UIComponents/wearable_marquee.htm) components.
 
 > **Note**  
 > This helper script is supported since Tizen 2.3.

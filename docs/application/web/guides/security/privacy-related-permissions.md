@@ -31,7 +31,7 @@ To check whether an application has permission to use a privilege, and to reques
     var result = tizen.ppm.checkPermission(cameraPrivilege);
     ```
 
-    The result of the call is returned as a value of the `PermissionType` enumeration (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/ppm.html#PermissionType) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/ppm.html#PermissionType) applications).
+    The result of the call is returned as a value of the `PermissionType` enumeration (in [mobile](../../api/latest/device_api/mobile/tizen/ppm.html#PermissionType) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html#PermissionType) applications).
 
 2. React to the permission check appropriately:
     - If the result value is `PPM_ALLOW`, the application is allowed to perform operations related to the privilege. For example, the application can enable additional UI elements or functionalities.
@@ -64,7 +64,7 @@ To check whether an application has permission to use a privilege, and to reques
 
 3. If you need to request user permission, handle the user decision within the `PermissionSuccessCallback` callback used in the `requestPermission()` method.
 
-    The user decision is returned in the first parameter of the callback as a value of the `PermissionRequestResult` enumeration (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/ppm.html#PermissionRequestResult) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/ppm.html#PermissionRequestResult) applications). The second parameter contains the permission that is being requested.
+    The user decision is returned in the first parameter of the callback as a value of the `PermissionRequestResult` enumeration (in [mobile](../../api/latest/device_api/mobile/tizen/ppm.html#PermissionRequestResult) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html#PermissionRequestResult) applications). The second parameter contains the permission that is being requested.
 
     ```
     /* Define PermissionSuccessCallback */

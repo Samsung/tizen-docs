@@ -5,7 +5,7 @@ Preference management allows you to store and retrieve the application preferenc
 This feature is supported in mobile and wearable applications only.
 
 > **Note**
-> The Preference API is a different feature than the [`preferences` attribute of the `config.xml` file](../../tutorials/process/setting-properties.md#preferences), which is used to set and retrieve name-value pairs using the Widget Interface API (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#widget) and [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#widget) applications).
+> The Preference API is a different feature than the [`preferences` attribute of the `config.xml` file](../../tutorials/process/setting-properties.md#preferences), which is used to set and retrieve name-value pairs using the Widget Interface API (in [mobile](../../api/latest/w3c_api/w3c_api_m.html#widget) and [wearable](../../api/latest/w3c_api/w3c_api_w.html#widget) applications).
 
 The main preference features are:
 

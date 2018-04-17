@@ -23,10 +23,10 @@ application is using, do one of the following:
     For example, if an application wants to use location information, it
     can check the device capability by using the `getCapability()`
     method of the `SystemInfo` interface (in
-    [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/systeminfo.html#SystemInfo),
-    [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/systeminfo.html#SystemInfo),
+    [mobile](../api/latest/device_api/mobile/tizen/systeminfo.html#SystemInfo),
+    [wearable](../api/latest/device_api/wearable/tizen/systeminfo.html#SystemInfo),
     and
-    [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/systeminfo.html#SystemInfo) applications).
+    [TV](../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfo) applications).
     If the device supports GPS, the application uses GPS information,
     and if the device supports WPS only, the application uses WPS
     information instead of GPS.
@@ -173,7 +173,7 @@ application package.
 | `http://tizen.org/feature/humanactivitymonitor` | Specify this key, if the application requires any of the Human Activity Monitor features. | 2.3   |
 | `http://tizen.org/feature/iot.ocf`       | Specify this key, if the application requires the Open Connectivity Foundation (OCF) framework. | 3.0   |
 | `http://tizen.org/feature/led`           | Specify this key, if the application requires the LED feature. | 2.4   |
-| `http://tizen.org/feature/location.batch` | Specify this key, if the application requires the location tracking with a position batch information feature for using the [Human Activity Monitor](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/humanactivitymonitor.html) (GPS Type) API. | 2.3   |
+| `http://tizen.org/feature/location.batch` | Specify this key, if the application requires the location tracking with a position batch information feature for using the [Human Activity Monitor](../api/latest/device_api/mobile/tizen/humanactivitymonitor.html) (GPS Type) API. | 2.3   |
 | `http://tizen.org/feature/network.bluetooth` | Specify this key, if the application requires the Bluetooth feature. | 2.2.1 |
 | `http://tizen.org/feature/network.bluetooth.audio.media` | Specify this key, if the application requires the Bluetooth Advanced Audio feature (A2DP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.health` | Specify this key, if the application requires the Bluetooth Health feature (HDP). | 2.3   |
@@ -221,13 +221,13 @@ Tizen 4.0.
 
 | Feature key                              | Description                              | Since |
 | ---------------------------------------- | ---------------------------------------- | ----- |
-| `http://tizen.org/feature/camera`        | Specify this key, if the application requires any kind of a camera for using the [getUserMedia](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#getusermedia) or [HTML Media Capture](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#mediacapture) API. | 2.2.1 |
-| `http://tizen.org/feature/location.gps`  | Specify this key, if the application requires the Global Positioning System (GPS) feature for using the [GeoLocation](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#geo) API. | 2.2.1 |
+| `http://tizen.org/feature/camera`        | Specify this key, if the application requires any kind of a camera for using the [getUserMedia](../api/latest/w3c_api/w3c_api_m.html#getusermedia) or [HTML Media Capture](../api/latest/w3c_api/w3c_api_m.html#mediacapture) API. | 2.2.1 |
+| `http://tizen.org/feature/location.gps`  | Specify this key, if the application requires the Global Positioning System (GPS) feature for using the [GeoLocation](../api/latest/w3c_api/w3c_api_m.html#geo) API. | 2.2.1 |
 | `http://tizen.org/feature/microphone`    | Specify this key, if the application requires a microphone for using the getUserMedia or HTML Media Capture API. | 2.2.1 |
-| `http://tizen.org/feature/sensor.accelerometer` | Specify this key, if the application requires an acceleration sensor for using the [DeviceOrientation Event Specification](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#orientation) API. | 2.2.1 |
+| `http://tizen.org/feature/sensor.accelerometer` | Specify this key, if the application requires an acceleration sensor for using the [DeviceOrientation Event Specification](../api/latest/w3c_api/w3c_api_m.html#orientation) API. | 2.2.1 |
 | `http://tizen.org/feature/sensor.gyroscope` | Specify this key, if the application requires a gyro sensor for using the DeviceOrientation Event API. | 2.2.1 |
-| `http://tizen.org/feature/sensor.magnetometer` | Specify this key, if the application requires a magnetic sensor for using the DeviceOrientation Event Specification or [Screen Orientation](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#sceenori) API. | 2.2.1 |
-| `http://tizen.org/feature/speech.synthesis` | Specify this key, if the application requires the speech synthesis (text-to-speech, TTS) feature for using the [Web Speech](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#webspeech) API. | 2.2.1 |
+| `http://tizen.org/feature/sensor.magnetometer` | Specify this key, if the application requires a magnetic sensor for using the DeviceOrientation Event Specification or [Screen Orientation](../api/latest/w3c_api/w3c_api_m.html#sceenori) API. | 2.2.1 |
+| `http://tizen.org/feature/speech.synthesis` | Specify this key, if the application requires the speech synthesis (text-to-speech, TTS) feature for using the [Web Speech](../api/latest/w3c_api/w3c_api_m.html#webspeech) API. | 2.2.1 |
 
 **Table: Available requirements for mobile Web Runtime**
 
@@ -247,12 +247,12 @@ Tizen 4.0.
 | `http://tizen.org/feature/contact`       | Specify this key, if the application requires the contact feature. | 4.0   |
 | `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
 | `http://tizen.org/feature/download`      | Specify this key, if the application requires the download feature. | 2.3   |
-| `http://tizen.org/feature/humanactivitymonitor` | Specify this key, if the application requires the [Human Activity Monitor](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/humanactivitymonitor.html) API.If the key is declared in the `config.xml` file, the application can be installed on the device with any of the Human Activity Monitor features:HRM: `http://tizen.org/feature/sensor.heart_rate_monitor`PEDOMETER: `http://tizen.org/feature/sensor.pedometer`WRIST_UP: `http://tizen.org/feature/sensor.wrist_up`GPS: `http://tizen.org/feature/location.batch` | 2.3   |
+| `http://tizen.org/feature/humanactivitymonitor` | Specify this key, if the application requires the [Human Activity Monitor](../api/latest/device_api/wearable/tizen/humanactivitymonitor.html) API.If the key is declared in the `config.xml` file, the application can be installed on the device with any of the Human Activity Monitor features:HRM: `http://tizen.org/feature/sensor.heart_rate_monitor`PEDOMETER: `http://tizen.org/feature/sensor.pedometer`WRIST_UP: `http://tizen.org/feature/sensor.wrist_up`GPS: `http://tizen.org/feature/location.batch` | 2.3   |
 | `http://tizen.org/feature/iot.ocf`       | Specify this key, if the application requires the Open Connectivity Foundation (OCF) framework. | 3.0   |
 | `http://tizen.org/feature/led`           | Specify this key, if the application requires the LED feature. | 2.4   |
 | `http://tizen.org/feature/location.batch` | Specify this key, if the application requires the location tracking with a position batch information feature. | 2.3   |
 | `http://tizen.org/feature/network.bluetooth` | Specify this key, if the application requires the Bluetooth feature. | 2.2.1 |
-| `http://tizen.org/feature/network.bluetooth.audio.media` | Specify this key, if the application requires the Bluetooth Advanced Audio feature (A2DP) feature for using the [Media Key](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/mediakey.html) API. | 2.3   |
+| `http://tizen.org/feature/network.bluetooth.audio.media` | Specify this key, if the application requires the Bluetooth Advanced Audio feature (A2DP) feature for using the [Media Key](../api/latest/device_api/wearable/tizen/mediakey.html) API. | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.health` | Specify this key, if the application requires the Bluetooth Health feature (HDP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.le` | Specify this key, if the application requires the Bluetooth Low Energy feature (BLE). | 2.3   |
 | `http://tizen.org/feature/network.net_proxy` | Specify this key, if the application requires the net-proxy feature for the Internet connection. A net-proxy feature for a device acts as an intermediary between client (network service customer) and server (network service provider). | 3.0   |
@@ -296,24 +296,24 @@ Tizen 4.0.
 
 | Feature key                              | Description                              | Since |
 | ---------------------------------------- | ---------------------------------------- | ----- |
-| `http://tizen.org/feature/camera`        | Specify this key, if the application requires any kind of a camera for using the [getUserMedia](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#getusermedia) API. | 2.2.1 |
+| `http://tizen.org/feature/camera`        | Specify this key, if the application requires any kind of a camera for using the [getUserMedia](../api/latest/w3c_api/w3c_api_w.html#getusermedia) API. | 2.2.1 |
 | `http://tizen.org/feature/input.rotating_bezel` | Specify this key, if the application requires rotating bezel input. | 2.3.1 |
-| `http://tizen.org/feature/location.gps`  | Specify this key, if the application requires the Global Positioning System (GPS) feature for using the [GeoLocation](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#geo) API. | 2.2.1 |
+| `http://tizen.org/feature/location.gps`  | Specify this key, if the application requires the Global Positioning System (GPS) feature for using the [GeoLocation](../api/latest/w3c_api/w3c_api_w.html#geo) API. | 2.2.1 |
 | `http://tizen.org/feature/microphone`    | Specify this key, if the application requires a microphone for using the getUserMedia API. | 2.2.1 |
-| `http://tizen.org/feature/network.internet` | Specify this key, if the application requires Internet access for using the [WebSocket API](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#websocket), [XMLHttpRequest](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#httpreq), or [Cross-Origin Resource Sharing](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#cross) API. | 2.3.1 |
+| `http://tizen.org/feature/network.internet` | Specify this key, if the application requires Internet access for using the [WebSocket API](../api/latest/w3c_api/w3c_api_w.html#websocket), [XMLHttpRequest](../api/latest/w3c_api/w3c_api_w.html#httpreq), or [Cross-Origin Resource Sharing](../api/latest/w3c_api/w3c_api_w.html#cross) API. | 2.3.1 |
 | `http://tizen.org/feature/screen.shape.circle` | Specify this key, if the application requires a circle-shaped screen. | 2.3.1 |
 | `http://tizen.org/feature/screen.shape.rectangle` | Specify this key, if the application requires a rectangle-shaped screen. | 2.3.1 |
-| `http://tizen.org/feature/sensor.accelerometer` | Specify this key, if the application requires an acceleration sensor for using the [DeviceOrientation Event Specification](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#orientation) API. | 2.2.1 |
+| `http://tizen.org/feature/sensor.accelerometer` | Specify this key, if the application requires an acceleration sensor for using the [DeviceOrientation Event Specification](../api/latest/w3c_api/w3c_api_w.html#orientation) API. | 2.2.1 |
 | `http://tizen.org/feature/sensor.gyroscope` | Specify this key, if the application requires a gyro sensor for using the DeviceOrientation Event API. | 2.2.1 |
-| `http://tizen.org/feature/speech.synthesis` | Specify this key, if the application requires the speech synthesis (text-to-speech, TTS) feature for using the [Web Speech](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#webspeech) API. | 2.2.1 |
+| `http://tizen.org/feature/speech.synthesis` | Specify this key, if the application requires the speech synthesis (text-to-speech, TTS) feature for using the [Web Speech](../api/latest/w3c_api/w3c_api_w.html#webspeech) API. | 2.2.1 |
 
 **Table: Available requirements for wearable Web Supplementary APIs**
 
 | Feature key                              | Description                              | Since |
 | ---------------------------------------- | ---------------------------------------- | ----- |
-| `http://tizen.org/feature/media.audio_recording` | Specify this key, if the application requires the audio recording functionality of the device for using the [Camera API (Tizen Extension)](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#camera) (Audio Recording) API. | 2.3   |
-| `http://tizen.org/feature/media.image_capture` | Specify this key, if the application requires the image capture functionality of the device for using the [Camera API (Tizen Extension)](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#camera) (Image Recording) API. | 2.3   |
-| `http://tizen.org/feature/media.video_recording` | Specify this key, if the application requires the video recording functionality of the device for using the [Camera API (Tizen Extension)](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#camera) (Video Recording) API. | 2.3   |
+| `http://tizen.org/feature/media.audio_recording` | Specify this key, if the application requires the audio recording functionality of the device for using the [Camera API (Tizen Extension)](../api/latest/w3c_api/w3c_api_w.html#camera) (Audio Recording) API. | 2.3   |
+| `http://tizen.org/feature/media.image_capture` | Specify this key, if the application requires the image capture functionality of the device for using the [Camera API (Tizen Extension)](../api/latest/w3c_api/w3c_api_w.html#camera) (Image Recording) API. | 2.3   |
+| `http://tizen.org/feature/media.video_recording` | Specify this key, if the application requires the video recording functionality of the device for using the [Camera API (Tizen Extension)]../api/latest/w3c_api/w3c_api_w.html#camera) (Video Recording) API. | 2.3   |
 
 
 **Table: Available requirements for wearable Web Runtime**
@@ -327,20 +327,20 @@ Tizen 4.0.
 
 | Feature key                              | Description                              | Since |
 | ---------------------------------------- | ---------------------------------------- | ----- |
-| `http://tizen.org/feature/tv.audio`      | Specify this key, if the application requires the audio control functionality for using the [TV Audio Control](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tvaudiocontrol.html) API. | 3.0   |
-| `http://tizen.org/feature/tv.tuner`      | Specify this key, if the application requires the channel tuner functionality for using the [TV Channel](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tvchannel.html) API. | 3.0   |
-| `http://tizen.org/feature/tv.display`    | Specify this key, if the application requires the screen display functionality for using the [TV Display Control](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tvdisplaycontrol.html) API. | 3.0   |
-| `http://tizen.org/feature/tv.inputdevice` | Specify this key, if the application requires the input device event monitoring functionality for using the [TV Input Device](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tvinputdevice.html) API. | 3.0   |
-| `http://tizen.org/feature/tv.pip`        | Specify this key, if the application requires the picture-in-picture (PIP) functionality for using the [TV Window](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tvwindow.html) API. | 3.0   |
-| `http://tizen.org/feature/tv.information` | Specify this key, if the application requires the TV setting functionality for using the [TV Information](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tvinfo.html) API. | 3.0   |
+| `http://tizen.org/feature/tv.audio`      | Specify this key, if the application requires the audio control functionality for using the [TV Audio Control](../api/latest/device_api/tv/tizen/tvaudiocontrol.html) API. | 3.0   |
+| `http://tizen.org/feature/tv.tuner`      | Specify this key, if the application requires the channel tuner functionality for using the [TV Channel](../api/latest/device_api/tv/tizen/tvchannel.html) API. | 3.0   |
+| `http://tizen.org/feature/tv.display`    | Specify this key, if the application requires the screen display functionality for using the [TV Display Control](../api/latest/device_api/tv/tizen/tvdisplaycontrol.html) API. | 3.0   |
+| `http://tizen.org/feature/tv.inputdevice` | Specify this key, if the application requires the input device event monitoring functionality for using the [TV Input Device](../api/latest/device_api/tv/tizen/tvinputdevice.html) API. | 3.0   |
+| `http://tizen.org/feature/tv.pip`        | Specify this key, if the application requires the picture-in-picture (PIP) functionality for using the [TV Window](../api/latest/device_api/tv/tizen/tvwindow.html) API. | 3.0   |
+| `http://tizen.org/feature/tv.information` | Specify this key, if the application requires the TV setting functionality for using the [TV Information](../api/latest/device_api/tv/tizen/tvinfo.html) API. | 3.0   |
 
 **Table: Available requirements for TV Web W3C/HTML5 APIs**
 
 | Feature key                              | Description                              | Since |
 | ---------------------------------------- | ---------------------------------------- | ----- |
-| `http://tizen.org/feature/microphone`    | Specify this key, if the application requires a microphone for using the [getUserMedia](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#getusermedia) API. | 3.0   |
-| `http://tizen.org/feature/sensor.accelerometer` | Specify this key, if the application requires an acceleration sensor for using the [Screen Orientation](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#sceenori) API. | 3.0   |
-| `http://tizen.org/feature/speech.synthesis` | Specify this key, if the application requires the speech synthesis (text-to-speech, TTS) feature for using the [Web Speech](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#webspeech) API. | 3.0   |
+| `http://tizen.org/feature/microphone`    | Specify this key, if the application requires a microphone for using the [getUserMedia](../api/latest/w3c_api/w3c_api_tv.html#getusermedia) API. | 3.0   |
+| `http://tizen.org/feature/sensor.accelerometer` | Specify this key, if the application requires an acceleration sensor for using the [Screen Orientation](../api/latest/w3c_api/w3c_api_tv.html#sceenori) API. | 3.0   |
+| `http://tizen.org/feature/speech.synthesis` | Specify this key, if the application requires the speech synthesis (text-to-speech, TTS) feature for using the [Web Speech](../api/latest/w3c_api/w3c_api_tv.html#webspeech) API. | 3.0   |
 
 <a name="profile_w"></a>
 

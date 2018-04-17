@@ -10,7 +10,7 @@ The main features of the Web Workers API include:
 
 - [Messaging between workers](#sending-messages-between-web-workers)
 
-  A subworker can communicate with the host worker using the `postMessage()` method of the HTML5 Web Messaging API (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#messaging) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#messaging) applications). This process is normally used to give work orders to workers or subworkers, or deliver an operation result.If a worker triggers a message event, the `onmessage()` event handler can be used to check the sent message.
+  A subworker can communicate with the host worker using the `postMessage()` method of the HTML5 Web Messaging API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#messaging) or [wearable](../../../api/latest/w3c_api/w3c_api_w.html#messaging) applications). This process is normally used to give work orders to workers or subworkers, or deliver an operation result.If a worker triggers a message event, the `onmessage()` event handler can be used to check the sent message.
 
 - [Multi-threading](#multi-threading)
 

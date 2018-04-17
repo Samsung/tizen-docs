@@ -1,6 +1,6 @@
 # HTML5 Canvas
 
-The HTML5 canvas allows you to use graphics on the screen, and draw and manage various shapes. The HTML Canvas 2D Context API (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#canvas2d) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#canvas2d) applications) defines a special canvas element that expresses images or shapes with JavaScript.
+The HTML5 canvas allows you to use graphics on the screen, and draw and manage various shapes. The HTML Canvas 2D Context API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#canvas2d) or [wearable](../../../api/latest/w3c_api/w3c_api_w.html#canvas2d) applications) defines a special canvas element that expresses images or shapes with JavaScript.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -26,7 +26,7 @@ The main features of the Canvas Element API include:
 
 For all canvas objects (images, shapes, text, and lines), you can define colors (the `fillStyle` and `strokeStyle` attributes), shadows (the `shadowColor` and `shadowBlur` attributes), and gradation (the `createLinearGradient()` method). You can also use the transformation methods, such as `scale()`, `translate()`, `transform()`, and `rotate()`, to implement, for example, transparency or shape gradient transformations.
 
-In mobile applications only, in HTML5, the [Scalable Vector Graphics (SVG) 2](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#svg) API provides similar features as the canvas. Their difference is that SVG expresses graphics using vectors, while the canvas is based on pixels. To express complex graphics, use the canvas, and to express graphics with a liberal expansion or reduction, use [SVG](./svg.md).
+In mobile applications only, in HTML5, the [Scalable Vector Graphics (SVG) 2](../../../api/latest/w3c_api/w3c_api_m.html#svg) API provides similar features as the canvas. Their difference is that SVG expresses graphics using vectors, while the canvas is based on pixels. To express complex graphics, use the canvas, and to express graphics with a liberal expansion or reduction, use [SVG](./svg.md).
 
 > **Note**  
 > The canvas currently supports 2D graphics only, since the 3D graphics specification is still in progress. The [WebGL™](https://www.khronos.org/registry/webgl/specs/1.0/) API is currently called 3D Canvas, and is used to express 3D graphics. For more information on the performance differences between Canvas 2D and WebGL™ in mobile applications, see [Performance Comparison of Canvas 2D and WebGL™](#comparison).
@@ -426,7 +426,7 @@ To compare the performance, 2 simple Web applications must be created, using the
 1. Create the applications with the following logic:
    1. Load an image.
    2. Render the loaded image in the random location of the canvas.
-   3. Use the `requestAnimationFrame()` method of the Timing control for script-based animations API (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#timing) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#timing) applications) to change the color of the loaded image, based on different times.
+   3. Use the `requestAnimationFrame()` method of the Timing control for script-based animations API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#timing) or [wearable](../../../api/latest/w3c_api/w3c_api_w.html#timing) applications) to change the color of the loaded image, based on different times.
    4. Create a logic that measures FPS (frames per second) in order to check the performance.
 2. Execute the applications and measure the FPS.
 3. Increase only the number of objects so that the same 1~N images, under the same conditions, are shown repeatedly based on 1~N.

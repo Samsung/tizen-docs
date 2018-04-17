@@ -1,6 +1,6 @@
 # Typed Array - Khronos
 
-Typed Array - Khronos is an HTML5 feature that allows you to access binary data in JavaScript. It is designed to effectively handle the complex binary data of WebGL&trade;. It provides better performance than the WebGL - Khronos API (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#webgl), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#webgl), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#webgl) applications) when manipulating binary data and handling the data of other HTML APIs.
+Typed Array - Khronos is an HTML5 feature that allows you to access binary data in JavaScript. It is designed to effectively handle the complex binary data of WebGL&trade;. It provides better performance than the WebGL - Khronos API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#webgl), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#webgl), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#webgl) applications) when manipulating binary data and handling the data of other HTML APIs.
 
 The main features of the Typed Array - Khronos API include:
 
@@ -230,7 +230,7 @@ For the complete source code related to this use case, see the following files:
 
 To handle binary data in your application with JavaScript, you must learn to deliver binary data effectively in other HTML5 APIs that employ a typed array:
 
-1. For the WebGL - Khronos API (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#webgl), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#webgl), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#webgl) applications), import the `gl.bufferData()` method to set the buffer object to deliver texture data:
+1. For the WebGL - Khronos API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#webgl), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#webgl), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#webgl) applications), import the `gl.bufferData()` method to set the buffer object to deliver texture data:
 
    ```
    <script>
@@ -249,7 +249,7 @@ To handle binary data in your application with JavaScript, you must learn to del
    </script>
    ```
 
-2. For the HTML5 canvas element API (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#canvas), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#canvas), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#canvas) applications), use the typed array with the following steps:
+2. For the HTML5 canvas element API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#canvas), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#canvas), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#canvas) applications), use the typed array with the following steps:
 
    a. Create an `ImageData` object of the canvas internally.
 
@@ -268,7 +268,7 @@ To handle binary data in your application with JavaScript, you must learn to del
 	> **Note**  
 	> The pixel array of a canvas can be created and edited without direct manipulation of the canvas element.  
 
-3. For the XMLHttpRequest API (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#httpreq), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#httpreq), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#httpreq) applications), set the response type of the `XMLHttpRequest` object as `arraybuffer` to receive a typed array response. This allows you to parse the binary file through the network.
+3. For the XMLHttpRequest API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#httpreq), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#httpreq), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#httpreq) applications), set the response type of the `XMLHttpRequest` object as `arraybuffer` to receive a typed array response. This allows you to parse the binary file through the network.
 
    ```
    this.setSound = function() {

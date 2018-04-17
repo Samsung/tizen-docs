@@ -11,7 +11,7 @@ Tizen provides the tools required to manage your Web application life-cycle from
 
 The first step in creating a Tizen Web application is planning and designing it using the design tools of your choice.
 
-For information on planning and designing your applications, see [Tizen Web Guides](../../guides/index.md) and [Tizen Web API References](../../../../tizen.web.apireference/html/web_api_reference.htm).
+For information on planning and designing your applications, see [Tizen Web Guides](../../guides/index.md) and [Tizen Web API References](../../api/latest/web_api_reference.htm).
 
 Once you have finished the application plan and design, you are ready to create the application project.
 
@@ -31,12 +31,12 @@ After creating the application project, you can [configure the properties of the
 <a name="design"></a>
 ## Designing the Application UI
 
-You can design the application UI using the UI components defined in the [Tizen Advanced UI Framework](../../../../org.tizen.web.apireference/html/ui_fw_api/ui_fw_api_cover.htm).
+You can design the application UI using the UI components defined in the [Tizen Advanced UI Framework](../../api/latest/ui_fw_api/ui_fw_api_cover.htm).
 
 <a name="code"></a>
 ## Coding the Application
 
-[Code your application](coding-app.md) in the Tizen Studio using the APIs defined in the Web [API References](../../../../org.tizen.web.apireference/html/web_api_reference.htm).
+[Code your application](coding-app.md) in the Tizen Studio using the APIs defined in the Web [API References](../../api/latest/web_api_reference.htm).
 
 Once you have finished coding your application, you are ready to build your application.
 
@@ -233,19 +233,19 @@ With a hybrid application package, you can register the included applications in
 A hybrid application package is very useful to Web applications that need background processing or monitoring. A native service application does not have a UI and can be run in the background.
 
 The Web application and native service applications within a hybrid application package share the same package ID and data folder. Sharing application data between them is easy. Many useful inter-application APIs, such as Message Port (in
-[mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messageport.html),
-[wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/messageport.html), and
-[TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/messageport.html)
+[mobile](../../api/latest/device_api/mobile/tizen/messageport.html),
+[wearable](../../api/latest/device_api/wearable/tizen/messageport.html), and
+[TV](../../api/latest/device_api/tv/tizen/messageport.html)
 applications) and AppControl (in
-[mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html),
-[wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html), and
-[TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html)
+[mobile](../../api/latest/device_api/mobile/tizen/application.html),
+[wearable](../../api/latest/device_api/wearable/tizen/application.html), and
+[TV](../../api/latest/device_api/tv/tizen/application.html)
 applications), can be used in a hybrid application package.
 
 For more information on hybrid applications and their package structure, see Hybrid Web App sample (in
 [mobile](https://developer.tizen.org/development/sample/web/Hybrid/Hybrid_Web_App) and
-[wearable](https://developer.tizen.org/development/sample/web/Hybrid/Hybrid_Web_App_1) applications), 
-[Hybrid Service sample](https://developer.tizen.org/development/sample/native/AppFW/Hybrid_Service), and 
+[wearable](https://developer.tizen.org/development/sample/web/Hybrid/Hybrid_Web_App_1) applications),
+[Hybrid Service sample](https://developer.tizen.org/development/sample/native/AppFW/Hybrid_Service), and
 [Hybrid Application Package](../../index.md#hap).
 
 <a name="cert"></a>

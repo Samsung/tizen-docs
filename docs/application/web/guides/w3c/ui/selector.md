@@ -107,7 +107,7 @@ For the complete source code related to this use case, see the following file:
 
 You can retrieve element nodes from the DOM tree and create a simple accordion menu.
 
-The accordion menu is created using the CSS3 Basic User Interface Module Level 3 API (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#basicui), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#basicui), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#basicui) applications). When a title is touched, the relevant content is shown, and other content is hidden.
+The accordion menu is created using the CSS3 Basic User Interface Module Level 3 API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#basicui), [wearable](../../../api/latest/html/w3c_api/w3c_api_w.html#basicui), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#basicui) applications). When a title is touched, the relevant content is shown, and other content is hidden.
 
 1. Create the HTML layout:
 
