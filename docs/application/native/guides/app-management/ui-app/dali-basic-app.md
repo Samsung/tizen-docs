@@ -12,7 +12,7 @@ For the steps of creating the basic parts of a simple DALi UI application, see [
 <a name="api"></a>
 ## Main Application Class
 
-If you want to use DALi for your application UI, you must create the application with the `Dali::Application` class (in [mobile](../../api/mobile/latest/classDali_1_1Application.html) and [wearable](../../api/wearable/latest/classDali_1_1Application.html) applications). This class provides the means for initializing the resources required by DALi.
+If you want to use DALi for your application UI, you must create the application with the `Dali::Application` class (in [mobile](../../../api/mobile/latest/classDali_1_1Application.html) and [wearable](../../../api/wearable/latest/classDali_1_1Application.html) applications). This class provides the means for initializing the resources required by DALi.
 
 The following table lists the main functions you need in your application. They are all provided by the `Dali::Application` class.
 
@@ -54,7 +54,7 @@ The following table lists the callbacks for the basic signals provided by the `D
 | `BatteryLowSignal()`      | Called when the battery state is low. You can use the signal to save any crucial information in case the battery state becomes so low that the application is forcefully terminated. |
 | `MemoryLowSignal()`       | Called when the memory state is low. You can use the signal to release any unused memory. |
 
-For more information on Tizen UI applications in general, see [UI Application](ui-app.md).
+For more information on Tizen UI applications in general, see [UI Application](index.md).
 
 <a name="create"></a>
 ## Basics of Creating a DALi Application
@@ -63,7 +63,7 @@ To create a DALi basic UI application:
 
 1. Initialize the application:
 
-   1. To use the functions and data types of the DALi API, (in [mobile](../../api/mobile/latest/group__dali.html) and [wearable](../../api/wearable/latest/group__dali.html) applications), include the `<dali-toolkit/dali-toolkit.h>` header file in your application:
+   1. To use the functions and data types of the DALi API, (in [mobile](../../../api/mobile/latest/group__dali.html) and [wearable](../../../api/wearable/latest/group__dali.html) applications), include the `<dali-toolkit/dali-toolkit.h>` header file in your application:
    ```
    #include <dali-toolkit/dali-toolkit.h>
    ```
@@ -79,7 +79,7 @@ Application application = Application::New( &argc, &argv );
 
 3. Connect signals to keep yourself informed when certain system events occur.
 
-   To manage signal connection safely, DALi provides the `Dali::ConnectionTracker` class (in [mobile](../../api/mobile/latest/classDali_1_1ConnectionTracker.html) and [wearable](../../api/wearable/latest/classDali_1_1ConnectionTracker.html) applications). A typical way to start a DALi application is to create a class derived from the `Dali::ConnectionTracker` class and use its member functions as callback functions for DALi signals.
+   To manage signal connection safely, DALi provides the `Dali::ConnectionTracker` class (in [mobile](../../../api/mobile/latest/classDali_1_1ConnectionTracker.html) and [wearable](../../../api/wearable/latest/classDali_1_1ConnectionTracker.html) applications). A typical way to start a DALi application is to create a class derived from the `Dali::ConnectionTracker` class and use its member functions as callback functions for DALi signals.
 
    When the application receives the `InitSignal()`, it can build the 3D scene graph. Connect the `HelloWorld::Create()` callback to the `Dali::Application::InitSignal()` function:
 
@@ -89,7 +89,7 @@ Application application = Application::New( &argc, &argv );
 
 4. Create an actor and add it to the stage.
 
-   The `Dali::Toolkit::TextLabel` UI component (in [mobile](../../api/mobile/latest/classDali_1_1Toolkit_1_1TextLabel.html) and [wearable](../../api/wearable/latest/classDali_1_1Toolkit_1_1TextLabel.html) applications) renders a short text string.
+   The `Dali::Toolkit::TextLabel` UI component (in [mobile](../../../api/mobile/latest/classDali_1_1Toolkit_1_1TextLabel.html) and [wearable](../../../api/wearable/latest/classDali_1_1Toolkit_1_1TextLabel.html) applications) renders a short text string.
 
    To display the text label, add it to a stage. The stage instance is a singleton object (the only instance of its class during the lifetime of the program), so you can get it using a static function:
 
