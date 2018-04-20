@@ -101,8 +101,8 @@
 			</td>
 			<td>
 			<p><strong>FlexContainer Sample</strong></p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/FlexContainerSample" target="_blank"><strong>FlexContainer Sample</strong></a></p>
 			<p>The FlexContainer sample application demonstrates how to use FlexContainer and shows results of applied properties.</p>
-			<p>Comming soon</p>
 			</td>
 		</tr>
 		<tr>
@@ -187,7 +187,7 @@
 			<p><img alt="" height="225" src="media/tv18appinfo.png" width="400" /></p>
 			</td>
 			<td>
-            <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/AppInfo" target="_blank"><strong>AppInfo</strong></a></p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/AppInfo" target="_blank"><strong>AppInfo</strong></a></p>
 			<p>AppInfo is a sample application that demonstrates how to obtain information about installed applications using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html" target="_blank">Tizen Applications API</a>.</p>
 			</td>
 		</tr>
@@ -196,9 +196,8 @@
 			<p><img alt="" height="225" src="media/tv19basiccalculator.png" width="400" /></p>
 			</td>
 			<td>
-			<p><strong>BasicCalculator</strong></p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/BasicCalculator" target="_blank"><strong>BasicCalculator</strong></a></p>
 			<p>BasicCalculator is a sample application which demonstrates how to create a calculator with basic mathematical operations using Xamarin.Forms library.</p>
-			<p>Comming soon</p>
 			</td>
 		</tr>
 		<tr>
@@ -225,9 +224,8 @@
 			<p><img alt="" height="225" src="media/tv22mediacontent.png" width="400" /></p>
 			</td>
 			<td>
-            <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/MediaContent" target="_blank"><strong>MediaContent</strong></a></p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/MediaContent" target="_blank"><strong>MediaContent</strong></a></p>
 			<p>MediaContent is a sample application that demonstrates how to obtain and filter media content information from internal and external storages using Media Content API.</p>
-			<p>Comming soon</p>
 			</td>
 		</tr>
 		<tr>
@@ -254,6 +252,7 @@
 			</td>
 			<td>
 			<p><strong>FirstScreen</strong></p>
+                        <p>FirstScreen is a sample application that demonstrates how to launcher the apps on the TV.</p>
 			<p>Comming soon</p>
 			</td>
 		</tr>
