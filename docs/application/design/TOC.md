@@ -126,12 +126,7 @@
 
 # TV
 ## [Design Principles](/application/design/tv/design-principles.md)
-## Styles
-### [Overview](/application/design/tv/styles.md)
-### [Background Color](/application/design/tv/styles/background-color.md)
-### [Theme](/application/design/tv/styles/theme.md)
-### [Color Swatch](/application/design/tv/styles/color-swatch.md)
-### [Font Style](/application/design/tv/styles/font-style.md)
+## [Styles](/application/design/tv/styles.md)
 ## UX Overview
 ### [Overview](/application/design/tv/ux-overview.md)
 ### [App Layer](/application/design/tv/ux-overview/app-layer.md)
@@ -143,7 +138,7 @@
 ### [Screen Layout](/application/design/tv/patterns/screen-layout.md)
 ### [Navigation](/application/design/tv/patterns/navigation.md)
 ### [Actions](/application/design/tv/patterns/actions.md)
-### [Patterns](/application/design/tv/patterns.md)
+### [Notifications](/application/design/tv/patterns/notifications.md)
 ### [Recommendations](/application/design/tv/patterns/recommendations.md)
 ## UI Components
 ### [Overview](/application/design/tv/ui-components.md)

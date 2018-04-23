@@ -21,13 +21,6 @@ The following guidelines apply to back navigation:
 ![back](media/pt_10_back-850x154.png)<br>
 *Navigation using the Back key*
 
-## Focusing
-
-There is always a focus somewhere on the screen. The purpose of focusing is to concentrate on a specific item, which is important or likely to require actions.
-
-![focusing](media/pt_12_focusing-850x478.png)<br>
-*Focusing on the screen*
-
 ## Scrolling
 
 The user can scroll the screen content when the whole content cannot be shown in the content area at the same time.
@@ -39,6 +32,13 @@ The following guidelines apply to scrolling:
 
 ![scrolling](media/pt_11_scrolling-850x478.png)<br>
 *Scrolling through a sublist*
+
+## Focusing
+
+There is always a focus somewhere on the screen. The purpose of focusing is to concentrate on a specific item, which is important or likely to require actions.
+
+![focusing](media/pt_12_focusing-850x478.png)<br>
+*Focusing on the screen*
 
 ## Back Key Information
 

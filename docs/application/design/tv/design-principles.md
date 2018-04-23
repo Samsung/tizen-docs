@@ -47,7 +47,7 @@ Within functional design elements, clean up unnecessary decorations, such as a d
 
 ## Natural Intuitiveness
 
-Enhance the usability and make the interface naturally familiar to the user by, for example, using [shadow effects](natural-intuitiveness/shadow-effect.md). This allows the user to access content and information easily with a pleasing natural visual balance.
+Enhance the usability and make the interface naturally familiar to the user by, for example, using shadow effects. This allows the user to access content and information easily with a pleasing natural visual balance.
 
 ### Shadow Effect
 
