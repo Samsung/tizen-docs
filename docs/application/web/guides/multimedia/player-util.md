@@ -29,7 +29,7 @@ try {
 
 ## Setting the Latency Mode
 
-To set a new latency mode, use one of the available modes defined in the `LatencyMode` enumerator (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/playerutil.html#LatencyMode) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/playerutil.html#LatencyMode) applications):
+To set a new latency mode, use one of the available modes defined in the `LatencyMode` enumerator (in [mobile](../../api/latest/device_api/mobile/tizen/playerutil.html#LatencyMode) and [wearable](../../api/latest/device_api/wearable/tizen/playerutil.html#LatencyMode) applications):
 
 ```
 try {

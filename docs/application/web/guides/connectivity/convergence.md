@@ -33,7 +33,7 @@ The following Convergence services are currently provided:
 
 ## Prerequisites
 
-To use the Convergence API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/convergence.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/convergence.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
+To use the Convergence API (in [mobile](../../api/latest/device_api/mobile/tizen/convergence.html) and [wearable](../../api/latest/device_api/wearable/tizen/convergence.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/bluetooth"/>
