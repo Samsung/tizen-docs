@@ -291,7 +291,7 @@ To run the application on a target device:
     > 2.  In the `Run Configurations` window, click the `New Launch Configuration` icon (![New Launch Configuration icon](media/run_new_config_wn.png)), define the configuration details, and launch the application by clicking `Run`.
     > ![Run Configurations window](media/run_configurations_w.png)
 
-<a name="ui"></a>	
+<a name="ui"></a>
 ## Designing a Simple UI
 
 The mobile application created with the **Basic UI** template has a simple user interface with a text component showing the **Basic** text in the middle of the screen.
@@ -419,7 +419,7 @@ By default, the text uses the `#ffffff` color (white), defined for the `<body>` 
 
 ### Adding More Components and Functionality with TAU
 
-TAU (Tizen Advanced UI) is a Web UI library that enables you to create and manage various kinds of UI components. The components represent a visual UI element, such as a button, checkbox, or list view. You can manipulate and interact with the application screens through the UI components. For more information, see [Tizen Advanced UI](../../guides/tau/tau.md) and [Tizen Advanced UI framework Reference](../../../../org.tizen.web.apireference/html/ui_fw_api/ui_fw_api_cover.htm).
+TAU (Tizen Advanced UI) is a Web UI library that enables you to create and manage various kinds of UI components. The components represent a visual UI element, such as a button, checkbox, or list view. You can manipulate and interact with the application screens through the UI components. For more information, see [Tizen Advanced UI](../../guides/tau/tau.md) and [Tizen Advanced UI framework Reference](../../api/latest/ui_fw_api/ui_fw_api_cover.htm).
 
 TAU helps you to create Tizen Web applications easily. The following figure shows the role of TAU and its relation to the Web application.
 

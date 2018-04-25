@@ -53,7 +53,7 @@ To receive push notifications for your application:
 
 To enable your application to use the push functionality:
 
-1. To use the Push API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/push.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/push.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
+1. To use the Push API (in [mobile](../../api/latest/device_api/mobile/tizen/push.html) and [wearable](../../api/latest/device_api/wearable/tizen/push.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
 
    ```
    <tizen:privilege name="http://tizen.org/privilege/push"/>
@@ -164,7 +164,7 @@ Since Tizen 3.0, you must connect to the push service before getting the registr
 
 ## Receiving Push Notifications
 
-You can connect to the push service and start receiving push notifications with the `connectService()` method up to Tizen 2.4, or with the `connect()` method since Tizen 3.0. Up to Tizen 2.4, you must pass the `PushNotificationCallback` listener (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/push.html#PushNotificationCallback) and  [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/push.html#PushNotificationCallback) applications) as a parameter in the method to receive push notifications. Since Tizen 3.0, you must pass the `PushRegistrationStateChangeCallback` (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/push.html#PushRegistrationStateChangeCallback) applications) and `PushNotificationCallback` callbacks as parameters in the method. The first callback is called when the registration change state changes. This callback is called at least once, just after the connection is established. The second callback is called when notification messages arrive. You can also pass the `ErrorCallback` as a parameter to be called if the connection request fails.
+You can connect to the push service and start receiving push notifications with the `connectService()` method up to Tizen 2.4, or with the `connect()` method since Tizen 3.0. Up to Tizen 2.4, you must pass the `PushNotificationCallback` listener (in [mobile](../../api/latest/device_api/mobile/tizen/push.html#PushNotificationCallback) and  [wearable](../../api/latest/device_api/wearable/tizen/push.html#PushNotificationCallback) applications) as a parameter in the method to receive push notifications. Since Tizen 3.0, you must pass the `PushRegistrationStateChangeCallback` (in [mobile](../../api/latest/device_api/mobile/tizen/push.html#PushRegistrationStateChangeCallback) applications) and `PushNotificationCallback` callbacks as parameters in the method. The first callback is called when the registration change state changes. This callback is called at least once, just after the connection is established. The second callback is called when notification messages arrive. You can also pass the `ErrorCallback` as a parameter to be called if the connection request fails.
 
 When a notification arrives at the device, its delivery mechanism depends on whether the application is running:
 

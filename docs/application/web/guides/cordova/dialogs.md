@@ -92,7 +92,7 @@ To show a prompt dialog box where the user can put some text, with a set of butt
 
 1. Define a callback method to be invoked when the user clicks a button.
 
-   The callback has 1 parameter: the `PromptData` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/dialogs.html#PromptData), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/dialogs.html#PromptData), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/dialogs.html#PromptData) applications) containing the user input and pressed button index.
+   The callback has 1 parameter: the `PromptData` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/dialogs.html#PromptData), [wearable](../../api/latest/device_api/wearable/tizen/cordova/dialogs.html#PromptData), and [TV](../../api/latest/device_api/tv/tizen/cordova/dialogs.html#PromptData) applications) containing the user input and pressed button index.
 
    ```
    var promptCallback = function(results) {

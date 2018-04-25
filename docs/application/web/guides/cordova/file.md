@@ -8,7 +8,7 @@ The main features of the File API include:
 
 - Resolving the filesystem
 
-  A basic step necessary to perform other file actions is to [resolve a filesystem](#resolving-filesystem-entries), which results in a `FileSystem` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/file.html#FileSystem), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/file.html#FileSystem), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/file.html#FileSystem) applications) being retrieved. You can use the `root` member to perform other actions on this filesystem.
+  A basic step necessary to perform other file actions is to [resolve a filesystem](#resolving-filesystem-entries), which results in a `FileSystem` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#FileSystem), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#FileSystem), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#FileSystem) applications) being retrieved. You can use the `root` member to perform other actions on this filesystem.
 
 - Operating on directories
 
@@ -40,7 +40,7 @@ To enable your application to use the file functionality:
    }
    ```
 
-2. To use the File API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/file.html), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/file.html), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/file.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
+2. To use the File API (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
 
    ```
    <!--To read from files-->
@@ -75,7 +75,7 @@ To resolve the initial root for other filesystem operations:
 
     The following output is shown in the system log:`File system name temporary`    
 
-- Use the `resolveLocalFileSystemURL()` global async method.This method is used to retrieve a `DirectoryEntry` objects (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/file.html#DirectoryEntry), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/file.html#DirectoryEntry), or [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/file.html#DirectoryEntry) applications) or `FileEntry` objects (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/file.html#FileEntry), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/file.html#FileEntry), or [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/file.html#FileEntry) applications) using a local URI.
+- Use the `resolveLocalFileSystemURL()` global async method.This method is used to retrieve a `DirectoryEntry` objects (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#DirectoryEntry), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#DirectoryEntry), or [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#DirectoryEntry) applications) or `FileEntry` objects (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#FileEntry), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#FileEntry), or [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#FileEntry) applications) using a local URI.
 
     - Define the callbacks:
 
@@ -306,7 +306,7 @@ To move, copy, and delete entries, or access entry metadata, parent information,
 
 To create files, see [Resolving Filesystem Entries](#resolving-filesystem-entries). To create a writer for a file and access file details:
 
-- To create a `FileWriter` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/file.html#FileWriter), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/file.html#FileWriter), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/file.html#FileWriter) applications), use the `createWriter()` method:
+- To create a `FileWriter` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#FileWriter), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#FileWriter), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#FileWriter) applications), use the `createWriter()` method:
 
   ```
   var f; /* Must be a FileEntry object resolved using the methods presented before */
@@ -321,7 +321,7 @@ To create files, see [Resolving Filesystem Entries](#resolving-filesystem-entrie
   created fileWriter object for testFile.txt
   ```
 
-- To access a `File` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/file.html#File), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/file.html#File), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/file.html#File) applications), use the `file()` method. The object represents the current state of the file.
+- To access a `File` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#File), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#File), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#File) applications), use the `file()` method. The object represents the current state of the file.
 
   ```
   var f; /* Must be a FileEntry object resolved using methods presented before */

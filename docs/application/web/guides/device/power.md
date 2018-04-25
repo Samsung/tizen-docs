@@ -20,7 +20,7 @@ The main features of the Power API include:
 
 ## Prerequisites
 
-To use the Power API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/power.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/power.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
+To use the Power API (in [mobile](../../api/latest/device_api/mobile/tizen/power.html) and [wearable](../../api/latest/device_api/wearable/tizen/power.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/power"/>
@@ -46,7 +46,7 @@ The following table lists the levels you can request.
 
 To request and release the power state:
 
-1. To set the power state, call the `request()` method of the `PowerManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/power.html#PowerManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/power.html#PowerManager) applications) with the intended power resource and its state. In this example, the `SCREEN_NORMAL` state is requested for the screen resource:
+1. To set the power state, call the `request()` method of the `PowerManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/power.html#PowerManager) and [wearable](../../api/latest/device_api/wearable/tizen/power.html#PowerManager) applications) with the intended power resource and its state. In this example, the `SCREEN_NORMAL` state is requested for the screen resource:
 
    ```
    tizen.power.request('SCREEN', 'SCREEN_NORMAL');
@@ -77,7 +77,7 @@ To request and release the power state:
 
 To get, set, and restore the screen brightness:
 
-- To get the screen brightness, call the `getScreenBrightness()` method of the `PowerManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/power.html#PowerManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/power.html#PowerManager) applications):
+- To get the screen brightness, call the `getScreenBrightness()` method of the `PowerManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/power.html#PowerManager) and [wearable](../../api/latest/device_api/wearable/tizen/power.html#PowerManager) applications):
 
   ```
   var screenBrightness = tizen.power.getScreenBrightness();
@@ -99,7 +99,7 @@ To get, set, and restore the screen brightness:
 
 ## Managing the Screen State
 
-To check whether the screen is on, call the `isScreenOn()` method of the `PowerManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/power.html#PowerManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/power.html#PowerManager) applications):
+To check whether the screen is on, call the `isScreenOn()` method of the `PowerManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/power.html#PowerManager) and [wearable](../../api/latest/device_api/wearable/tizen/power.html#PowerManager) applications):
 
 ```
 var isScreenOn = tizen.power.isScreenOn();
