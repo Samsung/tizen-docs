@@ -9,8 +9,6 @@ You can use 2 control methods:
     -   Long press takes more than 1 second. If you press a key 5 times in a row, the action is interpreted as a long press.
 -   A mouse is useful when the user runs Web browser applications.
 
-
-
 The following table lists the basic controls controlled by the remote control keys.
 
 <table>
@@ -136,8 +134,6 @@ The following table lists the basic controls controlled by the remote control ke
  <td colspan="2">Same as short press</td>
 </tr>
 </table>
-
-
 
 The following table lists the controls controlled by the mouse.
 
