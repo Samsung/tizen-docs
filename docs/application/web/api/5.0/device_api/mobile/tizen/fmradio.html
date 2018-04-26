@@ -40,6 +40,8 @@ For more information about how to use FMRadio API, see <a href="https://develope
 <h2>Table of Contents</h2>
 <ul class="toc">
 <li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>1.1. <a href="#RadioState">RadioState</a>
+</li>
+<li>1.2. <a href="#RadioInterruptReason">RadioInterruptReason</a>
 </li></ul>
 </li>
 <li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
@@ -92,7 +94,7 @@ For more information about how to use FMRadio API, see <a href="https://develope
 </tr>
 <tr>
 <td><a href="#FMRadioInterruptCallback">FMRadioInterruptCallback</a></td>
-<td>void <a href="#FMRadioInterruptCallback::oninterrupted">oninterrupted</a> (DOMString reason)<br>
+<td>void <a href="#FMRadioInterruptCallback::oninterrupted">oninterrupted</a> (<a href="#RadioInterruptReason">RadioInterruptReason</a> reason)<br>
     void <a href="#FMRadioInterruptCallback::oninterruptfinished">oninterruptfinished</a> ()</td>
 </tr>
 <tr>
@@ -124,6 +126,48 @@ READY - Indicates that the radio is ready to play or scan            </li>
 PLAYING - Indicates that the radio is playing            </li>
             <li>
 SCANNING - Indicates that the radio is scanning radio channels in the range from <em>tizen.fmradio.frequencyLowerBound</em> to <em>tizen.fmradio.frequencyUpperBound</em>            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="RadioInterruptReason">
+<a class="backward-compatibility-anchor" name="::FMRadio::RadioInterruptReason"></a><h3>1.2. RadioInterruptReason</h3>
+<div class="brief">
+ Specifies the reason of radio interruption.
+          </div>
+<pre class="webidl prettyprint">   enum RadioInterruptReason { "RADIO_INTERRUPTED_BY_MEDIA", "RADIO_INTERRUPTED_BY_SYSTEM", "RADIO_INTERRUPTED_BY_ALARM",
+                               "RADIO_INTERRUPTED_BY_NOTIFICATION", "RADIO_INTERRUPTED_BY_EMERGENCY", "RADIO_INTERRUPTED_BY_VOICE_INFORMATION",
+                               "RADIO_INTERRUPTED_BY_VOICE_RECOGNITION", "RADIO_INTERRUPTED_BY_RINGTONE", "RADIO_INTERRUPTED_BY_VOIP",
+                               "RADIO_INTERRUPTED_BY_CALL", "RADIO_INTERRUPTED_BY_MEDIA_EXTERNAL_ONLY" };</pre>
+<p><span class="version">Since: </span>
+ 5.0
+          </p>
+<div class="description">
+          <p>
+The states defined by this enumerator are:
+          </p>
+          <ul>
+            <li>
+RADIO_INTERRUPTED_BY_MEDIA - radio interrupted by media sound            </li>
+            <li>
+RADIO_INTERRUPTED_BY_SYSTEM - radio interrupted by system sound            </li>
+            <li>
+RADIO_INTERRUPTED_BY_ALARM - radio interrupted by alarm sound            </li>
+            <li>
+RADIO_INTERRUPTED_BY_NOTIFICATION - radio interrupted by notification            </li>
+            <li>
+RADIO_INTERRUPTED_BY_EMERGENCY - radio interrupted by emergency            </li>
+            <li>
+RADIO_INTERRUPTED_BY_VOICE_INFORMATION - radio interrupted by voice information            </li>
+            <li>
+RADIO_INTERRUPTED_BY_VOICE_RECOGNITION - radio interrupted by voice recognition            </li>
+            <li>
+RADIO_INTERRUPTED_BY_RINGTONE - radio interrupted by ringtone            </li>
+            <li>
+RADIO_INTERRUPTED_BY_VOIP - radio interrupted by VoIP            </li>
+            <li>
+RADIO_INTERRUPTED_BY_CALL - radio interrupted by call            </li>
+            <li>
+RADIO_INTERRUPTED_BY_MEDIA_EXTERNAL_ONLY - radio interrupted by external media            </li>
           </ul>
          </div>
 </div>
@@ -918,7 +962,7 @@ tizen.fmradio.unsetAntennaChangeListener();
  The FMRadioInterruptCallback interface defines notification callback when the radio is interrupted.
           </div>
 <pre class="webidl prettyprint">    [Callback, NoInterfaceObject] interface FMRadioInterruptCallback {
-       void oninterrupted(DOMString reason);
+       void oninterrupted(<a href="#RadioInterruptReason">RadioInterruptReason</a> reason);
 
        void oninterruptfinished();
     };</pre>
@@ -936,7 +980,7 @@ tizen.fmradio.unsetAntennaChangeListener();
 <div class="brief">
  Called when the FM radio is interrupted.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void oninterrupted(DOMString reason);
+<div class="synopsis"><pre class="signature prettyprint">void oninterrupted(<a href="#RadioInterruptReason">RadioInterruptReason</a> reason);
              </pre></div>
 <p><span class="version">
             Since: </span>
@@ -1034,6 +1078,11 @@ To guarantee that the FM radio application runs on a device with FM radio, decla
 <pre class="webidl prettyprint">module FMRadio {
     enum RadioState { "PLAYING", "SCANNING", "READY"};
 
+   enum RadioInterruptReason { "RADIO_INTERRUPTED_BY_MEDIA", "RADIO_INTERRUPTED_BY_SYSTEM", "RADIO_INTERRUPTED_BY_ALARM",
+                               "RADIO_INTERRUPTED_BY_NOTIFICATION", "RADIO_INTERRUPTED_BY_EMERGENCY", "RADIO_INTERRUPTED_BY_VOICE_INFORMATION",
+                               "RADIO_INTERRUPTED_BY_VOICE_RECOGNITION", "RADIO_INTERRUPTED_BY_RINGTONE", "RADIO_INTERRUPTED_BY_VOIP",
+                               "RADIO_INTERRUPTED_BY_CALL", "RADIO_INTERRUPTED_BY_MEDIA_EXTERNAL_ONLY" };
+
     [NoInterfaceObject] interface FMRadioObject {
        readonly attribute <a href="#FMRadioManager">FMRadioManager</a> fmradio;
     };
@@ -1083,7 +1132,7 @@ To guarantee that the FM radio application runs on a device with FM radio, decla
     };
 
     [Callback, NoInterfaceObject] interface FMRadioInterruptCallback {
-       void oninterrupted(DOMString reason);
+       void oninterrupted(<a href="#RadioInterruptReason">RadioInterruptReason</a> reason);
 
        void oninterruptfinished();
     };
