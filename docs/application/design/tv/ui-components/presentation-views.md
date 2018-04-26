@@ -52,12 +52,6 @@ The following guidelines apply to list items:
 
 Progress components provide information about the current state of ongoing tasks.
 
-There are 2 types of progress components:
-
-- [Activity indicator](#Activity-Indicator)
-- [Progress indicator](#Progress-Indicator)
-
-
 ### Activity Indicator
 
 An activity indicator informs the user that a task is ongoing without specifying the progress rate. The indicator disappears when the task is completed.

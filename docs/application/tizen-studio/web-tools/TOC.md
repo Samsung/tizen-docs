@@ -6,7 +6,7 @@
 
 # Write and Edit Code
 ## [Web Editor](/application/tizen-studio/web-tools/web-editor.md)
-## [Live Edit](/application/tizen-studio/web-tools/live-edit.md)
+## [Live Edit](/application/tizen-studio/web-tools/live-editing.md)
 ## [Content Assist](/application/tizen-studio/web-tools/content-assist.md)
 ## [Code Clean](/application/tizen-studio/web-tools/code-productivity.md)
 ## [REST Viewer](/application/tizen-studio/web-tools/rest-viewer.md)

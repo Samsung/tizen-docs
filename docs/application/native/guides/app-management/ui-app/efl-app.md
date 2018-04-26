@@ -1,7 +1,6 @@
 # EFL Applications
 
-
-You can use the Enlightenment Foundation Libraries (EFL) to create a 2D-based Tizen native application. However, EFL supports 2.5D and 3D effects and 3D objects as well. For 3D-based Tizen native applications, you can use the [Dynamic Animation Library (DALi) UI toolkit](../ui/dali/dali-overview.md) as well.
+You can use the Enlightenment Foundation Libraries (EFL) to create a 2D-based Tizen native application. However, EFL supports 2.5D and 3D effects and 3D objects as well. For 3D-based Tizen native applications, you can use the [Dynamic Animation Library (DALi) UI toolkit](../../ui/dali/index.md) as well.
 
 EFL is a collection of libraries that are independent or can build on top of each other. It provides useful features that complement an existing OS environment, rather than wrapping or abstracting it. This means that EFL expects you to use other system libraries and APIs in conjunction with EFL libraries to provide a complete working application or library - using EFL as a set of convenient pre-made libraries to accomplish a whole host of complex or tedious tasks.
 
@@ -29,7 +28,7 @@ Before you start UI programming with EFL, you must familiarize yourself with the
 
   Eina is a toolbox that implements an API for data types in an efficient way. It contains all the functions needed to create lists and hashes, manage shared strings, open shared libraries, and manage errors and memory pools.
 
-For more information on how to get started with EFL programming, see [Getting Started with EFL UI Programming](../ui/efl/getting-started.md). It helps you to understand how EFL works, and how you can create a simple EFL application with basic features.
+For more information on how to get started with EFL programming, see [Getting Started with EFL UI Programming](../../ui/efl/getting-started.md). It helps you to understand how EFL works, and how you can create a simple EFL application with basic features.
 
 ## Application Types
 

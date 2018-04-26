@@ -6,9 +6,9 @@ The following UI components are user input elements:
 
 -   [Button](#button)
 -   [Check](#check)
--   [Radio button](#radio)
+-   [Radio button](#radio-button)
 -   [Text input](#text-input)
--   [Drop-down menu](#dropdown-menu)
+-   [Drop-down menu](#drop-down-menu)
 -   [Slider](#slider)
 -   [Picker](#picker)
 
@@ -91,6 +91,21 @@ The following guidelines apply to radio buttons:
 
 *Unselected and selected radio buttons*
 
+## Text Input
+
+Text input components allow the user to enter text. A text input consists of an input field and a cursor. It can also contain guide text, which describes the purpose of the input field or provides example input.
+
+The following guidelines apply to guide text:
+
+-   If the text input field has no label, use a noun form for the guide text.
+-   If the text input field has a label, use the guide text to present example input in the expected format.
+-   If it is not possible to provide an input example, do not use guide text.
+-   The guide text disappears when the user enters text into the input field.
+
+![text input](media/uc_03_5_ui_text_input_1.png)
+
+*Parts of a text input component*
+
 ## Drop-down Menu
 
 Drop-down menus allow the user to select 1 option from a list of multiple options within a drop-down popup. A drop-down menu consists of a drop-down button and a drop-down popup. When the user selects the button, the popup appears.
@@ -115,21 +130,6 @@ The following guidelines apply to drop-down menus:
 ![drop-down menu](media/uc_03_6_ui_dropdown_menu_re-850x478.png)
 
 *Drop-down menu with selected option as label*
-
-## Text Input
-
-Text input components allow the user to enter text. A text input consists of an input field and a cursor. It can also contain guide text, which describes the purpose of the input field or provides example input.
-
-The following guidelines apply to guide text:
-
--   If the text input field has no label, use a noun form for the guide text.
--   If the text input field has a label, use the guide text to present example input in the expected format.
--   If it is not possible to provide an input example, do not use guide text.
--   The guide text disappears when the user enters text into the input field.
-
-![text input](media/uc_03_5_ui_text_input_1.png)
-
-*Parts of a text input component*
 
 ## Slider
 

@@ -48,7 +48,7 @@ The following table lists the callbacks for the basic signals provided by the `D
 | `PauseSignal()`           | Called when the application becomes invisible. The signal is emitted when the application is paused due to another application becoming active (for example, because of a call, alarm, or message alert). |
 | `TerminateSignal()`       | Called when the application is terminated. The signal is useful when the application has resources to release at the end. By releasing those resources, you allow other applications to use them. |
 | `ResizeSignal()`          | Called when the window size is changes. The signal is called when a window is created or resized. You can use the signal to change the UI layout according to the new window size. |
-| `AppControlSignal()`      | Called when an [application control](app-controls-n.md) signal is emitted from another application. This provides the means to communicate between applications. |
+| `AppControlSignal()`      | Called when an [application control](../app-controls.md) signal is emitted from another application. This provides the means to communicate between applications. |
 | `LanguageChangedSignal()` | Called when the language is changed on the device. You can use the signal to refresh the display with the new language. |
 | `RegionChangedSignal()`   | Called when the region is changed. You can use the signal to refresh any region-specific information on the screen. |
 | `BatteryLowSignal()`      | Called when the battery state is low. You can use the signal to save any crucial information in case the battery state becomes so low that the application is forcefully terminated. |

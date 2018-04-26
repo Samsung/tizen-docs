@@ -1,7 +1,7 @@
 # DALi Applications
 
 
-You can use the Dynamic Animation Library (DALi) 3D UI toolkit to create a high-performance, rich UI application. For 2D-based Tizen native applications, use the [Enlightenment Foundation Libraries (EFL) UI toolkit](../../ui/efl/introduction-n.md).
+You can use the Dynamic Animation Library (DALi) 3D UI toolkit to create a high-performance, rich UI application. For 2D-based Tizen native applications, use the [Enlightenment Foundation Libraries (EFL) UI toolkit](../../ui/efl/index.md).
 
 Dynamic Animation Library (DALi) internally defines a virtual 3D world (space) and maintains hierarchical objects in the 3D world. The hierarchical object tree is known as the [scene graph](http://en.wikipedia.org/wiki/Scene_graph).
 
@@ -23,7 +23,7 @@ Before you start UI programming with DALi, you must familiarize yourself with th
 
   This module provides UI components and various effects on top of the DALi core.
 
-For more information on how to implement a 3D world using DALi, see [DALi Overview](../../ui/dali/dali-overview.md). It helps you to understand how to use DALi easily, while providing a Hello World example of constructing a virtual 3D world.
+For more information on how to implement a 3D world using DALi, see [DALi Overview](../../ui/dali/index.md). It helps you to understand how to use DALi easily, while providing a Hello World example of constructing a virtual 3D world.
 
 ## Application Types
 

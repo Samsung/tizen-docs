@@ -202,7 +202,7 @@ To manage the application life-cycle:
 
    For other available functions, see the `app.h` header file.
 
-   For more information on launching other applications from your application using application controls, see [Application Controls](app-controls.md).
+   For more information on launching other applications from your application using application controls, see [Application Controls](../app-controls.md).
 
 <a name="allow_bg"></a>
 ## Background Categories
