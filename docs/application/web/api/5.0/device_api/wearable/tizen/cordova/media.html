@@ -22,6 +22,19 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-me
         <p>
 <b>Remark:</b> Usage of cordova API needs <em>http://tizen.org/privilege/filesystem.read</em> privilege.
         </p>
+        <p>
+<b id="StorageRemark">Remark:</b> In order to access files, a proper privilege has to be defined additionally:
+        </p>
+        <ul>
+          <li>
+for accessing only internal storage using this API, a privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> must be provided,          </li>
+          <li>
+for accessing only external storage using this API, a privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> must be provided,          </li>
+          <li>
+for accessing internal and external storage using this API, privileges (<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> and <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>) must be provided.          </li>
+          <li>
+Storage privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="../ppm.html">Privacy Privilege API</a> for more details.          </li>
+        </ul>
        </div>
 <p><span class="version">
             Since: </span>
