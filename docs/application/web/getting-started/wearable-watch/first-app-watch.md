@@ -532,7 +532,7 @@ By default, the watch uses a background image. If you change the CSS code and re
 
 ### Showing the Current Time with W3C
 
-To display the current time, use the [CSS Transforms](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#transforms) API in the `app.js` file to rotate the clock hand images:
+To display the current time, use the [CSS Transforms](../../api/latest/w3c_api/w3c_api_w.html#transforms) API in the `app.js` file to rotate the clock hand images:
 
 1.  When the application is shown on the device screen, initialize it to update the clock hands every second:
 
@@ -574,4 +574,3 @@ To display the current time, use the [CSS Transforms](../../../../org.tizen.web.
         element.style.transform = 'rotate(' + angle + 'deg)';
     }
     ```
-

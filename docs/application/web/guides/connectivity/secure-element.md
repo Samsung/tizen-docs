@@ -8,7 +8,7 @@ The main features of the Secure Element API include:
 
 - Managing secure elements   
 
-  You can [manage secure elements](#managing-secure-elements) by retrieving all the available secure element readers and receiving notifications of reader changes using the `SEService` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/se.html#SEService) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/se.html#SEService) applications). You can also shut down secure elements.
+  You can [manage secure elements](#managing-secure-elements) by retrieving all the available secure element readers and receiving notifications of reader changes using the `SEService` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#SEService) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#SEService) applications). You can also shut down secure elements.
 
 - Opening sessions and channels   
 
@@ -24,7 +24,7 @@ The main features of the Secure Element API include:
 
 ## Prerequisites
 
-To use the Secure Element API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/se.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/se.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
+To use the Secure Element API (in [mobile](../../api/latest/device_api/mobile/tizen/se.html) and [wearable](../../api/latest/device_api/wearable/tizen/se.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/secureelement"/>
@@ -34,7 +34,7 @@ To use the Secure Element API (in [mobile](../../../../org.tizen.web.apireferenc
 
 To use secure elements in your application, you must learn to retrieve them and track changes in them:
 
-1. To retrieve all the available secure element readers, use the `getReaders()` method of the `SEService` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/se.html#SEService) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/se.html#SEService) applications). The method registers the `ReaderArraySuccessCallback` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/se.html#ReaderArraySuccessCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/se.html#ReaderArraySuccessCallback) applications), which is invoked when the list of available secure element readers has been successfully retrieved.
+1. To retrieve all the available secure element readers, use the `getReaders()` method of the `SEService` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#SEService) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#SEService) applications). The method registers the `ReaderArraySuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#ReaderArraySuccessCallback) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#ReaderArraySuccessCallback) applications), which is invoked when the list of available secure element readers has been successfully retrieved.
 
    ```
    function success(readers) {
@@ -50,7 +50,7 @@ To use secure elements in your application, you must learn to retrieve them and 
 
 2. To receive reader change notifications, use the `registerSEListener()` method of the `SEService` interface:
 
-   1. Define a listener using the `SEChangeListener` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/se.html#SEChangeListener) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/se.html#SEChangeListener) applications):
+   1. Define a listener using the `SEChangeListener` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#SEChangeListener) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#SEChangeListener) applications):
 
       ```
       var setSEChange = {
@@ -79,7 +79,7 @@ To use secure elements in your application, you must learn to retrieve them and 
 
 To use secure elements in your application, you must learn to open sessions and channels:
 
-1. To open a session, use the `openSession()` method of the `Reader` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/se.html#Reader) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/se.html#Reader) applications). The method registers the `SessionSuccessCallback` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/se.html#SessionSuccessCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/se.html#SessionSuccessCallback) applications), which is invoked when a session on a specific reader is opened.
+1. To open a session, use the `openSession()` method of the `Reader` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#Reader) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#Reader) applications). The method registers the `SessionSuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#SessionSuccessCallback) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#SessionSuccessCallback) applications), which is invoked when a session on a specific reader is opened.
 
    ```
    function successCB(session) {
@@ -94,7 +94,7 @@ To use secure elements in your application, you must learn to open sessions and 
 
 2. To open a channel within a session:
 
-   1. Open a basic channel with the `openBasicChannel()` method of the `Session` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/se.html#Session) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/se.html#Session) applications). The method registers the `ChannelSuccessCallback` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/se.html#ChannelSuccessCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/se.html#ChannelSuccessCallback) applications), which is invoked when a channel is opened to communicate with a specific applet.
+   1. Open a basic channel with the `openBasicChannel()` method of the `Session` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#Session) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#Session) applications). The method registers the `ChannelSuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#ChannelSuccessCallback) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#ChannelSuccessCallback) applications), which is invoked when a channel is opened to communicate with a specific applet.
 
       ```
       function successCB(channel) {
@@ -122,14 +122,14 @@ To use secure elements in your application, you must learn to open sessions and 
 
 To use secure elements in your application, you must learn to transmit application protocol data units (APDU) to secure elements:
 
-1. To transmit an APDU command to a secure element, use the `transmit()` method of the `Channel` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/se.html#Channel) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/se.html#Channel) applications).
+1. To transmit an APDU command to a secure element, use the `transmit()` method of the `Channel` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#Channel) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#Channel) applications).
 
    ```
    /* APDU command is defined in ISO7816-4 */
    channel.transmit(command, successCB, errorCB);
    ```
 
-2. The `transmit()` method registers the `TransmitSuccessCallback` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/se.html#TransmitSuccessCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/se.html#TransmitSuccessCallback) applications), which is invoked when a command has been successfully transmitted:
+2. The `transmit()` method registers the `TransmitSuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#TransmitSuccessCallback) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#TransmitSuccessCallback) applications), which is invoked when a command has been successfully transmitted:
 
    ```
    function successCB(response) {
@@ -144,25 +144,25 @@ To use secure elements in your application, you must learn to transmit applicati
 
 To use secure elements in your application, you must learn to close sessions and channels:
 
-1. To close a specific channel, use the `close()` method of the `Channel` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/se.html#Channel) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/se.html#Channel) applications):
+1. To close a specific channel, use the `close()` method of the `Channel` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#Channel) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#Channel) applications):
 
    ```
    channel.close();
    ```
 
-2. To close all channels within a specific session, use the `closeChannels()` method of the `Session` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/se.html#Session) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/se.html#Session) applications):
+2. To close all channels within a specific session, use the `closeChannels()` method of the `Session` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#Session) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#Session) applications):
 
    ```
    session.closeChannels();
    ```
 
-3. To close a specific session, use the `close()` method of the `Session` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/se.html#Session) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/se.html#Session) applications):
+3. To close a specific session, use the `close()` method of the `Session` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#Session) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#Session) applications):
 
    ```
    session.close();
    ```
 
-4. To close all session for a specific reader, use the `closeSessions()` method of the `Reader` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/se.html#Reader) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/se.html#Reader) applications):
+4. To close all session for a specific reader, use the `closeSessions()` method of the `Reader` interface (in [mobile](../../api/latest/device_api/mobile/tizen/se.html#Reader) and [wearable](../../api/latest/device_api/wearable/tizen/se.html#Reader) applications):
 
    ```
    reader.closeSessions();

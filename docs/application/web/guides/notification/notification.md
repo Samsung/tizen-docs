@@ -22,14 +22,14 @@ The main features of the Notification API include:
 
   You can [create a template](#managing-notification-templates) that can be reused in multiple notifications.
 
-To display a notification, you need to create a `Notification` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#Notification) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#Notification) applications), or its subtype.
+To display a notification, you need to create a `Notification` object (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#Notification) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#Notification) applications), or its subtype.
 
 > **Note**  
-> The `StatusNotification` subtype (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#StatusNotification) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#StatusNotification) applications) is deprecated since Tizen 4.0. To display notifications in the status bar, use the `UserNotification` subtype (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#UserNotification) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#UserNotification) applications).
+> The `StatusNotification` subtype (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#StatusNotification) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#StatusNotification) applications) is deprecated since Tizen 4.0. To display notifications in the status bar, use the `UserNotification` subtype (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#UserNotification) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#UserNotification) applications).
 
 ## Prerequisites
 
-To use the Notification API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
+To use the Notification API (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/notification"/>
@@ -39,7 +39,7 @@ To use the Notification API (in [mobile](../../../../org.tizen.web.apireference/
 
 Learning how to create notifications allows you to design interactive applications that provide the user information about their events:
 
-1. Define the notification properties of the `UserNotificationInit` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#UserNotificationInit) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#UserNotificationInit) applications):
+1. Define the notification properties of the `UserNotificationInit` interface (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#UserNotificationInit) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#UserNotificationInit) applications):
 
    ```
    /* Application control */
@@ -64,15 +64,15 @@ Learning how to create notifications allows you to design interactive applicatio
    };
    ```
 
-   The path in the `iconPath` and `soundPath` parameters means a relative file location defined in the Filesystem API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/filesystem.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/filesystem.html) applications). The path is not an absolute file location, but instead uses a [virtual root location](./data/file-system.md) (such as `images` in `images/image1.jpg`).
+   The path in the `iconPath` and `soundPath` parameters means a relative file location defined in the Filesystem API (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html) and [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html) applications). The path is not an absolute file location, but instead uses a [virtual root location](../data/file-system.md) (such as `images` in `images/image1.jpg`).
 
-2. To be able to display the notification, create a `UserNotification` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#UserNotification) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#UserNotification) applications) with the notification type, title, and the additional notification properties defined in the previous step.
+2. To be able to display the notification, create a `UserNotification` object (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#UserNotification) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#UserNotification) applications) with the notification type, title, and the additional notification properties defined in the previous step.
 
    ```
    var notification = new tizen.UserNotification('SIMPLE', 'Simple notification', notificationGroupDict);
    ```
 
-3. To post the notification, use the `post()` method of the `NotificationManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#NotificationManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#NotificationManager) applications):
+3. To post the notification, use the `post()` method of the `NotificationManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#NotificationManager) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#NotificationManager) applications):
 
    ```
    tizen.notification.post(notification);
@@ -82,7 +82,7 @@ Learning how to create notifications allows you to design interactive applicatio
 
 Learning how to create progress notifications allows you to design interactive applications that inform the user about the progress of an activity:
 
-1. Define the notification properties of the `UserNotificationInit` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#UserNotificationInit) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#UserNotificationInit) applications):
+1. Define the notification properties of the `UserNotificationInit` interface (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#UserNotificationInit) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#UserNotificationInit) applications):
 
    ```
    /* Application control */
@@ -105,15 +105,15 @@ Learning how to create progress notifications allows you to design interactive a
    };
    ```
 
-   The path in the `iconPath` parameter means a file location defined in the Filesystem API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/filesystem.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/filesystem.html) applications). The path is not an absolute file location, but instead uses a [virtual root location](./data/file-system.md) (such as `images` in `images/image1.jpg`).
+   The path in the `iconPath` parameter means a file location defined in the Filesystem API (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html) and [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html) applications). The path is not an absolute file location, but instead uses a [virtual root location](../data/file-system.md) (such as `images` in `images/image1.jpg`).
 
-2. To be able to display the notification, create a `UserNotification` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#UserNotification) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#UserNotification) applications) with the notification type, title, and the additional notification properties defined in the previous step:
+2. To be able to display the notification, create a `UserNotification` object (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#UserNotification) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#UserNotification) applications) with the notification type, title, and the additional notification properties defined in the previous step:
 
    ```
    var notification = new tizen.UserNotification('PROGRESS', 'Progress notification', notificationGroupDict);
    ```
 
-3. Define a function which uses the `update()` method of the `NotificationManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#NotificationManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#NotificationManager) applications) to update the posted notification every second:
+3. Define a function which uses the `update()` method of the `NotificationManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#NotificationManager) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#NotificationManager) applications) to update the posted notification every second:
 
    ```
    function updateProgressNotification(progress) {
@@ -144,7 +144,7 @@ Learning how to manage notifications allows you to design interactive applicatio
 
 1. To retrieve notifications:
 
-   - To retrieve a previously posted notification, use the `getNotification()` method of the `NotificationManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#NotificationManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#NotificationManager) applications with the notification ID as a parameter:`var myId = notification.id;var myNotification = tizen.notification.getNotification(myId);`
+   - To retrieve a previously posted notification, use the `getNotification()` method of the `NotificationManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#NotificationManager) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#NotificationManager) applications with the notification ID as a parameter:`var myId = notification.id;var myNotification = tizen.notification.getNotification(myId);`
 
    - To retrieve all previously posted notifications, use the `getAllNotifications()` method, which returns all the notifications as an array:
 
@@ -193,7 +193,7 @@ Learning how to manage notification templates allows you to create a template fr
      var myNotification;
      ```
 
-  2. Save the template with the `saveNotificationAsTemplate()` method of the `NotificationManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#NotificationManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#NotificationManager) applications):
+  2. Save the template with the `saveNotificationAsTemplate()` method of the `NotificationManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#NotificationManager) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#NotificationManager) applications):
 
      `try {    var templateName = 'importantNoti';    tizen.notification.saveNotificationAsTemplate(templateName, myNotification);} catch (e) {    console.log('Error ' + e.message + ' occurred');}`
 
@@ -208,7 +208,7 @@ Learning how to manage notification templates allows you to create a template fr
   }
   ```
 
-  This method returns a `UserNotification` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#UserNotification) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#UserNotification) applications), even if the template was created based on a `StatusNotification` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html#StatusNotification) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/notification.html#StatusNotification) applications).
+  This method returns a `UserNotification` object (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#UserNotification) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#UserNotification) applications), even if the template was created based on a `StatusNotification` object (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#StatusNotification) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#StatusNotification) applications).
 
 ## Related Information
 * Dependencies

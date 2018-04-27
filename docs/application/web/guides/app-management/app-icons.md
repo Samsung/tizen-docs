@@ -20,7 +20,7 @@ The main features of the Badge API include:
 
 ## Prerequisites
 
-To use the Badge API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/badge.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/badge.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
+To use the Badge API (in [mobile](../../api/latest/device_api/mobile/tizen/badge.html) and [wearable](../../api/latest/device_api/wearable/tizen/badge.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/notification"/>
@@ -36,7 +36,7 @@ Getting and setting the badge number is a useful UI management skill:
    var appId = tizen.application.getCurrentApplication().appInfo.id;
    ```
 
-2. To check the badge number of the current application, use the `getBadgeCount()` method of the `BadgeManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/badge.html#BadgeManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/badge.html#BadgeManager) applications):
+2. To check the badge number of the current application, use the `getBadgeCount()` method of the `BadgeManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/badge.html#BadgeManager) and [wearable](../../api/latest/device_api/wearable/tizen/badge.html#BadgeManager) applications):
 
    ```
    var count = tizen.badge.getBadgeCount(appId);
@@ -60,7 +60,7 @@ Getting and setting the badge number is a useful UI management skill:
 
 Registering a listener for badge count changes to react to new badges and display your badges is a useful UI management skill:
 
-1. To register an event handler for receiving a notification about badge changes, use the `addChangeListener()` method of the `BadgeManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/badge.html#BadgeManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/badge.html#BadgeManager) applications), specifying a list of application IDs:
+1. To register an event handler for receiving a notification about badge changes, use the `addChangeListener()` method of the `BadgeManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/badge.html#BadgeManager) and [wearable](../../api/latest/device_api/wearable/tizen/badge.html#BadgeManager) applications), specifying a list of application IDs:
 
    ```
    function watcher(appId, count) {

@@ -18,7 +18,7 @@ Each feedback pattern can have separate media files of sound and vibration type.
 
 ## Checking the Pattern
 
-You can check whether a feedback type (sound or vibration) is supported for a specified pattern. To get information about the supported specified system predefined pattern type pairs, use the `isPatternSupported()` method of the `FeedbackManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/feedback.html#FeedbackManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/feedback.html#FeedbackManager) applications):
+You can check whether a feedback type (sound or vibration) is supported for a specified pattern. To get information about the supported specified system predefined pattern type pairs, use the `isPatternSupported()` method of the `FeedbackManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/feedback.html#FeedbackManager) and [wearable](../../api/latest/device_api/wearable/tizen/feedback.html#FeedbackManager) applications):
 
 ```
 var pattern = 'BT_CONNECTED', type = 'TYPE_SOUND';
@@ -32,11 +32,11 @@ console.log('pattern ' + pattern + ' is' + isSupportedStr + ' supported');
 
 ## Setting the Media Pattern
 
-The available predefined system patterns are defined in the `FeedbackPattern` enumeration (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/feedback.html#FeedbackPattern) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/feedback.html#FeedbackPattern) applications).
+The available predefined system patterns are defined in the `FeedbackPattern` enumeration (in [mobile](../../api/latest/device_api/mobile/tizen/feedback.html#FeedbackPattern) and [wearable](../../api/latest/device_api/wearable/tizen/feedback.html#FeedbackPattern) applications).
 
 To start and stop playing various types of predefined reactions:
 
-1. To set a specified type of reaction for an event, use the `play()` method of the `FeedbackManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/feedback.html#FeedbackManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/feedback.html#FeedbackManager) applications):
+1. To set a specified type of reaction for an event, use the `play()` method of the `FeedbackManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/feedback.html#FeedbackManager) and [wearable](../../api/latest/device_api/wearable/tizen/feedback.html#FeedbackManager) applications):
 
    ```
    try {

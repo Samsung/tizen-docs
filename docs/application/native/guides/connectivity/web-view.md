@@ -16,7 +16,7 @@ Later, you can use various helper functions to [find the created window](#helper
 
 To enable your application to use the Web view functionality:
 
-1. To use the Web API (in [mobile](../../api/mobile/latest/group__CAPI__WEB__FRAMEWORK.html) and [wearable](../../api/Wearable/latest/group__CAPI__WEB__FRAMEWORK.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the Web API (in [mobile](../../api/mobile/latest/group__CAPI__WEB__FRAMEWORK.html) and [wearable](../../api/wearable/latest/group__CAPI__WEB__FRAMEWORK.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>

@@ -18,7 +18,7 @@ When coding your application, you must consider the following issues:
 
 The Tizen Studio supports hover help for Web API and W3C Widget APIs.
 
-The hover help provides input from the [API Reference](../../../../org.tizen.web.apireference/html/web_api_reference.htm).
+The hover help provides input from the [API Reference](../../api/latest/device_api/mobile/index.html).
 
 **Figure: Hover help**
 

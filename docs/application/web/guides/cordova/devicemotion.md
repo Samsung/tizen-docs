@@ -16,7 +16,7 @@ The main features of the Device Motion API include:
 
 ## Acceleration Values
 
-The acceleration data is captured into the `Acceleration` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/device-motion.html#Acceleration), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/device-motion.html#Acceleration), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/device-motion.html#Acceleration) applications). The acceleration values include the effect of gravity (9.81 m/s2), so that when a device lies flat and facing up, the x, y, and z values returned must be 0, 0, and 9.81.
+The acceleration data is captured into the `Acceleration` interface (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/device-motion.html#Acceleration), [wearable](../../api/latest/device_api/wearable/tizen/cordova/device-motion.html#Acceleration), and [TV](../../api/latest/device_api/tv/tizen/cordova/device-motion.html#Acceleration) applications). The acceleration values include the effect of gravity (9.81 m/s2), so that when a device lies flat and facing up, the x, y, and z values returned must be 0, 0, and 9.81.
 
 **Table: Acceleration values**
 

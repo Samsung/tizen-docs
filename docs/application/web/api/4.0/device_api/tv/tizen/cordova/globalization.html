@@ -238,8 +238,7 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-gl
 <div class="brief">
  Gets the BCP 47 language tag for the client's current language.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getPreferredLanguage(<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void getPreferredLanguage(<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -282,18 +281,16 @@ during this method's execution.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/*
-   When the browser is set to the en-US language,
-   this outputs the text
-   similar to the results that follow
-*/
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* When the browser is set to the en-US language, */
+/* this outputs the text */
+/* similar to the results that follow */
+
 navigator.globalization.getPreferredLanguage(function(language)
 {
-   console.log('Language: ' + language.value);
+  console.log('Language: ' + language.value);
 }, function()
 {
-   console.log('Error getting language.');
+  console.log('Error getting language');
 });
 </pre>
 </div>
@@ -309,8 +306,7 @@ navigator.globalization.getPreferredLanguage(function(language)
 <div class="brief">
  Returns the BCP 47 compliant tag for the client's current locale settings.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getLocaleName(<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void getLocaleName(<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -355,19 +351,18 @@ occuring while getting a locale name.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/*
-   When the browser is set to the en-US language,
-   this outputs the text
-   similar to the results that follow
-*/
-navigator.globalization.getLocaleName(function(locale)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* When the browser is set to the en-US language, */
+/* this outputs the text */
+/* similar to the results that follow */
+
+navigator.globalization.getLocaleName( function(locale)
 {
-   console.log('Locale: ' + locale.value);
+  console.log('Locale: ' + locale.value);
 }, function()
 {
-   console.log('Error getting locale.');
-});
+  console.log('Error getting locale');
+}
+);
 </pre>
 </div>
 <div class="output">
@@ -382,8 +377,7 @@ navigator.globalization.getLocaleName(function(locale)
 <div class="brief">
  Returns a date formatted as a string according to the client's locale and timezone.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void dateToString(Date date, <a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#DateOptions">DateOptions</a> options);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void dateToString(Date date, <a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#DateOptions">DateOptions</a> options);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -432,18 +426,16 @@ passed as a parameter to the successCallback.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/*
-   When the browser is set to the en-US language,
-   this outputs the text similar to the results that follow
-   This example uses the default conversion options
-*/
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* When the browser is set to the en-US language, */
+/* this should output text similar to the results that follow */
+/* This example uses the default conversion options */
+
 navigator.globalization.dateToString(new Date(), function(date)
 {
-   console.log('Date: ' + date.value);
+  console.log('Date: ' + date.value);
 }, function()
 {
-   console.log('Error getting dateString.');
+  console.log('Error getting dateString');
 }, {formatLength: 'short', selector: 'date and time'});
 </pre>
 </div>
@@ -460,8 +452,7 @@ navigator.globalization.dateToString(new Date(), function(date)
  Returns a pattern string to format and parse currency values according to
 the client's user preferences and ISO 4217 currency code.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getCurrencyPattern(DOMString currencyCode, <a href="#PatternSuccessCallback">PatternSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void getCurrencyPattern(DOMString currencyCode, <a href="#PatternSuccessCallback">PatternSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -506,23 +497,21 @@ for example 'USD'.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/*
-   When the browser is set to the en-US language,
-   and the selected currency is United States Dollars,
-   this outputs the text similar to the results that follow
-*/
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* When the browser is set to the en-US language and the selected */
+/* currency is United States dollars, this outputs */
+/* the text similar to the results that follow */
+
 navigator.globalization.getCurrencyPattern('USD', function(pattern)
 {
-   console.log('pattern: '  + pattern.pattern);
-   console.log('code: ' + pattern.code);
-   console.log('fraction: ' + pattern.fraction);
-   console.log('rounding: ' + pattern.rounding);
-   console.log('decimal: '  + pattern.decimal);
-   console.log('grouping: ' + pattern.grouping);
+  console.log('pattern: '  + pattern.pattern);
+  console.log('code: ' + pattern.code);
+  console.log('fraction: ' + pattern.fraction);
+  console.log('rounding: ' + pattern.rounding);
+  console.log('decimal: '  + pattern.decimal);
+  console.log('grouping: ' + pattern.grouping);
 }, function()
 {
-   console.log('Error getting pattern.');
+  console.log('Error getting pattern');
 });
 </pre>
 </div>
@@ -544,8 +533,7 @@ grouping: ,
  Returns an array of the names of the months or the days of the week,
 depending on the client's user preferences and calendar.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getDateNames(<a href="#ArrayStringSuccessCallback">ArrayStringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#GetDateNamesOptions">GetDateNamesOptions</a> options);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void getDateNames(<a href="#ArrayStringSuccessCallback">ArrayStringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#GetDateNamesOptions">GetDateNamesOptions</a> options);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -592,22 +580,20 @@ The default value is <var>{type: 'wide', item: 'months'}</var>                </
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/*
-   When the browser is set to the en-US language,
-   this example logs the names of months, as per locale settings
-   with text similar to the results that follow
-*/
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* When the browser is set to the en_US language, */
+/* this example logs the names of months, as per locale settings */
+/* with text similar to the results that follow */
+
 navigator.globalization.getDateNames(function(names)
 {
-   for (var i = 0; i &lt; names.value.length; i++)
-   {
-      console.log('month: ' + names.value[i]);
-   }
+  for (var i = 0; i &lt; names.value.length; i++)
+  {
+    console.log('month: ' + names.value[i]);
+  }
 }, function()
 {
-   console.log('Error getting names.');
-}, {type: 'wide', item: 'months'});
+  console.log('Error getting names');
+}, { type: 'wide', item: 'months' });
 </pre>
 </div>
 <div class="output">
@@ -634,8 +620,7 @@ month: December
  Gets a pattern string to format and parse dates according to the client's
 user preferences.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getDatePattern(<a href="#GetDatePatternSuccessCallback">GetDatePatternSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#DateOptions">DateOptions</a> options);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void getDatePattern(<a href="#GetDatePatternSuccessCallback">GetDatePatternSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#DateOptions">DateOptions</a> options);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -680,21 +665,19 @@ The default value is <var>{formatLength: 'short', selector: 'date and time'}</va
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/*
-   This example displays the locale date pattern
-   When the browser is set to the en-US locale,
-   this outputs the text similar to the results that follow
-*/
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* This example displays the locale date pattern */
+/* When the browser is set to the en-US locale, */
+/* this outputs the text similar to the results that follow */
+
 function checkDatePattern()
 {
-   navigator.globalization.getDatePattern(function(date)
-   {
-      console.log('Date pattern: ' + date.pattern);
-   }, function()
-   {
-      console.log('Error getting pattern');
-   }, {formatLength: 'short', selector: 'date and time'});
+  navigator.globalization.getDatePattern(function(date)
+  {
+    console.log('Date pattern: ' + date.pattern);
+  }, function()
+  {
+    console.log('Error getting pattern');
+  }, {formatLength: 'short', selector: 'date and time'});
 }
 
 checkDatePattern();
@@ -713,8 +696,7 @@ checkDatePattern();
  Gets the first day of the week according to the client's
 user preferences and calendar.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getFirstDayOfWeek(<a href="#LongSuccessCallback">LongSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void getFirstDayOfWeek(<a href="#LongSuccessCallback">LongSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -756,22 +738,20 @@ the first day of a week.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/*
-   When the browser is set to the en_US locale,
-   this outputs the text similar to "day: 1"
-*/
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* When the browser is set to the en_US locale, */
+/* this outputs the text similar to "day: 1" */
+
 navigator.globalization.getFirstDayOfWeek(function(day)
 {
-   console.log('day: ' + day.value);
+  console.log('Day: ' + day.value);
 }, function()
 {
-   console.log('Error getting first day of week.');
+  console.log('Error getting first day of week');
 });
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>day: 1
+<span class="title"><p>Output example:</p></span><pre>Day: 1
 </pre>
 </div>
 </dd>
@@ -783,8 +763,7 @@ navigator.globalization.getFirstDayOfWeek(function(day)
  Gets a pattern string to format and parse numbers
 according to the client's user preferences.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getNumberPattern(<a href="#GetNumberPatternSuccessCallback">GetNumberPatternSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void getNumberPattern(<a href="#GetNumberPatternSuccessCallback">GetNumberPatternSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -831,25 +810,24 @@ the pattern will be returned.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/*
-   When the browser is set to the en_US locale,
-   this outputs the text similar to the results that follow
-*/
-navigator.globalization.getNumberPattern(function(pattern)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* When the browser is set to the en_US locale, */
+/* this example outputs the text */
+/* similar to the results that follow */
+
+navigator.globalization.getNumberPattern( function(pattern)
 {
-   console.log('pattern: ' + pattern.pattern);
-   console.log('symbol: ' + pattern.symbol);
-   console.log('fraction: ' + pattern.fraction);
-   console.log('rounding: ' + pattern.rounding);
-   console.log('positive: ' + pattern.positive);
-   console.log('negative: ' + pattern.negative);
-   console.log('decimal: ' + pattern.decimal);
-   console.log('grouping: ' + pattern.grouping);
-}, function()
-{
-   console.log('An error occurred.');
-}, {type: 'decimal'});
+  console.log('pattern: '  + pattern.pattern);
+  console.log('symbol: '   + pattern.symbol);
+  console.log('fraction: ' + pattern.fraction);
+  console.log('rounding: ' + pattern.rounding);
+  console.log('positive: ' + pattern.positive);
+  console.log('negative: ' + pattern.negative);
+  console.log('decimal: '  + pattern.decimal);
+  console.log('grouping: ' + pattern.grouping);
+  }, function()
+  {
+    console.log('An error occurred');
+  }, {type: 'decimal'});
 </pre>
 </div>
 <div class="output">
@@ -872,8 +850,7 @@ grouping: ,
  Indicates whether or not daylight savings time is in effect
 for a given date using the client's time zone and calendar.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void isDayLightSavingsTime(Date date, <a href="#DSTSuccessCallback">DSTSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void isDayLightSavingsTime(Date date, <a href="#DSTSuccessCallback">DSTSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -921,17 +898,16 @@ errors occuring during this method's execution.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/*
-   During the summer, and if the browser is set to a DST-enabled timezone,
-   this logs text similar to "dst: true"
-*/
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* During the summer, and if the browser */
+/* is set to a DST-enabled timezone, */
+/* this logs text similar to "dst: true" */
+
 navigator.globalization.isDayLightSavingsTime(new Date(), function(date)
 {
-   console.log('dst: ' + date.dst);
+  console.log('dst: ' + date.dst);
 }, function()
 {
-   console.log('Error getting the DST state.');
+  console.log('Error getting the DST state');
 });
 </pre>
 </div>
@@ -948,8 +924,7 @@ navigator.globalization.isDayLightSavingsTime(new Date(), function(date)
  Returns a number formatted as a string
 according to the client's user preferences.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void numberToString(double number, <a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void numberToString(double number, <a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -1005,49 +980,47 @@ The default value of this parameter is <var>{type: 'decimal'}</var>.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/*
-   When the browser is set to the en_US locale,
-   this code displays the results that follow
-*/
-navigator.globalization.numberToString(3.1415926, function(number)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* When the browser is set to the en_US locale, */
+/* this code displays the results that follow */
+
+navigator.globalization.numberToString(3.1415926,function(number)
 {
-   console.log('decimal number: ' + number.value);
+  console.log('Decimal number: ' + number.value);
 }, function()
 {
-   console.log('Error getting number.');
+  console.log('Error getting number');
 }, {type: 'decimal'});
 
 navigator.globalization.numberToString(1000003, function(number)
 {
-   console.log('big decimal number: ' + number.value);
+  console.log('Big decimal number: ' + number.value);
 }, function()
 {
-   console.log('Error getting number.');
+  console.log('Error getting number');
 }, {type: 'decimal'});
 
 navigator.globalization.numberToString(0.3183099, function(number)
 {
-   console.log('percentile: ' + number.value);
+  console.log('Percentile: ' + number.value);
 }, function()
 {
-   console.log('Error getting number.');
+  console.log('Error getting number');
 }, {type: 'percent'});
 
 navigator.globalization.numberToString(1099.95, function(number)
 {
-   console.log('currency: ' + number.value);
+  console.log('Currency: ' + number.value);
 }, function()
 {
-   console.log('Error getting number');
+  console.log('Error getting number');
 }, {type: 'currency'});
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>decimal number: 3.142
-big decimal number: 1,000,003
-percentile: 32%
-currency: $1,099.95
+<span class="title"><p>Output example:</p></span><pre>Decimal number: 3.142
+Big decimal number: 1,000,003
+Percentile: 32%
+Currency: $1,099.95
 </pre>
 </div>
 </dd>
@@ -1060,8 +1033,7 @@ currency: $1,099.95
 user preferences and calendar using the time zone of the client.
 Returns the corresponding date object.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void stringToDate(DOMString dateString, <a href="#GlobalizationDateSuccessCallback">GlobalizationDateSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#DateOptions">DateOptions</a> options);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void stringToDate(DOMString dateString, <a href="#GlobalizationDateSuccessCallback">GlobalizationDateSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#DateOptions">DateOptions</a> options);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -1108,21 +1080,19 @@ The default value is <var>{formatLength: 'short', selector: 'date and time'}</va
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/*
-   When the browser is set to the en_US locale,
-   this example outputs text similar to the results that follow
-   Note that the month integer is one less than the string,
-   as the month integer represents an array index
-*/
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* when the browser is set to the en_US locale, */
+/* this example outputs text similar to the results that follow */
+/* Note that the month integer is one less than the string, */
+/* as the month integer represents an array index */
+
 navigator.globalization.stringToDate('9/25/2012', function(date)
 {
-   console.log('month: ' + date.month +
-               ', day: ' + date.day +
-               ', year: ' + date.year)
+  console.log('month: '  + date.month +
+              ', day: '  + date.day +
+              ', year: ' + date.year)
 }, function()
 {
-   console.log('Error getting date.');
+  console.log('Error getting date');
 }, {selector: 'date'});
 </pre>
 </div>
@@ -1139,8 +1109,7 @@ navigator.globalization.stringToDate('9/25/2012', function(date)
  Parses a number formatted as a string according to the client's
 user preferences and returns the corresponding number.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void stringToNumber(DOMString numberString, <a href="#DoubleSuccessCallback">DoubleSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void stringToNumber(DOMString numberString, <a href="#DoubleSuccessCallback">DoubleSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -1191,22 +1160,20 @@ The default value is <var>{type: 'decimal'}</var>                </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/*
-   When the browser is set to the en_US locale,
-   this displays the text similar to the results that follow
-*/
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* When the browser is set to the en_US locale, */
+/* this displays the text similar to the results that follow */
+
 navigator.globalization.stringToNumber('1234.56', function(number)
 {
-   console.log('number: ' + number.value);
+  console.log('Number: ' + number.value);
 }, function()
 {
-   console.log('Error getting number.');
+  console.log('Error getting number');
 }, {type: 'decimal'});
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>number: 1234.56
+<span class="title"><p>Output example:</p></span><pre>Number: 1234.56
 </pre>
 </div>
 </dd>
@@ -1752,8 +1719,7 @@ of Daylight Saving Time data.
 <div class="brief">
  Called when a function returns the DST data successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(object properties);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(object properties);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -1794,8 +1760,7 @@ a data encoded as a DOMString.
 <div class="brief">
  Called when a function returns the properties object with data successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(object properties);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(object properties);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -1836,8 +1801,7 @@ the data represented as an array of DOMString values.
 <div class="brief">
  Called when a function returns the array of DOMString values succesfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(object properties);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(object properties);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -1879,8 +1843,7 @@ of the data represented as a long integer value.
 <div class="brief">
  Called when a function returns a numeric (long) data successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(object properties);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(object properties);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -1921,8 +1884,7 @@ of the data represented as a double precision numeric value.
 <div class="brief">
  Called when a function returns a numeric (double) data successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(object properties);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(object properties);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -1963,8 +1925,7 @@ of the GlobalizationDate object.
 <div class="brief">
  Called when a function returns a GlobalizationDate object successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(Date date);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(Date date);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -2005,8 +1966,7 @@ of a CurrencyPattern object.
 <div class="brief">
  Called when a function returns the currency pattern information succesfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#CurrencyPattern">CurrencyPattern</a> pattern);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#CurrencyPattern">CurrencyPattern</a> pattern);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -2047,8 +2007,7 @@ of a DatePattern object.
 <div class="brief">
  Called when a function returns the date pattern information successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#DatePattern">DatePattern</a> pattern);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#DatePattern">DatePattern</a> pattern);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -2089,8 +2048,7 @@ of a NumberPattern object.
 <div class="brief">
  Called when a function returns the number pattern information successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#NumberPattern">NumberPattern</a> pattern);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#NumberPattern">NumberPattern</a> pattern);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0

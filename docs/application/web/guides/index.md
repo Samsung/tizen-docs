@@ -6,7 +6,7 @@ The Tizen platform supports hybrid applications (1 Web application and 1 or more
 
 Tizen provides a wide range of Web API modules that allow you to take full advantage of various Tizen features.
 
-The following table lists the features provided by the [Mobile Web Device API Reference](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html).
+The following table lists the features provided by the [Mobile Web Device API Reference](../api/latest/device_api/mobile/index.html).
 
 **Table: Device API features provided for mobile applications**
 
@@ -25,10 +25,10 @@ You can manage common files and ZIP archive files, and define filters and sortin
 <td>
 
 - Guides: <br>
-  [Data Storage and Management](data/data.md) <br>
+  [Data Storage and Management](data/data.md)<br>
   [Error Handling](error/error.md)<br>
 - API Reference:
-  [Base](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Base)
+  [Base](../api/latest/device_api/mobile/index.html#Base)
 </td>
 </tr>
 <tr>
@@ -39,7 +39,7 @@ You can use existing configured on-line accounts and providers, and create new a
 <td>
 
 - Guides: [Personal Data](personal/personal.md)<br>
-- API Reference: [Account](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Account)
+- API Reference: [Account](../api/latest/device_api/mobile/index.html#Account)
 </td>
 </tr>
 <tr>
@@ -53,7 +53,7 @@ You can schedule an application to be run at a specific time, retrieve informati
   [Alarms](alarm/alarms.md) <br>
   [Application Management](app-management/applications.md) <br>
   [Notifications](notification/notification.md)<br>
-- API Reference: [Application Framework](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Application) 
+- API Reference: [Application Framework](../api/latest/device_api/mobile/index.html#Application)
 
 </td>
 </tr>
@@ -67,7 +67,7 @@ You can search and manage multimedia content locally, download files from the In
 - Guides:<br>
   [Connectivity and Wireless](connectivity/connectivity.md)<br>
   [Data Storage and Management](data/data.md)   <br>
-- API Reference: [Content](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Contents)
+- API Reference: [Content](../api/latest/device_api/mobile/index.html#Contents)
 
 </td>
 </tr>
@@ -79,7 +79,7 @@ You can send and receive messages, and receive push notifications from a push se
 <td>
 
 - Guides: [Messaging](messaging/messaging.md)
-- API Reference: [Messaging](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Messaging)
+- API Reference: [Messaging](../api/latest/device_api/mobile/index.html#Messaging)
 
 </td>
 </tr>
@@ -91,7 +91,7 @@ You can change and monitor playback volume level, and listen to the FM radio.
 <td>
 
 - Guides: [Media and Camera](multimedia/media.md)
-- API Reference: [Multimedia](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Multimedia)
+- API Reference: [Multimedia](../api/latest/device_api/mobile/index.html#Multimedia)
 </td>
 </tr>
 <tr>
@@ -102,7 +102,7 @@ You can transfer data over a Bluetooth connection, share contacts, photos, and v
 <td>
 
 - Guides: [Connectivity and Wireless](connectivity/connectivity.md)
-- API Reference: [Network](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Network)
+- API Reference: [Network](../api/latest/device_api/mobile/index.html#Network)
 </td>
 </tr>
 <tr>
@@ -113,7 +113,7 @@ You can use security functionalities, such as storing and recalling private data
 <td>
 
 - Guides: [Security](security/security.md)
-- API Reference: [Security](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Security)
+- API Reference: [Security](../api/latest/device_api/mobile/index.html#Security)
 </td>
 </tr>
 <tr>
@@ -124,7 +124,7 @@ You can manage the Tizen Web browser bookmark list, calendar events and tasks, c
 <td>
 
 - Guides: [Personal Data](personal/personal.md)
-- API Reference: [Social](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Social)
+- API Reference: [Social](../api/latest/device_api/mobile/index.html#Social)
 </td>
 </tr>
 <tr>
@@ -136,9 +136,9 @@ You can access the state of the device power resource, device system information
 
 - Guides:<br>
   [Device Settings and Systems](device/device.md) <br>
-  [Meda and Camera](multimedia/media.md) <br>
+  [Media and Camera](multimedia/media.md) <br>
   [Sensors](sensors/sensors.md)<br>
-- API Reference: [System](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#System)
+- API Reference: [System](../api/latest/device_api/mobile/index.html#System)
 </td>
 </tr>
 <tr>
@@ -149,7 +149,7 @@ You can allow the user to control the Web application through their voice.
 <td>
 
 - Guides: [Text Input and Voice](text-input/text-input.md)
-- API Reference: [UIX](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#UIX)
+- API Reference: [UIX](../api/latest/device_api/mobile/index.html#UIX)
 </td>
 </tr>
 <tr>
@@ -160,7 +160,7 @@ You can manage the device filesystem, individual files, and various events, acce
 <td>
 
 - Guides: [Cordova](cordova/cordova.md)
-- API Reference: [Cordova](../../../../org.tizen.web.apireference/html/device_api/mobile/index.html#Cordova)
+- API Reference: [Cordova](../api/latest/device_api/mobile/index.html#Cordova)
 </td>
 </tr>
 <tr>
@@ -171,14 +171,14 @@ You can create and manage various kinds of UI components.
 <td>
 
 - Guides: [Tizen Advanced UI](tau/tau.md)
-- API Reference: [Advanced UI Framework](../../../../org.tizen.web.apireference/html/ui_fw_api/ui_fw_api_cover.htm)
+- API Reference: [Advanced UI Framework](../api/latest/ui_fw_api/ui_fw_api_cover.htm)
 </td>
 </tr>
 
 </table>
 
 
-The following table lists the features provided by the [Wearable Web Device API Reference](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html).
+The following table lists the features provided by the [Wearable Web Device API Reference](../api/latest/device_api/wearable/index.html).
 
 **Table: Device API features provided for wearable applications**
 
@@ -198,7 +198,7 @@ You can manage common files and ZIP archive files, and define filters and sortin
 - Guides:<br>
   [Data Storage and Management](data/data.md)
   [Error Handling](error/error.md)
-- API Reference: [Base](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Base)
+- API Reference: [Base](../api/latest/device_api/wearable/index.html#Base)
 </td>
 </tr>
 <tr>
@@ -209,7 +209,7 @@ You can use existing configured on-line accounts and providers, and create new a
 <td>
 
 - Guides: [Personal Data](personal/personal.md)
-- API Reference: [Account](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Account)
+- API Reference: [Account](../api/latest/device_api/wearable/index.html#Account)
 </td>
 </tr>
 <tr>
@@ -223,7 +223,7 @@ You can schedule an application to be run at a specific time, retrieve informati
   [Alarms](alarm/alarms.md) <br>
   [Application Management](app-management/applications.md) <br>
   [Notifications](notification/notification.md)<br>
-- API Reference: [Application Framework](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Application)
+- API Reference: [Application Framework](../api/latest/device_api/wearable/index.html#Application)
 </td>
 </tr>
 <tr>
@@ -236,7 +236,7 @@ You can search and manage multimedia content locally, download files from the In
 - Guides:<br>
   [Connectivity and Wireless](connectivity/connectivity.md)<br>
   [Data Storage and Management](data/data.md)
-- API Reference:  [Content](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Contents)
+- API Reference:  [Content](../api/latest/device_api/wearable/index.html#Contents)
 </td>
 </tr>
 <tr>
@@ -247,7 +247,7 @@ You can receive push notifications from a push server.
 <td>
 
 - Guides: [Messaging](messaging/messaging.md)
-- API Reference: [Messaging](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Messaging)
+- API Reference: [Messaging](../api/latest/device_api/wearable/index.html#Messaging)
 </td>
 </tr>
 <tr>
@@ -258,7 +258,7 @@ You can change and monitor playback volume level, and listen to the FM radio.
 <td>
 
 - Guides: [Media and Camera](multimedia/media.md)
-- API Reference: [Multimedia](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Multimedia)
+- API Reference: [Multimedia](../api/latest/device_api/wearable/index.html#Multimedia)
 </td>
 </tr>
 <tr>
@@ -269,7 +269,7 @@ You can transfer data over a Bluetooth connection, share contacts, photos, and v
 <td>
 
 - Guides: [Connectivity and Wireless](connectivity/connectivity.md)
-- API Reference: [Network](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Network)
+- API Reference: [Network](../api/latest/device_api/wearable/index.html#Network)
 </td>
 </tr>
 <tr>
@@ -280,7 +280,7 @@ You can use security functionalities, such as storing and recalling private data
 <td>
 
 - Guides: [Security](security/security.md)
-- API Reference: [Security](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Security)
+- API Reference: [Security](../api/latest/device_api/wearable/index.html#Security)
 </td>
 </tr>
 <tr>
@@ -291,7 +291,7 @@ You can manage calendar events and tasks, address books, and contacts on a devic
 <td>
 
 - Guides: [Personal Data](personal/personal.md)
-- API Reference: [Social](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Social)
+- API Reference: [Social](../api/latest/device_api/wearable/index.html#Social)
 </td>
 </tr>
 <tr>
@@ -305,7 +305,7 @@ You can access the state of the device power resource, device system information
   [Device Settings and Systems](device/device.md) <br>
   [Media and Camera](multimedia/media.md)<br>
   [Sensors](sensors/sensors.md)<br>
-- API Reference: [System](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#System)
+- API Reference: [System](../api/latest/device_api/wearable/index.html#System)
 </td>
 </tr>
 <tr>
@@ -316,7 +316,7 @@ You can allow the user to control the Web application through their voice.
 <td>
 
 - Guides: [Text Input and Voice](text-input/text-input.md)
-- API Reference: [UIX](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#UIX)
+- API Reference: [UIX](../api/latest/device_api/wearable/index.html#UIX)
 
 </td>
 </tr>
@@ -328,7 +328,7 @@ You can manage the device filesystem, individual files, and various events, acce
 <td>
 
 - Guides: [Cordova](cordova/cordova.md)
-- API Reference: [Cordova](../../../../org.tizen.web.apireference/html/device_api/wearable/index.html#Cordova)
+- API Reference: [Cordova](../api/latest/device_api/wearable/index.html#Cordova)
 </td>
 </tr>
 <tr>
@@ -339,12 +339,12 @@ You can create and manage various kinds of UI components.
 <td>
 
 - Guides: [Tizen Advanced UI](tau/tau.md)
-- API Reference: [Advanced UI Framework](../../../../org.tizen.web.apireference/html/ui_fw_api/ui_fw_api_cover.htm)
+- API Reference: [Advanced UI Framework](../api/latest/ui_fw_api/ui_fw_api_cover.htm)
 </td>
 </tr>
 </table>
 
-The following table lists the features provided by the [TV Web Device API Reference](../../../../org.tizen.web.apireference/html/device_api/tv/index.html).
+The following table lists the features provided by the [TV Web Device API Reference](../api/latest/device_api/tv/index.html).
 
 **Table: Device API features provided for TV applications**
 
@@ -364,7 +364,7 @@ You can manage common files and ZIP archive files, and define filters and sortin
 - Guides:<br>
   [Data Storage and Management](data/data.md)<br>
   [Error Handling](error/error.md)
-- API Reference: [Base](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Tizen)
+- API Reference: [Base](../api/latest/device_api/tv/index.html#Tizen)
 </td>
 </tr>
 <tr>
@@ -378,7 +378,7 @@ You can schedule an application to be run at a specific time, retrieve informati
   [Alarms](alarm/alarms.md) <br>
   [Application Management](app-management/applications.md)
 
-- API Reference: [Application Framework](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Application)
+- API Reference: [Application Framework](../api/latest/device_api/tv/index.html#Application)
 </td>
 </tr>
 <tr>
@@ -391,8 +391,8 @@ You can search and manage multimedia content locally, manipulate EXIF data in JP
 - Guides:<br>
   [Connectivity and Wireless](connectivity/connectivity.md)<br>
   [Data Storage and Management](data/data.md)<br>
-  [Media and Camera](multimedia/media-management.md)
-- API Reference: [Content](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Contents)
+  [Media and Camera](multimedia/media.md)
+- API Reference: [Content](../api/latest/device_api/tv/index.html#Contents)
 </td>
 </tr>
 <tr>
@@ -403,7 +403,7 @@ You can receive push notifications from a push server.
 <td>
 
 - Guides: [Messaging](messaging/messaging.md)
-- API Reference: [Messaging](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Messaging)
+- API Reference: [Messaging](../api/latest/device_api/tv/index.html#Messaging)
 </td>
 </tr>
 <tr>
@@ -414,7 +414,7 @@ You can create a client and server, and manage their resources locally and remot
 <td>
 
 - Guides: [Connectivity and Wireless](connectivity/connectivity.md)
-- API Reference: [Network](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Network)
+- API Reference: [Network](../api/latest/device_api/tv/index.html#Network)
 </td>
 </tr>
 <tr>
@@ -425,7 +425,7 @@ You can use security functionalities, such as storing and recalling private data
 <td>
 
 - Guides: [Security](security/security.md)
-- API Reference: [Security](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Security)
+- API Reference: [Security](../api/latest/device_api/tv/index.html#Security)
 </td>
 </tr>
 <tr>
@@ -436,7 +436,7 @@ You can access the device system information and use locale-specific calendar fe
 <td>
 
 - Guides: [Device Settings and Systems](device/device.md)
-- API Reference: [System](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#System)
+- API Reference: [System](../api/latest/device_api/tv/index.html#System)
 </td>
 </tr>
 <tr>
@@ -447,7 +447,7 @@ You can allow the user to control the Web application through their voice.
 <td>
 
 - Guides: [Text Input and Voice](text-input/text-input.md)
-- API Reference: [UIX](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#UIX)
+- API Reference: [UIX](../api/latest/device_api/tv/index.html#UIX)
 </td>
 </tr>
 <tr>
@@ -458,7 +458,7 @@ You can manage the device filesystem, individual files, and various events, acce
 <td>
 
 - Guides: [Cordova](cordova/cordova.md)
-- API Reference: [Cordova](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#Cordova)
+- API Reference: [Cordova](../api/latest/device_api/tv/index.html#Cordova)
 </td>
 </tr>
 <tr>
@@ -468,7 +468,7 @@ You can modify the volume level, switch TV channels, get program guide informati
 </td>
 <td>
 
-- API Reference: [TV Controls](../../../../org.tizen.web.apireference/html/device_api/tv/index.html#TV%20Control) 
+- API Reference: [TV Controls](../api/latest/device_api/tv/index.html#TV%20Control)
 </td>
 </tr>
 
@@ -476,7 +476,7 @@ You can modify the volume level, switch TV channels, get program guide informati
 
 <!-- W3C docs are outdated -->
 <!--
-The following table lists the features provided by the [Mobile Web W3C/HTML5 and Supplementaries API Reference](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html).
+The following table lists the features provided by the [Mobile Web W3C/HTML5 and Supplementaries API Reference](../api/latest/w3c_api/w3c_api_m.html).
 
 **Table: W3C/HTML5 and some supplementary API features provided for mobile applications**
 
@@ -492,7 +492,7 @@ The following table lists the features provided by the [Mobile Web W3C/HTML5 and
 <td>
 
 - Guides: [User Interface](w3c/ui/ui-guide.md)
-- API Reference: [DOM, Forms and Styles](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#dom)
+- API Reference: [DOM, Forms and Styles](../api/latest/w3c_api/w3c_api_m.html#dom)
 </td>
 </tr>
 <tr>
@@ -501,7 +501,7 @@ The following table lists the features provided by the [Mobile Web W3C/HTML5 and
 <td>
 
 - Guides: [Device](w3c/device/device-guide.md)
-- API Reference: [Device](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#device)
+- API Reference: [Device](../api/latest/w3c_api/w3c_api_m.html#device)
 </td>
 </tr>
 <tr>
@@ -510,7 +510,7 @@ The following table lists the features provided by the [Mobile Web W3C/HTML5 and
 <td>
 
 - Guides: [Graphics](w3c/graphics/graphics-guide.md)
-- API Reference: [Graphics](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#graphics)
+- API Reference: [Graphics](../api/latest/w3c_api/w3c_api_m.html#graphics)
 </td>
 </tr>
 <tr>
@@ -519,7 +519,7 @@ The following table lists the features provided by the [Mobile Web W3C/HTML5 and
 <td>
 
 - Guides: [Media](w3c/multimedia/media-guide.md)
-- API Reference: [Media](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#media)
+- API Reference: [Media](../api/latest/w3c_api/w3c_api_m.html#media)
 </td>
 </tr>
 <tr>
@@ -528,7 +528,7 @@ The following table lists the features provided by the [Mobile Web W3C/HTML5 and
 <td>
 
 - Guides: [Communication](w3c/communication/comm-guide.md)
-- API Reference: [Communication](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#communication)
+- API Reference: [Communication](../api/latest/w3c_api/w3c_api_m.html#communication)
 </td>
 </tr>
 <tr>
@@ -537,7 +537,7 @@ The following table lists the features provided by the [Mobile Web W3C/HTML5 and
 <td>
 
 - Guides: [Storage](w3c/storage/storage-guide.md)
-- API Reference: [Storage](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#storage)
+- API Reference: [Storage](../api/latest/w3c_api/w3c_api_m.html#storage)
 </td>
 </tr>
 <tr>
@@ -546,7 +546,7 @@ The following table lists the features provided by the [Mobile Web W3C/HTML5 and
 <td>
 
 - Guides: [Security](w3c/security/security-guide.md)
-- API Reference: [Security](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#security)
+- API Reference: [Security](../api/latest/w3c_api/w3c_api_m.html#security)
 </td>
 </tr>
 <tr>
@@ -555,7 +555,7 @@ The following table lists the features provided by the [Mobile Web W3C/HTML5 and
 <td>
 
 - Guides: [User Interface](w3c/ui/ui-guide.md)
-- API Reference:  [UI](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#ui)
+- API Reference:  [UI](../api/latest/w3c_api/w3c_api_m.html#ui)
 
 </td>
 </tr>
@@ -565,7 +565,7 @@ The following table lists the features provided by the [Mobile Web W3C/HTML5 and
 <td>
 
 - Guides: [Performance and Optimization](w3c/perf-opt/performance-guide.md)
-- API Reference: [Performance and Optimization](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#performance)
+- API Reference: [Performance and Optimization](../api/latest/w3c_api/w3c_api_m.html#performance)
 </td>
 </tr>
 <tr>
@@ -574,7 +574,7 @@ The following table lists the features provided by the [Mobile Web W3C/HTML5 and
 <td>
 
 - Guides: [Location](w3c/location/location-guide.md)
-- API Reference: [Location](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#location)
+- API Reference: [Location](../api/latest/w3c_api/w3c_api_m.html#location)
 </td>
 </tr>
 <tr>
@@ -583,13 +583,13 @@ The following table lists the features provided by the [Mobile Web W3C/HTML5 and
 <td>
 
 - Guides: [Supplementary Features](w3c/supplement/supplement-guide.md)
-- API Reference: [Supplementary](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#Supplementary)
+- API Reference: [Supplementary](../api/latest/w3c_api/w3c_api_m.html#Supplementary)
 </td>
 </tr>
 
 </table>
 
-The following table lists the features provided by the [Wearable Web W3C/HTML5 and Supplementaries API Reference](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html).
+The following table lists the features provided by the [Wearable Web W3C/HTML5 and Supplementaries API Reference](../api/latest/w3c_api/w3c_api_w.html).
 
 **Table: W3C/HTML5 and some supplementary API features provided for wearable applications**
 
@@ -606,7 +606,7 @@ The following table lists the features provided by the [Wearable Web W3C/HTML5 a
 <td>
 
 - Guides: [User Interface](w3c/ui/ui-guide.md)
-- API Reference: [DOM, Forms and Styles](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#dom)
+- API Reference: [DOM, Forms and Styles](../api/latest/w3c_api/w3c_api_w.html#dom)
 </td>
 </tr>
 <tr>
@@ -615,7 +615,7 @@ The following table lists the features provided by the [Wearable Web W3C/HTML5 a
 <td>
 
 - Guides: [Device](w3c/device/device-guide.md)
-- API Reference: [Device](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#device)
+- API Reference: [Device](../api/latest/w3c_api/w3c_api_w.html#device)
 </td>
 </tr>
 <tr>
@@ -624,7 +624,7 @@ The following table lists the features provided by the [Wearable Web W3C/HTML5 a
 <td>
 
 - Guides: [Graphics](w3c/graphics/graphics-guide.md)
-- API Reference: [Graphics](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#graphics)
+- API Reference: [Graphics](../api/latest/w3c_api/w3c_api_w.html#graphics)
 </td>
 </tr>
 <tr>
@@ -633,7 +633,7 @@ The following table lists the features provided by the [Wearable Web W3C/HTML5 a
 <td>
 
 - Guides: [Media](w3c/multimedia/media-guide.md)
-- API Reference: [Media](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#media)
+- API Reference: [Media](../api/latest/w3c_api/w3c_api_w.html#media)
 </td>
 </tr>
 <tr>
@@ -642,7 +642,7 @@ The following table lists the features provided by the [Wearable Web W3C/HTML5 a
 <td>
 
 - Guides: [Communication](w3c/communication/comm-guide.md)
-- API Reference: [Communication](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#communication)
+- API Reference: [Communication](../api/latest/w3c_api/w3c_api_w.html#communication)
 </td>
 </tr>
 <tr>
@@ -651,7 +651,7 @@ The following table lists the features provided by the [Wearable Web W3C/HTML5 a
 <td>
 
 - Guides: [Storage](w3c/storage/storage-guide.md)
-- API Reference: [Storage](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#storage)
+- API Reference: [Storage](../api/latest/w3c_api/w3c_api_w.html#storage)
 </td>
 </tr>
 <tr>
@@ -660,7 +660,7 @@ The following table lists the features provided by the [Wearable Web W3C/HTML5 a
 <td>
 
 - Guides: [Security](w3c/security/security-guide.md)
-- API Reference: [Security](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#security)
+- API Reference: [Security](../api/latest/w3c_api/w3c_api_w.html#security)
 </td>
 </tr>
 <tr>
@@ -669,7 +669,7 @@ The following table lists the features provided by the [Wearable Web W3C/HTML5 a
 <td>
 
 - Guides: [Performance and Optimization](w3c/perf-opt/performance-guide.md)
-- API Reference: [Performance and Optimization](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#performance)
+- API Reference: [Performance and Optimization](../api/latest/w3c_api/w3c_api_w.html#performance)
 </td>
 </tr>
 <tr>
@@ -678,7 +678,7 @@ The following table lists the features provided by the [Wearable Web W3C/HTML5 a
 <td>
 
 - Guides: [Location](w3c/location/location-guide.md)
-- API Reference: [Location](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#location)
+- API Reference: [Location](../api/latest/w3c_api/w3c_api_w.html#location)
 </td>
 </tr>
 <tr>
@@ -687,7 +687,7 @@ The following table lists the features provided by the [Wearable Web W3C/HTML5 a
 <td>
 
 - Guides: [Supplementary Features](w3c/supplement/supplement-guide.md)
-- API Reference: [Supplementary](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#Supplementary)
+- API Reference: [Supplementary](../api/latest/w3c_api/w3c_api_w.html#Supplementary)
 </td>
 </tr>
 </table>

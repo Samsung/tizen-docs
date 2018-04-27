@@ -12,10 +12,10 @@ To develop your applications, use the set of tools provided by the Tizen Studio:
 - [Setup](setup/install-sdk.md)  
   Learn about installing and updating the Tizen Studio. You may need to install additional packages to develop applications for various platforms.
 
-- [Native Tools](native-tools/overview.md)  
+- [Native Tools](native-tools/index.md)  
   Learn about the available native application development tools. Native applications are developed using the C programming language. You can create an application project, edit the code to meet your needs, and run the application on the emulator or a target device.
 
-- [Web Tools](web-tools/overview.md)  
+- [Web Tools](web-tools/index.md)  
   Learn about the available Web application development tools. Web applications are developed using the JavaScript, HTML, and CSS languages. You can create an application project, edit the code to meet your needs, and run the application on the emulator, simulator, or a target device.
 
 - [Platform Tools](platform-tools/overview.md)  

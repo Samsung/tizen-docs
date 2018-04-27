@@ -130,8 +130,7 @@ The ConsoleManagerObject interface.
  Prints a line of text to a standard output.
 The text will be logged as a standard message.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void log(DOMString text);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void log(DOMString text);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -154,10 +153,11 @@ The text will be logged as a standard message.
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log('A is for Alice.');</pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log('A is for Alice');
+</pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>A is for Alice.
+<span class="title"><p>Output example:</p></span><pre>A is for Alice
 </pre>
 </div>
 </dd>
@@ -169,8 +169,7 @@ The text will be logged as a standard message.
  Prints a line of text to a standard output.
 The text will be logged as an error message.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void error(DOMString text);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void error(DOMString text);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -193,10 +192,11 @@ The text will be logged as an error message.
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.error('B is for Bob.');</pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.error('B is for Bob');
+</pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>B is for Bob.
+<span class="title"><p>Output example:</p></span><pre>B is for Bob
 </pre>
 </div>
 </dd>
@@ -208,8 +208,7 @@ The text will be logged as an error message.
  Prints a line of text to a standard output.
 The text will be logged as a warning message.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void warn(DOMString text);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void warn(DOMString text);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -232,10 +231,11 @@ The text will be logged as a warning message.
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.warn('C is for Christopher.');</pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.warn('C is for Christopher');
+</pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>C is for Christopher.
+<span class="title"><p>Output example:</p></span><pre>C is for Christopher
 </pre>
 </div>
 </dd>
@@ -247,8 +247,7 @@ The text will be logged as a warning message.
  Prints a line of text to a standard output.
 The text will be logged as an info message.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void info(DOMString text);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void info(DOMString text);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -271,10 +270,11 @@ The text will be logged as an info message.
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.info('D is for Dorothy.');</pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.info('D is for Dorothy');
+</pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>D is for Dorothy.
+<span class="title"><p>Output example:</p></span><pre>D is for Dorothy
 </pre>
 </div>
 </dd>
@@ -286,8 +286,7 @@ The text will be logged as an info message.
  Prints a line of text to a standard output.
 The text will be logged as a debug message.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void debug(DOMString text);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void debug(DOMString text);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -310,10 +309,11 @@ The text will be logged as a debug message.
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.debug('E is for Eve.');</pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.debug('E is for Eve');
+</pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>E is for Eve.
+<span class="title"><p>Output example:</p></span><pre>E is for Eve
 </pre>
 </div>
 </dd>
@@ -325,8 +325,7 @@ The text will be logged as a debug message.
  If the specified expression is false,
 the message is written to the console.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void assert(boolean expression, DOMString message);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void assert(boolean expression, DOMString message);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -353,15 +352,14 @@ the message is written to the console.
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var felix = 'Felix';
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var felix = 'Felix';
 
 /* This assertion checks whether the first letter in name 'Felix' is 'A' */
-console.assert(felix.charAt(0) === 'A', felix + ' does not start with A.');
+console.assert(felix.charAt(0) === 'A', felix + ' does not start with A');
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>Felix does not start with A.
+<span class="title"><p>Output example:</p></span><pre>Felix does not start with A
 </pre>
 </div>
 </dd>
@@ -374,8 +372,7 @@ console.assert(felix.charAt(0) === 'A', felix + ' does not start with A.');
 If the object being logged is an HTML element, the JavaScript
 Object view is forced.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void dir(Object obj);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void dir(Object obj);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -398,8 +395,7 @@ Object view is forced.
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var john = {name: "John", surname: "Doe"};
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var john = {name: "John", surname: "Doe"};
 console.dir(john.name);
 </pre>
 </div>
@@ -416,8 +412,7 @@ console.dir(john.name);
  Prints an XML/HTML Element representation of the specified object
 if possible or the JavaScript Object if it is not.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void dirxml(Object obj);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void dirxml(Object obj);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -440,8 +435,7 @@ if possible or the JavaScript Object if it is not.
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var john = {name: "John", surname: "Doe"};
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var john = {name: "John", surname: "Doe"};
 console.dirxml(john.surname);
 </pre>
 </div>
@@ -459,8 +453,7 @@ console.dirxml(john.surname);
 </var> is called with the same label, the timer is stopped and the elapsed time
 is displayed in the console. Timer values are accurate to the sub-millisecond.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void time(DOMString label);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void time(DOMString label);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -483,12 +476,11 @@ is displayed in the console. Timer values are accurate to the sub-millisecond.
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-console.time("Big array initialization");
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.time("Big array initialization");
 var array = new Array(1000000);
 for (var i = array.length - 1; i &gt;= 0; i -= 1)
 {
-   array[i] = new Object();
+  array[i] = new Object();
 };
 console.timeEnd("Big array initialization");
 </pre>
@@ -505,8 +497,7 @@ console.timeEnd("Big array initialization");
 <div class="brief">
  Stops the timer with the specified label and prints the elapsed time.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void timeEnd(DOMString label);
-             </pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void timeEnd(DOMString label);</pre></div>
 <p><span class="version">
             Since: </span>
  3.0
@@ -529,12 +520,11 @@ console.timeEnd("Big array initialization");
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-console.time("Big array initialization");
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.time("Big array initialization");
 var array = new Array(1000000);
 for (var i = array.length - 1; i &gt;= 0; i -= 1)
 {
-   array[i] = new Object();
+  array[i] = new Object();
 };
 console.timeEnd("Big array initialization");
 </pre>
