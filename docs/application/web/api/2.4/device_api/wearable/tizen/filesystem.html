@@ -2376,7 +2376,7 @@ following rules:
           </p>
           <ul>
             <li>
-For <em>FileFilter </em>attributes of type DOMString, an entry matches this value only if its corresponding attribute is an exact match. If the filter contains U+0025 'PERCENT SIGN' it is interpreted as a wildcard character and '%' matches any string of any length, including no length. If wildcards are used, the behavior is similar to the LIKE condition in SQL. To specify that a 'PERCENT SIGN' character is to be considered literally instead of interpreting it as a wildcard, developers can escape it with the backslash character (\).
+For <em>FileFilter </em>attributes of type DOMString, an entry matches this value only if its corresponding attribute is an exact match. If the filter contains U+0025 'PERCENT SIGN' it is interpreted as a wildcard character and '%' matches any string of any length, including no length. If wildcards are used, the behavior is similar to the LIKE condition in SQL. To specify that a 'PERCENT SIGN' character is to be considered literally instead of interpreting it as a wildcard, developers can escape it with the backslash character (\). Please, remember that the backslash character has to be escaped itself, to not to be removed from the string - proper escaping of the 'PERCENT SIGN' in JavaScript string requires preceding it with double backslash ('\\%').
 The matching is not case sensitive, such as "FOO" matches a "foo" or an "f%" filter.
             </li>
             <li>
