@@ -8,5 +8,4 @@
 ## [Overview](/application/native/guides/app-management/ui-app/dali-app.md)
 ## [Basic UI Application](/application/native/guides/app-management/ui-app/dali-basic-app.md)
 ## [Watch Application](/application/native/guides/app-management/ui-app/dali-watch-app.md)
-
-
+## [Widget Application](/application/native/guides/app-management/ui-app/dali-widget-app.md)
