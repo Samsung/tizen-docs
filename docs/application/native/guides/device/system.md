@@ -128,6 +128,15 @@ The following table lists the application history feature keys.
 |----------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/app_history` | `bool` | The platform returns `true` for this key, if the device supports the application history feature. |
 
+The following table lists the attach panel feature keys.
+
+<a name="attachpanel"></a>
+**Table: Attach panel feature keys**
+
+| Key                                     | Type   | Description                              |
+|-----------------------------------------|--------|------------------------------------------|
+| `http://tizen.org/feature/attach_panel` | `bool` | The platform returns `true` for this key, if the device supports the attach panel feature. |
+
 The following table lists the battery feature keys.
 
 <a name="battery"></a>
