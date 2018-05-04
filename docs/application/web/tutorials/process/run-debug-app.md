@@ -14,7 +14,7 @@ To launch the emulator, do one of the following:
     1.  Start the Emulator Manager using the Desktop (in Ubuntu) or Start menu (in Windows&reg;), or using the command line.
     2.  In the **Emulator Manager** window, select the emulator instance from the list.
 
-If you are using the Emulator Manager for the first time, you must create an emulator instance: click **Create**, select the platform (system image) and template (device definition), and click **Finish**.
+        If you are using the Emulator Manager for the first time, you must create an emulator instance: click **Create**, select the platform (system image) and template (device definition), and click **Finish**.
 
     3.  Click **Launch**.
 
@@ -50,17 +50,15 @@ To run your application on the target device:
 
 4.  Set the timeout using the **Timeout value** slider.
 
-    The timeout value represents the waiting time for the application launch operation. If you are using a lower configuration computer,
-
-    set a higher timeout value to avoid application launch failure errors.
+    The timeout value represents the waiting time for the application launch operation. If you are using a lower configuration computer, set a higher timeout value to avoid application launch failure errors.
 
 5.  Start the run by clicking **Run**.
 
-If no changes are required in the run configuration, you can also run the application on the target device by doing one of the following:
+    If no changes are required in the run configuration, you can also run the application on the target device by doing one of the following:
 
--   In the **Project Explorer** view, right-click the project and select **Run As &gt; Tizen Web Application**.
--   In the Tizen Studio menu, go to **Run &gt; Run As &gt; Tizen Web Application**.
--   On the Tizen Studio toolbar, click **Run**.
+    - In the **Project Explorer** view, right-click the project and select **Run As &gt; Tizen Web Application**.
+    - In the Tizen Studio menu, go to **Run &gt; Run As &gt; Tizen Web Application**.
+    - On the Tizen Studio toolbar, click **Run**.
 
 If the Web application successfully launches on the target device, the [JavaScript Log Console View](../../../tizen-studio/web-tools/web-editor.md#js_log) is automatically launched in the Tizen Studio. The JavaScript Log Console view displays Web application JavaScript logs.
 
@@ -134,14 +132,13 @@ To debug your application on the target device:
 
     **Table: Control buttons for debugging between break points**
 
-
- | Button | Description |
- | ------ | ---------- |
- | ![Resume](./media/resume.png)  | Resumes the current execution.|
- | ![Step over](./media/stepover.png) | Steps over the highlighted statement.<br> Executes the current line, and if the line contains a method, executes the method without entering it.|
- | ![Step in](./media/stepin.png)  | Steps into the highlighted statement.<br>  Executes the current line, and if the line contains a method, steps   into the method. |
- | ![Step out](./media/stepout.png)  | Steps out of the current method.|
- |  ![Deactivate all break  points](./media/deactivate.png)    |  Deactivates all break points. |
+    | Button | Description |
+    | ------ | ---------- |
+    | ![Resume](./media/resume.png)  | Resumes the current execution.|
+    | ![Step over](./media/stepover.png) | Steps over the highlighted statement.<br> Executes the current line, and if the line contains a method, executes the method without entering it.|
+    | ![Step in](./media/stepin.png)  | Steps into the highlighted statement.<br>  Executes the current line, and if the line contains a method, steps   into the method. |
+    | ![Step out](./media/stepout.png)  | Steps out of the current method.|
+    |  ![Deactivate all break  points](./media/deactivate.png)    |  Deactivates all break points. |
 
 If the Web application successfully launches on the target device, the [JavaScript Log Console View](../../../tizen-studio/web-tools/web-editor.md#js_log) is automatically launched in the Tizen Studio. The JavaScript Log Console view displays Web application JavaScript logs.
 
