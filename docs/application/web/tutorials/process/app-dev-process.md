@@ -183,14 +183,14 @@ A hybrid application package combines a Web application and 1 or more native ser
 
 To create and run a hybrid application:
 
-1.  Create a project for a [Web UI application](creating-app-project.md) and [native service application](../../../native/tutorials/process/app-dev-process.md#creating).
-2.  To establish a project reference between a UI and service application:  
-    - In the Web UI application project context menu, select **Properties &gt; Tizen Studio &gt; Package &gt; Multi**.
-    - Select the check box for the service application, and click **OK**.
-      
+1. Create a project for a [Web UI application](creating-app-project.md) and [native service application](../../../native/tutorials/process/app-dev-process.md#creating).
+2. To establish a project reference between a UI and service application:  
+   - In the Web UI application project context menu, select **Properties &gt; Tizen Studio &gt; Package &gt; Multi**.
+   - Select the check box for the service application, and click **OK**.
+
     In the **Project Explorer** view, a **with &lt;Web UI application&gt;** message appears next to the service application project name for each application you have added to the package.
-  
-3.  [Build](#build) and [run](#run) the Web UI application. The service application is built and executed automatically at the same time,
+
+3. [Build](#build) and [run](#run) the Web UI application. The service application is built and executed automatically at the same time,
     and you can find a WGT file (hybrid application package) under the Web UI application project in the **Project Explorer** view.
 
     To modify the build configuration of the service application, see [Building the

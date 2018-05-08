@@ -70,9 +70,9 @@ You can perform the following tasks using the **Overview** tab:
 
     **Table: Icon format and size**
 
-  | Format | Size [Xhigh (HD)]  |  
-  |------|-----------------|  
-  | 32-bit PNG with alpha | 117 x 117 pixels  |
+    | Format | Size [Xhigh (HD)]  |  
+    |------|-----------------|  
+    | 32-bit PNG with alpha | 117 x 117 pixels  |
 
 -   Define the application author, license, and description in the **Managing the Application** section:
     -   **Author** field represents the person or organization that created the Web application.
