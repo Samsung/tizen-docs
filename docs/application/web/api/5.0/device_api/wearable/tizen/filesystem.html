@@ -105,15 +105,15 @@ on aspects that cannot be supported across multiple platforms.
 When a path is used to interact with the underlying filesystem, the encoding used for the file path should be the platform default.
         </p>
         <p>
-<b>Remark:</b> For wearable profile only, since 4.0 in case of accessing files, you need to add privilege mentioned in method description, moreover depending on your choice of contents path:
+<b id="StorageRemark">Remark:</b> In order to access files, a proper privilege has to be defined additionally:
         </p>
         <ul>
           <li>
-if you want to access only internal storage by using this API, you need to add privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a>          </li>
+for accessing only internal storage using this API, a privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> must be provided,          </li>
           <li>
-if you want to access only external storage by using this API, you need to add privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>          </li>
+for accessing only external storage using this API, a privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> must be provided,          </li>
           <li>
-if you want to access both storages, you need to add both privileges (<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> and <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>)          </li>
+for accessing internal and external storage using this API, privileges (<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> and <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>) must be provided.          </li>
           <li>
 Storage privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="ppm.html">Privacy Privilege API</a> for more details.          </li>
         </ul>
@@ -528,7 +528,7 @@ UnknownError - If any other error occurs.              </li>
  with error type TypeMismatchError, if any of the input parameter is not compatible with the expected type for that parameter.
                 </p></li>
 <li class="list"><p>
- with error type SecurityError, if the application does not have the privilege to call this method.
+ with error type SecurityError, if the application does not have the privilege to call this method or the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
                 </p></li>
 <li class="list"><p>
  with error type NotSupportedError, if this feature is not supported (e.g. in the case of 'camera' virtual path if the device does not support camera)
@@ -925,7 +925,7 @@ and if the <em>isFile </em>property is <var>false</var>, the file handle represe
 If a file handle represents a directory, it can address files and directories.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface File {
-    readonly attribute <a href="#File">File</a>? parent;
+    readonly attribute <a href="#File">File</a>? parent raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
 
     readonly attribute boolean readOnly;
 
@@ -943,7 +943,7 @@ If a file handle represents a directory, it can address files and directories.
 
     readonly attribute DOMString fullPath;
 
-    readonly attribute unsigned long long fileSize;
+    readonly attribute unsigned long long fileSize raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
 
     readonly attribute long length;
 
@@ -1049,6 +1049,13 @@ This attribute is set to<var>null</var> if there is no parent directory. This al
             Since: </span>
  1.0
             </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type SecurityError, if the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
+                </p></li></ul>
+</li></ul>
+        </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
 /* List directory contents */
@@ -1325,6 +1332,13 @@ If an attempt to read this attribute for a directory is made, <var>undefined</va
             Since: </span>
  1.0
             </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type SecurityError, if the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
+                </p></li></ul>
+</li></ul>
+        </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
 /* Displays the file size */
@@ -1577,7 +1591,7 @@ UnknownError - If any other error occurs.              </li>
  with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
                 </p></li>
 <li class="list"><p>
- with error type SecurityError, if the application does not have the privilege to call this method.
+ with error type SecurityError, if the application does not have the privilege to call this method or the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
                 </p></li>
 </ul>
 </li></ul>
@@ -1803,7 +1817,7 @@ UnknownError - If any other error occurs.              </li>
  with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
                 </p></li>
 <li class="list"><p>
- with error type SecurityError, if the application does not have the privilege to call this method.
+ with error type SecurityError, if the application does not have the privilege to call this method or the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
                 </p></li>
 </ul>
 </li></ul>
@@ -1919,7 +1933,7 @@ UnknownError - If any other error occurs.              </li>
  with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
                 </p></li>
 <li class="list"><p>
- with error type SecurityError, if the application does not have the privilege to call this method.
+ with error type SecurityError, if the application does not have the privilege to call this method or the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
                 </p></li>
 </ul>
 </li></ul>
@@ -2022,7 +2036,7 @@ The new <em>File </em>object has "rw" access rights, as it inherits this from th
  with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
                 </p></li>
 <li class="list"><p>
- with error type SecurityError, if the application does not have the privilege to call this method.
+ with error type SecurityError, if the application does not have the privilege to call this method or the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
                 </p></li>
 <li class="list"><p>
  with error type UnknownError, if any other error occurs.
@@ -2098,6 +2112,7 @@ called.
  with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
                 </p></li>
 <li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method or the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
  with error type SecurityError, if the application does not have the privilege to call this method.
                 </p></li>
 <li class="list"><p>
@@ -2268,7 +2283,7 @@ all data in all subdirectories and so needs to be used with caution.
  with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
                 </p></li>
 <li class="list"><p>
- with error type SecurityError, if the application does not have the privilege to call this method.
+ with error type SecurityError, if the application does not have the privilege to call this method or the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
                 </p></li>
 </ul>
 </li></ul>
@@ -2372,7 +2387,7 @@ UnknownError - If any other error occurs.              </li>
  with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
                 </p></li>
 <li class="list"><p>
- with error type SecurityError, if the application does not have the privilege to call this method.
+ with error type SecurityError, if the application does not have the privilege to call this method or the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
                 </p></li>
 </ul>
 </li></ul>
@@ -3339,7 +3354,7 @@ This callback interface specifies a success callback with a function taking an a
   };
 
   [NoInterfaceObject] interface File {
-    readonly attribute <a href="#File">File</a>? parent;
+    readonly attribute <a href="#File">File</a>? parent raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
 
     readonly attribute boolean readOnly;
 
@@ -3357,7 +3372,7 @@ This callback interface specifies a success callback with a function taking an a
 
     readonly attribute DOMString fullPath;
 
-    readonly attribute unsigned long long fileSize;
+    readonly attribute unsigned long long fileSize raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
 
     readonly attribute long length;
 

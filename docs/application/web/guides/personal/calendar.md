@@ -144,6 +144,7 @@ To add events to a calendar:
        startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
        duration: new tizen.TimeDuration(1, 'HOURS'),
        location:'Huesca',
+       availability:'BUSY_TENTATIVE',
    ```
 
 3. To make a recurring event, define a recurrence rule.
@@ -190,7 +191,8 @@ To add events to a calendar in the batch mode:
        summary:'HTML5 Webinar',
        startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
        duration: new tizen.TimeDuration(1, 'HOURS'),
-       location:'Huesca'
+       location:'Huesca',
+       availability:'BUSY'
    });
    ```
 

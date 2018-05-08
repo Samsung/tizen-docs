@@ -361,9 +361,8 @@ YEARLY - if the event occurs yearly            </li>
 <div class="brief">
  Specifies the availability types of time for an event.
           </div>
-<pre class="webidl prettyprint">  enum EventAvailability { "BUSY", "FREE" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum EventAvailability { "BUSY", "FREE", "BUSY_UNAVAILABLE", "BUSY_TENTATIVE"};</pre>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -376,11 +375,14 @@ FREE - if the specified time slot is vacant            </li>
             <li>
 BUSY - if the specified time slot is not vacant            </li>
             <li>
-BUSY-UNAVAILABLE - if the specified time slot is not vacant and can not be scheduled            </li>
+BUSY_UNAVAILABLE - if the specified time slot is not vacant and can not be scheduled            </li>
             <li>
-BUSY-TENTATIVE - if the specified time slot is not vacant because one or more events have been tentatively scheduled for that interval            </li>
+BUSY_TENTATIVE - if the specified time slot is not vacant because one or more events have been tentatively scheduled for that interval            </li>
           </ul>
          </div>
+<p><span class="remark">Remark: </span>
+ <em>BUSY_UNAVAILABLE</em> and <em>BUSY_TENTATIVE</em> are supported since Tizen 5.0
+          </p>
 </div>
 <div class="enum" id="AttendeeType">
 <a class="backward-compatibility-anchor" name="::Calendar::AttendeeType"></a><h3>1.10. AttendeeType</h3>
@@ -3584,6 +3586,9 @@ This property corresponds to <em>UNTIL</em> in RFC 5545.
             Since: </span>
  1.0
             </p>
+<p><span class="remark">Remark: </span>
+ In accordance with RFC 5545, <em>UNTIL</em> and <em>COUNT</em> cannot be used together. If both <em>untilDate</em> and <em>occurrenceCount</em> attributes are set, only <em>untilDate</em> will be used.
+            </p>
 </li>
 <li class="attribute" id="CalendarRecurrenceRule::occurrenceCount">
 <span class="attrName"><span class="type">long </span><span class="name">occurrenceCount</span></span><div class="brief">
@@ -3603,6 +3608,9 @@ This property corresponds to <em>COUNT</em> in RFC 5545.
 <p><span class="version">
             Since: </span>
  1.0
+            </p>
+<p><span class="remark">Remark: </span>
+ In accordance with RFC 5545, <em>UNTIL</em> and <em>COUNT</em> cannot be used together. If both <em>untilDate</em> and <em>occurrenceCount</em> attributes are set, only <em>untilDate</em> will be used.
             </p>
 </li>
 <li class="attribute" id="CalendarRecurrenceRule::daysOfTheWeek">
@@ -4333,7 +4341,7 @@ To guarantee the running of the application on a device with Contact feature, de
 
   enum ByDayValue { "MO", "TU", "WE", "TH", "FR", "SA", "SU" };
 
-  enum EventAvailability { "BUSY", "FREE" };
+  enum EventAvailability { "BUSY", "FREE", "BUSY_UNAVAILABLE", "BUSY_TENTATIVE"};
 
   enum AttendeeType { "INDIVIDUAL", "GROUP", "RESOURCE", "ROOM", "UNKNOWN" };
 
