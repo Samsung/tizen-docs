@@ -290,6 +290,11 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/sensor.tiltmeter.wakeup` | Specify this key, if the application requires the tilt sensor wake-up feature. | 2.2.1 |
 | `http://tizen.org/feature/sensor.ultraviolet` | Specify this key, if the application requires a ultraviolet sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.wrist_up` | Specify this key, if the application requires a wrist up sensor. | 2.3   |
+| `http://tizen.org/feature/systemsetting.home_screen` | Specify this key, if the application requires a home screen. | 4.0   |
+| `http://tizen.org/feature/systemsetting.lock_screen` | Specify this key, if the application requires a home screen. | 4.0   |
+| `http://tizen.org/feature/systemsetting.incoming_call` | Specify this key, if the application requires incomming call and sound notification. | 4.0   |
+| `http://tizen.org/feature/systemsetting.notification_email` | Specify this key, if the application requires a email notification. | 4.0   |
+| `http://tizen.org/feature/systemsetting.font` | Specify this key, if the application requires a font. | 5.0   |
 | `http://tizen.org/feature/shell.appwidget` | Specify this key, if the application requires the AppWidget (Dynamic Box) feature. | 2.2.1 |
 | `http://tizen.org/feature/shortcut`      | Specify this key, if the application requires the shortcut feature. | 4.0   |
 | `http://tizen.org/feature/sip.voip`      | Specify this key, if the application requires the Voice Over Internet Protocol (VOIP) feature. | 2.2.1 |
@@ -438,6 +443,11 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/sensor.tiltmeter.wakeup` | Specify this key, if the application requires the tilt sensor wake-up feature. | 2.2.1 |
 | `http://tizen.org/feature/sensor.ultraviolet` | Specify this key, if the application requires a ultraviolet sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.wrist_up` | Specify this key, if the application requires a wrist up sensor. | 2.3   |
+| `http://tizen.org/feature/systemsetting.home_screen` | Specify this key, if the application requires a home screen. | 4.0   |
+| `http://tizen.org/feature/systemsetting.lock_screen` | Specify this key, if the application requires a home screen. | 4.0   |
+| `http://tizen.org/feature/systemsetting.incoming_call` | Specify this key, if the application requires incomming call and sound notification. | 4.0   |
+| `http://tizen.org/feature/systemsetting.notification_email` | Specify this key, if the application requires a email notification. | 4.0   |
+| `http://tizen.org/feature/systemsetting.font` | Specify this key, if the application requires a font. | 5.0   |
 | `http://tizen.org/feature/shell.appwidget` | Specify this key, if the application requires the AppWidget (Dynamic Box) feature. | 2.2.1 |
 | `http://tizen.org/feature/sip.voip`      | Specify this key, if the application requires the Voice Over Internet Protocol (VOIP) feature. | 2.2.1 |
 | `http://tizen.org/feature/speech.control` | Specify this key, if the application requires the voice control feature. | 2.4   |
