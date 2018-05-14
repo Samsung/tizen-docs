@@ -29,6 +29,10 @@ You can use the following security features in your native applications:
 
   You can scan data, files, and directories to detect malware. You can also check the URL reputation before accessing a specific URL.
 
+- [Device Certificate Manager](device-certificate-manager.md)
+
+  You can use cryptography services (digital certificates and keys) for authentication and secure communication with another system.
+
 For information on how to minimize any accidental introduction of security vulnerabilities in your application, see [Security Tips](security-tip.md) (**in mobile applications only**).
 
 ## Related Information
