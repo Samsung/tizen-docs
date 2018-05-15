@@ -97,7 +97,7 @@ To enable your application to use the thumbnail util functionality:
 
 To extract a thumbnail from the file:
 
-1.1. To receive the results in a file, use the `thumbnail_util_extract_to_file()` function:
+1. To receive the results in a file, use the `thumbnail_util_extract_to_file()` function:
 
    ```
    ret = thumbnail_util_extract_to_file(image_test_path, 512, 288, out_test_path);
@@ -105,7 +105,7 @@ To extract a thumbnail from the file:
 
    You can find a thumbnail file on `out_test_path`.
 
-1.2. To receive the results in a raw data, use the `thumbnail_util_extract_to_buffer()` function:
+2. To receive the results in a raw data, use the `thumbnail_util_extract_to_buffer()` function:
 
    ```
    unsigned char *out_buf;
