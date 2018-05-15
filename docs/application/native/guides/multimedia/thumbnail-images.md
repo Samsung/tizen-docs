@@ -13,9 +13,9 @@ The main features of the Thumbnail Util API include:
 
   You can create the thumbnail using any size you like. The Thumbnail Util API outputs the results according to the size you have set. This means that the thumbnail can be generated even if the output size differs from the original aspect ratio.
 
-The requested thumbnail is provided as raw data or a image file.
+The requested thumbnail is provided as raw data or a file.
 
-In case of raw data, if the requested media is video, thumbnail is BGRA colorspace. And if it is image, thumbnail is RGB colorspace.
+In case of raw data, if the requested media is a video, thumbnail is RGB colorspace. And if it is an image, thumbnail is BGRA colorspace.
 
 In case of a file, thumbnails are encoded with a user-specified extension.
 
@@ -103,7 +103,7 @@ To extract a thumbnail from the file:
    ret = thumbnail_util_extract_to_file(image_test_path, 512, 288, out_test_path);
    ```
 
-   You can find a thumbnail file on `out_test_path` path.
+   You can find a thumbnail file on `out_test_path`.
 
 1.2. To receive the results in a raw data, use the `thumbnail_util_extract_to_buffer()` function:
 
@@ -116,7 +116,7 @@ To extract a thumbnail from the file:
    ret = thumbnail_util_extract_to_buffer(image_test_path, 512, 288, &out_buf, &out_buf_size, &out_width, &out_height);
    ```
 
-   You can get a thumbnail with BGRA colorspace.
+   You can get a BGRA color image.
 
 ## Related Information
 - Dependencies
