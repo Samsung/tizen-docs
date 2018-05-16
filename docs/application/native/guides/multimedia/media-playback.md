@@ -126,6 +126,11 @@ The Player sub-APIs offer the following features:
 
   After changing to the READY state, the subtitles can be read.
 
+- Spherical Video Playback
+
+  Use the Spherical Video API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__360__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__360__MODULE.html) applications) to set the rendering attributes for spherical video playback.
+
+
 <a name="stream"></a>
 ## Playback Streams
 
