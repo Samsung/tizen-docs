@@ -121,6 +121,11 @@ The [Tizen.Multimedia.Player](https://developer.tizen.org/dev-guide/csapi/api/Ti
 
     After the player state is changed to `Ready`, you can [read the subtitle track](#insert).
 
+- Spherical Video Playback
+
+  Use the `SphericalVideo` Property of the `Tizen.Multimedia.Player` class to set the rendering attributes for spherical video playback.
+
+
 <a name="stream"></a>
 ## Playback Streams
 
