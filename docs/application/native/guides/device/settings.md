@@ -176,9 +176,11 @@ The following table lists the available system setting keys.
 |------------------------------------------|----------|-------------------------|------------------------------------------|
 | `SYSTEM_SETTINGS_KEY_3G_DATA_NETWORK_ENABLED` | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the 3G data network is enabled. |
 | `SYSTEM_SETTINGS_KEY_ACCESSIBILITY_TTS`  | `bool`   | `GETTER, NOTIFIER`      | Indicates whether the accessibility TTS is enabled on the device. |
-| `SYSTEM_SETTINGS_KEY_ADS_ID`             | `string` | `GETTER, NOTIFIER`      | Ads ID for each device.                  |
+| `SYSTEM_SETTINGS_KEY_ADS_ID`             | `string` | `GETTER, NOTIFIER`      | Advertisement ID for each device.                  |
+| `SYSTEM_SETTINGS_KEY_AUTOMATIC_TIME_UPDATE`  | `bool` | `GETTER, NOTIFIER`      | Updates device time automatically.           |
 | `SYSTEM_SETTINGS_KEY_DEFAULT_FONT_TYPE`  | `string` | `GETTER`                | Current system default font type.        |
 | `SYSTEM_SETTINGS_KEY_DEVICE_NAME`        | `string` | `GETTER, NOTIFIER`      | Device name.                             |
+| `SYSTEM_SETTINGS_KEY_DEVELOPER_OPTION_STATE` | `bool` | `GETTER, NOTIFIER`      | Developer option state.                             |
 | `SYSTEM_SETTINGS_KEY_DISPLAY_SCREEN_ROTATION_AUTO` | `bool`   | `GETTER, NOTIFIER`      | Indicates whether rotation control is automatic. |
 | `SYSTEM_SETTINGS_KEY_EMAIL_ALERT_RINGTONE` | `string` | `GETTER, NOTIFIER`      | File path of the current email alert ringtone. |
 | `SYSTEM_SETTINGS_KEY_FONT_SIZE`          | `int`    | `GETTER, NOTIFIER`      | Current system font size.                |
