@@ -7,13 +7,13 @@ The main features of the Thumbnail Util API include:
 
 - Video and image thumbnails
 
-  You can [create thumbnails](#get_thumbnail) from video and image files. Audio files are not supported.
+  You can [create thumbnails](#get_thumbnail) from video and image files. Thumbnail Util API does not support audio files.
 
 - Custom size
 
-  You can create the thumbnail using any size you like. The Thumbnail Util API outputs the results according to the size you have set. This means that the thumbnail can be generated even if the output size differs from the original aspect ratio.
+  You can create the thumbnail of any size.
 
-The requested thumbnail is provided as raw data or a file.
+The API provides the requested thumbnail as raw data or a file.
 
 In case of raw data, if the requested media is a video, thumbnail is RGB colorspace. And if it is an image, thumbnail is BGRA colorspace.
 
@@ -33,9 +33,9 @@ To enable your application to use the thumbnail util functionality:
    #include <thumbnail_util.h>
    ```
 
-2. Make sure you have access to the file whose thumbnail you want to extract.
+2. Ensure that you have access to the file required to extract the thumbnail.
 
-   This guide uses a JPEG image file, which is accessed through its file path. The following example code uses internal storage, so you must include the `<storage.h>` header file for the code to work.
+   This guide uses a JPEG image file, which is accessed through its file path. Include the <storage.h> header file as the example code uses internal storage. The example code is as follows:
 
    ```
    int internal_storage_id;
@@ -93,7 +93,7 @@ To enable your application to use the thumbnail util functionality:
 > The Thumbnail Util functions can use both common content in the device storage (internal or external) and private content in your application data.
 
 <a name="get_thumbnail"></a>
-## Extracting a Thumbnail
+## Extract a Thumbnail
 
 To extract a thumbnail from the file:
 
@@ -103,7 +103,7 @@ To extract a thumbnail from the file:
    ret = thumbnail_util_extract_to_file(image_test_path, 512, 288, out_test_path);
    ```
 
-   You can find a thumbnail file on `out_test_path`.
+   You find a thumbnail file on `out_test_path`.
 
 2. To receive the results in a raw data, use the `thumbnail_util_extract_to_buffer()` function:
 
@@ -116,7 +116,7 @@ To extract a thumbnail from the file:
    ret = thumbnail_util_extract_to_buffer(image_test_path, 512, 288, &out_buf, &out_buf_size, &out_width, &out_height);
    ```
 
-   You can get a BGRA color image.
+   You get a BGRA color image.
 
 ## Related Information
 - Dependencies
