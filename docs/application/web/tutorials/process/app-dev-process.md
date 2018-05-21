@@ -11,7 +11,7 @@ Tizen provides the tools required to manage your Web application life-cycle from
 
 The first step in creating a Tizen Web application is planning and designing it using the design tools of your choice.
 
-For information on planning and designing your applications, see [Tizen Web Guides](../../guides/index.md) and [Tizen Web API References](../../../../tizen.web.apireference/html/web_api_reference.htm).
+For information on planning and designing your applications, see [Tizen Web Guides](../../guides/index.md) and [Tizen Web API References](../../api/latest/device_api/mobile/index.html).
 
 Once you have finished the application plan and design, you are ready to create the application project.
 
@@ -31,12 +31,12 @@ After creating the application project, you can [configure the properties of the
 <a name="design"></a>
 ## Designing the Application UI
 
-You can design the application UI using the UI components defined in the [Tizen Advanced UI Framework](../../../../org.tizen.web.apireference/html/ui_fw_api/ui_fw_api_cover.htm).
+You can design the application UI using the UI components defined in the [Tizen Advanced UI Framework](../../api/latest/ui_fw_api/ui_fw_api_cover.htm).
 
 <a name="code"></a>
 ## Coding the Application
 
-[Code your application](coding-app.md) in the Tizen Studio using the APIs defined in the Web [API References](../../../../org.tizen.web.apireference/html/web_api_reference.htm).
+[Code your application](coding-app.md) in the Tizen Studio using the APIs defined in the Web [API References](../../api/latest/device_api/mobile/index.html).
 
 Once you have finished coding your application, you are ready to build your application.
 
@@ -44,14 +44,14 @@ Once you have finished coding your application, you are ready to build your appl
 ## Building the Application
 
 When the Tizen Studio builds an application, the following process is executed:  
- 1.  Validation check for:
-   -   JavaScript
-   -   CSS
-   -   Privilege
+  1. Validation check for:
+     - JavaScript
+     - CSS
+     - Privilege
 
- 2.  Compile for:
-   -   Coffeescript
-   -   Less
+  2. Compile for:
+     - Coffeescript
+     - Less
 
  > **Note**  
  > About the output files:  
@@ -183,13 +183,14 @@ A hybrid application package combines a Web application and 1 or more native ser
 
 To create and run a hybrid application:
 
-1.  Create a project for a [Web UI application](creating-app-project.md) and [native service application](../../../native/tutorials/process/app-dev-process.md#creating).
-2.  To establish a project reference between a UI and service application:  
-  -   In the Web UI application project context menu, select **Properties &gt; Tizen Studio &gt; Package &gt; Multi**.
-  -   Select the check box for the service application, and click **OK**.
+1. Create a project for a [Web UI application](creating-app-project.md) and [native service application](../../../native/tutorials/process/app-dev-process.md#creating).
+2. To establish a project reference between a UI and service application:  
+   - In the Web UI application project context menu, select **Properties &gt; Tizen Studio &gt; Package &gt; Multi**.
+   - Select the check box for the service application, and click **OK**.
 
     In the **Project Explorer** view, a **with &lt;Web UI application&gt;** message appears next to the service application project name for each application you have added to the package.
-3.  [Build](#build) and [run](#run) the Web UI application. The service application is built and executed automatically at the same time,
+
+3. [Build](#build) and [run](#run) the Web UI application. The service application is built and executed automatically at the same time,
     and you can find a WGT file (hybrid application package) under the Web UI application project in the **Project Explorer** view.
 
     To modify the build configuration of the service application, see [Building the
@@ -233,19 +234,19 @@ With a hybrid application package, you can register the included applications in
 A hybrid application package is very useful to Web applications that need background processing or monitoring. A native service application does not have a UI and can be run in the background.
 
 The Web application and native service applications within a hybrid application package share the same package ID and data folder. Sharing application data between them is easy. Many useful inter-application APIs, such as Message Port (in
-[mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messageport.html),
-[wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/messageport.html), and
-[TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/messageport.html)
+[mobile](../../api/latest/device_api/mobile/tizen/messageport.html),
+[wearable](../../api/latest/device_api/wearable/tizen/messageport.html), and
+[TV](../../api/latest/device_api/tv/tizen/messageport.html)
 applications) and AppControl (in
-[mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html),
-[wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html), and
-[TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/application.html)
+[mobile](../../api/latest/device_api/mobile/tizen/application.html),
+[wearable](../../api/latest/device_api/wearable/tizen/application.html), and
+[TV](../../api/latest/device_api/tv/tizen/application.html)
 applications), can be used in a hybrid application package.
 
 For more information on hybrid applications and their package structure, see Hybrid Web App sample (in
 [mobile](https://developer.tizen.org/development/sample/web/Hybrid/Hybrid_Web_App) and
-[wearable](https://developer.tizen.org/development/sample/web/Hybrid/Hybrid_Web_App_1) applications), 
-[Hybrid Service sample](https://developer.tizen.org/development/sample/native/AppFW/Hybrid_Service), and 
+[wearable](https://developer.tizen.org/development/sample/web/Hybrid/Hybrid_Web_App_1) applications),
+[Hybrid Service sample](https://developer.tizen.org/development/sample/native/AppFW/Hybrid_Service), and
 [Hybrid Application Package](../../index.md#hap).
 
 <a name="cert"></a>

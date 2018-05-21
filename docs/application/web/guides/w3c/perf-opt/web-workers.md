@@ -10,7 +10,9 @@ The main features of the Web Workers API include:
 
 - [Messaging between workers](#sending-messages-between-web-workers)
 
-  A subworker can communicate with the host worker using the `postMessage()` method of the HTML5 Web Messaging API (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#messaging) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#messaging) applications). This process is normally used to give work orders to workers or subworkers, or deliver an operation result.If a worker triggers a message event, the `onmessage()` event handler can be used to check the sent message.
+  A subworker can communicate with the host worker using the `postMessage()` method of the HTML5 Web Messaging API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#messaging) or [wearable](../../../api/latest/w3c_api/w3c_api_w.html#messaging) applications). This process is normally used to give work orders to workers or subworkers, or deliver an operation result.
+  
+  If a worker triggers a message event, the `onmessage()` event handler can be used to check the sent message.
 
 - [Multi-threading](#multi-threading)
 
@@ -27,7 +29,7 @@ Learning how to create Web workers is a useful resource management skill:
 
 1. To create and execute a Web worker:		
 
-   a. Create JavaScript code for a simple Boolean operation:
+   1. Create JavaScript code for a simple Boolean operation:
 
       ```
       var n = 1;
@@ -42,7 +44,7 @@ Learning how to create Web workers is a useful resource management skill:
 
       This JavaScript operation delivers the calculated value of the `Math.sqrt(n)` method to the `postMessage()` method. It cannot be used for continuous posting of the Boolean operation.
 
-   b. Create a Web worker to be activated in the background. The JavaScript URL defining the worker needs to be delivered when creating the worker object:
+   2. Create a Web worker to be activated in the background. The JavaScript URL defining the worker needs to be delivered when creating the worker object:
 
       ```
       <button type="button" onclick="workerStart()">Start</button>
@@ -229,7 +231,7 @@ function colorFilter(binaryData, pixels) {
 }
 ```
 
-You can test the application performance using the [Web Inspector](../../../tizen-studio/web-tools/web-inspector.md). In the [Timeline panel](../../../tizen-studio/web-tools/web-inspector.md#timeline-panel), the event of performing all the calculations in a single UI thread creates a delay of 16218 milliseconds.
+You can test the application performance using the [Web Inspector](../../../../tizen-studio/web-tools/web-inspector.md). In the [Timeline panel](../../../../tizen-studio/web-tools/web-inspector.md#timeline-panel), the event of performing all the calculations in a single UI thread creates a delay of 16218 milliseconds.
 
 **Figure: UI thread application event performance**
 

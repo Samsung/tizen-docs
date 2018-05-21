@@ -4,7 +4,7 @@ Enlightenment Foundation Libraries (EFL) is an open source UI toolkit that provi
 
 The EFL UI programming guide includes the following topics:
 
-- [Introduction](introduction.md)
+- [Introduction](index.md)
 
   Covers theoretical information including what EFL is and how it works.
 

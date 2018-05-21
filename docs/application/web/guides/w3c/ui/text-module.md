@@ -161,8 +161,8 @@ The following figure shows examples of manipulating the text properties.
 
 ![Text properties (in mobile applications only)](./media/text_properties.png)
 
-> **Note**
-> For a complete list of CSS Text Module Level 3 text properties (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#text), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#text), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#text) applications) and their possible values, see the [Property index](http://www.w3.org/TR/2013/WD-css-text-3-20131010/#property-index).
+> **Note**  
+> For a complete list of CSS Text Module Level 3 text properties (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#text), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#text), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#text) applications) and their possible values, see the [Property index](http://www.w3.org/TR/2013/WD-css-text-3-20131010/#property-index).
 
 ## Related Information
 * Dependencies  

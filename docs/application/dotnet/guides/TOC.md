@@ -19,7 +19,8 @@
 ## [Setting Up the NUI Development Environment on Ubuntu](/application/dotnet/guides/nui/setup-ubuntu.md)
 ## [Getting Started](/application/dotnet/guides/nui/hello-world.md)
 ## [Layer](/application/dotnet/guides/nui/layer.md)
-## [UI Components](/application/dotnet/guides/nui/ui-components.md)
+## UI Components
+### [Overview](/application/dotnet/guides/nui/ui-components.md)
 ### [Styling UI Components](/application/dotnet/guides/nui/styling-controls-with-JSON.md)
 ### [Visuals](/application/dotnet/guides/nui/visuals.md)
 ### [View](/application/dotnet/guides/nui/view.md)
@@ -34,7 +35,8 @@
 ### [TextField](/application/dotnet/guides/nui/textfield.md)
 ### [TextEditor](/application/dotnet/guides/nui/texteditor.md)
 ### [VideoView](/application/dotnet/guides/nui/videoview.md)
-## [Animation](/application/dotnet/guides/nui/animation.md)
+## Animation
+### [Overview](/application/dotnet/guides/nui/animation.md)
 ### [Animation Types](/application/dotnet/guides/nui/animation-types.md)
 ## [Resources](/application/dotnet/guides/nui/resources.md)
 
