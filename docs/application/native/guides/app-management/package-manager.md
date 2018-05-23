@@ -13,6 +13,10 @@ The main features of the Package Manager API include:
 
   To [retrieve package information](#info), get the `package_info_h` object using the `package_info_create()` or `package_manager_get_package_info()` function.
 
+- Retrieving package information from archives
+
+  To [retrieve package information from archives](#archive), get the `package_archive_info_h` object using the `package_archive_info_create()` function.
+
 - Monitoring changes
 
   You can [monitor package events](#listen), such as installation, uninstallation, and updates.
@@ -134,6 +138,56 @@ To get specific package information:
     ```
     package_info_destroy(package_info);
     ```
+
+<a name="archive"></a>
+## Retrieving Package Information From Archives
+
+You can also get package information from archives. To get package information from archives:
+
+1. Use the `package_archive_info_create()` function. The function fills the second parameter with the package archive information handle, which can then be used with the following `package_archive_info_get_*()` functions to retrieve the specific information:
+  - package_archive_info_get_package()
+  - package_archive_info_get_type()
+  - package_archive_info_get_version()
+  - package_archive_info_get_api_version()
+  - package_archive_info_get_description()
+  - package_archive_info_get_label()
+  - package_archive_info_get_author()
+  - package_archive_info_get_icon()
+
+```
+int ret;
+char *package = NULL;
+char *version = NULL;
+char *description = NULL;
+unsigned char *icon = NULL;
+size_t icon_size = 0;
+package_archive_info_h archive_info = NULL;
+
+ret = package_archive_info_create("/path/to/your/archive", &archive_info);
+/* error handling */
+
+ret = package_archive_info_get_package(archive_info, &package);
+/* error handling */
+ret = package_archive_info_get_version(archive_info, &version);
+/* error handling */
+ret = package_archive_info_get_description(archive_info, &description);
+/* error handling */
+ret = package_archive_info_get_icon(archive_info, &icon, &icon_size);
+/* error handling */
+
+/* do something */
+/* note that icon is read as binary data */
+
+free(package);
+free(version);
+free(description);
+free(icon);
+```
+
+2. When no longer needed, release the package archive information handle with the `package_archive_info_destroy()` function:
+```
+package_archive_info_destroy(archive_info);
+```
 
 <a name="listen"></a>
 ## Monitoring Package Events
