@@ -218,6 +218,7 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/network.tethering.bluetooth` | Specify this key, if the application requires the tethering over Bluetooth feature. | 2.3   |
 | `http://tizen.org/feature/network.tethering.usb` | Specify this key, if the application requires the tethering over USB connection feature. | 2.3   |
 | `http://tizen.org/feature/network.tethering.wifi` | Specify this key, if the application requires the tethering over Wi-Fi feature. | 2.3   |
+| `http://tizen.org/feature/network.tethering.wifi.direct` | Specify this key, if the application requires the tethering over Wi-Fi Direct feature. | 4.0   |
 | `http://tizen.org/feature/network.vpn`   | Specify this key, if the application requires the Virtual Private Network feature (VPN). | 3.0   |
 | `http://tizen.org/feature/network.wifi`  | Specify this key, if the application requires the use of any API that, in turn, requires the Wi-Fi feature. | 2.2.1 |
 | `http://tizen.org/feature/network.wifi.direct` | Specify this key, if the application requires the Wi-Fi Direct&reg; feature. | 2.2.1 |
