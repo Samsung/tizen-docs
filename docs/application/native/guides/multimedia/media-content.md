@@ -312,17 +312,16 @@ To get notifications of database changes, register a callback. You can only set 
 
    ```
    int ret = MEDIA_CONTENT_ERROR_NONE;
-   media_content_noti_h noti;
 
    /* Subscribe notifications */
    char *user_str = strdup("hi");
-   media_content_add_db_updated_cb(_noti_cb, (void*)user_str, &noti);
+   media_content_set_db_updated_cb(_noti_cb, (void*)user_str);
    ```
 
-3. When you no longer want to receive notifications, deregister the callback using handle:
+3. When you no longer want to receive notifications, deregister the callback:
 
    ```
-   media_content_remove_db_updated_cb(noti);
+   media_content_unset_db_updated_cb();
    ```
 
 <a name="findingall"></a>
