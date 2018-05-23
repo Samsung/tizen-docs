@@ -94,27 +94,35 @@ For more information about how to use Human Activity Monitor API, see <a href="h
 </li>
 <li>2.12. <a href="#HumanActivitySleepMonitorData">HumanActivitySleepMonitorData</a>
 </li>
-<li>2.13. <a href="#HumanActivityMonitorOption">HumanActivityMonitorOption</a>
+<li>2.13. <a href="#HumanActivitySleepDetectorData">HumanActivitySleepDetectorData</a>
 </li>
-<li>2.14. <a href="#HumanActivityRecognitionData">HumanActivityRecognitionData</a>
+<li>2.14. <a href="#HumanActivityStressMonitorData">HumanActivityStressMonitorData</a>
 </li>
-<li>2.15. <a href="#HumanActivityRecorderData">HumanActivityRecorderData</a>
+<li>2.15. <a href="#HumanActivityMonitorOption">HumanActivityMonitorOption</a>
 </li>
-<li>2.16. <a href="#HumanActivityRecorderPedometerData">HumanActivityRecorderPedometerData</a>
+<li>2.16. <a href="#HumanActivityRecognitionData">HumanActivityRecognitionData</a>
 </li>
-<li>2.17. <a href="#HumanActivityRecorderHRMData">HumanActivityRecorderHRMData</a>
+<li>2.17. <a href="#HumanActivityRecorderData">HumanActivityRecorderData</a>
 </li>
-<li>2.18. <a href="#HumanActivityRecorderSleepMonitorData">HumanActivityRecorderSleepMonitorData</a>
+<li>2.18. <a href="#HumanActivityRecorderPedometerData">HumanActivityRecorderPedometerData</a>
 </li>
-<li>2.19. <a href="#HumanActivityRecorderPressureData">HumanActivityRecorderPressureData</a>
+<li>2.19. <a href="#HumanActivityRecorderHRMData">HumanActivityRecorderHRMData</a>
 </li>
-<li>2.20. <a href="#GestureData">GestureData</a>
+<li>2.20. <a href="#HumanActivityRecorderSleepMonitorData">HumanActivityRecorderSleepMonitorData</a>
 </li>
-<li>2.21. <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a>
+<li>2.21. <a href="#HumanActivityRecorderPressureData">HumanActivityRecorderPressureData</a>
 </li>
-<li>2.22. <a href="#HumanActivityReadRecorderSuccessCallback">HumanActivityReadRecorderSuccessCallback</a>
+<li>2.22. <a href="#GestureData">GestureData</a>
 </li>
-<li>2.23. <a href="#GestureRecognitionCallback">GestureRecognitionCallback</a>
+<li>2.23. <a href="#StressMonitorDataRange">StressMonitorDataRange</a>
+</li>
+<li>2.24. <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a>
+</li>
+<li>2.25. <a href="#HumanActivityReadRecorderSuccessCallback">HumanActivityReadRecorderSuccessCallback</a>
+</li>
+<li>2.26. <a href="#GestureRecognitionCallback">GestureRecognitionCallback</a>
+</li>
+<li>2.27. <a href="#StressMonitorCallback">StressMonitorCallback</a>
 </li>
 </ul>
 </li>
@@ -151,6 +159,8 @@ For more information about how to use Human Activity Monitor API, see <a href="h
 <div>boolean <a href="#HumanActivityMonitorManager::isGestureSupported">isGestureSupported</a> (<a href="#GestureType ">GestureType </a> type)</div>
 <div>long <a href="#HumanActivityMonitorManager::addGestureRecognitionListener">addGestureRecognitionListener</a> (<a href="#GestureType ">GestureType </a> type, <a href="#GestureRecognitionCallback">GestureRecognitionCallback</a> listener, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional boolean? alwaysOn)</div>
 <div>void <a href="#HumanActivityMonitorManager::removeGestureRecognitionListener">removeGestureRecognitionListener</a> (long watchId)</div>
+<div>long <a href="#HumanActivityMonitorManager::addStressMonitorChangeListener">addStressMonitorChangeListener</a> (<a href="#StressMonitorDataRange">StressMonitorDataRange</a>[] ranges, <a href="#StressMonitorCallback">StressMonitorCallback</a> listener)</div>
+<div>void <a href="#HumanActivityMonitorManager::removeStressMonitorChangeListener">removeStressMonitorChangeListener</a> (long watchId)</div>
 </td>
 </tr>
 <tr>
@@ -194,6 +204,14 @@ For more information about how to use Human Activity Monitor API, see <a href="h
 <td></td>
 </tr>
 <tr>
+<td><a href="#HumanActivitySleepDetectorData">HumanActivitySleepDetectorData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#HumanActivityStressMonitorData">HumanActivityStressMonitorData</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="#HumanActivityMonitorOption">HumanActivityMonitorOption</a></td>
 <td></td>
 </tr>
@@ -226,6 +244,10 @@ For more information about how to use Human Activity Monitor API, see <a href="h
 <td></td>
 </tr>
 <tr>
+<td><a href="#StressMonitorDataRange">StressMonitorDataRange</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a></td>
 <td><div>void <a href="#HumanActivityMonitorSuccessCallback::onsuccess">onsuccess</a> (optional <a href="#HumanActivityData">HumanActivityData</a>? humanactivitydata)</div></td>
 </tr>
@@ -237,6 +259,10 @@ For more information about how to use Human Activity Monitor API, see <a href="h
 <td><a href="#GestureRecognitionCallback">GestureRecognitionCallback</a></td>
 <td><div>void <a href="#GestureRecognitionCallback::onsuccess">onsuccess</a> (<a href="#GestureData">GestureData</a> data)</div></td>
 </tr>
+<tr>
+<td><a href="#StressMonitorCallback">StressMonitorCallback</a></td>
+<td><div>void <a href="#StressMonitorCallback::onsuccess">onsuccess</a> (DOMString label)</div></td>
+</tr>
 </tbody>
 </table>
 <div class="typedefs" id="typedefs-section">
@@ -246,7 +272,7 @@ For more information about how to use Human Activity Monitor API, see <a href="h
 <div class="brief">
  Specifies the supported human activity monitor types.
           </div>
-<pre class="webidl prettyprint">    enum HumanActivityType { "PEDOMETER", "WRIST_UP", "HRM", "GPS", "SLEEP_MONITOR" };</pre>
+<pre class="webidl prettyprint">    enum HumanActivityType { "PEDOMETER", "WRIST_UP", "HRM", "GPS", "SLEEP_MONITOR", "SLEEP_DETECTOR", "STRESS_MONITOR" };</pre>
 <p><span class="version">
             Since: </span>
  2.3
@@ -266,10 +292,20 @@ HRM - Heart rate monitor (Heart rate and RR interval)            </li>
 GPS - GPS information (latitude, longitude and speed)            </li>
             <li>
 SLEEP_MONITOR - Sleep monitor (sleep state)            </li>
+            <li>
+SLEEP_DETECTOR - Sleep detector (sleep status)            </li>
+            <li>
+STRESS_MONITOR - Stress monitor (stress score)            </li>
           </ul>
          </div>
-<p><span class="remark"> Remark : </span>
- <em>SLEEP_MONITOR</em> is supported since Tizen 2.3.2
+<p><span class="remark">Remark: </span>
+ <em>SLEEP_MONITOR</em> is supported since Tizen 3.0
+          </p>
+<p><span class="remark">Remark: </span>
+ <em>SLEEP_DETECTOR</em> is supported since Tizen 5.0
+          </p>
+<p><span class="remark">Remark: </span>
+ <em>STRESS_MONITOR</em> is supported since Tizen 5.0
           </p>
 </div>
 <div class="enum" id="HumanActivityRecorderType">
@@ -533,6 +569,8 @@ The <em>tizen.humanactivitymonitor</em> object allows access to the human activi
         long addGestureRecognitionListener(GestureType type, GestureRecognitionCallback listener, optional ErrorCallback? errorCallback, optional boolean? alwaysOn) raises(WebAPIException);
 
         void removeGestureRecognitionListener(long watchId) raises(WebAPIException);
+        long addStressMonitorChangeListener(StressMonitorDataRange[] ranges, StressMonitorCallback listener) raises(WebAPIException);
+        void removeStressMonitorChangeListener(long watchId) raises(WebAPIException);
     };</pre>
 <p><span class="version">
             Since: </span>
@@ -1559,8 +1597,263 @@ catch (error)
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> Listener with id 1 has been removed
- </pre>
+<span class="title"><p>Output example:</p></span><pre>Listener with id 1 has been removed
+</pre>
+</div>
+</dd>
+<dt class="method" id="HumanActivityMonitorManager::addStressMonitorChangeListener">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::addStressMonitorChangeListener"></a><code><b><span class="methodName">addStressMonitorChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Adds a listener to be invoked when returned value enters into defined range (the range is changed).
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addStressMonitorChangeListener(<a href="#StressMonitorDataRange">StressMonitorDataRange</a>[] ranges, <a href="#StressMonitorCallback">StressMonitorCallback</a> listener);</pre></div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
+<div class="description">
+            <p>
+<em>listener</em> is called whenever value returned from <em>STRESS_MONITOR</em> enters into defined range.
+            </p>
+            <p>
+For example:
+            </p>
+            <p>
+Registered ranges:
+            </p>
+            <table>
+              <tr>
+                <th>
+Label                </th>
+                <th>
+min                </th>
+                <th>
+max                </th>
+              </tr>
+              <tr>
+                <td>
+Normal                </td>
+                <td>
+10                </td>
+                <td>
+15                </td>
+              </tr>
+              <tr>
+                <td>
+Stress Alarm                </td>
+                <td>
+15                </td>
+                <td>
+17                </td>
+              </tr>
+            </table>
+            <p>
+Returning value:
+            </p>
+            <table>
+              <tr>
+                <th>
+Value                </th>
+                <th>
+Action                </th>
+                <th>
+Comments                </th>
+              </tr>
+              <tr>
+                <td>
+9                </td>
+                <td>
+No Action                </td>
+                <td>
+Out of range                </td>
+              </tr>
+              <tr>
+                <td>
+11                </td>
+                <td>
+Normal                </td>
+                <td>
+Within the range 10-15                </td>
+              </tr>
+              <tr>
+                <td>
+12                </td>
+                <td>
+No Action                </td>
+                <td>
+Already in range                </td>
+              </tr>
+              <tr>
+                <td>
+15                </td>
+                <td>
+Stress Alarm                </td>
+                <td>
+Within the range 15-17                </td>
+              </tr>
+              <tr>
+                <td>
+17                </td>
+                <td>
+No Action                </td>
+                <td>
+Out of range                </td>
+              </tr>
+              <tr>
+                <td>
+18                </td>
+                <td>
+No Action                </td>
+                <td>
+Out of range                </td>
+              </tr>
+              <tr>
+                <td>
+10                </td>
+                <td>
+Normal                </td>
+                <td>
+Within the range 10-15                </td>
+              </tr>
+            </table>
+           </div>
+<p><span class="privilegelevel">Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/healthinfo
+            </p>
+<p><span class="remark">Remark: </span>
+ Note that the addStressMonitorListener() method needs to call the sensor's start() method.
+            </p>
+<p><span class="remark">Remark: </span>
+ <var>min</var> value in <a href="#StressMonitorDataRange">StressMonitorDataRange</a> is included into defined range. <var>max</var> value in <a href="#StressMonitorDataRange">StressMonitorDataRange</a> is excluded from defined range.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">ranges</span>:
+ List of defined ranges.
+                </li>
+          <li class="param">
+<span class="name">listener</span>:
+ Listener to be called when gesture is detected or an error occurred.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">long:
+                  </span>
+ The watch ID used to remove the listener.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotSupportedError, if the stress monitor is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to use this function.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var listenerId;
+
+function listener(info)
+{
+  console.log("Stress level: " + info.label);
+}
+
+var ranges = [new tizen.StressMonitorDataRange("Normal",10, 15),
+              new tizen.StressMonitorDataRange("Stress Alarm",15, 17)];
+
+try
+{
+  listenerId = tizen.humanactivitymonitor.addStressMonitorChangeListener(ranges, listener);
+}
+catch (error)
+{
+  console.log(error.name + ": " + error.message);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>/* Value returned from STRESS_MONITOR - 9 */
+/* Value returned from STRESS_MONITOR - 11 */
+Stress level: Normal
+/* Value returned from STRESS_MONITOR - 12 */
+/* Value returned from STRESS_MONITOR - 15 */
+Stress level: Stress Alarm
+/* Value returned from STRESS_MONITOR - 17 */
+/* Value returned from STRESS_MONITOR - 18 */
+/* Value returned from STRESS_MONITOR - 10 */
+Stress level: Normal
+</pre>
+</div>
+</dd>
+<dt class="method" id="HumanActivityMonitorManager::removeStressMonitorChangeListener">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::removeStressMonitorChangeListener"></a><code><b><span class="methodName">removeStressMonitorChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes listener with the given id.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeStressMonitorChangeListener(long watchId);</pre></div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">watchId</span>:
+ The ID of the registered listener.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type AbortError, if system error occurs while removing listener.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var listenerId;
+
+function listener(info)
+{
+  console.log("Stress level: " + info.label);
+}
+
+var ranges = [new tizen.StressMonitorDataRange("Normal",10, 15),
+              new tizen.StressMonitorDataRange("Stress Alarm",15, 17)];
+
+try
+{
+  listenerId = tizen.humanactivitymonitor.addStressMonitorChangeListener(ranges, listener);
+  tizen.humanactivitymonitor.removeStressMonitorChangeListener(listenerId);
+  console.log("Listener with id " + listenerId + " has been removed");
+}
+catch (error)
+{
+  console.log(error.name + ": " + error.message);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Listener with id 1 has been removed
+</pre>
 </div>
 </dd>
 </dl>
@@ -1786,27 +2079,27 @@ catch (err)
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> *** 0
- max pressure: 1013.00
- min pressure: 930.00
- average: 980.00
- *** 1
- max pressure: 1012.00
- min pressure: 954.00
- average: 986.00
- *** 2
- max pressure: 950.00
- min pressure: 904.00
- average: 932.00
- *** 3
- max pressure: 1012.00
- min pressure: 920.00
- average: 942.00
- *** 4
- max pressure: 1012.00
- min pressure: 1005.00
- average: 1008.00
- </pre>
+<span class="title"><p>Output example:</p></span><pre>*** 0
+max pressure: 1013.00
+min pressure: 930.00
+average: 980.00
+*** 1
+max pressure: 1012.00
+min pressure: 954.00
+average: 986.00
+*** 2
+max pressure: 950.00
+min pressure: 904.00
+average: 932.00
+*** 3
+max pressure: 1012.00
+min pressure: 920.00
+average: 942.00
+*** 4
+max pressure: 1012.00
+min pressure: 1005.00
+average: 1008.00
+</pre>
 </div>
 </dd>
 <dt class="member" id="HumanActivityRecorderQuery::interval"><span class="attrName">long interval</span></dt>
@@ -2308,8 +2601,61 @@ When a user takes off the watch device, the heartRate is set to -3. When a user 
 </ul>
 </div>
 </div>
+<div class="interface" id="HumanActivitySleepDetectorData">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivitySleepDetectorData"></a><h3>2.13. HumanActivitySleepDetectorData</h3>
+<div class="brief">
+ The HumanActivitySleepDetectorData interface represents sleep detector data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface HumanActivitySleepDetectorData : <a href="#HumanActivityData">HumanActivityData</a> {
+
+        readonly attribute <a href="#SleepStatus">SleepStatus</a> status;
+    };</pre>
+<p><span class="version">Since: </span>
+ 5.0
+          </p>
+        
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="HumanActivitySleepDetectorData::status">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">SleepStatus </span><span class="name">status</span></span><div class="brief">
+ Sleep state (can be UNKNOWN, ASLEEP and AWAKE).
+            </div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
+</li></ul>
+</div>
+</div>
+<div class="interface" id="HumanActivityStressMonitorData">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityStressMonitorData"></a><h3>2.14. HumanActivityStressMonitorData</h3>
+<div class="brief">
+ The HumanActivityStressMonitorData interface represents stress monitor data.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface HumanActivityStressMonitorData : <a href="#HumanActivityData">HumanActivityData</a> {
+
+        readonly attribute long stressScore;
+    };</pre>
+<p><span class="version">Since: </span>
+ 5.0
+          </p>
+        
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="HumanActivityStressMonitorData::stressScore">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">stressScore</span></span><div class="brief">
+ Value returned from <em>STRESS_MONITOR</em>.
+It's a <a href="https://www.researchgate.net/publication/313837778_Microcontroller_based_RR-Interval_measurement_using_PPG_signals_for_Heart_Rate_Variability_based_biometric_application">RR-interval</a>.
+            </div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
+</li></ul>
+</div>
+</div>
 <div class="dictionary" id="HumanActivityMonitorOption">
-<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorOption"></a><h3>2.13. HumanActivityMonitorOption</h3>
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorOption"></a><h3>2.15. HumanActivityMonitorOption</h3>
 <div class="brief">
  The HumanActivityMonitorOption dictionary contains options, such as the <em>callbackInterval</em> and the <em>sampleInterval</em>, to use with start().
           </div>
@@ -2353,7 +2699,7 @@ When a user takes off the watch device, the heartRate is set to -3. When a user 
 </div>
 </div>
 <div class="interface" id="HumanActivityRecognitionData">
-<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecognitionData"></a><h3>2.14. HumanActivityRecognitionData</h3>
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecognitionData"></a><h3>2.16. HumanActivityRecognitionData</h3>
 <div class="brief">
  The HumanActivityRecognitionData interface represents a activity recognition data.
           </div>
@@ -2407,7 +2753,7 @@ When a user takes off the watch device, the heartRate is set to -3. When a user 
 </div>
 </div>
 <div class="interface" id="HumanActivityRecorderData">
-<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecorderData"></a><h3>2.15. HumanActivityRecorderData</h3>
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecorderData"></a><h3>2.17. HumanActivityRecorderData</h3>
 <div class="brief">
  The HumanActivityRecorderData interface is a common abstract interface used for the different types of human activity recorder data.
           </div>
@@ -2448,7 +2794,7 @@ When a user takes off the watch device, the heartRate is set to -3. When a user 
 </div>
 </div>
 <div class="interface" id="HumanActivityRecorderPedometerData">
-<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecorderPedometerData"></a><h3>2.16. HumanActivityRecorderPedometerData</h3>
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecorderPedometerData"></a><h3>2.18. HumanActivityRecorderPedometerData</h3>
 <div class="brief">
  The HumanActivityRecorderPedometerData interface represents recorded PEDOMETER data.
           </div>
@@ -2526,7 +2872,7 @@ When a user takes off the watch device, the heartRate is set to -3. When a user 
 </div>
 </div>
 <div class="interface" id="HumanActivityRecorderHRMData">
-<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecorderHRMData"></a><h3>2.17. HumanActivityRecorderHRMData</h3>
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecorderHRMData"></a><h3>2.19. HumanActivityRecorderHRMData</h3>
 <div class="brief">
  The HumanActivityRecorderHRMData interface represents a recorded HRM data.
           </div>
@@ -2554,7 +2900,7 @@ When a user takes off the watch device, the heartRate is set to -3. When a user 
 </div>
 </div>
 <div class="interface" id="HumanActivityRecorderSleepMonitorData">
-<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecorderSleepMonitorData"></a><h3>2.18. HumanActivityRecorderSleepMonitorData</h3>
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecorderSleepMonitorData"></a><h3>2.20. HumanActivityRecorderSleepMonitorData</h3>
 <div class="brief">
  The HumanActivityRecorderSleepMonitorData interface represents a recorded SLEEP_MONITOR data.
           </div>
@@ -2582,7 +2928,7 @@ When a user takes off the watch device, the heartRate is set to -3. When a user 
 </div>
 </div>
 <div class="interface" id="HumanActivityRecorderPressureData">
-<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecorderPressureData"></a><h3>2.19. HumanActivityRecorderPressureData</h3>
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecorderPressureData"></a><h3>2.21. HumanActivityRecorderPressureData</h3>
 <div class="brief">
  The HumanActivityRecorderPressureData interface represents a recorded PRESSURE data.
           </div>
@@ -2636,7 +2982,7 @@ When a user takes off the watch device, the heartRate is set to -3. When a user 
 </div>
 </div>
 <div class="interface" id="GestureData">
-<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::GestureData"></a><h3>2.20. GestureData</h3>
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::GestureData"></a><h3>2.22. GestureData</h3>
 <div class="brief">
  The GestureData interface represents detected gesture information.
           </div>
@@ -2707,8 +3053,56 @@ When a user takes off the watch device, the heartRate is set to -3. When a user 
 </ul>
 </div>
 </div>
+<div class="interface" id="StressMonitorDataRange">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::StressMonitorDataRange"></a><h3>2.23. StressMonitorDataRange</h3>
+<div class="brief">
+ The GestureData interface represents detected gesture information.
+          </div>
+<pre class="webidl prettyprint">    [Constructor(optional DOMString label, optional unsigned long min, optional unsigned long max)]
+    interface StressMonitorDataRange {
+        attribute DOMString label;
+        attribute unsigned long min;
+        attribute unsigned long max;
+    };</pre>
+<p><span class="version">Since: </span>
+ 5.0
+          </p>
+<div class="constructors">
+<h4 id="StressMonitorDataRange::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">StressMonitorDataRange(optional DOMString label, optional unsigned long min, optional unsigned long max);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="StressMonitorDataRange::label">
+<span class="attrName"><span class="type">DOMString </span><span class="name">label</span></span><div class="brief">
+ Name of range. Default value is "";
+            </div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
+</li>
+<li class="attribute" id="StressMonitorDataRange::min">
+<span class="attrName"><span class="type">unsigned long </span><span class="name">min</span></span><div class="brief">
+ Minimum value of range. Default value is 0.
+            </div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
+</li>
+<li class="attribute" id="StressMonitorDataRange::max">
+<span class="attrName"><span class="type">unsigned long </span><span class="name">max</span></span><div class="brief">
+ Maximum value of range. If <var>max</var> is undefined it means that this value represents infinity. Default value is undefined.
+            </div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
 <div class="interface" id="HumanActivityMonitorSuccessCallback">
-<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorSuccessCallback"></a><h3>2.21. HumanActivityMonitorSuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorSuccessCallback"></a><h3>2.24. HumanActivityMonitorSuccessCallback</h3>
 <div class="brief">
  The HumanActivityMonitorSuccessCallback interface is a callback interface that is invoked when new human activity data is available.
           </div>
@@ -2750,7 +3144,7 @@ When a user takes off the watch device, the heartRate is set to -3. When a user 
 </div>
 </div>
 <div class="interface" id="HumanActivityReadRecorderSuccessCallback">
-<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityReadRecorderSuccessCallback"></a><h3>2.22. HumanActivityReadRecorderSuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityReadRecorderSuccessCallback"></a><h3>2.25. HumanActivityReadRecorderSuccessCallback</h3>
 <div class="brief">
  The HumanActivityReadRecorderSuccessCallback interface is a callback interface that is invoked when recorded human activity data is successfully read.
           </div>
@@ -2792,7 +3186,7 @@ When a user takes off the watch device, the heartRate is set to -3. When a user 
 </div>
 </div>
 <div class="interface" id="GestureRecognitionCallback">
-<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::GestureRecognitionCallback"></a><h3>2.23. GestureRecognitionCallback</h3>
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::GestureRecognitionCallback"></a><h3>2.26. GestureRecognitionCallback</h3>
 <div class="brief">
  The GestureRecognitionCallback describes a callback for the addGestureRecognitionListener() method.
           </div>
@@ -2825,6 +3219,44 @@ When a user takes off the watch device, the heartRate is set to -3. When a user 
           <li class="param">
 <span class="name">data</span>:
  GestureData which contains information about detected gesture.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="StressMonitorCallback">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::StressMonitorCallback"></a><h3>2.27. StressMonitorCallback</h3>
+<div class="brief">
+ The StressMonitorCallback describes a callback for the addStressMonitorChangeListener() method.
+          </div>
+<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface StressMonitorCallback {
+      void onsuccess(DOMString label);
+    };</pre>
+<p><span class="version">Since: </span>
+ 5.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="StressMonitorCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::HumanActivityMonitor::StressMonitorCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when value returned from <em>STRESS_MONITOR</em> is within registered range.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(DOMString label);</pre></div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">label</span>:
+ Name of the registered range in <a href="#StressMonitorDataRange">StressMonitorDataRange</a>.
                 </li>
         </ul>
 </div>
@@ -2908,13 +3340,21 @@ To guarantee that the barometer(pressure) sensor application runs on a device wi
            </div></p>
 <li class="feature">http://tizen.org/feature/sensor.barometer</li>
 </div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the stress monitor vector sensor application runs on a device with a stress monitor, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/sensor.stress_monitor</li>
+</div>
 <p></p>
                     For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering</a>.
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module HumanActivityMonitor {
 
-    enum HumanActivityType { "PEDOMETER", "WRIST_UP", "HRM", "GPS", "SLEEP_MONITOR" };
+    enum HumanActivityType { "PEDOMETER", "WRIST_UP", "HRM", "GPS", "SLEEP_MONITOR", "SLEEP_DETECTOR", "STRESS_MONITOR" };
 
     enum HumanActivityRecorderType { "PEDOMETER", "HRM", "SLEEP_MONITOR", "PRESSURE" };
 
@@ -2968,6 +3408,8 @@ To guarantee that the barometer(pressure) sensor application runs on a device wi
         long addGestureRecognitionListener(GestureType type, GestureRecognitionCallback listener, optional ErrorCallback? errorCallback, optional boolean? alwaysOn) raises(WebAPIException);
 
         void removeGestureRecognitionListener(long watchId) raises(WebAPIException);
+        long addStressMonitorChangeListener(StressMonitorDataRange[] ranges, StressMonitorCallback listener) raises(WebAPIException);
+        void removeStressMonitorChangeListener(long watchId) raises(WebAPIException);
     };
 
     [NoInterfaceObject] interface StepDifference {
@@ -3072,6 +3514,16 @@ To guarantee that the barometer(pressure) sensor application runs on a device wi
         readonly attribute long timestamp;
     };
 
+    [NoInterfaceObject] interface HumanActivitySleepDetectorData : HumanActivityData {
+
+        readonly attribute SleepStatus status;
+    };
+
+    [NoInterfaceObject] interface HumanActivityStressMonitorData : HumanActivityData {
+
+        readonly attribute long stressScore;
+    };
+
     dictionary HumanActivityMonitorOption {
 
         long callbackInterval;
@@ -3134,7 +3586,12 @@ To guarantee that the barometer(pressure) sensor application runs on a device wi
         readonly attribute double? x;
         readonly attribute double? y;
     };
-
+    [Constructor(optional DOMString label, optional unsigned long min, optional unsigned long max)]
+    interface StressMonitorDataRange {
+        attribute DOMString label;
+        attribute unsigned long min;
+        attribute unsigned long max;
+    };
     [Callback=FunctionOnly, NoInterfaceObject] interface HumanActivityMonitorSuccessCallback {
 
         void onsuccess(optional HumanActivityData? humanactivitydata);
@@ -3147,6 +3604,10 @@ To guarantee that the barometer(pressure) sensor application runs on a device wi
 
     [Callback=FunctionOnly, NoInterfaceObject] interface GestureRecognitionCallback {
       void onsuccess(GestureData data);
+    };
+
+    [Callback=FunctionOnly, NoInterfaceObject] interface StressMonitorCallback {
+      void onsuccess(DOMString label);
     };
 };</pre>
 </div>
