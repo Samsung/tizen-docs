@@ -372,6 +372,7 @@ The following table lists the network feature keys.
 | `http://tizen.org/feature/network.tethering.bluetooth` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/network.tethering` key, if the device supports tethering over Bluetooth. |
 | `http://tizen.org/feature/network.tethering.usb` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/network.tethering` key, if the device supports tethering over USB connection. |
 | `http://tizen.org/feature/network.tethering.wifi` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/network.tethering` key, if the device supports tethering over Wi-Fi. |
+| `http://tizen.org/feature/network.tethering.wifi.direct` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/network.tethering` key, if the device supports tethering over Wi-Fi Direct. |
 | `http://tizen.org/feature/network.vpn`   | `bool` | The platform returns `true` for this key, if the device supports the Virtual Private Network feature (VPN). |
 | `http://tizen.org/feature/network.wifi`  | `bool` | The platform returns `true` for this key, if the device supports all APIs which require Wi-Fi. |
 | `http://tizen.org/feature/network.wifi.direct` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/network.wifi` key, if the device supports Wi-Fi Direct&reg;. |
