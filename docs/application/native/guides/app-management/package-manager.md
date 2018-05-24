@@ -1,13 +1,13 @@
 # Package Manager
 
 
-The package manager is used to retrieve detailed information on the installed packages on the device. This information includes the package name, label, path to the icon image, version, type, and installed storage.
+The package manager is used to retrieve detailed information of the installed packages on the device. This information includes the package name, label, path to the icon image, version, type, and installed storage.
 
 The main features of the Package Manager API include:
 
 - Retrieving information for all installed packages
 
-  Use the `package_manager_foreach_package_info()` function to [retrieve the package information for all installed packages](#retrieve). As a result, the `package_manager_package_info_cb()` callback is invoked and you can get the package information.
+  Use the `package_manager_foreach_package_info()` function to [retrieve the package information for all installed packages](#retrieve). As a result, the `package_manager_package_info_cb()` callback function is invoked and you can get the package information.
 
 - Retrieving individual package information
 
@@ -23,9 +23,9 @@ The main features of the Package Manager API include:
 
 ## Prerequisites
 
-To enable your application to use the package manager functionality:
+To enable your application to use the package manager functionality, ensure that the following prerequisites are met:
 
-1. To use the Package Manager API (in [mobile](../../api/mobile/latest/group__CAPI__PACKAGE__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__PACKAGE__MANAGER__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the Package Manager API (in [mobile](../../api/mobile/latest/group__CAPI__PACKAGE__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__PACKAGE__MANAGER__MODULE.html) applications), the application must request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -40,11 +40,11 @@ To enable your application to use the package manager functionality:
    ```
 
 <a name="retrieve"></a>
-## Retrieving All Package Information
+## Retrieve All Package Information
 
 To retrieve all package information for installed packages:
 
-1. Define the `package_info_cb()` callback function, which is invoked for each retrieved package and used to access the package information:
+1. Define the `package_info_cb()` callback function, which is invoked for each retrieved package and is used to access the package information:
 ```
 void
 package_info_cb(package_info_h package_info, void *user_data)
@@ -88,7 +88,7 @@ package_info_cb(package_info_h package_info, void *user_data)
     free(type);
 }
 ```
-2. Use the `package_manager_foreach_package_info()` function to retrieve all package information by invoking a callback for each retrieved package:
+2. Use the `package_manager_foreach_package_info()` function to retrieve all package information by invoking a callback function for each retrieved package:
 ```
 ret = package_manager_foreach_package_info(package_info_cb, NULL);
 if (ret != PACKAGE_MANAGER_ERROR_NONE)
@@ -96,11 +96,11 @@ if (ret != PACKAGE_MANAGER_ERROR_NONE)
 ```
 
 <a name="info"></a>
-## Retrieving Specific Package Information
+## Retrieve Specific Package Information
 
-To get specific package information:
+To retrieve specific package information:
 
-1. Use the `package_manager_get_package_info()` function.The function fills the second parameter with the package information handle, which can then be used with the following `package_info_get_*()` functions to retrieve the specific information:
+1. Use the `package_manager_get_package_info()` function. This function fills the second parameter with the package information handle, which is then used with the following `package_info_get_*()` functions to retrieve the specific information:
   - package_info_get_label()
   - package_info_get_icon()
   - package_info_get_version()
@@ -112,7 +112,7 @@ To get specific package information:
   - package_info_is_preload_package()
   - package_info_is_accessible()
 
-	```
+    ```
     char *version = NULL;
     char *label = NULL;
     char *type = NULL;
@@ -134,17 +134,17 @@ To get specific package information:
     /* Use package information */
     ```
 
-2. When no longer needed, release the package information handle with the `package_info_destroy()` function:
+2. Release the package information handle with the `package_info_destroy()` function when the package information is no longer needed:
     ```
     package_info_destroy(package_info);
     ```
 
 <a name="archive"></a>
-## Retrieving Package Information From Archives
+## Retrieve Package Information from Archives
 
-You can also get package information from archives. To get package information from archives:
+To retrieve package information from archives:
 
-1. Use the `package_archive_info_create()` function. The function fills the second parameter with the package archive information handle, which can then be used with the following `package_archive_info_get_*()` functions to retrieve the specific information:
+1. Use the `package_archive_info_create()` function. This function fills the second parameter with the package archive information handle, which is then used with the following `package_archive_info_get_*()` functions to retrieve the specific information:
   - package_archive_info_get_package()
   - package_archive_info_get_type()
   - package_archive_info_get_version()
@@ -154,45 +154,45 @@ You can also get package information from archives. To get package information f
   - package_archive_info_get_author()
   - package_archive_info_get_icon()
 
-```
-int ret;
-char *package = NULL;
-char *version = NULL;
-char *description = NULL;
-unsigned char *icon = NULL;
-size_t icon_size = 0;
-package_archive_info_h archive_info = NULL;
+    ```
+    int ret;
+    char *package = NULL;
+    char *version = NULL;
+    char *description = NULL;
+    unsigned char *icon = NULL;
+    size_t icon_size = 0;
+    package_archive_info_h archive_info = NULL;
 
-ret = package_archive_info_create("/path/to/your/archive", &archive_info);
-/* error handling */
+    ret = package_archive_info_create("/path/to/your/archive", &archive_info);
+    /* error handling */
 
-ret = package_archive_info_get_package(archive_info, &package);
-/* error handling */
-ret = package_archive_info_get_version(archive_info, &version);
-/* error handling */
-ret = package_archive_info_get_description(archive_info, &description);
-/* error handling */
-ret = package_archive_info_get_icon(archive_info, &icon, &icon_size);
-/* error handling */
+    ret = package_archive_info_get_package(archive_info, &package);
+    /* error handling */
+    ret = package_archive_info_get_version(archive_info, &version);
+    /* error handling */
+    ret = package_archive_info_get_description(archive_info, &description);
+    /* error handling */
+    ret = package_archive_info_get_icon(archive_info, &icon, &icon_size);
+    /* error handling */
 
-/* do something */
-/* note that icon is read as binary data */
+    /* do something */
+    /* note that icon is read as binary data */
 
-free(package);
-free(version);
-free(description);
-free(icon);
-```
+    free(package);
+    free(version);
+    free(description);
+    free(icon);
+    ```
 
-2. When no longer needed, release the package archive information handle with the `package_archive_info_destroy()` function:
-```
-package_archive_info_destroy(archive_info);
-```
+2. Release the package archive information handle with the `package_archive_info_destroy()` function when the package information is no longer needed:
+    ```
+    package_archive_info_destroy(archive_info);
+    ```
 
 <a name="listen"></a>
 ## Monitoring Package Events
 
-To detect package events, such as installation, uninstallation, and updates:
+To monitor package events, such as installation, uninstallation, and updates:
 
 1. Create the package manager handle (`package_manager_h`) using the `package_manager_create()` function:
 
@@ -200,12 +200,12 @@ To detect package events, such as installation, uninstallation, and updates:
    package_manager_create(package_manager_h *manager);
    ```
 
-2. Set the package event to monitor by calling the `package_manager_set_event_status()` function.The second parameter defines the package status that you want to monitor. The possible values are listed in the `package_manager_status_type_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__PACKAGE__MANAGER__MODULE.html#ga405444ebd6254b9cfbaedec829558882) and [wearable](../../api/wearable/latest/group__CAPI__PACKAGE__MANAGER__MODULE.html#ga405444ebd6254b9cfbaedec829558882) applications).
+2. Set the package event to monitor by calling the `package_manager_set_event_status()` function. The second parameter defines the package status that you want to monitor. The possible values are listed in the `package_manager_status_type_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__PACKAGE__MANAGER__MODULE.html#ga405444ebd6254b9cfbaedec829558882) and [wearable](../../api/wearable/latest/group__CAPI__PACKAGE__MANAGER__MODULE.html#ga405444ebd6254b9cfbaedec829558882) applications):
     ```
     package_manager_set_event_status(manager, PACKAGE_MANAGER_STATUS_TYPE_ALL);
     ```
 
-3. Register a callback function to be invoked when the event (status change) you set above happens, and implement the callback:
+3. Register a callback function to be invoked when the event (status change) you set in the previous step takes place, and implement the callback function:
 
    ```
    void
@@ -226,7 +226,7 @@ To detect package events, such as installation, uninstallation, and updates:
    package_manager_set_event_cb(manager, event_cb, NULL);
    ```
 
-4. Free the package manager:
+4. Release the package manager with the `package_manager_destroy(package_manager_h manager)` function when the package manager is no longer needed:
 
    ```
    package_manager_destroy(package_manager_h manager);
@@ -234,5 +234,5 @@ To detect package events, such as installation, uninstallation, and updates:
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 2.4 and higher for mobile
+  - Tizen 2.3.1 and higher for wearable
