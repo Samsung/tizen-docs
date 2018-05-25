@@ -4,16 +4,16 @@ summary: IRotaryEventReceiver guide
 ---
 
 # IRotaryEventReceiver
-`IRotaryEventReceiver` is a receiver interface to take a rotary event. `IRotaryEventReceiver` has `Rotate(RotaryEventArgs)` method that is called when rotary event is occurred. You can simply handle of rotary event using this interface. Such as below sample, you can easily rotate image according to bezel rotation.
+`IRotaryEventReceiver` is a receiver interface to receive [Rotary event](https://developer.tizen.org/development/training/native-application/understanding-tizen-programming/event-handling#rotary). When a rotary event occur, `IRotaryEventReceiver` calls `Rotate(RotaryEventArgs)` method. You can control the [Rotary event](https://developer.tizen.org/development/training/native-application/understanding-tizen-programming/event-handling#rotary) using this interface. If you read the following paragraphs, you can easily rotate image according to bezel rotation.
 
-## Adding IRotaryEventReceiver
+## Add IRotaryEventReceiver
 Add `IRotaryEventReceiver` interface to `CirclePage` or `Page` having [CircleSurfaceEffectBehavior](xref:Tizen.Wearable.CircularUI.doc.CircleSurfaceEffectBehavior). Implement `Rotate()` method to control a rotary event. `RotaryEventArgs` is event argument for the Rotary Event.
-`RotaryEventArgs.IsClockwise` gets the direction of bezel rotation. If the device has rotated in the clockwise direction, `IsClockwise` is `true`.
-Below sample receives rotary event at `Rotate()` method and add angle of the image following to rotary event direction. And then rotate the image.
+`RotaryEventArgs.IsClockwise` gets the direction of bezel rotation. `IsClockwise` is `true`, when the device is rotated in the clockwise direction.
+The following sample receives rotary event at `Rotate()` method and add angle of the image following to rotary event direction. And then rotate the image.
 
-_This guide's code example uses WearableUIGallery's TCIRotaryEventReceiver code at the test\WearableUIGallery\WearableUIGallery\TC\TCIRotaryEventReceiver.xaml_
+For more information, see [IRotaryEventReceiver API reference](https://samsung.github.io/Tizen.CircularUI/api/Tizen.Wearable.CircularUI.Forms.IRotaryEventReceiver.html).
 
-For more information. Please refer to [IRotaryEventReceiver API reference](https://samsung.github.io/Tizen.CircularUI/api/Tizen.Wearable.CircularUI.Forms.IRotaryEventReceiver.html)
+_The code example of this guide uses TCIRotaryEventReceiver code of WearableUIGallery. The code is available in test\WearableUIGallery\WearableUIGallery\TC\TCIRotaryEventReceiver.xaml_
 
 **C# file**
 ```cs

@@ -4,19 +4,21 @@ summary: Radio control guide
 ---
 
 # Radio
-`Radio` displays 1 or more option and allows a user to select 1 of them.
-`Radio` can select only 1 item among items having same `GroupName` property.
+`Radio` displays one or more options. You can select only one of the options having same GroupName property.
+`Radio` can select only one item among items having same `GroupName` property.
 
 ![radio](data/radio.png)
 
 ## Create Radio
-`GroupName`property specifies which `Radio` controls are mutually exclusive. If a user selected one Radio control of radio control group, other items are not selected.
-`IsSelected` property sets default selected value of Radio control. `Selected` event occurs when the Radio selection was changed.
-`Value` property sets any value of Radio control. `Value` property is useful to distinguish which item was selected if all Radio control has the same `Selected` event handler. Please refer to below code.
 
-For more information. Please refer to [Radio  API reference](https://samsung.github.io/Tizen.CircularUI/api/Tizen.Wearable.CircularUI.Forms.Radio.html)
+The `GroupName` property specifies mutually exclusive Radio controls. If you select one Radio control of radio control group, other items are not selected.
+`IsSelected` property sets default selected value of Radio control. `Selected` event occurs when the Radio selection is changed.
+`Value` property sets any value of Radio control. `Value` property is useful to distinguish which item is selected if all Radio control has the same `Selected` event handler.
+The following code explains the process of creating `Radio`.
 
-_This guide's code example uses WearableUIGallery's TCRadio code at the test\WearableUIGallery\WearableUIGallery\TC\TCRadio.xaml.cs_
+For more information, see [Radio  API reference](https://samsung.github.io/Tizen.CircularUI/api/Tizen.Wearable.CircularUI.Forms.Radio.html).
+
+_The code example of this guide uses TCRadio code of WearableUIGallery. The code is available in test\WearableUIGallery\WearableUIGallery\TC\TCRadio.xaml.cs_
 
 **XAML file**
 

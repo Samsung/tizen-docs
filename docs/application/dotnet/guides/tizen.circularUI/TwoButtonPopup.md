@@ -1,22 +1,22 @@
 ---
-uid: Tizen.Wearable.CircularUI.doc.ConfirmationPopup
-summary: ConfirmationPopup control guide
+uid: Tizen.Wearable.CircularUI.doc.TwoButtonPopup
+summary: TwoButtonPopup control guide
 ---
 
-# ConfirmationPopup
-`ConfirmationPopup` represents Tizen Wearable EFL Twobutton-popup style. `ConfirmationPopup` is useful to select one of two options. (e.g  cancel/done, share/delete)
+# TwoButtonPopup
+The `TwoButtonPopup` represents The Tizen Wearable EFL two button popup style. The `TwoButtonPopup` is used to select one of the two options such as cancel or done, and share or delete.
 
-*`ConfirmationPopup` is displayed separately from any control. So you can't set this in XAML file.*
+*Since `TwoButtonPopup` does not adhere as a control, this popup cannot be set in the XAML file.*
 
-![confirmation_popup1](data/confirmation_popup1.png)
+![TwoButton_popup1](data/twobutton_popup1.png)
 
-## Create ConfirmationPopup
-`ConfirmationPopup.Title` Property sets the title of the popup. You can set the `Content` property with Layouts such as `StackLayout` or `ScrollView`.
-`ConfirmationPopup.FirstButton` property sets left side button. `ConfirmationPopup.SecondButton`property sets right side button. You can set` FirstButton` and `SecondButton` using `MenuItem`. You should add code at `Command` or `Clicked` event handler for controlling `MenuItem` clicked.
+## Create TwoButtonPopup
+The `TwoButtonPopup.Title` property sets the title of the popup. You can set the `Content` property with layouts such as `StackLayout` or `ScrollView`.
+The `TwoButtonPopup.FirstButton` property sets the left side button. The `TwoButtonPopup.SecondButton` property sets the right side button. You can set` FirstButton` and `SecondButton` using the `MenuItem`. You must add code at `Command` or `Clicked` event handler for controlling `MenuItem` clicked.
 
-_This guide's code example uses WearableUIGallery's TCConfirmationPopup code at the test\WearableUIGallery\WearableUIGallery\TC\TCConfirmationPopup.xaml.cs_
+For more information, see [TwoButtonPopup  API reference](https://samsung.github.io/Tizen.CircularUI/api/Tizen.Wearable.CircularUI.Forms.TwoButtonPopup.html).
 
-For more information. Please refer to [ConfirmationPopup  API reference](https://samsung.github.io/Tizen.CircularUI/api/Tizen.Wearable.CircularUI.Forms.ConfirmationPopup.html)
+_The code example of this guide uses TCTwoButtonPopup code of WearableUIGallery. The code is available in test\WearableUIGallery\WearableUIGallery\TC\TCTwoButtonPopup.xaml.cs_
 
 **C# file**
 ```cs
@@ -34,7 +34,7 @@ For more information. Please refer to [ConfirmationPopup  API reference](https:/
 
             ...
 
-            _popUp1 = new ConfirmationPopup();
+            _popUp1 = new TwoButtonPopup();
             _popUp1.FirstButton = leftButton;
             _popUp1.SecondButton = rightButton;
             _popUp1.Title = "Popup title";
@@ -65,15 +65,17 @@ For more information. Please refer to [ConfirmationPopup  API reference](https:/
     }
 ```
 
-## How to set long Text at ConfirmationPopup
-ConfirmationPopup has `Text` Property. This Property is useful to set long text.
-If a long text was set by `Text` property, you don't need to add `StackLayout`, `ScrollView` and `Label` for displaying long text.
+## How to Set Long Text in TwoButtonPopup
+The `TwoButtonPopup` has `Text` property. This property is useful to set long text.
+If a long text is set using the `Text` property, you do not need to add `StackLayout`, `ScrollView`, `Label` to display long text.
 
-*`Text` Property's area overlaps `Content` Property area. So do not use two property at the same time.*
+*The area of the `Text` property overlaps the area of the `Content` property. Therefore, do not use two properties at the same time.*
+
+![TwoButton_popup2](data/twobutton_popup2.png)
 
 **C# file**
 ```cs
-            _popUp2 = new ConfirmationPopup();
+            _popUp2 = new TwoButtonPopup();
             _popUp2.FirstButton = leftButton2;
             _popUp2.SecondButton = rightButton2;
             _popUp2.Title = "Popup title";

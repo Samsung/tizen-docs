@@ -4,39 +4,41 @@ summary: CircleStepper control guide
 ---
 # CircleStepper
 
-`CircleStepper` allows the user to select a value from a range of incremental values specified with the `Minimum`, `Maximum`, and `Increment` properties.
-It is an extension of [Xamarin.Forms.Stepper](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/).
-MarkerColor, MarkerLineWidth, and LabelFormat have been added to the [Xamarin.Forms.Stepper](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/).
-You can change value with [Bezel interaction](https://developer.tizen.org/design/wearable/interaction/bezel-interactions).
-In order to receive [Rotary event](https://developer.tizen.org/development/training/native-application/understanding-tizen-programming/event-handling#rotary), it must be registered as `RotaryFocusObject` property of [CirclePage](xref:Tizen.Wearable.CircularUI.doc.CirclePage).
+`CircleStepper` allows you to select a value from a range of incremental values specified with `Minimum`, `Maximum`, and `Increment` properties.
+It is an extension of [Xamarin.Forms.Stepper](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/). MarkerColor, MarkerLineWidth, and LabelFormat have been added to the [Xamarin.Forms.Stepper](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/).
+You can modify the value with [Bezel interaction](https://developer.tizen.org/design/wearable/interaction/bezel-interactions).
+To receive [Rotary event](https://developer.tizen.org/development/training/native-application/understanding-tizen-programming/event-handling#rotary), it must be registered as `RotaryFocusObject`, property of [CirclePage](xref:Tizen.Wearable.CircularUI.doc.CirclePage).
 
 ![](data/CircleStepper_property.png)
 
-**WARNING: [CircleListView](xref:Tizen.Wearable.CircularUI.doc.CircleListView), [CircleDateTimeSelector](xref:Tizen.Wearable.CircularUI.doc.CircleDateTimeSelector), [CircleScrollView](xref:Tizen.Wearable.CircularUI.doc.CircleScrollView), [CircleStepper](xref:Tizen.Wearable.CircularUI.doc.CircleStepper) must be contained by `CirclePage` or [CircleSurfaceEffectBehavior](xref:Tizen.Wearable.CircularUI.doc.CircleSurfaceEffectBehavior) should be added in [Behaviors](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior/) of [Page](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) that contains these controls. If other `pages` contain these controls, it may cause exception or can't display control.**
+**WARNING: [CircleListView](xref:Tizen.Wearable.CircularUI.doc.CircleListView), [CircleDateTimeSelector](xref:Tizen.Wearable.CircularUI.doc.CircleDateTimeSelector), [CircleScrollView](xref:Tizen.Wearable.CircularUI.doc.CircleScrollView), [CircleStepper](xref:Tizen.Wearable.CircularUI.doc.CircleStepper) must be confined in the `CirclePage` container or [Page](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) with [CircleSurfaceEffectBehavior](xref:Tizen.Wearable.CircularUI.doc.CircleSurfaceEffectBehavior). If you add these controls in any other way,  it may cause an exception or cannot display the controls.**
 
-## Adding CircleStepper at CirclePage
+## Add CircleStepper in CirclePage
 
-You can set `CircleStepper` at [CirclePage.Content](xref:Tizen.Wearable.CircularUI.doc.CirclePage). If you want to know how to add [CirclePage](xref:Tizen.Wearable.CircularUI.doc.CirclePage), please refer to [CirclePage guide](https://samsung.github.io/Tizen.CircularUI/guide/CirclePage.html#create-circlepage).
-The following code shows [CirclePage](xref:Tizen.Wearable.CircularUI.doc.CirclePage) with `CircleStepper`.
-`RotaryFocusTargetName` attribute sets the currently focused control that is handled by rotating and display the focused control's circle object.
-If you don't set this value properly, control can't receive [Rotary Event](https://developer.tizen.org/development/training/native-application/understanding-tizen-programming/event-handling#rotary).
+You can set the `CircleStepper` in the [CirclePage.Content](xref:Tizen.Wearable.CircularUI.doc.CirclePage). For more information on how to add [CirclePage](xref:Tizen.Wearable.CircularUI.doc.CirclePage), see [CirclePage guide](https://samsung.github.io/Tizen.CircularUI/guide/CirclePage.html#create-circlepage).
+`RotaryFocusTargetName` property sets the currently focused control that is handled by rotating and displaying the focused control's circle object.
+If this value properly is not set, then control can not receive [Rotary Event](https://developer.tizen.org/development/training/native-application/understanding-tizen-programming/event-handling#rotary).
 
 `CircleStepper` has the following properties:
 
-- LabelFormat : Gets or sets format in which Value is shown.
-- MarkerColor : [Xamarin.Forms.Color](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/). Change color of marker to select value.
-- MarkerLineWidth : Gets or sets a length of the marker.
+- LabelFormat: This property gets or sets the format in which the value is shown.
+- MarkerColor: This property changes the color of the marker to the value selected.
+- MarkerLineWidth: This property gets and sets the length of the marker.
 
-In the example below, we have a `StackLayout` with a `CircleStepper` and two labels in the `CirclePage`.
-Since 9 is set to `Minimum` and `LabelFormat` is set to "% 1.1f", "9.0" appears on the screen. The `Increment` is 7.5, so if you turn the bezel and increase `Value`, it increases by 7.5. Since the `Maximum` is 99, the marker does not exceed the value. Since `MarkerColor` is set to "Coral", it will be displayed as the corresponding color.
+This example consists of `StackLayout` with a `CircleStepper` and two Labels in the `CirclePage`.
+Since 9 is set to `Minimum` and `LabelFormat` is set to "% 1.1f", "9.0" appears on the screen. Since the `Increment` is 7.5, it increases by 7.5 when you turn the bezel and increase the `Value`. The `Maximum` defined value is 99, hence the marker does not exceed this value. Since the `MarkerColor` is set to "Coral", it will be displayed as the corresponding color.
 
-For more information. Please refer to below links
+![](data/CircleStepper.png)
+
+For more information, see the following links:
 
 - [CircleStepper API reference](https://samsung.github.io/Tizen.CircularUI/api/Tizen.Wearable.CircularUI.Forms.CircleStepper.html)
 - [Xamarin.Forms.Stepper API reference](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/)
 - [Xamarin.Forms.Stepper Guide](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/controls/views#stepper)
 
-_This guide's code example use XUIComponent's SpinnerDefault of CircleSpinner code at the sample\XUIComponents\UIComponents\UIComponents\Samples\CircleSpinner\SpinnerViewModel.cs and SpinnerDefault.xaml_
+_The code example of this guide uses XUIComponent's SpinnerDefault of CircleSpinner code. The code is available in sample\XUIComponents\UIComponents\UIComponents\Samples\CircleSpinner\SpinnerViewModel.cs and SpinnerDefault.xaml_
+
+The following code shows CirclePage with CircleStepper:
 
 **C# file**
 
@@ -103,7 +105,3 @@ _This guide's code example use XUIComponent's SpinnerDefault of CircleSpinner co
     </w:CirclePage.ActionButton>
 </w:CirclePage>
 ```
-
-**Screenshot**
-
-![](data/CircleStepper.png)
