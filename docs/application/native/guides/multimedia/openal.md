@@ -42,8 +42,13 @@ The main features of the OpenAL API include:
 
   When your audio stream is no longer needed or inactive for a long time, destroy the context by calling the `alcDestroyContext()` function.
 
-  > **Note**  
+  > **Note**
   > The device cannot fall into a sleep state while the context is not destroyed. To avoid unwanted battery consumption, destroy the context punctually.
+  >
+  > Since 3.0, extension alcDevicePauseSOFT() was introduced which allow applications to pause a playback device explictly.
+  > The main purpose of this is to silence output, stop processing, and allow the audio hardware to go into a low-power mode.
+  > To resume playback of a paused device, use the function alcDeviceResumeSOFT().
+  > For more detailed information, see [here](http://kcat.strangesoft.net/openal-extensions/SOFT_pause_device.txt).
 
 - Requesting a source and buffer
 
