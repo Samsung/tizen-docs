@@ -85,7 +85,7 @@ To set the polarity, use the `peripheral_gpio_set_polarity()` function with 1 of
 peripheral_pwm_set_polarity(pwm_h, PERIPHERAL_PWM_POLARITY_ACTIVE_HIGH);
 ```
 
-## Enabling Repetition {#enable}
+## Enabling Repetition
 
 To enable repetition, use the `peripheral_pwm_set_enabled()` function:
 

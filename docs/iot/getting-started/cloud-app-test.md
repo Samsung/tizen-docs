@@ -18,5 +18,4 @@ With the SmartThings app, you can test the ARTIK 530 or Raspberry Pi 3 boards de
 
 After you have completed the steps, you can control the device.
 
-For more information on creating your own controller in the SmartThings app, see [Quickstart: Create a light bulb plugin for the SmartThings app](https://smartthings.developer.samsung.com/develop/api/ocf/quickstart.html).
-
+For more information on creating your own controller in the SmartThings app, see [Quickstart: Create a light bulb plugin for the SmartThings app](https://smartthings.developer.samsung.com/develop/guides/ocf/quickstart.html)

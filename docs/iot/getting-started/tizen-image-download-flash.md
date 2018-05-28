@@ -6,18 +6,19 @@ You must have the binary images in your computer. You can download the binary im
 
 -   ARTIK 530 or ARTIK 530s
     -   Boot image:
-        -   ARTIK 530: [tizen-4.0-unified\_20180118.1\_iot-boot-armv7l-artik530.tar.gz](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180118media/standard/iot-boot-armv7l-artik530/tizen-4.0-unified_20180118.1_iot-boot-armv7l-artik530.tar.gz)
+        -   ARTIK 530: [tizen-4.0-unified_20180118.1_iot-boot-armv7l-artik530.tar.gz](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180118.1/images/standard/iot-boot-armv7l-artik530/tizen-4.0-unified_20180118.1_iot-boot-armv7l-artik530.tar.gz)
+
         -   ARTIK 530s: None
     -   Platform image:
-        -   Headleass (without display): [tizen-4.0-unified\_20180118.1\_iot-headless-2parts-armv7l-artik530\_710.tar.gz](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180118media/standard/iot-headless-2parts-armv7l-artik530_710/tizen-4.0-unified_20180118.1_iot-headless-2parts-armv7l-artik530_710.tar.gz)
-        -   Headed (with display): [iot-headed-3parts-armv7l-artik530\_710/tizen-4.0-unified\_20180118.1\_iot-headed-3parts-armv7l-artik530\_710.tar.gz](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180118media/standard/iot-headed-3parts-armv7l-artik530_710/tizen-4.0-unified_20180118.1_iot-headed-3parts-armv7l-artik530_710.tar.gz)
-        -   Customized image: Create and download the customized image as explained in the [Customized Platform Guide](../customized-platform/customized_platform.md).
+        -   Headleass (without display): [tizen-4.0-unified_20180118.1_iot-headless-2parts-armv7l-artik530_710.tar.gz](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180118.1/images/standard/iot-headless-2parts-armv7l-artik530_710/tizen-4.0-unified_20180118.1_iot-headless-2parts-armv7l-artik530_710.tar.gz)
+        -   Headed (with display): [iot-headed-3parts-armv7l-artik530_710/tizen-4.0-unified_20180118.1_iot-headed-3parts-armv7l-artik530_710.tar.gz](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180118.1/images/standard/iot-headed-3parts-armv7l-artik530_710/tizen-4.0-unified_20180118.1_iot-headed-3parts-armv7l-artik530_710.tar.gz)
+        -   Customized image: Create and download the customized image as explained in the [Customized Platform Guide](../customized-platform/overview.md).
 -   Raspberry Pi 3:
-    -   Boot image: [tizen-4.0-unified\_20180118.1\_iot-boot-arm64-rpi3.tar.gz](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180118media/standard/iot-boot-arm64-rpi3/tizen-4.0-unified_20180118.1_iot-boot-arm64-rpi3.tar.gz)
+    -   Boot image: [tizen-4.0-unified_20180118.1_iot-boot-arm64-rpi3.tar.gz](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180118.1/images/standard/iot-boot-arm64-rpi3/tizen-4.0-unified_20180118.1_iot-boot-arm64-rpi3.tar.gz)
     -   Platform image:
-        -   Headleass (without display): [tizen-4.0-unified\_20180118.1\_iot-headless-2parts-armv7l-rpi3.tar.gz](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180118media/standard/iot-headless-2parts-armv7l-rpi3/tizen-4.0-unified_20180118.1_iot-headless-2parts-armv7l-rpi3.tar.gz)
+        -   Headleass (without display): [tizen-4.0-unified_20180118.1_iot-headless-2parts-armv7l-rpi3.tar.gz](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180118.1/images/standard/iot-headless-2parts-armv7l-rpi3/tizen-4.0-unified_20180118.1_iot-headless-2parts-armv7l-rpi3.tar.gz)
         -   Headed (with display): Not available
-        -   Customized image: Create and download the customized image as explained in the [Customized Platform Guide](../customized-platform/customized-platform.md).
+        -   Customized image: Create and download the customized image as explained in the [Customized Platform Guide](../customized-platform/overview.md).
 
 > **Note**
 >
@@ -76,7 +77,7 @@ Java(TM) SE Runtime Environment (build 1.8.0_112-b15)
 Java HotSpot(TM) 64-Bit Server VM (build 25.112-b15, mixed mode)
 ```
 
-If JRE is installed, the output is similar for both Ubuntu and Windows. If `Java&trade; SE Runtime Environment` does not appear in the output or if an error occurs, then this implies, JRE is not installed on your computer.
+If JRE is installed, the output is similar for both Ubuntu and Windows. If `Java(TM) SE Runtime Environment` does not appear in the output or if an error occurs, then this implies, JRE is not installed on your computer.
 
 #### Ubuntu Tools
 
@@ -122,8 +123,6 @@ From Tizen Studio, you can launch the IoT Setup Manager in the following two way
 -   On the menu bar, go to **IoT > IoT Setup Manager**.
 -   On the toolbar, click the IoT Setup Manager icon as shown in the following image:
 
-    **Figure: IoT Setup Manager Menu**
-
     ![IoT Setup Manager menu path](media/tizen_studio_ism.png)
 
 #### Launch without using Tizen Studio
@@ -133,15 +132,11 @@ During installation, the Package Manager creates shortcuts for IoT Setup Manager
 -   Windows, go to **Start Menu > Programs > Tizen Studio > Tools > IoT Setup Manager**.
 -   Ubuntu, go to **Dash (equivalent to Start Menu) > Applications > IoT Setup Manager**.
 
-### IoT Setup Manager User Interface
-
-The following figure illustrates the IoT Setup Manager user interface:
 
 ![IoT Setup Manager Main](media/iot_setup_manager_main_window.png)
 
-**Figure: IoT Setup Manager Main Window**
 
-The main UI components are:
+The IoT Setup Manager view contains the following fields:
 
 -   **Select burning profile**
 
@@ -163,11 +158,11 @@ The main UI components are:
 
     Click **Burn** and wait until the flashing routine is finished. This may take few minutes and you may have to enter your supervisor password, which is required to access the SD card.
 
+If you want to modify the exist profile, select **Edit**.
+
 ![IoT Setup Manager Edit](media/iot_setup_manager_edit_window.png)
 
-**Figure: IoT Setup Manager Edit Window**
-
-The edit UI components are:
+The IoT Setup Manager edit view contains the following fields:
 
 -   **Profile name**
 
@@ -296,7 +291,7 @@ To flash eMMC (without SD card) for ARTIK 530 or ARTIK 530s:
 
 4.  Flash the boot image:
     -   **ARTIK 530**
-        1.  Download the `tar.gz` file from [flash\_boot\_v2.tar.gz](../embedded_files/flash_boot_v2.tar.gz).
+        1.  Download the `tar.gz` file from [flash_boot_v2.tar.gz](embedded-files/flash_boot_v2.tar.gz).
         2.  Unzip the `flash_boot_v2.tar.gz` file to get the `flash_boot.sh` file and the `bootimage` directory.
 
             > **Note**
@@ -329,7 +324,7 @@ To flash eMMC (without SD card) for ARTIK 530 or ARTIK 530s:
             ```
 
     -   **ARTIK 530s**
-        1.  Download the `tar.gz` file from [flash\_boot\_artik530s\_v1.tar.gz](../embedded_files/flash_boot_artik530s_v1.tar.gz).
+        1.  Download the `tar.gz` file from [flash_boot_artik530s_v1.tar.gz](embedded-files/flash_boot_artik530s_v1.tar.gz).
         2.  Unzip the `flash_boot_artik530s_v1.tar.gz`
 
             > **Note**
@@ -459,7 +454,7 @@ To flash the SD card for Raspberry Pi 3:
         >
         >     In this example, the device node for the SD card is `sdb`.
 
-    2.  Download and unzip the [flash-sdcard-rpi3.tar.gz](../embedded_files/flash-sdcard-rpi3.tar.gz) script file. Ensure that this script and all other downloaded files are in the same directory.
+    2.  Download and unzip the [flash-sdcard-rpi3.tar.gz](embedded-files/flash-sdcard-rpi3.tar.gz) script file. Ensure that this script and all other downloaded files are in the same directory.
 
         > **Note**
         >

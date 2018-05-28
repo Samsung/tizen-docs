@@ -21,21 +21,17 @@ To create a new application project using Things SDK API:
 
 6.  Define the project properties, and click **Next**.
 
-    Enter the Project name (3-50 characters allowed) and the unique Package ID. As an optional step, you can add more details such as location and working sets by clicking **More properties**.
+    You can enter the project name (3-50 characters) and the unique package ID. You can also select the location and working sets by clicking **More properties**.
 
     ![Enter the project name](media/thingsapp_project_name.png)
 
 7.  In the **Device/Platform** list:
     1.  Select **\[network audio\]**.
     2.  Uncheck the resources except **x.com.st.powerswitch** and **x.com.st.audiovolume**.
-    3.  Enter **Vendor Id** and **Manufacturer Name**. For more information on **VID** and **MNID** values, see [Developer Workspace](https://devworkspace.developer.samsung.com) site and [Setting up the SmartThings Cloud](things-cloud-setup.md).
+    3.  Enter **Vendor ID** and **Manufacturer Name**. For **VID** and **MNID** values, see [Developer Workspace](https://devworkspace.developer.samsung.com) site and also [Setting up the SmartThings Cloud](things-cloud-setup.md).
     4.  Click **Finish**.
 
         ![Select a native project](media/codegen.png)
-
-    > **Note**
-    >
-    > **Setup Id**, that is listed above the **Vendor Id**, must be the same as **Device onboarding ID** in the **Developer Workspace** site.
 
 8.  Edit the source code. The code is composed of a device definition JSON file (in the `res/` directory) and code implementation C files.
 
@@ -56,23 +52,37 @@ To create a new application project using Things SDK API:
 
         ![Open the Certificate Manager](media/certificate_manager.png)
 
-    2.  To create a new certificate, click **+** and **Next**.
+    2.  In **Migration for Certificate Profile** window, click **Cancel**.
+
+        ![Migration Certificate](media/cm_profile_select.png)
+
+    3.  Select the **App Signing** tab.
+
+        ![App Signing tab](media/cm_app_signing.png)
+
+    4.  To create a new certificate, click **+**.
+
+        <div class="note">
+
+        > **Note**
+        >
+        > If Samsung Extension SDK is installed, you are prompted "Select the type of profile" with two choices: "Tizen" and "Samsung".To develop Tizen IoT, select "Tizen".
 
         ![Create a new certificate](media/cm_new.png)
 
-    3.  Enter the certificate profile name and click **Next**.
+    5.  Enter the Certificate profile name and click **Next**.
 
         ![Enter certificate name](media/cm_profile.png)
 
-    4.  In the **Author Certificate** tab, select **Create a new author certificate**, and click **Next**.
+    6.  In the **Author Certificate** tab, select **Create a new author certificate**, and click **Next**.
 
         ![Create authot certificate](media/cm_new_author.png)
 
-    5.  Enter the details in the **Key Filename**, **Author Name**, and **Password** fields, and click **Next**.
+    7.  Enter the details in the **Key filename**, **Author Name**, and **Password** fields, and click **Next**.
 
         ![Enter author details](media/cm_author.png)
 
-    6.  In the **Distributor Certificate** tab, select **Use the default Tizen distributor certificate** and select **Platform** in the **Privilege level** drop-down menu.
+    8.  In the **Distributor Certificate** tab, select **Use the default Tizen distributor certificate** and select **Platform** in the **Privilege level** drop-down menu.
 
         ![Create distributor certificate](media/cm_privilege.png)
 
@@ -80,9 +90,10 @@ To create a new application project using Things SDK API:
         >
         > The default privilege level is **Public**, but you can change it to **Platform** for development purposes.
 
-    7.  Review certificates information created in the **Certificate Manager** window.
+    9.  Review certificates information created in the **Certificate Manager** window.
 
         ![View certificate details](media/cm_end.png)
+
 
 10. To connect to the SmartThings Cloud, you need an MNID (manufacturer ID), a VID (vendor ID), a private key, and a cloud certificate, and you must update the content of the `res/` directory of the application with the new information.
 
@@ -99,11 +110,12 @@ To create a new application project using Things SDK API:
 
         ![Device Definition JSON File](media/device-definition-json-mnid-vid.png)
 
-    2.  Generate the iot certificate following the guide here.[Generating cloud certificates](things-cloud-setup.md#cloud-certificate)
+    2.  Generate the IoT certificate following the [Generating cloud certificates](things-cloud-setup.md#generating-cloud-certificates).
+
 
 11. Connect the ARTIK 530 or Raspberry Pi 3 board to a Linux computer with a USB cable and make SDB connection.
 
-    For more information, see [Hardware Configuration](hardware_configuration.md).
+    For more information, see [Hardware Configuration](hardware-configuration.md).
 
 12. Confirm that "artik" or "rpi3" is shown in the Tizen Studio toolbar.(This will be shown when SDB is connected.)
 

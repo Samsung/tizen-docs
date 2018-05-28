@@ -2,7 +2,7 @@
 
 Tizen is commercialized for smart TV, smart phone, smart watch, and smart home appliances with three profiles: TV, mobile, and wearable. Tizen IoT supports any type of special-purpose IoT devices based on the Linux kernel.
 
-Tizen IoT Preview 2 is released from Tizen Studio 2.3. Tizen IoT Preview 1 was the first preview release of Tizen for the development of IoT devices, which are connected easily and securely with legacy IoT ecosystems such as SmartThings&trade; In addtion to the features of Tizen IoT Preview 1, Tizen IoT Preview 2 provides the customized platform features and the support for ARTIK 530s. Tizen IoT Preview 2 consists of platform images, development environments, samples for getting started, and customized platform.
+Tizen IoT Preview 2 is released from Tizen Studio 2.3. Tizen IoT Preview 1 was the first preview release of Tizen for the development of IoT devices, which are connected easily and securely with legacy IoT ecosystems such as SmartThings&trade;. In addtion to the features of Tizen IoT Preview 1, Tizen IoT Preview 2 provides the customized platform features and the support for ARTIK 530s. Tizen IoT Preview 2 consists of platform images, development environments, samples for getting started, and customized platform.
 
 -   Hardware targets: Raspberry Pi 3, ARTIK 530, and ARTIK 530s are supported as reference hardware.
 
@@ -34,5 +34,5 @@ Tizen IoT Preview 2 is released from Tizen Studio 2.3. Tizen IoT Preview 1 was t
     6.  [Test the application with SmartThings app](cloud-app-test.md).
 -   [Samples](../sample/iot-sample.md): In Tizen IoT Preview 1 and 2, currently only the network audio sample application is supported. The number of online samples is set to extend in the future.
 
--   [Customized Platform Guide](../customized-platform/customized-platform.md): New feature in Tizen IoT Preview 2. This feature helps the developers to create a customized platform image and selectively aggregate features and set of Tizen platform APIs.
+-   [Customized Platform Guide](../customized-platform/overview.md): New feature in Tizen IoT Preview 2. This feature helps the developers to create a customized platform image and selectively aggregate features and set of Tizen platform APIs.
 

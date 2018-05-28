@@ -16,7 +16,7 @@ To register the function of your device:
 2.  After the cloud-connected device is created, check the device information by clicking the new device.
 3.  Note the **VID** and the **MNID** field value, shown in the device information. The values must be updated in the device definition JSON file.
 
-    For more information, see [Developing Applications with Things SDK API](things_app_development.htm).
+    For more information, see [Developing Applications with Things SDK API](things-app-development.md).
 
     ![Web Console VID/MNID Example](media/devworkspace_mnid_vid.png)
 

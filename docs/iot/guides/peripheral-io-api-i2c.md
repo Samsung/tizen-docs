@@ -17,7 +17,7 @@ Using the I<sup>2</sup>C bus, the master controls signal lines called SCL (Share
 
 If the SDA line is used alone, only half duplex communication is possible because data is sent only to 1 line.
 
-## Opening and Closing a Handle {#handle}
+## Opening and Closing a Handle
 
 To open and close a handle:
 
@@ -40,7 +40,7 @@ To open and close a handle:
 
     > **Note**
     >
-    > For more information on the pin names and locations, see [Supported Protocols](peripheral_io_api.htm#protocol).
+    > For more information on the pin names and locations, see [Supported Protocols](peripheral-io-api.md#protocol).
 
     The `address` parameter must be set based on the peripheral specification.
 
@@ -50,7 +50,7 @@ To open and close a handle:
     peripheral_i2c_close(i2c_h);
     ```
 
-## Reading and Writing Data {#data}
+## Reading and Writing Data
 
 To read and write data:
 
@@ -70,7 +70,7 @@ To read and write data:
     peripheral_i2c_read(i2c_h, data, length);
     ```
 
-## Reading and Writing Register Data {#register}
+## Reading and Writing Register Data
 
 To read and write register data:
 

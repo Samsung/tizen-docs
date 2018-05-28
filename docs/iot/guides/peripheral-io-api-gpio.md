@@ -53,7 +53,7 @@ To open and close a handle:
 
     > **Note**
     >
-    >  For more information on the pin names and locations, see [Supported Protocols](peripheral_io_api.htm#protocol).
+    >  For more information on the pin names and locations, see [Supported Protocols](peripheral-io-api.md#protocol).
 
 2.  To close a GPIO handle that is no longer used, use the `peripheral_gpio_close()` function:
 
@@ -61,7 +61,7 @@ To open and close a handle:
     peripheral_gpio_close(gpio_h);
     ```
 
-## Setting the Data Direction {#direction}
+## Setting the Data Direction
 
 To set the data transfer direction, use the `peripheral_gpio_set_direction()` function with 1 of the following direction types:
 
@@ -78,7 +78,7 @@ peripheral_gpio_set_direction(gpio_h, PERIPHERAL_GPIO_DIRECTION_OUT_INITIALLY_LO
 > To set the data direction to `PERIPHERAL_GPIO_DIRECTION_OUT_INITIALLY_HIGH` or `PERIPHERAL_GPIO_DIRECTION_OUT_INITIALLY_LOW`, the edge mode must be set to `PERIPHERAL_GPIO_EDGE_NONE`.
 
 
-## Setting the Edge Mode {#edge}
+## Setting the Edge Mode
 
 To set the edge mode, use the `peripheral_gpio_set_edge_mode()` function with 1 of the following edge mode types:
 
@@ -96,7 +96,7 @@ peripheral_gpio_set_edge_mode(gpio_h, PERIPHERAL_GPIO_EDGE_RISING);
 > To set the edge mode to `PERIPHERAL_GPIO_EDGE_RISING`, `PERIPHERAL_GPIO_EDGE_FALLING`, or `PERIPHERAL_GPIO_EDGE_BOTH`, the data direction must be set to the `PERIPHERAL_GPIO_DIRECTION_IN`.
 
 
-## Setting the Interrupted Callback {#callback}
+## Setting the Interrupted Callback
 
 The interrupted callback is called when the GPIO state changes, based on the selected edge mode.
 
@@ -126,7 +126,7 @@ To implement the interrupted callback:
     peripheral_gpio_unset_interrupted_cb(gpio_h);
     ```
 
-## Reading and Writing Binary Data {#binary}
+## Reading and Writing Binary Data
 
 To read and write binary data:
 

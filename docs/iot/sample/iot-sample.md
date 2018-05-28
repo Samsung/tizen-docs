@@ -15,7 +15,7 @@ The Network Audio sample application demonstrates how the user can manage things
 -   In the Package Manager, **Extras &gt; IOT-Headless-4.0** in the **Extension SDK** must be installed.
 -   IoT Setup Wizard (Tizen Studio plugin) must be installed.
 -   The device must be flashed through an SD card on the IoT Setup Wizard, and connectivity drivers must be installed.
--   You must prepare the certificate (`*.pem`) and private key (`*.der`).
+-   Certificate (*.pem) and private key (*.der) must be prepared.
 
 For the above procedures related to the IoT Setup Wizard, see [IoT Setup Wizard](../getting-started/tizen-image-download-flash.md).
 
@@ -24,7 +24,6 @@ For the above procedures related to the IoT Setup Wizard, see [IoT Setup Wizard]
 You can develop the sample application with the Tizen Studio custom iot-headless v4.0 template. However, the following example uses the sample app code from an imported project. You can download this sample application in the Tizen Studio.
 
 The following content is in the `thing.c` file:
-
 ```
 #include <stdio.h>
 #include <string.h>
@@ -36,12 +35,11 @@ The following content is in the `thing.c` file:
 
 #define JSON_PATH "device_def.json"
 
-static const char *URI_POWERSWITCH = "/capability/switch/main/0";
-static const char *URI_VOLUME = "/capability/audioVolume/main/0";
+static const char *URI_POWERSWITCH = "/switch/main/0";
+static const char *URI_VOLUME = "/audioVolume/main/0";
 
-/* Handle: for getting request on resources */
-static bool
-handle_get_request(st_things_get_request_message_s *req_msg, st_things_representation_s *resp_rep)
+/* handle : for getting request on resources */
+static bool handle_get_request(st_things_get_request_message_s *req_msg, st_things_representation_s *resp_rep)
 {
     DBG("resource_uri [%s]", req_msg->resource_uri);
 
@@ -51,13 +49,11 @@ handle_get_request(st_things_get_request_message_s *req_msg, st_things_represent
         return handle_get_request_on_volume(req_msg, resp_rep);
 
     ERR("not supported uri");
-
     return false;
 }
 
-/* Handle: for setting request on resources */
-static bool
-handle_set_request(st_things_set_request_message_s *req_msg, st_things_representation_s *resp_rep)
+/* handle : for setting request on resources */
+static bool handle_set_request(st_things_set_request_message_s *req_msg, st_things_representation_s *resp_rep)
 {
     DBG("resource_uri [%s]", req_msg->resource_uri);
 
@@ -67,64 +63,32 @@ handle_set_request(st_things_set_request_message_s *req_msg, st_things_represent
         return handle_set_request_on_volume(req_msg, resp_rep);
 
     ERR("not supported uri");
-
     return false;
 }
 
-/* Initialize */
-void
-init_thing()
+/* initialize */
+void init_thing()
 {
     FN_CALL;
     static bool binitialized = false;
     if (binitialized) {
         DBG("Already initialized!!");
-
         return;
     }
+    binitialized = true;
+    init_user();
 
     bool easysetup_complete = false;
 
     char app_json_path[128] = {0,};
-    char *app_res_path = NULL;
-    char *app_data_path = NULL;
-
-    app_res_path = app_get_resource_path();
-    if (!app_res_path) {
-        ERR("app_res_path is NULL!!");
-
-        return;
-    }
-
-    app_data_path = app_get_data_path();
-    if (!app_data_path) {
-        ERR("app_data_path is NULL!!");
-        free(app_res_path);
-
-        return;
-    }
-
+    char *app_res_path = app_get_resource_path();
     snprintf(app_json_path, sizeof(app_json_path), "%s/%s", app_res_path, JSON_PATH);
-
-    if (0 != st_things_set_configuration_prefix_path((const char *)app_res_path, (const char *)app_data_path)) {
-        ERR("st_things_set_configuration_prefix_path() failed!!");
-        free(app_res_path);
-        free(app_data_path);
-
-        return;
-    }
-
     free(app_res_path);
-    free(app_data_path);
 
     if (0 != st_things_initialize(app_json_path, &easysetup_complete)) {
         ERR("st_things_initialize() failed!!");
-
         return;
     }
-
-    binitialized = true;
-    init_user();
 
     DBG("easysetup_complete:[%d]", easysetup_complete);
 
@@ -137,6 +101,8 @@ init_thing()
 
     FN_END;
 }
+```
+
 ```
 
 The following content is in the `user.h` and `user.c` files:
@@ -168,7 +134,10 @@ bool init_user();
 #endif
 
 #endif /* __USER_H__ */
+```
 
+
+```
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
@@ -207,9 +176,8 @@ static player_h g_player;
 
 static char audio_file[128];
 
-/* Player: get mute */
-static bool
-user_player_is_muted(bool *muted)
+/* player : get mute */
+static bool user_player_is_muted(bool *muted)
 {
     FN_CALL;
 
@@ -217,16 +185,14 @@ user_player_is_muted(bool *muted)
     ret = player_is_muted(g_player, muted);
     if (ret != PLAYER_ERROR_NONE) {
         ERR("player_is_muted is failed [%d]", ret);
-
         return false;
     }
 
     return true;
 }
 
-/* Player: set mute */
-static bool
-user_player_set_mute(bool muted)
+/* player : set mute */
+static bool user_player_set_mute(bool muted)
 {
     FN_CALL;
 
@@ -234,16 +200,14 @@ user_player_set_mute(bool muted)
     ret = player_set_mute(g_player, muted);
     if (ret != PLAYER_ERROR_NONE) {
         ERR("player_set_mute is failed [%d]", ret);
-
         return false;
     }
 
     return true;
 }
 
-/* Player: set volume */
-static bool
-user_player_set_volume(float vol)
+/* player : set volume */
+static bool user_player_set_volume(float vol)
 {
     FN_CALL;
 
@@ -251,16 +215,14 @@ user_player_set_volume(float vol)
     ret = player_set_volume(g_player, vol, vol);
     if (ret != PLAYER_ERROR_NONE) {
         ERR("player_set_volume is failed [%d]", ret);
-
         return false;
     }
 
     return true;
 }
 
-/* Player: get volume */
-static bool
-user_player_get_volume(float *vol)
+/* player : get volume */
+static bool user_player_get_volume(float *vol)
 {
     FN_CALL;
 
@@ -269,16 +231,14 @@ user_player_get_volume(float *vol)
     ret = player_get_volume(g_player, vol, &vol2);
     if (ret != PLAYER_ERROR_NONE) {
         ERR("player_get_volume is failed [%d]", ret);
-
         return false;
     }
 
     return true;
 }
 
-/* Player: start player */
-static bool
-user_player_start()
+/* player : start player */
+static bool user_player_start()
 {
     FN_CALL;
 
@@ -286,28 +246,24 @@ user_player_start()
     ret = player_set_uri(g_player, audio_file);
     if (ret != PLAYER_ERROR_NONE) {
         ERR("player_set_uri is failed [%d]", ret);
-
         return false;
     }
     ret = player_prepare(g_player);
     if (ret != PLAYER_ERROR_NONE) {
         ERR("player_prepare is failed [%d]", ret);
-
         return false;
     }
     ret = player_start(g_player);
     if (ret != PLAYER_ERROR_NONE) {
         ERR("player_start is failed [%d]", ret);
-
         return false;
     }
 
     return true;
 }
 
-/* Player: stop player */
-static bool
-user_player_stop()
+/* player : stop player */
+static bool user_player_stop()
 {
     FN_CALL;
 
@@ -315,22 +271,18 @@ user_player_stop()
     ret = player_stop(g_player);
     if (ret != PLAYER_ERROR_NONE) {
         ERR("player_stop is failed [%d]", ret);
-
         return false;
     }
     ret = player_unprepare(g_player);
     if (ret != PLAYER_ERROR_NONE) {
         ERR("player_unprepare is failed [%d]", ret);
-
         return false;
     }
-
     return true;
 }
 
-/* Player: init player */
-static bool
-user_player_init()
+/* player : init player */
+static bool user_player_init()
 {
     FN_CALL;
 
@@ -338,13 +290,11 @@ user_player_init()
     ret = player_create(&g_player);
     if (ret != PLAYER_ERROR_NONE) {
         ERR("player_create is failed [%d]", ret);
-
         return false;
     }
     ret = player_set_looping(g_player, true);
     if (ret != PLAYER_ERROR_NONE) {
         ERR("player_set_looping is failed [%d]", ret);
-
         return false;
     }
 
@@ -355,9 +305,8 @@ user_player_init()
     return true;
 }
 
-/* Initialize player */
-bool
-init_user()
+/* initialize player */
+bool init_user()
 {
     FN_CALL;
 
@@ -368,9 +317,8 @@ init_user()
     return ret;
 }
 
-/* Handle: for getting request on switch */
-bool
-handle_get_request_on_switch(st_things_get_request_message_s *req_msg, st_things_representation_s *resp_rep)
+/* handle : for getting request on switch */
+bool handle_get_request_on_switch(st_things_get_request_message_s *req_msg, st_things_representation_s *resp_rep)
 {
     DBG("current g_switch: [%s]", g_switch);
     resp_rep->set_str_value(resp_rep, KEY_SWITCH, g_switch);
@@ -378,9 +326,8 @@ handle_get_request_on_switch(st_things_get_request_message_s *req_msg, st_things
     return true;
 }
 
-/* Handle: for setting request on switch */
-bool
-handle_set_request_on_switch(st_things_set_request_message_s *req_msg, st_things_representation_s *resp_rep)
+/* handle : for setting request on switch */
+bool handle_set_request_on_switch(st_things_set_request_message_s *req_msg, st_things_representation_s *resp_rep)
 {
     DBG("current g_switch: [%s]", g_switch);
 
@@ -388,12 +335,11 @@ handle_set_request_on_switch(st_things_set_request_message_s *req_msg, st_things
     req_msg->rep->get_str_value(req_msg->rep, KEY_SWITCH, &str_value);
     DBG("requested switch: [%s]", str_value);
 
-    /* Check validation */
+    /* check validation */
     if ((0 != strncmp(str_value, VALUE_SWITCH_ON, strlen(VALUE_SWITCH_ON)))
         && (0 != strncmp(str_value, VALUE_SWITCH_OFF, strlen(VALUE_SWITCH_OFF)))) {
         ERR("Not supported value!!");
         free(str_value);
-
         return false;
     }
 
@@ -409,13 +355,11 @@ handle_set_request_on_switch(st_things_set_request_message_s *req_msg, st_things
     st_things_notify_observers(req_msg->resource_uri);
 
     free(str_value);
-
     return true;
 }
 
-/* Handle: for getting request on volume */
-bool
-handle_get_request_on_volume(st_things_get_request_message_s *req_msg, st_things_representation_s *resp_rep)
+/* handle : for getting request on volume */
+bool handle_get_request_on_volume(st_things_get_request_message_s *req_msg, st_things_representation_s *resp_rep)
 {
     DBG("current g_volume: [%lld], g_mute:[%d]", g_volume, g_mute);
 
@@ -441,9 +385,8 @@ handle_get_request_on_volume(st_things_get_request_message_s *req_msg, st_things
     return true;
 }
 
-/* Handle: for setting request on volume */
-bool
-handle_set_request_on_volume(st_things_set_request_message_s *req_msg, st_things_representation_s *resp_rep)
+/* handle : for setting request on volume */
+bool handle_set_request_on_volume(st_things_set_request_message_s *req_msg, st_things_representation_s *resp_rep)
 {
     DBG("current g_volume: [%lld], g_mute:[%d]", g_volume, g_mute);
 
@@ -489,9 +432,8 @@ handle_set_request_on_volume(st_things_set_request_message_s *req_msg, st_things
     return true;
 }
 
-/* Handle: reset request*/
-bool
-handle_reset_request()
+/* handle : reset request*/
+bool handle_reset_request()
 {
     bool confirmed = true;
     DBG("confirmed : [%d]", confirmed);
@@ -499,16 +441,14 @@ handle_reset_request()
     return confirmed;
 }
 
-/* Handle: reset result */
-void
-handle_reset_result(bool result)
+/* handle : reset result */
+void handle_reset_result(bool result)
 {
     DBG("result : [%d]", result);
 }
 
-/* Handle: ownership transfer request */
-bool
-handle_ownership_transfer_request()
+/* handle : ownership transfer request */
+bool handle_ownership_transfer_request()
 {
     bool confirmed = true;
     DBG("confirmed : [%d]", confirmed);
@@ -516,9 +456,8 @@ handle_ownership_transfer_request()
     return confirmed;
 }
 
-/* Handle: for things status change */
-void
-handle_things_status_change(st_things_status_e things_status)
+/* handle : for things status change */
+void handle_things_status_change(st_things_status_e things_status)
 {
     DBG("things_status : [%d]", things_status);
 }

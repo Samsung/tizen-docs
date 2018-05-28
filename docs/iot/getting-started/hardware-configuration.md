@@ -110,6 +110,9 @@ To configure the ARTIK 530 or the ARTIK 530s hardware board:
         ```
 
     3.  Enter the `sdb help` command in the Linux shell (Linux) or Command window (Windows) of the host computer, for more information.
+        > **Note**
+        >
+        > `sdb` execution file is available in the `tools` sub-directory of the directory where Tizen Studio is installed.
 
 ## Raspberry Pi 3
 
@@ -135,7 +138,6 @@ To configure the Raspberry Pi 3 board:
         >
         > If Ethernet ports are not available in the host computer or the Pi, you can also use an `Ethernet-to-USB` dongle.
 
-        </div>
 
     2.  Set a new network interface in the host computer as shown in the following figures. This is a one time activity:
         -   Linux computer:
@@ -183,3 +185,7 @@ To configure the Raspberry Pi 3 board:
     ```
 
 6.  Enter the `sdb help` command in the Linux shell (Linux) or Command window (Windows) of the host computer, for more information.
+    > **Note**
+    >
+    > `sdb` execution file is available in the `tools` sub-directory of the directory where Tizen Studio is installed.
+

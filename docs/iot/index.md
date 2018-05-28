@@ -15,7 +15,7 @@ Tizen IoT is composed of:
 Connected with the Cloud, the SmartThings App on your smart phone  provides easy and convenient ways for users to manage and configure the  devices and the services. For more information about Samsung's  SmartThings solution, see [SmartThings website.](https://smartthings.developer.samsung.com/)
 
 
-[**Figure: SmartThings Ecosystem**]
+**Figure: SmartThings Ecosystem**
 
 [![SmartThings Ecosystem](media/ST_dev_eco_diagram.png)](https://smartthings.developer.samsung.com/)
 

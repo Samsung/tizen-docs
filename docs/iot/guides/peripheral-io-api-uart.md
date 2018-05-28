@@ -4,13 +4,13 @@
 
 **Figure: UART interface diagram**
 
-![UART interface diagram](../images/peri_api_uart_diagram.png)
+![UART interface diagram](media/peri_api_uart_diagram.png)
 
 UART is an interface for exchanging data with peripherals. It is an asynchronous method that transmits data without a clock line, and consists of only 2 data lines: transmit (Tx) and receive (Rx). UART performs 1:1 communication.
 
 **Figure: UART data frame**
 
-![UART data frame](../images/peri_api_uart_data.png)
+![UART data frame](media/peri_api_uart_data.png)
 
 The UART data frame consists of start (1 bit), data (5\~8 bit), parity (1 bit) and stop (1 bit):
 
@@ -65,7 +65,7 @@ To open and close a handle:
 
     > **Note**
     >
-    > For more information on the pin names and locations, see [Supported Protocols](peripheral_io_api.htm#protocol).
+    > For more information on the pin names and locations, see [Supported Protocols](peripheral-io-api.md#protocol).
 
 2.  To close a UART handle that is no longer used, use the `peripheral_uart_close()` function:
 
@@ -119,7 +119,7 @@ To set the stop bits, use the `peripheral_uart_set_stop_bits()` function with 1 
 peripheral_uart_set_stop_bits(uart_h, PERIPHERAL_UART_STOP_BITS_2BIT);
 ```
 
-##Setting the Flow Control
+## Setting the Flow Control
 
 To set the hardware and software flow control, use the `peripheral_uart_set_flow_control()` function with 1 of the following flow control types:
 

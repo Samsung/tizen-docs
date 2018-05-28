@@ -9,7 +9,7 @@
 ## [setting up the smartthings cloud](/iot/getting-started/things-cloud-setup.md)
 ## [testing with smartthings app](/iot/getting-started/cloud-app-test.md)
 
-# [Customized Platform Guide](/iot/customized-platform/customized-platform.md)
+# [Customized Platform Guide](/iot/customized-platform/overview.md)
 
 # API Guides
 ## [Overview](/iot/guides/iot-api.md)

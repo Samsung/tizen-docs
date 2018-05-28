@@ -361,12 +361,12 @@ The `"configuration"` component has the following fields:
     -   `certificate[string]`: Full (or relative) path for the certificate file
     -   `privateKey[string]`: Full (or relative) path for the privateKey file
 
-<div class="note">
 
-**Note** Optionally, if you want to configure the read-only and read-write paths in the `st_things_set_configuration_prefix_path()` function, you only need to define the file names or relative path in the `filePath` object.
-For example, if the optional function is invoked with `st_things_set_configuration_prefix_path("/mnt/ro", "/mnt/rw");`, the read-only configuration files are prefixed with `/mnt/ro` and the read-write configuration files are prefixed with `/mnt/rw`.
-
-</div>
+  > **Note**
+  >
+  > Optionally, if you want to configure the read-only and read-write paths in the `st_things_set_configuration_prefix_path()` function, you only need to define the file names or relative path in the `filePath` object.
+  >
+  > For example, if the optional function is invoked with `st_things_set_configuration_prefix_path("/mnt/ro", "/mnt/rw");`, the read-only configuration files are prefixed with `/mnt/ro` and the read-write configuration files are prefixed with `/mnt/rw`.
 
 For more information on Easy Setup, see <https://wiki.iotivity.org/easy_setup>.
 
@@ -400,13 +400,13 @@ The following example shows a sample entry for the `"configuration"` component. 
 > **Note**
 >
 > Optionally, if you want to configure the read-only and read-write paths, you can define the file names only in the configuration file, and specify the paths in the `st_things_set_configuration_prefix_path()` function:
-```
-"filePath": {
-   "svrdb": "svrdb.dat",
-   "provisioning": "provisioning.json",
-   "certificate": "certificate.pem",
-   "privateKey": "privatekey.der"
-}
-
-st_things_set_configuration_prefix_path("/ropath/XXX/res", "/rwpath/XXX/data");
-```
+> ```
+> "filePath": {
+>   "svrdb": "svrdb.dat",
+>   "provisioning": "provisioning.json",
+>   "certificate": "certificate.pem",
+>   "privateKey": "privatekey.der"
+> }
+>
+> st_things_set_configuration_prefix_path("/ropath/XXX/res", "/rwpath/XXX/data");
+> ```
