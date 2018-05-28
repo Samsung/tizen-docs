@@ -7,32 +7,32 @@
 ### New Features
 
 -   Device Manager
-	-   Enable Device Manager Context UI to be extended by plugins
+	-   Enabled Device Manager Context UI to be extended by plugins
 -   RT-IDE
-	-   RT-IDE GCC Toolchain update to 6.3.1
--   SmartThings
-	-   Make setupId mandatory field and map it to device onboarding id
-	-   Updated ramls for smart things resources
+	-   RT-IDE GNU Compiler Collection (GCC) toolchain is updated to version 6.3.1.
+-   SmartThings&trade;
+	-   The setupId is a mandatory field and is mapped to the device onboarding ID.
+	-   The RESTful API Modeling Language (RAML) for SmartThings&trade; is updated.
 -   Package Manager
-	-   Remove *.po files getting packaged into tpk
+	-   Removed portable object (*.po) files , which are packaged into tpk.
 
 ### Changed Features
 -	RT-IDE
-	-   Removed local template for creating project. Project can be created using latest RT code from github.
+	-   Removed the local template for creating a project. The project can be created using the latest RT code from GitHub.
 
 ### Fixed Bugs
 -   Device Manager
-	-   Fix crash when filtering devices in JAVA 9
-	-   "Add new tab" button clickable area changed to full button
-	-   Added support for empty filter category in logs
-	-   Fixed Permit to install failure for secure TV profile
+	-   Fixed the crash that occurred while filtering devices in JAVA 9.
+	-   Increased the clickable area for Add new tab button to cover the entire button area.
+	-   Added support for empty filter category in logs.
+	-   Fixed permit to install the failure for secure TV profile.
 -   Emulator
-	-   Corrected the marked location data in emulator control panel
+	-   Corrected the marked location data in emulator control panel.
 -   Package Manager
-	-   Added https support in package manager to download SDK from https website.
-	-   Fix multiple instance of same package manager getting launched in Windows and macOS.
+	-   Added https support in Package Manager to download SDK from https website.
+	-   Fixed multiple instance of same Package Manager getting launched in Windows and macOS.
 -   Certificate Manager
-	-   Fixed the socket timeout error when creating IoT certificates
+	-   Fixed the socket timeout error when creating IoT certificates.
 
 ### Known Issues
 -	Tizen Studio
@@ -60,7 +60,7 @@
 	-   The Component Designer crashes if an alias is selected as the source group of an added item.
 -	Emulator
 	-   To use the Tizen emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. To verify the prerequisites for the Tizen emulator, see [Prerequisites for the Tizen Studio](https://developer.tizen.org/development/tizen-studio/download/installing-tizen-studio/prerequisites).
-	    -   If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows&reg;, you must set the Tizen emulator to run with your NVIDIA graphics card. For Ubuntu, verify the [bumblebee project](https://wiki.ubuntu.com/Bumblebee ). For Windows&reg;, select *High Speed NVIDIA Processor* as *Preferred Graphics processor* in the NVIDIA control panel.
+	    -   If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows&reg;, you must set the Tizen emulator to run with your NVIDIA&reg; graphics card. For Ubuntu, verify the [bumblebee project](https://wiki.ubuntu.com/Bumblebee ). For Windows&reg;, select *High Speed NVIDIA&reg; Processor* as *Preferred Graphics processor* in the NVIDIA&reg; control panel.
 	    -   On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session occasionally logs out while launching the Emulator Manager, or the emulator skin is displayed improperly. Verify the prerequisites and upgrade to the latest graphics driver.
 	-   On Ubuntu 14.04, a shortcut menu can sometimes appear transparent.
 	-   On Windows&reg;, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the emulator window is covered with another window. If you click the emulator window, the display surface runs correctly again.
@@ -68,8 +68,8 @@
 	    -   Close some other programs and try to launch the emulator again.
 	    -   If the RAM size is set to 768 or 1024 MB for the VM in the Emulator Manager, change it to 512 MB.
 	    -   Increase the user area of the virtual memory in the system to 3 GB by entering the *bcdedit /setincreaseuserva 3072* command on the console with administrator rights (only in Windows&reg; 7), and reboot.
-	-   If you use a MacBook Pro which has both Intel HD and NVIDIA&reg; GPUs, the emulator can unexpectedly terminate when you execute the emulator with OpenGL ES version set v1.1 & v2.0. Verify the emulator configuration in the Emulator Manager and on the general tab in the emulator configuration window, set OpenGL ES version to v2.0 & v3.0.
-	-   When you launch the Emulator Manager in the Tizen IDE, the Emulator Manager's shortcut image may not be displayed properly.
+	-   If you use a MacBook Pro which has both Intel HD and NVIDIA&reg; GPUs, the emulator can unexpectedly terminate when you execute the emulator with OpenGL ES version set v1.1 and OpenGL ES version set v2.0. Verify the emulator configuration in the Emulator Manager and on the general tab in the emulator configuration window, set OpenGL ES version to version v2.0 and version v3.0.
+	-   When you launch the Emulator Manager in the Tizen IDE, the shortcut image of Emulator Manager may not be displayed properly.
 	-   Basic Web applications does not install on SD cards.
 -	CLI and SDB
 	-   The Tizen Studio does not support the SDB ([Smart Development Bridge](https://developer.tizen.org/development/tizen-studio/web-tools/running-and-testing-your-app/sdb)) bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
@@ -83,4 +83,4 @@
 	-   The Dynamic Analyzer cannot show life-cycle information for Web applications.
 	-   Widget applications cannot be profiled with the Dynamic Analyzer. They are hidden in the application list on the toolbar for all Tizen platforms, except Tizen 2.3.2.
 -	Web Inspector
-	-   If your Google Chrome™ browser version is higher than 54, the Web Inspector console and some other functions does not work properly due to Web core compatibility issues.
+	-   If your Google Chromeâ„¢ browser version is higher than 54, the Web Inspector console and some other functions does not work properly due to Web core compatibility issues.
