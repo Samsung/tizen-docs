@@ -12,7 +12,9 @@ The main features of the SDL API include:
 
   You can [set the supported screen orientations](#screen_orientation) for your SDL application.
 
-- Showing the status bar **in mobile applications only**You can [manage the status bar](#setting_indicator) used to display icons or notifications.
+- Showing the status bar **in mobile applications only**
+
+  You can [manage the status bar](#setting_indicator) used to display icons or notifications.
 
 SDL belongs to the hardware abstraction layer in Tizen. It allows managing video, audio, input devices, threads, and 3D graphics through graphics libraries, such as Vulkan&reg; and OpenGL&reg; ES. For information the comparative merits of Vulkan&reg; and OpenGL&reg;, see [Vulkan&reg; vs. OpenGL&reg;](#vulkan_vs_opengles). As shown in the following figure, SDL provides the application layer access to low-level 3D rendering API (Vulkan&reg; and OpenGL&reg; ES).
 
@@ -144,7 +146,9 @@ To handle general SDL events:
     }
     ```
 
-2. The `SDL_PollEvent()` function removes the next event from the event queue. If there is no event in the queue, it returns 0. If there is an event, it fills the `SDL_Event` object with the event information.The `SDL_Event` object is a union that contains structures for the different event types. The `type` member specifies the event type, shared with all events. The `type` member is related to the [SDL_EventType](https://wiki.libsdl.org/SDL_EventType) enumeration.To handle each event type separately, use a switch statement:
+2. The `SDL_PollEvent()` function removes the next event from the event queue. If there is no event in the queue, it returns 0. If there is an event, it fills the `SDL_Event` object with the event information.
+
+    The `SDL_Event` object is a union that contains structures for the different event types. The `type` member specifies the event type, shared with all events. The `type` member is related to the [SDL_EventType](https://wiki.libsdl.org/SDL_EventType) enumeration.To handle each event type separately, use a switch statement:
 
     ```
     void
@@ -192,7 +196,15 @@ To handle general SDL events:
 
 To handle SDL events specifically added to the Tizen application framework:
 
-- `SDL_APP_CONTROL`This event is invoked when the device is launched with some parameters.The application framework calls the application's control callback just after the application enters the main loop. This callback is passed to the `app_control` instance containing the reason why the application was launched. For example, the application can be launched to open a file to handle the request that has been sent by another application. In any case, the application is responsible for checking the `app_control` content and responding appropriately. The `app_control` content can be empty, if the application is launched from the launcher.In SDL, `SDL_APP_CONTROL` has been defined as a new `SDL_Event` event type for the application control. After the application enters the main loop, SDL sends the `SDL_APP_CONTROL` event to the application. This means that the application can confirm the `SDL_Event` in the event loop. The event is defined as an `SDL_UserEvent`, which is in the `user` member of the `SDL_Event` union.The `user` structure contains `data1` (`app_control`) and `data2` (`user_data`).In Tizen, you must include the `<app.h>` header file to use the application control. For more information, see the [Application Controls](../app-management/app-controls.md) guide.
+- `SDL_APP_CONTROL`This event is invoked when the device is launched with some parameters.
+
+  The application framework calls the application's control callback just after the application enters the main loop. This callback is passed to the `app_control` instance containing the reason why the application was launched. For example, the application can be launched to open a file to handle the request that has been sent by another application. In any case, the application is responsible for checking the `app_control` content and responding appropriately. The `app_control` content can be empty, if the application is launched from the launcher.
+
+  In SDL, `SDL_APP_CONTROL` has been defined as a new `SDL_Event` event type for the application control. After the application enters the main loop, SDL sends the `SDL_APP_CONTROL` event to the application. This means that the application can confirm the `SDL_Event` in the event loop. The event is defined as an `SDL_UserEvent`, which is in the `user` member of the `SDL_Event` union.
+
+  The `user` structure contains `data1` (`app_control`) and `data2` (`user_data`).
+
+  In Tizen, you must include the `<app.h>` header file to use the application control. For more information, see the [Application Controls](../app-management/app-controls.md) guide.
 
     ```
     #include <app.h>
@@ -213,7 +225,9 @@ To handle SDL events specifically added to the Tizen application framework:
         break;
     ```
 
-- `SDL_APP_LOWBATTERY`This event is invoked when the application is low on battery. Use it to reduce power consumption, if possible. In Tizen, this event is called in the `_tizen_app_low_battery()` function.Get the low battery status from the given event info by calling the `app_event_get_low_battery_status()` function. The `app_event_low_battery_status_e` (in [mobile](../../api/mobile/latest/group__CAPI__APP__COMMON__MODULE.html#gacd053e5be8bdd4a4e3cc5bb20916af00) and [wearable](../../api/wearable/latest/group__CAPI__APP__COMMON__MODULE.html#gacd053e5be8bdd4a4e3cc5bb20916af00) applications) is the enumeration for the battery status: `APP_EVENT_LOW_BATTERY_POWER_OFF` means that the battery charge is under 1% and `APP_EVENT_LOW_BATTERY_CRITICAL_LOW` under 5%.
+- `SDL_APP_LOWBATTERY`This event is invoked when the application is low on battery. Use it to reduce power consumption, if possible. In Tizen, this event is called in the `_tizen_app_low_battery()` function.
+
+  Get the low battery status from the given event info by calling the `app_event_get_low_battery_status()` function. The `app_event_low_battery_status_e` (in [mobile](../../api/mobile/latest/group__CAPI__APP__COMMON__MODULE.html#gacd053e5be8bdd4a4e3cc5bb20916af00) and [wearable](../../api/wearable/latest/group__CAPI__APP__COMMON__MODULE.html#gacd053e5be8bdd4a4e3cc5bb20916af00) applications) is the enumeration for the battery status: `APP_EVENT_LOW_BATTERY_POWER_OFF` means that the battery charge is under 1% and `APP_EVENT_LOW_BATTERY_CRITICAL_LOW` under 5%.
 
     ```
     #include <app.h>
@@ -235,7 +249,11 @@ To handle SDL events specifically added to the Tizen application framework:
         break;
     ```
 
-- `SDL_APP_LANGUAGE_CHANGED` and `SDL_APP_REGION_FORMAT_CHANGED`These events are invoked when the displayed language and region are changed by the system.The `user` structure contains `data1` (language or region data).
+- `SDL_APP_LANGUAGE_CHANGED` and `SDL_APP_REGION_FORMAT_CHANGED`
+
+  These events are invoked when the displayed language and region are changed by the system.
+
+  The `user` structure contains `data1` (language or region data).
 
     ```
     /* Displayed language is changed by system */

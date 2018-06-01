@@ -86,7 +86,9 @@ To enable your application to use the device functionality:
 
 To retrieve battery information:
 
-- Get the battery charge percentage with the `device_battery_get_percent()` function.The function returns the current battery percentage as an integer value from 0 to 100 that indicates the remaining battery charge as a percentage of the maximum level.
+- Get the battery charge percentage with the `device_battery_get_percent()` function.
+
+  The function returns the current battery percentage as an integer value from 0 to 100 that indicates the remaining battery charge as a percentage of the maximum level.
 
     ```
     int error;
@@ -102,7 +104,9 @@ To retrieve battery information:
     error = device_battery_is_charging(&charging);
     ```
 
-- Get the current battery level with the `device_battery_get_level_status()` function.The `device_battery_level_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__BATTERY__MODULE.html#ga63913a4983cc34e35dcdd670e8fe99e4) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__BATTERY__MODULE.html#ga63913a4983cc34e35dcdd670e8fe99e4) applications) defines the available battery levels.
+- Get the current battery level with the `device_battery_get_level_status()` function.
+
+  The `device_battery_level_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__BATTERY__MODULE.html#ga63913a4983cc34e35dcdd670e8fe99e4) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__BATTERY__MODULE.html#ga63913a4983cc34e35dcdd670e8fe99e4) applications) defines the available battery levels.
 
     ```
     int error;
@@ -123,7 +127,9 @@ To retrieve and set display properties:
     error = device_display_get_numbers(&num);
     ```
 
-- Get the maximum possible brightness with the `device_display_get_max_brightness()` function.The function returns the maximum brightness value that can be set.
+- Get the maximum possible brightness with the `device_display_get_max_brightness()` function.
+
+  The function returns the maximum brightness value that can be set.
 
     ```
     int error;
@@ -141,7 +147,9 @@ To retrieve and set display properties:
     error = device_display_set_brightness(0, 100);
     ```
 
-- Get and set the display state with the `device_display_get_state()` and `device_display_change_state()` functions.The `display_state_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#ga93a9434f07b3db52ec85fe58b79c529f) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#ga93a9434f07b3db52ec85fe58b79c529f) applications) defines the available display states.
+- Get and set the display state with the `device_display_get_state()` and `device_display_change_state()` functions.
+
+  The `display_state_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#ga93a9434f07b3db52ec85fe58b79c529f) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#ga93a9434f07b3db52ec85fe58b79c529f) applications) defines the available display states.
 
     ```
     int error;
@@ -165,7 +173,9 @@ To control haptic devices:
     ```
 
 2. To manage a haptic device:
-   1. Initialize the haptic device with the `device_haptic_open()` function.The function opens a haptic-vibration device and returns the handle to it. It makes a connection to the vibrator.
+   1. Initialize the haptic device with the `device_haptic_open()` function.
+
+      The function opens a haptic-vibration device and returns the handle to it. It makes a connection to the vibrator.
 
         ```
         int error;
@@ -173,7 +183,9 @@ To control haptic devices:
         error = device_haptic_open(0, &handle);
         ```
 
-   2. Play and stop an effect on the device with the `device_haptic_vibrate()` and `device_haptic_stop()` functions.The device vibrates for a specified time with a constant intensity. The effect handle can be 0.
+   2. Play and stop an effect on the device with the `device_haptic_vibrate()` and `device_haptic_stop()` functions.
+
+      The device vibrates for a specified time with a constant intensity. The effect handle can be 0.
 
         ```
         int error;
@@ -183,7 +195,9 @@ To control haptic devices:
         error = device_haptic_stop(handle, &effect_handle);
         ```
 
-   3. When no longer needed, deinitialize the haptic device with the `device_haptic_close()` function.The function closes the haptic handle and disconnects the connection to the vibrator.
+   3. When no longer needed, deinitialize the haptic device with the `device_haptic_close()` function.
+
+      The function closes the haptic handle and disconnects the connection to the vibrator.
 
         ```
         int error;
@@ -220,7 +234,9 @@ To control an IR device:
 
 To control a LED device:
 
-- Get the maximum brightness value of a torch LED with the `device_flash_get_max_brightness()` function.The function returns the maximum brightness value of the torch LED located next to the camera.
+- Get the maximum brightness value of a torch LED with the `device_flash_get_max_brightness()` function.
+
+  The function returns the maximum brightness value of the torch LED located next to the camera.
 
     ```
     int error;
@@ -240,7 +256,9 @@ To control a LED device:
 
 - Play and stop a custom effect on the service LED with the `device_led_play_custom()` and `device_led_stop_custom()` functions.
 
-  The `led_custom_flags` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__LED__MODULE.html#ga2065bc82e5ecf7e2acba8629c0d75e3b) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__LED__MODULE.html#ga2065bc82e5ecf7e2acba8629c0d75e3b) applications) defines the available custom effects.The custom effect plays on the service LED that is located on the front of the device.
+  The `led_custom_flags` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DEVICE__LED__MODULE.html#ga2065bc82e5ecf7e2acba8629c0d75e3b) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DEVICE__LED__MODULE.html#ga2065bc82e5ecf7e2acba8629c0d75e3b) applications) defines the available custom effects.
+
+  The custom effect plays on the service LED that is located on the front of the device.
 
     ```
     int error;

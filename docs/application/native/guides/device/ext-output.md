@@ -25,9 +25,9 @@ The main features of the External Output Manager API include:
 
     | Attribute                              | Description                              |
     |----------------------------------------|------------------------------------------|
-    | `EOM_OUTPUT_ATTRIBUTE_NORMAL`          | This priority can be set, if the current priority is none (mirror mode) or `NORMAL`.This priority cannot be set, if the current priority is `EXCLUSIVE_SHARE` or `EXCLUSIVE`. |
-    | `EOM_OUTPUT_ATTRIBUTE_EXCLUSIVE_SHARE` | This priority can be set, if the current priority is none (mirror mode), `NORMAL`, or `EXCLUSIVE_SHARE`.This priority cannot be set, if the current priority is `EXCLUSIVE`. |
-    | `EOM_OUTPUT_ATTRIBUTE_EXCLUSIVE`       | This priority can be set, if the current priority is none (mirror mode), `NORMAL`, or `EXCLUSIVE`.This priority cannot be set, if the current priority is `EXCLUSIVE_SHARE`. |
+    | `EOM_OUTPUT_ATTRIBUTE_NORMAL`          | This priority can be set, if the current priority is none (mirror mode) or `NORMAL`.<br> This priority cannot be set, if the current priority is `EXCLUSIVE_SHARE` or `EXCLUSIVE`. |
+    | `EOM_OUTPUT_ATTRIBUTE_EXCLUSIVE_SHARE` | This priority can be set, if the current priority is none (mirror mode), `NORMAL`, or `EXCLUSIVE_SHARE`.<br> This priority cannot be set, if the current priority is `EXCLUSIVE`. |
+    | `EOM_OUTPUT_ATTRIBUTE_EXCLUSIVE`       | This priority can be set, if the current priority is none (mirror mode), `NORMAL`, or `EXCLUSIVE`.<br> This priority cannot be set, if the current priority is `EXCLUSIVE_SHARE`. |
 
     In most applications, the `EOM_OUTPUT_ATTRIBUTE_NORMAL` priority is the best option.
 
@@ -169,8 +169,8 @@ To get information about the external output device:
   - `eom_get_output_attribute()`: Get the presentation mode priority attribute information.
   - `eom_get_output_attribute_state()`: Get the attribute state information.
 
-    If the application sets the attribute, the EOM sends the current attribute state to the application:  
-      - `ACTIVE`: The application can use the external output.  
+    If the application sets the attribute, the EOM sends the current attribute state to the application:
+      - `ACTIVE`: The application can use the external output.
       - `INACTIVE`: The application was disconnected from the external output.
       - `LOST`: The application cannot use the external output because another application has set the attribute. The application cannot receive the attribute state anymore.
 

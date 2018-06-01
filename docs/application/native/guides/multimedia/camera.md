@@ -49,8 +49,13 @@ The main features of the Camera API include:
 
   Since devices can have multiple camera sensors with different capabilities, create a `Camera` with a proper `camera_device_e` value, determining which camera sensor is used. Usually the primary sensor is located on the back side and the secondary sensor on the front side of the device. Once the camera sensor is selected, the selected sensor starts working.
 
-  > **Note**  
-  > Simultaneous use of multiple camera sensors is not allowed.The target device often supports more functionalities than the emulator.The behavior of the shutter sound can vary depending on the legislation of each country.
+  > **Note**
+  >
+  > Simultaneous use of multiple camera sensors is not allowed.
+  >
+  > The target device often supports more functionalities than the emulator.
+  >
+  > The behavior of the shutter sound can vary depending on the legislation of each country.
 
 - Releasing resources
 
@@ -416,8 +421,11 @@ To customize the display settings:
 
   The system applies display flip after display rotation, so you must always calculate the correct display flip value after determining the display rotation.
 
-	> **Note**  
-	> For an overlay surface, when the device orientation changes, the displayed camera preview does not rotate automatically. If you want to rotate the display according to the device orientation, use the `camera_set_display_rotation()` function within the `app_device_orientation_cb()` callback used by the application.For an Evas surface, the Evas object for the camera display is rotated by the window manager used by the application, not by the `camera_set_display_rotation()` function.
+  > **Note**
+  >
+  > For an overlay surface, when the device orientation changes, the displayed camera preview does not rotate automatically. If you want to rotate the display according to the device orientation, use the `camera_set_display_rotation()` function within the `app_device_orientation_cb()` callback used by the application.
+  >
+  > For an Evas surface, the Evas object for the camera display is rotated by the window manager used by the application, not by the `camera_set_display_rotation()` function.
 
 <a name="photo"></a>
 ## Taking a Photo

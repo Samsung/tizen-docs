@@ -52,7 +52,7 @@ To debug an application that is already running on the emulator or a device:
 
   Note that the source code of the project must be related to the application that is running on the target.
 
-<a name="remote"></a>  
+<a name="remote"></a>
 ## Remote Debugging
 
 The Tizen Studio supports remote debugging. Remote debugging is used to debug the OS Kernel or a system which cannot support local debugging. Remote debugging requires a "GDB client" on the host side and a "GDB server" on the target side. Both sides must be connected by serial or TCP/IP communication.
@@ -296,9 +296,13 @@ To set or unset a break point, right-click in the marker bar area on the left si
 
 You can view and manage the existing break points in the **Breakpoints** view:
 
-- To remove a break point, right-click it and select **Remove**.When you remove a break point, the corresponding icon is removed from the marker bar are in the editor too.
-- To enable or disable a break point, toggle the check box of the break point, or right-click the break point and select **Enable** or **Disable**.  
-This allows you to temporarily disable a break point without losing the information it contains.
+- To remove a break point, right-click it and select **Remove**.
+
+  When you remove a break point, the corresponding icon is removed from the marker bar are in the editor too.
+
+- To enable or disable a break point, toggle the check box of the break point, or right-click the break point and select **Enable** or **Disable**.
+
+  This allows you to temporarily disable a break point without losing the information it contains.
 
 ### Break Point Properties
 
@@ -307,21 +311,32 @@ You can set break point properties for actions that are executed along with the 
 To edit the properties:
 
 1. Right-click in the marker bar area and select **Breakpoint Properties**.
+
 2. To define actions, select **Actions** in the left side menu.
-3. Click **New** and select an action type. The available action types are:  
-  - Sound Action  
-  You can make a sound when the break point stops.
-  - Log Action  
-  You can see log messages in the **Console** view.
-  - Resume Action  
-  The program execution continues after a specified time.
-  - External Tool Action  
-  You can make your own action.  
 
-  Click **Attach** after setting the action attributes.
-4. To define common properties where the break point stops, select **Common** in the left side menu.  
+3. Click **New** and select an action type. The available action types are:
 
- For example, you can specify a condition using an expression. The break point stops the execution only if the condition is matched. The **Ignore count** field defines the count where the break point stops.
+   - Sound Action
+
+     You can make a sound when the break point stops.
+
+   - Log Action
+
+     You can see log messages in the **Console** view.
+
+   - Resume Action
+
+     The program execution continues after a specified time.
+
+   - External Tool Action
+
+     You can make your own action.
+
+   Click **Attach** after setting the action attributes.
+
+4. To define common properties where the break point stops, select **Common** in the left side menu.
+
+   For example, you can specify a condition using an expression. The break point stops the execution only if the condition is matched. The **Ignore count** field defines the count where the break point stops.
 
 ## Watch Points
 
@@ -346,10 +361,10 @@ The **Expressions** view allows you to evaluate the data related to expressions.
 
 The **Expressions** view can be used in the following ways:
 
-- In the **Expressions** view:  
+- In the **Expressions** view:
   1. Right-click and select **Add Watch Expression**.
   2. Type the expression that you want to evaluate.
-- In the **Variables** view:  
+- In the **Variables** view: 
   1. Select the variable to watch.
   2. Drag and drop it into the **Expressions** view.
 
@@ -400,7 +415,8 @@ In the emulator settings, you can change the display language settings, keyboard
 
 You can utilize additional features for application development and debugging by enabling the developer options.
 
-> **Note**  
+> **Note**
+>
 > The developer options are currently supported on the Tizen 2.3.2 wearable emulator only.
 
 The developer options allow you to make the pixel ratio visible on the screen:

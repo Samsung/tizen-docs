@@ -325,11 +325,18 @@ Regardless of the launch request type, when the application launcher framework h
 	```
 
 2. The `ui_app_main()` function initializes the application and starts the main loop.
-It takes 4 parameters and uses them to initialize the application. The `argc` and `argv` parameters contain the values from the application framework, and you must never change their values. The third parameter is a state transition handler that is responsible for managing the state transitions the application goes through while it is running. The fourth parameter is application data to be passed to each state handler.
 
-3. When the `ui_app_main()` is first invoked, the application moves from the ready state to the created state, and must initialize itself. During this transition, the application framework calls the application's `app_create_cb()` state transition callback just before the application enters the main loop. Within the registered callback, you must initialize the application resources and create the main window.If the `app_create_cb()` callback function returns `false`, the application moves to the terminated state. If it returns `true`, the application enters the main loop.
+    It takes 4 parameters and uses them to initialize the application. The `argc` and `argv` parameters contain the values from the application framework, and you must never change their values. The third parameter is a state transition handler that is responsible for managing the state transitions the application goes through while it is running. The fourth parameter is application data to be passed to each state handler.
 
-4. Just after the application enters the main loop, the application framework calls the application's `app_control_cb()` callback.The callback is passed to the `app_control` handle containing the reason why the application was launched. For example, the application can be launched to open a file to handle the request that has been sent by other application. The application is always responsible for checking the content of the `app_control` handle and responding appropriately. The content of the `app_control` handle can be empty, if the application is launched by the user from the launcher.If the application wants to return the result of the application control operation to the application that originally sent the launch request, the result can be sent with the `app_control_reply_to_launch_request()` function.
+3. When the `ui_app_main()` is first invoked, the application moves from the ready state to the created state, and must initialize itself. During this transition, the application framework calls the application's `app_create_cb()` state transition callback just before the application enters the main loop. Within the registered callback, you must initialize the application resources and create the main window.
+
+    If the `app_create_cb()` callback function returns `false`, the application moves to the terminated state. If it returns `true`, the application enters the main loop.
+
+
+4. Just after the application enters the main loop, the application framework calls the application's `app_control_cb()` callback.
+    The callback is passed to the `app_control` handle containing the reason why the application was launched. For example, the application can be launched to open a file to handle the request that has been sent by other application. The application is always responsible for checking the content of the `app_control` handle and responding appropriately. The content of the `app_control` handle can be empty, if the application is launched by the user from the launcher.
+
+    If the application wants to return the result of the application control operation to the application that originally sent the launch request, the result can be sent with the `app_control_reply_to_launch_request()` function.
 
 	```
 	static void
@@ -437,12 +444,14 @@ You can allow other applications to launch your application and use your applica
 ![Exporting app control](./media/exporting_appcontrol.png)
 
 > **Note**
+>
 > In the application manifest file, the valid operation name format is `http://tizen.org/appcontrol/operation/<verb>`. You cannot use the related macro name, `APP_CONTROL_OPERATION_<VERB>`.
 
 The operation, URI, and MIME type information is used when [resolving the application control](#resolution). The operation information is mandatory, while the URI or MIME type information is optional. Any application requesting a launch of your application must either specify your application ID (for an explicit launch) or have the same operation value and applicable URI and MIME type information (for an implicit launch).
-You can define privileges to restrict your application from launching. To launch your application, the caller application must request for launch permission by defining privileges in the 'tizen-manifest.xml' file.
+You can define privileges to restrict your application from launching. To launch your application, the caller application must request for launch permission by defining privileges in the `tizen-manifest.xml` file.
 
 > **Note**
+>
 > The URI or MIME type can contain wildcards, such as '\*', to match against given conditions in the app control:
 >
 > - In the MIME type, you can use two types of wildcards: `image/*` and `*/*`.

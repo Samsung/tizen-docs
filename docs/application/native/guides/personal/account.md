@@ -142,14 +142,19 @@ To create an account, set its properties, and add it to the account database:
    ret = account_set_icon_path(account, image_path);
    ```
 
-3. When the account properties are set, use the `account_insert_to_db()` function to insert the account to the account database. Use the account ID as the second parameter (`account_id`):`ret = account_insert_to_db(account, &account_id);`
+3. When the account properties are set, use the `account_insert_to_db()` function to insert the account to the account database. Use the account ID as the second parameter (`account_id`):
+    ```
+    ret = account_insert_to_db(account, &account_id);
+    ```
 
 <a name="get"></a>
 ## Getting Account Information
 
 To get account information, such as user name, display name, domain name, and email address:
 
-1. Use the `account_get_total_count_from_db()` function to get the total number of inserted records.To get individual records, use the `account_foreach_account_from_db()` function, which iterates through all the records and invokes a callback function for each account.
+1. Use the `account_get_total_count_from_db()` function to get the total number of inserted records.
+
+    To get individual records, use the `account_foreach_account_from_db()` function, which iterates through all the records and invokes a callback function for each account.
 
     ```
     int total_count = -1;
@@ -158,7 +163,9 @@ To get account information, such as user name, display name, domain name, and em
     ret = account_foreach_account_from_db(on_account_read, NULL);
     ```
 
-2. Define the callback function for the `account_foreach_account_from_db()` function to retrieve information for each account.To get more details, use the `account_get_account_id()`, `account_get_user_name()`, `account_get_display_name()`, and `account_get_icon_path()` functions:
+2. Define the callback function for the `account_foreach_account_from_db()` function to retrieve information for each account.
+
+   To get more details, use the `account_get_account_id()`, `account_get_user_name()`, `account_get_display_name()`, and `account_get_icon_path()` functions:
 
     ```
     static bool
@@ -262,7 +269,8 @@ To retrieve account providers by a specific capability:
 
 To remove an account, use the `account_delete_from_db_by_id()`, `account_delete_from_db_by_user_name()`, or `account_delete_from_db_by_package_name()` function. They all remove a given account record.
 
-> **Note**  
+> **Note**
+>
 > To get the ID needed as a parameter of the `account_delete_from_db_by_id()` function, use the `account_get_account_id()` function.
 
 ```
@@ -292,13 +300,35 @@ To add your application on the Add account screen of the device:
 
    The required information includes:
 
-   - `appid="app-id name"`Application ID (for example, `appid="org.tizen.account"`).
-   - `providerid="url style string"`Provider identification string (for example, `providerid="http://www.tizen.org"`).
-   - `multiple-accounts-support="true or false"`Multiple account support (if your application can manage 2 or more accounts, set to `true`; otherwise set to `false`)
-   - `<icon section="account">application icon name</icon>`Icon displayed on the Add account screen.The icon size must be 72 x 72 px and the icon file must be in the `{app-root}\shared\res\` directory.
-   - `<icon section="account-small">application small icon name</icon>`Small icon displayed on the Other application screen to represent the account provider.The small icon file must be in the `{app-root}\shared\res\` directory.
-   - `<label xml:lang="en-gb">Application name</label>`Application name displayed on the Add account screen, according to the selected language.An account provider must have at least one label tag.
-   - `<capability>http://tizen.org/account/capability/contact</capability>`For more information, see the [Account provider properties table](#provider).
+   - `appid="app-id name"`
+
+     Application ID (for example, `appid="org.tizen.account"`).
+
+   - `providerid="url style string"`
+
+     Provider identification string (for example, `providerid="http://www.tizen.org"`).
+
+   - `multiple-accounts-support="true or false"`
+
+     Multiple account support (if your application can manage 2 or more accounts, set to `true`; otherwise set to `false`)
+
+   - `<icon section="account">application icon name</icon>`
+
+     Icon displayed on the Add account screen.The icon size must be 72 x 72 px and the icon file must be in the `{app-root}\shared\res\` directory.
+
+   - `<icon section="account-small">application small icon name</icon>`
+
+     Small icon displayed on the Other application screen to represent the account provider.The small icon file must be in the `{app-root}\shared\res\` directory.
+
+   - `<label xml:lang="en-gb">Application name</label>`
+
+     Application name displayed on the Add account screen, according to the selected language.
+
+     An account provider must have at least one label tag.
+
+   - `<capability>http://tizen.org/account/capability/contact</capability>`
+
+     For more information, see the [Account provider properties table](#provider).
 
 2. Create the sign-in screen UI.
 
@@ -359,21 +389,21 @@ To perform database queries:
 
    3. [Create an account](#add).
 
-    ```
-    static int
-    Create_Account(account_h* account, char* account_name, char* display_name, char* domain_name, char* email_address)
-    {
-        account_create(account);
+      ```
+      static int
+      Create_Account(account_h* account, char* account_name, char* display_name, char* domain_name, char* email_address)
+      {
+          account_create(account);
 
-        account_set_user_name(*account, account_name);
+          account_set_user_name(*account, account_name);
 
-        account_set_display_name(*account, display_name);
+          account_set_display_name(*account, display_name);
 
-        account_set_domain_name(*account, domain_name);
+          account_set_domain_name(*account, domain_name);
 
-        account_set_email_address(*account, email_address);
-    }
-    ```
+          account_set_email_address(*account, email_address);
+      }
+      ```
 
 2. List the accounts:
 
@@ -828,10 +858,10 @@ The following table lists the account properties that can be modified.
 
 | Account  property | Data type                       | Mandatory | Description                              |
 |-------------------|---------------------------------|-----------|------------------------------------------|
-| User  name        | String                          | Yes       | Identity of an  account.    If the display name and email address are not set for an account, the user  name is shown for the account on the Accounts screen in the Setting  application. |
-| Display  name     | String                          | No        | Display name of  an account.    Display name is shown for the account on the Accounts screen in the Setting  application. |
-| Email  address    | String                          | No        | Email address  of an account.    If the display name is not set for an account, the email address is shown  for the account on the Accounts screen in the Setting application. |
-| Package  name     | String                          | No        | One of an  account package IDs, like the app ID.    If the package name is not set for an account, the app ID is used as a  package name. |
+| User  name        | String                          | Yes       | Identity of an  account.<br>    If the display name and email address are not set for an account, the user  name is shown for the account on the Accounts screen in the Setting  application. |
+| Display  name     | String                          | No        | Display name of  an account.<br>    Display name is shown for the account on the Accounts screen in the Setting  application. |
+| Email  address    | String                          | No        | Email address  of an account.<br>    If the display name is not set for an account, the email address is shown  for the account on the Accounts screen in the Setting application. |
+| Package  name     | String                          | No        | One of an  account package IDs, like the app ID.<br>    If the package name is not set for an account, the app ID is used as a  package name. |
 | Icon  path        | String                          | No        | Icon path of an  account.    The icon is shown through the registered icon path as an account icon on  the Accounts screen in the Setting application. |
 | Domain  name      | String                          | No        | Domain name of  an account.              |
 | Access token      | String                          | No        | Access  token of an account.             |
@@ -849,14 +879,96 @@ The following table lists the properties that can be defined for each account pr
 
 <a name="accprovider_property"></a>
 **Table: Account provider properties**
-
-| Account  property          | Data type | Mandatory | Description                              |
-|----------------------------|-----------|-----------|------------------------------------------|
-| Multiple  accounts support | bool      | Yes       | Indicates  whether multiple accounts are supported. |
-| Icon                       | String    | Yes       | File  path of the account provider icon.    The icon size is: <br>       72 x 72 for Xhigh (HD)<br>    48 x 48 for High (WVGA)<br>    Since the icon is used in Settings > Accounts, place the icon in a  shared directory. |
-| Small  icon                | String    | Yes       | File path of the account provider icon.    The icon size is:<br>        45 x 45 for Xhigh (HD)<br>    30 x 30 for High (WVGA)<br>    Since the small icon is used in other applications, place the icon in a  shared directory. |
-| Display  name              | String    | Yes       | Display name of  the account provider.   |
-| Capabilities               | String    | No        | Capability  of the account provider. <br>   Capability can be a liaison between an account application and another  application. If an account application registers a capability in the manifest  file, other applications know that the account application has the  capability. And if an account application gives an account a capability,  other applications know that the account has the capability.<br> <br>       Several service-specific capabilities are defined for the Account Manager  in Tizen:        <br>Contact capability:    ACCOUNT_SUPPORTS_CAPABILITY_CONTACT or  "http://tizen.org/account/capability/contact"   <br> <br>If you register this capability in the manifest file, the user using the  contact application can see a list of accounts with the account of your  service in the contact application.<br><br>    Calendar capability:    ACCOUNT_SUPPORTS_CAPABILITY_CALENDAR or  "http://tizen.org/account/capability/calendar"    If you register this capability in the manifest file, the user using the  calendar application can see a list of accounts with the account of your  service in the calendar application.<br><br>    Email capability:    ACCOUNT_SUPPORTS_CAPABILITY_EMAIL or  "http://tizen.org/account/capability/email" <br><br>   Photo capability:    ACCOUNT_SUPPORTS_CAPABILITY_PHOTO or  "http://tizen.org/account/capability/photo" <br><br>   Video capability:    ACCOUNT_SUPPORTS_CAPABILITY_VIDEO or  "http://tizen.org/account/capability/video" <br><br>    Music capability:    ACCOUNT_SUPPORTS_CAPABILITY_MUSIC or  "http://tizen.org/account/capability/music" <br><br>    Document capability:    ACCOUNT_SUPPORTS_CAPABILITY_DOCUMENT or  "http://tizen.org/account/capability/document" <br><br>   Message capability:    ACCOUNT_SUPPORTS_CAPABILITY_MESSAGE or  "http://tizen.org/account/capability/message" <br><br>   Game capability:    ACCOUNT_SUPPORTS_CAPABILITY_GAME or  "http://tizen.org/account/capability/game" |
+<table border="1" id="accprovider_property">
+	<thead>
+		<tr>
+			<th>Account property</th>
+			<th>Data type</th>
+			<th>Mandatory</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Multiple accounts support</td>
+			<td>bool</td>
+			<td>Yes</td>
+			<td>Indicates whether multiple accounts are supported.</td>
+		</tr>
+		<tr>
+			<td>Icon</td>
+			<td>String</td>
+			<td>Yes</td>
+			<td>File path of the account provider icon.
+			<p>The icon size is:</p>
+			<ul>
+				<li>72 x 72 for Xhigh (HD)</li>
+				<li>48 x 48 for High (WVGA)</li>
+			</ul>
+			<p>Since the icon is used in <strong>Settings &gt; Accounts</strong>, place the icon in a shared directory.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>Small icon</td>
+			<td>String</td>
+			<td>Yes</td>
+			<td>File path of the account provider icon.
+			<p>The icon size is:</p>
+			<ul>
+				<li>45 x 45 for Xhigh (HD)</li>
+				<li>30 x 30 for High (WVGA)</li>
+			</ul>
+			<p>Since the small icon is used in other applications, place the icon in a shared directory.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>Display name</td>
+			<td>String</td>
+			<td>Yes</td>
+			<td>Display name of the account provider.</td>
+		</tr>
+		<tr>
+			<td>Capabilities</td>
+			<td>String</td>
+			<td>No</td>
+			<td>Capability of the account provider.
+			<p>Capability can be a liaison between an account application and another application. If an account application registers a capability in the manifest file, other applications know that the account application has the capability. And if an account application gives an account a capability, other applications know that the account has the capability.</p>
+			<p>Several service-specific capabilities are defined for the Account Manager in Tizen:</p>
+			<ul>
+				<li>Contact capability:
+				<p><code>ACCOUNT_SUPPORTS_CAPABILITY_CONTACT</code> or <code>"http://tizen.org/account/capability/contact"</code></p>
+				<p>If you register this capability in the manifest file, the user using the contact application can see a list of accounts with the account of your service in the contact application.</p>
+				</li>
+				<li>Calendar capability:
+				<p><code>ACCOUNT_SUPPORTS_CAPABILITY_CALENDAR</code> or <code>"http://tizen.org/account/capability/calendar"</code></p>
+				<p>If you register this capability in the manifest file, the user using the calendar application can see a list of accounts with the account of your service in the calendar application.</p>
+				</li>
+				<li>Email capability:
+				<p><code>ACCOUNT_SUPPORTS_CAPABILITY_EMAIL</code> or <code>"http://tizen.org/account/capability/email"</code></p>
+				</li>
+				<li>Photo capability:
+				<p><code>ACCOUNT_SUPPORTS_CAPABILITY_PHOTO</code> or <code>"http://tizen.org/account/capability/photo"</code></p>
+				</li>
+				<li>Video capability:
+				<p><code>ACCOUNT_SUPPORTS_CAPABILITY_VIDEO</code> or <code>"http://tizen.org/account/capability/video"</code></p>
+				</li>
+				<li>Music capability:
+				<p><code>ACCOUNT_SUPPORTS_CAPABILITY_MUSIC</code> or <code>"http://tizen.org/account/capability/music"</code></p>
+				</li>
+				<li>Document capability:
+				<p><code>ACCOUNT_SUPPORTS_CAPABILITY_DOCUMENT</code> or <code>"http://tizen.org/account/capability/document"</code></p>
+				</li>
+				<li>Message capability:
+				<p><code>ACCOUNT_SUPPORTS_CAPABILITY_MESSAGE</code> or <code>"http://tizen.org/account/capability/message"</code></p>
+				</li>
+				<li>Game capability:
+				<p><code>ACCOUNT_SUPPORTS_CAPABILITY_GAME</code> or <code>"http://tizen.org/account/capability/game"</code></p>
+				</li>
+			</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
 ## Related Information
 - Dependencies

@@ -34,9 +34,12 @@ You can also [cancel service requests](#cancel) and [customize them](#preference
 
 The following map providers are supported:
 
-- [HERE Maps](https://developer.here.com) based on the [HERE REST API](https://developer.here.com/rest-apis).To use the HERE Maps, you need to [get credentials](here-credentials.md).
+- [HERE Maps](https://developer.here.com) based on the [HERE REST API](https://developer.here.com/rest-apis).
 
-> **Note**  
+  To use the HERE Maps, you need to [get credentials](here-credentials.md).
+
+> **Note**
+>
 > To use the map service, you must get an access key to the map provider from the provider developer site. The service must be used according to the provider's Term of Use.
 
 <a name="geocode"></a>
@@ -274,7 +277,9 @@ To start using the map service:
    - `maps_preference_get_language()`
    - `maps_preference_get_max_results()`
    - `maps_preference_get_country_code()`
-   - `maps_preference_get()` and `maps_preference_foreach_property()`These 2 functions retrieve the map provider-specific preferences not defined in the Maps Service API.
+   - `maps_preference_get()` and `maps_preference_foreach_property()`
+
+   These 2 functions retrieve the map provider-specific preferences not defined in the Maps Service API.
 
 <a name="use_geocode"></a>
 ## Using Geocode and Reverse Geocode Services
@@ -426,19 +431,19 @@ To search for a place with a diversity of search parameters, use one of the foll
 
   2. Implement the `__maps_service_search_place_cb()` callback to receive the service response:
 
-    ```
-    static bool
-    __maps_service_search_place_cb(maps_error_e error, int request_id, int index, int total,
-                                   maps_place_h place, void* user_data)
-    {
-        /* Handle the obtained place data */
+     ```
+     static bool
+     __maps_service_search_place_cb(maps_error_e error, int request_id, int index, int total,
+                                    maps_place_h place, void* user_data)
+     {
+         /* Handle the obtained place data */
 
-        /* Release the results */
-        maps_place_destroy(place);
+         /* Release the results */
+         maps_place_destroy(place);
 
-        return true;
-    }
-    ```
+         return true;
+     }
+     ```
 
 - To search for a list of places within a boundary, and get detailed information on a particular place:
   1. Search for a place list:
@@ -529,32 +534,32 @@ To query a route:
 1. Query the route:
    - Use the `maps_service_search_route()` function for a route from one set of geographic coordinates to another:
 
-    ```
-    maps_coordinates_h origin = NULL, destination = NULL;
-    /* Create the coordinates with maps_coordinates_create() */
+     ```
+     maps_coordinates_h origin = NULL, destination = NULL;
+     /* Create the coordinates with maps_coordinates_create() */
 
-    error = maps_service_search_route(maps, origin, destination, preference,
-                                      __maps_service_search_route_cb, user_data, &request_id);
+     error = maps_service_search_route(maps, origin, destination, preference,
+                                       __maps_service_search_route_cb, user_data, &request_id);
 
-    if (error != MAPS_ERROR_NONE)
-        /* Error handling */
-    ```
+     if (error != MAPS_ERROR_NONE)
+         /* Error handling */
+     ```
 
    - Use the `maps_service_search_route_waypoints()` function for a route passing through a specified set of waypoints:
 
-    ```
-    /* Specify the number of waypoints */
-    const int waypoint_num = 5;
+     ```
+     /* Specify the number of waypoints */
+     const int waypoint_num = 5;
 
-    /* Create an array with the waypoint coordinates */
-    maps_coordinates_h* waypoint_list = NULL;
+     /* Create an array with the waypoint coordinates */
+     maps_coordinates_h* waypoint_list = NULL;
 
-    error = maps_service_search_route_waypoints(maps, waypoint_list, waypoint_num, preference,
-                                                __maps_service_search_route_cb, user_data, &request_id);
+     error = maps_service_search_route_waypoints(maps, waypoint_list, waypoint_num, preference,
+                                                 __maps_service_search_route_cb, user_data, &request_id);
 
-    if (error != MAPS_ERROR_NONE)
-        /* Error handling */
-    ```
+     if (error != MAPS_ERROR_NONE)
+         /* Error handling */
+     ```
 
 2. Implement the `__maps_service_search_route_cb()` callback to receive the service response:
 
@@ -632,8 +637,11 @@ Similarly, you can get other address features using the following functions:
 
 The result of the [place search request](#search_place) (`maps_service_search_place()`, `maps_service_search_place_by_area()`, or `maps_service_search_place_by_address()`) is retrieved from the map service using multiple iterations of the `maps_service_search_place_cb()` callback. The result is an instance of place data.
 
-> **Note**  
-> Different map providers are capable of providing different sets of place data features. Some map providers can extend the place data features with extra properties that are not specified in the Maps Service API. Such properties are organized as a key-value storage where the keys are the names of the properties.If your map provider does not support a specific feature, the get function for the feature returns an error. To prevent problems, you can [check which data features are available](#start) in your map provider using the `maps_service_provider_is_data_supported()` function.
+> **Note**
+>
+> Different map providers are capable of providing different sets of place data features. Some map providers can extend the place data features with extra properties that are not specified in the Maps Service API. Such properties are organized as a key-value storage where the keys are the names of the properties.
+>
+> If your map provider does not support a specific feature, the get function for the feature returns an error. To prevent problems, you can [check which data features are available](#start) in your map provider using the `maps_service_provider_is_data_supported()` function.
 
 To parse place data:
 
@@ -641,45 +649,45 @@ To parse place data:
 
    - To obtain the place name, use the `maps_place_get_name()` function:
 
-    ```
-    /* Obtain the place name */
-    char *name = NULL;
-    error = maps_place_get_name(place, &name);
-    if (error != MAPS_ERROR_NONE)
-        /* Error handling */
+     ```
+     /* Obtain the place name */
+     char *name = NULL;
+     error = maps_place_get_name(place, &name);
+     if (error != MAPS_ERROR_NONE)
+         /* Error handling */
 
-    /* Use the place name */
+     /* Use the place name */
 
-    free(name);
-    ```
+     free(name);
+     ```
 
    - To obtain the place location, use the `maps_place_get_location()` function:
 
-    ```
-    /* Obtain the place location */
-    maps_coordinates_h location = NULL;
-    error = maps_place_get_location(place, &location);
-    if (error != MAPS_ERROR_NONE)
-        /* Error handling */
+     ```
+     /* Obtain the place location */
+     maps_coordinates_h location = NULL;
+     error = maps_place_get_location(place, &location);
+     if (error != MAPS_ERROR_NONE)
+         /* Error handling */
 
-    /* Use the place location */
+     /* Use the place location */
 
-    maps_coordinates_destroy(location);
-    ```
+     maps_coordinates_destroy(location);
+     ```
 
    - To obtain the place rating, use the `maps_place_get_rating()` function:
 
-    ```
-    /* Obtain the place rating */
-    maps_place_rating_h rating = NULL;
-    error = maps_place_get_rating(place, &rating);
-    if (error != MAPS_ERROR_NONE)
-        /* Error handling */
+     ```
+     /* Obtain the place rating */
+     maps_place_rating_h rating = NULL;
+     error = maps_place_get_rating(place, &rating);
+     if (error != MAPS_ERROR_NONE)
+         /* Error handling */
 
-    /* Use the place rating */
+     /* Use the place rating */
 
-    maps_place_rating_destroy(rating);
-    ```
+     maps_place_rating_destroy(rating);
+     ```
 
    To obtain other place features, follow the same approach using the following functions:
 
@@ -694,27 +702,27 @@ To parse place data:
 
    1. To obtain a list of place categories, use the `maps_place_foreach_category()` function:
 
-    ```
-    /* Obtain a list of place categories */
-    error = maps_place_foreach_category(place, __maps_place_categories_cb, user_data);
-    if (error != MAPS_ERROR_NONE)
-        /* Error handling */
-    ```
+      ```
+      /* Obtain a list of place categories */
+      error = maps_place_foreach_category(place, __maps_place_categories_cb, user_data);
+      if (error != MAPS_ERROR_NONE)
+          /* Error handling */
+      ```
 
    2. Implement the `__maps_place_categories_cb()` callback:
 
-    ```
-    static bool
-    __maps_place_categories_cb(int index, int total, maps_place_category_h category, void* user_data)
-    {
-        /* Handle the obtained place category data */
+      ```
+      static bool
+      __maps_place_categories_cb(int index, int total, maps_place_category_h category, void* user_data)
+      {
+          /* Handle the obtained place category data */
 
-        /* Release the results */
-        maps_place_category_destroy(category);
+          /* Release the results */
+          maps_place_category_destroy(category);
 
-        return true;
-    }
-    ```
+          return true;
+      }
+      ```
 
    To obtain other place feature lists, follow the same approach using the following functions:
 
@@ -728,37 +736,41 @@ To parse place data:
 
    1. To iterate through the retrieved extra properties, use the `maps_place_foreach_property()` function:
 
-    ```
-    /* Obtain the map provider-specific place data properties */
-    error = maps_place_foreach_property(place, __maps_place_properties_cb, user_data);
-    if (error != MAPS_ERROR_NONE)
-        /* Error handling */
-    ```
+      ```
+      /* Obtain the map provider-specific place data properties */
+      error = maps_place_foreach_property(place, __maps_place_properties_cb, user_data);
+      if (error != MAPS_ERROR_NONE)
+          /* Error handling */
+      ```
 
    2. Implement the `__maps_place_properties_cb()` callback:
 
-    ```
-    static bool
-    __maps_place_properties_cb(int index, int total, char* key, void* value, void* user_data)
-    {
-        /* Handle the obtained property: */
-        /* property_name: key */
-        /* property_value: value */
+      ```
+      static bool
+      __maps_place_properties_cb(int index, int total, char* key, void* value, void* user_data)
+      {
+          /* Handle the obtained property: */
+          /* property_name: key */
+          /* property_value: value */
 
-        /* Release the property name and value */
-        free(key);
-        free(value);
+          /* Release the property name and value */
+          free(key);
+          free(value);
 
-        return true;
-    }
-    ```
+          return true;
+      }
+      ```
+
 <a name="route"></a>
 ## Recognizing the Route Information
 
 The result of the [route calculation request](#search_route) (`maps_service_search_route()` or `maps_service_search_route_waypoints()`) is retrieved from the map service using multiple iterations of the `maps_service_search_route_cb()` callback. The result is an instance of route data.
 
-> **Note**  
-> Different map providers are capable of providing different sets of route data features. Some map providers can extend the route data features with extra properties that are not specified in the Maps Service API. Such properties are organized as a key-value storage where the keys are the names of the properties.If your map provider does not support a specific feature, the get function for the feature returns an error. To prevent problems, you can [check which data features are available](#start) in your map provider using the `maps_service_provider_is_data_supported()` function.
+> **Note**
+>
+> Different map providers are capable of providing different sets of route data features. Some map providers can extend the route data features with extra properties that are not specified in the Maps Service API. Such properties are organized as a key-value storage where the keys are the names of the properties.
+>
+> If your map provider does not support a specific feature, the get function for the feature returns an error. To prevent problems, you can [check which data features are available](#start) in your map provider using the `maps_service_provider_is_data_supported()` function.
 
 To parse route data:
 
@@ -766,46 +778,46 @@ To parse route data:
 
    - To obtain the route ID, use the `maps_route_get_route_id()` function:
 
-    ```
-    /* Obtain the route ID */
-    char *id = NULL;
-    error = maps_route_get_route_id(route, &id);
-    if (error != MAPS_ERROR_NONE)
-        /* Error handling */
+     ```
+     /* Obtain the route ID */
+     char *id = NULL;
+     error = maps_route_get_route_id(route, &id);
+     if (error != MAPS_ERROR_NONE)
+         /* Error handling */
 
-    /* Use the route ID */
+     /* Use the route ID */
 
-    free(id);
-    ```
+     free(id);
+     ```
    - To obtain the route origin and destination, use the `maps_route_get_origin()` and `maps_route_get_destination()` functions:
 
-    ```
-    /* Obtain the route origin and destination */
-    maps_coordinates_h origin = NULL, destination = NULL;
-    error = maps_route_get_origin(route, &origin);
-    if (error != MAPS_ERROR_NONE)
-        /* Error handling */
-    error = maps_route_get_destination(route, &destination);
-    if (error != MAPS_ERROR_NONE)
-        /* Error handling */
+     ```
+     /* Obtain the route origin and destination */
+     maps_coordinates_h origin = NULL, destination = NULL;
+     error = maps_route_get_origin(route, &origin);
+     if (error != MAPS_ERROR_NONE)
+         /* Error handling */
+     error = maps_route_get_destination(route, &destination);
+     if (error != MAPS_ERROR_NONE)
+         /* Error handling */
 
-    /* Use the route origin and destination */
+     /* Use the route origin and destination */
 
-    maps_coordinates_destroy(origin);
-    maps_coordinates_destroy(destination);
-    ```
+     maps_coordinates_destroy(origin);
+     maps_coordinates_destroy(destination);
+     ```
 
    - To obtain the route total distance, use the `maps_route_get_total_distance()` function:
 
-    ```
-    /* Obtain the total route distance */
-    double total_distance = .0;
-    error = maps_route_get_total_distance(route, &total_distance);
-    if (error != MAPS_ERROR_NONE)
-        /* Error handling */
+     ```
+     /* Obtain the total route distance */
+     double total_distance = .0;
+     error = maps_route_get_total_distance(route, &total_distance);
+     if (error != MAPS_ERROR_NONE)
+         /* Error handling */
 
-    /* Use the total route distance */
-    ```
+     /* Use the total route distance */
+     ```
 
    To obtain other route features, follow the same approach using the following functions:
 
@@ -820,76 +832,76 @@ To parse route data:
 
    - To obtain the list of geographic points defining the route, use the `maps_route_foreach_path()` function:
 
-    ```
-    error = maps_route_foreach_path(route, __maps_route_path_cb, user_data);
-    if (error != MAPS_ERROR_NONE)
-        /* Error handling */
-    ```
+     ```
+     error = maps_route_foreach_path(route, __maps_route_path_cb, user_data);
+     if (error != MAPS_ERROR_NONE)
+         /* Error handling */
+     ```
 
-	Implement the `__maps_route_path_cb()` callback:
+	 Implement the `__maps_route_path_cb()` callback:
 
-    ```
-    static bool
-    __maps_route_path_cb(int index, int total, maps_coordinates_h coordinates, void* user_data)
-    {
-        /* Handle the obtained route path coordinates */
+     ```
+     static bool
+     __maps_route_path_cb(int index, int total, maps_coordinates_h coordinates, void* user_data)
+     {
+         /* Handle the obtained route path coordinates */
 
-        /* Release the results */
-        maps_coordinates_destroy(coordinates);
+         /* Release the results */
+         maps_coordinates_destroy(coordinates);
 
-        return true;
-    }
-    ```
+         return true;
+     }
+     ```
 
    - To obtain the list of route segments, use the `maps_route_foreach_segment()` function:
 
-    ```
-    `error = maps_route_foreach_segment(route, __maps_route_segment_cb, user_data);if (error != MAPS_ERROR_NONE)    /* Error handling */`
-    ```
+     ```
+     error = maps_route_foreach_segment(route, __maps_route_segment_cb, user_data);if (error != MAPS_ERROR_NONE)    /* Error handling */`
+     ```
 
-	Implement the `__maps_route_segment_cb()` callback:
+     Implement the `__maps_route_segment_cb()` callback:
 
-    ```
-    static bool
-    __maps_route_segment_cb(int index, int total, maps_route_segment_h segment, void* user_data)
-    {
-        /* Handle the obtained route segment */
+     ```
+     static bool
+     __maps_route_segment_cb(int index, int total, maps_route_segment_h segment, void* user_data)
+     {
+         /* Handle the obtained route segment */
 
-        /* Release the results */
-        maps_route_segment_destroy(segment);
+         /* Release the results */
+         maps_route_segment_destroy(segment);
 
-        return true;
-    }
-    ```
+         return true;
+     }
+     ```
 
 3. To get the extra properties that some map providers provide to extend the route data features defined in the Maps Service API:
 
    1. To iterate through the retrieved extra properties, use the `maps_route_foreach_property()` function:
 
-    ```
-    /* Obtain the map provider-specific route data properties */
-    error = maps_route_foreach_property(route, __maps_route_properties_cb, user_data);
-    if (error != MAPS_ERROR_NONE)
-        /* Error handling */
-    ```
+       ```
+       /* Obtain the map provider-specific route data properties */
+       error = maps_route_foreach_property(route, __maps_route_properties_cb, user_data);
+       if (error != MAPS_ERROR_NONE)
+           /* Error handling */
+       ```
 
    2. Implement the `__maps_route_properties_cb()` callback:
 
-    ```
-    static bool
-    __maps_route_properties_cb(int index, int total, char* key, void* value, void* user_data)
-    {
-        /* Handle the obtained property: */
-        /* property_name: key */
-        /* property_value: value */
+       ```
+       static bool
+       __maps_route_properties_cb(int index, int total, char* key, void* value, void* user_data)
+       {
+           /* Handle the obtained property: */
+           /* property_name: key */
+           /* property_value: value */
 
-        /* Release the property name and value */
-        free(key);
-        free(value);
+           /* Release the property name and value */
+           free(key);
+           free(value);
 
-        return true;
-    }
-    ```
+           return true;
+       }
+       ```
 
 <a name="preference"></a>
 ## Customizing the Service Requests
@@ -902,28 +914,28 @@ To customize the service request:
 	- `MAPS_PLACE_FILTER_TYPE`
 	- `MAPS_PLACE_FILTER_SORT_BY`
 
-The example from [Using the Place Search Service](#search_place) can be modified as follows to include the customized preferences:
-```
-/* Create extra preferences for the place search service */
-error = maps_preference_create(&preference);
-if (error != MAPS_ERROR_NONE)
-    /* Error handling */
-error = maps_preference_set_property(preference, MAPS_PLACE_FILTER_TYPE, "restaurant");
-if (error != MAPS_ERROR_NONE)
-    /* Error handling */
+  The example from [Using the Place Search Service](#search_place) can be modified as follows to include the customized preferences:
+  ```
+  /* Create extra preferences for the place search service */
+  error = maps_preference_create(&preference);
+  if (error != MAPS_ERROR_NONE)
+      /* Error handling */
+  error = maps_preference_set_property(preference, MAPS_PLACE_FILTER_TYPE, "restaurant");
+  if (error != MAPS_ERROR_NONE)
+      /* Error handling */
 
-maps_coordinates_h position = NULL;
-/* Create the coordinates with maps_coordinates_create() */
+  maps_coordinates_h position = NULL;
+  /* Create the coordinates with maps_coordinates_create() */
 
-int distance = 500;
-error = maps_service_search_place(maps, position, distance, filter, preference,
-                                  __maps_service_search_place_cb, user_data, &request_id);
+  int distance = 500;
+  error = maps_service_search_place(maps, position, distance, filter, preference,
+                                    __maps_service_search_place_cb, user_data, &request_id);
 
-if (error != MAPS_ERROR_NONE)
-    /* Error handling */
+  if (error != MAPS_ERROR_NONE)
+      /* Error handling */
 
-maps_preference_destroy(preference);
-```
+  maps_preference_destroy(preference);
+  ```
 
 - To prepare preferences for the routing service, use the following functions:
 
@@ -992,45 +1004,47 @@ To use the map view:
 
 2. Set the map view properties:
 
-   - Set the map view type with the `maps_view_set_type()` function.For other available types, see the `_maps_view_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__MAPS__VIEW__MODULE.html#ga379898d515d81cf500a814571524f106) and [wearable](../../api/wearable/latest/group__CAPI__MAPS__VIEW__MODULE.html#ga379898d515d81cf500a814571524f106) applications).
+   - Set the map view type with the `maps_view_set_type()` function.
 
-    ```
-    error = maps_view_set_type(maps_view, MAPS_VIEW_TYPE_NORMAL);
-    if (error != MAPS_ERROR_NONE)
-        /* Error handling */
-    ```
+     For other available types, see the `_maps_view_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__MAPS__VIEW__MODULE.html#ga379898d515d81cf500a814571524f106) and [wearable](../../api/wearable/latest/group__CAPI__MAPS__VIEW__MODULE.html#ga379898d515d81cf500a814571524f106) applications).
+
+     ```
+     error = maps_view_set_type(maps_view, MAPS_VIEW_TYPE_NORMAL);
+     if (error != MAPS_ERROR_NONE)
+         /* Error handling */
+     ```
 
    - Set the 3D building of the map view with the `maps_view_set_buildings_enabled()` function:
 
-    ```
-    error = maps_view_set_buildings_enabled(maps_view, true);
-    if (error != MAPS_ERROR_NONE)
-        /* Error handling */
-    ```
+     ```
+     error = maps_view_set_buildings_enabled(maps_view, true);
+     if (error != MAPS_ERROR_NONE)
+         /* Error handling */
+     ```
 
    - Set the map view traffic information with the `maps_view_set_traffic_enabled()` function:
 
-    ```
-    error = maps_view_set_traffic_enabled(maps_view, true);
-    if (error != MAPS_ERROR_NONE)
-        /* Error handling */
-    ```
+     ```
+     error = maps_view_set_traffic_enabled(maps_view, true);
+     if (error != MAPS_ERROR_NONE)
+         /* Error handling */
+     ```
 
    - Set the map view scalebar with the `maps_view_set_scalebar_enabled()` function:
 
-    ```
-    error = maps_view_set_scalebar_enabled(maps_view, true);
-    if (error != MAPS_ERROR_NONE)
-        /* Error handling */
-    ```
+     ```
+     error = maps_view_set_scalebar_enabled(maps_view, true);
+     if (error != MAPS_ERROR_NONE)
+         /* Error handling */
+     ```
 
    - Set the map view language with the `maps_view_set_language()` function:
 
-    ```
-    error = maps_view_set_language(maps_view, "eng");
-    if (error != MAPS_ERROR_NONE)
-        /* Error handling */
-    ```
+     ```
+     error = maps_view_set_language(maps_view, "eng");
+     if (error != MAPS_ERROR_NONE)
+         /* Error handling */
+     ```
 
 3. Set the map view location and size:
 
@@ -1094,7 +1108,8 @@ To use the map view:
 
 You can create polyline, polygon, and marker objects for the map view.
 
-> **Note**  
+> **Note**
+>
 > Before you use the View Object API (in [mobile](../../api/mobile/latest/group__CAPI__MAPS__VIEW__OBJECT__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MAPS__VIEW__OBJECT__MODULE.html) applications), create a map view object instance.
 
 To create a map view object:
@@ -1141,18 +1156,18 @@ To create a map view object:
 
    - To create a marker with the `MAPS_VIEW_MARKER_PIN` type:
 
-    ```
-    maps_view_object_h object = NULL;
-    maps_coordinates_h coord = NULL;
+     ```
+     maps_view_object_h object = NULL;
+     maps_coordinates_h coord = NULL;
 
-    maps_coordinates_create(28.64362, 77.19865, &coord);
+     maps_coordinates_create(28.64362, 77.19865, &coord);
 
-    error = maps_view_object_create_marker(coord, "image/marker_icon.png", MAPS_VIEW_MARKER_PIN, &object);
-    if (error != MAPS_ERROR_NONE)
-        /* Error handling */
-    ```
+     error = maps_view_object_create_marker(coord, "image/marker_icon.png", MAPS_VIEW_MARKER_PIN, &object);
+     if (error != MAPS_ERROR_NONE)
+         /* Error handling */
+     ```
 
-	You can also create the `MAPS_VIEW_MARKER_STICKER` type marker.
+	 You can also create the `MAPS_VIEW_MARKER_STICKER` type marker.
 
 2. Add the object instance to the map view with the `maps_view_add_object()` function:
 
@@ -1173,7 +1188,13 @@ To create a map view object:
 
 To handle map view events:
 
-1. Register an event callback with the `maps_view_set_event_cb()` function.In the second parameter, define the type of the event you want to receive:
+1. Register an event callback with the `maps_view_set_event_cb()` function.
+
+    In the second parameter, define the type of the event you want to receive:
+    - `MAPS_VIEW_EVENT_GESTURE`
+    - `MAPS_VIEW_EVENT_ACTION`
+    - `MAPS_VIEW_EVENT_OBJECT`
+    - `MAPS_VIEW_EVENT_READY`
 
     ```
     error = maps_view_set_event_cb(maps_view, MAPS_VIEW_EVENT_GESTURE, __main_view_event_cb, NULL);
@@ -1187,14 +1208,9 @@ To handle map view events:
     }
     ```
 
-    - `MAPS_VIEW_EVENT_GESTURE`
-    - `MAPS_VIEW_EVENT_ACTION`
-    - `MAPS_VIEW_EVENT_OBJECT`
-    - `MAPS_VIEW_EVENT_READY`
-
-
 
 2. Within the callback, access the event data with various `maps_view_event_data_get_XXX()` functions of the View Event Data API (in [mobile](../../api/mobile/latest/group__CAPI__MAPS__VIEW__EVENT__DATA__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MAPS__VIEW__EVENT__DATA__MODULE.html) applications).
+
 3. When no longer needed, unset the callback with the `maps_view_unset_event_cb()` function:
 
     ```

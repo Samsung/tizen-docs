@@ -30,8 +30,11 @@ With the location manager, you can:
 - [Retrieve satellite information](#satellite)
 - [Track routes](#track)
 
-> **Note**  
-> To test the Tizen location-based services on the emulator, provide location data (longitude and latitude) using the Emulator Control Panel.Since satellite data is not supported on the emulator, GPS status data is available on a target device only.
+> **Note**
+>
+> To test the Tizen location-based services on the emulator, provide location data (longitude and latitude) using the Emulator Control Panel.
+>
+> Since satellite data is not supported on the emulator, GPS status data is available on a target device only.
 
 Asynchronous location-related updates and region monitoring notifications are implemented with callback interfaces (functions whose names end with "cb").
 
@@ -71,7 +74,8 @@ The **GPS** setting controls the Global Positioning System usage. It uses GPS sa
 
 All location settings are initially enabled, if the device supports GPS. To disable them, the user must manually toggle the buttons. The manual task required from the user is understood as an implicit user consent.
 
-> **Note**  
+> **Note**
+>
 > Either the **GPS** or the **Wireless networks** setting must be enabled to retrieve the current location of the device user.
 
 Once the **GPS** or **Wireless networks** setting is enabled, the user can control the usage of the location data for each application separately using the privacy setting. If the privacy setting of the application is disabled, location data is no longer available for the application.
@@ -93,16 +97,16 @@ To start the location service:
 
 1. Create a location manager handle using the `location_manager_create()` function before you use the location service.
 
-       In this example, GPS is used as the source of the position data, so the first parameter is `LOCATIONS_METHOD_GPS`. You can use other values of the `location_method_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__LOCATION__MANAGER__MODULE.html#gaec8a29c8b701753a7c9d91f4f8acfac5) and [wearable](../../api/wearable/latest/group__CAPI__LOCATION__MANAGER__MODULE.html#gaec8a29c8b701753a7c9d91f4f8acfac5) applications), such as `LOCATIONS_METHOD_HYBRID`, `LOCATIONS_METHOD_WPS`, `LOCATIONS_METHOD_PASSIVE`, or `LOCATIONS_METHOD_FUSED`. `LOCATIONS_METHOD_HYBRID` uses both `LOCATIONS_METHOD_GPS` and `LOCATIONS_METHOD_WPS`, but the latter is less accurate.
-
-
+   In this example, GPS is used as the source of the position data, so the first parameter is `LOCATIONS_METHOD_GPS`. You can use other values of the `location_method_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__LOCATION__MANAGER__MODULE.html#gaec8a29c8b701753a7c9d91f4f8acfac5) and [wearable](../../api/wearable/latest/group__CAPI__LOCATION__MANAGER__MODULE.html#gaec8a29c8b701753a7c9d91f4f8acfac5) applications), such as `LOCATIONS_METHOD_HYBRID`, `LOCATIONS_METHOD_WPS`, `LOCATIONS_METHOD_PASSIVE`, or `LOCATIONS_METHOD_FUSED`. `LOCATIONS_METHOD_HYBRID` uses both `LOCATIONS_METHOD_GPS` and `LOCATIONS_METHOD_WPS`, but the latter is less accurate.
    ```
    location_manager_h manager;
    location_manager_create(LOCATIONS_METHOD_GPS, &manager);
    ```
 
    Each location manager is an independent service. Multiple location managers can be created in the same application to provide different services, such as GPS and Bluetooth. Callbacks are set for a given location manager and are called only if the service is started for their manager.
+
    > **Note**
+   >
    > The location manager is not thread-safe and depends on the main loop. Implement the location service within the main loop, and do not use it in a thread.
 
 2. Start the location service using the `location_manager_start()` function. This call is asynchronous and only initiates the process of starting the location manager service. Once the manager is started, the registered callbacks are invoked when their corresponding events take place. To know when the service becomes enabled, use the `location_manager_set_service_state_changed_cb()` function.
@@ -167,7 +171,9 @@ To retrieve synchronously the last known location of the device:
                                              &vertical, &timestamp);
     ```
 
-	The function returns the last location stored in the system. When the current location is not fixed, the last location may not be the current location, but the old location.Use this function instead of repeatedly requesting current locations to spare the location manager from running costly positioning systems.
+	The function returns the last location stored in the system. When the current location is not fixed, the last location may not be the current location, but the old location.
+
+    Use this function instead of repeatedly requesting current locations to spare the location manager from running costly positioning systems.
 
 3. To get the current location information, call the `location_manager_get_location()` function after the service is enabled:
 
@@ -227,7 +233,8 @@ You can get a notification of the position update using the position update call
    }
    ```
 
-   > **Note**  
+   > **Note**
+   >
    > The callback is called only if the location manager has been started. The same holds for all other callbacks registered with the manager.
 
 <a name="bound"></a>
@@ -350,8 +357,9 @@ You can retrieve and update information about a satellite visible to the device.
     }
     ```
 
-> **Note**  
-> The callback is called only if the location manager has been started. The same holds for all other callbacks registered with the manager.
+    > **Note**
+    >
+    > The callback is called only if the location manager has been started. The same holds for all other callbacks registered with the manager.
 
 <a name="track"></a>
 ## Tracking the Route
@@ -395,13 +403,13 @@ To get information about the current position, velocity, and distance:
 
    - To get information about the current position (altitude, latitude, and longitude), use the `location_manager_get_position()` function:
 
-    ```
-    time_t timestamp;
-    double altitude;
-    double latitude;
-    double longitude;
-    location_manager_get_position(manager, &altitude, &latitude, &longitude, &timestamp);
-    ```
+     ```
+     time_t timestamp;
+     double altitude;
+     double latitude;
+     double longitude;
+     location_manager_get_position(manager, &altitude, &latitude, &longitude, &timestamp);
+     ```
 
    - To get information about the current velocity (climb in km/h, direction as degrees from the north, and speed in km/h), use the `location_manager_get_velocity()` function:
 

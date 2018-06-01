@@ -134,7 +134,9 @@ To enable your application to use the stream recorder functionality:
 
 To get and set information about video and audio encoding:
 
-1. To get a list of video codecs your device supports, call the `streamrecorder_foreach_supported_video_encoder()` function. One of its parameters is a callback, which is called for each codec supported for the given stream recorder.In the following example, the codec of the stream recorder is set to the first found supported codec.
+1. To get a list of video codecs your device supports, call the `streamrecorder_foreach_supported_video_encoder()` function. One of its parameters is a callback, which is called for each codec supported for the given stream recorder.
+
+    In the following example, the codec of the stream recorder is set to the first found supported codec.
 
     ```
     streamrecorder_video_codec_supported_codec;
@@ -162,7 +164,11 @@ To get and set information about video and audio encoding:
     }
     ```
 
-2. You can set the bitrate of the video encoder with the `streamrecorder_set_video_encoder_bitrate()` function. Even if the bitrate was set, it can depend on the stream buffer which you push.You can also set the file format for the recording media stream by invoking the `streamrecorder_set_file_format()` function. Before setting the file format, check the file formats your device supports using the `streamrecorder_foreach_supported_file_format()` function.Finally, you need to set the file path to store the recorded data by invoking the `streamrecorder_set_filename()` function.
+2. You can set the bitrate of the video encoder with the `streamrecorder_set_video_encoder_bitrate()` function. Even if the bitrate was set, it can depend on the stream buffer which you push.
+
+    You can also set the file format for the recording media stream by invoking the `streamrecorder_set_file_format()` function. Before setting the file format, check the file formats your device supports using the `streamrecorder_foreach_supported_file_format()` function.
+
+    Finally, you need to set the file path to store the recorded data by invoking the `streamrecorder_set_filename()` function.
 
     ```
     staticintg_bitrate = 288000;
@@ -241,7 +247,11 @@ To record a stream:
     }
     ```
 
-    Once the recording starts, the file is removed automatically and replaced with a new one, if you set the file path to an existing file.Note that you can only call the `streamrecorder_start()` function in the prepared state (`STREAMRECORDER_STATE_PREPARED`) and paused state (`STREAMRECORDER_STATE_PAUSED`).Call the `streamrecorder_push_stream_buffer()` function, which pushes the media packet to record audio or video.
+    Once the recording starts, the file is removed automatically and replaced with a new one, if you set the file path to an existing file.
+
+    Note that you can only call the `streamrecorder_start()` function in the prepared state (`STREAMRECORDER_STATE_PREPARED`) and paused state (`STREAMRECORDER_STATE_PAUSED`).
+
+    Call the `streamrecorder_push_stream_buffer()` function, which pushes the media packet to record audio or video.
 
     ```
     /* Push the stream buffer to record audio or video */
@@ -253,40 +263,48 @@ To record a stream:
     ```
 
 3. During the recording, you can pause or stop it:
+
    - To stop recording and save the result, use the `streamrecorder_commit()` function with the valid stream recorder handle. The results of the recording are saved to a previously configured file path. This function can be called if the recorder is in the `STREAMRECORDER_STATE_RECORDING` or `STREAMRECORDER_STATE_PAUSED` state.
 
-    ```
-    /* Stop recording and save recorded data to the previously configured path */
-    error_code = streamrecorder_commit(streamrec_data.streamrecorder);
-    if (STREAMRECORDER_ERROR_NONE != error_code) {
-        /* Error handling */
-        assert_eq(error_code, STREAMRECORDER_ERROR_NONE);
-    }
-    ```
+     ```
+     /* Stop recording and save recorded data to the previously configured path */
+     error_code = streamrecorder_commit(streamrec_data.streamrecorder);
+     if (STREAMRECORDER_ERROR_NONE != error_code) {
+         /* Error handling */
+         assert_eq(error_code, STREAMRECORDER_ERROR_NONE);
+     }
+     ```
 
-    After committing, the stream recorder state is changed to the `STREAMRECORDER_STATE_PREPARED` state.If you do not want to save your recording, use the `streamrecorder_cancel()` function with the proper stream recorder handle. The only difference between this function and the `streamrecorder_commit()` function is that the recording data are not written in the file.
+     After committing, the stream recorder state is changed to the `STREAMRECORDER_STATE_PREPARED` state.
 
-    ```
-    /* Stop recording but don not save the recorded data */
-    error_code = streamrecorder_cancel(streamrec_data.streamrecorder);
-    if (STREAMRECORDER_ERROR_NONE != error_code) {
-        /* Error handling */
-        assert_eq(error_code, STREAMRECORDER_ERROR_NONE);
-    }
-    ```
+     If you do not want to save your recording, use the `streamrecorder_cancel()` function with the proper stream recorder handle. The only difference between this function and the `streamrecorder_commit()` function is that the recording data are not written in the file.
 
-   - To pause recording, use the `streamrecorder_pause()` function with the valid stream recorder handle. To start recording again later, use the `streamrecorder_start()` function.This function can be called if the stream recorder is in the `STREAMRECORDER_STATE_RECORDING` state.
+     ```
+     /* Stop recording but don not save the recorded data */
+     error_code = streamrecorder_cancel(streamrec_data.streamrecorder);
+     if (STREAMRECORDER_ERROR_NONE != error_code) {
+         /* Error handling */
+         assert_eq(error_code, STREAMRECORDER_ERROR_NONE);
+     }
+     ```
 
-    ```
-    /* Pause the recording */
-    error_code = streamrecorder_pause(streamrec_data.streamrecorder);
-    if (STREAMRECORDER_ERROR_NONE != error_code) {
-        /* Error handling */
-        assert_eq(error_code, STREAMRECORDER_ERROR_NONE);
-    }
-    ```
+   - To pause recording, use the `streamrecorder_pause()` function with the valid stream recorder handle. To start recording again later, use the `streamrecorder_start()` function.
 
-    After pausing, the stream recorder state is changed to `STREAMRECORDER_STATE_PAUSED`.As a special case, you can stop pushing the stream buffers. In this case, the stream recorder state is `STREAMRECORDER_STATE_RECORDING`, because the stream recorder is waiting for buffers. It can make the same effect as a pause in recording.
+     This function can be called if the stream recorder is in the `STREAMRECORDER_STATE_RECORDING` state.
+
+     ```
+     /* Pause the recording */
+     error_code = streamrecorder_pause(streamrec_data.streamrecorder);
+     if (STREAMRECORDER_ERROR_NONE != error_code) {
+         /* Error handling */
+         assert_eq(error_code, STREAMRECORDER_ERROR_NONE);
+     }
+     ```
+
+     After pausing, the stream recorder state is changed to `STREAMRECORDER_STATE_PAUSED`.
+
+     As a special case, you can stop pushing the stream buffers. In this case, the stream recorder state is `STREAMRECORDER_STATE_RECORDING`, because the stream recorder is waiting for buffers. It can make the same effect as a pause in recording.
+
 4. When you have finished recording, use the `streamrecorder_unprepare()` function to reset the stream recorder. The required state for this function is `STREAMRECORDER_STATE_PREPARED`. After calling the function, the recorder state is `STREAMRECORDER_STATE_CREATED`, which allows you to free all stream recorder resources with the `streamrecorder_destroy()` function.
 
     ```

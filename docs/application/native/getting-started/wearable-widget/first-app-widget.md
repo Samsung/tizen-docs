@@ -39,9 +39,12 @@ When you are developing a more complex application, you can take advantage of th
 
 The following example shows you how to create and configure a basic wearable native widget application project in the Tizen Studio. An application project contains all the files that make up an application.
 
-> **Note**  
+> **Note**
+>
 > Standalone widget application packages are not allowed in the Tizen Store.
-> For user convenience, you can use a standalone widget application for testing purposes in the Tizen Studio. If you want to publish the application in the Tizen Store, combine it with at least 1 UI application in the same package. For more information, see [Developing Multiple Projects as a Combined Package](../../tutorials/process/app-dev-process.md#develop).
+>
+> For user convenience, you can use a standalone widget application for testing purposes in the Tizen Studio. If you want to publish the application in the Tizen Store, combine it with at least 1 UI application in the same package.  
+> For more information, see [Developing Multiple Projects as a Combined Package](../../tutorials/process/app-dev-process.md#develop).
 
 The following figure illustrates the application to be created. The application screen displays the **Hello widget** text and no user interaction is provided.
 
@@ -113,7 +116,8 @@ You can see the created project in the **Project Explorer** view. The most impor
 
 ![Application in the Project Explorer](media/basic_app_project_explorer_wn_widget.png)
 
-> **Note**  
+> **Note**
+>
 > You can [view and modify the application configuration](#configuration) in the manifest editor. In this example, no configuration changes are required.
 
 Your application project is now ready for further actions. Next, build the application.
@@ -141,7 +145,8 @@ To view and modify the application configuration:
 
     -   **Source**: View and edit the source code of the `tizen-manifest.xml` file. Changes made and saved on the other tabs are reflected in the source code and vice versa.
 
-       > **Note**  
+       > **Note**
+       >
 	   > The `tizen-manifest.xml` file must conform to both the XML file format and the Tizen native application specification requirements. Editing the file in the **Source** tab is intended for advanced users only.
 
 3.  To save any changes, in the Tizen Studio menu, select **File &gt; Save All**.
@@ -443,7 +448,8 @@ To run the application on the emulator:
 
         ![Application running in the emulator](media/emulator_running_wn_widget.png)
 
-        > **Note**  
+        > **Note**
+        >
 		> If the emulator display has switched off, you cannot see the application launch. To switch the display on, click the **Power** key (in the lower-right corner of the emulator).
 
         The above screen is shown through the Viewer, to allow you to develop a lone widget application for testing purposes.
@@ -531,7 +537,8 @@ To run the application on a target device:
 
         Like with the [emulator](#viewer), you can add the widget to the home screen to easily access it.
 
-    > **Note**  
+    > **Note**
+    >
     > The application is launched using the default debug run configuration. To create and use another configuration:
     > 1.  In the `Project Explorer` view, right-click the project and select `Run As > Run Configurations`.
     > 2.  In the `Run Configurations` window, click the `New Launch Configuration` icon (![New Launch Configuration icon](media/run_new_config_wn.png)), define the configuration details, and launch the application by clicking `Run`.

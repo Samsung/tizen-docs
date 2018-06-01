@@ -44,7 +44,9 @@ You can manage the following types of content:
 
   You can attach a voice recording.
 
-- **More** tabThe **More** tab shows the icons of the applications, for example, video, audio, calendar, contact, myfiles, and video recorder, that can be launched by clicking the applicable icon.
+- **More** tab
+
+  The **More** tab shows the icons of the applications, for example, video, audio, calendar, contact, myfiles, and video recorder, that can be launched by clicking the applicable icon.
 
 The following figure illustrates the content types. From left to right: images, camera, voice, and **More** tab.
 

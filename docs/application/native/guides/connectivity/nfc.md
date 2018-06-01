@@ -64,8 +64,11 @@ The main features of the NFC API include:
   - Send an application protocol data unit (APDU) to a secure element.
   - Retrieve an Answer To Reset (ATR) from a secure element.
 
-  > **Note**  
-  > Pay attention to the following:Secure element access is not supported in Tizen 2.3. The Card Emulation API of Tizen 2.3 only supports enabling and disabling the NFC card emulation mode, and retrieving the card emulation status.Security problems can occur in some Card Emulation APIs. The security level can be determined by the manufacturer usage. If a security issue occurs, contact the product manufacturer. For more information on the security levels, see the [GSMA specification](http://www.gsma.com/digitalcommerce/wp-content/uploads/2013/12/GSMA-NFC05-NFC-Handset-APIs-Requirement-Specification-version-4-1.pdf).
+  > **Note**
+  >
+  > Pay attention to the following:Secure element access is not supported in Tizen 2.3. The Card Emulation API of Tizen 2.3 only supports enabling and disabling the NFC card emulation mode, and retrieving the card emulation status.
+  >
+  > Security problems can occur in some Card Emulation APIs. The security level can be determined by the manufacturer usage. If a security issue occurs, contact the product manufacturer. For more information on the security levels, see the [GSMA specification](http://www.gsma.com/digitalcommerce/wp-content/uploads/2013/12/GSMA-NFC05-NFC-Handset-APIs-Requirement-Specification-version-4-1.pdf).
 
 - Host-based card emulation (HCE)
 
@@ -415,17 +418,48 @@ To work with NFC manually, you need to register for notifications and handle con
          if (NFC_ERROR_NONE != error_code)
              /* Error occurred */
          ```
-
          Now, when the pointer to the specific record exists, get the record data:
 
-         - Get the record ID by calling the `nfc_ndef_record_get_id()` function:`error_code = nfc_ndef_record_get_id(rec, &id, &id_len);if (NFC_ERROR_NONE != error_code)    /* Error occurred */`
-         - Get the record type using the `nfc_ndef_record_get_type()` function:`error_code = nfc_ndef_record_get_type(rec, &type_str, &type_len);if (NFC_ERROR_NONE != error_code)    /* Error occurred */`
-         - Get the record TNF (Type Name Format) with the `nfc_ndef_record_get_tnf()` function:`error_code = nfc_ndef_record_get_tnf(rec, &tnf);if (NFC_ERROR_NONE != error_code)    /* Error occurred */`
-         - Get the record payload by calling the `nfc_ndef_record_get_payload()` function:`error_code = nfc_ndef_record_get_payload(record, &payload, &payload_len);if (NFC_ERROR_NONE != error_code)    /* Error occurred */`
+         - Get the record ID by calling the `nfc_ndef_record_get_id()` function:
+           ```
+           error_code = nfc_ndef_record_get_id(rec, &id, &id_len);
+           if (NFC_ERROR_NONE != error_code)    /* Error occurred */
+           ```
+         - Get the record type using the `nfc_ndef_record_get_type()` function:
+           ```
+           error_code = nfc_ndef_record_get_type(rec, &type_str, &type_len);
+           if (NFC_ERROR_NONE != error_code)    /* Error occurred */
+           ```
+         - Get the record TNF (Type Name Format) with the `nfc_ndef_record_get_tnf()` function:
+           ```
+           error_code = nfc_ndef_record_get_tnf(rec, &tnf);
+           if (NFC_ERROR_NONE != error_code)    /* Error occurred */
+           ```
+         - Get the record payload by calling the `nfc_ndef_record_get_payload()` function:
+           ```
+           error_code = nfc_ndef_record_get_payload(record, &payload, &payload_len);
+           if (NFC_ERROR_NONE != error_code)    /* Error occurred */
+           ```
 
       4. To get more information from the tag, specify what type of tag message you are dealing with:
 
-         - If there is a message with `Type = "T"` and the TNF is `NFC_RECORD_TNF_WELL_KNOWN`, it is possible to get the following data:`/* Get the record text */error_code = nfc_ndef_record_get_text(record, &text);if (NFC_ERROR_NONE != error_code)    /* Error occurred *//* Get the record text language code */error_code = nfc_ndef_record_get_langcode(record, &language);if (NFC_ERROR_NONE != error_code)    /* Error occurred *//* Get the record text encoding type */error_code = nfc_ndef_record_get_encode_type(record, &encode);if (NFC_ERROR_NONE != error_code)    /* Error occurred */`
+         - If there is a message with `Type = "T"` and the TNF is `NFC_RECORD_TNF_WELL_KNOWN`, it is possible to get the following data:
+           ```
+           /* Get the record text */
+           error_code = nfc_ndef_record_get_text(record, &text);
+           if (NFC_ERROR_NONE != error_code)
+               /* Error occurred */
+
+           /* Get the record text language code */
+           error_code = nfc_ndef_record_get_langcode(record, &language);
+           if (NFC_ERROR_NONE != error_code)
+               /* Error occurred */
+
+           /* Get the record text encoding type */
+           error_code = nfc_ndef_record_get_encode_type(record, &encode);
+           if (NFC_ERROR_NONE != error_code)
+               /* Error occurred */
+           ```
 
          - If there is a message with `Type="U"` and TNF is also `NFC_RECORD_TNF_WELL_KNOWN`, you can get the URI using the `nfc_ndef_record_get_uri()` function:
 
@@ -614,7 +648,7 @@ To get a cached NFC message:
         /* Error occurred */
     ```
 
- After getting the message, get the detailed information from the message as described in [Working with NFC Connections and Messages](#work). First, check whether there are any errors and that the message is not `NULL`:
+    After getting the message, get the detailed information from the message as described in [Working with NFC Connections and Messages](#work). First, check whether there are any errors and that the message is not `NULL`:
 
     ```
     if (message != NULL)
@@ -709,8 +743,13 @@ To create a card emulation application:
          - Each `aid-group` element must contain 1 or more `aid` elements, each of which contains a single AID. The `aid-group` can have as many `aid` elements as you want.
          - The `aid` element must contain the `aid`, `se_type`, `unlock`, and `power` attributes.
          - The `se_type` attribute must contain `hce`, `ese`, or `uicc`. The `se_type` value can be added later.
-         - The `unlock` attribute must contain one of the following:`true`: The card cannot work when the device is locked.`false`: The card can work when the device is locked.
-         - The `power` must contain one of the following:`on`: The card can work when the device is on.`off`: The card can work when the device is off.`sleep`: The card can work when the device is in the sleep mode.
+         - The `unlock` attribute must contain one of the following:
+           - `true`: The card cannot work when the device is locked.
+           - `false`: The card can work when the device is locked.
+         - The `power` must contain one of the following:
+           - `on`: The card can work when the device is on.
+           - `off`: The card can work when the device is off.
+           - `sleep`: The card can work when the device is in the sleep mode.
 
 2. To create a host-based card emulation (HCE) application:
 
@@ -1012,7 +1051,8 @@ To create a card emulation application:
    - Call the `nfc_se_set_preferred_handler()` function when the application is resumed from the paused state.
    - Call the `nfc_se_unset_preferred_handler()` function when the application is paused.
 
-   > **Note**  
+   > **Note**
+   >
    > The "preferred" functions are available since Tizen 3.0.Because of security issues, the API usage policy is different for each Tizen device. For example, if the application is in the payment category, using the "preferred" functions can be prohibited depending on the device.
 
    The following example shows the entire preferred application sample code:

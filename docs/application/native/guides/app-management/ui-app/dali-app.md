@@ -31,11 +31,15 @@ With the DALi UI, you can create the following application types:
 
 - [Basic UI application](dali-basic-app.md)
 
-  A basic UI application provides a DALi-based user interface which allows the user to interact with the application.The basic UI application is available for both mobile and wearable devices.
+  A basic UI application provides a DALi-based user interface which allows the user to interact with the application.
+
+  The basic UI application is available for both mobile and wearable devices.
 
 - [Watch application](dali-watch-app.md) **in wearable applications only**
 
-  A watch application provides a watch face with the current time (updated every second) as its user interface. You can take advantage of various DALi features to create the watch face.The watch application is available for wearable devices only, and it is shown on the idle screen of the device. For low-powered wearable devices, the watch application supports a special ambient mode. The ambient mode reduces power consumption by showing a limited UI and updating the time on the screen only once per minute.
+  A watch application provides a watch face with the current time (updated every second) as its user interface. You can take advantage of various DALi features to create the watch face.
+
+  The watch application is available for wearable devices only, and it is shown on the idle screen of the device. For low-powered wearable devices, the watch application supports a special ambient mode. The ambient mode reduces power consumption by showing a limited UI and updating the time on the screen only once per minute.
 
 
 ## Related Information

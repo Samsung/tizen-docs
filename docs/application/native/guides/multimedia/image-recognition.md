@@ -34,39 +34,39 @@ To enable your application to use the media vision image functionality:
 
    - For image recognition, use the following `imagedata_s` structure:
 
-    ```
-    struct _imagedata_s {
-        mv_source_h g_source;
-        mv_engine_config_h g_engine_config;
-        mv_image_object h g_image_object;
-    };
-    typedef struct _imagedata_s imagedata_s;
-    static imagedata_s imagedata;
-    ```
+     ```
+     struct _imagedata_s {
+         mv_source_h g_source;
+         mv_engine_config_h g_engine_config;
+         mv_image_object h g_image_object;
+     };
+     typedef struct _imagedata_s imagedata_s;
+     static imagedata_s imagedata;
+     ```
 
    - For image tracking, use the following `imagedata_s` structure:
 
-    ```
-    struct _imagedata_s {
-        /* Variable for camera display */
-        Evas_Object *win;
-        Evas_Object *rect;
-        Evas *evas;
+     ```
+     struct _imagedata_s {
+         /* Variable for camera display */
+         Evas_Object *win;
+         Evas_Object *rect;
+         Evas *evas;
 
-        int preview_width;
-        int preview_height;
+         int preview_width;
+         int preview_height;
 
-        camera_h g_camera;
+         camera_h g_camera;
 
-        mv_source_h g_source;
-        mv_engine_config_h g_engine_config;
+         mv_source_h g_source;
+         mv_engine_config_h g_engine_config;
 
-        mv_image_object_h g_image_object
-        mv_image_tracking_model_h g_image_track_model;
-    };
-    typedef struct _imagedata_s imagedata_s;
-    static imagedata_s imagedata;
-    ```
+         mv_image_object_h g_image_object
+         mv_image_tracking_model_h g_image_track_model;
+     };
+     typedef struct _imagedata_s imagedata_s;
+     static imagedata_s imagedata;
+     ```
 
 <a name="recognize"></a>
 ## Recognizing Images
@@ -75,19 +75,21 @@ To recognize images:
 
 1. Create the source and engine configuration handles:
 
-   ```
-   int error_code = 0;
+    ```
+    int error_code = 0;
 
-   error_code = mv_create_source(&imagedata.g_source);
-   if (error_code != MEDIA_VISION_ERROR_NONE)
-       dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+    error_code = mv_create_source(&imagedata.g_source);
+    if (error_code != MEDIA_VISION_ERROR_NONE)
+        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-   error_code = mv_create_engine_config(&imagedata.g_engine_config);
-   if (error_code != MEDIA_VISION_ERROR_NONE)
-       dlog_print(DLOG_ERROR, LOG_TAG, "error code= %d", error_code);
-   ```
+    error_code = mv_create_engine_config(&imagedata.g_engine_config);
+    if (error_code != MEDIA_VISION_ERROR_NONE)
+        dlog_print(DLOG_ERROR, LOG_TAG, "error code= %d", error_code);
+    ```
 
-2. Decode the image file and fill the `g_source` handle with the decoded raw data.In the following example, the `sample.jpg` is the target image to be recognized and it is in the `<OwnDataPath>` folder, where `<OwnDataPath>` refers to your own data path.
+2. Decode the image file and fill the `g_source` handle with the decoded raw data.
+
+   In the following example, the `sample.jpg` is the target image to be recognized and it is in the `<OwnDataPath>` folder, where `<OwnDataPath>` refers to your own data path.
 
     ```
     /* For details, see the Image Util API Reference */
@@ -111,7 +113,9 @@ To recognize images:
     dataBuffer = NULL;
     ```
 
-3. To recognize the `sample.jpg` image from others, create a `g_image_object` media vision image object handle and set a label.In the following example, the image object label is set to '1'.
+3. To recognize the `sample.jpg` image from others, create a `g_image_object` media vision image object handle and set a label.
+
+   In the following example, the image object label is set to '1'.
 
     ```
     error_code = mv_image_object_create(&imagedata.g_image_object);
@@ -123,7 +127,9 @@ To recognize images:
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
     ```
 
-4. Use the `mv_image_object_fill()` function to extract the `sample.jpg` features and keep them in the `g_image_object` image object handle.In the following example, the `NULL` parameter is given since the object to be recognized is the whole of the input image file. Give a correct ROI value, if the image object to be recognized is only a part of the input image file.
+4. Use the `mv_image_object_fill()` function to extract the `sample.jpg` features and keep them in the `g_image_object` image object handle.
+
+   In the following example, the `NULL` parameter is given since the object to be recognized is the whole of the input image file. Give a correct ROI value, if the image object to be recognized is only a part of the input image file.
 
     ```
     error_code = mv_image_object_fill(imagedata.g_image_object, imagedata.g_engine_config,
@@ -132,7 +138,9 @@ To recognize images:
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
     ```
 
-5. Use the `mv_image_recognize()` function to recognize the image object.The following example assumes that there is a `what_isThis.jpg` image file in the `<OwnDataPath>` folder, including the image object.
+5. Use the `mv_image_recognize()` function to recognize the image object.
+
+   The following example assumes that there is a `what_isThis.jpg` image file in the `<OwnDataPath>` folder, including the image object.
 
     ```
     error_code = image_util_decode_jpeg("/mydir/what_isThis.jpg", IMAGE_UTIL_COLORSPACE_RGB888,
@@ -159,7 +167,9 @@ To recognize images:
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
     ```
 
-6. The `mv_image_recognize()` function invokes the `_on_image_recognized_cb()` callback.The following callback example prints the recognized image object label with its location.
+6. The `mv_image_recognize()` function invokes the `_on_image_recognized_cb()` callback.
+
+   The following callback example prints the recognized image object label with its location.
 
     ```
     static void
@@ -250,39 +260,43 @@ To track images:
           dlog_print(DLOG_ERROR, LOG_TAG, "error code= %d", error_code);
       ```
 
-   3. To track an image, create a `g_image_object` media vision image object handle and set a label.In the following example, the image to be tracked is `sample.jpg` and the image object label is set to '1'.
+   3. To track an image, create a `g_image_object` media vision image object handle and set a label.
 
-    ```
-    error_code = mv_image_object_create(&imagedata.g_image_object);
-    if (error_code != MEDIA_VISION_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+      In the following example, the image to be tracked is `sample.jpg` and the image object label is set to '1'.
 
-    error_code = mv_image_object_set_label(&imagedata.g_image_object, 1);
-    if (error_code != MEDIA_VISION_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
-    ```
+      ```
+      error_code = mv_image_object_create(&imagedata.g_image_object);
+      if (error_code != MEDIA_VISION_ERROR_NONE)
+          dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-   4. Use the `mv_image_object_fill()` function to extract the `sample.jpg` features and keep them in the `g_image_object` image object handle.In the following example, the `NULL` parameter is given since the object to be tracked is the whole of the input image file. Give a correct ROI value, if the image object to be tracked is only a part of the input image file.
+      error_code = mv_image_object_set_label(&imagedata.g_image_object, 1);
+      if (error_code != MEDIA_VISION_ERROR_NONE)
+          dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+      ```
 
-    ```
-    error_code = mv_image_object_fill(imagedata.g_image_object, imagedata.g_engine_config,
-                                      imagedata.g_source, NULL);
-    if (error_code != MEDIA_VISION_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
-    ```
+   4. Use the `mv_image_object_fill()` function to extract the `sample.jpg` features and keep them in the `g_image_object` image object handle.
+
+      In the following example, the `NULL` parameter is given since the object to be tracked is the whole of the input image file. Give a correct ROI value, if the image object to be tracked is only a part of the input image file.
+
+      ```
+      error_code = mv_image_object_fill(imagedata.g_image_object, imagedata.g_engine_config,
+                                        imagedata.g_source, NULL);
+      if (error_code != MEDIA_VISION_ERROR_NONE)
+          dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+      ```
 
    5. Create a `g_image_track_model` media vision image tracking model handle and set the target image object to be tracked:
 
-    ```
-    error_code = mv_image_tracking_model_create(&imagedata.g_image_track_model);
-    if (error_code != MEDIA_VISION_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+      ```
+      error_code = mv_image_tracking_model_create(&imagedata.g_image_track_model);
+      if (error_code != MEDIA_VISION_ERROR_NONE)
+          dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-    error_code = mv_image_tracking_model_set_target(imagedata.g_image_object,
-                                                    imagedata.g_image_track_model);
-    if (error_code != MEDIA_VISION_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
-    ```
+      error_code = mv_image_tracking_model_set_target(imagedata.g_image_object,
+                                                      imagedata.g_image_track_model);
+      if (error_code != MEDIA_VISION_ERROR_NONE)
+          dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+      ```
 
    6. Define the camera preview callback.
 
@@ -310,30 +324,30 @@ To track images:
 
    1. Use the `mv_image_track()` function to track the target image object in the preview images:
 
-    ```
-    error_code = mv_image_track(imagedata.g_source, imagedata.g_image_track_model,
-                                imagedata.g_engine_config, _on_image_tracked_cb, NULL);
-    if (error_code != MEDIA_VISION_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code= %d", error_code);
-    ```
+      ```
+      error_code = mv_image_track(imagedata.g_source, imagedata.g_image_track_model,
+                                  imagedata.g_engine_config, _on_image_tracked_cb, NULL);
+      if (error_code != MEDIA_VISION_ERROR_NONE)
+          dlog_print(DLOG_ERROR, LOG_TAG, "error code= %d", error_code);
+      ```
 
    2. The `mv_image_track()` function invokes the `_on_image_tracked_cb()` callback.The following callback example prints the location of the target image object.
 
-    ```
-    static void
-    _on_image_tracked_cb(mv_source_h source, mv_image_object_h image_object,
-                         mv_engine_config_h engine_config, mv_quadrangle_s *location,
-                         void *user_data)
-    {
-        if (location) {
-            dlog_print(DLOG_INFO, LOG_TAG, "location: (%d,%d) -> (%d,%d) -> (%d,%d) -> (%d,%d)\n",
-                       location->points[0].x, location->points[0].y,
-                       location->points[1].x, location->points[1].y,
-                       location->points[2].x, location->points[2].y,
-                       location->points[3].x, location->points[3].y);
-        }
-    }
-    ```
+      ```
+      static void
+      _on_image_tracked_cb(mv_source_h source, mv_image_object_h image_object,
+                           mv_engine_config_h engine_config, mv_quadrangle_s *location,
+                           void *user_data)
+      {
+          if (location) {
+              dlog_print(DLOG_INFO, LOG_TAG, "location: (%d,%d) -> (%d,%d) -> (%d,%d) -> (%d,%d)\n",
+                         location->points[0].x, location->points[0].y,
+                         location->points[1].x, location->points[1].y,
+                         location->points[2].x, location->points[2].y,
+                         location->points[3].x, location->points[3].y);
+          }
+      }
+      ```
 
 3. After the image tracking is complete, stop the camera preview, unset the preview callback, and destroy the camera handle:
 

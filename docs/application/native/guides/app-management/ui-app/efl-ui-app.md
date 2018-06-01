@@ -3,8 +3,12 @@
 
 To create an EFL basic UI application, you must:
 
-- Define the [application fundamentals](#fundamentals), mainly the entry point and life-cycle callbacks.The entry point starts the event loop, which is mandatory for every Tizen native application. Within the event loop, the application can receive both basic system events and application state change events. You can register [callbacks for these events](#callback) to react to them.
+- Define the [application fundamentals](#fundamentals), mainly the entry point and life-cycle callbacks.
+
+  The entry point starts the event loop, which is mandatory for every Tizen native application. Within the event loop, the application can receive both basic system events and application state change events. You can register [callbacks for these events](#callback) to react to them.
+
 - Manage [application states and transitions](#state_trans) during its life-cycle.
+
 - Define a [background category](#allow_bg) for your application, if you want it to run in the background.
 
 <a name="callback"></a>
@@ -212,7 +216,7 @@ Since Tizen 2.4, an application is not allowed to run in the background except w
 <a name="allow_bg_table"></a>
 **Table: Allowed background application policy**
 
-| Background category            | Description                              | Related APIs                             | Manifest file <background-category> element value |
+| Background category            | Description                              | Related APIs                             | Manifest file \<background-category\> element value |
 |--------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|
 | Media                          | Playing audio, recording, and outputting streaming video in the background | Multimedia API (in [mobile](../../../api/mobile/latest/group__CAPI__MEDIA__FRAMEWORK.html) and [wearable](../../../api/wearable/latest/group__CAPI__MEDIA__FRAMEWORK.html) applications) | `media`                                  |
 | Download                       | Downloading data with the Tizen Download-manager API | Download API (in [mobile](../../../api/mobile/latest/group__CAPI__WEB__DOWNLOAD__MODULE.html) applications) | `download`                               |
@@ -243,26 +247,28 @@ An application with a background running capability must declare the background 
 </manifest>
 ```
 
-> **Note**  
+> **Note**
+>
 > The `<background-category>` element is supported since the API version 2.4. An application with a `<background-category>` element declared can fail to be installed on devices with a Tizen version lower than 2.4. In this case, declare the background category as `<metadata key="http://tizen.org/metadata/background-category/<value>"/>`.
-```
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns="http://tizen.org/ns/packages" api-version="2.3" package="org.tizen.test" version="1.0.0">
-   <ui-application appid="org.tizen.test" exec="text" type="capp" multiple="false" taskmanage="true" nodisplay="false">
-      <icon>rest.png</icon>
-      <label>rest</label>
-      <!--For API version lower than 2.4-->
-      <metadata key="http://tizen.org/metadata/background-category/media"/>
-      <metadata key="http://tizen.org/metadata/background-category/download"/>
-      <metadata key="http://tizen.org/metadata/background-category/background-network"/>
-   </ui-application>
-   <service-application appid="org.tizen.test-service" exec="test-service" multiple="false" type="capp">
-      <metadata key="http://tizen.org/metadata/background-category/background-network"/>
-      <metadata key="http://tizen.org/metadata/background-category/location"/>
-   </service-application>
-</manifest>
-```
-The `<metadata key="http://tizen.org/metadata/bacgkround-category/<value>"/>` element has no effect on Tizen 2.3 devices, but on Tizen 2.4 and higher devices, it has the same effect as the `<background-category>` element.
+> ```
+> <?xml version="1.0" encoding="utf-8"?>
+> <manifest xmlns="http://tizen.org/ns/packages" api-version="2.3" package="org.tizen.test" version="1.0.0">
+>    <ui-application appid="org.tizen.test" exec="text" type="capp" multiple="false" taskmanage="true" nodisplay="false">
+>       <icon>rest.png</icon>
+>       <label>rest</label>
+>       <!--For API version lower than 2.4-->
+>       <metadata key="http://tizen.org/metadata/background-category/media"/>
+>       <metadata key="http://tizen.org/metadata/background-category/download"/>
+>       <metadata key="http://tizen.org/metadata/background-category/background-network"/>
+>    </ui-application>
+>    <service-application appid="org.tizen.test-service" exec="test-service" multiple="false" type="capp">
+>       <metadata key="http://tizen.org/metadata/background-category/background-network"/>
+>       <metadata key="http://tizen.org/metadata/background-category/location"/>
+>    </service-application>
+> </manifest>
+> ```
+>
+> The `<metadata key="http://tizen.org/metadata/bacgkround-category/<value>"/>` element has no effect on Tizen 2.3 devices, but on Tizen 2.4 and higher devices, it has the same effect as the `<background-category>` element.
 
 The background category of your application can be specified in the [application project settings](../../../tutorials/process/setting-properties.md#manifest) in the Tizen Studio.
 

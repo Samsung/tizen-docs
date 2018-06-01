@@ -59,7 +59,9 @@ In the Cairo Image backend, you can create a new Cairo image surface by using th
 
 To create the image surface:
 
-- With the `cairo_image_surface_create()` function.Call the `cairo_image_surface_get_data()` function before calling the `evas_object_image_data_set()` function. The `cairo_image_surface_get_data()` function returns a pointer to the raw image data of the created image surface. This pointer is used for the raw data to be linked with an Evas image object in the `evas_object_image_data_set()` function.
+- With the `cairo_image_surface_create()` function.
+
+  Call the `cairo_image_surface_get_data()` function before calling the `evas_object_image_data_set()` function. The `cairo_image_surface_get_data()` function returns a pointer to the raw image data of the created image surface. This pointer is used for the raw data to be linked with an Evas image object in the `evas_object_image_data_set()` function.
 
     ```
     elm_config_accel_preference_set("opengl");
@@ -85,7 +87,13 @@ To create the image surface:
     evas_object_image_data_update_add(img, 0, 0, WIDTH, HEIGHT);
     ```
 
-- With the `cairo_image_surface_create_for_data()` function.To use the function, you need a pointer to an image data, which can be retrieved with the `evas_object_image_data_get()` function. The function returns the data pointer of an image object and requires a parameter to determine whether the data is modified. If modification is enabled by setting the parameter to `EINA_TRUE`, Evas updates the image pixels in the next rendering cycle. Finally, you can link the pixel buffer with the image object by using the `evas_object_image_data_set()` function.Since the default backend for Evas is GL, the Cairo Image backend is much slower due to the memory copy operation, which occurs whenever the rendered result from Cairo is uploaded to Evas. To enhance the performance of Cairo Image backend to enable the zero copy feature, set the `EVAS_IMAGE_CONTENT_HINT_DYNAMIC` property with the `evas_object_image_content_hint_set()` function.To update a rectangular region on the screen, the `evas_object_image_data_update_add()` function can be used. For more information on the image object functions of Evas, see [Image Objects](../ui/efl/evas-objects.md#image).
+- With the `cairo_image_surface_create_for_data()` function.
+
+  To use the function, you need a pointer to an image data, which can be retrieved with the `evas_object_image_data_get()` function. The function returns the data pointer of an image object and requires a parameter to determine whether the data is modified. If modification is enabled by setting the parameter to `EINA_TRUE`, Evas updates the image pixels in the next rendering cycle. Finally, you can link the pixel buffer with the image object by using the `evas_object_image_data_set()` function.
+
+  Since the default backend for Evas is GL, the Cairo Image backend is much slower due to the memory copy operation, which occurs whenever the rendered result from Cairo is uploaded to Evas. To enhance the performance of Cairo Image backend to enable the zero copy feature, set the `EVAS_IMAGE_CONTENT_HINT_DYNAMIC` property with the `evas_object_image_content_hint_set()` function.
+
+  To update a rectangular region on the screen, the `evas_object_image_data_update_add()` function can be used. For more information on the image object functions of Evas, see [Image Objects](../ui/efl/evas-objects.md#image).
 
     ```
     Evas_Object *win = elm_win_util_standard_add("Cairo Image Backend guide", " Cairo Image Backend guide");
@@ -111,7 +119,8 @@ To create the image surface:
     evas_object_image_data_update_add(img, 0, 0, WIDTH, HEIGHT);
     ```
 
-> **Note**  
+> **Note**
+>
 > Take care when using the `evas_object_image_data_set()` function. You must match the `evas_object_image_data_get()` and `evas_object_image_data_set()` functions as a pair. Since the `evas_object_image_data_get()` function keeps a rendering sink, the rendered result with Cairo can be reflected outside the Evas area, if the functions are not matched.
 
 ### Creating a Cairo GL Surface in the Evas GL Backend
@@ -120,7 +129,9 @@ With the Cairo GL backend, you can create a Cairo surface using OpenGL&reg;. For
 
 To create the GL surface:
 
-1. Since an application utilizing the Cairo GL backend in Tizen is based on Evas GL, an Evas GL handler must be created with the `evas_gl_new()` function during the initial stage.Afterwards, the `evas_gl_config`, `evas_gl_surface`, and `evas_gl_context` instances are created in that order. For more information on using Evas GL, see [Creating OpenGL&reg; ES Applications](creating-opengles-n.md) and the [OpenGL&reg; ES](opengl-n.md) guide.
+1. Since an application utilizing the Cairo GL backend in Tizen is based on Evas GL, an Evas GL handler must be created with the `evas_gl_new()` function during the initial stage.
+
+   Afterwards, the `evas_gl_config`, `evas_gl_surface`, and `evas_gl_context` instances are created in that order. For more information on using Evas GL, see [Creating OpenGL&reg; ES Applications](creating-opengles-n.md) and the [OpenGL&reg; ES](opengl-n.md) guide.
 
     ```
     Evas_Object *win = elm_win_util_standard_add("Cairo GL Backend guide", " Cairo GL Backend guide");
@@ -148,7 +159,11 @@ To create the GL surface:
 
 3. If your application employs the Cairo GL backend in Tizen, include the `cairo-evas-gl.h` header file instead of `cairo-gl.h`.
 
-4. To fully use the GPU acceleration, set the `CAIRO_GL_COMPOSITOR` property to `MSAA`.In addition, call the `cairo_gl_device_set_thread_aware()` function with `cairo_device` and `0` as input parameters to prevent unnecessary context switches. Cairo can be used in multithreaded environments, and switches out the current GL context by default after each draw finishes. Therefore, if no other thread uses Cairo for GL rendering, set the `thread_aware` parameter to 0.To create the Cairo GL surface with the `cairo_gl_surface_create_for_evas_gl()` function, a `cairo_device` and an `evas_gl_surface` must be created beforehand:
+4. To fully use the GPU acceleration, set the `CAIRO_GL_COMPOSITOR` property to `MSAA`.
+
+   In addition, call the `cairo_gl_device_set_thread_aware()` function with `cairo_device` and `0` as input parameters to prevent unnecessary context switches. Cairo can be used in multithreaded environments, and switches out the current GL context by default after each draw finishes. Therefore, if no other thread uses Cairo for GL rendering, set the `thread_aware` parameter to 0.
+
+   To create the Cairo GL surface with the `cairo_gl_surface_create_for_evas_gl()` function, a `cairo_device` and an `evas_gl_surface` must be created beforehand:
 	- A `cairo_device` can be created with the `cairo_evas_gl_device_create()` function, which is an interface to the underlying rendering system. You also need the `evas_gl_object` and `evas_gl_context` as input parameters to the `cairo_evas_gl_device_create()` function.
 	- A `evas_gl_surface` object is needed to render 2D graphics through the rendering functionality of the Cairo GL backend.
 
@@ -171,7 +186,7 @@ To create the GL surface:
 <a name="draw"></a>
 ## Drawing with Cairo
 
-Drawing with Cairo to a surface is accomplished by calling the common backend interface functions. These rendering functions must be called properly for each backend. For more information on the common rendering functions, see the [Cairo: A Vector Graphics Library](http://www.cairographics.org/manual/)manual.
+Drawing with Cairo to a surface is accomplished by calling the common backend interface functions. These rendering functions must be called properly for each backend. For more information on the common rendering functions, see the [Cairo: A Vector Graphics Library](http://www.cairographics.org/manual/) manual.
 
 The following sections introduce a general example for drawing a line using Cairo APIs, including some special guidelines. Occasionally, you need to adhere to special guidelines to overcome any Cairo drawing limitations in Tizen.
 
@@ -261,13 +276,16 @@ To draw lines with Cairo APIs:
 
    Prior to drawing a line, prepare and select sources. There are 3 main sources in Cairo - colors, gradients, and images:
 
-   - Colors use a uniform hue and opacity for the entire source. You can select these without any preparation with the `cairo_set_source_rgb()` function and `cairo_set_source_rgba()` functions.In this example, the color is opaque red:
+   - Colors use a uniform hue and opacity for the entire source. You can select these without any preparation with the `cairo_set_source_rgb()` function and `cairo_set_source_rgba()` functions.
 
-    ```
-    cairo_set_source_rgba(cairo, 1.0, 0.0, 0.0, 1.0);
-    ```
+     In this example, the color is opaque red:
 
-   - Gradients describe a progression of colors by setting a start and stop reference location and a series of "stops" along the way. There are linear and radial gradients built from 2 points. Stops are added to the gradient with the `cairo_add_color_stop_rgb()`and `cairo_add_color_stop_rgba()` functions which take a color like the `cairo_add_color_stop_rgb()` or `cairo_add_color_stop_rgba()` function, as well as an offset to indicate where it lies between the reference locations.
+     ```
+     cairo_set_source_rgba(cairo, 1.0, 0.0, 0.0, 1.0);
+     ```
+ 
+   - Gradients describe a progression of colors by setting a start and stop reference location and a series of "stops" along the way. There are linear and radial gradients built from 2 points. Stops are added to the gradient with the `cairo_add_color_stop_rgb()` and `cairo_add_color_stop_rgba()` functions which take a color like the `cairo_add_color_stop_rgb()` or `cairo_add_color_stop_rgba()` function, as well as an offset to indicate where it lies between the reference locations.
+
    - Images include both surfaces loaded from the existing files with the `cairo_image_surface_create_from_png()` function and surfaces created from within Cairo as an earlier destination. For more information on these Cairo APIs, see [the cairo_pattern_t in cairographics.org](http://www.cairographics.org/manual/cairo-cairo-pattern-t.html).
 
 2. Set the line width.
@@ -280,43 +298,59 @@ To draw lines with Cairo APIs:
 
 3. To create the path:
 
-   1. To set the starting point with a user-specified offset, use the `cairo_translate()` function to modify the user-space origin (x, y) by translating it with the current transformation matrix (CTM):`cairo_translate(cairo, 40, 40);`Cairo uses a connect-the-dots style system for creating paths. You can also set the starting point of the line with the `cairo_move_to()` function. This sets the current reference point without making the path connect the previous point to it.
-    ```
-    cairo_move_to(cairo, 40, 40);
-    ```
+   1. To set the starting point with a user-specified offset, use the `cairo_translate()` function to modify the user-space origin (x, y) by translating it with the current transformation matrix (CTM):
+       ```
+       cairo_translate(cairo, 40, 40);
+       ```
+       Cairo uses a connect-the-dots style system for creating paths. You can also set the starting point of the line with the `cairo_move_to()` function. This sets the current reference point without making the path connect the previous point to it.
+       ```
+       cairo_move_to(cairo, 40, 40);
+       ```
 
    2. To draw a line from point (100,100) to point (200,150) on a surface, use the `cairo_move_to()` and `cairo_line_to()` functions:
 
-    ```
-    cairo_move_to(cairo, 100, 100);
-    cairo_line_to(cairo, 200, 150);
-    ```
+       ```
+       cairo_move_to(cairo, 100, 100);
+       cairo_line_to(cairo, 200, 150);
+       ```
 
    3. To add a line on a path from the current point to a point at the offset (dx, dy), use the `cairo_rel_line_to()` function. In this example, the offset is (100, -50).
 
-    ```
-    cairo_rel_line_to(cairo, 100, -50);
-    ```
+       ```
+       cairo_rel_line_to(cairo, 100, -50);
+       ```
 
-   4. To draw a circular arc of a given radius on the current path, use the `cairo_arc()` function.Arcs are parts of the outside of a circle. The point you directly specify is the center of the circle that makes up the addition to the path. Both a starting and an ending point on the circle must be specified, and these points are connected either clockwise using the `cairo_arc()` or counter-clockwise using the `cairo_arc_negative()` function.In this example, the radius is (100 * sqrt(2)), the arc is centered at (200, 200), begins at an angle (-0.25 * M_PI) and proceeds in the direction of increasing angles to end at an angle (0.25 * M_PI). If the end angle is less than the begin angle, the end angle is progressively increased by 2*M_PI until it is greater than the begin angle.
+   4. To draw a circular arc of a given radius on the current path, use the `cairo_arc()` function.
 
-    ```
-    cairo_arc(cairo, 200, 200, 100 * sqrt(2), -0.25 * M_PI, 0.25 * M_PI);
-    ```
+       Arcs are parts of the outside of a circle. The point you directly specify is the center of the circle that makes up the addition to the path. Both a starting and an ending point on the circle must be specified, and these points are connected either clockwise using the `cairo_arc()` or counter-clockwise using the `cairo_arc_negative()` function.
 
-   5. To draw a curve, use the `cairo_rel_curve_to()` function.Curves in Cairo are cubic Bézier splines. They start at the current reference point and smoothly follow the direction of 2 other points (without going through them) to get to a third specified point. Like lines, there are both absolute (`cairo_curve_to()`) and relative (`cairo_rel_curve_to()`) functions. Note that the relative variant specifies all points relative to the previous reference point, rather than each relative to the preceding control point of the curve.In this example, the offsets of (-100, -50) and (-100, 50) are used as the control points. After this function call, the current point is offset by (-200, 0).
+       In this example, the radius is (100 * sqrt(2)), the arc is centered at (200, 200), begins at an angle (-0.25 * M_PI) and proceeds in the direction of increasing angles to end at an angle (0.25 * M_PI). If the end angle is less than the begin angle, the end angle is progressively increased by 2*M_PI until it is greater than the begin angle.
 
-    ```
-    cairo_rel_curve_to(cairo, -100, -50, -100, 50, -200, 0);
-    ```
+       ```
+       cairo_arc(cairo, 200, 200, 100 * sqrt(2), -0.25 * M_PI, 0.25 * M_PI);
+       ```
 
-   6. To add a line segment on the path from the current point to the beginning of the current sub-path, use the `cairo_close_path()` function. After this call, the current point is repositioned at the joined endpoint of the sub-path.The behavior of the `cairo_close_path()` function differs from the `cairo_line_to()` function with the equivalent coordinates very little: for stroking, a line joining the final and initial segments of the sub-path is also created.
+   5. To draw a curve, use the `cairo_rel_curve_to()` function.
 
-    ```
-    cairo_close_path(cairo);
-    ```
+       Curves in Cairo are cubic Bézier splines. They start at the current reference point and smoothly follow the direction of 2 other points (without going through them) to get to a third specified point. Like lines, there are both absolute (`cairo_curve_to()`) and relative (`cairo_rel_curve_to()`) functions. Note that the relative variant specifies all points relative to the previous reference point, rather than each relative to the preceding control point of the curve.
 
-4. To draw a rectangle, use the `cairo_rectangle()` function.In this example, the function draws a rectangle starting from the point (0, 0) with the width and height of 400 px.
+       In this example, the offsets of (-100, -50) and (-100, 50) are used as the control points. After this function call, the current point is offset by (-200, 0).
+
+       ```
+       cairo_rel_curve_to(cairo, -100, -50, -100, 50, -200, 0);
+       ```
+
+   6. To add a line segment on the path from the current point to the beginning of the current sub-path, use the `cairo_close_path()` function. After this call, the current point is repositioned at the joined endpoint of the sub-path.
+
+       The behavior of the `cairo_close_path()` function differs from the `cairo_line_to()` function with the equivalent coordinates very little: for stroking, a line joining the final and initial segments of the sub-path is also created.
+
+       ```
+       cairo_close_path(cairo);
+       ```
+
+4. To draw a rectangle, use the `cairo_rectangle()` function.
+
+    In this example, the function draws a rectangle starting from the point (0, 0) with the width and height of 400 px.
 
     ```
     cairo_rectangle(cairo, 0, 0, 400, 400);

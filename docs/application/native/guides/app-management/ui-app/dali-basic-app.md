@@ -73,9 +73,9 @@ To create a DALi basic UI application:
    ```
 
 2. Create the `Dali::Application` class instance to initialize and set up DALi:
-```
-Application application = Application::New( &argc, &argv );
-```
+   ```
+   Application application = Application::New( &argc, &argv );
+   ```
 
 3. Connect signals to keep yourself informed when certain system events occur.
 

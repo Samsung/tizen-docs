@@ -13,7 +13,9 @@ The main media playback features are:
 
   Enables you to play [video](#video).
 
-- Using the player [features](#features)Enables you manage the player and control the volume, sound mode, display, stream info, and audio effects.
+- Using the player [features](#features)
+
+  Enables you manage the player and control the volume, sound mode, display, stream info, and audio effects.
 
 - Streaming playback
 
@@ -80,7 +82,9 @@ The following figure illustrates what happens when the player gets interrupted b
 
 The Player API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__MODULE.html) applications) provides the following features:
 
-- Operating general controls for the [audio](#audio) and [video](#video) content, such as play, pause, resume, and stopThe callback interface specifies the functions used to notify the player status during playback events. Since the player engine works asynchronously, you must implement a listener to ensure that the player flows correctly. When each player operation is completed, an event is generated, and the `player_completed_cb()` function is called. If an error occurs in the player engine, you are notified if you have registered the `player_error_cb()` callback.
+- Operating general controls for the [audio](#audio) and [video](#video) content, such as play, pause, resume, and stop
+
+  The callback interface specifies the functions used to notify the player status during playback events. Since the player engine works asynchronously, you must implement a listener to ensure that the player flows correctly. When each player operation is completed, an event is generated, and the `player_completed_cb()` function is called. If an error occurs in the player engine, you are notified if you have registered the `player_error_cb()` callback.
 
 - Modifying playback properties
 
@@ -142,8 +146,8 @@ The following table lists the streaming protocol features supported by the playe
 | Streaming protocol                  | Supported feature |
 |-------------------------------------|-------------------|
 | Hypertext Transfer Protocol (HTTP)  | HTTP Streaming    |
-|  | HTTP Live Streaming                 |                   |
-|  | HTTP Progressive Download Play      |                   |
+| HTTP Live Streaming                 |                   |
+| HTTP Progressive Download Play      |                   |
 | Real Time Streaming Protocol (RTSP) | RTSP Streaming    |
 
 <a name="wav"></a>
@@ -153,7 +157,9 @@ The WAV Player API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__WAV_
 
 Tizen enables your application to play WAVE format audio in 1 of 2 ways:
 
-- Through the multimedia application control **in mobile applications only**When using the [multimedia application control](../app-management/common-appcontrol.md#multimedia), the device standard media player application is launched to play audio.
+- Through the multimedia application control **in mobile applications only**
+
+  When using the [multimedia application control](../app-management/common-appcontrol.md#multimedia), the device standard media player application is launched to play audio.
 
 - With the WAV player functions
 
@@ -398,7 +404,8 @@ To initialize the player for use:
 
      The player error callback is triggered when the player stops working due to an error. You can use the callback to try to recover from the error. For example, try to change the player state to `PLAYER_STATE_READY` by calling the `player_stop()` function. Then remove all other callbacks and reset the player by calling the `player_unprepare()` function. At the end, the player is in the `PLAYER_STATE_IDLE` state, so you can release the resources allocated to the player.
 
-     > **Note**  
+     > **Note**
+     >
      > Do not call the `player_destroy()` function from the called context, as this can cause the `PLAYER_ERROR_INVALID_OPERATION` error.
 
 <a name="play_audio"></a>
@@ -438,7 +445,7 @@ To play a video file:
    ```
    error_code = player_set_uri(ad->player, video_path);
    ```
-<a name="play_video_display"></a>
+   <a name="play_video_display"></a>
 2. Set the display on which the video is played.
 
    To retrieve the correct display handle, use the `GET_DISPLAY()` function. To set the display, use the `player_set_display()` function with the player handle, display type (a `player_display_type_e` enumerator in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__MODULE.html#ga6b83386e10a8febc7e5dfbff85b342ab) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__MODULE.html#ga6b83386e10a8febc7e5dfbff85b342ab) applications), and display handle:
@@ -449,7 +456,8 @@ To play a video file:
 
    After the `player_set_display()` function has been successfully executed, the player is connected to the display.
 
-   > **Note**  
+   > **Note**
+   >
    > For an overlay surface, when the device orientation changes, the displayed video does not rotate automatically. If you want to change the video orientation according to the device orientation, use the `player_set_display_rotation()` function within the `app_device_orientation_cb()` callback function used by the application. For an Evas surface, the Evas object for the video is rotated by the window manager used by the application, not by the `player_set_display_rotation()` function.
 
 <a name="play_video_prepare"></a>
@@ -707,7 +715,8 @@ To retrieve information about the audio and video streams:
 
 1. [Create the player handle](#init_handle), [prepare and start the player](#play_video), and [set the display parameters](#set_parameters).
 
-   > **Note**  
+   > **Note**
+   >
    > To retrieve the stream information, the player state must be either `PLAYER_STATE_PLAYING` or `PLAYER_STATE_PAUSED`.
 
 2. Retrieve the stream information:
@@ -798,7 +807,8 @@ To retrieve information about the audio and video streams:
      dlog_print(DLOG_INFO, LOG_TAG, "player_get_content_info year = %d", year);
      ```
 
-     > **Note**  
+     > **Note**
+     >
 	 > The values must be released using the `free()` function.
 
    - Album artwork
@@ -836,7 +846,8 @@ To insert subtitles to a video file:
    free(path);
    ```
 
-   > **Note**  
+   > **Note**
+   >
    > You can set the subtitle path when the player state is `PLAYER_STATE_IDLE`, `PLAYER_STATE_READY`, `PLAYER_STATE_PLAYING`, or `PLAYER_STATE_PAUSED`.
 
 <a name="start_wav"></a>

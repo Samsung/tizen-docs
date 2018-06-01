@@ -37,13 +37,15 @@ The following figure shows an overview of the USB host architecture.
 
 To enable your application to use the USB host functionality:
 
-1. The [USB Host](../../api/mobile/latest/group__CAPI__USB__HOST__MODULE.html) API does not require any Tizen privileges to be defined, instead the user is asked for confirmation when performing a potentially privileged operation.![USB Host access](./media/usb_host_access.png)
+1. The [USB Host](../../api/mobile/latest/group__CAPI__USB__HOST__MODULE.html) API does not require any Tizen privileges to be defined, instead the user is asked for confirmation when performing a potentially privileged operation.
+
+   ![USB Host access](./media/usb_host_access.png)
 
 2. To use the functions and data types of the USB Host API, include the `<usb_host.h>` header file in your application:
 
-    ```
-    #include <usb_host.h>
-    ```
+   ```
+   #include <usb_host.h>
+   ```
 
 3. Initialize the interface context.
 

@@ -3,8 +3,13 @@
 
 Tizen provides localized resources to make your application usable for different countries. The localization is based on the Internationalization API (in [mobile](../../api/mobile/latest/group__CAPI__I18N__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__I18N__MODULE.html) applications), which makes strings translatable and places them in `.po` (portable object) files.
 
-> **Note**  
-> The `.po` files must be placed in the `res/po` directory of the application. The files can be edited using the [PO file editor](../../../tizen-studio/native-tools/po-file-editor.md) provided by the Tizen Studio.The `.po` file is compiled into a `.mo` file, and the `.mo` file name is defined using the project name that you define when you create the project in the Tizen Studio. The application ID is made based on the project name, and the framework finds the application `.mo` file based on the application ID.Be careful if you change the application ID in the Tizen manifest editor later, because the `.mo` file name is not automatically changed, and problems can occur when getting the string resources.
+> **Note**
+>
+> The `.po` files must be placed in the `res/po` directory of the application. The files can be edited using the [PO file editor](../../../tizen-studio/native-tools/po-file-editor.md) provided by the Tizen Studio.
+>
+> The `.po` file is compiled into a `.mo` file, and the `.mo` file name is defined using the project name that you define when you create the project in the Tizen Studio. The application ID is made based on the project name, and the framework finds the application `.mo` file based on the application ID.
+>
+> Be careful if you change the application ID in the Tizen manifest editor later, because the `.mo` file name is not automatically changed, and problems can occur when getting the string resources.
 
 The application must load the proper resource set depending on the current device locale. If no matching resource set is found for the current locale, the default resource set is used.
 
@@ -110,7 +115,10 @@ main(int argc, char *argv[])
 The `xgettext` tool extracts strings to translate to a `.pot` file (a PO template), while the `msgmerge` tool maintains the existing `.po` files. The typical workflow is as follows:
 
 - Run the `xgettext` tool once to generate a `.pot` file.
-- When adding a new translation language, copy the `.pot` file content to the `<locale>.po` file and translate that file.New runs of the `xgettext` tool update the existing `.pot` file and the `msgmerge` tools updates the `.po` files.
+
+- When adding a new translation language, copy the `.pot` file content to the `<locale>.po` file and translate that file.
+
+  New runs of the `xgettext` tool update the existing `.pot` file and the `msgmerge` tools updates the `.po` files.
 
 The following examples show typical calls to the tools:
 
@@ -123,6 +131,7 @@ The following examples show typical calls to the tools:
     ```
 
 The above call extracts all strings that are used inside the `_()` function (optional shorthand for `i18n_get_text()`), uses UTF-8 as the encoding, and adds comments right before the strings to the output files.
+
 - `msgmerge`:
 
     ```
@@ -167,17 +176,21 @@ Take advantage of the following tips to smoothly internationalize your applicati
     #: some_file.c:44 another_file.c:41
     ```
 
-	In non-trivial projects, such changes often happen. If you use source control and commit such changes even though no actual translation changes were made, each commit probably contains a change to the `.po` files. This hampers readability of the change history, and if several people are working in parallel and need to merge their changes, this creates extensive merge conflicts each time.For source control, only commit changes to `.po` files when there are actual translation changes, not because line comments have changed.
+	In non-trivial projects, such changes often happen. If you use source control and commit such changes even though no actual translation changes were made, each commit probably contains a change to the `.po` files. This hampers readability of the change history, and if several people are working in parallel and need to merge their changes, this creates extensive merge conflicts each time.
+
+    For source control, only commit changes to `.po` files when there are actual translation changes, not because line comments have changed.
 
 - Use `_()` as shorthand for `i18n_get_text()`Since the `i18n_get_text()` function calls are very common, the Tizen Studio provides an abbreviation for this function. You can call it simply with `_()`.
 
-- Sort properly with `strcoll()`The `strcoll()` function is a string comparison tailored for sorting data for display. It works the same way as `strcmp()`, but sorts the data according to the current locale settings.Use the `strcoll()` function as the comparison function for sorting the data set you are using.
+- Sort properly with `strcoll()`The `strcoll()` function is a string comparison tailored for sorting data for display. It works the same way as `strcmp()`, but sorts the data according to the current locale settings.
+
+    Use the `strcoll()` function as the comparison function for sorting the data set you are using.
 
 - Help the translators in their work
 
-  The PO file-based translation system is a common one and is likely to be known to translators. To provide the necessary information to help the translators in their work, it can be enough to mention its name (`gettext`). There is extensive additional documentation as well as questions and answers available on the Internet.
+    The PO file-based translation system is a common one and is likely to be known to translators. To provide the necessary information to help the translators in their work, it can be enough to mention its name (`gettext`). There is extensive additional documentation as well as questions and answers available on the Internet.
 
-  Do not hesitate to put comments in your code above the strings to be translated, since they can be extracted along with the strings and saved in the `.po` files for the translator to see.
+    Do not hesitate to put comments in your code above the strings to be translated, since they can be extracted along with the strings and saved in the `.po` files for the translator to see.
 
 ## Related Information
 * Dependencies

@@ -5,7 +5,8 @@ Before you implement the actual application functionality, define all the necess
 - To set the [application project properties for API and privilege checks](#checking-api-and-privilege-usage), right-click the project in the Tizen Studio **Project Explorer** view and select **Properties**. After setting or changing a property, click **OK**.
 - To define the [application manifest settings](#setting-the-application-manifest), edit the `tizen-manifest.xml` file.
 
-> **Note**  
+> **Note**
+>
 > Only modify the manifest file by using the manifest editor in the Tizen Studio. If you create or edit the `tizen-manifest.xml` file using any other text editor, your application may not work as expected.
 
 After you have finished setting the project properties, you are ready to [design the UI and implement the application code](app-dev-process.md#designing).
@@ -25,7 +26,8 @@ To perform the usage checks automatically during specific tasks, select the requ
 
 You can also perform the usage checks manually after building the application, by right-clicking the project in the **Project Explorer** view and selecting **Check API and Privilege Violations With Build**. The results are displayed in the **Problems** view.
 
-> **Note**  
+> **Note**
+>
 > If the application has conflicting API versions, the build fails and the results are displayed in the **Problems** view.
 
 <a name="manifest"></a>
@@ -72,9 +74,9 @@ You can perform the following tasks using the **Overview** tab:
   You can add a launcher icon to your application by defining it in the **Icon** panel. If your application supports both HD and WVGA, it is best to provide an icon for HD for better image quality in both cases.
 
   The following table describes the available icons.
-  ​
+
   | Profile  | Mandatory | Format                 | Size              | Size              | Description                        |
-  |--------|---------|----------------------|-----------------|-----------------|----------------------------------|
+  |----------|-----------|------------------------|-------------------|-------------------|------------------------------------|
   | Profile  | Mandatory | Format                 | Xhigh  (HD)       | High  (WVGA)      | Description                        |
   | Mobile   | Yes       | 32-bit PNG with  alpha | 117 x 117 pixels  | 78 x 78 pixels    | Image displayed  in the main menu. |
   | Wearable | Yes       | 32-bit  PNG with alpha | 152  x 152 pixels | 152  x 152 pixels | Image  displayed in the main menu. |
@@ -95,7 +97,9 @@ To enable filtering for your native application:
 
 1. In the **Features** tab, click **+**.
 
-2. Select a feature from the [predefined list of features available for filtering](../details/app-filtering.md).To check which features are necessary for using a specific API, see the related feature in the native [API Reference](../../api/mobile/latest/index.html).
+2. Select a feature from the [predefined list of features available for filtering](../details/app-filtering.md).
+
+   To check which features are necessary for using a specific API, see the related feature in the native [API Reference](../../api/mobile/latest/index.html).
 
 3. Click **OK**.
 
@@ -199,9 +203,9 @@ To define the kind of access and data your service application provides to other
   | Provider ID       | Provider  ID      | String    | ID  of the account provider.             |
   | Default label     | Default  label    | String    | Display  name of the account provider. This is a mandatory property. |
   | Icons             | Icon              | String    | File  path of the account provider icon. |
-  | Icons             | Icon              |           | The  icon size is: 72 x 72 for Xhigh (HD) & 48 x 48 for High (WVGA) Since the  icon is used in Settings > Accounts, place the icon in a shared  directory. This is a mandatory property. |
-  | Icons             | Icon  small       | String    | File  path of the account provider icon. The icon size is: 45 x 45 for Xhigh  (HD)  & 30 x 30 for High  (WVGA).  Since the small icon is used  in other applications, place the icon in a shared directory.  This is a mandatory property. |
-  | Name              | Name              | String    | Localization  support for the display name. To add a localized name, click + in  the Name panel, select the language, define the display name for  that language, and click OK. |
+  | Icons             | Icon              | String    | The  icon size is:<br> - 72 x 72 for Xhigh (HD)<br> - 48 x 48 for High (WVGA)<br> Since the  icon is used in Settings > Accounts, place the icon in a shared  directory.<br> This is a mandatory property. |
+  | Icons             | Icon  small       | String    | File  path of the account provider icon. <br>The icon size is: <br> -  45 x 45 for Xhigh  (HD)<br> - 30 x 30 for High  (WVGA).<br>  Since the small icon is used  in other applications, place the icon in a shared directory.<br>  This is a mandatory property. |
+  | Name              | Name              | String    | Localization  support for the display name.<br> To add a localized name, click + in  the Name panel, select the language, define the display name for  that language, and click OK. |
   | Capabilities      | Capabilities      | String    | Capability  of the account provider.    Capabilities are defined in the  http://<VENDOR_INFORMATION>/accounts/capability/<NAME> IRI  format.    <br>The following predefined capabilities can be used in Tizen:    <br>http://tizen.org/account/capability/calendar    <br>Used when the account is related to a calendar.    <br>http://tizen.org/account/capability/contact    <br>Used when the account is related to contacts.    <br>http://tizen.org/account/capability/document    <br>Used when the account is related to a document.    <br>http://tizen.org/account/capability/email    <br>Used when the account is related to email.    <br>http://tizen.org/account/capability/game    <br>Used when the account is related to a game.    <br>http://tizen.org/account/capability/message    <br>Used when the account is related to a message.    <br>http://tizen.org/account/capability/music    <br>Used when the account is related to music.    <br>http://tizen.org/account/capability/photo    <br>Used when the account is related to a photo.    <br>http://tizen.org/account/capability/video    <br>Used when the account is related to a video.    <br>To add a capability, click + in the Capabilities panel. A default  capability is added to the table. Click the default capability and change it  to the one you need.    <br>This is an optional property. |
 
 - Add the background category type (since Tizen 2.4).
@@ -217,17 +221,18 @@ To define the kind of access and data your service application provides to other
   **Table: Shortcut properties**
 
   | Shortcut property | Data type | Property type                            |
-  |-----------------|---------|----------------------------------------|
-  | App ID            | `String`  | Application unique ID.                   |
-  | Key               | `String`  | Key for user content.                    |
-  | Data              | `String`  | Data for user content.                   |
-  | Default label     | `String`  | Display name of the shortcut.            |
-  | Icon              | `String`  | File path of the shortcut icon.This is a mandatory property. |
-  | Name              | `String`  | Localization support for the display name.To add a localized name, click **+** in the **Name** panel, select the language, define the display name for that language, and click **OK**. |
+  |-------------------|-----------|------------------------------------------|
+  | App ID            | String  | Application unique ID.                   |
+  | Key               | String  | Key for user content.                    |
+  | Data              | String  | Data for user content.                   |
+  | Default label     | String  | Display name of the shortcut.            |
+  | Icon              | String  | File path of the shortcut icon.This is a mandatory property. |
+  | Name              | String  | Localization support for the display name.<br> To add a localized name, click **+** in the **Name** panel, select the language, define the display name for that language, and click **OK**. |
 
 ### Editing the tizen-manifest.xml File in the Source Tab
 
   The **Source** tab of the manifest editor shows the code of the `tizen-manifest.xml` file. You can [edit the basic syntax of the XML document](../../../tizen-studio/native-tools/manifest-text-editor.md) and also see how changes made on the other tabs are reflected in the raw XML source content.
 
->  **Note**    
+>  **Note**
+>
 >  If you edit application information manually in the `tizen-manifest.xml` file source code, you can introduce errors preventing the application from running normally.

@@ -5,7 +5,9 @@ The Tizen Buffer Manager (TBM) surface allows you to manage the graphic buffer i
 
 The TBM surface provides the following main features:
 
-- [Creating a surface](#create) with a defined width, height, and formatThe TBM surface provides various format definitions. However, before using a specific graphic format, make sure that the system supports it.
+- [Creating a surface](#create) with a defined width, height, and format
+
+  The TBM surface provides various format definitions. However, before using a specific graphic format, make sure that the system supports it.
 
 - Getting a format list
 

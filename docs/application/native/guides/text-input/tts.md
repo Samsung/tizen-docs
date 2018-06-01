@@ -72,13 +72,17 @@ You can get the following information about the TTS:
 
 To enable your application to use the TTS functionality:
 
-1. To use the functions and data types of the TTS (text-to-speech) API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__TTS__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__TTS__MODULE.html) applications), include the `<tts.h>` header file in your application:`#include <tts.h>`
+1. To use the functions and data types of the TTS (text-to-speech) API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__TTS__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__TTS__MODULE.html) applications), include the `<tts.h>` header file in your application:
+   ```
+   #include <tts.h>
+   ```
 
 2. To use the TTS library, create a TTS handle.
 
    The TTS handle is used in other TTS functions as a parameter. After the handle creation, the TTS state changes to `TTS_STATE_CREATED`.
 
-   > **Note**  
+   > **Note**
+   >
    > TTS is not thread-safe and depends on the Ecore main loop. Implement TTS within the Ecore main loop and do not use it in a thread.
 
    ```
@@ -106,7 +110,8 @@ To enable your application to use the TTS functionality:
    }
    ```
 
-   > **Note**  
+   > **Note**
+   >
    > Do not use the `tts_destroy()` function in a callback function. Within a callback, the `tts_destroy()` function fails and returns `TTS_ERROR_OPERATION_FAILED`.
 
 <a name="set"></a>
@@ -308,7 +313,9 @@ To set and unset callbacks:
 
 To obtain the current state, the supported voice list, and the current voice:
 
-- Get the current state using the `tts_get_state()` function.The TTS state is changed by various TTS functions, and it is applied as a precondition of each function.
+- Get the current state using the `tts_get_state()` function.
+
+    The TTS state is changed by various TTS functions, and it is applied as a precondition of each function.
 
     ```
     void
@@ -322,7 +329,9 @@ To obtain the current state, the supported voice list, and the current voice:
     }
     ```
 
-- Obtain a list of voices supported by the TTS using the `tts_foreach_supported_voices()` function.The foreach function triggers a separate callback for each supported voice. As long as the callback returns `true`, the foreach function continues to loop over the supported voices.
+- Obtain a list of voices supported by the TTS using the `tts_foreach_supported_voices()` function.
+
+    The foreach function triggers a separate callback for each supported voice. As long as the callback returns `true`, the foreach function continues to loop over the supported voices.
 
     ```
     bool
@@ -343,7 +352,9 @@ To obtain the current state, the supported voice list, and the current voice:
     }
     ```
 
-- Get the default voice using the `tts_get_default_voice()` function.The TTS synthesizes the text using the default voice, if you do not set the language and the voice type as parameters of the `tts_add_text()` function.
+- Get the default voice using the `tts_get_default_voice()` function.
+
+    The TTS synthesizes the text using the default voice, if you do not set the language and the voice type as parameters of the `tts_add_text()` function.
 
     ```
     void
@@ -358,7 +369,7 @@ To obtain the current state, the supported voice list, and the current voice:
     }
     ```
 
-You can get a notification about the default voice changes by setting a default voice changed callback.
+    You can get a notification about the default voice changes by setting a default voice changed callback.
 
 - Get the error message.
 
@@ -395,7 +406,8 @@ You can get a notification about the default voice changes by setting a default 
 
 There are 3 different TTS modes available. The main difference is audio mixing with other sources. The default mode is `TTS_MODE_DEFAULT`, used for normal applications such as eBooks. If you set this mode and play your text, it can be interrupted when other sounds, such as ringtone or other TTS sounds, are played.
 
-> **Note**  
+> **Note**
+>
 > The `TTS_MODE_NOTIFICATION` and `TTS_MODE_SCREEN_READER` modes are mixed with other sound sources, but they are used only for platform-specific features. Do not use them for normal applications.
 
 Get and set the mode in the `TTS_STATE_CREATED` state:
@@ -442,7 +454,8 @@ To operate the TTS:
    }
    ```
 
-   > **Note**  
+   > **Note**
+   >
    > If you get the error callback after calling the `tts_prepare()` function, TTS is not available.
 
 2. When the connection is no longer needed, use the `tts_unprepare()` function to disconnect the TTS and change the state to `TTS_STATE_CREATED`:
@@ -481,7 +494,8 @@ To set and get the options about the TTS engine:
 
   The private data is a setting parameter for applying keys provided by the TTS engine. Using the `tts_set_private_data()` function, you can set the private data and use the corresponding key of the engine. To get the private data which corresponds to a specific key from the engine, use the `tts_get_private_data()` function.
 
-  > **Note**  
+  > **Note**
+  >
   > The key and data are determined by the TTS engine. To set and get the private data, see the engine instructions.
 
   ```
@@ -513,7 +527,8 @@ To add text:
 
 - You can request the TTS library to read your own text using the `tts_add_text()` function. The TTS library manages added text using queues, so it is possible to add several texts simultaneously. Each obtained text receives an utterance ID, which is used for synthesizing and playing the sound data.
 
-  > **Note**  
+  > **Note**
+  >
   > If the added text is too long, some engines need a long time for synthesis. It is recommended to only use proper length text clips.
 
   When you do not set the language and use `NULL` for it, the default language is used for synthesizing text.
@@ -564,7 +579,8 @@ To start, pause, and stop the playback:
 
   If there is no text in the queue, the TTS waits for text to be added in the `TTS_STATE_PLAYING` state. In that case, when you add text, the TTS starts synthesizing and playing it immediately. The TTS state need not change to `TTS_STATE_READY` state before using the `tts_stop()` function.
 
-  > **Note**  
+  > **Note**
+  >
   > If you get the TTS state changed callback in the `TTS_STATE_PLAYING` state without a TTS function call, prepare the TTS state. The TTS state can change if other applications request TTS play, the audio session requests TTS pause, or the TTS engine changes.
 
   ```

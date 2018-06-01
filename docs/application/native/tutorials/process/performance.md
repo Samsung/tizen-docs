@@ -189,47 +189,138 @@ Select from 2 types of memory profiling settings:
 
    ![Memory error and memory leak data options](./media/optimizingapp_valgrind.png)
 
-   **Table: General setting options**
 
-   | Option name                     | Description                              |
-   |-------------------------------|----------------------------------------|
-   | **trace children on exec**      | When enabled, Valgrind traces into sub-processes initiated through the exec system call. This is necessary for multi-project applications. Valgrind does trace into the child of a fork (it would be difficult not to, since fork makes an identical copy of a process), so this option is arguably badly named. However, most children of fork calls immediately call exec anyway. |
-   | **run __libc_freeres()on exit** | This option is only relevant when running Valgrind on Linux.The GNU C library (`libc.so`), which is used by all applications, can allocate memory for its own uses. Usually it does not free that memory when the application ends, since the Linux kernel reclaims all process resources when a process exits anyway. The glibc authors realized that this behavior causes leak checkers, such as Valgrind, to falsely report leaks in glibc, when a leak check is done at exit. In order to avoid this, they provided a routine called `__libc_freeres()` specifically to make glibc release all memory it has allocated. **Memcheck** therefore tries to run `__libc_freeres()` at exit. Unfortunately, in some very old versions of glibc, `__libc_freeres()` is sufficiently buggy to cause segmentation faults. This was particularly noticeable on Red Hat 7.1. So this option is provided in order to inhibit the run of `__libc_freeres()`. If your application seems to run fine on Valgrind, but segfaults at exit, disabling this option can fix the problem, although at the cost of possibly falsely reporting space leaks in `libc.so`. |
-   | **demangle C++ names**          | Automatic demangling (decoding) of C++ names is enabled by default. When enabled, Valgrind attempts to translate encoded C++ names back to something approaching the original. The demangler handles symbols mangled by g++ versions 2.X, 3.X, and 4.X.An important fact about demangling is that method names mentioned in suppressions files must be in their mangled form. Valgrind does not demangle method names when searching for applicable suppressions, because to do otherwise would make suppression file contents dependent on the state of Valgrind's demangling machinery, and also slow down suppression matching. |
-   | **num callers in stack trace**  | This option specifies the maximum number of entries shown in stack traces that identify application locations. Errors are commoned up using only the top 4 method locations (the place in the current method, and that of its 3 immediate callers). So this does not affect the total number of errors reported.The maximum value for this option is 50. Note that higher settings make Valgrind run more slowly and take more memory, but can be useful when working with applications with deeply-nested call chains. |
-   | **limit errors reported**       | When enabled, Valgrind stops reporting errors after 10,000,000 in total, or 1,000 different ones, have been seen. This is to stop the error tracking machinery from becoming a huge performance overhead in applications with many errors. |
-   | **show errors below main**      | By default, stack traces for errors do not show any methods that appear beneath `main()`. Alternatively, if `main()` is not present in the stack trace, it does not show any methods below `main()`-like methods, such as glibc's `__libc_start_main()`. Furthermore, if `main()`-like methods are present in the trace, they are normalized (below `main()`), in order to make the output more deterministic. If this option is enabled, all stack trace entries are shown and `main()`-like methods are not normalized. |
-   | **max size of stack frame**     | This option specifies the maximum size of a stack frame. If the stack pointer moves by more than this amount, Valgrind assumes that the application is switching to a different stack.You can to use this option if your application has large stack-allocated arrays. Valgrind keeps track of your application's stack pointer. If it changes by more than the threshold amount, Valgrind assumes your application is switching to a different stack, and **Memcheck** behaves differently than it would for a stack pointer change smaller than the threshold. Usually this heuristic works well. However, if your application allocates large structures on the stack, this heuristic is fooled, and **Memcheck** subsequently reports large numbers of invalid stack accesses. This option allows you to change the threshold to a different value.You must only consider the use of this option if Valgrind's debug output directs you to do so. In that case, it tells you the new threshold you must specify.In general, allocating large structures on the stack is a bad idea, because you can easily run out of stack space, especially on systems with limited memory or which expect to support large numbers of threads each with a small stack, and also because the error checking performed by **Memcheck** is more effective for heap-allocated data than for stack-allocated data. If you have to use this option, consider rewriting your code to allocate on the heap rather than on the stack. |
-   | **suppressions file**           | This option specifies an extra file from which to read descriptions of errors to suppress. You can use up to 100 extra suppression files. |
+   - **trace children on exec**
+
+     When enabled, Valgrind traces into sub-processes initiated through the exec system call. This is necessary for multi-project applications. Valgrind does trace into the child of a fork (it would be difficult not to, since fork makes an identical copy of a process), so this option is arguably badly named. However, most children of fork calls immediately call exec anyway.
+
+
+   - **run __libc_freeres()on exit**
+
+     This option is only relevant when running Valgrind on Linux.
+
+     The GNU C library (`libc.so`), which is used by all applications, can allocate memory for its own uses. Usually it does not free that memory when the application ends, since the Linux kernel reclaims all process resources when a process exits anyway. The glibc authors realized that this behavior causes leak checkers, such as Valgrind, to falsely report leaks in glibc, when a leak check is done at exit. In order to avoid this, they provided a routine called `__libc_freeres()` specifically to make glibc release all memory it has allocated. **Memcheck** therefore tries to run `__libc_freeres()` at exit. Unfortunately, in some very old versions of glibc, `__libc_freeres()` is sufficiently buggy to cause segmentation faults. This was particularly noticeable on Red Hat 7.1. So this option is provided in order to inhibit the run of `__libc_freeres()`. If your application seems to run fine on Valgrind, but segfaults at exit, disabling this option can fix the problem, although at the cost of possibly falsely reporting space leaks in `libc.so`. 
+
+   - **demangle C++ names**
+
+       Automatic demangling (decoding) of C++ names is enabled by default. When enabled, Valgrind attempts to translate encoded C++ names back to something approaching the original. The demangler handles symbols mangled by g++ versions 2.X, 3.X, and 4.X.
+
+       An important fact about demangling is that method names mentioned in suppressions files must be in their mangled form. Valgrind does not demangle method names when searching for applicable suppressions, because to do otherwise would make suppression file contents dependent on the state of Valgrind's demangling machinery, and also slow down suppression matching.
+ 
+   - **num callers in stack trace**
+
+       This option specifies the maximum number of entries shown in stack traces that identify application locations. Errors are commoned up using only the top 4 method locations (the place in the current method, and that of its 3 immediate callers). So this does not affect the total number of errors reported.
+
+      The maximum value for this option is 50. Note that higher settings make Valgrind run more slowly and take more memory, but can be useful when working with applications with deeply-nested call chains.
+ 
+   - **limit errors reported**
+
+       When enabled, Valgrind stops reporting errors after 10,000,000 in total, or 1,000 different ones, have been seen. This is to stop the error tracking machinery from becoming a huge performance overhead in applications with many errors.
+
+   - **show errors below main** 
+
+      By default, stack traces for errors do not show any methods that appear beneath `main()`. Alternatively, if `main()` is not present in the stack trace, it does not show any methods below `main()`-like methods, such as glibc's `__libc_start_main()`. Furthermore, if `main()`-like methods are present in the trace, they are normalized (below `main()`), in order to make the output more deterministic. If this option is enabled, all stack trace entries are shown and `main()`-like methods are not normalized. 
+
+   - **max size of stack frame**
+
+      This option specifies the maximum size of a stack frame. If the stack pointer moves by more than this amount, Valgrind assumes that the application is switching to a different stack.
+
+      You can to use this option if your application has large stack-allocated arrays. Valgrind keeps track of your application's stack pointer. If it changes by more than the threshold amount, Valgrind assumes your application is switching to a different stack, and **Memcheck** behaves differently than it would for a stack pointer change smaller than the threshold. Usually this heuristic works well. However, if your application allocates large structures on the stack, this heuristic is fooled, and **Memcheck** subsequently reports large numbers of invalid stack accesses. This option allows you to change the threshold to a different value.
+
+      You must only consider the use of this option if Valgrind's debug output directs you to do so. In that case, it tells you the new threshold you must specify.
+
+      In general, allocating large structures on the stack is a bad idea, because you can easily run out of stack space, especially on systems with limited memory or which expect to support large numbers of threads each with a small stack, and also because the error checking performed by **Memcheck** is more effective for heap-allocated data than for stack-allocated data. If you have to use this option, consider rewriting your code to allocate on the heap rather than on the stack. 
+
+   - **suppressions file**
+
+       This option specifies an extra file from which to read descriptions of errors to suppress. You can use up to 100 extra suppression files. 
 
 6. On the **Tool Advanced setting** tab, set the advanced options.The tab content depends on the selection you have made on the **Collect data** tab.
 
-   **Table: Tool Advanced setting options for memory error and memory leak profiling**
+   Tool Advanced setting options for memory error and memory leak profiling cantains the following options:
 
-   | Option name                | Description                              |
-   |--------------------------|----------------------------------------|
-   | **leak check**             | This option, when enabled, searches for memory leaks when the client application finishes. If set to **summary**, it lists out how many leaks occurred. If set to **full** or **yes**, it also gives details of each individual leak. |
-   | **leak resolution**        | When performing leak checks, this option determines how willing **Memcheck** is to consider different backtraces to be the same for the purposes of merging multiple leaks into a single leak report. When set to **low**, only the first 2 entries need match. When set to **med**, 4 entries have to match. When **high**, all entries need to match.For hardcore leak debugging, you probably want to use **--leak-resolution=high** together with **--num-callers=40** or a similar large number. The **--leak-resolution** setting does not affect **Memcheck**'s ability to find leaks. It only changes how the results are presented. |
-   | **freelist size (blocks)** | When the client application releases memory using free (in C) or delete (C++), that memory is not immediately made available for re-allocation. Instead, it is marked inaccessible and placed in a queue of freed blocks. The purpose is to defer as long as possible the point at which freed-up memory comes back into circulation. This increases the chance that **Memcheck** is able to detect invalid accesses to blocks for some significant period of time after they have been freed.This option specifies the maximum total size, in bytes, of the blocks in the queue. The default value is 20 million bytes. Increasing this increases the total amount of memory used by **Memcheck**, but can result in the detection of invalid uses of freed blocks which would otherwise go undetected. |
-   | **show reachable blocks**  | When disabled, the memory leak detector only shows "definitely lost" and "possibly lost" blocks. When enabled, the leak detector also shows "reachable" and "indirectly lost" blocks. It shows all blocks, except suppressed ones, so **--show-all**would be a better name for it. |
-   | **allow partial loads**    | This option controls how **Memcheck** handles word-sized, word-aligned loads from addresses for which some bytes are addressable and others are not. When set to **yes**, such loads do not produce an address error. Instead, loaded bytes originating from illegal addresses are marked as uninitialized, and those corresponding to legal addresses are handled in the normal way.When set to **no**, loads from partially invalid addresses are treated the same as loads from completely invalid addresses, an illegal-address error is issued, and the resulting bytes are marked as initialized.The code that behaves in this way is in violation of the ISO C/C++ standards, and must be considered broken. If at all possible, such code must be fixed. This option must be used only as a last resort. |
-   | **undef value errors**     | This option controls whether **Memcheck** reports uses of undefined value errors. If you do not want to see undefined value errors, set this to **no**. It also has the side effect of slightly speedi |
+   - **leak check**
 
-   **Table: Tool Advanced setting options for heap memory profiling**
+       This option, when enabled, searches for memory leaks when the client application finishes. If set to **summary**, it lists out how many leaks occurred. If set to **full** or **yes**, it also gives details of each individual leak.
 
-   | Option name                        | Description                              |
-   |----------------------------------|----------------------------------------|
-   | **profile heap**                   | This option specifies whether heap profiling is done. |
-   | **administrative bytes per block** | If heap profiling is enabled, this option gives the number of administrative bytes per block to use. This must be an estimate of the average, since it can vary. For example, the allocator used by glibc on Linux requires somewhere between 4 to 15 bytes per block, depending on various factors. That allocator also requires admin space for freed blocks, but **Massif** cannot account for this. |
-   | **profile stack**                  | This option specifies whether stack profiling must be done. This option slows **Massif** down greatly, and so is off by default. **Massif** assumes that the main stack has size zero at start-up. This is not true, but doing otherwise accurately is difficult. Furthermore, starting at zero better indicates the size of the part of the main stack that a user application actually has control over. |
-   | **allocation tree depth**          | The maximum depth of the allocation trees recorded for detailed snapshots. Increasing it makes **Massif** run somewhat more slowly, use more memory, and produce bigger output files. |
-   | **heap allocation threshold**      | The significance threshold for heap allocations is a percentage of the total memory size. The allocation tree entries that account for less than this are aggregated. This must be specified in tandem with ms_print's option of the same name. |
-   | **allocation peak inaccuracy**     | **Massif** does not necessarily record the actual global memory allocation peak. By default, it records a peak only when the global memory allocation size exceeds the previous peak by at least 1.0%. This is because there can be many local allocation peaks along the way, and doing a detailed snapshot for each is expensive and wasteful, as all but one of them are later discarded. This inaccuracy can be changed (even to 0.0%) through this option, but **Massif** runs drastically slower as the number approaches zero. |
-   | **time unit**                      | This option specifies the time unit used for the profiling. There are 3 possibilities:<br> - Instructions executed (i)Good for most cases<br>- Real (wall clock) time (in milliseconds)It is useful sometimes<br> - Bytes allocated/deallocated on the heap or stack (B)It is useful for very short-run programs, and for testing purposes, because it is the most reproducible across different machines. |
-   | **detailed snapshot frequency**    | This option specifies the frequency of detailed snapshots. With **--detailed-freq=1**, every snapshot is detailed. |
-   | **max snapshots**                  | This option specifies the maximum number of snapshots recorded. If set to N, for all programs except very short-running ones, the final number of snapshots is between N/2 and N. |
-   | **minimum heap block alignment**   | By default, Valgrind's malloc, realloc, and so on return a block whose starting address is 8-byte-aligned or 16-byte-aligned. The value depends on the platform and matches the platform default. This option allows you to specify a different alignment. The supplied value must be greater than or equal to the default, less than or equal to 4096, and must be a power of 2. |
-   | **allocation functions**           | Methods specified with this option are treated as though they were a heap allocation method, such as malloc. This is useful for methods that are wrappers to malloc or new, which can fill up the allocation trees with uninteresting information. This option can be specified multiple times on the command line, to name multiple methods.The named method is only treated this way if it is the top entry in a stack trace, or just below another method treated this way. For example, if you have a method malloc1 that wraps malloc, and malloc2 that wraps malloc1, just specifying **--alloc-fn=malloc2** has no effect. You need to specify **--alloc-fn=malloc1** as well. This is a little inconvenient, but the reason is that checking for allocation methods is slow, and it saves a lot of time if **Massif** can stop looking through the stack trace entries as soon as it finds one that does not match rather than having to continue through all the entries. |
+   - **leak resolution**
+
+        When performing leak checks, this option determines how willing **Memcheck** is to consider different backtraces to be the same for the purposes of merging multiple leaks into a single leak report. When set to **low**, only the first 2 entries need match. When set to **med**, 4 entries have to match. When **high**, all entries need to match.
+
+      For hardcore leak debugging, you probably want to use **--leak-resolution=high** together with **--num-callers=40** or a similar large number. The **--leak-resolution** setting does not affect **Memcheck**'s ability to find leaks. It only changes how the results are presented.
+
+
+   - **freelist size (blocks)**
+
+       When the client application releases memory using free (in C) or delete (C++), that memory is not immediately made available for re-allocation. Instead, it is marked inaccessible and placed in a queue of freed blocks. The purpose is to defer as long as possible the point at which freed-up memory comes back into circulation. This increases the chance that **Memcheck** is able to detect invalid accesses to blocks for some significant period of time after they have been freed.
+
+      This option specifies the maximum total size, in bytes, of the blocks in the queue. The default value is 20 million bytes. Increasing this increases the total amount of memory used by **Memcheck**, but can result in the detection of invalid uses of freed blocks which would otherwise go undetected. 
+
+   - **show reachable blocks**
+
+       When disabled, the memory leak detector only shows "definitely lost" and "possibly lost" blocks. When enabled, the leak detector also shows "reachable" and "indirectly lost" blocks. It shows all blocks, except suppressed ones, so **--show-all**would be a better name for it. 
+
+   - **allow partial loads**
+
+       This option controls how **Memcheck** handles word-sized, word-aligned loads from addresses for which some bytes are addressable and others are not. When set to **yes**, such loads do not produce an address error. Instead, loaded bytes originating from illegal addresses are marked as uninitialized, and those corresponding to legal addresses are handled in the normal way.When set to **no**, loads from partially invalid addresses are treated the same as loads from completely invalid addresses, an illegal-address error is issued, and the resulting bytes are marked as initialized.
+
+      The code that behaves in this way is in violation of the ISO C/C++ standards, and must be considered broken. If at all possible, such code must be fixed. This option must be used only as a last resort. 
+
+   - **undef value errors**
+
+       This option controls whether **Memcheck** reports uses of undefined value errors. If you do not want to see undefined value errors, set this to **no**. It also has the side effect of slightly speedi 
+
+   Tool Advanced setting options for heap memory profiling cantains the following options:
+
+   - **profile heap**
+
+       This option specifies whether heap profiling is done.
+
+   - **administrative bytes per block**
+
+       If heap profiling is enabled, this option gives the number of administrative bytes per block to use. This must be an estimate of the average, since it can vary. For example, the allocator used by glibc on Linux requires somewhere between 4 to 15 bytes per block, depending on various factors. That allocator also requires admin space for freed blocks, but **Massif** cannot account for this.
+
+   - **profile stack**
+
+       This option specifies whether stack profiling must be done. This option slows **Massif** down greatly, and so is off by default. **Massif** assumes that the main stack has size zero at start-up. This is not true, but doing otherwise accurately is difficult. Furthermore, starting at zero better indicates the size of the part of the main stack that a user application actually has control over.
+
+   - **allocation tree depth**
+
+       The maximum depth of the allocation trees recorded for detailed snapshots. Increasing it makes **Massif** run somewhat more slowly, use more memory, and produce bigger output files. 
+
+   - **heap allocation threshold**
+
+       The significance threshold for heap allocations is a percentage of the total memory size. The allocation tree entries that account for less than this are aggregated. This must be specified in tandem with ms_print's option of the same name. 
+
+   - **allocation peak inaccuracy**
+
+       **Massif** does not necessarily record the actual global memory allocation peak. By default, it records a peak only when the global memory allocation size exceeds the previous peak by at least 1.0%. This is because there can be many local allocation peaks along the way, and doing a detailed snapshot for each is expensive and wasteful, as all but one of them are later discarded. This inaccuracy can be changed (even to 0.0%) through this option, but **Massif** runs drastically slower as the number approaches zero.
+
+   - **time unit**
+
+       This option specifies the time unit used for the profiling. There are 3 possibilities:
+
+       - Instructions executed (i)  
+         Good for most cases
+       - Real (wall clock) time (in milliseconds)  
+         It is useful sometimes
+       - Bytes allocated/deallocated on the heap or stack (B)  
+         It is useful for very short-run programs, and for testing purposes, because it is the most reproducible across different machines. 
+
+   - **detailed snapshot frequency**
+
+       This option specifies the frequency of detailed snapshots. With **--detailed-freq=1**, every snapshot is detailed. 
+
+   - **max snapshots**
+       This option specifies the maximum number of snapshots recorded. If set to N, for all programs except very short-running ones, the final number of snapshots is between N/2 and N. 
+
+   - **minimum heap block alignment**
+
+       By default, Valgrind's malloc, realloc, and so on return a block whose starting address is 8-byte-aligned or 16-byte-aligned. The value depends on the platform and matches the platform default. This option allows you to specify a different alignment. The supplied value must be greater than or equal to the default, less than or equal to 4096, and must be a power of 2. 
+
+   - **allocation functions**
+
+       Methods specified with this option are treated as though they were a heap allocation method, such as malloc. This is useful for methods that are wrappers to malloc or new, which can fill up the allocation trees with uninteresting information. This option can be specified multiple times on the command line, to name multiple methods.The named method is only treated this way if it is the top entry in a stack trace, or just below another method treated this way. For example, if you have a method malloc1 that wraps malloc, and malloc2 that wraps malloc1, just specifying **--alloc-fn=malloc2** has no effect. You need to specify **--alloc-fn=malloc1** as well. This is a little inconvenient, but the reason is that checking for allocation methods is slow, and it saves a lot of time if **Massif** can stop looking through the stack trace entries as soon as it finds one that does not match rather than having to continue through all the entries. 
 
 7. To save the settings, click **Apply**.
 

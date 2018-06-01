@@ -6,7 +6,9 @@ You can select HERE plans depending on the number of request queries and the kin
 
 To get credentials:
 
-1. Go to the [HERE Developers](https://developer.here.com) Web site and sign in.If you have no account, first register for the HERE Maps account.
+1. Go to the [HERE Developers](https://developer.here.com) Web site and sign in.
+
+   If you have no account, first register for the HERE Maps account.
 
 2. Select a plan for using the HERE Maps services, and register a new project.
 
@@ -37,8 +39,11 @@ To get credentials:
    error = maps_service_set_provider_key(maps, "XXXX/YYYY")
    ```
 
-   > **Note**  
-   > According to the HERE Maps:The app ID uniquely identifies your application.The app code is used in the authentication process to identify a session.
+   > **Note**
+   >
+   > According to the HERE Maps:The app ID uniquely identifies your application.
+   >
+   > The app code is used in the authentication process to identify a session.
 
 ## Related Information
 * Dependencies

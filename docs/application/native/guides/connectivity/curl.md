@@ -81,7 +81,7 @@ There are 2 ways for getting and setting the proxy address:
     char *proxy_address;
     conn_err = connection_get_proxy(connection, CONNECTION_ADDRESS_FAMILY_IPV4, &proxy_address);
     ```
-To set the proxy address, use the `curl_easy_setopt()` function with the `CURLOPT_PROXY` parameter:
+  To set the proxy address, use the `curl_easy_setopt()` function with the `CURLOPT_PROXY` parameter:
     ```
     if (conn_err == CONNECTION_ERROR_NONE && proxy_address)
         curl_easy_setopt(curl, CURLOPT_PROXY, proxy_address);
@@ -96,7 +96,7 @@ To set the proxy address, use the `curl_easy_setopt()` function with the `CURLOP
         return;
     }
     ```
-The new proxy address is passed in the callback parameters. To set the proxy address, use the `curl_easy_setopt()` function with the `CURLOPT_PROXY` parameter:
+  The new proxy address is passed in the callback parameters. To set the proxy address, use the `curl_easy_setopt()` function with the `CURLOPT_PROXY` parameter:
     ```
     static void
     __proxy_address_changed_cb(const char *ipv4_address,

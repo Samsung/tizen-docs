@@ -99,11 +99,25 @@ A status message type notification can be used like a pop-up. It is displayed fo
 
 The following notification layouts are provided:
 
-- `NOTIFICATION_LY_NOTI_EVENT_SINGLE`Layout for a single event notification.
-- `NOTIFICATION_LY_NOTI_EVENT_MULTIPLE`Layout for a multiple event notification.
-- `NOTIFICATION_LY_NOTI_THUMBNAIL`Layout for a notification displaying images.
-- `NOTIFICATION_LY_ONGOING_PROGRESS`Layout for an ongoing notification displaying progress.
-- `NOTIFICATION_LY_EXTENSION`Layout for an [extended notification](#extended_noti).
+- `NOTIFICATION_LY_NOTI_EVENT_SINGLE`
+
+   Layout for a single event notification.
+
+- `NOTIFICATION_LY_NOTI_EVENT_MULTIPLE`
+
+   Layout for a multiple event notification.
+
+- `NOTIFICATION_LY_NOTI_THUMBNAIL`
+
+   Layout for a notification displaying images.
+
+- `NOTIFICATION_LY_ONGOING_PROGRESS`
+
+   Layout for an ongoing notification displaying progress.
+
+- `NOTIFICATION_LY_EXTENSION`
+
+   Layout for an [extended notification](#extended_noti).
 
 **Figure: Notification layouts**
 
@@ -378,7 +392,9 @@ To display the progress bar and update the progress data:
 
 To create an active notification and an input text field, with which the user can directly reply to the notification:
 
-1. To create an active notification, add the `NOTIFICATION_DISPLAY_APP_ACTIVE` type to the display application list.You can create up to 3 buttons, and each button must have an application control that can handle the event.
+1. To create an active notification, add the `NOTIFICATION_DISPLAY_APP_ACTIVE` type to the display application list.
+
+    You can create up to 3 buttons, and each button must have an application control that can handle the event.
 
     ```
     notification_h notification = NULL;

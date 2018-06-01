@@ -150,27 +150,29 @@ To manage a local service, you must create and register the service:
 
    2. The callback defined in the `dnssd_register_local_service()` function is called when the service registration is finished:
 
-    ```
-    void
-    __registered_cb(dnssd_error_e result, dnssd_service_h dnssd_service, void* user_data)
-    {
-        if (result == DNSSD_ERROR_NONE) {
-            /* Service is registered successfully */
-            dlog_print(DLOG_DEBUG, LOG_TAG, "Registered");
-        } else if (result == DNSSD_NAME_CONFLICT) {
-            /* Name conflict exists */
-            dlog_print(DLOG_DEBUG, LOG_TAG, "Name conflict");
-        } else if (result == DNSSD_ALREADY_REGISTERED) {
-            /* Service is already registered */
-            dlog_print(DLOG_DEBUG, LOG_TAG, "Already registered");
-        } else {
-            /* Result is unknown */
-            dlog_print(DLOG_DEBUG, LOG_TAG, "Unknown result");
-        }
-    }
-    ```
+      ```
+      void
+      __registered_cb(dnssd_error_e result, dnssd_service_h dnssd_service, void* user_data)
+      {
+          if (result == DNSSD_ERROR_NONE) {
+              /* Service is registered successfully */
+              dlog_print(DLOG_DEBUG, LOG_TAG, "Registered");
+          } else if (result == DNSSD_NAME_CONFLICT) {
+              /* Name conflict exists */
+              dlog_print(DLOG_DEBUG, LOG_TAG, "Name conflict");
+          } else if (result == DNSSD_ALREADY_REGISTERED) {
+              /* Service is already registered */
+              dlog_print(DLOG_DEBUG, LOG_TAG, "Already registered");
+          } else {
+              /* Result is unknown */
+              dlog_print(DLOG_DEBUG, LOG_TAG, "Unknown result");
+          }
+      }
+      ```
 
-3. When you no longer want to provide the local service, deregister it with the `dnssd_deregister_local_service()` function.To destroy the local service handle, use the `dnssd_destroy_local_service()` function.
+3. When you no longer want to provide the local service, deregister it with the `dnssd_deregister_local_service()` function.
+
+    To destroy the local service handle, use the `dnssd_destroy_local_service()` function.
 
     ```
     dnssd_deregister_local_service(service_handle):
@@ -182,7 +184,9 @@ To manage a local service, you must create and register the service:
 
 To search for available services on a network, use a service type or target information:
 
-1. To start searching, use the `dnssd_start_browsing_service()` function.The DNS-SD browser handle is stored in a `dnssd_browser_h` variable. For more information on the service types, see [http://www.dns-sd.org/ServiceTypes.html](http://www.dns-sd.org/ServiceTypes.html).
+1. To start searching, use the `dnssd_start_browsing_service()` function.
+
+    The DNS-SD browser handle is stored in a `dnssd_browser_h` variable. For more information on the service types, see [http://www.dns-sd.org/ServiceTypes.html](http://www.dns-sd.org/ServiceTypes.html).
 
     ```
     dnssd_browser_h browser_handle;
@@ -325,25 +329,26 @@ To manage a local service, you must create and register the service:
 
    1. Register the service to announce its availability on a network.
 
-      The target can be a device or service type specified in the UPnP forum.
+       The target can be a device or service type specified in the UPnP forum.
 
-      ```
-      error_code = ssdp_register_local_service(service_handle, __registered_cb, NULL);
-      if (error_code == SSDP_ERROR_NONE)
-          dlog_print(DLOG_DEBUG, LOG_TAG, "Success in registering a local service.");
-      ```
+       ```
+       error_code = ssdp_register_local_service(service_handle, __registered_cb, NULL);
+       if (error_code == SSDP_ERROR_NONE)
+           dlog_print(DLOG_DEBUG, LOG_TAG, "Success in registering a local service.");
+       ```
 
    2. The callback defined in the `ssdp_register_local_service()` function is called when the service registration is finished:
 
-    ```
-    void
-    __registered_cb(ssdp_error_e result, ssdp_service_h ssdp_service, void *user_data)
-    {
-        dlog_print(DLOG_DEBUG, LOG_TAG, "Register result: %d\n", result);
-    `
-    ```
+       ```
+       void
+       __registered_cb(ssdp_error_e result, ssdp_service_h ssdp_service, void *user_data)
+       {
+           dlog_print(DLOG_DEBUG, LOG_TAG, "Register result: %d\n", result);
+       ```
 
-3. When you no longer want to provide the local service, deregister it with the `ssdp_deregister_local_service()` function.To destroy the local service handle, use the `ssdp_destroy_local_service()` function.
+3. When you no longer want to provide the local service, deregister it with the `ssdp_deregister_local_service()` function.
+
+    To destroy the local service handle, use the `ssdp_destroy_local_service()` function.
 
     ```
     ssdp_deregister_local_service(service_handle);
@@ -355,7 +360,9 @@ To manage a local service, you must create and register the service:
 
 To search for available services on a network, use a service type or target information:
 
-1. To start searching, use the `ssdp_start_browsing_service()` function.The SSDP browser handle is stored in an `ssdp_browser_h` variable.
+1. To start searching, use the `ssdp_start_browsing_service()` function.
+
+    The SSDP browser handle is stored in an `ssdp_browser_h` variable.
 
     ```
     ssdp_browser_h browser_handle;

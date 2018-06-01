@@ -16,7 +16,10 @@ The main features of the Wi-Fi Manager API include:
   To manage APs, you must create an AP handle (`wifi_manager_ap_h`), which allows you to retrieve Wi-Fi network and security information:
 
   - Network information details, such as the SSID, frequency band, and maximum speed of the access point, are available through the Network Information API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html) applications).
-  - Security information details, such as the used encryption type and whether WPS is supported, are available through the Security Information API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__MODULE.html) applications).You can also obtain EAP information through the EAP API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html) applications).
+
+  - Security information details, such as the used encryption type and whether WPS is supported, are available through the Security Information API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__MODULE.html) applications).
+
+    You can also obtain EAP information through the EAP API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MANAGER__AP__SECURITY__EAP__MODULE.html) applications).
 
 - Wi-Fi state monitoring
 
@@ -24,7 +27,8 @@ The main features of the Wi-Fi Manager API include:
 
   You can also register callbacks for monitoring changes in the Wi-Fi device state (whether Wi-Fi is activated) and the RSSI level of the Wi-Fi connection.
 
-> **Note**  
+> **Note**
+>
 > You can test the Wi-Fi functionality only on a target device. The emulator does not support this feature.
 
 ## Prerequisites
@@ -63,7 +67,8 @@ To enable your application to use the Wi-Fi functionality:
    wifi_manager_deinitialize(wifi);
    ```
 
-> **Note**  
+> **Note**
+>
 > The Wi-Fi feature is not thread-safe and depends on the ecore main loop. Implement Wi-Fi within the ecore main loop, and do not use it in a thread.
 
 <a name="activate"></a>
@@ -76,7 +81,9 @@ To activate and deactivate a local Wi-Fi device, and to check that Wi-Fi is acti
     ```
     error_code = wifi_manager_activate(wifi, __wifi_manager_activated_cb, NULL);
     ```
-Define the `__wifi_manager_activated_cb()` callback, which is invoked when the Wi-Fi activation is completed.In the following example, the callback prints an information message using the dlogutil tool:
+    Define the `__wifi_manager_activated_cb()` callback, which is invoked when the Wi-Fi activation is completed.
+
+    In the following example, the callback prints an information message using the dlogutil tool:
 
     ```
     static void
@@ -129,7 +136,9 @@ To scan nearby access points and print the scanning result, such as the AP name 
    }
    ```
 
-3. Show the result of the scan using the `__wifi_manager_found_ap_cb()` callback.In the following example, the callback prints the AP name and connection state:
+3. Show the result of the scan using the `__wifi_manager_found_ap_cb()` callback.
+
+    In the following example, the callback prints the AP name and connection state:
 
     ```
     bool
