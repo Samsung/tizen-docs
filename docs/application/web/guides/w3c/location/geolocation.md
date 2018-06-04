@@ -50,7 +50,9 @@ To provide users with location-based features, you must learn to create a mobile
    }
    ```
 
-2. Create a "one-shot" position request with the `getCurrentPosition()` method.	The `maximumAge` parameter determines that if the user agent does not have cached position information that is fresher than 60000 milliseconds (1 minute), new location information is automatically obtained.
+2. Create a "one-shot" position request with the `getCurrentPosition()` method.
+
+   The `maximumAge` parameter determines that if the user agent does not have cached position information that is fresher than 60000 milliseconds (1 minute), new location information is automatically obtained.
 
    ```
    function oneShotFunc() {
@@ -59,22 +61,23 @@ To provide users with location-based features, you must learn to create a mobile
                                                     {maximumAge: 60000});
        } else {
            document.getElementById('locationInfo').innerHTML = 'Geolocation is not supported.';
-       }		
+       }
+   }
    ```
 
    If you do not want to wait for new position information, but are willing to use cached information regardless of how old it is, you can use the `maximumAge` and `timeout` parameters together (`{maximumAge: Infinity, timeout: 0}`). In this case, if the user agent has no position information cached, it automatically invokes the error event handler.
 
 3. Create a repeated position update request with the `watchPosition()` method:
 
- ```
- function watchFunc() {
-     if (navigator.geolocation) {
-         watchId = navigator.geolocation.watchPosition(successCallback, errorCallback);
-     } else {
-         document.getElementById('locationInfo').innerHTML = 'Geolocation is not supported.';
-     }
- }
- ```
+   ```
+   function watchFunc() {
+       if (navigator.geolocation) {
+           watchId = navigator.geolocation.watchPosition(successCallback, errorCallback);
+       } else {
+           document.getElementById('locationInfo').innerHTML = 'Geolocation is not supported.';
+       }
+   }
+   ```
 
 4. The repeated position update request continues until the `clearWatch()` method is called with the corresponding identifier:
 

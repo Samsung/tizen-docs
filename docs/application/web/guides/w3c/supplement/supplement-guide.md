@@ -8,21 +8,17 @@ The main supplementary features are:
 
   Enables you to access binary data in JavaScript.
 
-- [WebGL - Khronos](./webgl.md) **in mobile and wearable applications only**
+- [WebGL - Khronos](./webgl.md)
 
-  Enables you to use the WebGL™ graphics library to create 3D visual elements.
+  Enables you to use the WebGL&trade; graphics library to create 3D visual elements.
 
-- [FullScreen API - Mozilla](./fullscreen.md) 	
+- [FullScreen API - Mozilla](./fullscreen.md) **in mobile and TV applications only**
 
   Enables you to display an element on fullscreen.
 
-- [Camera API (Tizen Extension)](./camera.md) **in mobile and TV applications only**
+- [Camera API (Tizen Extension)](./camera.md) **in wearable applications only**
 
   Enables you to control the camera options, capture images, and record video.
-
-- [Tizen WebKit Tap Sound Policy](./sound-policy.md) **in mobile applications only**
-
-  Allows you to play sounds to provide responsiveness on user interaction.
 
 
 ## Related Information

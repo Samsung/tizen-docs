@@ -1,6 +1,6 @@
 # Notifications
 
-You can provide notifications about application events.
+You can provide notifications to the user about application events.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -64,7 +64,7 @@ Learning how to create notifications allows you to design interactive applicatio
    };
    ```
 
-   The path in the `iconPath` and `soundPath` parameters means a relative file location defined in the Filesystem API (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html) and [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html) applications). The path is not an absolute file location, but instead uses a [virtual root location](../data/file-system.md) (such as `images` in `images/image1.jpg`).
+   The path in the `iconPath` and `soundPath` parameters means a relative file location defined in the Filesystem API (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html) and [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html) applications). The path is not an absolute file location, but instead uses a [virtual root location](../data/file-system.md#supported-virtual-roots) (such as `images` in `images/image1.jpg`).
 
 2. To be able to display the notification, create a `UserNotification` object (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#UserNotification) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#UserNotification) applications) with the notification type, title, and the additional notification properties defined in the previous step.
 
@@ -105,7 +105,7 @@ Learning how to create progress notifications allows you to design interactive a
    };
    ```
 
-   The path in the `iconPath` parameter means a file location defined in the Filesystem API (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html) and [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html) applications). The path is not an absolute file location, but instead uses a [virtual root location](../data/file-system.md) (such as `images` in `images/image1.jpg`).
+   The path in the `iconPath` parameter means a file location defined in the Filesystem API (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html) and [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html) applications). The path is not an absolute file location, but instead uses a [virtual root location](../data/file-system.md#supported-virtual-roots) (such as `images` in `images/image1.jpg`).
 
 2. To be able to display the notification, create a `UserNotification` object (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#UserNotification) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#UserNotification) applications) with the notification type, title, and the additional notification properties defined in the previous step:
 
@@ -131,7 +131,7 @@ Learning how to create progress notifications allows you to design interactive a
 
 4. To post the notification, use the `post()` method of the `NotificationManager` interface. If the progress value is set, the progress bar is displayed in the notification. The progress value can change the amount of progress as it moves forward or backward.
 
-   The application must keep the progress value for its job, because the saved value in the notification status tray can be different (rounded) from the exact progress value.
+   The application must keep the progress value for its job, because the saved value in the notification panel can be different (rounded) from the exact progress value.
 
    ```
    tizen.notification.post(notification);
@@ -144,7 +144,11 @@ Learning how to manage notifications allows you to design interactive applicatio
 
 1. To retrieve notifications:
 
-   - To retrieve a previously posted notification, use the `getNotification()` method of the `NotificationManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#NotificationManager) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#NotificationManager) applications with the notification ID as a parameter:`var myId = notification.id;var myNotification = tizen.notification.getNotification(myId);`
+   - To retrieve a previously posted notification, use the `getNotification()` method of the `NotificationManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#NotificationManager) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#NotificationManager) applications with the notification ID as a parameter:
+     ```
+     var myId = notification.id;
+     var myNotification = tizen.notification.getNotification(myId);
+     ```
 
    - To retrieve all previously posted notifications, use the `getAllNotifications()` method, which returns all the notifications as an array:
 
@@ -186,7 +190,8 @@ Learning how to manage notification templates allows you to create a template fr
 
 - To create a template:  
 
-  1. Create a [simple](#creating-simple-notifications) or [progress](#creating-progress-notifications) notification to be used as a template.You do not need to post the notification to save it as a template.
+  1. Create a [simple](#creating-simple-notifications) or [progress](#creating-progress-notifications) notification to be used as a template.  
+     You do not need to post the notification to save it as a template.
 
      ```
      /* Assume that myNotification is a valid tizen.UserNotification object */
@@ -195,7 +200,14 @@ Learning how to manage notification templates allows you to create a template fr
 
   2. Save the template with the `saveNotificationAsTemplate()` method of the `NotificationManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/notification.html#NotificationManager) and [wearable](../../api/latest/device_api/wearable/tizen/notification.html#NotificationManager) applications):
 
-     `try {    var templateName = 'importantNoti';    tizen.notification.saveNotificationAsTemplate(templateName, myNotification);} catch (e) {    console.log('Error ' + e.message + ' occurred');}`
+     ```
+     try {
+         var templateName = 'importantNoti';
+         tizen.notification.saveNotificationAsTemplate(templateName, myNotification);
+     } catch (e) {
+         console.log('Error ' + e.message + ' occurred');
+     }
+     ```
 
 - To use the template when creating a new notification, use the `createNotificationFromTemplate()` method of the `NotificationManager` interface:
 

@@ -1,6 +1,6 @@
 # Input Device
 
-You can manage input device keys.
+You can manage input device keys and monitor key events.
 
 This feature is supported in mobile and wearable applications only.
 

@@ -70,7 +70,7 @@ To create a new resource:
       var cborPath = 'path_to_my_app_storage/iotcon-server-test.dat';
       ```
 
-   2. Initialize Iotcon and set a human friendly name:
+   2. Initialize Iotcon and set a human-friendly name:
 
       ```
       tizen.iotcon.initialize(cborPath);
@@ -162,7 +162,7 @@ To find remote resources:
       var cborPath = 'path_to_my_app_storage/iotcon-client-test.dat';
       ```
 
-   2. Initialize Iotcon and set a human friendly name:
+   2. Initialize Iotcon and set a human-friendly name:
 
       ```
       tizen.iotcon.initialize(cborPath);

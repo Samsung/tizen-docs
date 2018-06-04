@@ -82,8 +82,8 @@ To obtain a list of alarms, and create and delete alarms:
      var alarm4 = new tizen.AlarmAbsolute(date, ['SA', 'SU']);
      ```
 
-		> **Note**
-		> You cannot define both a time period and a weekday recurrence for the same alarm.
+        > **Note**  
+        > You cannot define both a time period and a weekday recurrence for the same alarm.
 
    - To create a recurring relative alarm, create an instance of the `AlarmRelative` interface.
 
@@ -97,6 +97,7 @@ To obtain a list of alarms, and create and delete alarms:
      var alarm5 = new tizen.AlarmRelative(tizen.alarm.PERIOD_HOUR, 2 * tizen.alarm.PERIOD_MINUTE);
      ```
 <a name="removeAlarm"></a>
+
 3. To delete an alarm, use the `remove()` method with the alarm ID:
 
    ```

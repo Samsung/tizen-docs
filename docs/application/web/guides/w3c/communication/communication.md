@@ -4,7 +4,7 @@ The communication features include information on how your application can send 
 
 The main communication features are:
 
-- [HTML5 Web Messaging](./web-messaging.md) 	
+- [HTML5 Web Messaging](./web-messaging.md)
 
   Enables you to send and receive data between Web sites and through a message channel.
 
@@ -16,7 +16,7 @@ The main communication features are:
 
   Enables you to use cross-origin resource sharing (CORS) to request and send data of various content types, and to monitor the operation progress.
 
-- [Server-Sent Events](./server-sent.md) 
+- [Server-Sent Events](./server-sent.md) **in mobile and TV applications only**
 
   Enables you to exchange push data with the server.
 

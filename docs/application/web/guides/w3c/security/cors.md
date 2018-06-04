@@ -4,11 +4,16 @@ Tizen supports the mechanism of cross-origin resource sharing (CORS), which can 
 
 In CORS, new headers related to HTTP communication have been added to allow you to accept or reject CORs:
 
-- [Origin](http://www.w3.org/TR/2014/REC-cors-20140116/#origin-request-header) request headerIncludes the domain information which has incurred the COR, and is used for the purpose of checking the source of the domain side that has received the relevant request. In addition, this header is protected in the browser side and cannot be changed from the application side.
+- [Origin](http://www.w3.org/TR/2014/REC-cors-20140116/#origin-request-header) request header
 
-- [Access-Control-Allow-Origin](http://www.w3.org/TR/2014/REC-cors-20140116/#access-control-allow-origin-response-header) response headerAllows a relevant response only when the information in the `Origin` request header matches. If the `Access-Control-Allow-Origin` header is a wildcard (*), it unconditionally allows the response regardless of the `Origin` request header information.
-> **Note**  
-> If an extremely permissive CORS policy is used, it can lead to spoofing, data stealing, relay, and other attacks through communication with malicious application programs. To avoid unexpected consequences, pay attention when defining the response header.
+  Includes the domain information which has incurred the COR, and is used for the purpose of checking the source of the domain side that has received the relevant request. In addition, this header is protected in the browser side and cannot be changed from the application side.
+
+- [Access-Control-Allow-Origin](http://www.w3.org/TR/2014/REC-cors-20140116/#access-control-allow-origin-response-header) response header
+
+  Allows a relevant response only when the information in the `Origin` request header matches. If the `Access-Control-Allow-Origin` header is a wildcard (*), it unconditionally allows the response regardless of the `Origin` request header information.
+
+  > **Note**  
+  > If an extremely permissive CORS policy is used, it can lead to spoofing, data stealing, relay, and other attacks through communication with malicious application programs. To avoid unexpected consequences, pay attention when defining the response header.
 
 CORS supports 2 request types: simple and preflight.
 
@@ -97,7 +102,7 @@ Learning how to handle a simple request based on an XML HTTP Request enhances th
 
 4. Check the response header:
 
-   - If the request is received from a domain with access authority, the server allows a response.The response header includes the `Access-Control-Allow-Origin` header set in the server side.
+   - If the request is received from a domain with access authority, the server allows a response. The response header includes the `Access-Control-Allow-Origin` header set in the server side.
 
      ```
      HTTP/1/1 200 OK
@@ -111,8 +116,8 @@ Learning how to handle a simple request based on an XML HTTP Request enhances th
      Origin http://another-domain.com/CORS is not allowed by Access-Control-Allow-Origin.
      ```
 
-		> **Note**  
-		> You must define the authorized domains on the server side to ensure that CORS is handled properly. For more information on setting the authorization settings on different platforms, see [Enable CORS Web site](http://enable-cors.org/server.html).
+   > **Note**  
+   > You must define the authorized domains on the server side to ensure that CORS is handled properly. For more information on setting the authorization settings on different platforms, see [Enable CORS Web site](http://enable-cors.org/server.html).
 
 ### Source Code
 
@@ -177,7 +182,6 @@ Learning how to handle a preflight request based on an XML HTTP Request enhances
      Host: origin-domain.com
      Origin: http://origin-domain.com
      Access-Control-Request-Headers: Header-Custom-Tizen, origin, content-type
-
      ```
 
    - If the request is sent from the browser side, a preflight response is sent for it from the server side. The browser determines from the response whether the actual data is sent. In the following preflight response example, the `Content-Type` and `Header-Custom-Tizen` are included in the `Access-Control-Allow-Headers` header:
@@ -188,7 +192,6 @@ Learning how to handle a preflight request based on an XML HTTP Request enhances
      Access-Control-Allow-Methods: PUT
      Access-Control-Allow-Origin: http://origin-domain.com
      Access-Control-Max-Age: 86400
-
      ```
 
    - Once the access authority is checked, the browser sends the actual data request to the server side. This request includes the actual data:
@@ -209,7 +212,6 @@ Learning how to handle a preflight request based on an XML HTTP Request enhances
      Access-Control-Allow-Methods: PUT
      Access-Control-Allow-Origin: http://origin-domain.com
      Access-Control-Max-Age: 86400
-
      ```
 
    If the access authority fails, the browser does not send the actual data request. Instead, the following error occurs in the browser side:
@@ -217,7 +219,6 @@ Learning how to handle a preflight request based on an XML HTTP Request enhances
    ```
    XMLHttpRequest cannot load http://another-domain.com/CORS.
    Request header field Header-Custom-Tizen is not allowed by Access-Control-Allow-Headers.
-
    ```
 
 	> **Note**  

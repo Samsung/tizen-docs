@@ -31,7 +31,8 @@ To use the [Call History](../../api/latest/device_api/mobile/tizen/callhistory.h
 
 Learning how to retrieve call history items using different parameters allows you to view specific items in a specific order, making call history monitoring easy and convenient.
 
-1. To retrieve call history items, use the `find(successCallback, errorCallback, filter, sortMode, limit, offset)` method of the [CallHistory](../../api/latest/device_api/mobile/tizen/callhistory.html#CallHistory) interface. This method is asynchronous, and the result of the query is an array of [CallHistoryEntry](../../api/latest/device_api/mobile/tizen/callhistory.html#CallHistoryEntry) objects.
+1. To retrieve call history items, use the `find(successCallback, errorCallback, filter, sortMode, limit, offset)` method of the [CallHistory](../../api/latest/device_api/mobile/tizen/callhistory.html#CallHistory) interface.  
+  This method is asynchronous, and the result of the query is an array of [CallHistoryEntry](../../api/latest/device_api/mobile/tizen/callhistory.html#CallHistoryEntry) objects.
 
    ```
    tizen.callhistory.find(onSuccess, onError, ifilter, sortMode, 20, 10);

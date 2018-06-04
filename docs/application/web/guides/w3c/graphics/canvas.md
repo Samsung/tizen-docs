@@ -1,8 +1,6 @@
 # HTML5 Canvas
 
-The HTML5 canvas allows you to use graphics on the screen, and draw and manage various shapes. The HTML Canvas 2D Context API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#canvas2d) or [wearable](../../../api/latest/w3c_api/w3c_api_w.html#canvas2d) applications) defines a special canvas element that expresses images or shapes with JavaScript.
-
-This feature is supported in mobile and wearable applications only.
+The HTML5 canvas allows you to use graphics on the screen, and draw and manage various shapes. The HTML Canvas 2D Context API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#canvas2d), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#canvas2d), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#canvas2d) applications) defines a special canvas element that expresses images or shapes with JavaScript.
 
 The main features of the Canvas Element API include:
 
@@ -49,7 +47,7 @@ To create a canvas in your application:
 
 2. To check the information on the image connected to the canvas, use the `toDataURL([Optional], [Variadic])` method to restore the URL of the image used on the canvas. To create a blob object of the image file, use the `getContext(contextId)` method.
 
-3. Use the `CanvasRenderingContext2D` interface (in [mobile](http://www.w3.org/TR/2015/REC-2dcontext-20151119/#canvasrenderingcontext2d) and [wearable](http://www.w3.org/TR/2012/CR-2dcontext-20121217/#canvasrenderingcontext2d) applications) to connect to the canvas and get the canvas context:
+3. Use the `CanvasRenderingContext2D` interface (in [mobile](http://www.w3.org/TR/2015/REC-2dcontext-20151119/#canvasrenderingcontext2d), [wearable](http://www.w3.org/TR/2012/CR-2dcontext-20121217/#canvasrenderingcontext2d), and [TV](https://www.w3.org/TR/2015/REC-2dcontext-20151119/#canvasrenderingcontext2d) applications) to connect to the canvas and get the canvas context:
 
    ```
    var canvas = document.querySelector('canvas'),
@@ -347,11 +345,11 @@ To draw masks on a canvas:
 
     ```
     function drawStep(e) {
-       if (mouseBtn) {
-           updateLastPos(e);
-           context.lineTo(lastX, lastY);
-           context.stroke();
-       }
+        if (mouseBtn) {
+            updateLastPos(e);
+            context.lineTo(lastX, lastY);
+            context.stroke();
+        }
     }
     ```
 
@@ -434,10 +432,10 @@ To compare the performance, 2 simple Web applications must be created, using the
 1. Create the applications with the following logic:
    1. Load an image.
    2. Render the loaded image in the random location of the canvas.
-   3. Use the `requestAnimationFrame()` method of the Timing control for script-based animations API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#timing) or [wearable](../../../api/latest/w3c_api/w3c_api_w.html#timing) applications) to change the color of the loaded image, based on different times.
+   3. Use the `requestAnimationFrame()` method of the Timing control for script-based animations API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#timing), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#timing), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#timing) applications) to change the color of the loaded image, based on different times.
    4. Create a logic that measures FPS (frames per second) in order to check the performance.
 2. Execute the applications and measure the FPS.
-3. Increase only the number of objects so that the same 1~N images, under the same conditions, are shown repeatedly based on 1~N.
+3. Increase only the number of objects so that the same 1\~N images, under the same conditions, are shown repeatedly based on 1\~N.
 4. Measure the FPS as the number of repeatedly shown objects increase.
 
 The following figure shows the result of the test: As the number of objects increase, the performance of the Canvas 2D Context API rapidly decreases compared to WebGL&trade; (the result is subject to change according to the complexity of the application logic). As such, when expressing many graphic objects all differently, it is much more efficient to use WebGL&trade; than the Canvas 2D Context API.

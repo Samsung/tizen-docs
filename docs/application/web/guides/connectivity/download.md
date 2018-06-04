@@ -117,11 +117,11 @@ To provide the user access to Internet resources, you must learn how to check th
 
 2.  Use the `getState()` method with the download ID as a parameter to get the current state:
 
-   ```
-   var state = tizen.download.getState(downloadId);
-   ```
+    ```
+    var state = tizen.download.getState(downloadId);
+    ```
 
-   The method returns a `DownloadState` enumerator value (in [mobile](../../api/latest/device_api/mobile/tizen/download.html#DownloadState), [wearable](../../api/latest/device_api/wearable/tizen/download.html#DownloadState), and [TV](../../api/latest/device_api/tv/tizen/download.html#DownloadState) applications).
+    The method returns a `DownloadState` enumerator value (in [mobile](../../api/latest/device_api/mobile/tizen/download.html#DownloadState), [wearable](../../api/latest/device_api/wearable/tizen/download.html#DownloadState), and [TV](../../api/latest/device_api/tv/tizen/download.html#DownloadState) applications).
 
 3. Use the `getDownloadRequest()` method with the download ID as a parameter to get the download request details that the user has previously set:
 

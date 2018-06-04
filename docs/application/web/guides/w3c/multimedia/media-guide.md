@@ -4,11 +4,11 @@ The media features include playing various media, and accessing media streams an
 
 The main media features are:
 
-- [getUserMedia](./getusermedia.md) **in mobile and wearable applications only**  
+- [getUserMedia](./getusermedia.md)  
 
   Enables you to access a local device to generate a multimedia stream.
 
-- [HTML5 video and audio element](./video-audio.md) **in mobile and wearable applications only**  
+- [HTML5 video and audio element](./video-audio.md)  
 
   Enables you to control multimedia playback, retrieve information about playback duration and media content downloading progress, and check supported media formats using the HTML5 `<audio>` and `<video>` elements.
 

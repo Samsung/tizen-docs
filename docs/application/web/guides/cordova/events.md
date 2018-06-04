@@ -15,7 +15,7 @@ The Events API provides the following events:
 - `resume`  
     You can [use the `resume` event](#handling-pause-and-resume-events) to receive a signal when the application is retrieved from the background.    
 
-- Button press events
+- Button press events  
   You can [add event listeners for specific button press events](#handling-button-press-events).
 
 ## Prerequisites

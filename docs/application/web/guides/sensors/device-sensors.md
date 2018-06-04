@@ -1,6 +1,6 @@
 # Device Sensors
 
-Tizen provides interfaces and methods to manage sensor data from [various sensors on the device](#supported-sensors). The main purpose of a sensor is to provide a value for the relevant environment parameter.
+You can access and manage sensor data from [various sensors on the device](#supported-sensors). The main purpose of a sensor is to provide a value for the relevant environment parameter.
 
 This feature is supported in mobile and wearable applications only.
 

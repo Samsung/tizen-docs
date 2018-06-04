@@ -29,7 +29,7 @@ To manipulate fonts using CSS font properties:
    </body>
    ```
 
-2. Define the `font-weight` property,which controls the weight of the text:
+2. Define the `font-weight` property, which controls the weight of the text:
 
    ```
    <head>
@@ -50,7 +50,7 @@ To manipulate fonts using CSS font properties:
    </body>
    ```
 
-3. Define the `font-variant` property tochange the font to, for example, use small capital letters:
+3. Define the `font-variant` property to change the font to, for example, use small capital letters:
 
    ```
    <head>

@@ -26,7 +26,7 @@ The main features of the HTML5 Drag and drop API include:
 
   You can [transfer data from the drag source to the drop target](#transfer). The `DataTransfer` interface instance receives the `dragstart` event and fills itself with the data to be transferred. It then receives a `drop` event, and puts the data into the drop target.
 
-> **Note**
+> **Note**  
 > To use drag and drop on a Tizen device, long-press the draggable element. When the context menu opens, select **Drag**.
 
 <a name="handle"></a>
@@ -112,7 +112,8 @@ For the complete source code related to this use case, see the following file:
 
 Learning how to transfer data in a simple drag and drop puzzle is a basic user interaction skill:
 
-1. Define the draggable elements by adding the `draggable="true"` attribute to them.In this example, the Tizen logo image has been divided and allocated randomly. Each imager part is defined as draggable, so that the user can rearrange the image parts in the correct order.
+1. Define the draggable elements by adding the `draggable="true"` attribute to them.  
+   In this example, the Tizen logo image has been divided and allocated randomly. Each imager part is defined as draggable, so that the user can rearrange the image parts in the correct order.
 
    ```
    <h1>Drag and drop tutorial</h1>
@@ -164,13 +165,13 @@ Learning how to transfer data in a simple drag and drop puzzle is a basic user i
 
 3. Transfer data (in this case, image parts):
 
-   a. Declare the `dragElem` variable, which is an empty object for the data exchange:
+   1. Declare the `dragElem` variable, which is an empty object for the data exchange:
 
       ```
       var dragElem = null;
       ```
 
-   b. Use the [DataTransfer](http://www.w3.org/TR/2012/WD-html5-20120329/dnd.html#the-datatransfer-interface) interface in the `dragStartHandler()` and `dragDropHandler()` event handlers to exchange image parts:
+   2. Use the [DataTransfer](http://www.w3.org/TR/2012/WD-html5-20120329/dnd.html#the-datatransfer-interface) interface in the `dragStartHandler()` and `dragDropHandler()` event handlers to exchange image parts:
 
       ```
       function dragStartHandler(e) {
@@ -195,7 +196,7 @@ Learning how to transfer data in a simple drag and drop puzzle is a basic user i
       }
       ```
 
-   c. Check the completion of the puzzle by making a user key using a simple array, and comparing the user key against the puzzle key (correct answer):
+   3. Check the completion of the puzzle by making a user key using a simple array, and comparing the user key against the puzzle key (correct answer):
 
       ```
       var puzzleKey = ['01', '02', '03', '04', '05', '06'];
