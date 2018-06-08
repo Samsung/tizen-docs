@@ -123,15 +123,19 @@ To create a map effect:
    evas_map_point_image_uv_set(map, 3, 0, 100);
    ```
 
-4. To apply the map on the button, use the `evas_object_map_set()` function.`/* Apply the map to the button Evas object */evas_object_map_set(ad->button, map);`
+4. To apply the map on the button, use the `evas_object_map_set()` function.
+   ```
+   /* Apply the map to the button Evas object */
+   evas_object_map_set(ad->button, map);
+   ```
 
-5. To enable the map, use the `evas_object_map_enable_set()` function.  
+5. To enable the map, use the `evas_object_map_enable_set()` function.
 
-  When enabled, the original object geometry is saved, and the new map geometry is used to change the object position and size.  
-  ```
-  /* Enable the map */
-  evas_object_map_enable_set(ad->button, EINA_TRUE);
-  ```
+   When enabled, the original object geometry is saved, and the new map geometry is used to change the object position and size.
+   ```
+   /* Enable the map */
+   evas_object_map_enable_set(ad->button, EINA_TRUE);
+   ```
 
 6. When no longer needed, free the map data and all memory associated with it:
 

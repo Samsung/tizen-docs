@@ -51,7 +51,9 @@ To manage stringshares:
 
 2. To retrieve or modify the string data:
 
-   - Retrieve a string for use in a program from a format string using the `eina_stringshare_printf()` function. If you have a "format" string to pass to a function like `printf`, you can store it as a stringshare as well.The following example produces "1 desktop manager to rule them all".
+   - Retrieve a string for use in a program from a format string using the `eina_stringshare_printf()` function. If you have a "format" string to pass to a function like `printf`, you can store it as a stringshare as well.
+
+     The following example produces "1 desktop manager to rule them all".
 
      ```
      const char *myfmtstr = "%d desktop manager to rule them all";
@@ -110,7 +112,9 @@ To manage string buffers:
        eina_strbuf_append_char(mybuffer, 'r');To handle "printf" format strings, use the `eina_strbuf_append_printf()` function to add formatted strings to the buffer:`eina_strbuf_append_printf(buf, "%s%c", "buffe", 'r');`
        ```
 
-   - To remove characters from one position to another, use the `eina_strbuf_remove()` function. The first parameter is the buffer, the second is the start position of the characters you want to delete, and the last the end position.This example removes the first 19 characters of the buffer:
+   - To remove characters from one position to another, use the `eina_strbuf_remove()` function. The first parameter is the buffer, the second is the start position of the characters you want to delete, and the last the end position.
+
+     This example removes the first 19 characters of the buffer:
 
      ```
      eina_strbuf_remove(buf, 0, 18);
@@ -207,11 +211,11 @@ To create an array to store strings:
    ```
 
 2. To change the allocation step, use the `eina_array_step_set()` function:
- - The first parameter is the array you want to change.
- - The second parameter is the size of that specific array (retrieved with the `sizeof()` function).
- - The last parameter is the new step size.  
+   - The first parameter is the array you want to change.
+   - The second parameter is the size of that specific array (retrieved with the `sizeof()` function).
+   - The last parameter is the new step size.
 
- In this example, the array step changes from 20 to 30.
+   In this example, the array step changes from 20 to 30.
 
    ```
    eina_array_step_set(array, sizeof(*array), 30);
@@ -225,8 +229,10 @@ To create an array to store strings:
        free(eina_array_pop(array));
 
    /* Freeing the array itself */
-   eina_array_free(array);Modifying Classic Array Content
+   eina_array_free(array);
    ```
+
+### Modifying Classic Array Content
 
 To modify classic array content:
 
@@ -257,9 +263,9 @@ To modify classic array content:
   - The second parameter is the function which selects the data to keep in the rebuilt array.
   - The last parameter is the data to pass to the selector function defined as the second parameter.
 
-  ​
+  The selector function has to return an `Eina_Bool`, `EINA_TRUE` if the element stays, and `EINA_FALSE` if it has to be removed.
 
-  The selector function has to return an `Eina_Bool`, `EINA_TRUE` if the element stays, and `EINA_FALSE` if it has to be removed.The following example shows how to remove all the elements of the array that are longer than 5.
+  The following example shows how to remove all the elements of the array that are longer than 5.
 
   ```
   /* Selector function */
@@ -315,7 +321,9 @@ To access classic array data:
   mydata = eina_array_data_get(array, 0);
   ```
 
-- To get the number of elements in an array, use the `eina_array_count()` function. The first parameter is a pointer to the array variable returned by the `eina_array_new()` function.The function returns the number of elements.
+- To get the number of elements in an array, use the `eina_array_count()` function. The first parameter is a pointer to the array variable returned by the `eina_array_new()` function.
+
+  The function returns the number of elements.
 
   ```
   unsigned int nb_elm;
@@ -324,7 +332,7 @@ To access classic array data:
 
 - To iterate through an array, you can use various methods:
 
-  - Use the `Eina_Array` iterator called `ITER_NEXT`.  
+  - Use the `Eina_Array` iterator called `ITER_NEXT`.
 
     You can use the iterator by calling the macro `EINA_ARRAY_ITER_NEXT()`. It takes the array to iterate as the first parameter, a counter for the current index during the iteration, and a variable of the same type as the item data and an `Eina_Iterator`. To use it, declare an `Eina_Iterator`, an `int` counter, and, for example, a `char *` item if your array contains any strings.
 
@@ -337,9 +345,9 @@ To access classic array data:
         printf("item #%d: %s\n", i, item);
     ```
 
-  - Use the `eina_array_foreach()` function to iterate over the array.  
+  - Use the `eina_array_foreach()` function to iterate over the array.
 
-    The first parameter is the array to iterate, the second is a callback function which determines whether the iteration can continue, and the last is the data passed to the callback function.  
+    The first parameter is the array to iterate, the second is a callback function which determines whether the iteration can continue, and the last is the data passed to the callback function.
 
     To iterate over the array and to print the data of each array element:
 
@@ -370,11 +378,13 @@ To access classic array data:
     }
     ```
 
-  - Use the `eina_array_iterator_new()` function to create an iterator for the array.  
+  - Use the `eina_array_iterator_new()` function to create an iterator for the array.
 
-   The function returns a newly allocated iterator associated with the array. If the array is `NULL` or the count of the array members is less than or equal to 0, the function returns `NULL`. If the memory cannot be allocated, `NULL` is returned and `EINA_ERROR_OUT_OF_MEMORY` is thrown. Otherwise, a valid iterator is returned.Pass to this function the array for which you want to create a new iterator. The iterator is used to run a sequential walk through the array, exactly like the `eina_array_foreach()` function.  
+    The function returns a newly allocated iterator associated with the array. If the array is `NULL` or the count of the array members is less than or equal to 0, the function returns `NULL`. If the memory cannot be allocated, `NULL` is returned and `EINA_ERROR_OUT_OF_MEMORY` is thrown. Otherwise, a valid iterator is returned.
 
-   To create an iterator and use it to print the data of each array element:
+    Pass to this function the array for which you want to create a new iterator. The iterator is used to run a sequential walk through the array, exactly like the `eina_array_foreach()` function.
+
+    To create an iterator and use it to print the data of each array element:
 
     ```
     static Eina_Bool
@@ -406,9 +416,9 @@ To access classic array data:
     }
     ```
 
-  - Use the `eina_array_accessor_new()` function to get random access to the array elements.  
+  - Use the `eina_array_accessor_new()` function to get random access to the array elements.
 
-    The function returns a newly allocated accessor associated with the array. If the array is `NULL` or the counting of array members is less than or equal to 0, this function returns `NULL`. If the memory cannot be allocated, `NULL` is returned and `EINA_ERROR_OUT_OF_MEMORY` is thrown. Otherwise, a valid accessor is returned.  
+    The function returns a newly allocated accessor associated with the array. If the array is `NULL` or the counting of array members is less than or equal to 0, this function returns `NULL`. If the memory cannot be allocated, `NULL` is returned and `EINA_ERROR_OUT_OF_MEMORY` is thrown. Otherwise, a valid accessor is returned.
 
     To use the accessor to retrieve and print the data of every other array element:
 
@@ -616,7 +626,9 @@ To modify inline array content:
 - To sort an inline array, use the `eina_inarray_sort()` function, which applies a quick sort algorithm to the inline array:
 
   - The first parameter is a pointer to the array returned by the `eina_inarray_new()` function.
-  - The last parameter is the `Eina_Compare_Cb` callback comparison function, which compares data1 and data2.data1 and data2 are values contained in the inline array. If the data matches, the function must return 0, if data1 is less than data2, -1 must be returned and if it is greater, 1 must be returned.
+  - The last parameter is the `Eina_Compare_Cb` callback comparison function, which compares data1 and data2.
+
+    data1 and data2 are values contained in the inline array. If the data matches, the function must return 0, if data1 is less than data2, -1 must be returned and if it is greater, 1 must be returned.
 
   ```
   static int
@@ -650,7 +662,9 @@ To access inline array data:
 
   - The first parameter is a pointer to the array variable returned by the `eina_inarray_new()` function.
   - The second parameter is the data used by the callback function to run the comparison.
-  - The last parameter is the `Eina_Compare_Cb` callback comparison function, which compares data1 and data2.data1 is the value contained in the inline array and data2 is the data you pass to the `eina_inarray_search()` function as the second parameter. If the data matches, the function must return 0, if data1 is less than data2, -1 must be returned and if it is greater, 1 must be returned.
+  - The last parameter is the `Eina_Compare_Cb` callback comparison function, which compares data1 and data2.
+
+    data1 is the value contained in the inline array and data2 is the data you pass to the `eina_inarray_search()` function as the second parameter. If the data matches, the function must return 0, if data1 is less than data2, -1 must be returned and if it is greater, 1 must be returned.
 
   The function returns the member index, or -1 if not found.
 
@@ -714,14 +728,15 @@ To access inline array data:
         printf("int: %d(pointer: %p)\n", *b, b);
     ```
 
-  - To process the array data, use the `eina_inarray_foreach()` function, which invokes the given function on each element of the array with the given data:  
+  - To process the array data, use the `eina_inarray_foreach()` function, which invokes the given function on each element of the array with the given data:
     - The first parameter is a pointer to the array variable returned by `eina_inarray_new()`.
-    - The second parameter is the function to run on each element.  
+    - The second parameter is the function to run on each element.
 
-     The function must return `EINA_TRUE` as long as you want to continue iterating. By returning `EINA_FALSE`, you stop the iteration and make the `eina_inarray_foreach()` function return `EINA_FALSE`.  
+      The function must return `EINA_TRUE` as long as you want to continue iterating. By returning `EINA_FALSE`, you stop the iteration and make the `eina_inarray_foreach()` function return `EINA_FALSE`.
 
-     The data given to the function is the pointer to the member itself.
-    - The last parameter is the data passed to the function called on each element.  
+      The data given to the function is the pointer to the member itself.
+
+    - The last parameter is the data passed to the function called on each element.
 
     The `eina_inarray_foreach()` function returns `EINA_TRUE` if it successfully iterates through all items of the array. Call the function for every given data in the array. This is a safe way to iterate over an array.
 
@@ -931,20 +946,19 @@ To modify hash table content:
 
 - To delete entries from a hash table:
 
-  - Use the `eina_hash_del()` function to remove the entry identified by a key or data from the given hash table:  
-  ```
-  Eina_Bool r;
-  const char *entry_name = "Heitor Villa-Lobos";
-  r = eina_hash_del(phone_book, entry_name, NULL);
-  ```
+  - Use the `eina_hash_del()` function to remove the entry identified by a key or data from the given hash table:
+    ```
+    Eina_Bool r;
+    const char *entry_name = "Heitor Villa-Lobos";
+    r = eina_hash_del(phone_book, entry_name, NULL);
+    ```
 
-  - Use the `eina_hash_del_by_key()` function to remove an entry based on the key:  
-  ```
-  r = eina_hash_del_by_key(phone_book, "Richard Georg Strauss");
-  ```
+  - Use the `eina_hash_del_by_key()` function to remove an entry based on the key:
+    ```
+    r = eina_hash_del_by_key(phone_book, "Richard Georg Strauss");
+    ```
 
   - Use the `eina_hash_del_by_data()` function to remove an entry based on the data:
-
     ```
     r = eina_hash_del_by_data(phone_book, "+12 34 567-89101");
     ```
@@ -972,14 +986,15 @@ To find hash table elements and get data based on the key name:
 
 - To iterate through a hash table, you can use various methods:
 
-  - To iterate over the hash table, use the `eina_hash_foreach()` function:  
+  - To iterate over the hash table, use the `eina_hash_foreach()` function:
     - The first parameter is the hash.
-    - The second parameter is the callback function called on each iteration.  
+    - The second parameter is the callback function called on each iteration.
 
-     The callback function has to return an `Eina_Bool`, `EINA_TRUE` if the iteration has to continue and `EINA_FALSE` if the iteration has to stop.
-    - The last parameter is the data passed to the callback function.  
+      The callback function has to return an `Eina_Bool`, `EINA_TRUE` if the iteration has to continue and `EINA_FALSE` if the iteration has to stop.
 
-    The following example prints the key and the data of the hash entry (the name and the phone number):
+    - The last parameter is the data passed to the callback function.
+
+      The following example prints the key and the data of the hash entry (the name and the phone number):
 
     ```
     static Eina_Bool
@@ -1092,7 +1107,9 @@ To use an `Eina_List`:
        Eina_List *list = NULL;
    ```
 
-2. Call the `eina_list_append()` function with the list and the data you want to append as parameters.The list must be a pointer to the first element of the list (or `NULL`). The function returns a pointer to the list.
+2. Call the `eina_list_append()` function with the list and the data you want to append as parameters.
+
+   The list must be a pointer to the first element of the list (or `NULL`). The function returns a pointer to the list.
 
    ```
        /* Creating the first element of the list */
@@ -1126,7 +1143,9 @@ To modify list content:
     list = eina_list_prepend(list, "set-top box");
     ```
 
-  - To insert data into the list after a specified data, use the `eina_list_append_relative()` function. As the last parameter, define the element after which the data is added.For example to append data after the "phone" element:
+  - To insert data into the list after a specified data, use the `eina_list_append_relative()` function. As the last parameter, define the element after which the data is added.
+
+    For example to append data after the "phone" element:
 
     ```
     list = eina_list_append_relative(list, "single-board computer", "phone");
@@ -1140,7 +1159,9 @@ To modify list content:
 
   - To append a list node to a linked list after a specified member, use the `eina_list_append_relative_list()` function. To prepend a list node to a linked list before a specified member, use the `Eina_List * eina_list_prepend_relative_list()`function.
 
-- To set data in a list member, use the `eina_list_data_set()` function. Pass the "list" (node) as the first argument and the data to set as the second.The following example also shows the usage of the `eina_list_last()` function, which returns the last element of an `Eina_List`.
+- To set data in a list member, use the `eina_list_data_set()` function. Pass the "list" (node) as the first argument and the data to set as the second.
+
+  The following example also shows the usage of the `eina_list_last()` function, which returns the last element of an `Eina_List`.
 
   ```
   /* Setting new data for the last element */
@@ -1282,7 +1303,7 @@ To modify list content:
 
 To access list data:
 
-- To find some data on your list, use the `eina_list_data_find()` function. Pass the list containing your data as the first parameter and the data you are looking for as the last one. The function returns the found member data pointer if found, `NULL` otherwise.  
+- To find some data on your list, use the `eina_list_data_find()` function. Pass the list containing your data as the first parameter and the data you are looking for as the last one. The function returns the found member data pointer if found, `NULL` otherwise.
 
   The `eina_list_data_find()` function searches the list from the beginning to the end for the first member for which the data pointer is data. If it is found, the data is returned, otherwise `NULL` is returned. The function only compares pointers, which is why using `Eina_Stringshare` is very useful with lists, because it always returns the same pointer for the same string.
 
@@ -1308,9 +1329,9 @@ To access list data:
       printf("Data not present");
   ```
 
-  The above example returns "Data is present".  
+  The above example returns "Data is present".
 
-  The `eina_list_data_find_list()` function does the same thing as `eina_list_data_find()`, but returns an `Eina_List`. For an example, see the [`eina_list_remove_list()` function](#remove_list).  
+  The `eina_list_data_find_list()` function does the same thing as `eina_list_data_find()`, but returns an `Eina_List`. For an example, see the [`eina_list_remove_list()` function](#remove_list).
 
   You can access the data or a "list" (node) of an `Eina_List` using the `eina_list_nth()` and `eina_list_nth_list()` functions. The first one returns a pointer to the data of the "n" element and the second a pointer to the "list". To access the data of the third element of an `Eina_List`:
 
@@ -1400,7 +1421,9 @@ To access list data:
       return 0;
   ```
 
-- To move in a list, use the `eina_list_last()`, `eina_list_next()`, or `eina_list_prev()` functions to move to the last, next, or previous element in the list.The following example scrolls backwards starting from the end of the list:
+- To move in a list, use the `eina_list_last()`, `eina_list_next()`, or `eina_list_prev()` functions to move to the last, next, or previous element in the list.
+
+  The following example scrolls backwards starting from the end of the list:
 
   ```
   for (l = eina_list_last(list); l; l = eina_list_prev(l))
@@ -1502,8 +1525,13 @@ To use the inline list:
 
 2. To create the inlist nodes, allocate the memory and use the `eina_inlist_append()` function:
 
-   - The first parameter is the existing list head or `NULL` to create a new list.The following example passes `NULL` to create a new list.
-   - The second parameter is the new list node, and it must not be `NULL`.You must use the `EINA_INLIST_GET()` macro to get the inlist object of the datastruct.
+   - The first parameter is the existing list head or `NULL` to create a new list.
+
+     The following example passes `NULL` to create a new list.
+
+   - The second parameter is the new list node, and it must not be `NULL`.
+
+     You must use the `EINA_INLIST_GET()` macro to get the inlist object of the datastruct.
 
    ```
    struct my_struct *d;
@@ -1539,7 +1567,7 @@ To use the inline list:
      list = eina_inlist_prepend(list, EINA_INLIST_GET(d));
      ```
 
-   - Add a node before or after a given node with the `eina_inlist_prepend_relative()` and `eina_inlist_append_relative()` functions.  
+   - Add a node before or after a given node with the `eina_inlist_prepend_relative()` and `eina_inlist_append_relative()` functions.
 
      In both functions, the first parameter is the target list, the second is the element you want to add, and the last is the reference element to place data after (in this case). Similarly as in a regular `Eina_List`, everything is a list, so the last parameter is an `Eina_Inlist` typed variable.
 
@@ -1552,9 +1580,9 @@ To use the inline list:
 
 4. To sort and iterate an inline list, to find and move list elements, and to perform other inline list operations, see the [Inline List](../../../api/mobile/latest/group__Eina__Inline__List__Group.html) API.
 
-5. When the inline list is no longer needed, destroy it by looping over the list to free each `EINA_INLIST` structure and the data using allocated memory. Use the `eina_inlist_remove()` function on each node.  
+5. When the inline list is no longer needed, destroy it by looping over the list to free each `EINA_INLIST` structure and the data using allocated memory. Use the `eina_inlist_remove()` function on each node.
 
-  In the following example, the `EINA_INLIST_CONTAINER_GET()` macro returns the container object of an inlist (the `EINA_INLIST` of `my_struct`), and the list element is removed and the allocated memory of the container "object" is freed.
+   In the following example, the `EINA_INLIST_CONTAINER_GET()` macro returns the container object of an inlist (the `EINA_INLIST` of `my_struct`), and the list element is removed and the allocated memory of the container "object" is freed.
 
    ```
    while (list) {
@@ -1634,7 +1662,8 @@ To manage the generic value:
 
 - To create an `Eina_Value_List`, use the `eina_value_list_setup()` function. The function initializes a generic value storage of the list type. The first parameter is the "object" value, and the second one is the type (how to manage the stored list members).
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

@@ -32,7 +32,9 @@ To use a datetime component in your application:
 
 3. Set datetime component [options](#options).
 
-4. Register the [callback](#callbacks) functions.The following example shows how to define and register a callback for the `changed` signal:
+4. Register the [callback](#callbacks) functions.
+
+   The following example shows how to define and register a callback for the `changed` signal:
 
    ```
    evas_object_smart_callback_add(datetime, "changed", changed_cb, data);
@@ -136,12 +138,13 @@ The following table lists the available component styles.
 **Table: Datetime styles**
 
 | Style                  | Sample                                   |
-|------------------------|----------------------------------------|
+|------------------------|------------------------------------------|
 | `default``date_layout` | ![elm/datetime/base/default](./media/datetime_date_layout.png) |
 | `time_layout`          | ![elm/datetime/base/time_layout](./media/datetime_time_layout.png) |
 | `time_layout_24hr`     | ![elm/datetime/base/time_layout_24hr](./media/datetime_time_24h.png) |
 
->  **Note**  
+>  **Note**
+>
 > Pay attention to the following UX issue since Tizen 2.3:
 >
 > The `time_layout` and `time_layout_24hr` styles need a full-length format that includes the year, month, day, hour, minute, and AM/PM. Each style shows specific fields from the format, limited by the UX concept:
@@ -159,14 +162,16 @@ You can register callback functions connected to the following signals for a dat
 **Table: Datetime callback signals**
 
 | Signal             | Description                       | `event_info` |
-|------------------|---------------------------------|------------|
+|--------------------|-----------------------------------|--------------|
 | `changed`          | The datetime field values change. | `NULL`       |
 | `language,changed` | The system locale changes.        | `NULL`       |
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

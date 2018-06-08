@@ -30,7 +30,11 @@ To use a colorselector component in your application:
 
    The palette mode displays several color items for the user to select from. It is possible to add new items, or to update the color of the current item. The list of color items is called a palette, and it is associated with a unique identifier. You can create a new series of colors (a new palette) and save it under another identifier. By default, the palette mode uses the `default` palette, which contains 14 colors.
 
-5. Register the [callback](#callbacks) functions. When a color in the colorselector is clicked, the color set to the colorselector component changes. Retrieve the currently selected color with the `elm_colorselector_color_set()` function. The following example shows how to define and register a callback for the `changed` signal:
+5. Register the [callback](#callbacks) functions.
+
+   When a color in the colorselector is clicked, the color set to the colorselector component changes. Retrieve the currently selected color with the `elm_colorselector_color_set()` function.
+
+   The following example shows how to define and register a callback for the `changed` signal:
 
    ```
    evas_object_smart_callback_add(colorselector, "changed", changed_cb, data);
@@ -69,7 +73,7 @@ The following example shows how to add a new palette called `mypalette`, with 3 
 
 **Example: Customized colorselector**
 
- ![Colorselector](./media/colorselector2.png)
+![Colorselector](./media/colorselector2.png)
 
 ```
 Evas_Object *win;
@@ -115,10 +119,12 @@ You can register callback functions connected to the following signals for a col
 | `color,item,selected`    | The color item is pressed.               | The pressed color item      |
 | `color,item,longpressed` | The color item is long-pressed.          | The long-pressed color item |
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

@@ -31,7 +31,9 @@ To use a flipselector component in your application:
    }
    ```
 
-3. Register the [callback](#callbacks) functions.The following example shows how to define and register a callback for the `selected` signal:
+3. Register the [callback](#callbacks) functions.
+
+   The following example shows how to define and register a callback for the `selected` signal:
 
    ```
    evas_object_smart_callback_add(flipselector, "selected", _flip_selected_cb, NULL);
@@ -124,7 +126,7 @@ The following table lists the available component styles.
 **Table: Flipselector styles**
 
 | Style                           | Sample                                   |
-|-------------------------------|----------------------------------------|
+|--i------------------------------|----i-------------------------------------|
 | `elm/flipselector/base/default` | ![elm/flipselector/base/default](./media/flipsel_default.png) |
 
 ## Callbacks
@@ -134,15 +136,17 @@ You can register callback functions connected to the following signals for a fli
 **Table: Flipselector callback signals**
 
 | Signal        | Description                              | `event_info` |
-|-------------|----------------------------------------|------------|
+|-------i-------|----------i-------------------------------|---i----------|
 | `selected`    | The flipselector's selected text item changes. | `NULL`       |
 | `overflowed`  | The flipselector's current selection changes from the first item to the last one. | `NULL`       |
 | `underflowed` | The flipselector's current selection changes from the last item to the first one. | `NULL`       |
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

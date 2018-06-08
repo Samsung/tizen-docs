@@ -16,7 +16,7 @@ To use a button component in your application:
    button = elm_button_add(parent);
    ```
 
-2. Set a [style](#styles) and fill the button with a text or an image according to the style:f
+2. Set a [style](#styles) and fill the button with a text or an image according to the style:
 
    - Set a style to the button with the `elm_object_style_set()` function. If you use the default style, you can skip this step.
 
@@ -38,7 +38,9 @@ To use a button component in your application:
      elm_object_part_content_set(button, "icon", icon);
      ```
 
-3. Register the [callback](#callbacks) functions.The following example shows how to define and register a callback for the `clicked` signal:
+3. Register the [callback](#callbacks) functions.
+
+   The following example shows how to define and register a callback for the `clicked` signal:
 
    ```
    evas_object_smart_callback_add(button, "clicked", clicked_cb, data);
@@ -148,10 +150,12 @@ You can register callback functions connected to the following signals for a but
 | `pressed`   | The button is pressed.                   | `NULL`       |
 | `unpressed` | The button is released after being pressed. | `NULL`       |
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

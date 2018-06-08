@@ -32,11 +32,14 @@ When shown, the ctxpopup automatically selects an area inside its parent object'
 
 The ctxpopup has the following styles for the rectangular screen:
 
-- `default`  
+- `default`
+
   The ctxpopup has the following styles for the circular screen:
 
 - `select_mode`
-- `select_mode/top`, `select_mode/bottom`These 2 styles can be used as a pair.
+
+- `select_mode/top`, `select_mode/bottom`
+  These 2 styles can be used as a pair.
 
 To set the style to, for example, `default`:
 
@@ -107,7 +110,8 @@ To manage the ctxpopup items:
 
 To receive notifications about the ctxpopup events, listen for the `dismissed` signal, which is called when the ctxpopup is dismissed.
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 The `event_info` callback parameter is `NULL`.
@@ -128,7 +132,8 @@ dismissed_cb(void *data, Evas_Object *obj, void *event_info)
 }
 ```
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

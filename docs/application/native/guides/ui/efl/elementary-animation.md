@@ -24,8 +24,9 @@ To manage the objects on which the transition is performed:
 
 - To add your Evas objects to a transition, use the `elm_transit_object_add()` function. The first parameter is the `Elm_Transit` instance and the second is the Evas object to animate.
 
-  > **Note**  
-  > The Evas object can be a low-level component, such as a rectangle, but also a UI component, such as a button, image, or calendar.  
+  > **Note**
+  >
+  > The Evas object can be a low-level component, such as a rectangle, but also a UI component, such as a button, image, or calendar.
   >
   > To animate an Evas object handled by a container, such as a box, you need to either unpack the object before the animation or animate the whole container.
 
@@ -33,8 +34,9 @@ To manage the objects on which the transition is performed:
 
 - To remove objects from the transition, use the `elm_transit_object_remove()` function. The first parameter is the `Elm_Transit` instance and the second is the Evas object to remove.
 
-  > **Note**  
-  > After you have added at least 1 Evas object to your transition, the transition is automatically deleted when the object list becomes empty (either because the translation has been terminated or all objects have been deleted).  
+  > **Note**
+  >
+  > After you have added at least 1 Evas object to your transition, the transition is automatically deleted when the object list becomes empty (either because the translation has been terminated or all objects have been deleted).
   >
   > Otherwise, you have to delete the transition manually using the `elm_transit_del()` function. If you delete the `Elm_Transit` instance while the transition is running, the transition stops.
 
@@ -64,7 +66,8 @@ To add images to a transition:
 2. Add the image list to the transition with the `elm_transit_effect_image_animation_add()` function.
 3. Define the image transitions the same way as any other object transitions.
 
-> **Note**  
+> **Note**
+>
 > This list and its contents are deleted after the `Elm_Transit` object ends the transition effect.
 
 ```
@@ -93,7 +96,8 @@ To manage the duration:
 
 - To set the duration, use the `elm_transit_duration_set()` function. The first parameter is the `Elm_Transit` instance and the second is the duration in seconds.
 
-  > **Note**  
+  > **Note**
+  >
   > The purpose of the `Elm_Transit` object is to abstract the low-level details of object interpolation, so you cannot create an infinite transition by specifying the duration. However, you can make your transition last forever using the repeat function.
 
   The following example shows how to make a complete revolution of the target Evas object in 2 seconds:
@@ -150,7 +154,8 @@ To manage the repeat property:
 
 - To set a transition to repeat, use the `elm_transit_repeat_times_set()` function. The first parameter is the `Elm_Transit` instance and the second is the number of times the transition is repeated.
 
-  > **Note**  
+  > **Note**
+  >
   > If the `repeat` parameter is set to 0, the transition does not loop at all. If set to 1, the transition runs twice. If set to a negative value, the transition repeats forever.
 
   The following example shows how to make an Evas object spin for 3 complete revolutions in 6 seconds:
@@ -175,8 +180,9 @@ To manage the auto-reverse property:
 
 - To automatically reverse the transition once it finishes, use the `elm_transit_auto_reverse_set()` function. The first parameter is the `Elm_Transit` instance and the second is the reverse state. If the reverse state is set to `EINA_TRUE`, the function performs the same transition backwards as soon as the first transition is complete.
 
-  > **Note**  
-  > Reversing the transition doubles the duration of the transition. Moreover, if the transition is set to repeat, the transition runs back and forth until the repeat count is finished.  
+  > **Note**
+  >
+  > Reversing the transition doubles the duration of the transition. Moreover, if the transition is set to repeat, the transition runs back and forth until the repeat count is finished.
   >
   > If both the auto-reverse and repeat properties are set, the total duration is: 2 \* &lt;duration&gt; \* &lt;repeat&gt;.
 
@@ -315,7 +321,8 @@ To add effects for different transition types:
 
   The resizing effect allows you to design an interpolation of the width and height attributes of 1 or more target elements using the `elm_transit_effect_resizing_add()` function. The function defines the width and height of the object at the start and end of the animation.
 
-  > **Note**  
+  > **Note**
+  >
   > Do not use this function to hide an Evas object by setting one of the length attributes to zero. Use the wipe effect described above instead.
 
   The following example shows how to make a rectangle exchange its width and height properties in a 2-second transition:
@@ -342,7 +349,7 @@ To add effects for different transition types:
 
   To implement a flip effect, use the `elm_transit_effect_flip_add()` function.
 
-  The following example shows how to create a coin that flips indefinitely. The example uses images as Elementary UI components for demonstration purposes. If you want to [use the images directly as Evas objects](#using-images-in-a-transition), use the`elm_transit_effect_image_animation_add()` function.
+  The following example shows how to create a coin that flips indefinitely. The example uses images as Elementary UI components for demonstration purposes. If you want to [use the images directly as Evas objects](#using-images-in-a-transition), use the `elm_transit_effect_image_animation_add()` function.
 
   ```
   /* Coin head image */
@@ -500,8 +507,9 @@ To manage the transition chain:
 
   ```
 
-  > **Note**  
-  > You cannot use transition chaining to make a loop animation, since the transit object is automatically destroyed as soon as the transition completes. Therefore, building on the above example, you cannot loop back from the `t4` transit object to the `t1` transit object, because the `t1` transit object is already deleted at the beginning before the `t2` transit object is run:  
+  > **Note**
+  >
+  > You cannot use transition chaining to make a loop animation, since the transit object is automatically destroyed as soon as the transition completes. Therefore, building on the above example, you cannot loop back from the `t4` transit object to the `t1` transit object, because the `t1` transit object is already deleted at the beginning before the `t2` transit object is run:
   > ```
   > /* Impossible loop */
   > elm_transit_chain_transit_add(t4, t1);
@@ -617,7 +625,8 @@ To build a custom resizing animation:
 
    ```
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

@@ -16,7 +16,10 @@ You can enable 1 or more accessibility features at the same time to better suit 
 
 To enable the screen reader:
 
-1. Install and launch the **UI Components** application. UI Components is a mobile native sample application included in the Tizen Studio. You can install it through the Tizen Studio.
+1. Install and launch the **UI Components** application.
+
+   UI Components is a mobile native sample application included in the Tizen Studio. You can install it through the Tizen Studio.
+
 2. Select **Accessibility > Screen Reader**.
 3. Enable the **Screen Reader (TTS)** setting.
 
@@ -42,7 +45,8 @@ Once the screen reader is enabled, you can configure it by setting the speech ra
 
 ## Setting the Font Size
 
-> **Note**  
+> **Note**
+>
 > Changing the font size in the accessibility settings overrides the font size in all applications.
 
 To change the system font size:

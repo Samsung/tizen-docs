@@ -30,7 +30,9 @@ To use a panel component in your application:
    elm_object_part_content_set(panel, "default", button);
    ```
 
-4. Register the [callback](#callbacks) functions. The following example shows how to define and register a callback for the `scroll` signal:
+4. Register the [callback](#callbacks) functions.
+
+   The following example shows how to define and register a callback for the `scroll` signal:
 
    ```
    evas_object_smart_callback_add(panel, "scroll", panel_scroll_cb, data);
@@ -106,13 +108,15 @@ You can register callback functions connected to the following signals for a pan
 **Table: Panel callback signals**
 
 | Signal   | Description                  | `event_info`            |
-|--------|----------------------------|-----------------------|
+|----------|------------------------------|-------------------------|
 | `scroll` | The panel is being scrolled. | `Elm_Panel_Scroll_Info` |
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

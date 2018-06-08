@@ -6,7 +6,7 @@ This feature is supported in mobile applications only.
 
 ## Basic Usage
 
-> **Note**  
+> **Note**
 > You cannot create a tooltip component with the `elm_tooltip_add()` function. This component is already contained in a parent component when it is created. You can only activate or disable the tooltip.
 
 To activate a tooltip on a parent object in your application:
@@ -25,7 +25,7 @@ To activate a tooltip on a parent object in your application:
 
    The second parameter defines a callback which is triggered each time the tooltip is shown. Use the callback to create the content to be shown in the tooltip. The callback returns a pointer to an `Evas_Object`.
 
-   The fourth parameter defines a callback which is triggered when the tooltip disappears. Use the callback to delete the previously allocated
+   The fourth parameter defines a callback which is triggered when the tooltip disappears. Use the callback to delete the previously allocated `Evas_Object`.
 
    ```
    elm_object_tooltip_content_cb_set(obj, tooltip_content_cb, data, tooltip_content_del_cb);
@@ -72,7 +72,7 @@ To activate a tooltip on a parent object in your application:
    elm_object_tooltip_unset(obj);
    ```
 
-   > **Note**  
+   > **Note**
    > If content was set into the tooltip object, unsetting the tooltip calls the callback provided as the fourth parameter of the `elm_object_tooltip_content_cb_set()` function. The callback is used to notify the application that the tooltip can no longer be used.
 
 The following example shows a simple use case of the tooltip component on a button component.
@@ -134,7 +134,8 @@ The following table lists the available component styles.
 | `default`     | ![elm/tooltip/base/default](./media/tooltip_default.png) | `default` | `elm.swallow.content` |
 | `transparent` | ![elm/button/base/transparent](./media/tooltip_transparent.png) | `default` | `elm.swallow.content` |
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

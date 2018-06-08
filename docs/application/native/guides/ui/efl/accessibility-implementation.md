@@ -262,9 +262,17 @@ The Elementary library sets the default information (label, traits, state) for t
     If the user highlights the button, the screen reader says "Accessible Name, button, Accessible Description".
 
 You can also create a custom reading of multi-style components. Sometimes, it is necessary to have different voice output depending on the style assigned to the UI component. The `default` style is handled "out of the box" by the accessibility framework, but you must handle any alternative styles on the application side. The Elementary checkbox component offers a good example of alternative styles:
-- `default` style in a checkbox:The reading must be "<label>, <state>", where <label> is a text assigned to the checkbox and <state> is read as "selected" or "not selected", depending on the checkbox state.
-- `favorite` style in a checkbox:The reading must be "Favorite button, <state>", where <state> is read as "selected" or "not selected", depending on the checkbox state.
-- `on&off` style in a checkbox:The reading must be "On/off button, <state>", where <state> is read as "on" or "off", depending on the checkbox state.
+- `default` style in a checkbox:
+
+   The reading must be "<label>, <state>", where <label> is a text assigned to the checkbox and <state> is read as "selected" or "not selected", depending on the checkbox state.
+
+- `favorite` style in a checkbox:
+
+   The reading must be "Favorite button, <state>", where <state> is read as "selected" or "not selected", depending on the checkbox state.
+
+- `on&off` style in a checkbox:
+
+   The reading must be "On/off button, <state>", where <state> is read as "on" or "off", depending on the checkbox state.
 
 The following source code snippet demonstrates how to handle the `favorite` and `on&off` checkbox styles in the application source code:
 

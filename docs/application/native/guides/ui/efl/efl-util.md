@@ -123,8 +123,8 @@ To create notification windows and access the current notification level of an e
 
   - To create a new window and give it the `NOTIFICATION` type, call the `elm_win_add()` function with the third parameter set to `ELM_WIN_NOTIFICATION`:  
 
-  ```
-   #include <Elementary.h>
+    ```
+    #include <Elementary.h>
     #include <dlog.h>
 
     static Evas_Object*
@@ -452,9 +452,9 @@ To grab gestures:
        }
    ```
 
-3. Define the gesture data to grab using the `efl_util_gesture_xxx_new()` and `efl_util_gesture_xxx_size_set()` functions.  
+3. Define the gesture data to grab using the `efl_util_gesture_xxx_new()` and `efl_util_gesture_xxx_size_set()` functions.
 
-  Setting a size is optional. If a size is not set, the gesture is grabbed within a full-size edge.
+   Setting a size is optional. If a size is not set, the gesture is grabbed within a full-size edge.
 
    ```
        /* Define a top edge 1-finger swipe gesture */

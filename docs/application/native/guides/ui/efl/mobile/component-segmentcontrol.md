@@ -31,7 +31,9 @@ segcontrol = elm_segment_control_add(parent);
 
 To manage segmentcontrol items:
 
-- Add items to the segmentcontrol component with the `elm_segment_control_item_add()` function. In the following example, 4 items containing only text labels (no icons) are added:
+- Add items to the segmentcontrol component with the `elm_segment_control_item_add()` function.
+
+  In the following example, 4 items containing only text labels (no icons) are added:
 
   ```
   Elm_Object_Item *it;
@@ -90,7 +92,8 @@ To manage segmentcontrol items:
 
 To receive notifications about the segmentcontrol events, listen for the `changed` signal, which is called when the user clicks on a segment item that was not previously selected.
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 The `event_info` callback parameter is the segment item pointer.
@@ -113,7 +116,8 @@ changed_cb(void *data, Evas_Object *obj, void *event_info)
 }
 ```
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

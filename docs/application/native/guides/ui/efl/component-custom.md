@@ -52,7 +52,11 @@ To customize a UI component:
 
    See [Creating Your First Tizen Mobile Native Application](../../../getting-started/mobile/first-app.md) or [Creating Your First Tizen Wearable Native Application](../../../getting-started/wearable/first-app.md) for creating a EDC UI project.
 
-2. Create an EDJ file in the `/res/edje/` directory. If you add the `custom.edc` file, the Tizen Studio calls Edje tools automatically to build the final `custom.edj` file when building the project. The EDJ file is installed under the application data path. You can get the full path of where the EDJ file is installed using the `app_get_resource()` function.
+2. Create an EDJ file in the `/res/edje/` directory.
+
+   If you add the `custom.edc` file, the Tizen Studio calls Edje tools automatically to build the final `custom.edj` file when building the project.
+
+   The EDJ file is installed under the application data path. You can get the full path of where the EDJ file is installed using the `app_get_resource()` function.
 
    ```
    char edj_path[PATH_MAX] = {0,};
@@ -279,7 +283,8 @@ To create a customized button component style:
 
 2. In the new `elm/button/base/custom` group, find the programs playing sound effects.
 
-   > **Note**  
+   > **Note**
+   >
    > In the EDC file, sound effects are played by program actions, such as `RUN_PLUGIN`, `PLAY_SAMPLE`, and `PLAY_TONE`.
 
    ```
@@ -293,8 +298,13 @@ To create a customized button component style:
 
 4. Remove the code lines that execute the removed programs (the line to be removed is marked with a background highlight in the following example).
 
-   > **Note**  
-   > In the EDC file, programs are executed by the `after` keyword or the `run_program` script function. For example:`after: "touch_sound";/* OR */run_program(PROGRAM: "touch_sound");`
+   > **Note**
+   >
+   > In the EDC file, programs are executed by the `after` keyword or the `run_program` script function. For example:
+   > ```
+   > after: "touch_sound"; /* OR */
+   > run_program(PROGRAM: "touch_sound");`
+   > ```
 
    ```
    program {
@@ -308,7 +318,8 @@ To create a customized button component style:
    }
    ```
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

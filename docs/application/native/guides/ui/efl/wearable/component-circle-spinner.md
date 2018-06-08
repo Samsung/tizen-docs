@@ -27,7 +27,9 @@ To create a circle spinner component:
    elm_object_style_set(spinner, "circle");
    ```
 
-3. Create an `eext_spinner` object using the `eext_circle_object_spinner_add()` function. Pass a [circle surface](component-circle-surface.md) as the second parameter.
+3. Create an `eext_spinner` object using the `eext_circle_object_spinner_add()` function.
+
+   Pass a [circle surface](component-circle-surface.md) as the second parameter.
 
    ```
    circle_spinner = eext_circle_object_spinner_add(spinner, surface);

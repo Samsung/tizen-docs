@@ -44,7 +44,9 @@ To use a calendar component in your application:
      elm_calendar_weekdays_names_set(calendar, &weekname);
      ```
 
-   - Mark holidays with the `elm_calendar_mark_add()` function.The following example shows how to mark a Sunday as holiday:
+   - Mark holidays with the `elm_calendar_mark_add()` function.
+
+     The following example shows how to mark a Sunday as holiday:
 
      ```
      struct tm *sunday = gmtime(&the_time);
@@ -54,7 +56,9 @@ To use a calendar component in your application:
      elm_calendar_mark_add(calendar, "holiday", sunday, ELM_CALENDAR_WEEKLY);
      ```
 
-4. Register the [callback](#callback) functions.The following example shows how to define and register a callback for the `changed` signal:
+4. Register the [callback](#callback) functions.
+
+   The following example shows how to define and register a callback for the `changed` signal:
 
    ```
    evas_object_smart_callback_add(calendar, "changed", changed_cb, data);
@@ -86,10 +90,12 @@ You can register callback functions connected to the following signals for a cal
 |---------|-----------------------------|------------|
 | `changed` | The selected date is changed. | `NULL`       |
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

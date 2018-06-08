@@ -167,41 +167,43 @@ The following Ecore events are available for shortcuts. The event callbacks rece
 
 To manage Ecore event handlers:
 
-1. To add an Ecore event handler, register a callback for a specific event with the `ecore_event_handler_add()` function.  
+1. To add an Ecore event handler, register a callback for a specific event with the `ecore_event_handler_add()` function.
 
-  The function takes as parameters the event type (such as `ECORE_EVENT_KEY_DOWN` for key presses), callback function, and additional data delivered to the callback. The function returns an event handler pointer, which you can use to remove the handler later.
-2. Define the `Ecore_Event_Handler_Cb()` callback function.  
+   The function takes as parameters the event type (such as `ECORE_EVENT_KEY_DOWN` for key presses), callback function, and additional data delivered to the callback. The function returns an event handler pointer, which you can use to remove the handler later.
 
-  The function takes as parameters the additional data defined in the `ecore_event_handler_add()` function parameters, the event type, and the event object (`Ecore_Event_Key`, `Ecore_Event_Mouse_Button`, `Ecore_Event_Mouse_Wheel`, or `Ecore_Event_Mouse_Move`). The function returns `ECORE_CALLBACK_PASS_ON` to allow other callbacks for that event be called, or `ECORE_CALLBACK_DONE` to not call them.
+2. Define the `Ecore_Event_Handler_Cb()` callback function.
+
+   The function takes as parameters the additional data defined in the `ecore_event_handler_add()` function parameters, the event type, and the event object (`Ecore_Event_Key`, `Ecore_Event_Mouse_Button`, `Ecore_Event_Mouse_Wheel`, or `Ecore_Event_Mouse_Move`). The function returns `ECORE_CALLBACK_PASS_ON` to allow other callbacks for that event be called, or `ECORE_CALLBACK_DONE` to not call them.
+
 3. When no longer needed, remove the event handler with the `ecore_event_handler_del()` function, using the event handler pointer as a parameter.
 
-The following example shows how you can set a global variable to `EINA_TRUE` when the **Ctrl** key is pressed:
+   The following example shows how you can set a global variable to `EINA_TRUE` when the **Ctrl** key is pressed:
 
-```
-Eina_Bool ctrl_pressed = EINA_FALSE;
+   ```
+   Eina_Bool ctrl_pressed = EINA_FALSE;
 
-static Eina_Bool
-_key_down_cb(void *data __UNUSED__, int type __UNUSED__, void *ev)
-{
-    /*
-       Callback is used with the ECORE_EVENT_KEY_DOWN signal: the
-       parameter "void *ev" is therefore of the actual type Ecore_Event_Key
-       Following renders its fields accessible
-    */
-    Ecore_Event_Key *event = ev;
+   static Eina_Bool
+   _key_down_cb(void *data __UNUSED__, int type __UNUSED__, void *ev)
+   {
+       /*
+          Callback is used with the ECORE_EVENT_KEY_DOWN signal: the
+          parameter "void *ev" is therefore of the actual type Ecore_Event_Key
+          Following renders its fields accessible
+       */
+       Ecore_Event_Key *event = ev;
 
-    /* Test whether the key that is pressed is Ctrl */
-    if (!strcmp("Control_L", event->key)) {
-        /* If it is, store that piece of information */
-        ctrl_pressed = EINA_TRUE;
-    }
+       /* Test whether the key that is pressed is Ctrl */
+       if (!strcmp("Control_L", event->key)) {
+           /* If it is, store that piece of information */
+           ctrl_pressed = EINA_TRUE;
+       }
 
-    /* Let the event continue to other callbacks which have not been called yet */
-    return ECORE_CALLBACK_PASS_ON;
-}
+       /* Let the event continue to other callbacks which have not been called yet */
+       return ECORE_CALLBACK_PASS_ON;
+   }
 
-ecore_event_handler_add(ECORE_EVENT_KEY_DOWN, _key_down_cb, NULL);
-```
+   ecore_event_handler_add(ECORE_EVENT_KEY_DOWN, _key_down_cb, NULL);
+   ```
 
 ### Sending Ecore Events to the Main Loop
 
@@ -360,21 +362,23 @@ Evas smart object events are the most widely-used type of events in graphical ap
 
 ### Managing Evas Smart Object Event Handlers
 
-1. To add an Evas smart object event handler, register a callback for a specific event to an object with the `evas_object_smart_callback_add()` function.  
+1. To add an Evas smart object event handler, register a callback for a specific event to an object with the `evas_object_smart_callback_add()` function.
 
- The function takes as parameters the object to which the callback is added, the event name, the callback function, and additional data delivered to the callback. The additional data is optional; use `NULL` if you do not need it.
+   The function takes as parameters the object to which the callback is added, the event name, the callback function, and additional data delivered to the callback. The additional data is optional; use `NULL` if you do not need it.
 
-2. Define the `Evas_Smart_Cb()` callback function.  
+2. Define the `Evas_Smart_Cb()` callback function.
 
-  The function takes as parameters the additional data defined in the `evas_object_smart_callback_add()` function parameters, the object to which the event happened, and the event info data, which depends on the object type and the event at play.  
+   The function takes as parameters the additional data defined in the `evas_object_smart_callback_add()` function parameters, the object to which the event happened, and the event info data, which depends on the object type and the event at play.
 
-  If some of the parameters are not used by the callback function, the compiler can raise the "unused parameter" warning. To avoid it, annotate the parameter with the `__UNUSED__` macro, which is a compiler-independent way to let the compiler know that the parameter is unused willingly, rather than by a mistake:  
+   If some of the parameters are not used by the callback function, the compiler can raise the "unused parameter" warning. To avoid it, annotate the parameter with the `__UNUSED__` macro, which is a compiler-independent way to let the compiler know that the parameter is unused willingly, rather than by a mistake:
 
-  `void cb(void *data __UNUSED__, Evas_Object *obj, void *event_info __UNUSED__);`
+   ```
+   void cb(void *data __UNUSED__, Evas_Object *obj, void *event_info __UNUSED__);
+   ```
 
-3. When no longer needed, remove the event handler with the `evas_object_smart_callback_del()` function.  
+3. When no longer needed, remove the event handler with the `evas_object_smart_callback_del()` function.
 
-  The function removes the first match for the given event and callback, and returns the data pointer that was used in the corresponding call to the `evas_object_smart_callback_add()` function.
+   The function removes the first match for the given event and callback, and returns the data pointer that was used in the corresponding call to the `evas_object_smart_callback_add()` function.
 
 For a specific object and event, callbacks are called in the order they have been registered. The `evas_object_smart_callback_add()` function does not execute any special processing, if it is called several times with the same callback function or data. Callbacks are called as many times as they have been added and in the order they have been added.
 
@@ -404,7 +408,8 @@ _add_button(Evas_Object *window)
 }
 ```
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

@@ -15,14 +15,16 @@ The ProgressBar has two modes to represent the progress.
 
 - **Determinate mode** shows a specific quantity of progress occurred. Use `PROGRESS_VALUE` property to set a specific percentage (number). This is the default mode. If the user has not specified a value, the default is taken as 0.
 
- *Figure: Determinate progress bar*
- ![Determinate mode](./media/determinated_progress.png)
+  **Figure: Determinate progress bar**
+
+  ![Determinate mode](./media/determinated_progress.png)
 
 
 - **Indeterminate mode** shows the progress without any specific percentage of progress indicated. If you want to indicate an indeterminate progress bar, then set `INDETERMINATE` mode to enabled. You can also show an animation using the `INDETERMINATE_VISUAL_ANIMATION` property.
 
- *Figure: Indeterminate progress bar*
- ![Indeterminate mode](./media/indeterminated_progress.png)
+  **Figure: Indeterminate progress bar**
+
+  ![Indeterminate mode](./media/indeterminated_progress.png)
 
 <a name="1"></a>
 ## ProgressBar events

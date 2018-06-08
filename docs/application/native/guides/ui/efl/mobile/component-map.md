@@ -107,7 +107,7 @@ You can register callback functions connected to the following signals for a map
 **Table: Map callback signals**
 
 | Signal              | Description                              | `event_info`            |
-|-------------------|----------------------------------------|-----------------------|
+|---------------------|------------------------------------------|-------------------------|
 | `clicked`           | The map is clicked without dragging.     | `Evas_Event_Mouse_Up`   |
 | `clicked,double`    | The map is double-clicked.               | `Evas_Event_Mouse_Down` |
 | `press`             | The map is pressed down on.              | `Evas_Event_Mouse_Down` |
@@ -132,10 +132,12 @@ You can register callback functions connected to the following signals for a map
 | `overlay,clicked`   | An overlay is clicked.                   | `Elm_Map_Overlay`       |
 | `loaded`            | The map is loaded.                       | `NULL`                  |
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information
