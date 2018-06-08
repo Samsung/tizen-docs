@@ -13,13 +13,13 @@
 ## [Design Principles](/application/design/mobile/design-principles.md)
 ## [Styles](/application/design/mobile/styles.md)
 ## UX Overview
-### [Overview](/application/design/mobile/ux-overview.md)
+### [Overview](/application/design/mobile/ux-overview/overview.md)
 ### [Home Structure](/application/design/mobile/ux-overview/home-structure.md)
 ### [Gestures](/application/design/mobile/ux-overview/gestures.md)
 ### [Hardware Keys](/application/design/mobile/ux-overview/hardware-keys.md)
 ### [Accessibility](/application/design/mobile/ux-overview/accessibility.md)
 ## Design Patterns
-### [Overview](/application/design/mobile/design-patterns.md)
+### [Overview](/application/design/mobile/design-patterns/overview.md)
 ### [App Structure](/application/design/mobile/design-patterns/app-structure.md)
 ### [App Handling](/application/design/mobile/design-patterns/app-handling.md)
 ### [Notifications](/application/design/mobile/design-patterns/notifications.md)
@@ -29,7 +29,7 @@
 ### [Navigation Design](/application/design/mobile/design-patterns/navigation-design.md)
 ### [Settings](/application/design/mobile/design-patterns/settings.md)
 ## UI Components
-### [Overview](/application/design/mobile/ui-components.md)
+### [Overview](/application/design/mobile/ui-components/overview.md)
 ### [Navigation Elements](/application/design/mobile/ui-components/navigation-elements.md)
 ### [Presentation Views](/application/design/mobile/ui-components/presentation-views.md)
 ### [User Input Components](/application/design/mobile/ui-components/user-input-components.md)
