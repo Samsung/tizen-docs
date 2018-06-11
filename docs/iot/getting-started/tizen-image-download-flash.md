@@ -152,7 +152,7 @@ The IoT Setup Manager view contains the following fields:
 
 -   **Select Drive**
 
-    Insert an SD card and wait until it appears in the drop-down list.
+    Insert an SD card and wait until it appears in the drop-down list. Currently, the USB SD card reader is only supported, but the internal PC SD card slot is not supported yet.
 
 -   **Burn**
 
@@ -232,7 +232,8 @@ To flash Tizen on your SD card using the IoT Setup Manager:
 
         > **Note**
         >
-        > If the Select Drive does not show anything, detach and insert the SD card again into the computer.
+        > - Currently, the USB SD card reader is only supported, but the internal PC SD card slot is not supported yet.
+        > - If the Select Drive does not show anything, detach and insert the SD card again into the computer.
 
 
 3.  Burn Tizen on your SD Card:
