@@ -47,7 +47,7 @@ The main features of the OpenAL API include:
   >
   > Since 3.0, extension `alcDevicePauseSOFT()` was introduced to allow applications to pause a playback device explictly.
   > The main purpose is to silence output, stop processing, and to allow audio hardware to go into low-power mode.
-  > Additionally, you can use `alcDeviceResumeSOFT()` function to resume playback of a paused device.
+  > Additionally, you can use `alcDeviceResumeSOFT()` function to resume playback of a paused device.  
   > For more information, see [here](http://kcat.strangesoft.net/openal-extensions/SOFT_pause_device.txt).
 
 - Requesting a source and buffer
