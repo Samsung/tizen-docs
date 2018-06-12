@@ -25,7 +25,7 @@ The main features of the `Tizen.Applications.Alarm` and `Tizen.Applications.Alar
     You can [list all scheduled alarms and cancel them](#scenario_4).
 
 
-Prerequisites
+## Prerequisites
 
 To enable your application to use the alarm functionality:
 
@@ -151,7 +151,7 @@ Alarm myAlarm = AlarmManager.CreateAlarm(DateTime.New.AddSecond(10),
 ```
 
 <a name="scenario_4"></a>
-Listing All Scheduled Alarms and Canceling an Alarm
+## Listing All Scheduled Alarms and Canceling an Alarm
 
 You can list all scheduled alarms, and cancel alarms either one by one or all at once:
 

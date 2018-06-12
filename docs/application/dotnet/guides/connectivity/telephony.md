@@ -182,7 +182,6 @@ To retrieve information from a SIM card and monitor when the SIM state changes, 
 
         ```
         Log.Info(Globals.LogTag, "Iccid = " + _sim.IccId);
-
      ```
 
 -   Monitor SIM state changes:

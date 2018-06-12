@@ -44,7 +44,8 @@ Tizen provides notifications by using a combination of any of the following noti
 
 The notification display type determines where and how the notification message is displayed.
 
-### Quick Panel Notifications {#quick_panel}
+<a name="quick_panel"></a>
+### Quick Panel Notifications
 
 The display area for quick panel notifications can be one of the following:
 
@@ -60,7 +61,8 @@ The display area for quick panel notifications can be one of the following:
 
 ![Notification and on-going areas](./media/notification.png)
 
-### Active Notifications {#active_notification}
+<a name="active_notification"></a>
+### Active Notifications
 
 An active notification is displayed on the upper side of the screen. You can add buttons for user interaction, and a text input field which the user can use to reply to the notification directly.
 
@@ -68,7 +70,8 @@ An active notification is displayed on the upper side of the screen. You can add
 
 ![Active notification](./media/active_notification_2.png)
 
-### Indicator Notifications {#indicator}
+<a name="indicator"></a>
+### Indicator Notifications
 
 The indicator type notification is displayed for a few seconds in the indicator area. Only a simple string and icon can be displayed.
 
@@ -76,7 +79,8 @@ The indicator type notification is displayed for a few seconds in the indicator 
 
 ![Notification on the ticker and the indicator](./media/notification_indicator.png)
 
-### Lock Screen Notifications {#lockscreen}
+<a name="lockscreen"></a>
+### Lock Screen Notifications
 
 You can display a notification on the lock screen. The notification content can be displayed or hidden.
 
@@ -84,7 +88,8 @@ You can display a notification on the lock screen. The notification content can 
 
 ![Notification on the lock screen](./media/notification_lockscreen.png)
 
-### Status Message Notifications {#status_message}
+<a name="status_message"></a>
+### Status Message Notifications
 
 A status message type notification can be used like a pop-up. It is displayed for a few seconds and then disappears.
 

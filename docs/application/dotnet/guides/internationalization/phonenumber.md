@@ -10,7 +10,7 @@ The main features of the Tizen.PhonenumberUtils namespace include:
 
 -   Formatting phone numbers
 
-    You can [format the phone number string based on the region](#formatting)using the dash ("-") and space (" ") characters.
+    You can [format the phone number string based on the region](#formatting) using the dash ("-") and space (" ") characters.
 
 -   Normalizing phone numbers
 

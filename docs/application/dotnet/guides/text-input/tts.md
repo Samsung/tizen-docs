@@ -540,7 +540,6 @@ To start, pause, and stop the playback:
    > **Note**   
    > If the TTS state changed event handler is invoked in the `Playing` state without a TTS method call, prepare the TTS state. The state can change if other applications request TTS play, the audio session requests TTS pause, or the TTS engine changes.
 
-
     ```
     void Start()
     {
@@ -554,7 +553,7 @@ To start, pause, and stop the playback:
         }
     }
     ```
-
+    
 -   To pause the playback, use the `Pause()` method.
 
     The TTS state is changed to `Paused`. To resume playback, use the `Play()` method.
