@@ -56,12 +56,12 @@ IoT Setup Manager helps you to easily install Tizen on your IoT device using you
 
 IoT Setup Manager supports the following operating systems:
 
--   Windows 7 and above (64 and 32 bit)
--   Ubuntu 14.04 LTS and above (64 and 32 bit)
+-   Windows 7 and later (64 and 32 bit)
+-   Ubuntu 14.04 LTS and later (64 and 32 bit)
 
 #### Environment
 
-IoT Setup Manager requires Java Runtime Environment (JRE) version 1.8 or above to be installed on your computer.
+IoT Setup Manager requires Java Runtime Environment (JRE) version 1.8 or later to be installed on your computer.
 
 > **Note**
 >
@@ -232,7 +232,8 @@ To flash Tizen on your SD card using the IoT Setup Manager:
 
         > **Note**
         >
-        > If the Select Drive does not show anything, detach and insert the SD card again into the computer.
+        > Currently, the USB SD card reader is only supported. The internal PC SD slot is not supported.
+        > Also, if the **Select Drive** does not show anything, detach and insert the SD card again into the computer.
 
 
 3.  Burn Tizen on your SD Card:
