@@ -68,7 +68,7 @@
 	    -   Close some other programs and try to launch the emulator again.
 	    -   If the RAM size is set to 768 or 1024 MB for the VM in the Emulator Manager, change it to 512 MB.
 	    -   Increase the user area of the virtual memory in the system to 3 GB by entering the *bcdedit /setincreaseuserva 3072* command on the console with administrator rights (only in Windows&reg; 7), and reboot.
-	-   If you use a MacBook Pro which has both Intel HD and NVIDIA&reg; GPUs, the emulator can unexpectedly terminate when you execute the emulator with OpenGL ES version set v1.1 and OpenGL ES version set v2.0. Verify the emulator configuration in the Emulator Manager and on the general tab in the emulator configuration window, set OpenGL ES version to version v2.0 and version v3.0.
+	-   If you use a MacBook Pro which has both Intel HD and NVIDIA&reg; GPUs, the emulator can unexpectedly terminate when you execute the emulator with OpenGL ES version 1.1 or 2.0. Verify the emulator configuration in the Emulator Manager and on the general tab in the emulator configuration window, set OpenGL ES version to version 2.0 or to version 3.0.
 	-   When you launch the Emulator Manager in the Tizen IDE, the shortcut image of Emulator Manager may not be displayed properly.
 	-   Basic Web applications does not install on SD cards.
 -	CLI and SDB
@@ -77,10 +77,10 @@
 	-   When analyzing applications on commercial devices running Tizen 3.0, newly-released or after a firmware update, the following problems exist:
 	    -   The Core Frequency information is not shown.
 	    -   The screenshots on scene transitions feature will not work.
-	-   When analyzing applications on the Tizen 4.0 emulator or reference device, the start-up profiling information is not shown.
-	-   The UI Hierarchy viewer feature and start-up profiling are not performed simultaneously.
+	-   When analyzing applications on the Tizen 4.0 emulator or reference device, the startup profiling information is not shown.
+	-   The UI Hierarchy viewer feature and startup profiling are not performed simultaneously.
 	-   The Dynamic Analyzer cannot perform Web application profiling with a commercial Tizen device, due to the security policy.
-	-   The Dynamic Analyzer cannot show life-cycle information for Web applications.
+	-   The Dynamic Analyzer cannot show lifecycle information for Web applications.
 	-   Widget applications cannot be profiled with the Dynamic Analyzer. They are hidden in the application list on the toolbar for all Tizen platforms, except Tizen 2.3.2.
 -	Web Inspector
 	-   If your Google Chrome™ browser version is higher than 54, the Web Inspector console and some other functions does not work properly due to Web core compatibility issues.
