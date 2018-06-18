@@ -347,21 +347,6 @@ Release date: May. 31, 2018
 
 ### New and changed features
 
-- Network Monitoring (In-house only module)
-  - Added support for ethernet cable state feature.
-  - Added support for Wi-Fi module state feature.
-  - Added support for IP conflict detection feature.
-  - Added support for tcpdump feature.
-  - Added support for statistics feature.
-  - Added support for TCP congestion feature.
-  - Added support for TCP Tx retry rate feature.
-  - Added support for cellular state feature.
-  - Added support for Wi-Fi state feature.
-  - Added support for ethernet state feature.
-  - Added support for scan state feature.
-  - Added support for default connection fuction.
-  - Added support for getting the connection related information (e.g,. proxy address, prefix length, IP address) functions have been added
-  - Added support for getting the Wi-Fi related informations (e.g,. BSSID, ESSID, RSSI level, frequency) functions have been added
 - Network Firewall
   - Added support for In-bound/out-bound rule management.
   - Added support for IP, port and protocol type control.
@@ -370,11 +355,6 @@ Release date: May. 31, 2018
   - Added support for rule chain management.
   - Added support for Tunneling functions.
   - Added support for lock/unlock functions.
-- Multipath TCP (In-house only module)
-  - Added new feature for multipath TCP support.
-    - Added a connection API (In-house only) for enabling the multipath TCP function.
-    - Added a connection API (In-house only) for setting the path-manager for multipath TCP.
-    - Added a connection API (In-house only) for setting the scheduling for multipath TCP.
 - TCP Fast Open
   - Added a http API for allowing TCP Fast Open.
 - SoftAP
