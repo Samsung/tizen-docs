@@ -26,15 +26,15 @@ To obtain the information, query a feature or system key.
 
 | [Feature keys](#feature)           |                                |                                  |                                  |
 |------------------------------------|--------------------------------|----------------------------------|----------------------------------|
-| [Account](#account)                | [FM radio](#fmradio)           | [Microphone](#microphone)        | [Sensor](#sensor)                |
-| [Application history](#apphistory) | [Graphics](#graphics)          | [Multimedia](#multimedia)        | [Shell](#shell)                  |
-| [Battery](#battery)                | [Human activity monitor](#ham) | [Multi-point touch](#multipoint) | [Sip](#sip)                      |
-| [Camera](#camera)                  | [Input](#input)                | [Network](#network)              | [Speech](#speech)                |
-| [Consumer IR](#consumer)           | [IOT](#iot)                    | [OAuth 2.0](#oauth2)             | [System setting](#systemsetting) |
-| [Contextual trigger](#trigger)     | [LED](#led)                    | [OpenGL&reg; ES](#opengl)            | [USB](#usb)                      |
-| [Database](#database)              | [Location](#location)          | [Platform](#platformfeat)        | [Vision](#vision)                |
-| [Download](#download)              | [Maps](#maps)                  | [Profile](#profile_feat)         | [Web](#web)                      |
-| [FIDO](#fido)                      | [Media](#media)                | [Screen](#screen)                | -                                |
+| [Account](#account)                | [FM radio](#fmradio)           | [Microphone](#microphone)        | [Security](#security)            |
+| [Application history](#apphistory) | [Graphics](#graphics)          | [Multimedia](#multimedia)        | [Sensor](#sensor)                |
+| [Battery](#battery)                | [Human activity monitor](#ham) | [Multi-point touch](#multipoint) | [Shell](#shell)                  |
+| [Camera](#camera)                  | [Input](#input)                | [Network](#network)              | [Sip](#sip)                      |
+| [Consumer IR](#consumer)           | [IOT](#iot)                    | [OAuth 2.0](#oauth2)             | [Speech](#speech)                |
+| [Contextual trigger](#trigger)     | [LED](#led)                    | [OpenGL&reg; ES](#opengl)        | [System setting](#systemsetting) |
+| [Database](#database)              | [Location](#location)          | [Platform](#platformfeat)        | [USB](#usb)                      |
+| [Download](#download)              | [Maps](#maps)                  | [Profile](#profile_feat)         | [Vision](#vision)                |
+| [FIDO](#fido)                      | [Media](#media)                | [Screen](#screen)                | [Web](#web)                      |
 | [System keys](#system)             |                                |                                  |                                  |
 | [Build](#build)                    | [Model name](#modelname)       | [Sound](#sound)                  | -                                |
 | [Manufacturer](#manufacturer)      | [Platform](#platformsys)       | [TizenID](#tizenid)              | -                                |
@@ -478,6 +478,15 @@ The following table lists the screen feature keys.
 | `http://tizen.org/feature/screen.size.normal.720.1280` | `bool` | The platform returns `true` for this key, if the device supports the 720 x 1280 resolution for the normal screen size.<br>The platform can return `true` for multiple resolution keys. |
 | `http://tizen.org/feature/screen.size.normal.1080.1920` | `bool` | The platform returns `true` for this key, if the device supports the 1080 x 1290 resolution for the normal screen size.<br>The platform can return `true` for multiple resolution keys. |
 | `http://tizen.org/feature/screen.width`  | `int`  | The platform returns the width of the screen in pixels supported by the device for this key. |
+
+The following table lists the security feature keys.
+
+<a name="security"></a>
+**Table: Security feature keys**
+
+| Key                                      | Type   | Description                              |
+|------------------------------------------|--------|------------------------------------------|
+| `http://tizen.org/feature/security.device_certificate` | `bool` | The platform returns `true` for this key, if the device has the Device Certificate its corresponding private key which are used for identifying the device. |
 
 The following table lists the sensor feature keys.
 

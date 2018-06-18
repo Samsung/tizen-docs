@@ -149,6 +149,7 @@
 ## [Cryptographic Operations](/application/native/guides/security/yaca.md)
 ## [Device Policy Management](/application/native/guides/security/dpm.md)
 ## [Malware Scanning and Web Protection](/application/native/guides/security/csr.md)
+## [Device Certificate Manager](/application/native/guides/security/device-certificate-manager.md)
 ## [Security Tips](/application/native/guides/security/security-tip.md)
 
 # Error Handling
