@@ -2,7 +2,7 @@
 
 You can search for content (such as images, videos, and music) located in the local device storage. You can also perform content management tasks, such as viewing and updating content attributes.
 
-The Content API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The Content API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The main features of Content API include:
 
@@ -60,7 +60,7 @@ To browse and search for content directories and content items in directories:
    var manager = tizen.content;
    ```
 
-2. To search for the content directories in the local device, use the `getDirectories()` method of the `ContentManager` interface. The method returns an array of `ContentDirectory` objects (in [mobile](../../api/latest/device_api/mobile/tizen/content.html#ContentDirectory), [wearable](../../api/latest/device_api/wearable/tizen/content.html#ContentDirectory), and [TV](../../api/latest/device_api/tv/tizen/content.html#ContentDirectory) applications).
+2. To search for content directories on the local device, use the `getDirectories()` method of the `ContentManager` interface. The method returns an array of `ContentDirectory` objects (in [mobile](../../api/latest/device_api/mobile/tizen/content.html#ContentDirectory), [wearable](../../api/latest/device_api/wearable/tizen/content.html#ContentDirectory), and [TV](../../api/latest/device_api/tv/tizen/content.html#ContentDirectory) applications).
 
    ```
    function onDirectoryArraySuccess(directories) {
@@ -93,11 +93,12 @@ To browse and search for content directories and content items in directories:
 You can manage content in many ways:
 
 - You can view content item details with the `find()` method.
-- You can update some attributes of a content item, for example its rating, with the `update()` method. For more information on the content attributes, see the Content Full WebIDL Reference (in [mobile](../../api/latest/device_api/mobile/tizen/content.html#full-webidl), [wearable](../../api/latest/device_api/wearable/tizen/content.html#full-webidl), and [TV](../../api/latest/device_api/tv/tizen/content.html#full-webidl) applications).
+- You can update some attributes of a content item, for example its rating, with the `update()` method.  
+   For more information on the content attributes, see the Content Full WebIDL Reference (in [mobile](../../api/latest/device_api/mobile/tizen/content.html#full-webidl), [wearable](../../api/latest/device_api/wearable/tizen/content.html#full-webidl), and [TV](../../api/latest/device_api/tv/tizen/content.html#full-webidl) applications).
 - If a content item is copied or moved, you cannot find it because a scan is not performed automatically. You can retrieve a copied or moved item with the `find()` method after calling the `scanFile()` method.
 - You can create a thumbnail for a content item using the `createThumbnail()` method.
 
-> **Note**
+> **Note**  
 > You can only view (and not update) the read-only attributes.
 
 To view and update content details:
@@ -320,7 +321,8 @@ Learning how to manage list items is a basic playlist management skill:
   });
   ```
 
-- To change the position of a single playlist item (track), use the `move()` method of the `Playlist` interface. The second parameter indicates how much and in which direction the item is moved.Note that before moving the item, first you must retrieve it using the `get()` method.
+- To change the position of a single playlist item (track), use the `move()` method of the `Playlist` interface. The second parameter indicates how much and in which direction the item is moved.  
+   Note that before moving the item, first you must retrieve it using the `get()` method.
 
   ```
   var myItem; /* Assume that it was retrieved using the get() method */
@@ -334,9 +336,10 @@ Learning how to manage list items is a basic playlist management skill:
   });
   ```
 
-  The example above moves the track 2 positions up on the playlist. The second parameter of the `move()` method can be a negative value, which means moving the track up, or a positive value, which means moving the track down. If the value is greater than number of tracks above or below, the item is accordingly moved to the beginning or end of the playlist.
+  The example above moves the track 2 positions up on the playlist. The second parameter of the `move()` method can be a negative value, which means moving the track up, or a positive value, which means moving the track down. If the value is greater than number of tracks above or below, the item is moved accordingly to the beginning or end of the playlist.
 
-- To change the order of all items in the playlist, use the `setOrder()` method. This feature is useful when sorting the playlist.Following example reverses the order of the playlist items. For the `setOrder()` method to work, you must pass all items from the playlist. If an item is missing or an item from a different playlist is included, the `InvalidValuesError` exception is returned in the error callback.
+- To change the order of all items in the playlist, use the `setOrder()` method. This feature is useful when sorting the playlist.  
+   Following example reverses the order of the playlist items. For the `setOrder()` method to work, you must pass all items from the playlist. If an item is missing or an item from a different playlist is included, the `InvalidValuesError` exception is returned in the error callback.
 
   1. Get all tracks using the `get()` method.
 

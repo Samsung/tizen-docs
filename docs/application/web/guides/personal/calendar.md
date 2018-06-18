@@ -1,6 +1,6 @@
 # Calendar
 
-You can manage your schedule and tasks in calendars. A calendar is a collection of events or tasks, depending upon the calendar type. Each event or task has a series of attributes, such as purpose, starting time, and duration.
+You can manage your schedule and tasks in calendars. A calendar is a collection of events or tasks, depending on the calendar type. Each event or task has a series of attributes, such as purpose, starting time, and duration.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -65,7 +65,8 @@ To create a new calendar:
    var myCalendar = null;
    ```
 
-2. Define a success callback for the `getAccounts()` method. The callback receives a list of `Account` objects (in [mobile](../../api/latest/device_api/mobile/tizen/account.html#Account) and [wearable](../../api/latest/device_api/wearable/tizen/account.html#Account) applications). Use the first account ID to construct a new `Calendar` object (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#Calendar) applications).   Add the new calendar to the system using the `addCalendar()` method of the `CalendarManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarManager) applications):
+2. Define a success callback for the `getAccounts()` method. The callback receives a list of `Account` objects (in [mobile](../../api/latest/device_api/mobile/tizen/account.html#Account) and [wearable](../../api/latest/device_api/wearable/tizen/account.html#Account) applications). Use the first account ID to construct a new `Calendar` object (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#Calendar) applications).  
+   Add the new calendar to the system using the `addCalendar()` method of the `CalendarManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarManager) applications):
 
    ```
    function getAccountsSuccess(accounts) {
@@ -91,19 +92,22 @@ You must retrieve the calendar object of the applicable type from the applicable
 
 To access the device calendars and retrieve calendar objects:
 
-- To retrieve the default calendar, use the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarManager) applications). The following example retrieves the event-type default calendar:
+- To retrieve the default calendar, use the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarManager) applications).  
+  The following example retrieves the event-type default calendar:
 
   ```
   tizen.calendar.getDefaultCalendar('EVENT');
   ```
 
-- To retrieve all the available calendars as an array, use the `getCalendars()` method. The following example retrieves all event-type calendars:
+- To retrieve all the available calendars as an array, use the `getCalendars()` method.  
+  The following example retrieves all event-type calendars:
 
   ```
   tizen.calendar.getCalendars('EVENT', calendarListCallback, errorCallback);
   ```
 
-- To retrieve a special calendar, which combines events (or tasks) from all calendars of the same type, use the `getUnifiedCalendar()` method of the `CalendarManager` interface. The following example retrieves a unified event-type calendar:
+- To retrieve a special calendar, which combines events (or tasks) from all calendars of the same type, use the `getUnifiedCalendar()` method of the `CalendarManager` interface.  
+   The following example retrieves a unified event-type calendar:
 
   ```
   tizen.calendar.getUnifiedCalendar('EVENT');
@@ -194,8 +198,8 @@ To add events to a calendar in the batch mode:
    });
    ```
 
-> **Note**  
-> To keep the example as simple as possible, the array above includes only 1 event.
+   > **Note**  
+   > To keep the example as simple as possible, the array above includes only 1 event.
 
 3. Use the `addBatch()` method of the `Calendar` object (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#Calendar) applications) to add the events in the array to the calendar:
 
@@ -203,8 +207,8 @@ To add events to a calendar in the batch mode:
    calendar.addBatch([ev]);
    ```
 
-> **Note**  
-> The `addBatch()` method is asynchronous, and its callbacks must be used to react to the success or failure of the operation.
+   > **Note**  
+   > The `addBatch()` method is asynchronous, and its callbacks must be used to react to the success or failure of the operation.
 
 ### Managing a Single Event
 

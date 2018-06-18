@@ -47,17 +47,17 @@ To use the TAU Globalize utility in your application:
 
 <table>
   <tr><th colspan="2">Folder structure</th>
-  <th> Description</th></tr>
-  <tr><td rowspan="7">![Globalize folder structure](./media/globalize_folder_structure.png) </td>
-  <td rowspan="7"> ![Globalize main folder](./media/globalize_folder_structure_main.png)</td>
-  <td> `cldr/`: Copy the cldr.js library in this folder. </td>
+  <th>Description</th></tr>
+  <tr><td rowspan="7"> <img alt="Globalize folder structure" src="./media/globalize_folder_structure.png" /> </td>
+  <td rowspan="7"> <img alt="Globalize main folder" src="./media/globalize_folder_structure_main.png" > </td>
+  <td> <code>cldr/</code>: Copy the cldr.js library in this folder. </td>
   </tr>
-  <tr><td> `cldr-data/`: Copy the cldr-data files in this folder.<br>`cldr-data/main`: Copy the languages to be supported in this folder.<br><br> **Note**<br>	Do not copy all languages; copy only the ones you need. </td></tr>
-  <tr><td> `globalize/`: Copy the Globalize library in this folder.</td></tr>
-  <tr><td>`locale/`: Make the custom locale string in this folder.  </td></tr>
-  <tr><td> `script/`: JavaScript files.      </td></tr>
-  <tr><td> `style/`: CSS, image, and other style related files.</td></tr>
-  <tr><td> `view/`: HTML files           </td></tr>
+  <tr><td> <code>cldr-data/</code>: Copy the cldr-data files in this folder.<br><code>cldr-data/main</code>: Copy the languages to be supported in this folder.<br><br> <strong>Note</strong><br>	Do not copy all languages; copy only the ones you need. </td></tr>
+  <tr><td> <code>globalize/</code>: Copy the Globalize library in this folder.</td></tr>
+  <tr><td> <code>locale/</code>: Make the custom locale string in this folder. </td></tr>
+  <tr><td> <code>script/</code>: JavaScript files.  </td></tr>
+  <tr><td> <code>style/</code>: CSS, image, and other style related files.</td></tr>
+  <tr><td> <code>view/</code>: HTML files </td></tr>
 </table>
 
 3. Set the locale using the following example code:
@@ -87,12 +87,12 @@ To use the TAU Globalize utility in your application:
 
    **Table: Locale setting methods**
 
-| Order | Locale setting methods      |
- | ----- | --------------------------- |
- | 1     | `setLocale(LocaleId)`       |
- | 2     | `<body lang="ko-KR">`       |
- | 3     | `window.navigator.language` |
- | 4     | Default locale "en"         |
+   | Order | Locale setting methods      |
+   | ----- | --------------------------- |
+   | 1     | `setLocale(LocaleId)`       |
+   | 2     | `<body lang="ko-KR">`       |
+   | 3     | `window.navigator.language` |
+   | 4     | Default locale "en"         |
 
 4. Make sure that you have all required CLDR files.            
 
@@ -113,7 +113,7 @@ To use the TAU Globalize utility in your application:
 
    **Table: CLDR requirements**
 
-| Module        | Required CLDR JSON files                 |
+   | Module        | Required CLDR JSON files                 |
    | ------------- | ---------------------------------------- |
    | Core module   | `cldr/supplemental/likelySubtags.json`   |
    | Date module   | `cldr/main/locale/ca-gregorian.json`<br>                          `cldr/main/locale/timeZoneNames.json`   <br>                     `cldr/supplemental/timeData.json`     <br>             `cldr/supplemental/weekData.json`     <br>         CLDR JSON files from the number module |
@@ -226,7 +226,8 @@ The following code snippets show how to use the TAU Globalize utility methods:
      });                                  
      ```
 
-- `messageFormatter()`:            This method returns a function that formats a message using the ICU message format pattern. For more information, see [message-formatter](https://github.com/jquery/globalize/blob/master/doc/api/message/message-formatter.md).                            
+- `messageFormatter()`:  
+   This method returns a function that formats a message using the ICU message format pattern. For more information, see [message-formatter](https://github.com/jquery/globalize/blob/master/doc/api/message/message-formatter.md).                            
 
   1. Create a locale resource in the locales path:
 
@@ -284,7 +285,10 @@ The following examples show how to use the locale-specific CSS:
   });
   ```
 
-- The following example has a DOM of body with a locale-specific CSS named `ui-script-direction-rtl`:`<body class="ui-script-direction-rtl">`        
+- The following example has a DOM of body with a locale-specific CSS named `ui-script-direction-rtl`:
+  ```
+  <body class="ui-script-direction-rtl">
+  ```
 
 - The following example uses the locale-specific CSS to switch on the RTL feature for a UI component:
 

@@ -16,11 +16,11 @@ The main storage features are:
 
   Enables you to use session storage and local storage.
 
-- [HTML5 Application caches](./appcache.md)  
+- [HTML5 Application caches](./appcache.md) **in mobile and TV applications only**
 
   Enables you to activate project resource caching, and manage the cached resources.
 
-- [Web SQL Database](./websql.md) **in mobile and TV applications only**
+- [Web SQL Database](./websql.md) **in mobile applications only**
 
   Enables you to create databases and access them using SQL statements.
 

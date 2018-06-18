@@ -29,8 +29,9 @@ The available operations depend on the current radio state. To get information a
 Starting and stopping an FM radio and changing the frequency is a basic FM radio management skill:
 
 1. To start the FM radio, use the `start()` method of the [FMRadioManager](../../api/latest/device_api/mobile/tizen/fmradio.html#FMRadioManager) interface:
-> **Note**
-> Always check the current state before using any state-dependent functions.
+
+   > **Note**  
+   > Always check the current state before using any state-dependent functions.
 
    ```
    var radioState = tizen.fmradio.state;

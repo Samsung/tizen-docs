@@ -2,7 +2,7 @@
 
 You can manage ZIP archives and operate on the archived files.
 
-The Archive API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The Archive API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The main features of the Archive API include:
 
@@ -28,10 +28,10 @@ To start any kind of ZIP operation (packing or unpacking), you must first call t
 
 | Mode | Description                              |
 | ---- | ---------------------------------------- |
-| `r`  | Use this mode to extract or get information about the archive file content.     The file must exist, or the `NotFoundError` exception occurs.     When the archive file is opened in this mode, the `add()` method is not available. |
-| `w`  | Use this mode to create an archive file and add files to it.     If the file does not exist, it is created. If it exists and the `overwrite` option is `true`, the existing file is overwritten with an empty archive. If the file exists and the `overwrite` option is `false`, the error callback is invoked.     When the archive file is opened in this mode, the `getEntries()`, `getEntryByName()`, and `extractAll()` methods are not available. |
-| `rw` | Use this mode to zip or unzip an archive file.     If the file does not exist, it is created. If it exists and the `overwrite` option is `true`, the existing file is overwritten with an empty archive. If the file exists and the `overwrite` option is `false`, the existing content is preserved, and both adding and extracting are available. |
-| `a`  | Use this mode to add new files to an archive file.     If the file does not exist, it is created. If it exists, the previous content of the archive file is preserved and new files can be added.     When the archive file is opened in this mode, the `getEntries()`, `getEntryByName()`, and `extractAll()` methods are not available. |
+| `r`  | Use this mode to extract or get information about the archive file content.<br> The file must exist, or the `NotFoundError` exception occurs. <br> When the archive file is opened in this mode, the `add()` method is not available. |
+| `w`  | Use this mode to create an archive file and add files to it. <br> If the file does not exist, it is created. If it exists and the `overwrite` option is `true`, the existing file is overwritten with an empty archive. If the file exists and the `overwrite` option is `false`, the error callback is invoked. <br> When the archive file is opened in this mode, the `getEntries()`, `getEntryByName()`, and `extractAll()` methods are not available. |
+| `rw` | Use this mode to zip or unzip an archive file. <br> If the file does not exist, it is created. If it exists and the `overwrite` option is `true`, the existing file is overwritten with an empty archive. If the file exists and the `overwrite` option is `false`, the existing content is preserved, and both adding and extracting are available. |
+| `a`  | Use this mode to add new files to an archive file. <br> If the file does not exist, it is created. If it exists, the previous content of the archive file is preserved and new files can be added. <br> When the archive file is opened in this mode, the `getEntries()`, `getEntryByName()`, and `extractAll()` methods are not available. |
 
 ## Prerequisites
 

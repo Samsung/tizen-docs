@@ -4,7 +4,7 @@ You can manage installed widgets and widget instances in various ways, such as r
 
 This feature is supported in mobile and wearable applications only.
 
-> **Note**
+> **Note**  
 > Do not use "widget" as a name for any of your global variables, as it is the name of a global W3C object.
 
 The main features of the Widget Service API include:
@@ -108,7 +108,7 @@ To retrieve the widget name:
 
 Learning how to retrieve information about installed widget instances makes the Widget Service API more useful:
 
-> **Note**
+> **Note**  
 > The `WidgetInstance.id` value (in [mobile](../../api/latest/device_api/mobile/tizen/widgetservice.html#WidgetInstance::id) and [wearable](../../api/latest/device_api/wearable/tizen/widgetservice.html#WidgetInstance::id) applications) is volatile and can change after device reboot.
 
 1. Define a success handler implementing the `WidgetInstancesCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/widgetservice.html#WidgetInstancesCallback) and [wearable](../../api/latest/device_api/wearable/tizen/widgetservice.html#WidgetInstancesCallback) applications). Optionally, you can specify an error handler too.
@@ -203,7 +203,7 @@ Using the `WidgetInstance` interface (in [mobile](../../api/latest/device_api/mo
 - Change the update period of the instance using the `changeUpdatePeriod()` method.
 - Send or get content to and from the widget instance.
 
-> **Note**
+> **Note**  
 > These features are not supported by Web widgets. You can only use them in Web applications to manage installed widgets. For more information, see [Web Device API supported by Widget Engine](../../api/latest/wearable_widget/web_widget.html#user-content-web-device-api).
 
 <a name="period"></a>

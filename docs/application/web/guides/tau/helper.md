@@ -122,7 +122,6 @@ You can use the following methods with the SnapListMarqueeStyle:
        var list = document.getElementById('snapList'),
            listHelper;
 
-
        /* Create the helper */
        listHelper = tau.helper.SnapListMarqueeStyle.create(list, {marqueeDelay: 1000});
     </script>

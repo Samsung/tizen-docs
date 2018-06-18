@@ -9,7 +9,7 @@ To switch to the fullscreen and back:
 - With the `webkitRequestFullScreen()` method, you can convert a specific element to fullscreen.
 - With the `webkitCancelFullScreen()` method, you can cancel the fullscreen mode.
 
-> **Note**	
+> **Note**  
 > Tizen supports the WebKit-based Fullscreen API. When using the Fullscreen API, you must include the webkit prefix.
 
 ## Using the Fullscreen Mode

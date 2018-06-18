@@ -41,7 +41,7 @@ The following table lists the levels you can request.
 | `SCREEN_NORMAL` | In this state, the screen uses the default brightness the user has configured for the device. When this state is requested, the device does not go to the `SCREEN_DIM` state automatically. |
 | `CPU_AWAKE`     | In this state, the CPU is awake. When this state is requested, the device does not go to `SLEEP` state automatically. |
 
-> **Note**
+> **Note**  
 > If you request a new power state without releasing the previous state, the Tizen platform follows the highest minimum state requested.
 
 To request and release the power state:

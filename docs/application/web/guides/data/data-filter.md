@@ -2,7 +2,7 @@
 
 When managing large amounts of data, you can create filters to search for specific information, and make queries to receive only the information you are looking for. You can use various filter attributes and sort the received data.
 
-The Tizen API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The Tizen API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The main data handling features of the Tizen API include:
 
@@ -63,9 +63,9 @@ The main data handling features of the Tizen API include:
 
 2.  Call the `find()` method of the `Calendar` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#Calendar) applications) to find events. The filter (`dateRangeFilter`) you created is included as a parameter.
 
-   ```
-   tizen.calendar.getDefaultCalendar('EVENT').find(successCB, errorCB, dateRangeFilter);
-   ```
+    ```
+    tizen.calendar.getDefaultCalendar('EVENT').find(successCB, errorCB, dateRangeFilter);
+    ```
 
 ## Creating Composite Filters
 
@@ -92,9 +92,9 @@ The main data handling features of the Tizen API include:
 
 2.  Call the `find()` method of the `AddressBook` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#AddressBook) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#AddressBook) applications) to find matching contacts. The filter (`nameCompositeFilter`) you created is included as a parameter.
 
-   ```
-   tizen.contact.getDefaultAddressBook().find(successCB, errorCB, nameCompositeFilter);
-   ```
+    ```
+    tizen.contact.getDefaultAddressBook().find(successCB, errorCB, nameCompositeFilter);
+    ```
 
 ## Using Sorting Modes
 
@@ -116,12 +116,17 @@ The following sorting modes are supported:
 
 2.  Call the `find()` method of the `AddressBook` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#AddressBook) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#AddressBook) applications) to find matching contacts. In this example, the filter parameter in the `find()` method is defined as `null`, which means that the method retrieves all contacts in the address book.
 
-   ```
-   tizen.contact.getDefaultAddressBook().find(successCB, errorCB, null, sortMode);
-   ```
+    ```
+    tizen.contact.getDefaultAddressBook().find(successCB, errorCB, null, sortMode);
+    ```
 
-> **Note**
-> If you use a type attribute as a sort mode parameter, the sorting is not performed alphabetically since the attribute values are stored normally after the type conversion in the platform implementation.For example, if the `ContentType` enum (in [mobile](../../api/latest/device_api/mobile/tizen/content.html#ContentType), [wearable](../../api/latest/device_api/wearable/tizen/content.html#ContentType), and [TV](../../api/latest/device_api/tv/tizen/content.html#ContentType) applications) is the type attribute and the sorting order is `"DESC"`, the sorting result is ordered according to the listed enum order:ImageVideoAudioOther
+> **Note**  
+> If you use a type attribute as a sort mode parameter, the sorting is not performed alphabetically since the attribute values are stored normally after the type conversion in the platform implementation.  
+> For example, if the `ContentType` enumeration (in [mobile](../../api/latest/device_api/mobile/tizen/content.html#ContentType), [wearable](../../api/latest/device_api/wearable/tizen/content.html#ContentType), and [TV](../../api/latest/device_api/tv/tizen/content.html#ContentType) applications) is the type attribute and the sorting order is `"DESC"`, the sorting result is ordered according to the listed enumerator order:
+> - Image
+> - Video
+> - Audio
+> - Other
 
 ## Making Complex Queries Using Filters
 
@@ -385,7 +390,7 @@ The following table lists the filter attributes related to the `findFolders()` m
 | `type`           | No                         | No                               |
 | `synchronizable` | No                         | No                               |
 
-> **Note**
+> **Note**  
 > The `FULLSTRING` value of the `FilterMatchFlag` enumerator (in [mobile](../../api/latest/device_api/mobile/tizen/tizen.html#FilterMatchFlag), [wearable](../../api/latest/device_api/wearable/tizen/tizen.html#FilterMatchFlag), and [TV](../../api/latest/device_api/tv/tizen/tizen.html#FilterMatchFlag) applications) is not supported and returns an error callback.
 
 ## Related Information

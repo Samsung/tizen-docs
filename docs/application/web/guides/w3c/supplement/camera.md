@@ -52,7 +52,9 @@ To take advantage of the camera features, you must learn to access the camera de
 
 To take advantage of the camera features, you must learn to manage the camera:
 
-- You can record videos with the `cameraControl` object.   Use the `start()` to start the recording, and the `stop()` method to stop the recording:
+- You can record videos with the `cameraControl` object.
+
+   Use the `start()` to start the recording, and the `stop()` method to stop the recording:
 
   ```
   cameraControl.recorder.start(recordingStartSuccess, recordingStartError);
@@ -76,8 +78,8 @@ To take advantage of the camera features, you must learn to manage the camera:
                                        recorderSettingErrorCallback);
   ```
 
- > **Note**
- > If a setting cannot be set, the error callback is called to resolve the issue.	
+  > **Note**  
+  > If a setting cannot be set, the error callback is called to resolve the issue.
 
 ## Deallocating the Camera Preview Stream
 
