@@ -393,10 +393,12 @@ To read album information, define a callback for the `media_album_foreach_album_
 
    A handle to the record is passed as a parameter. The return value determines whether the iterative calls of the callback continue (`true`) or are stopped (`false`).
 
-2. Once you have the album handle (`media_album_h`), you can read the album information:Use the `media_album_get_album_id()`, `media_album_get_name()`, and `media_album_get_artist()` functions to read the album ID, name, and artist:
+2. Once you have the album handle (`media_album_h`), you can read the album information:
 
-    ```
-      media_content_error_e ret = MEDIA_CONTENT_ERROR_NONE;
+   - Use the `media_album_get_album_id()`, `media_album_get_name()`, and `media_album_get_artist()` functions to read the album ID, name, and artist:
+
+     ```
+        media_content_error_e ret = MEDIA_CONTENT_ERROR_NONE;
 
         int id = -1;
         char *name = NULL;
@@ -427,18 +429,18 @@ To read album information, define a callback for the `media_album_foreach_album_
             dlog_print(DLOG_DEBUG, LOG_TAG, "Artist: %s\n", artist);
             free(artist);
         }
-    ```
+      ```
 
-    > **Note**
-    >
-    > Free the `name` and `artist` variables after use.
-    >
-    > Get the media item count in the album with the `media_album_get_media_count_from_db()` function.
-    >
-    > The second parameter is the filter. If it is set to `NULL`, all media is counted.
+      > **Note**
+      >
+      > Free the `name` and `artist` variables after use.
 
-    ```
-       /* Get media count in the album */
+    - Get the media item count in the album with the `media_album_get_media_count_from_db()` function.
+
+      The second parameter is the filter. If it is set to `NULL`, all media is counted.
+
+      ```
+        /* Get media count in the album */
         /* Filter is NULL - all media items are counted */
         ret = media_album_get_media_count_from_db(id, NULL, &count);
         if (ret != MEDIA_CONTENT_ERROR_NONE)
@@ -447,8 +449,8 @@ To read album information, define a callback for the `media_album_foreach_album_
             dlog_print(DLOG_DEBUG, LOG_TAG, "Media count in this album: %d\n", count);
 
         return true;
-    }
-    ```
+      }
+      ```
 
 <a name="findinginfo"></a>
 ## Retrieving Album Content
@@ -630,7 +632,7 @@ To read bookmark information, define a callback for the `media_info_foreach_book
               dlog_print(DLOG_DEBUG, LOG_TAG, "Marked time [s]: %d\n", (int) time);
           }
 
-         return true;
+          return true;
       }
       ```
 
@@ -727,7 +729,7 @@ To use a filter to find media items that satisfy certain criteria or to modify t
                           MEDIA_CONTENT_COLLATE_DEFAULT);
    ```
 
-   The second and fourth parameters determine the order and collation types, and the available types are defined in the enumerators `media_content_order_e` (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#gaa4e5eece5a509c7414afb96e7a2c3fa2) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#gaa4e5eece5a509c7414afb96e7a2c3fa2) applications) and `media_content_collation_e` (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#ga31a20f732fe262e81f112416bfefe13c) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#ga31a20f732fe262e81f112416bfefe13c)applications).
+   The second and fourth parameters determine the order and collation types, and the available types are defined in the enumerators `media_content_order_e` (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#gaa4e5eece5a509c7414afb96e7a2c3fa2) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#gaa4e5eece5a509c7414afb96e7a2c3fa2) applications) and `media_content_collation_e` (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#ga31a20f732fe262e81f112416bfefe13c) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#ga31a20f732fe262e81f112416bfefe13c) applications).
 
    To read the order settings of an existing filter, use the `media_filter_get_order()` function:
 
@@ -742,20 +744,22 @@ To use a filter to find media items that satisfy certain criteria or to modify t
 
 4. Set an offset using the `media_filter_set_offset()` function.
 
-   The offset allows you to limit the results to a specific subset. For example, if you sort the items by size in an ascending order and set the offset to 10, the 10 smallest items are not included in the results.The following example sets an offset that returns results starting from the beginning (offset 0), and returns a maximum of 5 results:
+   The offset allows you to limit the results to a specific subset. For example, if you sort the items by size in an ascending order and set the offset to 10, the 10 smallest items are not included in the results.
 
-    ```
-    media_filter_set_offset(filter, 0, 5);
-    ```
+   The following example sets an offset that returns results starting from the beginning (offset 0), and returns a maximum of 5 results:
 
-    To read the offset settings of an existing filter, use the `media_filter_get_offset()` function:
+   ```
+   media_filter_set_offset(filter, 0, 5);
+   ```
 
-    ```
-    int check_offset = 0;
-    int check_count = 0;
+   To read the offset settings of an existing filter, use the `media_filter_get_offset()` function:
 
-    media_filter_get_offset(filter, &check_offset, &check_count);
-    ```
+   ```
+   int check_offset = 0;
+   int check_count = 0;
+
+   media_filter_get_offset(filter, &check_offset, &check_count);
+   ```
 
 5. When the filter is ready and its properties defined, you can use it in various media foreach functions to find different media items.
 
@@ -894,20 +898,20 @@ To read media folder information, define a callback for the `media_folder_foreac
      The second parameter is the filter. If it is set to `NULL`, all media is counted.
 
      ```
-        int item_count = -1;
-        ret = media_folder_get_media_count_from_db(folder_id, NULL, &item_count);
-        if (MEDIA_CONTENT_ERROR_NONE != ret)
-            /* Error handling */
-        else
-            dlog_print(DLOG_DEBUG, LOG_TAG,
-                       "Number of media contents: %d\n", item_count);
-        free(folder_id);
-        return true;
-     }
-     ```
+         int item_count = -1;
+         ret = media_folder_get_media_count_from_db(folder_id, NULL, &item_count);
+         if (MEDIA_CONTENT_ERROR_NONE != ret)
+             /* Error handling */
+         else
+             dlog_print(DLOG_DEBUG, LOG_TAG,
+                        "Number of media contents: %d\n", item_count);
+         free(folder_id);
+         return true;
+      }
+      ```
 
-	 > **Note**
-     >
+ 	 > **Note**
+      >
      > Free the `folder_id` value after it is used for the `media_folder_get_media_count_from_db()` function.
 
 <a name="folder_content"></a>
@@ -1804,7 +1808,7 @@ The following tables list the information available about the media files.
 | `Size`            | File size of the media content           |
 | `Added time`      | Time the media content was added to the database |
 | `Modified time`   | Last modification time of the media content |
-| `Timeline`        | Time the media content was createdYou can use this value to sort the content. |
+| `Timeline`        | Time the media content was created<br> You can use this value to sort the content. |
 | `Thumbnail path`  | Path of the stored thumbnail image of the media content |
 | `Description`     | Description of the media content         |
 | `Longitude`       | Longitude of the media content           |
@@ -1833,10 +1837,10 @@ For metadata of an audio file, call the `media_info_get_audio()` function with t
 
 | Metadata name    | Description                              |
 |------------------|------------------------------------------|
-| `Media ID`       | Media ID of the audio contentThis value is same as the media ID in general information. |
+| `Media ID`       | Media ID of the audio content<br> This value is same as the media ID in general information. |
 | `Album`          | Album information for the audio content  |
 | `Artist`         | Artist of the audio content              |
-| `Album Artist`   | Album artist of the audio contentThe artist and album artist can be the same. |
+| `Album Artist`   | Album artist of the audio content<br> The artist and album artist can be the same. |
 | `Genre`          | Genre of the audio content               |
 | `Composer`       | Composer of the audio content            |
 | `Year`           | Year the audio content was created       |
@@ -1844,7 +1848,7 @@ For metadata of an audio file, call the `media_info_get_audio()` function with t
 | `Copyright`      | Copyright information for the audio content |
 | `Track number`   | Track number of the audio content        |
 | `Bit rate`       | Bit rate of the audio content            |
-| `Bit per sample` | Bit per sample of the audio contentThe bit per sample is the same as the sample format. The sample format is the number of digits in the digital representation of each sample. |
+| `Bit per sample` | Bit per sample of the audio content<br> The bit per sample is the same as the sample format. The sample format is the number of digits in the digital representation of each sample. |
 | `Sample rate`    | Sample rate of the audio content         |
 | `Channel`        | Channel information for the audio content |
 | `Duration`       | Duration of the audio content            |
@@ -1855,7 +1859,7 @@ For metadata of an image file, call the `media_info_get_image()` function with t
 
 | Metadata name   | Description                              |
 |-----------------|------------------------------------------|
-| `Media ID`      | Media ID of the imageThis value is the same as the media ID in the general information. |
+| `Media ID`      | Media ID of the image<br> This value is the same as the media ID in the general information. |
 | `Width`         | Width of the image                       |
 | `Height`        | Height of the image                      |
 | `Exposure time` | Exposure time of the image               |
@@ -1863,9 +1867,7 @@ For metadata of an image file, call the `media_info_get_image()` function with t
 | `ISO`           | ISO of the image                         |
 | `Model`         | Model name of the camera that created the image |
 | `Orientation`   | Orientation of the image                 |
-| `Date taken`    | Time the image was createdYou can get this information from the EXIF tag. If there is no EXIF tag for the image, set the created time in the file system. |
-| `Is burstshot`  | Check flag for a burst shot of the imageThe burst shot is a continuous shooting mode. |
-| `Burstshot ID`  | ID of a burst shot imageAssign the same ID to the burst shooting mode. |
+| `Date taken`    | Time the image was created<br> You can get this information from the EXIF tag. If there is no EXIF tag for the image, set the created time in the file system. |
 
 For metadata of a video file, call `withmedia_info_get_video()` function with the media handle.
 
@@ -1873,7 +1875,7 @@ For metadata of a video file, call `withmedia_info_get_video()` function with th
 
 | Metadata name   | Description                              |
 |-----------------|------------------------------------------|
-| `Media ID`      | Media ID of the video contentThis value is same as the media ID in the general information. |
+| `Media ID`      | Media ID of the video content<br> This value is same as the media ID in the general information. |
 | `Album`         | Album information for the video content  |
 | `Artist`        | Artist of the video content              |
 | `Album artist`  | Album artist of the video content        |

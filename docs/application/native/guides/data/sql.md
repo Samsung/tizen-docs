@@ -18,7 +18,8 @@ The main features of the Sqlite API include:
 
 This guide only covers the basics of encryption and database usage. For more information, see the [OpenSSL](http://www.openssl.org) and [SQLite](http://www.sqlite.org) Web pages.
 
-> **Note**  
+> **Note**
+>
 > While operating with real data, make sure that you fulfill all security requirements. This guide demonstrates how to use the library APIs on Tizen, but does not show how to perform fully secure encryption.
 
 To prepare the database:
@@ -68,9 +69,9 @@ To prepare the database:
       storage_get_directory(internal_storage_id, STORAGE_DIRECTORY_DOCUMENTS, &document_path);
       snprintf(file_path, size, "%s/test.db", document_path);
       free(document_path);
-  
+
       sqlite3_open(file_path, &db);
-  
+
       free(file_path);
       ```
 
@@ -177,7 +178,9 @@ To store encrypted data:
 
         An initial vector can be used in different hash functions. In this example, only the first byte of the initial vector is used as an iteration variable for a hash algorithm.
 
-   	  - Generate the encryption key using the `AES_set_encrypt_key()` function.The second parameter defines the AES key length. Check the actual recommended length and encoding type before use. This example uses AES 256 (defined in [Preparing the Database](#prepare)).
+   	  - Generate the encryption key using the `AES_set_encrypt_key()` function.
+
+        The second parameter defines the AES key length. Check the actual recommended length and encoding type before use. This example uses AES 256 (defined in [Preparing the Database](#prepare)).
 
       - Encrypt the data with the `AES_encrypt()` function.
 
@@ -198,9 +201,9 @@ To store encrypted data:
            unsigned char buf[BUFLEN];
            unsigned int retlen;
            int x;
-   
+
            memset(buf, 0x00, BUFLEN);
-   
+
            PKCS5_PBKDF2_HMAC_SHA1((char *)password,
                                   sizeof(password)/sizeof(unsigned char),
                                   localsalt,
@@ -208,25 +211,27 @@ To store encrypted data:
                                   iter,
                                   key_len,
                                   key);
-   
+
            AES_set_encrypt_key(key, key_len, &encryption_key);
            AES_encrypt((unsigned char *)in, (unsigned char *)buf, &encryption_key);
-   
+
            msgbuff = base64_encode(buf, 16, &retlen);
-   
+
            memcpy(buf, msgbuff, retlen);
            buf[retlen + 1] = 0x00;
            free(msgbuff);
-   
+
            memcpy(out, buf, retlen + 1);
-   
+
            for (x = 0; buf[x] != 0x00; x++);
-   
+
            return x;
        }
        ```
 
-   2. Execute the database insertion with the `InsertRecord()` function.To insert data to the database, use the `sqlite3_exec()` function. A query is prepared with common C functions. The encrypted variable is stored in the database and indicates whether the DATA field in the database is encrypted.
+   2. Execute the database insertion with the `InsertRecord()` function.
+
+      To insert data to the database, use the `sqlite3_exec()` function. A query is prepared with common C functions. The encrypted variable is stored in the database and indicates whether the DATA field in the database is encrypted.
 
       ```
       static int
@@ -238,22 +243,22 @@ To store encrypted data:
           snprintf(sqlbuff, BUFLEN, "INSERT INTO EncryptedData
                    VALUES(\'%s\', %d, \'%s\', \'%s\', %d, NULL);",
                    msg, encrypted, salt, iv, part);
-  
+
           ret = sqlite3_exec(db, sqlbuff, callback, 0, &ErrMsg);
           if (ret) {
               dlog_print(DLOG_DEBUG, LOG_TAG, "Error: %s\n", ErrMsg);
               sqlite3_free(ErrMsg);
           }
-  
+
           return 0;
       }
       ```
-  
+
       To store longer messages (more than 16 characters), split them into shorter parts. In the following example, the message is divided into blocks 16 characters long. Each block is tagged by its own number with a `parts` variable, and the tag is stored in the database in the `PART` field. Each block is then stored in its own record to simplify the decoding procedure.
-  
+
       ```
       ret = InsertMessage((unsigned char *)text);
-   
+
       static int
       InsertMessage(unsigned char* text)
       {
@@ -265,28 +270,28 @@ To store encrypted data:
           int parts = 0;
           int pos;
           char membuf[17];
-   
+
           for (len = 0; text[len] != 0x00; len++);
-   
+
           for (pos = 0; (len - pos) > 16; pos += 16) {
               memcpy(membuf, &text[pos], 16);
               membuf[16] = 0x00;
-   
+
               EncryptMsg((char *)membuf, encrypted_out, password, salt, iv);
-   
+
               for (x = 0; encrypted_out[x] != 0x00; x++);
-   
+
               InsertRecord(encrypted_out, 1, parts, x);
-   
+
               parts++;
           }
-   
+
           if (len - pos > 0) {
               retlen = EncryptMsg((char *)&text[pos],
                                   encrypted_out, password, salt, iv);
               InsertRecord(encrypted_out, 1, parts, retlen);
           }
-   
+
           return 0;
       }
       ```

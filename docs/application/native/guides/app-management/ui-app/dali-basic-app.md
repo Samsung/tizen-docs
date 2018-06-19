@@ -64,13 +64,14 @@ To create a DALi basic UI application:
 1. Initialize the application:
 
    1. To use the functions and data types of the DALi API, (in [mobile](../../../api/mobile/latest/group__dali.html) and [wearable](../../../api/wearable/latest/group__dali.html) applications), include the `<dali-toolkit/dali-toolkit.h>` header file in your application:
-   ```
-   #include <dali-toolkit/dali-toolkit.h>
-   ```
+      ```
+      #include <dali-toolkit/dali-toolkit.h>
+      ```
    2. Use the following 2 `using` directives for convenience, because all DALi APIs are contained in either `Dali` or `Dali::Toolkit` namespace:
-   ```
-   using namespace Dali;using namespace Dali::Toolkit;
-   ```
+      ```
+      using namespace Dali;
+      using namespace Dali::Toolkit;
+      ```
 
 2. Create the `Dali::Application` class instance to initialize and set up DALi:
    ```

@@ -70,7 +70,8 @@ The following place search request types are provided:
 
 After performing the [place service request](#use_search_place), you receive the place search response. You can [parse the place search response](#place) to use its details. The response contains structured place information consisting of, for example, a place ID, name and URL, address, geographical location and distance from the center of the search area, place category, rating, review, and image.
 
-> **Note**  
+> **Note**
+>
 > Depending on the map provider, some types of place information can be unavailable.
 
 <a name="search_route"></a>
@@ -83,7 +84,8 @@ The following route search request types are provided:
 
 After performing the [route service request](#use_search_route), you receive the route search response. You can [parse the route calculation response](#route) to use its details. The response contains structured route information consisting of, for example, a route ID, geographical coordinates of the start and destination points, route bounding box, transportation mode, and total distance and duration.
 
-> **Note**  
+> **Note**
+>
 > Depending on the map provider, the route can be presented as a list of geographical points or segments. The segment list can also be presented as a list of geographical points or maneuvers.
 
 <a name="response"></a>
@@ -856,7 +858,9 @@ To parse route data:
    - To obtain the list of route segments, use the `maps_route_foreach_segment()` function:
 
      ```
-     error = maps_route_foreach_segment(route, __maps_route_segment_cb, user_data);if (error != MAPS_ERROR_NONE)    /* Error handling */`
+     error = maps_route_foreach_segment(route, __maps_route_segment_cb, user_data);
+     if (error != MAPS_ERROR_NONE)
+         /* Error handling */`
      ```
 
      Implement the `__maps_route_segment_cb()` callback:

@@ -177,34 +177,32 @@ To control haptic devices:
 
       The function opens a haptic-vibration device and returns the handle to it. It makes a connection to the vibrator.
 
-        ```
-        int error;
-        haptic_device_h handle;
-        error = device_haptic_open(0, &handle);
-        ```
+      ```
+      int error;
+      haptic_device_h handle;
+      error = device_haptic_open(0, &handle);
+      ```
 
    2. Play and stop an effect on the device with the `device_haptic_vibrate()` and `device_haptic_stop()` functions.
 
       The device vibrates for a specified time with a constant intensity. The effect handle can be 0.
 
-        ```
-        int error;
-        haptic_effect_h effect_handle;
-        error = device_haptic_vibrate(handle, 1000, 100, &effect_handle);
+      ```
+      int error;
+      haptic_effect_h effect_handle;
+      error = device_haptic_vibrate(handle, 1000, 100, &effect_handle);
 
-        error = device_haptic_stop(handle, &effect_handle);
-        ```
+      error = device_haptic_stop(handle, &effect_handle);
+      ```
 
    3. When no longer needed, deinitialize the haptic device with the `device_haptic_close()` function.
 
       The function closes the haptic handle and disconnects the connection to the vibrator.
 
-        ```
-        int error;
-        error = device_led_play_custom(1000, 500, 0xFFFF0000, LED_CUSTOM_DEFAULT);
-
-        error = device_led_stop_custom();
-        ```
+      ```
+      int error;
+      error = device_haptic_close(0, handle);
+      ```
 
 <a name="ir"></a>
 ## Controlling IR Devices
@@ -225,9 +223,8 @@ To control an IR device:
     int error;
     int carrier_frequency;
     int *pattern;
-    error = device_ir_transmit(carrier_frequency, pattern, size);;
+    error = device_ir_transmit(carrier_frequency, pattern, size);
     ```
-
 
 <a name="led"></a>
 ## Controlling LED Devices

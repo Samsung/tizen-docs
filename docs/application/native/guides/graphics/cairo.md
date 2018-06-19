@@ -25,7 +25,8 @@ Cairo is a part of the Tizen Graphics layer. As shown in the following figure, t
 
 The Cairo GL backend allows hardware-accelerated rendering by targeting the OpenGL&reg; ES API. The goal of the Cairo GL backend is to achieve better performance with equal functionality to the Cairo Image backend, whenever possible.
 
-> **Note**  
+> **Note**
+>
 > Since Tizen only exposes EvasGL binding in place of EGL™, Cairo EvasGL APIs have been newly added and specified. To use the Cairo GL backend in Tizen, an application must include in its source code the `cairo-evas-gl.h` header file instead of `cairo-gl.h`.
 
 ## Prerequisites
@@ -283,7 +284,7 @@ To draw lines with Cairo APIs:
      ```
      cairo_set_source_rgba(cairo, 1.0, 0.0, 0.0, 1.0);
      ```
- 
+
    - Gradients describe a progression of colors by setting a start and stop reference location and a series of "stops" along the way. There are linear and radial gradients built from 2 points. Stops are added to the gradient with the `cairo_add_color_stop_rgb()` and `cairo_add_color_stop_rgba()` functions which take a color like the `cairo_add_color_stop_rgb()` or `cairo_add_color_stop_rgba()` function, as well as an offset to indicate where it lies between the reference locations.
 
    - Images include both surfaces loaded from the existing files with the `cairo_image_surface_create_from_png()` function and surfaces created from within Cairo as an earlier destination. For more information on these Cairo APIs, see [the cairo_pattern_t in cairographics.org](http://www.cairographics.org/manual/cairo-cairo-pattern-t.html).

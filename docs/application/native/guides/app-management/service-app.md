@@ -62,8 +62,8 @@ The following table lists the system events.
 
 | Callback                       | Description                              |
 |--------------------------------|------------------------------------------|
-| `service_app_low_memory_cb()`  | Used to take necessary actions in low memory situations.Save data in the main memory to a persistent memory or storage, to avoid data loss in case the Tizen platform Low Memory Killer kills your application to get more free memory. Release any cached data in the main memory to secure more free memory. |
-| `service_app_low_battery_cb()` | Used to take necessary actions in low battery situations.Save data in the main memory to a persistent memory or storage, to avoid data loss in case the power goes off completely. Stop heavy CPU consumption or power consumption activities to save the remaining power. |
+| `service_app_low_memory_cb()`  | Used to take necessary actions in low memory situations.<br> Save data in the main memory to a persistent memory or storage, to avoid data loss in case the Tizen platform Low Memory Killer kills your application to get more free memory. Release any cached data in the main memory to secure more free memory. |
+| `service_app_low_battery_cb()` | Used to take necessary actions in low battery situations.<br> Save data in the main memory to a persistent memory or storage, to avoid data loss in case the power goes off completely. Stop heavy CPU consumption or power consumption activities to save the remaining power. |
 
 <a name="attribute"></a>
 ## Application Attributes

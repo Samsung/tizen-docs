@@ -139,9 +139,10 @@ To configure the camera:
 
    The image quality value can range from 1 (lowest quality) to 100 (highest quality).
 
-2. Set the display for showing preview images by using the `camera_set_display()` function with 1 of the camera display types (`CAMERA_DISPLAY_TYPE_EVAS` or `CAMERA_DISPLAY_TYPE_OVERLAY`). These values are defined in the `camera_display_type_e`enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#ga3ddd0982778fdfacd3694d643d1610ac) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#ga3ddd0982778fdfacd3694d643d1610ac) applications).
+2. Set the display for showing preview images by using the `camera_set_display()` function with 1 of the camera display types (`CAMERA_DISPLAY_TYPE_EVAS` or `CAMERA_DISPLAY_TYPE_OVERLAY`). These values are defined in the `camera_display_type_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#ga3ddd0982778fdfacd3694d643d1610ac) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CAMERA__MODULE.html#ga3ddd0982778fdfacd3694d643d1610ac) applications).
 
-   > **Note**  
+   > **Note**
+   >
    > Depending on the device, the application must set the display preferences using the `elm_config_accel_preference_set()` function.
 
    The following example code sets the display according to the `display_type` parameter, whose type is `camera_display_type_e`. The `create_base_gui()` function must be called before previewing and thus the camera state must be `CAMERA_STATE_CREATED`.

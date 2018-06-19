@@ -139,16 +139,16 @@ Both Hypertext Transfer Protocol (HTTP) and Real Time Streaming Protocol (RTSP) 
 
 For HTTP streaming, buffering can happen when the player is prepared. You can get the status using the `player_set_buffering_cb()` function.
 
-The following table lists the streaming protocol features supported by the player.
+The player supports the streaming protocol features:
 
-**Table: Supported streaming protocol features**
+ -  Hypertext Transfer Protocol (HTTP)
+    - HTTP Streaming
+    - HTTP Live Streaming
+    - HTTP Progressive Download Play
 
-| Streaming protocol                  | Supported feature |
-|-------------------------------------|-------------------|
-| Hypertext Transfer Protocol (HTTP)  | HTTP Streaming    |
-| HTTP Live Streaming                 |                   |
-| HTTP Progressive Download Play      |                   |
-| Real Time Streaming Protocol (RTSP) | RTSP Streaming    |
+ -  Real Time Streaming Protocol (RTSP)
+    - RTSP Streaming
+
 
 <a name="wav"></a>
 ## WAV Player

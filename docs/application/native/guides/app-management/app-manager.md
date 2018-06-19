@@ -106,10 +106,10 @@ To get the running application context and its details, and to operate on the co
 To get information on filtered applications:
 
 1. Create the `app_info_filter_h` handle using the `app_info_filter_create()` function:
-```
-app_info_filter_h app_info_filter = NULL;
-int ret = app_info_filter_create(&app_info_filter);
-```
+   ```
+   app_info_filter_h app_info_filter = NULL;
+   int ret = app_info_filter_create(&app_info_filter);
+   ```
 
 2. Add filter rules:
 

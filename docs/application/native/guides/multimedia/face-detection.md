@@ -467,7 +467,9 @@ To track faces:
           dlog_print(DLOG_ERROR, LOG_TAG, "error code= %d", error_code);
       ```
 
-   4. The `mv_face_track()` function invokes the `_on_face_tracked_cb()` callback.The following callback example prints the current location of the tracked face.
+   4. The `mv_face_track()` function invokes the `_on_face_tracked_cb()` callback.
+
+      The following callback example prints the current location of the tracked face.
 
       ```
       static void

@@ -66,9 +66,10 @@ The main features of the NFC API include:
 
   > **Note**
   >
-  > Pay attention to the following:Secure element access is not supported in Tizen 2.3. The Card Emulation API of Tizen 2.3 only supports enabling and disabling the NFC card emulation mode, and retrieving the card emulation status.
+  > Pay attention to the following:
+  > - Secure element access is not supported in Tizen 2.3. The Card Emulation API of Tizen 2.3 only supports enabling and disabling the NFC card emulation mode, and retrieving the card emulation status.
   >
-  > Security problems can occur in some Card Emulation APIs. The security level can be determined by the manufacturer usage. If a security issue occurs, contact the product manufacturer. For more information on the security levels, see the [GSMA specification](http://www.gsma.com/digitalcommerce/wp-content/uploads/2013/12/GSMA-NFC05-NFC-Handset-APIs-Requirement-Specification-version-4-1.pdf).
+  > - Security problems can occur in some Card Emulation APIs. The security level can be determined by the manufacturer usage. If a security issue occurs, contact the product manufacturer. For more information on the security levels, see the [GSMA specification](http://www.gsma.com/digitalcommerce/wp-content/uploads/2013/12/GSMA-NFC05-NFC-Handset-APIs-Requirement-Specification-version-4-1.pdf).
 
 - Host-based card emulation (HCE)
 
@@ -243,7 +244,7 @@ To work with NFC manually, you need to register for notifications and handle con
         ```
         error_code = nfc_manager_set_tag_discovered_cb(on_nfc_tag_discovered, NULL);
         if (NFC_ERROR_NONE != error_code)
-        /* Error occurred */
+            /* Error occurred */
         ```
 
       - Use the `nfc_manager_set_ndef_discovered_cb()` function to register an NDEF event callback:
@@ -295,7 +296,7 @@ To work with NFC manually, you need to register for notifications and handle con
 
    1. Get basic tag information.
 
-      When a tag is discovered, the `on_nfc_tag_discovered()` callback registered earlier is called. In the callback, you can check the NFC discovered type from the first callback parameter. The `nfc_discovered_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ga27acb1707c933da6d9180d80a03f4402) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ga27acb1707c933da6d9180d80a03f4402)applications) defines the possible values. If the value is `NFC_DISCOVERED_TYPE_ATTACHED`, the tag has connected to the device, and you can read and print out information from the tag:
+      When a tag is discovered, the `on_nfc_tag_discovered()` callback registered earlier is called. In the callback, you can check the NFC discovered type from the first callback parameter. The `nfc_discovered_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ga27acb1707c933da6d9180d80a03f4402) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ga27acb1707c933da6d9180d80a03f4402) applications) defines the possible values. If the value is `NFC_DISCOVERED_TYPE_ATTACHED`, the tag has connected to the device, and you can read and print out information from the tag:
 
       1. Get the type of the tag with the `nfc_tag_get_type()` function. The first parameter is the tag handle (received in the second callback parameter) and the second is a pointer to an `nfc_tag_type_e` variable (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__NFC__TAG__MODULE.html#gac77f833a3dde9e3e12d2171f923d8fcb) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__NFC__TAG__MODULE.html#gac77f833a3dde9e3e12d2171f923d8fcb) applications), where the tag type is stored.
 
@@ -309,7 +310,7 @@ To work with NFC manually, you need to register for notifications and handle con
          nfc_tag_get_ndef_size(tag, &size);
          ```
 
-      3. Use the `nfc_tag_get_maximum_ndef_size()` function to get the maximum NDEF message size that can be stored in the tag. The function takes 2 parameters, where the first one is a tag handle and the second is a pointer to an unsigned `int`where the maximum size of the tag is stored.
+      3. Use the `nfc_tag_get_maximum_ndef_size()` function to get the maximum NDEF message size that can be stored in the tag. The function takes 2 parameters, where the first one is a tag handle and the second is a pointer to an unsigned `int` where the maximum size of the tag is stored.
 
          ```
          nfc_tag_get_maximum_ndef_size(tag, &maximum_ndef_bytes_size);
@@ -423,22 +424,26 @@ To work with NFC manually, you need to register for notifications and handle con
          - Get the record ID by calling the `nfc_ndef_record_get_id()` function:
            ```
            error_code = nfc_ndef_record_get_id(rec, &id, &id_len);
-           if (NFC_ERROR_NONE != error_code)    /* Error occurred */
+           if (NFC_ERROR_NONE != error_code)
+               /* Error occurred */
            ```
          - Get the record type using the `nfc_ndef_record_get_type()` function:
            ```
            error_code = nfc_ndef_record_get_type(rec, &type_str, &type_len);
-           if (NFC_ERROR_NONE != error_code)    /* Error occurred */
+           if (NFC_ERROR_NONE != error_code)
+               /* Error occurred */
            ```
          - Get the record TNF (Type Name Format) with the `nfc_ndef_record_get_tnf()` function:
            ```
            error_code = nfc_ndef_record_get_tnf(rec, &tnf);
-           if (NFC_ERROR_NONE != error_code)    /* Error occurred */
+           if (NFC_ERROR_NONE != error_code)
+               /* Error occurred */
            ```
          - Get the record payload by calling the `nfc_ndef_record_get_payload()` function:
            ```
            error_code = nfc_ndef_record_get_payload(record, &payload, &payload_len);
-           if (NFC_ERROR_NONE != error_code)    /* Error occurred */
+           if (NFC_ERROR_NONE != error_code)
+               /* Error occurred */
            ```
 
       4. To get more information from the tag, specify what type of tag message you are dealing with:
@@ -721,7 +726,9 @@ To create a card emulation application:
 
          - The `metadata` element must contain the `key` and `value` attributes.
          - The `key` attribute must be `http://tizen.org/metadata/nfc_cardemulation`.
-         - The `value` attribute must contain the AID XML file path.The `value` attribute is a relative path starting from the application root path.
+         - The `value` attribute must contain the AID XML file path.
+
+           The `value` attribute is a relative path starting from the application root path.
 
       2. The metadata element points to an AID XML file. The following is an example of the file with an AID declaration:
 
@@ -1053,7 +1060,9 @@ To create a card emulation application:
 
    > **Note**
    >
-   > The "preferred" functions are available since Tizen 3.0.Because of security issues, the API usage policy is different for each Tizen device. For example, if the application is in the payment category, using the "preferred" functions can be prohibited depending on the device.
+   > The "preferred" functions are available since Tizen 3.0.
+   >
+   > Because of security issues, the API usage policy is different for each Tizen device. For example, if the application is in the payment category, using the "preferred" functions can be prohibited depending on the device.
 
    The following example shows the entire preferred application sample code:
 
@@ -1099,13 +1108,23 @@ NFC application controls are events sent by the system to applications when NFC-
 The platform supports the following application control operations for NFC applications:
 
 - `default_changed`
-The system sends the `http://tizen.org/appcontrol/operation/nfc/card_emulation/default_changed` application control event when the default wallet is changed. For example, in **Setting > NFC > Set Default Wallet App**, if the default wallet is changed, an application control with this operation is sent to the selected application (wallet).You have to define the `app_control_cb()` callback and register it to `ui_app_lifecycle_callback::app_control`.
+The system sends the `http://tizen.org/appcontrol/operation/nfc/card_emulation/default_changed` application control event when the default wallet is changed. For example, in **Setting > NFC > Set Default Wallet App**, if the default wallet is changed, an application control with this operation is sent to the selected application (wallet).
+
+  You have to define the `app_control_cb()` callback and register it to `ui_app_lifecycle_callback::app_control`.
 
 - `host_apdu_service`
-The system sends the `http://tizen.org/appcontrol/operation/nfc/card_emulation/host_apdu_service` application control event when an HCE event occurs. For example, when a mobile device receives a host-based APDU (HCE) event from a POS terminal, an application control with this operation is sent to NFC applications.You can get the target AID information using the `app_control_get_extra_data()` function with the `data` key. The target AID key comes packaged when the `http://tizen.org/appcontrol/operation/nfc/card_emulation/host_apdu_service`operation is launching.You have to define the `app_control_cb()` callback and register it to `ui_app_lifecycle_callback::app_control`.
+The system sends the `http://tizen.org/appcontrol/operation/nfc/card_emulation/host_apdu_service` application control event when an HCE event occurs. For example, when a mobile device receives a host-based APDU (HCE) event from a POS terminal, an application control with this operation is sent to NFC applications.
+
+  You can get the target AID information using the `app_control_get_extra_data()` function with the `data` key. The target AID key comes packaged when the `http://tizen.org/appcontrol/operation/nfc/card_emulation/host_apdu_service`operation is launching.
+
+  You have to define the `app_control_cb()` callback and register it to `ui_app_lifecycle_callback::app_control`.
 
 - `off_host_apdu_service`
-The system sends the `http://tizen.org/appcontrol/operation/nfc/card_emulation/off_host_apdu_service` application control event when an SE transaction occurs. For example, when a mobile device receives an off-host APDU event from a POS terminal, an application control with this operation is sent to NFC applications.You can get the target AID information using the `app_control_get_extra_data()` function with the `data` key. The target AID key comes packaged when the `http://tizen.org/appcontrol/operation/nfc/card_emulation/off_host_apdu_service` operation is launching.You have to define the `app_control_cb()` callback and register it to `ui_app_lifecycle_callback::app_control`.
+The system sends the `http://tizen.org/appcontrol/operation/nfc/card_emulation/off_host_apdu_service` application control event when an SE transaction occurs. For example, when a mobile device receives an off-host APDU event from a POS terminal, an application control with this operation is sent to NFC applications.
+
+  You can get the target AID information using the `app_control_get_extra_data()` function with the `data` key. The target AID key comes packaged when the `http://tizen.org/appcontrol/operation/nfc/card_emulation/off_host_apdu_service` operation is launching.
+
+  You have to define the `app_control_cb()` callback and register it to `ui_app_lifecycle_callback::app_control`.
 
 To use the NFC application controls:
 
@@ -1173,7 +1192,8 @@ To prepare NFC P2P:
 
 1. Make sure you have 2 target devices that support the NFC P2P mode.
 
-   > **Note**  
+   > **Note**
+   >
    > The device screen must be unlocked to use NFC.
 
 2. To start using the NFC API, initialize the API by calling the `nfc_manager_initialize()` function:
@@ -1233,7 +1253,7 @@ To send and receive messages using the NFC P2P mode:
       nfc_ndef_message_create(&ndef_message);
       ```
 
-   3. Append the created records to the message using the `nfc_ndef_message_append_record()` function. This function appends the record with the next index. To insert a record at the specified index, use the `nfc_ndef_message_insert_record()`function instead.
+   3. Append the created records to the message using the `nfc_ndef_message_append_record()` function. This function appends the record with the next index. To insert a record at the specified index, use the `nfc_ndef_message_insert_record()` function instead.
 
       ```
       nfc_ndef_message_append_record(ndef_message, ndef_name_record);

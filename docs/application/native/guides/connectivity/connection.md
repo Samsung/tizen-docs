@@ -190,7 +190,7 @@ To obtain cellular and Wi-Fi connection information with data transfer statistic
     }
     ```
 
-2. To get the Wi-Fi connection state, use the `connection_get_wifi_state()` function. The function fills the second parameter with the current state, whose possible values are defined in the `connection_wifi_state_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gab3ad7fdb200354b3c34878d88fc97dcd) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gab3ad7fdb200354b3c34878d88fc97dcd)applications).
+2. To get the Wi-Fi connection state, use the `connection_get_wifi_state()` function. The function fills the second parameter with the current state, whose possible values are defined in the `connection_wifi_state_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gab3ad7fdb200354b3c34878d88fc97dcd) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gab3ad7fdb200354b3c34878d88fc97dcd) applications).
 
     In the following example, a `switch` statement is used to show the Wi-Fi state:
     ```
@@ -300,6 +300,7 @@ To register callback functions that are called when information changes:
                                                      "IP addr changed:");
    if (error_code != CONNECTION_ERROR_NONE)
        /* Error handling */
+
    error_code = connection_set_proxy_address_changed_cb(connection, __proxy_changed_cb,
                                                         "Proxy IP addr changed:");
    if (error_code != CONNECTION_ERROR_NONE)
@@ -359,15 +360,15 @@ To initialize a client or server-side socket for use:
 4. Check whether the default connection is available:
 
    ```
-      connection_type_e net_state;
+       connection_type_e net_state;
 
-      rv = connection_get_type(connection, &net_state);
-      if (rv != CONNECTION_ERROR_NONE || net_state == CONNECTION_TYPE_DISCONNECTED) {
-          dlog_print(DLOG_INFO, LOG_TAG, "Not connected %d\n", rv);
-          connection_destroy(connection);
+       rv = connection_get_type(connection, &net_state);
+       if (rv != CONNECTION_ERROR_NONE || net_state == CONNECTION_TYPE_DISCONNECTED) {
+           dlog_print(DLOG_INFO, LOG_TAG, "Not connected %d\n", rv);
+           connection_destroy(connection);
 
-          return -1;
-      }
+           return -1;
+       }
    ```
 
 5. Check the address type of the default connection.
@@ -398,7 +399,7 @@ To initialize a client or server-side socket for use:
        /* If both IPv4 and IPv6 types are set, the IPv4 type is used as default here */
        rv = connection_profile_get_ip_address(profile_h, CONNECTION_ADDRESS_FAMILY_IPV4,
                                               &local_ipv4);
-       if (rv == CONNECTION_ERROR_NONE && g_strcmp0(local_ipv4, &0.0.0.0&) != 0) {
+       if (rv == CONNECTION_ERROR_NONE && g_strcmp0(local_ipv4, "0.0.0.0") != 0) {
            ip_type = CONNECTION_ADDRESS_FAMILY_IPV4;
            dlog_print(DLOG_INFO, LOG_TAG, "IPv4 address: %s\n", local_ipv4);
        }
@@ -422,7 +423,9 @@ When you use a socket, it is automatically bound with the network interface of t
 You can open the connection profile manually in 2 ways:
 
 - Use the `connection_get_profile_iterator()` function to retrieve all available profiles, and select the profile you want.
-- Use the `connection_get_default_cellular_service_profile()` function to retrieve the connection profile of a specific cellular service.This use case covers this way of opening the profile.
+- Use the `connection_get_default_cellular_service_profile()` function to retrieve the connection profile of a specific cellular service.
+
+  This use case covers this way of opening the profile.
 
 To change the connection profile:
 

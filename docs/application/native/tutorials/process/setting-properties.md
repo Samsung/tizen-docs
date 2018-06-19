@@ -75,11 +75,12 @@ You can perform the following tasks using the **Overview** tab:
 
   The following table describes the available icons.
 
-  | Profile  | Mandatory | Format                 | Size              | Size              | Description                        |
-  |----------|-----------|------------------------|-------------------|-------------------|------------------------------------|
-  | Profile  | Mandatory | Format                 | Xhigh  (HD)       | High  (WVGA)      | Description                        |
-  | Mobile   | Yes       | 32-bit PNG with  alpha | 117 x 117 pixels  | 78 x 78 pixels    | Image displayed  in the main menu. |
-  | Wearable | Yes       | 32-bit  PNG with alpha | 152  x 152 pixels | 152  x 152 pixels | Image  displayed in the main menu. |
+  **Table: Application icons**
+
+  | Profile  | Mandatory | Format                 | Xhigh (HD) Size   | High (WVGA) Size  | Description                       |
+  |----------|-----------|------------------------|-------------------|-------------------|-----------------------------------|
+  | Mobile   | Yes       | 32-bit PNG with  alpha | 117 x 117 pixels  | 78 x 78 pixels    | Image displayed in the main menu. |
+  | Wearable | Yes       | 32-bit PNG with alpha  | 152 x 152 pixels  | 152 x 152 pixels  | Image displayed in the main menu. |
 
 - Set the application author.
 
@@ -137,14 +138,16 @@ You can provide localized versions of the application name (label) and descripti
 
 To add a localized name or description:
 
-- In the **Name** panel, click **+**. Select the language, define the application name for that language, and click **OK**.  
-The following example shows the setting in the `tizen-manifest.xml` file code:  
+- In the **Name** panel, click **+**. Select the language, define the application name for that language, and click **OK**.
+
+  The following example shows the setting in the `tizen-manifest.xml` file code:
 ```
 <label xml:lang="en-us">This is a sample</label>
 ```
 
-- In the **Description** panel, click **+**. Select the language, define the application description text for that language, and click **OK**.  
-The following example shows the setting in the `tizen-manifest.xml` file code:  
+- In the **Description** panel, click **+**. Select the language, define the application description text for that language, and click **OK**.
+
+  The following example shows the setting in the `tizen-manifest.xml` file code:
 ```
 <description xml:lang="en-us">This is a sample</description>
 ```
@@ -161,25 +164,30 @@ You can perform the following tasks using the **Advanced** tab:
 
   In the **Meta Data** section, you can add user-defined key-value pairs to the application to be used for filtering in the package manager.
 
-- Export [data control](../../guides/app-management/data-control.md) functionality.  
-A service application can act as a service provider and allow other applications to access specific data.  
+- Export [data control](../../guides/app-management/data-control.md) functionality.
+
+  A service application can act as a service provider and allow other applications to access specific data.
 To define the kind of access and data your service application provides to other applications, click **+** in the **Data Control** section, and define the data control details.
 
 - Set miscellaneous options.
 
   In the **Miscellaneous Options** section, you can set various application options:
 
-  - **Manage task**  
-  Define whether the application is shown in the task manager.
+  - **Manage task**
 
-  - **No display**  
-  In UI applications, define whether the application is hidden in the device application tray. In service applications, this settings is always **true**.
+    Define whether the application is shown in the task manager.
 
-  - **Hardware acceleration**  
-  Define whether hardware acceleration is enabled for the application.  
+  - **No display**
 
-  - **Launch Mode**  
-  Define the launch mode of the application (whether the application is launched as a main or sub application, or whether a caller application defines the launch mode when the application is launched by an application control request).
+    In UI applications, define whether the application is hidden in the device application tray. In service applications, this settings is always **true**.
+
+  - **Hardware acceleration**
+
+    Define whether hardware acceleration is enabled for the application.
+
+  - **Launch Mode**
+
+    Define the launch mode of the application (whether the application is launched as a main or sub application, or whether a caller application defines the launch mode when the application is launched by an application control request).
 
 - Define application controls.
 
@@ -197,16 +205,15 @@ To define the kind of access and data your service application provides to other
 
   **Table: Account provider properties**
 
-  | Acount  property1 | Acount  property2 | Data type | Property type                            |
-  |-----------------|-----------------|--------|----------------------------------------|
-  | Multiple account  | Multiple  account | bool      | Indicates  whether multiple accounts are supported. This is a mandatory property. |
-  | Provider ID       | Provider  ID      | String    | ID  of the account provider.             |
-  | Default label     | Default  label    | String    | Display  name of the account provider. This is a mandatory property. |
-  | Icons             | Icon              | String    | File  path of the account provider icon. |
-  | Icons             | Icon              | String    | The  icon size is:<br> - 72 x 72 for Xhigh (HD)<br> - 48 x 48 for High (WVGA)<br> Since the  icon is used in Settings > Accounts, place the icon in a shared  directory.<br> This is a mandatory property. |
-  | Icons             | Icon  small       | String    | File  path of the account provider icon. <br>The icon size is: <br> -  45 x 45 for Xhigh  (HD)<br> - 30 x 30 for High  (WVGA).<br>  Since the small icon is used  in other applications, place the icon in a shared directory.<br>  This is a mandatory property. |
-  | Name              | Name              | String    | Localization  support for the display name.<br> To add a localized name, click + in  the Name panel, select the language, define the display name for  that language, and click OK. |
-  | Capabilities      | Capabilities      | String    | Capability  of the account provider.    Capabilities are defined in the  http://<VENDOR_INFORMATION>/accounts/capability/<NAME> IRI  format.    <br>The following predefined capabilities can be used in Tizen:    <br>http://tizen.org/account/capability/calendar    <br>Used when the account is related to a calendar.    <br>http://tizen.org/account/capability/contact    <br>Used when the account is related to contacts.    <br>http://tizen.org/account/capability/document    <br>Used when the account is related to a document.    <br>http://tizen.org/account/capability/email    <br>Used when the account is related to email.    <br>http://tizen.org/account/capability/game    <br>Used when the account is related to a game.    <br>http://tizen.org/account/capability/message    <br>Used when the account is related to a message.    <br>http://tizen.org/account/capability/music    <br>Used when the account is related to music.    <br>http://tizen.org/account/capability/photo    <br>Used when the account is related to a photo.    <br>http://tizen.org/account/capability/video    <br>Used when the account is related to a video.    <br>To add a capability, click + in the Capabilities panel. A default  capability is added to the table. Click the default capability and change it  to the one you need.    <br>This is an optional property. |
+  | Acount property1  | Acount property2 | Data type | Property type                            |
+  |-------------------|------------------|-----------|------------------------------------------|
+  | Multiple account  |             | bool      | Indicates  whether multiple accounts are supported. This is a mandatory property. |
+  | Provider ID       |             | String    | ID  of the account provider.             |
+  | Default label     |             | String    | Display  name of the account provider. This is a mandatory property. |
+  | Icons             | Icon        | String    | File  path of the account provider icon.<br> The  icon size is:<br> - 72 x 72 for Xhigh (HD)<br> - 48 x 48 for High (WVGA)<br> Since the  icon is used in Settings > Accounts, place the icon in a shared  directory.<br> This is a mandatory property. |
+  | Icons             | Icon  small | String    | File  path of the account provider icon. <br>The icon size is: <br> -  45 x 45 for Xhigh  (HD)<br> - 30 x 30 for High  (WVGA)<br>  Since the small icon is used  in other applications, place the icon in a shared directory.<br>  This is a mandatory property. |
+  | Name              |             | String    | Localization  support for the display name.<br> To add a localized name, click + in  the Name panel, select the language, define the display name for  that language, and click OK. |
+  | Capabilities      |             | String    | Capability  of the account provider.    Capabilities are defined in the `http://<VENDOR_INFORMATION>/accounts/capability/<NAME>` IRI  format.    <br>The following predefined capabilities can be used in Tizen:    <br>- `http://tizen.org/account/capability/calendar` <br>&nbsp;&nbsp;&nbsp;Used when the account is related to a calendar.    <br>- `http://tizen.org/account/capability/contact`    <br>&nbsp;&nbsp;&nbsp;Used when the account is related to contacts.    <br>- `http://tizen.org/account/capability/document`    <br>&nbsp;&nbsp;&nbsp;Used when the account is related to a document.    <br>- `http://tizen.org/account/capability/email`    <br>&nbsp;&nbsp;&nbsp;Used when the account is related to email.    <br>- `http://tizen.org/account/capability/game`    <br>&nbsp;&nbsp;&nbsp;Used when the account is related to a game.    <br>- `http://tizen.org/account/capability/message`    <br>&nbsp;&nbsp;&nbsp;Used when the account is related to a message.    <br>- `http://tizen.org/account/capability/music`    <br>&nbsp;&nbsp;&nbsp;Used when the account is related to music.    <br>- `http://tizen.org/account/capability/photo`    <br>&nbsp;&nbsp;&nbsp;Used when the account is related to a photo.    <br>- `http://tizen.org/account/capability/video`    <br>&nbsp;&nbsp;&nbsp;Used when the account is related to a video.    <br>To add a capability, click + in the Capabilities panel. A default  capability is added to the table. Click the default capability and change it  to the one you need.    <br>This is an optional property. |
 
 - Add the background category type (since Tizen 2.4).
 

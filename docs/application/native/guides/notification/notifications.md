@@ -260,7 +260,7 @@ You can set the following attributes for a notification:
 
   - The `notification_add_button()` adds the button. The second parameter defines the button index, whose possible values are listed in the `_notification_button_index` enumeration (in [mobile](../../api/mobile/latest/group__NOTIFICATION__MODULE.html#ga2b8eaa47c666ec055def59c32eab419b) and [wearable](../../api/wearable/latest/group__NOTIFICATION__MODULE.html#ga2b8eaa47c666ec055def59c32eab419b) applications).
 
-  - The `notification_set_event_handler()` function defines the application control that launches the application at the button click. The third parameter defines the app control handle, whose possible values are listed in the `_notification_event_type`enumeration (in [mobile](../../api/mobile/latest/group__NOTIFICATION__MODULE.html#ga38d5cdc16c56dbe88d821995f82b0799) and [wearable](../../api/wearable/latest/group__NOTIFICATION__MODULE.html#ga38d5cdc16c56dbe88d821995f82b0799) applications).
+  - The `notification_set_event_handler()` function defines the application control that launches the application at the button click. The third parameter defines the app control handle, whose possible values are listed in the `_notification_event_type` enumeration (in [mobile](../../api/mobile/latest/group__NOTIFICATION__MODULE.html#ga38d5cdc16c56dbe88d821995f82b0799) and [wearable](../../api/wearable/latest/group__NOTIFICATION__MODULE.html#ga38d5cdc16c56dbe88d821995f82b0799) applications).
 
     ```
     noti_err = notification_add_button(noti, NOTIFICATION_BUTTON_1);

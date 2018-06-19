@@ -344,6 +344,7 @@ To manage a local service, you must create and register the service:
        __registered_cb(ssdp_error_e result, ssdp_service_h ssdp_service, void *user_data)
        {
            dlog_print(DLOG_DEBUG, LOG_TAG, "Register result: %d\n", result);
+       }
        ```
 
 3. When you no longer want to provide the local service, deregister it with the `ssdp_deregister_local_service()` function.

@@ -34,7 +34,14 @@ To enable your application to use the event functionality:
 
 2. To use Launch-On-Events in your application, define the `http://tizen.org/appcontrol/operation/launch_on_event` operation in the `tizen-manifest.xml` file.
 
-    The URI name for the operation represents the event name in the Launch-On-Event format (`event://{Event_Name}`).`<app-control>   <operation name="http://tizen.org/appcontrol/operation/launch_on_event"/>   <uri name="event://tizen.system.event.battery_charger_status"/></app-control>`
+   The URI name for the operation represents the event name in the Launch-On-Event format (`event://{Event_Name}`).
+
+   ```
+   <app-control>
+      <operation name="http://tizen.org/appcontrol/operation/launch_on_event"/>
+      <uri name="event://tizen.system.event.battery_charger_status"/>
+   </app-control>
+   ```
 
 <a name="broadcast"></a>
 ## Publishing an Event

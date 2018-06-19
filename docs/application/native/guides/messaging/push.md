@@ -103,7 +103,8 @@ To enable your application to use the push functionality:
    #include <push-service.h>
    ```
 
-> **Note**  
+> **Note**
+>
 > Since Tizen 3.0, the push service supports launching an application in the background. Remember that you can deliver application data to your application without an unwanted UI launch.
 
 <a name="connect"></a>
@@ -228,7 +229,7 @@ To manage push service connections:
 
    Once launched, the application is in the `INITIAL` state. When the application establishes a connection to the service using the `push_service_connect()` function, the state becomes either `UNREGISTERED` or `REGISTERED`:
 
-   - If the application is currently registered to the push server, the service forces it to transit from the `INITIAL` state to the `REGISTERED` state. In this case, the application can request deregistration from the push server using the `push_service_deregister()`function. If this request is approved by the push server, the state transits to `UNREGISTERED`.
+   - If the application is currently registered to the push server, the service forces it to transit from the `INITIAL` state to the `REGISTERED` state. In this case, the application can request deregistration from the push server using the `push_service_deregister()` function. If this request is approved by the push server, the state transits to `UNREGISTERED`.
    - If the application is not currently registered to the push server, the state transits from the `INITIAL` state to the `UNREGISTERED` state. In this case, the application can request registration to the push server using the `push_service_register()` function. If this request is approved by the push server, the state transits to `REGISTERED`.
    - When an error occurs, the state transits to `ERROR`.
 
@@ -258,7 +259,7 @@ To manage push service connections:
    }
    ```
 
-   In the above example, the `_on_state_registered()`, `_on_state_unregistered()`, and `_on_state_error()` functions contain the actions for the `REGISTERED`, `UNREGISTERED`, and `ERROR` states, respectively. The application does not need to handle the `INITIAL` state, because it is maintained internally, and this callback function is never invoked in that state. The second parameter, `err`, is the error message from the push service when the state becomes `ERROR`. Consequently, only the `_on_state_error()`function takes this parameter.
+   In the above example, the `_on_state_registered()`, `_on_state_unregistered()`, and `_on_state_error()` functions contain the actions for the `REGISTERED`, `UNREGISTERED`, and `ERROR` states, respectively. The application does not need to handle the `INITIAL` state, because it is maintained internally, and this callback function is never invoked in that state. The second parameter, `err`, is the error message from the push service when the state becomes `ERROR`. Consequently, only the `_on_state_error()` function takes this parameter.
 
    The registration state is subject to change. Consequently, make sure that the application connects to the push service whenever it is launched.
 
@@ -371,38 +372,46 @@ To register with the push server:
    	- If they are the same, the application server already has this registration ID. In this case, the application exits this function.
 
    ```
+   #include <openssl/sha.h>
+   #define PUSH_HASH_KEY "existing_push_reg_id"
+
    static void
-   _on_state_registered(void *user_data)
+   _send_reg_id_if_necessary(const char *reg_id)
    {
-       if (!push_conn)
-           return;
-
+       unsigned char md[SHA_DIGEST_LENGTH];
+       char hash_string[2 * SHA_DIGEST_LENGTH + 1];
+       char *buf_ptr = hash_string;
+       char *stored_hash_value = NULL;
        int ret;
-       char *reg_id = NULL;
-       char *app_id = NULL;
+       int i;
 
-       /* Request unread notifications to the push service */
-       /* _noti_cb() is called if there are unread notifications */
-       ret = push_service_request_unread_notification(push_conn);
-       if (ret != PUSH_SERVICE_ERROR_NONE) {
-           dlog_print(DLOG_ERROR, LOG_TAG, "ERROR [%d]: push_service_request_unread_notification()", ret);
+       /* Generate a hash string from reg_id */
+       SHA1((unsigned char *)reg_id, sizeof(reg_id), md);
 
-           return;
+       /* Convert byte array to hex string */
+       for (i = 0; i < SHA_DIGEST_LENGTH; i++)
+           buf_ptr += sprintf(buf_ptr, "%02X", md[i]);
+       hash_string[2 * SHA_DIGEST_LENGTH] = '\0';
+
+       /* Get the saved hash string */
+       ret = preference_get_string(PUSH_HASH_KEY, &stored_hash_value);
+
+       /*
+          If there is no hash string stored before or if the stored hash string
+          is different from the new one, send reg_id to the server
+       */
+       if (ret != PREFERENCE_ERROR_NONE || strncmp(stored_hash_value, hash_string, 2 * SHA_DIGEST_LENGTH) !=0) {
+           /* Send the reg_id to your application server */
+           ret = _send_reg_id(reg_id);
+
+           /* If reg_id is successfully sent, store the new hash value */
+           if (!ret)
+               ret = preference_set_string(PUSH_HASH_KEY, hash_string);
        }
+       if (stored_hash_value)
+           free(stored_hash_value);
 
-       /* Get the registration ID */
-       ret = push_service_get_registration_id(push_conn, &reg_id);
-       if (ret != PUSH_SERVICE_ERROR_NONE) {
-           dlog_print(DLOG_ERROR, LOG_TAG, "ERROR [%d]: push_service_get_registration_id()", ret);
-
-           return;
-       }
-
-       /* Send reg_id to your application server if necessary */
-       _send_reg_id_if_necessary(reg_id);
-
-       if (reg_id)
-           free(reg_id);
+       return;
    }
    ```
 
@@ -474,11 +483,13 @@ The following example shows a sample push notification:
 
 To send a notification:
 
-1. Prepare the `appID`, `appSecret`, `regID`, and `requestID`:The `appID` and `appSecret` values are given in the email message that you received when requesting [permission to use Tizen push servers](#permission).
+1. Prepare the `appID`, `appSecret`, `regID`, and `requestID`:
 
-   The `regID` value is the one that the application server received from your application installed on a Tizen device. Depending on the `regID` value, the URI of the server to which your application server sends the notification varies.
+   - The `appID` and `appSecret` values are given in the email message that you received when requesting [permission to use Tizen push servers](#permission).
 
-   The `requestID` value is used to identify the notification in the push server. When your application server sends notifications using the same `requestID` value, the last notification overwrites all the previous notifications that are not delivered yet.
+   - The `regID` value is the one that the application server received from your application installed on a Tizen device. Depending on the `regID` value, the URI of the server to which your application server sends the notification varies.
+
+   - The `requestID` value is used to identify the notification in the push server. When your application server sends notifications using the same `requestID` value, the last notification overwrites all the previous notifications that are not delivered yet.
 
 2. Use the message field to describe how to process the notification.
 

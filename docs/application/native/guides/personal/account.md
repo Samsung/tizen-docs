@@ -23,7 +23,8 @@ The main features of the Account Manager API include:
 
   The `account.h` header file handles account-related information. You can [query the account details](#queries) with database queries, [retrieve the account type](#type), and [update the account information](#update). For a list of modifiable account properties, see [Account and Account Provider Properties](#acc_property).
 
-> **Note**  
+> **Note**
+>
 > Account providers, such as Google and Facebook, represent specific service provider-related information or protocol that provides the user accounts. To add, update, or remove an accounts, you must register a specific account provider for all your applications belonging to the same package.
 >
 > To register an account provider, define the [account provider information](#accprovider_property) in the `Account` tab of the manifest editor, and implement the [account application control](#appcontrol).
@@ -314,11 +315,15 @@ To add your application on the Add account screen of the device:
 
    - `<icon section="account">application icon name</icon>`
 
-     Icon displayed on the Add account screen.The icon size must be 72 x 72 px and the icon file must be in the `{app-root}\shared\res\` directory.
+     Icon displayed on the Add account screen.
+
+     The icon size must be 72 x 72 px and the icon file must be in the `{app-root}\shared\res\` directory.
 
    - `<icon section="account-small">application small icon name</icon>`
 
-     Small icon displayed on the Other application screen to represent the account provider.The small icon file must be in the `{app-root}\shared\res\` directory.
+     Small icon displayed on the Other application screen to represent the account provider.
+
+     The small icon file must be in the `{app-root}\shared\res\` directory.
 
    - `<label xml:lang="en-gb">Application name</label>`
 

@@ -7,7 +7,7 @@ The main features of the Wi-Fi Manager API include:
 
 - Wi-Fi device and connection management
 
-  You can to implement and manage Wi-Fi connections with the Wi-Fi Manager API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html) applications). For example, you can [activate or deactivate](#activate) a local Wi-Fi device, [connect to an access point](#connect) asynchronously, and [scan for available access points](#scan)and retrieve information from the found access points.
+  You can to implement and manage Wi-Fi connections with the Wi-Fi Manager API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html) applications). For example, you can [activate or deactivate](#activate) a local Wi-Fi device, [connect to an access point](#connect) asynchronously, and [scan for available access points](#scan) and retrieve information from the found access points.
 
 - <a name="ap"></a>Access point management
 
@@ -23,7 +23,7 @@ The main features of the Wi-Fi Manager API include:
 
 - Wi-Fi state monitoring
 
-  You can register a callback with the Wi-Fi Monitor API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html) applications) to monitor the Wi-Fi connection state changes. The supported states are defined in the `wifi_manager_connection_state_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#gafa0bc807592532fbd1fa3a4df82b24b2) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#gafa0bc807592532fbd1fa3a4df82b24b2)applications).
+  You can register a callback with the Wi-Fi Monitor API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html) applications) to monitor the Wi-Fi connection state changes. The supported states are defined in the `wifi_manager_connection_state_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#gafa0bc807592532fbd1fa3a4df82b24b2) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#gafa0bc807592532fbd1fa3a4df82b24b2) applications).
 
   You can also register callbacks for monitoring changes in the Wi-Fi device state (whether Wi-Fi is activated) and the RSSI level of the Wi-Fi connection.
 

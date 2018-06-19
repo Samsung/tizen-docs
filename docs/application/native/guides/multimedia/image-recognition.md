@@ -331,7 +331,9 @@ To track images:
           dlog_print(DLOG_ERROR, LOG_TAG, "error code= %d", error_code);
       ```
 
-   2. The `mv_image_track()` function invokes the `_on_image_tracked_cb()` callback.The following callback example prints the location of the target image object.
+   2. The `mv_image_track()` function invokes the `_on_image_tracked_cb()` callback.
+
+      The following callback example prints the location of the target image object.
 
       ```
       static void

@@ -96,7 +96,7 @@ To enable your application to use the stream recorder functionality:
 
    You can get the stream recorder state using the `streamrecorder_get_state()` function after the handle is created.
 
-4. To enable video recording using a live buffer as a source, you have to call the `streamrecorder_enable_source_buffer()` function. Additionally, you can enable other types of sources with the `streamrecorder_source_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga1d4c1835d2b7357850bdf706dd58b97e) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga1d4c1835d2b7357850bdf706dd58b97e)applications).
+4. To enable video recording using a live buffer as a source, you have to call the `streamrecorder_enable_source_buffer()` function. Additionally, you can enable other types of sources with the `streamrecorder_source_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga1d4c1835d2b7357850bdf706dd58b97e) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga1d4c1835d2b7357850bdf706dd58b97e) applications).
 
     ```
     /* Set the video source as live buffer to be used for recording */

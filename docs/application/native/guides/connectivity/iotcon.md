@@ -1,7 +1,7 @@
 # IoT Connectivity
 
 
-[IoTivity](https://www.iotivity.org/) offers seamless device-to-device connectivity to address the emerging needs of the Internet of Things (IoT) through the open source reference implementation of the OCF (Open Connectivity Foundation) standard specifications. IoT connectivity (Iotcon) provides the means of using IoTivity in Tizen.
+[IoTivity](https://www.iotivity.org/) offers seamless device-to-device connectivity to address the emerging needs of the Internet of Things (IoT) through the open source reference implementation of the OCF (Open Connectivity Foundation) standard specifications. IoT connectivity (IoTCon) provides the means of using IoTivity in Tizen.
 
 **Figure: IoTivity in Tizen**
 
@@ -86,7 +86,7 @@ To enable your application to use the IoT functionality:
     ```
     To ensure that an IoTCon function has been executed properly, make sure that the return is equal to `IOTCON_ERROR_NONE`.
 
-3. To initialize the Iotcon, use the `iotcon_initialize()` function:
+3. To initialize the IoTCon, use the `iotcon_initialize()` function:
     ```
     int ret;
     char *path; /* Must be a file path which can be read/written in the application */
@@ -94,7 +94,7 @@ To enable your application to use the IoT functionality:
     ret = iotcon_initialize(path);
     ```
 
-4. When the resources are no longer needed, deinitialize the Iotcon using the `iotcon_deinitialize()` function:
+4. When the resources are no longer needed, deinitialize the IoTCon using the `iotcon_deinitialize()` function:
 
     ```
     iotcon_deinitialize();
@@ -123,7 +123,9 @@ To create and register resources:
 
 2. Register the resource by calling the `iotcon_resource_create()` function.
 
-   In the function, set the URI path, resource types, interfaces (`iotcon_resource_interfaces_h` resource interface handle in [mobile](../../api/mobile/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga10fbc5191f6d83eaedbcbdeb3e1211a8) and [wearable](../../api/wearable/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga10fbc5191f6d83eaedbcbdeb3e1211a8) applications), policies (1 or more `iotcon_resource_policy_e` enumeration values in [mobile](../../api/mobile/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga66063156ce698fa862cb9704be86494f) and [wearable](../../api/wearable/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga66063156ce698fa862cb9704be86494f)applications), and the request handler callback function called when a request arrives from a client.The URI path must be unique. The `iotcon_resource_create()` function fails, if you use an existing URI to register another resource.
+   In the function, set the URI path, resource types, interfaces (`iotcon_resource_interfaces_h` resource interface handle in [mobile](../../api/mobile/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga10fbc5191f6d83eaedbcbdeb3e1211a8) and [wearable](../../api/wearable/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga10fbc5191f6d83eaedbcbdeb3e1211a8) applications), policies (1 or more `iotcon_resource_policy_e` enumeration values in [mobile](../../api/mobile/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga66063156ce698fa862cb9704be86494f) and [wearable](../../api/wearable/latest/group__CAPI__IOT__CONNECTIVITY__COMMON__MODULE.html#ga66063156ce698fa862cb9704be86494f)applications), and the request handler callback function called when a request arrives from a client.
+
+    The URI path must be unique. The `iotcon_resource_create()` function fails, if you use an existing URI to register another resource.
 
     ```
     int res_interfaces = IOTCON_INTERFACE_DEFAULT;
@@ -207,7 +209,7 @@ To find resources:
     int ret;
     ret = iotcon_set_timeout(10);
     if (IOTCON_ERROR_NONE != ret)
-        /* Error handling */`
+        /* Error handling */
     ```
 
    > **Note**
@@ -245,7 +247,9 @@ To send GET requests to a server:
     }
     ```
 
-2. Send the GET request to the server using the `iotcon_remote_resource_get()` function.In the function, set the remote resource, query, and the response callback function called when receiving a response from the resource.
+2. Send the GET request to the server using the `iotcon_remote_resource_get()` function.
+
+    In the function, set the remote resource, query, and the response callback function called when receiving a response from the resource.
 
     ```
     int ret;
@@ -255,7 +259,9 @@ To send GET requests to a server:
         /* Error handling */
     ```
 
-3. On the server side, the `_request_handler()` callback function is called when a request arrives from the client. The resource and request handles are passed to the callback.Use the callback to get the request information from the request handle, create a representation handle (with the `_get_repr()` function), and sent a response back to the client (with the `_send_response()` function):
+3. On the server side, the `_request_handler()` callback function is called when a request arrives from the client. The resource and request handles are passed to the callback.
+
+    Use the callback to get the request information from the request handle, create a representation handle (with the `_get_repr()` function), and sent a response back to the client (with the `_send_response()` function):
 
     ```
     static void

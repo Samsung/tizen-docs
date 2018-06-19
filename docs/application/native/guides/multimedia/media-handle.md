@@ -13,7 +13,7 @@ The main features of the Media Tool API include:
 
   You can [set and get metadata](#packet) using the created `media_packet_h` handle. Some `media_packet_h` metadata are NOT filled after creating the `media_packet_h` handle: pts, dts, duration, extradata, codec data, codec data size, and buffer flags.
 
-The `media_format_h` handle is created by the caller, who can set and get the video or audio information. The `media_format_h` handle creates the `media_packet_h` handle and allocates the buffer. The caller can set and get the metadata with the `media_packet_h`handle.
+The `media_format_h` handle is created by the caller, who can set and get the video or audio information. The `media_format_h` handle creates the `media_packet_h` handle and allocates the buffer. The caller can set and get the metadata with the `media_packet_h` handle.
 
 The `media_format_h` handle has a specific design for increasing and decreasing its [reference count](#reference).
 
@@ -240,7 +240,7 @@ The following table describes the reference count design of the `media_format_h`
 | `media_format_unref(fmt1);`              | `fmt1`: 1                                | If the `ref_count` is 1, the `fmt1` is currently owned by the `pkt1` only. |
 | `media_packet_copy(pkt1, &pkt2);`        | `fmt1`: 2                                | Copy the `pkt1` metadata to `pkt2`, except the allocated buffer and buffer size. `pkt2` refers to `fmt1`, and `fmt1` `ref_count` is increased. |
 | `media_packet_get_format(pkt1, &tmp);`   | `fmt1`: 3                                | `fmt1` `ref_count` is increased by the `media_packet_get_format()` function. |
-| `media_format_set_video_mime(tmp, ...);` | `fmt1`: 3                                | If you try to modify the `fmt1` data (call the `media_format_set_video_mime()` function) for `fmt1` (=`tmp`), the `ref_count` is bigger than 1, and `fmt1` cannot be modified.To modify the `fmt1` data, call the `media_format_make_writable()` function. |
+| `media_format_set_video_mime(tmp, ...);` | `fmt1`: 3                                | If you try to modify the `fmt1` data (call the `media_format_set_video_mime()` function) for `fmt1` (=`tmp`), the `ref_count` is bigger than 1, and `fmt1` cannot be modified.<br> To modify the `fmt1` data, call the `media_format_make_writable()` function. |
 | `media_format_make_writable(tmp, &fmt2);` | `fmt1`: 2<br> `fmt2`: 1                       | If called, the `tmp` (`fmt1`) `ref_count` is decreased. Creates the `fmt2` handle and copies the `fmt1` data to `fmt2`. |
 | `media_format_set_video_mime(fmt2, ...);` | `fmt1`: 2<br> `fmt2`: 1                       | `fmt2` `ref_count` is 1, which means that you can modify the `fmt2` data. |
 | `media_packet_set_format(pkt2, fmt2);`   | `fmt1`: 2<br> `fmt2`: 2                      | Set the modified `fmt2` to the `pkt2` handle. You must call the `media_format_unref(fmt2)` function. |

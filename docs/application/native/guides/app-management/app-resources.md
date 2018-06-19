@@ -13,7 +13,9 @@ The main features of the Resource Manager API include:
   >
   > The Resource Manager tool is supported since Tizen 2.4.
   >
-  > If you cannot access the `Resource Manager` view in the Tizen Studio, check the version and API version attributes in the `<manifest>` element of the application manifest file.For more information on the Resource Manager tool, see [Providing Resources for Multiple Device Types](../../../tizen-studio/native-tools/resource-manager.md).
+  > If you cannot access the `Resource Manager` view in the Tizen Studio, check the version and API version attributes in the `<manifest>` element of the application manifest file.
+  >
+  > For more information on the Resource Manager tool, see [Providing Resources for Multiple Device Types](../../../tizen-studio/native-tools/resource-manager.md).
 
 - Using the resources
 
@@ -138,7 +140,9 @@ To check how the resources are shown on different device configurations, create 
 
    ![Emulator Manager](./media/resource_manager_conn_explorer.png)
 
-2. In the **Emulator Manager** window, the HD Mobile emulator has already been created.Next, create an emulator instance with a WVGA resolution by clicking **Create**.
+2. In the **Emulator Manager** window, the HD Mobile emulator has already been created.
+
+   Next, create an emulator instance with a WVGA resolution by clicking **Create**.
 
    ![Create a new emulator](./media/resource_manager_emulator_new.png)
 

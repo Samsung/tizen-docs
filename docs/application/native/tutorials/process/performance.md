@@ -18,11 +18,13 @@ To improve the performance of an application:
 
 The Tizen Studio supports various tools which help to measure and increase performance at runtime:
 
-- [Dynamic Analyzer](../../../tizen-studio/common-tools/dynamic-analyzer/overview.md)  
-The Dynamic Analyzer helps to identify bottlenecks and improve resource usage patterns in applications. For more information on its usage, see [Dynamic Analysis](#dynamic-analysis).
+- [Dynamic Analyzer](../../../tizen-studio/common-tools/dynamic-analyzer/overview.md)
 
-- [Valgrind](../../../tizen-studio/native-tools/valgrind.md)  
-Valgrind detects memory errors or leaks. This tool helps to improve memory usage patterns in native applications. For more information on its usage, see [Valgrind Analysis](#valgrind-analysis).
+  The Dynamic Analyzer helps to identify bottlenecks and improve resource usage patterns in applications. For more information on its usage, see [Dynamic Analysis](#dynamic-analysis).
+
+- [Valgrind](../../../tizen-studio/native-tools/valgrind.md)
+
+  Valgrind detects memory errors or leaks. This tool helps to improve memory usage patterns in native applications. For more information on its usage, see [Valgrind Analysis](#valgrind-analysis).
 
 Measuring performance allows you to identify bottlenecks that take a critical amount of time during the program execution and to compare the code execution time before and after optimization.
 
@@ -47,10 +49,12 @@ To make your applications powerful, faster, and more stable, you need to analyze
 
 The following instructions and examples help you to use the Dynamic Analyzer effectively:
 
-- [Running Dynamic Analyzer](#running-dynamic-analyzer)  
+- [Running Dynamic Analyzer](#running-dynamic-analyzer)
+
   Describes how to launch the Dynamic Analyzer.
 
-- [Using the Analysis Result](#using-the-analysis-result)  
+- [Using the Analysis Result](#using-the-analysis-result)
+
   Describes how to utilize the Dynamic Analyzer for various improvement purposes.
 
 ### Running Dynamic Analyzer
@@ -59,7 +63,7 @@ You can launch the Dynamic Analyzer in the Tizen Studio or as a standalone appli
 
 - To launch the Dynamic Analyzer in the Tizen Studio:
   1. Right-click your project in the Tizen Studio **Project Explorer** view.
-  2. Select **Profile As > Profile with Dynamic Analyzer**.  
+  2. Select **Profile As > Profile with Dynamic Analyzer**.
 
   The selected project is built, packaged, and installed on the target device. The Dynamic Analyzer is launched and the profiling starts automatically.
 
@@ -86,14 +90,17 @@ After the profiling is terminated by the Dynamic Analyzer, analyze the result. T
 
 The following instructions help you to use the analysis result:
 
-- [Performance Analysis](#performance_analysis)  
-Describes how to analyze application performance.
+- [Performance Analysis](#performance_analysis)
 
-- [Detecting Leaks](#detecting)  
-Describes how to detect memory and resource leaks.
+  Describes how to analyze application performance.
 
-- [Multi-threaded Application and Synchronization Analysis](#multithread)  
-Describes how to analyze threads and synchronization.
+- [Detecting Leaks](#detecting)
+
+  Describes how to detect memory and resource leaks.
+
+- [Multi-threaded Application and Synchronization Analysis](#multithread)
+
+  Describes how to analyze threads and synchronization.
 
 <a name="performance_analysis"></a>
 #### Performance Analysis
@@ -158,10 +165,12 @@ Valgrind helps you to detect memory errors or leaks in your application at runti
 
 The following instructions and examples help you to use Valgrind effectively:
 
-- [Running Valgrind](#running-valgrind)  
+- [Running Valgrind](#running-valgrind)
+
   Describes how to launch Valgrind with your application.
 
-- [Viewing Valgrind Result](#viewing-valgrind-result)  
+- [Viewing Valgrind Result](#viewing-valgrind-result)
+
   Describes the information provided through Valgrind analysis.
 
 <a name="running_valgrind"></a>
@@ -175,13 +184,17 @@ To set the Valgrind options for your application:
 
 3. Select the created configuration.
 
-4. Go to the **Memory Profile Options > Collect data** tab:  
-Select from 2 types of memory profiling settings:  
-  - Memory error and memory leak checking  
-    This option uses the **Memcheck** tool to profile your application.
+4. Go to the **Memory Profile Options > Collect data** tab:
 
-  - Heap memory profiling  
-    This option uses the **Massif** tool to profile your application.
+   Select from 2 types of memory profiling settings:
+
+   - Memory error and memory leak checking
+
+     This option uses the **Memcheck** tool to profile your application.
+
+   - Heap memory profiling
+
+     This option uses the **Massif** tool to profile your application.
 
 5. On the **General setting** tab, set the general Valgrind options. These options are used for both **Memcheck** and **Massif** profiling.
 
@@ -195,31 +208,31 @@ Select from 2 types of memory profiling settings:
      When enabled, Valgrind traces into sub-processes initiated through the exec system call. This is necessary for multi-project applications. Valgrind does trace into the child of a fork (it would be difficult not to, since fork makes an identical copy of a process), so this option is arguably badly named. However, most children of fork calls immediately call exec anyway.
 
 
-   - **run __libc_freeres()on exit**
+   - **run __libc_freeres() on exit**
 
      This option is only relevant when running Valgrind on Linux.
 
-     The GNU C library (`libc.so`), which is used by all applications, can allocate memory for its own uses. Usually it does not free that memory when the application ends, since the Linux kernel reclaims all process resources when a process exits anyway. The glibc authors realized that this behavior causes leak checkers, such as Valgrind, to falsely report leaks in glibc, when a leak check is done at exit. In order to avoid this, they provided a routine called `__libc_freeres()` specifically to make glibc release all memory it has allocated. **Memcheck** therefore tries to run `__libc_freeres()` at exit. Unfortunately, in some very old versions of glibc, `__libc_freeres()` is sufficiently buggy to cause segmentation faults. This was particularly noticeable on Red Hat 7.1. So this option is provided in order to inhibit the run of `__libc_freeres()`. If your application seems to run fine on Valgrind, but segfaults at exit, disabling this option can fix the problem, although at the cost of possibly falsely reporting space leaks in `libc.so`. 
+     The GNU C library (`libc.so`), which is used by all applications, can allocate memory for its own uses. Usually it does not free that memory when the application ends, since the Linux kernel reclaims all process resources when a process exits anyway. The glibc authors realized that this behavior causes leak checkers, such as Valgrind, to falsely report leaks in glibc, when a leak check is done at exit. In order to avoid this, they provided a routine called `__libc_freeres()` specifically to make glibc release all memory it has allocated. **Memcheck** therefore tries to run `__libc_freeres()` at exit. Unfortunately, in some very old versions of glibc, `__libc_freeres()` is sufficiently buggy to cause segmentation faults. This was particularly noticeable on Red Hat 7.1. So this option is provided in order to inhibit the run of `__libc_freeres()`. If your application seems to run fine on Valgrind, but segfaults at exit, disabling this option can fix the problem, although at the cost of possibly falsely reporting space leaks in `libc.so`.
 
    - **demangle C++ names**
 
        Automatic demangling (decoding) of C++ names is enabled by default. When enabled, Valgrind attempts to translate encoded C++ names back to something approaching the original. The demangler handles symbols mangled by g++ versions 2.X, 3.X, and 4.X.
 
        An important fact about demangling is that method names mentioned in suppressions files must be in their mangled form. Valgrind does not demangle method names when searching for applicable suppressions, because to do otherwise would make suppression file contents dependent on the state of Valgrind's demangling machinery, and also slow down suppression matching.
- 
+
    - **num callers in stack trace**
 
        This option specifies the maximum number of entries shown in stack traces that identify application locations. Errors are commoned up using only the top 4 method locations (the place in the current method, and that of its 3 immediate callers). So this does not affect the total number of errors reported.
 
       The maximum value for this option is 50. Note that higher settings make Valgrind run more slowly and take more memory, but can be useful when working with applications with deeply-nested call chains.
- 
+
    - **limit errors reported**
 
        When enabled, Valgrind stops reporting errors after 10,000,000 in total, or 1,000 different ones, have been seen. This is to stop the error tracking machinery from becoming a huge performance overhead in applications with many errors.
 
-   - **show errors below main** 
+   - **show errors below main**
 
-      By default, stack traces for errors do not show any methods that appear beneath `main()`. Alternatively, if `main()` is not present in the stack trace, it does not show any methods below `main()`-like methods, such as glibc's `__libc_start_main()`. Furthermore, if `main()`-like methods are present in the trace, they are normalized (below `main()`), in order to make the output more deterministic. If this option is enabled, all stack trace entries are shown and `main()`-like methods are not normalized. 
+      By default, stack traces for errors do not show any methods that appear beneath `main()`. Alternatively, if `main()` is not present in the stack trace, it does not show any methods below `main()`-like methods, such as glibc's `__libc_start_main()`. Furthermore, if `main()`-like methods are present in the trace, they are normalized (below `main()`), in order to make the output more deterministic. If this option is enabled, all stack trace entries are shown and `main()`-like methods are not normalized.
 
    - **max size of stack frame**
 
@@ -229,13 +242,15 @@ Select from 2 types of memory profiling settings:
 
       You must only consider the use of this option if Valgrind's debug output directs you to do so. In that case, it tells you the new threshold you must specify.
 
-      In general, allocating large structures on the stack is a bad idea, because you can easily run out of stack space, especially on systems with limited memory or which expect to support large numbers of threads each with a small stack, and also because the error checking performed by **Memcheck** is more effective for heap-allocated data than for stack-allocated data. If you have to use this option, consider rewriting your code to allocate on the heap rather than on the stack. 
+      In general, allocating large structures on the stack is a bad idea, because you can easily run out of stack space, especially on systems with limited memory or which expect to support large numbers of threads each with a small stack, and also because the error checking performed by **Memcheck** is more effective for heap-allocated data than for stack-allocated data. If you have to use this option, consider rewriting your code to allocate on the heap rather than on the stack.
 
    - **suppressions file**
 
-       This option specifies an extra file from which to read descriptions of errors to suppress. You can use up to 100 extra suppression files. 
+       This option specifies an extra file from which to read descriptions of errors to suppress. You can use up to 100 extra suppression files.
 
-6. On the **Tool Advanced setting** tab, set the advanced options.The tab content depends on the selection you have made on the **Collect data** tab.
+6. On the **Tool Advanced setting** tab, set the advanced options.
+
+   The tab content depends on the selection you have made on the **Collect data** tab.
 
    Tool Advanced setting options for memory error and memory leak profiling cantains the following options:
 
@@ -254,21 +269,23 @@ Select from 2 types of memory profiling settings:
 
        When the client application releases memory using free (in C) or delete (C++), that memory is not immediately made available for re-allocation. Instead, it is marked inaccessible and placed in a queue of freed blocks. The purpose is to defer as long as possible the point at which freed-up memory comes back into circulation. This increases the chance that **Memcheck** is able to detect invalid accesses to blocks for some significant period of time after they have been freed.
 
-      This option specifies the maximum total size, in bytes, of the blocks in the queue. The default value is 20 million bytes. Increasing this increases the total amount of memory used by **Memcheck**, but can result in the detection of invalid uses of freed blocks which would otherwise go undetected. 
+      This option specifies the maximum total size, in bytes, of the blocks in the queue. The default value is 20 million bytes. Increasing this increases the total amount of memory used by **Memcheck**, but can result in the detection of invalid uses of freed blocks which would otherwise go undetected.
 
    - **show reachable blocks**
 
-       When disabled, the memory leak detector only shows "definitely lost" and "possibly lost" blocks. When enabled, the leak detector also shows "reachable" and "indirectly lost" blocks. It shows all blocks, except suppressed ones, so **--show-all**would be a better name for it. 
+       When disabled, the memory leak detector only shows "definitely lost" and "possibly lost" blocks. When enabled, the leak detector also shows "reachable" and "indirectly lost" blocks. It shows all blocks, except suppressed ones, so **--show-all** would be a better name for it.
 
    - **allow partial loads**
 
-       This option controls how **Memcheck** handles word-sized, word-aligned loads from addresses for which some bytes are addressable and others are not. When set to **yes**, such loads do not produce an address error. Instead, loaded bytes originating from illegal addresses are marked as uninitialized, and those corresponding to legal addresses are handled in the normal way.When set to **no**, loads from partially invalid addresses are treated the same as loads from completely invalid addresses, an illegal-address error is issued, and the resulting bytes are marked as initialized.
+       This option controls how **Memcheck** handles word-sized, word-aligned loads from addresses for which some bytes are addressable and others are not. When set to **yes**, such loads do not produce an address error. Instead, loaded bytes originating from illegal addresses are marked as uninitialized, and those corresponding to legal addresses are handled in the normal way.
 
-      The code that behaves in this way is in violation of the ISO C/C++ standards, and must be considered broken. If at all possible, such code must be fixed. This option must be used only as a last resort. 
+       When set to **no**, loads from partially invalid addresses are treated the same as loads from completely invalid addresses, an illegal-address error is issued, and the resulting bytes are marked as initialized.
+
+      The code that behaves in this way is in violation of the ISO C/C++ standards, and must be considered broken. If at all possible, such code must be fixed. This option must be used only as a last resort.
 
    - **undef value errors**
 
-       This option controls whether **Memcheck** reports uses of undefined value errors. If you do not want to see undefined value errors, set this to **no**. It also has the side effect of slightly speedi 
+       This option controls whether **Memcheck** reports uses of undefined value errors. If you do not want to see undefined value errors, set this to no. It also has the side effect of slightly speeding up **Memcheck**.
 
    Tool Advanced setting options for heap memory profiling cantains the following options:
 
@@ -286,11 +303,11 @@ Select from 2 types of memory profiling settings:
 
    - **allocation tree depth**
 
-       The maximum depth of the allocation trees recorded for detailed snapshots. Increasing it makes **Massif** run somewhat more slowly, use more memory, and produce bigger output files. 
+       The maximum depth of the allocation trees recorded for detailed snapshots. Increasing it makes **Massif** run somewhat more slowly, use more memory, and produce bigger output files.
 
    - **heap allocation threshold**
 
-       The significance threshold for heap allocations is a percentage of the total memory size. The allocation tree entries that account for less than this are aggregated. This must be specified in tandem with ms_print's option of the same name. 
+       The significance threshold for heap allocations is a percentage of the total memory size. The allocation tree entries that account for less than this are aggregated. This must be specified in tandem with ms_print's option of the same name.
 
    - **allocation peak inaccuracy**
 
@@ -300,27 +317,34 @@ Select from 2 types of memory profiling settings:
 
        This option specifies the time unit used for the profiling. There are 3 possibilities:
 
-       - Instructions executed (i)  
+       - Instructions executed (i)
+
          Good for most cases
-       - Real (wall clock) time (in milliseconds)  
+
+       - Real (wall clock) time (in milliseconds)
+
          It is useful sometimes
-       - Bytes allocated/deallocated on the heap or stack (B)  
-         It is useful for very short-run programs, and for testing purposes, because it is the most reproducible across different machines. 
+
+       - Bytes allocated/deallocated on the heap or stack (B)
+
+         It is useful for very short-run programs, and for testing purposes, because it is the most reproducible across different machines.
 
    - **detailed snapshot frequency**
 
-       This option specifies the frequency of detailed snapshots. With **--detailed-freq=1**, every snapshot is detailed. 
+       This option specifies the frequency of detailed snapshots. With **--detailed-freq=1**, every snapshot is detailed.
 
    - **max snapshots**
-       This option specifies the maximum number of snapshots recorded. If set to N, for all programs except very short-running ones, the final number of snapshots is between N/2 and N. 
+
+       This option specifies the maximum number of snapshots recorded. If set to N, for all programs except very short-running ones, the final number of snapshots is between N/2 and N.
 
    - **minimum heap block alignment**
 
-       By default, Valgrind's malloc, realloc, and so on return a block whose starting address is 8-byte-aligned or 16-byte-aligned. The value depends on the platform and matches the platform default. This option allows you to specify a different alignment. The supplied value must be greater than or equal to the default, less than or equal to 4096, and must be a power of 2. 
+       By default, Valgrind's malloc, realloc, and so on return a block whose starting address is 8-byte-aligned or 16-byte-aligned. The value depends on the platform and matches the platform default. This option allows you to specify a different alignment. The supplied value must be greater than or equal to the default, less than or equal to 4096, and must be a power of 2.
 
    - **allocation functions**
 
-       Methods specified with this option are treated as though they were a heap allocation method, such as malloc. This is useful for methods that are wrappers to malloc or new, which can fill up the allocation trees with uninteresting information. This option can be specified multiple times on the command line, to name multiple methods.The named method is only treated this way if it is the top entry in a stack trace, or just below another method treated this way. For example, if you have a method malloc1 that wraps malloc, and malloc2 that wraps malloc1, just specifying **--alloc-fn=malloc2** has no effect. You need to specify **--alloc-fn=malloc1** as well. This is a little inconvenient, but the reason is that checking for allocation methods is slow, and it saves a lot of time if **Massif** can stop looking through the stack trace entries as soon as it finds one that does not match rather than having to continue through all the entries. 
+       Methods specified with this option are treated as though they were a heap allocation method, such as malloc. This is useful for methods that are wrappers to malloc or new, which can fill up the allocation trees with uninteresting information. This option can be specified multiple times on the command line, to name multiple methods.
+       The named method is only treated this way if it is the top entry in a stack trace, or just below another method treated this way. For example, if you have a method malloc1 that wraps malloc, and malloc2 that wraps malloc1, just specifying **--alloc-fn=malloc2** has no effect. You need to specify **--alloc-fn=malloc1** as well. This is a little inconvenient, but the reason is that checking for allocation methods is slow, and it saves a lot of time if **Massif** can stop looking through the stack trace entries as soon as it finds one that does not match rather than having to continue through all the entries.
 
 7. To save the settings, click **Apply**.
 
@@ -353,7 +377,9 @@ The heap memory profiling table displays the heap memory consumed and allocated 
 - **Time (i)**: Number of instructions being executed
 - **Total (B)**: Total heap memory consumption byte size
 - **Useful Heap (B)**: Size of the heap memory used by the program
-- **Extra Heap (B)**: Size of the heap memory allocated in excess of what the program is using. The source of the extra heap memory is:Administrative bytes of the heap memory blockAligned bytes of the requested memory size
+- **Extra Heap (B)**: Size of the heap memory allocated in excess of what the program is using. The source of the extra heap memory is:
+  - Administrative bytes of the heap memory block
+  - Aligned bytes of the requested memory size
 - **Stack (B)**: Size of the stacks. By default, stack profiling is disabled as it slows profiling. It is enabled using the **profile stack** option.
 
 **Figure: Heap memory profiling results**

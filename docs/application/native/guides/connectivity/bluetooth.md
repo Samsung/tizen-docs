@@ -116,7 +116,8 @@ To enable your application to use the Bluetooth functionality:
    }
    ```
 
-   > **Note**  
+   > **Note**
+   >
    > The Bluetooth feature is not thread-safe and depends on the main loop. Implement Bluetooth within the main loop, and do not use it in a thread.
 
 <a name="enable"></a>
@@ -442,7 +443,8 @@ To find remote Bluetooth devices, you can either discover them and bond with the
 
   To remove a device from the bonded list, call the `bt_device_destroy_bond()` function.
 
-	> **Note**  
+	> **Note**
+    >
 	> A Bluetooth device must be in a discovery mode (visible) for other devices to find it and connect to it. If you want other devices to find your device, you must set the device to be visible.
 
 To manage the device visibility and enable discovery:
@@ -615,14 +617,15 @@ To connect to other devices:
 - Connect as a client:
 
   1. Define and register the socket connection state change callback using the `bt_socket_set_connection_state_changed_cb()` function.
+
      The callback is invoked whenever the connection state changes (for example, when you connect to the server device).
      ```
-       ret = bt_socket_set_connection_state_changed_cb(socket_connection_state_changed, NULL);
-       if (ret != BT_ERROR_NONE) {
-           dlog_print(DLOG_ERROR, LOG_TAG, "[bt_socket_set_connection_state_changed_cb] failed.");
+     ret = bt_socket_set_connection_state_changed_cb(socket_connection_state_changed, NULL);
+     if (ret != BT_ERROR_NONE) {
+         dlog_print(DLOG_ERROR, LOG_TAG, "[bt_socket_set_connection_state_changed_cb] failed.");
 
-           return;
-       }
+         return;
+     }
      ```
      > **Note**
      >
@@ -805,17 +808,17 @@ To perform GATT client operations:
       {
           int ret;
           char *uuid = NULL;
-  
+
           bt_gatt_get_uuid(svc_handle, &uuid);
           dlog_print(DLOG_INFO, LOG_TAG, "[%d / %d] uuid: (%s)", index, total, uuid);
-  
+
           g_free(uuid);
-  
+
           ret = bt_gatt_service_foreach_characteristics(svc_handle,
                                                         __bt_gatt_client_foreach_chr_cb, NULL);
           if (ret != BT_ERROR_NONE)
               dlog_print(DLOG_INFO, LOG_TAG, "bt_gatt_service_foreach_characteristics failed: %d", ret);
-  
+
           return true;
       }
       ```
@@ -827,18 +830,18 @@ To perform GATT client operations:
       {
           int ret;
           char *uuid = NULL;
-  
+
           bt_gatt_get_uuid(chr_handle, &uuid);
-  
+
           dlog_print(DLOG_INFO, LOG_TAG, "\t[%d / %d] uuid: (%s)", index, total, uuid);
-  
+
           g_free(uuid);
-  
+
           ret = bt_gatt_characteristic_foreach_descriptors(chr_handle,
                                                            __bt_gatt_client_foreach_desc_cb, NULL);
           if (ret != BT_ERROR_NONE)
               dlog_print(DLOG_INFO, LOG_TAG, "bt_gatt_characteristic_foreach_descriptors failed: %d", ret);
-  
+
           return true;
       }
       ```
@@ -849,13 +852,13 @@ To perform GATT client operations:
       __bt_gatt_client_foreach_desc_cb(int total, int index, bt_gatt_h desc_handle, void *data)
       {
           char *uuid = NULL;
-  
+
           bt_gatt_get_uuid(desc_handle, &uuid);
-  
+
           dlog_print(DLOG_INFO, LOG_TAG, "\t\t[%d / %d] uuid: (%s)", index, total, uuid);
-  
+
           g_free(uuid);
-  
+
           return true;
       }
       ```
@@ -1738,7 +1741,8 @@ To discover nearby LE devices, perform an LE scan operation:
 
 Perform the LE discovery operation to discover nearby Bluetooth LE devices. You can register and deregister a callback for the LE discovery operation through the set and unset callback functions. The registered device discovery callback provides details of the discovered devices and the state of the discovery (started, finished, found).
 
-> **Note**  
+> **Note**
+>
 > The APIs used in this use case are deprecated since Tizen 2.3.1. For scanning nearby BLE devices in Tizen 2.3.1 and higher, see [Managing Bluetooth LE Scans](#le_scan).
 
 To start the BLE discovery operation:

@@ -270,7 +270,9 @@ To inform a service application of the time interval at which to operate a sync 
 
 	All the function parameters can be reset except `sync_job_name` and `sync_job_id`, which are used to manage a specific sync job.
 
-4. When the periodic sync is no longer needed, remove it with the `sync_manager_remove_sync_job()` function with its `sync_job_id`. If you want to stop using the account too, clean up the account handle.At the end, unset the sync callbacks and release the resources with the `sync_adapter_unset_callbacks()` function.
+4. When the periodic sync is no longer needed, remove it with the `sync_manager_remove_sync_job()` function with its `sync_job_id`. If you want to stop using the account too, clean up the account handle.
+
+    At the end, unset the sync callbacks and release the resources with the `sync_adapter_unset_callbacks()` function.
 
     ```
     result = sync_manager_remove_sync_job(sync_job_id);
@@ -374,7 +376,9 @@ To inform a service application of the time to operate a sync job whenever a cor
 
 	All the function parameters can be reset except `sync_capability` and `sync_job_id`, which are used to manage a specific sync job.
 
-4. When the data change sync is no longer needed, remove it with the `sync_manager_remove_sync_job()` function with its `sync_job_id`. If you want to stop using the account too, clean up the account handle.At the end, unset the sync callbacks and release the resources with the `sync_adapter_unset_callbacks()` function.
+4. When the data change sync is no longer needed, remove it with the `sync_manager_remove_sync_job()` function with its `sync_job_id`. If you want to stop using the account too, clean up the account handle.
+
+    At the end, unset the sync callbacks and release the resources with the `sync_adapter_unset_callbacks()` function.
 
     ```
     result = sync_manager_remove_sync_job(sync_job_id);

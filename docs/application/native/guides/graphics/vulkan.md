@@ -70,7 +70,8 @@ To render a triangle using Vulkan&reg; in an SDL application:
 
    After SDL is initialized successfully, create the `SDL_Window` instance using the `SDL_CreateWindow()` function. The parameters define the title of the window, the X and Y position coordinates, width, height, and a set of `SDL_WindowFlags` OR'd together.
 
-   > **Note**  
+   > **Note**
+   >
    > To use the Vulkan&reg; context, use the `SDL_WINDOW_VULKAN` flag when you create a window. Do not use both `SDL_WINDOW_VULKAN` and `SDL_WINDOW_OPENGL` simultaneously.
 
    The `SDL_main()` function is mandatory for the Tizen framework to initialize the SDL application. You must use the `SDL_main()` function instead of the usual `main()` function in your SDL application.
@@ -260,7 +261,7 @@ To render a triangle using Vulkan&reg; in an SDL application:
 
    2. Although the `VkSurfaceKHR` object and its usage is platform-agnostic, its creation is not, because it depends on the window system details. Therefore, there is a platform-specific addition to the extension, which on Tizen is `SDL_vulkanSurface` and is also automatically included in the list from the `SDL_Vulkan_GetInstanceExtensions()` function.
 
-      This platform-specific extension on Tizen provides the `SDL_Vulkan_CreateSurface()` function to create a surface hiding the platform differences for you. The parameters are the SDL window pointer, custom allocators, and pointer to the `VkSurfaceKHR`variable. It simply passes through the `VkResult` from the relevant platform call.
+      This platform-specific extension on Tizen provides the `SDL_Vulkan_CreateSurface()` function to create a surface hiding the platform differences for you. The parameters are the SDL window pointer, custom allocators, and pointer to the `VkSurfaceKHR` variable. It simply passes through the `VkResult` from the relevant platform call.
 
       ```
       SDL_Vulkan_CreateSurface(demo->sdl_window, (SDL_vulkanInstance)demo->inst, (SDL_vulkanSurface*)&demo->surface);

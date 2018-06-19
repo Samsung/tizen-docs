@@ -21,7 +21,7 @@ The main features of the External Output Manager API include:
 
     You must use the EOM attributes to set the presentation mode by defining the EOM priority. With these attributes, you can display a fullscreen window on the external output device.
 
-    **Table: Presentation mode attributes**  
+    **Table: Presentation mode attributes**
 
     | Attribute                              | Description                              |
     |----------------------------------------|------------------------------------------|
@@ -37,7 +37,7 @@ The main features of the External Output Manager API include:
 
 - Getting information about the external output device
 
-  You can [get information about the external output device](#getstatus) by using various functions. For example, to [get the ID of the external output device](#getid), use the `eom_get_eom_output_ids()` function, and to get attribute information, use the `eom_get_output_attribute()`function.
+  You can [get information about the external output device](#getstatus) by using various functions. For example, to [get the ID of the external output device](#getid), use the `eom_get_eom_output_ids()` function, and to get attribute information, use the `eom_get_output_attribute()` function.
 
 - Setting the external output
 

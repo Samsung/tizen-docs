@@ -34,6 +34,7 @@ The main features of the Sensor API include:
   > Not all devices support all sensors, so each sensor is not necessarily available on all devices. You can [check whether a sensor is supported](#sensorlistener). For more information, see [System Information](../device/system.md).
 
   **Table: Supported sensor types**
+
   | Supported sensor types                   |                                          |                                          |
   |------------------------------------------|------------------------------------------|------------------------------------------|
   | [Accelerometer](#accelerometer)          | [Heart Rate Monitor Sensor](#hrm)        | [Proximity Sensor](#proximity)           |

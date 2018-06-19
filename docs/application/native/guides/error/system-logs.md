@@ -21,7 +21,11 @@ The main features of the dlog API include:
 
   - In the Tizen Studio (when testing with an emulator), use the **Log** view.
 
-    You can filter the messages by their priority level. You can also search the messages by keywords, such as pid, tid, tag, and message.**Figure: Messages in the Log view**![Messages in the Log view](./media/debugging.png)
+    You can filter the messages by their priority level. You can also search the messages by keywords, such as pid, tid, tag, and message.
+
+    **Figure: Messages in the Log view**
+
+    ![Messages in the Log view](./media/debugging.png)
 
 The following figure illustrates the general architecture of the dlog logging service.
 
@@ -36,7 +40,7 @@ The log message contains a priority level, tag, and the actual message text:
 
 - The priority level indicates the urgency of the log message.
 
-  **Table: Priority levels**  
+  **Table: Priority levels**
 
   | Priority     | Description                              |
   |--------------|------------------------------------------|
@@ -150,7 +154,7 @@ dlogutil <option> <filter-spec>
 
   The following table lists the available options for the `dlogutil` command.
 
-  **Table: Command options**  
+  **Table: Command options**
 
   | Option          | Description                              |
   |-----------------|------------------------------------------|

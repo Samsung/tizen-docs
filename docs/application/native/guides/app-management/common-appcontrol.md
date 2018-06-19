@@ -2,7 +2,8 @@
 
 An application control provides functions for launching other applications with a specific operation, URI, MIME type, and extra data. The requesting application can get a result back from the launched application. This topic introduces the common application controls that you can use.
 
-> **Note**  
+> **Note**
+>
 > It is possible that no application suitable to receive the application control exists. Verify that a suitable application exists before you send the launch request.
 
 ## Browser
@@ -211,9 +212,12 @@ For example: `file://<media storage path>/file.vcs`
 
 #### MIME Type
 
-- `application/vnd.tizen.calendar`  
+- `application/vnd.tizen.calendar`
+
    If viewing an event by event ID, the event ID (ID in the `_calendar_event` view) extra data and `application/vnd.tizen.calendar` MIME type must be specified.
+
 - `text/x-vcalendar` (for vcalendar file)
+
 - `text/vcalendar` (for vcalendar file)
 
 #### Extra Input
@@ -637,8 +641,10 @@ To display a specified contact from a vcard file, use the `file:` URI. To displa
 
 #### MIME Type
 
-- `application/vnd.tizen.contact`  
+- `application/vnd.tizen.contact`
+
   If viewing a contact by person ID, the person ID (ID in the `_contact_person` view) extra data and `application/vnd.tizen.contact` MIME type must be specified.
+
 - `text/vcard`
 - `text/x-vcard`
 
@@ -897,7 +903,7 @@ To share a single file of any MIME type in an email message, use the `APP_CONTRO
 #### URI (Mandatory)
 
 - `file:<path>`
-- `mailto:`  
+- `mailto:`
 
   Only an empty `mailto:` field is allowed. This can be used to filter out all but email applications available in the system.
 
@@ -1134,7 +1140,7 @@ To receive a specific type of input from the user, use the `APP_CONTROL_OPERATIO
 
 ![Default user input](./media/common_appcontrol_inputdelegator.png)
 
-**Figure 2: Voice user input**  
+**Figure 2: Voice user input**
 
 ![Voice user input](./media/common_appcontrol_inputdelegator_voice.png)
 
@@ -1163,8 +1169,8 @@ The input types are grouped into the following MIME types. Therefore, if you spe
 | `APP_CONTROL_DATA_INPUT_RETURNKEY_TYPE` | The return key used in the keyboard input type. This key must be passed as a string. The available values are:<br>- `Done`: Set key label to **Done**<br>- `Send`: Set key label to **Send**<br>- `Join`: Set key label to **Join**<br>- `Login`: Set key label to **Login**<br>- `Next`: Set key label to **Next**<br>- `Sign-in`: Set key label to **Sign-in**<br>- `Search`: Set key label to **Search**<br>- `Go`: Set key label to **Go** | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |
 | `APP_CONTROL_DATA_INPUT_MAX_TEXT_LENGTH` | The maximum text length allowed in the keyboard input type. This key must be passed as a string. | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |
 | `APP_CONTROL_DATA_INPUT_CURSOR_POSITION_SET` | The position where the cursor is to be set in the keyboard input type. This key must be passed as a string. | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |
-| `APP_CONTROL_DATA_INPUT_CURSOR_POSITION_GET` | The current position of the cursor in the keyboard input type. This key must be passed as a string. | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |   
-| `APP_CONTROL_DATA_INPUT_REPLY_TYPE` | The reply type. This key must be passed as a string.<br>This key allows caller application to know the user has entered though which input type of Input Delegator.<br><br> You can decide how to use extra output  according to the result  of this key. If the  result is `input_audio`   or `input_image`, you  must get the path of the result value through     `APP_CONTROL_DATA_PATH`.<br><br>The available values    are:     <br>  -   `input_voice`:     Receive the result     as voice <br>     -   `input_emoticon`:  Receive the result   as an emoticon  <br>-   `input_keyboard`:      Receive the result    as keyboard input  <br> -   `input_reply`:          Receive the result    as reply input     <br> -   `input_image`:     Receive the result    as an image  <br> -   `input_audio`:        Receive the result    as audio  | This key is optional and is supported only in wearable applications since Tizen 4.0. |   
+| `APP_CONTROL_DATA_INPUT_CURSOR_POSITION_GET` | The current position of the cursor in the keyboard input type. This key must be passed as a string. | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |
+| `APP_CONTROL_DATA_INPUT_REPLY_TYPE` | The reply type. This key must be passed as a string.<br>This key allows caller application to know the user has entered though which input type of Input Delegator.<br><br> You can decide how to use extra output  according to the result  of this key. If the  result is `input_audio`   or `input_image`, you  must get the path of the result value through     `APP_CONTROL_DATA_PATH`.<br><br>The available values    are:     <br>  -   `input_voice`:     Receive the result     as voice <br>     -   `input_emoticon`:  Receive the result   as an emoticon  <br>-   `input_keyboard`:      Receive the result    as keyboard input  <br> -   `input_reply`:          Receive the result    as reply input     <br> -   `input_image`:     Receive the result    as an image  <br> -   `input_audio`:        Receive the result    as audio  | This key is optional and is supported only in wearable applications since Tizen 4.0. |
 
 #### Extra Output
 
