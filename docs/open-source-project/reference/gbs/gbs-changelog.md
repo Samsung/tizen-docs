@@ -4,13 +4,13 @@ Use the `changelog` subcommand to generate a change log file in the `./packaging
 
 For command usage details, enter:
 
-```bash
+```
 $ gbs changelog --help
 ```
 
 Examples:
 
-```bash
+```
 test@test-desktop:~/acpid$ gbs ch --since=bed424ad5ddf74f907de0c19043e486f36e594b9
 info: Change log has been updated.
 test@test-desktop:~/acpid$ head packaging/acpid.changes

@@ -28,7 +28,7 @@ TBM has a frontend library and a backend module. The TBM frontend library is har
 
 With TBM, the client and server can allocate buffers and share buffers between them. For example, a client allocates a graphic buffer, draws something on it with GL and sends it to the display server for displaying it on the screen without buffer copying. The TBM backend module is implemented as a shared library and the TBM frontend finds the `libtbm-default.so` file and loads it from the `/usr/lib/bufmgr` directory at runtime.
 
-```bash
+```
 sh-3.2# ls -al
 lrwxrwxrwx  1 root root    14 Jul 28  2016 libtbm_default.so -> libtbm_sprd.so
 lrwxrwxrwx  1 root root    20 Jul 28  2016 libtbm_sprd.so -> libtbm_sprd.so.0.0.0
@@ -248,7 +248,7 @@ The vendor has to implement the TDM backend module. The TDM backend module has t
 
 The TDM backend is implemented as a shared library. The TDM frontend finds the `libtdm-default.so` file and loads it in the `/usr/lib/tdm` directory at runtime.
 
-```bash
+```
 sh-3.2# ls -l /usr/lib/tdm
 total 40
 lrwxrwxrwx 1 root root    14 Jul 28  2016 libtdm-default.so -> libtdm-drm.so
@@ -438,7 +438,7 @@ There are several backends which can be used as reference when implementing the 
 
 TDM offers the `tdm-test-server` tool to allow you to easily test the porting result. The `tdm-test-server` tool is included in the `libtdm-tools` package, which can be downloaded from the platform binary's snapshot repository. Make sure that TBM porting is done before using the following commands, because TDM works on top of TBM.
 
-```bash
+```
 $ systemctl stop display-manager  (stop the display server)
 $ export XDG_RUNTIME_DIR=/run
 $ export TBM_DISPLAY_SERVER=1
@@ -457,7 +457,7 @@ The following image shows the result of a test performed using the `tdm-test-ser
 
 TDM uses dlog to print debug messages. To show TDM runtime log messages:
 
-```bash
+```
 $ dlogutil -v threadtime TDM
 ```
 
@@ -512,8 +512,10 @@ The following figure illustrates the Tizen OpenGL&reg; ES and EGL&trade; archite
 
 ![Tizen OpenGL ES architecture](media/800px-opengles-stack.png)
 
-- CoreGL  
+- CoreGL
+
   An injection layer of OpenGL&reg; ES that provides the following capabilities:
+
   - Support for driver-independent optimization (FastPath)
   - EGL&trade;/OpenGL&reg; ES debugging
   - Performance logging
@@ -522,7 +524,8 @@ The following figure illustrates the Tizen OpenGL&reg; ES and EGL&trade; archite
     - OpenGL&reg; ES 1.1, 2.0, 3.0, 3.1
 
   CoreGL loads the manufacturer's OpenGL&reg; ES driver from the `/usr/lib/driver` directory. CoreGL provides the `libEGL.so`, `libGLESv1_CM.so`, and `libGLESvs.so` driver files in the `/usr/lib` directory.
-- GPU vendor GL/EGL&trade; driver  
+- GPU vendor GL/EGL&trade; driver
+
   The Tizen platform demands that the GPU vendor implements the GL and EGL&trade; driver using `libtpl-egl`. The GPU vendor GL/EGL&trade; driver (`libEGL.so`, `libGLESv1_CM.so`, `libGLESv2.so`) must be installed in the `/usr/lib/driver` path.
 
 
@@ -544,11 +547,16 @@ TPL-EGL provides interfaces based on an object-driven model. Every TPL-EGL objec
 
 The TPL-EGL has the following core objects:
 
-- TPL-EGL Object  
+- TPL-EGL Object
+
   Base class for all TPL-EGL objects.
-- TPL-EGL Display  
+
+- TPL-EGL Display
+
   Encapsulates the native display object (`Display *`, `wl_display`). Like a normal display, this represents a display system which is usually used for connecting to the server, scope for other objects.
-- TPL-EGL Surface  
+
+- TPL-EGL Surface
+
   Encapsulates the native drawable object (`Window`, `Pixmap`, `wl_surface`). The surface corresponds to a native surface, such as `tbm_surface_queue` or `wl_surface`. A surface can be configured to use N-buffers, but they are usually double-buffered or triple-buffered.
 
 #### TPL-EGL Objects and Corresponding EGL&trade; Objects

@@ -17,16 +17,16 @@ To submit a patch to Gerrit:
 1. Switch to the project directory and perform local development.
 
 2. Stage the revised content:
-   ```bash
+   ```
    $ git add <Revised_File>...
    ```
 3. Commit the revised content:
-   ```bash
+   ```
    $ git commit
    ```
 4. Push the patch to Gerrit:
 
-   ```bash
+   ```
    $ git push origin HEAD:refs/for/<remote_branch_name>
    ```
    > **Note**
@@ -60,7 +60,7 @@ You can submit a single package or a group of packages.
 
 To submit a package to the build system, execute the following command:
 
-```bash
+```
 $ gbs submit [-c <Commit_ID>] -m "<Comments>"
 ```
 
@@ -88,14 +88,14 @@ For example, assume that "ail", a low level library, depends on "aul". "ail" dev
 
 1. Submit 1 of the packages in the group to create a tag:
 
-   ```bash
+   ```
    $ cd platform/core/appfw/aul-1/
    $ gbs submit -m "<Comments>"
    ```
 
 2. Obtain the tag name from the output of the above command, and use the same tag as a `--tag` parameter for other packages in the group:
 
-   ```bash
+   ```
    $ cd platform/core/appfw/ail/
    $ gbs submit --tag <same_tag> -m "<Comments>"
    ```
