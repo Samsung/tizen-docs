@@ -2,7 +2,7 @@
 
 An application control provides functions for launching other applications with a specific operation, URI, MIME type, and extra data. The requesting application can get a result back from the launched application. This topic introduces the common application controls that you can use.
 
-> **Note**  
+> **Note**
 > It is possible that no application suitable to receive the application control exists. Verify that a suitable application exists before you send the launch request.
 
 ## Browser
@@ -211,7 +211,7 @@ For example: `file://<media storage path>/file.vcs`
 
 #### MIME Type
 
-- `application/vnd.tizen.calendar`  
+- `application/vnd.tizen.calendar`
    If viewing an event by event ID, the event ID (ID in the `_calendar_event` view) extra data and `application/vnd.tizen.calendar` MIME type must be specified.
 - `text/x-vcalendar` (for vcalendar file)
 - `text/vcalendar` (for vcalendar file)
@@ -637,7 +637,7 @@ To display a specified contact from a vcard file, use the `file:` URI. To displa
 
 #### MIME Type
 
-- `application/vnd.tizen.contact`  
+- `application/vnd.tizen.contact`
   If viewing a contact by person ID, the person ID (ID in the `_contact_person` view) extra data and `application/vnd.tizen.contact` MIME type must be specified.
 - `text/vcard`
 - `text/x-vcard`
@@ -897,7 +897,7 @@ To share a single file of any MIME type in an email message, use the `APP_CONTRO
 #### URI (Mandatory)
 
 - `file:<path>`
-- `mailto:`  
+- `mailto:`
 
   Only an empty `mailto:` field is allowed. This can be used to filter out all but email applications available in the system.
 
@@ -1134,7 +1134,7 @@ To receive a specific type of input from the user, use the `APP_CONTROL_OPERATIO
 
 ![Default user input](./media/common_appcontrol_inputdelegator.png)
 
-**Figure 2: Voice user input**  
+**Figure 2: Voice user input**
 
 ![Voice user input](./media/common_appcontrol_inputdelegator_voice.png)
 
@@ -1163,8 +1163,8 @@ The input types are grouped into the following MIME types. Therefore, if you spe
 | `APP_CONTROL_DATA_INPUT_RETURNKEY_TYPE` | The return key used in the keyboard input type. This key must be passed as a string. The available values are:<br>- `Done`: Set key label to **Done**<br>- `Send`: Set key label to **Send**<br>- `Join`: Set key label to **Join**<br>- `Login`: Set key label to **Login**<br>- `Next`: Set key label to **Next**<br>- `Sign-in`: Set key label to **Sign-in**<br>- `Search`: Set key label to **Search**<br>- `Go`: Set key label to **Go** | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |
 | `APP_CONTROL_DATA_INPUT_MAX_TEXT_LENGTH` | The maximum text length allowed in the keyboard input type. This key must be passed as a string. | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |
 | `APP_CONTROL_DATA_INPUT_CURSOR_POSITION_SET` | The position where the cursor is to be set in the keyboard input type. This key must be passed as a string. | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |
-| `APP_CONTROL_DATA_INPUT_CURSOR_POSITION_GET` | The current position of the cursor in the keyboard input type. This key must be passed as a string. | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |   
-| `APP_CONTROL_DATA_INPUT_REPLY_TYPE` | The reply type. This key must be passed as a string.<br>This key allows caller application to know the user has entered though which input type of Input Delegator.<br><br> You can decide how to use extra output  according to the result  of this key. If the  result is `input_audio`   or `input_image`, you  must get the path of the result value through     `APP_CONTROL_DATA_PATH`.<br><br>The available values    are:     <br>  -   `input_voice`:     Receive the result     as voice <br>     -   `input_emoticon`:  Receive the result   as an emoticon  <br>-   `input_keyboard`:      Receive the result    as keyboard input  <br> -   `input_reply`:          Receive the result    as reply input     <br> -   `input_image`:     Receive the result    as an image  <br> -   `input_audio`:        Receive the result    as audio  | This key is optional and is supported only in wearable applications since Tizen 4.0. |   
+| `APP_CONTROL_DATA_INPUT_CURSOR_POSITION_GET` | The current position of the cursor in the keyboard input type. This key must be passed as a string. | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |
+| `APP_CONTROL_DATA_INPUT_REPLY_TYPE` | The reply type. This key must be passed as a string.<br>This key allows caller application to know the user has entered though which input type of Input Delegator.<br><br> You can decide how to use extra output  according to the result  of this key. If the  result is `input_audio`   or `input_image`, you  must get the path of the result value through     `APP_CONTROL_DATA_PATH`.<br><br>The available values    are:     <br>  -   `input_voice`:     Receive the result     as voice <br>     -   `input_emoticon`:  Receive the result   as an emoticon  <br>-   `input_keyboard`:      Receive the result    as keyboard input  <br> -   `input_reply`:          Receive the result    as reply input     <br> -   `input_image`:     Receive the result    as an image  <br> -   `input_audio`:        Receive the result    as audio  | This key is optional and is supported only in wearable applications since Tizen 4.0. |
 
 #### Extra Output
 
@@ -2239,6 +2239,83 @@ vpn_appcontrol_result_cb(app_control_h request, app_control_h reply, app_control
     app_control_get_extra_data(reply, APP_CONTROL_DATA_TEXT, &result_txt);
     dlog_print(DLOG_INFO, LOG_TAG, "Result: %s", result_txt);
 }
+```
+## Privacy setting guide popup
+
+The Privacy setting guide popup application control is supported only in wearable applications since Tizen 5.0.
+
+### Shows privacy related common guide popup
+
+To show common privacy setting guide popup, use the `APP_CONTROL_OPERATION_PRIVACY_SETTING_GUIDE` operation. This operation helps you to guide users to change privacy privilege settings. You need to check permissions to see if the user actually granted requested permissions after using this application control.
+
+**Figure: Privacy setting guide popup**
+
+![Guide popup for app launching](./media/common_appcontrol_privacy_setting_guide_open.png)![Guide popup for using privacy privileged function](./media/common_appcontrol_privacy_setting_guide_use.png)![Required privacy list shown in popup](./media/common_appcontrol_privacy_setting_guide_privacy.png)
+
+#### Operation
+
+- `http://tizen.org/appcontrol/operation/setting/guide_privacy_setting` (in `.c` files and manifest file)
+- `APP_CONTROL_OPERATION_PRIVACY_SETTING_GUIDE` (in `.c` files only)
+
+#### Extra Input
+
+| Key                     | Description                              | Note                   |
+|-------------------------|------------------------------------------|------------------------|
+| `APP_CONTROL_DATA_TYPE` | The guide message type. The available values are `open` (for application launching) and `use` (for using function).  This key must be passed as a string. | This key is mandatory. |
+| `APP_CONTROL_DATA_FEATURE` | The feature or function name to show. This key must be passed as a string. |   |
+| `APP_CONTROL_DATA_PRIVILEGES` | The required privacy privileges to show. This key must be passed as an array of string.| The required privacy privileges to show. This key must be passed as an array of string. |
+
+#### Extra Output
+
+| Key                     | Description                              |
+|-------------------------|------------------------------------------|
+| `APP_CONTROL_DATA_SELECTED` | The user response. The value must be `yes` or `no`. This key must be passed as a string. |
+
+#### Example Code
+
+```
+#include <app_control.h>
+
+static void app_control_result_cb(app_control_h request, app_control_h reply, app_control_result_e result, void *user_data)
+{
+    char *value;
+    app_data_s* ad = (app_data_s*)user_data;
+
+    if (result == APP_CONTROL_RESULT_SUCCEEDED) {
+        if (app_control_get_extra_data(reply, APP_CONTROL_DATA_SELECTED, &value) == APP_CONTROL_ERROR_NONE) {
+            if (!strcmp(value, "yes")) {
+                /* User selected 'V' -> Launching privacy setting application */
+            } else if (!strcmp(value, "no")) {
+                /* User selected 'X' -> Popup closed & permission not changed */
+            }
+        }
+        else {
+            /* Error handling */
+        }
+    } else {
+        /* Error handling */
+    }
+}
+
+static void launch_privacy_guide_popup(app_data_s *ad) {
+    int priv_num = 2;
+    char* privileges[priv_num] = {
+        "http://tizen.org/privilege/location",
+        "http://tizen.org/privilege/location.coarse" };
+
+    app_control_h app_control;
+    app_control_create(&app_control);
+
+    app_control_set_operation(app_control, APP_CONTROL_OPERATION_PRIVACY_SETTING_GUIDE);
+
+    app_control_add_extra_data(app_control, APP_CONTROL_DATA_TYPE, "use");
+    app_control_add_extra_data(app_control, APP_CONTROL_DATA_FEATURE, "time line");
+    app_control_add_extra_data_array(app_control, APP_CONTROL_DATA_PRIVILEGES, privileges, priv_num);
+
+    app_control_send_launch_request(app_control, app_control_result_cb, ad);
+    app_control_destroy(app_control);
+}
+
 ```
 
 ## Related Information
