@@ -31,6 +31,18 @@
 			<p>SecureRepository is simple application that allows you to securely store data, certificates and cryptographic keys using C# Tizen.Security.SecureRepository API.</p>
 			</td>
 		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="360" src="media/w4voicememo.png" width="360" /></p>
+			</td>
+			<td>
+			<p><strong>VoiceMemo</strong></p>
+			<p>The Voice Memo sample application demonstrates how you can create an application using Xamarin.Forms API and Tizen FX APIs.</p>
+			<p><a href="https://developer.tizen.org/ko/development/sample/native/UI/%28Circle%29_Voice_Memo" target="_blank">Native version</a></p>
+			<p><a href="https://developer.tizen.org/ko/development/sample/web/UI/Voice_Memo_UI" target="_blank">Web version</a></p>
+			<p>Comming soon</p>
+			</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -250,9 +262,8 @@
 			<p><img alt="" height="225" src="media/tv24firstscreen.png" width="400" /></p>
 			</td>
 			<td>
-			<p><strong>FirstScreen</strong></p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/FirstScreen" target="_blank"><strong>FirstScreen</strong></a></p>
                         <p>FirstScreen is a sample application that demonstrates how to launch the apps on the TV.</p>
-			<p>Comming soon</p>
 			</td>
 		</tr>
 	</tbody>
@@ -676,6 +687,14 @@
 			<td>
 			<p><strong>ScreenMirroringSample</strong></p>
 			<p>ScreenMirroringSample is a sample application that demonstrates how to use 'SINK' function of Tizen mobile.</p>
+			<p>Comming soon</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="267" src="media/m57visionapplicationsample.png" width="150" /></td>
+			<td>
+			<p><strong>VisionApplicationSample</strong></p>
+			<p>VisionApplicationSamples shows how to use implement Barcode Generation/Detection, Face Detection, and Image Recognition.</p>
 			<p>Comming soon</p>
 			</td>
 		</tr>
