@@ -2,7 +2,7 @@
 
 An application control provides functions for launching other applications with a specific operation, URI, MIME type, and extra data. The requesting application can get a result back from the launched application. This topic introduces the common application controls that you can use.
 
-> **Note**
+> **Note**  
 > It is possible that no application suitable to receive the application control exists. Verify that a suitable application exists before you send the launch request.
 
 ## Browser
@@ -211,7 +211,7 @@ For example: `file://<media storage path>/file.vcs`
 
 #### MIME Type
 
-- `application/vnd.tizen.calendar`
+- `application/vnd.tizen.calendar`  
    If viewing an event by event ID, the event ID (ID in the `_calendar_event` view) extra data and `application/vnd.tizen.calendar` MIME type must be specified.
 - `text/x-vcalendar` (for vcalendar file)
 - `text/vcalendar` (for vcalendar file)
@@ -637,7 +637,7 @@ To display a specified contact from a vcard file, use the `file:` URI. To displa
 
 #### MIME Type
 
-- `application/vnd.tizen.contact`
+- `application/vnd.tizen.contact`  
   If viewing a contact by person ID, the person ID (ID in the `_contact_person` view) extra data and `application/vnd.tizen.contact` MIME type must be specified.
 - `text/vcard`
 - `text/x-vcard`
