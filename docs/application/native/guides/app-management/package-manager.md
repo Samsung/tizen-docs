@@ -234,5 +234,5 @@ To monitor package events, such as installation, uninstallation, and updates:
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and higher for mobile
-  - Tizen 2.3.1 and higher for wearable
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable
