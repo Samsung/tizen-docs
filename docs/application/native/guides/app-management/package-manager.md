@@ -45,55 +45,55 @@ To enable your application to use the package manager functionality, ensure that
 To retrieve all package information for installed packages:
 
 1. Define the `package_info_cb()` callback function, which is invoked for each retrieved package and is used to access the package information:
-```
-void
-package_info_cb(package_info_h package_info, void *user_data)
-{
-    int ret;
+   ```
+   void
+   package_info_cb(package_info_h package_info, void *user_data)
+   {
+       int ret;
 
-    char *pkg = NULL;
-    char *label = NULL;
-    char *icon = NULL;
-    char *version = NULL;
-    char *type = NULL;
-    package_info_installed_storage_type_e storage;
-    bool system;
-    bool removable;
-    bool preload;
+       char *pkg = NULL;
+       char *label = NULL;
+       char *icon = NULL;
+       char *version = NULL;
+       char *type = NULL;
+       package_info_installed_storage_type_e storage;
+       bool system;
+       bool removable;
+       bool preload;
 
-    package_info_get_package(package_info, &pkg);
-    package_info_get_label(package_info, &label);
-    package_info_get_icon(package_info, &icon);
-    package_info_get_version(package_info, &version);
-    package_info_get_type(package_info, &type);
-    package_info_get_installed_storage(package_info, &storage);
-    package_info_is_system_package(package_info, &system);
-    package_info_is_removable_package(package_info, &removable);
-    package_info_is_preload_package(package_info, &preload);
+       package_info_get_package(package_info, &pkg);
+       package_info_get_label(package_info, &label);
+       package_info_get_icon(package_info, &icon);
+       package_info_get_version(package_info, &version);
+       package_info_get_type(package_info, &type);
+       package_info_get_installed_storage(package_info, &storage);
+       package_info_is_system_package(package_info, &system);
+       package_info_is_removable_package(package_info, &removable);
+       package_info_is_preload_package(package_info, &preload);
 
-    dlog_print(DLOG_INFO, TAG, "pkg \t= [%s]\n", pkg);
-    dlog_print(DLOG_INFO, TAG, "label \t= [%s]\n", label);
-    dlog_print(DLOG_INFO, TAG, "icon \t= [%s]\n", icon);
-    dlog_print(DLOG_INFO, TAG, "version \t= [%s]\n", version);
-    dlog_print(DLOG_INFO, TAG, "type \t= [%s]\n", type);
-    dlog_print(DLOG_INFO, TAG, "storage \t= [%d]\n", storage);
-    dlog_print(DLOG_INFO, TAG, "system \t= [%d]\n", system);
-    dlog_print(DLOG_INFO, TAG, "removable \t= [%d]\n", removable);
-    dlog_print(DLOG_INFO, TAG, "preload \t= [%d]\n", preload);
+       dlog_print(DLOG_INFO, TAG, "pkg \t= [%s]\n", pkg);
+       dlog_print(DLOG_INFO, TAG, "label \t= [%s]\n", label);
+       dlog_print(DLOG_INFO, TAG, "icon \t= [%s]\n", icon);
+       dlog_print(DLOG_INFO, TAG, "version \t= [%s]\n", version);
+       dlog_print(DLOG_INFO, TAG, "type \t= [%s]\n", type);
+       dlog_print(DLOG_INFO, TAG, "storage \t= [%d]\n", storage);
+       dlog_print(DLOG_INFO, TAG, "system \t= [%d]\n", system);
+       dlog_print(DLOG_INFO, TAG, "removable \t= [%d]\n", removable);
+       dlog_print(DLOG_INFO, TAG, "preload \t= [%d]\n", preload);
 
-    free(pkg);
-    free(label);
-    free(icon);
-    free(version);
-    free(type);
-}
-```
+       free(pkg);
+       free(label);
+       free(icon);
+       free(version);
+       free(type);
+   }
+   ```
 2. Use the `package_manager_foreach_package_info()` function to retrieve all package information by invoking a callback function for each retrieved package:
-```
-ret = package_manager_foreach_package_info(package_info_cb, NULL);
-if (ret != PACKAGE_MANAGER_ERROR_NONE)
-    dlog_print(DLOG_ERROR, TAG, "foreach_package_info error: %d", ret);
-```
+   ```
+   ret = package_manager_foreach_package_info(package_info_cb, NULL);
+   if (ret != PACKAGE_MANAGER_ERROR_NONE)
+       dlog_print(DLOG_ERROR, TAG, "foreach_package_info error: %d", ret);
+   ```
 
 <a name="info"></a>
 ## Retrieve Specific Package Information
@@ -101,16 +101,16 @@ if (ret != PACKAGE_MANAGER_ERROR_NONE)
 To retrieve specific package information:
 
 1. Use the `package_manager_get_package_info()` function. This function fills the second parameter with the package information handle, which is then used with the following `package_info_get_*()` functions to retrieve the specific information:
-  - package_info_get_label()
-  - package_info_get_icon()
-  - package_info_get_version()
-  - package_info_get_type()
-  - package_info_get_installed_storage()
-  - package_info_get_root_path()
-  - package_info_is_system_package()
-  - package_info_is_removable_package()
-  - package_info_is_preload_package()
-  - package_info_is_accessible()
+   - package_info_get_label()
+   - package_info_get_icon()
+   - package_info_get_version()
+   - package_info_get_type()
+   - package_info_get_installed_storage()
+   - package_info_get_root_path()
+   - package_info_is_system_package()
+   - package_info_is_removable_package()
+   - package_info_is_preload_package()
+   - package_info_is_accessible()
 
     ```
     char *version = NULL;
@@ -145,14 +145,14 @@ To retrieve specific package information:
 To retrieve package information from archives:
 
 1. Use the `package_archive_info_create()` function. This function fills the second parameter with the package archive information handle, which is then used with the following `package_archive_info_get_*()` functions to retrieve the specific information:
-  - package_archive_info_get_package()
-  - package_archive_info_get_type()
-  - package_archive_info_get_version()
-  - package_archive_info_get_api_version()
-  - package_archive_info_get_description()
-  - package_archive_info_get_label()
-  - package_archive_info_get_author()
-  - package_archive_info_get_icon()
+   - package_archive_info_get_package()
+   - package_archive_info_get_type()
+   - package_archive_info_get_version()
+   - package_archive_info_get_api_version()
+   - package_archive_info_get_description()
+   - package_archive_info_get_label()
+   - package_archive_info_get_author()
+   - package_archive_info_get_icon()
 
     ```
     int ret;
