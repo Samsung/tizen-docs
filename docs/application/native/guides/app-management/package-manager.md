@@ -190,7 +190,7 @@ To retrieve package information from archives:
     ```
 
 <a name="listen"></a>
-## Monitoring Package Events
+## Monitor Package Events
 
 To monitor package events, such as installation, uninstallation, and updates:
 
