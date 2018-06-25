@@ -464,22 +464,22 @@ The following table lists the account properties that can be modified.
 
 | Account property    | Data type                          | Mandatory | Description                              |
 |-------------------|----------------------------------|---------|----------------------------------------|
-| User name           | `String`                           | Yes       | Identity of an account.<br>If the display name and email ID are not set for an account, the user name is shown for the account on the Accounts screen in the Setting application. |
-| Display name        | `String`                           | No        | Display name of an account.Display name is shown for the account on the Accounts screen in the Setting application. |
-| Email ID            | `String`                           | No        | Email ID of an account.<br>If the display name is not set for an account, the email ID is shown for the account on the Accounts screen in the Setting application. |
-| Package name        | `String`                           | No        | One of an account package IDs, like the app ID.<br>If the package name is not set for an account, the app ID is used as a package name. |
-| Icon path           | `String`                           | No        | Icon path of an account.<br>The icon is shown through the registered icon path as an account icon on the Accounts screen in the Setting application. |
-| Domain name         | `String`                           | No        | Domain name of an account.               |
-| Access token        | `String`                           | No        | Access token of an account.              |
-| Auth type           | `Integer`                          | No        | Authentication type, such as oauth or xauth. |
-| Capability          | Key-value `string`-`integer` pairs | No        | Capability of an account.                |
-| Secret              | `Integer`                          | No        | The secret value is used to decide whether the account is shown on the Accounts screen in the Setting application. |
-| Sync support        | `Integer`                          | No        | Current synchronization status.          |
-| Source              | `String`                           | No        | Source of an account.                    |
-| User text           | `String`                           | No        | String array, which you can use freely.  |
-| User int            | `Integer`                          | No        | Integer array, which you can use freely. |
-| Custom              | Key-value `string` pairs           | No        | Key-value pairs, which you can use freely. |
-| Safe account handle | `SafeAccountHandle`                | No        | Read-only account handle of an account.  |
+| User name           | String                           | Yes       | Identity of an account.<br>If the display name and email ID are not set for an account, the user name is shown for the account on the Accounts screen in the Setting application. |
+| Display name        | String                           | No        | Display name of an account.Display name is shown for the account on the Accounts screen in the Setting application. |
+| Email ID            | String                           | No        | Email ID of an account.<br>If the display name is not set for an account, the email ID is shown for the account on the Accounts screen in the Setting application. |
+| Package name        | String                           | No        | One of an account package IDs, like the app ID.<br>If the package name is not set for an account, the app ID is used as a package name. |
+| Icon path           | String                           | No        | Icon path of an account.<br>The icon is shown through the registered icon path as an account icon on the Accounts screen in the Setting application. |
+| Domain name         | String                           | No        | Domain name of an account.               |
+| Access token        | String                           | No        | Access token of an account.              |
+| Auth type           | Integer                          | No        | Authentication type, such as oauth or xauth. |
+| Capability          | Key-value string-integer pairs | No        | Capability of an account.                |
+| Secret              | Integer                          | No        | The secret value is used to decide whether the account is shown on the Accounts screen in the Setting application. |
+| Sync support        | Integer                          | No        | Current synchronization status.          |
+| Source              | String                           | No        | Source of an account.                    |
+| User text           | String                           | No        | String array, which you can use freely.  |
+| User int            | Integer                          | No        | Integer array, which you can use freely. |
+| Custom              | Key-value string pairs           | No        | Key-value pairs, which you can use freely. |
+| Safe account handle | SafeAccountHandle                | No        | Read-only account handle of an account.  |
 
 The following table lists the properties that can be defined for each account provider.
 
@@ -488,11 +488,11 @@ The following table lists the properties that can be defined for each account pr
 
 | Account property          | Data type | Mandatory | Description                              |
 |-------------------------|---------|---------|----------------------------------------|
-| Multiple accounts support | `bool`    | Yes       | Indicates whether multiple accounts are supported. |
-| Icon                      | `String`  | Yes       | File path of the account provider icon.  <br>    The icon size is:<br> - 72 x 72 for Xhigh (HD) <br> - 48 x 48 for High (WVGA) <br> Since the icon is used in **Settings > Accounts**, place the icon in a shared directory. |
-| Small icon                | `String`  | Yes       | File path of the account provider icon.    <br>  The icon size is:<br> - 45 x 45 for Xhigh (HD)<br> - 30 x 30 for High (WVGA)<br> Since the small icon is used in other applications, place the icon in a shared directory. |
-| Display name              | `String`  | Yes       | Display name of the account provider.    |
-| Capabilities              | `String`  | No        | Capability of the account provider.   <br>       Capability can be a liaison between an account application and another application. If an account application registers a capability in the manifest file, other applications know that the account application has the capability. And if an account application gives an account a capability, other applications know that the account has the capability. <br> Several service-specific capabilities are defined for the [Tizen.Account.AccountManager.AccountService](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Account_1_1AccountManager_1_1AccountService.html) class:<br>- Contact capability:	<br>    `ContactCapability` or `"http://tizen.org/account/capability/contact"`<br>If you register this capability in the manifest file, the user using the contact application can see a list of accounts with the account of your service in the contact application. <br>-Calendar capability:<br>	    `CalendarCapability` or `"http://tizen.org/account/capability/calendar"`<br>If you register this capability in the manifest file, the user using the calendar application can see a list of accounts with the account of your service in the calendar application.<br>-Email capability:	    `EmailCapability` or `"http://tizen.org/account/capability/email"`<br>-Photo capability:	    `PhotoCapability` or `"http://tizen.org/account/capability/photo"`<br>-Video capability:	    `VideoCapability` or `"http://tizen.org/account/capability/video"`<br>-Music capability:	    `MusicCapability` or `"http://tizen.org/account/capability/music" ` <br>-Document capability:	    `DocumentCapability` or `"http://tizen.org/account/capability/document"` <br>-Message capability:	    `MessageCapability` or `"http://tizen.org/account/capability/message"` <br>-Game capability:	    `GameCapability` or `"http://tizen.org/account/capability/game"` |
+| Multiple accounts support | bool    | Yes       | Indicates whether multiple accounts are supported. |
+| Icon                      | String  | Yes       | File path of the account provider icon.  <br>    The icon size is:<br> - 72 x 72 for Xhigh (HD) <br> - 48 x 48 for High (WVGA) <br> Since the icon is used in **Settings > Accounts**, place the icon in a shared directory. |
+| Small icon                | String  | Yes       | File path of the account provider icon.    <br>  The icon size is:<br> - 45 x 45 for Xhigh (HD)<br> - 30 x 30 for High (WVGA)<br> Since the small icon is used in other applications, place the icon in a shared directory. |
+| Display name              | String  | Yes       | Display name of the account provider.    |
+| Capabilities              | String  | No        | Capability of the account provider.   <br>       Capability can be a liaison between an account application and another application. If an account application registers a capability in the manifest file, other applications know that the account application has the capability. And if an account application gives an account a capability, other applications know that the account has the capability. <br> Several service-specific capabilities are defined for the [Tizen.Account.AccountManager.AccountService](https://developer.tizen.org/dev-guide/csapi/classTizen_1_1Account_1_1AccountManager_1_1AccountService.html) class:<br>- Contact capability:	<br>    `ContactCapability` or `"http://tizen.org/account/capability/contact"`<br>If you register this capability in the manifest file, the user using the contact application can see a list of accounts with the account of your service in the contact application. <br>-Calendar capability:<br>	    `CalendarCapability` or `"http://tizen.org/account/capability/calendar"`<br>If you register this capability in the manifest file, the user using the calendar application can see a list of accounts with the account of your service in the calendar application.<br>-Email capability:	    `EmailCapability` or `"http://tizen.org/account/capability/email"`<br>-Photo capability:	    `PhotoCapability` or `"http://tizen.org/account/capability/photo"`<br>-Video capability:	    `VideoCapability` or `"http://tizen.org/account/capability/video"`<br>-Music capability:	    `MusicCapability` or `"http://tizen.org/account/capability/music" ` <br>-Document capability:	    `DocumentCapability` or `"http://tizen.org/account/capability/document"` <br>-Message capability:	    `MessageCapability` or `"http://tizen.org/account/capability/message"` <br>-Game capability:	    `GameCapability` or `"http://tizen.org/account/capability/game"` |
 
 
 

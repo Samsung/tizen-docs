@@ -160,7 +160,7 @@ To manage the widget instance life-cycle:
      }
      ```
 
-  - The `OnDestroy()` callback is triggered when the widget instance is destroyed.
+   - The `OnDestroy()` callback is triggered when the widget instance is destroyed.
 
      Release all widget resources. If the `reason` for the termination is not `WidgetBase.WidgetDestroyType.Permanent`, store the current status with the incoming bundle.
 
@@ -172,7 +172,7 @@ To manage the widget instance life-cycle:
      }
      ```
 
-  - The `OnPause()` callback is triggered when the widget instance is paused.
+   - The `OnPause()` callback is triggered when the widget instance is paused.
 
      Take the necessary actions when the widget instance becomes invisible. The framework can destroy a paused widget instance.
 
@@ -180,7 +180,7 @@ To manage the widget instance life-cycle:
      public override void OnPause() {}
      ```
 
- - The `OnResume()` callback is triggered when the widget instance is resumed.
+   - The `OnResume()` callback is triggered when the widget instance is resumed.
 
       Take the necessary actions when the widget instance becomes visible.
 
@@ -188,7 +188,7 @@ To manage the widget instance life-cycle:
       public override void OnResume() {}
       ```
 
-  - The `OnResize()` callback is triggered before the widget instance is resized.
+   - The `OnResize()` callback is triggered before the widget instance is resized.
 
       Take the necessary actions to accommodate the new size.
 
@@ -196,7 +196,7 @@ To manage the widget instance life-cycle:
       public override void OnResize(int w, int h) {}
       ```
 
-  - The `OnUpdate()` callback is triggered when a widget update event is received.
+   - The `OnUpdate()` callback is triggered when a widget update event is received.
 
       Take the necessary actions for the widget update. If the `isForce` parameter is `true`, the widget can be updated even in the pause state.
 

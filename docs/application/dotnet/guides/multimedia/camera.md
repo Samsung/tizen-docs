@@ -49,10 +49,10 @@ The main features of the `Tizen.Multimedia.Camera` class include:
 
     Since devices can have multiple camera sensors with different capabilities, create a `Tizen.Multimedia.Camera` instance with a proper [Tizen.Multimedia.CameraDevice](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraDevice.html) enumeration value, determining which camera sensor is used. Usually the primary sensor is located on the back side and the secondary sensor on the front side of the device. Once the camera sensor is selected, the selected sensor starts working.
 
-    > **Note**   
+  > **Note**   
 	> Simultaneous use of multiple camera sensors is not allowed.  
-    > The target device often supports more functionalities than the emulator.  
-    > The behavior of the shutter sound can vary depending on the legislation of each country.
+  > The target device often supports more functionalities than the emulator.  
+  > The behavior of the shutter sound can vary depending on the legislation of each country.
 
 
 -   Releasing resources
