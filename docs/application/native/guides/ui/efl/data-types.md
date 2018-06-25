@@ -109,7 +109,12 @@ To manage string buffers:
 
        ```
        eina_strbuf_append_length(mybuffer, "Buffe", 5);
-       eina_strbuf_append_char(mybuffer, 'r');To handle "printf" format strings, use the `eina_strbuf_append_printf()` function to add formatted strings to the buffer:`eina_strbuf_append_printf(buf, "%s%c", "buffe", 'r');`
+       eina_strbuf_append_char(mybuffer, 'r');
+       ```
+
+     - To handle "printf" format strings, use the `eina_strbuf_append_printf()` function to add formatted strings to the buffer:
+       ```
+       eina_strbuf_append_printf(buf, "%s%c", "buffe", 'r');
        ```
 
    - To remove characters from one position to another, use the `eina_strbuf_remove()` function. The first parameter is the buffer, the second is the start position of the characters you want to delete, and the last the end position.
@@ -221,7 +226,7 @@ To create an array to store strings:
    eina_array_step_set(array, sizeof(*array), 30);
    ```
 
-3. When no longer used, use the `eina_array_free()` function to free the array. It first calls the `eina_array_flush()` function and frees the memory of the pointer. It does not free the memory allocated for the elements of the array. To free them, use a `while`statement with the `eina_array_pop()` function.
+3. When no longer used, use the `eina_array_free()` function to free the array. It first calls the `eina_array_flush()` function and frees the memory of the pointer. It does not free the memory allocated for the elements of the array. To free them, use a `while` statement with the `eina_array_pop()` function.
 
    ```
    /* Freeing the array elements */
@@ -773,13 +778,13 @@ To access inline array data:
     }
     ```
 
-  - To remove some elements based on your own criteria, use the `eina_inarray_foreach_remove()` function, which walks through the array and, if the value matches in the callback function, removes the element:  
+  - To remove some elements based on your own criteria, use the `eina_inarray_foreach_remove()` function, which walks through the array and, if the value matches in the callback function, removes the element:
     - The first parameter is a pointer to the array returned by `eina_inarray_new()` function.
-    - The second parameter is the callback function to run on each element.  
+    - The second parameter is the callback function to run on each element.
 
-      The callback function returns `EINA_TRUE` if the value matches, or `EINA_FALSE` if it does not match.  
+      The callback function returns `EINA_TRUE` if the value matches, or `EINA_FALSE` if it does not match.
 
-    - The last parameter is the data passed to the callback function.  
+    - The last parameter is the data passed to the callback function.
 
     The function returns the number of removed entries or -1 if something goes wrong.
 
@@ -1157,7 +1162,7 @@ To modify list content:
     list = eina_list_prepend_relative(list, "ultrabook", "ivi");
     ```
 
-  - To append a list node to a linked list after a specified member, use the `eina_list_append_relative_list()` function. To prepend a list node to a linked list before a specified member, use the `Eina_List * eina_list_prepend_relative_list()`function.
+  - To append a list node to a linked list after a specified member, use the `eina_list_append_relative_list()` function. To prepend a list node to a linked list before a specified member, use the `Eina_List * eina_list_prepend_relative_list()` function.
 
 - To set data in a list member, use the `eina_list_data_set()` function. Pass the "list" (node) as the first argument and the data to set as the second.
 
@@ -1202,7 +1207,7 @@ To modify list content:
   list = eina_list_promote_list(list, eina_list_data_find_list(list, "ivi"));
   ```
 
-- To reverse all the elements of a list, use the `eina_list_reverse()` function. To obtain a reversed copy of the list while keeping the initial list unchanged, use the
+- To reverse all the elements of a list, use the `eina_list_reverse()` function. To obtain a reversed copy of the list while keeping the initial list unchanged, use the `eina_list_reverse_clone()` function.
 
   ```
   Eina_List *rev_copy;
@@ -1353,7 +1358,9 @@ To access list data:
     - The second parameter is a callback function for comparison.
     - The last parameter is the data you are looking for.
 
-    The `eina_list_search_unsorted_list()` function does the same but returns an "Eina_List".The following example shows 2 searches using both the `eina_list_search_unsorted()` and `eina_list_search_unsorted_list()` functions:
+    The `eina_list_search_unsorted_list()` function does the same but returns an "Eina_List".
+
+    The following example shows 2 searches using both the `eina_list_search_unsorted()` and `eina_list_search_unsorted_list()` functions:
 
     ```
     int
@@ -1388,7 +1395,9 @@ To access list data:
 
   - To search in sorted lists, use the `eina_list_search_sorted_list()` and `eina_list_search_sorted()` functions. They work similarly as the `eina_list_search_unsorted()` function.
 
-- To get data from a list element, use the `eina_list_data_get()` function. The function returns the data contained in the given list.The following example uses the `eina_list_next()` function to move through the list in a statement.
+- To get data from a list element, use the `eina_list_data_get()` function. The function returns the data contained in the given list.
+
+  The following example uses the `eina_list_next()` function to move through the list in a statement.
 
   ```
   int
@@ -1419,6 +1428,7 @@ To access list data:
           eina_stringshare_del(list_data);
 
       return 0;
+   }
   ```
 
 - To move in a list, use the `eina_list_last()`, `eina_list_next()`, or `eina_list_prev()` functions to move to the last, next, or previous element in the list.

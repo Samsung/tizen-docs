@@ -7,6 +7,7 @@ This feature is supported in mobile applications only.
 ## Basic Usage
 
 > **Note**
+>
 > You cannot create a tooltip component with the `elm_tooltip_add()` function. This component is already contained in a parent component when it is created. You can only activate or disable the tooltip.
 
 To activate a tooltip on a parent object in your application:
@@ -73,6 +74,7 @@ To activate a tooltip on a parent object in your application:
    ```
 
    > **Note**
+   >
    > If content was set into the tooltip object, unsetting the tooltip calls the callback provided as the fourth parameter of the `elm_object_tooltip_content_cb_set()` function. The callback is used to notify the application that the tooltip can no longer be used.
 
 The following example shows a simple use case of the tooltip component on a button component.

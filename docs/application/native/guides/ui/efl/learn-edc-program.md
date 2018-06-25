@@ -81,9 +81,9 @@ program {
   - `DRAG_VAL_STEP`: Set a step for the `draggable` part (x, y values)
   - `DRAG_VAL_PAGE`: Set a page for the `draggable` part (x, y values)
   - `FOCUS_SET`: Set the focus to the target group
-  - `PLAY_SAMPLE "sample name" speed (channel)`:
+  - `PLAY_SAMPLE "sample name" speed (channel)`: Play a music sample clip
 
-    Play a music sample clip`PLAY_SAMPLE`'s (optional) channel can be one of:
+    `PLAY_SAMPLE`'s (optional) channel can be one of:
     - `EFFECT/FX`
     - `BACKGROUND/BG`
     - `MUSIC/MUS`

@@ -71,7 +71,10 @@ To manage the entry component content:
 
   - Select a part of the text with the `elm_entry_select_region_set()` function.
 
-    The following example selects the first 20 characters of the entry content:`elm_entry_select_region_set(entry, 0, 20);`
+    The following example selects the first 20 characters of the entry content:
+    ```
+    elm_entry_select_region_set(entry, 0, 20);
+    ```
 
   - Clear the current selection:
 
@@ -191,7 +194,7 @@ To manage the cursor position:
 
 - Set the cursor at a specific position (15th character, for example):
   ```
-  elm_entry_cursor_pos_set(entry, 15);`
+  elm_entry_cursor_pos_set(entry, 15);
   ```
 
 - Make a text selection while moving the cursor.
@@ -272,9 +275,11 @@ You can format the entry text in many ways:
 - Add special markups within the entry text:
 
   - Anchors: `<a href = ..>...</a>`
+
     The anchors generate an `anchor,clicked` signal when the user clicks them. The `href` attribute is used to identify the anchor. The anchor also reacts to the `anchor,in` (mouse in), `anchor,out` (mouse out), `anchor,down` (mouse down), and `anchor,up` (mouse up) events.
 
   - Items: `<item size = .. vsize = .. href = ..>...</item>`
+
     The items provide a way to insert any `Evas_Object` in the text. The `Evas_Object` name must be specified in the `href` attribute.
 
     The `elm_entry_item_provider_append()` function appends a custom item provider to the list for that entry. You can also prepend a custom item provider to the list with the `elm_entry_item_provider_prepend()` function. The `elm_entry_item_provider_remove()` function removes a custom item provider from the list.

@@ -60,6 +60,7 @@ DALi consists of the following modules:
   This module is a platform adaptation layer. It initializes and sets up DALi appropriately and provides many platform-related services with its internal module, platform abstraction. Several signals can be connected to it to keep you informed when certain platform-related activities occur.
 
 - **DALi Toolkit**
+
   This module provides UI components and various effects on top of the DALi core.
 
 **Figure: Layer diagram for DALi modules**

@@ -158,8 +158,7 @@ The following table lists the available component styles.
 > ```
 > elm_index_horizontal_set(index, EINA_TRUE);
 > ```
-
-For the `default` style, both orientations are supported, but for the `pagecontrol` style, only horizontal mode is available.
+> For the `default` style, both orientations are supported, but for the `pagecontrol` style, only horizontal mode is available.
 
 ## Callbacks
 

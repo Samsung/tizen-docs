@@ -139,7 +139,7 @@ The following table lists the available component styles.
 
 | Style                  | Sample                                   |
 |------------------------|------------------------------------------|
-| `default``date_layout` | ![elm/datetime/base/default](./media/datetime_date_layout.png) |
+| `default`<br> `date_layout` | ![elm/datetime/base/default](./media/datetime_date_layout.png) |
 | `time_layout`          | ![elm/datetime/base/time_layout](./media/datetime_time_layout.png) |
 | `time_layout_24hr`     | ![elm/datetime/base/time_layout_24hr](./media/datetime_time_24h.png) |
 

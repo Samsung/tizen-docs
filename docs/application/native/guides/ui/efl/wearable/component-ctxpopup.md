@@ -39,6 +39,7 @@ The ctxpopup has the following styles for the rectangular screen:
 - `select_mode`
 
 - `select_mode/top`, `select_mode/bottom`
+
   These 2 styles can be used as a pair.
 
 To set the style to, for example, `default`:
@@ -85,7 +86,10 @@ To manage the ctxpopup items:
 
 2. Change the item label and icon:
 
-   - To change the item label to `New label`:`elm_object_item_part_text_set(it, "default", "New label");`
+   - To change the item label to `New label`:
+     ```
+     elm_object_item_part_text_set(it, "default", "New label");
+     ```
 
    - To set the icon to the standard `home` icon:
 

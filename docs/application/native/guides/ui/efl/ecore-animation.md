@@ -62,11 +62,26 @@ ecore_animator_timeline_add(8, _my_animation, my_evas_object);
 
 > **Note**
 >
-> The callback function can return `ECORE_CALLBACK_RENEW` to keep the animator running, or `ECORE_CALLBACK_CANCEL` to stop the animator and delete it automatically at any time. If the callback returns `ECORE_CALLBACK_CANCEL` (or `0`), the animator is automatically deleted from the list of pointers to free up the allocated memory.  
+> The callback function can return `ECORE_CALLBACK_RENEW` to keep the animator running, or `ECORE_CALLBACK_CANCEL` to stop the animator and delete it automatically at any time. If the callback returns `ECORE_CALLBACK_CANCEL` (or `0`), the animator is automatically deleted from the list of pointers to free up the allocated memory.
 >
 > The callback function receives a timeline position (second parameter) with a value between 0.0 (start) to 1.0 (end) to indicate where along the timeline the animator is running.
 
 ## Starting an Infinite Animation
+
+To create an animation that runs for an unspecified amount of time, use the `ecore_animator_add()` function:
+
+- The first parameter is the callback function that performs the actual animation.
+- The second parameter is the data passed to the callback function. This is usually the Evas object to animate.
+
+This function works the same way as the `ecore_animation_timeline_add()` function, except that its interval is based on the frame rate. Using the frame rate as a basis benefits performance, especially in the case of multiple animations, since it enables you to use a different timer for each callback function.
+
+> **Note**
+>
+> The function returns a pointer to an Ecore_Animator object, which you can use to control the animation execution.
+
+The following example creates a rectangle sliding from left to right and back again. When the rectangle hits the edge of the screen, it changes direction.
+
+```
 static Eina_Bool
 _slide_back_and_forth(void *data)
 {
@@ -233,7 +248,7 @@ The following table lists the supported position mappings, and describes how the
 		<tr>
 			<td><code>ECORE_POS_MAP_BOUNCE</code></td>
 			<td>Start at 0.0, then drop like a ball bouncing to the ground at 1.0, and bounce <code>v2</code> times, with a decay factor of <code>v1</code>
-			<p><img alt="Position mappings" src="/sites/default/files/images/pos_map_bounce.png" /></p>
+			<p><img alt="Position mappings" src="media/pos_map_bounce.png" /></p>
 			</td>
 			<td><code>v1</code>: Bounce decay factor
 			<p><code>v2</code>: Number of bounces</p>
@@ -242,7 +257,7 @@ The following table lists the supported position mappings, and describes how the
 		<tr>
 			<td><code>ECORE_POS_MAP_SPRING</code></td>
 			<td>Start at 0.0, then wobble like a spring until rest position at 1.0, and wobble <code>v2</code> times, with a decay factor of <code>v1</code>
-			<p><img alt="Position mappings" src="/sites/default/files/images/pos_map_spring.png" /></p>
+			<p><img alt="Position mappings" src="media/pos_map_spring.png" /></p>
 			</td>
 			<td><code>v1</code>: Wobble decay factor
 			<p><code>v2</code>: Number of wobbles</p>

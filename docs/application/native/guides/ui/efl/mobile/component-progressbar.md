@@ -128,7 +128,8 @@ To configure the progressbar features:
 
   - Set a label to the progressbar with the `elm_object_text_set()` function, if the style supports a text part.
     ```
-    /* Supported styles: default, pending */elm_object_text_set(progressbar, "progressbar");
+    /* Supported styles: default, pending */
+    elm_object_text_set(progressbar, "progressbar");
     ```
 
   - According to the [style](#styles), the `elm_object_part_text_set()` function is used in order to do the setting in the other location.

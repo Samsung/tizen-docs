@@ -161,7 +161,7 @@ To chain programs:
    }
    ```
 
-2. Define the second program block that returns the rectangle to its original position and color using a bounce transition with a decay factor of 1.8 and 6 bounces. Since this program is only used in a chain at the end of the first program, it has no `signal` or `source`property.
+2. Define the second program block that returns the rectangle to its original position and color using a bounce transition with a decay factor of 1.8 and 6 bounces. Since this program is only used in a chain at the end of the first program, it has no `signal` or `source` property.
 
    ```
    program {
@@ -174,7 +174,8 @@ To chain programs:
    }
    ```
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

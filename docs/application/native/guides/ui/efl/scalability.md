@@ -174,7 +174,9 @@ Parts are used to represent the most basic layout elements, such as a line in a 
 
 The part blocks in the EDC file can have the following property related to scalability:
 
-- `scale`: 0-1Specifies whether the part scales its size according to the scaling factor (Tizen has a scaling factor to resize the application layout and object). This property is used to scale object properties, such as font size or min/max size of the part.
+- `scale`: 0-1
+
+  Specifies whether the part scales its size according to the scaling factor (Tizen has a scaling factor to resize the application layout and object). This property is used to scale object properties, such as font size or min/max size of the part.
 
   The default value is 0 (off) and the default scaling factor is 1.0. To make a part scalable, set the property to 1 (on).
 
@@ -295,7 +297,7 @@ The description blocks in the EDC file can have the following properties related
 
   Specifies the scope of the `aspect` property to a given dimension.
 
-  The possible values are`BOTH`, `VERTICAL`, `HORIZONTAL`, and `NONE`. The default is `NONE`.
+  The possible values are `BOTH`, `VERTICAL`, `HORIZONTAL`, and `NONE`. The default is `NONE`.
 
   **Example: EDC file aspect property**
 

@@ -273,8 +273,8 @@ The following table lists the available Evas event types.
 | `EVAS_CALLBACK_RENDER_FLUSH_POST`       | Rendering on the canvas is updated.      |
 | `EVAS_CALLBACK_CANVAS_FOCUS_IN`         | Canvas receives focus.                   |
 | `EVAS_CALLBACK_CANVAS_FOCUS_OUT`        | Canvas loses focus.                      |
-| `EVAS_CALLBACK_CANVAS_OBJECT_FOCUS_IN`  | Any object on the canvas receives focus.		 Instead of this event type, use the `EVAS_CALLBACK_FOCUS_IN` type with the `evas_object_event_callback_add()` function. |
-| `EVAS_CALLBACK_CANVAS_OBJECT_FOCUS_OUT` | Any object on the canvas loses focus.		 Instead of this event type, use the `EVAS_CALLBACK_FOCUS_OUT` type with the `evas_object_event_callback_add()` function. |
+| `EVAS_CALLBACK_CANVAS_OBJECT_FOCUS_IN`  | Any object on the canvas receives focus.<br> Instead of this event type, use the `EVAS_CALLBACK_FOCUS_IN` type with the `evas_object_event_callback_add()` function. |
+| `EVAS_CALLBACK_CANVAS_OBJECT_FOCUS_OUT` | Any object on the canvas loses focus.<br> Instead of this event type, use the `EVAS_CALLBACK_FOCUS_OUT` type with the `evas_object_event_callback_add()` function. |
 | `EVAS_CALLBACK_RENDER_PRE`              | Rendering on the canvas starts.          |
 | `EVAS_CALLBACK_RENDER_POST`             | Rendering on the canvas finishes.        |
 
@@ -324,7 +324,7 @@ The following table lists the available Evas object event types.
 | `EVAS_CALLBACK_RESIZE`             | Object is resized.                       | `NULL`                   |
 | `EVAS_CALLBACK_RESTACK`            | Object is re-stacked by the `evas_object_stack_below()` or `evas_object_stack_above()` function, or other events. | `NULL`                   |
 | `EVAS_CALLBACK_DEL`                | Object is deleted.                       | `NULL`                   |
-| `EVAS_CALLBACK_FREE`               | For internal use only.		 Do not use (the object resources are about to be freed). | `NULL`                   |
+| `EVAS_CALLBACK_FREE`               | For internal use only.<br> Do not use (the object resources are about to be freed). | `NULL`                   |
 | `EVAS_CALLBACK_HOLD`               | For internal use only.                   | `Evas_Event_Hold`        |
 | `EVAS_CALLBACK_CHANGED_SIZE_HINTS` | Object size hints changed.               | `NULL`                   |
 | `EVAS_CALLBACK_IMAGE_PRELOADED`    | Image preloaded through the `evas_object_image_preload()` function is loaded. | `NULL`                   |
@@ -390,7 +390,7 @@ The following example shows a button with a callback for the `clicked` signal. C
 static void
 _button_clicked(void *data __UNUSED__, Evas_Object *obj, void *event_info __UNUSED__)
 {
-    fprintf(stdout, "Button clicked./n");
+    fprintf(stdout, "Button clicked.\n");
     fflush(stdout);
     evas_object_smart_callback_del(obj, "clicked", _button_clicked);
 }

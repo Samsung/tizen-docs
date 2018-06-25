@@ -126,7 +126,7 @@ The following table lists the available component styles.
 **Table: Flipselector styles**
 
 | Style                           | Sample                                   |
-|--i------------------------------|----i-------------------------------------|
+|---------------------------------|------------------------------------------|
 | `elm/flipselector/base/default` | ![elm/flipselector/base/default](./media/flipsel_default.png) |
 
 ## Callbacks
@@ -136,7 +136,7 @@ You can register callback functions connected to the following signals for a fli
 **Table: Flipselector callback signals**
 
 | Signal        | Description                              | `event_info` |
-|-------i-------|----------i-------------------------------|---i----------|
+|---------------|------------------------------------------|--------------|
 | `selected`    | The flipselector's selected text item changes. | `NULL`       |
 | `overflowed`  | The flipselector's current selection changes from the first item to the last one. | `NULL`       |
 | `underflowed` | The flipselector's current selection changes from the last item to the first one. | `NULL`       |

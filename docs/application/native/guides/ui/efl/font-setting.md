@@ -54,11 +54,11 @@ For example:
   When the object is created or if the system setting changes, the part loads the new system font. However, the part font size remains 36 regardless of the new system font size, because the `tizen` text class does not apply system font size changes.
   ```
   description {
-    text {
-      font: "Tizen:style=Regular";
-      font_size: 36;
-      text_class: "tizen";
-    }
+     text {
+        font: "Tizen:style=Regular";
+        font_size: 36;
+        text_class: "tizen";
+     }
   }
   ```
 

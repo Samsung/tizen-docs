@@ -70,7 +70,8 @@ In the Tizen 2.4 release, the screen reader is available only inside the UI Comp
 
 ![UI Components sample application](./media/ui-controls.png) ![UI Components sample application](./media/ui-controls-accessibility.png) ![Screen reader](./media/ui-controls-accessibility-screen-reader.png)
 
-> **Note**  
+> **Note**
+>
 > If reading of any arbitrary text directly from the application needs to be synchronized with the screen reader voice output, you must use the Tizen platform TTS API (in [mobile](../../../api/mobile/latest/group__CAPI__UIX__TTS__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__UIX__TTS__MODULE.html) applications), which is also used by the screen reader.
 
 ### Making UI Components Readable
@@ -102,7 +103,7 @@ The screen reader reads the information in the following order when the user sel
 
 The following table lists the functions you can use to set EFL Elementary UI component information to be read by the screen reader, and to support internationalization (i18n) for the information.
 
-**Table: Functions for making UI components readable**  
+**Table: Functions for making UI components readable**
 
 | Function                                 | Description                              |
 |----------------------------------------|----------------------------------------|
@@ -116,11 +117,11 @@ The following table lists the functions you can use to set EFL Elementary UI com
 
 **Figure: Readable components in the UI Components sample**
 
-![Readable components in the UI Components sample](./media/ui-controls-accessibility-screen-reader-ui-description.png)  
+![Readable components in the UI Components sample](./media/ui-controls-accessibility-screen-reader-ui-description.png)
 
 The Elementary library sets the default information (label, traits, state) for the components, except for an icon and image. You can override the default information in various ways:
 
-- Button with a custom name  
+- Button with a custom name
 
   Use the `elm_object_text_set()` function to define a custom name.
 
@@ -148,7 +149,7 @@ The Elementary library sets the default information (label, traits, state) for t
 
   If the user highlights the button, the screen reader says "button" (it reads out the component default trait only).
 
-- Button with an internationalized description  
+- Button with an internationalized description
 
   Use the `elm_atspi_accessible_description_set()` function to define a description. To make multiple language versions available define the actual description strings in PO files and use the `elm_atspi_accessible_translation_domain_set()` function to bind the translation domain to the component.
 
@@ -264,15 +265,15 @@ The Elementary library sets the default information (label, traits, state) for t
 You can also create a custom reading of multi-style components. Sometimes, it is necessary to have different voice output depending on the style assigned to the UI component. The `default` style is handled "out of the box" by the accessibility framework, but you must handle any alternative styles on the application side. The Elementary checkbox component offers a good example of alternative styles:
 - `default` style in a checkbox:
 
-   The reading must be "<label>, <state>", where <label> is a text assigned to the checkbox and <state> is read as "selected" or "not selected", depending on the checkbox state.
+   The reading must be "\<label\>, \<state\>", where \<label\> is a text assigned to the checkbox and \<state\> is read as "selected" or "not selected", depending on the checkbox state.
 
 - `favorite` style in a checkbox:
 
-   The reading must be "Favorite button, <state>", where <state> is read as "selected" or "not selected", depending on the checkbox state.
+   The reading must be "Favorite button, \<state\>", where \<state\> is read as "selected" or "not selected", depending on the checkbox state.
 
 - `on&off` style in a checkbox:
 
-   The reading must be "On/off button, <state>", where <state> is read as "on" or "off", depending on the checkbox state.
+   The reading must be "On/off button, \<state\>", where \<state\> is read as "on" or "off", depending on the checkbox state.
 
 The following source code snippet demonstrates how to handle the `favorite` and `on&off` checkbox styles in the application source code:
 

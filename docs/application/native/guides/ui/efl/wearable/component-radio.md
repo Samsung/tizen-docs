@@ -43,12 +43,14 @@ To use a radio component in your application:
    changed_cb(void *data, Evas_Object *obj, void *event_info)
    {
        dlog_print(DLOG_INFO, LOG_TAG, "The value has changed\n");
-   }The following example shows a simple use case of the radio component.
+   }
    ```
+
+The following example shows a simple use case of the radio component.
 
 **Example: Radio use case**
 
-![Radio](./media/radio_wn1.png)![Radio](./media/radio_wn2.png)
+![Radio1](./media/radio_wn1.png) ![Radio2](./media/radio_wn2.png)
 
 ```
 Evas_Object *win;
@@ -101,13 +103,13 @@ The following tables lists the available component styles.
 **Table: Radio styles (rectangular device)**
 
 | Style     | Sample                                   |
-|---------|----------------------------------------|
+|-----------|------------------------------------------|
 | `default` | ![elm/radio/base/default](./media/radio_default_wn.png) |
 
 **Table: Radio styles (circular device)**
 
 | Style     | Sample                                   |
-|---------|----------------------------------------|
+|-----------|------------------------------------------|
 | `default` | ![elm/radio/base/default](./media/radio_default_cir_wn.png) |
 
 ## Callbacks
@@ -117,13 +119,15 @@ You can register callback functions connected to the following signals for a rad
 **Table: Radio callback signals**
 
 | Callback  | Description                   | `event_info` |
-|---------|-----------------------------|------------|
+|-----------|-------------------------------|--------------|
 | `changed` | The radio button is selected. | `NULL`       |
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information
