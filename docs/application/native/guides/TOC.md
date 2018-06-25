@@ -115,6 +115,7 @@
 ## [Speech-to-text](/application/native/guides/text-input/stt.md)
 ## [Text-to-speech](/application/native/guides/text-input/tts.md)
 ## [Voice Control](/application/native/guides/text-input/voice-control.md)
+## [Voice Control Engine](/application/native/guides/text-input/voice-control-engine.md)
 
 # Personal Data
 ## [Overview](/application/native/guides/personal/overview.md)

@@ -33,7 +33,7 @@ The main features of the VCE API include:
 
 To enable your application to use the VCE functionality:
 
-1. To use the VCE API (in [mobile](../../api/mobile/latest/group__CAPI_UIX_VOICE_CONTROL_ENGINE_MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI_UIX_VOICE_CONTROL_ENGINE_MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the VCE API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -41,7 +41,7 @@ To enable your application to use the VCE functionality:
    </privileges>
    ```
 
-2. To use the functions and data types of the VCE API (in [mobile](../../api/mobile/latest/group__CAPI_UIX_VOICE_CONTROL_ENGINE_MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI_UIX_VOICE_CONTROL_ENGINE_MODULE.html) applications), include the `<vce.h>` header file in your application:
+2. To use the functions and data types of the VCE API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html) applications), include the `<vce.h>` header file in your application:
 
     ```
     #include <vce.h>
@@ -81,61 +81,61 @@ To register and define event callbacks for the VCE service application:
 
 1. The VCE developer must register the `initialize()`, `deinitialize()`, `get_info()`, `get_recording_format()`, `foreach_langs()`, `is_lang_supported()`, `set_language()`, `set_commands()`, `unset_commands()`, `start()`, `set_recording()`, `stop()`, `cancel()`, `set_audio_type()`, `set_domain()`, `process_text()`, `process_list_event()`, `process_haptic_event()` callbacks.
 
-- Add the callbacks to the vce_request_callback_s structure (in [mobile](../../api/mobile/latest/group__CAPI_UIX_VOICE_CONTROL_ENGINE_MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI_UIX_VOICE_CONTROL_ENGINE_MODULE.html)  applications), and pass the structure as a parameter to the vce_main() function:
+   - Add the callbacks to the vce_request_callback_s structure (in [mobile](../../api/mobile/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html)  applications), and pass the structure as a parameter to the vce_main() function:
 
-   ```
-    static int initialize(void);
-    static int deinitialize(void);
-    static int get_info(char** engine_uuid, char** engine_name, char** engine_settings_app_id, bool* use_network);
-    static int get_recording_format(const char* audio_id, vce_audio_type_e* types, int* rate, int* channels);
-    static int foreach_langs(vce_supported_language_cb callback, void* user_data);
-    static bool is_lang_supported(const char* lang);
-    static int set_language(const char* language);
-    static int set_commands(vce_cmd_h vc_command);
-    static int unset_commands(void);
-    static int start(bool stop_by_silence);
-    static int set_recording(const void* data, unsigned int length, vce_speech_detect_e* silence_detected);
-    static int stop(void);
-    static int cancel(void);
-    static int set_audio_type(const char* audio_type);
-    static int set_domain(const char* domain);
-    static int process_text(const char* text);
-    static int process_list_event(const char* event);
-    static int process_haptic_event(const char* event);
+      ```
+       static int initialize(void);
+       static int deinitialize(void);
+       static int get_info(char** engine_uuid, char** engine_name, char** engine_settings_app_id, bool* use_network);
+       static int get_recording_format(const char* audio_id, vce_audio_type_e* types, int* rate, int* channels);
+       static int foreach_langs(vce_supported_language_cb callback, void* user_data);
+       static bool is_lang_supported(const char* lang);
+       static int set_language(const char* language);
+       static int set_commands(vce_cmd_h vc_command);
+       static int unset_commands(void);
+       static int start(bool stop_by_silence);
+       static int set_recording(const void* data, unsigned int length, vce_speech_detect_e* silence_detected);
+       static int stop(void);
+       static int cancel(void);
+       static int set_audio_type(const char* audio_type);
+       static int set_domain(const char* domain);
+       static int process_text(const char* text);
+       static int process_list_event(const char* event);
+       static int process_haptic_event(const char* event);
 
-    void
-    int main(int argc, char* argv[])
-    {
-        vce_request_callback_s callback = {0,};
+       void
+       int main(int argc, char* argv[])
+       {
+           vce_request_callback_s callback = {0,};
 
-        callback.version = 1;
+           callback.version = 1;
 
-        callback.initialize	= initialize;
-        callback.deinitialize	= deinitialize;
+           callback.initialize	= initialize;
+           callback.deinitialize	= deinitialize;
 
-        callback.get_info	= get_info;
-        callback.get_recording_format	= get_recording_format;
-        callback.foreach_langs	= foreach_langs;
-        callback.is_lang_supported	= is_lang_supported;
+           callback.get_info	= get_info;
+           callback.get_recording_format	= get_recording_format;
+           callback.foreach_langs	= foreach_langs;
+           callback.is_lang_supported	= is_lang_supported;
 
-        callback.set_language	= set_language;
-        callback.set_commands	= set_commands;
-        callback.unset_commands	= unset_commands;
+           callback.set_language	= set_language;
+           callback.set_commands	= set_commands;
+           callback.unset_commands	= unset_commands;
 
-        callback.start		= start;
-        callback.set_recording	= set_recording;
-        callback.stop		= stop;
-        callback.cancel		= cancel;
+           callback.start		= start;
+           callback.set_recording	= set_recording;
+           callback.stop		= stop;
+           callback.cancel		= cancel;
 
-        callback.set_audio_type	= set_audio_type;
-        callback.set_domain	= set_domain;
-        callback.process_text	= process_text;
-        callback.process_list_event	= process_list_event;
-        callback.process_haptic_event	= process_haptic_event;
+           callback.set_audio_type	= set_audio_type;
+           callback.set_domain	= set_domain;
+           callback.process_text	= process_text;
+           callback.process_list_event	= process_list_event;
+           callback.process_haptic_event	= process_haptic_event;
 
-        vce_main(argc, argv, &callback);
-    }
-   ```
+           vce_main(argc, argv, &callback);
+       }
+      ```
 
 
 2. Define the callbacks:
@@ -277,27 +277,28 @@ To register and define event callbacks for the VCE service application:
    ```
 
 3. Implement the optional callbacks, as needed:
-- You can register optional callbacks with the `vce_set_private_data_set_cb()`, `vce_set_private_data_requested_cb()`, `vce_set_nlu_base_info_requested_cb()` functions:
 
-   ```
-    static int private_data_set_cb(const char* key, const char* data);
-    static int private_data_requested_cb(const char* key, char** data);
-    static int nlu_base_info_requested_cb(const char* key, char** value);
+   - You can register optional callbacks with the `vce_set_private_data_set_cb()`, `vce_set_private_data_requested_cb()`, `vce_set_nlu_base_info_requested_cb()` functions:
 
-    void
-    int main(int argc, char* argv[])
-    {
-        vce_request_callback_s callback = {
-            /* Add the mandatory callbacks */
-        };
+      ```
+       static int private_data_set_cb(const char* key, const char* data);
+       static int private_data_requested_cb(const char* key, char** data);
+       static int nlu_base_info_requested_cb(const char* key, char** value);
 
-        vce_set_private_data_set_cb(private_data_set_cb);
-        vce_set_private_data_requested_cb(private_data_requested_cb);
-        vce_set_nlu_base_info_requested_cb(nlu_base_info_requested_cb);
+       void
+       int main(int argc, char* argv[])
+       {
+           vce_request_callback_s callback = {
+               /* Add the mandatory callbacks */
+           };
 
-        vce_main(argc, argv, &callback);
-    }
-   ```
+           vce_set_private_data_set_cb(private_data_set_cb);
+           vce_set_private_data_requested_cb(private_data_requested_cb);
+           vce_set_nlu_base_info_requested_cb(nlu_base_info_requested_cb);
+
+           vce_main(argc, argv, &callback);
+       }
+      ```
 
 4. Define the optional callbacks:
    ```
