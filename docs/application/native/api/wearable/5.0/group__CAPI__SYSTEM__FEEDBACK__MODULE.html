@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">5.0 M1</span>
    </div>
    
   </td>
@@ -99,7 +99,22 @@ Required Header</h2>
 <p>#include &lt;feedback.h&gt;</p>
 <h2><a class="anchor" id="CAPI_SYSTEM_FEEDBACK_MODULE_OVERVIEW"></a>
 Overview</h2>
-<p>The FEEDBACK API is responsible for playing simple sound and vibration. It plays sound using mm-sound library and vibration with system framework. </p>
+<p>The FEEDBACK API is responsible for playing simple sound and vibration. It plays sound using mm-sound library and vibration with system framework.</p>
+<h2><a class="anchor" id="CAPI_SYSTEM_FEEDBACK_FEATURE"></a>
+Related Features</h2>
+<p>This API is related with the following features:<br/>
+</p>
+<ul>
+<li>http://tizen.org/feature/feedback.vibration<br/>
+</li>
+</ul>
+<p>It is recommended to design feature related codes in your application for reliability.<br/>
+</p>
+<p>You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
+</p>
+<p>To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
+</p>
+<p>More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>Feature List</b>.</a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -365,6 +380,7 @@ Functions</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__FEEDBACK__MODULE.html#gga9d3114808552563fab1ddfe6aadae941a8720ec2e290cd727f02c2ea31f28cc9e">FEEDBACK_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__FEEDBACK__MODULE.html#gga9d3114808552563fab1ddfe6aadae941a343d1ac38d5535d2db574ea508ffc9e3">FEEDBACK_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__FEEDBACK__MODULE.html#gga9d3114808552563fab1ddfe6aadae941af0daf86b523681a919cb058536b1d6fe">FEEDBACK_ERROR_NOT_SUPPORTED</a></td><td>Not supported device </td></tr>
   </table>
   </dd>
 </dl>
@@ -395,6 +411,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__FEEDBACK__MODULE.html#gga9d3114808552563fab1ddfe6aadae941a8720ec2e290cd727f02c2ea31f28cc9e">FEEDBACK_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__FEEDBACK__MODULE.html#gga9d3114808552563fab1ddfe6aadae941af0daf86b523681a919cb058536b1d6fe">FEEDBACK_ERROR_NOT_SUPPORTED</a></td><td>Not supported device </td></tr>
   </table>
   </dd>
 </dl>

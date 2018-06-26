@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">5.0 M1</span>
    </div>
    
   </td>
@@ -175,12 +175,17 @@ static const <a class="el" href="classDali_1_1Matrix.html">Matrix</a>&#160;</td>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The identity matrix. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Matrix.html#a50adb2d96afb650df39de843c75a55dd">operator&lt;&lt;</a> (std::ostream &amp;o, const <a class="el" href="classDali_1_1Matrix.html">Matrix</a> &amp;matrix)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a matrix.  <a href="#a50adb2d96afb650df39de843c75a55dd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DALI_CORE_API std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Matrix.html#adc2e7a95748f5c77a7ce2373abbaf5bc">operator&lt;&lt;</a> (std::ostream &amp;o, const <a class="el" href="classDali_1_1Matrix.html">Matrix</a> &amp;matrix)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a matrix.  <a href="#adc2e7a95748f5c77a7ce2373abbaf5bc"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classDali_1_1Matrix.html" title="The Matrix class represents transformations and projections.">Matrix</a> class represents transformations and projections. </p>
-<p>It is agnostic w.r.t. row/column major notation - it operates on a flat array. Each axis is contiguous in memory, so the x axis corresponds to elements 0, 1, 2 and 3, the y axis corresponds to elements 4, 5, 6, 7, etc. </p>
+<p>The matrix is stored as a flat array and is Column Major, i.e. the storage order is as follows (numbers represent indices of array):</p>
+<div class="fragment"><pre class="fragment"> 0   4   8   12
+ 1   5   9   13
+ 2   6   10  14
+ 3   7   11  15
+</pre></div><p>Each axis is contiguous in memory, so the x-axis corresponds to elements 0, 1, 2 and 3, the y-axis corresponds to elements 4, 5, 6, 7, the z-axis corresponds to elements 12, 13, 14 and 15, and the translation vector corresponds to elements 12, 13 and 14.</p>
 <dl class="user"><dt><b>Since:</b></dt><dd>2.4, DALi version 1.0.0 </dd></dl>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a649cc955c0e7bd8da157c800f1418fa8"></a><!-- doxytag: member="Dali::Matrix::Matrix" ref="a649cc955c0e7bd8da157c800f1418fa8" args="()" -->
@@ -246,10 +251,7 @@ Friends</h2></td></tr>
 
 <p>Constructor. </p>
 <p>The matrix is initialized with the contents of 'array' which must contain 16 floats. The order of the values for a transform matrix is:</p>
-<div class="fragment"><pre class="fragment">   xAxis.x xAxis.y xAxis.z 0.0f
-   yAxis.x yAxis.y yAxis.z 0.0f
-   zAxis.x zAxis.y zAxis.z 0.0f
-   trans.x trans.y trans.z 1.0f
+<div class="fragment"><pre class="fragment"> [ xAxis.x, xAxis.y, xAxis.z, 0.0f, yAxis.x, yAxis.y, yAxis.z, 0.0f, zAxis.x, zAxis.y, zAxis.z, 0.0f, trans.x, trans.y, trans.z, 1.0f ]
 </pre></div><dl class="user"><dt><b>Since:</b></dt><dd>2.4, DALi version 1.0.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -329,10 +331,7 @@ Friends</h2></td></tr>
 
 <p>Returns the contents of the matrix as an array of 16 floats. </p>
 <p>The order of the values for a transform matrix is:</p>
-<div class="fragment"><pre class="fragment">   xAxis.x xAxis.y xAxis.z 0.0f
-   yAxis.x yAxis.y yAxis.z 0.0f
-   zAxis.x zAxis.y zAxis.z 0.0f
-   trans.x trans.y trans.z 1.0f
+<div class="fragment"><pre class="fragment"> [ xAxis.x, xAxis.y, xAxis.z, 0.0f, yAxis.x, yAxis.y, yAxis.z, 0.0f, zAxis.x, zAxis.y, zAxis.z, 0.0f, trans.x, trans.y, trans.z, 1.0f ]
 </pre></div><dl class="user"><dt><b>Since:</b></dt><dd>2.4, DALi version 1.0.0 </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The matrix contents as an array of 16 floats </dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>inlined for performance reasons (generates less code than a function call) </dd></dl>
@@ -355,10 +354,7 @@ Friends</h2></td></tr>
 
 <p>Returns the contents of the matrix as an array of 16 floats. </p>
 <p>The order of the values for a transform matrix is:</p>
-<div class="fragment"><pre class="fragment">   xAxis.x xAxis.y xAxis.z 0.0f
-   yAxis.x yAxis.y yAxis.z 0.0f
-   zAxis.x zAxis.y zAxis.z 0.0f
-   trans.x trans.y trans.z 1.0f
+<div class="fragment"><pre class="fragment"> [ xAxis.x, xAxis.y, xAxis.z, 0.0f, yAxis.x, yAxis.y, yAxis.z, 0.0f, zAxis.x, zAxis.y, zAxis.z, 0.0f, trans.x, trans.y, trans.z, 1.0f ]
 </pre></div><dl class="user"><dt><b>Since:</b></dt><dd>2.4, DALi version 1.0.0 </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The matrix contents as an array of 16 floats </dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>inlined for performance reasons (generates less code than a function call) </dd></dl>
@@ -594,7 +590,8 @@ Friends</h2></td></tr>
 <div class="memdoc">
 
 <p>Function to multiply two matrices and store the result onto third. </p>
-<p>Use this method in time critical path as it does not require temporaries. </p>
+<p>Use this method in time critical path as it does not require temporaries.</p>
+<p>result = rhs * lhs</p>
 <dl class="user"><dt><b>Since:</b></dt><dd>2.4, DALi version 1.0.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -696,14 +693,15 @@ Friends</h2></td></tr>
 <div class="memdoc">
 
 <p>The multiplication operator. </p>
+<p>Returned <a class="el" href="classDali_1_1Vector.html" title="Vector class with minimum space allocation when it&#39;s empty.">Vector</a> = This <a class="el" href="classDali_1_1Matrix.html" title="The Matrix class represents transformations and projections.">Matrix</a> * rhs</p>
 <dl class="user"><dt><b>Since:</b></dt><dd>2.4, DALi version 1.0.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">rhs</td><td>The <a class="el" href="classDali_1_1Matrix.html" title="The Matrix class represents transformations and projections.">Matrix</a> to multiply this by </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rhs</td><td>The <a class="el" href="structDali_1_1Vector4.html" title="A four dimensional vector.">Vector4</a> to multiply this by </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A matrix containing the result </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A <a class="el" href="structDali_1_1Vector4.html" title="A four dimensional vector.">Vector4</a> containing the result </dd></dl>
 
 </div>
 </div>
@@ -1124,12 +1122,12 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Friends And Related Function Documentation</h2>
-<a class="anchor" id="a50adb2d96afb650df39de843c75a55dd"></a><!-- doxytag: member="Dali::Matrix::operator&lt;&lt;" ref="a50adb2d96afb650df39de843c75a55dd" args="(std::ostream &amp;o, const Matrix &amp;matrix)" -->
+<a class="anchor" id="adc2e7a95748f5c77a7ce2373abbaf5bc"></a><!-- doxytag: member="Dali::Matrix::operator&lt;&lt;" ref="adc2e7a95748f5c77a7ce2373abbaf5bc" args="(std::ostream &amp;o, const Matrix &amp;matrix)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td class="memname">DALI_CORE_API std::ostream&amp; operator&lt;&lt; </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>o</em>, </td>
@@ -1150,7 +1148,7 @@ Friends</h2></td></tr>
 <div class="memdoc">
 
 <p>Prints a matrix. </p>
-<p>It is printed in memory order, i.e. each printed row is contiguous in memory. </p>
+<p>It is printed in memory order. </p>
 <dl class="user"><dt><b>Since:</b></dt><dd>2.4, DALi version 1.0.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

@@ -416,6 +416,12 @@
                 </Subnodes>
                </Node>
                <Node>
+                <Name>Simple Date Format</Name>
+                <Path>group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
                 <Name>Timezone</Name>
                 <Path>group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html</Path>
                 <Subnodes>

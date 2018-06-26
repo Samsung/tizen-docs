@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">5.0 M1</span>
    </div>
    
   </td>
@@ -110,7 +110,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classDali_1_1BaseObject.html#a076211608664b00b693ab0e4e24330a9">ConnectSignal</a> (<a class="el" href="classDali_1_1ConnectionTrackerInterface.html">ConnectionTrackerInterface</a> *connectionTracker, const std::string &amp;signalName, const T &amp;functor)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects a void() functor to a specified signal.  <a href="#a076211608664b00b693ab0e4e24330a9"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1BaseObject.html#a79fd9f2ce6e5091d3faadf2d9d17ec89">DoAction</a> (const std::string &amp;actionName, const <a class="el" href="classDali_1_1Property_1_1Map.html">Property::Map</a> &amp;attributes)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1BaseObject.html#a79fd9f2ce6e5091d3faadf2d9d17ec89">DoAction</a> (const std::string &amp;actionName, const <a class="el" href="classDali_1_1Property.html#a16ea7475b199777b95c0cf9ac04b068b">Property::Map</a> &amp;attributes)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1BaseObject.html#a3af0f693e4179bc49eca8ecaa5c728ce">GetTypeName</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1BaseObject.html#a767904e8c5e04029c0da3e9202c10041">GetTypeInfo</a> (<a class="el" href="classDali_1_1TypeInfo.html">Dali::TypeInfo</a> &amp;info) const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1BaseObject.html#ad808d91b9c1f4e764aa6b456ffc94f13">DoConnectSignal</a> (<a class="el" href="classDali_1_1ConnectionTrackerInterface.html">ConnectionTrackerInterface</a> *connectionTracker, const std::string &amp;signalName, <a class="el" href="classDali_1_1FunctorDelegate.html">FunctorDelegate</a> *functorDelegate)</td></tr>
@@ -230,7 +230,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classDali_1_1Property_1_1Map.html">Property::Map</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classDali_1_1Property.html#a16ea7475b199777b95c0cf9ac04b068b">Property::Map</a> &amp;&#160;</td>
           <td class="paramname"><em>attributes</em>&#160;</td>
         </tr>
         <tr>
@@ -245,7 +245,7 @@ template&lt;class T &gt; </div>
 <p>Usage example: - </p>
 <div class="fragment"><pre class="fragment"> <a class="code" href="classDali_1_1BaseHandle.html#a4d20f8da3b790d10870efd9b405d1da9" title="This constructor provides an uninitialized Dali::BaseHandle.">BaseHandle</a> handle = SomeClass::New(); <span class="comment">// Initialized with New() method</span>
 
- Property::Map attributes; <span class="comment">// Type is Property Map</span>
+ <a class="code" href="classDali_1_1Property.html#a16ea7475b199777b95c0cf9ac04b068b" title="Default constructor.">Property::Map</a> attributes; <span class="comment">// Type is Property Map</span>
  handle.DoAction(<span class="stringliteral">&quot;show&quot;</span>, attributes);
 </pre></div> <dl class="user"><dt><b>Since:</b></dt><dd>3.0, DALi version 1.0.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>

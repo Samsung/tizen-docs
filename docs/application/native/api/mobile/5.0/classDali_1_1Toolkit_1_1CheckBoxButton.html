@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">5.0 M1</span>
    </div>
    
   </td>
@@ -138,10 +138,10 @@ Static Public Member Functions</h2></td></tr>
  <span class="keywordtype">void</span> HelloWorldExample::Create( Application&amp; application )
  {
    <a class="code" href="classDali_1_1Toolkit_1_1CheckBoxButton.html#a5d1ac01d0feea89321d8701251876fed" title="Creates an uninitialized CheckBoxButton; this can be initialized with CheckBoxButton::New(). Calling member functions with an uninitialized Dali::Object is not allowed.">CheckBoxButton</a> button = <a class="code" href="classDali_1_1Toolkit_1_1CheckBoxButton.html#aaa5d72694fd8129e09aecb85afc62ed3" title="Creates an initialized CheckBoxButton.">CheckBoxButton::New</a>();
-   button.SetParentOrigin( <a class="code" href="namespaceDali_1_1ParentOrigin.html#a7ba636a960d02c969ac99d8761eee631" title="0.5f, 0.5f, 0.5f">ParentOrigin::CENTER</a> );
+   button.SetParentOrigin( <a class="code" href="namespaceDali_1_1ParentOrigin.html#a2012d9565e733cea00c15ac93940535b" title="0.5f, 0.5f, 0.5f">ParentOrigin::CENTER</a> );
    button.SetProperty( <a class="code" href="structDali_1_1Toolkit_1_1Button_1_1Property.html#ab64873a6d3b5144b538e1c1cf1d43319a8ad38c459ed278e6390ab36966cb10b8" title="name &quot;label&quot;, type Property::Map or std::string">Button::Property::LABEL</a>, <span class="stringliteral">&quot;Check&quot;</span> );
    button.SetSize( 200, 40 );
-   button.SetBackgroundColor( <a class="code" href="namespaceDali_1_1Color.html#a03a392cffadcd0626e0ea53b0c0c564c" title="Pure white (1.0f, 1.0f, 1.0f, 1.0f);.">Color::WHITE</a> );
+   button.SetBackgroundColor( <a class="code" href="namespaceDali_1_1Color.html#acdc99b9deb812ca35b5aa2a3f964b5f7" title="Pure white (1.0f, 1.0f, 1.0f, 1.0f);.">Color::WHITE</a> );
    <a class="code" href="classDali_1_1Stage.html#a43983182ec72f83322a0701a8c0395b8" title="Gets the current Stage.">Stage::GetCurrent</a>().<a class="code" href="classDali_1_1Stage.html#aa1b235137a780325fe25645a976e472b" title="Adds a child Actor to the Stage.">Add</a>( button );
 
    <span class="comment">// Connect to a button signal emitted by the button</span>

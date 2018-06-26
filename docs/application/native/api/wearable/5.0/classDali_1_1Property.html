@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">5.0 M1</span>
    </div>
    
   </td>
@@ -52,7 +52,6 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
-<script type="text/javascript" src="dynsections.js"></script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>The&#160;Basics&#160;of&#160;Tizen&#160;Native&#160;API&#160;Reference</span></a></li>
@@ -96,7 +95,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Dali::Property Struct Reference<div class="ingroups"><a class="el" href="group__dali__core__object.html">Object</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="Dali::Property" --><table class="memberdecls">
+<!-- doxytag: class="Dali::Property" -->
+<p>A Array of property values.  
+ <a href="classDali_1_1Property.html#details">More...</a></p>
+<table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Property.html#acb569f557811bc94d2e98b5c880d759c">Type</a> </td></tr>
@@ -264,8 +266,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDali_1_1Property.html#acb569f557811bc94d2e98b5c880d759c">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Property.html#abab4d58dd7d6d6e91479db409e0d9fa8">GetType</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries the type of this property value.  <a href="#abab4d58dd7d6d6e91479db409e0d9fa8"></a><br/></td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">T DALI_INTERNAL&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classDali_1_1Property.html#a31b28a3f9d4ee71e59ec61c945e1414e">Get</a> () const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a specific value.  <a href="#a31b28a3f9d4ee71e59ec61c945e1414e"></a><br/></td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classDali_1_1Property.html#a722b6c49a9b98e0d9605fad9e6a49932">Get</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a specific value.  <a href="#a722b6c49a9b98e0d9605fad9e6a49932"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Property.html#af22cd38be5e3dc992cff8d60a339fc40">Get</a> (bool &amp;boolValue) const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a boolean value.  <a href="#af22cd38be5e3dc992cff8d60a339fc40"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Property.html#a69ad36e9888673aca670238986306934">Get</a> (float &amp;floatValue) const </td></tr>
@@ -337,12 +339,12 @@ Static Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Property.html#aade07c95ff39ca9bf17e439ef6db3340">INVALID_COMPONENT_INDEX</a></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Property.html#a06eccba39b33ec8a0caf96275f6a65eb">operator&lt;&lt;</a> (std::ostream &amp;stream, const <a class="el" href="classDali_1_1Property.html#a28db0abfcb5069c03221b589b7969d38">Property::Array</a> &amp;array)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Output to stream.  <a href="#a06eccba39b33ec8a0caf96275f6a65eb"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Property.html#a7a0e098a5a721cb47f34494e058015fe">operator&lt;&lt;</a> (std::ostream &amp;stream, const <a class="el" href="classDali_1_1Property.html#a16ea7475b199777b95c0cf9ac04b068b">Property::Map</a> &amp;map)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Output to stream.  <a href="#a7a0e098a5a721cb47f34494e058015fe"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Property.html#ae231a2d56a8457e93a3a043e5af03d10">operator&lt;&lt;</a> (std::ostream &amp;ouputStream, const <a class="el" href="classDali_1_1Property.html#ab5742f91d835e7795448901e7d8644bd">Property::Value</a> &amp;value)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Output to stream.  <a href="#ae231a2d56a8457e93a3a043e5af03d10"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DALI_CORE_API std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Property.html#acf6889ae9549dc1907a6f8c32da71072">operator&lt;&lt;</a> (std::ostream &amp;stream, const <a class="el" href="classDali_1_1Property.html#a28db0abfcb5069c03221b589b7969d38">Property::Array</a> &amp;array)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Output to stream.  <a href="#acf6889ae9549dc1907a6f8c32da71072"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DALI_CORE_API std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Property.html#ad743ea9fb546c1fa34ece846b38d935f">operator&lt;&lt;</a> (std::ostream &amp;stream, const <a class="el" href="classDali_1_1Property.html#a16ea7475b199777b95c0cf9ac04b068b">Property::Map</a> &amp;map)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Output to stream.  <a href="#ad743ea9fb546c1fa34ece846b38d935f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DALI_CORE_API std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Property.html#a57b76e1caad44c5fd5310026d4f2ba15">operator&lt;&lt;</a> (std::ostream &amp;ouputStream, const <a class="el" href="classDali_1_1Property.html#ab5742f91d835e7795448901e7d8644bd">Property::Value</a> &amp;value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Output to stream.  <a href="#a57b76e1caad44c5fd5310026d4f2ba15"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>A Array of property values. </p>
@@ -1366,14 +1368,14 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a31b28a3f9d4ee71e59ec61c945e1414e"></a><!-- doxytag: member="Dali::Property::Get" ref="a31b28a3f9d4ee71e59ec61c945e1414e" args="() const " -->
+<a class="anchor" id="a722b6c49a9b98e0d9605fad9e6a49932"></a><!-- doxytag: member="Dali::Property::Get" ref="a722b6c49a9b98e0d9605fad9e6a49932" args="() const " -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T DALI_INTERNAL <a class="el" href="classDali_1_1Property.html#a31b28a3f9d4ee71e59ec61c945e1414e">Dali::Property::Get</a> </td>
+          <td class="memname">T <a class="el" href="classDali_1_1Property.html#a722b6c49a9b98e0d9605fad9e6a49932">Dali::Property::Get</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1394,7 +1396,7 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a31b28a3f9d4ee71e59ec61c945e1414e">Dali::Property::Get</a> </td>
+          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a722b6c49a9b98e0d9605fad9e6a49932">Dali::Property::Get</a> </td>
           <td>(</td>
           <td class="paramtype">bool &amp;&#160;</td>
           <td class="paramname"><em>boolValue</em></td><td>)</td>
@@ -1422,7 +1424,7 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a31b28a3f9d4ee71e59ec61c945e1414e">Dali::Property::Get</a> </td>
+          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a722b6c49a9b98e0d9605fad9e6a49932">Dali::Property::Get</a> </td>
           <td>(</td>
           <td class="paramtype">float &amp;&#160;</td>
           <td class="paramname"><em>floatValue</em></td><td>)</td>
@@ -1450,7 +1452,7 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a31b28a3f9d4ee71e59ec61c945e1414e">Dali::Property::Get</a> </td>
+          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a722b6c49a9b98e0d9605fad9e6a49932">Dali::Property::Get</a> </td>
           <td>(</td>
           <td class="paramtype">int &amp;&#160;</td>
           <td class="paramname"><em>integerValue</em></td><td>)</td>
@@ -1478,7 +1480,7 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a31b28a3f9d4ee71e59ec61c945e1414e">Dali::Property::Get</a> </td>
+          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a722b6c49a9b98e0d9605fad9e6a49932">Dali::Property::Get</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structDali_1_1Rect.html">Rect</a>&lt; int &gt; &amp;&#160;</td>
           <td class="paramname"><em>rect</em></td><td>)</td>
@@ -1506,7 +1508,7 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a31b28a3f9d4ee71e59ec61c945e1414e">Dali::Property::Get</a> </td>
+          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a722b6c49a9b98e0d9605fad9e6a49932">Dali::Property::Get</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structDali_1_1Vector2.html">Vector2</a> &amp;&#160;</td>
           <td class="paramname"><em>vectorValue</em></td><td>)</td>
@@ -1534,7 +1536,7 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a31b28a3f9d4ee71e59ec61c945e1414e">Dali::Property::Get</a> </td>
+          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a722b6c49a9b98e0d9605fad9e6a49932">Dali::Property::Get</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structDali_1_1Vector3.html">Vector3</a> &amp;&#160;</td>
           <td class="paramname"><em>vectorValue</em></td><td>)</td>
@@ -1562,7 +1564,7 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a31b28a3f9d4ee71e59ec61c945e1414e">Dali::Property::Get</a> </td>
+          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a722b6c49a9b98e0d9605fad9e6a49932">Dali::Property::Get</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structDali_1_1Vector4.html">Vector4</a> &amp;&#160;</td>
           <td class="paramname"><em>vectorValue</em></td><td>)</td>
@@ -1590,7 +1592,7 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a31b28a3f9d4ee71e59ec61c945e1414e">Dali::Property::Get</a> </td>
+          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a722b6c49a9b98e0d9605fad9e6a49932">Dali::Property::Get</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classDali_1_1Matrix3.html">Matrix3</a> &amp;&#160;</td>
           <td class="paramname"><em>matrixValue</em></td><td>)</td>
@@ -1618,7 +1620,7 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a31b28a3f9d4ee71e59ec61c945e1414e">Dali::Property::Get</a> </td>
+          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a722b6c49a9b98e0d9605fad9e6a49932">Dali::Property::Get</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classDali_1_1Matrix.html">Matrix</a> &amp;&#160;</td>
           <td class="paramname"><em>matrixValue</em></td><td>)</td>
@@ -1646,7 +1648,7 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a31b28a3f9d4ee71e59ec61c945e1414e">Dali::Property::Get</a> </td>
+          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a722b6c49a9b98e0d9605fad9e6a49932">Dali::Property::Get</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structDali_1_1AngleAxis.html">AngleAxis</a> &amp;&#160;</td>
           <td class="paramname"><em>angleAxisValue</em></td><td>)</td>
@@ -1674,7 +1676,7 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a31b28a3f9d4ee71e59ec61c945e1414e">Dali::Property::Get</a> </td>
+          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a722b6c49a9b98e0d9605fad9e6a49932">Dali::Property::Get</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classDali_1_1Quaternion.html">Quaternion</a> &amp;&#160;</td>
           <td class="paramname"><em>quaternionValue</em></td><td>)</td>
@@ -1702,7 +1704,7 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a31b28a3f9d4ee71e59ec61c945e1414e">Dali::Property::Get</a> </td>
+          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a722b6c49a9b98e0d9605fad9e6a49932">Dali::Property::Get</a> </td>
           <td>(</td>
           <td class="paramtype">std::string &amp;&#160;</td>
           <td class="paramname"><em>stringValue</em></td><td>)</td>
@@ -1730,7 +1732,7 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a31b28a3f9d4ee71e59ec61c945e1414e">Dali::Property::Get</a> </td>
+          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a722b6c49a9b98e0d9605fad9e6a49932">Dali::Property::Get</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classDali_1_1Property.html#a28db0abfcb5069c03221b589b7969d38">Property::Array</a> &amp;&#160;</td>
           <td class="paramname"><em>arrayValue</em></td><td>)</td>
@@ -1758,7 +1760,7 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a31b28a3f9d4ee71e59ec61c945e1414e">Dali::Property::Get</a> </td>
+          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a722b6c49a9b98e0d9605fad9e6a49932">Dali::Property::Get</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classDali_1_1Property.html#a16ea7475b199777b95c0cf9ac04b068b">Property::Map</a> &amp;&#160;</td>
           <td class="paramname"><em>mapValue</em></td><td>)</td>
@@ -1786,7 +1788,7 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a31b28a3f9d4ee71e59ec61c945e1414e">Dali::Property::Get</a> </td>
+          <td class="memname">bool <a class="el" href="classDali_1_1Property.html#a722b6c49a9b98e0d9605fad9e6a49932">Dali::Property::Get</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structDali_1_1Extents.html">Extents</a> &amp;&#160;</td>
           <td class="paramname"><em>extentsValue</em></td><td>)</td>
@@ -3299,12 +3301,12 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <hr/><h2>Friends And Related Function Documentation</h2>
-<a class="anchor" id="a06eccba39b33ec8a0caf96275f6a65eb"></a><!-- doxytag: member="Dali::Property::operator&lt;&lt;" ref="a06eccba39b33ec8a0caf96275f6a65eb" args="(std::ostream &amp;stream, const Property::Array &amp;array)" -->
+<a class="anchor" id="acf6889ae9549dc1907a6f8c32da71072"></a><!-- doxytag: member="Dali::Property::operator&lt;&lt;" ref="acf6889ae9549dc1907a6f8c32da71072" args="(std::ostream &amp;stream, const Property::Array &amp;array)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td class="memname">DALI_CORE_API std::ostream&amp; operator&lt;&lt; </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>stream</em>, </td>
@@ -3338,12 +3340,12 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a7a0e098a5a721cb47f34494e058015fe"></a><!-- doxytag: member="Dali::Property::operator&lt;&lt;" ref="a7a0e098a5a721cb47f34494e058015fe" args="(std::ostream &amp;stream, const Property::Map &amp;map)" -->
+<a class="anchor" id="ad743ea9fb546c1fa34ece846b38d935f"></a><!-- doxytag: member="Dali::Property::operator&lt;&lt;" ref="ad743ea9fb546c1fa34ece846b38d935f" args="(std::ostream &amp;stream, const Property::Map &amp;map)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td class="memname">DALI_CORE_API std::ostream&amp; operator&lt;&lt; </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>stream</em>, </td>
@@ -3377,12 +3379,12 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ae231a2d56a8457e93a3a043e5af03d10"></a><!-- doxytag: member="Dali::Property::operator&lt;&lt;" ref="ae231a2d56a8457e93a3a043e5af03d10" args="(std::ostream &amp;ouputStream, const Property::Value &amp;value)" -->
+<a class="anchor" id="a57b76e1caad44c5fd5310026d4f2ba15"></a><!-- doxytag: member="Dali::Property::operator&lt;&lt;" ref="a57b76e1caad44c5fd5310026d4f2ba15" args="(std::ostream &amp;ouputStream, const Property::Value &amp;value)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td class="memname">DALI_CORE_API std::ostream&amp; operator&lt;&lt; </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>ouputStream</em>, </td>
@@ -3463,7 +3465,7 @@ template&lt;typename T &gt; </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><b>Dali</b>      </li>
+      <li class="navelem"><a class="el" href="namespaceDali.html">Dali</a>      </li>
       <li class="navelem"><a class="el" href="classDali_1_1Property.html">Property</a>      </li>
 <hr size="1"/>
 <center>

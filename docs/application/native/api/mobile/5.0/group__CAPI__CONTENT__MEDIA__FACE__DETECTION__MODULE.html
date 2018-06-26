@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">5.0 M1</span>
    </div>
    
   </td>
@@ -258,7 +258,7 @@ Typedefs</h2></td></tr>
  http://tizen.org/privilege/mediastorage <br/>
  http://tizen.org/privilege/externalstorage</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If you want to destroy the media handle before callback invoked, you must cancel the face detection request by using <a class="el" href="group__CAPI__CONTENT__MEDIA__FACE__DETECTION__MODULE.html#ga582ab55a1434ceaed2fe44810fee4848" title="Cancels face detection of image for the given media.">media_info_cancel_face_detection()</a>. <br/>
- If face detection fails, the <em>face_count</em> argument in <a class="el" href="group__CAPI__CONTENT__MEDIA__FACE__DETECTION__MODULE.html#ga97ac6e0f48148aade0a305ac167d05e6" title="Called when face detection on the image is completed.">media_face_detection_completed_cb()</a> will be set to 0. Media items in external storage are not supported, with the exception of MMC items.</dd></dl>
+ If face detection fails, the face_count argument in <a class="el" href="group__CAPI__CONTENT__MEDIA__FACE__DETECTION__MODULE.html#ga97ac6e0f48148aade0a305ac167d05e6" title="Called when face detection on the image is completed.">media_face_detection_completed_cb()</a> will be set to 0. Media items in external storage are not supported, with the exception of MMC items.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">media</td><td>The handle to the media info </td></tr>

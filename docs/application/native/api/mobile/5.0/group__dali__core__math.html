@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">5.0 M1</span>
    </div>
    
   </td>
@@ -173,12 +173,12 @@ Functions</h2></td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#gab52d7ecc8dbc0963de6145afbc737d5c">Dali::Sign</a> (T value)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the sign of a number.  <a href="#gab52d7ecc8dbc0963de6145afbc737d5c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#ga48d8c3de1a7769a332f98d838e05252c">Dali::operator&lt;&lt;</a> (std::ostream &amp;o, const Matrix &amp;matrix)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a matrix.  <a href="#ga48d8c3de1a7769a332f98d838e05252c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#gaebfb94de360da3118f68d14f1d5df5b0">Dali::operator&lt;&lt;</a> (std::ostream &amp;o, const Matrix3 &amp;matrix)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a 3x3 matrix.  <a href="#gaebfb94de360da3118f68d14f1d5df5b0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#gad4292d6966c984ac40f05289cd366502">Dali::operator&lt;&lt;</a> (std::ostream &amp;o, const Quaternion &amp;quaternion)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a <a class="el" href="classDali_1_1Quaternion.html" title="The Quaternion class encapsulates the mathematics of the quaternion.">Quaternion</a>.  <a href="#gad4292d6966c984ac40f05289cd366502"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DALI_CORE_API std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#ga7bc8ce2ff0d7f9ad172ca816dbbc5079">Dali::operator&lt;&lt;</a> (std::ostream &amp;o, const Matrix &amp;matrix)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a matrix.  <a href="#ga7bc8ce2ff0d7f9ad172ca816dbbc5079"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DALI_CORE_API std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#gac12b7d8d0ae53390a4a0995c40d42aee">Dali::operator&lt;&lt;</a> (std::ostream &amp;o, const Matrix3 &amp;matrix)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a 3x3 matrix.  <a href="#gac12b7d8d0ae53390a4a0995c40d42aee"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DALI_CORE_API std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#ga85caf1738c407ba40138b03d357096da">Dali::operator&lt;&lt;</a> (std::ostream &amp;o, const Quaternion &amp;quaternion)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a <a class="el" href="classDali_1_1Quaternion.html" title="The Quaternion class encapsulates the mathematics of the quaternion.">Quaternion</a>.  <a href="#ga85caf1738c407ba40138b03d357096da"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#gada6dbaa33d881fb71de37289b7595908">Dali::operator==</a> (Radian lhs, Radian rhs)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares equality between two radians.  <a href="#gada6dbaa33d881fb71de37289b7595908"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#ga843829e626c9843fe3944ea632466673">Dali::operator!=</a> (Radian lhs, Radian rhs)</td></tr>
@@ -209,30 +209,30 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Negates the radian.  <a href="#gafc9132cc2c01315178f93170c062a6d8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Radian&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#gaf8f556acf18ea11fd8aee989c521f1fc">Dali::Clamp</a> (Radian angle, float min, float max)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Clamps a radian value.  <a href="#gaf8f556acf18ea11fd8aee989c521f1fc"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#ga374e92a5521da7cace4e81000a51d328">Dali::operator&lt;&lt;</a> (std::ostream &amp;o, const Vector2 &amp;vector)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Print a <a class="el" href="structDali_1_1Vector2.html" title="A two dimensional vector.">Vector2</a>.  <a href="#ga374e92a5521da7cace4e81000a51d328"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DALI_CORE_API std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#ga431fcc8e9a8c8f9dbbc87b7c2879ee56">Dali::operator&lt;&lt;</a> (std::ostream &amp;o, const Vector2 &amp;vector)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Print a <a class="el" href="structDali_1_1Vector2.html" title="A two dimensional vector.">Vector2</a>.  <a href="#ga431fcc8e9a8c8f9dbbc87b7c2879ee56"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#gacf57a15aade048909ccc6ebd052abd79">Dali::Min</a> (const Vector2 &amp;a, const Vector2 &amp;b)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector with components set to the minimum of the corresponding component in a and b.  <a href="#gacf57a15aade048909ccc6ebd052abd79"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#ga7e8a11f2b623bd2073e137dcb8eb9cec">Dali::Max</a> (const Vector2 &amp;a, const Vector2 &amp;b)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector with components set to the maximum of the corresponding component in a and b.  <a href="#ga7e8a11f2b623bd2073e137dcb8eb9cec"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#ga85c686e4da1fd04b463943c8e192ceef">Dali::Clamp</a> (const Vector2 &amp;v, const float &amp;min, const float &amp;max)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Clamps each of vector v's components between minimum and maximum values.  <a href="#ga85c686e4da1fd04b463943c8e192ceef"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#ga2f7240e1bf9366b8773be599be7a297d">Dali::operator&lt;&lt;</a> (std::ostream &amp;o, const Vector3 &amp;vector)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a <a class="el" href="structDali_1_1Vector3.html" title="A three dimensional vector.">Vector3</a>.  <a href="#ga2f7240e1bf9366b8773be599be7a297d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DALI_CORE_API Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#gab7c684cb482e3e84575882d56cecf370">Dali::Clamp</a> (const Vector2 &amp;v, const float &amp;min, const float &amp;max)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Clamps each of vector v's components between minimum and maximum values.  <a href="#gab7c684cb482e3e84575882d56cecf370"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DALI_CORE_API std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#ga980bc841f73532de25a5682bf6d3e2f6">Dali::operator&lt;&lt;</a> (std::ostream &amp;o, const Vector3 &amp;vector)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a <a class="el" href="structDali_1_1Vector3.html" title="A three dimensional vector.">Vector3</a>.  <a href="#ga980bc841f73532de25a5682bf6d3e2f6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#gacacce5f612e60295aff9d10eb5fc0b4f">Dali::Min</a> (const Vector3 &amp;a, const Vector3 &amp;b)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector with components set to the minimum of the corresponding component in a and b.  <a href="#gacacce5f612e60295aff9d10eb5fc0b4f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#gaf2d788a0045998a99e7bc25e8657078f">Dali::Max</a> (const Vector3 &amp;a, const Vector3 &amp;b)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector with components set to the maximum of the corresponding component in a and b.  <a href="#gaf2d788a0045998a99e7bc25e8657078f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#ga633a5670d436621ae7911c258293b45e">Dali::Clamp</a> (const Vector3 &amp;v, const float &amp;min, const float &amp;max)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Clamps each of vector v's components between minimum and maximum values.  <a href="#ga633a5670d436621ae7911c258293b45e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#ga52bd10772d75083770e8750701462547">Dali::operator&lt;&lt;</a> (std::ostream &amp;o, const Vector4 &amp;vector)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Print a <a class="el" href="structDali_1_1Vector4.html" title="A four dimensional vector.">Vector4</a>.  <a href="#ga52bd10772d75083770e8750701462547"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DALI_CORE_API Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#gad28ad7d3030586a62710d13402662bfc">Dali::Clamp</a> (const Vector3 &amp;v, const float &amp;min, const float &amp;max)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Clamps each of vector v's components between minimum and maximum values.  <a href="#gad28ad7d3030586a62710d13402662bfc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DALI_CORE_API std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#ga45fc402ae3fffbdaa08b54055806c58b">Dali::operator&lt;&lt;</a> (std::ostream &amp;o, const Vector4 &amp;vector)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Print a <a class="el" href="structDali_1_1Vector4.html" title="A four dimensional vector.">Vector4</a>.  <a href="#ga45fc402ae3fffbdaa08b54055806c58b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Vector4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#gadb85e4cdbf2fa80ca38e1d0f329d69d3">Dali::Min</a> (const Vector4 &amp;a, const Vector4 &amp;b)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector with components set to the minimum of the corresponding component in a and b.  <a href="#gadb85e4cdbf2fa80ca38e1d0f329d69d3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Vector4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#ga2af0082f6976ce3a7461cb1266f97adc">Dali::Max</a> (const Vector4 &amp;a, const Vector4 &amp;b)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector with components set to the maximum of the corresponding component in a and b.  <a href="#ga2af0082f6976ce3a7461cb1266f97adc"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Vector4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#gad326d4e9fe33f7a02981927ba1464f56">Dali::Clamp</a> (const Vector4 &amp;v, const float &amp;min, const float &amp;max)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Clamps each of vector v's components between minimum and maximum values.  <a href="#gad326d4e9fe33f7a02981927ba1464f56"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DALI_CORE_API Vector4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dali__core__math.html#gaf802d1e7dec150bb03ff331e7c41b8e6">Dali::Clamp</a> (const Vector4 &amp;v, const float &amp;min, const float &amp;max)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Clamps each of vector v's components between minimum and maximum values.  <a href="#gaf802d1e7dec150bb03ff331e7c41b8e6"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDali_1_1Random.html">Dali::Random</a></td></tr>
@@ -416,12 +416,12 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ga85c686e4da1fd04b463943c8e192ceef"></a><!-- doxytag: member="Dali::Clamp" ref="ga85c686e4da1fd04b463943c8e192ceef" args="(const Vector2 &amp;v, const float &amp;min, const float &amp;max)" -->
+<a class="anchor" id="gab7c684cb482e3e84575882d56cecf370"></a><!-- doxytag: member="Dali::Clamp" ref="gab7c684cb482e3e84575882d56cecf370" args="(const Vector2 &amp;v, const float &amp;min, const float &amp;max)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Vector2 <a class="el" href="group__dali__core__math.html#ga7ef1fd777eb6bc3e6bc722c210ae4305">Dali::Clamp</a> </td>
+          <td class="memname">DALI_CORE_API Vector2 <a class="el" href="group__dali__core__math.html#ga7ef1fd777eb6bc3e6bc722c210ae4305">Dali::Clamp</a> </td>
           <td>(</td>
           <td class="paramtype">const Vector2 &amp;&#160;</td>
           <td class="paramname"><em>v</em>, </td>
@@ -461,12 +461,12 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ga633a5670d436621ae7911c258293b45e"></a><!-- doxytag: member="Dali::Clamp" ref="ga633a5670d436621ae7911c258293b45e" args="(const Vector3 &amp;v, const float &amp;min, const float &amp;max)" -->
+<a class="anchor" id="gad28ad7d3030586a62710d13402662bfc"></a><!-- doxytag: member="Dali::Clamp" ref="gad28ad7d3030586a62710d13402662bfc" args="(const Vector3 &amp;v, const float &amp;min, const float &amp;max)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Vector3 <a class="el" href="group__dali__core__math.html#ga7ef1fd777eb6bc3e6bc722c210ae4305">Dali::Clamp</a> </td>
+          <td class="memname">DALI_CORE_API Vector3 <a class="el" href="group__dali__core__math.html#ga7ef1fd777eb6bc3e6bc722c210ae4305">Dali::Clamp</a> </td>
           <td>(</td>
           <td class="paramtype">const Vector3 &amp;&#160;</td>
           <td class="paramname"><em>v</em>, </td>
@@ -506,12 +506,12 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="gad326d4e9fe33f7a02981927ba1464f56"></a><!-- doxytag: member="Dali::Clamp" ref="gad326d4e9fe33f7a02981927ba1464f56" args="(const Vector4 &amp;v, const float &amp;min, const float &amp;max)" -->
+<a class="anchor" id="gaf802d1e7dec150bb03ff331e7c41b8e6"></a><!-- doxytag: member="Dali::Clamp" ref="gaf802d1e7dec150bb03ff331e7c41b8e6" args="(const Vector4 &amp;v, const float &amp;min, const float &amp;max)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Vector4 <a class="el" href="group__dali__core__math.html#ga7ef1fd777eb6bc3e6bc722c210ae4305">Dali::Clamp</a> </td>
+          <td class="memname">DALI_CORE_API Vector4 <a class="el" href="group__dali__core__math.html#ga7ef1fd777eb6bc3e6bc722c210ae4305">Dali::Clamp</a> </td>
           <td>(</td>
           <td class="paramtype">const Vector4 &amp;&#160;</td>
           <td class="paramname"><em>v</em>, </td>
@@ -1412,12 +1412,12 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="gaebfb94de360da3118f68d14f1d5df5b0"></a><!-- doxytag: member="Dali::operator&lt;&lt;" ref="gaebfb94de360da3118f68d14f1d5df5b0" args="(std::ostream &amp;o, const Matrix3 &amp;matrix)" -->
+<a class="anchor" id="gac12b7d8d0ae53390a4a0995c40d42aee"></a><!-- doxytag: member="Dali::operator&lt;&lt;" ref="gac12b7d8d0ae53390a4a0995c40d42aee" args="(std::ostream &amp;o, const Matrix3 &amp;matrix)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::ostream&amp; Dali::operator&lt;&lt; </td>
+          <td class="memname">DALI_CORE_API std::ostream&amp; Dali::operator&lt;&lt; </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>o</em>, </td>
@@ -1450,12 +1450,12 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ga48d8c3de1a7769a332f98d838e05252c"></a><!-- doxytag: member="Dali::operator&lt;&lt;" ref="ga48d8c3de1a7769a332f98d838e05252c" args="(std::ostream &amp;o, const Matrix &amp;matrix)" -->
+<a class="anchor" id="ga7bc8ce2ff0d7f9ad172ca816dbbc5079"></a><!-- doxytag: member="Dali::operator&lt;&lt;" ref="ga7bc8ce2ff0d7f9ad172ca816dbbc5079" args="(std::ostream &amp;o, const Matrix &amp;matrix)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::ostream&amp; Dali::operator&lt;&lt; </td>
+          <td class="memname">DALI_CORE_API std::ostream&amp; Dali::operator&lt;&lt; </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>o</em>, </td>
@@ -1476,7 +1476,7 @@ template&lt;typename T &gt; </div>
 <div class="memdoc">
 
 <p>Prints a matrix. </p>
-<p>It is printed in memory order, i.e. each printed row is contiguous in memory. </p>
+<p>It is printed in memory order. </p>
 <dl class="user"><dt><b>Since:</b></dt><dd>2.4, DALi version 1.0.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1489,12 +1489,12 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ga374e92a5521da7cace4e81000a51d328"></a><!-- doxytag: member="Dali::operator&lt;&lt;" ref="ga374e92a5521da7cace4e81000a51d328" args="(std::ostream &amp;o, const Vector2 &amp;vector)" -->
+<a class="anchor" id="ga431fcc8e9a8c8f9dbbc87b7c2879ee56"></a><!-- doxytag: member="Dali::operator&lt;&lt;" ref="ga431fcc8e9a8c8f9dbbc87b7c2879ee56" args="(std::ostream &amp;o, const Vector2 &amp;vector)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::ostream&amp; Dali::operator&lt;&lt; </td>
+          <td class="memname">DALI_CORE_API std::ostream&amp; Dali::operator&lt;&lt; </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>o</em>, </td>
@@ -1527,12 +1527,12 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="gad4292d6966c984ac40f05289cd366502"></a><!-- doxytag: member="Dali::operator&lt;&lt;" ref="gad4292d6966c984ac40f05289cd366502" args="(std::ostream &amp;o, const Quaternion &amp;quaternion)" -->
+<a class="anchor" id="ga85caf1738c407ba40138b03d357096da"></a><!-- doxytag: member="Dali::operator&lt;&lt;" ref="ga85caf1738c407ba40138b03d357096da" args="(std::ostream &amp;o, const Quaternion &amp;quaternion)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::ostream&amp; Dali::operator&lt;&lt; </td>
+          <td class="memname">DALI_CORE_API std::ostream&amp; Dali::operator&lt;&lt; </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>o</em>, </td>
@@ -1565,12 +1565,12 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ga2f7240e1bf9366b8773be599be7a297d"></a><!-- doxytag: member="Dali::operator&lt;&lt;" ref="ga2f7240e1bf9366b8773be599be7a297d" args="(std::ostream &amp;o, const Vector3 &amp;vector)" -->
+<a class="anchor" id="ga980bc841f73532de25a5682bf6d3e2f6"></a><!-- doxytag: member="Dali::operator&lt;&lt;" ref="ga980bc841f73532de25a5682bf6d3e2f6" args="(std::ostream &amp;o, const Vector3 &amp;vector)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::ostream&amp; Dali::operator&lt;&lt; </td>
+          <td class="memname">DALI_CORE_API std::ostream&amp; Dali::operator&lt;&lt; </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>o</em>, </td>
@@ -1603,12 +1603,12 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ga52bd10772d75083770e8750701462547"></a><!-- doxytag: member="Dali::operator&lt;&lt;" ref="ga52bd10772d75083770e8750701462547" args="(std::ostream &amp;o, const Vector4 &amp;vector)" -->
+<a class="anchor" id="ga45fc402ae3fffbdaa08b54055806c58b"></a><!-- doxytag: member="Dali::operator&lt;&lt;" ref="ga45fc402ae3fffbdaa08b54055806c58b" args="(std::ostream &amp;o, const Vector4 &amp;vector)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::ostream&amp; Dali::operator&lt;&lt; </td>
+          <td class="memname">DALI_CORE_API std::ostream&amp; Dali::operator&lt;&lt; </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>o</em>, </td>

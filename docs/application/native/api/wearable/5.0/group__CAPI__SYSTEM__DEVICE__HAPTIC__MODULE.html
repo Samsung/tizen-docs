@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">5.0 M1</span>
    </div>
    
   </td>
@@ -94,14 +94,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ingroups"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html">Device</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
-<p>The Haptic API provides functions to control a vibrator. </p>
+<p>The Haptic API provides functions to control vibration. </p>
 <h2><a class="anchor" id="CAPI_SYSTEM_DEVICE_HAPTIC_MODULE_HEADER"></a>
 Required Header</h2>
 <p>#include &lt;device/haptic.h&gt; <br/>
 </p>
 <h2><a class="anchor" id="CAPI_SYSTEM_DEVICE_HAPTIC_MODULE_OVERVIEW"></a>
 Overview</h2>
-<p>The Haptic API provides the way to control vibration functionality of a device. It allows the management of the device's vibrator parameters, such as the vibration count and level. </p>
+<p>The Haptic API provides the way to control vibration functionality of a device. It allows the management of the device's vibrator parameters, such as the vibration count and level.</p>
+<h2><a class="anchor" id="CAPI_SYSTEM_DEVICE_HAPTIC_MODULE__FEATURE"></a>
+Related Features</h2>
+<p>This API is related with the following features:<br/>
+</p>
+<ul>
+<li>http://tizen.org/feature/feedback.vibration<br/>
+</li>
+</ul>
+<p>It is recommended to design feature related codes in your application for reliability.<br/>
+</p>
+<p>You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
+</p>
+<p>To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
+</p>
+<p>More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>Feature List</b>.</a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>

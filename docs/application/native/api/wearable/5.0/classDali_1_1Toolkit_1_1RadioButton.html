@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">5.0 M1</span>
    </div>
    
   </td>
@@ -141,20 +141,20 @@ Static Public Member Functions</h2></td></tr>
 
  <span class="comment">// Create a group to bind two or more RadioButtons together</span>
  <a class="code" href="classDali_1_1Actor.html#a7109c5679485fe340ae8ccef066e2563" title="Creates an uninitialized Actor; this can be initialized with Actor::New().">Actor</a> radioGroup = <a class="code" href="classDali_1_1Toolkit_1_1RadioButton.html#a6f6b6e68331369f722583791b13193bb" title="Creates an initialized RadioButton.">Actor::New</a>();
- radioGroup.SetParentOrigin( <a class="code" href="namespaceDali_1_1ParentOrigin.html#a7ba636a960d02c969ac99d8761eee631" title="0.5f, 0.5f, 0.5f">ParentOrigin::CENTER</a> );
+ radioGroup.SetParentOrigin( <a class="code" href="namespaceDali_1_1ParentOrigin.html#a2012d9565e733cea00c15ac93940535b" title="0.5f, 0.5f, 0.5f">ParentOrigin::CENTER</a> );
  <a class="code" href="classDali_1_1Stage.html#a43983182ec72f83322a0701a8c0395b8" title="Gets the current Stage.">Stage::GetCurrent</a>().<a class="code" href="classDali_1_1Stage.html#aa1b235137a780325fe25645a976e472b" title="Adds a child Actor to the Stage.">Add</a>( radioGroup );
 
  <span class="comment">// Make the first RadioButton and add it to its parent</span>
  <a class="code" href="classDali_1_1Toolkit_1_1RadioButton.html#a571a61af16d8e618199cc07cbdd78be8" title="Creates an uninitialized RadioButton; this can be initialized with RadioButton::New().">RadioButton</a> button1 = <a class="code" href="classDali_1_1Toolkit_1_1RadioButton.html#a6f6b6e68331369f722583791b13193bb" title="Creates an initialized RadioButton.">RadioButton::New</a>();
  button1.SetProperty( <a class="code" href="structDali_1_1Toolkit_1_1Button_1_1Property.html#ab64873a6d3b5144b538e1c1cf1d43319a8ad38c459ed278e6390ab36966cb10b8" title="name &quot;label&quot;, type Property::Map or std::string">Button::Property::LABEL</a>, <span class="stringliteral">&quot;button1&quot;</span> );
- button1.SetBackgroundColor( <a class="code" href="namespaceDali_1_1Color.html#a03a392cffadcd0626e0ea53b0c0c564c" title="Pure white (1.0f, 1.0f, 1.0f, 1.0f);.">Color::WHITE</a> );
+ button1.SetBackgroundColor( <a class="code" href="namespaceDali_1_1Color.html#acdc99b9deb812ca35b5aa2a3f964b5f7" title="Pure white (1.0f, 1.0f, 1.0f, 1.0f);.">Color::WHITE</a> );
  button1.SetPosition( 0, -40 );
  radioGroup.Add( button1 );
 
  <span class="comment">// Make more RadioButtons and add them to their parent</span>
  <a class="code" href="classDali_1_1Toolkit_1_1RadioButton.html#a571a61af16d8e618199cc07cbdd78be8" title="Creates an uninitialized RadioButton; this can be initialized with RadioButton::New().">RadioButton</a> button2 = <a class="code" href="classDali_1_1Toolkit_1_1RadioButton.html#a6f6b6e68331369f722583791b13193bb" title="Creates an initialized RadioButton.">RadioButton::New</a>();
  button2.SetProperty( <a class="code" href="structDali_1_1Toolkit_1_1Button_1_1Property.html#ab64873a6d3b5144b538e1c1cf1d43319a8ad38c459ed278e6390ab36966cb10b8" title="name &quot;label&quot;, type Property::Map or std::string">Toolkit::Button::Property::LABEL</a>, <span class="stringliteral">&quot;button2&quot;</span> );
- button2.SetBackgroundColor( <a class="code" href="namespaceDali_1_1Color.html#a03a392cffadcd0626e0ea53b0c0c564c" title="Pure white (1.0f, 1.0f, 1.0f, 1.0f);.">Color::WHITE</a> );
+ button2.SetBackgroundColor( <a class="code" href="namespaceDali_1_1Color.html#acdc99b9deb812ca35b5aa2a3f964b5f7" title="Pure white (1.0f, 1.0f, 1.0f, 1.0f);.">Color::WHITE</a> );
  button2.SetPosition( 0, 40 );
  radioGroup.Add( button2 );
 </pre></div> <dl class="user"><dt><b>Since:</b></dt><dd>3.0, DALi version 1.0.0 </dd></dl>

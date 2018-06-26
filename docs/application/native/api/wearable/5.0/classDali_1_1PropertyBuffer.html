@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">5.0 M1</span>
    </div>
    
   </td>
@@ -123,7 +123,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor.  <a href="#a4657d44d1583475a8fc5a2b3482ed36d"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classDali_1_1PropertyBuffer.html">PropertyBuffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1PropertyBuffer.html#a1812106cd5b1b4beb020c45e5b03b90e">New</a> (<a class="el" href="classDali_1_1Property_1_1Map.html">Dali::Property::Map</a> &amp;bufferFormat)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classDali_1_1PropertyBuffer.html">PropertyBuffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1PropertyBuffer.html#a1812106cd5b1b4beb020c45e5b03b90e">New</a> (<a class="el" href="classDali_1_1Property.html#a16ea7475b199777b95c0cf9ac04b068b">Dali::Property::Map</a> &amp;bufferFormat)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classDali_1_1PropertyBuffer.html" title="PropertyBuffer is a handle to an object that contains a buffer of structured properties.">PropertyBuffer</a>. Static property buffers use less memory.  <a href="#a1812106cd5b1b4beb020c45e5b03b90e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classDali_1_1PropertyBuffer.html">PropertyBuffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1PropertyBuffer.html#ac4ed4e72c684a3e726314370985e7128">DownCast</a> (<a class="el" href="classDali_1_1BaseHandle.html">BaseHandle</a> handle)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Downcasts to a property buffer handle. If not, a property buffer the returned property buffer handle is left uninitialized.  <a href="#ac4ed4e72c684a3e726314370985e7128"></a><br/></td></tr>
@@ -133,7 +133,7 @@ Static Public Member Functions</h2></td></tr>
 <p>PropertyBuffers can be used to provide data to <a class="el" href="classDali_1_1Geometry.html" title="Geometry is handle to an object that can be used to define a geometric elements.">Geometry</a> objects.</p>
 <p>Example:</p>
 <p>const float halfQuadSize = .5f; struct TexturedQuadVertex { <a class="el" href="structDali_1_1Vector2.html" title="A two dimensional vector.">Vector2</a> position; <a class="el" href="structDali_1_1Vector2.html" title="A two dimensional vector.">Vector2</a> textureCoordinates; }; TexturedQuadVertex texturedQuadVertexData[4] = { { <a class="el" href="structDali_1_1Vector2.html" title="A two dimensional vector.">Vector2</a>(-halfQuadSize, -halfQuadSize), <a class="el" href="structDali_1_1Vector2.html" title="A two dimensional vector.">Vector2</a>(0.f, 0.f) }, { <a class="el" href="structDali_1_1Vector2.html" title="A two dimensional vector.">Vector2</a>( halfQuadSize, -halfQuadSize), <a class="el" href="structDali_1_1Vector2.html" title="A two dimensional vector.">Vector2</a>(1.f, 0.f) }, { <a class="el" href="structDali_1_1Vector2.html" title="A two dimensional vector.">Vector2</a>(-halfQuadSize, halfQuadSize), <a class="el" href="structDali_1_1Vector2.html" title="A two dimensional vector.">Vector2</a>(0.f, 1.f) }, { Vector2( halfQuadSize,  halfQuadSize), <a class="el" href="structDali_1_1Vector2.html" title="A two dimensional vector.">Vector2</a>(1.f, 1.f) } };</p>
-<p><a class="el" href="classDali_1_1Property_1_1Map.html" title="A Map of property values, the key type could be String or Property::Index.">Property::Map</a> texturedQuadVertexFormat; texturedQuadVertexFormat["aPosition"] = <a class="el" href="structDali_1_1Property.html#acb569f557811bc94d2e98b5c880d759caa5153e9670e8eeb32160ada6e41469a2" title="a vector array of size=2 with float precision">Property::VECTOR2</a>; texturedQuadVertexFormat["aTexCoord"] = <a class="el" href="structDali_1_1Property.html#acb569f557811bc94d2e98b5c880d759caa5153e9670e8eeb32160ada6e41469a2" title="a vector array of size=2 with float precision">Property::VECTOR2</a>; <a class="el" href="classDali_1_1PropertyBuffer.html" title="PropertyBuffer is a handle to an object that contains a buffer of structured properties.">PropertyBuffer</a> texturedQuadVertices = PropertyBuffer::New( texturedQuadVertexFormat ); texturedQuadVertices.SetData( texturedQuadVertexData, 4 );</p>
+<p><a class="el" href="classDali_1_1Property.html#a16ea7475b199777b95c0cf9ac04b068b" title="Default constructor.">Property::Map</a> texturedQuadVertexFormat; texturedQuadVertexFormat["aPosition"] = <a class="el" href="classDali_1_1Property.html#acb569f557811bc94d2e98b5c880d759caa5153e9670e8eeb32160ada6e41469a2" title="a vector array of size=2 with float precision">Property::VECTOR2</a>; texturedQuadVertexFormat["aTexCoord"] = <a class="el" href="classDali_1_1Property.html#acb569f557811bc94d2e98b5c880d759caa5153e9670e8eeb32160ada6e41469a2" title="a vector array of size=2 with float precision">Property::VECTOR2</a>; <a class="el" href="classDali_1_1PropertyBuffer.html" title="PropertyBuffer is a handle to an object that contains a buffer of structured properties.">PropertyBuffer</a> texturedQuadVertices = PropertyBuffer::New( texturedQuadVertexFormat ); texturedQuadVertices.SetData( texturedQuadVertexData, 4 );</p>
 <p>// Create indices unsigned int indexData[6] = { 0, 3, 1, 0, 2, 3 };</p>
 <p>// Create the geometry object <a class="el" href="classDali_1_1Geometry.html" title="Geometry is handle to an object that can be used to define a geometric elements.">Geometry</a> texturedQuadGeometry = <a class="el" href="classDali_1_1Geometry.html#a0b38e54a3dab472dcc4409de627428d3" title="Creates a new Geometry object.">Geometry::New()</a>; texturedQuadGeometry.AddVertexBuffer( texturedQuadVertices ); texturedQuadGeometry.SetIndexBuffer( indexData, sizeof(indexData)/sizeof(indexData[0] );</p>
 <dl class="user"><dt><b>Since:</b></dt><dd>3.0, DALi version 1.1.43 </dd></dl>
@@ -253,7 +253,7 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="structDali_1_1Property.html" title="An object + property pair.">Property</a> buffer handle or an uninitialized handle </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classDali_1_1Property.html" title="A Array of property values.">Property</a> buffer handle or an uninitialized handle </dd></dl>
 
 </div>
 </div>
@@ -284,7 +284,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">static <a class="el" href="classDali_1_1PropertyBuffer.html">PropertyBuffer</a> <a class="el" href="classDali_1_1PropertyBuffer.html#a1812106cd5b1b4beb020c45e5b03b90e">Dali::PropertyBuffer::New</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classDali_1_1Property_1_1Map.html">Dali::Property::Map</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classDali_1_1Property.html#a16ea7475b199777b95c0cf9ac04b068b">Dali::Property::Map</a> &amp;&#160;</td>
           <td class="paramname"><em>bufferFormat</em></td><td>)</td>
           <td><code> [static]</code></td>
         </tr>
