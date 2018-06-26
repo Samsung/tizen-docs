@@ -13,6 +13,7 @@ var group__CAPI__BASE__UTILS__I18N__MODULE =
     [ "ParsePosition", "group__CAPI__BASE__UTILS__I18N__PARSE__POSITION__MODULE.html", null ],
     [ "PluralFormat", "group__CAPI__BASE__UTILS__I18N__PLURAL__FORMAT__MODULE.html", null ],
     [ "PluralRules", "group__CAPI__BASE__UTILS__I18N__PLURAL__RULES__MODULE.html", null ],
+    [ "Simple Date Format", "group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html", null ],
     [ "Timezone", "group__CAPI__BASE__UTILS__I18N__TIMEZONE__MODULE.html", null ],
     [ "UChar Iterator", "group__CAPI__BASE__UTILS__I18N__UCHAR__ITER__MODULE.html", null ],
     [ "UEnumeration", "group__CAPI__BASE__UTILS__I18N__UENUMERATION__MODULE.html", null ],

@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">5.0 M1</span>
    </div>
    
   </td>
@@ -145,11 +145,16 @@ static const <a class="el" href="classDali_1_1Matrix3.html">Matrix3</a>&#160;</t
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The identity matrix. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Matrix3.html#aa3730b2c0a403c4c88cf15d6cf3d726f">operator&lt;&lt;</a> (std::ostream &amp;o, const <a class="el" href="classDali_1_1Matrix3.html">Matrix3</a> &amp;matrix)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a 3x3 matrix.  <a href="#aa3730b2c0a403c4c88cf15d6cf3d726f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DALI_CORE_API std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Matrix3.html#a20117a0e34bb5040622d8093747eeb52">operator&lt;&lt;</a> (std::ostream &amp;o, const <a class="el" href="classDali_1_1Matrix3.html">Matrix3</a> &amp;matrix)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a 3x3 matrix.  <a href="#a20117a0e34bb5040622d8093747eeb52"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>A 3x3 matrix. </p>
+<p>The matrix is stored as a flat array and is Column Major, i.e. the storage order is as follows (numbers represent indices of array):</p>
+<div class="fragment"><pre class="fragment"> 0  3  6
+ 1  4  7
+ 2  5  8
+</pre></div><p>Each axis is contiguous in memory, so the x-axis corresponds to elements 0, 1 and 2, the y-axis corresponds to elements 3, 4 and 5, and the z-axis corresponds to elements 6, 7 and 8.</p>
 <dl class="user"><dt><b>Since:</b></dt><dd>3.0, DALi version 1.0.0 </dd></dl>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a6fb71b55fc91d2a1f58f641ad0050998"></a><!-- doxytag: member="Dali::Matrix3::Matrix3" ref="a6fb71b55fc91d2a1f58f641ad0050998" args="()" -->
@@ -345,9 +350,7 @@ Friends</h2></td></tr>
 
 <p>Returns the contents of the matrix as an array of 9 floats. </p>
 <p>The order of the values for a matrix is:</p>
-<div class="fragment"><pre class="fragment">   xAxis.x yAxis.x zAxis.x
-   xAxis.y yAxis.y zAxis.y
-   xAxis.z yAxis.z zAxis.z
+<div class="fragment"><pre class="fragment"> [ xAxis.x, xAxis.y, xAxis.z, yAxis.x, yAxis.y, yAxis.z, zAxis.x, zAxis.y, zAxis.z ]
 </pre></div><dl class="user"><dt><b>Since:</b></dt><dd>3.0, DALi version 1.0.0 </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The matrix contents as an array of 9 floats </dd></dl>
 
@@ -368,10 +371,8 @@ Friends</h2></td></tr>
 <div class="memdoc">
 
 <p>Returns the contents of the matrix as an array of 9 floats. </p>
-<div class="fragment"><pre class="fragment"> The order of the values <span class="keywordflow">for</span> a matrix is:
-   xAxis.x yAxis.x zAxis.x
-   xAxis.y yAxis.y zAxis.y
-   xAxis.z yAxis.z zAxis.z
+<p>The order of the values for a matrix is:</p>
+<div class="fragment"><pre class="fragment"> [ xAxis.x, xAxis.y, xAxis.z, yAxis.x, yAxis.y, yAxis.z, zAxis.x, zAxis.y, zAxis.z ]
 </pre></div><dl class="user"><dt><b>Since:</b></dt><dd>3.0, DALi version 1.0.0 </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The matrix contents as an array of 9 floats </dd></dl>
 
@@ -450,7 +451,8 @@ Friends</h2></td></tr>
 <div class="memdoc">
 
 <p>Function to multiply two matrices and store the result onto third. </p>
-<p>Use this method in time critical path as it does not require temporaries </p>
+<p>Use this method in time critical path as it does not require temporaries</p>
+<p>result = rhs * lhs</p>
 <dl class="user"><dt><b>Since:</b></dt><dd>3.0, DALi version 1.0.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -660,12 +662,12 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Friends And Related Function Documentation</h2>
-<a class="anchor" id="aa3730b2c0a403c4c88cf15d6cf3d726f"></a><!-- doxytag: member="Dali::Matrix3::operator&lt;&lt;" ref="aa3730b2c0a403c4c88cf15d6cf3d726f" args="(std::ostream &amp;o, const Matrix3 &amp;matrix)" -->
+<a class="anchor" id="a20117a0e34bb5040622d8093747eeb52"></a><!-- doxytag: member="Dali::Matrix3::operator&lt;&lt;" ref="a20117a0e34bb5040622d8093747eeb52" args="(std::ostream &amp;o, const Matrix3 &amp;matrix)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td class="memname">DALI_CORE_API std::ostream&amp; operator&lt;&lt; </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>o</em>, </td>

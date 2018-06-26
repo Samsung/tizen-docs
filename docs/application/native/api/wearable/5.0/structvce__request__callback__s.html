@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">5.0 M1</span>
    </div>
    
   </td>
@@ -110,6 +110,7 @@ Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gab0d2005b1418d370636c410c805ab220">vce_stop_cb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvce__request__callback__s.html#aeee60e19e73160962c03155e4701fc19">stop</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gad1fa62ba023a9fcf96c9b918165de2d6">vce_cancel_cb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvce__request__callback__s.html#a5f93fd1349f7f9e92d377cc50b0137c6">cancel</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gafdd54d1a18d2d5978363d965e22731f4">vce_set_audio_type_cb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvce__request__callback__s.html#a27b22f264677c1b51f548e3dbfd5ccbc">set_audio_type</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga5498b8b4b2b825cb4ad6ba2cb5a35960">vce_set_server_dialog_cb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvce__request__callback__s.html#a0c4aec713eed05bf82484714ecfec02e">set_server_dialog</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga73da8818812eff24fbf0616c43b93614">vce_set_domain_cb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvce__request__callback__s.html#ab4584ada7d63f951e408b653391dfde5">set_domain</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga1ae28c61d3041f6ffb40a91bc371802d">vce_process_text_cb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvce__request__callback__s.html#a9d9b0ee0df16eae45b1cbff3c99de99b">process_text</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga69f09f3010a90e2cfe72c1e255a8bde1">vce_process_list_event_cb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvce__request__callback__s.html#a6f3d804b7258720fe6de47fd7d6bbfcd">process_list_event</a></td></tr>
@@ -118,7 +119,7 @@ Public Attributes</h2></td></tr>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>A structure for the VC engine functions. </p>
 <p>This structure contains essential callback functions for operating VC engine. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>These functions ar mandatory for operating VC engine. Therefore, all functions MUST be implemented. </dd></dl>
 </div><hr/><h2>Member Data Documentation</h2>
 <a class="anchor" id="a5f93fd1349f7f9e92d377cc50b0137c6"></a><!-- doxytag: member="vce_request_callback_s::cancel" ref="a5f93fd1349f7f9e92d377cc50b0137c6" args="" -->
@@ -328,6 +329,20 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Set recording data </p>
+
+</div>
+</div>
+<a class="anchor" id="a0c4aec713eed05bf82484714ecfec02e"></a><!-- doxytag: member="vce_request_callback_s::set_server_dialog" ref="a0c4aec713eed05bf82484714ecfec02e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga5498b8b4b2b825cb4ad6ba2cb5a35960">vce_set_server_dialog_cb</a> <a class="el" href="structvce__request__callback__s.html#a0c4aec713eed05bf82484714ecfec02e">vce_request_callback_s::set_server_dialog</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set server dialog </p>
 
 </div>
 </div>

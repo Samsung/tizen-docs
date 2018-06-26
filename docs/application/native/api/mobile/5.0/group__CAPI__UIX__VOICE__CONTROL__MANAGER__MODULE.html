@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">5.0 M1</span>
    </div>
    
   </td>
@@ -280,6 +280,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets private data from VC engine.  <a href="#gadccaefa5e93dee2c13894f416e19cbfa"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga91b7b362dce3417ae6385d8a726a8cdc">vc_mgr_do_action</a> (<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga56965d0f748055f9b0af2f732214080e">vc_send_event_type_e</a> type, char *send_event)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests to do action as if utterence is spoken.  <a href="#ga91b7b362dce3417ae6385d8a726a8cdc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaaf0b87803dfb1df5f601d8057bbd69f7">vc_mgr_send_specific_engine_request</a> (const char *engine_app_id, const char *event, const char *request)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends the specific engine request to the vc-service.  <a href="#gaaf0b87803dfb1df5f601d8057bbd69f7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga4fa037039489bebc18b4c3ef1cb447db">vc_mgr_start</a> (bool exclusive_command_option)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts recognition.  <a href="#ga4fa037039489bebc18b4c3ef1cb447db"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga7136b1a913e0a37126fe02bad95a155d">vc_mgr_stop</a> (void)</td></tr>
@@ -298,6 +300,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a callback function for getting pre recognition result.  <a href="#gaf444842c60771b514aafe82801422083"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga2b2c09b9819f4d06f7bf5cc0bffa1266">vc_mgr_unset_pre_result_cb</a> (void)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets the pre recognition result callback function.  <a href="#ga2b2c09b9819f4d06f7bf5cc0bffa1266"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga9953c16a294bce0e14bd6c29d09afc63">vc_mgr_set_specific_engine_result_cb</a> (<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaea17f3553780676158adec2386f9273a">vc_mgr_specific_engine_result_cb</a> callback, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a callback function for getting specific engine result.  <a href="#ga9953c16a294bce0e14bd6c29d09afc63"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gab654a0659b6156448ca6fc541d1738ca">vc_mgr_unset_specific_engine_result_cb</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters the specific engine result callback function.  <a href="#gab654a0659b6156448ca6fc541d1738ca"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga0ac3a723014228291531cc871552c695">vc_mgr_set_result_cb</a> (<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gaef354a1ac39a323db7dac2d86eac217a">vc_result_cb</a> callback, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a callback function for getting all types of recognition results.  <a href="#ga0ac3a723014228291531cc871552c695"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaa56270697a3fc122fec802039dde558d">vc_mgr_unset_result_cb</a> (void)</td></tr>
@@ -340,12 +346,26 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a callback function to be called when engine request private data.  <a href="#ga02ca905654b8e55daec084b9178f6de5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga44ad267685871de2b4af267d1adefde7">vc_mgr_unset_private_data_requested_cb</a> (void)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets the callback function to be called when engine request private data.  <a href="#ga44ad267685871de2b4af267d1adefde7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga445c068914dbab608189e64801eb892b">vc_mgr_set_feedback_audio_format_cb</a> (<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gad74bb0682ba95ede8fcdf0a368de22a7">vc_mgr_feedback_audio_format_cb</a> callback, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a callback function to be called when engine sends audio formats necessary for playing TTS feedback.  <a href="#ga445c068914dbab608189e64801eb892b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaea3a84006b61dca60afcfe8a4fd28fe4">vc_mgr_unset_feedback_audio_format_cb</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets a callback function to be called when engine sends audio formats necessary for playing TTS feedback.  <a href="#gaea3a84006b61dca60afcfe8a4fd28fe4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaae49c8a2c49d085b9ccee59fb26c9c24">vc_mgr_set_feedback_streaming_cb</a> (<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga76185822e1a7463389d774f3e8e48808">vc_mgr_feedback_streaming_cb</a> callback, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a callback function to be called when engine sends audio streaming for TTS feedback.  <a href="#gaae49c8a2c49d085b9ccee59fb26c9c24"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga498af8f82756a279235b6b91ad701f4c">vc_mgr_unset_feedback_streaming_cb</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets a callback function to be called when engine sends audio streaming for TTS feedback.  <a href="#ga498af8f82756a279235b6b91ad701f4c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga8b196a2014f01faecca82a6e68eae620">vc_mgr_start_feedback</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts getting TTS feedback streaming data from the buffer.  <a href="#ga8b196a2014f01faecca82a6e68eae620"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gad7eeaf323134ea1267551ac4785ec7b9">vc_mgr_stop_feedback</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops getting and removes TTS feedback streaming data from the buffer.  <a href="#gad7eeaf323134ea1267551ac4785ec7b9"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga4b945883c3e95818ead9587e52ed5c84">vc_mgr_all_result_cb</a> )(<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gaef1e3d07ccb0250850b3365eacf12409">vc_result_event_e</a> event, <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__COMMAND__MODULE.html#ga89b3da11ab1c2a636d7e723c54ebe1a4">vc_cmd_list_h</a> vc_cmd_list, const char *result, const char *msg, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when client gets the all recognition results from voice control service.  <a href="#ga4b945883c3e95818ead9587e52ed5c84"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga04b278eba983c2b72e55eadb5842f780">vc_mgr_pre_result_cb</a> )(<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gad23915ca6cd6ed0dc27e73839a0b00b5">vc_pre_result_event_e</a> event, const char *result, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when client gets the pre recognition results (partial ASR) from voice control service.  <a href="#ga04b278eba983c2b72e55eadb5842f780"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaea17f3553780676158adec2386f9273a">vc_mgr_specific_engine_result_cb</a> )(const char *engine_app_id, const char *event, const char *result, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when client gets the specific engine's result from vc-service.  <a href="#gaea17f3553780676158adec2386f9273a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga915d9d03c982c8ff3c95b1768dd0cdaa">vc_mgr_begin_speech_detected_cb</a> )(void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when user speaking is detected.  <a href="#ga915d9d03c982c8ff3c95b1768dd0cdaa"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gabe1fb4d93dbb23eb75a7982c11855346">vc_mgr_dialog_request_cb</a> )(int pid, const char *disp_text, const char *utt_text, bool continuous, void *user_data)</td></tr>
@@ -354,6 +374,10 @@ Typedefs</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when engine sets private data to manager client.  <a href="#ga4680a8a6a21bae1c24f6b39d6e920405"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaa176886550adafd3f26ddf86f66e4755">vc_mgr_private_data_requested_cb</a> )(const char *key, char **data, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when engine requests private data from manager client.  <a href="#gaa176886550adafd3f26ddf86f66e4755"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gad74bb0682ba95ede8fcdf0a368de22a7">vc_mgr_feedback_audio_format_cb</a> )(int rate, <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga5f16ca4c14748b604ad504f395d46bfe">vc_audio_channel_e</a> channel, <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gada8fdde7f9e8b093e03d4e5aad9c7311">vc_audio_type_e</a> audio_type, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when engine sends audio formats necessary for playing TTS feedback.  <a href="#gad74bb0682ba95ede8fcdf0a368de22a7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga76185822e1a7463389d774f3e8e48808">vc_mgr_feedback_streaming_cb</a> )(<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gac209c45b0f01cc96e096e56b11987637">vc_feedback_event_e</a> event, char *buffer, int len, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when engine sends audio streaming for TTS feedback.  <a href="#ga76185822e1a7463389d774f3e8e48808"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga0d18a2bd4ba9f67290ad40f6d0639014">VC_AUDIO_TYPE_BLUETOOTH</a>&#160;&#160;&#160;&quot;VC_AUDIO_ID_BLUETOOTH&quot;</td></tr>
@@ -630,6 +654,62 @@ Defines</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="gad74bb0682ba95ede8fcdf0a368de22a7"></a><!-- doxytag: member="voice_control_manager.h::vc_mgr_feedback_audio_format_cb" ref="gad74bb0682ba95ede8fcdf0a368de22a7" args=")(int rate, vc_audio_channel_e channel, vc_audio_type_e audio_type, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gad74bb0682ba95ede8fcdf0a368de22a7">vc_mgr_feedback_audio_format_cb</a>)(int rate, <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga5f16ca4c14748b604ad504f395d46bfe">vc_audio_channel_e</a> channel, <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gada8fdde7f9e8b093e03d4e5aad9c7311">vc_audio_type_e</a> audio_type, void *user_data)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Called when engine sends audio formats necessary for playing TTS feedback. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">rate</td><td>Audio sampling rate </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>Audio channel (e.g. <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga5f16ca4c14748b604ad504f395d46bfea6a87e12526a6d6b808f227153073f833">VC_AUDIO_CHANNEL_MONO</a>, <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga5f16ca4c14748b604ad504f395d46bfeae5e43b1286ff4939b3491e0685e7c908">VC_AUDIO_CHANNEL_STEREO</a>) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">audio_type</td><td>Audio type (e.g. <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggada8fdde7f9e8b093e03d4e5aad9c7311aeae657e4a0fe1c30569275d954795e5e">VC_AUDIO_TYPE_PCM_S16_LE</a>, <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggada8fdde7f9e8b093e03d4e5aad9c7311a8440ea1a2661c9bb61b4032bf20ee934">VC_AUDIO_TYPE_PCM_U8</a>) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback registration function</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>An application registers callback function using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga445c068914dbab608189e64801eb892b" title="Sets a callback function to be called when engine sends audio formats necessary for playing TTS feedb...">vc_mgr_set_feedback_audio_format_cb()</a>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga445c068914dbab608189e64801eb892b" title="Sets a callback function to be called when engine sends audio formats necessary for playing TTS feedb...">vc_mgr_set_feedback_audio_format_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaea3a84006b61dca60afcfe8a4fd28fe4" title="Unsets a callback function to be called when engine sends audio formats necessary for playing TTS fee...">vc_mgr_unset_feedback_audio_format_cb()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga76185822e1a7463389d774f3e8e48808"></a><!-- doxytag: member="voice_control_manager.h::vc_mgr_feedback_streaming_cb" ref="ga76185822e1a7463389d774f3e8e48808" args=")(vc_feedback_event_e event, char *buffer, int len, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga76185822e1a7463389d774f3e8e48808">vc_mgr_feedback_streaming_cb</a>)(<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gac209c45b0f01cc96e096e56b11987637">vc_feedback_event_e</a> event, char *buffer, int len, void *user_data)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Called when engine sends audio streaming for TTS feedback. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>TTS feedback event (e.g. <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggac209c45b0f01cc96e096e56b11987637a7208f624d18fa6de4339bcfa1b15b784">VC_FEEDBACK_EVENT_START</a>, <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggac209c45b0f01cc96e096e56b11987637ae3c0a78b4e02c40e70b8a72c93a563e3">VC_FEEDBACK_EVENT_CONTINUE</a>) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>Audio streaming data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>Length of the audio streaming data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback registration function</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>An application registers callback function using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaae49c8a2c49d085b9ccee59fb26c9c24" title="Sets a callback function to be called when engine sends audio streaming for TTS feedback.">vc_mgr_set_feedback_streaming_cb()</a>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaae49c8a2c49d085b9ccee59fb26c9c24" title="Sets a callback function to be called when engine sends audio streaming for TTS feedback.">vc_mgr_set_feedback_streaming_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga498af8f82756a279235b6b91ad701f4c" title="Unsets a callback function to be called when engine sends audio streaming for TTS feedback...">vc_mgr_unset_feedback_streaming_cb()</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga04b278eba983c2b72e55eadb5842f780"></a><!-- doxytag: member="voice_control_manager.h::vc_mgr_pre_result_cb" ref="ga04b278eba983c2b72e55eadb5842f780" args=")(vc_pre_result_event_e event, const char *result, void *user_data)" -->
 <div class="memitem">
 <div class="memproto">
@@ -714,6 +794,35 @@ Defines</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga3d859ea6554b8651113cec5347d507c3" title="Sets a callback function to be called when engine set private data.">vc_mgr_set_private_data_set_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gab300349e6d89ad05f200390cb4e46b28" title="Unsets the callback function to be called when engine set private data.">vc_mgr_unset_private_data_set_cb()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaea17f3553780676158adec2386f9273a"></a><!-- doxytag: member="voice_control_manager.h::vc_mgr_specific_engine_result_cb" ref="gaea17f3553780676158adec2386f9273a" args=")(const char *engine_app_id, const char *event, const char *result, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaea17f3553780676158adec2386f9273a">vc_mgr_specific_engine_result_cb</a>)(const char *engine_app_id, const char *event, const char *result, void *user_data)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Called when client gets the specific engine's result from vc-service. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">engine_app_id</td><td>The specific engine's app id </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>The specific engine event type </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">result</td><td>The specific engine result </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback registration function</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>An application registers callback function using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga9953c16a294bce0e14bd6c29d09afc63" title="Registers a callback function for getting specific engine result.">vc_mgr_set_specific_engine_result_cb()</a>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga9953c16a294bce0e14bd6c29d09afc63" title="Registers a callback function for getting specific engine result.">vc_mgr_set_specific_engine_result_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gab654a0659b6156448ca6fc541d1738ca" title="Unregisters the specific engine result callback function.">vc_mgr_unset_specific_engine_result_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1623,6 +1732,61 @@ Defines</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="gaaf0b87803dfb1df5f601d8057bbd69f7"></a><!-- doxytag: member="voice_control_manager.h::vc_mgr_send_specific_engine_request" ref="gaaf0b87803dfb1df5f601d8057bbd69f7" args="(const char *engine_app_id, const char *event, const char *request)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaaf0b87803dfb1df5f601d8057bbd69f7">vc_mgr_send_specific_engine_request</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>engine_app_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>event</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>request</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sends the specific engine request to the vc-service. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">engine_app_id</td><td>A specific engine's app id </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>A engine service user request event </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">request</td><td>A engine service user request text</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6afee2837940c1ac473074ab5e0ccd795d">VC_ERROR_OUT_OF_MEMORY</a></td><td>Not enough memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6ab6d29a092da10fee580c0eee7ed3a2f2">VC_ERROR_OPERATION_FAILED</a></td><td>Operation failure </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="ga13dbc81d3b38310ff7feadbb189b612a"></a><!-- doxytag: member="voice_control_manager.h::vc_mgr_set_all_result_cb" ref="ga13dbc81d3b38310ff7feadbb189b612a" args="(vc_mgr_all_result_cb callback, void *user_data)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1979,6 +2143,104 @@ Defines</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga9a7d8acf86e41df9f0c08ffab83c549b" title="Called when error occurred.">vc_error_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gadd6b85b7cf27aed02a02a8b8403fc796" title="Unsets the callback function to be called when an error occurred.">vc_mgr_unset_error_cb()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga445c068914dbab608189e64801eb892b"></a><!-- doxytag: member="voice_control_manager.h::vc_mgr_set_feedback_audio_format_cb" ref="ga445c068914dbab608189e64801eb892b" args="(vc_mgr_feedback_audio_format_cb callback, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga445c068914dbab608189e64801eb892b">vc_mgr_set_feedback_audio_format_cb</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gad74bb0682ba95ede8fcdf0a368de22a7">vc_mgr_feedback_audio_format_cb</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets a callback function to be called when engine sends audio formats necessary for playing TTS feedback. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Callback function to set </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The state should be <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggac8a2ec4cdd81f02e2ea715f0d7804fb6a82a6da2c2ea495f4f11f312c2c10915a">VC_STATE_INITIALIZED</a>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gad74bb0682ba95ede8fcdf0a368de22a7" title="Called when engine sends audio formats necessary for playing TTS feedback.">vc_mgr_feedback_audio_format_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaea3a84006b61dca60afcfe8a4fd28fe4" title="Unsets a callback function to be called when engine sends audio formats necessary for playing TTS fee...">vc_mgr_unset_feedback_audio_format_cb()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaae49c8a2c49d085b9ccee59fb26c9c24"></a><!-- doxytag: member="voice_control_manager.h::vc_mgr_set_feedback_streaming_cb" ref="gaae49c8a2c49d085b9ccee59fb26c9c24" args="(vc_mgr_feedback_streaming_cb callback, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaae49c8a2c49d085b9ccee59fb26c9c24">vc_mgr_set_feedback_streaming_cb</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga76185822e1a7463389d774f3e8e48808">vc_mgr_feedback_streaming_cb</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets a callback function to be called when engine sends audio streaming for TTS feedback. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Callback function to set </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The state should be <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggac8a2ec4cdd81f02e2ea715f0d7804fb6a82a6da2c2ea495f4f11f312c2c10915a">VC_STATE_INITIALIZED</a>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga76185822e1a7463389d774f3e8e48808" title="Called when engine sends audio streaming for TTS feedback.">vc_mgr_feedback_streaming_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga498af8f82756a279235b6b91ad701f4c" title="Unsets a callback function to be called when engine sends audio streaming for TTS feedback...">vc_mgr_unset_feedback_streaming_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -2439,6 +2701,56 @@ Defines</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga9953c16a294bce0e14bd6c29d09afc63"></a><!-- doxytag: member="voice_control_manager.h::vc_mgr_set_specific_engine_result_cb" ref="ga9953c16a294bce0e14bd6c29d09afc63" args="(vc_mgr_specific_engine_result_cb callback, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga9953c16a294bce0e14bd6c29d09afc63">vc_mgr_set_specific_engine_result_cb</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaea17f3553780676158adec2386f9273a">vc_mgr_specific_engine_result_cb</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Registers a callback function for getting specific engine result. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Callback function to register </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af954cb70446c65f603c40e982e704973">VC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The state should be <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggac8a2ec4cdd81f02e2ea715f0d7804fb6a82a6da2c2ea495f4f11f312c2c10915a">VC_STATE_INITIALIZED</a>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gab654a0659b6156448ca6fc541d1738ca" title="Unregisters the specific engine result callback function.">vc_mgr_unset_specific_engine_result_cb()</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga4484fc1651001f5d17d936c45553e20e"></a><!-- doxytag: member="voice_control_manager.h::vc_mgr_set_speech_detected_cb" ref="ga4484fc1651001f5d17d936c45553e20e" args="(vc_mgr_begin_speech_detected_cb callback, void *user_data)" -->
 <div class="memitem">
 <div class="memproto">
@@ -2605,6 +2917,43 @@ Defines</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga8b196a2014f01faecca82a6e68eae620"></a><!-- doxytag: member="voice_control_manager.h::vc_mgr_start_feedback" ref="ga8b196a2014f01faecca82a6e68eae620" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga8b196a2014f01faecca82a6e68eae620">vc_mgr_start_feedback</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Starts getting TTS feedback streaming data from the buffer. </p>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>In order to get TTS feedback streaming data, the application should set '<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga76185822e1a7463389d774f3e8e48808" title="Called when engine sends audio streaming for TTS feedback.">vc_mgr_feedback_streaming_cb()</a>' using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaae49c8a2c49d085b9ccee59fb26c9c24" title="Sets a callback function to be called when engine sends audio streaming for TTS feedback.">vc_mgr_set_feedback_streaming_cb()</a>.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The state should be <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggac8a2ec4cdd81f02e2ea715f0d7804fb6a611bc91a80da2a3d6d33a453bd3ec531">VC_STATE_READY</a>. <br/>
+ '<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga76185822e1a7463389d774f3e8e48808" title="Called when engine sends audio streaming for TTS feedback.">vc_mgr_feedback_streaming_cb()</a>' should be registered.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga76185822e1a7463389d774f3e8e48808" title="Called when engine sends audio streaming for TTS feedback.">vc_mgr_feedback_streaming_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaae49c8a2c49d085b9ccee59fb26c9c24" title="Sets a callback function to be called when engine sends audio streaming for TTS feedback.">vc_mgr_set_feedback_streaming_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga498af8f82756a279235b6b91ad701f4c" title="Unsets a callback function to be called when engine sends audio streaming for TTS feedback...">vc_mgr_unset_feedback_streaming_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gad7eeaf323134ea1267551ac4785ec7b9" title="Stops getting and removes TTS feedback streaming data from the buffer.">vc_mgr_stop_feedback()</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga7136b1a913e0a37126fe02bad95a155d"></a><!-- doxytag: member="voice_control_manager.h::vc_mgr_stop" ref="ga7136b1a913e0a37126fe02bad95a155d" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
@@ -2649,6 +2998,41 @@ Defines</h2></td></tr>
 <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga99f7562f7178791110233fd4629b06f2" title="Called when the state of voice control service is changed.">vc_service_state_changed_cb()</a> </dd>
 <dd>
 vc_mgr_result_cb() </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gad7eeaf323134ea1267551ac4785ec7b9"></a><!-- doxytag: member="voice_control_manager.h::vc_mgr_stop_feedback" ref="gad7eeaf323134ea1267551ac4785ec7b9" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gad7eeaf323134ea1267551ac4785ec7b9">vc_mgr_stop_feedback</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Stops getting and removes TTS feedback streaming data from the buffer. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The state should be <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggac8a2ec4cdd81f02e2ea715f0d7804fb6a611bc91a80da2a3d6d33a453bd3ec531">VC_STATE_READY</a>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga76185822e1a7463389d774f3e8e48808" title="Called when engine sends audio streaming for TTS feedback.">vc_mgr_feedback_streaming_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaae49c8a2c49d085b9ccee59fb26c9c24" title="Sets a callback function to be called when engine sends audio streaming for TTS feedback.">vc_mgr_set_feedback_streaming_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga498af8f82756a279235b6b91ad701f4c" title="Unsets a callback function to be called when engine sends audio streaming for TTS feedback...">vc_mgr_unset_feedback_streaming_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga8b196a2014f01faecca82a6e68eae620" title="Starts getting TTS feedback streaming data from the buffer.">vc_mgr_start_feedback()</a> </dd></dl>
 
 </div>
 </div>
@@ -2864,6 +3248,68 @@ vc_mgr_result_cb() </dd></dl>
 
 </div>
 </div>
+<a class="anchor" id="gaea3a84006b61dca60afcfe8a4fd28fe4"></a><!-- doxytag: member="voice_control_manager.h::vc_mgr_unset_feedback_audio_format_cb" ref="gaea3a84006b61dca60afcfe8a4fd28fe4" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaea3a84006b61dca60afcfe8a4fd28fe4">vc_mgr_unset_feedback_audio_format_cb</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Unsets a callback function to be called when engine sends audio formats necessary for playing TTS feedback. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The state should be <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggac8a2ec4cdd81f02e2ea715f0d7804fb6a82a6da2c2ea495f4f11f312c2c10915a">VC_STATE_INITIALIZED</a>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gad74bb0682ba95ede8fcdf0a368de22a7" title="Called when engine sends audio formats necessary for playing TTS feedback.">vc_mgr_feedback_audio_format_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga445c068914dbab608189e64801eb892b" title="Sets a callback function to be called when engine sends audio formats necessary for playing TTS feedb...">vc_mgr_set_feedback_audio_format_cb()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga498af8f82756a279235b6b91ad701f4c"></a><!-- doxytag: member="voice_control_manager.h::vc_mgr_unset_feedback_streaming_cb" ref="ga498af8f82756a279235b6b91ad701f4c" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga498af8f82756a279235b6b91ad701f4c">vc_mgr_unset_feedback_streaming_cb</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Unsets a callback function to be called when engine sends audio streaming for TTS feedback. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The state should be <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggac8a2ec4cdd81f02e2ea715f0d7804fb6a82a6da2c2ea495f4f11f312c2c10915a">VC_STATE_INITIALIZED</a>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga76185822e1a7463389d774f3e8e48808" title="Called when engine sends audio streaming for TTS feedback.">vc_mgr_feedback_streaming_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gaae49c8a2c49d085b9ccee59fb26c9c24" title="Sets a callback function to be called when engine sends audio streaming for TTS feedback.">vc_mgr_set_feedback_streaming_cb()</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga2b2c09b9819f4d06f7bf5cc0bffa1266"></a><!-- doxytag: member="voice_control_manager.h::vc_mgr_unset_pre_result_cb" ref="ga2b2c09b9819f4d06f7bf5cc0bffa1266" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
@@ -3036,6 +3482,38 @@ vc_mgr_result_cb() </dd></dl>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The state should be <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggac8a2ec4cdd81f02e2ea715f0d7804fb6a82a6da2c2ea495f4f11f312c2c10915a">VC_STATE_INITIALIZED</a>.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gadc91a11a14a98d488ebebcc55c00dbec" title="Sets a callback function to be called when service state is changed.">vc_mgr_set_service_state_changed_cb()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gab654a0659b6156448ca6fc541d1738ca"></a><!-- doxytag: member="voice_control_manager.h::vc_mgr_unset_specific_engine_result_cb" ref="gab654a0659b6156448ca6fc541d1738ca" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#gab654a0659b6156448ca6fc541d1738ca">vc_mgr_unset_specific_engine_result_cb</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Unregisters the specific engine result callback function. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a16f88d97291facf597ac354f5b85a680">VC_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a6dcdee737d591755f321551f3746fc65">VC_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The state should be <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ggac8a2ec4cdd81f02e2ea715f0d7804fb6a82a6da2c2ea495f4f11f312c2c10915a">VC_STATE_INITIALIZED</a>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MANAGER__MODULE.html#ga9953c16a294bce0e14bd6c29d09afc63" title="Registers a callback function for getting specific engine result.">vc_mgr_set_specific_engine_result_cb()</a> </dd></dl>
 
 </div>
 </div>

@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">5.0 M1</span>
    </div>
    
   </td>
@@ -143,7 +143,7 @@ Static Public Member Functions</h2></td></tr>
    SignalConnectorType( myActorType, <span class="stringliteral">&quot;highlighted&quot;</span>, ConnectSignalForMyActor );
    TypeAction( myActorType, <span class="stringliteral">&quot;open&quot;</span>, DoMyActorAction );
    TypeAction( myActorType, <span class="stringliteral">&quot;close&quot;</span>, DoMyActorAction );
-   PropertyRegistration( myActorType, <span class="stringliteral">&quot;status&quot;</span>, PropertyRegistration::START_INDEX, <a class="code" href="structDali_1_1Property.html#acb569f557811bc94d2e98b5c880d759ca538a12b1a95a82f6dae06b9cf7835df7" title="A boolean type.">Property::BOOLEAN</a>, SetPropertyFunction, GetPropertyFunction );
+   PropertyRegistration( myActorType, <span class="stringliteral">&quot;status&quot;</span>, PropertyRegistration::START_INDEX, <a class="code" href="classDali_1_1Property.html#acb569f557811bc94d2e98b5c880d759ca538a12b1a95a82f6dae06b9cf7835df7" title="A boolean type.">Property::BOOLEAN</a>, SetPropertyFunction, GetPropertyFunction );
  }
 </pre></div><p>Usage: (Creation)</p>
 <div class="fragment"><pre class="fragment">   TypeRegistry::TypeInfo type = <a class="code" href="classDali_1_1TypeRegistry.html#ab7d387f82380c8ab0aeeeb04b38e6a09" title="Gets Type Registry handle.">TypeRegistry::Get</a>().<a class="code" href="classDali_1_1TypeRegistry.html#abaad6ed8f900a74ad9ebb3a707c71cdb" title="Gets TypeInfo for a registered type.">GetTypeInfo</a>(<span class="stringliteral">&quot;MyActor&quot;</span>);

@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">5.0 M1</span>
    </div>
    
   </td>
@@ -123,6 +123,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>immutable_idx</li>
 <li>date interval</li>
 <li>date interval format</li>
+<li>simple date format</li>
 </ul>
 <p>This module provides flexible generation of number or date format patterns and helps you format and parse dates/number for any locale. The i18n module provides various features based on data from ICU. The following table shows the version of ICU used in each Tizen platform. </p>
 <table class="doxtable">
@@ -203,6 +204,8 @@ Overview</h2>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__DATE__INTERVAL__MODULE.html">Date Interval</a> </td><td>Date interval represents a date interval.  </td></tr>
 <tr>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__DATE__INTERVAL__FORMAT__MODULE.html">DateIntervalFormat</a> </td><td>Date interval format module formats date intervals in a language-independent manner.  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td>The Simple Date Format module provides API for formatting and parsing dates in language-independent manner.  </td></tr>
 </table>
 <h2><a class="anchor" id="CAPI_BASE_UTILS_I18N_MODULE_MAPPING_TABLE"></a>
 Mapping Table</h2>
@@ -1054,7 +1057,11 @@ Mapping Table</h2>
 <tr>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__USTRING__MODULE.html">Ustring</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__USTRING__MODULE.html#ga4566b5f68a8d0bd320cc5480021c7752" title="Convert a UTF-32 string to UTF-16. Same as i18n_ustring_from_UTF32() except for the additional sub_ch...">i18n_ustring_from_UTF32_with_sub</a> </td><td>u_strFromUTF32WithSub  </td></tr>
 <tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html">Alphabetic Index</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html#ga02915b2c90206638770c8257036e8683" title="Creates an alphabetic index object for the specified locale.">i18n_alpha_idx_create</a> </td><td>AlphabeticIndex  </td></tr>
+<tr>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html">Alphabetic Index</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html#gaaa9fbf8834d581e6a35809666799855d" title="Destroys the alphabetic index object.">i18n_alpha_idx_destroy</a> </td><td>~AlphabeticIndex  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html">Alphabetic Index</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html#gab82a56e73ab009b0104b2fa2f52f0f06" title="Adds the index characters from a specified locale to the index.">i18n_alpha_idx_add_labels</a> </td><td>addLabels  </td></tr>
 <tr>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html">Alphabetic Index</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html#gabcbf37d647b98a47ebbfb73d6224e82f" title="Adds the record to the alphabetic index.">i18n_alpha_idx_add_record</a> </td><td>addRecord  </td></tr>
 <tr>
@@ -1101,10 +1108,6 @@ Mapping Table</h2>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html">Alphabetic Index</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html#ga683c265868e91eaa062208f3cc1be07b" title="Resets the bucket iteration for this index.">i18n_alpha_idx_reset_bucket_iter</a> </td><td>resetBucketIterator  </td></tr>
 <tr>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html">Alphabetic Index</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html#gaf37c4d92aef357e81e6417424d09ace1" title="Resets the record iteration for this index to before the first Record in the current Bucket...">i18n_alpha_idx_reset_record_iter</a> </td><td>resetRecordIterator  </td></tr>
-<tr>
-<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html">Alphabetic Index</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html#ga9f379164db57e4aa3589e76decaa6589" title="Creates an alphabetic index object for the specified locale.">i18n_alpha_idx_create_from_locale_id</a> </td><td>AlphabeticIndex  </td></tr>
-<tr>
-<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html">Alphabetic Index</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__ALPHA__IDX__MODULE.html#ga424e58a6840444f137ec099c456e0a0b" title="Adds the index characters from a specified locale to the index.">i18n_alpha_idx_add_labels_with_locale_id</a> </td><td>addLabels  </td></tr>
 <tr>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__FORMATTABLE__MODULE.html">Formattable</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__FORMATTABLE__MODULE.html#ga3ab54ba521ac768d653bf2289f928993" title="Creates a new default i18n_formattable_h.">i18n_formattable_create_default</a> </td><td>Formattable()  </td></tr>
 <tr>
@@ -1434,7 +1437,9 @@ Mapping Table</h2>
 <tr>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__FORMAT__MODULE.html">Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__FORMAT__MODULE.html#gafe0c04b07a8aa646841dc95d78011c4e" title="Parses a string to produce an object.">i18n_format_parse_object</a> </td><td>parseObject  </td></tr>
 <tr>
-<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__FORMAT__MODULE.html">Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__FORMAT__MODULE.html#gad23223543861f240921dc4dcbe11f3c9" title="Gets the locale for the given format object.">i18n_format_get_locale_id</a> </td><td>getLocale  </td></tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__FORMAT__MODULE.html">Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__FORMAT__MODULE.html#ga243fcf246a03a423bc25d525b76878e8" title="Gets the locale for the given format object.">i18n_format_get_locale</a> </td><td>getLocale  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html">MeasureFormat</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html#ga446581eafbd30afd3bf3990935b804a2" title="Creates the measure format object using given locale.">i18n_measure_format_create</a> </td><td>MeasureFormat  </td></tr>
 <tr>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html">MeasureFormat</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html#ga8c555a3f3cea08526a8564201b5d18f5" title="Destroys the measure format object.">i18n_measure_format_destroy</a> </td><td>~MeasureFormat  </td></tr>
 <tr>
@@ -1443,6 +1448,8 @@ Mapping Table</h2>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html">MeasureFormat</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html#ga9d6075961ed3bbcb47a7ad82e5ab46ab" title="Formats an object to produce a string.">i18n_measure_format_format</a> </td><td>format  </td></tr>
 <tr>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html">MeasureFormat</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html#ga617226ef7eaae08e23d7c145f9277eef" title="Parses a string to produce an object.">i18n_measure_format_parse_object</a> </td><td>parseObject  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html">MeasureFormat</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html#ga30a539fd2a16a2e1eff9f6aba7f44e0d" title="Gets a formatter for currency amount objects in the given locale.">i18n_measure_format_create_currency_format_from_locale</a> </td><td>createCurrencyFormat  </td></tr>
 <tr>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html">MeasureFormat</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html#ga295a28f491c6e65398029d27a1d93207" title="Gets a formatter for currency amount objects in the default locale.">i18n_measure_format_create_currency_format</a> </td><td>createCurrencyFormat  </td></tr>
 <tr>
@@ -1453,10 +1460,6 @@ Mapping Table</h2>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html">MeasureFormat</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html#ga28842517497098269543f59263f20a8b" title="Formats a single measure per unit.">i18n_measure_format_format_measure_per_unit</a> </td><td>formatMeasurePerUnit  </td></tr>
 <tr>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html">MeasureFormat</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html#ga02c26f03b068c69fa8348b49154b4307" title="Gets the display name of the i18n_measure_unit_h corresponding to the current locale and format width...">i18n_measure_format_get_unit_display_name</a> </td><td>getUnitDisplayName  </td></tr>
-<tr>
-<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html">MeasureFormat</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html#gaae2584251b189df229165cd4c5a2573b" title="Creates the measure format object using given locale.">i18n_measure_format_create_from_locale_id</a> </td><td>MeasureFormat  </td></tr>
-<tr>
-<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html">MeasureFormat</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html#ga9075632e8d013a8477e1092e3a0e2450" title="Gets a formatter for currency amount objects in the given locale.">i18n_measure_format_create_currency_format_from_locale_id</a> </td><td>createCurrencyFormat  </td></tr>
 <tr>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__FIELD__POSITION__MODULE.html">FieldPosition</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__FIELD__POSITION__MODULE.html#ga85af0411bca99f5c052de7a28df334ea" title="Creates a field position object with a non-specified field.">i18n_field_position_create</a> </td><td>FieldPosition  </td></tr>
 <tr>
@@ -1626,6 +1629,8 @@ Mapping Table</h2>
 <tr>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__PLURAL__RULES__MODULE.html">PluralRules</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__PLURAL__RULES__MODULE.html#ga7b5a5433ec72734ac04d0674802d2dae" title="Creates a plural rules object from a description.">i18n_plural_rules_create_rules_from_descr</a> </td><td>createRules  </td></tr>
 <tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__PLURAL__RULES__MODULE.html">PluralRules</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__PLURAL__RULES__MODULE.html#ga9aee7879ea2ffe5c8f7a6398f637df5c" title="Provides access to the predefined plural rules object for a given locale and the plural type...">i18n_plural_rules_for_locale</a> </td><td>forLocale  </td></tr>
+<tr>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__PLURAL__RULES__MODULE.html">PluralRules</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__PLURAL__RULES__MODULE.html#gae51a409836fd0780e4aa751742e94b6b" title="Returns the keyword of the first rule that applies to the given number.">i18n_plural_rules_select_int32</a> </td><td>select  </td></tr>
 <tr>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__PLURAL__RULES__MODULE.html">PluralRules</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__PLURAL__RULES__MODULE.html#gaa98519952780d07aff069912be7d77dd" title="Returns the keyword of the first rule that applies to the given number.">i18n_plural_rules_select_double</a> </td><td>select  </td></tr>
@@ -1637,8 +1642,6 @@ Mapping Table</h2>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__PLURAL__RULES__MODULE.html">PluralRules</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__PLURAL__RULES__MODULE.html#ga8a60a616847356ab274527ef31aa979a" title="Checks if the given keyword is defined in a plural rules object.">i18n_plural_rules_is_keyword</a> </td><td>isKeyword  </td></tr>
 <tr>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__PLURAL__RULES__MODULE.html">PluralRules</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__PLURAL__RULES__MODULE.html#ga33210aa3ebe14c70abf53cd2d045ec59" title="Returns keyword for default plural form.">i18n_plural_rules_get_keyword_other</a> </td><td>getKeywordOther  </td></tr>
-<tr>
-<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__PLURAL__RULES__MODULE.html">PluralRules</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__PLURAL__RULES__MODULE.html#gab85f7a54d94a4f69bcf566710065dda0" title="Provides access to the predefined plural rules object for a given locale and the plural type...">i18n_plural_rules_for_locale_id</a> </td><td>forLocale  </td></tr>
 <tr>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__PLURAL__FORMAT__MODULE.html">PluralFormat</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__PLURAL__FORMAT__MODULE.html#ga939e05fceb919a1a87e0efdf32b21b4f" title="Creates a new cardinal-number plural format object for the default locale.">i18n_plural_format_create</a> </td><td>PluralFormat  </td></tr>
 <tr>
@@ -1712,7 +1715,41 @@ Mapping Table</h2>
 <tr>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__DATE__INTERVAL__FORMAT__MODULE.html">DateIntervalFormat</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__DATE__INTERVAL__FORMAT__MODULE.html#ga3de8036fdafbb9f92d14df5d122d8968" title="Formats a date interval to produce a string.">i18n_date_interval_fmt_format_with_date_interval</a> </td><td>format  </td></tr>
 <tr>
-<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__DATE__INTERVAL__FORMAT__MODULE.html">DateIntervalFormat</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__DATE__INTERVAL__FORMAT__MODULE.html#ga05057a0e27615d1087b2d1637c4baa80" title="Formats two calendars to produce a string.">i18n_date_interval_fmt_format_with_calendar</a> </td><td>format  </td></tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__DATE__INTERVAL__FORMAT__MODULE.html">DateIntervalFormat</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__DATE__INTERVAL__FORMAT__MODULE.html#ga05057a0e27615d1087b2d1637c4baa80" title="Formats two calendars to produce a string.">i18n_date_interval_fmt_format_with_calendar</a> </td><td>format  </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html#gad369a4e5b93d0c431f20ea47bdaa4813" title="Creates a simple date format object using the default pattern for the default locale.">i18n_simple_date_fmt_create</a> </td><td>SimpleDateFormat  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html#ga7353874daa1f48a1109104e681c6407f" title="Creates a simple date format object using the given pattern and the default locale.">i18n_simple_date_fmt_create_from_pattern</a> </td><td>SimpleDateFormat  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html#gab34983d1a4e586a76ea48119b0233d54" title="Creates a simple date format object using the given pattern, numbering system override, and the default locale.">i18n_simple_date_fmt_create_from_pattern_override</a> </td><td>SimpleDateFormat  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html#ga5bebeb2ff193a15fa8823e7923173028" title="Creates a simple date format object using the given pattern and locale.">i18n_simple_date_fmt_create_from_pattern_locale</a> </td><td>SimpleDateFormat  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html#ga76ae935c2616559c89d3d4fc973b0e82" title="Creates a simple date format object using the given pattern, numbering system override and locale...">i18n_simple_date_fmt_create_from_pattern_override_locale</a> </td><td>SimpleDateFormat  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html#gafd89d5292b2c0e2c8714475741e689a1" title="Destroys the given simple date format object.">i18n_simple_date_fmt_destroy</a> </td><td>~SimpleDateFormat  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html#ga1f33484a515b73284ca731491a83a1c1" title="Creates a clone of the given simple_date_fmt object.">i18n_simple_date_fmt_clone</a> </td><td>clone  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html#ga1d55f1d6cf800b35a4ff60d35cd6021c" title="Checks whether two simple date format objects are equal.">i18n_simple_date_fmt_equals</a> </td><td>operator==  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html#gaae9ca64d1ca52f9c4ff3982380b95686" title="Formats a date or time (which is the standard millis since 24:00 GMT, Jan 1, 1970) using field positi...">i18n_simple_date_fmt_format_with_field_position</a> </td><td>format  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html#gae338199387b60e16033c48d674ec95cd" title="Parses a date/time string beginning at the given parse position.">i18n_simple_date_fmt_parse</a> </td><td>parse  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html#gaa93852e6c42231967a504f2cb285aedf" title="Sets the start i18n_udate used to interpret two-digit year strings.">i18n_simple_date_fmt_set_2digit_year_start</a> </td><td>set2DigitYearStart  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html#ga879491e8505887eca34ed3ec3711a7a8" title="Gets the start i18n_udate used to interpret two-digit year strings.">i18n_simple_date_fmt_get_2digit_year_start</a> </td><td>get2DigitYearStart  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html#ga5616b0b1f4c6327e150d8796b02df899" title="Returns a pattern string that describes given simple format date object.">i18n_simple_date_fmt_to_pattern</a> </td><td>toPattern  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html#ga6db485490f3f097e59e7d359de4dd963" title="Returns a localized pattern string that describes given simple date format object.">i18n_simple_date_fmt_to_localized_pattern</a> </td><td>toLocalizedPattern  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html#ga48e519e86ba29c0b3116c903c2475d37" title="Applies the given unlocalized pattern string to this date format.">i18n_simple_date_fmt_apply_pattern</a> </td><td>applyPattern  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html#ga49f94403a7b7e17dfc5c2916a1e2f2dc" title="Applies the given localized pattern string to this date format.">i18n_simple_date_fmt_apply_localized_pattern</a> </td><td>applyLocalizedPattern  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html#gadd2ac194bc1d90ffc10ba4fbb8dd5d89" title="Sets the calendar to be used by this date format.">i18n_simple_date_fmt_adopt_calendar</a> </td><td>adoptCalendar  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html#gac1fa5da657fe7f06b4e84565a6df3f39" title="Sets a particular i18n_udisplay_context_e value in the formatter, such as I18N_UDISPLAY_CONTEXT_CAPIT...">i18n_simple_date_fmt_set_context</a> </td><td>setContext  </td></tr>
 </table>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="define-members"></a>
